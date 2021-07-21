@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link';
+
 
 export default function Home() {
   return (
@@ -13,42 +15,24 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to Dev Portal Demo
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        What do we NEED to have a minimum viable dev portal
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          {/* PRODUCTS */}
+          <div className={styles.card}>
+            <a href="https://www.sitecore.com/products" ><h2>Products (where do these link? Marketing page ❓) &rarr;</h2></a>
+            <a href="products/commerce" className={styles.link}><li>Commerce</li></a>
+            <a href="products/personalization" className={styles.link}><li>Personalization</li></a>
+            <a href="products/sitecoreCDP" className={styles.link}><li>Sitecore CDP</li></a>
+            <a href="products/marketingautomation" className={styles.link}><li>Marketing Automation</li></a>
+            <a href="products/webCMS" className={styles.link}><li>Web CMS</li></a>
+            <a href="products/headlessCMS" className={styles.link}><li>Headless CMS</li></a>
+            <a href="products/DAM" className={styles.link}><li>DAM</li></a>
+          </div>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
         </div>
       </main>
 
