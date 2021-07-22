@@ -22,42 +22,26 @@ export default function Commerce() {
           </div>
           <div className={styles.productCategoryCard}>
             <a href="" ><h2>Four51 (OrderCloud)&rarr;</h2></a>
-            <div className={styles.productSection}>
-              Docs
-              <a href="https://four51.github.io/#/api" className={styles.link}><li>Four51 Documentation</li></a>
-            </div>
-            <div className={styles.productSection}>
-              Discover
-              <a href="https://www.sitecore.com/resources/index/guide/ordercloud-feature-guide" className={styles.link}><li>Ordercloud Feature Guide</li></a>
-            </div>
-            <div className={styles.productSection}>
-              Learn
-              <a href="https://ordercloud.io/getting-started/intro-to-ordercloud" className={styles.link}><li>Getting Started</li></a>
-            </div>
-            <div className={styles.productSection}>
-              Playground
-              <a href="https://github.com/ordercloud-api" className={styles.link}><li>The Code 👩‍💻</li></a>
-            </div>
+            <h4>Docs</h4>
+            <a href="https://four51.github.io/#/api" className={styles.link}><li>Four51 Documentation</li></a>
+            <h4>Discover</h4>
+            <a href="https://www.sitecore.com/resources/index/guide/ordercloud-feature-guide" className={styles.link}><li>Ordercloud Feature Guide</li></a>
+            <h4>Learn</h4>
+            <a href="https://ordercloud.io/getting-started/intro-to-ordercloud" className={styles.link}><li>Getting Started</li></a>
+            <h4>Playground</h4>
+            <a href="https://github.com/ordercloud-api" className={styles.link}><li>The Code 👩‍💻</li></a>
           </div>
           <div className={styles.productCategoryCard}>
             <a href="" ><h2>Sitecore Commerce&rarr;</h2></a>
-            <div className={styles.productSection}>
-              Docs
-              <a href="https://doc.sitecore.com/en/developers/101/xc/" className={styles.link}><li>Sitecore Commerce Documentation</li></a>
-            </div>
-            <div className={styles.productSection}>
-              Discover
-              <a href="" className={styles.link}><li>Knowledge Base</li></a>
-            </div>
-            <div className={styles.productSection}>
-              Learn
-              <a href="https://www.youtube.com/watch?v=T0cn3yBbRro&list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94" className={styles.link}><li>YouTube: Sitecore Experience Commerce Deep Dive</li></a>
-              <a href="https://doc.sitecore.com/en/developers/92/sitecore-experience-commerce/getting-started-with-development.html" className={styles.link}><li>Getting Started</li></a>
-            </div>
-            <div className={styles.productSection}>
-              Playground
-              <a href="https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx" className={styles.link}><li>Downloads</li></a>
-            </div>
+            <h4>Docs</h4>
+            <a href="https://doc.sitecore.com/en/developers/101/xc/" className={styles.link}><li>Sitecore Commerce Documentation</li></a>
+            <h4>Discover</h4>
+            <a href="" className={styles.link}><li>Knowledge Base</li></a>
+            <h4>Learn</h4>
+            <a href="https://www.youtube.com/watch?v=T0cn3yBbRro&list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94" className={styles.link}><li>YouTube: Sitecore Experience Commerce Deep Dive</li></a>
+            <a href="https://doc.sitecore.com/en/developers/92/sitecore-experience-commerce/getting-started-with-development.html" className={styles.link}><li>Getting Started</li></a>
+          <h4>Playground</h4>
+            <a href="https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx" className={styles.link}><li>Downloads</li></a>
           </div>
           <div className={styles.socialsCard}>
             <h2>News & Announcements</h2>
@@ -71,6 +55,8 @@ export default function Commerce() {
             <h2>Commerce Socials</h2>
             <a href="https://sitecore.stackexchange.com/?tags=sitecore-commerce" className={styles.link}><li>Sitecore Commerce Stack Exchange Tag</li></a>
             <a href="https://twitter.com/search?q=%23sitecorecommerce&src=typed_query&f=live" className={styles.link}><li>#SitecoreCommerce latest Tweets</li></a>
+            <a href="https://twitter.com/Four51ecommerce" className={styles.link}><li>Four51 Twitter</li></a>
+            <a href="https://twitter.com/search?q=%23ordercloud&src=typed_query&f=live" className={styles.link}><li>#OrderCloud latest Tweets</li></a>
           </div>
         </div>
       </main>
