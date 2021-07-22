@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
+import Footer from '../../components/footer'
 
 export default function Commerce() {
   return (
@@ -52,7 +52,7 @@ export default function Commerce() {
             <div className={styles.productSection}>
               Learn
               <a href="https://www.youtube.com/watch?v=T0cn3yBbRro&list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94" className={styles.link}><li>YouTube: Sitecore Experience Commerce Deep Dive</li></a>
-              <a href="" className={styles.link}><li>Getting Started</li></a>
+              <a href="https://doc.sitecore.com/en/developers/92/sitecore-experience-commerce/getting-started-with-development.html" className={styles.link}><li>Getting Started</li></a>
             </div>
             <div className={styles.productSection}>
               Playground
@@ -75,17 +75,7 @@ export default function Commerce() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <Footer />
+
     </div>)
 }
