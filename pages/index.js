@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link';
-
 
 export default function Home() {
   return (
@@ -15,24 +13,52 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to Dev Portal Demo
+          🚧 Welcome to Dev Portal Demo 🚧
         </h1>
 
-        What do we NEED to have a minimum viable dev portal
-
         <div className={styles.grid}>
-          {/* PRODUCTS */}
-          <div className={styles.card}>
-            <a href="https://www.sitecore.com/products" ><h2>Products (where do these link? Marketing page ❓) &rarr;</h2></a>
-            <a href="products/commerce" className={styles.link}><li>Commerce</li></a>
-            <a href="products/personalization" className={styles.link}><li>Personalization</li></a>
-            <a href="products/sitecoreCDP" className={styles.link}><li>Sitecore CDP</li></a>
-            <a href="products/marketingautomation" className={styles.link}><li>Marketing Automation</li></a>
-            <a href="products/webCMS" className={styles.link}><li>Web CMS</li></a>
-            <a href="products/headlessCMS" className={styles.link}><li>Headless CMS</li></a>
-            <a href="products/DAM" className={styles.link}><li>DAM</li></a>
+          <div className={styles.searchCard}>
+            <h2>I'm a search box 🔍</h2>
           </div>
-
+          {/* PRODUCT CATEGORIES */}
+          <div className={styles.productCategoryCard}>
+            <a href="products/commerce" ><h2>Commerce 💸 &rarr;</h2></a>
+            <a href="" className={styles.link}><li>Getting started with Commerce</li></a>
+            <a href="" className={styles.link}><li>Docs</li></a>
+          </div>
+          <div className={styles.productCategoryCard}>
+            <a href="products/personalization" ><h2>Personalization 🕵️‍♀️ &rarr;</h2></a>
+            <a href="" className={styles.link}><li>Getting started with Personalization</li></a>
+            <a href="" className={styles.link}><li>Docs</li></a>
+          </div>
+          <div className={styles.productCategoryCard}>
+            <a href="products/sitecoreCDP" ><h2>Sitecore CDP 👨‍👨‍👧‍👧 &rarr;</h2></a>
+            <a href="" className={styles.link}><li>Getting started with CDP</li></a>
+            <a href="" className={styles.link}><li>Docs</li></a>
+          </div>
+          <div className={styles.productCategoryCard}>
+            <a href="products/marketingAutomation" ><h2>Marketing Automation 🚗 &rarr;</h2></a>
+            <a href="" className={styles.link}><li>Getting started with Marketing Automation</li></a>
+            <a href="" className={styles.link}><li>Docs</li></a>
+          </div>
+          <div className={styles.productCategoryCard}>
+            <a href="products/webCMS" ><h2>Web CMS 💾 &rarr;</h2></a>
+            <a href="" className={styles.link}><li>Getting started with Web CMS</li></a>
+            <a href="" className={styles.link}><li>Docs</li></a>
+          </div>
+          <div className={styles.productCategoryCard}>
+            <a href="products/headlessCMS" ><h2>Headless CMS 💻 &rarr;</h2></a>
+            <a href="" className={styles.link}><li>Getting started with Headless CMS</li></a>
+            <a href="" className={styles.link}><li>Docs</li></a>
+          </div>
+          <div className={styles.productCategoryCard}>
+            <a href="products/DAM" ><h2>DAM 📀 &rarr;</h2></a>
+            <a href="" className={styles.link}><li>Getting started with DAM</li></a>
+            <a href="" className={styles.link}><li>Docs</li></a>
+          </div>
+          <div className={styles.youtubeCard}>
+            <h2>I'm recent YouTube videos 🎥</h2>
+          </div>
         </div>
       </main>
 
