@@ -15,6 +15,17 @@ a {
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: underline; 
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #ad76eb;
+}
+
+
 a[href=""]{
   color:red;
 }

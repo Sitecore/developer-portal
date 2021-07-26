@@ -1,8 +1,27 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import Footer from '../../components/footer'
+import { getMarkdownData } from "../../lib/getMarkdownData";
+import ReactMarkdown from "react-markdown";
 
-export default function Personalization() {
+export async function getStaticProps() {
+    const jssData = await getMarkdownData("jss.md");
+    const sitecoreCDPData = await getMarkdownData("sitecoreCDP.md");
+    const federatedExperienceManagerData = await getMarkdownData("federatedExperienceManager.md");
+    const universalTracker = await getMarkdownData("universalTracker.md");
+
+    return {
+        props: {
+            jssData,
+            sitecoreCDPData,
+            federatedExperienceManagerData,
+            universalTracker
+        },
+    };
+}
+
+export default function Personalization({ jssData, sitecoreCDPData, federatedExperienceManagerData, universalTracker }) {
+
     return (
         <div className={styles.container}>
             <Head>
@@ -20,48 +39,24 @@ export default function Personalization() {
                     <div className={styles.searchCard}>
                         <h2>I'm a unified search 🔍</h2>
                     </div>
+
+
+
                     <div className={styles.productCategoryCard}>
-                        <a href="" ><h2>Boxever (Sitecore CDP)&rarr;</h2></a>
-                        With ongoing name change and brand change to Sitecore it's hard to find Boxever materials
-                        <h4>Docs</h4>
-                        <a href="" className={styles.link}><li>Documentation</li></a>
-                        <h4>Discover</h4>
-                        <a href="" className={styles.link}><li>Discover Boxever</li></a>
-                        <h4>Learn</h4>
-                        <a href="" className={styles.link}><li>Getting Started</li></a>
-                        <h4>Playground</h4>
-                        <a href="" className={styles.link}><li>Playground</li></a>
+                        <ReactMarkdown>{sitecoreCDPData.markdown}</ReactMarkdown>
                     </div>
                     <div className={styles.productCategoryCard}>
-                        <a href="https://jss.sitecore.com/" ><h2>JSS&rarr;</h2></a>
-                        <h4>Docs</h4>
-                        <a href="https://doc.sitecore.com/en/developers/101/xp/index.html" className={styles.link}><li>Documentation</li></a>
-                        <h4>Discover</h4>
-                        <a href="" className={styles.link}><li>Discover Sitecore XP</li></a>
-                        <h4>Learn</h4>
-                        <a href="https://learning.sitecore.com/pathway/sitecore-experience-platform--technical" className={styles.link}><li>Sitecore Experience Platform—Technical</li></a>
-                        <h4>Playground</h4>
-                        <a href="" className={styles.link}><li>Playground</li></a>
+                        <ReactMarkdown>{jssData.markdown}</ReactMarkdown>
                     </div>
                     <div className={styles.productCategoryCard}>
-                        <a href="https://www.sitecore.com/products/sitecore-ai" ><h2>Sitecore AI&rarr;</h2></a>
-                        <h4>Docs</h4>
-                        <a href="https://doc.sitecore.com/en/users/100/sitecore-experience-platform/sitecore-ai---automated-personalization.html" className={styles.link}><li>Documentation</li></a>
-                        <h4>Discover</h4>
-                        <a href="" className={styles.link}><li>Discover Sitecore AI</li></a>
-                        <h4>Learn</h4>
-                        <a href="" className={styles.link}><li>Sitecore Experience Platform—Technical</li></a>
-                        <h4>Playground</h4>
-                        <a href="" className={styles.link}><li>Playground</li></a>
+                        <ReactMarkdown>{federatedExperienceManagerData.markdown}</ReactMarkdown>
                     </div>
-                    <div className={styles.socialsCard}>
-                        <h2>News & Announcements</h2>
-                        <a href="" className={styles.link}><li>Cool new personalization things</li></a>
+                    <div className={styles.productCategoryCard}>
+                        <ReactMarkdown>{universalTracker.markdown}</ReactMarkdown>
                     </div>
-                    <div className={styles.socialsCard}>
-                        <h2>Get Help</h2>
-                        <a href="https://support.sitecore.com/kb?id=kb_home" className={styles.link}><li>Sitecore Support</li></a>
-                    </div>
+
+
+
                     <div className={styles.socialsCard}>
                         <h2>News & Announcements</h2>
                         <a href="" className={styles.link}><li>Cool new personalization things</li></a>
@@ -79,8 +74,7 @@ export default function Personalization() {
                     </div>
                 </div>
             </main>
-
             <Footer />
-
-        </div>)
+        </div >
+    )
 }
