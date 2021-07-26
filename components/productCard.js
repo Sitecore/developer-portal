@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css'
 
-export default function Personalization({ productName, productLink, DocLinks, DiscoverLinks, LearnLinks, PlaygroundLinks }) {
+export default function ProductCard({ productName, productLink, DocLinks, DiscoverLinks, LearnLinks, PlaygroundLinks }) {
     return (
         <div className={styles.productCategoryCard}>
             <a href={productLink} ><h2>{productName}&rarr;</h2></a>
