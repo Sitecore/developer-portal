@@ -1,8 +1,14 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import Footer from '../../components/footer'
+import ProductCard from '../../components/productCard'
+
 
 export default function Commerce() {
+
+  const { OrderCloudDocLinks, OrderCloudDiscoverLinks, OrderCloudLearnLinks, OrderCloudPlaygroundLinks } = OrderCloudLinks()
+  const { SitecoreCommerceDocLinks, SitecoreCommerceDiscoverLinks, SitecoreCommerceLearnLinks, SitecoreCommercePlaygroundLinks } = SitecoreCommerceLinks()
+
   return (
     <div className={styles.container}>
       <Head>
@@ -20,29 +26,22 @@ export default function Commerce() {
           <div className={styles.searchCard}>
             <h2>I'm a unified search 🔍</h2>
           </div>
-          <div className={styles.productCategoryCard}>
-            <a href="" ><h2>Four51 (OrderCloud)&rarr;</h2></a>
-            <h4>Docs</h4>
-            <a href="https://four51.github.io/#/api" className={styles.link}><li>Four51 Documentation</li></a>
-            <h4>Discover</h4>
-            <a href="https://www.sitecore.com/resources/index/guide/ordercloud-feature-guide" className={styles.link}><li>Ordercloud Feature Guide</li></a>
-            <h4>Learn</h4>
-            <a href="https://ordercloud.io/getting-started/intro-to-ordercloud" className={styles.link}><li>Getting Started</li></a>
-            <h4>Playground</h4>
-            <a href="https://github.com/ordercloud-api" className={styles.link}><li>The Code 👩‍💻</li></a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="" ><h2>Sitecore Commerce&rarr;</h2></a>
-            <h4>Docs</h4>
-            <a href="https://doc.sitecore.com/en/developers/101/xc/" className={styles.link}><li>Sitecore Commerce Documentation</li></a>
-            <h4>Discover</h4>
-            <a href="" className={styles.link}><li>Knowledge Base</li></a>
-            <h4>Learn</h4>
-            <a href="https://www.youtube.com/watch?v=T0cn3yBbRro&list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94" className={styles.link}><li>YouTube: Sitecore Experience Commerce Deep Dive</li></a>
-            <a href="https://doc.sitecore.com/en/developers/92/sitecore-experience-commerce/getting-started-with-development.html" className={styles.link}><li>Getting Started</li></a>
-          <h4>Playground</h4>
-            <a href="https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx" className={styles.link}><li>Downloads</li></a>
-          </div>
+          <ProductCard
+            productName="Four51 (OrderCloud)"
+            productLink=""
+            DocLinks={OrderCloudDocLinks}
+            DiscoverLinks={OrderCloudDiscoverLinks}
+            LearnLinks={OrderCloudLearnLinks}
+            PlaygroundLinks={OrderCloudPlaygroundLinks}
+          />          
+          <ProductCard
+            productName="Sitecore Commerce"
+            productLink=""
+            DocLinks={SitecoreCommerceDocLinks}
+            DiscoverLinks={SitecoreCommerceDiscoverLinks}
+            LearnLinks={SitecoreCommerceLearnLinks}
+            PlaygroundLinks={SitecoreCommercePlaygroundLinks}
+          />
           <div className={styles.socialsCard}>
             <h2>News & Announcements</h2>
             <a href="" className={styles.link}><li>Cool new commerce things</li></a>
@@ -65,3 +64,36 @@ export default function Commerce() {
 
     </div>)
 }
+function SitecoreCommerceLinks() {
+  const SitecoreCommerceDocLinks = [
+    { text: "Sitecore Commerce Documentation", url: "https://doc.sitecore.com/en/developers/101/xc/" }
+  ]
+  const SitecoreCommerceDiscoverLinks = [
+    { text: "Knowledge Base", url: "" }
+  ]
+  const SitecoreCommerceLearnLinks = [
+    { text: "YouTube: Sitecore Experience Commerce Deep Dive", url: "https://www.youtube.com/watch?v=T0cn3yBbRro&list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94" },
+    { text: "Getting Started", url: "https://doc.sitecore.com/en/developers/92/sitecore-experience-commerce/getting-started-with-development.html" }
+  ]
+  const SitecoreCommercePlaygroundLinks = [
+    { text: "Downloads", url: "https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx" }
+  ]
+  return { SitecoreCommerceDocLinks, SitecoreCommerceDiscoverLinks, SitecoreCommerceLearnLinks, SitecoreCommercePlaygroundLinks }
+}
+
+function OrderCloudLinks() {
+  const OrderCloudDocLinks = [
+    { text: "Four51 Documentation", url: "https://four51.github.io/#/api" }
+  ]
+  const OrderCloudDiscoverLinks = [
+    { text: "Ordercloud Feature Guide", url: "https://www.sitecore.com/resources/index/guide/ordercloud-feature-guide" }
+  ]
+  const OrderCloudLearnLinks = [
+    { text: "Getting Started with OrderCloud", url: "https://ordercloud.io/getting-started/intro-to-ordercloud" }
+  ]
+  const OrderCloudPlaygroundLinks = [
+    { text: "The Code 👩‍💻", url: "https://github.com/ordercloud-api" }
+  ]
+  return { OrderCloudDocLinks, OrderCloudDiscoverLinks, OrderCloudLearnLinks, OrderCloudPlaygroundLinks }
+}
+
