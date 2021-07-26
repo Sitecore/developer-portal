@@ -23,13 +23,15 @@ export default function Home() {
           {/* PRODUCT CATEGORIES */}
           <div className={styles.productCategoryCard}>
             <a href="products/commerce" ><h2>Commerce 💸 &rarr;</h2></a>
-            <a href="" className={styles.link}><li>Getting started with Commerce</li></a>
-            <a href="" className={styles.link}><li>Docs</li></a>
+            <a href="products/commerce" className={styles.link}><li>Getting started with Commerce</li></a>
+            <a href="https://four51.github.io/#/api" className={styles.link}><li>Four51 Documentation</li></a>
+            <a href="https://doc.sitecore.com/en/developers/101/xc/" className={styles.link}><li>Sitecore Commerce Documentation</li></a>
           </div>
           <div className={styles.productCategoryCard}>
             <a href="products/personalization" ><h2>Personalization 🕵️‍♀️ &rarr;</h2></a>
-            <a href="" className={styles.link}><li>Getting started with Personalization</li></a>
-            <a href="" className={styles.link}><li>Docs</li></a>
+            <a href="products/personalization" className={styles.link}><li>Getting started with Personalization</li></a>
+            <a href="" className={styles.link}><li>Boxever Documentation</li></a>
+            <a href="" className={styles.link}><li>Sitecore XP Documentation</li></a>
           </div>
           <div className={styles.productCategoryCard}>
             <a href="products/sitecoreCDP" ><h2>Sitecore CDP 👨‍👨‍👧‍👧 &rarr;</h2></a>
