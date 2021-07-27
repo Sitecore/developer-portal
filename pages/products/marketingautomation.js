@@ -8,17 +8,25 @@ export async function getStaticProps() {
     const moosend = await getMarkdownData("moosend.md");
     const marketingAutomationEngine = await getMarkdownData("marketingAutomationEngine.md");
     const marketingOperations = await getMarkdownData("marketingOperations.md");
+    const segmentationAndConditions = await getMarkdownData("segmentationAndConditions.md");
+    const processing = await getMarkdownData("processing.md");
+    const cortexProcessingEngine = await getMarkdownData("cortexProcessingEngine.md");
+    const reporting = await getMarkdownData("reporting.md");
 
     return {
         props: {
             moosend,
             marketingAutomationEngine,
-            marketingOperations
+            marketingOperations,
+            segmentationAndConditions,
+            processing,
+            cortexProcessingEngine,
+            reporting
         },
     };
 }
 
-export default function MarketingAutomation({ moosend, marketingAutomationEngine, marketingOperations }) {
+export default function MarketingAutomation({ moosend, marketingAutomationEngine, marketingOperations, segmentationAndConditions, processing, cortexProcessingEngine, reporting }) {
 
     return (
         <div className={styles.container}>
@@ -47,6 +55,18 @@ export default function MarketingAutomation({ moosend, marketingAutomationEngine
                     </div>
                     <div className={styles.productCategoryCard}>
                         <ReactMarkdown>{marketingOperations.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.productCategoryCard}>
+                        <ReactMarkdown>{segmentationAndConditions.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.productCategoryCard}>
+                        <ReactMarkdown>{processing.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.productCategoryCard}>
+                        <ReactMarkdown>{cortexProcessingEngine.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.productCategoryCard}>
+                        <ReactMarkdown>{reporting.markdown}</ReactMarkdown>
                     </div>
 
 
