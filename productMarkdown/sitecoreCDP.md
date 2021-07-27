@@ -1,5 +1,7 @@
 # [Sitecore CDP]()
 
+[What and Why]()
+
 Docs
 
  - [Sitecore CDP Documentation]()

@@ -1,5 +1,7 @@
 # [Sitecore Commerce]()
 
+[What and Why]()
+
 Docs
 
  - [Sitecore Commerce Documentation](https://doc.sitecore.com/en/developers/101/xc/)
