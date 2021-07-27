@@ -9,18 +9,22 @@ export async function getStaticProps() {
     const sitecoreCDPData = await getMarkdownData("sitecoreCDP.md");
     const federatedExperienceManagerData = await getMarkdownData("federatedExperienceManager.md");
     const universalTracker = await getMarkdownData("universalTracker.md");
+    const segmentationAndConditions = await getMarkdownData("segmentationAndConditions.md");
+    const webTracking = await getMarkdownData("webTracking.md");
 
     return {
         props: {
             jssData,
             sitecoreCDPData,
             federatedExperienceManagerData,
-            universalTracker
+            universalTracker,
+            segmentationAndConditions,
+            webTracking,
         },
     };
 }
 
-export default function Personalization({ jssData, sitecoreCDPData, federatedExperienceManagerData, universalTracker }) {
+export default function Personalization({ jssData, sitecoreCDPData, federatedExperienceManagerData, universalTracker, segmentationAndConditions, webTracking }) {
 
     return (
         <div className={styles.container}>
@@ -32,7 +36,8 @@ export default function Personalization({ jssData, sitecoreCDPData, federatedExp
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Personalization 🕵️‍♀️
+                    Personalization 🕵️‍♀️ {someText}
+
                 </h1>
                 <a href="/" className={styles.link}><h2>Take me Home</h2></a>
                 <div className={styles.grid}>
@@ -54,8 +59,20 @@ export default function Personalization({ jssData, sitecoreCDPData, federatedExp
                     <div className={styles.productCategoryCard}>
                         <ReactMarkdown>{universalTracker.markdown}</ReactMarkdown>
                     </div>
+                    <div className={styles.productCategoryCard}>
+                        <ReactMarkdown>{segmentationAndConditions.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.productCategoryCard}>
+                        <ReactMarkdown>{webTracking.markdown}</ReactMarkdown>
+                    </div>
 
-
+                    <div className={styles.socialsCard}>
+                        <h2>Commerce Socials</h2>
+                        <a href="https://sitecore.stackexchange.com/?tags=jss" className={styles.link}><li>JSS Stack Exchange Tag</li></a>
+                        <a href="https://sitecore.stackexchange.com/questions/tagged/personalization" className={styles.link}><li>Personalization Stack Exchange Tag</li></a>
+                        <a href="https://twitter.com/search?q=sitecorejss&src=typed_query&f=live" className={styles.link}><li>#SitecoreJSS latest Tweets</li></a>
+                        <a href="https://twitter.com/boxever" className={styles.link}><li>Boxever Twitter</li></a>
+                    </div>
 
                     <div className={styles.socialsCard}>
                         <h2>News & Announcements</h2>
@@ -65,13 +82,7 @@ export default function Personalization({ jssData, sitecoreCDPData, federatedExp
                         <h2>Get Help</h2>
                         <a href="https://support.sitecore.com/kb?id=kb_home" className={styles.link}><li>Sitecore Support</li></a>
                     </div>
-                    <div className={styles.socialsCard}>
-                        <h2>Commerce Socials</h2>
-                        <a href="https://sitecore.stackexchange.com/?tags=jss" className={styles.link}><li>JSS Stack Exchange Tag</li></a>
-                        <a href="https://sitecore.stackexchange.com/questions/tagged/personalization" className={styles.link}><li>Personalization Stack Exchange Tag</li></a>
-                        <a href="https://twitter.com/search?q=sitecorejss&src=typed_query&f=live" className={styles.link}><li>#SitecoreJSS latest Tweets</li></a>
-                        <a href="https://twitter.com/boxever" className={styles.link}><li>Boxever Twitter</li></a>
-                    </div>
+
                 </div>
             </main>
             <Footer />

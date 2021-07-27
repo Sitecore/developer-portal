@@ -44,7 +44,14 @@ export default function Commerce({ orderCloudData, sitecoreCommerceData }) {
             <ReactMarkdown>{sitecoreCommerceData.markdown}</ReactMarkdown>
           </div>
 
-          
+          <div className={styles.socialsCard}>
+            <h2>Commerce Socials</h2>
+            <a href="https://sitecore.stackexchange.com/?tags=sitecore-commerce" className={styles.link}><li>Sitecore Commerce Stack Exchange Tag</li></a>
+            <a href="https://twitter.com/search?q=%23sitecorecommerce&src=typed_query&f=live" className={styles.link}><li>#SitecoreCommerce latest Tweets</li></a>
+            <a href="https://twitter.com/Four51ecommerce" className={styles.link}><li>Four51 Twitter</li></a>
+            <a href="https://twitter.com/search?q=%23ordercloud&src=typed_query&f=live" className={styles.link}><li>#OrderCloud latest Tweets</li></a>
+          </div>
+                 
           <div className={styles.socialsCard}>
             <h2>News & Announcements</h2>
             <a href="" className={styles.link}><li>Cool new commerce things</li></a>
@@ -53,13 +60,7 @@ export default function Commerce({ orderCloudData, sitecoreCommerceData }) {
             <h2>Get Help</h2>
             <a href="https://support.sitecore.com/kb?id=kb_home" className={styles.link}><li>Sitecore Support</li></a>
           </div>
-          <div className={styles.socialsCard}>
-            <h2>Commerce Socials</h2>
-            <a href="https://sitecore.stackexchange.com/?tags=sitecore-commerce" className={styles.link}><li>Sitecore Commerce Stack Exchange Tag</li></a>
-            <a href="https://twitter.com/search?q=%23sitecorecommerce&src=typed_query&f=live" className={styles.link}><li>#SitecoreCommerce latest Tweets</li></a>
-            <a href="https://twitter.com/Four51ecommerce" className={styles.link}><li>Four51 Twitter</li></a>
-            <a href="https://twitter.com/search?q=%23ordercloud&src=typed_query&f=live" className={styles.link}><li>#OrderCloud latest Tweets</li></a>
-          </div>
+
         </div>
       </main>
 
