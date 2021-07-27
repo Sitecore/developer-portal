@@ -18,3 +18,8 @@ Learn
 Playground
 
  - [Downloads](https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx)
+ 
+Socials
+
+ - [Sitecore Commerce StackExchange Tag](https://sitecore.stackexchange.com/?tags=sitecore-commerce)
+ - [#SitecoreCommerce Twitter](https://twitter.com/search?q=%23sitecorecommerce&src=typed_query&f=live)

@@ -36,7 +36,7 @@ export default function Personalization({ jssData, sitecoreCDPData, federatedExp
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Personalization 🕵️‍♀️ {someText}
+                    Personalization 🕵️‍♀️
 
                 </h1>
                 <a href="/" className={styles.link}><h2>Take me Home</h2></a>
@@ -67,11 +67,7 @@ export default function Personalization({ jssData, sitecoreCDPData, federatedExp
                     </div>
 
                     <div className={styles.socialsCard}>
-                        <h2>Commerce Socials</h2>
-                        <a href="https://sitecore.stackexchange.com/?tags=jss" className={styles.link}><li>JSS Stack Exchange Tag</li></a>
-                        <a href="https://sitecore.stackexchange.com/questions/tagged/personalization" className={styles.link}><li>Personalization Stack Exchange Tag</li></a>
-                        <a href="https://twitter.com/search?q=sitecorejss&src=typed_query&f=live" className={styles.link}><li>#SitecoreJSS latest Tweets</li></a>
-                        <a href="https://twitter.com/boxever" className={styles.link}><li>Boxever Twitter</li></a>
+                        <h2>General Personalization Socials</h2>
                     </div>
 
                     <div className={styles.socialsCard}>

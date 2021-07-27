@@ -17,3 +17,7 @@ Learn
 Playground
 
  - [Playground Sitecore CDP]()
+
+Socials
+
+ - [Boxever Twitter Account](https://twitter.com/boxever)

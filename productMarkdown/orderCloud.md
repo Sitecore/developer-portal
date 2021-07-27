@@ -17,3 +17,8 @@ Learn
 Playground
 
  - [The Code 👩‍💻](https://github.com/ordercloud-api)
+ 
+Socials
+
+ - [Four51 Twitter Account](https://twitter.com/Four51ecommerce)
+ - [#OrderCloud Twitter](https://twitter.com/search?q=%23ordercloud&src=typed_query&f=live)
