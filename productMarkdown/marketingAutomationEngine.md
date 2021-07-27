@@ -12,7 +12,7 @@ Discover
 
 Learn
 
- - [MAE Video](https://www.youtube.com/watch?v=0HxUph2YLZc&feature=emb_title)
+ - [MAE YouTube playlist](https://www.youtube.com/watch?v=-44xRa0ju2k&list=PL1jJVFm_lGnyicywCcwcWa8RtsoiJEbC9)
 
 Playground
 

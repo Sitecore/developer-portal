@@ -69,6 +69,9 @@ export default function Home() {
           <div className={styles.youtubeCard}>
             <h2>Upcoming Events</h2>
           </div>
+          <div className={styles.youtubeCard}>
+            <h2>Help and Feedback</h2>
+          </div>
         </div>
       </main>
 
