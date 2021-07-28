@@ -65,6 +65,7 @@ export default function Home() {
             <h2>Join these cool Sitecore Communities 🤖</h2>
             <a href="https://sitecorechat.slack.com/" className={styles.link}><li>Slack</li></a>
             <a href="https://sitecore.stackexchange.com/" className={styles.link}><li>Stack Exchange</li></a>
+            <a href="https://www.sitecore.com/knowledge-center/blog" className={styles.link}><li>Sitecore Blog</li></a>
           </div>
           <div className={styles.youtubeCard}>
             <h2>Upcoming Events</h2>
