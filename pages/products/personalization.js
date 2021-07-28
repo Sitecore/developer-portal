@@ -5,7 +5,6 @@ import { getMarkdownData } from "../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-    const jssData = await getMarkdownData("jss.md");
     const federatedExperienceManagerData = await getMarkdownData("federatedExperienceManager.md");
     const universalTracker = await getMarkdownData("universalTracker.md");
     const segmentationAndConditions = await getMarkdownData("segmentationAndConditions.md");
@@ -13,8 +12,6 @@ export async function getStaticProps() {
 
     return {
         props: {
-            jssData,
-            sitecoreCDPData,
             federatedExperienceManagerData,
             universalTracker,
             segmentationAndConditions,
@@ -23,7 +20,7 @@ export async function getStaticProps() {
     };
 }
 
-export default function Personalization({ jssData, federatedExperienceManagerData, universalTracker, segmentationAndConditions, webTracking }) {
+export default function Personalization({ federatedExperienceManagerData, universalTracker, segmentationAndConditions, webTracking }) {
 
     return (
         <div className={styles.container}>
@@ -45,9 +42,6 @@ export default function Personalization({ jssData, federatedExperienceManagerDat
                     </div>
 
 
-                    <div className={styles.productCategoryCard}>
-                        <ReactMarkdown>{jssData.markdown}</ReactMarkdown>
-                    </div>
                     <div className={styles.productCategoryCard}>
                         <ReactMarkdown>{federatedExperienceManagerData.markdown}</ReactMarkdown>
                     </div>
