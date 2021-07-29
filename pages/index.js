@@ -44,6 +44,11 @@ export default function Home() {
             <a href="" className={styles.link}><li>Docs</li></a>
           </div>
           <div className={styles.productCategoryCard}>
+            <a href="products/marketingAutomation2" ><h2>Marketing Automation #2 🚗 &rarr;</h2></a>
+            <a href="" className={styles.link}><li>Getting started with Marketing Automation</li></a>
+            <a href="" className={styles.link}><li>Docs</li></a>
+          </div>
+          <div className={styles.productCategoryCard}>
             <a href="products/webCMS" ><h2>Web CMS 💾 &rarr;</h2></a>
             <a href="" className={styles.link}><li>Getting started with Web CMS</li></a>
             <a href="" className={styles.link}><li>Docs</li></a>
