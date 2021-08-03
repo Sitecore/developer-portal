@@ -19,3 +19,5 @@ Playground
  - [Playground MAE]()
 
 Socials
+
+- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/marketing-automation)
