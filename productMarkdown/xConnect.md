@@ -20,3 +20,5 @@ Playground
 
 Socials
 
+- [Sitecore StackExchange](https://sitecore.stackexchange.com/questions/tagged/xconnect)
+
