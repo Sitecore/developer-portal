@@ -30,7 +30,7 @@ Playground
 
 Socials
 
- - [JSS StackExchange Tag](https://sitecore.stackexchange.com/?tags=jss)
+ - [JSS StackExchange Tag](https://sitecore.stackexchange.com/questions/tagged/jss)
  - [Headless StackExchange Tag](https://sitecore.stackexchange.com/questions/tagged/headless)
  - [#SitecoreJSS Twitter](https://twitter.com/search?q=sitecorejss&src=typed_query&f=live)
  - [#SitecoreHeadless Twitter](https://twitter.com/search?q=%23SitecoreHeadless&src=typed_query&f=live)
