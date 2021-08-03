@@ -37,12 +37,12 @@ export default function MarketingAutomation2({ moosend, sitecoreXPMarketingAutom
                     </div>
 
                     <div className={styles.productCategoryCardCompact}>
-                        <h2>Moosend</h2>
-                        <p>A place to send moo's</p>
+                        <h2>Sitecore Send</h2>
+                        <p>A place to send Moos</p>
                     </div>
                     
                     <div className={styles.productCategoryCardCompact}>
-                        <h2>Sitecore XP: Marketing Automation</h2>
+                        <h2>Sitecore XP: Marketing Automation and EXM</h2>
                         <p>A market for your automation</p>
                     </div>
 
