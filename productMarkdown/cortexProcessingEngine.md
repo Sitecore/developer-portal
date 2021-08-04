@@ -4,7 +4,7 @@
 
 Docs
 
- - [CPE Documentation](https://doc.sitecore.com/en/developers/93/sitecore-experience-platform/sitecore-cortex-processing-engine.html)
+ - [CPE Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/sitecore-cortex-processing-engine.html)
 
 Discover
 
@@ -19,3 +19,5 @@ Playground
  - [Playground CPE]()
 
 Socials
+
+- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/cortex)
