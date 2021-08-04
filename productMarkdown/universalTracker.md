@@ -4,7 +4,7 @@
 
 Docs
 
- - [Universal Tracker Documentation](https://doc.sitecore.com/en/developers/93/sitecore-experience-platform/universal-tracker.html)
+ - [Universal Tracker Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/universal-tracker.html)
 
 Discover
 
@@ -20,4 +20,4 @@ Playground
   
 Socials
 
- - [Universal Tracker Socials]()
+ - [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/universal-tracker)
