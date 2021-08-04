@@ -39,7 +39,7 @@ export default function Home() {
             <a href="" className={styles.link}><li>Docs</li></a>
           </div>
           <div className={styles.productCategoryCard}>
-            <a href="products/marketingAutomation" ><h2>Marketing Automation 🚗 &rarr;</h2></a>
+            <a href="products/marketingautomation" ><h2>Marketing Automation 🚗 &rarr;</h2></a>
             <a href="" className={styles.link}><li>Getting started with Marketing Automation</li></a>
             <a href="" className={styles.link}><li>Docs</li></a>
           </div>
