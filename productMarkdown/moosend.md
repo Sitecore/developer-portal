@@ -6,21 +6,22 @@
 
 Docs
 
- - [Moosend Documentation](https://jss.sitecore.com/docs)
+ - [Documentation](https://moosend.com/help/)
 
 Discover
 
- - [Discover Moosend]()
+ - [Discover]()
 
 Learn
 
- - [Learn Moosend]()
+ - [Learn Moosend](https://academy.moosend.com/)
 
 Playground
 
- - [Playground Moosend]()
+ - [Extra tools](https://moosend.com/resources/fancy-toolshed/)
 
 Socials
 
  - [Moosend Twitter Account](https://twitter.com/moosend)
  - [#Moosend Twitter](https://twitter.com/search?q=%23moosend&src=typed_query&f=live)
+ - [Moosend blog](https://moosend.com/blog/)
