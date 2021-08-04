@@ -4,7 +4,7 @@
 
 Docs
 
- - [Segmentation And Conditions Documentation](https://doc.sitecore.com/en/developers/90/sitecore-experience-platform/segmentation-engine.html)
+ - [Segmentation And Conditions Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/segmentation-engine.html)
 
 Discover
 
