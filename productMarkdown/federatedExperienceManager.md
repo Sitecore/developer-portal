@@ -4,20 +4,20 @@
 
 Docs
 
- - [FEM Documentation](https://doc.sitecore.com/en/developers/91/sitecore-experience-platform/federated-experience-manager.html)
+ - [FXM Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/federated-experience-manager.html)
 
 Discover
 
- - [Discover FEM]()
+ - [Discover FXM]()
 
 Learn
 
- - [Learn FEM]()
+ - [Learn FXM]()
 
 Playground
 
- - [Playground FEM]()
+ - [Playground FXM]()
  
 Socials
 
- - [FEM Socials]()
+ - [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/fxm)
