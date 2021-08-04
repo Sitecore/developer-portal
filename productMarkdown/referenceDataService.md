@@ -4,18 +4,18 @@
 
 Docs
 
- - [RDS Documentation](https://doc.sitecore.com/en/developers/91/sitecore-experience-platform/reference-data-service.html)
+ - [Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/reference-data-service.html)
 
 Discover
 
- - [Discover RDS]()
+ - [Discover]()
 
 Learn
 
- - [Learn RDS]()
+ - [Learn]()
 
 Playground
 
- - [Playground RDS]()
+ - [Playground]()
 
 Socials
