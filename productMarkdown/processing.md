@@ -5,7 +5,7 @@
 
 Docs
 
- - [Processing Documentation](https://doc.sitecore.com/en/developers/82/sitecore-experience-platform/processing-overview.html)
+ - [Processing Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/processing.html)
 
 Discover
 
@@ -20,3 +20,4 @@ Playground
  - [Playground Processing]()
 
 Socials
+- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/processing)
