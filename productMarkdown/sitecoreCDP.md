@@ -4,15 +4,16 @@
 
 Docs
 
- - [Sitecore CDP Documentation]()
+ - [Developer Docs - Data Model 2.1](https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/index-en.html)
+ - [Developer Docs - Data Model 2.0](https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/index-en.html)
 
 Discover
 
- - [Discover Sitecore CDP]()
+ - [Customer Data Platform overview](https://www.sitecore.com/products/customer-data-platform)
 
 Learn
 
- - [Learn Sitecore CDP]()
+ - [Boxever Training path](https://learning.sitecore.com/pathway/boxever-training)
 
 Playground
 
@@ -20,4 +21,5 @@ Playground
 
 Socials
 
- - [Boxever Twitter Account](https://twitter.com/boxever)
+ - [Slack](https://app.slack.com/client/T09SHRBNU/C0294KX3RQF)
+ - [Sitecore Stack Exchange]()
