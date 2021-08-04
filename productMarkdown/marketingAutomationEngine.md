@@ -4,19 +4,19 @@
 
 Docs
 
- - [MAE Documentation](https://doc.sitecore.com/en/developers/91/sitecore-experience-platform/marketing-automation.html)
+ - [Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/marketing-automation.html)
 
 Discover
 
- - [Discover MAE]()
+ - [Discover]()
 
 Learn
 
- - [MAE YouTube playlist](https://www.youtube.com/watch?v=-44xRa0ju2k&list=PL1jJVFm_lGnyicywCcwcWa8RtsoiJEbC9)
+ - [YouTube playlist](https://www.youtube.com/watch?v=-44xRa0ju2k&list=PL1jJVFm_lGnyicywCcwcWa8RtsoiJEbC9)
 
 Playground
 
- - [Playground MAE]()
+ - [Playground]()
 
 Socials
 
