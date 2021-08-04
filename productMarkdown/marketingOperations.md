@@ -4,7 +4,7 @@
 
 Docs
 
- - [Marketing Operations Documentation](https://doc.sitecore.com/en/users/92/sitecore-experience-platform/marketing-operations.html)
+ - [Marketing Operations Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/marketing-operations.html)
 
 Discover
 
