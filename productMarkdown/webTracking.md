@@ -4,7 +4,7 @@
 
 Docs
 
- - [Web Tracking Documentation](https://doc.sitecore.com/en/developers/91/sitecore-experience-platform/web-tracking.html)
+ - [Web Tracking Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/web-tracking.html)
 
 Discover
 
