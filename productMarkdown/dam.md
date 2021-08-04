@@ -1,11 +1,11 @@
 ## What and why
 
 - [Content Hub overview](https://www.sitecore.com/products/content-hub)
-- [DAM](https://www.sitecore.com/products/content-hub/digital-asset-management?utm_websource=products.content-hub)
-- [CMP](https://www.sitecore.com/products/content-hub/content-marketing-platform?utm_websource=products.content-hub)
-- [MRM](https://www.sitecore.com/products/content-hub/marketing-resource-management?utm_websource=products.content-hub)
-- [PCM](https://www.sitecore.com/products/content-hub/product-content-management?utm_websource=products.content-hub)
-- [Web-to-print](https://www.sitecore.com/products/content-hub/web-to-print?utm_websource=products.content-hub)
+- [DAM](https://www.sitecore.com/products/content-hub/digital-asset-management)
+- [CMP](https://www.sitecore.com/products/content-hub/content-marketing-platform)
+- [MRM](https://www.sitecore.com/products/content-hub/marketing-resource-management)
+- [PCM](https://www.sitecore.com/products/content-hub/product-content-management)
+- [Web-to-print](https://www.sitecore.com/products/content-hub/web-to-print)
 
 ## Get Started
 
@@ -30,3 +30,8 @@
 - [API Reference / SDKs](https://docs.stylelabs.com/content/4.0.x/api-reference/index.html)
 
 ## Playground
+
+
+## Socials
+- [Sitecore Stack Exchange - Content Hub](https://sitecore.stackexchange.com/questions/tagged/content-hub)
+- [Sitecore Stack Exchange - Content Hub Scripting](https://sitecore.stackexchange.com/questions/tagged/content-hub-scripting)
