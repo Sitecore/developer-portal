@@ -13,7 +13,7 @@ export default function Home() {
 
       <nav className={styles.nav}>
         <div class={styles.container}>
-          <span class={styles.h2}>Solution</span>
+          <b>Navigate by Solution</b>
           <ul>
             <li>Content Management
               <ul>
@@ -46,6 +46,37 @@ export default function Home() {
                 <li><a href="">Sitecore Experience Commerce</a></li>
               </ul>
             </li>
+          </ul>
+        </div>
+        <div class={styles.container}>
+          <b>Navigate by Product</b>
+          <ul>
+            <li>Sitecore Content Hub
+              <ul>
+                <li><a href="">Content Management</a></li>
+                <li><a href="">Digital Asset Management</a></li>
+              </ul>
+            </li>
+            <li>Sitecore CDP
+              <ul>
+                <li><a href="">Customer Data Management</a></li>
+                <li><a href="">Personalization and Testing</a></li>
+              </ul>
+            </li>
+            <li>Sitecore Experience Manager
+              <ul>
+                <li><a href="">Content Management</a></li>
+              </ul>
+            </li>
+            <li>Sitecore Experience Platform
+              <ul>
+                <li><a href="">Marketing Automation</a></li>
+                <li><a href="">Personalization and Testing</a></li>
+              </ul>
+            </li>
+            <li><a href="">Moosend</a></li>
+            <li><a href="">Sitecore Experience Commerce</a></li>
+            <li><a href="">Sitecore OrderCloud</a></li>
           </ul>
         </div>
       </nav>
