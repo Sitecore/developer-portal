@@ -11,6 +11,45 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <nav className={styles.nav}>
+        <div class={styles.container}>
+          <span class={styles.h2}>Solution</span>
+          <ul>
+            <li>Content Management
+              <ul>
+                <li><a href="">Sitecore Content Hub</a></li>
+                <li><a href="">Sitecore Experience Manager</a></li>
+              </ul>
+            </li>
+            <li><a href="">Digital Asset Management</a></li>
+            <li>Customer Data Management
+              <ul>
+                <li><a href="">Sitecore CDP</a></li>
+                <li><a href="">Sitecore Experience Platform</a></li>
+              </ul>
+            </li>
+            <li>Personalization and Testing
+              <ul>
+                <li><a href="">Sitecore CDP</a></li>
+                <li><a href="">Sitecore Experience Platform</a></li>
+              </ul>
+            </li>
+            <li>Marketing Automation
+              <ul>
+                <li><a href="">Moosend</a></li>
+                <li><a href="">Sitecore Experience Platform</a></li>
+              </ul>
+            </li>
+            <li>Commerce
+              <ul>
+                <li><a href="">OrderCloud</a></li>
+                <li><a href="">Sitecore Experience Commerce</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
       <main className={styles.main}>
         <h1 className={styles.title}>
           🚧 Welcome to Dev Portal Demo 🚧
