@@ -36,8 +36,8 @@ export default function Home() {
             </li>
             <li>Marketing Automation
               <ul>
-                <li><a href="">Moosend</a></li>
-                <li><a href="">Sitecore Experience Platform</a></li>
+                <li><a href="/marketing-automation/moosend">Moosend</a></li>
+                <li><a href="/marketing-automation/experience-platform">Sitecore Experience Platform</a></li>
               </ul>
             </li>
             <li>Commerce
@@ -71,12 +71,12 @@ export default function Home() {
             </li>
             <li>Sitecore Experience Platform
               <ul>
-                <li><a href="">Marketing Automation</a></li>
+                <li><a href="/marketing-automation/experience-platform">Marketing Automation</a></li>
                 <li><a href="/customer-data-management/experience-platform">Customer Data Management</a></li>
                 <li><a href="/personalization-testing/experience-platform">Personalization and Testing</a></li>
               </ul>
             </li>
-            <li><a href="">Moosend</a></li>
+            <li><a href="/marketing-automation/moosend">Moosend</a></li>
             <li><a href="">Sitecore Experience Commerce</a></li>
             <li><a href="">Sitecore OrderCloud</a></li>
           </ul>
