@@ -25,7 +25,7 @@ export default function Home() {
             <li>Customer Data Management
               <ul>
                 <li><a href="/customerdatamanagement/cdp">Sitecore CDP</a></li>
-                <li><a href="">Sitecore Experience Platform</a></li>
+                <li><a href="/customerdatamanagement/experienceplatform">Sitecore Experience Platform</a></li>
               </ul>
             </li>
             <li>Personalization and Testing
@@ -72,6 +72,7 @@ export default function Home() {
             <li>Sitecore Experience Platform
               <ul>
                 <li><a href="">Marketing Automation</a></li>
+                <li><a href="/customerdatamanagement/experienceplatform">Customer Data Management</a></li>
                 <li><a href="">Personalization and Testing</a></li>
               </ul>
             </li>
