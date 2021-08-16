@@ -95,6 +95,11 @@ export default function Home() {
           </div>
           {/* PRODUCT CATEGORIES */}
           <div className={styles.productCategoryCard}>
+            <a href="digital-asset-management/" ><h2>DAM 📀 &rarr;</h2></a>
+            <p>Scale management and delivery of media and static assets</p>
+            <a href="digital-asset-management/" className={styles.link}>Learn more...</a>
+          </div>
+          <div className={styles.productCategoryCard}>
             <h2><a href="commerce/">Commerce 💸 &rarr;</a></h2>
             <p>Build out order management, merchandising, marketplaces, and storefronts</p>
             <a href="commerce/" className={styles.link}>Learn more...</a>
@@ -128,11 +133,6 @@ export default function Home() {
           <div className={styles.productCategoryCard}>
             <a href="products/headlessCMS" ><h2>Headless CMS 💻 &rarr;</h2></a>
             <a href="" className={styles.link}><li>Getting started with Headless CMS</li></a>
-            <a href="" className={styles.link}><li>Docs</li></a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="products/DAM" ><h2>DAM 📀 &rarr;</h2></a>
-            <a href="" className={styles.link}><li>Getting started with DAM</li></a>
             <a href="" className={styles.link}><li>Docs</li></a>
           </div>
           <div className={styles.youtubeCard}>
