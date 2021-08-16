@@ -9,6 +9,7 @@
 
 ## Get Started
 
+- [Getting Started](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/get-started/get-started.html)
 - [Navigate Content Hub](https://docs.stylelabs.com/content/4.0.x/user-documentation/get-started/content-hub/log-in.html)
 - [The different modules](https://docs.stylelabs.com/content/4.0.x/user-documentation/get-started/content-hub/modules.html)
 - [Terminology](https://docs.stylelabs.com/content/4.0.x/user-documentation/get-started/content-hub/glossary.html)

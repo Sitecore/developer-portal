@@ -12,6 +12,7 @@ Discover
 
 Learn
 
+ - [Getting Started]()
  - [Web Experience Management Collection](https://sitecore.ent.learndot.com/course/updated-web-experience-management-collection)
  - [Sitecore Experience Accelerator (SXA) Collection *BETA*](https://sitecore.ent.learndot.com/course/sitecore-experience-accelerator-sxa-collection-sxa-beta)
  - [Developer's Fundamentals 10 Collection](https://sitecore.ent.learndot.com/course/developers-fundamentals-10-collection)

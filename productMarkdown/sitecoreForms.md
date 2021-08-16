@@ -12,7 +12,7 @@ Discover
 
 Learn
 
- - [Sitecore Forms - Create your first form](https://www.sitecore.com/knowledge-center/blog/359/sitecore-forms-create-your-first-form-4570)
+ - [Getting Started Sitecore Forms - Create your first form](https://www.sitecore.com/knowledge-center/blog/359/sitecore-forms-create-your-first-form-4570)
  
 Socials
 

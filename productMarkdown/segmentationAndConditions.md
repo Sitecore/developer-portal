@@ -12,6 +12,7 @@ Discover
 
 Learn
 
+ - [Getting Started - Create custom condition and segmentation query](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/create-a-custom-condition-and-segmentation-query.html)
  - [Learn Segmentation And Conditions]()
 
 Playground
