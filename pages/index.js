@@ -100,6 +100,11 @@ export default function Home() {
             <a href="digital-asset-management/" className={styles.link}>Learn more...</a>
           </div>
           <div className={styles.productCategoryCard}>
+            <a href="customer-data-management/" ><h2>Customer Data Management 👨‍👨‍👧‍👧 &rarr;</h2></a>
+            <p>Track events, activity, and customer profile information</p>
+            <a href="customer-data-management/" className={styles.link}>Learn more...</a>
+          </div>
+          <div className={styles.productCategoryCard}>
             <h2><a href="commerce/">Commerce 💸 &rarr;</a></h2>
             <p>Build out order management, merchandising, marketplaces, and storefronts</p>
             <a href="commerce/" className={styles.link}>Learn more...</a>
@@ -109,11 +114,6 @@ export default function Home() {
             <a href="products/personalization" className={styles.link}><li>Getting started with Personalization</li></a>
             <a href="" className={styles.link}><li>Boxever Documentation</li></a>
             <a href="" className={styles.link}><li>Sitecore XP Documentation</li></a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="products/sitecoreCDP" ><h2>Sitecore CDP 👨‍👨‍👧‍👧 &rarr;</h2></a>
-            <a href="" className={styles.link}><li>Getting started with CDP</li></a>
-            <a href="" className={styles.link}><li>Docs</li></a>
           </div>
           <div className={styles.productCategoryCard}>
             <a href="products/marketingAutomation" ><h2>Marketing Automation 🚗 &rarr;</h2></a>
