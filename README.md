@@ -4,6 +4,8 @@ It is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-a
 ## Prerequisites
 - Install [node.js](https://nodejs.org/en/download/)
 - Install the [Vercel CLI](https://vercel.com/cli)
+- Clone the repo to your local development workspace
+- Run `npm install` to install dependencies
 
 ## Getting Started
 First, run the development server:
