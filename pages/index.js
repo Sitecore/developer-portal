@@ -24,7 +24,7 @@ export default function Home() {
             <li><a href="/DAM">Digital Asset Management</a></li>
             <li>Customer Data Management
               <ul>
-                <li><a href="">Sitecore CDP</a></li>
+                <li><a href="/customerdatamanagement/cdp">Sitecore CDP</a></li>
                 <li><a href="">Sitecore Experience Platform</a></li>
               </ul>
             </li>
@@ -59,7 +59,7 @@ export default function Home() {
             </li>
             <li>Sitecore CDP
               <ul>
-                <li><a href="">Customer Data Management</a></li>
+                <li><a href="/customerdatamanagement/cdp">Customer Data Management</a></li>
                 <li><a href="">Personalization and Testing</a></li>
               </ul>
             </li>
