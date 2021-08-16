@@ -67,6 +67,7 @@ export default function Home() {
               <ul>
                 <li><a href="/content-management/experience-manager">Content Management</a></li>
                 <li><a href="">Headless</a></li>
+                <li><a href="">Developer Collection</a></li>
               </ul>
             </li>
             <li>Sitecore Experience Platform
