@@ -14,19 +14,19 @@ export async function getStaticProps() {
     };
 }
 
-export default function MarketingAutomation2({ sitecoreCommerce }) {
+export default function SitecoreCommerce({ sitecoreCommerce }) {
 
     return (
         <div className={styles.container}>
             <Head>
-                <title>Commerce - OrderCloud</title>
-                <meta name="description" content="Commerce with OrderCloud" />
+                <title>Commerce - Sitecore Experience Commerce</title>
+                <meta name="description" content="Commerce with Sitecore Experience Commerce" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Commerce - Sitecore Commerce
+                    Commerce - Sitecore Experience Commerce
                 </h1>
                 <a href="/" className={styles.link}><h2>Take me Home</h2></a>
                 <div className={styles.grid}>

@@ -14,7 +14,7 @@ export async function getStaticProps() {
     };
 }
 
-export default function MarketingAutomation2({ orderCloud }) {
+export default function OrderCloud({ orderCloud }) {
 
     return (
         <div className={styles.container}>
