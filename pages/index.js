@@ -17,15 +17,15 @@ export default function Home() {
           <ul>
             <li>Content Management
               <ul>
-                <li><a href="/contentmanagement/contenthub">Sitecore Content Hub</a></li>
-                <li><a href="/contentmanagement/experiencemanager">Sitecore Experience Manager</a></li>
+                <li><a href="/content-management/content-hub">Sitecore Content Hub</a></li>
+                <li><a href="/content-management/experience-manager">Sitecore Experience Manager</a></li>
               </ul>
             </li>
-            <li><a href="/DAM">Digital Asset Management</a></li>
+            <li><a href="/digital-asset-management">Digital Asset Management</a></li>
             <li>Customer Data Management
               <ul>
-                <li><a href="/customerdatamanagement/cdp">Sitecore CDP</a></li>
-                <li><a href="/customerdatamanagement/experienceplatform">Sitecore Experience Platform</a></li>
+                <li><a href="/customer-data-management/cdp">Sitecore CDP</a></li>
+                <li><a href="/customer-data-management/experience-platform">Sitecore Experience Platform</a></li>
               </ul>
             </li>
             <li>Personalization and Testing
@@ -53,26 +53,26 @@ export default function Home() {
           <ul>
             <li>Sitecore Content Hub
               <ul>
-                <li><a href="/contentmanagement/contenthub">Content Management</a></li>
-                <li><a href="/DAM">Digital Asset Management</a></li>
+                <li><a href="/content-management/content-hub">Content Management</a></li>
+                <li><a href="/digital-asset-management/">Digital Asset Management</a></li>
               </ul>
             </li>
             <li>Sitecore CDP
               <ul>
-                <li><a href="/customerdatamanagement/cdp">Customer Data Management</a></li>
+                <li><a href="/customer-data-management/cdp">Customer Data Management</a></li>
                 <li><a href="">Personalization and Testing</a></li>
               </ul>
             </li>
             <li>Sitecore Experience Manager
               <ul>
-                <li><a href="/contentmanagement/experiencemanager">Content Management</a></li>
+                <li><a href="/content-management/experience-manager">Content Management</a></li>
                 <li><a href="">Headless</a></li>
               </ul>
             </li>
             <li>Sitecore Experience Platform
               <ul>
                 <li><a href="">Marketing Automation</a></li>
-                <li><a href="/customerdatamanagement/experienceplatform">Customer Data Management</a></li>
+                <li><a href="/customer-data-management/experience-platform">Customer Data Management</a></li>
                 <li><a href="">Personalization and Testing</a></li>
               </ul>
             </li>
