@@ -17,6 +17,7 @@ Discover
 - [Getting started with EXM for developers](https://doc.sitecore.com/en/developers/exm/101/email-experience-manager/getting-started-with-exm-for-developers.html)
 
 Learn
+ - [Getting started with marketing automation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/getting-started-with-marketing-automation-for-developers.html)
  - [Marketing Automation Engine YouTube playlist](https://www.youtube.com/watch?v=-44xRa0ju2k&list=PL1jJVFm_lGnyicywCcwcWa8RtsoiJEbC9)
  - [Create a Marketing Automation Campaign](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/create-a-marketing-automation-campaign.html)
  - [Digital Marketing Glossary](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/digital-marketing-glossary.html)

@@ -15,6 +15,7 @@ Discover
 Learn
 
  - [Learn Moosend](https://academy.moosend.com/)
+ - [How do I get started with my Moosend account?](https://help.moosend.com/hc/en-us/articles/208076445-How-do-I-get-started-with-my-Moosend-account-)
 
 Playground
 
