@@ -32,13 +32,13 @@ export default function MarketingAutomation({ }) {
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Moosend</h2>
                         <p>A place to send Moos</p>
-                        <a href="moosend">Learn more...</a>
+                        <a href="moosend" className={styles.link}>Learn more...</a>
                     </div>
                     
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore XP: Marketing Automation and EXM</h2>
                         <p>A market for your automation</p>
-                        <a href="experience-platform">Learn more...</a>
+                        <a href="experience-platform" className={styles.link}>Learn more...</a>
                     </div>
 
                     <div className={styles.socialsCard}>
