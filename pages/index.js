@@ -93,7 +93,20 @@ export default function Home() {
           <div className={styles.searchCard}>
             <h2>I'm a unified search 🔍</h2>
           </div>
-          {/* PRODUCT CATEGORIES */}
+          <div className={styles.youtubeCard}>
+            <h2>I'm recent YouTube videos 🎥</h2>
+          </div>
+          <div className={styles.youtubeCard}>
+            <h2>Join these cool Sitecore Communities 🤖</h2>
+            <a href="https://sitecorechat.slack.com/" className={styles.link}><li>Slack</li></a>
+            <a href="https://sitecore.stackexchange.com/" className={styles.link}><li>Stack Exchange</li></a>
+            <a href="https://www.sitecore.com/knowledge-center/blog" className={styles.link}><li>Sitecore Blog</li></a>
+          </div>
+          <div className={styles.youtubeCard}>
+            <h2>Upcoming Events</h2>
+          </div>
+
+          {/* PRODUCT SOLUTIONS */}
           <div className={styles.productCategoryCard}>
             <a href="content-management/" ><h2>Content Management (CMS) 💾 &rarr;</h2></a>
             <p>Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.</p>
@@ -129,18 +142,6 @@ export default function Home() {
             <a href="products/marketingAutomation2" ><h2>Marketing Automation #2 🚗 &rarr;</h2></a>
             <a href="" className={styles.link}><li>Getting started with Marketing Automation</li></a>
             <a href="" className={styles.link}><li>Docs</li></a>
-          </div>
-          <div className={styles.youtubeCard}>
-            <h2>I'm recent YouTube videos 🎥</h2>
-          </div>
-          <div className={styles.youtubeCard}>
-            <h2>Join these cool Sitecore Communities 🤖</h2>
-            <a href="https://sitecorechat.slack.com/" className={styles.link}><li>Slack</li></a>
-            <a href="https://sitecore.stackexchange.com/" className={styles.link}><li>Stack Exchange</li></a>
-            <a href="https://www.sitecore.com/knowledge-center/blog" className={styles.link}><li>Sitecore Blog</li></a>
-          </div>
-          <div className={styles.youtubeCard}>
-            <h2>Upcoming Events</h2>
           </div>
           <div className={styles.youtubeCard}>
             <h2>Help and Feedback</h2>
