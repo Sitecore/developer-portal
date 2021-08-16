@@ -30,8 +30,8 @@ export default function Home() {
             </li>
             <li>Personalization and Testing
               <ul>
-                <li><a href="">Sitecore CDP</a></li>
-                <li><a href="">Sitecore Experience Platform</a></li>
+                <li><a href="personalization-testing/cdp">Sitecore CDP</a></li>
+                <li><a href="personalization-testing/experience-platform">Sitecore Experience Platform</a></li>
               </ul>
             </li>
             <li>Marketing Automation
@@ -60,7 +60,7 @@ export default function Home() {
             <li>Sitecore CDP
               <ul>
                 <li><a href="/customer-data-management/cdp">Customer Data Management</a></li>
-                <li><a href="">Personalization and Testing</a></li>
+                <li><a href="/personalization-testing/cdp">Personalization and Testing</a></li>
               </ul>
             </li>
             <li>Sitecore Experience Manager
@@ -73,7 +73,7 @@ export default function Home() {
               <ul>
                 <li><a href="">Marketing Automation</a></li>
                 <li><a href="/customer-data-management/experience-platform">Customer Data Management</a></li>
-                <li><a href="">Personalization and Testing</a></li>
+                <li><a href="/personalization-testing/experience-platform">Personalization and Testing</a></li>
               </ul>
             </li>
             <li><a href="">Moosend</a></li>
