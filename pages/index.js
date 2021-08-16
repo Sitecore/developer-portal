@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       <nav className={styles.nav}>
-        <div class={styles.container}>
+        <div className={styles.container}>
           <b>Navigate by Solution</b>
           <ul>
             <li>Content Management
@@ -48,7 +48,7 @@ export default function Home() {
             </li>
           </ul>
         </div>
-        <div class={styles.container}>
+        <div className={styles.container}>
           <b>Navigate by Product</b>
           <ul>
             <li>Sitecore Content Hub
