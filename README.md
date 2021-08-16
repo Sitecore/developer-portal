@@ -2,6 +2,7 @@ This is the Sitecore Developer Portal project.
 It is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Prerequisites
+- Install [node.js](https://nodejs.org/en/download/)
 - Install the [Vercel CLI](https://vercel.com/cli)
 
 ## Getting Started
