@@ -95,7 +95,12 @@ export default function Home() {
           </div>
           {/* PRODUCT CATEGORIES */}
           <div className={styles.productCategoryCard}>
-            <a href="digital-asset-management/" ><h2>DAM 📀 &rarr;</h2></a>
+            <a href="content-management/" ><h2>Content Management (CMS) 💾 &rarr;</h2></a>
+            <p>Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.</p>
+            <a href="content-management/" className={styles.link}>Learn more...</a>
+          </div>
+          <div className={styles.productCategoryCard}>
+            <a href="digital-asset-management/" ><h2>Digital Asset Management (DAM) 📀 &rarr;</h2></a>
             <p>Scale management and delivery of media and static assets</p>
             <a href="digital-asset-management/" className={styles.link}>Learn more...</a>
           </div>
@@ -123,16 +128,6 @@ export default function Home() {
           <div className={styles.productCategoryCard}>
             <a href="products/marketingAutomation2" ><h2>Marketing Automation #2 🚗 &rarr;</h2></a>
             <a href="" className={styles.link}><li>Getting started with Marketing Automation</li></a>
-            <a href="" className={styles.link}><li>Docs</li></a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="products/webCMS" ><h2>Web CMS 💾 &rarr;</h2></a>
-            <a href="" className={styles.link}><li>Getting started with Web CMS</li></a>
-            <a href="" className={styles.link}><li>Docs</li></a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="products/headlessCMS" ><h2>Headless CMS 💻 &rarr;</h2></a>
-            <a href="" className={styles.link}><li>Getting started with Headless CMS</li></a>
             <a href="" className={styles.link}><li>Docs</li></a>
           </div>
           <div className={styles.youtubeCard}>
