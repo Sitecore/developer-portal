@@ -23,6 +23,7 @@
 
 ## Learn
 
+- [Getting Started](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/get-started/get-started.html)
 - [Understanding the Sitecore Content Hub Lifecycle](https://www.youtube.com/watch?v=kBriN5FxbV0)
 - [Get to know the Sitecore Content Hub features](https://docs.stylelabs.com/content/4.0.x/user-documentation/feature-videos/index.html)
 - [Architecture overview](https://docs.stylelabs.com/content/4.0.x/integrations/architecture/index.html)

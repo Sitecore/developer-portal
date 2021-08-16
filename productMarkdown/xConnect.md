@@ -4,7 +4,7 @@
 
 Docs
 
- - [Getting Started with xConnect](https://doc.sitecore.com/en/developers/93/sitecore-experience-platform/getting-started-with-xconnect.html)
+ - [Getting Started with xConnect](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/getting-started-with-xconnect.html)
 
 Discover
 
@@ -12,7 +12,7 @@ Discover
 
 Learn
 
- - [Learn xConnect]()
+ - [Getting Started with xConnect](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/getting-started-with-xconnect.html)
 
 Playground
 

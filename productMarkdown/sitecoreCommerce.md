@@ -13,7 +13,7 @@ Discover
 Learn
 
  - [YouTube: Sitecore Experience Commerce Deep Dive](https://www.youtube.com/watch?v=T0cn3yBbRro&list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94)
- - [Getting Started](https://doc.sitecore.com/en/developers/92/sitecore-experience-commerce/getting-started-with-development.html)
+ - [Getting Started](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/getting-started-with-development.html)
 
 Playground
 
