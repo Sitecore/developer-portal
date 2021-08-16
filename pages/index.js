@@ -94,10 +94,9 @@ export default function Home() {
           </div>
           {/* PRODUCT CATEGORIES */}
           <div className={styles.productCategoryCard}>
-            <a href="products/commerce" ><h2>Commerce 💸 &rarr;</h2></a>
-            <a href="products/commerce" className={styles.link}><li>Getting started with Commerce</li></a>
-            <a href="https://four51.github.io/#/api" className={styles.link}><li>Four51 Documentation</li></a>
-            <a href="https://doc.sitecore.com/en/developers/101/xc/" className={styles.link}><li>Sitecore Commerce Documentation</li></a>
+            <h2><a href="commerce/">Commerce 💸 &rarr;</a></h2>
+            <p>Build out order management, merchandising, marketplaces, and storefronts</p>
+            <a href="commerce/" className={styles.link}>Learn more...</a>
           </div>
           <div className={styles.productCategoryCard}>
             <a href="products/personalization" ><h2>Personalization 🕵️‍♀️ &rarr;</h2></a>
