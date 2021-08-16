@@ -123,15 +123,14 @@ export default function Home() {
             <a href="customer-data-management/" className={styles.link}>Learn more...</a>
           </div>
           <div className={styles.productCategoryCard}>
+            <a href="personalization-testing/" ><h2>Personalization and Testing 🕵️‍♀️ &rarr;</h2></a>
+            <p>Deliver personalized content and test which content is working</p>
+            <a href="personalization-testing/" className={styles.link}>Learn more...</a>
+          </div>
+          <div className={styles.productCategoryCard}>
             <h2><a href="commerce/">Commerce 💸 &rarr;</a></h2>
             <p>Build out order management, merchandising, marketplaces, and storefronts</p>
             <a href="commerce/" className={styles.link}>Learn more...</a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="products/personalization" ><h2>Personalization 🕵️‍♀️ &rarr;</h2></a>
-            <a href="products/personalization" className={styles.link}><li>Getting started with Personalization</li></a>
-            <a href="" className={styles.link}><li>Boxever Documentation</li></a>
-            <a href="" className={styles.link}><li>Sitecore XP Documentation</li></a>
           </div>
           <div className={styles.productCategoryCard}>
             <a href="products/marketingAutomation" ><h2>Marketing Automation 🚗 &rarr;</h2></a>
