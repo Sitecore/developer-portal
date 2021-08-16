@@ -18,7 +18,7 @@ export default function Home() {
             <li>Content Management
               <ul>
                 <li><a href="/contentmanagement/contenthub">Sitecore Content Hub</a></li>
-                <li><a href="">Sitecore Experience Manager</a></li>
+                <li><a href="/contentmanagement/experiencemanager">Sitecore Experience Manager</a></li>
               </ul>
             </li>
             <li><a href="/DAM">Digital Asset Management</a></li>
@@ -65,7 +65,8 @@ export default function Home() {
             </li>
             <li>Sitecore Experience Manager
               <ul>
-                <li><a href="">Content Management</a></li>
+                <li><a href="/contentmanagement/experiencemanager">Content Management</a></li>
+                <li><a href="">Headless</a></li>
               </ul>
             </li>
             <li>Sitecore Experience Platform
