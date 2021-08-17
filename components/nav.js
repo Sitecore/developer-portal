@@ -6,7 +6,7 @@ export default function Nav() {
             <div className={styles.container}>
                 <b>Navigate by type of content</b>
                 <ul>
-                    <li><a href="">Docs</a></li>
+                    <li><a href="/docs">Docs</a></li>
                     <li><a href="">Discover</a></li>
                     <li><a href="">Learn</a></li>
                     <li><a href="">Playground</a></li>
