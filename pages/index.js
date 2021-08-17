@@ -55,19 +55,14 @@ export default function Home() {
             <a href="personalization-testing/" className={styles.link}>Learn more...</a>
           </div>
           <div className={styles.productCategoryCard}>
+            <a href="marketing-automation/" ><h2>Marketing Automation 🚗 &rarr;</h2></a>
+            <p>Connect with customers using marketing automation</p>
+            <a href="marketing-automation/" className={styles.link}>Learn more...</a>
+          </div>
+          <div className={styles.productCategoryCard}>
             <h2><a href="commerce/">Commerce 💸 &rarr;</a></h2>
             <p>Build out order management, merchandising, marketplaces, and storefronts</p>
             <a href="commerce/" className={styles.link}>Learn more...</a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="products/marketingAutomation" ><h2>Marketing Automation 🚗 &rarr;</h2></a>
-            <a href="" className={styles.link}><li>Getting started with Marketing Automation</li></a>
-            <a href="" className={styles.link}><li>Docs</li></a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="products/marketingAutomation2" ><h2>Marketing Automation #2 🚗 &rarr;</h2></a>
-            <a href="" className={styles.link}><li>Getting started with Marketing Automation</li></a>
-            <a href="" className={styles.link}><li>Docs</li></a>
           </div>
           <div className={styles.youtubeCard}>
             <h2>Help and Feedback</h2>
