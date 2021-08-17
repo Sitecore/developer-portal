@@ -4,7 +4,7 @@
 
 Docs
 
- - [Sitecore xDB Documentation](https://doc.sitecore.com/en/developers/82/sitecore-experience-platform/xdb.html)
+ - [Sitecore xConnect and xDB Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/xconnect-and-the-xdb.html)
 
 Discover
 
