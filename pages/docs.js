@@ -34,36 +34,6 @@ export default function Docs({ cmsDocs }) {
           <div className={styles.socialsCard}>
 						<ReactMarkdown>{cmsDocs.markdown}</ReactMarkdown>
 					</div>
-          <div className={styles.productCategoryCard}>
-            <h2>Content Management (CMS)</h2>
-            <p>Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.</p>
-            <a href="content-management/" className={styles.link}>Learn more...</a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="digital-asset-management/" ><h2>Digital Asset Management (DAM) 📀 &rarr;</h2></a>
-            <p>Scale management and delivery of media and static assets</p>
-            <a href="digital-asset-management/" className={styles.link}>Learn more...</a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="customer-data-management/" ><h2>Customer Data Management 👨‍👨‍👧‍👧 &rarr;</h2></a>
-            <p>Track events, activity, and customer profile information</p>
-            <a href="customer-data-management/" className={styles.link}>Learn more...</a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="personalization-testing/" ><h2>Personalization and Testing 🕵️‍♀️ &rarr;</h2></a>
-            <p>Deliver personalized content and test which content is working</p>
-            <a href="personalization-testing/" className={styles.link}>Learn more...</a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <a href="marketing-automation/" ><h2>Marketing Automation 🚗 &rarr;</h2></a>
-            <p>Connect with customers using marketing automation</p>
-            <a href="marketing-automation/" className={styles.link}>Learn more...</a>
-          </div>
-          <div className={styles.productCategoryCard}>
-            <h2><a href="commerce/">Commerce 💸 &rarr;</a></h2>
-            <p>Build out order management, merchandising, marketplaces, and storefronts</p>
-            <a href="commerce/" className={styles.link}>Learn more...</a>
-          </div>
           <div className={styles.youtubeCard}>
             <h2>Help and Feedback</h2>
           </div>
