@@ -12,6 +12,7 @@ Discover
 
 Learn
 
+ - [Getting Started]()
  - [Learn Marketing Operations]()
 
 Playground
