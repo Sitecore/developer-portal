@@ -18,10 +18,12 @@ export default function Nav() {
             <div className={styles.container}>
                 <b>Navigate by Solution</b>
                 <ul>
-                    <li>Content Management
+                    <li>Content Management and Delivery
                         <ul>
                             <li><a href="/content-management/content-hub">Sitecore Content Hub</a></li>
+                            <li><a href="">Experience Edge for Content Hub</a></li>
                             <li><a href="/content-management/experience-manager">Sitecore Experience Manager</a></li>
+                            <li><a href="">Experience Edge for XM</a></li>
                         </ul>
                     </li>
                     <li><a href="/digital-asset-management">Digital Asset Management</a></li>
@@ -58,6 +60,7 @@ export default function Nav() {
                         <ul>
                             <li><a href="/content-management/content-hub">Content Management</a></li>
                             <li><a href="/digital-asset-management/">Digital Asset Management</a></li>
+                            <li><a href="">Experience Edge for Content Hub</a></li>
                         </ul>
                     </li>
                     <li>Sitecore CDP
@@ -71,6 +74,7 @@ export default function Nav() {
                             <li><a href="/content-management/experience-manager">Content Management</a></li>
                             <li><a href="">Headless</a></li>
                             <li><a href="">Developer Collection</a></li>
+                            <li><a href="">Experience Edge for XM</a></li>
                         </ul>
                     </li>
                     <li>Sitecore Experience Platform
