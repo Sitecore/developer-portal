@@ -10,6 +10,7 @@ export async function getStaticProps() {
   const damDocs = await getMarkdownData("dam.md", docsMarkDownFolder);
   const cdmDocs = await getMarkdownData("customerdatamanagement.md", docsMarkDownFolder);
   const personalizationDocs = await getMarkdownData("personalization.md", docsMarkDownFolder);
+  const maDocs = await getMarkdownData("marketingautomation.md", docsMarkDownFolder);
 
   return {
       props: {
@@ -17,11 +18,12 @@ export async function getStaticProps() {
           damDocs,
           cdmDocs,
           personalizationDocs,
+          maDocs,
       },
   };
 }
 
-export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs }) {
+export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs, maDocs }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -48,6 +50,9 @@ export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs })
 					</div>
           <div className={styles.productCategoryCard}>
 						<ReactMarkdown>{personalizationDocs.markdown}</ReactMarkdown>
+					</div>
+          <div className={styles.productCategoryCard}>
+						<ReactMarkdown>{maDocs.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.youtubeCard}>
             <h2>Help and Feedback</h2>
