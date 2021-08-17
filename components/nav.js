@@ -34,7 +34,7 @@ export default function Nav() {
                     <li>Commerce
                         <ul>
                             <li><a href="/commerce/orderCloud">OrderCloud</a></li>
-                            <li><a href="/commerce/sitecoreCommerce">Sitecore Experience Commerce</a></li>
+                            <li><a href="/commerce/experience-commerce">Sitecore Experience Commerce</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -70,7 +70,7 @@ export default function Nav() {
                     </li>
                     <li><a href="/marketing-automation/moosend">Moosend</a></li>
                     <li><a href="/commerce/orderCloud">Sitecore OrderCloud</a></li>
-                    <li><a href="/commerce/sitecoreCommerce">Sitecore Experience Commerce</a></li>
+                    <li><a href="/commerce/experience-commerce">Sitecore Experience Commerce</a></li>
                 </ul>
             </div>
         </nav>
