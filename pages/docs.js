@@ -6,16 +6,18 @@ import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
   const docsMarkDownFolder = "docsMarkdown";
-  const cmsDocs = await getMarkdownData("CMS.md", docsMarkDownFolder);
+  const cmsDocs = await getMarkdownData("cms.md", docsMarkDownFolder);
+  const damDocs = await getMarkdownData("dam.md", docsMarkDownFolder);
 
   return {
       props: {
           cmsDocs,
+          damDocs,
       },
   };
 }
 
-export default function Docs({ cmsDocs }) {
+export default function Docs({ cmsDocs, damDocs }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -31,8 +33,11 @@ export default function Docs({ cmsDocs }) {
           <div className={styles.searchCard}>
             <h2>I'm a unified search 🔍</h2>
           </div>
-          <div className={styles.socialsCard}>
+          <div className={styles.productCategoryCard}>
 						<ReactMarkdown>{cmsDocs.markdown}</ReactMarkdown>
+					</div>
+          <div className={styles.productCategoryCard}>
+						<ReactMarkdown>{damDocs.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.youtubeCard}>
             <h2>Help and Feedback</h2>
