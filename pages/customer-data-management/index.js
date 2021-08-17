@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
 import Footer from '../../components/footer'
 
@@ -32,13 +33,17 @@ export default function CDP({ }) {
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore CDP</h2>
                         <p>Ingest, connect, and activate customer data across your tech stack and composable DXP.</p>
-                        <a href="cdp" className={styles.link}>Learn more...</a>
+                        <Link href="customer-data-management/cdp">
+                            <a>Learn more...</a>
+                        </Link>
                     </div>
                     
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore Experience Platform</h2>
                         <p>Leverage xConnect and xDB to provide a 360 view of the customer in your fully integrated DXP platform.</p>
-                        <a href="experience-platform" className={styles.link}>Learn more...</a>
+                        <Link href="customer-data-management/experience-platform">
+                            <a>Learn more...</a>
+                        </Link>
                     </div>
 
                     <div className={styles.socialsCard}>

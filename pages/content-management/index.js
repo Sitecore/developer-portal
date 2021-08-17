@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
 import Footer from '../../components/footer'
 
@@ -32,13 +33,17 @@ export default function ContentManagement({ }) {
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore Content Hub</h2>
                         <p>Centralize content strategy and operations for all delivery channels</p>
-                        <a href="content-hub" className={styles.link}>Learn more...</a>
+                        <Link href="content-management/content-hub">
+                            <a>Learn more...</a>
+                        </Link>
                     </div>
                     
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore Experience Manager</h2>
                         <p>Manage content and presentation for the web channel</p>
-                        <a href="experience-manager" className={styles.link}>Learn more...</a>
+                        <Link href="content-management/experience-manager">
+                            <a>Learn more...</a>
+                        </Link>
                     </div>
 
                     <div className={styles.socialsCard}>

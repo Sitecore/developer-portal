@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
 import Footer from '../../components/footer'
 
@@ -32,13 +33,17 @@ export default function Commerce({ }) {
                     <div className={styles.productCategoryCardCompact}>
                         <h2>OrderCloud</h2>
                         <p>Cloud-native, headless, and API-first commerce solution</p>
-                        <a href="orderCloud" className={styles.link}>Learn more...</a>
+                        <Link href="commerce/orderCloud">
+                            <a>Learn more...</a>
+                        </Link>
                     </div>
                     
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore Experience Commerce</h2>
                         <p>Fully integrated Commerce as part of Sitecore's platform DXP</p>
-                        <a href="experience-commerce" className={styles.link}>Learn more...</a>
+                        <Link href="commerce/experience-commerce">
+                            <a>Learn more...</a>
+                        </Link>
                     </div>
 
                     <div className={styles.socialsCard}>

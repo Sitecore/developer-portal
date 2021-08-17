@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
 import Footer from '../../components/footer'
 
@@ -32,13 +33,17 @@ export default function MarketingAutomation({ }) {
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Moosend</h2>
                         <p>A place to send Moos</p>
-                        <a href="moosend" className={styles.link}>Learn more...</a>
+                        <Link href="marketing-automation/moosend">
+                            <a>Learn more...</a>
+                        </Link>
                     </div>
                     
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore XP: Marketing Automation and EXM</h2>
                         <p>A market for your automation</p>
-                        <a href="experience-platform" className={styles.link}>Learn more...</a>
+                        <Link href="marketing-automation/experience-platform">
+                            <a>Learn more...</a>
+                        </Link>
                     </div>
 
                     <div className={styles.socialsCard}>

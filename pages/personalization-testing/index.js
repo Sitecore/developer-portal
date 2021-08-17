@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import styles from '../../styles/Home.module.css'
 import Footer from '../../components/footer'
 
@@ -32,13 +33,17 @@ export default function Personalization({ }) {
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore CDP</h2>
                         <p>Use advanced decisioning models and machine learning for personalization in your composable DXP.</p>
-                        <a href="cdp" className={styles.link}>Learn more...</a>
+                        <Link href="personalization-testing/cdp">
+                            <a>Learn more...</a>
+                        </Link>
                     </div>
                     
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore Experience Platform</h2>
                         <p>Personalization and testing driven by xDB data the Sitecore rules engine.</p>
-                        <a href="experience-platform" className={styles.link}>Learn more...</a>
+                        <Link href="personalization-testing/experience-platform">
+                            <a>Learn more...</a>
+                        </Link>
                     </div>
 
                     <div className={styles.socialsCard}>
