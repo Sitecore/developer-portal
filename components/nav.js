@@ -24,6 +24,7 @@ export default function Nav() {
                             <li><a href="">Experience Edge for Content Hub</a></li>
                             <li><a href="/content-management/experience-manager">Sitecore Experience Manager</a></li>
                             <li><a href="">Experience Edge for XM</a></li>
+                            <li><a href="">DevOps</a></li>
                         </ul>
                     </li>
                     <li><a href="/digital-asset-management">Digital Asset Management</a></li>
