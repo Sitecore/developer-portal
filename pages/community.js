@@ -32,8 +32,20 @@ export default function Community({ mvpSite }) {
             <h2>I'm a unified search 🔍</h2>
           </div>
           <div className={styles.productCategoryCard}>
+						<h2>Forum box (TBD)</h2>
+					</div>
+          <div className={styles.productCategoryCard}>
+						<h2>Slack box (TBD)</h2>
+					</div>
+          <div className={styles.productCategoryCard}>
+						<h2>StackExchange box (TBD)</h2>
+					</div>
+          <div className={styles.productCategoryCard}>
 						<ReactMarkdown>{mvpSite.markdown}</ReactMarkdown>
 					</div>
+          <div className={styles.youtubeCard}>
+            <h2>Upcoming Events</h2>
+          </div>
           <div className={styles.youtubeCard}>
             <h2>@WeAreSitecore Twitter feed 🕊</h2>
           </div>
