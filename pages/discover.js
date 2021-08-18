@@ -7,15 +7,17 @@ import ReactMarkdown from "react-markdown";
 export async function getStaticProps() {
   const discoverMarkDownFolder = "discoverMarkdown";
   const supportKB = await getMarkdownData("supportkb.md", discoverMarkDownFolder);
+  const cdpKB = await getMarkdownData("cdpkb.md", discoverMarkDownFolder);
 
   return {
       props: {
           supportKB,
+          cdpKB,
       },
   };
 }
 
-export default function Docs({ supportKB }) {
+export default function Docs({ supportKB, cdpKB }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -33,6 +35,9 @@ export default function Docs({ supportKB }) {
           </div>
           <div className={styles.productCategoryCard}>
 						<ReactMarkdown>{supportKB.markdown}</ReactMarkdown>
+					</div>
+          <div className={styles.productCategoryCard}>
+						<ReactMarkdown>{cdpKB.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.youtubeCard}>
             <h2>Help and Feedback</h2>
