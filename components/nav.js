@@ -7,7 +7,7 @@ export default function Nav() {
                 <b>Navigate by type of content</b>
                 <ul>
                     <li><a href="/docs">Docs</a></li>
-                    <li><a href="">Discover</a></li>
+                    <li><a href="/discover">Discover</a></li>
                     <li><a href="">Learn</a></li>
                     <li><a href="">Playground</a></li>
                     <li><a href="">Get Help</a></li>
