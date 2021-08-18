@@ -55,6 +55,9 @@ export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs, m
 						<ReactMarkdown>{maDocs.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.youtubeCard}>
+            <h2>@DocsSitecore Twitter feed 🕊</h2>
+          </div>
+          <div className={styles.youtubeCard}>
             <h2>Help and Feedback</h2>
           </div>
         </div>
