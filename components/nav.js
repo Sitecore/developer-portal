@@ -35,8 +35,8 @@ export default function Nav() {
                     </li>
                     <li>Personalization and Testing
                         <ul>
-                            <li><a href="personalization-testing/cdp">Sitecore CDP</a></li>
-                            <li><a href="personalization-testing/experience-platform">Sitecore Experience Platform</a></li>
+                            <li><a href="/personalization-testing/cdp">Sitecore CDP</a></li>
+                            <li><a href="/personalization-testing/experience-platform">Sitecore Experience Platform</a></li>
                         </ul>
                     </li>
                     <li>Marketing Automation
