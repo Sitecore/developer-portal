@@ -22,6 +22,12 @@
 - [MRM](https://docs.stylelabs.com/content/4.0.x/user-documentation/marketing-resource-management/introduction.html)
 - [Web-to-print](https://docs.stylelabs.com/content/4.0.x/user-documentation/web-to-print/chili-publisher.html)
 
+## Discover
+- [Content Hub Security guide](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/security/security-guide-intro.html)
+- [Cloud development lifecycle](https://docs.stylelabs.com/contenthub/4.0.x/content/integrations/development-lifecycle/sdlc-introduction.html)
+- [Cloud development Security](https://docs.stylelabs.com/contenthub/4.0.x/content/integrations/security/intro.html)
+- [Cloud development Best Practices](https://docs.stylelabs.com/contenthub/4.0.x/content/integrations/best-practices/best-practices.html)
+
 ## Learn
 
 - [Getting Started](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/get-started/get-started.html)
