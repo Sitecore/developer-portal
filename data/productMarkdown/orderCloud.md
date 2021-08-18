@@ -7,7 +7,8 @@ Docs
  - [Four51 Documentation](https://four51.github.io/#/api)
 
 Discover
-
+ - [Platform Overview](https://ordercloud.io/discover/platform-overview)
+ - [Knowledge Base](https://ordercloud.io/knowledge-base)
  - [Ordercloud Feature Guide](https://www.sitecore.com/resources/index/guide/ordercloud-feature-guide)
 
 Learn
