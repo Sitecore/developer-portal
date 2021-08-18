@@ -60,7 +60,7 @@ export default function Docs({ supportKB, cdpKB, sitecoreKC, ordercloud, moosend
 						<ReactMarkdown>{sitecoreKC.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.youtubeCard}>
-            <h2>Discover Sitecore YouTube feed (5 most recent videos)</h2>
+            <h2>Discover Sitecore YouTube feed (5 most recent videos) 🎥</h2>
           </div>
           <div className={styles.youtubeCard}>
             <h2>Help and Feedback</h2>
