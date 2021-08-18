@@ -59,9 +59,6 @@ export default function Commerce({ orderCloudData, sitecoreCommerceData }) {
 
         </div>
       </main>
-
-      <Footer />
-
     </div>)
 }
 

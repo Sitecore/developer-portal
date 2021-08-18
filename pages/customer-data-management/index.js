@@ -60,9 +60,6 @@ export default function CDP({ }) {
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 

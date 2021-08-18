@@ -66,8 +66,6 @@ export default function HeadlessCMS({ jss, edge }) {
 					</div>
 				</div>
 			</main>
-
-			<Footer />
 		</div>
 	);
 }

@@ -67,8 +67,6 @@ export default function Docs({ supportKB, cdpKB, sitecoreKC, ordercloud, moosend
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }

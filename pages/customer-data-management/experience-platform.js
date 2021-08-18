@@ -69,9 +69,6 @@ export default function XP({ webTracking, xConnect, xDB, referenceDataService })
 
         </div>
       </main>
-
-      <Footer />
-
     </div>)
 }
 

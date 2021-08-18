@@ -67,7 +67,6 @@ export default function ExperiencePlatform({ federatedExperienceManagerData, uni
 
                 </div>
             </main>
-            <Footer />
         </div >
     )
 }

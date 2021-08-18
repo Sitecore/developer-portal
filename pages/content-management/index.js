@@ -60,9 +60,6 @@ export default function ContentManagement({ }) {
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 

@@ -60,9 +60,6 @@ export default function Personalization({ }) {
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 

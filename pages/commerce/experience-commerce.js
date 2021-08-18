@@ -52,9 +52,6 @@ export default function SitecoreCommerce({ sitecoreCommerce }) {
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 

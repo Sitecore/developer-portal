@@ -52,9 +52,6 @@ export default function OrderCloud({ orderCloud }) {
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 

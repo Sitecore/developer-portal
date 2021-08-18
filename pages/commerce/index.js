@@ -60,9 +60,6 @@ export default function Commerce({ }) {
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 

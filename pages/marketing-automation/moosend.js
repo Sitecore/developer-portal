@@ -52,9 +52,6 @@ export default function MarketingAutomation2({ moosend }) {
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 

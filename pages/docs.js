@@ -62,8 +62,6 @@ export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs, m
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }

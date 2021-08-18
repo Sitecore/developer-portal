@@ -68,9 +68,6 @@ export default function MarketingAutomation2({ moosend, sitecoreXPMarketingAutom
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 

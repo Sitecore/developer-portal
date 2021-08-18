@@ -60,9 +60,6 @@ export default function MarketingAutomation({ }) {
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 

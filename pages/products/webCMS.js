@@ -63,9 +63,6 @@ export default function WebCMS({ webCMS, jss, sitecoreForms }) {
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>
     )
 }

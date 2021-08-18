@@ -74,9 +74,6 @@ export default function SitecoreCDP({ webTracking, sitecoreCDPData, xConnect, xD
 
         </div>
       </main>
-
-      <Footer />
-
     </div>)
 }
 

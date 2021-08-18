@@ -70,7 +70,6 @@ export default function Personalization({ federatedExperienceManagerData, univer
 
                 </div>
             </main>
-            <Footer />
         </div >
     )
 }

@@ -51,9 +51,6 @@ export default function SitecoreCDP({ sitecoreCDP }) {
 
         </div>
       </main>
-
-      <Footer />
-
     </div>)
 }
 

@@ -84,9 +84,6 @@ export default function MarketingAutomation({ moosend, marketingAutomationEngine
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 

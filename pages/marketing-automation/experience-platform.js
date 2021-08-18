@@ -53,9 +53,6 @@ export default function MarketingAutomation2({ sitecoreXPMarketingAutomation }) 
 
                 </div>
             </main>
-
-            <Footer />
-
         </div>)
 }
 
