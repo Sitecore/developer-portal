@@ -25,7 +25,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Docs({ supportKB, cdpKB, sitecoreKC, ordercloud, moosend, contenthub }) {
+export default function Discover({ supportKB, cdpKB, sitecoreKC, ordercloud, moosend, contenthub }) {
   return (
     <div className={styles.container}>
       <Head>
