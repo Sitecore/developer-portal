@@ -12,7 +12,7 @@ Discover
 
 Learn
 
- - [Getting Started](https://doc.sitecore.com/en/developers/91/sitecore-experience-platform/using-fxm.html)
+ - [Getting Started](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/using-fxm.html)
 
 Playground
 
