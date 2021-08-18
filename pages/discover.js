@@ -9,17 +9,19 @@ export async function getStaticProps() {
   const supportKB = await getMarkdownData("supportkb.md", discoverMarkDownFolder);
   const cdpKB = await getMarkdownData("cdpkb.md", discoverMarkDownFolder);
   const sitecoreKC = await getMarkdownData("sitecoreknowledgecenter.md", discoverMarkDownFolder);
+  const ordercloud = await getMarkdownData("ordercloud.md", discoverMarkDownFolder);
 
   return {
       props: {
           supportKB,
           cdpKB,
           sitecoreKC,
+          ordercloud,
       },
   };
 }
 
-export default function Docs({ supportKB, cdpKB, sitecoreKC }) {
+export default function Docs({ supportKB, cdpKB, sitecoreKC, ordercloud }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -40,6 +42,9 @@ export default function Docs({ supportKB, cdpKB, sitecoreKC }) {
 					</div>
           <div className={styles.productCategoryCard}>
 						<ReactMarkdown>{cdpKB.markdown}</ReactMarkdown>
+					</div>
+          <div className={styles.productCategoryCard}>
+						<ReactMarkdown>{ordercloud.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.productCategoryCard}>
 						<ReactMarkdown>{sitecoreKC.markdown}</ReactMarkdown>
