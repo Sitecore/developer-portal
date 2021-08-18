@@ -15,6 +15,7 @@ Discover
 
 Learn
 
+ - [Getting Started]()
  - [Boxever Training path](https://learning.sitecore.com/pathway/boxever-training)
 
 Playground

@@ -12,7 +12,7 @@ Discover
 
 Learn
 
- - [Learn Sitecore xDB]()
+ - [Getting Started]()
 
 Playground
 

@@ -12,7 +12,7 @@ Discover
 
 Learn
 
- - [Learn Universal Tracker]()
+ - [Getting Started]()
 
 Playground
 
