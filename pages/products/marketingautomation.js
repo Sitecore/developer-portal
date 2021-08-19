@@ -42,11 +42,6 @@ export default function MarketingAutomation({ moosend, marketingAutomationEngine
                 </h1>
                 <a href="/" className={styles.link}><h2>Take me Home</h2></a>
                 <div className={styles.grid}>
-                    <div className={styles.searchCard}>
-                        <h2>I'm a unified search 🔍</h2>
-                    </div>
-
-
                     <div className={styles.productCategoryCard}>
                         <ReactMarkdown>{moosend.markdown}</ReactMarkdown>
                     </div>

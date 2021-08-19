@@ -26,10 +26,6 @@ export default function Commerce({ }) {
                 </h1>
                 <a href="/" className={styles.link}><h2>Take me Home</h2></a>
                 <div className={styles.grid}>
-                    <div className={styles.searchCard}>
-                        <h2>I'm a unified search 🔍</h2>
-                    </div>
-
                     <div className={styles.productCategoryCardCompact}>
                         <h2>OrderCloud</h2>
                         <p>Cloud-native, headless, and API-first commerce solution</p>

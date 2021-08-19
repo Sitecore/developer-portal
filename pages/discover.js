@@ -38,9 +38,6 @@ export default function Discover({ supportKB, cdpKB, sitecoreKC, ordercloud, moo
         <h1 className={styles.title}>Discover Sitecore</h1>
 
         <div className={styles.grid}>
-          <div className={styles.searchCard}>
-            <h2>I'm a unified search 🔍</h2>
-          </div>
           <div className={styles.productCategoryCard}>
 						<ReactMarkdown>{supportKB.markdown}</ReactMarkdown>
 					</div>

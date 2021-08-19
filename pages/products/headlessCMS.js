@@ -31,10 +31,6 @@ export default function HeadlessCMS({ jss, edge }) {
 					<h2>Take me Home</h2>
 				</a>
 				<div className={styles.grid}>
-					<div className={styles.searchCard}>
-						<h2>I'm a unified search 🔍</h2>
-					</div>
-
 					<div className={styles.socialsCard}>
 						<ReactMarkdown>{jss.markdown}</ReactMarkdown>
 					</div>

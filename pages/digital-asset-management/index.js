@@ -29,10 +29,6 @@ export default function DAM({ dam }) {
 				</a>
 
 				<div className={styles.grid}>
-					<div className={styles.searchCard}>
-						<h2>I'm a unified search 🔍</h2>
-					</div>
-
 					<div className={styles.socialsCard}>
 						<h2>News & Announcements</h2>
 						<a href="" className={styles.link}>

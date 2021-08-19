@@ -32,10 +32,6 @@ export default function MarketingAutomation2({ moosend, sitecoreXPMarketingAutom
                 </h1>
                 <a href="/" className={styles.link}><h2>Take me Home</h2></a>
                 <div className={styles.grid}>
-                    <div className={styles.searchCard}>
-                        <h2>I'm a unified search 🔍</h2>
-                    </div>
-
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Moosend</h2>
                         <p>A place to send Moos</p>

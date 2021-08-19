@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Footer from '../components/footer'
 
 export default function Home() {
   return (
@@ -17,9 +16,6 @@ export default function Home() {
         </h1>
 
         <div className={styles.grid}>
-          <div className={styles.searchCard}>
-            <h2>I'm a unified search 🔍</h2>
-          </div>
           <div className={styles.youtubeCard}>
             <h2>I'm recent YouTube videos 🎥</h2>
           </div>

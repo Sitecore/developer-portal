@@ -28,9 +28,6 @@ export default function Community({ mvpSite }) {
         <h1 className={styles.title}>Sitecore Community</h1>
 
         <div className={styles.grid}>
-          <div className={styles.searchCard}>
-            <h2>I'm a unified search 🔍</h2>
-          </div>
           <div className={styles.productCategoryCard}>
 						<h2>Forum box (TBD)</h2>
 					</div>

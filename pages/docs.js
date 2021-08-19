@@ -36,9 +36,6 @@ export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs, m
         <h1 className={styles.title}>Developer Documentation</h1>
 
         <div className={styles.grid}>
-          <div className={styles.searchCard}>
-            <h2>I'm a unified search 🔍</h2>
-          </div>
           <div className={styles.productCategoryCard}>
 						<ReactMarkdown>{cmsDocs.markdown}</ReactMarkdown>
 					</div>
