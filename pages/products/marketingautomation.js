@@ -70,11 +70,6 @@ export default function MarketingAutomation({ moosend, marketingAutomationEngine
                         <h2>News & Announcements</h2>
                         <a href="" className={styles.link}><li>Cool new Marketing Automation things</li></a>
                     </div>
-                    <div className={styles.socialsCard}>
-                        <h2>Get Help</h2>
-                        <a href="https://support.sitecore.com/kb?id=kb_home" className={styles.link}><li>Sitecore Support</li></a>
-                    </div>
-
                 </div>
             </main>
         </div>)
