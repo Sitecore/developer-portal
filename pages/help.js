@@ -5,10 +5,11 @@ import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
   const communityMarkDownFolder = "communityMarkdown";
+  const helpMarkDownFolder = "helpMarkdown";
   const slack = await getMarkdownData("slack.md", communityMarkDownFolder);
   const stackexchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
   const forums = await getMarkdownData("forums.md", communityMarkDownFolder);
-  const support = await getMarkdownData("support.md", communityMarkDownFolder);
+  const support = await getMarkdownData("support.md", helpMarkDownFolder);
 
   return {
       props: {
@@ -51,7 +52,7 @@ export default function Community({ forums, slack, stackexchange, support}) {
             </div>
           </div>
           <div className={styles.youtubeCard}>
-            <h2>Help and Feedback</h2>
+            <h2>Contact Us info here (or redirect to sitecore.com contact)</h2>
           </div>
         </div>
       </main>
