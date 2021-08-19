@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Footer from '../components/footer'
 import { getMarkdownData } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
