@@ -54,7 +54,7 @@ export default function Nav() {
                             <li><a href="/commerce/experience-commerce">Sitecore Experience Commerce</a></li>
                         </ul>
                     </li>
-                    <li><a href="">DevOps</a></li>
+                    <li><a href="/devops">DevOps</a></li>
                 </ul>
             </div>
             <div className={styles.container}>
