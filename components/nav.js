@@ -4,6 +4,9 @@ export default function Nav() {
     return (
         <nav className={styles.nav}>
             <div className={styles.container}>
+                <a href="/">Home 🏡</a>
+            </div>
+            <div className={styles.container}>
                 <b>Navigate by type of content</b>
                 <ul>
                     <li><a href="/docs">Docs</a></li>
