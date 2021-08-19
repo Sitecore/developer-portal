@@ -1,7 +1,24 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { getMarkdownData } from "../lib/getMarkdownData";
+import ReactMarkdown from "react-markdown";
 
-export default function Home() {
+export async function getStaticProps() {
+  const communityMarkDownFolder = "communityMarkdown";
+  const slack = await getMarkdownData("slack.md", communityMarkDownFolder);
+  const stackexchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
+  const forums = await getMarkdownData("forums.md", communityMarkDownFolder);
+
+  return {
+      props: {
+          forums,
+          slack,
+          stackexchange,
+      },
+  };
+}
+
+export default function Home({forums, slack, stackexchange}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,9 +38,17 @@ export default function Home() {
           </div>
           <div className={styles.youtubeCard}>
             <h2>Join these cool Sitecore Communities 🤖</h2>
-            <a href="https://sitecorechat.slack.com/" className={styles.link}><li>Slack</li></a>
-            <a href="https://sitecore.stackexchange.com/" className={styles.link}><li>Stack Exchange</li></a>
-            <a href="https://www.sitecore.com/knowledge-center/blog" className={styles.link}><li>Sitecore Blog</li></a>
+            <div className={styles.threecolumn}>
+              <div className={styles.onethirdcard}>
+                <ReactMarkdown>{slack.markdown}</ReactMarkdown>
+              </div>
+              <div className={styles.onethirdcard}>
+                <ReactMarkdown>{stackexchange.markdown}</ReactMarkdown>
+              </div>
+              <div className={styles.onethirdcard}>
+                <ReactMarkdown>{forums.markdown}</ReactMarkdown>
+              </div>
+            </div>
           </div>
           <div className={styles.youtubeCard}>
             <h2>Upcoming Events</h2>
