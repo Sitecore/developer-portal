@@ -23,7 +23,6 @@ export default function CDP({ }) {
                 <h1 className={styles.title}>
                     Customer Data Management 👨‍👨‍👧‍👧
                 </h1>
-                <a href="/" className={styles.link}><h2>Take me Home</h2></a>
                 <div className={styles.grid}>
 
                     <div className={styles.productCategoryCardCompact}>

@@ -27,7 +27,6 @@ export default function MarketingAutomation2({ moosend }) {
                 <h1 className={styles.title}>
                     Marketing Automation - Moosend 🚗
                 </h1>
-                <a href="/" className={styles.link}><h2>Take me Home</h2></a>
                 <div className={styles.grid}>
 
                     <div className={styles.productCategoryCardLarge}>

@@ -26,9 +26,6 @@ export default function HeadlessCMS({ jss, edge }) {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>Headless CMS 💻</h1>
-				<a href="/" className={styles.link}>
-					<h2>Take me Home</h2>
-				</a>
 				<div className={styles.grid}>
 					<div className={styles.socialsCard}>
 						<ReactMarkdown>{jss.markdown}</ReactMarkdown>

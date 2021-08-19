@@ -23,7 +23,6 @@ export default function Commerce({ }) {
                 <h1 className={styles.title}>
                     Commerce 💸
                 </h1>
-                <a href="/" className={styles.link}><h2>Take me Home</h2></a>
                 <div className={styles.grid}>
                     <div className={styles.productCategoryCardCompact}>
                         <h2>OrderCloud</h2>

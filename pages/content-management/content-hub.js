@@ -24,9 +24,6 @@ export default function ContentHub({ dam }) {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>Content Management - Content Hub 🕵️‍♀️</h1>
-				<a href="/" className={styles.link}>
-					<h2>Take me Home</h2>
-				</a>
 
 				<div className={styles.grid}>
 					<div className={styles.socialsCard}>

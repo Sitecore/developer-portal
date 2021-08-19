@@ -24,9 +24,6 @@ export default function DevOps({ devOpsFiles }) {
 
             <main className={styles.main}>
                 <h1 className={styles.title}>DevOps 🎁</h1>
-                <a href="/" className={styles.link}>
-                    <h2>Take me Home</h2>
-                </a>
 
                 {devOpsFiles.map(file => (
                     <div className={styles.grid} id={file.id}>

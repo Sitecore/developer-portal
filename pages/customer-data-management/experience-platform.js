@@ -33,7 +33,6 @@ export default function XP({ webTracking, xConnect, xDB, referenceDataService })
         <h1 className={styles.title}>
         Customer Data Management - Experience Platform 👨‍👨‍👧‍👧
         </h1>
-        <a href="/" className={styles.link}><h2>Take me Home</h2></a>
         <div className={styles.grid}>
           <div className={styles.productCategoryCard}>
             <ReactMarkdown>{webTracking.markdown}</ReactMarkdown>

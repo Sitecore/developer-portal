@@ -27,7 +27,6 @@ export default function MarketingAutomation2({ sitecoreXPMarketingAutomation }) 
                 <h1 className={styles.title}>
                     Marketing Automation - Sitecore Experience Platform 🚗
                 </h1>
-                <a href="/" className={styles.link}><h2>Take me Home</h2></a>
                 <div className={styles.grid}>
                  
                     <div className={styles.productCategoryCardLarge}>

@@ -31,7 +31,6 @@ export default function ExperiencePlatform({ federatedExperienceManagerData, uni
 
             <main className={styles.main}>
                 <h1 className={styles.title}>Personalization and Testing - Experience Platform 🕵️</h1>
-                <a href="/" className={styles.link}><h2>Take me Home</h2></a>
                 <div className={styles.grid}>
                     <div className={styles.productCategoryCard}>
                         <ReactMarkdown>{federatedExperienceManagerData.markdown}</ReactMarkdown>
