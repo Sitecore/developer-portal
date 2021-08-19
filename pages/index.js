@@ -38,14 +38,14 @@ export default function Home({forums, slack, stackexchange}) {
           </div>
           <div className={styles.youtubeCard}>
             <h2>Join these cool Sitecore Communities 🤖</h2>
-            <div className={styles.threecolumn}>
-              <div className={styles.onethirdcard}>
+            <div className={styles.threeColumn}>
+              <div className={styles.oneThirdCard}>
                 <ReactMarkdown>{slack.markdown}</ReactMarkdown>
               </div>
-              <div className={styles.onethirdcard}>
+              <div className={styles.oneThirdCard}>
                 <ReactMarkdown>{stackexchange.markdown}</ReactMarkdown>
               </div>
-              <div className={styles.onethirdcard}>
+              <div className={styles.oneThirdCard}>
                 <ReactMarkdown>{forums.markdown}</ReactMarkdown>
               </div>
             </div>
