@@ -10,6 +10,7 @@ export async function getStaticProps() {
   const cdmDocs = await getMarkdownData("customerdatamanagement.md", docsMarkDownFolder);
   const personalizationDocs = await getMarkdownData("personalization.md", docsMarkDownFolder);
   const maDocs = await getMarkdownData("marketingautomation.md", docsMarkDownFolder);
+  const commerceDocs = await getMarkdownData("commerce.md", docsMarkDownFolder);
 
   return {
       props: {
@@ -18,11 +19,12 @@ export async function getStaticProps() {
           cdmDocs,
           personalizationDocs,
           maDocs,
+          commerceDocs,
       },
   };
 }
 
-export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs, maDocs }) {
+export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs, maDocs, commerceDocs }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -51,7 +53,7 @@ export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs, m
 						<ReactMarkdown>{maDocs.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.productCategoryCard}>
-						<h2>TBD: Commerce docs</h2>
+            <ReactMarkdown>{commerceDocs.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.youtubeCard}>
             <h2>@DocsSitecore Twitter feed 🕊</h2>
