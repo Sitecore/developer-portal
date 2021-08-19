@@ -4,10 +4,11 @@ export default function Nav() {
     return (
         <nav className={styles.nav}>
             <div className={styles.container}>
-                <a href="/">Home 🏡</a>
+                <a href="/" className={styles.navheader}>Home 🏡</a>
             </div>
+
             <div className={styles.container}>
-                <b>Navigate by type of content</b>
+                <span className={styles.navheader}>Navigate by type of content</span>
                 <ul>
                     <li><a href="/docs">Docs</a></li>
                     <li><a href="/discover">Discover</a></li>
@@ -15,11 +16,10 @@ export default function Nav() {
                     <li><a href="">Playground</a></li>
                     <li><a href="">Get Help</a></li>
                     <li><a href="/community">Community</a></li>
-
                 </ul>
             </div>
             <div className={styles.container}>
-                <b>Navigate by Solution</b>
+                <span className={styles.navheader}>Navigate by Solution</span>
                 <ul>
                     <li>Content Management and Delivery
                         <ul>
@@ -58,7 +58,7 @@ export default function Nav() {
                 </ul>
             </div>
             <div className={styles.container}>
-                <b>Navigate by Product</b>
+                <span className={styles.navheader}>Navigate by Product</span>
                 <ul>
                     <li>Sitecore Content Hub
                         <ul>

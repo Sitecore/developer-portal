@@ -21,7 +21,29 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:flex-start;
+  flex-wrap: wrap;
+}
+
+.nav ul  {
+  opacity: 0;
+  visibility: hidden;
+  display:none;
+  transition: all 0.5s ease;
+}
+
+.nav div:hover {
+  background-color: #eee;
+}
+
+.nav div:hover ul {
+  opacity: 1;
+  display:block;
+  visibility: visible;
+}
+
+.navheader {
+  font-weight: bold;
 }
 
 .footer {
