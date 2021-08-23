@@ -7,7 +7,7 @@ const Footer = () => {
             <div className={styles.container}>
                 <a href="/help"><h2>Need help?</h2></a>
                 <a
-                href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                href="https://developers.sitecore.com"
                 target="_blank"
                 rel="noopener noreferrer"
             >
