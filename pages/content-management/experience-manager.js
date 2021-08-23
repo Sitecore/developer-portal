@@ -7,17 +7,19 @@ export async function getStaticProps() {
     const webCMS = await getMarkdownData("webCMS.md");
     const jss = await getMarkdownData("jss.md");
     const sitecoreForms = await getMarkdownData("sitecoreForms.md");
+    const headlessDotNet = await getMarkdownData("headlessDotNet.md");
 
     return {
         props: {
             webCMS,
             jss,
-            sitecoreForms
+            sitecoreForms,
+            headlessDotNet
         },
     };
 }
 
-export default function ExperienceManager({ webCMS, jss, sitecoreForms }) {
+export default function ExperienceManager({ webCMS, jss, sitecoreForms, headlessDotNet }) {
     return (
         <div className={styles.container}>
             <Head>
@@ -41,6 +43,10 @@ export default function ExperienceManager({ webCMS, jss, sitecoreForms }) {
 
                     <div className={styles.productCategoryCard}>
                         <ReactMarkdown>{sitecoreForms.markdown}</ReactMarkdown>
+                    </div>
+
+                    <div className={styles.productCategoryCard}>
+                        <ReactMarkdown>{headlessDotNet.markdown}</ReactMarkdown>
                     </div>
                     
                     <div className={styles.socialsCard}>

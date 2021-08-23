@@ -6,16 +6,18 @@ import ReactMarkdown from 'react-markdown';
 export async function getStaticProps() {
 	const jss = await getMarkdownData('jss.md');
 	const edge = await getMarkdownData('edge.md');
+	const headlessDotNet = await getMarkdownData('headlessDotNet.md');
 
 	return {
 		props: {
 			jss,
 			edge,
+			headlessDotNet
 		},
 	};
 }
 
-export default function HeadlessCMS({ jss, edge }) {
+export default function HeadlessCMS({ jss, edge, headlessDotNet }) {
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -33,6 +35,10 @@ export default function HeadlessCMS({ jss, edge }) {
 
 					<div className={styles.socialsCard}>
 						<ReactMarkdown>{edge.markdown}</ReactMarkdown>
+					</div>
+
+					<div className={styles.socialsCard}>
+						<ReactMarkdown>{headlessDotNet.markdown}</ReactMarkdown>
 					</div>
 
 					<div className={styles.socialsCard}>
