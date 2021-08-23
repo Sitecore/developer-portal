@@ -20,6 +20,7 @@ Learn
 - [Integrating a Client Framework with JSS YouTube playlist](https://www.youtube.com/watch?v=vQxLQH0iYps&list=PL1jJVFm_lGnxDrexrlt0Wy_va_vQvQvjN)
 - [Headless and JSS YouTube playlist](https://www.youtube.com/watch?v=ugPy7BjH0H0&list=PL1jJVFm_lGnwZup4L4BjITS2sKr4rpMfI)
 - [JSS Architecture](https://jss.sitecore.com/docs/fundamentals/architecture)
+- [Walkthrough: Using the Sitecore Container Template for JSS Next.js Projects](https://jss.sitecore.com/docs/nextjs/getting-started-nextjs/walkthrough-dotnetnew)
 
 Playground
 

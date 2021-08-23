@@ -17,6 +17,3 @@ Learn
 Playground
 
 Socials
-
-- [JSS StackExchange Tag](https://sitecore.stackexchange.com/questions/tagged/jss)
-- [#SitecoreJSS Twitter](https://twitter.com/search?q=sitecorejss&src=typed_query&f=live)

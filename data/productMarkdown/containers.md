@@ -7,7 +7,7 @@ solution: ['devops']
 
 Docs
 
- - [Containers in Sitecore development](https://doc.sitecore.com/en/developers/100/developer-tools/containers-in-sitecore-development.html)
+ - [Containers in Sitecore development](https://doc.sitecore.com/en/developers/101/developer-tools/containers-in-sitecore-development.html)
  - [Docker: A quick overview](https://www.sitecore.com/knowledge-center/getting-started/docker-a-quick-overview)
  - [Run your first Sitecore instance](https://doc.sitecore.com/en/developers/101/developer-tools/run-your-first-sitecore-instance.html)
  - [Sitecore, Docker, and Continuous Integration](https://www.sitecore.com/knowledge-center/getting-started/sitecore-docker-and-continuous-integration)
