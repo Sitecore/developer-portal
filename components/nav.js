@@ -27,6 +27,7 @@ export default function Nav() {
                             <li><a href="">Experience Edge for Content Hub</a></li>
                             <li><a href="/content-management/experience-manager">Sitecore Experience Manager</a></li>
                             <li><a href="">Experience Edge for XM</a></li>
+                            <li><a href="/content-management/sxa">Sitecore Experience Accelerator (SXA)</a></li>
                         </ul>
                     </li>
                     <li><a href="/digital-asset-management">Digital Asset Management</a></li>
@@ -79,7 +80,7 @@ export default function Nav() {
                             <li><a href="">Headless</a></li>
                             <li><a href="">Developer Collection</a></li>
                             <li><a href="">Experience Edge for XM</a></li>
-                            <li><a href="">Sitecore Experience Accelerator (SXA)</a></li>
+                            <li><a href="/content-management/sxa">Sitecore Experience Accelerator (SXA)</a></li>
                         </ul>
                     </li>
                     <li>Sitecore Experience Platform
