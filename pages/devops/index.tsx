@@ -2,9 +2,14 @@ import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
 import { getTaggedMarkdownData } from '../../lib/getMarkdownData';
 import ReactMarkdown from 'react-markdown';
+import { Tags } from '../../interfaces/tags'
+import { MarkdownAsset } from '../../interfaces/markdownAsset'
 
 export async function getStaticProps() {
-    const devOpsFiles = await getTaggedMarkdownData('devops', '');
+    let tags: Tags = {
+        solution: 'devops'
+    }
+    const devOpsFiles = await getTaggedMarkdownData(tags);
 
     return {
         props: {
@@ -13,7 +18,7 @@ export async function getStaticProps() {
     };
 }
 
-export default function DevOps({ devOpsFiles }) {
+export default function DevOps({ devOpsFiles }: { devOpsFiles: MarkdownAsset[] }) {
     return (
         <div className={styles.container}>
             <Head>
@@ -25,13 +30,15 @@ export default function DevOps({ devOpsFiles }) {
             <main className={styles.main}>
                 <h1 className={styles.title}>DevOps 🎁</h1>
 
-                {devOpsFiles.map(file => (
-                    <div className={styles.grid} id={file.id}>
-                        <div className={styles.socialsCard}>
+                <div className={styles.grid}>
+
+                    {devOpsFiles.map(file => (
+                        <div id={file.id} className={styles.socialsCard}>
                             <ReactMarkdown>{file.markdown}</ReactMarkdown>
                         </div>
-                    </div>
-                ))}
+                    ))}
+
+                </div>
 
             </main>
         </div>

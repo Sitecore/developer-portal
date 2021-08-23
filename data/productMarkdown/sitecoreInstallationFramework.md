@@ -1,5 +1,6 @@
 ---
 solution: ['devops']
+product: ['xm','xp','xc']
 ---
 
 # Sitecore Installation Framework (SIF)

@@ -2,17 +2,18 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import recursiveReadSync from 'recursive-readdir-sync'
+import { Tags } from '../interfaces/tags'
+import { MarkdownAsset } from '../interfaces/markdownAsset'
 
 const postsDirectory = path.join(process.cwd(), 'data')
 
-export async function getMarkdownData(markdownFileName, markdownFolder) {
+export async function getMarkdownData(markdownFileName: string, markdownFolder: string) {
     //Default to "productMarkdown" for backward compatibility with previous calls
     if (!markdownFolder) {
         markdownFolder = "productMarkdown"
     }
     const fullPath = path.join(postsDirectory, markdownFolder, markdownFileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
-
     const postMetaDataSection = matter(fileContents)
 
     return {
@@ -23,16 +24,16 @@ export async function getMarkdownData(markdownFileName, markdownFolder) {
 }
 
 
-export async function getTaggedMarkdownData(solution,product) {
+export async function getTaggedMarkdownData(tags: Tags) {
     var files = recursiveReadSync(postsDirectory);       
-    var taggedFiles = []
+    var taggedFiles: MarkdownAsset[] = []
     for(var i=0;i<files.length;i++) {
         const file = files[i]
      
         const fileContents = fs.readFileSync(file, 'utf8')
         const postMatter = matter(fileContents)
-        if((postMatter.data.solution == solution || solution == '') && (postMatter.data.product == product || product == '')) {
-            let taggedFile = {
+        if(DoMatchTags(tags, postMatter)) {
+            let taggedFile: MarkdownAsset = {
                 id: path.basename(file),
                 markdown: postMatter.content,
                 ...postMatter.data
@@ -41,4 +42,9 @@ export async function getTaggedMarkdownData(solution,product) {
         }
     }
     return taggedFiles
+}
+
+function DoMatchTags(tags: Tags, postMatter: matter.GrayMatterFile<string>) {
+    return (postMatter.data.solution == tags.solution || !tags.solution) && 
+           (postMatter.data.product == tags.product || !tags.product)
 }

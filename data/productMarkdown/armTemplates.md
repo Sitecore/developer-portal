@@ -1,6 +1,6 @@
 ---
 solution: ['devops']
-product: ['xm','xc']
+product: ['xm','xp','xc']
 ---
 
 # Sitecore ARM Templates
