@@ -5,20 +5,23 @@ import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
   const communityMarkDownFolder = "communityMarkdown";
+  const helpMarkDownFolder = "helpMarkdown";
   const slack = await getMarkdownData("slack.md", communityMarkDownFolder);
   const stackexchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
   const forums = await getMarkdownData("forums.md", communityMarkDownFolder);
+  const gethelp = await getMarkdownData("gethelp.md", helpMarkDownFolder);
 
   return {
       props: {
           forums,
           slack,
           stackexchange,
+          gethelp
       },
   };
 }
 
-export default function Home({forums, slack, stackexchange}) {
+export default function Home({forums, slack, stackexchange, gethelp}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -86,9 +89,7 @@ export default function Home({forums, slack, stackexchange}) {
             <a href="commerce/" className={styles.link}>Learn more...</a>
           </div>
           <div className={styles.youtubeCard}>
-            <h2>Help and Feedback</h2>
-            <p>Need answers to your questions?</p>
-            <a href="/help/">Get help now!</a>
+            <ReactMarkdown>{gethelp.markdown}</ReactMarkdown>
           </div>
         </div>
       </main>
