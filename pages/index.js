@@ -87,6 +87,8 @@ export default function Home({forums, slack, stackexchange}) {
           </div>
           <div className={styles.youtubeCard}>
             <h2>Help and Feedback</h2>
+            <p>Need answers to your questions?</p>
+            <a href="/help/">Get help now!</a>
           </div>
         </div>
       </main>
