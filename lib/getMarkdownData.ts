@@ -5,7 +5,8 @@ import recursiveReadSync from 'recursive-readdir-sync'
 import { Tags } from '../interfaces/tags'
 import { MarkdownAsset } from '../interfaces/markdownAsset'
 
-const postsDirectory = path.join(process.cwd(), 'data')
+const postsDirectory = path.join(process.cwd(), 'data');
+const pageDirectory = path.join(process.cwd(), 'data/pageMarkdown');
 
 export async function getMarkdownData(markdownFileName: string, markdownFolder: string) {
     //Default to "productMarkdown" for backward compatibility with previous calls
@@ -21,6 +22,24 @@ export async function getMarkdownData(markdownFileName: string, markdownFolder: 
         markdown: postMetaDataSection.content,
         ...postMetaDataSection.data
     }
+}
+
+export async function getPageLevelInfo(page: string) {
+    var files = recursiveReadSync(pageDirectory);       
+    var taggedFile = {};
+    for(var i=0;i<files.length;i++) {
+        const file = files[i]
+     
+        const fileContents = fs.readFileSync(file, 'utf8')
+        const postMatter = matter(fileContents)
+        if(DoesPageMatch(page, postMatter)) {
+            taggedFile = {
+                id: path.basename(file),
+                ...postMatter.data
+            }
+        }
+    }
+    return taggedFile;
 }
 
 
@@ -42,6 +61,10 @@ export async function getTaggedMarkdownData(tags: Tags) {
         }
     }
     return taggedFiles
+}
+
+function DoesPageMatch(page: string, postMatter: matter.GrayMatterFile<string>) {
+    return (postMatter.data.page === page)
 }
 
 function DoMatchTags(tags: Tags, postMatter: matter.GrayMatterFile<string>) {
