@@ -38,8 +38,15 @@ export default function DevOps({ devOpsFiles }: { devOpsFiles: MarkdownAsset[] }
                         </div>
                     ))}
 
+                    <div className={styles.socialsCard}>
+                        <h2>Latest Stack Exchange questions</h2>
+                        <p>#docker,#container,#azure-devops,#paas, #azure, #sitecore-install-framework, #installation, #tds, #deployment, #scaling, #role-management, #serialization, #arm-template</p>
+                    </div>
+                    <div className={styles.socialsCard}>
+                        <h2>News & Announcements</h2>
+                        <a href="" className={styles.link}><li>Cool new things</li></a>
+                    </div>
                 </div>
-
             </main>
         </div>
     );
