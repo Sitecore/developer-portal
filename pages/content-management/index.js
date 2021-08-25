@@ -14,14 +14,14 @@ export default function ContentManagement({ }) {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Content Management</title>
+                <title>Content Management and Delivery</title>
                 <meta name="description" content="Integrate CMS into your tech stack to enable marketing teams to own the digital solutions." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Content Management 💾
+                    Content Management and Delivery 💾
                 </h1>
                 <div className={styles.grid}>
                     <div className={styles.productCategoryCardCompact}>
@@ -40,8 +40,17 @@ export default function ContentManagement({ }) {
                         </Link>
                     </div>
 
+                    <div className={styles.productCategoryCardCompact}>
+                        <h2>Sitecore Experience Accelerator (SXA)</h2>
+                        <p>Turbo charge your Sitecore development</p>
+                        <Link href="content-management/sxa">
+                            <a>Learn more...</a>
+                        </Link>
+                    </div>
+
                     <div className={styles.socialsCard}>
-                        <h2>Socials</h2>
+                        <h2>Latest Stack Exchange questions</h2>
+                        <p>#SXA, #sitecore-client, #content-search, #jss, #experience-editor, #content-editor, #media-library, #publishing, #security, #multilingual, #templates, #multisite, #workflow, #content-management, #content-delivery, #content-hub, #headless</p>
                     </div>
                     <div className={styles.socialsCard}>
                         <h2>News & Announcements</h2>
