@@ -1,3 +1,9 @@
+---
+solution: ['content-management']
+product: ['experience-manager']
+prettyName: 'Sitecore Headless Development with ASP.NET'
+---
+
 # [Sitecore Headless Development with ASP.NET]()
 
 [What and Why]()

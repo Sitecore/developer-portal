@@ -1,3 +1,9 @@
+---
+solution: ['content-management']
+product: ['content-hub']
+prettyName: 'Content Hub'
+---
+
 ## What and why
 
 - [Content Hub overview](https://www.sitecore.com/products/content-hub)

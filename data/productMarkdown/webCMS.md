@@ -1,3 +1,9 @@
+---
+solution: ['content-management']
+product: ['experience-manager']
+prettyName: 'Web Content Management'
+---
+
 # [Web CMS](https://www.sitecore.com/products/experience-manager)
 
 [What and Why](https://www.sitecore.com/knowledge-center/digital-marketing-resources/what-is-a-cms)

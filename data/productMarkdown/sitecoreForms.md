@@ -1,3 +1,9 @@
+---
+solution: ['content-management']
+product: ['experience-manager']
+prettyName: 'Sitecore Forms'
+---
+
 # [Sitecore Forms]()
 
 [What and Why]()

@@ -1,3 +1,9 @@
+---
+solution: ['content-management']
+product: ['experience-manager']
+prettyName: 'Javascript Services'
+---
+
 # [JSS](https://jss.sitecore.com/)
 
 [What and Why](https://jss.sitecore.com/features/why-jss)

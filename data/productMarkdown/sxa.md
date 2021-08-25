@@ -1,3 +1,9 @@
+---
+solution: ['content-management']
+product: ['sxa']
+prettyName: 'Sitecore Experience Accelerator'
+---
+
 # [Sitecore Experience Accelerator]()
 
 [What and Why]()
