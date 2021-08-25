@@ -48,7 +48,7 @@ export default function productPage({ slug, files, pageInfo }: { slug: any, file
         stackexchangeFeed = (
             <div className={styles.socialsCard}>
                 <h2>Latest StackExchange questions</h2>
-                <p>{pageInfo.stackexchange}</p>
+                <p>{pageInfo.stackexchange.join()}</p>
             </div>
         );
     }
