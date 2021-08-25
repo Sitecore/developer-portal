@@ -4,13 +4,14 @@ import { getMarkdownData } from "../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-    const moosend = await getMarkdownData("moosend.md");
-    const marketingAutomationEngine = await getMarkdownData("marketingAutomationEngine.md");
-    const marketingOperations = await getMarkdownData("marketingOperations.md");
-    const segmentationAndConditions = await getMarkdownData("segmentationAndConditions.md");
-    const processing = await getMarkdownData("processing.md");
-    const cortexProcessingEngine = await getMarkdownData("cortexProcessingEngine.md");
-    const reporting = await getMarkdownData("reporting.md");
+    const productMarkdownFolder = "product";
+    const moosend = await getMarkdownData("moosend.md", productMarkdownFolder);
+    const marketingAutomationEngine = await getMarkdownData("marketingAutomationEngine.md", productMarkdownFolder);
+    const marketingOperations = await getMarkdownData("marketingOperations.md", productMarkdownFolder);
+    const segmentationAndConditions = await getMarkdownData("segmentationAndConditions.md", productMarkdownFolder);
+    const processing = await getMarkdownData("processing.md", productMarkdownFolder);
+    const cortexProcessingEngine = await getMarkdownData("cortexProcessingEngine.md", productMarkdownFolder);
+    const reporting = await getMarkdownData("reporting.md", productMarkdownFolder);
 
     return {
         props: {

@@ -4,7 +4,7 @@ import { getMarkdownData } from "../../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-    const orderCloud = await getMarkdownData("orderCloud.md");
+    const orderCloud = await getMarkdownData("orderCloud.md", "product");
 
     return {
         props: {

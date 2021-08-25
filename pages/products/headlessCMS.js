@@ -4,9 +4,10 @@ import { getMarkdownData } from '../../lib/getMarkdownData';
 import ReactMarkdown from 'react-markdown';
 
 export async function getStaticProps() {
-	const jss = await getMarkdownData('jss.md');
-	const edge = await getMarkdownData('edge.md');
-	const headlessDotNet = await getMarkdownData('headlessDotNet.md');
+	const productMarkdownFolder = "product";
+	const jss = await getMarkdownData('jss.md', productMarkdownFolder);
+	const edge = await getMarkdownData('edge.md', productMarkdownFolder);
+	const headlessDotNet = await getMarkdownData('headlessDotNet.md', productMarkdownFolder);
 
 	return {
 		props: {

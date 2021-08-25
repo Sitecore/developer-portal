@@ -4,10 +4,11 @@ import { getMarkdownData } from "../../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-  const webTracking = await getMarkdownData("webTracking.md");
-  const xConnect = await getMarkdownData("xConnect.md");
-  const xDB = await getMarkdownData("xDB.md");
-  const referenceDataService = await getMarkdownData("referenceDataService.md");
+  const productMarkdownFolder = "product";
+  const webTracking = await getMarkdownData("webTracking.md", productMarkdownFolder);
+  const xConnect = await getMarkdownData("xConnect.md", productMarkdownFolder);
+  const xDB = await getMarkdownData("xDB.md", productMarkdownFolder);
+  const referenceDataService = await getMarkdownData("referenceDataService.md", productMarkdownFolder);
 
   return {
     props: {

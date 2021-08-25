@@ -4,10 +4,11 @@ import { getMarkdownData } from "../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-    const federatedExperienceManagerData = await getMarkdownData("federatedExperienceManager.md");
-    const universalTracker = await getMarkdownData("universalTracker.md");
-    const segmentationAndConditions = await getMarkdownData("segmentationAndConditions.md");
-    const webTracking = await getMarkdownData("webTracking.md");
+    const productMarkdownFolder = "product";
+    const federatedExperienceManagerData = await getMarkdownData("federatedExperienceManager.md", productMarkdownFolder);
+    const universalTracker = await getMarkdownData("universalTracker.md", productMarkdownFolder);
+    const segmentationAndConditions = await getMarkdownData("segmentationAndConditions.md", productMarkdownFolder);
+    const webTracking = await getMarkdownData("webTracking.md", productMarkdownFolder);
 
     return {
         props: {

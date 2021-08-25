@@ -9,10 +9,6 @@ const postsDirectory = path.join(process.cwd(), 'data/markdown');
 const pageDirectory = path.join(process.cwd(), 'data//markdown/page');
 
 export async function getMarkdownData(markdownFileName: string, markdownFolder: string) {
-    //Default to "product" for backward compatibility with previous calls
-    if (!markdownFolder) {
-        markdownFolder = "product"
-    }
     const fullPath = path.join(postsDirectory, markdownFolder, markdownFileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const postMetaDataSection = matter(fileContents)

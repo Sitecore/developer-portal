@@ -4,10 +4,11 @@ import { getMarkdownData } from "../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-    const webCMS = await getMarkdownData("webCMS.md");
-    const jss = await getMarkdownData("jss.md");
-    const sitecoreForms = await getMarkdownData("sitecoreForms.md");
-    const headlessDotNet = await getMarkdownData("headlessDotNet.md");
+    const productMarkdownFolder = "product";
+    const webCMS = await getMarkdownData("webCMS.md", productMarkdownFolder);
+    const jss = await getMarkdownData("jss.md", productMarkdownFolder);
+    const sitecoreForms = await getMarkdownData("sitecoreForms.md", productMarkdownFolder);
+    const headlessDotNet = await getMarkdownData("headlessDotNet.md", productMarkdownFolder);
 
     return {
         props: {
