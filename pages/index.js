@@ -85,6 +85,11 @@ export default function Home({forums, slack, stackexchange, gethelp}) {
             <p>Build out order management, merchandising, marketplaces, and storefronts</p>
             <a href="commerce/" className={styles.link}>Learn more...</a>
           </div>
+          <div className={styles.productCategoryCard}>
+            <h2><a href="devops/">DevOps 🚢 &rarr;</a></h2>
+            <p>Installation, deployment, and architecture</p>
+            <a href="devops/" className={styles.link}>Learn more...</a>
+          </div>
           <div className={styles.youtubeCard}>
             <ReactMarkdown>{gethelp.markdown}</ReactMarkdown>
           </div>
