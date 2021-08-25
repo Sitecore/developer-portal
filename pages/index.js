@@ -88,6 +88,9 @@ export default function Home({forums, slack, stackexchange, gethelp}) {
           <div className={styles.youtubeCard}>
             <ReactMarkdown>{gethelp.markdown}</ReactMarkdown>
           </div>
+          <div className={styles.youtubeCard}>
+            <h2>Latest StackExchange questions</h2>
+          </div>
         </div>
       </main>
     </div>

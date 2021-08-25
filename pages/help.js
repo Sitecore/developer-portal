@@ -54,6 +54,9 @@ export default function Community({ forums, slack, stackexchange, support}) {
           <div className={styles.youtubeCard}>
             <h2>Contact Us info here (or redirect to sitecore.com contact)</h2>
           </div>
+          <div className={styles.youtubeCard}>
+            <h2>Latest StackExchange questions</h2>
+          </div>
         </div>
       </main>
     </div>

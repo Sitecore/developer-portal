@@ -48,6 +48,9 @@ export default function Community({ forums, slack, stackexchange, mvpSite }) {
           <div className={styles.youtubeCard}>
             <h2>@WeAreSitecore Twitter feed 🕊</h2>
           </div>
+          <div className={styles.youtubeCard}>
+            <h2>Latest StackExchange questions</h2>
+          </div>
         </div>
       </main>
     </div>
