@@ -47,5 +47,6 @@ prettyName: 'Content Hub'
 
 
 ## Socials
+- [Sitecore Stack Exchange - DAM](https://sitecore.stackexchange.com/questions/tagged/dam)
 - [Sitecore Stack Exchange - Content Hub](https://sitecore.stackexchange.com/questions/tagged/content-hub)
 - [Sitecore Stack Exchange - Content Hub Scripting](https://sitecore.stackexchange.com/questions/tagged/content-hub-scripting)
