@@ -1,3 +1,8 @@
+---
+solution: ['customer-data-management']
+product: ['experience-platform']
+prettyName: 'xConnect'
+---
 # [xConnect]()
 
 [What and Why]()

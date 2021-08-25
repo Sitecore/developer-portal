@@ -1,3 +1,8 @@
+---
+solution: ['customer-data-management']
+product: ['cdp']
+prettyName: 'Sitecore CDP'
+---
 # [Sitecore CDP]()
 
 [What and Why]()

@@ -1,3 +1,8 @@
+---
+solution: ['customer-data-management']
+product: ['experience-platform']
+prettyName: 'Sitecore xDB'
+---
 # [Sitecore xDB]()
 
 [What and Why]()

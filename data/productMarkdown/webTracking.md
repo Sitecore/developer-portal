@@ -1,3 +1,8 @@
+---
+solution: ['customer-data-management']
+product: ['experience-platform']
+prettyName: 'Web Tracking'
+---
 # [Web Tracking]()
 
 [What and Why]()

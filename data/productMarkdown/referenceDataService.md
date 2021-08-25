@@ -1,3 +1,8 @@
+---
+solution: ['customer-data-management']
+product: ['experience-platform']
+prettyName: 'Reference Data Service'
+---
 # [Reference Data Service]()
 
 [What and Why]()
