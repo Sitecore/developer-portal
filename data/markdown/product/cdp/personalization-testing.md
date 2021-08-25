@@ -1,9 +1,9 @@
 ---
-solution: ['customer-data-management', 'personalization-testing']
+solution: 'personalization-testing'
 product: ['cdp']
-prettyName: 'Sitecore CDP'
+prettyName: 'Personalization & Testing - Sitecore CDP'
 ---
-# [Sitecore CDP]()
+## [Sitecore CDP]()
 
 [What and Why]()
 
