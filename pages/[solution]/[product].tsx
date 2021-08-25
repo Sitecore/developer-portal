@@ -26,7 +26,7 @@ export async function getStaticProps(context: any) {
 
     let tags: Tags = {
         solution: slug.solution as string,
-        product: slug.product as string
+        products: [slug.product as string]
     }
 
     const pageInfo = await getPageLevelInfo(slug.product as string)

@@ -69,6 +69,20 @@ function DoesPageMatch(page: string, postMatter: matter.GrayMatterFile<string>) 
 
 function DoMatchTags(tags: Tags, postMatter: matter.GrayMatterFile<string>) {
     return (postMatter.data.solution == tags.solution || !tags.solution) && 
-           (postMatter.data.product == tags.product || !tags.product) && 
+           (!postMatter.data.product ? false : allTagsInArrayMatch(tags.products!, postMatter.data.product) || !tags.products) && 
            (postMatter.data.area == tags.area || !tags.area)
 }
+
+function allTagsInArrayMatch(array1: string[], array2: string[]) {
+    if(!array1 || !array2) {
+        return false
+    }
+    for(var i=0;i<array1.length;i++) {
+        if(!array2.includes(array1[i])) {
+            return false
+        }
+    }
+    return true
+}
+
+//postMatter.data.product.all((tag: string)  => tags.products?.includes(tag))

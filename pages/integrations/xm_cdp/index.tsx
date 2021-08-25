@@ -7,7 +7,7 @@ import { MarkdownAsset } from '../../../interfaces/markdownAsset'
 
 export async function getStaticProps() {
     let tags: Tags = {
-        //product: 'xm',
+        products: ['xm', 'cdp'],
         area: 'integrations'
     }
     const taggedFiles = await getTaggedMarkdownData(tags);

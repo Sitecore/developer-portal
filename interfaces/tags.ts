@@ -1,5 +1,5 @@
 export type Tags = {
     solution?: string
-    product?: string
+    products?: string[]
     area?: string
 }
