@@ -4,7 +4,7 @@ import { getMarkdownData } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-  const discoverMarkDownFolder = "discoverMarkdown";
+  const discoverMarkDownFolder = "discover";
   const supportKB = await getMarkdownData("supportkb.md", discoverMarkDownFolder);
   const cdpKB = await getMarkdownData("cdpkb.md", discoverMarkDownFolder);
   const sitecoreKC = await getMarkdownData("sitecoreknowledgecenter.md", discoverMarkDownFolder);

@@ -5,13 +5,13 @@ import recursiveReadSync from 'recursive-readdir-sync'
 import { Tags } from '../interfaces/tags'
 import { MarkdownAsset } from '../interfaces/markdownAsset'
 
-const postsDirectory = path.join(process.cwd(), 'data');
-const pageDirectory = path.join(process.cwd(), 'data/pageMarkdown');
+const postsDirectory = path.join(process.cwd(), 'data/markdown');
+const pageDirectory = path.join(process.cwd(), 'data//markdown/page');
 
 export async function getMarkdownData(markdownFileName: string, markdownFolder: string) {
-    //Default to "productMarkdown" for backward compatibility with previous calls
+    //Default to "product" for backward compatibility with previous calls
     if (!markdownFolder) {
-        markdownFolder = "productMarkdown"
+        markdownFolder = "product"
     }
     const fullPath = path.join(postsDirectory, markdownFolder, markdownFileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')

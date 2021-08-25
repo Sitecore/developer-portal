@@ -4,8 +4,8 @@ import { getMarkdownData } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-  const communityMarkDownFolder = "communityMarkdown";
-  const helpMarkDownFolder = "helpMarkdown";
+  const communityMarkDownFolder = "community";
+  const helpMarkDownFolder = "help";
   const slack = await getMarkdownData("slack.md", communityMarkDownFolder);
   const stackexchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
   const forums = await getMarkdownData("forums.md", communityMarkDownFolder);

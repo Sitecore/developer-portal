@@ -4,7 +4,7 @@ import { getMarkdownData } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-  const docsMarkDownFolder = "docsMarkdown";
+  const docsMarkDownFolder = "docs";
   const cmsDocs = await getMarkdownData("cms.md", docsMarkDownFolder);
   const damDocs = await getMarkdownData("dam.md", docsMarkDownFolder);
   const cdmDocs = await getMarkdownData("customerdatamanagement.md", docsMarkDownFolder);
