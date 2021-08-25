@@ -53,9 +53,6 @@ export default function Home({forums, slack, stackexchange, gethelp}) {
               </div>
             </div>
           </div>
-          <div className={styles.youtubeCard}>
-            <h2>Upcoming Events</h2>
-          </div>
 
           {/* PRODUCT SOLUTIONS */}
           <div className={styles.productCategoryCard}>
@@ -90,6 +87,9 @@ export default function Home({forums, slack, stackexchange, gethelp}) {
           </div>
           <div className={styles.youtubeCard}>
             <ReactMarkdown>{gethelp.markdown}</ReactMarkdown>
+          </div>
+          <div className={styles.youtubeCard}>
+            <h2>Latest StackExchange questions</h2>
           </div>
         </div>
       </main>

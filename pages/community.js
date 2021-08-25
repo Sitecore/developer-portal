@@ -46,13 +46,10 @@ export default function Community({ forums, slack, stackexchange, mvpSite }) {
 						<ReactMarkdown>{mvpSite.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.youtubeCard}>
-            <h2>Upcoming Events</h2>
-          </div>
-          <div className={styles.youtubeCard}>
             <h2>@WeAreSitecore Twitter feed 🕊</h2>
           </div>
           <div className={styles.youtubeCard}>
-            <h2>Help and Feedback</h2>
+            <h2>Latest StackExchange questions</h2>
           </div>
         </div>
       </main>
