@@ -50,7 +50,7 @@ export default function ContentManagement({ }) {
 
                     <div className={styles.socialsCard}>
                         <h2>Latest Stack Exchange questions</h2>
-                        <p>#SXA, #sitecore-client, #content-search, #jss, #experience-editor, #content-editor, #media-library, #publishing, #security, #multilingual, #templates, #multisite, #workflow, #content-management, #content-delivery, #content-hub, #headless</p>
+                        <p>#SXA, #sitecore-client, #sitecore-forms, #content-search, #jss, #experience-editor, #content-editor, #media-library, #publishing, #security, #multilingual, #templates, #multisite, #workflow, #content-management, #content-delivery, #content-hub, #headless</p>
                     </div>
                     <div className={styles.socialsCard}>
                         <h2>News & Announcements</h2>
