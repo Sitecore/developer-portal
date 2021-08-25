@@ -2,15 +2,12 @@ import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import { getMarkdownData } from "../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
-import { ParsedUrlQuery } from 'querystring';
 import { getTaggedMarkdownData, getPageLevelInfo } from '../../lib/getMarkdownData';
 import { Tags } from '../../interfaces/tags'
 import { MarkdownAsset } from '../../interfaces/markdownAsset';
 import { useRouter } from 'next/dist/client/router';
+import { UrlParams } from '../../interfaces/UrlParams';
 
-interface IParams extends ParsedUrlQuery {
-    slug: string
-}
 
 export async function getStaticPaths() {
     return {
@@ -20,16 +17,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-
-    const slug = context.params as IParams
-    console.log(slug);
+    const slug: UrlParams = context.params;
 
     let tags: Tags = {
-        solution: slug.solution as string,
-        products: [slug.product as string]
+        solution: slug.solution,
+        products: [slug.product]
     }
 
-    const pageInfo = await getPageLevelInfo(slug.product as string)
+    const pageInfo = await getPageLevelInfo(tags)
     const files = await getTaggedMarkdownData(tags);
 
     return {
