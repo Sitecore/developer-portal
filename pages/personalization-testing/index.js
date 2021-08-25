@@ -42,7 +42,8 @@ export default function Personalization({ }) {
                     </div>
 
                     <div className={styles.socialsCard}>
-                        <h2>Socials</h2>
+                        <h2>Latest Stack Exchange questions</h2>
+                        <p>#personalization, #content-testing, #rules-engine, #tracking, #path-analyzer</p>
                     </div>
                     <div className={styles.socialsCard}>
                         <h2>News & Announcements</h2>
