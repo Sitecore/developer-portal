@@ -20,7 +20,7 @@ export async function getMarkdownData(markdownFileName: string, markdownFolder: 
     }
 }
 
-export async function getPageLevelInfo(page: string) {
+export async function getPageLevelInfo(tags: Tags) {
     var files = recursiveReadSync(pageDirectory);       
     var taggedFile = {};
     for(var i=0;i<files.length;i++) {
@@ -28,7 +28,7 @@ export async function getPageLevelInfo(page: string) {
      
         const fileContents = fs.readFileSync(file, 'utf8')
         const postMatter = matter(fileContents)
-        if(DoesPageMatch(page, postMatter)) {
+        if(DoMatchTags(tags, postMatter)) {
             taggedFile = {
                 id: path.basename(file),
                 ...postMatter.data
@@ -40,11 +40,14 @@ export async function getPageLevelInfo(page: string) {
 
 
 export async function getTaggedMarkdownData(tags: Tags) {
-    var files = recursiveReadSync(postsDirectory);       
+    var files = recursiveReadSync(postsDirectory);
     var taggedFiles: MarkdownAsset[] = []
     for(var i=0;i<files.length;i++) {
         const file = files[i]
-     
+        
+        // Ignore markdown in the page directory
+        if(file.includes('page')) continue;
+
         const fileContents = fs.readFileSync(file, 'utf8')
         const postMatter = matter(fileContents)
         if(DoMatchTags(tags, postMatter)) {
