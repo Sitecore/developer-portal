@@ -46,8 +46,8 @@ export default function productPage({ slug, files, pageInfo }: { slug: any, file
     return (
         <div className={styles.container}>
             <Head>
-                <title>{slug.solution} - {slug.product}</title>
-                <meta name="description" content="Commerce with Sitecore Experience Commerce" />
+                <title>{pageInfo.prettyName}</title>
+                <meta name="description" content={pageInfo.description} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
