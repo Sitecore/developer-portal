@@ -35,7 +35,7 @@ export default function Personalization({ }) {
                     
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore Experience Platform</h2>
-                        <p>Personalization and testing driven by xDB data the Sitecore rules engine.</p>
+                        <p>Personalization and testing driven by xDB data and the Sitecore rules engine.</p>
                         <Link href="personalization-testing/experience-platform">
                             <a>Learn more...</a>
                         </Link>
