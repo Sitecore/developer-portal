@@ -14,7 +14,7 @@ export default function ContentManagement({ }) {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Content Management</title>
+                <title>Content Management and Delivery</title>
                 <meta name="description" content="Integrate CMS into your tech stack to enable marketing teams to own the digital solutions." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
@@ -36,6 +36,14 @@ export default function ContentManagement({ }) {
                         <h2>Sitecore Experience Manager</h2>
                         <p>Manage content and presentation for the web channel</p>
                         <Link href="content-management/experience-manager">
+                            <a>Learn more...</a>
+                        </Link>
+                    </div>
+
+                    <div className={styles.productCategoryCardCompact}>
+                        <h2>Sitecore Experience Accelerator (SXA)</h2>
+                        <p>Turbo charge your Sitecore development</p>
+                        <Link href="content-management/sxa">
                             <a>Learn more...</a>
                         </Link>
                     </div>
