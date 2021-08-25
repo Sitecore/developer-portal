@@ -42,7 +42,8 @@ export default function CDP({ }) {
                     </div>
 
                     <div className={styles.socialsCard}>
-                        <h2>Socials</h2>
+                        <h2>Latest Stack Exchange questions</h2>
+                        <p>#xdb, #xconnect, #experience-profile, #contact-facets, #user-management, #user-profile</p>
                     </div>
                     <div className={styles.socialsCard}>
                         <h2>News & Announcements</h2>
