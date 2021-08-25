@@ -1,6 +1,6 @@
 ---
 solution: ['personalization-testing']
-product: ['cdp']
+product: ['experience-platform']
 ---
 # [Universal Tracker]()
 

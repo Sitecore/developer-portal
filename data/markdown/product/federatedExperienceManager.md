@@ -1,6 +1,6 @@
 ---
 solution: ['personalization-testing']
-product: ['cdp']
+product: ['experience-platform']
 ---
 
 # [Federated Experience Manager]()
