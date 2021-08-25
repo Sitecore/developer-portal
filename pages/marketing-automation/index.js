@@ -42,7 +42,8 @@ export default function MarketingAutomation({ }) {
                     </div>
 
                     <div className={styles.socialsCard}>
-                        <h2>General Marketing Automation Socials</h2>
+                        <h2>Latest Stack Exchange questions</h2>
+                        <p>#marketing-automation, #exm</p>
                     </div>
                     <div className={styles.socialsCard}>
                         <h2>News & Announcements</h2>
