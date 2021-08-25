@@ -1,5 +1,5 @@
 ---
-solution: ['customer-data-management']
+solution: ['customer-data-management', 'personalization-testing']
 product: ['cdp']
 prettyName: 'Sitecore CDP'
 ---

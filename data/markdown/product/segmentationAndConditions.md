@@ -1,3 +1,7 @@
+---
+solution: ['personalization-testing']
+product: ['cdp']
+---
 # [Segmentation And Conditions]()
 
 [What and Why]()

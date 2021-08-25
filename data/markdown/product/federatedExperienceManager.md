@@ -1,3 +1,8 @@
+---
+solution: ['personalization-testing']
+product: ['cdp']
+---
+
 # [Federated Experience Manager]()
 
 [What and Why]()

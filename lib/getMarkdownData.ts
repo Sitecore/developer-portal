@@ -62,10 +62,6 @@ export async function getTaggedMarkdownData(tags: Tags) {
     return taggedFiles
 }
 
-function DoesPageMatch(page: string, postMatter: matter.GrayMatterFile<string>) {
-    return (postMatter.data.page === page)
-}
-
 function DoMatchTags(tags: Tags, postMatter: matter.GrayMatterFile<string>) {
     return (postMatter.data.solution == tags.solution || !tags.solution) && 
            (!postMatter.data.product ? false : allTagsInArrayMatch(tags.products!, postMatter.data.product) || !tags.products) && 
