@@ -42,11 +42,21 @@ export default function productPage({ slug, files, pageInfo }: { slug: any, file
         return <div>Loading...</div>
     }
 
+    var stackexchangeFeed = '';
+    if (pageInfo.stackexchange){
+        stackexchangeFeed = (
+            <div className={styles.socialsCard}>
+                <h2>Latest StackExchange questions</h2>
+                <p>{pageInfo.stackexchange.join()}</p>
+            </div>
+        );
+    }
+
     return (
         <div className={styles.container}>
             <Head>
-                <title>{slug.solution} - {slug.product}</title>
-                <meta name="description" content="Commerce with Sitecore Experience Commerce" />
+                <title>{pageInfo.prettyName}</title>
+                <meta name="description" content={pageInfo.description} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
@@ -66,7 +76,9 @@ export default function productPage({ slug, files, pageInfo }: { slug: any, file
                             <ReactMarkdown>{file.markdown}</ReactMarkdown>
                         </div>
                     ))}
+                    {stackexchangeFeed}
                 </div>
+                
             </main>
         </div>)
 }

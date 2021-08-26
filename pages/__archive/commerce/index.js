@@ -41,7 +41,8 @@ export default function Commerce({ }) {
                     </div>
 
                     <div className={styles.socialsCard}>
-                        <h2>Socials</h2>
+                        <h2>Latest Stack Exchange questions</h2>
+                        <p>#sitecore-commerce, #commerce-engine, #commerce-catalog, #commerce-server, #commerce-connect</p>
                     </div>
                     <div className={styles.socialsCard}>
                         <h2>News & Announcements</h2>
