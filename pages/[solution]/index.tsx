@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
-import { getTaggedMarkdownData, getPageLevelInfo } from '../../lib/getMarkdownData';
+import { getTaggedPages, getPageLevelInfo } from '../../lib/getMarkdownData';
 import { Tags } from '../../interfaces/tags'
 import { MarkdownAsset, MardownMeta } from '../../interfaces/markdownAsset';
 import { useRouter } from 'next/dist/client/router';
@@ -26,7 +26,7 @@ export async function getStaticProps(context: any) {
     let filesTags: Tags = {
         solution: slug.solution,
     }
-    const files = await getTaggedMarkdownData(filesTags);
+    const files = await getTaggedPages(filesTags);
 
     return {
         props: {
@@ -37,7 +37,7 @@ export async function getStaticProps(context: any) {
     };
 }
 
-export default function solutionPage({ slug, files, pageInfo }: { slug: any, files: MarkdownAsset[], pageInfo: MardownMeta }) {
+export default function solutionPage({ slug, files, pageInfo }: { slug: any, files: MardownMeta[], pageInfo: MardownMeta }) {
     const router = useRouter()
 
     if (router.isFallback) {

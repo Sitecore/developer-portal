@@ -6,7 +6,7 @@ import { Tags } from '../interfaces/tags'
 import { MarkdownAsset, MardownMeta } from '../interfaces/markdownAsset'
 
 const postsDirectory = path.join(process.cwd(), 'data/markdown');
-const pageDirectory = path.join(process.cwd(), 'data//markdown/page');
+const pageDirectory = path.join(process.cwd(), 'data/markdown/page');
 
 export async function getMarkdownData(markdownFileName: string, markdownFolder: string) {
     const fullPath = path.join(postsDirectory, markdownFolder, markdownFileName)
@@ -38,6 +38,23 @@ export async function getPageLevelInfo(tags: Tags) : Promise<MardownMeta> {
     return taggedFile;
 }
 
+export async function getTaggedPages(tags: Tags) : Promise<MardownMeta[]> {
+    var files = recursiveReadSync(pageDirectory);
+    var taggedFiles: MardownMeta[] = []
+    for(var i=0;i<files.length;i++) {
+        const file = files[i]
+        const fileContents = fs.readFileSync(file, 'utf8')
+        const postMatter = matter(fileContents)
+        if(DoMatchTags(tags, postMatter) && String(postMatter.data.solution) != String(postMatter.data.product)) {
+            let taggedFile: MardownMeta = {
+                id: path.basename(file),
+                ...postMatter.data
+            }
+            taggedFiles = taggedFiles.concat(taggedFile)
+        }
+    }
+    return taggedFiles
+}
 
 export async function getTaggedMarkdownData(tags: Tags) : Promise<MarkdownAsset[]> {
     var files = recursiveReadSync(postsDirectory);
