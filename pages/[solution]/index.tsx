@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import { getTaggedPages, getPageLevelInfo } from '../../lib/getMarkdownData';
 import { Tags } from '../../interfaces/tags'
-import { MarkdownAsset, MardownMeta } from '../../interfaces/markdownAsset';
+import { MarkdownMeta } from '../../interfaces/markdownAsset';
 import { useRouter } from 'next/dist/client/router';
 import { UrlParams } from '../../interfaces/UrlParams';
 import Link from 'next/link'
@@ -37,7 +37,7 @@ export async function getStaticProps(context: any) {
     };
 }
 
-export default function solutionPage({ slug, files, pageInfo }: { slug: any, files: MardownMeta[], pageInfo: MardownMeta }) {
+export default function solutionPage({ slug, files, pageInfo }: { slug: any, files: MarkdownMeta[], pageInfo: MarkdownMeta }) {
     const router = useRouter()
 
     if (router.isFallback) {

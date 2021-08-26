@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import recursiveReadSync from 'recursive-readdir-sync'
 import { Tags } from '../interfaces/tags'
-import { MarkdownAsset, MardownMeta } from '../interfaces/markdownAsset'
+import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset'
 
 const postsDirectory = path.join(process.cwd(), 'data/markdown');
 const pageDirectory = path.join(process.cwd(), 'data/markdown/page');
@@ -20,9 +20,9 @@ export async function getMarkdownData(markdownFileName: string, markdownFolder: 
     }
 }
 
-export async function getPageLevelInfo(tags: Tags) : Promise<MardownMeta> {
+export async function getPageLevelInfo(tags: Tags) : Promise<MarkdownMeta> {
     var files = recursiveReadSync(pageDirectory);  
-    var taggedFile: MardownMeta = {};
+    var taggedFile: MarkdownMeta = {};
     for(var i=0;i<files.length;i++) {
         const file = files[i]
      
@@ -38,15 +38,15 @@ export async function getPageLevelInfo(tags: Tags) : Promise<MardownMeta> {
     return taggedFile;
 }
 
-export async function getTaggedPages(tags: Tags) : Promise<MardownMeta[]> {
+export async function getTaggedPages(tags: Tags) : Promise<MarkdownMeta[]> {
     var files = recursiveReadSync(pageDirectory);
-    var taggedFiles: MardownMeta[] = []
+    var taggedFiles: MarkdownMeta[] = []
     for(var i=0;i<files.length;i++) {
         const file = files[i]
         const fileContents = fs.readFileSync(file, 'utf8')
         const postMatter = matter(fileContents)
         if(DoMatchTags(tags, postMatter) && String(postMatter.data.solution) != String(postMatter.data.product)) {
-            let taggedFile: MardownMeta = {
+            let taggedFile: MarkdownMeta = {
                 id: path.basename(file),
                 ...postMatter.data
             }

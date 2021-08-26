@@ -1,8 +1,8 @@
-export type MarkdownAsset = MardownMeta & {
+export type MarkdownAsset = MarkdownMeta & {
     markdown: string
 }
 
-export type MardownMeta = {
+export type MarkdownMeta = {
     id?: string
     prettyName?: string
     solution?: string

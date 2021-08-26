@@ -3,7 +3,7 @@ import styles from '../../styles/Home.module.css'
 import ReactMarkdown from "react-markdown";
 import { getTaggedMarkdownData, getPageLevelInfo } from '../../lib/getMarkdownData';
 import { Tags } from '../../interfaces/tags'
-import { MarkdownAsset, MardownMeta } from '../../interfaces/markdownAsset';
+import { MarkdownAsset, MarkdownMeta } from '../../interfaces/markdownAsset';
 import { useRouter } from 'next/dist/client/router';
 import { UrlParams } from '../../interfaces/UrlParams';
 import Link from 'next/link'
@@ -35,7 +35,7 @@ export async function getStaticProps(context: any) {
     };
 }
 
-export default function productPage({ slug, files, pageInfo }: { slug: any, files: MarkdownAsset[], pageInfo: MardownMeta }) {
+export default function productPage({ slug, files, pageInfo }: { slug: any, files: MarkdownAsset[], pageInfo: MarkdownMeta }) {
     const router = useRouter()
 
     if (router.isFallback) {
