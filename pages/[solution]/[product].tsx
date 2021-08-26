@@ -7,6 +7,7 @@ import { MarkdownAsset, MarkdownMeta } from '../../interfaces/markdownAsset';
 import { useRouter } from 'next/dist/client/router';
 import { UrlParams } from '../../interfaces/UrlParams';
 import Link from 'next/link'
+import StackExchangeFeed from '../../components/stackExchangeFeed';
 
 export async function getStaticPaths() {
     return {
@@ -42,16 +43,6 @@ export default function productPage({ slug, files, pageInfo }: { slug: any, file
         return <div>Loading...</div>
     }
 
-    var stackexchangeFeed;
-    if (pageInfo.stackexchange) {
-        stackexchangeFeed = (
-            <div className={styles.socialsCard}>
-                <h2>Latest StackExchange questions</h2>
-                <p>{pageInfo.stackexchange.join()}</p>
-            </div>
-        );
-    }
-
     return (
         <div className={styles.container}>
             <Head>
@@ -76,7 +67,8 @@ export default function productPage({ slug, files, pageInfo }: { slug: any, file
                             <ReactMarkdown>{file.markdown}</ReactMarkdown>
                         </div>
                     ))}
-                    {stackexchangeFeed}
+                    
+                    <StackExchangeFeed pageInfo={pageInfo} />
                 </div>
                 
             </main>

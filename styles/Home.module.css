@@ -231,3 +231,7 @@
 .link:active {
   color: #ad76eb;
 }
+
+.hidden {
+  display: none;
+}
