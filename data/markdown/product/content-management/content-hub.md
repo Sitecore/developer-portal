@@ -2,6 +2,7 @@
 solution: ['content-management']
 product: ['content-hub']
 prettyName: 'Content Hub'
+description: 'Centralize content strategy and operations for all delivery channels'
 ---
 
 ## What and why

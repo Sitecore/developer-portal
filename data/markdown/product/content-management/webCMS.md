@@ -2,6 +2,7 @@
 solution: ['content-management']
 product: ['experience-manager']
 prettyName: 'Web Content Management'
+description: 'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.'
 ---
 
 # [Web CMS](https://www.sitecore.com/products/experience-manager)

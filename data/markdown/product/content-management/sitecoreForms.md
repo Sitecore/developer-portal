@@ -2,6 +2,7 @@
 solution: ['content-management']
 product: ['experience-manager']
 prettyName: 'Sitecore Forms'
+description: 'Develop your forms you can integrate into your website, great to capture key information about your customers.'
 ---
 
 # [Sitecore Forms]()

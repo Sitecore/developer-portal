@@ -2,6 +2,7 @@
 solution: ['content-management']
 product: ['experience-manager']
 prettyName: 'Javascript Services'
+description: 'Develop your website headlessly powered by JavaScript.'
 ---
 
 # [JSS](https://jss.sitecore.com/)

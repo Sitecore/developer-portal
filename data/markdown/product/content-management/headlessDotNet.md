@@ -2,6 +2,7 @@
 solution: ['content-management']
 product: ['experience-manager']
 prettyName: 'Sitecore Headless Development with ASP.NET'
+description: 'Develop your website headlessly powered by ASP.NET.'
 ---
 
 # [Sitecore Headless Development with ASP.NET]()

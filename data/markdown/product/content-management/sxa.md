@@ -2,6 +2,7 @@
 solution: ['content-management']
 product: ['sxa']
 prettyName: 'Sitecore Experience Accelerator'
+description: 'Turbo charge your Sitecore development.'
 ---
 
 # [Sitecore Experience Accelerator]()
