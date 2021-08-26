@@ -33,5 +33,3 @@ Playground
  - [Create a Marketing Automation Campaign](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/create-a-marketing-automation-campaign.html)
 
 Socials
-- [Sitecore Stack Exchange - Marketing Automation](https://sitecore.stackexchange.com/questions/tagged/marketing-automation)
-- [Sitecore Stack Exchange - EXM](https://sitecore.stackexchange.com/questions/tagged/exm)
