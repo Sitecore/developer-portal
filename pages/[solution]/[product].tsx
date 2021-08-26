@@ -42,8 +42,8 @@ export default function productPage({ slug, files, pageInfo }: { slug: any, file
         return <div>Loading...</div>
     }
 
-    var stackexchangeFeed = '';
-    if (pageInfo.stackexchange){
+    var stackexchangeFeed;
+    if (pageInfo.stackexchange) {
         stackexchangeFeed = (
             <div className={styles.socialsCard}>
                 <h2>Latest StackExchange questions</h2>

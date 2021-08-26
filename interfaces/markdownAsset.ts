@@ -8,4 +8,5 @@ export type MardownMeta = {
     solution?: string
     product?: string
     description?: string
+    stackexchange?: string[]
 }
