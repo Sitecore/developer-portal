@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../../styles/Home.module.css'
+import styles from '../../../styles/Home.module.css'
 
 export async function getStaticProps() {
     return {
@@ -9,41 +9,41 @@ export async function getStaticProps() {
     };
 }
 
-export default function Personalization({ }) {
+export default function CDP({ }) {
 
     return (
         <div className={styles.container}>
             <Head>
-                <title>Personalization and Testing</title>
-                <meta name="description" content="Deliver personalized content and test which content is working" />
+                <title>Customer Data Management</title>
+                <meta name="description" content="Track events, activity, and customer profile information" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Personalization and Testing 🕵️‍♀️
+                    Customer Data Management 👨‍👨‍👧‍👧
                 </h1>
                 <div className={styles.grid}>
 
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore CDP</h2>
-                        <p>Use advanced decisioning models and machine learning for personalization in your composable DXP.</p>
-                        <Link href="personalization-testing/cdp">
+                        <p>Ingest, connect, and activate customer data across your tech stack and composable DXP.</p>
+                        <Link href="customer-data-management/cdp">
                             <a>Learn more...</a>
                         </Link>
                     </div>
                     
                     <div className={styles.productCategoryCardCompact}>
                         <h2>Sitecore Experience Platform</h2>
-                        <p>Personalization and testing driven by xDB data and the Sitecore rules engine.</p>
-                        <Link href="personalization-testing/experience-platform">
+                        <p>Leverage xConnect and xDB to provide a 360 view of the customer in your fully integrated DXP platform.</p>
+                        <Link href="customer-data-management/experience-platform">
                             <a>Learn more...</a>
                         </Link>
                     </div>
 
                     <div className={styles.socialsCard}>
                         <h2>Latest Stack Exchange questions</h2>
-                        <p>#personalization, #content-testing, #rules-engine, #tracking, #path-analyzer</p>
+                        <p>#xdb, #xconnect, #experience-profile, #contact-facets, #user-management, #user-profile</p>
                     </div>
                     <div className={styles.socialsCard}>
                         <h2>News & Announcements</h2>
