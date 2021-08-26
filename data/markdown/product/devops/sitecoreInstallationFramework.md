@@ -20,5 +20,4 @@ Learn
  
 Socials
 
- - [Sitecore StackExchange](https://sitecore.stackexchange.com/questions/tagged/sitecore-install-framework)
- - [#Sitecore Twitter](https://twitter.com/search?q=sitecore%20install%20framwork&src=typed_query&f=live)
+  - [#Sitecore Twitter](https://twitter.com/search?q=sitecore%20install%20framwork&src=typed_query&f=live)
