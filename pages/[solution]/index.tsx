@@ -44,6 +44,16 @@ export default function solutionPage({ slug, files, pageInfo }: { slug: any, fil
         return <div>Loading...</div>
     }
 
+    var stackexchangeFeed;
+    if (pageInfo.stackexchange) {
+        stackexchangeFeed = (
+            <div className={styles.socialsCard}>
+                <h2>Latest StackExchange questions</h2>
+                <p>{pageInfo.stackexchange.join()}</p>
+            </div>
+        );
+    }
+
     return (
         <div className={styles.container}>
             <Head>
@@ -70,9 +80,7 @@ export default function solutionPage({ slug, files, pageInfo }: { slug: any, fil
                         </div>
                     ))}
 
-                    <div className={styles.socialsCard}>
-                        <h2>Socials</h2>
-                    </div>
+                    {stackexchangeFeed}
 
                     <div className={styles.socialsCard}>
                         <h2>News &amp; Announcements</h2>
