@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import recursiveReadSync from 'recursive-readdir-sync'
 import { Tags } from '../interfaces/tags'
-import { MarkdownAsset } from '../interfaces/markdownAsset'
+import { MarkdownAsset, MardownMeta } from '../interfaces/markdownAsset'
 
 const postsDirectory = path.join(process.cwd(), 'data/markdown');
 const pageDirectory = path.join(process.cwd(), 'data//markdown/page');
@@ -20,9 +20,9 @@ export async function getMarkdownData(markdownFileName: string, markdownFolder: 
     }
 }
 
-export async function getPageLevelInfo(tags: Tags) {
-    var files = recursiveReadSync(pageDirectory);       
-    var taggedFile = {};
+export async function getPageLevelInfo(tags: Tags) : Promise<MardownMeta> {
+    var files = recursiveReadSync(pageDirectory);  
+    var taggedFile: MardownMeta = {};
     for(var i=0;i<files.length;i++) {
         const file = files[i]
      
@@ -39,7 +39,7 @@ export async function getPageLevelInfo(tags: Tags) {
 }
 
 
-export async function getTaggedMarkdownData(tags: Tags) {
+export async function getTaggedMarkdownData(tags: Tags) : Promise<MarkdownAsset[]> {
     var files = recursiveReadSync(postsDirectory);
     var taggedFiles: MarkdownAsset[] = []
     for(var i=0;i<files.length;i++) {
@@ -79,5 +79,3 @@ function allTagsInArrayMatch(array1: string[], array2: string[]) {
     }
     return true
 }
-
-//postMatter.data.product.all((tag: string)  => tags.products?.includes(tag))
