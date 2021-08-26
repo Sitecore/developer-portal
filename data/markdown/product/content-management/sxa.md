@@ -24,4 +24,4 @@ Playground
 
 Socials
 
-- [SXA StackExchange Tag](https://sitecore.stackexchange.com/questions/tagged/sxa)
+
