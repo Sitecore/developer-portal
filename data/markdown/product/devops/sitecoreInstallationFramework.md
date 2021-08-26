@@ -1,6 +1,6 @@
 ---
 solution: ['devops']
-product: ['xm','xp','xc']
+product: ['experience-manager','experience-platform','experience-commerce','sif']
 ---
 # [Sitecore Install Framework (SIF)]()
 

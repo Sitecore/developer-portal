@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import styles from '../../styles/Home.module.css';
-import { getTaggedMarkdownData } from '../../lib/getMarkdownData';
+import styles from '../../../styles/Home.module.css';
+import { getTaggedMarkdownData } from '../../../lib/getMarkdownData';
 import ReactMarkdown from 'react-markdown';
-import { Tags } from '../../interfaces/tags'
-import { MarkdownAsset } from '../../interfaces/markdownAsset'
+import { Tags } from '../../../interfaces/tags'
+import { MarkdownAsset } from '../../../interfaces/markdownAsset'
 
 export async function getStaticProps() {
     let tags: Tags = {

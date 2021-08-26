@@ -1,5 +1,6 @@
 ---
 solution: ['devops']
+product: ['experience-manager','experience-platform','experience-commerce','containers']
 ---
 # [Sitecore Containers]()
 
