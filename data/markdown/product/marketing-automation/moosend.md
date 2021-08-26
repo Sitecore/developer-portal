@@ -1,3 +1,9 @@
+---
+solution: ['marketing-automation']
+product: ['moosend']
+prettyName: 'Moosend'
+description: 'Connecting with customers with Moosend marketing automation'
+---
 # [Moosend](https://moosend.com/help/)
 
 [Moosend](https://moosend.com/help/) already has a really nice looking portal that maybe we just link to instead of re inventing wheel here. 

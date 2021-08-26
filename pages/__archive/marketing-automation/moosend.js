@@ -1,38 +1,37 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
-import { getMarkdownData } from "../../lib/getMarkdownData";
+import styles from '../../../styles/Home.module.css'
+import { getMarkdownData } from "../../../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-    const sitecoreXPMarketingAutomation = await getMarkdownData("sitecoreXPMarketingAutomation.md", "product");
+    const moosend = await getMarkdownData("moosend.md", "product");
 
     return {
         props: {
-            sitecoreXPMarketingAutomation,
+            moosend,
         },
     };
 }
 
-export default function MarketingAutomation2({ sitecoreXPMarketingAutomation }) {
+export default function MarketingAutomation2({ moosend }) {
 
     return (
         <div className={styles.container}>
             <Head>
-                <title>Marketing Automation - Sitecore Experience Platform</title>
-                <meta name="description" content="Connecting with customers using Sitecore Experience Platform marketing automation and email experience manager (EXM)" />
+                <title>Marketing Automation - Moosend</title>
+                <meta name="description" content="Connecting with customers with Moosend marketing automation" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Marketing Automation - Sitecore Experience Platform 🚗
+                    Marketing Automation - Moosend 🚗
                 </h1>
                 <div className={styles.grid}>
-                 
-                    <div className={styles.productCategoryCardLarge}>
-                        <ReactMarkdown>{sitecoreXPMarketingAutomation.markdown}</ReactMarkdown>
-                    </div>
 
+                    <div className={styles.productCategoryCardLarge}>
+                        <ReactMarkdown>{moosend.markdown}</ReactMarkdown>
+                    </div>
 
                     <div className={styles.socialsCard}>
                         <h2>General Marketing Automation Socials</h2>

@@ -1,37 +1,38 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
-import { getMarkdownData } from "../../lib/getMarkdownData";
+import styles from '../../../styles/Home.module.css'
+import { getMarkdownData } from "../../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-    const moosend = await getMarkdownData("moosend.md", "product");
+    const sitecoreXPMarketingAutomation = await getMarkdownData("sitecoreXPMarketingAutomation.md", "product");
 
     return {
         props: {
-            moosend,
+            sitecoreXPMarketingAutomation,
         },
     };
 }
 
-export default function MarketingAutomation2({ moosend }) {
+export default function MarketingAutomation2({ sitecoreXPMarketingAutomation }) {
 
     return (
         <div className={styles.container}>
             <Head>
-                <title>Marketing Automation - Moosend</title>
-                <meta name="description" content="Connecting with customers with Moosend marketing automation" />
+                <title>Marketing Automation - Sitecore Experience Platform</title>
+                <meta name="description" content="Connecting with customers using Sitecore Experience Platform marketing automation and email experience manager (EXM)" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Marketing Automation - Moosend 🚗
+                    Marketing Automation - Sitecore Experience Platform 🚗
                 </h1>
                 <div className={styles.grid}>
-
+                 
                     <div className={styles.productCategoryCardLarge}>
-                        <ReactMarkdown>{moosend.markdown}</ReactMarkdown>
+                        <ReactMarkdown>{sitecoreXPMarketingAutomation.markdown}</ReactMarkdown>
                     </div>
+
 
                     <div className={styles.socialsCard}>
                         <h2>General Marketing Automation Socials</h2>

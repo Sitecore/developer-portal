@@ -1,3 +1,9 @@
+---
+solution: ['marketing-automation']
+product: ['experience-platform']
+prettyName: 'Sitecore Experience Platform'
+description: 'Connecting with customers using Sitecore Experience Platform marketing automation and email experience manager (EXM)'
+---
 # [Sitecore XP Marketing Automation and EXM]()
 
 [What and Why]()
