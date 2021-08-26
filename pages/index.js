@@ -61,9 +61,9 @@ export default function Home({forums, slack, stackexchange, gethelp}) {
             <a href="content-management/" className={styles.link}>Learn more...</a>
           </div>
           <div className={styles.productCategoryCard}>
-            <a href="digital-asset-management/" ><h2>Digital Asset Management (DAM) 📀 &rarr;</h2></a>
+            <a href="digital-asset-management/dam" ><h2>Digital Asset Management (DAM) 📀 &rarr;</h2></a>
             <p>Scale management and delivery of media and static assets</p>
-            <a href="digital-asset-management/" className={styles.link}>Learn more...</a>
+            <a href="digital-asset-management/dam" className={styles.link}>Learn more...</a>
           </div>
           <div className={styles.productCategoryCard}>
             <a href="customer-data-management/" ><h2>Customer Data Management 👨‍👨‍👧‍👧 &rarr;</h2></a>
