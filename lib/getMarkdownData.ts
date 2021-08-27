@@ -79,6 +79,26 @@ export async function getTaggedMarkdownData(tags: Tags): Promise<MarkdownAsset[]
     return taggedFiles
 }
 
+export async function getProductPaths() {
+    var files = recursiveReadSync(pageDirectory);
+    let productPaths: any = []
+    for (var i = 0; i < files.length; i++) {
+        const file = files[i]
+        const fileContents = fs.readFileSync(file, 'utf8')
+        const postMatter = matter(fileContents)
+        if (String(postMatter.data.solution) == String(postMatter.data.product))
+            continue
+
+        productPaths = productPaths.concat({
+            params: {
+                product: String(postMatter.data.product),
+                solution: String(postMatter.data.solution)
+            }
+        })
+    }
+    return productPaths
+}
+
 export async function getSolutionPaths() {
     const solutionDirs = fs.readdirSync(pageDirectory)
     return solutionDirs.map(fileName => {

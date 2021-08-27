@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import ReactMarkdown from "react-markdown";
-import { getTaggedMarkdownData, getPageLevelInfo } from '../../lib/getMarkdownData';
+import { getTaggedMarkdownData, getPageLevelInfo, getProductPaths } from '../../lib/getMarkdownData';
 import { Tags } from '../../interfaces/tags'
 import { MarkdownAsset, MarkdownMeta } from '../../interfaces/markdownAsset';
 import { useRouter } from 'next/dist/client/router';
@@ -10,9 +10,10 @@ import Link from 'next/link'
 import StackExchangeFeed from '../../components/stackExchangeFeed';
 
 export async function getStaticPaths() {
+    const productPaths = await getProductPaths();
     return {
-        paths: [],
-        fallback: true
+        paths: productPaths,
+        fallback: false
     };
 }
 
