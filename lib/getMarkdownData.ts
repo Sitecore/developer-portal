@@ -20,15 +20,15 @@ export async function getMarkdownData(markdownFileName: string, markdownFolder: 
     }
 }
 
-export async function getPageLevelInfo(tags: Tags) : Promise<MarkdownMeta> {
-    var files = recursiveReadSync(pageDirectory);  
+export async function getPageLevelInfo(tags: Tags): Promise<MarkdownMeta> {
+    var files = recursiveReadSync(pageDirectory);
     var taggedFile: MarkdownMeta = {};
-    for(var i=0;i<files.length;i++) {
+    for (var i = 0; i < files.length; i++) {
         const file = files[i]
-     
+
         const fileContents = fs.readFileSync(file, 'utf8')
         const postMatter = matter(fileContents)
-        if(DoMatchTags(tags, postMatter)) {
+        if (DoMatchTags(tags, postMatter)) {
             taggedFile = {
                 id: path.basename(file),
                 ...postMatter.data
@@ -38,14 +38,14 @@ export async function getPageLevelInfo(tags: Tags) : Promise<MarkdownMeta> {
     return taggedFile;
 }
 
-export async function getTaggedPages(tags: Tags) : Promise<MarkdownMeta[]> {
+export async function getTaggedPages(tags: Tags): Promise<MarkdownMeta[]> {
     var files = recursiveReadSync(pageDirectory);
     var taggedFiles: MarkdownMeta[] = []
-    for(var i=0;i<files.length;i++) {
+    for (var i = 0; i < files.length; i++) {
         const file = files[i]
         const fileContents = fs.readFileSync(file, 'utf8')
         const postMatter = matter(fileContents)
-        if(DoMatchTags(tags, postMatter) && String(postMatter.data.solution) != String(postMatter.data.product)) {
+        if (DoMatchTags(tags, postMatter) && String(postMatter.data.solution) != String(postMatter.data.product)) {
             let taggedFile: MarkdownMeta = {
                 id: path.basename(file),
                 ...postMatter.data
@@ -56,18 +56,18 @@ export async function getTaggedPages(tags: Tags) : Promise<MarkdownMeta[]> {
     return taggedFiles
 }
 
-export async function getTaggedMarkdownData(tags: Tags) : Promise<MarkdownAsset[]> {
+export async function getTaggedMarkdownData(tags: Tags): Promise<MarkdownAsset[]> {
     var files = recursiveReadSync(postsDirectory);
     var taggedFiles: MarkdownAsset[] = []
-    for(var i=0;i<files.length;i++) {
+    for (var i = 0; i < files.length; i++) {
         const file = files[i]
-        
+
         // Ignore markdown in the page directory
-        if(file.includes('page')) continue;
+        if (file.includes('page')) continue;
 
         const fileContents = fs.readFileSync(file, 'utf8')
         const postMatter = matter(fileContents)
-        if(DoMatchTags(tags, postMatter)) {
+        if (DoMatchTags(tags, postMatter)) {
             let taggedFile: MarkdownAsset = {
                 id: path.basename(file),
                 markdown: postMatter.content,
@@ -79,18 +79,29 @@ export async function getTaggedMarkdownData(tags: Tags) : Promise<MarkdownAsset[
     return taggedFiles
 }
 
+export async function getSolutionPaths() {
+    let solutionNames = ["commerce"]
+    return solutionNames.map(fileName => {
+        return {
+            params: {
+                solution: fileName.replace(/\.md$/, '')
+            }
+        }
+    })
+}
+
 function DoMatchTags(tags: Tags, postMatter: matter.GrayMatterFile<string>) {
-    return (postMatter.data.solution == tags.solution || !tags.solution) && 
-           (!postMatter.data.product ? false : allTagsInArrayMatch(tags.products!, postMatter.data.product) || !tags.products) && 
-           (postMatter.data.area == tags.area || !tags.area)
+    return (postMatter.data.solution == tags.solution || !tags.solution) &&
+        (!postMatter.data.product ? false : allTagsInArrayMatch(tags.products!, postMatter.data.product) || !tags.products) &&
+        (postMatter.data.area == tags.area || !tags.area)
 }
 
 function allTagsInArrayMatch(array1: string[], array2: string[]) {
-    if(!array1 || !array2) {
+    if (!array1 || !array2) {
         return false
     }
-    for(var i=0;i<array1.length;i++) {
-        if(!array2.includes(array1[i])) {
+    for (var i = 0; i < array1.length; i++) {
+        if (!array2.includes(array1[i])) {
             return false
         }
     }

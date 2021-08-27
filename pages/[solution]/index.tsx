@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
-import { getTaggedPages, getPageLevelInfo } from '../../lib/getMarkdownData';
+import { getTaggedPages, getPageLevelInfo, getSolutionPaths } from '../../lib/getMarkdownData';
 import { Tags } from '../../interfaces/tags'
 import { MarkdownMeta } from '../../interfaces/markdownAsset';
 import { useRouter } from 'next/dist/client/router';
@@ -9,10 +9,12 @@ import Link from 'next/link'
 import StackExchangeFeed from '../../components/stackExchangeFeed';
 
 export async function getStaticPaths() {
-    return {
-        paths: [],
-        fallback: true
+    const solutionPaths = await getSolutionPaths();
+    let staticPaths = {
+        paths: solutionPaths,
+        fallback: false
     };
+    return staticPaths;
 }
 
 export async function getStaticProps(context: any) {
