@@ -12,7 +12,7 @@ export default function Nav() {
                 <ul>
                     <li><a href="/docs">Docs</a></li>
                     <li><a href="/discover">Discover</a></li>
-                    <li><a href="">Learn</a></li>
+                    <li><a href="/learn">Learn</a></li>
                     <li><a href="">Playground</a></li>
                     <li><a href="/help">Get Help</a></li>
                     <li><a href="/community">Community</a></li>
