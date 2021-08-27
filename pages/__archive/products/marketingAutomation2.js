@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
-import { getMarkdownData } from "../../lib/getMarkdownData";
+import styles from '../../../styles/Home.module.css'
+import { getMarkdownData } from "../../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
