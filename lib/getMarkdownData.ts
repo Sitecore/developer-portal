@@ -80,8 +80,8 @@ export async function getTaggedMarkdownData(tags: Tags): Promise<MarkdownAsset[]
 }
 
 export async function getSolutionPaths() {
-    let solutionNames = ["commerce"]
-    return solutionNames.map(fileName => {
+    const solutionDirs = fs.readdirSync(pageDirectory)
+    return solutionDirs.map(fileName => {
         return {
             params: {
                 solution: fileName.replace(/\.md$/, '')
