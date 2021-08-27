@@ -24,5 +24,4 @@ Learn
  
 Socials
 
- - [Sitecore StackExchange](https://sitecore.stackexchange.com/questions/tagged/docker)
- - [#Sitecore Twitter](https://twitter.com/search?q=sitecore%20docker&src=typed_query)
+  - [#Sitecore Twitter](https://twitter.com/search?q=sitecore%20docker&src=typed_query)

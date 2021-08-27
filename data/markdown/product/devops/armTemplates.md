@@ -22,5 +22,4 @@ Learn
  
 Socials
 
- - [Sitecore StackExchange](https://sitecore.stackexchange.com/questions/tagged/arm-template)
- - [#Sitecore Twitter](https://twitter.com/search?q=sitecore%20arm&src=typed_query&f=live)
+  - [#Sitecore Twitter](https://twitter.com/search?q=sitecore%20arm&src=typed_query&f=live)

@@ -29,5 +29,4 @@ Playground
  
 Socials
 
- - [Sitecore Commerce StackExchange Tag](https://sitecore.stackexchange.com/questions/tagged/sitecore-commerce)
- - [#SitecoreCommerce Twitter](https://twitter.com/search?q=%23sitecorecommerce&src=typed_query&f=live)
+  - [#SitecoreCommerce Twitter](https://twitter.com/search?q=%23sitecorecommerce&src=typed_query&f=live)

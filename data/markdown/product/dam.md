@@ -1,8 +1,6 @@
 ---
-solution: ['dam']
+solution: ['digital-asset-management']
 product: ['dam']
-prettyName: 'Content Hub - Digital Asset Management'
-description: 'Centralize your ditigal assets for all of your channels'
 ---
 
 ## What and why
