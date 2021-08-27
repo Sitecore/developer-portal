@@ -3,8 +3,9 @@ import styles from '../styles/Home.module.css'
 import { getMarkdownData } from '../lib/getMarkdownData';
 import { useRouter } from 'next/dist/client/router';
 import ReactMarkdown from 'react-markdown';
+import { MarkdownAsset } from '../interfaces/markdownAsset';
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps() {
     const learnFolder = "learn";
     const starterkits = await getMarkdownData("starterkits.md", learnFolder);
   
@@ -15,7 +16,7 @@ export async function getStaticProps(context: any) {
     };
 }
 
-export default function Learn({ starterkits }) {
+export default function Learn({ starterkits }: {starterkits: MarkdownAsset}) {
     const router = useRouter()
 
     if (router.isFallback) {

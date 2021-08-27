@@ -4,9 +4,8 @@ import { getMarkdownData } from "../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-    const productMarkdownFolder = "product";
-    const moosend = await getMarkdownData("moosend.md", productMarkdownFolder);
-    const sitecoreXPMarketingAutomation = await getMarkdownData("sitecoreXPMarketingAutomation.md", productMarkdownFolder);
+    const moosend = await getMarkdownData("moosend.md", "product/marketing-automation");
+    const sitecoreXPMarketingAutomation = await getMarkdownData("sitecoreXPMarketingAutomation.md", "product/marketing-automation");
 
     return {
         props: {

@@ -4,7 +4,7 @@ import { getMarkdownData } from "../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-    const productMarkdownFolder = "product";
+    const productMarkdownFolder = "product/content-management";
     const webCMS = await getMarkdownData("webCMS.md", productMarkdownFolder);
     const jss = await getMarkdownData("jss.md", productMarkdownFolder);
     const sitecoreForms = await getMarkdownData("sitecoreForms.md", productMarkdownFolder);

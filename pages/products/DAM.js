@@ -4,7 +4,7 @@ import { getMarkdownData } from '../../lib/getMarkdownData';
 import ReactMarkdown from 'react-markdown';
 
 export async function getStaticProps() {
-	const dam = await getMarkdownData('dam.md', "product");
+	const dam = await getMarkdownData('dam.md', 'product');
 
 	return {
 		props: {

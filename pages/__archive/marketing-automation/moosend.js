@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import styles from '../../../styles/Home.module.css'
-import { getMarkdownData } from "../../../../lib/getMarkdownData";
+import { getMarkdownData } from "../../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-    const moosend = await getMarkdownData("moosend.md", "product");
+    const moosend = await getMarkdownData("moosend.md", "product/marketing-automation");
 
     return {
         props: {

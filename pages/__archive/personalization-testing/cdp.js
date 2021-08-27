@@ -4,7 +4,7 @@ import { getMarkdownData } from "../../../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 
 export async function getStaticProps() {
-  const sitecoreCDP = await getMarkdownData("sitecoreCDP.md", "product");
+  const sitecoreCDP = await getMarkdownData("personalization-testing.md", "product/cdp");
 
   return {
     props: {
