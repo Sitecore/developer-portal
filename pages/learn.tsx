@@ -7,16 +7,18 @@ import { MarkdownAsset } from '../interfaces/markdownAsset';
 
 export async function getStaticProps() {
     const learnFolder = "learn";
-    const starterkits = await getMarkdownData("starterkits.md", learnFolder);
+    const starterKits = await getMarkdownData("starterkits.md", learnFolder);
+    const gettingStarted = await getMarkdownData("gettingstarted.md", learnFolder);
   
     return {
         props: {
-            starterkits,
+            starterKits,
+            gettingStarted
         },
     };
 }
 
-export default function Learn({ starterkits }: {starterkits: MarkdownAsset}) {
+export default function Learn({ starterKits, gettingStarted }: {starterKits: MarkdownAsset, gettingStarted: MarkdownAsset}) {
     const router = useRouter()
 
     if (router.isFallback) {
@@ -40,7 +42,10 @@ export default function Learn({ starterkits }: {starterkits: MarkdownAsset}) {
                 </p>
                 <div className={styles.grid}>
                     <div className={styles.productCategoryCard}>
-                        <ReactMarkdown>{starterkits.markdown}</ReactMarkdown>
+                        <ReactMarkdown>{starterKits.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.productCategoryCardLarge}>
+                        <ReactMarkdown>{gettingStarted.markdown}</ReactMarkdown>
                     </div>
                     <div className={styles.youtubeCard}>
                         <h2>Discover Sitecore YouTube feed (5 most recent videos) 🎥</h2>
