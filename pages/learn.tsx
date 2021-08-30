@@ -1,18 +1,20 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { getMarkdownData } from '../lib/getMarkdownData';
+import { getMarkdownData, getPageLevelInfoForFile } from '../lib/getMarkdownData';
 import { useRouter } from 'next/dist/client/router';
 import ReactMarkdown from 'react-markdown';
-import { MarkdownAsset } from '../interfaces/markdownAsset';
+import { MarkdownMeta, MarkdownAsset } from '../interfaces/markdownAsset';
 
 export async function getStaticProps() {
     const learnFolder = "learn";
+    const pageInfo = await getPageLevelInfoForFile("learn.md", learnFolder);
     const starterKits = await getMarkdownData("starterkits.md", learnFolder);
     const gettingStarted = await getMarkdownData("gettingstarted.md", learnFolder);
     const learningSitecore = await getMarkdownData("learningSitecore.md", learnFolder);
   
     return {
         props: {
+            pageInfo,
             starterKits,
             gettingStarted,
             learningSitecore
@@ -20,7 +22,7 @@ export async function getStaticProps() {
     };
 }
 
-export default function Learn({ starterKits, gettingStarted, learningSitecore }: {starterKits: MarkdownAsset, gettingStarted: MarkdownAsset, learningSitecore: MarkdownAsset}) {
+export default function Learn({ pageInfo, starterKits, gettingStarted, learningSitecore }: {pageInfo: MarkdownMeta, starterKits: MarkdownAsset, gettingStarted: MarkdownAsset, learningSitecore: MarkdownAsset}) {
     const router = useRouter()
 
     if (router.isFallback) {
@@ -30,17 +32,17 @@ export default function Learn({ starterKits, gettingStarted, learningSitecore }:
     return (
         <div className={styles.container}>
             <Head>
-                <title>Learn Sitecore</title>
-                <meta name="description" content='Learning content for new and experienced Sitecore developers' />
+                <title>{pageInfo.prettyName}</title>
+                <meta name="description" content={pageInfo.description} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Learn Sitecore
+                    {pageInfo.prettyName}
                 </h1>
                 <p>
-                    Learning content for new and experienced Sitecore developers
+                    {pageInfo.description}
                 </p>
                 <div className={styles.grid}>
                     <div className={styles.productCategoryCard}>

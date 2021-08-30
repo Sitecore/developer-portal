@@ -1,13 +1,15 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { getMarkdownData } from '../lib/getMarkdownData';
+import { getMarkdownData, getPageLevelInfoForFile } from '../lib/getMarkdownData';
 import { useRouter } from 'next/dist/client/router';
 import ReactMarkdown from 'react-markdown';
+import { MarkdownMeta } from '../interfaces/markdownAsset';
 import { MarkdownAsset } from '../interfaces/markdownAsset';
 
 export async function getStaticProps() {
     const communityMarkDownFolder = "community";
     const helpMarkDownFolder = "help";
+    const pageInfo = await getPageLevelInfoForFile("help.md", helpMarkDownFolder);
     const slack = await getMarkdownData("slack.md", communityMarkDownFolder);
     const stackexchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
     const forums = await getMarkdownData("forums.md", communityMarkDownFolder);
@@ -15,6 +17,7 @@ export async function getStaticProps() {
   
     return {
         props: {
+            pageInfo,
             forums,
             slack,
             stackexchange,
@@ -23,7 +26,7 @@ export async function getStaticProps() {
     };
 }
 
-export default function Help({ forums, slack, stackexchange, support }: {forums: MarkdownAsset, slack: MarkdownAsset, stackexchange: MarkdownAsset, support: MarkdownAsset}) {
+export default function Help({ pageInfo, forums, slack, stackexchange, support }: {pageInfo: MarkdownMeta, forums: MarkdownAsset, slack: MarkdownAsset, stackexchange: MarkdownAsset, support: MarkdownAsset}) {
     const router = useRouter()
 
     if (router.isFallback) {
@@ -33,17 +36,17 @@ export default function Help({ forums, slack, stackexchange, support }: {forums:
     return (
         <div className={styles.container}>
             <Head>
-                <title>Get Help</title>
-                <meta name="description" content='Looking for help? Try these channels to get an answer to your question' />
+                <title>{pageInfo.prettyName}</title>
+                <meta name="description" content={pageInfo.description} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Get Help
+                    {pageInfo.prettyName}
                 </h1>
                 <p>
-                    Looking for help? Try these channels to get an answer to your question
+                    {pageInfo.description}
                 </p>
                 <div className={styles.grid}>
                     <div className={styles.socialsCard}>
