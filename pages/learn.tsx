@@ -9,16 +9,18 @@ export async function getStaticProps() {
     const learnFolder = "learn";
     const starterKits = await getMarkdownData("starterkits.md", learnFolder);
     const gettingStarted = await getMarkdownData("gettingstarted.md", learnFolder);
+    const learningSitecore = await getMarkdownData("learningSitecore.md", learnFolder);
   
     return {
         props: {
             starterKits,
-            gettingStarted
+            gettingStarted,
+            learningSitecore
         },
     };
 }
 
-export default function Learn({ starterKits, gettingStarted }: {starterKits: MarkdownAsset, gettingStarted: MarkdownAsset}) {
+export default function Learn({ starterKits, gettingStarted, learningSitecore }: {starterKits: MarkdownAsset, gettingStarted: MarkdownAsset, learningSitecore: MarkdownAsset}) {
     const router = useRouter()
 
     if (router.isFallback) {
@@ -46,6 +48,9 @@ export default function Learn({ starterKits, gettingStarted }: {starterKits: Mar
                     </div>
                     <div className={styles.productCategoryCardLarge}>
                         <ReactMarkdown>{gettingStarted.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.productCategoryCardLarge}>
+                        <ReactMarkdown>{learningSitecore.markdown}</ReactMarkdown>
                     </div>
                     <div className={styles.youtubeCard}>
                         <h2>Discover Sitecore YouTube feed (5 most recent videos) 🎥</h2>
