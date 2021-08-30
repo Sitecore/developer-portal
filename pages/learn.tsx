@@ -31,7 +31,7 @@ export default function Learn({ starterKits, gettingStarted, learningSitecore }:
         <div className={styles.container}>
             <Head>
                 <title>Learn Sitecore</title>
-                <meta name="description" content='Learning content for new and experience Sitecore developers' />
+                <meta name="description" content='Learning content for new and experienced Sitecore developers' />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
@@ -40,7 +40,7 @@ export default function Learn({ starterKits, gettingStarted, learningSitecore }:
                     Learn Sitecore
                 </h1>
                 <p>
-                    Learning content for new and experience Sitecore developers
+                    Learning content for new and experienced Sitecore developers
                 </p>
                 <div className={styles.grid}>
                     <div className={styles.productCategoryCard}>
