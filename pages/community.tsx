@@ -2,11 +2,12 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { getMarkdownData } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
+import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
 
 export async function getStaticProps() {
   const communityMarkDownFolder = "community";
   const slack = await getMarkdownData("slack.md", communityMarkDownFolder);
-  const stackexchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
+  const stackExchange = await getMarkdownData("stackExchange.md", communityMarkDownFolder);
   const forums = await getMarkdownData("forums.md", communityMarkDownFolder);
   const mvpSite = await getMarkdownData("mvp.md", communityMarkDownFolder);
 
@@ -14,13 +15,13 @@ export async function getStaticProps() {
       props: {
           forums,
           slack,
-          stackexchange,
+          stackExchange,
           mvpSite,
       },
   };
 }
 
-export default function Community({ forums, slack, stackexchange, mvpSite }) {
+export default function Community({ forums, slack, stackExchange: stackExchange, mvpSite }: {forums: MarkdownAsset, slack: MarkdownAsset, stackExchange: MarkdownAsset, mvpSite: MarkdownAsset}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -37,7 +38,7 @@ export default function Community({ forums, slack, stackexchange, mvpSite }) {
             <ReactMarkdown>{slack.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.productCategoryCard}>
-            <ReactMarkdown>{stackexchange.markdown}</ReactMarkdown>
+            <ReactMarkdown>{stackExchange.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.productCategoryCard}>
             <ReactMarkdown>{forums.markdown}</ReactMarkdown>
