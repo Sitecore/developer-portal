@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { getMarkdownData } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
+import { MarkdownAsset } from '../interfaces/markdownAsset';
 
 export async function getStaticProps() {
   const docsMarkDownFolder = "docs";
@@ -24,7 +25,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs, maDocs, commerceDocs }) {
+export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs, maDocs, commerceDocs } : {cmsDocs: MarkdownAsset, damDocs: MarkdownAsset, cdmDocs: MarkdownAsset, personalizationDocs: MarkdownAsset, maDocs: MarkdownAsset, commerceDocs: MarkdownAsset}) {
   return (
     <div className={styles.container}>
       <Head>
