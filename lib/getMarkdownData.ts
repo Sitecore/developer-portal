@@ -20,6 +20,28 @@ export async function getMarkdownData(markdownFileName: string, markdownFolder: 
     }
 }
 
+/*
+ Retrieve a specific page level info file based on the provided file name and directory.
+*/
+export async function getPageLevelInfoForFile(fileName: string, directory: string): Promise<MarkdownMeta> {
+    const fullPath = path.join(postsDirectory, directory, fileName);
+
+    var taggedFile: MarkdownMeta = {};
+    
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const postMatter = matter(fileContents)
+        
+    taggedFile = {
+        id: fileName,
+            ...postMatter.data
+        };
+
+    return taggedFile;
+}
+
+/*
+ Retrieve the page level info for all files matching the tags provided
+ */
 export async function getPageLevelInfo(tags: Tags): Promise<MarkdownMeta> {
     var files = recursiveReadSync(pageDirectory);
     var taggedFile: MarkdownMeta = {};
