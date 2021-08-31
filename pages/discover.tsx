@@ -2,29 +2,31 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { getMarkdownData } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
+import { MarkdownAsset } from '../interfaces/markdownAsset';
 
 export async function getStaticProps() {
   const discoverMarkDownFolder = "discover";
   const supportKB = await getMarkdownData("supportkb.md", discoverMarkDownFolder);
   const cdpKB = await getMarkdownData("cdpkb.md", discoverMarkDownFolder);
   const sitecoreKC = await getMarkdownData("sitecoreknowledgecenter.md", discoverMarkDownFolder);
-  const ordercloud = await getMarkdownData("ordercloud.md", discoverMarkDownFolder);
+  const orderCloud = await getMarkdownData("ordercloud.md", discoverMarkDownFolder);
   const moosend = await getMarkdownData("moosend.md", discoverMarkDownFolder);
-  const contenthub = await getMarkdownData("contenthub.md", discoverMarkDownFolder);
+  const contentHub = await getMarkdownData("contenthub.md", discoverMarkDownFolder);
 
   return {
       props: {
           supportKB,
           cdpKB,
           sitecoreKC,
-          ordercloud,
+          orderCloud,
           moosend,
-          contenthub,
+          contentHub,
       },
   };
 }
 
-export default function Discover({ supportKB, cdpKB, sitecoreKC, ordercloud, moosend, contenthub }) {
+export default function Discover({ supportKB, cdpKB, sitecoreKC, orderCloud, moosend, contentHub } 
+  : {supportKB: MarkdownAsset, cdpKB: MarkdownAsset, sitecoreKC: MarkdownAsset, orderCloud: MarkdownAsset, moosend: MarkdownAsset, contentHub: MarkdownAsset}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -44,10 +46,10 @@ export default function Discover({ supportKB, cdpKB, sitecoreKC, ordercloud, moo
 						<ReactMarkdown>{cdpKB.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.productCategoryCard}>
-						<ReactMarkdown>{ordercloud.markdown}</ReactMarkdown>
+						<ReactMarkdown>{orderCloud.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.productCategoryCard}>
-						<ReactMarkdown>{contenthub.markdown}</ReactMarkdown>
+						<ReactMarkdown>{contentHub.markdown}</ReactMarkdown>
 					</div>
           <div className={styles.productCategoryCard}>
 						<ReactMarkdown>{moosend.markdown}</ReactMarkdown>
