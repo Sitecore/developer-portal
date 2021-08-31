@@ -24,7 +24,7 @@ export default function Nav() {
                     <li>Content Management and Delivery
                         <ul>
                             <li><a href="/content-management/content-hub">Sitecore Content Hub</a></li>
-                            <li><a href="">Experience Edge for Content Hub</a></li>
+                            <li><a href="/content-management/edge-content-hub">Experience Edge for Content Hub</a></li>
                             <li><a href="/content-management/experience-manager">Sitecore Experience Manager</a></li>
                             <li><a href="">Experience Edge for XM</a></li>
                             <li><a href="/content-management/sxa">Sitecore Experience Accelerator (SXA)</a></li>
@@ -65,7 +65,7 @@ export default function Nav() {
                         <ul>
                             <li><a href="/content-management/content-hub">Content Management</a></li>
                             <li><a href="/digital-asset-management/dam">Digital Asset Management</a></li>
-                            <li><a href="">Experience Edge for Content Hub</a></li>
+                            <li><a href="/content-management/edge-content-hub">Experience Edge for Content Hub</a></li>
                         </ul>
                     </li>
                     <li>Sitecore CDP

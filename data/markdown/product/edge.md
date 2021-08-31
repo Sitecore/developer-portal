@@ -1,3 +1,8 @@
+---
+solution: ['content-management']
+product: ['edge-content-hub']
+---
+
 # [Experience Edge for Content Hub](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/caas-intro.html)
 
 ## What and why
