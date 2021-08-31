@@ -7,7 +7,7 @@ import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
 export async function getStaticProps() {
   const communityMarkDownFolder = "community";
   const slack = await getMarkdownData("slack.md", communityMarkDownFolder);
-  const stackExchange = await getMarkdownData("stackExchange.md", communityMarkDownFolder);
+  const stackExchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
   const forums = await getMarkdownData("forums.md", communityMarkDownFolder);
   const mvpSite = await getMarkdownData("mvp.md", communityMarkDownFolder);
 
