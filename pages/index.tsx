@@ -2,26 +2,27 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { getMarkdownData } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
+import { MarkdownAsset } from '../interfaces/markdownAsset';
 
 export async function getStaticProps() {
   const communityMarkDownFolder = "community";
   const helpMarkDownFolder = "help";
   const slack = await getMarkdownData("slack.md", communityMarkDownFolder);
-  const stackexchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
+  const stackExchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
   const forums = await getMarkdownData("forums.md", communityMarkDownFolder);
-  const gethelp = await getMarkdownData("gethelp.md", helpMarkDownFolder);
+  const getHelp = await getMarkdownData("gethelp.md", helpMarkDownFolder);
 
   return {
       props: {
           forums,
           slack,
-          stackexchange,
-          gethelp
+          stackExchange,
+          getHelp
       },
   };
 }
 
-export default function Home({forums, slack, stackexchange, gethelp}) {
+export default function Home({forums, slack, stackExchange, getHelp} : {forums: MarkdownAsset, slack: MarkdownAsset, stackExchange: MarkdownAsset, getHelp: MarkdownAsset}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -46,7 +47,7 @@ export default function Home({forums, slack, stackexchange, gethelp}) {
                 <ReactMarkdown>{slack.markdown}</ReactMarkdown>
               </div>
               <div className={styles.oneThirdCard}>
-                <ReactMarkdown>{stackexchange.markdown}</ReactMarkdown>
+                <ReactMarkdown>{stackExchange.markdown}</ReactMarkdown>
               </div>
               <div className={styles.oneThirdCard}>
                 <ReactMarkdown>{forums.markdown}</ReactMarkdown>
@@ -91,7 +92,7 @@ export default function Home({forums, slack, stackexchange, gethelp}) {
             <a href="devops/" className={styles.link}>Learn more...</a>
           </div>
           <div className={styles.youtubeCard}>
-            <ReactMarkdown>{gethelp.markdown}</ReactMarkdown>
+            <ReactMarkdown>{getHelp.markdown}</ReactMarkdown>
           </div>
           <div className={styles.youtubeCard}>
             <h2>Latest StackExchange questions</h2>
