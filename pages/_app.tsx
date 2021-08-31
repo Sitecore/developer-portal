@@ -1,10 +1,11 @@
 import '../styles/globals.css'
-import linkStyes from '../styles/links.css'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import SearchBox from '../components/searchBox'
+import { AppProps } from 'next/dist/shared/lib/router/router'
 
-function MyApp({ Component, pageProps }) {
+
+function MyApp({ Component, pageProps } : AppProps)  {
   return (
     <>
       <SearchBox />
