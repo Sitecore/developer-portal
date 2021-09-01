@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { getMarkdownData } from "../lib/getMarkdownData";
+import { getMarkdownData, getPageLevelInfoForFile } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 import { MarkdownAsset } from '../interfaces/markdownAsset';
 
 export async function getStaticProps() {
   const discoverMarkDownFolder = "discover";
+  const pageInfo = await getPageLevelInfoForFile("discover.md", discoverMarkDownFolder);
   const supportKB = await getMarkdownData("supportkb.md", discoverMarkDownFolder);
   const cdpKB = await getMarkdownData("cdpkb.md", discoverMarkDownFolder);
   const sitecoreKC = await getMarkdownData("sitecoreknowledgecenter.md", discoverMarkDownFolder);
@@ -15,6 +16,7 @@ export async function getStaticProps() {
 
   return {
       props: {
+          pageInfo,
           supportKB,
           cdpKB,
           sitecoreKC,
@@ -25,13 +27,13 @@ export async function getStaticProps() {
   };
 }
 
-export default function Discover({ supportKB, cdpKB, sitecoreKC, orderCloud, moosend, contentHub } 
-  : {supportKB: MarkdownAsset, cdpKB: MarkdownAsset, sitecoreKC: MarkdownAsset, orderCloud: MarkdownAsset, moosend: MarkdownAsset, contentHub: MarkdownAsset}) {
+export default function Discover({ pageInfo, supportKB, cdpKB, sitecoreKC, orderCloud, moosend, contentHub } 
+  : {pageInfo: MarkdownMeta, supportKB: MarkdownAsset, cdpKB: MarkdownAsset, sitecoreKC: MarkdownAsset, orderCloud: MarkdownAsset, moosend: MarkdownAsset, contentHub: MarkdownAsset}) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Discover Sitecore</title>
-        <meta name="description" content="Get deep into the products with knowledgebase articles and how-to documents" />
+        <title>{pageInfo.prettyName}</title>
+        <meta name="description" content={pageInfo.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
