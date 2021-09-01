@@ -5,6 +5,7 @@ import { useRouter } from 'next/dist/client/router';
 import ReactMarkdown from 'react-markdown';
 import { MarkdownMeta, MarkdownAsset } from '../interfaces/markdownAsset';
 import YouTubeFeed from '../components/youtubeFeed';
+import TwitterFeed from '../components/twitterFeed';
 
 export async function getStaticProps() {
     const learnFolder = "learn";
@@ -56,9 +57,7 @@ export default function Learn({ pageInfo, starterKits, gettingStarted, learningS
                         <ReactMarkdown>{learningSitecore.markdown}</ReactMarkdown>
                     </div>
                     <YouTubeFeed pageInfo={pageInfo} />
-                    <div className={styles.socialsCard}>
-                        <h2>Latest #LearnSitecore tweets 🕊</h2>
-                    </div>
+                    <TwitterFeed pageInfo={pageInfo} />
                     <div className={styles.socialsCard}>
                         <h2>News &amp; Announcements</h2>
                         <a href="" className={styles.link}><li>Cool new things</li></a>
