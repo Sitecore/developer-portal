@@ -4,6 +4,7 @@ import { getMarkdownData, getPageLevelInfoForFile } from "../lib/getMarkdownData
 import ReactMarkdown from "react-markdown";
 import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
 import StackExchangeFeed from '../components/stackExchangeFeed';
+import TwitterFeed from '../components/twitterFeed';
 
 export async function getStaticProps() {
   const communityMarkDownFolder = "community";
@@ -50,9 +51,7 @@ export default function Community({ pageInfo, forums, slack, stackExchange: stac
           <div className={styles.productCategoryCard}>
 						<ReactMarkdown>{mvpSite.markdown}</ReactMarkdown>
 					</div>
-          <div className={styles.youtubeCard}>
-            <h2>@WeAreSitecore Twitter feed 🕊</h2>
-          </div>
+          <TwitterFeed pageInfo={pageInfo} />
           <StackExchangeFeed pageInfo={pageInfo} />
         </div>
       </main>
