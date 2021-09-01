@@ -4,6 +4,7 @@ import { getMarkdownData, getPageLevelInfoForFile } from '../lib/getMarkdownData
 import { useRouter } from 'next/dist/client/router';
 import ReactMarkdown from 'react-markdown';
 import { MarkdownMeta, MarkdownAsset } from '../interfaces/markdownAsset';
+import StackExchangeFeed from '../components/stackExchangeFeed';
 
 export async function getStaticProps() {
     const communityMarkDownFolder = "community";
@@ -68,9 +69,7 @@ export default function Help({ pageInfo, forums, slack, stackexchange, support }
                     <div className={styles.youtubeCard}>
                         <h2>Contact Us info here (or redirect to sitecore.com contact)</h2>
                     </div>
-                    <div className={styles.youtubeCard}>
-                        <h2>Latest StackExchange questions</h2>
-                    </div>
+                    <StackExchangeFeed pageInfo={pageInfo} />
                 </div>
             </main>
         </div>)
