@@ -25,7 +25,7 @@ export default function XM_CDP({ taggedFiles }: { taggedFiles: MarkdownAsset[] }
             <Head>
                 <title>XM &lt;-&gt; CDP Integration</title>
                 <meta name="description" content="Scale management and delivery of media and static assets" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
             </Head>
 
             <main className={styles.main}>

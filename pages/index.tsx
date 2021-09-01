@@ -32,7 +32,7 @@ export default function Home({pageInfo, forums, slack, stackExchange, getHelp} :
       <Head>
         <title>{pageInfo.prettyName}</title>
         <meta name="description" content={pageInfo.description} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
       </Head>
 
       <main className={styles.main}>

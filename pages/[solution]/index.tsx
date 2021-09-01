@@ -54,7 +54,7 @@ export default function solutionPage({ slug, files, pageInfo }: { slug: any, fil
             <Head>
                 <title>{pageInfo.prettyName}</title>
                 <meta name="description" content={pageInfo.description} />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
             </Head>
 
             <main className={styles.main}>
