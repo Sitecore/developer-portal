@@ -4,6 +4,7 @@ import { getMarkdownData, getPageLevelInfoForFile } from "../lib/getMarkdownData
 import ReactMarkdown from "react-markdown";
 import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
 import YouTubeFeed from '../components/youtubeFeed';
+import TwitterFeed from '../components/twitterFeed';
 
 export async function getStaticProps() {
   const discoverMarkDownFolder = "discover";
@@ -64,6 +65,7 @@ export default function Discover({ pageInfo, supportKB, cdpKB, sitecoreKC, order
 						<ReactMarkdown>{sitecoreKC.markdown}</ReactMarkdown>
 					</div>
           <YouTubeFeed pageInfo={pageInfo} />
+          <TwitterFeed pageInfo={pageInfo} />
         </div>
       </main>
     </div>
