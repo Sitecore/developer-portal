@@ -5,7 +5,7 @@ export default function YouTubeFeed({pageInfo} : {pageInfo: MarkdownMeta}) {
     let style = pageInfo.youtube ?  styles.youtubeCard : styles.hidden    
     return (
         <div className={style}>
-            <h2>Latest videos</h2>
+            <h2>I'm recent YouTube videos 🎥</h2>
             <p>{pageInfo.youtube?.join()}</p>
         </div>
     )

@@ -4,6 +4,7 @@ import { getMarkdownData, getPageLevelInfoForFile } from "../lib/getMarkdownData
 import ReactMarkdown from "react-markdown";
 import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
 import StackExchangeFeed from '../components/stackExchangeFeed';
+import YouTubeFeed from '../components/youtubeFeed';
 
 export async function getStaticProps() {
   const communityMarkDownFolder = "community";
@@ -43,9 +44,7 @@ export default function Home({pageInfo, forums, slack, stackExchange, getHelp} :
         </p>
 
         <div className={styles.grid}>
-          <div className={styles.youtubeCard}>
-            <h2>I'm recent YouTube videos 🎥</h2>
-          </div>
+          <YouTubeFeed pageInfo={pageInfo} />
           <div className={styles.youtubeCard}>
             <h2>Join these cool Sitecore Communities 🤖</h2>
             <div className={styles.threeColumn}>
