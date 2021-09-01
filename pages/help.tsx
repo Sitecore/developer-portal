@@ -3,8 +3,7 @@ import styles from '../styles/Home.module.css'
 import { getMarkdownData, getPageLevelInfoForFile } from '../lib/getMarkdownData';
 import { useRouter } from 'next/dist/client/router';
 import ReactMarkdown from 'react-markdown';
-import { MarkdownMeta } from '../interfaces/markdownAsset';
-import { MarkdownAsset } from '../interfaces/markdownAsset';
+import { MarkdownMeta, MarkdownAsset } from '../interfaces/markdownAsset';
 
 export async function getStaticProps() {
     const communityMarkDownFolder = "community";
