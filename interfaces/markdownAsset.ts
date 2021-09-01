@@ -10,4 +10,5 @@ export type MarkdownMeta = {
     description?: string
     stackexchange?: string[]
     youtube?: string[]
+    twitter?: string
 }
