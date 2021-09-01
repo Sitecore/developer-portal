@@ -7,6 +7,8 @@ import { useRouter } from 'next/dist/client/router';
 import { UrlParams } from '../../interfaces/UrlParams';
 import Link from 'next/link'
 import StackExchangeFeed from '../../components/stackExchangeFeed';
+import YouTubeFeed from '../../components/youtubeFeed';
+import TwitterFeed from '../../components/twitterFeed';
 
 export async function getStaticPaths() {
     const solutionPaths = await getSolutionPaths();
@@ -80,6 +82,8 @@ export default function solutionPage({ slug, files, pageInfo }: { slug: any, fil
                         <a href="" className={styles.link}><li>Cool new things</li></a>
                     </div>
 
+                    <YouTubeFeed pageInfo={pageInfo} />
+                    <TwitterFeed pageInfo={pageInfo} />
                 </div>
             </main>
         </div>)

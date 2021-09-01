@@ -8,6 +8,8 @@ import { useRouter } from 'next/dist/client/router';
 import { UrlParams } from '../../interfaces/UrlParams';
 import Link from 'next/link'
 import StackExchangeFeed from '../../components/stackExchangeFeed';
+import YouTubeFeed from '../../components/youtubeFeed';
+import TwitterFeed from '../../components/twitterFeed';
 
 export async function getStaticPaths() {
     const productPaths = await getProductPaths();
@@ -70,6 +72,8 @@ export default function productPage({ slug, files, pageInfo }: { slug: any, file
                     ))}
                     
                     <StackExchangeFeed pageInfo={pageInfo} />
+                    <YouTubeFeed pageInfo={pageInfo} />
+                    <TwitterFeed pageInfo={pageInfo} />
                 </div>
                 
             </main>
