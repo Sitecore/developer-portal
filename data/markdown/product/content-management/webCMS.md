@@ -30,4 +30,3 @@ Learn
 Socials
 
  - [Sitecore StackExchange](https://sitecore.stackexchange.com/)
- - [#Sitecore Twitter](https://twitter.com/search?q=sitecore&src=typed_query&f=live)

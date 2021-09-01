@@ -24,4 +24,3 @@ Learn
  
 Socials
 
-  - [#Sitecore Twitter](https://twitter.com/search?q=sitecore%20docker&src=typed_query)

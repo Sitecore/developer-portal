@@ -21,5 +21,3 @@ Learn
 
  
 Socials
-
-  - [#Sitecore Twitter](https://twitter.com/search?q=sitecore%20arm&src=typed_query&f=live)

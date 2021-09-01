@@ -19,5 +19,3 @@ Learn
  - [Getting Started]()
  
 Socials
-
-  - [#Sitecore Twitter](https://twitter.com/search?q=sitecore%20install%20framwork&src=typed_query&f=live)
