@@ -9,4 +9,5 @@ export type MarkdownMeta = {
     product?: string
     description?: string
     stackexchange?: string[]
+    youtube?: string[]
 }
