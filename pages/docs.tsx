@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { getMarkdownData } from "../lib/getMarkdownData";
+import { getMarkdownData, getPageLevelInfoForFile } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
-import { MarkdownAsset } from '../interfaces/markdownAsset';
+import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
 
 export async function getStaticProps() {
   const docsMarkDownFolder = "docs";
+  const pageInfo = await getPageLevelInfoForFile("docs.md", docsMarkDownFolder);
   const cmsDocs = await getMarkdownData("cms.md", docsMarkDownFolder);
   const damDocs = await getMarkdownData("dam.md", docsMarkDownFolder);
   const cdmDocs = await getMarkdownData("customerdatamanagement.md", docsMarkDownFolder);
@@ -15,6 +16,7 @@ export async function getStaticProps() {
 
   return {
       props: {
+          pageInfo,
           cmsDocs,
           damDocs,
           cdmDocs,
@@ -25,17 +27,20 @@ export async function getStaticProps() {
   };
 }
 
-export default function Docs({ cmsDocs, damDocs, cdmDocs, personalizationDocs, maDocs, commerceDocs } : {cmsDocs: MarkdownAsset, damDocs: MarkdownAsset, cdmDocs: MarkdownAsset, personalizationDocs: MarkdownAsset, maDocs: MarkdownAsset, commerceDocs: MarkdownAsset}) {
+export default function Docs({ pageInfo, cmsDocs, damDocs, cdmDocs, personalizationDocs, maDocs, commerceDocs } : {pageInfo:MarkdownMeta, cmsDocs: MarkdownAsset, damDocs: MarkdownAsset, cdmDocs: MarkdownAsset, personalizationDocs: MarkdownAsset, maDocs: MarkdownAsset, commerceDocs: MarkdownAsset}) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Sitecore Developer Documentation</title>
-        <meta name="description" content="Links to various documentation sources" />
+        <title>{pageInfo.prettyName}</title>
+        <meta name="description" content={pageInfo.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Developer Documentation</h1>
+        <h1 className={styles.title}>{pageInfo.prettyName}</h1>
+        <p>
+          {pageInfo.description}
+        </p>
 
         <div className={styles.grid}>
           <div className={styles.productCategoryCard}>
