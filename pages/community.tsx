@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import { getMarkdownData, getPageLevelInfoForFile } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
+import StackExchangeFeed from '../components/stackExchangeFeed';
 
 export async function getStaticProps() {
   const communityMarkDownFolder = "community";
@@ -52,9 +53,7 @@ export default function Community({ pageInfo, forums, slack, stackExchange: stac
           <div className={styles.youtubeCard}>
             <h2>@WeAreSitecore Twitter feed 🕊</h2>
           </div>
-          <div className={styles.youtubeCard}>
-            <h2>Latest StackExchange questions</h2>
-          </div>
+          <StackExchangeFeed pageInfo={pageInfo} />
         </div>
       </main>
     </div>
