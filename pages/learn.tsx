@@ -4,6 +4,7 @@ import { getMarkdownData, getPageLevelInfoForFile } from '../lib/getMarkdownData
 import { useRouter } from 'next/dist/client/router';
 import ReactMarkdown from 'react-markdown';
 import { MarkdownMeta, MarkdownAsset } from '../interfaces/markdownAsset';
+import YouTubeFeed from '../components/youtubeFeed';
 
 export async function getStaticProps() {
     const learnFolder = "learn";
@@ -54,9 +55,7 @@ export default function Learn({ pageInfo, starterKits, gettingStarted, learningS
                     <div className={styles.productCategoryCardLarge}>
                         <ReactMarkdown>{learningSitecore.markdown}</ReactMarkdown>
                     </div>
-                    <div className={styles.youtubeCard}>
-                        <h2>Discover Sitecore YouTube feed (5 most recent videos) 🎥</h2>
-                    </div>
+                    <YouTubeFeed pageInfo={pageInfo} />
                     <div className={styles.socialsCard}>
                         <h2>Latest #LearnSitecore tweets 🕊</h2>
                     </div>
