@@ -3,6 +3,8 @@ import styles from '../styles/Home.module.css'
 import { getMarkdownData, getPageLevelInfoForFile } from "../lib/getMarkdownData";
 import ReactMarkdown from "react-markdown";
 import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
+import YouTubeFeed from '../components/youtubeFeed';
+import TwitterFeed from '../components/twitterFeed';
 
 export async function getStaticProps() {
   const docsMarkDownFolder = "docs";
@@ -61,9 +63,8 @@ export default function Docs({ pageInfo, cmsDocs, damDocs, cdmDocs, personalizat
           <div className={styles.productCategoryCard}>
             <ReactMarkdown>{commerceDocs.markdown}</ReactMarkdown>
 					</div>
-          <div className={styles.youtubeCard}>
-            <h2>@DocsSitecore Twitter feed 🕊</h2>
-          </div>
+          <YouTubeFeed pageInfo={pageInfo} />
+          <TwitterFeed pageInfo={pageInfo} />
         </div>
       </main>
     </div>
