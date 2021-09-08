@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '@/styles/global.css'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import SearchBox from '../components/searchBox'

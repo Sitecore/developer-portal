@@ -1,0 +1,12 @@
+/* Base */
+@import 'tailwindcss/base';
+@import './_base.css';
+
+/* Components */
+@import 'tailwindcss/components';
+
+/* Utilities */
+@import 'tailwindcss/utilities';
+
+/* @TODO: Split these into separate utilities as they grow? */
+@import './_utilities.css';

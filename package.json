@@ -2,10 +2,15 @@
   "name": "dev_portal_demo",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=14.0.0 <15.0.0",
+    "npm": ">=6.0.0 <7.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "generate-css-types": "tailwindcss-classnames -x ./tailwindcss-custom-types.ts -i ./tailwind.config.js"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
@@ -13,10 +18,18 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-markdown": "^6.0.2",
-    "recursive-readdir-sync": "^1.0.6"
+    "recursive-readdir-sync": "^1.0.6",
+    "tailwindcss-classnames": "^2.2.3"
   },
   "devDependencies": {
     "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.0",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.2.7",
     "typescript": "^4.3.5"
   }
 }
