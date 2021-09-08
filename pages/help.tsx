@@ -5,6 +5,7 @@ import { useRouter } from 'next/dist/client/router';
 import ReactMarkdown from 'react-markdown';
 import { MarkdownMeta, MarkdownAsset } from '../interfaces/markdownAsset';
 import StackExchangeFeed from '../components/stackExchangeFeed';
+import Layout from '../components/layout/Layout';
 
 export async function getStaticProps() {
     const communityMarkDownFolder = "community";
@@ -34,44 +35,31 @@ export default function Help({ pageInfo, forums, slack, stackexchange, support }
     }
 
     return (
-        <div className={styles.container}>
-            <Head>
-                <title>{pageInfo.prettyName}</title>
-                <meta name="description" content={pageInfo.description} />
-                <link rel="icon" href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
-            </Head>
-
-            <main className={styles.main}>
-                <h1 className={styles.title}>
-                    {pageInfo.prettyName}
-                </h1>
-                <p>
-                    {pageInfo.description}
-                </p>
-                <div className={styles.grid}>
-                    <div className={styles.socialsCard}>
-                        <ReactMarkdown>{support.markdown}</ReactMarkdown>
-                    </div>
-                    <div className={styles.youtubeCard}>
-                        <h2>Ask the community</h2>
-                        <div className={styles.threeColumn}>
-                        <div className={styles.oneThirdCard}>
-                            <ReactMarkdown>{slack.markdown}</ReactMarkdown>
-                        </div>
-                        <div className={styles.oneThirdCard}>
-                            <ReactMarkdown>{stackexchange.markdown}</ReactMarkdown>
-                        </div>
-                        <div className={styles.oneThirdCard}>
-                            <ReactMarkdown>{forums.markdown}</ReactMarkdown>
-                        </div>
-                        </div>
-                    </div>
-                    <div className={styles.youtubeCard}>
-                        <h2>Contact Us info here (or redirect to sitecore.com contact)</h2>
-                    </div>
-                    <StackExchangeFeed pageInfo={pageInfo} />
+        <Layout pageInfo={pageInfo}>
+            <div className={styles.grid}>
+                <div className={styles.socialsCard}>
+                    <ReactMarkdown>{support.markdown}</ReactMarkdown>
                 </div>
-            </main>
-        </div>)
+                <div className={styles.youtubeCard}>
+                    <h2>Ask the community</h2>
+                    <div className={styles.threeColumn}>
+                    <div className={styles.oneThirdCard}>
+                        <ReactMarkdown>{slack.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.oneThirdCard}>
+                        <ReactMarkdown>{stackexchange.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.oneThirdCard}>
+                        <ReactMarkdown>{forums.markdown}</ReactMarkdown>
+                    </div>
+                    </div>
+                </div>
+                <div className={styles.youtubeCard}>
+                    <h2>Contact Us info here (or redirect to sitecore.com contact)</h2>
+                </div>
+                <StackExchangeFeed pageInfo={pageInfo} />
+            </div>
+        </Layout>
+    );
 }
 

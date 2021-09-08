@@ -5,6 +5,7 @@ import ReactMarkdown from "react-markdown";
 import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
 import YouTubeFeed from '../components/youtubeFeed';
 import TwitterFeed from '../components/twitterFeed';
+import Layout from '../components/layout/Layout';
 
 export async function getStaticProps() {
   const docsMarkDownFolder = "docs";
@@ -31,42 +32,29 @@ export async function getStaticProps() {
 
 export default function Docs({ pageInfo, cmsDocs, damDocs, cdmDocs, personalizationDocs, maDocs, commerceDocs } : {pageInfo:MarkdownMeta, cmsDocs: MarkdownAsset, damDocs: MarkdownAsset, cdmDocs: MarkdownAsset, personalizationDocs: MarkdownAsset, maDocs: MarkdownAsset, commerceDocs: MarkdownAsset}) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{pageInfo.prettyName}</title>
-        <meta name="description" content={pageInfo.description} />
-        <link rel="icon" href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>{pageInfo.prettyName}</h1>
-        <p>
-          {pageInfo.description}
-        </p>
-
-        <div className={styles.grid}>
-          <div className={styles.productCategoryCard}>
-						<ReactMarkdown>{cmsDocs.markdown}</ReactMarkdown>
-					</div>
-          <div className={styles.productCategoryCard}>
-						<ReactMarkdown>{damDocs.markdown}</ReactMarkdown>
-					</div>
-          <div className={styles.productCategoryCard}>
-						<ReactMarkdown>{cdmDocs.markdown}</ReactMarkdown>
-					</div>
-          <div className={styles.productCategoryCard}>
-						<ReactMarkdown>{personalizationDocs.markdown}</ReactMarkdown>
-					</div>
-          <div className={styles.productCategoryCard}>
-						<ReactMarkdown>{maDocs.markdown}</ReactMarkdown>
-					</div>
-          <div className={styles.productCategoryCard}>
-            <ReactMarkdown>{commerceDocs.markdown}</ReactMarkdown>
-					</div>
-          <YouTubeFeed pageInfo={pageInfo} />
-          <TwitterFeed pageInfo={pageInfo} />
+    <Layout pageInfo={pageInfo}>
+      <div className={styles.grid}>
+        <div className={styles.productCategoryCard}>
+          <ReactMarkdown>{cmsDocs.markdown}</ReactMarkdown>
         </div>
-      </main>
-    </div>
+        <div className={styles.productCategoryCard}>
+          <ReactMarkdown>{damDocs.markdown}</ReactMarkdown>
+        </div>
+        <div className={styles.productCategoryCard}>
+          <ReactMarkdown>{cdmDocs.markdown}</ReactMarkdown>
+        </div>
+        <div className={styles.productCategoryCard}>
+          <ReactMarkdown>{personalizationDocs.markdown}</ReactMarkdown>
+        </div>
+        <div className={styles.productCategoryCard}>
+          <ReactMarkdown>{maDocs.markdown}</ReactMarkdown>
+        </div>
+        <div className={styles.productCategoryCard}>
+          <ReactMarkdown>{commerceDocs.markdown}</ReactMarkdown>
+        </div>
+        <YouTubeFeed pageInfo={pageInfo} />
+        <TwitterFeed pageInfo={pageInfo} />
+      </div>
+    </Layout>
   )
 }

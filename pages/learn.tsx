@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import { MarkdownMeta, MarkdownAsset } from '../interfaces/markdownAsset';
 import YouTubeFeed from '../components/youtubeFeed';
 import TwitterFeed from '../components/twitterFeed';
+import Layout from '../components/layout/Layout';
 
 export async function getStaticProps() {
     const learnFolder = "learn";
@@ -32,38 +33,25 @@ export default function Learn({ pageInfo, starterKits, gettingStarted, learningS
     }
 
     return (
-        <div className={styles.container}>
-            <Head>
-                <title>{pageInfo.prettyName}</title>
-                <meta name="description" content={pageInfo.description} />
-                <link rel="icon" href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
-            </Head>
-
-            <main className={styles.main}>
-                <h1 className={styles.title}>
-                    {pageInfo.prettyName}
-                </h1>
-                <p>
-                    {pageInfo.description}
-                </p>
-                <div className={styles.grid}>
-                    <div className={styles.productCategoryCard}>
-                        <ReactMarkdown>{starterKits.markdown}</ReactMarkdown>
-                    </div>
-                    <div className={styles.productCategoryCardLarge}>
-                        <ReactMarkdown>{gettingStarted.markdown}</ReactMarkdown>
-                    </div>
-                    <div className={styles.productCategoryCardLarge}>
-                        <ReactMarkdown>{learningSitecore.markdown}</ReactMarkdown>
-                    </div>
-                    <YouTubeFeed pageInfo={pageInfo} />
-                    <TwitterFeed pageInfo={pageInfo} />
-                    <div className={styles.socialsCard}>
-                        <h2>News &amp; Announcements</h2>
-                        <a href="" className={styles.link}><li>Cool new things</li></a>
-                    </div>
+        <Layout pageInfo={pageInfo}>
+            <div className={styles.grid}>
+                <div className={styles.productCategoryCard}>
+                    <ReactMarkdown>{starterKits.markdown}</ReactMarkdown>
                 </div>
-            </main>
-        </div>)
-}
+                <div className={styles.productCategoryCardLarge}>
+                    <ReactMarkdown>{gettingStarted.markdown}</ReactMarkdown>
+                </div>
+                <div className={styles.productCategoryCardLarge}>
+                    <ReactMarkdown>{learningSitecore.markdown}</ReactMarkdown>
+                </div>
+                <YouTubeFeed pageInfo={pageInfo} />
+                <TwitterFeed pageInfo={pageInfo} />
+                <div className={styles.socialsCard}>
+                    <h2>News &amp; Announcements</h2>
+                    <a href="" className={styles.link}><li>Cool new things</li></a>
+                </div>
+            </div>
+        </Layout>
+    );
+};
 
