@@ -90,8 +90,8 @@ export default function Home({pageInfo, forums, slack, stackExchange, getHelp} :
         </div>
 
         {/* PRODUCT SOLUTIONS */}
-        {productSolutions.map((solution) => (
-          <ProductCategoryCard {...solution} />
+        {productSolutions.map((solution, i) => (
+          <ProductCategoryCard {...solution} key={i} />
         ))}
         <div className={styles.youtubeCard}>
           <ReactMarkdown>{getHelp.markdown}</ReactMarkdown>
