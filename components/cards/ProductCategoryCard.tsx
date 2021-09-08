@@ -1,6 +1,12 @@
+// Global
+import Link from 'next/link';
+// Interfaces
 import { ValidHeadingLevels } from '@/interfaces/heading-levels';
+// Components
+import DynamicTag from '@/components/helper/DynamicTag';
 
 export type ProductCategoryCardProps = {
+  containerTag?: 'div' | 'li';
   description: string;
   headingLevel?: ValidHeadingLevels;
   href: string;
@@ -8,16 +14,17 @@ export type ProductCategoryCardProps = {
 };
 
 const ProductCategoryCard = ({
+  containerTag = 'li',
   description,
-  headingLevel = 'h2',
+  headingLevel = 'h4',
   href,
   title,
 }: ProductCategoryCardProps): JSX.Element => (
-  <div>
-    <h2>{title}</h2>
+  <DynamicTag tag={containerTag}>
+    <DynamicTag tag={headingLevel}>{title}</DynamicTag>
     <p>{description}</p>
-    <a href={href}>Learn more...</a>
-  </div>
+    <Link href={href}>Learn more...</Link>
+  </DynamicTag>
 );
 
 export default ProductCategoryCard;
