@@ -4,19 +4,19 @@
 
 Docs
 
- - [Marketing Operations Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/marketing-operations.html)
+- [Marketing Operations Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/marketing-operations.html)
 
 Discover
 
- - [Discover Marketing Operations]()
+- [Discover Marketing Operations]()
 
 Learn
 
- - [Getting Started]()
- - [Learn Marketing Operations]()
+- [Getting Started]()
+- [Learn Marketing Operations]()
 
 Playground
 
- - [Playground Marketing Operations]()
+- [Playground Marketing Operations]()
 
 Socials

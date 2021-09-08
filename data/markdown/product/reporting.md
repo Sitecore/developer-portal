@@ -4,19 +4,20 @@
 
 Docs
 
- - [Reporting Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/reporting.html)
+- [Reporting Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/reporting.html)
 
 Discover
 
- - [Discover Reporting]()
+- [Discover Reporting]()
 
 Learn
 
- - [Learn Reporting]()
+- [Learn Reporting]()
 
 Playground
 
- - [Playground Reporting]()
+- [Playground Reporting]()
 
 Socials
+
 - [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/reporting)

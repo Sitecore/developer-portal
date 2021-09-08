@@ -1,4 +1,5 @@
 ## Sitecore Content Hub
+
 The documentation portal for Content Hub has a few different sections that can let you dig into Best Practices, Security, and the development lifecycle of working with Content Hub.
 
 - [Content Hub Security guide](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/security/security-guide-intro.html)

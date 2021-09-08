@@ -1,11 +1,10 @@
-import '@/styles/global.css'
-import Nav from '../components/nav'
-import Footer from '../components/footer'
-import SearchBox from '../components/searchBox'
-import { AppProps } from 'next/dist/shared/lib/router/router'
+import '@/styles/global.css';
+import Nav from '../components/nav';
+import Footer from '../components/footer';
+import SearchBox from '../components/searchBox';
+import { AppProps } from 'next/dist/shared/lib/router/router';
 
-
-function MyApp({ Component, pageProps } : AppProps)  {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <SearchBox />
@@ -13,7 +12,7 @@ function MyApp({ Component, pageProps } : AppProps)  {
       <Component {...pageProps} />
       <Footer />
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

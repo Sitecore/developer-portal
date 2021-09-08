@@ -1,7 +1,7 @@
 // Global
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from 'react-markdown';
 // Lib
-import { getMarkdownData, getPageLevelInfoForFile } from "@/lib/getMarkdownData";
+import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
 // Interfaces
 import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
 // Components
@@ -11,29 +11,45 @@ import YouTubeFeed from '@/components/youtubeFeed';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
-  const docsMarkDownFolder = "docs";
-  const pageInfo = await getPageLevelInfoForFile("docs.md", docsMarkDownFolder);
-  const cmsDocs = await getMarkdownData("cms.md", docsMarkDownFolder);
-  const damDocs = await getMarkdownData("dam.md", docsMarkDownFolder);
-  const cdmDocs = await getMarkdownData("customerdatamanagement.md", docsMarkDownFolder);
-  const personalizationDocs = await getMarkdownData("personalization.md", docsMarkDownFolder);
-  const maDocs = await getMarkdownData("marketingautomation.md", docsMarkDownFolder);
-  const commerceDocs = await getMarkdownData("commerce.md", docsMarkDownFolder);
+  const docsMarkDownFolder = 'docs';
+  const pageInfo = await getPageLevelInfoForFile('docs.md', docsMarkDownFolder);
+  const cmsDocs = await getMarkdownData('cms.md', docsMarkDownFolder);
+  const damDocs = await getMarkdownData('dam.md', docsMarkDownFolder);
+  const cdmDocs = await getMarkdownData('customerdatamanagement.md', docsMarkDownFolder);
+  const personalizationDocs = await getMarkdownData('personalization.md', docsMarkDownFolder);
+  const maDocs = await getMarkdownData('marketingautomation.md', docsMarkDownFolder);
+  const commerceDocs = await getMarkdownData('commerce.md', docsMarkDownFolder);
 
   return {
-      props: {
-          pageInfo,
-          cmsDocs,
-          damDocs,
-          cdmDocs,
-          personalizationDocs,
-          maDocs,
-          commerceDocs,
-      },
+    props: {
+      pageInfo,
+      cmsDocs,
+      damDocs,
+      cdmDocs,
+      personalizationDocs,
+      maDocs,
+      commerceDocs,
+    },
   };
 }
 
-export default function Docs({ pageInfo, cmsDocs, damDocs, cdmDocs, personalizationDocs, maDocs, commerceDocs } : {pageInfo:MarkdownMeta, cmsDocs: MarkdownAsset, damDocs: MarkdownAsset, cdmDocs: MarkdownAsset, personalizationDocs: MarkdownAsset, maDocs: MarkdownAsset, commerceDocs: MarkdownAsset}) {
+export default function Docs({
+  pageInfo,
+  cmsDocs,
+  damDocs,
+  cdmDocs,
+  personalizationDocs,
+  maDocs,
+  commerceDocs,
+}: {
+  pageInfo: MarkdownMeta;
+  cmsDocs: MarkdownAsset;
+  damDocs: MarkdownAsset;
+  cdmDocs: MarkdownAsset;
+  personalizationDocs: MarkdownAsset;
+  maDocs: MarkdownAsset;
+  commerceDocs: MarkdownAsset;
+}) {
   return (
     <Layout pageInfo={pageInfo}>
       <div className={styles.grid}>
@@ -59,5 +75,5 @@ export default function Docs({ pageInfo, cmsDocs, damDocs, cdmDocs, personalizat
         <TwitterFeed pageInfo={pageInfo} />
       </div>
     </Layout>
-  )
+  );
 }

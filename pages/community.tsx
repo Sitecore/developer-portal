@@ -1,7 +1,7 @@
 // Global
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from 'react-markdown';
 // Lib
-import { getMarkdownData, getPageLevelInfoForFile } from "@/lib/getMarkdownData";
+import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
 // Interfaces
 import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
 // Components
@@ -11,25 +11,37 @@ import TwitterFeed from '@/components/twitterFeed';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
-  const communityMarkDownFolder = "community";
-  const pageInfo = await getPageLevelInfoForFile("community.md", communityMarkDownFolder)
-  const slack = await getMarkdownData("slack.md", communityMarkDownFolder);
-  const stackExchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
-  const forums = await getMarkdownData("forums.md", communityMarkDownFolder);
-  const mvpSite = await getMarkdownData("mvp.md", communityMarkDownFolder);
+  const communityMarkDownFolder = 'community';
+  const pageInfo = await getPageLevelInfoForFile('community.md', communityMarkDownFolder);
+  const slack = await getMarkdownData('slack.md', communityMarkDownFolder);
+  const stackExchange = await getMarkdownData('stackexchange.md', communityMarkDownFolder);
+  const forums = await getMarkdownData('forums.md', communityMarkDownFolder);
+  const mvpSite = await getMarkdownData('mvp.md', communityMarkDownFolder);
 
   return {
-      props: {
-          pageInfo,
-          forums,
-          slack,
-          stackExchange,
-          mvpSite,
-      },
+    props: {
+      pageInfo,
+      forums,
+      slack,
+      stackExchange,
+      mvpSite,
+    },
   };
 }
 
-export default function Community({ pageInfo, forums, slack, stackExchange: stackExchange, mvpSite }: {pageInfo: MarkdownMeta, forums: MarkdownAsset, slack: MarkdownAsset, stackExchange: MarkdownAsset, mvpSite: MarkdownAsset}) {
+export default function Community({
+  pageInfo,
+  forums,
+  slack,
+  stackExchange: stackExchange,
+  mvpSite,
+}: {
+  pageInfo: MarkdownMeta;
+  forums: MarkdownAsset;
+  slack: MarkdownAsset;
+  stackExchange: MarkdownAsset;
+  mvpSite: MarkdownAsset;
+}) {
   return (
     <Layout pageInfo={pageInfo}>
       <div className={styles.grid}>
@@ -49,5 +61,5 @@ export default function Community({ pageInfo, forums, slack, stackExchange: stac
         <StackExchangeFeed pageInfo={pageInfo} />
       </div>
     </Layout>
-  )
+  );
 }

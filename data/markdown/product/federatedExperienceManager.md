@@ -9,20 +9,20 @@ product: ['experience-platform']
 
 Docs
 
- - [FXM Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/federated-experience-manager.html)
+- [FXM Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/federated-experience-manager.html)
 
 Discover
 
- - [Discover FXM]()
+- [Discover FXM]()
 
 Learn
 
- - [Getting Started](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/using-fxm.html)
+- [Getting Started](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/using-fxm.html)
 
 Playground
 
- - [Playground FXM]()
- 
+- [Playground FXM]()
+
 Socials
 
- - [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/fxm)
+- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/fxm)

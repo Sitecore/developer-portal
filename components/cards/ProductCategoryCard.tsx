@@ -1,4 +1,4 @@
-import { ValidHeadingLevels } from "@/interfaces/heading-levels";
+import { ValidHeadingLevels } from '@/interfaces/heading-levels';
 
 export type ProductCategoryCardProps = {
   description: string;
@@ -7,7 +7,12 @@ export type ProductCategoryCardProps = {
   title: string;
 };
 
-const ProductCategoryCard = ({ description, headingLevel = 'h2', href, title }: ProductCategoryCardProps): JSX.Element => (
+const ProductCategoryCard = ({
+  description,
+  headingLevel = 'h2',
+  href,
+  title,
+}: ProductCategoryCardProps): JSX.Element => (
   <div>
     <h2>{title}</h2>
     <p>{description}</p>
