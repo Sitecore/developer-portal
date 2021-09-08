@@ -7,13 +7,15 @@ type LayoutProps = {
 };
 
 const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
-
   return (
     <div>
       <Head>
         <title>{pageInfo.prettyName}</title>
         <meta name="description" content={pageInfo.description} />
-        <link rel="icon" href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
+        <link
+          rel="icon"
+          href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png"
+        />
       </Head>
       <main>
         <h1>{pageInfo.prettyName}</h1>

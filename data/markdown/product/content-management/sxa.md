@@ -17,11 +17,8 @@ Discover
 
 Learn
 
- - [SXA Tutorial YouTube series](https://www.youtube.com/watch?v=nMTUitaBMek)
+- [SXA Tutorial YouTube series](https://www.youtube.com/watch?v=nMTUitaBMek)
 
 Playground
 
-
 Socials
-
-

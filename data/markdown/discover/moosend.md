@@ -1,5 +1,7 @@
 ## Moosend
+
 Moosend's Knowledge Base covers a lot of topics to help you get started:
+
 - Getting Started
 - Integrations
 - Personalization

@@ -1,41 +1,44 @@
 // Global
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from 'react-markdown';
 // Lib
-import { getMarkdownData, getPageLevelInfoForFile } from "@/lib/getMarkdownData";
+import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
 // Interfaces
 import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
 // Components
 import Layout from '@/components/layout/Layout';
-import ProductCategoryCard, { ProductCategoryCardProps } from '@/components/cards/ProductCategoryCard';
+import ProductCategoryCard, {
+  ProductCategoryCardProps,
+} from '@/components/cards/ProductCategoryCard';
 import StackExchangeFeed from '@/components/stackExchangeFeed';
 import YouTubeFeed from '@/components/youtubeFeed';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
-  const communityMarkDownFolder = "community";
-  const helpMarkDownFolder = "help";
-  const pageInfo = await getPageLevelInfoForFile("home.md", "home");
-  const slack = await getMarkdownData("slack.md", communityMarkDownFolder);
-  const stackExchange = await getMarkdownData("stackexchange.md", communityMarkDownFolder);
-  const forums = await getMarkdownData("forums.md", communityMarkDownFolder);
-  const getHelp = await getMarkdownData("gethelp.md", helpMarkDownFolder);
+  const communityMarkDownFolder = 'community';
+  const helpMarkDownFolder = 'help';
+  const pageInfo = await getPageLevelInfoForFile('home.md', 'home');
+  const slack = await getMarkdownData('slack.md', communityMarkDownFolder);
+  const stackExchange = await getMarkdownData('stackexchange.md', communityMarkDownFolder);
+  const forums = await getMarkdownData('forums.md', communityMarkDownFolder);
+  const getHelp = await getMarkdownData('gethelp.md', helpMarkDownFolder);
 
   return {
-      props: {
-          pageInfo,
-          forums,
-          slack,
-          stackExchange,
-          getHelp
-      },
+    props: {
+      pageInfo,
+      forums,
+      slack,
+      stackExchange,
+      getHelp,
+    },
   };
 }
 
 const productSolutions: ProductCategoryCardProps[] = [
   {
     title: 'Content Management (CMS) 💾 &rarr;',
-    description: 'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.',
-    href: 'content-management/'
+    description:
+      'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.',
+    href: 'content-management/',
   },
   {
     title: 'Digital Asset Management (DAM) 📀 &rarr;',
@@ -69,7 +72,19 @@ const productSolutions: ProductCategoryCardProps[] = [
   },
 ];
 
-export default function Home({pageInfo, forums, slack, stackExchange, getHelp} : {pageInfo: MarkdownMeta, forums: MarkdownAsset, slack: MarkdownAsset, stackExchange: MarkdownAsset, getHelp: MarkdownAsset}) {  
+export default function Home({
+  pageInfo,
+  forums,
+  slack,
+  stackExchange,
+  getHelp,
+}: {
+  pageInfo: MarkdownMeta;
+  forums: MarkdownAsset;
+  slack: MarkdownAsset;
+  stackExchange: MarkdownAsset;
+  getHelp: MarkdownAsset;
+}) {
   return (
     <Layout pageInfo={pageInfo}>
       <div className={styles.grid}>

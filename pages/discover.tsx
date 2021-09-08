@@ -1,41 +1,55 @@
 // Global
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from 'react-markdown';
 // Lib
-import { getMarkdownData, getPageLevelInfoForFile } from "@/lib/getMarkdownData";
+import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
 // Interfaces
 import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
 // Components
 import Layout from '@/components/layout/Layout';
 import TwitterFeed from '@/components/twitterFeed';
 import YouTubeFeed from '@/components/youtubeFeed';
-import styles from '@/styles/Home.module.css'
-
+import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
-  const discoverMarkDownFolder = "discover";
-  const pageInfo = await getPageLevelInfoForFile("discover.md", discoverMarkDownFolder);
-  const supportKB = await getMarkdownData("supportkb.md", discoverMarkDownFolder);
-  const cdpKB = await getMarkdownData("cdpkb.md", discoverMarkDownFolder);
-  const sitecoreKC = await getMarkdownData("sitecoreknowledgecenter.md", discoverMarkDownFolder);
-  const orderCloud = await getMarkdownData("ordercloud.md", discoverMarkDownFolder);
-  const moosend = await getMarkdownData("moosend.md", discoverMarkDownFolder);
-  const contentHub = await getMarkdownData("contenthub.md", discoverMarkDownFolder);
+  const discoverMarkDownFolder = 'discover';
+  const pageInfo = await getPageLevelInfoForFile('discover.md', discoverMarkDownFolder);
+  const supportKB = await getMarkdownData('supportkb.md', discoverMarkDownFolder);
+  const cdpKB = await getMarkdownData('cdpkb.md', discoverMarkDownFolder);
+  const sitecoreKC = await getMarkdownData('sitecoreknowledgecenter.md', discoverMarkDownFolder);
+  const orderCloud = await getMarkdownData('ordercloud.md', discoverMarkDownFolder);
+  const moosend = await getMarkdownData('moosend.md', discoverMarkDownFolder);
+  const contentHub = await getMarkdownData('contenthub.md', discoverMarkDownFolder);
 
   return {
-      props: {
-          pageInfo,
-          supportKB,
-          cdpKB,
-          sitecoreKC,
-          orderCloud,
-          moosend,
-          contentHub,
-      },
+    props: {
+      pageInfo,
+      supportKB,
+      cdpKB,
+      sitecoreKC,
+      orderCloud,
+      moosend,
+      contentHub,
+    },
   };
 }
 
-export default function Discover({ pageInfo, supportKB, cdpKB, sitecoreKC, orderCloud, moosend, contentHub } 
-  : {pageInfo: MarkdownMeta, supportKB: MarkdownAsset, cdpKB: MarkdownAsset, sitecoreKC: MarkdownAsset, orderCloud: MarkdownAsset, moosend: MarkdownAsset, contentHub: MarkdownAsset}) {
+export default function Discover({
+  pageInfo,
+  supportKB,
+  cdpKB,
+  sitecoreKC,
+  orderCloud,
+  moosend,
+  contentHub,
+}: {
+  pageInfo: MarkdownMeta;
+  supportKB: MarkdownAsset;
+  cdpKB: MarkdownAsset;
+  sitecoreKC: MarkdownAsset;
+  orderCloud: MarkdownAsset;
+  moosend: MarkdownAsset;
+  contentHub: MarkdownAsset;
+}) {
   return (
     <Layout pageInfo={pageInfo}>
       <div className={styles.grid}>
@@ -61,5 +75,5 @@ export default function Discover({ pageInfo, supportKB, cdpKB, sitecoreKC, order
         <TwitterFeed pageInfo={pageInfo} />
       </div>
     </Layout>
-  )
+  );
 }

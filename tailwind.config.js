@@ -8,10 +8,7 @@
 
 module.exports = {
   purge: {
-    content: [
-      './components/**/*.{js,ts,jsx,tsx}',
-      './pages/**/*.{js,ts,jsx,tsx}',
-    ],
+    content: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -25,7 +22,7 @@ module.exports = {
       gray: {
         lightest: '#f0f0f0',
         light: '#cccccc',
-        'DEFAULT': '#999999',
+        DEFAULT: '#999999',
         dark: '#707070',
         darkest: '#333333',
       },
@@ -33,7 +30,20 @@ module.exports = {
       currentColor: 'currentColor',
     },
     fontFamily: {
-      sans: ['Avenir Next', 'Open Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'],
+      sans: [
+        'Avenir Next',
+        'Open Sans',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'Segoe UI',
+        'Roboto',
+        'Helvetica',
+        'Arial',
+        'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+      ],
     },
     fontSize: {
       // 12px
