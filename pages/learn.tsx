@@ -1,12 +1,15 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { getMarkdownData, getPageLevelInfoForFile } from '../lib/getMarkdownData';
-import { useRouter } from 'next/dist/client/router';
+// Global
 import ReactMarkdown from 'react-markdown';
-import { MarkdownMeta, MarkdownAsset } from '../interfaces/markdownAsset';
-import YouTubeFeed from '../components/youtubeFeed';
-import TwitterFeed from '../components/twitterFeed';
-import Layout from '../components/layout/Layout';
+import { useRouter } from 'next/dist/client/router';
+// Lib
+import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
+// Interfaces
+import { MarkdownMeta, MarkdownAsset } from '@/interfaces/markdownAsset';
+// Components
+import Layout from '@/components/layout/Layout';
+import TwitterFeed from '@/components/twitterFeed';
+import YouTubeFeed from '@/components/youtubeFeed';
+import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
     const learnFolder = "learn";

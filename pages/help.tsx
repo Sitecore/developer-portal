@@ -1,11 +1,14 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { getMarkdownData, getPageLevelInfoForFile } from '../lib/getMarkdownData';
-import { useRouter } from 'next/dist/client/router';
+// Global
 import ReactMarkdown from 'react-markdown';
-import { MarkdownMeta, MarkdownAsset } from '../interfaces/markdownAsset';
-import StackExchangeFeed from '../components/stackExchangeFeed';
-import Layout from '../components/layout/Layout';
+import { useRouter } from 'next/dist/client/router';
+// Lib
+import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
+// Interfaces
+import { MarkdownMeta, MarkdownAsset } from '@/interfaces/markdownAsset';
+// Component
+import Layout from '@/components/layout/Layout';
+import StackExchangeFeed from '@/components/stackExchangeFeed';
+import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
     const communityMarkDownFolder = "community";

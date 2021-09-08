@@ -1,12 +1,15 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { getMarkdownData, getPageLevelInfoForFile } from "../lib/getMarkdownData";
+// Global
 import ReactMarkdown from "react-markdown";
-import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
-import StackExchangeFeed from '../components/stackExchangeFeed';
-import YouTubeFeed from '../components/youtubeFeed';
-import Layout from '../components/layout/Layout';
-import ProductCategoryCard, { ProductCategoryCardProps } from '../components/cards/ProductCategoryCard';
+// Lib
+import { getMarkdownData, getPageLevelInfoForFile } from "@/lib/getMarkdownData";
+// Interfaces
+import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
+// Components
+import Layout from '@/components/layout/Layout';
+import ProductCategoryCard, { ProductCategoryCardProps } from '@/components/cards/ProductCategoryCard';
+import StackExchangeFeed from '@/components/stackExchangeFeed';
+import YouTubeFeed from '@/components/youtubeFeed';
+import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
   const communityMarkDownFolder = "community";

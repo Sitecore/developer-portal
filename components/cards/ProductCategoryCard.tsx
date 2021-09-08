@@ -1,4 +1,4 @@
-import { ValidHeadingLevels } from "../../interfaces/heading-levels";
+import { ValidHeadingLevels } from "@/interfaces/heading-levels";
 
 export type ProductCategoryCardProps = {
   description: string;
