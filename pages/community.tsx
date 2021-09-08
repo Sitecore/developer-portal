@@ -1,10 +1,14 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { getMarkdownData, getPageLevelInfoForFile } from "../lib/getMarkdownData";
+// Global
 import ReactMarkdown from "react-markdown";
-import { MarkdownAsset, MarkdownMeta } from '../interfaces/markdownAsset';
-import StackExchangeFeed from '../components/stackExchangeFeed';
-import TwitterFeed from '../components/twitterFeed';
+// Lib
+import { getMarkdownData, getPageLevelInfoForFile } from "@/lib/getMarkdownData";
+// Interfaces
+import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
+// Components
+import Layout from '@/components/layout/Layout';
+import StackExchangeFeed from '@/components/stackExchangeFeed';
+import TwitterFeed from '@/components/twitterFeed';
+import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
   const communityMarkDownFolder = "community";
@@ -27,34 +31,23 @@ export async function getStaticProps() {
 
 export default function Community({ pageInfo, forums, slack, stackExchange: stackExchange, mvpSite }: {pageInfo: MarkdownMeta, forums: MarkdownAsset, slack: MarkdownAsset, stackExchange: MarkdownAsset, mvpSite: MarkdownAsset}) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{pageInfo.prettyName}</title>
-        <meta name="description" content={pageInfo.description} />
-        <link rel="icon" href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>{pageInfo.prettyName}</h1>
-        <p>{pageInfo.description}</p>
-
-        <div className={styles.grid}>
-          <div className={styles.productCategoryCard}>
-            <ReactMarkdown>{slack.markdown}</ReactMarkdown>
-					</div>
-          <div className={styles.productCategoryCard}>
-            <ReactMarkdown>{stackExchange.markdown}</ReactMarkdown>
-					</div>
-          <div className={styles.productCategoryCard}>
-            <ReactMarkdown>{forums.markdown}</ReactMarkdown>
-					</div>
-          <div className={styles.productCategoryCard}>
-						<ReactMarkdown>{mvpSite.markdown}</ReactMarkdown>
-					</div>
-          <TwitterFeed pageInfo={pageInfo} />
-          <StackExchangeFeed pageInfo={pageInfo} />
+    <Layout pageInfo={pageInfo}>
+      <div className={styles.grid}>
+        <div className={styles.productCategoryCard}>
+          <ReactMarkdown>{slack.markdown}</ReactMarkdown>
         </div>
-      </main>
-    </div>
+        <div className={styles.productCategoryCard}>
+          <ReactMarkdown>{stackExchange.markdown}</ReactMarkdown>
+        </div>
+        <div className={styles.productCategoryCard}>
+          <ReactMarkdown>{forums.markdown}</ReactMarkdown>
+        </div>
+        <div className={styles.productCategoryCard}>
+          <ReactMarkdown>{mvpSite.markdown}</ReactMarkdown>
+        </div>
+        <TwitterFeed pageInfo={pageInfo} />
+        <StackExchangeFeed pageInfo={pageInfo} />
+      </div>
+    </Layout>
   )
 }

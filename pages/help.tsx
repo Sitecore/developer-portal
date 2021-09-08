@@ -1,10 +1,14 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { getMarkdownData, getPageLevelInfoForFile } from '../lib/getMarkdownData';
-import { useRouter } from 'next/dist/client/router';
+// Global
 import ReactMarkdown from 'react-markdown';
-import { MarkdownMeta, MarkdownAsset } from '../interfaces/markdownAsset';
-import StackExchangeFeed from '../components/stackExchangeFeed';
+import { useRouter } from 'next/dist/client/router';
+// Lib
+import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
+// Interfaces
+import { MarkdownMeta, MarkdownAsset } from '@/interfaces/markdownAsset';
+// Component
+import Layout from '@/components/layout/Layout';
+import StackExchangeFeed from '@/components/stackExchangeFeed';
+import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
     const communityMarkDownFolder = "community";
@@ -34,44 +38,31 @@ export default function Help({ pageInfo, forums, slack, stackexchange, support }
     }
 
     return (
-        <div className={styles.container}>
-            <Head>
-                <title>{pageInfo.prettyName}</title>
-                <meta name="description" content={pageInfo.description} />
-                <link rel="icon" href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png" />
-            </Head>
-
-            <main className={styles.main}>
-                <h1 className={styles.title}>
-                    {pageInfo.prettyName}
-                </h1>
-                <p>
-                    {pageInfo.description}
-                </p>
-                <div className={styles.grid}>
-                    <div className={styles.socialsCard}>
-                        <ReactMarkdown>{support.markdown}</ReactMarkdown>
-                    </div>
-                    <div className={styles.youtubeCard}>
-                        <h2>Ask the community</h2>
-                        <div className={styles.threeColumn}>
-                        <div className={styles.oneThirdCard}>
-                            <ReactMarkdown>{slack.markdown}</ReactMarkdown>
-                        </div>
-                        <div className={styles.oneThirdCard}>
-                            <ReactMarkdown>{stackexchange.markdown}</ReactMarkdown>
-                        </div>
-                        <div className={styles.oneThirdCard}>
-                            <ReactMarkdown>{forums.markdown}</ReactMarkdown>
-                        </div>
-                        </div>
-                    </div>
-                    <div className={styles.youtubeCard}>
-                        <h2>Contact Us info here (or redirect to sitecore.com contact)</h2>
-                    </div>
-                    <StackExchangeFeed pageInfo={pageInfo} />
+        <Layout pageInfo={pageInfo}>
+            <div className={styles.grid}>
+                <div className={styles.socialsCard}>
+                    <ReactMarkdown>{support.markdown}</ReactMarkdown>
                 </div>
-            </main>
-        </div>)
+                <div className={styles.youtubeCard}>
+                    <h2>Ask the community</h2>
+                    <div className={styles.threeColumn}>
+                    <div className={styles.oneThirdCard}>
+                        <ReactMarkdown>{slack.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.oneThirdCard}>
+                        <ReactMarkdown>{stackexchange.markdown}</ReactMarkdown>
+                    </div>
+                    <div className={styles.oneThirdCard}>
+                        <ReactMarkdown>{forums.markdown}</ReactMarkdown>
+                    </div>
+                    </div>
+                </div>
+                <div className={styles.youtubeCard}>
+                    <h2>Contact Us info here (or redirect to sitecore.com contact)</h2>
+                </div>
+                <StackExchangeFeed pageInfo={pageInfo} />
+            </div>
+        </Layout>
+    );
 }
 
