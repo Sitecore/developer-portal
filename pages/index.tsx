@@ -1,5 +1,6 @@
 // Global
 import ReactMarkdown from 'react-markdown';
+import { classnames } from 'tailwindcss-classnames';
 // Lib
 import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
 // Interfaces
@@ -38,37 +39,37 @@ const productSolutions: ProductCategoryCardProps[] = [
     title: 'Content Management (CMS) 💾 &rarr;',
     description:
       'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.',
-    href: 'content-management/',
+    href: '/content-management/',
   },
   {
     title: 'Digital Asset Management (DAM) 📀 &rarr;',
     description: 'Scale management and delivery of media and static assets',
-    href: 'digital-asset-management/dam',
+    href: '/digital-asset-management/dam',
   },
   {
     title: 'Customer Data Management 👨‍👨‍👧‍👧 &rarr;',
     description: 'Track events, activity, and customer profile information',
-    href: 'customer-data-management/',
+    href: '/customer-data-management/',
   },
   {
     title: 'Personalization and Testing 🕵️‍♀️ &rarr;',
     description: 'Deliver personalized content and test which content is working',
-    href: 'personalization-testing/',
+    href: '/personalization-testing/',
   },
   {
     title: 'Marketing Automation 🚗 &rarr;',
     description: 'Connect with customers using marketing automation',
-    href: 'marketing-automation/',
+    href: '/marketing-automation/',
   },
   {
     title: 'Commerce 💸 &rarr;',
     description: 'Build out order management, merchandising, marketplaces, and storefronts',
-    href: 'commerce/',
+    href: '/commerce/',
   },
   {
     title: 'DevOps 🚢 &rarr;',
     description: 'Installation, deployment, and architecture',
-    href: 'devops/',
+    href: '/devops/',
   },
 ];
 
@@ -105,9 +106,11 @@ export default function Home({
         </div>
 
         {/* PRODUCT SOLUTIONS */}
-        {productSolutions.map((solution, i) => (
-          <ProductCategoryCard {...solution} key={i} />
-        ))}
+        <ul className={classnames('grid', 'gap-6', 'md:grid-cols-2')}>
+          {productSolutions.map((solution, i) => (
+            <ProductCategoryCard {...solution} key={i} />
+          ))}
+        </ul>
         <div className={styles.youtubeCard}>
           <ReactMarkdown>{getHelp.markdown}</ReactMarkdown>
         </div>
