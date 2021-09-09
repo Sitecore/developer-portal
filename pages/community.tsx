@@ -7,7 +7,7 @@ import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
 // Components
 import Layout from '@/components/layout/Layout';
 import StackExchangeFeed from '@/components/stackExchangeFeed';
-import TwitterFeed from '@/components/twitterFeed';
+import TwitterFeed from '@/components/integrations/TwitterFeed';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
@@ -57,7 +57,7 @@ export default function Community({
         <div className={styles.productCategoryCard}>
           <ReactMarkdown>{mvpSite.markdown}</ReactMarkdown>
         </div>
-        <TwitterFeed pageInfo={pageInfo} />
+        <TwitterFeed args={pageInfo.twitter} />
         <StackExchangeFeed pageInfo={pageInfo} />
       </div>
     </Layout>
