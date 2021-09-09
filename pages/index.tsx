@@ -5,12 +5,14 @@ import { classnames } from 'tailwindcss-classnames';
 import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
 // Interfaces
 import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
+import { StackExchangeQuestion } from '@/interfaces/integrations';
 // Components
 import Layout from '@/components/layout/Layout';
 import ProductCategoryCard, {
   ProductCategoryCardProps,
 } from '@/components/cards/ProductCategoryCard';
-import StackExchangeFeed from '@/components/stackExchangeFeed';
+import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
+import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import YouTubeFeed from '@/components/youtubeFeed';
 import styles from '@/styles/Home.module.css';
 
@@ -22,6 +24,7 @@ export async function getStaticProps() {
   const stackExchange = await getMarkdownData('stackexchange.md', communityMarkDownFolder);
   const forums = await getMarkdownData('forums.md', communityMarkDownFolder);
   const getHelp = await getMarkdownData('gethelp.md', helpMarkDownFolder);
+  const stackExchangeQuestions = await stackExchangeApi.get(pageInfo.stackexchange);
 
   return {
     props: {
@@ -29,6 +32,7 @@ export async function getStaticProps() {
       forums,
       slack,
       stackExchange,
+      stackExchangeQuestions,
       getHelp,
     },
   };
@@ -78,12 +82,14 @@ export default function Home({
   forums,
   slack,
   stackExchange,
+  stackExchangeQuestions,
   getHelp,
 }: {
   pageInfo: MarkdownMeta;
   forums: MarkdownAsset;
   slack: MarkdownAsset;
   stackExchange: MarkdownAsset;
+  stackExchangeQuestions: StackExchangeQuestion[];
   getHelp: MarkdownAsset;
 }) {
   return (
@@ -114,7 +120,7 @@ export default function Home({
         <div className={styles.youtubeCard}>
           <ReactMarkdown>{getHelp.markdown}</ReactMarkdown>
         </div>
-        <StackExchangeFeed pageInfo={pageInfo} />
+        <StackExchangeFeed questions={stackExchangeQuestions} />
       </div>
     </Layout>
   );

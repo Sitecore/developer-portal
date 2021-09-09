@@ -5,15 +5,17 @@ import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 // Interfaces
 import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
+import { StackExchangeQuestion } from '@/interfaces/integrations';
 import { Tags } from '@/interfaces/tags';
 import { UrlParams } from '@/interfaces/UrlParams';
 // Lib
 import { getTaggedMarkdownData, getPageLevelInfo, getProductPaths } from '@/lib/getMarkdownData';
 // Components
-import StackExchangeFeed from '@/components/stackExchangeFeed';
+import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
+import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/components/integrations/TwitterFeed';
 import YouTubeFeed from '@/components/youtubeFeed';
-import styles from '../../styles/Home.module.css';
+import styles from '@/styles/Home.module.css';
 
 export async function getStaticPaths() {
   const productPaths = await getProductPaths();
@@ -33,12 +35,14 @@ export async function getStaticProps(context: any) {
 
   const pageInfo = await getPageLevelInfo(tags);
   const files = await getTaggedMarkdownData(tags);
+  const stackExchangeQuestions = await stackExchangeApi.get(pageInfo.stackexchange);
 
   return {
     props: {
       slug,
       files,
       pageInfo,
+      stackExchangeQuestions,
     },
   };
 }
@@ -47,10 +51,12 @@ export default function productPage({
   slug,
   files,
   pageInfo,
+  stackExchangeQuestions,
 }: {
   slug: any;
   files: MarkdownAsset[];
   pageInfo: MarkdownMeta;
+  stackExhangeQuestions: StackExchangeQuestion[];
 }) {
   const router = useRouter();
 
@@ -82,7 +88,7 @@ export default function productPage({
             </div>
           ))}
 
-          <StackExchangeFeed pageInfo={pageInfo} />
+          <StackExchangeFeed questions={stackExchangeQuestions} />
           <YouTubeFeed pageInfo={pageInfo} />
           <TwitterFeed args={pageInfo.twitter} />
         </div>

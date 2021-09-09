@@ -4,15 +4,18 @@ import Head from 'next/head';
 import Link from 'next/link';
 // Interfaces
 import { MarkdownMeta } from '@/interfaces/markdownAsset';
+import { StackExchangeQuestion } from '@/interfaces/integrations';
 import { Tags } from '@/interfaces/tags';
 import { UrlParams } from '@/interfaces/UrlParams';
 // Lib
 import { getTaggedPages, getPageLevelInfo, getSolutionPaths } from '@/lib/getMarkdownData';
 // Components
-import StackExchangeFeed from '@/components/stackExchangeFeed';
+import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
+import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/components/integrations/TwitterFeed';
 import YouTubeFeed from '@/components/youtubeFeed';
 import styles from '../../styles/Home.module.css';
+
 
 export async function getStaticPaths() {
   const solutionPaths = await getSolutionPaths();
@@ -31,6 +34,7 @@ export async function getStaticProps(context: any) {
     products: [slug.solution],
   };
   const pageInfo = await getPageLevelInfo(pageTags);
+  const stackExchangeQuestions = await stackExchangeApi.get(pageInfo.stackexchange);
 
   let filesTags: Tags = {
     solution: slug.solution,
@@ -42,6 +46,7 @@ export async function getStaticProps(context: any) {
       slug,
       files,
       pageInfo,
+      stackExchangeQuestions,
     },
   };
 }
@@ -50,10 +55,12 @@ export default function solutionPage({
   slug,
   files,
   pageInfo,
+  stackExchangeQuestions,
 }: {
   slug: any;
   files: MarkdownMeta[];
   pageInfo: MarkdownMeta;
+  stackExchangeQuestions: StackExchangeQuestion[];
 }) {
   const router = useRouter();
 
@@ -86,7 +93,7 @@ export default function solutionPage({
             </div>
           ))}
 
-          <StackExchangeFeed pageInfo={pageInfo} />
+          <StackExchangeFeed questions={stackExchangeQuestions} />
 
           <div className={styles.socialsCard}>
             <h2>News &amp; Announcements</h2>
