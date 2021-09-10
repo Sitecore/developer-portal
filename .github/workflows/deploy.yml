@@ -18,4 +18,5 @@ jobs:
           #vercel-args: '--prod' #Optional
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required 
+          scope: ${{ secrets.VERCEL_ORG_ID}}
           working-directory: ./
