@@ -17,7 +17,11 @@ module.exports = {
       black: '#000000',
       charcoal: '#232323',
       red: '#fe2911',
-      teal: '#1ca6a3',
+      teal: {
+        light: '#eefcfc',
+        DEFAULT: '#1ca6a3',
+        dark: '#0f807e',
+      },
       white: '#ffffff',
       gray: {
         lightest: '#f0f0f0',
@@ -72,14 +76,27 @@ module.exports = {
       bold: 700,
     },
     extend: {
+      boxShadow: {
+        inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.15)',
+      },
       lineHeight: {
         tight: '1.15',
+      },
+      screens: {
+        'lg-mw': { max: '1023px' },
+      },
+      spacing: {
+        em: '1em',
+        inherit: 'inherit',
+        gutter: '1rem',
+        'gutter-md': '2rem',
+        'gutter-lg': '4rem',
       },
     },
   },
   variants: {
     extend: {
-      // We will inevitably need to extend some variants here.
+      translate: ['group-hover'],
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography')],

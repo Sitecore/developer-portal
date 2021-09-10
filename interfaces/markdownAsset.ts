@@ -8,7 +8,7 @@ export type MarkdownMeta = {
   solution?: string;
   product?: string;
   description?: string;
-  stackexchange?: string[];
+  stackexchange?: string | string[];
   youtube?: string[];
-  twitter?: string[];
+  twitter?: string | string[];
 };
