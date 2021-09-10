@@ -2,7 +2,6 @@
   /**
    * Headings
    */
-
   .heading-xl {
     @apply font-bold text-3xl md:text-4xl leading-none !important;
   }
@@ -21,5 +20,12 @@
 
   .heading-xs {
     @apply font-bold text-sm md:text-base leading-normal !important;
+  }
+
+  /**
+   * Gutters
+   */
+  .px-gutter-all {
+    @apply px-gutter md:px-gutter-md lg:px-gutter-lg !important;
   }
 }
