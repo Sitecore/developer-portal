@@ -1,8 +1,6 @@
 name: deploy website
 on: [push, pull_request]
 jobs:
-  strategy:
-    max-parallel: 1
   build:
     runs-on: ubuntu-latest
     steps:
@@ -12,6 +10,7 @@ jobs:
           node-version: '14'
   deploy:
     #if: ${{ github.ref == 'refs/heads/main' }}
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
