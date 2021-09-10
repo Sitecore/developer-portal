@@ -89,7 +89,7 @@ const Footer = (): JSX.Element => {
             </svg>
           </a>
         </div>
-        <div className={classnames('flex-col', 'sm:flex-row', 'flex')}>
+        <div className={classnames('flex-col', 'sm:flex-row', 'flex', 'text-xs', 'font-thin')}>
           <p>
             © Copyright <span>{new Date().getFullYear()}</span>, Sitecore. All Rights Reserved
           </p>
