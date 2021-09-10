@@ -57,7 +57,6 @@ const Nav = (): JSX.Element => {
           <span className={classnames('block', 'relative', 'w-36', 'h-9', 'lg:w-48', 'lg:h-12')}>
             <Image src="/sitecore.svg" layout="fill" />
           </span>
-          {/* <Image src="/sitecore.svg" height="33" width="150" className={classnames('block')}/> */}
           <span className={classnames('sr-only')}>Sitecore</span>
           <span
             className={classnames(
