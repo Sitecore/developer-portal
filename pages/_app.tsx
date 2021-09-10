@@ -1,6 +1,6 @@
 import '@/styles/global.css';
 import Nav from '../components/nav';
-import Footer from '../components/footer';
+import Footer from '../components/footer/footer';
 import SearchBox from '../components/searchBox';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 
