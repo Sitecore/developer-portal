@@ -5,7 +5,7 @@ import { classnames } from 'tailwindcss-classnames';
 const Footer = (): JSX.Element => {
   return (
     <footer className={classnames('bg-charcoal', 'flex', 'text-white', 'justify-center', 'py-12')}>
-      <div className={classnames('flex', 'container', 'flex-col')}>
+      <div className={classnames('flex', 'container', 'flex-col', 'px-4', 'sm:px-0')}>
         <div className={classnames('flex', 'flex-col', 'mb-4')}>
           <a href="/help">
             <h2>Need help?</h2>
@@ -89,12 +89,21 @@ const Footer = (): JSX.Element => {
             </svg>
           </a>
         </div>
-        <div className={classnames('flex')}>
-          <span>
+        <div className={classnames('flex-col', 'sm:flex-row', 'flex')}>
+          <p>
             © Copyright <span>{new Date().getFullYear()}</span>, Sitecore. All Rights Reserved
-          </span>
+          </p>
           <ul>
-            <li className={classnames('inline-block', 'border-l', 'px-2', 'ml-2')}>
+            <li
+              className={classnames(
+                'inline-block',
+                'sm:border-l',
+                'pl-0',
+                'pr-2',
+                'sm:px-2',
+                'sm:ml-2'
+              )}
+            >
               <a href="/trust" target="">
                 Legal
               </a>
