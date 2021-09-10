@@ -21,8 +21,8 @@ const TwitterFeed = ({ args }: TwitterFeedProps): JSX.Element => {
       console.warn(
         "TwitterFeed uses Twitter's default widget API which does not support multiple arguments at this time. Only tweets for the first profile or handle will be shown."
       );
-      handle = getFirstViableArg(args);
     }
+    handle = getFirstViableArg(args);
   }
 
   if (!handle) {
