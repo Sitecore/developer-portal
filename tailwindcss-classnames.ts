@@ -3173,12 +3173,7 @@ export type TFontSize =
   | 'text-3xl'
   | 'text-4xl';
 
-export type TFontWeight =
-  | 'font-thin'
-  | 'font-regular'
-  | 'font-book'
-  | 'font-semibold'
-  | 'font-bold';
+export type TFontWeight = 'font-thin' | 'font-regular' | 'font-semibold' | 'font-bold';
 
 export type TLetterSpacing =
   | 'tracking-tighter'
@@ -5825,11 +5820,6 @@ export type TPseudoClasses =
   | 'lg:font-regular'
   | 'xl:font-regular'
   | '2xl:font-regular'
-  | 'sm:font-book'
-  | 'md:font-book'
-  | 'lg:font-book'
-  | 'xl:font-book'
-  | '2xl:font-book'
   | 'sm:font-semibold'
   | 'md:font-semibold'
   | 'lg:font-semibold'
