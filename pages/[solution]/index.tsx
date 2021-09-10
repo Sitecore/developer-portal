@@ -1,14 +1,18 @@
-import Head from 'next/head';
-import styles from '../../styles/Home.module.css';
-import { getTaggedPages, getPageLevelInfo, getSolutionPaths } from '../../lib/getMarkdownData';
-import { Tags } from '../../interfaces/tags';
-import { MarkdownMeta } from '../../interfaces/markdownAsset';
+// Global
 import { useRouter } from 'next/dist/client/router';
-import { UrlParams } from '../../interfaces/UrlParams';
+import Head from 'next/head';
 import Link from 'next/link';
-import StackExchangeFeed from '../../components/stackExchangeFeed';
-import YouTubeFeed from '../../components/youtubeFeed';
-import TwitterFeed from '../../components/twitterFeed';
+// Interfaces
+import { MarkdownMeta } from '@/interfaces/markdownAsset';
+import { Tags } from '@/interfaces/tags';
+import { UrlParams } from '@/interfaces/UrlParams';
+// Lib
+import { getTaggedPages, getPageLevelInfo, getSolutionPaths } from '@/lib/getMarkdownData';
+// Components
+import StackExchangeFeed from '@/components/stackExchangeFeed';
+import TwitterFeed from '@/components/integrations/TwitterFeed';
+import YouTubeFeed from '@/components/youtubeFeed';
+import styles from '../../styles/Home.module.css';
 
 export async function getStaticPaths() {
   const solutionPaths = await getSolutionPaths();
@@ -92,7 +96,7 @@ export default function solutionPage({
           </div>
 
           <YouTubeFeed pageInfo={pageInfo} />
-          <TwitterFeed pageInfo={pageInfo} />
+          <TwitterFeed args={pageInfo.twitter} />
         </div>
       </main>
     </div>

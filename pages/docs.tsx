@@ -6,7 +6,7 @@ import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData'
 import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
 // Components
 import Layout from '@/components/layout/Layout';
-import TwitterFeed from '@/components/twitterFeed';
+import TwitterFeed from '@/components/integrations/TwitterFeed';
 import YouTubeFeed from '@/components/youtubeFeed';
 import styles from '@/styles/Home.module.css';
 
@@ -72,7 +72,7 @@ export default function Docs({
           <ReactMarkdown>{commerceDocs.markdown}</ReactMarkdown>
         </div>
         <YouTubeFeed pageInfo={pageInfo} />
-        <TwitterFeed pageInfo={pageInfo} />
+        <TwitterFeed args={pageInfo.twitter} />
       </div>
     </Layout>
   );
