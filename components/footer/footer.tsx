@@ -12,7 +12,7 @@ const Footer = (): JSX.Element => {
           </a>
           <a href="https://developers.sitecore.com" target="_blank" rel="noopener noreferrer">
             Powered by{' '}
-            <span className={styles.logo}>
+            <span className={classnames('ml-2')}>
               <Image src="/sitecore-white.svg" alt="Sitecore Logo" width={72} height={16} />
             </span>
           </a>
