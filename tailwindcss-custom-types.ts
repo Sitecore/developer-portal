@@ -1,4 +1,4 @@
-import { NavTWClasses } from '@/components/site/Nav';
+import { NavTWClasses } from '@/components/site/Nav/Nav';
 
 type SCDPTailwindTypes =
   | 'px-gutter-all'
