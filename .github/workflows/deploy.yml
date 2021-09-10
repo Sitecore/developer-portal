@@ -1,7 +1,7 @@
 name: deploy website
 on: [push, pull_request]
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -9,14 +9,16 @@ jobs:
         with:
           node-version: '14'
           cache: 'npm'
-      - run: npm install
-      - run: npm run build
+  deploy:
+    runs-on: ubuntu-latest
+    if: {{ github.ref == 'ref/head/main' }}
+    steps:
+      - uses: actions/checkout@v2
       - uses: amondnet/vercel-action@v20
-        if: {{ github.ref == 'ref/head/main' }}
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
           vercel-args: '--prod' #Optional
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required 
           scope: ${{ secrets.VERCEL_ORG_ID}}
-          working-directory: ./
+          working-directory: ./          
