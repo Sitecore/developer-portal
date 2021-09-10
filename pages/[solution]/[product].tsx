@@ -56,7 +56,7 @@ export default function productPage({
   slug: any;
   files: MarkdownAsset[];
   pageInfo: MarkdownMeta;
-  stackExhangeQuestions: StackExchangeQuestion[];
+  stackExchangeQuestions: StackExchangeQuestion[];
 }) {
   const router = useRouter();
 
