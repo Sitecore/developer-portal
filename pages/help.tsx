@@ -5,9 +5,11 @@ import { useRouter } from 'next/dist/client/router';
 import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
 // Interfaces
 import { MarkdownMeta, MarkdownAsset } from '@/interfaces/markdownAsset';
+import { StackExchangeQuestion } from '@/interfaces/integrations';
 // Component
 import Layout from '@/components/layout/Layout';
-import StackExchangeFeed from '@/components/stackExchangeFeed';
+import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
+import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
@@ -18,6 +20,7 @@ export async function getStaticProps() {
   const stackexchange = await getMarkdownData('stackexchange.md', communityMarkDownFolder);
   const forums = await getMarkdownData('forums.md', communityMarkDownFolder);
   const support = await getMarkdownData('support.md', helpMarkDownFolder);
+  const stackExchangeQuestions = await stackExchangeApi.get(pageInfo.stackexchange);
 
   return {
     props: {
@@ -25,6 +28,7 @@ export async function getStaticProps() {
       forums,
       slack,
       stackexchange,
+      stackExchangeQuestions,
       support,
     },
   };
@@ -35,12 +39,14 @@ export default function Help({
   forums,
   slack,
   stackexchange,
+  stackExchangeQuestions,
   support,
 }: {
   pageInfo: MarkdownMeta;
   forums: MarkdownAsset;
   slack: MarkdownAsset;
   stackexchange: MarkdownAsset;
+  stackExchangeQuestions: StackExchangeQuestion[];
   support: MarkdownAsset;
 }) {
   const router = useRouter();
@@ -72,7 +78,7 @@ export default function Help({
         <div className={styles.youtubeCard}>
           <h2>Contact Us info here (or redirect to sitecore.com contact)</h2>
         </div>
-        <StackExchangeFeed pageInfo={pageInfo} />
+        <StackExchangeFeed questions={stackExchangeQuestions} />
       </div>
     </Layout>
   );
