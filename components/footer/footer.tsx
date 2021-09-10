@@ -89,8 +89,8 @@ const Footer = (): JSX.Element => {
             </svg>
           </a>
         </div>
-        <div className={classnames('flex-col', 'sm:flex-row', 'flex', 'text-xs', 'font-thin')}>
-          <p>
+        <div className={classnames('flex-col', 'sm:flex-row', 'flex', 'text-2xs', 'font-thin')}>
+          <p className={classnames('tracking-widest')}>
             © Copyright <span>{new Date().getFullYear()}</span>, Sitecore. All Rights Reserved
           </p>
           <ul>
@@ -104,12 +104,12 @@ const Footer = (): JSX.Element => {
                 'sm:ml-2'
               )}
             >
-              <a href="/trust" target="">
+              <a className={classnames('font-semibold')} href="/trust" target="">
                 Legal
               </a>
             </li>
             <li className={classnames('inline-block', 'border-l', 'px-2')}>
-              <a href="/trust/privacy-policy" target="">
+              <a className={classnames('font-semibold')} href="/trust/privacy-policy" target="">
                 Privacy
               </a>
             </li>
