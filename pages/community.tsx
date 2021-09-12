@@ -1,70 +1,56 @@
 // Global
 import ReactMarkdown from 'react-markdown';
-// Lib
-import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
+// Scripts
+import { getPageInfo, getPartials } from '@/scripts/page-info';
 // Interfaces
-import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
-import { StackExchangeQuestion } from '@/interfaces/integrations';
+import { PageInfo, PagePartials } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
-import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
-import TwitterFeed from '@/components/integrations/TwitterFeed';
+import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
-  const communityMarkDownFolder = 'community';
-  const pageInfo = await getPageLevelInfoForFile('community.md', communityMarkDownFolder);
-  const slack = await getMarkdownData('slack.md', communityMarkDownFolder);
-  const stackExchange = await getMarkdownData('stackexchange.md', communityMarkDownFolder);
-  const forums = await getMarkdownData('forums.md', communityMarkDownFolder);
-  const mvpSite = await getMarkdownData('mvp.md', communityMarkDownFolder);
-  const stackExchangeQuestions = await stackExchangeApi.get(pageInfo.stackexchange);
+  const pageInfo = await getPageInfo('community');
+  const partials = await getPartials({
+    slack: 'community/slack',
+    stackExchange: 'community/stackexchange',
+    forums: 'community/forums',
+    mvpSite: 'community/mvp',
+  });
 
   return {
     props: {
       pageInfo,
-      forums,
-      slack,
-      stackExchange,
-      stackExchangeQuestions,
-      mvpSite,
+      partials,
     },
   };
 }
 
 export default function Community({
   pageInfo,
-  forums,
-  slack,
-  stackExchange: stackExchange,
-  stackExchangeQuestions,
-  mvpSite,
+  partials,
 }: {
-  pageInfo: MarkdownMeta;
-  forums: MarkdownAsset;
-  slack: MarkdownAsset;
-  stackExchange: MarkdownAsset;
-  stackExchangeQuestions: StackExchangeQuestion[];
-  mvpSite: MarkdownAsset;
+  pageInfo: PageInfo;
+  partials: PagePartials;
 }) {
   return (
     <Layout pageInfo={pageInfo}>
       <div className={styles.grid}>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{slack.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.slack}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{stackExchange.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.stackExchange}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{forums.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.forums}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{mvpSite.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.mvpSite}</ReactMarkdown>
         </div>
-        <TwitterFeed args={pageInfo.twitter} />
-        <StackExchangeFeed questions={stackExchangeQuestions} />
+        <TwitterFeed content={pageInfo.twitter} />
+        <StackExchangeFeed content={pageInfo.stackexchange} />
       </div>
     </Layout>
   );

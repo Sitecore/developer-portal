@@ -1,78 +1,64 @@
 // Global
 import ReactMarkdown from 'react-markdown';
-// Lib
-import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
+// Scripts
+import { getPageInfo, getPartials } from '@/scripts/page-info';
 // Interfaces
-import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
+import { PageInfo, PagePartials } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
-import TwitterFeed from '@/components/integrations/TwitterFeed';
-import YouTubeFeed from '@/components/youtubeFeed';
+import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
+import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
-  const discoverMarkDownFolder = 'discover';
-  const pageInfo = await getPageLevelInfoForFile('discover.md', discoverMarkDownFolder);
-  const supportKB = await getMarkdownData('supportkb.md', discoverMarkDownFolder);
-  const cdpKB = await getMarkdownData('cdpkb.md', discoverMarkDownFolder);
-  const sitecoreKC = await getMarkdownData('sitecoreknowledgecenter.md', discoverMarkDownFolder);
-  const orderCloud = await getMarkdownData('ordercloud.md', discoverMarkDownFolder);
-  const moosend = await getMarkdownData('moosend.md', discoverMarkDownFolder);
-  const contentHub = await getMarkdownData('contenthub.md', discoverMarkDownFolder);
+  const pageInfo = await getPageInfo('discover');
+  const partials = await getPartials({
+    supportKB: 'discover/supportkb',
+    cdpKB: 'discover/cdpkb',
+    sitecoreKC: 'discover/sitecoreknowledgecenter',
+    orderCloud: 'discover/ordercloud',
+    moosend: 'discover/moosend',
+    contentHub: 'discover/contenthub',
+  });
 
   return {
     props: {
       pageInfo,
-      supportKB,
-      cdpKB,
-      sitecoreKC,
-      orderCloud,
-      moosend,
-      contentHub,
+      partials,
     },
   };
 }
 
 export default function Discover({
   pageInfo,
-  supportKB,
-  cdpKB,
-  sitecoreKC,
-  orderCloud,
-  moosend,
-  contentHub,
+  partials,
 }: {
-  pageInfo: MarkdownMeta;
-  supportKB: MarkdownAsset;
-  cdpKB: MarkdownAsset;
-  sitecoreKC: MarkdownAsset;
-  orderCloud: MarkdownAsset;
-  moosend: MarkdownAsset;
-  contentHub: MarkdownAsset;
+  pageInfo: PageInfo;
+  partials: PagePartials;
 }) {
   return (
     <Layout pageInfo={pageInfo}>
       <div className={styles.grid}>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{supportKB.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.supportKB}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{cdpKB.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.cdpKB}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{orderCloud.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.orderCloud}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{contentHub.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.contentHub}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{moosend.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.moosend}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{sitecoreKC.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.sitecoreKC}</ReactMarkdown>
         </div>
-        <YouTubeFeed pageInfo={pageInfo} />
-        <TwitterFeed args={pageInfo.twitter} />
+        <YouTubeFeed content={pageInfo.youtube} />
+        <TwitterFeed content={pageInfo.twitter} />
       </div>
     </Layout>
   );

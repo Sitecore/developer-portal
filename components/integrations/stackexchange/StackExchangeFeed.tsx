@@ -1,13 +1,12 @@
-import Link from 'next/link';
 // Local
 import type { StackExchangeQuestion } from '@/interfaces/integrations';
 
 type StackExchangeFeedProps = {
-  questions: StackExchangeQuestion[];
+  content: StackExchangeQuestion[];
 };
 
-const StackExchangeFeed = ({ questions }: StackExchangeFeedProps): JSX.Element => {
-  if (questions.length === 0) {
+const StackExchangeFeed = ({ content }: StackExchangeFeedProps): JSX.Element => {
+  if (content.length === 0) {
     return <></>;
   }
 
@@ -16,7 +15,7 @@ const StackExchangeFeed = ({ questions }: StackExchangeFeedProps): JSX.Element =
     <div>
       <p>StackExchange</p>
       <ul>
-        {questions.map((question) => (
+        {content.map((question) => (
           <li key={question.question_id}>
             {/* @TODO: Link Helper for blank */}
             <a href={question.link} target="_blank">

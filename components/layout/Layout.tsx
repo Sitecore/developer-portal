@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import { MarkdownMeta } from '../../interfaces/markdownAsset';
-
+import type { PageInfo } from '@/interfaces/page-info';
 type LayoutProps = {
-  pageInfo: MarkdownMeta;
+  pageInfo: PageInfo;
   children: React.ReactNode | React.ReactNode[];
 };
 
@@ -10,7 +9,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
   return (
     <div>
       <Head>
-        <title>{pageInfo.prettyName}</title>
+        <title>{pageInfo.title}</title>
         <meta name="description" content={pageInfo.description} />
         <link
           rel="icon"
@@ -18,7 +17,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         />
       </Head>
       <main>
-        <h1>{pageInfo.prettyName}</h1>
+        <h1>{pageInfo.title}</h1>
         <p>{pageInfo.description}</p>
         {children}
       </main>

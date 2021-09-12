@@ -1,21 +1,18 @@
 // Global
+import { classnames } from '@/tailwindcss-classnames';
 import { useRouter } from 'next/dist/client/router';
-import Head from 'next/head';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+// Scripts
+import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
+import { getProductPaths } from '@/scripts/static-paths';
 // Interfaces
-import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
-import { StackExchangeQuestion } from '@/interfaces/integrations';
-import { Tags } from '@/interfaces/tags';
-import { UrlParams } from '@/interfaces/UrlParams';
-// Lib
-import { getTaggedMarkdownData, getPageLevelInfo, getProductPaths } from '@/lib/getMarkdownData';
+import type { PageInfo } from '@/interfaces/page-info';
 // Components
-import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
+import Layout from '@/components/layout/Layout';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
-import TwitterFeed from '@/components/integrations/TwitterFeed';
-import YouTubeFeed from '@/components/youtubeFeed';
-import styles from '@/styles/Home.module.css';
+import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
+import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 
 export async function getStaticPaths() {
   const productPaths = await getProductPaths();
@@ -26,37 +23,27 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-  const slug: UrlParams = context.params;
-
-  let tags: Tags = {
-    solution: slug.solution,
-    products: [slug.product],
-  };
-
-  const pageInfo = await getPageLevelInfo(tags);
-  const files = await getTaggedMarkdownData(tags);
-  const stackExchangeQuestions = await stackExchangeApi.get(pageInfo.stackexchange);
+  const pageInfo = await getPageInfo(context.params);
+  const partials = pageInfo?.partials ? await getPartialsAsArray(pageInfo.partials) : [];
+  const parent = context.params.solution;
 
   return {
     props: {
-      slug,
-      files,
       pageInfo,
-      stackExchangeQuestions,
+      partials,
+      parent,
     },
   };
 }
 
 export default function productPage({
-  slug,
-  files,
   pageInfo,
-  stackExchangeQuestions,
+  partials,
+  parent,
 }: {
-  slug: any;
-  files: MarkdownAsset[];
-  pageInfo: MarkdownMeta;
-  stackExchangeQuestions: StackExchangeQuestion[];
+  pageInfo: PageInfo;
+  partials: string[];
+  parent: string;
 }) {
   const router = useRouter();
 
@@ -65,34 +52,20 @@ export default function productPage({
   }
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{pageInfo.prettyName}</title>
-        <meta name="description" content={pageInfo.description} />
-        <link
-          rel="icon"
-          href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png"
-        />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>{pageInfo.prettyName}</h1>
-        <h3>{pageInfo.description}</h3>
-        <Link href={`../${slug.solution}`}>
-          <a>back up to {slug.solution}...</a>
-        </Link>
-        <div className={styles.grid}>
-          {files.map((file) => (
-            <div key={file.id} id={file.id} className={styles.socialsCard}>
-              <ReactMarkdown>{file.markdown}</ReactMarkdown>
-            </div>
-          ))}
-
-          <StackExchangeFeed questions={stackExchangeQuestions} />
-          <YouTubeFeed pageInfo={pageInfo} />
-          <TwitterFeed args={pageInfo.twitter} />
-        </div>
-      </main>
-    </div>
+    <Layout pageInfo={pageInfo}>
+      <Link href={`/${parent}`}>
+        <a>back up to {parent}...</a>
+      </Link>
+      <div className={classnames('grid', 'md:grid-cols-3', 'gap-6')}>
+        {partials.map((partial, i) => (
+          <div key={i}>
+            <ReactMarkdown>{partial}</ReactMarkdown>
+          </div>
+        ))}
+      </div>
+      <StackExchangeFeed content={pageInfo.stackexchange} />
+      <YouTubeFeed content={pageInfo.youtube} />
+      <TwitterFeed content={pageInfo.twitter} />
+    </Layout>
   );
 }

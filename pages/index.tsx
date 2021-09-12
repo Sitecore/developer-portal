@@ -1,39 +1,32 @@
 // Global
+import { classnames } from '@/tailwindcss-classnames';
 import ReactMarkdown from 'react-markdown';
-import { classnames } from 'tailwindcss-classnames';
-// Lib
-import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
+// Scripts
+import { getPageInfo, getPartials } from '@/scripts/page-info';
 // Interfaces
-import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
-import { StackExchangeQuestion } from '@/interfaces/integrations';
+import { PageInfo, PagePartials } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
 import ProductCategoryCard, {
   ProductCategoryCardProps,
 } from '@/components/cards/ProductCategoryCard';
-import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
-import YouTubeFeed from '@/components/youtubeFeed';
+import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
-  const communityMarkDownFolder = 'community';
-  const helpMarkDownFolder = 'help';
-  const pageInfo = await getPageLevelInfoForFile('home.md', 'home');
-  const slack = await getMarkdownData('slack.md', communityMarkDownFolder);
-  const stackExchange = await getMarkdownData('stackexchange.md', communityMarkDownFolder);
-  const forums = await getMarkdownData('forums.md', communityMarkDownFolder);
-  const getHelp = await getMarkdownData('gethelp.md', helpMarkDownFolder);
-  const stackExchangeQuestions = await stackExchangeApi.get(pageInfo.stackexchange);
+  const pageInfo = await getPageInfo('home');
+  const partials = await getPartials({
+    slack: 'community/slack',
+    stackExchange: 'community/stackExchange',
+    forums: 'community/forums',
+    getHelp: 'help/gethelp',
+  });
 
   return {
     props: {
       pageInfo,
-      forums,
-      slack,
-      stackExchange,
-      stackExchangeQuestions,
-      getHelp,
+      partials,
     },
   };
 }
@@ -79,34 +72,26 @@ const productSolutions: ProductCategoryCardProps[] = [
 
 export default function Home({
   pageInfo,
-  forums,
-  slack,
-  stackExchange,
-  stackExchangeQuestions,
-  getHelp,
+  partials,
 }: {
-  pageInfo: MarkdownMeta;
-  forums: MarkdownAsset;
-  slack: MarkdownAsset;
-  stackExchange: MarkdownAsset;
-  stackExchangeQuestions: StackExchangeQuestion[];
-  getHelp: MarkdownAsset;
+  pageInfo: PageInfo;
+  partials: PagePartials;
 }) {
   return (
     <Layout pageInfo={pageInfo}>
       <div className={styles.grid}>
-        <YouTubeFeed pageInfo={pageInfo} />
+        <YouTubeFeed content={pageInfo.youtube} />
         <div className={styles.youtubeCard}>
           <h2>Join these cool Sitecore Communities 🤖</h2>
           <div className={styles.threeColumn}>
             <div className={styles.oneThirdCard}>
-              <ReactMarkdown>{slack.markdown}</ReactMarkdown>
+              <ReactMarkdown>{partials.slack}</ReactMarkdown>
             </div>
             <div className={styles.oneThirdCard}>
-              <ReactMarkdown>{stackExchange.markdown}</ReactMarkdown>
+              <ReactMarkdown>{partials.stackExchange}</ReactMarkdown>
             </div>
             <div className={styles.oneThirdCard}>
-              <ReactMarkdown>{forums.markdown}</ReactMarkdown>
+              <ReactMarkdown>{partials.forums}</ReactMarkdown>
             </div>
           </div>
         </div>
@@ -118,9 +103,9 @@ export default function Home({
           ))}
         </ul>
         <div className={styles.youtubeCard}>
-          <ReactMarkdown>{getHelp.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.getHelp}</ReactMarkdown>
         </div>
-        <StackExchangeFeed questions={stackExchangeQuestions} />
+        <StackExchangeFeed content={pageInfo.stackexchange} />
       </div>
     </Layout>
   );
