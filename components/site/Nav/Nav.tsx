@@ -68,7 +68,7 @@ const Nav = (): JSX.Element => {
               'xl:block'
             )}
           >
-            Development Portal
+            Developer Portal
           </span>
         </a>
       </Link>
