@@ -3435,7 +3435,7 @@ export type TFontSize =
   | 'text-3xl'
   | 'text-4xl';
 
-export type TFontWeight = 'font-regular' | 'font-semibold' | 'font-bold';
+export type TFontWeight = 'font-thin' | 'font-regular' | 'font-semibold' | 'font-bold';
 
 export type TLetterSpacing =
   | 'tracking-tighter'
@@ -6582,6 +6582,12 @@ export type TPseudoClasses =
   | 'xl:stacked-fractions'
   | '2xl:stacked-fractions'
   | 'lg-mw:stacked-fractions'
+  | 'sm:font-thin'
+  | 'md:font-thin'
+  | 'lg:font-thin'
+  | 'xl:font-thin'
+  | '2xl:font-thin'
+  | 'lg-mw:font-thin'
   | 'sm:font-regular'
   | 'md:font-regular'
   | 'lg:font-regular'

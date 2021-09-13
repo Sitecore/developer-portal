@@ -16,7 +16,6 @@ import TwitterFeed from '@/components/integrations/TwitterFeed';
 import YouTubeFeed from '@/components/youtubeFeed';
 import styles from '../../styles/Home.module.css';
 
-
 export async function getStaticPaths() {
   const solutionPaths = await getSolutionPaths();
   let staticPaths = {
