@@ -1,6 +1,7 @@
 name: deploy website
 on: [push, pull_request]
 jobs:
+
   build:
     runs-on: ubuntu-latest
     steps:
@@ -8,27 +9,44 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+
   deploy:
-    if: ${{ github.ref == 'refs/heads/main' }}
     needs: build
     runs-on: ubuntu-latest
     steps:
+
+      - name: is production build
+        id: is_prod
+        run: |
+          if [$REF == 'refs/heads/main']
+          then
+              echo "::set-output name=vercel_args::--prod"
+              echo "::set-output name=github_deployment_env::Production"
+          else
+              echo "::set-output name=vercel_args::"
+              echo "::set-output name=github_deployment_env::Preview"
+          fi
+        env:
+          REF: ${{ github.ref }}
+
       - name: start deployment
         uses: bobheadxi/deployments@v0.4.3
         id: deployment
         with:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
-          env: Production
+          env: ${{ steps.is_prod.outputs.github_deployment_env }}
       - uses: actions/checkout@v2
+
       - uses: amondnet/vercel-action@v20
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-          vercel-args: '--prod' #Optional
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} #Required 
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-args: ${{ steps.is_prod.outputs.vercel_args }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} 
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} 
           scope: ${{ secrets.VERCEL_ORG_ID}}
           working-directory: ./
+
       - name: update deployment status
         uses: bobheadxi/deployments@v0.4.3
         if: always()
