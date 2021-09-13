@@ -18,7 +18,7 @@ export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
   const partials = await getPartials({
     slack: 'community/slack',
-    stackExchange: 'community/stackExchange',
+    stackExchange: 'community/stackexchange',
     forums: 'community/forums',
     getHelp: 'help/gethelp',
   });
