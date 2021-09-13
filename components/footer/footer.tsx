@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import styles from '../../styles/Home.module.css';
 import { classnames } from 'tailwindcss-classnames';
 
 const Footer = (): JSX.Element => {
@@ -10,11 +9,14 @@ const Footer = (): JSX.Element => {
           <a href="/help">
             <h2>Need help?</h2>
           </a>
-          <a href="https://developers.sitecore.com" target="_blank" rel="noopener noreferrer">
-            Powered by{' '}
-            <span className={classnames('ml-2')}>
-              <Image src="/sitecore-white.svg" alt="Sitecore Logo" width={72} height={16} />
-            </span>
+          <a
+            className="flex items-center"
+            href="https://developers.sitecore.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="mr-2">Powered by </span>
+            <Image src="/sitecore-white.svg" alt="Sitecore Logo" width={72} height={16} />
           </a>
         </div>
         <div className={classnames('inline-flex', 'mb-4')}>
