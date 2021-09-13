@@ -8,4 +8,28 @@ export type StackExchangeQuestion = {
 
 export type Tweet = {};
 
-export type YouTubeVideo = {};
+/**
+ * YouTube
+ */
+type YouTubeThumbnail = {
+  url: string;
+  height: number;
+  width: number;
+};
+
+type YouTubeSnippet = {
+  resourceId: {
+    videoId: string;
+  };
+  thumbnails: {
+    medium: YouTubeThumbnail;
+  };
+  title: string;
+};
+
+export type YouTubeVideo = {
+  kind: string;
+  etag: string;
+  id: string;
+  snippet: YouTubeSnippet;
+};

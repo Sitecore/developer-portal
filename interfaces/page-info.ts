@@ -11,7 +11,7 @@ type PageInfoCore = {
 export type MarkdownMeta = PageInfoCore & {
   stackexchange?: string | string[];
   twitter?: string | string[];
-  youtube?: string | string[];
+  youtube?: string;
 };
 
 // Output for 3rd party integrations contain specific data structures
