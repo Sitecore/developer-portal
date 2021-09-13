@@ -77,7 +77,7 @@ const NavigationData: NavigationData[] = [
     title: 'Solution',
     children: [
       {
-        title: 'Content Mangement and Delivery',
+        title: 'Content Management and Delivery',
         url: '/content-management',
         children: [
           {
