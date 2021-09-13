@@ -1,8 +1,6 @@
 // Global
-import { classnames } from '@/tailwindcss-classnames';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
 // Scripts
 import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 import { getProductPaths } from '@/scripts/static-paths';
@@ -10,6 +8,7 @@ import { getProductPaths } from '@/scripts/static-paths';
 import type { PageInfo } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
+import MarkdownContent from '@/components/helper/MarkdownContent';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
 import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
@@ -56,13 +55,7 @@ export default function productPage({
       <Link href={`/${parent}`}>
         <a>back up to {parent}...</a>
       </Link>
-      <div className={classnames('grid', 'md:grid-cols-3', 'gap-6')}>
-        {partials.map((partial, i) => (
-          <div key={i}>
-            <ReactMarkdown>{partial}</ReactMarkdown>
-          </div>
-        ))}
-      </div>
+      <MarkdownContent partials={partials} />
       <StackExchangeFeed content={pageInfo.stackexchange} />
       <YouTubeFeed content={pageInfo.youtube} />
       <TwitterFeed content={pageInfo.twitter} />

@@ -10,6 +10,7 @@ import Layout from '@/components/layout/Layout';
 import ProductCategoryCard, {
   ProductCategoryCardProps,
 } from '@/components/cards/ProductCategoryCard';
+import MarkdownGrid from '@/components/helper/MarkdownGrid';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 import styles from '@/styles/Home.module.css';
@@ -79,34 +80,22 @@ export default function Home({
 }) {
   return (
     <Layout pageInfo={pageInfo}>
-      <div className={styles.grid}>
-        <YouTubeFeed content={pageInfo.youtube} />
-        <div className={styles.youtubeCard}>
-          <h2>Join these cool Sitecore Communities 🤖</h2>
-          <div className={styles.threeColumn}>
-            <div className={styles.oneThirdCard}>
-              <ReactMarkdown>{partials.slack}</ReactMarkdown>
-            </div>
-            <div className={styles.oneThirdCard}>
-              <ReactMarkdown>{partials.stackExchange}</ReactMarkdown>
-            </div>
-            <div className={styles.oneThirdCard}>
-              <ReactMarkdown>{partials.forums}</ReactMarkdown>
-            </div>
-          </div>
-        </div>
-
-        {/* PRODUCT SOLUTIONS */}
-        <ul className={classnames('grid', 'gap-6', 'md:grid-cols-2')}>
-          {productSolutions.map((solution, i) => (
-            <ProductCategoryCard {...solution} key={i} />
-          ))}
-        </ul>
-        <div className={styles.youtubeCard}>
-          <ReactMarkdown>{partials.getHelp}</ReactMarkdown>
-        </div>
-        <StackExchangeFeed content={pageInfo.stackexchange} />
+      <YouTubeFeed content={pageInfo.youtube} />
+      <div className={styles.youtubeCard}>
+        <h2>Join these cool Sitecore Communities 🤖</h2>
+        <MarkdownGrid partials={[partials.slack, partials.stackExchange, partials.forums]} />
       </div>
+
+      {/* PRODUCT SOLUTIONS */}
+      <ul className={classnames('grid', 'gap-6', 'md:grid-cols-2')}>
+        {productSolutions.map((solution, i) => (
+          <ProductCategoryCard {...solution} key={i} />
+        ))}
+      </ul>
+      <div className={classnames('prose')}>
+        <ReactMarkdown>{partials.getHelp}</ReactMarkdown>
+      </div>
+      <StackExchangeFeed content={pageInfo.stackexchange} />
     </Layout>
   );
 }
