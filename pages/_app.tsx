@@ -5,7 +5,7 @@ import { resetId } from 'react-id-generator';
 import '@/styles/global.css';
 // Components
 import Nav from '@/components/site/Nav/Nav';
-import Footer from '@/components/footer/footer';
+import Footer from '@/components/site/Footer/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   // Reset id counter during SSR
