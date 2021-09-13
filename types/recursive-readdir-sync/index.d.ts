@@ -1,1 +1,1 @@
-declare module 'recursive-readdir-sync'
+declare module 'recursive-readdir-sync';

@@ -2,26 +2,27 @@
 solution: ['personalization-testing']
 product: ['experience-platform']
 ---
+
 # [Universal Tracker]()
 
 [What and Why]()
 
 Docs
 
- - [Universal Tracker Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/universal-tracker.html)
+- [Universal Tracker Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/universal-tracker.html)
 
 Discover
 
- - [Discover Universal Tracker]()
+- [Discover Universal Tracker]()
 
 Learn
 
- - [Getting Started]()
+- [Getting Started]()
 
 Playground
 
- - [Playground Universal Tracker]()
-  
+- [Playground Universal Tracker]()
+
 Socials
 
- - [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/universal-tracker)
+- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/universal-tracker)

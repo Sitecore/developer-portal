@@ -1,0 +1,13 @@
+/* Base */
+@import 'tailwindcss/base';
+@import './_base.css';
+
+/* Components */
+@import 'tailwindcss/components';
+@import '../components/site/Nav/Nav.styles.css';
+
+/* Utilities */
+@import 'tailwindcss/utilities';
+
+/* @TODO: Split these into separate utilities as they grow? */
+@import './_utilities.css';

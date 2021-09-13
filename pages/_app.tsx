@@ -1,19 +1,23 @@
-import '../styles/globals.css'
-import Nav from '../components/nav'
-import Footer from '../components/footer'
-import SearchBox from '../components/searchBox'
-import { AppProps } from 'next/dist/shared/lib/router/router'
+// Global
+import { AppProps } from 'next/dist/shared/lib/router/router';
+import { resetId } from 'react-id-generator';
+// Local
+import '@/styles/global.css';
+// Components
+import Nav from '@/components/site/Nav/Nav';
+import Footer from '../components/footer';
 
+function MyApp({ Component, pageProps }: AppProps) {
+  // Reset id counter during SSR
+  resetId();
 
-function MyApp({ Component, pageProps } : AppProps)  {
   return (
     <>
-      <SearchBox />
       <Nav />
       <Component {...pageProps} />
       <Footer />
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

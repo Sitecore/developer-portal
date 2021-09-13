@@ -1,4 +1,5 @@
 ## Sitecore CDP Knowledge Hub
+
 The Sitecore CDP Knowledge Hub (formerly Boxever Knowledge Hub) provides helpful articles for working with Sitecore CDP:
 
 - Set up

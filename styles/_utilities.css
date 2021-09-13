@@ -1,0 +1,31 @@
+@layer utilities {
+  /**
+   * Headings
+   */
+  .heading-xl {
+    @apply font-bold text-3xl md:text-4xl leading-none !important;
+  }
+
+  .heading-lg {
+    @apply font-bold text-2xl md:text-3xl leading-tight !important;
+  }
+
+  .heading-md {
+    @apply font-bold text-xl md:text-2xl leading-tight !important;
+  }
+
+  .heading-sm {
+    @apply font-bold text-base md:text-lg leading-tight !important;
+  }
+
+  .heading-xs {
+    @apply font-bold text-sm md:text-base leading-normal !important;
+  }
+
+  /**
+   * Gutters
+   */
+  .px-gutter-all {
+    @apply px-gutter md:px-gutter-md lg:px-gutter-lg !important;
+  }
+}

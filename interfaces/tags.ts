@@ -1,5 +1,5 @@
 export type Tags = {
-    solution?: string
-    products?: string[]
-    area?: string
-}
+  solution?: string;
+  products?: string[];
+  area?: string;
+};

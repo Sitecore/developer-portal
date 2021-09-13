@@ -30,6 +30,7 @@ description: 'Centralize content strategy and operations for all delivery channe
 - [Web-to-print](https://docs.stylelabs.com/content/4.0.x/user-documentation/web-to-print/chili-publisher.html)
 
 ## Discover
+
 - [Content Hub Security guide](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/security/security-guide-intro.html)
 - [Cloud development lifecycle](https://docs.stylelabs.com/contenthub/4.0.x/content/integrations/development-lifecycle/sdlc-introduction.html)
 - [Cloud development Security](https://docs.stylelabs.com/contenthub/4.0.x/content/integrations/security/intro.html)
@@ -45,6 +46,5 @@ description: 'Centralize content strategy and operations for all delivery channe
 - [API Reference / SDKs](https://docs.stylelabs.com/content/4.0.x/api-reference/index.html)
 
 ## Playground
-
 
 ## Socials

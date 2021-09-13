@@ -1,0 +1,44 @@
+@layer base {
+  @font-face {
+    font-display: swap;
+    font-family: 'Avenir Next';
+    font-weight: 400;
+    src: url(/fonts/AvenirNext-Regular.woff2) format('woff2');
+  }
+  @font-face {
+    font-display: swap;
+    font-family: 'Avenir Next';
+    font-weight: 600;
+    src: url(/fonts/AvenirNext-Demi.woff2) format('woff2');
+  }
+  @font-face {
+    font-display: swap;
+    font-family: 'Avenir Next';
+    font-weight: 700;
+    src: url(/fonts/AvenirNext-Bold.woff2) format('woff2');
+  }
+
+  body {
+    @apply text-base;
+  }
+
+  /* stylelint-disable -- We need these selectors in this order specifically for Safari. */
+  *:focus {
+    outline-color: theme('colors.charcoal');
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-width: 2px;
+  }
+
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  *:focus-visible {
+    outline-color: theme('colors.charcoal');
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-width: 2px;
+  }
+  /* stylelint-enable */
+}
