@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { classnames } from 'tailwindcss-classnames';
 // Data
-import NavigationData from '@/data/data-navigation';
+import NavigationData, { SitecoreQuickLinks } from '@/data/data-navigation';
 // Components
 import NavMenu from '@/components/site/Nav/NavMenu';
 import SearchBox from '@/components/SearchBox';
@@ -93,24 +93,15 @@ const Nav = (): JSX.Element => {
           }
         )}
       >
-        <SearchBox className={classnames('sm:hidden', 'p-4', 'bg-gray-lightest')} />
-        <span
+        <SearchBox
           className={classnames(
-            'block',
-            'bg-charcoal',
-            'text-white',
-            'text-2xs',
-            'font-semibold',
-            'px-gutter',
-            'py-2',
-            'whitespace-nowrap',
-            'lg:bg-transparent',
-            'lg:text-gray-darkest'
+            'sm:hidden',
+            'p-4',
+            'bg-gray-lightest',
+            'border-b',
+            'border-gray-light'
           )}
-          id="nav-helper-label"
-        >
-          Navigate By:
-        </span>
+        />
         <ul className={classnames('block', 'text-sm', 'lg:flex')}>
           {NavigationData.map((item, index) => {
             return (
@@ -129,11 +120,31 @@ const Nav = (): JSX.Element => {
               </li>
             );
           })}
+          {/*
+            SC Products "Quick Links"-like mobile menu implementation.
+          */}
+          <li
+            className={classnames(
+              'border-b',
+              'border-gray-light',
+              'px-gutter',
+              'xl:p-0',
+              'xl:border-0',
+              'xl:mx-8',
+              'lg:hidden'
+            )}
+          >
+            <NavMenu
+              title={SitecoreQuickLinks.title}
+              children={SitecoreQuickLinks.children}
+              callback={toggleNav}
+              buttonIcon="quick-links"
+            />
+          </li>
         </ul>
       </nav>
       <div className={classnames('flex', 'items-center', 'ml-8', 'sm:flex-1', 'md:max-w-xl')}>
         <SearchBox className={classnames('hidden', 'sm:flex', 'mr-8', 'flex-1')} />
-        <QuickStartMenu className={classnames('w-7', 'h-7', 'lg:h-5', 'lg:w-5')} />
         <button
           aria-controls="scdp-nav"
           aria-expanded={isOpen}
@@ -144,7 +155,6 @@ const Nav = (): JSX.Element => {
             'w-9',
             'h-7',
             'z-20',
-            'ml-8',
             'hover:text-teal',
             'lg:hidden'
           )}
@@ -171,6 +181,9 @@ const Nav = (): JSX.Element => {
             })}
           ></span>
         </button>
+        <QuickStartMenu
+          className={classnames('hidden', 'w-7', 'h-7', 'lg:h-5', 'lg:w-5', 'lg:block')}
+        />
       </div>
     </header>
   );

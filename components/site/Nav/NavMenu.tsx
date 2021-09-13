@@ -4,20 +4,23 @@ import { classnames } from 'tailwindcss-classnames';
 // Data
 import { NavigationData } from '@/data/data-navigation';
 // Components
+import SvgIcon, { IconNames } from '@/components/helper/SvgIcon';
 import NavLink from '@/components/site/Nav/NavLink';
 
 type NavMenuProps = NavigationData & {
+  buttonIcon?: IconNames;
   callback?: () => void;
 };
 
 /*
  * The menus themselves.
  */
-const NavMenu = ({ title, children, callback }: NavMenuProps): JSX.Element => {
+const NavMenu = ({ title, children, buttonIcon, callback }: NavMenuProps): JSX.Element => {
   const navItemRef = useRef<HTMLDivElement>(null);
   const [isOpen, setOpen] = useState(false);
   const toggleNavItem = (event: React.MouseEvent) => {
     if (callback && (event?.target as HTMLButtonElement)?.localName !== 'button') {
+      console.log(event.target);
       callback();
     }
     setOpen(!isOpen);
@@ -75,7 +78,12 @@ const NavMenu = ({ title, children, callback }: NavMenuProps): JSX.Element => {
         onClick={toggleNavItem}
         aria-labelledby="nav-helper-label"
       >
-        {title}
+        <span className={classnames('inline-flex', 'items-center', 'pointer-events-none')}>
+          {buttonIcon && (
+            <SvgIcon icon={buttonIcon} className={classnames('w-em', 'h-em', 'mr-em')} />
+          )}
+          {title}
+        </span>
         <span
           className={classnames(
             'absolute',
