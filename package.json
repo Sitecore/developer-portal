@@ -11,7 +11,8 @@
     "build": "next build",
     "start": "next start",
     "generate-css-types": "tailwindcss-classnames -x ./tailwindcss-custom-types.ts -i ./tailwind.config.js",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "pre-push": "tsc --project tsconfig.json"
   },
   "dependencies": {
     "axios": "^0.21.4",
