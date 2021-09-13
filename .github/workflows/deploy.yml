@@ -15,33 +15,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: is production build
-        id: is_prod
-        run: |
-          if [$REF == 'refs/heads/main']
-          then
-              echo "::set-output name=vercel_args::--prod"
-              echo "::set-output name=github_deployment_env::Production"
-          else
-              echo "::set-output name=vercel_args::"
-              echo "::set-output name=github_deployment_env::Preview"
-          fi
-        env:
-          REF: ${{ github.ref }}
-
       - name: start deployment
         uses: bobheadxi/deployments@v0.4.3
         id: deployment
         with:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
-          env: ${{ steps.is_prod.outputs.github_deployment_env }}
+          env: ${{ fromJSON('["Production", "Preview"]')[github.ref == 'refs/heads/main'] }} 
       - uses: actions/checkout@v2
 
       - uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: ${{ steps.is_prod.outputs.vercel_args }}
+          vercel-args: env: ${{ fromJSON('["--prod", ""]')[github.ref == 'refs/heads/main'] }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} 
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} 
           scope: ${{ secrets.VERCEL_ORG_ID}}
