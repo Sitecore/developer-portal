@@ -1,6 +1,6 @@
 // Global
 import { useRouter } from 'next/dist/client/router';
-import Link from 'next/link';
+import { classnames } from '@/tailwindcss-classnames';
 // Scripts
 import { getPageInfo, getChildPageInfo } from '@/scripts/page-info';
 import { getSolutionPaths } from '@/scripts/static-paths';
@@ -8,6 +8,7 @@ import { getSolutionPaths } from '@/scripts/static-paths';
 import { PageInfo, ChildPageInfo } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
+import ProductCategoryCard from '@/components/cards/ProductCategoryCard';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
 import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
@@ -49,15 +50,18 @@ export default function solutionPage({
 
   return (
     <Layout pageInfo={pageInfo}>
-      {products.map((child) => (
-        <div key={child.id} className={styles.productCategoryCardCompact}>
-          <h2>{child.title}</h2>
-          <p>{child.description}</p>
-          <Link href={child.link}>
-            <a>Learn more...</a>
-          </Link>
-        </div>
-      ))}
+      <ul className={classnames('grid', 'gap-6', 'md:grid-cols-3')}>
+        {products.map((child) => (
+          <ProductCategoryCard
+            key={child.id}
+            containerTag="li"
+            headingLevel="h2"
+            description={child.description as string}
+            title={child.title}
+            href={child.link}
+          />
+        ))}
+      </ul>
 
       <StackExchangeFeed content={pageInfo.stackexchange} />
 
