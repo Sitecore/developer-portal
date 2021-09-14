@@ -16,14 +16,8 @@ export type HeroProps = {
   image?: string;
 };
 
-const Hero = ({
-  containerTag = 'header',
-  description,
-  headingLevel = 'h1',
-  title,
-  image,
-}: HeroProps): JSX.Element => (
-  <DynamicTag tag={containerTag} className={classnames('py-11', 'px-gutter-all', 'relative')}>
+const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JSX.Element => (
+  <header className={classnames('py-11', 'px-gutter-all', 'relative')}>
     {/* @TODO: Replace with <Container> tag that Brian is adding in. */}
     <div
       className={classnames(
@@ -105,7 +99,7 @@ const Hero = ({
         </React.Fragment>
       )}
     </div>
-  </DynamicTag>
+  </header>
 );
 
 export default Hero;
