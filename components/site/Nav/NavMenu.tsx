@@ -20,7 +20,6 @@ const NavMenu = ({ title, children, buttonIcon, callback }: NavMenuProps): JSX.E
   const [isOpen, setOpen] = useState(false);
   const toggleNavItem = (event: React.MouseEvent) => {
     if (callback && (event?.target as HTMLButtonElement)?.localName !== 'button') {
-      console.log(event.target);
       callback();
     }
     setOpen(!isOpen);

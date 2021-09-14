@@ -23,9 +23,28 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png"
         />
       </Head>
-      <main className={classnames('my-8')}>
-        <Hero title={pageInfo.title} description={pageInfo.description} />
-        <Container>{children}</Container>
+      <main className={classnames('mb-8')}>
+        {/* Temporary "Under Constructions Banner" */}
+        <div
+          className={classnames(
+            'bg-gray-lightest',
+            'border-b',
+            'border-gray-light',
+            'text-center',
+            'p-2',
+            'font-bold'
+          )}
+        >
+          🚧&nbsp;&nbsp; Under Construction &nbsp;&nbsp;🚧
+        </div>
+        <Hero
+          title={pageInfo.title}
+          description={pageInfo.description}
+          image={pageInfo.heroImage}
+        />
+        <div className={classnames('px-gutter-all')}>
+          <Container>{children}</Container>
+        </div>
       </main>
     </div>
   );

@@ -4,6 +4,7 @@ type PageInfoCore = {
   description?: string;
   id?: string;
   title: string;
+  heroImage?: string;
   partials?: string[];
 };
 

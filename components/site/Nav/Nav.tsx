@@ -39,151 +39,156 @@ const Nav = (): JSX.Element => {
   };
 
   return (
-    <header
-      className={classnames(
-        'bg-white',
-        'flex',
-        'items-center',
-        'h-20',
-        'justify-between',
-        'border-b',
-        'border-gray-light',
-        'px-gutter',
-        'shadow'
-      )}
-    >
-      <Link href="/">
-        <a className={classnames('flex', 'items-center', 'mr-8', 'flex-shrink-0')}>
-          <span className={classnames('block', 'relative', 'w-36', 'h-9', 'lg:w-48', 'lg:h-12')}>
-            <Image src="/sitecore.svg" layout="fill" />
-          </span>
-          <span className={classnames('sr-only')}>Sitecore</span>
-          <span
-            className={classnames(
-              'hidden',
-              'text-xs',
-              'font-semibold',
-              'ml-4',
-              'text-gray-darkest',
-              'xl:block'
-            )}
-          >
-            Developer Portal
-          </span>
-        </a>
-      </Link>
-      <nav
-        ref={navRef}
-        id="scdp-nav"
+    <header className={classnames('h-20')}>
+      <div
         className={classnames(
-          'absolute',
           'bg-white',
-          'top-20',
-          'bottom-0',
-          'inset-x-0',
-          'block',
+          'flex',
           'items-center',
-          'lg:mx-8',
-          'lg:bg-transparent',
-          'lg:flex',
-          'lg:static',
-          {
-            ['hidden']: !isOpen,
-            ['block']: isOpen,
-          }
+          'h-20',
+          'justify-between',
+          'border-b',
+          'border-gray-light',
+          'px-gutter',
+          'shadow',
+          'z-50',
+          'fixed',
+          'inset-x-0',
+          'top-0'
         )}
       >
-        <SearchBox
+        <Link href="/">
+          <a className={classnames('flex', 'items-center', 'mr-8', 'flex-shrink-0')}>
+            <span className={classnames('block', 'relative', 'w-36', 'h-9', 'lg:w-48', 'lg:h-12')}>
+              <Image src="/sitecore.svg" layout="fill" />
+            </span>
+            <span className={classnames('sr-only')}>Sitecore</span>
+            <span
+              className={classnames(
+                'hidden',
+                'text-xs',
+                'font-semibold',
+                'ml-4',
+                'text-gray-darkest',
+                'xl:block'
+              )}
+            >
+              Developer Portal
+            </span>
+          </a>
+        </Link>
+        <nav
+          ref={navRef}
+          id="scdp-nav"
           className={classnames(
-            'sm:hidden',
-            'p-4',
-            'bg-gray-lightest',
-            'border-b',
-            'border-gray-light'
+            'fixed',
+            'bg-white',
+            'top-20',
+            'bottom-0',
+            'inset-0',
+            'items-center',
+            'lg:mx-8',
+            'lg:bg-transparent',
+            'lg:flex',
+            'lg:static',
+            {
+              ['hidden']: !isOpen,
+              ['block']: isOpen,
+            }
           )}
-        />
-        <ul className={classnames('block', 'text-sm', 'lg:flex')}>
-          {NavigationData.map((item, index) => {
-            return (
-              <li
-                key={`nav-${index}`}
-                className={classnames(
-                  'border-b',
-                  'border-gray-light',
-                  'px-gutter',
-                  'xl:p-0',
-                  'xl:border-0',
-                  'xl:mx-8'
-                )}
-              >
-                <NavMenu title={item.title} children={item.children} callback={toggleNav} />
-              </li>
-            );
-          })}
-          {/*
+        >
+          <SearchBox
+            className={classnames(
+              'sm:hidden',
+              'p-4',
+              'bg-gray-lightest',
+              'border-b',
+              'border-gray-light'
+            )}
+          />
+          <ul className={classnames('block', 'text-sm', 'lg:flex')}>
+            {NavigationData.map((item, index) => {
+              return (
+                <li
+                  key={`nav-${index}`}
+                  className={classnames(
+                    'border-b',
+                    'border-gray-light',
+                    'px-gutter',
+                    'xl:p-0',
+                    'xl:border-0',
+                    'xl:mx-8'
+                  )}
+                >
+                  <NavMenu title={item.title} children={item.children} callback={toggleNav} />
+                </li>
+              );
+            })}
+            {/*
             SC Products "Quick Links"-like mobile menu implementation.
           */}
-          <li
+            <li
+              className={classnames(
+                'border-b',
+                'border-gray-light',
+                'px-gutter',
+                'xl:p-0',
+                'xl:border-0',
+                'xl:mx-8',
+                'lg:hidden'
+              )}
+            >
+              <NavMenu
+                title={SitecoreQuickLinks.title}
+                children={SitecoreQuickLinks.children}
+                callback={toggleNav}
+                buttonIcon="quick-links"
+              />
+            </li>
+          </ul>
+        </nav>
+        <div className={classnames('flex', 'items-center', 'ml-8', 'sm:flex-1', 'md:max-w-xl')}>
+          <SearchBox className={classnames('hidden', 'sm:flex', 'mr-8', 'flex-1')} />
+          <button
+            aria-controls="scdp-nav"
+            aria-expanded={isOpen}
+            aria-label="Toggle navigation menu"
             className={classnames(
-              'border-b',
-              'border-gray-light',
-              'px-gutter',
-              'xl:p-0',
-              'xl:border-0',
-              'xl:mx-8',
+              'hamburger',
+              'relative',
+              'w-9',
+              'h-7',
+              'z-20',
+              'hover:text-teal',
               'lg:hidden'
             )}
+            onClick={toggleNav}
           >
-            <NavMenu
-              title={SitecoreQuickLinks.title}
-              children={SitecoreQuickLinks.children}
-              callback={toggleNav}
-              buttonIcon="quick-links"
-            />
-          </li>
-        </ul>
-      </nav>
-      <div className={classnames('flex', 'items-center', 'ml-8', 'sm:flex-1', 'md:max-w-xl')}>
-        <SearchBox className={classnames('hidden', 'sm:flex', 'mr-8', 'flex-1')} />
-        <button
-          aria-controls="scdp-nav"
-          aria-expanded={isOpen}
-          aria-label="Toggle navigation menu"
-          className={classnames(
-            'hamburger',
-            'relative',
-            'w-9',
-            'h-7',
-            'z-20',
-            'hover:text-teal',
-            'lg:hidden'
-          )}
-          onClick={toggleNav}
-        >
-          <span
-            className={classnames(hamburgerBarClasses, 'mb-1.5', 'hamburger-bar-outside', {
-              ['hidden']: isOpen,
-            })}
-          ></span>
-          <span
-            className={classnames(hamburgerBarClasses, 'mb-1.5', {
-              ['hamburger-bar-middle']: isOpen,
-            })}
-          ></span>
-          <span
-            className={classnames(hamburgerBarClasses, '-mt-2.5', 'mb-1.5', {
-              ['hamburger-bar-middleclone']: isOpen,
-            })}
-          ></span>
-          <span
-            className={classnames(hamburgerBarClasses, 'hamburger-bar-outside', {
-              ['hidden']: isOpen,
-            })}
-          ></span>
-        </button>
-        <QuickStartMenu
-          className={classnames('hidden', 'w-7', 'h-7', 'lg:h-5', 'lg:w-5', 'lg:block')}
-        />
+            <span
+              className={classnames(hamburgerBarClasses, 'mb-1.5', 'hamburger-bar-outside', {
+                ['hidden']: isOpen,
+              })}
+            ></span>
+            <span
+              className={classnames(hamburgerBarClasses, 'mb-1.5', {
+                ['hamburger-bar-middle']: isOpen,
+              })}
+            ></span>
+            <span
+              className={classnames(hamburgerBarClasses, '-mt-2.5', 'mb-1.5', {
+                ['hamburger-bar-middleclone']: isOpen,
+              })}
+            ></span>
+            <span
+              className={classnames(hamburgerBarClasses, 'hamburger-bar-outside', {
+                ['hidden']: isOpen,
+              })}
+            ></span>
+          </button>
+          <QuickStartMenu
+            className={classnames('hidden', 'w-7', 'h-7', 'lg:h-5', 'lg:w-5', 'lg:block')}
+          />
+        </div>
       </div>
     </header>
   );
