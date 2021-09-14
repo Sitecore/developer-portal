@@ -11,7 +11,7 @@ const YouTubeFeed = ({ content }: YouTubeFeedProps): JSX.Element => {
   }
 
   return (
-    <div className="my-16 max-w-screen-xl mx-auto">
+    <div>
       <p>YouTube</p>
       <ul className={classnames('grid', 'md:grid-cols-3', 'gap-6')}>
         {content.map(({ snippet, id }) => (
