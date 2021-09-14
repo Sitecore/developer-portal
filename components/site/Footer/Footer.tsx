@@ -1,10 +1,14 @@
+import Container from '@/components/helper/Container';
 import Image from 'next/image';
 import { classnames } from 'tailwindcss-classnames';
 
 const Footer = (): JSX.Element => {
   return (
     <footer className={classnames('bg-charcoal', 'flex', 'text-white', 'justify-center', 'py-12')}>
-      <div className={classnames('flex', 'container', 'flex-col', 'px-4', 'sm:px-0')}>
+      <Container
+        size="standard"
+        className={classnames('flex', 'container', 'flex-col', 'px-4', 'sm:px-0')}
+      >
         <div className={classnames('flex', 'flex-col', 'mb-4')}>
           <a className={classnames('mb-8', 'underline')} href="/help">
             <h2>Need help?</h2>
@@ -117,7 +121,7 @@ const Footer = (): JSX.Element => {
             </li>
           </ul>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };
