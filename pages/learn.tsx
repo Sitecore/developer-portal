@@ -1,43 +1,38 @@
 // Global
 import ReactMarkdown from 'react-markdown';
 import { useRouter } from 'next/dist/client/router';
-// Lib
-import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
+// Scripts
+import { getPageInfo, getPartials } from '@/scripts/page-info';
 // Interfaces
-import { MarkdownMeta, MarkdownAsset } from '@/interfaces/markdownAsset';
+import { PageInfo, PagePartials } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
-import TwitterFeed from '@/components/integrations/TwitterFeed';
-import YouTubeFeed from '@/components/youtubeFeed';
+import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
+import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
-  const learnFolder = 'learn';
-  const pageInfo = await getPageLevelInfoForFile('learn.md', learnFolder);
-  const starterKits = await getMarkdownData('starterkits.md', learnFolder);
-  const gettingStarted = await getMarkdownData('gettingstarted.md', learnFolder);
-  const learningSitecore = await getMarkdownData('learningSitecore.md', learnFolder);
+  const pageInfo = await getPageInfo('learn');
+  const partials = await getPartials({
+    starterKits: 'learn/starterkits',
+    gettingStarted: 'learn/gettingstarted',
+    learningSitecore: 'learn/learningSitecore',
+  });
 
   return {
     props: {
       pageInfo,
-      starterKits,
-      gettingStarted,
-      learningSitecore,
+      partials,
     },
   };
 }
 
 export default function Learn({
   pageInfo,
-  starterKits,
-  gettingStarted,
-  learningSitecore,
+  partials,
 }: {
-  pageInfo: MarkdownMeta;
-  starterKits: MarkdownAsset;
-  gettingStarted: MarkdownAsset;
-  learningSitecore: MarkdownAsset;
+  pageInfo: PageInfo;
+  partials: PagePartials;
 }) {
   const router = useRouter();
 
@@ -49,16 +44,16 @@ export default function Learn({
     <Layout pageInfo={pageInfo}>
       <div className={styles.grid}>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{starterKits.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.starterKits}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCardLarge}>
-          <ReactMarkdown>{gettingStarted.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.gettingStarted}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCardLarge}>
-          <ReactMarkdown>{learningSitecore.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.learningSitecore}</ReactMarkdown>
         </div>
-        <YouTubeFeed pageInfo={pageInfo} />
-        <TwitterFeed args={pageInfo.twitter} />
+        <YouTubeFeed content={pageInfo.youtube} />
+        <TwitterFeed content={pageInfo.twitter} />
         <div className={styles.socialsCard}>
           <h2>News &amp; Announcements</h2>
           <a href="" className={styles.link}>

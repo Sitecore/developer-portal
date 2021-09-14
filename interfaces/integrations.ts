@@ -5,3 +5,7 @@ export type StackExchangeQuestion = {
   question_id: string;
   title: string;
 };
+
+export type Tweet = {};
+
+export type YouTubeVideo = {};

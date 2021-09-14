@@ -1,53 +1,38 @@
 // Global
 import ReactMarkdown from 'react-markdown';
 import { useRouter } from 'next/dist/client/router';
-// Lib
-import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
+// Scipts
+import { getPageInfo, getPartials } from '@/scripts/page-info';
 // Interfaces
-import { MarkdownMeta, MarkdownAsset } from '@/interfaces/markdownAsset';
-import { StackExchangeQuestion } from '@/interfaces/integrations';
+import { PageInfo, PagePartials } from '@/interfaces/page-info';
 // Component
 import Layout from '@/components/layout/Layout';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
-import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
-  const communityMarkDownFolder = 'community';
-  const helpMarkDownFolder = 'help';
-  const pageInfo = await getPageLevelInfoForFile('help.md', helpMarkDownFolder);
-  const slack = await getMarkdownData('slack.md', communityMarkDownFolder);
-  const stackexchange = await getMarkdownData('stackexchange.md', communityMarkDownFolder);
-  const forums = await getMarkdownData('forums.md', communityMarkDownFolder);
-  const support = await getMarkdownData('support.md', helpMarkDownFolder);
-  const stackExchangeQuestions = await stackExchangeApi.get(pageInfo.stackexchange);
+  const pageInfo = await getPageInfo('help');
+  const partials = await getPartials({
+    slack: 'community/slack',
+    stackExchange: 'community/stackexchange',
+    forums: 'community/forums',
+    support: 'help/support',
+  });
 
   return {
     props: {
       pageInfo,
-      forums,
-      slack,
-      stackexchange,
-      stackExchangeQuestions,
-      support,
+      partials,
     },
   };
 }
 
 export default function Help({
   pageInfo,
-  forums,
-  slack,
-  stackexchange,
-  stackExchangeQuestions,
-  support,
+  partials,
 }: {
-  pageInfo: MarkdownMeta;
-  forums: MarkdownAsset;
-  slack: MarkdownAsset;
-  stackexchange: MarkdownAsset;
-  stackExchangeQuestions: StackExchangeQuestion[];
-  support: MarkdownAsset;
+  pageInfo: PageInfo;
+  partials: PagePartials;
 }) {
   const router = useRouter();
 
@@ -59,26 +44,26 @@ export default function Help({
     <Layout pageInfo={pageInfo}>
       <div className={styles.grid}>
         <div className={styles.socialsCard}>
-          <ReactMarkdown>{support.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.support}</ReactMarkdown>
         </div>
         <div className={styles.youtubeCard}>
           <h2>Ask the community</h2>
           <div className={styles.threeColumn}>
             <div className={styles.oneThirdCard}>
-              <ReactMarkdown>{slack.markdown}</ReactMarkdown>
+              <ReactMarkdown>{partials.slack}</ReactMarkdown>
             </div>
             <div className={styles.oneThirdCard}>
-              <ReactMarkdown>{stackexchange.markdown}</ReactMarkdown>
+              <ReactMarkdown>{partials.stackExchange}</ReactMarkdown>
             </div>
             <div className={styles.oneThirdCard}>
-              <ReactMarkdown>{forums.markdown}</ReactMarkdown>
+              <ReactMarkdown>{partials.forums}</ReactMarkdown>
             </div>
           </div>
         </div>
         <div className={styles.youtubeCard}>
           <h2>Contact Us info here (or redirect to sitecore.com contact)</h2>
         </div>
-        <StackExchangeFeed questions={stackExchangeQuestions} />
+        <StackExchangeFeed content={pageInfo.stackexchange} />
       </div>
     </Layout>
   );

@@ -1,78 +1,65 @@
 // Global
 import ReactMarkdown from 'react-markdown';
-// Lib
-import { getMarkdownData, getPageLevelInfoForFile } from '@/lib/getMarkdownData';
+// Scipts
+import { getPageInfo, getPartials } from '@/scripts/page-info';
 // Interfaces
-import { MarkdownAsset, MarkdownMeta } from '@/interfaces/markdownAsset';
+import { PageInfo, PagePartials } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
-import TwitterFeed from '@/components/integrations/TwitterFeed';
-import YouTubeFeed from '@/components/youtubeFeed';
+import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
+import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
   const docsMarkDownFolder = 'docs';
-  const pageInfo = await getPageLevelInfoForFile('docs.md', docsMarkDownFolder);
-  const cmsDocs = await getMarkdownData('cms.md', docsMarkDownFolder);
-  const damDocs = await getMarkdownData('dam.md', docsMarkDownFolder);
-  const cdmDocs = await getMarkdownData('customerdatamanagement.md', docsMarkDownFolder);
-  const personalizationDocs = await getMarkdownData('personalization.md', docsMarkDownFolder);
-  const maDocs = await getMarkdownData('marketingautomation.md', docsMarkDownFolder);
-  const commerceDocs = await getMarkdownData('commerce.md', docsMarkDownFolder);
+  const pageInfo = await getPageInfo('docs');
+  const partials = await getPartials({
+    cms: 'docs/cms',
+    dam: 'docs/dam',
+    cdm: 'docs/customerdatamanagement',
+    personalization: 'docs/personalization',
+    ma: 'docs/marketingautomation',
+    commerce: 'docs/commerce',
+  });
 
   return {
     props: {
       pageInfo,
-      cmsDocs,
-      damDocs,
-      cdmDocs,
-      personalizationDocs,
-      maDocs,
-      commerceDocs,
+      partials,
     },
   };
 }
 
 export default function Docs({
   pageInfo,
-  cmsDocs,
-  damDocs,
-  cdmDocs,
-  personalizationDocs,
-  maDocs,
-  commerceDocs,
+  partials,
 }: {
-  pageInfo: MarkdownMeta;
-  cmsDocs: MarkdownAsset;
-  damDocs: MarkdownAsset;
-  cdmDocs: MarkdownAsset;
-  personalizationDocs: MarkdownAsset;
-  maDocs: MarkdownAsset;
-  commerceDocs: MarkdownAsset;
+  pageInfo: PageInfo;
+  partials: PagePartials;
 }) {
   return (
     <Layout pageInfo={pageInfo}>
       <div className={styles.grid}>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{cmsDocs.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.cms}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{damDocs.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.dam}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{cdmDocs.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.cdm}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{personalizationDocs.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.personalization}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{maDocs.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.ma}</ReactMarkdown>
         </div>
         <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{commerceDocs.markdown}</ReactMarkdown>
+          <ReactMarkdown>{partials.commerce}</ReactMarkdown>
         </div>
-        <YouTubeFeed pageInfo={pageInfo} />
-        <TwitterFeed args={pageInfo.twitter} />
+        <YouTubeFeed content={pageInfo.youtube} />
+        <TwitterFeed content={pageInfo.twitter} />
       </div>
     </Layout>
   );

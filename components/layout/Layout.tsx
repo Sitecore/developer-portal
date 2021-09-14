@@ -1,12 +1,13 @@
 // Global
 import Head from 'next/head';
 import { classnames } from '@/tailwindcss-classnames';
+// Interfaces
+import type { PageInfo } from '@/interfaces/page-info';
 // Components
 import Container from '@/components/helper/Container';
-import { MarkdownMeta } from '../../interfaces/markdownAsset';
 
 type LayoutProps = {
-  pageInfo: MarkdownMeta;
+  pageInfo: PageInfo;
   children: React.ReactNode | React.ReactNode[];
 };
 
@@ -14,7 +15,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
   return (
     <div>
       <Head>
-        <title>{pageInfo.prettyName}</title>
+        <title>{pageInfo.title}</title>
         <meta name="description" content={pageInfo.description} />
         <link
           rel="icon"
@@ -23,7 +24,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
       </Head>
       <main className={classnames('my-8')}>
         <Container>
-          <h1>{pageInfo.prettyName}</h1>
+          <h1>{pageInfo.title}</h1>
           <p>{pageInfo.description}</p>
         </Container>
         {children}

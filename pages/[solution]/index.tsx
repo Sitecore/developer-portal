@@ -1,19 +1,16 @@
 // Global
 import { useRouter } from 'next/dist/client/router';
-import Head from 'next/head';
 import Link from 'next/link';
+// Scripts
+import { getPageInfo, getChildPageInfo } from '@/scripts/page-info';
+import { getSolutionPaths } from '@/scripts/static-paths';
 // Interfaces
-import { MarkdownMeta } from '@/interfaces/markdownAsset';
-import { StackExchangeQuestion } from '@/interfaces/integrations';
-import { Tags } from '@/interfaces/tags';
-import { UrlParams } from '@/interfaces/UrlParams';
-// Lib
-import { getTaggedPages, getPageLevelInfo, getSolutionPaths } from '@/lib/getMarkdownData';
+import { PageInfo, ChildPageInfo } from '@/interfaces/page-info';
 // Components
-import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
+import Layout from '@/components/layout/Layout';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
-import TwitterFeed from '@/components/integrations/TwitterFeed';
-import YouTubeFeed from '@/components/youtubeFeed';
+import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
+import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 import styles from '../../styles/Home.module.css';
 
 export async function getStaticPaths() {
@@ -26,40 +23,23 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-  const slug: UrlParams = context.params;
-
-  let pageTags: Tags = {
-    solution: slug.solution,
-    products: [slug.solution],
-  };
-  const pageInfo = await getPageLevelInfo(pageTags);
-  const stackExchangeQuestions = await stackExchangeApi.get(pageInfo.stackexchange);
-
-  let filesTags: Tags = {
-    solution: slug.solution,
-  };
-  const files = await getTaggedPages(filesTags);
+  const pageInfo = await getPageInfo(context.params);
+  const products = await getChildPageInfo(context.params);
 
   return {
     props: {
-      slug,
-      files,
       pageInfo,
-      stackExchangeQuestions,
+      products,
     },
   };
 }
 
 export default function solutionPage({
-  slug,
-  files,
   pageInfo,
-  stackExchangeQuestions,
+  products,
 }: {
-  slug: any;
-  files: MarkdownMeta[];
-  pageInfo: MarkdownMeta;
-  stackExchangeQuestions: StackExchangeQuestion[];
+  pageInfo: PageInfo;
+  products: ChildPageInfo[];
 }) {
   const router = useRouter();
 
@@ -68,43 +48,28 @@ export default function solutionPage({
   }
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>{pageInfo.prettyName}</title>
-        <meta name="description" content={pageInfo.description} />
-        <link
-          rel="icon"
-          href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png"
-        />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>{pageInfo.prettyName}</h1>
-        <p>{pageInfo.description}</p>
-        <div className={styles.grid}>
-          {files.map((file) => (
-            <div key={file.id} className={styles.productCategoryCardCompact}>
-              <h2>{file.prettyName}</h2>
-              <p>{file.description}</p>
-              <Link href={`${slug.solution}/${file.product}`}>
-                <a>Learn more...</a>
-              </Link>
-            </div>
-          ))}
-
-          <StackExchangeFeed questions={stackExchangeQuestions} />
-
-          <div className={styles.socialsCard}>
-            <h2>News &amp; Announcements</h2>
-            <a href="" className={styles.link}>
-              <li>Cool new things</li>
-            </a>
-          </div>
-
-          <YouTubeFeed pageInfo={pageInfo} />
-          <TwitterFeed args={pageInfo.twitter} />
+    <Layout pageInfo={pageInfo}>
+      {products.map((child) => (
+        <div key={child.id} className={styles.productCategoryCardCompact}>
+          <h2>{child.title}</h2>
+          <p>{child.description}</p>
+          <Link href={child.link}>
+            <a>Learn more...</a>
+          </Link>
         </div>
-      </main>
-    </div>
+      ))}
+
+      <StackExchangeFeed content={pageInfo.stackexchange} />
+
+      <div className={styles.socialsCard}>
+        <h2>News &amp; Announcements</h2>
+        <a href="" className={styles.link}>
+          <li>Cool new things</li>
+        </a>
+      </div>
+
+      <YouTubeFeed content={pageInfo.youtube} />
+      <TwitterFeed content={pageInfo.twitter} />
+    </Layout>
   );
 }
