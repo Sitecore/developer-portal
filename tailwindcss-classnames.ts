@@ -3038,7 +3038,7 @@ export type THeight =
   | 'h-gutter-md'
   | 'h-gutter-lg';
 
-export type TMinHeight = 'min-h-0' | 'min-h-full' | 'min-h-screen';
+export type TMinHeight = 'min-h-320';
 
 export type TMaxHeight =
   | 'max-h-0'
@@ -16716,24 +16716,12 @@ export type TPseudoClasses =
   | 'xl:max-w-screen-lg-mw'
   | '2xl:max-w-screen-lg-mw'
   | 'lg-mw:max-w-screen-lg-mw'
-  | 'sm:min-h-0'
-  | 'md:min-h-0'
-  | 'lg:min-h-0'
-  | 'xl:min-h-0'
-  | '2xl:min-h-0'
-  | 'lg-mw:min-h-0'
-  | 'sm:min-h-full'
-  | 'md:min-h-full'
-  | 'lg:min-h-full'
-  | 'xl:min-h-full'
-  | '2xl:min-h-full'
-  | 'lg-mw:min-h-full'
-  | 'sm:min-h-screen'
-  | 'md:min-h-screen'
-  | 'lg:min-h-screen'
-  | 'xl:min-h-screen'
-  | '2xl:min-h-screen'
-  | 'lg-mw:min-h-screen'
+  | 'sm:min-h-320'
+  | 'md:min-h-320'
+  | 'lg:min-h-320'
+  | 'xl:min-h-320'
+  | '2xl:min-h-320'
+  | 'lg-mw:min-h-320'
   | 'sm:min-w-0'
   | 'md:min-w-0'
   | 'lg:min-w-0'

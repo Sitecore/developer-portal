@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import type { PageInfo } from '@/interfaces/page-info';
+import Hero from '@/components/heros/Hero';
+
 type LayoutProps = {
   pageInfo: PageInfo;
   children: React.ReactNode | React.ReactNode[];
@@ -17,8 +19,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         />
       </Head>
       <main>
-        <h1>{pageInfo.title}</h1>
-        <p>{pageInfo.description}</p>
+        <Hero title={pageInfo.title} description={pageInfo.description} />
         {children}
       </main>
     </div>
