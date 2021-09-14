@@ -29,6 +29,12 @@ export type ChildPageInfo = {
   title: string;
 };
 
+// @TODO: Rename this
 export type PagePartials = {
   [name: string]: string;
+};
+
+export type PagePartial = {
+  content: string;
+  title: string;
 };

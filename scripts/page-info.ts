@@ -3,7 +3,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 // Interfaces
-import type { MarkdownMeta, PageInfo, ChildPageInfo, PagePartials } from '@/interfaces/page-info';
+import type {
+  MarkdownMeta,
+  PageInfo,
+  ChildPageInfo,
+  PagePartial,
+  PagePartials,
+} from '@/interfaces/page-info';
 // Components
 import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
 
@@ -12,7 +18,10 @@ const partialsDirectory = path.join(dataDirectory, 'partials');
 const pagesDirectory = path.join(dataDirectory, 'pages');
 
 type Matter = {
-  data: object;
+  data: {
+    title?: string;
+    [name: string]: unknown;
+  };
   content: string;
 };
 
@@ -81,8 +90,30 @@ export const getPartials = async (args: Record<string, string>): Promise<PagePar
  * @param partials
  * @returns
  */
-export const getPartialsAsArray = async (partials: string[]): Promise<string[]> =>
-  partials.map((p) => getFileData(partialsDirectory, p).content);
+const getTilteFromContent = (content: string): string => {
+  const regExp = /(?<=\# )(.*?)(?=\n)/g;
+  const res = content.match(regExp);
+  if (res) {
+    // Grab just the text if the heading is also a link
+    if (res[0].startsWith('[')) {
+      const anchorTextRegExp = /(?<=\[)(.*?)(?=\])/g;
+      const anchorText = content.match(anchorTextRegExp);
+      return !!anchorText ? anchorText[0] : '';
+    }
+    return res[0];
+  }
+  return '';
+};
+
+export const getPartialsAsArray = async (partials: string[]): Promise<PagePartial[]> =>
+  partials.map((p) => {
+    const data = getFileData(partialsDirectory, p) as Matter;
+
+    return {
+      content: data.content,
+      title: data.data.title || getTilteFromContent(data.content),
+    };
+  });
 
 /**
  * Gets a list of ChildPageInfo for use on a parent page

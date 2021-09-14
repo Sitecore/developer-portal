@@ -1,23 +1,20 @@
 // Scripts
-import { getPageInfo, getPartials } from '@/scripts/page-info';
+import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 // Interfaces
-import { PageInfo, PagePartials } from '@/interfaces/page-info';
+import { PageInfo, PagePartial } from '@/interfaces/page-info';
 // Components
-import Layout from '@/components/layout/Layout';
-import MarkdownGrid from '@/components/helper/MarkdownGrid';
-import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
-import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
+import SectionTemplateWithNav from '@/components/layout/SectionTemplateWithNav';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('discover');
-  const partials = await getPartials({
-    supportKB: 'discover/supportkb',
-    cdpKB: 'discover/cdpkb',
-    sitecoreKC: 'discover/sitecoreknowledgecenter',
-    orderCloud: 'discover/ordercloud',
-    moosend: 'discover/moosend',
-    contentHub: 'discover/contenthub',
-  });
+  const partials = await getPartialsAsArray([
+    'discover/supportkb',
+    'discover/cdpkb',
+    'discover/ordercloud',
+    'discover/contenthub',
+    'discover/moosend',
+    'discover/sitecoreknowledgecenter',
+  ]);
 
   return {
     props: {
@@ -32,22 +29,7 @@ export default function Discover({
   partials,
 }: {
   pageInfo: PageInfo;
-  partials: PagePartials;
+  partials: PagePartial[];
 }) {
-  return (
-    <Layout pageInfo={pageInfo}>
-      <MarkdownGrid
-        partials={[
-          partials.supportKB,
-          partials.cdpKB,
-          partials.orderCloud,
-          partials.contentHub,
-          partials.moosend,
-          partials.sitecoreKC,
-        ]}
-      />
-      <YouTubeFeed content={pageInfo.youtube} />
-      <TwitterFeed content={pageInfo.twitter} />
-    </Layout>
-  );
+  return <SectionTemplateWithNav pageInfo={pageInfo} partials={partials} />;
 }

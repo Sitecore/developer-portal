@@ -1,12 +1,15 @@
 // Global
 import { classnames } from '@/tailwindcss-classnames';
 import ReactMarkdown from 'react-markdown';
+import type { PagePartial } from '@/interfaces/page-info';
+import getSectionId from '@/lib/section-id';
 
 type MarkdownContentProps = {
-  partials: string[];
+  partials: PagePartial[];
+  idSeed?: string;
 };
 
-const MarkdownContent = ({ partials }: MarkdownContentProps): JSX.Element => (
+const MarkdownContent = ({ partials, idSeed }: MarkdownContentProps): JSX.Element => (
   <div>
     {partials.map((item, i) => (
       <div
@@ -14,8 +17,9 @@ const MarkdownContent = ({ partials }: MarkdownContentProps): JSX.Element => (
           'mb-16': i !== partials.length,
         })}
         key={i}
+        id={!!idSeed ? getSectionId(item.title, idSeed) : undefined}
       >
-        <ReactMarkdown>{item}</ReactMarkdown>
+        <ReactMarkdown>{item.content}</ReactMarkdown>
       </div>
     ))}
   </div>

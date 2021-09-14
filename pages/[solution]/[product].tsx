@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 import { getProductPaths } from '@/scripts/static-paths';
 // Interfaces
-import type { PageInfo } from '@/interfaces/page-info';
+import type { PageInfo, PagePartial } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
 import MarkdownContent from '@/components/helper/MarkdownContent';
@@ -41,7 +41,7 @@ export default function productPage({
   parent,
 }: {
   pageInfo: PageInfo;
-  partials: string[];
+  partials: PagePartial[];
   parent: string;
 }) {
   const router = useRouter();
