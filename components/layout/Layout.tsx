@@ -1,6 +1,11 @@
+// Global
 import Head from 'next/head';
+import { classnames } from '@/tailwindcss-classnames';
+// Interfaces
 import type { PageInfo } from '@/interfaces/page-info';
+// Components
 import Hero from '@/components/heros/Hero';
+import Container from '@/components/helper/Container';
 
 type LayoutProps = {
   pageInfo: PageInfo;
@@ -18,9 +23,9 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png"
         />
       </Head>
-      <main>
+      <main className={classnames('my-8')}>
         <Hero title={pageInfo.title} description={pageInfo.description} />
-        {children}
+        <Container>{children}</Container>
       </main>
     </div>
   );

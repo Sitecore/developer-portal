@@ -9,9 +9,47 @@ export type NavigationData = {
   children?: NavigationChildData[];
 };
 
+export const SitecoreQuickLinks: NavigationData = {
+  title: 'External Sitecore Links',
+  children: [
+    {
+      title: 'Sitecore Documentation',
+      url: 'https://doc.sitecore.com/',
+    },
+    {
+      title: 'Sitecore Learning',
+      url: 'https://learning.sitecore.com/',
+    },
+    {
+      title: 'Sitecore Community',
+      url: 'https://community.sitecore.net/',
+    },
+    {
+      title: 'Sitecore MVP Program',
+      url: 'https://www.sitecore.com/#:~:text=Sitecore%20MVP%20Program',
+    },
+    {
+      title: 'Sitecore Downloads',
+      url: 'https://www.sitecore.com/#:~:text=Sitecore%20MVP%20Program-,Sitecore%20Downloads,-Sitecore%20Partner%20Network',
+    },
+    {
+      title: 'Sitecore Partner Network',
+      url: 'https://partners.sitecore.com/',
+    },
+    {
+      title: 'Symposium',
+      url: 'https://symposium.sitecore.com/',
+    },
+    {
+      title: 'Knowledge Base',
+      url: 'https://www.sitecore.com/#:~:text=Symposium-,Knowledge%20Base,-Request%20a%20demo',
+    },
+  ],
+};
+
 const NavigationData: NavigationData[] = [
   {
-    title: 'Type of Content',
+    title: 'Content Types',
     children: [
       {
         title: 'Docs',
@@ -39,7 +77,7 @@ const NavigationData: NavigationData[] = [
     title: 'Solution',
     children: [
       {
-        title: 'Content Mangement and Delivery',
+        title: 'Content Management and Delivery',
         url: '/content-management',
         children: [
           {
