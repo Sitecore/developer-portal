@@ -7,9 +7,9 @@ import DynamicTag from '@/components/helper/DynamicTag';
 import { classnames } from '@/tailwindcss-classnames';
 import SvgIcon from '../helper/SvgIcon';
 import React from 'react';
+import Container from '../helper/Container';
 
 export type HeroProps = {
-  containerTag?: 'header';
   title: string;
   headingLevel?: ValidHeadingLevels;
   description?: string;
@@ -18,19 +18,11 @@ export type HeroProps = {
 
 const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JSX.Element => (
   <header className={classnames('py-11', 'px-gutter-all', 'relative')}>
-    {/* @TODO: Replace with <Container> tag that Brian is adding in. */}
-    <div
-      className={classnames(
-        'max-w-screen-xl',
-        'm-auto',
-        'grid',
-        'md:grid-cols-9',
-        'gap-16',
-        'lg:items-center',
-        {
-          ['lg:min-h-320']: !!image,
-        }
-      )}
+    <Container
+      size="standard"
+      className={classnames('grid', 'md:grid-cols-9', 'gap-16', 'lg:items-center', {
+        ['lg:min-h-320']: !!image,
+      })}
     >
       <div className={classnames('md:col-span-5', 'lg:pr-24')}>
         <DynamicTag tag={headingLevel} className={classnames('heading-lg', 'mb-5', 'relative')}>
@@ -98,7 +90,7 @@ const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JS
           </div>
         </React.Fragment>
       )}
-    </div>
+    </Container>
   </header>
 );
 
