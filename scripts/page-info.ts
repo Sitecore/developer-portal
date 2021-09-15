@@ -54,6 +54,8 @@ export const getPageInfo = async (
   const meta = getFileData(pagesDirectory, `${file}/index`).data as MarkdownMeta;
 
   const pageInfo = {
+    // Default hasInPageNav to true, overwrite with false in md
+    hasInPageNav: true,
     ...meta,
     stackexchange: [],
     youtube: [],

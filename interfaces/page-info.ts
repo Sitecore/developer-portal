@@ -2,10 +2,11 @@ import { StackExchangeQuestion, Tweet, YouTubeVideo } from './integrations';
 
 type PageInfoCore = {
   description?: string;
-  id?: string;
-  title: string;
+  hasInPageNav?: boolean;
   heroImage?: string;
+  id?: string;
   partials?: string[];
+  title: string;
 };
 
 // Input for 3rd party integrations are just strings

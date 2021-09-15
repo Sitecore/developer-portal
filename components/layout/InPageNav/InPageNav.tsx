@@ -18,7 +18,7 @@ export type InPageNavTWClasses =
 const InPageNav = ({ partials }: InPageNavProps): JSX.Element => (
   <nav className={classnames('mb-8', 'md:mr-16', 'md:top-24', 'md:sticky', 'self-start')}>
     <p className={classnames('font-bold', 'text-sm', 'mb-4', 'md:hidden')}>Table of contents</p>
-    <ul className={classnames('in-page-nav', 'relative', 'ml-0')}>
+    <ul className={classnames('in-page-nav', 'relative', 'pl-1.5')}>
       {partials.map((partial) => (
         <li
           className={classnames('in-page-nav-item', 'pb-4', 'relative', 'pl-4')}

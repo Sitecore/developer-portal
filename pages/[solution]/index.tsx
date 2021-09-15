@@ -1,5 +1,4 @@
 // Global
-import { useRouter } from 'next/dist/client/router';
 import { classnames } from '@/tailwindcss-classnames';
 // Scripts
 import { getPageInfo, getChildPageInfo } from '@/scripts/page-info';
@@ -9,10 +8,7 @@ import { PageInfo, ChildPageInfo } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
 import ProductCategoryCard from '@/components/cards/ProductCategoryCard';
-import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
-import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
-import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
-import styles from '../../styles/Home.module.css';
+import SocialFeeds from '@/components/integrations/SocialFeeds';
 
 export async function getStaticPaths() {
   const solutionPaths = await getSolutionPaths();
@@ -42,15 +38,18 @@ export default function solutionPage({
   pageInfo: PageInfo;
   products: ChildPageInfo[];
 }) {
-  const router = useRouter();
-
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <Layout pageInfo={pageInfo}>
-      <ul className={classnames('grid', 'gap-6', 'md:grid-cols-3')}>
+      <ul
+        className={classnames(
+          'grid',
+          'gap-6',
+          'p-8',
+          'bg-gray-lightest',
+          'mb-11',
+          'md:grid-cols-2'
+        )}
+      >
         {products.map((child) => (
           <ProductCategoryCard
             key={child.id}
@@ -63,17 +62,7 @@ export default function solutionPage({
         ))}
       </ul>
 
-      <StackExchangeFeed content={pageInfo.stackexchange} />
-
-      <div className={styles.socialsCard}>
-        <h2>News &amp; Announcements</h2>
-        <a href="" className={styles.link}>
-          <li>Cool new things</li>
-        </a>
-      </div>
-
-      <YouTubeFeed content={pageInfo.youtube} />
-      <TwitterFeed content={pageInfo.twitter} />
+      <SocialFeeds pageInfo={pageInfo} />
     </Layout>
   );
 }

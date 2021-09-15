@@ -3,7 +3,7 @@ import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 // Interfaces
 import { PageInfo, PagePartial } from '@/interfaces/page-info';
 // Components
-import SectionTemplateWithNav from '@/components/layout/SectionTemplateWithNav';
+import GenericContentPage from '@/components/layout/GenericContentPage';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('discover');
@@ -31,5 +31,5 @@ export default function Discover({
   pageInfo: PageInfo;
   partials: PagePartial[];
 }) {
-  return <SectionTemplateWithNav pageInfo={pageInfo} partials={partials} />;
+  return <GenericContentPage pageInfo={pageInfo} partials={partials} />;
 }
