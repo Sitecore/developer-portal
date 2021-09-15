@@ -1,6 +1,5 @@
 // Global
 import { classnames } from '@/tailwindcss-classnames';
-import { useId } from 'react-id-generator';
 // Interfaces
 import type { PageInfo, PagePartial } from '@/interfaces/page-info';
 // Components
@@ -15,15 +14,13 @@ type SectionTemplateProps = {
   hasInPageNav?: boolean;
 };
 
-const SectionTemplate = ({ pageInfo, partials }: SectionTemplateProps) => {
-  const [idSeed] = useId(1, 'section-template');
-
+const SectionTemplateWithNav = ({ pageInfo, partials }: SectionTemplateProps) => {
   return (
     <Layout pageInfo={pageInfo}>
       <div className={classnames('grid', 'gap-6', 'md:grid-cols-4')}>
-        <InPageNav partials={partials} idSeed={idSeed} />
+        <InPageNav partials={partials} />
         <div className={classnames('col-span-3')}>
-          <MarkdownContent partials={partials} idSeed={idSeed} />
+          <MarkdownContent partials={partials} />
         </div>
       </div>
       <SocialFeeds pageInfo={pageInfo} />
@@ -31,4 +28,4 @@ const SectionTemplate = ({ pageInfo, partials }: SectionTemplateProps) => {
   );
 };
 
-export default SectionTemplate;
+export default SectionTemplateWithNav;

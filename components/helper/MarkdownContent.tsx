@@ -9,7 +9,7 @@ type MarkdownContentProps = {
   idSeed?: string;
 };
 
-const MarkdownContent = ({ partials, idSeed }: MarkdownContentProps): JSX.Element => (
+const MarkdownContent = ({ partials }: MarkdownContentProps): JSX.Element => (
   <div>
     {partials.map((item, i) => (
       <div
@@ -17,7 +17,7 @@ const MarkdownContent = ({ partials, idSeed }: MarkdownContentProps): JSX.Elemen
           'mb-16': i !== partials.length,
         })}
         key={i}
-        id={!!idSeed ? getSectionId(item.title, idSeed) : undefined}
+        id={getSectionId(item.title)}
       >
         <ReactMarkdown>{item.content}</ReactMarkdown>
       </div>
