@@ -67,6 +67,7 @@ const QuickStartMenu = ({ className, callback }: QuickStartMenuProps): JSX.Eleme
           </g>
         </svg>
       </button>
+      {/* NOTE:: Dropdown currently absolutely positioned. Revist if used in place other than the navigation */}
       <div
         ref={quickStartMenuRef}
         className={classnames(
