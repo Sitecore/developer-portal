@@ -93,7 +93,7 @@ const QuickStartMenu = ({ className, callback }: QuickStartMenuProps): JSX.Eleme
             <li
               key={`child-${index}`}
               className={classnames(
-                'font-regular',
+                'font-semibold',
                 'hover:bg-teal-light',
                 'hover:text-teal',
                 'text-xs'
