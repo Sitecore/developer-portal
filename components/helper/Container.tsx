@@ -4,7 +4,7 @@ import { classnames, TArg, TTailwindString } from 'tailwindcss-classnames';
 export type ContainerSize = 'standard';
 
 const containerSizes: Record<string, TArg> = {
-  ['lg']: 'max-w-screen-lg',
+  ['lg']: 'max-w-screen-xl',
   ['xl']: 'max-w-screen-xl',
   ['2xl']: 'max-w-screen-2xl',
 };

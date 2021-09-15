@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import { classnames, TTailwindString } from 'tailwindcss-classnames';
 
-export type IconNames = 'quick-links' | 'arrow-right' | 'arrow-left';
+export type IconNames = 'quick-links' | 'arrow-right' | 'arrow-left' | 'heading';
 
 export type IconProps = {
   icon: IconNames;

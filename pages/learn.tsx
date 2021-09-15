@@ -7,6 +7,7 @@ import { getPageInfo, getPartials } from '@/scripts/page-info';
 import { PageInfo, PagePartials } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
+import MarkdownGrid from '@/components/helper/MarkdownGrid';
 import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
 import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 import styles from '@/styles/Home.module.css';
@@ -42,24 +43,16 @@ export default function Learn({
 
   return (
     <Layout pageInfo={pageInfo}>
-      <div className={styles.grid}>
-        <div className={styles.productCategoryCard}>
-          <ReactMarkdown>{partials.starterKits}</ReactMarkdown>
-        </div>
-        <div className={styles.productCategoryCardLarge}>
-          <ReactMarkdown>{partials.gettingStarted}</ReactMarkdown>
-        </div>
-        <div className={styles.productCategoryCardLarge}>
-          <ReactMarkdown>{partials.learningSitecore}</ReactMarkdown>
-        </div>
-        <YouTubeFeed content={pageInfo.youtube} />
-        <TwitterFeed content={pageInfo.twitter} />
-        <div className={styles.socialsCard}>
-          <h2>News &amp; Announcements</h2>
-          <a href="" className={styles.link}>
-            <li>Cool new things</li>
-          </a>
-        </div>
+      <MarkdownGrid
+        partials={[partials.starterKits, partials.gettingStarted, partials.learningSitecore]}
+      />
+      <YouTubeFeed content={pageInfo.youtube} />
+      <TwitterFeed content={pageInfo.twitter} />
+      <div className={styles.socialsCard}>
+        <h2>News &amp; Announcements</h2>
+        <a href="" className={styles.link}>
+          <li>Cool new things</li>
+        </a>
       </div>
     </Layout>
   );

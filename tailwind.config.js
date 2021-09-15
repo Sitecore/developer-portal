@@ -6,12 +6,18 @@
  *
  */
 
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   purge: {
     content: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    backgroundSize: {
+      'size-hero-pattern': '33.125rem', // 530px, matching SC.com
+      ...defaultTheme.backgroundSize,
+    },
     colors: {
       // Primary brand colors
       black: '#000000',
@@ -75,7 +81,13 @@ module.exports = {
       semibold: 600,
       bold: 700,
     },
+    minHeight: {
+      320: '320px',
+    },
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/images/heros/hero-plus-pattern.png')",
+      },
       boxShadow: {
         inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.15)',
       },
@@ -87,6 +99,7 @@ module.exports = {
       },
       spacing: {
         em: '1em',
+        '1.75em': '1.75em',
         inherit: 'inherit',
         gutter: '1rem',
         'gutter-md': '2rem',
