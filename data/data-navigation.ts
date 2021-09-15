@@ -150,7 +150,7 @@ const NavigationData: NavigationData[] = [
         children: [
           {
             title: 'OrderCloud',
-            url: '/commerce/orderCloud',
+            url: '/commerce/ordercloud',
           },
           {
             title: 'Sitecore Experience Platform',
@@ -249,7 +249,7 @@ const NavigationData: NavigationData[] = [
       },
       {
         title: 'Sitecore OrderCloud',
-        url: '/commerce/orderCloud',
+        url: '/commerce/ordercloud',
       },
       {
         title: 'Sitecore Experience Commerce',
