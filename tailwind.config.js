@@ -92,6 +92,9 @@ module.exports = {
         'gutter-md': '2rem',
         'gutter-lg': '4rem',
       },
+      scale: {
+        625: '0.625',
+      },
     },
   },
   variants: {
