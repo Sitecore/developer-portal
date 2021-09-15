@@ -1,101 +1,89 @@
 // Global
 import { classnames } from '@/tailwindcss-classnames';
-import ReactMarkdown from 'react-markdown';
 // Scripts
-import { getPageInfo, getPartials } from '@/scripts/page-info';
+import { getPageInfo } from '@/scripts/page-info';
 // Interfaces
-import { PageInfo, PagePartials } from '@/interfaces/page-info';
+import type { CategoryTileProps } from '@/components/cards/CategoryTile';
+import type { PageInfo } from '@/interfaces/page-info';
 // Components
+import CategoryTileList from '@/components/lists/CategoryTileList';
+import CommunityList from '@/components/lists/CommunityList';
+import Container from '@/components/helper/Container';
+import GetHelp from '@/components/cards/GetHelp';
 import Layout from '@/components/layout/Layout';
-import ProductCategoryCard, {
-  ProductCategoryCardProps,
-} from '@/components/cards/ProductCategoryCard';
-import MarkdownGrid from '@/components/helper/MarkdownGrid';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
-import styles from '@/styles/Home.module.css';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
-  const partials = await getPartials({
-    slack: 'community/slack',
-    stackExchange: 'community/stackexchange',
-    forums: 'community/forums',
-    getHelp: 'help/gethelp',
-  });
 
   return {
     props: {
       pageInfo,
-      partials,
     },
   };
 }
 
-const productSolutions: ProductCategoryCardProps[] = [
+const productSolutions: CategoryTileProps[] = [
   {
-    title: 'Content Management (CMS) 💾 &rarr;',
+    title: 'Content Management (CMS) 💾 →',
     description:
       'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.',
     href: '/content-management/',
   },
   {
-    title: 'Digital Asset Management (DAM) 📀 &rarr;',
+    title: 'Digital Asset Management (DAM) 📀 →',
     description: 'Scale management and delivery of media and static assets',
     href: '/digital-asset-management/dam',
   },
   {
-    title: 'Customer Data Management 👨‍👨‍👧‍👧 &rarr;',
+    title: 'Customer Data Management 👨‍👨‍👧‍👧 →',
     description: 'Track events, activity, and customer profile information',
     href: '/customer-data-management/',
   },
   {
-    title: 'Personalization and Testing 🕵️‍♀️ &rarr;',
+    title: 'Personalization and Testing 🕵️‍♀️ →',
     description: 'Deliver personalized content and test which content is working',
     href: '/personalization-testing/',
   },
   {
-    title: 'Marketing Automation 🚗 &rarr;',
+    title: 'Marketing Automation 🚗 →',
     description: 'Connect with customers using marketing automation',
     href: '/marketing-automation/',
   },
   {
-    title: 'Commerce 💸 &rarr;',
+    title: 'Commerce 💸 →',
     description: 'Build out order management, merchandising, marketplaces, and storefronts',
     href: '/commerce/',
   },
   {
-    title: 'DevOps 🚢 &rarr;',
+    title: 'DevOps 🚢 →',
     description: 'Installation, deployment, and architecture',
     href: '/devops/',
   },
 ];
 
-export default function Home({
-  pageInfo,
-  partials,
-}: {
+type HomePageProps = {
   pageInfo: PageInfo;
-  partials: PagePartials;
-}) {
-  return (
-    <Layout pageInfo={pageInfo}>
-      <YouTubeFeed content={pageInfo.youtube} />
-      <div className={styles.youtubeCard}>
-        <h2>Join these cool Sitecore Communities 🤖</h2>
-        <MarkdownGrid partials={[partials.slack, partials.stackExchange, partials.forums]} />
-      </div>
+};
 
-      {/* PRODUCT SOLUTIONS */}
-      <ul className={classnames('grid', 'gap-6', 'md:grid-cols-2')}>
-        {productSolutions.map((solution, i) => (
-          <ProductCategoryCard {...solution} key={i} />
-        ))}
-      </ul>
-      <div className={classnames('prose')}>
-        <ReactMarkdown>{partials.getHelp}</ReactMarkdown>
-      </div>
+const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
+  <Layout pageInfo={pageInfo}>
+    <Container>
+      <YouTubeFeed content={pageInfo.youtube} />
+      <CommunityList className={classnames('mb-11')} />
+    </Container>
+    <section className={classnames('bg-gray-lightest', 'py-16', 'mb-16')}>
+      <Container>
+        <h2 className={classnames('heading-md', 'mb-4')}>Navigation Title</h2>
+        <CategoryTileList cards={productSolutions} />
+      </Container>
+    </section>
+    <Container>
+      <GetHelp />
       <StackExchangeFeed content={pageInfo.stackexchange} />
-    </Layout>
-  );
-}
+    </Container>
+  </Layout>
+);
+
+export default HomePage;

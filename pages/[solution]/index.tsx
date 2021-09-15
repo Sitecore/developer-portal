@@ -4,11 +4,13 @@ import { classnames } from '@/tailwindcss-classnames';
 import { getPageInfo, getChildPageInfo } from '@/scripts/page-info';
 import { getSolutionPaths } from '@/scripts/static-paths';
 // Interfaces
-import { PageInfo, ChildPageInfo } from '@/interfaces/page-info';
+import type { PageInfo, ChildPageInfo } from '@/interfaces/page-info';
+import type { CategoryTileProps } from '@/components/cards/CategoryTile';
 // Components
+import CategoryTileList from '@/components/lists/CategoryTileList';
 import Layout from '@/components/layout/Layout';
-import ProductCategoryCard from '@/components/cards/ProductCategoryCard';
 import SocialFeeds from '@/components/integrations/SocialFeeds';
+import Container from '@/components/helper/Container';
 
 export async function getStaticPaths() {
   const solutionPaths = await getSolutionPaths();
@@ -31,38 +33,29 @@ export async function getStaticProps(context: any) {
   };
 }
 
-export default function solutionPage({
-  pageInfo,
-  products,
-}: {
+type SolutionPageProps = {
   pageInfo: PageInfo;
   products: ChildPageInfo[];
-}) {
+};
+
+const SolutionPage = ({ pageInfo, products }: SolutionPageProps): JSX.Element => {
+  const categoryCards = products.map((product) => ({
+    ...product,
+    href: product.link,
+  })) as CategoryTileProps[];
+
   return (
     <Layout pageInfo={pageInfo}>
-      <ul
-        className={classnames(
-          'grid',
-          'gap-6',
-          'p-8',
-          'bg-gray-lightest',
-          'mb-11',
-          'md:grid-cols-2'
-        )}
-      >
-        {products.map((child) => (
-          <ProductCategoryCard
-            key={child.id}
-            containerTag="li"
-            headingLevel="h2"
-            description={child.description as string}
-            title={child.title}
-            href={child.link}
-          />
-        ))}
-      </ul>
-
-      <SocialFeeds pageInfo={pageInfo} />
+      <div className={classnames('py-16', 'mb-16', 'bg-gray-lightest')}>
+        <Container>
+          <CategoryTileList cards={categoryCards} />
+        </Container>
+      </div>
+      <Container>
+        <SocialFeeds pageInfo={pageInfo} />
+      </Container>
     </Layout>
   );
-}
+};
+
+export default SolutionPage;

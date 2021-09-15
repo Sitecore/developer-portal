@@ -5,6 +5,7 @@ import type { PageInfo, PagePartial } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
 import MarkdownContent from '@/components/helper/MarkdownContent';
+import Container from '@/components/helper/Container';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('integrations/xm-cdp');
@@ -27,7 +28,9 @@ export default function XM_CDP({
 }) {
   return (
     <Layout pageInfo={pageInfo}>
-      <MarkdownContent partials={partials} />
+      <Container>
+        <MarkdownContent partials={partials} />
+      </Container>
     </Layout>
   );
 }

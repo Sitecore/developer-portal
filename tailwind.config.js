@@ -90,6 +90,7 @@ module.exports = {
       },
       boxShadow: {
         inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.15)',
+        lg: '0 2px 15px 0 rgba(0, 0, 0, 0.2)',
       },
       lineHeight: {
         tight: '1.15',
@@ -109,7 +110,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      translate: ['group-hover'],
+      translate: ['group-hover', 'group-focus'],
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography')],
