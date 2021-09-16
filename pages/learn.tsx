@@ -1,32 +1,61 @@
 // Scripts
 import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 // Interfaces
-import { PageInfo, PagePartial } from '@/interfaces/page-info';
+import { PageInfo, PagePartialGroup } from '@/interfaces/page-info';
+// Data
+import learningAtSitecore from '@/data/promos/learning-at-sitecore';
 // Components
 import GenericContentPage from '@/components/layout/GenericContentPage';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('learn');
-  const partials = await getPartialsAsArray([
-    'learn/starterkits',
-    'learn/gettingstarted',
-    'learn/learningSitecore',
+
+  const starterKits = await getPartialsAsArray([
+    'learn/starter-kits/sitecore-starter-kits',
+    'learn/starter-kits/ordercloud',
   ]);
+  const gettingStarted = await getPartialsAsArray([
+    'learn/getting-started/composable-dxp',
+    'learn/getting-started/platform-dxp',
+    'learn/getting-started/platform-dxp-development-frameworks',
+    'learn/getting-started/product-features',
+  ]);
+
+  const partialGroups = [
+    {
+      title: 'Starter Kits',
+      description:
+        'Do you want to quickly see how something can be done? These starter kits will let you dig into the code and see how to use the APIs.',
+      partials: starterKits,
+    },
+    {
+      title: 'Getting Started',
+      description:
+        'Do you want to dive in and get started right now? These tutorials, walkthroughs, and samples should help you understand the basics.',
+      partials: gettingStarted,
+    },
+  ];
 
   return {
     props: {
       pageInfo,
-      partials,
+      partialGroups,
     },
   };
 }
 
-export default function Learn({
-  pageInfo,
-  partials,
-}: {
+type LearnPageProps = {
   pageInfo: PageInfo;
-  partials: PagePartial[];
-}) {
-  return <GenericContentPage pageInfo={pageInfo} partials={partials} />;
-}
+  partialGroups: PagePartialGroup[];
+};
+
+const LearnPage = ({ pageInfo, partialGroups }: LearnPageProps): JSX.Element => (
+  <GenericContentPage
+    pageInfo={pageInfo}
+    partialGroups={partialGroups}
+    hasGrid={true}
+    promoAfter={learningAtSitecore}
+  />
+);
+
+export default LearnPage;

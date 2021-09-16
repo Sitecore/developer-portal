@@ -39,3 +39,9 @@ export type PagePartial = {
   content: string;
   title: string;
 };
+
+export type PagePartialGroup = {
+  title: string;
+  description?: string;
+  partials: PagePartial[];
+};
