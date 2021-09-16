@@ -1,12 +1,10 @@
 // Global
-import axios from 'axios';
-// Integrations
-import { StackExchangeQuestion } from '@/interfaces/integrations';
+import axios, { AxiosResponse } from 'axios';
+// Interfaces
+import type { StackExchangeQuestion } from '@/interfaces/integrations';
 
 type StackExchangeResponse = {
-  data: {
-    items: StackExchangeQuestion[];
-  };
+  items: StackExchangeQuestion[];
 };
 
 const get = async (args?: string | string[]): Promise<StackExchangeQuestion[]> => {
@@ -29,10 +27,10 @@ const get = async (args?: string | string[]): Promise<StackExchangeQuestion[]> =
     .get(
       `https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=sitecore${tagParams}`
     )
-    .then((response: StackExchangeResponse) => {
+    .then((response: AxiosResponse<StackExchangeResponse>) => {
       return response.data.items.slice(0, 3);
     })
-    .catch((err) => {
+    .catch(() => {
       return [];
     });
 };

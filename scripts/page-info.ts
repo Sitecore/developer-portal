@@ -11,7 +11,8 @@ import type {
   PagePartials,
 } from '@/interfaces/page-info';
 // Components
-import stackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
+import StackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
+import YouTubeApi from '@/components/integrations/youtube/YouTube.api';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
@@ -67,7 +68,8 @@ export const getPageInfo = async (
    *
    * All of these APIs will return an empty array if the corresponding meta key is null
    */
-  pageInfo.stackexchange = await stackExchangeApi.get(meta.stackexchange);
+  pageInfo.stackexchange = await StackExchangeApi.get(meta.stackexchange);
+  pageInfo.youtube = await YouTubeApi.get(meta.youtube);
 
   return pageInfo;
 };

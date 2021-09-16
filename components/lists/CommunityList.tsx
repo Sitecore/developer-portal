@@ -35,17 +35,18 @@ const CommunityList = ({ className }: CommunityListProps): JSX.Element => (
               {link.linkText}
               <span
                 className={classnames(
-                  'h-4',
+                  'duration-300',
+                  'h-5',
                   'inline-block',
                   'ml-2',
                   'transform-gpu',
                   'transition-transform',
-                  'w-4',
-                  'group-hover:translate-x-2',
-                  'group-focus:translate-x-2'
+                  'w-5',
+                  'group-focus:translate-x-1',
+                  'group-hover:translate-x-1'
                 )}
               >
-                <SvgIcon icon="quick-links" className={classnames('text-red')} />
+                <SvgIcon icon="arrow-right" className={classnames('text-red')} />
               </span>
             </a>
           </Link>
