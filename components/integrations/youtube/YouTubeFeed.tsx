@@ -47,7 +47,7 @@ const YouTubeFeed = ({
           <li key={id}>
             <div className={classnames('aspect-w-16', 'aspect-h-9', 'mb-2')}>
               <iframe
-                className={classnames('w-full')}
+                className={classnames('w-full', 'bg-gray-light')}
                 src={`https://www.youtube.com/embed/${snippet.resourceId.videoId}?enablejsapi=1`}
                 allowFullScreen
               ></iframe>

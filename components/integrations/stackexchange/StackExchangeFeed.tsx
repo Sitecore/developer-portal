@@ -62,9 +62,9 @@ const StackExchangeFeed = ({
                 <a
                   href={question.link}
                   target="_blank"
-                  className={classnames('font-semibold', 'hover:underline')}
+                  className={classnames('font-semibold', 'hover:underline', 'inline-block')}
                 >
-                  <p>{question.title}</p>
+                  {question.title}
                   <span className="sr-only">Opens in a new tab</span>
                 </a>
                 {question.tags.length && (
