@@ -9,20 +9,6 @@ const Footer = (): JSX.Element => {
         size="standard"
         className={classnames('flex', 'container', 'flex-col', 'px-4', 'sm:px-0')}
       >
-        <div className={classnames('flex', 'flex-col', 'mb-4')}>
-          <a className={classnames('mb-8', 'underline')} href="/help">
-            <h2>Need help?</h2>
-          </a>
-          <a
-            className="flex items-center"
-            href="https://developers.sitecore.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="mr-2">Powered by </span>
-            <Image src="/sitecore-white.svg" alt="Sitecore Logo" width={72} height={16} />
-          </a>
-        </div>
         <div className={classnames('inline-flex', 'mb-4')}>
           <a
             className={classnames('mr-6')}
