@@ -31,5 +31,5 @@ export default function Discover({
   pageInfo: PageInfo;
   partials: PagePartial[];
 }) {
-  return <GenericContentPage pageInfo={pageInfo} partials={partials} />;
+  return <GenericContentPage pageInfo={pageInfo} partials={partials} hasGrid={true} />;
 }

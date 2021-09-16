@@ -12,22 +12,29 @@ import Layout from './Layout';
 type GenericContentPageProps = {
   pageInfo: PageInfo;
   partials: PagePartial[];
+  hasGrid?: boolean;
 };
 
-const GenericContentPage = ({ pageInfo, partials }: GenericContentPageProps) => (
+const hasGridClasses = classnames('bg-gray-lightest', 'py-16');
+
+const GenericContentPage = ({ pageInfo, partials, hasGrid }: GenericContentPageProps) => (
   <Layout pageInfo={pageInfo}>
-    <Container>
-      <div className={classnames('grid', 'gap-6', 'md:grid-cols-4')}>
-        {pageInfo.hasInPageNav && <InPageNav partials={partials} />}
-        <div
-          className={classnames({
-            'col-span-3': pageInfo.hasInPageNav,
-            'col-span-4': !pageInfo.hasInPageNav,
-          })}
-        >
-          <MarkdownContent partials={partials} />
+    <div className={classnames('mb-16', { [hasGridClasses]: hasGrid })}>
+      <Container>
+        <div className={classnames('grid', 'gap-6', 'mb-16', 'md:grid-cols-4')}>
+          {pageInfo.hasInPageNav && <InPageNav partials={partials} />}
+          <div
+            className={classnames({
+              'col-span-3': pageInfo.hasInPageNav,
+              'col-span-4': !pageInfo.hasInPageNav,
+            })}
+          >
+            <MarkdownContent partials={partials} hasGrid={hasGrid} />
+          </div>
         </div>
-      </div>
+      </Container>
+    </div>
+    <Container>
       <SocialFeeds pageInfo={pageInfo} />
     </Container>
   </Layout>

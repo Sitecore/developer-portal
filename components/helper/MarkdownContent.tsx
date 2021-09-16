@@ -6,15 +6,19 @@ import getSectionId from '@/lib/section-id';
 
 type MarkdownContentProps = {
   partials: PagePartial[];
-  idSeed?: string;
+  hasGrid?: boolean;
 };
 
-const MarkdownContent = ({ partials }: MarkdownContentProps): JSX.Element => (
-  <div>
+const gridClasses = classnames('grid', 'gap-6', 'md:grid-cols-2');
+const gridItemClasses = classnames('p-8', 'border', 'border-gray-light', 'bg-white');
+
+const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): JSX.Element => (
+  <div className={classnames({ [gridClasses]: hasGrid })}>
     {partials.map((item, i) => (
       <div
         className={classnames('prose', {
-          'mb-16': i !== partials.length,
+          'mb-16': i !== partials.length && !hasGrid,
+          [gridItemClasses]: hasGrid,
         })}
         key={i}
         id={getSectionId(item.title)}
