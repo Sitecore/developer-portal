@@ -28,7 +28,7 @@ const get = async (args?: string | string[]): Promise<StackExchangeQuestion[]> =
       `https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=sitecore${tagParams}`
     )
     .then((response: AxiosResponse<StackExchangeResponse>) => {
-      return response.data.items.slice(0, 3);
+      return response.data.items.slice(0, 4);
     })
     .catch(() => {
       return [];

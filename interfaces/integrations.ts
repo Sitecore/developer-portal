@@ -4,6 +4,8 @@ export type StackExchangeQuestion = {
   link: string;
   question_id: string;
   title: string;
+  view_count: string;
+  tags: string[];
 };
 
 export type Tweet = {};
