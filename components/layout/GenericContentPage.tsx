@@ -41,7 +41,7 @@ const Content = (
   }
 
   if (!!partials) {
-    <MarkdownContent partials={partials} hasGrid={hasGrid} />;
+    return <MarkdownContent partials={partials} hasGrid={hasGrid} />;
   }
 
   return <></>;
