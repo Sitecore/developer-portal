@@ -72,7 +72,7 @@ const StackExchangeFeed = ({
                     <p className="sr-only">Tags:</p>
                     <ul className={classnames('flex', 'flex-wrap')}>
                       {question.tags.map((tag) => (
-                        <li>
+                        <li key={`${question.question_id}-${tag}}`}>
                           <a
                             href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`}
                             target="_blank"
