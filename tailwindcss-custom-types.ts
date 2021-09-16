@@ -1,4 +1,5 @@
-import { NavTWClasses } from '@/components/site/Nav/Nav';
+import type { NavTWClasses } from '@/components/site/Nav/Nav';
+import type { InPageNavTWClasses } from '@/components/layout/InPageNav/InPageNav';
 
 type SCDPTailwindTypes =
   | 'px-gutter-all'
@@ -8,6 +9,7 @@ type SCDPTailwindTypes =
   | 'heading-sm'
   | 'heading-xs'
   | NavTWClasses
+  | InPageNavTWClasses
   // @TODO - some transform utilities that are enabled by default
   // aren't being added to the classname gen. Why?
   | 'transform-none'

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ValidHeadingLevels } from '@/interfaces/heading-levels';
 // Components
 import DynamicTag from '@/components/helper/DynamicTag';
+import { classnames } from '@/tailwindcss-classnames';
 
 export type ProductCategoryCardProps = {
   containerTag?: 'div' | 'li';
@@ -20,10 +21,19 @@ const ProductCategoryCard = ({
   href,
   title,
 }: ProductCategoryCardProps): JSX.Element => (
-  <DynamicTag tag={containerTag}>
-    <DynamicTag tag={headingLevel}>{title}</DynamicTag>
-    <p>{description}</p>
-    <Link href={href}>Learn more...</Link>
+  <DynamicTag
+    tag={containerTag}
+    className={classnames('bg-white', 'border-gray-light', 'border', 'px-6', 'py-12', 'relative')}
+  >
+    <DynamicTag tag={headingLevel} className={classnames('heading-sm', 'mb-1')}>
+      <Link href={href}>
+        <a className={classnames('hover:underline', 'focus:underline')}>
+          {title}
+          <span className={classnames('absolute', 'inset-0', 'z-10')}></span>
+        </a>
+      </Link>
+    </DynamicTag>
+    <p className={classnames('text-sm', 'text-gray-dark')}>{description}</p>
   </DynamicTag>
 );
 

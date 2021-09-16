@@ -2,10 +2,11 @@ import { StackExchangeQuestion, Tweet, YouTubeVideo } from './integrations';
 
 type PageInfoCore = {
   description?: string;
-  id?: string;
-  title: string;
+  hasInPageNav?: boolean;
   heroImage?: string;
+  id?: string;
   partials?: string[];
+  title: string;
 };
 
 // Input for 3rd party integrations are just strings
@@ -29,6 +30,12 @@ export type ChildPageInfo = {
   title: string;
 };
 
+// @TODO: Rename this
 export type PagePartials = {
   [name: string]: string;
+};
+
+export type PagePartial = {
+  content: string;
+  title: string;
 };
