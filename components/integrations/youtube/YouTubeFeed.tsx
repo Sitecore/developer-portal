@@ -19,7 +19,7 @@ const YouTubeFeed = ({ content }: YouTubeFeedProps): JSX.Element => {
             <div className={classnames('aspect-w-16', 'aspect-h-9')}>
               <iframe
                 className={classnames('w-full')}
-                src={`http://www.youtube.com/embed/${snippet.resourceId.videoId}?enablejsapi=1`}
+                src={`https://www.youtube.com/embed/${snippet.resourceId.videoId}?enablejsapi=1`}
                 allowFullScreen
               ></iframe>
             </div>
