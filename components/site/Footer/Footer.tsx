@@ -82,7 +82,7 @@ const Footer = (): JSX.Element => {
           </a>
         </div>
         <div className={classnames('flex-col', 'sm:flex-row', 'flex', 'text-2xs', 'font-thin')}>
-          <p className={classnames('tracking-widest')}>
+          <p className={classnames('tracking-widest', 'mb-4', 'sm:mb-0')}>
             © Copyright <span>{new Date().getFullYear()}</span>, Sitecore. All Rights Reserved
           </p>
           <ul>
@@ -96,13 +96,23 @@ const Footer = (): JSX.Element => {
                 'sm:ml-2'
               )}
             >
-              <a className={classnames('font-semibold')} href="/trust" target="">
+              <a
+                className={classnames('font-semibold')}
+                href="https://www.sitecore.com/trust"
+                target="_blank"
+              >
                 Legal
+                <span className={classnames('sr-only')}>Opens in a new tab</span>
               </a>
             </li>
             <li className={classnames('inline-block', 'border-l', 'px-2')}>
-              <a className={classnames('font-semibold')} href="/trust/privacy-policy" target="">
+              <a
+                className={classnames('font-semibold')}
+                href="https://www.sitecore.com/trust/privacy-policy"
+                target="_blank"
+              >
                 Privacy
+                <span className={classnames('sr-only')}>Opens in a new tab</span>
               </a>
             </li>
           </ul>

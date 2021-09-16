@@ -25,6 +25,8 @@ type YouTubeSnippet = {
     medium: YouTubeThumbnail;
   };
   title: string;
+  description: string;
+  playlistId: string;
 };
 
 export type YouTubeVideo = {

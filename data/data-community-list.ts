@@ -27,7 +27,7 @@ const content: CommunityListItem[] = [
 ];
 
 const communityListData = {
-  title: 'Join these cool Sitecore Communities 🤖',
+  title: 'Join these cool Sitecore Communities',
   content,
 };
 

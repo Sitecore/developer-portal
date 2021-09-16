@@ -17,7 +17,7 @@ export type HeroProps = {
 };
 
 const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JSX.Element => (
-  <header className={classnames('py-11', 'px-gutter-all', 'relative')}>
+  <header className={classnames('py-14', 'relative')}>
     <Container
       size="standard"
       className={classnames('grid', 'md:grid-cols-9', 'gap-16', 'lg:items-center', {

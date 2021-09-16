@@ -26,38 +26,38 @@ export async function getStaticProps() {
 
 const productSolutions: CategoryTileProps[] = [
   {
-    title: 'Content Management (CMS) 💾 →',
+    title: 'Content Management (CMS)',
     description:
       'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.',
     href: '/content-management/',
   },
   {
-    title: 'Digital Asset Management (DAM) 📀 →',
+    title: 'Digital Asset Management (DAM)',
     description: 'Scale management and delivery of media and static assets',
     href: '/digital-asset-management/dam',
   },
   {
-    title: 'Customer Data Management 👨‍👨‍👧‍👧 →',
+    title: 'Customer Data Management',
     description: 'Track events, activity, and customer profile information',
     href: '/customer-data-management/',
   },
   {
-    title: 'Personalization and Testing 🕵️‍♀️ →',
+    title: 'Personalization and Testing',
     description: 'Deliver personalized content and test which content is working',
     href: '/personalization-testing/',
   },
   {
-    title: 'Marketing Automation 🚗 →',
+    title: 'Marketing Automation',
     description: 'Connect with customers using marketing automation',
     href: '/marketing-automation/',
   },
   {
-    title: 'Commerce 💸 →',
+    title: 'Commerce',
     description: 'Build out order management, merchandising, marketplaces, and storefronts',
     href: '/commerce/',
   },
   {
-    title: 'DevOps 🚢 →',
+    title: 'DevOps',
     description: 'Installation, deployment, and architecture',
     href: '/devops/',
   },
@@ -69,13 +69,23 @@ type HomePageProps = {
 
 const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
   <Layout pageInfo={pageInfo}>
-    <Container>
-      <YouTubeFeed content={pageInfo.youtube} />
-      <CommunityList className={classnames('mb-11')} />
+    <Container className={classnames('mb-16')}>
+      <YouTubeFeed
+        content={pageInfo.youtube}
+        className={classnames('mb-24')}
+        title="Videos Title"
+      />
+      <CommunityList />
     </Container>
     <section className={classnames('bg-gray-lightest', 'py-16', 'mb-16')}>
       <Container>
-        <h2 className={classnames('heading-md', 'mb-4')}>Navigation Title</h2>
+        <div className={classnames('mb-8', 'max-w-prose')}>
+          <h2 className={classnames('heading-md', 'mb-4')}>Explore Sitecore by Solution</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quam accusamus neque
+            hic non cumque vitae, illum fugiat quibusdam est?
+          </p>
+        </div>
         <CategoryTileList cards={productSolutions} />
       </Container>
     </section>

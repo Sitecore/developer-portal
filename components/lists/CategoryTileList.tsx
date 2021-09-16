@@ -11,7 +11,7 @@ type CategoryTileListProps = {
 };
 
 const CategoryTileList = ({ cards, headingLevel = 'h2' }: CategoryTileListProps): JSX.Element => (
-  <ul className={classnames('grid', 'gap-6', 'mb-11', 'md:grid-cols-2')}>
+  <ul className={classnames('grid', 'gap-6', 'md:grid-cols-2')}>
     {cards.map((card, i) => (
       <CategoryTile key={i} containerTag="li" headingLevel={headingLevel} {...card} />
     ))}
