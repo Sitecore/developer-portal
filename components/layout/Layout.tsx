@@ -42,9 +42,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           description={pageInfo.description}
           image={pageInfo.heroImage}
         />
-        <div className={classnames('px-gutter-all')}>
-          <Container>{children}</Container>
-        </div>
+        {children}
       </main>
     </div>
   );

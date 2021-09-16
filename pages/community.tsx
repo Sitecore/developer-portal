@@ -1,19 +1,19 @@
+// Global
+import ReactMarkdown from 'react-markdown';
 // Scripts
 import { getPageInfo, getPartials } from '@/scripts/page-info';
 // Interfaces
 import { PageInfo, PagePartials } from '@/interfaces/page-info';
 // Components
 import Layout from '@/components/layout/Layout';
-import MarkdownGrid from '@/components/helper/MarkdownGrid';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
+import CommunityList from '@/components/lists/CommunityList';
+import Container from '@/components/helper/Container';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('community');
   const partials = await getPartials({
-    slack: 'community/slack',
-    stackExchange: 'community/stackexchange',
-    forums: 'community/forums',
     mvpSite: 'community/mvp',
   });
 
@@ -34,11 +34,12 @@ export default function Community({
 }) {
   return (
     <Layout pageInfo={pageInfo}>
-      <MarkdownGrid
-        partials={[partials.slack, partials.stackExchange, partials.forums, partials.mvpSite]}
-      />
-      <TwitterFeed content={pageInfo.twitter} />
-      <StackExchangeFeed content={pageInfo.stackexchange} />
+      <Container>
+        <CommunityList />
+        <ReactMarkdown>{partials.mvpSite}</ReactMarkdown>
+        <TwitterFeed content={pageInfo.twitter} />
+        <StackExchangeFeed content={pageInfo.stackexchange} />
+      </Container>
     </Layout>
   );
 }

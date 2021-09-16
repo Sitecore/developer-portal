@@ -37,6 +37,7 @@ const Container = ({ size = 'standard', children, className }: ContainerProps): 
   return (
     <div
       className={classnames(
+        'px-gutter-all',
         sizes[validSize].width,
         {
           [sizes[validSize].margin as string]: hasMarginModifiers,

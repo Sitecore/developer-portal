@@ -6,7 +6,7 @@ import { ValidHeadingLevels } from '@/interfaces/heading-levels';
 import DynamicTag from '@/components/helper/DynamicTag';
 import { classnames } from '@/tailwindcss-classnames';
 
-export type ProductCategoryCardProps = {
+export type CategoryTileProps = {
   containerTag?: 'div' | 'li';
   description: string;
   headingLevel?: ValidHeadingLevels;
@@ -14,20 +14,28 @@ export type ProductCategoryCardProps = {
   title: string;
 };
 
-const ProductCategoryCard = ({
+const CategoryTile = ({
   containerTag = 'li',
   description,
   headingLevel = 'h4',
   href,
   title,
-}: ProductCategoryCardProps): JSX.Element => (
+}: CategoryTileProps): JSX.Element => (
   <DynamicTag
     tag={containerTag}
-    className={classnames('bg-white', 'border-gray-light', 'border', 'px-6', 'py-12', 'relative')}
+    className={classnames(
+      'bg-white',
+      'border-gray-light',
+      'border',
+      'px-6',
+      'py-12',
+      'relative',
+      'hover:shadow-lg'
+    )}
   >
     <DynamicTag tag={headingLevel} className={classnames('heading-sm', 'mb-1')}>
       <Link href={href}>
-        <a className={classnames('hover:underline', 'focus:underline')}>
+        <a>
           {title}
           <span className={classnames('absolute', 'inset-0', 'z-10')}></span>
         </a>
@@ -37,4 +45,4 @@ const ProductCategoryCard = ({
   </DynamicTag>
 );
 
-export default ProductCategoryCard;
+export default CategoryTile;
