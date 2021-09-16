@@ -1,10 +1,9 @@
 // Global
 import { classnames, TTailwindString } from '@/tailwindcss-classnames';
-import Link from 'next/link';
 // Data
 import data from '@/data/data-community-list';
 // Components
-import SvgIcon from '@/components/helper/SvgIcon';
+import TextLink from '@/components/helper/TextLink';
 
 type CommunityListProps = {
   className?: TTailwindString;
@@ -20,36 +19,7 @@ const CommunityList = ({ className }: CommunityListProps): JSX.Element => (
             <h3 className={classnames('heading-sm', 'mb-2')}>{link.title}</h3>
             <p className={classnames('text-sm', 'text-gray-dark', 'mb-6')}>{link.description}</p>
           </div>
-          <Link href={link.href}>
-            <a
-              className={classnames(
-                'group',
-                'font-bold',
-                'text-sm',
-                'flex',
-                'items-center',
-                'hover:underline',
-                'focus:underline'
-              )}
-            >
-              {link.linkText}
-              <span
-                className={classnames(
-                  'duration-300',
-                  'h-5',
-                  'inline-block',
-                  'ml-2',
-                  'transform-gpu',
-                  'transition-transform',
-                  'w-5',
-                  'group-focus:translate-x-1',
-                  'group-hover:translate-x-1'
-                )}
-              >
-                <SvgIcon icon="arrow-right" className={classnames('text-red')} />
-              </span>
-            </a>
-          </Link>
+          <TextLink href={link.href} text={link.linkText} />
         </li>
       ))}
     </ul>

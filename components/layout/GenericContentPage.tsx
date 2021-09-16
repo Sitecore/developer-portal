@@ -21,7 +21,7 @@ const GenericContentPage = ({ pageInfo, partials, hasGrid }: GenericContentPageP
   <Layout pageInfo={pageInfo}>
     <div className={classnames('mb-16', { [hasGridClasses]: hasGrid })}>
       <Container>
-        <div className={classnames('grid', 'gap-6', 'mb-16', 'md:grid-cols-4')}>
+        <div className={classnames('grid', 'gap-6', 'md:grid-cols-4')}>
           {pageInfo.hasInPageNav && <InPageNav partials={partials} />}
           <div
             className={classnames({
