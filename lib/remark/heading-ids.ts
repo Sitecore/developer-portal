@@ -11,6 +11,7 @@ type HeaderNodeData = {
       id?: string;
     };
   };
+  depth?: number;
 };
 
 /**
@@ -21,7 +22,7 @@ type HeaderNodeData = {
 const setHeadingIds = () => {
   return (node: HeaderNodeData) => {
     visit(node, 'heading', (node: HeaderNodeData) => {
-      if (!node.children) {
+      if (!node.children || node?.depth !== 2) {
         return;
       }
 
