@@ -75,7 +75,6 @@ const NavMenu = ({ title, children, buttonIcon, callback }: NavMenuProps): JSX.E
           }
         )}
         onClick={toggleNavItem}
-        aria-labelledby="nav-helper-label"
       >
         <span className={classnames('inline-flex', 'items-center', 'pointer-events-none')}>
           {buttonIcon && (
@@ -161,7 +160,6 @@ const NavMenu = ({ title, children, buttonIcon, callback }: NavMenuProps): JSX.E
             'hover:bg-teal-dark'
           )}
           onClick={toggleNavItem}
-          aria-labelledby="nav-helper-label"
         >
           Back
           <span className={classnames('absolute', 'top-5', 'left-4', 'block', 'h-em', 'w-em')}>

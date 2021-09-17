@@ -19,7 +19,9 @@ const CommunityList = ({ className }: CommunityListProps): JSX.Element => (
             <h3 className={classnames('heading-sm', 'mb-2')}>{link.title}</h3>
             <p className={classnames('text-sm', 'text-gray-dark', 'mb-6')}>{link.description}</p>
           </div>
-          <TextLink href={link.href} text={link.linkText} />
+          <div>
+            <TextLink href={link.href} text={link.linkText} />
+          </div>
         </li>
       ))}
     </ul>

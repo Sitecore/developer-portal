@@ -1,7 +1,7 @@
 // Global
 import { useEffect } from 'react';
 import Script from 'next/script';
-import router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import { resetId } from 'react-id-generator';
@@ -13,6 +13,8 @@ import Nav from '@/components/site/Nav/Nav';
 import Footer from '@/components/site/Footer/Footer';
 
 function SCDPApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   // Reset id counter during SSR
   resetId();
 

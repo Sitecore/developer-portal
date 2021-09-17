@@ -1,11 +1,11 @@
 // Global
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { classnames } from '@/tailwindcss-classnames';
 // Interfaces
 import type { PageInfo } from '@/interfaces/page-info';
 // Components
 import Hero from '@/components/heros/Hero';
-import Container from '@/components/helper/Container';
 
 type LayoutProps = {
   pageInfo: PageInfo;
@@ -13,15 +13,46 @@ type LayoutProps = {
 };
 
 const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
+  const publicUrl = process.env.PUBLIC_URL ? process.env.PUBLIC_URL : '';
+  const { asPath } = useRouter();
+  const path = asPath.split(/[?#]/)[0];
+
   return (
     <div>
       <Head>
         <title>{pageInfo.title}</title>
-        <meta name="description" content={pageInfo.description} />
+        <link rel="icon" href={`${publicUrl}/favicon.png`} />
+        {/* Preload our two most heavily used webfonts, reduce chance of FOUT */}
         <link
-          rel="icon"
-          href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png"
+          rel="preload"
+          href={`/fonts/AvenirNext-Regular--latin.woff2`}
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href={`/fonts/AvenirNext-Bold--latin.woff2`}
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        {/*
+          Necessary Meta tags, including Social tags.
+          It's OK if they're empty, same as not printing them.
+        */}
+        <meta property="description" content={pageInfo.description} />
+        <meta property="og:site_name" content="Sitecore Development Portal" />
+        <meta property="og:title" content={pageInfo.title} />
+        <meta property="og:description" content={pageInfo.description} />
+        <meta property="og:url" content={`${publicUrl}${path}`} />
+        <meta
+          property="og:image"
+          content={`${publicUrl}${
+            pageInfo.heroImage ? pageInfo.heroImage : '/images/social/social-card-default.jpeg'
+          }`}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main className={classnames('mb-16')}>
         {/* Temporary "Under Constructions Banner" */}

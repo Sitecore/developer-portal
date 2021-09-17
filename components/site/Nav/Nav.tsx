@@ -60,7 +60,7 @@ const Nav = (): JSX.Element => {
         <Link href="/">
           <a className={classnames('flex', 'items-center', 'mr-8', 'flex-shrink-0')}>
             <span className={classnames('block', 'relative', 'w-36', 'h-9', 'lg:w-48', 'lg:h-12')}>
-              <Image src="/sitecore.svg" layout="fill" />
+              <Image src="/sitecore.svg" layout="fill" alt="Sitecore Logo" />
             </span>
             <span className={classnames('sr-only')}>Sitecore</span>
             <span
