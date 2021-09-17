@@ -26,7 +26,11 @@ const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JS
         [HeroWithImageClasses]: !!image,
       })}
     >
-      <div className={classnames('md:col-span-5', 'lg:pr-24')}>
+      <div
+        className={classnames('lg:pr-24', {
+          ['md:col-span-5']: !!image,
+        })}
+      >
         <DynamicTag tag={headingLevel} className={classnames('heading-lg', 'mb-5', 'relative')}>
           {title}
           <SvgIcon

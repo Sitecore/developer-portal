@@ -1,5 +1,6 @@
 // Global
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { classnames } from '@/tailwindcss-classnames';
 // Interfaces
 import type { PageInfo } from '@/interfaces/page-info';
@@ -12,16 +13,15 @@ type LayoutProps = {
 };
 
 const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
+  const publicUrl = process.env.PUBLIC_URL ? process.env.PUBLIC_URL : '';
+  const { asPath } = useRouter();
+  const path = asPath.split(/[?#]/)[0];
+
   return (
     <div>
       <Head>
         <title>{pageInfo.title}</title>
-        <link
-          rel="icon"
-          href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png"
-        />
-
-        <link rel="icon" href={`/favicon.png`} />
+        <link rel="icon" href={`${publicUrl}/favicon.png`} />
         {/* Preload our two most heavily used webfonts, reduce chance of FOUT */}
         <link
           rel="preload"
@@ -44,12 +44,15 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         <meta property="description" content={pageInfo.description} />
         <meta property="og:site_name" content="Sitecore Development Portal" />
         <meta property="og:title" content={pageInfo.title} />
-        <meta property="og:description" content={pageInfo.title} />
-        {/* {publicUrl && pageInfo.heroImage (
-          <meta property="og:image" content={`${publicUrl}${pageInfo.heroImage}`} />
-          <meta property="og:url" content={`${publicUrl}${pagePath}`} />
-          <meta name="twitter:card" content="summary_large_image" />
-        )} */}
+        <meta property="og:description" content={pageInfo.description} />
+        <meta property="og:url" content={`${publicUrl}${path}`} />
+        <meta
+          property="og:image"
+          content={`${publicUrl}${
+            pageInfo.heroImage ? pageInfo.heroImage : '/images/social/social-card-default.jpeg'
+          }`}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <main className={classnames('mb-16')}>
         {/* Temporary "Under Constructions Banner" */}

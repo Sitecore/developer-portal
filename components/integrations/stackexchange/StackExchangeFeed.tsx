@@ -47,7 +47,7 @@ const StackExchangeFeed = ({
                 className={classnames(
                   'text-center',
                   'bg-gray-lightest',
-                  'text-gray-dark',
+                  'text-gray-darkest',
                   'p-2',
                   'leading-tight',
                   'mr-4',

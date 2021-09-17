@@ -48,6 +48,7 @@
 
   /*  Highlight links that do not have an href or that have # for "authoring" assistance */
   a:not([href]),
+  a[href=""],
   a[href="#"],
   a[href="/#"] {
     color: theme('colors.red') !important;
