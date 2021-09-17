@@ -13,13 +13,6 @@ type HeaderNodeData = {
   };
 };
 
-type HeadingData = {
-  id?: string;
-  hProperties?: {
-    id?: string;
-  };
-};
-
 /**
  * Transforms all h tags to add an id based on the text value of the heading
  *

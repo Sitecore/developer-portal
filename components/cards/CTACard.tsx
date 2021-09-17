@@ -1,24 +1,33 @@
 // Global
 import Link from 'next/link';
-import { classnames, TTailwindString } from '@/tailwindcss-classnames';
+import { classnames } from '@/tailwindcss-classnames';
 // Interfaces
 import type { ValidHeadingLevels } from '@/interfaces/heading-levels';
 // Data
-import data from '@/data/data-get-help';
+import data from '@/data/promos/get-help';
 // Components
 import DynamicTag from '@/components/helper/DynamicTag';
 
-type GetHelpProps = {
-  className?: TTailwindString;
+export type CTACardProps = {
+  description: string;
   headingLevel?: ValidHeadingLevels;
+  href: string;
+  linkText: string;
+  title: string;
 };
 
-const GetHelp = ({ className, headingLevel = 'h2' }: GetHelpProps): JSX.Element => (
-  <div className={classnames('w-full', 'bg-gray-lightest', 'px-16', 'py-10', 'mb-16', className)}>
+const CTACard = ({
+  description,
+  headingLevel = 'h2',
+  href,
+  linkText,
+  title,
+}: CTACardProps): JSX.Element => (
+  <div className={classnames('w-full', 'bg-gray-lightest', 'px-16', 'py-10')}>
     <DynamicTag tag={headingLevel} className={classnames('heading-md', 'mb-4')}>
-      {data.title}
+      {title}
     </DynamicTag>
-    <p className={classnames('text-gray-darkest', 'mb-6')}>{data.description}</p>
+    <p className={classnames('text-gray-darkest', 'mb-6')}>{description}</p>
     <Link href={data.href}>
       <a
         className={classnames(
@@ -33,10 +42,10 @@ const GetHelp = ({ className, headingLevel = 'h2' }: GetHelpProps): JSX.Element 
           'text-white'
         )}
       >
-        {data.linkText}
+        {linkText}
       </a>
     </Link>
   </div>
 );
 
-export default GetHelp;
+export default CTACard;

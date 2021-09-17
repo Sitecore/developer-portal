@@ -30,10 +30,6 @@ export type ChildPageInfo = {
   title: string;
 };
 
-export type PagePartialContentDict = {
-  [name: string]: string;
-};
-
 export type PartialData = {
   content: string[];
   titles: string[];
