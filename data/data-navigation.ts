@@ -94,7 +94,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Experience Edge for XM',
-            url: '#',
+            url: '/#',
           },
           {
             title: 'Sitecore Experience Accelerator (SXA)',
@@ -150,7 +150,7 @@ const NavigationData: NavigationData[] = [
         children: [
           {
             title: 'OrderCloud',
-            url: '/commerce/ordercloud',
+            url: '/commerce/orderCloud',
           },
           {
             title: 'Sitecore Experience Platform',
@@ -210,15 +210,15 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Headless',
-            url: '#',
+            url: '/#',
           },
           {
             title: 'Developer Collection',
-            url: '#',
+            url: '/#',
           },
           {
             title: 'Experience Edge for XM',
-            url: '#',
+            url: '/#',
           },
           {
             title: 'Sitecore Experience Accelerator (SXA)',
@@ -249,7 +249,7 @@ const NavigationData: NavigationData[] = [
       },
       {
         title: 'Sitecore OrderCloud',
-        url: '/commerce/ordercloud',
+        url: '/commerce/orderCloud',
       },
       {
         title: 'Sitecore Experience Commerce',
