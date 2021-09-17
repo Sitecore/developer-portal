@@ -9,10 +9,13 @@ import type { PageInfo } from '@/interfaces/page-info';
 import CategoryTileList from '@/components/lists/CategoryTileList';
 import CommunityList from '@/components/lists/CommunityList';
 import Container from '@/components/helper/Container';
-import GetHelp from '@/components/cards/GetHelp';
+import CTACard from '@/components/cards/CTACard';
 import Layout from '@/components/layout/Layout';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
+// Data
+import getHelpCta from '@/data/promos/get-help';
+import VerticalGroup from '@/components/helper/VerticalGroup';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
@@ -69,30 +72,32 @@ type HomePageProps = {
 
 const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
   <Layout pageInfo={pageInfo}>
-    <Container className={classnames('mb-16')}>
-      <YouTubeFeed
-        content={pageInfo.youtube}
-        className={classnames('mb-24')}
-        title="Videos Title"
-      />
-      <CommunityList />
-    </Container>
-    <section className={classnames('bg-gray-lightest', 'py-16', 'mb-16')}>
+    <VerticalGroup>
       <Container>
-        <div className={classnames('mb-8', 'max-w-prose')}>
-          <h2 className={classnames('heading-md', 'mb-4')}>Explore Sitecore by Solution</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quam accusamus neque
-            hic non cumque vitae, illum fugiat quibusdam est?
-          </p>
-        </div>
-        <CategoryTileList cards={productSolutions} />
+        <VerticalGroup size="lg">
+          <YouTubeFeed content={pageInfo.youtube} title="Videos Title" />
+          <CommunityList />
+        </VerticalGroup>
       </Container>
-    </section>
-    <Container>
-      <GetHelp />
-      <StackExchangeFeed content={pageInfo.stackexchange} />
-    </Container>
+      <section className={classnames('bg-gray-lightest', 'py-16')}>
+        <Container>
+          <div className={classnames('mb-8', 'max-w-prose')}>
+            <h2 className={classnames('heading-md', 'mb-4')}>Explore Sitecore by Solution</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quam accusamus
+              neque hic non cumque vitae, illum fugiat quibusdam est?
+            </p>
+          </div>
+          <CategoryTileList cards={productSolutions} />
+        </Container>
+      </section>
+      <Container>
+        <VerticalGroup>
+          <CTACard {...getHelpCta} />
+          <StackExchangeFeed content={pageInfo.stackexchange} />
+        </VerticalGroup>
+      </Container>
+    </VerticalGroup>
   </Layout>
 );
 

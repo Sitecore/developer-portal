@@ -3,13 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 // Interfaces
-import type {
-  MarkdownMeta,
-  PageInfo,
-  ChildPageInfo,
-  PartialData,
-  PagePartialContentDict,
-} from '@/interfaces/page-info';
+import type { MarkdownMeta, PageInfo, ChildPageInfo, PartialData } from '@/interfaces/page-info';
 // Components
 import StackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
 import YouTubeApi from '@/components/integrations/youtube/YouTube.api';
@@ -72,22 +66,6 @@ export const getPageInfo = async (
   pageInfo.youtube = await YouTubeApi.get(meta.youtube);
 
   return pageInfo;
-};
-
-/**
- * Gets a list of markdown partials
- *
- * @param args An object ccontaining keyed references to partial markdown files
- * @returns An object of the same key structure with the corresponding markdown data
- */
-export const getPartials = async (
-  args: Record<string, string>
-): Promise<PagePartialContentDict> => {
-  const partials: PagePartialContentDict = {};
-  Object.entries(args).forEach(([key, val]) => {
-    partials[key] = getFileData(partialsDirectory, val).content;
-  });
-  return partials;
 };
 
 /**

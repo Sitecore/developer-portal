@@ -1,7 +1,9 @@
+// Interfaces
 import type { PageInfo } from '@/interfaces/page-info';
-import { classnames } from '@/tailwindcss-classnames';
+// Components
 import StackExchangeFeed from './stackexchange/StackExchangeFeed';
 import TwitterFeed from './twitter/TwitterFeed';
+import VerticalGroup from '@/components/helper/VerticalGroup';
 import YouTubeFeed from './youtube/YouTubeFeed';
 
 type SocialFeedsProps = {
@@ -9,17 +11,11 @@ type SocialFeedsProps = {
 };
 
 const SocialFeeds = ({ pageInfo }: SocialFeedsProps): JSX.Element => (
-  <>
-    <div className={classnames('mb-16')}>
-      <YouTubeFeed content={pageInfo.youtube} />
-    </div>
-    <div className={classnames('mb-16')}>
-      <TwitterFeed content={pageInfo.twitter} />
-    </div>
-    <div>
-      <StackExchangeFeed content={pageInfo.stackexchange} />
-    </div>
-  </>
+  <VerticalGroup>
+    <YouTubeFeed content={pageInfo.youtube} />
+    <TwitterFeed content={pageInfo.twitter} />
+    <StackExchangeFeed content={pageInfo.stackexchange} />
+  </VerticalGroup>
 );
 
 export default SocialFeeds;

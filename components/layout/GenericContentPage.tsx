@@ -10,6 +10,7 @@ import MarkdownContent from '@/components/helper/MarkdownContent';
 import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
 import SectionHeading from '@/components/helper/SectionHeading';
 import SocialFeeds from '@/components/integrations/SocialFeeds';
+import VerticalGroup from '@/components/helper/VerticalGroup';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -32,14 +33,14 @@ const Content = (
 ): JSX.Element => {
   if (!!partialGroups) {
     return (
-      <>
+      <VerticalGroup>
         {partialGroups.map((group, i) => (
-          <div className={classnames({ 'mb-16': i !== partialGroups.length - 1 })} key={i}>
+          <div key={i}>
             <SectionHeading title={group.title} description={group.description || ''} />
             <MarkdownContent partials={group.partials} hasGrid={hasGrid} />
           </div>
         ))}
-      </>
+      </VerticalGroup>
     );
   }
 
@@ -70,28 +71,34 @@ const GenericContentPage = ({
 
   return (
     <Layout pageInfo={pageInfo}>
-      <Container>
-        {promoBefore && <PromoCard {...promoBefore} className={classnames('mb-16')} />}
-      </Container>
-      <div className={classnames('mb-16', { [hasGridClasses]: hasGrid })}>
-        <Container>
-          <div className={classnames('grid', 'gap-6', 'md:grid-cols-4')}>
-            {pageInfo.hasInPageNav && <InPageNav titles={titles} />}
-            <div
-              className={classnames({
-                'col-span-3': pageInfo.hasInPageNav,
-                'col-span-4': !pageInfo.hasInPageNav,
-              })}
-            >
-              {Content(partials, partialGroups, hasGrid)}
+      <VerticalGroup>
+        {promoBefore && (
+          <Container>
+            <PromoCard {...promoBefore} />
+          </Container>
+        )}
+        <div className={classnames({ [hasGridClasses]: hasGrid })}>
+          <Container>
+            <div className={classnames('grid', 'gap-6', 'md:grid-cols-4')}>
+              {pageInfo.hasInPageNav && <InPageNav titles={titles} />}
+              <div
+                className={classnames({
+                  'col-span-3': pageInfo.hasInPageNav,
+                  'col-span-4': !pageInfo.hasInPageNav,
+                })}
+              >
+                {Content(partials, partialGroups, hasGrid)}
+              </div>
             </div>
-          </div>
+          </Container>
+        </div>
+        <Container>
+          <VerticalGroup>
+            {promoAfter && <PromoCard {...promoAfter} />}
+            <SocialFeeds pageInfo={pageInfo} />
+          </VerticalGroup>
         </Container>
-      </div>
-      <Container>
-        {promoAfter && <PromoCard {...promoAfter} className={classnames('mb-16')} />}
-        <SocialFeeds pageInfo={pageInfo} />
-      </Container>
+      </VerticalGroup>
     </Layout>
   );
 };
