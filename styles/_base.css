@@ -47,6 +47,7 @@
   /* stylelint-enable */
 
   /*  Highlight links that do not have an href or that have # for "authoring" assistance */
+  /* purgecss ignore */
   a:not([href]),
   a[href=""],
   a[href="#"],
