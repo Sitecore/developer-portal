@@ -72,6 +72,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
             onClick={toggleVideoLoad}
             className={classnames('text-white', 'hover:text-teal', 'focus:text-teal')}
           >
+            <span className={classnames('sr-only')}>Play Video</span>
             <svg
               className={classnames(
                 'absolute',
