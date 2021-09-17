@@ -147,8 +147,8 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
                   id="d"
                 />
               </defs>
-              <g fill="none" fill-rule="evenodd">
-                <g fill-rule="nonzero" transform="translate(5 5)">
+              <g fill="none" fillRule="evenodd">
+                <g fillRule="nonzero" transform="translate(5 5)">
                   <use fill="#000" filter="url(#a)" xlinkHref="#b" />
                   <use fill="currentColor" xlinkHref="#b" />
                 </g>
