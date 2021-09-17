@@ -30,18 +30,17 @@ export type ChildPageInfo = {
   title: string;
 };
 
-// @TODO: Rename this
-export type PagePartials = {
+export type PagePartialContentDict = {
   [name: string]: string;
 };
 
-export type PagePartial = {
-  content: string;
-  title: string;
+export type PartialData = {
+  content: string[];
+  titles: string[];
 };
 
 export type PagePartialGroup = {
   title: string;
   description?: string;
-  partials: PagePartial[];
+  partials: PartialData;
 };

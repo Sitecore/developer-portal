@@ -8,9 +8,9 @@ import type { PageInfo, ChildPageInfo } from '@/interfaces/page-info';
 import type { CategoryTileProps } from '@/components/cards/CategoryTile';
 // Components
 import CategoryTileList from '@/components/lists/CategoryTileList';
+import Container from '@/components/helper/Container';
 import Layout from '@/components/layout/Layout';
 import SocialFeeds from '@/components/integrations/SocialFeeds';
-import Container from '@/components/helper/Container';
 
 export async function getStaticPaths() {
   const solutionPaths = await getSolutionPaths();

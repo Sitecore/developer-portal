@@ -4,7 +4,7 @@ product: ['experience-platform']
 title: 'Web Tracking'
 ---
 
-# [Web Tracking]()
+## [Web Tracking]()
 
 [What and Why]()
 

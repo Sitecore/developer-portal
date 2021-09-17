@@ -7,8 +7,8 @@ import type {
   MarkdownMeta,
   PageInfo,
   ChildPageInfo,
-  PagePartial,
-  PagePartials,
+  PartialData,
+  PagePartialContentDict,
 } from '@/interfaces/page-info';
 // Components
 import StackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
@@ -80,8 +80,10 @@ export const getPageInfo = async (
  * @param args An object ccontaining keyed references to partial markdown files
  * @returns An object of the same key structure with the corresponding markdown data
  */
-export const getPartials = async (args: Record<string, string>): Promise<PagePartials> => {
-  const partials: PagePartials = {};
+export const getPartials = async (
+  args: Record<string, string>
+): Promise<PagePartialContentDict> => {
+  const partials: PagePartialContentDict = {};
   Object.entries(args).forEach(([key, val]) => {
     partials[key] = getFileData(partialsDirectory, val).content;
   });
@@ -94,30 +96,37 @@ export const getPartials = async (args: Record<string, string>): Promise<PagePar
  * @param partials
  * @returns
  */
-const getTilteFromContent = (content: string): string => {
-  const regExp = /(?<=\# )(.*?)(?=\n)/g;
+const getTiltesFromContent = (content: string): string[] => {
+  const regExp = /(?<=^\#\#\s)(.*?)(?=\n)/gm;
   const res = content.match(regExp);
   if (res) {
-    // Grab just the text if the heading is also a link
-    if (res[0].startsWith('[')) {
-      const anchorTextRegExp = /(?<=\[)(.*?)(?=\])/g;
-      const anchorText = content.match(anchorTextRegExp);
-      return !!anchorText ? anchorText[0] : '';
-    }
-    return res[0];
+    return res.map((title) => {
+      if (title.startsWith('[')) {
+        const anchorTextRegExp = /(?<=\[)(.*?)(?=\])/g;
+        const anchorText = content.match(anchorTextRegExp);
+        return !!anchorText ? anchorText[0] : '';
+      }
+      return title;
+    });
   }
-  return '';
+  return [];
 };
 
-export const getPartialsAsArray = async (partials: string[]): Promise<PagePartial[]> =>
-  partials.map((p) => {
-    const data = getFileData(partialsDirectory, p) as Matter;
+export const getPartialsAsArray = async (partials: string[]): Promise<PartialData> => {
+  const content: string[] = [];
+  let titles: string[] = [];
 
-    return {
-      content: data.content,
-      title: data.data.title || getTilteFromContent(data.content),
-    };
+  partials.forEach((p) => {
+    const data = getFileData(partialsDirectory, p) as Matter;
+    content.push(data.content);
+    titles = titles.concat(getTiltesFromContent(data.content));
   });
+
+  return {
+    content,
+    titles,
+  };
+};
 
 /**
  * Gets a list of ChildPageInfo for use on a parent page

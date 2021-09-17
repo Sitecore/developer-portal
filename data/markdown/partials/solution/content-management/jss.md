@@ -5,7 +5,7 @@ title: 'Javascript Services'
 description: 'Develop your website headlessly powered by JavaScript.'
 ---
 
-# [JSS](https://jss.sitecore.com/)
+## [JSS](https://jss.sitecore.com/)
 
 [What and Why](https://jss.sitecore.com/features/why-jss)
 

@@ -1,7 +1,7 @@
 // Scripts
 import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 // Interfaces
-import { PageInfo, PagePartial } from '@/interfaces/page-info';
+import { PageInfo, PartialData } from '@/interfaces/page-info';
 // Components
 import GenericContentPage from '@/components/layout/GenericContentPage';
 
@@ -29,7 +29,7 @@ export default function Discover({
   partials,
 }: {
   pageInfo: PageInfo;
-  partials: PagePartial[];
+  partials: PartialData;
 }) {
   return <GenericContentPage pageInfo={pageInfo} partials={partials} hasGrid={true} />;
 }

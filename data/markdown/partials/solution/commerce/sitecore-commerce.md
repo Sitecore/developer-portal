@@ -5,7 +5,7 @@ title: 'Sitecore Experience Commerce'
 description: "Fully integrated Commerce as part of Sitecore's platform DXP"
 ---
 
-# [Sitecore Commerce]()
+## [Sitecore Commerce]()
 
 [What and Why]()
 

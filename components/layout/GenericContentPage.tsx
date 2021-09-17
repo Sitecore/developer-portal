@@ -1,19 +1,19 @@
 // Global
 import { classnames } from '@/tailwindcss-classnames';
 // Interfaces
-import type { PageInfo, PagePartial, PagePartialGroup } from '@/interfaces/page-info';
+import type { PageInfo, PartialData, PagePartialGroup } from '@/interfaces/page-info';
 // Components
 import Container from '@/components/helper/Container';
 import InPageNav from '@/components/layout/InPageNav/InPageNav';
+import Layout from '@/components/layout/Layout';
 import MarkdownContent from '@/components/helper/MarkdownContent';
+import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
+import SectionHeading from '@/components/helper/SectionHeading';
 import SocialFeeds from '@/components/integrations/SocialFeeds';
-import Layout from './Layout';
-import SectionHeading from '../helper/SectionHeading';
-import PromoCard, { PromoCardProps } from '../cards/PromoCard';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
-  partials?: PagePartial[];
+  partials?: PartialData;
   partialGroups?: PagePartialGroup[];
   hasGrid?: boolean;
   promoAfter?: PromoCardProps;
@@ -22,8 +22,11 @@ type GenericContentPageProps = {
 
 const hasGridClasses = classnames('bg-gray-lightest', 'py-16');
 
+const getTitlesFromPartialGroups = (partialGroups: PagePartialGroup[]): string[] =>
+  partialGroups.map((pG) => pG.title);
+
 const Content = (
-  partials?: PagePartial[],
+  partials?: PartialData,
   partialGroups?: PagePartialGroup[],
   hasGrid?: boolean
 ): JSX.Element => {
@@ -55,12 +58,15 @@ const GenericContentPage = ({
   promoAfter,
   promoBefore,
 }: GenericContentPageProps) => {
-  const items = !!partialGroups ? partialGroups : partials;
-  if (!items) {
+  if (!partialGroups && !partials) {
     console.warn('GenericContentPage requires either partials or partialGroups');
     return <></>;
   }
-  const titles = items.map((item) => item.title);
+  const titles = !!partialGroups
+    ? getTitlesFromPartialGroups(partialGroups)
+    : !!partials
+    ? partials.titles
+    : [];
 
   return (
     <Layout pageInfo={pageInfo}>

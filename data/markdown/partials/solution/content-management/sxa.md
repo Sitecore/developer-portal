@@ -5,7 +5,7 @@ title: 'Sitecore Experience Accelerator'
 description: 'Turbo charge your Sitecore development.'
 ---
 
-# [Sitecore Experience Accelerator]()
+## [Sitecore Experience Accelerator]()
 
 [What and Why]()
 
