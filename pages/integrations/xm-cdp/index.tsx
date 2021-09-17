@@ -1,11 +1,9 @@
 // Scripts
 import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 // Interfaces
-import type { PageInfo, PagePartial } from '@/interfaces/page-info';
+import type { PageInfo, PartialData } from '@/interfaces/page-info';
 // Components
-import Layout from '@/components/layout/Layout';
-import MarkdownContent from '@/components/helper/MarkdownContent';
-import Container from '@/components/helper/Container';
+import GenericContentPage from '@/components/layout/GenericContentPage';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('integrations/xm-cdp');
@@ -19,18 +17,13 @@ export async function getStaticProps() {
   };
 }
 
-export default function XM_CDP({
-  pageInfo,
-  partials,
-}: {
+type XMCDPPageProps = {
   pageInfo: PageInfo;
-  partials: PagePartial[];
-}) {
-  return (
-    <Layout pageInfo={pageInfo}>
-      <Container>
-        <MarkdownContent partials={partials} />
-      </Container>
-    </Layout>
-  );
-}
+  partials: PartialData;
+};
+
+const XMCDPPage = ({ pageInfo, partials }: XMCDPPageProps): JSX.Element => (
+  <GenericContentPage pageInfo={pageInfo} partials={partials} />
+);
+
+export default XMCDPPage;

@@ -4,7 +4,7 @@ product: ['experience-platform']
 title: 'Sitecore xDB'
 ---
 
-# [Sitecore xDB]()
+## [Sitecore xDB]()
 
 [What and Why]()
 

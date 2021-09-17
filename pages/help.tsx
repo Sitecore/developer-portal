@@ -5,7 +5,7 @@ import { classnames } from '@/tailwindcss-classnames';
 // Scipts
 import { getPageInfo, getPartials } from '@/scripts/page-info';
 // Interfaces
-import { PageInfo, PagePartials } from '@/interfaces/page-info';
+import { PageInfo, PagePartialContentDict } from '@/interfaces/page-info';
 // Component
 import CommunityList from '@/components/lists/CommunityList';
 import Container from '@/components/helper/Container';
@@ -32,7 +32,7 @@ export default function Help({
   partials,
 }: {
   pageInfo: PageInfo;
-  partials: PagePartials;
+  partials: PagePartialContentDict;
 }) {
   const router = useRouter();
 

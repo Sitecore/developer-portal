@@ -4,7 +4,7 @@ product: ['experience-platform']
 title: 'xConnect'
 ---
 
-# [xConnect]()
+## [xConnect]()
 
 [What and Why]()
 

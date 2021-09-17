@@ -2,7 +2,7 @@
 import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 import { getProductPaths } from '@/scripts/static-paths';
 // Interfaces
-import type { PageInfo, PagePartial } from '@/interfaces/page-info';
+import type { PageInfo, PartialData } from '@/interfaces/page-info';
 // Components
 import GenericContentPage from '@/components/layout/GenericContentPage';
 
@@ -31,7 +31,7 @@ export default function productPage({
   partials,
 }: {
   pageInfo: PageInfo;
-  partials: PagePartial[];
+  partials: PartialData;
 }) {
   return <GenericContentPage pageInfo={pageInfo} partials={partials} />;
 }

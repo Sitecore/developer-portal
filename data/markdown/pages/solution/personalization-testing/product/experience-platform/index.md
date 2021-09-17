@@ -7,7 +7,7 @@ stackexchange: ['#personalization', '#content-testing', '#fxm', '#universal-trac
 partials:
   [
     'solution/personalization-testing/federated-experience-manager',
-    'solution/personalization-testing/federated-experience-manager',
+    'solution/personalization-testing/segmentation-and-conditions',
     'solution/personalization-testing/universal-tracker',
   ]
 ---

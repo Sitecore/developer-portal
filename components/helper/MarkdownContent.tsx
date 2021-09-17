@@ -1,11 +1,13 @@
 // Global
 import { classnames } from '@/tailwindcss-classnames';
 import ReactMarkdown from 'react-markdown';
-import type { PagePartial } from '@/interfaces/page-info';
-import getSectionId from '@/lib/section-id';
+// Interfaces
+import type { PartialData } from '@/interfaces/page-info';
+// Lib
+import setHeadingIds from '@/lib/remark/heading-ids';
 
 type MarkdownContentProps = {
-  partials: PagePartial[];
+  partials: PartialData;
   hasGrid?: boolean;
 };
 
@@ -14,16 +16,15 @@ const gridItemClasses = classnames('p-8', 'border', 'border-gray-light', 'bg-whi
 
 const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): JSX.Element => (
   <div className={classnames({ [gridClasses]: hasGrid })}>
-    {partials.map((item, i) => (
+    {partials.content.map((item, i) => (
       <div
         className={classnames('prose', {
-          'mb-16': i !== partials.length && !hasGrid,
+          'mb-16': i !== partials.content.length && !hasGrid,
           [gridItemClasses]: hasGrid,
         })}
         key={i}
-        id={getSectionId(item.title)}
       >
-        <ReactMarkdown>{item.content}</ReactMarkdown>
+        <ReactMarkdown plugins={[setHeadingIds]}>{item}</ReactMarkdown>
       </div>
     ))}
   </div>

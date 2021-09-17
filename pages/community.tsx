@@ -3,13 +3,13 @@ import ReactMarkdown from 'react-markdown';
 // Scripts
 import { getPageInfo, getPartials } from '@/scripts/page-info';
 // Interfaces
-import { PageInfo, PagePartials } from '@/interfaces/page-info';
+import { PageInfo, PagePartialContentDict } from '@/interfaces/page-info';
 // Components
+import CommunityList from '@/components/lists/CommunityList';
+import Container from '@/components/helper/Container';
 import Layout from '@/components/layout/Layout';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
-import CommunityList from '@/components/lists/CommunityList';
-import Container from '@/components/helper/Container';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('community');
@@ -30,7 +30,7 @@ export default function Community({
   partials,
 }: {
   pageInfo: PageInfo;
-  partials: PagePartials;
+  partials: PagePartialContentDict;
 }) {
   return (
     <Layout pageInfo={pageInfo}>

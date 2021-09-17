@@ -23,7 +23,8 @@
     "react-id-generator": "^3.0.2",
     "react-markdown": "^6.0.2",
     "recursive-readdir-sync": "^1.0.6",
-    "tailwindcss-classnames": "^2.2.3"
+    "tailwindcss-classnames": "^2.2.3",
+    "unist-util-visit": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
