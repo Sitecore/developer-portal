@@ -19,7 +19,7 @@ type YouTubeThumbnail = {
   width: number;
 };
 
-type YouTubeSnippet = {
+export type YouTubeSnippet = {
   resourceId: {
     videoId: string;
   };
