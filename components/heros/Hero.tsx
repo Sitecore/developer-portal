@@ -16,12 +16,14 @@ export type HeroProps = {
   image?: string;
 };
 
+const HeroWithImageClasses = classnames('lg:min-h-320', 'md:grid-cols-9');
+
 const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JSX.Element => (
   <header className={classnames('py-14', 'relative')}>
     <Container
       size="standard"
-      className={classnames('grid', 'md:grid-cols-9', 'gap-16', 'lg:items-center', {
-        ['lg:min-h-320']: !!image,
+      className={classnames('grid', 'gap-16', 'lg:items-center', {
+        [HeroWithImageClasses]: !!image,
       })}
     >
       <div className={classnames('md:col-span-5', 'lg:pr-24')}>

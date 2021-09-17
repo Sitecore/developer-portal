@@ -5,7 +5,6 @@ import { classnames } from '@/tailwindcss-classnames';
 import type { PageInfo } from '@/interfaces/page-info';
 // Components
 import Hero from '@/components/heros/Hero';
-import Container from '@/components/helper/Container';
 
 type LayoutProps = {
   pageInfo: PageInfo;
@@ -17,11 +16,40 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
     <div>
       <Head>
         <title>{pageInfo.title}</title>
-        <meta name="description" content={pageInfo.description} />
         <link
           rel="icon"
           href="https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/global/logo/favicon.png"
         />
+
+        <link rel="icon" href={`/favicon.png`} />
+        {/* Preload our two most heavily used webfonts, reduce chance of FOUT */}
+        <link
+          rel="preload"
+          href={`/fonts/AvenirNext-Regular--latin.woff2`}
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href={`/fonts/AvenirNext-Bold--latin.woff2`}
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        {/*
+          Necessary Meta tags, including Social tags.
+          It's OK if they're empty, same as not printing them.
+        */}
+        <meta property="description" content={pageInfo.description} />
+        <meta property="og:site_name" content="Sitecore Development Portal" />
+        <meta property="og:title" content={pageInfo.title} />
+        <meta property="og:description" content={pageInfo.title} />
+        {/* {publicUrl && pageInfo.heroImage (
+          <meta property="og:image" content={`${publicUrl}${pageInfo.heroImage}`} />
+          <meta property="og:url" content={`${publicUrl}${pagePath}`} />
+          <meta name="twitter:card" content="summary_large_image" />
+        )} */}
       </Head>
       <main className={classnames('mb-16')}>
         {/* Temporary "Under Constructions Banner" */}

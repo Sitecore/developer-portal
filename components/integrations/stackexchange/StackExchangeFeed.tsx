@@ -86,6 +86,8 @@ const StackExchangeFeed = ({
                               'inline-block',
                               'hover:bg-teal',
                               'hover:text-white',
+                              'focus:bg-teal',
+                              'focus:text-white',
                               '2xl:transition-colors'
                             )}
                           >
