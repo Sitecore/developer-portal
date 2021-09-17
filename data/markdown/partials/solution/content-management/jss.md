@@ -32,6 +32,7 @@ Learn
 Playground
 
 - [JSS Developer Trial](https://www.sitecore.com/knowledge-center/getting-started/developer-trial)
+- [JSS Developer Trial - Connected Demo guide](https://jss.sitecore.com/connected-demo)
 - [JSS Source Code](https://github.com/Sitecore/jss)
 - [JSS Sample Code](https://github.com/Sitecore/jss/tree/dev/samples)
 - [JSS Downloads](https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services.aspx)
