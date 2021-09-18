@@ -4,4 +4,5 @@ description: 'Welcome to the Sitecore Developer Portal! Let us help guide you to
 heroImage: 'https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/home/solutions/managed-cloud/managedcloud_heromediumvideo_dt.jpg'
 stackexchange: ['/questions?tab=Newest']
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
+youtubeTitle: 'Latest Discover Sitecore videos'
 ---

@@ -75,7 +75,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
     <VerticalGroup>
       <Container>
         <VerticalGroup size="lg">
-          <YouTubeFeed content={pageInfo.youtube} title="Videos Title" />
+          <YouTubeFeed content={pageInfo.youtube} title={pageInfo.youtubeTitle} />
           <CommunityList />
         </VerticalGroup>
       </Container>

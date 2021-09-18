@@ -21,6 +21,7 @@ export type PageInfo = PageInfoCore & {
   stackexchange: StackExchangeQuestion[];
   twitter: Tweet[];
   youtube: YouTubeVideo[];
+  youtubeTitle?: string;
 };
 
 export type ChildPageInfo = {
