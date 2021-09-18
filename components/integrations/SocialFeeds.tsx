@@ -12,7 +12,7 @@ type SocialFeedsProps = {
 
 const SocialFeeds = ({ pageInfo }: SocialFeedsProps): JSX.Element => (
   <VerticalGroup>
-    <YouTubeFeed content={pageInfo.youtube} />
+    <YouTubeFeed content={pageInfo.youtube} title={pageInfo.youtubeTitle} />
     <TwitterFeed content={pageInfo.twitter} />
     <StackExchangeFeed content={pageInfo.stackexchange} />
   </VerticalGroup>
