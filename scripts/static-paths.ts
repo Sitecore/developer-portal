@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
+const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
 
 type SolutionPaths = {
   params: {
@@ -13,6 +14,12 @@ type ProductPaths = {
   params: {
     product: string;
     solution: string;
+  };
+};
+
+type IntegrationPaths = {
+  params: {
+    integration: string;
   };
 };
 
@@ -35,3 +42,8 @@ export const getProductPaths = async (): Promise<ProductPaths[]> => {
   });
   return paths;
 };
+
+export const getIntegrationPaths = async (): Promise<IntegrationPaths[]> => {
+  const files = fs.readdirSync(integrationDirectory);
+  return files.map((file) => ({ params: { integration: file } }));
+}
