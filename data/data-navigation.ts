@@ -6,6 +6,7 @@ export type NavigationChildData = {
 
 export type NavigationData = {
   title: string;
+  url?: string;
   children?: NavigationChildData[];
 };
 
@@ -49,29 +50,24 @@ export const SitecoreQuickLinks: NavigationData = {
 
 const NavigationData: NavigationData[] = [
   {
-    title: 'Content Types',
-    children: [
-      {
-        title: 'Docs',
-        url: '/docs',
-      },
-      {
-        title: 'Discover',
-        url: '/discover',
-      },
-      {
-        title: 'Learn',
-        url: '/learn',
-      },
-      {
-        title: 'Get Help',
-        url: '/help',
-      },
-      {
-        title: 'Community',
-        url: '/community',
-      },
-    ],
+    title: 'Docs',
+    url: '/docs',
+  },
+  {
+    title: 'Discover',
+    url: '/discover',
+  },
+  {
+    title: 'Learn',
+    url: '/learn',
+  },
+  {
+    title: 'Get Help',
+    url: '/help',
+  },
+  {
+    title: 'Community',
+    url: '/community',
   },
   {
     title: 'Solution',

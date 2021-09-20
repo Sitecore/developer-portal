@@ -1,9 +1,13 @@
 // Global
+import React, { useLayoutEffect, useState, useRef } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { classnames } from '@/tailwindcss-classnames';
 // Interfaces
 import type { PageInfo } from '@/interfaces/page-info';
+// Lib
+import htmlConfig from '@/lib/html-constants';
+const { idMainContent } = htmlConfig;
 // Components
 import Hero from '@/components/heros/Hero';
 
@@ -14,8 +18,25 @@ type LayoutProps = {
 
 const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
   const publicUrl = process.env.PUBLIC_URL ? process.env.PUBLIC_URL : '';
-  const { asPath } = useRouter();
+  const router = useRouter();
+  const { asPath } = router;
   const path = asPath.split(/[?#]/)[0];
+  const mainContentRef = useRef<HTMLElement>(null);
+
+  // Set focus on the contain <main> element on route changes.
+  useLayoutEffect(() => {
+    let isMounted = false;
+
+    router.events.on('routeChangeComplete', () => {
+      if (!isMounted) {
+        mainContentRef?.current?.focus();
+      }
+    });
+
+    return () => {
+      isMounted = true;
+    };
+  }, []);
 
   return (
     <div>
@@ -54,20 +75,13 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <main className={classnames('mb-16')}>
-        {/* Temporary "Under Constructions Banner" */}
+      <main id={idMainContent} ref={mainContentRef} className={classnames('mb-16')} tabIndex={-1}>
+        {/* a11y announcement for route changes. */}
         <div
-          className={classnames(
-            'bg-gray-lightest',
-            'border-b',
-            'border-gray-light',
-            'text-center',
-            'p-2',
-            'font-bold'
-          )}
-        >
-          🚧&nbsp;&nbsp; Under Construction &nbsp;&nbsp;🚧
-        </div>
+          className="sr-only"
+          aria-live="polite"
+          aria-atomic="true"
+        >{`The ${pageInfo.title} page has loaded.`}</div>
         <Hero
           title={pageInfo.title}
           description={pageInfo.description}
