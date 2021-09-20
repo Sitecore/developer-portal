@@ -110,7 +110,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      translate: ['group-hover', 'group-focus'],
+      translate: ['focus', 'group-hover', 'group-focus'],
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography')],
