@@ -7,6 +7,7 @@ import { ValidHeadingLevels } from '@/interfaces/heading-levels';
 // Components
 import DynamicTag from '@/components/helper/DynamicTag';
 import TextLink from '@/components/helper/TextLink';
+import Image from 'next/image';
 
 type YouTubeFeedProps = {
   content: YouTubeVideo[];
@@ -80,7 +81,8 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
                 'left-1/2',
                 'transform-gpu',
                 '-translate-y-2/4',
-                '-translate-x-2/4'
+                '-translate-x-2/4',
+                'z-10'
               )}
               width="58"
               height="59"
@@ -158,7 +160,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
                 </g>
               </g>
             </svg>
-            <img src={snippet.thumbnails.medium.url} width="100%" />
+            <Image src={snippet.thumbnails.medium.url} layout="fill" />
           </button>
         ) : (
           <iframe
