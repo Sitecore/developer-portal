@@ -160,12 +160,14 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
                 </g>
               </g>
             </svg>
-            <Image src={snippet.thumbnails.medium.url} layout="fill" />
+            <div className={classnames('border', 'border-gray-light', 'aspect-w-16', 'aspect-h-9')}>
+              <Image src={snippet.thumbnails.medium.url} layout="fill" />
+            </div>
           </button>
         ) : (
           <iframe
             className={classnames('w-full', 'bg-gray-light')}
-            src={`https://www.youtube.com/embed/${snippet.resourceId.videoId}?enablejsapi=1`}
+            src={`https://www.youtube.com/embed/${snippet.resourceId.videoId}?enablejsapi=1&autoplay=1&mute=1`}
             allowFullScreen
           ></iframe>
         )}
