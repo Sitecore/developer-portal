@@ -2,6 +2,8 @@
  * @type {import('next').NextConfig}
  */
 
+const withTM = require('next-transpile-modules')(['react-markdown']); // pass the modules you would like to see transpiled
+
 const nextConfig = {
   // Set locales so we have appropriate lang attributes without a custom _document
   i18n: {
@@ -18,4 +20,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withTM(nextConfig);

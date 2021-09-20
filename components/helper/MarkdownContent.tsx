@@ -1,6 +1,7 @@
 // Global
 import { classnames } from '@/tailwindcss-classnames';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 // Interfaces
 import type { PartialData } from '@/interfaces/page-info';
 // Lib
@@ -21,7 +22,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
             className={classnames('prose', 'p-8', 'border', 'border-gray-light', 'bg-white')}
             key={i}
           >
-            <ReactMarkdown plugins={[setHeadingIds]}>{item}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[setHeadingIds, remarkGfm]}>{item}</ReactMarkdown>
           </div>
         ))}
       </div>
@@ -32,7 +33,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
     <VerticalGroup>
       {partials.content.map((item, i) => (
         <div className={classnames('prose')} key={i}>
-          <ReactMarkdown plugins={[setHeadingIds]}>{item}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[setHeadingIds, remarkGfm]}>{item}</ReactMarkdown>
         </div>
       ))}
     </VerticalGroup>
