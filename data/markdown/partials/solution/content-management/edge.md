@@ -9,7 +9,6 @@ product: ['edge-content-hub']
 
 - [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/12/sitecore-advances-saas-platform-with-sitecore-experience-edge/faq)
 - [Teaser video](https://www.youtube.com/watch?v=nq5mT0XQ0EQ)
-
 - [What is Sitecore Experience Edge](https://www.youtube.com/watch?v=_xw-02PZQTE)
 
 ## Get Started
