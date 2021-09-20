@@ -191,7 +191,7 @@ const Nav = (): JSX.Element => {
                       'px-gutter',
                       'xl:p-0',
                       'xl:border-0',
-                      'xl:mx-8'
+                      'xl:mx-6'
                     )}
                   >
                     <NavMenu

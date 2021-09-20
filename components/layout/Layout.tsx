@@ -1,5 +1,5 @@
 // Global
-import React, { useLayoutEffect, useState, useRef } from 'react';
+import React, { useLayoutEffect, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { classnames } from '@/tailwindcss-classnames';
@@ -10,6 +10,11 @@ import htmlConfig from '@/lib/html-constants';
 const { idMainContent } = htmlConfig;
 // Components
 import Hero from '@/components/heros/Hero';
+
+// Suppress warnings when using useLayoutEffect.
+// The usecase here has nothign to do with SSR and there is no "mismatch" since we're
+// handling user agent focus only.
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 type LayoutProps = {
   pageInfo: PageInfo;
@@ -24,7 +29,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
   const mainContentRef = useRef<HTMLElement>(null);
 
   // Set focus on the contain <main> element on route changes.
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     let isMounted = false;
 
     router.events.on('routeChangeComplete', () => {

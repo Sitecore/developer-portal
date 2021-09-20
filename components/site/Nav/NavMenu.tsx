@@ -88,6 +88,7 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
           tag={children ? 'button' : 'a'}
           className={classnames(mainNavItemStyles, {
             [buttonActiveClasses]: children && isOpen,
+            ['lg:pr-5']: !!children,
           })}
           onClick={toggleNavItem}
         >
@@ -97,34 +98,59 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
             )}
             {title}
           </span>
-          {!url && (
-            <span
-              className={classnames(
-                'absolute',
-                'top-5',
-                'right-0',
-                'block',
-                'h-em',
-                'w-em',
-                'lg:hidden'
-              )}
-            >
-              <svg
+          {children && (
+            <>
+              <span
                 className={classnames(
-                  'h-inherit',
-                  'w-inherit',
+                  'absolute',
                   'top-5',
-                  'transition-transform',
-                  'transform-gpu',
-                  'group-hover:translate-x-1'
+                  'right-0',
+                  'block',
+                  'h-em',
+                  'w-em',
+                  'lg:hidden'
                 )}
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 11.7 19.8"
               >
-                <path d="M0,18l1.8,1.8l9.9-9.9L1.8,0L0,1.8l8.2,8.1L0,18z" fill="currentColor" />
-              </svg>
-            </span>
+                <SvgIcon
+                  icon="chevron-right"
+                  className={classnames(
+                    'h-inherit',
+                    'w-inherit',
+                    'top-5',
+                    'transition-transform',
+                    'transform-gpu',
+                    'group-hover:translate-x-1'
+                  )}
+                />
+              </span>
+              <span
+                className={classnames(
+                  'absolute',
+                  'top-1/2',
+                  '-mt-1.5',
+                  'right-0',
+                  'block',
+                  'h-3',
+                  'w-3',
+                  'hidden',
+                  'lg:block'
+                )}
+              >
+                <SvgIcon
+                  icon="chevron-down"
+                  className={classnames(
+                    'h-inherit',
+                    'w-inherit',
+                    'top-5',
+                    'transition-transform',
+                    'transform-gpu',
+                    {
+                      ['rotate-180']: isOpen,
+                    }
+                  )}
+                />
+              </span>
+            </>
           )}
         </DynamicTag>
       </ConditionalWrapper>
@@ -193,7 +219,8 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
                   'pointer-events-none'
                 )}
               >
-                <svg
+                <SvgIcon
+                  icon="chevron-left"
                   className={classnames(
                     'h-inherit',
                     'w-inherit',
@@ -202,15 +229,7 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
                     'transform-gpu',
                     'group-hover:-translate-x-1'
                   )}
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 11.7 19.8"
-                >
-                  <path
-                    d="M11.8,1.9l-1.8-1.8L0.2,10l9.9,9.9l1.8-1.8L3.7,10L11.8,1.9z"
-                    fill="currentColor"
-                  />
-                </svg>
+                />
               </span>
             </button>
             {/* 
