@@ -6,7 +6,6 @@
 @import 'tailwindcss/components';
 @import '../components/site/Nav/Nav.styles.css';
 @import '../components/layout/InPageNav/InPageNav.styles.css';
-@import './_rte.css';
 
 /* Utilities */
 @import 'tailwindcss/utilities';
