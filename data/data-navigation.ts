@@ -94,7 +94,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Experience Edge for XM',
-            url: '/#',
+            url: '/content-management/edge-xm',
           },
           {
             title: 'Sitecore Experience Accelerator (SXA)',
