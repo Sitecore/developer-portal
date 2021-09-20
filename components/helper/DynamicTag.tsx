@@ -6,7 +6,7 @@ type DynamicTagProps = {
   [name: string]: unknown;
 };
 
-export const DynamicTag = forwardRef(({ tag, children, ...props }: DynamicTagProps, ref) => {
+const DynamicTag = forwardRef(({ tag, children, ...props }: DynamicTagProps, ref) => {
   return React.createElement(tag, props, children);
 });
 
