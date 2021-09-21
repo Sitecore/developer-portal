@@ -35,4 +35,11 @@
   .scroll-to-offset * {
     scroll-margin-top: theme('spacing.36') !important;
   }
+
+  /**
+   * Stop Scroll Smoothing
+   */
+  .scroll-behavior-auto {
+    scroll-behavior: auto;
+  }
 }
