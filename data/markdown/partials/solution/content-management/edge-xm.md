@@ -17,6 +17,7 @@ description: 'Provide globally replicated scalable access to your content manage
 ## Get started
 
 - [Installation](https://doc.sitecore.com/en/developers/101/developer-tools/install-and-configure-the-experience-edge-connector.html)
+- [Sitecore JSS SSR Edgde](https://github.com/Sitecore/jss/tree/dev/samples/node-headless-ssr-experience-edge)
 
 ## Documentation
 
