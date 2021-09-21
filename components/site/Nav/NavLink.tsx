@@ -11,9 +11,9 @@ type NavLinkProps = {
   onClick?: (event: React.MouseEvent) => void;
 };
 
-const Level1Classes = classnames('font-semibold', 'lg:text-lg', 'mb-4', 'lg:mb-2');
+const Level1Classes = classnames('font-semibold', 'lg:text-base', 'mb-4', 'lg:mb-2');
 
-const Level2Classes = classnames('text-xs', 'lg:text-base');
+const Level2Classes = classnames('text-xs');
 
 /*
  * A simple wrapper for nav link items within the menus.

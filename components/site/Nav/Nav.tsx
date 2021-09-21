@@ -171,10 +171,11 @@ const Nav = (): JSX.Element => {
               'bottom-0',
               'inset-0',
               'items-center',
-              'lg:mx-8',
+              'lg:mx-12',
               'lg:bg-transparent',
               'lg:flex',
               'lg:static',
+              'xl:mx-16',
               {
                 ['hidden']: !isOpen,
                 ['block']: isOpen,
@@ -234,7 +235,7 @@ const Nav = (): JSX.Element => {
               'justify-end',
               'ml-auto',
               'lg:w-24',
-              'xl:w-80'
+              'xl:w-96'
             )}
           >
             <button
