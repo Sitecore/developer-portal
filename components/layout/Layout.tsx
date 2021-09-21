@@ -27,7 +27,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
   const router = useRouter();
   const { asPath } = router;
   const path = asPath.split(/[?#]/)[0];
-  const mainContentRef = useRef<HTMLElement>(null);
+  const mainContentRef = useRef<HTMLAnchorElement>(null);
 
   const [navScrolled] = useGlobalState('navScrolled');
 
@@ -83,12 +83,11 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <main
-        id={idMainContent}
-        ref={mainContentRef}
-        className={classnames('mb-16', 'scroll-to-offset')}
-        tabIndex={-1}
-      >
+      <main className={classnames('mb-16', 'scroll-to-offset')}>
+        {/* Anchor element at top of page to focus on route change. */}
+        <a id={idMainContent} ref={mainContentRef} className={classnames('sr-only')} href="#">
+          {pageInfo.title}
+        </a>
         {/* a11y announcement for route changes. */}
         <div
           className="sr-only"

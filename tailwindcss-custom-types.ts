@@ -9,6 +9,7 @@ type SCDPTailwindTypes =
   | 'heading-sm'
   | 'heading-xs'
   | 'scroll-to-offset'
+  | 'scroll-behavior-auto'
   | NavTWClasses
   | InPageNavTWClasses
   // @TODO - some transform utilities that are enabled by default
