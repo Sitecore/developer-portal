@@ -131,8 +131,8 @@ const NavigationData: NavigationData[] = [
         url: '/marketing-automation',
         children: [
           {
-            title: 'Moosend',
-            url: '/marketing-automation/moosend',
+            title: 'Sitecore Send',
+            url: '/marketing-automation/send',
           },
           {
             title: 'Sitecore Experience Platform',
@@ -240,8 +240,8 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Moosend',
-        url: '/marketing-automation/moosend',
+        title: 'Sitecore Send',
+        url: '/marketing-automation/send',
       },
       {
         title: 'Sitecore OrderCloud',

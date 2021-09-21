@@ -12,7 +12,7 @@ export async function getStaticProps() {
     'discover/cdpkb',
     'discover/ordercloud',
     'discover/contenthub',
-    'discover/moosend',
+    'discover/send',
     'discover/sitecoreknowledgecenter',
   ]);
 
