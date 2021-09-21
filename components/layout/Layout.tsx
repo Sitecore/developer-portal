@@ -8,6 +8,7 @@ import type { PageInfo } from '@/interfaces/page-info';
 // Lib
 import htmlConfig from '@/lib/html-constants';
 const { idMainContent } = htmlConfig;
+import { useGlobalState } from '@/lib/global-state';
 // Components
 import Hero from '@/components/heros/Hero';
 
@@ -27,6 +28,8 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
   const { asPath } = router;
   const path = asPath.split(/[?#]/)[0];
   const mainContentRef = useRef<HTMLElement>(null);
+
+  const [navScrolled] = useGlobalState('navScrolled');
 
   // Set focus on the contain <main> element on route changes.
   useIsomorphicLayoutEffect(() => {
@@ -80,7 +83,12 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <main id={idMainContent} ref={mainContentRef} className={classnames('mb-16')} tabIndex={-1}>
+      <main
+        id={idMainContent}
+        ref={mainContentRef}
+        className={classnames('mb-16', 'scroll-to-offset')}
+        tabIndex={-1}
+      >
         {/* a11y announcement for route changes. */}
         <div
           className="sr-only"

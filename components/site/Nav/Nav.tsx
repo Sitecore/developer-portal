@@ -9,6 +9,7 @@ import NavigationData, { SitecoreQuickLinks } from '@/data/data-navigation';
 // Lib
 import htmlConfig from '@/lib/html-constants';
 const { idMainContent } = htmlConfig;
+import { setGlobalState, useGlobalState } from '@/lib/global-state';
 // Components
 import NavMenu from '@/components/site/Nav/NavMenu';
 import SearchBox from '@/components/SearchBox';
@@ -49,7 +50,7 @@ const Nav = (): JSX.Element => {
   /**
    *  Hook for scroll state
    */
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled] = useGlobalState('navScrolled');
 
   /**
    *  Hook for handling scroll events on header.
@@ -69,7 +70,7 @@ const Nav = (): JSX.Element => {
         return;
       }
 
-      setScrolled(ScrollY > lastScrollY ? true : false);
+      setGlobalState('navScrolled', ScrollY > lastScrollY ? true : false);
       lastScrollY = ScrollY > 0 ? ScrollY : 0;
     };
 
