@@ -28,4 +28,11 @@
   .px-gutter-all {
     @apply px-gutter md:px-gutter-md lg:px-gutter-lg !important;
   }
+
+  /**
+   * Scroll Offset
+   */
+  .scroll-to-offset * {
+    scroll-margin-top: theme('spacing.36') !important;
+  }
 }
