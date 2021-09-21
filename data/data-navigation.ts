@@ -14,8 +14,8 @@ export const SitecoreQuickLinks: NavigationData = {
   title: 'External Sitecore Links',
   children: [
     {
-      title: 'Sitecore Documentation',
-      url: 'https://doc.sitecore.com/',
+      title: 'Sitecore.com',
+      url: 'https://www.sitecore.com',
     },
     {
       title: 'Sitecore Learning',
@@ -27,11 +27,11 @@ export const SitecoreQuickLinks: NavigationData = {
     },
     {
       title: 'Sitecore MVP Program',
-      url: 'https://www.sitecore.com/#:~:text=Sitecore%20MVP%20Program',
+      url: 'https://mvp.sitecore.com/',
     },
     {
       title: 'Sitecore Downloads',
-      url: 'https://www.sitecore.com/#:~:text=Sitecore%20MVP%20Program-,Sitecore%20Downloads,-Sitecore%20Partner%20Network',
+      url: 'https://dev.sitecore.net/',
     },
     {
       title: 'Sitecore Partner Network',
@@ -42,8 +42,8 @@ export const SitecoreQuickLinks: NavigationData = {
       url: 'https://symposium.sitecore.com/',
     },
     {
-      title: 'Knowledge Base',
-      url: 'https://www.sitecore.com/#:~:text=Symposium-,Knowledge%20Base,-Request%20a%20demo',
+      title: 'Support Portal',
+      url: 'https://support.sitecore.com',
     },
   ],
 };
@@ -90,7 +90,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Experience Edge for XM',
-            url: '/#',
+            url: '/content-management/edge-xm',
           },
           {
             title: 'Sitecore Experience Accelerator (SXA)',
@@ -214,7 +214,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Experience Edge for XM',
-            url: '/#',
+            url: '/content-management/edge-xm',
           },
           {
             title: 'Sitecore Experience Accelerator (SXA)',

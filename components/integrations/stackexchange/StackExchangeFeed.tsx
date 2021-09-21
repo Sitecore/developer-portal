@@ -34,7 +34,7 @@ const StackExchangeFeed = ({
         </DynamicTag>
         <TextLink
           href="https://sitecore.stackexchange.com/"
-          text="See all issues on StackExchange"
+          text="See all questions on StackExchange"
           target="_blank"
           className={classnames('ml-auto')}
         />
