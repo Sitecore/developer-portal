@@ -17,6 +17,7 @@
   "dependencies": {
     "@types/lodash.throttle": "^4.1.6",
     "axios": "^0.21.4",
+    "focus-trap-react": "^8.7.1",
     "gray-matter": "^4.0.3",
     "lodash.throttle": "^4.1.1",
     "next": "^11.1.2",

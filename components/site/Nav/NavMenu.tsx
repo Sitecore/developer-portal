@@ -1,6 +1,7 @@
 // Global
-import React, { useState, useRef, useEffect } from 'react';
+import FocusTrap from 'focus-trap-react';
 import Link from 'next/link';
+import React, { useState, useRef, useEffect } from 'react';
 import { classnames } from 'tailwindcss-classnames';
 // Data
 import { NavigationData } from '@/data/data-navigation';
@@ -63,11 +64,12 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
     'lg:h-16',
     'lg:pr-0'
   );
-  const buttonActiveClasses = classnames('text-teal', 'nav-item--button-active');
+  const buttonActiveClasses = classnames('text-teal', 'visible', 'nav-item--button-active');
   const navItemOverlayInactiveClasses = classnames(
     'translate-x-full',
     'lg:translate-none',
-    'lg:hidden'
+    'lg:hidden',
+    'invisible'
   );
   const navItemOverlayActiveClasses = classnames('translate-x-0', 'shadow-inner');
 
@@ -158,7 +160,13 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
         Nav Item Overlay
       */}
       {children && (
-        <React.Fragment>
+        <FocusTrap
+          active={isOpen}
+          focusTrapOptions={{
+            clickOutsideDeactivates: true,
+            onDeactivate: () => setOpen(false),
+          }}
+        >
           <div
             ref={navItemRef}
             className={classnames(
@@ -264,7 +272,7 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
               </div>
             </div>
           </div>
-        </React.Fragment>
+        </FocusTrap>
       )}
     </div>
   );

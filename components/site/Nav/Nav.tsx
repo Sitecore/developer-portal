@@ -1,9 +1,10 @@
 // Global
-import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
+import FocusTrap from 'focus-trap-react';
 import Image from 'next/image';
-import { classnames } from 'tailwindcss-classnames';
+import Link from 'next/link';
+import React, { useState, useRef, useEffect } from 'react';
 import throttle from 'lodash.throttle';
+import { classnames } from 'tailwindcss-classnames';
 // Data
 import NavigationData, { SitecoreQuickLinks } from '@/data/data-navigation';
 // Lib
@@ -181,51 +182,58 @@ const Nav = (): JSX.Element => {
               }
             )}
           >
-            <ul className={classnames('block', 'text-sm', 'lg:flex')}>
-              {NavigationData.map((item, index) => {
-                return (
-                  <li
-                    key={`nav-${index}`}
-                    className={classnames(
-                      'border-b',
-                      'border-gray-light',
-                      'px-gutter',
-                      'xl:p-0',
-                      'xl:border-0',
-                      'xl:mx-6'
-                    )}
-                  >
-                    <NavMenu
-                      title={item.title}
-                      children={item.children}
-                      url={item.url}
-                      callback={toggleNav}
-                    />
-                  </li>
-                );
-              })}
-              {/*
+            <FocusTrap
+              active={isOpen}
+              focusTrapOptions={{
+                onDeactivate: () => setOpen(false),
+              }}
+            >
+              <ul className={classnames('block', 'text-sm', 'lg:flex')}>
+                {NavigationData.map((item, index) => {
+                  return (
+                    <li
+                      key={`nav-${index}`}
+                      className={classnames(
+                        'border-b',
+                        'border-gray-light',
+                        'px-gutter',
+                        'xl:p-0',
+                        'xl:border-0',
+                        'xl:mx-6'
+                      )}
+                    >
+                      <NavMenu
+                        title={item.title}
+                        children={item.children}
+                        url={item.url}
+                        callback={toggleNav}
+                      />
+                    </li>
+                  );
+                })}
+                {/*
                 SC Products "Quick Links"-like mobile menu implementation.
               */}
-              <li
-                className={classnames(
-                  'border-b',
-                  'border-gray-light',
-                  'px-gutter',
-                  'xl:p-0',
-                  'xl:border-0',
-                  'xl:mx-8',
-                  'lg:hidden'
-                )}
-              >
-                <NavMenu
-                  title={SitecoreQuickLinks.title}
-                  children={SitecoreQuickLinks.children}
-                  callback={toggleNav}
-                  buttonIcon="quick-links"
-                />
-              </li>
-            </ul>
+                <li
+                  className={classnames(
+                    'border-b',
+                    'border-gray-light',
+                    'px-gutter',
+                    'xl:p-0',
+                    'xl:border-0',
+                    'xl:mx-8',
+                    'lg:hidden'
+                  )}
+                >
+                  <NavMenu
+                    title={SitecoreQuickLinks.title}
+                    children={SitecoreQuickLinks.children}
+                    callback={toggleNav}
+                    buttonIcon="quick-links"
+                  />
+                </li>
+              </ul>
+            </FocusTrap>
           </nav>
           <div
             className={classnames(
@@ -279,7 +287,16 @@ const Nav = (): JSX.Element => {
           </div>
         </div>
         <div>
-          <div className={classnames('px-gutter-all', 'py-2.5', 'max-w-screen-xl', 'm-auto')}>
+          <div
+            className={classnames(
+              'px-gutter-all',
+              'py-2.5',
+              'max-w-screen-xl',
+              'm-auto',
+              'relative',
+              'z-0'
+            )}
+          >
             <SearchBox />
           </div>
         </div>
