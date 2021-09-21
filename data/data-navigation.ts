@@ -42,8 +42,8 @@ export const SitecoreQuickLinks: NavigationData = {
       url: 'https://symposium.sitecore.com/',
     },
     {
-      title: 'Knowledge Base',
-      url: 'https://support.sitecore.com/kb',
+      title: 'Support Portal',
+      url: 'https://support.sitecore.com',
     },
   ],
 };
