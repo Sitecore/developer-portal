@@ -12,7 +12,7 @@ const Footer = (): JSX.Element => {
         <div className={classnames('inline-flex', 'mb-4')}>
           <a
             className={classnames('mr-6')}
-            href="https://twitter.com/Sitecore"
+            href="https://twitter.com/WeAreSitecore"
             target=""
             aria-label="twitter"
           >
@@ -26,21 +26,7 @@ const Footer = (): JSX.Element => {
           </a>
           <a
             className={classnames('mr-6')}
-            href="https://www.facebook.com/Sitecore"
-            target=""
-            aria-label="facebook"
-          >
-            <svg width="19" height="19" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                d="M12.8 24v-9.32H9.7v-3.6h3.1V8.42c0-1.54.43-2.71 1.29-3.54a4.67 4.67 0 013.37-1.23c1.11 0 2.04.04 2.79.11v3.27h-1.93c-.68 0-1.16.16-1.45.48-.2.25-.32.68-.32 1.29v2.3h3.6l-.49 3.59h-3.1V24h6.1c.4 0 .71-.13.96-.4.26-.27.38-.58.38-.94V1.34A1.33 1.33 0 0022.66 0H1.34C.94 0 .63.12.37.38a1.3 1.3 0 00-.37.96v21.32A1.33 1.33 0 001.34 24H12.8z"
-                fill="rgba(255, 255, 255, 0.99)"
-                fillRule="nonzero"
-              />
-            </svg>
-          </a>
-          <a
-            className={classnames('mr-6')}
-            href="https://www.youtube.com/user/sitecorechannel"
+            href="https://www.youtube.com/c/DiscoverSitecore"
             target=""
             aria-label="Youtube"
           >
@@ -63,6 +49,20 @@ const Footer = (): JSX.Element => {
                 fill="rgba(255, 255, 255, 0.99)"
                 stroke="rgba(255, 255, 255, 0.99)"
                 d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+              />
+            </svg>
+          </a>
+          <a
+            className={classnames('mr-6')}
+            href="https://www.facebook.com/Sitecore"
+            target=""
+            aria-label="facebook"
+          >
+            <svg width="19" height="19" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M12.8 24v-9.32H9.7v-3.6h3.1V8.42c0-1.54.43-2.71 1.29-3.54a4.67 4.67 0 013.37-1.23c1.11 0 2.04.04 2.79.11v3.27h-1.93c-.68 0-1.16.16-1.45.48-.2.25-.32.68-.32 1.29v2.3h3.6l-.49 3.59h-3.1V24h6.1c.4 0 .71-.13.96-.4.26-.27.38-.58.38-.94V1.34A1.33 1.33 0 0022.66 0H1.34C.94 0 .63.12.37.38a1.3 1.3 0 00-.37.96v21.32A1.33 1.33 0 001.34 24H12.8z"
+                fill="rgba(255, 255, 255, 0.99)"
+                fillRule="nonzero"
               />
             </svg>
           </a>
