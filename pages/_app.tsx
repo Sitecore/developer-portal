@@ -31,16 +31,6 @@ function SCDPApp({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
 
-  // Temporarily disable smooth scrolling on route changes.
-  useEffect(() => {
-    const toggleSmoothScrollClass = () => {
-      document.documentElement.classList.toggle('scroll-behavior-auto');
-    };
-
-    router.events.on('routeChangeStart', toggleSmoothScrollClass);
-    router.events.on('routeChangeComplete', toggleSmoothScrollClass);
-  }, [router.events]);
-
   return (
     <>
       <Head>
