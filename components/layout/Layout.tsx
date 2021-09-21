@@ -83,7 +83,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <main className={classnames('mb-16', 'scroll-to-offset')} tabIndex={-1}>
+      <main className={classnames('mb-16', 'scroll-to-offset')}>
         {/* Anchor element at top of page to focus on route change. */}
         <a id={idMainContent} ref={mainContentRef} className={classnames('sr-only')} href="#">
           {pageInfo.title}

@@ -33,7 +33,11 @@ const PromoCard = ({ title, description, img, link, className }: PromoCardProps)
     <div className={classnames('flex', 'flex-col', 'justify-center')}>
       <h2 className={classnames('heading-md', 'mb-4')}>{title}</h2>
       <p className={classnames('text-gray-dark', { 'mb-8': !!link })}>{description}</p>
-      {!!link && <TextLink text={link.text} href={link.href} />}
+      {!!link && (
+        <div>
+          <TextLink text={link.text} href={link.href} />
+        </div>
+      )}
     </div>
   </div>
 );
