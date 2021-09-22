@@ -23,7 +23,7 @@ type HelpPageProps = {
 };
 
 const HelpPage = ({ pageInfo }: HelpPageProps): JSX.Element => (
-  <SocialPage pageInfo={pageInfo} promoBefore={sitecoreSupportPromo} ctaAfter={contactUsCta} />
+  <SocialPage pageInfo={pageInfo} promoBefore={[sitecoreSupportPromo]} ctaAfter={contactUsCta} />
 );
 
 export default HelpPage;

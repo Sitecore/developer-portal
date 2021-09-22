@@ -22,7 +22,7 @@ type CommunityPageProps = {
 };
 
 const CommunityPage = ({ pageInfo }: CommunityPageProps): JSX.Element => (
-  <SocialPage pageInfo={pageInfo} promoBefore={mvpPromo} />
+  <SocialPage pageInfo={pageInfo} promoBefore={[mvpPromo]} />
 );
 
 export default CommunityPage;
