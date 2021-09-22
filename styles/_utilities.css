@@ -1,5 +1,28 @@
 @layer utilities {
   /**
+   * Themes
+   */
+  .theme-light {
+    --theme-bg-alt: theme('colors.gray.lightest');
+    --theme-bg: theme('colors.white');
+    --theme-outline: theme('colors.charcoal');
+    --theme-text-alt: theme('colors.gray.dark');
+    --theme-text: theme('colors.charcoal');
+    --theme-border: theme('colors.gray.light');
+  }
+
+  @variants dark {
+    .theme-dark {
+      --theme-bg-alt: theme('colors.gray.darkest');
+      --theme-bg: theme('colors.charcoal');
+      --theme-outline: theme('colors.white');
+      --theme-text-alt: theme('colors.gray.lightest');
+      --theme-text: theme('colors.white');
+      --theme-border: theme('colors.gray.dark');
+    }
+  }
+
+  /**
    * Headings
    */
   .heading-xl {
@@ -34,5 +57,9 @@
    */
   .scroll-to-offset * {
     scroll-margin-top: theme('spacing.36') !important;
+  }
+
+  .prose * {
+    color: theme('colors.theme-text') !important;
   }
 }

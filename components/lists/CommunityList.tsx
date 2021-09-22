@@ -17,7 +17,9 @@ const CommunityList = ({ className }: CommunityListProps): JSX.Element => (
         <li key={link.title} className={classnames('flex', 'flex-col', 'justify-between')}>
           <div>
             <h3 className={classnames('heading-sm', 'mb-2')}>{link.title}</h3>
-            <p className={classnames('text-sm', 'text-gray-dark', 'mb-6')}>{link.description}</p>
+            <p className={classnames('text-sm', 'text-theme-text-alt', 'mb-6')}>
+              {link.description}
+            </p>
           </div>
           <div>
             <TextLink href={link.href} text={link.linkText} />

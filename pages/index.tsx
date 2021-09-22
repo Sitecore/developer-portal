@@ -79,7 +79,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
           <CommunityList />
         </VerticalGroup>
       </Container>
-      <section className={classnames('bg-gray-lightest', 'py-16')}>
+      <section className={classnames('bg-theme-bg-alt', 'py-16')}>
         <Container>
           <div className={classnames('mb-8', 'max-w-prose')}>
             <h2 className={classnames('heading-md', 'mb-4')}>Explore Sitecore by Solution</h2>

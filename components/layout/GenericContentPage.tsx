@@ -21,7 +21,7 @@ type GenericContentPageProps = {
   promoBefore?: PromoCardProps;
 };
 
-const hasGridClasses = classnames('bg-gray-lightest', 'py-16');
+const hasGridClasses = classnames('bg-theme-bg-alt', 'py-16');
 
 const getTitlesFromPartialGroups = (partialGroups: PagePartialGroup[]): string[] =>
   partialGroups.map((pG) => pG.title);

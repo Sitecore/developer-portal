@@ -80,9 +80,9 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
         ref={quickStartMenuRef}
         className={classnames(
           'shadow-sm',
-          'bg-white',
+          'bg-theme-bg',
           'border',
-          'border-gray-light',
+          'border-theme-border',
           'absolute',
           'top-20',
           'w-56',

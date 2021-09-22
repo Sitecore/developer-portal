@@ -46,7 +46,7 @@ const SolutionPage = ({ pageInfo, products }: SolutionPageProps): JSX.Element =>
 
   return (
     <Layout pageInfo={pageInfo}>
-      <div className={classnames('py-16', 'bg-gray-lightest')}>
+      <div className={classnames('py-16', 'bg-theme-bg-alt')}>
         <Container>
           <CategoryTileList cards={categoryCards} />
         </Container>
