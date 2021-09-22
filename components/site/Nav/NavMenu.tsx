@@ -30,22 +30,6 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
     setOpen(!isOpen);
   };
 
-  useEffect(() => {
-    const pageClickEvent = (event: Event) => {
-      if (navItemRef.current !== null && !navItemRef?.current?.contains(event.target as Node)) {
-        setOpen(!isOpen);
-      }
-    };
-
-    if (isOpen) {
-      window.addEventListener('click', pageClickEvent);
-    }
-
-    return () => {
-      window.removeEventListener('click', pageClickEvent);
-    };
-  }, [isOpen]);
-
   const mainNavItemStyles = classnames(
     'nav-item--button',
     'flex',
@@ -74,99 +58,99 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
   const navItemOverlayActiveClasses = classnames('translate-x-0', 'shadow-inner');
 
   return (
-    <div>
-      {/* 
+    <FocusTrap
+      active={isOpen}
+      focusTrapOptions={{
+        clickOutsideDeactivates: true,
+        onDeactivate: () => setOpen(false),
+      }}
+    >
+      <div>
+        {/* 
         Main Nav Item
       */}
-      <ConditionalWrapper
-        condition={!!url}
-        wrapper={(children) => (
-          <Link href={url as string} passHref>
-            {children}
-          </Link>
-        )}
-      >
-        <DynamicTag
-          tag={children ? 'button' : 'a'}
-          className={classnames(mainNavItemStyles, {
-            [buttonActiveClasses]: children && isOpen,
-            ['lg:pr-5']: !!children,
-          })}
-          onClick={toggleNavItem}
-        >
-          <span className={classnames('inline-flex', 'items-center', 'pointer-events-none')}>
-            {buttonIcon && (
-              <SvgIcon icon={buttonIcon} className={classnames('w-em', 'h-em', 'mr-em')} />
-            )}
-            {title}
-          </span>
-          {children && (
-            <>
-              <span
-                className={classnames(
-                  'absolute',
-                  'top-5',
-                  'right-0',
-                  'block',
-                  'h-em',
-                  'w-em',
-                  'lg:hidden'
-                )}
-              >
-                <SvgIcon
-                  icon="chevron-right"
-                  className={classnames(
-                    'h-inherit',
-                    'w-inherit',
-                    'top-5',
-                    'transition-transform',
-                    'transform-gpu',
-                    'group-hover:translate-x-1'
-                  )}
-                />
-              </span>
-              <span
-                className={classnames(
-                  'absolute',
-                  'top-1/2',
-                  '-mt-1.5',
-                  'right-0',
-                  'block',
-                  'h-3',
-                  'w-3',
-                  'hidden',
-                  'lg:block'
-                )}
-              >
-                <SvgIcon
-                  icon="chevron-down"
-                  className={classnames(
-                    'h-inherit',
-                    'w-inherit',
-                    'top-5',
-                    'transition-transform',
-                    'transform-gpu',
-                    {
-                      ['rotate-180']: isOpen,
-                    }
-                  )}
-                />
-              </span>
-            </>
+        <ConditionalWrapper
+          condition={!!url}
+          wrapper={(children) => (
+            <Link href={url as string} passHref>
+              {children}
+            </Link>
           )}
-        </DynamicTag>
-      </ConditionalWrapper>
-      {/* 
+        >
+          <DynamicTag
+            tag={children ? 'button' : 'a'}
+            className={classnames(mainNavItemStyles, {
+              [buttonActiveClasses]: children && isOpen,
+              ['lg:pr-5']: !!children,
+            })}
+            onClick={toggleNavItem}
+          >
+            <span className={classnames('inline-flex', 'items-center', 'pointer-events-none')}>
+              {buttonIcon && (
+                <SvgIcon icon={buttonIcon} className={classnames('w-em', 'h-em', 'mr-em')} />
+              )}
+              {title}
+            </span>
+            {children && (
+              <>
+                <span
+                  className={classnames(
+                    'absolute',
+                    'top-5',
+                    'right-0',
+                    'block',
+                    'h-em',
+                    'w-em',
+                    'lg:hidden'
+                  )}
+                >
+                  <SvgIcon
+                    icon="chevron-right"
+                    className={classnames(
+                      'h-inherit',
+                      'w-inherit',
+                      'top-5',
+                      'transition-transform',
+                      'transform-gpu',
+                      'group-hover:translate-x-1'
+                    )}
+                  />
+                </span>
+                <span
+                  className={classnames(
+                    'absolute',
+                    'top-1/2',
+                    '-mt-1.5',
+                    'right-0',
+                    'block',
+                    'h-3',
+                    'w-3',
+                    'hidden',
+                    'lg:block'
+                  )}
+                >
+                  <SvgIcon
+                    icon="chevron-down"
+                    className={classnames(
+                      'h-inherit',
+                      'w-inherit',
+                      'top-5',
+                      'transition-transform',
+                      'transform-gpu',
+                      {
+                        ['rotate-180']: isOpen,
+                      }
+                    )}
+                  />
+                </span>
+              </>
+            )}
+          </DynamicTag>
+        </ConditionalWrapper>
+        {/* 
         Nav Item Overlay
       */}
-      {children && (
-        <FocusTrap
-          active={isOpen}
-          focusTrapOptions={{
-            clickOutsideDeactivates: true,
-            onDeactivate: () => setOpen(false),
-          }}
-        >
+        {children && (
           <div
             ref={navItemRef}
             className={classnames(
@@ -272,9 +256,9 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
               </div>
             </div>
           </div>
-        </FocusTrap>
-      )}
-    </div>
+        )}
+      </div>
+    </FocusTrap>
   );
 };
 

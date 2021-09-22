@@ -88,105 +88,105 @@ const Nav = (): JSX.Element => {
   }, [scrolled]);
 
   return (
-    <header className={classnames('h-32')}>
-      <div
-        className={classnames(
-          'bg-white',
-          'border-b',
-          'border-gray-light',
-          'shadow',
-          'z-40',
-          'fixed',
-          'inset-x-0',
-          'top-0',
-          'h-32',
-          'transition-all',
-          {
-            '-top-16': scrolled, // Note: absolute is being used here to avoid "transform" resetting the coordinate system for the children that are relying on the document's coordinates.
-          }
-        )}
-      >
-        <a
-          href={`#${idMainContent}`}
-          className={classnames(
-            'bg-teal',
-            'focus:bg-teal-dark',
-            'hover:bg-teal-dark',
-            'font-semibold',
-            'inline-block',
-            'px-12',
-            'py-4',
-            'text-sm',
-            'text-white',
-            'absolute',
-            'left-gutter',
-            'z-50',
-            'transform-gpu',
-            'transition-transform',
-            '-translate-y-full',
-            'focus:translate-y-0'
-          )}
-        >
-          Skip to Main Content
-        </a>
+    <FocusTrap
+      active={isOpen}
+      focusTrapOptions={{
+        onDeactivate: () => setOpen(false),
+      }}
+    >
+      <header className={classnames('h-32')}>
         <div
           className={classnames(
-            'flex',
-            'items-center',
-            'justify-center',
+            'bg-white',
             'border-b',
             'border-gray-light',
-            'px-gutter',
-            'h-16'
+            'shadow',
+            'z-40',
+            'fixed',
+            'inset-x-0',
+            'top-0',
+            'h-32',
+            'transition-all',
+            {
+              '-top-16': scrolled, // Note: absolute is being used here to avoid "transform" resetting the coordinate system for the children that are relying on the document's coordinates.
+            }
           )}
         >
-          <Link href="/">
-            <a className={classnames('flex', 'items-center', 'mr-auto', 'flex-shrink-0')}>
-              <span
-                className={classnames('block', 'relative', 'w-36', 'h-9', 'lg:w-48', 'lg:h-12')}
-              >
-                <Image src="/sitecore.svg" layout="fill" alt="Sitecore Logo" />
-              </span>
-              <span className={classnames('sr-only')}>Sitecore</span>
-              <span
-                className={classnames(
-                  'hidden',
-                  'text-xs',
-                  'font-semibold',
-                  'ml-4',
-                  'text-gray-darkest',
-                  'xl:block'
-                )}
-              >
-                Developer Portal
-              </span>
-            </a>
-          </Link>
-          <nav
-            ref={navRef}
-            id="scdp-nav"
+          <a
+            href={`#${idMainContent}`}
             className={classnames(
-              'fixed',
-              'bg-white',
-              'top-32',
-              'bottom-0',
-              'inset-0',
-              'items-center',
-              'lg:mx-8',
-              'lg:bg-transparent',
-              'lg:flex',
-              'lg:static',
-              {
-                ['hidden']: !isOpen,
-                ['block']: isOpen,
-              }
+              'bg-teal',
+              'focus:bg-teal-dark',
+              'hover:bg-teal-dark',
+              'font-semibold',
+              'inline-block',
+              'px-12',
+              'py-4',
+              'text-sm',
+              'text-white',
+              'absolute',
+              'left-gutter',
+              'z-50',
+              'transform-gpu',
+              'transition-transform',
+              '-translate-y-full',
+              'focus:translate-y-0'
             )}
           >
-            <FocusTrap
-              active={isOpen}
-              focusTrapOptions={{
-                onDeactivate: () => setOpen(false),
-              }}
+            Skip to Main Content
+          </a>
+          <div
+            className={classnames(
+              'flex',
+              'items-center',
+              'justify-center',
+              'border-b',
+              'border-gray-light',
+              'px-gutter',
+              'h-16'
+            )}
+          >
+            <Link href="/">
+              <a className={classnames('flex', 'items-center', 'mr-auto', 'flex-shrink-0')}>
+                <span
+                  className={classnames('block', 'relative', 'w-36', 'h-9', 'lg:w-48', 'lg:h-12')}
+                >
+                  <Image src="/sitecore.svg" layout="fill" alt="Sitecore Logo" />
+                </span>
+                <span className={classnames('sr-only')}>Sitecore</span>
+                <span
+                  className={classnames(
+                    'hidden',
+                    'text-xs',
+                    'font-semibold',
+                    'ml-4',
+                    'text-gray-darkest',
+                    'xl:block'
+                  )}
+                >
+                  Developer Portal
+                </span>
+              </a>
+            </Link>
+            <nav
+              ref={navRef}
+              id="scdp-nav"
+              className={classnames(
+                'fixed',
+                'bg-white',
+                'top-32',
+                'bottom-0',
+                'inset-0',
+                'items-center',
+                'lg:mx-8',
+                'lg:bg-transparent',
+                'lg:flex',
+                'lg:static',
+                {
+                  ['hidden']: !isOpen,
+                  ['block']: isOpen,
+                }
+              )}
             >
               <ul className={classnames('block', 'text-sm', 'lg:flex')}>
                 {NavigationData.map((item, index) => {
@@ -233,75 +233,75 @@ const Nav = (): JSX.Element => {
                   />
                 </li>
               </ul>
-            </FocusTrap>
-          </nav>
-          <div
-            className={classnames(
-              'flex',
-              'items-center',
-              'justify-end',
-              'ml-auto',
-              'lg:w-24',
-              'xl:w-80'
-            )}
-          >
-            <button
-              aria-controls="scdp-nav"
-              aria-expanded={isOpen}
-              aria-label="Toggle navigation menu"
+            </nav>
+            <div
               className={classnames(
-                'hamburger',
-                'relative',
-                'w-9',
-                'h-7',
-                'z-20',
-                'hover:text-teal',
-                'lg:hidden'
+                'flex',
+                'items-center',
+                'justify-end',
+                'ml-auto',
+                'lg:w-24',
+                'xl:w-80'
               )}
-              onClick={toggleNav}
             >
-              <span
-                className={classnames(hamburgerBarClasses, 'mb-1.5', 'hamburger-bar-outside', {
-                  ['hidden']: isOpen,
-                })}
-              ></span>
-              <span
-                className={classnames(hamburgerBarClasses, 'mb-1.5', {
-                  ['hamburger-bar-middle']: isOpen,
-                })}
-              ></span>
-              <span
-                className={classnames(hamburgerBarClasses, '-mt-2.5', 'mb-1.5', {
-                  ['hamburger-bar-middleclone']: isOpen,
-                })}
-              ></span>
-              <span
-                className={classnames(hamburgerBarClasses, 'hamburger-bar-outside', {
-                  ['hidden']: isOpen,
-                })}
-              ></span>
-            </button>
-            <QuickStartMenu
-              className={classnames('hidden', 'w-7', 'h-7', 'lg:h-5', 'lg:w-5', 'lg:block')}
-            />
+              <button
+                aria-controls="scdp-nav"
+                aria-expanded={isOpen}
+                aria-label="Toggle navigation menu"
+                className={classnames(
+                  'hamburger',
+                  'relative',
+                  'w-9',
+                  'h-7',
+                  'z-20',
+                  'hover:text-teal',
+                  'lg:hidden'
+                )}
+                onClick={toggleNav}
+              >
+                <span
+                  className={classnames(hamburgerBarClasses, 'mb-1.5', 'hamburger-bar-outside', {
+                    ['hidden']: isOpen,
+                  })}
+                ></span>
+                <span
+                  className={classnames(hamburgerBarClasses, 'mb-1.5', {
+                    ['hamburger-bar-middle']: isOpen,
+                  })}
+                ></span>
+                <span
+                  className={classnames(hamburgerBarClasses, '-mt-2.5', 'mb-1.5', {
+                    ['hamburger-bar-middleclone']: isOpen,
+                  })}
+                ></span>
+                <span
+                  className={classnames(hamburgerBarClasses, 'hamburger-bar-outside', {
+                    ['hidden']: isOpen,
+                  })}
+                ></span>
+              </button>
+              <QuickStartMenu
+                className={classnames('hidden', 'w-7', 'h-7', 'lg:h-5', 'lg:w-5', 'lg:block')}
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className={classnames(
+                'px-gutter-all',
+                'py-2.5',
+                'max-w-screen-xl',
+                'm-auto',
+                'relative',
+                'z-0'
+              )}
+            >
+              <SearchBox />
+            </div>
           </div>
         </div>
-        <div>
-          <div
-            className={classnames(
-              'px-gutter-all',
-              'py-2.5',
-              'max-w-screen-xl',
-              'm-auto',
-              'relative',
-              'z-0'
-            )}
-          >
-            <SearchBox />
-          </div>
-        </div>
-      </div>
-    </header>
+      </header>
+    </FocusTrap>
   );
 };
 
