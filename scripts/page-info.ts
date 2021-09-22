@@ -49,6 +49,15 @@ export const getPageInfo = async (
   const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
   const meta = getFileData(pagesDirectory, `${file}/index`).data as MarkdownMeta;
 
+  const pageInfo = {
+    // Default hasInPageNav to true, overwrite with false in md
+    hasInPageNav: true,
+    ...meta,
+    stackexchange: [],
+    youtube: [],
+    twitter: [],
+  } as PageInfo;
+
   let twitterHandle: string | undefined = undefined;
   if (meta.twitter) {
     const twitterAsArray: string[] = Array.isArray(meta.twitter) ? meta.twitter : [meta.twitter];
@@ -58,15 +67,9 @@ export const getPageInfo = async (
         : '';
   }
 
-  const pageInfo = {
-    // Default hasInPageNav to true, overwrite with false in md
-    hasInPageNav: true,
-    ...meta,
-    stackexchange: [],
-    youtube: [],
-    twitter: [],
-    twitterHandle,
-  } as PageInfo;
+  if (!!twitterHandle) {
+    pageInfo.twitterHandle = twitterHandle;
+  }
 
   /**
    * Fetch all integrations for the page so we can limit the number of requests
