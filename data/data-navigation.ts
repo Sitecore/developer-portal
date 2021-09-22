@@ -220,6 +220,10 @@ const NavigationData: NavigationData[] = [
             title: 'Sitecore Experience Accelerator (SXA)',
             url: '/content-management/sxa',
           },
+          {
+            title: 'Downloads',
+            url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx'
+          },
         ],
       },
       {
@@ -234,18 +238,42 @@ const NavigationData: NavigationData[] = [
             url: '/customer-data-management/experience-platform',
           },
           {
-            title: 'Experience Edge for Content Hub',
+            title: 'Personalization and Testing',
             url: '/personalization-testing/experience-platform',
+          },
+          {
+            title: 'Downloads',
+            url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx'
           },
         ],
       },
       {
         title: 'Sitecore Send',
         url: '/marketing-automation/send',
+        children: [
+          {
+            title: 'Marketing Automation',
+            url: '/marketing-automation/send',
+          },
+          {
+            title: 'Get Sitecore Send for free',
+            url: 'https://identity.moosend.com/register/'
+          }
+        ]
       },
       {
         title: 'Sitecore OrderCloud',
         url: '/commerce/ordercloud',
+        children: [
+          {
+            title: 'Order Management, Storefronts and Marketplaces, and Merchandizing',
+            url: '/commerce/ordercloud',
+          },
+          {
+            title: 'Access OrderCloud Portal for free',
+            url: 'https://portal.ordercloud.io/',
+          }
+        ]
       },
       {
         title: 'Sitecore Experience Commerce',
@@ -253,7 +281,7 @@ const NavigationData: NavigationData[] = [
         children: [
           {
             title: 'Order Management, Storefronts, and Merchandizing',
-            url: '/commerce/experience-commerce'
+            url: '/commerce/experience-commerce',
           },
           {
             title: 'Downloads',
