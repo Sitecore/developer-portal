@@ -22,7 +22,7 @@ const SocialPage = ({ pageInfo, promoBefore, ctaAfter }: SocialPageProps): JSX.E
       <VerticalGroup>
         {promoBefore && <PromoCard {...promoBefore} />}
         <CommunityList />
-        <TwitterFeed content={pageInfo.twitter} />
+        <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
         <StackExchangeFeed content={pageInfo.stackexchange} />
         {ctaAfter && <CTACard {...ctaAfter} />}
       </VerticalGroup>
