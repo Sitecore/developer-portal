@@ -26,6 +26,7 @@
     "react-hooks-global-state": "^1.0.2",
     "react-id-generator": "^3.0.2",
     "react-markdown": "^7.0.1",
+    "react-twitter-embed": "^3.0.3",
     "recursive-readdir-sync": "^1.0.6",
     "remark-gfm": "^2.0.0",
     "tailwindcss-classnames": "^2.2.3",

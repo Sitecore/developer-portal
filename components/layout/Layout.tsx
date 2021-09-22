@@ -85,7 +85,13 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
       </Head>
       <main className={classnames('mb-16', 'scroll-to-offset')}>
         {/* Anchor element at top of page to focus on route change. */}
-        <a id={idMainContent} ref={mainContentRef} className={classnames('sr-only')} href="#">
+        <a
+          id={idMainContent}
+          ref={mainContentRef}
+          className={classnames('sr-only')}
+          href="#"
+          tabIndex={-1}
+        >
           {pageInfo.title}
         </a>
         {/* a11y announcement for route changes. */}

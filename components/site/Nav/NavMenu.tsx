@@ -229,11 +229,19 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
             */}
             <div className={classnames('px-gutter')}>
               <div className={classnames('max-w-screen-lg', 'mx-auto', 'pt-6', 'lg:py-12')}>
-                <ul className={classnames('grid', 'gap-6', 'md:grid-cols-2', 'lg:grid-cols-3')}>
+                <ul
+                  className={classnames(
+                    'grid',
+                    'gap-6',
+                    'md:gap-8',
+                    'md:grid-cols-2',
+                    'lg:grid-cols-3'
+                  )}
+                >
                   {children?.map((child, index) => (
                     <li
                       key={`child-${index}`}
-                      className={classnames('border-b', 'border-gray-light', 'pb-4')}
+                      className={classnames('border-b', 'border-gray-light', 'pb-4', 'md:pb-6')}
                     >
                       <NavLink
                         text={child.title}
