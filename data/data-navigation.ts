@@ -149,7 +149,7 @@ const NavigationData: NavigationData[] = [
             url: '/commerce/ordercloud',
           },
           {
-            title: 'Sitecore Experience Platform',
+            title: 'Sitecore Experience Commerce',
             url: '/commerce/experience-commerce',
           },
         ],
