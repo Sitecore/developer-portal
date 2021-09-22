@@ -21,5 +21,6 @@ Learn
 - [Development Walkthroughs](https://doc.sitecore.com/en/developers/101/developer-tools/development-walkthroughs.html)
 
 Playground
+- [Download Sitecore Headless Rendering](https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering.aspx)
 
 Socials

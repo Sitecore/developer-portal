@@ -15,7 +15,7 @@ Docs
 - [Sitecore, Docker, and Continuous Integration](https://www.sitecore.com/knowledge-center/getting-started/sitecore-docker-and-continuous-integration)
 - [Running Sitecore on Azure Kubernetes Service (AKS)](https://www.sitecore.com/knowledge-center/getting-started/running-sitecore-on-azure-kubernetes-service)
 
-Discover
+Playground
 
 - [Sitecore Docker Images Repository](https://github.com/Sitecore/docker-images)
 

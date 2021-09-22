@@ -22,7 +22,7 @@ Learn
 
 Playground
 
-- [Playground xConnect]()
+- [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
 
 Socials
 

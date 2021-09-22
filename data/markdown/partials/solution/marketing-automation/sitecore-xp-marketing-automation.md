@@ -33,6 +33,8 @@ Learn
 
 Playground
 
-- [Create a Marketing Automation Campaign](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/create-a-marketing-automation-campaign.html)
+- [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
+- [Download Email Experience Manager (EXM)](https://dev.sitecore.net/Downloads/Email_Experience_Manager.aspx)
+- [Download EXM Dedicated Dispatch Server](https://dev.sitecore.net/Downloads/EXM_Dedicated_Dispatch_Server.aspx)
 
 Socials
