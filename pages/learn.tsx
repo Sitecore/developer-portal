@@ -40,7 +40,7 @@ export async function getStaticProps() {
     {
       title: 'Integrations',
       description:
-        'Do you want to see how you can integrate the different Sitecore products today. These integration guides will get you started leveraging the power of mulitple products.',
+        'Do you want to see how you can integrate the different Sitecore products today? These integration guides will get you started leveraging the power of multiple products.',
       partials: integrations,
     }
   ];
