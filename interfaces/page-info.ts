@@ -23,6 +23,7 @@ export type PageInfo = PageInfoCore & {
   twitterHandle?: string;
   youtube: YouTubeVideo[];
   youtubeTitle?: string;
+  youtubePlaylistTitle?: string;
 };
 
 export type ChildPageInfo = {

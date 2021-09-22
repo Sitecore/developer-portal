@@ -1,27 +1,57 @@
 // Global
 import axios, { AxiosResponse } from 'axios';
 // Interfaces
-import type { YouTubeVideo } from '@/interfaces/integrations';
+import type { YouTubeVideo, YouTubeApiResponse } from '@/interfaces/integrations';
 
 type YouTubeResponse = {
   items: [];
 };
 
-const get = async (playlistId?: string): Promise<YouTubeVideo[]> => {
+type YouTubePlaylistItem = {
+  snippet: {
+    title: string;
+  };
+};
+
+const get = async (playlistId?: string): Promise<YouTubeApiResponse> => {
   if (!playlistId) {
-    return [];
+    return {
+      content: [],
+      playlistTitle: undefined,
+    };
   }
 
-  return axios
-    .get(
-      `https://www.googleapis.com/youtube/v3/playlistItems?key=${process.env.YOUTUBE_API_KEY}&playlistId=${playlistId}&part=snippet&maxResults=3`
-    )
-    .then((response: AxiosResponse<YouTubeResponse>) => {
-      return response.data.items;
-    })
-    .catch(() => {
-      return [];
-    });
+  return Promise.all([
+    axios
+      .get(
+        `https://www.googleapis.com/youtube/v3/playlistItems?key=${process.env.YOUTUBE_API_KEY}&playlistId=${playlistId}&part=snippet&maxResults=3`
+      )
+      .then((response: AxiosResponse<YouTubeResponse>) => {
+        return response.data.items;
+      })
+      .catch(() => {
+        return [];
+      }),
+    axios
+      .get(
+        `https://www.googleapis.com/youtube/v3/playlists?key=${process.env.YOUTUBE_API_KEY}&id=${playlistId}&part=snippet`
+      )
+      .then((response: AxiosResponse<YouTubeResponse>) => {
+        const items: YouTubePlaylistItem[] = response.data?.items;
+        if (items && items.length > 0) {
+          return items[0].snippet?.title || undefined;
+        }
+        return undefined;
+      })
+      .catch(() => {
+        return '';
+      }),
+  ]).then((res) => {
+    return {
+      content: res[0],
+      playlistTitle: res[1],
+    };
+  });
 };
 
 export default {
