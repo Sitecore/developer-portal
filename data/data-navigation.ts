@@ -161,6 +161,20 @@ const NavigationData: NavigationData[] = [
       {
         title: 'DevOps',
         url: '/devops',
+        children: [
+          {
+            title: 'Containers & Orchestration',
+            url: '/devops/containers',
+          },
+          {
+            title: 'Sitecore Install Framework',
+            url: '/devops/sif',
+          },
+          {
+            title: 'Sitecore ARM Templates',
+            url: '/devops/arm-templates',
+          },
+        ],
       },
     ],
   },
