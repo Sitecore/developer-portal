@@ -25,6 +25,7 @@ module.exports = {
       'theme-bg-alt': 'var(--theme-bg-alt)',
       'theme-outline': 'var(--theme-outline)',
       'theme-border': 'var(--theme-border)',
+      'theme-border-alt': 'var(--theme-border-alt)',
       // Primary brand colors
       black: '#000000',
       charcoal: '#232323',
@@ -96,7 +97,15 @@ module.exports = {
       },
       boxShadow: {
         inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.15)',
-        lg: '0 2px 15px 0 rgba(0, 0, 0, 0.2)',
+        DEFAULT: '0 2px 4px 0 rgba(0, 0, 0, 0.1)',
+        md: '0 0 12px 0 rgba(0, 0, 0, 0.1)',
+        lg: '0 15px 15px 0 rgba(0, 0, 0, 0.1)',
+        dark: '0 2px 4px 0 rgba(0, 0, 0, 0.8)',
+        ['lg-dark']: '0 15px 15px 0 rgba(0, 0, 0, 0.8)',
+        ['md-dark']: '0 0 12px 0 rgba(0, 0, 0, 0.8)',
+        ['theme']: 'var(--theme-shadow)',
+        ['theme-md']: 'var(--theme-shadow-md)',
+        ['theme-lg']: 'var(--theme-shadow-lg)',
       },
       lineHeight: {
         tight: '1.15',

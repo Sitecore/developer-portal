@@ -94,7 +94,7 @@ const Nav = (): JSX.Element => {
           'bg-theme-bg',
           'border-b',
           'border-theme-border',
-          'shadow',
+          'shadow-theme',
           'z-40',
           'fixed',
           'inset-x-0',
@@ -135,7 +135,7 @@ const Nav = (): JSX.Element => {
             'items-center',
             'justify-center',
             'border-b',
-            'border-theme-bg-alt',
+            'border-theme-border-alt',
             'px-gutter',
             'h-16'
           )}
