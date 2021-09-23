@@ -58,6 +58,13 @@ export const getPageInfo = async (
     twitter: [],
   } as PageInfo;
 
+  /**
+   * Fetch all integrations for the page so we can limit the number of requests
+   *
+   * All of these APIs will return an empty array if the corresponding meta key is null
+   */
+  pageInfo.stackexchange = await StackExchangeApi.get(meta.stackexchange);
+  pageInfo.twitter = await TwitterApi.get(meta.twitter);
   let twitterHandle: string | undefined = undefined;
   if (meta.twitter) {
     const twitterAsArray: string[] = Array.isArray(meta.twitter) ? meta.twitter : [meta.twitter];
@@ -71,14 +78,12 @@ export const getPageInfo = async (
     pageInfo.twitterHandle = twitterHandle;
   }
 
-  /**
-   * Fetch all integrations for the page so we can limit the number of requests
-   *
-   * All of these APIs will return an empty array if the corresponding meta key is null
-   */
-  pageInfo.stackexchange = await StackExchangeApi.get(meta.stackexchange);
-  pageInfo.twitter = await TwitterApi.get(meta.twitter);
-  pageInfo.youtube = await YouTubeApi.get(meta.youtube);
+  const youtubeInfo = await YouTubeApi.get(meta.youtube);
+  pageInfo.youtube = youtubeInfo.content;
+  // The playlistTitle is only used if the author has not already supplied a youtubeTitle meta tag
+  if (youtubeInfo.playlistTitle) {
+    pageInfo.youtubePlaylistTitle = youtubeInfo.playlistTitle;
+  }
 
   return pageInfo;
 };
