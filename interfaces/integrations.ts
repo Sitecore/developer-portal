@@ -8,7 +8,9 @@ export type StackExchangeQuestion = {
   tags: string[];
 };
 
-export type Tweet = {};
+export type Tweet = {
+  id: string;
+};
 
 /**
  * YouTube

@@ -149,7 +149,7 @@ const NavigationData: NavigationData[] = [
             url: '/commerce/ordercloud',
           },
           {
-            title: 'Sitecore Experience Platform',
+            title: 'Sitecore Experience Commerce',
             url: '/commerce/experience-commerce',
           },
         ],
@@ -250,6 +250,16 @@ const NavigationData: NavigationData[] = [
       {
         title: 'Sitecore Experience Commerce',
         url: '/commerce/experience-commerce',
+        children: [
+          {
+            title: 'Order Management, Storefronts, and Merchandizing',
+            url: '/commerce/experience-commerce'
+          },
+          {
+            title: 'Downloads',
+            url: 'https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx'
+          }
+        ]
       },
     ],
   },
