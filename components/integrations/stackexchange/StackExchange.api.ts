@@ -8,7 +8,7 @@ type StackExchangeResponse = {
 };
 
 const avoidRateLimit = async () => {
-  // Rate limit ourselves to 20 per second
+  // Rate limit ourselves to ...about... 20 per second
   return new Promise((res) => setTimeout(res, 50));
 };
 
