@@ -21,7 +21,10 @@ export async function getStaticProps() {
     'learn/getting-started/product-features',
   ]);
   const integrations = await getPartialsAsArray([
-    'learn/integrations/blueprints',
+    'learn/integrations/cdp',
+    'learn/integrations/xm',
+    'learn/integrations/content-hub',
+    'learn/integrations/send'
   ]);
 
   const partialGroups = [
