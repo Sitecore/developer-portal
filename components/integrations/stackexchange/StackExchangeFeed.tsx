@@ -64,7 +64,7 @@ const StackExchangeFeed = ({
                   target="_blank"
                   className={classnames('font-semibold', 'hover:underline', 'inline-block')}
                 >
-                  {question.title}
+                  <span dangerouslySetInnerHTML={{ __html: question.title }} />
                   <span className="sr-only">Opens in a new tab</span>
                 </a>
                 {question.tags.length && (
