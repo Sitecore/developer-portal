@@ -23,7 +23,8 @@
       --theme-text-alt: theme('colors.gray.lightest');
       --theme-text: theme('colors.white');
       --theme-border: theme('colors.gray.dark');
-      --theme-border-alt: theme('colors.gray.darkest');
+      /* Only used in this one instance, will leave this as hex for now. */
+      --theme-border-alt: #505050;
       --theme-shadow: theme('boxShadow.dark');
       --theme-shadow-md: theme('boxShadow.md-dark');
       --theme-shadow-lg: theme('boxShadow.lg-dark');
