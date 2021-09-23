@@ -69,7 +69,7 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
     'lg:translate-none',
     'lg:hidden'
   );
-  const navItemOverlayActiveClasses = classnames('translate-x-0', 'shadow-inner');
+  const navItemOverlayActiveClasses = classnames('translate-x-0');
 
   return (
     <div>
@@ -235,7 +235,7 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
             {/* 
               Nav Item Links
             */}
-            <div className={classnames('px-gutter')}>
+            <div className={classnames('px-gutter', 'shadow-inner')}>
               <div className={classnames('max-w-screen-lg', 'mx-auto', 'pt-6', 'lg:py-12')}>
                 <ul
                   className={classnames(
