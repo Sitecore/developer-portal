@@ -39,3 +39,8 @@ export type YouTubeVideo = {
   id: string;
   snippet: YouTubeSnippet;
 };
+
+export type YouTubeApiResponse = {
+  content: YouTubeVideo[];
+  playlistTitle?: string;
+};

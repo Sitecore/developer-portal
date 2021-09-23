@@ -7,10 +7,17 @@ type StackExchangeResponse = {
   items: StackExchangeQuestion[];
 };
 
+const avoidRateLimit = async () => {
+  // Rate limit ourselves to ...about... 20 per second
+  return new Promise((res) => setTimeout(res, 50));
+};
+
 const get = async (args?: string | string[]): Promise<StackExchangeQuestion[]> => {
   if (!args) {
     return [];
   }
+
+  await avoidRateLimit();
 
   const tags: string[] = [];
 

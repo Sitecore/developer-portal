@@ -1,5 +1,37 @@
 @layer utilities {
   /**
+   * Themes
+   */
+  .theme-light {
+    --theme-bg-alt: theme('colors.gray.lightest');
+    --theme-bg: theme('colors.white');
+    --theme-outline: theme('colors.charcoal');
+    --theme-text-alt: theme('colors.gray.dark');
+    --theme-text: theme('colors.charcoal');
+    --theme-border: theme('colors.gray.light');
+    --theme-border-alt: theme('colors.gray.light');
+    --theme-shadow: theme('boxShadow.DEFAULT');
+    --theme-shadow-md: theme('boxShadow.md');
+    --theme-shadow-lg: theme('boxShadow.lg');
+  }
+
+  @variants dark {
+    .theme-dark {
+      --theme-bg-alt: theme('colors.gray.darkest');
+      --theme-bg: theme('colors.charcoal');
+      --theme-outline: theme('colors.white');
+      --theme-text-alt: theme('colors.gray.lightest');
+      --theme-text: theme('colors.white');
+      --theme-border: theme('colors.gray.dark');
+      /* Only used in this one instance, will leave this as hex for now. */
+      --theme-border-alt: #505050;
+      --theme-shadow: theme('boxShadow.dark');
+      --theme-shadow-md: theme('boxShadow.md-dark');
+      --theme-shadow-lg: theme('boxShadow.lg-dark');
+    }
+  }
+
+  /**
    * Headings
    */
   .heading-xl {
@@ -34,5 +66,9 @@
    */
   .scroll-to-offset * {
     scroll-margin-top: theme('spacing.36') !important;
+  }
+
+  .prose * {
+    color: theme('colors.theme-text') !important;
   }
 }

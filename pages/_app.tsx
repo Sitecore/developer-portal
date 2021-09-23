@@ -53,9 +53,11 @@ function SCDPApp({ Component, pageProps }: AppProps) {
           `,
         }}
       />
-      <Nav />
-      <Component {...pageProps} />
-      <Footer />
+      <div className="theme-light text-theme-text bg-theme-bg dark:theme-dark">
+        <Nav />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
     </>
   );
 }

@@ -236,7 +236,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Downloads 💾',
-            url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx'
+            url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx',
           },
         ],
       },
@@ -257,7 +257,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Downloads 💾',
-            url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx'
+            url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx',
           },
         ],
       },
@@ -271,9 +271,9 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Get Sitecore Send for free 📧',
-            url: 'https://identity.moosend.com/register/'
+            url: 'https://identity.moosend.com/register/',
           }
-        ]
+        ],
       },
       {
         title: 'Sitecore OrderCloud',
@@ -286,8 +286,8 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Access OrderCloud Portal for free 💸',
             url: 'https://portal.ordercloud.io/',
-          }
-        ]
+          },
+        ],
       },
       {
         title: 'Sitecore Experience Commerce',
@@ -299,7 +299,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Downloads 💾',
-            url: 'https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx'
+            url: 'https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx',
           }
         ]
       },

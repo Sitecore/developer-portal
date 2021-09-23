@@ -12,15 +12,17 @@ import VerticalGroup from '@/components/helper/VerticalGroup';
 
 type SocialPageProps = {
   pageInfo: PageInfo;
-  promoBefore?: PromoCardProps;
+  promoBefore?: PromoCardProps[];
   ctaAfter?: CTACardProps;
 };
 
-const SocialPage = ({ pageInfo, promoBefore, ctaAfter }: SocialPageProps): JSX.Element => (
+const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): JSX.Element => (
   <Layout pageInfo={pageInfo}>
     <Container>
       <VerticalGroup>
-        {promoBefore && <PromoCard {...promoBefore} />}
+        {promoBefore.map((promo, i) => (
+          <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />
+        ))}
         <CommunityList />
         <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
         <StackExchangeFeed content={pageInfo.stackexchange} />

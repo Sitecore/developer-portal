@@ -19,7 +19,14 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
       <div className={classnames('grid', 'gap-6', 'md:grid-cols-2')}>
         {partials.content.map((item, i) => (
           <div
-            className={classnames('prose', 'p-8', 'border', 'border-gray-light', 'bg-white')}
+            className={classnames(
+              'prose',
+              'p-8',
+              'border',
+              'border-theme-border',
+              'bg-theme-bg',
+              'text-theme-text'
+            )}
             key={i}
           >
             <ReactMarkdown remarkPlugins={[setHeadingIds, remarkGfm]}>{item}</ReactMarkdown>
