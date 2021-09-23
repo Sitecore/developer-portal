@@ -21,7 +21,8 @@ Learn
 
 Playground
 
-- [Playground Universal Tracker]()
+- [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
+- [Download Sitecore Universal Tracker](https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx)
 
 Socials
 

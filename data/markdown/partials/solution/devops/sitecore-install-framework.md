@@ -11,7 +11,7 @@ Docs
 
 - [What is the Sitecore Install Framework](https://www.sitecore.com/knowledge-center/blog/359/installing-sitecore-9-what-is-the-sitecore-install-framework-4523)
 
-Discover
+Playground
 
 - [Download SIF](https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework.aspx)
 

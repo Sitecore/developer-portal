@@ -27,6 +27,10 @@ Learn
 - [Sitecore Helix Collection](https://sitecore.ent.learndot.com/course/sitecore-helix-collection)
 - [JavaScript Services (JSS) Collection](https://sitecore.ent.learndot.com/course/java-script-services-jss-collection)
 
+Playground
+
+- [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
+
 Socials
 
 - [Sitecore StackExchange](https://sitecore.stackexchange.com/)
