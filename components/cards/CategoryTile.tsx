@@ -24,8 +24,8 @@ const CategoryTile = ({
   <DynamicTag
     tag={containerTag}
     className={classnames(
-      'bg-white',
-      'border-gray-light',
+      'bg-theme-bg',
+      'border-theme-border',
       'border',
       'px-6',
       'py-12',
@@ -41,7 +41,7 @@ const CategoryTile = ({
         </a>
       </Link>
     </DynamicTag>
-    <p className={classnames('text-sm', 'text-gray-dark')}>{description}</p>
+    <p className={classnames('text-sm', 'text-theme-text-alt')}>{description}</p>
   </DynamicTag>
 );
 

@@ -12,13 +12,19 @@ module.exports = {
   purge: {
     content: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     backgroundSize: {
       'size-hero-pattern': '33.125rem', // 530px, matching SC.com
       ...defaultTheme.backgroundSize,
     },
     colors: {
+      'theme-text': 'var(--theme-text)',
+      'theme-text-alt': 'var(--theme-text-alt)',
+      'theme-bg': 'var(--theme-bg)',
+      'theme-bg-alt': 'var(--theme-bg-alt)',
+      'theme-outline': 'var(--theme-outline)',
+      'theme-border': 'var(--theme-border)',
       // Primary brand colors
       black: '#000000',
       charcoal: '#232323',

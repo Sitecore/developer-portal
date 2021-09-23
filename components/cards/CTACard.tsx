@@ -23,11 +23,11 @@ const CTACard = ({
   linkText,
   title,
 }: CTACardProps): JSX.Element => (
-  <div className={classnames('w-full', 'bg-gray-lightest', 'px-16', 'py-10')}>
+  <div className={classnames('w-full', 'bg-theme-bg-alt', 'px-16', 'py-10')}>
     <DynamicTag tag={headingLevel} className={classnames('heading-md', 'mb-4')}>
       {title}
     </DynamicTag>
-    <p className={classnames('text-gray-darkest', 'mb-6')}>{description}</p>
+    <p className={classnames('text-theme-text-alt', 'mb-6')}>{description}</p>
     <Link href={data.href}>
       <a
         className={classnames(

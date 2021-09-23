@@ -20,7 +20,7 @@ export type PromoCardProps = {
 
 const PromoCard = ({ title, description, img, link, className }: PromoCardProps): JSX.Element => (
   <div className={classnames('grid', 'gap-6', 'md:grid-cols-2', className)}>
-    <div className={classnames('aspect-h-9', 'aspect-w-16', 'w-full', 'bg-gray-light')}>
+    <div className={classnames('aspect-h-9', 'aspect-w-16', 'w-full', 'bg-theme-bg-alt')}>
       <Image
         src={img.src}
         alt={img.alt}
@@ -32,7 +32,7 @@ const PromoCard = ({ title, description, img, link, className }: PromoCardProps)
     </div>
     <div className={classnames('flex', 'flex-col', 'justify-center')}>
       <h2 className={classnames('heading-md', 'mb-4')}>{title}</h2>
-      <p className={classnames('text-gray-dark', { 'mb-8': !!link })}>{description}</p>
+      <p className={classnames('text-theme-text-alt', { 'mb-8': !!link })}>{description}</p>
       {!!link && (
         <div>
           <TextLink text={link.text} href={link.href} />

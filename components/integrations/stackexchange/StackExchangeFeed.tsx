@@ -46,13 +46,13 @@ const StackExchangeFeed = ({
               <div
                 className={classnames(
                   'text-center',
-                  'bg-gray-lightest',
-                  'text-gray-darkest',
+                  'bg-theme-bg-alt',
+                  'text-theme-text-alt',
                   'p-2',
                   'leading-tight',
                   'mr-4',
                   'border',
-                  'border-gray-light'
+                  'border-theme-border'
                 )}
               >
                 <span className={classnames('block', 'text-base')}>{question.view_count}</span>
@@ -88,6 +88,8 @@ const StackExchangeFeed = ({
                               'hover:text-white',
                               'focus:bg-teal',
                               'focus:text-white',
+                              'dark:bg-teal-dark',
+                              'dark:text-teal-light',
                               '2xl:transition-colors'
                             )}
                           >
