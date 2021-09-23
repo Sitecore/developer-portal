@@ -14,6 +14,7 @@ import { setGlobalState, useGlobalState } from '@/lib/global-state';
 import NavMenu from '@/components/site/Nav/NavMenu';
 import SearchBox from '@/components/SearchBox';
 import QuickStartMenu from '@/components/QuickStartMenu';
+import Logo from './Logo';
 
 export type NavTWClasses =
   | 'nav-item--button'
@@ -90,9 +91,9 @@ const Nav = (): JSX.Element => {
     <header className={classnames('h-32')}>
       <div
         className={classnames(
-          'bg-white',
+          'bg-theme-bg',
           'border-b',
-          'border-gray-light',
+          'border-theme-border',
           'shadow',
           'z-40',
           'fixed',
@@ -134,17 +135,15 @@ const Nav = (): JSX.Element => {
             'items-center',
             'justify-center',
             'border-b',
-            'border-gray-light',
+            'border-theme-bg-alt',
             'px-gutter',
             'h-16'
           )}
         >
           <Link href="/">
             <a className={classnames('flex', 'items-center', 'mr-auto', 'flex-shrink-0')}>
-              <span
-                className={classnames('block', 'relative', 'w-36', 'h-9', 'lg:w-48', 'lg:h-12')}
-              >
-                <Image src="/sitecore.svg" layout="fill" alt="Sitecore Logo" />
+              <span className={classnames('block', 'relative', 'w-36', 'lg:w-48')}>
+                <Logo />
               </span>
               <span className={classnames('sr-only')}>Sitecore</span>
               <span
@@ -153,7 +152,7 @@ const Nav = (): JSX.Element => {
                   'text-xs',
                   'font-semibold',
                   'ml-4',
-                  'text-gray-darkest',
+                  'text-theme-text-alt',
                   'xl:block'
                 )}
               >
@@ -166,7 +165,7 @@ const Nav = (): JSX.Element => {
             id="scdp-nav"
             className={classnames(
               'fixed',
-              'bg-white',
+              'bg-theme-bg',
               'top-32',
               'bottom-0',
               'inset-0',
@@ -189,7 +188,7 @@ const Nav = (): JSX.Element => {
                     key={`nav-${index}`}
                     className={classnames(
                       'border-b',
-                      'border-gray-light',
+                      'border-theme-bg-alt',
                       'px-gutter',
                       'xl:p-0',
                       'xl:border-0',
@@ -211,7 +210,7 @@ const Nav = (): JSX.Element => {
               <li
                 className={classnames(
                   'border-b',
-                  'border-gray-light',
+                  'border-theme-bg-alt',
                   'px-gutter',
                   'xl:p-0',
                   'xl:border-0',

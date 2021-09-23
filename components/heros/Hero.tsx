@@ -47,7 +47,7 @@ const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JS
             )}
           />
         </DynamicTag>
-        <p className={classnames('text-lg', 'text-gray-dark')}>{description}</p>
+        <p className={classnames('text-lg', 'text-theme-text-alt')}>{description}</p>
       </div>
       {image && (
         <React.Fragment>
@@ -68,7 +68,7 @@ const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JS
             aria-hidden={true}
           ></div>
           <div className={classnames('relative', 'hidden', 'md:block', 'md:col-span-4')}>
-            <div className={classnames('aspect-h-9', 'aspect-w-16', 'w-full', 'bg-gray-light')}>
+            <div className={classnames('aspect-h-9', 'aspect-w-16', 'w-full', 'bg-theme-bg-alt')}>
               <Image
                 src={image}
                 alt=""

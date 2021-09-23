@@ -10,10 +10,12 @@ import TextLink from '@/components/helper/TextLink';
 import Image from 'next/image';
 
 type YouTubeFeedProps = {
-  content: YouTubeVideo[];
   className?: TTailwindString;
-  title?: string;
+  content: YouTubeVideo[];
   headingLevel?: ValidHeadingLevels;
+  // The playlistTitle is only used if the author has not already supplied a youtubeTitle meta tag
+  playlistTitle?: string;
+  title?: string;
 };
 
 type YouTubeItemProps = {
@@ -22,10 +24,11 @@ type YouTubeItemProps = {
 };
 
 const YouTubeFeed = ({
-  content,
   className,
-  title,
+  content,
   headingLevel,
+  playlistTitle,
+  title,
 }: YouTubeFeedProps): JSX.Element => {
   if (content.length === 0) {
     return <></>;
@@ -34,14 +37,12 @@ const YouTubeFeed = ({
   return (
     <div className={className}>
       <div className={classnames('mb-8', 'justify-between', 'md:flex', 'md:items-end')}>
-        {title && (
-          <DynamicTag
-            tag={headingLevel ? headingLevel : 'h2'}
-            className={classnames('heading-md', 'mb-4', 'mr-4', 'md:mb-0')}
-          >
-            {title}
-          </DynamicTag>
-        )}
+        <DynamicTag
+          tag={headingLevel ? headingLevel : 'h2'}
+          className={classnames('heading-md', 'mb-4', 'mr-4', 'md:mb-0')}
+        >
+          {title || `Latest ${playlistTitle} videos`}
+        </DynamicTag>
         <TextLink
           href={`https://www.youtube.com/playlist?list=${content[0].snippet.playlistId}`}
           text="View Playlist"
@@ -154,7 +155,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
               </g>
             </g>
           </svg>
-          <div className={classnames('border', 'border-gray-light', 'aspect-w-16', 'aspect-h-9')}>
+          <div className={classnames('border', 'border-theme-border', 'aspect-w-16', 'aspect-h-9')}>
             <Image src={snippet.thumbnails.medium.url} layout="fill" />
           </div>
         </a>

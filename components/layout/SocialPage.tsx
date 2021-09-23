@@ -24,7 +24,7 @@ const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): 
           <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />
         ))}
         <CommunityList />
-        <TwitterFeed content={pageInfo.twitter} />
+        <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
         <StackExchangeFeed content={pageInfo.stackexchange} />
         {ctaAfter && <CTACard {...ctaAfter} />}
       </VerticalGroup>

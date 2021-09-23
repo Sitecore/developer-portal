@@ -39,7 +39,9 @@ const SearchBox = ({ className }: SearchBoxProps): JSX.Element => {
         <input
           className={classnames(
             'border',
-            'border-gray-light',
+            'bg-theme-bg',
+            'text-theme-text',
+            'border-theme-border',
             'px-4',
             'pl-12',
             'py-2',

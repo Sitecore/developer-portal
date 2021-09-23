@@ -20,8 +20,10 @@ export type MarkdownMeta = PageInfoCore & {
 export type PageInfo = PageInfoCore & {
   stackexchange: StackExchangeQuestion[];
   twitter: Tweet[];
+  twitterHandle?: string;
   youtube: YouTubeVideo[];
   youtubeTitle?: string;
+  youtubePlaylistTitle?: string;
 };
 
 export type ChildPageInfo = {

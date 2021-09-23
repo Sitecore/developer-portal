@@ -8,7 +8,9 @@ export type StackExchangeQuestion = {
   tags: string[];
 };
 
-export type Tweet = {};
+export type Tweet = {
+  id: string;
+};
 
 /**
  * YouTube
@@ -36,4 +38,9 @@ export type YouTubeVideo = {
   etag: string;
   id: string;
   snippet: YouTubeSnippet;
+};
+
+export type YouTubeApiResponse = {
+  content: YouTubeVideo[];
+  playlistTitle?: string;
 };

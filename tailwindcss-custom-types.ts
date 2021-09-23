@@ -9,6 +9,8 @@ type SCDPTailwindTypes =
   | 'heading-sm'
   | 'heading-xs'
   | 'scroll-to-offset'
+  | 'theme-light'
+  | 'theme-dark'
   | NavTWClasses
   | InPageNavTWClasses
   // @TODO - some transform utilities that are enabled by default
@@ -18,7 +20,9 @@ type SCDPTailwindTypes =
   | 'lg:translate-none'
   // These are not yet supported by tailwindcss-classnames
   // even though they are official plugins
+  | 'aspect-w-3'
   | 'aspect-w-16'
+  | 'aspect-h-4'
   | 'aspect-h-9';
 
 export default SCDPTailwindTypes;

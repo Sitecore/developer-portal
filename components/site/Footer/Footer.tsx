@@ -4,7 +4,18 @@ import { classnames } from 'tailwindcss-classnames';
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className={classnames('bg-charcoal', 'flex', 'text-white', 'justify-center', 'py-12')}>
+    <footer
+      className={classnames(
+        'bg-charcoal',
+        'border-t',
+        'border-theme-border',
+        'flex',
+        'justify-center',
+        'py-12',
+        'text-white',
+        'theme-dark'
+      )}
+    >
       <Container
         size="standard"
         className={classnames('flex', 'container', 'flex-col', 'px-4', 'sm:px-0')}

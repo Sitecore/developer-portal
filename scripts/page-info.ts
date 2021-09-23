@@ -6,6 +6,7 @@ import matter from 'gray-matter';
 import type { MarkdownMeta, PageInfo, ChildPageInfo, PartialData } from '@/interfaces/page-info';
 // Components
 import StackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
+import TwitterApi from '@/components/integrations/twitter/Twitter.api';
 import YouTubeApi from '@/components/integrations/youtube/YouTube.api';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
@@ -63,7 +64,26 @@ export const getPageInfo = async (
    * All of these APIs will return an empty array if the corresponding meta key is null
    */
   pageInfo.stackexchange = await StackExchangeApi.get(meta.stackexchange);
-  pageInfo.youtube = await YouTubeApi.get(meta.youtube);
+  pageInfo.twitter = await TwitterApi.get(meta.twitter);
+  let twitterHandle: string | undefined = undefined;
+  if (meta.twitter) {
+    const twitterAsArray: string[] = Array.isArray(meta.twitter) ? meta.twitter : [meta.twitter];
+    twitterHandle =
+      twitterAsArray && twitterAsArray.length > 0
+        ? twitterAsArray.find((arg) => arg.startsWith('@'))
+        : '';
+  }
+
+  if (!!twitterHandle) {
+    pageInfo.twitterHandle = twitterHandle;
+  }
+
+  const youtubeInfo = await YouTubeApi.get(meta.youtube);
+  pageInfo.youtube = youtubeInfo.content;
+  // The playlistTitle is only used if the author has not already supplied a youtubeTitle meta tag
+  if (youtubeInfo.playlistTitle) {
+    pageInfo.youtubePlaylistTitle = youtubeInfo.playlistTitle;
+  }
 
   return pageInfo;
 };

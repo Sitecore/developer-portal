@@ -1,7 +1,7 @@
 @layer components {
   .in-page-nav-item:before {
-    background-color: theme('colors.gray.light');
-    border-left: 2px solid theme('colors.gray.light');
+    background-color: theme('colors.theme-bg-alt');
+    border-left: 2px solid theme('colors.theme-bg-alt');
     bottom: 0;
     content: '';
     left: -1px;
@@ -19,9 +19,9 @@
   }
 
   .in-page-nav-item:after {
-    background-color: theme('colors.white');
+    background-color: theme('colors.theme-bg');
     border-radius: 100%;
-    border: 2px solid theme('colors.gray.light');
+    border: 2px solid theme('colors.theme-border');
     content: '';
     display: block;
     height: theme('spacing.3');
