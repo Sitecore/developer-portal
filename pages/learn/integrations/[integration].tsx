@@ -10,25 +10,25 @@ export async function getStaticPaths() {
   const productPaths = await getIntegrationPaths();
   return {
     paths: productPaths,
-    fallback: false
-  }
+    fallback: false,
+  };
 }
 
-export async function getStaticProps(context : any) {
+export async function getStaticProps(context: any) {
   const pageInfo = await getPageInfo(`integrations/${context?.params?.integration}`);
   const partials = pageInfo?.partials ? await getPartialsAsArray(pageInfo.partials) : [];
 
   return {
     props: {
-     pageInfo,
-     partials
+      pageInfo,
+      partials,
     },
   };
 }
 
 type XMCDPPageProps = {
- pageInfo: PageInfo;
- partials: PartialData;
+  pageInfo: PageInfo;
+  partials: PartialData;
 };
 
 const XMCDPPage = ({ pageInfo, partials }: XMCDPPageProps): JSX.Element => (

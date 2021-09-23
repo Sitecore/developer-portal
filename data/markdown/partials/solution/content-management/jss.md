@@ -36,6 +36,7 @@ Playground
 - [JSS Source Code](https://github.com/Sitecore/jss)
 - [JSS Sample Code](https://github.com/Sitecore/jss/tree/dev/samples)
 - [JSS Downloads](https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services.aspx)
+- [Headless Services Downloads](https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering.aspx)
 
 Socials
 

@@ -23,7 +23,7 @@ Learn
 
 Playground
 
-- [Playground Web Tracking]()
+- [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
 
 Socials
 

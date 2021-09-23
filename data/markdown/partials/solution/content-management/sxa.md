@@ -20,5 +20,7 @@ Learn
 - [SXA Tutorial YouTube series](https://www.youtube.com/watch?v=nMTUitaBMek)
 
 Playground
+- [Download SXA](https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator.aspx)
 
 Socials
+
