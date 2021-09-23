@@ -20,6 +20,12 @@ export async function getStaticProps() {
     'learn/getting-started/platform-dxp-development-frameworks',
     'learn/getting-started/product-features',
   ]);
+  const integrations = await getPartialsAsArray([
+    'learn/integrations/cdp',
+    'learn/integrations/xm',
+    'learn/integrations/content-hub',
+    'learn/integrations/send'
+  ]);
 
   const partialGroups = [
     {
@@ -34,6 +40,12 @@ export async function getStaticProps() {
         'Do you want to dive in and get started right now? These tutorials, walkthroughs, and samples should help you understand the basics.',
       partials: gettingStarted,
     },
+    {
+      title: 'Integrations',
+      description:
+        'Do you want to see how you can integrate the different Sitecore products today? These integration guides will get you started leveraging the power of multiple products.',
+      partials: integrations,
+    }
   ];
 
   return {
