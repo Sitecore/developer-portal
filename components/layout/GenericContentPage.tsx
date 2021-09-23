@@ -17,8 +17,8 @@ type GenericContentPageProps = {
   partials?: PartialData;
   partialGroups?: PagePartialGroup[];
   hasGrid?: boolean;
-  promoAfter?: PromoCardProps;
-  promoBefore?: PromoCardProps;
+  promoAfter?: PromoCardProps[];
+  promoBefore?: PromoCardProps[];
 };
 
 const hasGridClasses = classnames('bg-theme-bg-alt', 'py-16');
@@ -74,7 +74,9 @@ const GenericContentPage = ({
       <VerticalGroup>
         {promoBefore && (
           <Container>
-            <PromoCard {...promoBefore} />
+            {promoBefore.map((promo, i) => (
+              <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />
+            ))}
           </Container>
         )}
         <div className={classnames({ [hasGridClasses]: hasGrid })}>
@@ -94,7 +96,10 @@ const GenericContentPage = ({
         </div>
         <Container>
           <VerticalGroup>
-            {promoAfter && <PromoCard {...promoAfter} />}
+            {promoAfter &&
+              promoAfter.map((promo, i) => (
+                <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />
+              ))}
             <SocialFeeds pageInfo={pageInfo} />
           </VerticalGroup>
         </Container>

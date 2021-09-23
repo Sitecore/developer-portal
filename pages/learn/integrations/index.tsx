@@ -43,7 +43,7 @@ const LearnPage = ({ pageInfo, partialGroups }: LearnPageProps): JSX.Element => 
     pageInfo={pageInfo}
     partialGroups={partialGroups}
     hasGrid={true}
-    promoAfter={learningAtSitecore}
+    promoAfter={[learningAtSitecore]}
   />
 );
 

@@ -32,6 +32,17 @@ const VerticalGroup = ({ children, size = 'md' }: VerticalGroupProps): JSX.Eleme
               {child}
             </div>
           );
+        } else if (Array.isArray(child)) {
+          return child.map((c, j) => (
+            <div
+              className={classnames({
+                [verticalGroupClasses[size]]: i !== children.length - 1,
+              })}
+              key={j}
+            >
+              {c}
+            </div>
+          ));
         }
       })}
     </>
