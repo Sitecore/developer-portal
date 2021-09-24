@@ -126,6 +126,15 @@ const Footer = (): JSX.Element => {
                 <span className={classnames('sr-only')}>Opens in a new tab</span>
               </a>
             </li>
+            <li className={classnames('inline-block', 'border-l', 'px-2')}>
+            <a
+                className={classnames('font-semibold')}
+                href="/help"
+              >
+                Get Help
+                <span className={classnames('sr-only')}>Opens in a new tab</span>
+              </a>
+            </li>
           </ul>
         </div>
       </Container>
