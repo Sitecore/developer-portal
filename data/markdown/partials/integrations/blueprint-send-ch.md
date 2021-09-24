@@ -96,9 +96,9 @@ Once you have created the Public Link, you must copy it, so you have it ready to
 ##### **Using your Public Link in Subscription Forms**
 Once you have copied your Public Link, you’re ready to leverage it in your subscription forms, for example as a background image. This is where you can leverage your public link. A DAM Public Link is simply a URL to an image, and you can use it by following the steps shown here: [https://help.moosend.com/hc/en-us/articles/360011052120-How-can-I-upload-content-background-Images-while-I-design-my-subscription-form-](https://help.moosend.com/hc/en-us/articles/360011052120-How-can-I-upload-content-background-Images-while-I-design-my-subscription-form-)
 
-![Sequence diagram showing assets from Sitecore DAM being used in Landing Pages][4]
+![Sequence diagram showing assets from Sitecore DAM being used in Subscription Forms][4]
 
-[1]: /images/integrations/send-ch/blueprint_send_ch_product_map.png
-[2]: /images/integrations/send-ch/sequence_diag_dam_to_email_campaigns.png
-[3]: /images/integrations/send-ch/sequence_diag_dam_to_landing_pages.png
-[4]: /images/integrations/send-ch/sequence_diag_dam_to_landing_pages.png
+[1]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/a2f2c216fba04a3ba896e857e4aff0c5?v=f0dc87f3
+[2]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/1b3f6f7cfb1844dfbcb44a06ba49fb98?v=e60f2441
+[3]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/59473e6a63ab424387b6ca3af5c99b43?v=e037dbec
+[4]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/e370a639fa80468e876e7715ecf21adc?v=6dc67c0a
