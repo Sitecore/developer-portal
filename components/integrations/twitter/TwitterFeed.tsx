@@ -21,8 +21,11 @@ const TwitterFeed = ({ content, handle, headingLevel = 'h2' }: TwitterFeedProps)
 
   return (
     <div>
-      <div className={classnames('justify-between', 'md:flex', 'md:items-end', 'md:mb-2')}>
-        <DynamicTag tag={headingLevel} className={classnames('heading-md', 'mb-4', 'md:mb-0')}>
+      <div className={classnames('mb-8', 'justify-between', 'md:flex', 'md:items-end')}>
+        <DynamicTag
+          tag={headingLevel}
+          className={classnames('heading-md', 'mb-4', 'mr-4', 'md:mb-0')}
+        >
           The Latest from {handle}
         </DynamicTag>
         <TextLink
@@ -34,7 +37,7 @@ const TwitterFeed = ({ content, handle, headingLevel = 'h2' }: TwitterFeedProps)
       </div>
       <ul className={classnames('grid', 'gap-6', 'md:grid-cols-3')}>
         {content.map((tweet) => (
-          <li key={tweet.id}>
+          <li key={tweet.id} className={classnames('block', '-mt-2', '-mb-2')}>
             <TwitterTweetEmbed
               tweetId={tweet.id}
               options={{ cards: 'hidden' }}

@@ -36,11 +36,12 @@ const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JS
           <SvgIcon
             icon="heading"
             className={classnames(
-              '-top-3.5',
+              '-top-3',
+              'mt-0.5',
               '-left-24',
               'absolute',
-              'h-1.75em',
-              'w-1.75em',
+              'h-1.625em',
+              'w-1.625em',
               'text-red',
               'hidden',
               'lg:block'

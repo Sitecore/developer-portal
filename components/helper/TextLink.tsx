@@ -35,7 +35,7 @@ const TextLink = ({ text, href, target, className, ...props }: TextLinkProps): J
             'duration-300',
             'h-5',
             'inline-block',
-            'ml-2',
+            'ml-1',
             'transform-gpu',
             'transition-transform',
             'w-5',

@@ -47,12 +47,12 @@ const StackExchangeFeed = ({
                 className={classnames(
                   'text-center',
                   'bg-theme-bg-alt',
-                  'text-theme-text-alt',
+                  'text-theme-text',
                   'p-2',
                   'leading-tight',
                   'mr-4',
                   'border',
-                  'border-theme-border'
+                  'border-theme-border-alt'
                 )}
               >
                 <span className={classnames('block', 'text-base')}>{question.view_count}</span>

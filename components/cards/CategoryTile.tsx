@@ -18,47 +18,57 @@ export type CategoryTileProps = {
 const CategoryTile = ({
   containerTag = 'li',
   description,
-  headingLevel = 'h4',
+  headingLevel = 'h3',
   href,
   title,
-}: CategoryTileProps): JSX.Element => (
-  <DynamicTag
-    tag={containerTag}
-    className={classnames(
-      'bg-theme-bg',
-      'border',
-      'border-theme-border-alt',
-      'px-6',
-      'py-12',
-      'relative',
-      'hover:shadow-theme-md'
-    )}
-  >
-    <DynamicTag tag={headingLevel} className={classnames('heading-sm', 'mb-1')}>
-      <Link href={href}>
-        <a className={classnames('group', 'pr-2')}>
-          {title}
-          <span className={classnames('absolute', 'inset-0', 'z-10')}></span>
-          <span
-            className={classnames(
-              'duration-300',
-              'h-em',
-              'inline-block',
-              'ml-2',
-              'transform-gpu',
-              'transition-transform',
-              'w-em',
-              'group-focus:translate-x-1',
-              'group-hover:translate-x-1'
-            )}
-          >
-            <SvgIcon icon="arrow-right" className={classnames('text-red', 'relative', 'top-0.5')} />
-          </span>
-        </a>
-      </Link>
+}: CategoryTileProps): JSX.Element => {
+  return (
+    <DynamicTag
+      tag={containerTag}
+      className={classnames(
+        'bg-theme-bg',
+        'border',
+        'border-theme-border-alt',
+        'px-6',
+        'py-12',
+        'relative',
+        'hover:shadow-theme-md'
+      )}
+    >
+      <DynamicTag tag={headingLevel} className={classnames('heading-sm', 'mb-1')}>
+        <Link href={href}>
+          <a className={classnames('group', 'pr-6', 'inline-block', 'mb-1')} aria-label={title}>
+            <span className={classnames('relative')}>
+              {title}
+              <span
+                className={classnames(
+                  'duration-300',
+                  'h-em',
+                  'inline-block',
+                  'transform-gpu',
+                  'transition-transform',
+                  'w-em',
+                  'group-focus:translate-x-1',
+                  'whitespace-nowrap',
+                  'group-hover:translate-x-1',
+                  'absolute',
+                  '-right-6',
+                  'bottom-1'
+                )}
+              >
+                <SvgIcon
+                  icon="arrow-right"
+                  className={classnames('text-red', 'relative', 'top-0.5')}
+                />
+              </span>
+            </span>
+            <span className={classnames('absolute', 'inset-0', 'z-10')}></span>
+          </a>
+        </Link>
+      </DynamicTag>
+      <p className={classnames('text-sm', 'text-theme-text-alt')}>{description}</p>
     </DynamicTag>
-    <p className={classnames('text-sm', 'text-theme-text-alt')}>{description}</p>
-  </DynamicTag>
-);
+  );
+};
 
 export default CategoryTile;

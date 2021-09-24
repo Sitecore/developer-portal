@@ -32,7 +32,7 @@ const content: CommunityListItem[] = [
     title: 'Forums',
     description: 'Connect with others in the forums.',
     href: 'https://community.sitecore.net/',
-    linkText: 'Community Forums',
+    linkText: 'Community forums',
     img: {
       src: '/images/cards/community.png',
     },
@@ -40,7 +40,7 @@ const content: CommunityListItem[] = [
 ];
 
 const communityListData = {
-  title: 'Join these cool Sitecore Communities',
+  title: 'Join these cool Sitecore communities',
   content,
 };
 

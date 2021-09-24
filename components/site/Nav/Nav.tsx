@@ -190,8 +190,8 @@ const Nav = (): JSX.Element => {
                       'border-b',
                       'border-theme-bg-alt',
                       'px-gutter',
+                      'lg:border-0',
                       'xl:p-0',
-                      'xl:border-0',
                       'xl:mx-6'
                     )}
                   >

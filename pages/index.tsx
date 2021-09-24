@@ -86,7 +86,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       <section className={classnames('bg-theme-bg-alt', 'py-16')}>
         <Container>
           <div className={classnames('mb-8', 'max-w-prose')}>
-            <h2 className={classnames('heading-md', 'mb-4')}>Explore Sitecore by Solution</h2>
+            <h2 className={classnames('heading-md', 'mb-4')}>Explore Sitecore by solution</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quam accusamus
               neque hic non cumque vitae, illum fugiat quibusdam est?
