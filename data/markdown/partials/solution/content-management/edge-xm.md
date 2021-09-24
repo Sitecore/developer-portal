@@ -5,14 +5,10 @@ prettyName: 'Experience Edge for XM'
 description: 'Provide globally replicated scalable access to your content managed within Sitecore Experience Manager'
 ---
 
-# [Experience Edge for XM](https://doc.sitecore.com/en/developers/101/developer-tools/sitecore-experience-edge-for-xm.html)
+## Introduction
+Experience Edge for Experience Manager (XM) is an API-based service from Sitecore that gives you globally replicated, scalable access to your Sitecore Experience Platform items, layout, and media. You can use the standard publish tools in XM, but instead of rendering content from a self-hosted Content Delivery environment, Experience Edge provides you a Sitecore-hosted GraphQL API. You can build your solution in any language and pull the content you need to pow
 
-## What and why
-
-- [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/12/sitecore-advances-saas-platform-with-sitecore-experience-edge/faq)
-- [Teaser video](https://www.youtube.com/watch?v=nq5mT0XQ0EQ)
-
-- [What is Sitecore Experience Edge](https://www.youtube.com/watch?v=_xw-02PZQTE)
+See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/12/sitecore-advances-saas-platform-with-sitecore-experience-edge/faq) for more information
 
 ## Get started
 

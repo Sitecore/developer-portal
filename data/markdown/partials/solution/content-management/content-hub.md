@@ -5,7 +5,7 @@ prettyName: 'Content Hub'
 description: 'Centralize content strategy and operations for all delivery channels'
 ---
 
-## What is Sitecore Content Hub
+## Introduction
 
 Sitecore Content Hub&trade; offers multiple modules. Here is a brief overview of these modules and their features.
 

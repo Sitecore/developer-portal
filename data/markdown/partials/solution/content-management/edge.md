@@ -3,13 +3,14 @@ solution: ['content-management']
 product: ['edge-content-hub']
 ---
 
-# [Experience Edge for Content Hub](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/caas-intro.html)
+## Introduction
+Sitecore Experience Edge for Content Hub is the solution for brands and organizations that manage content for multiple functions and audiences using numerous devices.
 
-## What and why
+Experience Edge is a set of services for headless content delivery, and is based on the Content as a Service (CaaS) model that focuses on managing content into feeds. These feeds mean that other applications and properties can consume and use the content according to their particular needs.
 
-- [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/12/sitecore-advances-saas-platform-with-sitecore-experience-edge/faq)
-- [Teaser video](https://www.youtube.com/watch?v=nq5mT0XQ0EQ)
-- [What is Sitecore Experience Edge](https://www.youtube.com/watch?v=_xw-02PZQTE)
+The content is hosted by Sitecore Content Hub™ in the cloud, and it is offered to consumers who need it delivered into any applications or systems whenever required. The content delivered is raw; it can be anything and go anywhere
+
+See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/12/sitecore-advances-saas-platform-with-sitecore-experience-edge/faq) for more information
 
 ## Get Started
 
@@ -25,15 +26,13 @@ product: ['edge-content-hub']
 - [Publishing](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-publishing/dp-publishing-intro.html)
 - [Content Delivery](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-delivery/content-delivery.html)
 
-## Learn
+## Learn & Examples
 
 - [Building omni-channel experience with Sitecore Experience Edge & Mobile Blazor Bindings ](https://www.youtube.com/watch?v=MxfDqasm0No&pp=sAQA)
 - [Query Examples](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-delivery/graphql/graphql-examples.html)
-
-## Playground
-
 - [Edge Portal](https://github.com/Sitecore/edge-portal/)
 
 ## Socials
-
+- [Teaser video](https://www.youtube.com/watch?v=nq5mT0XQ0EQ)
+- [What is Sitecore Experience Edge](https://www.youtube.com/watch?v=_xw-02PZQTE)
 - [#SitecoreExperienceEdge Twitter](https://twitter.com/search?q=sitecoreexperienceedge)
