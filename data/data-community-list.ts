@@ -16,7 +16,7 @@ const content: CommunityListItem[] = [
     href: 'https://sitecore.chat',
     linkText: 'Slack',
     img: {
-      src: '/images/heros/hero-example.jpeg',
+      src: '/images/cards/slack.png',
     },
   },
   {
@@ -25,7 +25,7 @@ const content: CommunityListItem[] = [
     href: 'https://sitecore.stackexchange.com',
     linkText: 'Stack Exchange',
     img: {
-      src: '/images/heros/hero-example.jpeg',
+      src: '/images/cards/stackexchange.png',
     },
   },
   {
@@ -34,7 +34,7 @@ const content: CommunityListItem[] = [
     href: 'https://community.sitecore.net/',
     linkText: 'Community Forums',
     img: {
-      src: '/images/heros/hero-example.jpeg',
+      src: '/images/cards/community.png',
     },
   },
 ];
