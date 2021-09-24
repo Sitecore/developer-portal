@@ -62,10 +62,6 @@ const NavigationData: NavigationData[] = [
     url: '/learn',
   },
   {
-    title: 'Get Help',
-    url: '/help',
-  },
-  {
     title: 'Community',
     url: '/community',
   },
