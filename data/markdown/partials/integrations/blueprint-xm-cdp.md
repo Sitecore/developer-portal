@@ -60,4 +60,4 @@ We need to ensure that the actions performed by a user when interacting with the
 Developer configuration can be achieved in a few different ways. The first option is to integrate on the client side either via a direct JavaScript integration, or through Google Tag Manager. Alternatively, you have a third option which is to integrate on the server side.
 There are pros and cons to each of these approaches, so you will need to decide which method best suits your requirements.
 
-[1]: /images/integrations/blueprint_xm_cdp_product_map.png
+[1]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/1a901d0f1a3543899a2afc5e9c3a455d?v=8b8336dd
