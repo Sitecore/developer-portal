@@ -92,6 +92,10 @@ const NavigationData: NavigationData[] = [
             title: 'Sitecore Experience Accelerator (SXA)',
             url: '/content-management/sxa',
           },
+          {
+            title: 'Headless Services & JSS',
+            url: '/content-management/headless',
+          },
         ],
       },
       {

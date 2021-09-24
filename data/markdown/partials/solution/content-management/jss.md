@@ -5,20 +5,19 @@ title: 'Javascript Services'
 description: 'Develop your website headlessly powered by JavaScript.'
 ---
 
-## [JSS](https://jss.sitecore.com/)
+## Sitecore JSS
+Sitecore JSS offers front-end developer of whole new way of working and interacting with Sitecore. Building a JavaScript app on top of Sitecore has never been easier. Simply use your favorite JavaScript framework and leverage the Sitecore capabilities to power your applications.
 
-[What and Why](https://jss.sitecore.com/features/why-jss)
-
-Docs
+### Documentation
 
 - [JSS Documentation](https://jss.sitecore.com/docs)
 - [JSS Release Notes](https://jss.sitecore.com/release-notes)
 
-Discover
+### Discover
 
 - [JSS Help](https://jss.sitecore.com/help)
 
-Learn
+### Learn
 
 - [Getting Started](https://jss.sitecore.com/docs/nextjs/getting-started-nextjs/workflow-options)
 - [JSS Features and Concepts](https://jss.sitecore.com/features)
@@ -29,7 +28,7 @@ Learn
 - [JSS Architecture](https://jss.sitecore.com/docs/fundamentals/architecture)
 - [Walkthrough: Using the Sitecore Container Template for JSS Next.js Projects](https://jss.sitecore.com/docs/nextjs/getting-started-nextjs/walkthrough-dotnetnew)
 
-Playground
+### Examples
 
 - [JSS Developer Trial](https://www.sitecore.com/knowledge-center/getting-started/developer-trial)
 - [JSS Developer Trial - Connected Demo guide](https://jss.sitecore.com/connected-demo)
