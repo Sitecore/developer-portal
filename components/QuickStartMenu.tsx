@@ -84,9 +84,11 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
           'border',
           'border-theme-border',
           'absolute',
-          'top-20',
+          'top-16',
+          '-mt-0.5',
           'w-56',
-          'right-1',
+          'right-4',
+          'z-50',
           {
             [quickStartMenuInactiveClasses]: !isOpen,
             [quickStartMenuActiveClasses]: isOpen,
