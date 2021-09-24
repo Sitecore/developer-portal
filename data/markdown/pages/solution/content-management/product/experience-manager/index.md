@@ -27,8 +27,5 @@ twitter: ['#SitecoreJSS', '#SitecoreForms']
 partials:
   [
     'solution/content-management/web-cms',
-    'solution/content-management/headless-dot-net',
-    'solution/content-management/jss',
-    'solution/content-management/sitecore-forms',
   ]
 ---
