@@ -15,7 +15,7 @@ const nextConfig = {
     GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
   },
   images: {
-    domains: ['sitecorecdn.azureedge.net', 'i.ytimg.com'],
+    domains: ['sitecorecdn.azureedge.net', 'i.ytimg.com', 'mss-p-006-delivery.sitecorecontenthub.cloud'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
 };
