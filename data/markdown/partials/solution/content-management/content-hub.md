@@ -27,7 +27,7 @@ Sitecore Content Hub&trade; offers multiple modules. Here is a brief overview of
 - [The different modules](https://docs.stylelabs.com/content/4.0.x/user-documentation/get-started/content-hub/modules.html)
 - [Terminology](https://docs.stylelabs.com/content/4.0.x/user-documentation/get-started/content-hub/glossary.html)
 
-## Documentation
+## User Documentation
 
 - [DAM](https://docs.stylelabs.com/content/4.0.x/user-documentation/content-user-manual/intro.html)
 - [PCM](https://docs.stylelabs.com/content/4.0.x/user-documentation/pcm/introduction.html)
@@ -35,14 +35,17 @@ Sitecore Content Hub&trade; offers multiple modules. Here is a brief overview of
 - [MRM](https://docs.stylelabs.com/content/4.0.x/user-documentation/marketing-resource-management/introduction.html)
 - [Web-to-print](https://docs.stylelabs.com/content/4.0.x/user-documentation/web-to-print/chili-publisher.html)
 
-## Discover
+## Developer Documentation
 
 - [Content Hub Security guide](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/security/security-guide-intro.html)
 - [Cloud development lifecycle](https://docs.stylelabs.com/contenthub/4.0.x/content/integrations/development-lifecycle/sdlc-introduction.html)
 - [Cloud development Security](https://docs.stylelabs.com/contenthub/4.0.x/content/integrations/security/intro.html)
 - [Cloud development Best Practices](https://docs.stylelabs.com/contenthub/4.0.x/content/integrations/best-practices/best-practices.html)
-
-## Tools for integration
+- [Architecture overview](https://docs.stylelabs.com/content/4.0.x/integrations/architecture/index.html)
+- [Use integrations to extend functionality](https://docs.stylelabs.com/content/4.0.x/integrations/scripting-api/scripting-api-overview.html)
+- [API Reference / SDKs](https://docs.stylelabs.com/content/4.0.x/api-reference/index.html)
+- 
+## SDKs/ Tools for integration
 
 The following tools allow users to integrate Sitecore Content Hub with external systems.
 
@@ -58,11 +61,3 @@ The following tools allow users to integrate Sitecore Content Hub with external 
 |[JavaScript SDK](https://docs.stylelabs.com/contenthub/4.0.x/content/integrations/javascript-sdk/index.html)|The JavaScript SDK is an external tool that makes it easier for JavaScript developers to implement their own logic in manipulating the object resources.|
 |[REST API](https://docs.stylelabs.com/contenthub/4.0.x/content/integrations/rest-api/about.html)|The REST API of Sitecore Content Hub is a Hypermedia API built on top of HTTP where all objects are modeled as resources. Each resource represents the state of the object at the time of the request. Standard HTTP requests and responses are used to query and manipulate the state of the objects.|
 
-## Learn
-
-- [Getting Started](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/get-started/get-started.html)
-- [Understanding the Sitecore Content Hub Lifecycle](https://www.youtube.com/watch?v=kBriN5FxbV0)
-- [Get to know the Sitecore Content Hub features](https://docs.stylelabs.com/content/4.0.x/user-documentation/feature-videos/index.html)
-- [Architecture overview](https://docs.stylelabs.com/content/4.0.x/integrations/architecture/index.html)
-- [Use integrations to extend functionality](https://docs.stylelabs.com/content/4.0.x/integrations/scripting-api/scripting-api-overview.html)
-- [API Reference / SDKs](https://docs.stylelabs.com/content/4.0.x/api-reference/index.html)
