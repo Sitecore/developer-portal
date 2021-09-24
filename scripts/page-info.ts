@@ -95,7 +95,7 @@ export const getPageInfo = async (
  * @returns
  */
 const getTiltesFromContent = (content: string): string[] => {
-  const regExp = /(?<=^\#\#\s)(.*?)(?=\n)/gm;
+  const regExp = /(?<=^\#\#\s)(.*?)(?=\n|\r)/gm;
   const res = content.match(regExp);
   if (res) {
     return res.map((title) => {
