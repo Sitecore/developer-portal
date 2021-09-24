@@ -16,7 +16,7 @@ const content: CommunityListItem[] = [
     href: 'https://sitecore.chat',
     linkText: 'Slack',
     img: {
-      src: '/images/cards/slack.png',
+      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/757e3faaa19f41da9c47aac876e909dd?v=16c38e3f',
     },
   },
   {
@@ -25,7 +25,7 @@ const content: CommunityListItem[] = [
     href: 'https://sitecore.stackexchange.com',
     linkText: 'Stack Exchange',
     img: {
-      src: '/images/cards/stackexchange.png',
+      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/f3357193e74148bb82ff46a4cc888e81?v=e21b62a0',
     },
   },
   {
@@ -34,7 +34,7 @@ const content: CommunityListItem[] = [
     href: 'https://community.sitecore.net/',
     linkText: 'Community Forums',
     img: {
-      src: '/images/cards/community.png',
+      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/80dbfc3c6ecc42bdaa46d4779562e528?v=7784264f',
     },
   },
 ];
