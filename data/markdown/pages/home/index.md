@@ -1,7 +1,7 @@
 ---
 title: 'Sitecore Developer Portal'
 description: 'Welcome to the Sitecore Developer Portal! Let us help guide you to what you need today.'
-heroImage: 'https://sitecorecdn.azureedge.net/-/media/sitecoresite/images/home/headless-topic/_/hero-banner-medium-stocksy_txp5f04d5e2lco200_originaldelivery_1463735-542x326.png'
+heroImage: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868'
 stackexchange: ['/questions?tab=Newest']
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest Discover Sitecore videos'
