@@ -4,5 +4,8 @@ product: ['headless-services']
 title: 'Content Management - Headless Services'
 description: 'Add description here'
 stackexchange: ['#jss']
-partials: ['solution/content-management/jss', 'solution/content-management/headless-dot-net']
+partials: [
+  'solution/content-management/headless',
+  'solution/content-management/jss',
+  'solution/content-management/headless-dot-net']
 ---
