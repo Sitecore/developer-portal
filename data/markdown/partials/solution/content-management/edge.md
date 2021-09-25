@@ -31,8 +31,3 @@ See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/1
 - [Building omni-channel experience with Sitecore Experience Edge & Mobile Blazor Bindings ](https://www.youtube.com/watch?v=MxfDqasm0No&pp=sAQA)
 - [Query Examples](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-delivery/graphql/graphql-examples.html)
 - [Edge Portal](https://github.com/Sitecore/edge-portal/)
-
-## Socials
-- [Teaser video](https://www.youtube.com/watch?v=nq5mT0XQ0EQ)
-- [What is Sitecore Experience Edge](https://www.youtube.com/watch?v=_xw-02PZQTE)
-- [#SitecoreExperienceEdge Twitter](https://twitter.com/search?q=sitecoreexperienceedge)
