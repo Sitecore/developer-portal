@@ -21,6 +21,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
           <div
             className={classnames(
               'prose',
+              'max-w-4xl',
               'p-8',
               'border',
               'border-theme-border',
@@ -39,7 +40,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
   return (
     <VerticalGroup>
       {partials.content.map((item, i) => (
-        <div className={classnames('prose')} key={i}>
+        <div className={classnames('prose', 'max-w-4xl')} key={i}>
           <ReactMarkdown remarkPlugins={[setHeadingIds, remarkGfm]}>{item}</ReactMarkdown>
         </div>
       ))}
