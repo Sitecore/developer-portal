@@ -24,6 +24,8 @@ stackexchange:
     '#headless',
   ]
 twitter: ['#SitecoreJSS', '#SitecoreForms']
+youtube: PL1jJVFm_lGnz44RIbnYwTSrBwAm0bE7_C
+youtubeTitle: Installing Sitecore
 partials:
   [
     'solution/content-management/web-cms',

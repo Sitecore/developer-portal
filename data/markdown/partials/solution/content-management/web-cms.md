@@ -14,11 +14,10 @@ With Experience Manager, you can create, manage, and publish content to your web
 
 ## Documentation
 
-- [Official Sitecore Documentation](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/experience-manager.html)
+- [User Documentation](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/experience-manager.html)
+- [Developer Documentation](https://doc.sitecore.com/en/developers/101/xm/index.html)
 
 ## Learn & Examples
-
-- [Getting Started]()
 
 ### Open Source
 - [Helix Examples](https://github.com/Sitecore/Helix.Examples)
@@ -33,6 +32,6 @@ With Experience Manager, you can create, manage, and publish content to your web
 - [Sitecore Helix Collection](https://sitecore.ent.learndot.com/course/sitecore-helix-collection)
 - [JavaScript Services (JSS) Collection](https://sitecore.ent.learndot.com/course/java-script-services-jss-collection)
 
-## Playground
+## Download
 
 - [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
