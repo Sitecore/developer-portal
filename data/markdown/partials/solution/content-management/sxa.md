@@ -29,6 +29,3 @@ In order to get started with SXA you will need a clean installation of Sitecore 
 ## Download & Demo's
 - [Download SXA](https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator.aspx)
 - [SXA Styleguide]()
-
-Socials
-
