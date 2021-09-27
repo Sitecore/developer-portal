@@ -18,7 +18,3 @@ Learn
 Playground
 
 - [Playground CPE]()
-
-Socials
-
-- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/cortex)
