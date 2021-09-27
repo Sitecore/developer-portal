@@ -219,8 +219,8 @@ const NavigationData: NavigationData[] = [
             url: '/content-management/experience-manager',
           },
           {
-            title: 'Headless',
-            url: '/#',
+            title: 'Headless Services & JSS',
+            url: '/content-management/headless',
           },
           {
             title: 'Developer Collection',
