@@ -6,9 +6,9 @@ description: 'Leverage xConnect and xDB to provide a 360 view of the customer in
 stackexchange: ['#tracking', '#xconnect', '#xdb']
 partials:
   [
-    'solution/customer-data-management/reference-data-service',
-    'solution/customer-data-management/web-tracking',
-    'solution/customer-data-management/xconnect',
+    'solution/customer-data-management/xp-intro',
     'solution/customer-data-management/xdb',
+    'solution/customer-data-management/web-tracking',
+    'solution/customer-data-management/reference-data-service',
   ]
 ---

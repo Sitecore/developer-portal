@@ -4,26 +4,24 @@ product: ['experience-platform']
 title: 'Sitecore xDB'
 ---
 
-## [Sitecore xDB]()
+## xDB & xConnect
+All contact and interaction data is stored centrally in the xDB Collection database. There are several xDB sub-systems that access contact and interaction data via xConnect.
 
-[What and Why]()
+xConnect is the service layer that sits in between the xDB and any trusted client that wants to read, write, or search experience data using the xConnect Client API. Communication must happen over HTTPS and the client must have the appropriate certificate thumbprint. xConnect and xDB are not interchangeable terms - they are two parts of the platform that work together.
 
-Docs
+### Documentation
 
 - [Sitecore xConnect and xDB Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/xconnect-and-the-xdb.html)
 
-Discover
+### Learn
 
-- [Discover Sitecore xDB]()
+- [Getting Started with xConnect](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/getting-started-with-xconnect.html)
 
-Learn
-
-- [Getting Started]()
-
-Playground
+### Download
 
 - [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
 
-Socials
+### Community
 
+- [Sitecore StackExchange](https://sitecore.stackexchange.com/questions/tagged/xconnect)
 - [Sitecore StackExchange](https://sitecore.stackexchange.com/questions/tagged/xdb)
