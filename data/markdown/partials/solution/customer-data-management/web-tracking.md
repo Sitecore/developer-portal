@@ -15,6 +15,3 @@ The Sitecore Web Tracker enables you to track and identify contacts and their in
 ### Download
 
 - [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
-
-Socials
-- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/tracking)

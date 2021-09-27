@@ -18,5 +18,3 @@ Learn
 Playground
 
 - [Playground Marketing Operations]()
-
-Socials

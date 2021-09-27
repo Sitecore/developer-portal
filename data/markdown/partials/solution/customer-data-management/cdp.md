@@ -27,4 +27,3 @@ Sitecore CDP brings together real-time behavioral insights and all your customer
 Socials
 
 - [Slack](https://app.slack.com/client/T09SHRBNU/C0294KX3RQF)
-- [Sitecore Stack Exchange]()

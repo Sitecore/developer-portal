@@ -31,4 +31,3 @@ Playground
 Socials
 
 - [Slack](https://app.slack.com/client/T09SHRBNU/C0294KX3RQF)
-- [Sitecore Stack Exchange]()

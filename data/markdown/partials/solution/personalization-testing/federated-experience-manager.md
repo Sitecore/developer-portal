@@ -22,7 +22,3 @@ Learn
 Playground
 
 - [Playground FXM]()
-
-Socials
-
-- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/fxm)

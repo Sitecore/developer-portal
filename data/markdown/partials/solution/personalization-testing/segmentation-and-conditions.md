@@ -23,7 +23,3 @@ Learn
 Playground
 
 - [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
-
-Socials
-
-- [Segmentation and Conditions Socials]()

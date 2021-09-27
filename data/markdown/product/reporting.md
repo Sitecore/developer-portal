@@ -17,7 +17,3 @@ Learn
 Playground
 
 - [Playground Reporting]()
-
-Socials
-
-- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/reporting)
