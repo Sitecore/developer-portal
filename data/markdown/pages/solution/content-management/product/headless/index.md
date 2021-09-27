@@ -1,8 +1,8 @@
 ---
 solution: ['content-management']
 product: ['headless-services']
-title: 'Content Management - Headless Services'
-description: 'Add description here'
+title: 'Headless Services'
+description: 'Using Sitecore in a headless architecture'
 stackexchange: ['#jss']
 partials: [
   'solution/content-management/headless',
