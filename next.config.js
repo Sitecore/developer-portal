@@ -13,6 +13,7 @@ const nextConfig = {
   // Needed to expose in clientside.
   env: {
     GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+    COOKIE_CONSENT_URL: process.env.COOKIE_CONSENT_URL,
   },
   images: {
     domains: ['sitecorecdn.azureedge.net', 'i.ytimg.com', 'mss-p-006-delivery.sitecorecontenthub.cloud'],

@@ -53,6 +53,20 @@ function SCDPApp({ Component, pageProps }: AppProps) {
           `,
         }}
       />
+
+      <Script
+        strategy="afterInteractive"
+        src={process.env.COOKIE_CONSENT_URL}
+      />
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            function OptanonWrapper() { }
+            `,
+        }}
+      />
+      
       <div className="theme-light text-theme-text bg-theme-bg dark:theme-dark">
         <Nav />
         <Component {...pageProps} />
@@ -63,3 +77,5 @@ function SCDPApp({ Component, pageProps }: AppProps) {
 }
 
 export default SCDPApp;
+
+
