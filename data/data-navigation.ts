@@ -224,7 +224,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Developer Collection',
-            url: '/#',
+            url: '/content-management/developer-collection',
           },
           {
             title: 'Experience Edge for XM',
