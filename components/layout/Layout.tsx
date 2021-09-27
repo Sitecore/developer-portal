@@ -71,7 +71,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           It's OK if they're empty, same as not printing them.
         */}
         <meta property="description" content={pageInfo.description} />
-        <meta property="og:site_name" content="Sitecore Development Portal" />
+        <meta property="og:site_name" content="Sitecore Developer Portal" />
         <meta property="og:title" content={pageInfo.title} />
         <meta property="og:description" content={pageInfo.description} />
         <meta property="og:url" content={`${publicUrl}${path}`} />
