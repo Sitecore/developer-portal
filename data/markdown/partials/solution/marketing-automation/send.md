@@ -5,31 +5,17 @@ title: 'Sitecore Send'
 description: 'Connecting with customers with Sitecore Send marketing automation'
 ---
 
-## [Sitecore Send](https://moosend.com/help/)
+## Introduction
+With Sitecore Send you can dive into the world of email marketing and create the most responsive newsletters to amaze your subscribers. However, sending email campaigns is not the only thing you can do. By leveraging state-of-the-art marketing automation features you can save valuable time by scheduling your campaigns and tracking their performance based on your recipients’ behaviour through advanced Reporting Capabilities.
 
-[Sitecore Send](https://moosend.com/help/) already has a really nice looking portal that maybe we just link to instead of re inventing wheel here.
 
-[What and Why]()
+## Documentation
+- [Knowledge Base](https://moosend.com/help/) 
+- [Integrations](https://moosend.com/integrations/)
+- [API Documentation](https://moosendapp.docs.apiary.io/)
 
-Docs
-
-- [Documentation](https://moosend.com/help/)
-
-Discover
-
-- [Discover]()
-
-Learn
-
-- [Learn Sitecore Send](https://academy.moosend.com/)
+## Learn
+- [Sitecore Send Academy](https://academy.moosend.com/)
 - [How do I get started with my Sitecore Send account?](https://help.moosend.com/hc/en-us/articles/208076445-How-do-I-get-started-with-my-Moosend-account-)
-
-Playground
-
 - [Extra tools](https://moosend.com/resources/fancy-toolshed/)
-
-Socials
-
-- [Moosend Twitter Account](https://twitter.com/moosend)
-- [#Moosend Twitter](https://twitter.com/search?q=%23moosend&src=typed_query&f=live)
 - [Moosend blog](https://moosend.com/blog/)
