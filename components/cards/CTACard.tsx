@@ -28,7 +28,7 @@ const CTACard = ({
       {title}
     </DynamicTag>
     <p className={classnames('text-theme-text-alt', 'mb-6')}>{description}</p>
-    <Link href={data.href}>
+    <Link href={href}>
       <a
         className={classnames(
           'bg-teal',
