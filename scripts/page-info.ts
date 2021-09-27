@@ -26,14 +26,34 @@ type ProductSolutionContextParams = {
   product?: string;
 };
 
+type UseCaseIntegrationContextParam = {
+  integration: string;
+  useCase?: string;
+};
+
+type ContextParams = ProductSolutionContextParams & UseCaseIntegrationContextParam;
+
 const getSolutionFile = ({ solution }: ProductSolutionContextParams): string =>
   `solution/${solution}`;
 
 const getProductFile = ({ solution, product }: ProductSolutionContextParams): string =>
   `solution/${solution}/product/${product}`;
 
-const getFileFromContext = (params: ProductSolutionContextParams) => {
-  return params.hasOwnProperty('product') ? getProductFile(params) : getSolutionFile(params);
+const getUseCaseFile = ({ useCase, integration }: UseCaseIntegrationContextParam): string =>
+  `integrations/${integration}/use-case/${useCase}`;
+
+const getFileFromContext = (params: ContextParams) => {
+  if (params.hasOwnProperty('product')) {
+    return getProductFile(params);
+  }
+
+  if (params.hasOwnProperty('solution')) {
+    return getSolutionFile(params);
+  }
+
+  if (params.hasOwnProperty('useCase')) {
+    return getUseCaseFile(params);
+  }
 };
 
 const getFileData = (directory: string, file: string): Matter => {
@@ -43,9 +63,7 @@ const getFileData = (directory: string, file: string): Matter => {
   return matter(fileMarkdown);
 };
 
-export const getPageInfo = async (
-  arg: string | ProductSolutionContextParams
-): Promise<PageInfo | null> => {
+export const getPageInfo = async (arg: string | ContextParams): Promise<PageInfo | null> => {
   const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
   const meta = getFileData(pagesDirectory, `${file}/index`).data as MarkdownMeta;
 

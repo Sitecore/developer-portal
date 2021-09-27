@@ -23,6 +23,13 @@ type IntegrationPaths = {
   };
 };
 
+type UseCasePaths = {
+  params: {
+    useCase: string;
+    integration: string;
+  };
+};
+
 export const getSolutionPaths = async (): Promise<SolutionPaths[]> => {
   const files = fs.readdirSync(solutionsDirectory);
   return files.map((file) => ({ params: { solution: file } }));
@@ -46,4 +53,21 @@ export const getProductPaths = async (): Promise<ProductPaths[]> => {
 export const getIntegrationPaths = async (): Promise<IntegrationPaths[]> => {
   const files = fs.readdirSync(integrationDirectory);
   return files.map((file) => ({ params: { integration: file } }));
-}
+};
+
+export const getUseCasePaths = async (): Promise<IntegrationPaths[]> => {
+  const paths: UseCasePaths[] = [];
+  const integrations = fs.readdirSync(integrationDirectory);
+  integrations.forEach((integration) => {
+    const subdir = path.join(integrationDirectory, `${integration}/use-case`);
+    if (fs.existsSync(subdir)) {
+      const useCases = fs.readdirSync(subdir);
+      useCases.forEach((useCase) => {
+        if (useCase !== 'index.md') {
+          paths.push({ params: { useCase, integration } });
+        }
+      });
+    }
+  });
+  return paths;
+};
