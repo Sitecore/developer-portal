@@ -15,6 +15,3 @@ Learn
 - [Getting Started]()
 - [Sitecore Cortex & Machine Learning - YouTube series](https://www.youtube.com/playlist?list=PL1jJVFm_lGnz5ET9wSrGBLSmR1caZOgPl)
 
-Playground
-
-- [Playground CPE]()

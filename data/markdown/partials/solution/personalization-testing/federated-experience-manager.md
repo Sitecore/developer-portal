@@ -19,6 +19,3 @@ Learn
 
 - [Getting Started](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/using-fxm.html)
 
-Playground
-
-- [Playground FXM]()

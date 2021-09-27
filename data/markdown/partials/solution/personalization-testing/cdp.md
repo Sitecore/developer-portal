@@ -24,10 +24,6 @@ Learn
 - [Getting Started]()
 - [Boxever Training path](https://learning.sitecore.com/pathway/boxever-training)
 
-Playground
-
-- [Playground Sitecore CDP]()
-
 Socials
 
 - [Slack](https://app.slack.com/client/T09SHRBNU/C0294KX3RQF)

@@ -13,7 +13,3 @@ Discover
 Learn
 
 - [Learn Reporting]()
-
-Playground
-
-- [Playground Reporting]()

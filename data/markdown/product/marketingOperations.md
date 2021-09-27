@@ -15,6 +15,3 @@ Learn
 - [Getting Started]()
 - [Learn Marketing Operations]()
 
-Playground
-
-- [Playground Marketing Operations]()
