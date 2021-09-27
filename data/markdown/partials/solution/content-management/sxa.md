@@ -26,6 +26,6 @@ In order to get started with SXA you will need a clean installation of Sitecore 
 - [Unofficial SXA tutorials](https://www.youtube.com/c/SXA-Tutorials)
 - [Official Sitecore course](https://learning.sitecore.com/course/sitecore-experience-accelerator-sxa-collection)
 
-## Download & Demo's
+## Resources
 - [Download SXA](https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator.aspx)
-- [SXA Styleguide]()
+- [SXA Styleguide](https://github.com/markvanaalst/SXA.Styleguide)
