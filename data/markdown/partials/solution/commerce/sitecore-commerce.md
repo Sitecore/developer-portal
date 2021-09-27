@@ -5,28 +5,30 @@ title: 'Sitecore Experience Commerce'
 description: "Fully integrated Commerce as part of Sitecore's platform DXP"
 ---
 
-## [Sitecore Commerce]()
+## Introduction
+Sitecore Experience Commerce (XC) empowers marketers and merchandisers to fully personalize the end-to-end shopping experience – before, during and after the transaction. The Sitecore Experience Commerce solution provides all the tools you need for managing your e-commerce storefront. 
 
-[What and Why]()
-
-Docs
+## Documentation
 
 - [Sitecore Commerce Documentation](https://doc.sitecore.com/en/developers/101/xc/)
+- [Commerce Developer Reference](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/en/commerce-developer-reference.html)
+- [Commerce DevOps](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/en/commerce-devops.html)
+- [Integrate 3rd party services](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/en/commerce-integration.html)
+- [Commerce Connect](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/en/commerce-connect.html)
+- [SXA Storefront](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/en/sxa-storefront.html)
+- [User Documentation](https://doc.sitecore.com/users/101/sitecore-experience-commerce/en/introduction-to-sitecore-experience-commerce.html)
 
-Discover
+## Getting Started
 
-- [Knowledge Base]()
-
-Learn
-
-- [YouTube: Sitecore Experience Commerce Deep Dive](https://www.youtube.com/watch?v=T0cn3yBbRro&list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94)
+- [Installation Guides](https://dev.sitecore.net/Downloads/Sitecore_Commerce/101/Sitecore_Experience_Commerce_101.aspx)
 - [Getting Started](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/getting-started-with-development.html)
-- [Sitecore Experience Commerce - learning.sitecore.com](https://learning.sitecore.com/pathway/sitecore-experience-commerce)
 
-Playground
+## Learn more
+
+- [Sitecore Experience Commerce - learning.sitecore.com](https://learning.sitecore.com/pathway/sitecore-experience-commerce)
+- [YouTube: Sitecore Experience Commerce Deep Dive](https://www.youtube.com/watch?v=T0cn3yBbRro&list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94)
+- [How to series on YouTube](https://www.youtube.com/watch?v=aWeC7SXNifw&list=PL1jJVFm_lGnwa9R0XqeGrhmNj1AHbAnE9)
+
+## Downloads
 
 - [Downloads](https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx)
-
-Socials
-
-- [#SitecoreCommerce Twitter](https://twitter.com/search?q=%23sitecorecommerce&src=typed_query&f=live)
