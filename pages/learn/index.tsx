@@ -29,9 +29,9 @@ export async function getStaticProps() {
 
   const partialGroups = [
     {
-      title: 'Starter Kits',
+      title: 'Starter Kits and Examples',
       description:
-        'Do you want to quickly see how something can be done? These starter kits will let you dig into the code and see how to use the APIs.',
+        'Do you want to quickly see how something can be done? These starter kits and examples will let you dig into the code and see how to use the APIs.',
       partials: starterKits,
     },
     {

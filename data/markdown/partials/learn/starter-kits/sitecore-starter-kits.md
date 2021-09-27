@@ -1,4 +1,4 @@
-### Sitecore XM/XP/XC Starter Kits
+### Sitecore XM/XP/XC Examples
 
 - [Helix Examples](https://github.com/Sitecore/Helix.Examples)
 - [Lighthouse Demo](https://github.com/Sitecore/Sitecore.Demo.Platform)
