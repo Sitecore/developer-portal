@@ -50,20 +50,20 @@ export const SitecoreQuickLinks: NavigationData = {
 
 const NavigationData: NavigationData[] = [
   {
-    title: 'Docs',
-    url: '/docs',
-  },
-  {
-    title: 'Discover',
-    url: '/discover',
-  },
-  {
     title: 'Learn',
     url: '/learn',
   },
   {
+    title: 'Docs',
+    url: '/docs',
+  },
+  {
     title: 'Community',
     url: '/community',
+  },
+  {
+    title: 'Discover',
+    url: '/discover',
   },
   {
     title: 'Solution',
