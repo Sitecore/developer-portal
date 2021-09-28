@@ -11,6 +11,7 @@ The Sitecore Developer Collection was created by developers, for developers, to 
 ## Sitecore CLI
 The new content serialization tooling combines the best of both TDS & Unicorn, making it much easier for you to script your content changes and move them between your different environments as part of your deployment process. Sitecore CLI provides a command line interface to interact with your Sitecore instance. This command line provides technical team members with automation capabilities and the ability to work at the command line directly with their Sitecore instance.
 
+* [Download Sitecore CLI plugin](https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx)
 * [Documentation](https://doc.sitecore.com/en/developers/101/developer-tools/sitecore-command-line-interface.html)
 
 ## Sitecore for Visual Studio
