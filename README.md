@@ -4,36 +4,41 @@
 Welcome to the Sitecore Developer Portal. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
 
 ## The Tech
-The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when you make changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time.
+The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time.
 
 ## Build Prerequisites
+
+### Node.js
+
+The developer portal is built with Next.js, so you'll need to have Node.js installed to build the project. You can find the latest version of Node.js [here](https://nodejs.org/en/). We recommend using the LTS version of Node.js.
+
 #### Environment Variables
-The Sitecore developer portal incorperates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables. 
+The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables. 
 
 The following variables should exist within the .env.local file: 
-- YOUTUBE_API_KEY: An API key with YouTube Data API v3 access enabled
-- TWITTER_BEARER_TOKEN: A bearer token from Twitter 
+- YOUTUBE_API_KEY="An API key with YouTube Data API v3 access enabled"
+- TWITTER_BEARER_TOKEN="A bearer token from Twitter "
 
-*Note: The site will still function without the above keys. The components that require these environment variables will fail gracefully and not diplay on the page*
+*Note: The site will still function without the above keys. The components that require these environment variables will fail gracefully and not display on the pages.*
 
 ## Getting Started
 
-First, install the dependencies by running the following command inside the project root:
+First clone the repository, then install the dependencies by running the following command inside the project root:
 ```bash
 npm install
 ```
-Create a **.env.local** in the root of the project and the following environment variables:
+Create a **.env.local** in the root of the project and add the following environment variables:
 ```
 YOUTUBE_API_KEY=""
 TWITTER_BEARER_TOKEN=""
 ```
-For more information on the environment variables see section **Environment Variables** above.
+*For more information on the environment variables see section **Environment Variables** above.*
 
 Next run the following command to start the development server:
 ```bash
 npm run dev
 ```
-Open the **http://localhost:3000** in your browser to see the result.
+Open the **http://localhost:3000** in your browser to see the result!
 
 
 ## Bugs and Enhancements 
