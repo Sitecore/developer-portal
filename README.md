@@ -1,4 +1,4 @@
-![Sitecore logo in red background](public\sitecore.svg)
+![Sitecore logo in red background](\public\sitecore.svg)
 
 # Sitecore Developer Portal
 Welcome to the Sitecore Developer Portal. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
@@ -18,11 +18,23 @@ The following variables should exist within the .env.local file:
 
 ## Getting Started
 
-1. Clone the GitHub repository.
-2. Run *npm install* from inside the repository to install all dependencies.
-3. Ensure pre-requisites above are complete.
-4. Run the developement server with *npm run dev*.
-5.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result
+First, install the dependencies by running the following command inside the project root:
+```bash
+npm install
+```
+Create a **.env.local** in the root of the project and the following environment variables:
+```
+YOUTUBE_API_KEY=""
+TWITTER_BEARER_TOKEN=""
+```
+For more information on the environment variables see section **Environment Variables** above.
+
+Next run the following command to start the development server:
+```bash
+npm run dev
+```
+Open the **http://localhost:3000** in your browser to see the result.
+
 
 ## Bugs and Enhancements 
 We are actively working on improving the developer portal. If you have any suggestions or issues, please let us know. Opening an issue on GitHub is a great way to get started.
