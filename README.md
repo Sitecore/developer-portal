@@ -1,4 +1,4 @@
-![Sitecore logo in red background](\public\sitecore.svg)
+![Sitecore logo in red background](https://raw.githubusercontent.com/Sitecore/developer-portal/Readme/public/sitecore.svg)
 
 # Sitecore Developer Portal
 Welcome to the Sitecore Developer Portal. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
