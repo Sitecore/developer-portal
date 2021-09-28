@@ -12,12 +12,16 @@ The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, a
 
 The developer portal is built with Next.js, so you'll need to have Node.js installed to build the project. You can find the latest version of Node.js [here](https://nodejs.org/en/). We recommend using the LTS version of Node.js.
 
-#### Environment Variables
+### Environment Variables
 The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables. 
 
+
 The following variables should exist within the .env.local file: 
-- YOUTUBE_API_KEY="An API key with YouTube Data API v3 access enabled"
-- TWITTER_BEARER_TOKEN="A bearer token from Twitter "
+
+```
+YOUTUBE_API_KEY="An API key with YouTube Data API v3 access enabled"
+TWITTER_BEARER_TOKEN="A bearer token from Twitter "
+```
 
 *Note: The site will still function without the above keys. The components that require these environment variables will fail gracefully and not display on the pages.*
 
