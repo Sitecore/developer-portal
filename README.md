@@ -44,6 +44,19 @@ npm run dev
 ```
 Open the **http://localhost:3000** in your browser to see the result!
 
+## Getting Started 2
+1. Install [Node.js](htts://nodejs.org/en/), we recommend the LTS version.
+2. Clone the repository.
+3. Inside the repository run `npm install` to install all the dependencies.
+4. Create a `env.local` file in the root of the project and add the following environment variables:
+```
+YOUTUBE_API_KEY=""
+TWITTER_BEARER_TOKEN=""
+```
+ (For more information on populating environment variables see section **Environment Variables** above.)
 
+ 5. Run `npm run dev` to start the development server.
+ 6. Open the **http://localhost:3000** in your browser to see the result!
+ 
 ## Bugs and Enhancements 
 We are actively working on improving the developer portal. If you have any suggestions or issues, please let us know. Opening an issue on GitHub is a great way to get started.
