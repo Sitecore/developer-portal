@@ -14,6 +14,7 @@ export async function getStaticProps() {
     'learn/integrations/xm',
     'learn/integrations/content-hub',
     'learn/integrations/send',
+    'learn/integrations/orderCloud'
   ]);
 
   const partialGroups = [
