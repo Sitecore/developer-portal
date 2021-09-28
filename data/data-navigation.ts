@@ -174,6 +174,10 @@ const NavigationData: NavigationData[] = [
             title: 'Sitecore ARM Templates',
             url: '/devops/arm-templates',
           },
+          {
+            title: 'Developer Collection',
+            url: '/content-management/developer-collection',
+          },
         ],
       },
     ],
@@ -219,20 +223,20 @@ const NavigationData: NavigationData[] = [
             url: '/content-management/experience-manager',
           },
           {
-            title: 'Headless Services & JSS',
-            url: '/content-management/headless',
-          },
-          {
-            title: 'Developer Collection',
-            url: '/content-management/developer-collection',
-          },
-          {
             title: 'Experience Edge for XM',
             url: '/content-management/edge-xm',
           },
           {
+            title: 'Headless Services & JSS',
+            url: '/content-management/headless',
+          },
+          {
             title: 'Sitecore Experience Accelerator (SXA)',
             url: '/content-management/sxa',
+          },
+          {
+            title: 'Developer Collection',
+            url: '/content-management/developer-collection',
           },
           {
             title: 'Downloads',
