@@ -124,6 +124,10 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            code: {
+              backgroundColor: 'var(--theme-bg-alt)',
+              fontWeight: 400,
+            },
             pre: {
               backgroundColor: 'var(--theme-bg-alt)',
               border: '1px solid var(--theme-border-alt)',
