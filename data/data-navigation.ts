@@ -176,7 +176,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Developer Collection',
-            url: '/content-management/developer-collection',
+            url: '/devops/developer-collection',
           },
         ],
       },
@@ -236,7 +236,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Developer Collection',
-            url: '/content-management/developer-collection',
+            url: '/devops/developer-collection',
           },
           {
             title: 'Downloads',
