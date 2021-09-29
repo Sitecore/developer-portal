@@ -14,10 +14,32 @@ export type InPageNavTWClasses =
   | 'in-page-nav-item'
   | 'in-page-nav-item--scrolled-to';
 
+/*
+ * @TODO: Adding search back
+ *
+ * To re-enable search (at least the UI in navigation)
+ * You only need to change a few classes and uncomment the search include below.
+ *
+ * All @TODO: statements have the same text, so you can simply search for
+ *    @TODO: Adding search back
+ * to find what you need to change.
+ *
+ * Files affected:
+ *   - Nav.tsx
+ *   - NavMenu.tsx
+ *   - InPageNav.tsx
+ */
+
 const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
   const [navScrolled] = useGlobalState('navScrolled');
 
-  const positionalClasses = navScrolled ? classnames('md:top-24') : classnames('md:top-36');
+  /*
+   * @TODO: Adding Search Back
+   *
+   * Change positionalClasses to reflect additional height from search.
+   * const positionalClasses = navScrolled ? classnames('md:top-24') : classnames('md:top-36');
+   */
+  const positionalClasses = navScrolled ? classnames('md:top-8') : classnames('md:top-24');
 
   return (
     <nav

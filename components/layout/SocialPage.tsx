@@ -8,6 +8,7 @@ import Layout from '@/components/layout/Layout';
 import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
+import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 import VerticalGroup from '@/components/helper/VerticalGroup';
 
 type SocialPageProps = {
@@ -26,6 +27,11 @@ const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): 
         <CommunityList />
         <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
         <StackExchangeFeed content={pageInfo.stackexchange} />
+        <YouTubeFeed
+          content={pageInfo.youtube}
+          title={pageInfo.youtubeTitle}
+          playlistTitle={pageInfo.youtubePlaylistTitle}
+        />
         {ctaAfter && <CTACard {...ctaAfter} />}
       </VerticalGroup>
     </Container>
