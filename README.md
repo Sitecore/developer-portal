@@ -1,4 +1,4 @@
-![Sitecore logo in red background](https://raw.githubusercontent.com/Sitecore/developer-portal/Readme/public/sitecore.svg)
+![Sitecore logo in red background](https://github.com/Sitecore/developer-portal/raw/main/public/android-chrome-256x256.png)
 
 # Sitecore Developer Portal
 Welcome to the Sitecore Developer Portal. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
@@ -39,5 +39,24 @@ TWITTER_BEARER_TOKEN=""
  5. Run `npm run dev` to start the development server.
  6. Open the **http://localhost:3000** in your browser to see the result!
 
-## Bugs and Enhancements 
-We are actively working on improving the developer portal. If you have any suggestions or issues, please let us know. Opening an issue on GitHub is a great way to get started.
+## Contributions
+
+We are very grateful to the community for contributing bug fixes and improvements. We welcome all efforts to evolve and improve the Sitecore Developer Portal; read below to learn how to participate in those efforts.
+
+### [Code of Conduct](https://github.com/Sitecore/jss/blob/dev/CODE_OF_CONDUCT.md)
+
+Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/jss/blob/dev/CODE_OF_CONDUCT.md  ) so that you can understand what actions will and will not be tolerated.
+
+### Contributing Guide
+
+If you want to make changes to the code, follow these steps:
+
+1. Fork the Developer Portal Repo GitHub repo.
+2. Clone the forked repo to your local machine.
+3. Create a feature branch from `main` for your changes. e.g. `git checkout -b my-feature-branch`
+4. `npm install`
+5. `npm run dev` (to preview your changes locally)
+6. Make your changes
+7. Commit, push to your remote fork of the Developer Portal repo, then open a pull request (PR) to the `main` branch of the Developer Portal repo.
+
+Your changes will be reviewed and merged if appropriate.
