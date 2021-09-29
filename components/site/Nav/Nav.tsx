@@ -46,6 +46,7 @@ const hamburgerBarClasses = classnames(
  * Files affected:
  *   - Nav.tsx
  *   - NavMenu.tsx
+ *   - InPageNav.tsx
  */
 
 const Nav = (): JSX.Element => {

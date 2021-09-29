@@ -71,4 +71,9 @@
   .prose * {
     color: theme('colors.theme-text') !important;
   }
+
+  .prose code:after,
+  .prose code:before {
+    content: '';
+  }
 }
