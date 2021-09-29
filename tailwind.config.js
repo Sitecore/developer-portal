@@ -124,6 +124,10 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            pre: {
+              backgroundColor: 'var(--theme-bg-alt)',
+              border: '1px solid var(--theme-border-alt)',
+            },
             thead: {
               // This nastiness is required because Tailwind Typography stinks.
               // OR because it's being trumped in the cascade by the prose
