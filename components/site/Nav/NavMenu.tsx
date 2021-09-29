@@ -29,6 +29,7 @@ type NavMenuProps = NavigationData & {
  * Files affected:
  *   - Nav.tsx
  *   - NavMenu.tsx
+ *   - InPageNav.tsx
  */
 
 const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): JSX.Element => {
