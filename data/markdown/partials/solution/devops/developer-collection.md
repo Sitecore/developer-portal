@@ -9,7 +9,7 @@ description: 'Created by developers, for developers, this suite of tools allows 
 The Sitecore Developer Collection was created by developers, for developers, to eliminate down time and headaches when working with Sitecore. The suite of tools allows your team to automate builds and deployments, easily compare and merge databases, and collaborate more efficiently. This incredibly feature-rich tool set is highly adaptable and easily customized to fit your project.
 
 ## Sitecore CLI
-The new content serialization tooling combines the best of both TDS & Unicorn, making it much easier for you to script your content changes and move them between your different environments as part of your deployment process. Sitecore CLI provides a command line interface to interact with your Sitecore instance. This command line provides technical team members with automation capabilities and the ability to work at the command line directly with their Sitecore instance.
+Sitecore CLI provides a command line interface to interact with your Sitecore instance. This command line provides technical team members with automation capabilities and the ability to do content serialization, indexing, publishing, and more.
 
 * [Download Sitecore CLI plugin](https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx)
 * [Documentation](https://doc.sitecore.com/en/developers/101/developer-tools/sitecore-command-line-interface.html)
@@ -23,8 +23,6 @@ Sitecore for Visual Studio provides a graphical tool to interact with your Sitec
 
 ## Team Development for Sitecore (TDS)
 The professional development toolkit for Sitecore deployments, development, and best practices, Sitecore TDS improves team integration and smooths the development process with a wide range of built-in Sitecore automation, synchronization and management features.
-
-In our latest release, we focused on supporting Rainbow Yaml Serialization compatibility and saving our developers time and money with a new lower-priced subscription. We're excited to share the latest version of TDS with the world. 
 
 * [About TDS](https://www.teamdevelopmentforsitecore.com/TDS-Classic)
 * [Download a free trial](https://www.teamdevelopmentforsitecore.com/TDS-Classic/Free-Trial)
@@ -44,8 +42,7 @@ Whether it's finding that one missing template, moving an entire database or shi
 * [Razl Blogs](https://www.teamdevelopmentforsitecore.com/Blog?tag=razl)
 
 ## Feydra
-Front-end developers convert designs using a variety of front-end tools that generate HTML and CSS. Front-end developers then pass this work to back-end developers, who convert the code to a Sitecore component. 
-Feydra eliminates the traditional serial implementation process and reduces the overall development timeline. We built Feydra for our front-end team, and it was so game-changing we couldn’t keep it to ourselves. 
+Front-end developers convert designs using a variety of front-end tools that generate HTML and CSS. Front-end developers then pass this work to back-end developers, who convert the code to a Sitecore component. Feydra eliminates the traditional serial implementation process and reduces the overall development timeline.
 
 * [About Feydra](https://www.teamdevelopmentforsitecore.com/Feydra)
 * [Download a free trial](https://www.teamdevelopmentforsitecore.com/Feydra/Free-Trial)
