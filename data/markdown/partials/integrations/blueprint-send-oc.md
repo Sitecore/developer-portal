@@ -30,6 +30,8 @@ Both Sitecore Send and Sitecore OrderCloud have robust APIs with javascript libr
 
 An integration between OrderCloud and Send comes down capturing commerce events on your OrderCloud-powered website and then forwarding those events over to Sitecore Send to track visitor activity and ordering behavior.
 
+You will find some code samples displayed as part of the different use cases below, you can also find further samples in this GitHub repository: https://github.com/Sitecore/Integration-Blueprints/tree/main/Sitecore%20OrderCloud%20&%20Sitecore%20Send
+
 ## Data Responsibilities
 
 ### Sitecore OrderCloud Data Responsibilities
