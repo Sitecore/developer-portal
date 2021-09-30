@@ -12,7 +12,9 @@ const nextConfig = {
   },
   // Needed to expose in clientside.
   env: {
-    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+    GTM_ID: process.env.GTM_ID,
+    GTM_AUTH: process.env.GTM_AUTH,
+    GTM_ENVIRONMENT: process.env.GTM_ENVIRONMENT
   },
   images: {
     domains: ['sitecorecdn.azureedge.net', 'i.ytimg.com', 'mss-p-006-delivery.sitecorecontenthub.cloud'],
