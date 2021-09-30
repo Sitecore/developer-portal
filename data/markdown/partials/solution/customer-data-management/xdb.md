@@ -23,5 +23,5 @@ xConnect is the service layer that sits in between the xDB and any trusted clien
 
 ### Community
 
-- [Sitecore StackExchange](https://sitecore.stackexchange.com/questions/tagged/xconnect)
-- [Sitecore StackExchange](https://sitecore.stackexchange.com/questions/tagged/xdb)
+- [xConnect on Sitecore StackExchange](https://sitecore.stackexchange.com/questions/tagged/xconnect)
+- [xDB on Sitecore StackExchange](https://sitecore.stackexchange.com/questions/tagged/xdb)
