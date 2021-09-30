@@ -13,6 +13,8 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions: 
+      deployments: write
     steps:
 
       - name: start deployment
