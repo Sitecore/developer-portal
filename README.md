@@ -1,6 +1,6 @@
 ![Sitecore logo in red background](https://github.com/Sitecore/developer-portal/raw/main/public/android-chrome-256x256.png)
 
-![Production Deploy](https://github.com/Sitecore/developer-portal/blob/main/.github/workflows/deploy.yml/badge.svg)
+![Production Deploy](https://github.com/Sitecore/developer-portal/actions/workflows/deploy.yml/badge.svg)
 
 # Sitecore Developer Portal
 Welcome to the Sitecore Developer Portal. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
