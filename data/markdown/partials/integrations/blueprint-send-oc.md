@@ -100,7 +100,7 @@ Once the library has been added, developers will need to use the library to hook
 
 Importantly, the first event that must be called in a user session is identify. This sets the current user for future events. Here’s is an example implementation using the [OrderCloud Javascript SDK]( https://www.npmjs.com/package/ordercloud-javascript-sdk). 
 
-```
+```js
 import { Auth, Me } from "ordercloud-javascript-sdk";
  
 // OrderCloud Login 
@@ -117,7 +117,7 @@ mootrack("identify", user.Email);
 
 After Identify, other events like add to cart can be called. The example below shows how to create a lineItem and then immediately forwards that event info to Sitecore Send using the JS Tracking Library. 
 
-```
+```js
 import { LineItems } from "ordercloud-javascript-sdk";
 
 // OrderCloud Add to cart
@@ -151,7 +151,7 @@ When users add an item to the cart but don’t buy it, your business has missed 
 ### Developer Configuration
 Developers will need to follow [these instructions]( https://help.moosend.com/hc/en-us/articles/115002454009-How-can-I-install-website-tracking-by-using-the-JS-tracking-library-) to add the JS Tracking Library to their ecommerce front-end. Note that each separate website will need to be configured in the Sitecore Send UI and connected via a globally unique ID. Once the library has been added, developers will use the library to hook into events. See 6.3 for a full list of recommended events. One is the product purchased event. Example code handling this is shown below.
 
-```
+```js
 import { Orders, LineItems } from "ordercloud-javascript-sdk"
 
 // Order LineItems saved in browser memory
@@ -190,7 +190,7 @@ https://academy.moosend.com/lessons/how-to-send-personalized-product-recommendat
 
 ### More Code Samples
 
-```
+```ts
 interface SitecoreSendProduct {
     itemCode?: string;
     itemName?: string;
