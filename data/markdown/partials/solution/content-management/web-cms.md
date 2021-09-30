@@ -25,12 +25,12 @@ With Experience Manager, you can create, manage, and publish content to your web
 - [Sitecore Docker Examples](https://github.com/Sitecore/docker-examples)
 
 ### Official Sitecore Training
-- [Web Experience Management Collection](https://sitecore.ent.learndot.com/course/updated-web-experience-management-collection)
-- [Sitecore Experience Accelerator (SXA) Collection _BETA_](https://sitecore.ent.learndot.com/course/sitecore-experience-accelerator-sxa-collection-sxa-beta)
-- [Developer's Fundamentals 10 Collection](https://sitecore.ent.learndot.com/course/developers-fundamentals-10-collection)
-- [System Administrator Collection](https://sitecore.ent.learndot.com/course/updated-system-administrator-collection)
-- [Sitecore Helix Collection](https://sitecore.ent.learndot.com/course/sitecore-helix-collection)
-- [JavaScript Services (JSS) Collection](https://sitecore.ent.learndot.com/course/java-script-services-jss-collection)
+- [Web Experience Management Collection](https://learning.sitecore.com/course/updated-web-experience-management-collection)
+- [Sitecore Experience Accelerator (SXA) Collection](https://learning.sitecore.com/course/sitecore-experience-accelerator-sxa-collection)
+- [Developer's Fundamentals 10 Collection](https://learning.sitecore.com/course/developers-fundamentals-10-collection)
+- [System Administrator Collection](https://learning.sitecore.com/course/system-administration-with-sitecore-10-beta)
+- [Sitecore Helix Collection](https://learning.sitecore.com/course/sitecore-helix-collection)
+- [JavaScript Services (JSS) Collection](https://learning.sitecore.com/course/java-script-services-jss-collection)
 
 ## Download
 
