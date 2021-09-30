@@ -9,7 +9,6 @@ youtubeTitle: 'Latest Personalization and Testing videos'
 partials:
   [
     'solution/personalization-testing/federated-experience-manager',
-    'solution/personalization-testing/segmentation-and-conditions',
     'solution/personalization-testing/universal-tracker',
   ]
 ---

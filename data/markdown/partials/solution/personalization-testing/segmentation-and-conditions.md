@@ -3,9 +3,7 @@ solution: ['personalization-testing']
 product: ['experience-platform']
 ---
 
-## [Segmentation And Conditions]()
-
-[What and Why]()
+## Introduction
 
 Docs
 
