@@ -21,7 +21,7 @@ See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/1
 ## Documentation
 
 - [Introduction](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/caas-intro.html)
-- [Creating Content](https://docs.stylelabs.com/content/4.0.x/user-documentation/cmp/cmp-intro.html)
+- [Creating Content](https://docs.stylelabs.com/contenthub/4.1.x/content/user-documentation/cmp/create/content-creation.html)
 - [Authoring](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-authoring.html)
 - [Publishing](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-publishing/dp-publishing-intro.html)
 - [Content Delivery](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-delivery/content-delivery.html)
