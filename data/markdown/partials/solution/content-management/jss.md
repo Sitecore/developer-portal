@@ -12,7 +12,6 @@ Sitecore JSS offers front-end developer of whole new way of working and interact
 
 - [JSS Documentation](https://jss.sitecore.com/docs)
 - [JSS Release Notes](https://jss.sitecore.com/release-notes)
-- 
 
 ## Learn
 
@@ -39,4 +38,3 @@ Sitecore JSS offers front-end developer of whole new way of working and interact
 - [#SitecoreJSS Twitter](https://twitter.com/search?q=sitecorejss&src=typed_query&f=live)
 - [JSS Slack Channel](https://sitecorechat.slack.com/messages/jss)
 - [Github Repository](https://github.com/sitecore/jss)
-- 
