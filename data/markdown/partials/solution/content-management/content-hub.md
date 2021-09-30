@@ -20,7 +20,7 @@ Sitecore Content Hub&trade; offers multiple modules. Here is a brief overview of
 | Sitecore MRM&trade; | Plan and schedule complex, multi-layered marketing activities.
 | Sitecore Web-to-Print&trade; | Create and control central customizable templates.
 
-## Get Started
+## Getting Started
 
 - [Getting Started](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/get-started/get-started.html)
 - [Navigate Content Hub](https://docs.stylelabs.com/content/4.0.x/user-documentation/get-started/content-hub/log-in.html)

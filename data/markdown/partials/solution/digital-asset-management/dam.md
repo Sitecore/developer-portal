@@ -13,7 +13,7 @@ With Sitecore Digital Asset Management (DAM), you can:
 - Share your saved collections of assets with other users.
 - Manage metadata, digital rights management (DRM), security, and global distribution.
 
-## Get Started
+## Getting Started
 - [Get started with Sitecore DAM](https://docs.stylelabs.com/contenthub/4.1.x/content/user-documentation/content-user-manual/dam.html)
 - [Cloud Development](https://docs.stylelabs.com/contenthub/4.1.x/content/integrations/index.html)
 

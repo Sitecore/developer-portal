@@ -8,7 +8,7 @@ description: 'Integrate CMS into your tech stack to enable marketing teams to ow
 ## Introduction
 With Experience Manager, you can create, manage, and publish content to your websites.
 
-## Get Started
+## Getting Started
 
 - [WebCMS Documentation](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/experience-manager.html)
 

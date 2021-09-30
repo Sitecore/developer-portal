@@ -10,7 +10,7 @@ Experience Edge for Experience Manager (XM) is an API-based service from Sitecor
 
 See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/12/sitecore-advances-saas-platform-with-sitecore-experience-edge/faq) for more information
 
-## Get started
+## Getting Started
 
 - [Connector Installation](https://doc.sitecore.com/en/developers/101/developer-tools/install-and-configure-the-experience-edge-connector.html)
 - [Testing GraphQL Queries](https://doc.sitecore.com/en/developers/101/developer-tools/test-your-queries.html)

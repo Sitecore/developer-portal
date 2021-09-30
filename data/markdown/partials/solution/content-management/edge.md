@@ -12,7 +12,7 @@ The content is hosted by Sitecore Content Hub™ in the cloud, and it is offered
 
 See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/12/sitecore-advances-saas-platform-with-sitecore-experience-edge/faq) for more information
 
-## Get Started
+## Getting Started
 
 - [Getting started](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-delivery/quickstart-guide.html)
 - [Use the APIs](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-delivery/apis/apis-intro.html)
