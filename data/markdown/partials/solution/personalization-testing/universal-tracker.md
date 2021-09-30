@@ -3,23 +3,14 @@ solution: ['personalization-testing']
 product: ['experience-platform']
 ---
 
-## [Universal Tracker]()
+## Introduction
+The Sitecore Universal Tracker (UT) lets you collect data from different sources as the interaction occurs and process the data when the interaction is completed.
 
-[What and Why]()
-
-Docs
+## Documentation
 
 - [Universal Tracker Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/universal-tracker.html)
 
-Discover
-
-- [Discover Universal Tracker]()
-
-Learn
-
-- [Getting Started]()
-
-Playground
+## Resources
 
 - [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
 - [Download Sitecore Universal Tracker](https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx)
