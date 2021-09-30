@@ -15,7 +15,7 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 
 ## Getting Started
 
-- [Getting Started with OrderCloud](https://ordercloud.io/getting-started/intro-to-ordercloud)
+- [Getting Started with OrderCloud](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
 
 ## Discover more
 
