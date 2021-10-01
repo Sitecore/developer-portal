@@ -36,7 +36,7 @@ export async function getStaticProps() {
       partials: starterKits,
     },
     {
-      title: 'Getting Started',
+      title: 'Getting started',
       description:
         'Get the hang of Sitecore with these beginner-friendly tutorials, walkthroughs, and samples.',
       partials: gettingStarted,
