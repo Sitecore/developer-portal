@@ -12,7 +12,7 @@ type CommunityListItem = {
 const content: CommunityListItem[] = [
   {
     title: 'Slack',
-    description: 'Talk to the community on this community-run Slack. Share, connect, and help each other out!',
+    description: 'Talk to other Sitecore enthusiasts, share ideas, or get answers to your questions.',
     href: 'https://sitecore.chat',
     linkText: 'Join the conversation',
     img: {
@@ -21,7 +21,7 @@ const content: CommunityListItem[] = [
   },
   {
     title: 'Stack Exchange',
-    description: 'Ask and answer questions on the community-driven Sitecore Stack Exchange site.',
+    description: 'Join more than 4000 daily active users on this community-driven platform.',
     href: 'https://sitecore.stackexchange.com',
     linkText: 'Ask a question',
     img: {
@@ -29,8 +29,8 @@ const content: CommunityListItem[] = [
     },
   },
   {
-    title: 'Forums',
-    description: 'Connect with other members of the community in the official Sitecore community forums.',
+    title: 'Official Sitecore Forums',
+    description: 'Connect with thousands of Sitecore developers and users, ask questions, or join the discussions.',
     href: 'https://community.sitecore.net/',
     linkText: 'Start a discussion',
     img: {
@@ -40,7 +40,8 @@ const content: CommunityListItem[] = [
 ];
 
 const communityListData = {
-  title: 'Join these cool Sitecore communities',
+  title: 'Where Sitecorians hang out',
+  subtitle: 'Discover more cool Sitecore groups where the community is active and engaged',
   content,
 };
 
