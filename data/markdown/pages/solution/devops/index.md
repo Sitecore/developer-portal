@@ -2,6 +2,6 @@
 solution: ['devops']
 product: ['devops']
 title: 'DevOps'
-description: 'Scale management and delivery of media and static assets'
+description: 'Tools and practices that help improve the development process '
 stackexchange: ['#docker', '#arm-template', '#sitecore-install-framework']
 ---
