@@ -30,7 +30,7 @@ export async function getStaticProps() {
 
   const partialGroups = [
     {
-      title: 'Starter Kits and Examples',
+      title: 'Starter kits & examples',
       description:
         'Do you want to quickly see how something can be done? These starter kits and examples will let you dig into the code and see how to use the APIs.',
       partials: starterKits,
@@ -38,7 +38,7 @@ export async function getStaticProps() {
     {
       title: 'Getting Started',
       description:
-        'Do you want to dive in and get started right now? These tutorials, walkthroughs, and samples should help you understand the basics.',
+        'Get the hang of Sitecore with these beginner-friendly tutorials, walkthroughs, and samples.',
       partials: gettingStarted,
     },
     {
