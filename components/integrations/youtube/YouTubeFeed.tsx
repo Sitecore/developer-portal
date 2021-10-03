@@ -45,7 +45,7 @@ const YouTubeFeed = ({
         </DynamicTag>
         <TextLink
           href={`https://www.youtube.com/playlist?list=${content[0].snippet.playlistId}`}
-          text="View Playlist"
+          text="See all videos"
           target="_blank"
           className={classnames('ml-auto')}
         />
