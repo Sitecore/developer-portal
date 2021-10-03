@@ -12,6 +12,7 @@ jobs:
 
   deploy:
     needs: build
+    if: github.repository_owner == 'Sitecore'
     runs-on: ubuntu-latest
     permissions: 
       deployments: write
