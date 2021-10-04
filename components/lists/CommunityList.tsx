@@ -20,7 +20,7 @@ const CommunityList = ({ className }: CommunityListProps): JSX.Element => (
       {data.content.map((link) => (
         <li key={link.title} className={classnames('flex', 'flex-col', 'justify-between')}>
           <div>
-            <div className={classnames('mb-4')}>
+            <div className={classnames('mb-4', 'border', 'border-theme-border-alt', 'bg-theme-bg-alt')}>
               <Image
                 src={link.img.src}
                 alt={link.img.alt || ''}
