@@ -121,7 +121,8 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
                   'block',
                   'h-em',
                   'w-em',
-                  'lg:hidden'
+                  'lg:hidden',
+                  'pointer-events-none'
                 )}
               >
                 <SvgIcon
