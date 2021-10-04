@@ -274,13 +274,9 @@ const NavigationData: NavigationData[] = [
             url: '/marketing-automation/send',
           },
           {
-            title: 'Register for a free Sitecore Send account 🔑',
+            title: 'Get your free Sitecore Send account 🔑',
             url: 'https://identity.moosend.com/register/',
           },
-          {
-            title: 'Login to the Sitecore Send Portal 🔒',
-            url: 'https://identity.moosend.com/login/',
-          }
         ],
       },
       {
@@ -292,12 +288,8 @@ const NavigationData: NavigationData[] = [
             url: '/commerce/ordercloud',
           },
           {
-            title: 'Register for a free OrderCloud account 🔑',
-            url: 'https://portal.ordercloud.io/register',
-          },
-          {
-            title: 'Login to the OrderCloud Portal 🔒',
-            url: 'https://portal.ordercloud.io/login',
+            title: 'Start on the OrderCloud Portal for free 🔑',
+            url: 'https://portal.ordercloud.io',
           },
         ],
       },
