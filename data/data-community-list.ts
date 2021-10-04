@@ -16,7 +16,8 @@ const content: CommunityListItem[] = [
     href: 'https://sitecore.chat',
     linkText: 'Join the conversation',
     img: {
-      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/757e3faaa19f41da9c47aac876e909dd?v=16c38e3f',
+      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/54a97a708bdd4ab3a25978f91e04cdba?v=31503a85',
+      alt: 'Slack logo',
     },
   },
   {
@@ -25,7 +26,8 @@ const content: CommunityListItem[] = [
     href: 'https://sitecore.stackexchange.com',
     linkText: 'Ask a question',
     img: {
-      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/f3357193e74148bb82ff46a4cc888e81?v=e21b62a0',
+      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/8d9f040f7c6c42b2b7be19c31f15bc3a?v=5b9209f2',
+      alt: 'Stack Exchange logo',
     },
   },
   {
@@ -34,7 +36,8 @@ const content: CommunityListItem[] = [
     href: 'https://community.sitecore.net/',
     linkText: 'Start a discussion',
     img: {
-      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/80dbfc3c6ecc42bdaa46d4779562e528?v=7784264f',
+      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/2208b6f24622484bb4dc61545f99b01a?v=9b7c0ec4',
+      alt: 'Sitecore Community forums logo',
     },
   },
 ];
