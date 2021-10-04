@@ -59,4 +59,4 @@ If you want to make changes to the code, follow these steps:
 6. Make your changes
 7. Commit, push to your remote fork of the Developer Portal repo, then open a pull request (PR) to the `main` branch of the Developer Portal repo.
 
-Your changes will be reviewed and merged if appropriate.
+Your changes will be reviewed and merged if appropriate..
