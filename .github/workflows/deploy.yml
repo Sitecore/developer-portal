@@ -6,9 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+
+      - run: npm install
+      - run: npm run build
 
   deploy:
     needs: build
@@ -16,7 +20,6 @@ jobs:
     permissions: 
       deployments: write
     steps:
-
       - name: start deployment
         uses: bobheadxi/deployments@v0.4.3
         id: deployment
@@ -24,6 +27,7 @@ jobs:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
           env: ${{ fromJSON('["Production", "Preview"]')[github.ref != 'refs/heads/main'] }} 
+
       - uses: actions/checkout@v2
 
       - uses: amondnet/vercel-action@v20
