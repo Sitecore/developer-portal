@@ -33,6 +33,22 @@ const hamburgerBarClasses = classnames(
   'transition'
 );
 
+/*
+ * @TODO: Adding search back
+ *
+ * To re-enable search (at least the UI in navigation)
+ * You only need to change a few classes and uncomment the search include below.
+ *
+ * All @TODO: statements have the same text, so you can simply search for
+ *    @TODO: Adding search back
+ * to find what you need to change.
+ *
+ * Files affected:
+ *   - Nav.tsx
+ *   - NavMenu.tsx
+ *   - InPageNav.tsx
+ */
+
 const Nav = (): JSX.Element => {
   const navRef = useRef<HTMLElement>(null);
   const [isOpen, setOpen] = useState(false);
@@ -46,6 +62,17 @@ const Nav = (): JSX.Element => {
       body.classList.toggle('lg-mw:overflow-hidden');
     }
     setOpen(!isOpen);
+  };
+
+  /**
+   *  Hook for handling closing the mobile nav.
+   */
+  const closeNav = () => {
+    const body = document.querySelector<HTMLBodyElement>('body');
+    if (body !== null) {
+      body.classList.remove('lg-mw:overflow-hidden');
+    }
+    setOpen(false);
   };
 
   /**
@@ -88,7 +115,15 @@ const Nav = (): JSX.Element => {
   }, [scrolled]);
 
   return (
-    <header className={classnames('h-32')}>
+    // @TODO: Adding search back
+    // Change height utility to `h-32` to the header.
+    //
+    // Necesarry to retain the space for the fixed header.
+    <header className={classnames('h-16')}>
+      {/*
+        // @TODO: Adding search back
+        // Change height utility to `h-32` to the containing div.
+      */}
       <div
         className={classnames(
           'bg-theme-bg',
@@ -99,7 +134,7 @@ const Nav = (): JSX.Element => {
           'fixed',
           'inset-x-0',
           'top-0',
-          'h-32',
+          'h-16',
           'transition-all',
           {
             '-top-16': scrolled, // Note: absolute is being used here to avoid "transform" resetting the coordinate system for the children that are relying on the document's coordinates.
@@ -141,7 +176,10 @@ const Nav = (): JSX.Element => {
           )}
         >
           <Link href="/">
-            <a className={classnames('flex', 'items-center', 'mr-auto', 'flex-shrink-0')}>
+            <a
+              className={classnames('flex', 'items-center', 'mr-auto', 'flex-shrink-0')}
+              onClick={closeNav}
+            >
               <span className={classnames('block', 'relative', 'w-36', 'lg:w-48')}>
                 <Logo />
               </span>
@@ -160,13 +198,17 @@ const Nav = (): JSX.Element => {
               </span>
             </a>
           </Link>
+          {/*
+            // @TODO: Adding search back
+            // Change the top value to `top-32`.
+          */}
           <nav
             ref={navRef}
             id="scdp-nav"
             className={classnames(
               'fixed',
               'bg-theme-bg',
-              'top-32',
+              'top-16',
               'bottom-0',
               'inset-0',
               'items-center',
@@ -190,8 +232,8 @@ const Nav = (): JSX.Element => {
                       'border-b',
                       'border-theme-bg-alt',
                       'px-gutter',
+                      'lg:border-0',
                       'xl:p-0',
-                      'xl:border-0',
                       'xl:mx-6'
                     )}
                   >
@@ -278,11 +320,15 @@ const Nav = (): JSX.Element => {
             />
           </div>
         </div>
-        <div>
+        {/*
+          // @TODO: Adding search back
+          // Uncomment the div containing search here.
+        */}
+        {/* <div>
           <div className={classnames('px-gutter-all', 'py-2.5', 'max-w-screen-xl', 'm-auto')}>
             <SearchBox />
           </div>
-        </div>
+        </div> */}
       </div>
     </header>
   );

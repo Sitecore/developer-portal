@@ -4,28 +4,14 @@ product: ['experience-platform']
 title: 'Web Tracking'
 ---
 
-## [Web Tracking]()
+## Web Tracking
+The Sitecore Web Tracker enables you to track and identify contacts and their interactions during their visit to your Content Delivery (CD) instance.
 
-[What and Why]()
-
-Docs
+### Documentation
 
 - [Web Tracking Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/web-tracking.html)
+- [Data flow and process](https://doc.sitecore.com/en/developers/101/platform-administration-and-architecture/tracking-and-personalization.html)
 
-Discover
-
-- [Discover Web Tracking]()
-
-Learn
-
-- [Getting Started]()
-- [Learn Web Tracking]()
-
-Playground
+### Download
 
 - [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
-
-Socials
-
-- [Web Tracking Socials]()
-- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/tracking)

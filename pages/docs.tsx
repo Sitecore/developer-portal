@@ -13,7 +13,6 @@ export async function getStaticProps() {
     'docs/cms/headless',
     'docs/cms/sitecore-content-hub',
   ]);
-  const dam = await getPartialsAsArray(['docs/dam']);
   const customerDataManagement = await getPartialsAsArray([
     'docs/customer-data-management/sitecore-cdp',
     'docs/customer-data-management/sitecore-experience-platform',
@@ -35,10 +34,6 @@ export async function getStaticProps() {
     {
       title: 'Content Management and Delivery',
       partials: cms,
-    },
-    {
-      title: 'DAM',
-      partials: dam,
     },
     {
       title: 'Customer Data Management',

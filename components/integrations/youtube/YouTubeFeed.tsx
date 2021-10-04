@@ -45,7 +45,7 @@ const YouTubeFeed = ({
         </DynamicTag>
         <TextLink
           href={`https://www.youtube.com/playlist?list=${content[0].snippet.playlistId}`}
-          text="View Playlist"
+          text="See all videos"
           target="_blank"
           className={classnames('ml-auto')}
         />
@@ -62,7 +62,7 @@ const YouTubeFeed = ({
 const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
   return (
     <li key={id}>
-      <div className={classnames('aspect-w-16', 'aspect-h-9', 'mb-2')}>
+      <div className={classnames('aspect-w-16', 'aspect-h-9', 'mb-4')}>
         <a
           href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`}
           target="_blank"
@@ -88,13 +88,13 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
               <filter
                 x="-18.4%"
                 y="-18.4%"
-                width="136.7%"
-                height="136.7%"
+                width="150%"
+                height="150%"
                 filterUnits="objectBoundingBox"
                 id="a"
               >
                 <feMorphology
-                  radius=".5"
+                  radius="3"
                   operator="dilate"
                   in="SourceAlpha"
                   result="shadowSpreadOuter1"
@@ -106,7 +106,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
                   result="shadowBlurOuter1"
                 />
                 <feColorMatrix
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"
                   in="shadowBlurOuter1"
                 />
               </filter>
@@ -119,7 +119,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
                 id="c"
               >
                 <feMorphology
-                  radius=".5"
+                  radius="3"
                   operator="dilate"
                   in="SourceAlpha"
                   result="shadowSpreadOuter1"
@@ -131,7 +131,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
                   result="shadowBlurOuter1"
                 />
                 <feColorMatrix
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"
                   in="shadowBlurOuter1"
                 />
               </filter>

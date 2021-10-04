@@ -1,7 +1,7 @@
 ---
 solution: ['content-management']
 product: ['content-management']
-title: 'Content Management and Delivery 💾'
+title: 'Content Management and Delivery'
 description: 'Manage content and presentation for the web channel.'
 stackexchange:
   [

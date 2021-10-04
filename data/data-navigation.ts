@@ -50,24 +50,20 @@ export const SitecoreQuickLinks: NavigationData = {
 
 const NavigationData: NavigationData[] = [
   {
-    title: 'Docs',
-    url: '/docs',
-  },
-  {
-    title: 'Discover',
-    url: '/discover',
-  },
-  {
     title: 'Learn',
     url: '/learn',
   },
   {
-    title: 'Get Help',
-    url: '/help',
+    title: 'Docs',
+    url: '/docs',
   },
   {
     title: 'Community',
     url: '/community',
+  },
+  {
+    title: 'Discover',
+    url: '/discover',
   },
   {
     title: 'Solution',
@@ -95,6 +91,10 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Sitecore Experience Accelerator (SXA)',
             url: '/content-management/sxa',
+          },
+          {
+            title: 'Headless Services & JSS',
+            url: '/content-management/headless',
           },
         ],
       },
@@ -174,6 +174,10 @@ const NavigationData: NavigationData[] = [
             title: 'Sitecore ARM Templates',
             url: '/devops/arm-templates',
           },
+          {
+            title: 'Developer Collection',
+            url: '/devops/developer-collection',
+          },
         ],
       },
     ],
@@ -219,20 +223,20 @@ const NavigationData: NavigationData[] = [
             url: '/content-management/experience-manager',
           },
           {
-            title: 'Headless',
-            url: '/#',
-          },
-          {
-            title: 'Developer Collection',
-            url: '/#',
-          },
-          {
             title: 'Experience Edge for XM',
             url: '/content-management/edge-xm',
           },
           {
+            title: 'Headless Services & JSS',
+            url: '/content-management/headless',
+          },
+          {
             title: 'Sitecore Experience Accelerator (SXA)',
             url: '/content-management/sxa',
+          },
+          {
+            title: 'Developer Collection',
+            url: '/devops/developer-collection',
           },
           {
             title: 'Downloads 💾',

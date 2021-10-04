@@ -115,12 +115,42 @@ module.exports = {
       },
       spacing: {
         em: '1em',
-        '1.75em': '1.75em',
+        '1.625em': '1.625em',
         inherit: 'inherit',
         gutter: '1rem',
         'gutter-md': '2rem',
         'gutter-lg': '4rem',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            code: {
+              backgroundColor: 'var(--theme-bg-alt)',
+              fontWeight: 400,
+            },
+            pre: {
+              backgroundColor: 'var(--theme-bg-alt)',
+              border: '1px solid var(--theme-border-alt)',
+            },
+            thead: {
+              // This nastiness is required because Tailwind Typography stinks.
+              // OR because it's being trumped in the cascade by the prose
+              // classes even though tbody td is not. Makes no sense.
+              tr: {
+                th: {
+                  ['padding-left']: '1.25em',
+                  ['padding-right']: '1.25em',
+                },
+              },
+            },
+            tbody: {
+              td: {
+                padding: '1.25em',
+              },
+            },
+          },
+        },
+      }),
     },
   },
   variants: {

@@ -21,6 +21,16 @@
       url(/fonts/AvenirNext-Bold--latin.woff2) format('woff');
   }
 
+  html {
+    min-height: 100%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html {
+      background: theme('colors.charcoal')
+    }
+  }
+
   body {
     @apply text-base;
     color: theme('colors.charcoal');

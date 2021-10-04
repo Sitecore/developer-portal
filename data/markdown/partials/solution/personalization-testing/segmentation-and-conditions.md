@@ -3,9 +3,7 @@ solution: ['personalization-testing']
 product: ['experience-platform']
 ---
 
-## [Segmentation And Conditions]()
-
-[What and Why]()
+## Introduction
 
 Docs
 
@@ -23,7 +21,3 @@ Learn
 Playground
 
 - [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
-
-Socials
-
-- [Segmentation and Conditions Socials]()

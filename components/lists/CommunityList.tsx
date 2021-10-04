@@ -12,12 +12,15 @@ type CommunityListProps = {
 
 const CommunityList = ({ className }: CommunityListProps): JSX.Element => (
   <div className={classnames(className)}>
-    <h2 className={classnames('heading-md', 'mb-8')}>{data.title}</h2>
+    <h2 className={classnames('heading-md', 'mb-4')}>{data.title}</h2>
+    <p className={classnames('text-lg', 'text-theme-text-alt', 'mb-6')}>
+      {data.subtitle}
+    </p>
     <ul className={classnames('grid', 'gap-6', 'md:grid-cols-3')}>
       {data.content.map((link) => (
         <li key={link.title} className={classnames('flex', 'flex-col', 'justify-between')}>
           <div>
-            <div className={classnames('border', 'border-theme-border-alt', 'mb-4')}>
+            <div className={classnames('mb-4', 'border', 'border-theme-border-alt', 'bg-theme-bg-alt')}>
               <Image
                 src={link.img.src}
                 alt={link.img.alt || ''}

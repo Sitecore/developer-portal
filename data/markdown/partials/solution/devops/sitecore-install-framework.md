@@ -3,20 +3,18 @@ solution: ['devops']
 product: ['experience-manager', 'experience-platform', 'experience-commerce', 'sif']
 ---
 
-# [Sitecore Install Framework (SIF)]()
+## Introduction
+The Sitecore Install Framework (SIF) enables users to deploy and configure a Sitecore environment using a standard configuration design that can be extended through custom PowerShell functions.
 
-[What and Why]()
-
-Docs
+## Documentation
 
 - [What is the Sitecore Install Framework](https://www.sitecore.com/knowledge-center/blog/359/installing-sitecore-9-what-is-the-sitecore-install-framework-4523)
 
-Playground
+## Getting Started
+- [Get Started with the Sitecore Install Framework](https://www.sitecore.com/search#q=%22Installing%20Sitecore%209%22&t=coveo1327e09c)
+
+## Resources
 
 - [Download SIF](https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework.aspx)
-
-Learn
-
-- [Getting Started]()
-
-Socials
+- [PowerShell Gallery](https://sitecore.myget.org/gallery/sc-powershell)
+- [PowerShell Gallery FAQ](https://doc.sitecore.com/en/developers/101/sitecore-experience-manager/sitecore-powershell-public-nuget-feed-faq.html)

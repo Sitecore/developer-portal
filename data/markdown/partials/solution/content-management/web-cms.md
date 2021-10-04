@@ -5,32 +5,33 @@ title: 'Web Content Management'
 description: 'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.'
 ---
 
-## [Web CMS](https://www.sitecore.com/products/experience-manager)
+## Introduction
+With Experience Manager, you can create, manage, and publish content to your websites.
 
-[What and Why](https://www.sitecore.com/knowledge-center/digital-marketing-resources/what-is-a-cms)
-
-Docs
+## Getting Started
 
 - [WebCMS Documentation](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/experience-manager.html)
 
-Discover
+## Documentation
 
-- [Discover WebCMS]()
+- [User Documentation](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/experience-manager.html)
+- [Developer Documentation](https://doc.sitecore.com/en/developers/101/xm/index.html)
 
-Learn
+## Learn & Examples
 
-- [Getting Started]()
-- [Web Experience Management Collection](https://sitecore.ent.learndot.com/course/updated-web-experience-management-collection)
-- [Sitecore Experience Accelerator (SXA) Collection _BETA_](https://sitecore.ent.learndot.com/course/sitecore-experience-accelerator-sxa-collection-sxa-beta)
-- [Developer's Fundamentals 10 Collection](https://sitecore.ent.learndot.com/course/developers-fundamentals-10-collection)
-- [System Administrator Collection](https://sitecore.ent.learndot.com/course/updated-system-administrator-collection)
-- [Sitecore Helix Collection](https://sitecore.ent.learndot.com/course/sitecore-helix-collection)
-- [JavaScript Services (JSS) Collection](https://sitecore.ent.learndot.com/course/java-script-services-jss-collection)
+### Open Source
+- [Helix Examples](https://github.com/Sitecore/Helix.Examples)
+- [Sitecore Demo](https://github.com/Sitecore/Sitecore.Demo.Platform)
+- [Sitecore Docker Examples](https://github.com/Sitecore/docker-examples)
 
-Playground
+### Official Sitecore Training
+- [Web Experience Management Collection](https://learning.sitecore.com/course/updated-web-experience-management-collection)
+- [Sitecore Experience Accelerator (SXA) Collection](https://learning.sitecore.com/course/sitecore-experience-accelerator-sxa-collection)
+- [Developer's Fundamentals 10 Collection](https://learning.sitecore.com/course/developers-fundamentals-10-collection)
+- [System Administrator Collection](https://learning.sitecore.com/course/system-administration-with-sitecore-10-beta)
+- [Sitecore Helix Collection](https://learning.sitecore.com/course/sitecore-helix-collection)
+- [JavaScript Services (JSS) Collection](https://learning.sitecore.com/course/java-script-services-jss-collection)
+
+## Download
 
 - [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
-
-Socials
-
-- [Sitecore StackExchange](https://sitecore.stackexchange.com/)

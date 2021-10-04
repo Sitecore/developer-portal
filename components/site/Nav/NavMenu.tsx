@@ -17,8 +17,21 @@ type NavMenuProps = NavigationData & {
 };
 
 /*
- * The menus themselves.
+ * @TODO: Adding search back
+ *
+ * To re-enable search (at least the UI in navigation)
+ * You only need to change a few classes and uncomment the search include below.
+ *
+ * All @TODO: statements have the same text, so you can simply search for
+ *    @TODO: Adding search back
+ * to find what you need to change.
+ *
+ * Files affected:
+ *   - Nav.tsx
+ *   - NavMenu.tsx
+ *   - InPageNav.tsx
  */
+
 const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): JSX.Element => {
   const navItemRef = useRef<HTMLDivElement>(null);
   const [isOpen, setOpen] = useState(false);
@@ -157,13 +170,17 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
       {/* 
         Nav Item Overlay
       */}
+      {/*
+        // @TODO: Adding Search Back
+        // Change the top value to `top-32`.
+      */}
       {children && (
         <React.Fragment>
           <div
             ref={navItemRef}
             className={classnames(
               'fixed',
-              'top-32',
+              'top-16',
               'bottom-0',
               'inset-x-0',
               'bg-theme-bg',

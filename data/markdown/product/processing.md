@@ -14,11 +14,3 @@ Learn
 
 - [Getting Started]()
 - [Learn Processing]()
-
-Playground
-
-- [Playground Processing]()
-
-Socials
-
-- [Sitecore Stack Exchange](https://sitecore.stackexchange.com/questions/tagged/processing)

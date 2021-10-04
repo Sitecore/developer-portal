@@ -3,7 +3,7 @@
   @screen lg {
     .nav-item--button:after {
       content: '';
-      height: 4px;
+      height: 3px;
       width: 0;
       position: absolute;
       bottom: 0;
