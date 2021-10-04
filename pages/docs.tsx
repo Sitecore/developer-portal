@@ -58,6 +58,7 @@ export async function getStaticProps() {
       pageInfo,
       partialGroups,
     },
+    revalidate: 600, // 10 minutes
   };
 }
 
