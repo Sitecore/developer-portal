@@ -114,7 +114,7 @@ const NavigationData: NavigationData[] = [
         children: [
           {
             title: 'Sitecore Personalize',
-            url: '/personalization-testing/cdp',
+            url: '/personalization-testing/personalize',
           },
           {
             title: 'Sitecore Experience Platform',
@@ -217,7 +217,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Personalization and Testing',
-            url: '/personalization-testing/cdp',
+            url: '/personalization-testing/personalize',
           },
         ],
       },

@@ -18,7 +18,7 @@ export async function getStaticProps() {
     'docs/customer-data-management/sitecore-experience-platform',
   ]);
   const personalization = await getPartialsAsArray([
-    'docs/personalization/sitecore-cdp',
+    'docs/personalization/sitecore-personalize',
     'docs/personalization/sitecore-experience-platform',
   ]);
   const marketingAutomation = await getPartialsAsArray([
