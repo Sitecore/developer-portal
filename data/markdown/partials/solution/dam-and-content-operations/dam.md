@@ -1,5 +1,5 @@
 ---
-solution: ['digital-asset-management']
+solution: ['dam-and-content-operations']
 product: ['dam']
 ---
 

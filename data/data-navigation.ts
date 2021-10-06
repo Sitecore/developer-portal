@@ -152,15 +152,15 @@ const NavigationData: NavigationData[] = [
       },
       {
         title: 'DAM and Content Operations',
-        url: '/digital-asset-management',
+        url: '/dam-and-content-operations',
         children: [
           {
             title: 'Sitecore Content Hub',
-            url: '/content-management/content-hub',
+            url: '/dam-and-content-operations/content-hub',
           },
           {
             title: 'Sitecore DAM',
-            url: '/content-management/dam',
+            url: '/dam-and-content-operations/dam',
           },
         ]
       },
@@ -196,11 +196,11 @@ const NavigationData: NavigationData[] = [
         children: [
           {
             title: 'Content Operations',
-            url: '/content-management/content-hub',
+            url: '/dam-and-content-operations/content-hub',
           },
           {
             title: 'Digital Asset Management',
-            url: '/digital-asset-management/dam',
+            url: '/dam-and-content-operations/dam',
           },
           {
             title: 'Experience Edge for Content Hub',
