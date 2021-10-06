@@ -73,20 +73,16 @@ const NavigationData: NavigationData[] = [
         url: '/content-management',
         children: [
           {
-            title: 'Sitecore Content Hub',
-            url: '/content-management/content-hub',
-          },
-          {
-            title: 'Experience Edge for Content Hub',
-            url: '/content-management/edge-content-hub',
-          },
-          {
             title: 'Sitecore Experience Manager',
             url: '/content-management/experience-manager',
           },
           {
             title: 'Experience Edge for XM',
             url: '/content-management/edge-xm',
+          },
+          {
+            title: 'Experience Edge for Content Hub',
+            url: '/content-management/edge-content-hub',
           },
           {
             title: 'Sitecore Experience Accelerator (SXA)',
@@ -117,7 +113,7 @@ const NavigationData: NavigationData[] = [
         url: '/personalization-testing',
         children: [
           {
-            title: 'Sitecore CDP',
+            title: 'Sitecore Personalize',
             url: '/personalization-testing/cdp',
           },
           {
@@ -155,8 +151,18 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Digital Asset Management',
-        url: '/digital-asset-management/dam',
+        title: 'DAM and Content Operations',
+        url: '/digital-asset-management',
+        children: [
+          {
+            title: 'Sitecore Content Hub',
+            url: '/content-management/content-hub',
+          },
+          {
+            title: 'Sitecore DAM',
+            url: '/content-management/dam',
+          },
+        ]
       },
       {
         title: 'DevOps',
