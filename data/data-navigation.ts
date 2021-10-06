@@ -195,7 +195,7 @@ const NavigationData: NavigationData[] = [
         title: 'Sitecore Content Hub',
         children: [
           {
-            title: 'Content Management',
+            title: 'Content Operations',
             url: '/content-management/content-hub',
           },
           {
@@ -209,7 +209,7 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Sitecore CDP',
+        title: 'Sitecore CDP and Personalize',
         children: [
           {
             title: 'Customer Data Management',
