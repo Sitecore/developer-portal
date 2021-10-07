@@ -30,6 +30,7 @@ export async function getStaticProps(context: any) {
       pageInfo,
       products,
     },
+    revalidate: 600, // 10 minutes
   };
 }
 

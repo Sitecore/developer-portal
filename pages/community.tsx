@@ -14,6 +14,7 @@ export async function getStaticProps() {
     props: {
       pageInfo,
     },
+    revalidate: 600, // 10 minutes
   };
 }
 

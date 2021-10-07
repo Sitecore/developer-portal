@@ -21,6 +21,7 @@ export async function getStaticProps() {
       pageInfo,
       partials,
     },
+    revalidate: 600, // 10 minutes
   };
 }
 

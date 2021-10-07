@@ -14,7 +14,7 @@ export async function getStaticProps() {
     'learn/integrations/xm',
     'learn/integrations/content-hub',
     'learn/integrations/send',
-    'learn/integrations/orderCloud'
+    'learn/integrations/orderCloud',
   ]);
 
   const partialGroups = [
@@ -31,6 +31,7 @@ export async function getStaticProps() {
       pageInfo,
       partialGroups,
     },
+    revalidate: 600, // 10 minutes
   };
 }
 
