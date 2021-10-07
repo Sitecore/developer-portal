@@ -8,6 +8,7 @@ type NavLinkProps = {
   text: string;
   url?: string;
   level?: number;
+  external?: boolean;
   onClick?: (event: React.MouseEvent) => void;
 };
 
@@ -18,7 +19,7 @@ const Level2Classes = classnames('text-xs');
 /*
  * A simple wrapper for nav link items within the menus.
  */
-const NavLink = ({ text, url, level, onClick }: NavLinkProps): JSX.Element => {
+const NavLink = ({ text, url, level, external, onClick }: NavLinkProps): JSX.Element => {
   return (
     <ConditionalWrapper
       condition={!!url}
@@ -37,7 +38,17 @@ const NavLink = ({ text, url, level, onClick }: NavLinkProps): JSX.Element => {
         })}
       >
         {text}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          className={external ? classnames('w-em', 'h-em', 'scale-75', 'transform-gpu', 'inline', 'ml-1') : classnames('hidden')} >
+          <path
+            d="m13.806 13.33-.023-10.683a.432.432 0 0 0-.43-.43L2.67 2.194a.427.427 0 0 0-.429.429v.357c.001.238.194.43.431.43l9.035.02-9.493 9.493a.43.43 0 0 0 .001.607l.254.254a.43.43 0 0 0 .607.001l9.493-9.493.02 9.035c0 .237.192.43.43.43l.357.001c.238 0 .43-.191.429-.429Z"
+            fill="currentColor"
+            fillRule="evenodd" />
+        </svg>
       </span>
+      
     </ConditionalWrapper>
   );
 };
