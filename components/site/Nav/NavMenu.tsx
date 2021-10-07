@@ -279,7 +279,7 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
                         <ul>
                           {child.children?.map((child, index) => (
                             <li key={`child-${index}`} className={classnames('mb-4', 'lg:mb-2')}>
-                              <NavLink text={child.title} url={child.url} onClick={toggleNavItem} />
+                              <NavLink text={child.title} url={child.url} external={child.external} onClick={toggleNavItem} />
                             </li>
                           ))}
                         </ul>

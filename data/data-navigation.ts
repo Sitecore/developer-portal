@@ -1,6 +1,7 @@
 export type NavigationChildData = {
   title: string;
   url?: string;
+  external?: boolean;
   children?: NavigationChildData[];
 };
 
@@ -247,6 +248,7 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx',
+            external: true,
           },
         ],
       },
@@ -268,6 +270,7 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx',
+            external: true,
           },
         ],
       },
@@ -280,8 +283,9 @@ const NavigationData: NavigationData[] = [
             url: '/marketing-automation/send',
           },
           {
-            title: 'Get Sitecore Send for free',
+            title: 'Get your free Sitecore Send account',
             url: 'https://identity.moosend.com/register/',
+            external: true,
           },
         ],
       },
@@ -294,8 +298,9 @@ const NavigationData: NavigationData[] = [
             url: '/commerce/ordercloud',
           },
           {
-            title: 'Access OrderCloud Portal for free',
-            url: 'https://portal.ordercloud.io/',
+            title: 'Start on the OrderCloud Portal for free',
+            url: 'https://portal.ordercloud.io',
+            external: true,
           },
         ],
       },
@@ -310,8 +315,9 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx',
-          },
-        ],
+            external: true,
+          }
+        ]
       },
     ],
   },
