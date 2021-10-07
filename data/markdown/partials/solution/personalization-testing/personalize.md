@@ -1,11 +1,11 @@
 ---
 solution: 'personalization-testing'
 product: ['cdp']
-title: 'Personalization & Testing - Sitecore CDP'
+title: 'Personalization & Testing - Sitecore Personalize'
 ---
 
 ## Introduction
-Sitecore CDP brings together real-time behavioral insights and all your customer data so you can understand and engage every customer (and anonymous visitors) instantly.
+Sitecore Personalize brings together real-time behavioral insights and all your customer data so you can understand and engage every customer (and anonymous visitors) instantly.
 
 ## Documentation
 

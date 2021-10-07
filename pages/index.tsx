@@ -35,9 +35,9 @@ const productSolutions: CategoryTileProps[] = [
     href: '/content-management/',
   },
   {
-    title: 'Digital Asset Management (DAM)',
-    description: 'Scale management and delivery of media and static assets',
-    href: '/digital-asset-management/dam',
+    title: 'Digital Asset Management (DAM) and Content Operations',
+    description: 'Scale management, workflow and delivery of content, media and static assets',
+    href: '/dam-and-content-operations',
   },
   {
     title: 'Customer Data Management',

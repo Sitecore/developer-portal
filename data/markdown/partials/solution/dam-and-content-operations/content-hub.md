@@ -1,5 +1,5 @@
 ---
-solution: ['content-management']
+solution: ['dam-and-content-operations']
 product: ['content-hub']
 prettyName: 'Content Hub'
 description: 'Centralize content strategy and operations for all delivery channels'

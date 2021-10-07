@@ -1,29 +1,20 @@
 ---
 solution: 'customer-data-management'
 product: ['cdp']
-title: 'Customer Data Management - Sitecore CDP'
+title: 'Customer Data Management'
+description: 'Maintain a persistent, unified view of your customers that is available to be leveraged in all your channels'
+stackexchange:
+  [
+    '#xconnect',
+    '#xdb',
+    '#experience-analytics',
+    '#personalization',
+    '#experience-profile',
+    '#contact-facets',
+    '#list-manager',
+    '#reporting',
+    '#content-testing',
+    '#tracking'
+  ]
+twitter: ['#sitecorexp', '#sitecorecdp', '#boxever']
 ---
-
-## [Sitecore CDP]()
-
-[What and Why]()
-
-Docs
-
-- [Developer Docs - Data Model 2.1](https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/index-en.html)
-- [Developer Docs - Data Model 2.0](https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/index-en.html)
-- [Introduction to Sitecore CDP - Managing Users](https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/introduction-to-sitecore-cdp.html)
-- [Knowledge Hub](https://sitecore.cdpknowledgehub.com/docs)
-
-Discover
-
-- [Customer Data Platform overview](https://www.sitecore.com/products/customer-data-platform)
-
-Learn
-
-- [Getting Started]()
-- [Boxever Training path](https://learning.sitecore.com/pathway/boxever-training)
-
-Socials
-
-- [Slack](https://app.slack.com/client/T09SHRBNU/C0294KX3RQF)
