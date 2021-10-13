@@ -43,7 +43,7 @@ Sitecore has adopted a Code of Conduct that we expect project participants to ad
 
 ### Feedback, ideas or found issues?
 
-The Sitecore Developer Portal is under constant development. Do you have any feedback or ideas that can improve the developer portal please let us know! Create an issue in our [GitHub repository](https://github.com/Sitecore/developer-portal/issues), label is accordingly and we will review your issue and follow up if necessary.
+The Sitecore Developer Portal is under constant development. Do you have any feedback or ideas that can improve the developer portal please let us know! Create an issue in our [GitHub repository](https://github.com/Sitecore/developer-portal/issues). Please use the issue or feature request template, label is accordingly and we will review your ticket and follow up if necessary.
 
 ### Contributing Guide
 
@@ -55,6 +55,6 @@ If you want to make changes to the code, follow these steps:
 4. `npm install`
 5. `npm run dev` (to preview your changes locally)
 6. Make your changes
-7. Commit, push to your remote fork of the Developer Portal repo, then open a pull request (PR) to the `main` branch of the Developer Portal repo.
+7. Commit, push to your remote fork of the Developer Portal repo, then open a pull request (PR) using the PR template to the `main` branch of the Developer Portal repo.
 
 Your changes will be reviewed and merged if appropriate.
