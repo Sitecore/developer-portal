@@ -33,7 +33,7 @@ const content: CommunityListItem[] = [
   {
     title: 'Official Sitecore Forums',
     description: 'Connect with thousands of Sitecore developers and users, ask questions, or join the discussions.',
-    href: 'https://community.sitecore.net/',
+    href: 'https://community.sitecore.com/',
     linkText: 'Start a discussion',
     img: {
       src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/2208b6f24622484bb4dc61545f99b01a?v=9b7c0ec4',

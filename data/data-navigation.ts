@@ -24,7 +24,7 @@ export const SitecoreQuickLinks: NavigationData = {
     },
     {
       title: 'Sitecore Community',
-      url: 'https://community.sitecore.net/',
+      url: 'https://community.sitecore.com/',
     },
     {
       title: 'Sitecore MVP Program',
