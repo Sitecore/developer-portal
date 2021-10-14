@@ -19,3 +19,9 @@ With Sitecore Send you can dive into the world of email marketing and create the
 - [How do I get started with my Sitecore Send account?](https://help.moosend.com/hc/en-us/articles/208076445-How-do-I-get-started-with-my-Moosend-account-)
 - [Extra tools](https://moosend.com/resources/fancy-toolshed/)
 - [Moosend blog](https://moosend.com/blog/)
+
+## Integrations
+
+- [Integrating Sitecore Send with Sitecore Content Hub](/learn/integrations/send-ch)
+- [Integrating Sitecore Send with Sitecore OrderCloud](/learn/integrations/send-oc)
+- [Integrating Sitecore Send with Sitecore XM](/learn/integrations/send-xm)

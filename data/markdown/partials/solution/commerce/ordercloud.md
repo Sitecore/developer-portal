@@ -26,3 +26,6 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 ## Playground
 - [Get Started Now!](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
 - [The Code 👩‍💻](https://github.com/ordercloud-api)
+
+## Integrations
+- [Integrating Sitecore OrderCloud with Sitecore Send](/learn/integrations/send-oc)

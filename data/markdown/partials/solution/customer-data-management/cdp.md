@@ -21,3 +21,7 @@ Sitecore CDP brings together real-time behavioral insights and all your customer
 ## Learn
 
 - [Boxever Training path](https://learning.sitecore.com/pathway/boxever-training)
+
+## Integrations
+
+- [Integrating Sitecore CDP with Sitecore XM](/learn/integrations/xm-cdp)
