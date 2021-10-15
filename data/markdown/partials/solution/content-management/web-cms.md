@@ -35,3 +35,7 @@ With Experience Manager, you can create, manage, and publish content to your web
 ## Download
 
 - [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
+
+## Integrations
+- [Integrating Sitecore XM with Sitecore CDP](/learn/integrations/xm-cdp)
+- [Integrating Sitecore XM with Sitecore Send](/learn/integrations/send-xm)
