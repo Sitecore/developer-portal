@@ -128,7 +128,7 @@ const NavigationData: NavigationData[] = [
         url: '/marketing-automation',
         children: [
           {
-            title: 'Sitecore Send',
+            title: 'Moosend',
             url: '/marketing-automation/send',
           },
           {
@@ -275,7 +275,7 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Sitecore Send',
+        title: 'Moosend',
         url: '/marketing-automation/send',
         children: [
           {
@@ -283,7 +283,7 @@ const NavigationData: NavigationData[] = [
             url: '/marketing-automation/send',
           },
           {
-            title: 'Get your free Sitecore Send account',
+            title: 'Get your free Moosend account',
             url: 'https://identity.moosend.com/register/',
             external: true,
           },

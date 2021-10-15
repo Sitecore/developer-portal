@@ -1,6 +1,6 @@
-## Sitecore Send
+## Moosend
 
-Sitecore Send's Knowledge Base covers a lot of topics to help you get started:
+Moosend's Knowledge Base covers a lot of topics to help you get started:
 
 - Getting Started
 - Integrations
@@ -8,4 +8,4 @@ Sitecore Send's Knowledge Base covers a lot of topics to help you get started:
 - Email Automation
 - etc.
 
-[Get help with Sitecore Send](https://moosend.com/help/)
+[Get help with Moosend](https://moosend.com/help/)
