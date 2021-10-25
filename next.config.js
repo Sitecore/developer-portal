@@ -6,10 +6,11 @@ const withTM = require('next-transpile-modules')(['react-markdown']); // pass th
 
 const nextConfig = {
   // Set locales so we have appropriate lang attributes without a custom _document
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
+  // ia8n commentted out due to temporary issue with ISR, see https://github.com/Sitecore/developer-portal/issues/182
+  // i18n: {
+  //   locales: ['en'],
+  //   defaultLocale: 'en',
+  // },
   // Needed to expose in clientside.
   env: {
     GTM_ID: process.env.GTM_ID,
