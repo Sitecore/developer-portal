@@ -19,6 +19,7 @@ type GenericContentPageProps = {
   hasGrid?: boolean;
   promoAfter?: PromoCardProps[];
   promoBefore?: PromoCardProps[];
+  customNav?: React.ReactNode;
 };
 
 const hasGridClasses = classnames('bg-theme-bg-alt', 'py-16');
@@ -58,6 +59,7 @@ const GenericContentPage = ({
   partials,
   promoAfter,
   promoBefore,
+  customNav,
 }: GenericContentPageProps) => {
   if (!partialGroups && !partials) {
     console.warn('GenericContentPage requires either partials or partialGroups');
@@ -68,6 +70,8 @@ const GenericContentPage = ({
     : !!partials
     ? partials.titles
     : [];
+
+  const Nav = customNav ? customNav : <InPageNav titles={titles} />;
 
   return (
     <Layout pageInfo={pageInfo}>
@@ -82,7 +86,7 @@ const GenericContentPage = ({
         <div className={classnames({ [hasGridClasses]: hasGrid })}>
           <Container>
             <div className={classnames('grid', 'gap-6', 'md:grid-cols-4')}>
-              {pageInfo.hasInPageNav && <InPageNav titles={titles} />}
+              {pageInfo.hasInPageNav && Nav}
               <div
                 className={classnames({
                   'col-span-3': pageInfo.hasInPageNav,
