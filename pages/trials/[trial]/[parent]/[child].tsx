@@ -10,9 +10,9 @@ import GenericContentPage from '@/components/layout/GenericContentPage';
 import TrialNav from '@/components/layout/TrialNav';
 
 export async function getStaticPaths() {
-  const steppedPaths = await getTrialPaths();
+  const trialPaths = await getTrialPaths();
   return {
-    paths: steppedPaths,
+    paths: trialPaths,
     fallback: false,
   };
 }
@@ -26,7 +26,7 @@ export async function getStaticProps(context: { params: TrialNavContext }) {
   const pageInfo = {
     title: navData.title,
     description: navData.description,
-    pageTitle: `${navData.title} - ${activeChild}`,
+    pageTitle: `${navData.title} - ${activeChild?.title}`,
     hasInPageNav: true,
     youtube: [],
     stackexchange: [],
@@ -48,17 +48,17 @@ export async function getStaticProps(context: { params: TrialNavContext }) {
   };
 }
 
-type SteppedPageProps = {
+type TrialPageProps = {
   pageInfo: PageInfo;
   partials: PartialData;
   context: TrialNavContext;
   navData: TrialNavData;
 };
 
-const SteppedPage = ({ pageInfo, partials, context, navData }: SteppedPageProps): JSX.Element => {
+const TrialPage = ({ pageInfo, partials, context, navData }: TrialPageProps): JSX.Element => {
   const CustomNav = <TrialNav context={context} navData={navData} />;
 
   return <GenericContentPage pageInfo={pageInfo} partials={partials} customNav={CustomNav} />;
 };
 
-export default SteppedPage;
+export default TrialPage;

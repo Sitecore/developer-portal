@@ -7,6 +7,7 @@ type PageInfoCore = {
   id?: string;
   partials?: string[];
   title: string;
+  pageTitle?: string;
 };
 
 // Input for 3rd party integrations are just strings
