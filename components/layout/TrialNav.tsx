@@ -2,18 +2,19 @@
 import Link from 'next/link';
 import { classnames } from '@/tailwindcss-classnames';
 // Interfaces
-import type { DemoNavData, DemoNavContext } from '@/interfaces/page-info';
+import type { TrialNavData, TrialNavContext } from '@/interfaces/page-info';
 // Components
 import Collapse from '@/components/helper/Collapse';
 
 // TODO: Fix this
 type MultiPageNavProps = {
-  context: DemoNavContext;
-  navData: DemoNavData;
+  context: TrialNavContext;
+  navData: TrialNavData;
 };
 
 const MultiPageNav = ({ context, navData }: MultiPageNavProps): JSX.Element => {
-  const buildSlug = (parent: string, child: string) => `/demos/${context.demo}/${parent}/${child}`;
+  const buildSlug = (parent: string, child: string) =>
+    `/trials/${context.trial}/${parent}/${child}`;
 
   return (
     <nav>

@@ -124,6 +124,9 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            ['ol > li:before']: {
+              color: 'var(--theme-text)',
+            },
             code: {
               backgroundColor: 'var(--theme-bg-alt)',
               fontWeight: 400,

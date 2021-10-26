@@ -44,25 +44,25 @@ export type PagePartialGroup = {
   partials: PartialData;
 };
 
-export type DemoNavContext = {
-  demo: string;
+export type TrialNavContext = {
+  trial: string;
   parent: string;
   child: string;
 };
 
-type DemoNavChild = {
+type TrialNavChild = {
   title: string;
   slug: string;
 };
 
-type DemoNavParent = {
+type TrialNavParent = {
   title: string;
   slug: string;
-  children: DemoNavChild[];
+  children: TrialNavChild[];
 };
 
-export type DemoNavData = {
+export type TrialNavData = {
   title: string;
   description?: string;
-  nav: DemoNavParent[];
+  nav: TrialNavParent[];
 };

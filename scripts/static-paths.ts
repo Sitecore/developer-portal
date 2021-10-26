@@ -1,10 +1,10 @@
-import { DemoNavContext, DemoNavData } from '@/interfaces/page-info';
+import { TrialNavContext, TrialNavData } from '@/interfaces/page-info';
 import fs from 'fs';
 import path from 'path';
 
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
 const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
-const demoDirectory = path.join(process.cwd(), 'data/demos');
+const TrialDirectory = path.join(process.cwd(), 'data/trials');
 
 type SolutionPaths = {
   params: {
@@ -25,8 +25,8 @@ type IntegrationPaths = {
   };
 };
 
-type DemoPaths = {
-  params: DemoNavContext;
+type TrialPaths = {
+  params: TrialNavContext;
 };
 
 export const getSolutionPaths = async (): Promise<SolutionPaths[]> => {
@@ -54,17 +54,17 @@ export const getIntegrationPaths = async (): Promise<IntegrationPaths[]> => {
   return files.map((file) => ({ params: { integration: file } }));
 };
 
-export const getJssConnectedDemoPaths = async (): Promise<DemoPaths[]> => {
-  const demos = fs.readdirSync(demoDirectory);
-  const paths: DemoPaths[] = [];
-  demos.forEach((file) => {
-    const filePath = path.join(demoDirectory, file);
-    const fileData: DemoNavData = JSON.parse(fs.readFileSync(filePath, { encoding: 'utf-8' }));
+export const getTrialPaths = async (): Promise<TrialPaths[]> => {
+  const trials = fs.readdirSync(TrialDirectory);
+  const paths: TrialPaths[] = [];
+  trials.forEach((file) => {
+    const filePath = path.join(TrialDirectory, file);
+    const fileData: TrialNavData = JSON.parse(fs.readFileSync(filePath, { encoding: 'utf-8' }));
     fileData.nav.forEach((parent) => {
       parent.children.forEach((child) => {
         paths.push({
           params: {
-            demo: file.replace(/\.[^/.]+$/, ''),
+            trial: file.replace(/\.[^/.]+$/, ''),
             parent: parent.slug,
             child: child.slug,
           },

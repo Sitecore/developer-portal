@@ -2,24 +2,24 @@ import fs from 'fs';
 import path from 'path';
 // Scripts
 import { getPartialsAsArray } from '@/scripts/page-info';
-import { getJssConnectedDemoPaths } from '@/scripts/static-paths';
+import { getTrialPaths } from '@/scripts/static-paths';
 // Interfaces
-import type { DemoNavContext, DemoNavData, PageInfo, PartialData } from '@/interfaces/page-info';
+import type { TrialNavContext, TrialNavData, PageInfo, PartialData } from '@/interfaces/page-info';
 // Components
 import GenericContentPage from '@/components/layout/GenericContentPage';
-import DemoNav from '@/components/layout/DemoNav';
+import TrialNav from '@/components/layout/TrialNav';
 
 export async function getStaticPaths() {
-  const steppedPaths = await getJssConnectedDemoPaths();
+  const steppedPaths = await getTrialPaths();
   return {
     paths: steppedPaths,
     fallback: false,
   };
 }
 
-export async function getStaticProps(context: { params: DemoNavContext }) {
-  const filePath = path.join(process.cwd(), `data/demos/${context.params.demo}.json`);
-  const navData: DemoNavData = JSON.parse(fs.readFileSync(filePath, { encoding: 'utf-8' }));
+export async function getStaticProps(context: { params: TrialNavContext }) {
+  const filePath = path.join(process.cwd(), `data/trials/${context.params.trial}.json`);
+  const navData: TrialNavData = JSON.parse(fs.readFileSync(filePath, { encoding: 'utf-8' }));
   const activeParent = navData.nav.find((parent) => parent.slug === context.params.parent);
   const activeChild = activeParent?.children.find((child) => child.slug === context.params.child);
 
@@ -34,7 +34,7 @@ export async function getStaticProps(context: { params: DemoNavContext }) {
   };
 
   const partials = await getPartialsAsArray([
-    `demos/${context.params.demo}/${context.params.parent}/${context.params.child}`,
+    `trials/${context.params.trial}/${context.params.parent}/${context.params.child}`,
   ]);
 
   return {
@@ -51,12 +51,12 @@ export async function getStaticProps(context: { params: DemoNavContext }) {
 type SteppedPageProps = {
   pageInfo: PageInfo;
   partials: PartialData;
-  context: DemoNavContext;
-  navData: DemoNavData;
+  context: TrialNavContext;
+  navData: TrialNavData;
 };
 
 const SteppedPage = ({ pageInfo, partials, context, navData }: SteppedPageProps): JSX.Element => {
-  const CustomNav = <DemoNav context={context} navData={navData} />;
+  const CustomNav = <TrialNav context={context} navData={navData} />;
 
   return <GenericContentPage pageInfo={pageInfo} partials={partials} customNav={CustomNav} />;
 };

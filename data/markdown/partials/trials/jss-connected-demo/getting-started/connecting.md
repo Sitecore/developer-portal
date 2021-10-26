@@ -2,7 +2,7 @@
 
 ### Connecting the local repository to the remote Sitecore instance
 
-Open a terminal/console window in the <repo root>\fitness\app folder of your project. Run the following command:
+Open a terminal/console window in the `<repo root>\fitness\app` folder of your project. Run the following command:
 
 ```
 jss start:connected
@@ -36,7 +36,7 @@ Is the config deployed? [y/n]:
 y
 ```
 
-Lighthouse Fitness
+![Lighthouse Fitness](/path/to/image.png)
 
 When you have completed the series of prompts, the information provided will be stored in a scjssconfig.json file in the root of your app.
 
@@ -48,7 +48,11 @@ If it does not launch automatically, go to http://localhost:3000/
 
 The app lists different types of events. Lighthouse Fitness
 
+![Lighthouse Fitness Two](/path/to/image2.png)
+
 You can use the menu at the top to personalize what your preferred types of events are. After you go through the personalization dialogs, you will only see the events that match your preferences. Lighthouse Fitness menu
+
+![Lighthouse Fitness Three](/path/to/image3.png)
 
 You can also use the header menu to view events that you've favorites and register for events (More on this later on in the tutorial).
 
@@ -58,4 +62,4 @@ So the cool thing about all this is that the app that you're browsing locally is
 
 Use the menu in the left nav to continue exploring Connected Mode and learn more about how all this works.
 
-Next: Experience Editor
+**Next: [Experience Editor](/trials/jss-connected-demo/exploring-sitecore/experience-editor)**
