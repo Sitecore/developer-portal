@@ -124,13 +124,36 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            color: theme('colors.theme-text'),
+            a: {
+              color: 'inherit',
+            },
+            h1: {
+              color: 'inherit',
+            },
+            h2: {
+              color: 'inherit',
+            },
+            h3: {
+              color: 'inherit',
+            },
+            h4: {
+              color: 'inherit',
+            },
+            strong: {
+              color: 'inherit',
+            },
+            blockquote: {
+              color: 'inherit',
+            },
             code: {
-              backgroundColor: 'var(--theme-bg-alt)',
+              backgroundColor: 'transparent',
               fontWeight: 400,
             },
             pre: {
-              backgroundColor: 'var(--theme-bg-alt)',
+              backgroundColor: 'transparent',
               border: '1px solid var(--theme-border-alt)',
+              padding: 0,
             },
             thead: {
               // This nastiness is required because Tailwind Typography stinks.
@@ -142,6 +165,7 @@ module.exports = {
                   ['padding-right']: '1.25em',
                 },
               },
+              color: 'inherit',
             },
             tbody: {
               td: {
