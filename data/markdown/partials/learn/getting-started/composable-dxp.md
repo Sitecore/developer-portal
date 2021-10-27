@@ -5,4 +5,4 @@
 - [Getting Started with Content Hub](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/get-started/get-started.html)
 - [Getting Started with Moosend](https://help.moosend.com/hc/en-us/articles/208076445-How-do-I-get-started-with-my-Moosend-account-)
 - [Getting started with Experience Edge for ContentHub](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-delivery/quickstart-guide.html)
-- [Getting started with Experience Edge for XM](https://doc.sitecore.com/en/developers/101/developer-tools/sitecore-experience-edge-for-xm.html)
+- [Getting started with Experience Edge for XM](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/sitecore-experience-edge-for-xm.html)

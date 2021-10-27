@@ -10,18 +10,19 @@ Sitecore JSS offers front-end developer of whole new way of working and interact
 
 ## Documentation
 
-- [JSS Documentation](https://jss.sitecore.com/docs)
-- [JSS Release Notes](https://jss.sitecore.com/release-notes)
+- [JSS Documentation](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/sitecore-javascript-rendering-sdks--jss-.html)
+- [JSS Release Notes](https://github.com/Sitecore/jss/blob/master/CHANGELOG.md)
 
 ## Learn
 
-- [Getting Started](https://jss.sitecore.com/docs/nextjs/getting-started-nextjs/workflow-options)
+- [Getting Started](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/getting-started-with-jss-for-next-js-development.html)
 - [Sitecore Headless Services for JSS Workshop](https://learning.sitecore.com/instructor-led-training/sitecore-jss-workshop)
 - [JSS with Blazer YouTube playlist](https://www.youtube.com/watch?v=EkJJmqQGkVI&list=PL1jJVFm_lGnzMlj7g-hJEFNEPDs5yhzf0)
 - [Integrating a Client Framework with JSS YouTube playlist](https://www.youtube.com/watch?v=vQxLQH0iYps&list=PL1jJVFm_lGnxDrexrlt0Wy_va_vQvQvjN)
 - [Headless and JSS YouTube playlist](https://www.youtube.com/watch?v=ugPy7BjH0H0&list=PL1jJVFm_lGnwZup4L4BjITS2sKr4rpMfI)
-- [JSS Architecture](https://jss.sitecore.com/docs/fundamentals/architecture)
-- [Walkthrough: Using the Sitecore Container Template for JSS Next.js Projects](https://jss.sitecore.com/docs/nextjs/getting-started-nextjs/walkthrough-dotnetnew)
+- [Headless Services Architecture](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/services-and-apis.html)
+- [JSS Architecture](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/architecture-overview.html)
+- [Walkthrough: Using the Sitecore Container Template for JSS Next.js Projects](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/walkthrough--setting-up-a-development-environment-with-the-sitecore-containers-template-for-next-js.html)
 
 ## Examples
 
