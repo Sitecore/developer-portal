@@ -1,10 +1,5 @@
-![Sitecore logo in red background](https://github.com/Sitecore/developer-portal/raw/main/public/android-chrome-256x256.png)
-
-# Sitecore Developer Portal
-Welcome to the Sitecore Developer Portal. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
-
-## The Tech
-The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
+## About this portal
+The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, and is hosted on Vercel. The application uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
 
 ## Build Prerequisites
 
@@ -14,7 +9,6 @@ The developer portal is built with Next.js, so you'll need to have Node.js insta
 
 ### Environment Variables
 The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables. 
-
 
 The following variables should exist within the .env.local file: 
 
@@ -43,9 +37,13 @@ TWITTER_BEARER_TOKEN=""
 
 We are very grateful to the community for contributing bug fixes and improvements. We welcome all efforts to evolve and improve the Sitecore Developer Portal; read below to learn how to participate in those efforts.
 
-### [Code of Conduct](https://github.com/Sitecore/developer-portal/CODE_OF_CONDUCT.md)
+### Code of Conduct
 
-Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/developer-portal/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/developer-portal/blob/main/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+
+### Feedback, ideas or found issues?
+
+The Sitecore Developer Portal is under constant development. Do you have any feedback or ideas that can improve the developer portal please let us know! Create an issue in our [GitHub repository](https://github.com/Sitecore/developer-portal/issues). Please use the issue or feature request template, label it accordingly and we will review your ticket and follow up if necessary.
 
 ### Contributing Guide
 

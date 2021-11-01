@@ -1,6 +1,9 @@
 // Global
+import { useEffect, useState } from 'react';
 import { classnames } from '@/tailwindcss-classnames';
 import ReactMarkdown from 'react-markdown';
+import SyntaxHighlight from 'react-syntax-highlighter';
+import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import remarkGfm from 'remark-gfm';
 // Interfaces
 import type { PartialData } from '@/interfaces/page-info';
@@ -11,6 +14,46 @@ import VerticalGroup from './VerticalGroup';
 type MarkdownContentProps = {
   partials: PartialData;
   hasGrid?: boolean;
+};
+
+type DecoratedMarkdownProps = {
+  children: string;
+};
+
+const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element => {
+  const [isDark, setIsLight] = useState(false);
+  useEffect(() => {
+    setIsLight(
+      typeof window !== 'undefined' &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+    );
+  }, []);
+
+  return (
+    <ReactMarkdown
+      remarkPlugins={[setHeadingIds, remarkGfm]}
+      components={{
+        code({ inline, className, children }) {
+          const match = /language-(\w+)/.exec(className || '');
+          const lang = !!match ? match[1] : '';
+          const style = isDark ? a11yDark : a11yLight;
+          return !inline && match ? (
+            <SyntaxHighlight
+              children={String(children).replace(/\n$/, '')}
+              style={style}
+              language={lang}
+              PreTag="div"
+            />
+          ) : (
+            <code className={className}>{children}</code>
+          );
+        },
+      }}
+    >
+      {children}
+    </ReactMarkdown>
+  );
 };
 
 const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): JSX.Element => {
@@ -30,7 +73,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
             )}
             key={i}
           >
-            <ReactMarkdown remarkPlugins={[setHeadingIds, remarkGfm]}>{item}</ReactMarkdown>
+            <DecoratedMarkdown>{item}</DecoratedMarkdown>
           </div>
         ))}
       </div>
@@ -41,7 +84,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
     <VerticalGroup>
       {partials.content.map((item, i) => (
         <div className={classnames('prose', 'max-w-4xl')} key={i}>
-          <ReactMarkdown remarkPlugins={[setHeadingIds, remarkGfm]}>{item}</ReactMarkdown>
+          <DecoratedMarkdown>{item}</DecoratedMarkdown>
         </div>
       ))}
     </VerticalGroup>
