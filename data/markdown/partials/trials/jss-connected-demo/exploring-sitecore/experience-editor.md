@@ -23,4 +23,4 @@ When you are finished making edits, remember to click the "Save" button next to 
 
 ![Experience Editor save button](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/5d07db99595045869825f0f24ce9ed96?v=1515a4f1)
 
-Next: Personalization
+**Next: [Personalization](/trials/jss-connected-demo/exploring-sitecore/personalization-in-experience-editor)**
