@@ -6,15 +6,15 @@ In this exercise, you will build a GraphQL query to fetch data from the remote S
 
 ### Explore where the data lives in the Sitecore Content Editor
 
-Lighthouse Fitness
+![Launchpad with Content Editor highlighted](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/21146ed88f734ef288e84eaef434465e?v=06492652)
 
 From the Sitecore desktop, click on **Content Editor**.
 
 The **Content Editor** is an editing tool that you can use to manage and edit all the content on your website. It is designed for more experienced content authors who are familiar with Sitecore and the functionality that it contains. The Content Editor's appearance and functionality vary depending on the user's roles, the local security settings, and the customizations that have been implemented on the Sitecore installation.
 
-Lighthouse Fitness
+In the content tree down here, under **content > Home**, expand the Events node.
 
-In the content tree on the left, under _content > Lighthouse Fitness > Home_, expand the Events node.
+![Content tree](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/4e94cebf6818490e880940517b5fc421?v=386ad00b)
 
 The folders are arranged by region. Keep expanding until you find a base event page node that contains the data for the query.
 
@@ -25,11 +25,11 @@ Now that you know where the data lives, it's time to create a query.
 The Graph Browser
 In your browser, navigate to <Sitecore hostname>/Sitecore/api/graph/items/master/ui to bring up the Sitecore Experience Graph Browser.
 
-Lighthouse Fitness
+![The Graph Browser](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/21e76cb6f23f4e5ba81b0210f7940971?v=ca097335)
 
 This tool gives users a place to write and test custom queries. The left pane allows for query input. The right pane will display return results.
 
-Lighthouse Fitness
+![Root Types](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/185c129d031d4a88a131437344a1d09a?v=8513963b)
 
 In the right sidebar is the Documentation Explorer, where you can browse through various schemas to see what form the data takes.
 
@@ -37,17 +37,17 @@ There are three Root Types: Query, Mutation, and Subscription.
 
 Click on **Query**. You can now view the assorted queries defined in the schema.
 
-Lighthouse Fitness
+![GraphQL Search query](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/329f9588f93f4e3c979717b1ccafb537?v=d699972e)
 
 Explore the schema for **search**.
 
-Lighthouse Fitness
+![Results fields](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/c3afff74529e401f93d00c0040571310?v=5223dff2)
 
 This query returns a **ContentSearchResults** object. Click on that and you will see it has the following fields.
 
 You will see a results object of the type **ContentSearchResultConnection**.
 
-Lighthouse Fitness
+![Result object](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/d0f435f53c9f4db4b33a2025b3c0ce99?v=5d7adfe5)
 
 Click on that to find a number of pertinent fields.
 
@@ -77,7 +77,7 @@ Now specify how the return results should be formatted. After looking at the sch
 
 Execute the query. You should get the following result.
 
-Lighthouse Fitness
+![Query results](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/9899722557384349b93c16d1000249f8?v=780acb08)
 
 This pulls back every item under the Events node. This isn't helpful yet, though, as it's pulling back every node.
 
@@ -85,7 +85,7 @@ Refine the search by searching only for those Event Page nodes that contain the 
 
 Return to the Content Editor and view the _Canada > Alberta > Banff > Banff 3 on 3 Basketball Challenge_ node, and verify in “Quick Info” that its template type is event-page.
 
-Lighthouse Fitness
+![Item quick info](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/d77fad32848a4e96a1adbc42f9291d85?v=bc309306)
 
 Return to the query, and add another object to the fieldsEqual array.
 
@@ -107,15 +107,15 @@ This time, specify that you need these items to also have a \_templatename prope
 
 Execute the query and see that the result set has been refined.
 
-Lighthouse Fitness
+![Refined search results](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/5d2bfa8b999d4a18a66a966f7870a9b6?v=5da4d609)
 
 Now that you are getting the nodes you need, start pulling the event data for these items.
 
-Lighthouse Fitness
+![Result fields](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/364f844cd41c4849bd7db4e3ffcdb827?v=037de670)
 
 To find these in the schema, go back to the Documentation Explorer and drill down to _Query > ContentSearchResults > ContentSearchResultConnection_, then click on the items type, **ContentSearchResult**.
 
-Lighthouse Fitness
+![ContentSearchResult documentation](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/b8ab23fb9ee74f8eb0f5a84c18b2e16c?v=88c0c4f1)
 
 This will show the **ContentSearchResult** schema.
 
@@ -142,7 +142,7 @@ The property you will need is fields, an array of _name : value_ pairs associate
 
 Execute the query and see that each node is pulling back a lot of useful information.
 
-Lighthouse Fitness
+![Results filtered by path](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/cbd1f82cab7c4ddfa251fc77ad8597e7?v=df287cd5)
 
 Too much information, actually, and not in a format that an application can easily reference without iterating through an array every time it needs to retrieve one of these values.
 
@@ -171,7 +171,7 @@ Start by setting the items' name to the event's name field. (for clarity, commen
 
 Execute the query and get the following.
 
-Lighthouse Fitness
+![Changed result object](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/fb1642a86f404115b5a0ebd11d75624c?v=5e42873f)
 
 Now add a few more fields that you will need, like description, date, image, latitude, longitude, etc. Then set this array of items to a property named events.
 
@@ -197,7 +197,7 @@ Now add a few more fields that you will need, like description, date, image, lat
 
 Execute the query once again and get a nicely formatted result set that looks like this.
 
-Lighthouse Fitness
+![Expanding result object with more fields](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/7482ca6ae17245e8981f32f383880808?v=2c5b1815)
 
 Excellent! That looks like some usable data!
 
@@ -245,7 +245,7 @@ fragment ImageQuery on ImageField {
 
 Now run the query to see the following:
 
-Lighthouse Fitness
+![Final results](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/cd305d1865dc42b59489c44a476ad42c?v=cc934e4e)
 
 Now the image alt and src data is available to display the image in a component. Excellent!
 

@@ -36,7 +36,7 @@ Is the config deployed? [y/n]:
 y
 ```
 
-![Lighthouse Fitness](/path/to/image.png)
+![Lighthouse Fitness](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/f575d7259d1b48248a38898517478fd1?v=159ee4e3)
 
 When you have completed the series of prompts, the information provided will be stored in a scjssconfig.json file in the root of your app.
 
@@ -48,11 +48,11 @@ If it does not launch automatically, go to http://localhost:3000/
 
 The app lists different types of events. Lighthouse Fitness
 
-![Lighthouse Fitness Two](/path/to/image2.png)
+![Lighthouse Fitness Two](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/ba40a6c9ee204a7fb188ffc376a11013?v=e65e0076)
 
 You can use the menu at the top to personalize what your preferred types of events are. After you go through the personalization dialogs, you will only see the events that match your preferences. Lighthouse Fitness menu
 
-![Lighthouse Fitness Three](/path/to/image3.png)
+![Lighthouse Fitness Three](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/1004e5b172604ea8821f8a45a435f3e0?v=ca3cf9ce)
 
 You can also use the header menu to view events that you've favorites and register for events (More on this later on in the tutorial).
 
