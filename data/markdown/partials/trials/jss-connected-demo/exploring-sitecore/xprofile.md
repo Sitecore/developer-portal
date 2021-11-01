@@ -26,6 +26,9 @@
 
     NOTE: This does not have to be a real email address, it only needs to be something you can remember so that you can locate it in the Experience Profile later on.
 
+---
+github: ['/blob/main/data/markdown/partials/trials/jss-connected-demo/exploring-sitecore/xprofile.md']
+---
 6. In the "Finish" screen, click the "Home" button. It will provide you with an experience personalized to your stated interest in basketball.
 
     ![Finish screen](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/063471f3d6e94c40ada14f0199385ca3?v=2e7604ff)

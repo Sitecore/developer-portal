@@ -1,3 +1,6 @@
+---
+github: ['/blob/main/data/markdown/partials/trials/jss-connected-demo/exploring-sitecore/experience-editor.md']
+---
 ## Experience Editor
 
 The Experience Editor is a WYSIWYG (What You See Is What You Get) editor that allows you to easily make changes to items directly on the page. You can edit all the items that are visible on the page — text, graphics, logos, links, and so on. In the Experience Editor, you can edit the fields of the current item and the fields of any items rendered on the page. For instance, if the menu on the page consists of titles of the product items, you can edit the titles without navigating to the product items themselves.

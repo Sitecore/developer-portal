@@ -1,3 +1,6 @@
+---
+github: ['/blob/main/data/markdown/partials/trials/jss-connected-demo/exploring-sitecore/personalization-in-experience-editor.md']
+---
 ## Personalization in the Experience Editor
 
 1. Click on the featured event (specifically the image) to open the toolbar.

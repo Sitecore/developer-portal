@@ -1,3 +1,6 @@
+---
+github: ['/blob/main/data/markdown/partials/trials/jss-connected-demo/getting-started/prerequisites.md']
+---
 ## Pre-requisites
 
 The JSS Connected Demo is a set of tutorials to help guide you as you explore connected mode between a JSS app and a Sitecore instance.
