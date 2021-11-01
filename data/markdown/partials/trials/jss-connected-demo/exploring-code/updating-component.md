@@ -6,14 +6,14 @@ github: ['/blob/main/data/markdown/partials/trials/jss-connected-demo/exploring-
 We can make changes to a component in our local application, then see those changes refreshed in the browser immediately.
 
 1. In your preferred editor, open the EventListItem component file, located in the following location:
-```
-\fitness\app\src\components\EventListItem\index.js
-```
+    ```shell
+    \fitness\app\src\components\EventListItem\index.js
+    ```
 
-2. Find the <NavLink> tag that wraps the <Text> field for our event items name. (should be somewhere around line 60).
+2. Find the `<NavLink>` tag that wraps the `<Text>` field for our event items name. (should be somewhere around line 60).
 ![NavLink that wraps the Text field](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/aded737d47da4e768c9c128e12737401?v=2a95298f)
 
-3. Change the order of the <NavLink> and <DateField> tags so that <DateField> appears first.
+3. Change the order of the `<NavLink>` and `<DateField>` tags so that `<DateField>` appears first.
 ![Change the order of the NavLink and DateField tags](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/8fb518aaa59445d99c558f4e4a241d64?v=5a1995b9)
 
 4. Save your changes. Since hot reloading is enabled, the browser will automatically refresh to reflect the changes.

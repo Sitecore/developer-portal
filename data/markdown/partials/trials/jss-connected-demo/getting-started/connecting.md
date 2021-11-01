@@ -7,13 +7,13 @@ github: ['/blob/main/data/markdown/partials/trials/jss-connected-demo/getting-st
 
 Open a terminal/console window in the `<repo root>\fitness\app` folder of your project. Run the following command:
 
-```
+```shell
 jss start:connected
 ```
 
 The first time you run this command, you will see the following prompts. Respond as indicated below:
 
-```
+```shell
 No Sitecore connection has been configured (missing scjssconfig.json)
 This command requires a Sitecore connection. Would you like to configure the connection? [y/n]:
 y

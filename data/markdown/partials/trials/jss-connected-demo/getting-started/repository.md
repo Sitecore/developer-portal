@@ -18,13 +18,13 @@ You can find the Lighthouse Fitness demo repository here: https://github.com/Sit
 
 2. Clone the repository with the following command:
 
-    ```
+    ```shell
     git clone -b jss-trial-10.0.1 --single-branch https://github.com/Sitecore/Sitecore.Demo.Headless.git
     ```
 
 3. Since you'll be making code changes to the app later in this guide, now is a good time to create a new branch for your work. Run these commands:
 
-    ```
+    ```shell
     cd Sitecore.Demo.Headless
     git checkout -b <new-branch-name>
     ```
@@ -35,7 +35,7 @@ Note: If you've been working in disconnected mode on another project, you probab
 
 Open a terminal/console window and execute the following command to install the JSS CLI:
 
-```
+```shell
 npm install -g @sitecore-jss/sitecore-jss-cli
 ```
 
@@ -43,7 +43,7 @@ npm install -g @sitecore-jss/sitecore-jss-cli
 
 Open a terminal/console window in the `<repo root>\fitness\app` folder where `package.json` resides, and run the following command:
 
-```
+```shell
 npm install
 ```
 

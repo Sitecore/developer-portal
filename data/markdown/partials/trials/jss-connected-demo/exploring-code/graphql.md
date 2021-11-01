@@ -26,7 +26,7 @@ Click on _Canada > Alberta > Banff > Banff 3 on 3 Basketball Challenge_. You can
 Now that you know where the data lives, it's time to create a query.
 
 The Graph Browser
-In your browser, navigate to <Sitecore hostname>/Sitecore/api/graph/items/master/ui to bring up the Sitecore Experience Graph Browser.
+In your browser, navigate to `<Sitecore hostname>/Sitecore/api/graph/items/master/ui` to bring up the Sitecore Experience Graph Browser.
 
 ![The Graph Browser](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/21e76cb6f23f4e5ba81b0210f7940971?v=ca097335)
 
@@ -58,9 +58,9 @@ The field of note is the **items** array. This will contain the items the search
 
 Now that you have gathered most of the pertinent info, it's time to put together a query.
 
-Start by calling search, passing in a fieldsEqual parameter. This will be an array of name : value pairs indicating which fields to specifically query on, and what you want those values to be. If you pass in multiple objects, the query will AND them together.
+Start by calling search, passing in a `fieldsEqual` parameter. This will be an array of name : value pairs indicating which fields to specifically query on, and what you want those values to be. If you pass in multiple objects, the query will AND them together.
 
-```
+```graphql
 {
   search(fieldsEqual: [{
     name: "_fullpath",
@@ -74,9 +74,9 @@ Start by calling search, passing in a fieldsEqual parameter. This will be an arr
 }
 ```
 
-For this exercise, find all the items under the Events node, so specify a \_fullpath value that contains that full path, appended with a wildcard so as to get the node's children.
+For this exercise, find all the items under the Events node, so specify a `_fullpath` value that contains that full path, appended with a wildcard so as to get the node's children.
 
-Now specify how the return results should be formatted. After looking at the schema for **ContentSearchResults**, you will see a results object of the type **ContentSearchResultConnection**. That object will in turn have an items array. Items have a name property, so just return that for now.
+Now specify how the return results should be formatted. After looking at the schema for **ContentSearchResults**, you will see a results object of the type **ContentSearchResultConnection**. That object will in turn have an `items` array. Items have a `name` property, so just return that for now.
 
 Execute the query. You should get the following result.
 
@@ -90,11 +90,11 @@ Return to the Content Editor and view the _Canada > Alberta > Banff > Banff 3 on
 
 ![Item quick info](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/d77fad32848a4e96a1adbc42f9291d85?v=bc309306)
 
-Return to the query, and add another object to the fieldsEqual array.
+Return to the query, and add another object to the `fieldsEqual` array.
 
-This time, specify that you need these items to also have a \_templatename property equal to “event-page”.
+This time, specify that you need these items to also have a `_templatename` property equal to `"event-page"`.
 
-```
+```graphql
 {
   search(fieldsEqual: [
     {name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*"},
@@ -122,9 +122,9 @@ To find these in the schema, go back to the Documentation Explorer and drill dow
 
 This will show the **ContentSearchResult** schema.
 
-The property you will need is fields, an array of _name : value_ pairs associated with this item. Add it to the query return to see what is available.
+The property you will need is `fields`, an array of _name : value_ pairs associated with this item. Add it to the query return to see what is available.
 
-```
+```graphql
 {
   search(fieldsEqual: [
     {name:"_fullpath", value:"/sitecore/content/lighthousefitness/home/events*"},
@@ -149,11 +149,11 @@ Execute the query and see that each node is pulling back a lot of useful informa
 
 Too much information, actually, and not in a format that an application can easily reference without iterating through an array every time it needs to retrieve one of these values.
 
-Clean this up by adding your properties to the result object, and using the field() function to retrieve the field values you want.
+Clean this up by adding your properties to the result object, and using the `field()` function to retrieve the field values you want.
 
-Start by setting the items' name to the event's name field. (for clarity, comment out the fields property)
+Start by setting the items' name to the event's `name` field. (for clarity, comment out the `fields` property)
 
-```
+```graphql
 {
   search(fieldsEqual: [
     {name:"_fullpath", value:"/sitecore/content/lighthousefitness/home/events*"},
@@ -178,7 +178,7 @@ Execute the query and get the following.
 
 Now add a few more fields that you will need, like description, date, image, latitude, longitude, etc. Then set this array of items to a property named events.
 
-```
+```graphql
 {
   search(fieldsEqual: [
     {name:"_fullpath", value:"/sitecore/content/lighthousefitness/home/events*"},
@@ -204,18 +204,18 @@ Execute the query once again and get a nicely formatted result set that looks li
 
 Excellent! That looks like some usable data!
 
-However, having the image name alone isn't particularly useful. What is needed to display an image are the src and alt properties. These can be found by accessing the Item object and its fields: [ItemFields] array.
+However, having the image name alone isn't particularly useful. What is needed to display an image are the src and alt properties. These can be found by accessing the `Item` object and its `fields: [ItemFields]` array.
 
-Write a small fragment below the query named ImageQuery. It will cast the incoming ItemField as an ImageField, returning its alt and src values.
+Write a small fragment below the query named ImageQuery. It will cast the incoming ItemField as an ImageField, returning its `alt` and `src` values.
 
-```
+```graphql
 fragment ImageQuery on ImageField {
   alt
   src
 }
 ```
 
-Now add an 'item' property that retrieves a field named image. Have it reference our ImageQuery fragment.
+Now add an 'item' property that retrieves a field named `image`. Have it reference our ImageQuery fragment.
 
 ```
 {
@@ -250,7 +250,7 @@ Now run the query to see the following:
 
 ![Final results](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/cd305d1865dc42b59489c44a476ad42c?v=cc934e4e)
 
-Now the image alt and src data is available to display the image in a component. Excellent!
+Now the image `alt` and `src` data is available to display the image in a component. Excellent!
 
 From here, you might want to add facets to the search; For instance, what if you wanted to look for only items associated with a given language? You might also want to narrow the search to a specific province.
 
