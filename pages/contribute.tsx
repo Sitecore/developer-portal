@@ -9,9 +9,7 @@ import opensourcePromo from '@/data/promos/opensource';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('contribute');
-  const partials = await getPartialsAsArray([
-    'contribute/contribute',
-  ]);
+  const partials = await getPartialsAsArray(['contribute/contribute']);
 
   return {
     props: {
@@ -28,5 +26,12 @@ export default function Contribute({
   pageInfo: PageInfo;
   partials: PartialData;
 }) {
-  return <GenericContentPage pageInfo={pageInfo} partials={partials} promoAfter={[opensourcePromo]} hasGrid={false} />;
+  return (
+    <GenericContentPage
+      pageInfo={pageInfo}
+      partials={partials}
+      promoAfter={[opensourcePromo]}
+      hasGrid={false}
+    />
+  );
 }

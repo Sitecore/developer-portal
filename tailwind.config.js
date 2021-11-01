@@ -124,6 +124,9 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            ['ol > li:before']: {
+              color: 'var(--theme-text)',
+            },
             color: theme('colors.theme-text'),
             a: {
               color: 'inherit',
@@ -147,7 +150,9 @@ module.exports = {
               color: 'inherit',
             },
             code: {
-              backgroundColor: 'transparent',
+              color: theme('colors.theme-text'),
+              backgroundColor: 'rgba(128, 128, 128, 0.15)',
+              padding: '0.125em',
               fontWeight: 400,
             },
             pre: {

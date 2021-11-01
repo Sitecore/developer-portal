@@ -46,10 +46,12 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
     };
   }, []);
 
+  const pageTitle = pageInfo.pageTitle || pageInfo.title;
+
   return (
     <div>
       <Head>
-        <title>{pageInfo.title}</title>
+        <title>{pageTitle}</title>
         <link rel="icon" href={`${publicUrl}/favicon.png`} />
         {/* Preload our two most heavily used webfonts, reduce chance of FOUT */}
         <link

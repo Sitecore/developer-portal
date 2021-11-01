@@ -15,6 +15,7 @@ type SCDPTailwindTypes =
   | InPageNavTWClasses
   // @TODO - some transform utilities that are enabled by default
   // aren't being added to the classname gen. Why?
+  | 'transform'
   | 'transform-none'
   | 'lg:transform-none'
   | 'lg:translate-none'
