@@ -4,7 +4,7 @@ product: ['experience-platform']
 ---
 
 ## Universal Tracker
-The Sitecore Universal Tracker (UT) lets you collect data from different sources as the interaction occurs and process the data when the interaction is completed.
+The Sitecore Universal Tracker (UT) lets you collect data from different sources as the interaction occurs and process the data when the interaction is completed. The Universal Tracker comes with a REST request-response model that allows capturing remote interactions that get stored and processed in Sitecore.
 
 ### Documentation
 
