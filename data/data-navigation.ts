@@ -142,7 +142,7 @@ const NavigationData: NavigationData[] = [
         url: '/commerce',
         children: [
           {
-            title: 'OrderCloud',
+            title: 'Sitecore OrderCloud',
             url: '/commerce/ordercloud',
           },
           {
