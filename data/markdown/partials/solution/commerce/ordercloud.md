@@ -1,7 +1,7 @@
 ---
 solution: ['commerce']
 product: ['orderCloud']
-title: 'OrderCloud®'
+title: 'Sitecore OrderCloud®'
 description: 'Cloud-native, headless, and API-first commerce solution'
 ---
 
