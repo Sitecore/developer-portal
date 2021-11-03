@@ -1,7 +1,7 @@
 ---
 solution: ['commerce']
 product: ['orderCloud']
-title: 'Order Cloud'
+title: 'OrderCloud®'
 description: 'Cloud-native, headless, and API-first commerce solution'
 ---
 
