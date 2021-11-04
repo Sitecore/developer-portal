@@ -7,7 +7,7 @@ const data: PromoCardProps = {
     src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/2f56b775bd304f2eae0ea219f4de0ab6?v=f51283ad',
   },
   link: {
-    href: 'https://community.sitecore.com/community?id=community_blog&sys_id=50685d3a1b6bb410722d4042b24bcb4e&view_source=featuredList',
+    href: 'https://community.sitecore.com/community?id=community_blog&sys_id=50685d3a1b6bb410722d4042b24bcb4e',
     text: 'Learn more about the release...',
   },
 };
