@@ -40,7 +40,13 @@ export const getIntegrationPaths = async (): Promise<IntegrationPaths[]> => {
 
 export const getTrialsPaths = async (): Promise<TrialPaths[]> => {
   const files = fs.readdirSync(trialPagesDirectory);
-  return files.map((file) => ({ params: { trial: file } }));
+  const paths: TrialPaths[] = [];
+  files.forEach((file) => {
+    if (file !== 'index.md') {
+      paths.push({ params: { trial: file } });
+    }
+  });
+  return paths;
 };
 
 export const getTrialNavPaths = async (): Promise<TrialNavPaths[]> => {
