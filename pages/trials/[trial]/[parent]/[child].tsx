@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 // Scripts
 import { getPartialsAsArray } from '@/scripts/page-info';
-import { getTrialPaths } from '@/scripts/static-paths';
+import { getTrialNavPaths } from '@/scripts/static-paths';
 // Interfaces
 import type { TrialNavContext, TrialNavData, PageInfo, PartialData } from '@/interfaces/page-info';
 // Components
@@ -10,7 +10,7 @@ import GenericContentPage from '@/components/layout/GenericContentPage';
 import TrialNav from '@/components/layout/TrialNav';
 
 export async function getStaticPaths() {
-  const trialPaths = await getTrialPaths();
+  const trialPaths = await getTrialNavPaths();
   return {
     paths: trialPaths,
     fallback: false,
