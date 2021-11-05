@@ -9,6 +9,7 @@ export type NavigationData = {
   title: string;
   url?: string;
   children?: NavigationChildData[];
+  pathname?: string;
 };
 
 export const SitecoreQuickLinks: NavigationData = {
@@ -68,6 +69,7 @@ const NavigationData: NavigationData[] = [
   },
   {
     title: 'Solution',
+    pathname: '/[solution]',
     children: [
       {
         title: 'Content Management and Delivery',
@@ -163,7 +165,7 @@ const NavigationData: NavigationData[] = [
             title: 'Sitecore DAM',
             url: '/dam-and-content-operations/dam',
           },
-        ]
+        ],
       },
       {
         title: 'DevOps',
@@ -191,6 +193,7 @@ const NavigationData: NavigationData[] = [
   },
   {
     title: 'Product',
+    pathname: '/[solution]/[product]',
     children: [
       {
         title: 'Sitecore Content Hub',
@@ -316,8 +319,8 @@ const NavigationData: NavigationData[] = [
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx',
             external: true,
-          }
-        ]
+          },
+        ],
       },
     ],
   },

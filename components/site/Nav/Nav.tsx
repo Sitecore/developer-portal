@@ -241,6 +241,7 @@ const Nav = (): JSX.Element => {
                       title={item.title}
                       children={item.children}
                       url={item.url}
+                      pathname={item.pathname}
                       callback={toggleNav}
                     />
                   </li>
