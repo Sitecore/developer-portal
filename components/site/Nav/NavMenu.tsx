@@ -93,8 +93,10 @@ const NavMenu = ({
   const navItemOverlayActiveClasses = classnames('translate-x-0');
 
   const router = useRouter();
+  const currentPage = router.asPath;
+  const isCurrentPage = currentPage === url;
   const currentRoute = router.pathname;
-  const isCurrentPage = (!!url && currentRoute.startsWith(url)) || currentRoute === pathname;
+  const isCurrentPath = (!!url && currentRoute.startsWith(url)) || currentRoute === pathname;
 
   return (
     <div>
@@ -111,8 +113,9 @@ const NavMenu = ({
       >
         <DynamicTag
           tag={children ? 'button' : 'a'}
+          aria-current={!children ? isCurrentPage : undefined}
           className={classnames(mainNavItemStyles, {
-            [buttonActiveClasses]: (children && isOpen) || isCurrentPage,
+            [buttonActiveClasses]: (children && isOpen) || isCurrentPath,
             ['lg:pr-5']: !!children,
           })}
           onClick={toggleNavItem}
@@ -292,6 +295,7 @@ const NavMenu = ({
                           {child.children?.map((child, index) => (
                             <li key={`child-${index}`} className={classnames('mb-4', 'lg:mb-2')}>
                               <NavLink
+                                aria-current={currentPage === child.url}
                                 text={child.title}
                                 url={child.url}
                                 external={child.external}
