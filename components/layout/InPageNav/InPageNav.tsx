@@ -55,8 +55,8 @@ const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
     >
       <p className={classnames('font-bold', 'text-sm', 'mb-4', 'md:hidden')}>Table of contents</p>
       <ul className={classnames('in-page-nav', 'relative', 'pl-1.5')}>
-        {titles.map((title) => (
-          <li className={classnames('in-page-nav-item', 'pb-4', 'relative', 'pl-4')} key={title}>
+        {titles.map((title, i) => (
+          <li className={classnames('in-page-nav-item', 'pb-4', 'relative', 'pl-4')} key={i}>
             <Link href={`#${getSectionId(title)}`}>
               <a
                 className={classnames(
