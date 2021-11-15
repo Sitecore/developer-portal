@@ -1,14 +1,15 @@
 import type { PromoCardProps } from '@/components/cards/PromoCard';
 
 const data: PromoCardProps = {
-  title: 'Sitecore XP 10.2 available now!',
-  description: 'Important changes like Static Site Generation with MVC/SXA sites and headless support in Horizon. You can download the latest release now!',
+  title: 'Sitecore Developer Experience Survey 2021 !',
+  description:
+    'We want to hear from you! Take the Developer Experience Survey if you’ve worked professionally with the Sitecore platform or contributed to a project in the past 12 months. Your answers will help shape our future! Just provide your name and email at the end of the survey to be part of the raffle.',
   img: {
-    src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/2f56b775bd304f2eae0ea219f4de0ab6?v=f51283ad',
+    src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/be4a712f6d7149339b599ac33721bbeb?v=cbd8fad3',
   },
   link: {
-    href: 'https://community.sitecore.com/community?id=community_blog&sys_id=50685d3a1b6bb410722d4042b24bcb4e',
-    text: 'Learn more about the release...',
+    href: 'https://www.research.net/r/SitecoreDeveloperExperience',
+    text: 'Take the survey now...',
   },
 };
 
