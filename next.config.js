@@ -13,6 +13,10 @@ const securityHeaders = [
     value: "same-origin"
   },
   {
+    key: "Permissions-Policy",
+    value: "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+  },
+  {
     key: "X-Content-Type-Options",
     value: "nosniff"
   },
