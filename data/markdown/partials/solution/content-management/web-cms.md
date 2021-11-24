@@ -25,6 +25,12 @@ With Experience Manager, you can create, manage, and publish content to your web
 - [Sitecore Docker Examples](https://github.com/Sitecore/docker-examples)
 
 ### Official Sitecore Training
+- [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials)
+	- Introduction to Developing with Sitecore
+	- Sitecore 10 Development Features Overview
+	- Sitecore JSS Fundamentals
+	- Introduction to Sitecore Experience Accelerator
+	- Marketing Essentials
 - [Web Experience Management Collection](https://learning.sitecore.com/course/updated-web-experience-management-collection)
 - [Sitecore Experience Accelerator (SXA) Collection](https://learning.sitecore.com/course/sitecore-experience-accelerator-sxa-collection)
 - [Developer's Fundamentals 10 Collection](https://learning.sitecore.com/course/developers-fundamentals-10-collection)
