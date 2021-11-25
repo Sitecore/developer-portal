@@ -16,6 +16,7 @@ Sitecore JSS offers front-end developer of whole new way of working and interact
 ## Learn
 
 - [Getting Started](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/getting-started-with-jss-for-next-js-development.html)
+- [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Sitecore JSS Fundamentals
 - [Sitecore Headless Services for JSS Workshop](https://learning.sitecore.com/instructor-led-training/sitecore-jss-workshop)
 - [JSS with Blazer YouTube playlist](https://www.youtube.com/watch?v=EkJJmqQGkVI&list=PL1jJVFm_lGnzMlj7g-hJEFNEPDs5yhzf0)
 - [Integrating a Client Framework with JSS YouTube playlist](https://www.youtube.com/watch?v=vQxLQH0iYps&list=PL1jJVFm_lGnxDrexrlt0Wy_va_vQvQvjN)

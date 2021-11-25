@@ -22,9 +22,9 @@ Sitecore Experience Commerce (XC) empowers marketers and merchandisers to fully 
 
 - [Installation Guides](https://dev.sitecore.net/Downloads/Sitecore_Commerce/101/Sitecore_Experience_Commerce_101.aspx)
 - [Getting Started](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/getting-started-with-development.html)
+- [Sitecore Essentials (FREE)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore Experience Commerce 9 and 10
 
 ## Learn more
-
 - [Sitecore Experience Commerce - learning.sitecore.com](https://learning.sitecore.com/pathway/sitecore-experience-commerce)
 - [YouTube: Sitecore Experience Commerce Deep Dive](https://www.youtube.com/watch?v=T0cn3yBbRro&list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94)
 - [How to series on YouTube](https://www.youtube.com/watch?v=aWeC7SXNifw&list=PL1jJVFm_lGnwa9R0XqeGrhmNj1AHbAnE9)
