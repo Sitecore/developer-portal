@@ -5,6 +5,7 @@ title: 'Customer Data Management'
 description: 'Maintain a persistent, unified view of your customers that is available to be leveraged in all your channels'
 stackexchange:
   [
+    '#cdp',
     '#xconnect',
     '#xdb',
     '#experience-analytics',
