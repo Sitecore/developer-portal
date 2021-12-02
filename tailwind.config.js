@@ -21,6 +21,7 @@ module.exports = {
     colors: {
       'theme-text': 'var(--theme-text)',
       'theme-text-alt': 'var(--theme-text-alt)',
+      'theme-link-hover': 'var(--theme-link-hover)',
       'theme-bg': 'var(--theme-bg)',
       'theme-bg-alt': 'var(--theme-bg-alt)',
       'theme-outline': 'var(--theme-outline)',

@@ -8,8 +8,8 @@ import Layout from '@/components/layout/Layout';
 import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
-import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 import VerticalGroup from '@/components/helper/VerticalGroup';
+import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 
 type SocialPageProps = {
   pageInfo: PageInfo;

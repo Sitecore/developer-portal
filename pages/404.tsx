@@ -11,6 +11,7 @@ const pageInfo = {
   title: 'Page not found',
   twitter: [],
   youtube: [],
+  sitecoreCommunity: {},
 };
 
 const NotFoundPage = (): JSX.Element => (

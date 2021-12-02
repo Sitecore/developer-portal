@@ -1,4 +1,14 @@
-import { StackExchangeQuestion, Tweet, YouTubeVideo } from './integrations';
+import {
+  ForumOption,
+  SortOption,
+} from '@/components/integrations/sitecore-community/SitecoreCommunity.api';
+import {
+  SitecoreCommunityEvent,
+  SitecoreCommunityContent,
+  StackExchangeQuestion,
+  Tweet,
+  YouTubeVideo,
+} from './integrations';
 
 type PageInfoCore = {
   description?: string;
@@ -15,6 +25,23 @@ export type MarkdownMeta = PageInfoCore & {
   stackexchange?: string | string[];
   twitter?: string | string[];
   youtube?: string;
+  sitecoreCommunityBlog?: number | boolean;
+  sitecoreCommunityBlogSort?: SortOption | SortOption[];
+  sitecoreCommunityEvents?: boolean;
+  sitecoreCommunityNews?: boolean;
+  sitecoreCommunityQuestions?: number | boolean;
+  sitecoreCommunityQuestionsSort?: SortOption | SortOption[];
+  sitecoreCommunityQuestionsCategory?: ForumOption | ForumOption[];
+};
+
+type SitecoreCommunityData = {
+  blog?: SitecoreCommunityContent[];
+  blogSort?: SortOption | SortOption[];
+  events?: SitecoreCommunityEvent[];
+  news?: SitecoreCommunityContent[];
+  questions?: SitecoreCommunityContent[];
+  questionsSort?: SortOption | SortOption[];
+  questionsForums?: ForumOption | ForumOption[];
 };
 
 // Output for 3rd party integrations contain specific data structures
@@ -25,6 +52,10 @@ export type PageInfo = PageInfoCore & {
   youtube: YouTubeVideo[];
   youtubeTitle?: string;
   youtubePlaylistTitle?: string;
+  sitecoreCommunity: SitecoreCommunityData;
+  sitecoreCommunityBlogSort?: SortOption | SortOption[];
+  sitecoreCommunityQuestionsSort?: SortOption | SortOption[];
+  sitecoreCommunityQuestionsCategory?: ForumOption | ForumOption[];
 };
 
 export type ChildPageInfo = {

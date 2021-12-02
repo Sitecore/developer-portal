@@ -11,12 +11,16 @@ import CommunityList from '@/components/lists/CommunityList';
 import Container from '@/components/helper/Container';
 import CTACard from '@/components/cards/CTACard';
 import Layout from '@/components/layout/Layout';
+import SitecoreCommunityBlog from '@/components/integrations/sitecore-community/blog/SitecoreCommunityBlog';
+import SitecoreCommunityEvents from '@/components/integrations/sitecore-community/events/SitecoreCommunityEvents';
+import SitecoreCommunityNews from '@/components/integrations/sitecore-community/news/SitecoreCommunityNews';
+import SitecoreCommunityQuestions from '@/components/integrations/sitecore-community/questions/SitecoreCommunityQuestions';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
+import VerticalGroup from '@/components/helper/VerticalGroup';
 import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
-import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
+import PromoCard from '@/components/cards/PromoCard';
 // Data
 import getHelpCta from '@/data/promos/get-help';
-import VerticalGroup from '@/components/helper/VerticalGroup';
 import newPromo from '@/data/promos/newpromo';
 
 export async function getStaticProps() {
@@ -79,6 +83,8 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       <Container>
         <VerticalGroup size="lg">
           <PromoCard {...newPromo} key="newPromo" isImageLeft={true} />
+          <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} />
+          <SitecoreCommunityEvents content={pageInfo.sitecoreCommunity.events} />
           <YouTubeFeed
             content={pageInfo.youtube}
             title={pageInfo.youtubeTitle}
@@ -100,11 +106,24 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
         </Container>
       </section>
       <Container>
-        <VerticalGroup>
-          <CTACard {...getHelpCta} />
-          <StackExchangeFeed content={pageInfo.stackexchange} />
-        </VerticalGroup>
+        <CTACard {...getHelpCta} />
       </Container>
+      <section className={classnames('bg-theme-bg-alt', 'py-16')}>
+        <Container>
+          <VerticalGroup>
+            <SitecoreCommunityQuestions
+              content={pageInfo.sitecoreCommunity.questions}
+              sortKeys={pageInfo.sitecoreCommunityQuestionsSort}
+              forumKeys={pageInfo.sitecoreCommunityQuestionsCategory}
+            />
+            <StackExchangeFeed content={pageInfo.stackexchange} />
+            <SitecoreCommunityBlog
+              content={pageInfo.sitecoreCommunity.blog}
+              sortKeys={pageInfo.sitecoreCommunityBlogSort}
+            />
+          </VerticalGroup>
+        </Container>
+      </section>
     </VerticalGroup>
   </Layout>
 );
