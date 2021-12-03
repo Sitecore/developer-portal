@@ -1,15 +1,15 @@
 import type { PromoCardProps } from '@/components/cards/PromoCard';
 
 const data: PromoCardProps = {
-  title: 'Sitecore Developer Experience Survey 2021 !',
+  title: 'Call for speakers open for Sitecore’s Virtual Developer Day',
   description:
-    'We want to hear from you! Take the Developer Experience Survey if you’ve worked professionally with the Sitecore platform or contributed to a project in the past 12 months. Your answers will help shape our future! Just provide your name and email at the end of the survey to be part of the raffle.',
+    'The 5th VDD will be held in February 2022. For those that do not know, VDD is a complimentary 24-hour virtual event showcasing pre-recorded presentations designed to drive and foster engagement with existing and potential Sitecore developers around the world. Please keep in mind that the deadline to submit your topic is December 15th, 2021.',
   img: {
-    src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/be4a712f6d7149339b599ac33721bbeb?v=cbd8fad3',
+    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/da050901b5ee4a3788c024a26a97a6f7?v=dbe4f6f9',
   },
   link: {
-    href: 'https://www.research.net/r/SitecoreDeveloperExperience',
-    text: 'Take the survey now...',
+    href: 'https://bit.ly/3cRsyYq',
+    text: 'Apply here',
   },
 };
 
