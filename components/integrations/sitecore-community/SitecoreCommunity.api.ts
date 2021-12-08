@@ -6,12 +6,13 @@ type SitecoreCommunityBaseResponse = {
   comment_count: string;
   content_type: {
     name: string;
+    page: string;
   };
   title: string;
-  url: string;
   userAvatarObject: {
     name: string;
   };
+  sys_id: string;
   view_count: string;
 };
 
@@ -72,7 +73,7 @@ const getEvents = async (maxResults: number): Promise<SitecoreCommunityEvent[]> 
         location: event.location_name,
         startDate: event.start_date,
         title: event.title,
-        url: event.url,
+        url: `/community?id=community_event&sys_id=${event.sys_id}`,
         userName: event.userAvatarObject.name,
         virtualUrl: event.virtual_url,
       }));
@@ -132,7 +133,7 @@ const getContent = async ({
         contentType: item.content_type.name,
         publishDate: item.published_date,
         title: item.title,
-        url: item.url,
+        url: `/community?id=${item.content_type.page}&sys_id=${item.sys_id}`,
         userName: item.userAvatarObject.name,
         viewCount: item.view_count,
       }));
