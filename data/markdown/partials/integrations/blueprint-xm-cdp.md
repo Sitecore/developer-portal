@@ -66,7 +66,7 @@ There are pros and cons to each of these approaches, so you will need to decide 
 
 #### Method A – Direct JavaScript Integration
 
-For those customers wanting to directly embed the CDP tracking tag into their web channel built using Sitecore XM, they can follow the Tagging Examples documentation to add JS tracking tag to your website: https://developer.boxever.com/reference/tagging-examples
+For those customers wanting to directly embed the CDP tracking tag into their web channel built using Sitecore XM, they can follow the Tagging Examples documentation to add JS tracking tag to your website: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/javascript-tagging-examples-for-web-pages.html
 
 The sequence diagram below shows data flow between the different systems to facilitate interaction data storage in Sitecore CDP.
 
@@ -115,23 +115,23 @@ There are pros and cons to each of these approaches, so you will need to decide 
 
 #### Method A – Method A – Direct JavaScript Integration.
 
-For those customers wanting to directly embed JavaScript event call into their web channel built using Sitecore XM they will have to send the Event request built to match the following definition: https://developer.boxever.com/reference/identifying-a-guest 
+For those customers wanting to directly embed JavaScript event call into their web channel built using Sitecore XM they will have to send the Event request built to match the following definition: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/javascript-tagging-examples-for-web-pages.html 
 
 The sequence diagram below shows the data flow between the different systems to facilitate the IDENTITY Event request when directly embedded into the JavaScript for the web channel.
 
 ![Sequence diagram showing the flow of data between Sitecore XM & Sitecore CDP when identifying users from a tracker directly embedded in the pages JS.][5]
 
 #### Method B – Google Tag Manager Integration
-For those customers wanting  to embed JavaScript event call into their web channel built using Sitecore XM via Google Tag Manager, they will have to ensure that the injected JavaScript creates requests that built to match the following definition: https://developer.boxever.com/reference/identifying-a-guest 
+For those customers wanting to directly embed the CDP tracking tag into their web channel built using Sitecore XM, they can follow the Tagging Examples documentation to add JS tracking tag to your website by using Google Tag Manager: [How to send data to Sitecore CDP via Google Tag Manager](https://sitecore.cdpknowledgehub.com/docs/how-to-send-data-to-boxever-via-google-tag-manager)
 
 The sequence diagram below shows data flow between the different systems to facilitate the IDENTITY Event request when Google Tag Manager is used to embed the JavaScript for the web channel.
 
 ![Sequence diagram showing the flow of data between Sitecore XM & Sitecore CDP when identifying users from a tracker directly embedded via Google Tag Manager.][6]
 
 #### Method C – Server-side Integration
-When building your web channel experience in C# using MVC, SXA or the .NET Rendering Host, you can send the identify request on the server-side instead of client-side. In the same way as when working client-side, you will need to craft the request to match the specification here: https://developer.boxever.com/reference/identifying-a-guest 
+For those customers wanting to integrate with Sitecore CDP from the server-side, the best approach is to make use of the Stream API to send those requests. To start that process you will need to request and Browser ID and then ensure you send that ID with all future requests to ensure the session details are recorded correctly. This is the same approach that is used when integrating a Mobile App to the CDP, and is documented here: [Mobile App Tagging Overview](https://sitecore.cdpknowledgehub.com/docs/mobile-app-tagging-overview)
 
-The sequence diagram below shows data flow between the different systems to facilitate the IDENTITY Event request when being sent server-side.
+The sequence diagram below shows data flow between the different systems to facilitate the request of the Browser ID and subsequent event messages.
 
 ![Sequence diagram showing the flow of data between Sitecore XM & Sitecore CDP when identifying users from a server-side request.][7]
 
@@ -147,10 +147,10 @@ As your users interact with your web channel built using Sitecore XM, you will n
 ### Developer Configuration 
 The developer uses the Data Extension model to update, store and retrieve guest data that includes custom fields specific to your business. They are stored in the format of a series of key-value pairs, allowing you to store any data you need. The process of interacting with Data Extension models is performed via a series of different API calls, you can see details regarding these calls in the links below:
 
-- Create Guest Data Extension: https://developer.boxever.com/reference/create-guest-data-extension 
-- Retrieve Guest Data Extension: https://developer.boxever.com/reference/retrieve-guest-data-extension
-- Update Guest Data Extension: https://developer.boxever.com/reference/update-guest-data-extension
-- Delete Guest Data Extension: https://developer.boxever.com/reference/delete-guest-data-extension 
+- [Create Guest Data Extension](https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/using-the-create-guest-data-extension-function-in-sitecore-cdp-rest-api.html)
+- [Retrieve Guest Data Extension](https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/using-the-retrieve-guest-data-extension-function-in-sitecore-cdp-rest-api.html)
+- [Update Guest Data Extension](https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/using-the-update-guest-data-extension-function-in-sitecore-cdp-rest-api.html)
+- [Delete Guest Data Extension](https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/using-the-delete-guest-data-extension-function-in-sitecore-cdp-rest-api.html)
 
 Note that the Create, Update & Delete calls cannot be made directly from the front-end system (e.g. the browser) due to the need for them to be authenticated. These calls must be sent via XM to ensure that the correct authentication headers are added to the requests.
 
@@ -172,7 +172,7 @@ A marketing user should be able to define custom goals that can later be trigger
 
 
 ###	Developer Configuration 
-When integrating Sitecore XM with Sitecore CDP you will need to send custom events into the CDP to track user engagement. You can read the documentation covering the contents of the message required here: https://developer.boxever.com/reference/sending-an-event 
+When integrating Sitecore XM with Sitecore CDP you will need to send custom events into the CDP to track user engagement. You can read the documentation covering the contents of the message required here: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/send-an-event-as-an-http-get-request.html 
 
 You can achieve this by sending the event either from the client-side or the server-side. You can choose your preferred option depending on your requirements. 
 
@@ -183,7 +183,7 @@ You can achieve this by sending the event either from the client-side or the ser
 
 #### Client-side events
 
-For customers who want to directly embed the JavaScript event call into their web channel built using Sitecore XM, they will have to send the Event request built to match the following definition: https://developer.boxever.com/reference/sending-an-event
+For customers who want to directly embed the JavaScript event call into their web channel built using Sitecore XM, they will have to send the Event request built to match the following definition: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/send-an-event-as-an-http-get-request.html
 
 This sequence diagram shows how the different systems and the user’s browser will interact when events are sent in this way.
 
@@ -191,14 +191,14 @@ This sequence diagram shows how the different systems and the user’s browser w
 
 #### Server-side events
 
-For those customers wanting to handle event messages on their web channel built using Sitecore XM by sending them from the server-side, they will have to craft the event request to match the following definition: https://developer.boxever.com/reference/sending-an-event
+For those customers wanting to handle event messages on their web channel built using Sitecore XM by sending them from the server-side, they will have to craft the event request to match the following definition: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/send-an-event-as-an-http-get-request.html
 
 This sequence diagram shows how the different systems and the user’s browser will interact when events messages are sent in this way.
 
 ![Sequence diagram showing passing an event message from Sitecore XM to Sitecore CDP from the server-side.][10]
 
 ### Marketer Usage
-You will need to work with your developer to define which events are to be sent from the web channel, depending on the actions that your users perform. There are a series of events you can choose from in order to help map your users’ actions to your business processes. You can see a list of the supported events here:  https://developer.boxever.com/reference/sending-custom-events.
+You will need to work with your developer to define which events are to be sent from the web channel, depending on the actions that your users perform. There are a series of events you can choose from in order to help map your users’ actions to your business processes. You can see a list of the supported events here: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/send-a-custom-event-to-sitecore-cdp.html.
 
 ## Use Case #5: Ability to personalize web channel
 Sitecore CDP allows you to personalize experiences, ensuring that each customer and visitor has the correct content displayed and at the appropriate time. Integrating Sitecore XM with Sitecore CDP allows you to deliver personalized experiences on your web channel.
@@ -218,7 +218,7 @@ There are pros and cons to each the options as demonstrated in the table below. 
 
 #### Personalizing the web channel using “Web Experiences”.
 
-When personalizing the web channel by using “Web Experiences”, the DOM is changed via JavaScript after being rendered. You need to be careful when using this method to ensure that the DOM changes occur either “below the fold” or are masked with other UX techniques like transparent overlays or loading images. You can get an introduction on how to implement Web Experiences by following the guide here: https://documentation.boxever.com/docs/webexperiences 
+When personalizing the web channel by using Web Experiences, the DOM is changed via JavaScript after being rendered. You need to be careful when using this method to ensure that the DOM changes occur either “below the fold” or are masked with other UX techniques like transparent overlays or loading images.
 
 The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using “Web Experiences”.
 
@@ -234,7 +234,7 @@ The sequence diagram below shows data flow between the different systems to faci
 
 ### Marketer Usage
 
-Once your experience has been built out by your developer, you can then begin to apply it to the pages on your website. The developer will have defined the fields of the template you need to populate for each instance of the experience you wish to run. You can read more about how to apply the different types of experiences on the documentation site here: https://documentation.boxever.com/docs/webexperiences. 
+Once your experience has been built out by your developer, you can then begin to apply it to the pages on your website. The developer will have defined the fields of the template you need to populate for each instance of the experience you wish to run.
 
 ## Use Case #6: Ability to optimize web channel through Experiments
 Sitecore CDP allows you to optimize experiences, giving you the ability to run A/B & multivariant experiments to help improvement conversion on your channels. Integrating Sitecore XM with Sitecore CDP gives you the ability to deliver and run these tests on your web channel.
@@ -254,23 +254,22 @@ There are pros and cons to each of these approaches, so you will need to decide 
 
 #### Creating Web Experiments
 
-When personalizing the web channel by using “Web Experiments”, the DOM is changed via JavaScript after being rendered. You need to be careful when using this method so as to ensure that the DOM changes occur either “below the fold” or are masked with other UX techniques like transparent overlays or loading images. You can get an introduction on how to implement Web Experiments by following the guide here: https://documentation.boxever.com/docs/creating-a-web-experiment 
+When personalizing the web channel by using Web Experiments, the DOM is changed via JavaScript after being rendered. You need to be careful when using this method so as to ensure that the DOM changes occur either “below the fold” or are masked with other UX techniques like transparent overlays or loading images. You can get an introduction on how to implement Web Experiments by following the guide here: https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/introduction-to-web-experiments.html
 
-The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using “Web Experiences”.
+The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using Web Experiments.
 
 ![Sequence diagram showing how the Sitecore XM & Sitecore CDP interact when creating Web Experiments.][13]
 
 #### Creating Full Stack Experiments
 
-When personalizing the web channel by using “Full Stack Experiments”, the DOM is changed server side before being served to the browser. This means you no longer need to be concerned about experiments occurring “below the fold”. You can get an introduction on how to implement Web Experiments by following the guide here: https://documentation.boxever.com/docs/creating-a-full-stack-experiment 
+When personalizing the web channel by using Full Stack Experiments, the DOM is changed server side before being served to the browser. This means you no longer need to be concerned about experiments occurring “below the fold”. You can get an introduction on how to implement Web Experiments by following the guide here: https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/create-an-interactive-experiment.html
 
-The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using “Full Stack Experiences”.
+The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using Full Stack Experiments.
 
 ![Sequence diagram showing how the Sitecore XM & Sitecore CDP interact when creating Full Stack Experiments.][14]
 
 ### Marketer Usage
-As a marketer you can apply the different types of Experiments to the pages in your web channel. Experiments are closely linked to Experiences, as Experiments are effectively an A/B Test between two Experiences. You can read about how you can apply the different types of experiments as a marketer here: https://documentation.boxever.com/docs/abtesting
-
+As a marketer you can apply the different types of Experiments to the pages in your web channel. Experiments are closely linked to Experiences, as Experiments are effectively an A/B Test between two Experiences. You can read about how you can apply the different types of experiments as a marketer here: https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/running-experiments-in-sitecore-cdp.html
 
 [1]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/1a7ace859dea4deaa27e4546c9b812cc?v=ffce0578
 [2]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/27c06a3a3ffd494b9d8100adb8a88a28?v=4a196839
