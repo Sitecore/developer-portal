@@ -26,7 +26,7 @@ Click on _Canada > Alberta > Banff > Banff 3 on 3 Basketball Challenge_. You can
 Now that you know where the data lives, it's time to create a query.
 
 The Graph Browser
-In your browser, navigate to `<Sitecore hostname>/Sitecore/api/graph/items/master/ui` to bring up the Sitecore Experience Graph Browser.
+In your browser, navigate to `<Sitecore hostname>/sitecore/api/graph/items/master/ui` to bring up the Sitecore Experience Graph Browser.
 
 ![The Graph Browser](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/21e76cb6f23f4e5ba81b0210f7940971?v=ca097335)
 
