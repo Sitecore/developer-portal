@@ -84,6 +84,10 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
         <VerticalGroup size="lg">
           <PromoCard {...newPromo} key="newPromo" isImageLeft={true} />
           <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} />
+          <SitecoreCommunityBlog
+            content={pageInfo.sitecoreCommunity.blog}
+            sortKeys={pageInfo.sitecoreCommunityBlogSort}
+          />
           <SitecoreCommunityEvents content={pageInfo.sitecoreCommunity.events} />
           <YouTubeFeed
             content={pageInfo.youtube}
@@ -117,10 +121,6 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
               forumKeys={pageInfo.sitecoreCommunityQuestionsCategory}
             />
             <StackExchangeFeed content={pageInfo.stackexchange} />
-            <SitecoreCommunityBlog
-              content={pageInfo.sitecoreCommunity.blog}
-              sortKeys={pageInfo.sitecoreCommunityBlogSort}
-            />
           </VerticalGroup>
         </Container>
       </section>
