@@ -1,15 +1,15 @@
 import type { PromoCardProps } from '@/components/cards/PromoCard';
 
 const data: PromoCardProps = {
-  title: 'Call for speakers open for Sitecore’s Virtual Developer Day',
+  title: 'Sitecore Stack Exchange Beta stage is over!',
   description:
-    'The 5th VDD will be held in February 2022. For those that do not know, VDD is a complimentary 24-hour virtual event showcasing pre-recorded presentations designed to drive and foster engagement with existing and potential Sitecore developers around the world. Please keep in mind that the deadline to submit your topic is December 15th, 2021.',
+    'Today is an exciting day for the community as the Sitecore Stack Exchange site has graduated from the Stack Exchange Beta program and become a fully public member of the Stack Exchange family!',
   img: {
-    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/da050901b5ee4a3788c024a26a97a6f7?v=dbe4f6f9',
+    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/a3c5df7b1d06426ca0b7cac57e4804e7?v=dbd864c9',
   },
   link: {
-    href: 'https://bit.ly/3cRsyYq',
-    text: 'Apply here',
+    href: 'https://community.sitecore.com/community?id=community_blog&sys_id=002249581ba40110722d4042b24bcb4c',
+    text: 'Read more about the news!',
   },
 };
 
