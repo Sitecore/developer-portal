@@ -68,10 +68,6 @@
     scroll-margin-top: theme('spacing.36') !important;
   }
 
-  .prose * {
-    color: theme('colors.theme-text') !important;
-  }
-
   .prose code:after,
   .prose code:before {
     content: '';

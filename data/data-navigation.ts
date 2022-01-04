@@ -9,6 +9,7 @@ export type NavigationData = {
   title: string;
   url?: string;
   children?: NavigationChildData[];
+  pathname?: string;
 };
 
 export const SitecoreQuickLinks: NavigationData = {
@@ -68,6 +69,7 @@ const NavigationData: NavigationData[] = [
   },
   {
     title: 'Solution',
+    pathname: '/[solution]',
     children: [
       {
         title: 'Content Management and Delivery',
@@ -128,7 +130,7 @@ const NavigationData: NavigationData[] = [
         url: '/marketing-automation',
         children: [
           {
-            title: 'Sitecore Send',
+            title: 'Moosend',
             url: '/marketing-automation/send',
           },
           {
@@ -142,7 +144,7 @@ const NavigationData: NavigationData[] = [
         url: '/commerce',
         children: [
           {
-            title: 'OrderCloud',
+            title: 'Sitecore OrderCloud',
             url: '/commerce/ordercloud',
           },
           {
@@ -163,7 +165,7 @@ const NavigationData: NavigationData[] = [
             title: 'Sitecore DAM',
             url: '/dam-and-content-operations/dam',
           },
-        ]
+        ],
       },
       {
         title: 'DevOps',
@@ -201,6 +203,7 @@ const NavigationData: NavigationData[] = [
   },
   {
     title: 'Product',
+    pathname: '/[solution]/[product]',
     children: [
       {
         title: 'Sitecore Content Hub',
@@ -285,7 +288,7 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Sitecore Send',
+        title: 'Moosend',
         url: '/marketing-automation/send',
         children: [
           {
@@ -293,7 +296,7 @@ const NavigationData: NavigationData[] = [
             url: '/marketing-automation/send',
           },
           {
-            title: 'Get your free Sitecore Send account',
+            title: 'Get your free Moosend account',
             url: 'https://identity.moosend.com/register/',
             external: true,
           },
@@ -326,8 +329,8 @@ const NavigationData: NavigationData[] = [
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx',
             external: true,
-          }
-        ]
+          },
+        ],
       },
       {
         title: 'Sitecore Discover',

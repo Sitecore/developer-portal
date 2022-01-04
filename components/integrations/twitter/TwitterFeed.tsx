@@ -15,7 +15,7 @@ type TwitterFeedProps = {
 };
 
 const TwitterFeed = ({ content, handle, headingLevel = 'h2' }: TwitterFeedProps): JSX.Element => {
-  if (!content || !handle) {
+  if (!content || content.length==0 || !handle) {
     return <></>;
   }
 

@@ -10,6 +10,7 @@ partials:
     'solution/customer-data-management/xp-intro',
     'solution/customer-data-management/xdb',
     'solution/customer-data-management/web-tracking',
+    'solution/personalization-testing/universal-tracker',
     'solution/customer-data-management/reference-data-service',
   ]
 ---

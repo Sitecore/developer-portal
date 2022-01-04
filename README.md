@@ -4,7 +4,7 @@
 Welcome to the Sitecore Developer Portal. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
 
 ## The Tech
-The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time.
+The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
 
 ## Build Prerequisites
 
@@ -43,9 +43,9 @@ TWITTER_BEARER_TOKEN=""
 
 We are very grateful to the community for contributing bug fixes and improvements. We welcome all efforts to evolve and improve the Sitecore Developer Portal; read below to learn how to participate in those efforts.
 
-### [Code of Conduct](https://github.com/Sitecore/jss/blob/dev/CODE_OF_CONDUCT.md)
+### [Code of Conduct](https://github.com/Sitecore/developer-portal/CODE_OF_CONDUCT.md)
 
-Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/jss/blob/dev/CODE_OF_CONDUCT.md  ) so that you can understand what actions will and will not be tolerated.
+Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/developer-portal/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
 
 ### Contributing Guide
 
@@ -56,7 +56,7 @@ If you want to make changes to the code, follow these steps:
 3. Create a feature branch from `main` for your changes. e.g. `git checkout -b my-feature-branch`
 4. `npm install`
 5. `npm run dev` (to preview your changes locally)
-6. Make your changes
+6. Make your changes (*if you changes include images please use the `public/images` folder to store the image(s)*)
 7. Commit, push to your remote fork of the Developer Portal repo, then open a pull request (PR) to the `main` branch of the Developer Portal repo.
 
 Your changes will be reviewed and merged if appropriate.

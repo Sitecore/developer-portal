@@ -13,9 +13,11 @@ import CTACard from '@/components/cards/CTACard';
 import Layout from '@/components/layout/Layout';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
+import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
 // Data
 import getHelpCta from '@/data/promos/get-help';
 import VerticalGroup from '@/components/helper/VerticalGroup';
+import newPromo from '@/data/promos/newpromo';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
@@ -76,6 +78,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
     <VerticalGroup>
       <Container>
         <VerticalGroup size="lg">
+          <PromoCard {...newPromo} key="newPromo" isImageLeft={true} />
           <YouTubeFeed
             content={pageInfo.youtube}
             title={pageInfo.youtubeTitle}

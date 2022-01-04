@@ -10,13 +10,13 @@ Sitecore Headless Development is based on a rendering host front end and a Sitec
 
 ## Documentation
 
-- [Sitecore Headless Development](https://doc.sitecore.com/en/developers/101/developer-tools/sitecore-headless-development.html)
+- [Sitecore Headless Development](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/headless-development-with-the-asp-net-rendering-sdk.html)
 - [API Documentation](https://doc.sitecore.com/en/resources/sitecore-asp-dot-net-rendering-sdk/101/api/index.html)
 
 ## Learn
 
-- [Walkthrough: Using the Getting Started template](https://doc.sitecore.com/en/developers/101/developer-tools/walkthrough--using-the-getting-started-template.html)
-- [Development Walkthroughs](https://doc.sitecore.com/en/developers/101/developer-tools/development-walkthroughs.html)
+- [Walkthrough: Using the Getting Started template](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/walkthrough--using-the-getting-started-template.html)
+- [Development Walkthroughs](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/development-walkthroughs.html)
 
 ## Downloads
 - [Download Sitecore Headless Rendering](https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering.aspx)

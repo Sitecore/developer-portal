@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { classnames } from 'tailwindcss-classnames';
+import { useRouter } from 'next/router';
 // Data
 import { NavigationData } from '@/data/data-navigation';
 // Components
@@ -32,7 +33,14 @@ type NavMenuProps = NavigationData & {
  *   - InPageNav.tsx
  */
 
-const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): JSX.Element => {
+const NavMenu = ({
+  title,
+  url,
+  children,
+  pathname,
+  buttonIcon,
+  callback,
+}: NavMenuProps): JSX.Element => {
   const navItemRef = useRef<HTMLDivElement>(null);
   const [isOpen, setOpen] = useState(false);
   const toggleNavItem = (event: React.MouseEvent) => {
@@ -84,6 +92,12 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
   );
   const navItemOverlayActiveClasses = classnames('translate-x-0');
 
+  const router = useRouter();
+  const currentPage = router.asPath;
+  const isCurrentPage = currentPage === url;
+  const currentRoute = router.pathname;
+  const isCurrentPath = (!!url && currentRoute.startsWith(url)) || currentRoute === pathname;
+
   return (
     <div>
       {/* 
@@ -99,8 +113,9 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
       >
         <DynamicTag
           tag={children ? 'button' : 'a'}
+          aria-current={!children ? isCurrentPage : undefined}
           className={classnames(mainNavItemStyles, {
-            [buttonActiveClasses]: children && isOpen,
+            [buttonActiveClasses]: (children && isOpen) || isCurrentPath,
             ['lg:pr-5']: !!children,
           })}
           onClick={toggleNavItem}
@@ -279,7 +294,13 @@ const NavMenu = ({ title, url, children, buttonIcon, callback }: NavMenuProps): 
                         <ul>
                           {child.children?.map((child, index) => (
                             <li key={`child-${index}`} className={classnames('mb-4', 'lg:mb-2')}>
-                              <NavLink text={child.title} url={child.url} external={child.external} onClick={toggleNavItem} />
+                              <NavLink
+                                aria-current={currentPage === child.url}
+                                text={child.title}
+                                url={child.url}
+                                external={child.external}
+                                onClick={toggleNavItem}
+                              />
                             </li>
                           ))}
                         </ul>

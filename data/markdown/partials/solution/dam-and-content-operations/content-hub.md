@@ -26,6 +26,7 @@ Sitecore Content Hub&trade; offers multiple modules. Here is a brief overview of
 - [Navigate Content Hub](https://docs.stylelabs.com/content/4.0.x/user-documentation/get-started/content-hub/log-in.html)
 - [The different modules](https://docs.stylelabs.com/content/4.0.x/user-documentation/get-started/content-hub/modules.html)
 - [Terminology](https://docs.stylelabs.com/content/4.0.x/user-documentation/get-started/content-hub/glossary.html)
+- [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Content Hub
 
 ## User Documentation
 

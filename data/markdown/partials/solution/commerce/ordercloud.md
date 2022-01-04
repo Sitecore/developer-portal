@@ -1,7 +1,7 @@
 ---
 solution: ['commerce']
 product: ['orderCloud']
-title: 'Order Cloud'
+title: 'Sitecore OrderCloud®'
 description: 'Cloud-native, headless, and API-first commerce solution'
 ---
 
@@ -16,6 +16,7 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 ## Getting Started
 
 - [Getting Started with OrderCloud](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
+- [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore OrderCloud
 
 ## Discover more
 
@@ -26,3 +27,6 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 ## Playground
 - [Get Started Now!](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
 - [The Code 👩‍💻](https://github.com/ordercloud-api)
+
+## Integrations
+- [Integrating Sitecore OrderCloud with Sitecore Send](/learn/integrations/send-oc)
