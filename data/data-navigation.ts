@@ -338,7 +338,7 @@ const NavigationData: NavigationData[] = [
         children: [
           {
             title: 'Data driven product discovery',
-            url: '/commerce/experience-commerce',
+            url: '/search/discover',
           }
         ]
       }
