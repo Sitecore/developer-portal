@@ -1,8 +1,8 @@
 ---
 solution: ['search']
 product: ['discover']
-title: 'Sitecore Discover®'
-description: 'Cloud-native, headless, and API-first commerce solution'
+title: 'Sitecore Discover'
+description: 'From search to sale, Discover helps you create relevant experiences that drive conversions.'
 ---
 
 ## Introduction
