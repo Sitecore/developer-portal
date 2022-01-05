@@ -140,16 +140,16 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Commerce',
-        url: '/commerce',
+        title: 'Storefronts and Marketplaces',
+        url: '/storefronts-and-marketplaces',
         children: [
           {
             title: 'Sitecore OrderCloud',
-            url: '/commerce/ordercloud',
+            url: '/storefronts-and-marketplaces/ordercloud',
           },
           {
             title: 'Sitecore Experience Commerce',
-            url: '/commerce/experience-commerce',
+            url: '/storefronts-and-marketplaces/experience-commerce',
           },
         ],
       },
@@ -190,12 +190,12 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Search',
-        url: '/search',
+        title: 'Search and Merchandizing',
+        url: '/search-and-merchandizing',
         children: [
           {
             title: 'Sitecore Discover',
-            url: '/search/discover',
+            url: '/search-and-merchandizing/discover',
           }
         ]
       },
@@ -334,11 +334,11 @@ const NavigationData: NavigationData[] = [
       },
       {
         title: 'Sitecore Discover',
-        url: '/search/discover',
+        url: '/search-and-merchandizing/discover',
         children: [
           {
             title: 'Data driven product discovery',
-            url: '/search/discover',
+            url: '/search-and-merchandizing/discover',
           }
         ]
       }
