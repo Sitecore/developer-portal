@@ -304,11 +304,11 @@ const NavigationData: NavigationData[] = [
       },
       {
         title: 'Sitecore OrderCloud',
-        url: '/commerce/ordercloud',
+        url: '/storefronts-and-marketplaces/ordercloud',
         children: [
           {
             title: 'Order Management, Storefronts and Marketplaces, and Merchandizing',
-            url: '/commerce/ordercloud',
+            url: '/storefronts-and-marketplaces/ordercloud',
           },
           {
             title: 'Start on the OrderCloud Portal for free',
@@ -319,11 +319,11 @@ const NavigationData: NavigationData[] = [
       },
       {
         title: 'Sitecore Experience Commerce',
-        url: '/commerce/experience-commerce',
+        url: '/storefronts-and-marketplaces/experience-commerce',
         children: [
           {
             title: 'Order Management, Storefronts, and Merchandizing',
-            url: '/commerce/experience-commerce',
+            url: '/storefronts-and-marketplaces/experience-commerce',
           },
           {
             title: 'Downloads',

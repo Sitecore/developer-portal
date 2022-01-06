@@ -58,15 +58,20 @@ const productSolutions: CategoryTileProps[] = [
     href: '/marketing-automation/',
   },
   {
-    title: 'Commerce',
+    title: 'Storefronts and Marketplaces',
     description: 'Build out order management, merchandising, marketplaces, and storefronts',
-    href: '/commerce/',
+    href: '/storefronts-and-marketplaces/',
   },
   {
     title: 'DevOps',
     description: 'Installation, deployment, and architecture',
     href: '/devops/',
   },
+  {
+    title: 'Search and Merchandizing',
+    description: 'Cutting-edge technology that drives world-class personalization at scale to delight your customers and future-proof your business.',
+    href: '/search-and-merchandizing/',
+  }
 ];
 
 type HomePageProps = {
