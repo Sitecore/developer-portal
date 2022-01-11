@@ -8,8 +8,10 @@ import Layout from '@/components/layout/Layout';
 import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
 import StackExchangeFeed from '@/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/components/integrations/twitter/TwitterFeed';
-import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
 import VerticalGroup from '@/components/helper/VerticalGroup';
+import YouTubeFeed from '@/components/integrations/youtube/YouTubeFeed';
+import SitecoreCommunityNews from '@/components/integrations/sitecore-community/news/SitecoreCommunityNews';
+import SitecoreCommunityQuestions from '@/components/integrations/sitecore-community/questions/SitecoreCommunityQuestions';
 
 type SocialPageProps = {
   pageInfo: PageInfo;
@@ -24,6 +26,12 @@ const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): 
         {promoBefore.map((promo, i) => (
           <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />
         ))}
+        <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} />
+        <SitecoreCommunityQuestions
+          content={pageInfo.sitecoreCommunity.questions}
+          sortKeys={pageInfo.sitecoreCommunityQuestionsSort}
+          forumKeys={pageInfo.sitecoreCommunityQuestionsCategory}
+        />
         <CommunityList />
         <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
         <StackExchangeFeed content={pageInfo.stackexchange} />

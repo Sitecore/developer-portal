@@ -5,4 +5,6 @@ heroImage: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/conte
 stackexchange: ['/questions?tab=Newest']
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'
+sitecoreCommunityNews: true
+sitecoreCommunityBlog: true
 ---
