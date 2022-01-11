@@ -6,7 +6,7 @@ description: 'From search to sale, Discover helps you create relevant experience
 ---
 
 ## Introduction
-Sitecore Discover enables your commerce business by adding individualized search and merchandising capabilities. Deliver a 1:1 shopping experience with tailored search results and recommendations driven by AI in real time.
+Sitecore Discover enables your commerce business by adding individualized search and merchandizing capabilities. Deliver a 1:1 shopping experience with tailored search results and recommendations driven by AI in real time.
 
 ## Getting Started
 - [Service Overview](https://docs.google.com/presentation/d/1EcNr5QunGnJM4SsgzNoDL8fycwKcqz0DAZL5Mx7Qpjo)

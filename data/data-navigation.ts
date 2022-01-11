@@ -196,6 +196,14 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Sitecore Discover',
             url: '/search-and-merchandizing/discover',
+          },
+          {
+            title: 'Sitecore OrderCloud',
+            url: '/search-and-merchandizing/orderdloud',
+          },
+          {
+            title: 'Sitecore Experience Commerce',
+            url: '/search-and-merchandizing/experience-commerce',
           }
         ]
       },
