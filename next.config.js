@@ -54,25 +54,6 @@ const nextConfig = {
         headers: securityHeaders
       }
     ]
-  },
-  async redirects() {
-    return [
-      {
-        source: '/commerce',
-        destination: '/storefronts-and-marketplaces',
-        permanent: true,
-      },
-      {
-        source: '/commerce/experience-commerce',
-        destination: '/storefronts-and-marketplaces/experience-commerce',
-        permanent: true,
-      },
-      {
-        source: '/commerce/ordercloud',
-        destination: '/storefronts-and-marketplaces/ordercloud',
-        permanent: true,
-      }
-    ]
   }
 };
 

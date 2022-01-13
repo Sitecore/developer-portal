@@ -140,17 +140,21 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Storefronts and Marketplaces',
-        url: '/storefronts-and-marketplaces',
+        title: 'Commerce',
+        url: '/commerce',
         children: [
           {
             title: 'Sitecore OrderCloud',
-            url: '/storefronts-and-marketplaces/ordercloud',
+            url: '/commerce/ordercloud',
           },
           {
             title: 'Sitecore Experience Commerce',
-            url: '/storefronts-and-marketplaces/experience-commerce',
+            url: '/commerce/experience-commerce',
           },
+          {
+            title: 'Sitecore Discover',
+            url: '/commerce/discover',
+          }
         ],
       },
       {
@@ -188,24 +192,6 @@ const NavigationData: NavigationData[] = [
             url: '/devops/developer-collection',
           },
         ],
-      },
-      {
-        title: 'Search and Merchandizing',
-        url: '/search-and-merchandizing',
-        children: [
-          {
-            title: 'Sitecore Discover',
-            url: '/search-and-merchandizing/discover',
-          },
-          {
-            title: 'Sitecore OrderCloud',
-            url: '/search-and-merchandizing/orderdloud',
-          },
-          {
-            title: 'Sitecore Experience Commerce',
-            url: '/search-and-merchandizing/experience-commerce',
-          }
-        ]
       },
     ],
   },
@@ -312,11 +298,11 @@ const NavigationData: NavigationData[] = [
       },
       {
         title: 'Sitecore OrderCloud',
-        url: '/storefronts-and-marketplaces/ordercloud',
+        url: '/commerce/ordercloud',
         children: [
           {
             title: 'Order Management, Storefronts and Marketplaces, and Merchandizing',
-            url: '/storefronts-and-marketplaces/ordercloud',
+            url: '/commerce/ordercloud',
           },
           {
             title: 'Start on the OrderCloud Portal for free',
@@ -327,11 +313,11 @@ const NavigationData: NavigationData[] = [
       },
       {
         title: 'Sitecore Experience Commerce',
-        url: '/storefronts-and-marketplaces/experience-commerce',
+        url: '/commerce/experience-commerce',
         children: [
           {
             title: 'Order Management, Storefronts, and Merchandizing',
-            url: '/storefronts-and-marketplaces/experience-commerce',
+            url: '/commerce/experience-commerce',
           },
           {
             title: 'Downloads',
@@ -342,11 +328,11 @@ const NavigationData: NavigationData[] = [
       },
       {
         title: 'Sitecore Discover',
-        url: '/search-and-merchandizing/discover',
+        url: '/commerce/discover',
         children: [
           {
             title: 'Data driven product discovery',
-            url: '/search-and-merchandizing/discover',
+            url: '/commerce/discover',
           }
         ]
       }
