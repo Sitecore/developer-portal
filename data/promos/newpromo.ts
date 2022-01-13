@@ -1,15 +1,15 @@
 import type { PromoCardProps } from '@/components/cards/PromoCard';
 
 const data: PromoCardProps = {
-  title: 'Sitecore Stack Exchange Beta stage is over!',
+  title: 'Sitecore Hackathon 2022',
   description:
-    'Today is an exciting day for the community as the Sitecore Stack Exchange site has graduated from the Stack Exchange Beta program and become a fully public member of the Stack Exchange family!',
+    'The 2022 Sitecore Hackathon is a free online community driven event organized by Akshay Sura and supported by Sitecore. Make sure you sign up your team by 6 pm EST February 18, 2022 to have the opportunity to participate in a contest. Visit the Hackathon website for more information on this event',
   img: {
-    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/a3c5df7b1d06426ca0b7cac57e4804e7?v=dbd864c9',
+    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/2f9717ea009a49f381e1c63270e37896?v=7c6d04bd',
   },
   link: {
-    href: 'https://community.sitecore.com/community?id=community_blog&sys_id=002249581ba40110722d4042b24bcb4c',
-    text: 'Read more about the news!',
+    href: 'http://www.sitecorehackathon.org/sitecore-hackathon-2022/',
+    text: 'Sitecore Hackathon website',
   },
 };
 
