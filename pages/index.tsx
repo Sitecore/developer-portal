@@ -66,7 +66,7 @@ const productSolutions: CategoryTileProps[] = [
     title: 'DevOps',
     description: 'Installation, deployment, and architecture',
     href: '/devops/',
-  }
+  },
 ];
 
 type HomePageProps = {
