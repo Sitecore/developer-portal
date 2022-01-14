@@ -12,7 +12,8 @@
     "start": "next start",
     "generate-css-types": "tailwindcss-classnames -x ./tailwindcss-custom-types.ts -i ./tailwind.config.js",
     "pre-commit": "lint-staged",
-    "pre-push": "tsc --project tsconfig.json"
+    "pre-push": "tsc --project tsconfig.json",
+    "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
     "@types/lodash.throttle": "^4.1.6",
@@ -44,6 +45,7 @@
     "@types/react-syntax-highlighter": "^13.5.2",
     "autoprefixer": "^10.3.1",
     "lint-staged": "^11.1.2",
+    "next-sitemap": "^1.9.9",
     "next-transpile-modules": "^8.0.0",
     "postcss": "^8.3.6",
     "postcss-import": "^14.0.2",
