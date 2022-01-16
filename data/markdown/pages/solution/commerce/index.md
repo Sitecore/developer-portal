@@ -2,7 +2,7 @@
 solution: ['commerce']
 product: ['commerce']
 title: 'Commerce'
-description: 'Build out order management, merchandising, marketplaces, and storefronts'
+description: 'Build out order management, merchandizing, marketplaces, and storefronts'
 stackexchange:
   [
     '#sitecore-commerce',
