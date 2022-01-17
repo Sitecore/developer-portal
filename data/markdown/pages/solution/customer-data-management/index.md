@@ -18,4 +18,6 @@ stackexchange:
     '#tracking'
   ]
 twitter: ['#sitecorexp', '#sitecorecdp', '#boxever']
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['customerDataManagement', 'experiencePlatform']
 ---

@@ -11,4 +11,6 @@ partials:
     'solution/personalization-testing/federated-experience-manager',
     'solution/personalization-testing/universal-tracker',
   ]
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['experiencePlatform']
 ---

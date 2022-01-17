@@ -27,4 +27,6 @@ stackexchange:
     '#headless',
   ]
 twitter: ['#SitecoreJSS', '#SitecoreForms']
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['contentManagement']
 ---

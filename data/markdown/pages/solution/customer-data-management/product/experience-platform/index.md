@@ -13,4 +13,6 @@ partials:
     'solution/personalization-testing/universal-tracker',
     'solution/customer-data-management/reference-data-service',
   ]
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['experiencePlatform']
 ---
