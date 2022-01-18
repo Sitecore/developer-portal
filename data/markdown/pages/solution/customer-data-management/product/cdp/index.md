@@ -7,4 +7,6 @@ description: 'Ingest, connect, and activate customer data across your tech stack
 partials: ['solution/customer-data-management/cdp']
 stackexchange: ['#cdp']
 youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['customerDataManagement']
 ---
