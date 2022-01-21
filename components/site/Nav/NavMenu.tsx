@@ -80,11 +80,11 @@ const NavMenu = ({
     'whitespace-nowrap',
     'transform-gpu',
     'transition-colors',
-    'hover:text-teal',
+    'hover:text-violet',
     'lg:h-16',
     'lg:pr-0'
   );
-  const buttonActiveClasses = classnames('text-teal', 'nav-item--button-active');
+  const buttonActiveClasses = classnames('text-violet', 'nav-item--button-active');
   const navItemOverlayInactiveClasses = classnames(
     'translate-x-full',
     'lg:translate-none',
@@ -231,12 +231,12 @@ const NavMenu = ({
                 'h-14',
                 'w-full',
                 'group',
-                'bg-teal',
+                'bg-violet',
                 'text-white',
                 'lg:hidden',
                 'transform-gpu',
                 'transition-colors',
-                'hover:bg-teal-dark'
+                'hover:bg-violet-dark'
               )}
               onClick={toggleNavItem}
             >

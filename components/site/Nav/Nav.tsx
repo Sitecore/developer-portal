@@ -144,9 +144,9 @@ const Nav = (): JSX.Element => {
         <a
           href={`#${idMainContent}`}
           className={classnames(
-            'bg-teal',
-            'focus:bg-teal-dark',
-            'hover:bg-teal-dark',
+            'bg-violet',
+            'focus:bg-violet-dark',
+            'hover:bg-violet-dark',
             'font-semibold',
             'inline-block',
             'px-12',
@@ -290,7 +290,7 @@ const Nav = (): JSX.Element => {
                 'w-9',
                 'h-7',
                 'z-20',
-                'hover:text-teal',
+                'hover:text-violet',
                 'lg:hidden'
               )}
               onClick={toggleNav}

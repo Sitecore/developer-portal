@@ -33,41 +33,11 @@ const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JS
       >
         <DynamicTag tag={headingLevel} className={classnames('heading-lg', 'mb-5', 'relative')}>
           {title}
-          <SvgIcon
-            icon="heading"
-            className={classnames(
-              '-top-3',
-              'mt-0.5',
-              '-left-24',
-              'absolute',
-              'h-1.625em',
-              'w-1.625em',
-              'text-red',
-              'hidden',
-              'lg:block'
-            )}
-          />
         </DynamicTag>
         <p className={classnames('text-lg', 'text-theme-text-alt')}>{description}</p>
       </div>
       {image && (
         <React.Fragment>
-          <div
-            className={classnames(
-              'bg-hero-pattern',
-              'bg-repeat',
-              'bg-size-hero-pattern',
-              'w-1/3',
-              'h-full',
-              'absolute',
-              'right-0',
-              'top-0',
-              'bottom-0',
-              'hidden',
-              'lg:block'
-            )}
-            aria-hidden={true}
-          ></div>
           <div className={classnames('relative', 'hidden', 'md:block', 'md:col-span-4')}>
             <div className={classnames('aspect-h-9', 'aspect-w-16', 'w-full', 'bg-theme-bg-alt')}>
               <Image
@@ -79,21 +49,6 @@ const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JS
                 priority={true}
               />
             </div>
-            <div
-              className={classnames(
-                'bg-red',
-                'h-48',
-                'w-48',
-                'absolute',
-                'z-0',
-                '-right-4',
-                '-top-4',
-                'hidden',
-                'lg:block',
-                'xl:h-64',
-                'xl:w-64'
-              )}
-            ></div>
           </div>
         </React.Fragment>
       )}

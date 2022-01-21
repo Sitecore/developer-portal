@@ -29,12 +29,25 @@ module.exports = {
       'theme-border-alt': 'var(--theme-border-alt)',
       // Primary brand colors
       black: '#000000',
-      charcoal: '#232323',
-      red: '#fe2911',
+      charcoal: {
+        light: '#AAACAC',
+        DEFAULT: '#545959',
+        dark: '#212621',
+      },
+      red: {
+        light: '#F58F8F',
+        DEFAULT: '#EB1f1f',
+        dark: '#AB0000',
+      },
       teal: {
-        light: '#eefcfc',
-        DEFAULT: '#1ca6a3',
-        dark: '#0f807e',
+        light: '#81CCCD',
+        DEFAULT: '#02999A',
+        dark: '#004054',
+      },
+      violet: {
+        light: '#AAA4EC',
+        DEFAULT: '#5548D9',
+        dark: '#333378',
       },
       white: '#ffffff',
       gray: {

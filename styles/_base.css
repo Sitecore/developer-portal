@@ -3,6 +3,13 @@
     font-display: swap;
     font-family: 'Avenir Next';
     font-weight: 400;
+    src: url(/fonts/AvenirNext-Light--latin.woff2) format('woff2'),
+      url(/fonts/AvenirNext-Light--latin.woff2) format('woff');
+  }
+  @font-face {
+    font-display: swap;
+    font-family: 'Avenir Next';
+    font-weight: 400;
     src: url(/fonts/AvenirNext-Regular--latin.woff2) format('woff2'),
       url(/fonts/AvenirNext-Regular--latin.woff2) format('woff');
   }
@@ -27,18 +34,18 @@
 
   @media (prefers-color-scheme: dark) {
     html {
-      background: theme('colors.charcoal')
+      background: theme('colors.charcoal.DEFAULT');
     }
   }
 
   body {
     @apply text-base;
-    color: theme('colors.charcoal');
+    color: theme('colors.charcoal.DEFAULT');
   }
 
   /* stylelint-disable -- We need these selectors in this order specifically for Safari. */
   *:focus {
-    outline-color: theme('colors.charcoal');
+    outline-color: theme('colors.charcoal.DEFAULT');
     outline-offset: 2px;
     outline-style: solid;
     outline-width: 2px;
@@ -62,6 +69,6 @@
   a[href=''],
   a[href='#'],
   a[href='/#'] {
-    color: theme('colors.red') !important;
+    color: theme('colors.red.DEFAULT') !important;
   }
 }

@@ -54,7 +54,7 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
     <div className={classnames('block', 'w-5', 'h-5', className)}>
       <button
         id={buttonId}
-        className={classnames('w-inherit', 'h-inherit', 'hover:text-teal', 'transition')}
+        className={classnames('w-inherit', 'h-inherit', 'hover:text-violet', 'transition')}
         onClick={toggleQuickStartMenu}
         aria-expanded={isOpen}
       >
@@ -101,8 +101,8 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
               key={`child-${index}`}
               className={classnames(
                 'font-semibold',
-                'hover:bg-teal-light',
-                'hover:text-teal',
+                'hover:bg-violet-light',
+                'hover:text-violet',
                 'text-xs'
               )}
             >
