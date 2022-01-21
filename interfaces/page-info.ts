@@ -18,6 +18,7 @@ type PageInfoCore = {
   partials?: string[];
   title: string;
   pageTitle?: string;
+  fileName: string;
 };
 
 // Input for 3rd party integrations are just strings
@@ -66,6 +67,7 @@ export type ChildPageInfo = {
 };
 
 export type PartialData = {
+  fileNames: string[];
   content: string[];
   titles: string[];
 };
