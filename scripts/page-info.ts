@@ -112,10 +112,10 @@ export const getPageInfo = async (
       typeof meta.sitecoreCommunityQuestions === 'number'
         ? meta.sitecoreCommunityQuestions
         : SITECORE_COMMUNITY_MAX_COUNT;
-    const sort = !!meta.sitecoreCommunityBlogSort
-      ? Array.isArray(meta.sitecoreCommunityBlogSort)
-        ? meta.sitecoreCommunityBlogSort[0]
-        : meta.sitecoreCommunityBlogSort
+    const sort = !!meta.sitecoreCommunityQuestionsSort
+      ? Array.isArray(meta.sitecoreCommunityQuestionsSort)
+        ? meta.sitecoreCommunityQuestionsSort[0]
+        : meta.sitecoreCommunityQuestionsSort
       : 'publish';
     const forum = !!meta.sitecoreCommunityQuestionsCategory
       ? Array.isArray(meta.sitecoreCommunityQuestionsCategory)
