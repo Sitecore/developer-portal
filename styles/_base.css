@@ -1,32 +1,7 @@
 @layer base {
-  @font-face {
-    font-display: swap;
-    font-family: 'Avenir Next';
-    font-weight: 400;
-    src: url(/fonts/AvenirNext-Light--latin.woff2) format('woff2'),
-      url(/fonts/AvenirNext-Light--latin.woff2) format('woff');
-  }
-  @font-face {
-    font-display: swap;
-    font-family: 'Avenir Next';
-    font-weight: 400;
-    src: url(/fonts/AvenirNext-Regular--latin.woff2) format('woff2'),
-      url(/fonts/AvenirNext-Regular--latin.woff2) format('woff');
-  }
-  @font-face {
-    font-display: swap;
-    font-family: 'Avenir Next';
-    font-weight: 600;
-    src: url(/fonts/AvenirNext-Demi--latin.woff2) format('woff2'),
-      url(/fonts/AvenirNext-Demi--latin.woff2) format('woff');
-  }
-  @font-face {
-    font-display: swap;
-    font-family: 'Avenir Next';
-    font-weight: 700;
-    src: url(/fonts/AvenirNext-Bold--latin.woff2) format('woff2'),
-      url(/fonts/AvenirNext-Bold--latin.woff2) format('woff');
-  }
+  @import './_fonts/_avenir_next_r.css';
+  @import './_fonts/_avenir_next_cn.css';
+  @import './_fonts/_avenir_next_lt_pro.css';
 
   html {
     min-height: 100%;

@@ -3758,6 +3758,7 @@ export type TWordBreak =
 
 export type TFontFamily =
   | 'font-sans'
+  | 'font-ltpro'
 
 export type TFontSize =
   | 'text-2xs'
@@ -8215,6 +8216,12 @@ export type TPseudoClasses =
   | 'xl:font-sans'
   | '2xl:font-sans'
   | 'lg-mw:font-sans'
+  | 'sm:font-ltpro'
+  | 'md:font-ltpro'
+  | 'lg:font-ltpro'
+  | 'xl:font-ltpro'
+  | '2xl:font-ltpro'
+  | 'lg-mw:font-ltpro'
   | 'sm:text-2xs'
   | 'md:text-2xs'
   | 'lg:text-2xs'

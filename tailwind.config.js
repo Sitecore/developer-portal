@@ -62,19 +62,16 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'Avenir Next',
-        'Open Sans',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Roboto',
-        'Helvetica',
+        'AvenirNextR',
         'Arial',
-        'sans-serif',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
+        'Sans-Serif',
       ],
+      ltpro: [
+        'AvenirNextLTPro',
+        'AvenirNextR',
+        'Arial',
+        'Sans-Serif'
+      ]
     },
     fontSize: {
       // 12px
@@ -99,7 +96,7 @@ module.exports = {
     fontWeight: {
       thin: 200,
       regular: 400,
-      semibold: 600,
+      semibold: 500,
       bold: 700,
     },
     minHeight: {
