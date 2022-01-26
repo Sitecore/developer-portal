@@ -19,7 +19,7 @@
   @variants dark {
     .theme-dark {
       --theme-bg-alt: theme('colors.gray.darkest');
-      --theme-bg: theme('colors.charcoal.DEFAULT');
+      --theme-bg: theme('colors.charcoal.dark');
       --theme-outline: theme('colors.white');
       --theme-text-alt: theme('colors.gray.lightest');
       --theme-text: theme('colors.white');
