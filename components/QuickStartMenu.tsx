@@ -110,6 +110,7 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
                 className={classnames('px-4', 'py-2', 'flex', 'justify-between', 'items-center')}
                 href={child.url}
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 {child.title}
                 <svg

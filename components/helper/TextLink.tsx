@@ -17,6 +17,7 @@ const TextLink = ({ text, href, target, className, ...props }: TextLinkProps): J
     <Link href={href}>
       <a
         target={target}
+        rel="noreferrer noopener"
         className={classnames(
           'group',
           'font-bold',
