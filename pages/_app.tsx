@@ -20,17 +20,18 @@ function SCDPApp({ Component, pageProps }: AppProps) {
   resetId();
   // useEffect for basic page views tracking via router/gtag.
   useEffect(() => {
-      const tagManagerArgs = {
-        gtmId: process.env.GTM_ID as string,
-        auth: process.env.GTM_AUTH as string,
-        preview: process.env.GTM_ENVIRONMENT as string
-    }
-    TagManager.initialize(tagManagerArgs)
+    const tagManagerArgs = {
+      gtmId: process.env.GTM_ID as string,
+      auth: process.env.GTM_AUTH as string,
+      preview: process.env.GTM_ENVIRONMENT as string,
+    };
+    TagManager.initialize(tagManagerArgs);
   }, []);
 
   return (
     <>
       <Head>
+        <html lang="en" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
       </Head>
       <div className="theme-light text-theme-text bg-theme-bg dark:theme-dark">
