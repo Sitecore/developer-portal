@@ -17,9 +17,19 @@ export type HeroProps = {
 };
 
 const HeroWithImageClasses = classnames('lg:min-h-320', 'md:grid-cols-9');
+const HeroWithBackgroundImageClasses = classnames(
+  'bg-wide-hero-light',
+  'dark:bg-wide-hero-dark',
+  'bg-cover',
+  'py-7'
+);
 
 const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JSX.Element => (
-  <header className={classnames('py-14', 'relative')}>
+  <header
+    className={classnames('py-14', 'relative', {
+      [HeroWithBackgroundImageClasses]: !image,
+    })}
+  >
     <Container
       size="standard"
       className={classnames('grid', 'gap-16', 'lg:items-center', {
