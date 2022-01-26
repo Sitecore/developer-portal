@@ -54,6 +54,7 @@ const StackExchangeFeed = ({
                 <a
                   href={question.link}
                   target="_blank"
+                  rel="noopener"
                   className={classnames('font-semibold', 'hover:underline', 'inline-block')}
                 >
                   <span dangerouslySetInnerHTML={{ __html: question.title }} />
@@ -68,20 +69,24 @@ const StackExchangeFeed = ({
                           <a
                             href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`}
                             target="_blank"
+                            rel="noopener"
                             className={classnames(
-                              'bg-teal-light',
-                              'text-teal',
+                              'border-violet-dark',
+                              'text-white',
+                              'bg-violet-dark',
                               'text-xs',
                               'p-1',
                               'mr-2',
                               'mb-2',
                               'inline-block',
-                              'hover:bg-teal',
-                              'hover:text-white',
-                              'focus:bg-teal',
+                              'border',
+                              'hover:bg-white',
+                              'hover:border-violet-dark',
+                              'hover:text-violet',
+                              'focus:bg-violet',
                               'focus:text-white',
-                              'dark:bg-teal-dark',
-                              'dark:text-teal-light',
+                              'dark:bg-violet-dark',
+                              'dark:text-violet-light',
                               '2xl:transition-colors'
                             )}
                           >
