@@ -85,7 +85,7 @@ const GenericContentPage = ({
         )}
         <div className={classnames({ [hasGridClasses]: hasGrid })}>
           <Container>
-            <div className={classnames('grid', 'gap-6', 'md:grid-cols-4')}>
+            <div className={classnames('grid', 'gap-6', 'md:grid-cols-4', 'mt-8')}>
               {pageInfo.hasInPageNav && Nav}
               <div
                 className={classnames({

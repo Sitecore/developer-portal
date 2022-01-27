@@ -31,7 +31,6 @@ function SCDPApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <html lang="en" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
       </Head>
       <div className="theme-light text-theme-text bg-theme-bg dark:theme-dark">
