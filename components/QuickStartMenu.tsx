@@ -101,7 +101,7 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
               key={`child-${index}`}
               className={classnames(
                 'font-semibold',
-                'hover:bg-violet-light',
+                'hover:bg-violet-lightest',
                 'hover:text-violet',
                 'text-xs'
               )}

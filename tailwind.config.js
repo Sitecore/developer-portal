@@ -45,6 +45,7 @@ module.exports = {
         dark: '#004054',
       },
       violet: {
+        lightest: '#f6f6ff',
         light: '#AAA4EC',
         DEFAULT: '#5548D9',
         dark: '#333378',
@@ -96,7 +97,7 @@ module.exports = {
     fontWeight: {
       thin: 200,
       regular: 400,
-      semibold: 500,
+      semibold: 600,
       bold: 700,
     },
     minHeight: {
