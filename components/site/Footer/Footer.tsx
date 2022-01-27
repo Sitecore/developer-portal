@@ -2,7 +2,7 @@ import Container from '@/components/helper/Container';
 import Image from 'next/image';
 import { classnames } from 'tailwindcss-classnames';
 
-const Footer = ({ children }: { children: React.ReactNode }): JSX.Element => {
+const Footer = (): JSX.Element => {
   return (
     <footer
       className={classnames(
@@ -140,7 +140,6 @@ const Footer = ({ children }: { children: React.ReactNode }): JSX.Element => {
             </li>
           </ul>
         </div>
-        {children}
       </Container>
     </footer>
   );
