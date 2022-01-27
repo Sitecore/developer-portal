@@ -6,6 +6,7 @@
     url('/fonts/AvenirNextW05-UltraLight.woff') format('woff'),
     url('/fonts/AvenirNextW05-UltraLight.ttf') format('truetype');
   font-weight: 100;
+  font-display: swap;
   font-style: normal;
 }
 
@@ -18,6 +19,7 @@
     url('/fonts/AvenirNextW05-UltraLightIt.ttf') format('truetype');
   font-weight: 100;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -29,6 +31,7 @@
     url('/fonts/AvenirNextW05-Thin.ttf') format('truetype');
   font-weight: 200;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -40,6 +43,7 @@
     url('/fonts/AvenirNextW05-ThinItalic.ttf') format('truetype');
   font-weight: 200;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -51,6 +55,7 @@
     url('/fonts/AvenirNextW05-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -62,6 +67,7 @@
     url('/fonts/AvenirNextW05-LightItalic.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -73,6 +79,7 @@
     url('/fonts/AvenirNextW05-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -84,6 +91,7 @@
     url('/fonts/AvenirNextW05-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -95,6 +103,7 @@
     url('/fonts/AvenirNextW05-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -106,6 +115,7 @@
     url('/fonts/AvenirNextW05-MediumItalic.ttf') format('truetype');
   font-weight: 500;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -117,6 +127,7 @@
     url('/fonts/AvenirNextW05-Demi.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -128,6 +139,7 @@
     url('/fonts/AvenirNextW05-DemiItalic.ttf') format('truetype');
   font-weight: 600;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -139,6 +151,7 @@
     url('/fonts/AvenirNextW05-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -150,6 +163,7 @@
     url('/fonts/AvenirNextW05-BoldItalic.ttf') format('truetype');
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -161,6 +175,7 @@
     url('/fonts/AvenirNextW05-Heavy.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -172,4 +187,5 @@
     url('/fonts/AvenirNextW05-HeavyItalic.ttf') format('truetype');
   font-weight: 800;
   font-style: italic;
+  font-display: swap;
 }
