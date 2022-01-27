@@ -43,7 +43,7 @@ const PromoCard = ({
   className,
   isImageLeft = true,
 }: PromoCardProps): JSX.Element => (
-  <div className={classnames('grid', 'gap-6', 'md:grid-cols-2', className)}>
+  <div className={classnames('grid', 'gap-6', 'mt-8', 'md:grid-cols-2', className)}>
     {isImageLeft && <PromoCardImage img={img} />}
     <div className={classnames('flex', 'flex-col', 'justify-center')}>
       <h2 className={classnames('heading-md', 'mb-4')}>{title}</h2>
