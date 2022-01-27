@@ -93,7 +93,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           Necessary Meta tags, including Social tags.
           It's OK if they're empty, same as not printing them.
         */}
-        <meta property="description" content={pageInfo.description} />
+        <meta name="description" content={pageInfo.description} />
         <meta property="og:site_name" content="Sitecore Developer Portal" />
         <meta property="og:title" content={pageInfo.title} />
         <meta property="og:description" content={pageInfo.description} />
