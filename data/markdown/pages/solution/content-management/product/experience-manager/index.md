@@ -30,4 +30,6 @@ partials:
   [
     'solution/content-management/web-cms',
   ]
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['contentManagement']
 ---

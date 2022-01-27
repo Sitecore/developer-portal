@@ -12,4 +12,7 @@ stackexchange:
     '#commerce-connect',
   ]
 twitter: ['#OrderCloud', '#SitecoreCommerce']
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['searchAndMerchandizing', 'storefrontsAndMarketplaces']
+
 ---
