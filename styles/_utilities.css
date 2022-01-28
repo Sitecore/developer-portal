@@ -13,7 +13,7 @@
     --theme-shadow: theme('boxShadow.DEFAULT');
     --theme-shadow-md: theme('boxShadow.md');
     --theme-shadow-lg: theme('boxShadow.lg');
-    --theme-link-hover: theme('colors.teal.dark');
+    --theme-link-hover: theme('colors.violet.dark');
   }
 
   @variants dark {

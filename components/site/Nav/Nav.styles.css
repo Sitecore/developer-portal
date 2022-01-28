@@ -9,7 +9,7 @@
       bottom: 0;
       left: 50%;
       transition: all 0.2s ease-in-out;
-      background: theme('colors.violet.DEFAULT');
+      background: theme('colors.theme-link-hover');
     }
 
     .nav-item--button:hover:after,

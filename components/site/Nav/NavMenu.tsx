@@ -81,10 +81,15 @@ const NavMenu = ({
     'transform-gpu',
     'transition-colors',
     'hover:text-violet',
+    'dark:hover:text-teal',
     'lg:h-16',
     'lg:pr-0'
   );
-  const buttonActiveClasses = classnames('text-violet', 'nav-item--button-active');
+  const buttonActiveClasses = classnames(
+    'text-violet',
+    'nav-item--button-active',
+    'dark:hover:text-teal'
+  );
   const navItemOverlayInactiveClasses = classnames(
     'translate-x-full',
     'lg:translate-none',
