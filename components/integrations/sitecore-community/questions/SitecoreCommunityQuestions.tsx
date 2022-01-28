@@ -2,7 +2,7 @@
 import type { SitecoreCommunityContent } from '@/interfaces/integrations';
 // Global
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { classnames } from 'tailwindcss-classnames';
 // Components
 import TextLink from '@/components/helper/TextLink';
@@ -31,9 +31,8 @@ const SitecoreCommunityQuestions = ({
   const [sort, setSort] = useState<string | undefined>(undefined);
   const [forum, setForum] = useState<string | undefined>(undefined);
 
-  const fetchNewResults = (type: 'sort' | 'forum', val: string) => {
+  useEffect(() => {
     setIsLoading(true);
-    type === 'sort' ? setSort(val) : setForum(val);
     const query = ['contentType=questions'];
     if (sort) {
       query.push(`sort=${sort}`);
@@ -48,9 +47,11 @@ const SitecoreCommunityQuestions = ({
         setIsLoading(false);
       })
       .catch((err) => console.log(err));
-  };
+  }, [sort, forum]);
 
   const items = fetchedResults || content;
+
+  const hasForumKeys = forumKeys && Array.isArray(forumKeys) && forumKeys.length > 1;
 
   return (
     <>
@@ -67,11 +68,13 @@ const SitecoreCommunityQuestions = ({
       <div className={classnames('flex', 'justify-end', 'mb-6')}>
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
           <label
-            className={classnames('text-xs', 'mr-10', 'font-semibold', 'flex', 'items-center')}
+            className={classnames('text-xs', 'font-semibold', 'flex', 'items-center', {
+              'mr-10': hasForumKeys,
+            })}
           >
             Order by:
             <select
-              onChange={(changeEvent) => fetchNewResults('sort', changeEvent.target.value)}
+              onChange={(changeEvent) => setSort(changeEvent.target.value)}
               className={classnames(
                 'bg-theme-bg',
                 'border-2',
@@ -91,7 +94,7 @@ const SitecoreCommunityQuestions = ({
           <label className={classnames('text-xs', 'font-semibold', 'flex', 'items-center')}>
             Filter by:
             <select
-              onChange={(changeEvent) => fetchNewResults('forum', changeEvent.target.value)}
+              onChange={(changeEvent) => setForum(changeEvent.target.value)}
               className={classnames(
                 'bg-theme-bg',
                 'border-2',

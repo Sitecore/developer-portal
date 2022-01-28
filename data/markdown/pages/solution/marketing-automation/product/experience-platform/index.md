@@ -6,4 +6,6 @@ description: 'Connecting with customers using Sitecore Experience Platform marke
 stackexchange: ['#marketing-automation', '#exm']
 youtube: 'PL1jJVFm_lGnyicywCcwcWa8RtsoiJEbC9'
 partials: ['solution/marketing-automation/sitecore-xp-marketing-automation']
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['experiencePlatform']
 ---

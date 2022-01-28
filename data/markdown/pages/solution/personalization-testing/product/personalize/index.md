@@ -8,4 +8,6 @@ partials: ['solution/personalization-testing/personalize']
 stackexchange: ['#cdp']
 youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
 youtubeTitle: 'Latest Sitecore Personalize videos'
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['personalizationAndTesting']
 ---
