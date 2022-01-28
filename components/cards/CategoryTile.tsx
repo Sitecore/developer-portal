@@ -58,7 +58,7 @@ const CategoryTile = ({
               >
                 <SvgIcon
                   icon="arrow-right"
-                  className={classnames('text-violet', 'relative', 'top-0.5')}
+                  className={classnames('text-violet', 'dark:text-red', 'relative', 'top-0.5')}
                 />
               </span>
             </span>
