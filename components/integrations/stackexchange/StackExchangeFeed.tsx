@@ -86,7 +86,7 @@ const StackExchangeFeed = ({
                               'focus:bg-violet',
                               'focus:text-white',
                               'dark:bg-violet-dark',
-                              'dark:text-violet-light',
+                              'dark:text-white',
                               '2xl:transition-colors'
                             )}
                           >
