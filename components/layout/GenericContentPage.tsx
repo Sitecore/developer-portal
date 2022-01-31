@@ -11,6 +11,7 @@ import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
 import SectionHeading from '@/components/helper/SectionHeading';
 import SocialFeeds from '@/components/integrations/SocialFeeds';
 import VerticalGroup from '@/components/helper/VerticalGroup';
+import Footer from '../site/Footer/Footer';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;

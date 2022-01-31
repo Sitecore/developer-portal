@@ -1,5 +1,5 @@
 name: deploy website
-on: [push, pull_request, pull_request_target]
+on: [push, pull_request]
 jobs:
 
   build:
@@ -16,12 +16,7 @@ jobs:
 
   deploy:
     needs: build
-    # If the PR is coming from a fork (pull_request_target), ensure it's opened by "dependabot[bot]". Otherwise, check whether it's an internal push
-    if: |
-            github.repository_owner == 'Sitecore' && ((github.event.pull_request.head.repo.full_name == github.repository) || 
-            (github.event_name == 'push')) || 
-            (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
-            (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
+    if: github.repository_owner == 'Sitecore' && ((github.event.pull_request.head.repo.full_name == github.repository) || (github.event_name == 'push'))
     runs-on: ubuntu-latest
     permissions: 
       deployments: write
@@ -34,15 +29,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           env: ${{ fromJSON('["Production", "Preview"]')[github.ref != 'refs/heads/main'] }} 
 
-      - name: Checkout
-        if: ${{ github.event_name != 'pull_request_target' }}
-        uses: actions/checkout@v2
-
-      - name: Checkout PR
-        if: ${{ github.event_name == 'pull_request_target' }}
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/checkout@v2
 
       - uses: amondnet/vercel-action@v20
         with:
