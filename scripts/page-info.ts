@@ -17,6 +17,7 @@ import { SITECORE_COMMUNITY_MAX_COUNT } from '@/components/integrations/sitecore
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
 const pagesDirectory = path.join(dataDirectory, 'pages');
+const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main';
 
 type Matter = {
   data: {
@@ -53,6 +54,7 @@ export const getPageInfo = async (
 ): Promise<PageInfo | null> => {
   const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
   const meta = getFileData(pagesDirectory, `${file}/index`).data as MarkdownMeta;
+  const fileName = `${repoUrl}/data/markdown/pages/${file}/index.md`;
   const pageInfo = {
     // Default hasInPageNav to true, overwrite with false in md
     hasInPageNav: true,
@@ -61,6 +63,7 @@ export const getPageInfo = async (
     youtube: [],
     twitter: [],
     sitecoreCommunity: {},
+    fileName: fileName,
   } as PageInfo;
 
   /**
@@ -167,16 +170,21 @@ const getTiltesFromContent = (content: string): string[] => {
 export const getPartialsAsArray = async (partials: string[]): Promise<PartialData> => {
   const content: string[] = [];
   let titles: string[] = [];
+  let fileNames: string[] = [];
 
   partials.forEach((p) => {
     const data = getFileData(partialsDirectory, p) as Matter;
+    const fileName = `${repoUrl}/data/markdown/partials/${p}.md`;
+
     content.push(data.content);
+    fileNames.push(fileName);
     titles = titles.concat(getTiltesFromContent(data.content));
   });
 
   return {
     content,
     titles,
+    fileNames,
   };
 };
 

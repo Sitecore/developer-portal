@@ -12,6 +12,7 @@ const pageInfo = {
   twitter: [],
   youtube: [],
   sitecoreCommunity: {},
+  fileName: '',
 };
 
 const NotFoundPage = (): JSX.Element => (
