@@ -22,7 +22,7 @@ type GenericContentPageProps = {
   customNav?: React.ReactNode;
 };
 
-const hasGridClasses = classnames('bg-theme-bg-alt', 'py-16');
+const hasGridClasses = classnames('bg-theme-bg-alt', 'pt-2', 'pb-14');
 
 const getTitlesFromPartialGroups = (partialGroups: PagePartialGroup[]): string[] =>
   partialGroups.map((pG) => pG.title);
