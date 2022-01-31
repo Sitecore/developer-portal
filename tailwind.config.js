@@ -80,7 +80,7 @@ module.exports = {
       // 14px
       xs: '0.875rem',
       // 16px
-      sm: '1rem',
+      sm: '0.95rem',
       // 18px
       base: '1.125rem',
       // 20px
@@ -142,6 +142,9 @@ module.exports = {
               color: 'var(--theme-text)',
             },
             color: theme('colors.theme-text'),
+            p: {
+              fontSize: '0.95rem', // key can be in camelCase...
+            },
             a: {
               color: 'inherit',
             },
