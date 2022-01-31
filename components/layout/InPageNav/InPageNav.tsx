@@ -61,6 +61,7 @@ const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
               <a
                 className={classnames(
                   'text-violet',
+                  'dark:text-teal',
                   'text-sm',
                   'inline-block',
                   'hover:underline',
