@@ -87,6 +87,7 @@ const NavMenu = ({
   );
   const buttonActiveClasses = classnames(
     'text-violet',
+    'dark:text-teal',
     'nav-item--button-active',
     'dark:hover:text-teal'
   );
