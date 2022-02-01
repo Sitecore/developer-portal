@@ -17,9 +17,19 @@ export type HeroProps = {
 };
 
 const HeroWithImageClasses = classnames('lg:min-h-320', 'md:grid-cols-9');
+const HeroWithBackgroundImageClasses = classnames(
+  'bg-wide-hero-light',
+  'dark:bg-wide-hero-dark',
+  'bg-cover',
+  'py-7'
+);
 
 const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JSX.Element => (
-  <header className={classnames('py-14', 'relative')}>
+  <header
+    className={classnames('py-14', 'relative', {
+      [HeroWithBackgroundImageClasses]: !image,
+    })}
+  >
     <Container
       size="standard"
       className={classnames('grid', 'gap-16', 'lg:items-center', {
@@ -33,41 +43,11 @@ const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JS
       >
         <DynamicTag tag={headingLevel} className={classnames('heading-lg', 'mb-5', 'relative')}>
           {title}
-          <SvgIcon
-            icon="heading"
-            className={classnames(
-              '-top-3',
-              'mt-0.5',
-              '-left-24',
-              'absolute',
-              'h-1.625em',
-              'w-1.625em',
-              'text-red',
-              'hidden',
-              'lg:block'
-            )}
-          />
         </DynamicTag>
         <p className={classnames('text-lg', 'text-theme-text-alt')}>{description}</p>
       </div>
       {image && (
         <React.Fragment>
-          <div
-            className={classnames(
-              'bg-hero-pattern',
-              'bg-repeat',
-              'bg-size-hero-pattern',
-              'w-1/3',
-              'h-full',
-              'absolute',
-              'right-0',
-              'top-0',
-              'bottom-0',
-              'hidden',
-              'lg:block'
-            )}
-            aria-hidden={true}
-          ></div>
           <div className={classnames('relative', 'hidden', 'md:block', 'md:col-span-4')}>
             <div className={classnames('aspect-h-9', 'aspect-w-16', 'w-full', 'bg-theme-bg-alt')}>
               <Image
@@ -79,21 +59,6 @@ const Hero = ({ description, headingLevel = 'h1', title, image }: HeroProps): JS
                 priority={true}
               />
             </div>
-            <div
-              className={classnames(
-                'bg-red',
-                'h-48',
-                'w-48',
-                'absolute',
-                'z-0',
-                '-right-4',
-                '-top-4',
-                'hidden',
-                'lg:block',
-                'xl:h-64',
-                'xl:w-64'
-              )}
-            ></div>
           </div>
         </React.Fragment>
       )}

@@ -29,12 +29,26 @@ module.exports = {
       'theme-border-alt': 'var(--theme-border-alt)',
       // Primary brand colors
       black: '#000000',
-      charcoal: '#232323',
-      red: '#fe2911',
+      charcoal: {
+        light: '#AAACAC',
+        DEFAULT: '#545959',
+        dark: '#212621',
+      },
+      red: {
+        light: '#F58F8F',
+        DEFAULT: '#EB1f1f',
+        dark: '#AB0000',
+      },
       teal: {
-        light: '#eefcfc',
-        DEFAULT: '#1ca6a3',
-        dark: '#0f807e',
+        light: '#81CCCD',
+        DEFAULT: '#02999A',
+        dark: '#004054',
+      },
+      violet: {
+        lightest: '#f6f6ff',
+        light: '#AAA4EC',
+        DEFAULT: '#5548D9',
+        dark: '#333378',
       },
       white: '#ffffff',
       gray: {
@@ -49,19 +63,16 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'Avenir Next',
-        'Open Sans',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Roboto',
-        'Helvetica',
+        'AvenirNextR',
         'Arial',
-        'sans-serif',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
+        'Sans-Serif',
       ],
+      ltpro: [
+        'AvenirNextLTPro',
+        'AvenirNextR',
+        'Arial',
+        'Sans-Serif'
+      ]
     },
     fontSize: {
       // 12px
@@ -69,7 +80,7 @@ module.exports = {
       // 14px
       xs: '0.875rem',
       // 16px
-      sm: '1rem',
+      sm: '0.95rem',
       // 18px
       base: '1.125rem',
       // 20px
@@ -95,6 +106,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-pattern': "url('/images/heros/hero-plus-pattern.png')",
+        'wide-hero-dark': "url('/images/heros/hero-wide-dark.png')",
+        'wide-hero-light': "url('/images/heros/hero-wide-light.png')",
       },
       boxShadow: {
         inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.15)',
@@ -129,6 +142,9 @@ module.exports = {
               color: 'var(--theme-text)',
             },
             color: theme('colors.theme-text'),
+            p: {
+              fontSize: '0.95rem', // key can be in camelCase...
+            },
             a: {
               color: 'inherit',
             },
@@ -186,6 +202,7 @@ module.exports = {
   variants: {
     extend: {
       translate: ['focus', 'group-hover', 'group-focus'],
+      backgroundImage: ['dark'],
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography')],

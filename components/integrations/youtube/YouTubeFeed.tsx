@@ -61,7 +61,8 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
         <a
           href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`}
           target="_blank"
-          className={classnames('text-white', 'hover:text-teal', 'focus:text-teal')}
+          rel="noopener noreferrer"
+          className={classnames('text-white', 'hover:text-violet', 'focus:text-violet')}
         >
           <span className={classnames('sr-only')}>Opens in a new tab</span>
           <svg

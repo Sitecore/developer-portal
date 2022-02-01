@@ -5,21 +5,21 @@
   .theme-light {
     --theme-bg-alt: theme('colors.gray.lightest');
     --theme-bg: theme('colors.white');
-    --theme-outline: theme('colors.charcoal');
+    --theme-outline: theme('colors.charcoal.DEFAULT');
     --theme-text-alt: theme('colors.gray.dark');
-    --theme-text: theme('colors.charcoal');
+    --theme-text: theme('colors.charcoal.dark');
     --theme-border: theme('colors.gray.light');
     --theme-border-alt: theme('colors.gray.light');
     --theme-shadow: theme('boxShadow.DEFAULT');
     --theme-shadow-md: theme('boxShadow.md');
     --theme-shadow-lg: theme('boxShadow.lg');
-    --theme-link-hover: theme('colors.teal.dark');
+    --theme-link-hover: theme('colors.violet.dark');
   }
 
   @variants dark {
     .theme-dark {
       --theme-bg-alt: theme('colors.gray.darkest');
-      --theme-bg: theme('colors.charcoal');
+      --theme-bg: theme('colors.charcoal.dark');
       --theme-outline: theme('colors.white');
       --theme-text-alt: theme('colors.gray.lightest');
       --theme-text: theme('colors.white');
@@ -37,23 +37,23 @@
    * Headings
    */
   .heading-xl {
-    @apply font-bold text-3xl md:text-4xl leading-none !important;
+    @apply font-ltpro font-regular text-3xl md:text-4xl leading-none !important;
   }
 
   .heading-lg {
-    @apply font-bold text-2xl md:text-3xl leading-tight !important;
+    @apply font-ltpro font-regular text-2xl md:text-3xl leading-tight !important;
   }
 
   .heading-md {
-    @apply font-bold text-xl md:text-2xl leading-tight !important;
+    @apply font-regular text-xl md:text-2xl leading-tight !important;
   }
 
   .heading-sm {
-    @apply font-bold text-base md:text-lg leading-tight !important;
+    @apply font-semibold text-base md:text-lg leading-tight !important;
   }
 
   .heading-xs {
-    @apply font-bold text-sm md:text-base leading-normal !important;
+    @apply font-semibold text-sm md:text-base leading-normal !important;
   }
 
   /**

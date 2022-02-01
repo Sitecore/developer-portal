@@ -144,9 +144,9 @@ const Nav = (): JSX.Element => {
         <a
           href={`#${idMainContent}`}
           className={classnames(
-            'bg-teal',
-            'focus:bg-teal-dark',
-            'hover:bg-teal-dark',
+            'bg-violet',
+            'focus:bg-violet-dark',
+            'hover:bg-violet-dark',
             'font-semibold',
             'inline-block',
             'px-12',
@@ -184,16 +184,7 @@ const Nav = (): JSX.Element => {
                 <Logo />
               </span>
               <span className={classnames('sr-only')}>Sitecore</span>
-              <span
-                className={classnames(
-                  'hidden',
-                  'text-xs',
-                  'font-semibold',
-                  'ml-4',
-                  'text-theme-text-alt',
-                  'xl:block'
-                )}
-              >
+              <span className={classnames('hidden', 'ml-4', 'text-theme-text', 'xl:block')}>
                 Developer Portal
               </span>
             </a>
@@ -290,7 +281,7 @@ const Nav = (): JSX.Element => {
                 'w-9',
                 'h-7',
                 'z-20',
-                'hover:text-teal',
+                'hover:text-violet',
                 'lg:hidden'
               )}
               onClick={toggleNav}
