@@ -1,3 +1,3 @@
-### Moosend
+### Sitecore Send
 
-- [Documentation](https://moosend.com/help/)
+- [User Documentation](https://doc.sitecore.com/send/)
