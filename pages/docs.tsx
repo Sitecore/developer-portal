@@ -23,6 +23,7 @@ export async function getStaticProps() {
   ]);
   const marketingAutomation = await getPartialsAsArray([
     'docs/marketing-automation/send',
+    'docs/marketing-automation/moosend',
     'docs/marketing-automation/sitecore-experience-platform',
   ]);
   const commerce = await getPartialsAsArray([
