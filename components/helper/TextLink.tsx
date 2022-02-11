@@ -17,6 +17,7 @@ const TextLink = ({ text, href, target, className, ...props }: TextLinkProps): J
     <Link href={href}>
       <a
         target={target}
+        rel="noreferrer noopener"
         className={classnames(
           'group',
           'font-bold',
@@ -43,7 +44,10 @@ const TextLink = ({ text, href, target, className, ...props }: TextLinkProps): J
             'group-hover:translate-x-1'
           )}
         >
-          <SvgIcon icon="arrow-right" className={classnames('text-red', 'relative', 'top-0.5')} />
+          <SvgIcon
+            icon="arrow-right"
+            className={classnames('text-violet', 'dark:text-red', 'relative', 'top-0.5')}
+          />
         </span>
       </a>
     </Link>

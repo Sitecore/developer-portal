@@ -11,6 +11,7 @@ import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
 import SectionHeading from '@/components/helper/SectionHeading';
 import SocialFeeds from '@/components/integrations/SocialFeeds';
 import VerticalGroup from '@/components/helper/VerticalGroup';
+import Footer from '../site/Footer/Footer';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -22,7 +23,7 @@ type GenericContentPageProps = {
   customNav?: React.ReactNode;
 };
 
-const hasGridClasses = classnames('bg-theme-bg-alt', 'py-16');
+const hasGridClasses = classnames('bg-theme-bg-alt', 'pt-2', 'pb-14');
 
 const getTitlesFromPartialGroups = (partialGroups: PagePartialGroup[]): string[] =>
   partialGroups.map((pG) => pG.title);
@@ -85,7 +86,7 @@ const GenericContentPage = ({
         )}
         <div className={classnames({ [hasGridClasses]: hasGrid })}>
           <Container>
-            <div className={classnames('grid', 'gap-6', 'md:grid-cols-4')}>
+            <div className={classnames('grid', 'gap-6', 'md:grid-cols-4', 'mt-8')}>
               {pageInfo.hasInPageNav && Nav}
               <div
                 className={classnames({

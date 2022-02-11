@@ -4,14 +4,20 @@ import path from 'path';
 import matter from 'gray-matter';
 // Interfaces
 import type { MarkdownMeta, PageInfo, ChildPageInfo, PartialData } from '@/interfaces/page-info';
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@/interfaces/integrations';
 // Components
 import StackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
 import TwitterApi from '@/components/integrations/twitter/Twitter.api';
 import YouTubeApi from '@/components/integrations/youtube/YouTube.api';
+import SitecoreCommunityApi, {
+  SortOption,
+} from '@/components/integrations/sitecore-community/SitecoreCommunity.api';
+import { SITECORE_COMMUNITY_MAX_COUNT } from '@/components/integrations/sitecore-community/sitecore-community.constants';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
 const pagesDirectory = path.join(dataDirectory, 'pages');
+const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main';
 
 type Matter = {
   data: {
@@ -48,7 +54,7 @@ export const getPageInfo = async (
 ): Promise<PageInfo | null> => {
   const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
   const meta = getFileData(pagesDirectory, `${file}/index`).data as MarkdownMeta;
-
+  const fileName = `${repoUrl}/data/markdown/pages/${file}/index.md`;
   const pageInfo = {
     // Default hasInPageNav to true, overwrite with false in md
     hasInPageNav: true,
@@ -56,6 +62,8 @@ export const getPageInfo = async (
     stackexchange: [],
     youtube: [],
     twitter: [],
+    sitecoreCommunity: {},
+    fileName: fileName,
   } as PageInfo;
 
   /**
@@ -83,6 +91,55 @@ export const getPageInfo = async (
   // The playlistTitle is only used if the author has not already supplied a youtubeTitle meta tag
   if (youtubeInfo.playlistTitle) {
     pageInfo.youtubePlaylistTitle = youtubeInfo.playlistTitle;
+  }
+
+  // Sitecore Community
+  if (meta.sitecoreCommunityBlog) {
+    const maxResults =
+      typeof meta.sitecoreCommunityBlog === 'number' ? meta.sitecoreCommunityBlog : undefined;
+    const sort = !!meta.sitecoreCommunityBlogSort
+      ? Array.isArray(meta.sitecoreCommunityBlogSort)
+        ? meta.sitecoreCommunityBlogSort[0]
+        : meta.sitecoreCommunityBlogSort
+      : 'publish';
+    const sCBlog = await SitecoreCommunityApi.get({
+      forum: 'blog',
+      contentType: 'blog',
+      maxResults,
+      sort,
+    });
+    pageInfo.sitecoreCommunity.blog = sCBlog as SitecoreCommunityContent[];
+  }
+  if (meta.sitecoreCommunityQuestions) {
+    const maxResults =
+      typeof meta.sitecoreCommunityQuestions === 'number'
+        ? meta.sitecoreCommunityQuestions
+        : SITECORE_COMMUNITY_MAX_COUNT;
+    const sort = !!meta.sitecoreCommunityQuestionsSort
+      ? Array.isArray(meta.sitecoreCommunityQuestionsSort)
+        ? meta.sitecoreCommunityQuestionsSort[0]
+        : meta.sitecoreCommunityQuestionsSort
+      : 'publish';
+    const forum = !!meta.sitecoreCommunityQuestionsCategory
+      ? Array.isArray(meta.sitecoreCommunityQuestionsCategory)
+        ? meta.sitecoreCommunityQuestionsCategory[0]
+        : meta.sitecoreCommunityQuestionsCategory
+      : undefined;
+    const sCQuestions = await SitecoreCommunityApi.get({
+      contentType: 'questions',
+      maxResults,
+      sort,
+      forum,
+    });
+    pageInfo.sitecoreCommunity.questions = sCQuestions as SitecoreCommunityContent[];
+  }
+  if (meta.sitecoreCommunityEvents) {
+    const sCEvents = await SitecoreCommunityApi.get({ contentType: 'event' });
+    pageInfo.sitecoreCommunity.events = sCEvents as SitecoreCommunityEvent[];
+  }
+  if (meta.sitecoreCommunityNews) {
+    const sCNews = await SitecoreCommunityApi.get({ forum: 'news' });
+    pageInfo.sitecoreCommunity.news = sCNews as SitecoreCommunityContent[];
   }
 
   return pageInfo;
@@ -113,16 +170,21 @@ const getTiltesFromContent = (content: string): string[] => {
 export const getPartialsAsArray = async (partials: string[]): Promise<PartialData> => {
   const content: string[] = [];
   let titles: string[] = [];
+  let fileNames: string[] = [];
 
   partials.forEach((p) => {
     const data = getFileData(partialsDirectory, p) as Matter;
+    const fileName = `${repoUrl}/data/markdown/partials/${p}.md`;
+
     content.push(data.content);
+    fileNames.push(fileName);
     titles = titles.concat(getTiltesFromContent(data.content));
   });
 
   return {
     content,
     titles,
+    fileNames,
   };
 };
 

@@ -5,6 +5,8 @@ import StackExchangeFeed from './stackexchange/StackExchangeFeed';
 import TwitterFeed from './twitter/TwitterFeed';
 import VerticalGroup from '@/components/helper/VerticalGroup';
 import YouTubeFeed from './youtube/YouTubeFeed';
+import SitecoreCommunityQuestions from './sitecore-community/questions/SitecoreCommunityQuestions';
+import SitecoreCommunityBlog from './sitecore-community/blog/SitecoreCommunityBlog';
 
 type SocialFeedsProps = {
   pageInfo: PageInfo;
@@ -17,8 +19,17 @@ const SocialFeeds = ({ pageInfo }: SocialFeedsProps): JSX.Element => (
       title={pageInfo.youtubeTitle}
       playlistTitle={pageInfo.youtubePlaylistTitle}
     />
-    <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
+    <SitecoreCommunityQuestions
+      content={pageInfo.sitecoreCommunity.questions}
+      sortKeys={pageInfo.sitecoreCommunityQuestionsSort}
+      forumKeys={pageInfo.sitecoreCommunityQuestionsCategory}
+    />
     <StackExchangeFeed content={pageInfo.stackexchange} />
+    <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
+    <SitecoreCommunityBlog
+      content={pageInfo.sitecoreCommunity.blog}
+      sortKeys={pageInfo.sitecoreCommunityBlogSort}
+    />
   </VerticalGroup>
 );
 

@@ -151,6 +151,10 @@ const NavigationData: NavigationData[] = [
             title: 'Sitecore Experience Commerce',
             url: '/commerce/experience-commerce',
           },
+          {
+            title: 'Sitecore Discover',
+            url: '/commerce/discover',
+          }
         ],
       },
       {
@@ -322,6 +326,16 @@ const NavigationData: NavigationData[] = [
           },
         ],
       },
+      {
+        title: 'Sitecore Discover',
+        url: '/commerce/discover',
+        children: [
+          {
+            title: 'Data driven product discovery',
+            url: '/commerce/discover',
+          }
+        ]
+      }
     ],
   },
 ];

@@ -4,8 +4,7 @@ import { classnames, TTailwindString } from '@/tailwindcss-classnames';
 import type { StackExchangeQuestion } from '@/interfaces/integrations';
 import { ValidHeadingLevels } from '@/interfaces/heading-levels';
 // Components
-import DynamicTag from '@/components/helper/DynamicTag';
-import TextLink from '@/components/helper/TextLink';
+import FeedHeading from '@/components/helper/FeedHeading';
 
 type StackExchangeFeedProps = {
   content: StackExchangeQuestion[];
@@ -25,20 +24,13 @@ const StackExchangeFeed = ({
   // Full response
   return (
     <div className={className}>
-      <div className={classnames('mb-8', 'justify-between', 'md:flex', 'md:items-end')}>
-        <DynamicTag
-          tag={headingLevel ? headingLevel : 'h2'}
-          className={classnames('heading-md', 'mb-4', 'mr-4', 'md:mb-0')}
-        >
-          The Latest on Sitecore StackExchange
-        </DynamicTag>
-        <TextLink
-          href="https://sitecore.stackexchange.com/"
-          text="See all questions on StackExchange"
-          target="_blank"
-          className={classnames('ml-auto')}
-        />
-      </div>
+      <FeedHeading
+        title="The Latest on Sitecore StackExchange"
+        link={{
+          href: 'https://sitecore.stackexchange.com/',
+          title: 'See all questions on StackExchange',
+        }}
+      />
       <ul className={classnames('grid', 'md:grid-cols-2', 'gap-10')}>
         {content.map((question) => (
           <li key={question.question_id}>
@@ -62,6 +54,7 @@ const StackExchangeFeed = ({
                 <a
                   href={question.link}
                   target="_blank"
+                  rel="noopener"
                   className={classnames('font-semibold', 'hover:underline', 'inline-block')}
                 >
                   <span dangerouslySetInnerHTML={{ __html: question.title }} />
@@ -76,20 +69,24 @@ const StackExchangeFeed = ({
                           <a
                             href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`}
                             target="_blank"
+                            rel="noopener"
                             className={classnames(
-                              'bg-teal-light',
-                              'text-teal',
+                              'border-violet-dark',
+                              'text-white',
+                              'bg-violet-dark',
                               'text-xs',
                               'p-1',
                               'mr-2',
                               'mb-2',
                               'inline-block',
-                              'hover:bg-teal',
-                              'hover:text-white',
-                              'focus:bg-teal',
+                              'border',
+                              'hover:bg-white',
+                              'hover:border-violet-dark',
+                              'hover:text-violet',
+                              'focus:bg-violet',
                               'focus:text-white',
-                              'dark:bg-teal-dark',
-                              'dark:text-teal-light',
+                              'dark:bg-violet-dark',
+                              'dark:text-white',
                               '2xl:transition-colors'
                             )}
                           >

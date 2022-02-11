@@ -8,6 +8,7 @@ import { ValidHeadingLevels } from '@/interfaces/heading-levels';
 import DynamicTag from '@/components/helper/DynamicTag';
 import TextLink from '@/components/helper/TextLink';
 import Image from 'next/image';
+import FeedHeading from '@/components/helper/FeedHeading';
 
 type YouTubeFeedProps = {
   className?: TTailwindString;
@@ -36,20 +37,14 @@ const YouTubeFeed = ({
 
   return (
     <div className={className}>
-      <div className={classnames('mb-8', 'justify-between', 'md:flex', 'md:items-end')}>
-        <DynamicTag
-          tag={headingLevel ? headingLevel : 'h2'}
-          className={classnames('heading-md', 'mb-4', 'mr-4', 'md:mb-0')}
-        >
-          {title || `Latest ${playlistTitle} videos`}
-        </DynamicTag>
-        <TextLink
-          href={`https://www.youtube.com/playlist?list=${content[0].snippet.playlistId}`}
-          text="See all videos"
-          target="_blank"
-          className={classnames('ml-auto')}
-        />
-      </div>
+      <FeedHeading
+        title={title || `Latest ${playlistTitle} videos`}
+        link={{
+          href: `https://www.youtube.com/playlist?list=${content[0].snippet.playlistId}`,
+          title: 'See all videos',
+        }}
+        headingTag={headingLevel || 'h2'}
+      />
       <ul className={classnames('grid', 'md:grid-cols-3', 'gap-8')}>
         {content.map(({ snippet, id }) => (
           <YouTubeItem snippet={snippet} id={id} key={id} />
@@ -66,7 +61,8 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
         <a
           href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`}
           target="_blank"
-          className={classnames('text-white', 'hover:text-teal', 'focus:text-teal')}
+          rel="noopener noreferrer"
+          className={classnames('text-white', 'hover:text-violet', 'focus:text-violet')}
         >
           <span className={classnames('sr-only')}>Opens in a new tab</span>
           <svg

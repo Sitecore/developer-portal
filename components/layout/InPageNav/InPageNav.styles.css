@@ -33,7 +33,7 @@
   }
 
   .in-page-nav-item--scrolled-to:before {
-    background-color: theme('colors.teal.DEFAULT');
-    border-color: theme('colors.teal.DEFAULT');
+    background-color: theme('colors.violet.DEFAULT');
+    border-color: theme('colors.violet.DEFAULT');
   }
 }

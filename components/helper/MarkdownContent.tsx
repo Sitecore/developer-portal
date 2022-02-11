@@ -10,6 +10,7 @@ import type { PartialData } from '@/interfaces/page-info';
 // Lib
 import setHeadingIds from '@/lib/remark/heading-ids';
 import VerticalGroup from './VerticalGroup';
+import { TArg } from 'tailwindcss-classnames';
 
 type MarkdownContentProps = {
   partials: PartialData;
@@ -18,6 +19,11 @@ type MarkdownContentProps = {
 
 type DecoratedMarkdownProps = {
   children: string;
+};
+
+type EditButtonProps = {
+  editUrl: string;
+  classes?: TArg;
 };
 
 const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element => {
@@ -56,6 +62,41 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
   );
 };
 
+function EditButton({ editUrl, classes }: EditButtonProps) {
+  return (
+    <button
+      className={classnames(
+        'text-charcoal',
+        'dark:text-teal',
+        'hover:bg-violet',
+        'dark:hover:bg-teal',
+        'hover:text-white',
+        'text-xs',
+        'mt-4',
+        'rounded-sm',
+        'py-1',
+        'px-2',
+        'mr-0',
+        'flex',
+        'items-center',
+        classes
+      )}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-current" viewBox="0 0 20 20">
+        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+        <path
+          fillRule="evenodd"
+          d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+          clipRule="evenodd"
+        />
+      </svg>
+      <a className="pl-1" href={editUrl}>
+        Suggest an edit
+      </a>
+    </button>
+  );
+}
+
 const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): JSX.Element => {
   if (hasGrid) {
     return (
@@ -69,11 +110,16 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
               'border',
               'border-theme-border',
               'bg-theme-bg',
-              'text-theme-text'
+              'text-theme-text',
+              'relative'
             )}
             key={i}
           >
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
+            <EditButton
+              editUrl={partials.fileNames[i]}
+              classes={classnames('absolute', 'right-2', 'bottom-2')}
+            />
           </div>
         ))}
       </div>
@@ -83,8 +129,11 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
   return (
     <VerticalGroup>
       {partials.content.map((item, i) => (
-        <div className={classnames('prose', 'max-w-4xl')} key={i}>
-          <DecoratedMarkdown>{item}</DecoratedMarkdown>
+        <div key={i}>
+          <div className={classnames('prose', 'max-w-4xl')}>
+            <DecoratedMarkdown>{item}</DecoratedMarkdown>
+          </div>
+          <EditButton editUrl={partials.fileNames[i]} />
         </div>
       ))}
     </VerticalGroup>

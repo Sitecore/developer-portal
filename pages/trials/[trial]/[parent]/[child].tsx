@@ -31,6 +31,7 @@ export async function getStaticProps(context: { params: TrialNavContext }) {
     youtube: [],
     stackexchange: [],
     twitter: [],
+    sitecoreCommunity: {},
   };
 
   const partials = await getPartialsAsArray([

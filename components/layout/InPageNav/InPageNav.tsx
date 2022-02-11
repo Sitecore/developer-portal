@@ -60,7 +60,8 @@ const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
             <Link href={`#${getSectionId(title)}`}>
               <a
                 className={classnames(
-                  'text-teal',
+                  'text-violet',
+                  'dark:text-teal',
                   'text-sm',
                   'inline-block',
                   'hover:underline',

@@ -27,19 +27,20 @@ const CTACard = ({
     <DynamicTag tag={headingLevel} className={classnames('heading-md', 'mb-4')}>
       {title}
     </DynamicTag>
-    <p className={classnames('text-theme-text-alt', 'mb-6')}>{description}</p>
+    <p className={classnames('text-theme-text', 'mb-6')}>{description}</p>
     <Link href={href}>
       <a
         className={classnames(
-          'bg-teal',
-          'focus:bg-teal-dark',
+          'bg-violet',
+          'focus:bg-violet-dark',
           'font-semibold',
-          'hover:bg-teal-dark',
+          'hover:bg-violet-dark',
           'inline-block',
           'px-12',
           'py-4',
           'text-sm',
-          'text-white'
+          'text-white',
+          'rounded-full'
         )}
       >
         {linkText}
