@@ -1,5 +1,6 @@
 ### Getting Started with the Sitecore Composable DXP
 
+- [Introduction to Composable DXP](/learn/getting-started/introduction-to-composable-dxp)
 - [Getting Started with Sitecore CDP](https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/introduction-to-sitecore-cdp.html)
 - [Getting Started with OrderCloud](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
 - [Getting Started with Content Hub](https://docs.stylelabs.com/contenthub/4.0.x/content/user-documentation/get-started/get-started.html)
