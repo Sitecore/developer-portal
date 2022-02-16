@@ -22,3 +22,7 @@ Sitecore Personalize brings together real-time behavioral insights and all your 
 
 - [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore CDP and Personalize
 - [Boxever Training path](https://learning.sitecore.com/pathway/boxever-training)
+
+## Integrations
+
+- [Integrating Sitecore SmartHub CDP with Sitecore XM](/learn/integrations/xm-cdp)

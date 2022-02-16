@@ -217,7 +217,7 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Sitecore CDP and Personalize',
+        title: 'Sitecore SmartHub CDP',
         children: [
           {
             title: 'Customer Data Management',

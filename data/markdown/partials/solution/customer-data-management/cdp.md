@@ -25,5 +25,5 @@ Sitecore CDP brings together real-time behavioral insights and all your customer
 
 ## Integrations
 
-- [Integrating Sitecore CDP with Sitecore XM](/learn/integrations/xm-cdp)
+- [Integrating Sitecore SmartHub CDP with Sitecore XM](/learn/integrations/xm-cdp)
 - [Integrating Sitecore CDP with Sitecore OrderCloud](/learn/integrations/oc-cdp)
