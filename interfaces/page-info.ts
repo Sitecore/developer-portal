@@ -26,6 +26,7 @@ export type MarkdownMeta = PageInfoCore & {
   stackexchange?: string | string[];
   twitter?: string | string[];
   youtube?: string;
+  promoAfter?: string[];
   sitecoreCommunityBlog?: number | boolean;
   sitecoreCommunityBlogSort?: SortOption | SortOption[];
   sitecoreCommunityEvents?: boolean;
@@ -57,6 +58,7 @@ export type PageInfo = PageInfoCore & {
   sitecoreCommunityBlogSort?: SortOption | SortOption[];
   sitecoreCommunityQuestionsSort?: SortOption | SortOption[];
   sitecoreCommunityQuestionsCategory?: ForumOption | ForumOption[];
+  promoAfter: string[];
 };
 
 export type ChildPageInfo = {

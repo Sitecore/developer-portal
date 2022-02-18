@@ -6,6 +6,16 @@ import type { PageInfo, PartialData } from '@/interfaces/page-info';
 // Components
 import GenericContentPage from '@/components/layout/GenericContentPage';
 
+//Promotions to use on Articles
+import { PromoCardProps } from '@/components/cards/PromoCard';
+import LearningAtSitecore from '@/data/promos/learning-at-sitecore';
+import MVP from '@/data/promos/mvp';
+
+const ArticlePromos: { [name:string]: PromoCardProps } = {
+  "learning-at-sitecore": LearningAtSitecore,
+  "mvp": MVP,
+}
+
 export async function getStaticPaths() {
   const productPaths = await getGettingStartedPaths();
   return {
@@ -32,8 +42,22 @@ type ArticlePageProps = {
   partials: PartialData;
 };
 
-const ArticlePage = ({ pageInfo, partials }: ArticlePageProps): JSX.Element => (
-  <GenericContentPage pageInfo={pageInfo} partials={partials} />
-);
+const ArticlePage = ({ pageInfo, partials }: ArticlePageProps): JSX.Element => {
+  const promoAfter = [] as PromoCardProps[];
+
+  //Load details about promotions for the page
+  if (pageInfo?.promoAfter) {
+    for(let promoId of pageInfo.promoAfter){
+      const promoCard = ArticlePromos[promoId];
+      if(promoCard){
+        promoAfter.push(promoCard);
+      }
+    }
+  }
+
+  return (
+    <GenericContentPage pageInfo={pageInfo} partials={partials} promoAfter={promoAfter} />
+  );
+}
 
 export default ArticlePage;
