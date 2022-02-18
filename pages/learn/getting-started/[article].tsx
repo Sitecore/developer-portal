@@ -9,11 +9,11 @@ import GenericContentPage from '@/components/layout/GenericContentPage';
 //Promotions to use on Articles
 import { PromoCardProps } from '@/components/cards/PromoCard';
 import LearningEssentials from '@/data/promos/learning-essentials';
-import MVP from '@/data/promos/mvp';
+import ComposableDXP from '@/data/promos/videos/composable-dxp';
 
 const ArticlePromos: { [name:string]: PromoCardProps } = {
   "learning-essentials": LearningEssentials,
-  "mvp": MVP,
+  "composable-dxp": ComposableDXP,
 }
 
 export async function getStaticPaths() {
