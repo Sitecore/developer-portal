@@ -18,13 +18,6 @@ The Composable model allows you to choose which products you want to implement, 
 * fully SaaS-based and hosted in strategic cloud locations
 * integrates easily with an existing tech stack
 
-## Watch Composable DXP for developers
-You can watch this video from Thomas Desmond [@ThomasJDesmond](https://twitter.com/ThomasJDesmond) to learn more about Composable DXP for developers:
-
-[![YouTube video on Composable DXP for developers](https://i.ytimg.com/vi/q_sf7eX0vr8/maxresdefault.jpg)](https://www.youtube.com/watch?v=q_sf7eX0vr8)
-*Thomas Desmond (@ThomasJDesmond) explains 3 things developers should care about in the composable DXP space. Moving to the composable DXP world can mean significant work for developers. It's important to get ahead and start optimizing your skills now. [Watch on YouTube](https://www.youtube.com/watch?v=q_sf7eX0vr8)*
-
-
 ## Why choose a Composable DXP?
 In some scenarios, a traditional fully-integrated DXP might be the better option, but there are benefits to a more composable approach. In general, this is about giving teams choices.
 
@@ -39,7 +32,4 @@ There are three important topics that come up for developers with composable sol
 
 1. **Choices:** The composable world is full of choices. Now, you need to choose from a lot of best-of-breed solutions to find what works best. Developers need to find something that is stable, extensible, and works with the tech you want to use. Look at community, documentation, skills required, to choose what works best for your team.
 2. **Integrations:** API-driven solutions mean that developers need to do a lot of integration work to bring together all the pieces of the stack. You might need to implement caching, streaming, and other solutions to make these integrations work for your specific scenario.
-3. **Deployment orchestration:** Working with different solutions by different vendors means you'll want to plan out a CI/CD solution that reduces dependencies. 
-
-## Learn more about Composable DXPs
-The Sitecore Learning team has a [free essentials package](https://learning.sitecore.com/pathway/sitecore-essentials) that includes an introduction to the concepts of Traditional and Composable DXPs. Learn more on [learning.sitecore.com](https://learning.sitecore.com/pathway/sitecore-essentials)
+3. **Deployment orchestration:** Working with different solutions by different vendors means you'll want to plan out a CI/CD solution that reduces dependencies.

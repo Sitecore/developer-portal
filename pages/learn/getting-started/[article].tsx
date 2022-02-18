@@ -43,9 +43,20 @@ type ArticlePageProps = {
 };
 
 const ArticlePage = ({ pageInfo, partials }: ArticlePageProps): JSX.Element => {
+  const promoBefore = [] as PromoCardProps[];
   const promoAfter = [] as PromoCardProps[];
 
-  //Load details about promotions for the page
+  //Load details about promotions for the top of the article
+  if (pageInfo?.promoBefore) {
+    for(let promoId of pageInfo.promoBefore){
+      const promoCard = ArticlePromos[promoId];
+      if(promoCard){
+        promoBefore.push(promoCard);
+      }
+    }
+  }
+
+  //Load details about promotions for the bottom of the article
   if (pageInfo?.promoAfter) {
     for(let promoId of pageInfo.promoAfter){
       const promoCard = ArticlePromos[promoId];
@@ -56,7 +67,7 @@ const ArticlePage = ({ pageInfo, partials }: ArticlePageProps): JSX.Element => {
   }
 
   return (
-    <GenericContentPage pageInfo={pageInfo} partials={partials} promoAfter={promoAfter} />
+    <GenericContentPage pageInfo={pageInfo} partials={partials} promoBefore={promoBefore} promoAfter={promoAfter} />
   );
 }
 
