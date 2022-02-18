@@ -13,6 +13,8 @@ const pageInfo = {
   youtube: [],
   sitecoreCommunity: {},
   fileName: '',
+  promoBefore: [],
+  promoAfter: [],
 };
 
 const NotFoundPage = (): JSX.Element => (
