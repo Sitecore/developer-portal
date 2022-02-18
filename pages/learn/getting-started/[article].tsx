@@ -8,11 +8,11 @@ import GenericContentPage from '@/components/layout/GenericContentPage';
 
 //Promotions to use on Articles
 import { PromoCardProps } from '@/components/cards/PromoCard';
-import LearningAtSitecore from '@/data/promos/learning-at-sitecore';
+import LearningEssentials from '@/data/promos/learning-essentials';
 import MVP from '@/data/promos/mvp';
 
 const ArticlePromos: { [name:string]: PromoCardProps } = {
-  "learning-at-sitecore": LearningAtSitecore,
+  "learning-essentials": LearningEssentials,
   "mvp": MVP,
 }
 
