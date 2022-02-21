@@ -5,11 +5,11 @@ area: ['integrations']
 
 ## Introduction
 
-The purpose of this document is to analyze the integration blueprint for joining together Sitecore Experience Manager (XM) with Sitecore Customer Data Platform (CDP).
+The purpose of this document is to analyze the integration blueprint for joining together Sitecore Experience Manager (XM) with Sitecore SmartHub CDP (Customer Data Platform).
 
-This will detail how to provide the customers with a standard way to integrate their Sitecore XM instance with Sitecore CDP, allowing them to quickly integrate these products in a future proof way and getting them to start on the process of migrating to the Composable DXP.
+This will detail how to provide the customers with a standard way to integrate their Sitecore XM instance with Sitecore SmartHub CDP, allowing them to quickly integrate these products in a future proof way and getting them to start on the process of migrating to the Composable DXP.
 
-The integration will allow you to push interaction data from a website built using Sitecore XM into Sitecore CDP. After this process, you can use Sitecore CDP to then build personalized & optimized experiences to be delivered on your web channel.
+The integration will allow you to push interaction data from a website built using Sitecore XM into Sitecore SmartHub CDP. After this process, you can use Sitecore SmartHub CDP to then build personalized & optimized experiences to be delivered on your web channel. Note that Sitecore SmartHub CDB is a combination of two products, Sitecore Personalize and Sitecore SmartHub CDP. This document will cover how to integrate Sitecore XM with both of those products.
 
 You can see the products involved in said integration highlighted below:
 
@@ -19,31 +19,31 @@ You can see the products involved in said integration highlighted below:
 
 - Tracking visitors and their interactions on the web channel.
 - Identify returning visitors and merge current session data with historical session data.
-- Customising, Retrieving & Updating user information stored in Sitecore CDP.
+- Customising, Retrieving & Updating user information stored in Sitecore SmartHub CDP.
 - Track goals & conversions on the web channel.
 - Ability to personalize web channel.
 - Ability to optimize web channel through Experiments.
 
 ## Data Responsibilities
 
-Sitecore XM is a Web Content Management System while Sitecore CDP is a Customer Data Platform. Sitecore XM is used to author the content used on your web channel, and Sitecore CDP is used to track your users and their interaction with your channels, as well as personalize and optimize their customer experience.
+Sitecore XM is a Web Content Management System while Sitecore SmartHub CDP is a Customer Data Platform. Sitecore XM is used to author the content used on your web channel, and Sitecore SmartHub CDP is used to track your users and their interaction with your channels, as well as personalize and optimize their customer experience.
 
-While in the process of integrating these two products you should ensure that this separation of concerns remains. If you find yourself creating content in Sitecore CDP or attempting to work with user or interaction data within Sitecore XM, you should check whether there is a better approach that maintains the original responsibilities of the two systems.
+While in the process of integrating these two products you should ensure that this separation of concerns remains. If you find yourself creating content in Sitecore SmartHub CDP or attempting to work with user or interaction data within Sitecore XM, you should check whether there is a better approach that maintains the original responsibilities of the two systems.
 
 ## Prerequisites
 
 - Website built using Sitecore XM.
-- Deployed instance of Sitecore CDP.
+- Deployed instance of Sitecore SmartHub CDP.
 
 ## Glossary of Terms
 
-| Term              | Value                           |
-| :---------------- | :------------------------------ |
-| Sitecore CDP, CDP | Sitecore Customer Data Platform |
-| Sitecore XM, XM   | Sitecore Experience Manager     |
-| DOM               | Document Object Model           |
-| GTM               | Google Tag Manager              |
-| SXA               | Sitecore Experience Accelerator |
+| Term                            | Value                           |
+| :------------------------------ | :------------------------------ |
+| Sitecore CDP, CDP, SmartHub CDP | Sitecore SmartHub CDP           |
+| Sitecore XM, XM                 | Sitecore Experience Manager     |
+| DOM                             | Document Object Model           |
+| GTM                             | Google Tag Manager              |
+| SXA                             | Sitecore Experience Accelerator |
 
 ## Use Case #1: Tracking visitors and their interactions on the web channel
 
@@ -68,31 +68,31 @@ There are pros and cons to each of these approaches, so you will need to decide 
 
 For those customers wanting to directly embed the CDP tracking tag into their web channel built using Sitecore XM, they can follow the Tagging Examples documentation to add JS tracking tag to your website: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/javascript-tagging-examples-for-web-pages.html
 
-The sequence diagram below shows data flow between the different systems to facilitate interaction data storage in Sitecore CDP.
+The sequence diagram below shows data flow between the different systems to facilitate interaction data storage in Sitecore SmartHub CDP.
 
-![Sequence diagram showing the flow of data between Sitecore XM & Sitecore CDP when directly embedding the JS tracker in the page header.][2]
+![Sequence diagram showing the flow of data between Sitecore XM & Sitecore SmartHub CDP when directly embedding the JS tracker in the page header.][2]
 
 
 #### Method B – Google Tag Manager Integration
 
 For those customers wanting  to directly embed the CDP tracking tag into their web channel built using Sitecore XM, they can follow the Tagging Examples documentation to add JS tracking tag to your website by using Google Tag Manager: https://sitecore.cdpknowledgehub.com/docs/how-to-send-data-to-boxever-via-google-tag-manager 
 
-The sequence diagram below shows data flow between the different systems to facilitate interaction data storage in Sitecore CDP.
+The sequence diagram below shows data flow between the different systems to facilitate interaction data storage in Sitecore SmartHub CDP.
 
-![Sequence diagram showing the flow of data between Sitecore XM & Sitecore CDP when directly embedding the JS tracker via Google Tag Manager.][3]
+![Sequence diagram showing the flow of data between Sitecore XM & Sitecore SmartHub CDP when directly embedding the JS tracker via Google Tag Manager.][3]
 
 #### Method C – Server-side Integration
 
-For those customers wanting to integrate with Sitecore CDP from the server-side, the best approach is to make use of the Stream API to send those requests. To start that process you will need to request and Browser ID and then ensure you send that ID with all future requests to ensure the session details are recorded correctly. This is the same approach that is used when integrating a Mobile App to the CDP, and is documented here: https://sitecore.cdpknowledgehub.com/docs/mobile-app-tagging-overview.
+For those customers wanting to integrate with Sitecore SmartHub CDP from the server-side, the best approach is to make use of the Stream API to send those requests. To start that process you will need to request and Browser ID and then ensure you send that ID with all future requests to ensure the session details are recorded correctly. This is the same approach that is used when integrating a Mobile App to the CDP, and is documented here: https://sitecore.cdpknowledgehub.com/docs/mobile-app-tagging-overview.
 
 
 The sequence diagram below shows data flow between the different systems to facilitate the request of the Browser ID and subsequent event messages.
 
-![Sequence diagram showing the flow of data between Sitecore XM & Sitecore CDP when integrating the tracker server-side.][4]
+![Sequence diagram showing the flow of data between Sitecore XM & Sitecore SmartHub CDP when integrating the tracker server-side.][4]
 
 
 ###	Marketer Usage
-Once the tracking beacon is included on your web channel, it will start to send usage data back to Sitecore CDP. As a marketer there is no further configuration required, since, as your users interact with your web channel, you will automatically see the data making its way into Sitecore CDP.
+Once the tracking beacon is included on your web channel, it will start to send usage data back to Sitecore SmartHub CDP. As a marketer there is no further configuration required, since, as your users interact with your web channel, you will automatically see the data making its way into Sitecore SmartHub CDP.
 
 ## Use Case #2: Identify returning visitors and merge current session data with historical session data
 A CDP allows for experiences that leverage it to Identify the users interacting with them. This enables the user’s session details to be tied back to a known account in the CDP and facilitates sessions on different devices to be tied back to the same user, giving a true account of that user’s activities across all channels.
@@ -119,30 +119,30 @@ For those customers wanting to directly embed JavaScript event call into their w
 
 The sequence diagram below shows the data flow between the different systems to facilitate the IDENTITY Event request when directly embedded into the JavaScript for the web channel.
 
-![Sequence diagram showing the flow of data between Sitecore XM & Sitecore CDP when identifying users from a tracker directly embedded in the pages JS.][5]
+![Sequence diagram showing the flow of data between Sitecore XM & Sitecore SmartHub CDP when identifying users from a tracker directly embedded in the pages JS.][5]
 
 #### Method B – Google Tag Manager Integration
-For those customers wanting to directly embed the CDP tracking tag into their web channel built using Sitecore XM, they can follow the Tagging Examples documentation to add JS tracking tag to your website by using Google Tag Manager: [How to send data to Sitecore CDP via Google Tag Manager](https://sitecore.cdpknowledgehub.com/docs/how-to-send-data-to-boxever-via-google-tag-manager)
+For those customers wanting to directly embed the CDP tracking tag into their web channel built using Sitecore XM, they can follow the Tagging Examples documentation to add JS tracking tag to your website by using Google Tag Manager: [How to send data to Sitecore SmartHub CDP via Google Tag Manager](https://sitecore.cdpknowledgehub.com/docs/how-to-send-data-to-boxever-via-google-tag-manager)
 
 The sequence diagram below shows data flow between the different systems to facilitate the IDENTITY Event request when Google Tag Manager is used to embed the JavaScript for the web channel.
 
 ![Sequence diagram showing the flow of data between Sitecore XM & Sitecore CDP when identifying users from a tracker directly embedded via Google Tag Manager.][6]
 
 #### Method C – Server-side Integration
-For those customers wanting to integrate with Sitecore CDP from the server-side, the best approach is to make use of the Stream API to send those requests. To start that process you will need to request and Browser ID and then ensure you send that ID with all future requests to ensure the session details are recorded correctly. This is the same approach that is used when integrating a Mobile App to the CDP, and is documented here: [Mobile App Tagging Overview](https://sitecore.cdpknowledgehub.com/docs/mobile-app-tagging-overview)
+For those customers wanting to integrate with Sitecore SmartHub CDP from the server-side, the best approach is to make use of the Stream API to send those requests. To start that process you will need to request and Browser ID and then ensure you send that ID with all future requests to ensure the session details are recorded correctly. This is the same approach that is used when integrating a Mobile App to the CDP, and is documented here: [Mobile App Tagging Overview](https://sitecore.cdpknowledgehub.com/docs/mobile-app-tagging-overview)
 
 The sequence diagram below shows data flow between the different systems to facilitate the request of the Browser ID and subsequent event messages.
 
-![Sequence diagram showing the flow of data between Sitecore XM & Sitecore CDP when identifying users from a server-side request.][7]
+![Sequence diagram showing the flow of data between Sitecore XM & Sitecore SmartHub CDP when identifying users from a server-side request.][7]
 
 ### Marketer Usage
 As your users interact with your web channel, they will at first appear as anonymous visitors. After your development team have implemented one of the methods described above, your users will change from visitors to customers. There is no further confirmation required by the marketer.
 
-## Use Case #3: Customising, Retrieving & Updating user information stored in Sitecore CDP
+## Use Case #3: Customising, Retrieving & Updating user information stored in Sitecore SmartHub CDP
 A CDP is used to store information about your customers. Each business has a different domain model, though, thus requiring a different set of customer details to be stored. For this reason, you will need to tailor the customer data you’re storing to match your business requirements.
 
 ### Key Concepts
-As your users interact with your web channel built using Sitecore XM, you will need to ensure that the data you’re storing match your requirements. To do this, you will most likely have to customize your customer model to include fields used to store the data specific to your industry. In Sitecore CDP this customization is achieved by using Data Extensions. You can read more about the Data Extension Model here: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/using-the-create-guest-data-extension-function-in-sitecore-cdp-rest-api.html 
+As your users interact with your web channel built using Sitecore XM, you will need to ensure that the data you’re storing match your requirements. To do this, you will most likely have to customize your customer model to include fields used to store the data specific to your industry. In Sitecore SmartHub CDP this customization is achieved by using Data Extensions. You can read more about the Data Extension Model here: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/using-the-create-guest-data-extension-function-in-sitecore-cdp-rest-api.html 
 
 ### Developer Configuration 
 The developer uses the Data Extension model to update, store and retrieve guest data that includes custom fields specific to your business. They are stored in the format of a series of key-value pairs, allowing you to store any data you need. The process of interacting with Data Extension models is performed via a series of different API calls, you can see details regarding these calls in the links below:
@@ -162,7 +162,7 @@ There are many scenarios where you would want to interact with Guest Data from t
 
 In the Sequence diagram below you can see how the data would flow between XM and CDP in each of the scenarios.
 
-![Sequence diagram showing the flow of data between Sitecore XM & Sitecore CDP when identifying users from a server-side request.][8]
+![Sequence diagram showing the flow of data between Sitecore XM & Sitecore SmartHub CDP when identifying users from a server-side request.][8]
 
 ## Use Case #4: Track goals & conversions on the web channel
 A CDP allows for experiences that leverage it to register custom goals and actions as users interact with them. This gives the ability to track specific metrics that are important to your business, while also allowing for reporting regarding conversion and for the ability to create web and full stack experiences designed to increase the level of conversion over time.
@@ -172,7 +172,7 @@ A marketing user should be able to define custom goals that can later be trigger
 
 
 ###	Developer Configuration 
-When integrating Sitecore XM with Sitecore CDP you will need to send custom events into the CDP to track user engagement. You can read the documentation covering the contents of the message required here: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/send-an-event-as-an-http-get-request.html 
+When integrating Sitecore XM with Sitecore SmartHub CDP you will need to send custom events into the CDP to track user engagement. You can read the documentation covering the contents of the message required here: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/send-an-event-as-an-http-get-request.html 
 
 You can achieve this by sending the event either from the client-side or the server-side. You can choose your preferred option depending on your requirements. 
 
@@ -187,7 +187,7 @@ For customers who want to directly embed the JavaScript event call into their we
 
 This sequence diagram shows how the different systems and the user’s browser will interact when events are sent in this way.
 
-![Sequence diagram showing passing an event message from Sitecore XM to Sitecore CDP from the client-side.][9]
+![Sequence diagram showing passing an event message from Sitecore XM to Sitecore SmartHub CDP from the client-side.][9]
 
 #### Server-side events
 
@@ -195,13 +195,13 @@ For those customers wanting to handle event messages on their web channel built 
 
 This sequence diagram shows how the different systems and the user’s browser will interact when events messages are sent in this way.
 
-![Sequence diagram showing passing an event message from Sitecore XM to Sitecore CDP from the server-side.][10]
+![Sequence diagram showing passing an event message from Sitecore XM to Sitecore SmartHub CDP from the server-side.][10]
 
 ### Marketer Usage
 You will need to work with your developer to define which events are to be sent from the web channel, depending on the actions that your users perform. There are a series of events you can choose from in order to help map your users’ actions to your business processes. You can see a list of the supported events here: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/send-a-custom-event-to-sitecore-cdp.html.
 
 ## Use Case #5: Ability to personalize web channel
-Sitecore CDP allows you to personalize experiences, ensuring that each customer and visitor has the correct content displayed and at the appropriate time. Integrating Sitecore XM with Sitecore CDP allows you to deliver personalized experiences on your web channel.
+Sitecore SmartHub CDP allows you to personalize experiences, ensuring that each customer and visitor has the correct content displayed and at the appropriate time. Integrating Sitecore XM with Sitecore SmartHub CDP allows you to deliver personalized experiences on your web channel.
 
 ### Key Concepts
 We want to change the content being displayed to visitors to our web channel to ensure they are receiving the most relevant content to them, based on their current and historical browsing behavior combined with business context.
@@ -224,9 +224,9 @@ The sequence diagram below shows data flow between the different systems to faci
 
 ![Sequence diagram showing the DOM being personalized with Web Experiences.][11]
 
-#### Personalizing the web channel using “Full Stack Experiences” in Sitecore CDP.
+#### Personalizing the web channel using “Full Stack Experiences” in Sitecore SmartHub CDP.
 
-When personalizing the web channel by using “Full Stack Experiences”, the DOM is changed on the server and is sent to the client with the personalization changes already applied. This removes the need to mask the DOM changes from the user as they have already been processed on the server and full built HTML is returned to the client. This is achieved this by using the Stream API provided by Sitecore CDP, You can get an introduction on how to interact with the Stream API on our documentation site here: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/overview-of-sitecore-cdp-stream-apis.html 
+When personalizing the web channel by using “Full Stack Experiences”, the DOM is changed on the server and is sent to the client with the personalization changes already applied. This removes the need to mask the DOM changes from the user as they have already been processed on the server and full built HTML is returned to the client. This is achieved this by using the Stream API provided by Sitecore SmartHub CDP, You can get an introduction on how to interact with the Stream API on our documentation site here: https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/overview-of-sitecore-cdp-stream-apis.html 
 
 The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using “Full Stack Experiences”.
 
@@ -237,10 +237,10 @@ The sequence diagram below shows data flow between the different systems to faci
 Once your experience has been built out by your developer, you can then begin to apply it to the pages on your website. The developer will have defined the fields of the template you need to populate for each instance of the experience you wish to run.
 
 ## Use Case #6: Ability to optimize web channel through Experiments
-Sitecore CDP allows you to optimize experiences, giving you the ability to run A/B & multivariant experiments to help improvement conversion on your channels. Integrating Sitecore XM with Sitecore CDP gives you the ability to deliver and run these tests on your web channel.
+Sitecore SmartHub CDP allows you to optimize experiences, giving you the ability to run A/B & multivariant experiments to help improvement conversion on your channels. Integrating Sitecore XM with Sitecore SmartHub CDP gives you the ability to deliver and run these tests on your web channel.
 
 ### Key Concepts
-Sitecore CDP is used to create and run your tests, allowing you to provide a different experience to different groups of your end users, track which version drove the highest level of conversion and then make that version the default one for all customers.
+Sitecore SmartHub CDP is used to create and run your tests, allowing you to provide a different experience to different groups of your end users, track which version drove the highest level of conversion and then make that version the default one for all customers.
 
 ### Developer Configuration
 There are two methods used to create experiments: you can either create a “Web experiment” where the experiment is powered by JavaScript on the client, or a “Full stack experiment” where this is completed on the server and the HTML returned to the client already has the experiment baked in. 
@@ -258,7 +258,7 @@ When personalizing the web channel by using Web Experiments, the DOM is changed 
 
 The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using Web Experiments.
 
-![Sequence diagram showing how the Sitecore XM & Sitecore CDP interact when creating Web Experiments.][13]
+![Sequence diagram showing how the Sitecore XM & Sitecore SmartHub CDP interact when creating Web Experiments.][13]
 
 #### Creating Full Stack Experiments
 
@@ -266,7 +266,7 @@ When personalizing the web channel by using Full Stack Experiments, the DOM is c
 
 The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using Full Stack Experiments.
 
-![Sequence diagram showing how the Sitecore XM & Sitecore CDP interact when creating Full Stack Experiments.][14]
+![Sequence diagram showing how the Sitecore XM & Sitecore SmartHub CDP interact when creating Full Stack Experiments.][14]
 
 ### Marketer Usage
 As a marketer you can apply the different types of Experiments to the pages in your web channel. Experiments are closely linked to Experiences, as Experiments are effectively an A/B Test between two Experiences. You can read about how you can apply the different types of experiments as a marketer here: https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/running-experiments-in-sitecore-cdp.html
