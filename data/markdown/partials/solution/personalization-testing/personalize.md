@@ -25,4 +25,4 @@ Sitecore Personalize brings together real-time behavioral insights and all your 
 
 ## Integrations
 
-- [Integrating Sitecore SmartHub CDP with Sitecore XM](/learn/integrations/xm-cdp)
+- [Integrating Sitecore SmartHub CDP with Sitecore XM](/learn/integrations/xm-smarthub-cdp)

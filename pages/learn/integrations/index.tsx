@@ -10,7 +10,7 @@ import GenericContentPage from '@/components/layout/GenericContentPage';
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('learn');
   const integrations = await getPartialsAsArray([
-    'learn/integrations/cdp',
+    'learn/integrations/smarthub-cdp',
     'learn/integrations/xm',
     'learn/integrations/content-hub',
     'learn/integrations/send',
