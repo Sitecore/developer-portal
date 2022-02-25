@@ -5,11 +5,13 @@ import path from 'path';
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
 const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
 const trialPagesDirectory = path.join(process.cwd(), 'data/markdown/pages/trials/');
+const gettingStartedDirectory = path.join(process.cwd(), 'data/markdown/pages/learn/getting-started/');
 const TrialDirectory = path.join(process.cwd(), 'data/trials');
 
 type SolutionPaths = { params: { solution: string } };
 type ProductPaths = { params: { product: string; solution: string } };
 type IntegrationPaths = { params: { integration: string } };
+type GettingStartedPaths = { params: { article: string } };
 type TrialPaths = { params: { trial: string } };
 type TrialNavPaths = { params: TrialNavContext };
 
@@ -36,6 +38,11 @@ export const getProductPaths = async (): Promise<ProductPaths[]> => {
 export const getIntegrationPaths = async (): Promise<IntegrationPaths[]> => {
   const files = fs.readdirSync(integrationDirectory);
   return files.map((file) => ({ params: { integration: file } }));
+};
+
+export const getGettingStartedPaths = async (): Promise<GettingStartedPaths[]> => {
+  const files = fs.readdirSync(gettingStartedDirectory);
+  return files.map((file) => ({ params: { article: file } }));
 };
 
 export const getTrialsPaths = async (): Promise<TrialPaths[]> => {
