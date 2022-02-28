@@ -29,6 +29,13 @@ const securityHeaders = [
     value: "1; mode=block"
   }
 ];
+const redirects = [
+  {
+    source: '/learn/integrations/xm-cdp',
+    destination: '/learn/integrations/xm-smarthub-cdp',
+    permanent: true
+  }
+]
 
 const nextConfig = {
   // Set locales so we have appropriate lang attributes without a custom _document
@@ -54,6 +61,9 @@ const nextConfig = {
         headers: securityHeaders
       }
     ]
+  },
+  async redirects() {
+    return redirects
   }
 };
 
