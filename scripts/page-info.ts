@@ -101,7 +101,7 @@ export const getPageInfo = async (
       ? Array.isArray(meta.sitecoreCommunityBlogSort)
         ? meta.sitecoreCommunityBlogSort[0]
         : meta.sitecoreCommunityBlogSort
-      : 'publish';
+      : 'created';
     const sCBlog = await SitecoreCommunityApi.get({
       forum: 'blog',
       contentType: 'blog',

@@ -61,8 +61,9 @@ const SitecoreCommunityBlog = ({ content, sortKeys }: SitecoreCommunityBlogProps
                 'text-theme-text'
               )}
             >
-              <option value="publish">Recent Questions</option>
+              <option value="created">Recent Questions</option>
               <option value="view">Most Popular</option>
+              <option value="created">Created</option>
             </select>
           </label>
         )}

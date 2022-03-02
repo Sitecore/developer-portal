@@ -86,6 +86,7 @@ const SitecoreCommunityQuestions = ({
             >
               <option value="publish">Recent Questions</option>
               <option value="view">Most Popular</option>
+              <option value="created">Created</option>
             </select>
           </label>
         )}

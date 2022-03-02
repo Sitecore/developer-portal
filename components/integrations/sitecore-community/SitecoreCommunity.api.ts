@@ -43,7 +43,7 @@ export type ForumOption =
   | 'personalizationAndTesting'
   | 'searchAndMerchandizing'
   | 'storefrontsAndMarketplaces';
-export type SortOption = 'publish' | 'view';
+export type SortOption = 'publish' | 'view' | 'created';
 
 type SitecoreCommunityOptions = {
   contentType?: ContentType;
@@ -144,7 +144,7 @@ const get = async ({
   contentType = undefined,
   forum = undefined,
   maxResults = 3,
-  sort = 'publish' as SortOption,
+  sort = 'created' as SortOption,
 }: SitecoreCommunityOptions): Promise<SitecoreCommunityEvent[] | SitecoreCommunityContent[]> => {
   // Prevent showing more than 5, its just too many
   const count = maxResults > 5 ? 5 : maxResults;
