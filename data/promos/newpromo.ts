@@ -1,15 +1,15 @@
 import type { PromoCardProps } from '@/components/cards/PromoCard';
 
 const data: PromoCardProps = {
-  title: 'Sitecore Hackathon 2022',
+  title: 'Virtual Developer Day',
   description:
-    'The 2022 Sitecore Hackathon is a free online community-driven event organized by Akshay Sura and supported by Sitecore. Make sure you sign up your team by 6 pm EST February 18, 2022 to have the opportunity to participate in a contest. Visit the Hackathon website for more information on this event',
+    'Sharpen your Sitecore dev skills by registering for 24 hours of developer-led sessions and camaraderie with Sitecore’s global developer community and MVPs.',
   img: {
-    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/2f9717ea009a49f381e1c63270e37896?v=7c6d04bd',
+    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/2e10a5a7d825482f9e23c096c79f7635?v=94325149',
   },
   link: {
-    href: 'https://www.sitecorehackathon.org/sitecore-hackathon-2022/',
-    text: 'Sitecore Hackathon website',
+    href: 'https://www.sitecore.com/company/news-events/events/2022/03/virtual-developer-day',
+    text: 'Register now for free!',
   },
 };
 
