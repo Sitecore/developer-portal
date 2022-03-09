@@ -1,7 +1,7 @@
 import type { PromoCardProps } from '@/components/cards/PromoCard';
 
 const data: PromoCardProps = {
-  title: 'Sitecore Usergroup Conference 2022',
+  title: 'Sitecore Usergroup Conference',
   description:
     'Join us at the largest Sitecore Community event in Budapest, Hungary on March 24th-25th. With over 40 speakers from around the world and over 30 sessions. You can expect two full days of knowledge sharing, networking, presentations, and more.',
   img: {
