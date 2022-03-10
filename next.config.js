@@ -51,6 +51,7 @@ const nextConfig = {
     GTM_ENVIRONMENT: process.env.GTM_ENVIRONMENT
   },
   images: {
+    dangerouslyAllowSVG: true,
     domains: ['sitecorecdn.azureedge.net', 'i.ytimg.com', 'mss-p-006-delivery.sitecorecontenthub.cloud', 'mss-p-006-delivery.stylelabs.cloud'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
@@ -64,7 +65,7 @@ const nextConfig = {
   },
   async redirects() {
     return redirects
-  }
+  },
 };
 
 module.exports = withTM(nextConfig);
