@@ -191,6 +191,24 @@ export const getPartialsAsArray = async (partials: string[]): Promise<PartialDat
   };
 };
 
+export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> => {
+  const content: string[] = [];
+  let titles: string[] = [];
+  let fileNames: string[] = [];
+
+  if (pageInfo.content) {
+    content.push(pageInfo.content);
+    fileNames.push(pageInfo.fileName);
+    titles = titles.concat(getTiltesFromContent(pageInfo.content));
+  }
+
+  return {
+    content,
+    titles,
+    fileNames,
+  };
+};
+
 /**
  * Gets a list of ChildPageInfo for use on a parent page
  *

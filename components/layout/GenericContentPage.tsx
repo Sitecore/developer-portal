@@ -12,7 +12,6 @@ import SectionHeading from '@/components/helper/SectionHeading';
 import SocialFeeds from '@/components/integrations/SocialFeeds';
 import VerticalGroup from '@/components/helper/VerticalGroup';
 import Footer from '../site/Footer/Footer';
-import { getPageInfo } from '@/scripts/page-info';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -74,23 +73,6 @@ const GenericContentPage = ({
     : [];
 
   const Nav = customNav ? customNav : <InPageNav titles={titles} />;
-
-  //If there is some content directly on the page info, display it before other partials.
-  if(pageInfo.content){
-    //Ensure the partials data is defined
-    if(!partials){
-      const content: string[] = [];
-      const titles: string[] = [];
-      const fileNames: string[] = [];
-
-      partials = {content, titles, fileNames} as PartialData;
-    }
-
-    //Add the page content at the beginning of the arrays
-    partials.content.unshift(pageInfo.content);
-    partials.fileNames.unshift(pageInfo.fileName);
-    partials.titles.unshift(""); //We don't want to repeat the page title for page content.
-  }
 
   return (
     <Layout pageInfo={pageInfo}>
