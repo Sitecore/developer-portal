@@ -188,6 +188,28 @@ export const getPartialsAsArray = async (partials: string[]): Promise<PartialDat
   };
 };
 
+export const getPartialDataFromPage = async (
+  arg: string | ProductSolutionContextParams
+): Promise<PartialData | null> => {
+  const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
+  const fileData = getFileData(pagesDirectory, `${file}/index`) as Matter;
+  const fileName = `${repoUrl}/data/markdown/pages/${file}/index.md`;
+
+  const content: string[] = [];
+  let titles: string[] = [];
+  let fileNames: string[] = [];
+
+  content.push(fileData.content);
+  fileNames.push(fileName);
+  titles = titles.concat(getTiltesFromContent(fileData.content));
+
+  return {
+    content,
+    titles,
+    fileNames,
+  };
+};
+
 /**
  * Gets a list of ChildPageInfo for use on a parent page
  *

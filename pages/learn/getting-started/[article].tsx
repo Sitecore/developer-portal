@@ -1,5 +1,5 @@
 // Scripts
-import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
+import { getPageInfo, getPartialDataFromPage, getPartialsAsArray } from '@/scripts/page-info';
 import { getGettingStartedPaths, getIntegrationPaths } from '@/scripts/static-paths';
 // Interfaces
 import type { PageInfo, PartialData } from '@/interfaces/page-info';
@@ -11,10 +11,10 @@ import { PromoCardProps } from '@/components/cards/PromoCard';
 import LearningEssentials from '@/data/promos/learning-essentials';
 import ComposableDXP from '@/data/promos/videos/composable-dxp';
 
-const ArticlePromos: { [name:string]: PromoCardProps } = {
-  "learning-essentials": LearningEssentials,
-  "composable-dxp": ComposableDXP,
-}
+const ArticlePromos: { [name: string]: PromoCardProps } = {
+  'learning-essentials': LearningEssentials,
+  'composable-dxp': ComposableDXP,
+};
 
 export async function getStaticPaths() {
   const productPaths = await getGettingStartedPaths();
@@ -25,8 +25,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo(`learn/getting-started/${context?.params?.article}`);
-  const partials = pageInfo?.partials ? await getPartialsAsArray(pageInfo.partials) : [];
+  const markdownPage = `learn/getting-started/${context?.params?.article}`;
+  const pageInfo = await getPageInfo(markdownPage);
+  const partials = pageInfo?.partials
+    ? await getPartialsAsArray(pageInfo.partials)
+    : await getPartialDataFromPage(markdownPage);
 
   return {
     props: {
@@ -48,9 +51,9 @@ const ArticlePage = ({ pageInfo, partials }: ArticlePageProps): JSX.Element => {
 
   //Load details about promotions for the top of the article
   if (pageInfo?.promoBefore) {
-    for(let promoId of pageInfo.promoBefore){
+    for (let promoId of pageInfo.promoBefore) {
       const promoCard = ArticlePromos[promoId];
-      if(promoCard){
+      if (promoCard) {
         promoBefore.push(promoCard);
       }
     }
@@ -58,17 +61,22 @@ const ArticlePage = ({ pageInfo, partials }: ArticlePageProps): JSX.Element => {
 
   //Load details about promotions for the bottom of the article
   if (pageInfo?.promoAfter) {
-    for(let promoId of pageInfo.promoAfter){
+    for (let promoId of pageInfo.promoAfter) {
       const promoCard = ArticlePromos[promoId];
-      if(promoCard){
+      if (promoCard) {
         promoAfter.push(promoCard);
       }
     }
   }
 
   return (
-    <GenericContentPage pageInfo={pageInfo} partials={partials} promoBefore={promoBefore} promoAfter={promoAfter} />
+    <GenericContentPage
+      pageInfo={pageInfo}
+      partials={partials}
+      promoBefore={promoBefore}
+      promoAfter={promoAfter}
+    />
   );
-}
+};
 
 export default ArticlePage;
