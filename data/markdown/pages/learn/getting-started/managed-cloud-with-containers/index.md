@@ -1,6 +1,6 @@
 ---
 title: 'Getting Started with Sitecore Managed Cloud with Containers'
-description: 'What is a Composable DXP and why does it matter for developers? Get started learning about what this term means and how it applies in the world of Sitecore products.'
+description: 'Learn the steps needed to get up and running with Docker and Containers with the latest Managed Cloud offering.'
 partials: ['learn/getting-started/articles/introduction-to-composable-dxp']
 ---
 
