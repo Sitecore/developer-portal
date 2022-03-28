@@ -6,7 +6,7 @@ description: 'Have Sitecore manage your infrastructure in the cloud, allowing yo
 ---
 
 ## Introduction
-Sitecore Managed Cloud is an offering that allows users to rely on Sitecore to maintain their infrastructure in the cloud.  There are two options when going with a Managed Cloud solution, including Containers and PaaS.
+Sitecore Managed Cloud is an offering that allows users to rely on Sitecore to maintain their infrastructure in the cloud.  There are two options when going with a Managed Cloud solution, including Containers and Platform as a Service (PaaS).
 
 ## Documentation
 
