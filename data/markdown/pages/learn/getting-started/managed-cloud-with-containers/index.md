@@ -113,7 +113,7 @@ The overall process involves building your images with the CI tool of your choic
 6. Once you've completed the build and push of your images, you can now move on to the next section, where you'll configured the CD of your release process.  You'll need to know your Build Id and Build branch for use with tagging. 
 
 ## Adjustments to CD Pipeline
-The Continous Delivery (CD) pipeline is hosted in the "Application" repository in MCC and utilizes Ansible to pull the images and release those images to AKS.  Once you have successfully pushed your images into your Azure Container Registry (ACR), you'll need to update your `./config/docker-images/docker-images.json`.
+The Continous Delivery (CD) pipeline is hosted in the `Application` repository in MCC and utilizes Ansible to pull the images and release those images to AKS.  Once you have successfully pushed your images into your Azure Container Registry (ACR), you'll need to update your `./config/docker-images/docker-images.json`.
 
 The `Application` and `Infrastructure` repositories in the Managed Cloud with Containers (MCC) Azure Devops environment are both configured to trigger deployments when a change is made to the `main` branch either directly or via a pull request (however you can also trigger the deployment manually).  The best practice would be to create a new feature branch for your latest deployment and in that branch, you'll need to update the configuration to include references to your new custom images in the ACR.  This is where you'll need to know the latest build number and branch (or tag version of the latest image in your ACR).
 
