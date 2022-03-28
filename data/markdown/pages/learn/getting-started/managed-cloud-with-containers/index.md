@@ -98,14 +98,14 @@ The Continous Integration (CI) process involves building the solution images tha
 The overall process involves building your images with the CI tool of your choice and then using basic authentication to push those images into your Azure Container Registry (ACR) for further use during the Continuous Deployment (CD) process.
 
 1. You'll need to first create the process to build your images, likely in a different topology than what you ran locally, on strategy to do this, is to create a new docker-compose.yml file for these builds.  This new compose file only needs instructions related to the build of the images, since Kubernetes definitions will handle how those images run (including volumes, memory usage, etc.).
-    - [An example of this file](https://github.com/Sitecore/Sitecore.Demo.Platform/blob/main/docker-compose-xp1.build.yml)
+    - [An example of a docker-compose.build.yml File](https://github.com/Sitecore/Sitecore.Demo.Platform/blob/main/docker-compose-xp1.build.yml)
 2. You'll need to create the build definition files (Dockerfile) for the images that you plan to build that are not in your original docker-compose.yml file.  Example, if you originally setup an XP0 and are now building XP1 images, you'll have several new images depending on your configuration, such as CD, PRC, as well as several xConnect roles.
 3. (Optional) if you are using a CI system like Azure Devops or another system that uses Yaml to configure the the build process, you should create this file and specify the steps in the build.  Your process should be setup to build the images in this custom docker-compose.yml file and then push those images into the MCC ACR.
     - [Example of Azure Pipeline Yaml](https://github.com/Sitecore/MVP-Site/blob/main/azure-pipelines.yml)
 4. You will need to authenticate with the MCC ACR using the Admin account (which is turned on by MCC by default) for completing pushes to the ACR during the build process.
     - [Admin Account Overview](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication?tabs=azure-cli#admin-account)
     - If you are using Azure Devops to configure your CI pipeline, you'll need to complete the following steps:
-        - You'll need to create a new Service Connection for your ACR, but specify this registry as a standard docker registry, instead of using an Azure Container Registry.
+        - You'll need to create a new Service Connection for your ACR, but specify this registry as a standard docker registry, instead of using an Azure Container Registry. Refer to the image below:
         ![Service Connection Details for Azure Container Registry Authentication in Azure Devops](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/05753795f5974b15bca0d6dfe7c80de2?v=bced5b2d)
         - In your Build Pipeline you'll need to use the following parameters for the use of this service principle.
 5. (Optional) There are several strategies to replace the environment variables in these files, and it may vary upon CI system used, but if you are using Azure Devops, you can define a Variable Group and if you match them to the variables in your file (ie. ${REGISTRY} with a key of REGISTRY, and a value), they should automatically get picked up in your file, if you assign the variable group to your build pipeline.
@@ -124,7 +124,7 @@ Keep in mind that if you have any more complex scenarios, including customizatio
 
   - [Walkthrough: Adding the SXA Module](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/walkthrough--adding-the-sxa-module.html)
 
-It is important to callout, that in Sitecore 10.2, Sitecore introduced Items as Resources for modules, which means that you may not always need to Init MSSQL for a specific module.  You should refer to the module references to understand when updates to MSSQL or Solr are required.  If you have made changes to the Solr or MSSQL images locally, this likely means you'll need to make the same changes to push these to your MCC environment.  Keeping in mind that Solr and MSSQL are not run within containers in a MCC environment.
+It is important to callout, that in Sitecore 10.2, Sitecore introduced Items as Resources (IAR) for modules, which means that you may not always need to Init MSSQL for a specific module.  You should refer to the module references to understand when updates to MSSQL or Solr are required.  If you have made changes to the Solr or MSSQL images locally, this likely means you'll need to make the same changes to push these to your MCC environment.  Keeping in mind that Solr and MSSQL are not run within containers in a MCC environment.
 
   - [Sitecore Module References](https://doc.sitecore.com/xp/en/developers/102/developer-tools/sitecore-module-reference.html )
   - [Sitecore Items as Resources](https://community.sitecore.com/community?id=community_blog&sys_id=52751abc1bd44110b8954371b24bcb31)
