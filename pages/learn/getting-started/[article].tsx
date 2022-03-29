@@ -1,5 +1,5 @@
 // Scripts
-import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
+import { getPageContent, getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 import { getGettingStartedPaths, getIntegrationPaths } from '@/scripts/static-paths';
 // Interfaces
 import type { PageInfo, PartialData } from '@/interfaces/page-info';
@@ -26,7 +26,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const pageInfo = await getPageInfo(`learn/getting-started/${context?.params?.article}`);
-  const partials = pageInfo?.partials ? await getPartialsAsArray(pageInfo.partials) : [];
+  
+  //Load page content if available. If not, load page partials. Supports simple articles with only single page Markdown file and no partials
+  const partials = pageInfo?.content ? await getPageContent(pageInfo)
+    : pageInfo?.partials ? await getPartialsAsArray(pageInfo.partials)
+    : [];
 
   return {
     props: {

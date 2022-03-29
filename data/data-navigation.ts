@@ -154,7 +154,7 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Sitecore Discover',
             url: '/commerce/discover',
-          }
+          },
         ],
       },
       {
@@ -190,6 +190,10 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Developer Collection',
             url: '/devops/developer-collection',
+          },
+          {
+            title: 'Managed Cloud',
+            url: '/devops/managed-cloud',
           },
         ],
       },
@@ -253,6 +257,10 @@ const NavigationData: NavigationData[] = [
             url: '/devops/developer-collection',
           },
           {
+            title: 'Managed Cloud',
+            url: '/devops/managed-cloud',
+          },
+          {
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx',
             external: true,
@@ -273,6 +281,10 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Personalization and Testing',
             url: '/personalization-testing/experience-platform',
+          },
+          {
+            title: 'Managed Cloud',
+            url: '/devops/managed-cloud',
           },
           {
             title: 'Downloads',
@@ -320,6 +332,10 @@ const NavigationData: NavigationData[] = [
             url: '/commerce/experience-commerce',
           },
           {
+            title: 'Managed Cloud',
+            url: '/devops/managed-cloud',
+          },
+          {
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx',
             external: true,
@@ -333,9 +349,9 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Data driven product discovery',
             url: '/commerce/discover',
-          }
-        ]
-      }
+          },
+        ],
+      },
     ],
   },
 ];

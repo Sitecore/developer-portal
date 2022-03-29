@@ -61,6 +61,7 @@ export type PageInfo = PageInfoCore & {
   sitecoreCommunityQuestionsCategory?: ForumOption | ForumOption[];
   promoBefore: string[];
   promoAfter: string[];
+  content?: string;
 };
 
 export type ChildPageInfo = {
