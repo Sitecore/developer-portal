@@ -53,7 +53,9 @@ export const getPageInfo = async (
   arg: string | ProductSolutionContextParams
 ): Promise<PageInfo | null> => {
   const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
-  const meta = getFileData(pagesDirectory, `${file}/index`).data as MarkdownMeta;
+  const fileData = getFileData(pagesDirectory, `${file}/index`);
+  const meta = fileData.data as MarkdownMeta;
+  const content = fileData.content;
   const fileName = `${repoUrl}/data/markdown/pages/${file}/index.md`;
   const pageInfo = {
     // Default hasInPageNav to true, overwrite with false in md
@@ -64,6 +66,7 @@ export const getPageInfo = async (
     twitter: [],
     sitecoreCommunity: {},
     fileName: fileName,
+    content: content,
   } as PageInfo;
 
   /**
@@ -180,6 +183,24 @@ export const getPartialsAsArray = async (partials: string[]): Promise<PartialDat
     fileNames.push(fileName);
     titles = titles.concat(getTiltesFromContent(data.content));
   });
+
+  return {
+    content,
+    titles,
+    fileNames,
+  };
+};
+
+export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> => {
+  const content: string[] = [];
+  let titles: string[] = [];
+  let fileNames: string[] = [];
+
+  if (pageInfo.content) {
+    content.push(pageInfo.content);
+    fileNames.push(pageInfo.fileName);
+    titles = titles.concat(getTiltesFromContent(pageInfo.content));
+  }
 
   return {
     content,
