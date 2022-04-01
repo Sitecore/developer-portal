@@ -1,15 +1,15 @@
 import type { PromoCardProps } from '@/components/cards/PromoCard';
 
 const data: PromoCardProps = {
-  title: 'Sitecore Usergroup Conference',
+  title: 'Virtual Developer Day',
   description:
-    'Join us at the largest Sitecore Community event in Budapest, Hungary on March 24th-25th. With over 40 speakers from around the world and over 30 sessions. You can expect two full days of knowledge sharing, networking, presentations, and more.',
+    "This April 13th 2022 sharpen your Sitecore dev skills by registering for 24 hours of developer-led sessions and camaraderie with Sitecore’s global developer community and MVPs. Don't miss out on technical tips, tips based on the latest technology, and much more! Register today for free!",
   img: {
-    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/183a76300b1c4d68aafd2b5a308cad33?v=8700fe41',
+    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/2e10a5a7d825482f9e23c096c79f7635?v=dd90b9b6',
   },
   link: {
-    href: 'https://sugcon2022.rentit.hu/',
-    text: 'Get tickets now!',
+    href: 'https://www.sitecore.com/company/news-events/events/2022/03/virtual-developer-day',
+    text: 'Join for free!',
   },
 };
 
