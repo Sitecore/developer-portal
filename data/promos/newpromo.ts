@@ -3,13 +3,13 @@ import type { PromoCardProps } from '@/components/cards/PromoCard';
 const data: PromoCardProps = {
   title: 'Virtual Developer Day',
   description:
-    "This April 13th 2022 sharpen your Sitecore dev skills by registering for 24 hours of developer-led sessions and camaraderie with Sitecore’s global developer community and MVPs. Don't miss out on technical tips, tips based on the latest technology, and much more! Register today for free!",
+    "Did you miss the Virtual Developer Day? You can watch it now on YouTube! Sharpen your Sitecore dev skills with over 8 hours of developer-led sessions from Sitecore’s global developer community and MVPs. Don't miss out on technical tips, tips based on the latest technology, and much more!",
   img: {
-    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/2e10a5a7d825482f9e23c096c79f7635?v=dd90b9b6',
+    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868',
   },
   link: {
-    href: 'https://www.sitecore.com/company/news-events/events/2022/03/virtual-developer-day',
-    text: 'Join for free!',
+    href: 'https://www.youtube.com/watch?v=fkXZEYxKnGY',
+    text: 'Watch now!',
   },
 };
 
