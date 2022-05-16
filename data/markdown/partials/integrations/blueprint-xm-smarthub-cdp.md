@@ -9,7 +9,7 @@ The purpose of this document is to analyze the integration blueprint for joining
 
 This will detail how to provide the customers with a standard way to integrate their Sitecore XM instance with Sitecore SmartHub CDP, allowing them to quickly integrate these products in a future proof way and getting them to start on the process of migrating to the Composable DXP.
 
-The integration will allow you to push interaction data from a website built using Sitecore XM into Sitecore SmartHub CDP. After this process, you can use Sitecore SmartHub CDP to then build personalized & optimized experiences to be delivered on your web channel. Note that Sitecore SmartHub CDP is a combination of two products, Sitecore Personalize and Sitecore SmartHub CDP. This document will cover how to integrate Sitecore XM with both of those products.
+The integration will allow you to push interaction data from a website built using Sitecore XM into Sitecore SmartHub CDP. After this process, you can use Sitecore SmartHub CDP to then build personalized & optimized experiences to be delivered on your web channel. Note that Sitecore SmartHub CDP is a combination of two products, Sitecore Personalize and Sitecore CDP. This document will cover how to integrate Sitecore XM with both of those products.
 
 You can see the products involved in said integration highlighted below:
 
