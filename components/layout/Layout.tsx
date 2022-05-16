@@ -8,7 +8,6 @@ import type { PageInfo } from '@/interfaces/page-info';
 // Lib
 import htmlConfig from '@/lib/html-constants';
 const { idMainContent } = htmlConfig;
-import { useGlobalState } from '@/lib/global-state';
 // Components
 import Hero from '@/components/heros/Hero';
 
@@ -28,8 +27,6 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
   const { asPath } = router;
   const path = asPath.split(/[?#]/)[0];
   const mainContentRef = useRef<HTMLAnchorElement>(null);
-
-  const [navScrolled] = useGlobalState('navScrolled');
 
   // Set focus on the contain <main> element on route changes.
   useIsomorphicLayoutEffect(() => {

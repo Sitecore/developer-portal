@@ -1,1 +1,49 @@
-{}
+{
+  "title": "Title",
+  "description": "",
+  "content": [
+    {
+      "title": "Let your voice be heard",
+      "copy": "Register to participate in Sitecore's user feedback community and have the opportunity to shape and guide Sitecore products during the design process.",
+      "image": "/images/newsletter/sample-newsletter-image.png",
+      "link": {
+        "text": "Register now",
+        "href": "/images/newsletter/sample-newsletter-image.png"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Connector and App Marketplace",
+      "copy": "Choose from a host of powerful, pre-built connectors and apps from Sitecore and our ecosystem partners that extend Sitecore, and make weaving it into your business easy, fast, and flexible.",
+      "image": "/images/newsletter/sample-newsletter-image.png",
+      "link": {
+        "href": "https://www.sitecore.com/help-us-build-products"
+      }
+    },
+    {
+      "title": "A SUGCON Recap",
+      "copy": "Find out information revealed at SUGCON 2022 such as Sitecore XM Cloud, a SaaS version of Sitecore XM for headless use, and more!  ",
+      "image": "/images/newsletter/sample-newsletter-image.png",
+      "link": {
+        "href": "https://www.sitecore.com/help-us-build-products"
+      }
+    },
+    {
+      "title": "Standing up a Sitecore 10.1.1 instance with SXA and JSS using Docker",
+      "copy": "Learn how to customize the docker examples repository to allow it to include both SXA and JSS with Headless service v16.0.",
+      "image": "/images/newsletter/sample-newsletter-image.png",
+      "link": {
+        "href": "https://www.sitecore.com/help-us-build-products"
+      }
+    },
+    {
+      "title": "Thoughts and Takeaways from SUGCON",
+      "copy": "Find out all about this attendee's experience, thoughts, and takeaways from SUGCON 2022.",
+      "image": "/images/newsletter/sample-newsletter-image.png",
+      "link": {
+        "href": "https://www.sitecore.com/help-us-build-products"
+      },
+      "variant": "full-width"
+    }
+  ]
+}

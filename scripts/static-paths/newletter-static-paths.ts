@@ -6,13 +6,12 @@ type NewsletterPathParams = {
   month: string;
 };
 
-type NewsletterPath = { params: NewsletterPathParams };
+export type NewsletterPath = { params: NewsletterPathParams };
 
 export const NEWSLETTER_DATA_DIRECTORY = path.join(process.cwd(), 'data/newsletters/');
 
 export const getNewsletterStaticPaths = (): NewsletterPath[] => {
   const years = fs.readdirSync(NEWSLETTER_DATA_DIRECTORY);
-  console.log(years);
 
   const paths: NewsletterPath[] = [];
 
