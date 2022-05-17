@@ -51,7 +51,7 @@ export const getStaticProps: GetStaticProps<NewsletterContentPageProps> = async 
   props.month = month;
   props.year = year;
 
-  props.paths = getNewsletterStaticPaths();
+  props.paths = getNewsletterStaticPaths().slice(0, 12);
 
   props.pageInfo = {
     title: props.title,
