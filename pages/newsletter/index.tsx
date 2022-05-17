@@ -6,11 +6,18 @@ import { GetStaticProps, NextPage } from 'next';
 import { NEWSLETTER_DATA_DIRECTORY } from '@/scripts/static-paths/newletter-static-paths';
 import { PageInfo } from '@/interfaces/page-info';
 import { getPageInfo } from '@/scripts/page-info';
+// Lib
+import { getNewsletterTitle } from '@/lib/newsletter/get-newsletter-title';
+import { translateDateAsYearMonth } from '@/lib/translate-date';
 // Components
 import CategoryTileList from '@/components/lists/CategoryTileList';
 import Container from '@/components/helper/Container';
 import Layout from '@/components/layout/Layout';
 import { CategoryTileProps } from '@/components/cards/CategoryTile';
+import VerticalGroup from '@/components/helper/VerticalGroup';
+import PromoCard from '@/components/cards/PromoCard';
+// Data
+import newsletterPromo from '@/data/promos/newsletter';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];
@@ -37,10 +44,15 @@ export const getStaticProps: GetStaticProps = async () => {
         const { title, description } = JSON.parse(
           fs.readFileSync(path.resolve(yearPath, `${month}`), { encoding: 'utf-8' })
         );
+
+        const monthWithoutFile = month.substring(0, 2);
         newsletters.push({
-          title,
+          title: getNewsletterTitle(
+            translateDateAsYearMonth(`${year}-${monthWithoutFile}-03`),
+            title
+          ),
           description,
-          href: `newsletter/${year}/${month.substring(0, 2)}`,
+          href: `newsletter/${year}/${monthWithoutFile}`,
         });
 
         if (newsletters.length === MAX_RESULTS) {
@@ -66,9 +78,15 @@ const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }
   return (
     <Layout pageInfo={pageInfo}>
       <Container>
-        <ul className="mt-8">
-          <CategoryTileList cards={newsletters} headingLevel="h2" />
-        </ul>
+        <VerticalGroup>
+          <PromoCard {...newsletterPromo} />
+          <div>
+            <h2 className="heading-md">Previous newsletters</h2>
+            <ul className="mt-8">
+              <CategoryTileList cards={newsletters} headingLevel="h2" />
+            </ul>
+          </div>
+        </VerticalGroup>
       </Container>
     </Layout>
   );

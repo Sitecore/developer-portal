@@ -15,6 +15,7 @@ import NewsletterNav from '@/components/newsletter/NewsletterNav';
 import Layout from '@/components/layout/Layout';
 import { PageInfo } from '@/interfaces/page-info';
 import { translateDateAsYearMonth } from '@/lib/translate-date';
+import { getNewsletterTitle } from '@/lib/newsletter/get-newsletter-title';
 
 export interface NewsletterContentPageProps {
   content: NewsletterStoryData[];
@@ -53,10 +54,13 @@ export const getStaticProps: GetStaticProps<NewsletterContentPageProps> = async 
 
   props.paths = getNewsletterStaticPaths().slice(0, 12);
 
+  // Set the dates as the 3rd of each month to avoid having to deal with timezones rolling it backwards
+  const dateAsYearMonth = translateDateAsYearMonth(`${year}-${month}-03`);
+
   props.pageInfo = {
-    title: props.title,
+    title: getNewsletterTitle(dateAsYearMonth, props.title),
     description: props.description,
-    pageTitle: `Newsletter - ${translateDateAsYearMonth(`${year}-${month}-01`)}`,
+    pageTitle: `Newsletter - ${dateAsYearMonth}`,
     hasInPageNav: false,
     youtube: [],
     stackexchange: [],
@@ -79,7 +83,7 @@ const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({
       <Container>
         <div className="grid gap-6 mt-8 md:grid-cols-4">
           <NewsletterNav paths={paths} />
-          <div className="grid gap-8 md:grid-cols-3 col-span-3">
+          <div className="grid gap-10 md:grid-cols-3 col-span-3">
             {content.map((story) => (
               <NewsletterStory {...story} key={story.title} />
             ))}

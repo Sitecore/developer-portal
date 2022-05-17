@@ -14,7 +14,8 @@ const NewsletterNav = ({ paths }: NewsletterNavProps) => {
     .map((item) => ({
       month: parseInt(item.params.month, 10),
       year: parseInt(item.params.year, 10),
-      text: translateDateAsYearMonth(`${item.params.year}-${item.params.month}-01`),
+      // Set the dates as the 3rd of each month to avoid having to deal with timezones rolling it backwards
+      text: translateDateAsYearMonth(`${item.params.year}-${item.params.month}-03`),
       href: `/newsletter/${item.params.year}/${item.params.month}`,
     }))
     .sort((a, b) => {
