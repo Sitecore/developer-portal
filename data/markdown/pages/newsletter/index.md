@@ -1,4 +1,4 @@
 ---
-title: 'Newsletters'
+title: 'Developer Newsletter'
 hasInPageNav: false
 ---
