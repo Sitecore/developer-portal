@@ -19,6 +19,7 @@ type PageInfoCore = {
   title: string;
   pageTitle?: string;
   fileName: string;
+  hideHero?: boolean;
 };
 
 // Input for 3rd party integrations are just strings

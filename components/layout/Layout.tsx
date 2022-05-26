@@ -123,11 +123,14 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           aria-live="polite"
           aria-atomic="true"
         >{`The ${pageInfo.title} page has loaded.`}</div>
-        <Hero
-          title={pageInfo.title}
-          description={pageInfo.description}
-          image={pageInfo.heroImage}
-        />
+        {!pageInfo.hideHero && (
+          <Hero
+            title={pageInfo.title}
+            description={pageInfo.description}
+            image={pageInfo.heroImage}
+          />
+        )}
+
         {children}
       </main>
     </div>
