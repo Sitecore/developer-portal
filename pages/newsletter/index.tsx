@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
     for (let i = 0; i < years.length; i++) {
       const year = years[i];
       const yearPath = path.resolve(NEWSLETTER_DATA_DIRECTORY, `${year}`);
-      const months = fs.readdirSync(yearPath).sort();
+      const months = fs.readdirSync(yearPath).sort().reverse();
       for (let j = 0; j < months.length; j++) {
         const month = months[j];
         const { title, description } = JSON.parse(
