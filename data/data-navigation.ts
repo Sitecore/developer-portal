@@ -62,6 +62,48 @@ const NavigationData: NavigationData[] = [
   {
     title: 'Community',
     url: '/community',
+    children: [
+      {
+        title: 'Community overview',
+        url: '/community',
+        children: [
+          {
+            title: 'News and Announcements',
+            url: 'https://community.sitecore.com/community?id=community_forum&sys_id=af85dddf1bf17810486a4083b24bcb00',
+            external: true,
+          },
+          {
+            title: 'Forums',
+            url: 'https://community.sitecore.com',
+            external: true,
+          },
+          {
+            title: 'Blog',
+            url: 'https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba',
+            external: true,
+          },
+          {
+            title: 'MVP Program',
+            url: 'https://mvp.sitecore.com',
+            external: true,
+          },
+        ],
+      },
+      {
+        title: 'Newsletter',
+        url: '/newsletter',
+        children: [
+          {
+            title: 'Latest edition',
+            url: '/newsletter/latest',
+          },
+          {
+            title: 'Archive',
+            url: '/newsletter',
+          },
+        ],
+      },
+    ],
   },
   {
     title: 'Discover',
