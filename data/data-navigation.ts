@@ -61,7 +61,6 @@ const NavigationData: NavigationData[] = [
   },
   {
     title: 'Community',
-    url: '/community',
     children: [
       {
         title: 'Community overview',
