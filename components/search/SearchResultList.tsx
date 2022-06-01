@@ -76,6 +76,14 @@ const SearchResultList = () => {
     resultsSort.sortBy(sortOptions[val] as SortCriterion);
   };
 
+  if (!querySummaryState.hasResults) {
+    return (
+      <div>
+        <p>No results found.</p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="border-b border-theme-border flex justify-between items-center text-sm">

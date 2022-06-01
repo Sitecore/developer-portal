@@ -24,9 +24,7 @@ const SearchPagination = () => {
     pager.selectPage(page);
   };
 
-  console.log(pagerState);
-
-  if (!pagerState) {
+  if (!pagerState || pagerState.maxPage === 0) {
     return <></>;
   }
 
