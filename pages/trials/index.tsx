@@ -10,8 +10,6 @@ import GenericContentPage from '@/components/layout/GenericContentPage';
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('trials');
 
-  console.log(pageInfo);
-
   const trials = await getPartialsAsArray([
     'trials/frontend',
     'trials/ordercloud',

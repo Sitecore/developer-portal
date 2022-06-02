@@ -1,0 +1,107 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "What’s new on the Developer Portal   ",
+      "copy": "Since the launch in October 2021, we have been continuously updating the Developer Portal to bring you more functionality and easier ways to find information. Discover what has been released so far since launch.",
+      "image": "https://go.sitecore.com/l/857953/2022-05-22/j4p2wk/857953/1653264101mFVZfaqZ/1.png",
+      "link": {
+        "text": "Read more",
+        "href": "https://go.sitecore.com/e/857953/fc4aa91bfa451038a46421b24bcbcd/j4rs1c/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Setup Sitecore OrderCloud-Series",
+      "copy": "Learn how to setup Sitecore OrderCloud using Azurite, Azure services, Seller UI, and much more in this 3 part series.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clzfg7/857953/1642791021PUAcmvsn/6.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/loud-headstart-project-series-/j4rs1g/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      }
+    },
+    {
+      "title": "How to Integrate Sitecore CDP on your site",
+      "copy": "Find out how you can get started with Sitecore CDP and the different ways to get Sitecore CDP running on your site.",
+      "image": "https://go.sitecore.com/l/857953/2022-05-22/j4p2wn/857953/1653264140cptwz5TZ/5.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/rate-sitecore-cdp-on-your-site/j4rs1k/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      }
+    },
+    {
+      "title": "Understanding Containerization and Docker",
+      "copy": "Learn about everything you need to know about containers and docker in simple words and great memes.",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc2w/857953/1650590313tUyZoKqL/4.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/2-containerization-and-docker-/j4rs1n/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      }
+    },
+    {
+      "title": "A few words from Dave O'Flanagan to the Sitecore Community",
+      "copy": "At SUGCON Europe 2022, we had the opportunity to sit down with Dave O’Flanagan, CPO at Sitecore, and ask him some questions about his overall experience. Find out what he had to say about SUGCON, the Sitecore Community, and more!",
+      "image": "https://go.sitecore.com/l/857953/2022-05-22/j4p5jc/857953/1653265535z65zzSzi/Untitled_design__6_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/watch-v--ZMFIzB-5Dw/j4rs1r/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Sitecore CDP – Audience Sync Templates",
+      "copy": "Learn all about audience sync, an export feature that is found on Sitecore CDP. This tool can help reduce imprudent prospecting, create exclusion lists, and more!",
+      "image": "https://go.sitecore.com/l/857953/2022-05-22/j4nw78/857953/1653263423AhaIINyk/Untitled_design__2_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/about-audience-sync-templates-/j4rs1v/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      }
+    },
+    {
+      "title": "Sitecore Personalize and potential integration scenarios",
+      "copy": "Explore potential scenarios when integrating Sitecore Personalize with your Martech landscape. What can be the simplest, the fastest solution, and what can bring in the full capabilities integrating customer profiles, behaviours and history!",
+      "image": "https://go.sitecore.com/l/857953/2022-05-22/j4p2wg/857953/1653264037zyP4bKLb/7.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/f2a5261bdbc11438a46421b24bcbe0/j4rs1y/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      }
+    },
+    {
+      "title": "Three Practical Use Cases for Vercel Edge Functions",
+      "copy": "Learn a quick overview of what edge functions are along with some practical examples where you can use edge functions to enhance your web apps.",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc3w/857953/165059035778fddTCb/2.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/posts-vercel-edge-use-cases/j4rs22/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      }
+    },
+    {
+      "title": "Sitecore Architect's Guide to SaaS Migration",
+      "copy": "Composable DXP is all the rage, but how do you gradually move your existing Sitecore architecture over to something that is MACH and headless? Learn XM/XP scenarios for gradually migrating.",
+      "image": "https://go.sitecore.com/l/857953/2022-05-22/j4p4s5/857953/1653264825PLTEDgMa/Untitled_design__4_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=ZTjk5t9dfRQ"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "How to deploy Sitecore XP on Amazon Web Services (AWS)",
+      "copy": "In this Quick Start, learn how to deploy a multirole architecture into individual Auto ails. Scaling groups to ensure recoverability when an instance",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc3z/857953/1650590422llZE5ZMn/3.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/tart-architecture-sitecore-xp-/j4rs25/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      }
+    },
+    {
+      "title": "Introduction to the GIT CLI – Simple Commands",
+      "copy": "Check out this guide and learn the basic steps needed to clone, add and commit changes to source control, using the CLI.",
+      "image": "https://go.sitecore.com/l/857953/2022-05-22/j4p2qn/857953/1653263944IioRwgi6/8.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/o-the-git-cli-simple-commands-/j4rs28/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      }
+    },
+    {
+      "title": "My first play with Sitecore’s XM, Personalize, & Content Hub DAM",
+      "copy": "Surely you have used the individual components of Sitecore’s offering, but have you tried using all three at once? Find out how this backend developer's experience went!",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clz893/857953/1642790291GGtnLzVb/Untitled_design__4_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/m-personalize-content-hub-dam-/j4rs2c/343282660?h=DJAJlPdxmNwftXnZUxMx5NCg4h9L-QdzE78YvGiHE0A"
+      }
+    }
+  ]
+}

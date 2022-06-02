@@ -1,0 +1,114 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Let your voice be heard",
+      "copy": "Register to participate in Sitecore's user feedback community and have the opportunity to shape and guide Sitecore products during the design process.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clz1h3/857953/1642788522nFFQCGEA/Untitled_design.png",
+      "link": {
+        "text": "Register now",
+        "href": "https://go.sitecore.com/e/857953/help-us-build-products/ggxqxl/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Connector and App Marketplace",
+      "copy": "Choose from a host of powerful, pre-built connectors and apps from Sitecore and our ecosystem partners that extend Sitecore, and make weaving it into your business easy, fast, and flexible.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clzfg7/857953/1642791021PUAcmvsn/6.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/products-marketplace/ggxqxp/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      }
+    },
+    {
+      "title": "A SUGCON Recap",
+      "copy": "Find out information revealed at SUGCON 2022 such as Sitecore XM Cloud, a SaaS version of Sitecore XM for headless use, and more!  ",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc46/857953/1650590548nVZear6C/6.png",
+      "link": {
+        "href": "http://www.stockpick.nl/sitecore/sugcon-europe-2022-recap/"
+      }
+    },
+    {
+      "title": "Standing up a Sitecore 10.1.1 instance with SXA and JSS using Docker",
+      "copy": "Learn how to customize the docker examples repository to allow it to include both SXA and JSS with Headless service v16.0.",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc2w/857953/1650590313tUyZoKqL/4.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/with-sxa-and-jss-using-docker-/ggxqxw/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      }
+    },
+    {
+      "title": "Thoughts and Takeaways from SUGCON",
+      "copy": "Find out all about this attendee’s experience, thoughts, and takeaways from SUGCON 2022.",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc43/857953/1650590508NzhU2KY3/7.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/ugcon-2022-thoughts-takeaways-/ggxqxz/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      }
+    },
+    {
+      "title": "A React Sitecore Personalize NPM Module",
+      "copy": "Learn how to easily script to react-based apps. This is great for developers that are new to React or Next.js and are learning how to integrate Sitecore Personalize by providing a simple wrapper for the direct client script.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clywyh/857953/1642788130zta2AulB/1.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/tecore-personalize-npm-module-/ggxqy3/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      }
+    },
+    {
+      "title": "Getting Started with Sitecore Managed Cloud with Containers ",
+      "copy": "Check out this guide covering existing documentation and  getting started with Managed Cloud with Containers (MCC). This guide is broken down into multiple sections",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc3w/857953/165059035778fddTCb/2.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/-managed-cloud-with-containers/ggxqy6/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      }
+    },
+    {
+      "title": "Sitecore Virtual Developer Day 2022 ",
+      "copy": "Virtual Developer Day is back for its 5th year of technical learning and community camaraderie. Get free access to technical talks and tips.",
+      "image": "https://go.sitecore.com/l/857953/2021-11-28/b32pcl/857953/16381453604FGm7vNO/Untitled_design__2_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://go.sitecore.com/e/857953/watch-v-fkXZEYxKnGY/ggxqy9/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Sitecore CDP Vs. Personalize Vs. Smart Hub CDP",
+      "copy": "Check out part 1 of a series which will cover the Sitecore CDP family products features, business benefits, and technical highlights.",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc3z/857953/1650590422llZE5ZMn/3.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/fdc45d1bb6811038a46421b24bcbb7/ggxqyd/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      }
+    },
+    {
+      "title": "OrderCloud Setup Series",
+      "copy": "Learn how to setup Sitecore OrderCloud Headstart Project series.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clywyh/857953/1642788130zta2AulB/1.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/loud-headstart-project-series-/ggxqyh/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      }
+    },
+    {
+      "title": "Transitioning from Sitecore XC to OrderCloud: Tax and Payments",
+      "copy": "Learn about the high-level comparison of architecture, functionality, and data models, in relation to tax and payments between XC and OrderCloud.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clywxm/857953/1642788100YsC12YCI/2.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/bc66421bb6c91038a46421b24bcb35/ggxqyp/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      }
+    },
+    {
+      "title": "Sitecore Lucene to SOLR Index Upgrade Tips",
+      "copy": "This guide covers the things you need to do other than installing the SOLR server.",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc4d/857953/1650590749qyWfndzE/2.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/ne-to-solr-index-upgrade-tips-/ggxqys/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      }
+    },
+    {
+      "title": "Monitoring Sitecore on AKS – Grafana Data Sources Configuration",
+      "copy": "Learn how to enhance and configure Grafana data sources to collect metrics from internal and external AKS cluster resources, and much more.",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc49/857953/1650590589RLbkfZrH/5.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/ion-and-dashboards-collection-/ggxqyw/324330941?h=tVbGp7NTMsjgDr0DVo9_zaZi-cpsiJasGg21NaSC37M"
+      }
+    }
+  ]
+}
