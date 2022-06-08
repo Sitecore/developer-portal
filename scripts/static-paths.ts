@@ -5,13 +5,18 @@ import path from 'path';
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
 const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
 const trialPagesDirectory = path.join(process.cwd(), 'data/markdown/pages/trials/');
-const gettingStartedDirectory = path.join(process.cwd(), 'data/markdown/pages/learn/getting-started/');
+const gettingStartedDirectory = path.join(
+  process.cwd(),
+  'data/markdown/pages/learn/getting-started/'
+);
+const faqDirectory = path.join(process.cwd(), 'data/markdown/pages/learn/faq/');
 const TrialDirectory = path.join(process.cwd(), 'data/trials');
 
 type SolutionPaths = { params: { solution: string } };
 type ProductPaths = { params: { product: string; solution: string } };
 type IntegrationPaths = { params: { integration: string } };
 type GettingStartedPaths = { params: { article: string } };
+type MultiPageArticlePaths = { params: { article: string; page?: string } };
 type TrialPaths = { params: { trial: string } };
 type TrialNavPaths = { params: TrialNavContext };
 
@@ -43,6 +48,26 @@ export const getIntegrationPaths = async (): Promise<IntegrationPaths[]> => {
 export const getGettingStartedPaths = async (): Promise<GettingStartedPaths[]> => {
   const files = fs.readdirSync(gettingStartedDirectory);
   return files.map((file) => ({ params: { article: file } }));
+};
+
+export const getFaqPaths = async (): Promise<MultiPageArticlePaths[]> => {
+  const files = fs.readdirSync(faqDirectory);
+  const paths: MultiPageArticlePaths[] = [];
+
+  files.forEach((file) => {
+    const childPages = fs.readdirSync(path.join(faqDirectory, file));
+    var filteredArray = childPages.filter(function (e) {
+      return e !== 'manifest.json';
+    });
+
+    filteredArray.forEach((childPage) => {
+      // use filename without extension
+      let childName = childPage.split('.')[0];
+      paths.push({ params: { article: file, page: childName } });
+    });
+  });
+
+  return paths;
 };
 
 export const getTrialsPaths = async (): Promise<TrialPaths[]> => {

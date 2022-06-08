@@ -105,3 +105,25 @@ export type TrialNavData = {
   description?: string;
   nav: TrialNavParent[];
 };
+
+export type CustomNavContext = {
+  parent: string;
+  article: string;
+  page: string;
+};
+
+type CustomNavChild = {
+  title: string;
+  slug: string;
+};
+
+export type CustomNavRoute = {
+  title: string;
+  path: string;
+  children?: CustomNavRoute[];
+};
+
+export type CustomNavData = {
+  title: string;
+  routes: CustomNavRoute[];
+};
