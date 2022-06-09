@@ -45,7 +45,6 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
   //const activeParent = navData.routes.find((parent) => parent.path === router.asPath);
   //const activeChild = activeParent?.routes.find((child) => child.slug === context.params.child);
   const activeItem = navData.routes.find((x) => x.path == context.params.page);
-  console.log(activeItem);
 
   //Load page content if available. If not, load page partials. Supports simple articles with only single page Markdown file and no partials
   const partials = pageInfo?.content
