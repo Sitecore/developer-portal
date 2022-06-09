@@ -1,5 +1,6 @@
 ---
 title: 'Features'
+hasInPageNav: true
 ---
 
 

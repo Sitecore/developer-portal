@@ -1,4 +1,7 @@
-# Development
+---
+title: 'Development'
+hasInPageNav: true
+---
 
 **What technology stack do we need to build sites in XP2XMP?**
 

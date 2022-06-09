@@ -1,5 +1,7 @@
-
-# Managed Cloud
+---
+title: 'Managed Cloud'
+hasInPageNav: true
+---
 
 **Going to XP2XMP requires also switch to Managed Cloud?**
 

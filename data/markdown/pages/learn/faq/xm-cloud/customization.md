@@ -1,4 +1,7 @@
-# Customization
+---
+title: 'Customization'
+hasInPageNav: true
+---
 
 **Can I extend XP2XMP websites using my existing .NET MVC component library?**
 

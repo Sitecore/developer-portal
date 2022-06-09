@@ -1,5 +1,7 @@
-# Scaling and Availability
-
+---
+title: 'Scaling and Availability'
+hasInPageNav: true
+---
 **I need my data to be onshore to match local data sovereignty laws. What regions are available where all products included are hosted locally?**
 
 The XP2XMP product bundle allows customers to deploy Sitecore Experience Manager in their own Cloud or in Sitecore Managed Cloud. When using Experience Manager with Sitecore Managed Cloud and Sitecore Personalize, customers may choose to store data in these regions:

@@ -15,6 +15,7 @@ const MultiPageNav = ({ context, navData, root }: MultiPageNavProps): JSX.Elemen
 
   return (
     <nav>
+      <h3 className="mb-4">{navData.title}</h3>
       <ul className={classnames('side-bar-nav', 'relative', 'pl-1.5')}>
         {navData.routes.map((route) => {
           const isActive = context.page === route.path;
@@ -22,7 +23,9 @@ const MultiPageNav = ({ context, navData, root }: MultiPageNavProps): JSX.Elemen
           return (
             <li
               key={route.title}
-              className={classnames('side-bar-nav-item', 'pb-4', 'relative', 'pl-4')}
+              className={classnames('side-bar-nav-item', 'pb-4', 'relative', 'pl-4', {
+                current: isActive,
+              })}
             >
               <Link href={buildUrl(context.article, route.path)}>
                 <a

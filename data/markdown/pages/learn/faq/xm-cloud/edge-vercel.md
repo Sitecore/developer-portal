@@ -1,6 +1,7 @@
-
-# Edge &amp; Vercel
-
+---
+title: 'Edge & Vercel'
+hasInPageNav: true
+---
 **Will changing my infrastructure to use Edge+Vercel instead of CDs, secure that my application won&#39;t require further changes when moving into XM Cloud?**
 
 This will not necessarily secure the application by default. When moving to SaaS there are some components of the Sitecore XM Solution that the customer will have to give up control over to move to SaaS. So, no.

@@ -1,5 +1,7 @@
-# Personalize &amp; CDP
-
+---
+title: 'Personalize & CDP'
+hasInPageNav: true
+---
 **What is the key difference between the real-time data platform available in Sitecore Personalize vs. Sitecore CDP?**
 
 Sitecore Personalize has a lightweight version of the CDP engine. This means we are identifying users, building profiles, and storing states across a limited number of sessions. This also means that if customers want to upgrade to a full CDP with Personalize we can do that with a flick of a switch. With the lightweight CDP in Sitecore Personalize though, there is no access to the customer profile directly or segmentation or data export - you need CDP to do this.

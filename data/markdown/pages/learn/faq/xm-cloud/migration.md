@@ -1,3 +1,7 @@
+---
+title: 'Migration'
+hasInPageNav: true
+---
 # Upgrades
 
 **Is there a 'better together story' with Experience Edge + Personalize here? If so, can we get the high-level positioning to simplify to clearly outline?**

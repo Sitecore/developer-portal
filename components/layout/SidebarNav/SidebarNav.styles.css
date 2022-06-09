@@ -36,4 +36,7 @@
     background-color: theme('colors.violet.DEFAULT');
     border-color: theme('colors.violet.DEFAULT');
   }
+  .side-bar-nav-item.current:after {
+    background-color: theme('colors.theme-border');
+  }
 }
