@@ -45,46 +45,31 @@ The Sitecore Managed Cloud, XP, XM, and Content Hub products will be HIPAA READY
 
 Listing features in Sitecore XP and showing parity or comparable features in Sitecore Personalize.
 
-| Sitecore XP  | Sitecore Personalize  |
+| Sitecore XP | Sitecore Personalize |
 | --- | --- |
-|**Marketing Automation** Enroll contacts in automation campaigns. Evaluate contacts based on defined rules. Perform various marketing actions for individual contacts.  |**Decisioning**  Manage complex decisions using business rules to return the next best action or offer. Use analytical models and data systems for maximum impact, through connections. Immediately test decision model variants from the canvas - an agile methodology from design, test to production. Access full revision history and easily revert decision model variants. **Triggered experiences**  Personalized content sent as an HTTP GET or POST request against a connection to a predefined REST endpoint to an ESP, SMS/Push service provider, or other destination.  |
+|**Marketing Automation** <br /> Enroll contacts in automation campaigns. Evaluate contacts based on defined rules. Perform various marketing actions for individual contacts.  |**Decisioning** Manage complex decisions using business rules to return the next best action or offer. Use analytical models and data systems for maximum impact, through connections. Immediately test decision model variants from the canvas - an agile methodology from design, test to production. Access full revision history and easily revert decision model variants. 
+ |  | **Triggered experiences**  Personalized content sent as an HTTP GET or POST request against a connection to a predefined REST endpoint to an ESP, SMS/Push service provider, or other destination.  |
 |**Sitecore Forms**  Build web forms that record, and report information provided by contacts View form performance and analyze the results. WYSWYG form designer  |**Web Experiences**  A web experience is an offer, next best action, operational message, or any other customer experience that can run on the web or be deployed into a web-based application. Test and preview a web experience OOB extensible web templates as a code-free for web personalization.  You can create experiences yourself using HTML, CSS, and JavaScript,  Monitor live experiences performance through operational metrics. Optionally enroll experience in an A/B test or associate a decision model  |
-|**Marketing taxonomies**  Define/apply taxonomy tags to identify**campaigns** ,**referring channels** , and other information about marketing activities  |**Send tracking data to Sitecore Personalize**  **Stream APIs** allows sending events and storing custom data. Sitecore Personalize enables you to capture tracking data when you send a**VIEW event**.   |
-|**Marketing Operations**  Organize your marketing activities in a structured way. You can create and define**campaigns** ,**goals** ,**events** ,**content profiling** , and**outcomes** in the Marketing Control Panel.  |**Goals For Experiments**  Goals measure variant performance. Goals can be of type: view, revenue, or custom goals. Other attributes such can be sent as custom attributes to a session, event, or a guest data through**Stream APIs**   |
+|**Marketing taxonomies**  Define/apply taxonomy tags to identify **campaigns** ,**referring channels**, and other information about marketing activities  |**Send tracking data to Sitecore Personalize**  **Stream APIs** allows sending events and storing custom data. Sitecore Personalize enables you to capture tracking data when you send a **VIEW event**.   |
+|**Marketing Operations**  Organize your marketing activities in a structured way. You can create and define**campaigns** ,**goals** ,**events** ,**content profiling** , and **outcomes** in the Marketing Control Panel.  |**Goals For Experiments**  Goals measure variant performance. Goals can be of type: view, revenue, or custom goals. Other attributes such can be sent as custom attributes to a session, event, or a guest data through **Stream APIs**   |
 |**Personalization**  Displaying targeted, relevant content to your contacts based on their characteristics and behavior  |**Web/ Full Stack Experiences**  Personalization on web pages  |
-|**Experience Profile**  Monitor the behavior of contacts that have interacted with your website  |**Customer Data, Guests****[With CDP, and Smart Hub]** View or search profile for everyone interacts with your brand, regardless of the channel they use  |
-|**List Manager**  Using the List Manager, you manage contact lists and, using segments, create recipient lists that target a particular audience based on profile or engagement data.  |**Batch segmentation****[With CDP, and Smart Hub]** Query and build custom segments at scale using any attributes passed to Sitecore CDP  |
-|**Experience Manager**  Create, manage, and publish content to your websites  |**A**** vailable through Experience Manager** |
-|**Sitecore AI**  Automated Personalization experience on website utilizing a SaaS-based feature, hosted in Microsoft Azure cloud.  |**Use analytical model**** s**** in a**** decisioning** Use external machine learning technologies in decision model variants such as propensity models, forecast models, and outlier models  |
-|**Experience Analytics**  Overview reports and detailed reports for marketers and marketing analysts to identify patterns and trends in experience data collected from websites
-- Dashboard –overview of key analytics, charts, and performance indicators.
-- Audience
-- Acquisition –what is driving traffic to website. For example, campaigns and channels.
-- Behavior –analyze behavior of visitors and understand how they interact with your content.
-- Conversions –percentage of visitors that achieve a particular goal.
- |**Dashboards in Sitecore CDP****[With CDP and Smart Hub]** review and analyze various Sitecore CDP performance metrics, such as:
-- Customer types and new customers.
-- Purchased order items and order value.
-- Changes to segments and trends in inbound traffic.
-- Suspected bot activity by bot type and peak attack times.
- |
-|**Configuring Experience Analytics reports**   |**Using CDP data lake export service****[CDP and Smart Hub Only]**  |
+|**Experience Profile**  Monitor the behavior of contacts that have interacted with your website  |**Customer Data, Guests** **[With CDP, and Smart Hub]** View or search profile for everyone interacts with your brand, regardless of the channel they use  |
+|**List Manager**  Using the List Manager, you manage contact lists and, using segments, create recipient lists that target a particular audience based on profile or engagement data.  |**Batch segmentation** **[With CDP, and Smart Hub]** Query and build custom segments at scale using any attributes passed to Sitecore CDP  |
+|**Experience Manager**  Create, manage, and publish content to your websites  |**Available through Experience Manager** |
+|**Sitecore AI**  Automated Personalization experience on website utilizing a SaaS-based feature, hosted in Microsoft Azure cloud.  |**Use analytical models in a decisioning** Use external machine learning technologies in decision model variants such as propensity models, forecast models, and outlier models  |
+|**Experience Analytics**  Overview reports and detailed reports for marketers and marketing analysts to identify patterns and trends in experience data collected from websites |**Dashboards in Sitecore CDP** **[With CDP and Smart Hub]** review and analyze various Sitecore CDP performance metrics, such as customer types and new customers, purchased order items and order value, changes to segments and trends in inbound traffic and suspected bot activity by bot type and peak attack times. |
+|**Configuring Experience Analytics reports**   |**Using CDP data lake export service** **[CDP and Smart Hub Only]**  |
 |**Experience Optimization**   |**Running experiments**   |
 |**Path Analyzer**   |**Not Yet Available,** to be replaced with a marketing practical pages analyzer**[CDP and Smart Hub Only]**  |
 
 **What is the main capability of Personalize, CDP, Smart Hub CDP?**
-
-**Personalize** activates your data across all customer touchpoints to orchestrates and manage seamless and consistent customer experiences.
-
-**Sitecore CDP** enables enterprise-level integration with other Digital-Experience pillars such as Marketing-Automation, content, and commerce systems.
-
-**Smart Hub CDP** basically combines both (CDP and Personalize) products, to Fuel omnichannel personalization with customers&#39; insights and deliver 1:1 customer experience.
+- **Personalize** activates your data across all customer touchpoints to orchestrates and manage seamless and consistent customer experiences.
+- **Sitecore CDP** enables enterprise-level integration with other Digital-Experience pillars such as Marketing-Automation, content, and commerce systems.
+- **Smart Hub CDP** basically combines both (CDP and Personalize) products, to Fuel omnichannel personalization with customers&#39; insights and deliver 1:1 customer experience.
 
 Please check CDP and Smart Hub CDP Details here:
-
-[https://community.sitecore.com/community?id=community\_blog&amp;sys\_id=d8fdc45d1bb6811038a46421b24bcbb7](https://community.sitecore.com/community?id=community_blog&amp;sys_id=d8fdc45d1bb6811038a46421b24bcbb7)
-
-[https://community.sitecore.com/community?id=community\_blog&amp;sys\_id=f0862b751bf6491038a46421b24bcb65](https://community.sitecore.com/community?id=community_blog&amp;sys_id=f0862b751bf6491038a46421b24bcb65)
+- [Sitecore CDP Vs. Personalize Vs. Smart Hub CDP Part I – Business need, positioning, and a first look](https://community.sitecore.com/community?id=community_blog&amp;sys_id=d8fdc45d1bb6811038a46421b24bcbb7)
+- [Sitecore CDP Vs. Personalize Vs. Smart Hub CDP Part 2 - First look continued: Products specs](https://community.sitecore.com/community?id=community_blog&amp;sys_id=f0862b751bf6491038a46421b24bcb65)
 
 The following table lists features in Sitecore Personalize over Sitecore XP:
 
@@ -110,16 +95,16 @@ The following table lists features in Sitecore Personalize over Sitecore XP:
 | Purchase history  | OOB Target based on a customer&#39;s previous purchase history on digital channels  | ✘ | ✔ |
 | Offline / omnichannel data  | OOB targeting based on offline behaviours such as store, branch, contact centre, or chat interactions.  | ✘ | ✔ |
 
-**What are the benefits of using XP2XMP over Sitecore XP****?**
+**What are the benefits of using XP2XMP over Sitecore XP** **?**
 
--**Developers Innovation and speed** : Front-end technology for fast delivery of experience customizations.
--**Marketer Agility, Simplicity, and Results:** Leverage SaaS agile experimentation and 1:1 personalization powered by easy-to-use visual tools.
--**SaaS:** long-term advantages (operating, financial, scale, etc)
--**Speed:** Brands can Innovate and implement changes quickly. Pivot when needed and respond to business and market shifts with ease.
--**Personalization Maturity:** Sitecore Personalize makes it easy to get started with web personalization and mature to omnichannel personalization at whatever pace brands want to progress
--**Personalization everywhere** : Personalize all your content across every channel, device, and experience.
--**Real-time experimentation** : A/B test anything from a conversion page to a new feature or algorithm.
+- **Developers Innovation and speed** : Front-end technology for fast delivery of experience customizations.
+- **Marketer Agility, Simplicity, and Results:** Leverage SaaS agile experimentation and 1:1 personalization powered by easy-to-use visual tools.
+- **SaaS:** long-term advantages (operating, financial, scale, etc)
+- **Speed:** Brands can Innovate and implement changes quickly. Pivot when needed and respond to business and market shifts with ease.
+- **Personalization Maturity:** Sitecore Personalize makes it easy to get started with web personalization and mature to omnichannel personalization at whatever pace brands want to progress
+- **Personalization everywhere** : Personalize all your content across every channel, device, and experience.
+- **Real-time experimentation** : A/B test anything from a conversion page to a new feature or algorithm.
 
--**Smarter decisions** : Recommend next-best-actions at every customer touchpoint with drag-and-drop decisioning.
--**Easy integrations** : Bring your own AI and activate personalization across your whole stack.
--**Composable** : A personalization engine that will work on your current Sitecore experience, plus all your other digital experiences outside of Sitecore.
+- **Smarter decisions** : Recommend next-best-actions at every customer touchpoint with drag-and-drop decisioning.
+- **Easy integrations** : Bring your own AI and activate personalization across your whole stack.
+- **Composable** : A personalization engine that will work on your current Sitecore experience, plus all your other digital experiences outside of Sitecore.

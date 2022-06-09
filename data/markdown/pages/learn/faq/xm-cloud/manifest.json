@@ -16,6 +16,10 @@
           "path": "development"
         },
         {
+          "title": "Migration",
+          "path": "migration"
+        },
+        {
           "title": "Customization",
           "path": "customization"
         },
