@@ -2,8 +2,6 @@
 title: 'XP2XMP Developer FAQ'
 hasInPageNav: true
 ---
-# **XP2XMP Developer FAQ**
-
 **Disclaimer**
 
 *Provided for informational purposes only, this FAQ addresses common questions customers or partners may have regarding the roadmap vision for taking Sitecore to the next level of SaaS. The information provided herein is general in nature and not intended to provide an exhaustive explanation of Sitecore&#39;s development plans.*

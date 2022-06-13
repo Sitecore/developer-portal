@@ -43,7 +43,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
     };
   }, []);
 
-  const pageTitle = pageInfo.pageTitle || pageInfo.title;
+  const pageTitle = pageInfo.pageTitle || pageInfo.title != 'undefined' ? pageInfo.title : '';
 
   return (
     <div>
