@@ -5,9 +5,11 @@ import path from 'path';
 import { getPageContent, getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 import { getFaqPaths } from '@/scripts/static-paths';
 // Interfaces
-import type {
+import {
+  ContentPagerContext,
   CustomNavContext,
   CustomNavData,
+  CustomNavRoute,
   PageInfo,
   PartialData,
 } from '@/interfaces/page-info';
@@ -19,6 +21,7 @@ import MultiPageNav from '@/components/layout/MultiPageNav';
 import { PromoCardProps } from '@/components/cards/PromoCard';
 import LearningEssentials from '@/data/promos/learning-essentials';
 import ComposableDXP from '@/data/promos/videos/composable-dxp';
+import ContentPager from '@/components/helper/ContentPager';
 
 const ArticlePromos: { [name: string]: PromoCardProps } = {
   'learning-essentials': LearningEssentials,
@@ -42,7 +45,14 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
   const navData: CustomNavData = JSON.parse(
     fs.readFileSync(navigationManifest, { encoding: 'utf-8' })
   );
-  const activeItem = navData.routes.find((x) => x.path == context.params.page);
+  // Get the index of the current item
+  const activeItemIndex = navData.routes.findIndex((x) => x.path == context.params.page);
+  const activeItem = navData.routes[activeItemIndex];
+  // Set next/previous routes
+  const pagingInfo: ContentPagerContext = {
+    previous: activeItemIndex > 0 ? navData.routes[activeItemIndex - 1] : null,
+    next: activeItemIndex < navData.routes.length - 1 ? navData.routes[activeItemIndex + 1] : null,
+  };
 
   //Load page content if available. If not, load page partials. Supports simple articles with only single page Markdown file and no partials
   const partials = pageInfo?.content
@@ -60,6 +70,7 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
       context: context.params,
       navData,
       basePath,
+      pagingInfo,
     },
     revalidate: 600, // 10 minutes
   };
@@ -71,6 +82,7 @@ type ArticlePageProps = {
   context: CustomNavContext;
   navData: CustomNavData;
   basePath: string;
+  pagingInfo: ContentPagerContext;
 };
 
 const ArticlePage = ({
@@ -79,6 +91,7 @@ const ArticlePage = ({
   context,
   navData,
   basePath,
+  pagingInfo,
 }: ArticlePageProps): JSX.Element => {
   const promoBefore = [] as PromoCardProps[];
   const promoAfter = [] as PromoCardProps[];
@@ -104,6 +117,7 @@ const ArticlePage = ({
   }
 
   const CustomNav = <MultiPageNav context={context} navData={navData} root={basePath} />;
+  const CustomNavPager = <ContentPager context={context} paging={pagingInfo} root={basePath} />;
 
   return (
     <GenericContentPage
@@ -112,6 +126,7 @@ const ArticlePage = ({
       promoBefore={promoBefore}
       promoAfter={promoAfter}
       customNav={CustomNav}
+      customNavPager={CustomNavPager}
     />
   );
 };

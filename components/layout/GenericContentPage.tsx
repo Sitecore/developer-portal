@@ -11,6 +11,7 @@ import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
 import SectionHeading from '@/components/helper/SectionHeading';
 import SocialFeeds from '@/components/integrations/SocialFeeds';
 import VerticalGroup from '@/components/helper/VerticalGroup';
+import ContentPager from '../helper/ContentPager';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -20,6 +21,7 @@ type GenericContentPageProps = {
   promoAfter?: PromoCardProps[];
   promoBefore?: PromoCardProps[];
   customNav?: React.ReactNode;
+  customNavPager?: React.ReactNode;
 };
 
 const hasGridClasses = classnames('bg-theme-bg-alt', 'pt-2', 'pb-14');
@@ -60,6 +62,7 @@ const GenericContentPage = ({
   promoAfter,
   promoBefore,
   customNav,
+  customNavPager,
 }: GenericContentPageProps) => {
   if (!partialGroups && !partials) {
     console.warn('GenericContentPage requires either partials or partialGroups');
@@ -94,6 +97,7 @@ const GenericContentPage = ({
                 })}
               >
                 {Content(partials, partialGroups, hasGrid)}
+                {customNavPager}
               </div>
             </div>
           </Container>
