@@ -127,3 +127,8 @@ export type CustomNavData = {
   title: string;
   routes: CustomNavRoute[];
 };
+
+export type ContentPagerContext = {
+  previous?: CustomNavRoute | null;
+  next?: CustomNavRoute | null;
+};

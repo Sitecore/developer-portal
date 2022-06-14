@@ -6,6 +6,7 @@ import { getPageContent, getPageInfo, getPartialsAsArray } from '@/scripts/page-
 import { getFaqPaths } from '@/scripts/static-paths';
 // Interfaces
 import type {
+  ContentPagerContext,
   CustomNavContext,
   CustomNavData,
   PageInfo,
@@ -18,7 +19,9 @@ import GenericContentPage from '@/components/layout/GenericContentPage';
 import { PromoCardProps } from '@/components/cards/PromoCard';
 import LearningEssentials from '@/data/promos/learning-essentials';
 import ComposableDXP from '@/data/promos/videos/composable-dxp';
+//Article Navigation
 import MultiPageNav from '@/components/layout/MultiPageNav';
+import ContentPager from '@/components/helper/ContentPager';
 
 const ArticlePromos: { [name: string]: PromoCardProps } = {
   'learning-essentials': LearningEssentials,
@@ -42,6 +45,11 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
   const navData: CustomNavData = JSON.parse(
     fs.readFileSync(navigationManifest, { encoding: 'utf-8' })
   );
+  // Set next/previous routes
+  const pagingInfo: ContentPagerContext = {
+    previous: null,
+    next: navData.routes[1], //index is always the first item in the array
+  };
 
   //Load page content if available. If not, load page partials. Supports simple articles with only single page Markdown file and no partials
   const partials = pageInfo?.content
@@ -57,6 +65,7 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
       context: context.params,
       navData,
       basePath,
+      pagingInfo,
     },
     revalidate: 600, // 10 minutes
   };
@@ -68,6 +77,7 @@ type ArticlePageProps = {
   context: CustomNavContext;
   navData: CustomNavData;
   basePath: string;
+  pagingInfo: ContentPagerContext;
 };
 
 const ArticlePage = ({
@@ -76,6 +86,7 @@ const ArticlePage = ({
   context,
   navData,
   basePath,
+  pagingInfo,
 }: ArticlePageProps): JSX.Element => {
   const promoBefore = [] as PromoCardProps[];
   const promoAfter = [] as PromoCardProps[];
@@ -101,7 +112,7 @@ const ArticlePage = ({
   }
 
   const CustomNav = <MultiPageNav context={context} navData={navData} root={basePath} />;
-
+  const CustomNavPager = <ContentPager context={context} paging={pagingInfo} root={basePath} />;
   return (
     <GenericContentPage
       pageInfo={pageInfo}
@@ -109,6 +120,7 @@ const ArticlePage = ({
       promoBefore={promoBefore}
       promoAfter={promoAfter}
       customNav={CustomNav}
+      customNavPager={CustomNavPager}
     />
   );
 };
