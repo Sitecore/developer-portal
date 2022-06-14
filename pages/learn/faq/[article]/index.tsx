@@ -19,9 +19,8 @@ import GenericContentPage from '@/components/layout/GenericContentPage';
 import { PromoCardProps } from '@/components/cards/PromoCard';
 import LearningEssentials from '@/data/promos/learning-essentials';
 import ComposableDXP from '@/data/promos/videos/composable-dxp';
-import TrialNav from '@/components/layout/TrialNav';
+//Article Navigation
 import MultiPageNav from '@/components/layout/MultiPageNav';
-import router from 'next/router';
 import ContentPager from '@/components/helper/ContentPager';
 
 const ArticlePromos: { [name: string]: PromoCardProps } = {
