@@ -1,6 +1,8 @@
 // Global
 import Link from 'next/link';
 import { classnames } from '@/tailwindcss-classnames';
+// Lib
+import { useGlobalState } from '@/lib/global-state';
 // Interfaces
 import type { CustomNavContext, CustomNavData } from '@/interfaces/page-info';
 
@@ -11,10 +13,22 @@ type MultiPageNavProps = {
 };
 
 const MultiPageNav = ({ context, navData, root }: MultiPageNavProps): JSX.Element => {
+  const [navScrolled] = useGlobalState('navScrolled');
+  const positionalClasses = navScrolled ? classnames('md:top-8') : classnames('md:top-24');
   const buildUrl = (article: string, page: string) => `${root}/${article}/${page}`;
 
   return (
-    <nav>
+    <nav
+      className={classnames(
+        'mb-8',
+        'md:mr-16',
+        'md:sticky',
+        'self-start',
+        'transform-gpu',
+        'transition-all',
+        positionalClasses
+      )}
+    >
       <h3 className="mb-4">{navData.title}</h3>
       <ul className={classnames('side-bar-nav', 'relative', 'pl-1.5')}>
         {navData.routes.map((route) => {
