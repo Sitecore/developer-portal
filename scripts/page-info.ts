@@ -45,7 +45,6 @@ const getFileFromContext = (params: ProductSolutionContextParams) => {
 const getFileData = (directory: string, file: string): Matter => {
   let filePath = path.join(directory, `${file}.md`);
   // Check if file exists, if not then default to index.md
-  console.log(filePath);
   if (!fs.existsSync(filePath)) {
     filePath = path.join(directory, `${file}/index.md`);
   }
