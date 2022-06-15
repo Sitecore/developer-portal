@@ -1,6 +1,5 @@
 ---
-title: 'XP2XMP Developer FAQ'
-hasInPageNav: true
+title: 'XM Cloud Developer FAQ'
 ---
 **Disclaimer**
 
