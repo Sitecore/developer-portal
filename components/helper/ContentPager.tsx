@@ -21,11 +21,12 @@ const ContentPager = ({ paging, context, root }: ContentPagerProps): JSX.Element
             <button
               type="button"
               className={classnames(
-                'bg-white',
                 'text-violet',
+                'dark:text-teal',
                 'rounded-l-md',
                 'border-r',
                 'border-white',
+                'dark:border-theme-bg',
                 'py-2',
                 'hover:bg-violet-dark',
                 'hover:text-white',
@@ -55,11 +56,12 @@ const ContentPager = ({ paging, context, root }: ContentPagerProps): JSX.Element
             <button
               type="button"
               className={classnames(
-                'bg-white',
+                'dark:text-teal',
                 'text-violet',
                 'rounded-r-md',
                 'py-2',
                 'border-l',
+                'dark:border-theme-bg',
                 'border-white',
                 'hover:bg-violet-dark',
                 'hover:text-white',
