@@ -43,12 +43,12 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
     };
   }, []);
 
-  const pageTitle = pageInfo.pageTitle || pageInfo.title != 'undefined' ? pageInfo.title : '';
+  pageInfo.pageTitle = pageInfo.title != 'undefined' ? pageInfo.title : '';
 
   return (
     <div>
       <Head>
-        <title>{pageTitle}</title>
+        <title>{pageInfo.pageTitle}</title>
         <link rel="icon" href={`${publicUrl}/favicon.png`} />
         {/* Preload our two most heavily used webfonts, reduce chance of FOUT */}
         <link
@@ -92,7 +92,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         */}
         <meta name="description" content={pageInfo.description} />
         <meta property="og:site_name" content="Sitecore Developer Portal" />
-        <meta property="og:title" content={pageTitle} />
+        <meta property="og:title" content={pageInfo.pageTitle} />
         <meta property="og:description" content={pageInfo.description} />
         <meta property="og:url" content={`${publicUrl}${path}`} />
         <meta
@@ -112,15 +112,19 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           href="#"
           tabIndex={-1}
         >
-          {pageTitle}
+          {pageInfo.pageTitle}
         </a>
         {/* a11y announcement for route changes. */}
         <div
           className="sr-only"
           aria-live="polite"
           aria-atomic="true"
-        >{`The ${pageTitle} page has loaded.`}</div>
-        <Hero title={pageTitle} description={pageInfo.description} image={pageInfo.heroImage} />
+        >{`The ${pageInfo.pageTitle} page has loaded.`}</div>
+        <Hero
+          title={pageInfo.pageTitle}
+          description={pageInfo.description}
+          image={pageInfo.heroImage}
+        />
         {children}
       </main>
     </div>
