@@ -43,10 +43,12 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
     };
   }, []);
 
+  const pageTitle = pageInfo.pageTitle || pageInfo.title;
+
   return (
     <div>
       <Head>
-        <title>{pageInfo.pageTitle}</title>
+        <title>{pageTitle}</title>
         <link rel="icon" href={`${publicUrl}/favicon.png`} />
         {/* Preload our two most heavily used webfonts, reduce chance of FOUT */}
         <link
@@ -90,7 +92,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         */}
         <meta name="description" content={pageInfo.description} />
         <meta property="og:site_name" content="Sitecore Developer Portal" />
-        <meta property="og:title" content={pageInfo.pageTitle} />
+        <meta property="og:title" content={pageInfo.title} />
         <meta property="og:description" content={pageInfo.description} />
         <meta property="og:url" content={`${publicUrl}${path}`} />
         <meta
@@ -110,16 +112,16 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           href="#"
           tabIndex={-1}
         >
-          {pageInfo.pageTitle}
+          {pageInfo.title}
         </a>
         {/* a11y announcement for route changes. */}
         <div
           className="sr-only"
           aria-live="polite"
           aria-atomic="true"
-        >{`The ${pageInfo.pageTitle} page has loaded.`}</div>
+        >{`The ${pageInfo.title} page has loaded.`}</div>
         <Hero
-          title={pageInfo.pageTitle}
+          title={pageInfo.title}
           description={pageInfo.description}
           image={pageInfo.heroImage}
         />
