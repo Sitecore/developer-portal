@@ -43,7 +43,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
     };
   }, []);
 
-  const pageTitle = pageInfo.pageTitle || pageInfo.title;
+  const pageTitle = pageInfo.pageTitle != '' ? pageInfo.pageTitle : pageInfo.title;
 
   return (
     <div>
@@ -121,7 +121,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           aria-atomic="true"
         >{`The ${pageInfo.title} page has loaded.`}</div>
         <Hero
-          title={pageInfo.title}
+          title={pageTitle ? pageTitle : pageInfo.title}
           description={pageInfo.description}
           image={pageInfo.heroImage}
         />
