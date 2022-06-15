@@ -92,7 +92,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         */}
         <meta name="description" content={pageInfo.description} />
         <meta property="og:site_name" content="Sitecore Developer Portal" />
-        <meta property="og:title" content={pageInfo.title} />
+        <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageInfo.description} />
         <meta property="og:url" content={`${publicUrl}${path}`} />
         <meta
@@ -112,19 +112,15 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           href="#"
           tabIndex={-1}
         >
-          {pageInfo.title}
+          {pageTitle}
         </a>
         {/* a11y announcement for route changes. */}
         <div
           className="sr-only"
           aria-live="polite"
           aria-atomic="true"
-        >{`The ${pageInfo.title} page has loaded.`}</div>
-        <Hero
-          title={pageInfo.title}
-          description={pageInfo.description}
-          image={pageInfo.heroImage}
-        />
+        >{`The ${pageTitle} page has loaded.`}</div>
+        <Hero title={pageTitle} description={pageInfo.description} image={pageInfo.heroImage} />
         {children}
       </main>
     </div>
