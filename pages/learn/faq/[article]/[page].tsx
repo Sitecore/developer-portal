@@ -61,7 +61,7 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
     ? await getPartialsAsArray(pageInfo.partials)
     : [];
 
-  pageInfo!.title = `${navData.title} - ${activeItem?.title}`;
+  pageInfo!.pageTitle = `${navData.title} - ${activeItem?.title}`;
 
   return {
     props: {

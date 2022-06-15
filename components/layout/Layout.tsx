@@ -43,8 +43,6 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
     };
   }, []);
 
-  pageInfo.pageTitle = pageInfo.title != 'undefined' ? pageInfo.title : '';
-
   return (
     <div>
       <Head>

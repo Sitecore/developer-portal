@@ -1,5 +1,5 @@
 ---
-title: 'XM Cloud Developer FAQ'
+pageTitle: 'XM Cloud Developer FAQ'
 ---
 **Disclaimer**
 
