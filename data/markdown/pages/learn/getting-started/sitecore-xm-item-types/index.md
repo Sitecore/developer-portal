@@ -1,9 +1,6 @@
 ---
 title: 'Sitecore Experience Manager (XM) Item Types'
 description: 'Stuff about Sitecore Item Types'
-# partials: ['learn/getting-started/articles/sitecore-xm-item-types']
-# promoBefore: ['composable-dxp']
-# promoAfter: ['learning-essentials']
 ---
 
 # Sitecore Experience Manager (XM) Item Types
