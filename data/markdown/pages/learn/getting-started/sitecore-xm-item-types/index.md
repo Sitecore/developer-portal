@@ -3,8 +3,6 @@ title: 'Sitecore Experience Manager (XM) Item Types'
 description: 'In Sitecore Experience Manager (XM), almost everything can be broken into individual items. There are two main categories of items Definition Items and Content Items.'
 ---
 
-# Sitecore Experience Manager (XM) Item Types
-
 When working with Sitecore Experience Manager (Sitecore XM) almost everything can be broken into individual items. There are two main categories of items _Definition Items and Content Items._ These two categories hold subset items within them. Let&#39;s define the high-level categories and look example items within then.
 
 - Definition Items
