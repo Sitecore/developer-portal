@@ -39,7 +39,8 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: { params: CustomNavContext }) {
   const basePath = '/learn/faq';
   const root = `${basePath}/${context?.params?.article}`;
-  const pageInfo = await getPageInfo(root);
+  const pageInfo = await getPageInfo(`${root}/index`);
+  console.log(pageInfo);
   const navigationManifest = path.join(process.cwd(), `data/markdown/pages/${root}/manifest.json`);
 
   const navData: CustomNavData = JSON.parse(
@@ -58,7 +59,7 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
     ? await getPartialsAsArray(pageInfo.partials)
     : [];
 
-  pageInfo!.pageTitle = navData.title;
+  pageInfo!.pageTitle = `${navData.title} - ${pageInfo!.pageTitle}`;
 
   return {
     props: {
