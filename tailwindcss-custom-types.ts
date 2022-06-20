@@ -27,6 +27,7 @@ type SCDPTailwindTypes =
   | 'aspect-h-9'
   // @ TODO find right way to generate type for hover dark mode
   | 'dark:hover:text-teal'
-  | 'dark:hover:bg-teal';
+  | 'dark:hover:bg-teal'
+  | 'current';
 
 export default SCDPTailwindTypes;

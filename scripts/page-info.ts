@@ -43,20 +43,29 @@ const getFileFromContext = (params: ProductSolutionContextParams) => {
 };
 
 const getFileData = (directory: string, file: string): Matter => {
-  const filePath = path.join(directory, `${file}.md`);
+  let filePath = path.join(directory, `${file}.md`);
+  // Check if file exists, if not then default to index.md
+  if (!fs.existsSync(filePath)) {
+    filePath = path.join(directory, `${file}/index.md`);
+  }
   const fileMarkdown = fs.readFileSync(filePath, 'utf-8');
   // @TODO: Handle failures
-  return matter(fileMarkdown);
+  let results = matter(fileMarkdown);
+  results.data['fileName'] = filePath;
+
+  return results;
 };
 
 export const getPageInfo = async (
   arg: string | ProductSolutionContextParams
 ): Promise<PageInfo | null> => {
   const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
-  const fileData = getFileData(pagesDirectory, `${file}/index`);
+  const fileData = getFileData(pagesDirectory, `${file}`);
+
   const meta = fileData.data as MarkdownMeta;
   const content = fileData.content;
-  const fileName = `${repoUrl}/data/markdown/pages/${file}/index.md`;
+
+  const fileName = meta.fileName;
   const pageInfo = {
     // Default hasInPageNav to true, overwrite with false in md
     hasInPageNav: true,
