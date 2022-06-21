@@ -45,6 +45,8 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
   const navData: CustomNavData = JSON.parse(
     fs.readFileSync(navigationManifest, { encoding: 'utf-8' })
   );
+  const activeItem = navData.routes.find((x) => x.path == '');
+
   // Set next/previous routes
   const pagingInfo: ContentPagerContext = {
     previous: null,
@@ -60,7 +62,7 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
 
   const pageInfo = {
     title: navData.title,
-    pageTitle: `${navData.title} - ${navData.routes[0]?.title}`,
+    pageTitle: `${navData.title} - ${activeItem?.title}`,
     hasInPageNav: true,
     youtube: [],
     stackexchange: [],
@@ -98,37 +100,12 @@ const ArticlePage = ({
   basePath,
   pagingInfo,
 }: ArticlePageProps): JSX.Element => {
-  const promoBefore = [] as PromoCardProps[];
-  const promoAfter = [] as PromoCardProps[];
-
-  //Load details about promotions for the top of the article
-  if (pageInfo?.promoBefore) {
-    for (let promoId of pageInfo.promoBefore) {
-      const promoCard = ArticlePromos[promoId];
-      if (promoCard) {
-        promoBefore.push(promoCard);
-      }
-    }
-  }
-
-  //Load details about promotions for the bottom of the article
-  if (pageInfo?.promoAfter) {
-    for (let promoId of pageInfo.promoAfter) {
-      const promoCard = ArticlePromos[promoId];
-      if (promoCard) {
-        promoAfter.push(promoCard);
-      }
-    }
-  }
-
   const CustomNav = <MultiPageNav context={context} navData={navData} root={basePath} />;
   const CustomNavPager = <ContentPager context={context} paging={pagingInfo} root={basePath} />;
   return (
     <GenericContentPage
       pageInfo={pageInfo}
       partials={partials}
-      promoBefore={promoBefore}
-      promoAfter={promoAfter}
       customNav={CustomNav}
       customNavPager={CustomNavPager}
     />
