@@ -49,7 +49,8 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
     fs.readFileSync(navigationManifest, { encoding: 'utf-8' })
   );
   // Get the index of the current item
-  const activeItemIndex = navData.routes.findIndex((x) => x.path == context.params.page);
+  const pagePath = context.params.page == undefined ? '' : context.params.page;
+  const activeItemIndex = navData.routes.findIndex((x) => x.path == pagePath);
   const activeItem = navData.routes[activeItemIndex];
   // Set next/previous routes
   const pagingInfo: ContentPagerContext = {
