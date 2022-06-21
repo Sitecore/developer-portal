@@ -39,8 +39,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: { params: CustomNavContext }) {
   const basePath = '/learn/faq';
   const root = `${basePath}/${context?.params?.article}`;
-  const pageInfo = await getPageInfo(`${root}/index`);
-  console.log(pageInfo);
+  const pageInformation = await getPageInfo(`${root}/index`);
   const navigationManifest = path.join(process.cwd(), `data/markdown/pages/${root}/manifest.json`);
 
   const navData: CustomNavData = JSON.parse(
@@ -53,13 +52,21 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
   };
 
   //Load page content if available. If not, load page partials. Supports simple articles with only single page Markdown file and no partials
-  const partials = pageInfo?.content
-    ? await getPageContent(pageInfo)
-    : pageInfo?.partials
-    ? await getPartialsAsArray(pageInfo.partials)
+  const partials = pageInformation?.content
+    ? await getPageContent(pageInformation)
+    : pageInformation?.partials
+    ? await getPartialsAsArray(pageInformation.partials)
     : [];
 
-  pageInfo!.pageTitle = `${navData.title} - ${pageInfo!.pageTitle}`;
+  const pageInfo = {
+    title: navData.title,
+    pageTitle: `${navData.title} - ${navData.routes[0]?.title}`,
+    hasInPageNav: true,
+    youtube: [],
+    stackexchange: [],
+    twitter: [],
+    sitecoreCommunity: {},
+  };
 
   return {
     props: {
