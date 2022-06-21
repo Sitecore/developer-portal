@@ -1,5 +1,6 @@
 ---
-pageTitle: 'Introduction'
+title: 'Introduction'
+hasInPageNav: true
 ---
 **Disclaimer**
 
