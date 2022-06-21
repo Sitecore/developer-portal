@@ -40,7 +40,10 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
   const basePath = '/learn/faq';
   const root = `${basePath}/${context?.params?.article}`;
   const pageInfo = await getPageInfo(path.join(root, context?.params?.page));
-  const navigationManifest = path.join(process.cwd(), `data/markdown/pages/${root}/manifest.json`);
+  const navigationManifest = path.join(
+    process.cwd(),
+    `data/multipage-nav/faq/${context.params.article}.json`
+  );
 
   const navData: CustomNavData = JSON.parse(
     fs.readFileSync(navigationManifest, { encoding: 'utf-8' })
