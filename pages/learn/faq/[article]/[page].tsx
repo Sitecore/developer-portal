@@ -24,11 +24,6 @@ import LearningEssentials from '@/data/promos/learning-essentials';
 import ComposableDXP from '@/data/promos/videos/composable-dxp';
 import ContentPager from '@/components/helper/ContentPager';
 
-const ArticlePromos: { [name: string]: PromoCardProps } = {
-  'learning-essentials': LearningEssentials,
-  'composable-dxp': ComposableDXP,
-};
-
 export async function getStaticPaths() {
   const articlePaths = await getFaqNavPaths();
   return {
@@ -70,7 +65,7 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
   };
 
   const partials = await getPartialsAsArray([
-    `learn/faq/${context.params.article}/${context.params.page}`,
+    `${basePath}/${context.params.article}/${context.params.page}`,
   ]);
   pageInfo!.pageTitle = `${navData.title} - ${activeItem?.title}`;
 
@@ -104,29 +99,6 @@ const ArticlePage = ({
   basePath,
   pagingInfo,
 }: ArticlePageProps): JSX.Element => {
-  const promoBefore = [] as PromoCardProps[];
-  const promoAfter = [] as PromoCardProps[];
-
-  //Load details about promotions for the top of the article
-  if (pageInfo?.promoBefore) {
-    for (let promoId of pageInfo.promoBefore) {
-      const promoCard = ArticlePromos[promoId];
-      if (promoCard) {
-        promoBefore.push(promoCard);
-      }
-    }
-  }
-
-  //Load details about promotions for the bottom of the article
-  if (pageInfo?.promoAfter) {
-    for (let promoId of pageInfo.promoAfter) {
-      const promoCard = ArticlePromos[promoId];
-      if (promoCard) {
-        promoAfter.push(promoCard);
-      }
-    }
-  }
-
   const CustomNav = <MultiPageNav context={context} navData={navData} root={basePath} />;
   const CustomNavPager = <ContentPager context={context} paging={pagingInfo} root={basePath} />;
 
@@ -134,8 +106,6 @@ const ArticlePage = ({
     <GenericContentPage
       pageInfo={pageInfo}
       partials={partials}
-      promoBefore={promoBefore}
-      promoAfter={promoAfter}
       customNav={CustomNav}
       customNavPager={CustomNavPager}
     />

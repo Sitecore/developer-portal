@@ -112,11 +112,6 @@ export type CustomNavContext = {
   page: string;
 };
 
-type CustomNavChild = {
-  title: string;
-  slug: string;
-};
-
 export type CustomNavRoute = {
   title: string;
   path: string;

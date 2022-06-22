@@ -9,7 +9,6 @@ import {
   ContentPagerContext,
   CustomNavContext,
   CustomNavData,
-  CustomNavRoute,
   PageInfo,
   PartialData,
 } from '@/interfaces/page-info';
