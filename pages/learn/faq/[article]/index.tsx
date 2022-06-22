@@ -17,16 +17,7 @@ import {
 import GenericContentPage from '@/components/layout/GenericContentPage';
 import MultiPageNav from '@/components/layout/MultiPageNav';
 
-//Promotions to use on Articles
-import { PromoCardProps } from '@/components/cards/PromoCard';
-import LearningEssentials from '@/data/promos/learning-essentials';
-import ComposableDXP from '@/data/promos/videos/composable-dxp';
 import ContentPager from '@/components/helper/ContentPager';
-
-const ArticlePromos: { [name: string]: PromoCardProps } = {
-  'learning-essentials': LearningEssentials,
-  'composable-dxp': ComposableDXP,
-};
 
 export async function getStaticPaths() {
   const articlePaths = await getFaqPaths();
@@ -37,21 +28,19 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: { params: CustomNavContext }) {
+  console.log('Index page loaded');
+
   const basePath = '/learn/faq';
   const root = `${basePath}/${context?.params?.article}`;
   const pageInfo = await getPageInfo(root);
+  const navDataFile = path.join(process.cwd(), `data/markdown/pages/${root}/manifest.json`);
+  const navData: CustomNavData = JSON.parse(fs.readFileSync(navDataFile, { encoding: 'utf-8' }));
 
-  const navigationManifest = path.join(
-    process.cwd(),
-    `data/multipage-nav/faq/${context.params.article}.json`
-  );
-
-  const navData: CustomNavData = JSON.parse(
-    fs.readFileSync(navigationManifest, { encoding: 'utf-8' })
-  );
   // Get the index of the current item
-  const activeItemIndex = navData.routes.findIndex((x) => x.path == context.params.page);
+  const pagePath = context.params.page == undefined ? '' : context.params.page;
+  const activeItemIndex = navData.routes.findIndex((x) => x.path == pagePath);
   const activeItem = navData.routes[activeItemIndex];
+  console.log('Active item: ' + activeItem.title);
   // Set next/previous routes
   const pagingInfo: ContentPagerContext = {
     previous: null,
@@ -97,29 +86,6 @@ const ArticlePage = ({
   basePath,
   pagingInfo,
 }: ArticlePageProps): JSX.Element => {
-  const promoBefore = [] as PromoCardProps[];
-  const promoAfter = [] as PromoCardProps[];
-
-  //Load details about promotions for the top of the article
-  if (pageInfo?.promoBefore) {
-    for (let promoId of pageInfo.promoBefore) {
-      const promoCard = ArticlePromos[promoId];
-      if (promoCard) {
-        promoBefore.push(promoCard);
-      }
-    }
-  }
-
-  //Load details about promotions for the bottom of the article
-  if (pageInfo?.promoAfter) {
-    for (let promoId of pageInfo.promoAfter) {
-      const promoCard = ArticlePromos[promoId];
-      if (promoCard) {
-        promoAfter.push(promoCard);
-      }
-    }
-  }
-
   const CustomNav = <MultiPageNav context={context} navData={navData} root={basePath} />;
   const CustomNavPager = <ContentPager context={context} paging={pagingInfo} root={basePath} />;
 
@@ -127,8 +93,6 @@ const ArticlePage = ({
     <GenericContentPage
       pageInfo={pageInfo}
       partials={partials}
-      promoBefore={promoBefore}
-      promoAfter={promoAfter}
       customNav={CustomNav}
       customNavPager={CustomNavPager}
     />

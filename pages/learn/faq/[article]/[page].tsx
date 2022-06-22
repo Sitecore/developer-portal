@@ -37,17 +37,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: { params: CustomNavContext }) {
+  console.log('Slug page loaded');
+
   const basePath = '/learn/faq';
   const root = `${basePath}/${context?.params?.article}`;
   const pageInfo = await getPageInfo(path.join(root, context?.params?.page));
-  const navigationManifest = path.join(
-    process.cwd(),
-    `data/multipage-nav/faq/${context.params.article}.json`
-  );
+  const navDataFile = path.join(process.cwd(), `data/markdown/pages/${root}/manifest.json`);
+  const navData: CustomNavData = JSON.parse(fs.readFileSync(navDataFile, { encoding: 'utf-8' }));
 
-  const navData: CustomNavData = JSON.parse(
-    fs.readFileSync(navigationManifest, { encoding: 'utf-8' })
-  );
   // Get the index of the current item
   const pagePath = context.params.page == undefined ? '' : context.params.page;
   const activeItemIndex = navData.routes.findIndex((x) => x.path == pagePath);
