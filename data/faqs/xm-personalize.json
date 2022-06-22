@@ -1,8 +1,8 @@
 {
-  "title": "XM Cloud FAQ",
-  "description": "Learn more",
+  "title": "XM + Personalize FAQ",
+  "description": "Learn more about how to develop for XM + Personalize.",
   "heading": true,
-  "path": "xm-cloud",
+  "path": "xm-personalize",
   "routes": [
         {
           "title": "Features",
@@ -13,8 +13,8 @@
           "path": "development"
         },
         {
-          "title": "Migration",
-          "path": "migration"
+          "title": "Upgrades",
+          "path": "upgrades"
         },
         {
           "title": "Customization",
@@ -37,8 +37,8 @@
           "path": "managed-cloud"
         },
         {
-          "title": "XM Cloud",
-          "path": "xmcloud"
+          "title": "Migration",
+          "path": "migration"
         }
       ]
 }
