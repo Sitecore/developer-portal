@@ -1,8 +1,8 @@
 {
-  "title": "XM Cloud FAQ",
+  "title": "XM + Personalize FAQ",
   "description": "Learn more",
   "heading": true,
-  "path": "xm-cloud",
+  "path": "xm-personalize",
   "routes": [
         {
           "title": "Features",
@@ -13,8 +13,8 @@
           "path": "development"
         },
         {
-          "title": "Migration",
-          "path": "migration"
+          "title": "Upgrades",
+          "path": "upgrades"
         },
         {
           "title": "Customization",
@@ -37,8 +37,8 @@
           "path": "managed-cloud"
         },
         {
-          "title": "XM Cloud",
-          "path": "xmcloud"
+          "title": "Migration",
+          "path": "migration"
         }
       ]
 }
