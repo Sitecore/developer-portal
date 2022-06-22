@@ -1,12 +1,9 @@
 {
   "title": "XM Cloud FAQ",
+  "description": "Learn more",
   "heading": true,
   "path": "xm-cloud",
   "routes": [
-        {
-          "title": "Introduction",
-          "path": ""
-        },
         {
           "title": "Features",
           "path": "features"

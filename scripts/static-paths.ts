@@ -1,15 +1,16 @@
-import { TrialNavContext, TrialNavData } from '@/interfaces/page-info';
+import { CustomNavData, TrialNavContext, TrialNavData } from '@/interfaces/page-info';
 import fs from 'fs';
 import path from 'path';
 
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
 const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
 const trialPagesDirectory = path.join(process.cwd(), 'data/markdown/pages/trials/');
+const faqPagesDirectory = path.join(process.cwd(), 'data/markdown/pages/learn/faq/');
 const gettingStartedDirectory = path.join(
   process.cwd(),
   'data/markdown/pages/learn/getting-started/'
 );
-const faqDirectory = path.join(process.cwd(), 'data/markdown/pages/learn/faq/');
+const faqDirectory = path.join(process.cwd(), 'data/faqs');
 const TrialDirectory = path.join(process.cwd(), 'data/trials');
 
 type SolutionPaths = { params: { solution: string } };
@@ -51,22 +52,31 @@ export const getGettingStartedPaths = async (): Promise<GettingStartedPaths[]> =
 };
 
 export const getFaqPaths = async (): Promise<MultiPageArticlePaths[]> => {
-  const files = fs.readdirSync(faqDirectory);
+  const files = fs.readdirSync(faqPagesDirectory);
   const paths: MultiPageArticlePaths[] = [];
-
   files.forEach((file) => {
-    const childPages = fs.readdirSync(path.join(faqDirectory, file));
-    var filteredArray = childPages.filter(function (e) {
-      return e !== 'manifest.json';
-    });
+    if (file !== 'index.md') {
+      paths.push({ params: { article: file } });
+    }
+  });
+  return paths;
+};
 
-    filteredArray.forEach((childPage) => {
-      // use filename without extension
-      let childName = childPage.split('.')[0];
-      paths.push({ params: { article: file, page: childName } });
+export const getFaqNavPaths = async (): Promise<MultiPageArticlePaths[]> => {
+  const faqs = fs.readdirSync(faqDirectory);
+  const paths: MultiPageArticlePaths[] = [];
+  faqs.forEach((file) => {
+    const filePath = path.join(faqDirectory, file);
+    const fileData: CustomNavData = JSON.parse(fs.readFileSync(filePath, { encoding: 'utf-8' }));
+    fileData.routes.forEach((route) => {
+      paths.push({
+        params: {
+          article: fileData.path,
+          page: route.path,
+        },
+      });
     });
   });
-
   return paths;
 };
 

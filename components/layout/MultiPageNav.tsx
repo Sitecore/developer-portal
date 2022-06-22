@@ -29,11 +29,12 @@ const MultiPageNav = ({ context, navData, root }: MultiPageNavProps): JSX.Elemen
         positionalClasses
       )}
     >
-      <h3 className="mb-4">{navData.title}</h3>
+      <h3 className="mb-4">
+        <Link href={`${root}/${context.article}`}>{navData.title}</Link>
+      </h3>
       <ul className={classnames('side-bar-nav', 'relative', 'pl-1.5')}>
         {navData.routes.map((route) => {
-          const pagePath = context.page == undefined ? '' : context.page; // workaround for article root)
-          const isActive = pagePath === route.path;
+          const isActive = context.page === route.path;
 
           return (
             <li
