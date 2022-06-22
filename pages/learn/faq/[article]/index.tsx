@@ -28,23 +28,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: { params: CustomNavContext }) {
-  console.log('Index page loaded');
-
   const basePath = '/learn/faq';
-  const root = `${basePath}/${context?.params?.article}`;
-  const pageInfo = await getPageInfo(root);
-  const navDataFile = path.join(process.cwd(), `data/markdown/pages/${root}/manifest.json`);
+  const navDataFile = path.join(process.cwd(), `data/faqs/${context?.params?.article}.json`);
   const navData: CustomNavData = JSON.parse(fs.readFileSync(navDataFile, { encoding: 'utf-8' }));
+  const pageInfo = await getPageInfo(`learn/faq/${context?.params?.article}`);
 
-  // Get the index of the current item
-  const pagePath = context.params.page == undefined ? '' : context.params.page;
-  const activeItemIndex = navData.routes.findIndex((x) => x.path == pagePath);
-  const activeItem = navData.routes[activeItemIndex];
-  console.log('Active item: ' + activeItem.title);
   // Set next/previous routes
   const pagingInfo: ContentPagerContext = {
     previous: null,
-    next: navData.routes[1], //index is always the first item in the array
+    next: navData.routes[0],
   };
 
   //Load page content if available. If not, load page partials. Supports simple articles with only single page Markdown file and no partials
@@ -53,8 +45,6 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
     : pageInfo?.partials
     ? await getPartialsAsArray(pageInfo.partials)
     : [];
-
-  pageInfo!.pageTitle = `${navData.title} - Introduction`;
 
   return {
     props: {

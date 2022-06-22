@@ -3,10 +3,11 @@ import path from 'path';
 
 // Scripts
 import { getPageContent, getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
-import { getFaqPaths } from '@/scripts/static-paths';
+import { getFaqNavPaths, getFaqPaths } from '@/scripts/static-paths';
 // Interfaces
 import {
   ContentPagerContext,
+  ContentPagerRoute,
   CustomNavContext,
   CustomNavData,
   CustomNavRoute,
@@ -29,7 +30,7 @@ const ArticlePromos: { [name: string]: PromoCardProps } = {
 };
 
 export async function getStaticPaths() {
-  const articlePaths = await getFaqPaths();
+  const articlePaths = await getFaqNavPaths();
   return {
     paths: articlePaths,
     fallback: false,
@@ -37,31 +38,40 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: { params: CustomNavContext }) {
-  console.log('Slug page loaded');
-
   const basePath = '/learn/faq';
-  const root = `${basePath}/${context?.params?.article}`;
-  const pageInfo = await getPageInfo(path.join(root, context?.params?.page));
-  const navDataFile = path.join(process.cwd(), `data/markdown/pages/${root}/manifest.json`);
+  const navDataFile = path.join(process.cwd(), `data/faqs/${context?.params?.article}.json`);
   const navData: CustomNavData = JSON.parse(fs.readFileSync(navDataFile, { encoding: 'utf-8' }));
 
   // Get the index of the current item
-  const pagePath = context.params.page == undefined ? '' : context.params.page;
-  const activeItemIndex = navData.routes.findIndex((x) => x.path == pagePath);
+  const activeItemIndex = navData.routes.findIndex((x) => x.path == context.params.page);
   const activeItem = navData.routes[activeItemIndex];
+
   // Set next/previous routes
   const pagingInfo: ContentPagerContext = {
-    previous: activeItemIndex > 0 ? navData.routes[activeItemIndex - 1] : null,
+    previous:
+      activeItemIndex > 0
+        ? navData.routes[activeItemIndex - 1]
+        : {
+            title: 'Introduction',
+            path: `../${context.params.article}`,
+          },
     next: activeItemIndex < navData.routes.length - 1 ? navData.routes[activeItemIndex + 1] : null,
   };
 
-  //Load page content if available. If not, load page partials. Supports simple articles with only single page Markdown file and no partials
-  const partials = pageInfo?.content
-    ? await getPageContent(pageInfo)
-    : pageInfo?.partials
-    ? await getPartialsAsArray(pageInfo.partials)
-    : [];
+  const pageInfo = {
+    title: navData.title,
+    description: navData.description,
+    pageTitle: `${navData.title} - ${activeItem?.title}`,
+    hasInPageNav: true,
+    youtube: [],
+    stackexchange: [],
+    twitter: [],
+    sitecoreCommunity: {},
+  };
 
+  const partials = await getPartialsAsArray([
+    `learn/faq/${context.params.article}/${context.params.page}`,
+  ]);
   pageInfo!.pageTitle = `${navData.title} - ${activeItem?.title}`;
 
   return {

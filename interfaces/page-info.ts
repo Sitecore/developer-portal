@@ -125,10 +125,17 @@ export type CustomNavRoute = {
 
 export type CustomNavData = {
   title: string;
+  description: string;
+  path: string;
   routes: CustomNavRoute[];
 };
 
+export type ContentPagerRoute = {
+  title: string;
+  path: string;
+};
+
 export type ContentPagerContext = {
-  previous?: CustomNavRoute | null;
-  next?: CustomNavRoute | null;
+  previous?: ContentPagerRoute | null;
+  next?: ContentPagerRoute | null;
 };
