@@ -14,6 +14,7 @@ import Logo from './Logo';
 import NavMenu from '@/components/site/Nav/NavMenu';
 import QuickStartMenu from '@/components/QuickStartMenu';
 import SearchInput from '@/components/search/SearchInput';
+import { urlManager } from '@/lib/search/urlManager';
 
 export type NavTWClasses =
   | 'nav-item--button'
@@ -286,7 +287,7 @@ const Nav = (): JSX.Element => {
         </div>
         <div>
           <div className={classnames('px-gutter-all', 'py-2.5', 'max-w-screen-xl', 'm-auto')}>
-            <SearchInput />
+            <SearchInput urlManager={urlManager} />
           </div>
         </div>
       </div>

@@ -1,17 +1,20 @@
 // Global
 import { useId } from 'react-id-generator';
-import { buildSearchBox, SearchBoxState } from '@coveo/headless';
+import { buildSearchBox, SearchBox, SearchBoxState, UrlManager } from '@coveo/headless';
 import { classnames, TTailwindString } from '@/tailwindcss-classnames';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 // Lib
 import { coveoEngine } from '@/lib/search/coveo-engine';
+import { searchBox } from '@/lib/search/searchBox';
 
 interface SearchInputProps {
   className?: TTailwindString;
+  searchBox?: SearchBox;
+  urlManager: UrlManager;
 }
 
-const SearchInput = ({ className }: SearchInputProps) => {
+const SearchInput = ({ className, urlManager }: SearchInputProps) => {
   /**
    *  React hook for unique IDs using react-unique-id.
    *  Avoid generating new ID on every rerender.
@@ -20,9 +23,18 @@ const SearchInput = ({ className }: SearchInputProps) => {
   const searchId = idSeed;
   const inputId = `${idSeed}--search-input`;
 
-  const searchBox = buildSearchBox(coveoEngine);
-  const [searchState, setSearchState] = useState<SearchBoxState | null>(null);
+  const [searchState, setSearchState] = useState(searchBox.state);
   const router = useRouter();
+
+  const submit = (event) => {
+    if (!router.asPath.startsWith('/search')) {
+      urlManager.synchronize(`q=${searchBox.state.value}`);
+      router.push({ hash: urlManager.state.fragment, pathname: '/search' });
+      //router.push('/search');
+    }
+    event.preventDefault();
+    searchBox.submit();
+  };
 
   useEffect(() => {
     searchBox.subscribe(() => {
@@ -35,17 +47,7 @@ const SearchInput = ({ className }: SearchInputProps) => {
   }, []);
 
   return (
-    <form
-      className={classnames(className)}
-      id={searchId}
-      onSubmit={(event) => {
-        if (!router.asPath.startsWith('/search')) {
-          router.push('/search');
-        }
-        event.preventDefault();
-        searchBox.submit();
-      }}
-    >
+    <form className={classnames(className)} id={searchId} onSubmit={submit}>
       <div className={classnames('relative', 'flex', 'items-center', 'w-full')}>
         <label className={classnames('sr-only')} htmlFor={inputId}>
           Search:
@@ -81,6 +83,7 @@ const SearchInput = ({ className }: SearchInputProps) => {
           name="scdp-search"
           id={inputId}
           type="text"
+          value={searchState.value}
           placeholder="What are you looking for?"
           onChange={(event) => {
             searchBox.updateText(event.target.value);

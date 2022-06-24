@@ -94,12 +94,18 @@ const SearchResultList = () => {
           </strong>{' '}
           of <strong>{querySummaryState.total}</strong> in {querySummaryState.durationInSeconds}{' '}
           seconds
+          {querySummaryState.query != '' && (
+            <>
+              {' '}
+              for <strong>{querySummaryState.query}</strong>
+            </>
+          )}
         </p>
         <select
           onChange={(event) => {
             handleSortChange(event.target.value as SortOption);
           }}
-          className="bg-theme-bg-alt p-2"
+          className="bg-theme-bg-alt p-2 mb-4"
         >
           <option value="relevance">Relevance</option>
           <option value="dateAscending">Date Ascending</option>

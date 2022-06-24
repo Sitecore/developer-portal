@@ -6,49 +6,52 @@ import { useId } from 'react-id-generator';
 import { coveoEngine } from '@/lib/search/coveo-engine';
 import { classnames } from '@/tailwindcss-classnames';
 import SvgIcon from '../helper/SvgIcon';
+import { searchBox } from '@/lib/search/searchBox';
+import { urlManager } from '@/lib/search/urlManager';
+import { searchStatus } from '@/lib/search/searchStatus';
+import { useRouter } from 'next/router';
 
 interface SearchFacetProps {
+  facet: Facet;
   title: string;
-  field: string;
 }
 
-const SearchFacet = ({ title, field }: SearchFacetProps) => {
-  const [idSeed] = useId(1, `search-facet__${field}`);
-  const facet: Facet = buildFacet(coveoEngine, { options: { field, facetId: idSeed } });
-  const [facetState, setFacetState] = useState<FacetState | null>(null);
+const SearchFacet = ({ facet, title }: SearchFacetProps) => {
+  const [facetState, setFacetState] = useState(facet.state);
   const [selectedFacet, setSelectedFacet] = useState<string>('');
+  const [searchStatusState, setSearchStatusState] = useState(searchStatus.state);
 
-  useEffect(() => {
-    facet.subscribe(() => {
-      setFacetState(facet.state);
-    });
+  const router = useRouter();
 
-    return () => {
-      facet.subscribe(() => {});
+  const subscribeToStateChangesAndReturnCleanup = () => {
+    const allunsubscribers: { (): void }[] = [];
+    allunsubscribers.push(searchStatus.subscribe(() => setSearchStatusState(searchStatus.state)));
+    allunsubscribers.push(facet.subscribe(() => setFacetState(facet.state)));
+    allunsubscribers.push(
+      urlManager.subscribe(() => {
+        router.push({
+          hash: urlManager.state.fragment,
+        });
+      })
+    );
+    return function cleanup() {
+      allunsubscribers.forEach((unsub) => unsub());
     };
-  }, []);
-
-  if (!facetState || facetState.values.length === 0) {
-    return <></>;
-  }
-
-  const toggleFacet = (facetValue: FacetValue) => {
-    facet.toggleSelect(facetValue);
-    setSelectedFacet(facetValue.value);
   };
 
-  return (
-    <div className="p-4 bg-theme-bg-alt mb-6">
-      <h3 className="heading-xs mb-4">{title}</h3>
-      <form className="text-sm">
+  useEffect(subscribeToStateChangesAndReturnCleanup, []);
+
+  if (facetState.values.length > 0) {
+    return (
+      <div className="p-4 bg-theme-bg-alt mb-6">
+        <h3 className="heading-xs mb-4">{title}</h3>
         {facetState.values.map((facetValue) => {
-          const id = `search-facet-${field}__${facetValue.value.split(' ').join('').toLowerCase()}`;
           return (
-            <div key={id}>
+            <div key={facetValue.value} className="text-sm">
               <button
                 onClick={(event) => {
                   event.preventDefault();
-                  toggleFacet(facetValue);
+                  facet.toggleSelect(facetValue);
                 }}
                 className={classnames('text-left', 'mb-2', 'flex', 'justify-between', 'w-full', {
                   ['font-bold']: facet.isValueSelected(facetValue),
@@ -70,9 +73,11 @@ const SearchFacet = ({ title, field }: SearchFacetProps) => {
             </div>
           );
         })}
-      </form>
-    </div>
-  );
+      </div>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default SearchFacet;
