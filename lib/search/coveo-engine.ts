@@ -1,4 +1,5 @@
 import {
+  buildBreadcrumbManager,
   buildFacet,
   buildQuerySummary,
   buildResultList,
@@ -27,6 +28,7 @@ export const searchStatus = buildSearchStatus(coveoEngine);
 export const resultList = buildResultList(coveoEngine, { options: { fieldsToInclude: ['date'] } });
 export const searchBox = buildSearchBox(coveoEngine);
 export const querySummary = buildQuerySummary(coveoEngine);
+export const breadcrumbManager = buildBreadcrumbManager(coveoEngine);
 
 // Facets
 export const versionFacet: Facet = buildFacet(coveoEngine, {

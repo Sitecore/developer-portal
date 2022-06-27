@@ -26,6 +26,7 @@ import SearchTab from '@/components/search/SearchTab';
 import SearchPagination from '@/components/search/SearchPagination';
 import VerticalGroup from '@/components/helper/VerticalGroup';
 import { language } from 'gray-matter';
+import FacetBreadcrumbs from '@/components/search/facetBreadcrumbs';
 
 interface SearchPageProps {
   pageInfo: PageInfo;
@@ -86,6 +87,7 @@ const SearchPage: NextPage<SearchPageProps> = ({ pageInfo }) => {
               <SearchFacet title="Language" facet={languageFacet} />
             </div>
             <div className="md:col-span-2">
+              <FacetBreadcrumbs />
               <SearchResultList />
               <SearchPagination />
             </div>
