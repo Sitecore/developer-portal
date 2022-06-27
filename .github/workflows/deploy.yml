@@ -10,9 +10,13 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-
-      - run: npm install
-      - run: npm run build
+      - name: Install
+        run: npm install
+      - name: Build
+        env:
+          COVEO_ACCESS_TOKEN: ${{ secrets.COVEO_ACCESS_TOKEN }}
+          COVEO_ORGANIZATION_ID: ${{ secrets.COVEO_ORGANIZATION_ID }}
+        run: npm run build
 
   deploy:
     needs: build
