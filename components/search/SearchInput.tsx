@@ -1,12 +1,11 @@
 // Global
 import { useId } from 'react-id-generator';
-import { buildSearchBox, SearchBox, SearchBoxState, UrlManager } from '@coveo/headless';
+import { SearchBox, UrlManager } from '@coveo/headless';
 import { classnames, TTailwindString } from '@/tailwindcss-classnames';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 // Lib
-import { coveoEngine } from '@/lib/search/coveo-engine';
-import { searchBox } from '@/lib/search/searchBox';
+import { searchBox } from '@/lib/search/coveo-engine';
 
 interface SearchInputProps {
   className?: TTailwindString;
@@ -26,7 +25,7 @@ const SearchInput = ({ className, urlManager }: SearchInputProps) => {
   const [searchState, setSearchState] = useState(searchBox.state);
   const router = useRouter();
 
-  const submit = (event) => {
+  const submit = (event: { preventDefault: () => void }) => {
     if (!router.asPath.startsWith('/search')) {
       urlManager.synchronize(`q=${searchBox.state.value}`);
       router.push({ hash: urlManager.state.fragment, pathname: '/search' });

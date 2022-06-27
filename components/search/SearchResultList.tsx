@@ -1,34 +1,37 @@
 // Global
+import router from 'next/router';
 import {
   Result,
-  ResultListState,
-  buildResultList,
   buildResultTemplatesManager,
-  buildQuerySummary,
-  QuerySummaryState,
   buildSort,
   SortByRelevancy,
   SortByDate,
   buildRelevanceSortCriterion,
   SortInitialState,
-  SortState,
   buildDateSortCriterion,
   SortOrder,
   SortCriterion,
+  ResultTemplatesHelpers,
 } from '@coveo/headless';
 import { useEffect, useState } from 'react';
 // Lib
-import { coveoEngine } from '@/lib/search/coveo-engine';
+import {
+  coveoEngine,
+  resultList,
+  querySummary,
+  urlManager,
+  searchStatus,
+} from '@/lib/search/coveo-engine';
 // Components
 import SearchResultItem from './SearchResultItem';
+import VideoResultItem from './VideoResultItem';
 
 type SortOption = 'relevance' | 'dateAscending' | 'dateDescending';
 
 const SearchResultList = () => {
-  const resultList = buildResultList(coveoEngine, { options: { fieldsToInclude: ['date'] } });
-  const [resultState, setResultState] = useState<ResultListState | null>(null);
-  const querySummary = buildQuerySummary(coveoEngine);
-  const [querySummaryState, setQuerySummaryState] = useState<QuerySummaryState | null>(null);
+  const [resultState, setResultState] = useState(resultList.state);
+  const [querySummaryState, setQuerySummaryState] = useState(querySummary.state);
+  const [searchStatusState, setSearchStatusState] = useState(searchStatus.state);
 
   const sortOptions: Record<SortOption, SortByRelevancy | SortByDate | SortInitialState> = {
     relevance: buildRelevanceSortCriterion(),
@@ -38,35 +41,61 @@ const SearchResultList = () => {
   const resultsSort = buildSort(coveoEngine, {
     initialState: sortOptions.relevance as SortInitialState,
   });
-  const [sortState, setSortState] = useState<SortState | null>(null);
+
+  const [sortState, setSortState] = useState(resultsSort.state);
 
   const templateManager = buildResultTemplatesManager(coveoEngine);
-  templateManager.registerTemplates({
-    conditions: [],
-    content: (result: Result, i: number) => (
-      <li key={result.uniqueId}>
-        <SearchResultItem result={result} />
-      </li>
-    ),
-  });
+  templateManager.registerTemplates(
+    {
+      conditions: [ResultTemplatesHelpers.fieldMustMatch('sourcetype', ['YouTube'])],
+      content: (result: Result, i: number) => (
+        <li key={result.uniqueId}>
+          <VideoResultItem result={result} />
+        </li>
+      ),
+      priority: 1,
+    },
+    {
+      conditions: [],
+      content: (result: Result, i: number) => (
+        <li key={result.uniqueId}>
+          <SearchResultItem result={result} />
+        </li>
+      ),
+    }
+  );
 
-  useEffect(() => {
-    resultList.subscribe(() => {
-      setResultState(resultList.state);
-    });
-    querySummary.subscribe(() => {
-      setQuerySummaryState(querySummary.state);
-    });
-    resultsSort.subscribe(() => {
-      setSortState(resultsSort.state);
-    });
-
-    return () => {
-      resultList.subscribe(() => {});
-      querySummary.subscribe(() => {});
-      resultsSort.subscribe(() => {});
+  const subscribeToStateChangesAndReturnCleanup = () => {
+    const allunsubscribers: { (): void }[] = [];
+    allunsubscribers.push(searchStatus.subscribe(() => setSearchStatusState(searchStatus.state)));
+    allunsubscribers.push(
+      resultList.subscribe(() => {
+        setResultState(resultList.state);
+      })
+    );
+    allunsubscribers.push(
+      querySummary.subscribe(() => {
+        setQuerySummaryState(querySummary.state);
+      })
+    );
+    allunsubscribers.push(
+      resultsSort.subscribe(() => {
+        setSortState(resultsSort.state);
+      })
+    );
+    allunsubscribers.push(
+      urlManager.subscribe(() => {
+        router.push({
+          hash: urlManager.state.fragment,
+        });
+      })
+    );
+    return function cleanup() {
+      allunsubscribers.forEach((unsub) => unsub());
     };
-  }, []);
+  };
+
+  useEffect(subscribeToStateChangesAndReturnCleanup, []);
 
   if (!resultState || !querySummaryState) {
     return null;
@@ -75,6 +104,16 @@ const SearchResultList = () => {
   const handleSortChange = (val: SortOption) => {
     resultsSort.sortBy(sortOptions[val] as SortCriterion);
   };
+
+  if (!searchStatusState.firstSearchExecuted || searchStatusState.isLoading) {
+    return (
+      <>
+        <div>
+          <p>Loading</p>
+        </div>
+      </>
+    );
+  }
 
   if (!querySummaryState.hasResults) {
     return (
@@ -116,6 +155,7 @@ const SearchResultList = () => {
       <ul>
         {resultState.results.map((result: Result) => {
           const template: any = templateManager.selectTemplate(result);
+          console.log(result.raw.sourcetype);
           return template(result);
         })}
       </ul>

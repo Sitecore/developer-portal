@@ -1,24 +1,38 @@
 // Global
+import router from 'next/router';
 import { useState, useEffect } from 'react';
 import { buildPager, PagerState } from '@coveo/headless';
 // Lib
-import { coveoEngine } from '@/lib/search/coveo-engine';
+import { coveoEngine, urlManager } from '@/lib/search/coveo-engine';
 import { classnames } from 'tailwindcss-classnames';
 import SvgIcon from '../helper/SvgIcon';
 
 const SearchPagination = () => {
   const pager = buildPager(coveoEngine);
-  const [pagerState, setPagerState] = useState<PagerState | null>(null);
+  const [pagerState, setPagerState] = useState(pager.state);
 
-  useEffect(() => {
-    pager.subscribe(() => {
-      setPagerState(pager.state);
-    });
+  const subscribeToStateChangesAndReturnCleanup = () => {
+    const allunsubscribers: { (): void }[] = [];
+    allunsubscribers.push(
+      pager.subscribe(() => {
+        setPagerState(pager.state);
+      })
+    );
+    allunsubscribers.push(pager.subscribe(() => {}));
 
-    return () => {
-      pager.subscribe(() => {});
+    allunsubscribers.push(
+      urlManager.subscribe(() => {
+        router.push({
+          hash: urlManager.state.fragment,
+        });
+      })
+    );
+    return function cleanup() {
+      allunsubscribers.forEach((unsub) => unsub());
     };
-  }, []);
+  };
+
+  useEffect(subscribeToStateChangesAndReturnCleanup, []);
 
   const handlePaginate = (page: number) => {
     pager.selectPage(page);
@@ -31,7 +45,7 @@ const SearchPagination = () => {
   const activeClasses = classnames('bg-theme-text', 'text-theme-bg');
 
   return (
-    <ul className="flex items-center mt-8">
+    <ul className="flex items-center justify-center mt-8">
       <li>
         <button
           disabled={pagerState.currentPage === 1}
@@ -53,6 +67,7 @@ const SearchPagination = () => {
               'hover:underline',
               'py-1',
               'px-2',
+              'mx-2',
               {
                 [activeClasses]: i === pagerState.currentPage,
               }
@@ -75,7 +90,8 @@ const SearchPagination = () => {
                 'border-theme-border',
                 'hover:underline',
                 'py-1',
-                'px-2'
+                'px-2',
+                'mx-2'
               )}
               onClick={() => {
                 handlePaginate(pagerState.maxPage);

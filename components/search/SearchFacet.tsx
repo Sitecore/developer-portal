@@ -1,14 +1,10 @@
 // Global
-import { buildFacet, Facet, FacetValue, FacetState } from '@coveo/headless';
+import { Facet } from '@coveo/headless';
 import { useEffect, useState } from 'react';
-import { useId } from 'react-id-generator';
 // Lib
-import { coveoEngine } from '@/lib/search/coveo-engine';
+import { urlManager, searchStatus } from '@/lib/search/coveo-engine';
 import { classnames } from '@/tailwindcss-classnames';
 import SvgIcon from '../helper/SvgIcon';
-import { searchBox } from '@/lib/search/searchBox';
-import { urlManager } from '@/lib/search/urlManager';
-import { searchStatus } from '@/lib/search/searchStatus';
 import { useRouter } from 'next/router';
 
 interface SearchFacetProps {

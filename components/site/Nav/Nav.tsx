@@ -14,7 +14,7 @@ import Logo from './Logo';
 import NavMenu from '@/components/site/Nav/NavMenu';
 import QuickStartMenu from '@/components/QuickStartMenu';
 import SearchInput from '@/components/search/SearchInput';
-import { urlManager } from '@/lib/search/urlManager';
+import { urlManager } from '@/lib/search/coveo-engine';
 
 export type NavTWClasses =
   | 'nav-item--button'

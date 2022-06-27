@@ -7,7 +7,16 @@ import { PageInfo } from '@/interfaces/page-info';
 // Scripts
 import { getPageInfo } from '@/scripts/page-info';
 // Lib
-import { coveoEngine } from '@/lib/search/coveo-engine';
+import {
+  coveoEngine,
+  urlManager,
+  versionFacet,
+  productFacet,
+  sourceFacet,
+  yearFacet,
+  fileTypeFacet,
+  languageFacet,
+} from '@/lib/search/coveo-engine';
 // Components
 import Container from '@/components/helper/Container';
 import Layout from '@/components/layout/Layout';
@@ -16,15 +25,6 @@ import SearchFacet from '@/components/search/SearchFacet';
 import SearchTab from '@/components/search/SearchTab';
 import SearchPagination from '@/components/search/SearchPagination';
 import VerticalGroup from '@/components/helper/VerticalGroup';
-import { urlManager } from '@/lib/search/urlManager';
-import {
-  versionFacet,
-  productFacet,
-  sourceFacet,
-  yearFacet,
-  fileTypeFacet,
-  languageFacet,
-} from '@/lib/search/searchFacets';
 import { language } from 'gray-matter';
 
 interface SearchPageProps {
