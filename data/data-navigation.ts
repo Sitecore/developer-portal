@@ -82,6 +82,11 @@ const NavigationData: NavigationData[] = [
             external: true,
           },
           {
+            title: 'Events',
+            url: 'https://community.sitecore.com/community?id=community_forum&sys_id=7a84272f1b313c10486a4083b24bcbd5',
+            external: true,
+          },
+          {
             title: 'MVP Program',
             url: 'https://mvp.sitecore.com',
             external: true,
