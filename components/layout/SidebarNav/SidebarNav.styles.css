@@ -1,5 +1,5 @@
 @layer components {
-  .in-page-nav-item:before {
+  .side-bar-nav-item:before {
     background-color: theme('colors.theme-bg-alt');
     border-left: 2px solid theme('colors.theme-bg-alt');
     bottom: 0;
@@ -10,15 +10,15 @@
     width: 2px;
   }
 
-  .in-page-nav-item:first-child:before {
+  .side-bar-nav-item:first-child:before {
     top: 1em;
   }
 
-  .in-page-nav-item:last-child:before {
+  .side-bar-nav-item:last-child:before {
     bottom: calc(100% - 1em);
   }
 
-  .in-page-nav-item:after {
+  .side-bar-nav-item:after {
     background-color: theme('colors.theme-bg');
     border-radius: 100%;
     border: 2px solid theme('colors.theme-border');
@@ -32,8 +32,11 @@
     width: theme('spacing.3');
   }
 
-  .in-page-nav-item--scrolled-to:before {
+  .side-bar-nav-item--scrolled-to:before {
     background-color: theme('colors.violet.DEFAULT');
     border-color: theme('colors.violet.DEFAULT');
+  }
+  .side-bar-nav-item.current:after {
+    background-color: theme('colors.theme-border');
   }
 }

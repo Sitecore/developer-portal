@@ -2,19 +2,21 @@
 import { classnames } from 'tailwindcss-classnames';
 import Link from 'next/link';
 // Lib
-import getSectionId from '@/lib/section-id';
 import { useGlobalState } from '@/lib/global-state';
+// Interfaces
+import { LinkValue } from '@/interfaces/link-value';
 
-type InPageNavProps = {
-  titles: string[];
-};
+interface SidebarNavProps {
+  title?: string;
+  links: LinkValue[];
+}
 
 export type InPageNavTWClasses =
-  | 'in-page-nav'
-  | 'in-page-nav-item'
-  | 'in-page-nav-item--scrolled-to';
+  | 'side-bar-nav'
+  | 'side-bar-nav-item'
+  | 'side-bar-nav-item--scrolled-to';
 
-const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
+const SidebarNav = ({ links, title }: SidebarNavProps) => {
   const [navScrolled] = useGlobalState('navScrolled');
 
   const positionalClasses = navScrolled ? classnames('md:top-24') : classnames('md:top-36');
@@ -31,11 +33,11 @@ const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
         positionalClasses
       )}
     >
-      <p className={classnames('font-bold', 'text-sm', 'mb-4', 'md:hidden')}>Table of contents</p>
-      <ul className={classnames('in-page-nav', 'relative', 'pl-1.5')}>
-        {titles.map((title, i) => (
-          <li className={classnames('in-page-nav-item', 'pb-4', 'relative', 'pl-4')} key={i}>
-            <Link href={`#${getSectionId(title)}`}>
+      {title && <p className={classnames('font-bold', 'text-sm', 'mb-4', 'md:hidden')}>{title}</p>}
+      <ul className={classnames('side-bar-nav', 'relative', 'pl-1.5')}>
+        {links.map((link, i) => (
+          <li className={classnames('side-bar-nav-item', 'pb-4', 'relative', 'pl-4')} key={i}>
+            <Link href={link.href}>
               <a
                 className={classnames(
                   'text-violet',
@@ -46,7 +48,7 @@ const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
                   'focus:underline'
                 )}
               >
-                {title}
+                {link.text}
               </a>
             </Link>
           </li>
@@ -56,4 +58,4 @@ const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
   );
 };
 
-export default InPageNav;
+export default SidebarNav;

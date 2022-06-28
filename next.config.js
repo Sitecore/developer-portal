@@ -2,6 +2,9 @@
  * @type {import('next').NextConfig}
  */
 
+const fs = require('fs');
+const path = require('path');
+
 const withTM = require('next-transpile-modules')(['react-markdown']); // pass the modules you would like to see transpiled
 const securityHeaders = [
   {
@@ -73,7 +76,31 @@ const nextConfig = {
     ];
   },
   async redirects() {
-    return redirects;
+    // Get the latest newsletter and redirect `newsletter/latest` to it
+    const newsletterDataDir = path.resolve(__dirname, 'data/newsletters/');
+    const year = fs
+      .readdirSync(newsletterDataDir)
+      .map((y) => parseInt(y, 10))
+      .sort((a, b) => b - a)[0];
+    const month = fs
+      .readdirSync(path.resolve(newsletterDataDir, `${year}`))
+      .map((m) => {
+        const name = m.substring(m, m.length - 5);
+        return {
+          name,
+          num: parseInt(name, 10),
+        };
+      })
+      .sort((a, b) => b.num - a.num)[0].name;
+
+    return [
+      ...redirects,
+      {
+        source: '/newsletter/latest',
+        destination: `/newsletter/${year}/${month}`,
+        permanent: false,
+      },
+    ];
   },
 };
 
