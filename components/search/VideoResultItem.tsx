@@ -13,8 +13,8 @@ const VideoResultItem = ({ result }: SearchResultItemProps) => (
       <img
         src={`http://img.youtube.com/vi/${
           result.uri.split(':')[result.uri.split(':').length - 1]
-        }/maxresdefault.jpg`}
-        className="my-5 max-w-xs"
+        }/hqdefault.jpg`}
+        className="my-5 max-w-sm"
       />
       <p>{result.excerpt}</p>
       <span className="absolute inset-0 z-10"></span>
