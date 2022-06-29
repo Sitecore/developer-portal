@@ -27,6 +27,4 @@ XM + Personalize is the go-to content and personalization solution for deliverin
 
 XM can be hosted in the customer&#39;s Cloud or through Sitecore Managed Cloud. Sitecore Personalize is delivered as SaaS.
 
-**What are the benefits of buying a bundle of products versus buying what I need individually (the main benefit behind composable)?**
 
-Specifically, for XP2XMP, the benefit of the bundle is the commercial incentive versus buying XM &amp; Personalize separately outside of the sales play. The special deal is valid through 30 June 2022 only.
