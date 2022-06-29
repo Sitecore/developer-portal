@@ -29,7 +29,6 @@ const SearchInput = ({ className, urlManager }: SearchInputProps) => {
     if (!router.asPath.startsWith('/search')) {
       urlManager.synchronize(`q=${searchBox.state.value}`);
       router.push({ hash: urlManager.state.fragment, pathname: '/search' });
-      //router.push('/search');
     }
     event.preventDefault();
     searchBox.submit();
