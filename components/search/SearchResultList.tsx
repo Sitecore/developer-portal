@@ -1,18 +1,6 @@
 // Global
 import router from 'next/router';
-import {
-  Result,
-  buildResultTemplatesManager,
-  buildSort,
-  SortByRelevancy,
-  SortByDate,
-  buildRelevanceSortCriterion,
-  SortInitialState,
-  buildDateSortCriterion,
-  SortOrder,
-  SortCriterion,
-  ResultTemplatesHelpers,
-} from '@coveo/headless';
+import { Result, buildResultTemplatesManager, ResultTemplatesHelpers } from '@coveo/headless';
 import { useEffect, useState } from 'react';
 // Lib
 import {
@@ -26,23 +14,10 @@ import {
 import SearchResultItem from './SearchResultItem';
 import VideoResultItem from './VideoResultItem';
 
-type SortOption = 'relevance' | 'dateAscending' | 'dateDescending';
-
 const SearchResultList = () => {
   const [resultState, setResultState] = useState(resultList.state);
   const [querySummaryState, setQuerySummaryState] = useState(querySummary.state);
   const [searchStatusState, setSearchStatusState] = useState(searchStatus.state);
-
-  const sortOptions: Record<SortOption, SortByRelevancy | SortByDate | SortInitialState> = {
-    relevance: buildRelevanceSortCriterion(),
-    dateAscending: buildDateSortCriterion(SortOrder.Ascending),
-    dateDescending: buildDateSortCriterion(SortOrder.Descending),
-  };
-  const resultsSort = buildSort(coveoEngine, {
-    initialState: sortOptions.relevance as SortInitialState,
-  });
-
-  const [sortState, setSortState] = useState(resultsSort.state);
 
   const templateManager = buildResultTemplatesManager(coveoEngine);
   templateManager.registerTemplates(
@@ -79,15 +54,8 @@ const SearchResultList = () => {
       })
     );
     allunsubscribers.push(
-      resultsSort.subscribe(() => {
-        setSortState(resultsSort.state);
-      })
-    );
-    allunsubscribers.push(
       urlManager.subscribe(() => {
-        router.push({
-          hash: urlManager.state.fragment,
-        });
+        router.push({ hash: urlManager.state.fragment });
       })
     );
     return function cleanup() {
@@ -99,20 +67,6 @@ const SearchResultList = () => {
 
   if (!resultState || !querySummaryState) {
     return null;
-  }
-
-  const handleSortChange = (val: SortOption) => {
-    resultsSort.sortBy(sortOptions[val] as SortCriterion);
-  };
-
-  if (!searchStatusState.firstSearchExecuted || searchStatusState.isLoading) {
-    return (
-      <>
-        <div>
-          <p>Loading</p>
-        </div>
-      </>
-    );
   }
 
   if (!querySummaryState.hasResults) {
@@ -140,22 +94,11 @@ const SearchResultList = () => {
             </>
           )}
         </p>
-        <select
-          onChange={(event) => {
-            handleSortChange(event.target.value as SortOption);
-          }}
-          className="bg-theme-bg-alt p-2 mb-4"
-        >
-          <option value="relevance">Relevance</option>
-          <option value="dateAscending">Date Ascending</option>
-          <option value="dateDescending">Date Descending</option>
-        </select>
       </div>
 
       <ul>
         {resultState.results.map((result: Result) => {
           const template: any = templateManager.selectTemplate(result);
-          console.log(result.raw.sourcetype);
           return template(result);
         })}
       </ul>
