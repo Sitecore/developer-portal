@@ -16,6 +16,8 @@ jobs:
         env:
           COVEO_ACCESS_TOKEN: ${{ secrets.COVEO_ACCESS_TOKEN }}
           COVEO_ORGANIZATION_ID: ${{ secrets.COVEO_ORGANIZATION_ID }}
+          COVEO_SEARCH_HUB: ${{ secrets.COVEO_SEARCH_HUB }}
+          COVEO_PIPELINE: ${{ secrets.COVEO_PIPELINE }}
         run: npm run build
 
   deploy:

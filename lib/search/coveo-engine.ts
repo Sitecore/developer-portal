@@ -15,8 +15,8 @@ export const coveoEngine = buildSearchEngine({
     organizationId: process.env.COVEO_ORGANIZATION_ID as string,
     accessToken: process.env.COVEO_ACCESS_TOKEN as string,
     search: {
-      searchHub: 'devPortalSearch',
-      pipeline: 'DeveloperPortalPipeline',
+      searchHub: process.env.COVEO_SEARCH_HUB as string,
+      pipeline: process.env.COVEO_PIPELINE as string,
     },
   },
 });
