@@ -19,13 +19,7 @@ export type InPageNavTWClasses =
 const SidebarNav = ({ links, title }: SidebarNavProps) => {
   const [navScrolled] = useGlobalState('navScrolled');
 
-  /*
-   * @TODO: Adding Search Back
-   *
-   * Change positionalClasses to reflect additional height from search.
-   * const positionalClasses = navScrolled ? classnames('md:top-24') : classnames('md:top-36');
-   */
-  const positionalClasses = navScrolled ? classnames('md:top-8') : classnames('md:top-24');
+  const positionalClasses = navScrolled ? classnames('md:top-24') : classnames('md:top-36');
 
   return (
     <nav

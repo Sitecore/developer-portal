@@ -2,13 +2,15 @@ import dynamic from 'next/dynamic';
 import { classnames, TTailwindString } from 'tailwindcss-classnames';
 
 export type IconNames =
-  | 'quick-links'
-  | 'arrow-right'
   | 'arrow-left'
+  | 'arrow-right'
+  | 'checkbox-empty'
+  | 'checkbox-filled'
   | 'chevron-down'
-  | 'chevron-right'
   | 'chevron-left'
-  | 'heading';
+  | 'chevron-right'
+  | 'heading'
+  | 'quick-links';
 
 export type IconProps = {
   icon: IconNames;

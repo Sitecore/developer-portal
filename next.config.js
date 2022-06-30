@@ -54,6 +54,10 @@ const nextConfig = {
     GTM_ID: process.env.GTM_ID,
     GTM_AUTH: process.env.GTM_AUTH,
     GTM_ENVIRONMENT: process.env.GTM_ENVIRONMENT,
+    COVEO_ACCESS_TOKEN: process.env.COVEO_ACCESS_TOKEN,
+    COVEO_ORGANIZATION_ID: process.env.COVEO_ORGANIZATION_ID,
+    COVEO_PIPELINE: process.env.COVEO_PIPELINE,
+    COVEO_SEARCH_HUB: process.env.COVEO_SEARCH_HUB,
   },
   images: {
     dangerouslyAllowSVG: true,

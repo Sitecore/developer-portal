@@ -125,6 +125,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           description={pageInfo.description}
           image={pageInfo.heroImage}
         />
+
         {children}
       </main>
     </div>

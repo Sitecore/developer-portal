@@ -1,7 +1,6 @@
 // Global
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { classnames } from 'tailwindcss-classnames';
 import throttle from 'lodash.throttle';
 // Data
@@ -11,10 +10,11 @@ import htmlConfig from '@/lib/html-constants';
 const { idMainContent } = htmlConfig;
 import { setGlobalState, useGlobalState } from '@/lib/global-state';
 // Components
-import NavMenu from '@/components/site/Nav/NavMenu';
-import SearchBox from '@/components/SearchBox';
-import QuickStartMenu from '@/components/QuickStartMenu';
 import Logo from './Logo';
+import NavMenu from '@/components/site/Nav/NavMenu';
+import QuickStartMenu from '@/components/QuickStartMenu';
+import SearchInput from '@/components/search/SearchInput';
+import { urlManager } from '@/lib/search/coveo-engine';
 
 export type NavTWClasses =
   | 'nav-item--button'
@@ -32,22 +32,6 @@ const hamburgerBarClasses = classnames(
   'w-full',
   'transition'
 );
-
-/*
- * @TODO: Adding search back
- *
- * To re-enable search (at least the UI in navigation)
- * You only need to change a few classes and uncomment the search include below.
- *
- * All @TODO: statements have the same text, so you can simply search for
- *    @TODO: Adding search back
- * to find what you need to change.
- *
- * Files affected:
- *   - Nav.tsx
- *   - NavMenu.tsx
- *   - InPageNav.tsx
- */
 
 const Nav = (): JSX.Element => {
   const navRef = useRef<HTMLElement>(null);
@@ -115,15 +99,8 @@ const Nav = (): JSX.Element => {
   }, [scrolled]);
 
   return (
-    // @TODO: Adding search back
-    // Change height utility to `h-32` to the header.
-    //
     // Necesarry to retain the space for the fixed header.
-    <header className={classnames('h-16')}>
-      {/*
-        // @TODO: Adding search back
-        // Change height utility to `h-32` to the containing div.
-      */}
+    <header className={classnames('h-32')}>
       <div
         className={classnames(
           'bg-theme-bg',
@@ -134,7 +111,7 @@ const Nav = (): JSX.Element => {
           'fixed',
           'inset-x-0',
           'top-0',
-          'h-16',
+          'h-32',
           'transition-all',
           {
             '-top-16': scrolled, // Note: absolute is being used here to avoid "transform" resetting the coordinate system for the children that are relying on the document's coordinates.
@@ -189,17 +166,13 @@ const Nav = (): JSX.Element => {
               </span>
             </a>
           </Link>
-          {/*
-            // @TODO: Adding search back
-            // Change the top value to `top-32`.
-          */}
           <nav
             ref={navRef}
             id="scdp-nav"
             className={classnames(
               'fixed',
               'bg-theme-bg',
-              'top-16',
+              'top-32',
               'bottom-0',
               'inset-0',
               'items-center',
@@ -312,15 +285,11 @@ const Nav = (): JSX.Element => {
             />
           </div>
         </div>
-        {/*
-          // @TODO: Adding search back
-          // Uncomment the div containing search here.
-        */}
-        {/* <div>
+        <div>
           <div className={classnames('px-gutter-all', 'py-2.5', 'max-w-screen-xl', 'm-auto')}>
-            <SearchBox />
+            <SearchInput urlManager={urlManager} />
           </div>
-        </div> */}
+        </div>
       </div>
     </header>
   );
