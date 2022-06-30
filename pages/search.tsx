@@ -21,7 +21,7 @@ import {
 import Container from '@/components/helper/Container';
 import Layout from '@/components/layout/Layout';
 import SearchResultList from '@/components/search/SearchResultList';
-import SearchFacet from '@/components/search/SearchFacet';
+import SearchFacet, { FacetValueSort } from '@/components/search/SearchFacet';
 import SearchTab from '@/components/search/SearchTab';
 import SearchPagination from '@/components/search/SearchPagination';
 import VerticalGroup from '@/components/helper/VerticalGroup';
@@ -82,7 +82,7 @@ const SearchPage: NextPage<SearchPageProps> = ({ pageInfo }) => {
               <SearchFacet title="Version" facet={versionFacet} />
               <SearchFacet title="Product" facet={productFacet} />
               <SearchFacet title="Site" facet={sourceFacet} />
-              <SearchFacet title="Year" facet={yearFacet} />
+              <SearchFacet title="Year" facet={yearFacet} sort={FacetValueSort.Descending} />
               <SearchFacet title="File Type" facet={fileTypeFacet} />
               <SearchFacet title="Language" facet={languageFacet} />
             </div>
