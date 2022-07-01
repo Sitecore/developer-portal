@@ -161,7 +161,9 @@ const Nav = (): JSX.Element => {
                 <Logo />
               </span>
               <span className={classnames('sr-only')}>Sitecore</span>
-              <span className={classnames('hidden', 'ml-4', 'text-theme-text', 'xl:block')}>
+              <span
+                className={classnames('sr-only', 'hidden', 'ml-4', 'text-theme-text', 'xl:block')}
+              >
                 Developer Portal
               </span>
             </a>
