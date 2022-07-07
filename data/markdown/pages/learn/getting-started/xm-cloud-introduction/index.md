@@ -91,138 +91,43 @@ You might have recognized that a lot of technologies that we have come across ar
 Here’s a list of great resources that I found helpful. 
 
 ### XM Cloud
----
-**XM Cloud Deploy Demo** - 
-by Andy Cohen 
-[https://www.youtube.com/watch?v=a23g2TRUvOI](https://www.youtube.com/watch?v=a23g2TRUvOI) 
-
----
-**SaaS Migration** - 
-Migration from Sitecore XP and XM to XM Cloud by Pieter Brinkman and Jason St-Cyr  
-[https://www.youtube.com/watch?v=ZTjk5t9dfRQ ](https://www.youtube.com/watch?v=ZTjk5t9dfRQ)
- 
----
- **XM Cloud Introduction Repository** -  
- Covering a multisite and multihead solution. MVP site using ASP.NET core SugconANZ and SugconEU site using Next.js along with JSS and SXA. 
- [https://github.com/Sitecore/XM-Cloud-Introduction](https://github.com/Sitecore/XM-Cloud-Introduction) 
-
----
+- [[Video] **XM Cloud Deploy Demo** - 
+by Andy Cohen](https://www.youtube.com/watch?v=a23g2TRUvOI) 
+- [[Video] **SaaS Migration** - Migration from Sitecore XP and XM to XM Cloud by Pieter Brinkman and Jason St-Cyr](https://www.youtube.com/watch?v=ZTjk5t9dfRQ)
+- [[Example] **XM Cloud Introduction Repository** - Covering a multisite and multihead solution. MVP site using ASP.NET core SugconANZ and SugconEU site using Next.js along with JSS and SXA.](https://github.com/Sitecore/XM-Cloud-Introduction) 
 
 ### Tooling
-
----
-**Improving Windows Terminal** - 
-by Sebastian Winter 
-[https://www.youtube.com/watch?v=pO7k3_p1Uq4](https://www.youtube.com/watch?v=pO7k3_p1Uq4) 
-
----
-**Windows Terminal DevEx improvements** - 
-[https://github.com/Sitecore/Windows-Terminal-DevEx-improvements](https://github.com/Sitecore/Windows-Terminal-DevEx-improvements)
-
----
-
+- [[Video] **Improving Windows Terminal** - 
+by Sebastian Winter](https://www.youtube.com/watch?v=pO7k3_p1Uq4) 
+- [[Example] **Windows Terminal DevEx improvements** -](https://github.com/Sitecore/Windows-Terminal-DevEx-improvements)
 
 ### Containers
----
-**Docker: A Quick overview** - 
-by Rob Earlam 
-[https://www.sitecore.com/knowledge-center/getting-started/docker-a-quick-overview](https://www.sitecore.com/knowledge-center/getting-started/docker-a-quick-overview)
-
----
-**Docker for beginners** - 
-by Travis Media 
-[https://www.youtube.com/watch?v=3c-iBn73dDE](https://www.youtube.com/watch?v=3c-iBn73dDE)  
-
----
-**Containers in Sitecore development** - 
-documentation 
-[https://doc.sitecore.com/xp/en/developers/100/developer-tools/containers-in-sitecore-development.html](https://doc.sitecore.com/xp/en/developers/100/developer-tools/containers-in-sitecore-development.html) 
-
----
+- [[Article] **Docker: A Quick overview** - by Rob Earlam](https://www.sitecore.com/knowledge-center/getting-started/docker-a-quick-overview)
+- [[Video] **Docker for beginners** - by Travis Media](https://www.youtube.com/watch?v=3c-iBn73dDE)  
+- [[Documentation] **Containers in Sitecore development** - 
+documentation](https://doc.sitecore.com/xp/en/developers/100/developer-tools/containers-in-sitecore-development.html) 
 
 ### Headless
----
-**Sitecore Headless Development with Next.js** - 
-by Nick Wesselman  - Create a headless App, create components using JSS and deployment to Vercel. 
-[https://www.youtube.com/watch?v=ugPy7BjH0H0](https://www.youtube.com/watch?v=ugPy7BjH0H0)  
-
----
-**Walkthrough: Deploying JSS Next.js apps to Vercel** - 
-Documentation and video by Nick Wesselman. 
-[https://doc.sitecore.com/xp/en/developers/hd/190/sitecore-headless-development/walkthrough--deploying-jss-next-js-apps-to-vercel.html](https://doc.sitecore.com/xp/en/developers/hd/190/sitecore-headless-development/walkthrough--deploying-jss-next-js-apps-to-vercel.html)  
-
----
-**The ASP.NET Core Rendering SDK** - 
-by Nick Wesselman and Oleg Jytnik 
-[https://www.youtube.com/watch?v=FYyYpmODiBY](https://www.youtube.com/watch?v=FYyYpmODiBY)  
-
----
-**Render here, render there, render everywhere** - 
-by Thomas Desmond 
-[https://www.youtube.com/watch?v=zu8qpbtNasg](https://www.youtube.com/watch?v=zu8qpbtNasg) 
-
----
-**Converting existing Sitecore MVC applications to the Jamstack architecture with Headless Rendering** - 
-Documentation, walkthroughs and a video by nastasiya Flynn 
-[https://doc.sitecore.com/xp/en/developers/hd/200/sitecore-headless-development/converting-existing-sitecore-mvc-applications-to-the-jamstack-architecture-with-headless-rendering.html](https://doc.sitecore.com/xp/en/developers/hd/200/sitecore-headless-development/converting-existing-sitecore-mvc-applications-to-the-jamstack-architecture-with-headless-rendering.html)
-
----
+- [[Video] **Sitecore Headless Development with Next.js** - by Nick Wesselman - Create a headless App, create components using JSS and deployment to Vercel.](https://www.youtube.com/watch?v=ugPy7BjH0H0)  
+- [[Documentation] **Walkthrough: Deploying JSS Next.js apps to Vercel** - Documentation and video by Nick Wesselman.](https://doc.sitecore.com/xp/en/developers/hd/190/sitecore-headless-development/walkthrough--deploying-jss-next-js-apps-to-vercel.html)  
+- [[Video] **The ASP.NET Core Rendering SDK** - by Nick Wesselman and Oleg Jytnik](https://www.youtube.com/watch?v=FYyYpmODiBY)  
+- [[Video] **Render here, render there, render everywhere** - by Thomas Desmond](https://www.youtube.com/watch?v=zu8qpbtNasg) 
+- [[Documentation] **Converting existing Sitecore MVC applications to the Jamstack architecture with Headless Rendering** - 
+Documentation, walkthroughs and a video by nastasiya Flynn](https://doc.sitecore.com/xp/en/developers/hd/200/sitecore-headless-development/converting-existing-sitecore-mvc-applications-to-the-jamstack-architecture-with-headless-rendering.html)
 
 ### Serialization
----
-**Sitecore 10 – Introducing Sitecore Serialization…** - 
-Sitecore Serialization and other SC 10 features by Rob Earlam
-[https://www.youtube.com/watch?v=CzQbwvKX1Cc](https://www.youtube.com/watch?v=CzQbwvKX1Cc)
-
----
-**Create a content serialization Module** - 
-Documentation 
-[https://doc.sitecore.com/xp/en/developers/100/developer-tools/create-a-sitecore-content-serialization-module.html/](https://doc.sitecore.com/xp/en/developers/100/developer-tools/create-a-sitecore-content-serialization-module.html/)
-
----
+- [[Video] **Sitecore 10 – Introducing Sitecore Serialization** by Rob Earlam](https://www.youtube.com/watch?v=CzQbwvKX1Cc)
+- [[Documentation] **Create a content serialization Module** - ](https://doc.sitecore.com/xp/en/developers/100/developer-tools/create-a-sitecore-content-serialization-module.html/)
 
 ### Edge
----
-**Architecture for Experience Edge for XM** - 
-[https://doc.sitecore.com/xp/en/developers/101/developer-tools/the-architecture-of-sitecore-experience-edge-for-xm.html](https://doc.sitecore.com/xp/en/developers/101/developer-tools/the-architecture-of-sitecore-experience-edge-for-xm.html)
-
----
-**Sitecore Experience Edge** - 
-by Pieter Brinkman 
-[https://www.youtube.com/watch?v=_xw-02PZQTE](https://www.youtube.com/watch?v=_xw-02PZQTE) 
-
----
-**Getting started with Vercel Edge Functions in Next.js** - 
-by Thomas Desmond 
-[https://www.youtube.com/watch?v=nt4FYgJRbTc] (https://www.youtube.com/watch?v=nt4FYgJRbTc) 
-
----
-**Making GraphQL requests on your frontend with Next.js** - 
-by Thomas Desmond 
-[https://www.youtube.com/watch?v=F3BWdFXEJPk](https://www.youtube.com/watch?v=F3BWdFXEJPk) 
-
----
+- [[Documentation] **Architecture for Experience Edge for XM**](https://doc.sitecore.com/xp/en/developers/101/developer-tools/the-architecture-of-sitecore-experience-edge-for-xm.html)
+- [[Video] **Sitecore Experience Edge** - by Pieter Brinkman](https://www.youtube.com/watch?v=_xw-02PZQTE) 
+- [[Video] **Getting started with Vercel Edge Functions in Next.js** by Thomas Desmond](https://www.youtube.com/watch?v=nt4FYgJRbTc) 
+- [[Video] **Making GraphQL requests on your frontend with Next.js** by Thomas Desmond](https://www.youtube.com/watch?v=F3BWdFXEJPk) 
 
 ### SXA
-
----
- **Rendering Variants** - 
- official documentation 
- [https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/create-a-rendering-variant.html](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/create-a-rendering-variant.html)
-
----
-**Page and Partial Designs** - 
-Demo of using Page and Partial Designs 
-[https://www.youtube.com/watch?v=0LqngaF5i1U](https://www.youtube.com/watch?v=0LqngaF5i1U)  
-
----
-**Tenant and Site Creation** - 
-by Sebastian Winter and Mark van Aalst 
-[https://www.youtube.com/watch?v=Od8B1tG1ivs](https://www.youtube.com/watch?v=Od8B1tG1ivs)  
-
----
-**SXA Modules** - 
-by Sebastian Winter and Mark van Aalst - Introduction: 
-[https://www.youtube.com/watch?v=usLWZHiWGZI](https://www.youtube.com/watch?v=usLWZHiWGZI) - 
-Demo: 
-[https://www.youtube.com/watch?v=A4NiQzZ-yJo](https://www.youtube.com/watch?v=A4NiQzZ-yJo) 
+- [[Documentation] **Rendering Variants** - official documentation](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/create-a-rendering-variant.html)
+- [[Video] **Page and Partial Designs** - Demo of using Page and Partial Designs](https://www.youtube.com/watch?v=0LqngaF5i1U)  
+- [[Video] **Tenant and Site Creation** - by Sebastian Winter and Mark van Aalst](https://www.youtube.com/watch?v=Od8B1tG1ivs)  
+- [[Video] **SXA Modules** - by Sebastian Winter and Mark van Aalst - Introduction](https://www.youtube.com/watch?v=usLWZHiWGZI) - 
+  - [Demo video](https://www.youtube.com/watch?v=A4NiQzZ-yJo) 
