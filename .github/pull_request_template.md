@@ -1,9 +1,7 @@
 <!--- Provide a general summary of your changes in the Title above -->
 
-## Description
+## Description / Motivation
 <!--- Describe your changes in detail -->
-
-## Motivation
 <!--- Why is this change required? What problem does it solve? -->
 <!--- If it fixes an open issue, please link to the issue here. -->
 
@@ -26,5 +24,4 @@
 - [ ] My code/comments/docs fully adhere to the Code of Conduct.
 - [ ] My change is a code change.
 - [ ] My change is a documentation change and there are NO other updates required.
-- [ ] My change is a documentation change and it requires an update to the navigation.
 - [ ] My change has new or updated images which are stored in the `/public/images` folder that need to be migrated to Sitecore DAM
