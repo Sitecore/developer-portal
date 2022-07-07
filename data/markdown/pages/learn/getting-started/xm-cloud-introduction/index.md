@@ -1,7 +1,8 @@
 ---
 title: 'XM Cloud Introduction'
 description: 'XM Cloud is around the corner. But what is XM Cloud? What does it include? And how can you prepare for it?'
-heroImage: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/1915549492604a64864578fe51d2a597?v=244f9e64'
+promoAfter: ['learning-essentials']
+openGraphImage: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/1915549492604a64864578fe51d2a597?v=244f9e64'
 ---
 
 ## What is XM Cloud?
