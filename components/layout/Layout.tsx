@@ -98,7 +98,9 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         <meta
           property="og:image"
           content={`${publicUrl}${
-            pageInfo.heroImage ? pageInfo.heroImage : '/images/social/social-card-default.jpeg'
+            pageInfo.openGraphImage
+              ? pageInfo.openGraphImage
+              : '/images/social/social-card-default.jpeg'
           }`}
         />
         <meta name="twitter:card" content="summary_large_image" />
