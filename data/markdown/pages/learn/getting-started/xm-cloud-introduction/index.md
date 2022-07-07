@@ -1,7 +1,7 @@
 ---
 title: 'XM Cloud Introduction'
 description: 'XM Cloud is around the corner. But what is XM Cloud? What does it include? And how can you prepare for it?'
-promoAfter: ['learning-essentials']
+heroImage: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/1915549492604a64864578fe51d2a597?v=244f9e64'
 ---
 
 ## What is XM Cloud?
@@ -18,8 +18,6 @@ Sitecore Experience Manager Cloud re-imagines Content Management and introduces 
 The importance of your company's growth comes with the:
 * **Agility:** Marketers can easily orchestrate the overall experience across digital campaigns
 * **Flexibility:** Developers can rapidly develop and launch new experience types with modern front-end frameworks
-
-
 
 ## Why use XM Cloud?
 ![Benefits of XM Cloud](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/1915549492604a64864578fe51d2a597?v=244f9e64)
