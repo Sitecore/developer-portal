@@ -83,7 +83,7 @@ To interact with XM Cloud, no matter if you go local or in cloud, you require an
 ## Deployment
 XM Cloud Deploy is bundled with XM Cloud and offers REST API first deployment tooling for your website. A Sitecore CLI Plugin as well as the Deployment Portal web UI helps managing your deployments. 
 
-## Getting preapred for XM Cloud 
+## Getting prepared for XM Cloud 
 You might have recognized that a lot of technologies that we have come across are involved in XM Cloud development. [Edge](https://doc.sitecore.com/xp/en/developers/hd/200/sitecore-headless-development/sitecore-experience-edge-for-xm.html), [serialization](https://doc.sitecore.com/xp/en/developers/102/sitecore-experience-manager/serialization-in-sitecore.html), [headless](https://doc.sitecore.com/xp/en/developers/hd/200/sitecore-headless-development/overview-of-headless-development-with-sitecore.html), [containers](https://doc.sitecore.com/xp/en/developers/102/developer-tools/containers-in-sitecore-development.html), [JSS](https://doc.sitecore.com/xp/en/developers/hd/200/sitecore-headless-development/sitecore-javascript-rendering-sdks--jss-.html), [SXA](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/index-en.html). So, it definitely makes sense to close some of the knowledge gaps in these areas to get prepared for XM Cloud. 
 
 ![Getting prepared for XM Cloud learning SXA, JSS, Containers, Headless, Edge, Sitecore Serialize](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/d2ba91e41cd846f19bc6ba8b8f6d29fe?v=0a1eb452)
