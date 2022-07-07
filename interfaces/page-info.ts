@@ -14,6 +14,7 @@ type PageInfoCore = {
   description?: string;
   hasInPageNav?: boolean;
   heroImage?: string;
+  openGraphImage?: string;
   id?: string;
   partials?: string[];
   title: string;
