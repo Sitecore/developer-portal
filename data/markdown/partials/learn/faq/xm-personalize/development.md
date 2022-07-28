@@ -30,7 +30,7 @@ It is important to understand customer requirements before providing advice and 
 
 **From a technical perspective, does a customer just &quot;turn off&quot; their xDB features if they move from XP to XM? What does that process look like other than signing a new license?**
 
-Please see documentation on turning off xDB tracker and how to run XP in CMS-only mode (I.e. no xDB). xDBe customers would then remove xDB infrastructure (Processing, Reporting, Collection) from their cloud environment.
+Please see documentation on turning off xDB tracker and how to run XP in CMS-only mode (i.e. no xDB). xDB customers would then remove xDB infrastructure (Processing, Reporting, Collection) from their cloud environment.
 
 **Are there any specific considerations when proposing XM and Sitecore Personalize to customers running XP on MCS (e.g. reduction in Azure commitment)?**
 
