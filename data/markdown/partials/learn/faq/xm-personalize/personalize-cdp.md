@@ -85,7 +85,7 @@ Regarding a full description, please refer to the documentation website.  The fo
 - For example, an airline has a price API that returns the real-time price of a flight.
 - A product recommender is shown to the customer based on their point of sale, recent searches, and order history. The price shown to the customer is taken from the price API which is integrated with in the decision canvas.
 
-**Real-Life Example (Jetstar Air Lines &amp; Sitecore)**
+**Real-Life Example (Jetstar Airways &amp; Sitecore)**
 
 - [https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways ](https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways%C2%A0)
 - [https://sitecore.showpad.biz/webapp2/results?query=vercel%20pitch&amp;scope=content,coaching&amp;slug=0857aedc7594214236e1967f7837fd27 ](https://sitecore.showpad.biz/webapp2/results?query=vercel%20pitch&amp;scope=content,coaching&amp;slug=0857aedc7594214236e1967f7837fd27%C2%A0)
