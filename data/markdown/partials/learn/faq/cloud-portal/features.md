@@ -7,7 +7,7 @@ hasInPageNav: true
 
 **Summary**
 
-Get self enrollment, but no ability to create new product instances. Be able to demo logging in and switching between assets that have been provisioned outside of the portal |
+Get self enrollment, but no ability to create new product instances. Be able to demo logging in and switching between assets that have been provisioned outside of the portal.
 
 Features:
 
