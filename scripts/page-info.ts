@@ -9,10 +9,11 @@ import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@/interfaces/i
 import StackExchangeApi from '@/components/integrations/stackexchange/StackExchange.api';
 import TwitterApi from '@/components/integrations/twitter/Twitter.api';
 import YouTubeApi from '@/components/integrations/youtube/YouTube.api';
-import SitecoreCommunityApi, {
-  SortOption,
-} from '@/components/integrations/sitecore-community/SitecoreCommunity.api';
+import SitecoreCommunityApi from '@/components/integrations/sitecore-community/SitecoreCommunity.api';
 import { SITECORE_COMMUNITY_MAX_COUNT } from '@/components/integrations/sitecore-community/sitecore-community.constants';
+
+import { ContentHeading } from '@/lib/rehype/extractHeadings';
+import { ParseContent } from '@/lib/mdxConfig';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
@@ -61,10 +62,8 @@ export const getPageInfo = async (
 ): Promise<PageInfo | null> => {
   const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
   const fileData = getFileData(pagesDirectory, `${file}`);
-
   const meta = fileData.data as MarkdownMeta;
-  const content = fileData.content;
-
+  const content = await ParseContent(fileData.content);
   const fileName = meta.fileName;
   const pageInfo = {
     // Default hasInPageNav to true, overwrite with false in md
@@ -75,7 +74,9 @@ export const getPageInfo = async (
     twitter: [],
     sitecoreCommunity: {},
     fileName: fileName,
-    content: content,
+    content: fileData.content,
+    parsedContent: content.result.compiledSource,
+    headings: content.headings,
   } as PageInfo;
 
   /**
@@ -163,34 +164,22 @@ export const getPageInfo = async (
  * @param partials
  * @returns
  */
-const getTiltesFromContent = (content: string): string[] => {
-  const regExp = /(?<=^\#\#\s)(.*?)(?=\n|\r)/gm;
-  const res = content.match(regExp);
-  if (res) {
-    return res.map((title) => {
-      if (title.startsWith('[')) {
-        const anchorTextRegExp = /(?<=\[)(.*?)(?=\])/g;
-        const anchorText = content.match(anchorTextRegExp);
-        return !!anchorText ? anchorText[0] : '';
-      }
-      return title;
-    });
-  }
-  return [];
-};
 
 export const getPartialsAsArray = async (partials: string[]): Promise<PartialData> => {
   const content: string[] = [];
-  let titles: string[] = [];
+  let titles: ContentHeading[] = [];
   let fileNames: string[] = [];
 
-  partials.forEach((p) => {
+  partials.forEach(async (p) => {
     const data = getFileData(partialsDirectory, p) as Matter;
     const fileName = `${repoUrl}/data/markdown/partials/${p}.md`;
+    const parsedContent = await ParseContent(data.content);
 
-    content.push(data.content);
+    content.push(parsedContent.result.compiledSource);
     fileNames.push(fileName);
-    titles = titles.concat(getTiltesFromContent(data.content));
+    parsedContent.headings.map((heading) => {
+      titles.push(heading);
+    });
   });
 
   return {
@@ -202,13 +191,16 @@ export const getPartialsAsArray = async (partials: string[]): Promise<PartialDat
 
 export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> => {
   const content: string[] = [];
-  let titles: string[] = [];
+  const titles: ContentHeading[] = [];
   let fileNames: string[] = [];
 
-  if (pageInfo.content) {
-    content.push(pageInfo.content);
+  if (pageInfo.parsedContent && pageInfo.content) {
+    content.push(pageInfo.parsedContent);
     fileNames.push(pageInfo.fileName);
-    titles = titles.concat(getTiltesFromContent(pageInfo.content));
+
+    pageInfo.headings?.map((heading) => {
+      titles.push(heading);
+    });
   }
 
   return {

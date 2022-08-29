@@ -1,16 +1,16 @@
 // Global
 import { useEffect, useState } from 'react';
 import { classnames } from '@/tailwindcss-classnames';
-import ReactMarkdown from 'react-markdown';
 import SyntaxHighlight from 'react-syntax-highlighter';
 import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-import remarkGfm from 'remark-gfm';
 // Interfaces
 import type { PartialData } from '@/interfaces/page-info';
 // Lib
 import setHeadingIds from '@/lib/remark/heading-ids';
 import VerticalGroup from './VerticalGroup';
 import { TArg } from 'tailwindcss-classnames';
+import { MDXRemote } from 'next-mdx-remote';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 
 type MarkdownContentProps = {
   partials: PartialData;
@@ -36,30 +36,32 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
     );
   }, []);
 
-  return (
-    <ReactMarkdown
-      remarkPlugins={[setHeadingIds, remarkGfm]}
-      components={{
-        code({ inline, className, children }) {
-          const match = /language-(\w+)/.exec(className || '');
-          const lang = !!match ? match[1] : '';
-          const style = isDark ? a11yDark : a11yLight;
-          return !inline && match ? (
-            <SyntaxHighlight
-              children={String(children).replace(/\n$/, '')}
-              style={style}
-              language={lang}
-              PreTag="div"
-            />
-          ) : (
-            <code className={className}>{children}</code>
-          );
-        },
-      }}
-    >
-      {children}
-    </ReactMarkdown>
-  );
+  return <MDXRemote compiledSource={children} components={{ SyntaxHighlighter }} />;
+
+  //return (
+  //  <ReactMarkdown
+  //    remarkPlugins={[setHeadingIds, remarkGfm]}
+  //    components={{
+  //      code({ inline, className, children }) {
+  //        const match = /language-(\w+)/.exec(className || '');
+  //        const lang = !!match ? match[1] : '';
+  //        const style = isDark ? a11yDark : a11yLight;
+  //        return !inline && match ? (
+  //          <SyntaxHighlight
+  //            children={String(children).replace(/\n$/, '')}
+  //            style={style}
+  //            language={lang}
+  //            PreTag="div"
+  //          />
+  //        ) : (
+  //          <code className={className}>{children}</code>
+  //        );
+  //      },
+  //    }}
+  //  >
+  //    {children}
+  //  </ReactMarkdown>
+  //);
 };
 
 function EditButton({ editUrl, classes }: EditButtonProps) {

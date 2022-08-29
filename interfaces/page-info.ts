@@ -2,6 +2,7 @@ import {
   ForumOption,
   SortOption,
 } from '@/components/integrations/sitecore-community/SitecoreCommunity.api';
+import { ContentHeading } from '@/lib/rehype/extractHeadings';
 import {
   SitecoreCommunityEvent,
   SitecoreCommunityContent,
@@ -63,6 +64,8 @@ export type PageInfo = PageInfoCore & {
   promoBefore: string[];
   promoAfter: string[];
   content?: string;
+  parsedContent?: string;
+  headings?: ContentHeading[];
 };
 
 export type ChildPageInfo = {
@@ -75,7 +78,7 @@ export type ChildPageInfo = {
 export type PartialData = {
   fileNames: string[];
   content: string[];
-  titles: string[];
+  titles: ContentHeading[];
 };
 
 export type PagePartialGroup = {

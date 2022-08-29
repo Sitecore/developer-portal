@@ -22,7 +22,12 @@ const SvgIcon = ({ icon, className }: IconProps): JSX.Element => {
   const viewBox = '0 0 90 90';
 
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} className={classnames(className)}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={viewBox}
+      className={classnames(className)}
+      display={'block'}
+    >
       <IconContent />
     </svg>
   );

@@ -3,6 +3,10 @@
   @import './_fonts/_avenir_next_cn.css';
   @import './_fonts/_avenir_next_lt_pro.css';
 
+  .anchor svg {
+    display: inline;
+  }
+
   html {
     min-height: 100%;
   }

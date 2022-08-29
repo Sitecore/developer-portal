@@ -11,7 +11,6 @@ import PromoCard, { PromoCardProps } from '@/components/cards/PromoCard';
 import SectionHeading from '@/components/helper/SectionHeading';
 import SocialFeeds from '@/components/integrations/SocialFeeds';
 import VerticalGroup from '@/components/helper/VerticalGroup';
-import ContentPager from '../helper/ContentPager';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -25,9 +24,6 @@ type GenericContentPageProps = {
 };
 
 const hasGridClasses = classnames('bg-theme-bg-alt', 'pt-2', 'pb-14');
-
-const getTitlesFromPartialGroups = (partialGroups: PagePartialGroup[]): string[] =>
-  partialGroups.map((pG) => pG.title);
 
 const Content = (
   partials?: PartialData,
@@ -68,12 +64,7 @@ const GenericContentPage = ({
     console.warn('GenericContentPage requires either partials or partialGroups');
     return <></>;
   }
-  const titles = !!partialGroups
-    ? getTitlesFromPartialGroups(partialGroups)
-    : !!partials
-    ? partials.titles
-    : [];
-
+  const titles = !!partials ? partials.titles : [];
   const Nav = customNav ? customNav : <InPageNav titles={titles} />;
 
   return (

@@ -108,7 +108,7 @@ The overall process involves building your images with the CI tool of your choic
         - You'll need to create a new Service Connection for your ACR, but specify this registry as a standard docker registry, instead of using an Azure Container Registry. Refer to the image below:
         ![Service Connection Details for Azure Container Registry Authentication in Azure Devops](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/05753795f5974b15bca0d6dfe7c80de2?v=bced5b2d)
         - In your Build Pipeline you'll need to use the following parameters for the use of this service principle.
-5. (Optional) There are several strategies to replace the environment variables in these files, and it may vary upon CI system used, but if you are using Azure Devops, you can define a Variable Group and if you match them to the variables in your file (ie. ${REGISTRY} with a key of REGISTRY, and a value), they should automatically get picked up in your file, if you assign the variable group to your build pipeline.
+5. (Optional) There are several strategies to replace the environment variables in these files, and it may vary upon CI system used, but if you are using Azure Devops, you can define a Variable Group and if you match them to the variables in your file (ie. `${REGISTRY}` with a key of REGISTRY, and a value), they should automatically get picked up in your file, if you assign the variable group to your build pipeline.
 6. Once you've completed the build and push of your images, you can now move on to the next section, where you'll configured the CD of your release process.  You'll need to know your Build Id and Build branch for use with tagging. 
 
 ## Adjustments to CD Pipeline
