@@ -36,32 +36,28 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
     );
   }, []);
 
-  return <MDXRemote compiledSource={children} components={{ SyntaxHighlighter }} />;
-
-  //return (
-  //  <ReactMarkdown
-  //    remarkPlugins={[setHeadingIds, remarkGfm]}
-  //    components={{
-  //      code({ inline, className, children }) {
-  //        const match = /language-(\w+)/.exec(className || '');
-  //        const lang = !!match ? match[1] : '';
-  //        const style = isDark ? a11yDark : a11yLight;
-  //        return !inline && match ? (
-  //          <SyntaxHighlight
-  //            children={String(children).replace(/\n$/, '')}
-  //            style={style}
-  //            language={lang}
-  //            PreTag="div"
-  //          />
-  //        ) : (
-  //          <code className={className}>{children}</code>
-  //        );
-  //      },
-  //    }}
-  //  >
-  //    {children}
-  //  </ReactMarkdown>
-  //);
+  return (
+    <MDXRemote
+      compiledSource={children}
+      components={{
+        code({ className, children }) {
+          const match = /language-(\w+)/.exec(className || '');
+          const lang = !!match ? match[1] : '';
+          const style = isDark ? a11yDark : a11yLight;
+          return match ? (
+            <SyntaxHighlight
+              children={String(children).replace(/\n$/, '')}
+              style={style}
+              language={lang}
+              PreTag="div"
+            />
+          ) : (
+            <code className={className}>{children}</code>
+          );
+        },
+      }}
+    />
+  );
 };
 
 function EditButton({ editUrl, classes }: EditButtonProps) {
