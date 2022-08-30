@@ -4,12 +4,27 @@ import remarkGfm from 'remark-gfm';
 import { s } from 'hastscript';
 import rehypeExtractHeadings, { ContentHeading } from './rehype/extractHeadings';
 import { serialize } from 'next-mdx-remote/serialize';
+import remarkEmbedder, { TransformerInfo } from '@remark-embedder/core';
+import oembedTransformer from '@remark-embedder/transformer-oembed';
+import type { Config } from '@remark-embedder/transformer-oembed';
 
 export async function ParseContent(stream: string) {
   const headings: ContentHeading[] = [];
   const result = await serialize(stream, {
     mdxOptions: {
-      remarkPlugins: [remarkGfm],
+      remarkPlugins: [
+        remarkGfm,
+        [
+          remarkEmbedder,
+          {
+            transformers: [
+              oembedTransformer,
+              { params: { theme: 'dark', dnt: true, omit_script: true } } as Config,
+            ],
+            handleHTML,
+          },
+        ],
+      ],
       rehypePlugins: [
         rehypeSlug,
         [
@@ -36,4 +51,18 @@ export async function ParseContent(stream: string) {
     result,
     headings,
   };
+}
+
+function handleHTML(html: string, info: TransformerInfo) {
+  const { url, transformer } = info;
+  if (transformer.name === '@remark-embedder/transformer-oembed') {
+    if (url.includes('www.youtube.com')) {
+      return `<div class="embed-youtube aspect-w-16 aspect-h-9">${html}</div>`;
+    }
+    if (url.includes('twitter.com')) {
+      return `<div class="embed-twitter h-full">${html}</div>`;
+    }
+  }
+
+  return html;
 }

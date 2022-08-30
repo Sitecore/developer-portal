@@ -49,6 +49,12 @@ const getFileData = (directory: string, file: string): Matter => {
   if (!fs.existsSync(filePath)) {
     filePath = path.join(directory, `${file}/index.md`);
   }
+  if (!fs.existsSync(filePath)) {
+    filePath = path.join(directory, `${file}.mdx`);
+  }
+  if (!fs.existsSync(filePath)) {
+    filePath = path.join(directory, `${file}/index.mdx`);
+  }
   const fileMarkdown = fs.readFileSync(filePath, 'utf-8');
   // @TODO: Handle failures
   let results = matter(fileMarkdown);

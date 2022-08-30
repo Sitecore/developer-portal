@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@coveo/headless": "^1.65.0",
+    "@remark-embedder/transformer-oembed": "^3.0.0",
     "@stefanprobst/rehype-extract-toc": "^2.2.0",
     "@types/lodash.throttle": "^4.1.6",
     "axios": "^0.21.4",
