@@ -13,7 +13,9 @@
     "generate-css-types": "tailwindcss-classnames -x ./tailwindcss-custom-types.ts -i ./tailwind.config.js",
     "pre-commit": "lint-staged",
     "pre-push": "tsc --project tsconfig.json",
-    "postbuild": "next-sitemap --config next-sitemap.config.js"
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "lint": "next lint"
+
   },
   "dependencies": {
     "@coveo/headless": "^1.65.0",

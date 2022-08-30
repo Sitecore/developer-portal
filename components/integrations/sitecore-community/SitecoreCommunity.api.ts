@@ -137,7 +137,8 @@ const getContent = async ({
         userName: item.userAvatarObject.name,
         viewCount: item.view_count,
       }));
-    });
+    })
+    .catch(Error);
 };
 
 const get = async ({

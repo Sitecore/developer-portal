@@ -13,7 +13,7 @@ import SitecoreCommunityApi from '@/components/integrations/sitecore-community/S
 import { SITECORE_COMMUNITY_MAX_COUNT } from '@/components/integrations/sitecore-community/sitecore-community.constants';
 
 import { ContentHeading } from '@/lib/rehype/extractHeadings';
-import { ParseContent } from '@/lib/mdxConfig';
+import { ParseContent } from '@/lib/mdxParse';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
@@ -81,8 +81,8 @@ export const getPageInfo = async (
     sitecoreCommunity: {},
     fileName: fileName,
     content: fileData.content,
-    parsedContent: content.result.compiledSource,
-    headings: content.headings,
+    parsedContent: content?.result.compiledSource,
+    headings: content?.headings,
   } as PageInfo;
 
   /**
@@ -181,11 +181,13 @@ export const getPartialsAsArray = async (partials: string[]): Promise<PartialDat
     const fileName = `${repoUrl}/data/markdown/partials/${p}.md`;
     const parsedContent = await ParseContent(data.content);
 
-    content.push(parsedContent.result.compiledSource);
-    fileNames.push(fileName);
-    parsedContent.headings.map((heading) => {
-      titles.push(heading);
-    });
+    if (parsedContent != null) {
+      content.push(parsedContent.result.compiledSource);
+      fileNames.push(fileName);
+      parsedContent.headings.map((heading) => {
+        titles.push(heading);
+      });
+    }
   });
 
   return {
