@@ -1,4 +1,4 @@
-import type { PromoCardProps } from '@/components/cards/PromoCard';
+import type { PromoCardProps } from '@/src/components/cards/PromoCard';
 
 const data: PromoCardProps = {
   title: 'Connect with Sitecore Support',
