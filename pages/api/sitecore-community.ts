@@ -8,8 +8,11 @@ import SitecoreCommunityApi, {
   ContentType,
 } from '@/components/integrations/sitecore-community/SitecoreCommunity.api';
 
-const getQueryValue = (query: string | string[]): string =>
-  Array.isArray(query) ? query[0] : query;
+const getQueryValue = (query: string | string[] | undefined): string => {
+  if (query == undefined) return '';
+
+  return Array.isArray(query) ? query[0] : query;
+};
 
 const handler = async (
   req: NextApiRequest,
