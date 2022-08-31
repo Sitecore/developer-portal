@@ -33,6 +33,16 @@ TWITTER_BEARER_TOKEN="A bearer token from Twitter "
 ```
 YOUTUBE_API_KEY=""
 TWITTER_BEARER_TOKEN=""
+COOKIE_CONSENT_URL=
+
+GTM_ID=
+GTM_AUTH=
+GTM_ENVIRONMENT=
+
+COVEO_ACCESS_TOKEN=
+COVEO_ORGANIZATION_ID=
+COVEO_PIPELINE=
+COVEO_SEARCH_HUB=
 ```
  (For more information on populating environment variables see section **Environment Variables** above.)
 
