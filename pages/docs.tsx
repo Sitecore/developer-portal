@@ -4,9 +4,9 @@ import { getPageInfo, getPartialsAsArray } from '@/scripts/page-info';
 import { PageInfo, PagePartialGroup } from '@/interfaces/page-info';
 // Components
 import GenericContentPage from '@/components/layout/GenericContentPage';
+import { useRouter } from 'next/router';
 
 export async function getStaticProps() {
-  const pageInfo = await getPageInfo('docs');
   // Partial Groups
   const cms = await getPartialsAsArray([
     'docs/cms/sitecore-experience-manager',
@@ -56,7 +56,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pageInfo,
+      pageInfo: await getPageInfo('docs'),
       partialGroups,
     },
     revalidate: 600, // 10 minutes

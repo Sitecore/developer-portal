@@ -8,8 +8,6 @@ import learningAtSitecore from '@/data/promos/learning-at-sitecore';
 import GenericContentPage from '@/components/layout/GenericContentPage';
 
 export async function getStaticProps() {
-  const pageInfo = await getPageInfo('learn');
-
   const starterKits = await getPartialsAsArray([
     'learn/starter-kits/sitecore-starter-kits',
     'learn/starter-kits/ordercloud',
@@ -49,9 +47,11 @@ export async function getStaticProps() {
     },
   ];
 
+  //const pageInfo =
+
   return {
     props: {
-      pageInfo,
+      pageInfo: await getPageInfo('learn'),
       partialGroups,
     },
     revalidate: 600, // 10 minutes
