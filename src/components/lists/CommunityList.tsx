@@ -4,7 +4,7 @@ import Image from 'next/image';
 // Data
 import data from '@/data/data-community-list';
 // Components
-import TextLink from '@/src/components/helper/TextLink';
+import TextLink from '@/src/components/common/TextLink';
 
 type CommunityListProps = {
   className?: TTailwindString;

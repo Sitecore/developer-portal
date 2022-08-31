@@ -3,7 +3,7 @@ import { classnames } from '@/tailwindcss-classnames';
 // Interfaces
 import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
-import DynamicTag from '@/src/components/helper/DynamicTag';
+import DynamicTag from '@/src/components/common/DynamicTag';
 
 type SectionHeadingProps = {
   title: string;

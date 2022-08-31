@@ -6,11 +6,11 @@ import { useRouter } from 'next/router';
 // Data
 import { NavigationData } from '@/data/data-navigation';
 // Components
-import SvgIcon, { IconNames } from '@/src/components/helper/SvgIcon';
-import DynamicTag from '@/src/components/helper/DynamicTag';
-import ConditionalWrapper from '@/src/components/helper/ConditionalWrapper';
+import SvgIcon, { IconNames } from '@/src/components/common/SvgIcon';
+import DynamicTag from '@/src/components/common/DynamicTag';
+import ConditionalWrapper from '@/src/components/common/ConditionalWrapper';
 // Local
-import NavLink from '@/src/components/site/Nav/NavLink';
+import NavLink from '@/src/layouts/components/head/NavLink';
 
 type NavMenuProps = NavigationData & {
   buttonIcon?: IconNames;

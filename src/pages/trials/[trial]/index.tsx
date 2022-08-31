@@ -4,7 +4,7 @@ import { getTrialsPaths } from '@/src/scripts/static-paths';
 // Interfaces
 import type { PageInfo, PartialData } from '@/src/interfaces/page-info';
 // Components
-import GenericContentPage from '@/src/components/layout/GenericContentPage';
+import GenericContentPage from '@/src/layouts/GenericContentPage';
 
 export async function getStaticPaths() {
   const trialPaths = await getTrialsPaths();

@@ -18,15 +18,15 @@ import {
   languageFacet,
 } from '@/src/lib/search/coveo-engine';
 // Components
-import Container from '@/src/components/helper/Container';
-import Layout from '@/src/components/layout/Layout';
-import SearchResultList from '@/src/components/search/SearchResultList';
-import SearchFacet, { FacetValueSort } from '@/src/components/search/SearchFacet';
-import SearchTab from '@/src/components/search/SearchTab';
-import SearchPagination from '@/src/components/search/SearchPagination';
-import VerticalGroup from '@/src/components/helper/VerticalGroup';
+import Container from '@/src/components/common/Container';
+import Layout from '@/src/layouts/Layout';
+import SearchResultList from '@/src/components/integrations/search/SearchResultList';
+import SearchFacet, { FacetValueSort } from '@/src/components/integrations/search/SearchFacet';
+import SearchTab from '@/src/components/integrations/search/SearchTab';
+import SearchPagination from '@/src/components/integrations/search/SearchPagination';
+import VerticalGroup from '@/src/components/common/VerticalGroup';
 import { language } from 'gray-matter';
-import FacetBreadcrumbs from '@/src/components/search/facetBreadcrumbs';
+import FacetBreadcrumbs from '@/src/components/integrations/search/facetBreadcrumbs';
 
 interface SearchPageProps {
   pageInfo: PageInfo;

@@ -3,7 +3,7 @@ import { getPageInfo, getPartialsAsArray } from '@/src/scripts/page-info';
 // Interfaces
 import { PageInfo, PagePartialGroup } from '@/src/interfaces/page-info';
 // Components
-import GenericContentPage from '@/src/components/layout/GenericContentPage';
+import GenericContentPage from '@/src/layouts/GenericContentPage';
 import { useRouter } from 'next/router';
 
 export async function getStaticProps() {

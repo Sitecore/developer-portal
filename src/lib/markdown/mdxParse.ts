@@ -2,11 +2,11 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import { s } from 'hastscript';
-import rehypeExtractHeadings, { ContentHeading } from './rehype/extractHeadings';
+import rehypeExtractHeadings from '@/src/lib/markdown/rehype/extractHeadings';
+import { ContentHeading } from '@/src/interfaces/contentheading';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkEmbedder, { TransformerInfo } from '@remark-embedder/core';
 import oembedTransformer from '@remark-embedder/transformer-oembed';
-import type { Config } from '@remark-embedder/transformer-oembed';
 
 export async function ParseContent(stream: string) {
   try {

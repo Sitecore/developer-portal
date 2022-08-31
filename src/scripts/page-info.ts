@@ -17,8 +17,8 @@ import YouTubeApi from '@/src/components/integrations/youtube/YouTube.api';
 import SitecoreCommunityApi from '@/src/components/integrations/sitecore-community/SitecoreCommunity.api';
 import { SITECORE_COMMUNITY_MAX_COUNT } from '@/src/components/integrations/sitecore-community/sitecore-community.constants';
 
-import { ContentHeading } from '@/src/lib/rehype/extractHeadings';
-import { ParseContent } from '@/src/lib/mdxParse';
+import { ContentHeading } from '@/src/interfaces/contentheading';
+import { ParseContent } from '@/src/lib/markdown/mdxParse';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');

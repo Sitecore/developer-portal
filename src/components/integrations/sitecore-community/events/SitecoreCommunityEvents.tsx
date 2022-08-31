@@ -3,7 +3,7 @@ import type { SitecoreCommunityEvent } from '@/src/interfaces/integrations';
 // Global
 import { classnames } from '@/tailwindcss-classnames';
 // Components
-import FeedHeading from '@/src/components/helper/FeedHeading';
+import FeedHeading from '@/src/components/common/FeedHeading';
 import SitecoreCommunityNewsOrEventItem from '../SitecoreCommunityNewsOrEventItem';
 
 type SitecoreCommunityEventsProps = {

@@ -4,7 +4,7 @@ import { getGettingStartedPaths, getIntegrationPaths } from '@/src/scripts/stati
 // Interfaces
 import type { PageInfo, PartialData } from '@/src/interfaces/page-info';
 // Components
-import GenericContentPage from '@/src/components/layout/GenericContentPage';
+import GenericContentPage from '@/src/layouts/GenericContentPage';
 
 //Promotions to use on Articles
 import { PromoCardProps } from '@/src/components/cards/PromoCard';

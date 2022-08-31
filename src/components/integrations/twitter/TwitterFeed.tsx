@@ -5,8 +5,8 @@ import { classnames } from '@/tailwindcss-classnames';
 import type { Tweet } from '@/src/interfaces/integrations';
 import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
-import DynamicTag from '@/src/components/helper/DynamicTag';
-import TextLink from '@/src/components/helper/TextLink';
+import DynamicTag from '@/src/components/common/DynamicTag';
+import TextLink from '@/src/components/common/TextLink';
 
 type TwitterFeedProps = {
   content?: Tweet[];

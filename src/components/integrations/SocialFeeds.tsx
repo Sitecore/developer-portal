@@ -3,7 +3,7 @@ import type { PageInfo } from '@/src/interfaces/page-info';
 // Components
 import StackExchangeFeed from './stackexchange/StackExchangeFeed';
 import TwitterFeed from './twitter/TwitterFeed';
-import VerticalGroup from '@/src/components/helper/VerticalGroup';
+import VerticalGroup from '@/src/components/common/VerticalGroup';
 import YouTubeFeed from './youtube/YouTubeFeed';
 import SitecoreCommunityQuestions from './sitecore-community/questions/SitecoreCommunityQuestions';
 import SitecoreCommunityBlog from './sitecore-community/blog/SitecoreCommunityBlog';

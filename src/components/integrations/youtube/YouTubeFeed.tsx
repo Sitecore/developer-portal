@@ -5,10 +5,10 @@ import { classnames, TTailwindString } from '@/tailwindcss-classnames';
 import type { YouTubeVideo, YouTubeSnippet } from '@/src/interfaces/integrations';
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
-import DynamicTag from '@/src/components/helper/DynamicTag';
-import TextLink from '@/src/components/helper/TextLink';
+import DynamicTag from '@/src/components/common/DynamicTag';
+import TextLink from '@/src/components/common/TextLink';
 import Image from 'next/image';
-import FeedHeading from '@/src/components/helper/FeedHeading';
+import FeedHeading from '@/src/components/common/FeedHeading';
 
 type YouTubeFeedProps = {
   className?: TTailwindString;

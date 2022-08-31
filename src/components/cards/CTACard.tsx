@@ -6,7 +6,7 @@ import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Data
 import data from '@/data/promos/get-help';
 // Components
-import DynamicTag from '@/src/components/helper/DynamicTag';
+import DynamicTag from '@/src/components/common/DynamicTag';
 
 export type CTACardProps = {
   description: string;

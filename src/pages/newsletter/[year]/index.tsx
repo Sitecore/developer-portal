@@ -13,9 +13,9 @@ import { PageInfo } from '@/src/interfaces/page-info';
 import { getNewsletterTitle } from '@/src/lib/newsletter/get-newsletter-title';
 import { translateDateAsYearMonth } from '@/src/lib/translate-date';
 // Components
-import Container from '@/src/components/helper/Container';
-import Layout from '@/src/components/layout/Layout';
-import CategoryTile, { CategoryTileProps } from '@/src/components/cards/CategoryTile';
+import Container from '@/src/components/common/Container';
+import Layout from '@/src/layouts/Layout';
+import CategoryTile, { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 // Data
 import { classnames } from 'tailwindcss-classnames';
 

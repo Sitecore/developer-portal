@@ -4,7 +4,7 @@ import { classnames } from '@/tailwindcss-classnames';
 // Interfaces
 import type { TrialNavData, TrialNavContext } from '@/src/interfaces/page-info';
 // Components
-import Collapse from '@/src/components/helper/Collapse';
+import Collapse from '@/src/components/common/Collapse';
 
 // TODO: Fix this
 type MultiPageNavProps = {

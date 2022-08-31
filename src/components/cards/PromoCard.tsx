@@ -2,7 +2,7 @@
 import { classnames, TTailwindString } from 'tailwindcss-classnames';
 import Image from 'next/image';
 // Components
-import TextLink from '@/src/components/helper/TextLink';
+import TextLink from '@/src/components/common/TextLink';
 
 type PromoCardImage = {
   img: {

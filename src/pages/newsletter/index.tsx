@@ -11,10 +11,10 @@ import { getNewsletterTitle } from '@/src/lib/newsletter/get-newsletter-title';
 import { translateDateAsYearMonth } from '@/src/lib/translate-date';
 // Components
 import CategoryTileList from '@/src/components/lists/CategoryTileList';
-import Container from '@/src/components/helper/Container';
-import Layout from '@/src/components/layout/Layout';
-import { CategoryTileProps } from '@/src/components/cards/CategoryTile';
-import VerticalGroup from '@/src/components/helper/VerticalGroup';
+import Container from '@/src/components/common/Container';
+import Layout from '@/src/layouts/Layout';
+import { CategoryTileProps } from '@/src/components/lists/CategoryTile';
+import VerticalGroup from '@/src/components/common/VerticalGroup';
 import PromoCard from '@/src/components/cards/PromoCard';
 // Data
 import newsletterPromo from '@/data/promos/newsletter';

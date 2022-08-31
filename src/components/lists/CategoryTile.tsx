@@ -3,8 +3,8 @@ import Link from 'next/link';
 // Interfaces
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
-import DynamicTag from '@/src/components/helper/DynamicTag';
-import SvgIcon from '../helper/SvgIcon';
+import DynamicTag from '@/src/components/common/DynamicTag';
+import SvgIcon from '../common/SvgIcon';
 import { classnames } from '@/tailwindcss-classnames';
 
 export type CategoryTileProps = {

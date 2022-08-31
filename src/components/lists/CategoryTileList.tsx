@@ -3,7 +3,7 @@ import { classnames } from 'tailwindcss-classnames';
 // Interfaces
 import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
-import CategoryTile, { CategoryTileProps } from '@/src/components/cards/CategoryTile';
+import CategoryTile, { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 
 type CategoryTileListProps = {
   cards: CategoryTileProps[];

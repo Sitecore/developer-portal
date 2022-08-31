@@ -4,7 +4,7 @@ import { classnames, TTailwindString } from '@/tailwindcss-classnames';
 import type { StackExchangeQuestion } from '@/src/interfaces/integrations';
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
-import FeedHeading from '@/src/components/helper/FeedHeading';
+import FeedHeading from '@/src/components/common/FeedHeading';
 
 type StackExchangeFeedProps = {
   content: StackExchangeQuestion[];

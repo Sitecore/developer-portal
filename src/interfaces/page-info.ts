@@ -2,7 +2,8 @@ import {
   ForumOption,
   SortOption,
 } from '@/src/components/integrations/sitecore-community/SitecoreCommunity.api';
-import { ContentHeading } from '@/src/lib/rehype/extractHeadings';
+import { ContentHeading } from '@/src/interfaces/contentheading';
+
 import {
   SitecoreCommunityEvent,
   SitecoreCommunityContent,

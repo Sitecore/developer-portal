@@ -5,11 +5,11 @@ import { getPageInfo, getChildPageInfo } from '@/src/scripts/page-info';
 import { getSolutionPaths } from '@/src/scripts/static-paths';
 // Interfaces
 import type { PageInfo, ChildPageInfo } from '@/src/interfaces/page-info';
-import type { CategoryTileProps } from '@/src/components/cards/CategoryTile';
+import type { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 // Components
 import CategoryTileList from '@/src/components/lists/CategoryTileList';
-import Container from '@/src/components/helper/Container';
-import Layout from '@/src/components/layout/Layout';
+import Container from '@/src/components/common/Container';
+import Layout from '@/src/layouts/Layout';
 import SocialFeeds from '@/src/components/integrations/SocialFeeds';
 
 export async function getStaticPaths() {

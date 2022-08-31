@@ -5,7 +5,7 @@ import { buildPager, PagerState } from '@coveo/headless';
 // Lib
 import { coveoEngine, urlManager } from '@/src/lib/search/coveo-engine';
 import { classnames } from 'tailwindcss-classnames';
-import SvgIcon from '../helper/SvgIcon';
+import SvgIcon from '../../common/SvgIcon';
 
 const SearchPagination = () => {
   const pager = buildPager(coveoEngine);

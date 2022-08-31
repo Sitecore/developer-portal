@@ -1,6 +1,6 @@
 import translateDate from '@/src/lib/translate-date';
 import { classnames } from '@/tailwindcss-classnames';
-import ConditionalWrapper from '@/src/components/helper/ConditionalWrapper';
+import ConditionalWrapper from '@/src/components/common/ConditionalWrapper';
 // Local
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
 

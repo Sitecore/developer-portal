@@ -7,8 +7,8 @@ import { AppProps } from 'next/dist/shared/lib/router/router';
 import { resetId } from 'react-id-generator';
 import TagManager from 'react-gtm-module';
 // Components
-import Nav from '@/src/components/site/Nav/Nav';
-import Footer from '@/src/components/site/Footer/Footer';
+import Nav from '@/src/layouts/components/head/Nav';
+import Footer from '@/src/layouts/components/footer/Footer';
 // Local
 import '@/src/styles/global.css';
 

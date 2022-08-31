@@ -3,11 +3,11 @@ import Image from 'next/image';
 // Interfaces
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
-import DynamicTag from '@/src/components/helper/DynamicTag';
+import DynamicTag from '@/src/components/common/DynamicTag';
 import { classnames } from '@/tailwindcss-classnames';
-import SvgIcon from '../helper/SvgIcon';
+import SvgIcon from '../common/SvgIcon';
 import React from 'react';
-import Container from '../helper/Container';
+import Container from '../common/Container';
 
 export type HeroProps = {
   title: string;

@@ -5,8 +5,8 @@
 
 /* Components */
 @import 'tailwindcss/components';
-@import '../components/site/Nav/Nav.styles.css';
-@import '../components/layout/SidebarNav/SidebarNav.styles.css';
+@import '../layouts/components/head/Nav.styles.css';
+@import '../components/sidebar-nav/SidebarNav.styles.css';
 
 /* Utilities */
 @import 'tailwindcss/utilities';

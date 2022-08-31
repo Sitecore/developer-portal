@@ -1,5 +1,5 @@
 // Lib
-import { ContentHeading } from '@/src/lib/rehype/extractHeadings';
+import { ContentHeading } from '@/src/interfaces/contentheading';
 import SidebarNav from './SidebarNav';
 
 type InPageNavProps = {

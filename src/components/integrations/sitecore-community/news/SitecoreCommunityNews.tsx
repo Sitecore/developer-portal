@@ -1,7 +1,7 @@
 // Global
 import { classnames } from '@/tailwindcss-classnames';
 // Components
-import FeedHeading from '@/src/components/helper/FeedHeading';
+import FeedHeading from '@/src/components/common/FeedHeading';
 // Local
 import SitecoreCommunityNewsOrEventItem from '../SitecoreCommunityNewsOrEventItem';
 import { SitecoreCommunityContent } from '@/src/interfaces/integrations';

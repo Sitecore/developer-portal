@@ -5,7 +5,7 @@ import { PageInfo, PagePartialGroup } from '@/src/interfaces/page-info';
 // Data
 import learningAtSitecore from '@/data/promos/learning-at-sitecore';
 // Components
-import GenericContentPage from '@/src/components/layout/GenericContentPage';
+import GenericContentPage from '@/src/layouts/GenericContentPage';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('learn');

@@ -3,14 +3,14 @@ import { classnames } from '@/tailwindcss-classnames';
 // Interfaces
 import type { PageInfo, PartialData, PagePartialGroup } from '@/src/interfaces/page-info';
 // Components
-import Container from '@/src/components/helper/Container';
-import InPageNav from '@/src/components/layout/SidebarNav/InPageNav';
-import Layout from '@/src/components/layout/Layout';
-import MarkdownContent from '@/src/components/helper/MarkdownContent';
+import Container from '@/src/components/common/Container';
+import InPageNav from '@/src/components/sidebar-nav/InPageNav';
+import Layout from '@/src/layouts/Layout';
+import MarkdownContent from '@/src/components/common/MarkdownContent';
 import PromoCard, { PromoCardProps } from '@/src/components/cards/PromoCard';
-import SectionHeading from '@/src/components/helper/SectionHeading';
+import SectionHeading from '@/src/components/common/SectionHeading';
 import SocialFeeds from '@/src/components/integrations/SocialFeeds';
-import VerticalGroup from '@/src/components/helper/VerticalGroup';
+import VerticalGroup from '@/src/components/common/VerticalGroup';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;

@@ -13,10 +13,10 @@ import {
   PartialData,
 } from '@/src/interfaces/page-info';
 // Components
-import GenericContentPage from '@/src/components/layout/GenericContentPage';
-import MultiPageNav from '@/src/components/layout/MultiPageNav';
+import GenericContentPage from '@/src/layouts/GenericContentPage';
+import MultiPageNav from '@/src/layouts/MultiPageNav';
 
-import ContentPager from '@/src/components/helper/ContentPager';
+import ContentPager from '@/src/components/common/ContentPager';
 
 export async function getStaticPaths() {
   const articlePaths = await getFaqPaths();

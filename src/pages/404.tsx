@@ -1,9 +1,9 @@
 // Global
 import Image from 'next/image';
 // Components
-import Container from '@/src/components/helper/Container';
-import TextLink from '@/src/components/helper/TextLink';
-import Layout from '@/src/components/layout/Layout';
+import Container from '@/src/components/common/Container';
+import TextLink from '@/src/components/common/TextLink';
+import Layout from '@/src/layouts/Layout';
 
 const pageInfo = {
   description: 'The page you are looking for cannot be found.',

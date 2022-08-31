@@ -3,7 +3,7 @@ import { getPageContent, getPageInfo, getPartialsAsArray } from '@/src/scripts/p
 // Interfaces
 import { PageInfo, PartialData } from '@/src/interfaces/page-info';
 // Components
-import GenericContentPage from '@/src/components/layout/GenericContentPage';
+import GenericContentPage from '@/src/layouts/GenericContentPage';
 //Promos
 import opensourcePromo from '@/data/promos/opensource';
 

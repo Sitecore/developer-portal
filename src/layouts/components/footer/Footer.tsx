@@ -1,4 +1,4 @@
-import Container from '@/src/components/helper/Container';
+import Container from '@/src/components/common/Container';
 import Image from 'next/image';
 import { classnames } from 'tailwindcss-classnames';
 

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { classnames } from 'tailwindcss-classnames';
 // Components
-import ConditionalWrapper from '@/src/components/helper/ConditionalWrapper';
+import ConditionalWrapper from '@/src/components/common/ConditionalWrapper';
 
 type NavLinkProps = {
   text: string;

@@ -5,7 +5,7 @@ import { classnames } from 'tailwindcss-classnames';
 import axios from 'axios';
 import { useState } from 'react';
 // Components
-import FeedHeading from '@/src/components/helper/FeedHeading';
+import FeedHeading from '@/src/components/common/FeedHeading';
 // Local
 import SitecoreCommunityBlogOrQuestion from '../SitecoreCommunityBlogOrQuestion';
 import { SortOption } from '../SitecoreCommunity.api';

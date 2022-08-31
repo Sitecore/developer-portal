@@ -3,7 +3,7 @@ import { getPageInfo, getPartialsAsArray } from '@/src/scripts/page-info';
 // Interfaces
 import { PageInfo, PartialData } from '@/src/interfaces/page-info';
 // Components
-import GenericContentPage from '@/src/components/layout/GenericContentPage';
+import GenericContentPage from '@/src/layouts/GenericContentPage';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('discover');

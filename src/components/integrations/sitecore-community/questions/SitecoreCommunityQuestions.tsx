@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { classnames } from 'tailwindcss-classnames';
 // Components
-import TextLink from '@/src/components/helper/TextLink';
+import TextLink from '@/src/components/common/TextLink';
 // Local
 import SitecoreCommunityBlogOrQuestion from '../SitecoreCommunityBlogOrQuestion';
 import { ForumOption, SortOption } from '../SitecoreCommunity.api';

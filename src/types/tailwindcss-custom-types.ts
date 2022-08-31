@@ -1,5 +1,5 @@
-import type { NavTWClasses } from '@/src/components/site/Nav/Nav';
-import type { InPageNavTWClasses } from '@/src/components/layout/SidebarNav/SidebarNav';
+import type { NavTWClasses } from '@/src/layouts/components/head/Nav';
+import type { InPageNavTWClasses } from '@/src/components/sidebar-nav/SidebarNav';
 
 type SCDPTailwindTypes =
   | 'px-gutter-all'

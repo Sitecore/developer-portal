@@ -11,8 +11,8 @@ import type {
   PartialData,
 } from '@/src/interfaces/page-info';
 // Components
-import GenericContentPage from '@/src/components/layout/GenericContentPage';
-import TrialNav from '@/src/components/layout/TrialNav';
+import GenericContentPage from '@/src/layouts/GenericContentPage';
+import TrialNav from '@/src/layouts/TrialNav';
 
 export async function getStaticPaths() {
   const trialPaths = await getTrialNavPaths();

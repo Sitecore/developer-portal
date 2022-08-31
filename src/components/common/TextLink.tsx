@@ -3,7 +3,7 @@ import React from 'react';
 import { classnames, TTailwindString } from '@/tailwindcss-classnames';
 import Link from 'next/link';
 // Components
-import SvgIcon from '@/src/components/helper/SvgIcon';
+import SvgIcon from '@/src/components/common/SvgIcon';
 
 type TextLinkProps = {
   text: string;

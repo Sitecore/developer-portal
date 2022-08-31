@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import TextLink from '../helper/TextLink';
+import TextLink from '../common/TextLink';
 
 interface NewsletterStoryPartialData {
   copy: string;

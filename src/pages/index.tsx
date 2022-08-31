@@ -3,20 +3,20 @@ import { classnames } from '@/tailwindcss-classnames';
 // Scripts
 import { getPageInfo } from '@/src/scripts/page-info';
 // Interfaces
-import type { CategoryTileProps } from '@/src/components/cards/CategoryTile';
+import type { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 import type { PageInfo } from '@/src/interfaces/page-info';
 // Components
 import CategoryTileList from '@/src/components/lists/CategoryTileList';
 import CommunityList from '@/src/components/lists/CommunityList';
-import Container from '@/src/components/helper/Container';
+import Container from '@/src/components/common/Container';
 import CTACard from '@/src/components/cards/CTACard';
-import Layout from '@/src/components/layout/Layout';
+import Layout from '@/src/layouts/Layout';
 import SitecoreCommunityBlog from '@/src/components/integrations/sitecore-community/blog/SitecoreCommunityBlog';
 import SitecoreCommunityEvents from '@/src/components/integrations/sitecore-community/events/SitecoreCommunityEvents';
 import SitecoreCommunityNews from '@/src/components/integrations/sitecore-community/news/SitecoreCommunityNews';
 import SitecoreCommunityQuestions from '@/src/components/integrations/sitecore-community/questions/SitecoreCommunityQuestions';
 import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
-import VerticalGroup from '@/src/components/helper/VerticalGroup';
+import VerticalGroup from '@/src/components/common/VerticalGroup';
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
 import PromoCard from '@/src/components/cards/PromoCard';
 // Data

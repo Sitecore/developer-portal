@@ -11,9 +11,9 @@ const { idMainContent } = htmlConfig;
 import { setGlobalState, useGlobalState } from '@/src/lib/global-state';
 // Components
 import Logo from './Logo';
-import NavMenu from '@/src/components/site/Nav/NavMenu';
-import QuickStartMenu from '@/src/components/QuickStartMenu';
-import SearchInput from '@/src/components/search/SearchInput';
+import NavMenu from '@/src/layouts/components/head/NavMenu';
+import QuickStartMenu from '@/src/layouts/components/head/QuickStartMenu';
+import SearchInput from '@/src/components/integrations/search/SearchInput';
 import { urlManager } from '@/src/lib/search/coveo-engine';
 
 export type NavTWClasses =
