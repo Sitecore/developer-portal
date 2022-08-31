@@ -9,7 +9,7 @@ import {
   querySummary,
   urlManager,
   searchStatus,
-} from '@/src/lib/search/coveo-engine';
+} from '@/src/common/search/coveo-engine';
 // Components
 import SearchResultItem from './SearchResultItem';
 import VideoResultItem from './VideoResultItem';

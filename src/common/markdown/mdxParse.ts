@@ -2,7 +2,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import { s } from 'hastscript';
-import rehypeExtractHeadings from '@/src/lib/markdown/rehype/extractHeadings';
+import rehypeExtractHeadings from '@/src/common/markdown/rehype/extractHeadings';
 import { ContentHeading } from '@/src/interfaces/contentheading';
 import { serialize } from 'next-mdx-remote/serialize';
 import remarkEmbedder, { TransformerInfo } from '@remark-embedder/core';

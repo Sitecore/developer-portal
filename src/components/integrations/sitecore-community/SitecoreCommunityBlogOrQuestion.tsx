@@ -3,7 +3,7 @@ import type { SitecoreCommunityContent } from '@/src/interfaces/integrations';
 // Global
 import { classnames } from 'tailwindcss-classnames';
 // Lib
-import translateDate from '@/src/lib/translate-date';
+import translateDate from '@/src/common/translate-date';
 // Local
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
 

@@ -18,7 +18,7 @@ import SitecoreCommunityApi from '@/src/components/integrations/sitecore-communi
 import { SITECORE_COMMUNITY_MAX_COUNT } from '@/src/components/integrations/sitecore-community/sitecore-community.constants';
 
 import { ContentHeading } from '@/src/interfaces/contentheading';
-import { ParseContent } from '@/src/lib/markdown/mdxParse';
+import { ParseContent } from '@/src/common/markdown/mdxParse';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');

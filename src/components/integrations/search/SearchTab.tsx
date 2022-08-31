@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { buildTab, TabState } from '@coveo/headless';
 // Lib
-import { coveoEngine } from '@/src/lib/search/coveo-engine';
+import { coveoEngine } from '@/src/common/search/coveo-engine';
 import { classnames } from '@/tailwindcss-classnames';
 
 interface SearchTabProps {

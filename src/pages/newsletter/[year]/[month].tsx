@@ -7,15 +7,15 @@ import {
   getNewsletterStaticPaths,
   NewsletterPath,
   NEWSLETTER_DATA_DIRECTORY,
-} from '@/src/scripts/static-paths/newletter-static-paths';
+} from '@/src/common/static-paths/newletter-static-paths';
 // Components
 import Container from '@/src/components/common/Container';
 import NewsletterStory, { NewsletterStoryData } from '@/src/components/newsletter/NewsletterStory';
 import NewsletterNav from '@/src/components/newsletter/NewsletterNav';
 import Layout from '@/src/layouts/Layout';
 import { PageInfo } from '@/src/interfaces/page-info';
-import { translateDateAsYearMonth } from '@/src/lib/translate-date';
-import { getNewsletterTitle } from '@/src/lib/newsletter/get-newsletter-title';
+import { translateDateAsYearMonth } from '@/src/common/translate-date';
+import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
 
 export interface NewsletterContentPageProps {
   content: NewsletterStoryData[];

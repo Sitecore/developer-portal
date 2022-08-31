@@ -1,5 +1,5 @@
 // Scripts
-import { getPageContent, getPageInfo, getPartialsAsArray } from '@/src/scripts/page-info';
+import { getPageContent, getPageInfo, getPartialsAsArray } from '@/src/common/page-info';
 // Interfaces
 import { PageInfo, PartialData } from '@/src/interfaces/page-info';
 // Components

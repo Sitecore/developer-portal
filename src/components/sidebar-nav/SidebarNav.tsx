@@ -2,7 +2,7 @@
 import { classnames } from 'tailwindcss-classnames';
 import Link from 'next/link';
 // Lib
-import { useGlobalState } from '@/src/lib/global-state';
+import { useGlobalState } from '@/src/common/global-state';
 // Interfaces
 import { LinkValue } from '@/src/interfaces/link-value';
 

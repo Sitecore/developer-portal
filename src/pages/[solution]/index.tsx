@@ -1,8 +1,8 @@
 // Global
 import { classnames } from '@/tailwindcss-classnames';
 // Scripts
-import { getPageInfo, getChildPageInfo } from '@/src/scripts/page-info';
-import { getSolutionPaths } from '@/src/scripts/static-paths';
+import { getPageInfo, getChildPageInfo } from '@/src/common/page-info';
+import { getSolutionPaths } from '@/src/common/static-paths';
 // Interfaces
 import type { PageInfo, ChildPageInfo } from '@/src/interfaces/page-info';
 import type { CategoryTileProps } from '@/src/components/lists/CategoryTile';

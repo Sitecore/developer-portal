@@ -1,5 +1,5 @@
 // Scipts
-import { getPageInfo, getPartialsAsArray } from '@/src/scripts/page-info';
+import { getPageInfo, getPartialsAsArray } from '@/src/common/page-info';
 // Interfaces
 import { PageInfo, PagePartialGroup } from '@/src/interfaces/page-info';
 // Components

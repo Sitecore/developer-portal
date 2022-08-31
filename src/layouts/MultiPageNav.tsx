@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { classnames } from '@/tailwindcss-classnames';
 // Lib
-import { useGlobalState } from '@/src/lib/global-state';
+import { useGlobalState } from '@/src/common/global-state';
 // Interfaces
 import type { CustomNavContext, CustomNavData } from '@/src/interfaces/page-info';
 

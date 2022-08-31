@@ -1,5 +1,5 @@
 // Scripts
-import { getPageInfo } from '@/src/scripts/page-info';
+import { getPageInfo } from '@/src/common/page-info';
 // Interfaces
 import { PageInfo } from '@/src/interfaces/page-info';
 // Components

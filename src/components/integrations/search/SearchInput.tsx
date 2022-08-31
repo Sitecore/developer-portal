@@ -5,7 +5,7 @@ import { classnames, TTailwindString } from '@/tailwindcss-classnames';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 // Lib
-import { searchBox } from '@/src/lib/search/coveo-engine';
+import { searchBox } from '@/src/common/search/coveo-engine';
 
 interface SearchInputProps {
   className?: TTailwindString;

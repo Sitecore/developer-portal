@@ -6,15 +6,15 @@ import throttle from 'lodash.throttle';
 // Data
 import NavigationData, { SitecoreQuickLinks } from '@/data/data-navigation';
 // Lib
-import htmlConfig from '@/src/lib/html-constants';
+import htmlConfig from '@/src/common/html-constants';
 const { idMainContent } = htmlConfig;
-import { setGlobalState, useGlobalState } from '@/src/lib/global-state';
+import { setGlobalState, useGlobalState } from '@/src/common/global-state';
 // Components
 import Logo from './Logo';
 import NavMenu from '@/src/layouts/components/head/NavMenu';
 import QuickStartMenu from '@/src/layouts/components/head/QuickStartMenu';
 import SearchInput from '@/src/components/integrations/search/SearchInput';
-import { urlManager } from '@/src/lib/search/coveo-engine';
+import { urlManager } from '@/src/common/search/coveo-engine';
 
 export type NavTWClasses =
   | 'nav-item--button'

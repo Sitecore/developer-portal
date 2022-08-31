@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 // Scripts
-import { getPartialsAsArray } from '@/src/scripts/page-info';
-import { getTrialNavPaths } from '@/src/scripts/static-paths';
+import { getPartialsAsArray } from '@/src/common/page-info';
+import { getTrialNavPaths } from '@/src/common/static-paths';
 // Interfaces
 import type {
   TrialNavContext,

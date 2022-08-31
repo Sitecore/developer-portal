@@ -5,7 +5,7 @@ import { buildUrlManager, loadSearchActions, loadSearchAnalyticsActions } from '
 // Interfaces
 import { PageInfo } from '@/src/interfaces/page-info';
 // Scripts
-import { getPageInfo } from '@/src/scripts/page-info';
+import { getPageInfo } from '@/src/common/page-info';
 // Lib
 import {
   coveoEngine,
@@ -16,7 +16,7 @@ import {
   yearFacet,
   fileTypeFacet,
   languageFacet,
-} from '@/src/lib/search/coveo-engine';
+} from '@/src/common/search/coveo-engine';
 // Components
 import Container from '@/src/components/common/Container';
 import Layout from '@/src/layouts/Layout';

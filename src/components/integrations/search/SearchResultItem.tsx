@@ -1,4 +1,4 @@
-import { resultList } from '@/src/lib/search/coveo-engine';
+import { resultList } from '@/src/common/search/coveo-engine';
 import { Result } from '@coveo/headless';
 
 interface SearchResultItemProps {

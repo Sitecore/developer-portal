@@ -3,7 +3,7 @@ import router from 'next/router';
 import { useState, useEffect } from 'react';
 import { buildPager, PagerState } from '@coveo/headless';
 // Lib
-import { coveoEngine, urlManager } from '@/src/lib/search/coveo-engine';
+import { coveoEngine, urlManager } from '@/src/common/search/coveo-engine';
 import { classnames } from 'tailwindcss-classnames';
 import SvgIcon from '../../common/SvgIcon';
 

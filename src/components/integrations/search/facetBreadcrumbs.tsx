@@ -5,7 +5,7 @@ import { classnames, TTailwindString } from '@/tailwindcss-classnames';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 // Lib
-import { coveoEngine, breadcrumbManager, urlManager } from '@/src/lib/search/coveo-engine';
+import { coveoEngine, breadcrumbManager, urlManager } from '@/src/common/search/coveo-engine';
 import {
   BreadcrumbManager as BreadcrumbManagerType,
   BreadcrumbManagerState,

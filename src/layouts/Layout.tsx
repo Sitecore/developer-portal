@@ -6,7 +6,7 @@ import { classnames } from '@/tailwindcss-classnames';
 // Interfaces
 import type { PageInfo } from '@/src/interfaces/page-info';
 // Lib
-import htmlConfig from '@/src/lib/html-constants';
+import htmlConfig from '@/src/common/html-constants';
 const { idMainContent } = htmlConfig;
 // Components
 import Hero from '@/src/components/heros/Hero';

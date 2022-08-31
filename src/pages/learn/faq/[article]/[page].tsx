@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 
 // Scripts
-import { getPageContent, getPageInfo, getPartialsAsArray } from '@/src/scripts/page-info';
-import { getFaqNavPaths, getFaqPaths } from '@/src/scripts/static-paths';
+import { getPageContent, getPageInfo, getPartialsAsArray } from '@/src/common/page-info';
+import { getFaqNavPaths, getFaqPaths } from '@/src/common/static-paths';
 // Interfaces
 import {
   ContentPagerContext,

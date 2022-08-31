@@ -1,6 +1,6 @@
 // Scripts
-import { getPageInfo, getPartialsAsArray } from '@/src/scripts/page-info';
-import { getProductPaths } from '@/src/scripts/static-paths';
+import { getPageInfo, getPartialsAsArray } from '@/src/common/page-info';
+import { getProductPaths } from '@/src/common/static-paths';
 // Interfaces
 import type { PageInfo, PartialData } from '@/src/interfaces/page-info';
 // Components

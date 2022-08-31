@@ -2,7 +2,7 @@
 import { Facet, FacetValue, SortOrder } from '@coveo/headless';
 import { useEffect, useState } from 'react';
 // Lib
-import { urlManager, searchStatus } from '@/src/lib/search/coveo-engine';
+import { urlManager, searchStatus } from '@/src/common/search/coveo-engine';
 import { classnames } from '@/tailwindcss-classnames';
 import SvgIcon from '../../common/SvgIcon';
 import { useRouter } from 'next/router';

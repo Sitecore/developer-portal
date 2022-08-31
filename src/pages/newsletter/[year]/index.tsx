@@ -7,11 +7,11 @@ import {
   getNewsletterStaticPaths,
   NewsletterPath,
   NEWSLETTER_DATA_DIRECTORY,
-} from '@/src/scripts/static-paths/newletter-static-paths';
+} from '@/src/common/static-paths/newletter-static-paths';
 import { PageInfo } from '@/src/interfaces/page-info';
 // Lib
-import { getNewsletterTitle } from '@/src/lib/newsletter/get-newsletter-title';
-import { translateDateAsYearMonth } from '@/src/lib/translate-date';
+import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
+import { translateDateAsYearMonth } from '@/src/common/translate-date';
 // Components
 import Container from '@/src/components/common/Container';
 import Layout from '@/src/layouts/Layout';

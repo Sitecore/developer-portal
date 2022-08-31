@@ -3,12 +3,12 @@ import fs from 'fs';
 import path from 'path';
 import { GetStaticProps, NextPage } from 'next';
 // Scripts
-import { NEWSLETTER_DATA_DIRECTORY } from '@/src/scripts/static-paths/newletter-static-paths';
+import { NEWSLETTER_DATA_DIRECTORY } from '@/src/common/static-paths/newletter-static-paths';
 import { PageInfo } from '@/src/interfaces/page-info';
-import { getPageInfo } from '@/src/scripts/page-info';
+import { getPageInfo } from '@/src/common/page-info';
 // Lib
-import { getNewsletterTitle } from '@/src/lib/newsletter/get-newsletter-title';
-import { translateDateAsYearMonth } from '@/src/lib/translate-date';
+import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
+import { translateDateAsYearMonth } from '@/src/common/translate-date';
 // Components
 import CategoryTileList from '@/src/components/lists/CategoryTileList';
 import Container from '@/src/components/common/Container';

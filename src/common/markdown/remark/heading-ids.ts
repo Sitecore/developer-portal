@@ -1,5 +1,5 @@
 import { visit } from 'unist-util-visit';
-import getSectionId from '@/src/lib/section-id';
+import getSectionId from '@/src/common/section-id';
 
 type HeaderNodeData = {
   value?: string;

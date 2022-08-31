@@ -1,4 +1,4 @@
-import translateDate from '@/src/lib/translate-date';
+import translateDate from '@/src/common/translate-date';
 import { classnames } from '@/tailwindcss-classnames';
 import ConditionalWrapper from '@/src/components/common/ConditionalWrapper';
 // Local
