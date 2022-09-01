@@ -6,7 +6,8 @@ description: "Fully integrated Commerce as part of Sitecore's platform DXP"
 ---
 
 ## Introduction
-Sitecore Experience Commerce (XC) empowers marketers and merchandizers to fully personalize the end-to-end shopping experience – before, during and after the transaction. The Sitecore Experience Commerce solution provides all the tools you need for managing your e-commerce storefront. 
+
+Sitecore Experience Commerce (XC) empowers marketers and merchandizers to fully personalize the end-to-end shopping experience – before, during and after the transaction. The Sitecore Experience Commerce solution provides all the tools you need for managing your e-commerce storefront.
 
 ## Documentation
 
@@ -25,6 +26,7 @@ Sitecore Experience Commerce (XC) empowers marketers and merchandizers to fully 
 - [Sitecore Essentials (FREE)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore Experience Commerce 9 and 10
 
 ## Learn more
+
 - [Sitecore Experience Commerce - learning.sitecore.com](https://learning.sitecore.com/pathway/sitecore-experience-commerce)
 - [YouTube: Sitecore Experience Commerce Deep Dive](https://www.youtube.com/watch?v=T0cn3yBbRro&list=PL1jJVFm_lGny-vqNPTv3VdBA_o31-Tq94)
 - [How to series on YouTube](https://www.youtube.com/watch?v=aWeC7SXNifw&list=PL1jJVFm_lGnwa9R0XqeGrhmNj1AHbAnE9)

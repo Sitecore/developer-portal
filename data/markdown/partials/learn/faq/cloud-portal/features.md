@@ -12,6 +12,7 @@ Get self enrollment, but no ability to create new product instances. Be able to 
 Features:
 
 **Identity and Platform**
+
 - Auth0 Login
 - Organization Create
 - Organization Edit
@@ -21,6 +22,7 @@ Features:
 - Associate tenants to an organization (manually)
 
 **Infrastructure**
+
 - GitOps for Deploy
 - Regression Testing Framework
 - Domain and WAF
@@ -29,12 +31,14 @@ Features:
 - Logging
 
 **Portal Experience**
+
 - Landing page with blown out app switcher content to start
 - Top Bar Placeholder
 - App Switcher in Top Bar
 - Auditing Access to support sorting of switcher/ui
 
 **XM Cloud**
+
 - Tenant API to suppoer App Switcher (what assets are deployed)
 - GitOps flow / management from XM Cloud plans
 - SSO into XM Cloud
@@ -42,16 +46,17 @@ Features:
 - SSO into Horizon (new window)
 
 **CDP Embedded**
+
 - Provision a CDP dev + production instance per organization
 - No SSO support
 
 **Will I be able to see the current status of my billing in the Sitecore Cloud Portal?**
 
-With the initial release, you won't be able to review your billing status. For any usage and billing information, you need to follow up with your account or customer success manager. This is on our roadmap and will be working on exposing the billing information to the correct users in future releases. 
- 
+With the initial release, you won't be able to review your billing status. For any usage and billing information, you need to follow up with your account or customer success manager. This is on our roadmap and will be working on exposing the billing information to the correct users in future releases.
+
 **Can I manage my team members’ access in the Sitecore Cloud Portal or is that only done through Sitecore support?**
 
-Yes, if your organization's access role is an admin or owner. In the initial release only these two roles you will be able to invite and manage the team members' access within your organization.  This is one of the main benefits of the initial release of Sitecore Cloud Portal, managing access and invitation to all apps and environments in the organization. 
+Yes, if your organization's access role is an admin or owner. In the initial release only these two roles you will be able to invite and manage the team members' access within your organization. This is one of the main benefits of the initial release of Sitecore Cloud Portal, managing access and invitation to all apps and environments in the organization.
 
 **Will you be able to have access to more than one Organization?**
 

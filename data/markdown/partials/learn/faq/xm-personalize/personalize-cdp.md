@@ -2,6 +2,7 @@
 title: 'Personalize & CDP'
 hasInPageNav: true
 ---
+
 **What is the key difference between the real-time data platform available in Sitecore Personalize vs. Sitecore CDP?**
 
 Sitecore Personalize has a lightweight version of the CDP engine. This means we are identifying users, building profiles, and storing states across a limited number of sessions. This also means that if customers want to upgrade to a full CDP with Personalize we can do that with a flick of a switch. With the lightweight CDP in Sitecore Personalize though, there is no access to the customer profile directly or segmentation or data export - you need CDP to do this.
@@ -34,7 +35,7 @@ No, you will have to manually recreate your rule logic in Personalize using Deci
 **Future - Coming Soon, not currently Available**
 Experience Targeting: We want the marketer persona to be able to set up an experience that delivers different content based on a pre-defined audience. This pre-defined audience is built upon the same structure as XM/P conditions. The user can combine these conditions into an audience and decide on what output the variant will return. We have high level plans to build some level of integration between XM and Personalize so that the user could set up personalization in XM and it automatically creates an experience with the required variants and assigned audiences. There are some rules in XM that won&#39;t be transferrable. More work to be done here.
 
-**We currently use XM Managed Cloud but like the sound of adding Personalize and Send.  We use .Net to publish to the web apps in Azure, will we continue to do that if we move to your new XP2XMP offering?**
+**We currently use XM Managed Cloud but like the sound of adding Personalize and Send. We use .Net to publish to the web apps in Azure, will we continue to do that if we move to your new XP2XMP offering?**
 
 For customers already using XM On-Prem or Managed Cloud, they will continue to use their existing deployment process for code changes for their environment. The customer will however need to purchase Sitecore Send or Sitecore Personalize to apply to their existing XM instance. These changes will not affect the existing deployment to Azure Platform as a Service (PaaS) or Containers (or any other potential approach). To add Personalize, the customer will apply the Sitecore CDP/Personalize JS Library to begin tracking users on their site and use Sitecore Personalize or SmartHub CDP to then personalize their customers&#39; experiences using a Web or Full Stack Experience.
 
@@ -42,7 +43,7 @@ If the customer is using XP and moving to an XM + Personalize, their existing de
 
 If a customer is currently using XM On-Prem or Managed Cloud and moving to XM Cloud + Embedded Personalize (or standalone Personalize) there would be a change in their Dev Ops process, due to the nature of using XM Cloud which is a Headless SaaS product. Some technologies are no longer supported by the XM Cloud infrastructure, and therefore would require a change in strategy for the organization.
 
-**What can we personalize?  Do we use the same rule editor that we do in XP now?**** **
+**What can we personalize? Do we use the same rule editor that we do in XP now?\*\*** \*\*
 
 This is a two-part question, regarding the first question.Using the headless personalization style that comes with Sitecore Personalize, you can build almost any personalization scenario that suits your requirements.
 
@@ -50,7 +51,7 @@ If the data exists in the system, then it can be used to personalize.
 
 Second question: I assume this is related to the XP to XM + Personalize topic, which in that case, no, there is a different editor in the Personalize product.
 
- **Does Personalize work at the component level to swap out content or just pop-ups? **
+**Does Personalize work at the component level to swap out content or just pop-ups? **
 
 Personalization is not restricted to just pop-up functionality but instead can apply to page level or component level variations. Offers stored in Sitecore Personalize paired with Web Experiences can allow marketers to customize various parts of a webpage, from within Sitecore Personalize using Html/CSS/JavaScript. In addition, using a Full Stack headless experience, any content irrespective of the source (including XM or Content Hub) can be personalized.
 
@@ -60,7 +61,7 @@ If the user has purchased Standalone Personalize (or CDP, SmartHub CDP) then the
 
 **Do I need to make changes to my current XM/XP implementation in order to utilize Sitecore Personalize (SP)?**
 
-Technically, you could use XP and Personalize side by side and could even be some benefits of doing so for a temporary period of time to collect data before fully embracing Personalize.  Technically there would be some changes necessary, however the impacts would be minimal.  Please refer to developer portal integration documents.
+Technically, you could use XP and Personalize side by side and could even be some benefits of doing so for a temporary period of time to collect data before fully embracing Personalize. Technically there would be some changes necessary, however the impacts would be minimal. Please refer to developer portal integration documents.
 
 With an existing XP or XM on-prem implementation, to start utilizing Sitecore Personalize, you will need to integrate the web tracking mechanisms into your existing XP/XM instance. This includes placing the Sitecore CDP/Personalize JS Library (Boxever.js) and then adding tracking events in JavaScript, to track view and identity events where appropriate. There are details about these required changes in the Developer Portal ([https://developers.sitecore.com/learn/integrations/xm-smarthub-cdp](https://developers.sitecore.com/learn/integrations/xm-smarthub-cdp))
 
@@ -68,9 +69,9 @@ With an existing XP or XM on-prem implementation, to start utilizing Sitecore Pe
 
 No, you currently cannot store offers in Content Hub or XM and pull these into Sitecore Personalize. However, you can pull content from XM or Content Hub when personalizing a piece of content using a Full Stack experience vs a Web Experience using custom code in your front end.
 
-**How do the personalized full-stack (omni-channel) options work?  Can you show me an example of a customer?**
+**How do the personalized full-stack (omni-channel) options work? Can you show me an example of a customer?**
 
-Regarding a full description, please refer to the documentation website.  The following are example use and business cases
+Regarding a full description, please refer to the documentation website. The following are example use and business cases
 
 **1. Personalised Content for Native Mobile App experiences**
 
@@ -88,7 +89,7 @@ Regarding a full description, please refer to the documentation website.  The fo
 **Real-Life Example (Jetstar Airways &amp; Sitecore)**
 
 - [https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways ](https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways%C2%A0)
-- [https://sitecore.showpad.biz/webapp2/results?query=vercel%20pitch&amp;scope=content,coaching&amp;slug=0857aedc7594214236e1967f7837fd27 ](https://sitecore.showpad.biz/webapp2/results?query=vercel%20pitch&amp;scope=content,coaching&amp;slug=0857aedc7594214236e1967f7837fd27%C2%A0)
+- [https://sitecore.showpad.biz/webapp2/results?query=vercel%20pitch&amp;scope=content,coaching&amp;slug=0857aedc7594214236e1967f7837fd27 ](https://sitecore.showpad.biz/webapp2/results?query=vercel%20pitch&scope=content,coaching&slug=0857aedc7594214236e1967f7837fd27%C2%A0)
 
 To solve a challenge of Create and act on insights from a single customer profile driven by an omnichannel experience strategy.**Jetstar** Use Sitecore Experience Manager as the core digital transformation platform, Sitecore CDP to activate customer insights and Sitecore Personalize deployed across multiple channels.
 

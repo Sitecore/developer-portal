@@ -12,7 +12,8 @@ type CommunityListItem = {
 const content: CommunityListItem[] = [
   {
     title: 'Slack',
-    description: 'Talk to other Sitecore enthusiasts, share ideas, or get answers to your questions.',
+    description:
+      'Talk to other Sitecore enthusiasts, share ideas, or get answers to your questions.',
     href: 'https://sitecore.chat',
     linkText: 'Join the conversation',
     img: {
@@ -32,7 +33,8 @@ const content: CommunityListItem[] = [
   },
   {
     title: 'Official Sitecore Forums',
-    description: 'Connect with thousands of Sitecore developers and users, ask questions, or join the discussions.',
+    description:
+      'Connect with thousands of Sitecore developers and users, ask questions, or join the discussions.',
     href: 'https://community.sitecore.com/',
     linkText: 'Start a discussion',
     img: {

@@ -6,6 +6,7 @@ description: 'Cloud-native, headless, and API-first commerce solution'
 ---
 
 ## Introduction
+
 With Sitecore OrderCloud®, design your own commerce solution with an API-first, headless cloud platform for B2B, B2C, and B2X. OrderCloud powers custom eCommerce experiences, order management, and B2B marketplace applications for some of the world’s most well-known brands - processing over 25 million transactions and $5 billion in revenue annually.
 
 ## Documentation
@@ -25,9 +26,11 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 - [Ordercloud Feature Guide](https://www.sitecore.com/resources/index/guide/ordercloud-feature-guide)
 
 ## Playground
+
 - [Get Started Now!](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
 - [The Code 👩‍💻](https://github.com/ordercloud-api)
 
 ## Integrations
+
 - [Integrating Sitecore OrderCloud with Sitecore Send](/learn/integrations/send-oc)
 - [Integrating Sitecore OrderCloud with Sitecore CDP](/learn/integrations/oc-cdp)

@@ -6,5 +6,5 @@
 - [Getting Started with SXA](https://www.youtube.com/watch?v=nMTUitaBMek&list=PL1jJVFm_lGnwKmalgi6sukqDhoYA73JDn&index=1)
 - [Getting Started with Containers](https://doc.sitecore.com/en/developers/101/developer-tools/containers-in-sitecore-development.html)
 - [Sitecore Essentials - Free on-demand learning](https://learning.sitecore.com/pathway/sitecore-essentials)
-    - Introduction to Sitecore Experience Accelerator
-    - Sitecore JSS Fundamentals
+  - Introduction to Sitecore Experience Accelerator
+  - Sitecore JSS Fundamentals

@@ -6,13 +6,16 @@ description: 'From search to sale, Discover helps you create relevant experience
 ---
 
 ## Introduction
+
 Sitecore Discover enables your commerce business by adding individualized search and merchandizing capabilities. Deliver a 1:1 shopping experience with tailored search results and recommendations driven by AI in real time.
 
 ## Getting Started
+
 - [Service Overview](https://docs.google.com/presentation/d/1EcNr5QunGnJM4SsgzNoDL8fycwKcqz0DAZL5Mx7Qpjo)
 - [Getting Started](https://docs.google.com/document/d/1hHQOBynPiaGUyq3Hzj7Ggbl8mtzOvQbml4emgR0C9ME)
 
 ## Documentation
+
 - [Sitecore Discover Documentation](https://doc.sitecore.com/discover/)
 - [Data Feed Specification](https://docs.google.com/spreadsheets/d/1_3x9ccFyZdDt9n1hHiAcuqe1dvrc0ZAHbiQK5gBPYVU)
 - [Incremental Feed Documentation](https://doc.sitecore.com/discover/en/resources/Sitecore-Discover-API-Incremental-Feed.pdf)

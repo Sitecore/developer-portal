@@ -6,5 +6,6 @@ description: 'Cloud-native, headless, and API-first commerce solution'
 youtube: 'PL1jJVFm_lGnxDN-HHtT_WQRpI3zvMdYU-'
 partials: ['solution/commerce/ordercloud']
 sitecoreCommunityQuestions: true
-sitecoreCommunityQuestionsCategory: ['searchAndMerchandizing', 'storefrontsAndMarketplaces', 'orderManagement']
+sitecoreCommunityQuestionsCategory:
+  ['searchAndMerchandizing', 'storefrontsAndMarketplaces', 'orderManagement']
 ---
