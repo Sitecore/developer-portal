@@ -1,5 +1,5 @@
 // Global
-import { classnames, TTailwindString } from '@/tailwindcss-classnames';
+import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 // Interfaces
 import type { StackExchangeQuestion } from '@/src/interfaces/integrations';
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';

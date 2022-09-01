@@ -1,6 +1,6 @@
 // Global
 import React from 'react';
-import { classnames, TTailwindString } from '@/tailwindcss-classnames';
+import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import Link from 'next/link';
 // Components
 import SvgIcon from '@/src/components/common/SvgIcon';

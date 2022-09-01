@@ -1,4 +1,4 @@
-import { classnames, TTailwindString } from 'tailwindcss-classnames';
+import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import React from 'react';
 
 type VerticalGroupSize = 'md' | 'lg';

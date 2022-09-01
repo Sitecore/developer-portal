@@ -1,5 +1,5 @@
 // Global
-import { classnames } from 'tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import Link from 'next/link';
 // Lib
 import { useGlobalState } from '@/src/common/global-state';

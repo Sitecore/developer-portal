@@ -5,7 +5,7 @@ import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
 import DynamicTag from '@/src/components/common/DynamicTag';
 import SvgIcon from '../common/SvgIcon';
-import { classnames } from '@/tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 
 export type CategoryTileProps = {
   containerTag?: 'div' | 'li';

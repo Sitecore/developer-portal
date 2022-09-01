@@ -3,7 +3,7 @@ import type { SitecoreCommunityContent } from '@/src/interfaces/integrations';
 // Global
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { classnames } from 'tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Components
 import TextLink from '@/src/components/common/TextLink';
 // Local

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
 import DynamicTag from '@/src/components/common/DynamicTag';
-import { classnames } from '@/tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import SvgIcon from '../common/SvgIcon';
 import React from 'react';
 import Container from '../common/Container';

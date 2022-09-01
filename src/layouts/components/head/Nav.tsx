@@ -1,7 +1,7 @@
 // Global
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { classnames } from 'tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import throttle from 'lodash.throttle';
 // Data
 import NavigationData, { SitecoreQuickLinks } from '@/data/data-navigation';

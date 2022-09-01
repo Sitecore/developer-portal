@@ -1,5 +1,5 @@
 // Global
-import { classnames, TTailwindString } from '@/tailwindcss-classnames';
+import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import Image from 'next/image';
 // Data
 import data from '@/data/data-community-list';

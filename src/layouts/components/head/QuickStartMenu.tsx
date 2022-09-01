@@ -1,7 +1,7 @@
 // Global
 import React, { useState, useRef, useEffect } from 'react';
-import { TTailwindString } from 'tailwindcss-classnames';
-import { classnames } from 'tailwindcss-classnames';
+import { TTailwindString } from '@/src/common/types/tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import { useId } from 'react-id-generator';
 
 // Local

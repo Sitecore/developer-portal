@@ -1,5 +1,5 @@
 // Global
-import { classnames } from '@/tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import { useId } from 'react-id-generator';
 import { useState } from 'react';
 import SvgIcon from './SvgIcon';

@@ -1,8 +1,8 @@
 // Global
 import { useEffect, useState } from 'react';
-import { classnames } from '@/tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import SyntaxHighlight from 'react-syntax-highlighter';
-import { TArg } from 'tailwindcss-classnames';
+import { TArg } from '@/src/common/types/tailwindcss-classnames';
 import { MDXRemote } from 'next-mdx-remote';
 import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 // Interfaces

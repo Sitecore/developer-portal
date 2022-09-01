@@ -2,7 +2,7 @@
 import React, { useLayoutEffect, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { classnames } from '@/tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Interfaces
 import type { PageInfo } from '@/src/interfaces/page-info';
 // Lib

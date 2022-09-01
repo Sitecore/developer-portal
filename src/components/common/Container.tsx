@@ -1,5 +1,5 @@
 import React from 'react';
-import { classnames, TArg, TTailwindString } from 'tailwindcss-classnames';
+import { classnames, TArg, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 
 export type ContainerSize = 'standard';
 

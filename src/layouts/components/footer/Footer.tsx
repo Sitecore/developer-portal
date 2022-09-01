@@ -1,6 +1,6 @@
 import Container from '@/src/components/common/Container';
 import Image from 'next/image';
-import { classnames } from 'tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 
 const Footer = (): JSX.Element => {
   return (

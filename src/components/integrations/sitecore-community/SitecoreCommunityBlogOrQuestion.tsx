@@ -1,7 +1,7 @@
 // Interfaces
 import type { SitecoreCommunityContent } from '@/src/interfaces/integrations';
 // Global
-import { classnames } from 'tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Lib
 import translateDate from '@/src/common/translate-date';
 // Local

@@ -1,7 +1,7 @@
 // Interfaces
 import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Global
-import { classnames } from '@/tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Components
 import TextLink from './TextLink';
 import DynamicTag from './DynamicTag';

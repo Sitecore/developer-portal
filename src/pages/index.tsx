@@ -1,5 +1,5 @@
 // Global
-import { classnames } from '@/tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Scripts
 import { getPageInfo } from '@/src/common/page-info';
 // Interfaces

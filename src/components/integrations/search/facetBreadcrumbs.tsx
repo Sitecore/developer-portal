@@ -1,7 +1,7 @@
 // Global
 import { useId } from 'react-id-generator';
 import { SearchBox, UrlManager } from '@coveo/headless';
-import { classnames, TTailwindString } from '@/tailwindcss-classnames';
+import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 // Lib

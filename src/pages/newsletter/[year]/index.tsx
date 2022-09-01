@@ -17,7 +17,7 @@ import Container from '@/src/components/common/Container';
 import Layout from '@/src/layouts/Layout';
 import CategoryTile, { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 // Data
-import { classnames } from 'tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];

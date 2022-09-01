@@ -1,6 +1,6 @@
 import { ContentPagerContext, CustomNavContext } from '@/src/interfaces/page-info';
 import Link from 'next/link';
-import { classnames } from 'tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 
 type ContentPagerProps = {
   paging: ContentPagerContext;

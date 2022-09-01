@@ -1,7 +1,7 @@
 // Global
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { classnames } from 'tailwindcss-classnames';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import { useRouter } from 'next/router';
 // Data
 import { NavigationData } from '@/data/data-navigation';
