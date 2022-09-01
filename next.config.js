@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /**
  * @type {import('next').NextConfig}
  */
 
-import { readdirSync } from 'fs';
-import { resolve } from 'path';
+const fs = require('fs');
+const path = require('path');
 
 //const withTM = require('next-transpile-modules'); // pass the modules you would like to see transpiled
 const securityHeaders = [
@@ -80,11 +81,13 @@ const nextConfig = {
   },
   async redirects() {
     // Get the latest newsletter and redirect `newsletter/latest` to it
-    const newsletterDataDir = resolve(__dirname, 'data/newsletters/');
-    const year = readdirSync(newsletterDataDir)
+    const newsletterDataDir = path.resolve(__dirname, 'data/newsletters/');
+    const year = fs
+      .readdirSync(newsletterDataDir)
       .map((y) => parseInt(y, 10))
       .sort((a, b) => b - a)[0];
-    const month = readdirSync(resolve(newsletterDataDir, `${year}`))
+    const month = fs
+      .readdirSync(path.resolve(newsletterDataDir, `${year}`))
       .map((m) => {
         const name = m.substring(m, m.length - 5);
         return {
@@ -105,4 +108,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
