@@ -10,7 +10,11 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: {
-    content: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
+    content: [
+      './src/components/**/*.{js,ts,jsx,tsx}',
+      './src/layouts/**/*.{js,ts,jsx,tsx}',
+      './src/pages/**/*.{js,ts,jsx,tsx}'
+    ]
   },
   darkMode: 'media', // or 'media' or 'class'
   theme: {

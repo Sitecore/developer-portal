@@ -10,7 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate-css-types": "tailwindcss-classnames -x ./src/common/types/tailwindcss-custom-types.ts -i ./tailwind.config.js",
+    "generate-css-types": "tailwindcss-classnames -o ./src/common/types/tailwindcss-classnames.ts -x ./src/common/types/tailwindcss-custom-types.ts -i ./tailwind.config.js",
     "pre-commit": "lint-staged",
     "pre-push": "tsc --project tsconfig.json",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
