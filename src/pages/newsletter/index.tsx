@@ -1,21 +1,23 @@
+/* eslint-disable react/prop-types */
+// eslint-disable-next-line react/prop-types
 // Global
 import fs from 'fs';
-import path from 'path';
 import { GetStaticProps, NextPage } from 'next';
+import path from 'path';
 // Scripts
+import { getPageInfo } from '@/src/common/page-info';
 import { NEWSLETTER_DATA_DIRECTORY } from '@/src/common/static-paths/newletter-static-paths';
 import { PageInfo } from '@/src/interfaces/page-info';
-import { getPageInfo } from '@/src/common/page-info';
 // Lib
 import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
 import { translateDateAsYearMonth } from '@/src/common/translate-date';
 // Components
-import CategoryTileList from '@/src/components/lists/CategoryTileList';
-import Container from '@/src/components/common/Container';
-import Layout from '@/src/layouts/Layout';
-import { CategoryTileProps } from '@/src/components/lists/CategoryTile';
-import VerticalGroup from '@/src/components/common/VerticalGroup';
 import PromoCard from '@/src/components/cards/PromoCard';
+import Container from '@/src/components/common/Container';
+import VerticalGroup from '@/src/components/common/VerticalGroup';
+import { CategoryTileProps } from '@/src/components/lists/CategoryTile';
+import CategoryTileList from '@/src/components/lists/CategoryTileList';
+import Layout from '@/src/layouts/Layout';
 // Data
 import newsletterPromo from '@/data/promos/newsletter';
 

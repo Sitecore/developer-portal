@@ -1,5 +1,3 @@
-// Global
-import Image from 'next/image';
 // Components
 import Container from '@/src/components/common/Container';
 import TextLink from '@/src/components/common/TextLink';

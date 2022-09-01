@@ -1,14 +1,11 @@
 // Global
-import React, { useState, useEffect } from 'react';
 import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 // Interfaces
-import type { YouTubeVideo, YouTubeSnippet } from '@/src/interfaces/integrations';
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
+import type { YouTubeSnippet, YouTubeVideo } from '@/src/interfaces/integrations';
 // Components
-import DynamicTag from '@/src/components/common/DynamicTag';
-import TextLink from '@/src/components/common/TextLink';
-import Image from 'next/image';
 import FeedHeading from '@/src/components/common/FeedHeading';
+import Image from 'next/image';
 
 type YouTubeFeedProps = {
   className?: TTailwindString;

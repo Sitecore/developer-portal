@@ -1,9 +1,8 @@
 // Global
-import { useEffect, useState } from 'react';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
-import SyntaxHighlight from 'react-syntax-highlighter';
-import { TArg } from '@/src/common/types/tailwindcss-classnames';
+import { classnames, TArg } from '@/src/common/types/tailwindcss-classnames';
 import { MDXRemote } from 'next-mdx-remote';
+import { useEffect, useState } from 'react';
+import SyntaxHighlight from 'react-syntax-highlighter';
 import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 // Interfaces
 import type { PartialData } from '@/src/interfaces/page-info';
@@ -40,15 +39,12 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
       components={{
         code({ className, children }) {
           const match = /language-(\w+)/.exec(className || '');
-          const lang = !!match ? match[1] : '';
+          const lang = match ? match[1] : '';
           const style = isDark ? a11yDark : a11yLight;
           return match ? (
-            <SyntaxHighlight
-              children={String(children).replace(/\n$/, '')}
-              style={style}
-              language={lang}
-              PreTag="div"
-            />
+            <SyntaxHighlight style={style} language={lang} PreTag="div">
+              {String(children).replace(/\n$/, '')}
+            </SyntaxHighlight>
           ) : (
             <code className={className}>{children}</code>
           );

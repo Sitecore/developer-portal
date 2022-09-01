@@ -1,35 +1,19 @@
 // Global
-import { useId } from 'react-id-generator';
-import { SearchBox, UrlManager } from '@coveo/headless';
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
-import { useState, useEffect } from 'react';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 // Lib
-import { coveoEngine, breadcrumbManager, urlManager } from '@/src/common/search/coveo-engine';
-import {
-  BreadcrumbManager as BreadcrumbManagerType,
-  BreadcrumbManagerState,
-  buildBreadcrumbManager,
-} from '@coveo/headless';
+import { breadcrumbManager, urlManager } from '@/src/common/search/coveo-engine';
 
 const hoveredStyle = {
   cursor: 'pointer',
 };
 
-const clearStyle = {
-  fontSize: '1em',
-};
-
 const FacetBreadcrumbs = () => {
-  const [breadcrumbManagerState, setBreadcrumbManagerState] = useState(breadcrumbManager.state);
-
   const router = useRouter();
 
   const subscribeToStateChangesAndReturnCleanup = () => {
     const allunsubscribers: { (): void }[] = [];
-    allunsubscribers.push(
-      breadcrumbManager.subscribe(() => setBreadcrumbManagerState(breadcrumbManager.state))
-    );
     allunsubscribers.push(
       urlManager.subscribe(() => {
         router.push({
@@ -79,9 +63,9 @@ const FacetBreadcrumbs = () => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 {' '}
                 <line x1="18" y1="6" x2="6" y2="18" /> <line x1="6" y1="6" x2="18" y2="18" />

@@ -1,6 +1,6 @@
 // Global
-import { useState, useEffect } from 'react';
 import { buildTab, TabState } from '@coveo/headless';
+import { useEffect, useState } from 'react';
 // Lib
 import { coveoEngine } from '@/src/common/search/coveo-engine';
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
@@ -12,7 +12,7 @@ interface SearchTabProps {
   selected?: boolean;
 }
 
-const SearchTab = ({ id, expression, title, selected }: SearchTabProps) => {
+const SearchTab = ({ id, expression, title }: SearchTabProps) => {
   const tab = buildTab(coveoEngine, { options: { expression, id } });
   const [tabState, setTabState] = useState<TabState | null>(null);
 
@@ -20,10 +20,6 @@ const SearchTab = ({ id, expression, title, selected }: SearchTabProps) => {
     tab.subscribe(() => {
       setTabState(tab.state);
     });
-
-    return () => {
-      tab.subscribe(() => {});
-    };
   }, []);
 
   if (!tabState) {

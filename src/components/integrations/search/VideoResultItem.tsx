@@ -1,4 +1,4 @@
-import { resultList } from '@/src/common/search/coveo-engine';
+/* eslint-disable @next/next/no-img-element */
 import { Result } from '@coveo/headless';
 
 interface SearchResultItemProps {

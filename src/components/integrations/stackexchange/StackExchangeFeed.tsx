@@ -1,8 +1,8 @@
 // Global
 import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 // Interfaces
-import type { StackExchangeQuestion } from '@/src/interfaces/integrations';
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
+import type { StackExchangeQuestion } from '@/src/interfaces/integrations';
 // Components
 import FeedHeading from '@/src/components/common/FeedHeading';
 
@@ -12,11 +12,7 @@ type StackExchangeFeedProps = {
   headingLevel?: ValidHeadingLevels;
 };
 
-const StackExchangeFeed = ({
-  content,
-  className,
-  headingLevel,
-}: StackExchangeFeedProps): JSX.Element => {
+const StackExchangeFeed = ({ content, className }: StackExchangeFeedProps): JSX.Element => {
   if (content.length === 0) {
     return <></>;
   }
@@ -54,7 +50,7 @@ const StackExchangeFeed = ({
                 <a
                   href={question.link}
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer noopener"
                   className={classnames('font-semibold', 'hover:underline', 'inline-block')}
                 >
                   <span dangerouslySetInnerHTML={{ __html: question.title }} />
@@ -69,7 +65,7 @@ const StackExchangeFeed = ({
                           <a
                             href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`}
                             target="_blank"
-                            rel="noopener"
+                            rel="noopener noreferrer"
                             className={classnames(
                               'border-violet-dark',
                               'text-white',

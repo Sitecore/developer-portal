@@ -1,20 +1,20 @@
 // Global
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Scripts
-import { getPageInfo, getChildPageInfo } from '@/src/common/page-info';
+import { getChildPageInfo, getPageInfo } from '@/src/common/page-info';
 import { getSolutionPaths } from '@/src/common/static-paths';
 // Interfaces
-import type { PageInfo, ChildPageInfo } from '@/src/interfaces/page-info';
 import type { CategoryTileProps } from '@/src/components/lists/CategoryTile';
+import type { ChildPageInfo, PageInfo } from '@/src/interfaces/page-info';
 // Components
-import CategoryTileList from '@/src/components/lists/CategoryTileList';
 import Container from '@/src/components/common/Container';
-import Layout from '@/src/layouts/Layout';
 import SocialFeeds from '@/src/components/integrations/SocialFeeds';
+import CategoryTileList from '@/src/components/lists/CategoryTileList';
+import Layout from '@/src/layouts/Layout';
 
 export async function getStaticPaths() {
   const solutionPaths = await getSolutionPaths();
-  let staticPaths = {
+  const staticPaths = {
     paths: solutionPaths,
     fallback: false,
   };

@@ -2,8 +2,8 @@
  * @type {import('next').NextConfig}
  */
 
-const fs = require('fs');
-const path = require('path');
+import { readdirSync } from 'fs';
+import { resolve } from 'path';
 
 //const withTM = require('next-transpile-modules'); // pass the modules you would like to see transpiled
 const securityHeaders = [
@@ -66,7 +66,7 @@ const nextConfig = {
       'i.ytimg.com',
       'mss-p-006-delivery.sitecorecontenthub.cloud',
       'mss-p-006-delivery.stylelabs.cloud',
-      'go.sitecore.com'
+      'go.sitecore.com',
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
@@ -80,13 +80,11 @@ const nextConfig = {
   },
   async redirects() {
     // Get the latest newsletter and redirect `newsletter/latest` to it
-    const newsletterDataDir = path.resolve(__dirname, 'data/newsletters/');
-    const year = fs
-      .readdirSync(newsletterDataDir)
+    const newsletterDataDir = resolve(__dirname, 'data/newsletters/');
+    const year = readdirSync(newsletterDataDir)
       .map((y) => parseInt(y, 10))
       .sort((a, b) => b - a)[0];
-    const month = fs
-      .readdirSync(path.resolve(newsletterDataDir, `${year}`))
+    const month = readdirSync(resolve(newsletterDataDir, `${year}`))
       .map((m) => {
         const name = m.substring(m, m.length - 5);
         return {
@@ -107,4 +105,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

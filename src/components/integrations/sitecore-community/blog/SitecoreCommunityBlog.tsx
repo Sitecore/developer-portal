@@ -7,8 +7,8 @@ import { useState } from 'react';
 // Components
 import FeedHeading from '@/src/components/common/FeedHeading';
 // Local
-import SitecoreCommunityBlogOrQuestion from '../SitecoreCommunityBlogOrQuestion';
 import { SortOption } from '../SitecoreCommunity.api';
+import SitecoreCommunityBlogOrQuestion from '../SitecoreCommunityBlogOrQuestion';
 
 type SitecoreCommunityBlogProps = {
   content?: SitecoreCommunityContent[];
@@ -20,6 +20,7 @@ const SitecoreCommunityBlog = ({ content, sortKeys }: SitecoreCommunityBlogProps
     return <></>;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [fetchedResults, setFetchedResults] = useState<SitecoreCommunityContent[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -34,8 +35,6 @@ const SitecoreCommunityBlog = ({ content, sortKeys }: SitecoreCommunityBlogProps
       })
       .catch((err) => console.log(err));
   };
-
-  const items = fetchedResults || content;
 
   return (
     <>

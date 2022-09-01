@@ -1,16 +1,16 @@
 // Global
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Interfaces
-import type { PageInfo, PartialData, PagePartialGroup } from '@/src/interfaces/page-info';
+import type { PageInfo, PagePartialGroup, PartialData } from '@/src/interfaces/page-info';
 // Components
+import PromoCard, { PromoCardProps } from '@/src/components/cards/PromoCard';
 import Container from '@/src/components/common/Container';
+import MarkdownContent from '@/src/components/common/MarkdownContent';
+import SectionHeading from '@/src/components/common/SectionHeading';
+import VerticalGroup from '@/src/components/common/VerticalGroup';
+import SocialFeeds from '@/src/components/integrations/SocialFeeds';
 import InPageNav from '@/src/components/sidebar-nav/InPageNav';
 import Layout from '@/src/layouts/Layout';
-import MarkdownContent from '@/src/components/common/MarkdownContent';
-import PromoCard, { PromoCardProps } from '@/src/components/cards/PromoCard';
-import SectionHeading from '@/src/components/common/SectionHeading';
-import SocialFeeds from '@/src/components/integrations/SocialFeeds';
-import VerticalGroup from '@/src/components/common/VerticalGroup';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -30,7 +30,7 @@ const Content = (
   partialGroups?: PagePartialGroup[],
   hasGrid?: boolean
 ): JSX.Element => {
-  if (!!partialGroups) {
+  if (partialGroups) {
     return (
       <VerticalGroup>
         {partialGroups.map((group, i) => (
@@ -43,7 +43,7 @@ const Content = (
     );
   }
 
-  if (!!partials) {
+  if (partials) {
     return <MarkdownContent partials={partials} hasGrid={hasGrid} />;
   }
 
@@ -64,7 +64,7 @@ const GenericContentPage = ({
     console.warn('GenericContentPage requires either partials or partialGroups');
     return <></>;
   }
-  const titles = !!partials ? partials.titles : [];
+  const titles = partials ? partials.titles : [];
   const Nav = customNav ? customNav : <InPageNav titles={titles} />;
 
   return (

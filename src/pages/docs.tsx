@@ -4,7 +4,6 @@ import { getPageInfo, getPartialsAsArray } from '@/src/common/page-info';
 import { PageInfo, PagePartialGroup } from '@/src/interfaces/page-info';
 // Components
 import GenericContentPage from '@/src/layouts/GenericContentPage';
-import { useRouter } from 'next/router';
 
 export async function getStaticProps() {
   // Partial Groups

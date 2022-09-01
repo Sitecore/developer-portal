@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 // Global
 import fs from 'fs';
-import path from 'path';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import path from 'path';
 // Scripts
 import {
   getNewsletterStaticPaths,
@@ -9,13 +10,13 @@ import {
   NEWSLETTER_DATA_DIRECTORY,
 } from '@/src/common/static-paths/newletter-static-paths';
 // Components
-import Container from '@/src/components/common/Container';
-import NewsletterStory, { NewsletterStoryData } from '@/src/components/newsletter/NewsletterStory';
-import NewsletterNav from '@/src/components/newsletter/NewsletterNav';
-import Layout from '@/src/layouts/Layout';
-import { PageInfo } from '@/src/interfaces/page-info';
-import { translateDateAsYearMonth } from '@/src/common/translate-date';
 import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
+import { translateDateAsYearMonth } from '@/src/common/translate-date';
+import Container from '@/src/components/common/Container';
+import NewsletterNav from '@/src/components/newsletter/NewsletterNav';
+import NewsletterStory, { NewsletterStoryData } from '@/src/components/newsletter/NewsletterStory';
+import { PageInfo } from '@/src/interfaces/page-info';
+import Layout from '@/src/layouts/Layout';
 
 export interface NewsletterContentPageProps {
   content: NewsletterStoryData[];

@@ -1,15 +1,15 @@
 // Scripts
 import { getPageContent, getPageInfo, getPartialsAsArray } from '@/src/common/page-info';
-import { getGettingStartedPaths, getIntegrationPaths } from '@/src/common/static-paths';
+import { getGettingStartedPaths } from '@/src/common/static-paths';
 // Interfaces
 import type { PageInfo, PartialData } from '@/src/interfaces/page-info';
 // Components
 import GenericContentPage from '@/src/layouts/GenericContentPage';
 
 //Promotions to use on Articles
-import { PromoCardProps } from '@/src/components/cards/PromoCard';
 import LearningEssentials from '@/data/promos/learning-essentials';
 import ComposableDXP from '@/data/promos/videos/composable-dxp';
+import { PromoCardProps } from '@/src/components/cards/PromoCard';
 
 const ArticlePromos: { [name: string]: PromoCardProps } = {
   'learning-essentials': LearningEssentials,
@@ -54,7 +54,7 @@ const ArticlePage = ({ pageInfo, partials }: ArticlePageProps): JSX.Element => {
 
   //Load details about promotions for the top of the article
   if (pageInfo?.promoBefore) {
-    for (let promoId of pageInfo.promoBefore) {
+    for (const promoId of pageInfo.promoBefore) {
       const promoCard = ArticlePromos[promoId];
       if (promoCard) {
         promoBefore.push(promoCard);
@@ -64,7 +64,7 @@ const ArticlePage = ({ pageInfo, partials }: ArticlePageProps): JSX.Element => {
 
   //Load details about promotions for the bottom of the article
   if (pageInfo?.promoAfter) {
-    for (let promoId of pageInfo.promoAfter) {
+    for (const promoId of pageInfo.promoAfter) {
       const promoCard = ArticlePromos[promoId];
       if (promoCard) {
         promoAfter.push(promoCard);

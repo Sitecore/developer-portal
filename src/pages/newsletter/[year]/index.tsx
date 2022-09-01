@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 // Global
 import fs from 'fs';
-import path from 'path';
 import { GetStaticProps, NextPage } from 'next';
+import path from 'path';
 // Scripts
 import {
   getNewsletterStaticPaths,
@@ -14,8 +15,8 @@ import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title
 import { translateDateAsYearMonth } from '@/src/common/translate-date';
 // Components
 import Container from '@/src/components/common/Container';
-import Layout from '@/src/layouts/Layout';
 import CategoryTile, { CategoryTileProps } from '@/src/components/lists/CategoryTile';
+import Layout from '@/src/layouts/Layout';
 // Data
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
 
@@ -82,7 +83,7 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
   };
 };
 
-const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo, year, paths }) => {
+const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }) => {
   return (
     <Layout pageInfo={pageInfo}>
       <Container>

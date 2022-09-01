@@ -22,7 +22,7 @@ type DateOutputProps = {
 };
 const DateOutput = ({ startDate, endDate }: DateOutputProps): JSX.Element => {
   const startDateString = translateDate(startDate);
-  const endDateString = !!endDate ? translateDate(endDate) : '';
+  const endDateString = endDate ? translateDate(endDate) : '';
   if (!endDateString || startDateString === endDateString) {
     return <p className={classnames('text-xs')}>{startDateString}</p>;
   }

@@ -1,5 +1,5 @@
-import { visit } from 'unist-util-visit';
 import getSectionId from '@/src/common/section-id';
+import { visit } from 'unist-util-visit';
 
 type HeaderNodeData = {
   value?: string;
@@ -35,7 +35,7 @@ const setHeadingIds = () => {
         text = firstChild.value || '';
       }
 
-      if (!!text) {
+      if (text) {
         const id = getSectionId(text);
 
         // Make sure the data structure is in place

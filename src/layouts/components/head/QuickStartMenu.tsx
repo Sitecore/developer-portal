@@ -1,7 +1,6 @@
 // Global
-import React, { useState, useRef, useEffect } from 'react';
-import { TTailwindString } from '@/src/common/types/tailwindcss-classnames';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
+import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
+import { useEffect, useRef, useState } from 'react';
 import { useId } from 'react-id-generator';
 
 // Local
@@ -24,7 +23,7 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
   const quickStartMenuRef = useRef<HTMLDivElement>(null);
   const [isOpen, setOpen] = useState(false);
 
-  const toggleQuickStartMenu = (event: React.MouseEvent) => {
+  const toggleQuickStartMenu = () => {
     setOpen(!isOpen);
   };
 

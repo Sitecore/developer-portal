@@ -1,14 +1,15 @@
 import {
-  Html,
+  DocumentContext,
+  DocumentInitialProps,
+  DocumentProps,
   Head,
+  Html,
   Main,
   NextScript,
-  DocumentProps,
-  DocumentInitialProps,
-  DocumentContext,
 } from 'next/document';
 import { Component } from 'react';
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export class MyDocument<P = {}> extends Component<DocumentProps & P> {
   static getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     return ctx.defaultGetInitialProps(ctx);

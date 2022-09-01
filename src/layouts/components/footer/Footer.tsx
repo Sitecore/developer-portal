@@ -1,6 +1,6 @@
-import Container from '@/src/components/common/Container';
-import Image from 'next/image';
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
+import Container from '@/src/components/common/Container';
+import Link from 'next/link';
 
 const Footer = (): JSX.Element => {
   return (
@@ -129,16 +129,20 @@ const Footer = (): JSX.Element => {
               </a>
             </li>
             <li className={classnames('inline-block', 'border-l', 'px-2')}>
-              <a className={classnames('font-semibold')} href="/help">
-                Get Help
-                <span className={classnames('sr-only')}>Opens in a new tab</span>
-              </a>
+              <Link href={'/help'} passHref>
+                <a className={classnames('font-semibold')}>
+                  Get Help
+                  <span className={classnames('sr-only')}>Opens in a new tab</span>
+                </a>
+              </Link>
             </li>
             <li className={classnames('inline-block', 'border-l', 'px-2')}>
-              <a className={classnames('font-semibold')} href="/contribute">
-                Contribute
-                <span className={classnames('sr-only')}>Opens in a new tab</span>
-              </a>
+              <Link href={'/contribute'} passHref>
+                <a className={classnames('font-semibold')}>
+                  Contribute
+                  <span className={classnames('sr-only')}>Opens in a new tab</span>
+                </a>
+              </Link>
             </li>
           </ul>
         </div>

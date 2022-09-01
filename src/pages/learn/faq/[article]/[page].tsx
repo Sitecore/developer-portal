@@ -2,15 +2,13 @@ import fs from 'fs';
 import path from 'path';
 
 // Scripts
-import { getPageContent, getPageInfo, getPartialsAsArray } from '@/src/common/page-info';
-import { getFaqNavPaths, getFaqPaths } from '@/src/common/static-paths';
+import { getPartialsAsArray } from '@/src/common/page-info';
+import { getFaqNavPaths } from '@/src/common/static-paths';
 // Interfaces
 import {
   ContentPagerContext,
-  ContentPagerRoute,
   CustomNavContext,
   CustomNavData,
-  CustomNavRoute,
   PageInfo,
   PartialData,
 } from '@/src/interfaces/page-info';
@@ -19,9 +17,6 @@ import GenericContentPage from '@/src/layouts/GenericContentPage';
 import MultiPageNav from '@/src/layouts/MultiPageNav';
 
 //Promotions to use on Articles
-import { PromoCardProps } from '@/src/components/cards/PromoCard';
-import LearningEssentials from '@/data/promos/learning-essentials';
-import ComposableDXP from '@/data/promos/videos/composable-dxp';
 import ContentPager from '@/src/components/common/ContentPager';
 
 export async function getStaticPaths() {
@@ -67,7 +62,7 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
   const partials = await getPartialsAsArray([
     `${basePath}/${context.params.article}/${context.params.page}`,
   ]);
-  pageInfo!.pageTitle = `${navData.title} - ${activeItem?.title}`;
+  pageInfo.pageTitle = `${navData.title} - ${activeItem?.title}`;
 
   return {
     props: {

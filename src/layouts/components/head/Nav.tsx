@@ -1,20 +1,20 @@
 // Global
-import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import throttle from 'lodash.throttle';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 // Data
 import NavigationData, { SitecoreQuickLinks } from '@/data/data-navigation';
 // Lib
+import { setGlobalState, useGlobalState } from '@/src/common/global-state';
 import htmlConfig from '@/src/common/html-constants';
 const { idMainContent } = htmlConfig;
-import { setGlobalState, useGlobalState } from '@/src/common/global-state';
 // Components
-import Logo from './Logo';
+import { urlManager } from '@/src/common/search/coveo-engine';
+import SearchInput from '@/src/components/integrations/search/SearchInput';
 import NavMenu from '@/src/layouts/components/head/NavMenu';
 import QuickStartMenu from '@/src/layouts/components/head/QuickStartMenu';
-import SearchInput from '@/src/components/integrations/search/SearchInput';
-import { urlManager } from '@/src/common/search/coveo-engine';
+import Logo from './Logo';
 
 export type NavTWClasses =
   | 'nav-item--button'
@@ -205,11 +205,12 @@ const Nav = (): JSX.Element => {
                   >
                     <NavMenu
                       title={item.title}
-                      children={item.children}
                       url={item.url}
                       pathname={item.pathname}
                       callback={toggleNav}
-                    />
+                    >
+                      {item.children}
+                    </NavMenu>
                   </li>
                 );
               })}
@@ -229,10 +230,11 @@ const Nav = (): JSX.Element => {
               >
                 <NavMenu
                   title={SitecoreQuickLinks.title}
-                  children={SitecoreQuickLinks.children}
                   callback={toggleNav}
                   buttonIcon="quick-links"
-                />
+                >
+                  {SitecoreQuickLinks.children}
+                </NavMenu>
               </li>
             </ul>
           </nav>

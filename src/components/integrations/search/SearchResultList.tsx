@@ -1,14 +1,14 @@
 // Global
+import { buildResultTemplatesManager, Result, ResultTemplatesHelpers } from '@coveo/headless';
 import router from 'next/router';
-import { Result, buildResultTemplatesManager, ResultTemplatesHelpers } from '@coveo/headless';
 import { useEffect, useState } from 'react';
 // Lib
 import {
   coveoEngine,
-  resultList,
   querySummary,
-  urlManager,
+  resultList,
   searchStatus,
+  urlManager,
 } from '@/src/common/search/coveo-engine';
 // Components
 import SearchResultItem from './SearchResultItem';
@@ -17,13 +17,14 @@ import VideoResultItem from './VideoResultItem';
 const SearchResultList = () => {
   const [resultState, setResultState] = useState(resultList.state);
   const [querySummaryState, setQuerySummaryState] = useState(querySummary.state);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [searchStatusState, setSearchStatusState] = useState(searchStatus.state);
 
   const templateManager = buildResultTemplatesManager(coveoEngine);
   templateManager.registerTemplates(
     {
       conditions: [ResultTemplatesHelpers.fieldMustMatch('sourcetype', ['YouTube'])],
-      content: (result: Result, i: number) => (
+      content: (result: Result) => (
         <li key={result.uniqueId}>
           <VideoResultItem result={result} />
         </li>
@@ -32,7 +33,7 @@ const SearchResultList = () => {
     },
     {
       conditions: [],
-      content: (result: Result, i: number) => (
+      content: (result: Result) => (
         <li key={result.uniqueId}>
           <SearchResultItem result={result} />
         </li>
@@ -98,6 +99,7 @@ const SearchResultList = () => {
 
       <ul>
         {resultState.results.map((result: Result) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const template: any = templateManager.selectTemplate(result);
           return template(result);
         })}

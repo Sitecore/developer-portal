@@ -5,7 +5,6 @@ import { PageInfo, PartialData } from '@/src/interfaces/page-info';
 // Components
 import GenericContentPage from '@/src/layouts/GenericContentPage';
 //Promos
-import opensourcePromo from '@/data/promos/opensource';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('example');

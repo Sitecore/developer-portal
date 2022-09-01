@@ -1,7 +1,7 @@
 // Global
-import { NextPage } from 'next';
-import { useEffect, useState } from 'react';
 import { buildUrlManager, loadSearchActions, loadSearchAnalyticsActions } from '@coveo/headless';
+import { NextPage } from 'next';
+import { useEffect } from 'react';
 // Interfaces
 import { PageInfo } from '@/src/interfaces/page-info';
 // Scripts
@@ -9,24 +9,22 @@ import { getPageInfo } from '@/src/common/page-info';
 // Lib
 import {
   coveoEngine,
-  urlManager,
-  versionFacet,
-  productFacet,
-  sourceFacet,
-  yearFacet,
   fileTypeFacet,
   languageFacet,
+  productFacet,
+  sourceFacet,
+  urlManager,
+  versionFacet,
+  yearFacet,
 } from '@/src/common/search/coveo-engine';
 // Components
 import Container from '@/src/components/common/Container';
-import Layout from '@/src/layouts/Layout';
-import SearchResultList from '@/src/components/integrations/search/SearchResultList';
-import SearchFacet, { FacetValueSort } from '@/src/components/integrations/search/SearchFacet';
-import SearchTab from '@/src/components/integrations/search/SearchTab';
-import SearchPagination from '@/src/components/integrations/search/SearchPagination';
 import VerticalGroup from '@/src/components/common/VerticalGroup';
-import { language } from 'gray-matter';
 import FacetBreadcrumbs from '@/src/components/integrations/search/facetBreadcrumbs';
+import SearchFacet, { FacetValueSort } from '@/src/components/integrations/search/SearchFacet';
+import SearchPagination from '@/src/components/integrations/search/SearchPagination';
+import SearchResultList from '@/src/components/integrations/search/SearchResultList';
+import Layout from '@/src/layouts/Layout';
 
 interface SearchPageProps {
   pageInfo: PageInfo;
@@ -42,13 +40,13 @@ export const getStaticProps = async () => {
     revalidate: 600, // 10 minutes
   };
 };
-const isSearchPage = (path: string) => path === '/search';
 const windowExists = () => typeof window !== 'undefined';
 
 if (windowExists()) {
   urlManager.synchronize(window.location.hash.slice(1));
 }
 
+// eslint-disable-next-line react/prop-types
 const SearchPage: NextPage<SearchPageProps> = ({ pageInfo }) => {
   useEffect(() => {
     const { logInterfaceLoad } = loadSearchAnalyticsActions(coveoEngine);

@@ -1,7 +1,7 @@
 // Global
+import { buildPager } from '@coveo/headless';
 import router from 'next/router';
-import { useState, useEffect } from 'react';
-import { buildPager, PagerState } from '@coveo/headless';
+import { useEffect, useState } from 'react';
 // Lib
 import { coveoEngine, urlManager } from '@/src/common/search/coveo-engine';
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
@@ -18,8 +18,6 @@ const SearchPagination = () => {
         setPagerState(pager.state);
       })
     );
-    allunsubscribers.push(pager.subscribe(() => {}));
-
     allunsubscribers.push(
       urlManager.subscribe(() => {
         router.push({

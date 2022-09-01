@@ -1,24 +1,24 @@
 // Global
 import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
+import path from 'path';
 // Interfaces
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@/src/interfaces/integrations';
 import type {
+  ChildPageInfo,
   MarkdownMeta,
   PageInfo,
-  ChildPageInfo,
   PartialData,
 } from '@/src/interfaces/page-info';
-import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@/src/interfaces/integrations';
 // Components
+import { SITECORE_COMMUNITY_MAX_COUNT } from '@/src/components/integrations/sitecore-community/sitecore-community.constants';
+import SitecoreCommunityApi from '@/src/components/integrations/sitecore-community/SitecoreCommunity.api';
 import StackExchangeApi from '@/src/components/integrations/stackexchange/StackExchange.api';
 import TwitterApi from '@/src/components/integrations/twitter/Twitter.api';
 import YouTubeApi from '@/src/components/integrations/youtube/YouTube.api';
-import SitecoreCommunityApi from '@/src/components/integrations/sitecore-community/SitecoreCommunity.api';
-import { SITECORE_COMMUNITY_MAX_COUNT } from '@/src/components/integrations/sitecore-community/sitecore-community.constants';
 
-import { ContentHeading } from '@/src/interfaces/contentheading';
 import { ParseContent } from '@/src/common/markdown/mdxParse';
+import { ContentHeading } from '@/src/interfaces/contentheading';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
@@ -45,7 +45,7 @@ const getProductFile = ({ solution, product }: ProductSolutionContextParams): st
   `solution/${solution}/product/${product}`;
 
 const getFileFromContext = (params: ProductSolutionContextParams) => {
-  return params.hasOwnProperty('product') ? getProductFile(params) : getSolutionFile(params);
+  return params.product ? getProductFile(params) : getSolutionFile(params);
 };
 
 const getFileData = (directory: string, file: string): Matter => {
@@ -62,7 +62,7 @@ const getFileData = (directory: string, file: string): Matter => {
   }
   const fileMarkdown = fs.readFileSync(filePath, 'utf-8');
   // @TODO: Handle failures
-  let results = matter(fileMarkdown);
+  const results = matter(fileMarkdown);
   results.data['fileName'] = filePath;
 
   return results;
@@ -106,7 +106,7 @@ export const getPageInfo = async (
         : '';
   }
 
-  if (!!twitterHandle) {
+  if (twitterHandle) {
     pageInfo.twitterHandle = twitterHandle;
   }
 
@@ -121,7 +121,7 @@ export const getPageInfo = async (
   if (meta.sitecoreCommunityBlog) {
     const maxResults =
       typeof meta.sitecoreCommunityBlog === 'number' ? meta.sitecoreCommunityBlog : undefined;
-    const sort = !!meta.sitecoreCommunityBlogSort
+    const sort = meta.sitecoreCommunityBlogSort
       ? Array.isArray(meta.sitecoreCommunityBlogSort)
         ? meta.sitecoreCommunityBlogSort[0]
         : meta.sitecoreCommunityBlogSort
@@ -139,12 +139,12 @@ export const getPageInfo = async (
       typeof meta.sitecoreCommunityQuestions === 'number'
         ? meta.sitecoreCommunityQuestions
         : SITECORE_COMMUNITY_MAX_COUNT;
-    const sort = !!meta.sitecoreCommunityQuestionsSort
+    const sort = meta.sitecoreCommunityQuestionsSort
       ? Array.isArray(meta.sitecoreCommunityQuestionsSort)
         ? meta.sitecoreCommunityQuestionsSort[0]
         : meta.sitecoreCommunityQuestionsSort
       : 'publish';
-    const forum = !!meta.sitecoreCommunityQuestionsCategory
+    const forum = meta.sitecoreCommunityQuestionsCategory
       ? Array.isArray(meta.sitecoreCommunityQuestionsCategory)
         ? meta.sitecoreCommunityQuestionsCategory[0]
         : meta.sitecoreCommunityQuestionsCategory
@@ -178,8 +178,8 @@ export const getPageInfo = async (
 
 export const getPartialsAsArray = async (partials: string[]): Promise<PartialData> => {
   const content: string[] = [];
-  let titles: ContentHeading[] = [];
-  let fileNames: string[] = [];
+  const titles: ContentHeading[] = [];
+  const fileNames: string[] = [];
 
   partials.forEach(async (p) => {
     const data = getFileData(partialsDirectory, p) as Matter;
@@ -205,7 +205,7 @@ export const getPartialsAsArray = async (partials: string[]): Promise<PartialDat
 export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> => {
   const content: string[] = [];
   const titles: ContentHeading[] = [];
-  let fileNames: string[] = [];
+  const fileNames: string[] = [];
 
   if (pageInfo.parsedContent && pageInfo.content) {
     content.push(pageInfo.parsedContent);

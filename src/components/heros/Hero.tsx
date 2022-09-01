@@ -3,9 +3,8 @@ import Image from 'next/image';
 // Interfaces
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
-import DynamicTag from '@/src/components/common/DynamicTag';
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
-import SvgIcon from '../common/SvgIcon';
+import DynamicTag from '@/src/components/common/DynamicTag';
 import React from 'react';
 import Container from '../common/Container';
 

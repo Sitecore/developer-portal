@@ -1,5 +1,5 @@
-import React from 'react';
 import { classnames, TArg, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
+import React from 'react';
 
 export type ContainerSize = 'standard';
 
@@ -28,7 +28,7 @@ const sizes: Record<string, { width: TArg; margin?: TTailwindString | TArg }> = 
 };
 
 const Container = ({ size = 'standard', children, className }: ContainerProps): JSX.Element => {
-  const validSize = typeof size !== 'undefined' && sizes.hasOwnProperty(size) ? size : 'standard';
+  const validSize = typeof size !== 'undefined' && sizes.size ? size : 'standard';
   const hasMarginModifiers =
     typeof sizes[validSize].margin !== 'undefined' && sizes[validSize].margin !== null
       ? true

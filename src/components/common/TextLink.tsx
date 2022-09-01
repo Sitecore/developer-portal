@@ -1,5 +1,4 @@
 // Global
-import React from 'react';
 import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import Link from 'next/link';
 // Components
@@ -12,7 +11,7 @@ type TextLinkProps = {
   target?: '_blank' | undefined;
 };
 
-const TextLink = ({ text, href, target, className, ...props }: TextLinkProps): JSX.Element => {
+const TextLink = ({ text, href, target, className }: TextLinkProps): JSX.Element => {
   return (
     <Link href={href}>
       <a

@@ -1,9 +1,9 @@
 // Global
-import { useId } from 'react-id-generator';
-import { SearchBox, UrlManager } from '@coveo/headless';
 import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
-import { useState, useEffect } from 'react';
+import { SearchBox, UrlManager } from '@coveo/headless';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { useId } from 'react-id-generator';
 // Lib
 import { searchBox } from '@/src/common/search/coveo-engine';
 
@@ -38,10 +38,6 @@ const SearchInput = ({ className, urlManager }: SearchInputProps) => {
     searchBox.subscribe(() => {
       setSearchState(searchBox.state);
     });
-
-    return () => {
-      searchBox.subscribe(() => {});
-    };
   }, []);
 
   return (

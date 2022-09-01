@@ -1,10 +1,8 @@
 // Global
-import Link from 'next/link';
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
+import Link from 'next/link';
 // Interfaces
 import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
-// Data
-import data from '@/data/promos/get-help';
 // Components
 import DynamicTag from '@/src/components/common/DynamicTag';
 
