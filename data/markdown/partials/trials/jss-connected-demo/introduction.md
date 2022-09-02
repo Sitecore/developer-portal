@@ -16,18 +16,18 @@ Curious to find out what you will be learning before signing up? Here is some of
 
 ### Part 1: Getting Started
 
-- [Prerequisites](https://developers.sitecore.com/trials/jss-connected-demo/getting-started/prerequisites)
-- [Cloning the repository](https://developers.sitecore.com/trials/jss-connected-demo/getting-started/repository)
-- [Connecting to Sitecore](https://developers.sitecore.com/trials/jss-connected-demo/getting-started/connecting)
+- [Prerequisites](/trials/jss-connected-demo/getting-started/prerequisites)
+- [Cloning the repository](/trials/jss-connected-demo/getting-started/repository)
+- [Connecting to Sitecore](/trials/jss-connected-demo/getting-started/connecting)
 
 ### Part 2: Exploring Sitecore
 
-- [Experience Editor](https://developers.sitecore.com/trials/jss-connected-demo/exploring-sitecore/experience-editor)
-- [Personalization](https://developers.sitecore.com/trials/jss-connected-demo/exploring-sitecore/personalization-in-experience-editor)
-- [Generating Data for xProfile](https://developers.sitecore.com/trials/jss-connected-demo/exploring-sitecore/xprofile)
-- [Launching xProfile](https://developers.sitecore.com/trials/jss-connected-demo/exploring-sitecore/launch-xprofile)
+- [Experience Editor](/trials/jss-connected-demo/exploring-sitecore/experience-editor)
+- [Personalization](/trials/jss-connected-demo/exploring-sitecore/personalization-in-experience-editor)
+- [Generating Data for xProfile](/trials/jss-connected-demo/exploring-sitecore/xprofile)
+- [Launching xProfile](/trials/jss-connected-demo/exploring-sitecore/launch-xprofile)
 
 ### Part 3: Exploring Code
 
-- [Updating a component](https://developers.sitecore.com/trials/jss-connected-demo/exploring-code/updating-component)
-- [GraphQL](https://developers.sitecore.com/trials/jss-connected-demo/exploring-code/graphql)
+- [Updating a component](/trials/jss-connected-demo/exploring-code/updating-component)
+- [GraphQL](/trials/jss-connected-demo/exploring-code/graphql)
