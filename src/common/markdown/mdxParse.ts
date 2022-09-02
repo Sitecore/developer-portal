@@ -1,56 +1,52 @@
+import rehypeExtractHeadings from '@/src/common/markdown/rehype/extractHeadings';
+import { ContentHeading } from '@/src/interfaces/contentheading';
+import remarkEmbedder, { TransformerInfo } from '@remark-embedder/core';
+import oembedTransformer from '@remark-embedder/transformer-oembed';
+import { s } from 'hastscript';
+import { serialize } from 'next-mdx-remote/serialize';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
-import { s } from 'hastscript';
-import rehypeExtractHeadings from '@/src/common/markdown/rehype/extractHeadings';
-import { ContentHeading } from '@/src/interfaces/contentheading';
-import { serialize } from 'next-mdx-remote/serialize';
-import remarkEmbedder, { TransformerInfo } from '@remark-embedder/core';
-import oembedTransformer from '@remark-embedder/transformer-oembed';
 
 export async function ParseContent(stream: string) {
-  try {
-    const headings: ContentHeading[] = [];
-    const result = await serialize(stream, {
-      mdxOptions: {
-        remarkPlugins: [
-          remarkGfm,
-          [
-            remarkEmbedder,
-            {
-              transformers: [oembedTransformer],
-              handleHTML,
-            },
-          ],
+  const headings: ContentHeading[] = [];
+  const result = await serialize(stream, {
+    mdxOptions: {
+      remarkPlugins: [
+        remarkGfm,
+        [
+          remarkEmbedder,
+          {
+            transformers: [oembedTransformer],
+            handleHTML,
+          },
         ],
-        rehypePlugins: [
-          rehypeSlug,
-          [
-            rehypeAutolinkHeadings,
-            {
-              properties: {
-                className: ['anchor'],
-              },
-              behavior: `append`,
-              content: s(
-                `svg`,
-                { width: 16, height: 16, viewBox: `0 0 16 16`, display: 'inline' },
-                // symbol #link-icon defined in _document.tsx
-                s(`use`, { 'xlink:href': `#link-icon`, href: `#link-icon` })
-              ),
+      ],
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            properties: {
+              className: ['anchor'],
             },
-          ],
-          [rehypeExtractHeadings, { rank: 2, headings: headings }],
+            behavior: `append`,
+            content: s(
+              `svg`,
+              { width: 16, height: 16, viewBox: `0 0 16 16`, display: 'inline' },
+              // symbol #link-icon defined in _document.tsx
+              s(`use`, { 'xlink:href': `#link-icon`, href: `#link-icon` })
+            ),
+          },
         ],
-      },
-    });
-    return {
-      result,
-      headings,
-    };
-  } catch (e) {
-    console.error(e);
-  }
+        [rehypeExtractHeadings, { rank: 2, headings: headings }],
+      ],
+    },
+  });
+  return {
+    result,
+    headings,
+  };
 }
 
 function handleHTML(html: string, info: TransformerInfo) {

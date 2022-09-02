@@ -181,20 +181,21 @@ export const getPartialsAsArray = async (partials: string[]): Promise<PartialDat
   const titles: ContentHeading[] = [];
   const fileNames: string[] = [];
 
-  partials.forEach(async (p) => {
-    const data = getFileData(partialsDirectory, p) as Matter;
-    const fileName = `${repoUrl}/data/markdown/partials/${p}.md`;
-    const parsedContent = await ParseContent(data.content);
+  await Promise.all(
+    partials.map(async function (partial) {
+      const data = getFileData(partialsDirectory, partial) as Matter;
+      const fileName = `${repoUrl}/data/markdown/partials/${partial}.md`;
+      const parsedContent = await ParseContent(data.content);
 
-    if (parsedContent != null) {
-      content.push(parsedContent.result.compiledSource);
-      fileNames.push(fileName);
-      parsedContent.headings.map((heading) => {
-        titles.push(heading);
-      });
-    }
-  });
-
+      if (parsedContent != null) {
+        content.push(parsedContent.result.compiledSource);
+        fileNames.push(fileName);
+        parsedContent.headings.map((heading) => {
+          titles.push(heading);
+        });
+      }
+    })
+  );
   return {
     content,
     titles,
