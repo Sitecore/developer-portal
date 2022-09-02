@@ -1,7 +1,7 @@
 // Global
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 // Lib
 import { breadcrumbManager, urlManager } from '@/src/common/search/coveo-engine';
 
@@ -10,10 +10,16 @@ const hoveredStyle = {
 };
 
 const FacetBreadcrumbs = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [breadcrumbManagerState, setBreadcrumbManagerState] = useState(breadcrumbManager.state);
+
   const router = useRouter();
 
   const subscribeToStateChangesAndReturnCleanup = () => {
     const allunsubscribers: { (): void }[] = [];
+    allunsubscribers.push(
+      breadcrumbManager.subscribe(() => setBreadcrumbManagerState(breadcrumbManager.state))
+    );
     allunsubscribers.push(
       urlManager.subscribe(() => {
         router.push({
