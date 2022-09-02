@@ -1,5 +1,5 @@
-import type { NavTWClasses } from '@/src/layouts/components/head/Nav';
 import type { InPageNavTWClasses } from '@/src/components/sidebar-nav/SidebarNav';
+import type { NavTWClasses } from '@/src/layouts/components/head/Nav';
 
 type SCDPTailwindTypes =
   | 'px-gutter-all'
@@ -28,6 +28,7 @@ type SCDPTailwindTypes =
   // @ TODO find right way to generate type for hover dark mode
   | 'dark:hover:text-teal'
   | 'dark:hover:bg-teal'
-  | 'current';
+  | 'current'
+  | 'not-prose';
 
 export default SCDPTailwindTypes;

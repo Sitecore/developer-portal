@@ -3,7 +3,7 @@ import { classnames, TArg } from '@/src/common/types/tailwindcss-classnames';
 import { MDXRemote } from 'next-mdx-remote';
 import { useEffect, useState } from 'react';
 import SyntaxHighlight from 'react-syntax-highlighter';
-import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 // Interfaces
 import type { PartialData } from '@/src/interfaces/page-info';
 // Lib
@@ -40,11 +40,13 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
         code({ className, children }) {
           const match = /language-(\w+)/.exec(className || '');
           const lang = match ? match[1] : '';
-          const style = isDark ? a11yDark : a11yLight;
+          const style = isDark ? a11yDark : a11yDark;
           return match ? (
-            <SyntaxHighlight style={style} language={lang} PreTag="div">
-              {String(children).replace(/\n$/, '')}
-            </SyntaxHighlight>
+            <div className={classnames('not-prose')}>
+              <SyntaxHighlight style={style} language={lang} PreTag="div">
+                {String(children).replace(/\n$/, '')}
+              </SyntaxHighlight>
+            </div>
           ) : (
             <code className={className}>{children}</code>
           );
