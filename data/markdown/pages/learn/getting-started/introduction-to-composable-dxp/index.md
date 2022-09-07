@@ -2,7 +2,6 @@
 title: 'Introduction to Composable DXP'
 description: 'What is a Composable DXP and why does it matter for developers? Get started learning about what this term means and how it applies in the world of Sitecore products.'
 partials: ['learn/getting-started/articles/introduction-to-composable-dxp']
-promoBefore: ['composable-dxp']
 promoAfter: ['learning-essentials']
 ---
 
@@ -40,6 +39,10 @@ There are three important topics that come up for developers with composable sol
 1. **Choices:** The composable world is full of choices. Now, you need to choose from a lot of best-of-breed solutions to find what works best. Developers need to find something that is stable, extensible, and works with the tech you want to use. Look at community, documentation, skills required, to choose what works best for your team.
 2. **Integrations:** API-driven solutions mean that developers need to do a lot of integration work to bring together all the pieces of the stack. You might need to implement caching, streaming, and other solutions to make these integrations work for your specific scenario.
 3. **Deployment orchestration:** Working with different solutions by different vendors means you'll want to plan out a CI/CD solution that reduces dependencies.
+
+You might also be interested in this video where [Thomas Desmond](https://twitter.com/ThomasJDesmond) explains 3 things developers should care about in the composable DXP space. Moving to the composable DXP world can mean significant work for developers.
+
+https://www.youtube.com/watch?v=q_sf7eX0vr8
 
 ## How are Sitecore products involved in this?
 
