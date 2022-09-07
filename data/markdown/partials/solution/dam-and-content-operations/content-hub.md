@@ -30,11 +30,11 @@ Sitecore Content Hub&trade; offers multiple modules. Here is a brief overview of
 
 ## User Documentation
 
-- [Digital Asset Management (DAM)](https://docs.stylelabs.com/contenthub/4.1.x/content/user-documentation/content-user-manual/dam.html)
-- [Product Content Management (PCM)](https://docs.stylelabs.com/contenthub/4.1.x/content/user-documentation/pcm/pcm.html)
-- [Content Marketing Platform (CMP)](https://docs.stylelabs.com/contenthub/4.1.x/content/user-documentation/cmp/cmp.html)
-- [Marketing Resource Management (MRM)](https://docs.stylelabs.com/contenthub/4.1.x/content/user-documentation/marketing-resource-management/introduction.html)
-- [Web-to-print](https://docs.stylelabs.com/content/4.0.x/user-documentation/web-to-print/chili-publisher.html)
+- [Digital Asset Management (DAM)](https://docs.stylelabs.com/contenthub/4.2.x/content/user-documentation/manage-digital-assets/manage-digital-assets.html)
+- [Product Content Management (PCM)](https://docs.stylelabs.com/contenthub/4.2.x/content/user-documentation/pcm/pcm.html)
+- [Content Marketing Platform (CMP)](https://docs.stylelabs.com/contenthub/4.2.x/content/user-documentation/manage-content/manage-content.html)
+- [Marketing Resource Management (MRM)](https://docs.stylelabs.com/contenthub/4.2.x/content/user-documentation/marketing-resource-management/introduction.html)
+- [Content Publisher (a.k.a Web-to-print)](https://docs.stylelabs.com/contenthub/4.2.x/content/user-documentation/sitecore-content-publisher/sitecore-content-publisher.html)
 
 ## Developer Documentation
 
