@@ -15,7 +15,7 @@ stackexchange:
     '#list-manager',
     '#reporting',
     '#content-testing',
-    '#tracking'
+    '#tracking',
   ]
 twitter: ['#sitecorexp', '#sitecorecdp', '#boxever']
 sitecoreCommunityQuestions: true

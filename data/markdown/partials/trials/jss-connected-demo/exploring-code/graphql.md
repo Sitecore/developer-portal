@@ -1,6 +1,7 @@
 ---
 github: ['/blob/main/data/markdown/partials/trials/jss-connected-demo/exploring-code/graphql.md']
 ---
+
 ## GraphQL
 
 GraphQL is a powerful and flexible query language that empowers developers by enabling them to request exactly the data they need in exactly the format they want.
@@ -62,9 +63,9 @@ Start by calling search, passing in a `fieldsEqual` parameter. This will be an a
 
 ```graphql
 {
-  search(fieldsEqual: [{
-    name: "_fullpath",
-    value: "/sitecore/content/lighthousefitness/home/events*"}]) {
+  search(
+    fieldsEqual: [{ name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }]
+  ) {
     results {
       items {
         name
@@ -96,9 +97,12 @@ This time, specify that you need these items to also have a `_templatename` prop
 
 ```graphql
 {
-  search(fieldsEqual: [
-    {name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*"},
-    {name: "_templatename", value: "event-page"}]) {
+  search(
+    fieldsEqual: [
+      { name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }
+      { name: "_templatename", value: "event-page" }
+    ]
+  ) {
     results {
       items {
         name
@@ -126,14 +130,16 @@ The property you will need is `fields`, an array of _name : value_ pairs associa
 
 ```graphql
 {
-  search(fieldsEqual: [
-    {name:"_fullpath", value:"/sitecore/content/lighthousefitness/home/events*"},
-    {name:"_templatename", value:"event-page" }
-  ]){
-    results{
+  search(
+    fieldsEqual: [
+      { name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }
+      { name: "_templatename", value: "event-page" }
+    ]
+  ) {
+    results {
       items {
         name
-        fields{
+        fields {
           name
           value
         }
@@ -155,16 +161,18 @@ Start by setting the items' name to the event's `name` field. (for clarity, comm
 
 ```graphql
 {
-  search(fieldsEqual: [
-    {name:"_fullpath", value:"/sitecore/content/lighthousefitness/home/events*"},
-    {name:"_templatename", value:"event-page" }
-  ]){
-    results{
+  search(
+    fieldsEqual: [
+      { name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }
+      { name: "_templatename", value: "event-page" }
+    ]
+  ) {
+    results {
       items {
         name: field(name: "name")
         #fields{
-          #name
-          #value
+        #name
+        #value
         #}
       }
     }
@@ -180,11 +188,13 @@ Now add a few more fields that you will need, like description, date, image, lat
 
 ```graphql
 {
-  search(fieldsEqual: [
-    {name:"_fullpath", value:"/sitecore/content/lighthousefitness/home/events*"},
-    {name:"_templatename", value:"event-page" }
-  ]){
-    results{
+  search(
+    fieldsEqual: [
+      { name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }
+      { name: "_templatename", value: "event-page" }
+    ]
+  ) {
+    results {
       events: items {
         name: field(name: "name")
         description: field(name: "description")

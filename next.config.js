@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /**
  * @type {import('next').NextConfig}
  */
@@ -5,7 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const withTM = require('next-transpile-modules')(['react-markdown']); // pass the modules you would like to see transpiled
+//const withTM = require('next-transpile-modules'); // pass the modules you would like to see transpiled
 const securityHeaders = [
   {
     key: 'Content-Security-Policy',
@@ -66,7 +67,7 @@ const nextConfig = {
       'i.ytimg.com',
       'mss-p-006-delivery.sitecorecontenthub.cloud',
       'mss-p-006-delivery.stylelabs.cloud',
-      'go.sitecore.com'
+      'go.sitecore.com',
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
@@ -107,4 +108,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withTM(nextConfig);
+module.exports = nextConfig;

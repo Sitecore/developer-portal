@@ -6,11 +6,13 @@ description: 'Turbo charge your Sitecore development.'
 ---
 
 ## Introduction
+
 The Sitecore Experience Accelerator (SXA) is an addon for the Sitecore platform which works with both XM and XP installations. It provides functionality to manage multiple sites, their settings and it adds tooling and building blocks to create websites without custom coding.
 
-
 ## Getting Started
+
 In order to get started with SXA you will need a clean installation of Sitecore XM or Sitecore XP.
+
 - [SXA Installation](https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1010.aspx)
 
 ## Documentation
@@ -28,5 +30,6 @@ In order to get started with SXA you will need a clean installation of Sitecore 
 - [Official Sitecore course](https://learning.sitecore.com/course/sitecore-experience-accelerator-sxa-collection)
 
 ## Resources
+
 - [Download SXA](https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator.aspx)
 - [SXA Styleguide](https://github.com/markvanaalst/SXA.Styleguide)

@@ -17,7 +17,7 @@ When using Sitecore Experience Manager from the XP2XMP bundle with the Sitecore 
 
 If your existing XM 10.1 site is using SXA best practices, your site should be compatible with the Sitecore Experience Manager instance included as part of the XP2XMP product bundle. XP2XMP will allow you to take advantage of the Sitecore Personalize capabilities as well.
 
-**We just purchased Content Hub DAM for the integration to XP in Managed Cloud.  We do not use xDB so can we move to XP2XMP, keep our site the same (SXA) and turn on Personalize while we turn off xDB that we don&#39;t use?**
+**We just purchased Content Hub DAM for the integration to XP in Managed Cloud. We do not use xDB so can we move to XP2XMP, keep our site the same (SXA) and turn on Personalize while we turn off xDB that we don&#39;t use?**
 
 Since you are not using xDB with your existing XP site in Managed Cloud, you will be able to move to Sitecore Experience Manager as part of the XP2XMP bundle. With XP2XMP, you will be able to continue hosting Experience Manager and your site in Managed Cloud and implement Sitecore Personalize for the site. You will also be able to use the Content Hub DAM integration with your Experience Manager instance as well.
 

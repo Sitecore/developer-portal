@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /**
  * Any modifications to this file will require a regeneration of types
  * for use with 'tailwind-classnames'
@@ -10,7 +11,11 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: {
-    content: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
+    content: [
+      './src/components/**/*.{js,ts,jsx,tsx}',
+      './src/layouts/**/*.{js,ts,jsx,tsx}',
+      './src/pages/**/*.{js,ts,jsx,tsx}',
+    ],
   },
   darkMode: 'media', // or 'media' or 'class'
   theme: {
@@ -62,17 +67,8 @@ module.exports = {
       currentColor: 'currentColor',
     },
     fontFamily: {
-      sans: [
-        'AvenirNextR',
-        'Arial',
-        'Sans-Serif',
-      ],
-      ltpro: [
-        'AvenirNextLTPro',
-        'AvenirNextR',
-        'Arial',
-        'Sans-Serif'
-      ]
+      sans: ['AvenirNextR', 'Arial', 'Sans-Serif'],
+      ltpro: ['AvenirNextLTPro', 'AvenirNextR', 'Arial', 'Sans-Serif'],
     },
     fontSize: {
       // 12px

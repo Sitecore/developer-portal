@@ -4,6 +4,7 @@ product: ['edge-content-hub']
 ---
 
 ## Introduction
+
 Sitecore Experience Edge for Content Hub is the solution for brands and organizations that manage content for multiple functions and audiences using numerous devices.
 
 Experience Edge is a set of services for headless content delivery, and is based on the Content as a Service (CaaS) model that focuses on managing content into feeds. These feeds mean that other applications and properties can consume and use the content according to their particular needs.

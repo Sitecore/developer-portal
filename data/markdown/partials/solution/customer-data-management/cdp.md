@@ -5,6 +5,7 @@ title: 'Customer Data Management - Sitecore CDP'
 ---
 
 ## Introduction
+
 Sitecore CDP brings together real-time behavioral insights and all your customer data so you can understand and engage every customer (and anonymous visitors) instantly.
 
 ## Documentation

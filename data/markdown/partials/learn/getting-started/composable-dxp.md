@@ -8,9 +8,9 @@
 - [Getting Started with Moosend](https://help.moosend.com/hc/en-us/articles/208076445-How-do-I-get-started-with-my-Moosend-account-)
 - [Getting started with Experience Edge for ContentHub](https://docs.stylelabs.com/content/4.0.x/user-documentation/experience-edge/content-delivery/quickstart-guide.html)
 - [Getting started with Experience Edge for XM](https://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/sitecore-experience-edge-for-xm.html)
-- [Sitecore Essentials - Free on-demand learning](https://learning.sitecore.com/pathway/sitecore-essentials) 
-    - Introduction to Sitecore Content Hub 
-    - Introduction to Sitecore OrderCloud
-    - Introduction to Sitecore CDP and Personalize
+- [Sitecore Essentials - Free on-demand learning](https://learning.sitecore.com/pathway/sitecore-essentials)
+  - Introduction to Sitecore Content Hub
+  - Introduction to Sitecore OrderCloud
+  - Introduction to Sitecore CDP and Personalize
 - [XM - Personalize FAQ](/learn/faq/xm-personalize)
 - [Cloud Portal FAQ](/learn/faq/cloud-portal)

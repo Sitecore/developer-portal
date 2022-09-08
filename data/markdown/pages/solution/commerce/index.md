@@ -14,5 +14,4 @@ stackexchange:
 twitter: ['#OrderCloud', '#SitecoreCommerce']
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['searchAndMerchandizing', 'storefrontsAndMarketplaces']
-
 ---

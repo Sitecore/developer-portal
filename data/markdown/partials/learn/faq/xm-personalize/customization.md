@@ -7,7 +7,7 @@ hasInPageNav: true
 
 MVC websites that are self-hosted or run in Sitecore Managed Cloud with the XP2XMP product bundle should continue to support existing .NET MVC components.
 
-**We use Sitecore Search and have customized the indexes.  Will this work in XP2XMP and XM Cloud?**
+**We use Sitecore Search and have customized the indexes. Will this work in XP2XMP and XM Cloud?**
 
 Customers will be able to create custom indexes if they host Sitecore Experience Manager in their own Cloud or use Sitecore Managed Cloud. With XM Cloud, customers will not be able to create custom indexes as Solr will be fully controlled by the XM Cloud platform. Sitecore recommends that customers use a third-party search provider if custom indexes are required.
 

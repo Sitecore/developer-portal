@@ -4,41 +4,41 @@
   "heading": true,
   "path": "xm-personalize",
   "routes": [
-        {
-          "title": "Features",
-          "path": "features"
-        },
-        {
-          "title": "Development",
-          "path": "development"
-        },
-        {
-          "title": "Upgrades",
-          "path": "upgrades"
-        },
-        {
-          "title": "Customization",
-          "path": "customization"
-        },
-        {
-          "title": "Scaling and Availability",
-          "path": "scaling"
-        },
-        {
-          "title": "Personalize & CDP",
-          "path": "personalize-cdp"
-        },
-        {
-          "title": "Edge & Vercel",
-          "path": "edge-vercel"
-        },
-        {
-          "title": "Managed Cloud",
-          "path": "managed-cloud"
-        },
-        {
-          "title": "Migration",
-          "path": "migration"
-        }
-      ]
+    {
+      "title": "Features",
+      "path": "features"
+    },
+    {
+      "title": "Development",
+      "path": "development"
+    },
+    {
+      "title": "Upgrades",
+      "path": "upgrades"
+    },
+    {
+      "title": "Customization",
+      "path": "customization"
+    },
+    {
+      "title": "Scaling and Availability",
+      "path": "scaling"
+    },
+    {
+      "title": "Personalize & CDP",
+      "path": "personalize-cdp"
+    },
+    {
+      "title": "Edge & Vercel",
+      "path": "edge-vercel"
+    },
+    {
+      "title": "Managed Cloud",
+      "path": "managed-cloud"
+    },
+    {
+      "title": "Migration",
+      "path": "migration"
+    }
+  ]
 }

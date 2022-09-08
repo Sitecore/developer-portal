@@ -1,6 +1,8 @@
 ---
-github: ['/blob/main/data/markdown/partials/trials/jss-connected-demo/getting-started/repository.md']
+github:
+  ['/blob/main/data/markdown/partials/trials/jss-connected-demo/getting-started/repository.md']
 ---
+
 ## Cloning and setting up the demo source code
 
 ### Step 1: Clone or download the Lighthouse Fitness repo
@@ -18,16 +20,16 @@ You can find the Lighthouse Fitness demo repository here: https://github.com/Sit
 
 2. Clone the repository with the following command:
 
-    ```shell
-    git clone -b jss-trial-10.0.1 --single-branch https://github.com/Sitecore/Sitecore.Demo.Headless.git
-    ```
+   ```shell
+   git clone -b jss-trial-10.0.1 --single-branch https://github.com/Sitecore/Sitecore.Demo.Headless.git
+   ```
 
 3. Since you'll be making code changes to the app later in this guide, now is a good time to create a new branch for your work. Run these commands:
 
-    ```shell
-    cd Sitecore.Demo.Headless
-    git checkout -b <new-branch-name>
-    ```
+   ```shell
+   cd Sitecore.Demo.Headless
+   git checkout -b <new-branch-name>
+   ```
 
 ### Step 2: Install the JSS CLI
 

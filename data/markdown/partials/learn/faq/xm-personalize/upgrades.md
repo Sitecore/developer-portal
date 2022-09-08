@@ -2,6 +2,7 @@
 title: 'Migration'
 hasInPageNav: true
 ---
+
 **Is there a 'better together story' with Experience Edge + Personalize here? If so, can we get the high-level positioning to simplify to clearly outline?**
 
 Yes, since Personalize works client-side, it is a great option to use Edge and Personalize together.
@@ -17,6 +18,7 @@ The following represent a small set of likely scenarios that will be identified 
 This is the simplest migration path
 
 Migration Steps:
+
 - Layer in Personalize to existing site to begin capturing data
 - Select migration approach
 - Full Rebuild
@@ -31,6 +33,7 @@ Migration Steps:
 The steps for those that are using Personalization or AB testing in Sitecore XP, but who are able to start fresh with Personalize data, are very similar to those with no personalization:
 
 Migration Steps:
+
 - Layer in Personalize to existing site to begin capturing data
 - Based on the current state audit, create full stack or web experiences with decision models based on the personalization rules being used in XP as needed
 - Create any AB testing web experiments required

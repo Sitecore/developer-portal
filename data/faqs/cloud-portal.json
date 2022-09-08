@@ -4,13 +4,13 @@
   "heading": true,
   "path": "cloud-portal",
   "routes": [
-        {
-          "title": "Features",
-          "path": "features"
-        },
-        {
-          "title": "Development",
-          "path": "development"
-        }
-      ]
+    {
+      "title": "Features",
+      "path": "features"
+    },
+    {
+      "title": "Development",
+      "path": "development"
+    }
+  ]
 }

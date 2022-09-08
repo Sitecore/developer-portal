@@ -18,10 +18,10 @@ Sitecore Experience Manager Cloud is optimized to run Experience Manager as a he
 
 **What is required to upgrade my current MVC solution so it can run in the XM Cloud environment?** Customers with existing MVC solutions who want to move to XM Cloud will first need to refactor and rebuild their current MVC solution as a Jamstack framework or a .NET Core solution. Experience Manager Cloud will only support headless Experience Manager implementations using the Sitecore JavaScript Rendering SDK (JSS), Sitecore Experience Edge, and a Jamstack framework or .NET Core client application. The process of refactoring applies to the MVC solution&#39;s backend:
 
-  - With JSS, customers will be able to reuse their Sitecore data source, setting, and folder templates from their existing MVC solution.
-  - Page templates will need to be modified to use JSS layouts and renderings, and to inherit from the JSS route template.
-  - MVC View and Controller renderings, and any object-relational mapping (ORM), should be removed as they are not applicable for JSS.
-  - MVC renderings will need to be converted to JSS renderings.
+- With JSS, customers will be able to reuse their Sitecore data source, setting, and folder templates from their existing MVC solution.
+- Page templates will need to be modified to use JSS layouts and renderings, and to inherit from the JSS route template.
+- MVC View and Controller renderings, and any object-relational mapping (ORM), should be removed as they are not applicable for JSS.
+- MVC renderings will need to be converted to JSS renderings.
 
 In parallel to the backend being refactored, the frontend solution will need to be rebuilt, preferably using a Jamstack framework such as Next.js. Sitecore recommends Next.js because of its flexibility with support for static site generation (SSG), server-side rendering (SSR), and incremental static regeneration (ISR). Customers can implement a .NET Core, React, Angular, or Vue.js client solution as well, but they will need to host a separate rendering host instance themselves - the rendering host will not be available through XM Cloud. This separate rendering host is not required by Next.js as Next.js includes the rendering host capability as part of its run-time. Once the backend refactoring and the frontend rebuild are done, content and layout will be published to Experience Edge for consumption by the frontend solution using the Edge GraphQL endpoints.
 
