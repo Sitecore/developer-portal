@@ -63,8 +63,10 @@ const getFileData = (directory: string, file: string): Matter => {
   const fileMarkdown = fs.readFileSync(filePath, 'utf-8');
   // @TODO: Handle failures
   const results = matter(fileMarkdown);
-  results.data['fileName'] = filePath;
 
+  // Quick fix for wrong edit urls
+  const fileName = `${repoUrl}/data/${filePath.split('\\data')[1].replace('\\', '/')}`;
+  results.data['fileName'] = fileName;
   return results;
 };
 
@@ -75,7 +77,7 @@ export const getPageInfo = async (
   const fileData = getFileData(pagesDirectory, `${file}`);
   const meta = fileData.data as MarkdownMeta;
   const content = await ParseContent(fileData.content);
-  const fileName = meta.fileName;
+  const fileName = `${repoUrl}/data/markdown/pages/${file}/index.md`;
   const pageInfo = {
     // Default hasInPageNav to true, overwrite with false in md
     hasInPageNav: true,
@@ -184,6 +186,7 @@ export const getPartialsAsArray = async (partials: string[]): Promise<PartialDat
   await Promise.all(
     partials.map(async function (partial) {
       const data = getFileData(partialsDirectory, partial) as Matter;
+
       const fileName = `${repoUrl}/data/markdown/partials/${partial}.md`;
       const parsedContent = await ParseContent(data.content);
 
