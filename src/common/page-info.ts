@@ -63,13 +63,10 @@ const getFileData = (directory: string, file: string): Matter => {
   const fileMarkdown = fs.readFileSync(filePath, 'utf-8');
   // @TODO: Handle failures
   const results = matter(fileMarkdown);
-  results.data['fileName'] = filePath;
 
-  // Quick fix for wrong edit urls
-  if (filePath.split('\\data') && filePath.split('\\data').length > 0) {
-    const fileName = `${repoUrl}/data/${filePath.split('\\data')[1].replace('\\', '/')}`;
-    results.data['fileName'] = fileName;
-  }
+  const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
+  const fileName = `${repoUrl}/${relativePath}`;
+  results.data['fileName'] = fileName;
 
   return results;
 };
