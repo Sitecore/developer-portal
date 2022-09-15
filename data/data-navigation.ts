@@ -122,6 +122,10 @@ const NavigationData: NavigationData[] = [
         url: '/content-management',
         children: [
           {
+            title: 'Sitecore XM Cloud',
+            url: '/content-management/xm-cloud',
+          },
+          {
             title: 'Sitecore Experience Manager',
             url: '/content-management/experience-manager',
           },
@@ -263,6 +267,20 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Experience Edge for Content Hub',
             url: '/content-management/edge-content-hub',
+          },
+        ],
+      },
+      {
+        title: 'Sitecore XM Cloud',
+        children: [
+          {
+            title: 'Headless Web Content management',
+            url: '/content-management/xm-cloud',
+          },
+          {
+            title: 'Access the Portal',
+            url: 'https://portal.sitecorecloud.io/',
+            external: true,
           },
         ],
       },
