@@ -278,6 +278,14 @@ const NavigationData: NavigationData[] = [
             url: '/content-management/xm-cloud',
           },
           {
+            title: 'Experience Edge for XM',
+            url: '/content-management/edge-xm',
+          },
+          {
+            title: 'Headless Services & JSS',
+            url: '/content-management/headless',
+          },
+          {
             title: 'Access the Portal',
             url: 'https://portal.sitecorecloud.io/',
             external: true,
