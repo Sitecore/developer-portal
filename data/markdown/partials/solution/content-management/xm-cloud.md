@@ -23,7 +23,7 @@ The importance of your company's growth comes with the:
 
 ## Getting Started
 
-- TBD
+- [XM Cloud Introduction](/learn/getting-started/xm-cloud-introduction)
 
 ## Documentation
 
