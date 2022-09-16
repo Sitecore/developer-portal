@@ -78,12 +78,14 @@ const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({
   pageInfo,
   content,
   paths,
+  year,
+  month,
 }) => {
   return (
     <Layout pageInfo={pageInfo}>
       <Container>
         <div className="grid gap-6 mt-8 md:grid-cols-4">
-          <NewsletterNav paths={paths} />
+          <NewsletterNav paths={paths} currentMonth={month} currentYear={year} />
           <div className="grid gap-10 md:grid-cols-3 col-span-3">
             {content.map((story) => (
               <NewsletterStory {...story} key={story.title} />
