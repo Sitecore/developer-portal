@@ -44,10 +44,10 @@ const Nav = (): JSX.Element => {
     );
   };
   const SearchInput =
-    process.env.COVEO_ORGANIZATION_ID == '' ||
-    process.env.COVEO_ACCESS_TOKEN == '' ||
-    process.env.COVEO_SEARCH_HUB == '' ||
-    process.env.COVEO_PIPELINE == ''
+    !process.env.COVEO_ORGANIZATION_ID ||
+    !process.env.COVEO_ACCESS_TOKEN ||
+    !process.env.COVEO_SEARCH_HUB ||
+    !process.env.COVEO_PIPELINE
       ? Disabled
       : dynamic(() => import('@/src/components/integrations/search/SearchInput'));
 
