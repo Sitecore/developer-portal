@@ -5,15 +5,15 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useId } from 'react-id-generator';
 // Lib
-import { searchBox } from '@/src/common/search/coveo-engine';
+import { searchBox, urlManager } from '@/src/common/search/coveo-engine';
 
 interface SearchInputProps {
   className?: TTailwindString;
   searchBox?: SearchBox;
-  urlManager: UrlManager;
+  urlManager?: UrlManager;
 }
 
-const SearchInput = ({ className, urlManager }: SearchInputProps) => {
+const SearchInput = ({ className }: SearchInputProps) => {
   /**
    *  React hook for unique IDs using react-unique-id.
    *  Avoid generating new ID on every rerender.

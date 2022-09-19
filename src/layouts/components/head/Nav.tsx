@@ -10,10 +10,9 @@ import { setGlobalState, useGlobalState } from '@/src/common/global-state';
 import htmlConfig from '@/src/common/html-constants';
 const { idMainContent } = htmlConfig;
 // Components
-import { urlManager } from '@/src/common/search/coveo-engine';
-import SearchInput from '@/src/components/integrations/search/SearchInput';
 import NavMenu from '@/src/layouts/components/head/NavMenu';
 import QuickStartMenu from '@/src/layouts/components/head/QuickStartMenu';
+import dynamic from 'next/dynamic';
 import Logo from './Logo';
 
 export type NavTWClasses =
@@ -36,6 +35,21 @@ const hamburgerBarClasses = classnames(
 const Nav = (): JSX.Element => {
   const navRef = useRef<HTMLElement>(null);
   const [isOpen, setOpen] = useState(false);
+  const Disabled = () => {
+    console.log('Search disabled; please check environment variables to enable');
+    return (
+      <div className={classnames('font-semibold', 'pt-6', 'text-sm', 'text-center', 'text-red')}>
+        Search disabled; please check environment variables to enable
+      </div>
+    );
+  };
+  const SearchInput =
+    process.env.COVEO_ORGANIZATION_ID == '' ||
+    process.env.COVEO_ACCESS_TOKEN == '' ||
+    process.env.COVEO_SEARCH_HUB == '' ||
+    process.env.COVEO_PIPELINE == ''
+      ? Disabled
+      : dynamic(() => import('@/src/components/integrations/search/SearchInput'));
 
   /**
    *  Hook for handling toggling the mobile nav.
@@ -291,7 +305,7 @@ const Nav = (): JSX.Element => {
         </div>
         <div>
           <div className={classnames('px-gutter-all', 'py-2.5', 'max-w-screen-xl', 'm-auto')}>
-            <SearchInput urlManager={urlManager} />
+            <SearchInput />
           </div>
         </div>
       </div>
