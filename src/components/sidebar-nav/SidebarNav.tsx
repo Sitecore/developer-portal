@@ -35,24 +35,29 @@ const SidebarNav = ({ links, title }: SidebarNavProps) => {
     >
       {title && <p className={classnames('font-bold', 'text-sm', 'mb-4', 'md:hidden')}>{title}</p>}
       <ul className={classnames('side-bar-nav', 'relative', 'pl-1.5')}>
-        {links.map((link, i) => (
-          <li className={classnames('side-bar-nav-item', 'pb-4', 'relative', 'pl-4')} key={i}>
-            <Link href={link.href}>
-              <a
-                className={classnames(
-                  'text-violet',
-                  'dark:text-teal',
-                  'text-sm',
-                  'inline-block',
-                  'hover:underline',
-                  'focus:underline'
-                )}
-              >
-                {link.text}
-              </a>
-            </Link>
-          </li>
-        ))}
+        {links.map((link, i) => {
+          const activeClasses = classnames('font-bold');
+
+          return (
+            <li className={classnames('side-bar-nav-item', 'pb-4', 'relative', 'pl-4')} key={i}>
+              <Link href={link.href}>
+                <a
+                  className={classnames(
+                    'text-violet',
+                    'dark:text-teal',
+                    'text-sm',
+                    'inline-block',
+                    'hover:underline',
+                    'focus:underline',
+                    { [activeClasses]: link.active }
+                  )}
+                >
+                  {link.text}
+                </a>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
