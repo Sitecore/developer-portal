@@ -101,7 +101,9 @@ Here’s a list of great resources that I found helpful.
   by Andy Cohen](https://www.youtube.com/watch?v=a23g2TRUvOI)
 - [[Video] **SaaS Migration** - Migration from Sitecore XP and XM to XM Cloud by Pieter Brinkman and Jason St-Cyr](https://www.youtube.com/watch?v=ZTjk5t9dfRQ)
 - [[Example] **XM Cloud Introduction Repository** - Covering a multisite and multihead solution. MVP site using ASP.NET core SugconANZ and SugconEU site using Next.js along with JSS and SXA.](https://github.com/Sitecore/XM-Cloud-Introduction)
+- [[Blogpost] **Headless Frontend Development with XM Cloud** - by Thomas Desmond](https://thetombomb.com/posts/frontend-development-xm-cloud)
 - [[Video] **Setup your first Headless SXA Site in XM Cloud**](https://www.youtube.com/watch?v=zot3G52F2ts)
+- [[Video] **Deploy your first Headless SXA site to Vercel**](https://www.youtube.com/watch?v=0UpihW2QxaQ)
 - [[Video Playlist] **Sitecore XM Cloud Youtube Playlist** - do not miss a video](https://www.youtube.com/playlist?list=PL1jJVFm_lGnzqYagW1UahIBeqTIYSBQMc)
 
 ### Tooling
