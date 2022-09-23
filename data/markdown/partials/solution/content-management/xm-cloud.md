@@ -27,8 +27,8 @@ The importance of your company's growth comes with the:
 
 ## Documentation
 
-- [User Documentation] (TBD)
-- [Developer Documentation] (TBD)
+- [User Documentation]() [Coming soon!]
+- [Developer Documentation]() [Coming soon!]
 
 ## Learn & Examples
 
