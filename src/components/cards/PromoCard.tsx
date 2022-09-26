@@ -29,7 +29,7 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
       alt={img.alt || ''}
       className={classnames('relative', 'z-10')}
       layout="fill"
-      objectFit="fill"
+      objectFit="cover"
       priority={true}
     />
   </div>
