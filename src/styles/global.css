@@ -1,0 +1,24 @@
+/* Base */
+
+@import 'tailwindcss/base';
+@import './_base.css';
+
+/* Components */
+@import 'tailwindcss/components';
+@import '../layouts/components/head/Nav.styles.css';
+@import '../components/sidebar-nav/SidebarNav.styles.css';
+
+/* Utilities */
+@import 'tailwindcss/utilities';
+
+/* @TODO: Split these into separate utilities as they grow? */
+@import './_utilities.css';
+
+:where(h2, h3, h4, h5, h6) a.anchor {
+  opacity: 0;
+  transition: 0.3s;
+  margin-left: 4pt;
+}
+:where(h2, h3, h4, h5, h6):hover a.anchor {
+  opacity: 1;
+}

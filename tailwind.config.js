@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /**
  * Any modifications to this file will require a regeneration of types
  * for use with 'tailwind-classnames'
@@ -10,7 +11,11 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: {
-    content: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
+    content: [
+      './src/components/**/*.{js,ts,jsx,tsx}',
+      './src/layouts/**/*.{js,ts,jsx,tsx}',
+      './src/pages/**/*.{js,ts,jsx,tsx}',
+    ],
   },
   darkMode: 'media', // or 'media' or 'class'
   theme: {
@@ -21,6 +26,7 @@ module.exports = {
     colors: {
       'theme-text': 'var(--theme-text)',
       'theme-text-alt': 'var(--theme-text-alt)',
+      'theme-link-hover': 'var(--theme-link-hover)',
       'theme-bg': 'var(--theme-bg)',
       'theme-bg-alt': 'var(--theme-bg-alt)',
       'theme-outline': 'var(--theme-outline)',
@@ -28,12 +34,26 @@ module.exports = {
       'theme-border-alt': 'var(--theme-border-alt)',
       // Primary brand colors
       black: '#000000',
-      charcoal: '#232323',
-      red: '#fe2911',
+      charcoal: {
+        light: '#AAACAC',
+        DEFAULT: '#545959',
+        dark: '#212621',
+      },
+      red: {
+        light: '#F58F8F',
+        DEFAULT: '#EB1f1f',
+        dark: '#AB0000',
+      },
       teal: {
-        light: '#eefcfc',
-        DEFAULT: '#1ca6a3',
-        dark: '#0f807e',
+        light: '#81CCCD',
+        DEFAULT: '#02999A',
+        dark: '#004054',
+      },
+      violet: {
+        lightest: '#f6f6ff',
+        light: '#AAA4EC',
+        DEFAULT: '#5548D9',
+        dark: '#333378',
       },
       white: '#ffffff',
       gray: {
@@ -47,20 +67,8 @@ module.exports = {
       currentColor: 'currentColor',
     },
     fontFamily: {
-      sans: [
-        'Avenir Next',
-        'Open Sans',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        'Roboto',
-        'Helvetica',
-        'Arial',
-        'sans-serif',
-        'Apple Color Emoji',
-        'Segoe UI Emoji',
-        'Segoe UI Symbol',
-      ],
+      sans: ['AvenirNextR', 'Arial', 'Sans-Serif'],
+      ltpro: ['AvenirNextLTPro', 'AvenirNextR', 'Arial', 'Sans-Serif'],
     },
     fontSize: {
       // 12px
@@ -68,7 +76,7 @@ module.exports = {
       // 14px
       xs: '0.875rem',
       // 16px
-      sm: '1rem',
+      sm: '0.95rem',
       // 18px
       base: '1.125rem',
       // 20px
@@ -94,6 +102,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-pattern': "url('/images/heros/hero-plus-pattern.png')",
+        'wide-hero-dark': "url('/images/heros/hero-wide-dark.png')",
+        'wide-hero-light': "url('/images/heros/hero-wide-light.png')",
       },
       boxShadow: {
         inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.15)',
@@ -124,13 +134,44 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            ['ol > li:before']: {
+              color: 'var(--theme-text)',
+            },
+            color: theme('colors.theme-text'),
+            p: {
+              fontSize: '0.95rem', // key can be in camelCase...
+            },
+            a: {
+              color: 'inherit',
+            },
+            h1: {
+              color: 'inherit',
+            },
+            h2: {
+              color: 'inherit',
+            },
+            h3: {
+              color: 'inherit',
+            },
+            h4: {
+              color: 'inherit',
+            },
+            strong: {
+              color: 'inherit',
+            },
+            blockquote: {
+              color: 'inherit',
+            },
             code: {
-              backgroundColor: 'var(--theme-bg-alt)',
+              color: theme('colors.theme-text'),
+              backgroundColor: 'rgba(128, 128, 128, 0.15)',
+              padding: '0.125em',
               fontWeight: 400,
             },
             pre: {
-              backgroundColor: 'var(--theme-bg-alt)',
+              backgroundColor: 'transparent',
               border: '1px solid var(--theme-border-alt)',
+              padding: 0,
             },
             thead: {
               // This nastiness is required because Tailwind Typography stinks.
@@ -142,6 +183,7 @@ module.exports = {
                   ['padding-right']: '1.25em',
                 },
               },
+              color: 'inherit',
             },
             tbody: {
               td: {
@@ -156,6 +198,7 @@ module.exports = {
   variants: {
     extend: {
       translate: ['focus', 'group-hover', 'group-focus'],
+      backgroundImage: ['dark'],
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography')],

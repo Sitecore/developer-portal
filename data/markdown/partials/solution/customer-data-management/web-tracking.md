@@ -5,7 +5,8 @@ title: 'Web Tracking'
 ---
 
 ## Web Tracking
-The Sitecore Web Tracker enables you to track and identify contacts and their interactions during their visit to your Content Delivery (CD) instance.
+
+The integrated Sitecore Web Tracker enables you to track and identify contacts and their interactions during their visit to your Content Delivery (CD) instance.
 
 ### Documentation
 

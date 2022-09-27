@@ -1,0 +1,125 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Don’t miss SUGCON Europe 2022",
+      "copy": "Make sure you purchase your tickets to the largest community event in Europe. SUGCON will be held on March 24th to 25th in Budapest, Hungary. Attendees can expect two full days of learning, knowledge sharing, networking, and more.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clz1h3/857953/1642788522nFFQCGEA/Untitled_design.png",
+      "link": {
+        "text": "Buy your ticket now",
+        "href": "https://europe.sugcon.events/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Do you need a GraphQL client for your frontend?",
+      "copy": "Learn what a GraphQL request actually is and other considerations to take into account.",
+      "image": "https://go.sitecore.com/l/857953/2022-02-15/d4y5zm/857953/1644964692cMSlOkpY/Untitled_design__5_.png",
+      "link": {
+        "text": "Let’s find out",
+        "href": "https://thetombomb.com/posts/do-you-need-graphql-client"
+      }
+    },
+    {
+      "title": "Configuration of 301 Redirects with Netlify and Next.Js",
+      "copy": "Explore different options to achieve domain level 301 redirects. Review different options at the Next.js level and at the Netlify level to redirect an old domain to the new one, improving SEO and increasing discoverability of the new site.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clyv5p/857953/16427875570Ln0tJyy/3.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/ects-with-netlify-and-next-js-/d58v7w/291921984?h=CbwYHMTjPw2axc13VVg9wYC1yhuec372SzxfTqb6ffw"
+      }
+    },
+    {
+      "title": "Running OrderCloud Headstart on Docker",
+      "copy": "Check out this valuable collection of examples to guide you in the best way to build out your implementation using OrderCloud Headstart on Docker.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clz4fr/857953/1642789617vsQOYO6p/Untitled_design__2_.png",
+      "link": {
+        "href": "https://robearlam.com/blog/running-ordercloud-headstart-on-docker"
+      }
+    },
+    {
+      "title": "New MVP Mentor Program",
+      "copy": "The MVP Mentor program provides guidance to those in the Sitecore Community who want to become an MVP. Join this program to gain new experiences, skills, knowledge, support and more.",
+      "image": "https://go.sitecore.com/l/857953/2021-11-28/b32pcl/857953/16381453604FGm7vNO/Untitled_design__2_.png",
+      "link": {
+        "text": "Learn more",
+        "href": "https://go.sitecore.com/e/857953/Mentor-Program/d58v6w/291921984?h=CbwYHMTjPw2axc13VVg9wYC1yhuec372SzxfTqb6ffw"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Career Growth Advice",
+      "copy": "Nicole Flynn covers advice for individual contributors, to senior, more ambitious folks.",
+      "image": "https://go.sitecore.com/l/857953/2022-02-15/d4y4vp/857953/1644964112UyeHKaa1/Untitled_design__1_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=cSVb5mzrdfw"
+      }
+    },
+    {
+      "title": "Sitecore CDP and Personalize",
+      "copy": "Learn how to create your first integration of Sitecore CDP with Tampermonkey with a simple copy & paste of a base script.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clyydm/857953/1642788415CBNmB45Y/4.png",
+      "link": {
+        "href": "https://connectmadhavjoshi.wordpress.com/2022/01/27/sitecore-send-sneak-peek-iii-automation/"
+      }
+    },
+    {
+      "title": "Sitecore Send – Automation",
+      "copy": "This article will take you through the steps required to create an automation in Sitecore Send.",
+      "image": "https://go.sitecore.com/l/857953/2022-02-15/d4y4vm/857953/1644964069393F9zG6/Untitled_design.png",
+      "link": {
+        "href": "https://sitecore.madhav.blog/sitecore-send-sneak-peek-iii-automation/"
+      }
+    },
+    {
+      "title": "Replace HTML doesn’t work in web experiences with Sitecore Personalize",
+      "copy": "Learn how to find the solution when the replaceHTML function in the Javacript part of the variant is not working.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clywxm/857953/1642788100YsC12YCI/2.png",
+      "link": {
+        "href": "http://blog.peplau.com.br/en_US/replacehtml-doesnt-work-in-web-experiences-with-sitecore-personalize/"
+      }
+    },
+    {
+      "title": "Disabling Traefik Healthchecks in Sitecore Docker",
+      "copy": "Discover how to disable the Traefik healthcheck so you can get your messages back!",
+      "image": "https://go.sitecore.com/l/857953/2022-02-15/d4y4zr/857953/1644964504Hf7tenmM/GettyImages_1133710342.jpg",
+      "link": {
+        "href": "https://konabos.com/blog/disabling-traefik-healthchecks-in-sitecore-docker"
+      }
+    },
+    {
+      "title": "Generating Leads with Sitecore Personalise and Sitecore Send",
+      "copy": "Learn how to capture the visitor’s name and email address using a Sitecore Personalize web experience",
+      "image": "https://go.sitecore.com/l/857953/2022-02-15/d4y4zp/857953/1644964475bbvwCvDm/Untitled_design__4_.png",
+      "link": {
+        "href": "https://neilkillen.com/2022/01/23/generating-leads-with-sitecore-personalize-and-sitecore-send-moosend/"
+      }
+    },
+    {
+      "title": "Transitioning from Sitecore Experience Commerce to OrderCloud",
+      "copy": "Review and compare Sitecore Experience Commerce customers and OrderCloud buyer users to facilitate developers looking to transition from XC to OrderCloud.",
+      "image": "https://go.sitecore.com/l/857953/2022-02-15/d4y4yh/857953/1644964326FcFF4iGt/Untitled_design__2_.png",
+      "link": {
+        "href": "http://andrewsutherland.azurewebsites.net/2022/01/30/transitioning-from-sitecore-experience-commerce-to-ordercloud-customers-to-buyer-users/"
+      }
+    },
+    {
+      "title": "Building Global Headers and Footers",
+      "copy": "Learn how to consistently have a header and footer on every page, without having to add them uniquely to each route/page’s HTML.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clywyh/857953/1642788130zta2AulB/1.png",
+      "link": {
+        "href": "https://thecodeattic.wordpress.com/2022/02/01/building-global-headers-and-footers/"
+      }
+    },
+    {
+      "title": "Getting Started with Vercel Edge Functions in Next.js",
+      "copy": "Learn what Edge Functions are and how to get started with them in Next.js. Add flexibility to your static sites with Vercel's Edge Functions.",
+      "image": "https://go.sitecore.com/l/857953/2022-02-15/d4y4ym/857953/1644964388y62nculy/GettyImages_1283830413.jpg",
+      "link": {
+        "text": "Watch now",
+        "href": "https://go.sitecore.com/e/857953/watch-v-nt4FYgJRbTc/d58v7h/291921984?h=CbwYHMTjPw2axc13VVg9wYC1yhuec372SzxfTqb6ffw"
+      }
+    }
+  ]
+}

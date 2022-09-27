@@ -1,0 +1,53 @@
+@layer base {
+  @import './_fonts/_avenir_next_r.css';
+  @import './_fonts/_avenir_next_cn.css';
+  @import './_fonts/_avenir_next_lt_pro.css';
+
+  .anchor svg {
+    display: inline;
+  }
+
+  html {
+    min-height: 100%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html {
+      background: theme('colors.charcoal.DEFAULT');
+    }
+  }
+
+  body {
+    @apply text-base;
+    color: theme('colors.charcoal.DEFAULT');
+  }
+
+  /* stylelint-disable -- We need these selectors in this order specifically for Safari. */
+  *:focus {
+    outline-color: theme('colors.charcoal.DEFAULT');
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-width: 2px;
+  }
+
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  *:focus-visible {
+    outline-color: theme('colors.theme-outline');
+    outline-offset: 2px;
+    outline-style: solid;
+    outline-width: 2px;
+  }
+  /* stylelint-enable */
+
+  /*  Highlight links that do not have an href or that have # for "authoring" assistance */
+  /* purgecss ignore */
+  a:not([href]),
+  a[href=''],
+  a[href='#'],
+  a[href='/#'] {
+    color: theme('colors.red.DEFAULT') !important;
+  }
+}

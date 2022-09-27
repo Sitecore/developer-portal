@@ -1,6 +1,7 @@
 export type NavigationChildData = {
   title: string;
   url?: string;
+  external?: boolean;
   children?: NavigationChildData[];
 };
 
@@ -8,6 +9,7 @@ export type NavigationData = {
   title: string;
   url?: string;
   children?: NavigationChildData[];
+  pathname?: string;
 };
 
 export const SitecoreQuickLinks: NavigationData = {
@@ -23,7 +25,7 @@ export const SitecoreQuickLinks: NavigationData = {
     },
     {
       title: 'Sitecore Community',
-      url: 'https://community.sitecore.net/',
+      url: 'https://community.sitecore.com/',
     },
     {
       title: 'Sitecore MVP Program',
@@ -59,7 +61,53 @@ const NavigationData: NavigationData[] = [
   },
   {
     title: 'Community',
-    url: '/community',
+    children: [
+      {
+        title: 'Community overview',
+        url: '/community',
+        children: [
+          {
+            title: 'News and Announcements',
+            url: 'https://community.sitecore.com/community?id=community_forum&sys_id=af85dddf1bf17810486a4083b24bcb00',
+            external: true,
+          },
+          {
+            title: 'Forums',
+            url: 'https://community.sitecore.com',
+            external: true,
+          },
+          {
+            title: 'Blog',
+            url: 'https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba',
+            external: true,
+          },
+          {
+            title: 'Events',
+            url: 'https://community.sitecore.com/community?id=community_forum&sys_id=7a84272f1b313c10486a4083b24bcbd5',
+            external: true,
+          },
+          {
+            title: 'MVP Program',
+            url: 'https://mvp.sitecore.com',
+            external: true,
+          },
+        ],
+      },
+      {
+        title: 'Newsletter',
+        url: '/newsletter',
+        children: [
+          {
+            title: 'Latest edition',
+            url: '/newsletter/latest',
+          },
+          {
+            title: 'Archive',
+            url: '/newsletter',
+          },
+        ],
+      },
+    ],
   },
   {
     title: 'Discover',
@@ -67,19 +115,12 @@ const NavigationData: NavigationData[] = [
   },
   {
     title: 'Solution',
+    pathname: '/[solution]',
     children: [
       {
         title: 'Content Management and Delivery',
         url: '/content-management',
         children: [
-          {
-            title: 'Sitecore Content Hub',
-            url: '/content-management/content-hub',
-          },
-          {
-            title: 'Experience Edge for Content Hub',
-            url: '/content-management/edge-content-hub',
-          },
           {
             title: 'Sitecore Experience Manager',
             url: '/content-management/experience-manager',
@@ -87,6 +128,10 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Experience Edge for XM',
             url: '/content-management/edge-xm',
+          },
+          {
+            title: 'Experience Edge for Content Hub',
+            url: '/content-management/edge-content-hub',
           },
           {
             title: 'Sitecore Experience Accelerator (SXA)',
@@ -117,8 +162,8 @@ const NavigationData: NavigationData[] = [
         url: '/personalization-testing',
         children: [
           {
-            title: 'Sitecore CDP',
-            url: '/personalization-testing/cdp',
+            title: 'Sitecore Personalize',
+            url: '/personalization-testing/personalize',
           },
           {
             title: 'Sitecore Experience Platform',
@@ -131,7 +176,7 @@ const NavigationData: NavigationData[] = [
         url: '/marketing-automation',
         children: [
           {
-            title: 'Sitecore Send',
+            title: 'Moosend',
             url: '/marketing-automation/send',
           },
           {
@@ -145,18 +190,32 @@ const NavigationData: NavigationData[] = [
         url: '/commerce',
         children: [
           {
-            title: 'OrderCloud',
+            title: 'Sitecore OrderCloud',
             url: '/commerce/ordercloud',
           },
           {
             title: 'Sitecore Experience Commerce',
             url: '/commerce/experience-commerce',
           },
+          {
+            title: 'Sitecore Discover',
+            url: '/commerce/discover',
+          },
         ],
       },
       {
-        title: 'Digital Asset Management',
-        url: '/digital-asset-management/dam',
+        title: 'DAM and Content Operations',
+        url: '/dam-and-content-operations',
+        children: [
+          {
+            title: 'Sitecore Content Hub',
+            url: '/dam-and-content-operations/content-hub',
+          },
+          {
+            title: 'Sitecore DAM',
+            url: '/dam-and-content-operations/dam',
+          },
+        ],
       },
       {
         title: 'DevOps',
@@ -178,23 +237,28 @@ const NavigationData: NavigationData[] = [
             title: 'Developer Collection',
             url: '/devops/developer-collection',
           },
+          {
+            title: 'Managed Cloud',
+            url: '/devops/managed-cloud',
+          },
         ],
       },
     ],
   },
   {
     title: 'Product',
+    pathname: '/[solution]/[product]',
     children: [
       {
         title: 'Sitecore Content Hub',
         children: [
           {
-            title: 'Content Management',
-            url: '/content-management/content-hub',
+            title: 'Content Operations',
+            url: '/dam-and-content-operations/content-hub',
           },
           {
             title: 'Digital Asset Management',
-            url: '/digital-asset-management/dam',
+            url: '/dam-and-content-operations/dam',
           },
           {
             title: 'Experience Edge for Content Hub',
@@ -203,7 +267,7 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Sitecore CDP',
+        title: 'Sitecore SmartHub CDP',
         children: [
           {
             title: 'Customer Data Management',
@@ -211,7 +275,7 @@ const NavigationData: NavigationData[] = [
           },
           {
             title: 'Personalization and Testing',
-            url: '/personalization-testing/cdp',
+            url: '/personalization-testing/personalize',
           },
         ],
       },
@@ -239,8 +303,13 @@ const NavigationData: NavigationData[] = [
             url: '/devops/developer-collection',
           },
           {
+            title: 'Managed Cloud',
+            url: '/devops/managed-cloud',
+          },
+          {
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx',
+            external: true,
           },
         ],
       },
@@ -260,13 +329,18 @@ const NavigationData: NavigationData[] = [
             url: '/personalization-testing/experience-platform',
           },
           {
+            title: 'Managed Cloud',
+            url: '/devops/managed-cloud',
+          },
+          {
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx',
+            external: true,
           },
         ],
       },
       {
-        title: 'Sitecore Send',
+        title: 'Moosend',
         url: '/marketing-automation/send',
         children: [
           {
@@ -274,8 +348,9 @@ const NavigationData: NavigationData[] = [
             url: '/marketing-automation/send',
           },
           {
-            title: 'Get Sitecore Send for free',
+            title: 'Get your free Moosend account',
             url: 'https://identity.moosend.com/register/',
+            external: true,
           },
         ],
       },
@@ -288,8 +363,9 @@ const NavigationData: NavigationData[] = [
             url: '/commerce/ordercloud',
           },
           {
-            title: 'Access OrderCloud Portal for free',
-            url: 'https://portal.ordercloud.io/',
+            title: 'Start on the OrderCloud Portal for free',
+            url: 'https://portal.ordercloud.io',
+            external: true,
           },
         ],
       },
@@ -302,8 +378,23 @@ const NavigationData: NavigationData[] = [
             url: '/commerce/experience-commerce',
           },
           {
+            title: 'Managed Cloud',
+            url: '/devops/managed-cloud',
+          },
+          {
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx',
+            external: true,
+          },
+        ],
+      },
+      {
+        title: 'Sitecore Discover',
+        url: '/commerce/discover',
+        children: [
+          {
+            title: 'Data driven product discovery',
+            url: '/commerce/discover',
           },
         ],
       },

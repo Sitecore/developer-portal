@@ -1,4 +1,4 @@
-import type { CTACardProps } from '@/components/cards/CTACard';
+import type { CTACardProps } from '@/src/components/cards/CTACard';
 
 const data: CTACardProps = {
   title: 'Contact Us',

@@ -1,0 +1,109 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Watch sessions from SUGCON Europe 2022",
+      "copy": "You can now view all sessions, lightning talks, keynote presentations from SUGCON Europe 2022.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5d14f/857953/16562941177zhm8ZRh/Untitled_design__2_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://go.sitecore.com/e/857953/dDTmlDsRydZB6Bj7QzHnJejzQql3j-/l5gh7t/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Standard Values Podcast - Meet Jo Tyrer",
+      "copy": "Join Sultan and Rick with their superstar guest Jo Tyrer, President of Composable Solutions at Sitecore. Jo discusses her objectives at Sitecore and all things composable, global, and values.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czm7/857953/1656292829PqbgARtc/Untitled_design__10_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://go.sitecore.com/e/857953/watch-v-6xsoX3TNe5I-t-2s/l5gh7x/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      }
+    },
+    {
+      "title": "First Look at Github CoPilot - AI Powered Programming",
+      "copy": "Dylan explores the Githup Copilot and discusses the pros and cons of the Github Copilot. Find out ways this will help developers speed up efficiency and potentially quality.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czn4/857953/1656293027HOmT1QJR/Untitled_design__12_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/opilot-ai-powered-programming-/l5gh81/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      }
+    },
+    {
+      "title": "Easy way to orchestrate and use content directly from XM",
+      "copy": "Learn how to prepare both Sitecore XM and Sitecore Personalize to let Sitecore Personalize use content directly provided by Sitecore XM with one possible approach.",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc2w/857953/1650590313tUyZoKqL/4.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/-use-content-directly-from-xm-/l5gh84/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      }
+    },
+    {
+      "title": "Symposium Super Early Bird Registration is Now Open",
+      "copy": "You can now register for Sitecore Symposium! If you register by June 30th you could win a prize pack with a $100 USD gift card to the 96th Floor Signature Lounge for when you’re in Chicago and more!",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czcb/857953/1656292201J4wZNuQU/Untitled_design__5_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/2022-06-27/l5gh87/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Sitecore Architect’s Guide to SaaS Migration – XM Jamstack scenario",
+      "copy": "Learn how to migrate an existing Sitecore XM “Jamstack” solution over to XM Cloud. Follow this series to look at different Sitecore XM and XP scenarios and how you can gradually migrate your Sitecore platform solution over to a composable DXP architecture.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5d1bj/857953/1656295863Vyv3pRNu/GettyImages_970161196.jpg",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/igration-xm-jamstack-scenario-/l5gh8b/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      }
+    },
+    {
+      "title": "Automate Your Teams Code Style Guide with Prettier",
+      "copy": "Thomas recently cloned the Sitecore JSS project from GitHub, hoping to build his own JSS application. After some errors occurred, he looked more at the What and Why of Prettier, to understand why so many projects are using it!",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czkf/857953/1656292593DLVnGYCO/Untitled_design__8_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/-automate-style-guide-prettier/l5gh8f/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      }
+    },
+    {
+      "title": "High CPU to completely normal CPU",
+      "copy": "After working on a project for 8 months, this team ran into a few issues. Find out what they were and how they solved it.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5d1bb/857953/1656295790L4iFnrCN/Untitled_design__4_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/completely-normal-cpu-sxa-html/l5gh8j/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      }
+    },
+    {
+      "title": "Fundraising with Sitecore relics",
+      "copy": "Here is an opportunity to get some Sitecore relics and support the Sitecore community in Ukraine. Even if you cannot buy anything please share the message with your community.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czl7/857953/1656292764kM2Vr7NI/Untitled_design__9_.png",
+      "link": {
+        "text": "Learn more",
+        "href": "https://go.sitecore.com/e/857953/liactivity6938533139371704320-/l5gh8m/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Asking for Help with Jaina Baumgartner",
+      "copy": "In this episode of the Tiaras and Tech podcast, Shelley Benhoff talks to Jaina Baumgartner on the topic of asking for help. Jaina discusses the impact that covid has had on working mothers, how to change careers, and developing her app, Piccache.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5d1b1/857953/1656295635GfVSsgyL/Untitled_design__7_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://go.sitecore.com/e/857953/watch-v-xjT3MSzlqME/l5gh8q/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      }
+    },
+    {
+      "title": "Sitecore CDP and Personalize Certification – Tips and Tricks",
+      "copy": "Review these seven tips and tricks that will help you get certified in Sitecore CDP and Personalize.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czp1/857953/1656293079sSwvv9lq/Untitled_design__11_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/-certification-tips-and-tricks/l5gh8t/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      }
+    },
+    {
+      "title": "Getting Started Quickly with Sitecore CDP",
+      "copy": "Sitecore CDP formerly Boxever is something you are probably hearing a lot about these days. As a developer you can implement it easily and as a marketer you can take advantage of some of the features as soon as it is implemented. Learn how to get started.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czp4/857953/1656293151zaR1YiNA/Untitled_design__1_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/re-cdp-customer-data-platform-/l5gh8x/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      }
+    }
+  ]
+}

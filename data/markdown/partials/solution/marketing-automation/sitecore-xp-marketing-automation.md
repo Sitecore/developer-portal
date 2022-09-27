@@ -6,6 +6,7 @@ description: 'Connecting with customers using Sitecore Experience Platform marke
 ---
 
 ## Introduction
+
 Using Sitecore XP Marketing Automation features you will be able to send automated emails and messaging campaigns.
 
 ## Documentation

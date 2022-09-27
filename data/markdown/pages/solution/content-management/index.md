@@ -2,7 +2,7 @@
 solution: ['content-management']
 product: ['content-management']
 title: 'Content Management and Delivery'
-description: 'Manage content and presentation for the web channel.'
+description: 'Manage content and presentation for your channels and then scale out your delivery'
 stackexchange:
   [
     '#dam',
@@ -27,4 +27,6 @@ stackexchange:
     '#headless',
   ]
 twitter: ['#SitecoreJSS', '#SitecoreForms']
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['contentManagement']
 ---
