@@ -10,6 +10,7 @@ import { setGlobalState, useGlobalState } from '@/src/common/global-state';
 import htmlConfig from '@/src/common/html-constants';
 const { idMainContent } = htmlConfig;
 // Components
+import { ThemeButton } from '@/src/components/ThemeButton';
 import NavMenu from '@/src/layouts/components/head/NavMenu';
 import QuickStartMenu from '@/src/layouts/components/head/QuickStartMenu';
 import dynamic from 'next/dynamic';
@@ -36,9 +37,8 @@ const Nav = (): JSX.Element => {
   const navRef = useRef<HTMLElement>(null);
   const [isOpen, setOpen] = useState(false);
   const Disabled = () => {
-    console.log('Search disabled; please check environment variables to enable');
     return (
-      <div className={classnames('font-semibold', 'pt-6', 'text-sm', 'text-center', 'text-red')}>
+      <div className={classnames('font-semibold', 'pt-3', 'text-sm', 'text-center', 'text-red')}>
         Search disabled; please check environment variables to enable
       </div>
     );
@@ -262,6 +262,7 @@ const Nav = (): JSX.Element => {
               'xl:w-96'
             )}
           >
+            <ThemeButton className="mr-2.5" />
             <button
               aria-controls="scdp-nav"
               aria-expanded={isOpen}

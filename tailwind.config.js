@@ -17,7 +17,7 @@ module.exports = {
       './src/pages/**/*.{js,ts,jsx,tsx}',
     ],
   },
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     backgroundSize: {
       'size-hero-pattern': '33.125rem', // 530px, matching SC.com
