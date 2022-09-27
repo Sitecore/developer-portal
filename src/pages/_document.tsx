@@ -8,6 +8,7 @@ import {
   Main,
   NextScript,
 } from 'next/document';
+import Script from 'next/script';
 import { Component } from 'react';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -21,6 +22,7 @@ export class MyDocument<P = {}> extends Component<DocumentProps & P> {
       <Html lang="en">
         <Head />
         <body>
+          <Script strategy="beforeInteractive" src="/scripts/darkMode.js" />
           <Main />
           <NextScript />
           <svg className="hidden">
