@@ -104,6 +104,7 @@ Here’s a list of great resources that I found helpful.
 - [[Blogpost] **Headless Frontend Development with XM Cloud** - by Thomas Desmond](https://thetombomb.com/posts/frontend-development-xm-cloud)
 - [[Video] **Setup your first Headless SXA Site in XM Cloud**](https://www.youtube.com/watch?v=zot3G52F2ts)
 - [[Video] **Deploy your first Headless SXA site to Vercel**](https://www.youtube.com/watch?v=0UpihW2QxaQ)
+- [[Video] **Setup XM Cloud locally using docker and start developing**](https://www.youtube.com/watch?v=sVLM1g3Xi-U)
 - [[Video Playlist] **Sitecore XM Cloud Youtube Playlist** - do not miss a video](https://www.youtube.com/playlist?list=PL1jJVFm_lGnzqYagW1UahIBeqTIYSBQMc)
 
 ### Tooling
