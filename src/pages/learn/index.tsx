@@ -9,8 +9,9 @@ import GenericContentPage from '@/src/layouts/GenericContentPage';
 
 export async function getStaticProps() {
   const starterKits = await getPartialsAsArray([
-    'learn/starter-kits/sitecore-starter-kits',
+    'learn/starter-kits/xm-cloud',
     'learn/starter-kits/ordercloud',
+    'learn/starter-kits/sitecore-starter-kits',
   ]);
   const gettingStarted = await getPartialsAsArray([
     'learn/getting-started/composable-dxp',
