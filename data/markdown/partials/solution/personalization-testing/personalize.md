@@ -14,6 +14,7 @@ Sitecore Personalize brings together real-time behavioral insights and all your 
 - [Developer Docs - Data Model 2.0](https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/index-en.html)
 - [Introduction to Sitecore CDP - Managing Users](https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/introduction-to-sitecore-cdp.html)
 - [Sitecore Personalize - Intro](https://doc.sitecore.com/cdp/en/users/sitecore-personalize/introduction-to-sitecore-personalize.html)
+- [What's New in Sitecore Personalize](https://doc.sitecore.com/cdp/en/users/sitecore-personalize/what-s-new-in-sitecore-personalize.html)
 - [Knowledge Hub](https://sitecore.cdpknowledgehub.com/docs)
 
 ## Discover
