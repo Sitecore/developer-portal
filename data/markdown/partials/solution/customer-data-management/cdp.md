@@ -14,6 +14,7 @@ Sitecore CDP brings together real-time behavioral insights and all your customer
 - [Developer Docs - Data Model 2.0](https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/index-en.html)
 - [Introduction to Sitecore CDP - Managing Users](https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/introduction-to-sitecore-cdp.html)
 - [Sitecore CDP Data retention policy](https://doc.sitecore.com/cdp/en/users/sitecore-cdp/introduction-to-sitecore-cdp-data-retention-policy.html)
+- [What's New in Sitecore CDP](https://doc.sitecore.com/cdp/en/users/sitecore-cdp/what-s-new-in-sitecore-cdp.html)
 - [Knowledge Hub](https://sitecore.cdpknowledgehub.com/docs)
 
 ## Discover
@@ -29,3 +30,16 @@ Sitecore CDP brings together real-time behavioral insights and all your customer
 
 - [Integrating Sitecore SmartHub CDP with Sitecore XM](/learn/integrations/xm-smarthub-cdp)
 - [Integrating Sitecore CDP with Sitecore OrderCloud](/learn/integrations/oc-cdp)
+
+## Open Source
+
+- [Sitecore CDP/Personalize Serializer](https://github.com/dylanyoung-dev/sitecore-cdp-serializer)
+- [Sitecore CDP/Personalize Examples](https://github.com/dylanyoung-dev/cdp-personalize-examples)
+
+## Resources
+
+- [Blog: Sitecore CDP Audience Sync Automation](https://community.sitecore.com/community?id=community_blog&sys_id=46a5fcc11be15d10b8954371b24bcb85)
+- [Blog: Product Comparisons](https://community.sitecore.com/community?id=community_blog&sys_id=d8fdc45d1bb6811038a46421b24bcbb7)
+- [Blog: Product Specifications/Comparisons part 2](https://community.sitecore.com/community?id=community_blog&sys_id=f0862b751bf6491038a46421b24bcb65)
+- [Blog: Sitecore XP Migration Guide](https://community.sitecore.com/community?id=community_blog&sys_id=f1cc98af1b541590e55241dde54bcb0d)
+- [Blog: Security Considerations When Using the APIs](https://community.sitecore.com/community?id=community_blog&sys_id=6d9601561b12d9d0b8954371b24bcb9b)
