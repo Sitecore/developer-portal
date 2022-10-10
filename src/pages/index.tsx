@@ -6,19 +6,19 @@ import { getPageInfo } from '@/src/common/page-info';
 import type { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 import type { PageInfo } from '@/src/interfaces/page-info';
 // Components
-import CategoryTileList from '@/src/components/lists/CategoryTileList';
-import CommunityList from '@/src/components/lists/CommunityList';
-import Container from '@/src/components/common/Container';
 import CTACard from '@/src/components/cards/CTACard';
-import Layout from '@/src/layouts/Layout';
+import PromoCard from '@/src/components/cards/PromoCard';
+import Container from '@/src/components/common/Container';
+import VerticalGroup from '@/src/components/common/VerticalGroup';
 import SitecoreCommunityBlog from '@/src/components/integrations/sitecore-community/blog/SitecoreCommunityBlog';
 import SitecoreCommunityEvents from '@/src/components/integrations/sitecore-community/events/SitecoreCommunityEvents';
 import SitecoreCommunityNews from '@/src/components/integrations/sitecore-community/news/SitecoreCommunityNews';
 import SitecoreCommunityQuestions from '@/src/components/integrations/sitecore-community/questions/SitecoreCommunityQuestions';
 import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
-import VerticalGroup from '@/src/components/common/VerticalGroup';
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
-import PromoCard from '@/src/components/cards/PromoCard';
+import CategoryTileList from '@/src/components/lists/CategoryTileList';
+import CommunityList from '@/src/components/lists/CommunityList';
+import Layout from '@/src/layouts/Layout';
 // Data
 import getHelpCta from '@/data/promos/get-help';
 import newPromo from '@/data/promos/newpromo';
