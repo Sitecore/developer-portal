@@ -82,6 +82,16 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
     <VerticalGroup>
       <Container>
         <VerticalGroup size="lg">
+          {/* Temporary removed
+          <VideoPromo
+            youTubeId="fAlNP0hCoZg"
+            title="Composable DXP"
+            description="Want to learn more about our Composable DXP and the products that support it? Sitecore's Thomas Desmond explains more in this article"
+            linkText="Read the article"
+            linkHref="/learn/getting-started/introduction-to-composable-dxp"
+          />
+          */}
+
           <PromoCard {...newPromo} key="newPromo" isImageLeft={true} />
           <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} />
           <SitecoreCommunityBlog
