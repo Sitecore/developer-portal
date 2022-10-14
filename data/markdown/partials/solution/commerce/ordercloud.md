@@ -9,12 +9,17 @@ description: 'Cloud-native, headless, and API-first commerce solution'
 
 With Sitecore OrderCloud®, design your own commerce solution with an API-first, headless cloud platform for B2B, B2C, and B2X. OrderCloud powers custom eCommerce experiences, order management, and B2B marketplace applications for some of the world’s most well-known brands - processing over 25 million transactions and $5 billion in revenue annually.
 
+<VideoPromo youTubeId="3bHgafJShGM" title="OrderCloud + Next.js" description="See how easy it is to setup an instance of Next.js Commerce powered by Sitecore OrderCloud. Rob will walk you through starting from a blank project, all the way to having a complete development environment with working CI/CD pipeline pushing changes out to Vercel.
+" />
+
 ## Documentation
 
 - [API reference](https://ordercloud.io/api-reference)
 - [Four51 Storefront API docs](https://four51.github.io/#/api)
 
-## Getting Started
+<CtaCard description="Use the Next.js Commerce StarterKit and integrate it with OrderCloud for free" href="https://ordercloud.io/knowledge-base/vercel-integration" linkText="Read more" title="Get Started with Sitecore OrderCloud and Next.js" />
+
+## More information on how to get started
 
 - [Getting Started with OrderCloud](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
 - [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore OrderCloud
