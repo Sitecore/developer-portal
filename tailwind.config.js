@@ -98,6 +98,8 @@ module.exports = {
     },
     minHeight: {
       320: '320px',
+      220: '120px',
+      120: '120px',
     },
     extend: {
       backgroundImage: {
@@ -143,6 +145,10 @@ module.exports = {
             },
             a: {
               color: 'inherit',
+            },
+            ['a.text-white']: {
+              color: '#ffffff',
+              textDecoration: 'none',
             },
             h1: {
               color: 'inherit',
@@ -199,6 +205,8 @@ module.exports = {
     extend: {
       translate: ['focus', 'group-hover', 'group-focus'],
       backgroundImage: ['dark'],
+      display: ['responsive', 'dark'],
+      visibility: ['dark'],
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography')],

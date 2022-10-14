@@ -5,8 +5,8 @@ import {
 import { ContentHeading } from '@/src/interfaces/contentheading';
 
 import {
-  SitecoreCommunityEvent,
   SitecoreCommunityContent,
+  SitecoreCommunityEvent,
   StackExchangeQuestion,
   Tweet,
   YouTubeVideo,
@@ -66,6 +66,7 @@ export type PageInfo = PageInfoCore & {
   promoAfter: string[];
   content?: string;
   parsedContent?: string;
+  productLogo?: string;
   headings?: ContentHeading[];
 };
 
