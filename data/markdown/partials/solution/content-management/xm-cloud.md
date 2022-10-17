@@ -24,11 +24,17 @@ The importance of your company's growth comes with the:
 ## Getting Started
 
 - [XM Cloud Introduction](/learn/getting-started/xm-cloud-introduction)
+- [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
 
 ## Documentation
 
-- [User Documentation]() [Coming soon!]
-- [Developer Documentation]() [Coming soon!]
+- [User Documentation](https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html)
+- [Developer Documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html)
+- [XM Cloud Build Configuration](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html)
+- [XM Cloud Deploy App](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
+- [Developer Tools](https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html)
+- [XM Cloud development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html)
+- [Cloud Portal developer docs](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
 
 ## Learn & Examples
 
