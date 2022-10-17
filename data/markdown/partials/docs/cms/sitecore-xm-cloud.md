@@ -5,3 +5,4 @@
 - [XM Cloud Deploy App](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
 - [Developer Tools](https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html)
 - [XM Cloud development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html)
+- [Cloud Portal developer docs](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
