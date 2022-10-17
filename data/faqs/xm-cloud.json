@@ -5,10 +5,6 @@
   "path": "xm-cloud",
   "routes": [
     {
-      "title": "General",
-      "path": "general"
-    },
-    {
       "title": "Features",
       "path": "features"
     },
