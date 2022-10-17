@@ -48,7 +48,7 @@ const ButtonLink = ({ text, href, target, className }: ButtonLinkProps): JSX.Ele
         >
           <SvgIcon
             icon="arrow-right"
-            className={classnames('text-white', 'dark:text-red', 'relative', 'top-0.5')}
+            className={classnames('text-white', 'dark:text-white', 'relative', 'top-1')}
           />
         </span>
       </a>
