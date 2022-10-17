@@ -9,6 +9,7 @@ import type { PartialData } from '@/src/interfaces/page-info';
 // Lib
 import VideoPromo from '@/src/components/videoPromo/index';
 import CTACard from '../cards/CTACard';
+import { Promo } from '../cards/PromoCard';
 import VerticalGroup from './VerticalGroup';
 
 type MarkdownContentProps = {
@@ -56,6 +57,7 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
         },
         VideoPromo: VideoPromo,
         CtaCard: CTACard,
+        Promo: Promo,
       }}
     />
   );

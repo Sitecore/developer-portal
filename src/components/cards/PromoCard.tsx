@@ -58,4 +58,41 @@ const PromoCard = ({
   </div>
 );
 
+export type SimplePromoCardProps = {
+  title: string;
+  description: string;
+  linkText: string;
+  linkHref: string;
+  imageSource: string;
+  imageAlt?: string;
+  className?: TTailwindString;
+  isImageLeft?: boolean;
+};
+
+export const Promo = ({
+  title,
+  description,
+  linkText,
+  linkHref,
+  imageSource,
+  imageAlt,
+  className,
+  isImageLeft,
+}: SimplePromoCardProps): JSX.Element => {
+  const data: PromoCardProps = {
+    title: title,
+    description: description,
+    img: {
+      src: imageSource,
+      alt: imageAlt ? imageAlt : title,
+    },
+    link: {
+      href: linkHref,
+      text: linkText,
+    },
+  };
+
+  return <PromoCard {...data} />;
+};
+
 export default PromoCard;
