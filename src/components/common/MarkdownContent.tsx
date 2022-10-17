@@ -7,6 +7,9 @@ import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hl
 // Interfaces
 import type { PartialData } from '@/src/interfaces/page-info';
 // Lib
+import VideoPromo from '@/src/components/videoPromo/index';
+import CTACard from '../cards/CTACard';
+import { Promo } from '../cards/PromoCard';
 import VerticalGroup from './VerticalGroup';
 
 type MarkdownContentProps = {
@@ -25,6 +28,7 @@ type EditButtonProps = {
 
 const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element => {
   const [isDark, setIsLight] = useState(false);
+
   useEffect(() => {
     setIsLight(
       typeof window !== 'undefined' &&
@@ -51,6 +55,9 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
             <code className={className}>{children}</code>
           );
         },
+        VideoPromo: VideoPromo,
+        CtaCard: CTACard,
+        Promo: Promo,
       }}
     />
   );

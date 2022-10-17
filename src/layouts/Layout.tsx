@@ -1,8 +1,8 @@
 // Global
-import React, { useLayoutEffect, useEffect, useRef } from 'react';
+import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 // Interfaces
 import type { PageInfo } from '@/src/interfaces/page-info';
 // Lib
@@ -126,6 +126,7 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
           title={pageTitle ? pageTitle : pageInfo.title}
           description={pageInfo.description}
           image={pageInfo.heroImage}
+          productLogo={pageInfo.productLogo}
         />
 
         {children}

@@ -11,6 +11,8 @@ export type CTACardProps = {
   headingLevel?: ValidHeadingLevels;
   href: string;
   linkText: string;
+  link2href?: string;
+  link2Text?: string;
   title: string;
 };
 
@@ -20,8 +22,10 @@ const CTACard = ({
   href,
   linkText,
   title,
+  link2Text,
+  link2href,
 }: CTACardProps): JSX.Element => (
-  <div className={classnames('w-full', 'bg-theme-bg-alt', 'px-16', 'py-10')}>
+  <div className={classnames('w-full', 'bg-theme-bg-alt', 'px-16', 'py-10', 'my-8')}>
     <DynamicTag tag={headingLevel} className={classnames('heading-md', 'mb-4')}>
       {title}
     </DynamicTag>
@@ -44,6 +48,27 @@ const CTACard = ({
         {linkText}
       </a>
     </Link>
+    {link2href && link2Text && (
+      <Link href={link2href}>
+        <a
+          className={classnames(
+            'bg-violet',
+            'focus:bg-violet-dark',
+            'font-semibold',
+            'hover:bg-violet-dark',
+            'inline-block',
+            'px-12',
+            'py-4',
+            'text-sm',
+            'text-white',
+            'rounded-full',
+            'ml-4'
+          )}
+        >
+          {link2Text}
+        </a>
+      </Link>
+    )}
   </div>
 );
 
