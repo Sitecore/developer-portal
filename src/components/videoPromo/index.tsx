@@ -48,7 +48,7 @@ const VideoPromo = ({
   isImageLeft = true,
 }: VideoPromoProps): JSX.Element => {
   return (
-    <div className={classnames('not-prose', 'grid', 'gap-6', 'mt-8', 'md:grid-cols-2', className)}>
+    <div className={classnames('not-prose', 'grid', 'gap-6', 'my-8', 'md:grid-cols-2', className)}>
       {isImageLeft && videoUrl != undefined && <Video videoUrl={videoUrl} />}
       {isImageLeft && youTubeId != undefined && <YouTube youTubeId={youTubeId} />}
       <div className={classnames('flex', 'flex-col', 'justify-center')}>

@@ -17,7 +17,7 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 - [API reference](https://ordercloud.io/api-reference)
 - [Four51 Storefront API docs](https://four51.github.io/#/api)
 
-<CtaCard description="Use the Next.js Commerce StarterKit and integrate it with OrderCloud for free" href="https://ordercloud.io/knowledge-base/vercel-integration" linkText="Read more" title="Get Started with Sitecore OrderCloud and Next.js" />
+<CtaCard description="Use the Next.js Commerce StarterKit and integrate it with OrderCloud for free" href="https://ordercloud.io/knowledge-base/vercel-integration" linkText="Read more" title="Get Started with Sitecore OrderCloud and Next.js" link2href="https://ordercloud.vercel.store/" link2Text="Demo" />
 
 ## More information on how to get started
 
