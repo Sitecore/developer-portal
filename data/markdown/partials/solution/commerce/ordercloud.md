@@ -5,6 +5,14 @@ title: 'Sitecore OrderCloud®'
 description: 'Cloud-native, headless, and API-first commerce solution'
 ---
 
+<Promo
+  title="Vercel Next.js conference"
+  description="At this year's Next.js Conf, you can catch Pieter Brinkman, VP Technical Marketing, showing you how to use Next.js Commerce and Sitecore OrderCloud to build a B2C storefront in 5 minutes."
+  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/6752888275b443cca0fc5934e19e0649?v=ec9593ee"
+  linkText="Read more"
+  linkHref="https://nextjs.org/conf/speakers/pieterbrink123?utm_source=partner&utm_medium=email&utm_campaign=partner_sitecoreconfpromo" isImageLeft={false}
+/>
+
 ## Introduction
 
 With Sitecore OrderCloud®, design your own commerce solution with an API-first, headless cloud platform for B2B, B2C, and B2X. OrderCloud powers custom eCommerce experiences, order management, and B2B marketplace applications for some of the world’s most well-known brands - processing over 25 million transactions and $5 billion in revenue annually.
@@ -15,14 +23,6 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 
 - [API reference](https://ordercloud.io/api-reference)
 - [Four51 Storefront API docs](https://four51.github.io/#/api)
-
-<Promo
-  title="Vercel Next.js conference"
-  description="At this year's Next.js Conf, you can catch Pieter Brinkman, VP Technical Marketing, showing you how to use Next.js Commerce and Sitecore OrderCloud to build a B2C storefront in 5 minutes."
-  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/6752888275b443cca0fc5934e19e0649?v=ec9593ee"
-  linkText="Read more"
-  linkHref="https://nextjs.org/conf/speakers/pieterbrink123?utm_source=partner&utm_medium=email&utm_campaign=partner_sitecoreconfpromo" isImageLeft={false}
-/>
 
 ## More information on how to get started
 
