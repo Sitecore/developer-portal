@@ -272,9 +272,10 @@ const NavigationData: NavigationData[] = [
       },
       {
         title: 'Sitecore XM Cloud',
+        url: '/content-management/xm-cloud',
         children: [
           {
-            title: 'Headless Web Content management',
+            title: 'Developer Resources',
             url: '/content-management/xm-cloud',
           },
           {
