@@ -8,9 +8,10 @@ import GenericContentPage from '@/src/layouts/GenericContentPage';
 export async function getStaticProps() {
   // Partial Groups
   const cms = await getPartialsAsArray([
-    'docs/cms/sitecore-experience-manager',
-    'docs/cms/headless',
+    'docs/cms/sitecore-xm-cloud',
     'docs/cms/sitecore-content-hub',
+    'docs/cms/headless',
+    'docs/cms/sitecore-experience-manager',
   ]);
   const customerDataManagement = await getPartialsAsArray([
     'docs/customer-data-management/sitecore-cdp',
