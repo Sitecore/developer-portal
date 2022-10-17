@@ -22,7 +22,7 @@ Sitecore also recommends as best practices:
 - Using Docker for local development
 
 ## What will be the migration path from Experience Manager self-hosted to XM Cloud?
-Sitecore will provide a migration guide for customers moving from self-hosted Experience Manager to XM Cloud. Our intention is that customers following the guidelines in the previous question will have the smoothest migration path. Clarification coming after Symposium.
+Sitecore will provide a migration guide for customers moving from self-hosted Experience Manager to XM Cloud. Our intention is that customers following the guidelines in the previous question will have the smoothest migration path. Clarification coming after Sitecore Symposium 2022.
 
 ## What options are there for content migration from earlier Sitecore versions?
 Sitecore Content Serialization can be used for the migration of content. We are also looking to support Razl for migrating content from earlier versions.
