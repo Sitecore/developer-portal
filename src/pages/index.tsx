@@ -22,6 +22,7 @@ import Layout from '@/src/layouts/Layout';
 // Data
 import getHelpCta from '@/data/promos/get-help';
 import newPromo from '@/data/promos/newpromo';
+import VideoPromo from '../components/videoPromo';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
@@ -82,7 +83,6 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
     <VerticalGroup>
       <Container>
         <VerticalGroup size="lg">
-          {/* Temporary removed
           <VideoPromo
             youTubeId="fAlNP0hCoZg"
             title="Composable DXP"
@@ -90,7 +90,6 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
             linkText="Read the article"
             linkHref="/learn/getting-started/introduction-to-composable-dxp"
           />
-          */}
 
           <PromoCard {...newPromo} key="newPromo" isImageLeft={true} />
           <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} />
