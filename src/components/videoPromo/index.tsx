@@ -32,7 +32,7 @@ const YouTube = ({ youTubeId }: VideoProps): JSX.Element => {
       <LiteYouTubeEmbed
         id={`${youTubeId}`} // Default none, id of the video or playlist
         adNetwork={false} // Default true, to preconnect or not to doubleclick addresses called by YouTube iframe (the adnetwork from Google)
-        params="" // any params you want to pass to the URL, assume we already had '&' and pass your parameters string
+        params={`loop=1&playlist=${youTubeId}`} // any params you want to pass to the URL, assume we already had '&' and pass your parameters string
         aspectHeight={9}
         aspectWidth={16}
         poster="maxresdefault" // Defines the image size to call on first render as poster image. Possible values are "default","mqdefault",  "hqdefault", "sddefault" and "maxresdefault". Default value for this prop is "hqdefault". Please be aware that "sddefault" and "maxresdefault", high resolution images are not always avaialble for every video. See: https://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api
