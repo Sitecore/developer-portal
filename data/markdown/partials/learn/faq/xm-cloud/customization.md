@@ -31,9 +31,6 @@ For customizations like custom field renders, these should be called as part of 
 
 For Pages, Sitecore is still working on making an extensibility model for customer extensions. This will allow for visualizing customizations on the Pages site in the future.
 
-## Is there no more support for front-end search out of the box? Is it required either provision another Solr instance, or use Coveo or another search vendor?
-Sitecore XM Cloud is focused on a being an API-first, headless, composable, content management solution. Sitecore will be offering a separate composable site search offering for front end websites.
-
 ## Is XM Cloud similar to Sitecore XM running in Sitecore Managed Cloud without being able to add (code) customizations?
 No. XM Cloud supports customization with the use of our deployment tooling and services.
 
