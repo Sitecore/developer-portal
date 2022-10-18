@@ -7,13 +7,13 @@ hasInPageNav: true
 The Content Management instance will be fully customizable in XM Cloud as it is today with a self-hosted implementation. You can change Sheer and SPEAK UIs of the Content Management role. Note that Pages are the future of our XM Cloud authoring experience.
 
 ## Will it be possible to use custom identity providers?
-The initial release of XM Cloud will not support custom identity providers. When support becomes available, authentication will be performed through the Sitecore Cloud Portal, with XM Cloud available as an application through the Sitecore Cloud Portal. We enable customer SSO integration with our Sitecore Cloud Portal.
+The initial release of XM Cloud will not support custom identity providers. When support becomes available, authentication will be performed through the Sitecore Cloud Portal, with XM Cloud available as an application through the Sitecore Cloud Portal. Customer SSO integration is enabled with our Sitecore Cloud Portal.
 
-## Extending pipelines and custom renderings, typically will be compiled .NET code attached to something in Sitecore, are we still allowing this in XM Cloud?
+## Extending pipelines and custom renderings, typically will be compiled .NET code attached to something in Sitecore, is this still allowed in XM Cloud?
 Absolutely, you can write your own custom pipelines and do all the customization you did before. You don’t do it against the web database with the way Experience Edge publishing works. Primarily, Experience Edge publishing works as if you wrote a custom pipeline that changed some items or a new custom item resolver for changed content. The Experience Edge publishing process runs through those rendering pipelines to render the JSON over to Experience Edge. During this process, there are some transformations. Note that with Sitecore XM Cloud, there is not as much need for customization, as most customizations will be needed out in the front end application.
 
 ## Will partners still be able to customize pipelines and events on the CM? Are all pipelines going to be available to add to include publishing (like wanting to publish to a Solr index for consumption)
-Events and pipelines can still be customized for the Content Management environment within the XM Cloud. There may be some limitations as to which pipelines can be customized, and we encourage new development to use out-of-process API-based integration as much as possible.
+Events and pipelines can still be customized for the Content Management environment within the XM Cloud. There may be some limitations as to which pipelines can be customized, and Sitecore encourages new development to use out-of-process API-based integration as much as possible.
 
 ## How is Sitecore going to manage customizations with a SaaS approach to upgrades?
 Sitecore XM Cloud is designed to handle automatic updates and backwards compatibility. XM Cloud uses Semantic versioning starting at XM Cloud 1.0 as the major version. If Sitecore updates XM Cloud to version 1.1, or any other minor version, Sitecore will automatically update all instances. XM Cloud also has automatic updates on re-deployments, if there was a new version available. Sitecore XM Cloud will also get automatic updates for zero-day patches. The plan is to avoid major version changes unless there is a breaking change. 
@@ -30,9 +30,6 @@ Sitecore XM Cloud still allows deploying your own code and fields to the XM Clou
 For customizations like custom field renders, these should be called as part of the layout. When rendering the layout, the layout pipeline renders Json and pushes this to Experience Edge. This makes it accessible to your headless front-end.
 
 For Pages, Sitecore is still working on making an extensibility model for customer extensions. This will allow for visualizing customizations on the Pages site in the future.
-
-## Is there no more support for front-end search out of the box? Is it required either provision another Solr instance, or use Coveo or another search vendor?
-Sitecore XM Cloud is focused on a being an API-first, headless, composable, content management solution. Sitecore will be offering a separate composable site search offering for front end websites.
 
 ## Is XM Cloud similar to Sitecore XM running in Sitecore Managed Cloud without being able to add (code) customizations?
 No. XM Cloud supports customization with the use of our deployment tooling and services.

@@ -29,4 +29,4 @@ Sitecore’s goal with these releases is to ensure that customers and their impl
 Sitecore will notify customers and partners in advance of the releases whenever possible for planning purposes. More clarification coming after Sitecore Symposium 2022.
 
 ## Will Data Exchange Framework be available?
-We are currently evaluating adoption and usage scenarios with XM Cloud and Data Exchange Framework.
+Adoption and usage scenarios with XM Cloud and Data Exchange Framework are currently being evaluated.
