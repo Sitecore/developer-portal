@@ -14,7 +14,7 @@ XM Cloud includes:
 - **Sitecore Tools**  
   There is also a new tools dashboard. It is similar to the Sitecore Launchpad, with a refreshed modern design and some additional features. From here, users can quickly navigate and launch Pages and other tools.
 - **Sitecore Sites**  
-  The Sites tab is for multi-site management, where you can manage sites and create sites based on templates that we provide to customers to get them started quickly. It's basically an SXA site scaffolding feature where we're generating a default site for them based on a set of predefined configurations.
+  The Sites tab is for multi-site management, where you can manage sites and create sites based on templates that XM Cloud provides for getting started quickly. It's basically an SXA site scaffolding feature where Sitecore XM Cloud generates a default site based on a set of predefined configurations.
 - **Sitecore Explorer**  
   A new Explorer feature that allows customers to quickly see all the different sites that they have on a CM instance and then from that site they get to see the hierarchy and structure of their pages. From there, they can drill into the Pages application or they can do some high level administration on a site or a page level.
 - **Sitecore Components**  
@@ -52,13 +52,13 @@ _Please note that capabilities shown as not supported, or under consideration, m
 ## Will XM Cloud support Federated authentication?
 We've heard from customers a desire to have Federated authentication, so that Sitecore can connect our identity system to their identity solution, and that's something that will be coming in the future.  Clarification coming after Sitecore Symposium 2022.
 
-## How do we handle Forms with XM Cloud?
+## How are Forms handled with XM Cloud?
 Web forms are an MVC-based approach that have dependencies upon our content delivery servers. Therefore, it cannot be used as is with headless implementations. So, there are really two parts to this answer:
 
-1. In the near-term we recommend that customers utilize a third-party service. There are any number of third-party API-based/ API-driven forms experiences today that are designed and built for headless implementations. We're aware that customers who already have Salesforce in place could also embed their Salesforce forms directly within their UIs. There are a number of CRMs that also provide that functionality.
-2. Sitecore does have a project to deliver a headless, full-SaaS, forms experience. The plan is to have JavaScript and HTML that you can inject into your frontend and we'll store all of that data in our back end that we manage through the Sitecore SaaS platform. SaaS forms are currently planned for the second half of the year in calendar year 2023.
+1. In the near-term Sitecore recommends that customers utilize a third-party service. There are any number of third-party API-based/ API-driven forms experiences today that are designed and built for headless implementations. We're aware that customers who already have Salesforce in place could also embed their Salesforce forms directly within their UIs. There are a number of CRMs that also provide that functionality.
+2. Sitecore does have a project to deliver a headless, full-SaaS, forms experience. The plan is to have JavaScript and HTML that you can inject into your frontend and we'll store all of that data in our back end that is managed through the Sitecore SaaS platform. SaaS forms are currently planned for the second half of the year in calendar year 2023.
 
-## Can we migrate existing forms?
+## Can existing forms be migrated?
 Since XM Cloud does not utilize Content Delivery servers, Sitecore Forms are being enhanced to better support headless implementations. Once the Forms enhancements are available through a future XM release, customers will need to change their existing Forms implementations to get the benefits of the new version. Clarification coming after Sitecore Symposium 2022.
 
 ## Is XM Cloud SOC 2 certified?
