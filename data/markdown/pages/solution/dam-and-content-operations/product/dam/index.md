@@ -2,6 +2,7 @@
 solution: ['dam-and-content-operations']
 product: ['dam']
 title: 'Sitecore DAM'
+productLogo: 'DAM'
 description: 'Scale management and delivery of media and static assets'
 stackexchange: ['#dam']
 partials: ['solution/dam-and-content-operations/dam']
