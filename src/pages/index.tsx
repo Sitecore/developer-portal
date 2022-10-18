@@ -21,7 +21,7 @@ import CommunityList from '@/src/components/lists/CommunityList';
 import Layout from '@/src/layouts/Layout';
 // Data
 import getHelpCta from '@/data/promos/get-help';
-import newPromo from '@/data/promos/newpromo';
+import promoData from '@/data/promos/nextjsconf';
 import VideoPromo from '../components/videoPromo';
 
 export async function getStaticProps() {
@@ -91,7 +91,8 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
             linkHref="/learn/getting-started/introduction-to-composable-dxp"
           />
 
-          <PromoCard {...newPromo} key="newPromo" isImageLeft={true} />
+          <PromoCard {...promoData} key="promo" isImageLeft={false} />
+
           <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} />
           <SitecoreCommunityBlog
             content={pageInfo.sitecoreCommunity.blog}
