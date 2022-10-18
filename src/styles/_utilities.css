@@ -74,4 +74,8 @@
   .prose code:before {
     content: '';
   }
+
+  .prose .not-prose h2 {
+    margin-top: 0;
+  }
 }

@@ -4,11 +4,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: 16
       - name: Install npm 7
         run: npm i -g npm@7 --registry=https://registry.npmjs.org
       - name: Install
@@ -36,7 +36,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           env: ${{ fromJSON('["Production", "Preview"]')[github.ref != 'refs/heads/main'] }}
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - uses: amondnet/vercel-action@v20
         with:
