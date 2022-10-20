@@ -294,7 +294,7 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Sitecore SmartHub CDP',
+        title: 'Sitecore Personalize/CDP',
         children: [
           {
             title: 'Customer Data Management',
@@ -303,6 +303,46 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Personalization and Testing',
             url: '/personalization-testing/personalize',
+          },
+        ],
+      },
+      {
+        title: 'Moosend',
+        url: '/marketing-automation/send',
+        children: [
+          {
+            title: 'Marketing Automation',
+            url: '/marketing-automation/send',
+          },
+          {
+            title: 'Get your free Moosend account',
+            url: 'https://identity.moosend.com/register/',
+            external: true,
+          },
+        ],
+      },
+      {
+        title: 'Sitecore OrderCloud',
+        url: '/commerce/ordercloud',
+        children: [
+          {
+            title: 'Order Management, Storefronts and Marketplaces, and Merchandizing',
+            url: '/commerce/ordercloud',
+          },
+          {
+            title: 'Start on the OrderCloud Portal for free',
+            url: 'https://portal.ordercloud.io',
+            external: true,
+          },
+        ],
+      },
+      {
+        title: 'Sitecore Discover',
+        url: '/commerce/discover',
+        children: [
+          {
+            title: 'Data driven product discovery',
+            url: '/commerce/discover',
           },
         ],
       },
@@ -367,36 +407,6 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Moosend',
-        url: '/marketing-automation/send',
-        children: [
-          {
-            title: 'Marketing Automation',
-            url: '/marketing-automation/send',
-          },
-          {
-            title: 'Get your free Moosend account',
-            url: 'https://identity.moosend.com/register/',
-            external: true,
-          },
-        ],
-      },
-      {
-        title: 'Sitecore OrderCloud',
-        url: '/commerce/ordercloud',
-        children: [
-          {
-            title: 'Order Management, Storefronts and Marketplaces, and Merchandizing',
-            url: '/commerce/ordercloud',
-          },
-          {
-            title: 'Start on the OrderCloud Portal for free',
-            url: 'https://portal.ordercloud.io',
-            external: true,
-          },
-        ],
-      },
-      {
         title: 'Sitecore Experience Commerce',
         url: '/commerce/experience-commerce',
         children: [
@@ -412,16 +422,6 @@ const NavigationData: NavigationData[] = [
             title: 'Downloads',
             url: 'https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx',
             external: true,
-          },
-        ],
-      },
-      {
-        title: 'Sitecore Discover',
-        url: '/commerce/discover',
-        children: [
-          {
-            title: 'Data driven product discovery',
-            url: '/commerce/discover',
           },
         ],
       },
