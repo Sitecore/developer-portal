@@ -42,7 +42,7 @@ There are three important topics that come up for developers with composable sol
 
 You might also be interested in this video where [Thomas Desmond](https://twitter.com/ThomasJDesmond) explains 3 things developers should care about in the composable DXP space. Moving to the composable DXP world can mean significant work for developers.
 
-https://www.youtube.com/watch?v=q_sf7eX0vr8
+<YouTube youTubeId="q_sf7eX0vr8" />
 
 ## How are Sitecore products involved in this?
 
