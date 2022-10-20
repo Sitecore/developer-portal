@@ -29,6 +29,7 @@ export async function getStaticProps() {
   const commerce = await getPartialsAsArray([
     'docs/commerce/ordercloud',
     'docs/commerce/sitecore-experience-commerce',
+    'docs/commerce/discover',
   ]);
 
   const partialGroups = [
