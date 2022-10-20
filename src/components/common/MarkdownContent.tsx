@@ -11,6 +11,7 @@ import VideoPromo from '@/src/components/videoPromo/index';
 import CTACard from '../cards/CTACard';
 import { Promo } from '../cards/PromoCard';
 import VerticalGroup from './VerticalGroup';
+import YouTube from './YouTube';
 
 type MarkdownContentProps = {
   partials: PartialData;
@@ -58,6 +59,7 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
         VideoPromo: VideoPromo,
         CtaCard: CTACard,
         Promo: Promo,
+        YouTube: YouTube,
       }}
     />
   );
