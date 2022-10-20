@@ -294,12 +294,19 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
-        title: 'Sitecore Personalize/CDP',
+        title: 'Sitecore CDP',
+        url: '/customer-data-management/cdp',
         children: [
           {
             title: 'Customer Data Management',
             url: '/customer-data-management/cdp',
           },
+        ],
+      },
+      {
+        title: 'Sitecore Personalize',
+        url: '/personalization-testing/personalize',
+        children: [
           {
             title: 'Personalization and Testing',
             url: '/personalization-testing/personalize',
