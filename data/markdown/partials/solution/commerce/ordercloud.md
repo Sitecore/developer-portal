@@ -7,10 +7,10 @@ description: 'Cloud-native, headless, and API-first commerce solution'
 
 <Promo
   title="Vercel Next.js conference"
-  description="At this year's Next.js Conf, you can catch Pieter Brinkman, VP Technical Marketing, showing you how to use Next.js Commerce and Sitecore OrderCloud to build a B2C storefront in 5 minutes."
+  description="Replay the Next.js Conf and watch Pieter Brinkman, VP Technical Marketing, showing you how to use Next.js Commerce and Sitecore OrderCloud to build a B2C storefront in 5 minutes."
   imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/6752888275b443cca0fc5934e19e0649?v=ec9593ee"
-  linkText="Read more"
-  linkHref="https://nextjs.org/conf/speakers/pieterbrink123?utm_source=partner&utm_medium=email&utm_campaign=partner_sitecoreconfpromo" isImageLeft={false}
+  linkText="Watch now!"
+  linkHref="https://www.youtube.com/watch?v=RwyaNPWMiwU&t=16208s" isImageLeft={false}
 />
 
 ## Introduction
