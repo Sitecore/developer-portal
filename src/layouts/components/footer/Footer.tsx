@@ -109,7 +109,7 @@ const Footer = (): JSX.Element => {
             >
               <a
                 className={classnames('font-semibold')}
-                href="https://www.sitecore.com/trust"
+                href="https://www.sitecore.com/legal"
                 rel="noopener noreferrer"
                 target="_blank"
               >
