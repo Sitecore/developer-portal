@@ -8,7 +8,7 @@ const data: PromoCardProps = {
     src: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/6752888275b443cca0fc5934e19e0649?v=ec9593ee',
   },
   link: {
-    href: 'https://www.youtube.com/watch?v=RwyaNPWMiwU&t=16208s',
+    href: 'https://youtu.be/ati9lB4n_2o',
     text: 'Watch now!',
   },
 };
