@@ -11,16 +11,14 @@ hasInPageNav: true
 >
 > This information is provided without warranty of any kind, express or implied. Customers who purchase Sitecore offerings should make their purchase decision based upon features that are currently available.
 
-## Introduction
-
-**What is Sitecore Cloud Portal?**
+## What is Sitecore Cloud Portal?
 
 Sitecore Cloud Portal helps manage the Sitecore DXP experience. Providing administration for the organization owners to manage their team members and product access. Also providing common UI component library for a cohesive look and feel across Sitecore products.
 
-**What products can I manage through the Sitecore Cloud Portal?**
+## What products can I manage through the Sitecore Cloud Portal?
 
 With the initial release of Sitecore Cloud Portal, only XM Cloud will be available. But ultimately all the products that are part of the DXP will be available in Sitecore Cloud Portal.
 
-**How do I get access to the Sitecore Cloud Portal?**
+## How do I get access to the Sitecore Cloud Portal?
 
 To fully utilize the capabilities today of Sitecore Cloud Portal you will need to be part of an organization. Releasing in mid-2022, when purchasing XM Cloud or future products, customers and partners will be able to get started through sales operations which will provide them access to their Sitecore Cloud Portal organization. You can also be invited to an existing organization in Sitecore Cloud Portal by the organization's owner or an admin directly from Sitecore Cloud Portal.
