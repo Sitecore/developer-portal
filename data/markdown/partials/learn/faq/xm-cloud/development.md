@@ -10,6 +10,39 @@ Once developers are ready to deploy their implementation to the Cloud, they use 
 
 Alternatively, developers will be able to trigger the creation and deployment of new environments from a codebase in their own CI/CD pipelines using the Sitecore CLI.
 
+## We have Sitecore and UI developers. How do we get them setup? 
+The first prerequisites are that every Developer should register at https://portal.sitecorecloud.io and, ideally, be added to an Organization. You can watch [Setup your first Headless SXA Site in XM Cloud](https://www.youtube.com/watch?v=zot3G52F2ts) for a walkthrough. 
+
+Sitecore recommends starting from one of the existing Sitecore starter kits. These starter kits provide all the configuration to get up and running easily. If starting your own project from scratch, it is recommended to use [Headless SXA](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-sxa-for-xm-cloud-development.html) and [JSS](https://doc.sitecore.com/xp/en/developers/hd/201/sitecore-headless-development/index-en.html). 
+
+For developers there are two ways suggested to interact with XM Cloud and implement customer requirements. Developers can either build using “Edge Mode” or using XM Cloud “fully local”.
+
+![Development Modes with XM Cloud](https://sitecorecontenthub.stylelabs.cloud/api/public/content/9524666e7b5e4d68aead7e49f7906dad?v=572dc6a3)
+
+###Edge Mode
+When using Edge Mode, you setup a local node server to run your JavaScript-based rendering app. This app will connect to the GraphQL endpoint of the Edge delivery layer included in XM Cloud. For more details you can watch the [Frontend Developer Setup for XM Cloud in 5 minutes](https://www.youtube.com/watch?v=Kig3kWZ8FuQ). 
+
+This is the most lightweight setup that allows developers to focus on the rendering app and the frontend development. You can still deploy to XM Cloud and serialize items using Sitecore Content Serialization (SCS). However, as you might work on a XM Cloud environment shared with other developers, it might become more complex to select the required serialized items that should be packaged with your feature development.
+
+As you only require a local node server this also works on a Mac. All the necessary files and configurations for Edge Mode can be found in the starter kits.
+
+**Prerequisite:** For this setup you need an Environment in XM Cloud and therefore a Subscription / Organization.
+
+###Local Windows Containers (“Fully local”):
+When you want to model content, or customize the Content Management (CM) instance independently, you would want to go for a fully local setup. For this approach you spin up XM Cloud locally using Docker containers. The containers will include a CM, Solr (for internal content search), SQL Server, Traefik and an editing host to run your application. Your editing or rendering host will connect to the GraphQL endpoint of the CM instance which offers the same API as Edge. Please check the readme file of the repository that get's created when you create a Project using the XM Cloud Deploy App. Note that if you are using Windows 10 you might want to check .env file to pull docker images for the 1809 version. Also you need to make sure that iis is stopped on your localhost as Traefik might conflict. You can find a description on how to setup your local environment in the video [Setup XM Cloud locally using Docker and start developing](https://www.youtube.com/watch?v=sVLM1g3Xi-U).  
+
+This is a typical setup for Backend Developers. 
+
+**Prerequisite:** For this setup you need a registered user (not necessarily with an Organization) and a valid Sitecore license file. 
+
+
+If you decide to work with a rendering application that is not JavaScript based, such as ASP.NET Core, you can configure your .Net Core rendering host as the editing host. This is described by Rob Earlam [here](https://robearlam.com/blog/setting-up-an-external-xm-cloud-rendering-host-to-work-with-experience-editor-and-pages)  
+
+Sitecore recommends using JSS and Headless SXA, which come as part of the XM Cloud offering. 
+
+More information about XM Cloud can be found [here](https://developers.sitecore.com/content-management/xm-cloud)
+Please check also the [XM Cloud Documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
+
 ## What is the recommended approach for new Sitecore implementations today (Headless, MVC, SXA) to upgrade to XM Cloud?
 To ensure the easy adoption of XM Cloud upon release, Sitecore recommends that new customer implementations use an instance of the latest publicly available version of Sitecore Experience Manager that has SXA installed (including headless tenants) and uses Experience Edge and Next.js for the delivery. In absence of an actual Experience Edge, the Edge Preview Schema on the delivery server can be used
 
