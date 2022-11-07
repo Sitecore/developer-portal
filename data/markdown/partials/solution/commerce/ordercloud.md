@@ -10,7 +10,7 @@ description: 'Cloud-native, headless, and API-first commerce solution'
   description="Replay the Next.js Conf and watch Pieter Brinkman, VP Technical Marketing, showing you how to use Next.js Commerce and Sitecore OrderCloud to build a B2C storefront in 5 minutes."
   imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/6752888275b443cca0fc5934e19e0649?v=ec9593ee"
   linkText="Watch now!"
-  linkHref="https://www.youtube.com/watch?v=RwyaNPWMiwU&t=16208s" isImageLeft={false}
+  linkHref="https://youtu.be/ati9lB4n_2o" isImageLeft={false}
 />
 
 ## Introduction
