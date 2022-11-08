@@ -45,6 +45,10 @@ The importance of your company's growth comes with the:
 - [Sitecore PlaySummit Demo - XM Cloud](https://github.com/Sitecore/Sitecore.Demo.XmCloud.PlaySummit)
 - [XM Cloud Introduction - example implementation](https://github.com/Sitecore/XM-Cloud-Introduction)
 
+### Other Learning
+
+- [Headless Frontend Development with XM Cloud](https://thetombomb.com/posts/frontend-development-xm-cloud)
+
 ### Official Sitecore Training
 
 - [Coming soon!]
