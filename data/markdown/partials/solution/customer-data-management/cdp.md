@@ -43,3 +43,4 @@ Sitecore CDP brings together real-time behavioral insights and all your customer
 - [Blog: Product Specifications/Comparisons part 2](https://community.sitecore.com/community?id=community_blog&sys_id=f0862b751bf6491038a46421b24bcb65)
 - [Blog: Sitecore XP Migration Guide](https://community.sitecore.com/community?id=community_blog&sys_id=f1cc98af1b541590e55241dde54bcb0d)
 - [Blog: Security Considerations When Using the APIs](https://community.sitecore.com/community?id=community_blog&sys_id=6d9601561b12d9d0b8954371b24bcb9b)
+- [Blog: Dealing with Data Skew in Flink](https://medium.com/@sanr_71172/dealing-with-data-skew-in-flink-b7e4c82c35ef)
