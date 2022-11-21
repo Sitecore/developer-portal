@@ -1,9 +1,9 @@
 ### Sitecore Content Hub
 
-- [Cloud Development](https://docs.stylelabs.com/contenthub/latest/content/integrations/index.html)
-- [API Reference](https://docs.stylelabs.com/contenthub/latest/content/api-reference/index.html)
-- [Digital Asset Management (DAM)](https://docs.stylelabs.com/contenthub/latest/content/user-documentation/manage-digital-assets/manage-digital-assets.html)
-- [Product Content Management (PCM)](https://docs.stylelabs.com/contenthub/latest/content/user-documentation/pcm/pcm.html)
-- [Content Marketing Platform (CMP)](https://docs.stylelabs.com/contenthub/latest/content/user-documentation/manage-content/manage-content.html)
-- [Marketing Resource Management (MRM)](https://docs.stylelabs.com/contenthub/latest/content/user-documentation/marketing-resource-management/introduction.html)
-- [Content Publisher (a.k.a Web-to-print)](https://docs.stylelabs.com/contenthub/latest/content/user-documentation/sitecore-content-publisher/sitecore-content-publisher.html)
+- [Cloud Development](https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/index-en.html)
+- [API Reference](https://doc.sitecore.com/ch/en/developers/latest/api-reference/index-en.html)
+- [Digital Asset Management (DAM)](https://doc.sitecore.com/ch/en/users/latest/content-hub/digital-assets.html)
+- [Product Content Management (PCM)](https://doc.sitecore.com/ch/en/users/latest/content-hub/pcm.html)
+  https://doc.sitecore.com/ch/en/users/latest/content-hub/manage-projects-and-jobs.html
+- [Marketing Resource Management (MRM)](https://doc.sitecore.com/ch/en/users/latest/content-hub/manage-projects-and-jobs.html)
+- [Content Publisher (a.k.a Web-to-print)](https://doc.sitecore.com/ch/en/users/latest/content-hub/publisher.html)
