@@ -21,9 +21,11 @@ Based on feedback from teams in the field, here is the approach that teams like:
 ![Development Modes with XM Cloud](/images/learn/project-workflow.jpeg)
 
 1. Analyze designs and gather authoring requirements
+
 Before any development begins, the Business Analyst or Product Owner needs to analyze the website designs/wireframes and discuss authoring requirements with the people who are going to use the system to populate and maintain the website. Knowing **how often website content/assets need to be updated** and knowing **how much flexibility the authors need** over page layout and component structure is important information that needs to be communicated to the dev lead.
 
 2. Identify page types and components
+
 The Business Analyst or Product Owner needs to work together with the dev lead to identify the list of page types needed for the website and the list of components needed on each page type. 
 
 Some tips that teams find helpful:
@@ -39,4 +41,5 @@ Some tips that teams find helpful:
 This step gets the business side and the technical side of the project into alignment. Content Authors get to see the types of pages they will be able to create, the components they will be able to add to pages, and the fields that will be editable in those components.
 
 3. Implementation phase
+
 After the requirements are handed off to the dev team, the business stakeholder should jump in at regular intervals to review demos and provide feedback to the dev team.

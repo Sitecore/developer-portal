@@ -40,7 +40,7 @@ Once the Sitecore templates have been serialized and added to source control, th
 
 > ✅ DO use the remote XM Cloud Sitecore instance for front-end development
 
-This enables front-end devs to begin work without having to set up any local Sitecore containers of their own - they can work against the cloud endpoint. The docker learning curve and setup can be heavy, so it’s not worth it if you’re only doing frontend work. Additionally, by using the real cloud endpoint (instead of a local endpoint tied to a local database), front-end devs are guaranteed to be hydrating their components with the same content data that will be used in the final product. So the “it works fine on my machine, but it looks weird in production” scenario can be avoided.
+This enables front-end devs to begin work without having to set up any local Sitecore containers of their own - they can work against one of the cloud endpoints, ideally the CM GraphQL endpoint. The docker learning curve and setup can be heavy, so it’s not worth it if you’re only doing frontend work. Additionally, by using the real cloud endpoint (instead of a local endpoint tied to a local database), front-end devs are guaranteed to be hydrating their components with the same content data that will be used in the final product. So the “it works fine on my machine, but it looks weird in production” scenario can be avoided.
 
 Front-end devs still develop and run the front-end (JavaScript) part of the project on their local machines. (on a Node server running locally - this is called the “rendering host”). As they build out components, if any changes are needed to the data incoming from the API, they communicate these needs to the back-end devs. So, back-end devs jump in occasionally to weak the information architecture and front-end devs still don’t need to bother with local Sitecore containers. This is the favorite approach, according to all the teams we interviews.
 
@@ -115,6 +115,6 @@ Most of the time, the up script and down script are all you need. These scripts 
 
 Tips for working with containers:
 
-- The up script pulls the latest versions of the base images. Usually, this is a good thing. But if you need to hold off from pulling the latest version, you can pin your base image to a specific version in the docker-compose file.
+- The up script pulls the latest versions of the base images. Pullingh latest images is recommended. But if you need to hold off from pulling the latest version (as an exceptional case), you can pin your base image to a specific version in the docker-compose file.
 
-- If you’re seeing an error in XM Cloud that you cannot reproduce locally, you can use the CLI to inspect logs from the cloud environment (including logs from the editing rendering host). `dotnet sitecore cloud-environment log list` and it will give you a list of All of the logs on your environment.
+- If you’re seeing an error in XM Cloud that you cannot reproduce locally, you can use the CLI to inspect logs from the cloud environment (including logs from the editing rendering host). `dotnet sitecore cloud environment log logs list` and it will give you a list of All of the logs on your environment.

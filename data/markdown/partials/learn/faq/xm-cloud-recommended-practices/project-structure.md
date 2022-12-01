@@ -5,7 +5,7 @@ hasInPageNav: true
 
 Separate repos for frontend & backend? Separate repos for each head? Based on feedback from teams in the field, monorepos are good idea because
 
-- don’t need to worry about version compatibility, so it’s easier to scale over time.
+- no need to worry about version compatibility, so it’s easier to scale over time.
 
 - monorepos more accurately represent the nature of an XM Cloud environment (Sitecore is not multi-tenant as far as the code base is concerned. There is no code or application isolation unless you have multiple instances.)
 

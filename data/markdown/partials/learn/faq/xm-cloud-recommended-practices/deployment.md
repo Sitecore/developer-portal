@@ -17,9 +17,9 @@ There can also be a short delay between the Publishing Dialog indicating that th
 
 It’s better to use the OOTB GitOps functionality provided by XM Cloud where possible as it will save you development time setting up your own pipelines. Alongside that, as the GitOps functionality is improved, you’ll automatically get any new updates that are created.
 
-However, there are some scenarios where it might be preferable to roll your own CI/CD pipelines, some examples of this are:
+However, there are some scenarios where it might be preferable to roll your own CI/CD pipelines. Here you can utilize the CLI performing all of the interactions with your XM Cloud instance.Some examples of this are:
 
-- If you’re not using GitHub as your Source Control Provider, other providers aren’t currently supported, so you must use your own CI/CD in that instance.
+- If you’re not using GitHub as your Source Control Provider, other providers aren’t currently supported, so you must use your own CI/CD in that instance. 
 
 - If you have already made an investment in CI/CD setups for other parts of your system and want to leverage the same technologies, keeping all your deployment pipelines in one place.
 
@@ -27,6 +27,7 @@ However, there are some scenarios where it might be preferable to roll your own 
 
 - If you have a large number of Non-Production & Production environments and you want to automate the flow of changes between these environments.
 
+You can find an example of a custom CI/CD configuration using the XM Cloud CLI here: [XM Cloud Introduction Repository](https://github.com/Sitecore/XM-Cloud-Introduction)
 
 ## Git Workflow
 
