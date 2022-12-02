@@ -26,6 +26,7 @@ The importance of your company's growth comes with the:
 - [XM Cloud Introduction](/learn/getting-started/xm-cloud-introduction)
 - [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
 - [XM Cloud FAQ](/learn/faq/xm-cloud)
+- [XM Cloud Recommended Practices](/learn/faq/xm-cloud-recommended-practices)
 
 ## Documentation
 
