@@ -24,11 +24,6 @@ Content Hub ONE consists of:
 
 Content Hub One is designed for brands that need an agile headless CMS to support quickly evolving experiences targeting multiple channels. With Content Hub ONE marketers can deliver consistency across touchpoints while maintaining the content in one central location.  
 
-
-## Getting Started
-
-- [Coming soon!]
-
 ## Documentation
 
 - [User Documentation](https://doc.sitecore.com/ch-one/en/users/content-hub-one/working-with-content-hub-one.html)
@@ -40,16 +35,6 @@ Content Hub One is designed for brands that need an agile headless CMS to suppor
 - [Content Hub ONE client SDK](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-sdk.html)
 
 ## Learn & Examples
-
-- [Coming soon!]
-
-### Open Source
-
-- [Coming soon!]
-
-### Other Learning
-
-- [Coming soon!]
 
 ### Official Sitecore Training
 
