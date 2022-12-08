@@ -1,5 +1,5 @@
 ---
-title: 'Introduction to ContentHub ONE'
+title: 'Introduction to Content Hub ONE'
 description: 'Build agile omnichannel experiences and manage the content centrally in Contnet Hub ONE'
 ---
 
