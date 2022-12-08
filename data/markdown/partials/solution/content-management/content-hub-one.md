@@ -34,12 +34,15 @@ Content Hub One is designed for brands that need an agile headless CMS to suppor
 - [Content Hub ONE CLI](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-cli.html)
 - [Content Hub ONE client SDK](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-sdk.html)
 
+## Access
+
+- [Sitecore Cloud Portal (requires authentication)](https://portal.sitecorecloud.io/)
+- [Content Hub One Homepage (requires authentication)](https://content.sitecorecloud.io/)
+
 ## Learn & Examples
 
 ### Official Sitecore Training
 
 - [Coming soon!]
 
-## Access the Portal
 
-- [Sitecore Portal](https://portal.sitecorecloud.io/)
