@@ -23,14 +23,14 @@ Content Hub ONE consists of:
 - A powerful content modelling user interface for creating structured, modular content
 - A modern, user-centric content authoring experience
 - Media management for image assets
-- Content management Swagger OpenAPI for developers to manage the content model and content items with full CRUD permissions 
+- Content management [Swagger OpenAPI](https://content-api.sitecorecloud.io/swagger/index.html) for developers to manage the content model and content items with full CRUD permissions 
 - Preview and Delivery GraphQL API delivered through a geographically distributed layer (Sitecore Experience Edge) for consumption of content into multi-channel experiences, at scale
 - JavaScript and Client SDK for developers to leverage a rich set of developer tools
 - Command line interface (CLI) to serialize and source control content and content types
 
 ## Content Hub ONE Architecture
 
-[IMAGE]
+![Content Hub ONE Architecture](https://sitecorecontenthub.stylelabs.cloud/api/public/content/0b8a2c9e2b9243959588c30322bff22e?v=8ea9027c)
 
 Content Hub ONE provides a Content Management Application that allows content modeling, content and media item creation and management. Content and Media is created in a "Draft" state. Publishing makes the content publicly available. Utilizing this workflow Content Hub ONE ensures that content can be managed independently.
 
