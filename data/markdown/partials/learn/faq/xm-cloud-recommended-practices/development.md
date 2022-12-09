@@ -115,6 +115,6 @@ Most of the time, the up script and down script are all you need. These scripts 
 
 Tips for working with containers:
 
-- The up script pulls the latest versions of the base images. Pullingh latest images is recommended. But if you need to hold off from pulling the latest version (as an exceptional case), you can pin your base image to a specific version in the docker-compose file.
+- The up script pulls the latest versions of the base images. Pulling latest images is recommended. But if you need to hold off from pulling the latest version (as an exceptional case), you can pin your base image to a specific version in the docker-compose file.
 
 - If you’re seeing an error in XM Cloud that you cannot reproduce locally, you can use the CLI to inspect logs from the cloud environment (including logs from the editing rendering host). `dotnet sitecore cloud environment log logs list` and it will give you a list of All of the logs on your environment.
