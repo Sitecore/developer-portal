@@ -5,6 +5,14 @@ title: 'XM Cloud'
 description: 'Manage the full web experience with a cloud-hosted headless Web CMS.'
 ---
 
+<Promo
+  title="XM Cloud Recommended Practices"
+  description="Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects! "
+  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
+  linkText="Read now!"
+  linkHref="/learn/faq/xm-cloud-recommended-practices" isImageLeft={false}
+/>
+
 ## Introduction
 
 Sitecore Experience Manager Cloud (XM Cloud) is a fully managed self-service deployment platform for developers and marketers to efficiently launch engaging omnichannel experiences in the Cloud using Sitecore’s headless CMS. Experience Manager Cloud bundles the latest versions of Experience Manager, the Pages editor, Sitecore Headless Experience Accelerator (SXA), Headless Services, the Sitecore Next.js SDK (and other Heads), and Experience Edge.
