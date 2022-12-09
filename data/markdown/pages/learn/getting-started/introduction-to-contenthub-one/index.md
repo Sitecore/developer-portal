@@ -19,14 +19,14 @@ The Content Hub ONE [Command Line Interface](https://doc.sitecore.com/ch-one/en/
 
 
 ## Content Hub ONE provides
-Content Hub ONE consists of: 
-- a powerful content modelling user interface for creating structured, modular content
-- a modern, user-centric content authoring experience
-- media management for image assets
-- content management [Swagger OpenAPI](https://content-api.sitecorecloud.io/swagger/index.html) for developers to manage the content model and content items with full CRUD permissions 
-- preview and delivery GraphQL API delivered through a geographically distributed layer (Sitecore Experience Edge) for consumption of content into multi-channel experiences, at scale
+
+- A powerful content modelling user interface for creating structured, modular content
+- Aa modern, user-centric content authoring experience
+- Media management for image assets
+- Content management [Swagger OpenAPI](https://content-api.sitecorecloud.io/swagger/index.html) for developers to manage the content model and content items with full CRUD permissions 
+- Ppreview and delivery GraphQL API delivered through a geographically distributed layer (Sitecore Experience Edge) for consumption of content into multi-channel experiences, at scale
 - JavaScript and Client SDK for developers to leverage a rich set of developer tools
-- command line interface (CLI) to serialize and source control content and content types
+- Command line interface (CLI) to serialize and source control content and content types
 
 ## Content Hub ONE Architecture
 
@@ -50,24 +50,24 @@ Content Hub ONE can be accessed through the [Sitecore Cloud Portal](https://doc.
 
 ## Developing apps using Content Hub ONE
 
-Content Hub ONE delivers content headlessly and geographically distributed through the GraphQL endpoint of Sitecor Edge. You can build you app consuming content using GraphQL Queries. the [GraphQL IDE](https://edge.sitecorecloud.io/api/graphql/ide) helps reviewing the content and building the queries.
+Content Hub ONE delivers content headlessly and geographically distributed through the GraphQL endpoint of Sitecore Edge. You can build you app consuming content using GraphQL Queries. the [GraphQL IDE](https://edge.sitecorecloud.io/api/graphql/ide) helps reviewing the content and building the queries.
 
 You need to pass in the API Key created in your Content Hub ONE instance as Http Headers. The IDE supports developers with convenient type ahead functionality.
 
-![Sitecore GraphQL IDE](https://sitecorecontenthub.stylelabs.cloud/api/public/content/67bbba9622404e31906c1e200e3a50d8?v=d1adb141)
+![Sitecore GraphQL IDE](https://sitecorecontenthub.stylelabs.cloud/api/public/content/fc08adbc4fe848e08edd33c759cbc28d?v=2f046a71)
 
 ## Getting prepared for Content Hub ONE
 If you want to get started with Content Hub ONE you might want to make sure that you familiarize with GraphQL, Headless Development and the Content Hub ONE UI, SDK and CLI. Here you find a list of material that help you get started.
 
 ### Content Hub ONE
-[[Documentation] Official Content Hub ONE documentation](https://doc.sitecore.com/ch-one/en/developers/content-hub-one)
+- [[Documentation] Official Content Hub ONE documentation](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/index-en.html)
 
 ### GraphQL
-[GraphQL Documentation](https://graphql.org/code/)
-[[Video] Making GraphQL requests on your frontend with Next.js](https://www.youtube.com/watch?v=F3BWdFXEJPk)
+- [GraphQL Documentation](https://graphql.org/code/)
+- [[Video] Making GraphQL requests on your frontend with Next.js](https://www.youtube.com/watch?v=F3BWdFXEJPk)
 
 ### Tooling
-[[Video]Improving Windows Terminal for a better Developer Experience](https://www.youtube.com/watch?v=pO7k3_p1Uq4)
+- [[Video]Improving Windows Terminal for a better Developer Experience](https://www.youtube.com/watch?v=pO7k3_p1Uq4)
 
 ### Serialization
-[[Documentation] Content Serialization using Content Hub ONE CLI ](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-cli--serialization.html)
+- [[Documentation] Content Serialization using Content Hub ONE CLI ](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-cli--serialization.html)
