@@ -251,6 +251,16 @@ const NavigationData: NavigationData[] = [
           },
         ],
       },
+      {
+        title: 'Integrations',
+        url: '/integrations',
+        children: [
+          {
+            title: 'Sitecore Connect',
+            url: '/integrations/connect',
+          },
+        ],
+      },
     ],
   },
   {
