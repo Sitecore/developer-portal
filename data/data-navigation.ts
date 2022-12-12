@@ -358,6 +358,16 @@ const NavigationData: NavigationData[] = [
         ],
       },
       {
+        title: 'Connect',
+        url: '/integrations/connect',
+        children: [
+          {
+            title: '??',
+            url: '/integrations/connect',
+          },
+        ],
+      },
+      {
         title: 'Sitecore OrderCloud',
         url: '/commerce/ordercloud',
         children: [

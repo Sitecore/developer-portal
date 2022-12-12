@@ -1,7 +1,7 @@
 ---
-solution: ['commerce']
-product: ['commerce']
-title: 'Commerce'
+solution: ['integrations']
+product: ['integrations']
+title: 'Integrations'
 description: 'Build out order management, merchandizing, marketplaces, and storefronts'
 stackexchange:
   [
