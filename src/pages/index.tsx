@@ -21,7 +21,7 @@ import CommunityList from '@/src/components/lists/CommunityList';
 import Layout from '@/src/layouts/Layout';
 // Data
 import getHelpCta from '@/data/promos/get-help';
-import promoData from '@/data/promos/nextjsconf';
+import promoData from '@/data/promos/xmc-practices';
 import VideoPromo from '../components/videoPromo';
 
 export async function getStaticProps() {
