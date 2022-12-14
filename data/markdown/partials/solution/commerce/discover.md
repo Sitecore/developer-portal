@@ -11,6 +11,7 @@ Sitecore Discover enables your commerce business by adding individualized search
 
 ## Getting Started
 
+- [Introduction to Sitecore Discover](/learn/getting-started/discover-introduction)
 - [What's new in Sitecore Discover](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/what-s-new-in-sitecore-discover.html)
 - [Overview of Sitecore Discover integration](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/overview-of-sitecore-discover-integration.html)
 - [Getting started with your Discover integration](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/getting-started-with-your-discover-integration.html)
