@@ -43,7 +43,7 @@ You can read more about how to setup this type of integration on our [documentat
 
 ### JavaScript SDK
 
-The JavaScript Widget SDK is a library of React components designed to enable developers to quickly integrate a new or existing React application with Sitecore Discover. It provides components that enable the developer to:
+The JavaScript SDK is a library of React components designed to enable developers to quickly integrate a new or existing React application with Sitecore Discover. It provides components that enable the developer to:
 
 - Communicate with Sitecore Discover API
 - Embed personalised product widgets on any page they are required
