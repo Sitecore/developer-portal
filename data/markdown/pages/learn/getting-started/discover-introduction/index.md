@@ -7,19 +7,19 @@ openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/9
 
 ## What is Sitecore Discover?
 
-Sitecore discover is a personalised e-commerce search and merchandising engine. It enables intelligent product search powered by AI and can enhance experiences anywhere merchandising information is displayed. It is a headless platform that delivers omnichannel personalisation across mobile, web, email, and in-store.
+Sitecore discover is a product discovery optimisation engine. It enables intelligent product search powered by AI and can enhance experiences anywhere merchandising information is displayed. It is a headless platform that delivers omnichannel personalisation across mobile, web, email, and in-store. It is designed to optimise a site’s SEO configuration to maximise product discovery.
 
-It is a SaaS product that empowers marketers and merchandisers by providing rich insights and analytics to consistently improve conversion rates.
+It is a SaaS product that empowers marketers and merchandisers by providing rich insights and analytics to consistently improve revenue per visit.
 
 ## Sitecore Discover features
 
 Once Sitecore Discover has been implemented, it provides a series of features to marketers and merchandisers including:
 
 - Detailed control over product discoverability & visibility including **boosting**, **burying** & **timed product availability**.
-- Business-to-business (B2B) support through the ability to change **product attributes** like availability & price based on the **user’s context**.
+- Business-to-business (B2B) support through the ability to change **product attributes** like availability & price based on the **buyers’s context**.
 - **By online, pickup in-store** (BOPIS) functionality allows control of products and product attributes at a store level and ensures users’ in-store purchases are synced with their online profile.
-- **Fitment** ensures customers with complex **product line relationships** can model these, providing users with search results matching their product requirements.
-- Discover enables **multi-locale** functionality, giving customers the ability to localise their product catalogue data for all locales they operate in.
+- **Fitment** ensures customers with complex **product line relationships** can model these, providing users with search results matching their product requirements. A good example of this is a Parts Retailer ensuring results returned are **constrained** to ensure compatibility with a specific model.
+- Discover enables **multi-locale** functionality, giving customers the ability to localise their product catalogue data for all locales they operate in. Allowing for separate **region-specific** catalogues to be managed from a single Discover instance.
 
 ## Sitecore Discover integration options
 
@@ -29,17 +29,23 @@ When integrating Sitecore Discover there are three different approaches you can 
 
 |                        | Developer Effort | Feature availability |
 | :--------------------- | :--------------- | :------------------- |
-| Hosted Pages           | Low              | Limited feature set  |
-| JavaScript SDK         | Medium           | Full feature set     |
 | Direct API integration | High             | Full feature set     |
+| JavaScript SDK         | Medium           | Full feature set     |
+| Hosted Pages           | Low              | Limited feature set  |
 
-### Hosted Pages
+### Direct API integration
 
-When choosing to use the Hosted Pages method of integration, there is a _low_ amount of development effort required. With this approach, the product listing pages (PLP) and product detail pages (PDP) are hosted by Discover. This is typically handled either via a Content Delivery Network (CDN) redirect, or a Reverse Proxy that is configured by the customer to direct those URLs to the Discover servers.
+The final integration method is the most developer-intensive approach. The Direct API Integration approach requires a _high_ level of developer effort, as the developer is now responsible for building all the components required for a site and directly calling the Sitecore Discover API to integrate the required functionality into them.
 
-Once this has been set up Discover will take over the delivery of those site areas. However, choosing this approach does limit what control the marketer and merchandiser have over the UX of those pages. It also limits the different onsite experiences that can be delivered by Discover.
+There are a series of endpoints that the developer will need to interact with to build out their experiences, these including things like Authentication and Authorization, Search and Recommendations, Event processing, and Incremental Feed ingestion.
 
-You can read more about how to setup this type of integration on our [documentation site](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-pages-hosted-with-discover.html).
+Once a site has been integrated using this method the marketers and merchandisers have access to the full feature set that Sitecore Discover offers. For this reason, this is the recommended integration approach for sites not built with React, or for building non-web-based experiences for example mobile applications.
+
+You can read more about the different API endpoints on our documentation site:
+
+- [Using the Discover REST APIs](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/using-discover-rest-apis.html)
+- [Integrate using the Search and Recommendation API](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-using-the-search-and-recommendation-api.html)
+- [Integrate using the Events API](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-using-the-events-api.html)
 
 ### JavaScript SDK
 
@@ -51,27 +57,23 @@ The JavaScript SDK is a library of React components designed to enable developer
 
 Using this integration method requires a _medium_ level of development effort, as the developer is responsible for integrating these components, however, they aren’t required to build the components themselves. Once a site has been integrated using this method, the marketers and merchandisers have access to the full feature set that Sitecore Discover offers.
 
-For any sites that are built using React, this is the recommended approach. The SDK is currently in alpha but will be Generally Available soon.
+The SDK is a new release from the Discover Product Team and is the recommended integration approach for any sites that are built using React.
 
 You can read more about how to setup this type of integration on our [documentation site](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-using-sitecore-discover-sdks.html).
 
-### Direct API integration
+### Hosted Pages
 
-The final integration method is the most developer-intensive approach. The Direct API Integration approach requires a _high_ level of developer effort, as the developer is now responsible for building all the components required for a site and directly calling the Sitecore Discover API to integrate the required functionality into them.
+When choosing to use the Hosted Pages method of integration, there is a _low_ amount of development effort required. With this approach, the product listing pages (PLP) and product detail pages (PDP) are hosted by Discover. This is typically handled either via a Content Delivery Network (CDN) redirect, or a Reverse Proxy that is configured by the customer to direct those URLs to the Discover servers.
 
-There are a series of endpoints that the developer will need to interact with to build out their experiences, these including things like Authentication and Authorization, Search and Recommendations, Event processing, and Incremental Feed ingestion.
+When using this approach Merchandisers can build pages directly in the Customer Engagement Console (CEC) and publish them without developer involvement. They can also auto-generate SEO-tailored landing pages, including matching meta tags, to boost search listing.
 
-Once a site has been integrated using this method the marketers and merchandisers have access to the full feature set that Sitecore Discover offers. For this reason, this is the recommended integration approach for sites not built with React.
+Once this has been set up Discover will take over the delivery of those site areas. However, choosing this approach does limit what control the marketer and merchandiser have over the UX of those pages. It also limits the different onsite experiences that can be delivered by Discover.
 
-You can read more about the different API endpoints on our documentation site:
-
-- [Using the Discover REST APIs](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/using-discover-rest-apis.html)
-- [Integrate using the Search and Recommendation API](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-using-the-search-and-recommendation-api.html)
-- [Integrate using the Events API](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-using-the-events-api.html)
+You can read more about how to setup this type of integration on our [documentation site](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-pages-hosted-with-discover.html).
 
 ## Customer Engagement Console (CEC)
 
-While the CEC is generally used by marketers and merchandises to build out their experiences, it will also be of use to Developers as well to make use of the developer resources contained there. This is where you will find your Customer Key, beacon information and data on the various API’s that you’ll be interacting with. It also includes a series of developer-focused tools allowing you to test direct calls to the API.
+While the CEC is generally used by merchandisers to build out their experiences, it will also be of use to Developers as well to make use of the developer resources contained there. This is where you will find your Customer Key, beacon information and data on the various API’s that you’ll be interacting with. It also includes a series of developer-focused tools allowing you to test direct calls to the API.
 
 ### API Access
 
