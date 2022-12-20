@@ -1,0 +1,100 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Get your tickets to SUGCON ANZ 2022",
+      "copy": "Join the Sitecore community on August 18th -19th in Melbourne, Australia. Learn from industry experts, network with like-minded professionals from around the world, & share your knowledge. Tickets are selling fast, make sure you save your spot to SUGCON ANZ.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5d14f/857953/16562941177zhm8ZRh/Untitled_design__2_.png",
+      "link": {
+        "text": "Explore the agenda",
+        "href": "https://go.sitecore.com/e/857953/Agenda/mjvmcx/385365069?h=zkKkOgjxjuhr3-64UfFbrxaxP23n_1xWY0BRhiBvUFU"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Multisite support for Sitecore JSS – Next.js using Vercel’s Edge Middleware",
+      "copy": "If you have a look at the Sitecore Nextjs SDK and/or the starter templates, you’ll notice that there is no support for multi-site, so here I’ll go through a possible solution for this scenario where we need also to keep the SSG/ISR functionality from Next.js/Vercel.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5c7/857953/1658870987UUkRlEYe/2.png",
+      "link": {
+        "text": "Read now",
+        "href": "https://go.sitecore.com/e/857953/sitecore-next-edge-middleware-/mjvmd1/385365069?h=zkKkOgjxjuhr3-64UfFbrxaxP23n_1xWY0BRhiBvUFU"
+      }
+    },
+    {
+      "title": "Improving Windows Terminal for a better Developer Experience",
+      "copy": "This demo will show you what to do in order to improve the developer experience using Windows Terminal and Visual Studio Code. Unlock the great potential of Windows Terminal using a custom profile that gives you a custom Sitecore theme and autocompletion on CLI commands for the Sitecore CLI as well as the XM Cloud Plugin.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czn4/857953/1656293027HOmT1QJR/Untitled_design__12_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://go.sitecore.com/e/857953/watch-v-pO7k3-p1Uq4/mjvmd4/385365069?h=zkKkOgjxjuhr3-64UfFbrxaxP23n_1xWY0BRhiBvUFU"
+      }
+    },
+    {
+      "title": "Sitecore Platform DXP to Composable: CDP + Personalize Migration Strategies",
+      "copy": "This guide will target specifically the CDP and Personalize part of the Platform DXP to Composable DXP transition. There is not a one size that fits all approach to this migration, but a common list of steps and products available that may or may not fit the customer's specific needs.",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc2w/857953/1650590313tUyZoKqL/4.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/cc98af1b541590e55241dde54bcb0d/mjvmd7/385365069?h=zkKkOgjxjuhr3-64UfFbrxaxP23n_1xWY0BRhiBvUFU"
+      }
+    },
+    {
+      "title": "Sitecore Headless Next.js – Generic component based external API response processing",
+      "copy": "Since Sitecore Headless and Composable DXP jumped in to our life, designing and architecting Sitecore solutions are changing. The integration layer is moving to the frontend layer and stays decoupled from Sitecore.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5cf/857953/1658871057oEzNRBEV/5.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/ernal-api-response-processing-/mjvmdb/385365069?h=zkKkOgjxjuhr3-64UfFbrxaxP23n_1xWY0BRhiBvUFU"
+      }
+    },
+    {
+      "title": "Sitecore XM Cloud - Introduction Part 1",
+      "copy": "XM Cloud is Sitecore’s cloud-native, modern CMS empowering brands to create, manage, and deliver relevant content at lightning-fast speeds. In this post, you will learn a general overview of what XM Cloud offers.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5cb/857953/16588710277UW1trZc/3.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/-xm-cloud-introduction-part-1-/mjvmdf/385365069?h=zkKkOgjxjuhr3-64UfFbrxaxP23n_1xWY0BRhiBvUFU"
+      }
+    },
+    {
+      "title": "What is XM Cloud?",
+      "copy": "Sitecore Experience Manager Cloud (XM Cloud) is a fully managed self-service deployment platform for developers and marketers to efficiently launch engaging omnichannel experiences in the Cloud using Sitecore’s headless CMS. Learn what it is, why use it, the architecture, deployment, and more!",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5d1bb/857953/1656295790L4iFnrCN/Untitled_design__4_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/-started-xm-cloud-introduction/mjvmdj/385365069?h=zkKkOgjxjuhr3-64UfFbrxaxP23n_1xWY0BRhiBvUFU"
+      }
+    },
+    {
+      "title": "Fundraising with Sitecore relics",
+      "copy": "Here is an opportunity to get some Sitecore relics and support the Sitecore community in Ukraine. Even if you cannot buy anything please share the message with your community.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czl7/857953/1656292764kM2Vr7NI/Untitled_design__9_.png",
+      "link": {
+        "text": "Learn more",
+        "href": "https://go.sitecore.com/e/857953/liactivity6938533139371704320-/l5gh8m/366730581?h=Ye9fQqyzeIBscAO0Lt_nnA-99GPKiSbNgQJWPIuM9Lc"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "First look at Sitecore's New Demo Portal",
+      "copy": "Take a first glance at Sitecore’s new internal demo portal. What is it? What does it look like? What are some first impressions?",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5cx/857953/1658871118S3sIFHp6/4.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/irst-look-sitecore-demo-portal/mjvmdq/385365069"
+      }
+    },
+    {
+      "title": "Modular Frontends with Component Driven Design",
+      "copy": "This frontend development methodology breaks your UI down into its smallest buildable pieces. Learn more about what Component Driven Design is, its benefits, and see the tool Storybook in action to help build your frontend out with a component driven approach.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czp1/857953/1656293079sSwvv9lq/Untitled_design__11_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/posts-component-driven-design/mjvmdt/385365069"
+      }
+    },
+    {
+      "title": "Sitecore Architect’s Guide to SaaS Migration – XP Global Brand scenario",
+      "copy": "In this part of the migration series, learn how to&nbsp;migrate&nbsp;an existing Sitecore Experience Platform (XP) “Global Brand” solution, with many sites and deep personalization ​​​​​usage, over to Sitecore XM Cloud and Sitecore Personalize",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5hm/857953/1658871187EaGFBnKo/Pink_Floral_Motivational_Instagram_Post.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/tion-xp-global-brand-scenario-/mjvmdx/385365069"
+      }
+    }
+  ]
+}
