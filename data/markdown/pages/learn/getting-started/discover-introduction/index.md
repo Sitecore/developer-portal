@@ -101,4 +101,4 @@ Much in the same way as the API Explorer above, the Event Builder allows you to 
 
 The Event Monitor and AI Monitor panels allow you to trace what data is being sent back into Discover for a specific user. This allows you to enter your UUID into the panel, then as you browse through the site all of the data being served to deliver your experiences will be displayed on this page, allowing you to debug what data Discover is using to power your product listings.
 
-**IMAGE IN HERE**
+![Event Monitor panel Screenshot](https://sitecorecontenthub.stylelabs.cloud/api/public/content/b69de6b4961c4a918bbeea88cb4d3caf?v=da444986)
