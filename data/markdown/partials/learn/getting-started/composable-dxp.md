@@ -17,3 +17,4 @@
   - Introduction to Sitecore CDP and Personalize
 - [XM - Personalize FAQ](/learn/faq/xm-personalize)
 - [Cloud Portal FAQ](/learn/faq/cloud-portal)
+- [XM Cloud Embedded Personalization FAQ](/learn/faq/xm-cloud-embedded-personalization)
