@@ -9,8 +9,9 @@ Developers benefit from XM Cloud’s self-service tools for rapidly deploying Ex
 
 For XM Cloud embedded personalization, Sitecore introduces a new Sitecore Cloud SDK Engage module - [Sitecore Engage SDK](https://www.npmjs.com/package/@sitecore/engage). Sitecore also enhanced JSS for Next JS by including a middleware for personalization – The [Next.js Personalize add-on](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-next-js-personalize-add-on.html) - beside a component to enable collection of view events and personalization. Developers can have this functionality out of the box by using reference example for XM Cloud – XM Cloud Introduction – which includes built in Sitecore Engage SDK and JSS enhancement. Or developers can create their own NEXT.JS Rendering Host using Initializer.
 
-For more information on developer experience for XM Cloud Personalization, check Analytics, Sitecore Cloud SDK with Engage ,modules, how to configure your Next.js rendering host to capture view events and trigger personalization on [Sitecore Developer portal](https://developers.sitecore.com/learn/getting-started/xm-cloud-introduction). You can additionally check Dylan Young’s video: [Sitecore XM
-Cloud - Getting Started with Personalization and Analytics](https://www.youtube.com/watch?v=LdxNRo22Vf8). (https://www.youtube.com/playlist?list=PL1jJVFm_lGnzqYagW1UahIBeqTIYSBQMc)
+For more information on developer experience for XM Cloud Personalization, check Analytics, Sitecore Cloud SDK with Engage ,modules, how to configure your Next.js rendering host to capture view events and trigger personalization on [Sitecore Developer portal](https://developers.sitecore.com/learn/getting-started/xm-cloud-introduction). You can additionally check Dylan Young’s video:
+
+<YouTube youTubeId="PL1jJVFm_lGnzqYagW1UahIBeqTIYSBQMc" isPlayList={true} playlistCoverId="LdxNRo22Vf8" />
 
 ### What will the developer experience be with XM Cloud Embedded Personalization?
 
