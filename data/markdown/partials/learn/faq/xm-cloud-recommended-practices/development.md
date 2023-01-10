@@ -18,7 +18,7 @@ Recommended workflow:
 
 The Business Analyst or Product Owner analyze the website designs/wireframes and flush out authoring requirements. This information is discussed with the Sitecore architect or dev lead to identify the list of page types needed for the website and the list of components needed on each page type. 
 
-This step gets the business side and the technical side of the project into alignment. Content Authors get to see the types of pages they will be able to create, the components they will be able to add to pages, and the fields that will be editable in those components. This information needs to be explicitly communicated with both, back-end and front-end devs. For front-end devs, going through this process promotes “component driven design”, which  encourage separation of concerns and improve the maintainability and scalability of the codebase.
+This step gets the business side and the technical side of the project into alignment. Content Authors get to see the types of pages they will be able to create, the components they will be able to add to pages, and the fields that will be editable in those components. This information needs to be explicitly communicated with both, back-end and front-end devs. For front-end devs, going through this process promotes “component driven design”, which encourages separation of concerns and improves the maintainability and scalability of the codebase.
 
 2. **Back-end devs work from local containers**
 
@@ -30,7 +30,7 @@ Trying to use an on-prem version of Sitecore XM for local development in order t
 
 > ✅ DO use local Docker containers for Sitecore **item serialization**
 
-Using a local container is best when serializing Sitecore items (ie when you want to save whatever has been done in Sitecore to source control). Trying to serialize against a cloud instance can lead to trouble because it’s a shared environments, so people can override each other’s work.
+Using a local container is best when serializing Sitecore items (ie when you want to save whatever has been done in Sitecore to source control). Trying to serialize against a cloud instance can lead to trouble because it’s a shared environment, so people can override each other’s work.
 
 There is an official template available to facilitate the original creation of the codebase - [GitHub - sitecorelabs/xmcloud-foundation-head](https://github.com/sitecorelabs/xmcloud-foundation-head). Using this template is recommended since it provides multisite capabilities, it comes with helpful scripts for managing local containers, and it is maintained and updated by Sitecore.
 
@@ -42,7 +42,7 @@ Once the Sitecore templates have been serialized and added to source control, th
 
 This enables front-end devs to begin work without having to set up any local Sitecore containers of their own - they can work against one of the cloud endpoints, ideally the CM GraphQL endpoint. The docker learning curve and setup can be heavy, so it’s not worth it if you’re only doing frontend work. Additionally, by using the real cloud endpoint (instead of a local endpoint tied to a local database), front-end devs are guaranteed to be hydrating their components with the same content data that will be used in the final product. So the “it works fine on my machine, but it looks weird in production” scenario can be avoided.
 
-Front-end devs still develop and run the front-end (JavaScript) part of the project on their local machines. (on a Node server running locally - this is called the “rendering host”). As they build out components, if any changes are needed to the data incoming from the API, they communicate these needs to the back-end devs. So, back-end devs jump in occasionally to weak the information architecture and front-end devs still don’t need to bother with local Sitecore containers. This is the favorite approach, according to all the teams we interviews.
+Front-end devs still develop and run the front-end (JavaScript) part of the project on their local machines (on a Node server running locally - this is called the “rendering host”). As they build out components, if any changes are needed to the data incoming from the API, they communicate these needs to the back-end devs. So, back-end devs jump in occasionally to tweak the information architecture and front-end devs still don’t need to bother with local Sitecore containers. This is the favorite approach, according to all the teams we interview.
 
 Front-end devs like this workflow because they don’t have to learn containers, and Sitecore onboarding is minimal.
 
@@ -58,7 +58,7 @@ Front-end devs work on components locally (using the cloud endpoint as a Headles
 
 
 ## Code references
-In addition to the official starter template, there are a couple other public repos available to use a development reference.
+In addition to the official starter template, there are a couple of other public repos available to use as a development reference.
 
 **Official starter foundation**
 
@@ -110,11 +110,11 @@ These scripts address common issues and handle error catching.
 - Use [up.ps1](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/up.ps1) to start your container
 - Use [down.ps1](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/down.ps1) to stop your container
 
-Most of the time, the up script and down script are all you need. These scripts manage your container without touching your local databases (ie they won’t change items in Sitecore). However, sometimes it is useful to resets your databases to whatever is serialized in source control (if you are getting unexpected errors or if you are switching between branches). This can be achieved with the clean.ps1 script.
+Most of the time, the up script and down script are all you need. These scripts manage your container without touching your local databases (ie they won’t change items in Sitecore). However, sometimes it is useful to reset your databases to whatever is serialized in source control (if you are getting unexpected errors or if you are switching between branches). This can be achieved with the clean.ps1 script.
 
 
 Tips for working with containers:
 
 - The up script pulls the latest versions of the base images. Pulling latest images is recommended. But if you need to hold off from pulling the latest version (as an exceptional case), you can pin your base image to a specific version in the docker-compose file.
 
-- If you’re seeing an error in XM Cloud that you cannot reproduce locally, you can use the CLI to inspect logs from the cloud environment (including logs from the editing rendering host). `dotnet sitecore cloud environment log logs list` and it will give you a list of All of the logs on your environment.
+- If you’re seeing an error in XM Cloud that you cannot reproduce locally, you can use the CLI to inspect logs from the cloud environment (including logs from the editing rendering host). `dotnet sitecore cloud environment log list` and it will give you a list of all logs on your environment.
