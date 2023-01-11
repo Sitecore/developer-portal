@@ -25,9 +25,8 @@ Speed: Visitors are greeted with an experience that loads lightning-fast and eng
 Relevance: Customers are recognized and welcomed back to an experience that understands their needs
 The importance of your company's growth comes with the:
 
-* Agility: Marketers can easily orchestrate the overall experience across digital campaigns
-* Flexibility: Developers can rapidly develop and launch new experience types with modern front-end frameworks
-
+- Agility: Marketers can easily orchestrate the overall experience across digital campaigns
+- Flexibility: Developers can rapidly develop and launch new experience types with modern front-end frameworks
 
 ## Getting Started
 
@@ -35,6 +34,7 @@ The importance of your company's growth comes with the:
 - [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
 - [XM Cloud FAQ](/learn/faq/xm-cloud)
 - [XM Cloud Recommended Practices](/learn/faq/xm-cloud-recommended-practices)
+- [XM Cloud: Embedded Personalization FAQ](/learn/faq/xm-cloud-embedded-personalization)
 
 ## Documentation
 
