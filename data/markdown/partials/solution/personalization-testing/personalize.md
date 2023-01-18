@@ -37,6 +37,7 @@ Sitecore Personalize brings together real-time behavioral insights and all your 
 
 ## Resources
 
+- [XM Cloud: Embedded Personalization FAQ](/learn/faq/xm-cloud-embedded-personalization)
 - [Blog: Product Comparisons](https://community.sitecore.com/community?id=community_blog&sys_id=d8fdc45d1bb6811038a46421b24bcbb7)
 - [Blog: Product Specifications/Comparisons part 2](https://community.sitecore.com/community?id=community_blog&sys_id=f0862b751bf6491038a46421b24bcb65)
 - [Blog: Sitecore XP Migration Guide](https://community.sitecore.com/community?id=community_blog&sys_id=f1cc98af1b541590e55241dde54bcb0d)

@@ -4,9 +4,11 @@ import { classnames } from 'tailwindcss-classnames';
 /* eslint-disable react/no-unknown-property */
 type VideoProps = {
   youTubeId: string;
+  isPlayList?: boolean;
+  playlistCoverId?: string;
 };
 
-const YouTube = ({ youTubeId }: VideoProps): JSX.Element => {
+const YouTube = ({ youTubeId, isPlayList, playlistCoverId }: VideoProps): JSX.Element => {
   return (
     <>
       <style jsx>{`
@@ -27,6 +29,8 @@ const YouTube = ({ youTubeId }: VideoProps): JSX.Element => {
           params={`loop=1&playlist=${youTubeId}`}
           aspectHeight={9}
           aspectWidth={16}
+          playlist={isPlayList}
+          playlistCoverId={playlistCoverId}
           poster="maxresdefault"
           title="YouTube Embed"
           noCookie={true}

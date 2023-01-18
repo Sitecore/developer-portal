@@ -38,6 +38,7 @@ Sitecore CDP brings together real-time behavioral insights and all your customer
 
 ## Resources
 
+- [XM Cloud: Embedded Personalization FAQ](/learn/faq/xm-cloud-embedded-personalization)
 - [Blog: Sitecore CDP Audience Sync Automation](https://community.sitecore.com/community?id=community_blog&sys_id=46a5fcc11be15d10b8954371b24bcb85)
 - [Blog: Product Comparisons](https://community.sitecore.com/community?id=community_blog&sys_id=d8fdc45d1bb6811038a46421b24bcbb7)
 - [Blog: Product Specifications/Comparisons part 2](https://community.sitecore.com/community?id=community_blog&sys_id=f0862b751bf6491038a46421b24bcb65)
