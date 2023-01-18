@@ -43,6 +43,6 @@ Content Hub One is designed for brands that need an agile headless CMS to suppor
 
 ### Official Sitecore Training
 
-- [Coming soon!]
+- [Getting Started with Content Hub ONE](https://learning.sitecore.com/learn/course/internal/view/elearning/1157/getting-started-with-content-hub-one)
 
 
