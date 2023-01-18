@@ -11,6 +11,7 @@ export enum Product {
   Search,
   DAM,
   Discover,
+  Connect,
 }
 export enum Variant {
   Light,
@@ -172,6 +173,18 @@ const ProductLogos: ProductImage[] = [
     Variant: Variant.Light,
     logoFileName: '01af196281144e70a17e97f05354cfcc',
     iconFileName: '321e52cb1a654d6cbb4b741a36506548',
+  },
+  {
+    Product: Product.Connect,
+    Variant: Variant.Dark,
+    logoFileName: '59fcea1f05574bd1af8a26fa492f4848',
+    iconFileName: '033435b9dc37460098257f65a1a314b1',
+  },
+  {
+    Product: Product.Connect,
+    Variant: Variant.Light,
+    logoFileName: '9dadcc0d3f03455dacddd71a8c21089b',
+    iconFileName: '8ab39b3190204ee796622d8934d19f8b',
   },
 ];
 

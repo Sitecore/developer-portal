@@ -362,7 +362,7 @@ const NavigationData: NavigationData[] = [
         url: '/integrations/connect',
         children: [
           {
-            title: '??',
+            title: 'Integration Platform',
             url: '/integrations/connect',
           },
         ],
