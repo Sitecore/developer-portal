@@ -5,7 +5,7 @@ hasInPageNav: true
 
 ### What is Sitecore Connect?
 
-**Sitecore Connect is your** integration workbench for a composable future. With partnership with Workato, Sitecore Connect leverages major IPAAS integration platform, with proven worldwide availability to deliver a low-code / no-code, modern, integration workbench between Sitecore platform solutions and your preferred global software providers.
+Sitecore Connect is your integration workbench for a composable future. With partnership with Workato, Sitecore Connect leverages major iPaaS integration platform, with proven worldwide availability to deliver a low-code / no-code, modern, integration workbench between Sitecore platform solutions and your preferred global software providers.
 
 ### What is iPaaS?
 
