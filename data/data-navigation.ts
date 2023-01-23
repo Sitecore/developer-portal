@@ -259,6 +259,11 @@ const NavigationData: NavigationData[] = [
             title: 'Sitecore Connect',
             url: '/integrations/connect',
           },
+          {
+            title: 'Sitecore Marketplace',
+            url: 'https://www.sitecore.com/products/marketplace',
+            external: true,
+          },
         ],
       },
     ],
@@ -364,6 +369,11 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Integration Platform',
             url: '/integrations/connect',
+          },
+          {
+            title: 'Access the Portal',
+            url: 'https://portal.sitecorecloud.io/',
+            external: true,
           },
         ],
       },
