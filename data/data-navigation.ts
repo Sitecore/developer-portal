@@ -251,6 +251,21 @@ const NavigationData: NavigationData[] = [
           },
         ],
       },
+      {
+        title: 'Integrations',
+        url: '/integrations',
+        children: [
+          {
+            title: 'Sitecore Connect',
+            url: '/integrations/connect',
+          },
+          {
+            title: 'Sitecore Marketplace',
+            url: 'https://www.sitecore.com/products/marketplace',
+            external: true,
+          },
+        ],
+      },
     ],
   },
   {
@@ -343,6 +358,21 @@ const NavigationData: NavigationData[] = [
           {
             title: 'Get your free Moosend account',
             url: 'https://identity.moosend.com/register/',
+            external: true,
+          },
+        ],
+      },
+      {
+        title: 'Sitecore Connect',
+        url: '/integrations/connect',
+        children: [
+          {
+            title: 'Integration Platform',
+            url: '/integrations/connect',
+          },
+          {
+            title: 'Access the Portal',
+            url: 'https://portal.sitecorecloud.io/',
             external: true,
           },
         ],
