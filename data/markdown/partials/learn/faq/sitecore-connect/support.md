@@ -21,7 +21,7 @@ Recipes have various lifecycle management options. See https://docs.workato.com/
 
 ### What are the benefits of working with community supported platforms?
 
-Just as with any community supported platform you find that Support is given not only by the vendor but by peers that are trying to achieve the same. Innovation also often goes at a faster pace as the community contributes in a live fashion to the platform, enriching it with the strength of a vastly larger number of people than the vendor would be capable of sustaining. Community supported platforms also generally are more open to extension and integration allowing both yourself as well as capable partners to fill in gaps as required to bridge them either permanently or temporarily until the platform catches up.
+Just as with any community supported platform you find that support is given not only by the vendor but by peers that are trying to achieve the same. Innovation also often goes at a faster pace as the community contributes in a live fashion to the platform, enriching it with the strength of a vastly larger number of people than the vendor would be capable of sustaining. Community supported platforms also generally are more open to extension and integration allowing both yourself as well as capable partners to fill in gaps as required to bridge them either permanently or temporarily until the platform catches up.
 
 ### What is the SLA and uptime guarantee working with Sitecore Connect?
 
