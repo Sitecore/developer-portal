@@ -30,7 +30,9 @@ const MultiPageNav = ({ context, navData, root }: MultiPageNavProps): JSX.Elemen
       )}
     >
       <h3 className="mb-4">
-        <Link href={`${root}/${context.article}`}>{navData.title}</Link>
+        <Link href={`${root}/${context.article}`} legacyBehavior>
+          {navData.title}
+        </Link>
       </h3>
       <ul className={classnames('side-bar-nav', 'relative', 'pl-1.5')}>
         {navData.routes.map((route) => {
@@ -43,22 +45,21 @@ const MultiPageNav = ({ context, navData, root }: MultiPageNavProps): JSX.Elemen
                 current: isActive,
               })}
             >
-              <Link href={buildUrl(context.article, route.path)}>
-                <a
-                  className={classnames(
-                    'text-violet',
-                    'dark:text-teal',
-                    'text-sm',
-                    'inline-block',
-                    'hover:underline',
-                    'focus:underline',
-                    {
-                      'font-bold': isActive,
-                    }
-                  )}
-                >
-                  {route.title}
-                </a>
+              <Link
+                href={buildUrl(context.article, route.path)}
+                className={classnames(
+                  'text-violet',
+                  'dark:text-teal',
+                  'text-sm',
+                  'inline-block',
+                  'hover:underline',
+                  'focus:underline',
+                  {
+                    'font-bold': isActive,
+                  }
+                )}
+              >
+                {route.title}
               </Link>
             </li>
           );

@@ -33,9 +33,7 @@ const NavMenu = ({
     if (callback && (event?.target as HTMLButtonElement)?.localName !== 'button') {
       callback();
     }
-    console.log(`isOpen before: ${isOpen}`);
     setOpen(!isOpen);
-    console.log(`isOpen after:  ${isOpen}`);
   };
 
   useEffect(() => {
@@ -103,7 +101,7 @@ const NavMenu = ({
       <ConditionalWrapper
         condition={!!url}
         wrapper={(children) => (
-          <Link href={url as string} passHref>
+          <Link href={url as string} passHref legacyBehavior>
             {children}
           </Link>
         )}

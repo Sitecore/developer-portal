@@ -5,7 +5,7 @@ import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 import type { YouTubeSnippet, YouTubeVideo } from '@/src/interfaces/integrations';
 // Components
 import FeedHeading from '@/src/components/common/FeedHeading';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 type YouTubeFeedProps = {
   className?: TTailwindString;

@@ -1,5 +1,4 @@
-// Global
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 // Interfaces
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components

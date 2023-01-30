@@ -166,21 +166,20 @@ const Nav = (): JSX.Element => {
             'h-16'
           )}
         >
-          <Link href="/">
-            <a
-              className={classnames('flex', 'items-center', 'mr-auto', 'flex-shrink-0')}
-              onClick={closeNav}
+          <Link
+            href="/"
+            className={classnames('flex', 'items-center', 'mr-auto', 'flex-shrink-0')}
+            onClick={closeNav}
+          >
+            <span className={classnames('block', 'relative', 'w-36', 'lg:w-48')}>
+              <Logo />
+            </span>
+            <span className={classnames('sr-only')}>Sitecore</span>
+            <span
+              className={classnames('sr-only', 'hidden', 'ml-4', 'text-theme-text', 'xl:block')}
             >
-              <span className={classnames('block', 'relative', 'w-36', 'lg:w-48')}>
-                <Logo />
-              </span>
-              <span className={classnames('sr-only')}>Sitecore</span>
-              <span
-                className={classnames('sr-only', 'hidden', 'ml-4', 'text-theme-text', 'xl:block')}
-              >
-                Developer Portal
-              </span>
-            </a>
+              Developer Portal
+            </span>
           </Link>
           <nav
             ref={navRef}

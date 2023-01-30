@@ -129,19 +129,13 @@ const Footer = (): JSX.Element => {
               </a>
             </li>
             <li className={classnames('inline-block', 'border-l', 'px-2')}>
-              <Link href={'/help'} passHref>
-                <a className={classnames('font-semibold')}>
-                  Get Help
-                  <span className={classnames('sr-only')}>Opens in a new tab</span>
-                </a>
+              <Link href={'/help'} passHref className={classnames('font-semibold')}>
+                Get Help<span className={classnames('sr-only')}>Opens in a new tab</span>
               </Link>
             </li>
             <li className={classnames('inline-block', 'border-l', 'px-2')}>
-              <Link href={'/contribute'} passHref>
-                <a className={classnames('font-semibold')}>
-                  Contribute
-                  <span className={classnames('sr-only')}>Opens in a new tab</span>
-                </a>
+              <Link href={'/contribute'} passHref className={classnames('font-semibold')}>
+                Contribute<span className={classnames('sr-only')}>Opens in a new tab</span>
               </Link>
             </li>
           </ul>
