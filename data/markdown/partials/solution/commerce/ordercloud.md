@@ -22,7 +22,6 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 ## Documentation
 
 - [API reference](https://ordercloud.io/api-reference)
-- [Four51 Storefront API docs](https://four51.github.io/#/api)
 
 ## More information on how to get started
 
