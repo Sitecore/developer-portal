@@ -90,6 +90,8 @@ export const Promo = ({
       href: linkHref,
       text: linkText,
     },
+    className: className,
+    isImageLeft: isImageLeft,
   };
 
   return <PromoCard {...data} />;
