@@ -25,7 +25,6 @@ const NavMenu = ({
   buttonIcon,
   callback,
 }: NavMenuProps): JSX.Element => {
-  const firstRender = useRef(true);
   const navItemRef = useRef<HTMLDivElement>(null);
   const [isOpen, setOpen] = useState(false);
 
@@ -37,22 +36,22 @@ const NavMenu = ({
   };
 
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      const pageClickEvent = (event: Event) => {
-        if (navItemRef.current !== null && !navItemRef?.current?.contains(event.target as Node)) {
-          setOpen(!isOpen);
-        }
-      };
-
-      if (isOpen) {
-        window.addEventListener('click', pageClickEvent);
+    const pageClickEvent = (event: Event) => {
+      if (navItemRef.current !== null && !navItemRef?.current?.contains(event.target as Node)) {
+        setOpen(!isOpen);
       }
+    };
 
-      return () => {
-        window.removeEventListener('click', pageClickEvent);
-      };
-    }
+    const timeoutId = setTimeout(() => {
+      if (isOpen) {
+        window.addEventListener('click', pageClickEvent, false);
+      }
+    }, 0);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('click', pageClickEvent, false);
+    };
   }, [isOpen]);
 
   const mainNavItemStyles = classnames(

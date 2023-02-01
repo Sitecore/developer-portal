@@ -15,7 +15,6 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
    *  React hook for unique IDs using react-unique-id.
    *  Avoid generating new ID on every rerender.
    */
-  const firstRender = useRef(true);
   const [idSeed] = useId(1, 'qs-menu');
   const qsMenuId = idSeed;
   const buttonId = `${idSeed}--button`;
@@ -28,25 +27,25 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
   };
 
   useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      const pageClickEvent = (event: Event) => {
-        if (
-          quickStartMenuRef.current !== null &&
-          !quickStartMenuRef?.current?.contains(event.target as Node)
-        ) {
-          setOpen(!isOpen);
-        }
-      };
-
-      if (isOpen) {
-        window.addEventListener('click', pageClickEvent);
+    const pageClickEvent = (event: Event) => {
+      if (
+        quickStartMenuRef.current !== null &&
+        !quickStartMenuRef?.current?.contains(event.target as Node)
+      ) {
+        setOpen(!isOpen);
       }
+    };
 
-      return () => {
-        window.removeEventListener('click', pageClickEvent);
-      };
-    }
+    const timeoutId = setTimeout(() => {
+      if (isOpen) {
+        window.addEventListener('click', pageClickEvent, false);
+      }
+    }, 0);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('click', pageClickEvent, false);
+    };
   }, [isOpen]);
 
   const quickStartMenuInactiveClasses = classnames('hidden');
