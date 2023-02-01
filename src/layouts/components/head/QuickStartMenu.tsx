@@ -1,7 +1,6 @@
 // Global
 import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
-import { useEffect, useRef, useState } from 'react';
-import { useId } from 'react-id-generator';
+import { useEffect, useId, useRef, useState } from 'react';
 
 // Local
 import { SitecoreQuickLinks } from '@/data/data-navigation';
@@ -15,7 +14,7 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
    *  React hook for unique IDs using react-unique-id.
    *  Avoid generating new ID on every rerender.
    */
-  const [idSeed] = useId(1, 'qs-menu');
+  const [idSeed] = useId();
   const qsMenuId = idSeed;
   const buttonId = `${idSeed}--button`;
 

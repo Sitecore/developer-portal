@@ -3,7 +3,6 @@ import { AppProps } from 'next/dist/shared/lib/router/router';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import TagManager from 'react-gtm-module';
-import { resetId } from 'react-id-generator';
 // Components
 import Footer from '@/src/layouts/components/footer/Footer';
 import Nav from '@/src/layouts/components/head/Nav';
@@ -12,8 +11,6 @@ import '@/src/styles/global.css';
 import React from 'react';
 
 function SCDPApp({ Component, pageProps }: AppProps) {
-  // Reset id counter during SSR
-  resetId();
   // useEffect for basic page views tracking via router/gtag.
   useEffect(() => {
     const tagManagerArgs = {

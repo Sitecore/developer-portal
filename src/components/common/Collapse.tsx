@@ -1,7 +1,6 @@
 // Global
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
-import { useId } from 'react-id-generator';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import SvgIcon from './SvgIcon';
 
 export type CollapseProps = {
@@ -12,7 +11,7 @@ export type CollapseProps = {
 
 const Collapse = ({ title, expandedByDefault, children }: CollapseProps): JSX.Element => {
   const [isExpanded, setIsExpanded] = useState(!!expandedByDefault);
-  const [idSeed] = useId(1, 'collapse');
+  const [idSeed] = useId();
 
   return (
     <div>
