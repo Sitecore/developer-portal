@@ -9,6 +9,7 @@ import Footer from '@/src/layouts/components/footer/Footer';
 import Nav from '@/src/layouts/components/head/Nav';
 // Local
 import '@/src/styles/global.css';
+import React from 'react';
 
 function SCDPApp({ Component, pageProps }: AppProps) {
   // Reset id counter during SSR
@@ -24,7 +25,7 @@ function SCDPApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <>
+    <React.StrictMode>
       <Head>
         <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
       </Head>
@@ -33,7 +34,7 @@ function SCDPApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <Footer />
       </div>
-    </>
+    </React.StrictMode>
   );
 }
 
