@@ -70,6 +70,7 @@
     "@typescript-eslint/parser": "^5.38.1",
     "autoprefixer": "^10.4.12",
     "eslint": "^8.24.0",
+    "eslint-config-next": "^13.1.6",
     "eslint-plugin-react": "^7.31.8",
     "husky": "^8.0.1",
     "lint-staged": "^11.2.6",
