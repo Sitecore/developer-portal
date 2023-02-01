@@ -50,7 +50,7 @@ The importance of your company's growth comes with the:
 
 ### Open Source
 
-- [Headless SXA Starter Kit](https://github.com/sitecorelabs/xmcloud-foundation-head-dev)
+- [Headless SXA Starter Kit](https://github.com/sitecorelabs/xmcloud-foundation-head)
 - [Sitecore PlaySummit Demo - XM Cloud](https://github.com/Sitecore/Sitecore.Demo.XmCloud.PlaySummit)
 - [XM Cloud Introduction - example implementation](https://github.com/Sitecore/XM-Cloud-Introduction)
 
