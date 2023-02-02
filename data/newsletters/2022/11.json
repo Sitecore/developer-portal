@@ -8,7 +8,7 @@
       "image": "https://go.sitecore.com/l/857953/2022-11-27/ss8qwt/857953/16695877018pKUbhaz/Untitled_design__3_.png",
       "link": {
         "text": "Watch now",
-        "href": "https://go.sitecore.com/e/857953/watch-v-ati9lB4n-2o/ssy4lx/467384439"
+        "href": "https://www.youtube.com/watch?v=ati9lB4n_2o"
       },
       "variant": "full-width"
     },
@@ -17,7 +17,7 @@
       "copy": "Not able to make it to Sitecore Symposium this year? This blog post covers some of the key product and technical takeaways from the conference.",
       "image": "https://go.sitecore.com/l/857953/2022-11-27/ss8qwx/857953/1669587741tRvzdncT/Untitled_design__2_.png",
       "link": {
-        "href": "https://go.sitecore.com/e/857953/posts-2022-symposium-2022/ssy4m1/467384439"
+        "href": "https://blog.jermdavis.dev/posts/2022/symposium-2022"
       }
     },
     {
@@ -25,7 +25,7 @@
       "copy": "Explore this step-by-step guide to help devs get started, better understand the development workflow, have a quick product overview, and so on.",
       "image": "https://go.sitecore.com/l/857953/2022-01-21/clyv5p/857953/16427875570Ln0tJyy/3.png",
       "link": {
-        "href": "https://go.sitecore.com/e/857953/loud-nextjs-vercel-in-minutes-/ssy4m4/467384439"
+        "href": "https://miguelminoldo.fr/2022/10/26/get-started-xmcloud-nextjs-vercel-in-minutes/"
       }
     },
     {
@@ -33,7 +33,7 @@
       "copy": "Learn all about PoC (Proof of Concept) for CDP/Personalize. This PoC is meant to show a new way of building things in your tenant, using the tool that every developer is familiar with, which is Source Control.",
       "image": "https://go.sitecore.com/l/857953/2022-01-21/clz4fr/857953/1642789617vsQOYO6p/Untitled_design__2_.png",
       "link": {
-        "href": "https://go.sitecore.com/e/857953/ializer-cli-tool-introduction-/ssy4m7/467384439"
+        "href": "https://dylanyoung.dev/insights/sitecore-cdp-personalize-serializer-cli-tool-introduction/"
       }
     },
     {
@@ -42,7 +42,7 @@
       "image": "https://go.sitecore.com/l/857953/2021-11-28/b32pcl/857953/16381453604FGm7vNO/Untitled_design__2_.png",
       "link": {
         "text": "Apply now",
-        "href": "https://go.sitecore.com/e/857953/application/ssy4mb/467384439"
+        "href": "https://mvp.sitecore.com/Become-an-mvp"
       },
       "variant": "full-width"
     },
@@ -51,7 +51,7 @@
       "copy": "You’ve identified a potential group of users that can be targeted with tailored experiences and content, but how can we group these users into a segment with Sitecore CDP and Personalize? Lucky for us, CDP comes with batch segments, which will help us group our users.",
       "image": "https://go.sitecore.com/l/857953/2022-01-21/clzfg7/857953/1642791021PUAcmvsn/6.png",
       "link": {
-        "href": "https://go.sitecore.com/e/857953/eating-advanced-batch-segments/ssy4mf/467384439"
+        "href": "https://www.xcentium.com/blog/2022/10/13/creating-advanced-batch-segments"
       }
     },
     {
@@ -59,7 +59,7 @@
       "copy": "Learn how to get started with XM Cloud and .NET 6 without running XM locally, which also means that you can do this on Linux or macOS.",
       "image": "https://go.sitecore.com/l/857953/2022-01-21/clyydm/857953/1642788415CBNmB45Y/4.png",
       "link": {
-        "href": "https://go.sitecore.com/e/857953/posts-dotnet-head-for-xmcloud/ssy4mj/467384439"
+        "href": "https://invokecommand.net/posts/dotnet-head-for-xmcloud"
       }
     },
     {
@@ -67,7 +67,7 @@
       "copy": "Processing large amounts of data comes with challenges and trade-offs that we must live with. Sitecore Data Engineering shares their journey in dealing with this issue in Flink.",
       "image": "https://go.sitecore.com/l/857953/2022-11-27/ss8qnx/857953/1669587110RWBtCkpB/2.png",
       "link": {
-        "href": "https://go.sitecore.com/e/857953/ata-skew-in-flink-b7e4c82c35ef/ssy4mm/467384439"
+        "href": "https://medium.com/@sanr_71172/dealing-with-data-skew-in-flink-b7e4c82c35ef"
       }
     },
     {
@@ -76,7 +76,7 @@
       "image": "https://go.sitecore.com/l/857953/2022-01-21/clywxm/857953/1642788100YsC12YCI/2.png",
       "link": {
         "text": "Watch now",
-        "href": "https://go.sitecore.com/e/857953/watch-v-hdMpXSzvd8w/ssy4mq/467384439"
+        "href": "https://www.youtube.com/watch?v=hdMpXSzvd8w"
       }
     },
     {
@@ -84,7 +84,7 @@
       "copy": "In the stream of information about Sitecore headless you probably heard the term rendering host more than once.The rendering host is the front-end application that consumes headless Sitecore data. This can be a website, but also an app. It is the head on headless Sitecore.",
       "image": "https://go.sitecore.com/l/857953/2022-01-21/clywyh/857953/1642788130zta2AulB/1.png",
       "link": {
-        "href": "https://go.sitecore.com/e/857953/ns-and-fast-local-development-/ssy4mt/467384439"
+        "href": "https://www.sergevandenoever.nl/XM_Cloud_rendering_host_options_and_fast_local_development/"
       }
     },
     {
@@ -93,7 +93,7 @@
       "image": "https://go.sitecore.com/l/857953/2022-01-21/clz893/857953/1642790291GGtnLzVb/Untitled_design__4_.png",
       "link": {
         "text": "Watch now",
-        "href": "https://go.sitecore.com/e/857953/watch-v-CGe6Y4l6ON4-t-3s/ssy4mx/467384439"
+        "href": "https://www.youtube.com/watch?v=CGe6Y4l6ON4&t=3s"
       }
     },
     {
@@ -102,7 +102,7 @@
       "image": "https://go.sitecore.com/l/857953/2022-11-27/ss8qq1/857953/1669587301jz0fPbNC/1.png",
       "link": {
         "text": "Watch now",
-        "href": "https://go.sitecore.com/e/857953/watch-v-uk3Fc4cftGg/ssy4n1/467384439"
+        "href": "https://www.youtube.com/watch?v=uk3Fc4cftGg"
       },
       "variant": "full-width"
     }
