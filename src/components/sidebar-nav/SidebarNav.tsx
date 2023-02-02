@@ -40,20 +40,19 @@ const SidebarNav = ({ links, title }: SidebarNavProps) => {
 
           return (
             <li className={classnames('side-bar-nav-item', 'pb-4', 'relative', 'pl-4')} key={i}>
-              <Link href={link.href}>
-                <a
-                  className={classnames(
-                    'text-violet',
-                    'dark:text-teal',
-                    'text-sm',
-                    'inline-block',
-                    'hover:underline',
-                    'focus:underline',
-                    { [activeClasses]: link.active }
-                  )}
-                >
-                  {link.text}
-                </a>
+              <Link
+                href={link.href}
+                className={classnames(
+                  'text-violet',
+                  'dark:text-teal',
+                  'text-sm',
+                  'inline-block',
+                  'hover:underline',
+                  'focus:underline',
+                  { [activeClasses]: link.active }
+                )}
+              >
+                {link.text}
               </Link>
             </li>
           );

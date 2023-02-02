@@ -24,10 +24,13 @@ const NavLink = ({ text, url, level, external, onClick, ...props }: NavLinkProps
     <ConditionalWrapper
       condition={!!url}
       wrapper={(children) => (
-        <Link href={url as string}>
-          <a className={classnames('inline-block', 'hover:underline')} onClick={onClick} {...props}>
-            {children}
-          </a>
+        <Link
+          href={url as string}
+          className={classnames('inline-block', 'hover:underline')}
+          onClick={onClick}
+          {...props}
+        >
+          {children}
         </Link>
       )}
     >

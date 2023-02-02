@@ -1,7 +1,6 @@
 // Global
-import { TTailwindString } from '@/src/common/types/tailwindcss-classnames';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
-import { useId } from 'react-id-generator';
+import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
+import { useId } from 'react';
 
 type SearchBoxProps = {
   className?: TTailwindString;
@@ -12,7 +11,7 @@ const SearchBox = ({ className }: SearchBoxProps): JSX.Element => {
    *  React hook for unique IDs using react-unique-id.
    *  Avoid generating new ID on every rerender.
    */
-  const [idSeed] = useId(1, 'scdp-search');
+  const [idSeed] = useId();
   const searchId = idSeed;
   const inputId = `${idSeed}--search-input`;
 

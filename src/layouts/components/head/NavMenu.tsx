@@ -1,14 +1,14 @@
 // Global
-import React, { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
 import { classnames } from '@/src/common/types/tailwindcss-classnames';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React, { useEffect, useRef, useState } from 'react';
 // Data
 import { NavigationData } from '@/data/data-navigation';
 // Components
-import SvgIcon, { IconNames } from '@/src/components/common/SvgIcon';
-import DynamicTag from '@/src/components/common/DynamicTag';
 import ConditionalWrapper from '@/src/components/common/ConditionalWrapper';
+import DynamicTag from '@/src/components/common/DynamicTag';
+import SvgIcon, { IconNames } from '@/src/components/common/SvgIcon';
 // Local
 import NavLink from '@/src/layouts/components/head/NavLink';
 
@@ -27,6 +27,7 @@ const NavMenu = ({
 }: NavMenuProps): JSX.Element => {
   const navItemRef = useRef<HTMLDivElement>(null);
   const [isOpen, setOpen] = useState(false);
+
   const toggleNavItem = (event: React.MouseEvent) => {
     if (callback && (event?.target as HTMLButtonElement)?.localName !== 'button') {
       callback();
@@ -41,12 +42,15 @@ const NavMenu = ({
       }
     };
 
-    if (isOpen) {
-      window.addEventListener('click', pageClickEvent);
-    }
+    const timeoutId = setTimeout(() => {
+      if (isOpen) {
+        window.addEventListener('click', pageClickEvent, false);
+      }
+    }, 0);
 
     return () => {
-      window.removeEventListener('click', pageClickEvent);
+      clearTimeout(timeoutId);
+      window.removeEventListener('click', pageClickEvent, false);
     };
   }, [isOpen]);
 
@@ -96,7 +100,7 @@ const NavMenu = ({
       <ConditionalWrapper
         condition={!!url}
         wrapper={(children) => (
-          <Link href={url as string} passHref>
+          <Link href={url as string} passHref legacyBehavior>
             {children}
           </Link>
         )}

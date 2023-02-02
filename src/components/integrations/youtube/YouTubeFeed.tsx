@@ -151,7 +151,15 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
           <div
             className={classnames('border', 'border-theme-border-alt', 'aspect-w-16', 'aspect-h-9')}
           >
-            <Image src={snippet.thumbnails.medium.url} layout="fill" alt="" />
+            <Image
+              src={snippet.thumbnails.medium.url}
+              priority={true}
+              fill
+              sizes="(max-width: 768px) 100vw,
+                      (max-width: 1200px) 50vw,
+                      33vw"
+              alt=""
+            />
           </div>
         </a>
       </div>

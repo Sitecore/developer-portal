@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import TextLink from '../common/TextLink';
 
 interface NewsletterStoryPartialData {

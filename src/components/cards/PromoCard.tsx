@@ -28,9 +28,11 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
       src={img.src}
       alt={img.alt || ''}
       className={classnames('relative', 'z-10')}
-      layout="fill"
-      objectFit="cover"
       priority={true}
+      fill
+      sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
     />
   </div>
 );
@@ -90,6 +92,8 @@ export const Promo = ({
       href: linkHref,
       text: linkText,
     },
+    className: className,
+    isImageLeft: isImageLeft,
   };
 
   return <PromoCard {...data} />;

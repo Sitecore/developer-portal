@@ -2,8 +2,7 @@
 import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import { SearchBox, UrlManager } from '@coveo/headless';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { useId } from 'react-id-generator';
+import { useEffect, useId, useState } from 'react';
 // Lib
 import { searchBox, urlManager } from '@/src/common/search/coveo-engine';
 
@@ -18,7 +17,7 @@ const SearchInput = ({ className }: SearchInputProps) => {
    *  React hook for unique IDs using react-unique-id.
    *  Avoid generating new ID on every rerender.
    */
-  const [idSeed] = useId(1, 'scdp-search');
+  const [idSeed] = useId();
   const searchId = idSeed;
   const inputId = `${idSeed}--search-input`;
 

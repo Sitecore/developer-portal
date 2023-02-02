@@ -30,8 +30,26 @@ const CTACard = ({
       {title}
     </DynamicTag>
     <p className={classnames('text-theme-text', 'mb-6')}>{description}</p>
-    <Link href={href}>
-      <a
+    <Link
+      href={href}
+      className={classnames(
+        'bg-violet',
+        'focus:bg-violet-dark',
+        'font-semibold',
+        'hover:bg-violet-dark',
+        'inline-block',
+        'px-12',
+        'py-4',
+        'text-sm',
+        'text-white',
+        'rounded-full'
+      )}
+    >
+      {linkText}
+    </Link>
+    {link2href && link2Text && (
+      <Link
+        href={link2href}
         className={classnames(
           'bg-violet',
           'focus:bg-violet-dark',
@@ -42,31 +60,11 @@ const CTACard = ({
           'py-4',
           'text-sm',
           'text-white',
-          'rounded-full'
+          'rounded-full',
+          'ml-4'
         )}
       >
-        {linkText}
-      </a>
-    </Link>
-    {link2href && link2Text && (
-      <Link href={link2href}>
-        <a
-          className={classnames(
-            'bg-violet',
-            'focus:bg-violet-dark',
-            'font-semibold',
-            'hover:bg-violet-dark',
-            'inline-block',
-            'px-12',
-            'py-4',
-            'text-sm',
-            'text-white',
-            'rounded-full',
-            'ml-4'
-          )}
-        >
-          {link2Text}
-        </a>
+        {link2Text}
       </Link>
     )}
   </div>

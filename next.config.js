@@ -71,6 +71,7 @@ const nextConfig = {
       'sitecorecontenthub.stylelabs.cloud',
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    minimumCacheTTL: 60,
   },
   async headers() {
     return [

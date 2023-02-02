@@ -27,10 +27,11 @@ const MultiPageNav = ({ context, navData }: MultiPageNavProps): JSX.Element => {
                   const isActive = context.child === child.slug;
                   return (
                     <li key={child.title} className={classnames('mb-4')}>
-                      <Link href={buildSlug(parent.slug, child.slug)}>
-                        <a className={classnames({ 'text-teal': isActive, 'font-bold': isActive })}>
-                          {child.title}
-                        </a>
+                      <Link
+                        href={buildSlug(parent.slug, child.slug)}
+                        className={classnames({ 'text-teal': isActive, 'font-bold': isActive })}
+                      >
+                        {child.title}
                       </Link>
                     </li>
                   );

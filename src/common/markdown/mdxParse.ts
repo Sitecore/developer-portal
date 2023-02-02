@@ -29,6 +29,7 @@ export async function ParseContent(stream: string) {
           {
             properties: {
               className: ['anchor'],
+              title: 'Quick link to category',
             },
             behavior: `append`,
             content: s(
