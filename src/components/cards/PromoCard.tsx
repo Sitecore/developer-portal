@@ -1,6 +1,6 @@
 // Global
 import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 // Components
 import TextLink from '@/src/components/common/TextLink';
 
@@ -28,9 +28,11 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
       src={img.src}
       alt={img.alt || ''}
       className={classnames('relative', 'z-10')}
-      layout="fill"
-      objectFit="cover"
       priority={true}
+      fill
+      sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
     />
   </div>
 );

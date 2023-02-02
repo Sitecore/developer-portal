@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 // Interfaces
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
@@ -72,8 +72,10 @@ const Hero = ({
                 src={image}
                 alt=""
                 className={classnames('relative', 'z-10')}
-                layout="fill"
-                objectFit="fill"
+                fill
+                sizes="(max-width: 768px) 100vw,
+                        (max-width: 1200px) 50vw,
+                        33vw"
                 priority={true}
               />
             </div>
