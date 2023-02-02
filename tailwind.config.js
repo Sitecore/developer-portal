@@ -8,6 +8,7 @@
  */
 
 const defaultTheme = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: {
@@ -67,8 +68,8 @@ module.exports = {
       currentColor: 'currentColor',
     },
     fontFamily: {
-      sans: ['AvenirNextR', 'Arial', 'Sans-Serif'],
-      ltpro: ['AvenirNextLTPro', 'AvenirNextR', 'Arial', 'Sans-Serif'],
+      sans: ['var(--font-avenirnext-r)', ...fontFamily.sans],
+      ltpro: ['var(--font-avenirnext-ltpro)', ...fontFamily.serif],
     },
     fontSize: {
       // 12px

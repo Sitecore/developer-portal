@@ -50,42 +50,6 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
       <Head>
         <title>{pageTitle}</title>
         <link rel="icon" href={`${publicUrl}/favicon.png`} />
-        {/* Preload our two most heavily used webfonts, reduce chance of FOUT */}
-        <link
-          rel="preload"
-          href={`/fonts/AvenirNextW05-Regular.woff2`}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href={`/fonts/AvenirNextW05-Bold.woff2`}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href={`/fonts/AvenirNextW05-Medium.woff2`}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href={`/fonts/AvenirNextW05-Thin.woff2`}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href={`/fonts/AvenirNextW05-Demi.woff2`}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
         {/*
           Necessary Meta tags, including Social tags.
           It's OK if they're empty, same as not printing them.
