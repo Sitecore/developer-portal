@@ -191,7 +191,7 @@ const Nav = (): JSX.Element => {
                 className={`${hamburgerBarClasses} hamburger-bar-outside ${isOpen ? 'hidden' : ''}`}
               ></span>
             </button>
-            <QuickStartMenu className="sm:hidden w-7 h-7 lg:h-5 lg:w-5 lg:block" />
+            <QuickStartMenu className="hidden w-7 h-7 lg:h-5 lg:w-5 lg:block" />
           </div>
         </div>
         <div>
