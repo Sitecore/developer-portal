@@ -1,0 +1,32 @@
+@layer components {
+  .btn-primary {
+    @apply inline-block px-12 py-4 text-sm font-semibold text-white rounded-full bg-violet focus:bg-violet-dark hover:bg-violet-dark;
+  }
+  .btn-secondary {
+    @apply flex items-center px-2 py-1 mt-4 mr-0 text-xs rounded-full text-charcoal dark:text-teal hover:bg-violet dark:hover:bg-teal hover:text-white;
+  }
+  .play-button-outside {
+    @apply inline-block w-5 h-5 ml-1 transition-transform duration-300 transform-gpu group-focus:translate-x-1 group-hover:translate-x-1;
+  }
+  .play-button-arrow {
+    @apply relative text-white dark:text-white top-1;
+  }
+  .btn-paging-previous {
+    @apply px-3 py-2 border-r border-white text-violet dark:text-teal rounded-l-md dark:border-theme-bg hover:bg-violet-dark hover:text-white;
+  }
+  .btn-paging-next {
+    @apply px-3 py-2 border-l border-white dark:text-teal text-violet rounded-r-md dark:border-theme-bg hover:bg-violet-dark hover:text-white;
+  }
+  .btn-text-link {
+    @apply inline-flex items-center text-sm font-bold hover:underline focus:underline;
+  }
+  .btn-nav-back {
+    @apply relative w-full pl-10 pr-4 font-semibold text-left text-white transition-colors h-14 bg-violet lg:hidden transform-gpu hover:bg-violet-dark;
+  }
+  .btn-nav-back-icon-outer {
+    @apply absolute block pointer-events-none top-5 left-4 h-em w-em;
+  }
+  .btn-nav-back-icon {
+    @apply transition-transform h-inherit w-inherit top-5 transform-gpu group-hover:-translate-x-1;
+  }
+}

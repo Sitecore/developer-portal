@@ -1,8 +1,7 @@
 // Global
 import Link from 'next/link';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Interfaces
-import type { TrialNavData, TrialNavContext } from '@/src/interfaces/page-info';
+import type { TrialNavContext, TrialNavData } from '@/src/interfaces/page-info';
 // Components
 import Collapse from '@/src/components/common/Collapse';
 
@@ -18,18 +17,18 @@ const MultiPageNav = ({ context, navData }: MultiPageNavProps): JSX.Element => {
 
   return (
     <nav>
-      <ul className={classnames('text-sm')}>
+      <ul className="text-sm">
         {navData.nav.map((parent) => (
-          <li key={parent.title} className={classnames('mb-4')}>
+          <li key={parent.title} className="mb-4">
             <Collapse title={parent.title} expandedByDefault={context.parent === parent.slug}>
-              <ul className={classnames('pl-4')}>
+              <ul className="pl-4">
                 {parent.children.map((child) => {
                   const isActive = context.child === child.slug;
                   return (
-                    <li key={child.title} className={classnames('mb-4')}>
+                    <li key={child.title} className="mb-4">
                       <Link
                         href={buildSlug(parent.slug, child.slug)}
-                        className={classnames({ 'text-teal': isActive, 'font-bold': isActive })}
+                        className={`${isActive ? 'text-teal font-bold' : ''}`}
                       >
                         {child.title}
                       </Link>

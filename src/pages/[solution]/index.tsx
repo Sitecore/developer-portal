@@ -1,5 +1,4 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Scripts
 import { getChildPageInfo, getPageInfo } from '@/src/common/page-info';
 import { getSolutionPaths } from '@/src/common/static-paths';
@@ -47,7 +46,7 @@ const SolutionPage = ({ pageInfo, products }: SolutionPageProps): JSX.Element =>
 
   return (
     <Layout pageInfo={pageInfo}>
-      <div className={classnames('py-16', 'bg-theme-bg-alt')}>
+      <div className="py-16 bg-theme-bg-alt">
         <Container>
           <CategoryTileList cards={categoryCards} />
         </Container>

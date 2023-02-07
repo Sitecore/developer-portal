@@ -1,7 +1,6 @@
 // Interfaces
 import type { SitecoreCommunityContent } from '@/src/interfaces/integrations';
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Lib
 import translateDate from '@/src/common/translate-date';
 // Local
@@ -13,70 +12,38 @@ type SitecoreCommunityBlogOrQuestionProps = {
   loading?: boolean;
 };
 
-const skeletonLoaderClasses = classnames(
-  'bg-theme-text-alt',
-  'animate-pulse',
-  'text-transparent',
-  'hover:text-transparent'
-);
+const skeletonLoaderClasses =
+  'bg-theme-text-alt animate-pulse text-transparent hover:text-transparent';
 
 const SitecoreCommunityBlogOrQuestion = ({
   item,
   contentType,
   loading,
 }: SitecoreCommunityBlogOrQuestionProps): JSX.Element => (
-  <li
-    className={classnames(
-      'border-theme-text-alt',
-      'border',
-      'items-center',
-      'p-6',
-      'relative',
-      'shadow-theme',
-      'hover:shadow-theme-md',
-      'md:flex'
-    )}
-  >
-    <div className={classnames('flex', 'flex-col', 'justify-between', 'flex-grow-0', 'w-full')}>
+  <li className="relative items-center p-6 border border-theme-text-alt shadow-theme hover:shadow-theme-md md:flex">
+    <div className="flex flex-col justify-between flex-grow-0 w-full">
       <div>
         <p
-          className={classnames('text-sm', 'font-semibold', 'mb-1', {
-            'w-12': loading,
-            [skeletonLoaderClasses]: loading,
-          })}
+          className={`text-sm font-semibold mb-1 ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}
         >
           {contentType}
         </p>
         <p>
           <a
-            className={classnames(
-              'block',
-              'text-lg',
-              'font-semibold',
-              'mb-1',
-              'hover:underline',
-              'hover:text-theme-link-hover',
-              {
-                'w-2/3': loading,
-                [skeletonLoaderClasses]: loading,
-              }
-            )}
+            className={`block text-lg font-semibold mb-1 hover:underline hover:text-theme-link-hover ${
+              loading ? 'w-2/3' && skeletonLoaderClasses : ''
+            } `}
             href={`${SITECORE_COMMUNITY_URL}${item.url}`}
             rel="noreferrer noopener"
             target="_blank"
           >
             {item.title}
-            <span className={classnames('absolute', 'inset-0', 'z-10')}></span>
+            <span className="absolute inset-0 z-10"></span>
           </a>
         </p>
       </div>
-      <p
-        className={classnames('text-xs', {
-          'w-1/3': loading,
-          [skeletonLoaderClasses]: loading,
-        })}
-      >
-        <span className={classnames('mr-6')}>
+      <p className={`text-xs ${loading ? 'w-1/3' && skeletonLoaderClasses : ''}`}>
+        <span className="mr-6">
           by <strong>{item.userName}</strong>
         </span>{' '}
         <span>
@@ -84,31 +51,11 @@ const SitecoreCommunityBlogOrQuestion = ({
         </span>
       </p>
     </div>
-    <div
-      className={classnames(
-        'flex-shrink-0',
-        'flex',
-        'mt-4',
-        'md:ml-4',
-        'md:block',
-        'md:mr-0',
-        'md:text-right'
-      )}
-    >
-      <p
-        className={classnames('text-xs', 'mb-2', 'mr-8', 'md:mr-0', {
-          [skeletonLoaderClasses]: loading,
-        })}
-      >
+    <div className="flex flex-shrink-0 mt-4 md:ml-4 md:block md:mr-0 md:text-right">
+      <p className={`text-xs mb-2 mr-8 md:mr-0 ${loading ? skeletonLoaderClasses : ''}`}>
         {item.commentCount} comments
       </p>
-      <p
-        className={classnames('text-xs', {
-          [skeletonLoaderClasses]: loading,
-        })}
-      >
-        {item.viewCount} views
-      </p>
+      <p className={`text-xs ${loading ? skeletonLoaderClasses : ''}`}>{item.viewCount} views</p>
     </div>
   </li>
 );

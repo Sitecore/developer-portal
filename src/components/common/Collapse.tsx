@@ -1,5 +1,4 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import { useId, useState } from 'react';
 import SvgIcon from './SvgIcon';
 
@@ -18,15 +17,16 @@ const Collapse = ({ title, expandedByDefault, children }: CollapseProps): JSX.El
       <button
         aria-controls={idSeed}
         onClick={() => setIsExpanded(!isExpanded)}
-        className={classnames('font-bold', 'flex', 'items-center', 'mb-4')}
+        className="flex items-center mb-4 font-bold"
       >
         {title}
         <SvgIcon
           icon="chevron-down"
-          className={classnames('h-4', 'w-4', 'ml-2', 'transform', { 'rotate-180': isExpanded })}
+          aria-expanded={isExpanded}
+          className={`w-4 h-4 ml-2 transform ${isExpanded ? 'rotate-180' : ''}`}
         />
       </button>
-      <div id={idSeed} aria-expanded={isExpanded} className={classnames({ hidden: !isExpanded })}>
+      <div id={idSeed} aria-expanded={isExpanded} className="hidden aria-expanded:block">
         {children}
       </div>
     </div>

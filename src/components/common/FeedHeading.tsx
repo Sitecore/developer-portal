@@ -1,10 +1,9 @@
 // Interfaces
 import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Components
-import TextLink from './TextLink';
 import DynamicTag from './DynamicTag';
+import TextLink from './TextLink';
 
 export type FeedHeadingProps = {
   title: string;
@@ -16,8 +15,8 @@ export type FeedHeadingProps = {
 };
 
 const FeedHeading = ({ title, headingTag = 'h2', link }: FeedHeadingProps): JSX.Element => (
-  <div className={classnames('md:flex', 'justify-between', 'mb-8')}>
-    <DynamicTag tag={headingTag} className={classnames('heading-md', 'mb-2', 'md:mb-0')}>
+  <div className="justify-between mb-8 md:flex">
+    <DynamicTag tag={headingTag} className="mb-2 heading-md md:mb-0">
       {title}
     </DynamicTag>
     <TextLink href={link.href} text={link.title} target="_blank" />

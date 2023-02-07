@@ -1,5 +1,4 @@
 // Global
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import Link from 'next/link';
 // Components
 import SvgIcon from '@/src/components/common/SvgIcon';
@@ -7,7 +6,7 @@ import SvgIcon from '@/src/components/common/SvgIcon';
 type ButtonLinkProps = {
   text: string;
   href: string;
-  className?: TTailwindString;
+  className?: string;
   target?: '_blank' | undefined;
 };
 
@@ -17,39 +16,12 @@ const ButtonLink = ({ text, href, target, className }: ButtonLinkProps): JSX.Ele
       href={href}
       target={target}
       rel="noreferrer noopener"
-      className={classnames(
-        'bg-violet',
-        'focus:bg-violet-dark',
-        'font-semibold',
-        'hover:bg-violet-dark',
-        'inline-block',
-        'px-12',
-        'py-4',
-        'text-sm',
-        'text-white',
-        'rounded-full',
-        className
-      )}
+      className={`btn-primary ${className ? className : ''}`}
     >
       {text}
-      {target === '_blank' && <span className={classnames('sr-only')}>Opens in a new tab</span>}
-      <span
-        className={classnames(
-          'duration-300',
-          'h-5',
-          'inline-block',
-          'ml-1',
-          'transform-gpu',
-          'transition-transform',
-          'w-5',
-          'group-focus:translate-x-1',
-          'group-hover:translate-x-1'
-        )}
-      >
-        <SvgIcon
-          icon="arrow-right"
-          className={classnames('text-white', 'dark:text-white', 'relative', 'top-1')}
-        />
+      {target === '_blank' && <span className="sr-only">Opens in a new tab</span>}
+      <span className="play-button-outside">
+        <SvgIcon icon="arrow-right" className="play-button-arrow" />
       </span>
     </Link>
   );

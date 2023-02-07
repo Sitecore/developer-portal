@@ -1,5 +1,4 @@
 // Global
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 // Interfaces
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 import type { YouTubeSnippet, YouTubeVideo } from '@/src/interfaces/integrations';
@@ -8,7 +7,7 @@ import FeedHeading from '@/src/components/common/FeedHeading';
 import Image from 'next/image';
 
 type YouTubeFeedProps = {
-  className?: TTailwindString;
+  className?: string;
   content: YouTubeVideo[];
   headingLevel?: ValidHeadingLevels;
   // The playlistTitle is only used if the author has not already supplied a youtubeTitle meta tag
@@ -42,7 +41,7 @@ const YouTubeFeed = ({
         }}
         headingTag={headingLevel || 'h2'}
       />
-      <ul className={classnames('grid', 'md:grid-cols-3', 'gap-8')}>
+      <ul className="grid gap-8 md:grid-cols-3">
         {content.map(({ snippet, id }) => (
           <YouTubeItem snippet={snippet} id={id} key={id} />
         ))}
@@ -54,24 +53,16 @@ const YouTubeFeed = ({
 const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
   return (
     <li key={id}>
-      <div className={classnames('aspect-w-16', 'aspect-h-9', 'mb-4')}>
+      <div className="relative mb-4 aspect-video">
         <a
           href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`}
           target="_blank"
           rel="noopener noreferrer"
-          className={classnames('text-white', 'hover:text-violet', 'focus:text-violet')}
+          className="text-white hover:text-violet focus:text-violet"
         >
-          <span className={classnames('sr-only')}>Opens in a new tab</span>
+          <span className="sr-only">Opens in a new tab</span>
           <svg
-            className={classnames(
-              'absolute',
-              'top-1/2',
-              'left-1/2',
-              'transform-gpu',
-              '-translate-y-2/4',
-              '-translate-x-2/4',
-              'z-10'
-            )}
+            className="absolute z-10 top-1/2 left-1/2 transform-gpu -translate-y-2/4 -translate-x-2/4"
             width="58"
             height="59"
             xmlns="http://www.w3.org/2000/svg"
@@ -148,9 +139,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
               </g>
             </g>
           </svg>
-          <div
-            className={classnames('border', 'border-theme-border-alt', 'aspect-w-16', 'aspect-h-9')}
-          >
+          <div className="border border-theme-border-alt aspect-video">
             <Image
               src={snippet.thumbnails.medium.url}
               priority={true}
@@ -163,7 +152,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
           </div>
         </a>
       </div>
-      <p className={classnames('text-sm', 'font-semibold')}>{snippet.title}</p>
+      <p className="text-sm font-semibold">{snippet.title}</p>
     </li>
   );
 };

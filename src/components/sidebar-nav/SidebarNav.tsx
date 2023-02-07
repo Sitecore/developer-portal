@@ -1,5 +1,4 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import Link from 'next/link';
 // Lib
 import { useGlobalState } from '@/src/common/global-state';
@@ -19,38 +18,24 @@ export type InPageNavTWClasses =
 const SidebarNav = ({ links, title }: SidebarNavProps) => {
   const [navScrolled] = useGlobalState('navScrolled');
 
-  const positionalClasses = navScrolled ? classnames('md:top-24') : classnames('md:top-36');
+  const positionalClasses = navScrolled ? 'md:top-24' : 'md:top-36';
 
   return (
     <nav
-      className={classnames(
-        'mb-8',
-        'md:mr-16',
-        'md:sticky',
-        'self-start',
-        'transform-gpu',
-        'transition-all',
-        positionalClasses
-      )}
+      className={`mb-8 md:mr-16 md:sticky self-start transform-gpu transition-all ${positionalClasses} `}
     >
-      {title && <p className={classnames('font-bold', 'text-sm', 'mb-4', 'md:hidden')}>{title}</p>}
-      <ul className={classnames('side-bar-nav', 'relative', 'pl-1.5')}>
+      {title && <p className="mb-4 text-sm font-bold md:hidden">{title}</p>}
+      <ul className="side-bar-nav relative pl-1.5">
         {links.map((link, i) => {
-          const activeClasses = classnames('font-bold');
+          const activeClasses = 'font-bold';
 
           return (
-            <li className={classnames('side-bar-nav-item', 'pb-4', 'relative', 'pl-4')} key={i}>
+            <li className="relative pb-4 pl-4 side-bar-nav-item" key={i}>
               <Link
                 href={link.href}
-                className={classnames(
-                  'text-violet',
-                  'dark:text-teal',
-                  'text-sm',
-                  'inline-block',
-                  'hover:underline',
-                  'focus:underline',
-                  { [activeClasses]: link.active }
-                )}
+                className={`text-violet dark:text-teal text-sm inline-block hover:underline focus:underline ${
+                  link.active ? activeClasses : ''
+                }`}
               >
                 {link.text}
               </Link>

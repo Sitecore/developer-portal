@@ -16,21 +16,19 @@
     --theme-link-hover: theme('colors.violet.dark');
   }
 
-  @variants dark {
-    .theme-dark {
-      --theme-bg-alt: theme('colors.gray.darkest');
-      --theme-bg: theme('colors.charcoal.dark');
-      --theme-outline: theme('colors.white');
-      --theme-text-alt: theme('colors.gray.lightest');
-      --theme-text: theme('colors.white');
-      --theme-border: theme('colors.gray.dark');
-      /* Only used in this one instance, will leave this as hex for now. */
-      --theme-border-alt: #505050;
-      --theme-shadow: theme('boxShadow.dark');
-      --theme-shadow-md: theme('boxShadow.md-dark');
-      --theme-shadow-lg: theme('boxShadow.lg-dark');
-      --theme-link-hover: theme('colors.teal.DEFAULT');
-    }
+  .theme-dark {
+    --theme-bg-alt: theme('colors.gray.darkest');
+    --theme-bg: theme('colors.charcoal.dark');
+    --theme-outline: theme('colors.white');
+    --theme-text-alt: theme('colors.gray.lightest');
+    --theme-text: theme('colors.white');
+    --theme-border: theme('colors.gray.dark');
+    /* Only used in this one instance, will leave this as hex for now. */
+    --theme-border-alt: #505050;
+    --theme-shadow: theme('boxShadow.dark');
+    --theme-shadow-md: theme('boxShadow.md-dark');
+    --theme-shadow-lg: theme('boxShadow.lg-dark');
+    --theme-link-hover: theme('colors.teal.DEFAULT');
   }
 
   /**

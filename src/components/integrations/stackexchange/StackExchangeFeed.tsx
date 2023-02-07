@@ -1,5 +1,4 @@
 // Global
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 // Interfaces
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 import type { StackExchangeQuestion } from '@/src/interfaces/integrations';
@@ -8,7 +7,7 @@ import FeedHeading from '@/src/components/common/FeedHeading';
 
 type StackExchangeFeedProps = {
   content: StackExchangeQuestion[];
-  className?: TTailwindString;
+  className?: string;
   headingLevel?: ValidHeadingLevels;
 };
 
@@ -27,64 +26,35 @@ const StackExchangeFeed = ({ content, className }: StackExchangeFeedProps): JSX.
           title: 'See all questions on StackExchange',
         }}
       />
-      <ul className={classnames('grid', 'md:grid-cols-2', 'gap-10')}>
+      <ul className="grid gap-10 md:grid-cols-2">
         {content.map((question) => (
           <li key={question.question_id}>
-            <div className={classnames('flex', 'items-start')}>
-              <div
-                className={classnames(
-                  'text-center',
-                  'bg-theme-bg-alt',
-                  'text-theme-text',
-                  'p-2',
-                  'leading-tight',
-                  'mr-4',
-                  'border',
-                  'border-theme-border-alt'
-                )}
-              >
-                <span className={classnames('block', 'text-base')}>{question.view_count}</span>
-                <span className={classnames('block', 'text-2xs')}>Views</span>
+            <div className="flex items-start">
+              <div className="p-2 mr-4 leading-tight text-center border bg-theme-bg-alt text-theme-text border-theme-border-alt">
+                <span className="block text-base">{question.view_count}</span>
+                <span className="block text-2xs">Views</span>
               </div>
               <div>
                 <a
                   href={question.link}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className={classnames('font-semibold', 'hover:underline', 'inline-block')}
+                  className="inline-block font-semibold hover:underline"
                 >
                   <span dangerouslySetInnerHTML={{ __html: question.title }} />
                   <span className="sr-only">Opens in a new tab</span>
                 </a>
                 {question.tags.length && (
-                  <div className={classnames('mt-2')}>
+                  <div className="mt-2">
                     <p className="sr-only">Tags:</p>
-                    <ul className={classnames('flex', 'flex-wrap')}>
+                    <ul className="flex flex-wrap">
                       {question.tags.map((tag) => (
                         <li key={`${question.question_id}-${tag}}`}>
                           <a
                             href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={classnames(
-                              'border-violet-dark',
-                              'text-white',
-                              'bg-violet-dark',
-                              'text-xs',
-                              'p-1',
-                              'mr-2',
-                              'mb-2',
-                              'inline-block',
-                              'border',
-                              'hover:bg-white',
-                              'hover:border-violet-dark',
-                              'hover:text-violet',
-                              'focus:bg-violet',
-                              'focus:text-white',
-                              'dark:bg-violet-dark',
-                              'dark:text-white',
-                              '2xl:transition-colors'
-                            )}
+                            className="inline-block p-1 mb-2 mr-2 text-xs text-white border border-violet-dark bg-violet-dark hover:bg-white hover:border-violet-dark hover:text-violet focus:bg-violet focus:text-white dark:bg-violet-dark dark:text-white 2xl:transition-color"
                           >
                             {tag}
                             <span className="sr-only">Opens in a new tab</span>
@@ -101,6 +71,10 @@ const StackExchangeFeed = ({ content, className }: StackExchangeFeedProps): JSX.
       </ul>
     </div>
   );
+};
+
+StackExchangeFeed.defaultProps = {
+  className: '',
 };
 
 export default StackExchangeFeed;

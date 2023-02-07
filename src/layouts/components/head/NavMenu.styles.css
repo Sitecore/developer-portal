@@ -1,0 +1,17 @@
+@layer components {
+  .main-nav-item {
+    @apply relative flex items-center w-full pr-8 font-semibold text-left transition-colors nav-item--button h-14 whitespace-nowrap transform-gpu hover:text-violet dark:hover:text-teal lg:h-16 lg:pr-0;
+  }
+  .button-active {
+    @apply text-violet dark:text-teal nav-item--button-active dark:hover:text-teal;
+  }
+  .nav-item-overlay {
+    @apply fixed inset-x-0 bottom-0 z-50 overflow-y-auto transition-transform border-b top-32 bg-theme-bg border-theme-bg-alt transform-gpu lg:top-16 lg:absolute lg:bottom-auto lg:shadow-lg lg:transform-none lg:transition-none;
+  }
+  .nav-item-overlay-inactive {
+    @apply translate-x-full lg:hidden;
+  }
+  .nav-item-overlay-active {
+    @apply translate-x-0;
+  }
+}

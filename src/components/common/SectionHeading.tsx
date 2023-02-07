@@ -1,5 +1,4 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Interfaces
 import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
@@ -26,10 +25,7 @@ const SectionHeading = ({
   return (
     <>
       <DynamicTag
-        className={classnames('heading-md', {
-          'mb-2': !!description,
-          'mb-6': !description,
-        })}
+        className={`heading-md ${description ? `mb-2` : `mb-6`}`}
         tag={headingLevel}
         id={anchorLink}
       >
@@ -40,7 +36,7 @@ const SectionHeading = ({
           </svg>
         </a>
       </DynamicTag>
-      {description && <p className={classnames('max-w-prose', 'mb-6')}>{description}</p>}
+      {description && <p className="mb-6 max-w-prose">{description}</p>}
     </>
   );
 };

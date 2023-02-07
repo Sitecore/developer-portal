@@ -2,14 +2,13 @@
 import type { SitecoreCommunityContent } from '@/src/interfaces/integrations';
 // Global
 import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
+import { useEffect, useState } from 'react';
 // Components
 import TextLink from '@/src/components/common/TextLink';
 // Local
-import SitecoreCommunityBlogOrQuestion from '../SitecoreCommunityBlogOrQuestion';
-import { ForumOption, SortOption } from '../SitecoreCommunity.api';
 import { FORUM_TO_TITLE } from '../sitecore-community.constants';
+import { ForumOption, SortOption } from '../SitecoreCommunity.api';
+import SitecoreCommunityBlogOrQuestion from '../SitecoreCommunityBlogOrQuestion';
 
 type SitecoreCommunityQuestionsProps = {
   content?: SitecoreCommunityContent[];
@@ -55,34 +54,23 @@ const SitecoreCommunityQuestions = ({
 
   return (
     <>
-      <div className={classnames('md:flex', 'justify-between', 'mb-4')}>
-        <h2 className={classnames('heading-md', 'mb-2', 'md:mb-0')}>
-          Questions from the community
-        </h2>
+      <div className="justify-between mb-4 md:flex">
+        <h2 className="mb-2 heading-md md:mb-0">Questions from the community</h2>
         <TextLink
           href="https://community.sitecore.com/community?id=community_forum&sys_id=671511531b357810486a4083b24bcb62"
           text="See all"
           target="_blank"
         />
       </div>
-      <div className={classnames('flex', 'justify-end', 'mb-6')}>
+      <div className="flex justify-end mb-6">
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
           <label
-            className={classnames('text-xs', 'font-semibold', 'flex', 'items-center', {
-              'mr-10': hasForumKeys,
-            })}
+            className={`text-xs font-semibold flex items-center ${hasForumKeys ? 'mr-10' : ''}`}
           >
             Order by:
             <select
               onChange={(changeEvent) => setSort(changeEvent.target.value)}
-              className={classnames(
-                'bg-theme-bg',
-                'border-2',
-                'font-semibold',
-                'ml-2',
-                'p-2',
-                'text-theme-text'
-              )}
+              className="p-2 ml-2 font-semibold border-2 bg-theme-bg text-theme-text"
             >
               <option value="publish">Recent Questions</option>
               <option value="view">Most Popular</option>
@@ -92,18 +80,11 @@ const SitecoreCommunityQuestions = ({
         )}
 
         {forumKeys && Array.isArray(forumKeys) && forumKeys.length > 1 && (
-          <label className={classnames('text-xs', 'font-semibold', 'flex', 'items-center')}>
+          <label className="flex items-center text-xs font-semibold">
             Filter by:
             <select
               onChange={(changeEvent) => setForum(changeEvent.target.value)}
-              className={classnames(
-                'bg-theme-bg',
-                'border-2',
-                'font-semibold',
-                'ml-2',
-                'p-2',
-                'text-theme-text'
-              )}
+              className="p-2 ml-2 font-semibold border-2 bg-theme-bg text-theme-text"
             >
               {forumKeys.map((key) => (
                 <option key={key} value={key}>
@@ -114,7 +95,7 @@ const SitecoreCommunityQuestions = ({
           </label>
         )}
       </div>
-      <ul className={classnames('grid', 'gap-y-6')}>
+      <ul className="grid gap-y-6">
         {items.map((item, i) => (
           <SitecoreCommunityBlogOrQuestion
             item={item}

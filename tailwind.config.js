@@ -1,23 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-/**
- * Any modifications to this file will require a regeneration of types
- * for use with 'tailwind-classnames'
- *
- * npm run generate-css-types
- *
- */
 
 const defaultTheme = require('tailwindcss/defaultTheme');
 const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: {
-    content: [
-      './src/components/**/*.{js,ts,jsx,tsx}',
-      './src/layouts/**/*.{js,ts,jsx,tsx}',
-      './src/pages/**/*.{js,ts,jsx,tsx}',
-    ],
-  },
+  content: [
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/layouts/**/*.{js,ts,jsx,tsx}',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+  ],
+
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     backgroundSize: {
@@ -140,7 +132,7 @@ module.exports = {
             ['ol > li:before']: {
               color: 'var(--theme-text)',
             },
-            color: theme('colors.theme-text'),
+            //color: theme('colors.theme-text'),
             p: {
               fontSize: '0.95rem', // key can be in camelCase...
             },
@@ -170,7 +162,7 @@ module.exports = {
               color: 'inherit',
             },
             code: {
-              color: theme('colors.theme-text'),
+              //color: theme('colors.theme-text'),
               backgroundColor: 'rgba(128, 128, 128, 0.15)',
               padding: '0.125em',
               fontWeight: 400,
@@ -210,5 +202,5 @@ module.exports = {
       visibility: ['dark'],
     },
   },
-  plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography')],
 };

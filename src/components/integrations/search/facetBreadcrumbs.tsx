@@ -1,5 +1,4 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 // Lib
@@ -41,31 +40,12 @@ const FacetBreadcrumbs = () => {
         {breadcrumb.values.map((value) => (
           <span
             key={breadcrumb.field + value.value.value}
-            className={classnames(
-              'inline-flex',
-              'items-center',
-              'm-2',
-              'px-3',
-              'py-1',
-              'bg-violet',
-              'hover:bg-teal',
-              'rounded-full',
-              'text-xs',
-              'font-semibold',
-              'text-white'
-            )}
+            className="inline-flex items-center px-3 py-1 m-2 text-xs font-semibold text-white rounded-full bg-violet hover:bg-teal"
           >
             <button onClick={() => value.deselect()} style={hoveredStyle}>
               {value.value.value}
               <svg
-                className={classnames(
-                  'ml-1',
-                  'h-3',
-                  'w-3',
-                  'align-middle',
-                  'inline-block',
-                  'text-white'
-                )}
+                className="inline-block w-3 h-3 ml-1 text-white align-middle"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -88,7 +68,7 @@ const FacetBreadcrumbs = () => {
       {getFacetBreadcrumbs()}
 
       {breadcrumbManager.state.hasBreadcrumbs && (
-        <button onClick={breadcrumbManager.deselectAll} className={classnames('text-xs')}>
+        <button onClick={breadcrumbManager.deselectAll} className="text-xs">
           Clear All
         </button>
       )}

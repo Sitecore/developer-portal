@@ -1,5 +1,4 @@
 // Global
-import { classnames, TArg } from '@/src/common/types/tailwindcss-classnames';
 import { MDXRemote } from 'next-mdx-remote';
 import { useEffect, useState } from 'react';
 import SyntaxHighlight from 'react-syntax-highlighter';
@@ -24,7 +23,7 @@ type DecoratedMarkdownProps = {
 
 type EditButtonProps = {
   editUrl: string;
-  classes?: TArg;
+  classes?: string;
 };
 
 const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element => {
@@ -47,7 +46,7 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
           const lang = match ? match[1] : '';
           const style = isDark ? a11yDark : a11yLight;
           return match ? (
-            <div className={classnames('not-prose')}>
+            <div className="not-prose">
               <SyntaxHighlight style={style} language={lang} PreTag="div">
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlight>
@@ -67,25 +66,8 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
 
 function EditButton({ editUrl, classes }: EditButtonProps) {
   return (
-    <button
-      className={classnames(
-        'text-charcoal',
-        'dark:text-teal',
-        'hover:bg-violet',
-        'dark:hover:bg-teal',
-        'hover:text-white',
-        'text-xs',
-        'mt-4',
-        'rounded-sm',
-        'py-1',
-        'px-2',
-        'mr-0',
-        'flex',
-        'items-center',
-        classes
-      )}
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-current" viewBox="0 0 20 20">
+    <button className={`btn-secondary ${classes ? classes : ''}`}>
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-current" viewBox="0 0 20 20">
         <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
         <path
           fillRule="evenodd"
@@ -103,26 +85,14 @@ function EditButton({ editUrl, classes }: EditButtonProps) {
 const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): JSX.Element => {
   if (hasGrid) {
     return (
-      <div className={classnames('grid', 'gap-6', 'md:grid-cols-2')}>
+      <div className="grid gap-6 md:grid-cols-2">
         {partials.content.map((item, i) => (
           <div
-            className={classnames(
-              'prose',
-              'max-w-4xl',
-              'p-8',
-              'border',
-              'border-theme-border',
-              'bg-theme-bg',
-              'text-theme-text',
-              'relative'
-            )}
+            className="relative max-w-4xl p-8 prose border border-theme-border bg-theme-bg text-theme-text"
             key={i}
           >
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
-            <EditButton
-              editUrl={partials.fileNames[i]}
-              classes={classnames('absolute', 'right-2', 'bottom-2')}
-            />
+            <EditButton editUrl={partials.fileNames[i]} classes="absolute right-2 bottom-2" />
           </div>
         ))}
       </div>
@@ -133,7 +103,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
     <VerticalGroup>
       {partials.content.map((item, i) => (
         <div key={i}>
-          <div className={classnames('prose', 'max-w-4xl')}>
+          <div className="max-w-4xl prose">
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
           </div>
           <EditButton editUrl={partials.fileNames[i]} />

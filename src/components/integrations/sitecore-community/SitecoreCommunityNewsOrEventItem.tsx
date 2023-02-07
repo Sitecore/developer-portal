@@ -1,5 +1,4 @@
 import translateDate from '@/src/common/translate-date';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import ConditionalWrapper from '@/src/components/common/ConditionalWrapper';
 // Local
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
@@ -24,12 +23,12 @@ const DateOutput = ({ startDate, endDate }: DateOutputProps): JSX.Element => {
   const startDateString = translateDate(startDate);
   const endDateString = endDate ? translateDate(endDate) : '';
   if (!endDateString || startDateString === endDateString) {
-    return <p className={classnames('text-xs')}>{startDateString}</p>;
+    return <p className="text-xs">{startDateString}</p>;
   }
 
   return (
-    <p className={classnames('text-xs')}>
-      {startDateString} <span className={classnames('sr-only')}>to</span>
+    <p className="text-xs">
+      {startDateString} <span className="sr-only">to</span>
       <span aria-hidden="true">-</span> {endDateString}
     </p>
   );
@@ -47,49 +46,31 @@ const SitecoreCommunityNewsOrEventItem = ({
   virtualUrl,
 }: SitecoreCommunityNewsOrEventItemProps): JSX.Element => {
   return (
-    <li
-      className={classnames(
-        'border-theme-text-alt',
-        'border',
-        'flex-col',
-        'flex',
-        'justify-between',
-        'p-6',
-        'relative',
-        'hover:shadow-theme-md'
-      )}
-    >
+    <li className="relative flex flex-col justify-between p-6 border border-theme-text-alt hover:shadow-theme-md">
       <div>
-        <p className={classnames('text-sm', 'font-semibold', 'mb-1')}>{categoryTitle}</p>
+        <p className="mb-1 text-sm font-semibold">{categoryTitle}</p>
         <p>
           <a
-            className={classnames(
-              'block',
-              'text-lg',
-              'font-semibold',
-              'mb-1',
-              'hover:underline',
-              'hover:text-theme-link-hover'
-            )}
+            className="block mb-1 text-lg font-semibold hover:underline hover:text-theme-link-hover"
             href={`${SITECORE_COMMUNITY_URL}${url}`}
             rel="noreferrer noopener"
             target="_blank"
           >
             {title}
-            <span className={classnames('absolute', 'inset-0', 'z-10')}></span>
+            <span className="absolute inset-0 z-10"></span>
           </a>
         </p>
       </div>
       <div>
         <DateOutput startDate={startDate} endDate={endDate} />
         {!!location && (
-          <p className={classnames('text-xs', 'mt-1')}>
+          <p className="mt-1 text-xs">
             Location:{' '}
             <ConditionalWrapper
               condition={!!virtualUrl}
               wrapper={(children) => (
                 <a
-                  className={classnames('relative', 'z-20', 'hover:underline')}
+                  className="relative z-20 hover:underline"
                   href={virtualUrl}
                   rel="noreferrer noopener"
                   target="_blank"
@@ -98,13 +79,13 @@ const SitecoreCommunityNewsOrEventItem = ({
                 </a>
               )}
             >
-              <strong className={classnames('font-semibold')}>{location}</strong>
+              <strong className="font-semibold">{location}</strong>
             </ConditionalWrapper>
           </p>
         )}
         {!!commentCount && !!viewCount && (
-          <p className={classnames('text-xs', 'mt-2')}>
-            <span className={classnames('mr-6')}>{commentCount} comments</span> {viewCount} views
+          <p className="mt-2 text-xs">
+            <span className="mr-6">{commentCount} comments</span> {viewCount} views
           </p>
         )}
       </div>
