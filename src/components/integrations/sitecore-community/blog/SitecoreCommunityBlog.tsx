@@ -59,7 +59,7 @@ const SitecoreCommunityBlog = ({ content, sortKeys }: SitecoreCommunityBlogProps
           </label>
         )}
       </div>
-      <ul className="grid -y-6">
+      <ul className="grid gap-y-6">
         {content.map((item, i) => (
           <SitecoreCommunityBlogOrQuestion
             item={item}
