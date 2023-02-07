@@ -31,6 +31,7 @@ export async function getStaticProps() {
     'docs/commerce/sitecore-experience-commerce',
     'docs/commerce/discover',
   ]);
+  const integrations = await getPartialsAsArray(['docs/integrations/connect']);
 
   const partialGroups = [
     {
@@ -48,6 +49,10 @@ export async function getStaticProps() {
     {
       title: 'Marketing Automation',
       partials: marketingAutomation,
+    },
+    {
+      title: 'Integrations',
+      partials: integrations,
     },
     {
       title: 'Commerce',
