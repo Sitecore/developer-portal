@@ -27,7 +27,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "lint": "next lint",
     "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\"",
-    "analyze": "ANALYZE=true npm run build"
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
     "@coveo/headless": "^1.105.1",
