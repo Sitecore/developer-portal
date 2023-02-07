@@ -22,12 +22,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate-css-types": "tailwindcss-classnames -o ./src/common/types/tailwindcss-classnames.ts -x ./src/common/types/tailwindcss-custom-types.ts -i ./tailwind.config.js",
     "pre-commit": "lint-staged",
     "pre-push": "tsc --project tsconfig.json",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "lint": "next lint",
-    "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\""
+    "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\"",
+    "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
     "@coveo/headless": "^1.105.1",
@@ -36,7 +36,6 @@
     "@remark-embedder/transformer-oembed": "^3.0.0",
     "@types/lodash.throttle": "^4.1.7",
     "axios": "^0.27.2",
-    "clsx": "^1.2.1",
     "gray-matter": "^4.0.3",
     "hast": "^1.0.0",
     "hast-util-heading-rank": "^2.1.0",
@@ -54,11 +53,11 @@
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^2.0.0",
-    "tailwindcss-classnames": "^3.0.7",
     "unist-util-visit": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
+    "@next/bundle-analyzer": "^13.1.6",
     "@next/eslint-plugin-next": "^12.3.1",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^17.0.45",
@@ -69,6 +68,7 @@
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "autoprefixer": "^10.4.13",
+    "cross-env": "^7.0.3",
     "eslint": "^8.24.0",
     "eslint-config-next": "^13.1.6",
     "eslint-plugin-react": "^7.31.8",

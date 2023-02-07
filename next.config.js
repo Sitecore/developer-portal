@@ -6,6 +6,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const shouldAnalyzeBundles = process.env.ANALYZE === true;
+
 //const withTM = require('next-transpile-modules'); // pass the modules you would like to see transpiled
 const securityHeaders = [
   {
@@ -110,4 +112,8 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+module.exports = withBundleAnalyzer(nextConfig);
