@@ -92,7 +92,7 @@ const NavMenu = ({
                   className="transition-transform h-inherit w-inherit top-5 transform-gpu group-hover:translate-x-1"
                 />
               </span>
-              <span className="absolute top-1/2 -mt-1.5 right-0 block h-3 w-3 hidden lg:block">
+              <span className="absolute top-1/2 -mt-1.5 right-0 h-3 w-3 hidden lg:block">
                 <SvgIcon
                   icon="chevron-down"
                   className={`h-inherit w-inherit top-5 transition-transform transform-gpu ${
