@@ -10,9 +10,14 @@ Sitecore Connect, is a Low-code / No-code integration platform built on Workato.
 
 ## Getting Started
 
-- [Documentation](https://doc.sitecore.com/connect/en/users/sitecore-connect/introduction-to-sitecore-connect.html)
 - [Access the Portal](https://portal.sitecorecloud.io/)
 - [Sitecore Connect: FAQ](/learn/faq/sitecore-connect)
+
+## Documentation
+
+- [Introduction](https://doc.sitecore.com/connect/en/users/sitecore-connect/introduction-to-sitecore-connect.html)
+- [Working with Sitecore Connect](https://doc.sitecore.com/connect/en/users/sitecore-connect/working-with-sitecore-connect.html)
+- [Invite Team Members](https://doc.sitecore.com/connect/en/users/sitecore-connect/invite-team-members-to-sitecore-connect.html)
 
 ## Learn
 
