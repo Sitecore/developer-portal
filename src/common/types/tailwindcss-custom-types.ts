@@ -1,5 +1,13 @@
 import type { InPageNavTWClasses } from '@/src/components/sidebar-nav/SidebarNav';
 import type { NavTWClasses } from '@/src/layouts/components/head/Nav';
+import classnamesLib from 'clsx';
+import { TTailwindString } from 'tailwindcss-classnames';
+
+type TUtilityFunction<T extends string> = (
+  ...args: Array<T | `!${T}` | null | undefined | TTailwindString>
+) => TTailwindString;
+
+export const customClasses: TUtilityFunction<SCDPTailwindTypes> = classnamesLib as any;
 
 type SCDPTailwindTypes =
   | 'px-gutter-all'
@@ -19,16 +27,17 @@ type SCDPTailwindTypes =
   | 'transform-none'
   | 'lg:transform-none'
   | 'lg:translate-none'
-  // These are not yet supported by tailwindcss-classnames
-  // even though they are official plugins
-  | 'aspect-w-3'
-  | 'aspect-w-16'
-  | 'aspect-h-4'
-  | 'aspect-h-9'
+  | '-translate-x-2/4'
+  | '-translate-y-2/4'
+  | '-mx-gutter'
   // @ TODO find right way to generate type for hover dark mode
   | 'dark:hover:text-teal'
   | 'dark:hover:bg-teal'
+  | 'dark:border-theme-bg'
+  | 'dark:text-teal'
+  | 'hover:text-white'
   | 'current'
-  | 'not-prose';
+  | 'not-prose'
+  | 'lg';
 
 export default SCDPTailwindTypes;

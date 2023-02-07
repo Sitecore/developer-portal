@@ -1,5 +1,4 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import throttle from 'lodash.throttle';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
@@ -24,21 +23,14 @@ export type NavTWClasses =
   | 'hamburger-bar-middle'
   | 'hamburger-bar-middleclone';
 
-const hamburgerBarClasses = classnames(
-  'bg-currentColor',
-  'block',
-  'h-1',
-  'pt-1',
-  'w-full',
-  'transition'
-);
+const hamburgerBarClasses = 'bg-currentColor block h-1 pt-1 w-full transition';
 
 const Nav = (): JSX.Element => {
   const navRef = useRef<HTMLElement>(null);
   const [isOpen, setOpen] = useState(false);
   const Disabled = () => {
     return (
-      <div className={classnames('font-semibold', 'pt-3', 'text-sm', 'text-center', 'text-red')}>
+      <div className="pt-3 text-sm font-semibold text-center text-red">
         Search disabled; please check environment variables to enable
       </div>
     );
@@ -114,107 +106,39 @@ const Nav = (): JSX.Element => {
 
   return (
     // Necesarry to retain the space for the fixed header.
-    <header className={classnames('h-32')}>
+    <header className="h-32">
       <div
-        className={classnames(
-          'bg-theme-bg',
-          'border-b',
-          'border-theme-border',
-          'shadow-theme',
-          'z-40',
-          'fixed',
-          'inset-x-0',
-          'top-0',
-          'h-32',
-          'transition-all',
-          {
-            '-top-16': scrolled, // Note: absolute is being used here to avoid "transform" resetting the coordinate system for the children that are relying on the document's coordinates.
-          }
-        )}
+        className={`bg-theme-bg border-b border-theme-border shadow-theme z-40 fixed inset-x-0 top-0 h-32 transition-all ${
+          scrolled ? '-top-16' : ''
+        }`}
       >
         <a
           href={`#${idMainContent}`}
-          className={classnames(
-            'bg-violet',
-            'focus:bg-violet-dark',
-            'hover:bg-violet-dark',
-            'font-semibold',
-            'inline-block',
-            'px-12',
-            'py-4',
-            'text-sm',
-            'text-white',
-            'absolute',
-            'left-gutter',
-            'z-50',
-            'transform-gpu',
-            'transition-transform',
-            '-translate-y-full',
-            'focus:translate-y-0'
-          )}
+          className="absolute z-50 inline-block px-12 py-4 text-sm font-semibold text-white transition-transform -translate-y-full bg-violet focus:bg-violet-dark hover:bg-violet-dark left-gutter transform-gpu focus:translate-y-0"
         >
           Skip to Main Content
         </a>
-        <div
-          className={classnames(
-            'flex',
-            'items-center',
-            'justify-center',
-            'border-b',
-            'border-theme-border-alt',
-            'px-gutter',
-            'h-16'
-          )}
-        >
-          <Link
-            href="/"
-            className={classnames('flex', 'items-center', 'mr-auto', 'flex-shrink-0')}
-            onClick={closeNav}
-          >
-            <span className={classnames('block', 'relative', 'w-36', 'lg:w-48')}>
+        <div className="flex items-center justify-center h-16 border-b border-theme-border-alt px-gutter">
+          <Link href="/" className="flex items-center flex-shrink-0 mr-auto" onClick={closeNav}>
+            <span className="relative block w-36 lg:w-48">
               <Logo />
             </span>
-            <span className={classnames('sr-only')}>Sitecore</span>
-            <span
-              className={classnames('sr-only', 'hidden', 'ml-4', 'text-theme-text', 'xl:block')}
-            >
-              Developer Portal
-            </span>
+            <span className="sr-only">Sitecore</span>
+            <span className="hidden ml-4 sr-only text-theme-text xl:block">Developer Portal</span>
           </Link>
           <nav
             ref={navRef}
             id="scdp-nav"
-            className={classnames(
-              'fixed',
-              'bg-theme-bg',
-              'top-32',
-              'bottom-0',
-              'inset-0',
-              'items-center',
-              'lg:mx-12',
-              'lg:bg-transparent',
-              'lg:flex',
-              'lg:static',
-              'xl:mx-16',
-              {
-                ['hidden']: !isOpen,
-                ['block']: isOpen,
-              }
-            )}
+            className={`fixed bg-theme-bg top-32 bottom-0 inset-0 items-center lg:mx-12 lg:bg-transparent lg:flex lg:static xl:mx-16 ${
+              isOpen ? 'block' : 'hidden'
+            }`}
           >
-            <ul className={classnames('block', 'text-sm', 'lg:flex')}>
+            <ul className="block text-sm lg:flex">
               {NavigationData.map((item, index) => {
                 return (
                   <li
                     key={`nav-${index}`}
-                    className={classnames(
-                      'border-b',
-                      'border-theme-bg-alt',
-                      'px-gutter',
-                      'lg:border-0',
-                      'xl:p-0',
-                      'xl:mx-6'
-                    )}
+                    className="border-b border-theme-bg-alt px-gutter lg:border-0 xl:p-0 xl:mx-6"
                   >
                     <NavMenu
                       title={item.title}
@@ -230,17 +154,7 @@ const Nav = (): JSX.Element => {
               {/*
                 SC Products "Quick Links"-like mobile menu implementation.
               */}
-              <li
-                className={classnames(
-                  'border-b',
-                  'border-theme-bg-alt',
-                  'px-gutter',
-                  'xl:p-0',
-                  'xl:border-0',
-                  'xl:mx-8',
-                  'lg:hidden'
-                )}
-              >
+              <li className="border-b border-theme-bg-alt px-gutter xl:p-0 xl:border-0 xl:mx-8 lg:hidden">
                 <NavMenu
                   title={SitecoreQuickLinks.title}
                   callback={toggleNav}
@@ -251,60 +165,37 @@ const Nav = (): JSX.Element => {
               </li>
             </ul>
           </nav>
-          <div
-            className={classnames(
-              'flex',
-              'items-center',
-              'justify-end',
-              'ml-auto',
-              'lg:w-24',
-              'xl:w-96'
-            )}
-          >
+          <div className="flex items-center justify-end ml-auto lg:w-24 xl:w-96">
             <ThemeButton className="mr-2.5" />
             <button
               aria-controls="scdp-nav"
               aria-expanded={isOpen}
               aria-label="Toggle navigation menu"
-              className={classnames(
-                'hamburger',
-                'relative',
-                'w-9',
-                'h-7',
-                'z-20',
-                'hover:text-violet',
-                'lg:hidden'
-              )}
+              className="relative z-20 hamburger w-9 h-7 hover:text-violet lg:hidden"
               onClick={toggleNav}
             >
               <span
-                className={classnames(hamburgerBarClasses, 'mb-1.5', 'hamburger-bar-outside', {
-                  ['hidden']: isOpen,
-                })}
+                className={`${hamburgerBarClasses} mb-1.5 hamburger-bar-outside ${
+                  isOpen ? 'hidden' : ''
+                }`}
               ></span>
               <span
-                className={classnames(hamburgerBarClasses, 'mb-1.5', {
-                  ['hamburger-bar-middle']: isOpen,
-                })}
+                className={`${hamburgerBarClasses} mb-1.5 ${isOpen ? 'hamburger-bar-middle' : ''}`}
               ></span>
               <span
-                className={classnames(hamburgerBarClasses, '-mt-2.5', 'mb-1.5', {
-                  ['hamburger-bar-middleclone']: isOpen,
-                })}
+                className={`${hamburgerBarClasses} -mt-2.5 mb-1.5 ${
+                  isOpen ? 'hamburger-bar-middleclone' : ''
+                }`}
               ></span>
               <span
-                className={classnames(hamburgerBarClasses, 'hamburger-bar-outside', {
-                  ['hidden']: isOpen,
-                })}
+                className={`${hamburgerBarClasses} hamburger-bar-outside ${isOpen ? 'hidden' : ''}`}
               ></span>
             </button>
-            <QuickStartMenu
-              className={classnames('hidden', 'w-7', 'h-7', 'lg:h-5', 'lg:w-5', 'lg:block')}
-            />
+            <QuickStartMenu className="sm:hidden w-7 h-7 lg:h-5 lg:w-5 lg:block" />
           </div>
         </div>
         <div>
-          <div className={classnames('px-gutter-all', 'py-2.5', 'max-w-screen-xl', 'm-auto')}>
+          <div className="px-gutter-all py-2.5 max-w-screen-xl m-auto">
             <SearchInput />
           </div>
         </div>

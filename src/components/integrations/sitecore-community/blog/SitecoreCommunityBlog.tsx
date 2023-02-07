@@ -1,7 +1,6 @@
 // Interfaces
 import type { SitecoreCommunityContent } from '@/src/interfaces/integrations';
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import axios from 'axios';
 import { useState } from 'react';
 // Components
@@ -45,20 +44,13 @@ const SitecoreCommunityBlog = ({ content, sortKeys }: SitecoreCommunityBlogProps
           title: 'See all',
         }}
       />
-      <div className={classnames('flex', 'justify-end', 'mb-6')}>
+      <div className="flex justify-end mb-6">
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
-          <label className={classnames('text-xs', 'font-semibold', 'flex', 'items-center')}>
+          <label className="flex items-center text-xs font-semibold">
             Order by:
             <select
               onChange={(changeEvent) => fetchNewResults(changeEvent.target.value)}
-              className={classnames(
-                'bg-theme-bg',
-                'border-2',
-                'font-semibold',
-                'ml-2',
-                'p-2',
-                'text-theme-text'
-              )}
+              className="bg-theme-bg border-2 font-semibold ml-2 p-2 `text-theme-text"
             >
               <option value="created">Recent Questions</option>
               <option value="view">Most Popular</option>
@@ -67,7 +59,7 @@ const SitecoreCommunityBlog = ({ content, sortKeys }: SitecoreCommunityBlogProps
           </label>
         )}
       </div>
-      <ul className={classnames('grid', 'gap-y-6')}>
+      <ul className="grid -y-6">
         {content.map((item, i) => (
           <SitecoreCommunityBlogOrQuestion
             item={item}

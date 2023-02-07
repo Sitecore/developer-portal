@@ -1,10 +1,9 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Components
 import FeedHeading from '@/src/components/common/FeedHeading';
 // Local
-import SitecoreCommunityNewsOrEventItem from '../SitecoreCommunityNewsOrEventItem';
 import { SitecoreCommunityContent } from '@/src/interfaces/integrations';
+import SitecoreCommunityNewsOrEventItem from '../SitecoreCommunityNewsOrEventItem';
 
 type SitecoreCommunityNewsProps = {
   content?: SitecoreCommunityContent[];
@@ -24,7 +23,7 @@ const SitecoreCommunityNews = ({ content }: SitecoreCommunityNewsProps): JSX.Ele
           title: 'See all',
         }}
       />
-      <ul className={classnames('grid', 'md:grid-cols-3', 'gap-8')}>
+      <ul className="grid gap-8 md:grid-cols-3">
         {content.map((item, i) => (
           <SitecoreCommunityNewsOrEventItem
             {...item}

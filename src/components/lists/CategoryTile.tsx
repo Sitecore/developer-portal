@@ -5,7 +5,6 @@ import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
 import DynamicTag from '@/src/components/common/DynamicTag';
 import SvgIcon from '../common/SvgIcon';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 
 export type CategoryTileProps = {
   containerTag?: 'div' | 'li';
@@ -25,50 +24,20 @@ const CategoryTile = ({
   return (
     <DynamicTag
       tag={containerTag}
-      className={classnames(
-        'bg-theme-bg',
-        'border',
-        'border-theme-border-alt',
-        'px-6',
-        'py-12',
-        'relative',
-        'hover:shadow-theme-md'
-      )}
+      className="relative px-6 py-12 border bg-theme-bg border-theme-border-alt hover:shadow-theme-md"
     >
-      <DynamicTag tag={headingLevel} className={classnames('heading-sm', 'mb-1')}>
-        <Link
-          href={href}
-          className={classnames('group', 'pr-6', 'inline-block', 'mb-1')}
-          aria-label={title}
-        >
-          <span className={classnames('relative')}>
+      <DynamicTag tag={headingLevel} className="mb-1 heading-sm">
+        <Link href={href} className="inline-block pr-6 mb-1 group" aria-label={title}>
+          <span className="relative">
             {title}
-            <span
-              className={classnames(
-                'duration-300',
-                'h-em',
-                'inline-block',
-                'transform-gpu',
-                'transition-transform',
-                'w-em',
-                'group-focus:translate-x-1',
-                'whitespace-nowrap',
-                'group-hover:translate-x-1',
-                'absolute',
-                '-right-6',
-                'bottom-1'
-              )}
-            >
-              <SvgIcon
-                icon="arrow-right"
-                className={classnames('text-violet', 'dark:text-red', 'relative', 'top-0.5')}
-              />
+            <span className="absolute inline-block transition-transform duration-300 h-em transform-gpu w-em group-focus:translate-x-1 whitespace-nowrap group-hover:translate-x-1 -right-6 bottom-1">
+              <SvgIcon icon="arrow-right" className="text-violet dark:text-red relative top-0.5" />
             </span>
           </span>
-          <span className={classnames('absolute', 'inset-0', 'z-10')}></span>
+          <span className="absolute inset-0 z-10"></span>
         </Link>
       </DynamicTag>
-      <p className={classnames('text-sm', 'text-theme-text-alt')}>{description}</p>
+      <p className="text-sm text-theme-text-alt">{description}</p>
     </DynamicTag>
   );
 };

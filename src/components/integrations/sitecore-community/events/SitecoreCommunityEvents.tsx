@@ -1,7 +1,6 @@
 // Interfaces
 import type { SitecoreCommunityEvent } from '@/src/interfaces/integrations';
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Components
 import FeedHeading from '@/src/components/common/FeedHeading';
 import SitecoreCommunityNewsOrEventItem from '../SitecoreCommunityNewsOrEventItem';
@@ -24,7 +23,7 @@ const SitecoreCommunityEvents = ({ content }: SitecoreCommunityEventsProps): JSX
           title: 'See all',
         }}
       />
-      <ul className={classnames('grid', 'md:grid-cols-3', 'gap-8')}>
+      <ul className="grid gap-8 md:grid-cols-3">
         {content.map((event, i) => (
           <SitecoreCommunityNewsOrEventItem {...event} categoryTitle="Event" key={i} />
         ))}

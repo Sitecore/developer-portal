@@ -1,5 +1,4 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Interfaces
 import type { PageInfo, PagePartialGroup, PartialData } from '@/src/interfaces/page-info';
 // Components
@@ -23,7 +22,7 @@ type GenericContentPageProps = {
   customNavPager?: React.ReactNode;
 };
 
-const hasGridClasses = classnames('bg-theme-bg-alt', 'pt-2', 'pb-14');
+const hasGridClasses = 'bg-theme-bg-alt pt-2 pb-14';
 
 const Content = (
   partials?: PartialData,
@@ -77,16 +76,11 @@ const GenericContentPage = ({
             ))}
           </Container>
         )}
-        <div className={classnames({ [hasGridClasses]: hasGrid })}>
+        <div className={hasGrid ? hasGridClasses : ''}>
           <Container>
-            <div className={classnames('grid', 'gap-6', 'md:grid-cols-4', 'mt-8')}>
+            <div className="grid gap-6 mt-8 md:grid-cols-4">
               {pageInfo.hasInPageNav && Nav}
-              <div
-                className={classnames({
-                  'col-span-3': pageInfo.hasInPageNav,
-                  'col-span-4': !pageInfo.hasInPageNav,
-                })}
-              >
+              <div className={pageInfo.hasInPageNav ? 'col-span-3' : 'col-span-4'}>
                 {Content(partials, partialGroups, hasGrid)}
                 {customNavPager}
               </div>

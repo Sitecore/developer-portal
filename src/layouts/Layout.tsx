@@ -1,5 +1,4 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect, useLayoutEffect, useRef } from 'react';
@@ -69,15 +68,9 @@ const Layout = ({ pageInfo, children }: LayoutProps): JSX.Element => {
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <main className={classnames('mb-16', 'scroll-to-offset')}>
+      <main className="mb-16 scroll-to-offset">
         {/* Anchor element at top of page to focus on route change. */}
-        <a
-          id={idMainContent}
-          ref={mainContentRef}
-          className={classnames('sr-only')}
-          href="#"
-          tabIndex={-1}
-        >
+        <a id={idMainContent} ref={mainContentRef} className="sr-only" href="#" tabIndex={-1}>
           {pageInfo.title}
         </a>
         {/* a11y announcement for route changes. */}

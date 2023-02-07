@@ -17,8 +17,6 @@ import { translateDateAsYearMonth } from '@/src/common/translate-date';
 import Container from '@/src/components/common/Container';
 import CategoryTile, { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 import Layout from '@/src/layouts/Layout';
-// Data
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];
@@ -88,8 +86,8 @@ const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }
     <Layout pageInfo={pageInfo}>
       <Container>
         <div className="grid gap-6 mt-8 md:grid-cols-4">
-          <div className="grid gap-10 md:grid-cols-3 col-span-3">
-            <ul className={classnames('grid', 'gap-6', 'md:grid-cols-1', 'col-span-3')}>
+          <div className="grid col-span-3 gap-10 md:grid-cols-3">
+            <ul className="grid col-span-3 gap-6 md:grid-cols-1">
               {newsletters.map((card, i) => (
                 <CategoryTile key={i} containerTag="li" headingLevel={'h2'} {...card} />
               ))}

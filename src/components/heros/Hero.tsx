@@ -1,12 +1,11 @@
-import Image from 'next/image';
 // Interfaces
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
-// Components
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
-import DynamicTag from '@/src/components/common/DynamicTag';
+import Image from 'next/image';
 import React from 'react';
 import Container from '../common/Container';
+import DynamicTag from '../common/DynamicTag';
 import ProductLogo from '../common/ProductLogo';
+// Components
 
 export type HeroProps = {
   title: string;
@@ -16,13 +15,8 @@ export type HeroProps = {
   productLogo?: string;
 };
 
-const HeroWithImageClasses = classnames('lg:min-h-120', 'md:grid-cols-9');
-const HeroWithBackgroundImageClasses = classnames(
-  'bg-wide-hero-light',
-  'dark:bg-wide-hero-dark',
-  'bg-cover',
-  'py-7'
-);
+const HeroWithImageClasses = 'lg:min-h-120 md:grid-cols-9';
+const HeroWithBackgroundImageClasses = 'bg-wide-hero-light dark:bg-wide-hero-dark bg-cover py-7';
 
 const Hero = ({
   description,
@@ -32,33 +26,27 @@ const Hero = ({
   productLogo,
 }: HeroProps): JSX.Element => (
   <header
-    className={classnames('py-14', 'relative', {
-      [HeroWithBackgroundImageClasses]: !image || !!productLogo,
-    })}
+    className={`py-14 relative ${!image || !!productLogo ? HeroWithBackgroundImageClasses : ''}`}
   >
     <Container
       size="standard"
-      className={classnames('grid', 'gap-16', 'lg:items-center', {
-        [HeroWithImageClasses]: !!image || !!productLogo,
-      })}
+      className={`grid gap-16 lg:items-center ${
+        !!image || !!productLogo ? HeroWithImageClasses : ''
+      }`}
     >
-      <div
-        className={classnames('lg:pr-24', {
-          ['md:col-span-5']: !!image || !!productLogo,
-        })}
-      >
-        <DynamicTag tag={headingLevel} className={classnames('heading-lg', 'mb-5', 'relative')}>
+      <div className={`lg:pr-24 ${!!image || !!productLogo ? ['md:col-span-5'] : ''}`}>
+        <DynamicTag tag={headingLevel} className="relative mb-5 heading-lg">
           {title}
         </DynamicTag>
-        <p className={classnames('text-lg', 'text-theme-text-alt')}>{description}</p>
+        <p className="text-lg text-theme-text-alt">{description}</p>
       </div>
       {productLogo && (
         <React.Fragment>
-          <div className={classnames('relative', 'hidden', 'md:block', 'md:col-span-4')}>
-            <div className={classnames('h-20', 'w-full', 'hidden', 'dark:block')}>
+          <div className="relative hidden md:block md:col-span-4">
+            <div className="hidden w-full h-20 dark:block">
               <ProductLogo product={productLogo} variant="Dark" />
             </div>
-            <div className={classnames('h-20', 'w-full', 'dark:hidden')}>
+            <div className="w-full h-20 dark:hidden">
               <ProductLogo product={productLogo} variant="Light" />
             </div>
           </div>
@@ -66,12 +54,12 @@ const Hero = ({
       )}
       {image && (
         <React.Fragment>
-          <div className={classnames('relative', 'hidden', 'md:block', 'md:col-span-4')}>
-            <div className={classnames('h-20', 'w-full')}>
+          <div className="relative hidden md:block md:col-span-4">
+            <div className="w-full h-20">
               <Image
                 src={image}
                 alt=""
-                className={classnames('relative', 'z-10')}
+                className="relative z-10"
                 fill
                 sizes="(max-width: 768px) 100vw,
                         (max-width: 1200px) 50vw,

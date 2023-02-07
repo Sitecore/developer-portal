@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 
 export type IconNames =
   | 'arrow-left'
@@ -14,7 +13,7 @@ export type IconNames =
 
 export type IconProps = {
   icon: IconNames;
-  className?: TTailwindString;
+  className?: string;
 };
 
 const SvgIcon = ({ icon, className }: IconProps): JSX.Element => {
@@ -25,12 +24,16 @@ const SvgIcon = ({ icon, className }: IconProps): JSX.Element => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox={viewBox}
-      className={classnames(className)}
+      className={className}
       display={'block'}
     >
       <IconContent />
     </svg>
   );
+};
+
+SvgIcon.defaultProps = {
+  className: '',
 };
 
 export default SvgIcon;

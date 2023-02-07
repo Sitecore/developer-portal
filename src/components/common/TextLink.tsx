@@ -1,5 +1,4 @@
 // Global
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import Link from 'next/link';
 // Components
 import SvgIcon from '@/src/components/common/SvgIcon';
@@ -7,7 +6,7 @@ import SvgIcon from '@/src/components/common/SvgIcon';
 type TextLinkProps = {
   text: string;
   href: string;
-  className?: TTailwindString;
+  className?: string;
   target?: '_blank' | undefined;
 };
 
@@ -17,39 +16,18 @@ const TextLink = ({ text, href, target, className }: TextLinkProps): JSX.Element
       href={href}
       target={target}
       rel="noreferrer noopener"
-      className={classnames(
-        'group',
-        'font-bold',
-        'text-sm',
-        'inline-flex',
-        'items-center',
-        'hover:underline',
-        'focus:underline',
-        className
-      )}
+      className={`group btn-text-link ${className}`}
     >
       {text}
-      {target === '_blank' && <span className={classnames('sr-only')}>Opens in a new tab</span>}
-      <span
-        className={classnames(
-          'duration-300',
-          'h-5',
-          'inline-block',
-          'ml-1',
-          'transform-gpu',
-          'transition-transform',
-          'w-5',
-          'group-focus:translate-x-1',
-          'group-hover:translate-x-1'
-        )}
-      >
-        <SvgIcon
-          icon="arrow-right"
-          className={classnames('text-violet', 'dark:text-red', 'relative', 'top-0.5')}
-        />
+      {target === '_blank' && <span className="sr-only">Opens in a new tab</span>}
+      <span className="inline-block w-5 h-5 ml-1 transition-transform duration-300 transform-gpu group-focus:translate-x-1 group-hover:translate-x-1">
+        <SvgIcon icon="arrow-right" className="text-violet dark:text-red relative top-0.5" />
       </span>
     </Link>
   );
+};
+TextLink.defaultProps = {
+  className: '',
 };
 
 export default TextLink;

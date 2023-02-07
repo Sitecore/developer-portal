@@ -1,6 +1,5 @@
 // Global
 import Link from 'next/link';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 // Lib
 import { useGlobalState } from '@/src/common/global-state';
 // Interfaces
@@ -14,50 +13,32 @@ type MultiPageNavProps = {
 
 const MultiPageNav = ({ context, navData, root }: MultiPageNavProps): JSX.Element => {
   const [navScrolled] = useGlobalState('navScrolled');
-  const positionalClasses = navScrolled ? classnames('md:top-8') : classnames('md:top-24');
+  const positionalClasses = navScrolled ? 'md:top-8' : 'md:top-24';
   const buildUrl = (article: string, page: string) => `${root}/${article}/${page}`;
 
   return (
     <nav
-      className={classnames(
-        'mb-8',
-        'md:mr-16',
-        'md:sticky',
-        'self-start',
-        'transform-gpu',
-        'transition-all',
-        positionalClasses
-      )}
+      className={`mb-8 md:mr-16 md:sticky self-start transform-gpu transition-all ${positionalClasses}`}
     >
       <h3 className="mb-4">
         <Link href={`${root}/${context.article}`} legacyBehavior>
           {navData.title}
         </Link>
       </h3>
-      <ul className={classnames('side-bar-nav', 'relative', 'pl-1.5')}>
+      <ul className="side-bar-nav relative pl-1.5">
         {navData.routes.map((route) => {
           const isActive = context.page === route.path;
 
           return (
             <li
               key={route.title}
-              className={classnames('side-bar-nav-item', 'pb-4', 'relative', 'pl-4', {
-                current: isActive,
-              })}
+              className={`side-bar-nav-item pb-4 relative pl-4 ${isActive ? 'current' : ''}`}
             >
               <Link
                 href={buildUrl(context.article, route.path)}
-                className={classnames(
-                  'text-violet',
-                  'dark:text-teal',
-                  'text-sm',
-                  'inline-block',
-                  'hover:underline',
-                  'focus:underline',
-                  {
-                    'font-bold': isActive,
-                  }
-                )}
+                className={`text-violet dark:text-teal text-sm inline-block hover:underline focus:underline ${
+                  isActive ? 'font-bold' : ''
+                }`}
               >
                 {route.title}
               </Link>

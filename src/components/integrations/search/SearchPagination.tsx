@@ -4,7 +4,6 @@ import router from 'next/router';
 import { useEffect, useState } from 'react';
 // Lib
 import { coveoEngine, urlManager } from '@/src/common/search/coveo-engine';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import SvgIcon from '../../common/SvgIcon';
 
 const SearchPagination = () => {
@@ -40,7 +39,7 @@ const SearchPagination = () => {
     return <></>;
   }
 
-  const activeClasses = classnames('bg-theme-text', 'text-theme-bg');
+  const activeClasses = 'bg-theme-text text-theme-bg';
 
   return (
     <ul className="flex items-center justify-center mt-8">
@@ -59,17 +58,9 @@ const SearchPagination = () => {
       {pagerState.currentPages.map((i) => (
         <li key={i}>
           <button
-            className={classnames(
-              'border',
-              'border-theme-border',
-              'hover:underline',
-              'py-1',
-              'px-2',
-              'mx-2',
-              {
-                [activeClasses]: i === pagerState.currentPage,
-              }
-            )}
+            className={`border border-theme-border hover:underline py-1 px-2 mx-2 ${
+              i === pagerState.currentPage ? [activeClasses] : ''
+            }`}
             onClick={() => {
               handlePaginate(i);
             }}
@@ -83,14 +74,7 @@ const SearchPagination = () => {
           <li>...</li>
           <li>
             <button
-              className={classnames(
-                'border',
-                'border-theme-border',
-                'hover:underline',
-                'py-1',
-                'px-2',
-                'mx-2'
-              )}
+              className="px-2 py-1 mx-2 border border-theme-border hover:underline"
               onClick={() => {
                 handlePaginate(pagerState.maxPage);
               }}

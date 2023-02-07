@@ -1,5 +1,4 @@
 // Global
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import Image from 'next/image';
 // Components
 import TextLink from '@/src/components/common/TextLink';
@@ -18,16 +17,16 @@ export type PromoCardProps = PromoCardImage & {
     text: string;
     href: string;
   };
-  className?: TTailwindString;
+  className?: string;
   isImageLeft?: boolean;
 };
 
 const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
-  <div className={classnames('aspect-h-9', 'aspect-w-16', 'w-full', 'bg-gray-light')}>
+  <div className="relative w-full aspect-video bg-gray-light">
     <Image
       src={img.src}
       alt={img.alt || ''}
-      className={classnames('relative', 'z-10')}
+      className="relative z-10"
       priority={true}
       fill
       sizes="(max-width: 768px) 100vw,
@@ -45,11 +44,11 @@ const PromoCard = ({
   className,
   isImageLeft = true,
 }: PromoCardProps): JSX.Element => (
-  <div className={classnames('grid', 'gap-6', 'mt-8', 'md:grid-cols-2', className)}>
+  <div className={'grid gap-6 mt-8 md:grid-cols-2 ' + (className ? className : '')}>
     {isImageLeft && <PromoCardImage img={img} />}
-    <div className={classnames('flex', 'flex-col', 'justify-center')}>
-      <h2 className={classnames('heading-md', 'mb-4')}>{title}</h2>
-      <p className={classnames('text-theme-text-alt', { 'mb-8': !!link })}>{description}</p>
+    <div className="flex flex-col justify-center">
+      <h2 className="mb-4 heading-md">{title}</h2>
+      <p className={`text-theme-text-alt ${link ? 'mb-8' : ''}`}>{description}</p>
       {!!link && (
         <div>
           <TextLink text={link.text} href={link.href} />
@@ -67,7 +66,7 @@ export type SimplePromoCardProps = {
   linkHref: string;
   imageSource: string;
   imageAlt?: string;
-  className?: TTailwindString;
+  className?: string;
   isImageLeft?: boolean;
 };
 

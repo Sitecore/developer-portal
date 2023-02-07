@@ -1,9 +1,8 @@
 // Global
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import { useId } from 'react';
 
 type SearchBoxProps = {
-  className?: TTailwindString;
+  className?: string;
 };
 
 const SearchBox = ({ className }: SearchBoxProps): JSX.Element => {
@@ -16,12 +15,12 @@ const SearchBox = ({ className }: SearchBoxProps): JSX.Element => {
   const inputId = `${idSeed}--search-input`;
 
   return (
-    <div className={classnames(className)} id={searchId}>
-      <div className={classnames('relative', 'flex', 'items-center', 'w-full')}>
-        <label className={classnames('sr-only')} htmlFor={inputId}>
+    <div className={className} id={searchId}>
+      <div className="relative flex items-center w-full">
+        <label className="sr-only" htmlFor={inputId}>
           Search:
         </label>
-        <span aria-hidden="true" className={classnames('absolute', 'left-4', 'z-20')}>
+        <span aria-hidden="true" className="absolute z-20 left-4">
           <svg
             width="16px"
             height="16px"
@@ -36,19 +35,7 @@ const SearchBox = ({ className }: SearchBoxProps): JSX.Element => {
           </svg>
         </span>
         <input
-          className={classnames(
-            'border',
-            'bg-theme-bg',
-            'text-theme-text',
-            'border-theme-border',
-            'px-4',
-            'pl-12',
-            'py-2',
-            'w-full',
-            'text-sm',
-            'rounded-sm',
-            'z-10'
-          )}
+          className="z-10 w-full px-4 py-2 pl-12 text-sm border rounded-sm bg-theme-bg text-theme-text border-theme-border"
           name="scdp-search"
           id={inputId}
           type="text"
@@ -57,6 +44,9 @@ const SearchBox = ({ className }: SearchBoxProps): JSX.Element => {
       </div>
     </div>
   );
+};
+SearchBox.defaultProps = {
+  className: '',
 };
 
 export default SearchBox;

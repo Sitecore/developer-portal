@@ -1,4 +1,3 @@
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import React from 'react';
 
 type VerticalGroupSize = 'md' | 'lg';
@@ -8,9 +7,9 @@ type VerticalGroupProps = {
   size?: VerticalGroupSize;
 };
 
-const verticalGroupClasses: Record<VerticalGroupSize, TTailwindString> = {
-  md: classnames('mb-16'),
-  lg: classnames('mb-24'),
+const verticalGroupClasses: Record<VerticalGroupSize, string> = {
+  md: 'mb-16',
+  lg: 'mb-24',
 };
 
 const VerticalGroup = ({ children, size = 'md' }: VerticalGroupProps): JSX.Element => {
@@ -24,9 +23,7 @@ const VerticalGroup = ({ children, size = 'md' }: VerticalGroupProps): JSX.Eleme
         if (React.isValidElement(child)) {
           return (
             <div
-              className={classnames({
-                [verticalGroupClasses[size]]: i !== children.length - 1,
-              })}
+              className={`${children.length - 1 ? [verticalGroupClasses[size]].join(' ') : i}`}
               key={i}
             >
               {child}
@@ -35,9 +32,7 @@ const VerticalGroup = ({ children, size = 'md' }: VerticalGroupProps): JSX.Eleme
         } else if (Array.isArray(child)) {
           return child.map((c, j) => (
             <div
-              className={classnames({
-                [verticalGroupClasses[size]]: i !== children.length - 1,
-              })}
+              className={`${children.length - 1 ? [verticalGroupClasses[size]].join(' ') : i}`}
               key={j}
             >
               {c}

@@ -1,5 +1,4 @@
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
-import { classnames } from 'tailwindcss-classnames';
 
 /* eslint-disable react/no-unknown-property */
 type VideoProps = {
@@ -22,7 +21,7 @@ const YouTube = ({ youTubeId, isPlayList, playlistCoverId }: VideoProps): JSX.El
           pointer-events: none;
         }
       `}</style>
-      <div className={classnames('flex', 'flex-col', 'justify-center', 'w-full')}>
+      <div className="flex flex-col justify-center w-full">
         <LiteYouTubeEmbed
           id={`${youTubeId}`}
           adNetwork={false}

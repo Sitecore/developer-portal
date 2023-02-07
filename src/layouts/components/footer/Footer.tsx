@@ -1,28 +1,13 @@
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import Container from '@/src/components/common/Container';
 import Link from 'next/link';
 
 const Footer = (): JSX.Element => {
   return (
-    <footer
-      className={classnames(
-        'bg-gray-lightest',
-        'flex',
-        'justify-center',
-        'py-12',
-        'text-charcoal-dark',
-        'theme-dark',
-        'dark:bg-black',
-        'dark:text-white'
-      )}
-    >
-      <Container
-        size="standard"
-        className={classnames('flex', 'container', 'flex-col', 'px-4', 'sm:px-0')}
-      >
-        <div className={classnames('inline-flex', 'mb-4')}>
+    <footer className="flex justify-center py-12 bg-gray-lightest text-charcoal-dark theme-dark dark:bg-black dark:text-white">
+      <Container size="standard" className="container flex flex-col px-4 sm:px-0">
+        <div className="inline-flex mb-4">
           <a
-            className={classnames('mr-6')}
+            className="mr-6"
             href="https://twitter.com/WeAreSitecore"
             target=""
             aria-label="twitter"
@@ -36,7 +21,7 @@ const Footer = (): JSX.Element => {
             </svg>
           </a>
           <a
-            className={classnames('mr-6')}
+            className="mr-6"
             href="https://www.youtube.com/c/DiscoverSitecore"
             target=""
             aria-label="Youtube"
@@ -50,7 +35,7 @@ const Footer = (): JSX.Element => {
             </svg>
           </a>
           <a
-            className={classnames('mr-6')}
+            className="mr-6"
             href="https://www.linkedin.com/company/sitecore/"
             target=""
             aria-label="LinkedIn"
@@ -64,7 +49,7 @@ const Footer = (): JSX.Element => {
             </svg>
           </a>
           <a
-            className={classnames('mr-6')}
+            className="mr-6"
             href="https://www.facebook.com/Sitecore"
             target=""
             aria-label="facebook"
@@ -78,7 +63,7 @@ const Footer = (): JSX.Element => {
             </svg>
           </a>
           <a
-            className={classnames('mr-6')}
+            className="mr-6"
             href="https://www.instagram.com/sitecore/"
             target=""
             aria-label="Instagram"
@@ -92,50 +77,41 @@ const Footer = (): JSX.Element => {
             </svg>
           </a>
         </div>
-        <div className={classnames('flex-col', 'sm:flex-row', 'flex', 'text-2xs', 'font-regular')}>
-          <p className={classnames('tracking-widest', 'mb-4', 'sm:mb-0')}>
+        <div className="flex flex-col sm:flex-row text-2xs font-regular">
+          <p className="mb-4 tracking-widest sm:mb-0">
             © Copyright <span>{new Date().getFullYear()}</span>, Sitecore. All Rights Reserved
           </p>
           <ul>
-            <li
-              className={classnames(
-                'inline-block',
-                'sm:border-l',
-                'pl-0',
-                'pr-2',
-                'sm:px-2',
-                'sm:ml-2'
-              )}
-            >
+            <li className="inline-block pl-0 pr-2 sm:border-l sm:px-2 sm:ml-2">
               <a
-                className={classnames('font-semibold')}
+                className="font-semibold"
                 href="https://www.sitecore.com/legal"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 Legal
-                <span className={classnames('sr-only')}>Opens in a new tab</span>
+                <span className="sr-only">Opens in a new tab</span>
               </a>
             </li>
-            <li className={classnames('inline-block', 'border-l', 'px-2')}>
+            <li className="inline-block px-2 border-l">
               <a
-                className={classnames('font-semibold')}
+                className="font-semibold"
                 href="https://www.sitecore.com/trust/privacy-policy"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 Privacy
-                <span className={classnames('sr-only')}>Opens in a new tab</span>
+                <span className="sr-only">Opens in a new tab</span>
               </a>
             </li>
-            <li className={classnames('inline-block', 'border-l', 'px-2')}>
-              <Link href={'/help'} passHref className={classnames('font-semibold')}>
-                Get Help<span className={classnames('sr-only')}>Opens in a new tab</span>
+            <li className="inline-block px-2 border-l">
+              <Link href={'/help'} passHref className="font-semibold">
+                Get Help<span className="sr-only">Opens in a new tab</span>
               </Link>
             </li>
-            <li className={classnames('inline-block', 'border-l', 'px-2')}>
-              <Link href={'/contribute'} passHref className={classnames('font-semibold')}>
-                Contribute<span className={classnames('sr-only')}>Opens in a new tab</span>
+            <li className="inline-block px-2 border-l">
+              <Link href={'/contribute'} passHref className="font-semibold">
+                Contribute<span className="sr-only">Opens in a new tab</span>
               </Link>
             </li>
           </ul>

@@ -1,5 +1,4 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import Link from 'next/link';
 // Interfaces
 import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
@@ -25,45 +24,16 @@ const CTACard = ({
   link2Text,
   link2href,
 }: CTACardProps): JSX.Element => (
-  <div className={classnames('w-full', 'bg-theme-bg-alt', 'px-16', 'py-10', 'my-8')}>
-    <DynamicTag tag={headingLevel} className={classnames('heading-md', 'mb-4')}>
+  <div className="w-full px-16 py-10 my-8 bg-theme-bg-alt">
+    <DynamicTag tag={headingLevel} className="mb-4 heading-md">
       {title}
     </DynamicTag>
-    <p className={classnames('text-theme-text', 'mb-6')}>{description}</p>
-    <Link
-      href={href}
-      className={classnames(
-        'bg-violet',
-        'focus:bg-violet-dark',
-        'font-semibold',
-        'hover:bg-violet-dark',
-        'inline-block',
-        'px-12',
-        'py-4',
-        'text-sm',
-        'text-white',
-        'rounded-full'
-      )}
-    >
+    <p className="mb-6 text-theme-text">{description}</p>
+    <Link href={href} className="btn-primary">
       {linkText}
     </Link>
     {link2href && link2Text && (
-      <Link
-        href={link2href}
-        className={classnames(
-          'bg-violet',
-          'focus:bg-violet-dark',
-          'font-semibold',
-          'hover:bg-violet-dark',
-          'inline-block',
-          'px-12',
-          'py-4',
-          'text-sm',
-          'text-white',
-          'rounded-full',
-          'ml-4'
-        )}
-      >
+      <Link href={link2href} className="ml-4 btn-primary">
         {link2Text}
       </Link>
     )}

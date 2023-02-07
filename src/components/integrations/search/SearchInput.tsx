@@ -1,5 +1,4 @@
 // Global
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import { SearchBox, UrlManager } from '@coveo/headless';
 import { useRouter } from 'next/router';
 import { useEffect, useId, useState } from 'react';
@@ -7,7 +6,7 @@ import { useEffect, useId, useState } from 'react';
 import { searchBox, urlManager } from '@/src/common/search/coveo-engine';
 
 interface SearchInputProps {
-  className?: TTailwindString;
+  className?: string;
   searchBox?: SearchBox;
   urlManager?: UrlManager;
 }
@@ -40,12 +39,12 @@ const SearchInput = ({ className }: SearchInputProps) => {
   }, []);
 
   return (
-    <form className={classnames(className)} id={searchId} onSubmit={submit}>
-      <div className={classnames('relative', 'flex', 'items-center', 'w-full')}>
-        <label className={classnames('sr-only')} htmlFor={inputId}>
+    <form className={className} id={searchId} onSubmit={submit}>
+      <div className="relative flex items-center w-full">
+        <label className="sr-only" htmlFor={inputId}>
           Search:
         </label>
-        <span aria-hidden="true" className={classnames('absolute', 'left-4', 'z-20')}>
+        <span aria-hidden="true" className="absolute z-20 left-4">
           <svg
             width="16px"
             height="16px"
@@ -60,19 +59,7 @@ const SearchInput = ({ className }: SearchInputProps) => {
           </svg>
         </span>
         <input
-          className={classnames(
-            'border',
-            'bg-theme-bg',
-            'text-theme-text',
-            'border-theme-border',
-            'px-4',
-            'pl-12',
-            'py-2',
-            'w-full',
-            'text-sm',
-            'rounded-sm',
-            'z-10'
-          )}
+          className="w-full px-4 py-2 pl-12 text-sm border bg-theme-bg text-theme-text border-theme-border rounded-smz-10"
           name="scdp-search"
           id={inputId}
           type="text"
@@ -85,6 +72,9 @@ const SearchInput = ({ className }: SearchInputProps) => {
       </div>
     </form>
   );
+};
+SearchInput.defaultProps = {
+  className: '',
 };
 
 export default SearchInput;

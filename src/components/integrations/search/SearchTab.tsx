@@ -3,7 +3,6 @@ import { buildTab, TabState } from '@coveo/headless';
 import { useEffect, useState } from 'react';
 // Lib
 import { coveoEngine } from '@/src/common/search/coveo-engine';
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 
 interface SearchTabProps {
   id: string;
@@ -26,18 +25,14 @@ const SearchTab = ({ id, expression, title }: SearchTabProps) => {
     return <></>;
   }
 
-  const activeClasses = classnames(
-    'border-b-4',
-    'border-theme-link-hover',
-    'text-theme-link-hover'
-  );
+  const activeClasses = 'border-b-4 border-theme-link-hover text-theme-link-hover';
 
   return (
     <button
       onClick={() => {
         tab.select();
       }}
-      className={classnames('py-4', 'font-bold', 'block', { [activeClasses]: tabState.isActive })}
+      className={`py-4 font-bold block ${tabState.isActive ? [activeClasses] : ''}`}
     >
       {title}
     </button>

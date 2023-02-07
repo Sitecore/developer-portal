@@ -1,5 +1,4 @@
 // Global
-import { classnames } from '@/src/common/types/tailwindcss-classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
@@ -54,38 +53,6 @@ const NavMenu = ({
     };
   }, [isOpen]);
 
-  const mainNavItemStyles = classnames(
-    'nav-item--button',
-    'flex',
-    'items-center',
-    'font-semibold',
-    'text-left',
-    'relative',
-    'pr-8',
-    'h-14',
-    'w-full',
-    'group',
-    'whitespace-nowrap',
-    'transform-gpu',
-    'transition-colors',
-    'hover:text-violet',
-    'dark:hover:text-teal',
-    'lg:h-16',
-    'lg:pr-0'
-  );
-  const buttonActiveClasses = classnames(
-    'text-violet',
-    'dark:text-teal',
-    'nav-item--button-active',
-    'dark:hover:text-teal'
-  );
-  const navItemOverlayInactiveClasses = classnames(
-    'translate-x-full',
-    'lg:translate-none',
-    'lg:hidden'
-  );
-  const navItemOverlayActiveClasses = classnames('translate-x-0');
-
   const router = useRouter();
   const currentPage = router.asPath;
   const isCurrentPage = currentPage === url;
@@ -108,69 +75,29 @@ const NavMenu = ({
         <DynamicTag
           tag={children ? 'button' : 'a'}
           aria-current={!children ? isCurrentPage : undefined}
-          className={classnames(mainNavItemStyles, {
-            [buttonActiveClasses]: (children && isOpen) || isCurrentPath,
-            ['lg:pr-5']: !!children,
-          })}
+          className={`group main-nav-item ${
+            (children && isOpen) || isCurrentPath ? 'button-active' : ''
+          } ${children ? 'lg:pr-5' : ''}`}
           onClick={toggleNavItem}
         >
-          <span className={classnames('inline-flex', 'items-center', 'pointer-events-none')}>
-            {buttonIcon && (
-              <SvgIcon icon={buttonIcon} className={classnames('w-em', 'h-em', 'mr-em')} />
-            )}
+          <span className="inline-flex items-center pointer-events-none">
+            {buttonIcon && <SvgIcon icon={buttonIcon} className="w-em h-em mr-em" />}
             {title}
           </span>
           {children && (
             <>
-              <span
-                className={classnames(
-                  'absolute',
-                  'top-5',
-                  'right-0',
-                  'block',
-                  'h-em',
-                  'w-em',
-                  'lg:hidden',
-                  'pointer-events-none'
-                )}
-              >
+              <span className="absolute right-0 block pointer-events-none top-5 h-em w-em lg:hidden">
                 <SvgIcon
                   icon="chevron-right"
-                  className={classnames(
-                    'h-inherit',
-                    'w-inherit',
-                    'top-5',
-                    'transition-transform',
-                    'transform-gpu',
-                    'group-hover:translate-x-1'
-                  )}
+                  className="transition-transform h-inherit w-inherit top-5 transform-gpu group-hover:translate-x-1"
                 />
               </span>
-              <span
-                className={classnames(
-                  'absolute',
-                  'top-1/2',
-                  '-mt-1.5',
-                  'right-0',
-                  'block',
-                  'h-3',
-                  'w-3',
-                  'hidden',
-                  'lg:block'
-                )}
-              >
+              <span className="absolute top-1/2 -mt-1.5 right-0 block h-3 w-3 hidden lg:block">
                 <SvgIcon
                   icon="chevron-down"
-                  className={classnames(
-                    'h-inherit',
-                    'w-inherit',
-                    'top-5',
-                    'transition-transform',
-                    'transform-gpu',
-                    {
-                      ['rotate-180']: isOpen,
-                    }
-                  )}
+                  className={`h-inherit w-inherit top-5 transition-transform transform-gpu ${
+                    isOpen ? 'rotate-180' : ''
+                  }`}
                 />
               </span>
             </>
@@ -184,96 +111,27 @@ const NavMenu = ({
         <React.Fragment>
           <div
             ref={navItemRef}
-            className={classnames(
-              'fixed',
-              'top-32',
-              'bottom-0',
-              'inset-x-0',
-              'bg-theme-bg',
-              'border-b',
-              'border-theme-bg-alt',
-              'z-50',
-              'transform-gpu',
-              'overflow-y-auto',
-              'transition-transform',
-              'lg:top-16',
-              'lg:absolute',
-              'lg:bottom-auto',
-              'lg:shadow-lg',
-              'lg:transform-none',
-              'lg:transition-none',
-              {
-                [navItemOverlayInactiveClasses]: !isOpen,
-                [navItemOverlayActiveClasses]: isOpen,
-              }
-            )}
+            className={`nav-item-overlay ${
+              isOpen ? 'nav-item-overlay-active' : 'nav-item-overlay-inactive lg:translate-none'
+            }`}
           >
             {/* 
               Back Button
             */}
-            <button
-              className={classnames(
-                'font-semibold',
-                'text-left',
-                'relative',
-                'pr-4',
-                'pl-10',
-                'h-14',
-                'w-full',
-                'group',
-                'bg-violet',
-                'text-white',
-                'lg:hidden',
-                'transform-gpu',
-                'transition-colors',
-                'hover:bg-violet-dark'
-              )}
-              onClick={toggleNavItem}
-            >
+            <button className="group btn-nav-back" onClick={toggleNavItem}>
               Back
-              <span
-                className={classnames(
-                  'absolute',
-                  'top-5',
-                  'left-4',
-                  'block',
-                  'h-em',
-                  'w-em',
-                  'pointer-events-none'
-                )}
-              >
-                <SvgIcon
-                  icon="chevron-left"
-                  className={classnames(
-                    'h-inherit',
-                    'w-inherit',
-                    'top-5',
-                    'transition-transform',
-                    'transform-gpu',
-                    'group-hover:-translate-x-1'
-                  )}
-                />
+              <span className="btn-nav-back-icon-outer">
+                <SvgIcon icon="chevron-left" className="btn-nav-back-icon" />
               </span>
             </button>
             {/* 
               Nav Item Links
             */}
-            <div className={classnames('px-gutter', 'shadow-inner')}>
-              <div className={classnames('max-w-screen-lg', 'mx-auto', 'pt-6', 'lg:py-12')}>
-                <ul
-                  className={classnames(
-                    'grid',
-                    'gap-6',
-                    'md:gap-8',
-                    'md:grid-cols-2',
-                    'lg:grid-cols-3'
-                  )}
-                >
+            <div className="shadow-inner px-gutter">
+              <div className="max-w-screen-lg pt-6 mx-auto lg:py-12">
+                <ul className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
                   {children?.map((child, index) => (
-                    <li
-                      key={`child-${index}`}
-                      className={classnames('border-b', 'border-gray-light', 'pb-4', 'md:pb-6')}
-                    >
+                    <li key={`child-${index}`} className="pb-4 border-b border-gray-light md:pb-6">
                       <NavLink
                         text={child.title}
                         url={child.url}
@@ -283,7 +141,7 @@ const NavMenu = ({
                       {child.children && (
                         <ul>
                           {child.children?.map((child, index) => (
-                            <li key={`child-${index}`} className={classnames('mb-4', 'lg:mb-2')}>
+                            <li key={`child-${index}`} className="mb-4 lg:mb-2">
                               <NavLink
                                 aria-current={currentPage === child.url}
                                 text={child.title}

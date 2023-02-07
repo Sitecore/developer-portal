@@ -1,12 +1,11 @@
 // Global
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import { useEffect, useId, useRef, useState } from 'react';
 
 // Local
 import { SitecoreQuickLinks } from '@/data/data-navigation';
 
 type QuickStartMenuProps = {
-  className?: TTailwindString;
+  className?: string;
 };
 
 const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
@@ -47,14 +46,11 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
     };
   }, [isOpen]);
 
-  const quickStartMenuInactiveClasses = classnames('hidden');
-  const quickStartMenuActiveClasses = classnames('block');
-
   return (
-    <div className={classnames('block', 'w-5', 'h-5', className)}>
+    <div className={`block w-5 h-5 ${className ? className : ''}`}>
       <button
         id={buttonId}
-        className={classnames('w-inherit', 'h-inherit', 'hover:text-violet', 'transition')}
+        className="transition w-inherit h-inherit hover:text-violet"
         onClick={toggleQuickStartMenu}
         aria-expanded={isOpen}
       >
@@ -71,43 +67,25 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
             <rect x="71.2" y="71.2" width="18.8" height="18.8" fill="currentColor" />
           </g>
         </svg>
-        <span className={classnames('sr-only')}>{SitecoreQuickLinks.title}</span>
+        <span className="sr-only">{SitecoreQuickLinks.title}</span>
       </button>
       {/* NOTE:: Dropdown currently absolutely positioned. Revist if used in place other than the navigation */}
       <div
         id={qsMenuId}
         aria-labelledby={buttonId}
         ref={quickStartMenuRef}
-        className={classnames(
-          'shadow-sm',
-          'bg-theme-bg',
-          'border',
-          'border-theme-border',
-          'absolute',
-          'top-16',
-          '-mt-0.5',
-          'w-56',
-          'right-4',
-          'z-50',
-          {
-            [quickStartMenuInactiveClasses]: !isOpen,
-            [quickStartMenuActiveClasses]: isOpen,
-          }
-        )}
+        className={`shadow-sm bg-theme-bg border border-theme-border absolute top-16 -mt-0.5 w-56 right-4 z-50 ${
+          isOpen ? 'block' : 'hidden'
+        }`}
       >
-        <ul className={classnames('py-3')}>
+        <ul className="py-3">
           {SitecoreQuickLinks.children?.map((child, index) => (
             <li
               key={`child-${index}`}
-              className={classnames(
-                'font-semibold',
-                'hover:bg-violet-lightest',
-                'hover:text-violet',
-                'text-xs'
-              )}
+              className="text-xs font-semibold hover:bg-violet-lightest hover:text-violet"
             >
               <a
-                className={classnames('px-4', 'py-2', 'flex', 'justify-between', 'items-center')}
+                className="flex items-center justify-between px-4 py-2"
                 href={child.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -116,7 +94,7 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 16"
-                  className={classnames('w-em', 'h-em', 'scale-75', 'transform-gpu')}
+                  className="scale-75 w-em h-em transform-gpu"
                 >
                   <path
                     d="m13.806 13.33-.023-10.683a.432.432 0 0 0-.43-.43L2.67 2.194a.427.427 0 0 0-.429.429v.357c.001.238.194.43.431.43l9.035.02-9.493 9.493a.43.43 0 0 0 .001.607l.254.254a.43.43 0 0 0 .607.001l9.493-9.493.02 9.035c0 .237.192.43.43.43l.357.001c.238 0 .43-.191.429-.429Z"
@@ -131,6 +109,9 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
       </div>
     </div>
   );
+};
+QuickStartMenu.defaultProps = {
+  className: '',
 };
 
 export default QuickStartMenu;

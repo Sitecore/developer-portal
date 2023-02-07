@@ -1,5 +1,4 @@
 // Global
-import { classnames, TTailwindString } from '@/src/common/types/tailwindcss-classnames';
 import Image from 'next/legacy/image';
 // Data
 import data from '@/data/data-community-list';
@@ -7,20 +6,18 @@ import data from '@/data/data-community-list';
 import TextLink from '@/src/components/common/TextLink';
 
 type CommunityListProps = {
-  className?: TTailwindString;
+  className?: string;
 };
 
 const CommunityList = ({ className }: CommunityListProps): JSX.Element => (
-  <div className={classnames(className)}>
-    <h2 className={classnames('heading-md', 'mb-4')}>{data.title}</h2>
-    <p className={classnames('text-lg', 'text-theme-text-alt', 'mb-6')}>{data.subtitle}</p>
-    <ul className={classnames('grid', 'gap-6', 'md:grid-cols-3')}>
+  <div className={className}>
+    <h2 className="mb-4 heading-md">{data.title}</h2>
+    <p className="mb-6 text-lg text-theme-text-alt">{data.subtitle}</p>
+    <ul className="grid gap-6 md:grid-cols-3">
       {data.content.map((link) => (
-        <li key={link.title} className={classnames('flex', 'flex-col', 'justify-between')}>
+        <li key={link.title} className="flex flex-col justify-between">
           <div>
-            <div
-              className={classnames('mb-4', 'border', 'border-theme-border-alt', 'bg-theme-bg-alt')}
-            >
+            <div className="mb-4 border border-theme-border-alt bg-theme-bg-alt">
               <Image
                 src={link.img.src}
                 alt={link.img.alt || ''}
@@ -29,10 +26,8 @@ const CommunityList = ({ className }: CommunityListProps): JSX.Element => (
                 layout="responsive"
               />
             </div>
-            <h3 className={classnames('heading-sm', 'mb-2')}>{link.title}</h3>
-            <p className={classnames('text-sm', 'text-theme-text-alt', 'mb-6')}>
-              {link.description}
-            </p>
+            <h3 className="mb-2 heading-sm">{link.title}</h3>
+            <p className="mb-6 text-sm text-theme-text-alt">{link.description}</p>
           </div>
           <div>
             <TextLink href={link.href} text={link.linkText} />
@@ -42,5 +37,8 @@ const CommunityList = ({ className }: CommunityListProps): JSX.Element => (
     </ul>
   </div>
 );
+CommunityList.defaultProps = {
+  className: '',
+};
 
 export default CommunityList;
