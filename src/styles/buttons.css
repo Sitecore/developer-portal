@@ -3,6 +3,9 @@
     @apply inline-block px-12 py-4 text-sm font-semibold text-white rounded-full bg-violet focus:bg-violet-dark hover:bg-violet-dark;
   }
   .btn-secondary {
+    @apply inline-block px-4 py-2 text-sm font-semibold text-white rounded-md bg-violet focus:bg-violet-dark hover:bg-violet-dark;
+  }
+  .btn-textlink {
     @apply flex items-center px-2 py-1 mt-4 mr-0 text-xs rounded-full text-charcoal dark:text-teal hover:bg-violet dark:hover:bg-teal hover:text-white;
   }
   .play-button-outside {

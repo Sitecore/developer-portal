@@ -1,0 +1,15 @@
+.tablist {
+  @apply border-b border-b-charcoal-light;
+}
+.tab {
+  @apply font-semibold pb-2 mr-7;
+}
+.tab[aria-selected='true'] {
+  @apply border-b-violet border-b-4;
+}
+.tab[focus-visible='true'] {
+  @apply border-none outline-none;
+}
+.panels {
+  @apply pt-2;
+}

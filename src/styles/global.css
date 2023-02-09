@@ -10,6 +10,7 @@
 @import '../layouts/components/head/NavMenu.styles.css';
 @import '../components/sidebar-nav/SidebarNav.styles.css';
 @import '../components/videoPromo/VideoPromo.styles.css';
+@import '../components/tabs/Tabs.styles.css';
 
 /* Utilities */
 @import 'tailwindcss/utilities';
