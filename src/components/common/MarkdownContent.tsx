@@ -88,7 +88,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
       <div className="grid gap-6 md:grid-cols-2">
         {partials.content.map((item, i) => (
           <div
-            className="relative max-w-4xl p-8 prose border border-theme-border bg-theme-bg text-theme-text"
+            className="relative max-w-4xl p-8 prose dark:prose-invert border border-theme-border bg-theme-bg text-theme-text"
             key={i}
           >
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
@@ -103,7 +103,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
     <VerticalGroup>
       {partials.content.map((item, i) => (
         <div key={i}>
-          <div className="max-w-4xl prose">
+          <div className="max-w-4xl prose dark:prose-invert">
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
           </div>
           <EditButton editUrl={partials.fileNames[i]} />
