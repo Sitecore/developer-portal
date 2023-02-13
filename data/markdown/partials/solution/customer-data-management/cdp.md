@@ -33,9 +33,10 @@ Sitecore CDP brings together real-time behavioral insights and all your customer
 
 ## Open Source
 
-- [Sitecore CDP/Personalize Serializer](https://github.com/dylanyoung-dev/sitecore-cdp-serializer)
-- [Sitecore CDP/Personalize Examples](https://github.com/dylanyoung-dev/cdp-personalize-examples)
-
+<Row columns={3}>
+<Repository framework="Npm" name="Sitecore CDP/Personalize Serializer" description="NPM package that allows serializing CDP Personalize resources to disk" repositoryUrl="https://github.com/dylanyoung-dev/sitecore-cdp-serializer" />
+<Repository framework="Javascript" name="Serialized resources example" description="Examples for storing Sitecore CDP + Personalize templates, connections and other resources in source control" repositoryUrl="https://github.com/dylanyoung-dev/cdp-personalize-examples" />
+</Row>
 ## Resources
 
 - [XM Cloud: Embedded Personalization FAQ](/learn/faq/xm-cloud-embedded-personalization)

@@ -24,12 +24,7 @@ const SvgIcon = ({ icon, className, width, height }: IconProps): JSX.Element => 
   const viewBox = width && height ? `0 0 ${width} ${height}` : '0 0 90 90';
 
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox={viewBox}
-      className={className}
-      display={'block'}
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox={viewBox} className={className} display="block">
       <IconContent />
     </svg>
   );

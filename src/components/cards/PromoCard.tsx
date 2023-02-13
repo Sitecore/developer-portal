@@ -22,7 +22,7 @@ export type PromoCardProps = PromoCardImage & {
 };
 
 const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
-  <div className="relative w-full aspect-video bg-gray-light">
+  <div className="relative w-full aspect-video">
     <Image
       src={img.src}
       alt={img.alt || ''}

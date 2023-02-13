@@ -34,6 +34,14 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 - [Knowledge Base](https://ordercloud.io/knowledge-base)
 - [Ordercloud Feature Guide](https://www.sitecore.com/resources/index/guide/ordercloud-feature-guide)
 
+## Open Source
+
+<Row columns={3}>
+<Repository framework="Npm" name="@ordercloud/seeding" description="A CLI to download and upload serialized representations of full ordercloud marketplaces." repositoryUrl="https://github.com/ordercloud-api/ordercloud-seed" />
+<Repository framework="Javascript" name="JavaScript SDK" description="The official Javascript SDK for the OrderCloud eCommerce platform" repositoryUrl="https://github.com/ordercloud-api/ordercloud-javascript-sdk" />
+<Repository framework="DotNet" name=".NET SDK" description="The official .NET SDK for the OrderCloud eCommerce platform" repositoryUrl="https://github.com/ordercloud-api/ordercloud-dotnet-sdk" />
+</Row>
+
 ## Playground
 
 - [Get Started Now!](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
