@@ -11,5 +11,5 @@
   @apply border-none outline-none;
 }
 .panels {
-  @apply pt-2;
+  @apply pt-2 not-prose flex flex-wrap -mx-2;
 }

@@ -1,59 +1,49 @@
 import { Tab } from '@headlessui/react';
 import { Fragment } from 'react';
 
+// Nested component
+export type TabItemProps = {
+  title: string;
+  children: React.ReactNode | React.ReactNode[];
+};
+
+export const TabItem = ({ title, children }: TabItemProps) => {
+  return (
+    <div>
+      {title}: {children}
+    </div>
+  );
+};
+
 export type TabsProps = {
-  title: string;
-  tabs: Tab[];
+  children: any[];
 };
 
-export type Tab = {
-  title: string;
-  content: string;
-};
+// Parent component
+export const Tabs = ({ children }: TabsProps) => {
+  const titles: string[] = children.map((x) => x.props.title);
+  const content = children.map((x) => x.props.children);
 
-export const Tabs = ({ title, tabs }: TabsProps): JSX.Element => (
-  <>
-    <h2>{title}</h2>
-
+  return (
     <Tab.Group>
-      <Tab.List className="tablist">
-        <Tab as={Fragment}>
-          <button className="tab">Next.js</button>
-        </Tab>
-        <Tab as={Fragment}>
-          <button className="tab">Svelte</button>
-        </Tab>
-        <Tab as={Fragment}>
-          <button className="tab">Vue.js</button>
-        </Tab>
-        <Tab as={Fragment}>
-          <button className="tab">Astro</button>
-        </Tab>
-      </Tab.List>
-      <Tab.Panels className="panels">
-        <Tab.Panel>Content 1</Tab.Panel>
-        <Tab.Panel>Content 2</Tab.Panel>
-        <Tab.Panel>Content 3</Tab.Panel>
-        <Tab.Panel>Content 4</Tab.Panel>
-        {/* ... */}
-      </Tab.Panels>
-
-      {/*
-            <Tab.List className="tablist">
-        {tabs.map((item, index) => {
+      <Tab.List>
+        {titles.map((item, index) => {
           return (
             <Tab as={Fragment} key={index}>
-              <button className="tab">{item.title}</button>
+              <button className="tab">{item}</button>
             </Tab>
           );
         })}
       </Tab.List>
-      <Tab.Panels className="panels">
-        {tabs.map((item, index) => {
-          return <Tab.Panel key={index}>{item.content}</Tab.Panel>;
+      <Tab.Panels>
+        {content.map((item, index) => {
+          return (
+            <Tab.Panel key={index} className="panels">
+              {item}
+            </Tab.Panel>
+          );
         })}
       </Tab.Panels>
-      */}
     </Tab.Group>
-  </>
-);
+  );
+};

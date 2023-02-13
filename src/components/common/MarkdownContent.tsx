@@ -9,7 +9,9 @@ import type { PartialData } from '@/src/interfaces/page-info';
 import VideoPromo from '@/src/components/videoPromo/index';
 import CTACard from '../cards/CTACard';
 import { Promo } from '../cards/PromoCard';
-import { Tabs } from '../tabs';
+import { Repository } from '../cards/Repository';
+import { Row } from '../common/Row';
+import { TabItem, Tabs } from '../tabs';
 import VerticalGroup from './VerticalGroup';
 import YouTube from './YouTube';
 
@@ -60,7 +62,10 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
         CtaCard: CTACard,
         Promo: Promo,
         YouTube: YouTube,
+        Row: Row,
         Tabs: Tabs,
+        TabItem: TabItem,
+        Repository: Repository,
       }}
     />
   );
