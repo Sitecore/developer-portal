@@ -7,7 +7,7 @@ description: 'Centrally manage your omnichannel content with a cloud-hosted head
 
 ## Introduction
 
-<img src="/images/products/chone/effortless-content-authoring.svg" alt="Content Hub ONE Authoring" class="ml-4 inline w-1/3" align="right" />
+<img src="/images/products/chone/effortless-content-authoring.svg" alt="Content Hub ONE Authoring" className="ml-4 inline w-1/3" align="right" />
 Sitecore Content Hub ONE is a cloud-native, agile headless Content Management System (CMS), for developers and marketers to efficiently launch centrally managed, reusable omnichannel experiences. With Content Hub ONE, you can quickly model, author and deliver content of any type, for any channel. Business users can manage content using a simple modern user interface, while developers can make use of comprehensive APIs and SDKs to create and deliver omnichannel experiences.
 
 ### What are the main capabilities of Content Hub ONE?
