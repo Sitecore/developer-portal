@@ -26,10 +26,9 @@
 
   /* stylelint-disable -- We need these selectors in this order specifically for Safari. */
   *:focus {
-    outline-color: theme('colors.charcoal.DEFAULT');
-    outline-offset: 2px;
-    outline-style: solid;
-    outline-width: 2px;
+    outline-offset: 0px;
+    outline-style: none;
+    outline-width: 0px;
   }
 
   *:focus:not(:focus-visible) {
@@ -37,10 +36,9 @@
   }
 
   *:focus-visible {
-    outline-color: theme('colors.theme-outline');
-    outline-offset: 2px;
-    outline-style: solid;
-    outline-width: 2px;
+    outline-offset: 0px;
+    outline-style: none;
+    outline-width: 0px;
   }
   /* stylelint-enable */
 

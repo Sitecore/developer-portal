@@ -9,16 +9,19 @@ export type IconNames =
   | 'chevron-left'
   | 'chevron-right'
   | 'heading'
-  | 'quick-links';
+  | 'quick-links'
+  | 'github';
 
 export type IconProps = {
   icon: IconNames;
   className?: string;
+  width?: number;
+  height?: number;
 };
 
-const SvgIcon = ({ icon, className }: IconProps): JSX.Element => {
+const SvgIcon = ({ icon, className, width, height }: IconProps): JSX.Element => {
   const IconContent = dynamic(() => import(`./icons/icon--${icon}`));
-  const viewBox = '0 0 90 90';
+  const viewBox = width && height ? `0 0 ${width} ${height}` : '0 0 90 90';
 
   return (
     <svg

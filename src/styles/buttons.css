@@ -5,6 +5,9 @@
   .btn-secondary {
     @apply flex items-center px-2 py-1 mt-4 mr-0 text-xs rounded-full text-charcoal dark:text-teal hover:bg-violet dark:hover:bg-teal dark:hover:text-white hover:text-white;
   }
+  .btn-textlink {
+    @apply flex items-center px-2 py-1 mt-4 mr-0 text-xs rounded-full text-charcoal dark:text-teal hover:bg-violet dark:hover:bg-teal hover:text-white;
+  }
   .play-button-outside {
     @apply inline-block w-5 h-5 ml-1 transition-transform duration-300 transform-gpu group-focus:translate-x-1 group-hover:translate-x-1;
   }

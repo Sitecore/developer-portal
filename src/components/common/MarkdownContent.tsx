@@ -9,6 +9,9 @@ import type { PartialData } from '@/src/interfaces/page-info';
 import VideoPromo from '@/src/components/videoPromo/index';
 import CTACard from '../cards/CTACard';
 import { Promo } from '../cards/PromoCard';
+import { Repository } from '../cards/Repository';
+import { Row } from '../common/Row';
+import { TabItem, Tabs } from '../tabs';
 import VerticalGroup from './VerticalGroup';
 import YouTube from './YouTube';
 
@@ -59,6 +62,10 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
         CtaCard: CTACard,
         Promo: Promo,
         YouTube: YouTube,
+        Row: Row,
+        Tabs: Tabs,
+        TabItem: TabItem,
+        Repository: Repository,
       }}
     />
   );
@@ -66,7 +73,7 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
 
 function EditButton({ editUrl, classes }: EditButtonProps) {
   return (
-    <button className={`btn-secondary ${classes ? classes : ''}`}>
+    <button className={`btn-textlink ${classes ? classes : ''}`}>
       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-current" viewBox="0 0 20 20">
         <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
         <path
