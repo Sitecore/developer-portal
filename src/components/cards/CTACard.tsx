@@ -24,7 +24,7 @@ const CTACard = ({
   link2Text,
   link2href,
 }: CTACardProps): JSX.Element => (
-  <div className="w-full px-16 py-10 my-8 bg-theme-bg-alt">
+  <div className="w-full px-16 py-10 my-8 bg-theme-bg-alt clear-both">
     <DynamicTag tag={headingLevel} className="mb-4 heading-md">
       {title}
     </DynamicTag>

@@ -7,26 +7,25 @@ description: 'From search to sale, Discover helps you create relevant experience
 
 ## Introduction
 
+<img src="/images/products/discover/discover-datadriven-commerce.svg" alt="Datadriven Commerce" className="ml-4 inline w-1/3" align="right" />
 Sitecore Discover enables your commerce business by adding individualized search and merchandizing capabilities. Deliver a 1:1 shopping experience with tailored search results and recommendations driven by AI in real time.
+
+To learn more about [Sitecore Discover](https://www.sitecore.com/products/discover) and how it can help your clients please visit [Sitecore.com](https://www.sitecore.com/products/discover).
+
+<VideoPromo youTubeId="z1FR_W--7SI" title="Sitecore Discover introduction" description="Introduction to how Sitecore Discover delivers unique shopping journeys tailored to each shopper’s in-the-moment needs and wants." className="clear-both" />
 
 ## Getting Started
 
-- [Introduction to Sitecore Discover](/learn/getting-started/discover-introduction)
-- [What's new in Sitecore Discover](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/what-s-new-in-sitecore-discover.html)
-- [Overview of Sitecore Discover integration](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/overview-of-sitecore-discover-integration.html)
-- [Getting started with your Discover integration](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/getting-started-with-your-discover-integration.html)
-- [Introduction to Discover JS SDK for React](https://doc.sitecore.com/discover/en/developers/discover-js-sdk-for-react/introduction-to-discover-js-sdk-for-react.html)
-
+<Row columns={2}>
+<Link title="Introduction to Sitecore Discover" link="/learn/getting-started/discover-introduction" />
+<Link title="What's new in Sitecore Discover" link="https://doc.sitecore.com/discover/en/developers/discover-developer-guide/what-s-new-in-sitecore-discover.html" />
+<Link title="Overview of Sitecore Discover integration" link="https://doc.sitecore.com/discover/en/developers/discover-developer-guide/overview-of-sitecore-discover-integration.html" />
+<Link title="Getting started with your Discover integration" link="https://doc.sitecore.com/discover/en/developers/discover-developer-guide/getting-started-with-your-discover-integration.html" />
+<Link title="Introduction to Discover JS SDK for React" link="https://doc.sitecore.com/discover/en/developers/discover-js-sdk-for-react/introduction-to-discover-js-sdk-for-react.html" />
+</Row>
 ## Documentation
 
-- [Developer resources in the Customer Engagement Console (CEC)](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/developer-resources-in-the-customer-engagement-console--cec-.html)
-- [Integrate using Sitecore Discover SDKs](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-using-sitecore-discover-sdks.html)
-- [Using Discover REST APIs](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/using-discover-rest-apis.html)
-- [Keeping product data up-to-date using the Incremental Feed API](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/keeping-product-data-up-to-date-using-the-incremental-feed-api.html)
-- [Integrate using the Search and Recommendation API](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-using-the-search-and-recommendation-api.html)
-- [Integrate using the Events API](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-using-the-events-api.html)
-- [Integrate with Discover runtime JS](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-with-discover-runtime-js.html)
-- [Integrate pages hosted with Discover](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/integrate-pages-hosted-with-discover.html)
-- [Test your integration with Sitecore Discover](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/test-your-integration-with-sitecore-discover.html)
-- [Search and Recommendation data model](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/search-and-recommendation-data-model.html)
-- [Events data model](https://doc.sitecore.com/discover/en/developers/discover-developer-guide/events-data-model.html)
+<Row columns={2}>
+<Link title="User documentation" link="https://doc.sitecore.com/discover/en/users/discover-user-guide/index-en.html" />
+<Link title="Developer documentation" link="https://doc.sitecore.com/discover/en/developers/discover-developer-guide/index-en.html" />
+</Row>

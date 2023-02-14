@@ -51,14 +51,15 @@ The Sitecore Demo Solutions team created demo's that Sitecore partners and selle
 
 ## Documentation
 
-- [User Documentation](https://doc.sitecore.com/ch-one/en/users/content-hub-one/working-with-content-hub-one.html)
-- [Developer Documentation](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/developing-with-content-hub-one.html)
-- [Content Hub ONE architecture](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/architecture.html)
-- [Content Management API](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-management-api.html)
-- [Preview and Delivery API](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/graphql--preview-and-delivery-apis.html)
-- [Content Hub ONE CLI](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-cli.html)
-- [Content Hub ONE client SDK](https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-sdk.html)
-
+<Row columns="3">
+<Link title="User Documentation" link="https://doc.sitecore.com/ch-one/en/users/content-hub-one/working-with-content-hub-one.html" />
+<Link title="Developer Documentation" link="https://doc.sitecore.com/ch-one/en/developers/content-hub-one/developing-with-content-hub-one.html" />
+<Link title="Architecture" link="https://doc.sitecore.com/ch-one/en/developers/content-hub-one/architecture.html" />
+<Link title="Content Management API" link="https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-management-api.html" />
+<Link title="Preview and Delivery API" link="https://doc.sitecore.com/ch-one/en/developers/content-hub-one/graphql--preview-and-delivery-apis.html" />
+<Link title="Content Hub ONE CLI" link="https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-cli.html" />
+<Link title="Content Hub ONE client SDK" link="https://doc.sitecore.com/ch-one/en/developers/content-hub-one/content-hub-one-sdk.html" />
+</Row>
 ## Access
 
 - [Sitecore Cloud Portal (requires authentication)](https://portal.sitecorecloud.io/)

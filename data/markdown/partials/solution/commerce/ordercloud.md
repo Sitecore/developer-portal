@@ -5,34 +5,21 @@ title: 'Sitecore OrderCloud®'
 description: 'Cloud-native, headless, and API-first commerce solution'
 ---
 
-<Promo
-  title="Vercel Next.js conference"
-  description="Replay the Next.js Conf and watch Pieter Brinkman, VP Technical Marketing, showing you how to use Next.js Commerce and Sitecore OrderCloud to build a B2C storefront in 5 minutes."
-  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/6752888275b443cca0fc5934e19e0649?v=ec9593ee"
-  linkText="Watch now!"
-  linkHref="https://youtu.be/ati9lB4n_2o" isImageLeft={false}
-/>
-
 ## Introduction
 
+<img src="/images/products/ordercloud/scalable-commerce.svg" alt="Scalable Commerce with OrderCloud" className="ml-4 inline w-1/3" align="right" />
 With Sitecore OrderCloud®, design your own commerce solution with an API-first, headless cloud platform for B2B, B2C, and B2X. OrderCloud powers custom eCommerce experiences, order management, and B2B marketplace applications for some of the world’s most well-known brands - processing over 25 million transactions and $5 billion in revenue annually.
-
-<CtaCard description="Use the Next.js Commerce StarterKit and integrate it with OrderCloud for free" href="https://ordercloud.io/knowledge-base/vercel-integration" linkText="Read more" title="Get Started with Sitecore OrderCloud and Next.js" link2href="https://ordercloud.vercel.store/" link2Text="Demo" />
-
-## Documentation
-
-- [API reference](https://ordercloud.io/api-reference)
-
-## More information on how to get started
-
-- [Getting Started with OrderCloud](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
-- [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore OrderCloud
 
 ## Discover more
 
-- [Platform Overview](https://ordercloud.io/discover/platform-overview)
-- [Knowledge Base](https://ordercloud.io/knowledge-base)
-- [Ordercloud Feature Guide](https://www.sitecore.com/resources/index/guide/ordercloud-feature-guide)
+<Row columns={2}>
+<Link title="Platform Overview" link="https://ordercloud.io/discover/platform-overview" />
+<Link title="Knowledge Base" link="https://ordercloud.io/knowledge-base" />
+<Link title="Ordercloud Feature Guide" link="https://www.sitecore.com/resources/index/guide/ordercloud-feature-guide" />
+<Link title="API Reference" link="https://ordercloud.io/api-reference" />
+</Row>
+
+<VideoPromo youTubeId="3bHgafJShGM" title="OrderCloud + Next.js" description="See how easy it is to setup an instance of Next.js Commerce powered by Sitecore OrderCloud. Rob will walk you through starting from a blank project, all the way to having a complete development environment with working CI/CD pipeline pushing changes out to Vercel." className="clear-both" />
 
 ## Open Source
 
@@ -42,15 +29,31 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 <Repository framework="DotNet" name=".NET SDK" description="The official .NET SDK for the OrderCloud eCommerce platform" repositoryUrl="https://github.com/ordercloud-api/ordercloud-dotnet-sdk" />
 </Row>
 
-## Playground
+## Try it yourself
 
-- [Get Started Now!](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
-- [The Code 👩‍💻](https://github.com/ordercloud-api)
+<Row columns={3}>
+<Article title="Get Started Now!" description="Four chapters that will introduce you to essential OrderCloud API concepts." link="https://ordercloud.io/learn/getting-started/welcome-to-ordercloud" />
+<Repository framework="Javascript" repositoryUrl="https://github.com/ordercloud-api" name="OrderCloud API" description="Check out all our repositories on GitHub" />
+<Repository framework="DotNet" name="Headstart" description="A complete and opinionated eCommerce solution using OrderCloud - built with .NET Core and Angular" repositoryUrl="https://github.com/ordercloud-api/headstart" />
+</Row>
 
 ## Integrations
 
-- [Integrating Sitecore OrderCloud with Sitecore Send](/learn/integrations/send-oc)
-- [Integrating Sitecore OrderCloud with Sitecore CDP](/learn/integrations/oc-cdp)
+We also have some integration guides that will help you connect multiple Sitecore products.
+<Row columns={2}>
 
-<VideoPromo youTubeId="3bHgafJShGM" title="OrderCloud + Next.js" description="See how easy it is to setup an instance of Next.js Commerce powered by Sitecore OrderCloud. Rob will walk you through starting from a blank project, all the way to having a complete development environment with working CI/CD pipeline pushing changes out to Vercel.
-" />
+<Link title="Integrating Sitecore OrderCloud with Sitecore Send" link="/learn/integrations/send-oc" />
+<Link title="Integrating Sitecore OrderCloud with Sitecore CDP" link ="/learn/integrations/oc-cdp"/>
+</Row>
+
+<VideoPromo
+  youTubeId="ati9lB4n_2o"
+  title="Vercel Next.js conference"
+  description="Replay the Next.js Conf and watch Pieter Brinkman, VP Technical Marketing, showing you how to use Next.js Commerce and Sitecore OrderCloud to build a B2C storefront in 5 minutes."
+  isImageLeft={true} />
+
+## Learning
+
+If you are interested and want to learn more, please consider these courses at Learning@Sitecore
+
+- [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore OrderCloud
