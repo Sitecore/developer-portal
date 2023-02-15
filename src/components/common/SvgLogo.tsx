@@ -7,6 +7,9 @@ export enum Logo {
   Sveltekit = 'svelte',
   React = 'react',
   ReactNative = 'reactnative',
+  JavaScript = 'javascript',
+  DOTNET = 'dotnet',
+  NPM = 'npm',
 }
 
 export type IconProps = {

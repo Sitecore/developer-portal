@@ -9,42 +9,44 @@ description: 'Centralize content strategy and operations for all delivery channe
 
 Sitecore Content Hub&trade; offers multiple modules. Here is a brief overview of these modules and their features.
 
-| Module                                          | Description                                                                                      |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Sitecore Experience Edge&trade; for Content Hub | Manage and publish your content for multiple functions and audiences using numerous devices.     |
-|                                                 | Have other applications consume and use your content according to their particular needs.        |
-| Sitecore DAM&trade;                             | Centralize and categorize photos, layouts, artwork, video, 3D, source files, and more.           |
-|                                                 | Manage metadata, digital rights management (DRM), security, and global distribution.             |
-| Sitecore PCM&trade;                             | Manage access, real-time update and publication of your product-related content across channels. |
-| Sitecore CMP&trade;                             | Plan, manage and collaborate effectively on your content strategies.                             |
-| Sitecore MRM&trade;                             | Plan and schedule complex, multi-layered marketing activities.                                   |
-| Sitecore Web-to-Print&trade;                    | Create and control central customizable templates.                                               |
+<Row columns={2}>
 
+<Article title="Sitecore Experience Edge&trade; for Content Hub" description="Manage and publish your content for multiple functions and audiences using numerous devices." />
+<Article title="Sitecore DAM&trade;" description="Centralize and categorize photos, layouts, artwork, video, 3D, source files, and more." />
+<Article title="Sitecore PCM&trade;" description="Manage access, real-time update and publication of your product-related content across channels." />
+<Article title="Sitecore CMP&trade;" description="Plan, manage and collaborate effectively on your content strategies." />
+<Article title="Sitecore MRM&trade;" description="Plan and schedule complex, multi-layered marketing activities." />                        
+<Article title="Sitecore Web-to-Print&trade;" description="Create and control central customizable templates." />
+</Row>
 ## Getting Started
 
-- [Getting Started](https://doc.sitecore.com/ch/en/users/latest/content-hub/started-get-started.html)
-- [Navigate Content Hub](https://doc.sitecore.com/ch/en/users/latest/content-hub/log-in.html)
-- [The different modules](https://doc.sitecore.com/ch/en/users/latest/content-hub/modules.html)
-- [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Content Hub
+<Row columns={2}>
+<Link title="Getting Started" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/started-get-started.html" />
+<Link title="Navigate Content Hub" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/log-in.html" />
+<Link title="The different modules" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/modules.html" />
+<Link title="Sitecore Essentials (FREE eLearning)" link="https://learning.sitecore.com/pathway/sitecore-essentials" />
+</Row>
 
 ## User Documentation
 
-- [Digital Asset Management (DAM)](https://doc.sitecore.com/ch/en/users/latest/content-hub/digital-assets.html)
-- [Product Content Management (PCM)](https://doc.sitecore.com/ch/en/users/latest/content-hub/pcm.html)
-- [Content Marketing Platform (CMP)](https://doc.sitecore.com/ch/en/users/latest/content-hub/manage-content.html)
-- [Marketing Resource Management (MRM)](https://doc.sitecore.com/ch/en/users/latest/content-hub/manage-projects-and-jobs.html)
-- [Content Publisher (a.k.a Web-to-print)](https://doc.sitecore.com/ch/en/users/latest/content-hub/publisher.html)
-
+<Row columns={3}>
+<Link title="Digital Asset Management (DAM)" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/digital-assets.html" />
+<Link title="Product Content Management (PCM)" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/pcm.html" />
+<Link title="Content Marketing Platform (CMP)" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/manage-content.html" />
+<Link title="Marketing Resource Management (MRM)" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/manage-projects-and-jobs.html" />
+<Link title="Content Publisher (a.k.a Web-to-print)" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/publisher.html" />
+</Row>
 ## Developer Documentation
 
-- [Content Hub Security guide](https://doc.sitecore.com/ch/en/users/latest/content-hub/guide-intro.html)
-- [Cloud development lifecycle](https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/sdlc-introduction.html)
-- [Cloud development Security](https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/security-intro.html)
-- [Cloud development Best Practices](https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/integrations-best-practices-best-practices.html)
-- [Architecture overview](https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/architecture-index.html)
-- [Use integrations to extend functionality](https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/api-overview.html)
-- [API Reference / SDKs](https://doc.sitecore.com/ch/en/developers/latest/api-reference/index-en.html)
--
+<Row columns={2}>
+<Link title="Content Hub Security guide" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/guide-intro.html" />
+<Link title="Cloud development lifecycle" link="https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/sdlc-introduction.html" />
+<Link title="Cloud development Security" link="https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/security-intro.html" />
+<Link title="Cloud development Best Practices" link="https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/integrations-best-practices-best-practices.html" />
+<Link title="Architecture overview" link="https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/architecture-index.html" />
+<Link title="Use integrations to extend functionality" link="https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/api-overview.html" />
+<Link title="API Reference / SDKs" link="https://doc.sitecore.com/ch/en/developers/latest/api-reference/index-en.html" />
+</Row>
 
 ## SDKs/ Tools for integration
 

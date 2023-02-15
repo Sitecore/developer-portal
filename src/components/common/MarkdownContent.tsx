@@ -7,7 +7,9 @@ import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hl
 import type { PartialData } from '@/src/interfaces/page-info';
 // Lib
 import VideoPromo from '@/src/components/videoPromo/index';
+import { Article } from '../cards/Article';
 import CTACard from '../cards/CTACard';
+import { LinkItem } from '../cards/LinkItem';
 import { Promo } from '../cards/PromoCard';
 import { Repository } from '../cards/Repository';
 import { Row } from '../common/Row';
@@ -66,6 +68,8 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
         Tabs: Tabs,
         TabItem: TabItem,
         Repository: Repository,
+        Article: Article,
+        Link: LinkItem,
       }}
     />
   );

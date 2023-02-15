@@ -6,7 +6,7 @@ description: 'Manage the full web experience with a cloud-hosted headless Web CM
 ---
 
 <Promo
-  title="XM Cloud Recommended Practices"
+  title="Recommended Practices"
   description="Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects! "
   imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
   linkText="Read now!"
@@ -30,29 +30,34 @@ The importance of your company's growth comes with the:
 
 ## Getting Started
 
-- [XM Cloud Introduction](/learn/getting-started/xm-cloud-introduction)
-- [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
-- [XM Cloud FAQ](/learn/faq/xm-cloud)
-- [XM Cloud Recommended Practices](/learn/faq/xm-cloud-recommended-practices)
-- [XM Cloud: Embedded Personalization FAQ](/learn/faq/xm-cloud-embedded-personalization)
+<Row columns={2}>
+  <Article title="XM Cloud Introduction" description="XM Cloud is around the corner. But what is XM Cloud? What does it include? And how can you prepare for it?" link="/learn/getting-started/xm-cloud-introduction" />
+  <Article title="Recommended Practices" description="Tips for teams working on XM Cloud projects from developers in the field" link="/learn/faq/xm-cloud-recommended-practices" />
+  <Article title="Embedded Personalization " description="Learn more about XM Cloud Embedded Personalization." link="/learn/faq/xm-cloud-embedded-personalization" />
+  <Article title="XM Cloud FAQ" description="Learn more about XM Cloud and all of the features." link="/learn/faq/xm-cloud" />
+  <Article title="Getting started with XM Cloud" description="Read the step by step tutorial on the Sitecore Documentation site." link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
+</Row>
 
 ## Documentation
 
-- [User Documentation](https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html)
-- [Developer Documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html)
-- [XM Cloud Build Configuration](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html)
-- [XM Cloud Deploy App](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
-- [Developer Tools](https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html)
-- [XM Cloud development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html)
-- [Cloud Portal developer docs](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
-
+<Row columns={4}>
+<Link title="User Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
+<Link title="Developer Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html" />
+<Link title="XM Cloud Build Configuration" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html" />
+<Link title="XM Cloud Deploy App" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+<Link title="Developer Tools" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html" />
+<Link title="XM Cloud development" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html" />
+<Link title="Cloud Portal developer docs" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
+</Row>
 ## Learn & Examples
 
 ### Open Source
 
-- [XM Cloud Foundation](https://github.com/sitecorelabs/xmcloud-foundation-head)
-- [Sitecore PlaySummit Demo - XM Cloud](https://github.com/Sitecore/Sitecore.Demo.XmCloud.PlaySummit)
-- [XM Cloud Introduction - example implementation](https://github.com/Sitecore/XM-Cloud-Introduction)
+<Row columns={3}>
+<Repository framework="Nextjs" name="Headless SXA Starter Kit" description="This solution is designed to help developers learn and get started quickly with XM Cloud + SXA." repositoryUrl="https://github.com/sitecorelabs/xmcloud-foundation-head" />
+<Repository framework="Nextjs" name="Sitecore PlaySummit Demo" description="The official Sitecore demo used to demo Sitecore DXP including Content Hub and JSS" repositoryUrl="https://github.com/Sitecore/Sitecore.Demo.XmCloud.PlaySummit" />
+<Repository framework="Nextjs" name="Example implementation" description="This repository contains the codebase for a series of sites managed by the developer relations at Sitecore" repositoryUrl="https://github.com/Sitecore/XM-Cloud-Introduction" />
+</Row>
 
 ### Other Learning
 

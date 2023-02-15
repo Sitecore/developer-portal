@@ -21,7 +21,7 @@
     @apply px-3 py-2 border-l border-white dark:text-teal text-violet rounded-r-md dark:border-theme-bg hover:bg-violet-dark hover:text-white;
   }
   .btn-text-link {
-    @apply inline-flex items-center text-sm font-bold hover:underline focus:underline;
+    @apply inline-flex items-center text-sm font-bold no-underline hover:underline focus:underline;
   }
   .btn-nav-back {
     @apply relative w-full pl-10 pr-4 font-semibold text-left text-white transition-colors h-14 bg-violet lg:hidden transform-gpu hover:bg-violet-dark;
