@@ -1,0 +1,17 @@
+@layer components {
+  .card {
+    @apply flex justify-between border border-theme-border dark:bg-theme-bg-alt shadow-sm transition duration-300 transform hover:shadow-md hover:accent-theme-bg-alt;
+  }
+  .article {
+    @apply card flex-col p-4;
+  }
+  .link {
+    @apply card text-center not-prose p-4;
+  }
+  .article h4 {
+    @apply mt-0;
+  }
+  .repository {
+    @apply relative flex flex-col justify-between bg-white border border-theme-border dark:bg-theme-bg-alt p-3 shadow-md;
+  }
+}

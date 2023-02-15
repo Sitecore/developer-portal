@@ -11,6 +11,7 @@
 @import '../components/sidebar-nav/SidebarNav.styles.css';
 @import '../components/videoPromo/VideoPromo.styles.css';
 @import '../components/tabs/Tabs.styles.css';
+@import '../components/cards/Cards.styles.css';
 
 /* Utilities */
 @import 'tailwindcss/utilities';
