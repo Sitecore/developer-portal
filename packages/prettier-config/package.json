@@ -1,0 +1,17 @@
+{
+    "name": "prettier-config",
+    "main": "./prettier-config.json",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "publish-manual": "npm publish"
+    },
+    "peerDependencies": {
+        "prettier": "^2.7.1"
+    }
+}
