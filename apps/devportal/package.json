@@ -19,7 +19,7 @@
     }
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
     "pre-commit": "lint-staged",
@@ -54,7 +54,7 @@
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^2.0.0",
-    "ui": "workspace:*",
+    "ui": "*",
     "unist-util-visit": "^4.0.0"
   },
   "devDependencies": {
@@ -69,14 +69,14 @@
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "cross-env": "^7.0.3",
-    "eslint-config-custom": "workspace:*",
+    "eslint-config-custom": "*",
     "husky": "^8.0.1",
     "lint-staged": "^11.2.6",
     "next-sitemap": "^1.9.9",
-    "prettier-config": "workspace:*",
+    "prettier-config": "*",
     "react-gtm-module": "^2.0.11",
-    "tailwind-config": "workspace:*",
-    "tsconfig": "workspace:*",
+    "tailwind-config": "*",
+    "tsconfig": "*",
     "typescript": "^4.8.3"
   }
 }
