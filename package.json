@@ -1,6 +1,6 @@
 {
-  "name": "my-turborepo",
-  "version": "0.0.0",
+  "name": "developer-portal-turborepo",
+  "version": "1.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
