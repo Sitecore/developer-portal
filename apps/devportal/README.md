@@ -2,7 +2,7 @@
 
 # Sitecore Developer Portal
 
-Welcome to the Sitecore Developer Portal. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
+Welcome to the Sitecore Developer Portal repository. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
 
 ## The Tech
 
