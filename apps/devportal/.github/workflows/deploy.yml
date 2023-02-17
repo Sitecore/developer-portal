@@ -1,0 +1,57 @@
+name: deploy website
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install npm 7
+        run: npm i -g npm@7 --registry=https://registry.npmjs.org
+      - name: Install
+        run: npm install
+      - name: Build
+        env:
+          COVEO_ACCESS_TOKEN: ${{ secrets.COVEO_ACCESS_TOKEN }}
+          COVEO_ORGANIZATION_ID: ${{ secrets.COVEO_ORGANIZATION_ID }}
+          COVEO_SEARCH_HUB: ${{ secrets.COVEO_SEARCH_HUB }}
+          COVEO_PIPELINE: ${{ secrets.COVEO_PIPELINE }}
+        run: npm run build
+
+  deploy:
+    needs: build
+    if: github.repository_owner == 'Sitecore' && ((github.event.pull_request.head.repo.full_name == github.repository) || (github.event_name == 'push'))
+    runs-on: ubuntu-latest
+    permissions:
+      deployments: write
+    steps:
+      - name: start deployment
+        uses: bobheadxi/deployments@v0.4.3
+        id: deployment
+        with:
+          step: start
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: ${{ fromJSON('["Production", "Preview"]')[github.ref != 'refs/heads/main'] }}
+
+      - uses: actions/checkout@v3
+
+      - uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-args: ${{ fromJSON('["--prod", ""]')[github.ref != 'refs/heads/main'] }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
+          scope: ${{ secrets.VERCEL_ORG_ID}}
+          working-directory: ./
+
+      - name: update deployment status
+        uses: bobheadxi/deployments@v0.4.3
+        if: always()
+        with:
+          step: finish
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          deployment_id: ${{ steps.deployment.outputs.deployment_id }}

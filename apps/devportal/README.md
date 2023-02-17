@@ -75,23 +75,3 @@ If you want to make changes to the code, follow these steps:
 7. Commit, push to your remote fork of the Developer Portal repo, then open a pull request (PR) to the `main` branch of the Developer Portal repo.
 
 Your changes will be reviewed and merged if appropriate.
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx degit vercel/turbo/examples/with-tailwind with-tailwind
-cd with-tailwind
-pnpm install
-git init . && git add . && git commit -m "Init"
-```
