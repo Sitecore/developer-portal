@@ -1,10 +1,10 @@
 import { Product } from './types';
 
-export function GetReleaseNotes() {
+export function getReleaseNotes() {
   return 'HelloWorld!';
 }
 
-export function GetReleaseNotesByProduct(product: Product) {
+export function getReleaseNotesByProduct(product: Product) {
   if (product == Product.CDP) {
     return 'Hello CDP';
   }

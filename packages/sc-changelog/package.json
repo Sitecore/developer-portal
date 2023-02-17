@@ -2,7 +2,7 @@
   "name": "sc-changelog",
   "version": "0.0.0",
   "main": "./index.ts",
-  "types": "./index.ts",
+  "types": "./types/index.ts",
   "license": "MIT",
   "scripts": {
     "lint": "TIMING=1 eslint \"**/*.ts*\""
