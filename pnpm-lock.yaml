@@ -147,7 +147,7 @@ importers:
 
   packages/prettier-config:
     specifiers:
-      prettier: ^2.7.1
+      prettier: '>=2.7.1'
     dependencies:
       prettier: 2.8.4
 

@@ -9,9 +9,9 @@
         "access": "public"
     },
     "scripts": {
-        "publish-manual": "npm publish"
+        "publish-manual": "pnpm publish"
     },
     "peerDependencies": {
-        "prettier": "^2.7.1"
+        "prettier": ">=2.7.1"
     }
 }
