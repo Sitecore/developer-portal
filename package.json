@@ -8,14 +8,23 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.13",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
+    "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.11",
+    "tailwindcss": "^3.2.4",
     "turbo": "latest"
   },
   "packageManager": "pnpm@7.15.0",
   "dependencies": {
     "dotenv-cli": "^7.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "json5@<1.0.2": ">=1.0.2"
+    }
   }
 }

@@ -1,7 +1,7 @@
 import { ExtractHeadingsConfig } from '@/src/interfaces/contentheading';
-import { Root } from 'hast';
 import { headingRank } from 'hast-util-heading-rank';
 import { toString } from 'hast-util-to-string';
+import { Root } from 'hastscript/lib/core';
 import { visit } from 'unist-util-visit';
 
 /**
