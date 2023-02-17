@@ -1,1 +1,1 @@
-export * from './GetReleaseNotes';
+export * from './getReleaseNotes';
