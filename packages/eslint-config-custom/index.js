@@ -5,52 +5,46 @@ module.exports = {
     node: true,
   },
   extends: [
-    "turbo",
-    "prettier",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@next/next/recommended",
+    'turbo',
+    'prettier',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@next/next/recommended',
   ],
   rules: {
-    "@next/next/no-html-link-for-pages": "off",
-    "react/jsx-key": "off",
+    '@next/next/no-html-link-for-pages': 'off',
+    'react/jsx-key': 'off',
     // Disable prop-types as we use TypeScript for type checking
-    "react/prop-types": "off",
+    'react/prop-types': 'off',
     // allow jsx syntax in js files (for next.js project)
-    "react/jsx-filename-extension": [
+    'react/jsx-filename-extension': [
       1,
       {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     ], //should add ".ts" if typescript project
-    "react/display-name": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
+    'react/display-name': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     //"prettier/prettier": "error",
-    "@typescript-eslint/interface-name-prefix": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/ban-ts-ignore": "off",
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/ban-ts-ignore': 'off',
     // needed for NextJS's jsx without react import
-    "react/react-in-jsx-scope": "off",
+    'react/react-in-jsx-scope': 'off',
   },
-  parserOptions: {
-    babelOptions: {
-      presets: [require.resolve("next/babel")],
-    },
-  },
-  ignorePatterns: ["!.*", "dist", "node_modules", ".next"],
+  ignorePatterns: ['!.*', 'dist', 'node_modules', '.next'],
   overrides: [],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["react", "@typescript-eslint"],
-  rules: {},
+  plugins: ['react', '@typescript-eslint'],
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
   },
 };

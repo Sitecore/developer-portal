@@ -3,8 +3,6 @@
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "typeRoots": [
-      "./types",
-    ],
-  },
+    "typeRoots": ["./types"]
+  }
 }

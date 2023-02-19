@@ -11,8 +11,8 @@ import Nav from '@/src/layouts/components/head/Nav';
 import '@/src/styles/global.css';
 import React from 'react';
 // Fonts
-import { AvenirNextLTPro } from '../common/fonts/avenirNextLTPro';
-import { AvenirNextR } from '../common/fonts/avenirNextR';
+import { AvenirNextLTPro } from '@/src/common/fonts/avenirNextLTPro';
+import { AvenirNextR } from '@/src/common/fonts/avenirNextR';
 
 function SCDPApp({ Component, pageProps }: AppProps) {
   // useEffect for basic page views tracking via router/gtag.
@@ -31,7 +31,7 @@ function SCDPApp({ Component, pageProps }: AppProps) {
         <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
       </Head>
       <div
-        className={`${AvenirNextR.variable} ${AvenirNextLTPro.variable} font-sans theme-light text-theme-text bg-theme-bg dark:theme-dark`}
+        className={`${AvenirNextR.variable} ${AvenirNextLTPro.variable} theme-light text-theme-text bg-theme-bg dark:theme-dark font-sans`}
       >
         <Nav />
         <Component {...pageProps} />
