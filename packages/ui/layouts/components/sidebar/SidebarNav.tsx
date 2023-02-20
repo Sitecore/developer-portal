@@ -3,7 +3,7 @@ import Link from 'next/link';
 // Lib
 import { useGlobalState } from 'ui/common/global-state';
 // Interfaces
-import { LinkValue } from '@/src/interfaces/link-value';
+import { LinkValue } from 'ui/common/types/link-value';
 
 interface SidebarNavProps {
   title?: string;

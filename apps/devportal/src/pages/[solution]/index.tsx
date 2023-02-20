@@ -3,12 +3,12 @@
 import { getChildPageInfo, getPageInfo } from '@/src/common/page-info';
 import { getSolutionPaths } from '@/src/common/static-paths';
 // Interfaces
-import type { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 import type { ChildPageInfo, PageInfo } from '@/src/interfaces/page-info';
+import type { CategoryTileProps } from 'ui/components/lists/CategoryTile';
 // Components
 import SocialFeeds from '@/src/components/integrations/SocialFeeds';
-import CategoryTileList from '@/src/components/lists/CategoryTileList';
 import Container from 'ui/components/common/Container';
+import CategoryTileList from 'ui/components/lists/CategoryTileList';
 import Layout from 'ui/layouts/Layout';
 
 export async function getStaticPaths() {

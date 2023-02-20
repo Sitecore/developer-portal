@@ -15,13 +15,6 @@
     ] /* List of folders to include type definitions from. */,
     "moduleResolution": "node"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "../../packages/ui/components/buttons/ButtonLink.tsx",
-    "../../packages/ui/common/types/heading-levels.ts",
-    "../../packages/ui/components/common/Row.tsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "types"]
 }

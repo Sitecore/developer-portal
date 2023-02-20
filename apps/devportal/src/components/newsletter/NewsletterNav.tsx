@@ -3,7 +3,7 @@ import { NewsletterPath } from '@/src/common/static-paths';
 // Lib
 import { translateDateAsYearMonth } from 'ui/common/translate-date';
 // Components
-import SidebarNav from '../sidebar-nav/SidebarNav';
+import SidebarNav from 'ui/layouts/components/sidebar/SidebarNav';
 
 interface NewsletterNavProps {
   paths: NewsletterPath[];

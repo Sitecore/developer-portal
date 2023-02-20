@@ -1,8 +1,8 @@
 // Scripts
 import { getPageInfo } from '@/src/common/page-info';
 // Interfaces
-import type { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 import type { PageInfo } from '@/src/interfaces/page-info';
+import type { CategoryTileProps } from 'ui/components/lists/CategoryTile';
 // Components
 import CTACard from '@/src/components/cards/CTACard';
 import PromoCard from '@/src/components/cards/PromoCard';
@@ -12,12 +12,13 @@ import SitecoreCommunityNews from '@/src/components/integrations/sitecore-commun
 import SitecoreCommunityQuestions from '@/src/components/integrations/sitecore-community/questions/SitecoreCommunityQuestions';
 import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
-import CategoryTileList from '@/src/components/lists/CategoryTileList';
-import CommunityList from '@/src/components/lists/CommunityList';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
+import CategoryTileList from 'ui/components/lists/CategoryTileList';
+import CommunityList from 'ui/components/lists/CommunityList';
 import Layout from 'ui/layouts/Layout';
 // Data
+import communityListData from '@/data/data-community-list';
 import getHelpCta from '@/data/promos/get-help';
 import promoData from '@/data/promos/xmc-practices';
 import VideoPromo from 'ui/components/video/videoPromo';
@@ -114,7 +115,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
             title={pageInfo.youtubeTitle}
             playlistTitle={pageInfo.youtubePlaylistTitle}
           />
-          <CommunityList />
+          <CommunityList data={communityListData} />
         </VerticalGroup>
       </Container>
       <section className="py-16 bg-charcoal dark:bg-gray-darkest">

@@ -1,15 +1,15 @@
 // Global
 import Image from 'next/legacy/image';
-// Data
-import data from '@/data/data-community-list';
 // Components
+import { CommunityListData } from 'ui/common/types/communityList';
 import TextLink from 'ui/components/common/TextLink';
 
 type CommunityListProps = {
   className?: string;
+  data: CommunityListData;
 };
 
-const CommunityList = ({ className }: CommunityListProps): JSX.Element => (
+const CommunityList = ({ className, data }: CommunityListProps): JSX.Element => (
   <div className={className}>
     <h2 className="mb-4 heading-md">{data.title}</h2>
     <p className="mb-6 text-lg text-theme-text-alt">{data.subtitle}</p>

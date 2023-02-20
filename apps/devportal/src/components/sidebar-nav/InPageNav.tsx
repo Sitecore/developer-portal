@@ -1,6 +1,6 @@
 // Lib
 import { ContentHeading } from '@/src/interfaces/contentheading';
-import SidebarNav from './SidebarNav';
+import SidebarNav from 'ui/layouts/components/sidebar/SidebarNav';
 
 type InPageNavProps = {
   titles: ContentHeading[];

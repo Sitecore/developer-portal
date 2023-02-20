@@ -1,13 +1,4 @@
-type CommunityListItem = {
-  description: string;
-  href: string;
-  linkText: string;
-  title: string;
-  img: {
-    src: string;
-    alt?: string;
-  };
-};
+import { CommunityListData, CommunityListItem } from 'ui/common/types/communityList';
 
 const content: CommunityListItem[] = [
   {
@@ -44,7 +35,7 @@ const content: CommunityListItem[] = [
   },
 ];
 
-const communityListData = {
+const communityListData: CommunityListData = {
   title: 'Where Sitecorians hang out',
   subtitle: 'Discover more cool Sitecore groups where the community is active and engaged',
   content,

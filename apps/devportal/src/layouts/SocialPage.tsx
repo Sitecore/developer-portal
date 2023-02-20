@@ -1,6 +1,7 @@
 // Interfaces
 import type { PageInfo } from '@/src/interfaces/page-info';
 // Components
+import communityListData from '@/data/data-community-list';
 import CTACard, { CTACardProps } from '@/src/components/cards/CTACard';
 import PromoCard, { PromoCardProps } from '@/src/components/cards/PromoCard';
 import SitecoreCommunityNews from '@/src/components/integrations/sitecore-community/news/SitecoreCommunityNews';
@@ -8,9 +9,9 @@ import SitecoreCommunityQuestions from '@/src/components/integrations/sitecore-c
 import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/src/components/integrations/twitter/TwitterFeed';
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
-import CommunityList from '@/src/components/lists/CommunityList';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
+import CommunityList from 'ui/components/lists/CommunityList';
 import Layout from 'ui/layouts/Layout';
 import Hero from '../components/heros/Hero';
 
@@ -43,7 +44,7 @@ const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): 
           sortKeys={pageInfo.sitecoreCommunityQuestionsSort}
           forumKeys={pageInfo.sitecoreCommunityQuestionsCategory}
         />
-        <CommunityList />
+        <CommunityList data={communityListData} />
         <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
         <StackExchangeFeed content={pageInfo.stackexchange} />
         <YouTubeFeed
