@@ -2,10 +2,10 @@
 // Interfaces
 import type { PageInfo, PagePartialGroup, PartialData } from '@/src/interfaces/page-info';
 // Components
-import PromoCard, { PromoCardProps } from '@/src/components/cards/PromoCard';
 import MarkdownContent from '@/src/components/common/MarkdownContent';
 import SocialFeeds from '@/src/components/integrations/SocialFeeds';
 import InPageNav from '@/src/components/sidebar-nav/InPageNav';
+import PromoCard, { PromoCardProps } from 'ui/components/cards/PromoCard';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import SectionHeading from 'ui/components/headings/SectionHeading';

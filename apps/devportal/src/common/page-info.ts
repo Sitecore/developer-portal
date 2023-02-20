@@ -14,11 +14,11 @@ import {
   SitecoreCommunityEvent,
 } from 'ui/common/types/sitecoreCommunity';
 // Components
-import StackExchangeApi from '@/src/components/integrations/stackexchange/StackExchange.api';
-import TwitterApi from '@/src/components/integrations/twitter/Twitter.api';
-import YouTubeApi from '@/src/components/integrations/youtube/YouTube.api';
 import { SITECORE_COMMUNITY_MAX_COUNT } from 'ui/components/sitecoreCommunity/sitecore-community.constants';
 import SitecoreCommunityApi from 'ui/components/sitecoreCommunity/SitecoreCommunity.api';
+import StackExchangeApi from 'ui/components/stackexchange/StackExchange.api';
+import TwitterApi from 'ui/components/twitter/Twitter.api';
+import YouTubeApi from 'ui/components/youtube/YouTube.api';
 
 import { ParseContent } from '@/src/common/markdown/mdxParse';
 import { ContentHeading } from '@/src/interfaces/contentheading';

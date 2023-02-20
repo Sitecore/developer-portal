@@ -12,7 +12,7 @@ import { PageInfo } from '@/src/interfaces/page-info';
 import { getNewsletterTitle } from '@/src/common/newsletter';
 import { translateDateAsYearMonth } from 'ui/common/translate-date';
 // Components
-import PromoCard from '@/src/components/cards/PromoCard';
+import PromoCard from 'ui/components/cards/PromoCard';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import { CategoryTileProps } from 'ui/components/lists/CategoryTile';

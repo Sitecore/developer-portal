@@ -2,17 +2,17 @@
 import type { PageInfo } from '@/src/interfaces/page-info';
 // Components
 import communityListData from '@/data/data-community-list';
-import CTACard, { CTACardProps } from '@/src/components/cards/CTACard';
-import PromoCard, { PromoCardProps } from '@/src/components/cards/PromoCard';
-import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
-import TwitterFeed from '@/src/components/integrations/twitter/TwitterFeed';
-import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
+import CTACard, { CTACardProps } from 'ui/components/cards/CTACard';
+import PromoCard, { PromoCardProps } from 'ui/components/cards/PromoCard';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
 import CommunityList from 'ui/components/lists/CommunityList';
 import SitecoreCommunityNews from 'ui/components/sitecoreCommunity/news/SitecoreCommunityNews';
 import SitecoreCommunityQuestions from 'ui/components/sitecoreCommunity/questions/SitecoreCommunityQuestions';
+import StackExchangeFeed from 'ui/components/stackexchange/StackExchangeFeed';
+import TwitterFeed from 'ui/components/twitter/TwitterFeed';
+import YouTubeFeed from 'ui/components/youtube/YouTubeFeed';
 import Layout from 'ui/layouts/Layout';
 
 type SocialPageProps = {

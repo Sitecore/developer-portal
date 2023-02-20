@@ -4,10 +4,8 @@ import { getPageInfo } from '@/src/common/page-info';
 import type { PageInfo } from '@/src/interfaces/page-info';
 import type { CategoryTileProps } from 'ui/components/lists/CategoryTile';
 // Components
-import CTACard from '@/src/components/cards/CTACard';
-import PromoCard from '@/src/components/cards/PromoCard';
-import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
-import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
+import CTACard from 'ui/components/cards/CTACard';
+import PromoCard from 'ui/components/cards/PromoCard';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
@@ -17,7 +15,9 @@ import SitecoreCommunityBlog from 'ui/components/sitecoreCommunity/blog/Sitecore
 import SitecoreCommunityEvents from 'ui/components/sitecoreCommunity/events/SitecoreCommunityEvents';
 import SitecoreCommunityNews from 'ui/components/sitecoreCommunity/news/SitecoreCommunityNews';
 import SitecoreCommunityQuestions from 'ui/components/sitecoreCommunity/questions/SitecoreCommunityQuestions';
+import StackExchangeFeed from 'ui/components/stackexchange/StackExchangeFeed';
 import VideoPromo from 'ui/components/video/videoPromo';
+import YouTubeFeed from 'ui/components/youtube/YouTubeFeed';
 import Layout from 'ui/layouts/Layout';
 // Data
 import communityListData from '@/data/data-community-list';

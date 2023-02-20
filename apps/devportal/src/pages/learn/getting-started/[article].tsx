@@ -9,7 +9,7 @@ import GenericContentPage from '@/src/layouts/GenericContentPage';
 //Promotions to use on Articles
 import LearningEssentials from '@/data/promos/learning-essentials';
 import ComposableDXP from '@/data/promos/videos/composable-dxp';
-import { PromoCardProps } from '@/src/components/cards/PromoCard';
+import { PromoCardProps } from 'ui/components/cards/PromoCard';
 
 const ArticlePromos: { [name: string]: PromoCardProps } = {
   'learning-essentials': LearningEssentials,
