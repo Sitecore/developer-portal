@@ -6,11 +6,11 @@ import { GetStaticProps, NextPage } from 'next';
 import path from 'path';
 // Scripts
 import { getPageInfo } from '@/src/common/page-info';
-import { NEWSLETTER_DATA_DIRECTORY } from '@/src/common/static-paths/newletter-static-paths';
+import { NEWSLETTER_DATA_DIRECTORY } from '@/src/common/static-paths';
 import { PageInfo } from '@/src/interfaces/page-info';
 // Lib
-import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
-import { translateDateAsYearMonth } from '@/src/common/translate-date';
+import { getNewsletterTitle } from '@/src/common/newsletter';
+import { translateDateAsYearMonth } from 'ui/common/translate-date';
 // Components
 import PromoCard from '@/src/components/cards/PromoCard';
 import { CategoryTileProps } from '@/src/components/lists/CategoryTile';

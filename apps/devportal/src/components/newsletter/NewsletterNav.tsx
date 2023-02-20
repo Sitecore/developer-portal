@@ -1,7 +1,7 @@
 // Scripts
-import { NewsletterPath } from '@/src/common/static-paths/newletter-static-paths';
+import { NewsletterPath } from '@/src/common/static-paths';
 // Lib
-import { translateDateAsYearMonth } from '@/src/common/translate-date';
+import { translateDateAsYearMonth } from 'ui/common/translate-date';
 // Components
 import SidebarNav from '../sidebar-nav/SidebarNav';
 

@@ -2,7 +2,7 @@
 import { Facet, FacetValue } from '@coveo/headless';
 import { useEffect, useState } from 'react';
 // Lib
-import { searchStatus, urlManager } from '@/src/common/search/coveo-engine';
+import { searchStatus, urlManager } from '@/src/common/coveo-engine';
 import { useRouter } from 'next/router';
 import SvgIcon from 'ui/components/common/SvgIcon';
 
@@ -51,8 +51,8 @@ const SearchFacet = ({ facet, title, sort }: SearchFacetProps) => {
     }
 
     return (
-      <div className="p-4 mb-6 bg-theme-bg-alt">
-        <h3 className="mb-4 heading-xs">{title}</h3>
+      <div className="bg-theme-bg-alt mb-6 p-4">
+        <h3 className="heading-xs mb-4">{title}</h3>
         {sortedValues.map((facetValue) => {
           return (
             <div key={facetValue.value} className="text-sm">
@@ -66,7 +66,7 @@ const SearchFacet = ({ facet, title, sort }: SearchFacetProps) => {
                 }`}
               >
                 <span className="flex flex-1">
-                  <span className="block mt-1 mr-2 h-em w-em">
+                  <span className="h-em w-em mt-1 mr-2 block">
                     <SvgIcon
                       icon={
                         facet.isValueSelected(facetValue) ? 'checkbox-filled' : 'checkbox-empty'

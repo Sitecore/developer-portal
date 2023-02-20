@@ -8,11 +8,11 @@ import {
   getNewsletterStaticPaths,
   NewsletterPath,
   NEWSLETTER_DATA_DIRECTORY,
-} from '@/src/common/static-paths/newletter-static-paths';
+} from '@/src/common/static-paths';
 import { PageInfo } from '@/src/interfaces/page-info';
 // Lib
-import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
-import { translateDateAsYearMonth } from '@/src/common/translate-date';
+import { getNewsletterTitle } from '@/src/common/newsletter';
+import { translateDateAsYearMonth } from 'ui/common/translate-date';
 // Components
 import Hero from '@/src/components/heros/Hero';
 import CategoryTile, { CategoryTileProps } from '@/src/components/lists/CategoryTile';

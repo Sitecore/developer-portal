@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 // Lib
-import { breadcrumbManager, urlManager } from '@/src/common/search/coveo-engine';
+import { breadcrumbManager, urlManager } from '@/src/common/coveo-engine';
 
 const hoveredStyle = {
   cursor: 'pointer',
@@ -40,12 +40,12 @@ const FacetBreadcrumbs = () => {
         {breadcrumb.values.map((value) => (
           <span
             key={breadcrumb.field + value.value.value}
-            className="inline-flex items-center px-3 py-1 m-2 text-xs font-semibold text-white rounded-full bg-violet hover:bg-teal"
+            className="bg-violet hover:bg-teal m-2 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold text-white"
           >
             <button onClick={() => value.deselect()} style={hoveredStyle}>
               {value.value.value}
               <svg
-                className="inline-block w-3 h-3 ml-1 text-white align-middle"
+                className="ml-1 inline-block h-3 w-3 align-middle text-white"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"

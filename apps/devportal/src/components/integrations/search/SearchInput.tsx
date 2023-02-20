@@ -3,7 +3,7 @@ import { SearchBox, UrlManager } from '@coveo/headless';
 import { useRouter } from 'next/router';
 import { useEffect, useId, useState } from 'react';
 // Lib
-import { searchBox, urlManager } from '@/src/common/search/coveo-engine';
+import { searchBox, urlManager } from '@/src/common/coveo-engine';
 
 interface SearchInputProps {
   className?: string;
@@ -40,11 +40,11 @@ const SearchInput = ({ className }: SearchInputProps) => {
 
   return (
     <form className={className} id={searchId} onSubmit={submit}>
-      <div className="relative flex items-center w-full">
+      <div className="relative flex w-full items-center">
         <label className="sr-only" htmlFor={inputId}>
           Search:
         </label>
-        <span aria-hidden="true" className="absolute z-20 left-4">
+        <span aria-hidden="true" className="absolute left-4 z-20">
           <svg
             width="16px"
             height="16px"
@@ -59,7 +59,7 @@ const SearchInput = ({ className }: SearchInputProps) => {
           </svg>
         </span>
         <input
-          className="w-full px-4 py-2 pl-12 text-sm border bg-theme-bg text-theme-text border-theme-border rounded-smz-10"
+          className="bg-theme-bg text-theme-text border-theme-border rounded-smz-10 w-full border px-4 py-2 pl-12 text-sm"
           name="scdp-search"
           id={inputId}
           type="text"

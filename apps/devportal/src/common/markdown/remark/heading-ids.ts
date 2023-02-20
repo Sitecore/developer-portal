@@ -1,4 +1,3 @@
-import getSectionId from '@/src/common/section-id';
 import { visit } from 'unist-util-visit';
 
 type HeaderNodeData = {
@@ -13,6 +12,9 @@ type HeaderNodeData = {
   };
   depth?: number;
 };
+
+const getSectionId = (title: string) =>
+  `heading-${title.toLowerCase().replace(/[^a-z0-9]/gi, '-')}`;
 
 /**
  * Transforms all h tags to add an id based on the text value of the heading

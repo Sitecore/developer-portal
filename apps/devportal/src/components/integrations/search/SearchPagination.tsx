@@ -3,7 +3,7 @@ import { buildPager } from '@coveo/headless';
 import router from 'next/router';
 import { useEffect, useState } from 'react';
 // Lib
-import { coveoEngine, urlManager } from '@/src/common/search/coveo-engine';
+import { coveoEngine, urlManager } from '@/src/common/coveo-engine';
 import SvgIcon from 'ui/components/common/SvgIcon';
 
 const SearchPagination = () => {

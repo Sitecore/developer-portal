@@ -2,7 +2,7 @@
 import { buildTab, TabState } from '@coveo/headless';
 import { useEffect, useState } from 'react';
 // Lib
-import { coveoEngine } from '@/src/common/search/coveo-engine';
+import { coveoEngine } from '@/src/common/coveo-engine';
 
 interface SearchTabProps {
   id: string;
@@ -32,7 +32,7 @@ const SearchTab = ({ id, expression, title }: SearchTabProps) => {
       onClick={() => {
         tab.select();
       }}
-      className={`py-4 font-bold block ${tabState.isActive ? [activeClasses] : ''}`}
+      className={`block py-4 font-bold ${tabState.isActive ? [activeClasses] : ''}`}
     >
       {title}
     </button>

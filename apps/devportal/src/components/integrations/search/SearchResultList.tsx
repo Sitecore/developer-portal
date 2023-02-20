@@ -9,7 +9,7 @@ import {
   resultList,
   searchStatus,
   urlManager,
-} from '@/src/common/search/coveo-engine';
+} from '@/src/common/coveo-engine';
 // Components
 import SearchResultItem from './SearchResultItem';
 import VideoResultItem from './VideoResultItem';
@@ -80,7 +80,7 @@ const SearchResultList = () => {
 
   return (
     <div>
-      <div className="border-b border-theme-border flex justify-between items-center text-sm">
+      <div className="border-theme-border flex items-center justify-between border-b text-sm">
         <p>
           Results{' '}
           <strong>

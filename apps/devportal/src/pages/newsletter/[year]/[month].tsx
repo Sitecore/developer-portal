@@ -8,14 +8,14 @@ import {
   getNewsletterStaticPaths,
   NewsletterPath,
   NEWSLETTER_DATA_DIRECTORY,
-} from '@/src/common/static-paths/newletter-static-paths';
+} from '@/src/common/static-paths';
 // Components
-import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
-import { translateDateAsYearMonth } from '@/src/common/translate-date';
+import { getNewsletterTitle } from '@/src/common/newsletter';
 import Hero from '@/src/components/heros/Hero';
 import NewsletterNav from '@/src/components/newsletter/NewsletterNav';
 import NewsletterStory, { NewsletterStoryData } from '@/src/components/newsletter/NewsletterStory';
 import { PageInfo } from '@/src/interfaces/page-info';
+import { translateDateAsYearMonth } from 'ui/common/translate-date';
 import Container from 'ui/components/common/Container';
 import Layout from 'ui/layouts/Layout';
 

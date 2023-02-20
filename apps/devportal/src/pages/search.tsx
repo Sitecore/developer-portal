@@ -16,7 +16,7 @@ import {
   urlManager,
   versionFacet,
   yearFacet,
-} from '@/src/common/search/coveo-engine';
+} from '@/src/common/coveo-engine';
 // Components
 import FacetBreadcrumbs from '@/src/components/integrations/search/facetBreadcrumbs';
 import SearchFacet, { FacetValueSort } from '@/src/components/integrations/search/SearchFacet';
