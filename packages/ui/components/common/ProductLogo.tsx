@@ -1,5 +1,5 @@
-import { GetProductLogo } from '@/src/common/assets';
 import Image from 'next/image';
+import { GetProductLogo } from '../../common/assets';
 
 export type ProductLogoProps = {
   product: string;

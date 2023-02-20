@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import Container from 'ui/components/common/Container';
 import DynamicTag from 'ui/components/common/DynamicTag';
-import ProductLogo from '../common/ProductLogo';
+import ProductLogo from 'ui/components/common/ProductLogo';
 // Components
 
 export type HeroProps = {
@@ -35,18 +35,18 @@ const Hero = ({
       }`}
     >
       <div className={`lg:pr-24 ${!!image || !!productLogo ? ['md:col-span-5'] : ''}`}>
-        <DynamicTag tag={headingLevel} className="relative mb-5 heading-lg">
+        <DynamicTag tag={headingLevel} className="heading-lg relative mb-5">
           {title}
         </DynamicTag>
-        <p className="text-lg text-theme-text-alt">{description}</p>
+        <p className="text-theme-text-alt text-lg">{description}</p>
       </div>
       {productLogo && (
         <React.Fragment>
           <div className="relative hidden md:col-span-4 md:block">
-            <div className="hidden w-full h-20 dark:block">
+            <div className="hidden h-20 w-full dark:block">
               <ProductLogo product={productLogo} variant="Dark" />
             </div>
-            <div className="w-full h-20 dark:hidden">
+            <div className="h-20 w-full dark:hidden">
               <ProductLogo product={productLogo} variant="Light" />
             </div>
           </div>
@@ -55,7 +55,7 @@ const Hero = ({
       {image && (
         <React.Fragment>
           <div className="relative hidden md:col-span-4 md:block">
-            <div className="w-full h-20">
+            <div className="h-20 w-full">
               <Image
                 src={image}
                 alt=""
