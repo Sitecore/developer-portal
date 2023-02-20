@@ -3,12 +3,12 @@
 import type { PageInfo, PagePartialGroup, PartialData } from '@/src/interfaces/page-info';
 // Components
 import PromoCard, { PromoCardProps } from '@/src/components/cards/PromoCard';
-import Container from '@/src/components/common/Container';
 import MarkdownContent from '@/src/components/common/MarkdownContent';
 import SectionHeading from '@/src/components/common/SectionHeading';
-import VerticalGroup from '@/src/components/common/VerticalGroup';
 import SocialFeeds from '@/src/components/integrations/SocialFeeds';
 import InPageNav from '@/src/components/sidebar-nav/InPageNav';
+import Container from 'ui/components/common/Container';
+import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Layout from 'ui/layouts/Layout';
 import Hero from '../components/heros/Hero';
 
@@ -89,7 +89,7 @@ const GenericContentPage = ({
         )}
         <div className={hasGrid ? hasGridClasses : ''}>
           <Container>
-            <div className="grid gap-6 mt-8 md:grid-cols-4">
+            <div className="mt-8 grid gap-6 md:grid-cols-4">
               {pageInfo.hasInPageNav && Nav}
               <div className={pageInfo.hasInPageNav ? 'col-span-3' : 'col-span-4'}>
                 {Content(partials, partialGroups, hasGrid)}

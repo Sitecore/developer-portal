@@ -1,5 +1,5 @@
-import Container from '@/src/components/common/Container';
 import Link from 'next/link';
+import Container from '../../../components/common/Container';
 
 const Footer = (): JSX.Element => {
   return (
@@ -77,12 +77,12 @@ const Footer = (): JSX.Element => {
             </svg>
           </a>
         </div>
-        <div className="flex flex-col sm:flex-row text-2xs font-regular">
+        <div className="flex flex-col text-2xs font-regular sm:flex-row">
           <p className="mb-4 tracking-widest sm:mb-0">
             © Copyright <span>{new Date().getFullYear()}</span>, Sitecore. All Rights Reserved
           </p>
           <ul>
-            <li className="inline-block pl-0 pr-2 sm:border-l sm:px-2 sm:ml-2">
+            <li className="inline-block pl-0 pr-2 sm:ml-2 sm:border-l sm:px-2">
               <a
                 className="font-semibold"
                 href="https://www.sitecore.com/legal"

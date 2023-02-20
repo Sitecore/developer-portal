@@ -7,7 +7,7 @@ import TagManager from 'react-gtm-module';
 // Data
 import { mainNavigation, sitecoreQuickLinks } from '@/data/data-navigation';
 // Components
-import Footer from '@/src/layouts/components/footer/Footer';
+import Footer from 'ui/layouts/components/footer/Footer';
 import Nav from 'ui/layouts/components/header/Nav';
 // Local
 import '@/src/styles/global.css';

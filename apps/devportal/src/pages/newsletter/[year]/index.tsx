@@ -14,9 +14,9 @@ import { PageInfo } from '@/src/interfaces/page-info';
 import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
 import { translateDateAsYearMonth } from '@/src/common/translate-date';
 // Components
-import Container from '@/src/components/common/Container';
 import Hero from '@/src/components/heros/Hero';
 import CategoryTile, { CategoryTileProps } from '@/src/components/lists/CategoryTile';
+import Container from 'ui/components/common/Container';
 import Layout from 'ui/layouts/Layout';
 
 interface NewsletterPageProps {

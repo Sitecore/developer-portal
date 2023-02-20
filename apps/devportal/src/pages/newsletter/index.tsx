@@ -13,10 +13,10 @@ import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title
 import { translateDateAsYearMonth } from '@/src/common/translate-date';
 // Components
 import PromoCard from '@/src/components/cards/PromoCard';
-import Container from '@/src/components/common/Container';
-import VerticalGroup from '@/src/components/common/VerticalGroup';
 import { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 import CategoryTileList from '@/src/components/lists/CategoryTileList';
+import Container from 'ui/components/common/Container';
+import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Layout from 'ui/layouts/Layout';
 // Data
 import newsletterPromo from '@/data/promos/newsletter';

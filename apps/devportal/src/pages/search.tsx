@@ -18,12 +18,12 @@ import {
   yearFacet,
 } from '@/src/common/search/coveo-engine';
 // Components
-import Container from '@/src/components/common/Container';
-import VerticalGroup from '@/src/components/common/VerticalGroup';
 import FacetBreadcrumbs from '@/src/components/integrations/search/facetBreadcrumbs';
 import SearchFacet, { FacetValueSort } from '@/src/components/integrations/search/SearchFacet';
 import SearchPagination from '@/src/components/integrations/search/SearchPagination';
 import SearchResultList from '@/src/components/integrations/search/SearchResultList';
+import Container from 'ui/components/common/Container';
+import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Layout from 'ui/layouts/Layout';
 import Hero from '../components/heros/Hero';
 

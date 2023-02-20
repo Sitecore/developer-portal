@@ -7,6 +7,7 @@ import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hl
 import type { PartialData } from '@/src/interfaces/page-info';
 // Lib
 import VideoPromo from '@/src/components/videoPromo/index';
+import VerticalGroup from 'ui/components/common/VerticalGroup';
 import { Article } from '../cards/Article';
 import CTACard from '../cards/CTACard';
 import { LinkItem } from '../cards/LinkItem';
@@ -14,7 +15,6 @@ import { Promo } from '../cards/PromoCard';
 import { Repository } from '../cards/Repository';
 import { Row } from '../common/Row';
 import { TabItem, Tabs } from '../tabs';
-import VerticalGroup from './VerticalGroup';
 import YouTube from './YouTube';
 
 type MarkdownContentProps = {
@@ -78,7 +78,7 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
 function EditButton({ editUrl, classes }: EditButtonProps) {
   return (
     <button className={`btn-textlink ${classes ? classes : ''}`}>
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-current" viewBox="0 0 20 20">
         <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
         <path
           fillRule="evenodd"
@@ -99,7 +99,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
       <div className="grid gap-6 md:grid-cols-2">
         {partials.content.map((item, i) => (
           <div
-            className="relative max-w-4xl p-8 prose dark:prose-invert border border-theme-border bg-theme-bg text-theme-text"
+            className="prose dark:prose-invert border-theme-border bg-theme-bg text-theme-text relative max-w-4xl border p-8"
             key={i}
           >
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
@@ -114,7 +114,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
     <VerticalGroup>
       {partials.content.map((item, i) => (
         <div key={i}>
-          <div className="max-w-4xl prose dark:prose-invert">
+          <div className="prose dark:prose-invert max-w-4xl">
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
           </div>
           <EditButton editUrl={partials.fileNames[i]} />

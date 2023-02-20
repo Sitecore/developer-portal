@@ -12,11 +12,11 @@ import {
 // Components
 import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
 import { translateDateAsYearMonth } from '@/src/common/translate-date';
-import Container from '@/src/components/common/Container';
 import Hero from '@/src/components/heros/Hero';
 import NewsletterNav from '@/src/components/newsletter/NewsletterNav';
 import NewsletterStory, { NewsletterStoryData } from '@/src/components/newsletter/NewsletterStory';
 import { PageInfo } from '@/src/interfaces/page-info';
+import Container from 'ui/components/common/Container';
 import Layout from 'ui/layouts/Layout';
 
 export interface NewsletterContentPageProps {

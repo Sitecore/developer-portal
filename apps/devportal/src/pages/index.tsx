@@ -6,8 +6,6 @@ import type { PageInfo } from '@/src/interfaces/page-info';
 // Components
 import CTACard from '@/src/components/cards/CTACard';
 import PromoCard from '@/src/components/cards/PromoCard';
-import Container from '@/src/components/common/Container';
-import VerticalGroup from '@/src/components/common/VerticalGroup';
 import SitecoreCommunityBlog from '@/src/components/integrations/sitecore-community/blog/SitecoreCommunityBlog';
 import SitecoreCommunityEvents from '@/src/components/integrations/sitecore-community/events/SitecoreCommunityEvents';
 import SitecoreCommunityNews from '@/src/components/integrations/sitecore-community/news/SitecoreCommunityNews';
@@ -16,6 +14,8 @@ import StackExchangeFeed from '@/src/components/integrations/stackexchange/Stack
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
 import CategoryTileList from '@/src/components/lists/CategoryTileList';
 import CommunityList from '@/src/components/lists/CommunityList';
+import Container from 'ui/components/common/Container';
+import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Layout from 'ui/layouts/Layout';
 // Data
 import getHelpCta from '@/data/promos/get-help';

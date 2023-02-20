@@ -106,12 +106,14 @@ const Nav = ({ navigationData, sitecoreQuickLinks, children }: NavProps): JSX.El
     return () => window.removeEventListener('scroll', ThrottleScroll);
   }, [scrolled]);
 
+  const height = children ? 'h-32' : 'h-16';
+
   return (
     // Necesarry to retain the space for the fixed header.
     <header className="h-32">
       <div
-        className={`bg-theme-bg border-theme-border shadow-theme fixed inset-x-0 top-0 z-40 h-32 border-b transition-all ${
-          scrolled ? '-top-16' : ''
+        className={`bg-theme-bg border-theme-border shadow-theme fixed inset-x-0 z-40 ${height} border-b transition-all ${
+          scrolled ? '-top-16' : 'top-0'
         }`}
       >
         <a
@@ -200,7 +202,9 @@ const Nav = ({ navigationData, sitecoreQuickLinks, children }: NavProps): JSX.El
           </div>
         </div>
         <div>
-          <div className="px-gutter-all m-auto max-w-screen-xl py-2.5">{children}</div>
+          {children && (
+            <div className="px-gutter-all m-auto max-w-screen-xl py-2.5">{children}</div>
+          )}
         </div>
       </div>
     </header>

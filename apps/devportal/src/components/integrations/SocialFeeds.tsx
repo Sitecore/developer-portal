@@ -1,12 +1,12 @@
 // Interfaces
 import type { PageInfo } from '@/src/interfaces/page-info';
 // Components
+import VerticalGroup from 'ui/components/common/VerticalGroup';
+import SitecoreCommunityBlog from './sitecore-community/blog/SitecoreCommunityBlog';
+import SitecoreCommunityQuestions from './sitecore-community/questions/SitecoreCommunityQuestions';
 import StackExchangeFeed from './stackexchange/StackExchangeFeed';
 import TwitterFeed from './twitter/TwitterFeed';
-import VerticalGroup from '@/src/components/common/VerticalGroup';
 import YouTubeFeed from './youtube/YouTubeFeed';
-import SitecoreCommunityQuestions from './sitecore-community/questions/SitecoreCommunityQuestions';
-import SitecoreCommunityBlog from './sitecore-community/blog/SitecoreCommunityBlog';
 
 type SocialFeedsProps = {
   pageInfo: PageInfo;

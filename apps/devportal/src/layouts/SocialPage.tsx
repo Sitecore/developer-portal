@@ -3,14 +3,14 @@ import type { PageInfo } from '@/src/interfaces/page-info';
 // Components
 import CTACard, { CTACardProps } from '@/src/components/cards/CTACard';
 import PromoCard, { PromoCardProps } from '@/src/components/cards/PromoCard';
-import Container from '@/src/components/common/Container';
-import VerticalGroup from '@/src/components/common/VerticalGroup';
 import SitecoreCommunityNews from '@/src/components/integrations/sitecore-community/news/SitecoreCommunityNews';
 import SitecoreCommunityQuestions from '@/src/components/integrations/sitecore-community/questions/SitecoreCommunityQuestions';
 import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/src/components/integrations/twitter/TwitterFeed';
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
 import CommunityList from '@/src/components/lists/CommunityList';
+import Container from 'ui/components/common/Container';
+import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Layout from 'ui/layouts/Layout';
 import Hero from '../components/heros/Hero';
 

@@ -6,9 +6,9 @@ import { getSolutionPaths } from '@/src/common/static-paths';
 import type { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 import type { ChildPageInfo, PageInfo } from '@/src/interfaces/page-info';
 // Components
-import Container from '@/src/components/common/Container';
 import SocialFeeds from '@/src/components/integrations/SocialFeeds';
 import CategoryTileList from '@/src/components/lists/CategoryTileList';
+import Container from 'ui/components/common/Container';
 import Layout from 'ui/layouts/Layout';
 
 export async function getStaticPaths() {
