@@ -1,7 +1,7 @@
 // Interfaces
-import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 import Image from 'next/image';
 import React from 'react';
+import { ValidHeadingLevels } from 'ui/common/types/heading-levels';
 import Container from 'ui/components/common/Container';
 import DynamicTag from 'ui/components/common/DynamicTag';
 import ProductLogo from 'ui/components/common/ProductLogo';

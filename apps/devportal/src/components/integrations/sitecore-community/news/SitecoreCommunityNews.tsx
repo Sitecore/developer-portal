@@ -1,6 +1,6 @@
 // Global
 // Components
-import FeedHeading from '@/src/components/common/FeedHeading';
+import FeedHeading from 'ui/components/headings/FeedHeading';
 // Local
 import { SitecoreCommunityContent } from '@/src/interfaces/integrations';
 import SitecoreCommunityNewsOrEventItem from '../SitecoreCommunityNewsOrEventItem';

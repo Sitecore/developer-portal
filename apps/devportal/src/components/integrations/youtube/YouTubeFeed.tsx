@@ -1,10 +1,10 @@
 // Global
 // Interfaces
-import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 import type { YouTubeSnippet, YouTubeVideo } from '@/src/interfaces/integrations';
+import { ValidHeadingLevels } from 'ui/common/types/heading-levels';
 // Components
-import FeedHeading from '@/src/components/common/FeedHeading';
 import Image from 'next/image';
+import FeedHeading from 'ui/components/headings/FeedHeading';
 
 type YouTubeFeedProps = {
   className?: string;
@@ -58,11 +58,11 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
           href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white hover:text-violet focus:text-violet"
+          className="hover:text-violet focus:text-violet text-white"
         >
           <span className="sr-only">Opens in a new tab</span>
           <svg
-            className="absolute z-10 top-1/2 left-1/2 transform-gpu -translate-y-2/4 -translate-x-2/4"
+            className="absolute top-1/2 left-1/2 z-10 -translate-y-2/4 -translate-x-2/4 transform-gpu"
             width="58"
             height="59"
             xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +139,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
               </g>
             </g>
           </svg>
-          <div className="border border-theme-border-alt aspect-video">
+          <div className="border-theme-border-alt aspect-video border">
             <Image
               src={snippet.thumbnails.medium.url}
               priority={true}

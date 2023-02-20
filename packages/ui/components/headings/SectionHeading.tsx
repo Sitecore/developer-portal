@@ -1,7 +1,4 @@
-// Global
-// Interfaces
-import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
-// Components
+import type { ValidHeadingLevels } from 'ui/common/types/heading-levels';
 import DynamicTag from 'ui/components/common/DynamicTag';
 
 type SectionHeadingProps = {

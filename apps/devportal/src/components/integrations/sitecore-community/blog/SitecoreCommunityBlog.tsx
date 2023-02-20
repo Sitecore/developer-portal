@@ -4,7 +4,7 @@ import type { SitecoreCommunityContent } from '@/src/interfaces/integrations';
 import axios from 'axios';
 import { useState } from 'react';
 // Components
-import FeedHeading from '@/src/components/common/FeedHeading';
+import FeedHeading from 'ui/components/headings/FeedHeading';
 // Local
 import { SortOption } from '../SitecoreCommunity.api';
 import SitecoreCommunityBlogOrQuestion from '../SitecoreCommunityBlogOrQuestion';
@@ -44,13 +44,13 @@ const SitecoreCommunityBlog = ({ content, sortKeys }: SitecoreCommunityBlogProps
           title: 'See all',
         }}
       />
-      <div className="flex justify-end mb-6">
+      <div className="mb-6 flex justify-end">
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
           <label className="flex items-center text-xs font-semibold">
             Order by:
             <select
               onChange={(changeEvent) => fetchNewResults(changeEvent.target.value)}
-              className="bg-theme-bg border-2 font-semibold ml-2 p-2 `text-theme-text"
+              className="bg-theme-bg `text-theme-text ml-2 border-2 p-2 font-semibold"
             >
               <option value="created">Recent Questions</option>
               <option value="view">Most Popular</option>

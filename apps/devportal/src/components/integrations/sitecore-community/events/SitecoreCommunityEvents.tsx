@@ -2,7 +2,7 @@
 import type { SitecoreCommunityEvent } from '@/src/interfaces/integrations';
 // Global
 // Components
-import FeedHeading from '@/src/components/common/FeedHeading';
+import FeedHeading from 'ui/components/headings/FeedHeading';
 import SitecoreCommunityNewsOrEventItem from '../SitecoreCommunityNewsOrEventItem';
 
 type SitecoreCommunityEventsProps = {

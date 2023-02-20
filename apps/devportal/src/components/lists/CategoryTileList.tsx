@@ -1,6 +1,6 @@
 // Global
 // Interfaces
-import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
+import type { ValidHeadingLevels } from 'ui/common/types/heading-levels';
 // Components
 import CategoryTile, { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 

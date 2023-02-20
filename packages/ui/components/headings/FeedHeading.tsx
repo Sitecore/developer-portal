@@ -1,5 +1,5 @@
 // Interfaces
-import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
+import type { ValidHeadingLevels } from 'ui/common/types/heading-levels';
 // Global
 // Components
 import DynamicTag from 'ui/components/common/DynamicTag';

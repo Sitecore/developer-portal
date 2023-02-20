@@ -6,16 +6,16 @@ import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hl
 // Interfaces
 import type { PartialData } from '@/src/interfaces/page-info';
 // Lib
-import VideoPromo from '@/src/components/videoPromo/index';
+import { Row } from 'ui/components/common/Row';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
+import VideoPromo from 'ui/components/video/videoPromo';
+import YouTube from 'ui/components/video/YouTube';
 import { Article } from '../cards/Article';
 import CTACard from '../cards/CTACard';
 import { LinkItem } from '../cards/LinkItem';
 import { Promo } from '../cards/PromoCard';
 import { Repository } from '../cards/Repository';
-import { Row } from '../common/Row';
 import { TabItem, Tabs } from '../tabs';
-import YouTube from './YouTube';
 
 type MarkdownContentProps = {
   partials: PartialData;

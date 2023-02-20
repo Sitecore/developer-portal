@@ -1,4 +1,4 @@
-import { GithubButton } from 'ui/components/common/GitHubButton';
+import { GithubButton } from 'ui/components/buttons/GitHubButton';
 import SvgLogo, { Logo } from 'ui/components/common/SvgLogo';
 
 export type RepositoryProps = {
@@ -12,9 +12,9 @@ export const Repository = ({ name, description, repositoryUrl, framework }: Repo
   const frameworkType = framework as Logo;
 
   return (
-    <div className="repository">
+    <div className="relative flex flex-col justify-between p-3 bg-white border shadow-md border-theme-border dark:bg-theme-bg-alt">
       <div className="px-5">
-        <div className="ml-auto mr-0 w-1/3 opacity-75 ">
+        <div className="w-1/3 ml-auto mr-0 opacity-75 ">
           <SvgLogo logo={frameworkType} />
         </div>
         {name && <h4>{name}</h4>}

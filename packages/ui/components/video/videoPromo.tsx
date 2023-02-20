@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 // Global
-import ButtonLink from '../common/ButtonLink';
-import YouTube from '../common/YouTube';
+import ButtonLink from 'ui/components/buttons/ButtonLink';
+import YouTube from 'ui/components/video/YouTube';
 // Components
 
 type VideoProps = {
@@ -37,7 +37,7 @@ const VideoPromo = ({
   isImageLeft = true,
 }: VideoPromoProps): JSX.Element => {
   return (
-    <div className={`not-prose grid gap-6 my-8 md:grid-cols-2 ${className}`}>
+    <div className={`not-prose my-8 grid gap-6 md:grid-cols-2 ${className}`}>
       {isImageLeft && videoUrl != undefined && <Video videoUrl={videoUrl} />}
       {isImageLeft && youTubeId != undefined && <YouTube youTubeId={youTubeId} />}
       <div className="flex flex-col justify-center">

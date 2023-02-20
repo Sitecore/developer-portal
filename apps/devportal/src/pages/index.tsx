@@ -20,8 +20,8 @@ import Layout from 'ui/layouts/Layout';
 // Data
 import getHelpCta from '@/data/promos/get-help';
 import promoData from '@/data/promos/xmc-practices';
+import VideoPromo from 'ui/components/video/videoPromo';
 import Hero from '../components/heros/Hero';
-import VideoPromo from '../components/videoPromo';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
