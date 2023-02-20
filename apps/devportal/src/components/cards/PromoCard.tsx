@@ -1,7 +1,7 @@
 // Global
 import Image from 'next/image';
 // Components
-import TextLink from '@/src/components/common/TextLink';
+import TextLink from 'ui/components/common/TextLink';
 
 type PromoCardImage = {
   img: {
@@ -22,7 +22,7 @@ export type PromoCardProps = PromoCardImage & {
 };
 
 const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
-  <div className="relative w-full aspect-video">
+  <div className="relative aspect-video w-full">
     <Image
       src={img.src}
       alt={img.alt || ''}
@@ -44,10 +44,10 @@ const PromoCard = ({
   className,
   isImageLeft = true,
 }: PromoCardProps): JSX.Element => (
-  <div className={'grid gap-6 mt-8 md:grid-cols-2 ' + (className ? className : '')}>
+  <div className={'mt-8 grid gap-6 md:grid-cols-2 ' + (className ? className : '')}>
     {isImageLeft && <PromoCardImage img={img} />}
     <div className="flex flex-col justify-center">
-      <h2 className="mb-4 heading-md">{title}</h2>
+      <h2 className="heading-md mb-4">{title}</h2>
       <p className={`text-theme-text-alt ${link ? 'mb-8' : ''}`}>{description}</p>
       {!!link && (
         <div>

@@ -1,6 +1,6 @@
 // Components
-import TextLink from '@/src/components/common/TextLink';
 import Container from 'ui/components/common/Container';
+import TextLink from 'ui/components/common/TextLink';
 import Layout from 'ui/layouts/Layout';
 
 const pageInfo = {

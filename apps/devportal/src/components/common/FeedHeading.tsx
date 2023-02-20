@@ -3,7 +3,7 @@ import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Global
 // Components
 import DynamicTag from 'ui/components/common/DynamicTag';
-import TextLink from './TextLink';
+import TextLink from 'ui/components/common/TextLink';
 
 export type FeedHeadingProps = {
   title: string;

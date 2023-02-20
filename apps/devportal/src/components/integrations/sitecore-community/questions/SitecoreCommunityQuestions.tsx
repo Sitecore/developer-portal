@@ -4,7 +4,7 @@ import type { SitecoreCommunityContent } from '@/src/interfaces/integrations';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 // Components
-import TextLink from '@/src/components/common/TextLink';
+import TextLink from 'ui/components/common/TextLink';
 // Local
 import { FORUM_TO_TITLE } from '../sitecore-community.constants';
 import { ForumOption, SortOption } from '../SitecoreCommunity.api';
@@ -54,23 +54,23 @@ const SitecoreCommunityQuestions = ({
 
   return (
     <>
-      <div className="justify-between mb-4 md:flex">
-        <h2 className="mb-2 heading-md md:mb-0">Questions from the community</h2>
+      <div className="mb-4 justify-between md:flex">
+        <h2 className="heading-md mb-2 md:mb-0">Questions from the community</h2>
         <TextLink
           href="https://community.sitecore.com/community?id=community_forum&sys_id=671511531b357810486a4083b24bcb62"
           text="See all"
           target="_blank"
         />
       </div>
-      <div className="flex justify-end mb-6">
+      <div className="mb-6 flex justify-end">
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
           <label
-            className={`text-xs font-semibold flex items-center ${hasForumKeys ? 'mr-10' : ''}`}
+            className={`flex items-center text-xs font-semibold ${hasForumKeys ? 'mr-10' : ''}`}
           >
             Order by:
             <select
               onChange={(changeEvent) => setSort(changeEvent.target.value)}
-              className="p-2 ml-2 font-semibold border-2 bg-theme-bg text-theme-text"
+              className="bg-theme-bg text-theme-text ml-2 border-2 p-2 font-semibold"
             >
               <option value="publish">Recent Questions</option>
               <option value="view">Most Popular</option>
@@ -84,7 +84,7 @@ const SitecoreCommunityQuestions = ({
             Filter by:
             <select
               onChange={(changeEvent) => setForum(changeEvent.target.value)}
-              className="p-2 ml-2 font-semibold border-2 bg-theme-bg text-theme-text"
+              className="bg-theme-bg text-theme-text ml-2 border-2 p-2 font-semibold"
             >
               {forumKeys.map((key) => (
                 <option key={key} value={key}>

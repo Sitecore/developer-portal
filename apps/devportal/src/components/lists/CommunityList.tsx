@@ -3,7 +3,7 @@ import Image from 'next/legacy/image';
 // Data
 import data from '@/data/data-community-list';
 // Components
-import TextLink from '@/src/components/common/TextLink';
+import TextLink from 'ui/components/common/TextLink';
 
 type CommunityListProps = {
   className?: string;

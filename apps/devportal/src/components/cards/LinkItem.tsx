@@ -1,4 +1,4 @@
-import TextLink from '../common/TextLink';
+import TextLink from 'ui/components/common/TextLink';
 
 type LinkProps = {
   title: string;

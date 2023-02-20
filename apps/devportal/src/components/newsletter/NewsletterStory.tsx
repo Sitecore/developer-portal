@@ -1,5 +1,5 @@
 import Image from 'next/legacy/image';
-import TextLink from '../common/TextLink';
+import TextLink from 'ui/components/common/TextLink';
 
 interface NewsletterStoryPartialData {
   copy: string;
@@ -16,7 +16,7 @@ export interface NewsletterStoryData extends NewsletterStoryPartialData {
 }
 
 const NewsletterStoryPartial = ({ copy, link, title }: NewsletterStoryPartialData) => (
-  <div className="flex flex-col justify-between flex-1">
+  <div className="flex flex-1 flex-col justify-between">
     <div className="mb-4">
       <h2 className="heading-sm mb-4">{title}</h2>
       <p>{copy}</p>
@@ -28,8 +28,8 @@ const NewsletterStoryPartial = ({ copy, link, title }: NewsletterStoryPartialDat
 const NewsletterStory = ({ variant, image, ...props }: NewsletterStoryData) => {
   if (variant === 'full-width') {
     return (
-      <div className="md:grid md:gap-10 md:grid-cols-3 md:col-span-3">
-        <div className="block mb-4 md:hidden">
+      <div className="md:col-span-3 md:grid md:grid-cols-3 md:gap-10">
+        <div className="mb-4 block md:hidden">
           <Image src={image} alt="" width="300" height="300" />
         </div>
         <div className="col-span-2">
