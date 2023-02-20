@@ -1,6 +1,6 @@
 // Global
 import { useId, useState } from 'react';
-import SvgIcon from './SvgIcon';
+import SvgIcon from 'ui/components/common/SvgIcon';
 
 export type CollapseProps = {
   title: string;
@@ -23,7 +23,7 @@ const Collapse = ({ title, expandedByDefault, children }: CollapseProps): JSX.El
         <SvgIcon
           icon="chevron-down"
           aria-expanded={isExpanded}
-          className={`w-4 h-4 ml-2 transform ${isExpanded ? 'rotate-180' : ''}`}
+          className={`ml-2 h-4 w-4 transform ${isExpanded ? 'rotate-180' : ''}`}
         />
       </button>
       <div id={idSeed} aria-expanded={isExpanded} className="hidden aria-expanded:block">

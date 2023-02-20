@@ -1,7 +1,7 @@
 // Components
 import Container from '@/src/components/common/Container';
 import TextLink from '@/src/components/common/TextLink';
-import Layout from '@/src/layouts/Layout';
+import Layout from 'ui/layouts/Layout';
 
 const pageInfo = {
   description: 'The page you are looking for cannot be found.',
@@ -16,7 +16,7 @@ const pageInfo = {
 };
 
 const NotFoundPage = (): JSX.Element => (
-  <Layout pageInfo={pageInfo}>
+  <Layout title={pageInfo.title} description={pageInfo.description}>
     <Container>
       <TextLink href="/" text="Return home" />
     </Container>

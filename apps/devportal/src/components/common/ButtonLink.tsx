@@ -1,7 +1,7 @@
 // Global
 import Link from 'next/link';
 // Components
-import SvgIcon from '@/src/components/common/SvgIcon';
+import SvgIcon from 'ui/components/common/SvgIcon';
 
 type ButtonLinkProps = {
   text: string;

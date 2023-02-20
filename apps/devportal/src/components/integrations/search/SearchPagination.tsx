@@ -4,7 +4,7 @@ import router from 'next/router';
 import { useEffect, useState } from 'react';
 // Lib
 import { coveoEngine, urlManager } from '@/src/common/search/coveo-engine';
-import SvgIcon from '../../common/SvgIcon';
+import SvgIcon from 'ui/components/common/SvgIcon';
 
 const SearchPagination = () => {
   const pager = buildPager(coveoEngine);
@@ -42,14 +42,14 @@ const SearchPagination = () => {
   const activeClasses = 'bg-theme-text text-theme-bg';
 
   return (
-    <ul className="flex items-center justify-center mt-8">
+    <ul className="mt-8 flex items-center justify-center">
       <li>
         <button
           disabled={pagerState.currentPage === 1}
           onClick={() => {
             handlePaginate(pagerState.currentPage - 1);
           }}
-          className="block w-em h-em"
+          className="w-em h-em block"
         >
           <SvgIcon icon="chevron-left" />
           <span className="sr-only">Previous page</span>
@@ -58,7 +58,7 @@ const SearchPagination = () => {
       {pagerState.currentPages.map((i) => (
         <li key={i}>
           <button
-            className={`border border-theme-border hover:underline py-1 px-2 mx-2 ${
+            className={`border-theme-border mx-2 border py-1 px-2 hover:underline ${
               i === pagerState.currentPage ? [activeClasses] : ''
             }`}
             onClick={() => {
@@ -74,7 +74,7 @@ const SearchPagination = () => {
           <li>...</li>
           <li>
             <button
-              className="px-2 py-1 mx-2 border border-theme-border hover:underline"
+              className="border-theme-border mx-2 border px-2 py-1 hover:underline"
               onClick={() => {
                 handlePaginate(pagerState.maxPage);
               }}
@@ -90,7 +90,7 @@ const SearchPagination = () => {
           onClick={() => {
             handlePaginate(pagerState.currentPage + 1);
           }}
-          className="block w-em h-em"
+          className="w-em h-em block"
         >
           <SvgIcon icon="chevron-right" />
           <span className="sr-only">Next page</span>

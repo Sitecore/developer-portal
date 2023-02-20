@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useRef, useState } from 'react';
 // Data
-import { NavigationData } from '@/data/data-navigation';
 // Components
-import ConditionalWrapper from '@/src/components/common/ConditionalWrapper';
-import DynamicTag from '@/src/components/common/DynamicTag';
-import SvgIcon, { IconNames } from '@/src/components/common/SvgIcon';
+import ConditionalWrapper from 'ui/components/common/ConditionalWrapper';
+import DynamicTag from 'ui/components/common/DynamicTag';
+import SvgIcon, { IconNames } from 'ui/components/common/SvgIcon';
 // Local
-import NavLink from '@/src/layouts/components/head/NavLink';
+import NavLink from 'ui/layouts/components/header/NavLink';
+import { NavigationData } from './Nav';
 
 type NavMenuProps = NavigationData & {
   buttonIcon?: IconNames;
@@ -75,7 +75,7 @@ const NavMenu = ({
         <DynamicTag
           tag={children ? 'button' : 'a'}
           aria-current={!children ? isCurrentPage : undefined}
-          className={`group main-nav-item ${
+          className={`main-nav-item group ${
             (children && isOpen) || isCurrentPath ? 'button-active' : ''
           } ${children ? 'lg:pr-5' : ''}`}
           onClick={toggleNavItem}
@@ -86,16 +86,16 @@ const NavMenu = ({
           </span>
           {children && (
             <>
-              <span className="absolute right-0 block pointer-events-none top-5 h-em w-em lg:hidden">
+              <span className="absolute right-0 block pointer-events-none h-em w-em top-5 lg:hidden">
                 <SvgIcon
                   icon="chevron-right"
                   className="transition-transform h-inherit w-inherit top-5 transform-gpu group-hover:translate-x-1"
                 />
               </span>
-              <span className="absolute top-1/2 -mt-1.5 right-0 h-3 w-3 hidden lg:block">
+              <span className="absolute top-1/2 right-0 -mt-1.5 hidden h-3 w-3 lg:block">
                 <SvgIcon
                   icon="chevron-down"
-                  className={`h-inherit w-inherit top-5 transition-transform transform-gpu ${
+                  className={`h-inherit w-inherit top-5 transform-gpu transition-transform ${
                     isOpen ? 'rotate-180' : ''
                   }`}
                 />
@@ -118,7 +118,7 @@ const NavMenu = ({
             {/* 
               Back Button
             */}
-            <button className="group btn-nav-back" onClick={toggleNavItem}>
+            <button className="btn-nav-back group" onClick={toggleNavItem}>
               Back
               <span className="btn-nav-back-icon-outer">
                 <SvgIcon icon="chevron-left" className="btn-nav-back-icon" />
@@ -129,7 +129,7 @@ const NavMenu = ({
             */}
             <div className="shadow-inner px-gutter">
               <div className="max-w-screen-lg pt-6 mx-auto lg:py-12">
-                <ul className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <ul className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
                   {children?.map((child, index) => (
                     <li key={`child-${index}`} className="pb-4 border-b border-gray-light md:pb-6">
                       <NavLink

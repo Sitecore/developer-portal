@@ -15,8 +15,9 @@ import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title
 import { translateDateAsYearMonth } from '@/src/common/translate-date';
 // Components
 import Container from '@/src/components/common/Container';
+import Hero from '@/src/components/heros/Hero';
 import CategoryTile, { CategoryTileProps } from '@/src/components/lists/CategoryTile';
-import Layout from '@/src/layouts/Layout';
+import Layout from 'ui/layouts/Layout';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];
@@ -83,11 +84,22 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
 
 const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }) => {
   return (
-    <Layout pageInfo={pageInfo}>
+    <Layout
+      title={pageInfo.title}
+      description={pageInfo.description}
+      openGraphImage={pageInfo.openGraphImage}
+    >
+      <Hero
+        title={pageInfo.title}
+        description={pageInfo.description}
+        image={pageInfo.heroImage}
+        productLogo={pageInfo.productLogo}
+      />
+
       <Container>
-        <div className="grid gap-6 mt-8 md:grid-cols-4">
-          <div className="grid col-span-3 gap-10 md:grid-cols-3">
-            <ul className="grid col-span-3 gap-6 md:grid-cols-1">
+        <div className="mt-8 grid gap-6 md:grid-cols-4">
+          <div className="col-span-3 grid gap-10 md:grid-cols-3">
+            <ul className="col-span-3 grid gap-6 md:grid-cols-1">
               {newsletters.map((card, i) => (
                 <CategoryTile key={i} containerTag="li" headingLevel={'h2'} {...card} />
               ))}

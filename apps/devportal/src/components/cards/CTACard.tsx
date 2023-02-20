@@ -3,7 +3,7 @@ import Link from 'next/link';
 // Interfaces
 import type { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
-import DynamicTag from '@/src/components/common/DynamicTag';
+import DynamicTag from 'ui/components/common/DynamicTag';
 
 export type CTACardProps = {
   description: string;
@@ -24,16 +24,16 @@ const CTACard = ({
   link2Text,
   link2href,
 }: CTACardProps): JSX.Element => (
-  <div className="w-full px-16 py-10 my-8 bg-theme-bg-alt clear-both">
-    <DynamicTag tag={headingLevel} className="mb-4 heading-md">
+  <div className="bg-theme-bg-alt clear-both my-8 w-full px-16 py-10">
+    <DynamicTag tag={headingLevel} className="heading-md mb-4">
       {title}
     </DynamicTag>
-    <p className="mb-6 text-theme-text">{description}</p>
+    <p className="text-theme-text mb-6">{description}</p>
     <Link href={href} className="btn-primary">
       {linkText}
     </Link>
     {link2href && link2Text && (
-      <Link href={link2href} className="ml-4 btn-primary">
+      <Link href={link2href} className="btn-primary ml-4">
         {link2Text}
       </Link>
     )}

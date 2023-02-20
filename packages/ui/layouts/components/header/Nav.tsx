@@ -2,18 +2,15 @@
 import throttle from 'lodash.throttle';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-// Data
-import NavigationData, { SitecoreQuickLinks } from '@/data/data-navigation';
 // Lib
-import { setGlobalState, useGlobalState } from '@/src/common/global-state';
-import htmlConfig from '@/src/common/html-constants';
+import { setGlobalState, useGlobalState } from '../../../common/global-state';
+import htmlConfig from '../../../common/html-constants';
 const { idMainContent } = htmlConfig;
 // Components
-import { ThemeButton } from '@/src/components/ThemeButton';
-import NavMenu from '@/src/layouts/components/head/NavMenu';
-import QuickStartMenu from '@/src/layouts/components/head/QuickStartMenu';
-import dynamic from 'next/dynamic';
+import NavMenu from 'ui/layouts/components/header/NavMenu';
+import QuickStartMenu from 'ui/layouts/components/header/QuickStartMenu';
 import Logo from './Logo';
+import { ThemeButton } from './ThemeButton';
 
 export type NavTWClasses =
   | 'nav-item--button'
@@ -25,27 +22,28 @@ export type NavTWClasses =
 
 const hamburgerBarClasses = 'bg-currentColor block h-1 pt-1 w-full transition';
 
-const Nav = (): JSX.Element => {
+export type NavigationChildData = {
+  title: string;
+  url?: string;
+  external?: boolean;
+  children?: NavigationChildData[];
+};
+
+export type NavigationData = {
+  title: string;
+  url?: string;
+  children?: NavigationChildData[];
+  pathname?: string;
+};
+export type NavProps = {
+  navigationData: NavigationData[];
+  sitecoreQuickLinks: NavigationData;
+  children?: React.ReactNode | React.ReactNode[];
+};
+
+const Nav = ({ navigationData, sitecoreQuickLinks, children }: NavProps): JSX.Element => {
   const navRef = useRef<HTMLElement>(null);
   const [isOpen, setOpen] = useState(false);
-
-  const Disabled = () => {
-    console.log(
-      'NEXT_PUBLIC_COVEO_ORGANIZATION_ID: ' + process.env.NEXT_PUBLIC_COVEO_ORGANIZATION_ID
-    );
-    return (
-      <div className="pt-3 text-sm font-semibold text-center text-red">
-        Search disabled; please check environment variables to enable
-      </div>
-    );
-  };
-  const SearchInput =
-    !process.env.NEXT_PUBLIC_COVEO_ORGANIZATION_ID ||
-    !process.env.NEXT_PUBLIC_COVEO_ACCESS_TOKEN ||
-    !process.env.NEXT_PUBLIC_COVEO_SEARCH_HUB ||
-    !process.env.NEXT_PUBLIC_COVEO_PIPELINE
-      ? Disabled
-      : dynamic(() => import('@/src/components/integrations/search/SearchInput'));
 
   /**
    *  Hook for handling toggling the mobile nav.
@@ -112,7 +110,7 @@ const Nav = (): JSX.Element => {
     // Necesarry to retain the space for the fixed header.
     <header className="h-32">
       <div
-        className={`bg-theme-bg border-b border-theme-border shadow-theme z-40 fixed inset-x-0 top-0 h-32 transition-all ${
+        className={`bg-theme-bg border-theme-border shadow-theme fixed inset-x-0 top-0 z-40 h-32 border-b transition-all ${
           scrolled ? '-top-16' : ''
         }`}
       >
@@ -133,16 +131,16 @@ const Nav = (): JSX.Element => {
           <nav
             ref={navRef}
             id="scdp-nav"
-            className={`fixed bg-theme-bg top-32 bottom-0 inset-0 items-center lg:mx-12 lg:bg-transparent lg:flex lg:static xl:mx-16 ${
+            className={`bg-theme-bg fixed inset-0 top-32 bottom-0 items-center lg:static lg:mx-12 lg:flex lg:bg-transparent xl:mx-16 ${
               isOpen ? 'block' : 'hidden'
             }`}
           >
             <ul className="block text-sm lg:flex">
-              {NavigationData.map((item, index) => {
+              {navigationData.map((item: NavigationData, index: number) => {
                 return (
                   <li
                     key={`nav-${index}`}
-                    className="border-b border-theme-bg-alt px-gutter lg:border-0 xl:p-0 xl:mx-6"
+                    className="border-b border-theme-bg-alt px-gutter lg:border-0 xl:mx-6 xl:p-0"
                   >
                     <NavMenu
                       title={item.title}
@@ -158,13 +156,13 @@ const Nav = (): JSX.Element => {
               {/*
                 SC Products "Quick Links"-like mobile menu implementation.
               */}
-              <li className="border-b border-theme-bg-alt px-gutter xl:p-0 xl:border-0 xl:mx-8 lg:hidden">
+              <li className="border-b border-theme-bg-alt px-gutter lg:hidden xl:mx-8 xl:border-0 xl:p-0">
                 <NavMenu
-                  title={SitecoreQuickLinks.title}
+                  title={sitecoreQuickLinks.title}
                   callback={toggleNav}
                   buttonIcon="quick-links"
                 >
-                  {SitecoreQuickLinks.children}
+                  {sitecoreQuickLinks.children}
                 </NavMenu>
               </li>
             </ul>
@@ -175,11 +173,11 @@ const Nav = (): JSX.Element => {
               aria-controls="scdp-nav"
               aria-expanded={isOpen}
               aria-label="Toggle navigation menu"
-              className="relative z-20 hamburger w-9 h-7 hover:text-violet lg:hidden"
+              className="relative z-20 hamburger hover:text-violet h-7 w-9 lg:hidden"
               onClick={toggleNav}
             >
               <span
-                className={`${hamburgerBarClasses} mb-1.5 hamburger-bar-outside ${
+                className={`${hamburgerBarClasses} hamburger-bar-outside mb-1.5 ${
                   isOpen ? 'hidden' : ''
                 }`}
               ></span>
@@ -195,13 +193,14 @@ const Nav = (): JSX.Element => {
                 className={`${hamburgerBarClasses} hamburger-bar-outside ${isOpen ? 'hidden' : ''}`}
               ></span>
             </button>
-            <QuickStartMenu className="hidden w-7 h-7 lg:h-5 lg:w-5 lg:block" />
+            <QuickStartMenu
+              className="hidden h-7 w-7 lg:block lg:h-5 lg:w-5"
+              data={sitecoreQuickLinks}
+            />
           </div>
         </div>
         <div>
-          <div className="px-gutter-all py-2.5 max-w-screen-xl m-auto">
-            <SearchInput />
-          </div>
+          <div className="px-gutter-all m-auto max-w-screen-xl py-2.5">{children}</div>
         </div>
       </div>
     </header>

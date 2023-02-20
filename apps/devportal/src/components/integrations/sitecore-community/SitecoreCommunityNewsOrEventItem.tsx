@@ -1,5 +1,5 @@
 import translateDate from '@/src/common/translate-date';
-import ConditionalWrapper from '@/src/components/common/ConditionalWrapper';
+import ConditionalWrapper from 'ui/components/common/ConditionalWrapper';
 // Local
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
 
@@ -46,12 +46,12 @@ const SitecoreCommunityNewsOrEventItem = ({
   virtualUrl,
 }: SitecoreCommunityNewsOrEventItemProps): JSX.Element => {
   return (
-    <li className="relative flex flex-col justify-between p-6 border border-theme-text-alt hover:shadow-theme-md">
+    <li className="border-theme-text-alt hover:shadow-theme-md relative flex flex-col justify-between border p-6">
       <div>
         <p className="mb-1 text-sm font-semibold">{categoryTitle}</p>
         <p>
           <a
-            className="block mb-1 text-lg font-semibold hover:underline hover:text-theme-link-hover"
+            className="hover:text-theme-link-hover mb-1 block text-lg font-semibold hover:underline"
             href={`${SITECORE_COMMUNITY_URL}${url}`}
             rel="noreferrer noopener"
             target="_blank"

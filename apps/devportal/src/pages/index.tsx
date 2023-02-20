@@ -16,10 +16,11 @@ import StackExchangeFeed from '@/src/components/integrations/stackexchange/Stack
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
 import CategoryTileList from '@/src/components/lists/CategoryTileList';
 import CommunityList from '@/src/components/lists/CommunityList';
-import Layout from '@/src/layouts/Layout';
+import Layout from 'ui/layouts/Layout';
 // Data
 import getHelpCta from '@/data/promos/get-help';
 import promoData from '@/data/promos/xmc-practices';
+import Hero from '../components/heros/Hero';
 import VideoPromo from '../components/videoPromo';
 
 export async function getStaticProps() {
@@ -77,7 +78,18 @@ type HomePageProps = {
 };
 
 const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
-  <Layout pageInfo={pageInfo}>
+  <Layout
+    title={pageInfo.title}
+    description={pageInfo.description}
+    openGraphImage={pageInfo.openGraphImage}
+  >
+    <Hero
+      title={pageInfo.title}
+      description={pageInfo.description}
+      image={pageInfo.heroImage}
+      productLogo={pageInfo.productLogo}
+    />
+
     <VerticalGroup>
       <Container>
         <VerticalGroup size="lg">
@@ -105,10 +117,10 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
           <CommunityList />
         </VerticalGroup>
       </Container>
-      <section className="bg-charcoal dark:bg-gray-darkest py-16">
+      <section className="py-16 bg-charcoal dark:bg-gray-darkest">
         <Container>
           <div className="mb-8 max-w-prose">
-            <h2 className="heading-md mb-4 text-white">Explore Sitecore by solution</h2>
+            <h2 className="mb-4 text-white heading-md">Explore Sitecore by solution</h2>
             <p className="text-white">
               How can we help you today? Get all the information you want, depending on your
               business’s needs.
@@ -120,7 +132,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       <Container>
         <CTACard {...getHelpCta} />
       </Container>
-      <section className="bg-theme-bg-alt py-16">
+      <section className="py-16 bg-theme-bg-alt">
         <Container>
           <VerticalGroup>
             <SitecoreCommunityQuestions

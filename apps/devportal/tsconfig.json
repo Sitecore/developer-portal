@@ -13,8 +13,15 @@
       "src/common/types",
       "./node_modules/@types"
     ] /* List of folders to include type definitions from. */,
-    "moduleResolution": "node",
+    "moduleResolution": "node"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "../../packages/ui/components/common/DynamicTag.tsx",
+    "../../packages/ui/common/global-state.ts",
+    "../../packages/ui/components/common/ConditionalWrapper.tsx"
+  ],
   "exclude": ["node_modules", "types"]
 }

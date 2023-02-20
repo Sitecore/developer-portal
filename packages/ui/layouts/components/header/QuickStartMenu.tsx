@@ -1,14 +1,14 @@
 // Global
 import { useEffect, useId, useRef, useState } from 'react';
+import { NavigationData } from './Nav';
 
 // Local
-import { SitecoreQuickLinks } from '@/data/data-navigation';
-
 type QuickStartMenuProps = {
   className?: string;
+  data: NavigationData;
 };
 
-const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
+const QuickStartMenu = ({ className, data }: QuickStartMenuProps): JSX.Element => {
   /**
    *  React hook for unique IDs using react-unique-id.
    *  Avoid generating new ID on every rerender.
@@ -47,7 +47,7 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
   }, [isOpen]);
 
   return (
-    <div className={`block w-5 h-5 ${className ? className : ''}`}>
+    <div className={`block h-5 w-5 ${className ? className : ''}`}>
       <button
         id={buttonId}
         className="transition w-inherit h-inherit hover:text-violet"
@@ -67,19 +67,19 @@ const QuickStartMenu = ({ className }: QuickStartMenuProps): JSX.Element => {
             <rect x="71.2" y="71.2" width="18.8" height="18.8" fill="currentColor" />
           </g>
         </svg>
-        <span className="sr-only">{SitecoreQuickLinks.title}</span>
+        <span className="sr-only">{data.title}</span>
       </button>
       {/* NOTE:: Dropdown currently absolutely positioned. Revist if used in place other than the navigation */}
       <div
         id={qsMenuId}
         aria-labelledby={buttonId}
         ref={quickStartMenuRef}
-        className={`shadow-sm bg-theme-bg border border-theme-border absolute top-16 -mt-0.5 w-56 right-4 z-50 ${
+        className={`bg-theme-bg border-theme-border absolute top-16 right-4 z-50 -mt-0.5 w-56 border shadow-sm ${
           isOpen ? 'block' : 'hidden'
         }`}
       >
         <ul className="py-3">
-          {SitecoreQuickLinks.children?.map((child, index) => (
+          {data.children?.map((child, index) => (
             <li
               key={`child-${index}`}
               className="text-xs font-semibold hover:bg-violet-lightest hover:text-violet"

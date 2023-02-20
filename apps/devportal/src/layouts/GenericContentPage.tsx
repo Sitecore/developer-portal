@@ -9,7 +9,8 @@ import SectionHeading from '@/src/components/common/SectionHeading';
 import VerticalGroup from '@/src/components/common/VerticalGroup';
 import SocialFeeds from '@/src/components/integrations/SocialFeeds';
 import InPageNav from '@/src/components/sidebar-nav/InPageNav';
-import Layout from '@/src/layouts/Layout';
+import Layout from 'ui/layouts/Layout';
+import Hero from '../components/heros/Hero';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -67,7 +68,17 @@ const GenericContentPage = ({
   const Nav = customNav ? customNav : <InPageNav titles={titles} />;
 
   return (
-    <Layout pageInfo={pageInfo}>
+    <Layout
+      title={pageInfo.pageTitle || pageInfo.title}
+      description={pageInfo.description}
+      openGraphImage={pageInfo.openGraphImage}
+    >
+      <Hero
+        title={pageInfo.title}
+        description={pageInfo.description}
+        image={pageInfo.heroImage}
+        productLogo={pageInfo.productLogo}
+      />
       <VerticalGroup>
         {promoBefore && (
           <Container>

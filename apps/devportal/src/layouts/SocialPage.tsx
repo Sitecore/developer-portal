@@ -1,17 +1,18 @@
 // Interfaces
 import type { PageInfo } from '@/src/interfaces/page-info';
 // Components
-import CommunityList from '@/src/components/lists/CommunityList';
-import Container from '@/src/components/common/Container';
 import CTACard, { CTACardProps } from '@/src/components/cards/CTACard';
-import Layout from '@/src/layouts/Layout';
 import PromoCard, { PromoCardProps } from '@/src/components/cards/PromoCard';
-import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
-import TwitterFeed from '@/src/components/integrations/twitter/TwitterFeed';
+import Container from '@/src/components/common/Container';
 import VerticalGroup from '@/src/components/common/VerticalGroup';
-import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
 import SitecoreCommunityNews from '@/src/components/integrations/sitecore-community/news/SitecoreCommunityNews';
 import SitecoreCommunityQuestions from '@/src/components/integrations/sitecore-community/questions/SitecoreCommunityQuestions';
+import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
+import TwitterFeed from '@/src/components/integrations/twitter/TwitterFeed';
+import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
+import CommunityList from '@/src/components/lists/CommunityList';
+import Layout from 'ui/layouts/Layout';
+import Hero from '../components/heros/Hero';
 
 type SocialPageProps = {
   pageInfo: PageInfo;
@@ -20,7 +21,17 @@ type SocialPageProps = {
 };
 
 const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): JSX.Element => (
-  <Layout pageInfo={pageInfo}>
+  <Layout
+    title={pageInfo.title}
+    description={pageInfo.description}
+    openGraphImage={pageInfo.openGraphImage}
+  >
+    <Hero
+      title={pageInfo.title}
+      description={pageInfo.description}
+      image={pageInfo.heroImage}
+      productLogo={pageInfo.productLogo}
+    />
     <Container>
       <VerticalGroup>
         {promoBefore.map((promo, i) => (

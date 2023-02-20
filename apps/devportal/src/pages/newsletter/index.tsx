@@ -17,9 +17,10 @@ import Container from '@/src/components/common/Container';
 import VerticalGroup from '@/src/components/common/VerticalGroup';
 import { CategoryTileProps } from '@/src/components/lists/CategoryTile';
 import CategoryTileList from '@/src/components/lists/CategoryTileList';
-import Layout from '@/src/layouts/Layout';
+import Layout from 'ui/layouts/Layout';
 // Data
 import newsletterPromo from '@/data/promos/newsletter';
+import Hero from '@/src/components/heros/Hero';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];
@@ -78,7 +79,18 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }) => {
   return (
-    <Layout pageInfo={pageInfo}>
+    <Layout
+      title={pageInfo.title}
+      description={pageInfo.description}
+      openGraphImage={pageInfo.openGraphImage}
+    >
+      <Hero
+        title={pageInfo.title}
+        description={pageInfo.description}
+        image={pageInfo.heroImage}
+        productLogo={pageInfo.productLogo}
+      />
+
       <Container>
         <VerticalGroup>
           <PromoCard {...newsletterPromo} />

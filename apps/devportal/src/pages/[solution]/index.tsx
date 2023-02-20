@@ -9,7 +9,7 @@ import type { ChildPageInfo, PageInfo } from '@/src/interfaces/page-info';
 import Container from '@/src/components/common/Container';
 import SocialFeeds from '@/src/components/integrations/SocialFeeds';
 import CategoryTileList from '@/src/components/lists/CategoryTileList';
-import Layout from '@/src/layouts/Layout';
+import Layout from 'ui/layouts/Layout';
 
 export async function getStaticPaths() {
   const solutionPaths = await getSolutionPaths();
@@ -46,7 +46,7 @@ const SolutionPage = ({ pageInfo, products }: SolutionPageProps): JSX.Element =>
 
   return (
     <Layout pageInfo={pageInfo}>
-      <div className="py-16 bg-theme-bg-alt">
+      <div className="bg-theme-bg-alt py-16">
         <Container>
           <CategoryTileList cards={categoryCards} />
         </Container>

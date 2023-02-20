@@ -35,23 +35,23 @@
    * Headings
    */
   .heading-xl {
-    @apply font-ltpro font-regular text-3xl md:text-4xl leading-none !important;
+    @apply font-ltpro font-regular text-3xl leading-none md:text-4xl !important;
   }
 
   .heading-lg {
-    @apply font-ltpro font-regular text-2xl md:text-3xl leading-tight !important;
+    @apply font-ltpro font-regular text-2xl leading-tight md:text-3xl !important;
   }
 
   .heading-md {
-    @apply font-regular text-xl md:text-2xl leading-tight !important;
+    @apply font-regular text-xl leading-tight md:text-2xl !important;
   }
 
   .heading-sm {
-    @apply font-semibold text-base md:text-lg leading-tight !important;
+    @apply text-base font-semibold leading-tight md:text-lg !important;
   }
 
   .heading-xs {
-    @apply font-semibold text-sm md:text-base leading-normal !important;
+    @apply text-sm font-semibold leading-normal md:text-base !important;
   }
 
   /**

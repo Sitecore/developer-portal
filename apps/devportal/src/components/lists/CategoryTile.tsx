@@ -3,8 +3,8 @@ import Link from 'next/link';
 // Interfaces
 import { ValidHeadingLevels } from '@/src/interfaces/heading-levels';
 // Components
-import DynamicTag from '@/src/components/common/DynamicTag';
-import SvgIcon from '../common/SvgIcon';
+import DynamicTag from 'ui/components/common/DynamicTag';
+import SvgIcon from 'ui/components/common/SvgIcon';
 
 export type CategoryTileProps = {
   containerTag?: 'div' | 'li';
@@ -30,7 +30,7 @@ const CategoryTile = ({
         <Link href={href} className="inline-block pr-6 mb-1 group" aria-label={title}>
           <span className="relative">
             {title}
-            <span className="absolute inline-block transition-transform duration-300 h-em transform-gpu w-em group-focus:translate-x-1 whitespace-nowrap group-hover:translate-x-1 -right-6 bottom-1">
+            <span className="absolute inline-block transition-transform duration-300 h-em w-em -right-6 bottom-1 transform-gpu whitespace-nowrap group-hover:translate-x-1 group-focus:translate-x-1">
               <SvgIcon icon="arrow-right" className="text-violet dark:text-red relative top-0.5" />
             </span>
           </span>

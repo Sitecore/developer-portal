@@ -1,7 +1,7 @@
 // Global
 import Link from 'next/link';
 // Components
-import ConditionalWrapper from '@/src/components/common/ConditionalWrapper';
+import ConditionalWrapper from 'ui/components/common/ConditionalWrapper';
 
 type NavLinkProps = {
   text: string;
@@ -36,7 +36,7 @@ const NavLink = ({ text, url, level, external, onClick, ...props }: NavLinkProps
         {text}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={external ? 'h-4 w-4 ml-1 mb-1 inline-flex' : 'hidden'}
+          className={external ? 'ml-1 mb-1 inline-flex h-4 w-4' : 'hidden'}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

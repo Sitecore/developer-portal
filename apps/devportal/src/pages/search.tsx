@@ -24,7 +24,8 @@ import FacetBreadcrumbs from '@/src/components/integrations/search/facetBreadcru
 import SearchFacet, { FacetValueSort } from '@/src/components/integrations/search/SearchFacet';
 import SearchPagination from '@/src/components/integrations/search/SearchPagination';
 import SearchResultList from '@/src/components/integrations/search/SearchResultList';
-import Layout from '@/src/layouts/Layout';
+import Layout from 'ui/layouts/Layout';
+import Hero from '../components/heros/Hero';
 
 interface SearchPageProps {
   pageInfo: PageInfo;
@@ -72,10 +73,21 @@ const SearchPage: NextPage<SearchPageProps> = ({ pageInfo }) => {
   }, []);
 
   return (
-    <Layout pageInfo={pageInfo}>
+    <Layout
+      title={pageInfo.title}
+      description={pageInfo.description}
+      openGraphImage={pageInfo.openGraphImage}
+    >
+      <Hero
+        title={pageInfo.title}
+        description={pageInfo.description}
+        image={pageInfo.heroImage}
+        productLogo={pageInfo.productLogo}
+      />
+
       <VerticalGroup>
         <Container>
-          <div className="grid gap-6 md:grid-cols-3 mt-6">
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
             <div>
               <SearchFacet title="Version" facet={versionFacet} />
               <SearchFacet title="Product" facet={productFacet} />

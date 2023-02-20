@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 // Lib
 import { searchStatus, urlManager } from '@/src/common/search/coveo-engine';
 import { useRouter } from 'next/router';
-import SvgIcon from '../../common/SvgIcon';
+import SvgIcon from 'ui/components/common/SvgIcon';
 
 export enum FacetValueSort {
   Ascending,
@@ -61,7 +61,7 @@ const SearchFacet = ({ facet, title, sort }: SearchFacetProps) => {
                   event.preventDefault();
                   facet.toggleSelect(facetValue);
                 }}
-                className={`text-left mb-2 flex justify-between w-full ${
+                className={`mb-2 flex w-full justify-between text-left ${
                   facet.isValueSelected(facetValue) ? 'font-bold' : ''
                 }`}
               >

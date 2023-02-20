@@ -13,10 +13,11 @@ import {
 import { getNewsletterTitle } from '@/src/common/newsletter/get-newsletter-title';
 import { translateDateAsYearMonth } from '@/src/common/translate-date';
 import Container from '@/src/components/common/Container';
+import Hero from '@/src/components/heros/Hero';
 import NewsletterNav from '@/src/components/newsletter/NewsletterNav';
 import NewsletterStory, { NewsletterStoryData } from '@/src/components/newsletter/NewsletterStory';
 import { PageInfo } from '@/src/interfaces/page-info';
-import Layout from '@/src/layouts/Layout';
+import Layout from 'ui/layouts/Layout';
 
 export interface NewsletterContentPageProps {
   content: NewsletterStoryData[];
@@ -82,11 +83,22 @@ const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({
   month,
 }) => {
   return (
-    <Layout pageInfo={pageInfo}>
+    <Layout
+      title={pageInfo.title}
+      description={pageInfo.description}
+      openGraphImage={pageInfo.openGraphImage}
+    >
+      <Hero
+        title={pageInfo.title}
+        description={pageInfo.description}
+        image={pageInfo.heroImage}
+        productLogo={pageInfo.productLogo}
+      />
+
       <Container>
-        <div className="grid gap-6 mt-8 md:grid-cols-4">
+        <div className="mt-8 grid gap-6 md:grid-cols-4">
           <NewsletterNav paths={paths} currentMonth={month} currentYear={year} />
-          <div className="grid gap-10 md:grid-cols-3 col-span-3">
+          <div className="col-span-3 grid gap-10 md:grid-cols-3">
             {content.map((story) => (
               <NewsletterStory {...story} key={story.title} />
             ))}

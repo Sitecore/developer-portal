@@ -46,6 +46,7 @@ const redirects = [
 ];
 
 const nextConfig = {
+  transpilePackages: ['ui'],
   // Set locales so we have appropriate lang attributes without a custom _document
   // ia8n commentted out due to temporary issue with ISR, see https://github.com/Sitecore/developer-portal/issues/182
   // i18n: {

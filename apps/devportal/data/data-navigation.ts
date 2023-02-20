@@ -1,18 +1,6 @@
-export type NavigationChildData = {
-  title: string;
-  url?: string;
-  external?: boolean;
-  children?: NavigationChildData[];
-};
+import { NavigationData } from 'ui/layouts/components/header/Nav';
 
-export type NavigationData = {
-  title: string;
-  url?: string;
-  children?: NavigationChildData[];
-  pathname?: string;
-};
-
-export const SitecoreQuickLinks: NavigationData = {
+export const sitecoreQuickLinks: NavigationData = {
   title: 'External Sitecore Links',
   children: [
     {
@@ -50,7 +38,7 @@ export const SitecoreQuickLinks: NavigationData = {
   ],
 };
 
-const NavigationData: NavigationData[] = [
+export const mainNavigation: NavigationData[] = [
   {
     title: 'Learn',
     url: '/learn',
@@ -484,5 +472,3 @@ const NavigationData: NavigationData[] = [
     ],
   },
 ];
-
-export default NavigationData;

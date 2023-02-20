@@ -1,0 +1,5 @@
+@layer components {
+  .testmva {
+    @apply text-2xl font-bold;
+  }
+}
