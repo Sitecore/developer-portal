@@ -45,8 +45,12 @@ const SolutionPage = ({ pageInfo, products }: SolutionPageProps): JSX.Element =>
   })) as CategoryTileProps[];
 
   return (
-    <Layout pageInfo={pageInfo}>
-      <div className="bg-theme-bg-alt py-16">
+    <Layout
+      title={pageInfo.title}
+      description={pageInfo.description}
+      openGraphImage={pageInfo.openGraphImage}
+    >
+      <div className="py-16 bg-theme-bg-alt">
         <Container>
           <CategoryTileList cards={categoryCards} />
         </Container>
