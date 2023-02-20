@@ -3,13 +3,13 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 // Interfaces
-import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@/src/interfaces/integrations';
 import type {
   ChildPageInfo,
   MarkdownMeta,
   PageInfo,
   PartialData,
 } from '@/src/interfaces/page-info';
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@/src/interfaces/twitter';
 // Components
 import { SITECORE_COMMUNITY_MAX_COUNT } from '@/src/components/integrations/sitecore-community/sitecore-community.constants';
 import SitecoreCommunityApi from '@/src/components/integrations/sitecore-community/SitecoreCommunity.api';

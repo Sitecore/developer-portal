@@ -1,7 +1,7 @@
 // Global
 import axios, { AxiosResponse } from 'axios';
 // Interfaces
-import { Tweet } from '@/src/interfaces/integrations';
+import { Tweet } from 'ui/common/types/twitter';
 
 type TwitterResponse = {
   data: Tweet[];

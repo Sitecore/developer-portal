@@ -10,7 +10,7 @@ import {
   StackExchangeQuestion,
   Tweet,
   YouTubeVideo,
-} from './integrations';
+} from './twitter';
 
 type PageInfoCore = {
   description?: string;

@@ -1,5 +1,5 @@
 // Interfaces
-import type { SitecoreCommunityContent } from '@/src/interfaces/integrations';
+import type { SitecoreCommunityContent } from 'ui/common/types/sitecoreCommunity';
 // Global
 import axios from 'axios';
 import { useState } from 'react';

@@ -1,7 +1,7 @@
 // Global
 import axios, { AxiosResponse } from 'axios';
 // Interfaces
-import type { YouTubeApiResponse } from '@/src/interfaces/integrations';
+import type { YouTubeApiResponse } from 'ui/common/types/youTube';
 
 type YouTubeResponse = {
   items: [];

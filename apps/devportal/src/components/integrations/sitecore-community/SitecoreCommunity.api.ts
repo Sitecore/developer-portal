@@ -1,9 +1,9 @@
 import axios from 'axios';
 // Interfaces
 import type {
-  SitecoreCommunityEvent,
   SitecoreCommunityContent,
-} from '@/src/interfaces/integrations';
+  SitecoreCommunityEvent,
+} from 'ui/common/types/sitecoreCommunity';
 
 type SitecoreCommunityBaseResponse = {
   comment_count: string;

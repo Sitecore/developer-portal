@@ -1,5 +1,5 @@
 // Interfaces
-import type { SitecoreCommunityContent } from '@/src/interfaces/integrations';
+import type { SitecoreCommunityContent } from 'ui/common/types/sitecoreCommunity';
 // Global
 // Lib
 import translateDate from 'ui/common/translate-date';
@@ -20,8 +20,8 @@ const SitecoreCommunityBlogOrQuestion = ({
   contentType,
   loading,
 }: SitecoreCommunityBlogOrQuestionProps): JSX.Element => (
-  <li className="relative items-center p-6 border border-theme-text-alt shadow-theme hover:shadow-theme-md md:flex">
-    <div className="flex flex-col justify-between flex-grow-0 w-full">
+  <li className="border-theme-text-alt shadow-theme hover:shadow-theme-md relative items-center border p-6 md:flex">
+    <div className="flex w-full flex-grow-0 flex-col justify-between">
       <div>
         <p
           className={`mb-1 text-sm font-semibold ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}
@@ -51,7 +51,7 @@ const SitecoreCommunityBlogOrQuestion = ({
         </span>
       </p>
     </div>
-    <div className="flex flex-shrink-0 mt-4 md:ml-4 md:mr-0 md:block md:text-right">
+    <div className="mt-4 flex flex-shrink-0 md:ml-4 md:mr-0 md:block md:text-right">
       <p className={`mb-2 mr-8 text-xs md:mr-0 ${loading ? skeletonLoaderClasses : ''}`}>
         {item.commentCount} comments
       </p>

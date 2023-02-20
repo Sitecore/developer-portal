@@ -2,7 +2,7 @@
 // Components
 import FeedHeading from 'ui/components/headings/FeedHeading';
 // Local
-import { SitecoreCommunityContent } from '@/src/interfaces/integrations';
+import { SitecoreCommunityContent } from 'ui/common/types/sitecoreCommunity';
 import SitecoreCommunityNewsOrEventItem from '../SitecoreCommunityNewsOrEventItem';
 
 type SitecoreCommunityNewsProps = {

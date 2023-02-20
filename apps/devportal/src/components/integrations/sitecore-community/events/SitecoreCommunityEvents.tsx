@@ -1,5 +1,5 @@
 // Interfaces
-import type { SitecoreCommunityEvent } from '@/src/interfaces/integrations';
+import type { SitecoreCommunityEvent } from 'ui/common/types/sitecoreCommunity';
 // Global
 // Components
 import FeedHeading from 'ui/components/headings/FeedHeading';

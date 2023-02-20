@@ -1,7 +1,7 @@
 // Global
 // Interfaces
-import type { StackExchangeQuestion } from '@/src/interfaces/integrations';
 import { ValidHeadingLevels } from 'ui/common/types/heading-levels';
+import type { StackExchangeQuestion } from 'ui/common/types/stackExchange';
 // Components
 import FeedHeading from 'ui/components/headings/FeedHeading';
 

@@ -1,7 +1,7 @@
 // Global
 // Interfaces
-import type { YouTubeSnippet, YouTubeVideo } from '@/src/interfaces/integrations';
 import { ValidHeadingLevels } from 'ui/common/types/heading-levels';
+import type { YouTubeSnippet, YouTubeVideo } from 'ui/common/types/youTube';
 // Components
 import Image from 'next/image';
 import FeedHeading from 'ui/components/headings/FeedHeading';

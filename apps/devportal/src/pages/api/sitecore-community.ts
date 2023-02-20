@@ -1,11 +1,11 @@
 // Interfaces
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@/src/interfaces/twitter';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@/src/interfaces/integrations';
 // Api
 import SitecoreCommunityApi, {
+  ContentType,
   ForumOption,
   SortOption,
-  ContentType,
 } from '@/src/components/integrations/sitecore-community/SitecoreCommunity.api';
 
 const getQueryValue = (query: string | string[] | undefined): string => {

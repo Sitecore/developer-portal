@@ -1,7 +1,7 @@
 // Global
 import axios, { AxiosResponse } from 'axios';
 // Interfaces
-import type { StackExchangeQuestion } from '@/src/interfaces/integrations';
+import type { StackExchangeQuestion } from 'ui/common/types/stackExchange';
 
 type StackExchangeResponse = {
   items: StackExchangeQuestion[];

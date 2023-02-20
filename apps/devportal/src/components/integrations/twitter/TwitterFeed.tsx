@@ -1,8 +1,8 @@
 // Global
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 // Interfaces
-import type { Tweet } from '@/src/interfaces/integrations';
 import type { ValidHeadingLevels } from 'ui/common/types/heading-levels';
+import type { Tweet } from 'ui/common/types/twitter';
 // Components
 import DynamicTag from 'ui/components/common/DynamicTag';
 import TextLink from 'ui/components/common/TextLink';
