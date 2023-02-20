@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
-import { AvenirNextLTPro } from 'ui/common/avenirNextLTPro';
-import { AvenirNextR } from 'ui/common/avenirNextR';
+import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
+import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
 import Footer from 'ui/layouts/components/footer/Footer';
 import Nav from 'ui/layouts/components/header/Nav';
 import { mainNavigation, sitecoreQuickLinks } from '../../data/navigation';

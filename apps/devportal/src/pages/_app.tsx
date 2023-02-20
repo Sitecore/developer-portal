@@ -14,8 +14,8 @@ import '@/src/styles/global.css';
 import React from 'react';
 // Fonts
 import dynamic from 'next/dynamic';
-import { AvenirNextLTPro } from 'ui/common/avenirNextLTPro';
-import { AvenirNextR } from 'ui/common/avenirNextR';
+import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
+import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
 
 function SCDPApp({ Component, pageProps }: AppProps) {
   // useEffect for basic page views tracking via router/gtag.
