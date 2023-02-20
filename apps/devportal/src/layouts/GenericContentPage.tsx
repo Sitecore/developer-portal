@@ -9,8 +9,8 @@ import InPageNav from '@/src/components/sidebar-nav/InPageNav';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import SectionHeading from 'ui/components/headings/SectionHeading';
+import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
-import Hero from '../components/heros/Hero';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -89,7 +89,7 @@ const GenericContentPage = ({
         )}
         <div className={hasGrid ? hasGridClasses : ''}>
           <Container>
-            <div className="grid gap-6 mt-8 md:grid-cols-4">
+            <div className="mt-8 grid gap-6 md:grid-cols-4">
               {pageInfo.hasInPageNav && Nav}
               <div className={pageInfo.hasInPageNav ? 'col-span-3' : 'col-span-4'}>
                 {Content(partials, partialGroups, hasGrid)}

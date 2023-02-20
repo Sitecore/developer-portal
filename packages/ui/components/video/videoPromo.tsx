@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 // Global
-import ButtonLink from 'ui/components/buttons/ButtonLink';
+
+import LinkButton from 'ui/components/buttons/LinkButton';
 import YouTube from 'ui/components/video/YouTube';
 // Components
 
@@ -45,7 +46,7 @@ const VideoPromo = ({
         <p className={`text-theme-text-alt ${linkText ? 'mb-8' : ''}`}>{description}</p>
         {!!linkText && (
           <div>
-            <ButtonLink text={linkText} href={linkHref} />
+            <LinkButton text={linkText} href={linkHref} />
           </div>
         )}
       </div>

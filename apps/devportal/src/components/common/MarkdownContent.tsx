@@ -6,8 +6,10 @@ import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hl
 // Interfaces
 import type { PartialData } from '@/src/interfaces/page-info';
 // Lib
+import EditButton from 'ui/components/buttons/EditButton';
 import { Row } from 'ui/components/common/Row';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
+import { TabItem, Tabs } from 'ui/components/tabs';
 import VideoPromo from 'ui/components/video/videoPromo';
 import YouTube from 'ui/components/video/YouTube';
 import { Article } from '../cards/Article';
@@ -15,7 +17,6 @@ import CTACard from '../cards/CTACard';
 import { LinkItem } from '../cards/LinkItem';
 import { Promo } from '../cards/PromoCard';
 import { Repository } from '../cards/Repository';
-import { TabItem, Tabs } from '../tabs';
 
 type MarkdownContentProps = {
   partials: PartialData;
@@ -24,11 +25,6 @@ type MarkdownContentProps = {
 
 type DecoratedMarkdownProps = {
   children: string;
-};
-
-type EditButtonProps = {
-  editUrl: string;
-  classes?: string;
 };
 
 const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element => {
@@ -75,31 +71,13 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
   );
 };
 
-function EditButton({ editUrl, classes }: EditButtonProps) {
-  return (
-    <button className={`btn-textlink ${classes ? classes : ''}`}>
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-current" viewBox="0 0 20 20">
-        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-        <path
-          fillRule="evenodd"
-          d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-          clipRule="evenodd"
-        />
-      </svg>
-      <a className="pl-1" href={editUrl}>
-        Suggest an edit
-      </a>
-    </button>
-  );
-}
-
 const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): JSX.Element => {
   if (hasGrid) {
     return (
       <div className="grid gap-6 md:grid-cols-2">
         {partials.content.map((item, i) => (
           <div
-            className="prose dark:prose-invert border-theme-border bg-theme-bg text-theme-text relative max-w-4xl border p-8"
+            className="relative max-w-4xl p-8 prose border dark:prose-invert border-theme-border bg-theme-bg text-theme-text"
             key={i}
           >
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
@@ -114,7 +92,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
     <VerticalGroup>
       {partials.content.map((item, i) => (
         <div key={i}>
-          <div className="prose dark:prose-invert max-w-4xl">
+          <div className="max-w-4xl prose dark:prose-invert">
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
           </div>
           <EditButton editUrl={partials.fileNames[i]} />

@@ -24,8 +24,8 @@ import SearchPagination from '@/src/components/integrations/search/SearchPaginat
 import SearchResultList from '@/src/components/integrations/search/SearchResultList';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
+import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
-import Hero from '../components/heros/Hero';
 
 interface SearchPageProps {
   pageInfo: PageInfo;

@@ -3,14 +3,14 @@ import Link from 'next/link';
 // Components
 import SvgIcon from 'ui/components/common/SvgIcon';
 
-type ButtonLinkProps = {
+type LinkButtonProps = {
   text: string;
   href: string;
   className?: string;
   target?: '_blank' | undefined;
 };
 
-const ButtonLink = ({ text, href, target, className }: ButtonLinkProps): JSX.Element => {
+const LinkButton = ({ text, href, target, className }: LinkButtonProps): JSX.Element => {
   return (
     <Link
       href={href}
@@ -27,4 +27,4 @@ const ButtonLink = ({ text, href, target, className }: ButtonLinkProps): JSX.Ele
   );
 };
 
-export default ButtonLink;
+export default LinkButton;

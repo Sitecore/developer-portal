@@ -14,15 +14,15 @@ import StackExchangeFeed from '@/src/components/integrations/stackexchange/Stack
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
+import Hero from 'ui/components/heros/Hero';
 import CategoryTileList from 'ui/components/lists/CategoryTileList';
 import CommunityList from 'ui/components/lists/CommunityList';
+import VideoPromo from 'ui/components/video/videoPromo';
 import Layout from 'ui/layouts/Layout';
 // Data
 import communityListData from '@/data/data-community-list';
 import getHelpCta from '@/data/promos/get-help';
 import promoData from '@/data/promos/xmc-practices';
-import VideoPromo from 'ui/components/video/videoPromo';
-import Hero from '../components/heros/Hero';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');

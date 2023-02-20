@@ -1,20 +1,6 @@
 import { Tab } from '@headlessui/react';
 import { Fragment } from 'react';
 
-// Nested component
-export type TabItemProps = {
-  title: string;
-  children: React.ReactNode | React.ReactNode[];
-};
-
-export const TabItem = ({ title, children }: TabItemProps) => {
-  return (
-    <div>
-      {title}: {children}
-    </div>
-  );
-};
-
 export type TabsProps = {
   children: any[];
 };
@@ -47,3 +33,4 @@ export const Tabs = ({ children }: TabsProps) => {
     </Tab.Group>
   );
 };
+export default Tabs;

@@ -11,9 +11,9 @@ import TwitterFeed from '@/src/components/integrations/twitter/TwitterFeed';
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
+import Hero from 'ui/components/heros/Hero';
 import CommunityList from 'ui/components/lists/CommunityList';
 import Layout from 'ui/layouts/Layout';
-import Hero from '../components/heros/Hero';
 
 type SocialPageProps = {
   pageInfo: PageInfo;

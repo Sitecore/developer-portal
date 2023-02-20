@@ -1,5 +1,4 @@
 /* Base */
 @import 'ui/styles/global.css';
 
-@import '../components/tabs/Tabs.styles.css';
 @import '../components/cards/Cards.styles.css';
