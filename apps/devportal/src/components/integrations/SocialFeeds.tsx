@@ -4,9 +4,9 @@ import type { PageInfo } from '@/src/interfaces/page-info';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import SitecoreCommunityBlog from 'ui/components/sitecoreCommunity/blog/SitecoreCommunityBlog';
 import SitecoreCommunityQuestions from 'ui/components/sitecoreCommunity/questions/SitecoreCommunityQuestions';
-import StackExchangeFeed from './stackexchange/StackExchangeFeed';
-import TwitterFeed from './twitter/TwitterFeed';
-import YouTubeFeed from './youtube/YouTubeFeed';
+import StackExchangeFeed from 'ui/components/stackexchange/StackExchangeFeed';
+import TwitterFeed from 'ui/components/twitter/TwitterFeed';
+import YouTubeFeed from 'ui/components/youtube/YouTubeFeed';
 
 type SocialFeedsProps = {
   pageInfo: PageInfo;

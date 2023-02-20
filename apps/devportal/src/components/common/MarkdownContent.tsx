@@ -7,16 +7,16 @@ import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hl
 import type { PartialData } from '@/src/interfaces/page-info';
 // Lib
 import EditButton from 'ui/components/buttons/EditButton';
+import { Article } from 'ui/components/cards/Article';
+import CTACard from 'ui/components/cards/CTACard';
+import { LinkItem } from 'ui/components/cards/LinkItem';
+import { Promo } from 'ui/components/cards/PromoCard';
+import { Repository } from 'ui/components/cards/Repository';
 import { Row } from 'ui/components/common/Row';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import { TabItem, Tabs } from 'ui/components/tabs';
 import VideoPromo from 'ui/components/video/videoPromo';
 import YouTube from 'ui/components/video/YouTube';
-import { Article } from '../cards/Article';
-import CTACard from '../cards/CTACard';
-import { LinkItem } from '../cards/LinkItem';
-import { Promo } from '../cards/PromoCard';
-import { Repository } from '../cards/Repository';
 
 type MarkdownContentProps = {
   partials: PartialData;
@@ -77,7 +77,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
       <div className="grid gap-6 md:grid-cols-2">
         {partials.content.map((item, i) => (
           <div
-            className="relative max-w-4xl p-8 prose border dark:prose-invert border-theme-border bg-theme-bg text-theme-text"
+            className="prose dark:prose-invert border-theme-border bg-theme-bg text-theme-text relative max-w-4xl border p-8"
             key={i}
           >
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
@@ -92,7 +92,7 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
     <VerticalGroup>
       {partials.content.map((item, i) => (
         <div key={i}>
-          <div className="max-w-4xl prose dark:prose-invert">
+          <div className="prose dark:prose-invert max-w-4xl">
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
           </div>
           <EditButton editUrl={partials.fileNames[i]} />
