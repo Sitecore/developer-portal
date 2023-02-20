@@ -16,7 +16,7 @@ export type HeroProps = {
 };
 
 const HeroWithImageClasses = 'lg:min-h-120 md:grid-cols-9';
-const HeroWithBackgroundImageClasses = 'bg-wide-hero-light dark:bg-wide-hero-dark bg-cover py-7';
+const HeroWithBackgroundImageClasses = 'bg-wide-hero-light dark:bg-wide-hero-dark bg-cover';
 
 const Hero = ({
   description,
@@ -26,7 +26,7 @@ const Hero = ({
   productLogo,
 }: HeroProps): JSX.Element => (
   <header
-    className={`relative py-14 ${!image || !!productLogo ? HeroWithBackgroundImageClasses : ''}`}
+    className={` relative py-14 ${!image || !!productLogo ? HeroWithBackgroundImageClasses : ''}`}
   >
     <Container
       size="standard"
@@ -35,18 +35,18 @@ const Hero = ({
       }`}
     >
       <div className={`lg:pr-24 ${!!image || !!productLogo ? ['md:col-span-5'] : ''}`}>
-        <DynamicTag tag={headingLevel} className="heading-lg relative mb-5">
+        <DynamicTag tag={headingLevel} className="relative mb-5 heading-lg">
           {title}
         </DynamicTag>
-        <p className="text-theme-text-alt text-lg">{description}</p>
+        <p className="text-lg text-theme-text-alt">{description}</p>
       </div>
       {productLogo && (
         <React.Fragment>
           <div className="relative hidden md:col-span-4 md:block">
-            <div className="hidden h-20 w-full dark:block">
+            <div className="hidden w-full h-20 dark:block">
               <ProductLogo product={productLogo} variant="Dark" />
             </div>
-            <div className="h-20 w-full dark:hidden">
+            <div className="w-full h-20 dark:hidden">
               <ProductLogo product={productLogo} variant="Light" />
             </div>
           </div>
@@ -55,7 +55,7 @@ const Hero = ({
       {image && (
         <React.Fragment>
           <div className="relative hidden md:col-span-4 md:block">
-            <div className="h-20 w-full">
+            <div className="w-full h-20">
               <Image
                 src={image}
                 alt=""
