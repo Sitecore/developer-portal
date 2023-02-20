@@ -1,5 +1,5 @@
-import { ContentPagerContext, CustomNavContext } from '@/src/interfaces/page-info';
 import Link from 'next/link';
+import { ContentPagerContext, CustomNavContext } from 'ui/common/types/contentPager';
 
 type ContentPagerProps = {
   paging: ContentPagerContext;

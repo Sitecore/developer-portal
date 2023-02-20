@@ -5,19 +5,12 @@ import path from 'path';
 import { getPartialsAsArray } from '@/src/common/page-info';
 import { getFaqNavPaths } from '@/src/common/static-paths';
 // Interfaces
-import {
-  ContentPagerContext,
-  CustomNavContext,
-  CustomNavData,
-  PageInfo,
-  PartialData,
-} from '@/src/interfaces/page-info';
+import { PageInfo, PartialData } from '@/src/interfaces/page-info';
+import { ContentPagerContext, CustomNavContext, CustomNavData } from 'ui/common/types/contentPager';
+import ContentPager from 'ui/components/common/ContentPager';
 // Components
 import GenericContentPage from '@/src/layouts/GenericContentPage';
 import MultiPageNav from '@/src/layouts/MultiPageNav';
-
-//Promotions to use on Articles
-import ContentPager from '@/src/components/common/ContentPager';
 
 export async function getStaticPaths() {
   const articlePaths = await getFaqNavPaths();
