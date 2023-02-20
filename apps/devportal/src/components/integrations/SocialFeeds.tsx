@@ -2,8 +2,8 @@
 import type { PageInfo } from '@/src/interfaces/page-info';
 // Components
 import VerticalGroup from 'ui/components/common/VerticalGroup';
-import SitecoreCommunityBlog from './sitecore-community/blog/SitecoreCommunityBlog';
-import SitecoreCommunityQuestions from './sitecore-community/questions/SitecoreCommunityQuestions';
+import SitecoreCommunityBlog from 'ui/components/sitecoreCommunity/blog/SitecoreCommunityBlog';
+import SitecoreCommunityQuestions from 'ui/components/sitecoreCommunity/questions/SitecoreCommunityQuestions';
 import StackExchangeFeed from './stackexchange/StackExchangeFeed';
 import TwitterFeed from './twitter/TwitterFeed';
 import YouTubeFeed from './youtube/YouTubeFeed';

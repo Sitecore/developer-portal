@@ -6,10 +6,6 @@ import type { CategoryTileProps } from 'ui/components/lists/CategoryTile';
 // Components
 import CTACard from '@/src/components/cards/CTACard';
 import PromoCard from '@/src/components/cards/PromoCard';
-import SitecoreCommunityBlog from '@/src/components/integrations/sitecore-community/blog/SitecoreCommunityBlog';
-import SitecoreCommunityEvents from '@/src/components/integrations/sitecore-community/events/SitecoreCommunityEvents';
-import SitecoreCommunityNews from '@/src/components/integrations/sitecore-community/news/SitecoreCommunityNews';
-import SitecoreCommunityQuestions from '@/src/components/integrations/sitecore-community/questions/SitecoreCommunityQuestions';
 import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
 import Container from 'ui/components/common/Container';
@@ -17,6 +13,10 @@ import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
 import CategoryTileList from 'ui/components/lists/CategoryTileList';
 import CommunityList from 'ui/components/lists/CommunityList';
+import SitecoreCommunityBlog from 'ui/components/sitecoreCommunity/blog/SitecoreCommunityBlog';
+import SitecoreCommunityEvents from 'ui/components/sitecoreCommunity/events/SitecoreCommunityEvents';
+import SitecoreCommunityNews from 'ui/components/sitecoreCommunity/news/SitecoreCommunityNews';
+import SitecoreCommunityQuestions from 'ui/components/sitecoreCommunity/questions/SitecoreCommunityQuestions';
 import VideoPromo from 'ui/components/video/videoPromo';
 import Layout from 'ui/layouts/Layout';
 // Data
@@ -118,10 +118,10 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
           <CommunityList data={communityListData} />
         </VerticalGroup>
       </Container>
-      <section className="py-16 bg-charcoal dark:bg-gray-darkest">
+      <section className="bg-charcoal dark:bg-gray-darkest py-16">
         <Container>
           <div className="mb-8 max-w-prose">
-            <h2 className="mb-4 text-white heading-md">Explore Sitecore by solution</h2>
+            <h2 className="heading-md mb-4 text-white">Explore Sitecore by solution</h2>
             <p className="text-white">
               How can we help you today? Get all the information you want, depending on your
               business’s needs.
@@ -133,7 +133,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       <Container>
         <CTACard {...getHelpCta} />
       </Container>
-      <section className="py-16 bg-theme-bg-alt">
+      <section className="bg-theme-bg-alt py-16">
         <Container>
           <VerticalGroup>
             <SitecoreCommunityQuestions

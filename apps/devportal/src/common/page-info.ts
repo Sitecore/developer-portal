@@ -9,13 +9,16 @@ import type {
   PageInfo,
   PartialData,
 } from '@/src/interfaces/page-info';
-import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@/src/interfaces/twitter';
+import {
+  SitecoreCommunityContent,
+  SitecoreCommunityEvent,
+} from 'ui/common/types/sitecoreCommunity';
 // Components
-import { SITECORE_COMMUNITY_MAX_COUNT } from '@/src/components/integrations/sitecore-community/sitecore-community.constants';
-import SitecoreCommunityApi from '@/src/components/integrations/sitecore-community/SitecoreCommunity.api';
 import StackExchangeApi from '@/src/components/integrations/stackexchange/StackExchange.api';
 import TwitterApi from '@/src/components/integrations/twitter/Twitter.api';
 import YouTubeApi from '@/src/components/integrations/youtube/YouTube.api';
+import { SITECORE_COMMUNITY_MAX_COUNT } from 'ui/components/sitecoreCommunity/sitecore-community.constants';
+import SitecoreCommunityApi from 'ui/components/sitecoreCommunity/SitecoreCommunity.api';
 
 import { ParseContent } from '@/src/common/markdown/mdxParse';
 import { ContentHeading } from '@/src/interfaces/contentheading';

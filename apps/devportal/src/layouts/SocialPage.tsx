@@ -4,8 +4,6 @@ import type { PageInfo } from '@/src/interfaces/page-info';
 import communityListData from '@/data/data-community-list';
 import CTACard, { CTACardProps } from '@/src/components/cards/CTACard';
 import PromoCard, { PromoCardProps } from '@/src/components/cards/PromoCard';
-import SitecoreCommunityNews from '@/src/components/integrations/sitecore-community/news/SitecoreCommunityNews';
-import SitecoreCommunityQuestions from '@/src/components/integrations/sitecore-community/questions/SitecoreCommunityQuestions';
 import StackExchangeFeed from '@/src/components/integrations/stackexchange/StackExchangeFeed';
 import TwitterFeed from '@/src/components/integrations/twitter/TwitterFeed';
 import YouTubeFeed from '@/src/components/integrations/youtube/YouTubeFeed';
@@ -13,6 +11,8 @@ import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
 import CommunityList from 'ui/components/lists/CommunityList';
+import SitecoreCommunityNews from 'ui/components/sitecoreCommunity/news/SitecoreCommunityNews';
+import SitecoreCommunityQuestions from 'ui/components/sitecoreCommunity/questions/SitecoreCommunityQuestions';
 import Layout from 'ui/layouts/Layout';
 
 type SocialPageProps = {

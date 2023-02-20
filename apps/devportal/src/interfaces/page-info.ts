@@ -1,16 +1,13 @@
-import {
-  ForumOption,
-  SortOption,
-} from '@/src/components/integrations/sitecore-community/SitecoreCommunity.api';
 import { ContentHeading } from '@/src/interfaces/contentheading';
+import { ForumOption, SortOption } from 'ui/components/sitecoreCommunity/SitecoreCommunity.api';
 
 import {
   SitecoreCommunityContent,
   SitecoreCommunityEvent,
-  StackExchangeQuestion,
-  Tweet,
-  YouTubeVideo,
-} from './twitter';
+} from 'ui/common/types/sitecoreCommunity';
+import { StackExchangeQuestion } from 'ui/common/types/stackExchange';
+import { Tweet } from 'ui/common/types/twitter';
+import { YouTubeVideo } from 'ui/common/types/youTube';
 
 type PageInfoCore = {
   description?: string;
