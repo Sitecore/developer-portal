@@ -20,7 +20,7 @@ import CategoryTileList from 'ui/components/lists/CategoryTileList';
 import Layout from 'ui/layouts/Layout';
 // Data
 import newsletterPromo from '@/data/promos/newsletter';
-import Hero from '@/src/components/heros/Hero';
+import Hero from 'ui/components/heros/Hero';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];

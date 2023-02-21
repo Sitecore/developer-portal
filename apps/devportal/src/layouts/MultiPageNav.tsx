@@ -3,7 +3,7 @@ import Link from 'next/link';
 // Lib
 import { useGlobalState } from 'ui/common/global-state';
 // Interfaces
-import type { CustomNavContext, CustomNavData } from '@/src/interfaces/page-info';
+import type { CustomNavContext, CustomNavData } from 'ui/common/types/contentPager';
 
 type MultiPageNavProps = {
   context: CustomNavContext;

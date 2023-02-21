@@ -3,7 +3,7 @@ import Link from 'next/link';
 // Interfaces
 import type { TrialNavContext, TrialNavData } from '@/src/interfaces/page-info';
 // Components
-import Collapse from '@/src/components/common/Collapse';
+import Collapse from 'ui/components/common/Collapse';
 
 // TODO: Fix this
 type MultiPageNavProps = {

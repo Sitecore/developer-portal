@@ -1,6 +1,7 @@
-import { CustomNavData, TrialNavContext, TrialNavData } from '@/src/interfaces/page-info';
+import { TrialNavContext, TrialNavData } from '@/src/interfaces/page-info';
 import fs from 'fs';
 import path from 'path';
+import { CustomNavData } from 'ui/common/types/contentPager';
 
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
 const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
