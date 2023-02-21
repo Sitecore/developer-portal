@@ -1,4 +1,4 @@
-import { TrialNavContext, TrialNavData } from '@/src/interfaces/page-info';
+import { TrialNavContext, TrialNavData } from '@/src/interfaces/trialNavigation';
 import fs from 'fs';
 import path from 'path';
 import { CustomNavData } from 'ui/common/types/contentPager';

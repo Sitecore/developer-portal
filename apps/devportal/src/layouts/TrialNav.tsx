@@ -1,7 +1,7 @@
 // Global
 import Link from 'next/link';
 // Interfaces
-import type { TrialNavContext, TrialNavData } from '@/src/interfaces/page-info';
+import type { TrialNavContext, TrialNavData } from '@/src/interfaces/trialNavigation';
 // Components
 import Collapse from 'ui/components/common/Collapse';
 

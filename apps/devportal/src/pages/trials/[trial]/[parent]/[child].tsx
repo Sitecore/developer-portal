@@ -4,12 +4,8 @@ import path from 'path';
 import { getPartialsAsArray } from '@/src/common/page-info';
 import { getTrialNavPaths } from '@/src/common/static-paths';
 // Interfaces
-import type {
-  TrialNavContext,
-  TrialNavData,
-  PageInfo,
-  PartialData,
-} from '@/src/interfaces/page-info';
+import type { PageInfo, PartialData } from '@/src/interfaces/page-info';
+import type { TrialNavContext, TrialNavData } from '@/src/interfaces/trialNavigation';
 // Components
 import GenericContentPage from '@/src/layouts/GenericContentPage';
 import TrialNav from '@/src/layouts/TrialNav';
