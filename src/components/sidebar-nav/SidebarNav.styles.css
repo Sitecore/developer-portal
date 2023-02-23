@@ -1,4 +1,9 @@
 @layer components {
+  .side-bar-nav-title {
+    @apply bg-theme-bg-alt sm:bg-theme-bg border-2 sm:border-0 border-theme-border;
+    padding: 12px 10px 8px 10px;
+  }
+
   .side-bar-nav-item:before {
     background-color: theme('colors.theme-bg-alt');
     border-left: 2px solid theme('colors.theme-bg-alt');
