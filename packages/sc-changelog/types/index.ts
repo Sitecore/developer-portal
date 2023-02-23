@@ -5,18 +5,18 @@ export enum ChangeType {
 }
 
 export enum Product {
-  OrderCloud,
-  CDP,
-  ContentHubOne,
-  XMCloud,
-  Personalize,
-  Send,
-  ContentOps,
-  ContentHub,
-  Search,
-  DAM,
-  Discover,
-  Connect,
+  ORDERCLOUD = 'OrderCloud',
+  CDP = 'Sitecore CDP',
+  CONTENTHUBONE = 'Content Hub ONE',
+  XMCLOUD = 'XM Cloud',
+  PERSONALIZE = 'Sitecore Personalize',
+  SEND = 'Sitecore Send',
+  CONTENTOPS = 'Content Operations',
+  CONTENTHUB = 'Content Hub',
+  SEARCH = 'Sitecore Search',
+  DAM = 'Sitecore DAM',
+  DISCOVER = 'Sitecore Discover',
+  CONNECT = 'Sitecore Connect',
 }
 
 export * from './changeType';
