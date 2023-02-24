@@ -2,10 +2,10 @@ import { CHANGELOG_QUERY } from "../graphQl/changelog-query";
 import Changelog, { ChangelogList } from "../types/changelog";
 import { fetchAPI } from "./common/api";
 
-export async function getSearchResultsChangelogs(searchTerm: any, changeTypeFacet: any, sitecoreProductFacet: any): Promise<Changelog[]> {
+export async function getSearchResultsChangelogs(searchTerm: string, changeTypeId: string, sitecoreProductid: string): Promise<Changelog[]> {
   var searchQuery = '';
   
-  const whereClause = getChangelogSearchWhereClause(searchTerm,changeTypeFacet,sitecoreProductFacet);
+  const whereClause = getChangelogSearchWhereClause(searchTerm,changeTypeId,sitecoreProductid);
 
     searchQuery =  `{ 
       data: allChangelog ${whereClause}
@@ -28,7 +28,7 @@ function extractPosts({ data }: { data: ChangelogList }) {
     });
 }
 
-function getChangelogSearchWhereClause(searchTerm: any, changeTypeFacet: any, sitecoreProductFacet: any)  {
+function getChangelogSearchWhereClause(searchTerm: string, changeTypeId: string, sitecoreProductid: string)  {
   //validate search Terms and build query accordingly.
   var whereClause = '';
   var whereClauseSearchTerm = '';
@@ -39,8 +39,8 @@ function getChangelogSearchWhereClause(searchTerm: any, changeTypeFacet: any, si
 
   //null-checks
   if (searchTerm != undefined && searchTerm != null) {searchTermSet = true;}
-  if (changeTypeFacet != null && changeTypeFacet != 0) {changeTypeFaceSet = true;}
-  if (sitecoreProductFacet != null && sitecoreProductFacet != 0 ) {sitecoreProductFacetSet = true;}
+  if (changeTypeId != null && changeTypeId != '0') {changeTypeFaceSet = true;}
+  if (sitecoreProductid != null && sitecoreProductid != '0' ) {sitecoreProductFacetSet = true;}
 
   if (searchTermSet) {
     whereClauseSearchTerm = `{OR:[
@@ -56,10 +56,10 @@ function getChangelogSearchWhereClause(searchTerm: any, changeTypeFacet: any, si
       whereClause = whereClause + `{AND: [`;
 
       if (changeTypeFaceSet) {
-        whereClause = whereClause + `{changeType: { releaseNote_ids: "${changeTypeFacet}"}}`;
+        whereClause = whereClause + `{changeType: { releaseNote_ids: "${changeTypeId}"}}`;
       }
       if (sitecoreProductFacetSet) {
-        whereClause = whereClause + `{sitecoreProduct: {releaseNote_ids: "${sitecoreProductFacet}"}}`;
+        whereClause = whereClause + `{sitecoreProduct: {releaseNote_ids: "${sitecoreProductid}"}}`;
       }
 
       if (searchTermSet) {
