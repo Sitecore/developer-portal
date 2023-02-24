@@ -1,12 +1,13 @@
-import { Product } from './types';
+import { Product } from '../ui/common/assets';
+import { ProductName } from './types';
 import { ChangeType } from './types/index';
 
 export type ProductConfig = {
-  type: Product;
+  type: ProductName;
   name: string;
   entityId: string;
   entityName: string;
-  imageId: string;
+  imageId: Product;
 };
 
 export type ChangeTypeConfig = {

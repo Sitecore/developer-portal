@@ -12,6 +12,10 @@ export enum Product {
   DAM,
   Discover,
   Connect,
+  CloudPortal,
+  ExperienceCommerce,
+  ExperienceManager,
+  ExperiencePlatform,
 }
 export enum Variant {
   Light,

@@ -4,7 +4,7 @@ export enum ChangeType {
   Bugfix = 'bugfixid',
 }
 
-export enum Product {
+export enum ProductName {
   ORDERCLOUD = 'OrderCloud',
   CDP = 'Sitecore CDP',
   CONTENTHUBONE = 'Content Hub ONE',
