@@ -72,7 +72,7 @@ const SidebarNav = ({ links, title }: SidebarNavProps) => {
       )}
 
       <ul
-        className={`relative sm:pl-1.5 pl-4 pt-3 bg-theme-bg-alt sm:bg-theme-bg transition-transform transform-gpu ease duration-500 lg:block ${
+        className={`fixed w-full bg-theme-bg-alt sm:bg-theme-bg sm:pl-1.5 pl-4 pt-3 transition-transform transform-gpu ease duration-500 lg:block ${
           isOpen ? 'block' : 'hidden'
         }`}
       >
