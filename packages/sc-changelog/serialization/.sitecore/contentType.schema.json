@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://content.sitecorecloud.io/contentType.schema.json",
+  "title": "Content Type",
+  "description": "The content type schema",
+  "type": "object",
+  "definitions": {
+    "field": {
+      "type": "object",
+      "title": "Content Type Field",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "The unique identifier of the field."
+        },
+        "name": {
+          "$ref": "#/definitions/localizedValues",
+          "title": "The name of the field."
+        },
+        "type": {
+          "type": "string",
+          "title": "The type of the field.",
+          "enum": [
+            "Boolean",
+            "DateTime",
+            "Integer",
+            "LongText",
+            "Media",
+            "Reference",
+            "RichText",
+            "ShortText"
+          ]
+        },
+        "required": {
+          "type": "boolean",
+          "title": "Determines whether the field is required or not."
+        },
+        "helpText": {
+          "$ref": "#/definitions/localizedValues",
+          "title": "The help text of the field."
+        }
+      },
+      "required": ["id", "name", "type"]
+    },
+    "localizedValues": {
+      "type": "object",
+      "title": "Localized Value",
+      "patternProperties": {
+        "^[a-z]{2,3}(?:-[a-zA-Z]{4})?(?:-[A-Z]{2,3})?$": {
+          "type": "string",
+          "title": "The culture code of the value."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "The unique identifier of the content type."
+    },
+    "name": {
+      "$ref": "#/definitions/localizedValues",
+      "title": "The name of the content type."
+    },
+    "description": {
+      "$ref": "#/definitions/localizedValues",
+      "title": "The description of the content type."
+    },
+    "fields": {
+      "type": "array",
+      "title": "The fields of the content type.",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/field"
+          }
+        ]
+      }
+    }
+  },
+  "required": ["id", "name"]
+}

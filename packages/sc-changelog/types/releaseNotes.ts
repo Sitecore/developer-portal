@@ -1,7 +1,7 @@
 import { JSONContent } from '@tiptap/core';
 import { ChangeTypeResults } from './changeType';
 import { MediaResults } from './common/media';
-import { SitecoreProductResults } from './sitecoreProducts';
+import { SitecoreProductResults } from './sitecoreProduct';
 
 type ReleaseNote = {
   id: string;

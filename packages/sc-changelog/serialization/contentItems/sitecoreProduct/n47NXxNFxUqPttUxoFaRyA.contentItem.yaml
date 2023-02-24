@@ -1,0 +1,25 @@
+﻿id: n47NXxNFxUqPttUxoFaRyA
+name: Content Hub ONE
+fields:
+  productName:
+    value: Content Hub ONE
+    type: ShortText
+  abbreviation:
+    value: 
+    type: ShortText
+  productDescription:
+    value: 
+    type: LongText
+  sitecoreCloud:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "C0s2noNU9U6e6gtCCwcGwg",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/C0s2noNU9U6e6gtCCwcGwg"
+      }
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

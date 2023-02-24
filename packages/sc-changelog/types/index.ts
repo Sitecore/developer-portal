@@ -23,4 +23,5 @@ export * from './changeType';
 export * from './common/media';
 export * from './releaseNotes';
 export * from './sitecoreCloud';
-export * from './sitecoreProducts';
+export * from './sitecoreProduct';
+

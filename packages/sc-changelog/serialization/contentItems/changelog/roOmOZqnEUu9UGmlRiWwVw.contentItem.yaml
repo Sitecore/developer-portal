@@ -1,0 +1,58 @@
+﻿id: roOmOZqnEUu9UGmlRiWwVw
+name: 'Content Hub ONE: Find the relevant content'
+fields:
+  title:
+    value: Find the relevant content
+    type: ShortText
+  description:
+    value: >-
+      {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "On top of the existing sorting options, the content search results are now sorted by relevance as default, so you can find what you're looking for even quicker."
+              }
+            ]
+          }
+        ]
+      }
+    type: RichText
+  version:
+    value: 
+    type: ShortText
+  releaseDate:
+    value: 2023-01-26T00:00:00.0000000+01:00
+    type: DateTime
+  breakingChange:
+    value: 
+    type: Boolean
+  readMoreLink:
+    value: 
+    type: ShortText
+  changeType:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "UKvjuaa7QEC3ipciF1O_ag",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/UKvjuaa7QEC3ipciF1O_ag"
+      }
+    type: Reference
+  sitecoreProduct:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "n47NXxNFxUqPttUxoFaRyA",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/n47NXxNFxUqPttUxoFaRyA"
+      }
+    type: Reference
+  image:
+    value: []
+    type: Media

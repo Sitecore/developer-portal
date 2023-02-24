@@ -1,0 +1,68 @@
+﻿id: lgnKQAeim0aj1mGgMSCSJQ
+name: 'Content Hub ONE: In-app documentation support'
+fields:
+  title:
+    value: In-app documentation support
+    type: ShortText
+  description:
+    value: >-
+      {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Finding the relevant documentation at the time of need is key to many users. That’s why we added the links to our documentation and related API endpoints to the OAuth Client and API keys pages."
+              },
+              {
+                "type": "hardBreak"
+              }
+            ]
+          }
+        ]
+      }
+    type: RichText
+  version:
+    value: 
+    type: ShortText
+  releaseDate:
+    value: 2023-01-26T00:00:00.0000000+01:00
+    type: DateTime
+  breakingChange:
+    value: false
+    type: Boolean
+  readMoreLink:
+    value: 
+    type: ShortText
+  changeType:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "UKvjuaa7QEC3ipciF1O_ag",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/UKvjuaa7QEC3ipciF1O_ag"
+      }
+    type: Reference
+  sitecoreProduct:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "n47NXxNFxUqPttUxoFaRyA",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/n47NXxNFxUqPttUxoFaRyA"
+      }
+    type: Reference
+  image:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Media",
+        "id": "tTZts4SvdkWZxQnghniGmw",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/media/tTZts4SvdkWZxQnghniGmw"
+      }
+    type: Media
