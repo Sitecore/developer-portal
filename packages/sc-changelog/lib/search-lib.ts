@@ -1,13 +1,17 @@
-import { CHANGELOG_QUERY } from "../graphQl/changelog-query";
-import Changelog, { ChangelogList } from "../types/changelog";
-import { fetchAPI } from "./common/api";
+import { CHANGELOG_QUERY } from '../graphQl/changelog-query';
+import Changelog, { ChangelogList } from '../types/changelog';
+import { fetchAPI } from './common/api';
 
-export async function getSearchResultsChangelogs(searchTerm: string, changeTypeId: string, sitecoreProductid: string): Promise<Changelog[]> {
-  var searchQuery = '';
-  
-  const whereClause = getChangelogSearchWhereClause(searchTerm,changeTypeId,sitecoreProductid);
+export async function getSearchResultsChangelogs(
+  searchTerm: string,
+  changeTypeId: string,
+  sitecoreProductid: string
+): Promise<Changelog[]> {
+  let searchQuery = '';
 
-    searchQuery =  `{ 
+  const whereClause = getChangelogSearchWhereClause(searchTerm, changeTypeId, sitecoreProductid);
+
+  searchQuery = `{ 
       data: allChangelog ${whereClause}
       {total
         results{
@@ -16,31 +20,41 @@ export async function getSearchResultsChangelogs(searchTerm: string, changeTypeI
       }
     }`;
 
-    //console.log(searchQuery);
+  //console.log(searchQuery);
 
-    const data = await fetchAPI(searchQuery);    
-    return extractPosts(data.data);
+  const data = await fetchAPI(searchQuery);
+  return extractPosts(data.data);
 }
 
-function extractPosts({ data }: { data: ChangelogList }) {
-    return data.results.map((post: Changelog) => {
-      return post;
-    });
+export function extractPosts({ data }: { data: ChangelogList }) {
+  return data.results.map((post: Changelog) => {
+    return post;
+  });
 }
 
-function getChangelogSearchWhereClause(searchTerm: string, changeTypeId: string, sitecoreProductid: string)  {
+function getChangelogSearchWhereClause(
+  searchTerm: string,
+  changeTypeId: string,
+  sitecoreProductid: string
+) {
   //validate search Terms and build query accordingly.
-  var whereClause = '';
-  var whereClauseSearchTerm = '';
-  
-  var searchTermSet = false;
-  var changeTypeFaceSet = false;
-  var sitecoreProductFacetSet = false; 
+  let whereClause = '';
+  let whereClauseSearchTerm = '';
+
+  let searchTermSet = false;
+  let changeTypeFaceSet = false;
+  let sitecoreProductFacetSet = false;
 
   //null-checks
-  if (searchTerm != undefined && searchTerm != null) {searchTermSet = true;}
-  if (changeTypeId != null && changeTypeId != '0') {changeTypeFaceSet = true;}
-  if (sitecoreProductid != null && sitecoreProductid != '0' ) {sitecoreProductFacetSet = true;}
+  if (searchTerm != undefined && searchTerm != null) {
+    searchTermSet = true;
+  }
+  if (changeTypeId != null && changeTypeId != '0') {
+    changeTypeFaceSet = true;
+  }
+  if (sitecoreProductid != null && sitecoreProductid != '0') {
+    sitecoreProductFacetSet = true;
+  }
 
   if (searchTermSet) {
     whereClauseSearchTerm = `{OR:[
@@ -64,19 +78,15 @@ function getChangelogSearchWhereClause(searchTerm: string, changeTypeId: string,
 
       if (searchTermSet) {
         whereClause = whereClause + whereClauseSearchTerm;
-
       }
 
       whereClause = whereClause + `]}`;
-      
-    
     } else if (searchTermSet) {
       whereClause = whereClause + whereClauseSearchTerm;
     }
 
     whereClause = whereClause + `)`;
-
   }
-  
+
   return whereClause;
 }

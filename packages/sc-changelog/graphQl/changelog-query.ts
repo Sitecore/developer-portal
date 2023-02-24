@@ -1,8 +1,8 @@
-import CHANGE_TYPE_QUERY from "./change-type-query";
-import MEDIA_QUERY from "./common/media-query";
-import SITECORE_PRODUCT_QUERY from "./sitecore-product-query";
+import CHANGE_TYPE_QUERY from './change-type-query';
+import MEDIA_QUERY from './common/media-query';
+import SITECORE_PRODUCT_QUERY from './sitecore-product-query';
 
-export const  CHANGELOG_QUERY = `
+export const CHANGELOG_QUERY = `
   id
   name
   title
@@ -39,7 +39,7 @@ export const  CHANGELOG_QUERY = `
 `;
 
 export const ALL_CHANGELOG_QUERY = `{ 
-    data: allReleaseNote{
+    data: allChangelog{
       total
       results {
         ${CHANGELOG_QUERY}
@@ -47,7 +47,4 @@ export const ALL_CHANGELOG_QUERY = `{
     }
   }
   `;
-export default ALL_CHANGELOG_QUERY
-
-
-
+export default ALL_CHANGELOG_QUERY;

@@ -1,5 +1,5 @@
-import MEDIA_QUERY from "../Common/media-query";
-import SITECORE_CLOUD_QUERY from "./sitecore-cloud-query";
+import MEDIA_QUERY from './common/media-query';
+import SITECORE_CLOUD_QUERY from './sitecore-cloud-query';
 
 export const SITECORE_PRODUCT_QUERY = `
     id
@@ -24,7 +24,7 @@ export const SITECORE_PRODUCT_QUERY = `
         } 
     }
 `;
-export default SITECORE_PRODUCT_QUERY
+export default SITECORE_PRODUCT_QUERY;
 
 export const ALL_SITECORE_PRODUCT_QUERY = `{ 
     data: allSitecoreProduct{

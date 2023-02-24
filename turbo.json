@@ -29,7 +29,9 @@
         "NEXT_PUBLIC_COVEO_PIPELINE",
         "NEXT_PUBLIC_COVEO_SEARCH_HUB",
         "NEXT_PUBLIC_PUBLIC_URL",
-        "ANALYZE"
+        "ANALYZE",
+        "SITECORE_ENDPOINT_URL",
+        "SITECORE_DEV_AUTH_TOKEN"
       ],
       "outputs": [".next/**"]
     }
