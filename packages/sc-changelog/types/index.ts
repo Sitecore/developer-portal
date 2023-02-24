@@ -11,12 +11,16 @@ export enum Product {
   XMCLOUD = 'XM Cloud',
   PERSONALIZE = 'Sitecore Personalize',
   SEND = 'Sitecore Send',
-  CONTENTOPS = 'Content Operations',
-  CONTENTHUB = 'Content Hub',
+  CONTENTHUBOPS = 'Content Hub Operations',
+  CONTENTHUBDAM = 'Content Hub DAM',
   SEARCH = 'Sitecore Search',
-  DAM = 'Sitecore DAM',
+  DAM = 'Sitecore DAM', //toDo?
   DISCOVER = 'Sitecore Discover',
   CONNECT = 'Sitecore Connect',
+  CLOUDPORTAL = 'Sitecore Cloud Portal',
+  XC = 'Experience Commerce',
+  XP = 'Experience Platform',
+  XM = 'Experience Manager'
 }
 
 export * from './changeType';

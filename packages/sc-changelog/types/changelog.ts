@@ -1,7 +1,7 @@
 import { JSONContent } from "@tiptap/core";
 import { ChangeTypeResults } from "./changeType";
 import { MediaResults } from "./common/media";
-import { SitecoreProductResults } from "./sitecoreProduct-type";
+import { SitecoreProductResults } from "./sitecoreProduct";
 
 type Changelog = {
   id: string
