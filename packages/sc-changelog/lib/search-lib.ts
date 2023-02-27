@@ -16,7 +16,7 @@ export async function getSearchResultsChangelogs(searchTerm: string, changeTypeI
       }
     }`;
 
-  console.log('searchQuery => ' + searchQuery);
+  //console.log('searchQuery => ' + searchQuery);
 
   const data = await fetchAPI(searchQuery);
   return extractPosts(data.data);
