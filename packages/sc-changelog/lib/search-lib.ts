@@ -2,11 +2,7 @@ import { CHANGELOG_QUERY } from '../graphQl/changelog-query';
 import Changelog, { ChangelogList } from '../types/changelog';
 import { fetchAPI } from './common/api';
 
-export async function getSearchResultsChangelogs(
-  searchTerm: string,
-  changeTypeId: string,
-  sitecoreProductid: string
-): Promise<Changelog[]> {
+export async function getSearchResultsChangelogs(searchTerm: string, changeTypeId: string, sitecoreProductid: string): Promise<Changelog[]> {
   let searchQuery = '';
 
   const whereClause = getChangelogSearchWhereClause(searchTerm, changeTypeId, sitecoreProductid);
@@ -32,11 +28,7 @@ export function extractPosts({ data }: { data: ChangelogList }) {
   });
 }
 
-function getChangelogSearchWhereClause(
-  searchTerm: string,
-  changeTypeId: string,
-  sitecoreProductid: string
-) {
+function getChangelogSearchWhereClause(searchTerm: string, changeTypeId: string, sitecoreProductid: string) {
   //validate search Terms and build query accordingly.
   let whereClause = '';
   let whereClauseSearchTerm = '';

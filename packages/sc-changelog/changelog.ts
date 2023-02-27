@@ -2,23 +2,24 @@ import ALL_CHANGELOG_QUERY from './graphQl/changelog-query';
 import { fetchAPI } from './lib/common/api';
 import { extractPosts } from './lib/search-lib';
 import { Product } from './types';
-import Changelog from './types/changelog';
+import ChangelogEntry, { ParseRawData } from './types/changeLogEntry';
 import { ChangeType } from './types/index';
 
-export async function GetLatestItems(): Promise<Changelog[]> {
+export async function GetLatestItems(): Promise<ChangelogEntry[]> {
   const data = await fetchAPI(`${ALL_CHANGELOG_QUERY}`);
-  console.log(data);
+  const rawData = extractPosts(data.data);
 
-  return extractPosts(data.data);
+  return ParseRawData(rawData);
 }
 
-export function GetLatestItemsByProduct(product: Product): string {
-  return `Hello ${product}`;
+export async function GetLatestItemsByProduct(product: Product): Promise<ChangelogEntry[]> {
+  // TODO How to get product specific query
+  const data = await fetchAPI(`${ALL_CHANGELOG_QUERY}`);
+  const rawData = extractPosts(data.data);
+
+  return ParseRawData(rawData);
 }
 
-export function GetLatestItemsByProductAndChangeType(
-  product: Product,
-  changeType: ChangeType
-): string {
+export function GetLatestItemsByProductAndChangeType(product: Product, changeType: ChangeType): string {
   return `Hello ${product} - filter by ${changeType}`;
 }

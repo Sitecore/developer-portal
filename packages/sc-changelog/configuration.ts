@@ -6,6 +6,7 @@ export type ProductConfig = {
   name: string;
   entityId: string;
   entityName: string;
+  imageId: string;
 };
 
 export type ChangeTypeConfig = {

@@ -1,2 +1,2 @@
 export * from './configuration';
-export * from './getReleaseNotes';
+export * from './changelog';

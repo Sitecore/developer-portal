@@ -210,7 +210,6 @@ function GetProductLogoByVariant(productName: Product, variant: Variant, type?: 
   const first = ProductLogos.find((obj) => {
     return obj.Product === productName && obj.Variant == variant;
   });
-
   if (type == Type.IconOnly) return baseUrl + first?.iconFileName;
 
   return baseUrl + first?.logoFileName;

@@ -3,14 +3,15 @@ import fs from 'fs';
 import path from 'path';
 import { CustomNavData } from 'ui/common/types/contentPager';
 
+import ChangeTypes from 'sc-changelog/constants/changeTypes';
+import Products from 'sc-changelog/constants/products';
+import { getSlug } from 'sc-changelog/utils/stringUtils';
+
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
 const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
 const trialPagesDirectory = path.join(process.cwd(), 'data/markdown/pages/trials/');
 const faqPagesDirectory = path.join(process.cwd(), 'data/markdown/pages/learn/faq/');
-const gettingStartedDirectory = path.join(
-  process.cwd(),
-  'data/markdown/pages/learn/getting-started/'
-);
+const gettingStartedDirectory = path.join(process.cwd(), 'data/markdown/pages/learn/getting-started/');
 const faqDirectory = path.join(process.cwd(), 'data/faqs');
 const TrialDirectory = path.join(process.cwd(), 'data/trials');
 
@@ -137,6 +138,34 @@ export const getNewsletterStaticPaths = (): NewsletterPath[] => {
 
     months.forEach((month) => {
       paths.push({ params: { year, month: month.substring(0, month.length - 5) } });
+    });
+  });
+
+  return paths;
+};
+
+type ProductChangeLogPaths = { params: { product: string } };
+type ProductChangeLogChangeTypePaths = { params: { product: string; changeType: string } };
+
+export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[]> => {
+  const paths: ProductChangeLogPaths[] = [];
+
+  Products.map((p) => {
+    const product = getSlug(p.name);
+    paths.push({ params: { product } });
+  });
+
+  return paths;
+};
+
+export const getChangelogProductChangeTypePaths = async (): Promise<ProductChangeLogChangeTypePaths[]> => {
+  const paths: ProductChangeLogChangeTypePaths[] = [];
+
+  Products.map((p) => {
+    ChangeTypes.map((c) => {
+      const product = getSlug(p.name);
+      const changeType = getSlug(c.name);
+      paths.push({ params: { product, changeType } });
     });
   });
 
