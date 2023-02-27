@@ -1,11 +1,10 @@
-import ChangeTypes from '@/../../packages/sc-changelog/constants/changeTypes';
-import Products from '@/../../packages/sc-changelog/constants/products';
-import { getSlug } from '@/../../packages/sc-changelog/utils/stringUtils';
-import { LinkValue } from '@/../../packages/ui/common/types/link-value';
-import { Dropdown } from '@/../../packages/ui/components/dropdown/Dropdown';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import ChangeTypes from 'sc-changelog/constants/changeTypes';
+import Products from 'sc-changelog/constants/products';
 import ChangelogEntry from 'sc-changelog/types/changeLogEntry';
+import { LinkValue } from 'ui/common/types/link-value';
+import { Dropdown } from 'ui/components/dropdown/Dropdown';
 import ChangeLogItem from './ChangeLogItem';
 
 type ChangelogListProps = {
@@ -20,11 +19,11 @@ const ChangelogList = ({ className, items }: ChangelogListProps): JSX.Element =>
   const [changeType, setChangeType] = useState<string | undefined>(undefined);
 
   const products: LinkValue[] = Products.map((x) => {
-    return { href: getSlug(x.name), text: x.name };
+    return { href: x.name, text: x.name };
   });
 
   const changes: LinkValue[] = ChangeTypes.map((x) => {
-    return { href: getSlug(x.name), text: x.name };
+    return { href: x.name, text: x.name };
   });
 
   useEffect(() => {
