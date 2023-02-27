@@ -1,7 +1,8 @@
 // Interfaces
+import ChangeTypes from '@/../../packages/sc-changelog/constants/changeTypes';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { GetLatestItems, GetLatestItemsByProduct } from 'sc-changelog/changelog';
-import { ProductConfig } from 'sc-changelog/configuration';
+import { GetLatestItemsByProductAndChangeType } from 'sc-changelog/changelog';
+import { ChangeTypeConfig, ProductConfig } from 'sc-changelog/configuration';
 import Products from 'sc-changelog/constants/products';
 import ChangelogEntry from 'sc-changelog/types/changeLogEntry';
 
@@ -14,24 +15,21 @@ const getQueryValue = (query: string | string[] | undefined): string => {
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntry[]>) => {
   //const maxResults = parseInt(getQueryValue(req.query.maxResults), 10);
 
-  //const currentchangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => x.name == req.query.changetype);
+  const currentChangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => x.name == req.query.changeType);
   const currentProduct: ProductConfig | undefined = Products.find((x) => x.name == req.query.product);
 
-  console.log('API Route => ' + currentProduct?.name);
+  console.log('API Route => ' + currentProduct?.name + ' ### ' + currentChangeType?.name );
 
-  if (currentProduct != null) {
-    GetLatestItemsByProduct(currentProduct.entityId)
-      .then((response) => {
-        res.json(response);
-      })
-      .catch((err) => res.status(403).send(err));
-  } else {
-    GetLatestItems()
-      .then((response) => {
-        res.json(response);
-      })
-      .catch((err) => res.status(403).send(err));
-  }
+  var productId = '';
+  var changeTypeId = '';
+
+  if (currentProduct != null) {productId = currentProduct.entityId;}
+  if (currentChangeType != null) {changeTypeId = currentChangeType.entityId;}
+  
+  GetLatestItemsByProductAndChangeType(productId,changeTypeId).then((response) => {
+    res.json(response);
+  }); 
+
 };
 
 export default handler;

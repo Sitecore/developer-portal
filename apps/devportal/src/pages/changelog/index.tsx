@@ -1,7 +1,7 @@
+import { GetLatestItemsByProductAndChangeType } from '@/../../packages/sc-changelog/changelog';
 import { OrderByMonthAndYear } from '@/src/common/changelog';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogList from '@/src/components/changelog/ChangelogList';
-import { GetLatestItems } from 'sc-changelog/changelog';
 import ChangelogEntry from 'sc-changelog/types/changeLogEntry';
 import { LinkValue } from 'ui/common/types/link-value';
 import Container from 'ui/components/common/Container';
@@ -10,7 +10,7 @@ import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
 
 export async function getStaticProps() {
-  const items: ChangelogEntry[] = await GetLatestItems();
+  const items: ChangelogEntry[] = await GetLatestItemsByProductAndChangeType('','');
 
   const entriesByMonth = OrderByMonthAndYear(items);
 
