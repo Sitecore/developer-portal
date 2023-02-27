@@ -16,7 +16,7 @@ export async function getSearchResultsChangelogs(searchTerm: string, changeTypeI
       }
     }`;
 
-  //console.log(searchQuery);
+  console.log('searchQuery => ' + searchQuery);
 
   const data = await fetchAPI(searchQuery);
   return extractPosts(data.data);
@@ -62,10 +62,10 @@ function getChangelogSearchWhereClause(searchTerm: string, changeTypeId: string,
       whereClause = whereClause + `{AND: [`;
 
       if (changeTypeFaceSet) {
-        whereClause = whereClause + `{changeType: { releaseNote_ids: "${changeTypeId}"}}`;
+        whereClause = whereClause + `{changeType: { changelog_ids: "${changeTypeId}"}}`;
       }
       if (sitecoreProductFacetSet) {
-        whereClause = whereClause + `{sitecoreProduct: {releaseNote_ids: "${sitecoreProductid}"}}`;
+        whereClause = whereClause + `{sitecoreProduct: {changelog_ids: "${sitecoreProductid}"}}`;
       }
 
       if (searchTermSet) {

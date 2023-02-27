@@ -1,6 +1,6 @@
 // Interfaces
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { GetLatestItems } from 'sc-changelog/changelog';
+import { GetLatestItems, GetLatestItemsByProduct } from 'sc-changelog/changelog';
 import { ProductConfig } from 'sc-changelog/configuration';
 import Products from 'sc-changelog/constants/products';
 import ChangelogEntry from 'sc-changelog/types/changeLogEntry';
@@ -17,13 +17,21 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntry[
   //const currentchangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => x.name == req.query.changetype);
   const currentProduct: ProductConfig | undefined = Products.find((x) => x.name == req.query.product);
 
-  console.log(currentProduct?.name);
+  console.log('API Route => ' + currentProduct?.name);
 
-  GetLatestItems()
-    .then((response) => {
-      res.json(response);
-    })
-    .catch((err) => res.status(403).send(err));
+  if (currentProduct != null) {
+    GetLatestItemsByProduct(currentProduct.entityId)
+      .then((response) => {
+        res.json(response);
+      })
+      .catch((err) => res.status(403).send(err));
+  } else {
+    GetLatestItems()
+      .then((response) => {
+        res.json(response);
+      })
+      .catch((err) => res.status(403).send(err));
+  }
 };
 
 export default handler;
