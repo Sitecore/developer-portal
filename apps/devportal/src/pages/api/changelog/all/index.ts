@@ -21,6 +21,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Record<string, 
     }
     collection[monthYear].push(obj);
 
+    // Sort updates within a month (latest first)
     collection[monthYear].sort((a, b) => {
       const earliestDateA = new Date(a.releaseDate);
       const earliestDateB = new Date(b.releaseDate);
@@ -29,7 +30,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Record<string, 
     return collection;
   }, {} as Record<string, ChangelogEntrySummary[]>);
 
-  res.json(groupedObjects);
+  // Sort the keys (year-month)
+  const sorted = Object.entries(groupedObjects)
+    .sort(([dateA], [dateB]) => new Date(dateB).getTime() - new Date(dateA).getTime())
+    .reduce((acc, [date, value]) => ({ ...acc, [date]: value }), {});
+
+  res.json(sorted);
 };
 
 export default handler;
