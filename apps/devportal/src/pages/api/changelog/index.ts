@@ -18,18 +18,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntry[
   const currentChangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => x.name == req.query.changeType);
   const currentProduct: ProductConfig | undefined = Products.find((x) => x.name == req.query.product);
 
-  console.log('API Route => ' + currentProduct?.name + ' ### ' + currentChangeType?.name );
+  //console.log('API Route => ' + currentProduct?.name + ' ### ' + currentChangeType?.name);
 
-  var productId = '';
-  var changeTypeId = '';
+  const productId = currentProduct != null ? currentProduct.entityId : '';
+  const changeTypeId = currentChangeType != null ? currentChangeType.entityId : '';
 
-  if (currentProduct != null) {productId = currentProduct.entityId;}
-  if (currentChangeType != null) {changeTypeId = currentChangeType.entityId;}
-  
-  GetLatestItemsByProductAndChangeType(productId,changeTypeId).then((response) => {
+  GetLatestItemsByProductAndChangeType(productId, changeTypeId).then((response) => {
     res.json(response);
-  }); 
-
+  });
 };
 
 export default handler;

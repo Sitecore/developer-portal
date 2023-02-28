@@ -1,17 +1,23 @@
-import { CHANGELOG_QUERY } from '../graphQl/changelog-query';
-import Changelog, { ChangelogList } from '../types/changelog';
+import { CHANGELOG_QUERY, CHANGELOG_SUMMARY_QUERY } from '../graphQl/changelog-query';
+import Changelog, { ChangelogBase, ChangelogList } from '../types/changelog';
 import { fetchAPI } from './common/api';
 
-export async function getSearchResultsChangelogs(searchTerm: string, changeTypeId: string, sitecoreProductid: string): Promise<Changelog[]> {
+export async function getSearchResultsChangelogs(searchTerm: string, changeTypeId: string, sitecoreProductid: string, summary?: boolean): Promise<Changelog[]> {
   let searchQuery = '';
 
   const whereClause = getChangelogSearchWhereClause(searchTerm, changeTypeId, sitecoreProductid);
+
+  let query = CHANGELOG_QUERY;
+
+  if (summary == true) {
+    query = CHANGELOG_SUMMARY_QUERY;
+  }
 
   searchQuery = `{ 
       data: allChangelog ${whereClause}
       {total
         results{
-          ${CHANGELOG_QUERY}
+          ${query}
         }
       }
     }`;
@@ -22,6 +28,11 @@ export async function getSearchResultsChangelogs(searchTerm: string, changeTypeI
   return extractPosts(data.data);
 }
 
+export function extractBasePosts({ data }: { data: ChangelogList }) {
+  return data.results.map((post: ChangelogBase) => {
+    return post;
+  });
+}
 export function extractPosts({ data }: { data: ChangelogList }) {
   return data.results.map((post: Changelog) => {
     return post;

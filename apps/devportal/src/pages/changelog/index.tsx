@@ -10,7 +10,7 @@ import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
 
 export async function getStaticProps() {
-  const items: ChangelogEntry[] = await GetLatestItemsByProductAndChangeType('','');
+  const items: ChangelogEntry[] = await GetLatestItemsByProductAndChangeType('', '');
 
   const entriesByMonth = OrderByMonthAndYear(items);
 
@@ -37,7 +37,7 @@ const ChangelogHome = ({ items, entriesByMonth }: ChangelogProps) => {
               <ChangelogList items={items} />
             </div>
             <div className="col-span-2">
-              <ChangelogByMonth items={entriesByMonth} />
+              <ChangelogByMonth />
             </div>
           </div>
         </Container>

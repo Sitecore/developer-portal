@@ -3,17 +3,20 @@ import { ChangeTypeResults } from './changeType';
 import { MediaResults } from './common/media';
 import { SitecoreProductResults } from './sitecoreProduct';
 
-type Changelog = {
+export type ChangelogBase = {
+  title: string;
+  sitecoreProduct: SitecoreProductResults;
+  releaseDate: string;
+};
+
+type Changelog = ChangelogBase & {
   id: string;
   name: string;
   readMoreLink: string;
-  title: string;
   description: JSONContent;
   breakingChange: boolean;
-  sitecoreProduct: SitecoreProductResults;
   changeType: ChangeTypeResults;
   version: string;
-  releaseDate: string;
   image: MediaResults;
 };
 

@@ -1,25 +1,27 @@
 import { generateHTML } from '@tiptap/html';
 import { GetProductByProductId } from '../constants/products';
 import { richTextProfile } from '../lib/common/richTextConfiguration';
-import Changelog from './changelog';
+import Changelog, { ChangelogBase } from './changelog';
 import ChangeType from './changeType';
 import { Media } from './index';
 import SitecoreProduct from './sitecoreProduct';
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 
-type ChangelogEntry = {
+export type ChangelogEntrySummary = {
+  title: string;
+  releaseDate: string;
+  imageId?: string;
+};
+
+type ChangelogEntry = ChangelogEntrySummary & {
+  sitecoreProduct: SitecoreProduct[];
   id: string;
   name: string;
   readMoreLink: string;
-  title: string;
   description: string;
   breakingChange: boolean;
-  sitecoreProduct: SitecoreProduct[];
   changeType: ChangeType[];
   version: string;
-  releaseDate: string;
   image: Media[];
-  imageId?: string;
 };
 
 export default ChangelogEntry;
@@ -28,6 +30,20 @@ export function ParseRawData(data: Changelog[]): ChangelogEntry[] {
   return data.map((item: Changelog) => {
     return parseChangeLogItem(item);
   });
+}
+
+export function ParseRawSummaryData(data: ChangelogBase[]): ChangelogEntrySummary[] {
+  return data.map((item: ChangelogBase) => {
+    return parseChangeLogSummaryItem(item);
+  });
+}
+
+function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySummary {
+  return {
+    title: changelog.title,
+    releaseDate: new Date(changelog.releaseDate).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' }),
+    imageId: GetProductByProductId(changelog.sitecoreProduct.results[0].id)?.imageId,
+  };
 }
 
 function parseChangeLogItem(changelog: Changelog): ChangelogEntry {

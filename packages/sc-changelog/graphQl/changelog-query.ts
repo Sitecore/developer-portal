@@ -38,6 +38,20 @@ export const CHANGELOG_QUERY = `
   }
 `;
 
+export const CHANGELOG_SUMMARY_QUERY = `
+  title
+  releaseDate
+  sitecoreProduct{
+    total
+    results {
+      __typename
+      ... on SitecoreProduct {
+        ${SITECORE_PRODUCT_QUERY}
+      }
+    }
+  }
+`;
+
 export const ALL_CHANGELOG_QUERY = `{ 
     data: allChangelog{
       total

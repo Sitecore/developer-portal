@@ -1,8 +1,6 @@
-import { OrderByMonthAndYear } from '@/src/common/changelog';
 import { getChangelogProductPaths } from '@/src/common/static-paths';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogList from '@/src/components/changelog/ChangelogList';
-import axios from 'axios';
 import { ProductConfig } from 'sc-changelog/configuration';
 import Products from 'sc-changelog/constants/products';
 import ChangelogEntry from 'sc-changelog/types/changeLogEntry';
@@ -23,7 +21,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const product = context.params.product;
-  let items: ChangelogEntry[] = [];
+  const items: ChangelogEntry[] = [];
   const currentProduct: ProductConfig | undefined = Products.find((x) => getSlug(x.name) == product);
 
   if (currentProduct == undefined)
@@ -31,20 +29,10 @@ export async function getStaticProps(context: any) {
       notFound: true,
     };
 
-  axios
-    .get(`/api/changelog?`)
-    .then((response) => {
-      items = response.data;
-    })
-    .catch((err) => console.log(err));
-
-  const entriesByMonth = OrderByMonthAndYear(items);
-
   return {
     props: {
       currentProduct,
       items,
-      entriesByMonth,
     },
     revalidate: 600, // 10 minutes
   };
@@ -68,7 +56,7 @@ const ChangelogProduct = ({ currentProduct, items, changes, entriesByMonth }: Ch
               <ChangelogList items={items} />
             </div>
             <div className="col-span-2">
-              <ChangelogByMonth items={entriesByMonth} />
+              <ChangelogByMonth productName={currentProduct.name} />
             </div>
           </div>
         </Container>
