@@ -1,6 +1,7 @@
-import { ProductConfig } from '../configuration';
+import { ChangeTypeConfig, ProductConfig } from '../configuration';
 import { ProductName } from '../types';
 import { getSlug } from '../utils/stringUtils';
+import ChangeTypes from './changeTypes';
 
 const Products: ProductConfig[] = [
   {
@@ -103,6 +104,14 @@ export function GetProductBySlug(productName: string): ProductConfig | undefined
 export function GetProductByProductId(productId: string): ProductConfig | undefined {
   const first = Products.find((obj) => {
     return obj.entityId === productId;
+  });
+
+  return first;
+}
+
+export function GetChangeTypeById(changeTypeId: string): ChangeTypeConfig | undefined {
+  const first = ChangeTypes.find((obj) => {
+    return obj.entityId === changeTypeId;
   });
 
   return first;

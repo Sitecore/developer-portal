@@ -1,8 +1,8 @@
 // Interfaces
-import ChangeTypes from '@/../../packages/sc-changelog/constants/changeTypes';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { GetSummaryLatestItemsByProductAndChangeType } from 'sc-changelog/changelog';
 import { ChangeTypeConfig, ProductConfig } from 'sc-changelog/configuration';
+import ChangeTypes from 'sc-changelog/constants/changeTypes';
 import Products from 'sc-changelog/constants/products';
 import { ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 

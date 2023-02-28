@@ -1,5 +1,7 @@
+import { createChangelogEntryUrl } from '@/src/common/changelog';
 import Image from 'next/image';
-import ChangelogEntry from 'sc-changelog/types/changeLogEntry';
+import Link from 'next/link';
+import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import ProductIcon from 'ui/components/common/ProductIcon';
 import TextLink from 'ui/components/common/TextLink';
 
@@ -13,7 +15,9 @@ const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent 
 const ChangeLogItem = ({ item, loading }: ChangeLogItemProps): JSX.Element => {
   return (
     <div className=" bg-theme-bg mt-8 mb-16">
-      <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>{item.title}</h2>
+      <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
+        <Link href={createChangelogEntryUrl(item)}>{item.title}</Link>
+      </h2>
       <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
         <div className="flex items-center gap-5">
           <div className={`text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>

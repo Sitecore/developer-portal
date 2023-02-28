@@ -51,6 +51,16 @@ export const CHANGELOG_SUMMARY_QUERY = `
       }
     }
   }
+  changeType
+  {
+    total
+    results {
+      __typename
+      ... on Changetype {
+        ${CHANGE_TYPE_QUERY}
+      }
+    }
+  }
 `;
 
 export const ALL_CHANGELOG_QUERY = `{ 

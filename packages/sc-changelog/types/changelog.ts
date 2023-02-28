@@ -7,6 +7,7 @@ export type ChangelogBase = {
   id: string;
   title: string;
   sitecoreProduct: SitecoreProductResults;
+  changeType: ChangeTypeResults;
   releaseDate: string;
 };
 
@@ -15,7 +16,6 @@ type Changelog = ChangelogBase & {
   readMoreLink: string;
   description: JSONContent;
   breakingChange: boolean;
-  changeType: ChangeTypeResults;
   version: string;
   image: MediaResults;
 };

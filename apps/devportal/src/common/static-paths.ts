@@ -3,9 +3,11 @@ import fs from 'fs';
 import path from 'path';
 import { CustomNavData } from 'ui/common/types/contentPager';
 
+import { GetAllItems } from 'sc-changelog/changelog';
 import ChangeTypes from 'sc-changelog/constants/changeTypes';
 import Products from 'sc-changelog/constants/products';
-import { getSlug } from 'sc-changelog/utils/stringUtils';
+import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
+import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
 
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
 const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
@@ -146,6 +148,7 @@ export const getNewsletterStaticPaths = (): NewsletterPath[] => {
 
 type ProductChangeLogPaths = { params: { product: string } };
 type ProductChangeLogChangeTypePaths = { params: { product: string; changeType: string } };
+type ProductChangeLogEntryPaths = { params: { product: string; changeType: string; entry: string } };
 
 export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[]> => {
   const paths: ProductChangeLogPaths[] = [];
@@ -169,5 +172,20 @@ export const getChangelogProductChangeTypePaths = async (): Promise<ProductChang
     });
   });
 
+  return paths;
+};
+
+export const getProductChangeLogEntryPaths = async (): Promise<ProductChangeLogEntryPaths[]> => {
+  const paths: ProductChangeLogEntryPaths[] = [];
+  const entries: ChangelogEntry[] = await GetAllItems();
+
+  entries.map((e: ChangelogEntry) => {
+    const product = getSlug(e.sitecoreProduct[0].name);
+    const changeType = getSlug(e.changeType[0].name);
+    const entry = slugify(e.title);
+
+    paths.push({ params: { product, changeType, entry } });
+  });
+  console.log('paths: ' + paths);
   return paths;
 };

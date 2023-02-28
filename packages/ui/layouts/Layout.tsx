@@ -20,12 +20,7 @@ type LayoutProps = {
   children: React.ReactNode | React.ReactNode[];
 };
 
-const Layout = ({
-  title,
-  description = '',
-  openGraphImage,
-  children,
-}: LayoutProps): JSX.Element => {
+const Layout = ({ title, description = '', openGraphImage, children }: LayoutProps): JSX.Element => {
   const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
   const router = useRouter();
   const { asPath } = router;
@@ -61,25 +56,16 @@ const Layout = ({
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`${publicUrl}${path}`} />
-        <meta
-          property="og:image"
-          content={`${publicUrl}${
-            openGraphImage ? openGraphImage : '/images/social/social-card-default.jpeg'
-          }`}
-        />
+        <meta property="og:image" content={`${publicUrl}${openGraphImage ? openGraphImage : '/images/social/social-card-default.jpeg'}`} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <main className="mb-16 scroll-to-offset">
+      <main className="scroll-to-offset mb-16 h-auto">
         {/* Anchor element at top of page to focus on route change. */}
         <a id={idMainContent} ref={mainContentRef} className="sr-only" href="#" tabIndex={-1}>
           {title}
         </a>
         {/* a11y announcement for route changes. */}
-        <div
-          className="sr-only"
-          aria-live="polite"
-          aria-atomic="true"
-        >{`The ${title} page has loaded.`}</div>
+        <div className="sr-only" aria-live="polite" aria-atomic="true">{`The ${title} page has loaded.`}</div>
         {children}
       </main>
     </div>

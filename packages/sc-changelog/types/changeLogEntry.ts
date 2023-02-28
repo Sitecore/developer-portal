@@ -1,5 +1,5 @@
 import { generateHTML } from '@tiptap/html';
-import { GetProductByProductId } from '../constants/products';
+import { GetChangeTypeById, GetProductByProductId } from '../constants/products';
 import { richTextProfile } from '../lib/common/richTextConfiguration';
 import Changelog, { ChangelogBase } from './changelog';
 import ChangeType from './changeType';
@@ -11,9 +11,11 @@ export type ChangelogEntrySummary = {
   title: string;
   releaseDate: string;
   imageId?: string;
+  productName: string;
+  changeTypeName: string;
 };
 
-type ChangelogEntry = ChangelogEntrySummary & {
+export type ChangelogEntry = ChangelogEntrySummary & {
   sitecoreProduct: SitecoreProduct[];
   name: string;
   readMoreLink: string;
@@ -23,8 +25,6 @@ type ChangelogEntry = ChangelogEntrySummary & {
   version: string;
   image: Media[];
 };
-
-export default ChangelogEntry;
 
 export function ParseRawData(data: Changelog[]): ChangelogEntry[] {
   return data.map((item: Changelog) => {
@@ -44,10 +44,12 @@ function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySumm
     title: changelog.title,
     releaseDate: new Date(changelog.releaseDate).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' }),
     imageId: GetProductByProductId(changelog.sitecoreProduct.results[0].id)?.imageId,
+    productName: GetProductByProductId(changelog.sitecoreProduct.results[0].id)?.name ?? '',
+    changeTypeName: GetChangeTypeById(changelog.changeType.results[0].id)?.name ?? '',
   };
 }
 
-function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
+export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
   return {
     id: changelog.id,
     name: changelog.name,
@@ -61,5 +63,7 @@ function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     releaseDate: new Date(changelog.releaseDate).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' }),
     image: changelog.image.results,
     imageId: GetProductByProductId(changelog.sitecoreProduct.results[0].id)?.imageId,
+    productName: GetProductByProductId(changelog.sitecoreProduct.results[0].id)?.name ?? '',
+    changeTypeName: GetChangeTypeById(changelog.changeType.results[0].id)?.name ?? '',
   };
 }

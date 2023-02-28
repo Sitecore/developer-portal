@@ -22,8 +22,6 @@ export async function getSearchResultsChangelogs(searchTerm: string, changeTypeI
       }
     }`;
 
-  //console.log('searchQuery => ' + searchQuery);
-
   const data = await fetchAPI(searchQuery);
   return extractPosts(data.data);
 }
@@ -58,13 +56,31 @@ function getChangelogSearchWhereClause(searchTerm: string, changeTypeId: string,
   if (sitecoreProductid != null && sitecoreProductid != '0') {
     sitecoreProductFacetSet = true;
   }
-
+  console.log(searchTerm);
   if (searchTermSet) {
-    whereClauseSearchTerm = `{OR:[
-      {name_contains: "${searchTerm}"}
-      {title_contains: "${searchTerm}"}     				
-    ]}`;
+    if (searchTerm.split(' ').length == 0) {
+      whereClauseSearchTerm = `{AND:[
+        {name_contains: "${searchTerm}"}
+        {title_contains: "${searchTerm}"}     				
+      ]}`;
+    } else {
+      const searchArray = searchTerm.split(' ');
+      const termClause: string[] = [];
+
+      searchArray.forEach((term: string) => {
+        termClause.push(`{name_contains: "${term}"}`);
+      });
+      searchArray.forEach((term: string) => {
+        termClause.push(`{title_contains: "${term}"}`);
+      });
+
+      whereClauseSearchTerm = `{AND:[
+        ${termClause.join()}
+      ]}`;
+    }
   }
+
+  console.log(whereClauseSearchTerm);
 
   if (searchTermSet || changeTypeFaceSet || sitecoreProductFacetSet) {
     //build where clause if any is set

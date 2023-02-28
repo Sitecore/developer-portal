@@ -1,6 +1,16 @@
 import { getSearchResultsChangelogs } from './lib/search-lib';
 
-import ChangelogEntry, { ChangelogEntrySummary, ParseRawData, ParseRawSummaryData } from './types/changeLogEntry';
+import { ChangelogEntry, ChangelogEntrySummary, parseChangeLogItem, ParseRawData, ParseRawSummaryData } from './types/changeLogEntry';
+
+export async function GetAllItems() {
+  return GetLatestItemsByProductAndChangeType('', '');
+}
+
+export async function GetChangelogEntry(title: string, productId: string, changeTypeId: string, entityId?: string) {
+  const data = await getSearchResultsChangelogs(title, changeTypeId, productId);
+
+  return parseChangeLogItem(data[0]);
+}
 
 export async function GetLatestItemsByProductAndChangeType(productId: string, changeTypeId: string): Promise<ChangelogEntry[]> {
   const data = await getSearchResultsChangelogs('', changeTypeId, productId);

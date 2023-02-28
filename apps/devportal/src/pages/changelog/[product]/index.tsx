@@ -1,11 +1,9 @@
 import { getChangelogProductPaths } from '@/src/common/static-paths';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogList from '@/src/components/changelog/ChangelogList';
-import { ProductConfig } from 'sc-changelog/configuration';
+import { ChangeTypeConfig, ProductConfig } from 'sc-changelog/configuration';
 import Products from 'sc-changelog/constants/products';
-import ChangelogEntry from 'sc-changelog/types/changeLogEntry';
 import { getSlug } from 'sc-changelog/utils/stringUtils';
-import { LinkValue } from 'ui/common/types/link-value';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
@@ -21,10 +19,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const product = context.params.product;
-  const items: ChangelogEntry[] = [];
+  //const changeType = context.params.changeType;
+  //
   const currentProduct: ProductConfig | undefined = Products.find((x) => getSlug(x.name) == product);
+  //const currentChangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => getSlug(x.name) == changeType);
 
   if (currentProduct == undefined)
+    // || currentChangeType == undefined)
     return {
       notFound: true,
     };
@@ -32,31 +33,29 @@ export async function getStaticProps(context: any) {
   return {
     props: {
       currentProduct,
-      items,
+      //currentChangeType,
     },
     revalidate: 600, // 10 minutes
   };
 }
 
-type ChangelogProductProps = {
+type ChangelogProps = {
   currentProduct: ProductConfig;
-  items: ChangelogEntry[];
-  changes: LinkValue[];
-  entriesByMonth: { [month: string]: ChangelogEntry[] };
+  currentChangeType: ChangeTypeConfig;
 };
 
-const ChangelogProduct = ({ currentProduct, items, changes, entriesByMonth }: ChangelogProductProps) => {
+const ChangelogHome = ({ currentProduct, currentChangeType }: ChangelogProps) => {
   return (
-    <Layout title={`Changelog - ${currentProduct.name}`} description="Empty">
-      <Hero title={`${currentProduct.name} changelog`} description="Learn more about new versions, changes and improvements" />
+    <Layout title="Release Notes - Home" description="Empty">
+      <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
       <VerticalGroup>
         <Container>
-          <div className="mt-8 grid gap-16 md:grid-cols-6">
-            <div className="col-span-4">
-              <ChangelogList items={items} />
+          <div className="mt-8 grid gap-16 md:grid-cols-5">
+            <div className="col-span-3">
+              <ChangelogList product={currentProduct.name} />
             </div>
-            <div className="col-span-2">
-              <ChangelogByMonth productName={currentProduct.name} />
+            <div className="col-span-2 h-[calc(100vh-597px)]">
+              <ChangelogByMonth />
             </div>
           </div>
         </Container>
@@ -64,4 +63,5 @@ const ChangelogProduct = ({ currentProduct, items, changes, entriesByMonth }: Ch
     </Layout>
   );
 };
-export default ChangelogProduct;
+
+export default ChangelogHome;
