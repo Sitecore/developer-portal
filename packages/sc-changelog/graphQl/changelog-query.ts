@@ -39,6 +39,7 @@ export const CHANGELOG_QUERY = `
 `;
 
 export const CHANGELOG_SUMMARY_QUERY = `
+  id
   title
   releaseDate
   sitecoreProduct{

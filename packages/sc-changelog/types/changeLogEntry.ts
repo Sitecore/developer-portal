@@ -7,6 +7,7 @@ import { Media } from './index';
 import SitecoreProduct from './sitecoreProduct';
 
 export type ChangelogEntrySummary = {
+  id: string;
   title: string;
   releaseDate: string;
   imageId?: string;
@@ -14,7 +15,6 @@ export type ChangelogEntrySummary = {
 
 type ChangelogEntry = ChangelogEntrySummary & {
   sitecoreProduct: SitecoreProduct[];
-  id: string;
   name: string;
   readMoreLink: string;
   description: string;
@@ -40,6 +40,7 @@ export function ParseRawSummaryData(data: ChangelogBase[]): ChangelogEntrySummar
 
 function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySummary {
   return {
+    id: changelog.id,
     title: changelog.title,
     releaseDate: new Date(changelog.releaseDate).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' }),
     imageId: GetProductByProductId(changelog.sitecoreProduct.results[0].id)?.imageId,

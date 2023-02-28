@@ -4,13 +4,13 @@ import { MediaResults } from './common/media';
 import { SitecoreProductResults } from './sitecoreProduct';
 
 export type ChangelogBase = {
+  id: string;
   title: string;
   sitecoreProduct: SitecoreProductResults;
   releaseDate: string;
 };
 
 type Changelog = ChangelogBase & {
-  id: string;
   name: string;
   readMoreLink: string;
   description: JSONContent;
