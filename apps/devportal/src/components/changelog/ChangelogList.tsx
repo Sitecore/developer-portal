@@ -27,7 +27,6 @@ const ChangelogList = ({ className, items }: ChangelogListProps): JSX.Element =>
   });
 
   useEffect(() => {
-    console.log('reload');
     setIsLoading(true);
     const query = [];
     if (product) {

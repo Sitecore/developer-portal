@@ -17,9 +17,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntry[
 
   const currentChangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => x.name == req.query.changeType);
   const currentProduct: ProductConfig | undefined = Products.find((x) => x.name == req.query.product);
-
-  //console.log('API Route => ' + currentProduct?.name + ' ### ' + currentChangeType?.name);
-
   const productId = currentProduct != null ? currentProduct.entityId : '';
   const changeTypeId = currentChangeType != null ? currentChangeType.entityId : '';
 

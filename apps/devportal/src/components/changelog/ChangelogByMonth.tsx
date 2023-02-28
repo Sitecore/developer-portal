@@ -14,9 +14,8 @@ type ChangelogByMonthProps = {
 const ChangelogByMonth = ({ className, productName, changeType }: ChangelogByMonthProps): JSX.Element => {
   const [fetchedResults, setFetchedResults] = useState<Record<string, ChangelogEntrySummary[]> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  console.log('P: ' + productName);
+
   useEffect(() => {
-    console.log('reload');
     setIsLoading(true);
     const query: string[] = [];
     if (productName) {
@@ -30,7 +29,6 @@ const ChangelogByMonth = ({ className, productName, changeType }: ChangelogByMon
       .then((response) => {
         setFetchedResults(response.data);
         setIsLoading(false);
-        console.log('data retrieved');
       })
       .catch((err) => console.log(err));
   }, []);
