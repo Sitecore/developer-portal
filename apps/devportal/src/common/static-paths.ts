@@ -186,6 +186,5 @@ export const getProductChangeLogEntryPaths = async (): Promise<ProductChangeLogE
 
     paths.push({ params: { product, changeType, entry } });
   });
-  console.log('paths: ' + paths);
   return paths;
 };

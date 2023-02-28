@@ -16,8 +16,6 @@ import Layout from 'ui/layouts/Layout';
 export async function getStaticPaths() {
   const productPaths = await getProductChangeLogEntryPaths();
 
-  console.log('productPaths: ' + productPaths);
-
   return {
     paths: productPaths,
     fallback: false,

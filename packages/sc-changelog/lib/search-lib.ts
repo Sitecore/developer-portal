@@ -56,7 +56,6 @@ function getChangelogSearchWhereClause(searchTerm: string, changeTypeId: string,
   if (sitecoreProductid != null && sitecoreProductid != '0') {
     sitecoreProductFacetSet = true;
   }
-  console.log(searchTerm);
   if (searchTermSet) {
     if (searchTerm.split(' ').length == 0) {
       whereClauseSearchTerm = `{AND:[
@@ -79,8 +78,6 @@ function getChangelogSearchWhereClause(searchTerm: string, changeTypeId: string,
       ]}`;
     }
   }
-
-  console.log(whereClauseSearchTerm);
 
   if (searchTermSet || changeTypeFaceSet || sitecoreProductFacetSet) {
     //build where clause if any is set
