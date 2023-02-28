@@ -39,7 +39,7 @@ const ChangeLogItem = ({ item, loading }: ChangeLogItemProps): JSX.Element => {
       )}
 
       <div className={`my-3 text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
-      <TextLink href="/" text="Read more" />
+      <TextLink className="font-medium" href="/" text="Read more" />
     </div>
   );
 };

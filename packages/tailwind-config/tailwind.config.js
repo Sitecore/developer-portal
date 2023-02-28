@@ -1,5 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const {
+  fontFamily
+} = require('tailwindcss/defaultTheme');
 
 module.exports = {
   content: [
@@ -87,6 +89,7 @@ module.exports = {
     fontWeight: {
       thin: 200,
       regular: 400,
+      medium: 500,
       semibold: 600,
       bold: 700,
     },
@@ -117,7 +120,9 @@ module.exports = {
         tight: '1.15',
       },
       screens: {
-        'lg-mw': { max: '1023px' },
+        'lg-mw': {
+          max: '1023px'
+        },
       },
       spacing: {
         em: '1em',
