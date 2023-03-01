@@ -16,7 +16,22 @@ var client = contenthub_one_sdk.ContentHubOneClientFactory.create(credentials);
 
 
 //
-start();
+//start();
+
+get();
+
+async function get() {
+  var z = await client.contentItems.singleAsync('SEBW-TEST-chlog-1lLEaGl4pAxi8zBUYSMdkF8sMppMOcqh');
+  console.log('Content Item:');
+  console.log(z);
+  console.log(z.fields.description.value);
+  console.log(z.fields.description.value.content);
+  console.log(z.fields.description.value.content.content[0][0]);
+
+  
+
+}
+
 
 async function start() {
 
@@ -31,7 +46,7 @@ async function start() {
   var readMoreLink = 'https://docs.sitecore.com';
   var media = getMediaItem(); //TODO
   var changeType = ''; //TODO
-  var description = ''; //TODO
+  var description = getRichText(); //TODO
   var changeType = getRandomChangeType();
   var product = getRandomProduct();
 
@@ -41,10 +56,13 @@ async function start() {
   console.log('Version: ' + version);
   console.log('Read More Link: ' + readMoreLink);
   console.log('Media: ' + media);
+  console.log(media);
   console.log('Product: ' + product);
   console.log(product);
   console.log('ChangeType: ' + changeType);
   console.log(changeType);
+  console.log('Description: ');
+  console.log(description);
 
   //TODO: create Content Item
   const contentItem = new contenthub_one_sdk.ContentItem(
@@ -56,10 +74,10 @@ async function start() {
         releaseDate: new contenthub_one_sdk.DateTimeField(releaseDate),
         breakingChange: new contenthub_one_sdk.BooleanField(false),
         readMoreLink: new contenthub_one_sdk.ShortTextField(readMoreLink),
-        //image: new contenthub_one_sdk.MediaField(media),
+        image: new contenthub_one_sdk.MediaField(media),
         changeType: new contenthub_one_sdk.ReferenceField(changeType),
         sitecoreProduct: new contenthub_one_sdk.ReferenceField(product),
-
+        description: new contenthub_one_sdk.RichTextField(description),  
       },
     }
   );
@@ -182,4 +200,14 @@ function getMediaItem() {
   }, ];
 
   return media;
+}
+
+
+function getRichText(){
+
+  var richText = {
+    value: { type: 'doc', content: [ { type: 'paragraph', content: [{text: 'Lorem ipsum',type: 'text'}] } ] }, 
+    type: "RichText",
+  };
+  return richText;
 }
