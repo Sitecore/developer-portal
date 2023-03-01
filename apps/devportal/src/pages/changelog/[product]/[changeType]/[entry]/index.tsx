@@ -124,7 +124,7 @@ const ChangelogHome = ({ currentProduct, currentChangeType, changelogEntry }: Ch
 
               <div className={`my-3 text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
             </div>
-            <div className="col-span-2 h-[calc(100vh-597px)]">
+            <div className="col-span-2">
               <ChangelogByMonth />
             </div>
           </div>
