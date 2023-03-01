@@ -16,22 +16,25 @@ var client = contenthub_one_sdk.ContentHubOneClientFactory.create(credentials);
 
 
 //
-//start();
 
-get();
+//start();
+//get();
+iterate(2);
+
 
 async function get() {
   var z = await client.contentItems.singleAsync('SEBW-TEST-chlog-1lLEaGl4pAxi8zBUYSMdkF8sMppMOcqh');
   console.log('Content Item:');
   console.log(z);
-  console.log(z.fields.description.value);
-  console.log(z.fields.description.value.content);
-  console.log(z.fields.description.value.content.content[0][0]);
-
-  
 
 }
-
+async function iterate (numberOfIterations) {
+  console.log('Start interation');
+  for (let index = 0; index < numberOfIterations; index++) {
+    await start();
+  }
+  console.log('End interation');
+}
 
 async function start() {
 
@@ -184,7 +187,7 @@ function generateRandomDate() { //TODO
 
   var year = Math.floor(Math.random() * (2023 - 2022 + 1) + 2022);
   var month = Math.floor(Math.random() * (9 - 3 + 1) + 3);
-  var day = Math.floor(Math.random() * (30 - 1 + 1) + 1);
+  var day = Math.floor(Math.random() * (30 - 10 + 1) + 10);
   console.log('Date: ' + year + '-' + month + '-' + day);
   var dateString = year + '-0' + month + '-' + day + 'T10:20:30Z';
   console.log(dateString);
@@ -206,8 +209,18 @@ function getMediaItem() {
 function getRichText(){
 
   var richText = {
-    value: { type: 'doc', content: [ { type: 'paragraph', content: [{text: 'Lorem ipsum',type: 'text'}] } ] }, 
-    type: "RichText",
+    type: "doc",
+    content: [
+      {
+        type: "paragraph",
+        content: [
+          {
+            type: "text",
+            text: "SEBW-Test Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+          }
+        ]
+      }
+    ]
   };
   return richText;
 }
