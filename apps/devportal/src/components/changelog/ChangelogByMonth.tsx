@@ -54,7 +54,9 @@ const ChangelogByMonth = ({ className, productName, changeType }: ChangelogByMon
                   </div>
                 )}
                 <div className="ml-6">
-                  <Link href={createChangelogEntryUrl(item)}>{item.title}</Link>
+                  <Link className="text-violet dark:text-teal" href={createChangelogEntryUrl(item)}>
+                    {item.title}
+                  </Link>
                 </div>
               </div>
             </div>
