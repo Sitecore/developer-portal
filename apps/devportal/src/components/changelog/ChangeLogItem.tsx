@@ -22,9 +22,14 @@ const ChangeLogItem = ({ item, loading }: ChangeLogItemProps): JSX.Element => {
         <div className="flex items-center gap-5">
           <div className={`text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
             {item.imageId && (
-              <div className="absolute h-5 w-5">
-                <ProductIcon product={item.imageId} variant="Light" className={`relative h-5 w-5 ${loading ? 'hidden' : ''}`} />
-              </div>
+              <>
+                <div className="absolute h-5 w-5 dark:hidden">
+                  <ProductIcon product={item.imageId} variant="Light" className={`relative h-5 w-5 ${loading ? 'hidden' : ''}`} />
+                </div>
+                <div className="absolute hidden h-5 w-5 dark:block">
+                  <ProductIcon product={item.imageId} variant="Dark" className={`relative h-5 w-5 ${loading ? 'hidden' : ''}`} />
+                </div>
+              </>
             )}
             <div className="ml-6 text-xs">{item.sitecoreProduct[0].name}</div>
           </div>

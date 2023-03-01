@@ -50,7 +50,12 @@ const ChangelogByMonth = ({ className, productName, changeType }: ChangelogByMon
               <div className={`text-sm ${isLoading ? 'w-12' && skeletonLoaderClasses : ''}`}>
                 {item.imageId && (
                   <div className="absolute h-5 w-5">
-                    <ProductIcon product={item.imageId} variant="Light" className="relative h-5 w-5" />
+                    <div className="dark:hidden">
+                      <ProductIcon product={item.imageId} variant="Light" className="relative h-5 w-5" />
+                    </div>
+                    <div className="hidden dark:block">
+                      <ProductIcon product={item.imageId} variant="Dark" className="relative h-5 w-5" />
+                    </div>
                   </div>
                 )}
                 <div className="ml-6">

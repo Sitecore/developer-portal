@@ -73,9 +73,14 @@ const ChangelogHome = ({ currentProduct, currentChangeType, entryPhrase, changel
                 <div className="flex items-center gap-5">
                   <div className={`text-sm`}>
                     {changelogEntry.imageId && (
-                      <div className="absolute h-5 w-5">
-                        <ProductIcon product={changelogEntry.imageId} variant="Light" className={`relative h-5 w-5`} />
-                      </div>
+                      <>
+                        <div className="absolute h-5 w-5 dark:hidden">
+                          <ProductIcon product={changelogEntry.imageId} variant="Light" className={`relative h-5 w-5 `} />
+                        </div>
+                        <div className="absolute hidden h-5 w-5 dark:block">
+                          <ProductIcon product={changelogEntry.imageId} variant="Dark" className={`relative h-5 w-5`} />
+                        </div>
+                      </>
                     )}
                     <div className="ml-6 text-xs">{changelogEntry.sitecoreProduct[0].name}</div>
                   </div>
