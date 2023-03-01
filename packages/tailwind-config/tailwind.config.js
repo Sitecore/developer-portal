@@ -1,18 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-const {
-  fontFamily
-} = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: [
-    `../../packages/ui/**/*.{js,ts,jsx,tsx}`,
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/layouts/**/*.{js,ts,jsx,tsx}',
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './layouts/**/*.{js,ts,jsx,tsx}',
-    './**/*.{js,ts,jsx,tsx}',
-  ],
+  content: [`../../packages/ui/**/*.{js,ts,jsx,tsx}`, './src/components/**/*.{js,ts,jsx,tsx}', './src/layouts/**/*.{js,ts,jsx,tsx}', './src/pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './layouts/**/*.{js,ts,jsx,tsx}', './**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     backgroundSize: {
@@ -47,6 +37,7 @@ module.exports = {
       },
       violet: {
         lightest: '#f6f6ff',
+        lighter: '#e5e2ff',
         light: '#AAA4EC',
         DEFAULT: '#5548D9',
         dark: '#333378',
@@ -121,7 +112,7 @@ module.exports = {
       },
       screens: {
         'lg-mw': {
-          max: '1023px'
+          max: '1023px',
         },
       },
       spacing: {

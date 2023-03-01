@@ -1,4 +1,6 @@
+import SvgIcon from '@/../../packages/ui/components/common/SvgIcon';
 import axios from 'axios';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import ChangeTypes from 'sc-changelog/constants/changeTypes';
@@ -51,9 +53,18 @@ const ChangelogList = ({ className, product, changeType }: ChangelogListProps): 
 
   return (
     <div className={`${className}`}>
-      <Dropdown options={products} initialText="All Products" onSelectChange={(selectedValue) => router.push(`/changelog/${selectedValue}`)} />
-      <Dropdown options={changes} initialText="All changes" onSelectChange={(selectedValue) => router.push(`${router.asPath}/${selectedValue}`)} />
-
+      <div className="flex flex-row">
+        {product && (
+          <div className="bg-violet-lighter text-violet mr-2 inline-block rounded-md p-3 text-sm">
+            <strong>Product:</strong> {product}
+            <Link href="/changelog">
+              <SvgIcon icon="close" width={24} height={24} className="text-violet dark:text-red relative -top-0.5 left-1 inline-block h-5 w-5" />
+            </Link>
+          </div>
+        )}
+        {!product && <Dropdown options={products} initialText="All Products" onSelectChange={(selectedValue) => router.push(`/changelog/${selectedValue}`)} />}
+        <Dropdown options={changes} initialText="All changes" onSelectChange={(selectedValue) => router.push(`${router.asPath}/${selectedValue}`)} />
+      </div>
       {data.map((item, i) => (
         <ChangeLogItem item={item} key={i} loading={isLoading} />
       ))}
