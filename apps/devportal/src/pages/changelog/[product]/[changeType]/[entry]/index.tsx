@@ -42,7 +42,6 @@ export async function getStaticProps(context: any) {
     props: {
       currentProduct,
       currentChangeType,
-      entry,
       changelogEntry,
     },
     revalidate: 600, // 10 minutes
@@ -52,11 +51,10 @@ export async function getStaticProps(context: any) {
 type ChangelogProps = {
   currentProduct: ProductConfig;
   currentChangeType: ChangeTypeConfig;
-  entryPhrase: string;
   changelogEntry: ChangelogEntry;
 };
 
-const ChangelogHome = ({ currentProduct, currentChangeType, entryPhrase, changelogEntry }: ChangelogProps) => {
+const ChangelogHome = ({ currentProduct, currentChangeType, changelogEntry }: ChangelogProps) => {
   return (
     <Layout title={`Release Notes ${currentProduct.name}`} description="Empty">
       <Hero title={`${currentProduct.name} Changelog`} description={`Learn more about new versions, changes and improvements we made to ${currentProduct.name}`} />
@@ -64,9 +62,35 @@ const ChangelogHome = ({ currentProduct, currentChangeType, entryPhrase, changel
         <Container>
           <div className="mt-8 grid auto-cols-max gap-16 md:grid-cols-5">
             <div className="col-span-3">
-              <span className={`bg-violet mb-5 inline-block rounded-md py-2 px-3 text-xs text-white`}>
-                <strong>TODO</strong> ADD NAVIGATION
-              </span>
+              <nav className="mt-4 mb-8 flex" aria-label="Breadcrumb">
+                <ol className="inline-flex items-center space-x-1 md:space-x-3">
+                  <li className="inline-flex items-center">
+                    <a href="/changelog" className="text-theme-text-alt inline-flex items-center text-sm font-medium">
+                      Changelog
+                    </a>
+                  </li>
+                  <li>
+                    <div className="flex items-center">
+                      <svg aria-hidden="true" className="text-theme-text-alt h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path>
+                      </svg>
+                      <a href={`/changelog/${getSlug(currentProduct.name)}`} className="text-theme-text-alt ml-1 text-sm font-medium md:ml-2">
+                        {currentProduct.name}
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="flex items-center">
+                      <svg aria-hidden="true" className="text-theme-text-alt h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path>
+                      </svg>
+                      <a href={`/changelog/${getSlug(currentProduct.name)}/${getSlug(currentChangeType.name)}`} className="text-theme-text-alt ml-1 text-sm font-medium md:ml-2">
+                        {currentChangeType.name}
+                      </a>
+                    </div>
+                  </li>
+                </ol>
+              </nav>
 
               <h2 className={`heading-sm font-bolder`}>{changelogEntry.title}</h2>
               <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
