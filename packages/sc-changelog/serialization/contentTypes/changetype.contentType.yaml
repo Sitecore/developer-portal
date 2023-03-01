@@ -1,0 +1,13 @@
+﻿id: changetype
+name:
+  en-US: Change Type
+description:
+  en-US: 'Any Software update can be of a certain intention. Either it is a bugfix, or a new feature or an improvement of an existing feature. '
+fields:
+- id: changeType
+  name:
+    en-US: Change Type
+  type: ShortText
+  required: true
+  helpText:
+    en-US: ''

@@ -6,20 +6,20 @@ const ChangeTypes: ChangeTypeConfig[] = [
   {
     type: ChangeType.Bugfix,
     name: 'Bugfix',
-    entityId: 'entityId',
-    entityName: 'entityName',
+    entityId: 'jNZQWrssyEaU7gwlIYpJnQ',
+    entityName: 'Bugfix',
   },
   {
     type: ChangeType.Improvement,
     name: 'Improvement',
-    entityId: 'entityId',
-    entityName: 'entityName',
+    entityId: 'UKvjuaa7QEC3ipciF1O_ag',
+    entityName: 'Improvement',
   },
   {
     type: ChangeType.NewFeature,
     name: 'New Feature',
-    entityId: 'entityId',
-    entityName: 'entityName',
+    entityId: 'bPCLEiNA4kmJspgn4lmizA',
+    entityName: 'New Feature',
   },
 ];
 

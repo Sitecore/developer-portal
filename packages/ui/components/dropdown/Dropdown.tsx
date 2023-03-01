@@ -1,32 +1,35 @@
-import { useRouter } from 'next/router';
 import { LinkValue } from '../../common/types/link-value';
 
 type DropDownProps = {
   options: LinkValue[];
+  label?: string;
+  initialText?: string;
+  onSelectChange: (selectedValue: string) => void;
 };
 
-export const Dropdown = ({ options }: DropDownProps) => {
-  const router = useRouter();
+export const Dropdown = ({ options, label, initialText, onSelectChange }: DropDownProps) => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = event.target.value;
+    onSelectChange(selectedValue);
+  };
 
-  return (
-    <label className="flex items-center text-xs font-semibold">
-      Filter by:
-      <select
-        onChange={(event) => {
-          event.preventDefault();
+  const dropdownElement = (
+    <select onChange={handleChange} className="bg-theme-bg border-theme-border-alt text-theme-text mr-2 border-2 p-2 text-sm">
+      {initialText && <option value="">{initialText}</option>}
 
-          router.push(router.asPath + '/' + event.target.value, undefined);
-        }}
-        className="bg-theme-bg `text-theme-text ml-2 border-2 p-2 font-semibold"
-      >
-        {options.map((item, index) => {
-          return (
-            <option value={item.href} key={index}>
-              {item.text}
-            </option>
-          );
-        })}
-      </select>
-    </label>
+      {options.map((item, index) => {
+        return (
+          <option value={item.href} key={index}>
+            {item.text}
+          </option>
+        );
+      })}
+    </select>
   );
+
+  if (label) {
+    return <label className="flex items-center text-xs font-semibold">{dropdownElement}</label>;
+  }
+
+  return dropdownElement;
 };

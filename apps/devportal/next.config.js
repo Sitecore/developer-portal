@@ -21,8 +21,7 @@ const securityHeaders = [
   },
   {
     key: 'Permissions-Policy',
-    value:
-      'accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()',
+    value: 'accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()',
   },
   {
     key: 'X-Content-Type-Options',
@@ -65,14 +64,7 @@ const nextConfig = {
   },
   images: {
     dangerouslyAllowSVG: true,
-    domains: [
-      'sitecorecdn.azureedge.net',
-      'i.ytimg.com',
-      'mss-p-006-delivery.sitecorecontenthub.cloud',
-      'mss-p-006-delivery.stylelabs.cloud',
-      'go.sitecore.com',
-      'sitecorecontenthub.stylelabs.cloud',
-    ],
+    domains: ['sitecorecdn.azureedge.net', 'i.ytimg.com', 'mss-p-006-delivery.sitecorecontenthub.cloud', 'mss-p-006-delivery.stylelabs.cloud', 'go.sitecore.com', 'sitecorecontenthub.stylelabs.cloud', 'mms-delivery.sitecorecloud.io'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     minimumCacheTTL: 60,
   },

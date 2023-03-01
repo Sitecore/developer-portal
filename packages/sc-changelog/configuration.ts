@@ -1,11 +1,12 @@
-import { Product } from './types';
+import { ProductName } from './types';
 import { ChangeType } from './types/index';
 
 export type ProductConfig = {
-  type: Product;
+  type: ProductName;
   name: string;
   entityId: string;
   entityName: string;
+  imageId: string;
 };
 
 export type ChangeTypeConfig = {

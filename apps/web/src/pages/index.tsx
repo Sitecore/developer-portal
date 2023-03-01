@@ -1,5 +1,3 @@
-import { getReleaseNotesByProduct } from 'sc-changelog/getReleaseNotes';
-import { Product } from 'sc-changelog/types';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Layout from 'ui/layouts/Layout';
@@ -13,7 +11,7 @@ export default function Web() {
             <h1 className="testmva">Web</h1>
 
             <h1 className="testmva">Release Notes Home</h1>
-            {getReleaseNotesByProduct(Product.CDP)}
+
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis augue at orci
               finibus, non dictum ipsum luctus. Ut placerat vulputate tincidunt. Ut ultrices nulla

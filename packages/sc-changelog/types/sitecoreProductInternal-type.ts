@@ -1,9 +1,9 @@
-import { SitecoreProductResults } from './sitecoreProducts';
+import { SitecoreProductResults } from './sitecoreProduct';
 
 type SitecoreProductInternal = {
   id: string;
   name: string;
-  roductAbbreviationInternal: string;
+  productAbbreviationInternal: string;
   productNameInternal: string;
   productDescriptionInternal: string;
   sitecoreProducts: SitecoreProductResults;
