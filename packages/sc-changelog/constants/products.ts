@@ -55,7 +55,7 @@ const Products: ProductConfig[] = [
   },
   {
     type: ProductName.ORDERCLOUD,
-    name: 'Sitecore Order Cloud',
+    name: 'Sitecore OrderCloud',
     entityId: 'u-geEE0EVkiusuAZ1D0EeQ',
     entityName: 'Sitecore Commerce Order Cloud',
     imageId: 'OrderCloud',

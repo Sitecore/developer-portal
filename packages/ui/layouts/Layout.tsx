@@ -59,7 +59,7 @@ const Layout = ({ title, description = '', openGraphImage, children }: LayoutPro
         <meta property="og:image" content={`${publicUrl}${openGraphImage ? openGraphImage : '/images/social/social-card-default.jpeg'}`} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <main className="scroll-to-offset mb-16 h-auto">
+      <main className="scroll-to-offset mb-16 min-h-[calc(100vh-344px)]">
         {/* Anchor element at top of page to focus on route change. */}
         <a id={idMainContent} ref={mainContentRef} className="sr-only" href="#" tabIndex={-1}>
           {title}
