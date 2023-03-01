@@ -16,18 +16,18 @@ type ChangelogListProps = {
   changeType?: string;
 };
 
+const products: LinkValue[] = Products.map((x) => {
+  return { href: getSlug(x.name), text: x.name };
+});
+
+const changes: LinkValue[] = ChangeTypes.map((x) => {
+  return { href: getSlug(x.name), text: x.name };
+});
+
 const ChangelogList = ({ className, product, changeType }: ChangelogListProps): JSX.Element => {
   const [fetchedResults, setFetchedResults] = useState<ChangelogEntry[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
-
-  const products: LinkValue[] = Products.map((x) => {
-    return { href: getSlug(x.name), text: x.name };
-  });
-
-  const changes: LinkValue[] = ChangeTypes.map((x) => {
-    return { href: getSlug(x.name), text: x.name };
-  });
 
   useEffect(() => {
     setIsLoading(true);
