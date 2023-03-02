@@ -39,8 +39,6 @@
     "@tiptap/extension-underline": "^2.0.0-beta.202",
     "@tiptap/html": "^2.0.0-beta.202",
     "@tiptap/react": "^2.0.0-beta.202",
-    "dotenv": "^16.0.3",
-    "prosemirror-to-html-js": "^1.0.2",
-    "randomstring": "^1.2.3"
+    "prosemirror-to-html-js": "^1.0.2"
   }
 }
