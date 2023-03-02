@@ -66,9 +66,9 @@ function getChangelogSearchWhereClause(searchTerm: string, changeTypeId: string,
       const searchArray = searchTerm.split(' ');
       const termClause: string[] = [];
 
-      searchArray.forEach((term: string) => {
-        termClause.push(`{name_contains: "${term}"}`);
-      });
+      //searchArray.forEach((term: string) => {
+      //        termClause.push(`{name_contains: "${term}"}`);
+      //    });
       searchArray.forEach((term: string) => {
         termClause.push(`{title_contains: "${term}"}`);
       });
