@@ -167,3 +167,43 @@ module.exports.publishItem =  async function (client,id){
     await client.contentItems.publishAsync(id)
     console.log('Published item: ' + id);    
 }
+
+module.exports.isPublished = function (item) {
+   if (item.system.lastPublishProgress != null) {
+        if (item.system.lastPublishProgress.type == 'Publish') {
+            //is published
+            return true;
+
+        } else if (item.system.lastPublishProgress.type = 'Unpublish') {
+            //is unpublished
+            return false;
+        }
+
+    } else {
+        //not published yet
+        return false;
+    }
+
+    return false;
+
+}
+
+module.exports.isUnPublished = function (client,id) {
+    if (item.system.lastPublishProgress != null) {
+        if (item.system.lastPublishProgress.type == 'Publish') {
+            //is published
+            return false;
+
+        } else if (item.system.lastPublishProgress.type = 'Unpublish') {
+            //is unpublished
+            return true;
+        }
+
+    } else {
+        //not published yet
+        return false;
+    }
+
+    return false;
+
+}

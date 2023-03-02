@@ -27,20 +27,13 @@ async function start () {
         //console.log(item.system);
         if (item.name.startsWith('SEBW-TEST-chlog-')) {
             console.log('Detected candidate...');
-            if (item.system.lastPublishProgress != null) {
-                if (item.system.lastPublishProgress.type == 'Publish') {
-                    //if they are published they need to be unpublished first
-                    console.log('Published - will be unpublished!!! Status:' + item.system.lastPublishProgress.status);
-                    await clTest.unpublishItem(client,item.id);
-
-                } else if (item.system.lastPublishProgress.type = 'Unpublish') {
-                    console.log('Unpublished already - can be ignored!!! Status:' + item.system.lastPublishProgress.status);
-                }
-
+            
+            var published = clTest.isPublished(item);
+            if (published) {
+                await clTest.unpublishItem(client,item.id);
             } else {
-                console.log('Not Published - can be ignored!!!');
+                console.log('Item is not published');
             }
-
             
         } else {
             console.log('Ignore me please, I am not the one you were searching for');

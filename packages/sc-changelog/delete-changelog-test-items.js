@@ -27,20 +27,16 @@ async function start(){
         //console.log(item.system);
         if (item.name.startsWith('SEBW-TEST-chlog-')) {
             console.log('Detected candidate...');
-            if (item.system.lastPublishProgress != null) {
-                if (item.system.lastPublishProgress.type == 'Publish') {
-                    //if they are published they need to be unpublished first
-                    console.log('Published - do not delete!!! Status:' + item.system.lastPublishProgress.status);
-                } else if (item.system.lastPublishProgress.type = 'Unpublish') {
-                    console.log('Unpublished - will be deleted now!!! Status:' + item.system.lastPublishProgress.status);
-                    await clTest.deleteItem(client,item.id);
-                }
 
-            } else {
-                console.log('Not Published - will be deleted now!!!');
+            var published = clTest.isPublished(item);
+            //console.log("Published: " + published);
+            if (!published) {
                 await clTest.deleteItem(client,item.id);
+                console.log('Item deleted');
+            } else {
+                console.log ('Item is published');
             }
-
+            
             
         } else {
             console.log('Do not delete me please, I am not the one you were searching for');
