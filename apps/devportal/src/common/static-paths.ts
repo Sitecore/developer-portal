@@ -8,6 +8,7 @@ import ChangeTypes from 'sc-changelog/constants/changeTypes';
 import Products from 'sc-changelog/constants/products';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
+import { getChangelogEntryUrlSegments } from './changelog';
 
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
 const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
@@ -180,9 +181,10 @@ export const getProductChangeLogEntryPaths = async (): Promise<ProductChangeLogE
   const entries: ChangelogEntry[] = await GetAllItems();
 
   entries.map((e: ChangelogEntry) => {
-    const product = getSlug(e.sitecoreProduct[0].name);
-    const changeType = getSlug(e.changeType[0].name);
-    const entry = slugify(e.title);
+    const urlSegments = getChangelogEntryUrlSegments(e);
+    const product = getSlug(urlSegments[0]);
+    const changeType = getSlug(urlSegments[1]);
+    const entry = slugify(urlSegments[2]);
 
     paths.push({ params: { product, changeType, entry } });
   });

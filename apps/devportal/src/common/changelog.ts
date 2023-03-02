@@ -1,5 +1,5 @@
+import { slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
 import { ChangelogEntry, ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
-import { slugify } from 'sc-changelog/utils/stringUtils';
 
 export function OrderByMonthAndYear(items: ChangelogEntry[]): { [month: string]: ChangelogEntry[] } {
   const entriesByMonth: { [month: string]: ChangelogEntry[] } = {};
@@ -15,12 +15,20 @@ export function OrderByMonthAndYear(items: ChangelogEntry[]): { [month: string]:
   return entriesByMonth;
 }
 
+export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEntrySummary): string[] {
+  const segments: string[] = [];
+
+  segments.push(slugify(entry.productName));
+  segments.push(slugify(entry.changeTypeName));
+  segments.push(`${slugify(entry.title)}`);
+
+  return segments;
+}
+
 export function createChangelogEntryUrl(entry: ChangelogEntry | ChangelogEntrySummary): string {
   const url: string[] = [];
 
   url.push('/changelog');
-  url.push(slugify(entry.productName));
-  url.push(slugify(entry.changeTypeName));
-  url.push(slugify(entry.title));
+  url.push(...getChangelogEntryUrlSegments(entry));
   return url.join('/');
 }
