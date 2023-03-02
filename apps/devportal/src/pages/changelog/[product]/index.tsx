@@ -1,8 +1,10 @@
 import { getChangelogProductPaths } from '@/src/common/static-paths';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogList from '@/src/components/changelog/ChangelogList';
+import { GetAllChangelogEntries } from 'sc-changelog/changelog';
 import { ChangeTypeConfig, ProductConfig } from 'sc-changelog/configuration';
 import Products from 'sc-changelog/constants/products';
+import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug } from 'sc-changelog/utils/stringUtils';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
@@ -30,9 +32,12 @@ export async function getStaticProps(context: any) {
       notFound: true,
     };
 
+  const items: ChangelogEntry[] = await GetAllChangelogEntries(currentProduct.entityId);
+
   return {
     props: {
       currentProduct,
+      items: items,
       //currentChangeType,
     },
     revalidate: 600, // 10 minutes
@@ -40,11 +45,12 @@ export async function getStaticProps(context: any) {
 }
 
 type ChangelogProps = {
+  items: ChangelogEntry[];
   currentProduct: ProductConfig;
   currentChangeType: ChangeTypeConfig;
 };
 
-const ChangelogHome = ({ currentProduct, currentChangeType }: ChangelogProps) => {
+const ChangelogHome = ({ currentProduct, currentChangeType, items }: ChangelogProps) => {
   return (
     <Layout title="Release Notes - Home" description="Empty">
       <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
@@ -52,7 +58,7 @@ const ChangelogHome = ({ currentProduct, currentChangeType }: ChangelogProps) =>
         <Container>
           <div className="mt-8 grid gap-16 md:grid-cols-5">
             <div className="col-span-3">
-              <ChangelogList product={currentProduct.name} />
+              <ChangelogList product={currentProduct.name} items={items} />
             </div>
             <div className="col-span-2 h-[calc(100vh-597px)]">
               <ChangelogByMonth />

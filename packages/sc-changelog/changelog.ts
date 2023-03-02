@@ -2,7 +2,14 @@ import { getSearchResultsChangelogs } from './lib/search-lib';
 
 import { ChangelogEntry, ChangelogEntrySummary, parseChangeLogItem, ParseRawData, ParseRawSummaryData } from './types/changeLogEntry';
 
-export async function GetAllItems() {
+export async function GetAllChangelogEntries(productId?: string, changeTypeId?: string) {
+  if (productId && changeTypeId) {
+    return GetLatestItemsByProductAndChangeType(productId, changeTypeId);
+  }
+
+  if (productId && !changeTypeId) {
+    return GetLatestItemsByProductAndChangeType(productId, '');
+  }
   return GetLatestItemsByProductAndChangeType('', '');
 }
 
