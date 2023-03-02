@@ -14,13 +14,13 @@ const clientSecret = 'q72ZsJ4Y1ed6HW6lg_XUWY1EB4zcmfd-JO59CvQqP2JdSSKvkFurWX7-Z4
 var credentials = new contenthub_one_sdk.ClientCredentialsScheme(clientId, clientSecret);
 var client = contenthub_one_sdk.ContentHubOneClientFactory.create(credentials);
 
-//get all items of type changelog 
 
+//find all changelog items with prefix that are not published yet
 
 start();
 
-async function start(){
-    console.log('DELETE - Start');
+async function start () {
+    console.log('Publish - Start');
     
     var items = await getItems();
     console.log('Count: ' + items.totalCount);
@@ -36,31 +36,31 @@ async function start(){
             if (item.system.lastPublishProgress != null) {
                 if (item.system.lastPublishProgress.type == 'Publish') {
                     //if they are published they need to be unpublished first
-                    console.log('Published - do not delete!!! Status:' + item.system.lastPublishProgress.status);
+                    console.log('Published - no action required!!! Status:' + item.system.lastPublishProgress.status);
+                    
+
                 } else if (item.system.lastPublishProgress.type = 'Unpublish') {
-                    console.log('Unpublished - will be deleted now!!! Status:' + item.system.lastPublishProgress.status);
-                    await deleteItem(item.id);
+                    console.log('Unpublished - publish again!!! Status:' + item.system.lastPublishProgress.status);
+                    await publishItem(item.id);
                 }
 
             } else {
-                console.log('Not Published - will be deleted now!!!');
-                await deleteItem(item.id);
+                console.log('Not Published yet - go for it!!!');
+                await publishItem(item.id);
+
             }
 
             
         } else {
-            console.log('Do not delete me please, I am not the one you were searching for');
+            console.log('Ignore me please, I am not the one you were searching for');
         }
 
         console.log(item.fields.title.value);
         console.log('-------');
 
     })
-    
 
-    //items.forEach()
-
-    console.log('DELETE - end');
+    console.log('publish - end');
 }
 async function getItems() {
     var items = await client.contentItems.getAsync(new contenthub_one_sdk.ContentItemSearchRequest().withFieldQuery(
@@ -71,6 +71,8 @@ async function getItems() {
     return items;
 }
 
-async function deleteItem(id) {
-    var a = client.contentItems.deleteAsync(id);
+async function publishItem(id){
+
+    await client.contentItems.publishAsync(id)
+    console.log('Published item: ' + id);    
 }

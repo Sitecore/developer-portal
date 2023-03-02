@@ -6,20 +6,20 @@ require('dotenv').config();;
 console.log('START');
 
 //var clientId = process.env.SITECORE_CLIENT_ID;
-const clientId = 'A5cLWiOrk5F1h8YH8X00pwaSmazwyOb7';
+const clientId = 'A5cLWiOrk5F1h8YH8X00pwaSmazwyOb7'; //TODO:
 //var clientSecret = process.env.SITECORE_CLIENT_SECRET;
-const clientSecret = 'q72ZsJ4Y1ed6HW6lg_XUWY1EB4zcmfd-JO59CvQqP2JdSSKvkFurWX7-Z4nl5QcX';
+const clientSecret = 'q72ZsJ4Y1ed6HW6lg_XUWY1EB4zcmfd-JO59CvQqP2JdSSKvkFurWX7-Z4nl5QcX'; //TODO:
 
 //use SDK & Connect
 var credentials = new contenthub_one_sdk.ClientCredentialsScheme(clientId, clientSecret);
 var client = contenthub_one_sdk.ContentHubOneClientFactory.create(credentials);
 
 
-//
 
-//start();
-//get();
-iterate(2);
+
+//start(); //create single Changelog item
+//get(); //just a get changelog item example
+iterate(2); //create numerous Changelog items
 
 
 async function get() {
@@ -38,18 +38,13 @@ async function iterate (numberOfIterations) {
 
 async function start() {
 
-  //var z = await client.contentItems.singleAsync('rWTKtOWSIEmz5fQQSxoeOA');
-  //console.log('Content Item:');
-  //console.log(z);
-
-  //TODO: setup data
+  //setup data
   var entityId = generateItemId();
   var releaseDate = generateRandomDate();
   var version = '123.456.7';
   var readMoreLink = 'https://docs.sitecore.com';
-  var media = getMediaItem(); //TODO
-  var changeType = ''; //TODO
-  var description = getRichText(); //TODO
+  var media = getMediaItem(); 
+  var description = getRichText();
   var changeType = getRandomChangeType();
   var product = getRandomProduct();
 
@@ -67,7 +62,7 @@ async function start() {
   console.log('Description: ');
   console.log(description);
 
-  //TODO: create Content Item
+  
   const contentItem = new contenthub_one_sdk.ContentItem(
     entityId, {
       name: entityId,
@@ -89,8 +84,6 @@ async function start() {
 
   console.log('Content Item created ' + newContentItem.id)
 
-
-  //TODO: Publish Item
 }
 
 
@@ -99,7 +92,7 @@ function generateItemId() {
   return 'SEBW-TEST-chlog-' + randomstring.generate();;
 }
 
-function getRandomProduct() { //TODO
+function getRandomProduct() { 
 
   var productId = '';
 
@@ -160,7 +153,7 @@ function getRandomProduct() { //TODO
   return product;
 }
 
-function getRandomChangeType() { //TODO
+function getRandomChangeType() { 
 
   var changeTypeId = '';
   var randomnumber = Math.floor(Math.random() * (3 - 1 + 1) + 1);
@@ -183,7 +176,7 @@ function getRandomChangeType() { //TODO
   return changeType;
 }
 
-function generateRandomDate() { //TODO
+function generateRandomDate() { 
 
   var year = Math.floor(Math.random() * (2023 - 2022 + 1) + 2022);
   var month = Math.floor(Math.random() * (9 - 3 + 1) + 3);
