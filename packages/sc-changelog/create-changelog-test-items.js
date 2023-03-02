@@ -1,25 +1,17 @@
 "use strict";
 exports.__esModule = true;
 const contenthub_one_sdk = require("@sitecore/contenthub-one-sdk");
-const contenthub_one_api = require("@sitecore/contenthub-one-api")
-require('dotenv').config();;
+const contenthub_one_api = require("@sitecore/contenthub-one-api");
+require('dotenv').config();
+const clTest = require('./lib/scripts/changelog-test');
 console.log('START');
 
-//var clientId = process.env.SITECORE_CLIENT_ID;
-const clientId = 'A5cLWiOrk5F1h8YH8X00pwaSmazwyOb7'; //TODO:
-//var clientSecret = process.env.SITECORE_CLIENT_SECRET;
-const clientSecret = 'q72ZsJ4Y1ed6HW6lg_XUWY1EB4zcmfd-JO59CvQqP2JdSSKvkFurWX7-Z4nl5QcX'; //TODO:
 
-//use SDK & Connect
-var credentials = new contenthub_one_sdk.ClientCredentialsScheme(clientId, clientSecret);
-var client = contenthub_one_sdk.ContentHubOneClientFactory.create(credentials);
-
-
-
+const client = clTest.authenticate(process.env.SITECORE_CLIENT_ID,process.env.SITECORE_CLIENT_SECRET);
 
 //start(); //create single Changelog item
 //get(); //just a get changelog item example
-iterate(2); //create numerous Changelog items
+iterate(10); //create numerous Changelog items
 
 
 async function get() {
@@ -39,14 +31,14 @@ async function iterate (numberOfIterations) {
 async function start() {
 
   //setup data
-  var entityId = generateItemId();
-  var releaseDate = generateRandomDate();
+  var entityId = clTest.generateItemId();
+  var releaseDate = clTest.generateRandomDate();
   var version = '123.456.7';
   var readMoreLink = 'https://docs.sitecore.com';
-  var media = getMediaItem(); 
-  var description = getRichText();
-  var changeType = getRandomChangeType();
-  var product = getRandomProduct();
+  var media = clTest.getMediaItem(); 
+  var description = clTest.getRichText();
+  var changeType = clTest.getRandomChangeType();
+  var product = clTest.getRandomProduct();
 
   console.log('Values:');
   console.log('EntityId: ' + entityId);
@@ -79,141 +71,12 @@ async function start() {
       },
     }
   );
+
   //create new Content item
-  var newContentItem = await client.contentItems.createAsync("changelog", contentItem);
+  var newContentItem = await clTest.createItem(client,"changelog",contentItem);
 
   console.log('Content Item created ' + newContentItem.id)
 
 }
 
 
-function generateItemId() {
-  var randomstring = require("randomstring");
-  return 'SEBW-TEST-chlog-' + randomstring.generate();;
-}
-
-function getRandomProduct() { 
-
-  var productId = '';
-
-  var randomnumber = Math.floor(Math.random() * (11 - 1 + 1) + 1); //TODO:
-
-  console.log('random product: ' + randomnumber);
-
-  switch (randomnumber) {
-    case 1:
-      productId = 'KBtlU-ZzYkeYcafWoxyuNQ'; //Sitecore Connect
-      break;
-    case 2:
-      productId = 'uAwJlln4BUqyOtpExq1O5g'; //Sitecore Personalize
-      break;
-    case 3:
-      productId = 'S3Nt7UJGiUcKRji3ERDpNEA'; //Sitecore CDP
-      break;
-    case 4:
-      productId = 'i_EBHSPyF0WvLmpKn99Byw'; //Sitecore Send
-      break;
-    case 5:
-      productId = 'u-geEE0EVkiusuAZ1D0EeQ'; //Sitecore Commerce Order Cloud
-      break;
-    case 6:
-      productId = 'L24AbSEPSUKkDQTpPT7uoA'; //Sitecore Discover
-      break;
-    case 7:
-      productId = '4U7YVAy4V0mH0fA7foawJw'; //Sitecore Search
-      break;
-    case 8:
-      productId = 'ZagATPres0mB9V0eVoqk2A'; //Content Hub Operations
-      break;
-    case 9:
-      productId = 'K1VyMQaExUGe-OD6eoSvdA'; //Content Hub DAM
-      break;
-    case 10:
-      productId = 'n47NXxNFxUqPttUxoFaRyA'; //Content Hub ONE
-      break;
-    case 11:
-      productId = 'av_GqshF5U2kL8XMGjf-Xw'; //XM Cloud
-      break;
-
-  }
-
-  /*var product = new ReferenceField([ 
-    <EntityLink> {
-      id: "<content item id>",
-      relatedType: "Content",
-    },
-  ])*/
-
-  var product = [{
-    id: productId,
-    relatedType: "Content",
-  }, ]
-
-
-  return product;
-}
-
-function getRandomChangeType() { 
-
-  var changeTypeId = '';
-  var randomnumber = Math.floor(Math.random() * (3 - 1 + 1) + 1);
-  switch (randomnumber) {
-    case 1:
-      changeTypeId = 'jNZQWrssyEaU7gwlIYpJnQ'; //Bugfix
-      break;
-    case 2:
-      changeTypeId = 'bPCLEiNA4kmJspgn4lmizA'; //New Feature
-      break;
-    case 3:
-      changeTypeId = 'UKvjuaa7QEC3ipciF1O_ag'; //Improvement
-      break;
-  }
-  var changeType = [{
-    id: changeTypeId,
-    relatedType: "Content",
-  }, ]
-
-  return changeType;
-}
-
-function generateRandomDate() { 
-
-  var year = Math.floor(Math.random() * (2023 - 2022 + 1) + 2022);
-  var month = Math.floor(Math.random() * (9 - 3 + 1) + 3);
-  var day = Math.floor(Math.random() * (30 - 10 + 1) + 10);
-  console.log('Date: ' + year + '-' + month + '-' + day);
-  var dateString = year + '-0' + month + '-' + day + 'T10:20:30Z';
-  console.log(dateString);
-
-  return new Date(dateString);
-}
-
-function getMediaItem() {
-  //var mediaItem = await client.mediaItem.getMediaItem('dkjRFDWSN0KnHk1VvnDZLw');
-  var media = [{
-    id: "dkjRFDWSN0KnHk1VvnDZLw",
-    relatedType: "Media",
-  }, ];
-
-  return media;
-}
-
-
-function getRichText(){
-
-  var richText = {
-    type: "doc",
-    content: [
-      {
-        type: "paragraph",
-        content: [
-          {
-            type: "text",
-            text: "SEBW-Test Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-          }
-        ]
-      }
-    ]
-  };
-  return richText;
-}

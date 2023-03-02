@@ -1,18 +1,12 @@
 "use strict";
 exports.__esModule = true;
 const contenthub_one_sdk = require("@sitecore/contenthub-one-sdk");
-const contenthub_one_api = require("@sitecore/contenthub-one-api")
-require('dotenv').config();;
+const contenthub_one_api = require("@sitecore/contenthub-one-api");
+require('dotenv').config();
+const clTest = require('./lib/scripts/changelog-test');
 console.log('START');
 
-//var clientId = process.env.SITECORE_CLIENT_ID;
-const clientId = 'A5cLWiOrk5F1h8YH8X00pwaSmazwyOb7'; //TODO:
-//var clientSecret = process.env.SITECORE_CLIENT_SECRET;
-const clientSecret = 'q72ZsJ4Y1ed6HW6lg_XUWY1EB4zcmfd-JO59CvQqP2JdSSKvkFurWX7-Z4nl5QcX'; //TODO:
-
-//use SDK & Connect
-var credentials = new contenthub_one_sdk.ClientCredentialsScheme(clientId, clientSecret);
-var client = contenthub_one_sdk.ContentHubOneClientFactory.create(credentials);
+const client = clTest.authenticate(process.env.SITECORE_CLIENT_ID,process.env.SITECORE_CLIENT_SECRET);
 
 //get all items of type changelog 
 
@@ -22,7 +16,7 @@ start();
 async function start(){
     console.log('DELETE - Start');
     
-    var items = await getItems();
+    var items = await clTest.getItems(client,"changelog");
     console.log('Count: ' + items.totalCount);
     console.log('PageSize: ' + items.pageSize);
     console.log('PageNumber: ' + items.pageNumber);
@@ -39,12 +33,12 @@ async function start(){
                     console.log('Published - do not delete!!! Status:' + item.system.lastPublishProgress.status);
                 } else if (item.system.lastPublishProgress.type = 'Unpublish') {
                     console.log('Unpublished - will be deleted now!!! Status:' + item.system.lastPublishProgress.status);
-                    await deleteItem(item.id);
+                    await clTest.deleteItem(client,item.id);
                 }
 
             } else {
                 console.log('Not Published - will be deleted now!!!');
-                await deleteItem(item.id);
+                await clTest.deleteItem(client,item.id);
             }
 
             
@@ -57,20 +51,6 @@ async function start(){
 
     })
     
-
-    //items.forEach()
-
+ 
     console.log('DELETE - end');
-}
-async function getItems() {
-    var items = await client.contentItems.getAsync(new contenthub_one_sdk.ContentItemSearchRequest().withFieldQuery(
-        contenthub_one_sdk.ContentItemSearchField.contentType,
-        contenthub_one_sdk.Equality.Equals,
-        "changelog"
-    ));
-    return items;
-}
-
-async function deleteItem(id) {
-    var a = client.contentItems.deleteAsync(id);
 }
