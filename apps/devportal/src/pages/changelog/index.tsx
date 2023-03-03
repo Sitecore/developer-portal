@@ -1,22 +1,16 @@
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogList from '@/src/components/changelog/ChangelogList';
-import { ChangeTypeConfig, ProductConfig } from 'sc-changelog/configuration';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps() {
   return {
     props: {},
     revalidate: 600, // 10 minutes
   };
 }
-
-type ChangelogProps = {
-  currentProduct: ProductConfig;
-  currentChangeType: ChangeTypeConfig;
-};
 
 const ChangelogHome = () => {
   return (

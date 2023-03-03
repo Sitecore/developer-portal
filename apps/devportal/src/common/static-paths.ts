@@ -3,10 +3,10 @@ import fs from 'fs';
 import path from 'path';
 import { CustomNavData } from 'ui/common/types/contentPager';
 
-import { GetAllItems } from 'sc-changelog/changelog';
+import { AllChangelogEntries } from 'sc-changelog/changelog';
 import ChangeTypes from 'sc-changelog/constants/changeTypes';
 import Products from 'sc-changelog/constants/products';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
+import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
 import { getChangelogEntryUrlSegments } from './changelog';
 
@@ -178,9 +178,9 @@ export const getChangelogProductChangeTypePaths = async (): Promise<ProductChang
 
 export const getProductChangeLogEntryPaths = async (): Promise<ProductChangeLogEntryPaths[]> => {
   const paths: ProductChangeLogEntryPaths[] = [];
-  const entries: ChangelogEntry[] = await GetAllItems();
+  const list: ChangelogEntryList<ChangelogEntry[]> = await AllChangelogEntries();
 
-  entries.map((e: ChangelogEntry) => {
+  list.entries.map((e: ChangelogEntry) => {
     const urlSegments = getChangelogEntryUrlSegments(e);
     const product = getSlug(urlSegments[0]);
     const changeType = getSlug(urlSegments[1]);

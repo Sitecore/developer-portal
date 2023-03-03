@@ -9,6 +9,7 @@ import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug } from 'sc-changelog/utils/stringUtils';
 import { LinkValue } from 'ui/common/types/link-value';
 import { Dropdown } from 'ui/components/dropdown/Dropdown';
+import { ChangelogEntryList } from '../../../../../packages/sc-changelog/types/changeLogEntry';
 import ChangeLogItem from './ChangeLogItem';
 
 type ChangelogListProps = {
@@ -27,7 +28,7 @@ const changes: LinkValue[] = ChangeTypes.map((x) => {
 });
 
 const ChangelogList = ({ className, product, changeType }: ChangelogListProps): JSX.Element => {
-  const [fetchedResults, setFetchedResults] = useState<ChangelogEntry[] | null>(null);
+  const [fetchedResults, setFetchedResults] = useState<ChangelogEntryList<ChangelogEntry[]>>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
 
@@ -49,7 +50,7 @@ const ChangelogList = ({ className, product, changeType }: ChangelogListProps): 
       .catch((err) => console.log(err));
   }, [product, changeType]);
 
-  const data = fetchedResults || [];
+  const data = fetchedResults ? fetchedResults.entries : [];
 
   return (
     <div className={`${className}`}>

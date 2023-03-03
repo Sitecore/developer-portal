@@ -1,7 +1,7 @@
 import { getChangelogProductPaths } from '@/src/common/static-paths';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogList from '@/src/components/changelog/ChangelogList';
-import { ChangeTypeConfig, ProductConfig } from 'sc-changelog/configuration';
+import { ProductConfig } from 'sc-changelog/configuration';
 import Products from 'sc-changelog/constants/products';
 import { getSlug } from 'sc-changelog/utils/stringUtils';
 import Container from 'ui/components/common/Container';
@@ -33,7 +33,6 @@ export async function getStaticProps(context: any) {
   return {
     props: {
       currentProduct,
-      //currentChangeType,
     },
     revalidate: 600, // 10 minutes
   };
@@ -41,10 +40,9 @@ export async function getStaticProps(context: any) {
 
 type ChangelogProps = {
   currentProduct: ProductConfig;
-  currentChangeType: ChangeTypeConfig;
 };
 
-const ChangelogHome = ({ currentProduct, currentChangeType }: ChangelogProps) => {
+const ChangelogHome = ({ currentProduct }: ChangelogProps) => {
   return (
     <Layout title="Release Notes - Home" description="Empty">
       <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
@@ -55,7 +53,7 @@ const ChangelogHome = ({ currentProduct, currentChangeType }: ChangelogProps) =>
               <ChangelogList product={currentProduct.name} />
             </div>
             <div className="col-span-2 h-[calc(100vh-597px)]">
-              <ChangelogByMonth />
+              <ChangelogByMonth product={currentProduct.name} />
             </div>
           </div>
         </Container>

@@ -31,7 +31,7 @@ const ChangeLogItem = ({ item, loading }: ChangeLogItemProps): JSX.Element => {
                 </div>
               </>
             )}
-            <div className="ml-6 text-xs">{item.sitecoreProduct[0].name}</div>
+            <div className="ml-6 text-xs">{item.productName}</div>
           </div>
           <time className={`text-xs ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dateTime="2022-10-21T15:48:00.000Z">
             {item.releaseDate}

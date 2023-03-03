@@ -1,3 +1,4 @@
+import { ChangelogEntry } from '@/../../packages/sc-changelog/types/changeLogEntry';
 import { getChangelogProductChangeTypePaths } from '@/src/common/static-paths';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogList from '@/src/components/changelog/ChangelogList';
@@ -40,6 +41,7 @@ export async function getStaticProps(context: any) {
 }
 
 type ChangelogProps = {
+  items: ChangelogEntry[];
   currentProduct: ProductConfig;
   currentChangeType: ChangeTypeConfig;
 };
@@ -55,7 +57,7 @@ const ChangelogHome = ({ currentProduct, currentChangeType }: ChangelogProps) =>
               <ChangelogList product={currentProduct.name} changeType={currentChangeType.name} />
             </div>
             <div className="col-span-2 h-[calc(100vh-597px)]">
-              <ChangelogByMonth />
+              <ChangelogByMonth product={currentProduct.name} changeType={currentChangeType.name} />
             </div>
           </div>
         </Container>

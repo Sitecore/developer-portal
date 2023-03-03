@@ -1,7 +1,7 @@
 import { getProductChangeLogEntryPaths } from '@/src/common/static-paths';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import Image from 'next/image';
-import { GetChangelogEntry } from 'sc-changelog/changelog';
+import { ChangelogEntryByTitle } from 'sc-changelog/changelog';
 import { ChangeTypeConfig, ProductConfig } from 'sc-changelog/configuration';
 import ChangeTypes from 'sc-changelog/constants/changeTypes';
 import Products from 'sc-changelog/constants/products';
@@ -31,12 +31,7 @@ export async function getStaticProps(context: any) {
   const currentChangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => getSlug(x.name) == changeType);
   const entryPhrase = entry.replaceAll('-', ' ');
 
-  if (currentProduct == undefined || currentChangeType == undefined)
-    return {
-      notFound: true,
-    };
-
-  const changelogEntry = await GetChangelogEntry(entryPhrase, currentProduct.entityId, currentChangeType.entityId);
+  const changelogEntry = await ChangelogEntryByTitle(entryPhrase, currentProduct?.entityId, currentChangeType?.entityId);
 
   return {
     props: {

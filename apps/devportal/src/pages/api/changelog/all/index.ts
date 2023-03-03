@@ -13,8 +13,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Record<string, 
   const changeTypeId = currentChangeType != null ? currentChangeType.entityId : '';
 
   const items = await GetSummaryLatestItemsByProductAndChangeType(productId, changeTypeId);
+  const entries: ChangelogEntrySummary[] = items.entries;
 
-  const groupedObjects = items.reduce((collection, obj) => {
+  const groupedObjects = entries.reduce((collection, obj) => {
     const monthYear = new Date(obj.releaseDate).toLocaleString('en-US', { month: 'short', year: 'numeric' });
     if (!collection[monthYear]) {
       collection[monthYear] = [];

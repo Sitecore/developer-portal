@@ -9,11 +9,11 @@ import ProductIcon from 'ui/components/common/ProductIcon';
 
 type ChangelogByMonthProps = {
   className?: string;
-  productName?: string;
+  product?: string;
   changeType?: string;
 };
 
-const ChangelogByMonth = ({ className, productName, changeType }: ChangelogByMonthProps): JSX.Element => {
+const ChangelogByMonth = ({ className, product, changeType }: ChangelogByMonthProps): JSX.Element => {
   const [fetchedResults, setFetchedResults] = useState<Record<string, ChangelogEntrySummary[]> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent hover:text-transparent';
@@ -21,8 +21,8 @@ const ChangelogByMonth = ({ className, productName, changeType }: ChangelogByMon
   useEffect(() => {
     setIsLoading(true);
     const query: string[] = [];
-    if (productName) {
-      query.push(`product=${productName}`);
+    if (product) {
+      query.push(`product=${product}`);
     }
     if (changeType) {
       query.push(`changeType=${changeType}`);

@@ -2,29 +2,97 @@ import { CHANGELOG_QUERY, CHANGELOG_SUMMARY_QUERY } from '../graphQl/changelog-q
 import Changelog, { ChangelogBase, ChangelogList } from '../types/changelog';
 import { fetchAPI } from './common/api';
 
-export async function getSearchResultsChangelogs(searchTerm: string, changeTypeId: string, sitecoreProductid: string, summary?: boolean): Promise<Changelog[]> {
-  let searchQuery = '';
+export async function PaginatedSearch(pageSize: number, endCursor: string, productId?: string, changeTypeId?: string) {
+  if (!pageSize) pageSize = 10;
 
-  const whereClause = getChangelogSearchWhereClause(searchTerm, changeTypeId, sitecoreProductid);
+  return Search(productId, changeTypeId, undefined, undefined, pageSize, endCursor);
+}
 
-  let query = CHANGELOG_QUERY;
-
-  if (summary == true) {
-    query = CHANGELOG_SUMMARY_QUERY;
-  }
-
-  searchQuery = `{ 
-      data: allChangelog ${whereClause}
-      {total
-        results{
-          ${query}
+export async function Search(productId?: string, changeTypeId?: string, summary?: boolean, searchTerm?: string, pageSize?: number, endCursor?: string) {
+  const searchQuery = `
+    { 
+      data: allChangelog (
+          orderBy: RELEASEDATE_DESC
+          ${buildParameters(productId, changeTypeId, searchTerm, pageSize, endCursor)}
+        ) {
+          pageInfo {
+            hasNext
+            endCursor
+          }
+          total
+          results{
+            ${summary ? CHANGELOG_SUMMARY_QUERY : CHANGELOG_QUERY}
+          }
         }
       }
-    }`;
-
-  const data = await fetchAPI(searchQuery);
-  return extractPosts(data.data);
+  `;
+  const response = await fetchAPI(searchQuery);
+  return response.data;
 }
+
+function buildParameters(productId?: string, changeTypeId?: string, searchTerm?: string, pageSize?: number, endCursor?: string): string {
+  let parameters = ``;
+
+  if (pageSize) parameters += `first: ${pageSize} \n`;
+  if (endCursor) parameters += `after: "${endCursor}" \n`;
+
+  parameters += buildWhereClause(searchTerm, productId, changeTypeId);
+  return parameters;
+}
+
+/*
+  Building the complex WHERE clause based on parameters
+*/
+function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?: string) {
+  if (!searchTerm && !productId && !changeTypeId) return '';
+
+  let whereClause = `where: { AND: [`;
+  whereClause += buildChangeTypeClause(changeTypeId);
+  whereClause += buildProductIdClause(productId);
+  whereClause += buildSearchTermClause(searchTerm);
+  whereClause += `]}`;
+
+  return whereClause;
+}
+
+/*
+  Handle each parameter
+*/
+
+function buildSearchTermClause(searchTerm?: string): string {
+  let whereClauseSearchTerm = '';
+
+  if (!searchTerm) return whereClauseSearchTerm;
+
+  // We want each word to match therefore grouping by AND operator
+  whereClauseSearchTerm += `{ AND: [`;
+
+  // Making sure to validate each word in case we have a phrase as search term
+  const searchArray = searchTerm.split(' ');
+
+  searchArray.forEach((term: string) => {
+    whereClauseSearchTerm += `{title_contains: "${term}"}`;
+  });
+
+  whereClauseSearchTerm += `]}`;
+  return whereClauseSearchTerm;
+}
+
+function buildChangeTypeClause(changeTypeId?: string): string {
+  if (!changeTypeId || changeTypeId == undefined) return '';
+
+  return `{changeType: { changelog_ids: "${changeTypeId}"}}`;
+}
+
+function buildProductIdClause(productId?: string): string {
+  if (!productId || productId == undefined) return '';
+
+  return `{sitecoreProduct: { changelog_ids: "${productId}"}}`;
+}
+
+/*
+  Extracting the raw data into changelog items
+*/
 
 export function extractBasePosts({ data }: { data: ChangelogList }) {
   return data.results.map((post: ChangelogBase) => {
@@ -35,74 +103,4 @@ export function extractPosts({ data }: { data: ChangelogList }) {
   return data.results.map((post: Changelog) => {
     return post;
   });
-}
-
-function getChangelogSearchWhereClause(searchTerm: string, changeTypeId: string, sitecoreProductid: string) {
-  //validate search Terms and build query accordingly.
-  let whereClause = '';
-  let whereClauseSearchTerm = '';
-
-  let searchTermSet = false;
-  let changeTypeFaceSet = false;
-  let sitecoreProductFacetSet = false;
-
-  //null-checks
-  if (searchTerm != undefined && searchTerm != null) {
-    searchTermSet = true;
-  }
-  if (changeTypeId != null && changeTypeId != '0') {
-    changeTypeFaceSet = true;
-  }
-  if (sitecoreProductid != null && sitecoreProductid != '0') {
-    sitecoreProductFacetSet = true;
-  }
-  if (searchTermSet) {
-    if (searchTerm.split(' ').length == 0) {
-      whereClauseSearchTerm = `{AND:[
-        {name_contains: "${searchTerm}"}
-        {title_contains: "${searchTerm}"}     				
-      ]}`;
-    } else {
-      const searchArray = searchTerm.split(' ');
-      const termClause: string[] = [];
-
-      //searchArray.forEach((term: string) => {
-      //        termClause.push(`{name_contains: "${term}"}`);
-      //    });
-      searchArray.forEach((term: string) => {
-        termClause.push(`{title_contains: "${term}"}`);
-      });
-
-      whereClauseSearchTerm = `{AND:[
-        ${termClause.join()}
-      ]}`;
-    }
-  }
-
-  if (searchTermSet || changeTypeFaceSet || sitecoreProductFacetSet) {
-    //build where clause if any is set
-    whereClause = `(where:`;
-    if (changeTypeFaceSet || sitecoreProductFacetSet) {
-      whereClause = whereClause + `{AND: [`;
-
-      if (changeTypeFaceSet) {
-        whereClause = whereClause + `{changeType: { changelog_ids: "${changeTypeId}"}}`;
-      }
-      if (sitecoreProductFacetSet) {
-        whereClause = whereClause + `{sitecoreProduct: {changelog_ids: "${sitecoreProductid}"}}`;
-      }
-
-      if (searchTermSet) {
-        whereClause = whereClause + whereClauseSearchTerm;
-      }
-
-      whereClause = whereClause + `]}`;
-    } else if (searchTermSet) {
-      whereClause = whereClause + whereClauseSearchTerm;
-    }
-
-    whereClause = whereClause + `)`;
-  }
-
-  return whereClause;
 }
