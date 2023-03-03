@@ -4,7 +4,6 @@ import { ChangelogEntry, ChangelogEntryList, ChangelogEntrySummary, parseChangeL
 
 export async function AllChangelogEntries(): Promise<ChangelogEntryList<ChangelogEntry[]>> {
   const response = await Search();
-  console.log({ response });
   return ParseRawData(response.data);
 }
 
