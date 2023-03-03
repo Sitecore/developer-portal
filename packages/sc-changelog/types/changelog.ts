@@ -22,7 +22,13 @@ type Changelog = ChangelogBase & {
 
 export default Changelog;
 
+export type pageInfo = {
+  hasNext: boolean;
+  endCursor: string;
+};
+
 export type ChangelogList = {
-  total: string;
+  pageInfo: pageInfo;
+  total: number;
   results: Changelog[];
 };

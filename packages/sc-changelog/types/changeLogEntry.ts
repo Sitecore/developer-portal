@@ -1,10 +1,17 @@
 import { generateHTML } from '@tiptap/html';
 import { GetChangeTypeById, GetProductByProductId } from '../constants/products';
 import { richTextProfile } from '../lib/common/richTextConfiguration';
-import Changelog, { ChangelogBase } from './changelog';
+import Changelog, { ChangelogBase, ChangelogList } from './changelog';
 import ChangeType from './changeType';
 import { Media } from './index';
 import SitecoreProduct from './sitecoreProduct';
+
+export type ChangelogEntryList<T> = {
+  total: number;
+  hasNext: boolean;
+  endCursor: string;
+  entries: T;
+};
 
 export type ChangelogEntrySummary = {
   id: string;
@@ -26,16 +33,26 @@ export type ChangelogEntry = ChangelogEntrySummary & {
   image: Media[];
 };
 
-export function ParseRawData(data: Changelog[]): ChangelogEntry[] {
-  return data.map((item: Changelog) => {
-    return parseChangeLogItem(item);
-  });
+export function ParseRawData(data: ChangelogList): ChangelogEntryList<ChangelogEntry[]> {
+  return {
+    endCursor: data.pageInfo.endCursor,
+    hasNext: data.pageInfo.hasNext,
+    total: data.total,
+    entries: data.results.map((item: Changelog) => {
+      return parseChangeLogItem(item);
+    }),
+  };
 }
 
-export function ParseRawSummaryData(data: ChangelogBase[]): ChangelogEntrySummary[] {
-  return data.map((item: ChangelogBase) => {
-    return parseChangeLogSummaryItem(item);
-  });
+export function ParseRawSummaryData(data: ChangelogList): ChangelogEntryList<ChangelogEntrySummary[]> {
+  return {
+    endCursor: data.pageInfo.endCursor,
+    hasNext: data.pageInfo.hasNext,
+    total: data.total,
+    entries: data.results.map((item: Changelog) => {
+      return parseChangeLogSummaryItem(item);
+    }),
+  };
 }
 
 function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySummary {
@@ -43,9 +60,9 @@ function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySumm
     id: changelog.id,
     title: changelog.title,
     releaseDate: new Date(changelog.releaseDate).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' }),
-    imageId: GetProductByProductId(changelog.sitecoreProduct.results[0].id)?.imageId,
-    productName: GetProductByProductId(changelog.sitecoreProduct.results[0].id)?.name ?? '',
-    changeTypeName: GetChangeTypeById(changelog.changeType.results[0].id)?.name ?? '',
+    imageId: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.imageId,
+    productName: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.name ?? '',
+    changeTypeName: GetChangeTypeById(changelog.changeType.results[0]?.id)?.name ?? '',
   };
 }
 
@@ -62,8 +79,8 @@ export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     version: changelog.version,
     releaseDate: new Date(changelog.releaseDate).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' }),
     image: changelog.image.results,
-    imageId: GetProductByProductId(changelog.sitecoreProduct.results[0].id)?.imageId,
-    productName: GetProductByProductId(changelog.sitecoreProduct.results[0].id)?.name ?? '',
-    changeTypeName: GetChangeTypeById(changelog.changeType.results[0].id)?.name ?? '',
+    imageId: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.imageId,
+    productName: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.name ?? '',
+    changeTypeName: GetChangeTypeById(changelog.changeType.results[0]?.id)?.name ?? '',
   };
 }

@@ -1,4 +1,3 @@
-import { GetAllChangelogEntries } from '@/../../packages/sc-changelog/changelog';
 import { ChangelogEntry } from '@/../../packages/sc-changelog/types/changeLogEntry';
 import { getChangelogProductChangeTypePaths } from '@/src/common/static-paths';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
@@ -32,11 +31,8 @@ export async function getStaticProps(context: any) {
       notFound: true,
     };
 
-  const items: ChangelogEntry[] = await GetAllChangelogEntries(currentProduct.entityId, currentChangeType.entityId);
-
   return {
     props: {
-      items,
       currentProduct,
       currentChangeType,
     },
@@ -50,7 +46,7 @@ type ChangelogProps = {
   currentChangeType: ChangeTypeConfig;
 };
 
-const ChangelogHome = ({ currentProduct, currentChangeType, items }: ChangelogProps) => {
+const ChangelogHome = ({ currentProduct, currentChangeType }: ChangelogProps) => {
   return (
     <Layout title="Release Notes - Home" description="Empty">
       <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
@@ -58,10 +54,10 @@ const ChangelogHome = ({ currentProduct, currentChangeType, items }: ChangelogPr
         <Container>
           <div className="mt-8 grid gap-16 md:grid-cols-5">
             <div className="col-span-3">
-              <ChangelogList product={currentProduct.name} changeType={currentChangeType.name} items={items} />
+              <ChangelogList product={currentProduct.name} changeType={currentChangeType.name} />
             </div>
             <div className="col-span-2 h-[calc(100vh-597px)]">
-              <ChangelogByMonth />
+              <ChangelogByMonth product={currentProduct.name} changeType={currentChangeType.name} />
             </div>
           </div>
         </Container>
