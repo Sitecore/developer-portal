@@ -70,7 +70,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
         </div>
       )}
 
-      <div className={`my-3 text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
+      <div className={`prose my-3 text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
       <span className={`${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
         <TextLink className="font-medium" href="/" text="Read more" />
       </span>
