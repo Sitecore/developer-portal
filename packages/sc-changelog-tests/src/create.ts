@@ -13,7 +13,7 @@ const client = authenticate(SITECORE_CLIENT_ID, SITECORE_CLIENT_SECRET);
 
 //start(); //create single Changelog item
 //get(); //just a get changelog item example
-iterate(10); //create numerous Changelog items
+iterate(33); //create numerous Changelog items
 
 async function get() {
   const z = await client.contentItems.singleAsync('SEBW-TEST-chlog-1lLEaGl4pAxi8zBUYSMdkF8sMppMOcqh');

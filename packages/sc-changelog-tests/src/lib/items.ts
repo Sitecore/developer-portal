@@ -1,7 +1,11 @@
 import { ContentItem, ContentItemSearchField, ContentItemSearchRequest, Equality, IContentHubOneClient } from '@sitecore/contenthub-one-sdk';
 
-export async function getItems(client: IContentHubOneClient, contentType: string) {
-  const items = await client.contentItems.getAsync(new ContentItemSearchRequest().withFieldQuery(ContentItemSearchField.contentType, Equality.Equals, contentType));
+export async function getItems(client: IContentHubOneClient, contentType: string, pagesize: number, pagenumber: number) {
+  const items = await client.contentItems.getAsync(
+    new ContentItemSearchRequest().withFieldQuery(
+      ContentItemSearchField.contentType, 
+      Equality.Equals, 
+      contentType).withPageSize(pagesize).withPageNumber(pagenumber));
   return items;
 }
 
