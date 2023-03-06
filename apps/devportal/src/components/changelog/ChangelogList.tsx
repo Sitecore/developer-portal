@@ -33,6 +33,11 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
 
   const loadData = useRef(true);
 
+  function updateData() {
+    loadData.current = true;
+    setReload(true);
+  }
+
   function handleApplyFilter(filter: string, selectedValue: string) {
     loadData.current = true;
     if (filter == 'changeType') setChangeType(selectedValue);
@@ -65,6 +70,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
 
     if (loadData.current) {
       loadData.current = false;
+      if (fetchedResults.length == 0) setIsLoading(true);
       axios
         .get(`/api/changelog?${query.join('&')}`)
         .then((response) => {
@@ -96,16 +102,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
         <Dropdown options={changes} initialText="All changes" onSelectChange={(selectedValue) => handleApplyFilter('changeType', selectedValue)} />
       </div>
       {data.map((item, i) => (
-        <ChangeLogItem
-          item={item}
-          key={i}
-          loading={isLoading}
-          isLast={i === data.length - 1}
-          loadEntries={() => {
-            loadData.current = true;
-            setReload(true);
-          }}
-        />
+        <ChangeLogItem item={item} key={i} loading={isLoading} isLast={i === data.length - 1} loadEntries={() => updateData()} />
       ))}
       {isLoading && (
         <div role="status" className="position-center mt-16 text-center align-middle">
@@ -123,7 +120,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
         </div>
       )}
 
-      {!reload || (!isLoading && <span className={`bg-violet mt-5 inline-block w-full rounded-md py-2 px-3 text-xs text-white`}>No more results</span>)}
+      {reload == false && cursor == null && !isLoading && fetchedResults.length > 0 && <span className={`border-violet text-violet mt-5 inline-block w-full border-2 py-2 px-3 text-center text-sm`}>No more results</span>}
     </div>
   );
 };
