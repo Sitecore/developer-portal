@@ -36,8 +36,13 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
 
   return (
     <div className=" bg-theme-bg mt-8 mb-16" ref={entryRef}>
-      <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
+      <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} id={getSlug(item.title)}>
         <Link href={createChangelogEntryUrl(item)}>{item.title}</Link>
+        <a className="anchor" title="Quick link to category" href={`#${getSlug(item.title)}`}>
+          <svg width="16" height="16" viewBox="0 0 16 16" display="inline">
+            <use xlinkHref="#link-icon" href="#link-icon"></use>
+          </svg>
+        </a>
       </h2>
       <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
         <div className="flex items-center gap-5">
@@ -71,9 +76,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
       )}
 
       <div className={`prose my-3 text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
-      <span className={`${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
-        <TextLink className="font-medium" href="/" text="Read more" />
-      </span>
+      <span className={`${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>{item.readMoreLink && <TextLink className="font-medium" href={item.readMoreLink} text="Read more" />}</span>
     </div>
   );
 };

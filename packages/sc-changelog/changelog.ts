@@ -30,6 +30,6 @@ export async function ChangelogEntryByTitle(entryTitle: string, productId?: stri
 }
 
 export async function GetSummaryLatestItemsByProductAndChangeType(productId?: string, changeTypeId?: string): Promise<ChangelogEntryList<ChangelogEntrySummary[]>> {
-  const response = await Search(productId, changeTypeId, true);
+  const response = await Search(productId, changeTypeId, true, undefined, 50);
   return ParseRawSummaryData(response.data);
 }
