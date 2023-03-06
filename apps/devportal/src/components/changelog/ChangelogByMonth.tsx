@@ -40,9 +40,9 @@ const ChangelogByMonth = ({ className, product, changeType }: ChangelogByMonthPr
 
   return (
     <div className={`${className}`}>
-      {Object.entries(data).map(([month, changelogItems]) => (
-        <>
-          <h3 key={month} className={`text-charcoal-light my-4 text-xs font-semibold uppercase ${isLoading ? 'w-12' && skeletonLoaderClasses : ''}`}>
+      {Object.entries(data).map(([month, changelogItems], i) => (
+        <div key={i}>
+          <h3 key={i} className={`text-charcoal-light my-4 text-xs font-semibold uppercase ${isLoading ? 'w-12' && skeletonLoaderClasses : ''}`}>
             {month}
           </h3>
           {changelogItems.map((item, index) => (
@@ -66,7 +66,7 @@ const ChangelogByMonth = ({ className, product, changeType }: ChangelogByMonthPr
               </div>
             </div>
           ))}
-        </>
+        </div>
       ))}
     </div>
   );
