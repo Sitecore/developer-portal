@@ -1,6 +1,8 @@
+import { getSlug } from '@/../../packages/sc-changelog/utils/stringUtils';
 import { createChangelogEntryUrl } from '@/src/common/changelog';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import ProductIcon from 'ui/components/common/ProductIcon';
 import TextLink from 'ui/components/common/TextLink';
@@ -8,31 +10,52 @@ import TextLink from 'ui/components/common/TextLink';
 export type ChangeLogItemProps = {
   item: ChangelogEntry;
   loading: boolean;
+  isLast: boolean;
+  loadEntries: () => void;
 };
 
 const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent hover:text-transparent';
 
-const ChangeLogItem = ({ item, loading }: ChangeLogItemProps): JSX.Element => {
+const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProps): JSX.Element => {
+  const entryRef = useRef(null);
+  /**
+   * Implement Intersection Observer to check if the last item in the array is visible on the screen, then set a new limit
+   */
+  useEffect(() => {
+    if (!entryRef?.current) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (isLast && entry.isIntersecting) {
+        loadEntries();
+        observer.unobserve(entry.target);
+      }
+    });
+
+    observer.observe(entryRef.current);
+  }, [isLast]);
+
   return (
-    <div className=" bg-theme-bg mt-8 mb-16">
+    <div className=" bg-theme-bg mt-8 mb-16" ref={entryRef}>
       <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
         <Link href={createChangelogEntryUrl(item)}>{item.title}</Link>
       </h2>
       <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
         <div className="flex items-center gap-5">
-          <div className={`text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
-            {item.imageId && (
-              <>
-                <div className="absolute h-5 w-5 dark:hidden">
-                  <ProductIcon product={item.imageId} variant="Light" className={`relative h-5 w-5 ${loading ? 'hidden' : ''}`} />
-                </div>
-                <div className="absolute hidden h-5 w-5 dark:block">
-                  <ProductIcon product={item.imageId} variant="Dark" className={`relative h-5 w-5 ${loading ? 'hidden' : ''}`} />
-                </div>
-              </>
-            )}
-            <div className="ml-6 text-xs">{item.productName}</div>
-          </div>
+          <Link href={`/changelog/${getSlug(item.productName)}`}>
+            <div className={`text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
+              {item.imageId && (
+                <>
+                  <div className="absolute h-5 w-5 dark:hidden">
+                    <ProductIcon product={item.imageId} variant="Light" className={`relative h-5 w-5 ${loading ? 'hidden' : ''}`} />
+                  </div>
+                  <div className="absolute hidden h-5 w-5 dark:block">
+                    <ProductIcon product={item.imageId} variant="Dark" className={`relative h-5 w-5 ${loading ? 'hidden' : ''}`} />
+                  </div>
+                </>
+              )}
+              <div className="ml-6 text-xs">{item.productName}</div>
+            </div>
+          </Link>
           <time className={`text-xs ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dateTime="2022-10-21T15:48:00.000Z">
             {item.releaseDate}
           </time>
@@ -48,7 +71,9 @@ const ChangeLogItem = ({ item, loading }: ChangeLogItemProps): JSX.Element => {
       )}
 
       <div className={`my-3 text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
-      <TextLink className="font-medium" href="/" text="Read more" />
+      <span className={`${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
+        <TextLink className="font-medium" href="/" text="Read more" />
+      </span>
     </div>
   );
 };

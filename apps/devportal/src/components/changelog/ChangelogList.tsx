@@ -1,75 +1,112 @@
 import SvgIcon from '@/../../packages/ui/components/common/SvgIcon';
 import axios from 'axios';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ChangeTypes from 'sc-changelog/constants/changeTypes';
 import Products from 'sc-changelog/constants/products';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { getSlug } from 'sc-changelog/utils/stringUtils';
-import { LinkValue } from 'ui/common/types/link-value';
-import { Dropdown } from 'ui/components/dropdown/Dropdown';
-import { ChangelogEntryList } from '../../../../../packages/sc-changelog/types/changeLogEntry';
+import { Dropdown, DropDownOption } from 'ui/components/dropdown/Dropdown';
 import ChangeLogItem from './ChangeLogItem';
 
 type ChangelogListProps = {
   className?: string;
-  items?: ChangelogEntry[];
-  product?: string;
-  changeType?: string;
+  initialProduct?: string;
+  intialChangeType?: string;
 };
 
-const products: LinkValue[] = Products.map((x) => {
-  return { href: getSlug(x.name), text: x.name };
+const products: DropDownOption[] = Products.map((x) => {
+  return { value: x.name, text: x.name };
 });
 
-const changes: LinkValue[] = ChangeTypes.map((x) => {
-  return { href: getSlug(x.name), text: x.name };
+const changes: DropDownOption[] = ChangeTypes.map((x) => {
+  return { value: x.name, text: x.name };
 });
 
-const ChangelogList = ({ className, product, changeType }: ChangelogListProps): JSX.Element => {
-  const [fetchedResults, setFetchedResults] = useState<ChangelogEntryList<ChangelogEntry[]>>();
+const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.Element => {
+  const [fetchedResults, setFetchedResults] = useState<ChangelogEntry[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const router = useRouter();
+  const [changeType, setChangeType] = useState<string | undefined>(undefined);
+  const [product, setProduct] = useState<string | undefined>(undefined);
+  const [cursor, setCursor] = useState<string>();
+  const [reload, setReload] = useState<boolean>(false);
+  const [clearResults, setClearResults] = useState<boolean>(false);
 
-  useEffect(() => {
+  const loadData = useRef(true);
+
+  function handleApplyFilter(filter: string, selectedValue: string) {
+    loadData.current = true;
+    if (filter == 'changeType') setChangeType(selectedValue);
+    if (filter == 'product') setProduct(selectedValue);
+    setClearResults(true);
     setIsLoading(true);
+  }
+
+  function getParameters(): string[] {
     const query = [];
+
+    // Preset to specific product
+    if (initialProduct) query.push(`product=${initialProduct}`);
+
     if (product) {
       query.push(`product=${product}`);
     }
+
     if (changeType) {
       query.push(`changeType=${changeType}`);
     }
-    axios
-      .get(`/api/changelog?${query.join('&')}`)
-      .then((response) => {
-        setFetchedResults(response.data);
-        setIsLoading(false);
-      })
-      .catch((err) => console.log(err));
-  }, [product, changeType]);
 
-  const data = fetchedResults ? fetchedResults.entries : [];
+    if (reload) query.push(`end=${cursor}`);
+    query.push(`limit=5`);
+    return query;
+  }
+
+  useEffect(() => {
+    const query = getParameters();
+
+    if (loadData.current) {
+      loadData.current = false;
+      axios
+        .get(`/api/changelog?${query.join('&')}`)
+        .then((response) => {
+          clearResults ? setFetchedResults(response.data.entries) : setFetchedResults((prev) => [...prev, ...response.data.entries]);
+          setCursor(response.data.endCursor);
+          // We are at the final results
+          if (cursor != null) setReload(false);
+          setIsLoading(false);
+          setClearResults(false);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [reload, changeType, product]);
+
+  const data = fetchedResults ? fetchedResults : [];
 
   return (
     <div className={`${className}`}>
       <div className="flex flex-row">
-        {product && (
+        {initialProduct && (
           <div className="bg-violet-lighter text-violet mr-2 inline-block rounded-md p-3 text-sm">
-            <strong>Product:</strong> {product}
+            <strong>Product:</strong> {initialProduct}
             <Link href="/changelog">
               <SvgIcon icon="close" width={24} height={24} className="text-violet dark:text-red relative -top-0.5 left-1 inline-block h-5 w-5" />
             </Link>
           </div>
         )}
-        {!product && <Dropdown options={products} initialText="All Products" onSelectChange={(selectedValue) => router.push(`/changelog/${selectedValue}`)} />}
-        <Dropdown options={changes} initialText="All changes" onSelectChange={(selectedValue) => router.push(`${router.asPath}/${selectedValue}`)} />
+        {!initialProduct && <Dropdown options={products} initialText="All Products" onSelectChange={(selectedValue) => handleApplyFilter('product', selectedValue)} />}
+        <Dropdown options={changes} initialText="All changes" onSelectChange={(selectedValue) => handleApplyFilter('changeType', selectedValue)} />
       </div>
       {data.map((item, i) => (
-        <ChangeLogItem item={item} key={i} loading={isLoading} />
+        <ChangeLogItem
+          item={item}
+          key={i}
+          loading={isLoading}
+          isLast={i === data.length - 1}
+          loadEntries={() => {
+            loadData.current = true;
+            setReload(true);
+          }}
+        />
       ))}
-
       {isLoading && (
         <div role="status" className="position-center mt-16 text-center align-middle">
           <svg aria-hidden="true" className="fill-violet mr-2 inline h-8 w-8 animate-spin text-white dark:text-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +123,7 @@ const ChangelogList = ({ className, product, changeType }: ChangelogListProps): 
         </div>
       )}
 
-      {!isLoading && data.length == 0 && <span className={`bg-violet mt-5 inline-block w-full rounded-md py-2 px-3 text-xs text-white`}>No results found</span>}
+      {!reload || (!isLoading && <span className={`bg-violet mt-5 inline-block w-full rounded-md py-2 px-3 text-xs text-white`}>No more results</span>)}
     </div>
   );
 };

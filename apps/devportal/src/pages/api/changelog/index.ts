@@ -13,12 +13,10 @@ const getQueryValue = (query: string | string[] | undefined): string => {
 };
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
-  //const maxResults = parseInt(getQueryValue(req.query.maxResults), 10);
-
   const currentChangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => x.name == req.query.changeType);
   const currentProduct: ProductConfig | undefined = Products.find((x) => x.name == req.query.product);
 
-  const limit = getQueryValue(req.query.limit);
+  const limit: string = getQueryValue(req.query.limit);
   const end = getQueryValue(req.query.end);
 
   const productId = currentProduct != null ? currentProduct.entityId : '';

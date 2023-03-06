@@ -1,7 +1,11 @@
-import { LinkValue } from '../../common/types/link-value';
+export type DropDownOption = {
+  text: string;
+  value: string;
+  selected?: boolean;
+};
 
 type DropDownProps = {
-  options: LinkValue[];
+  options: DropDownOption[];
   label?: string;
   initialText?: string;
   onSelectChange: (selectedValue: string) => void;
@@ -19,7 +23,7 @@ export const Dropdown = ({ options, label, initialText, onSelectChange }: DropDo
 
       {options.map((item, index) => {
         return (
-          <option value={item.href} key={index}>
+          <option value={item.value} key={index} selected={item.selected}>
             {item.text}
           </option>
         );

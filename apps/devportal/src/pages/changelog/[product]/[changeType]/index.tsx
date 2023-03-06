@@ -54,7 +54,7 @@ const ChangelogHome = ({ currentProduct, currentChangeType }: ChangelogProps) =>
         <Container>
           <div className="mt-8 grid gap-16 md:grid-cols-5">
             <div className="col-span-3">
-              <ChangelogList product={currentProduct.name} changeType={currentChangeType.name} />
+              <ChangelogList initialProduct={currentProduct.name} intialChangeType={currentChangeType.name} />
             </div>
             <div className="col-span-2 h-[calc(100vh-597px)]">
               <ChangelogByMonth product={currentProduct.name} changeType={currentChangeType.name} />
