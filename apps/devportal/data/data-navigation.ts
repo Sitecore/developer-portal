@@ -471,8 +471,4 @@ export const mainNavigation: NavigationData[] = [
       },
     ],
   },
-  {
-    title: 'Changelog',
-    url: '/changelog',
-  },
 ];

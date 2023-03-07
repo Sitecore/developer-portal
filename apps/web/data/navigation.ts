@@ -40,19 +40,19 @@ export const sitecoreQuickLinks: NavigationData = {
 
 export const mainNavigation: NavigationData[] = [
   {
-    title: 'Changelog',
-    url: '/changelog',
+    title: 'Home',
+    url: '/',
   },
   {
-    title: 'By product',
+    title: 'Sub page header',
     children: [
       {
-        title: 'Content Hub One',
-        url: '/changelog/contenthub-one',
+        title: 'Page 1',
+        url: '/page1',
       },
       {
-        title: 'CDP',
-        url: '/changelog/cdp',
+        title: 'Page 2',
+        url: '/page2',
       },
     ],
   },
