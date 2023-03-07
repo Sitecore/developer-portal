@@ -1,11 +1,11 @@
 import { BooleanField, ContentItem, DateTimeField, MediaField, ReferenceField, RichTextField, ShortTextField } from '@sitecore/contenthub-one-sdk';
-import { SITECORE_CLIENT_ID, SITECORE_CLIENT_SECRET } from './constants';
 import { authenticate } from './lib/auth';
 import { getRandomChangeType, getRandomProduct } from './lib/changelog';
 import { createItem } from './lib/items';
 import { getMediaItem } from './lib/media';
 import { generateItemId, generateRandomDate } from './lib/random';
 import { getRichText } from './lib/richText';
+import { SITECORE_CLIENT_ID, SITECORE_CLIENT_SECRET } from './lib/secrets';
 
 console.log('START');
 
