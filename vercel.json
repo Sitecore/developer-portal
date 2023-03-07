@@ -1,0 +1,7 @@
+{
+  "github": {
+    "enabled": false
+  },
+  "buildCommand": "cd ../.. && npx turbo run build --filter={/apps/devportal}...",
+  "installCommand": "npm install --prefix=../.."
+}
