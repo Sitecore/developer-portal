@@ -1,16 +1,16 @@
 // Global
 // Interfaces
 import type { PageInfo, PagePartialGroup, PartialData } from '@/src/interfaces/page-info';
+import VerticalGroup from 'ui/components/common/VerticalGroup';
+import Layout from 'ui/layouts/Layout';
 // Components
 import MarkdownContent from '@/src/components/common/MarkdownContent';
 import SocialFeeds from '@/src/components/integrations/SocialFeeds';
 import InPageNav from '@/src/components/sidebar-nav/InPageNav';
 import PromoCard, { PromoCardProps } from 'ui/components/cards/PromoCard';
 import Container from 'ui/components/common/Container';
-import VerticalGroup from 'ui/components/common/VerticalGroup';
 import SectionHeading from 'ui/components/headings/SectionHeading';
 import Hero from 'ui/components/heros/Hero';
-import Layout from 'ui/layouts/Layout';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -25,11 +25,7 @@ type GenericContentPageProps = {
 
 const hasGridClasses = 'bg-theme-bg-alt pt-2 pb-14';
 
-const Content = (
-  partials?: PartialData,
-  partialGroups?: PagePartialGroup[],
-  hasGrid?: boolean
-): JSX.Element => {
+const Content = (partials?: PartialData, partialGroups?: PagePartialGroup[], hasGrid?: boolean): JSX.Element => {
   if (partialGroups) {
     return (
       <VerticalGroup>
@@ -50,16 +46,7 @@ const Content = (
   return <></>;
 };
 
-const GenericContentPage = ({
-  hasGrid,
-  pageInfo,
-  partialGroups,
-  partials,
-  promoAfter,
-  promoBefore,
-  customNav,
-  customNavPager,
-}: GenericContentPageProps) => {
+const GenericContentPage = ({ hasGrid, pageInfo, partialGroups, partials, promoAfter, promoBefore, customNav, customNavPager }: GenericContentPageProps) => {
   if (!partialGroups && !partials) {
     console.warn('GenericContentPage requires either partials or partialGroups');
     return <></>;
@@ -68,17 +55,8 @@ const GenericContentPage = ({
   const Nav = customNav ? customNav : <InPageNav titles={titles} />;
 
   return (
-    <Layout
-      title={pageInfo.pageTitle || pageInfo.title}
-      description={pageInfo.description}
-      openGraphImage={pageInfo.openGraphImage}
-    >
-      <Hero
-        title={pageInfo.title}
-        description={pageInfo.description}
-        image={pageInfo.heroImage}
-        productLogo={pageInfo.productLogo}
-      />
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
       <VerticalGroup>
         {promoBefore && (
           <Container>
@@ -89,7 +67,7 @@ const GenericContentPage = ({
         )}
         <div className={hasGrid ? hasGridClasses : ''}>
           <Container>
-            <div className="mt-8 grid gap-6 md:grid-cols-4">
+            <div className="mt-8 grid-cols-4 gap-6 md:grid">
               {pageInfo.hasInPageNav && Nav}
               <div className={pageInfo.hasInPageNav ? 'col-span-3' : 'col-span-4'}>
                 {Content(partials, partialGroups, hasGrid)}
@@ -100,10 +78,7 @@ const GenericContentPage = ({
         </div>
         <Container>
           <VerticalGroup>
-            {promoAfter &&
-              promoAfter.map((promo, i) => (
-                <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />
-              ))}
+            {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
             <SocialFeeds pageInfo={pageInfo} />
           </VerticalGroup>
         </Container>

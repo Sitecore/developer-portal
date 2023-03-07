@@ -12,16 +12,11 @@ type TextLinkProps = {
 
 const TextLink = ({ text, href, target, className }: TextLinkProps): JSX.Element => {
   return (
-    <Link
-      href={href}
-      target={target}
-      rel="noreferrer noopener"
-      className={`btn-text-link group ${className}`}
-    >
+    <Link href={href} target={target} rel="noreferrer noopener" className={`btn-text-link group ${className}`}>
       {text}
       {target === '_blank' && <span className="sr-only">Opens in a new tab</span>}
       <span className="ml-1 inline-block h-5 w-5 transform-gpu transition-transform duration-300 group-hover:translate-x-1 group-focus:translate-x-1">
-        <SvgIcon icon="arrow-right" className="text-violet dark:text-red relative top-0.5" />
+        <SvgIcon icon="arrow-right" className="text-violet dark:text-red top-0.5" />
       </span>
     </Link>
   );
