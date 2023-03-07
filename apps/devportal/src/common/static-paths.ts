@@ -3,6 +3,13 @@ import fs from 'fs';
 import path from 'path';
 import { CustomNavData } from 'ui/common/types/contentPager';
 
+import { AllChangelogEntries } from 'sc-changelog/changelog';
+import ChangeTypes from 'sc-changelog/constants/changeTypes';
+import Products from 'sc-changelog/constants/products';
+import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
+import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
+import { getChangelogEntryUrlSegments } from './changelog';
+
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
 const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
 const trialPagesDirectory = path.join(process.cwd(), 'data/markdown/pages/trials/');
@@ -137,5 +144,49 @@ export const getNewsletterStaticPaths = (): NewsletterPath[] => {
     });
   });
 
+  return paths;
+};
+
+type ProductChangeLogPaths = { params: { product: string } };
+type ProductChangeLogChangeTypePaths = { params: { product: string; changeType: string } };
+type ProductChangeLogEntryPaths = { params: { product: string; changeType: string; entry: string } };
+
+export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[]> => {
+  const paths: ProductChangeLogPaths[] = [];
+
+  Products.map((p) => {
+    const product = getSlug(p.name);
+    paths.push({ params: { product } });
+  });
+
+  return paths;
+};
+
+export const getChangelogProductChangeTypePaths = async (): Promise<ProductChangeLogChangeTypePaths[]> => {
+  const paths: ProductChangeLogChangeTypePaths[] = [];
+
+  Products.map((p) => {
+    ChangeTypes.map((c) => {
+      const product = getSlug(p.name);
+      const changeType = getSlug(c.name);
+      paths.push({ params: { product, changeType } });
+    });
+  });
+
+  return paths;
+};
+
+export const getProductChangeLogEntryPaths = async (): Promise<ProductChangeLogEntryPaths[]> => {
+  const paths: ProductChangeLogEntryPaths[] = [];
+  const list: ChangelogEntryList<ChangelogEntry[]> = await AllChangelogEntries();
+
+  list.entries.map((e: ChangelogEntry) => {
+    const urlSegments = getChangelogEntryUrlSegments(e);
+    const product = getSlug(urlSegments[0]);
+    const changeType = getSlug(urlSegments[1]);
+    const entry = slugify(urlSegments[2]);
+
+    paths.push({ params: { product, changeType, entry } });
+  });
   return paths;
 };

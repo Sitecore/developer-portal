@@ -1,0 +1,25 @@
+﻿id: KBtlU-ZzYkeYcafWoxyuNQ
+name: Sitecore Connect
+fields:
+  productName:
+    value: Sitecore Connect
+    type: ShortText
+  abbreviation:
+    value: 
+    type: ShortText
+  productDescription:
+    value: 
+    type: LongText
+  sitecoreCloud:
+    value:
+    - >-
+      {
+        "type": "Link",
+        "relatedType": "Content",
+        "id": "dNxyawiMdU2XMzT1UiI7sw",
+        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/dNxyawiMdU2XMzT1UiI7sw"
+      }
+    type: Reference
+  productIcon:
+    value: []
+    type: Media
