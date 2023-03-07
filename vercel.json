@@ -1,4 +1,0 @@
-{
-  "buildCommand": "npx turbo run build --filter={/apps/devportal}...",
-  "installCommand": "npm install"
-}
