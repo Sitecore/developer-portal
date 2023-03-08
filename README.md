@@ -2,41 +2,13 @@
 
 # Sitecore Developer Portal
 
-Welcome to the Sitecore Developer Portal repository. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
+Welcome to the Sitecore Developer Portal. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
 
 ## The Tech
 
 The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
 
-### Apps and Packages
-
-- `devportal`: Developer Portal public site ()[Next.js](https://nextjs.org/) based)
-- `web`: another blank [Next.js](https://nextjs.org/) app
-- `ui`: a React component library shared by both `web` and `devportal` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- sc-changelog: wrapper for the CH ONE GraphQL endpoint and changelog entries
-- sc-changelog-test: CH ONE SDK test scripts
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
 ## Build Prerequisites
-
-### Prequisites
-
-#### Install Turborepo
-
-```
-npm install turbo --g
-```
 
 ### Node.js
 
