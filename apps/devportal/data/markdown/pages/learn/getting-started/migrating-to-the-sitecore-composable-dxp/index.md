@@ -2,7 +2,6 @@
 title: 'Migrating to the Sitecore Composable DXP'
 description: 'This resource consists of a collection of various Migration related content from the Sitecore platform DXP (XP, XM or XC) to the Sitecore Composable SaaS DXP.'
 partials: ['learn/getting-started/articles/introduction-to-composable-dxp']
-promoAfter: ['learning-essentials']
 ---
 
 ## Introduction
@@ -23,7 +22,7 @@ This guide provides an overview for existing customers of the Platform DXP (XP, 
 ### Repositories
 
 <Row columns={2}>
-<Repository framework="DOTNET" name="XM Cloud Introduction" description="An example of a real XM Cloud implementation that can be useful with your own XM Cloud migration projects." repositoryUrl="https://github.com/sitecore/xm-cloud-introduction" />
+<Repository framework="Nextjs" name="XM Cloud Introduction" description="An example of a real XM Cloud implementation that can be useful with your own XM Cloud migration projects." repositoryUrl="https://github.com/sitecore/xm-cloud-introduction" />
 </Row>
 
 ### Resources
@@ -33,7 +32,7 @@ This guide provides an overview for existing customers of the Platform DXP (XP, 
   <Article title="Custom Content Resolvers" description="Exploration of Custom Content Resolvers and their usage with XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-2" />
   <Article title="The MVP Directory" description="Headless development of custom search interfaces with XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-3" />
   <Article title="Secure Pages" description="How to handle secure pages with external identity providers with XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-4" />
-  <Link title="Sitecore XM Cloud" link="/content-management/xm-cloud" />
+  <Link title="Learn more about Sitecore XM Cloud" link="/content-management/xm-cloud" />
 </Row>
 
 ## CDP/Personalize
@@ -42,8 +41,8 @@ This guide provides an overview for existing customers of the Platform DXP (XP, 
   <Article title="CDP, Personalize Migration Scenarios" description="This guide walks the user through considerations when migrating from various use cases to CDP or Personalize" link="https://community.sitecore.com/community?id=community_blog&sys_id=f1cc98af1b541590e55241dde54bcb0d" />
 </Row>
 <Row columns={2}>
-  <Link title="Sitecore CDP" link="/customer-data-management/cdp" />
-  <Link title="Sitecore Personalize" link="/personalization-testing/personalize" />
+  <Link title="Learn more about Sitecore CDP" link="/customer-data-management/cdp" />
+  <Link title="Learn more about Sitecore Personalize" link="/personalization-testing/personalize" />
 </Row>
 
 ## OrderCloud
@@ -62,5 +61,5 @@ This guide provides an overview for existing customers of the Platform DXP (XP, 
   <Article title="Transitioning to OrderCloud: Tax and Payments" description="" link="https://community.sitecore.com/community?id=community_blog&sys_id=c2bf81801b5d6510e55241dde54bcbd7" />
 </Row>
 <Row columns={2}>
-  <Link title="Sitecore OrderCloud" link="/commerce/ordercloud" />
+  <Link title="Learn more about Sitecore OrderCloud" link="/commerce/ordercloud" />
 </Row>
