@@ -1,8 +1,0 @@
-{
-  "*.ts?(x)": [
-    "prettier -w --config .prettierrc"
-  ],
-  "*.js?(x)": [
-    "prettier -w --config .prettierrc"
-  ]
-}
