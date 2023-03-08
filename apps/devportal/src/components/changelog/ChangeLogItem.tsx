@@ -1,5 +1,4 @@
 import { getSlug } from '@/../../packages/sc-changelog/utils/stringUtils';
-import { createChangelogEntryUrl } from '@/src/common/changelog';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
@@ -35,25 +34,25 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
   }, [isLast]);
 
   return (
-    <div className=" bg-theme-bg mt-8 mb-16" ref={entryRef}>
+    <div className="mt-8 mb-16  bg-theme-bg" ref={entryRef}>
       <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} id={getSlug(item.title)}>
-        <Link href={createChangelogEntryUrl(item)}>{item.title}</Link>
+        {item.title}
         <a className="anchor" title="Quick link to category" href={`#${getSlug(item.title)}`}>
           <svg width="16" height="16" viewBox="0 0 16 16" display="inline">
             <use xlinkHref="#link-icon" href="#link-icon"></use>
           </svg>
         </a>
       </h2>
-      <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
+      <div className="flex items-center mt-3 space-x-3 text-gray-500 dark:text-gray-400">
         <div className="flex items-center gap-5">
           <Link href={`/changelog/${getSlug(item.productName)}`}>
             <div className={`text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
               {item.imageId && (
                 <>
-                  <div className="absolute h-5 w-5 dark:hidden">
+                  <div className="absolute w-5 h-5 dark:hidden">
                     <ProductIcon product={item.imageId} variant="Light" className={`relative h-5 w-5 ${loading ? 'hidden' : ''}`} />
                   </div>
-                  <div className="absolute hidden h-5 w-5 dark:block">
+                  <div className="absolute hidden w-5 h-5 dark:block">
                     <ProductIcon product={item.imageId} variant="Dark" className={`relative h-5 w-5 ${loading ? 'hidden' : ''}`} />
                   </div>
                 </>
