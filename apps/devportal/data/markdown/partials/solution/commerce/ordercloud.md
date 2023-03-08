@@ -43,7 +43,7 @@ We also have some integration guides that will help you connect multiple Sitecor
 <Row columns={2}>
 
 <Link title="Integrating Sitecore OrderCloud with Sitecore Send" link="/learn/integrations/send-oc" />
-<Link title="Integrating Sitecore OrderCloud with Sitecore CDP" link="/learn/integrations/oc-cdp"/>
+<Link title="Integrating Sitecore OrderCloud with Sitecore CDP" link ="/learn/integrations/oc-cdp"/>
 <Link title="Sharing Events between Sitecore OrderCloud, Sitecore Discover & Sitecore Send" link="https://ordercloud.io/knowledge-base/tracking-events" />
 </Row>
 

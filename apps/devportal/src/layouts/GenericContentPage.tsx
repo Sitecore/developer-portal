@@ -67,7 +67,7 @@ const GenericContentPage = ({ hasGrid, pageInfo, partialGroups, partials, promoA
         )}
         <div className={hasGrid ? hasGridClasses : ''}>
           <Container>
-            <div className="mt-8 grid-cols-4 gap-6 md:grid">
+            <div className="grid-cols-4 gap-6 mt-8 md:grid">
               {pageInfo.hasInPageNav && Nav}
               <div className={pageInfo.hasInPageNav ? 'col-span-3' : 'col-span-4'}>
                 {Content(partials, partialGroups, hasGrid)}

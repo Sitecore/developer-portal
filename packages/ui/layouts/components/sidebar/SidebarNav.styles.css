@@ -1,6 +1,6 @@
 @layer components {
   .side-bar-nav-title {
-    @apply bg-theme-bg-alt sm:bg-theme-bg border-theme-border border-2 sm:border-0;
+    @apply border-2 bg-theme-bg-alt sm:bg-theme-bg border-theme-border sm:border-0;
     padding: 12px 10px 8px 10px;
   }
 
