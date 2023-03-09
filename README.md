@@ -1,59 +1,69 @@
-![Sitecore logo in red background](https://github.com/Sitecore/developer-portal/raw/main/public/android-chrome-256x256.png)
-
-# Sitecore Developer Portal
+# ![Sitecore logo in red background](https://github.com/Sitecore/developer-portal/raw/main/apps/devportal/public/favicon.png) Sitecore Developer Portal
 
 Welcome to the Sitecore Developer Portal repository. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
 
-## The Tech
+## Technology used
 
-The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
+The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, managed using Turborepo and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
 
 ### Apps and Packages
 
-- `devportal`: Developer Portal public site ()[Next.js](https://nextjs.org/) based)
-- `web`: another blank [Next.js](https://nextjs.org/) app
-- `ui`: a React component library shared by both `web` and `devportal` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- sc-changelog: wrapper for the CH ONE GraphQL endpoint and changelog entries
-- sc-changelog-test: CH ONE SDK test scripts
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- apps
+  - `devportal`: Developer Portal public site ()[Next.js](https://nextjs.org/) based)
+  - `web`: Blank [Next.js](https://nextjs.org/) app
+- packages
+  - `ui`: a React component library shared by both `web` and `devportal` applications
+  - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+  - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Utilities
 
-This turborepo has some additional tools already setup for you:
+This turborepo has some additional tools already setup:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
-## Build Prerequisites
+### Prerequisites
 
-### Prequisites
+#### Monorepo
 
-#### Install Turborepo
+This repository is utilizing Turborepo to manage our monorepo setup. More information about Monorepos can be found in the [Monorepo Handbook](https://turbo.build/repo/docs/handbook).
 
-```
-npm install turbo --g
-```
-
-### Node.js
+#### Node.js
 
 The developer portal is built with Next.js, so you'll need to have Node.js installed to build the project. You can find the latest version of Node.js [here](https://nodejs.org/en/). We recommend using the LTS version of Node.js.
 
-### Environment Variables
+#### Environment Variables
 
 The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables.
 
 The following variables should exist within the .env.local file:
 
 ```
-YOUTUBE_API_KEY="An API key with YouTube Data API v3 access enabled"
-TWITTER_BEARER_TOKEN="A bearer token from Twitter "
+NEXT_PUBLIC_PUBLIC_URL=
+NEXT_PUBLIC_YOUTUBE_API_KEY="An API key with YouTube Data API v3 access enabled"
+NEXT_PUBLIC_TWITTER_BEARER_TOKEN="A bearer token from Twitter"
+NEXT_PUBLIC_COOKIE_CONSENT_URL=
+NEXT_PUBLIC_GTM_ID=
+NEXT_PUBLIC_GTM_AUTH=
+NEXT_PUBLIC_GTM_ENVIRONMENT=
 ```
 
 _Note: The site will still function without the above keys. The components that require these environment variables will fail gracefully and not display on the pages._
+
+To enable search the following environment variables are required:
+
+```
+NEXT_PUBLIC_COVEO_ACCESS_TOKEN=
+NEXT_PUBLIC_COVEO_ORGANIZATION_ID=
+NEXT_PUBLIC_COVEO_PIPELINE=
+NEXT_PUBLIC_COVEO_SEARCH_HUB=
+```
+
+_Note: The site will still function if the keys are missing or left blank. However these keys are still required to build the application_
 
 ## Getting Started
 
@@ -63,18 +73,18 @@ _Note: The site will still function without the above keys. The components that 
 4. Create a `.env.local` file in the root of the project and add the following environment variables:
 
 ```
-YOUTUBE_API_KEY=""
-TWITTER_BEARER_TOKEN=""
-COOKIE_CONSENT_URL=
+NEXT_PUBLIC_YOUTUBE_API_KEY=""
+NEXT_PUBLIC_TWITTER_BEARER_TOKEN=""
+NEXT_PUBLIC_COOKIE_CONSENT_URL=
 
-GTM_ID=
-GTM_AUTH=
-GTM_ENVIRONMENT=
+NEXT_PUBLIC_GTM_ID=
+NEXT_PUBLIC_GTM_AUTH=
+NEXT_PUBLIC_GTM_ENVIRONMENT=
 
-COVEO_ACCESS_TOKEN=
-COVEO_ORGANIZATION_ID=
-COVEO_PIPELINE=
-COVEO_SEARCH_HUB=
+NEXT_PUBLIC_COVEO_ACCESS_TOKEN=
+NEXT_PUBLIC_COVEO_ORGANIZATION_ID=
+NEXT_PUBLIC_COVEO_PIPELINE=
+NEXT_PUBLIC_COVEO_SEARCH_HUB=
 ```
 
 (For more information on populating environment variables see section **Environment Variables** above.)
