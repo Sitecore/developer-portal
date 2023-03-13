@@ -1,6 +1,7 @@
 ### Getting Started with the Sitecore Composable DXP
 
 - [Introduction to Composable DXP](/learn/getting-started/introduction-to-composable-dxp)
+- [Migrating to the Composable DXP](/learn/getting-started/migrating-to-the-sitecore-composable-dxp)
 - [Introduction to the Sitecore Cloud Portal](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
 - [Introduction to XM Cloud](/learn/getting-started/xm-cloud-introduction)
 - [Introduction to Discover](/learn/getting-started/discover-introduction)
