@@ -172,7 +172,7 @@ export const mainNavigation: NavigationData[] = [
         url: '/marketing-automation',
         children: [
           {
-            title: 'Moosend',
+            title: 'Sitecore Send',
             url: '/marketing-automation/send',
           },
           {
@@ -336,7 +336,7 @@ export const mainNavigation: NavigationData[] = [
         ],
       },
       {
-        title: 'Moosend',
+        title: 'Sitecore Send',
         url: '/marketing-automation/send',
         children: [
           {
