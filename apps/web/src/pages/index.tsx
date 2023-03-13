@@ -20,7 +20,13 @@ export default function Web() {
           <VerticalGroup size="lg">
             <h1 className="testmva">Web</h1>
 
-            <ListBox options={options} />
+            <ListBox
+              id="select"
+              options={options}
+              onSelectChange={function (selectedValues: readonly ListBoxOption[]): void {
+                console.log(selectedValues);
+              }}
+            />
           </VerticalGroup>
         </Container>
       </VerticalGroup>

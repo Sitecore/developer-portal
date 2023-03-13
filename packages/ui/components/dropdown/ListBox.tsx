@@ -7,18 +7,19 @@ export type ListBoxOption = {
 };
 
 export type ListBoxProps = {
+  id: string;
   options: ListBoxOption[];
   label?: string;
   initialText?: string;
-  //onSelectChange: (selectedValue: string) => void;
+  onSelectChange: (selectedValues: ReadonlyArray<ListBoxOption>, action: ActionMeta<ListBoxOption>) => void;
 };
 
-const handleChange = (value: ReadonlyArray<ListBoxOption>, meta: ActionMeta<ListBoxOption>) => {
-  console.log('value', value, 'meta', meta);
-};
+export const ListBox = ({ id, options, onSelectChange }: ListBoxProps) => {
+  const handleChange = (value: ReadonlyArray<ListBoxOption>, meta: ActionMeta<ListBoxOption>) => {
+    onSelectChange(value, meta);
+  };
 
-export const ListBox = ({ options }: ListBoxProps) => {
   const animatedComponents = makeAnimated();
 
-  return <Select id="select" options={options} isMulti components={animatedComponents} onChange={handleChange} />;
+  return <Select id={id} instanceId={id} options={options} isMulti components={animatedComponents} onChange={handleChange} />;
 };
