@@ -15,6 +15,7 @@ This guide provides an overview for existing customers of the Platform DXP (XP, 
 <Row columns={2}>
   <Article title="XP Global Brand Use Case Scenario" description="The Sitecore Architect's Guide to Composable SaaS for the XP Global Brand customer." link="https://jasonstcyr.com/2022/07/25/sitecore-architects-guide-to-saas-migration-xp-global-brand-scenario/" />
   <Article title="XM Jamstack Use Case Scenario" description="The Sitecore Architect's Guide to Composable SaaS for the XM Jamstack customer." link="https://jasonstcyr.com/2022/05/20/sitecore-architects-guide-to-saas-migration-xm-jamstack-scenario/" />
+  <Article title="XP Marketing Automation Use Case Scenario" description="The Sitecore Architect's Guide to Composable SaaS for the XP Marketing Automation and EXM customer." link="https://jasonstcyr.com/2023/03/09/sitecore-architects-guide-to-saas-migration-xp-marketing-automation/" />
 </Row>
 
 ## XM Cloud
