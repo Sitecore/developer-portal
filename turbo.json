@@ -31,7 +31,10 @@
         "NEXT_PUBLIC_PUBLIC_URL",
         "ANALYZE",
         "SITECORE_ENDPOINT_URL",
-        "SITECORE_DEV_AUTH_TOKEN"
+        "SITECORE_DEV_AUTH_TOKEN",
+        "NEXT_PUBLIC_DISCOVER_APP_ENV",
+        "NEXT_PUBLIC_DISCOVER_APP_CUSTOMER_KEY",
+        "NEXT_PUBLIC_DISCOVER_APP_API_KEY"
       ],
       "outputs": [".next/**"]
     }
