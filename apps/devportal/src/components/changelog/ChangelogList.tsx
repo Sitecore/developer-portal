@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import ChangeTypes from 'sc-changelog/constants/changeTypes';
 import Products from 'sc-changelog/constants/products';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { Dropdown, DropDownOption } from 'ui/components/dropdown/Dropdown';
+import MultiSelect, { Option } from 'ui/components/dropdown/MultiSelect';
 import ChangeLogItem from './ChangeLogItem';
 
 type ChangelogListProps = {
@@ -14,22 +14,22 @@ type ChangelogListProps = {
   intialChangeType?: string;
 };
 
-const products: DropDownOption[] = Products.map((x) => {
-  return { value: x.name, text: x.name };
+const products: Option[] = Products.map((x) => {
+  return { value: x.name, label: x.name };
 });
 
-const changes: DropDownOption[] = ChangeTypes.map((x) => {
-  return { value: x.name, text: x.name };
+const changes: Option[] = ChangeTypes.map((x) => {
+  return { value: x.name, label: x.name };
 });
 
 const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.Element => {
   const [fetchedResults, setFetchedResults] = useState<ChangelogEntry[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [changeType, setChangeType] = useState<string | undefined>(undefined);
-  const [product, setProduct] = useState<string | undefined>(undefined);
   const [cursor, setCursor] = useState<string>();
   const [reload, setReload] = useState<boolean>(false);
   const [clearResults, setClearResults] = useState<boolean>(false);
+  const [selectedProduct, setSelectedProduct] = useState<Option[] | null>();
+  const [selectedChange, setSelectedChange] = useState<Option[] | null>();
 
   const loadData = useRef(true);
 
@@ -38,10 +38,12 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
     setReload(true);
   }
 
-  function handleApplyFilter(filter: string, selectedValue: string) {
+  function handleApplyProductFilter(selectedValue: Option[], filter: string) {
     loadData.current = true;
-    if (filter == 'changeType') setChangeType(selectedValue);
-    if (filter == 'product') setProduct(selectedValue);
+
+    if (filter == 'product') setSelectedProduct(selectedValue);
+    if (filter == 'changes') setSelectedChange(selectedValue);
+
     setClearResults(true);
     setIsLoading(true);
   }
@@ -52,13 +54,15 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
     // Preset to specific product
     if (initialProduct) query.push(`product=${initialProduct}`);
 
-    if (product) {
-      query.push(`product=${product}`);
-    }
+    if (selectedProduct)
+      selectedProduct.map((p) => {
+        query.push(`product=${p.value}`);
+      });
 
-    if (changeType) {
-      query.push(`changeType=${changeType}`);
-    }
+    if (selectedChange)
+      selectedChange.map((c) => {
+        query.push(`changeType=${c.value}`);
+      });
 
     if (reload) query.push(`end=${cursor}`);
     query.push(`limit=5`);
@@ -83,13 +87,13 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
         })
         .catch((err) => console.log(err));
     }
-  }, [reload, changeType, product]);
+  }, [reload, selectedProduct, selectedChange]);
 
   const data = fetchedResults ? fetchedResults : [];
 
   return (
     <div className={`${className}`}>
-      <div className="flex flex-row">
+      <div className="relative z-50">
         {initialProduct && (
           <div className="bg-violet-lighter text-violet mr-2 inline-block rounded-md p-3 text-sm">
             <strong>Product:</strong> {initialProduct}
@@ -98,9 +102,32 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
             </Link>
           </div>
         )}
-        {!initialProduct && <Dropdown options={products} initialText="All Products" onSelectChange={(selectedValue) => handleApplyFilter('product', selectedValue)} />}
-        <Dropdown options={changes} initialText="All changes" onSelectChange={(selectedValue) => handleApplyFilter('changeType', selectedValue)} />
+
+        <MultiSelect
+          id="productSelector"
+          instanceId="productSelector"
+          key="example_id"
+          options={products}
+          className="mb-2 text-sm"
+          onChange={(selectedValues: Option[]) => handleApplyProductFilter(selectedValues, 'product')}
+          value={selectedProduct}
+          isSelectAll={true}
+          menuPlacement={'bottom'}
+        />
+
+        <MultiSelect
+          id="changeSelector"
+          instanceId="changeSelector"
+          key="example_id2"
+          options={changes}
+          className="mb-2 text-sm"
+          onChange={(selectedValues: Option[]) => handleApplyProductFilter(selectedValues, 'changes')}
+          value={selectedChange}
+          isSelectAll={true}
+          menuPlacement={'bottom'}
+        />
       </div>
+
       {data.map((item, i) => (
         <ChangeLogItem item={item} key={i} loading={isLoading} isLast={i === data.length - 1} loadEntries={() => updateData()} />
       ))}

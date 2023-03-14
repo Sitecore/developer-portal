@@ -12,17 +12,29 @@ const getQueryValue = (query: string | string[] | undefined): string => {
   return Array.isArray(query) ? query[0] : query;
 };
 
+const getQueryArray = (query: string | string[] | undefined): string[] => {
+  console.log('query: ' + query);
+  if (query == undefined) return [];
+  return Array.isArray(query) ? query : [query];
+};
+
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
   const currentChangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => x.name == req.query.changeType);
-  const currentProduct: ProductConfig | undefined = Products.find((x) => x.name == req.query.product);
+
+  const products: string[] = getQueryArray(req.query.product);
+  const productId: string[] = [];
+
+  console.log('P: ' + products);
+  products.map((p) => {
+    const currentProduct: ProductConfig | undefined = Products.find((x) => x.name == p);
+    if (currentProduct?.entityId != undefined) productId.push(currentProduct?.entityId);
+  });
 
   const limit: string = getQueryValue(req.query.limit);
   const end = getQueryValue(req.query.end);
-
-  const productId = currentProduct != null ? currentProduct.entityId : '';
   const changeTypeId = currentChangeType != null ? currentChangeType.entityId : '';
 
-  ChangelogEntriesPaginated(limit, productId, changeTypeId, end).then((response) => {
+  ChangelogEntriesPaginated(limit, productId.join('|'), changeTypeId, end).then((response) => {
     res.json(response);
   });
 };

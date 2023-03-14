@@ -40,17 +40,43 @@ function buildParameters(productId?: string, changeTypeId?: string, searchTerm?:
   return parameters;
 }
 
+const openWHERE = 'where: {';
+const openAND = 'AND: [';
+const openOR = 'OR: [';
+const closeANDOR = ']';
+const closeWHERE = '}';
+
 /*
   Building the complex WHERE clause based on parameters
 */
 function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?: string) {
   if (!searchTerm && !productId && !changeTypeId) return '';
 
-  let whereClause = `where: { AND: [`;
-  whereClause += buildChangeTypeClause(changeTypeId);
-  whereClause += buildProductIdClause(productId);
+  const pId = productId?.split('|');
+  const multipleProducts = pId != undefined && pId.length > 1;
+
+  const cId = changeTypeId?.split('|');
+  const multipleChangeTypes = cId != undefined && cId.length > 1;
+
+  let whereClause = openWHERE;
+
+  // Check product(s)
+  if (multipleProducts) {
+    whereClause += buildProductsClause(pId);
+  } else {
+    whereClause += buildProductIdClause(productId);
+  }
+
+  // Check changetype(s)
+  if (multipleChangeTypes) {
+    whereClause += buildChangeTypesClause(cId, multipleProducts);
+  } else {
+    whereClause += buildChangeTypeClause(changeTypeId);
+  }
+
   whereClause += buildSearchTermClause(searchTerm);
-  whereClause += `]}`;
+  //whereClause += closeANDOR;
+  whereClause += closeWHERE;
 
   return whereClause;
 }
@@ -78,16 +104,45 @@ function buildSearchTermClause(searchTerm?: string): string {
   return whereClauseSearchTerm;
 }
 
+// Match multiple changetype
+function buildChangeTypesClause(changeTypeIds: string[], multipleProducts: boolean): string {
+  console.log('buildChangeTypesClause:: ' + multipleProducts);
+  let changeTypeClause: string = multipleProducts ? openAND && openOR : openOR;
+
+  changeTypeIds.map((changeTypeId) => {
+    changeTypeClause += `{changelog_ids: { changelog_ids: "${changeTypeId}"}}`;
+  });
+
+  changeTypeClause += multipleProducts ? closeANDOR && closeANDOR : closeANDOR;
+  return changeTypeClause;
+}
+
+// Match single changetype
 function buildChangeTypeClause(changeTypeId?: string): string {
   if (!changeTypeId || changeTypeId == undefined) return '';
 
-  return `{changeType: { changelog_ids: "${changeTypeId}"}}`;
+  let changeTypeClause: string = openAND;
+  changeTypeClause += `{changeType: { changelog_ids: "${changeTypeId}"}}`;
+  changeTypeClause += closeANDOR;
+
+  return changeTypeClause;
+}
+
+function buildProductsClause(productIds: string[]): string {
+  let productsClause: string = openOR;
+
+  productIds.map((productId) => {
+    productsClause += `{sitecoreProduct: { changelog_ids: "${productId}"}}`;
+  });
+
+  productsClause += closeANDOR;
+  return productsClause;
 }
 
 function buildProductIdClause(productId?: string): string {
   if (!productId || productId == undefined) return '';
 
-  return `{sitecoreProduct: { changelog_ids: "${productId}"}}`;
+  return ` sitecoreProduct: { changelog_ids: "${productId}"}`;
 }
 
 /*
