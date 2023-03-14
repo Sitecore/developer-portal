@@ -22,7 +22,7 @@ export const Repository = ({ name, description, repositoryUrl, framework }: Repo
         <div className="ml-auto mr-0 flex flex-row justify-end opacity-75 ">
           {frameworks &&
             frameworkLogos.map((framework) => {
-              return <SvgLogo logo={framework as Logo} className={`ml-2 h-12`} />;
+              return <SvgLogo logo={framework as Logo} className={`ml-2 h-6`} />;
             })}
         </div>
         {name && <h4>{name}</h4>}
