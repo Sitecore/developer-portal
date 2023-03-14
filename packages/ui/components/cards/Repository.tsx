@@ -1,5 +1,5 @@
 import { GithubButton } from 'ui/components/buttons/GitHubButton';
-import SvgLogo, { Logo } from 'ui/components/common/SvgLogo';
+import SvgLogo, { isValidLogo, Logo } from 'ui/components/common/SvgLogo';
 
 export type RepositoryProps = {
   name?: string;
@@ -9,13 +9,21 @@ export type RepositoryProps = {
 };
 
 export const Repository = ({ name, description, repositoryUrl, framework }: RepositoryProps) => {
-  const frameworkType = framework as Logo;
+  const frameworks = framework.split('|');
+  const frameworkLogos: string[] = [];
+
+  frameworks.forEach((x) => {
+    if (isValidLogo(x)) frameworkLogos.push(x);
+  });
 
   return (
-    <div className="relative flex flex-col justify-between p-3 bg-white border shadow-md border-theme-border dark:bg-theme-bg-alt">
+    <div className="border-theme-border dark:bg-theme-bg-alt relative flex flex-col justify-between border bg-white p-3 shadow-md">
       <div className="px-5">
-        <div className="w-1/3 ml-auto mr-0 opacity-75 ">
-          <SvgLogo logo={frameworkType} />
+        <div className="ml-auto mr-0 flex flex-row justify-end opacity-75 ">
+          {frameworks &&
+            frameworkLogos.map((framework) => {
+              return <SvgLogo logo={framework as Logo} className={`ml-2 h-6`} />;
+            })}
         </div>
         {name && <h4>{name}</h4>}
         {description && <p>{description}</p>}

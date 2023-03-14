@@ -36,5 +36,5 @@ yarn-error.log*
 .turbo
 
 # generated postbuild
-public/sitemap.xml
-public/robots.txt
+sitemap.xml
+robots.txt
