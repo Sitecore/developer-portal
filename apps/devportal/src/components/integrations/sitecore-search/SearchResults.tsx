@@ -19,7 +19,6 @@ export const SearchResults = (props: SearchResultsType) => {
     context: { page = currentPage, itemsPerPage = initialArticlesPerPage },
     queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: articles = [], facet: facets = [] } = {} },
   } = useSearchResults(() => {
-    // initialization code
     return {
       itemsPerPage: initialArticlesPerPage,
       keyphrase: initialKeyphrase,
@@ -51,7 +50,7 @@ export const SearchResults = (props: SearchResultsType) => {
           </div>
 
           <div className="flex flex-row">
-            <div className="mt-4 basis-1/4">
+            <div className="mt-4 shrink-0 basis-1/4">
               {facets.map((facet, index) => (
                 <div key={index}>
                   <h4 className="font-bold">{facet.label}</h4>
@@ -59,7 +58,9 @@ export const SearchResults = (props: SearchResultsType) => {
                     {facet.value.map((facetOption, index) => (
                       <li key={index}>
                         <input type="checkbox" value={facetOption.id} />
-                        {facetOption.text} ({facetOption.count})
+                        <span className="ml-2">
+                          {facetOption.text} ({facetOption.count})
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -68,30 +69,35 @@ export const SearchResults = (props: SearchResultsType) => {
             </div>
 
             <div className="basis-3/4">
-              <ul>
+              <ul className="border-theme-border mt-2 border-t">
                 {articles.map((result, index) => (
                   <li key={index}>
                     <div className="border-theme-border relative border-b p-4">
-                      <a href={result.url} className="group">
-                        {result.image_url && <Image width={25} height={25} src={result.image_url} alt={title} />}
-                        <p className="font-bold group-hover:underline">{result.title}</p>
-                        <span className="text-xs italic">{result.url}</span>
-                        <p>{result.description}</p>
-                        <p>{result.index_name}</p>
-                        <span className="absolute inset-0 z-10"></span>
+                      <a href={result.url} className="group flex">
+                        {result.image_url && <Image width={200} height={25} src={result.image_url} alt={title} />}
+                        <div className={result.image_url ? 'mt-8 ml-6' : ''}>
+                          <p className="font-bold group-hover:underline">{result.name}</p>
+                          <span className="break-words text-xs italic">{result.url}</span>
+                          {result.description && <p className="text-sm">{result.description}</p>}
+                          {result.index_name && <p className="text-sm">Source: {result.index_name}</p>}
+                        </div>
                       </a>
                     </div>
                   </li>
                 ))}
               </ul>
 
-              <div className="m-auto w-full items-center text-center">
-                <div>
-                  {page > 1 ? <a href={'?q=' + initialKeyphrase + '&p=' + (parseInt(page) - 1)}>&lt; Prev</a> : ''}
-                  <span>...</span>
-                  {page < totalItems / itemsPerPage ? <a href={'?q=' + initialKeyphrase + '&p=' + (parseInt(page) + 1)}>Next &gt;</a> : ''}
+              {totalItems <= itemsPerPage ? (
+                ''
+              ) : (
+                <div className="m-auto w-full items-center text-center">
+                  <div>
+                    {page > 1 ? <a href={'?q=' + initialKeyphrase + '&p=' + (parseInt(page) - 1)}>&lt; Prev</a> : ''}
+                    <span>...</span>
+                    {page < totalItems / itemsPerPage ? <a href={'?q=' + initialKeyphrase + '&p=' + (parseInt(page) + 1)}>Next &gt;</a> : ''}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
