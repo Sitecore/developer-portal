@@ -87,7 +87,7 @@ export const SearchResults = (props: SearchResultsType) => {
 
               <div className="m-auto w-full items-center text-center">
                 <div>
-                  {page > 0 ? <a href={'?q=' + initialKeyphrase + '&p=' + (parseInt(page) - 1)}>&lt; Prev</a> : ''}
+                  {page > 1 ? <a href={'?q=' + initialKeyphrase + '&p=' + (parseInt(page) - 1)}>&lt; Prev</a> : ''}
                   <span>...</span>
                   {page < totalItems / itemsPerPage ? <a href={'?q=' + initialKeyphrase + '&p=' + (parseInt(page) + 1)}>Next &gt;</a> : ''}
                 </div>
