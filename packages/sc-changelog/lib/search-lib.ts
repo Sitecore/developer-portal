@@ -106,11 +106,10 @@ function buildSearchTermClause(searchTerm?: string): string {
 
 // Match multiple changetype
 function buildChangeTypesClause(changeTypeIds: string[], multipleProducts: boolean): string {
-  console.log('buildChangeTypesClause:: ' + multipleProducts);
   let changeTypeClause: string = multipleProducts ? openAND && openOR : openOR;
 
   changeTypeIds.map((changeTypeId) => {
-    changeTypeClause += `{changelog_ids: { changelog_ids: "${changeTypeId}"}}`;
+    changeTypeClause += `{changeType: { changelog_ids: "${changeTypeId}"}}`;
   });
 
   changeTypeClause += multipleProducts ? closeANDOR && closeANDOR : closeANDOR;
