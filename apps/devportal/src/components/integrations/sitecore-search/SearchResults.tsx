@@ -24,8 +24,8 @@ export const SearchResults = (props: SearchResultsType) => {
       keyphrase: initialKeyphrase,
     };
   });
-  const sortOptions = sortChoices.map(({ name, label, order }) => {
-    return { label, value: `${name}#${order}` };
+  const sortOptions = sortChoices.map(({ name, label }) => {
+    return { label, value: `${name}` };
   });
   return (
     <>
@@ -38,8 +38,7 @@ export const SearchResults = (props: SearchResultsType) => {
               <select
                 className="sortSelect"
                 onChange={(event) => {
-                  const sort = event.target.value.split('#');
-                  onSortChange({ sortType: sort[0], sortDirection: sort[1] });
+                  onSortChange({ sortType: event.target.value });
                 }}
               >
                 {sortOptions.map((option) => (
