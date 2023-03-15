@@ -1,4 +1,3 @@
-// import { useSearchParams } from 'react-router-dom';
 import { getPageInfo } from '@/src/common/page-info';
 import SearchResults from '@/src/components/integrations/sitecore-search/SearchResults';
 import { PageInfo } from '@/src/interfaces/page-info';
@@ -22,19 +21,15 @@ export const getServerSideProps = async () => {
   };
 };
 
-// const Search = (): JSX.Element => {
 const Search: NextPage<SearchPageProps> = ({ pageInfo }) => {
-  // const [searchParams] = useSearchParams();
-  // const query = searchParams.get('q');
   const router = useRouter();
   const query = router?.query['q'] ?? '';
-  console.log('Query:  ' + query);
 
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <VerticalGroup>
         <Container>
-          <SearchResults rfkId="rfkid_7" initialKeyphrase={query} title={`Showing results for "${query}"`} />
+          <SearchResults rfkId="rfkid_7" initialKeyphrase={query} title={query} />
         </Container>
       </VerticalGroup>
     </Layout>
