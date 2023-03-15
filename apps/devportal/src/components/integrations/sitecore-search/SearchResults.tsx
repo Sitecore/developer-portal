@@ -63,11 +63,11 @@ export const SearchResults = (props: SearchResultsType) => {
 
             <div>
               <ul>
-                {articles.map((result) => (
-                  <li>
+                {articles.map((result, index) => (
+                  <li key={index}>
                     <div className="border-theme-border relative border-b p-4">
                       <a href={result.url} className="group">
-                        {result.image_url && <Image src={result.image_url} alt={title} />}
+                        {result.image_url && <Image width={25} height={25} src={result.image_url} alt={title} />}
                         <p className="font-bold group-hover:underline">{result.title}</p>
                         <span className="text-xs italic">{result.url}</span>
                         <p>{result.description}</p>
