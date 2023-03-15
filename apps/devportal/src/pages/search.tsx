@@ -24,12 +24,13 @@ export const getServerSideProps = async () => {
 const Search: NextPage<SearchPageProps> = ({ pageInfo }) => {
   const router = useRouter();
   const query = router?.query['q'] ?? '';
+  const currentPage = router?.query['p'] ?? '1';
 
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <VerticalGroup>
         <Container>
-          <SearchResults rfkId="rfkid_7" initialKeyphrase={query} title={query} />
+          <SearchResults rfkId="rfkid_7" initialKeyphrase={query} title={query} currentPage={currentPage} />
         </Container>
       </VerticalGroup>
     </Layout>

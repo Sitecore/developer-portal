@@ -7,21 +7,23 @@ import QuerySummary from './QuerySummary';
 
 export interface SearchResultsType extends WidgetComponentProps {
   initialKeyphrase?: string;
+  currentPage?: number;
   initialArticlesPerPage?: number;
   title?: string;
 }
 
 export const SearchResults = (props: SearchResultsType) => {
-  const { initialKeyphrase = '', initialArticlesPerPage = 24, title = '' } = props;
+  const { initialKeyphrase = '', initialArticlesPerPage = 24, title = '', currentPage = 1 } = props;
   const {
     actions: { onSortChange },
-    context: { page = 0, itemsPerPage = initialArticlesPerPage },
+    context: { page = currentPage, itemsPerPage = initialArticlesPerPage },
     queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: articles = [], facet: facets = [] } = {} },
   } = useSearchResults(() => {
     // initialization code
     return {
       itemsPerPage: initialArticlesPerPage,
       keyphrase: initialKeyphrase,
+      page: currentPage,
     };
   });
   return (
@@ -82,6 +84,14 @@ export const SearchResults = (props: SearchResultsType) => {
                   </li>
                 ))}
               </ul>
+
+              <div className="m-auto w-full items-center text-center">
+                <div>
+                  {page > 0 ? <a href={'?q=' + initialKeyphrase + '&p=' + (parseInt(page) - 1)}>&lt; Prev</a> : ''}
+                  <span>...</span>
+                  {page < totalItems / itemsPerPage ? <a href={'?q=' + initialKeyphrase + '&p=' + (parseInt(page) + 1)}>Next &gt;</a> : ''}
+                </div>
+              </div>
             </div>
           </div>
         </div>
