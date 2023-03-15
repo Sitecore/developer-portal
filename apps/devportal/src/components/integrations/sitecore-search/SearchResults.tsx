@@ -75,11 +75,12 @@ export const SearchResults = (props: SearchResultsType) => {
                     <div className="border-theme-border relative border-b p-4">
                       <a href={result.url} className="group flex">
                         {result.image_url && <Image width={200} height={25} src={result.image_url} alt={title} />}
-                        <div className={result.image_url ? 'mt-8 ml-6' : ''}>
+                        <div className={result.image_url ? 'mt-2 ml-6' : ''}>
                           <p className="font-bold group-hover:underline">{result.name}</p>
                           <span className="break-words text-xs italic">{result.url}</span>
                           {result.description && <p className="text-sm">{result.description}</p>}
                           {result.index_name && <p className="text-sm">Source: {result.index_name}</p>}
+                          {result.type && <p className="text-sm">Document Type: {result.type}</p>}
                         </div>
                       </a>
                     </div>
