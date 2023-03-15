@@ -12,23 +12,22 @@ export enum Logo {
   NPM = 'npm',
 }
 
+export function isValidLogo(value: string): boolean {
+  return Object.values(Logo).some((option) => option.toLowerCase() === value.toLowerCase());
+}
+
+export type LogoComponent = {
+  className?: string;
+};
+
 export type IconProps = {
   logo: Logo;
   className?: string;
 };
 
 const SvgLogo = ({ logo, className }: IconProps): JSX.Element => {
-  const IconContent = dynamic(() => import(`./logos/logo--${logo.toLowerCase()}`));
+  const LogoComponent = dynamic<LogoComponent>(() => import(`./logos/logo--${logo.toLowerCase()}`));
 
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 710 210" className={className}>
-      <IconContent />
-    </svg>
-  );
+  return <LogoComponent className={className} />;
 };
-
-SvgLogo.defaultProps = {
-  className: '',
-};
-
 export default SvgLogo;

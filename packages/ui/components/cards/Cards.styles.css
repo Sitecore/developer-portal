@@ -1,12 +1,12 @@
 @layer components {
   .card {
-    @apply flex justify-between transition duration-300 transform border shadow-sm border-theme-border dark:bg-theme-bg-alt hover:accent-theme-bg-alt hover:shadow-md;
+    @apply border-theme-border dark:bg-theme-bg-alt hover:accent-theme-bg-alt flex transform justify-between border shadow-sm transition duration-300 hover:shadow-md;
   }
   .article {
-    @apply flex-col p-4 card;
+    @apply card flex-col p-4;
   }
   .link {
-    @apply p-4 text-center card not-prose;
+    @apply card not-prose dark:bg-teal dark:font-regular p-4 text-center dark:text-white;
   }
   .article h4 {
     @apply mt-0;
