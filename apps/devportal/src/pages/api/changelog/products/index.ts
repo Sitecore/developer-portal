@@ -12,10 +12,10 @@ const getQueryValue = (query: string | string[] | undefined): string => {
 const handler = async (req: NextApiRequest, res: NextApiResponse<Product[]>) => {
   const showAll: boolean = getQueryValue(req.query.all) == 'false' ? false : true;
 
-  GetProducts().then((response: Product[]) => {
-    if (showAll) res.json(response);
+  await GetProducts().then((response: Product[]) => {
+    if (showAll) res.status(200).json(response);
 
-    res.json(response.filter((e) => e.hasEntries));
+    res.status(200).json(response.filter((e) => e.hasEntries));
   });
 };
 

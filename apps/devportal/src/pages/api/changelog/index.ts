@@ -21,8 +21,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
   const limit: string = getQueryValue(req.query.limit);
   const end = getQueryValue(req.query.end);
 
-  ChangelogEntriesPaginated(limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
-    res.json(response);
+  await ChangelogEntriesPaginated(limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
+    res.status(200).json(response);
   });
 };
 

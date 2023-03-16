@@ -36,7 +36,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Record<string, 
     .sort(([dateA], [dateB]) => new Date(dateB).getTime() - new Date(dateA).getTime())
     .reduce((acc, [date, value]) => ({ ...acc, [date]: value }), {});
 
-  res.json(sorted);
+  res.status(200).json(sorted);
 };
 
 export default handler;
