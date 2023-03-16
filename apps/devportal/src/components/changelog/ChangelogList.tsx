@@ -1,11 +1,11 @@
+import ChangeType from '@/../../packages/sc-changelog/types/changeType';
 import SvgIcon from '@/../../packages/ui/components/common/SvgIcon';
 import axios from 'axios';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-import ChangeTypes from 'sc-changelog/constants/changeTypes';
-import Products from 'sc-changelog/constants/products';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import MultiSelect, { Option } from 'ui/components/dropdown/MultiSelect';
+import Product from '../../../../../packages/sc-changelog/types/product';
 import ChangeLogItem from './ChangeLogItem';
 
 type ChangelogListProps = {
@@ -14,20 +14,14 @@ type ChangelogListProps = {
   intialChangeType?: string;
 };
 
-const products: Option[] = Products.map((x) => {
-  return { value: x.name, label: x.name };
-});
-
-const changes: Option[] = ChangeTypes.map((x) => {
-  return { value: x.name, label: x.name };
-});
-
 const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.Element => {
   const [fetchedResults, setFetchedResults] = useState<ChangelogEntry[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [cursor, setCursor] = useState<string>();
   const [reload, setReload] = useState<boolean>(false);
   const [clearResults, setClearResults] = useState<boolean>(false);
+  const [changeType, setChangeType] = useState<ChangeType[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<Option[] | null>();
   const [selectedChange, setSelectedChange] = useState<Option[] | null>();
 
@@ -75,6 +69,16 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
     if (loadData.current) {
       loadData.current = false;
       if (fetchedResults.length == 0) setIsLoading(true);
+
+      // Fill dropdowns
+      axios.get(`/api/changelog/types`).then((response) => {
+        setChangeType(response.data);
+      });
+      axios.get(`/api/changelog/products?all=false`).then((response) => {
+        setProducts(response.data);
+      });
+
+      // Get results
       axios
         .get(`/api/changelog?${query.join('&')}`)
         .then((response) => {
@@ -107,7 +111,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
           id="productSelector"
           instanceId="productSelector"
           key="example_id"
-          options={products}
+          options={products.map((e) => ({ label: e.name, value: e.id }))}
           className="mb-2 text-sm"
           onChange={(selectedValues: Option[]) => handleApplyProductFilter(selectedValues, 'product')}
           value={selectedProduct}
@@ -119,7 +123,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
           id="changeSelector"
           instanceId="changeSelector"
           key="example_id2"
-          options={changes}
+          options={changeType.map((e) => ({ label: e.name, value: e.id }))}
           className="mb-2 text-sm"
           onChange={(selectedValues: Option[]) => handleApplyProductFilter(selectedValues, 'changes')}
           value={selectedChange}

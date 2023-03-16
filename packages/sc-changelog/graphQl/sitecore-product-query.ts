@@ -27,7 +27,7 @@ export const SITECORE_PRODUCT_QUERY = `
 export default SITECORE_PRODUCT_QUERY;
 
 export const ALL_SITECORE_PRODUCT_QUERY = `{ 
-    data: allSitecoreProduct{
+    data: allSitecoreProduct(first:25) {
       total
       results {
         ${SITECORE_PRODUCT_QUERY}
