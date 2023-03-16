@@ -1,4 +1,4 @@
-import { getSlug } from '@/../../packages/sc-changelog/utils/stringUtils';
+import { getSlug, slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
@@ -34,7 +34,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
   }, [isLast]);
 
   return (
-    <div className="bg-theme-bg mt-8  mb-16" ref={entryRef}>
+    <div className="changelog-item bg-theme-bg mt-8  mb-16" ref={entryRef}>
       <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} id={getSlug(item.title)}>
         {item.title}
         <a className="anchor" title="Quick link to category" href={`#${getSlug(item.title)}`}>
@@ -64,7 +64,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
             {item.releaseDate}
           </time>
           <div>
-            <span className={`bg-theme-bg-alt inline-block text-xs ${loading ? 'w-12' && skeletonLoaderClasses : 'rounded-md px-3 py-1'}`}>{item.changeType[0].name}</span>
+            <span className={`bg-theme-bg-alt ${slugify(item.changeType[0].name)} inline-block text-xs ${loading ? 'w-12' && skeletonLoaderClasses : 'rounded-md px-3 py-1'}`}>{item.changeType[0].name}</span>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
         </div>
       )}
 
-      <div className={`prose my-3 text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
+      <div className={`prose dark:prose-invert my-3 text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
       <span className={`${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>{item.readMoreLink && <TextLink className="font-medium" href={item.readMoreLink} text="Read more" />}</span>
     </div>
   );

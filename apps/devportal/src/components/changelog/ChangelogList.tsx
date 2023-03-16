@@ -24,6 +24,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
   const [products, setProducts] = useState<Product[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<Option[] | null>();
   const [selectedChange, setSelectedChange] = useState<Option[] | null>();
+  const [total, setTotal] = useState<number>();
 
   const loadData = useRef(true);
 
@@ -84,6 +85,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
         .then((response) => {
           clearResults ? setFetchedResults(response.data.entries) : setFetchedResults((prev) => [...prev, ...response.data.entries]);
           setCursor(response.data.endCursor);
+          setTotal(response.data.total);
           // We are at the final results
           if (cursor != null) setReload(false);
           setIsLoading(false);
@@ -117,6 +119,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
           value={selectedProduct}
           isSelectAll={true}
           menuPlacement={'bottom'}
+          placeholder="Select one or more products to filter"
         />
 
         <MultiSelect
@@ -129,9 +132,15 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
           value={selectedChange}
           isSelectAll={true}
           menuPlacement={'bottom'}
+          placeholder="Select one or more options to filter"
         />
       </div>
 
+      {total && (
+        <div className="text-right text-xs">
+          {total} {total > 1 ? 'results' : 'result'} found
+        </div>
+      )}
       {data.map((item, i) => (
         <ChangeLogItem item={item} key={i} loading={isLoading} isLast={i === data.length - 1} loadEntries={() => updateData()} />
       ))}
