@@ -91,16 +91,16 @@ function buildSearchTermClause(searchTerm?: string): string {
   if (!searchTerm) return whereClauseSearchTerm;
 
   // We want each word to match therefore grouping by AND operator
-  whereClauseSearchTerm += `{ AND: [`;
+  whereClauseSearchTerm += `AND: [`;
 
   // Making sure to validate each word in case we have a phrase as search term
-  const searchArray = searchTerm.split(' ');
+  const searchArray = searchTerm.split('-');
 
   searchArray.forEach((term: string) => {
     whereClauseSearchTerm += `{title_contains: "${term}"}`;
   });
 
-  whereClauseSearchTerm += `]}`;
+  whereClauseSearchTerm += `]`;
   return whereClauseSearchTerm;
 }
 

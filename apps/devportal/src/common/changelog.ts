@@ -19,7 +19,7 @@ export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEn
   const segments: string[] = [];
 
   segments.push(slugify(entry.productName));
-  segments.push(slugify(entry.changeTypeName));
+  //segments.push(slugify(entry.changeTypeName));
   segments.push(`${slugify(entry.title)}`);
 
   return segments;

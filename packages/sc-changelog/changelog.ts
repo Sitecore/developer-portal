@@ -30,6 +30,7 @@ export async function ChangelogEntriesByProductAndChangeType(productId: string, 
 
 export async function ChangelogEntryByTitle(entryTitle: string, productId?: string, changeTypeId?: string): Promise<ChangelogEntry> {
   const response = await Search(productId, changeTypeId, false, entryTitle);
+
   return parseChangeLogItem(response.data.results[0]);
 }
 

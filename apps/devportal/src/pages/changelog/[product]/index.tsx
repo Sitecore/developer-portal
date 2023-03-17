@@ -1,48 +1,43 @@
+import { GetProducts } from '@/../../packages/sc-changelog/changelog';
+import Product from '@/../../packages/sc-changelog/types/product';
+import { slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
+import Container from '@/../../packages/ui/components/common/Container';
+import VerticalGroup from '@/../../packages/ui/components/common/VerticalGroup';
+import Hero from '@/../../packages/ui/components/heros/Hero';
+import Layout from '@/../../packages/ui/layouts/Layout';
 import { getChangelogProductPaths } from '@/src/common/static-paths';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogList from '@/src/components/changelog/ChangelogList';
-import { ProductConfig } from 'sc-changelog/configuration';
-import Products from 'sc-changelog/constants/products';
-import { getSlug } from 'sc-changelog/utils/stringUtils';
-import Container from 'ui/components/common/Container';
-import VerticalGroup from 'ui/components/common/VerticalGroup';
-import Hero from 'ui/components/heros/Hero';
-import Layout from 'ui/layouts/Layout';
+
+type ChangelogProps = {
+  currentProduct: Product;
+};
 
 export async function getStaticPaths() {
-  const productPaths = await getChangelogProductPaths();
+  const paths = await getChangelogProductPaths();
+
   return {
-    paths: productPaths,
+    paths: paths,
     fallback: false,
   };
 }
 
 export async function getStaticProps(context: any) {
   const product = context.params.product;
-  //const changeType = context.params.changeType;
-  //
-  const currentProduct: ProductConfig | undefined = Products.find((x) => getSlug(x.name) == product);
-  //const currentChangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => getSlug(x.name) == changeType);
+  const products = await GetProducts().then((response: Product[]) => {
+    return response;
+  });
 
-  if (currentProduct == undefined)
-    // || currentChangeType == undefined)
-    return {
-      notFound: true,
-    };
+  const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
 
   return {
     props: {
-      currentProduct,
+      currentProduct: currentProduct,
     },
-    revalidate: 600, // 10 minutes
   };
 }
 
-type ChangelogProps = {
-  currentProduct: ProductConfig;
-};
-
-const ChangelogHome = ({ currentProduct }: ChangelogProps) => {
+const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
   return (
     <Layout title="Release Notes - Home" description="Empty">
       <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
@@ -50,10 +45,10 @@ const ChangelogHome = ({ currentProduct }: ChangelogProps) => {
         <Container>
           <div className="mt-8 grid gap-16 md:grid-cols-5">
             <div className="col-span-3">
-              <ChangelogList initialProduct={currentProduct.name} />
+              <ChangelogList initialProduct={currentProduct} />
             </div>
             <div className="col-span-2 h-[calc(100vh-597px)]">
-              <ChangelogByMonth product={currentProduct.name} />
+              <ChangelogByMonth product={currentProduct} />
             </div>
           </div>
         </Container>
@@ -61,5 +56,4 @@ const ChangelogHome = ({ currentProduct }: ChangelogProps) => {
     </Layout>
   );
 };
-
-export default ChangelogHome;
+export default ChangelogProduct;

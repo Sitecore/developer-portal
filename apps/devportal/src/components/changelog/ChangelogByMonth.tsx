@@ -1,3 +1,4 @@
+import Product from '@/../../packages/sc-changelog/types/product';
 import { createChangelogEntryUrl } from '@/src/common/changelog';
 import axios from 'axios';
 import Link from 'next/link';
@@ -9,7 +10,7 @@ import ProductIcon from 'ui/components/common/ProductIcon';
 
 type ChangelogByMonthProps = {
   className?: string;
-  product?: string;
+  product?: Product;
   changeType?: string;
 };
 
@@ -22,7 +23,7 @@ const ChangelogByMonth = ({ className, product, changeType }: ChangelogByMonthPr
     setIsLoading(true);
     const query: string[] = [];
     if (product) {
-      query.push(`product=${product}`);
+      query.push(`product=${product.id}`);
     }
     if (changeType) {
       query.push(`changeType=${changeType}`);

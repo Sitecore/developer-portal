@@ -10,7 +10,7 @@ import ChangeLogItem from './ChangeLogItem';
 
 type ChangelogListProps = {
   className?: string;
-  initialProduct?: string;
+  initialProduct?: Product;
   intialChangeType?: string;
 };
 
@@ -22,9 +22,8 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
   const [clearResults, setClearResults] = useState<boolean>(false);
   const [changeType, setChangeType] = useState<ChangeType[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
-  const [selectedProduct, setSelectedProduct] = useState<Option[] | null>();
-  const [selectedChange, setSelectedChange] = useState<Option[] | null>();
-  const [total, setTotal] = useState<number>();
+  const [selectedProduct, setSelectedProduct] = useState<Option[]>([]);
+  const [selectedChange, setSelectedChange] = useState<Option[]>([]);
 
   const loadData = useRef(true);
 
@@ -47,17 +46,15 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
     const query = [];
 
     // Preset to specific product
-    if (initialProduct) query.push(`product=${initialProduct}`);
+    if (initialProduct) query.push(`product=${initialProduct.id}`);
 
-    if (selectedProduct)
-      selectedProduct.map((p) => {
-        query.push(`product=${p.value}`);
-      });
+    selectedProduct.map((p) => {
+      query.push(`product=${p.value}`);
+    });
 
-    if (selectedChange)
-      selectedChange.map((c) => {
-        query.push(`changeType=${c.value}`);
-      });
+    selectedChange.map((c) => {
+      query.push(`changeType=${c.value}`);
+    });
 
     if (reload) query.push(`end=${cursor}`);
     query.push(`limit=5`);
@@ -85,7 +82,6 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
         .then((response) => {
           clearResults ? setFetchedResults(response.data.entries) : setFetchedResults((prev) => [...prev, ...response.data.entries]);
           setCursor(response.data.endCursor);
-          setTotal(response.data.total);
           // We are at the final results
           if (cursor != null) setReload(false);
           setIsLoading(false);
@@ -99,29 +95,31 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
 
   return (
     <div className={`${className}`}>
-      <div className="relative z-50">
+      <div className={`relative z-50 ${initialProduct ? 'flex flex-row' : ''}`}>
         {initialProduct && (
-          <div className="bg-violet-lighter text-violet mr-2 inline-block rounded-md p-3 text-sm">
-            <strong>Product:</strong> {initialProduct}
-            <Link href="/changelog">
-              <SvgIcon icon="close" width={24} height={24} className="text-violet dark:text-red relative -top-0.5 left-1 inline-block h-5 w-5" />
-            </Link>
+          <div className="bg-violet-lighter text-violet mr-2 mb-2 inline-block flex rounded-md px-3 text-sm">
+            <div className="m-auto">
+              <strong>Product:</strong> {initialProduct.name}
+              <Link href="/changelog">
+                <SvgIcon icon="close" width={24} height={24} className="text-violet dark:text-red relative -top-0.5 left-1 inline-block h-5 w-5" />
+              </Link>
+            </div>
           </div>
         )}
-
-        <MultiSelect
-          id="productSelector"
-          instanceId="productSelector"
-          key="example_id"
-          options={products.map((e) => ({ label: e.name, value: e.id }))}
-          className="mb-2 text-sm"
-          onChange={(selectedValues: Option[]) => handleApplyProductFilter(selectedValues, 'product')}
-          value={selectedProduct}
-          isSelectAll={true}
-          menuPlacement={'bottom'}
-          placeholder="Select one or more products to filter"
-        />
-
+        {!initialProduct && (
+          <MultiSelect
+            id="productSelector"
+            instanceId="productSelector"
+            key="example_id"
+            options={products.map((e) => ({ label: e.name, value: e.id }))}
+            className="mb-2 text-sm"
+            onChange={(selectedValues: Option[]) => handleApplyProductFilter(selectedValues, 'product')}
+            value={selectedProduct}
+            isSelectAll={true}
+            menuPlacement={'bottom'}
+            placeholder="Select one or more products to filter"
+          />
+        )}
         <MultiSelect
           id="changeSelector"
           instanceId="changeSelector"
@@ -136,11 +134,6 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
         />
       </div>
 
-      {total && (
-        <div className="text-right text-xs">
-          {total} {total > 1 ? 'results' : 'result'} found
-        </div>
-      )}
       {data.map((item, i) => (
         <ChangeLogItem item={item} key={i} loading={isLoading} isLast={i === data.length - 1} loadEntries={() => updateData()} />
       ))}
