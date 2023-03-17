@@ -14,8 +14,9 @@ To learn more about [Customer Data Platform](https://www.sitecore.com/products/c
 ## Documentation
 
 <Row columns={3}>
-<Link title="Sitecore CDP User Docs" link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/index-en.html" />
-<Link title="Sitecore CDP Developer Docs" link="https://doc.sitecore.com/cdp/en/developers/api/index-en.html" />
+<Link title="Overview" link="https://doc.sitecore.com/cdp/" />
+<Link title="User Docs" link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/index-en.html" />
+<Link title="Developer Docs" link="https://doc.sitecore.com/cdp/en/developers/api/index-en.html" />
 <Link title="Knowledge Hub" link="https://sitecore.cdpknowledgehub.com/docs" />
 </Row>
 

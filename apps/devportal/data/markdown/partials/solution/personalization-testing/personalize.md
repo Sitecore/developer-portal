@@ -14,11 +14,9 @@ To learn more about [Customer Data Platform](https://www.sitecore.com/products/c
 ## Documentation
 
 <Row columns={3}>
-<Link title="Developer Docs Data Model 2.1" link="https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-1/index-en.html" />
-<Link title="Developer Docs Data Model 2.0" link="https://doc.sitecore.com/cdp/en/developers/sitecore-customer-data-platform--data-model-2-0/index-en.html" />
-<Link title="Introduction to Sitecore CDP - Managing Users" link="https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/introduction-to-sitecore-cdp.html" />
-<Link title="Sitecore Personalize - Intro" link="https://doc.sitecore.com/cdp/en/users/sitecore-personalize/introduction-to-sitecore-personalize.html" />
-<Link title="Whats New in Sitecore Personalize" link="https://doc.sitecore.com/cdp/en/users/sitecore-personalize/what-s-new-in-sitecore-personalize.html" />
+<Link title="Overview" link="https://doc.sitecore.com/personalize/" />
+<Link title="User Docs" link="https://doc.sitecore.com/personalize/en/users/sitecore-personalize/index-en.html" />
+<Link title="Developer Docs" link="https://doc.sitecore.com/personalize/en/developers/api/index-en.html" />
 <Link title="Knowledge Hub" link="https://sitecore.cdpknowledgehub.com/docs" />
 </Row>
 
@@ -49,5 +47,5 @@ We also have some integration guides that will help you connect multiple Sitecor
 
 If you are interested and want to learn more, please consider these courses at Learning@Sitecore
 
-- [Preparing for Sitecore CDP/Personalize Certification Exam](https://community.sitecore.com/community?id=community_blog&sys_id=b64c74421b7b8d50e55241dde54bcb84)
-- [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore CDP and Personalize
+- [Personalize for Technical Users](https://learning.sitecore.com/learn/learning_plan/view/22/personalize-for-technical-users)
+- [Personalize for Business Users](https://learning.sitecore.com/learn/learning_plan/view/45/personalize-for-business-users)
