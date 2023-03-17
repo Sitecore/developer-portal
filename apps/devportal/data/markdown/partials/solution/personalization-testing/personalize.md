@@ -47,5 +47,6 @@ We also have some integration guides that will help you connect multiple Sitecor
 
 If you are interested and want to learn more, please consider these courses at Learning@Sitecore
 
+- [Preparing for Sitecore CDP/Personalize Certification Exam](https://community.sitecore.com/community?id=community_blog&sys_id=b64c74421b7b8d50e55241dde54bcb84)
 - [Personalize for Technical Users](https://learning.sitecore.com/learn/learning_plan/view/22/personalize-for-technical-users)
 - [Personalize for Business Users](https://learning.sitecore.com/learn/learning_plan/view/45/personalize-for-business-users)
