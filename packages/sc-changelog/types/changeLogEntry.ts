@@ -34,7 +34,6 @@ export type ChangelogEntry = ChangelogEntrySummary & {
 };
 
 export function ParseRawData(data: ChangelogList): ChangelogEntryList<ChangelogEntry[]> {
-  console.log(data);
   if (!data.results || data.results.length == 0)
     return {
       endCursor: '',
