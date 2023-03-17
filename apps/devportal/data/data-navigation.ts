@@ -323,6 +323,11 @@ export const mainNavigation: NavigationData[] = [
             title: 'Customer Data Management',
             url: '/customer-data-management/cdp',
           },
+          {
+            title: 'Access the Portal',
+            url: 'https://portal.sitecorecloud.io/',
+            external: true,
+          },
         ],
       },
       {
@@ -332,6 +337,11 @@ export const mainNavigation: NavigationData[] = [
           {
             title: 'Personalization and Testing',
             url: '/personalization-testing/personalize',
+          },
+          {
+            title: 'Access the Portal',
+            url: 'https://portal.sitecorecloud.io/',
+            external: true,
           },
         ],
       },
