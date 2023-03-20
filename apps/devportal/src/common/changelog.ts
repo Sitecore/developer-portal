@@ -25,7 +25,7 @@ export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEn
   return segments;
 }
 
-export function createChangelogEntryUrl(entry: ChangelogEntry | ChangelogEntrySummary): string {
+export function getChangelogEntryUrl(entry: ChangelogEntry | ChangelogEntrySummary): string {
   const url: string[] = [];
 
   url.push('/changelog');

@@ -47,7 +47,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
             <div className="col-span-3">
               <ChangelogList initialProduct={currentProduct} />
             </div>
-            <div className="col-span-2 h-[calc(100vh-597px)]">
+            <div className="col-span-2">
               <ChangelogByMonth product={currentProduct} />
             </div>
           </div>

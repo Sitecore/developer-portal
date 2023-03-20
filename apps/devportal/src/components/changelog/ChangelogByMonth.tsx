@@ -1,5 +1,5 @@
 import Product from '@/../../packages/sc-changelog/types/product';
-import { createChangelogEntryUrl } from '@/src/common/changelog';
+import { getChangelogEntryUrl } from '@/src/common/changelog';
 import axios from 'axios';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -60,7 +60,7 @@ const ChangelogByMonth = ({ className, product, changeType }: ChangelogByMonthPr
                   </div>
                 )}
                 <div className="ml-6">
-                  <Link className="text-violet dark:text-teal text-xs hover:font-semibold" href={createChangelogEntryUrl(item)}>
+                  <Link className="text-violet dark:text-teal text-xs hover:font-semibold" href={getChangelogEntryUrl(item)}>
                     {item.title}
                   </Link>
                 </div>

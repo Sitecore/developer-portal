@@ -1,4 +1,5 @@
 import { getSlug, slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
+import { getChangelogEntryUrl } from '@/src/common/changelog';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
@@ -37,7 +38,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
     <div className="changelog-item bg-theme-bg mt-8  mb-16" ref={entryRef}>
       <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} id={getSlug(item.title)}>
         {item.title}
-        <a className="anchor" title="Quick link to category" href={`#${getSlug(item.title)}`}>
+        <a className="anchor" title="Quick link to category" href={getChangelogEntryUrl(item)}>
           <svg width="16" height="16" viewBox="0 0 16 16" display="inline">
             <use xlinkHref="#link-icon" href="#link-icon"></use>
           </svg>
@@ -69,8 +70,8 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
         </div>
       </div>
       {item.image.length > 0 && (
-        <div className={`'w-12' relative my-4 h-40 w-full ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
-          <Image src={item.image[0].fileUrl} alt={item.title || ''} className={`relative z-10 ${loading ? 'hidden' : 'rounded-lg'}`} fill sizes="100vw" style={{ objectFit: 'cover' }} />
+        <div className={`my-4  ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
+          <Image src={`${item.image[0].fileUrl}?transform=true&width=670&fit=cover&gravity=auto`} alt={item.title || ''} className={`relative z-10 ${loading ? 'hidden' : 'rounded-lg'}`} width={670} height={100} />
         </div>
       )}
 

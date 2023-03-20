@@ -112,7 +112,9 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
             instanceId="productSelector"
             key="example_id"
             options={products.map((e) => ({ label: e.name, value: e.id }))}
-            className="mb-2 text-sm"
+            classNames={{
+              control: () => 'mb-2 text-sm dark:bg-theme-bg',
+            }}
             onChange={(selectedValues: Option[]) => handleApplyProductFilter(selectedValues, 'product')}
             value={selectedProduct}
             isSelectAll={true}
@@ -125,7 +127,9 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
           instanceId="changeSelector"
           key="example_id2"
           options={changeType.map((e) => ({ label: e.name, value: e.id }))}
-          className="mb-2 text-sm"
+          classNames={{
+            control: () => 'mb-2 text-sm dark:bg-theme-bg',
+          }}
           onChange={(selectedValues: Option[]) => handleApplyProductFilter(selectedValues, 'changes')}
           value={selectedChange}
           isSelectAll={true}

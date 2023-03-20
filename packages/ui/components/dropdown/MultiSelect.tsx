@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { useRef, useState } from 'react';
 import { components, default as ReactSelect, InputAction } from 'react-select';
 
@@ -17,6 +18,34 @@ export const MultiSelect = (props: any) => {
 
   const filteredOptions = filterOptions(props.options, selectInput);
   const filteredSelectedOptions = filterOptions(props.value, selectInput);
+
+  const controlStyles = {
+    base: 'border  hover:cursor-pointer text-sm mb-2 dark:bg-theme-bg',
+    focus: 'border-violet',
+    nonFocus: 'border-gray hover:border-gray',
+  };
+  const placeholderStyles = '';
+  const selectInputStyles = '';
+  const valueContainerStyles = '';
+  const singleValueStyles = '';
+  const multiValueStyles = 'bg-violet-lighter dark:bg-teal';
+  const multiValueLabelStyles = 'dark:text-white';
+  const multiValueRemoveStyles = 'dark:bg-teal';
+
+  const indicatorsContainerStyles = '';
+  const clearIndicatorStyles = '';
+
+  const indicatorSeparatorStyles = '';
+
+  const dropdownIndicatorStyles = '';
+  const menuStyles = 'dark:bg-theme-bg text-sm';
+  const groupHeadingStyles = '';
+  const optionStyles = {
+    base: 'dark:hover:bg-teal px-3 py-2 text-sm dark:bg-theme-bg',
+    focus: 'bg-gray active:bg-gray',
+    selected: 'bg-violet-lighter dark:bg-teal',
+  };
+  const noOptionsMessageStyles = 'text-gray p-2 bg-gray border border-dashed border-gray rounded-sm';
 
   const Option = (props: any) => (
     <components.Option {...props}>
@@ -72,29 +101,30 @@ export const MultiSelect = (props: any) => {
     else if (props.value != null) return props.onChange([...props.value?.filter(({ label }: Option) => !label.toLowerCase().includes(selectInput?.toLowerCase()))]);
   };
 
-  const customStyles = {
-    multiValueLabel: (def: any) => ({
-      ...def,
-      backgroundColor: 'lightgray',
-    }),
-    multiValueRemove: (def: any) => ({
-      ...def,
-      backgroundColor: 'lightgray',
-    }),
-    valueContainer: (base: any) => ({
-      ...base,
-      maxHeight: '65px',
-      overflow: 'auto',
-    }),
-    option: (styles: any, { isSelected, isFocused }: any) => {
-      return {
-        ...styles,
-        backgroundColor: isSelected && !isFocused ? null : isFocused && !isSelected ? styles.backgroundColor : isFocused && isSelected ? '#DEEBFF' : null,
-        color: isSelected ? null : null,
-      };
-    },
-    menu: (def: any) => ({ ...def, zIndex: 9999 }),
-  };
+  //const customStyles = {
+  //  multiValueLabel: (def: any) => ({
+  //    ...def,
+  //    backgroundColor: 'lightgray',
+  //  }),
+  //  multiValueRemove: (def: any) => ({
+  //    ...def,
+  //    backgroundColor: 'lightgray',
+  //  }),
+  //  valueContainer: (base: any) => ({
+  //    ...base,
+  //    maxHeight: '65px',
+  //    overflow: 'auto',
+  //  }),
+  //  option: (styles: any, { isSelected, isFocused }: any) => {
+  //    return {
+  //      ...styles,
+  //      backgroundColor: isSelected && !isFocused ? null : isFocused && !isSelected ? styles.backgroundColor : isFocused && isSelected ? '#e5e2ff' : null,
+  //      color: isSelected ? '#000000' : null,
+  //      fontSize: '14px',
+  //    };
+  //  },
+  //  menu: (def: any) => ({ ...def, zIndex: 9999 }),
+  //};
 
   if (props.isSelectAll && props.options.length !== 0) {
     isAllSelected.current = JSON.stringify(filteredSelectedOptions) === JSON.stringify(filteredOptions);
@@ -121,13 +151,31 @@ export const MultiSelect = (props: any) => {
         }}
         filterOption={customFilterOption}
         menuPlacement={props.menuPlacement ?? 'auto'}
-        styles={customStyles}
+        //styles={customStyles}
         isMulti
         closeMenuOnSelect={false}
         tabSelectsValue={false}
         backspaceRemovesValue={false}
         hideSelectedOptions={false}
         blurInputOnSelect={false}
+        classNames={{
+          control: ({ isFocused }) => clsx(isFocused ? controlStyles.focus : controlStyles.nonFocus, controlStyles.base),
+          placeholder: () => placeholderStyles,
+          input: () => selectInputStyles,
+          valueContainer: () => valueContainerStyles,
+          singleValue: () => singleValueStyles,
+          multiValue: () => multiValueStyles,
+          multiValueLabel: () => multiValueLabelStyles,
+          multiValueRemove: () => multiValueRemoveStyles,
+          indicatorsContainer: () => indicatorsContainerStyles,
+          clearIndicator: () => clearIndicatorStyles,
+          indicatorSeparator: () => indicatorSeparatorStyles,
+          dropdownIndicator: () => dropdownIndicatorStyles,
+          menu: () => menuStyles,
+          groupHeading: () => groupHeadingStyles,
+          option: ({ isFocused, isSelected }) => clsx(isFocused && optionStyles.focus, isSelected && optionStyles.selected, optionStyles.base),
+          noOptionsMessage: () => noOptionsMessageStyles,
+        }}
       />
     );
   }
@@ -145,9 +193,27 @@ export const MultiSelect = (props: any) => {
       menuPlacement={props.menuPlacement ?? 'auto'}
       onKeyDown={onKeyDown}
       tabSelectsValue={false}
-      hideSelectedOptions={true}
+      hideSelectedOptions={false}
       backspaceRemovesValue={false}
       blurInputOnSelect={true}
+      classNames={{
+        control: ({ isFocused }) => clsx(isFocused ? controlStyles.focus : controlStyles.nonFocus, controlStyles.base),
+        placeholder: () => placeholderStyles,
+        input: () => selectInputStyles,
+        valueContainer: () => valueContainerStyles,
+        singleValue: () => singleValueStyles,
+        multiValue: () => multiValueStyles,
+        multiValueLabel: () => multiValueLabelStyles,
+        multiValueRemove: () => multiValueRemoveStyles,
+        indicatorsContainer: () => indicatorsContainerStyles,
+        clearIndicator: () => clearIndicatorStyles,
+        indicatorSeparator: () => indicatorSeparatorStyles,
+        dropdownIndicator: () => dropdownIndicatorStyles,
+        menu: () => menuStyles,
+        groupHeading: () => groupHeadingStyles,
+        option: ({ isFocused, isSelected }) => clsx(isFocused && optionStyles.focus, isSelected && optionStyles.selected, optionStyles.base),
+        noOptionsMessage: () => noOptionsMessageStyles,
+      }}
     />
   );
 };

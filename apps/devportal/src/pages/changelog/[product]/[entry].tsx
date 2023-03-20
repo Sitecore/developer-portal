@@ -102,8 +102,8 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 </div>
               </div>
               {changelogEntry.image.length > 0 && (
-                <div className={`relative my-4 h-40 w-full`}>
-                  <Image src={changelogEntry.image[0].fileUrl} alt={changelogEntry.title || ''} className="relative z-10 rounded-lg" fill sizes="100vw" style={{ objectFit: 'cover' }} />
+                <div className={`'w-12' my-4 `}>
+                  <Image src={`${changelogEntry.image[0].fileUrl}?transform=true&width=620&fit=cover&gravity=auto`} alt={changelogEntry.title || ''} className={`relative z-10 rounded-lg`} width={620} height={100} />
                 </div>
               )}
 
