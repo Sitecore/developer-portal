@@ -95,7 +95,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
 
   return (
     <div className={`${className}`}>
-      <div className={`relative z-50 ${initialProduct ? 'flex flex-row' : ''}`}>
+      <div className={`z-50 ${initialProduct ? 'flex flex-row' : ''}`}>
         {initialProduct && (
           <div className="bg-violet-lighter text-violet mr-2 mb-2 inline-block flex rounded-md px-3 text-sm">
             <div className="m-auto">
