@@ -26,6 +26,7 @@ export async function Search(productId?: string, changeTypeId?: string, summary?
         }
       }
   `;
+
   const response = await fetchAPI(searchQuery);
   return response.data;
 }
@@ -42,6 +43,8 @@ function buildParameters(productId?: string, changeTypeId?: string, searchTerm?:
 
 const openWHERE = 'where: {';
 const openAND = 'AND: [';
+const openCombinedANDOR = 'AND: { OR: [';
+const closeCombinedANDOR = ']}';
 const openOR = 'OR: [';
 const closeANDOR = ']';
 const closeWHERE = '}';
@@ -106,13 +109,13 @@ function buildSearchTermClause(searchTerm?: string): string {
 
 // Match multiple changetype
 function buildChangeTypesClause(changeTypeIds: string[], multipleProducts: boolean): string {
-  let changeTypeClause: string = multipleProducts ? openAND && openOR : openOR;
+  let changeTypeClause: string = multipleProducts ? openCombinedANDOR : openOR;
 
   changeTypeIds.map((changeTypeId) => {
     changeTypeClause += `{changeType: { changelog_ids: "${changeTypeId}"}}`;
   });
 
-  changeTypeClause += multipleProducts ? closeANDOR && closeANDOR : closeANDOR;
+  changeTypeClause += multipleProducts ? closeCombinedANDOR : closeANDOR;
   return changeTypeClause;
 }
 
