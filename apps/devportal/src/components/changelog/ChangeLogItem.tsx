@@ -71,11 +71,11 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
       </div>
       {item.image.length > 0 && (
         <div className={`my-4  ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
-          <Image src={`${item.image[0].fileUrl}?transform=true&width=670&fit=cover&gravity=auto`} alt={item.title || ''} className={`relative z-10 ${loading ? 'hidden' : 'rounded-lg'}`} width={670} height={100} />
+          <Image src={`${item.image[0].fileUrl}?transform=true&width=670&fit=cover&gravity=auto`} alt={item.title || ''} className={`${loading ? 'hidden' : 'rounded-lg'}`} width={670} height={100} />
         </div>
       )}
 
-      <div className={`prose dark:prose-invert my-3 text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
+      <div className={`prose-xl dark:prose-invert my-3 text-sm ${loading ? skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
       <span className={`${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>{item.readMoreLink && <TextLink className="font-medium" href={item.readMoreLink} text="Read more" />}</span>
     </div>
   );
