@@ -158,7 +158,7 @@ const ProductLogos: ProductImage[] = [
     Product: Product.Search,
     Variant: Variant.Dark,
     logoFileName: '6f170dce369e4acb8342463d9bc229b6',
-    iconFileName: '23ba26051b0a454a90d740ffc4cc0df8',
+    iconFileName: '2c1a438a477d42f5b1ef92b16975c949',
   },
   {
     Product: Product.Search,
