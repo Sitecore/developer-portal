@@ -37,11 +37,8 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
   return (
     <div className="changelog-item bg-theme-bg mt-8  mb-16" ref={entryRef}>
       <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} id={getSlug(item.title)}>
-        {item.title}
-        <a className="anchor" title="Quick link to category" href={getChangelogEntryUrl(item)}>
-          <svg width="16" height="16" viewBox="0 0 16 16" display="inline">
-            <use xlinkHref="#link-icon" href="#link-icon"></use>
-          </svg>
+        <a href={getChangelogEntryUrl(item)} title={item.title}>
+          {item.title}
         </a>
       </h2>
       <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
@@ -51,10 +48,10 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
               {item.imageId && (
                 <>
                   <div className="absolute h-5 w-5 dark:hidden">
-                    <ProductIcon product={item.imageId} variant="Light" className={`relative z-10 h-5 w-5 ${loading ? 'hidden' : ''}`} />
+                    <ProductIcon product={item.imageId} variant="Light" className={`${loading ? 'hidden' : ''}`} width={20} height={20} />
                   </div>
                   <div className="absolute hidden h-5 w-5 dark:block">
-                    <ProductIcon product={item.imageId} variant="Dark" className={`relative h-5 w-5 ${loading ? 'hidden' : ''}`} />
+                    <ProductIcon product={item.imageId} variant="Dark" className={`${loading ? 'hidden' : ''}`} width={20} height={20} />
                   </div>
                 </>
               )}
@@ -71,12 +68,12 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
       </div>
       {item.image.length > 0 && (
         <div className={`my-4  ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
-          <Image src={`${item.image[0].fileUrl}?transform=true&width=670&fit=cover&gravity=auto`} alt={item.title || ''} className={`${loading ? 'hidden' : 'rounded-lg'}`} width={670} height={100} />
+          <Image src={`${item.image[0].fileUrl}?transform=true&width=670&fit=cover&gravity=auto`} alt={item.title || ''} priority className={`${loading ? 'hidden' : 'rounded-lg'}`} width={670} height={100} />
         </div>
       )}
 
       <div className={`prose-xl dark:prose-invert my-3 text-sm ${loading ? skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
-      <span className={`${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>{item.readMoreLink && <TextLink className="font-medium" href={item.readMoreLink} text="Read more" />}</span>
+      <span className={`${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>{item.readMoreLink && <TextLink className="font-medium" href={item.readMoreLink} text={`Read more about ${item.title}`} />}</span>
     </div>
   );
 };

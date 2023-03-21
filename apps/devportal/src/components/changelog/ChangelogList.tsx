@@ -57,7 +57,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
     });
 
     if (reload) query.push(`end=${cursor}`);
-    query.push(`limit=5`);
+    query.push(`limit=1`);
     return query;
   }
 
@@ -107,21 +107,29 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
           </div>
         )}
         {!initialProduct && (
-          <MultiSelect
-            id="productSelector"
-            instanceId="productSelector"
-            key="example_id"
-            options={products.map((e) => ({ label: e.name, value: e.id }))}
-            classNames={{
-              control: () => 'mb-2 text-sm dark:bg-theme-bg',
-            }}
-            onChange={(selectedValues: Option[]) => handleApplyProductFilter(selectedValues, 'product')}
-            value={selectedProduct}
-            isSelectAll={true}
-            menuPlacement={'bottom'}
-            placeholder="Select one or more products to filter"
-          />
+          <>
+            <label className="sr-only" htmlFor="react-select-productSelector-input">
+              Filter by product
+            </label>
+            <MultiSelect
+              id="productSelector"
+              instanceId="productSelector"
+              key="example_id"
+              options={products.map((e) => ({ label: e.name, value: e.id }))}
+              classNames={{
+                control: () => 'mb-2 text-sm dark:bg-theme-bg',
+              }}
+              onChange={(selectedValues: Option[]) => handleApplyProductFilter(selectedValues, 'product')}
+              value={selectedProduct}
+              isSelectAll={true}
+              menuPlacement={'bottom'}
+              placeholder="Select one or more products to filter"
+            />
+          </>
         )}
+        <label className="sr-only" htmlFor="react-select-changeSelector-input">
+          Filter by change
+        </label>
         <MultiSelect
           id="changeSelector"
           instanceId="changeSelector"
