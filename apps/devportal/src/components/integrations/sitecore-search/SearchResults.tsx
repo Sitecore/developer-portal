@@ -1,7 +1,8 @@
 import { useSearchResults, widget, WidgetDataType } from '@sitecore-discover/react';
 import { WidgetComponentProps } from '@sitecore-discover/react/types';
 import Image from 'next/image';
-import type { ComponentType } from 'react';
+import { useRouter } from 'next/navigation';
+import { ComponentType } from 'react';
 import Loader from './Loader';
 import QuerySummary from './QuerySummary';
 
@@ -9,13 +10,14 @@ export interface SearchResultsType extends WidgetComponentProps {
   initialKeyphrase?: string;
   currentPage?: number;
   initialArticlesPerPage?: number;
-  title?: string;
+  defaultSortType?: string;
 }
 
 export const SearchResults = (props: SearchResultsType) => {
-  const { initialKeyphrase = '', initialArticlesPerPage = 24, title = '', currentPage = 1 } = props;
+  const router = useRouter();
+  const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = '' } = props;
   const {
-    actions: { onSortChange },
+    actions: { onSortChange, onFacetClick },
     context: { page = currentPage, itemsPerPage = initialArticlesPerPage },
     queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: articles = [], facet: facets = [] } = {} },
   } = useSearchResults(() => {
@@ -25,6 +27,7 @@ export const SearchResults = (props: SearchResultsType) => {
       page: currentPage,
     };
   });
+
   return (
     <>
       {isLoading && <Loader />}
@@ -33,12 +36,7 @@ export const SearchResults = (props: SearchResultsType) => {
           <div className="m-auto w-full items-center">
             <div className="relative float-right inline-flex">
               <label>Sort by:</label>
-              <select
-                className="sortSelect"
-                onChange={(event) => {
-                  onSortChange({ sortType: event.target.value });
-                }}
-              >
+              <select className="sortSelect" onChange={onSortChange}>
                 {sortChoices.map((option, index) => (
                   <option key={index} value={option.name}>
                     {option.label}
@@ -46,7 +44,7 @@ export const SearchResults = (props: SearchResultsType) => {
                 ))}
               </select>
             </div>
-            {articles.length && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={title} />}
+            {articles.length && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={initialKeyphrase} />}
           </div>
 
           <div className="flex flex-row">
@@ -57,7 +55,7 @@ export const SearchResults = (props: SearchResultsType) => {
                   <ul>
                     {facet.value.map((facetOption, index) => (
                       <li key={index}>
-                        <input type="checkbox" value={facetOption.id} />
+                        <input type="checkbox" value={facetOption.id} onClick={onFacetClick} />
                         <span className="ml-2">
                           {facetOption.text} ({facetOption.count})
                         </span>
@@ -74,7 +72,7 @@ export const SearchResults = (props: SearchResultsType) => {
                   <li key={index}>
                     <div className="border-theme-border relative border-b p-4">
                       <a href={result.url} className="group flex">
-                        {result.image_url && <Image width={200} height={25} src={result.image_url} alt={title} />}
+                        {result.image_url && <Image width={200} height={25} src={result.image_url} alt={result.title} />}
                         <div className={result.image_url ? 'mt-2 ml-6' : ''}>
                           <p className="font-bold group-hover:underline">{result.name}</p>
                           <span className="break-words text-xs italic">{result.url}</span>

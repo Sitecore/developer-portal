@@ -30,7 +30,7 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo }) => {
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <VerticalGroup>
         <Container>
-          <SearchResults rfkId="rfkid_7" initialKeyphrase={query} title={query} currentPage={currentPage} />
+          <SearchResults rfkId="rfkid_7" initialKeyphrase={query} currentPage={currentPage} />
         </Container>
       </VerticalGroup>
     </Layout>

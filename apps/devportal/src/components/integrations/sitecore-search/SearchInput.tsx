@@ -1,5 +1,6 @@
 // Global
-import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
 interface SearchInputProps {
@@ -8,16 +9,18 @@ interface SearchInputProps {
 
 const SearchInput = ({ className }: SearchInputProps) => {
   const router = useRouter();
-  const [keywords, setKeywords] = useState(router?.query['q'] ?? '');
+  const searchParams = useSearchParams();
+
+  const [keywords, setKeywords] = useState(searchParams.get('q') ?? '');
 
   const submit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    window.location.href = '/search?q=' + keywords;
+    router.push('/search?q=' + keywords);
   };
 
   return (
     <form className={className} onSubmit={submit}>
-      <div className="relative flex w-full items-center">
+      <div className="relative flex w-full flex-row items-center">
         <label className="sr-only">Search:</label>
         <span aria-hidden="true" className="absolute left-4 z-20">
           <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -38,6 +41,10 @@ const SearchInput = ({ className }: SearchInputProps) => {
             setKeywords(event.target.value);
           }}
         />
+        <span className="absolute right-4 z-20">
+          <span className="text-sm"> Powered by </span>
+          <Image src="https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/icons/newnavigation/products/search-horizontal-color-black-txt.svg?md=20221012T213412Z" alt="Powered by" className="relative inline" width="70" height="30" />
+        </span>
       </div>
     </form>
   );
