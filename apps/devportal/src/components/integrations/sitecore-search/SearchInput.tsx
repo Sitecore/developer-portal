@@ -1,6 +1,6 @@
 // Global
 import Image from 'next/image';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 interface SearchInputProps {
@@ -9,13 +9,12 @@ interface SearchInputProps {
 
 const SearchInput = ({ className }: SearchInputProps) => {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
-  const [keywords, setKeywords] = useState(searchParams.get('q') ?? '');
+  const [keywords, setKeywords] = useState(router.query['q'] ?? '');
 
   const submit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    router.push('/search?q=' + keywords);
+    router.push('/search?q=' + keywords).then(() => router.reload());
   };
 
   return (
