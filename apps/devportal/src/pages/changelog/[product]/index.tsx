@@ -47,7 +47,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
             <div className="col-span-3">
               <ChangelogList initialProduct={currentProduct} />
             </div>
-            <div className="col-span-2">
+            <div className="col-span-2 hidden md:block">
               <ChangelogByMonth product={currentProduct} />
             </div>
           </div>

@@ -109,7 +109,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
 
               <div className={`my-3 text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
             </div>
-            <div className="col-span-2">
+            <div className="col-span-2 hidden md:block">
               <ChangelogByMonth product={currentProduct} />
             </div>
           </div>
