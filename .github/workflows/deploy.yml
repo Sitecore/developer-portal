@@ -19,6 +19,8 @@ jobs:
           NEXT_PUBLIC_COVEO_ORGANIZATION_ID: ${{ secrets.COVEO_ORGANIZATION_ID }}
           NEXT_PUBLIC_COVEO_SEARCH_HUB: ${{ secrets.COVEO_SEARCH_HUB }}
           NEXT_PUBLIC_COVEO_PIPELINE: ${{ secrets.COVEO_PIPELINE }}
+          SITECORE_ENDPOINT_URL: ${{ secrets.SITECORE_ENDPOINT_URL }}
+          SITECORE_DEV_AUTH_TOKEN: ${{ secrets.SITECORE_DEV_AUTH_TOKEN }}
         run: npm run build
 
   deploy:
