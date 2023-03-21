@@ -1,0 +1,100 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "SUGCON Europe 2023 Call for Speakers",
+      "copy": "SUGCON Europe is back! Join the Sitecore Community in beautiful Málaga, Spain, from March 23rd to 24th. If you are interested in speaking at SUGCON 2023, submit your topic by clicking the link below. More details are coming soon.",
+      "image": "https://go.sitecore.com/l/857953/2022-12-17/tdlvg1/857953/167132999600OcLtLV/Untitled_design__2_.png",
+      "link": {
+        "text": "Become a speaker",
+        "href": "https://sessionize.com/sugcon-europe-2023"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "XM Cloud Recommended Practices",
+      "copy": "Learn tips for teams working on XM Cloud projects from developers in the field.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5c7/857953/1658870987UUkRlEYe/2.png",
+      "link": {
+        "href": "https://developers.sitecore.com/learn/faq/xm-cloud-recommended-practices"
+      }
+    },
+    {
+      "title": "Capturing Additional Data in a View Event in Sitecore CDP/Personalize",
+      "copy": "Learn the different approaches to capture arbitrary information in CDP so that you can then use Sitecore Personalize to create a Decision Model and a Unique Web Experience based on that arbitrary data",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czn4/857953/1656293027HOmT1QJR/Untitled_design__12_.png",
+      "link": {
+        "href": "https://dylanyoung.dev/insights/sitecore-cdp-personalize-capture-additional-data-in-a-view-event/"
+      }
+    },
+    {
+      "title": "A new way to wire up integrations",
+      "copy": "Sitecore 10.3. is now out, and one of the many changes is that the server-side event model for CMS has been extended in Webhooks. Learn what this means and how you make use of them!",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc2w/857953/1650590313tUyZoKqL/4.png",
+      "link": {
+        "href": "https://blog.jermdavis.dev/posts/2022/sitecore-10-3-webhooks-integration"
+      }
+    },
+    {
+      "title": "Sitecore - Safely Use HttpClient",
+      "copy": "This is a follow up from a SUGCON Europe presentation on safe usage of the .NET HttpClient in Sitecore.",
+      "image": "https://go.sitecore.com/l/857953/2022-10-15/r7d59n/857953/1665890761FaqRUiNi/Pink_Inspirational_Instagram_Quote__2_.png",
+      "link": {
+        "href": "https://www.coreysmith.co/sitecore-safely-use-httpclient/"
+      }
+    },
+    {
+      "title": "Sitecore Content Hub ONE for Developers",
+      "copy": "Content Hub ONE is a headless and agile “Software as a Service” content management system with a simple management interface and APIs to consume and manage the content.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5cb/857953/16588710277UW1trZc/3.png",
+      "link": {
+        "text": "Watch Now",
+        "href": "https://www.youtube.com/watch?v=cP2BBlgKZS8"
+      }
+    },
+    {
+      "title": "Path to XM Cloud featuring 10.3 Updates",
+      "copy": "Josh Hover is joined by Jake Hookom, VP of Commerce and Platforms at Sitecore. Learn about the path to XM Cloud from XP solutions, anticipated 10.3 release date, XM Cloud sandbox release date, headless, and more.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5d1bb/857953/1656295790L4iFnrCN/Untitled_design__4_.png",
+      "link": {
+        "text": "Listen Now",
+        "href": "https://www.buzzsprout.com/2049944/11747999-path-to-xm-cloud-featuring-10-3-updates"
+      }
+    },
+    {
+      "title": "Send guest information to your marketing tool with Sitecore CDP Audience Sync",
+      "copy": "Learn how to inspect the payload that an Audience Sync Flow receives and how to use Freemarker to walk through it.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5cx/857953/1658871118S3sIFHp6/4.png",
+      "link": {
+        "href": "https://www.linkedin.com/pulse/send-guest-information-your-marketing-tool-sitecore-cdp-serpico/"
+      }
+    },
+    {
+      "title": "SearchStax Cloud – Recommended Mitigation for Solr Vulnerability from CVE-2022-39135",
+      "copy": "The NIST National Vulnerability Database has published a new vulnerability – CVE-2022-39135, which affects Apache Solr versions 6.5 to 8.11.2. This vulnerability is classified as Critical with a CVSS score of 9.8.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czp1/857953/1656293079sSwvv9lq/Untitled_design__11_.png",
+      "link": {
+        "href": "https://www.searchstax.com/blog/searchstax-cloud-recommended-mitigation-for-solr-vulnerability-from-cve-2022-39135/"
+      }
+    },
+    {
+      "title": "Sitecore JSS: Exploring the SitecoreContext object",
+      "copy": "This is part of a short series covering SitecoreContext Object. Learn about SitecoreContext and Sitecore JSS.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5hm/857953/1658871187EaGFBnKo/Pink_Floral_Motivational_Instagram_Post.png",
+      "link": {
+        "href": "https://www.kayee.nl/2022/12/12/sitecore-jss-exploring-the-sitecorecontext-object/"
+      }
+    },
+    {
+      "title": "Sitecore Hackathon 2023",
+      "copy": "Sitecore Hackathon is a free online community-driven event organized by Akshay Sura and supported by Sitecore. Sign your team up by 6 pm EST on February 17, 2023, for the opportunity to participate in a contest.",
+      "image": "https://go.sitecore.com/l/857953/2022-10-15/r7d55k/857953/1665888525QVNM1kKz/Pink_Inspirational_Instagram_Quote.png",
+      "link": {
+        "text": "Sign up now",
+        "href": "https://sitecorehackathon.org/sitecore-hackathon-2023/"
+      },
+      "variant": "full-width"
+    }
+  ]
+}
