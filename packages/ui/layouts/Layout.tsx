@@ -43,7 +43,7 @@ const Layout = ({ title, description = '', openGraphImage, children }: LayoutPro
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
         <title>{title}</title>
         <link rel="icon" href={`${publicUrl}/favicon.png`} />
@@ -68,7 +68,7 @@ const Layout = ({ title, description = '', openGraphImage, children }: LayoutPro
         <div className="sr-only" aria-live="polite" aria-atomic="true">{`The ${title} page has loaded.`}</div>
         {children}
       </main>
-    </div>
+    </>
   );
 };
 

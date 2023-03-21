@@ -1,7 +1,7 @@
 // Global
 import { MDXRemote } from 'next-mdx-remote';
 import { useEffect, useState } from 'react';
-import { LightAsync as SyntaxHighlight } from 'react-syntax-highlighter';
+//import { LightAsync as SyntaxHighlight } from 'react-syntax-highlighter';
 import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 // Interfaces
 import type { PartialData } from '@/src/interfaces/page-info';
@@ -16,6 +16,8 @@ import { Row } from 'ui/components/common/Row';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import VideoPromo from 'ui/components/video/videoPromo';
 import YouTube from 'ui/components/video/YouTube';
+
+import { Light as SyntaxHighlight } from 'react-syntax-highlighter';
 
 type MarkdownContentProps = {
   partials: PartialData;
