@@ -1,11 +1,10 @@
-import { getSlug, slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
+import { getSlug } from '@/../../packages/sc-changelog/utils/stringUtils';
 import { getChangelogEntryUrl } from '@/src/common/changelog';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import ProductIcon from 'ui/components/common/ProductIcon';
 import TextLink from 'ui/components/common/TextLink';
+import { ChangelogItemMeta } from './ChangelogItemMeta';
 
 export type ChangeLogItemProps = {
   item: ChangelogEntry;
@@ -35,39 +34,17 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
   }, [isLast]);
 
   return (
-    <div className="changelog-item bg-theme-bg mt-8  mb-16" ref={entryRef}>
+    <div className="changelog-item bg-theme-bg mt-8 mb-16" ref={entryRef}>
       <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} id={getSlug(item.title)}>
         <a href={getChangelogEntryUrl(item)} title={item.title}>
           {item.title}
         </a>
       </h2>
-      <div className="mt-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
-        <div className="flex items-center gap-5">
-          <Link href={`/changelog/${getSlug(item.productName)}`}>
-            <div className={`text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
-              {item.imageId && (
-                <>
-                  <div className="absolute h-5 w-5 dark:hidden">
-                    <ProductIcon product={item.imageId} variant="Light" className={`${loading ? 'hidden' : ''}`} width={20} height={20} />
-                  </div>
-                  <div className="absolute hidden h-5 w-5 dark:block">
-                    <ProductIcon product={item.imageId} variant="Dark" className={`${loading ? 'hidden' : ''}`} width={20} height={20} />
-                  </div>
-                </>
-              )}
-              <div className="ml-6 text-xs">{item.productName}</div>
-            </div>
-          </Link>
-          <time className={`text-xs ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dateTime="2022-10-21T15:48:00.000Z">
-            {item.releaseDate}
-          </time>
-          <div>
-            <span className={`bg-theme-bg-alt ${slugify(item.changeType[0].name)} inline-block text-xs ${loading ? 'w-12' && skeletonLoaderClasses : 'rounded-md px-3 py-1'}`}>{item.changeType[0].name}</span>
-          </div>
-        </div>
-      </div>
+
+      <ChangelogItemMeta item={item} loading={loading} />
+
       {item.image.length > 0 && (
-        <div className={`my-4  ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
+        <div className={`mb-4  ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
           <Image src={`${item.image[0].fileUrl}?transform=true&width=670&fit=cover&gravity=auto`} alt={item.title || ''} priority className={`${loading ? 'hidden' : 'rounded-lg'}`} width={670} height={100} />
         </div>
       )}
