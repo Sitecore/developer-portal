@@ -1,8 +1,8 @@
 import { useSearchResults, widget, WidgetDataType } from '@sitecore-discover/react';
 import { WidgetComponentProps } from '@sitecore-discover/react/types';
+import { SortSelect } from '@sitecore-discover/ui';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { ComponentType } from 'react';
+import { ComponentType, useState } from 'react';
 import Loader from './Loader';
 import QuerySummary from './QuerySummary';
 
@@ -14,8 +14,8 @@ export interface SearchResultsType extends WidgetComponentProps {
 }
 
 export const SearchResults = (props: SearchResultsType) => {
-  const router = useRouter();
-  const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = '' } = props;
+  const [currentSortValue, setCurrentSortValue] = useState<SortSelect.SortSelectSelectedOption>();
+  const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = 'title_asc' } = props;
   const {
     actions: { onSortChange, onFacetClick },
     context: { page = currentPage, itemsPerPage = initialArticlesPerPage },
@@ -25,6 +25,7 @@ export const SearchResults = (props: SearchResultsType) => {
       itemsPerPage: initialArticlesPerPage,
       keyphrase: initialKeyphrase,
       page: currentPage,
+      sort: defaultSortType,
     };
   });
 
@@ -35,14 +36,26 @@ export const SearchResults = (props: SearchResultsType) => {
         <div className="mt-12">
           <div className="m-auto w-full items-center">
             <div className="relative float-right inline-flex">
-              <label>Sort by:</label>
-              <select className="sortSelect" onChange={onSortChange}>
-                {sortChoices.map((option, index) => (
-                  <option key={index} value={option.name}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
+              <div>
+                <label>Sorting by {currentSortValue?.name}</label>
+              </div>
+              <div>
+                <SortSelect.Root onValueChange={(v) => setCurrentSortValue(v)}>
+                  <SortSelect.Trigger>
+                    <SortSelect.SelectValue></SortSelect.SelectValue>
+                    <SortSelect.Icon></SortSelect.Icon>
+                  </SortSelect.Trigger>
+                  <SortSelect.Content>
+                    <SortSelect.Viewport>
+                      {sortChoices.map((option, index) => (
+                        <SortSelect.Option key={index} value={option}>
+                          <SortSelect.OptionText>{option.label}</SortSelect.OptionText>
+                        </SortSelect.Option>
+                      ))}
+                    </SortSelect.Viewport>
+                  </SortSelect.Content>
+                </SortSelect.Root>
+              </div>
             </div>
             {articles.length && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={initialKeyphrase} />}
           </div>
@@ -72,7 +85,7 @@ export const SearchResults = (props: SearchResultsType) => {
                   <li key={index}>
                     <div className="border-theme-border relative border-b p-4">
                       <a href={result.url} className="group flex">
-                        {result.image_url && <Image width={200} height={25} src={result.image_url} alt={result.title} />}
+                        {result.image_url && <Image width={200} height={25} src={result.image_url} alt={result.index_name} />}
                         <div className={result.image_url ? 'mt-2 ml-6' : ''}>
                           <p className="font-bold group-hover:underline">{result.name}</p>
                           <span className="break-words text-xs italic">{result.url}</span>
