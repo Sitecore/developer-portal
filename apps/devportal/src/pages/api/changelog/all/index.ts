@@ -1,18 +1,18 @@
 // Interfaces
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { GetSummaryLatestItemsByProductAndChangeType } from 'sc-changelog/changelog';
-import { ChangeTypeConfig, ProductConfig } from 'sc-changelog/configuration';
-import ChangeTypes from 'sc-changelog/constants/changeTypes';
-import Products from 'sc-changelog/constants/products';
 import { ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<Record<string, ChangelogEntrySummary[]>>) => {
-  const currentChangeType: ChangeTypeConfig | undefined = ChangeTypes.find((x) => x.name == req.query.changeType);
-  const currentProduct: ProductConfig | undefined = Products.find((x) => x.name == req.query.product);
-  const productId = currentProduct != null ? currentProduct.entityId : '';
-  const changeTypeId = currentChangeType != null ? currentChangeType.entityId : '';
+const getQueryArray = (query: string | string[] | undefined): string[] => {
+  if (query == undefined) return [];
+  return Array.isArray(query) ? query : [query];
+};
 
-  const items = await GetSummaryLatestItemsByProductAndChangeType(productId, changeTypeId);
+const handler = async (req: NextApiRequest, res: NextApiResponse<Record<string, ChangelogEntrySummary[]>>) => {
+  const products: string[] = getQueryArray(req.query.product);
+  const changeTypes: string[] = getQueryArray(req.query.changeType);
+
+  const items = await GetSummaryLatestItemsByProductAndChangeType(products.join('|'), changeTypes.join('|'));
   const entries: ChangelogEntrySummary[] = items.entries;
 
   const groupedObjects = entries.reduce((collection, obj) => {
