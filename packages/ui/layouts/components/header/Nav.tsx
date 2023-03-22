@@ -116,7 +116,7 @@ const Nav = ({ navigationData, sitecoreQuickLinks, children }: NavProps): JSX.El
             <span className="sr-only">Sitecore</span>
             <span className="text-theme-text sr-only ml-4 hidden xl:block">Developer Portal</span>
           </Link>
-          <nav ref={navRef} id="scdp-nav" className={`lg:static lg:mx-12 lg:flex lg:bg-transparent xl:mx-16 ${isOpen ? 'block' : 'hidden'}`}>
+          <nav ref={navRef} id="scdp-nav" className={`main-nav lg:static lg:mx-12 lg:flex lg:bg-transparent xl:mx-16 ${isOpen ? 'block' : 'hidden'}`}>
             <ul className="block text-sm lg:flex">
               {navigationData.map((item: NavigationData, index: number) => {
                 return (
