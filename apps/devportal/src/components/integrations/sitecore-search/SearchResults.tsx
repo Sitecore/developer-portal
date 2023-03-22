@@ -2,7 +2,7 @@ import { useSearchResults, widget, WidgetDataType } from '@sitecore-discover/rea
 import { WidgetComponentProps } from '@sitecore-discover/react/types';
 import { SortSelect } from '@sitecore-discover/ui';
 import Image from 'next/image';
-import { ComponentType, useState } from 'react';
+import { ComponentType } from 'react';
 import Loader from './Loader';
 import QuerySummary from './QuerySummary';
 
@@ -14,11 +14,10 @@ export interface SearchResultsType extends WidgetComponentProps {
 }
 
 export const SearchResults = (props: SearchResultsType) => {
-  const [currentSortValue, setCurrentSortValue] = useState<SortSelect.SortSelectSelectedOption>();
   const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = 'title_asc' } = props;
   const {
     actions: { onSortChange, onFacetClick },
-    context: { page = currentPage, itemsPerPage = initialArticlesPerPage },
+    context: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
     queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: articles = [], facet: facets = [] } = {} },
   } = useSearchResults(() => {
     return {
@@ -29,6 +28,8 @@ export const SearchResults = (props: SearchResultsType) => {
     };
   });
 
+  const selectedSortIndex = sortChoices.findIndex((s) => s.name === sortType);
+
   return (
     <>
       {isLoading && <Loader />}
@@ -37,18 +38,18 @@ export const SearchResults = (props: SearchResultsType) => {
           <div className="m-auto w-full items-center">
             <div className="relative float-right inline-flex">
               <div>
-                <label>Sorting by {currentSortValue?.name}</label>
+                <label>Sorting by: </label>
               </div>
               <div>
-                <SortSelect.Root onValueChange={(v) => setCurrentSortValue(v)}>
+                <SortSelect.Root defaultValue={sortChoices[selectedSortIndex]?.name} onValueChange={onSortChange}>
                   <SortSelect.Trigger>
-                    <SortSelect.SelectValue></SortSelect.SelectValue>
-                    <SortSelect.Icon></SortSelect.Icon>
+                    <SortSelect.SelectValue>{selectedSortIndex > -1 ? sortChoices[selectedSortIndex].label : ''}</SortSelect.SelectValue>
+                    <SortSelect.Icon />
                   </SortSelect.Trigger>
                   <SortSelect.Content>
                     <SortSelect.Viewport>
                       {sortChoices.map((option, index) => (
-                        <SortSelect.Option key={index} value={option}>
+                        <SortSelect.Option value={option} key={option.name}>
                           <SortSelect.OptionText>{option.label}</SortSelect.OptionText>
                         </SortSelect.Option>
                       ))}
