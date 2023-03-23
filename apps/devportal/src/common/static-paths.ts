@@ -125,6 +125,7 @@ export const NEWSLETTER_DATA_DIRECTORY = path.join(process.cwd(), 'data/newslett
 
 export const getNewsletterStaticPaths = (): NewsletterPath[] => {
   const years = fs.readdirSync(NEWSLETTER_DATA_DIRECTORY);
+  years.sort().reverse();
 
   const paths: NewsletterPath[] = [];
 
@@ -132,6 +133,7 @@ export const getNewsletterStaticPaths = (): NewsletterPath[] => {
     const yearPath = path.resolve(NEWSLETTER_DATA_DIRECTORY, year);
     const months = fs.readdirSync(yearPath);
 
+    months.sort().reverse();
     months.forEach((month) => {
       paths.push({ params: { year, month: month.substring(0, month.length - 5) } });
     });

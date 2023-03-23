@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
     const newsletters = [];
 
-    years.sort();
+    years.sort().reverse();
 
     // Using for loops to shortcut early
     for (let i = 0; i < years.length; i++) {
