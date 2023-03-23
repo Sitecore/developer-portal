@@ -187,7 +187,7 @@ export const getChangelogProductEntryPaths = async (): Promise<ProductChangeLogE
   list.entries.map((e: ChangelogEntry) => {
     const urlSegments = getChangelogEntryUrlSegments(e);
     const product = getSlug(urlSegments[0]);
-    const changeType = getSlug(urlSegments[1]);
+    //const changeType = getSlug(urlSegments[1]);
     const entry = slugify(urlSegments[2]);
 
     paths.push({ params: { product, entry } });

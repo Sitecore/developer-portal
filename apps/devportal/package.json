@@ -36,6 +36,7 @@
     "@remark-embedder/transformer-oembed": "^3.0.0",
     "@types/lodash.throttle": "^4.1.7",
     "axios": "^0.27.2",
+    "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "hast-util-heading-rank": "^2.1.0",
     "hast-util-to-string": "^2.0.0",
