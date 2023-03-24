@@ -73,6 +73,7 @@ const nextConfig = {
       'sitecorecontenthub.stylelabs.cloud',
       'mms-delivery.sitecorecloud.io',
       'wwwsitecorecom.azureedge.net',
+      'www.gitbook.com',
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     minimumCacheTTL: 60,
