@@ -24,7 +24,7 @@ export const SearchResults = (props: SearchResultsType) => {
       itemsPerPage: initialArticlesPerPage,
       keyphrase: initialKeyphrase,
       page: currentPage,
-      sort: defaultSortType,
+      sortType: defaultSortType,
     };
   });
 
@@ -48,7 +48,7 @@ export const SearchResults = (props: SearchResultsType) => {
                   </SortSelect.Trigger>
                   <SortSelect.Content>
                     <SortSelect.Viewport>
-                      {sortChoices.map((option, index) => (
+                      {sortChoices.map((option) => (
                         <SortSelect.Option value={option} key={option.name}>
                           <SortSelect.OptionText>{option.label}</SortSelect.OptionText>
                         </SortSelect.Option>
