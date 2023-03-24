@@ -1,11 +1,11 @@
 import { useSearchResults, widget, WidgetDataType } from '@sitecore-discover/react';
 import { WidgetComponentProps } from '@sitecore-discover/react/types';
-import { SortSelect } from '@sitecore-discover/ui';
 import Image from 'next/image';
 import { ComponentType } from 'react';
 import Loader from './Loader';
 import QuerySummary from './QuerySummary';
 import SearchPagination from './SearchPagination';
+import SearchSort from './SearchSort';
 
 export interface SearchResultsType extends WidgetComponentProps {
   initialKeyphrase?: string;
@@ -29,8 +29,6 @@ export const SearchResults = (props: SearchResultsType) => {
     };
   });
 
-  const selectedSortIndex = sortChoices.findIndex((s) => s.name === sortType);
-
   return (
     <>
       {isLoading && <Loader />}
@@ -42,21 +40,7 @@ export const SearchResults = (props: SearchResultsType) => {
                 <label>Sorting by: </label>
               </div>
               <div>
-                <SortSelect.Root defaultValue={sortChoices[selectedSortIndex]?.name} onValueChange={onSortChange}>
-                  <SortSelect.Trigger>
-                    <SortSelect.SelectValue>{selectedSortIndex > -1 ? sortChoices[selectedSortIndex].label : ''}</SortSelect.SelectValue>
-                    <SortSelect.Icon />
-                  </SortSelect.Trigger>
-                  <SortSelect.Content>
-                    <SortSelect.Viewport>
-                      {sortChoices.map((option) => (
-                        <SortSelect.Option value={option} key={option.name}>
-                          <SortSelect.OptionText>{option.label}</SortSelect.OptionText>
-                        </SortSelect.Option>
-                      ))}
-                    </SortSelect.Viewport>
-                  </SortSelect.Content>
-                </SortSelect.Root>
+                <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
               </div>
             </div>
             {articles.length && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={initialKeyphrase} />}
