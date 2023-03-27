@@ -1,5 +1,6 @@
 import { useSearchResults, widget, WidgetDataType } from '@sitecore-discover/react';
 import { WidgetComponentProps } from '@sitecore-discover/react/types';
+import { AccordionFacets } from '@sitecore-discover/ui';
 import Image from 'next/image';
 import { ComponentType } from 'react';
 import Loader from './Loader';
@@ -48,21 +49,39 @@ export const SearchResults = (props: SearchResultsType) => {
 
           <div className="flex flex-row">
             <div className="mt-4 shrink-0 basis-1/4">
-              {facets.map((facet, index) => (
-                <div key={index}>
-                  <h4 className="font-bold">{facet.label}</h4>
-                  <ul>
-                    {facet.value.map((facetOption, index) => (
-                      <li key={index}>
-                        <input type="checkbox" value={facetOption.id} onClick={onFacetClick} />
-                        <span className="ml-2">
-                          {facetOption.text} ({facetOption.count})
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+              <AccordionFacets.Root defaultFacetTypesExpandedList={[]} onFacetValueClick={onFacetClick}>
+                {facets.map((facet, index) => (
+                  <AccordionFacets.Facet key={index} facetId={facet.name}>
+                    <AccordionFacets.Header className="mt-4 rounded-md border p-2">
+                      <AccordionFacets.Trigger className="w-full text-left">{facet.label}</AccordionFacets.Trigger>
+                    </AccordionFacets.Header>
+                    <AccordionFacets.Content>
+                      <AccordionFacets.ValueList>
+                        {facet.value.map((v, index) => (
+                          <AccordionFacets.Item
+                            className="pl-2 pr-2"
+                            key={v.id}
+                            {...{
+                              index,
+                              facetValueId: v.id,
+                              facetLabel: v.text,
+                            }}
+                          >
+                            <AccordionFacets.ItemCheckbox>
+                              <AccordionFacets.ItemCheckboxIndicator className="h-14 w-14">
+                                <input type="checkbox" checked />
+                              </AccordionFacets.ItemCheckboxIndicator>
+                            </AccordionFacets.ItemCheckbox>
+                            <AccordionFacets.ItemLabel className="ml-2 text-sm">
+                              {v.text} {v.count && `(${v.count})`}
+                            </AccordionFacets.ItemLabel>
+                          </AccordionFacets.Item>
+                        ))}
+                      </AccordionFacets.ValueList>
+                    </AccordionFacets.Content>
+                  </AccordionFacets.Facet>
+                ))}
+              </AccordionFacets.Root>
             </div>
 
             <div className="basis-3/4">
