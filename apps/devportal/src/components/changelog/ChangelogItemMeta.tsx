@@ -12,10 +12,10 @@ const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent 
 
 export const ChangelogItemMeta = ({ item, loading }: ChangelogItemMetaProps) => {
   return (
-    <div className="my-3 flex items-center space-x-3 text-gray-500 dark:text-gray-400">
-      <div className="flex items-center gap-5">
-        <Link href={`/changelog/${getSlug(item.productName)}`}>
-          <div className={`text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
+    <div className="my-3 flex flex-row items-center space-x-3 text-gray-500 dark:text-gray-400">
+      <div className="flex flex-row gap-5">
+        <Link href={`/changelog/${getSlug(item.productName)}`} className="">
+          <div className={` text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
             {item.imageId && (
               <>
                 <div className="absolute h-5 w-5 dark:hidden">
@@ -29,13 +29,14 @@ export const ChangelogItemMeta = ({ item, loading }: ChangelogItemMetaProps) => 
             <div className="ml-6 text-xs">{item.productName}</div>
           </div>
         </Link>
-        <time className={`text-xs ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dateTime="2022-10-21T15:48:00.000Z">
+        <time className={`flex items-center justify-center text-xs  ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dateTime="2022-10-21T15:48:00.000Z">
           {item.releaseDate}
         </time>
+      </div>
+      <div className="flex flex-row gap-5">
+        <span className={`bg-theme-bg-alt  ${slugify(item.changeType[0].name)} flex items-center justify-center text-xs ${loading ? 'w-12' && skeletonLoaderClasses : 'rounded-md px-3 py-1'}`}>{item.changeType[0].name}</span>
 
-        <span className={`bg-theme-bg-alt ${slugify(item.changeType[0].name)} inline-block text-xs ${loading ? 'w-12' && skeletonLoaderClasses : 'rounded-md px-3 py-1'}`}>{item.changeType[0].name}</span>
-
-        {item.breakingChange && <span className={`bg-red inline-block text-xs text-white ${loading ? 'w-12' && skeletonLoaderClasses : 'rounded-md px-3 py-1'}`}>Breaking change</span>}
+        {item.breakingChange && <div className={`bg-red flex items-center justify-center text-center text-xs text-white ${loading ? 'w-12' && skeletonLoaderClasses : 'rounded-md px-3 py-1'}`}>Breaking change</div>}
       </div>
     </div>
   );

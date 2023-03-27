@@ -95,9 +95,9 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
 
   return (
     <div className={`${className}`}>
-      <div className={`z-50 ${initialProduct ? 'flex flex-row' : ''}`}>
+      <div className={`z-50 ${initialProduct ? 'grid grid-cols-1 lg:grid-cols-2' : ''}`}>
         {initialProduct && (
-          <div className="bg-violet-lighter text-violet mr-2 mb-2 inline-block flex rounded-md px-3 text-sm">
+          <div className="bg-violet-lighter text-violet mb-2 mr-2 flex rounded-md px-3 py-3 text-sm">
             <div className="m-auto">
               <strong>Product:</strong> {initialProduct.name}
               <Link href="/changelog">
