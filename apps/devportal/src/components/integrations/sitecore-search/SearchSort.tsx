@@ -12,21 +12,28 @@ export const SearchSort = (props: SearchSortType) => {
   const selectedSortIndex = sortChoices.findIndex((s) => s.name === sortType);
 
   return (
-    <SortSelect.Root defaultValue={sortChoices[selectedSortIndex]?.name} onValueChange={onSortChange}>
-      <SortSelect.Trigger>
-        <SortSelect.SelectValue>{selectedSortIndex > -1 ? sortChoices[selectedSortIndex].label : ''}</SortSelect.SelectValue>
-        <SortSelect.Icon />
-      </SortSelect.Trigger>
-      <SortSelect.Content>
-        <SortSelect.Viewport>
-          {sortChoices.map((option) => (
-            <SortSelect.Option value={option} key={option.name}>
-              <SortSelect.OptionText>{option.label}</SortSelect.OptionText>
-            </SortSelect.Option>
-          ))}
-        </SortSelect.Viewport>
-      </SortSelect.Content>
-    </SortSelect.Root>
+    <>
+      <div>
+        <label>Sorting by: </label>
+      </div>
+      <div>
+        <SortSelect.Root defaultValue={sortChoices[selectedSortIndex]?.name} onValueChange={onSortChange}>
+          <SortSelect.Trigger>
+            <SortSelect.SelectValue>{selectedSortIndex > -1 ? sortChoices[selectedSortIndex].label : ''}</SortSelect.SelectValue>
+            <SortSelect.Icon />
+          </SortSelect.Trigger>
+          <SortSelect.Content>
+            <SortSelect.Viewport>
+              {sortChoices.map((option) => (
+                <SortSelect.Option value={option} key={option.name}>
+                  <SortSelect.OptionText>{option.label}</SortSelect.OptionText>
+                </SortSelect.Option>
+              ))}
+            </SortSelect.Viewport>
+          </SortSelect.Content>
+        </SortSelect.Root>
+      </div>
+    </>
   );
 };
 

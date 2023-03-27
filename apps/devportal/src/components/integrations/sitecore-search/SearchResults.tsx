@@ -1,10 +1,10 @@
 import { useSearchResults, widget, WidgetDataType } from '@sitecore-discover/react';
 import { WidgetComponentProps } from '@sitecore-discover/react/types';
-import { AccordionFacets } from '@sitecore-discover/ui';
 import Image from 'next/image';
 import { ComponentType } from 'react';
 import Loader from './Loader';
 import QuerySummary from './QuerySummary';
+import SearchFacets from './SearchFacets';
 import SearchPagination from './SearchPagination';
 import SearchSort from './SearchSort';
 
@@ -37,51 +37,14 @@ export const SearchResults = (props: SearchResultsType) => {
         <div className="mt-12">
           <div className="m-auto w-full items-center">
             <div className="relative float-right inline-flex">
-              <div>
-                <label>Sorting by: </label>
-              </div>
-              <div>
-                <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
-              </div>
+              <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
             </div>
             {articles.length && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={initialKeyphrase} />}
           </div>
 
           <div className="flex flex-row">
             <div className="mt-4 shrink-0 basis-1/4">
-              <AccordionFacets.Root defaultFacetTypesExpandedList={[]} onFacetValueClick={onFacetClick}>
-                {facets.map((facet, index) => (
-                  <AccordionFacets.Facet key={index} facetId={facet.name}>
-                    <AccordionFacets.Header className="mt-4 rounded-md border p-2">
-                      <AccordionFacets.Trigger className="w-full text-left">{facet.label}</AccordionFacets.Trigger>
-                    </AccordionFacets.Header>
-                    <AccordionFacets.Content>
-                      <AccordionFacets.ValueList>
-                        {facet.value.map((v, index) => (
-                          <AccordionFacets.Item
-                            className="pl-2 pr-2"
-                            key={v.id}
-                            {...{
-                              index,
-                              facetValueId: v.id,
-                              facetLabel: v.text,
-                            }}
-                          >
-                            <AccordionFacets.ItemCheckbox>
-                              <AccordionFacets.ItemCheckboxIndicator className="h-14 w-14">
-                                <input type="checkbox" checked />
-                              </AccordionFacets.ItemCheckboxIndicator>
-                            </AccordionFacets.ItemCheckbox>
-                            <AccordionFacets.ItemLabel className="ml-2 text-sm">
-                              {v.text} {v.count && `(${v.count})`}
-                            </AccordionFacets.ItemLabel>
-                          </AccordionFacets.Item>
-                        ))}
-                      </AccordionFacets.ValueList>
-                    </AccordionFacets.Content>
-                  </AccordionFacets.Facet>
-                ))}
-              </AccordionFacets.Root>
+              <SearchFacets onFacetClick={onFacetClick} facets={facets} />
             </div>
 
             <div className="basis-3/4">
