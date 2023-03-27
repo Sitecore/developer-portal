@@ -90,8 +90,9 @@ export const SearchResults = (props: SearchResultsType) => {
                   <li key={index}>
                     <div className="border-theme-border relative border-b p-4">
                       <a href={result.url} className="group flex">
-                        {result.image_url && <Image width={256} height={144} src={result.image_url} alt={result.index_name} className="m-auto h-fit" />}
-                        <div className={result.image_url ? 'mt-2 ml-6' : ''}>
+                        {result.image_url && <Image width={256} height={144} src={result.image_url} alt={result.index_name} className="object-scale-down" />}
+                        {!result.image_url && <Image width={256} height={144} src="/images/social/social-card-default.jpeg" alt={result.index_name} className="object-scale-down" />}
+                        <div className="mt-2 ml-6">
                           <p className="font-bold group-hover:underline">{result.name}</p>
                           <span className="break-words text-xs italic">{result.url}</span>
                           {result.description && <p className="text-sm">{result.description}</p>}
