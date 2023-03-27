@@ -1,3 +1,4 @@
+import { CheckIcon } from '@radix-ui/react-icons';
 import { SearchResponseFacet } from '@sitecore-discover/react';
 import { AccordionFacets } from '@sitecore-discover/ui';
 
@@ -13,7 +14,7 @@ export const SearchFacets = (props: SearchFacetsType) => {
     <AccordionFacets.Root defaultFacetTypesExpandedList={[]} onFacetValueClick={onFacetClick}>
       {facets.map((facet, index) => (
         <AccordionFacets.Facet key={index} facetId={facet.name}>
-          <AccordionFacets.Header className="mt-4 rounded-md border p-2">
+          <AccordionFacets.Header className="mt-4 mb-2 rounded-md border p-2">
             <AccordionFacets.Trigger className="w-full text-left">{facet.label}</AccordionFacets.Trigger>
           </AccordionFacets.Header>
           <AccordionFacets.Content>
@@ -28,9 +29,9 @@ export const SearchFacets = (props: SearchFacetsType) => {
                     facetLabel: v.text,
                   }}
                 >
-                  <AccordionFacets.ItemCheckbox>
+                  <AccordionFacets.ItemCheckbox className="border-grey-50 h-5 w-5 items-center justify-center rounded border border-solid bg-white align-middle">
                     <AccordionFacets.ItemCheckboxIndicator className="h-14 w-14">
-                      <input type="checkbox" checked />
+                      <CheckIcon />
                     </AccordionFacets.ItemCheckboxIndicator>
                   </AccordionFacets.ItemCheckbox>
                   <AccordionFacets.ItemLabel className="ml-2 text-sm">
