@@ -1,9 +1,9 @@
+import Container from '@/../../packages/ui/components/common/Container';
 import { getPageInfo } from '@/src/common/page-info';
 import SearchResults from '@/src/components/integrations/sitecore-search/SearchResults';
 import { PageInfo } from '@/src/interfaces/page-info';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Layout from 'ui/layouts/Layout';
 

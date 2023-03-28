@@ -34,42 +34,38 @@ export const SearchResults = (props: SearchResultsType) => {
     <>
       {isLoading && <Loader />}
       {!isLoading && (
-        <div className="mt-12">
-          <div className="m-auto w-full items-center">
-            <div className="relative float-right inline-flex">
-              <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
-            </div>
-            {articles.length && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={initialKeyphrase} />}
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          <div className="md:col-span-1">
+            <SearchFacets onFacetClick={onFacetClick} facets={facets} />
           </div>
-
-          <div className="flex flex-row">
-            <div className="mt-4 shrink-0 basis-1/4">
-              <SearchFacets onFacetClick={onFacetClick} facets={facets} />
+          <div className="md:col-span-2">
+            <div className="m-auto w-full items-center">
+              <div className="relative float-right inline-flex text-sm">
+                <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
+              </div>
+              {articles.length && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={initialKeyphrase} />}
             </div>
+            <ul className="border-theme-border mt-2 border-t">
+              {articles.map((result, index) => (
+                <li key={index}>
+                  <div className="border-theme-border relative border-b p-4">
+                    <a href={result.url} className="group flex">
+                      {result.image_url && <Image width={256} height={144} src={result.image_url} alt={result.index_name} className="object-scale-down" />}
+                      {!result.image_url && <Image width={256} height={144} src="/images/social/social-card-default.jpeg" alt={result.index_name} className="object-scale-down" />}
+                      <div className="mt-2 ml-6">
+                        <p className="font-bold group-hover:underline">{result.name}</p>
+                        <span className="break-words text-xs italic">{result.url}</span>
+                        {result.description && <p className="text-sm">{result.description}</p>}
+                        {result.index_name && <p className="text-sm">Source: {result.index_name}</p>}
+                        {result.type && <p className="text-sm">Document Type: {result.type}</p>}
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              ))}
+            </ul>
 
-            <div className="basis-3/4">
-              <ul className="border-theme-border mt-2 border-t">
-                {articles.map((result, index) => (
-                  <li key={index}>
-                    <div className="border-theme-border relative border-b p-4">
-                      <a href={result.url} className="group flex">
-                        {result.image_url && <Image width={256} height={144} src={result.image_url} alt={result.index_name} className="object-scale-down" />}
-                        {!result.image_url && <Image width={256} height={144} src="/images/social/social-card-default.jpeg" alt={result.index_name} className="object-scale-down" />}
-                        <div className="mt-2 ml-6">
-                          <p className="font-bold group-hover:underline">{result.name}</p>
-                          <span className="break-words text-xs italic">{result.url}</span>
-                          {result.description && <p className="text-sm">{result.description}</p>}
-                          {result.index_name && <p className="text-sm">Source: {result.index_name}</p>}
-                          {result.type && <p className="text-sm">Document Type: {result.type}</p>}
-                        </div>
-                      </a>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-
-              <SearchPagination defaultCurrentPage={1} onPageNumberChange={(v) => onPageNumberChange({ page: v })} page={page} pageSize={itemsPerPage} totalItems={totalItems} />
-            </div>
+            <SearchPagination defaultCurrentPage={1} onPageNumberChange={(v) => onPageNumberChange({ page: v })} page={page} pageSize={itemsPerPage} totalItems={totalItems} />
           </div>
         </div>
       )}

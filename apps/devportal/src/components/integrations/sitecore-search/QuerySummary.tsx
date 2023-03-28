@@ -13,7 +13,7 @@ const QuerySummary = (props: IQuerySummary): JSX.Element => {
 
   return (
     <div className="flex text-left">
-      <span className="font-sm inline-flex">
+      <span className="inline-flex text-sm">
         <span>
           Showing <span className="font-bold">{showResultFrom}</span> to
           <span className="font-bold"> {showResultTo < totalResults ? showResultTo : totalResults} </span>

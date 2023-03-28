@@ -13,23 +13,31 @@ export const SearchSort = (props: SearchSortType) => {
 
   return (
     <>
-      <div>
+      <div className="mr-4">
         <label>Sorting by: </label>
       </div>
       <div>
         <SortSelect.Root defaultValue={sortChoices[selectedSortIndex]?.name} onValueChange={onSortChange}>
-          <SortSelect.Trigger>
-            <SortSelect.SelectValue>{selectedSortIndex > -1 ? sortChoices[selectedSortIndex].label : ''}</SortSelect.SelectValue>
-            <SortSelect.Icon />
+          <SortSelect.Trigger asChild>
+            <div className="testmva">
+              <SortSelect.SelectValue>{selectedSortIndex > -1 ? sortChoices[selectedSortIndex].label : ''}</SortSelect.SelectValue>
+              <SortSelect.Icon className="ml-8" />
+            </div>
           </SortSelect.Trigger>
-          <SortSelect.Content>
-            <SortSelect.Viewport>
-              {sortChoices.map((option) => (
-                <SortSelect.Option value={option} key={option.name}>
-                  <SortSelect.OptionText>{option.label}</SortSelect.OptionText>
-                </SortSelect.Option>
-              ))}
-            </SortSelect.Viewport>
+          <SortSelect.Content asChild>
+            <div className="relative">
+              <SortSelect.Viewport asChild>
+                <div className="border-charcoal-light bg-theme-bg ml-2 border-2">
+                  {sortChoices.map((option) => (
+                    <SortSelect.Option value={option} key={option.name} asChild>
+                      <div className="hover:bg-theme-bg-alt cursor-pointer px-4 py-2 text-sm hover:font-semibold">
+                        <SortSelect.OptionText>{option.label}</SortSelect.OptionText>
+                      </div>
+                    </SortSelect.Option>
+                  ))}
+                </div>
+              </SortSelect.Viewport>
+            </div>
           </SortSelect.Content>
         </SortSelect.Root>
       </div>
