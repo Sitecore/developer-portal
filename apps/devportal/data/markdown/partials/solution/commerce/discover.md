@@ -22,6 +22,7 @@ To learn more about [Sitecore Discover](https://www.sitecore.com/products/discov
 <Link title="Overview of Sitecore Discover integration" link="https://doc.sitecore.com/discover/en/developers/discover-developer-guide/overview-of-sitecore-discover-integration.html" />
 <Link title="Getting started with your Discover integration" link="https://doc.sitecore.com/discover/en/developers/discover-developer-guide/getting-started-with-your-discover-integration.html" />
 <Link title="Introduction to Discover JS SDK for React" link="https://doc.sitecore.com/discover/en/developers/discover-js-sdk-for-react/introduction-to-discover-js-sdk-for-react.html" />
+<Link title="Discover JS SDK for React - UI Component Reference" link="https://developers.sitecorecloud.io/discover-sdk/react/1.x-alpha/storybook/index.html?path=/docs/introduction--page" />
 </Row>
 ## Documentation
 
