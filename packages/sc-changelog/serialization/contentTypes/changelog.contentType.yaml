@@ -2,7 +2,7 @@
 name:
   en-US: Changelog
 description:
-  en-US: ''
+  en-US: Single entry for the Sitecore changelog
 fields:
 - id: title
   name:
@@ -11,20 +11,41 @@ fields:
   required: true
   helpText:
     en-US: ''
+- id: image
+  name:
+    en-US: Image
+  type: Media
+  required: false
+  helpText:
+    en-US: ''
 - id: description
   name:
     en-US: Description
   type: RichText
-  required: false
+  required: true
   helpText:
-    en-US: ''
-- id: version
+    en-US: The text that will be rendered in the overview
+- id: fullArticle
   name:
-    en-US: Version
-  type: ShortText
+    en-US: Full Article
+  type: RichText
   required: false
   helpText:
-    en-US: ''
+    en-US: The content that will be visible on the detail page (not required)
+- id: changeType
+  name:
+    en-US: Change Type
+  type: Reference
+  required: false
+  helpText:
+    en-US: Please select a change type
+- id: sitecoreProduct
+  name:
+    en-US: Sitecore Product
+  type: Reference
+  required: false
+  helpText:
+    en-US: Please select one product from the list
 - id: releaseDate
   name:
     en-US: Release Date
@@ -38,32 +59,18 @@ fields:
   type: Boolean
   required: false
   helpText:
-    en-US: ''
+    en-US: Does this change include a breaking change?
 - id: readMoreLink
   name:
     en-US: Read More Link
   type: ShortText
   required: false
   helpText:
-    en-US: ''
-- id: image
+    en-US: You can link to an external page where more information can be found
+- id: version
   name:
-    en-US: Image
-  type: Media
+    en-US: Version
+  type: ShortText
   required: false
   helpText:
-    en-US: ''
-- id: changeType
-  name:
-    en-US: Change Type
-  type: Reference
-  required: false
-  helpText:
-    en-US: ''
-- id: sitecoreProduct
-  name:
-    en-US: Sitecore Product
-  type: Reference
-  required: false
-  helpText:
-    en-US: ''
+    en-US: Only use the version field if applicable
