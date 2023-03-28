@@ -5,15 +5,17 @@ import { getChangelogEntryUrl } from './changelog';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
 
+const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
+
 export function CreateFeed(changelogEntryList: ChangelogEntryList<ChangelogEntry[]>): Feed {
   const feed = new Feed({
     title: 'Sitecore Changelog',
     description: 'Learn more about new versions, changes and improvements!',
-    id: 'https://developers.sitecore.com/changelog',
-    link: 'https://developers.sitecore.com/changelog',
+    id: `${publicUrl}/changelog`,
+    link: `${publicUrl}/changelog`,
     language: 'en', // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
-    image: 'http://example.com/image.png',
-    favicon: 'http://example.com/favicon.ico',
+    image: `${publicUrl}/image.png`,
+    favicon: `${publicUrl}/favicon.ico`,
     copyright: 'All rights reserved 2023, Sitecore',
     generator: 'Feed for Node.js',
     feedLinks: {
@@ -23,7 +25,7 @@ export function CreateFeed(changelogEntryList: ChangelogEntryList<ChangelogEntry
     author: {
       name: 'Sitecore',
       email: 'no-reply@sitecore.com',
-      link: 'https://developers.sitecore.com',
+      link: publicUrl,
     },
   });
 
@@ -32,9 +34,9 @@ export function CreateFeed(changelogEntryList: ChangelogEntryList<ChangelogEntry
       guid: changelogEntry.id,
       title: changelogEntry.title,
       description: changelogEntry.description,
-      link: getChangelogEntryUrl(changelogEntry),
+      link: `${publicUrl}/${getChangelogEntryUrl(changelogEntry)}`,
       date: new Date(changelogEntry.releaseDate),
-      //      image: changelogEntry.image[0].fileUrl,
+      image: changelogEntry.image.length > 0 ? changelogEntry.image[0].fileUrl : '',
     });
   });
 

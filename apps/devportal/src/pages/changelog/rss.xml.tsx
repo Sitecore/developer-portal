@@ -10,7 +10,7 @@ export async function getServerSideProps(context: any) {
   const feed = await CreateFeed(changelogEntryList);
   //Set page headers
   context.res.setHeader('Content-Type', 'text/xml; charset=utf-8');
-  // cache for 600s so it wont call our wp on every request.
+  // cache for 600s 
   context.res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate');
   context.res.write(feed.rss2());
   context.res.end();
