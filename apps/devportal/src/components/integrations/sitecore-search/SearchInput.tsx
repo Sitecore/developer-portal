@@ -40,7 +40,7 @@ const SearchInput = ({ className }: SearchInputProps) => {
             setKeywords(event.target.value);
           }}
         />
-        <span className="absolute right-4 z-20">
+        <span className="absolute right-4 z-20 opacity-50">
           <span className="text-sm"> Powered by </span>
           <Image src="https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/icons/newnavigation/products/search-horizontal-color-black-txt.svg?md=20221012T213412Z" alt="Powered by" className="relative inline" width="70" height="30" />
         </span>

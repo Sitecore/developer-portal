@@ -13,7 +13,7 @@ export const SearchFacets = (props: SearchFacetsType) => {
   return (
     <AccordionFacets.Root defaultFacetTypesExpandedList={facets.map((x) => x.name)} onFacetValueClick={onFacetClick}>
       {facets.map((facet, index) => (
-        <div className="bg-theme-bg-alt mb-6 p-4">
+        <div className="bg-theme-bg-alt mb-6 p-4" key={index}>
           <AccordionFacets.Facet key={index} facetId={facet.name}>
             <AccordionFacets.Header className="mb-4 font-semibold">
               <AccordionFacets.Trigger className="w-full text-left">{facet.label}</AccordionFacets.Trigger>
@@ -27,10 +27,9 @@ export const SearchFacets = (props: SearchFacetsType) => {
                     {...{
                       index,
                       facetValueId: v.id,
-                      facetLabel: v.text,
                     }}
                   >
-                    <AccordionFacets.ItemCheckbox className="border-grey-50 h-5 w-5 items-center justify-center rounded border border-solid bg-white align-middle">
+                    <AccordionFacets.ItemCheckbox className="border-grey-50 h-5 w-5 items-center justify-center border border-solid bg-white align-middle">
                       <AccordionFacets.ItemCheckboxIndicator className="h-14 w-14">
                         <CheckIcon />
                       </AccordionFacets.ItemCheckboxIndicator>
