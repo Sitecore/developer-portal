@@ -118,6 +118,10 @@ export const mainNavigation: NavigationData[] = [
             url: '/content-management/content-hub-one',
           },
           {
+            title: 'Sitecore Search',
+            url: '/content-management/search',
+          },
+          {
             title: 'Sitecore Experience Manager',
             url: '/content-management/experience-manager',
           },
@@ -397,6 +401,16 @@ export const mainNavigation: NavigationData[] = [
           {
             title: 'Data driven product discovery',
             url: '/commerce/discover',
+          },
+        ],
+      },
+      {
+        title: 'Sitecore Search',
+        url: '/content-management/search',
+        children: [
+          {
+            title: 'Intelligent, blazing-fast search',
+            url: '/content-management/search',
           },
         ],
       },
