@@ -35,7 +35,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
 
   return (
     <div className="changelog-item bg-theme-bg mt-8 mb-16" ref={entryRef}>
-      <h2 className={`heading-sm font-bolder ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} id={getSlug(item.title)}>
+      <h2 className={`heading-sm font-bolder hover:text-violet dark:hover:text-teal hover:underline ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} id={getSlug(item.title)}>
         <a href={getChangelogEntryUrl(item)} title={item.title}>
           {item.title}
         </a>
