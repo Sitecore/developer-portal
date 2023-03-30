@@ -75,7 +75,8 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 </div>
               )}
 
-              <div className={`my-3 text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
+              <div className={`prose dark:prose-invert my-3 max-w-none text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
+              {changelogEntry.fullArticle && <div className={`prose dark:prose-invert my-3 max-w-none text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />}
             </div>
             <div className="col-span-2 hidden md:block">
               <ChangelogByMonth product={currentProduct} />

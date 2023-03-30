@@ -1,7 +1,7 @@
 import { generateHTML } from '@tiptap/html';
 import { GetChangeTypeById, GetProductByProductId } from '../constants/products';
 import { richTextProfile } from '../lib/common/richTextConfiguration';
-import Changelog, { ChangelogBase, ChangelogList } from './changelog';
+import { Changelog, ChangelogBase, ChangelogList } from './changelog';
 import ChangeType from './changeType';
 import { Media } from './index';
 import SitecoreProduct from './sitecoreProduct';
@@ -27,6 +27,7 @@ export type ChangelogEntry = ChangelogEntrySummary & {
   name: string;
   readMoreLink: string;
   description: string;
+  fullArticle?: string | null;
   breakingChange: boolean;
   changeType: ChangeType[];
   version: string;
@@ -81,6 +82,7 @@ export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     readMoreLink: changelog.readMoreLink,
     title: changelog.title,
     description: generateHTML(changelog.description, [richTextProfile]),
+    fullArticle: changelog.fullArticle != null ? generateHTML(changelog.fullArticle, [richTextProfile]) : null,
     breakingChange: changelog.breakingChange,
     sitecoreProduct: changelog.sitecoreProduct.results,
     changeType: changelog.changeType.results,

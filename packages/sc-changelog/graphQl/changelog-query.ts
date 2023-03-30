@@ -7,6 +7,7 @@ export const CHANGELOG_QUERY = `
   name
   title
   description
+  fullArticle
   readMoreLink
   breakingChange
   version

@@ -1,5 +1,5 @@
 import { CHANGELOG_QUERY, CHANGELOG_SUMMARY_QUERY } from '../graphQl/changelog-query';
-import Changelog, { ChangelogBase, ChangelogList } from '../types/changelog';
+import { Changelog, ChangelogBase, ChangelogList } from '../types/changelog';
 import { fetchAPI } from './common/api';
 
 export async function PaginatedSearch(pageSize: number, endCursor: string, productId?: string, changeTypeId?: string) {

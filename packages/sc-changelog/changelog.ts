@@ -47,18 +47,18 @@ export async function GetProducts(): Promise<Product[]> {
   const response = await GetAllProducts();
   const products = ParseProduct(response.data);
 
-  // Check whether there are entries that have it selected
-  const calc = async (n: Product) => {
-    const count = await GetEntryCountByProductId(n.id);
-    n.hasEntries = count > 0;
-    return n;
-  };
-
   // Iterate products
   const asyncFunc = async () => {
     const p = products.map((n) => calc(n));
     const results = await Promise.all(p);
     return results;
+  };
+
+  // Check whether there are entries that have it selected
+  const calc = async (n: Product) => {
+    const count = await GetEntryCountByProductId(n.id);
+    n.hasEntries = count > 0;
+    return n;
   };
 
   return asyncFunc();

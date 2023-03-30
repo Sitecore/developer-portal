@@ -11,16 +11,15 @@ export type ChangelogBase = {
   releaseDate: string;
 };
 
-type Changelog = ChangelogBase & {
+export type Changelog = ChangelogBase & {
   name: string;
   readMoreLink: string;
   description: JSONContent;
+  fullArticle?: JSONContent;
   breakingChange: boolean;
   version: string;
   image: MediaResults;
 };
-
-export default Changelog;
 
 export type pageInfo = {
   hasNext: boolean;
