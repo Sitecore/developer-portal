@@ -34,9 +34,10 @@ export function CreateFeed(changelogEntryList: ChangelogEntryList<ChangelogEntry
       guid: changelogEntry.id,
       title: changelogEntry.title,
       description: changelogEntry.description,
+      content: changelogEntry.fullArticle ? changelogEntry.fullArticle : '',
       link: `${publicUrl}/${getChangelogEntryUrl(changelogEntry)}`,
       date: new Date(changelogEntry.releaseDate),
-      image: changelogEntry.image.length > 0 ? changelogEntry.image[0].fileUrl : '',
+      image: changelogEntry.image.length > 0 ? changelogEntry.image[0].fileUrl.concat('?transform=true') : '',
     });
   });
 
