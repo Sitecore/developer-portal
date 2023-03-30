@@ -14,7 +14,7 @@ export const SearchResults = (props: SearchPaginationType) => {
   const pages = Array.from(Array(pageCount).keys()).map((x) => x + 1);
   const skipPages = pageCount > 10;
   if (skipPages) {
-    pages.splice(5, 40);
+    pages.splice(5, pageCount - 10);
   }
 
   const activePaginationClasses = 'bg-theme-text text-theme-bg';
