@@ -58,8 +58,7 @@ export const MultiSelect = (props: any) => {
           }}
         />
       ) : (
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        <input key={props.value} type="checkbox" checked={props.isSelected || isAllSelected.current} onChange={() => {}} />
+        <input key={props.value} type="checkbox" checked={props.isSelected || isAllSelected.current} />
       )}
       <label style={{ marginLeft: '5px' }}>{props.label}</label>
     </components.Option>

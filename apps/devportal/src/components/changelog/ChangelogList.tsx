@@ -44,6 +44,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
 
   function getParameters(): string[] {
     const query = [];
+    query.push(`limit=5`);
 
     // Preset to specific product
     if (initialProduct) query.push(`product=${initialProduct.id}`);
@@ -57,7 +58,6 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
     });
 
     if (reload) query.push(`end=${cursor}`);
-    query.push(`limit=1`);
     return query;
   }
 
@@ -97,7 +97,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
     <div className={`${className}`}>
       <div className={`z-50 ${initialProduct ? 'grid grid-cols-1 lg:grid-cols-2' : ''}`}>
         {initialProduct && (
-          <div className="bg-violet-lighter text-violet mb-2 mr-2 flex rounded-md px-3 py-3 text-sm">
+          <div className="bg-violet-lighter text-violet mb-2 mr-2 flex rounded-md px-3 py-2 text-sm">
             <div className="m-auto">
               <strong>Product:</strong> {initialProduct.name}
               <Link href="/changelog">
