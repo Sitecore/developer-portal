@@ -3,7 +3,7 @@
     @apply bg-violet text-white;
   }
   .changelog-item .new-feature {
-    @apply bg-teal text-white;
+    @apply bg-violet-dark text-white;
   }
   .changelog-item .bugfix {
     @apply bg-charcoal text-white;
