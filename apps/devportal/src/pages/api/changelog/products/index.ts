@@ -15,6 +15,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Product[]>) => 
   await GetProducts().then((response: Product[]) => {
     if (showAll) res.status(200).json(response);
 
+    res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate');
     res.status(200).json(response.filter((e) => e.hasEntries));
   });
 };
