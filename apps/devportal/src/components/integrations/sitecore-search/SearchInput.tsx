@@ -1,4 +1,5 @@
 // Global
+import { GetProductLogo } from '@/../../packages/ui/common/assets';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -9,7 +10,6 @@ interface SearchInputProps {
 
 const SearchInput = ({ className }: SearchInputProps) => {
   const router = useRouter();
-
   const [keywords, setKeywords] = useState(router.query['q'] ?? '');
 
   const submit = (event: { preventDefault: () => void }) => {
@@ -42,7 +42,8 @@ const SearchInput = ({ className }: SearchInputProps) => {
         />
         <span className="absolute right-4 z-20 opacity-50">
           <span className="text-sm"> Powered by </span>
-          <Image src="https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/icons/newnavigation/products/search-horizontal-color-black-txt.svg?md=20221012T213412Z" alt="Powered by" className="relative inline" width="70" height="30" />
+          <Image src={GetProductLogo('Search', 'Light')} alt="Powered by" className="relative inline dark:hidden" width="70" height="30" />
+          <Image src={GetProductLogo('Search', 'Dark')} alt="Powered by" className="relative hidden dark:inline" width="70" height="30" />
         </span>
       </div>
     </form>
