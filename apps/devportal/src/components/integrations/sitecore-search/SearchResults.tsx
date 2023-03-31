@@ -65,7 +65,7 @@ export const SearchResults = (props: SearchResultsType) => {
                         </div>
                       )}
                     </div>
-                    <span className="text-violet mt-5 block break-words text-xs font-semibold">{result.url}</span>
+                    <span className="text-violet mt-5 block break-words text-xs italic dark:text-white">{result.url}</span>
                   </a>
                 </li>
               ))}
