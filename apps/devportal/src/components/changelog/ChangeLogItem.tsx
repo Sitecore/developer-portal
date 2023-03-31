@@ -49,7 +49,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
         </div>
       )}
 
-      <div className={`prose-xl dark:prose-invert my-3 text-sm ${loading ? skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
+      <div className={`prose prose-xl dark:prose-invert my-3 text-sm ${loading ? skeletonLoaderClasses : ''}`} dangerouslySetInnerHTML={{ __html: item.description }} />
       <span className={`${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>{item.readMoreLink && <TextLink className="font-medium" href={item.readMoreLink} text="Read more" title={`Read more about ${item.title}`} />}</span>
     </div>
   );
