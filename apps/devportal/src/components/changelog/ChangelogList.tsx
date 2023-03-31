@@ -42,9 +42,16 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
     setIsLoading(true);
   }
 
+  function removeQuery(arr: string[], element: string) {
+    arr.forEach((value, index) => {
+      if (value == element) arr.splice(index, 1);
+    });
+  }
+
   function getParameters(): string[] {
     const query = [];
-    query.push(`limit=5`);
+
+    query.push(`limit=2`);
 
     // Preset to specific product
     if (initialProduct) query.push(`product=${initialProduct.id}`);
@@ -57,7 +64,11 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
       query.push(`changeType=${c.value}`);
     });
 
-    if (reload) query.push(`end=${cursor}`);
+    if (reload) {
+      query.push(`end=${cursor}`);
+      removeQuery(query, 'limit=2');
+      query.push(`limit=5`);
+    }
     return query;
   }
 
