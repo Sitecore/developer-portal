@@ -38,6 +38,7 @@ function buildParameters(productId?: string, changeTypeId?: string, searchTerm?:
   if (endCursor) parameters += `after: "${endCursor}" \n`;
 
   parameters += buildWhereClause(searchTerm, productId, changeTypeId);
+
   return parameters;
 }
 
@@ -53,7 +54,9 @@ const closeWHERE = '}';
   Building the complex WHERE clause based on parameters
 */
 function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?: string) {
-  if (!searchTerm && !productId && !changeTypeId) return '';
+  if (!searchTerm && !productId && !changeTypeId) {
+    return `where: { releaseDate_lt: "${new Date().toISOString()}" }`;
+  }
 
   const pId = productId?.split('|');
   const multipleProducts = pId != undefined && pId.length > 1;
@@ -79,6 +82,8 @@ function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?
 
   whereClause += buildSearchTermClause(searchTerm);
   //whereClause += closeANDOR;
+  //whereClause += `AND: { releaseDate_lt: ${new Date().toISOString()} }`;
+
   whereClause += closeWHERE;
 
   return whereClause;
@@ -91,17 +96,20 @@ function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?
 function buildSearchTermClause(searchTerm?: string): string {
   let whereClauseSearchTerm = '';
 
-  if (!searchTerm) return whereClauseSearchTerm;
+  //  if (!searchTerm) return whereClauseSearchTerm;
 
   // We want each word to match therefore grouping by AND operator
   whereClauseSearchTerm += `AND: [`;
 
   // Making sure to validate each word in case we have a phrase as search term
-  const searchArray = searchTerm.split('-');
+  if (searchTerm != undefined) {
+    const searchArray = searchTerm.split('-');
 
-  searchArray.forEach((term: string) => {
-    whereClauseSearchTerm += `{title_contains: "${term}"}`;
-  });
+    searchArray.forEach((term: string) => {
+      whereClauseSearchTerm += `{title_contains: "${term}"}`;
+    });
+  }
+  whereClauseSearchTerm += `{ releaseDate_lt: "${new Date().toISOString()}" }`;
 
   whereClauseSearchTerm += `]`;
   return whereClauseSearchTerm;
