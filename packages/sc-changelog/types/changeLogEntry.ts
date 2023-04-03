@@ -68,7 +68,7 @@ function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySumm
   return {
     id: changelog.id,
     title: changelog.title,
-    releaseDate: new Date(changelog.releaseDate).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' }),
+    releaseDate: new Date(changelog.releaseDate).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
     imageId: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.imageId,
     productName: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.name ?? '',
     changeTypeName: GetChangeTypeById(changelog.changeType.results[0]?.id)?.name ?? '',
@@ -87,7 +87,7 @@ export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     sitecoreProduct: changelog.sitecoreProduct.results,
     changeType: changelog.changeType.results,
     version: changelog.version,
-    releaseDate: new Date(changelog.releaseDate).toLocaleDateString([], { year: 'numeric', month: 'short', day: 'numeric' }),
+    releaseDate: new Date(changelog.releaseDate).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
     image: changelog.image.results,
     imageId: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.imageId,
     productName: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.name ?? '',
