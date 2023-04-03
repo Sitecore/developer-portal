@@ -44,15 +44,15 @@ const ChangelogByMonth = ({ className, product }: ChangelogByMonthProps): JSX.El
                 {item.imageId && (
                   <div className="absolute h-5 w-5">
                     <div className="dark:hidden">
-                      <ProductIcon product={item.imageId} variant="Light" className="relative h-5 w-5" width={20} height={20} />
+                      <ProductIcon product={item.imageId} variant="Light" alt={item.productName} className="relative h-5 w-5" width={20} height={20} />
                     </div>
                     <div className="hidden dark:block">
-                      <ProductIcon product={item.imageId} variant="Dark" className="relative h-5 w-5" width={20} height={20} />
+                      <ProductIcon product={item.imageId} variant="Dark" alt={item.productName} className="relative h-5 w-5" width={20} height={20} />
                     </div>
                   </div>
                 )}
                 <div className="ml-6">
-                  <Link className="text-violet dark:text-teal text-xs hover:font-semibold" href={getChangelogEntryUrl(item)}>
+                  <Link className="text-violet dark:text-teal text-xs hover:font-semibold" href={getChangelogEntryUrl(item)} title={`(${item.releaseDate}) ${item.productName} - ${item.title}`}>
                     {item.title}
                   </Link>
                 </div>
