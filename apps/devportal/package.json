@@ -54,6 +54,7 @@
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^2.0.0",
+    "sharp": "^0.32.0",
     "ui": "*",
     "unist-util-visit": "^4.0.0"
   },
