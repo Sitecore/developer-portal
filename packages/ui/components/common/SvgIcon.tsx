@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-export type IconNames = 'arrow-left' | 'arrow-right' | 'checkbox-empty' | 'checkbox-filled' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'heading' | 'quick-links' | 'github' | 'close';
+export type IconNames = 'arrow-left' | 'arrow-right' | 'checkbox-empty' | 'checkbox-filled' | 'chevron-down' | 'chevron-left' | 'chevron-right' | 'heading' | 'quick-links' | 'github' | 'close' | 'feed' | 'edit';
 
 export type IconProps = {
   icon: IconNames;

@@ -1,11 +1,11 @@
-import ChangeType from '@/../../packages/sc-changelog/types/changeType';
-import SvgIcon from '@/../../packages/ui/components/common/SvgIcon';
 import axios from 'axios';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
+import ChangeType from 'sc-changelog/types/changeType';
+import Product from 'sc-changelog/types/product';
+import SvgIcon from 'ui/components/common/SvgIcon';
 import MultiSelect, { Option } from 'ui/components/dropdown/MultiSelect';
-import Product from '../../../../../packages/sc-changelog/types/product';
 import ChangeLogItem from './ChangeLogItem';
 
 type ChangelogListProps = {
@@ -111,7 +111,7 @@ const ChangelogList = ({ className, initialProduct }: ChangelogListProps): JSX.E
           <div className="bg-violet-lighter text-violet mb-2 mr-2 flex rounded-md px-3 py-2 text-sm">
             <div className="m-auto">
               <strong>Product:</strong> {initialProduct.name}
-              <Link href="/changelog">
+              <Link href="/changelog" title="Go back to the changelog overview">
                 <SvgIcon icon="close" width={24} height={24} className="text-violet dark:text-red relative -top-0.5 left-1 inline-block h-5 w-5" />
               </Link>
             </div>

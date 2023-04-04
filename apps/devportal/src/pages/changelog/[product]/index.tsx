@@ -1,13 +1,15 @@
-import { GetProducts } from '@/../../packages/sc-changelog/changelog';
-import Product from '@/../../packages/sc-changelog/types/product';
-import { slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
-import Container from '@/../../packages/ui/components/common/Container';
-import VerticalGroup from '@/../../packages/ui/components/common/VerticalGroup';
-import Hero from '@/../../packages/ui/components/heros/Hero';
-import Layout from '@/../../packages/ui/layouts/Layout';
 import { getChangelogProductPaths } from '@/src/common/static-paths';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogList from '@/src/components/changelog/ChangelogList';
+import { useRouter } from 'next/router';
+import { GetProducts } from 'sc-changelog/changelog';
+import Product from 'sc-changelog/types/product';
+import { slugify } from 'sc-changelog/utils/stringUtils';
+import SmallLinkButton from 'ui/components/buttons/SmallLinkButton';
+import Container from 'ui/components/common/Container';
+import VerticalGroup from 'ui/components/common/VerticalGroup';
+import Hero from 'ui/components/heros/Hero';
+import Layout from 'ui/layouts/Layout';
 
 type ChangelogProps = {
   currentProduct: Product;
@@ -38,6 +40,8 @@ export async function getStaticProps(context: any) {
 }
 
 const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
+  const router = useRouter();
+
   return (
     <Layout title="Release Notes - Home" description="Empty">
       <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
@@ -48,6 +52,10 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
               <ChangelogList initialProduct={currentProduct} />
             </div>
             <div className="col-span-2 hidden md:block">
+              <div className="flex flex-row">
+                <SmallLinkButton text={'RSS'} href={`${router.pathname}/rss.xml`} icon={'feed'} />
+                <SmallLinkButton text={'ATOM'} href={`${router.pathname}/atom.xml`} icon={'feed'} />
+              </div>
               <ChangelogByMonth product={currentProduct} />
             </div>
           </div>

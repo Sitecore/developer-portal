@@ -43,11 +43,12 @@
   /* stylelint-enable */
 
   /*  Highlight links that do not have an href or that have # for "authoring" assistance */
-  /* purgecss ignore */
+  /* purgecss ignore *
   a:not([href]),
   a[href=''],
   a[href='#'],
   a[href='/#'] {
-    color: theme('colors.red.DEFAULT') !important;
+    color: theme('colors.red.DEFAULT');
   }
+  */
 }
