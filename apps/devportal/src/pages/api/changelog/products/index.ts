@@ -1,7 +1,7 @@
 // Interfaces
-import { GetProducts } from '@/../../packages/sc-changelog/changelog';
-import Product from '@/../../packages/sc-changelog/types/product';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { GetProducts } from 'sc-changelog/changelog';
+import Product from 'sc-changelog/types/product';
 
 const getQueryValue = (query: string | string[] | undefined): string => {
   if (query == undefined) return '';
