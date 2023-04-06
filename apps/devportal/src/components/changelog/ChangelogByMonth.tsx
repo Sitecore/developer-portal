@@ -2,8 +2,8 @@ import Product from '@/../../packages/sc-changelog/types/product';
 import { getChangelogEntryUrl } from '@/src/common/changelog';
 import axios from 'axios';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import { ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
+import useSWR, { Fetcher } from 'swr';
 import ProductIcon from 'ui/components/common/ProductIcon';
 
 // Record<string, ChangelogEntrySummary[]>
@@ -14,30 +14,25 @@ type ChangelogByMonthProps = {
 };
 
 const ChangelogByMonth = ({ className, product }: ChangelogByMonthProps): JSX.Element => {
-  const [fetchedResults, setFetchedResults] = useState<Record<string, ChangelogEntrySummary[]> | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent hover:text-transparent m-1';
 
-  useEffect(() => {
-    setIsLoading(true);
-    const query: string[] = [];
-    if (product) {
-      query.push(`product=${product.id}`);
-    }
-    axios
-      .get(`/api/changelog/all?${query.join('&')}`)
-      .then((response) => {
-        setFetchedResults(response.data);
-        setIsLoading(false);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  const fetcher: Fetcher<Record<string, ChangelogEntrySummary[]> | null, string> = async (url: string) => await axios.get(url).then((response) => response.data);
 
-  const data = fetchedResults || [];
+  const query: string[] = [];
+  if (product) {
+    query.push(`product=${product.id}`);
+  }
+
+  const { data, error, isLoading } = useSWR<Record<string, ChangelogEntrySummary[]> | null>(`/api/changelog/all?${query.join('&')}`, fetcher);
+
+  if (error) {
+    console.log(error);
+  }
+  const items = data || [];
 
   return (
     <div className={`${className}`}>
-      {Object.entries(data).map(([month, changelogItems], i) => (
+      {Object.entries(items).map(([month, changelogItems], i) => (
         <div key={i}>
           <h3 key={i} className={`text-charcoal my-4 text-xs font-semibold uppercase ${isLoading ? 'w-full' && skeletonLoaderClasses : ''}`}>
             {month}
