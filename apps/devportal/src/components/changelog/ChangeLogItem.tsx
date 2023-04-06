@@ -10,12 +10,13 @@ export type ChangeLogItemProps = {
   item: ChangelogEntry;
   loading: boolean;
   isLast: boolean;
+  isMore?: boolean;
   loadEntries: () => void;
 };
 
 const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent hover:text-transparent';
 
-const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProps): JSX.Element => {
+const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
   const entryRef = useRef(null);
   /**
    * Implement Intersection Observer to check if the last item in the array is visible on the screen, then set a new limit
@@ -24,7 +25,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast }: ChangeLogItemProp
     if (!entryRef?.current) return;
 
     const observer = new IntersectionObserver(([entry]) => {
-      if (isLast && entry.isIntersecting) {
+      if (isLast && entry.isIntersecting && isMore) {
         loadEntries();
         observer.unobserve(entry.target);
       }

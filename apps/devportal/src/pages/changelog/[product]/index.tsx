@@ -41,7 +41,8 @@ export async function getStaticProps(context: any) {
 
 const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
   const router = useRouter();
-
+  console.log(router.asPath);
+  console.log({ router });
   return (
     <Layout title="Release Notes - Home" description="Empty">
       <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
@@ -53,8 +54,8 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
             </div>
             <div className="col-span-2 hidden md:block">
               <div className="flex flex-row">
-                <SmallLinkButton text={'RSS'} href={`${router.pathname}/rss.xml`} icon={'feed'} />
-                <SmallLinkButton text={'ATOM'} href={`${router.pathname}/atom.xml`} icon={'feed'} />
+                <SmallLinkButton text={'RSS'} href={`${router.asPath}/rss.xml`} icon={'feed'} />
+                <SmallLinkButton text={'ATOM'} href={`${router.asPath}/atom.xml`} icon={'feed'} />
               </div>
               <ChangelogByMonth product={currentProduct} />
             </div>

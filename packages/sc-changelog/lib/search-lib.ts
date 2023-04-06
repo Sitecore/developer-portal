@@ -43,10 +43,10 @@ function buildParameters(productId?: string, changeTypeId?: string, searchTerm?:
 }
 
 const openWHERE = 'where: {';
-const openAND = 'AND: [';
+const openAND = ' AND: [';
 const openCombinedANDOR = 'AND: { OR: [';
 const closeCombinedANDOR = ']}';
-const openOR = 'OR: [';
+const openOR = ' OR: [';
 const closeANDOR = ']';
 const closeWHERE = '}';
 
@@ -81,11 +81,10 @@ function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?
   }
 
   whereClause += buildSearchTermClause(searchTerm);
-  //whereClause += closeANDOR;
+
   //whereClause += `AND: { releaseDate_lt: ${new Date().toISOString()} }`;
 
   whereClause += closeWHERE;
-
   return whereClause;
 }
 
@@ -96,7 +95,7 @@ function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?
 function buildSearchTermClause(searchTerm?: string): string {
   let whereClauseSearchTerm = '';
 
-  //  if (!searchTerm) return whereClauseSearchTerm;
+  if (!searchTerm) return whereClauseSearchTerm;
 
   // We want each word to match therefore grouping by AND operator
   whereClauseSearchTerm += `AND: [`;
@@ -109,7 +108,7 @@ function buildSearchTermClause(searchTerm?: string): string {
       whereClauseSearchTerm += `{title_contains: "${term}"}`;
     });
   }
-  whereClauseSearchTerm += `{ releaseDate_lt: "${new Date().toISOString()}" }`;
+  //whereClauseSearchTerm += `{ releaseDate_lt: "${new Date().toISOString()}" }`;
 
   whereClauseSearchTerm += `]`;
   return whereClauseSearchTerm;

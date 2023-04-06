@@ -15,8 +15,11 @@ type ChangelogByMonthProps = {
 
 const ChangelogByMonth = ({ className, product }: ChangelogByMonthProps): JSX.Element => {
   const [fetchedResults, setFetchedResults] = useState<Record<string, ChangelogEntrySummary[]> | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent hover:text-transparent m-1';
 
   useEffect(() => {
+    setIsLoading(true);
     const query: string[] = [];
     if (product) {
       query.push(`product=${product.id}`);
@@ -25,6 +28,7 @@ const ChangelogByMonth = ({ className, product }: ChangelogByMonthProps): JSX.El
       .get(`/api/changelog/all?${query.join('&')}`)
       .then((response) => {
         setFetchedResults(response.data);
+        setIsLoading(false);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -35,11 +39,11 @@ const ChangelogByMonth = ({ className, product }: ChangelogByMonthProps): JSX.El
     <div className={`${className}`}>
       {Object.entries(data).map(([month, changelogItems], i) => (
         <div key={i}>
-          <h3 key={i} className={`text-charcoal my-4 text-xs font-semibold uppercase`}>
+          <h3 key={i} className={`text-charcoal my-4 text-xs font-semibold uppercase ${isLoading ? 'w-full' && skeletonLoaderClasses : ''}`}>
             {month}
           </h3>
           {changelogItems.map((item, index) => (
-            <div className="flex items-center gap-5 py-2" key={index}>
+            <div className={`flex items-center gap-5 py-2 ${isLoading ? 'w-full' && skeletonLoaderClasses : ''}`} key={index}>
               <div className={`text-sm`}>
                 {item.imageId && (
                   <div className="absolute h-5 w-5">
