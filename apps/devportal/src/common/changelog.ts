@@ -4,6 +4,7 @@ import { slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
 import axios from 'axios';
 import { ChangelogEntry, ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 //import { Fetcher } from 'swr';
+import { GetSummaryLatestItemsByProductAndChangeType } from '@/../../packages/sc-changelog/changelog';
 import { Option } from '@/../../packages/ui/components/dropdown/MultiSelect';
 import useSWR, { Fetcher } from 'swr';
 
@@ -67,6 +68,34 @@ export const getProductOptions = () => {
 
   if (products) return products?.map((e: Product) => ({ label: e.name, value: e.id }));
   return [];
+};
+
+export const getOverviewPerMonth: any = async (products?: Product[], changes?: ChangeType[]) => {
+  const items = await GetSummaryLatestItemsByProductAndChangeType(products?.join('|'), changes?.join('|'));
+  const entries: ChangelogEntrySummary[] = items.entries;
+
+  const groupedObjects = entries.reduce((collection, obj) => {
+    const monthYear = new Date(obj.releaseDate).toLocaleString('en-US', { month: 'short', year: 'numeric' });
+    if (!collection[monthYear]) {
+      collection[monthYear] = [];
+    }
+    collection[monthYear].push(obj);
+
+    // Sort updates within a month (latest first)
+    collection[monthYear].sort((a, b) => {
+      const earliestDateA = new Date(a.releaseDate);
+      const earliestDateB = new Date(b.releaseDate);
+      return earliestDateB.getTime() - earliestDateA.getTime();
+    });
+    return collection;
+  }, {} as Record<string, ChangelogEntrySummary[]>);
+
+  // Sort the keys (year-month)
+  const sorted = Object.entries(groupedObjects)
+    .sort(([dateA], [dateB]) => new Date(dateB).getTime() - new Date(dateA).getTime())
+    .reduce((acc, [date, value]) => ({ ...acc, [date]: value }), {});
+
+  return sorted;
 };
 
 export function buildQuerystring(products: Option[], changes: Option[], cursor?: string, initialProduct?: Product): string[] {
