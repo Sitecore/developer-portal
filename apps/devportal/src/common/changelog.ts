@@ -45,12 +45,13 @@ const entriesApiUrl = '/api/changelog';
 export const getChangeTypes = () => {
   const fetcher: Fetcher<ChangeType[], string> = async (url: string) => await axios.get(url).then((response) => response.data);
 
-  const { data: changeTypes, error } = useSWR('/api/changelog/types', fetcher);
+  const { data: changeTypes, error } = useSWR(`${entriesApiUrl}/types`, fetcher);
   return { changeTypes, error };
 };
 
 export const getChangeTypeOptions = () => {
   const { changeTypes, error } = getChangeTypes();
+  if (error) console.log(error);
 
   if (changeTypes) return changeTypes?.map((e: ChangeType) => ({ label: e.name, value: e.id }));
 
@@ -59,12 +60,13 @@ export const getChangeTypeOptions = () => {
 
 export const getProducts = () => {
   const fetcher: Fetcher<Product[], string> = async (url: string) => await axios.get(url).then((response) => response.data);
-  const { data: products, error } = useSWR('/api/changelog/products?all=false', fetcher);
+  const { data: products, error } = useSWR(`${entriesApiUrl}/products?all=false`, fetcher);
   return { products, error };
 };
 
 export const getProductOptions = () => {
   const { products, error } = getProducts();
+  if (error) console.log(error);
 
   if (products) return products?.map((e: Product) => ({ label: e.name, value: e.id }));
   return [];

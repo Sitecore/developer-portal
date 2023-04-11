@@ -1,11 +1,14 @@
 @layer components {
+  .changelog-item .changetype {
+    @apply bg-orange-100 text-orange-800 dark:bg-orange-800 dark:text-orange-100;
+  }
   .changelog-item .improvement {
-    @apply bg-violet text-white;
+    @apply bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-100;
   }
   .changelog-item .new-feature {
-    @apply bg-violet-dark text-white;
+    @apply bg-teal-200 text-teal-800 dark:bg-teal-800 dark:text-teal-100;
   }
   .changelog-item .bugfix {
-    @apply bg-charcoal text-white;
+    @apply bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-100;
   }
 }

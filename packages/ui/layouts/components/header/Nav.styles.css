@@ -1,9 +1,9 @@
 @layer components {
   .skip-to-main {
-    @apply bg-violet focus:bg-violet-dark hover:bg-violet-dark left-gutter absolute z-50 inline-block -translate-y-full transform-gpu px-12 py-4 text-sm font-semibold text-white transition-transform focus:translate-y-0;
+    @apply bg-primary-500 focus:bg-primary-800 hover:bg-primary-800 left-gutter absolute z-50 inline-block -translate-y-full transform-gpu px-12 py-4 text-sm font-semibold text-white transition-transform focus:translate-y-0;
   }
   .main-nav {
-    @apply bg-theme-bg fixed inset-0 top-32 bottom-0 items-center;
+    @apply bg-theme-bg fixed inset-0 bottom-0 top-32 items-center;
   }
 
   /* Nav Item Hovers/Active State */

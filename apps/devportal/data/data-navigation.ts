@@ -118,6 +118,10 @@ export const mainNavigation: NavigationData[] = [
             url: '/content-management/content-hub-one',
           },
           {
+            title: 'Sitecore Search',
+            url: '/content-management/search',
+          },
+          {
             title: 'Sitecore Experience Manager',
             url: '/content-management/experience-manager',
           },
@@ -323,6 +327,11 @@ export const mainNavigation: NavigationData[] = [
             title: 'Customer Data Management',
             url: '/customer-data-management/cdp',
           },
+          {
+            title: 'Access the Portal',
+            url: 'https://portal.sitecorecloud.io/',
+            external: true,
+          },
         ],
       },
       {
@@ -332,6 +341,11 @@ export const mainNavigation: NavigationData[] = [
           {
             title: 'Personalization and Testing',
             url: '/personalization-testing/personalize',
+          },
+          {
+            title: 'Access the Portal',
+            url: 'https://portal.sitecorecloud.io/',
+            external: true,
           },
         ],
       },
@@ -387,6 +401,16 @@ export const mainNavigation: NavigationData[] = [
           {
             title: 'Data driven product discovery',
             url: '/commerce/discover',
+          },
+        ],
+      },
+      {
+        title: 'Sitecore Search',
+        url: '/content-management/search',
+        children: [
+          {
+            title: 'Intelligent, blazing-fast search',
+            url: '/content-management/search',
           },
         ],
       },

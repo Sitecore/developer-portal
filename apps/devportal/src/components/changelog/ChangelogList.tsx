@@ -38,11 +38,11 @@ const ChangelogList = ({ initialProduct }: ChangelogListProps): JSX.Element => {
     <div className="col-span-3">
       <div className={`z-50 ${initialProduct ? 'grid grid-cols-1 lg:grid-cols-2' : ''}`}>
         {initialProduct && (
-          <div className="bg-violet-lighter text-violet mb-2 mr-2 flex rounded-md px-3 py-2 text-sm">
+          <div className="bg-primary-100 text-primary-800 mb-2 mr-2 flex rounded-md px-3 py-2 text-sm">
             <div className="m-auto">
               <strong>Product:</strong> {initialProduct.name}
               <Link href="/changelog" title="Go back to the changelog overview">
-                <SvgIcon icon="close" width={24} height={24} className="text-violet dark:text-red relative -top-0.5 left-1 inline-block h-5 w-5" />
+                <SvgIcon icon="close" width={24} height={24} className="text-primary-500 relative -top-0.5 left-1 inline-block h-5 w-5 dark:text-red-500" />
               </Link>
             </div>
           </div>

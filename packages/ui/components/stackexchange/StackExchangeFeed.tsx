@@ -35,12 +35,7 @@ const StackExchangeFeed = ({ content, className }: StackExchangeFeedProps): JSX.
                 <span className="text-2xs block">Views</span>
               </div>
               <div>
-                <a
-                  href={question.link}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="inline-block font-semibold hover:underline"
-                >
+                <a href={question.link} target="_blank" rel="noreferrer noopener" className="inline-block font-semibold hover:underline">
                   <span dangerouslySetInnerHTML={{ __html: question.title }} />
                   <span className="sr-only">Opens in a new tab</span>
                 </a>
@@ -54,7 +49,7 @@ const StackExchangeFeed = ({ content, className }: StackExchangeFeedProps): JSX.
                             href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="border-violet-dark bg-violet-dark hover:border-violet-dark hover:text-violet focus:bg-violet dark:bg-violet-dark 2xl:transition-color mb-2 mr-2 inline-block border p-1 text-xs text-white hover:bg-white focus:text-white dark:text-white"
+                            className="border-violet-dark hover:border-violet-dark hover:text-primary-500 2xl:transition-color mb-2 mr-2 inline-block border bg-primary-700 p-1 text-xs text-white hover:bg-white focus:bg-primary-500 focus:text-white dark:bg-primary-700 dark:text-white"
                           >
                             {tag}
                             <span className="sr-only">Opens in a new tab</span>

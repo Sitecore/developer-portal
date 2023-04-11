@@ -16,9 +16,7 @@ const FacetBreadcrumbs = () => {
 
   const subscribeToStateChangesAndReturnCleanup = () => {
     const allunsubscribers: { (): void }[] = [];
-    allunsubscribers.push(
-      breadcrumbManager.subscribe(() => setBreadcrumbManagerState(breadcrumbManager.state))
-    );
+    allunsubscribers.push(breadcrumbManager.subscribe(() => setBreadcrumbManagerState(breadcrumbManager.state)));
     allunsubscribers.push(
       urlManager.subscribe(() => {
         router.push({
@@ -38,21 +36,10 @@ const FacetBreadcrumbs = () => {
     return breadcrumbs.map((breadcrumb) => (
       <span key={breadcrumb.field}>
         {breadcrumb.values.map((value) => (
-          <span
-            key={breadcrumb.field + value.value.value}
-            className="bg-violet hover:bg-teal m-2 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold text-white"
-          >
+          <span key={breadcrumb.field + value.value.value} className="m-2 inline-flex items-center rounded-full bg-violet-500 px-3 py-1 text-xs font-semibold text-white hover:bg-teal-500">
             <button onClick={() => value.deselect()} style={hoveredStyle}>
               {value.value.value}
-              <svg
-                className="ml-1 inline-block h-3 w-3 align-middle text-white"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg className="ml-1 inline-block h-3 w-3 align-middle text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 {' '}
                 <line x1="18" y1="6" x2="6" y2="18" /> <line x1="6" y1="6" x2="18" y2="18" />
               </svg>

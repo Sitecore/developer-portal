@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { useRef, useState } from 'react';
-import { components, default as ReactSelect, InputAction } from 'react-select';
+import { InputAction, default as ReactSelect, components } from 'react-select';
 
 export type Option = {
   value: number | string;
@@ -28,9 +28,9 @@ export const MultiSelect = (props: any) => {
   const selectInputStyles = '';
   const valueContainerStyles = '';
   const singleValueStyles = '';
-  const multiValueStyles = 'bg-violet-lighter dark:bg-teal';
+  const multiValueStyles = 'bg-primary-300 dark:bg-teal-500';
   const multiValueLabelStyles = 'dark:text-white';
-  const multiValueRemoveStyles = 'dark:bg-teal';
+  const multiValueRemoveStyles = 'dark:bg-teal-500';
 
   const indicatorsContainerStyles = '';
   const clearIndicatorStyles = '';
@@ -41,11 +41,11 @@ export const MultiSelect = (props: any) => {
   const menuStyles = 'dark:bg-theme-bg text-sm';
   const groupHeadingStyles = '';
   const optionStyles = {
-    base: 'dark:hover:bg-teal px-3 py-2 text-sm dark:bg-theme-bg',
-    focus: 'bg-gray active:bg-gray',
-    selected: 'bg-violet-lighter dark:bg-teal',
+    base: 'dark:hover:bg-teal-500 px-3 py-2 text-sm dark:bg-theme-bg',
+    focus: 'bg-gray-500 active:bg-gray-500',
+    selected: 'bg-primary-300 dark:bg-teal-500',
   };
-  const noOptionsMessageStyles = 'text-gray p-2 bg-gray border border-dashed border-gray rounded-sm';
+  const noOptionsMessageStyles = 'text-gray-500 p-2 bg-gray-500 border border-dashed border-gray-500 rounded-sm';
 
   const Option = (props: any) => (
     <components.Option {...props}>
