@@ -41,8 +41,6 @@ export async function getStaticProps(context: any) {
 
 const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
   const router = useRouter();
-  console.log(router.asPath);
-  console.log({ router });
   return (
     <Layout title="Release Notes - Home" description="Empty">
       <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />

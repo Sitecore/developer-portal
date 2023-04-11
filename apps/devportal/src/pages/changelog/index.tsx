@@ -18,10 +18,8 @@ type ChangelogHomeProps = {
 
 export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
   const router = useRouter();
-  console.log(fallback);
   return (
     <>
-      {' '}
       <Head>
         <link rel="preload" href="/api/changelog/all?" as="fetch" crossOrigin="anonymous" />
       </Head>
@@ -63,5 +61,6 @@ export async function getStaticProps() {
         '/api/changelog/all': sorted,
       },
     },
+    revalidate: 60,
   };
 }
