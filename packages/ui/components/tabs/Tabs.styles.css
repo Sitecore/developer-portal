@@ -1,15 +1,15 @@
 .tablist {
-  @apply border-b border-b-charcoal-light;
+  @apply border-b border-b-gray-100;
 }
 .tab {
-  @apply font-semibold pb-2 mr-7;
+  @apply mr-7 pb-2 font-semibold;
 }
 .tab[aria-selected='true'] {
-  @apply border-b-violet border-b-4;
+  @apply border-b-primary-500 border-b-4;
 }
 .tab[focus-visible='true'] {
   @apply border-none outline-none;
 }
 .panels {
-  @apply pt-2 not-prose flex flex-wrap -mx-2;
+  @apply not-prose -mx-2 flex flex-wrap pt-2;
 }

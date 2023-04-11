@@ -1,6 +1,6 @@
 @layer components {
   .side-bar-nav-title {
-    @apply border-2 bg-theme-bg-alt sm:bg-theme-bg border-theme-border sm:border-0;
+    @apply bg-theme-bg-alt sm:bg-theme-bg border-theme-border border-2 sm:border-0;
     padding: 12px 10px 8px 10px;
   }
 
@@ -38,8 +38,8 @@
   }
 
   .side-bar-nav-item--scrolled-to:before {
-    background-color: theme('colors.violet.DEFAULT');
-    border-color: theme('colors.violet.DEFAULT');
+    background-color: theme('colors.primary.500');
+    border-color: theme('colors.primary.500');
   }
   .side-bar-nav-item.current:after {
     background-color: theme('colors.theme-border');

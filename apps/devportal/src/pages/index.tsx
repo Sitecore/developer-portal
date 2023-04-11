@@ -38,8 +38,7 @@ export async function getStaticProps() {
 const productSolutions: CategoryTileProps[] = [
   {
     title: 'Content Management (CMS)',
-    description:
-      'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.',
+    description: 'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.',
     href: '/content-management/',
   },
   {
@@ -79,17 +78,8 @@ type HomePageProps = {
 };
 
 const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
-  <Layout
-    title={pageInfo.title}
-    description={pageInfo.description}
-    openGraphImage={pageInfo.openGraphImage}
-  >
-    <Hero
-      title={pageInfo.title}
-      description={pageInfo.description}
-      image={pageInfo.heroImage}
-      productLogo={pageInfo.productLogo}
-    />
+  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+    <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
     <VerticalGroup>
       <Container>
@@ -105,27 +95,17 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
           <PromoCard {...promoData} key="promo" isImageLeft={false} />
 
           <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} />
-          <SitecoreCommunityBlog
-            content={pageInfo.sitecoreCommunity.blog}
-            sortKeys={pageInfo.sitecoreCommunityBlogSort}
-          />
+          <SitecoreCommunityBlog content={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} />
           <SitecoreCommunityEvents content={pageInfo.sitecoreCommunity.events} />
-          <YouTubeFeed
-            content={pageInfo.youtube}
-            title={pageInfo.youtubeTitle}
-            playlistTitle={pageInfo.youtubePlaylistTitle}
-          />
+          <YouTubeFeed content={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
           <CommunityList data={communityListData} />
         </VerticalGroup>
       </Container>
-      <section className="bg-charcoal dark:bg-gray-darkest py-16">
+      <section className="dark:bg-theme-bg-alt bg-gray-600 py-16">
         <Container>
           <div className="mb-8 max-w-prose">
             <h2 className="heading-md mb-4 text-white">Explore Sitecore by solution</h2>
-            <p className="text-white">
-              How can we help you today? Get all the information you want, depending on your
-              business’s needs.
-            </p>
+            <p className="text-white">How can we help you today? Get all the information you want, depending on your business’s needs.</p>
           </div>
           <CategoryTileList cards={productSolutions} />
         </Container>
@@ -136,11 +116,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       <section className="bg-theme-bg-alt py-16">
         <Container>
           <VerticalGroup>
-            <SitecoreCommunityQuestions
-              content={pageInfo.sitecoreCommunity.questions}
-              sortKeys={pageInfo.sitecoreCommunityQuestionsSort}
-              forumKeys={pageInfo.sitecoreCommunityQuestionsCategory}
-            />
+            <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
             <StackExchangeFeed content={pageInfo.stackexchange} />
           </VerticalGroup>
         </Container>
