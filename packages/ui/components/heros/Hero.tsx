@@ -18,35 +18,22 @@ export type HeroProps = {
 const HeroWithImageClasses = 'lg:min-h-120 md:grid-cols-9';
 const HeroWithBackgroundImageClasses = 'bg-wide-hero-light dark:bg-wide-hero-dark bg-cover';
 
-const Hero = ({
-  description,
-  headingLevel = 'h1',
-  title,
-  image,
-  productLogo,
-}: HeroProps): JSX.Element => (
-  <header
-    className={` relative py-14 ${!image || !!productLogo ? HeroWithBackgroundImageClasses : ''}`}
-  >
-    <Container
-      size="standard"
-      className={`grid gap-16 lg:items-center ${
-        !!image || !!productLogo ? HeroWithImageClasses : ''
-      }`}
-    >
+const Hero = ({ description, headingLevel = 'h1', title, image, productLogo }: HeroProps): JSX.Element => (
+  <header className={` relative py-14 ${!image || !!productLogo ? HeroWithBackgroundImageClasses : ''}`}>
+    <Container size="standard" className={`grid gap-16 lg:items-center ${!!image || !!productLogo ? HeroWithImageClasses : ''}`}>
       <div className={`lg:pr-24 ${!!image || !!productLogo ? ['md:col-span-5'] : ''}`}>
-        <DynamicTag tag={headingLevel} className="relative mb-5 heading-lg">
+        <DynamicTag tag={headingLevel} className="heading-lg relative mb-5">
           {title}
         </DynamicTag>
-        <p className="text-lg text-theme-text-alt">{description}</p>
+        <h2 className="text-theme-text-alt">{description}</h2>
       </div>
       {productLogo && (
         <React.Fragment>
           <div className="relative hidden md:col-span-4 md:block">
-            <div className="hidden w-full h-20 dark:block">
+            <div className="hidden h-20 w-full dark:block">
               <ProductLogo product={productLogo} variant="Dark" />
             </div>
-            <div className="w-full h-20 dark:hidden">
+            <div className="h-20 w-full dark:hidden">
               <ProductLogo product={productLogo} variant="Light" />
             </div>
           </div>
@@ -55,7 +42,7 @@ const Hero = ({
       {image && (
         <React.Fragment>
           <div className="relative hidden md:col-span-4 md:block">
-            <div className="w-full h-20">
+            <div className="h-20 w-full">
               <Image
                 src={image}
                 alt=""
