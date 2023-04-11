@@ -9,7 +9,7 @@ export type GithubButtonProps = {
 
 export const GithubButton = ({ url, text, className = '' }: GithubButtonProps) => (
   <div
-    className={`dark:bg-teal dark:hover:bg-teal-dark inline-flex items-center rounded-lg bg-black px-5 py-2 text-center text-sm text-white hover:bg-black/30 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 dark:focus:ring-gray-500 ${className}`}
+    className={`dark:bg-teal-500 dark:hover:bg-teal-dark inline-flex items-center rounded-lg bg-black px-5 py-2 text-center text-sm text-white hover:bg-black/30 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 dark:focus:ring-gray-500 ${className}`}
   >
     <Link href={url} className="text-xs no-underline">
       <SvgIcon

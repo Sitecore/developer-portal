@@ -1,35 +1,35 @@
 @layer components {
   .btn-primary {
-    @apply inline-block px-12 py-4 text-sm font-semibold text-white rounded-full bg-violet focus:bg-violet-dark hover:bg-violet-dark;
+    @apply bg-primary-500 hover:bg-primary-700 focus:bg-primary-700 inline-block rounded-full px-12 py-4 text-sm font-semibold text-white;
   }
   .btn-secondary {
-    @apply flex items-center px-2 py-1 mt-4 mr-0 text-xs rounded-full text-charcoal dark:text-teal hover:bg-violet dark:hover:bg-teal dark:hover:text-white hover:text-white;
+    @apply hover:bg-primary-500 mt-4 mr-0 flex items-center rounded-full px-2 py-1 text-xs text-gray-600 hover:text-white dark:text-teal-500 dark:hover:bg-teal-500 dark:hover:text-white;
   }
   .btn-textlink {
-    @apply flex items-center px-2 py-1 mt-4 mr-0 text-xs rounded-full text-charcoal dark:text-teal hover:bg-violet dark:hover:bg-teal hover:text-white;
+    @apply hover:bg-primary-500 mt-4 mr-0 flex items-center rounded-full px-2 py-1 text-xs text-gray-600 hover:text-white dark:text-teal-500 dark:hover:bg-teal-500;
   }
   .play-button-outside {
-    @apply inline-block w-5 h-5 ml-1 transition-transform duration-300 transform-gpu group-focus:translate-x-1 group-hover:translate-x-1;
+    @apply ml-1 inline-block h-5 w-5 transform-gpu transition-transform duration-300 group-hover:translate-x-1 group-focus:translate-x-1;
   }
   .play-button-arrow {
-    @apply relative text-white dark:text-white top-1;
+    @apply relative top-1 text-white dark:text-white;
   }
   .btn-paging-previous {
-    @apply px-3 py-2 border-r border-white text-violet dark:text-teal rounded-l-md dark:border-theme-bg hover:bg-violet-dark hover:text-white;
+    @apply text-primary-500 dark:border-theme-bg hover:bg-primary-500 rounded-l-md border-r border-white px-3 py-2 hover:text-white dark:text-teal-500;
   }
   .btn-paging-next {
-    @apply px-3 py-2 border-l border-white dark:text-teal text-violet rounded-r-md dark:border-theme-bg hover:bg-violet-dark hover:text-white;
+    @apply text-primary-500 dark:border-theme-bg hover:bg-primary-700 rounded-r-md border-l border-white px-3 py-2 hover:text-white dark:text-teal-500;
   }
   .btn-text-link {
     @apply inline-flex items-center text-sm font-bold no-underline hover:underline focus:underline;
   }
   .btn-nav-back {
-    @apply relative w-full pl-10 pr-4 font-semibold text-left text-white transition-colors h-14 bg-violet lg:hidden transform-gpu hover:bg-violet-dark;
+    @apply bg-primary-500 hover:bg-primary-700 relative h-14 w-full transform-gpu pl-10 pr-4 text-left font-semibold text-white transition-colors lg:hidden;
   }
   .btn-nav-back-icon-outer {
-    @apply absolute block pointer-events-none top-5 left-4 h-em w-em;
+    @apply h-em w-em pointer-events-none absolute top-5 left-4 block;
   }
   .btn-nav-back-icon {
-    @apply transition-transform h-inherit w-inherit top-5 transform-gpu group-hover:-translate-x-1;
+    @apply h-inherit w-inherit top-5 transform-gpu transition-transform group-hover:-translate-x-1;
   }
 }

@@ -28,7 +28,7 @@ const CategoryTile = ({
           <span className="relative">
             {title}
             <span className="absolute inline-block transition-transform duration-300 h-em w-em -right-6 bottom-1 transform-gpu whitespace-nowrap group-hover:translate-x-1 group-focus:translate-x-1">
-              <SvgIcon icon="arrow-right" className="text-violet dark:text-red relative top-0.5" />
+              <SvgIcon icon="arrow-right" className="text-primary-500 dark:text-red relative top-0.5" />
             </span>
           </span>
           <span className="absolute inset-0 z-10"></span>

@@ -6,7 +6,7 @@
     @apply card flex-col p-4;
   }
   .link {
-    @apply card not-prose dark:bg-teal dark:font-regular p-4 text-center dark:text-white;
+    @apply card not-prose dark:font-regular p-4 text-center dark:bg-teal-500 dark:text-white;
   }
   .article h4 {
     @apply mt-0;
