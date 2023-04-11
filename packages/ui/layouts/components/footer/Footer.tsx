@@ -3,7 +3,7 @@ import Container from '../../../components/common/Container';
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className="flex justify-center py-12 bg-gray-lightest text-charcoal-dark theme-dark dark:bg-black dark:text-white">
+    <footer className="flex justify-center py-12 bg-gray-lightest text-gray-600-dark theme-dark dark:bg-black dark:text-white">
       <Container size="standard" className="container flex flex-col px-4 sm:px-0">
         <div className="inline-flex mb-4">
           <a

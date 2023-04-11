@@ -1,12 +1,12 @@
 @layer components {
   .main-nav-item {
-    @apply relative flex items-center w-full pr-8 font-semibold text-left transition-colors nav-item--button hover:text-violet dark:hover:text-teal h-14 transform-gpu whitespace-nowrap lg:h-16 lg:pr-0;
+    @apply nav-item--button hover:text-primary-500 relative flex h-14 w-full transform-gpu items-center whitespace-nowrap pr-8 text-left font-semibold transition-colors dark:hover:text-teal-500 lg:h-16 lg:pr-0;
   }
   .button-active {
-    @apply text-violet dark:text-teal nav-item--button-active dark:hover:text-teal;
+    @apply text-primary-500 nav-item--button-active dark:text-teal-500 dark:hover:text-teal-500;
   }
   .nav-item-overlay {
-    @apply fixed inset-x-0 bottom-0 z-50 overflow-y-auto transition-transform border-b bg-theme-bg border-theme-bg-alt top-32 transform-gpu lg:absolute lg:top-16 lg:bottom-auto lg:transform-none lg:shadow-lg lg:transition-none;
+    @apply bg-theme-bg border-theme-bg-alt fixed inset-x-0 bottom-0 top-32 z-50 transform-gpu overflow-y-auto border-b transition-transform lg:absolute lg:top-16 lg:bottom-auto lg:transform-none lg:shadow-lg lg:transition-none;
   }
   .nav-item-overlay-inactive {
     @apply translate-x-full lg:hidden;

@@ -27,7 +27,7 @@
     transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
   }
   .yt-lite:hover > .lty-playbtn {
-    background-color: theme('colors.red.DEFAULT');
+    background-color: theme('colors.red.500');
     opacity: 1;
   }
   /* play button triangle */

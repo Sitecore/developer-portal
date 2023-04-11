@@ -36,7 +36,7 @@ const MultiPageNav = ({ context, navData, root }: MultiPageNavProps): JSX.Elemen
             >
               <Link
                 href={buildUrl(context.article, route.path)}
-                className={`text-violet dark:text-teal inline-block text-sm hover:underline focus:underline ${
+                className={`text-violet dark:text-teal-500 inline-block text-sm hover:underline focus:underline ${
                   isActive ? 'font-bold' : ''
                 }`}
               >

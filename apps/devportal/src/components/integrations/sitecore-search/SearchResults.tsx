@@ -48,13 +48,13 @@ export const SearchResults = (props: SearchResultsType) => {
             </div>
             <ul className="border-theme-border mt-2 border-t">
               {articles.map((result, index) => (
-                <li key={index} className="mt-2 ml-6 py-4 ">
+                <li key={index} className="mt-2 py-4">
                   <a href={result.url} className="group">
                     <div className="bg-theme-bg grid grid-cols-4 items-center md:flex-row">
                       <div className={`${result.type == 'Video' ? 'col-span-3' : 'col-span-4'} pr-2`}>
-                        {result.type && <span className="bg-gray-lightest dark:bg-teal  mr-2 px-2.5 py-1 text-xs uppercase">{result.type}</span>}
-                        {result.index_name && <span className="mr-2 px-2.5 py-1 text-xs uppercase">{result.site_name}</span>}
-                        <h3 className="mt-2 font-bold group-hover:underline">{result.name}</h3>
+                        {result.type && <span className="bg-primary-500 text-2xs px-2.5 py-1 uppercase text-white dark:bg-teal-500">{result.type}</span>}
+                        {result.index_name && <span className="text-2xs mr-2 px-2.5 py-1 uppercase">{result.site_name}</span>}
+                        <h3 className="mt-2 text-base font-bold group-hover:underline">{result.name}</h3>
 
                         {result.description && <p className="text-sm">{truncateString(result.description, 300, true)}</p>}
                       </div>
@@ -65,7 +65,7 @@ export const SearchResults = (props: SearchResultsType) => {
                         </div>
                       )}
                     </div>
-                    <span className="text-violet mt-5 block break-words text-xs italic dark:text-white">{result.url}</span>
+                    <span className="text-violet mt-1 block break-words text-xs italic dark:text-white">{result.url}</span>
                   </a>
                 </li>
               ))}

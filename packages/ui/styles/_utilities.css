@@ -3,32 +3,31 @@
    * Themes
    */
   .theme-light {
-    --theme-bg-alt: theme('colors.gray.lightest');
+    --theme-bg-alt: theme('colors.gray.100');
     --theme-bg: theme('colors.white');
-    --theme-outline: theme('colors.charcoal.DEFAULT');
-    --theme-text-alt: theme('colors.gray.dark');
-    --theme-text: theme('colors.charcoal.dark');
-    --theme-border: theme('colors.gray.light');
-    --theme-border-alt: theme('colors.gray.light');
+    --theme-outline: theme('colors.gray.600');
+    --theme-text-alt: theme('colors.gray.800');
+    --theme-text: theme('colors.gray.600');
+    --theme-border: theme('colors.gray.300');
+    --theme-border-alt: theme('colors.gray.300');
     --theme-shadow: theme('boxShadow.DEFAULT');
     --theme-shadow-md: theme('boxShadow.md');
     --theme-shadow-lg: theme('boxShadow.lg');
-    --theme-link-hover: theme('colors.violet.dark');
+    --theme-link-hover: theme('colors.primary.800');
   }
 
   .theme-dark {
-    --theme-bg-alt: theme('colors.gray.darkest');
-    --theme-bg: theme('colors.charcoal.dark');
+    --theme-bg-alt: theme('colors.gray.700');
+    --theme-bg: theme('colors.gray.800');
     --theme-outline: theme('colors.white');
-    --theme-text-alt: theme('colors.gray.lightest');
+    --theme-text-alt: theme('colors.gray.100');
     --theme-text: theme('colors.white');
-    --theme-border: theme('colors.gray.dark');
-    /* Only used in this one instance, will leave this as hex for now. */
-    --theme-border-alt: #505050;
+    --theme-border: theme('colors.gray.700');
+    --theme-border-alt: theme('colors.gray.700');
     --theme-shadow: theme('boxShadow.dark');
     --theme-shadow-md: theme('boxShadow.md-dark');
     --theme-shadow-lg: theme('boxShadow.lg-dark');
-    --theme-link-hover: theme('colors.teal.DEFAULT');
+    --theme-link-hover: theme('colors.teal.600');
   }
 
   /**
@@ -43,11 +42,11 @@
   }
 
   .heading-md {
-    @apply font-regular text-xl leading-tight md:text-2xl !important;
+    @apply font-ltpro text-xl leading-tight md:text-2xl !important;
   }
 
   .heading-sm {
-    @apply text-base font-semibold leading-tight md:text-lg !important;
+    @apply font-ltpro text-base font-semibold leading-tight md:text-lg !important;
   }
 
   .heading-xs {
