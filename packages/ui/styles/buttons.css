@@ -3,7 +3,10 @@
     @apply bg-primary-500 hover:bg-primary-700 focus:bg-primary-700 inline-block rounded-full px-12 py-4 text-sm font-semibold text-white;
   }
   .btn-secondary {
-    @apply hover:bg-primary-500 mt-4 mr-0 flex items-center rounded-full px-2 py-1 text-xs text-gray-600 hover:text-white dark:text-teal-500 dark:hover:bg-teal-500 dark:hover:text-white;
+    @apply hover:bg-primary-500 mt-4 mr-0 flex items-center rounded-full px-2 py-1 text-xs text-gray-500 hover:text-white dark:text-teal-500 dark:hover:bg-teal-500 dark:hover:text-white;
+  }
+  .btn-secondary-invert {
+    @apply bg-blackAlpha-800 hover:bg-blackAlpha-400 mt-4 mr-0 flex transform-gpu items-center rounded-lg px-2 py-2 text-xs text-white transition-colors  dark:hover:bg-teal-500 dark:hover:text-white;
   }
   .btn-textlink {
     @apply hover:bg-primary-500 mt-4 mr-0 flex items-center rounded-full px-2 py-1 text-xs text-gray-600 hover:text-white dark:text-teal-500 dark:hover:bg-teal-500;
