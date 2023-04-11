@@ -22,7 +22,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
   const end = getQueryValue(req.query.end);
 
   await ChangelogEntriesPaginated(limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
-    res.setHeader('Cache-Control', 's-maxage=3600');
+    res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate');
     res.status(200).json(response);
   });
 };
