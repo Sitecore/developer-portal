@@ -46,7 +46,7 @@ const Layout = ({ title, description = '', openGraphImage, children }: LayoutPro
     <>
       <Head>
         <title>{title}</title>
-        <link rel="icon" href={`${publicUrl}/favicon.png`} />
+        <link rel="icon" href={`/favicon.png`} />
         {/*
           Necessary Meta tags, including Social tags.
           It's OK if they're empty, same as not printing them.
