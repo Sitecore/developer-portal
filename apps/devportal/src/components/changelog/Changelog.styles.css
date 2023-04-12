@@ -6,7 +6,7 @@
     @apply bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-100;
   }
   .changelog-item .new-feature {
-    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-100;
+    @apply bg-teal-100 text-teal-800 dark:bg-teal-800 dark:text-teal-100;
   }
   .changelog-item .bugfix {
     @apply bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-100;

@@ -34,7 +34,7 @@ export const ChangelogItemMeta = ({ item, loading }: ChangelogItemMetaProps) => 
         </time>
       </div>
       <div className="flex flex-row gap-5">
-        <span className={`changetype bg-theme-bg-alt flex items-center justify-center text-xs ${loading ? 'w-12' && skeletonLoaderClasses : `rounded-md px-3 py-0.5 ${slugify(item.changeType[0].name)} `}`}>{item.changeType[0].name}</span>
+        <span className={`changetype bg-theme-bg-alt flex items-center justify-center text-xs ${loading ? 'w-12' && skeletonLoaderClasses : `rounded-md px-2 py-0 ${slugify(item.changeType[0].name)} `}`}>{item.changeType[0].name}</span>
 
         {item.breakingChange && (
           <div className={`border-red-dark text-red-dark flex items-center justify-center border text-center text-xs dark:border-white dark:text-white ${loading ? 'w-12' && skeletonLoaderClasses : 'rounded-md px-3 py-1'}`}>Breaking change</div>
