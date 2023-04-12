@@ -51,7 +51,7 @@ const ChangelogByMonth = ({ className, product }: ChangelogByMonthProps): JSX.El
                   </div>
                 )}
                 <div className="ml-6">
-                  <Link className="text-violet dark:text-teal text-xs hover:font-semibold" href={getChangelogEntryUrl(item)} title={`(${item.releaseDate}) ${item.productName} - ${item.title}`}>
+                  <Link className="text-violet dark:text-teal text-xs hover:underline" href={getChangelogEntryUrl(item)} title={`(${item.releaseDate}) ${item.productName} - ${item.title}`}>
                     {item.title}
                   </Link>
                 </div>
