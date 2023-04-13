@@ -31,16 +31,15 @@ export default function ChangelogCurrent() {
               <Row columns={2}>
                 <LinkItem title="Sitecore XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/what-s-new-in-sitecore-xm-cloud.html" />
                 <LinkItem title="Sitecore Content Hub" link="https://doc.sitecore.com/ch/en/users/40/content-hub/release-notes.html" />
-                <LinkItem title="Sitecore CDP" link="https://doc.sitecore.com/cdp/" />
-                <LinkItem title="Sitecore OrderCloud" link="https://ordercloud.io/release-notes/" />
-                <LinkItem title="Sitecore Personalize Developers" link="https://doc.sitecore.com/personalize/en/users/sitecore-personalize/index-en.html?contextId=747abh" />
-                <LinkItem title="Sitecore Personalize Users" link="https://doc.sitecore.com/personalize/en/users/sitecore-personalize/what-s-new-in-sitecore-personalize.html" />
                 <LinkItem title="Sitecore Content Hub ONE" link="https://doc.sitecore.com/ch-one/en/users/content-hub-one/whats-new-in-content-hub-one.html" />
-                <LinkItem title="Sitecore Send" link="https://doc.sitecore.com/send/en/users/sitecore-send/what-s-new-in-sitecore-send.html" />
+                <LinkItem title="Sitecore OrderCloud" link="https://ordercloud.io/release-notes/" />
                 <LinkItem title="Sitecore CDP Users" link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/index-en.html?contextId=401abc" />
                 <LinkItem title="Sitecore CDP Developers" link="https://doc.sitecore.com/cdp/en/developers/api/index-en.html?contextId=747abi" />
-                <LinkItem title="Sitecore Experience Commerce" link="https://sitecoredev.azureedge.net/~/media/1EF967E826F84A4CB62732F61F81EBFA.ashx?date=20221201T201304" />
+                <LinkItem title="Sitecore Personalize Developers" link="https://doc.sitecore.com/personalize/en/users/sitecore-personalize/index-en.html?contextId=747abh" />
+                <LinkItem title="Sitecore Personalize Users" link="https://doc.sitecore.com/personalize/en/users/sitecore-personalize/what-s-new-in-sitecore-personalize.html" />
+                <LinkItem title="Sitecore Send" link="https://doc.sitecore.com/send/en/users/sitecore-send/what-s-new-in-sitecore-send.html" />
                 <LinkItem title="Sitecore XM/XP" link="https://dev.sitecore.net/en/Downloads/Sitecore%20Experience%20Platform/103/Sitecore%20Experience%20Platform%20103/Release%20Notes" />
+                <LinkItem title="Sitecore Experience Commerce" link="https://sitecoredev.azureedge.net/~/media/1EF967E826F84A4CB62732F61F81EBFA.ashx?date=20221201T201304" />
               </Row>
             </div>
           </Container>
