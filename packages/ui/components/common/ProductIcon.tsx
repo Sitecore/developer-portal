@@ -6,23 +6,14 @@ export type ProductLogoProps = {
   variant: string;
   alt?: string;
   className?: string;
+  width?: number;
+  height?: number;
 };
 
-const ProductIcon = ({ product, variant, alt, className }: ProductLogoProps): JSX.Element => {
+const ProductIcon = ({ product, variant, alt, className, width, height }: ProductLogoProps): JSX.Element => {
   const productIcon = GetProductIcon(product, variant);
 
-  return (
-    <Image
-      src={productIcon}
-      alt={alt != null ? alt : ''}
-      className={`${className}`}
-      fill
-      sizes="(max-width: 768px) 100vw,
-          (max-width: 1200px) 50vw,
-          33vw"
-      priority={true}
-    />
-  );
+  return <Image src={productIcon} alt={alt != null ? alt : ''} className={`${className}`} width={width} height={height} priority={true} />;
 };
 
 ProductIcon.defaultProps = {

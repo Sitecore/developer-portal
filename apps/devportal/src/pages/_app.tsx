@@ -17,6 +17,10 @@ import dynamic from 'next/dynamic';
 import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
 
+const Coveo = dynamic(() => import('@/src/components/integrations/search/SearchInput'), {
+  ssr: false,
+});
+
 function SCDPApp({ Component, pageProps }: AppProps) {
   // useEffect for basic page views tracking via router/gtag.
   useEffect(() => {
@@ -29,28 +33,22 @@ function SCDPApp({ Component, pageProps }: AppProps) {
   }, []);
 
   const Disabled = () => {
-    return (
-      <div className="pt-3 text-sm font-semibold text-center text-red">
-        Search disabled; please check environment variables to enable
-      </div>
-    );
+    return <div className="text-red pt-3 text-center text-sm font-semibold">Search disabled; please check environment variables to enable</div>;
   };
-  const SearchInput =
-    !process.env.NEXT_PUBLIC_COVEO_ORGANIZATION_ID ||
-    !process.env.NEXT_PUBLIC_COVEO_ACCESS_TOKEN ||
-    !process.env.NEXT_PUBLIC_COVEO_SEARCH_HUB ||
-    !process.env.NEXT_PUBLIC_COVEO_PIPELINE
-      ? Disabled
-      : dynamic(() => import('@/src/components/integrations/search/SearchInput'));
+  const SearchInput = !process.env.NEXT_PUBLIC_COVEO_ORGANIZATION_ID || !process.env.NEXT_PUBLIC_COVEO_ACCESS_TOKEN || !process.env.NEXT_PUBLIC_COVEO_SEARCH_HUB || !process.env.NEXT_PUBLIC_COVEO_PIPELINE ? Disabled : Coveo;
 
   return (
     <React.StrictMode>
       <Head>
         <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
       </Head>
-      <div
-        className={`${AvenirNextR.variable} ${AvenirNextLTPro.variable} theme-light text-theme-text bg-theme-bg dark:theme-dark font-sans`}
-      >
+      <style jsx global>{`
+        :root {
+          --font-avenirnext-r: ${AvenirNextR.style.fontFamily};
+          --font-avenirnext-ltpro: ${AvenirNextLTPro.style.fontFamily};
+        }
+      `}</style>
+      <div className={`theme-light text-theme-text bg-theme-bg dark:theme-dark font-sans`}>
         <Nav navigationData={mainNavigation} sitecoreQuickLinks={sitecoreQuickLinks}>
           <SearchInput />
         </Nav>

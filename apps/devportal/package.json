@@ -31,12 +31,12 @@
   },
   "dependencies": {
     "@coveo/headless": "^1.105.1",
-    "@headlessui/react": "^1.7.10",
     "@next/font": "^13.1.6",
     "@remark-embedder/core": "^3.0.1",
     "@remark-embedder/transformer-oembed": "^3.0.0",
     "@types/lodash.throttle": "^4.1.7",
     "axios": "^0.27.2",
+    "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "hast-util-heading-rank": "^2.1.0",
     "hast-util-to-string": "^2.0.0",
@@ -54,6 +54,8 @@
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^2.0.0",
+    "sharp": "^0.32.0",
+    "swr": "^2.1.2",
     "ui": "*",
     "unist-util-visit": "^4.0.0"
   },

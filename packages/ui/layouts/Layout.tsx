@@ -43,10 +43,10 @@ const Layout = ({ title, description = '', openGraphImage, children }: LayoutPro
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
         <title>{title}</title>
-        <link rel="icon" href={`${publicUrl}/favicon.png`} />
+        <link rel="icon" href={`/favicon.png`} />
         {/*
           Necessary Meta tags, including Social tags.
           It's OK if they're empty, same as not printing them.
@@ -68,7 +68,7 @@ const Layout = ({ title, description = '', openGraphImage, children }: LayoutPro
         <div className="sr-only" aria-live="polite" aria-atomic="true">{`The ${title} page has loaded.`}</div>
         {children}
       </main>
-    </div>
+    </>
   );
 };
 

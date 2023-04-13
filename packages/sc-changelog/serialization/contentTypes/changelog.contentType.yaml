@@ -1,0 +1,76 @@
+﻿id: changelog
+name:
+  en-US: Changelog
+description:
+  en-US: Single entry for the Sitecore changelog
+fields:
+- id: title
+  name:
+    en-US: Title
+  type: ShortText
+  required: true
+  helpText:
+    en-US: ''
+- id: image
+  name:
+    en-US: Image
+  type: Media
+  required: false
+  helpText:
+    en-US: ''
+- id: description
+  name:
+    en-US: Description
+  type: RichText
+  required: true
+  helpText:
+    en-US: The text that will be rendered in the overview
+- id: fullArticle
+  name:
+    en-US: Full Article
+  type: RichText
+  required: false
+  helpText:
+    en-US: The content that will be visible on the detail page (not required)
+- id: changeType
+  name:
+    en-US: Change Type
+  type: Reference
+  required: false
+  helpText:
+    en-US: Please select a change type
+- id: sitecoreProduct
+  name:
+    en-US: Sitecore Product
+  type: Reference
+  required: false
+  helpText:
+    en-US: Please select one product from the list
+- id: releaseDate
+  name:
+    en-US: Release Date
+  type: DateTime
+  required: false
+  helpText:
+    en-US: ''
+- id: breakingChange
+  name:
+    en-US: Breaking Change
+  type: Boolean
+  required: false
+  helpText:
+    en-US: Does this change include a breaking change?
+- id: readMoreLink
+  name:
+    en-US: Read More Link
+  type: ShortText
+  required: false
+  helpText:
+    en-US: You can link to an external page where more information can be found
+- id: version
+  name:
+    en-US: Version
+  type: ShortText
+  required: false
+  helpText:
+    en-US: Only use the version field if applicable

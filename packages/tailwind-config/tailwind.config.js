@@ -204,7 +204,7 @@ module.exports = {
       // 16px
       sm: '0.95rem',
       // 18px
-      base: '1.125rem',
+      base: '1rem',
       // 20px
       lg: '1.25rem',
       // 24px
@@ -218,6 +218,7 @@ module.exports = {
     },
     fontWeight: {
       thin: 200,
+      light: 300,
       regular: 400,
       medium: 500,
       semibold: 600,
@@ -236,9 +237,10 @@ module.exports = {
       },
       boxShadow: {
         inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.15)',
-        DEFAULT: '0 2px 4px 0 rgba(0, 0, 0, 0.1)',
-        md: '0 0 12px 0 rgba(0, 0, 0, 0.1)',
-        lg: '0 15px 15px 0 rgba(0, 0, 0, 0.1)',
+        sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05)',
         dark: '0 2px 4px 0 rgba(0, 0, 0, 0.8)',
         ['lg-dark']: '0 15px 15px 0 rgba(0, 0, 0, 0.8)',
         ['md-dark']: '0 0 12px 0 rgba(0, 0, 0, 0.8)',

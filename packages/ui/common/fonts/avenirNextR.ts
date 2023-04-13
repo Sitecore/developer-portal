@@ -5,16 +5,6 @@ export const AvenirNextR = localFont({
   fallback: ['Arial', 'Sans-Serif'],
   src: [
     {
-      path: './src/AvenirNextW05-UltraLight.woff2',
-      weight: '100',
-      style: 'normal',
-    },
-    {
-      path: './src/AvenirNextW05-UltraLightIt.woff2',
-      weight: '100',
-      style: 'italic',
-    },
-    {
       path: './src/AvenirNextW05-Thin.woff2',
       weight: '200',
       style: 'normal',
@@ -22,16 +12,6 @@ export const AvenirNextR = localFont({
     {
       path: './src/AvenirNextW05-ThinItalic.woff2',
       weight: '200',
-      style: 'italic',
-    },
-    {
-      path: './src/AvenirNextW05-Light.woff2',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: './src/AvenirNextW05-LightItalic.woff2',
-      weight: '300',
       style: 'italic',
     },
     {
@@ -72,16 +52,6 @@ export const AvenirNextR = localFont({
     {
       path: './src/AvenirNextW05-BoldItalic.woff2',
       weight: '700',
-      style: 'italic',
-    },
-    {
-      path: './src/AvenirNextW05-Heavy.woff2',
-      weight: '800',
-      style: 'normal',
-    },
-    {
-      path: './src/AvenirNextW05-HeavyItalic.woff2',
-      weight: '800',
       style: 'italic',
     },
   ],
