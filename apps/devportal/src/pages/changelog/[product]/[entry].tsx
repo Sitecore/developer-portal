@@ -2,6 +2,7 @@ import { ChangelogEntryByTitle, GetProducts } from '@/../../packages/sc-changelo
 import Product from '@/../../packages/sc-changelog/types/product';
 import { getSlug, slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
 import Container from '@/../../packages/ui/components/common/Container';
+import TextLink from '@/../../packages/ui/components/common/TextLink';
 import VerticalGroup from '@/../../packages/ui/components/common/VerticalGroup';
 import Hero from '@/../../packages/ui/components/heros/Hero';
 import Layout from '@/../../packages/ui/layouts/Layout';
@@ -45,8 +46,8 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
       <Hero title={`${currentProduct.name} Changelog`} description={`Learn more about new versions, changes and improvements we made to ${currentProduct.name}`} />
       <VerticalGroup>
         <Container>
-          <div className="mt-8 grid auto-cols-max gap-16 md:grid-cols-5">
-            <div className="col-span-3">
+          <div className="mt-8 grid gap-16 md:grid-cols-5">
+            <div className="changelog-item col-span-3">
               <nav className="mt-4 mb-8 flex" aria-label="Breadcrumb">
                 <ol className="inline-flex items-center space-x-1 md:space-x-3">
                   <li className="inline-flex items-center">
@@ -77,6 +78,8 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
 
               <div className={`prose dark:prose-invert my-3 max-w-none text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
               {changelogEntry.fullArticle && <div className={`prose dark:prose-invert my-3 max-w-none text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />}
+
+              {changelogEntry.readMoreLink && <TextLink className="font-medium" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} />}
             </div>
             <div className="col-span-2 hidden md:block">
               <ChangelogByMonth product={currentProduct} />

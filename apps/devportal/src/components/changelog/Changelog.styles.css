@@ -5,10 +5,13 @@
   .changelog-item .improvement {
     @apply bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-100;
   }
+  .changelog-item .new,
   .changelog-item .new-feature {
     @apply bg-teal-100 text-teal-800 dark:bg-teal-800 dark:text-teal-100;
   }
-  .changelog-item .bugfix {
+  .changelog-item .bugfix,
+  .changelog-item .resolved,
+  .changelog-item .issue-resolved {
     @apply bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-100;
   }
 }

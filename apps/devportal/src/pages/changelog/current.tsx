@@ -19,10 +19,12 @@ export default function ChangelogCurrent() {
         <VerticalGroup>
           <Container>
             <Alert icon="info">
-              <Link href="/changelog" className="mr-1 font-bold hover:underline">
-                Click here
-              </Link>
-              to go the public preview of the upcoming Sitecore global changelog.
+              <p>
+                <Link href="/changelog" className="mr-1 font-bold hover:underline">
+                  Click here
+                </Link>
+                to go the public preview of the upcoming Sitecore global changelog.
+              </p>
             </Alert>
             <div className="mt-10">
               <h3 className="heading-md mb-4">Current release notes</h3>
