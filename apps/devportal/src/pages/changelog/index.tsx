@@ -2,9 +2,11 @@ import { ChangelogEntriesPaginated } from '@/../../packages/sc-changelog/changel
 import { getOverviewPerMonth } from '@/src/common/changelog';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SWRConfig } from 'swr';
 import SmallLinkButton from 'ui/components/buttons/SmallLinkButton';
+import { Alert } from 'ui/components/common/Alert';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
@@ -27,6 +29,15 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
         <VerticalGroup>
           <Container>
+            <Alert icon="info">
+              <p>
+                You are viewing the public preview of the upcoming Sitecore global changelog.
+                <Link href="/changelog/current" className="mx-1 font-bold hover:underline">
+                  Click here
+                </Link>
+                for the current release notes per product
+              </p>
+            </Alert>
             <div className="mt-8 grid gap-16 md:grid-cols-5">
               <SWRConfig value={{ fallback }}>
                 <ChangelogList />
