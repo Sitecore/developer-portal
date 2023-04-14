@@ -1,4 +1,3 @@
-import MEDIA_QUERY from './common/media-query';
 import SITECORE_CLOUD_QUERY from './sitecore-cloud-query';
 
 export const SITECORE_PRODUCT_QUERY = `
@@ -6,13 +5,8 @@ export const SITECORE_PRODUCT_QUERY = `
     name
     productName
     productDescription
-    abbreviation
-    productIcon {
-      total
-      results {
-        ${MEDIA_QUERY}
-      }
-    }
+    darkIcon:productIconDark
+    lightIcon: productIconLight
     sitecoreCloud {
         total
         results
