@@ -149,7 +149,6 @@ export const getNewsletterStaticPaths = (): NewsletterPath[] => {
 };
 
 type ProductChangeLogPaths = { params: { product: string } };
-type ProductChangeLogChangeTypePaths = { params: { product: string; changeType: string } };
 type ProductChangeLogEntryPaths = { params: { product: string; entry: string } };
 
 export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[]> => {

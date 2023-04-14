@@ -12,6 +12,6 @@
   .changelog-item .bugfix,
   .changelog-item .resolved,
   .changelog-item .issue-resolved {
-    @apply bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-100;
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-100;
   }
 }
