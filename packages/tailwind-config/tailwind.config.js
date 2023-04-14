@@ -232,8 +232,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-pattern': "url('/images/heros/hero-plus-pattern.png')",
-        'wide-hero-dark': "url('/images/heros/hero-wide-dark.png')",
-        'wide-hero-light': "url('/images/heros/hero-wide-light.png')",
+        'wide-hero-dark': "url('/images/heros/hero-wide-dark.webp')",
+        'wide-hero-light': "url('/images/heros/hero-wide-light.webp')",
       },
       boxShadow: {
         inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.15)',
