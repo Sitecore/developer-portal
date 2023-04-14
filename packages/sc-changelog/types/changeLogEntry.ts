@@ -1,8 +1,7 @@
 import { generateHTML } from '@tiptap/html';
-import { GetChangeTypeById, GetProductByProductId } from '../constants/products';
 import { richTextProfile } from '../lib/common/richTextConfiguration';
-import { Changelog, ChangelogBase, ChangelogList } from './changelog';
 import ChangeType from './changeType';
+import { Changelog, ChangelogBase, ChangelogList } from './changelog';
 import { Media } from './index';
 import SitecoreProduct from './sitecoreProduct';
 
@@ -17,7 +16,8 @@ export type ChangelogEntrySummary = {
   id: string;
   title: string;
   releaseDate: string;
-  imageId?: string;
+  lightIcon: string;
+  darkIcon: string;
   productName: string;
   changeTypeName: string;
 };
@@ -69,9 +69,10 @@ function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySumm
     id: changelog.id,
     title: changelog.title,
     releaseDate: new Date(changelog.releaseDate).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
-    imageId: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.imageId,
-    productName: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.name ?? '',
-    changeTypeName: GetChangeTypeById(changelog.changeType.results[0]?.id)?.name ?? '',
+    lightIcon: changelog.sitecoreProduct.results[0].lightIcon,
+    darkIcon: changelog.sitecoreProduct.results[0].darkIcon,
+    productName: changelog.sitecoreProduct.results != null ? changelog.sitecoreProduct.results[0]?.productName : '',
+    changeTypeName: changelog.changeType.results != null ? changelog.changeType.results[0]?.changeType : '',
   };
 }
 
@@ -89,8 +90,9 @@ export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     version: changelog.version,
     releaseDate: new Date(changelog.releaseDate).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
     image: changelog.image.results,
-    imageId: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.imageId,
-    productName: GetProductByProductId(changelog.sitecoreProduct.results[0]?.id)?.name ?? '',
-    changeTypeName: GetChangeTypeById(changelog.changeType.results[0]?.id)?.name ?? '',
+    lightIcon: changelog.sitecoreProduct.results[0].lightIcon,
+    darkIcon: changelog.sitecoreProduct.results[0].darkIcon,
+    productName: changelog.sitecoreProduct.results ? changelog.sitecoreProduct.results[0].productName : '',
+    changeTypeName: changelog.changeType.results ? changelog.changeType.results[0]?.changeType : '',
   };
 }

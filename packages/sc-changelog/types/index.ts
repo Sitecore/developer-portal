@@ -1,9 +1,3 @@
-export enum ChangeType {
-  Improvement = 'improvementid',
-  NewFeature = 'newfeatureid',
-  Bugfix = 'bugfixid',
-}
-
 export enum ProductName {
   ORDERCLOUD = 'OrderCloud',
   CDP = 'Sitecore CDP',
@@ -20,7 +14,7 @@ export enum ProductName {
   CLOUDPORTAL = 'Sitecore Cloud Portal',
   XC = 'Experience Commerce',
   XP = 'Experience Platform',
-  XM = 'Experience Manager'
+  XM = 'Experience Manager',
 }
 
 export * from './changeType';
@@ -28,4 +22,3 @@ export * from './common/media';
 export * from './releaseNotes';
 export * from './sitecoreCloud';
 export * from './sitecoreProduct';
-

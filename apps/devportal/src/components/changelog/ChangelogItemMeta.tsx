@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
-import ProductIcon from 'ui/components/common/ProductIcon';
 
 type ChangelogItemMetaProps = {
   loading?: boolean;
@@ -16,16 +16,12 @@ export const ChangelogItemMeta = ({ item, loading }: ChangelogItemMetaProps) => 
       <div className="flex flex-row gap-5">
         <Link href={`/changelog/${getSlug(item.productName)}`} className="">
           <div className={` text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
-            {item.imageId && (
-              <>
-                <div className="absolute h-5 w-5 dark:hidden">
-                  <ProductIcon product={item.imageId} variant="Light" className={`${loading ? 'hidden' : ''}`} width={20} height={20} />
-                </div>
-                <div className="absolute hidden h-5 w-5 dark:block">
-                  <ProductIcon product={item.imageId} variant="Dark" className={`${loading ? 'hidden' : ''}`} width={20} height={20} />
-                </div>
-              </>
-            )}
+            <div className="absolute h-5 w-5 dark:hidden">
+              <Image src={item.lightIcon} alt={item.productName} className={`${loading ? 'hidden' : ''}`} width={20} height={20} priority={true} />
+            </div>
+            <div className="absolute hidden h-5 w-5 dark:block">
+              <Image src={item.darkIcon} alt={item.productName} className={`${loading ? 'hidden' : ''}`} width={20} height={20} priority={true} />
+            </div>
             <div className="ml-6 text-xs">{item.productName}</div>
           </div>
         </Link>

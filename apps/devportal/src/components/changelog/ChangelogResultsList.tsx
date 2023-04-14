@@ -9,12 +9,6 @@ type ChangelogResultsListProps = {
 };
 
 const ChangelogResultsList = ({ entries, isLoading, hasNext, onEndTriggered }: ChangelogResultsListProps): JSX.Element => {
-  return (
-    <div>
-      {entries && entries.map((item, i) => <ChangeLogItem item={item} key={i} loading={isLoading} isLast={i === entries.length - 1} isMore={hasNext} loadEntries={() => onEndTriggered()} />)}
-
-      {!entries && <span>No entries</span>}
-    </div>
-  );
+  return <div>{entries && entries.map((item, i) => <ChangeLogItem item={item} key={i} loading={isLoading} isLast={i === entries.length - 1} isMore={hasNext} loadEntries={() => onEndTriggered()} />)}</div>;
 };
 export default ChangelogResultsList;

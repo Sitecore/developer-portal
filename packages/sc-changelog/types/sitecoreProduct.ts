@@ -1,13 +1,11 @@
-import { Media } from './common/media';
 import { SitecoreCloudResults } from './sitecoreCloud';
 
 type SitecoreProduct = {
   id: string;
-  name: string;
   productName: string;
   productDescription: string;
-  abbreviation: string;
-  productIcon: Media;
+  lightIcon: string;
+  darkIcon: string;
   sitecoreCloud: SitecoreCloudResults;
 };
 export default SitecoreProduct;
