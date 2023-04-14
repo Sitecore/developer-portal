@@ -1,5 +1,4 @@
 import { ChangelogEntriesPaginated } from '@/../../packages/sc-changelog/changelog';
-import { getOverviewPerMonth } from '@/src/common/changelog';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -15,7 +14,6 @@ import ChangelogList from '../../components/changelog/ChangelogList';
 
 type ChangelogHomeProps = {
   fallback: any;
-  sortedFallback: any;
 };
 
 export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
@@ -38,7 +36,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
                 for the current release notes per product
               </p>
             </Alert>
-            <div className="mt-8 grid gap-16 md:grid-cols-5">
+            <div className="mt-8 grid h-full gap-16 md:grid-cols-5">
               <SWRConfig value={{ fallback }}>
                 <ChangelogList />
               </SWRConfig>
@@ -47,9 +45,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
                   <SmallLinkButton text={'RSS'} href={`${router.pathname}/rss.xml`} icon={'feed'} />
                   <SmallLinkButton text={'ATOM'} href={`${router.pathname}/atom.xml`} icon={'feed'} />
                 </div>
-                <SWRConfig value={{ provider: () => new Map(Object.entries(getOverviewPerMonth())) }}>
-                  <ChangelogByMonth />
-                </SWRConfig>
+                <ChangelogByMonth />
               </div>
             </div>
           </Container>
@@ -61,15 +57,11 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
 
 export async function getStaticProps() {
   const entries = await ChangelogEntriesPaginated('5', '', '', '');
-  const sorted = await getOverviewPerMonth();
 
   return {
     props: {
       fallback: {
         '/api/changelog?limit=5': entries,
-      },
-      sortedFallback: {
-        '/api/changelog/all': sorted,
       },
     },
     revalidate: 60,
