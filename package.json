@@ -16,16 +16,16 @@
     "update-dependencies": "turbo update-dependencies && npx npm-check-updates -u"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "eslint": "^7.32.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.38.0",
     "eslint-config-custom": "*",
     "eslint-plugin-import": "^2.27.5",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.22",
     "postcss-import": "^15.1.0",
     "prettier": "latest",
-    "prettier-plugin-tailwindcss": "^0.1.11",
+    "prettier-plugin-tailwindcss": "^0.2.7",
     "shx": "^0.3.4",
-    "tailwindcss": "^3.2.4",
+    "tailwindcss": "^3.3.1",
     "turbo": "^1.9.3"
   },
   "engines": {
@@ -33,6 +33,6 @@
   },
   "packageManager": "npm@9.5.0",
   "dependencies": {
-    "@types/react": "^18.0.34"
+    "@types/react": "^18.0.37"
   }
 }

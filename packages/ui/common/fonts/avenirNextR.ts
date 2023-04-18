@@ -1,4 +1,4 @@
-import localFont from '@next/font/local';
+import localFont from 'next/font/local';
 
 export const AvenirNextR = localFont({
   variable: '--font-avenirnext-r',
