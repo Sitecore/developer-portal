@@ -5,13 +5,13 @@
   "types": "./types/index.ts",
   "license": "MIT",
   "scripts": {
-    "lint": "TIMING=1 eslint \"**/*.ts*\""
+    "lint": "eslint \"**/*.ts*\""
   },
   "devDependencies": {
     "@tiptap/core": "latest",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
     "typescript": "^4.5.2"
   },
   "dependencies": {
