@@ -1,19 +1,10 @@
-import {
-  buildBreadcrumbManager,
-  buildFacet,
-  buildQuerySummary,
-  buildResultList,
-  buildSearchBox,
-  buildSearchEngine,
-  buildSearchStatus,
-  buildUrlManager,
-  Facet,
-} from '@coveo/headless';
+import { buildBreadcrumbManager, buildFacet, buildQuerySummary, buildResultList, buildSearchBox, buildSearchEngine, buildSearchStatus, buildUrlManager, Facet, getOrganizationEndpoints } from '@coveo/headless';
 
 export const coveoEngine = buildSearchEngine({
   configuration: {
     organizationId: process.env.NEXT_PUBLIC_COVEO_ORGANIZATION_ID as string,
     accessToken: process.env.NEXT_PUBLIC_COVEO_ACCESS_TOKEN as string,
+    organizationEndpoints: getOrganizationEndpoints(process.env.NEXT_PUBLIC_COVEO_ORGANIZATION_ID as string),
     search: {
       searchHub: process.env.NEXT_PUBLIC_COVEO_SEARCH_HUB as string,
       pipeline: process.env.NEXT_PUBLIC_COVEO_PIPELINE as string,
