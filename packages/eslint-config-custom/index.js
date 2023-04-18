@@ -4,15 +4,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: [
-    'turbo',
-    'prettier',
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@next/next/recommended',
-  ],
+  extends: ['turbo', 'prettier', 'eslint:recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:@typescript-eslint/recommended', 'plugin:@next/next/recommended'],
   rules: {
     '@next/next/no-html-link-for-pages': 'off',
     'react/jsx-key': 'off',
@@ -33,6 +25,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-ignore': 'off',
     // needed for NextJS's jsx without react import
     'react/react-in-jsx-scope': 'off',
+    'import/no-unused-modules': [1, { unusedExports: true }],
   },
   ignorePatterns: ['!.*', 'dist', 'node_modules', '.next'],
   overrides: [],
@@ -41,7 +34,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'import'],
   settings: {
     react: {
       version: 'detect',

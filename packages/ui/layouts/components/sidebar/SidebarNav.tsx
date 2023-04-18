@@ -21,7 +21,7 @@ const SidebarNav = ({ links, title }: SidebarNavProps) => {
   const navItemRef = useRef<HTMLDivElement>(null);
   const [isOpen, setOpen] = useState(false);
 
-  const toggleNavItem = (event: React.MouseEvent) => {
+  const toggleNavItem = () => {
     setOpen(!isOpen);
   };
 
@@ -64,7 +64,7 @@ const SidebarNav = ({ links, title }: SidebarNavProps) => {
 
           return (
             <li className="side-bar-nav-item border-l-theme-bg-alt relative pb-4 pl-4" key={i}>
-              <Link href={link.href} className={`text-primary-500 dark:text-teal-500 inline-block text-sm hover:underline focus:underline ${link.active ? activeClasses : ''}`}>
+              <Link href={link.href} className={`text-primary-500 inline-block text-sm hover:underline focus:underline dark:text-teal-500 ${link.active ? activeClasses : ''}`}>
                 {link.text}
               </Link>
             </li>

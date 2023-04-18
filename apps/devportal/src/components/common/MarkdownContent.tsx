@@ -37,6 +37,8 @@ const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element =>
 
   return (
     <MDXRemote
+      scope={''}
+      frontmatter={undefined}
       compiledSource={children}
       components={{
         code({ className, children }) {
