@@ -10,7 +10,10 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "npm exec --workspaces -- shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && shx rm -rf node_modules && shx echo Done!",
+    "remove-turbo-cache": "shx rm -rf ./node_modules/.cache/turbo",
+    "update-dependencies": "turbo update-dependencies && npx npm-check-updates -u"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
@@ -21,8 +24,9 @@
     "postcss-import": "^15.1.0",
     "prettier": "latest",
     "prettier-plugin-tailwindcss": "^0.1.11",
+    "shx": "^0.3.4",
     "tailwindcss": "^3.2.4",
-    "turbo": "latest"
+    "turbo": "^1.9.3"
   },
   "engines": {
     "node": ">=14.0.0"
