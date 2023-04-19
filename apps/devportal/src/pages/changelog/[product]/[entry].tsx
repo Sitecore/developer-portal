@@ -7,6 +7,7 @@ import VerticalGroup from '@/../../packages/ui/components/common/VerticalGroup';
 import Hero from '@/../../packages/ui/components/heros/Hero';
 import Layout from '@/../../packages/ui/layouts/Layout';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
+import ChangelogDraft from '@/src/components/changelog/ChangelogDrafts';
 import { ChangelogItemMeta } from '@/src/components/changelog/ChangelogItemMeta';
 import Image from 'next/image';
 import { ChangelogEntry } from '../../../../../../packages/sc-changelog/types/changeLogEntry';
@@ -14,11 +15,13 @@ import { ChangelogEntry } from '../../../../../../packages/sc-changelog/types/ch
 type ChangelogProps = {
   currentProduct: Product;
   changelogEntry: ChangelogEntry;
+  preview: boolean;
 };
 
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
   const entry = context.params.entry;
+  const preview = context.preview ? context.preview : null;
 
   const products = await GetProducts().then((response: Product[]) => {
     return response;
@@ -36,19 +39,21 @@ export async function getServerSideProps(context: any) {
     props: {
       currentProduct: currentProduct,
       changelogEntry: changelogEntry,
+      preview: preview,
     },
   };
 }
 
-const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) => {
+const ChangelogProduct = ({ currentProduct, changelogEntry, preview }: ChangelogProps) => {
   return (
     <Layout title={`Release Notes ${currentProduct.name}`} description="Empty">
       <Hero title={`${currentProduct.name} Changelog`} description={`Learn more about new versions, changes and improvements we made to ${currentProduct.name}`} />
       <VerticalGroup>
         <Container>
+          <ChangelogDraft enabled={preview} />
           <div className="mt-8 grid gap-16 md:grid-cols-5">
             <div className="changelog-item col-span-3">
-              <nav className="mt-4 mb-8 flex" aria-label="Breadcrumb">
+              <nav className="mb-8 mt-4 flex" aria-label="Breadcrumb">
                 <ol className="inline-flex items-center space-x-1 md:space-x-3">
                   <li className="inline-flex items-center">
                     <a href="/changelog" className="text-theme-text-alt inline-flex items-center text-sm font-medium">

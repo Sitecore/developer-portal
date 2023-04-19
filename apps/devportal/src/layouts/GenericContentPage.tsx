@@ -54,8 +54,10 @@ const GenericContentPage = ({ hasGrid, pageInfo, partialGroups, partials, promoA
   const titles = partials ? partials.titles : [];
   const Nav = customNav ? customNav : <InPageNav titles={titles} />;
 
+  console.log('GenericContentPage: ' + pageInfo.previewMode);
+
   return (
-    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
       <VerticalGroup>
         {promoBefore && (
@@ -67,7 +69,7 @@ const GenericContentPage = ({ hasGrid, pageInfo, partialGroups, partials, promoA
         )}
         <div className={hasGrid ? hasGridClasses : ''}>
           <Container>
-            <div className="grid-cols-4 gap-6 mt-8 md:grid">
+            <div className="mt-8 grid-cols-4 gap-6 md:grid">
               {pageInfo.hasInPageNav && Nav}
               <div className={pageInfo.hasInPageNav ? 'col-span-3' : 'col-span-4'}>
                 {Content(partials, partialGroups, hasGrid)}

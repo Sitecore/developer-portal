@@ -1,10 +1,7 @@
 import { ContentHeading } from '@/src/interfaces/contentheading';
 import { ForumOption, SortOption } from 'ui/components/sitecoreCommunity/SitecoreCommunity.api';
 
-import {
-  SitecoreCommunityContent,
-  SitecoreCommunityEvent,
-} from 'ui/common/types/sitecoreCommunity';
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/common/types/sitecoreCommunity';
 import { StackExchangeQuestion } from 'ui/common/types/stackExchange';
 import { Tweet } from 'ui/common/types/twitter';
 import { YouTubeVideo } from 'ui/common/types/youTube';
@@ -19,6 +16,7 @@ type PageInfoCore = {
   title: string;
   pageTitle?: string;
   fileName: string;
+  previewMode?: boolean;
 };
 
 // Input for 3rd party integrations are just strings
