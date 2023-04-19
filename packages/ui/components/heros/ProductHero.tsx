@@ -36,7 +36,7 @@ const ProductHero = ({ description, headingLevel = 'h1', title, image, productLo
               <ProductImage productLogo={productLogo} />
             </div>
           )}
-          <h2 className="text-theme-text-alt text-xs uppercase tracking-widest md:order-first md:text-base">{description}</h2>
+          <h2 className="text-theme-text-alt text-xs uppercase tracking-widest md:order-first">{description}</h2>
         </div>
 
         {image && (
