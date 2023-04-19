@@ -56,7 +56,7 @@ The importance of your company's growth comes with the:
 <Row columns={3}>
 <Repository framework="Nextjs" name="Headless SXA Starter Kit" description="This solution is designed to help developers learn and get started quickly with XM Cloud + SXA." repositoryUrl="https://github.com/sitecorelabs/xmcloud-foundation-head" />
 <Repository framework="Nextjs" name="Sitecore PlaySummit Demo" description="The official Sitecore demo used to demo Sitecore DXP including Content Hub and JSS" repositoryUrl="https://github.com/Sitecore/Sitecore.Demo.XmCloud.PlaySummit" />
-<Repository framework="Nextjs" name="Example implementation" description="This repository contains the codebase for a series of sites managed by the developer relations at Sitecore" repositoryUrl="https://github.com/Sitecore/XM-Cloud-Introduction" />
+<Repository framework="Nextjs|DotNET" name="Example implementation" description="This repository contains the codebase for a series of sites managed by the developer relations at Sitecore" repositoryUrl="https://github.com/Sitecore/XM-Cloud-Introduction" />
 </Row>
 
 ### Other Learning

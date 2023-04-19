@@ -12,8 +12,8 @@ export const Repository = ({ name, description, repositoryUrl, framework }: Repo
   const frameworks = framework.split('|');
   const frameworkLogos: string[] = [];
 
-  frameworks.forEach((x) => {
-    if (isValidLogo(x)) frameworkLogos.push(x);
+  frameworks.forEach((logo) => {
+    if (isValidLogo(logo)) frameworkLogos.push(logo);
   });
 
   return (
@@ -21,8 +21,8 @@ export const Repository = ({ name, description, repositoryUrl, framework }: Repo
       <div className="px-5">
         <div className="ml-auto mr-0 flex flex-row justify-end opacity-75 ">
           {frameworks &&
-            frameworkLogos.map((framework) => {
-              return <SvgLogo logo={framework as Logo} className={`ml-2 h-6`} />;
+            frameworkLogos.map((framework, index) => {
+              return <SvgLogo logo={framework as Logo} className={`ml-4 h-6`} key={index} />;
             })}
         </div>
         {name && <h4>{name}</h4>}
