@@ -5,7 +5,7 @@ import React from 'react';
 import { ValidHeadingLevels } from 'ui/common/types/heading-levels';
 import Container from 'ui/components/common/Container';
 import DynamicTag from 'ui/components/common/DynamicTag';
-import ProductLogo from 'ui/components/common/ProductLogo';
+import ProductImage from '../common/ProductImage';
 // Components
 
 export type ProductHeroProps = {
@@ -25,26 +25,20 @@ const ProductHero = ({ description, headingLevel = 'h1', title, image, productLo
       <link rel="preload" href="/images/heros/hero-wide-light.webp" as="image" />
       <link rel="preload" href="/images/heros/hero-wide-dark.webp" as="image" />
     </Head>
-    <header className={` relative py-14 ${!image || !!productLogo ? HeroWithBackgroundImageClasses : ''}`}>
-      <Container size="standard" className={`grid gap-16 lg:items-center ${!!image || !!productLogo ? HeroWithImageClasses : ''}`}>
-        <div className={`lg:pr-24 ${!!image || !!productLogo ? ['md:col-span-5'] : ''}`}>
-          <DynamicTag tag={headingLevel} className="heading-lg relative mb-5">
+    <header className={` relative py-2 md:py-8 ${!image || !!productLogo ? HeroWithBackgroundImageClasses : ''}`}>
+      <Container size="standard" className={`grid gap-16 ${!!image || !!productLogo ? HeroWithImageClasses : ''}`}>
+        <div className={`flex flex-col lg:pr-24 ${!!image || !!productLogo ? ['md:col-span-9'] : ''}`}>
+          <DynamicTag tag={headingLevel} className={`heading-lg relative mb-5 ${productLogo ? 'sr-only' : 'not-sr-only'}`}>
             {title}
           </DynamicTag>
-          <h2 className="text-theme-text-alt">{description}</h2>
-        </div>
-        {productLogo && (
-          <React.Fragment>
-            <div className="relative hidden md:col-span-4 md:block">
-              <div className="hidden h-20 w-full dark:block">
-                <ProductLogo product={productLogo} variant="Dark" />
-              </div>
-              <div className="h-20 w-full dark:hidden">
-                <ProductLogo product={productLogo} variant="Light" />
-              </div>
+          {productLogo && productLogo?.length > 0 && (
+            <div className="relative mb-4 md:col-span-5 md:mb-0">
+              <ProductImage productLogo={productLogo} />
             </div>
-          </React.Fragment>
-        )}
+          )}
+          <h2 className="text-theme-text-alt text-xs uppercase tracking-widest md:order-first md:text-base">{description}</h2>
+        </div>
+
         {image && (
           <React.Fragment>
             <div className="relative hidden md:col-span-4 md:block">

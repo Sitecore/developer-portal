@@ -1,28 +1,20 @@
 import Image from 'next/image';
 import { GetProductLogo } from '../../common/assets';
-
 export type ProductLogoProps = {
   product: string;
   variant: string;
   alt?: string;
   className?: string;
+  width?: number;
+  height?: number;
 };
 
-const ProductLogo = ({ product, variant, alt, className }: ProductLogoProps): JSX.Element => {
+const ProductLogo = ({ product, variant, alt, className, width, height }: ProductLogoProps): JSX.Element => {
   const productImage = GetProductLogo(product, variant);
 
-  return (
-    <Image
-      src={productImage}
-      alt={alt != null ? alt : ''}
-      className={`relative z-10 ${className}`}
-      fill
-      sizes="(max-width: 768px) 100vw,
-          (max-width: 1200px) 50vw,
-          33vw"
-      priority={true}
-    />
-  );
+  //return <img src={productImage} alt={alt != null ? alt : ''} width={width} height={height} />;
+
+  return <Image src={productImage} alt={alt != null ? alt : ''} className={`relative z-10 ${className}`} fill={width && height ? false : true} priority={true} width={width} height={height} />;
 };
 
 ProductLogo.defaultProps = {
