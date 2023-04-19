@@ -7,11 +7,11 @@
     @apply btn-primary-500 hover:border-theme-border text-theme-text-alt hover:bg-theme-bg bg-theme-bg mr-3 flex items-center border border-white px-4 py-2 text-xs font-medium transition-all hover:border hover:text-gray-300 focus:z-10 focus:outline-none focus:ring-2 dark:hover:text-gray-500 dark:focus:ring-gray-500;
   }
   .btn-secondary-invert {
-    @apply bg-blackAlpha-800 hover:bg-blackAlpha-400 mt-4 mr-0 flex transform-gpu items-center rounded-lg px-2 py-2 text-xs text-white transition-colors dark:hover:bg-teal-500 dark:hover:text-white;
+    @apply bg-blackAlpha-800 hover:bg-blackAlpha-400 mr-0 mt-4 flex transform-gpu items-center rounded-lg px-2 py-2 text-xs text-white transition-colors dark:hover:bg-teal-500 dark:hover:text-white;
   }
 
   .btn-textlink {
-    @apply hover:bg-primary-500 mt-4 mr-0 flex items-center rounded-full px-2 py-1 text-xs text-gray-600 hover:text-white dark:text-teal-500 dark:hover:bg-teal-500;
+    @apply hover:bg-primary-500 mr-0 mt-4 flex items-center rounded-full px-2 py-1 text-xs text-gray-600 hover:text-white dark:text-teal-500 dark:hover:bg-teal-500;
   }
   .play-button-outside {
     @apply ml-1 inline-block h-5 w-5 transform-gpu transition-transform duration-300 group-hover:translate-x-1 group-focus:translate-x-1;
@@ -29,13 +29,13 @@
     @apply inline-flex items-center text-sm font-bold no-underline hover:underline focus:underline;
   }
   .btn-iconlink {
-    @apply hover:bg-theme-bg text-2xs m-1 inline-flex items-center rounded-2xl border border-white fill-gray-500 px-4 py-2 font-medium text-gray-500 no-underline transition-all duration-500 hover:border hover:border-gray-300 hover:text-gray-500 focus:z-10 focus:outline-none focus:ring-2 dark:focus:ring-gray-500;
+    @apply hover:bg-theme-bg text-2xs m-1 inline-flex items-center rounded-2xl border border-white fill-gray-500 px-4 py-2 font-medium text-gray-500 no-underline transition-all duration-500 hover:border hover:border-gray-300 focus:z-10 focus:outline-none focus:ring-2 dark:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100 dark:focus:ring-gray-500;
   }
   .btn-nav-back {
     @apply bg-primary-500 hover:bg-primary-700 relative h-14 w-full transform-gpu pl-10 pr-4 text-left font-semibold text-white transition-colors lg:hidden;
   }
   .btn-nav-back-icon-outer {
-    @apply h-em w-em pointer-events-none absolute top-5 left-4 block;
+    @apply h-em w-em pointer-events-none absolute left-4 top-5 block;
   }
   .btn-nav-back-icon {
     @apply h-inherit w-inherit top-5 transform-gpu transition-transform group-hover:-translate-x-1;
