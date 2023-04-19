@@ -1,15 +1,17 @@
-import { ChangelogEntryByTitle, GetProducts } from '@/../../packages/sc-changelog/changelog';
-import Product from '@/../../packages/sc-changelog/types/product';
-import { getSlug, slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
-import Container from '@/../../packages/ui/components/common/Container';
-import TextLink from '@/../../packages/ui/components/common/TextLink';
-import VerticalGroup from '@/../../packages/ui/components/common/VerticalGroup';
-import Hero from '@/../../packages/ui/components/heros/Hero';
-import Layout from '@/../../packages/ui/layouts/Layout';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@/src/components/changelog/ChangelogItemMeta';
 import Image from 'next/image';
-import { ChangelogEntry } from '../../../../../../packages/sc-changelog/types/changeLogEntry';
+import Link from 'next/link';
+import { ChangelogEntryByTitle, GetProducts } from 'sc-changelog/changelog';
+import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
+import Product from 'sc-changelog/types/product';
+import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
+import { Alert } from 'ui/components/common/Alert';
+import Container from 'ui/components/common/Container';
+import TextLink from 'ui/components/common/TextLink';
+import VerticalGroup from 'ui/components/common/VerticalGroup';
+import Hero from 'ui/components/heros/Hero';
+import Layout from 'ui/layouts/Layout';
 
 type ChangelogProps = {
   currentProduct: Product;
@@ -43,12 +45,34 @@ export async function getServerSideProps(context: any) {
 const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) => {
   return (
     <Layout title={`Release Notes ${currentProduct.name}`} description="Empty">
-      <Hero title={`${currentProduct.name} Changelog`} description={`Learn more about new versions, changes and improvements we made to ${currentProduct.name}`} />
+      <Hero title={`${currentProduct.name} Changelog`} description={`Learn more about new versions, changes and improvements we made to ${currentProduct.name}`}>
+        <div className="absolute flex h-8 flex-row dark:hidden">
+          <span className="mr-1 text-xs">Powered by</span>
+          <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
+            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
+          </Link>
+        </div>
+        <div className="absolute hidden h-8 flex-row dark:flex">
+          <span className="mr-1 text-xs">Powered by</span>
+          <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
+            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
+          </Link>
+        </div>
+      </Hero>
       <VerticalGroup>
         <Container>
+          <Alert icon="info">
+            <p>
+              You are viewing the public preview of the upcoming Sitecore global changelog.
+              <Link href="/changelog/current" title="View the list of current release notes per product" className="mx-1 font-bold hover:underline">
+                Click here
+              </Link>
+              for the current release notes per product
+            </p>
+          </Alert>
           <div className="mt-8 grid gap-16 md:grid-cols-5">
             <div className="changelog-item col-span-3">
-              <nav className="mt-4 mb-8 flex" aria-label="Breadcrumb">
+              <nav className="mb-8 mt-4 flex" aria-label="Breadcrumb">
                 <ol className="inline-flex items-center space-x-1 md:space-x-3">
                   <li className="inline-flex items-center">
                     <a href="/changelog" className="text-theme-text-alt inline-flex items-center text-sm font-medium">
