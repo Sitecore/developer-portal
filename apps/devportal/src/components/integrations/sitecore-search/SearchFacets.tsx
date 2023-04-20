@@ -11,9 +11,9 @@ export const SearchFacets = (props: SearchFacetsType) => {
 
   return (
     <AccordionFacets.Root defaultFacetTypesExpandedList={facets.map((x) => x.name)} onFacetValueClick={onFacetClick}>
-      {facets.map((facet, index) => (
-        <div className="bg-theme-bg-alt mb-6 pt-4 pb-4 pl-4" key={index}>
-          <AccordionFacets.Facet key={index} facetId={facet.name}>
+      {facets.map((facet) => (
+        <div className="bg-theme-bg-alt mb-6 pt-4 pb-4 pl-4" key={facet.name}>
+          <AccordionFacets.Facet facetId={facet.name}>
             <AccordionFacets.Header className="font-ltpro mb-1">
               <AccordionFacets.Trigger className="w-full text-left text-sm font-semibold uppercase">{facet.label}</AccordionFacets.Trigger>
             </AccordionFacets.Header>
