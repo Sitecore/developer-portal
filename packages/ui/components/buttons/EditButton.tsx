@@ -5,7 +5,7 @@ type EditButtonProps = {
 };
 
 const EditButton = ({ editUrl, classes }: EditButtonProps): JSX.Element => {
-  return <SmallLinkButton text={'Suggets an edit'} href={editUrl} icon={'edit'} className={classes} />;
+  return <SmallLinkButton text={'Suggest an edit'} href={editUrl} icon={'edit'} className={classes} />;
 };
 
 export default EditButton;
