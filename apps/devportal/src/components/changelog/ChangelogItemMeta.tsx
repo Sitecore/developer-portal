@@ -1,9 +1,9 @@
-import { Message, Type } from '@/../../packages/ui/components/common/Message';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
+import { Message, Type } from 'ui/components/common/Message';
 
 type ChangelogItemMetaProps = {
   loading?: boolean;

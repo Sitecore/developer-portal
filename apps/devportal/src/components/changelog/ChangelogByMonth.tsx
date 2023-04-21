@@ -42,10 +42,10 @@ const ChangelogByMonth = ({ className, product }: ChangelogByMonthProps): JSX.El
               <div className={`text-sm`}>
                 <div className="absolute h-5 w-5">
                   <div className="dark:hidden">
-                    <Image src={item.lightIcon} alt={item.productName} className="relative h-5 w-5" width={20} height={20} priority={true} />
+                    <Image src={item.lightIcon} alt={item.productName ?? item.title} className="relative h-5 w-5" width={20} height={20} priority={true} />
                   </div>
                   <div className="hidden dark:block">
-                    <Image src={item.darkIcon} alt={item.productName} className="relative h-5 w-5" width={20} height={20} priority={true} />
+                    <Image src={item.darkIcon} alt={item.productName ?? item.title} className="relative h-5 w-5" width={20} height={20} priority={true} />
                   </div>
                 </div>
                 <div className="ml-6">

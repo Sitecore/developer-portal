@@ -5,12 +5,13 @@ import { AllChangelogEntries } from 'sc-changelog/changelog';
 const FeedPage = () => null;
 
 export async function getServerSideProps(context: any) {
+  const preview = context.preview ? context.preview : null;
   // Fetch data
-  const changelogEntryList = await AllChangelogEntries();
+  const changelogEntryList = await AllChangelogEntries(preview);
   const feed = await CreateFeed(changelogEntryList);
   //Set page headers
   context.res.setHeader('Content-Type', 'text/xml; charset=utf-8');
-  // cache for 600s 
+  // cache for 600s
   context.res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate');
   context.res.write(feed.rss2());
   context.res.end();

@@ -20,13 +20,13 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(navContext: { params: CustomNavContext; context: any }) {
+export async function getStaticProps(context: any) {
   const basePath = '/learn/faq';
-  const navDataFile = path.join(process.cwd(), `data/faqs/${navContext?.params?.article}.json`);
+  const navDataFile = path.join(process.cwd(), `data/faqs/${context?.params?.article}.json`);
   const navData: CustomNavData = JSON.parse(fs.readFileSync(navDataFile, { encoding: 'utf-8' }));
 
   // Get the index of the current item
-  const activeItemIndex = navData.routes.findIndex((x) => x.path == navContext.params.page);
+  const activeItemIndex = navData.routes.findIndex((x) => x.path == context.params.page);
   const activeItem = navData.routes[activeItemIndex];
 
   // Set next/previous routes
@@ -36,7 +36,7 @@ export async function getStaticProps(navContext: { params: CustomNavContext; con
         ? navData.routes[activeItemIndex - 1]
         : {
             title: 'Introduction',
-            path: `../${navContext.params.article}`,
+            path: `../${context.params.article}`,
           },
     next: activeItemIndex < navData.routes.length - 1 ? navData.routes[activeItemIndex + 1] : null,
   };
@@ -50,17 +50,17 @@ export async function getStaticProps(navContext: { params: CustomNavContext; con
     stackexchange: [],
     twitter: [],
     sitecoreCommunity: {},
-    previewMode: navContext.context.preview ? navContext.context.preview : null,
+    previewMode: context.preview ? context.preview : null,
   };
 
-  const partials = await getPartialsAsArray([`${basePath}/${navContext.params.article}/${navContext.params.page}`]);
+  const partials = await getPartialsAsArray([`${basePath}/${context.params.article}/${context.params.page}`]);
   pageInfo.pageTitle = `${navData.title} - ${activeItem?.title}`;
 
   return {
     props: {
       pageInfo,
       partials,
-      navContext: navContext.params,
+      navContext: context.params,
       navData,
       basePath,
       pagingInfo,

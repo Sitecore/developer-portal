@@ -2,6 +2,7 @@ import { ChangelogEntriesPaginated } from '@/../../packages/sc-changelog/changel
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogDraft from '@/src/components/changelog/ChangelogDrafts';
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SWRConfig } from 'swr';
@@ -26,7 +27,20 @@ export default function ChangelogHome({ fallback, preview }: ChangelogHomeProps)
         <link rel="preload" href="/api/changelog/all?" as="fetch" crossOrigin="anonymous" />
       </Head>
       <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
-        <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
+        <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
+          <div className="absolute flex h-8 flex-row dark:hidden">
+            <span className="mr-1 text-xs">Powered by</span>
+            <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
+              <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
+            </Link>
+          </div>
+          <div className="absolute hidden h-8 flex-row dark:flex">
+            <span className="mr-1 text-xs">Powered by</span>
+            <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
+              <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
+            </Link>
+          </div>
+        </Hero>
         <VerticalGroup>
           <Container>
             <ChangelogDraft enabled={preview} />

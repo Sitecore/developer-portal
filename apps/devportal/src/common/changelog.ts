@@ -5,8 +5,8 @@ import axios from 'axios';
 import { ChangelogEntry, ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 //import { Fetcher } from 'swr';
 import { GetSummaryLatestItemsByProductAndChangeType } from '@/../../packages/sc-changelog/changelog';
-import { Option } from '@/../../packages/ui/components/dropdown/MultiSelect';
 import useSWR, { Fetcher } from 'swr';
+import { Option } from 'ui/components/dropdown/MultiSelect';
 
 export function OrderByMonthAndYear(items: ChangelogEntry[]): { [month: string]: ChangelogEntry[] } {
   const entriesByMonth: { [month: string]: ChangelogEntry[] } = {};

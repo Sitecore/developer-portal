@@ -1,4 +1,3 @@
-import SvgIcon from '@/../../packages/ui/components/common/SvgIcon';
 import { buildQuerystring, getChangeTypeOptions, getProductOptions } from '@/src/common/changelog';
 import axios from 'axios';
 import Link from 'next/link';
@@ -7,6 +6,7 @@ import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLog
 import Product from 'sc-changelog/types/product';
 import { Fetcher } from 'swr';
 import useSWRInfinite from 'swr/infinite';
+import SvgIcon from 'ui/components/common/SvgIcon';
 import { Option } from 'ui/components/dropdown/MultiSelect';
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
@@ -70,7 +70,7 @@ const ChangelogList = ({ initialProduct }: ChangelogListProps): JSX.Element => {
       </div>
       {!error && data && <ChangelogResultsList entries={items} isLoading={false} hasNext={data[data.length - 1].hasNext} onEndTriggered={() => setSize(size + 1)} />}
 
-      {data && !data[data.length - 1].hasNext && <span className={`border-violet text-violet dark:border-teal dark:text-teal mt-5 inline-block w-full border-2 py-2 px-3 text-center text-sm`}>No more results</span>}
+      {data && !data[data.length - 1].hasNext && <span className={`border-violet text-violet dark:border-teal dark:text-teal mt-5 inline-block w-full border-2 px-3 py-2 text-center text-sm`}>No more results</span>}
     </div>
   );
 };

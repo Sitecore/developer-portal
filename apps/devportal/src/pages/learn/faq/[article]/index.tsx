@@ -21,11 +21,11 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(navContext: { params: CustomNavContext; context: any }) {
+export async function getStaticProps(context: any) {
   const basePath = '/learn/faq';
-  const navDataFile = path.join(process.cwd(), `data/faqs/${navContext?.params?.article}.json`);
+  const navDataFile = path.join(process.cwd(), `data/faqs/${context?.params?.article}.json`);
   const navData: CustomNavData = JSON.parse(fs.readFileSync(navDataFile, { encoding: 'utf-8' }));
-  const pageInfo = await getPageInfo(`learn/faq/${navContext?.params?.article}`, navContext.context.preview ? navContext.context.preview : null);
+  const pageInfo = await getPageInfo(`learn/faq/${context?.params?.article}`, context.preview ? context.preview : null);
 
   // Set next/previous routes
   const pagingInfo: ContentPagerContext = {
@@ -40,7 +40,7 @@ export async function getStaticProps(navContext: { params: CustomNavContext; con
     props: {
       pageInfo,
       partials,
-      context: navContext.params,
+      navContext: context.params,
       navData,
       basePath,
       pagingInfo,

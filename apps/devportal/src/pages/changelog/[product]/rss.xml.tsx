@@ -8,6 +8,7 @@ const FeedPage = () => null;
 
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
+  const preview = context.preview ? context.preview : null;
   const products = await GetProducts().then((response: Product[]) => {
     return response;
   });
@@ -16,7 +17,7 @@ export async function getServerSideProps(context: any) {
 
   if (currentProduct != null) {
     // Fetch data
-    const changelogEntryList = await ChangelogEntriesByProduct(currentProduct?.id);
+    const changelogEntryList = await ChangelogEntriesByProduct(preview, currentProduct?.id);
     const feed = await CreateFeed(changelogEntryList);
     //Set page headers
     context.res.setHeader('Content-Type', 'text/xml; charset=utf-8');
