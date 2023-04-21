@@ -54,8 +54,6 @@ const GenericContentPage = ({ hasGrid, pageInfo, partialGroups, partials, promoA
   const titles = partials ? partials.titles : [];
   const Nav = customNav ? customNav : <InPageNav titles={titles} />;
 
-  console.log('GenericContentPage: ' + pageInfo.previewMode);
-
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
