@@ -1,5 +1,5 @@
-import { SearchResponseSortChoice } from '@sitecore-discover/react';
-import { SortSelect } from '@sitecore-discover/ui';
+import { SearchResponseSortChoice } from '@sitecore-search/react';
+import { SortSelect } from '@sitecore-search/ui';
 
 export interface SearchSortType {
   onSortChange: (sortType: any) => void;

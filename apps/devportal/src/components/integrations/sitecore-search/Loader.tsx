@@ -1,4 +1,4 @@
-import { Presence } from '@sitecore-discover/ui';
+import { Presence } from '@sitecore-search/ui';
 
 const Loader = ({ enabled = true }: { enabled?: boolean }): JSX.Element => (
   <div className="mt-20">

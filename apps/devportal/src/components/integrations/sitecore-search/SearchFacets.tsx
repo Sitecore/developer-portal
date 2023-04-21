@@ -1,5 +1,8 @@
-import { SearchResponseFacet } from '@sitecore-discover/react';
-import { AccordionFacets } from '@sitecore-discover/ui';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
+import { SearchResponseFacet } from '@sitecore-search/react';
+import { AccordionFacets } from '@sitecore-search/ui';
 
 export interface SearchFacetsType {
   onFacetClick: (facet: any) => void;

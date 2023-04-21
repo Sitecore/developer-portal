@@ -13,7 +13,7 @@ import Nav from 'ui/layouts/components/header/Nav';
 import '@/src/styles/global.css';
 import React from 'react';
 // Fonts
-import { Environment, WidgetsProvider } from '@sitecore-discover/react';
+import { Environment, WidgetsProvider } from '@sitecore-search/react';
 import dynamic from 'next/dynamic';
 import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';

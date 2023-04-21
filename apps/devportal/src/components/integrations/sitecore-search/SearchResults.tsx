@@ -1,5 +1,5 @@
-import { useSearchResults, widget, WidgetDataType } from '@sitecore-discover/react';
-import { WidgetComponentProps } from '@sitecore-discover/react/types';
+import { useSearchResults, widget, WidgetDataType } from '@sitecore-search/react';
+import { WidgetComponentProps } from '@sitecore-search/react/types';
 import Image from 'next/image';
 import { ComponentType } from 'react';
 import { truncateString } from 'ui/common/text-util';

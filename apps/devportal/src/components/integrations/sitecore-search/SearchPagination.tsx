@@ -1,4 +1,4 @@
-import { Pagination } from '@sitecore-discover/ui';
+import { Pagination } from '@sitecore-search/ui';
 
 export interface SearchPaginationType {
   page: number;
