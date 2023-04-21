@@ -7,11 +7,11 @@ const getQueryValue = (query: string | string[] | undefined): string => {
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const redirectUrl = new URL(getQueryValue(req.query.redirect) || '/', process.env.NEXT_PUBLIC_PUBLIC_URL as string);
+  const redirectUrl = req.query.redirect ? getQueryValue(req.query.redirect) : '/';
 
   if (req.query.clear != null) {
     res.clearPreviewData({});
-    res.redirect(`${redirectUrl.pathname}${redirectUrl.search}`);
+    res.redirect(`${redirectUrl}`);
     res.end;
   }
 
@@ -26,5 +26,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.setPreviewData({});
 
   // Redirect to the homepage, or to the URL provided with the `redirect` query
-  res.redirect(`${redirectUrl.pathname}${redirectUrl.search}`);
+  res.redirect(`${redirectUrl}`);
 }
