@@ -1,0 +1,45 @@
+{
+  "name": "sc-changelog-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/create.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sitecore/contenthub-one-api": "^1.1.2",
+    "@sitecore/contenthub-one-sdk": "^1.1.2",
+    "@tiptap/extension-blockquote": "^2.0.3",
+    "@tiptap/extension-bold": "^2.0.3",
+    "@tiptap/extension-bullet-list": "^2.0.3",
+    "@tiptap/extension-code": "^2.0.3",
+    "@tiptap/extension-code-block": "^2.0.3",
+    "@tiptap/extension-document": "^2.0.3",
+    "@tiptap/extension-dropcursor": "^2.0.3",
+    "@tiptap/extension-gapcursor": "^2.0.3",
+    "@tiptap/extension-hard-break": "^2.0.3",
+    "@tiptap/extension-heading": "^2.0.3",
+    "@tiptap/extension-history": "^2.0.3",
+    "@tiptap/extension-horizontal-rule": "^2.0.3",
+    "@tiptap/extension-italic": "^2.0.3",
+    "@tiptap/extension-link": "^2.0.3",
+    "@tiptap/extension-list-item": "^2.0.3",
+    "@tiptap/extension-ordered-list": "^2.0.3",
+    "@tiptap/extension-paragraph": "^2.0.3",
+    "@tiptap/extension-strike": "^2.0.3",
+    "@tiptap/extension-text": "^2.0.3",
+    "@tiptap/extension-underline": "^2.0.3",
+    "@tiptap/html": "^2.0.3",
+    "@tiptap/react": "^2.0.3",
+    "dotenv": "^16.0.3",
+    "prosemirror-to-html-js": "^1.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "tslib": "^2.5.0"
+  }
+}

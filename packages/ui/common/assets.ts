@@ -1,4 +1,5 @@
 export enum Product {
+  Default,
   OrderCloud,
   CDP,
   ContentHubOne,
@@ -34,6 +35,18 @@ export type ProductImage = {
 };
 
 const ProductLogos: ProductImage[] = [
+  {
+    Product: Product.Default,
+    Variant: Variant.Dark,
+    logoFileName: 'e88a7e8526914d60a7ac09162207c4e5',
+    iconFileName: '50dc07d1bb5f49438c60cd28f82ffbc5',
+  },
+  {
+    Product: Product.Default,
+    Variant: Variant.Light,
+    logoFileName: '01f247553f4b46498938733e41cb6ae4',
+    iconFileName: 'eb75f6e802994a59bc4091428c75d336',
+  },
   {
     Product: Product.OrderCloud,
     Variant: Variant.Dark,
@@ -158,7 +171,7 @@ const ProductLogos: ProductImage[] = [
     Product: Product.Search,
     Variant: Variant.Dark,
     logoFileName: '6f170dce369e4acb8342463d9bc229b6',
-    iconFileName: '23ba26051b0a454a90d740ffc4cc0df8',
+    iconFileName: '2c1a438a477d42f5b1ef92b16975c949',
   },
   {
     Product: Product.Search,
@@ -208,7 +221,7 @@ export function GetProductIcon(productName: string, variant: string) {
   return GetProductLogoByVariant(_product, _variant, Type.IconOnly);
 }
 
-function GetProductLogoByVariant(productName: Product, variant: Variant, type?: Type) {
+export function GetProductLogoByVariant(productName: Product, variant: Variant, type?: Type) {
   const baseUrl = 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/';
 
   const first = ProductLogos.find((obj) => {

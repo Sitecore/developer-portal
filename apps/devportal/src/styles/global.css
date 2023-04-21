@@ -1,2 +1,4 @@
 /* Base */
 @import 'ui/styles/global.css';
+
+@import '../components/changelog/Changelog.styles.css';

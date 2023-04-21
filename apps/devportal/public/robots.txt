@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://developers.sitecore.com
-
-# Sitemaps
-Sitemap: https://developers.sitecore.com/sitemap.xml

@@ -8,7 +8,7 @@ export default function Web() {
       <VerticalGroup>
         <Container>
           <VerticalGroup size="lg">
-            <h1 className="testmva">Web</h1>
+            <h1>Developer Portal Playgrond</h1>
           </VerticalGroup>
         </Container>
       </VerticalGroup>

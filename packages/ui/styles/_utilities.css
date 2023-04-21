@@ -29,6 +29,9 @@
     --theme-shadow-lg: theme('boxShadow.lg-dark');
     --theme-link-hover: theme('colors.teal.600');
   }
+  .theme-dark img {
+    filter: brightness(0.8) contrast(1.2);
+  }
 
   /**
    * Headings

@@ -1,10 +1,7 @@
 // Interfaces
-import Image from 'next/image';
-import React from 'react';
 import { ValidHeadingLevels } from 'ui/common/types/heading-levels';
 import Container from 'ui/components/common/Container';
-import DynamicTag from 'ui/components/common/DynamicTag';
-import ProductLogo from 'ui/components/common/ProductLogo';
+import ProductHero from './ProductHero';
 // Components
 
 export type HeroProps = {
@@ -13,65 +10,25 @@ export type HeroProps = {
   description?: string;
   image?: string;
   productLogo?: string;
+  children?: React.ReactNode | React.ReactNode[];
 };
 
-const HeroWithImageClasses = 'lg:min-h-120 md:grid-cols-9';
-const HeroWithBackgroundImageClasses = 'bg-wide-hero-light dark:bg-wide-hero-dark bg-cover';
+const Hero = ({ description, headingLevel = 'h1', title, image, productLogo, children }: HeroProps): JSX.Element => {
+  if (productLogo != null || image != null) {
+    return <ProductHero title={title} description={description} image={image} productLogo={productLogo} headingLevel={headingLevel} />;
+  }
 
-const Hero = ({
-  description,
-  headingLevel = 'h1',
-  title,
-  image,
-  productLogo,
-}: HeroProps): JSX.Element => (
-  <header
-    className={` relative py-14 ${!image || !!productLogo ? HeroWithBackgroundImageClasses : ''}`}
-  >
-    <Container
-      size="standard"
-      className={`grid gap-16 lg:items-center ${
-        !!image || !!productLogo ? HeroWithImageClasses : ''
-      }`}
-    >
-      <div className={`lg:pr-24 ${!!image || !!productLogo ? ['md:col-span-5'] : ''}`}>
-        <DynamicTag tag={headingLevel} className="relative mb-5 heading-lg">
-          {title}
-        </DynamicTag>
-        <p className="text-lg text-theme-text-alt">{description}</p>
-      </div>
-      {productLogo && (
-        <React.Fragment>
-          <div className="relative hidden md:col-span-4 md:block">
-            <div className="hidden w-full h-20 dark:block">
-              <ProductLogo product={productLogo} variant="Dark" />
-            </div>
-            <div className="w-full h-20 dark:hidden">
-              <ProductLogo product={productLogo} variant="Light" />
-            </div>
-          </div>
-        </React.Fragment>
-      )}
-      {image && (
-        <React.Fragment>
-          <div className="relative hidden md:col-span-4 md:block">
-            <div className="w-full h-20">
-              <Image
-                src={image}
-                alt=""
-                className="relative z-10"
-                fill
-                sizes="(max-width: 768px) 100vw,
-                        (max-width: 1200px) 50vw,
-                        33vw"
-                priority={true}
-              />
-            </div>
-          </div>
-        </React.Fragment>
-      )}
-    </Container>
-  </header>
-);
+  return (
+    <header className="wide-hero relative bg-cover py-8">
+      <Container size="standard" className="grid gap-16 lg:items-center">
+        <div className="flex flex-col md:col-span-5 lg:pr-24">
+          <h1 className="heading-md md:heading-lg relative mb-4 md:mt-5 ">{title}</h1>
+          <h2 className="text-theme-text-alt text-xs md:order-first md:uppercase md:tracking-widest">{description}</h2>
+          <div className="order-last mt-2 md:mt-0">{children}</div>
+        </div>
+      </Container>
+    </header>
+  );
+};
 
 export default Hero;

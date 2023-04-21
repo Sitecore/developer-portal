@@ -24,6 +24,10 @@ const SEARCH_CONFIG = {
   useToken: true,
 };
 
+const Coveo = dynamic(() => import('@/src/components/integrations/search/SearchInput'), {
+  ssr: false,
+});
+
 function SCDPApp({ Component, pageProps }: AppProps) {
   // useEffect for basic page views tracking via router/gtag.
   useEffect(() => {

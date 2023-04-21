@@ -1,0 +1,11 @@
+@layer components {
+  .theme-light .wide-hero {
+    background-image: url('/images/heros/hero-wide-light.webp');
+    /*height: 212px;*/
+  }
+
+  .theme-dark .wide-hero {
+    background-image: url('/images/heros/hero-wide-dark.webp');
+    /*height: 212px;*/
+  }
+}

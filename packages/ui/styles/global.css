@@ -7,9 +7,10 @@
 @import '../layouts/components/header/NavMenu.styles.css';
 @import '../layouts/components/sidebar/SidebarNav.styles.css';
 
+@import '../components/heros/Hero.styles.css';
 @import '../components/video/VideoPromo.styles.css';
-@import '../components/tabs/Tabs.styles.css';
 @import '../components/cards/Cards.styles.css';
+
 @import './buttons.css';
 
 /* Utilities */

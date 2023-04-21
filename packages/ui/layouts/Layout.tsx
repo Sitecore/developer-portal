@@ -43,10 +43,10 @@ const Layout = ({ title, description = '', openGraphImage, children }: LayoutPro
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
         <title>{title}</title>
-        <link rel="icon" href={`${publicUrl}/favicon.png`} />
+        <link rel="icon" href={`/favicon.png`} />
         {/*
           Necessary Meta tags, including Social tags.
           It's OK if they're empty, same as not printing them.
@@ -58,6 +58,8 @@ const Layout = ({ title, description = '', openGraphImage, children }: LayoutPro
         <meta property="og:url" content={`${publicUrl}${path}`} />
         <meta property="og:image" content={`${publicUrl}${openGraphImage ? openGraphImage : '/images/social/social-card-default.jpeg'}`} />
         <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preload" href="/images/heros/hero-wide-light.webp" as="image" />
+        <link rel="preload" href="/images/heros/hero-wide-dark.webp" as="image" />
       </Head>
       <main className="scroll-to-offset mb-16 min-h-[calc(100vh-344px)]">
         {/* Anchor element at top of page to focus on route change. */}
@@ -68,7 +70,7 @@ const Layout = ({ title, description = '', openGraphImage, children }: LayoutPro
         <div className="sr-only" aria-live="polite" aria-atomic="true">{`The ${title} page has loaded.`}</div>
         {children}
       </main>
-    </div>
+    </>
   );
 };
 
