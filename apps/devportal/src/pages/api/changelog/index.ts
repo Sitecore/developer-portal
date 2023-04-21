@@ -17,7 +17,7 @@ const getQueryArray = (query: string | string[] | undefined): string[] => {
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
   const products: string[] = getQueryArray(req.query.product);
   const changeTypes: string[] = getQueryArray(req.query.changeType);
-  const isPreview = req.preview ?? false;
+  const isPreview = req.preview ? true : false;
 
   const limit: string = getQueryValue(req.query.limit);
   const end = getQueryValue(req.query.end);
