@@ -7,16 +7,7 @@ import { PageInfo } from '@/src/interfaces/page-info';
 // Scripts
 import { getPageInfo } from '@/src/common/page-info';
 // Lib
-import {
-  coveoEngine,
-  fileTypeFacet,
-  languageFacet,
-  productFacet,
-  sourceFacet,
-  urlManager,
-  versionFacet,
-  yearFacet,
-} from '@/src/common/coveo-engine';
+import { coveoEngine, fileTypeFacet, languageFacet, productFacet, sourceFacet, urlManager, versionFacet, yearFacet } from '@/src/common/coveo-engine';
 // Components
 import FacetBreadcrumbs from '@/src/components/integrations/search/facetBreadcrumbs';
 import SearchFacet, { FacetValueSort } from '@/src/components/integrations/search/SearchFacet';
@@ -31,8 +22,8 @@ interface SearchPageProps {
   pageInfo: PageInfo;
 }
 
-export const getStaticProps = async () => {
-  const pageInfo = await getPageInfo('search');
+export async function getStaticProps(context: any) {
+  const pageInfo = await getPageInfo('search', context.preview ? context.preview : null);
 
   return {
     props: {
@@ -40,7 +31,7 @@ export const getStaticProps = async () => {
     },
     revalidate: 600, // 10 minutes
   };
-};
+}
 const windowExists = () => typeof window !== 'undefined';
 
 if (windowExists()) {
@@ -73,17 +64,8 @@ const SearchPage: NextPage<SearchPageProps> = ({ pageInfo }) => {
   }, []);
 
   return (
-    <Layout
-      title={pageInfo.title}
-      description={pageInfo.description}
-      openGraphImage={pageInfo.openGraphImage}
-    >
-      <Hero
-        title={pageInfo.title}
-        description={pageInfo.description}
-        image={pageInfo.heroImage}
-        productLogo={pageInfo.productLogo}
-      />
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       <VerticalGroup>
         <Container>

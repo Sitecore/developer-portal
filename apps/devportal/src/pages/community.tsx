@@ -7,8 +7,8 @@ import SocialPage from '@/src/layouts/SocialPage';
 // Data
 import mvpPromo from '@/data/promos/mvp';
 
-export async function getStaticProps() {
-  const pageInfo = await getPageInfo('community');
+export async function getStaticProps(context: any) {
+  const pageInfo = await getPageInfo('community', context.preview ? context.preview : null);
 
   return {
     props: {
@@ -22,8 +22,6 @@ type CommunityPageProps = {
   pageInfo: PageInfo;
 };
 
-const CommunityPage = ({ pageInfo }: CommunityPageProps): JSX.Element => (
-  <SocialPage pageInfo={pageInfo} promoBefore={[mvpPromo]} />
-);
+const CommunityPage = ({ pageInfo }: CommunityPageProps): JSX.Element => <SocialPage pageInfo={pageInfo} promoBefore={[mvpPromo]} />;
 
 export default CommunityPage;
