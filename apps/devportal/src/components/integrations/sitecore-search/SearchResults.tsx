@@ -17,7 +17,7 @@ export interface SearchResultsType extends WidgetComponentProps {
 }
 
 export const SearchResults = (props: SearchResultsType) => {
-  const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = 'title_asc' } = props;
+  const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = 'suggested' } = props;
   const {
     actions: { onSortChange, onFacetClick, onPageNumberChange },
     context: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
