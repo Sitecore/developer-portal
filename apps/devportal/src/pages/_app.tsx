@@ -18,9 +18,9 @@ import dynamic from 'next/dynamic';
 import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
 const SEARCH_CONFIG = {
-  env: process.env.NEXT_PUBLIC_DISCOVER_APP_ENV as Environment,
-  customerKey: process.env.NEXT_PUBLIC_DISCOVER_APP_CUSTOMER_KEY,
-  apiKey: process.env.NEXT_PUBLIC_DISCOVER_APP_API_KEY,
+  env: process.env.NEXT_PUBLIC_SEARCH_APP_ENV as Environment,
+  customerKey: process.env.NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY,
+  apiKey: process.env.NEXT_PUBLIC_SEARCH_APP_API_KEY,
   useToken: true,
 };
 
@@ -43,7 +43,7 @@ function SCDPApp({ Component, pageProps }: AppProps) {
     return <div className="text-red pt-3 text-center text-sm font-semibold">Search disabled; please check environment variables to enable</div>;
   };
   const SearchInput =
-    !process.env.NEXT_PUBLIC_DISCOVER_APP_ENV || !process.env.NEXT_PUBLIC_DISCOVER_APP_CUSTOMER_KEY || !process.env.NEXT_PUBLIC_DISCOVER_APP_API_KEY ? Disabled : dynamic(() => import('@/src/components/integrations/sitecore-search/SearchInput'));
+    !process.env.NEXT_PUBLIC_SEARCH_APP_ENV || !process.env.NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY || !process.env.NEXT_PUBLIC_SEARCH_APP_API_KEY ? Disabled : dynamic(() => import('@/src/components/integrations/sitecore-search/SearchInput'));
 
   return (
     <WidgetsProvider {...SEARCH_CONFIG}>
