@@ -25,7 +25,7 @@ export function OrderByMonthAndYear(items: ChangelogEntry[]): { [month: string]:
 export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEntrySummary): string[] {
   const segments: string[] = [];
 
-  segments.push(slugify(entry.productName));
+  segments.push(slugify(entry.productName ?? entry.title));
   //segments.push(slugify(entry.changeTypeName));
   segments.push(`${slugify(entry.title)}`);
 
@@ -72,8 +72,8 @@ export const getProductOptions = () => {
   return [];
 };
 
-export const getOverviewPerMonth: any = async (products?: Product[], changes?: ChangeType[]) => {
-  const items = await GetSummaryLatestItemsByProductAndChangeType(products?.join('|'), changes?.join('|'));
+export const getOverviewPerMonth: any = async (isPreview: boolean, products?: Product[], changes?: ChangeType[]) => {
+  const items = await GetSummaryLatestItemsByProductAndChangeType(isPreview, products?.join('|'), changes?.join('|'));
   const entries: ChangelogEntrySummary[] = items.entries;
 
   const groupedObjects = entries.reduce((collection, obj) => {

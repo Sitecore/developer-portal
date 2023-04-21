@@ -11,8 +11,9 @@ const getQueryArray = (query: string | string[] | undefined): string[] => {
 const handler = async (req: NextApiRequest, res: NextApiResponse<Record<string, ChangelogEntrySummary[]>>) => {
   const products: string[] = getQueryArray(req.query.product);
   const changeTypes: string[] = getQueryArray(req.query.changeType);
+  const isPreview = req.preview ?? false;
 
-  const sorted = await getOverviewPerMonth(products, changeTypes);
+  const sorted = await getOverviewPerMonth(isPreview, products, changeTypes);
   res.status(200).json(sorted);
 };
 

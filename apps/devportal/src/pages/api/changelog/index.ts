@@ -17,11 +17,12 @@ const getQueryArray = (query: string | string[] | undefined): string[] => {
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
   const products: string[] = getQueryArray(req.query.product);
   const changeTypes: string[] = getQueryArray(req.query.changeType);
+  const isPreview = req.preview ?? false;
 
   const limit: string = getQueryValue(req.query.limit);
   const end = getQueryValue(req.query.end);
 
-  await ChangelogEntriesPaginated(limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
+  await ChangelogEntriesPaginated(isPreview, limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
     res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate');
     res.status(200).json(response);
   });

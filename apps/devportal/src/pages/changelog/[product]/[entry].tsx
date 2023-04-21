@@ -29,7 +29,7 @@ export async function getServerSideProps(context: any) {
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
   try {
-    changelogEntry = await ChangelogEntryByTitle(entry, currentProduct?.id);
+    changelogEntry = await ChangelogEntryByTitle(preview, entry, currentProduct?.id);
   } catch {
     return {
       notFound: true,

@@ -59,14 +59,15 @@ export default function ChangelogHome({ fallback, preview }: ChangelogHomeProps)
 }
 
 export async function getStaticProps(context: any) {
-  const entries = await ChangelogEntriesPaginated('5', '', '', '');
+  const isPreview = context.preview ? context.preview : null;
+  const entries = await ChangelogEntriesPaginated(isPreview, '5', '', '', '');
 
   return {
     props: {
       fallback: {
         '/api/changelog?limit=5': entries,
       },
-      preview: context.preview ? context.preview : null,
+      preview: isPreview,
     },
     revalidate: 60,
   };

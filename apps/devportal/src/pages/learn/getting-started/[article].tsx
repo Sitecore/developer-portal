@@ -25,14 +25,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo(`learn/getting-started/${context?.params?.article}`);
+  const pageInfo = await getPageInfo(`learn/getting-started/${context?.params?.article}`, context.preview ? context.preview : null);
 
   //Load page content if available. If not, load page partials. Supports simple articles with only single page Markdown file and no partials
-  const partials = pageInfo?.content
-    ? await getPageContent(pageInfo)
-    : pageInfo?.partials
-    ? await getPartialsAsArray(pageInfo.partials)
-    : [];
+  const partials = pageInfo?.content ? await getPageContent(pageInfo) : pageInfo?.partials ? await getPartialsAsArray(pageInfo.partials) : [];
 
   return {
     props: {
@@ -72,14 +68,7 @@ const ArticlePage = ({ pageInfo, partials }: ArticlePageProps): JSX.Element => {
     }
   }
 
-  return (
-    <GenericContentPage
-      pageInfo={pageInfo}
-      partials={partials}
-      promoBefore={promoBefore}
-      promoAfter={promoAfter}
-    />
-  );
+  return <GenericContentPage pageInfo={pageInfo} partials={partials} promoBefore={promoBefore} promoAfter={promoAfter} />;
 };
 
 export default ArticlePage;

@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo(`integrations/${context?.params?.integration}`);
+  const pageInfo = await getPageInfo(`integrations/${context?.params?.integration}`, context.preview ? context.preview : null);
   const partials = pageInfo?.partials ? await getPartialsAsArray(pageInfo.partials) : [];
 
   return {
@@ -32,8 +32,6 @@ type XMCDPPageProps = {
   partials: PartialData;
 };
 
-const XMCDPPage = ({ pageInfo, partials }: XMCDPPageProps): JSX.Element => (
-  <GenericContentPage pageInfo={pageInfo} partials={partials} />
-);
+const XMCDPPage = ({ pageInfo, partials }: XMCDPPageProps): JSX.Element => <GenericContentPage pageInfo={pageInfo} partials={partials} />;
 
 export default XMCDPPage;

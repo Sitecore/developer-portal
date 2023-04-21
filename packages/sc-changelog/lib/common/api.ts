@@ -10,7 +10,7 @@ export async function fetchAPI(query: string, preview?: boolean) {
     // Use preview environment
     endpoint = process.env.SITECORE_CHONE_ENDPOINT_PREVIEW as string;
     token = process.env.SITECORE_CHONE_AUTH_TOKEN_PREVIEW as string;
-    axiosThrottle.use(axios, { requestsPerSecond: 25 });
+    axiosThrottle.use(axios, { requestsPerSecond: 15 });
   }
 
   return axios

@@ -1,10 +1,18 @@
-// pages/api/preview.js
-export default function handler(req, res) {
-  const redirectUrl = new URL(req.query.redirect || '/', process.env.NEXT_PUBLIC_PUBLIC_URL as string);
+import type { NextApiRequest, NextApiResponse } from 'next';
+
+const getQueryValue = (query: string | string[] | undefined): string => {
+  if (query == undefined) return '';
+
+  return Array.isArray(query) ? query[0] : query;
+};
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  const redirectUrl = new URL(getQueryValue(req.query.redirect) || '/', process.env.NEXT_PUBLIC_PUBLIC_URL as string);
 
   if (req.query.clear != null) {
     res.clearPreviewData({});
     res.redirect(`${redirectUrl.pathname}${redirectUrl.search}`);
+    res.end;
   }
 
   const secret = process.env.PREVIEW_SECRET;
@@ -16,8 +24,7 @@ export default function handler(req, res) {
 
   // Enable Preview Mode by setting the cookies
   res.setPreviewData({});
-  // Redirect to the homepage, or to the URL provided with the `redirect` query
-  // string parameter:
 
+  // Redirect to the homepage, or to the URL provided with the `redirect` query
   res.redirect(`${redirectUrl.pathname}${redirectUrl.search}`);
 }

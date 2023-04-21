@@ -2,13 +2,13 @@ import { CHANGELOG_QUERY, CHANGELOG_SUMMARY_QUERY } from '../graphQl/changelog-q
 import { Changelog, ChangelogBase, ChangelogList } from '../types/changelog';
 import { fetchAPI } from './common/api';
 
-export async function PaginatedSearch(pageSize: number, endCursor: string, productId?: string, changeTypeId?: string) {
+export async function PaginatedSearch(isPreview: boolean, pageSize: number, endCursor: string, productId?: string, changeTypeId?: string) {
   if (!pageSize) pageSize = 10;
 
-  return Search(productId, changeTypeId, undefined, undefined, pageSize, endCursor);
+  return Search(isPreview, productId, changeTypeId, undefined, undefined, pageSize, endCursor);
 }
 
-export async function Search(productId?: string, changeTypeId?: string, summary?: boolean, searchTerm?: string, pageSize?: number, endCursor?: string) {
+export async function Search(isPreview: boolean, productId?: string, changeTypeId?: string, summary?: boolean, searchTerm?: string, pageSize?: number, endCursor?: string) {
   const searchQuery = `
     { 
       data: allChangelog (
@@ -27,7 +27,7 @@ export async function Search(productId?: string, changeTypeId?: string, summary?
       }
   `;
 
-  const response = await fetchAPI(searchQuery);
+  const response = await fetchAPI(searchQuery, isPreview);
   return response.data;
 }
 
