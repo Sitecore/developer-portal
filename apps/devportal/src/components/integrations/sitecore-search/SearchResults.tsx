@@ -22,7 +22,14 @@ export const SearchResults = (props: SearchResultsType) => {
     actions: { onSortChange, onFacetClick, onPageNumberChange },
     context: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
     queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: articles = [], facet: facets = [] } = {} },
-  } = useSearchResults(() => {
+  } = useSearchResults((query) => {
+    query.getRequest().setSearchQueryHighlight({
+      fields: ['description'],
+      fragment_size: 100,
+      pre_tag: '<strong>',
+      post_tag: '</strong>',
+    });
+
     return {
       itemsPerPage: initialArticlesPerPage,
       keyphrase: initialKeyphrase,
@@ -56,7 +63,8 @@ export const SearchResults = (props: SearchResultsType) => {
                         {result.index_name && <span className="text-2xs mr-2 px-2.5 py-1 uppercase">{result.site_name}</span>}
                         <h3 className="mt-2 text-base font-bold group-hover:underline">{result.name}</h3>
 
-                        {result.description && <p className="text-sm">{truncateString(result.description, 300, true)}</p>}
+                        {result?.highlight?.description && <p className="text-sm" dangerouslySetInnerHTML={{ __html: truncateString(result.highlight.description, 300, true) }} />}
+                        {!result.highlight && result.description && <p className="text-sm">{truncateString(result.description, 300, true)}</p>}
                       </div>
                       {result.type == 'Video' && (
                         <div className="col-span-1">
