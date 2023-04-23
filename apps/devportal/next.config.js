@@ -57,10 +57,6 @@ const nextConfig = {
     GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
     GTM_AUTH: process.env.NEXT_PUBLIC_GTM_AUTH,
     GTM_ENVIRONMENT: process.env.NEXT_PUBLIC_GTM_ENVIRONMENT,
-    COVEO_ACCESS_TOKEN: process.env.NEXT_PUBLIC_COVEO_ACCESS_TOKEN,
-    COVEO_ORGANIZATION_ID: process.env.NEXT_PUBLIC_COVEO_ORGANIZATION_ID,
-    COVEO_PIPELINE: process.env.NEXT_PUBLIC_COVEO_PIPELINE,
-    COVEO_SEARCH_HUB: process.env.NEXT_PUBLIC_COVEO_SEARCH_HUB,
   },
   images: {
     dangerouslyAllowSVG: true,

@@ -57,10 +57,10 @@ _Note: The site will still function without the above keys. The components that 
 To enable search the following environment variables are required:
 
 ```
-NEXT_PUBLIC_COVEO_ACCESS_TOKEN=
-NEXT_PUBLIC_COVEO_ORGANIZATION_ID=
-NEXT_PUBLIC_COVEO_PIPELINE=
-NEXT_PUBLIC_COVEO_SEARCH_HUB=
+NEXT_PUBLIC_SEARCH_APP_API_KEY=
+NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY=
+NEXT_PUBLIC_SEARCH_APP_ENV=
+NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH=
 ```
 
 _Note: The site will still function if the keys are missing or left blank. However these keys are still required to build the application_
@@ -81,10 +81,10 @@ NEXT_PUBLIC_GTM_ID=
 NEXT_PUBLIC_GTM_AUTH=
 NEXT_PUBLIC_GTM_ENVIRONMENT=
 
-NEXT_PUBLIC_COVEO_ACCESS_TOKEN=
-NEXT_PUBLIC_COVEO_ORGANIZATION_ID=
-NEXT_PUBLIC_COVEO_PIPELINE=
-NEXT_PUBLIC_COVEO_SEARCH_HUB=
+NEXT_PUBLIC_SEARCH_APP_API_KEY=
+NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY=
+NEXT_PUBLIC_SEARCH_APP_ENV=
+NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH=
 ```
 
 (For more information on populating environment variables see section **Environment Variables** above.)
