@@ -21,14 +21,14 @@ type ArticleModel = {
 };
 
 const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick'] }) => (
-  <NavMenu.Content className="bg-theme-bg text-theme-text absolute right-0 top-0 inline-block h-full w-2/3 overflow-y-auto">
+  <NavMenu.Content className="bg-theme-bg text-theme-text absolute right-0 top-0 inline-block h-full w-4/5 overflow-y-auto">
     <Presence present={loading}>
       <Loader />
     </Presence>
-    <NavMenu.List className="mr-0 grid list-none grid-cols-3 gap-0 p-0">
+    <NavMenu.List className="mr-0 mt-2 grid list-none grid-cols-3 gap-0 p-0">
       {!loading &&
         articles.map((article, index) => (
-          <NavMenu.Item key={`${article.id}@${article.source_id}`} className="m-4 inline">
+          <NavMenu.Item key={`${article.id}@${article.source_id}`} className="mx-2 my-4 inline">
             <NavMenu.Link
               className="box-border inline-block w-full no-underline"
               href={article.url}
@@ -38,21 +38,22 @@ const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolea
                 // add redirection or any action
               }}
             >
-              <ArticleCard.Root className="bg-theme-bg grid grid-cols-4 items-center md:flex-row">
+              <ArticleCard.Root className="bg-theme-bg grid grid-cols-4 items-center">
                 <div className={`${article.type == 'Video' ? 'col-span-3' : 'col-span-4'} pr-2`}>
-                  <ArticleCard.Title className="mt-2 text-base font-bold group-hover:underline">{article.name}</ArticleCard.Title>
-                  {article.type && <span className="bg-primary-500 text-2xs px-2.5 py-1 uppercase text-white dark:bg-teal-500">{article.type}</span>}
-                  {article.index_name && <span className="text-2xs mr-2 px-2.5 py-1 uppercase">{article.site_name}</span>}
-                  {article.description && <p className="text-sm">{truncateString(article.description, 300, true)}</p>}
-                </div>
-                {article.type == 'Video' && (
-                  <div className="col-span-1">
-                    {article.image_url && <Image width={256} height={144} src={article.image_url} alt={article.index_name} className="mt-20 object-scale-down" />}
-                    {!article.image_url && <Image width={256} height={144} src="/images/social/social-card-default.jpeg" alt={article.index_name} className="mt-20 object-scale-down" />}
+                  <ArticleCard.Title className="text-base font-bold group-hover:underline">{article.name}</ArticleCard.Title>
+                  <div className="my-2">
+                    {article.type && <span className="bg-primary-500 text-2xs px-2.5 py-1 uppercase text-white dark:bg-teal-500">{article.type}</span>}
+                    {article.index_name && <span className="text-2xs mr-2 w-full px-2.5 py-1 uppercase">{article.site_name}</span>}
                   </div>
-                )}
+                  {article.type == 'Video' && (
+                    <div className="col-span-1">
+                      {article.image_url && <Image width={256} height={144} src={article.image_url} alt={article.index_name} className="object-scale-down" />}
+                      {!article.image_url && <Image width={256} height={144} src="/images/social/social-card-default.jpeg" alt={article.index_name} className="object-scale-down" />}
+                    </div>
+                  )}
+                  {article.type != 'Video' && article.description && <p className="text-xs">{truncateString(article.description, 300, true)}</p>}
+                </div>
               </ArticleCard.Root>
-              <span className="text-violet mt-1 block break-words text-xs italic dark:text-white">{article.url}</span>
             </NavMenu.Link>
           </NavMenu.Item>
         ))}
@@ -83,12 +84,12 @@ const Group = ({
   onItemClick: (payload: ActionPropPayload<SearchItemActionPayload>) => void;
 }) => {
   return (
-    <>
-      <h2 className="m-4 box-border text-left font-bold underline">{groupTitle}</h2>
+    <div className="bg-primary-100 h-96 w-1/5 pt-2 dark:bg-teal-900">
+      <h2 className="m-4 box-border text-left font-semibold uppercase">{groupTitle}</h2>
       {articles.map(({ text }) => (
-        <NavMenu.Item value={getGroupId(groupId, text)} key={text} className="ml-4 overflow-hidden hover:bg-gray-300">
+        <NavMenu.Item value={getGroupId(groupId, text)} key={text} className=" hover:text-primary-900 overflow-hidden pl-4 hover:bg-white dark:bg-teal-900 dark:hover:bg-teal-700 dark:hover:text-white">
           <NavMenu.Trigger
-            className="relative inline-block w-1/3 text-left"
+            className="relative inline-block py-1 text-left"
             onMouseOver={(e) => {
               const target = e.target as HTMLLinkElement;
               target.focus();
@@ -102,7 +103,7 @@ const Group = ({
           </PreviewSearchSuggestionQuery>
         </NavMenu.Item>
       ))}
-    </>
+    </div>
   );
 };
 
@@ -202,10 +203,10 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
               <Loader />
             </Presence>
             {!loading && (
-              <NavMenu.SubContent orientation="vertical" value={activeItem} className="relative box-border block h-full w-full">
+              <NavMenu.SubContent orientation="vertical" value={activeItem} className="box-border block w-full">
                 <NavMenu.List className="w-full">
                   {articleSuggestions.length > 0 && <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} activeItem={activeItem} onActiveItem={setActiveItem} />}
-                  <NavMenu.Item value="defaultArticlesResults" key="defaultArticlesResults" className="b-0 h-72 overflow-hidden bg-none">
+                  <NavMenu.Item value="defaultArticlesResults" key="defaultArticlesResults" className="b-0  bg-none">
                     <NavMenu.Trigger aria-hidden className="hidden" />
                     <Articles articles={articles} onItemClick={onItemClick} />
                   </NavMenu.Item>
