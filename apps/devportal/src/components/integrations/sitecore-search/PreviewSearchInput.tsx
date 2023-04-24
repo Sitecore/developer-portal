@@ -4,6 +4,7 @@ import { ActionPropPayload, ItemActionPayload, PreviewSearchSuggestionQuery, Sea
 import { ArticleCard, NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { SyntheticEvent, useCallback, useState } from 'react';
 import Loader from './Loader';
 
@@ -20,7 +21,7 @@ type ArticleModel = {
 };
 
 const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick'] }) => (
-  <NavMenu.Content className="bg-theme-bg text-theme-text absolute top-0 inline-block h-full overflow-y-auto">
+  <NavMenu.Content className="bg-theme-bg text-theme-text absolute right-0 top-0 inline-block h-full w-2/3 overflow-y-auto">
     <Presence present={loading}>
       <Loader />
     </Presence>
@@ -83,10 +84,11 @@ const Group = ({
 }) => {
   return (
     <>
-      <h2>{groupTitle}</h2>
+      <h2 className="m-4 box-border text-left font-bold underline">{groupTitle}</h2>
       {articles.map(({ text }) => (
-        <NavMenu.Item value={getGroupId(groupId, text)} key={text}>
+        <NavMenu.Item value={getGroupId(groupId, text)} key={text} className="ml-4 overflow-hidden hover:bg-gray-300">
           <NavMenu.Trigger
+            className="relative inline-block w-1/3 text-left"
             onMouseOver={(e) => {
               const target = e.target as HTMLLinkElement;
               target.focus();
@@ -116,7 +118,7 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
       data: {
         content: articles = [],
         suggestion: {
-          title_context_aware: articleSuggestions = [],
+          name_suggester: articleSuggestions = [],
           // content_trending_category: trendingCategorySuggestions = [],
         } = {},
       } = {},
@@ -130,6 +132,8 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
       itemsPerPage,
     };
   });
+
+  console.log('Suggestions: ' + articleSuggestions.length);
 
   const loading = isLoading || isFetching;
   const [activeItem, setActiveItem] = useState('defaultArticlesResults');
@@ -148,14 +152,14 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
     [onKeyphraseChange, keyphrase]
   );
 
-  //const navigate = useNavigate();
+  const router = useRouter();
   const handleSubmit = (e: SyntheticEvent): void => {
     e.preventDefault();
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     const target = e.target.query as HTMLInputElement;
     setValue('');
-    // navigate(`/search?q=${target.value}`);
+    router.push('/search?q=' + target.value).then(() => router.reload());
   };
 
   return (
@@ -193,14 +197,14 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
             </div>
           </form>
 
-          <NavMenu.Content className="bg-theme-bg text-theme-text absolute left-0 top-10 inline-block h-72 w-full justify-center pt-0 shadow-md">
+          <NavMenu.Content className="bg-theme-bg text-theme-text absolute left-0 top-10 inline-block h-fit w-full justify-center pt-0 shadow-md">
             <Presence present={loading}>
               <Loader />
             </Presence>
             {!loading && (
               <NavMenu.SubContent orientation="vertical" value={activeItem} className="relative box-border block h-full w-full">
                 <NavMenu.List className="w-full">
-                  {articleSuggestions.length > 0 && <Group groupTitle="Suggestions" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} activeItem={activeItem} onActiveItem={setActiveItem} />}
+                  {articleSuggestions.length > 0 && <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} activeItem={activeItem} onActiveItem={setActiveItem} />}
                   <NavMenu.Item value="defaultArticlesResults" key="defaultArticlesResults" className="b-0 h-72 overflow-hidden bg-none">
                     <NavMenu.Trigger aria-hidden className="hidden" />
                     <Articles articles={articles} onItemClick={onItemClick} />
