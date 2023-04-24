@@ -21,11 +21,11 @@ type ArticleModel = {
 };
 
 const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick'] }) => (
-  <NavMenu.Content className="bg-theme-bg text-theme-text absolute right-0 top-0 inline-block h-full w-4/5 overflow-y-auto">
+  <NavMenu.Content className="bg-theme-bg text-theme-text border-theme-border absolute right-0 top-0 inline-block h-full w-4/5 overflow-y-auto border-b border-r">
     <Presence present={loading}>
       <Loader />
     </Presence>
-    <NavMenu.List className="mr-0 mt-2 grid list-none grid-cols-3 gap-0 p-0">
+    <NavMenu.List className="mr-0 grid list-none grid-cols-3 gap-0 p-2">
       {!loading &&
         articles.map((article, index) => (
           <NavMenu.Item key={`${article.id}@${article.source_id}`} className="mx-2 my-4 inline">
@@ -84,7 +84,7 @@ const Group = ({
   onItemClick: (payload: ActionPropPayload<SearchItemActionPayload>) => void;
 }) => {
   return (
-    <div className="bg-primary-100 h-96 w-1/5 pt-2 dark:bg-teal-900">
+    <div className="bg-primary-100 border-theme-border h-96 w-1/5 border-b border-l pt-2 dark:bg-teal-900">
       <h2 className="m-4 box-border text-left font-semibold uppercase">{groupTitle}</h2>
       {articles.map(({ text }) => (
         <NavMenu.Item value={getGroupId(groupId, text)} key={text} className=" hover:text-primary-900 overflow-hidden pl-4 hover:bg-white dark:bg-teal-900 dark:hover:bg-teal-700 dark:hover:text-white">
