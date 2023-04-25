@@ -1,10 +1,10 @@
-import { ChangelogEntriesPaginated } from '@/../../packages/sc-changelog/changelog';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import ChangelogDraft from '@/src/components/changelog/ChangelogDrafts';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
 import { SWRConfig } from 'swr';
 import SmallLinkButton from 'ui/components/buttons/SmallLinkButton';
 import Container from 'ui/components/common/Container';

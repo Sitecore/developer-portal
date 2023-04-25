@@ -1,15 +1,17 @@
-import { buildQuerystring, getChangeTypeOptions, getProductOptions } from '@/src/common/changelog';
 import axios from 'axios';
 import Link from 'next/link';
 import { useState } from 'react';
 import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
+import ChangeType from 'sc-changelog/types/changeType';
 import Product from 'sc-changelog/types/product';
-import { Fetcher } from 'swr';
+import useSWR, { Fetcher } from 'swr';
 import useSWRInfinite from 'swr/infinite';
 import SvgIcon from 'ui/components/common/SvgIcon';
 import { Option } from 'ui/components/dropdown/MultiSelect';
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
+
+const entriesApiUrl = '/api/changelog';
 
 type ChangelogListProps = {
   initialProduct?: Product;
@@ -28,7 +30,7 @@ const ChangelogList = ({ initialProduct }: ChangelogListProps): JSX.Element => {
     const cursor = previousPageData ? previousPageData.endCursor : undefined;
     const query = buildQuerystring(selectedProduct, selectedChange, cursor, initialProduct);
 
-    return [`/api/changelog?${query.join('&')}`];
+    return [`${entriesApiUrl}?${query.join('&')}`];
   };
 
   const { data, error, size, setSize } = useSWRInfinite(getKey, fetcher);
@@ -74,5 +76,45 @@ const ChangelogList = ({ initialProduct }: ChangelogListProps): JSX.Element => {
     </div>
   );
 };
+
+const getChangeTypeOptions = () => {
+  const fetcher: Fetcher<ChangeType[], string> = async (url: string) => await axios.get(url).then((response) => response.data);
+  const { data: changeTypes, error } = useSWR(`${entriesApiUrl}/types`, fetcher);
+
+  if (error) console.log(error);
+
+  if (changeTypes) return changeTypes?.map((e: ChangeType) => ({ label: e.name, value: e.id }));
+  return [];
+};
+
+const getProductOptions = () => {
+  const fetcher: Fetcher<Product[], string> = async (url: string) => await axios.get(url).then((response) => response.data);
+  const { data: products, error } = useSWR(`${entriesApiUrl}/products?all=false`, fetcher);
+
+  if (error) console.log(error);
+
+  if (products) return products?.map((e: Product) => ({ label: e.name, value: e.id }));
+  return [];
+};
+
+function buildQuerystring(products: Option[], changes: Option[], cursor?: string, initialProduct?: Product): string[] {
+  const query: string[] = [];
+  const PAGE_SIZE = 5;
+
+  if (initialProduct) query.push(`product=${initialProduct.id}`);
+
+  query.push(`limit=${PAGE_SIZE}`);
+  products.map((p) => {
+    query.push(`product=${p.value}`);
+  });
+  changes.map((c) => {
+    query.push(`changeType=${c.value}`);
+  });
+
+  if (cursor) {
+    query.push(`end=${cursor}`);
+  }
+  return query;
+}
 
 export default ChangelogList;

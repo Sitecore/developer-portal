@@ -3,8 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import { CustomNavData } from 'ui/common/types/contentPager';
 
-import Product from '@/../../packages/sc-changelog/types/product';
 import { GetProducts } from 'sc-changelog/changelog';
+import Product from 'sc-changelog/types/product';
 import { slugify } from 'sc-changelog/utils/stringUtils';
 
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');

@@ -1,9 +1,9 @@
-import Product from '@/../../packages/sc-changelog/types/product';
-import { getChangelogEntryUrl } from '@/src/common/changelog';
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
+import Product from 'sc-changelog/types/product';
+import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 import useSWR, { Fetcher } from 'swr';
 
 // Record<string, ChangelogEntrySummary[]>

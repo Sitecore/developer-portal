@@ -1,7 +1,7 @@
-import Product from '@/../../packages/sc-changelog/types/product';
-import { slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
 import { CreateFeed } from '@/src/common/changelog-feeds';
 import { ChangelogEntriesByProduct, GetProducts } from 'sc-changelog/changelog';
+import Product from 'sc-changelog/types/product';
+import { slugify } from 'sc-changelog/utils/stringUtils';
 
 // Default export to prevent next.js errors
 const FeedPage = () => null;

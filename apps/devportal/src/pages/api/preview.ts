@@ -1,10 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-const getQueryValue = (query: string | string[] | undefined): string => {
-  if (query == undefined) return '';
-
-  return Array.isArray(query) ? query[0] : query;
-};
+import { getQueryValue } from 'sc-changelog/utils/requests';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const redirectUrl = req.query.redirect ? getQueryValue(req.query.redirect) : '/';

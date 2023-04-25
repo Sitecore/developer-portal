@@ -1,18 +1,7 @@
-// Interfaces
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
 import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
-
-const getQueryValue = (query: string | string[] | undefined): string => {
-  if (query == undefined) return '';
-
-  return Array.isArray(query) ? query[0] : query;
-};
-
-const getQueryArray = (query: string | string[] | undefined): string[] => {
-  if (query == undefined) return [];
-  return Array.isArray(query) ? query : [query];
-};
+import { getQueryArray, getQueryValue } from 'sc-changelog/utils/requests';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
   const products: string[] = getQueryArray(req.query.product);
@@ -23,7 +12,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
   const end = getQueryValue(req.query.end);
 
   await ChangelogEntriesPaginated(isPreview, limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
-    res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate');
+    res.setHeader('Cache-Control', 'stale-while-revalidate');
     res.status(200).json(response);
   });
 };
