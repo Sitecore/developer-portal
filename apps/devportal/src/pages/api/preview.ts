@@ -2,24 +2,25 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { getQueryValue } from 'sc-changelog/utils/requests';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const redirectUrl = req.query.redirect ? getQueryValue(req.query.redirect) : '/';
+  const { redirect, clear, secret } = req.query;
 
-  if (req.query.clear != null) {
+  let redirectUrl = getQueryValue(redirect);
+  const preview_secret = process.env.PREVIEW_SECRET;
+
+  if (clear != null) {
     res.clearPreviewData({});
-    res.redirect(`${redirectUrl}`);
-    res.end;
+    redirectUrl = 'https://developers.sitecore.com' + redirectUrl;
   }
 
-  const secret = process.env.PREVIEW_SECRET;
-
-  // Check the secret and next parameters
-  if (secret && req.query.secret !== secret) {
-    return res.status(401).json({ message: 'Missing or invalid `secret` query string parameter!' });
+  if (secret != null) {
+    // Check the secret and next parameters
+    if (secret == preview_secret) {
+      res.setPreviewData({});
+    }
   }
-
-  // Enable Preview Mode by setting the cookies
-  res.setPreviewData({});
 
   // Redirect to the homepage, or to the URL provided with the `redirect` query
-  res.redirect(`${redirectUrl}`);
+  if (redirectUrl) {
+    res.redirect(redirectUrl);
+  }
 }
