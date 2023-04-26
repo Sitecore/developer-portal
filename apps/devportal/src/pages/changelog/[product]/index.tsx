@@ -63,7 +63,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
       </Hero>
       <VerticalGroup>
         <Container>
-          <Message type={Type.Info}>
+          <Message type={Type.Info} className="mt-8">
             <p>
               You are viewing the public preview of the upcoming Sitecore global changelog.
               <Link href="/changelog/current" title="View the list of current release notes per product" className="mx-1 font-bold hover:underline">
