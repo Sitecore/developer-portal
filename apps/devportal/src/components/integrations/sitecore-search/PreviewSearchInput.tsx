@@ -1,6 +1,6 @@
 import { GetProductLogo } from '@/../../packages/ui/common/assets';
 import { truncateString } from '@/../../packages/ui/common/text-util';
-import { ActionPropPayload, ItemActionPayload, PreviewSearchSuggestionQuery, SearchResponseSuggestion, WidgetActionPayload, WidgetDataType, usePreviewSearch, widget } from '@sitecore-search/react';
+import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchSuggestionQuery, SearchResponseSuggestion, WidgetAction, WidgetDataType, usePreviewSearch, widget } from '@sitecore-search/react';
 import { ArticleCard, NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
 import Image from 'next/image';
@@ -61,8 +61,8 @@ const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolea
   </NavMenu.Content>
 );
 
-interface SearchItemActionPayload extends ItemActionPayload {
-  payload: WidgetActionPayload;
+interface SearchItemClickedAction extends WidgetAction {
+  payload: ItemIndexActionPayload;
   type: string;
 }
 
@@ -81,7 +81,7 @@ const Group = ({
   articles: Array<SearchResponseSuggestion>;
   activeItem: string;
   onActiveItem: (arg: string) => void;
-  onItemClick: (payload: ActionPropPayload<SearchItemActionPayload>) => void;
+  onItemClick: (payload: ActionPropPayload<SearchItemClickedAction>) => void;
 }) => {
   return (
     <div className="bg-primary-100 border-theme-border h-96 w-1/5 border-b border-l pt-2 dark:bg-teal-900">
@@ -111,7 +111,7 @@ const getGroupId = (name: string, value: string) => `${name}@${value}`;
 
 const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
   const {
-    context: { itemsPerPage = defaultProductsPerPage, keyphrase = '' },
+    context: { keyphrase = '' },
     actions: { onItemClick, onKeyphraseChange },
     queryResult: {
       isFetching,
@@ -130,11 +130,9 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
         { suggestion: 'name_suggester', max: 10 },
         // { suggestion: 'content_trending_category', max: 10 },
       ],
-      itemsPerPage,
+      itemsPerPage: defaultProductsPerPage,
     };
   });
-
-  console.log('Suggestions: ' + articleSuggestions.length);
 
   const loading = isLoading || isFetching;
   const [activeItem, setActiveItem] = useState('defaultArticlesResults');
