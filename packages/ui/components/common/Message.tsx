@@ -16,13 +16,12 @@ export const Type = {
 type Type = (typeof Type)[keyof typeof Type];
 
 const baseMessageBoxed = 'mt-8 rounded-lg px-4 py-3';
-const boxColors = ``;
 
 export const Message = ({ children, type, plain, message }: MessageProps): JSX.Element => {
   return (
-    <div role="alert" className={`text-theme-text relative w-full text-xs ${plain ?? `${baseMessageBoxed} ${type.background} dark:bg-teal-700`}`}>
+    <div role="alert" className={`text-theme-text relative w-full text-xs ${plain ?? `${baseMessageBoxed} ${type.background} dark:bg-teal-700 dark:text-teal-100`}`}>
       <div className={`flex ${children != null && message != null ? 'max-w-[75%]' : ''} `}>
-        <SvgIcon icon={'info'} className={`relative top-0.5 mr-4 h-12 w-12 md:mr-2 md:h-5 md:w-5 ${type.text} dark:text-teal-100 `} width={24} height={24} />
+        <SvgIcon icon={'info'} className={`relative top-0.5 mr-4 h-12 w-12 md:mr-2 md:h-5 md:w-5 ${type.text} dark:fill-teal-100 dark:text-teal-100 `} width={24} height={24} />
         {message != null ? message : children}
       </div>
 

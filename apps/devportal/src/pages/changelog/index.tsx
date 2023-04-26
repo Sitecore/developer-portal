@@ -1,5 +1,4 @@
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
-import ChangelogDraft from '@/src/components/changelog/ChangelogDrafts';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -43,7 +42,6 @@ export default function ChangelogHome({ fallback, preview }: ChangelogHomeProps)
         </Hero>
         <VerticalGroup>
           <Container>
-            <ChangelogDraft enabled={preview} />
             <Message type={Type.Info}>
               <p>
                 You are viewing the public preview of the upcoming Sitecore global changelog.
