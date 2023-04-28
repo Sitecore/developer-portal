@@ -1,6 +1,7 @@
 import { CreateFeed } from '@/src/common/changelog-feeds';
-import { ChangelogEntriesByProduct, GetProducts } from 'sc-changelog/changelog';
-import Product from 'sc-changelog/types/product';
+import { ChangelogEntriesByProduct } from 'sc-changelog/changelog';
+import GetProducts from 'sc-changelog/products';
+import { Product } from 'sc-changelog/types/product';
 import { slugify } from 'sc-changelog/utils/stringUtils';
 
 // Default export to prevent next.js errors
@@ -9,7 +10,7 @@ const FeedPage = () => null;
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
   const preview = context.preview ? context.preview : null;
-  const products = await GetProducts().then((response: Product[]) => {
+  const products = await GetProducts(preview).then((response: Product[]) => {
     return response;
   });
 

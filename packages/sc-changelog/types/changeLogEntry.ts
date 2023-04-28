@@ -1,6 +1,6 @@
 import { generateHTML } from '@tiptap/html';
 import { richTextProfile } from '../lib/common/richTextConfiguration';
-import ChangeType from './changeType';
+import { ChangeType } from './changeType';
 import { Changelog, ChangelogBase, ChangelogList } from './changelog';
 import { Media } from './index';
 import SitecoreProduct from './sitecoreProduct';

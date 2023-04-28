@@ -18,12 +18,12 @@ type ChangelogHomeProps = {
   preview: boolean;
 };
 
-export default function ChangelogHome({ fallback, preview }: ChangelogHomeProps) {
+export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
   const router = useRouter();
   return (
     <>
       <Head>
-        <link rel="preload" href="/api/changelog/all?" as="fetch" crossOrigin="anonymous" />
+        <link rel="preload" href="/api/changelog/v1/all?" as="fetch" crossOrigin="anonymous" />
       </Head>
       <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
@@ -77,7 +77,7 @@ export async function getStaticProps(context: any) {
   return {
     props: {
       fallback: {
-        '/api/changelog?limit=5': entries,
+        '/api/changelog/v1?limit=5': entries,
       },
       preview: isPreview,
     },

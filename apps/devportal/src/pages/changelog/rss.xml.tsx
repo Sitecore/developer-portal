@@ -8,7 +8,7 @@ export async function getServerSideProps(context: any) {
   const preview = context.preview ? context.preview : null;
   // Fetch data
   const changelogEntryList = await AllChangelogEntries(preview);
-  const feed = await CreateFeed(changelogEntryList);
+  const feed = CreateFeed(changelogEntryList);
   //Set page headers
   context.res.setHeader('Content-Type', 'text/xml; charset=utf-8');
   // cache for 600s

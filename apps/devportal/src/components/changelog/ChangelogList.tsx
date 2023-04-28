@@ -1,9 +1,8 @@
 import axios from 'axios';
 import Link from 'next/link';
 import { useState } from 'react';
+import { ChangeType, Product } from 'sc-changelog/types';
 import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
-import ChangeType from 'sc-changelog/types/changeType';
-import Product from 'sc-changelog/types/product';
 import useSWR, { Fetcher } from 'swr';
 import useSWRInfinite from 'swr/infinite';
 import SvgIcon from 'ui/components/common/SvgIcon';
@@ -11,7 +10,7 @@ import { Option } from 'ui/components/dropdown/MultiSelect';
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
 
-const entriesApiUrl = '/api/changelog';
+const entriesApiUrl = '/api/changelog/v1';
 
 type ChangelogListProps = {
   initialProduct?: Product;

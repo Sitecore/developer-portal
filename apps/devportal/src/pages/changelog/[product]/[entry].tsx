@@ -1,11 +1,11 @@
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
-import ChangelogDraft from '@/src/components/changelog/ChangelogDrafts';
 import { ChangelogItemMeta } from '@/src/components/changelog/ChangelogItemMeta';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChangelogEntryByTitle, GetProducts } from 'sc-changelog/changelog';
+import { ChangelogEntryByTitle } from 'sc-changelog/changelog';
+import GetProducts from 'sc-changelog/products';
+import { Product } from 'sc-changelog/types';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import Product from 'sc-changelog/types/product';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
 import Container from 'ui/components/common/Container';
 import { Message, Type } from 'ui/components/common/Message';
@@ -17,7 +17,6 @@ import Layout from 'ui/layouts/Layout';
 type ChangelogProps = {
   currentProduct: Product;
   changelogEntry: ChangelogEntry;
-  preview: boolean;
 };
 
 export async function getServerSideProps(context: any) {
@@ -25,7 +24,7 @@ export async function getServerSideProps(context: any) {
   const entry = context.params.entry;
   const preview = context.preview ? context.preview : null;
 
-  const products = await GetProducts().then((response: Product[]) => {
+  const products = await GetProducts(preview).then((response: Product[]) => {
     return response;
   });
   let changelogEntry;
@@ -41,12 +40,11 @@ export async function getServerSideProps(context: any) {
     props: {
       currentProduct: currentProduct,
       changelogEntry: changelogEntry,
-      preview: preview,
     },
   };
 }
 
-const ChangelogProduct = ({ currentProduct, changelogEntry, preview }: ChangelogProps) => {
+const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) => {
   return (
     <Layout title={`Release Notes ${currentProduct.name}`} description="Empty">
       <Hero title={`${currentProduct.name} Changelog`} description={`Learn more about new versions, changes and improvements we made to ${currentProduct.name}`}>
@@ -65,7 +63,6 @@ const ChangelogProduct = ({ currentProduct, changelogEntry, preview }: Changelog
       </Hero>
       <VerticalGroup>
         <Container>
-          <ChangelogDraft enabled={preview} />
           <Message type={Type.Info}>
             <p>
               You are viewing the public preview of the upcoming Sitecore global changelog.

@@ -1,9 +1,8 @@
 // Interfaces
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { GetSummaryLatestItemsByProductAndChangeType } from 'sc-changelog/changelog';
+import { ChangeType, Product } from 'sc-changelog/types';
 import { ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
-import ChangeType from 'sc-changelog/types/changeType';
-import Product from 'sc-changelog/types/product';
 import { getQueryArray } from 'sc-changelog/utils/requests';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Record<string, ChangelogEntrySummary[]>>) => {

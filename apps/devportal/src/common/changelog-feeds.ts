@@ -1,9 +1,6 @@
 import { Feed } from 'feed';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
+import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 

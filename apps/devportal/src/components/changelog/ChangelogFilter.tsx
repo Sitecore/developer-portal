@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Product from 'sc-changelog/types/product';
+import { Product } from 'sc-changelog/types';
 import MultiSelect, { Option } from 'ui/components/dropdown/MultiSelect';
 
 type ChangelogFilterProps = {

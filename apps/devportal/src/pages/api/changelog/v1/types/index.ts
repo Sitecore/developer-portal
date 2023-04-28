@@ -1,7 +1,7 @@
 // Interfaces
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { GetChangeTypes } from 'sc-changelog/changelog';
-import ChangeType from 'sc-changelog/types/changeType';
+import GetChangeTypes from 'sc-changelog/changeTypes';
+import { ChangeType } from 'sc-changelog/types/changeType';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangeType[]>) => {
   const isPreview = req.preview ? true : false;

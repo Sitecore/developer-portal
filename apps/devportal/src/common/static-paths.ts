@@ -3,8 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import { CustomNavData } from 'ui/common/types/contentPager';
 
-import { GetProducts } from 'sc-changelog/changelog';
-import Product from 'sc-changelog/types/product';
+import GetProducts from 'sc-changelog/products';
+import { Product } from 'sc-changelog/types/product';
 import { slugify } from 'sc-changelog/utils/stringUtils';
 
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
@@ -151,7 +151,7 @@ type ProductChangeLogPaths = { params: { product: string } };
 export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[]> => {
   const paths: ProductChangeLogPaths[] = [];
 
-  const products = await GetProducts().then((response: Product[]) => {
+  const products = await GetProducts(false).then((response: Product[]) => {
     return response;
   });
 

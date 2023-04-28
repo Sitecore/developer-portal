@@ -1,12 +1,10 @@
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Product } from 'sc-changelog/types';
 import { ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
-import Product from 'sc-changelog/types/product';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 import useSWR, { Fetcher } from 'swr';
-
-// Record<string, ChangelogEntrySummary[]>
 
 type ChangelogByMonthProps = {
   className?: string;
@@ -23,7 +21,7 @@ const ChangelogByMonth = ({ className, product }: ChangelogByMonthProps): JSX.El
     query.push(`product=${product.id}`);
   }
 
-  const { data, error, isLoading } = useSWR<Record<string, ChangelogEntrySummary[]> | null>(`/api/changelog/all?${query.join('&')}`, fetcher);
+  const { data, error, isLoading } = useSWR<Record<string, ChangelogEntrySummary[]> | null>(`/api/changelog/v1/all?${query.join('&')}`, fetcher);
 
   if (error) {
     console.log(error);
