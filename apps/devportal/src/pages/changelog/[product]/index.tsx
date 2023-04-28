@@ -29,7 +29,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const product = context.params.product;
-  const products = await GetProducts().then((response: Product[]) => {
+  const preview = context.preview ? context.preview : null;
+  const products = await GetProducts(preview).then((response: Product[]) => {
     return response;
   });
 

@@ -38,13 +38,13 @@ export async function GetSummaryLatestItemsByProductAndChangeType(isPreview: boo
   const response = await Search(isPreview, productId, changeTypeId, true, undefined, 50);
   return ParseRawSummaryData(response.data);
 }
-export async function GetChangeTypes(): Promise<ChangeType[]> {
-  const response = await GetAllChangeTypes();
+export async function GetChangeTypes(isPreview: boolean): Promise<ChangeType[]> {
+  const response = await GetAllChangeTypes(isPreview);
   return ParseChangeType(response.data);
 }
-export async function GetProducts(): Promise<Product[]> {
+export async function GetProducts(isPreview: boolean): Promise<Product[]> {
   // Get all products
-  const response = await GetAllProducts();
+  const response = await GetAllProducts(isPreview);
   const products = ParseProduct(response.data);
 
   // Iterate products
@@ -56,7 +56,7 @@ export async function GetProducts(): Promise<Product[]> {
 
   // Check whether there are entries that have it selected
   const calc = async (n: Product) => {
-    const count = await GetEntryCountByProductId(n.id);
+    const count = await GetEntryCountByProductId(n.id, isPreview);
     n.hasEntries = count > 0;
     return n;
   };
