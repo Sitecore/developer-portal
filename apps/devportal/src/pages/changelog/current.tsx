@@ -18,7 +18,7 @@ export default function ChangelogCurrent() {
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
         <VerticalGroup>
           <Container>
-            <Message type={Type.Info}>
+            <Message type={Type.Info} className="mt-8">
               <p>
                 <Link href="/changelog" className="mr-1 font-bold hover:underline">
                   Click here
