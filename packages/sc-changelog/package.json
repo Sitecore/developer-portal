@@ -39,6 +39,7 @@
     "@tiptap/extension-underline": "^2.0.3",
     "@tiptap/html": "^2.0.3",
     "@tiptap/react": "^2.0.3",
+    "axios-request-throttle": "^1.0.0",
     "prosemirror-to-html-js": "^1.0.2"
   }
 }

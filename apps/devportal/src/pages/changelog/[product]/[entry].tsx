@@ -2,12 +2,13 @@ import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@/src/components/changelog/ChangelogItemMeta';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChangelogEntryByTitle, GetProducts } from 'sc-changelog/changelog';
+import { ChangelogEntryByTitle } from 'sc-changelog/changelog';
+import GetProducts from 'sc-changelog/products';
+import { Product } from 'sc-changelog/types';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import Product from 'sc-changelog/types/product';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
-import { Alert } from 'ui/components/common/Alert';
 import Container from 'ui/components/common/Container';
+import { Message, Type } from 'ui/components/common/Message';
 import TextLink from 'ui/components/common/TextLink';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
@@ -21,14 +22,15 @@ type ChangelogProps = {
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
   const entry = context.params.entry;
+  const preview = context.preview ? context.preview : null;
 
-  const products = await GetProducts().then((response: Product[]) => {
+  const products = await GetProducts(preview).then((response: Product[]) => {
     return response;
   });
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
   try {
-    changelogEntry = await ChangelogEntryByTitle(entry, currentProduct?.id);
+    changelogEntry = await ChangelogEntryByTitle(preview, entry, currentProduct?.id);
   } catch {
     return {
       notFound: true,
@@ -61,7 +63,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
       </Hero>
       <VerticalGroup>
         <Container>
-          <Alert icon="info">
+          <Message type={Type.Info} className="mt-8">
             <p>
               You are viewing the public preview of the upcoming Sitecore global changelog.
               <Link href="/changelog/current" title="View the list of current release notes per product" className="mx-1 font-bold hover:underline">
@@ -69,7 +71,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
               </Link>
               for the current release notes per product
             </p>
-          </Alert>
+          </Message>
           <div className="mt-8 grid gap-16 md:grid-cols-5">
             <div className="changelog-item col-span-3">
               <nav className="mb-8 mt-4 flex" aria-label="Breadcrumb">

@@ -17,10 +17,11 @@ type LayoutProps = {
   title: string;
   description?: string;
   openGraphImage?: string;
+  preview?: boolean;
   children: React.ReactNode | React.ReactNode[];
 };
 
-const Layout = ({ title, description = '', openGraphImage, children }: LayoutProps): JSX.Element => {
+const Layout = ({ title, description = '', openGraphImage, children, preview }: LayoutProps): JSX.Element => {
   const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
   const router = useRouter();
   const { asPath } = router;
@@ -61,6 +62,7 @@ const Layout = ({ title, description = '', openGraphImage, children }: LayoutPro
         <link rel="preload" href="/images/heros/hero-wide-light.webp" as="image" />
         <link rel="preload" href="/images/heros/hero-wide-dark.webp" as="image" />
       </Head>
+
       <main className="scroll-to-offset mb-16 min-h-[calc(100vh-344px)]">
         {/* Anchor element at top of page to focus on route change. */}
         <a id={idMainContent} ref={mainContentRef} className="sr-only" href="#" tabIndex={-1}>

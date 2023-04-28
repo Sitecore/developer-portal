@@ -2,6 +2,7 @@
 // Global
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import TagManager from 'react-gtm-module';
 // Data
@@ -16,6 +17,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
+import PreviewNotification from '../components/common/PreviewNotification';
 
 const Coveo = dynamic(() => import('@/src/components/integrations/search/SearchInput'), {
   ssr: false,
@@ -37,6 +39,9 @@ function SCDPApp({ Component, pageProps }: AppProps) {
   };
   const SearchInput = !process.env.NEXT_PUBLIC_COVEO_ORGANIZATION_ID || !process.env.NEXT_PUBLIC_COVEO_ACCESS_TOKEN || !process.env.NEXT_PUBLIC_COVEO_SEARCH_HUB || !process.env.NEXT_PUBLIC_COVEO_PIPELINE ? Disabled : Coveo;
 
+  const router = useRouter();
+  const isPreview: boolean = router.isPreview;
+
   return (
     <React.StrictMode>
       <Head>
@@ -48,6 +53,9 @@ function SCDPApp({ Component, pageProps }: AppProps) {
           --font-avenirnext-ltpro: ${AvenirNextLTPro.style.fontFamily};
         }
       `}</style>
+
+      <PreviewNotification enabled={isPreview} page={router.asPath} />
+
       <div className={`theme-light text-theme-text bg-theme-bg dark:theme-dark font-sans`}>
         <Nav navigationData={mainNavigation} sitecoreQuickLinks={sitecoreQuickLinks}>
           <SearchInput />

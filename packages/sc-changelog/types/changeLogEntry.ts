@@ -1,6 +1,6 @@
 import { generateHTML } from '@tiptap/html';
 import { richTextProfile } from '../lib/common/richTextConfiguration';
-import ChangeType from './changeType';
+import { ChangeType } from './changeType';
 import { Changelog, ChangelogBase, ChangelogList } from './changelog';
 import { Media } from './index';
 import SitecoreProduct from './sitecoreProduct';
@@ -18,8 +18,8 @@ export type ChangelogEntrySummary = {
   releaseDate: string;
   lightIcon: string;
   darkIcon: string;
-  productName: string;
-  changeTypeName: string;
+  productName: string | null;
+  changeTypeName: string | null;
 };
 
 export type ChangelogEntry = ChangelogEntrySummary & {
@@ -71,8 +71,8 @@ function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySumm
     releaseDate: new Date(changelog.releaseDate).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
     lightIcon: changelog.sitecoreProduct.results[0].lightIcon,
     darkIcon: changelog.sitecoreProduct.results[0].darkIcon,
-    productName: changelog.sitecoreProduct.results != null ? changelog.sitecoreProduct.results[0]?.productName : '',
-    changeTypeName: changelog.changeType.results != null ? changelog.changeType.results[0]?.changeType : '',
+    productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
+    changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
   };
 }
 
@@ -92,7 +92,7 @@ export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     image: changelog.image.results,
     lightIcon: changelog.sitecoreProduct.results[0].lightIcon,
     darkIcon: changelog.sitecoreProduct.results[0].darkIcon,
-    productName: changelog.sitecoreProduct.results ? changelog.sitecoreProduct.results[0].productName : '',
-    changeTypeName: changelog.changeType.results ? changelog.changeType.results[0]?.changeType : '',
+    productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
+    changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
   };
 }

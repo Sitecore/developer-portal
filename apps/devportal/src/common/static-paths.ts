@@ -3,11 +3,9 @@ import fs from 'fs';
 import path from 'path';
 import { CustomNavData } from 'ui/common/types/contentPager';
 
-import Product from '@/../../packages/sc-changelog/types/product';
-import { AllChangelogEntries, GetProducts } from 'sc-changelog/changelog';
-import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
-import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
-import { getChangelogEntryUrlSegments } from './changelog';
+import GetProducts from 'sc-changelog/products';
+import { Product } from 'sc-changelog/types/product';
+import { slugify } from 'sc-changelog/utils/stringUtils';
 
 const solutionsDirectory = path.join(process.cwd(), 'data/markdown/pages/solution/');
 const integrationDirectory = path.join(process.cwd(), 'data/markdown/pages/integrations/');
@@ -149,12 +147,11 @@ export const getNewsletterStaticPaths = (): NewsletterPath[] => {
 };
 
 type ProductChangeLogPaths = { params: { product: string } };
-type ProductChangeLogEntryPaths = { params: { product: string; entry: string } };
 
 export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[]> => {
   const paths: ProductChangeLogPaths[] = [];
 
-  const products = await GetProducts().then((response: Product[]) => {
+  const products = await GetProducts(false).then((response: Product[]) => {
     return response;
   });
 
@@ -162,20 +159,5 @@ export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[
     paths.push({ params: { product: slugify(product.name) } });
   });
 
-  return paths;
-};
-
-export const getChangelogProductEntryPaths = async (): Promise<ProductChangeLogEntryPaths[]> => {
-  const paths: ProductChangeLogEntryPaths[] = [];
-  const list: ChangelogEntryList<ChangelogEntry[]> = await AllChangelogEntries();
-
-  list.entries.map((e: ChangelogEntry) => {
-    const urlSegments = getChangelogEntryUrlSegments(e);
-    const product = getSlug(urlSegments[0]);
-    //const changeType = getSlug(urlSegments[1]);
-    const entry = slugify(urlSegments[2]);
-
-    paths.push({ params: { product, entry } });
-  });
   return paths;
 };

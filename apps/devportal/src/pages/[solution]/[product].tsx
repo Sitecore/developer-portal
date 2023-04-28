@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo(context.params);
+  const pageInfo = await getPageInfo(context.params, context.preview ? context.preview : null);
   const partials = pageInfo?.partials ? await getPartialsAsArray(pageInfo.partials) : [];
 
   return {
@@ -27,12 +27,6 @@ export async function getStaticProps(context: any) {
   };
 }
 
-export default function productPage({
-  pageInfo,
-  partials,
-}: {
-  pageInfo: PageInfo;
-  partials: PartialData;
-}) {
+export default function productPage({ pageInfo, partials }: { pageInfo: PageInfo; partials: PartialData }) {
   return <GenericContentPage pageInfo={pageInfo} partials={partials} />;
 }

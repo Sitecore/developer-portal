@@ -29,7 +29,7 @@ interface NewsletterPageProps {
 
 const MAX_RESULTS = 12;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (context: any) => {
   const getFirstXNewsletters = () => {
     const years = fs.readdirSync(NEWSLETTER_DATA_DIRECTORY);
 
@@ -44,16 +44,11 @@ export const getStaticProps: GetStaticProps = async () => {
       const months = fs.readdirSync(yearPath).sort().reverse();
       for (let j = 0; j < months.length; j++) {
         const month = months[j];
-        const { title, description } = JSON.parse(
-          fs.readFileSync(path.resolve(yearPath, `${month}`), { encoding: 'utf-8' })
-        );
+        const { title, description } = JSON.parse(fs.readFileSync(path.resolve(yearPath, `${month}`), { encoding: 'utf-8' }));
 
         const monthWithoutFile = month.substring(0, 2);
         newsletters.push({
-          title: getNewsletterTitle(
-            translateDateAsYearMonth(`${year}-${monthWithoutFile}-03`),
-            title
-          ),
+          title: getNewsletterTitle(translateDateAsYearMonth(`${year}-${monthWithoutFile}-03`), title),
           description,
           href: `newsletter/${year}/${monthWithoutFile}`,
         });
@@ -67,7 +62,7 @@ export const getStaticProps: GetStaticProps = async () => {
     return newsletters;
   };
 
-  const pageInfo = await getPageInfo('newsletter');
+  const pageInfo = await getPageInfo('newsletter', context.preview ? context.preview : null);
 
   return {
     props: {
@@ -79,17 +74,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }) => {
   return (
-    <Layout
-      title={pageInfo.title}
-      description={pageInfo.description}
-      openGraphImage={pageInfo.openGraphImage}
-    >
-      <Hero
-        title={pageInfo.title}
-        description={pageInfo.description}
-        image={pageInfo.heroImage}
-        productLogo={pageInfo.productLogo}
-      />
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       <Container>
         <VerticalGroup>

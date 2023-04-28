@@ -4,12 +4,12 @@ import ChangelogList from '@/src/components/changelog/ChangelogList';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { GetProducts } from 'sc-changelog/changelog';
-import Product from 'sc-changelog/types/product';
+import GetProducts from 'sc-changelog/products';
+import { Product } from 'sc-changelog/types';
 import { slugify } from 'sc-changelog/utils/stringUtils';
 import SmallLinkButton from 'ui/components/buttons/SmallLinkButton';
-import { Alert } from 'ui/components/common/Alert';
 import Container from 'ui/components/common/Container';
+import { Message, Type } from 'ui/components/common/Message';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
@@ -29,7 +29,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const product = context.params.product;
-  const products = await GetProducts().then((response: Product[]) => {
+  const preview = context.preview ? context.preview : null;
+  const products = await GetProducts(preview).then((response: Product[]) => {
     return response;
   });
 
@@ -63,7 +64,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
       </Hero>
       <VerticalGroup>
         <Container>
-          <Alert icon="info">
+          <Message type={Type.Info} className="mt-8">
             <p>
               You are viewing the public preview of the upcoming Sitecore global changelog.
               <Link href="/changelog/current" title="View the list of current release notes per product" className="mx-1 font-bold hover:underline">
@@ -71,7 +72,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
               </Link>
               for the current release notes per product
             </p>
-          </Alert>
+          </Message>
           <div className="mt-8 grid gap-16 md:grid-cols-5">
             <div className="col-span-3">
               <ChangelogList initialProduct={currentProduct} />

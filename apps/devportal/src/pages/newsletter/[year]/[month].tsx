@@ -4,11 +4,7 @@ import fs from 'fs';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import path from 'path';
 // Scripts
-import {
-  getNewsletterStaticPaths,
-  NewsletterPath,
-  NEWSLETTER_DATA_DIRECTORY,
-} from '@/src/common/static-paths';
+import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@/src/common/static-paths';
 // Components
 import { getNewsletterTitle } from '@/src/common/newsletter';
 import NewsletterNav from '@/src/components/newsletter/NewsletterNav';
@@ -68,6 +64,7 @@ export const getStaticProps: GetStaticProps<NewsletterContentPageProps> = async 
     stackexchange: [],
     twitter: [],
     sitecoreCommunity: {},
+    preview: context.preview ? context.preview : null,
   };
 
   return {
@@ -75,25 +72,10 @@ export const getStaticProps: GetStaticProps<NewsletterContentPageProps> = async 
   };
 };
 
-const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({
-  pageInfo,
-  content,
-  paths,
-  year,
-  month,
-}) => {
+const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({ pageInfo, content, paths, year, month }) => {
   return (
-    <Layout
-      title={pageInfo.title}
-      description={pageInfo.description}
-      openGraphImage={pageInfo.openGraphImage}
-    >
-      <Hero
-        title={pageInfo.title}
-        description={pageInfo.description}
-        image={pageInfo.heroImage}
-        productLogo={pageInfo.productLogo}
-      />
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       <Container>
         <div className="mt-8 grid gap-6 md:grid-cols-4">

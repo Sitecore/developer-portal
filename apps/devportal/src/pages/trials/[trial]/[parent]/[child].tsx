@@ -18,7 +18,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context: { params: TrialNavContext }) {
+export async function getStaticProps(context: any) {
   const filePath = path.join(process.cwd(), `data/trials/${context.params.trial}.json`);
   const navData: TrialNavData = JSON.parse(fs.readFileSync(filePath, { encoding: 'utf-8' }));
   const activeParent = navData.nav.find((parent) => parent.slug === context.params.parent);
@@ -33,11 +33,10 @@ export async function getStaticProps(context: { params: TrialNavContext }) {
     stackexchange: [],
     twitter: [],
     sitecoreCommunity: {},
+    preview: context.preview ? context.preview : null,
   };
 
-  const partials = await getPartialsAsArray([
-    `trials/${context.params.trial}/${context.params.parent}/${context.params.child}`,
-  ]);
+  const partials = await getPartialsAsArray([`trials/${context.params.trial}/${context.params.parent}/${context.params.child}`]);
 
   return {
     props: {

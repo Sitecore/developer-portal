@@ -1,8 +1,8 @@
-import { getSlug } from '@/../../packages/sc-changelog/utils/stringUtils';
-import { getChangelogEntryUrl } from '@/src/common/changelog';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
+import { getSlug } from 'sc-changelog/utils/stringUtils';
+import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 import TextLink from 'ui/components/common/TextLink';
 import { ChangelogItemMeta } from './ChangelogItemMeta';
 
@@ -35,7 +35,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
   }, [isLast]);
 
   return (
-    <div className="changelog-item bg-theme-bg mt-8 mb-16" ref={entryRef}>
+    <div className="changelog-item bg-theme-bg mb-16 mt-8" ref={entryRef}>
       <h2 className={`heading-sm font-bolder hover:text-violet dark:hover:text-teal hover:underline ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} id={getSlug(item.title)}>
         <a href={getChangelogEntryUrl(item)} title={item.title}>
           {item.title}

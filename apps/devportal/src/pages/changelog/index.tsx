@@ -1,13 +1,13 @@
-import { ChangelogEntriesPaginated } from '@/../../packages/sc-changelog/changelog';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
 import { SWRConfig } from 'swr';
 import SmallLinkButton from 'ui/components/buttons/SmallLinkButton';
-import { Alert } from 'ui/components/common/Alert';
 import Container from 'ui/components/common/Container';
+import { Message, Type } from 'ui/components/common/Message';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
@@ -15,6 +15,7 @@ import ChangelogList from '../../components/changelog/ChangelogList';
 
 type ChangelogHomeProps = {
   fallback: any;
+  preview: boolean;
 };
 
 export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
@@ -22,7 +23,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
   return (
     <>
       <Head>
-        <link rel="preload" href="/api/changelog/all?" as="fetch" crossOrigin="anonymous" />
+        <link rel="preload" href="/api/changelog/v1/all?" as="fetch" crossOrigin="anonymous" />
       </Head>
       <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
@@ -41,7 +42,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
         </Hero>
         <VerticalGroup>
           <Container>
-            <Alert icon="info">
+            <Message type={Type.Info} className="mt-8">
               <p>
                 You are viewing the public preview of the upcoming Sitecore global changelog.
                 <Link href="/changelog/current" title="View the list of current release notes per product" className="mx-1 font-bold hover:underline">
@@ -49,7 +50,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
                 </Link>
                 for the current release notes per product
               </p>
-            </Alert>
+            </Message>
             <div className="mt-8 grid h-full gap-16 md:grid-cols-5">
               <SWRConfig value={{ fallback }}>
                 <ChangelogList />
@@ -69,14 +70,16 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
   );
 }
 
-export async function getStaticProps() {
-  const entries = await ChangelogEntriesPaginated('5', '', '', '');
+export async function getStaticProps(context: any) {
+  const isPreview = context.preview ? context.preview : null;
+  const entries = await ChangelogEntriesPaginated(isPreview, '5', '', '', '');
 
   return {
     props: {
       fallback: {
-        '/api/changelog?limit=5': entries,
+        '/api/changelog/v1?limit=5': entries,
       },
+      preview: isPreview,
     },
     revalidate: 60,
   };

@@ -5,32 +5,13 @@ import { PageInfo, PagePartialGroup } from '@/src/interfaces/page-info';
 // Components
 import GenericContentPage from '@/src/layouts/GenericContentPage';
 
-export async function getStaticProps() {
+export async function getStaticProps(context: any) {
   // Partial Groups
-  const cms = await getPartialsAsArray([
-    'docs/cms/sitecore-xm-cloud',
-    'docs/cms/sitecore-content-hub',
-    'docs/cms/headless',
-    'docs/cms/sitecore-experience-manager',
-  ]);
-  const customerDataManagement = await getPartialsAsArray([
-    'docs/customer-data-management/sitecore-cdp',
-    'docs/customer-data-management/sitecore-experience-platform',
-  ]);
-  const personalization = await getPartialsAsArray([
-    'docs/personalization/sitecore-personalize',
-    'docs/personalization/sitecore-experience-platform',
-  ]);
-  const marketingAutomation = await getPartialsAsArray([
-    'docs/marketing-automation/send',
-    'docs/marketing-automation/moosend',
-    'docs/marketing-automation/sitecore-experience-platform',
-  ]);
-  const commerce = await getPartialsAsArray([
-    'docs/commerce/ordercloud',
-    'docs/commerce/sitecore-experience-commerce',
-    'docs/commerce/discover',
-  ]);
+  const cms = await getPartialsAsArray(['docs/cms/sitecore-xm-cloud', 'docs/cms/sitecore-content-hub', 'docs/cms/headless', 'docs/cms/sitecore-experience-manager']);
+  const customerDataManagement = await getPartialsAsArray(['docs/customer-data-management/sitecore-cdp', 'docs/customer-data-management/sitecore-experience-platform']);
+  const personalization = await getPartialsAsArray(['docs/personalization/sitecore-personalize', 'docs/personalization/sitecore-experience-platform']);
+  const marketingAutomation = await getPartialsAsArray(['docs/marketing-automation/send', 'docs/marketing-automation/moosend', 'docs/marketing-automation/sitecore-experience-platform']);
+  const commerce = await getPartialsAsArray(['docs/commerce/ordercloud', 'docs/commerce/sitecore-experience-commerce', 'docs/commerce/discover']);
   const integrations = await getPartialsAsArray(['docs/integrations/connect']);
 
   const partialGroups = [
@@ -62,7 +43,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pageInfo: await getPageInfo('docs'),
+      pageInfo: await getPageInfo('docs', context.preview ? context.preview : null),
       partialGroups,
     },
     revalidate: 600, // 10 minutes
@@ -74,8 +55,6 @@ type DocsPageProps = {
   partialGroups: PagePartialGroup[];
 };
 
-const DocsPage = ({ pageInfo, partialGroups }: DocsPageProps): JSX.Element => (
-  <GenericContentPage pageInfo={pageInfo} partialGroups={partialGroups} hasGrid={true} />
-);
+const DocsPage = ({ pageInfo, partialGroups }: DocsPageProps): JSX.Element => <GenericContentPage pageInfo={pageInfo} partialGroups={partialGroups} hasGrid={true} />;
 
 export default DocsPage;

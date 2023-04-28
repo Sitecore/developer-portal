@@ -7,20 +7,15 @@ import learningAtSitecore from '@/data/promos/learning-at-sitecore';
 // Components
 import GenericContentPage from '@/src/layouts/GenericContentPage';
 
-export async function getStaticProps() {
-  const pageInfo = await getPageInfo('learn');
-  const gettingStarted = await getPartialsAsArray([
-    'learn/getting-started/composable-dxp',
-    'learn/getting-started/platform-dxp',
-    'learn/getting-started/platform-dxp-development-frameworks',
-    'learn/getting-started/product-features',
-  ]);
+export async function getStaticProps(context: any) {
+  const pageInfo = await getPageInfo('learn', context.preview ? context.preview : null);
+
+  const gettingStarted = await getPartialsAsArray(['learn/getting-started/composable-dxp', 'learn/getting-started/platform-dxp', 'learn/getting-started/platform-dxp-development-frameworks', 'learn/getting-started/product-features']);
 
   const partialGroups = [
     {
       title: 'Getting Started',
-      description:
-        'Get the hang of Sitecore with these beginner-friendly tutorials, walkthroughs, and samples.',
+      description: 'Get the hang of Sitecore with these beginner-friendly tutorials, walkthroughs, and samples.',
       partials: gettingStarted,
     },
   ];
@@ -39,13 +34,6 @@ type LearnPageProps = {
   partialGroups: PagePartialGroup[];
 };
 
-const LearnPage = ({ pageInfo, partialGroups }: LearnPageProps): JSX.Element => (
-  <GenericContentPage
-    pageInfo={pageInfo}
-    partialGroups={partialGroups}
-    hasGrid={true}
-    promoAfter={[learningAtSitecore]}
-  />
-);
+const LearnPage = ({ pageInfo, partialGroups }: LearnPageProps): JSX.Element => <GenericContentPage pageInfo={pageInfo} partialGroups={partialGroups} hasGrid={true} promoAfter={[learningAtSitecore]} />;
 
 export default LearnPage;

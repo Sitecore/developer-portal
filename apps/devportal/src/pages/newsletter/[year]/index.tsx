@@ -4,11 +4,7 @@ import fs from 'fs';
 import { GetStaticProps, NextPage } from 'next';
 import path from 'path';
 // Scripts
-import {
-  getNewsletterStaticPaths,
-  NewsletterPath,
-  NEWSLETTER_DATA_DIRECTORY,
-} from '@/src/common/static-paths';
+import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@/src/common/static-paths';
 import { PageInfo } from '@/src/interfaces/page-info';
 // Lib
 import { getNewsletterTitle } from '@/src/common/newsletter';
@@ -45,16 +41,11 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
 
     for (let j = 0; j < months.length; j++) {
       const month = months[j];
-      const { title, description } = JSON.parse(
-        fs.readFileSync(path.resolve(yearPath, `${month}`), { encoding: 'utf-8' })
-      );
+      const { title, description } = JSON.parse(fs.readFileSync(path.resolve(yearPath, `${month}`), { encoding: 'utf-8' }));
 
       const monthWithoutFile = month.substring(0, 2);
       newsletters.push({
-        title: getNewsletterTitle(
-          translateDateAsYearMonth(`${year}-${monthWithoutFile}-03`),
-          title
-        ),
+        title: getNewsletterTitle(translateDateAsYearMonth(`${year}-${monthWithoutFile}-03`), title),
         description,
         href: `/newsletter/${year}/${monthWithoutFile}`,
       });
@@ -71,6 +62,7 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
   const pageInfo = {
     title: `Newsletters from ${year}`,
     description: 'Select a newsletter to read',
+    preview: context.preview ? context.preview : null,
   };
 
   return {
@@ -84,17 +76,8 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
 
 const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }) => {
   return (
-    <Layout
-      title={pageInfo.title}
-      description={pageInfo.description}
-      openGraphImage={pageInfo.openGraphImage}
-    >
-      <Hero
-        title={pageInfo.title}
-        description={pageInfo.description}
-        image={pageInfo.heroImage}
-        productLogo={pageInfo.productLogo}
-      />
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       <Container>
         <div className="mt-8 grid gap-6 md:grid-cols-4">
