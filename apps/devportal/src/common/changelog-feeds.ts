@@ -1,9 +1,6 @@
-import { ChangelogEntry } from '@/../../packages/sc-changelog/types/changeLogEntry';
 import { Feed } from 'feed';
-import { getChangelogEntryUrl } from './changelog';
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
+import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
+import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 
@@ -18,10 +15,6 @@ export function CreateFeed(changelogEntryList: ChangelogEntryList<ChangelogEntry
     favicon: `${publicUrl}/favicon.ico`,
     copyright: 'All rights reserved 2023, Sitecore',
     generator: 'Feed for Node.js',
-    feedLinks: {
-      json: 'https://example.com/json',
-      atom: 'https://example.com/atom',
-    },
     author: {
       name: 'Sitecore',
       email: 'no-reply@sitecore.com',

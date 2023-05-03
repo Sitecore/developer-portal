@@ -24,8 +24,8 @@ import communityListData from '@/data/data-community-list';
 import getHelpCta from '@/data/promos/get-help';
 import promoData from '@/data/promos/xmc-practices';
 
-export async function getStaticProps() {
-  const pageInfo = await getPageInfo('home');
+export async function getStaticProps(context: any) {
+  const pageInfo = await getPageInfo('home', context.preview ? context.preview : null);
 
   return {
     props: {
@@ -78,7 +78,7 @@ type HomePageProps = {
 };
 
 const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
-  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
     <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
     <VerticalGroup>

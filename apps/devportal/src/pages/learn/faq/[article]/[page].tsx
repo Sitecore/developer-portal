@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context: { params: CustomNavContext }) {
+export async function getStaticProps(context: any) {
   const basePath = '/learn/faq';
   const navDataFile = path.join(process.cwd(), `data/faqs/${context?.params?.article}.json`);
   const navData: CustomNavData = JSON.parse(fs.readFileSync(navDataFile, { encoding: 'utf-8' }));
@@ -50,18 +50,17 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
     stackexchange: [],
     twitter: [],
     sitecoreCommunity: {},
+    previewMode: context.preview ? context.preview : null,
   };
 
-  const partials = await getPartialsAsArray([
-    `${basePath}/${context.params.article}/${context.params.page}`,
-  ]);
+  const partials = await getPartialsAsArray([`${basePath}/${context.params.article}/${context.params.page}`]);
   pageInfo.pageTitle = `${navData.title} - ${activeItem?.title}`;
 
   return {
     props: {
       pageInfo,
       partials,
-      context: context.params,
+      navContext: context.params,
       navData,
       basePath,
       pagingInfo,
@@ -73,31 +72,17 @@ export async function getStaticProps(context: { params: CustomNavContext }) {
 type ArticlePageProps = {
   pageInfo: PageInfo;
   partials: PartialData;
-  context: CustomNavContext;
+  navContext: CustomNavContext;
   navData: CustomNavData;
   basePath: string;
   pagingInfo: ContentPagerContext;
 };
 
-const ArticlePage = ({
-  pageInfo,
-  partials,
-  context,
-  navData,
-  basePath,
-  pagingInfo,
-}: ArticlePageProps): JSX.Element => {
-  const CustomNav = <MultiPageNav context={context} navData={navData} root={basePath} />;
-  const CustomNavPager = <ContentPager context={context} paging={pagingInfo} root={basePath} />;
+const ArticlePage = ({ pageInfo, partials, navContext, navData, basePath, pagingInfo }: ArticlePageProps): JSX.Element => {
+  const CustomNav = <MultiPageNav context={navContext} navData={navData} root={basePath} />;
+  const CustomNavPager = <ContentPager context={navContext} paging={pagingInfo} root={basePath} />;
 
-  return (
-    <GenericContentPage
-      pageInfo={pageInfo}
-      partials={partials}
-      customNav={CustomNav}
-      customNavPager={CustomNavPager}
-    />
-  );
+  return <GenericContentPage pageInfo={pageInfo} partials={partials} customNav={CustomNav} customNavPager={CustomNavPager} />;
 };
 
 export default ArticlePage;

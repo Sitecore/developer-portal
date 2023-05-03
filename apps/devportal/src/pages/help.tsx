@@ -5,11 +5,11 @@ import { PageInfo } from '@/src/interfaces/page-info';
 // Components
 import SocialPage from '@/src/layouts/SocialPage';
 // Data
-import sitecoreSupportPromo from '@/data/promos/sitecore-support';
 import contactUsCta from '@/data/promos/contact-us';
+import sitecoreSupportPromo from '@/data/promos/sitecore-support';
 
-export async function getStaticProps() {
-  const pageInfo = await getPageInfo('help');
+export async function getStaticProps(context: any) {
+  const pageInfo = await getPageInfo('help', context.preview ? context.preview : null);
 
   return {
     props: {
@@ -23,8 +23,6 @@ type HelpPageProps = {
   pageInfo: PageInfo;
 };
 
-const HelpPage = ({ pageInfo }: HelpPageProps): JSX.Element => (
-  <SocialPage pageInfo={pageInfo} promoBefore={[sitecoreSupportPromo]} ctaAfter={contactUsCta} />
-);
+const HelpPage = ({ pageInfo }: HelpPageProps): JSX.Element => <SocialPage pageInfo={pageInfo} promoBefore={[sitecoreSupportPromo]} ctaAfter={contactUsCta} />;
 
 export default HelpPage;

@@ -22,36 +22,19 @@ type SocialPageProps = {
 };
 
 const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): JSX.Element => (
-  <Layout
-    title={pageInfo.title}
-    description={pageInfo.description}
-    openGraphImage={pageInfo.openGraphImage}
-  >
-    <Hero
-      title={pageInfo.title}
-      description={pageInfo.description}
-      image={pageInfo.heroImage}
-      productLogo={pageInfo.productLogo}
-    />
+  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
+    <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
     <Container>
       <VerticalGroup>
         {promoBefore.map((promo, i) => (
           <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />
         ))}
         <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} />
-        <SitecoreCommunityQuestions
-          content={pageInfo.sitecoreCommunity.questions}
-          sortKeys={pageInfo.sitecoreCommunityQuestionsSort}
-          forumKeys={pageInfo.sitecoreCommunityQuestionsCategory}
-        />
+        <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
         <CommunityList data={communityListData} />
         <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
         <StackExchangeFeed content={pageInfo.stackexchange} />
-        <YouTubeFeed
-          content={pageInfo.youtube}
-          title={pageInfo.youtubeTitle}
-          playlistTitle={pageInfo.youtubePlaylistTitle}
-        />
+        <YouTubeFeed content={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
         {ctaAfter && <CTACard {...ctaAfter} />}
       </VerticalGroup>
     </Container>

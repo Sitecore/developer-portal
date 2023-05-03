@@ -3,16 +3,8 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 // Interfaces
-import type {
-  ChildPageInfo,
-  MarkdownMeta,
-  PageInfo,
-  PartialData,
-} from '@/src/interfaces/page-info';
-import {
-  SitecoreCommunityContent,
-  SitecoreCommunityEvent,
-} from 'ui/common/types/sitecoreCommunity';
+import type { ChildPageInfo, MarkdownMeta, PageInfo, PartialData } from '@/src/interfaces/page-info';
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/common/types/sitecoreCommunity';
 // Components
 import { SITECORE_COMMUNITY_MAX_COUNT } from 'ui/components/sitecoreCommunity/sitecore-community.constants';
 import SitecoreCommunityApi from 'ui/components/sitecoreCommunity/SitecoreCommunity.api';
@@ -41,11 +33,9 @@ type ProductSolutionContextParams = {
   product?: string;
 };
 
-const getSolutionFile = ({ solution }: ProductSolutionContextParams): string =>
-  `solution/${solution}`;
+const getSolutionFile = ({ solution }: ProductSolutionContextParams): string => `solution/${solution}`;
 
-const getProductFile = ({ solution, product }: ProductSolutionContextParams): string =>
-  `solution/${solution}/product/${product}`;
+const getProductFile = ({ solution, product }: ProductSolutionContextParams): string => `solution/${solution}/product/${product}`;
 
 const getFileFromContext = (params: ProductSolutionContextParams) => {
   return params.product ? getProductFile(params) : getSolutionFile(params);
@@ -74,9 +64,7 @@ const getFileData = (directory: string, file: string): Matter => {
   return results;
 };
 
-export const getPageInfo = async (
-  arg: string | ProductSolutionContextParams
-): Promise<PageInfo | null> => {
+export const getPageInfo = async (arg: string | ProductSolutionContextParams, preview?: boolean): Promise<PageInfo | null> => {
   const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
   const fileData = getFileData(pagesDirectory, `${file}`);
   const meta = fileData.data as MarkdownMeta;
@@ -94,6 +82,7 @@ export const getPageInfo = async (
     content: fileData.content,
     parsedContent: content?.result.compiledSource,
     headings: content?.headings,
+    previewMode: preview,
   } as PageInfo;
 
   /**
@@ -106,10 +95,7 @@ export const getPageInfo = async (
   let twitterHandle: string | undefined = undefined;
   if (meta.twitter) {
     const twitterAsArray: string[] = Array.isArray(meta.twitter) ? meta.twitter : [meta.twitter];
-    twitterHandle =
-      twitterAsArray && twitterAsArray.length > 0
-        ? twitterAsArray.find((arg) => arg.startsWith('@'))
-        : '';
+    twitterHandle = twitterAsArray && twitterAsArray.length > 0 ? twitterAsArray.find((arg) => arg.startsWith('@')) : '';
   }
 
   if (twitterHandle) {
@@ -125,13 +111,8 @@ export const getPageInfo = async (
 
   // Sitecore Community
   if (meta.sitecoreCommunityBlog) {
-    const maxResults =
-      typeof meta.sitecoreCommunityBlog === 'number' ? meta.sitecoreCommunityBlog : undefined;
-    const sort = meta.sitecoreCommunityBlogSort
-      ? Array.isArray(meta.sitecoreCommunityBlogSort)
-        ? meta.sitecoreCommunityBlogSort[0]
-        : meta.sitecoreCommunityBlogSort
-      : 'created';
+    const maxResults = typeof meta.sitecoreCommunityBlog === 'number' ? meta.sitecoreCommunityBlog : undefined;
+    const sort = meta.sitecoreCommunityBlogSort ? (Array.isArray(meta.sitecoreCommunityBlogSort) ? meta.sitecoreCommunityBlogSort[0] : meta.sitecoreCommunityBlogSort) : 'created';
     const sCBlog = await SitecoreCommunityApi.get({
       forum: 'blog',
       contentType: 'blog',
@@ -141,20 +122,9 @@ export const getPageInfo = async (
     pageInfo.sitecoreCommunity.blog = sCBlog as SitecoreCommunityContent[];
   }
   if (meta.sitecoreCommunityQuestions) {
-    const maxResults =
-      typeof meta.sitecoreCommunityQuestions === 'number'
-        ? meta.sitecoreCommunityQuestions
-        : SITECORE_COMMUNITY_MAX_COUNT;
-    const sort = meta.sitecoreCommunityQuestionsSort
-      ? Array.isArray(meta.sitecoreCommunityQuestionsSort)
-        ? meta.sitecoreCommunityQuestionsSort[0]
-        : meta.sitecoreCommunityQuestionsSort
-      : 'publish';
-    const forum = meta.sitecoreCommunityQuestionsCategory
-      ? Array.isArray(meta.sitecoreCommunityQuestionsCategory)
-        ? meta.sitecoreCommunityQuestionsCategory[0]
-        : meta.sitecoreCommunityQuestionsCategory
-      : undefined;
+    const maxResults = typeof meta.sitecoreCommunityQuestions === 'number' ? meta.sitecoreCommunityQuestions : SITECORE_COMMUNITY_MAX_COUNT;
+    const sort = meta.sitecoreCommunityQuestionsSort ? (Array.isArray(meta.sitecoreCommunityQuestionsSort) ? meta.sitecoreCommunityQuestionsSort[0] : meta.sitecoreCommunityQuestionsSort) : 'publish';
+    const forum = meta.sitecoreCommunityQuestionsCategory ? (Array.isArray(meta.sitecoreCommunityQuestionsCategory) ? meta.sitecoreCommunityQuestionsCategory[0] : meta.sitecoreCommunityQuestionsCategory) : undefined;
     const sCQuestions = await SitecoreCommunityApi.get({
       contentType: 'questions',
       maxResults,
@@ -237,9 +207,7 @@ export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> =
  * @param params The context params for the dynamic page
  * @returns An array of simplified ChildPageInfo for display on a parent page
  */
-export const getChildPageInfo = async (
-  params: ProductSolutionContextParams
-): Promise<ChildPageInfo[]> => {
+export const getChildPageInfo = async (params: ProductSolutionContextParams): Promise<ChildPageInfo[]> => {
   const directory = path.join(pagesDirectory, `${getSolutionFile(params)}/product`);
   const children = fs.readdirSync(directory);
   return children.map((child) => {

@@ -1,9 +1,9 @@
-import { LinkItem } from '@/../../packages/ui/components/cards/LinkItem';
-import { Alert } from '@/../../packages/ui/components/common/Alert';
-import { Row } from '@/../../packages/ui/components/common/Row';
 import Head from 'next/head';
 import Link from 'next/link';
+import { LinkItem } from 'ui/components/cards/LinkItem';
 import Container from 'ui/components/common/Container';
+import { Message, Type } from 'ui/components/common/Message';
+import { Row } from 'ui/components/common/Row';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
@@ -12,20 +12,20 @@ export default function ChangelogCurrent() {
   return (
     <>
       <Head>
-        <link rel="preload" href="/api/changelog/all?" as="fetch" crossOrigin="anonymous" />
+        <link rel="preload" href="/api/changelog/v1/all?" as="fetch" crossOrigin="anonymous" />
       </Head>
       <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
         <VerticalGroup>
           <Container>
-            <Alert icon="info">
+            <Message type={Type.Info} className="mt-8">
               <p>
                 <Link href="/changelog" className="mr-1 font-bold hover:underline">
                   Click here
                 </Link>
                 to go the public preview of the upcoming Sitecore global changelog.
               </p>
-            </Alert>
+            </Message>
             <div className="mt-10">
               <h3 className="heading-md mb-4">Current release notes</h3>
               <p>Please check this list to find the current release notes per product</p>

@@ -2,6 +2,7 @@
 // Global
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import TagManager from 'react-gtm-module';
 // Data
@@ -16,6 +17,7 @@ import React from 'react';
 import { Environment, PageController, WidgetsProvider } from '@sitecore-search/react';
 import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
+import PreviewNotification from '../components/common/PreviewNotification';
 import SearchInputSwitcher from '../components/integrations/sitecore-search/SearchInputSwitcher';
 const SEARCH_CONFIG = {
   env: process.env.NEXT_PUBLIC_SEARCH_APP_ENV as Environment,
@@ -36,12 +38,18 @@ function SCDPApp({ Component, pageProps }: AppProps) {
     PageController.getContext().setLocale({ country: 'us', language: 'en' });
   }, []);
 
+  const router = useRouter();
+  const isPreview: boolean = router.isPreview;
+
   return (
     <WidgetsProvider {...SEARCH_CONFIG}>
       <React.StrictMode>
         <Head>
           <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
         </Head>
+
+        <PreviewNotification enabled={isPreview} page={router.asPath} />
+
         <div className={`${AvenirNextR.variable} ${AvenirNextLTPro.variable} theme-light text-theme-text bg-theme-bg dark:theme-dark font-sans`}>
           <Nav navigationData={mainNavigation} sitecoreQuickLinks={sitecoreQuickLinks}>
             <SearchInputSwitcher />

@@ -1,7 +1,7 @@
 import { GetProductLogoByVariant, Product as ProductLogo, Type, Variant } from '../../ui/common/assets';
 import { SitecoreProductResults } from './sitecoreProduct';
 
-type Product = {
+export type Product = {
   id: string;
   name: string;
   darkIcon: string;
@@ -9,7 +9,6 @@ type Product = {
   cloud: string;
   hasEntries: boolean;
 };
-export default Product;
 
 export function ParseProduct(data: SitecoreProductResults): Product[] {
   const darkDefaultLogo = GetProductLogoByVariant(ProductLogo.Default, Variant.Dark, Type.IconOnly);

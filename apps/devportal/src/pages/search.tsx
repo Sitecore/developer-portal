@@ -5,21 +5,22 @@ import { PageInfo } from '@/src/interfaces/page-info';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
+import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
 
 interface SearchPageProps {
   pageInfo: PageInfo;
 }
 
-export const getServerSideProps = async () => {
-  const pageInfo = await getPageInfo('search');
+export async function getStaticProps(context: any) {
+  const pageInfo = await getPageInfo('search', context.preview ? context.preview : null);
 
   return {
     props: {
       pageInfo,
     },
   };
-};
+}
 
 const Search: NextPage<SearchPageProps> = ({ pageInfo }) => {
   const router = useRouter();
@@ -28,6 +29,8 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo }) => {
 
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
+
       <VerticalGroup>
         <Container>
           <SearchResults rfkId="rfkid_7" initialKeyphrase={query} currentPage={currentPage} />

@@ -1,14 +1,16 @@
-import Product from '@/../../packages/sc-changelog/types/product';
-import { slugify } from '@/../../packages/sc-changelog/utils/stringUtils';
 import { CreateFeed } from '@/src/common/changelog-feeds';
-import { ChangelogEntriesByProduct, GetProducts } from 'sc-changelog/changelog';
+import { ChangelogEntriesByProduct } from 'sc-changelog/changelog';
+import GetProducts from 'sc-changelog/products';
+import { Product } from 'sc-changelog/types/product';
+import { slugify } from 'sc-changelog/utils/stringUtils';
 
 // Default export to prevent next.js errors
 const FeedPage = () => null;
 
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
-  const products = await GetProducts().then((response: Product[]) => {
+  const preview = context.preview ? context.preview : null;
+  const products = await GetProducts(preview).then((response: Product[]) => {
     return response;
   });
 
@@ -16,7 +18,7 @@ export async function getServerSideProps(context: any) {
 
   if (currentProduct != null) {
     // Fetch data
-    const changelogEntryList = await ChangelogEntriesByProduct(currentProduct?.id);
+    const changelogEntryList = await ChangelogEntriesByProduct(preview, currentProduct?.id);
     const feed = await CreateFeed(changelogEntryList);
     //Set page headers
     context.res.setHeader('Content-Type', 'text/xml; charset=utf-8');

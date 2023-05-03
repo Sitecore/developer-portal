@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo(context.params);
+  const pageInfo = await getPageInfo(context.params, context.preview ? context.preview : null);
   const products = await getChildPageInfo(context.params);
 
   return {
@@ -45,12 +45,8 @@ const SolutionPage = ({ pageInfo, products }: SolutionPageProps): JSX.Element =>
   })) as CategoryTileProps[];
 
   return (
-    <Layout
-      title={pageInfo.title}
-      description={pageInfo.description}
-      openGraphImage={pageInfo.openGraphImage}
-    >
-      <div className="py-16 bg-theme-bg-alt">
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <div className="bg-theme-bg-alt py-16">
         <Container>
           <CategoryTileList cards={categoryCards} />
         </Container>

@@ -1,12 +1,10 @@
-import Product from '@/../../packages/sc-changelog/types/product';
-import { getChangelogEntryUrl } from '@/src/common/changelog';
 import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Product } from 'sc-changelog/types';
 import { ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
+import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 import useSWR, { Fetcher } from 'swr';
-
-// Record<string, ChangelogEntrySummary[]>
 
 type ChangelogByMonthProps = {
   className?: string;
@@ -23,7 +21,7 @@ const ChangelogByMonth = ({ className, product }: ChangelogByMonthProps): JSX.El
     query.push(`product=${product.id}`);
   }
 
-  const { data, error, isLoading } = useSWR<Record<string, ChangelogEntrySummary[]> | null>(`/api/changelog/all?${query.join('&')}`, fetcher);
+  const { data, error, isLoading } = useSWR<Record<string, ChangelogEntrySummary[]> | null>(`/api/changelog/v1/all?${query.join('&')}`, fetcher);
 
   if (error) {
     console.log(error);
@@ -42,10 +40,10 @@ const ChangelogByMonth = ({ className, product }: ChangelogByMonthProps): JSX.El
               <div className={`text-sm`}>
                 <div className="absolute h-5 w-5">
                   <div className="dark:hidden">
-                    <Image src={item.lightIcon} alt={item.productName} className="relative h-5 w-5" width={20} height={20} priority={true} />
+                    <Image src={item.lightIcon} alt={item.productName ?? item.title} className="relative h-5 w-5" width={20} height={20} priority={true} />
                   </div>
                   <div className="hidden dark:block">
-                    <Image src={item.darkIcon} alt={item.productName} className="relative h-5 w-5" width={20} height={20} priority={true} />
+                    <Image src={item.darkIcon} alt={item.productName ?? item.title} className="relative h-5 w-5" width={20} height={20} priority={true} />
                   </div>
                 </div>
                 <div className="ml-6">

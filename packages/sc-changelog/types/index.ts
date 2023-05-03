@@ -19,6 +19,6 @@ export enum ProductName {
 
 export * from './changeType';
 export * from './common/media';
-export * from './releaseNotes';
+export * from './product';
 export * from './sitecoreCloud';
 export * from './sitecoreProduct';

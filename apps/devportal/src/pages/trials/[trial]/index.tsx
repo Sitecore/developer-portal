@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo(`trials/${context?.params?.trial}`);
+  const pageInfo = await getPageInfo(`trials/${context?.params?.trial}`, context.preview ? context.preview : null);
   const partials = pageInfo?.partials ? await getPartialsAsArray(pageInfo.partials) : [];
 
   return {
@@ -27,12 +27,6 @@ export async function getStaticProps(context: any) {
   };
 }
 
-const TrialPage = ({
-  pageInfo,
-  partials,
-}: {
-  pageInfo: PageInfo;
-  partials: PartialData;
-}): JSX.Element => <GenericContentPage pageInfo={pageInfo} partials={partials} />;
+const TrialPage = ({ pageInfo, partials }: { pageInfo: PageInfo; partials: PartialData }): JSX.Element => <GenericContentPage pageInfo={pageInfo} partials={partials} />;
 
 export default TrialPage;

@@ -1,19 +1,16 @@
 // Interfaces
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { GetProducts } from 'sc-changelog/changelog';
-import Product from 'sc-changelog/types/product';
-
-const getQueryValue = (query: string | string[] | undefined): string => {
-  if (query == undefined) return '';
-
-  return Array.isArray(query) ? query[0] : query;
-};
+import GetProducts from 'sc-changelog/products';
+import { Product } from 'sc-changelog/types';
+import { getQueryValue } from 'sc-changelog/utils/requests';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Product[]>) => {
   const showAll: boolean = getQueryValue(req.query.all) == 'false' ? false : true;
-  res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate');
+  const isPreview = req.preview ? true : false;
 
-  await GetProducts().then((response: Product[]) => {
+  res.setHeader('Cache-Control', 'stale-while-revalidate');
+
+  await GetProducts(isPreview).then((response: Product[]) => {
     if (showAll) {
       res.status(200).json(response);
     } else {

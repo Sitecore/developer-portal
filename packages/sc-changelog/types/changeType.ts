@@ -1,12 +1,11 @@
 import { slugify } from '../utils/stringUtils';
 
-type ChangeType = {
+export type ChangeType = {
   id: string;
   name: string;
   changeType: string;
   type: string;
 };
-export default ChangeType;
 
 export type ChangeTypeResults = {
   total: string;
