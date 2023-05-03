@@ -46,7 +46,7 @@ export async function getServerSideProps(context: any) {
 
 const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) => {
   return (
-    <Layout title={`Release Notes ${currentProduct.name}`} description="Empty">
+    <Layout title={`${currentProduct.name} Changelog`} description="Empty">
       <Hero title={`${currentProduct.name} Changelog`} description={`Learn more about new versions, changes and improvements we made to ${currentProduct.name}`}>
         <div className="absolute flex h-8 flex-row dark:hidden">
           <span className="mr-1 text-xs">Powered by</span>
