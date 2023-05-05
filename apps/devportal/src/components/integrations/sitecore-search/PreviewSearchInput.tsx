@@ -35,7 +35,7 @@ const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolea
               onClick={(e) => {
                 e.preventDefault();
                 onItemClick({ id: article.id || '', index: index });
-                // add redirection or any action
+                window.open(article.url, '_blank');
               }}
             >
               <ArticleCard.Root className="bg-theme-bg grid grid-cols-4 items-center">
