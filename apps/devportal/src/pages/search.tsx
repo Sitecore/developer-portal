@@ -12,7 +12,7 @@ interface SearchPageProps {
   pageInfo: PageInfo;
 }
 
-export async function getStaticProps(context: any) {
+export async function getServerSideProps(context: any) {
   const pageInfo = await getPageInfo('search', context.preview ? context.preview : null);
 
   return {
