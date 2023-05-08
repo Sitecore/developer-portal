@@ -314,19 +314,19 @@ module.exports = {
               // This nastiness is required because Tailwind Typography stinks.
               // OR because it's being trumped in the cascade by the prose
               // classes even though tbody td is not. Makes no sense.
-              tr: {
-                th: {
-                  ['padding-left']: '1.25em',
-                  ['padding-right']: '1.25em',
-                },
-              },
+              //tr: {
+              //  th: {
+              //    //['padding-left']: '1.25em',
+              //    //['padding-right']: '1.25em',
+              //  },
+              //},
               color: 'inherit',
             },
-            tbody: {
-              td: {
-                padding: '1.25em',
-              },
-            },
+            //tbody: {
+            //  td: {
+            //    padding: '1.25em',
+            //  },
+            //},
           },
         },
       }),
