@@ -1,4 +1,3 @@
-import { JSONContent } from '@tiptap/core';
 import { ChangeTypeResults } from './changeType';
 import { MediaResults } from './common/media';
 import { SitecoreProductResults } from './sitecoreProduct';
@@ -14,8 +13,8 @@ export type ChangelogBase = {
 export type Changelog = ChangelogBase & {
   name: string;
   readMoreLink: string;
-  description: JSONContent;
-  fullArticle?: JSONContent;
+  description: string;
+  fullArticle?: string;
   breakingChange: boolean;
   version: string;
   image: MediaResults;

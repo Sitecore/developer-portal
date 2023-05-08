@@ -17,6 +17,10 @@ import { ListItem, ListItemOptions } from '@tiptap/extension-list-item';
 import { OrderedList, OrderedListOptions } from '@tiptap/extension-ordered-list';
 import { Paragraph, ParagraphOptions } from '@tiptap/extension-paragraph';
 import { Strike, StrikeOptions } from '@tiptap/extension-strike';
+import { Table, TableOptions } from '@tiptap/extension-table';
+import { TableCell, TableCellOptions } from '@tiptap/extension-table-cell';
+import { TableHeader, TableHeaderOptions } from '@tiptap/extension-table-header';
+import { TableRow, TableRowOptions } from '@tiptap/extension-table-row';
 import { Text } from '@tiptap/extension-text';
 import { Underline, UnderlineOptions } from '@tiptap/extension-underline';
 
@@ -41,6 +45,10 @@ export interface richTextOptions {
   link: Partial<LinkOptions> | false;
   text: false;
   underline: Partial<UnderlineOptions> | false;
+  table: Partial<TableOptions> | false;
+  tableCell: Partial<TableCellOptions> | false;
+  tableHeader: Partial<TableHeaderOptions> | false;
+  tableRow: Partial<TableRowOptions> | false;
 }
 
 export const richTextProfile = Extension.create<richTextOptions>({
@@ -126,6 +134,18 @@ export const richTextProfile = Extension.create<richTextOptions>({
     }
     if (this.options.underline !== false) {
       extensions.push(Underline.configure(this.options?.underline));
+    }
+    if (this.options.table != false) {
+      extensions.push(Table.configure(this.options?.table));
+    }
+    if (this.options.tableCell != false) {
+      extensions.push(TableCell.configure(this.options?.tableCell));
+    }
+    if (this.options.tableHeader != false) {
+      extensions.push(TableHeader.configure(this.options?.tableHeader));
+    }
+    if (this.options.tableRow != false) {
+      extensions.push(TableRow.configure(this.options?.tableRow));
     }
 
     return extensions;
