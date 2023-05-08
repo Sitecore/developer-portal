@@ -1,8 +1,8 @@
 ﻿id: IlD_QfxBCUq8p9tKrIAEaQ
-name: 'Content Hub ONE: Performant login'
+name: 'Content Hub ONE: Faster login times'
 fields:
   title:
-    value: Performant login
+    value: Faster login times
     type: ShortText
   description:
     value: >-
@@ -14,16 +14,16 @@ fields:
             "content": [
               {
                 "type": "text",
-                "text": "Improving the performance of our application is a continuous effort, we noticed the user login was taking slightly longer than we wanted - so we made that faster!"
+                "text": "We're always working to improve the performance of our application. We've recently made the user login process faster, so you can get to work more quickly."
               }
             ]
           }
         ]
       }
     type: RichText
-  version:
+  fullArticle:
     value: 
-    type: ShortText
+    type: RichText
   releaseDate:
     value: 2023-01-26T00:00:00.0000000+01:00
     type: DateTime
@@ -31,27 +31,22 @@ fields:
     value: false
     type: Boolean
   readMoreLink:
-    value: 
+    value: ''
+    type: ShortText
+  version:
+    value: ''
     type: ShortText
   changeType:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "jNZQWrssyEaU7gwlIYpJnQ",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/jNZQWrssyEaU7gwlIYpJnQ"
-      }
+    - type: Link
+      relatedType: Content
+      id: jNZQWrssyEaU7gwlIYpJnQ
     type: Reference
   sitecoreProduct:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "n47NXxNFxUqPttUxoFaRyA",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/n47NXxNFxUqPttUxoFaRyA"
-      }
+    - type: Link
+      relatedType: Content
+      id: n47NXxNFxUqPttUxoFaRyA
     type: Reference
   image:
     value: []

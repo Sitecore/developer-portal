@@ -39,3 +39,17 @@ fields:
   required: false
   helpText:
     en-US: ''
+- id: productIconLight
+  name:
+    en-US: Product icon light
+  type: ShortText
+  required: false
+  helpText:
+    en-US: Image URL to the light product icon
+- id: productIconDark
+  name:
+    en-US: Product icon dark
+  type: ShortText
+  required: false
+  helpText:
+    en-US: Image URL to the dark product icon

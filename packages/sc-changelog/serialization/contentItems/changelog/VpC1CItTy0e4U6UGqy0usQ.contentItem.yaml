@@ -1,8 +1,8 @@
 ﻿id: VpC1CItTy0e4U6UGqy0usQ
-name: 'Content Hub ONE: Content deletion flow'
+name: 'Content Hub ONE: Streamlined content deletion'
 fields:
   title:
-    value: Content deletion flow
+    value: Streamlined content deletion
     type: ShortText
   description:
     value: >-
@@ -14,19 +14,16 @@ fields:
             "content": [
               {
                 "type": "text",
-                "text": "Deleting content items only from list views but not from the detail pages was as frustrating for us as it was for you, so we fixed this! You can now delete your content items from any of these pages unless the item has been or is about to be published."
-              },
-              {
-                "type": "hardBreak"
+                "text": "Deleting content items is now easier and more intuitive than ever. You can delete your items from any page, except when they've been published or while publishing is in progress."
               }
             ]
           }
         ]
       }
     type: RichText
-  version:
+  fullArticle:
     value: 
-    type: ShortText
+    type: RichText
   releaseDate:
     value: 2023-01-26T00:00:00.0000000+01:00
     type: DateTime
@@ -34,35 +31,26 @@ fields:
     value: false
     type: Boolean
   readMoreLink:
-    value: 
+    value: ''
+    type: ShortText
+  version:
+    value: ''
     type: ShortText
   changeType:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "UKvjuaa7QEC3ipciF1O_ag",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/UKvjuaa7QEC3ipciF1O_ag"
-      }
+    - type: Link
+      relatedType: Content
+      id: UKvjuaa7QEC3ipciF1O_ag
     type: Reference
   sitecoreProduct:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "n47NXxNFxUqPttUxoFaRyA",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/n47NXxNFxUqPttUxoFaRyA"
-      }
+    - type: Link
+      relatedType: Content
+      id: n47NXxNFxUqPttUxoFaRyA
     type: Reference
   image:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Media",
-        "id": "t6I-HwqRPk239_wnI6bGVA",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/media/t6I-HwqRPk239_wnI6bGVA"
-      }
+    - type: Link
+      relatedType: Media
+      id: Cb5luruPZki433p6vLPd6Q
     type: Media

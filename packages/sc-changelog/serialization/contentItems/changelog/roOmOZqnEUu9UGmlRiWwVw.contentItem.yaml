@@ -1,8 +1,8 @@
 ﻿id: roOmOZqnEUu9UGmlRiWwVw
-name: 'Content Hub ONE: Find the relevant content'
+name: 'Content Hub ONE: More relevant search results'
 fields:
   title:
-    value: Find the relevant content
+    value: More relevant search results
     type: ShortText
   description:
     value: >-
@@ -14,16 +14,16 @@ fields:
             "content": [
               {
                 "type": "text",
-                "text": "On top of the existing sorting options, the content search results are now sorted by relevance as default, so you can find what you're looking for even quicker."
+                "text": "We've improved the sorting options for search results to show the most relevant content first, so you can find what you're looking for quickly."
               }
             ]
           }
         ]
       }
     type: RichText
-  version:
+  fullArticle:
     value: 
-    type: ShortText
+    type: RichText
   releaseDate:
     value: 2023-01-26T00:00:00.0000000+01:00
     type: DateTime
@@ -31,27 +31,22 @@ fields:
     value: 
     type: Boolean
   readMoreLink:
-    value: 
+    value: ''
+    type: ShortText
+  version:
+    value: ''
     type: ShortText
   changeType:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "UKvjuaa7QEC3ipciF1O_ag",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/UKvjuaa7QEC3ipciF1O_ag"
-      }
+    - type: Link
+      relatedType: Content
+      id: UKvjuaa7QEC3ipciF1O_ag
     type: Reference
   sitecoreProduct:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "n47NXxNFxUqPttUxoFaRyA",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/n47NXxNFxUqPttUxoFaRyA"
-      }
+    - type: Link
+      relatedType: Content
+      id: n47NXxNFxUqPttUxoFaRyA
     type: Reference
   image:
     value: []
