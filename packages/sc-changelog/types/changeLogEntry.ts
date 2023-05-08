@@ -83,7 +83,7 @@ export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     readMoreLink: changelog.readMoreLink,
     title: changelog.title,
     description: generateHTML(changelog.description, [richTextProfile]),
-    fullArticle: changelog.fullArticle != null && changelog.fullArticle?.length > 2 ? generateHTML(changelog.fullArticle, [richTextProfile]) : null,
+    fullArticle: changelog.fullArticle != null ? generateHTML(changelog.fullArticle, [richTextProfile]) : null,
     breakingChange: changelog.breakingChange,
     sitecoreProduct: changelog.sitecoreProduct.results,
     changeType: changelog.changeType.results,
