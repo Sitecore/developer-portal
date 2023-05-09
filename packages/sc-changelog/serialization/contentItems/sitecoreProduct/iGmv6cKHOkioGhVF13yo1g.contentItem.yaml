@@ -5,20 +5,16 @@ fields:
     value: Sitecore Experience Platform (XP)
     type: ShortText
   abbreviation:
-    value: 
+    value: ''
     type: ShortText
   productDescription:
-    value: 
+    value: ''
     type: LongText
   sitecoreCloud:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "hcuZ-s8vmESlKhMpV4wWxw",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/hcuZ-s8vmESlKhMpV4wWxw"
-      }
+    - type: Link
+      relatedType: Content
+      id: hcuZ-s8vmESlKhMpV4wWxw
     type: Reference
   productIcon:
     value: []

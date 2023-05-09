@@ -1,24 +1,26 @@
 ﻿id: L24AbSEPSUKkDQTpPT7uoA
-name: Sitecore Discover
+name: Discover
 fields:
   productName:
-    value: Sitecore Discover
+    value: Discover
     type: ShortText
   abbreviation:
-    value: 
+    value: ''
     type: ShortText
   productDescription:
-    value: 
+    value: ''
     type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/1a0d50b5bd574889894c1d94fa1c3082
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/2ab14450250a4be0b2b7c522dd3e7f32
+    type: ShortText
   sitecoreCloud:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "FHuuD0YZL0-vj0mNNax1cQ",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/FHuuD0YZL0-vj0mNNax1cQ"
-      }
+    - type: Link
+      relatedType: Content
+      id: FHuuD0YZL0-vj0mNNax1cQ
     type: Reference
   productIcon:
     value: []

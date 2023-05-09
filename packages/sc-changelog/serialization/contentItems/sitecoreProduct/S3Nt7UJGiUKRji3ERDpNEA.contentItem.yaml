@@ -1,24 +1,26 @@
 ﻿id: S3Nt7UJGiUKRji3ERDpNEA
-name: Sitecore CDP
+name: CDP
 fields:
   productName:
-    value: Sitecore CDP
+    value: CDP
     type: ShortText
   abbreviation:
-    value: 
+    value: ''
     type: ShortText
   productDescription:
-    value: 
+    value: ''
     type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/fed1a6b9ca264da892313e5e996ac107
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/b2cc3c5270c2464ebc922d4b4b788c55
+    type: ShortText
   sitecoreCloud:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "dNxyawiMdU2XMzT1UiI7sw",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/dNxyawiMdU2XMzT1UiI7sw"
-      }
+    - type: Link
+      relatedType: Content
+      id: dNxyawiMdU2XMzT1UiI7sw
     type: Reference
   productIcon:
     value: []
