@@ -28,8 +28,8 @@ const ContentPager = ({ paging, context, root }: ContentPagerProps): JSX.Element
       </div>
       {paging.next && (
         <div className="col-span-2 col-end-7 text-right">
-          <Link href={buildUrl(context.article, paging.next?.path)}>
-            <button type="button" className="btn-paging text-right">
+          <Link href={buildUrl(context.article, paging.next?.path)} className="text-right">
+            <button type="button" className="btn-paging inline text-right">
               <div className="flex flex-row align-middle">
                 <span className="mr-1">{paging.next?.title}</span>
                 <svg className="ml-2 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
