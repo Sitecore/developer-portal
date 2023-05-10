@@ -4,8 +4,8 @@ export type Media = {
   fileName: string;
   fileUrl: string;
   description: string;
-  fileWidth: string;
-  fileHeight: string;
+  fileWidth: number;
+  fileHeight: number;
   fileId: string;
   fileSize: string;
   fileType: string;
