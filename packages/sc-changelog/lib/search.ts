@@ -82,7 +82,7 @@ function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?
 
   whereClause += buildSearchTermClause(searchTerm);
 
-  //whereClause += `AND: { releaseDate_lt: ${new Date().toISOString()} }`;
+  whereClause += `AND: { releaseDate_lt: ${new Date().toISOString()} }`;
 
   whereClause += closeWHERE;
   return whereClause;
