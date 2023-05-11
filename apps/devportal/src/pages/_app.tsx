@@ -14,7 +14,7 @@ import Nav from 'ui/layouts/components/header/Nav';
 import '@/src/styles/global.css';
 import React from 'react';
 // Fonts
-import { Environment, PageController, WidgetsProvider } from '@sitecore-search/react';
+import { Environment, PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
 import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
 import PreviewNotification from '../components/common/PreviewNotification';
@@ -27,6 +27,9 @@ const SEARCH_CONFIG = {
 };
 
 function SCDPApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const isPreview: boolean = router.isPreview;
+
   // useEffect for basic page views tracking via router/gtag.
   useEffect(() => {
     const tagManagerArgs = {
@@ -36,10 +39,8 @@ function SCDPApp({ Component, pageProps }: AppProps) {
     };
     TagManager.initialize(tagManagerArgs);
     PageController.getContext().setLocale({ country: 'us', language: 'en' });
-  }, []);
-
-  const router = useRouter();
-  const isPreview: boolean = router.isPreview;
+    trackEntityPageViewEvent('content');
+  }, [router.pathname]);
 
   return (
     <WidgetsProvider {...SEARCH_CONFIG}>
