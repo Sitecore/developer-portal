@@ -1,6 +1,6 @@
 ﻿id: jNZQWrssyEaU7gwlIYpJnQ
-name: Bugfix
+name: Resolved
 fields:
   changeType:
-    value: Bugfix
+    value: Resolved
     type: ShortText

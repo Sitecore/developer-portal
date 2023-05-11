@@ -4,7 +4,7 @@
   }
   .btn-secondary {
     /*@apply flex items-center px-2 py-1 mt-4 mr-0 text-xs text-gray-500 rounded-full hover:bg-primary-500 hover:text-white dark:text-teal-500 dark:hover:bg-teal-500 dark:hover:text-white;*/
-    @apply btn-primary-500 hover:border-theme-border text-theme-text-alt hover:bg-theme-bg bg-theme-bg mr-3 flex items-center border border-white px-4 py-2 text-xs font-medium transition-all hover:border hover:text-gray-300 focus:z-10 focus:outline-none focus:ring-2 dark:hover:text-gray-500 dark:focus:ring-gray-500;
+    @apply text-primary-500 hover:border-theme-border text-theme-text-alt hover:bg-theme-bg bg-theme-bg mr-3 flex items-center border border-white px-4 py-2 text-xs font-medium transition-all hover:border hover:text-gray-300 focus:z-10 focus:outline-none focus:ring-2 dark:hover:text-gray-500 dark:focus:ring-gray-500;
   }
   .btn-secondary-invert {
     @apply bg-blackAlpha-800 hover:bg-blackAlpha-400 mr-0 mt-4 flex transform-gpu items-center rounded-lg px-2 py-2 text-xs text-white transition-colors dark:hover:bg-teal-500 dark:hover:text-white;
@@ -19,11 +19,8 @@
   .play-button-arrow {
     @apply relative top-1 text-white dark:text-white;
   }
-  .btn-paging-previous {
-    @apply text-primary-500 dark:border-theme-bg hover:bg-primary-500 rounded-l-md border-r border-white px-3 py-2 hover:text-white dark:text-teal-500;
-  }
-  .btn-paging-next {
-    @apply text-primary-500 dark:border-theme-bg hover:bg-primary-700 rounded-r-md border-l border-white px-3 py-2 hover:text-white dark:text-teal-500;
+  .btn-paging {
+    @apply hover:border-theme-border text-theme-text-alt hover:bg-theme-bg bg-theme-bg dark:border-theme-bg dark:hover:border-theme-border mr-3 flex items-center rounded-xl border border-white px-4 py-2 text-xs font-medium transition-all hover:border focus:z-10 focus:outline-none focus:ring-2 dark:hover:text-gray-100 dark:focus:ring-gray-500;
   }
   .btn-text-link {
     @apply inline-flex items-center text-sm font-bold no-underline hover:underline focus:underline;

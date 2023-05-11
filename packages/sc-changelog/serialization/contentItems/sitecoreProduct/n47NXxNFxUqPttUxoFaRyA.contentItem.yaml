@@ -5,20 +5,22 @@ fields:
     value: Content Hub ONE
     type: ShortText
   abbreviation:
-    value: 
+    value: ''
     type: ShortText
   productDescription:
-    value: 
+    value: ''
     type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/ad13eb9aaebc4d24a3921fff59051fb7
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/53e9b6a015764428894ab9817542b082
+    type: ShortText
   sitecoreCloud:
     value:
-    - >-
-      {
-        "type": "Link",
-        "relatedType": "Content",
-        "id": "C0s2noNU9U6e6gtCCwcGwg",
-        "uri": "http://content-api-weu.sitecorecloud.io/api/content/v1/items/C0s2noNU9U6e6gtCCwcGwg"
-      }
+    - type: Link
+      relatedType: Content
+      id: C0s2noNU9U6e6gtCCwcGwg
     type: Reference
   productIcon:
     value: []

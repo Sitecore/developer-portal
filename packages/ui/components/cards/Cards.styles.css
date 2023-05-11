@@ -5,7 +5,7 @@
   .article {
     @apply card flex-col p-4;
   }
-  .link {
+  .text-link {
     @apply card not-prose dark:font-regular p-4 text-center dark:bg-teal-500 dark:text-white;
   }
   .article h4 {

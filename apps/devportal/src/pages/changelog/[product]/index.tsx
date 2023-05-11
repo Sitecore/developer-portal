@@ -47,7 +47,7 @@ export async function getStaticProps(context: any) {
 const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
   const router = useRouter();
   return (
-    <Layout title="Release Notes - Home" description="Empty">
+    <Layout title="Changelog - Home" description="Empty">
       <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
         <div className="absolute flex h-8 flex-row dark:hidden">
           <span className="mr-1 text-xs">Powered by</span>

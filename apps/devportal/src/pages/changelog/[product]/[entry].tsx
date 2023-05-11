@@ -2,6 +2,7 @@ import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@/src/components/changelog/ChangelogItemMeta';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { ChangelogEntryByTitle } from 'sc-changelog/changelog';
 import GetProducts from 'sc-changelog/products';
 import { Product } from 'sc-changelog/types';
@@ -45,8 +46,10 @@ export async function getServerSideProps(context: any) {
 }
 
 const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <Layout title={`Release Notes ${currentProduct.name}`} description="Empty">
+    <Layout title={`${currentProduct.name} Changelog`} description="Empty">
       <Hero title={`${currentProduct.name} Changelog`} description={`Learn more about new versions, changes and improvements we made to ${currentProduct.name}`}>
         <div className="absolute flex h-8 flex-row dark:hidden">
           <span className="mr-1 text-xs">Powered by</span>
@@ -97,9 +100,29 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
               <h2 className={`heading-sm font-bolder`}>{changelogEntry.title}</h2>
               <ChangelogItemMeta item={changelogEntry} />
               {changelogEntry.image.length > 0 && (
-                <div className={`'w-12' my-4 `}>
-                  <Image src={`${changelogEntry.image[0].fileUrl}?transform=true&width=620&fit=cover&gravity=auto`} alt={changelogEntry.title || ''} className={`relative z-10 rounded-lg`} width={620} height={100} />
-                </div>
+                <>
+                  <div className="mb-4">
+                    <Image
+                      src={`${changelogEntry.image[0].fileUrl}?transform=true&width=670&fit=cover&gravity=auto`}
+                      alt={changelogEntry.title || ''}
+                      priority
+                      className="cursor-pointer rounded-lg"
+                      width={670}
+                      height={100}
+                      onClick={() => setShowModal(true)}
+                    />
+                  </div>
+
+                  {showModal ? (
+                    <div className="fixed inset-0 z-50 overflow-y-auto ">
+                      <div className="fixed inset-0 h-full w-full cursor-pointer backdrop-blur-sm " onClick={() => setShowModal(false)}>
+                        <div className="flex h-screen items-center justify-center drop-shadow-xl ">
+                          <Image src={`${changelogEntry.image[0].fileUrl}`} alt={changelogEntry.title || ''} width={changelogEntry.image[0].fileWidth} height={changelogEntry.image[0].fileHeight} className="rounded-lg" />
+                        </div>
+                      </div>
+                    </div>
+                  ) : null}
+                </>
               )}
 
               <div className={`prose dark:prose-invert my-3 max-w-none text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />

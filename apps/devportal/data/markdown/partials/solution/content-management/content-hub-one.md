@@ -32,7 +32,7 @@ Content Hub ONE consists of:
 
 The examples provide a basic example of connecting with the Content Hub ONE GraphQL API using various frameworks.
 <Row columns={3}>
-<Repository framework="Nextjs" description="Starter kit using Content Hub ONE and Next.js" repositoryUrl="https://github.com/Sitecore/contenthubone-examples/tree/main/hello-world-nextjs" />
+<Repository framework="Nextjs" description="Starter kit using Content Hub ONE and Next.js" repositoryUrl="https://github.com/Sitecore/content-hub-one-nextjs-starterkit" />
 <Repository framework="Nextjs" description="Example implementation of Content Hub ONE and Next.js" repositoryUrl="https://github.com/Sitecore/contenthubone-examples/tree/main/hello-world-nextjs" />
 <Repository framework="vue" description="Example implementation of Content Hub ONE and Vue.js" repositoryUrl="https://github.com/Sitecore/contenthubone-examples/tree/main/hello-world-vue" />
 <Repository framework="astro" description="Example implementation of Content Hub ONE and Astro" repositoryUrl="https://github.com/Sitecore/contenthubone-examples/tree/main/hello-world-astro" />
