@@ -20,7 +20,7 @@ type ArticleModel = {
   site_name: string;
 };
 
-const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick']; suggestionsReturned: boolean}) => (
+const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick']; suggestionsReturned?: boolean}) => (
   <NavMenu.Content className={'bg-theme-bg text-theme-text border-theme-border absolute right-0 top-0 inline-block overflow-y-auto border-b border-r ' + (suggestionsReturned ? ' w-4/5 h-full' : ' w-5/5')}>
     <Presence present={loading}>
       <Loader />
@@ -99,7 +99,7 @@ const Group = ({
             {text}
           </NavMenu.Trigger>
           <PreviewSearchSuggestionQuery<ArticleModel> active={activeItem === getGroupId(groupId, text)} value={text} filterAttribute={filterAttribute}>
-            {({ queryResult: { isFetching, data: { content: articles = [] } = {} } }) => <Articles loading={isFetching} articles={articles} onItemClick={onItemClick} />}
+            {({ queryResult: { isFetching, data: { content: articles = [] } = {} } }) => <Articles loading={isFetching} articles={articles} onItemClick={onItemClick} suggestionsReturned={true} />}
           </PreviewSearchSuggestionQuery>
         </NavMenu.Item>
       ))}
