@@ -21,9 +21,9 @@ export const ChangelogItemMeta = ({ item, loading }: ChangelogItemMetaProps) => 
         ) : (
           <React.Fragment>
             <Link href={`/changelog/${getSlug(item.productName)}`} className="">
-              <div className={` text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''}`}>
-                <div className="absolute h-5 w-5 dark:hidden">
-                  <Image src={item.lightIcon} alt={item.productName} className={`${loading ? 'hidden' : ''}`} width={20} height={20} priority={true} />
+              <div className={` text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''} hover:underline`}>
+                <div className="absolute h-5 w-5 dark:hidden ">
+                  <Image src={item.lightIcon} alt={item.productName} className={`${loading ? 'hidden' : ''} `} width={20} height={20} priority={true} />
                 </div>
                 <div className="absolute hidden h-5 w-5 dark:block">
                   <Image src={item.darkIcon} alt={item.productName} className={`${loading ? 'hidden' : ''}`} width={20} height={20} priority={true} />
