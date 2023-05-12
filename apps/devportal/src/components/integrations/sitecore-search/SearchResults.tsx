@@ -40,7 +40,11 @@ export const SearchResults = (props: SearchResultsType) => {
 
   return (
     <>
-      {isLoading && <Loader />}
+      {isLoading && (
+        <div className="pt-10">
+          <Loader />
+        </div>
+      )}
       {!isLoading && (
         <div className="mt-6 grid gap-6 md:grid-cols-3">
           <div className="md:col-span-1">
