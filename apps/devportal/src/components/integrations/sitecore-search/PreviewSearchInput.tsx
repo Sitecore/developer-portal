@@ -20,8 +20,8 @@ type ArticleModel = {
   site_name: string;
 };
 
-const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick'] }) => (
-  <NavMenu.Content className="bg-theme-bg text-theme-text border-theme-border absolute right-0 top-0 inline-block h-full w-4/5 overflow-y-auto border-b border-r">
+const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick']; suggestionsReturned: boolean}) => (
+  <NavMenu.Content className={'bg-theme-bg text-theme-text border-theme-border absolute right-0 top-0 inline-block overflow-y-auto border-b border-r ' + (suggestionsReturned ? ' w-4/5 h-full' : ' w-5/5')}>
     <Presence present={loading}>
       <Loader />
     </Presence>
@@ -122,7 +122,6 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
         content: articles = [],
         suggestion: {
           name_suggester: articleSuggestions = [],
-          // content_trending_category: trendingCategorySuggestions = [],
         } = {},
       } = {},
     },
@@ -130,7 +129,6 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
     return {
       suggestionsList: [
         { suggestion: 'name_suggester', max: 10 },
-        // { suggestion: 'content_trending_category', max: 10 },
       ],
       itemsPerPage: defaultProductsPerPage,
     };
@@ -208,7 +206,7 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
                   {articleSuggestions.length > 0 && <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} activeItem={activeItem} onActiveItem={setActiveItem} />}
                   <NavMenu.Item value="defaultArticlesResults" key="defaultArticlesResults" className="b-0  bg-none">
                     <NavMenu.Trigger aria-hidden className="hidden" />
-                    <Articles articles={articles} onItemClick={onItemClick} />
+                    <Articles articles={articles} onItemClick={onItemClick} suggestionsReturned={articleSuggestions.length > 0} />
                   </NavMenu.Item>
                 </NavMenu.List>
               </NavMenu.SubContent>
