@@ -110,8 +110,10 @@ const Group = ({
 const getGroupId = (name: string, value: string) => `${name}@${value}`;
 
 const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
+  const router = useRouter();
+  const { q } = router.query
   const {
-    context: { keyphrase = '' },
+    context: { keyphrase = q || '' },
     actions: { onItemClick, onKeyphraseChange },
     queryResult: {
       isFetching,
@@ -151,7 +153,6 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
     [onKeyphraseChange, keyphrase]
   );
 
-  const router = useRouter();
   const handleSubmit = (e: SyntheticEvent): void => {
     e.preventDefault();
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -179,7 +180,7 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
               <NavMenu.InputTrigger
                 className="bg-theme-bg text-theme-text border-theme-border rounded-smz-10 w-full border px-4 py-2 pl-12 text-sm"
                 name="query"
-                onKeyUp={keyphraseHandler}
+                onChange={keyphraseHandler}
                 placeholder="What are you looking for?"
                 onFocus={() => {
                   if (keyphrase.length > 0) {
@@ -187,6 +188,7 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
                   }
                 }}
                 autoComplete="off"
+                value={keyphrase}
               />
               <span className="absolute right-4 z-20 opacity-50">
                 <span className="text-sm"> Powered by </span>
