@@ -157,7 +157,7 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
     // @ts-ignore
     const target = e.target.query as HTMLInputElement;
     setValue('');
-    router.push('/search?q=' + target.value).then(() => router.reload());
+    router.push('/search?q=' + encodeURIComponent(target.value)).then(() => router.reload());
   };
 
   return (
