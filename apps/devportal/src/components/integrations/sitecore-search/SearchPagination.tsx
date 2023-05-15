@@ -16,7 +16,7 @@ enum PaginationRenderType {
 
 export const SearchResults = (props: SearchPaginationType) => {
   const { page, defaultCurrentPage, onPageNumberChange, totalItems, pageSize } = props;
-  const pageCount = Math.floor(totalItems / pageSize);
+  const pageCount = totalItems < pageSize ? 1 : Math.ceil(totalItems / pageSize);
   let pages = Array.from(Array(pageCount).keys()).map((x) => x + 1);
   const paginationRenderType: PaginationRenderType = pageCount < 10 ? PaginationRenderType.AllPages : page <= 5 || page > pageCount - 5 ? PaginationRenderType.TruncateMiddle : PaginationRenderType.TruncateFirstLast;
 
