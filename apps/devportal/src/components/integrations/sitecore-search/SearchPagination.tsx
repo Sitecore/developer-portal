@@ -10,40 +10,43 @@ export interface SearchPaginationType {
 
 enum PaginationRenderType {
   AllPages,
-  TruncateMiddle,
-  TruncateFirstLast,
+  TruncatePages
 }
 
 export const SearchResults = (props: SearchPaginationType) => {
-  const { page, defaultCurrentPage, onPageNumberChange, totalItems, pageSize } = props;
+  const { defaultCurrentPage, onPageNumberChange, totalItems, pageSize } = props;
+  let { page } = props;
   const pageCount = totalItems < pageSize ? 1 : Math.ceil(totalItems / pageSize);
   let pages = Array.from(Array(pageCount).keys()).map((x) => x + 1);
-  const paginationRenderType: PaginationRenderType = pageCount < 10 ? PaginationRenderType.AllPages : page <= 5 || page > pageCount - 5 ? PaginationRenderType.TruncateMiddle : PaginationRenderType.TruncateFirstLast;
+  const paginationRenderType: PaginationRenderType = pageCount < 10 ? PaginationRenderType.AllPages : PaginationRenderType.TruncatePages;
 
-  if (paginationRenderType === PaginationRenderType.TruncateMiddle) {
-    pages.splice(5, pageCount - 10);
-  } else if (paginationRenderType === PaginationRenderType.TruncateFirstLast) {
-    pages = pages.slice(page - 5, page + 4);
+  if (paginationRenderType === PaginationRenderType.TruncatePages) {
+    pages = page >= 5 
+      ? pages.slice(page - 5, parseInt(page.toString()) + 4)
+      : pages.slice(0, 9);
+  } 
+
+  if(typeof(page) == 'string') {
+    page = parseInt(page);
   }
 
   const activePaginationClasses = 'bg-theme-text text-theme-bg';
 
   return (
     <Pagination.Root currentPage={page} defaultCurrentPage={defaultCurrentPage} totalPages={pageCount} onPageChange={onPageNumberChange} className="mt-8 flex items-center justify-center">
-      <Pagination.PrevPage className={`border-theme-border mx-2 border py-1 px-2 hover:underline ${page == 1 ? 'hidden' : ''}`}>«</Pagination.PrevPage>
-      {paginationRenderType == PaginationRenderType.TruncateFirstLast && <span className="ml-4 mr-4">...</span>}
+      <Pagination.PrevPage onClick={(e) => e.preventDefault()} className={`border-theme-border mx-2 border py-1 px-2 hover:underline ${page == 1 ? 'hidden' : ''}`}>«</Pagination.PrevPage>
+      {(paginationRenderType == PaginationRenderType.TruncatePages && page > 5) && <span className="ml-4 mr-4">...</span>}
       <Pagination.Pages>
-        {pages.map((p, index) => (
+        {pages.map((p) => (
           <>
             <Pagination.Page key={p} aria-label={`Page ${p}`} page={p} onClick={(e) => e.preventDefault()} className={`border-theme-border mx-2 border py-1 px-2 hover:underline ${p == page ? [activePaginationClasses] : ''}`}>
               {p}
             </Pagination.Page>
-            {paginationRenderType == PaginationRenderType.TruncateMiddle && index == 4 && <span className="ml-4 mr-4">...</span>}
           </>
         ))}
       </Pagination.Pages>
-      {paginationRenderType == PaginationRenderType.TruncateFirstLast && <span className="ml-4 mr-4">...</span>}
-      <Pagination.NextPage className={`border-theme-border mx-2 border py-1 px-2 hover:underline ${page == pageCount ? 'hidden' : ''}`}>»</Pagination.NextPage>
+      {(paginationRenderType == PaginationRenderType.TruncatePages && pageCount !== 1) && <span className="ml-4 mr-4">...</span>}
+      <Pagination.NextPage onClick={(e) => e.preventDefault()} className={`border-theme-border mx-2 border py-1 px-2 hover:underline ${page == pageCount ? 'hidden' : ''}`}>»</Pagination.NextPage>
     </Pagination.Root>
   );
 };
