@@ -87,7 +87,7 @@ export const SearchResults = (props: SearchResultsType) => {
                   ))}
                 </ul>
 
-                <SearchPagination defaultCurrentPage={1} onPageNumberChange={(v) => onPageNumberChange({ page: v })} page={page-1} pageSize={itemsPerPage} totalItems={totalItems} />
+                <SearchPagination defaultCurrentPage={1} onPageNumberChange={(v) => onPageNumberChange({ page: v })} page={page} pageSize={itemsPerPage} totalItems={totalItems} />
               </div>
             </>
           }
