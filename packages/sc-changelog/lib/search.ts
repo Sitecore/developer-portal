@@ -80,9 +80,11 @@ function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?
     whereClause += buildChangeTypeClause(changeTypeId);
   }
 
-  whereClause += buildSearchTermClause(searchTerm);
-
-  whereClause += `AND: { releaseDate_lt: ${new Date().toISOString()} }`;
+  if (searchTerm) {
+    whereClause += buildSearchTermClause(searchTerm);
+  } else {
+    whereClause += `AND: [{ releaseDate_lt: "${new Date().toISOString()}" }]`;
+  }
 
   whereClause += closeWHERE;
   return whereClause;
@@ -108,7 +110,7 @@ function buildSearchTermClause(searchTerm?: string): string {
       whereClauseSearchTerm += `{title_contains: "${term}"}`;
     });
   }
-  //whereClauseSearchTerm += `{ releaseDate_lt: "${new Date().toISOString()}" }`;
+  whereClauseSearchTerm += `{ releaseDate_lt: "${new Date().toISOString()}" }`;
 
   whereClauseSearchTerm += `]`;
   return whereClauseSearchTerm;

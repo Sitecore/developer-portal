@@ -1,11 +1,14 @@
 {
   "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
+    "jsx": "preserve",
     "module": "esnext",
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     },
     // "rootDirs": [],                              /* List of root folders whose combined content represents the structure of the project at runtime. */
     "typeRoots": [
@@ -15,6 +18,13 @@
     ] /* List of folders to include type definitions from. */,
     "moduleResolution": "node"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "types"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "types"
+  ]
 }
