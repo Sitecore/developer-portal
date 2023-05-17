@@ -12,7 +12,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
   const end = getQueryValue(req.query.end);
 
   await ChangelogEntriesPaginated(isPreview, limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
-    res.setHeader('Cache-Control', 'stale-while-revalidate');
     res.status(200).json(response);
   });
 };
