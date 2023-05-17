@@ -13,7 +13,7 @@ export async function Search(isPreview: boolean, productId?: string, changeTypeI
     { 
       data: allChangelog (
           orderBy: RELEASEDATE_DESC
-          ${buildParameters(productId, changeTypeId, searchTerm, pageSize, endCursor)}
+          ${buildParameters(productId, changeTypeId, searchTerm, pageSize, endCursor, isPreview)}
         ) {
           pageInfo {
             hasNext
@@ -31,18 +31,18 @@ export async function Search(isPreview: boolean, productId?: string, changeTypeI
   return response.data;
 }
 
-function buildParameters(productId?: string, changeTypeId?: string, searchTerm?: string, pageSize?: number, endCursor?: string): string {
+function buildParameters(productId?: string, changeTypeId?: string, searchTerm?: string, pageSize?: number, endCursor?: string, isPreview?: boolean): string {
   let parameters = ``;
 
   if (pageSize) parameters += `first: ${pageSize} \n`;
   if (endCursor) parameters += `after: "${endCursor}" \n`;
 
-  parameters += buildWhereClause(searchTerm, productId, changeTypeId);
-
+  parameters += buildWhereClause(searchTerm, productId, changeTypeId, isPreview);
   return parameters;
 }
 
-const openWHERE = 'where: {';
+const openWHERE = `where: { releaseDate_lt: "${new Date().toISOString()}" `;
+const openWHEREinPreview = `where: { `;
 const openAND = ' AND: [';
 const openCombinedANDOR = 'AND: { OR: [';
 const closeCombinedANDOR = ']}';
@@ -53,8 +53,9 @@ const closeWHERE = '}';
 /*
   Building the complex WHERE clause based on parameters
 */
-function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?: string) {
+function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?: string, isPreview?: boolean) {
   if (!searchTerm && !productId && !changeTypeId) {
+    if (isPreview) return '';
     return `where: { releaseDate_lt: "${new Date().toISOString()}" }`;
   }
 
@@ -64,7 +65,7 @@ function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?
   const cId = changeTypeId?.split('|');
   const multipleChangeTypes = cId != undefined && cId.length > 1;
 
-  let whereClause = openWHERE;
+  let whereClause = isPreview ? openWHEREinPreview : openWHERE;
 
   // Check product(s)
   if (multipleProducts) {
@@ -82,9 +83,11 @@ function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?
 
   if (searchTerm) {
     whereClause += buildSearchTermClause(searchTerm);
-  } else {
-    whereClause += `AND: [{ releaseDate_lt: "${new Date().toISOString()}" }]`;
   }
+
+  // else {
+  //whereClause += `{ releaseDate_lt: "${new Date().toISOString()}" }`;
+  //}
 
   whereClause += closeWHERE;
   return whereClause;
@@ -110,7 +113,7 @@ function buildSearchTermClause(searchTerm?: string): string {
       whereClauseSearchTerm += `{title_contains: "${term}"}`;
     });
   }
-  whereClauseSearchTerm += `{ releaseDate_lt: "${new Date().toISOString()}" }`;
+  //whereClauseSearchTerm += `{ releaseDate_lt: "${new Date().toISOString()}" }`;
 
   whereClauseSearchTerm += `]`;
   return whereClauseSearchTerm;
