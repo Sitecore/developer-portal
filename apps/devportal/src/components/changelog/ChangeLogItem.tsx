@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug } from 'sc-changelog/utils/stringUtils';
@@ -39,9 +40,9 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
   return (
     <div className="changelog-item bg-theme-bg mb-16 mt-8" ref={entryRef}>
       <h2 className={`heading-sm font-bolder hover:text-violet dark:hover:text-teal hover:underline ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} id={getSlug(item.title)}>
-        <a href={getChangelogEntryUrl(item)} title={item.title}>
+        <Link href={getChangelogEntryUrl(item)} title={item.title}>
           {item.title}
-        </a>
+        </Link>
       </h2>
 
       <ChangelogItemMeta item={item} loading={loading} />
