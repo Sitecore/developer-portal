@@ -14,7 +14,7 @@ import Nav from 'ui/layouts/components/header/Nav';
 import '@/src/styles/global.css';
 import React from 'react';
 // Fonts
-import { Environment, PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
+import { Environment, PageController, WidgetsProvider } from '@sitecore-search/react';
 import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
 import PreviewNotification from '../components/common/PreviewNotification';
@@ -38,8 +38,8 @@ function SCDPApp({ Component, pageProps }: AppProps) {
       preview: process.env.NEXT_PUBLIC_GTM_ENVIRONMENT as string,
     };
     TagManager.initialize(tagManagerArgs);
+    PageController.getContext().setLocaleLanguage('en');
     PageController.getContext().setLocale({ country: 'us', language: 'en' });
-    trackEntityPageViewEvent('content');
   }, [router.pathname]);
 
   return (

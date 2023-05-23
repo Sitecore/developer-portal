@@ -38,11 +38,9 @@ export const SearchResults = (props: SearchPaginationType) => {
       {(paginationRenderType == PaginationRenderType.TruncatePages && page > 5) && <span className="ml-4 mr-4">...</span>}
       <Pagination.Pages>
         {pages.map((p) => (
-          <>
-            <Pagination.Page key={p} aria-label={`Page ${p}`} page={p} onClick={(e) => e.preventDefault()} className={`border-theme-border mx-2 border py-1 px-2 hover:underline ${p == page ? [activePaginationClasses] : ''}`}>
-              {p}
-            </Pagination.Page>
-          </>
+          <Pagination.Page key={p} aria-label={`Page ${p}`} page={p} onClick={(e) => e.preventDefault()} className={`border-theme-border mx-2 border py-1 px-2 hover:underline ${p == page ? [activePaginationClasses] : ''}`}>
+            {p}
+          </Pagination.Page>
         ))}
       </Pagination.Pages>
       {(paginationRenderType == PaginationRenderType.TruncatePages && pageCount !== 1) && <span className="ml-4 mr-4">...</span>}
