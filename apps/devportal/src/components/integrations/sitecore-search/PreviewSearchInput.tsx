@@ -18,6 +18,9 @@ type ArticleModel = {
   index_name: string;
   description: string;
   site_name: string;
+  highlight: {
+    description: string;
+  }
 };
 
 const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick']; suggestionsReturned?: boolean}) => (
@@ -51,7 +54,8 @@ const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned 
                       {!article.image_url && <Image width={256} height={144} src="/images/social/social-card-default.jpeg" alt={article.index_name} className="object-scale-down" />}
                     </div>
                   )}
-                  {article.type != 'Video' && article.description && <p className="text-xs">{truncateString(article.description, 300, true)}</p>}
+                  {article.type != 'Video' && article?.highlight?.description && <p className="text-xs" dangerouslySetInnerHTML={{ __html: truncateString(article.highlight.description, 300, true) }} />}
+                  {article.type != 'Video' && !article.highlight && article.description && <p className="text-xs">{truncateString(article.description, 300, true)}</p>}
                 </div>
               </ArticleCard.Root>
             </NavMenu.Link>
@@ -111,6 +115,7 @@ const getGroupId = (name: string, value: string) => `${name}@${value}`;
 
 const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
   const router = useRouter();
+  const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { q } = router.query
   const {
     context: { keyphrase = q || '' },
@@ -125,7 +130,14 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
         } = {},
       } = {},
     },
-  } = usePreviewSearch<ArticleModel>(() => {
+  } = usePreviewSearch<ArticleModel>((query) => {
+    query.getRequest().setSearchQueryHighlight({
+      fields: ['description'],
+      fragment_size: 100,
+      pre_tag: '<strong>',
+      post_tag: '</strong>',
+    }).setSources(indexSources);
+    
     return {
       suggestionsList: [
         { suggestion: 'name_suggester', max: 10 },

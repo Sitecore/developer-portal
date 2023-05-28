@@ -1,4 +1,4 @@
-import { useSearchResults, widget, WidgetDataType } from '@sitecore-search/react';
+import { trackEntityPageViewEvent, useSearchResults, widget, WidgetDataType } from '@sitecore-search/react';
 import { WidgetComponentProps } from '@sitecore-search/react/types';
 import Image from 'next/image';
 import { ComponentType } from 'react';
@@ -17,9 +17,10 @@ export interface SearchResultsType extends WidgetComponentProps {
 }
 
 export const SearchResults = (props: SearchResultsType) => {
+  const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = 'suggested' } = props;
   const {
-    actions: { onSortChange, onFacetClick, onPageNumberChange },
+    actions: { onSortChange, onFacetClick, onPageNumberChange, onItemClick },
     context: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
     queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: articles = [], facet: facets = [] } = {} },
   } = useSearchResults((query) => {
@@ -28,7 +29,7 @@ export const SearchResults = (props: SearchResultsType) => {
       fragment_size: 100,
       pre_tag: '<strong>',
       post_tag: '</strong>',
-    });
+    }).setSources(indexSources);
 
     return {
       itemsPerPage: initialArticlesPerPage,
@@ -64,7 +65,12 @@ export const SearchResults = (props: SearchResultsType) => {
                 <ul className="border-theme-border mt-2 border-t">
                   {articles.length > 0 && articles.map((result, index) => (
                     <li key={index} className="mt-2 py-4">
-                      <a href={result.url} className="group">
+                      <a href={result.url} className="group" onClick={(e) => {
+                            e.preventDefault();
+                            onItemClick({ id: result.id || '', index });
+                            trackEntityPageViewEvent(result.id);
+                            window.open(result.url, '_blank');
+                          }}>
                         <div className="bg-theme-bg grid grid-cols-4 items-center md:flex-row">
                           <div className={`${result.type == 'Video' ? 'col-span-3' : 'col-span-4'} pr-2`}>
                             {result.type && <span className="bg-primary-500 text-2xs px-2.5 py-1 uppercase text-white dark:bg-teal-500">{result.type}</span>}
