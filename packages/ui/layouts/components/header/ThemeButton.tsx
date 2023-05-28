@@ -1,3 +1,4 @@
+import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 interface ThemeButtonProps {
@@ -5,22 +6,24 @@ interface ThemeButtonProps {
 }
 
 export const ThemeButton = (p: ThemeButtonProps) => {
-  const [darkMode, setDarkMode] = useState<boolean | undefined>(undefined);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const darkMode: boolean = theme == 'dark' ? true : false;
   const label = `${darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}`;
+
   useEffect(() => {
-    setDarkMode(document.documentElement.classList.contains('dark'));
+    setMounted(true);
   }, []);
-  useEffect(() => {
-    if (darkMode) {
-      window.document.documentElement.classList.add('dark');
-      localStorage.setItem('SDPDarkMode', 'true');
-    } else {
-      window.document.documentElement.classList.remove('dark');
-      localStorage.setItem('SDPDarkMode', 'false');
-    }
-  }, [darkMode]);
+  if (!mounted) {
+    return null;
+  }
+
   const onClick = () => {
-    setDarkMode(!darkMode);
+    if (darkMode) {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
   };
 
   return (
@@ -45,12 +48,7 @@ export const sun = (
 );
 
 export const moon = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
   </svg>
 );
