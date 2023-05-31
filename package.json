@@ -22,7 +22,9 @@
     "prettier": "latest",
     "prettier-plugin-tailwindcss": "^0.2.7",
     "shx": "^0.3.4",
-    "turbo": "^1.9.3"
+    "turbo": "^1.9.3",
+    "sc-changelog": "*",
+    "ui": "*"
   },
   "packageManager": "npm@9.5.0^"
 }
