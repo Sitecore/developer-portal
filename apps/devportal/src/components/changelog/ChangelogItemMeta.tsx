@@ -11,11 +11,10 @@ type ChangelogItemMetaProps = {
 const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent hover:text-transparent';
 
 export const ChangelogItemMeta = ({ item, loading }: ChangelogItemMetaProps) => {
-  console.log({ item });
   return (
     <div className="my-3 flex flex-row items-center space-x-3 text-gray-500 dark:text-gray-400">
       <div className="flex flex-row gap-5">
-        {item.products != null ? item.products.map((product) => <ProductIcon product={product} isLoading={loading} />) : <Message type={Type.Error} plain={true} message="No product defined" />}
+        {item.products != null ? item.products.map((product, key) => <ProductIcon product={product} isLoading={loading} key={key} />) : <Message type={Type.Error} plain={true} message="No product defined" />}
 
         <time className={`flex items-center justify-center text-xs  ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dateTime="2022-10-21T15:48:00.000Z">
           {item.releaseDate}
