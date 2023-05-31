@@ -19,6 +19,7 @@ export type ChangelogEntrySummary = {
   lightIcon: string;
   darkIcon: string;
   productName: string | null;
+  products: SitecoreProduct[] | null;
   changeTypeName: string | null;
 };
 
@@ -72,6 +73,7 @@ function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySumm
     lightIcon: changelog.sitecoreProduct.results[0].lightIcon,
     darkIcon: changelog.sitecoreProduct.results[0].darkIcon,
     productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
+    products: changelog.sitecoreProduct.results ?? null,
     changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
   };
 }
@@ -93,6 +95,7 @@ export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     lightIcon: changelog.sitecoreProduct.results[0].lightIcon,
     darkIcon: changelog.sitecoreProduct.results[0].darkIcon,
     productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
+    products: changelog.sitecoreProduct.results ?? null,
     changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
   };
 }
