@@ -1,9 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
+import { slugify } from 'sc-changelog/utils/stringUtils';
 import { Message, Type } from 'ui/components/common/Message';
+import { ProductIcon } from './ProductIcon';
 
 type ChangelogItemMetaProps = {
   loading?: boolean;
@@ -16,23 +14,8 @@ export const ChangelogItemMeta = ({ item, loading }: ChangelogItemMetaProps) => 
   return (
     <div className="my-3 flex flex-row items-center space-x-3 text-gray-500 dark:text-gray-400">
       <div className="flex flex-row gap-5">
-        {item.productName == null ? (
-          <Message type={Type.Error} plain={true} message="No product defined"></Message>
-        ) : (
-          <React.Fragment>
-            <Link href={`/changelog/${getSlug(item.productName)}`} className="">
-              <div className={` text-sm ${loading ? 'w-12' && skeletonLoaderClasses : ''} hover:underline`}>
-                <div className="absolute h-5 w-5 dark:hidden ">
-                  <Image src={item.lightIcon} alt={item.productName} className={`${loading ? 'hidden' : ''} `} width={20} height={20} priority={true} />
-                </div>
-                <div className="absolute hidden h-5 w-5 dark:block">
-                  <Image src={item.darkIcon} alt={item.productName} className={`${loading ? 'hidden' : ''}`} width={20} height={20} priority={true} />
-                </div>
-                <div className="ml-6 text-xs">{item.productName}</div>
-              </div>
-            </Link>
-          </React.Fragment>
-        )}
+        {item.products != null ? item.products.map((product, key) => <ProductIcon product={product} isLoading={loading} key={key} />) : <Message type={Type.Error} plain={true} message="No product defined" />}
+
         <time className={`flex items-center justify-center text-xs  ${loading ? 'w-12' && skeletonLoaderClasses : ''}`} dateTime="2022-10-21T15:48:00.000Z">
           {item.releaseDate}
         </time>

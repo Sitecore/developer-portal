@@ -3,12 +3,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
 import { SWRConfig } from 'swr';
 import SmallLinkButton from 'ui/components/buttons/SmallLinkButton';
 import Container from 'ui/components/common/Container';
 import { Message, Type } from 'ui/components/common/Message';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
+import { Option } from 'ui/components/dropdown/MultiSelect';
 import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
 import ChangelogList from '../../components/changelog/ChangelogList';
@@ -19,6 +21,8 @@ type ChangelogHomeProps = {
 };
 
 export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
+  const [selectedProduct, setSelectedProduct] = useState<Option[]>([]);
+
   const router = useRouter();
   return (
     <>
@@ -53,14 +57,14 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
             </Message>
             <div className="mt-8 grid h-full gap-16 md:grid-cols-5">
               <SWRConfig value={{ fallback }}>
-                <ChangelogList />
+                <ChangelogList selectedProducts={selectedProduct} onProductsChange={setSelectedProduct} />
               </SWRConfig>
               <div className="col-span-2 hidden md:block">
                 <div className="flex flex-row">
                   <SmallLinkButton text={'RSS'} href={`${router.pathname}/rss.xml`} icon={'feed'} />
                   <SmallLinkButton text={'ATOM'} href={`${router.pathname}/atom.xml`} icon={'feed'} />
                 </div>
-                <ChangelogByMonth />
+                <ChangelogByMonth selectedProducts={selectedProduct} />
               </div>
             </div>
           </Container>
