@@ -24,7 +24,7 @@ const ChangelogByMonth = ({ className, product, selectedProducts }: ChangelogByM
   });
 
   const { data, error, isLoading } = useSWR<Record<string, ChangelogEntrySummary[]> | null>(`/api/changelog/v1/all?${query.join('&')}`, fetcher);
-  console.log({ isLoading });
+
   if (error) {
     console.log(error);
   }
