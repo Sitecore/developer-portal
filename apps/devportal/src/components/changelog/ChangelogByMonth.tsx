@@ -10,7 +10,7 @@ import { Option } from 'ui/components/dropdown/MultiSelect';
 type ChangelogByMonthProps = {
   className?: string;
   product?: Product;
-  selectedProducts: Option[];
+  selectedProducts?: Option[];
 };
 
 const ChangelogByMonth = ({ className, product, selectedProducts }: ChangelogByMonthProps): JSX.Element => {
@@ -19,9 +19,11 @@ const ChangelogByMonth = ({ className, product, selectedProducts }: ChangelogByM
   const query: string[] = [];
   if (product) query.push(`product=${product.id}`);
 
-  selectedProducts.map((p) => {
-    query.push(`product=${p.value}`);
-  });
+  if (selectedProducts) {
+    selectedProducts.map((p) => {
+      query.push(`product=${p.value}`);
+    });
+  }
 
   const { data, error, isLoading } = useSWR<Record<string, ChangelogEntrySummary[]> | null>(`/api/changelog/v1/all?${query.join('&')}`, fetcher);
 
