@@ -13,7 +13,7 @@ import ChangelogResultsList from './ChangelogResultsList';
 
 type ChangelogListProps = {
   initialProduct?: Product;
-  selectedProducts: Option[];
+  selectedProducts?: Option[];
   onProductsChange: (selectedProducts: Option[]) => void;
 };
 
@@ -27,7 +27,7 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange }: C
     }
 
     const cursor = previousPageData ? previousPageData.endCursor : undefined;
-    const query = buildQuerystring(selectedProducts, selectedChange, cursor, initialProduct);
+    const query = buildQuerystring(selectedProducts != null ? selectedProducts : [], selectedChange, cursor, initialProduct);
 
     return [`${entriesApiUrl}?${query.join('&')}`];
   };
@@ -74,15 +74,18 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange }: C
         <>
           <Skeleton />
           <Skeleton />
-          <Skeleton />
         </>
       )}
 
       {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={data[data.length - 1].hasNext} onEndTriggered={() => setSize(size + 1)} />}
 
-      {data && !data[data.length - 1].hasNext && <span className="border-violet text-violet dark:border-teal dark:text-teal mt-5 inline-block w-full border-2 px-3 py-2 text-center text-sm">No more results</span>}
+      {data && !data[data.length - 1].hasNext && <span className={`border-violet text-violet dark:border-teal dark:text-teal mt-5 inline-block w-full border-2 px-3 py-2 text-center text-sm`}>No more results</span>}
     </div>
   );
+};
+ChangelogList.defaultProps = {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  onProductsChange: () => {},
 };
 
 export default ChangelogList;
