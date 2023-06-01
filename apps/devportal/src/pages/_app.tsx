@@ -41,8 +41,8 @@ function SCDPApp({ Component, pageProps }: AppProps) {
     TagManager.initialize(tagManagerArgs);
     PageController.getContext().setLocaleLanguage('en');
     PageController.getContext().setLocale({ country: 'us', language: 'en' });
-    trackEntityPageViewEvent("content", [{ id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replaceAll('/', '_').replaceAll(':', '_').replaceAll('.', '_') }]);
-  }, [router.pathname]);
+    trackEntityPageViewEvent("content", [{ id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_') }]);
+  });
 
   return (
     <WidgetsProvider {...SEARCH_CONFIG}>
