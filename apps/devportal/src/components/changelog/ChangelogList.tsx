@@ -10,6 +10,7 @@ import SvgIcon from 'ui/components/common/SvgIcon';
 import { Option } from 'ui/components/dropdown/MultiSelect';
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
+import { Hint } from './Hint';
 
 type ChangelogListProps = {
   initialProduct?: Product;
@@ -69,6 +70,8 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange }: C
           }}
         />
       </div>
+
+      <Hint products={selectedProducts} enabled={selectedProducts?.length == 1} />
 
       {isLoading && (
         <>
