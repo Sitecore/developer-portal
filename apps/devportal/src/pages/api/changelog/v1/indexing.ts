@@ -1,9 +1,17 @@
+import { ChangelogEntry, ChangelogEntryList } from '@/../../packages/sc-changelog/types/changeLogEntry';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
 import { getQueryValue } from 'sc-changelog/utils/requests';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
+
+type IndexingList = {
+  total: number;
+  hasMore: boolean;
+  endCursor: string;
+  entries: IndexResult[];
+};
 
 type IndexResult = {
   title: string;
@@ -18,12 +26,13 @@ type IndexResult = {
   url: string;
 };
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<IndexResult[]>) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse<IndexingList>) => {
   // Default Edge pageSize is 10, use parameter to override
-  const pageSize = getQueryValue(req.query.pageSize);
-  const list: IndexResult[] = [];
+  const pageSize = getQueryValue(req.query.size);
+  const endCursor = getQueryValue(req.query.cursor);
+  const results: IndexResult[] = [];
 
-  GetEntries(list, '', pageSize).then((results) => {
+  await GetEntries(results, endCursor, pageSize).then((results) => {
     res.status(200).json(results);
   });
 };
@@ -31,28 +40,29 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<IndexResult[]>)
 export default handler;
 
 async function GetEntries(list: IndexResult[], end: string, limit: string) {
-  let completed = false;
+  const entryList: ChangelogEntryList<ChangelogEntry[]> = await ChangelogEntriesPaginated(false, limit, '', '', end);
 
-  await ChangelogEntriesPaginated(false, limit, '', '', end).then((response) => {
-    // Parse the response and add the resultslist
-    response.entries.map((entry) => {
-      list.push({
-        title: entry.title,
-        changeTypes: entry.changeType.map((obj) => obj.changeType),
-        products: entry.sitecoreProduct.map((obj) => obj.productName),
-        date: entry.releaseDate,
-        image: entry.image[0] != null ? entry.image[0].fileUrl : null,
-        description: entry.description,
-        fullArticle: entry.fullArticle,
-        readMoreLink: entry.readMoreLink,
-        breakingChange: entry.breakingChange ? true : false,
-        url: `${publicUrl}${getChangelogEntryUrl(entry)}`,
-      });
+  entryList.entries.map((entry) => {
+    list.push({
+      title: entry.title,
+      changeTypes: entry.changeType.map((obj) => obj.changeType),
+      products: entry.sitecoreProduct.map((obj) => obj.productName),
+      date: entry.releaseDate,
+      image: entry.image[0] != null ? entry.image[0].fileUrl : null,
+      description: entry.description,
+      fullArticle: entry.fullArticle,
+      readMoreLink: entry.readMoreLink,
+      breakingChange: entry.breakingChange ? true : false,
+      url: `${publicUrl}${getChangelogEntryUrl(entry)}`,
     });
-    end = response.endCursor;
-    completed = list.length >= response.total;
   });
 
-  if (!completed) await GetEntries(list, end, limit);
-  return list;
+  const indexingList: IndexingList = {
+    total: entryList.total,
+    hasMore: entryList.hasNext,
+    endCursor: entryList.endCursor,
+    entries: list,
+  };
+
+  return indexingList;
 }
