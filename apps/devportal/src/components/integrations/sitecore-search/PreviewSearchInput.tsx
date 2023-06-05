@@ -1,5 +1,5 @@
 import { GetProductLogo } from '@/../../packages/ui/common/assets';
-import { truncateString } from '@/../../packages/ui/common/text-util';
+import { toClass, truncateString } from '@/../../packages/ui/common/text-util';
 import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchSuggestionQuery, SearchResponseSuggestion, WidgetAction, WidgetDataType, usePreviewSearch, widget } from '@sitecore-search/react';
 import { ArticleCard, NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
@@ -45,7 +45,7 @@ const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned 
                 <div className={`${article.type == 'Video' ? 'col-span-3' : 'col-span-4'} pr-2`}>
                   <ArticleCard.Title className="text-base font-bold group-hover:underline">{article.name}</ArticleCard.Title>
                   <div className="my-2">
-                    {article.type && <span className="bg-primary-500 text-2xs px-2.5 py-1 uppercase text-white dark:bg-teal-500">{article.type}</span>}
+                    {article.type && <span className={`result-type-${toClass(article.type)} bg-primary-500 text-2xs px-2.5 py-1 uppercase text-white dark:bg-teal-500`}>{article.type}</span>}
                     {article.index_name && <span className="text-2xs mr-2 w-full px-2.5 py-1 uppercase">{article.site_name}</span>}
                   </div>
                   {article.type == 'Video' && (

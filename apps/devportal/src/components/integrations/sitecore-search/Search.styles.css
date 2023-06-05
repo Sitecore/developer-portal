@@ -18,3 +18,6 @@
 .result-type-video {
   @apply result-type-base bg-red-500;
 }
+.result-type-changelog {
+  @apply result-type-base bg-orange-500;
+}
