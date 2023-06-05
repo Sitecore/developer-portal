@@ -1,4 +1,4 @@
-import { trackEntityPageViewEvent, useSearchResults, widget, WidgetDataType } from '@sitecore-search/react';
+import { useSearchResults, widget, WidgetDataType } from '@sitecore-search/react';
 import { WidgetComponentProps } from '@sitecore-search/react/types';
 import Image from 'next/image';
 import { ComponentType } from 'react';
@@ -75,7 +75,6 @@ export const SearchResults = (props: SearchResultsType) => {
                           onClick={(e) => {
                             e.preventDefault();
                             onItemClick({ id: result.id || '', index });
-                            trackEntityPageViewEvent(result.id);
                             window.open(result.url, '_blank');
                           }}
                         >
