@@ -24,11 +24,11 @@ type ArticleModel = {
 };
 
 const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick']; suggestionsReturned?: boolean }) => (
-  <NavMenu.Content className={'bg-theme-bg text-theme-text absolute right-0 top-0 inline-block overflow-hidden overflow-y-auto ' + (suggestionsReturned ? 'h-fit w-4/5' : ' w-5/5')}>
+  <NavMenu.Content className={'bg-theme-bg text-theme-text absolute right-0 top-0 hidden overflow-hidden overflow-y-auto md:inline-block ' + (suggestionsReturned ? 'h-fit w-4/5' : ' w-5/5')}>
     <Presence present={loading}>
       <Loading />
     </Presence>
-    <NavMenu.List className="mr-0 grid list-none grid-cols-3 gap-0 p-2">
+    <NavMenu.List className="mr-0 grid list-none gap-0 p-2 md:grid-cols-3">
       {!loading &&
         articles.map((article, index) => (
           <NavMenu.Item key={`${article.id}@${article.source_id}`} className="mx-2 my-4 inline">
@@ -41,7 +41,7 @@ const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned 
                 window.open(article.url, '_blank');
               }}
             >
-              <ArticleCard.Root className="grid grid-cols-4 items-center">
+              <ArticleCard.Root className="grid items-center sm:grid-cols-1 md:grid-cols-4">
                 <div className={`${article.type == 'Video' ? 'col-span-3' : 'col-span-4'} pr-2`}>
                   <ArticleCard.Title className="text-base font-bold group-hover:underline">{article.name}</ArticleCard.Title>
                   <div className="my-2">
@@ -90,7 +90,7 @@ const Group = ({
   onGroupTitleClick: (arg: string) => void;
 }) => {
   return (
-    <div className="bg-primary-100 border-theme-border w-1/5 border-b border-l pt-2 dark:bg-teal-900">
+    <div className="md:bg-primary-100 sm:bg-theme-bg border-theme-border sm:1/3 border-b border-l pt-2 dark:bg-teal-900 md:w-1/5">
       <h2 className="m-4 box-border text-left font-semibold uppercase">{groupTitle}</h2>
       {articles.map(({ text }) => (
         <NavMenu.Item value={getGroupId(groupId, text)} key={text} className=" hover:text-primary-900 overflow-hidden pl-4 hover:bg-white dark:bg-teal-900 dark:hover:bg-teal-700 dark:hover:text-white">
@@ -105,6 +105,7 @@ const Group = ({
           >
             {text}
           </NavMenu.Trigger>
+
           <PreviewSearchSuggestionQuery<ArticleModel> active={activeItem === getGroupId(groupId, text)} value={text} filterAttribute={filterAttribute}>
             {({ queryResult: { isFetching, data: { content: articles = [] } = {} } }) => <Articles loading={isFetching} articles={articles} onItemClick={onItemClick} suggestionsReturned={true} />}
           </PreviewSearchSuggestionQuery>
@@ -193,7 +194,8 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
                 onChange={keyphraseHandler}
                 placeholder="What are you looking for?"
                 onFocus={() => {
-                  if (keyphrase.length > 0) {
+                  if (keyphrase.length > 0 && window.innerWidth <= 691) {
+                    console.log({ window });
                     setActiveItem('defaultArticlesResults');
                   }
                 }}
