@@ -17,3 +17,11 @@ export function truncateString(str: string, maxLength: number, appendMoreIndiati
 
   return returnValue;
 }
+
+export function toClass(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-.]/g, '') // remove non-alphanumeric characters except the period
+    .replace(/[\s_-]+/g, '-') // replace spaces, underscores, or hyphens with a single hyphen
+    .trim();
+}
