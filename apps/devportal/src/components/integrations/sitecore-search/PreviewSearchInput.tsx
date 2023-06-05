@@ -6,7 +6,7 @@ import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { SyntheticEvent, useCallback, useState } from 'react';
-import Loader from './Loader';
+import { Loading } from 'ui/components/common/Loading';
 
 type ArticleModel = {
   id: string;
@@ -20,13 +20,13 @@ type ArticleModel = {
   site_name: string;
   highlight: {
     description: string;
-  }
+  };
 };
 
-const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick']; suggestionsReturned?: boolean}) => (
-  <NavMenu.Content className={'bg-theme-bg text-theme-text border-theme-border absolute right-0 top-0 inline-block overflow-y-auto border-b border-r ' + (suggestionsReturned ? ' w-4/5 h-full' : ' w-5/5')}>
+const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick']; suggestionsReturned?: boolean }) => (
+  <NavMenu.Content className={'bg-theme-bg text-theme-text absolute right-0 top-0 inline-block overflow-hidden overflow-y-auto ' + (suggestionsReturned ? 'h-fit w-4/5' : ' w-5/5')}>
     <Presence present={loading}>
-      <Loader />
+      <Loading />
     </Presence>
     <NavMenu.List className="mr-0 grid list-none grid-cols-3 gap-0 p-2">
       {!loading &&
@@ -41,7 +41,7 @@ const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned 
                 window.open(article.url, '_blank');
               }}
             >
-              <ArticleCard.Root className="bg-theme-bg grid grid-cols-4 items-center">
+              <ArticleCard.Root className="grid grid-cols-4 items-center">
                 <div className={`${article.type == 'Video' ? 'col-span-3' : 'col-span-4'} pr-2`}>
                   <ArticleCard.Title className="text-base font-bold group-hover:underline">{article.name}</ArticleCard.Title>
                   <div className="my-2">
@@ -54,8 +54,8 @@ const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned 
                       {!article.image_url && <Image width={256} height={144} src="/images/social/social-card-default.jpeg" alt={article.index_name} className="object-scale-down" />}
                     </div>
                   )}
-                  {article.type != 'Video' && article?.highlight?.description && <p className="text-xs" dangerouslySetInnerHTML={{ __html: truncateString(article.highlight.description, 300, true) }} />}
-                  {article.type != 'Video' && !article.highlight && article.description && <p className="text-xs">{truncateString(article.description, 300, true)}</p>}
+                  {article.type != 'Video' && article?.highlight?.description && <p className="text-xs" dangerouslySetInnerHTML={{ __html: truncateString(article.highlight.description, 100, true) }} />}
+                  {article.type != 'Video' && !article.highlight && article.description && <p className="text-xs">{truncateString(article.description, 100, true)}</p>}
                 </div>
               </ArticleCard.Root>
             </NavMenu.Link>
@@ -78,6 +78,7 @@ const Group = ({
   activeItem,
   onActiveItem,
   onItemClick,
+  onGroupTitleClick,
 }: {
   groupTitle: string;
   groupId: string;
@@ -86,19 +87,21 @@ const Group = ({
   activeItem: string;
   onActiveItem: (arg: string) => void;
   onItemClick: (payload: ActionPropPayload<SearchItemClickedAction>) => void;
+  onGroupTitleClick: (arg: string) => void;
 }) => {
   return (
-    <div className="bg-primary-100 border-theme-border h-96 w-1/5 border-b border-l pt-2 dark:bg-teal-900">
+    <div className="bg-primary-100 border-theme-border w-1/5 border-b border-l pt-2 dark:bg-teal-900">
       <h2 className="m-4 box-border text-left font-semibold uppercase">{groupTitle}</h2>
       {articles.map(({ text }) => (
         <NavMenu.Item value={getGroupId(groupId, text)} key={text} className=" hover:text-primary-900 overflow-hidden pl-4 hover:bg-white dark:bg-teal-900 dark:hover:bg-teal-700 dark:hover:text-white">
           <NavMenu.Trigger
-            className="relative inline-block py-1 text-left"
+            className=" py-1 text-left"
             onMouseOver={(e) => {
               const target = e.target as HTMLLinkElement;
               target.focus();
             }}
             onFocus={() => onActiveItem(getGroupId(groupId, text))}
+            onClick={() => onGroupTitleClick(text)}
           >
             {text}
           </NavMenu.Trigger>
@@ -116,32 +119,24 @@ const getGroupId = (name: string, value: string) => `${name}@${value}`;
 const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
   const router = useRouter();
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
-  const { q } = router.query
+  const { q } = router.query;
   const {
     context: { keyphrase = q || '' },
     actions: { onItemClick, onKeyphraseChange },
-    queryResult: {
-      isFetching,
-      isLoading,
-      data: {
-        content: articles = [],
-        suggestion: {
-          name_suggester: articleSuggestions = [],
-        } = {},
-      } = {},
-    },
+    queryResult: { isFetching, isLoading, data: { content: articles = [], suggestion: { name_suggester: articleSuggestions = [] } = {} } = {} },
   } = usePreviewSearch<ArticleModel>((query) => {
-    query.getRequest().setSearchQueryHighlight({
-      fields: ['description'],
-      fragment_size: 100,
-      pre_tag: '<strong>',
-      post_tag: '</strong>',
-    }).setSources(indexSources);
-    
+    query
+      .getRequest()
+      .setSearchQueryHighlight({
+        fields: ['description'],
+        fragment_size: 100,
+        pre_tag: '<strong>',
+        post_tag: '</strong>',
+      })
+      .setSources(indexSources);
+
     return {
-      suggestionsList: [
-        { suggestion: 'name_suggester', max: 10 },
-      ],
+      suggestionsList: [{ suggestion: 'name_suggester', max: 10 }],
       itemsPerPage: defaultProductsPerPage,
     };
   });
@@ -171,6 +166,11 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
     setValue('');
     router.push('/search?q=' + encodeURIComponent(target.value)).then(() => router.reload());
   };
+
+  function onGroupTitleClick(arg: string): void {
+    setValue('');
+    router.push('/search?q=' + encodeURIComponent(arg)).then(() => router.reload());
+  }
 
   return (
     <NavMenu.Root onValueChange={onValueChange} value={value}>
@@ -208,15 +208,17 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
             </div>
           </form>
 
-          <NavMenu.Content className="bg-theme-bg text-theme-text absolute left-0 top-10 inline-block h-fit w-full justify-center pt-0 shadow-md">
+          <NavMenu.Content className="bg-theme-bg text-theme-text relative left-0 inline-block w-full justify-center border-b border-r pt-0 shadow-md">
             <Presence present={loading}>
-              <Loader />
+              <Loading />
             </Presence>
             {!loading && (
               <NavMenu.SubContent orientation="vertical" value={activeItem} className="box-border block w-full">
-                <NavMenu.List className="w-full">
-                  {articleSuggestions.length > 0 && <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} activeItem={activeItem} onActiveItem={setActiveItem} />}
-                  <NavMenu.Item value="defaultArticlesResults" key="defaultArticlesResults" className="b-0  bg-none">
+                <NavMenu.List className="">
+                  {articleSuggestions.length > 0 && (
+                    <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />
+                  )}
+                  <NavMenu.Item value="defaultArticlesResults" key="defaultArticlesResults" className="b-0 bg-none">
                     <NavMenu.Trigger aria-hidden className="hidden" />
                     <Articles articles={articles} onItemClick={onItemClick} suggestionsReturned={articleSuggestions.length > 0} />
                   </NavMenu.Item>

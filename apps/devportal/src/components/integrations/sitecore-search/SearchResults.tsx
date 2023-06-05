@@ -3,7 +3,7 @@ import { WidgetComponentProps } from '@sitecore-search/react/types';
 import Image from 'next/image';
 import { ComponentType } from 'react';
 import { toClass, truncateString } from 'ui/common/text-util';
-import Loader from './Loader';
+import { Loading } from 'ui/components/common/Loading';
 import QuerySummary from './QuerySummary';
 import SearchFacets from './SearchFacets';
 import SearchPagination from './SearchPagination';
@@ -46,7 +46,7 @@ export const SearchResults = (props: SearchResultsType) => {
     <>
       {isLoading && (
         <div className="pt-10">
-          <Loader />
+          <Loading />
         </div>
       )}
       {!isLoading && (
