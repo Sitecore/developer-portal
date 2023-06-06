@@ -1,5 +1,5 @@
 import { GetProductLogo } from '@/../../packages/ui/common/assets';
-import { toClass, truncateString } from '@/../../packages/ui/common/text-util';
+import { toClass } from '@/../../packages/ui/common/text-util';
 import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchSuggestionQuery, SearchResponseSuggestion, WidgetAction, WidgetDataType, usePreviewSearch, widget } from '@sitecore-search/react';
 import { ArticleCard, NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
@@ -24,7 +24,7 @@ type ArticleModel = {
 };
 
 const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick']; suggestionsReturned?: boolean }) => (
-  <NavMenu.Content className={'bg-theme-bg text-theme-text absolute right-0 top-0 hidden overflow-hidden overflow-y-auto md:inline-block ' + (suggestionsReturned ? 'h-fit w-4/5' : ' w-5/5')}>
+  <NavMenu.Content className={'bg-theme-bg text-theme-text absolute right-0 top-0 hidden overflow-hidden overflow-y-auto md:inline-block ' + (suggestionsReturned ? 'h-full w-4/5' : ' w-5/5')}>
     <Presence present={loading}>
       <Loading />
     </Presence>
@@ -43,7 +43,7 @@ const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned 
             >
               <ArticleCard.Root className="grid items-center sm:grid-cols-1 md:grid-cols-4">
                 <div className={`${article.type == 'Video' ? 'col-span-3' : 'col-span-4'} pr-2`}>
-                  <ArticleCard.Title className="text-base font-bold group-hover:underline">{article.name}</ArticleCard.Title>
+                  <ArticleCard.Title className="line-clamp-2 text-base font-bold group-hover:underline">{article.name}</ArticleCard.Title>
                   <div className="my-2">
                     {article.type && <span className={`result-type-${toClass(article.type)} bg-primary-500 text-2xs px-2.5 py-1 uppercase text-white dark:bg-teal-500`}>{article.type}</span>}
                     {article.index_name && <span className="text-2xs mr-2 w-full px-2.5 py-1 uppercase">{article.site_name}</span>}
@@ -54,8 +54,8 @@ const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned 
                       {!article.image_url && <Image width={256} height={144} src="/images/social/social-card-default.jpeg" alt={article.index_name} className="object-scale-down" />}
                     </div>
                   )}
-                  {article.type != 'Video' && article?.highlight?.description && <p className="text-xs" dangerouslySetInnerHTML={{ __html: truncateString(article.highlight.description, 100, true) }} />}
-                  {article.type != 'Video' && !article.highlight && article.description && <p className="text-xs">{truncateString(article.description, 100, true)}</p>}
+                  {article.type != 'Video' && article?.highlight?.description && <p className="line-clamp-5 text-xs" dangerouslySetInnerHTML={{ __html: article.highlight.description }} />}
+                  {article.type != 'Video' && !article.highlight && article.description && <p className="line-clamp-5 text-xs">{article.description}</p>}
                 </div>
               </ArticleCard.Root>
             </NavMenu.Link>
@@ -91,9 +91,9 @@ const Group = ({
 }) => {
   return (
     <div className="md:bg-primary-100 sm:bg-theme-bg border-theme-border sm:1/3 border-b border-l pt-2 dark:bg-teal-900 md:w-1/5">
-      <h2 className="m-4 box-border text-left font-semibold uppercase">{groupTitle}</h2>
+      <h2 className="ml-4 mt-2 box-border text-left font-semibold uppercase">{groupTitle}</h2>
       {articles.map(({ text }) => (
-        <NavMenu.Item value={getGroupId(groupId, text)} key={text} className=" hover:text-primary-900 overflow-hidden pl-4 hover:bg-white dark:bg-teal-900 dark:hover:bg-teal-700 dark:hover:text-white">
+        <NavMenu.Item value={getGroupId(groupId, text)} key={text} className="hover:text-primary-900 overflow-hidden pl-4 text-xs hover:bg-white dark:bg-teal-900 dark:hover:bg-teal-700 dark:hover:text-white">
           <NavMenu.Trigger
             className=" py-1 text-left"
             onMouseOver={(e) => {
@@ -194,8 +194,7 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
                 onChange={keyphraseHandler}
                 placeholder="What are you looking for?"
                 onFocus={() => {
-                  if (keyphrase.length > 0 && window.innerWidth <= 691) {
-                    console.log({ window });
+                  if (keyphrase.length > 0) {
                     setActiveItem('defaultArticlesResults');
                   }
                 }}
@@ -210,7 +209,7 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
             </div>
           </form>
 
-          <NavMenu.Content className="bg-theme-bg text-theme-text relative left-0 inline-block w-full justify-center border-b border-r pt-0 shadow-md">
+          <NavMenu.Content className="bg-theme-bg text-theme-text border-theme-border relative left-0 inline-block w-full justify-center border-b border-r pt-0 shadow-md">
             <Presence present={loading}>
               <Loading />
             </Presence>
