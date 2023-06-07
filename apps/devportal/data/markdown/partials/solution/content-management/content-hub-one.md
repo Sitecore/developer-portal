@@ -49,6 +49,15 @@ The Sitecore Demo Solutions team created demo's that Sitecore partners and selle
 </Row>
 <sub>_To connect the examples with Content Hub ONE you need an active subscription_</sub>
 
+## Implementation Guides
+
+These guidance documents aim to help you understand what kind of project management and implementation practices are recommended by Sitecore to implement Content Hub One.
+<Row columns={2}>
+
+  <Article title="Project Management guidance deck" imageUrl="https://sitecorecontenthub.stylelabs.cloud/api/public/content/db50ce5764ce4b2b9226322137c36e2a?v=dde6138f" link="https://sitecorecontenthub.stylelabs.cloud/api/public/content/1342290fb17642788f410c4055915210?v=9d48b7a1" hideLinkText="true" />
+  <Article title="Estimation guidance document" imageUrl="/images/file-excel.webp" link="https://sitecorecontenthub.stylelabs.cloud/api/public/content/4edec464d5eb4499a061b46d027a7f4a?v=43a040b7" hideLinkText="true" />
+</Row>
+
 ## Documentation
 
 <Row columns="3">
