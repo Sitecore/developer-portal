@@ -496,6 +496,91 @@ export const mainNavigation: NavigationData[] = [
     ],
   },
   {
+    title: 'Product NEW',
+    pathname: '/[solution]/[product]',
+    children: [
+      {
+        title: 'Content Cloud',
+        children: [
+          {
+            title: 'XM Cloud',
+            url: '/content-management/xm-cloud',
+          },
+          {
+            title: 'Sitecore Search',
+            url: '/content-management/search',
+          },
+          {
+            title: 'Digital Asset Management',
+            url: '/dam-and-content-operations/dam',
+          },
+          {
+            title: 'Content Operations',
+            url: '/dam-and-content-operations/content-hub',
+          },
+          {
+            title: 'Content Hub ONE',
+            url: '/content-management/content-hub-one',
+          },
+        ],
+      },
+      {
+        title: 'Engagement Cloud',
+        url: '/content-management/xm-cloud',
+        children: [
+          {
+            title: 'CDP',
+            url: '/customer-data-management/cdp',
+          },
+          {
+            title: 'Sitecore Personalize',
+            url: '/personalization-testing/personalize',
+          },
+          {
+            title: 'Sitecore Send',
+            url: '/marketing-automation/send',
+          },
+          {
+            title: 'Sitecore Connect',
+            url: '/integrations/connect',
+          },
+        ],
+      },
+      {
+        title: 'Commerce Cloud',
+        url: '/content-management/content-hub-one',
+        children: [
+          {
+            title: 'Sitecore OrderCloud',
+            url: '/commerce/ordercloud',
+          },
+          {
+            title: 'Sitecore Discover',
+            url: '/commerce/discover',
+          },
+        ],
+      },
+      {
+        title: 'Platform DXP',
+        url: '/customer-data-management/cdp',
+        children: [
+          {
+            title: 'Sitecore Experience Manager',
+            url: '/content-management/experience-manager',
+          },
+          {
+            title: 'Sitecore Experience Platform',
+            url: '/personalization-testing/experience-platform',
+          },
+          {
+            title: 'Sitecore Experience Commerce',
+            url: '/commerce/experience-commerce',
+          },
+        ],
+      },
+    ],
+  },
+  {
     title: 'Changelog',
     url: '/changelog',
   },
