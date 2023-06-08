@@ -1,6 +1,6 @@
 import { GetProductLogo } from '@/../../packages/ui/common/assets';
 import { toClass } from '@/../../packages/ui/common/text-util';
-import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchSuggestionQuery, SearchResponseSuggestion, WidgetAction, WidgetDataType, usePreviewSearch, widget } from '@sitecore-search/react';
+import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchSuggestionQuery, SearchResponseSuggestion, WidgetAction, WidgetDataType, trackEntityPageViewEvent, usePreviewSearch, widget } from '@sitecore-search/react';
 import { ArticleCard, NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
 import Image from 'next/image';
@@ -38,6 +38,8 @@ const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned 
               onClick={(e) => {
                 e.preventDefault();
                 onItemClick({ id: article.id || '', index: index });
+                if(article.index_name != 'sitecore-devportal-v2') 
+                  trackEntityPageViewEvent("content", [{ id: article.id }]);
                 window.open(article.url, '_blank');
               }}
             >
