@@ -16,14 +16,7 @@ type NavMenuProps = NavigationData & {
   callback?: () => void;
 };
 
-const NavMenu = ({
-  title,
-  url,
-  children,
-  pathname,
-  buttonIcon,
-  callback,
-}: NavMenuProps): JSX.Element => {
+const NavMenu = ({ title, url, children, pathname, buttonIcon, callback }: NavMenuProps): JSX.Element => {
   const navItemRef = useRef<HTMLDivElement>(null);
   const [isOpen, setOpen] = useState(false);
 
@@ -75,30 +68,20 @@ const NavMenu = ({
         <DynamicTag
           tag={children ? 'button' : 'a'}
           aria-current={!children ? isCurrentPage : undefined}
-          className={`main-nav-item group ${
-            (children && isOpen) || isCurrentPath ? 'button-active' : ''
-          } ${children ? 'lg:pr-5' : ''}`}
+          className={`main-nav-item group ${(children && isOpen) || isCurrentPath ? 'button-active' : ''} ${children ? 'lg:pr-5' : ''}`}
           onClick={toggleNavItem}
         >
-          <span className="inline-flex items-center pointer-events-none">
+          <span className="pointer-events-none inline-flex items-center">
             {buttonIcon && <SvgIcon icon={buttonIcon} className="w-em h-em mr-em" />}
             {title}
           </span>
           {children && (
             <>
-              <span className="absolute right-0 block pointer-events-none h-em w-em top-5 lg:hidden">
-                <SvgIcon
-                  icon="chevron-right"
-                  className="transition-transform h-inherit w-inherit top-5 transform-gpu group-hover:translate-x-1"
-                />
+              <span className="h-em w-em pointer-events-none absolute right-0 top-5 block lg:hidden">
+                <SvgIcon icon="chevron-right" className="h-inherit w-inherit top-5 transform-gpu transition-transform group-hover:translate-x-1" />
               </span>
-              <span className="absolute top-1/2 right-0 -mt-1.5 hidden h-3 w-3 lg:block">
-                <SvgIcon
-                  icon="chevron-down"
-                  className={`h-inherit w-inherit top-5 transform-gpu transition-transform ${
-                    isOpen ? 'rotate-180' : ''
-                  }`}
-                />
+              <span className="absolute right-0 top-1/2 -mt-1.5 hidden h-3 w-3 lg:block">
+                <SvgIcon icon="chevron-down" className={`h-inherit w-inherit top-5 transform-gpu transition-transform ${isOpen ? 'rotate-180' : ''}`} />
               </span>
             </>
           )}
@@ -109,12 +92,7 @@ const NavMenu = ({
       */}
       {children && (
         <React.Fragment>
-          <div
-            ref={navItemRef}
-            className={`nav-item-overlay ${
-              isOpen ? 'nav-item-overlay-active' : 'nav-item-overlay-inactive lg:translate-none'
-            }`}
-          >
+          <div ref={navItemRef} className={`nav-item-overlay ${isOpen ? 'nav-item-overlay-active' : 'nav-item-overlay-inactive lg:translate-none'}`}>
             {/* 
               Back Button
             */}
@@ -127,28 +105,17 @@ const NavMenu = ({
             {/* 
               Nav Item Links
             */}
-            <div className="shadow-inner px-gutter">
-              <div className="max-w-screen-lg pt-6 mx-auto lg:py-12">
-                <ul className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+            <div className="px-gutter shadow-inner">
+              <div className="mx-auto max-w-screen-lg pt-6 lg:py-12">
+                <ul className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
                   {children?.map((child, index) => (
-                    <li key={`child-${index}`} className="pb-4 border-b border-gray-light md:pb-6">
-                      <NavLink
-                        text={child.title}
-                        url={child.url}
-                        level={1}
-                        onClick={toggleNavItem}
-                      />
+                    <li key={`child-${index}`} className="border-gray-light border-b pb-4 md:pb-6">
+                      <NavLink text={child.title} url={child.url} level={1} onClick={toggleNavItem} />
                       {child.children && (
                         <ul>
                           {child.children?.map((child, index) => (
                             <li key={`child-${index}`} className="mb-4 lg:mb-2">
-                              <NavLink
-                                aria-current={currentPage === child.url}
-                                text={child.title}
-                                url={child.url}
-                                external={child.external}
-                                onClick={toggleNavItem}
-                              />
+                              <NavLink aria-current={currentPage === child.url} text={child.title} url={child.url} external={child.external} onClick={toggleNavItem} />
                             </li>
                           ))}
                         </ul>
