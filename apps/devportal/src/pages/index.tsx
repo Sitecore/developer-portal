@@ -23,6 +23,7 @@ import Layout from 'ui/layouts/Layout';
 import communityListData from '@/data/data-community-list';
 import getHelpCta from '@/data/promos/get-help';
 import promoData from '@/data/promos/xmc-practices';
+import Hexagons from '../components/common/Hexagons';
 
 export async function getStaticProps(context: any) {
   const pageInfo = await getPageInfo('home', context.preview ? context.preview : null);
@@ -84,6 +85,8 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
     <VerticalGroup>
       <Container>
         <VerticalGroup size="lg">
+          <Hexagons />
+
           <VideoPromo
             youTubeId="fAlNP0hCoZg"
             title="Composable DXP"
