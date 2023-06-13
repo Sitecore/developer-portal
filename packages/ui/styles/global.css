@@ -10,6 +10,7 @@
 @import '../components/heros/Hero.styles.css';
 @import '../components/video/VideoPromo.styles.css';
 @import '../components/cards/Cards.styles.css';
+@import '../components/hexagons/Hexagons.styles.css';
 
 @import './buttons.css';
 
