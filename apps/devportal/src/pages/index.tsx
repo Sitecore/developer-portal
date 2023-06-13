@@ -9,6 +9,7 @@ import PromoCard from 'ui/components/cards/PromoCard';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
+import Hexagons from 'ui/components/hexagons/Hexagons';
 import CategoryTileList from 'ui/components/lists/CategoryTileList';
 import CommunityList from 'ui/components/lists/CommunityList';
 import SitecoreCommunityBlog from 'ui/components/sitecoreCommunity/blog/SitecoreCommunityBlog';
@@ -23,7 +24,6 @@ import Layout from 'ui/layouts/Layout';
 import communityListData from '@/data/data-community-list';
 import getHelpCta from '@/data/promos/get-help';
 import promoData from '@/data/promos/xmc-practices';
-import Hexagons from '../components/common/Hexagons';
 
 export async function getStaticProps(context: any) {
   const pageInfo = await getPageInfo('home', context.preview ? context.preview : null);

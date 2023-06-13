@@ -1,7 +1,5 @@
 @layer components {
   .honeycomb {
-    padding-top: 50px;
-    padding-bottom: 50px;
   }
 
   .honeycomb--4 .hex-grid__list {
@@ -380,7 +378,6 @@
   .honeycomb .honeycomb__grid {
     display: flex;
     max-width: 1200px;
-    margin: 20px auto;
     padding: 0 25px;
   }
 
@@ -414,7 +411,7 @@
   .hex-grid__tabs {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -425,7 +422,6 @@
   .hex-grid__tab {
     margin-bottom: 0.75rem;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(90deg, #fff 0, #fafafa 100%);
     border-radius: 30px;
     padding: 0;
     opacity: 0.35;
@@ -553,8 +549,8 @@
     position: relative;
     grid-column: 1 / span 3;
     grid-row: calc(var(--counter) + var(--counter)) / span 2;
-    -webkit-filter: url(/public/images/hex-item-round-corners.svg#helix-round-borders) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
-    filter: url(/public/images/hex-item-round-corners.svg#helix-round-borders) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+    -webkit-filter: url(/images/hex-item-round-corners.svg#helix-round-borders) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+    filter: url(/images/hex-item-round-corners.svg#helix-round-borders) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
     height: 0;
     padding-bottom: 90%;
     z-index: 0;
@@ -569,19 +565,19 @@
 
   .hex-grid__item--violet .hex-grid__content {
     background-color: #5548d9;
-    background-image: radial-gradient(75% 80%, #5548d9, #5548d9, #3b2ca9 100%);
+    background-image: radial-gradient(75% 80% at center, #5548d9, #5548d9, #3b2ca9 100%);
     box-shadow: inset 0 3px 3px 0 #625ad5, inset 0 -3px 3px 0 #625ad5;
   }
 
   .hex-grid__item--red .hex-grid__content {
     background-color: #eb1f1f;
-    background-image: radial-gradient(75% 80%, #eb1f1f, #eb1f1f, #970d0d 100%);
+    background-image: radial-gradient(75% 80% at center, #eb1f1f, #eb1f1f, #970d0d 100%);
     box-shadow: inset 0 3px 3px 0 #e33131, inset 0 -3px 3px 0 #e33131;
   }
 
   .hex-grid__item--teal .hex-grid__content {
     background-color: #02a79a;
-    background-image: radial-gradient(75% 80%, #02a79a, #02a79a, #006c63 100%);
+    background-image: radial-gradient(75% 80% at center, #02a79a, #02a79a, #006c63 100%);
     box-shadow: inset 0 3px 3px 0 #0ba599, inset 0 -3px 3px 0 #0ba599;
   }
 
@@ -606,7 +602,7 @@
 
   .hex-grid__item.gray .hex-grid__content {
     background-color: #878585;
-    background-image: radial-gradient(75% 80%, #878585, #878585, #585858 100%);
+    background-image: radial-gradient(75% 80% at center, #878585, #878585, #585858 100%);
     box-shadow: inset 0 3px 3px 0 #8d8d8d, inset 0 -3px 3px 0 #898989;
   }
 
@@ -621,7 +617,7 @@
     cursor: pointer;
     pointer-events: auto;
     background-color: #e5e5e5;
-    background-image: radial-gradient(75% 80%, #e5e5e5, #e5e5e5, #b3b3b3 100%);
+    background-image: radial-gradient(75% 80% at center, #e5e5e5, #e5e5e5, #b3b3b3 100%);
     box-shadow: inset 0 3px 3px 0 #dddbdb, inset 0 -3px 3px 0 #dddbdb;
     box-sizing: border-box;
     position: absolute;
@@ -928,10 +924,14 @@
   }
 
   @media screen and (max-width: 900px) {
+    .honeycomb .honeycomb__grid {
+      padding: 0px;
+    }
+
     .hex-grid__tabs {
       width: 100%;
       max-width: 100%;
-      margin: 0;
+      margin: 10px 0 0 0;
       display: block;
     }
 

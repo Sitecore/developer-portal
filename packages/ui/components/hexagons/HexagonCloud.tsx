@@ -1,16 +1,12 @@
 import TextLink from '@/../../packages/ui/components/common/TextLink';
 import Image from 'next/image';
 import React from 'react';
+import { CloudInfoType } from './HexagonTypes';
 
 type HexagonCloudProps = {
-  name: string;
-  logoUrl: string;
-  description: string;
+  cloud: CloudInfoType;
   isOpen?: boolean;
-  href: string;
   key: number;
-  id: string;
-  linkText: string;
   children: React.ReactNode | React.ReactNode[];
   onClick: () => void;
 };
@@ -41,23 +37,23 @@ function mouseOver(event: React.MouseEvent<HTMLLIElement>) {
   });
 }
 
-export const HexagonCloud = ({ name, logoUrl, id, isOpen, description, href, linkText, children, onClick }: HexagonCloudProps): JSX.Element | null => {
+export const HexagonCloud = ({ cloud, isOpen, children, onClick }: HexagonCloudProps): JSX.Element | null => {
   return (
     <li
-      className={`hex-grid__tab dark:from-whiteAlpha-500 dark:to-whiteAlpha-700 hex-grid__tab--violet active dark:bg-gradient-to-r ${isOpen ? 'expanded' : ''}`}
-      data-target={`#${id}`}
+      className={`hex-grid__tab dark:from-whiteAlpha-500 dark:to-whiteAlpha-700 hex-grid__tab--violet active transition-transform	delay-200 dark:bg-gradient-to-r ${isOpen ? 'expanded' : ''}`}
+      data-target={`#${cloud.id}`}
       onMouseOver={(e) => mouseOver(e)}
       onMouseOut={() => resetElements()}
       onClick={onClick}
     >
       <div className="hex-grid__tab__top">
-        <Image className="hex-grid__tab__icon" src={logoUrl} alt={name} width={35} height={25} />
-        <span className="hex-grid__tab__title">{name}</span>
+        <Image className="hex-grid__tab__icon" src={cloud.logoUrl} alt={cloud.name} width={35} height={25} />
+        <span className="hex-grid__tab__title">{cloud.name}</span>
         <Image className="hex-grid__tab__plus" src="/images/modal-close.svg" alt="open" width={11} height={11} />
       </div>
-      <div id="content-cloud" className={`hex-grid__tab__expand ${isOpen ? 'block' : ''} `}>
-        <p>{description}</p>
-        <TextLink href={href} text={linkText} className="dark:text-blackAlpha-900 ml-1 text-xs" />
+      <div id="content-cloud" className={`hex-grid__tab__expand ${isOpen ? 'block' : ''} transition ease-in-out	`}>
+        <p>{cloud.description}</p>
+        <TextLink href={cloud.linkHref} text={cloud.linkText} className="dark:text-blackAlpha-900 ml-1 text-xs" />
 
         {children}
       </div>
