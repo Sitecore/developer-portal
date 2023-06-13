@@ -6,6 +6,7 @@ import type { CategoryTileProps } from 'ui/components/lists/CategoryTile';
 // Components
 import CTACard from 'ui/components/cards/CTACard';
 import PromoCard from 'ui/components/cards/PromoCard';
+import ChangelogEntries from 'ui/components/changelog/ChangelogEntries';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
@@ -121,6 +122,8 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
           <VerticalGroup>
             <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
             <StackExchangeFeed content={pageInfo.stackexchange} />
+
+            <ChangelogEntries content={pageInfo.changelogEntries} />
           </VerticalGroup>
         </Container>
       </section>

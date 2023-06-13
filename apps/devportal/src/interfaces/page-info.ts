@@ -1,6 +1,7 @@
 import { ContentHeading } from '@/src/interfaces/contentheading';
 import { ForumOption, SortOption } from 'ui/components/sitecoreCommunity/SitecoreCommunity.api';
 
+import { ChangelogEntry } from '@/../../packages/sc-changelog/types/changeLogEntry';
 import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/common/types/sitecoreCommunity';
 import { StackExchangeQuestion } from 'ui/common/types/stackExchange';
 import { Tweet } from 'ui/common/types/twitter';
@@ -48,6 +49,8 @@ type SitecoreCommunityData = {
 // Output for 3rd party integrations contain specific data structures
 export type PageInfo = PageInfoCore & {
   stackexchange: StackExchangeQuestion[];
+  changelogEntries: ChangelogEntry[];
+  changelogProductId?: string;
   twitter: Tweet[];
   twitterHandle?: string;
   youtube: YouTubeVideo[];
