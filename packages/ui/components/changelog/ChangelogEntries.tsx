@@ -11,34 +11,35 @@ type ChangelogEntriesProps = {
   className?: string;
   title?: string;
   linkHref?: string;
-  linkText: string;
+  linkText?: string;
+  columns?: number;
   headingLevel?: ValidHeadingLevels;
 };
 
-const ChangelogEntries = ({ content, title, linkHref, linkText, className }: ChangelogEntriesProps): JSX.Element => {
+const ChangelogEntries = ({ content, title, linkHref, linkText, className, columns }: ChangelogEntriesProps): JSX.Element => {
   if (content.length === 0) {
     return <></>;
   }
 
   // Full response
   return (
-    <div className={className}>
+    <div className={`${className} changelog-item`}>
       <FeedHeading
-        title={title != null ? title : 'The Latest on Sitecore Changelog'}
+        title={title != null ? title : 'Sitecore Changelog'}
         link={{
           href: linkHref != null ? linkHref : '/changelog',
           title: linkText != null ? linkText : 'See all changes',
         }}
       />
-      <ul className="grid gap-10 md:grid-cols-1">
+      <ul className={`grid gap-4 ${columns == null ? 'md:grid-cols-1' : `md:grid-cols-${columns}`}`}>
         {content.map((entry) => (
           <li key={entry.id}>
             <div className="flex items-start">
               <div className="bg-theme-bg-alt text-theme-text border-theme-border-alt bg-primary mr-4 border p-2 text-center leading-tight">
                 <time className={`flex items-center justify-center text-xs`} dateTime="2022-10-21T15:48:00.000Z">
-                  {new Date(entry.releaseDate).toLocaleString('en-US', { month: 'long' })}
+                  {new Date(entry.releaseDate).getDay()}
                   <br />
-                  {new Date(entry.releaseDate).getFullYear()}
+                  {new Date(entry.releaseDate).toLocaleString('en-US', { month: 'long' })}
                 </time>
               </div>
               <div>

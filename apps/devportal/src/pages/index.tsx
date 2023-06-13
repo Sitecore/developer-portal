@@ -10,7 +10,6 @@ import ChangelogEntries from 'ui/components/changelog/ChangelogEntries';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
-import Hexagons from 'ui/components/hexagons/Hexagons';
 import CategoryTileList from 'ui/components/lists/CategoryTileList';
 import CommunityList from 'ui/components/lists/CommunityList';
 import SitecoreCommunityBlog from 'ui/components/sitecoreCommunity/blog/SitecoreCommunityBlog';
@@ -86,8 +85,6 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
     <VerticalGroup>
       <Container>
         <VerticalGroup size="lg">
-          <Hexagons />
-
           <VideoPromo
             youTubeId="fAlNP0hCoZg"
             title="Composable DXP"
@@ -123,7 +120,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
             <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
             <StackExchangeFeed content={pageInfo.stackexchange} />
 
-            <ChangelogEntries content={pageInfo.changelogEntries} />
+            <ChangelogEntries content={pageInfo.changelogEntries} title="Software updates" columns={1} />
           </VerticalGroup>
         </Container>
       </section>
