@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import TextLink from 'ui/components/common/TextLink';
 
 type ArticleProps = {
@@ -5,13 +7,31 @@ type ArticleProps = {
   description: string;
   link?: string;
   linktext?: string;
+  imageUrl?: string;
+  hideLinkText?: boolean;
 };
-export const Article = ({ title, description, link, linktext }: ArticleProps) => {
+export const Article = ({ title, description, link, linktext, imageUrl, hideLinkText }: ArticleProps) => {
   return (
     <div className="article">
       <h4>{title}</h4>
-      <p>{description}</p>
-      {link && <TextLink text={linktext ? linktext : 'Read more'} href={link} />}
+      {description && <p>{description}</p>}
+      {imageUrl && link && (
+        <div className="not-prose relative aspect-video w-full">
+          <Link href={link} title={title} rel="noreferrer noopener">
+            <Image
+              src={imageUrl}
+              alt={title || ''}
+              className="relative z-10"
+              priority={true}
+              fill
+              sizes="(max-width: 768px) 100vw,
+                    (max-width: 1200px) 50vw,
+                    33vw"
+            />
+          </Link>
+        </div>
+      )}
+      {link && !hideLinkText && <TextLink text={linktext ? linktext : 'Read more'} href={link} />}
     </div>
   );
 };
