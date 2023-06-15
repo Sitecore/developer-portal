@@ -5,13 +5,13 @@ export const config = {
   runtime: 'edge',
 };
 
-const bold = fetch(new URL('../../../assets/fonts/AvenirNextW05-Bold.ttf', import.meta.url)).then((res) => res.arrayBuffer());
+//const bold = fetch(new URL('../../../assets/fonts/AvenirNextW05-Bold.ttf', import.meta.url)).then((res) => res.arrayBuffer());
 const demi = fetch(new URL('../../../assets/fonts/AvenirNextW05-Demi.ttf', import.meta.url)).then((res) => res.arrayBuffer());
 const light = fetch(new URL('../../../assets/fonts/AvenirNextW05-Light.ttf', import.meta.url)).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest) {
   try {
-    const avenirNextBold = await bold;
+    //    const avenirNextBold = await bold;
     const avenirNextDemi = await demi;
     const avenirNextLight = await light;
 
@@ -19,10 +19,10 @@ export default async function handler(req: NextRequest) {
 
     // ?title=<title>
     const hasTitle = searchParams.has('title');
-    const title = hasTitle ? searchParams.get('title')?.slice(0, 100) : 'Sitecore Developer Portal';
+    const title = hasTitle ? searchParams.get('title') : 'Sitecore Developer Portal';
 
     const hasSubTitle = searchParams.has('subtitle');
-    const subtitle = hasSubTitle ? searchParams.get('subtitle')?.slice(0, 100) : 'DIRECT ACCESS TO THE TOOLS AND INFORMATION YOU NEED MOST IN A PORTAL CREATED TO ENHANCE YOUR DEVELOPER EXPERIENCE.';
+    const subtitle = hasSubTitle ? searchParams.get('subtitle') : 'DIRECT ACCESS TO THE TOOLS AND INFORMATION YOU NEED MOST IN A PORTAL CREATED TO ENHANCE YOUR DEVELOPER EXPERIENCE.';
 
     return new ImageResponse(
       (
@@ -40,7 +40,7 @@ export default async function handler(req: NextRequest) {
           }}
         >
           <div style={{ marginTop: 0, fontWeight: 'bold', fontFamily: '"AvenirNextDemi"', fontSize: 72 }}>{title}</div>
-          <div style={{ marginTop: 40, marginBottom: 40, fontFamily: '"AvenirNextLight"', fontWeight: 'lighter', fontSize: 24 }}>{subtitle}</div>
+          <div style={{ marginTop: 40, marginBottom: 40, fontFamily: '"AvenirNextLight"', fontWeight: 'lighter', fontSize: 24, width: '95%' }}>{subtitle}</div>
           <svg width="444" height="48" viewBox="0 0 222 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', bottom: 40, left: 40 }}>
             <path
               d="M11.44 17.52C12.38 17.4 13.28 17.11 14.1 16.65C16.13 15.51 17.29 13.58 17.39 11.18V10.96H20.22C20.05 9.53 19.49 8.23 18.7 7.11L15.82 8.95C16.69 10.33 16.81 11.83 16.13 13.35C15.36 15.19 13.52 16.76 11.44 17.51M20.27 11.39H17.83C17.66 13.81 16.4 15.87 14.32 17C13.13 17.65 11.78 17.99 10.4 17.99C9.34 17.99 8.25 17.8 7.21 17.41C8.47 18.18 9.87 18.62 11.32 18.62H11.34C13.95 18.62 16.32 17.24 17.65 14.89L17.77 14.7L19.39 15.74C19.97 14.6 20.29 13.34 20.29 11.99C20.29 11.8 20.27 11.6 20.27 11.39ZM11.34 19.06C8.7 19.06 6.24 17.75 4.49 15.53C5.82 18.34 8.68 20.3 11.99 20.3C15.06 20.3 17.75 18.63 19.18 16.14L17.9 15.34C16.47 17.66 14.05 19.07 11.34 19.07M11.99 20.74C7.18 20.74 3.26 16.84 3.26 12.01C3.26 7.18 7.16 3.27 12 3.27C16.84 3.27 20.73 7.17 20.73 12C20.73 16.83 16.81 20.73 12 20.73M12 0C5.37 0 0 5.37 0 12C0 18.63 5.37 24 12 24C18.63 24 24 18.63 24 12C24 5.37 18.63 0 12 0Z"
@@ -62,11 +62,11 @@ export default async function handler(req: NextRequest) {
         width: 1200,
         height: 630,
         fonts: [
-          {
-            name: 'AvenirNextBold',
-            data: avenirNextBold,
-            style: 'normal',
-          },
+          //{
+          //   name: 'AvenirNextBold',
+          //   data: avenirNextBold,
+          //   style: 'normal',
+          // },
           {
             name: 'AvenirNextDemi',
             data: avenirNextDemi,
