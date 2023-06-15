@@ -1,5 +1,7 @@
+import { getChangelogEntryUrl } from '@/../../packages/sc-changelog/utils/urlBuilder';
 import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@/src/components/changelog/ChangelogItemMeta';
+import SocialShare from '@/src/components/common/SocialShare';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -128,7 +130,10 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
               <div className={`prose dark:prose-invert my-3 max-w-none text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
               {changelogEntry.fullArticle && <div className={`prose dark:prose-invert my-3 max-w-none text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />}
 
-              {changelogEntry.readMoreLink && <TextLink className="font-medium" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} />}
+              <div className="flex flex-row">
+                <div className="grow">{changelogEntry.readMoreLink && <TextLink className="font-medium" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} />}</div>
+                <SocialShare className="w-30" url={getChangelogEntryUrl(changelogEntry, true)} title={changelogEntry.title} />
+              </div>
             </div>
             <div className="col-span-2 hidden md:block">
               <ChangelogByMonth product={currentProduct} />

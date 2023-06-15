@@ -1,6 +1,8 @@
 import { ChangelogEntry, ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 import { slugify } from 'sc-changelog/utils/stringUtils';
 
+const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
+
 export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEntrySummary): string[] {
   const segments: string[] = [];
 
@@ -11,10 +13,13 @@ export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEn
   return segments;
 }
 
-export function getChangelogEntryUrl(entry: ChangelogEntry | ChangelogEntrySummary): string {
+export function getChangelogEntryUrl(entry: ChangelogEntry | ChangelogEntrySummary, includeServerUrl?: boolean): string {
   const url: string[] = [];
 
   url.push('/changelog');
   url.push(...getChangelogEntryUrlSegments(entry));
+
+  if (includeServerUrl) return `${publicUrl + url.join('/')}`;
+
   return url.join('/');
 }
