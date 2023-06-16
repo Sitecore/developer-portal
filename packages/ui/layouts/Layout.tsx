@@ -57,7 +57,7 @@ const Layout = ({ title, description = '', openGraphImage, children, preview }: 
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`${publicUrl}${path}`} />
-        <meta property="og:image" content={`${publicUrl}${openGraphImage ? openGraphImage : '/images/social/social-card-default.jpeg'}`} />
+        <meta property="og:image" content={openGraphImage ? `${publicUrl}${openGraphImage}` : `${publicUrl}/api/og?title=${title}&subtitle=${description}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="preload" href="/images/heros/hero-wide-light.webp" as="image" />
         <link rel="preload" href="/images/heros/hero-wide-dark.webp" as="image" />
