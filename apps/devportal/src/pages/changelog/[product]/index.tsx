@@ -46,16 +46,19 @@ export async function getStaticProps(context: any) {
 
 const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
   const router = useRouter();
+  const title = `${currentProduct.name} Changelog`;
+  const description = `Learn more about new versions, changes and improvements for ${currentProduct.name}`;
+
   return (
-    <Layout title="Changelog - Home" description="Empty">
-      <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
-        <div className="absolute flex h-8 flex-row dark:hidden">
+    <Layout title={title} description={description}>
+      <Hero title={title} description={description}>
+        <div className="absolute flex flex-row h-8 dark:hidden">
           <span className="mr-1 text-xs">Powered by</span>
           <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
             <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
           </Link>
         </div>
-        <div className="absolute hidden h-8 flex-row dark:flex">
+        <div className="absolute flex-row hidden h-8 dark:flex">
           <span className="mr-1 text-xs">Powered by</span>
           <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
             <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
@@ -73,11 +76,11 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
               for the current release notes per product
             </p>
           </Message>
-          <div className="mt-8 grid gap-16 md:grid-cols-5">
+          <div className="grid gap-16 mt-8 md:grid-cols-5">
             <div className="col-span-3">
               <ChangelogList initialProduct={currentProduct} />
             </div>
-            <div className="col-span-2 hidden md:block">
+            <div className="hidden col-span-2 md:block">
               <div className="flex flex-row">
                 <SmallLinkButton text={'RSS'} href={`${router.asPath}/rss.xml`} icon={'feed'} />
                 <SmallLinkButton text={'ATOM'} href={`${router.asPath}/atom.xml`} icon={'feed'} />
