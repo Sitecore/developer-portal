@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
-import { ValidHeadingLevels } from 'ui/common/types/heading-levels';
 import FeedHeading from 'ui/components/headings/FeedHeading';
+import DateIcon from '../common/DateIcon';
 
 type ChangelogEntriesProps = {
   content: ChangelogEntry[];
@@ -13,10 +13,10 @@ type ChangelogEntriesProps = {
   linkHref?: string;
   linkText?: string;
   columns?: number;
-  headingLevel?: ValidHeadingLevels;
+  headingClass?: string;
 };
 
-const ChangelogEntries = ({ content, title, linkHref, linkText, className, columns }: ChangelogEntriesProps): JSX.Element => {
+const ChangelogEntries = ({ content, title, linkHref, linkText, className, headingClass, columns }: ChangelogEntriesProps): JSX.Element => {
   if (content.length === 0) {
     return <></>;
   }
@@ -30,18 +30,13 @@ const ChangelogEntries = ({ content, title, linkHref, linkText, className, colum
           href: linkHref != null ? linkHref : '/changelog',
           title: linkText != null ? linkText : 'See all changes',
         }}
+        headingClass={headingClass}
       />
       <ul className={`grid gap-4 ${columns == null ? 'md:grid-cols-1' : `md:grid-cols-${columns}`}`}>
         {content.map((entry) => (
           <li key={entry.id}>
             <div className="flex items-start">
-              <div className="bg-theme-bg-alt text-theme-text border-theme-border-alt bg-primary mr-4 border p-2 text-center leading-tight">
-                <time className={`flex items-center justify-center text-xs`} dateTime="2022-10-21T15:48:00.000Z">
-                  {new Date(entry.releaseDate).getDay()}
-                  <br />
-                  {new Date(entry.releaseDate).toLocaleString('en-US', { month: 'long' })}
-                </time>
-              </div>
+              <DateIcon date={entry.releaseDate} type="calendar" />
               <div>
                 <span className={`hover:text-violet dark:hover:text-teal font-semibold hover:underline`} id={getSlug(entry.title)}>
                   <Link href={getChangelogEntryUrl(entry)} title={entry.title}>
