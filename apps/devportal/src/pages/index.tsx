@@ -88,7 +88,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
         <VerticalGroup size="lg">
           <GenericList data={updatesListData} className="mt-8" columns={4} />
           <Row columns={2} className="gap-14">
-            <ChangelogEntries content={pageInfo.changelogEntries} title="Latest updates" columns={1} headingClass="text-lg" linkText="changelog" />
+            <ChangelogEntries content={pageInfo.changelogEntries} title="Latest updates" columns={1} headingClass="text-lg" linkText="Full changelog" />
             <SitecoreCommunityBlog content={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} headingClass="text-lg" listItem={true} />
           </Row>
         </VerticalGroup>

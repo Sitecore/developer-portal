@@ -19,7 +19,7 @@ const GenericList = ({ className, data, columns, headingClass }: GenericListProp
     <p className="text-theme-text-alt mb-6 text-lg">{data.subtitle}</p>
     <ul className={`grid  items-stretch gap-6 ${columns ? `md:grid-cols-${columns}` : 'md:grid-cols-3'}`}>
       {data.content.map((link) => (
-        <li key={link.title} className="border-theme-border flex h-full flex-col border shadow-lg">
+        <li key={link.title} className="border-theme-border flex h-full flex-col border hover:shadow-lg">
           <div className="border-theme-border-alt bg-theme-bg-alt mb-4">
             <Link href={link.href}>
               <Image src={link.img.src} alt={link.img.alt || ''} width="368" height="207" layout="responsive" />
