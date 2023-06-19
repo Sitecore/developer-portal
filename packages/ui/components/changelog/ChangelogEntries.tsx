@@ -29,6 +29,7 @@ const ChangelogEntries = ({ content, title, linkHref, linkText, className, headi
         link={{
           href: linkHref != null ? linkHref : '/changelog',
           title: linkText != null ? linkText : 'See all changes',
+          openInNewTab: false,
         }}
         headingClass={headingClass}
       />
@@ -38,7 +39,7 @@ const ChangelogEntries = ({ content, title, linkHref, linkText, className, headi
             <div className="flex items-start">
               <DateIcon date={entry.releaseDate} type="calendar" />
               <div>
-                <span className={`hover:text-violet dark:hover:text-teal font-semibold hover:underline`} id={getSlug(entry.title)}>
+                <span className={`hover:text-violet dark:hover:text-teal line-clamp-1 font-semibold hover:underline`} id={getSlug(entry.title)}>
                   <Link href={getChangelogEntryUrl(entry)} title={entry.title}>
                     {entry.title}
                   </Link>

@@ -1,9 +1,6 @@
 import axios from 'axios';
 // Interfaces
-import type {
-  SitecoreCommunityContent,
-  SitecoreCommunityEvent,
-} from 'ui/common/types/sitecoreCommunity';
+import type { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/common/types/sitecoreCommunity';
 
 type SitecoreCommunityBaseResponse = {
   comment_count: string;
@@ -56,31 +53,20 @@ type SitecoreCommunityOptions = {
 };
 
 const getEvents = async (maxResults: number): Promise<SitecoreCommunityEvent[]> => {
-  const params = [
-    `limit=${maxResults}`,
-    'offset=0',
-    'upcoming=false',
-    'sort=start_date',
-    'eventFilter=all',
-    'fetchRsvp=false',
-  ];
-  return axios
-    .get(
-      `https://community.sitecore.com/api/sn_communities/v1/community/events?${params.join('&')}`
-    )
-    .then((response) => {
-      return response.data.result.contents.map((event: SitecoreCommunityEventResponse) => ({
-        contentType: 'event',
-        editedDate: event.edited_date_display,
-        endDate: event.end_date,
-        location: event.location_name,
-        startDate: event.start_date,
-        title: event.title,
-        url: `/community?id=community_event&sys_id=${event.sys_id}`,
-        userName: event.userAvatarObject.name,
-        virtualUrl: event.virtual_url,
-      }));
-    });
+  const params = [`limit=${maxResults}`, 'offset=0', 'upcoming=false', 'sort=start_date', 'eventFilter=all', 'fetchRsvp=false'];
+  return axios.get(`https://community.sitecore.com/api/sn_communities/v1/community/events?${params.join('&')}`).then((response) => {
+    return response.data.result.contents.map((event: SitecoreCommunityEventResponse) => ({
+      contentType: 'event',
+      editedDate: event.edited_date_display,
+      endDate: event.end_date,
+      location: event.location_name,
+      startDate: event.start_date,
+      title: event.title,
+      url: `/community?id=community_event&sys_id=${event.sys_id}`,
+      userName: event.userAvatarObject.name,
+      virtualUrl: event.virtual_url,
+    }));
+  });
 };
 
 const CONTENT_TYPE_IDS = {
@@ -105,18 +91,8 @@ const FORUM_IDS: Record<ForumOption, string> = {
   storefrontsAndMarketplaces: '46ce63dd1b16f050486a4083b24bcb8f',
 };
 
-const getContent = async ({
-  contentType,
-  maxResults,
-  sort,
-  forum,
-}: SitecoreCommunityOptions): Promise<SitecoreCommunityContent[]> => {
-  const params = [
-    `sort=${sort}`,
-    'stFrom=0',
-    `before=${new Date().toISOString()}`,
-    `last=${maxResults}`,
-  ];
+const getContent = async ({ contentType, maxResults, sort, forum }: SitecoreCommunityOptions): Promise<SitecoreCommunityContent[]> => {
+  const params = [`sort=${sort}`, 'stFrom=0', `before=${new Date().toISOString()}`, `last=${maxResults}`];
 
   if (contentType) {
     params.push(`type=${CONTENT_TYPE_IDS[contentType]}`);
@@ -127,9 +103,7 @@ const getContent = async ({
   }
 
   return axios
-    .get(
-      `https://community.sitecore.com/api/sn_communities/v1/community/contents?${params.join('&')}`
-    )
+    .get(`https://community.sitecore.com/api/sn_communities/v1/community/contents?${params.join('&')}`)
     .then((response) => {
       return response.data.result.contents.map((item: SitecoreCommunityContentResponse) => ({
         commentCount: item.comment_count,
@@ -144,12 +118,7 @@ const getContent = async ({
     .catch(Error);
 };
 
-const get = async ({
-  contentType = undefined,
-  forum = undefined,
-  maxResults = 3,
-  sort = 'created' as SortOption,
-}: SitecoreCommunityOptions): Promise<SitecoreCommunityEvent[] | SitecoreCommunityContent[]> => {
+const get = async ({ contentType = undefined, forum = undefined, maxResults = 5, sort = 'created' as SortOption }: SitecoreCommunityOptions): Promise<SitecoreCommunityEvent[] | SitecoreCommunityContent[]> => {
   // Prevent showing more than 5, its just too many
   const count = maxResults > 5 ? 5 : maxResults;
   if (contentType === 'event') {

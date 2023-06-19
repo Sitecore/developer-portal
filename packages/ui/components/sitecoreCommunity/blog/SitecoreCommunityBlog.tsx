@@ -62,7 +62,7 @@ const SitecoreCommunityBlog = ({ content, sortKeys, headingClass, className, lis
         </div>
       )}
 
-      <ul className="grid gap-y-6">
+      <ul className="grid gap-y-4">
         {content.map((item, i) => (listItem ? <SitecoreCommunityBlogOrQuestionSidebar item={item} contentType="Blog" key={i} loading={isLoading} /> : <SitecoreCommunityBlogOrQuestion item={item} contentType="Blog" key={i} loading={isLoading} />))}
       </ul>
     </div>

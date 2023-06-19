@@ -6,4 +6,5 @@ youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'
 sitecoreCommunityNews: true
 sitecoreCommunityBlog: true
+heroImage: '/images/violet3d.png'
 ---

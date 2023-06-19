@@ -14,7 +14,7 @@ export type HeroProps = {
 };
 
 const Hero = ({ description, headingLevel = 'h1', title, image, productLogo, children }: HeroProps): JSX.Element => {
-  if (productLogo != null || image != null) {
+  if (productLogo != null) {
     return <ProductHero title={title} description={description} image={image} productLogo={productLogo} headingLevel={headingLevel} />;
   }
 

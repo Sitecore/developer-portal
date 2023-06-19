@@ -6,8 +6,8 @@ export const ContentCloud: CloudInfoType = {
   color: 'violet',
   logoUrl: '/images/sitecore-content-cloud-color.svg',
   description: 'Sitecore Content Cloud allows you to incrementally implement just what you need and integrate world-class solutions seamlessly with your existing tech stack.',
-  linkHref: '#',
-  linkText: 'Learn more',
+  linkHref: '',
+  linkText: '',
 };
 
 export const EngagementCloud: CloudInfoType = {
@@ -16,8 +16,8 @@ export const EngagementCloud: CloudInfoType = {
   color: 'red',
   logoUrl: '/images/sitecore-engagement-cloud-color.svg',
   description: 'With Sitecore Engagement Cloud, brands have the tools they need - connect and activate customer data across the ecosystem, personalize with ease, and optimize every experience across every channel.',
-  linkHref: '#',
-  linkText: 'Learn more',
+  linkHref: '',
+  linkText: '',
 };
 
 export const CommerceCloud: CloudInfoType = {
@@ -26,6 +26,6 @@ export const CommerceCloud: CloudInfoType = {
   color: 'teal',
   logoUrl: '/images/sitecore-commerce-cloud-color.svg',
   description: 'Sitecore Commerce Cloud is the key to your commerce growth strategy, enabling businesses to acquire and engage new shoppers at any moment.',
-  linkHref: '#',
-  linkText: 'Learn more',
+  linkHref: '',
+  linkText: '',
 };

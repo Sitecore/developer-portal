@@ -24,7 +24,7 @@ const Hexagons = ({ className }: HexagonsProps): JSX.Element | null => {
 
   return (
     <div className={`honeycomb my-8 ${className}`}>
-      <section className="has-dark-gradient honeycomb--6 dark:bg-theme-bg bg-white">
+      <section className="has-dark-gradient honeycomb--6">
         <FeedHeading
           title="Explore our SaaS DXP"
           link={{
@@ -32,7 +32,7 @@ const Hexagons = ({ className }: HexagonsProps): JSX.Element | null => {
             title: 'Product overview',
           }}
         />
-        <p className="text-theme-text-alt text-lg">
+        <p className="text-theme-text-alt">
           Sitecore&apos;s SaaS-enabled, composable digital experience platform (DXP) allows you to choose which products you want to implement from search to purchase to post-sale marketing with solutions for Content, Experience, and Commerce.
         </p>
         <div className="honeycomb__grid">

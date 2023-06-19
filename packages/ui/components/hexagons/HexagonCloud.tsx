@@ -53,8 +53,7 @@ export const HexagonCloud = ({ cloud, isOpen, children, onClick }: HexagonCloudP
       </div>
       <div id="content-cloud" className={`hex-grid__tab__expand ${isOpen ? 'block' : ''} transition ease-in-out	`}>
         <p>{cloud.description}</p>
-        <TextLink href={cloud.linkHref} text={cloud.linkText} className="dark:text-blackAlpha-900 ml-1 text-xs" />
-
+        {!!cloud.linkHref && !!cloud.linkText && <TextLink href={cloud.linkHref} text={cloud.linkText} className="dark:text-blackAlpha-900 ml-1 text-xs" />}
         {children}
       </div>
     </li>

@@ -50,7 +50,7 @@ export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, contentType, load
       <div className="flex items-start">
         <DateIcon date={item.publishDate} type="calendar" />
         <div className="">
-          <span className={`hover:text-violet dark:hover:text-teal  font-semibold hover:underline`}>
+          <span className={`hover:text-violet dark:hover:text-teal  line-clamp-1 font-semibold hover:underline`}>
             <Link href={item.url} title={item.title}>
               {item.title}
             </Link>
