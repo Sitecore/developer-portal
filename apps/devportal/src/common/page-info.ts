@@ -12,6 +12,7 @@ import StackExchangeApi from 'ui/components/stackexchange/StackExchange.api';
 import TwitterApi from 'ui/components/twitter/Twitter.api';
 import YouTubeApi from 'ui/components/youtube/YouTube.api';
 
+import { ChangelogEntriesPaginated } from '@/../../packages/sc-changelog/changelog';
 import { ParseContent } from '@/src/common/markdown/mdxParse';
 import { ContentHeading } from '@/src/interfaces/contentheading';
 
@@ -75,6 +76,7 @@ export const getPageInfo = async (arg: string | ProductSolutionContextParams, pr
     hasInPageNav: true,
     ...meta,
     stackexchange: [],
+    changelogEntries: [],
     youtube: [],
     twitter: [],
     sitecoreCommunity: {},
@@ -91,6 +93,7 @@ export const getPageInfo = async (arg: string | ProductSolutionContextParams, pr
    * All of these APIs will return an empty array if the corresponding meta key is null
    */
   pageInfo.stackexchange = await StackExchangeApi.get(meta.stackexchange);
+  pageInfo.changelogEntries = await (await ChangelogEntriesPaginated(false, '5', '', '')).entries;
   pageInfo.twitter = await TwitterApi.get(meta.twitter);
   let twitterHandle: string | undefined = undefined;
   if (meta.twitter) {
