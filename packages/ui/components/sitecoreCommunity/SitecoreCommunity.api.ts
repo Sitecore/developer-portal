@@ -118,7 +118,7 @@ const getContent = async ({ contentType, maxResults, sort, forum }: SitecoreComm
     .catch(Error);
 };
 
-const get = async ({ contentType = undefined, forum = undefined, maxResults = 5, sort = 'created' as SortOption }: SitecoreCommunityOptions): Promise<SitecoreCommunityEvent[] | SitecoreCommunityContent[]> => {
+const get = async ({ contentType = undefined, forum = undefined, maxResults = 3, sort = 'created' as SortOption }: SitecoreCommunityOptions): Promise<SitecoreCommunityEvent[] | SitecoreCommunityContent[]> => {
   // Prevent showing more than 5, its just too many
   const count = maxResults > 5 ? 5 : maxResults;
   if (contentType === 'event') {
