@@ -9,6 +9,7 @@ import PromoCard from 'ui/components/cards/PromoCard';
 import Container from 'ui/components/common/Container';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
+import Hexagons from 'ui/components/hexagons/Hexagons';
 import CategoryTileList from 'ui/components/lists/CategoryTileList';
 import CommunityList from 'ui/components/lists/CommunityList';
 import SitecoreCommunityBlog from 'ui/components/sitecoreCommunity/blog/SitecoreCommunityBlog';
@@ -84,6 +85,8 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
     <VerticalGroup>
       <Container>
         <VerticalGroup size="lg">
+          <Hexagons />
+
           <VideoPromo
             youTubeId="fAlNP0hCoZg"
             title="Composable DXP"
