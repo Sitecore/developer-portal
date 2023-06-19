@@ -93,7 +93,6 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
           />
 
           <PromoCard {...promoData} key="promo" isImageLeft={false} />
-
           <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} />
           <SitecoreCommunityBlog content={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} />
           <SitecoreCommunityEvents content={pageInfo.sitecoreCommunity.events} />
@@ -101,10 +100,10 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
           <CommunityList data={communityListData} />
         </VerticalGroup>
       </Container>
-      <section className="dark:bg-theme-bg-alt bg-gray-600 py-16">
+      <section className="py-16 bg-gray-600 dark:bg-theme-bg-alt">
         <Container>
           <div className="mb-8 max-w-prose">
-            <h2 className="heading-md mb-4 text-white">Explore Sitecore by solution</h2>
+            <h2 className="mb-4 text-white heading-md">Explore Sitecore by solution</h2>
             <p className="text-white">How can we help you today? Get all the information you want, depending on your business’s needs.</p>
           </div>
           <CategoryTileList cards={productSolutions} />
@@ -113,7 +112,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       <Container>
         <CTACard {...getHelpCta} />
       </Container>
-      <section className="bg-theme-bg-alt py-16">
+      <section className="py-16 bg-theme-bg-alt">
         <Container>
           <VerticalGroup>
             <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />

@@ -12,6 +12,16 @@ const content: GenericListItem[] = [
     },
   },
   {
+    title: 'Sitecore Search',
+    description: 'Use our search functionality to search across all the official Sitecore resources, now powered by Sitecore Search',
+    href: '/search',
+    linkText: 'Search now!',
+    img: {
+      src: '/images/search-page.png',
+      alt: 'Sitecore Search',
+    },
+  },
+  {
     title: 'XM Cloud Recommended Practices',
     description: 'Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects!',
     href: '/learn/faq/xm-cloud-recommended-practices',
