@@ -34,3 +34,4 @@ See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/1
 - [Using a Rendering Contents Resolver with Experience Edge](https://sitecorerap.wordpress.com/2023/01/24/using-a-rendering-contents-resolver-with-experience-edge/) (John Rappel)
 - [Tuning Guide for Sitecore Experience Edge GraphQL](https://sitecorerap.wordpress.com/2023/03/02/tuning-guide-for-sitecore-experience-edge-graphql/) (John Rappel)
 - [How Experience Edge Caches GraphQL and Media](https://sitecorerap.wordpress.com/2023/03/10/how-experience-edge-caches-graphql-and-media/) (John Rappel)
+- [Leveraging Experience Edge Webhooks For High-Quality Sitecore Implementations](https://sitecorerap.wordpress.com/2023/06/16/leveraging-experience-edge-webhooks-for-high-quality-sitecore-implementations/) (John Rappel)
