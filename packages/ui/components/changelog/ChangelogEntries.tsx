@@ -4,7 +4,6 @@ import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 import FeedHeading from 'ui/components/headings/FeedHeading';
-import DateIcon from '../common/DateIcon';
 
 type ChangelogEntriesProps = {
   content: ChangelogEntry[];
@@ -37,26 +36,29 @@ const ChangelogEntries = ({ content, title, linkHref, linkText, className, headi
         {content.map((entry) => (
           <li key={entry.id}>
             <div className="flex items-start">
-              <DateIcon date={entry.releaseDate} type="calendar" />
+              <div className={`border-theme-border mr-4 border p-2 text-center text-sm hover:underline`}>
+                <div className="h-8 w-8 dark:hidden ">
+                  <Image src={entry.lightIcon} alt={entry.productName ? entry.productName : 'Product icon'} width={30} height={30} priority={true} className="inline" />
+                </div>
+                <div className="hidden h-8 w-8 dark:block">
+                  <Image src={entry.darkIcon} alt={entry.productName ? entry.productName : 'Product icon'} width={30} height={30} priority={true} className="inline" />
+                </div>
+              </div>
+              {/*<DateIcon date={entry.releaseDate} type="calendar" /> */}
               <div>
                 <span className={`hover:text-violet dark:hover:text-teal line-clamp-1 font-semibold hover:underline`} id={getSlug(entry.title)}>
                   <Link href={getChangelogEntryUrl(entry)} title={entry.title}>
                     {entry.title}
                   </Link>
                 </span>
-                <div className="my-1 flex flex-row items-center space-x-3 text-gray-500 dark:text-gray-400">
+                <div className="my-1 flex flex-row items-center space-x-3 text-xs text-gray-500 dark:text-gray-400">
+                  <div className="flex flex-row gap-5">{new Date(entry.releaseDate).toLocaleString('en-US', { dateStyle: 'medium' })}</div>
                   <div className="flex flex-row gap-5">
                     {entry.products != null
                       ? entry.products.map((product, key) => (
                           <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
                             <div className={` text-sm hover:underline`}>
-                              <div className="absolute h-5 w-5 dark:hidden ">
-                                <Image src={product.lightIcon} alt={product.productName} width={20} height={20} priority={true} />
-                              </div>
-                              <div className="absolute hidden h-5 w-5 dark:block">
-                                <Image src={product.darkIcon} alt={product.productName} width={20} height={20} priority={true} />
-                              </div>
-                              <div className="ml-6 text-xs">{product.productName}</div>
+                              <div className="text-xs">{product.productName}</div>
                             </div>
                           </Link>
                         ))
