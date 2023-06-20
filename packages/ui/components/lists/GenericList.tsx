@@ -26,9 +26,11 @@ const GenericList = ({ className, data, columns, headingClass }: GenericListProp
             </Link>
           </div>
           <div className="flex-1 px-4">
-            <h3 className="text-base font-semibold">{link.title}</h3>
+            <Link href={link.href}>
+              <h3 className="text-base font-semibold">{link.title}</h3>
 
-            <p className="text-theme-text-alt my-4 text-sm">{link.description}</p>
+              <p className="text-theme-text-alt my-4 text-sm">{link.description}</p>
+            </Link>
           </div>
           <TextLink href={link.href} text={link.linkText} className="p-4" />
         </li>
