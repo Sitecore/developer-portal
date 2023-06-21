@@ -23,7 +23,7 @@ const Hexagons = ({ className }: HexagonsProps): JSX.Element | null => {
   };
 
   return (
-    <div className={`honeycomb my-8 ${className}`}>
+    <div className={`honeycomb ${className}`}>
       <section className="has-dark-gradient honeycomb--6">
         <FeedHeading
           title="Explore our SaaS DXP"

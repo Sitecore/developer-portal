@@ -7,8 +7,10 @@ const content: GenericListItem[] = [
     href: '/marketing-automation/experience-platform',
     linkText: 'Learn more!',
     img: {
-      src: 'https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/icons/newnavigation/products/white/paas-brandmark-sitecore-xp-white.svg?md=20220921T192152Z&la=en&hash=1619E49613784560269E6EDAF415BDC5',
+      src: '/images/platform/experience-platform.svg',
       alt: 'Experience Platform',
+      width: 94,
+      height: 70,
     },
   },
   {
@@ -17,8 +19,10 @@ const content: GenericListItem[] = [
     href: '/content-management/experience-manager',
     linkText: 'Learn more!',
     img: {
-      src: 'https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/icons/newnavigation/products/white/paas-brandmark-sitecore-xm-white.svg?md=20220921T184459Z&la=en&hash=455AB7582A2AF7F6C1E178E8C28C44B7',
+      src: '/images/platform/experience-manager.svg',
       alt: 'Experience Manager',
+      width: 120,
+      height: 70,
     },
   },
   {
@@ -27,8 +31,10 @@ const content: GenericListItem[] = [
     href: '/devops/managed-cloud',
     linkText: 'Learn more',
     img: {
-      src: 'https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/icons/cloud-icons/sitecore-managed-cloud-white2.svg?md=20221017T171003Z&la=en&hash=911AF2ECA4312DE849B46285A0B90FE5',
+      src: '/images/platform/managed-cloud.svg',
       alt: 'Managed Cloud',
+      width: 110,
+      height: 70,
     },
   },
 ];

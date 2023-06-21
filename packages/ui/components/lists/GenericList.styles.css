@@ -1,5 +1,38 @@
 @layer components {
+  .bg-neutral {
+    background-image: url('/images/3d-neutral.jpg');
+    background-repeat: no-repeat;
+    background-color: inherit;
+    background-blend-mode: multiply;
+    width: 100%;
+    background-position: left;
+    background-size: cover;
+  }
   .platform {
     @apply text-center;
+  }
+  .platform .generic-list-item {
+    @apply mx-10 rounded-md border-none pt-8 shadow-[0_0_10px_0_rgba(0,0,0,0.2),inset_0_0_200px_rgba(255,255,255,0.3)] backdrop-blur-lg;
+  }
+  .platform .generic-list-item:hover {
+    @apply shadow-[0_0_10px_0_rgba(0,0,0,0.2),inset_0_0_200px_rgba(255,255,255,0.3)] backdrop-blur-lg;
+  }
+  .platform .generic-list-item .image {
+    @apply h-20 bg-none;
+  }
+  .platform .text-theme-text-alt {
+    @apply text-white;
+  }
+  .platform h2 {
+    @apply mb-4 text-center text-2xl text-white;
+  }
+  .platform h3 {
+    @apply text-xl;
+  }
+  .platform .generic-list-heading div {
+    @apply inline;
+  }
+  .platform .arrow-right {
+    @apply text-white;
   }
 }

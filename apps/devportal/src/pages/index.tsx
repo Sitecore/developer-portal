@@ -85,53 +85,58 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
   <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
     <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-    <VerticalGroup>
+    <Container>
+      <VerticalGroup size="lg">
+        <GenericList data={updatesListData} className="mt-8" columns={4} />
+        <Row columns={2} className="gap-14">
+          <ChangelogEntries content={pageInfo.changelogEntries} title="Latest updates" columns={1} headingClass="text-lg" linkText="Full changelog" />
+          <SitecoreCommunityBlog content={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} headingClass="text-lg" listItem={true} />
+        </Row>
+      </VerticalGroup>
+    </Container>
+
+    <section className="bg-theme-bg-alt py-16">
       <Container>
         <VerticalGroup size="lg">
-          <GenericList data={updatesListData} className="mt-8" columns={4} />
-          <Row columns={2} className="gap-14">
-            <ChangelogEntries content={pageInfo.changelogEntries} title="Latest updates" columns={1} headingClass="text-lg" linkText="Full changelog" />
-            <SitecoreCommunityBlog content={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} headingClass="text-lg" listItem={true} />
-          </Row>
-        </VerticalGroup>
-      </Container>
-      <section className="bg-theme-bg-alt py-16">
-        <Container>
           <Hexagons />
-        </Container>
-        <Container>
-          <GenericList data={updatesPlatformData} className="mt-8" columns={3} />
-        </Container>
-      </section>
-      <Container>
-        <VerticalGroup size="lg">
-          <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} columns={3} title="Community news" />
-          <SitecoreCommunityEvents content={pageInfo.sitecoreCommunity.events} />
-          <YouTubeFeed content={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
-          <CommunityList data={communityListData} />
         </VerticalGroup>
       </Container>
-      <section className="dark:bg-theme-bg-alt bg-gray-600 py-16">
-        <Container>
-          <div className="mb-8 max-w-prose">
-            <h2 className="heading-md mb-4 text-white">Explore Sitecore by solution</h2>
-            <p className="text-white">How can we help you today? Get all the information you want, depending on your business’s needs.</p>
-          </div>
-          <CategoryTileList cards={productSolutions} />
-        </Container>
-      </section>
+    </section>
+    <section className="bg-neutral dark:bg-theme-bg-alt bg-primary-900 py-16">
       <Container>
-        <CTACard {...getHelpCta} />
+        <VerticalGroup size="lg">
+          <GenericList data={updatesPlatformData} columns={3} />
+        </VerticalGroup>
       </Container>
-      <section className="bg-theme-bg-alt py-16">
-        <Container>
-          <VerticalGroup>
-            <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
-            <StackExchangeFeed content={pageInfo.stackexchange} />
-          </VerticalGroup>
-        </Container>
-      </section>
-    </VerticalGroup>
+    </section>
+    <Container className="mt-24">
+      <VerticalGroup size="lg">
+        <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} columns={3} title="Community news" />
+        <SitecoreCommunityEvents content={pageInfo.sitecoreCommunity.events} />
+        <YouTubeFeed content={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
+        <CommunityList data={communityListData} />
+      </VerticalGroup>
+    </Container>
+    <section className="dark:bg-theme-bg-alt bg-gray-600 py-16">
+      <Container>
+        <div className="mb-8 max-w-prose">
+          <h2 className="heading-md mb-4 text-white">Explore Sitecore by solution</h2>
+          <p className="text-white">How can we help you today? Get all the information you want, depending on your business’s needs.</p>
+        </div>
+        <CategoryTileList cards={productSolutions} />
+      </Container>
+    </section>
+    <Container className="py-16">
+      <CTACard {...getHelpCta} />
+    </Container>
+    <section className="bg-theme-bg-alt py-16">
+      <Container>
+        <VerticalGroup>
+          <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
+          <StackExchangeFeed content={pageInfo.stackexchange} />
+        </VerticalGroup>
+      </Container>
+    </section>
   </Layout>
 );
 
