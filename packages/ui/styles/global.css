@@ -11,6 +11,7 @@
 @import '../components/video/VideoPromo.styles.css';
 @import '../components/cards/Cards.styles.css';
 @import '../components/hexagons/Hexagons.styles.css';
+@import '../components/lists/GenericList.styles.css';
 
 @import './buttons.css';
 

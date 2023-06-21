@@ -2,6 +2,7 @@ export type GenericListData = {
   title: string;
   subtitle: string;
   content: GenericListItem[];
+  CssClass?: string;
 };
 
 export type GenericListItem = {

@@ -20,7 +20,9 @@ import YouTubeFeed from 'ui/components/youtube/YouTubeFeed';
 import Layout from 'ui/layouts/Layout';
 // Data
 import communityListData from '@/data/data-community-list';
+import updatesPlatformData from '@/data/data-platform';
 import updatesListData from '@/data/data-updates';
+
 import getHelpCta from '@/data/promos/get-help';
 import { Row } from 'ui/components/common/Row';
 import GenericList from 'ui/components/lists/GenericList';
@@ -96,6 +98,9 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       <section className="bg-theme-bg-alt py-16">
         <Container>
           <Hexagons />
+        </Container>
+        <Container>
+          <GenericList data={updatesPlatformData} className="mt-8" columns={3} />
         </Container>
       </section>
       <Container>

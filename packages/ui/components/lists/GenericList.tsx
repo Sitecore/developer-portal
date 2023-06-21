@@ -14,7 +14,7 @@ type GenericListProps = {
 };
 
 const GenericList = ({ className, data, columns, headingClass }: GenericListProps): JSX.Element => (
-  <div className={className}>
+  <div className={`${className} ${data.CssClass}`}>
     <FeedHeading title={data.title != null ? data.title : 'Sitecore Changelog'} headingClass={headingClass} />
     <p className="text-theme-text-alt mb-6 text-lg">{data.subtitle}</p>
     <ul className={`grid  items-stretch gap-6 ${columns ? `md:grid-cols-${columns}` : 'md:grid-cols-3'}`}>
