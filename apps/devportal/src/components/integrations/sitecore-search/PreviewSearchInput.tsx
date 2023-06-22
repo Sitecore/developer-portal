@@ -38,8 +38,7 @@ const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned 
               onClick={(e) => {
                 e.preventDefault();
                 onItemClick({ id: article.id || '', index: index });
-                if(article.index_name != 'sitecore-devportal-v2') 
-                  trackEntityPageViewEvent("content", [{ id: article.id }]);
+                if (article.index_name != 'sitecore-devportal-v2') trackEntityPageViewEvent('content', [{ id: article.id }]);
                 window.open(article.url, '_blank');
               }}
             >
@@ -92,12 +91,12 @@ const Group = ({
   onGroupTitleClick: (arg: string) => void;
 }) => {
   return (
-    <div className="md:bg-primary-100 sm:bg-theme-bg border-theme-border sm:1/3 border-b border-l pt-2 dark:bg-teal-900 md:w-1/5">
+    <div className="md:bg-primary-100 sm:bg-theme-bg border-theme-border sm:1/3 min-h-420 border-b border-l pt-2 dark:bg-teal-900 md:w-1/5">
       <h2 className="ml-4 mt-2 box-border text-left font-semibold uppercase">{groupTitle}</h2>
       {articles.map(({ text }) => (
         <NavMenu.Item value={getGroupId(groupId, text)} key={text} className="hover:text-primary-900 overflow-hidden pl-4 text-xs hover:bg-white dark:bg-teal-900 dark:hover:bg-teal-700 dark:hover:text-white">
           <NavMenu.Trigger
-            className=" py-1 text-left"
+            className="py-1 text-left "
             onMouseOver={(e) => {
               const target = e.target as HTMLLinkElement;
               target.focus();
