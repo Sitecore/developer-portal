@@ -29,6 +29,15 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 <Repository framework="DotNet" name=".NET SDK" description="The official .NET SDK for the OrderCloud eCommerce platform" repositoryUrl="https://github.com/ordercloud-api/ordercloud-dotnet-sdk" />
 </Row>
 
+## Implementation Guides
+
+These guidance documents aim to help you understand what kind of project management and implementation practices are recommended by Sitecore to implement Sitecore OrderCloud.
+<Row columns={2}>
+
+  <Article title="Project Management guidance deck" imageUrl="https://sitecorecontenthub.stylelabs.cloud/api/public/content/e61825561a114e46aeaffea0a2882552?v=56089791" link="https://sitecorecontenthub.stylelabs.cloud/api/public/content/1b5eab8ae01a4912ad1979126aa1bdab?v=8f350046" hideLinkText="true" />
+  <Article title="Estimation guidance document" imageUrl="/images/file-excel-ordercloud.webp" link="https://sitecorecontenthub.stylelabs.cloud/api/public/content/07824ada3e3f41759eb5d918606dc3de?v=4565d7c2" hideLinkText="true" />
+</Row>
+
 ## Try it yourself
 
 <Row columns={3}>

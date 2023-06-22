@@ -24,6 +24,17 @@ With Sitecore Digital Asset Management (DAM), you can:
 
 <VideoPromo youTubeId="s-xJIqfC38o" title="Using Content Hub DAM" description="Jason St-Cyr and Thomas Desmond show how the DevRel team at Sitecore is using Sitecore Content Hub to review the videos they publish." className="clear-both" />
 
+## Implementation Guides
+
+These guidance documents aim to help you understand what kind of project management and implementation practices are recommended by Sitecore to implement Content Hub DAM.
+<Row columns={3}>
+
+  <Article title="Project Management guidance deck" imageUrl="https://sitecorecontenthub.stylelabs.cloud/api/public/content/ed97a25f96fd47b28aa7b98b3905f88e?v=981d4f4c" link="https://sitecorecontenthub.stylelabs.cloud/api/public/content/3d0f15e8f0854dae93d8c250da2b2a01?v=ba3409eb" hideLinkText="true" />
+  <Article title="Estimation guidance document" imageUrl="/images/file-excel-chdam-planning.webp" link="https://sitecorecontenthub.stylelabs.cloud/api/public/content/ffc87f540d414277b78b92955d2ba5aa?v=b57a14d0" hideLinkText="true" />
+  <Article title="Pre-Implementation Questionaire" imageUrl="/images/file-word-chdam.webp" link="https://sitecorecontenthub.stylelabs.cloud/api/public/content/94eaa2c17f4641c0ae0ec59475b39a0c?v=011b199c" hideLinkText="true" />
+
+</Row>
+
 ## Connectors
 
 The various connectors allow the integration of Sitecore Content Hub with different major product collections.
