@@ -1,3 +1,4 @@
+import { IsSearchEnabled } from '@/src/common/search';
 import PreviewSearchInput from './PreviewSearchInput';
 import SearchInput from './SearchInput';
 
@@ -13,7 +14,7 @@ const Disabled = () => {
 
 const SearchInputSwitcher = () => {
   const renderMode: SearchInputRenderMode =
-    !process.env.NEXT_PUBLIC_SEARCH_APP_ENV || !process.env.NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY || !process.env.NEXT_PUBLIC_SEARCH_APP_API_KEY
+    !IsSearchEnabled()
       ? SearchInputRenderMode.Disabled
       : process.env.NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH === 'true'
       ? SearchInputRenderMode.PreviewSearchInput
