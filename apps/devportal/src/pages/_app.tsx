@@ -14,18 +14,13 @@ import Nav from 'ui/layouts/components/header/Nav';
 import '@/src/styles/global.css';
 import React from 'react';
 // Fonts
-import { Environment, PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
+import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
 import { ThemeProvider } from 'next-themes';
 import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
+import { IsSearchEnabled, SEARCH_CONFIG } from '../common/search';
 import PreviewNotification from '../components/common/PreviewNotification';
 import SearchInputSwitcher from '../components/integrations/sitecore-search/SearchInputSwitcher';
-const SEARCH_CONFIG = {
-  env: process.env.NEXT_PUBLIC_SEARCH_APP_ENV as Environment,
-  customerKey: process.env.NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY,
-  apiKey: process.env.NEXT_PUBLIC_SEARCH_APP_API_KEY,
-  useToken: true,
-};
 
 function SCDPApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -39,13 +34,18 @@ function SCDPApp({ Component, pageProps }: AppProps) {
       preview: process.env.NEXT_PUBLIC_GTM_ENVIRONMENT as string,
     };
     TagManager.initialize(tagManagerArgs);
-    PageController.getContext().setLocaleLanguage('en');
-    PageController.getContext().setLocale({ country: 'us', language: 'en' });
-    trackEntityPageViewEvent("content", [{ id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/,'') }]);
+    
+    if (IsSearchEnabled()) {
+      PageController.getContext().setLocaleLanguage('en');
+      PageController.getContext().setLocale({ country: 'us', language: 'en' }); 
+      trackEntityPageViewEvent("content", [{ id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/,'') }]);
+    }
   });
 
+  const SearchWrapper = ({ children }: any) => (IsSearchEnabled()) ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children;
+  
   return (
-    <WidgetsProvider {...SEARCH_CONFIG}>
+    <SearchWrapper>
       <ThemeProvider storageKey="SDPDarkMode" attribute="class">
         <React.StrictMode>
           <Head>
@@ -63,7 +63,7 @@ function SCDPApp({ Component, pageProps }: AppProps) {
           </div>
         </React.StrictMode>
       </ThemeProvider>
-    </WidgetsProvider>
+    </SearchWrapper>
   );
 }
 
