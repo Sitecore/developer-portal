@@ -51,8 +51,8 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <Layout title={`${currentProduct.name} Changelog`} description="Empty">
-      <Hero title={`${currentProduct.name} Changelog`} description={`Learn more about new versions, changes and improvements we made to ${currentProduct.name}`}>
+    <Layout title={`${currentProduct.name} Changelog`} description={changelogEntry.title}>
+      <Hero title={`${currentProduct.name} Changelog`} description={changelogEntry.title}>
         <div className="absolute flex h-8 flex-row dark:hidden">
           <span className="mr-1 text-xs">Powered by</span>
           <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
