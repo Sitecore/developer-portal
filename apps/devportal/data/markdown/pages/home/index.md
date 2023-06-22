@@ -4,6 +4,7 @@ description: 'Direct access to the tools and information you need most in a port
 stackexchange: ['/questions?tab=Newest']
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'
-sitecoreCommunityNews: true
-sitecoreCommunityBlog: true
+sitecoreCommunityNews: 3
+sitecoreCommunityBlog: 5
+heroImage: '/images/violet3d.png'
 ---

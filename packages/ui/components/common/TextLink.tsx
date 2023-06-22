@@ -17,7 +17,7 @@ const TextLink = ({ text, href, target, className, title }: TextLinkProps): JSX.
       {text}
       {target === '_blank' && <span className="sr-only">Opens in a new tab</span>}
       <span className="ml-1 inline-block h-5 w-5 transform-gpu transition-transform duration-300 group-hover:translate-x-1 group-focus:translate-x-1">
-        <SvgIcon icon="arrow-right" className="text-primary-500 top-0.5 dark:text-red-400" />
+        <SvgIcon icon="arrow-right" className="text-primary-500 arrow-right top-0.5 dark:text-red-400" />
       </span>
     </Link>
   );

@@ -1,15 +1,8 @@
 // Interfaces
 import type { NextApiRequest, NextApiResponse } from 'next';
-import {
-  SitecoreCommunityContent,
-  SitecoreCommunityEvent,
-} from 'ui/common/types/sitecoreCommunity';
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/common/types/sitecoreCommunity';
 // Api
-import SitecoreCommunityApi, {
-  ContentType,
-  ForumOption,
-  SortOption,
-} from 'ui/components/sitecoreCommunity/SitecoreCommunity.api';
+import SitecoreCommunityApi, { ContentType, ForumOption, SortOption } from 'ui/components/sitecoreCommunity/SitecoreCommunity.api';
 
 const getQueryValue = (query: string | string[] | undefined): string => {
   if (query == undefined) return '';
@@ -17,10 +10,7 @@ const getQueryValue = (query: string | string[] | undefined): string => {
   return Array.isArray(query) ? query[0] : query;
 };
 
-const handler = async (
-  req: NextApiRequest,
-  res: NextApiResponse<SitecoreCommunityEvent[] | SitecoreCommunityContent[]>
-) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse<SitecoreCommunityEvent[] | SitecoreCommunityContent[]>) => {
   const sort = getQueryValue(req.query.sort) as SortOption;
   const maxResults = parseInt(getQueryValue(req.query.maxResults), 10);
   const forum = getQueryValue(req.query.forum) as ForumOption;
