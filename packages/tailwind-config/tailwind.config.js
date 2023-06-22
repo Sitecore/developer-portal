@@ -225,8 +225,9 @@ module.exports = {
       bold: 700,
     },
     minHeight: {
+      420: '420px',
       320: '320px',
-      220: '120px',
+      220: '220px',
       120: '120px',
     },
     extend: {
