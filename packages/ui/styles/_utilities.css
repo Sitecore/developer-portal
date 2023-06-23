@@ -6,8 +6,8 @@
     --theme-bg-alt: theme('colors.gray.100');
     --theme-bg: theme('colors.white');
     --theme-outline: theme('colors.gray.600');
-    --theme-text-alt: theme('colors.gray.800');
-    --theme-text: theme('colors.gray.600');
+    --theme-text-alt: theme('colors.blackAlpha.700');
+    --theme-text: theme('colors.blackAlpha.800');
     --theme-border: theme('colors.gray.300');
     --theme-border-alt: theme('colors.gray.300');
     --theme-shadow: theme('boxShadow.DEFAULT');
