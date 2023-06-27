@@ -6,7 +6,6 @@ import { a11yDark, a11yLight } from 'react-syntax-highlighter/dist/cjs/styles/hl
 // Interfaces
 import type { PartialData } from '@/src/interfaces/page-info';
 // Lib
-import EditButton from 'ui/components/buttons/EditButton';
 import { Article } from 'ui/components/cards/Article';
 import CTACard from 'ui/components/cards/CTACard';
 import { LinkItem } from 'ui/components/cards/LinkItem';
@@ -18,6 +17,7 @@ import VideoPromo from 'ui/components/video/videoPromo';
 import YouTube from 'ui/components/video/YouTube';
 
 import { Light as SyntaxHighlight } from 'react-syntax-highlighter';
+import Button from 'ui/components/buttons/Button';
 
 type MarkdownContentProps = {
   partials: PartialData;
@@ -75,7 +75,8 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
         {partials.content.map((item, i) => (
           <div className="prose dark:prose-invert border-theme-border bg-theme-bg text-theme-text relative max-w-4xl border p-8" key={i}>
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
-            <EditButton editUrl={partials.fileNames[i]} classes="absolute right-2 bottom-2" />
+
+            <Button href={partials.fileNames[i]} text="Suggest an edit" variant={'outline'} size={'xxs'} icon={true} iconName="edit" iconPosition="left" />
           </div>
         ))}
       </div>
@@ -89,7 +90,8 @@ const MarkdownContent = ({ partials, hasGrid = false }: MarkdownContentProps): J
           <div className="prose dark:prose-invert max-w-4xl">
             <DecoratedMarkdown>{item}</DecoratedMarkdown>
           </div>
-          <EditButton editUrl={partials.fileNames[i]} />
+
+          <Button href={partials.fileNames[i]} text="Suggest an edit" variant={'outline'} size={'xxs'} icon={true} iconName="edit" iconPosition="left" className="mt-4" />
         </div>
       ))}
     </VerticalGroup>

@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import GetProducts from 'sc-changelog/products';
 import { Product } from 'sc-changelog/types';
 import { slugify } from 'sc-changelog/utils/stringUtils';
-import SmallLinkButton from 'ui/components/buttons/SmallLinkButton';
+import Button from 'ui/components/buttons/Button';
 import Container from 'ui/components/common/Container';
 import { Message, Type } from 'ui/components/common/Message';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
@@ -52,13 +52,13 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
   return (
     <Layout title={title} description={description}>
       <Hero title={title} description={description}>
-        <div className="absolute flex flex-row h-8 dark:hidden">
+        <div className="absolute flex h-8 flex-row dark:hidden">
           <span className="mr-1 text-xs">Powered by</span>
           <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
             <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
           </Link>
         </div>
-        <div className="absolute flex-row hidden h-8 dark:flex">
+        <div className="absolute hidden h-8 flex-row dark:flex">
           <span className="mr-1 text-xs">Powered by</span>
           <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
             <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
@@ -76,14 +76,14 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
               for the current release notes per product
             </p>
           </Message>
-          <div className="grid gap-16 mt-8 md:grid-cols-5">
+          <div className="mt-8 grid gap-16 md:grid-cols-5">
             <div className="col-span-3">
               <ChangelogList initialProduct={currentProduct} />
             </div>
-            <div className="hidden col-span-2 md:block">
+            <div className="col-span-2 hidden md:block">
               <div className="flex flex-row">
-                <SmallLinkButton text={'RSS'} href={`${router.asPath}/rss.xml`} icon={'feed'} />
-                <SmallLinkButton text={'ATOM'} href={`${router.asPath}/atom.xml`} icon={'feed'} />
+                <Button text={'RSS'} href={`${router.asPath}/rss.xml`} variant={'outline'} icon={true} iconName={'feed'} iconPosition="left" size={'xs'} />
+                <Button text={'ATOM'} href={`${router.asPath}/atom.xml`} variant={'outline'} icon={true} iconName={'feed'} iconPosition="left" size={'xs'} />
               </div>
               <ChangelogByMonth product={currentProduct} />
             </div>

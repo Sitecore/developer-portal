@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug } from 'sc-changelog/utils/stringUtils';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
+import Button from 'ui/components/buttons/Button';
 import { Loading } from 'ui/components/common/Loading';
-import TextLink from 'ui/components/common/TextLink';
 import SocialShare from '../common/SocialShare';
 import { ChangelogItemMeta } from './ChangelogItemMeta';
 
@@ -73,7 +73,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
 
         <div className="prose dark:prose-invert prose-table:mt-0 my-3 max-w-none text-sm" dangerouslySetInnerHTML={{ __html: item.description }} />
         <div className="flex flex-row">
-          <div className="grow">{item.readMoreLink && <TextLink className="mt-2 font-medium" href={item.readMoreLink} text="Read more" title={`Read more about ${item.title}`} />}</div>
+          <div className="grow">{item.readMoreLink && <Button variant="text" icon={true} href={item.readMoreLink} text="Read more" title={`Read more about ${item.title}`} />}</div>
           <SocialShare className="w-30" url={getChangelogEntryUrl(item, true)} title={item.title} />
         </div>
       </div>

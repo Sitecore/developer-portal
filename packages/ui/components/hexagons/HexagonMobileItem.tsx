@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { GetProductLogoByVariant, Type, Variant } from 'ui/common/assets';
-import TextLink from 'ui/components/common/TextLink';
 import { ProductInfoType } from 'ui/components/hexagons/HexagonTypes';
+import Button from '../buttons/Button';
 
 type HexagonMobileItemProps = {
   product: ProductInfoType;
@@ -17,8 +17,7 @@ export const HexagonMobileItem = ({ product }: HexagonMobileItemProps): JSX.Elem
         <h3 className="pl-2 font-semibold">{product.name}</h3>
       </div>
       <p className="mobile__hex__item__description">{product.description}</p>
-
-      <TextLink href={product.linkHref} text={product.linkText} />
+      <Button variant="text" text={product.linkText} href={product.linkHref} icon={true} />
     </li>
   );
 };

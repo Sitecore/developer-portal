@@ -2,7 +2,7 @@
 import Image from 'next/legacy/image';
 // Components
 import { CommunityListData } from 'ui/common/types/communityList';
-import TextLink from 'ui/components/common/TextLink';
+import Button from '../buttons/Button';
 
 type CommunityListProps = {
   className?: string;
@@ -11,26 +11,20 @@ type CommunityListProps = {
 
 const CommunityList = ({ className, data }: CommunityListProps): JSX.Element => (
   <div className={className}>
-    <h2 className="mb-4 heading-md">{data.title}</h2>
-    <p className="mb-6 text-lg text-theme-text-alt">{data.subtitle}</p>
+    <h2 className="heading-md mb-4">{data.title}</h2>
+    <p className="text-theme-text-alt mb-6 text-lg">{data.subtitle}</p>
     <ul className="grid gap-6 md:grid-cols-3">
       {data.content.map((link) => (
         <li key={link.title} className="flex flex-col justify-between">
           <div>
-            <div className="mb-4 border border-theme-border-alt bg-theme-bg-alt">
-              <Image
-                src={link.img.src}
-                alt={link.img.alt || ''}
-                width="368"
-                height="207"
-                layout="responsive"
-              />
+            <div className="border-theme-border-alt bg-theme-bg-alt mb-4 border">
+              <Image src={link.img.src} alt={link.img.alt || ''} width="368" height="207" layout="responsive" />
             </div>
-            <h3 className="mb-2 heading-sm">{link.title}</h3>
-            <p className="mb-6 text-sm text-theme-text-alt">{link.description}</p>
+            <h3 className="heading-sm mb-2">{link.title}</h3>
+            <p className="text-theme-text-alt mb-6 text-sm">{link.description}</p>
           </div>
           <div>
-            <TextLink href={link.href} text={link.linkText} />
+            <Button variant="text" text={link.linkText} href={link.href} icon={true} />
           </div>
         </li>
       ))}

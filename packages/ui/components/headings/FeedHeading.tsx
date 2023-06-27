@@ -1,6 +1,6 @@
 import type { ValidHeadingLevels } from 'ui/common/types/heading-levels';
 import DynamicTag from 'ui/components/common/DynamicTag';
-import TextLink from 'ui/components/common/TextLink';
+import Button from '../buttons/Button';
 
 export type FeedHeadingProps = {
   title: string;
@@ -25,7 +25,12 @@ const FeedHeading = ({ title, headingTag = 'h2', headingClass = 'heading-md', li
       <DynamicTag tag={headingTag} className={`mb-2 ${headingClass} md:mb-0`}>
         {title}
       </DynamicTag>
-      {link && <TextLink href={link.href} text={link.title} target={openInNewTab ? '_blank' : undefined} />}
+
+      {link && (
+        <div className="pt-1">
+          <Button variant="text" text={link.title} href={link.href} icon={true} target={openInNewTab ? '_blank' : undefined} />
+        </div>
+      )}
     </div>
   );
 };

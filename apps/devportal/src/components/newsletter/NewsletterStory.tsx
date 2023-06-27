@@ -1,5 +1,5 @@
 import Image from 'next/legacy/image';
-import TextLink from 'ui/components/common/TextLink';
+import Button from 'ui/components/buttons/Button';
 
 interface NewsletterStoryPartialData {
   copy: string;
@@ -21,7 +21,7 @@ const NewsletterStoryPartial = ({ copy, link, title }: NewsletterStoryPartialDat
       <h2 className="heading-sm mb-4">{title}</h2>
       <p>{copy}</p>
     </div>
-    <TextLink text={link.text || 'Read more'} href={link.href} />
+    <Button variant="text" text={link.text || 'Read more'} href={link.href} icon={true} aria-label={title} />
   </div>
 );
 

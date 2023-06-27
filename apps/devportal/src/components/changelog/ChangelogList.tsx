@@ -1,12 +1,11 @@
 import { buildQuerystring, entriesApiUrl, getChangeTypeOptions, getProductOptions } from '@/src/common/changelog';
 import axios from 'axios';
-import Link from 'next/link';
 import { useState } from 'react';
 import { Product } from 'sc-changelog/types';
 import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
 import { Fetcher } from 'swr';
 import useSWRInfinite from 'swr/infinite';
-import SvgIcon from 'ui/components/common/SvgIcon';
+import Button from 'ui/components/buttons/Button';
 import { Option } from 'ui/components/dropdown/MultiSelect';
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
@@ -43,9 +42,7 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange }: C
           <div className="bg-primary-100 text-primary-800 mb-2 mr-2 flex rounded-md px-3 py-2 text-sm">
             <div className="m-auto">
               <strong>Product:</strong> {initialProduct.name}
-              <Link href="/changelog" title="Go back to the changelog overview">
-                <SvgIcon icon="close" width={24} height={24} className="text-primary-500 relative -top-0.5 left-1 inline-block h-5 w-5 dark:text-red-500" />
-              </Link>
+              <Button variant={'icon'} size={'xs'} icon={true} iconName="close" href="/changelog" text="Go back to the changelog overview" />
             </div>
           </div>
         )}

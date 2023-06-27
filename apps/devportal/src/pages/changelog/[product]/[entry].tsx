@@ -10,9 +10,9 @@ import GetProducts from 'sc-changelog/products';
 import { Product } from 'sc-changelog/types';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
+import Button from 'ui/components/buttons/Button';
 import Container from 'ui/components/common/Container';
 import { Message, Type } from 'ui/components/common/Message';
-import TextLink from 'ui/components/common/TextLink';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
@@ -131,7 +131,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
               {changelogEntry.fullArticle && <div className={`prose dark:prose-invert my-3 max-w-none text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />}
 
               <div className="flex flex-row">
-                <div className="grow">{changelogEntry.readMoreLink && <TextLink className="font-medium" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} />}</div>
+                <div className="grow">{changelogEntry.readMoreLink && <Button variant="text" className="font-medium" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} />}</div>
                 <SocialShare className="w-30" url={getChangelogEntryUrl(changelogEntry, true)} title={changelogEntry.title} />
               </div>
             </div>

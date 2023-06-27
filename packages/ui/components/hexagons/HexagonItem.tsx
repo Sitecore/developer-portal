@@ -1,6 +1,6 @@
 import { GetProductInfo } from '@/../../packages/ui/common/assets';
-import TextLink from '@/../../packages/ui/components/common/TextLink';
 import Image from 'next/image';
+import Button from '../buttons/Button';
 import { ProductInfoType } from './HexagonTypes';
 
 type HexagonItemProps = {
@@ -27,7 +27,7 @@ export const HexagonItem = ({ product, active = true, showModal = false, onClick
             <h3>{product.subTitle}</h3>
           </div>
           <p className="hex-grid__modal__description">{product.description}</p>
-          <TextLink text={product.linkText} href={product.linkHref} className="mobile__hex__item__link" />
+          <Button variant="text" text={product.linkText} href={product.linkHref} icon={true} className="mobile__hex__item__link" />
         </div>
       ) : null}
       <div className="hex-grid__content">

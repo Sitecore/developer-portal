@@ -1,5 +1,5 @@
-import { GithubButton } from 'ui/components/buttons/GitHubButton';
 import SvgLogo, { isValidLogo, Logo } from 'ui/components/common/SvgLogo';
+import Button from '../buttons/Button';
 
 export type RepositoryProps = {
   name?: string;
@@ -28,7 +28,7 @@ export const Repository = ({ name, description, repositoryUrl, framework }: Repo
         {name && <h4>{name}</h4>}
         {description && <p>{description}</p>}
       </div>
-      <GithubButton url={repositoryUrl} text="Repository" className="mb-2 ml-2" />
+      <Button href={repositoryUrl} variant="secondary" icon={true} iconName="github" iconPosition="left" size="sm" text="Repository" className="" />
     </div>
   );
 };

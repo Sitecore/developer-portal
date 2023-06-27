@@ -1,7 +1,7 @@
 // Global
 import Image from 'next/image';
 // Components
-import TextLink from 'ui/components/common/TextLink';
+import Button from '../buttons/Button';
 
 type PromoCardImage = {
   img: {
@@ -36,14 +36,7 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
   </div>
 );
 
-const PromoCard = ({
-  title,
-  description,
-  img,
-  link,
-  className,
-  isImageLeft = true,
-}: PromoCardProps): JSX.Element => (
+const PromoCard = ({ title, description, img, link, className, isImageLeft = true }: PromoCardProps): JSX.Element => (
   <div className={'mt-8 grid gap-6 md:grid-cols-2 ' + (className ? className : '')}>
     {isImageLeft && <PromoCardImage img={img} />}
     <div className="flex flex-col justify-center">
@@ -51,7 +44,7 @@ const PromoCard = ({
       <p className={`text-theme-text-alt ${link ? 'mb-8' : ''}`}>{description}</p>
       {!!link && (
         <div>
-          <TextLink text={link.text} href={link.href} />
+          <Button variant="text" text={link.text ? link.text : 'Read more'} href={link.href} icon={true} className="no-underline" />
         </div>
       )}
     </div>
@@ -70,16 +63,7 @@ export type SimplePromoCardProps = {
   isImageLeft?: boolean;
 };
 
-export const Promo = ({
-  title,
-  description,
-  linkText,
-  linkHref,
-  imageSource,
-  imageAlt,
-  className,
-  isImageLeft,
-}: SimplePromoCardProps): JSX.Element => {
+export const Promo = ({ title, description, linkText, linkHref, imageSource, imageAlt, className, isImageLeft }: SimplePromoCardProps): JSX.Element => {
   const data: PromoCardProps = {
     title: title,
     description: description,
