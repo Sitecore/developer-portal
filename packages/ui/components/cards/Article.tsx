@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import TextLink from 'ui/components/common/TextLink';
+import Button from '../buttons/Button';
 
 type ArticleProps = {
   title: string;
@@ -31,7 +31,7 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
           </Link>
         </div>
       )}
-      {link && !hideLinkText && <TextLink text={linktext ? linktext : 'Read more'} href={link} />}
+      {link && !hideLinkText && <Button variant="text" text={linktext ? linktext : 'Read more'} href={link} icon={true} />}
     </div>
   );
 };

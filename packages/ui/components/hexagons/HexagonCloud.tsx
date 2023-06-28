@@ -1,6 +1,6 @@
-import TextLink from '@/../../packages/ui/components/common/TextLink';
 import Image from 'next/image';
 import React from 'react';
+import Button from '../buttons/Button';
 import { CloudInfoType } from './HexagonTypes';
 
 type HexagonCloudProps = {
@@ -53,7 +53,7 @@ export const HexagonCloud = ({ cloud, isOpen, children, onClick }: HexagonCloudP
       </div>
       <div id="content-cloud" className={`hex-grid__tab__expand ${isOpen ? 'block' : ''} transition ease-in-out	`}>
         <p>{cloud.description}</p>
-        {!!cloud.linkHref && !!cloud.linkText && <TextLink href={cloud.linkHref} text={cloud.linkText} className="dark:text-blackAlpha-900 ml-1 text-xs" />}
+        {!!cloud.linkHref && !!cloud.linkText && <Button variant="text" icon={true} href={cloud.linkHref} text={cloud.linkText} className="dark:text-blackAlpha-900 ml-1 text-xs" />}
         {children}
       </div>
     </li>

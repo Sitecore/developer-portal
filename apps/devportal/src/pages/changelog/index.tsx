@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
 import { SWRConfig } from 'swr';
-import SmallLinkButton from 'ui/components/buttons/SmallLinkButton';
+import Button from 'ui/components/buttons/Button';
 import Container from 'ui/components/common/Container';
 import { Message, Type } from 'ui/components/common/Message';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
@@ -61,8 +61,8 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
               </SWRConfig>
               <div className="col-span-2 hidden md:block">
                 <div className="flex flex-row">
-                  <SmallLinkButton text={'RSS'} href={`${router.pathname}/rss.xml`} icon={'feed'} />
-                  <SmallLinkButton text={'ATOM'} href={`${router.pathname}/atom.xml`} icon={'feed'} />
+                  <Button text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'outline'} icon={true} iconName={'feed'} iconPosition="left" size={'xs'} />
+                  <Button text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'outline'} icon={true} iconName={'feed'} iconPosition="left" size={'xs'} />
                 </div>
                 <ChangelogByMonth selectedProducts={selectedProduct} />
               </div>

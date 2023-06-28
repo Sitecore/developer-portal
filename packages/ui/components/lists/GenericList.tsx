@@ -3,7 +3,7 @@ import Image from 'next/legacy/image';
 import Link from 'next/link';
 // Components
 import { GenericListData } from 'ui/common/types/genericList';
-import TextLink from 'ui/components/common/TextLink';
+import Button from '../buttons/Button';
 import FeedHeading from '../headings/FeedHeading';
 
 type GenericListProps = {
@@ -34,7 +34,7 @@ const GenericList = ({ className, data, columns, headingClass }: GenericListProp
               <p className="text-theme-text-alt my-4 text-sm">{link.description}</p>
             </Link>
           </div>
-          <TextLink href={link.href} text={link.linkText} className="text-theme-text-alt p-4" />
+          <Button variant="text" text={link.linkText} href={link.href} icon={true} className="mb-2 ml-4" />
         </li>
       ))}
     </ul>

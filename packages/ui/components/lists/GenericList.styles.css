@@ -32,7 +32,7 @@
   .platform .generic-list-heading div {
     @apply inline;
   }
-  .platform .arrow-right {
+  .platform .link-icon {
     @apply text-white;
   }
 }

@@ -1,6 +1,6 @@
 // Components
+import Button from 'ui/components/buttons/Button';
 import Container from 'ui/components/common/Container';
-import TextLink from 'ui/components/common/TextLink';
 import Layout from 'ui/layouts/Layout';
 
 const pageInfo = {
@@ -18,7 +18,7 @@ const pageInfo = {
 const NotFoundPage = (): JSX.Element => (
   <Layout title={pageInfo.title} description={pageInfo.description}>
     <Container>
-      <TextLink href="/" text="Return home" />
+      <Button variant="text" icon={true} href="/" text="Return home" />
     </Container>
   </Layout>
 );

@@ -1,8 +1,8 @@
 const IconFeed = (): JSX.Element => (
   <>
-    <path d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z" fill="currentColor" />
-    <path d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z" fill="currentColor" />
-    <circle cx="6" cy="18" r="2" fill="currentColor" />
+    <path d="M 89.292 89.295 C 89.292 40.444 49.553 0.705 0.708 0.705 L 0.708 12.517 C 43.038 12.517 77.481 46.958 77.481 89.295 L 89.292 89.295 Z" fill="currentColor" />
+    <path d="M 47.952 89.295 L 59.764 89.295 C 59.764 56.725 33.271 30.233 0.708 30.233 L 0.708 42.045 C 26.758 42.045 47.952 63.239 47.952 89.295 Z" fill="currentColor" />
+    <circle cx="12.519" cy="77.479" r="11.811" fill="currentColor" />
   </>
 );
 
