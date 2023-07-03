@@ -49,12 +49,12 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
           <>
             <div className={`mb-4`}>
               <Image
-                src={`${item.image[0].fileUrl}?transform=true&width=670&fit=cover&gravity=auto`}
+                src={`${item.image[0].fileUrl}?transform=true&width=670&height=250&fit=crop&gravity=auto`}
                 alt={item.title || ''}
                 priority
                 className={`${loading ? 'hidden' : 'cursor-zoom-in rounded-lg'}`}
-                width={670}
-                height={100}
+                width={item.image[0].fileWidth}
+                height={item.image[0].fileHeight}
                 onClick={() => setShowModal(true)}
               />
             </div>
