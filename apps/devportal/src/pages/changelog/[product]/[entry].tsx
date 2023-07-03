@@ -105,12 +105,12 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 <>
                   <div className="mb-4">
                     <Image
-                      src={`${changelogEntry.image[0].fileUrl}?transform=true&width=670&fit=cover&gravity=auto`}
+                      src={`${changelogEntry.image[0].fileUrl}`}
                       alt={changelogEntry.title || ''}
                       priority
                       className="cursor-pointer rounded-lg"
-                      width={670}
-                      height={100}
+                      width={changelogEntry.image[0].fileWidth}
+                      height={changelogEntry.image[0].fileHeight}
                       onClick={() => setShowModal(true)}
                     />
                   </div>
