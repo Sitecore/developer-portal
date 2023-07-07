@@ -28,6 +28,7 @@ export async function Search(isPreview: boolean, productId?: string, changeTypeI
   `;
 
   const response = await fetchAPI(searchQuery, isPreview);
+  if(!response) return {data: []};
   return response.data;
 }
 
