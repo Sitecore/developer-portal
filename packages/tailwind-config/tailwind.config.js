@@ -266,7 +266,7 @@ module.exports = {
         'gutter-lg': '4rem',
       },
       typography: (theme) => ({
-        DEFAULT: {
+        light: {
           css: {
             ['ol > li:before']: {
               color: 'var(--theme-text)',
@@ -301,7 +301,7 @@ module.exports = {
               color: 'inherit',
             },
             code: {
-              //color: theme('colors.theme-text'),
+              // color: theme('colors.theme-text'),
               backgroundColor: 'rgba(128, 128, 128, 0.15)',
               padding: '0.125em',
               fontWeight: 400,
@@ -341,6 +341,7 @@ module.exports = {
       backgroundImage: ['dark'],
       display: ['responsive', 'dark'],
       visibility: ['dark'],
+      typography: ['dark'],
     },
   },
   plugins: [require('@tailwindcss/typography')],
