@@ -24,3 +24,9 @@ There are a number of reasons why the use of containers is attractive for Siteco
 
 - [Sitecore Docker Examples](https://github.com/Sitecore/docker-examples)
 - [SitecoreDockerTools - PowerShell extensions ](https://sitecore.myget.org/feed/sc-powershell/package/nuget/SitecoreDockerTools)
+
+## Community Posts
+
+- [Sitecore Blue-Green Deployment on Azure Kubernetes Service (AKS)](https://www.linkedin.com/pulse/sitecore-blue-green-deployment-aks-nambhi-krishnan-dhinakaran/)
+- [4 Things you should know when moving Sitecore from PaaS to Kubernetes](https://www.linkedin.com/pulse/4-things-you-should-know-when-moving-sitecore-from-paas-van-tricht/)
+- [Achieving Scalability - Sitecore Next.js Pods in Azure Kubernetes Service (AKS)](https://www.linkedin.com/pulse/achieving-scalability-sitecore-nextjs-pods-aks-ramkumar/)
