@@ -62,7 +62,7 @@ export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, contentType, load
         </div>
         <div className="">
           <span className={`hover:text-violet dark:hover:text-teal  line-clamp-1 font-semibold hover:underline`}>
-            <Link href={item.url} title={item.title}>
+            <Link href={`${SITECORE_COMMUNITY_URL}${item.url}`} title={item.title} rel="noreferrer noopener" target="_blank">
               {item.title}
             </Link>
           </span>
