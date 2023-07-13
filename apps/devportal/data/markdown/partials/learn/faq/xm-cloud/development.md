@@ -19,7 +19,7 @@ For developers there are two ways suggested to interact with XM Cloud and implem
 
 ![Development Modes with XM Cloud](https://sitecorecontenthub.stylelabs.cloud/api/public/content/9524666e7b5e4d68aead7e49f7906dad?v=572dc6a3)
 
-###Edge Mode
+### Edge Mode
 When using Edge Mode, you setup a local node server to run your JavaScript-based rendering app. This app will connect to the GraphQL endpoint of the Edge delivery layer included in XM Cloud. For more details you can watch the [Frontend Developer Setup for XM Cloud in 5 minutes](https://www.youtube.com/watch?v=Kig3kWZ8FuQ). 
 
 This is the most lightweight setup that allows developers to focus on the rendering app and the frontend development. You can still deploy to XM Cloud and serialize items using Sitecore Content Serialization (SCS). However, as you might work on a XM Cloud environment shared with other developers, it might become more complex to select the required serialized items that should be packaged with your feature development.
@@ -28,7 +28,7 @@ As you only require a local node server this also works on a Mac. All the necess
 
 **Prerequisite:** For this setup you need an Environment in XM Cloud and therefore a Subscription / Organization.
 
-###Local Windows Containers (“Fully local”):
+### Local Windows Containers (“Fully local”):
 When you want to model content, or customize the Content Management (CM) instance independently, you would want to go for a fully local setup. For this approach you spin up XM Cloud locally using Docker containers. The containers will include a CM, Solr (for internal content search), SQL Server, Traefik and an editing host to run your application. Your editing or rendering host will connect to the GraphQL endpoint of the CM instance which offers the same API as Edge. Please check the readme file of the repository that get's created when you create a Project using the XM Cloud Deploy App. Note that if you are using Windows 10 you might want to check .env file to pull docker images for the 1809 version. Also you need to make sure that iis is stopped on your localhost as Traefik might conflict. You can find a description on how to setup your local environment in the video [Setup XM Cloud locally using Docker and start developing](https://www.youtube.com/watch?v=sVLM1g3Xi-U).  
 
 This is a typical setup for Backend Developers. 
