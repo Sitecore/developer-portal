@@ -67,7 +67,11 @@ The importance of your company's growth comes with the:
 
 ### Official Sitecore Training
 
-- [Coming soon!]
+<Row columns={3}>
+  <Link title="XM Cloud for JSS Headless Developers" link="https://learning.sitecore.com/learn/learning_plan/view/50/xm-cloud-for-jss-headless-developers" />
+  <Link title="XM Cloud for .NET Headless Developers" link="https://learning.sitecore.com/internal/learn/learning_plan/view/51/xm-cloud-for-net-headless-developers" />
+  <Link title="Sitecore XM Cloud Developer Fundamentals ILT" link="https://shop.learning.sitecore.com/products/1243" />
+</Row>
 
 ## Access the Portal
 
