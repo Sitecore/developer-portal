@@ -131,7 +131,7 @@ Here’s a list of great resources that I found helpful.
 ### Serialization
 
 - [[Video] **Sitecore 10 – Introducing Sitecore Serialization** by Rob Earlam](https://www.youtube.com/watch?v=CzQbwvKX1Cc)
-- [[Documentation] **Create a content serialization Module** - ](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-sitecore-content-serialization-module.html)
+- [[Documentation] **Create a content serialization Module**](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-sitecore-content-serialization-module.html)
 
 ### Edge
 
@@ -146,4 +146,4 @@ Here’s a list of great resources that I found helpful.
 - [[Video] **Page and Partial Designs** - Demo of using Page and Partial Designs](https://www.youtube.com/watch?v=0LqngaF5i1U)
 - [[Video] **Tenant and Site Creation** - by Sebastian Winter and Mark van Aalst](https://www.youtube.com/watch?v=Od8B1tG1ivs)
 - [[Video] **SXA Modules** - by Sebastian Winter and Mark van Aalst - Introduction](https://www.youtube.com/watch?v=usLWZHiWGZI) -
-  - [Demo video](https://www.youtube.com/watch?v=A4NiQzZ-yJo)
+- [Demo video](https://www.youtube.com/watch?v=A4NiQzZ-yJo)
