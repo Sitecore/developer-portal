@@ -24,8 +24,8 @@ export async function getServerSideProps(context: any) {
 
 const Search: NextPage<SearchPageProps> = ({ pageInfo }) => {
   const router = useRouter();
-  const query = router?.query['q'] ?? '';
-  const currentPage = router?.query['p'] ?? '1';
+  const query: string = (router?.query['q'] as string) ?? '';
+  const currentPage: number = parseInt(router?.query['p'] as string) ?? 1;
 
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>

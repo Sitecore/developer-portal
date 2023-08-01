@@ -10,11 +10,13 @@ import SearchSort from './SearchSort';
 export interface HighlightType {
   description?: string;
 }
-export interface SearchResultsType {
+export interface InitialSearchProps {
   initialKeyphrase?: string;
   currentPage?: number;
   initialArticlesPerPage?: number;
   defaultSortType?: string;
+}
+interface SearchResultsType {
   url: string;
   id: string;
   index_name: string;
@@ -27,7 +29,7 @@ export interface SearchResultsType {
 }
 type InitialState = SearchResultsInitialState<'itemsPerPage' | 'page' | 'sortType'>;
 
-export const SearchResults = (props: SearchResultsType) => {
+export const SearchResults = (props: InitialSearchProps) => {
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = 'suggested' } = props;
   const {
