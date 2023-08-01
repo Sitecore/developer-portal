@@ -57,7 +57,7 @@ function SCDPApp({ Component, pageProps }: AppProps) {
     if (IsSearchEnabled()) {
       PageController.getContext().setLocaleLanguage('en');
       PageController.getContext().setLocale({ country: 'us', language: 'en' });
-      trackEntityPageViewEvent('content', [{ id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, '') }]);
+      trackEntityPageViewEvent('content', { items: [{ id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, '') }] });
     }
   });
 

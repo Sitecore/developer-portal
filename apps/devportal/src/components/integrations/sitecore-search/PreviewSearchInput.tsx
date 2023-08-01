@@ -123,6 +123,7 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { q } = router.query;
   const {
+    widgetRef,
     state: { keyphrase = q || '' },
     actions: { onItemClick, onKeyphraseChange },
     queryResult: { isFetching, isLoading, data: { content: articles = [], suggestion: { name_suggester: articleSuggestions = [] } = {} } = {} },
@@ -141,23 +142,6 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
       itemsPerPage: defaultItemsPerPage,
     },
   });
-
-  // = usePreviewSearch<ArticleModel>((query) => {
-  //   query
-  //     .getRequest()
-  //     .setSearchQueryHighlight({
-  //       fields: ['description'],
-  //       fragment_size: 100,
-  //       pre_tag: '<strong>',
-  //       post_tag: '</strong>',
-  //     })
-  //     .setSources(indexSources);
-
-  //   return {
-  //     suggestionsList: [{ suggestion: 'name_suggester', max: 10 }],
-  //     itemsPerPage: defaultProductsPerPage,
-  //   };
-  // });
 
   const loading = isLoading || isFetching;
   const [activeItem, setActiveItem] = useState('defaultArticlesResults');
@@ -231,7 +215,7 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
               <Loading />
             </Presence>
             {!loading && (
-              <NavMenu.SubContent orientation="vertical" value={activeItem} className="box-border block w-full">
+              <NavMenu.SubContent orientation="vertical" value={activeItem} className="box-border block w-full" ref={widgetRef}>
                 <NavMenu.List className="">
                   {articleSuggestions.length > 0 && (
                     <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />

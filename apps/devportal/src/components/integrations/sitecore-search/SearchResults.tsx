@@ -31,6 +31,7 @@ export const SearchResults = (props: SearchResultsType) => {
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = 'suggested' } = props;
   const {
+    widgetRef,
     actions: { onSortChange, onFacetClick, onPageNumberChange, onItemClick },
     state: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
     queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: articles = [], facet: facets = [] } = {} },
@@ -60,7 +61,7 @@ export const SearchResults = (props: SearchResultsType) => {
         </div>
       )}
       {!isLoading && (
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
+        <div className="mt-6 grid gap-6 md:grid-cols-3" ref={widgetRef}>
           {articles.length > 0 && (
             <>
               <div className="md:col-span-1">
