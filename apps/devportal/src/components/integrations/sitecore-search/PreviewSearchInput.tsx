@@ -139,6 +139,14 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
         })
         .setSources(indexSources),
     state: {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      suggestionsList: [
+        {
+          suggestion: 'name_suggester',
+          max: 10,
+        },
+      ],
       itemsPerPage: defaultItemsPerPage,
     },
   });
