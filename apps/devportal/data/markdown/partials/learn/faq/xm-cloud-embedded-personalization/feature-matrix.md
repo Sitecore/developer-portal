@@ -22,7 +22,7 @@ _Real time web data collection for 30 days of view events_
 
 ### What features do I get if I license full Sitecore Personalize in addition to XM Cloud?
 
-The embedded personalization functionality within XM Cloud provides a simple way to implement the most common website personalization use case through personalizing pages (Targeting experience). If a customer is looking to have more control over customized personalization rules, experiences APIs access, or for direct ability to configure and tailor Sitecore Personalize tenant, they should license Sitecore Personalize. With XM Cloud, the content delivery is provided by publishing to [Experience Edge](https://doc.sitecore.com/xp/en/developers/hd/latest/sitecore-headless-development/sitecore-experience-edge-for-xm.html).
+The embedded personalization functionality within XM Cloud provides a simple way to implement the most common website personalization use case through personalizing pages (Targeting experience). If a customer is looking to have more control over customized personalization rules, experiences APIs access, or for direct ability to configure and tailor Sitecore Personalize tenant, they should license Sitecore Personalize. With XM Cloud, the content delivery is provided by publishing to [Experience Edge](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-experience-edge-for-xm.html).
 
 Licensing Sitecore Personalize gives access to all the features included in the XM Cloud Embedded Personalization in addition to Sitecore Personalize features including custom personalization conditions that can be used in XM Cloud, decisioning, and longer data retention limits. Here is a list of features empowered by XM Cloud + Sitecore Personalize:
 
