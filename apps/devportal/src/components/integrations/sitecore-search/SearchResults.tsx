@@ -27,7 +27,7 @@ interface SearchResultsType {
   name: string;
   highlight: HighlightType;
 }
-type InitialState = SearchResultsInitialState<'itemsPerPage' | 'page' | 'sortType'>;
+type InitialState = SearchResultsInitialState<'itemsPerPage' | 'keyphrase' | 'page' | 'sortType'>;
 
 export const SearchResults = (props: InitialSearchProps) => {
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
@@ -52,6 +52,7 @@ export const SearchResults = (props: InitialSearchProps) => {
       sortType: defaultSortType,
       page: currentPage,
       itemsPerPage: initialArticlesPerPage,
+      keyphrase: initialKeyphrase,
     },
   });
 
