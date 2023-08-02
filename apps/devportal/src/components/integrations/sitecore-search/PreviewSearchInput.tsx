@@ -117,7 +117,7 @@ const Group = ({
 };
 
 const getGroupId = (name: string, value: string) => `${name}@${value}`;
-type InitialState = PreviewSearchInitialState<'itemsPerPage'>;
+type InitialState = PreviewSearchInitialState<'itemsPerPage' | 'suggestionsList'>;
 const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
   const router = useRouter();
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
@@ -139,8 +139,6 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
         })
         .setSources(indexSources),
     state: {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
       suggestionsList: [
         {
           suggestion: 'name_suggester',
