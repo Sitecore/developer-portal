@@ -1,6 +1,6 @@
 import { GetProductLogo } from '@/../../packages/ui/common/assets';
 import { toClass } from '@/../../packages/ui/common/text-util';
-import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchSuggestionQuery, SearchResponseSuggestion, WidgetAction, WidgetDataType, trackEntityPageViewEvent, usePreviewSearch, widget } from '@sitecore-search/react';
+import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchInitialState, PreviewSearchSuggestionQuery, SearchResponseSuggestion, WidgetAction, WidgetDataType, trackEntityPageViewEvent, usePreviewSearch, widget } from '@sitecore-search/react';
 import { ArticleCard, NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
 import Image from 'next/image';
@@ -38,7 +38,7 @@ const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned 
               onClick={(e) => {
                 e.preventDefault();
                 onItemClick({ id: article.id || '', index: index });
-                if (article.index_name != 'sitecore-devportal-v2') trackEntityPageViewEvent('content', [{ id: article.id }]);
+                if (article.index_name != 'sitecore-devportal-v2') trackEntityPageViewEvent('content', { items: [{ id: article.id }] });
                 window.open(article.url, '_blank');
               }}
             >
@@ -117,30 +117,36 @@ const Group = ({
 };
 
 const getGroupId = (name: string, value: string) => `${name}@${value}`;
-
-const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
+type InitialState = PreviewSearchInitialState<'itemsPerPage' | 'suggestionsList'>;
+const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
   const router = useRouter();
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { q } = router.query;
   const {
-    context: { keyphrase = q || '' },
+    widgetRef,
+    state: { keyphrase = q || '' },
     actions: { onItemClick, onKeyphraseChange },
     queryResult: { isFetching, isLoading, data: { content: articles = [], suggestion: { name_suggester: articleSuggestions = [] } = {} } = {} },
-  } = usePreviewSearch<ArticleModel>((query) => {
-    query
-      .getRequest()
-      .setSearchQueryHighlight({
-        fields: ['description'],
-        fragment_size: 100,
-        pre_tag: '<strong>',
-        post_tag: '</strong>',
-      })
-      .setSources(indexSources);
-
-    return {
-      suggestionsList: [{ suggestion: 'name_suggester', max: 10 }],
-      itemsPerPage: defaultProductsPerPage,
-    };
+  } = usePreviewSearch<ArticleModel, InitialState>({
+    query: (query) =>
+      query
+        .getRequest()
+        .setSearchQueryHighlight({
+          fields: ['description'],
+          fragment_size: 100,
+          pre_tag: '<strong>',
+          post_tag: '</strong>',
+        })
+        .setSources(indexSources),
+    state: {
+      suggestionsList: [
+        {
+          suggestion: 'name_suggester',
+          max: 10,
+        },
+      ],
+      itemsPerPage: defaultItemsPerPage,
+    },
   });
 
   const loading = isLoading || isFetching;
@@ -215,7 +221,7 @@ const PreviewSearchInput = ({ defaultProductsPerPage = 6 }) => {
               <Loading />
             </Presence>
             {!loading && (
-              <NavMenu.SubContent orientation="vertical" value={activeItem} className="box-border block w-full">
+              <NavMenu.SubContent orientation="vertical" value={activeItem} className="box-border block w-full" ref={widgetRef}>
                 <NavMenu.List className="">
                   {articleSuggestions.length > 0 && (
                     <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />

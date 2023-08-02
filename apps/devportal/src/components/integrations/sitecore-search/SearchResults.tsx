@@ -1,7 +1,5 @@
-import { trackEntityPageViewEvent, useSearchResults, widget, WidgetDataType } from '@sitecore-search/react';
-import { WidgetComponentProps } from '@sitecore-search/react/types';
+import { SearchResultsInitialState, trackEntityPageViewEvent, useSearchResults, widget, WidgetDataType } from '@sitecore-search/react';
 import Image from 'next/image';
-import { ComponentType } from 'react';
 import { toClass, truncateString } from 'ui/common/text-util';
 import { Loading } from 'ui/components/common/Loading';
 import QuerySummary from './QuerySummary';
@@ -9,37 +7,53 @@ import SearchFacets from './SearchFacets';
 import SearchPagination from './SearchPagination';
 import SearchSort from './SearchSort';
 
-export interface SearchResultsType extends WidgetComponentProps {
+export interface HighlightType {
+  description?: string;
+}
+export interface InitialSearchProps {
   initialKeyphrase?: string;
   currentPage?: number;
   initialArticlesPerPage?: number;
   defaultSortType?: string;
 }
+interface SearchResultsType {
+  url: string;
+  id: string;
+  index_name: string;
+  type: string;
+  image_url: string;
+  description: string;
+  site_name: string;
+  name: string;
+  highlight: HighlightType;
+}
+type InitialState = SearchResultsInitialState<'itemsPerPage' | 'keyphrase' | 'page' | 'sortType'>;
 
-export const SearchResults = (props: SearchResultsType) => {
+export const SearchResults = (props: InitialSearchProps) => {
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = 'suggested' } = props;
   const {
+    widgetRef,
     actions: { onSortChange, onFacetClick, onPageNumberChange, onItemClick },
-    context: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
+    state: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
     queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: articles = [], facet: facets = [] } = {} },
-  } = useSearchResults((query) => {
-    query
-      .getRequest()
-      .setSearchQueryHighlight({
-        fields: ['description'],
-        fragment_size: 100,
-        pre_tag: '<strong>',
-        post_tag: '</strong>',
-      })
-      .setSources(indexSources);
-
-    return {
+  } = useSearchResults<SearchResultsType, InitialState>({
+    query: (query) =>
+      query
+        .getRequest()
+        .setSearchQueryHighlight({
+          fields: ['description'],
+          fragment_size: 100,
+          pre_tag: '<strong>',
+          post_tag: '</strong>',
+        })
+        .setSources(indexSources),
+    state: {
+      sortType: defaultSortType,
+      page: currentPage,
       itemsPerPage: initialArticlesPerPage,
       keyphrase: initialKeyphrase,
-      page: currentPage,
-      sortType: defaultSortType,
-    };
+    },
   });
 
   return (
@@ -50,7 +64,7 @@ export const SearchResults = (props: SearchResultsType) => {
         </div>
       )}
       {!isLoading && (
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
+        <div className="mt-6 grid gap-6 md:grid-cols-3" ref={widgetRef}>
           {articles.length > 0 && (
             <>
               <div className="md:col-span-1">
@@ -75,8 +89,7 @@ export const SearchResults = (props: SearchResultsType) => {
                           onClick={(e) => {
                             e.preventDefault();
                             onItemClick({ id: result.id || '', index });
-                            if(result.index_name != 'sitecore-devportal-v2') 
-                              trackEntityPageViewEvent("content", [{ id: result.id }]);
+                            if (result.index_name != 'sitecore-devportal-v2') trackEntityPageViewEvent('content', { items: [{ id: result.id }] });
                             window.open(result.url, '_blank');
                           }}
                         >
@@ -114,5 +127,5 @@ export const SearchResults = (props: SearchResultsType) => {
   );
 };
 
-const SearchResultsWidget = widget(SearchResults as ComponentType, WidgetDataType.SEARCH_RESULTS, 'content');
+const SearchResultsWidget = widget(SearchResults, WidgetDataType.SEARCH_RESULTS, 'content');
 export default SearchResultsWidget;
