@@ -13,7 +13,7 @@ Alternatively, developers will be able to trigger the creation and deployment of
 ## We have Sitecore and UI developers. How do we get them setup? 
 The first prerequisites are that every Developer should register at https://portal.sitecorecloud.io and, ideally, be added to an Organization. You can watch [Setup your first Headless SXA Site in XM Cloud](https://www.youtube.com/watch?v=zot3G52F2ts) for a walkthrough. 
 
-Sitecore recommends starting from one of the existing Sitecore starter kits. These starter kits provide all the configuration to get up and running easily. If starting your own project from scratch, it is recommended to use [Headless SXA](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-sxa-for-xm-cloud-development.html) and [JSS](https://doc.sitecore.com/xp/en/developers/hd/201/sitecore-headless-development/index-en.html). 
+Sitecore recommends starting from one of the existing Sitecore starter kits. These starter kits provide all the configuration to get up and running easily. If starting your own project from scratch, it is recommended to use [Headless SXA](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-sxa-for-xm-cloud-development.html) and [JSS](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-javascript-rendering-sdks--jss-.html). 
 
 For developers there are two ways suggested to interact with XM Cloud and implement customer requirements. Developers can either build using “Edge Mode” or using XM Cloud “fully local”.
 

@@ -24,7 +24,7 @@ And second, it helps to start with just the essentials - **don’t try to learn 
 
 Many devs coming to the Sitecore world are used to building components for webpages. But Sitecore is a CMS for marketers, so in Sitecore you are not building for webpages directly; you are building for the authoring interface, and this requires extra considerations. 
 
-[Content authoring concepts for developers new to Sitecore](https://doc.sitecore.com/xp/en/developers/hd/201/sitecore-headless-development/content-authoring-concepts-for-developers-new-to-sitecore.html) - It is critical to understand these key concepts before designing or building front-end components for a Sitecore XM Cloud backend.
+[Content authoring concepts for developers new to Sitecore](https://doc.sitecore.com/xmc/en/developers/xm-cloud/content-authoring-concepts-for-developers-new-to-sitecore.html) - It is critical to understand these key concepts before designing or building front-end components for a Sitecore XM Cloud backend.
 
 > ✅ DO acquire access to your XM Cloud instance and **try out the authoring workflow yourself** before building components.
 
