@@ -1,0 +1,138 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "A Discussion with Sitecore's CPO Dave O’Flanagan",
+      "copy": "In this episode, we dive deep into the exciting world of AI, as we explore the future of this game-changing technology. We’ll also discuss the possibility of personalization dying, and the ins and outs of cloud migration.",
+      "image": "https://go.sitecore.com/l/857953/2023-06-25/twjjgc/857953/1687714895ZySFDOHK/Untitled_design__7_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=R8mb1CB-9vc"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "SUGCON India 2023 Updates",
+      "copy": "SUGCON India 2023 CFS has officially closed and the organizing committee is reviewing all the sessions. This year's event will be held at the luxurious Grand Delhi Hotel. For the latest updates on SUGCON India 2023, be sure to follow us on Twitter @SUGCONF and visit our website. Tickets will be on sale next month! ",
+      "image": "https://go.sitecore.com/l/857953/2023-06-25/twjjgg/857953/1687715032iGzfEzCj/Untitled_design__8_.png",
+      "link": {
+        "text": "Learn more",
+        "href": "https://india.sugcon.events/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "What is Federated Search?",
+      "copy": "In this video series, we're highlighting the work we've done to integrate Sitecore Search into the Sitecore Developer Portal. In this part Rob will introduce Federated Search, what it is, and how we leveraged it.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=i0tRKliVY8g"
+      }
+    },
+    {
+      "title": "Get Sitecore Personalize Decision Model result on your Backend code",
+      "copy": "Explore this step-by-step guide on how to obtain personalized content for specific groups of users based on their behavior, using Sitecore Personalize Decision Model. Learn how set the logic and rules, create a web experience, and connect to the Sitecore Personalize API.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://sitecoretek.wordpress.com/2023/06/10/how-to-get-sitecore-personalize-decision-model-result-on-my-sitecore-backend-code/"
+      }
+    },
+    {
+      "title": "Experience the Best of SUGCON EUROPE 2023",
+      "copy": "Missed SUGCON Europe 2023? No worries! Our YouTube channel now features an impressive lineup of presentations covering XM Cloud, Path to Composable, Marketing, and more. Head over to our channel now and immerse yourself in the latest insights and trends!",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/playlist?list=PLvwdDTmlDsRyk2ewHFxOzQum3yMA-wooD"
+      }
+    },
+    {
+      "title": "Join the Next Virtual Houston SUG Meeting",
+      "copy": "Don't miss the virtual Houston SUG on Thursday, July 13th at 3pm CT! This exciting event features four presenters sharing insights on a range of topics, including Content Hub, Webhooks, CDP, and Google Tag Manager. Each presenter will speak for about 20 minutes, providing plenty of opportunities to learn and engage with the community.",
+      "image": "https://go.sitecore.com/l/857953/2023-06-25/twjjgk/857953/1687715386W0SN8Dzs/Untitled_design__10_.png",
+      "link": {
+        "text": "Learn more",
+        "href": "https://go.sitecore.com/e/857953/e-user-group-events-294145885-/twjm28/597077152?h=h5aFm80JJJQLrOEe1T8qQ87sjvUOEQ0EZ7gJNly6iMI"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Integrate Content Hub With Next.js Using Reverse Proxy Calls",
+      "copy": "Discover how to seamlessly integrate Sitecore Content Hub with Next.js using reverse proxy calls. By leveraging Next.js and implementing reverse proxy calls, developers can streamline communication while ensuring the security of sensitive information.",
+      "image": "",
+      "link": {
+        "href": "https://andrelom.github.io/endless/posts/seamless-integration-of-sitecore-content-hub-with-nextjs-using-reverse-proxy-calls/"
+      }
+    },
+    {
+      "title": "Introduction to Sitecore Next.js",
+      "copy": "Explore this guide to developing with Sitecore Next.js. This is a perfect starting point for developers who are new to building Sitecore solutions in a headless, Next.js environment.",
+      "image": "",
+      "link": {
+        "href": "https://sitecore-nextjs-guide.hakmeng.com/"
+      }
+    },
+    {
+      "title": "Sitecore Content Hub ONE for developers",
+      "copy": "Curious about hosting your Next.js app outside of Vercel? Explore Next.js hosting alternatives, recommending Netlify and AWS Amplify. Discover the benefits and possibilities of hosting your Next.js app outside Vercel.",
+      "image": "",
+      "link": {
+        "href": "https://miguelminoldo.fr/2023/06/06/an-introduction-to-sitecore-content-hub-one-for-developers/"
+      }
+    },
+    {
+      "title": "Beyond Vercel: Hosting Alternatives for Next.js",
+      "copy": "If you are just curious about Sitecore XM Cloud, or are taking early steps with this platform, read through the Mastering XM Cloud series. Learn about the new SaaS offering from Sitecore as of today.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=db6beWwcyjI"
+      }
+    },
+    {
+      "title": "Do you REALLY need SSR?",
+      "copy": "Have you ever wondered if Server Side Rendering (SSR) is necessary for your application? Take a dive deep into the world of SSR and explore the benefits of React Server Components, Next.js, Remix, and more.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=kUs-fH1k-aM"
+      }
+    },
+    {
+      "title": "Getting to know Sitecore Search ",
+      "copy": "This exciting blog series covers everything you need to know about Sitecore Search. Explore Sitecore Search UI, along with basic terminology. Learn all about the default setup and configuration, and look at managing users and role permissions.",
+      "image": "",
+      "link": {
+        "href": "https://blogs.perficient.com/2023/04/24/getting-to-know-sitecore-search/"
+      }
+    },
+    {
+      "title": "Sitecore Personalize: New Developer Focused API Keys",
+      "copy": "Sitecore Personalize has a new feature taht enables developers to create access tokens (JWT Tokens) for specific purposes. Check out this step-by-step walkthrough on how to create these tokens and how to use them!",
+      "image": "",
+      "link": {
+        "href": "https://dylanyoung.dev/insights/sitecore-personalize-new-developer-focused-api-keys/"
+      }
+    },
+    {
+      "title": "The Future of Sitecore Content Hub CMP After Content Hub ONE's Release",
+      "copy": "Explore the similarities and major differences between Sitecore Content Hub CMP and Content Hub ONE. Gain detailed insights and comparisons of the features and benefits of each solution.",
+      "image": "",
+      "link": {
+        "href": "https://timmarsh.co.uk/2023/06/16/what-happens-to-sitecore-content-hub-cmp-now-that-content-hub-one-is-here/"
+      }
+    },
+    {
+      "title": "Discover Vercel's Exciting New Release Updates",
+      "copy": "Are you interested in discovering more about Vercel's recent releases? Join host Joshua Hover as he engages in an insightful conversation with Luke Pace, where they explore the exciting new features introduced by Vercel and their benefits.",
+      "image": "",
+      "link": {
+        "text": "Listen now",
+        "href": "https://podcasts.apple.com/au/podcast/discover-vercels-exciting-new-release-updates/id1644956117?i=1000615085314"
+      }
+    }
+  ]
+}

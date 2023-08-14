@@ -1,0 +1,113 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Calling All Sitecore Experts: Join Us as a Speaker at SUGCON North America!",
+      "copy": "Sign up to be a speaker at SUGCON North America in Minneapolis on October 5th-6th. This is a great opportunity to showcase your expertise, network with industry professionals, and gain visibility in the Sitecore community. Don't miss your chance to be a part of this incredible event - submit your topic by July 31st.",
+      "image": "https://go.sitecore.com/l/857953/2023-06-25/twjjgc/857953/1687714895ZySFDOHK/Untitled_design__7_.png",
+      "link": {
+        "text": "Sign up now",
+        "href": "https://sessionize.com/sugcon-na-2023"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "SUGCON India - Early Bird Tickets on Sale!",
+      "copy": "SUGCON is coming to New Delhi on August 24-25, bringing together the brightest minds in the Sitecore community. Take advantage of the early bird ticket sale until July 31st to secure your spot at this must-attend event.",
+      "image": "https://go.sitecore.com/l/857953/2023-06-25/twjjgg/857953/1687715032iGzfEzCj/Untitled_design__8_.png",
+      "link": {
+        "text": "Save your spot!",
+        "href": "https://registration-india.sugcon.events/flow/sitecore/sugconindia2023/reg"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Using Merlin to Migrate Your Site to Sitecore",
+      "copy": "In this article, explore Merlin a powerful tool that streamlines your site migration to Sitecore. Learn about its easy setup and more, and elevate your website migration experience with Merlin.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://blogs.perficient.com/2023/06/13/using-merlin-to-migrate-your-site-to-sitecore/"
+      }
+    },
+    {
+      "title": "Sitecore Headless DevOps Best Practices – Part 1",
+      "copy": "In this article, explore part 1 of this series on DevOps best practices related to Sitecore Headless. What is Sitecore Headless? What is Git DMZ Flow? And more.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://blogs.perficient.com/2022/06/22/sitecore-headless-devops-best-practices-part-1/"
+      }
+    },
+    {
+      "title": "XM Cloud Tutorial Series - Introduction #1",
+      "copy": "In this new tutorial series explore  how to implement a new website-project using XM Cloud. In this first episode he gives you an introduction on the project itself.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=D7UPYP7AQQ4"
+      }
+    },
+    {
+      "title": "Webinar XM Cloud: Redefining the Developer Experience",
+      "copy": "Join the latest XM Cloud webinar and see how XM Cloud includes DevOps out of the box.Sitecore’s Chris Castle and Kevin DiTroia will walk you through how Sitecore XM Cloud streamlines development and deployment.",
+      "image": "https://go.sitecore.com/l/857953/2023-06-25/twjjgk/857953/1687715386W0SN8Dzs/Untitled_design__10_.png",
+      "link": {
+        "text": "Register now",
+        "href": "https://www.sitecore.com/webinars/2023/08/xm-developer-experience"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Sitecore Personalize Decision Model result on my Sitecore Backend code",
+      "copy": "In this article, learn how to integrate Sitecore Personalize into Sitecore backend code. Follow a step-by-step instruction on creating a decision model, setting up a web experience, connecting to the Sitecore Personalize API, and retrieving the decision model result in backend code.",
+      "image": "",
+      "link": {
+        "href": "https://sitecoretek.wordpress.com/2023/06/10/how-to-get-sitecore-personalize-decision-model-result-on-my-sitecore-backend-code/"
+      }
+    },
+    {
+      "title": "Part 2 – Intro to Sitecore Discover for Developers",
+      "copy": "In this article, discover the core capabilities of Sitecore Discover, including product recommendations, catalog search, content service, personalized emails, reports and more!",
+      "image": "",
+      "link": {
+        "href": "https://miguelminoldo.fr/2023/07/20/intro-sitecore-discover-part-ii/"
+      }
+    },
+    {
+      "title": "Sitecore Search - Adding an Index Source",
+      "copy": "Check out this video series highlighting the work completed to integrate Sitecore Search into the Sitecore Developer Portal. Learn the different elements that make up an Index Source, he will then walk through some of the Sources that were configured for the Developer Portal.",
+      "image": "",
+      "link": {
+        "href": "https://www.youtube.com/watch?v=d-m7GYVSeCQ"
+      }
+    },
+    {
+      "title": "Sitecore Order Cloud: The Journey of a Headless Commerce Solution",
+      "copy": "Tune into this episode of Standard Values where VP of Engineering for Commerce at Sitecore discusses Sitecore Order Cloud and the decision to adopt a headless strategy, driven by the need for personalized user experiences and the growing prominence of mobile devices.",
+      "image": "",
+      "link": {
+        "text": "Listen now",
+        "href": "https://www.youtube.com/watch?v=xoN1vGgERAA&list=PL1jJVFm_lGny4iMEBhCWxkfGU5n3Rv_nH&index=11"
+      }
+    },
+    {
+      "title": "Join the Sitecore Community on Telegram",
+      "copy": "If you're a Sitecore developer or enthusiast looking to connect with like-minded individuals, join the Sitecore Telegram group today! With over 900 members from around the globe, this community offers a platform for discussions, insights, and sharing Sitecore-related news",
+      "image": "",
+      "link": {
+        "text": "Join now",
+        "href": "https://t.me/SitecoreTelegram"
+      }
+    },
+    {
+      "title": "OrderCloud lifecycle of an order — Order Addresses",
+      "copy": "In this article, explore how OrderCloud handles addresses in the checkout process. Buyer addresses, which can be assigned to users or user groups, are stored as a separate entity.",
+      "image": "",
+      "link": {
+        "href": "https://medium.com/@thompuiman/ordercloud-lifecycle-of-an-order-order-addresses-c32d662b4eb8"
+      }
+    }
+  ]
+}

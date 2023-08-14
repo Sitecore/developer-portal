@@ -44,9 +44,11 @@ const NewsletterStory = ({ variant, image, ...props }: NewsletterStoryData) => {
 
   return (
     <div className="flex flex-col">
-      <div className="mb-4">
-        <Image src={image} alt="" width="300" height="300" />
-      </div>
+      {image && (
+        <div className="mb-4">
+          <Image src={image} alt="" width="300" height="300" />
+        </div>
+      )}
       <NewsletterStoryPartial {...props} />
     </div>
   );
