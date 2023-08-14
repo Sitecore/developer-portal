@@ -19,7 +19,8 @@
       "link": {
         "text": "Sign up",
         "href": "https://www.sitecore.com/help-us-build-products"
-      }
+      },
+      "variant": "full-width"
     },
     {
       "title": "Blazor United prototype",
@@ -55,7 +56,8 @@
       "link": {
         "text": "Read now",
         "href": "https://deanobrien.uk/sugcon-2023-a-composable-future-for-sitecore/"
-      }
+      },
+      "variant": "full-width"
     },
     {
       "title": "Email Marketing Made Simple - Sitecore Send",
@@ -91,7 +93,8 @@
       "link": {
         "text": "Watch now",
         "href": "https://www.youtube.com/watch?v=-FeLY5CuHNk&t=1s"
-      }
+      },
+      "variant": "full-width"
     },
     {
       "title": "Next.js App Directory Architecture First Impressions",
