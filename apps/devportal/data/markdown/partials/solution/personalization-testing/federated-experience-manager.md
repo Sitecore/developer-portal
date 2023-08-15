@@ -9,8 +9,8 @@ The Federated Experience Manager (FXM) is an application that allows you to add 
 
 ### Documentation
 
-- [FXM Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/federated-experience-manager.html)
+- [FXM Documentation](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-platform/federated-experience-manager.html)
 
 ### Learn
 
-- [Getting Started](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/using-fxm.html)
+- [Getting Started](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-platform/using-fxm.html)

@@ -270,7 +270,7 @@ There are pros and cons to each of these approaches, so you will need to decide 
 
 #### Creating Web Experiments
 
-When personalizing the web channel by using Web Experiments, the DOM is changed via JavaScript after being rendered. You need to be careful when using this method so as to ensure that the DOM changes occur either “below the fold” or are masked with other UX techniques like transparent overlays or loading images. You can get an introduction on how to implement Web Experiments by following the guide here: https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/introduction-to-web-experiments.html
+When personalizing the web channel by using Web Experiments, the DOM is changed via JavaScript after being rendered. You need to be careful when using this method so as to ensure that the DOM changes occur either “below the fold” or are masked with other UX techniques like transparent overlays or loading images. You can get an introduction on how to implement Web Experiments by following the guide here: https://doc.sitecore.com/cdp/en/users/sitecore-cdp/introduction-to-web-experiments.html
 
 The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using Web Experiments.
 
@@ -278,7 +278,7 @@ The sequence diagram below shows data flow between the different systems to faci
 
 #### Creating Full Stack Experiments
 
-When personalizing the web channel by using Full Stack Experiments, the DOM is changed server side before being served to the browser. This means you no longer need to be concerned about experiments occurring “below the fold”. You can get an introduction on how to implement Web Experiments by following the guide here: https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/create-an-interactive-experiment.html
+When personalizing the web channel by using Full Stack Experiments, the DOM is changed server side before being served to the browser. This means you no longer need to be concerned about experiments occurring “below the fold”. You can get an introduction on how to implement Web Experiments by following the guide here: https://doc.sitecore.com/cdp/en/users/sitecore-cdp/create-an-interactive-experiment.html
 
 The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using Full Stack Experiments.
 
@@ -286,7 +286,7 @@ The sequence diagram below shows data flow between the different systems to faci
 
 ### Marketer Usage
 
-As a marketer you can apply the different types of Experiments to the pages in your web channel. Experiments are closely linked to Experiences, as Experiments are effectively an A/B Test between two Experiences. You can read about how you can apply the different types of experiments as a marketer here: https://doc.sitecore.com/cdp/en/users/sitecore-customer-data-platform/running-experiments-in-sitecore-cdp.html
+As a marketer you can apply the different types of Experiments to the pages in your web channel. Experiments are closely linked to Experiences, as Experiments are effectively an A/B Test between two Experiences. You can read about how you can apply the different types of experiments as a marketer here: https://doc.sitecore.com/cdp/en/users/sitecore-cdp/running-experiments-in-sitecore-cdp.html
 
 [1]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/1a7ace859dea4deaa27e4546c9b812cc?v=ffce0578
 [2]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/27c06a3a3ffd494b9d8100adb8a88a28?v=4a196839

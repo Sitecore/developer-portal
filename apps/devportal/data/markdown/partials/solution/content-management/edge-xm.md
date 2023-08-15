@@ -15,7 +15,7 @@ See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/1
 
 - [Connector Installation](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/install-and-configure-the-experience-edge-connector.html)
 - [Testing GraphQL Queries](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/test-your-queries.html)
-- [Next.js Deployment on Vercel with Edge XM](https://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/walkthrough--deploying-jss-next-js-apps-to-vercel.html)
+- [Next.js Deployment on Vercel with Edge XM](https://doc.sitecore.com/xp/en/developers/hd/200/sitecore-headless-development/walkthrough--deploying-jss-next-js-apps-to-vercel.html)
 
 ## Documentation
 

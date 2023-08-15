@@ -19,4 +19,4 @@ The Sitecore Install Framework (SIF) enables users to deploy and configure a Sit
 
 - [Download SIF](https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework.aspx)
 - [PowerShell Gallery](https://sitecore.myget.org/gallery/sc-powershell)
-- [PowerShell Gallery FAQ](https://doc.sitecore.com/en/developers/101/sitecore-experience-manager/sitecore-powershell-public-nuget-feed-faq.html)
+- [PowerShell Gallery FAQ](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-manager/sitecore-powershell-public-nuget-feed-faq.html)

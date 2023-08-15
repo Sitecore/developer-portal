@@ -41,8 +41,8 @@ The various connectors allow the integration of Sitecore Content Hub with differ
 
 <Row columns={2}>
 <Article title="Sitecore Connect for Sitecore DAM" description="Sitecore Connect for Sitecore DAM allows users to browse, search and insert digital assets from Sitecore Content Hub directly within Sitecore's Content and Experience editing tools." link="https://doc.sitecore.com/xp/en/developers/connect-for-ch/50/connect-for-content-hub/sitecore-connect-for-content-hub---dam.html" />
-<Article title="Sitecore Connect for Creative Cloud" description="Sitecore Connect for Creative Cloud is a powerful extension that connects Sitecore Content Hub with Adobe Creative Cloud tools and enables direct linking to stored assets." link="https://doc.sitecore.com/ch/en/users/latest/content-hub/cloud-introduction.html" />
-<Article title="Sitecore Connect for Salesforce" description="Sitecore Connect for Salesforce allows users to to include assets from Sitecore Content Hub in Salesforce Marketing Cloud Email App." link="https://doc.sitecore.com/ch/en/users/latest/content-hub/cloud-overview.html" />
+<Article title="Sitecore Connect for Creative Cloud" description="Sitecore Connect for Creative Cloud is a powerful extension that connects Sitecore Content Hub with Adobe Creative Cloud tools and enables direct linking to stored assets." link="https://doc.sitecore.com/ch/en/users/content-hub/cloud-introduction.html" />
+<Article title="Sitecore Connect for Salesforce" description="Sitecore Connect for Salesforce allows users to to include assets from Sitecore Content Hub in Salesforce Marketing Cloud Email App." link="https://doc.sitecore.com/ch/en/users/content-hub/cloud-overview.html" />
 <Article title="Generic connectors" description="Several generic connectors (Drupal, Youtube, Wordpress that can be used as they are or customized to be used with similar products." link="https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/connectors.html" />
 </Row>
 
