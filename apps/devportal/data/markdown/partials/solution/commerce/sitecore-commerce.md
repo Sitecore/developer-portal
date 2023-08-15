@@ -11,18 +11,18 @@ Sitecore Experience Commerce (XC) empowers marketers and merchandizers to fully 
 
 ## Documentation
 
-- [Sitecore Commerce Documentation](https://doc.sitecore.com/en/developers/101/xc/)
-- [Commerce Developer Reference](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/en/commerce-developer-reference.html)
-- [Commerce DevOps](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/en/commerce-devops.html)
-- [Integrate 3rd party services](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/en/commerce-integration.html)
-- [Commerce Connect](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/en/commerce-connect.html)
-- [SXA Storefront](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/en/sxa-storefront.html)
+- [Sitecore Commerce Documentation](https://doc.sitecore.com/xp/en/developers/101/xc/)
+- [Commerce Developer Reference](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-commerce/en/commerce-developer-reference.html)
+- [Commerce DevOps](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-commerce/en/commerce-devops.html)
+- [Integrate 3rd party services](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-commerce/en/commerce-integration.html)
+- [Commerce Connect](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-commerce/en/commerce-connect.html)
+- [SXA Storefront](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-commerce/en/sxa-storefront.html)
 - [User Documentation](https://doc.sitecore.com/users/101/sitecore-experience-commerce/en/introduction-to-sitecore-experience-commerce.html)
 
 ## Getting Started
 
 - [Installation Guides](https://dev.sitecore.net/Downloads/Sitecore_Commerce/101/Sitecore_Experience_Commerce_101.aspx)
-- [Getting Started](https://doc.sitecore.com/en/developers/101/sitecore-experience-commerce/getting-started-with-development.html)
+- [Getting Started](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-commerce/getting-started-with-development.html)
 - [Sitecore Essentials (FREE)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore Experience Commerce 9 and 10
 
 ## Learn more

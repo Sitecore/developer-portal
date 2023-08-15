@@ -10,11 +10,11 @@ The Reference Data Service can be used by features such as interaction aggregati
 
 ### Documentation
 
-- [Documentation](https://doc.sitecore.com/en/developers/101/sitecore-experience-platform/reference-data-service.html)
+- [Documentation](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-platform/reference-data-service.html)
 
 ### Learn
 
-- [Reference Data Service Role](https://doc.sitecore.com/en/developers/101/platform-administration-and-architecture/reference-data-service.html)
+- [Reference Data Service Role](https://doc.sitecore.com/xp/en/developers/101/platform-administration-and-architecture/reference-data-service.html)
 
 ### Download
 

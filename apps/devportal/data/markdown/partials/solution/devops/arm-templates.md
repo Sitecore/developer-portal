@@ -10,8 +10,8 @@ The Sitecore Azure Toolkit contains the tools and resources that are necessary t
 ## Documentation
 
 - [ARM Templates](https://github.com/Sitecore/Sitecore-Azure-Quickstart-Templates)
-- [Sitecore Cloud Services overview](https://doc.sitecore.com/en/developers/90/managed-cloud/sitecore-cloud-services-overview.html)
+- [Sitecore Cloud Services overview](https://doc.sitecore.com/xp/en/developers/90/managed-cloud/sitecore-cloud-services-overview.html)
 
 ## Getting Started
 
-- [Getting started with the Sitecore Azure toolkit](https://doc.sitecore.com/en/developers/sat/20/sitecore-azure-toolkit/getting-started-with-the-sitecore-azure-toolkit.html)
+- [Getting started with the Sitecore Azure toolkit](https://doc.sitecore.com/xp/en/developers/sat/20/sitecore-azure-toolkit/getting-started-with-the-sitecore-azure-toolkit.html)

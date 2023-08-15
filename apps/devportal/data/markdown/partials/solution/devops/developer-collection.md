@@ -14,7 +14,7 @@ The Sitecore Developer Collection was created by developers, for developers, to 
 Sitecore CLI provides a command line interface to interact with your Sitecore instance. This command line provides technical team members with automation capabilities and the ability to do content serialization, indexing, publishing, and more.
 
 - [Download Sitecore CLI plugin](https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx)
-- [Documentation](https://doc.sitecore.com/en/developers/101/developer-tools/sitecore-command-line-interface.html)
+- [Documentation](https://doc.sitecore.com/xp/en/developers/101/developer-tools/sitecore-command-line-interface.html)
 
 ## Sitecore for Visual Studio
 
@@ -22,7 +22,7 @@ Sitecore for Visual Studio provides a graphical tool to interact with your Sitec
 
 - [About SVS](https://www.teamdevelopmentforsitecore.com/Sitecore-for-Visual-Studio)
 - [Download SVS](https://www.teamdevelopmentforsitecore.com/Download/SVS)
-- [Documentation](https://doc.sitecore.com/en/developers/101/developer-tools/sitecore-for-visual-studio.html)
+- [Documentation](https://doc.sitecore.com/xp/en/developers/101/developer-tools/sitecore-for-visual-studio.html)
 
 ## Team Development for Sitecore (TDS)
 

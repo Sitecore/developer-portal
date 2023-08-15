@@ -15,17 +15,17 @@ See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/1
 
 ## Getting Started
 
-- [Getting started](https://doc.sitecore.com/ch/en/users/latest/content-hub/quickstart-guide.html)
-- [Use the APIs](https://doc.sitecore.com/ch/en/users/latest/content-hub/apis-intro.html)
+- [Getting started](https://doc.sitecore.com/ch/en/users/content-hub/quickstart-guide.html)
+- [Use the APIs](https://doc.sitecore.com/ch/en/users/content-hub/apis-intro.html)
 - [Query the content using GraphQL](https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/graphql-examples.html)
 
 ## Documentation
 
-- [Introduction](https://doc.sitecore.com/ch/en/users/latest/content-hub/caas-intro.html)
-- [Creating Content](https://doc.sitecore.com/ch/en/users/latest/content-hub/create-create.html)
-- [Authoring](https://doc.sitecore.com/ch/en/users/latest/content-hub/authoring.html)
-- [Publishing](https://doc.sitecore.com/ch/en/users/latest/content-hub/publishing-intro.html)
-- [Content Delivery](https://doc.sitecore.com/ch/en/users/latest/content-hub/delivery.html)
+- [Introduction](https://doc.sitecore.com/ch/en/users/content-hub/caas-intro.html)
+- [Creating Content](https://doc.sitecore.com/ch/en/users/content-hub/create-create.html)
+- [Authoring](https://doc.sitecore.com/ch/en/users/content-hub/authoring.html)
+- [Publishing](https://doc.sitecore.com/ch/en/users/content-hub/publishing-intro.html)
+- [Content Delivery](https://doc.sitecore.com/ch/en/users/content-hub/delivery.html)
 
 ## Learn & Examples
 
