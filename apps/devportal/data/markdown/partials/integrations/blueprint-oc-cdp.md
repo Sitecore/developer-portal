@@ -160,7 +160,7 @@ Here are some commerce personalization use cases
 - Which products/promotions/categories should be highlighted on initial arrival to site?
 - What should the default product sort option be?
 - What should be sort order of categories be?
-  In terms of implementation – the key is that personalization should be implemented by a developer once and then tools like [CDP Decision Models](https://doc.sitecore.com/cdp/en/users/sitecore-cdp/introduction-to-decisioning-in-sitecore-cdp.html) let marketers update the behavior without deployments.
+  In terms of implementation – the key is that personalization should be implemented by a developer once and then tools like [CDP Decision Models](https://doc.sitecore.com/personalize/en/users/sitecore-personalize/introduction-to-decisioning-in-sitecore-personalize.html) let marketers update the behavior without deployments.
 
 ### Developer Configuration
 
@@ -172,7 +172,7 @@ The details of how to execute a decisioning model via an API request can be foun
 
 ### Marketer Configuration
 
-The marketer (possibly with a developers help) must create the logic of the decision model that determines what data to request from the OrderCloud API. See this guide to [building decision models](https://doc.sitecore.com/cdp/en/users/sitecore-cdp/introduction-to-decisioning-in-sitecore-cdp.html). The key is that OrderCloud should be set up in CDP as a “data system” – an external system that contains dynamic data that you can use in a decision model. See this guide to [external data systems](https://doc.sitecore.com/cdp/en/users/sitecore-cdp/managing-data-systems-in-sitecore-cdp.html). The OrderCloud token should be passed from the browser, to CDP, and on to OC to authenticate the request. Once this is in place, the querying functionality of OrderCloud’s list endpoints is available to be used.
+The marketer (possibly with a developers help) must create the logic of the decision model that determines what data to request from the OrderCloud API. See this guide to [building decision models](https://doc.sitecore.com/personalize/en/users/sitecore-personalize/introduction-to-decisioning-in-sitecore-personalize.html). The key is that OrderCloud should be set up in CDP as a “data system” – an external system that contains dynamic data that you can use in a decision model. See this guide to [external data systems](https://doc.sitecore.com/cdp/en/users/sitecore-cdp/managing-data-systems-in-sitecore-cdp.html). The OrderCloud token should be passed from the browser, to CDP, and on to OC to authenticate the request. Once this is in place, the querying functionality of OrderCloud’s list endpoints is available to be used.
 
 As a simple example, the marketer could determine a handful of specific products that they think would appeal to each segment. The product IDs could be stored in a table and the logic of the model would make a request to OC like so
 

@@ -11,7 +11,7 @@ Sitecore Experience Commerce (XC) empowers marketers and merchandizers to fully 
 
 ## Documentation
 
-- [Sitecore Commerce Documentation](https://doc.sitecore.com/xp/en/developers/101/xc/)
+- [Sitecore Commerce Documentation](https://doc.sitecore.com/xp/en/developers/103/xc)
 - [Commerce Developer Reference](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-commerce/en/commerce-developer-reference.html)
 - [Commerce DevOps](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-commerce/en/commerce-devops.html)
 - [Integrate 3rd party services](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-commerce/en/commerce-integration.html)
