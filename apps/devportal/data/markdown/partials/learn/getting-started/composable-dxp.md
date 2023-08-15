@@ -11,7 +11,7 @@
 - [Getting Started with OrderCloud](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
 - [Getting Started with Content Hub](https://doc.sitecore.com/ch/en/users/content-hub/get-started.html)
 - [Getting Started with Sitecore Send](https://doc.sitecore.com/send/en/users/sitecore-send/getting-started-with-sitecore-send.html)
-- [Getting started with Experience Edge for ContentHub](https://doc.sitecore.com/ch/en/users/content-hub/quickstart-guide.html)
+- [Getting started with Experience Edge for ContentHub](https://doc.sitecore.com/ch/en/users/content-hub/deliver-content--deliver-content-with-experience-edge.html)
 - [Getting started with Experience Edge for XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-experience-edge-for-xm.html)
 - [Sitecore Essentials - Free on-demand learning](https://learning.sitecore.com/pathway/sitecore-essentials)
   - Introduction to Sitecore Content Hub
