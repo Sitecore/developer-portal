@@ -19,6 +19,6 @@ Embedded Personalization can be implemented using any web hosting platform that 
 
 **XM Cloud Pages analysis** gives insights on your website traffic by displaying the following data (absolute values and trends) . It covers **30 Days for trending analytics (61 days for totals)**. For more information on XM Cloud Analytics Data Retention, please check: https://doc.sitecore.com/xmc/en/users/xm-cloud/view-the-analytics-data.html.
 
-**Sitecore Personalize** provides your organization with data that you can use in decisioning and real-time audiences. It generally keeps data for **Last 40 sessions within the last 90 days**. For details on Personalize data retention policy, please visit: https://doc.sitecore.com/cdp/en/users/sitecore-personalize/introduction-to-sitecore-personalize-data-retention-policy.html.
+**Sitecore Personalize** provides your organization with data that you can use in decisioning and real-time audiences. It generally keeps data for **Last 40 sessions within the last 90 days**. For details on Personalize data retention policy, please visit: https://doc.sitecore.com/personalize/en/users/sitecore-personalize/introduction-to-sitecore-personalize-data-retention-policy.html.
 
 **Sitecore CDP** imposes no data limit or time duration for guests with customer as the guest type including Last 1000 sessions per guest. For details on CDP data retention policy, please visit: https://doc.sitecore.com/cdp/en/users/sitecore-cdp/data-limits-in-sitecore-cdp.html.

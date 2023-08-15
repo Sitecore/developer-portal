@@ -270,7 +270,7 @@ There are pros and cons to each of these approaches, so you will need to decide 
 
 #### Creating Web Experiments
 
-When personalizing the web channel by using Web Experiments, the DOM is changed via JavaScript after being rendered. You need to be careful when using this method so as to ensure that the DOM changes occur either “below the fold” or are masked with other UX techniques like transparent overlays or loading images. You can get an introduction on how to implement Web Experiments by following the guide here: https://doc.sitecore.com/cdp/en/users/sitecore-cdp/introduction-to-web-experiments.html
+When personalizing the web channel by using Web Experiments, the DOM is changed via JavaScript after being rendered. You need to be careful when using this method so as to ensure that the DOM changes occur either “below the fold” or are masked with other UX techniques like transparent overlays or loading images. You can get an introduction on how to implement Web Experiments by following the guide here: https://doc.sitecore.com/personalize/en/users/sitecore-personalize/introduction-to-web-experiments-in-sitecore-personalize.html
 
 The sequence diagram below shows data flow between the different systems to facilitate the personalization of the web channel, when using Web Experiments.
 

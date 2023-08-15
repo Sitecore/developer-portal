@@ -52,5 +52,5 @@ We also have some integration guides that will help you connect Sitecore product
 <Row columns={2}>
 
 <Link title="Integrating Sitecore Content Hub with Sitecore Send" link="/learn/integrations/send-ch" />
-<Link title="Integrating Sitecore Content Hub with Salesforce Commerce Cloud" link="https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/salesforce-commerce-connector.html" />
+<Link title="Integrating Sitecore Content Hub with Salesforce Marketing Cloud" link="https://doc.sitecore.com/ch/en/users/content-hub/sitecore-connect%E2%84%A2-for-salesforce-marketing-cloud" />
 </Row>
