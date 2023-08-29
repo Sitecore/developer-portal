@@ -120,7 +120,7 @@ const DesktopNav = () => {
           <Box
             key={key}
             as="a"
-            p={5}
+            p={6}
             href={navItem.url ?? '#'}
             fontSize={'lg'}
             overflow={'hidden'}
