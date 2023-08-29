@@ -1,0 +1,23 @@
+### Getting Started with the Sitecore Composable DXP
+
+- [Introduction to Composable DXP](/learn/getting-started/introduction-to-composable-dxp)
+- [Migrating to the Composable DXP](/learn/getting-started/migrating-to-the-sitecore-composable-dxp)
+- [Introduction to the Sitecore Cloud Portal](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
+- [Introduction to XM Cloud](/learn/getting-started/xm-cloud-introduction)
+- [Introduction to Discover](/learn/getting-started/discover-introduction)
+- [Introduction to Content Hub ONE](/learn/getting-started/introduction-to-contenthub-one)
+- [Getting Started with Sitecore XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
+- [Getting Started with Sitecore CDP](https://doc.sitecore.com/cdp/en/users/sitecore-cdp/introduction-to-sitecore-cdp.html)
+- [Getting Started with OrderCloud](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
+- [Getting Started with Content Hub](https://doc.sitecore.com/ch/en/users/content-hub/get-started.html)
+- [Getting Started with Sitecore Send](https://doc.sitecore.com/send/en/users/sitecore-send/getting-started-with-sitecore-send.html)
+- [Getting started with Experience Edge for ContentHub](https://doc.sitecore.com/ch/en/users/content-hub/deliver-content--deliver-content-with-experience-edge.html)
+- [Getting started with Experience Edge for XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-experience-edge-for-xm.html)
+- [Sitecore Essentials - Free on-demand learning](https://learning.sitecore.com/pathway/sitecore-essentials)
+  - Introduction to Sitecore Content Hub
+  - Introduction to Sitecore OrderCloud
+  - Introduction to Sitecore CDP and Personalize
+- [XM - Personalize FAQ](/learn/faq/xm-personalize)
+- [Cloud Portal FAQ](/learn/faq/cloud-portal)
+- [XM Cloud Embedded Personalization FAQ](/learn/faq/xm-cloud-embedded-personalization)
+- [Sitecore Connect FAQ](/learn/faq/sitecore-connect)

@@ -21,10 +21,14 @@
     "eslint-plugin-import": "^2.27.5",
     "prettier": "latest",
     "prettier-plugin-tailwindcss": "^0.2.7",
+    "sc-changelog": "*",
     "shx": "^0.3.4",
     "turbo": "^1.9.3",
-    "sc-changelog": "*",
     "ui": "*"
   },
-  "packageManager": "npm@9.5.0^"
+  "packageManager": "npm@9.5.0^",
+  "dependencies": {
+    "@mdi/js": "^7.2.96",
+    "@mdi/react": "^1.6.1"
+  }
 }

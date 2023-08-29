@@ -1,28 +1,26 @@
-import Head from 'next/head';
-import React from 'react';
-import { AvenirNextLTPro } from 'ui/common/fonts/avenirNextLTPro';
-import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
-import Footer from 'ui/layouts/components/footer/Footer';
-import Nav from 'ui/layouts/components/header/Nav';
-import { mainNavigation, sitecoreQuickLinks } from '../../data/navigation';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { withProse } from '@nikolovlazar/chakra-ui-prose';
+import sitecoreTheme from '@sitecore/blok-theme';
 
-import '../styles/global.css';
+import { AppProps } from 'next/app';
+import { Footer } from '../components/navigation/Footer';
+import Navbar from '../components/navigation/NavBar';
+import NavBarSearch from '../components/navigation/NavBarSearch';
+import { proseBaseStyle } from '../lib/markdown/proseTheme';
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
+  const theme = extendTheme(sitecoreTheme, withProse({ baseStyle: proseBaseStyle }));
+
   return (
-    <React.StrictMode>
-      <Head>
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com/" />
-      </Head>
-
-      <div
-        className={`${AvenirNextR.variable} ${AvenirNextLTPro.variable} theme-light text-theme-text bg-theme-bg dark:theme-dark font-sans`}
-      >
-        <Nav navigationData={mainNavigation} sitecoreQuickLinks={sitecoreQuickLinks}></Nav>
-
-        <Component {...pageProps} />
-        <Footer />
-      </div>
-    </React.StrictMode>
+    <ChakraProvider theme={theme}>
+      <Navbar>
+        {/* Search menu */}
+        <NavBarSearch />
+      </Navbar>
+      <Component {...pageProps} />
+      <Footer />
+    </ChakraProvider>
   );
 }
+
+export default MyApp;
