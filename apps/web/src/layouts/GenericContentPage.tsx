@@ -51,7 +51,7 @@ const GenericContentPage = ({ hasGrid, pageInfo, partialGroups, partials, promoA
   const Nav = customNav ? customNav : <InPageNav titles={titles} />;
 
   return (
-    <Layout pageInfo={pageInfo}>
+    <Layout title={pageInfo.title} description={pageInfo.description}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       <VerticalGroup>

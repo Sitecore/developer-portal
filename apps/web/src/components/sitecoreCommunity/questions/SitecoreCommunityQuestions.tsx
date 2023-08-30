@@ -62,7 +62,7 @@ const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest }: Site
       <CardBody paddingTop={8}>
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
           <Menu>
-            <MenuButton as={Button} rightIcon={<Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} _hover={{ rotate: '180deg' }} w={6} h={6} />}>
+            <MenuButton as={Button} rightIcon={<Icon as={ChevronDownIcon} w={6} h={6} />}>
               Order by
             </MenuButton>
             <MenuList>
@@ -75,7 +75,7 @@ const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest }: Site
 
         {forumKeys && Array.isArray(forumKeys) && forumKeys.length > 1 && (
           <Menu>
-            <MenuButton as={Button} rightIcon={<Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} _hover={{ rotate: '180deg' }} w={6} h={6} />}>
+            <MenuButton as={Button} rightIcon={<Icon as={ChevronDownIcon} w={6} h={6} />}>
               Filter by
             </MenuButton>
             <MenuList>

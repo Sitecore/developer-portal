@@ -34,7 +34,8 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     fontWeight: 'normal',
     fontSize: 'md',
     lineHeight: 6,
-    my: 6,
+    mt: 0,
+    mb: 6,
   },
   a: {
     fontWeight: 500,

@@ -7,9 +7,10 @@ export type HeroProps = {
   description: string;
   image?: string;
   productLogo?: string;
+  children?: React.ReactNode | React.ReactNode[];
 };
 
-const Hero = ({ description, title, image }: HeroProps): JSX.Element => {
+const Hero = ({ description, title, image, children }: HeroProps): JSX.Element => {
   return (
     <VerticalGroup maxWidth={'100%'} backgroundImage={`${useColorModeValue('/images/heros/hero-wide-light.webp', '/images/heros/hero-wide-dark.webp')}`} backgroundSize={'cover'} backgroundPosition={'center center'}>
       <CenteredContent gap={2} py={6}>
@@ -19,6 +20,7 @@ const Hero = ({ description, title, image }: HeroProps): JSX.Element => {
         <Heading as="h1" fontSize={useBreakpointValue({ base: 'sm', md: '3rem' })} fontWeight={400}>
           {title}
         </Heading>
+        {children}
       </CenteredContent>
     </VerticalGroup>
   );

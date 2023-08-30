@@ -27,7 +27,7 @@ const ChildOverviewPage = ({ hasGrid, pageInfo, partials, partialGroups, promoAf
 
   // Check for headings in the content
   return (
-    <Layout pageInfo={pageInfo} background={'chakra-subtle-bg'}>
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} background={'chakra-subtle-bg'}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       {promoBefore != null ||
