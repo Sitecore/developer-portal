@@ -1,7 +1,4 @@
 import { getChangelogEntryUrl } from '@/../../packages/sc-changelog/utils/urlBuilder';
-import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
-import { ChangelogItemMeta } from '@/src/components/changelog/ChangelogItemMeta';
-import SocialShare from '@/src/components/common/SocialShare';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -16,6 +13,9 @@ import { Message, Type } from 'ui/components/common/Message';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
+import ChangelogByMonth from '../../../components/changelog/ChangelogByMonth';
+import { ChangelogItemMeta } from '../../../components/changelog/ChangelogItemMeta';
+import SocialShare from '../../../components/common/SocialShare';
 
 type ChangelogProps = {
   currentProduct: Product;
@@ -132,7 +132,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
 
               <div className="flex flex-row">
                 <div className="grow">{changelogEntry.readMoreLink && <Button variant="text" className="font-medium" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} />}</div>
-                <SocialShare className="w-30" url={getChangelogEntryUrl(changelogEntry, true)} title={changelogEntry.title} />
+                <SocialShare url={getChangelogEntryUrl(changelogEntry, true)} title={changelogEntry.title} />
               </div>
             </div>
             <div className="col-span-2 hidden md:block">

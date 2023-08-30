@@ -1,6 +1,3 @@
-import { getChangelogProductPaths } from '@/src/common/static-paths';
-import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
-import ChangelogList from '@/src/components/changelog/ChangelogList';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -13,6 +10,9 @@ import { Message, Type } from 'ui/components/common/Message';
 import VerticalGroup from 'ui/components/common/VerticalGroup';
 import Hero from 'ui/components/heros/Hero';
 import Layout from 'ui/layouts/Layout';
+import ChangelogByMonth from '../../../components/changelog/ChangelogByMonth';
+import ChangelogList from '../../../components/changelog/ChangelogList';
+import { getChangelogProductPaths } from '../../../lib/staticPaths';
 
 type ChangelogProps = {
   currentProduct: Product;

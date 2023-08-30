@@ -1,5 +1,5 @@
-import { CreateFeed } from '@/src/common/changelog-feeds';
 import { AllChangelogEntries } from 'sc-changelog/changelog';
+import { CreateFeed } from '../../lib/changelog/changelog-feeds';
 
 // Default export to prevent next.js errors
 const FeedPage = () => null;

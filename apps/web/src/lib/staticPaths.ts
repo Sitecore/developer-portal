@@ -1,5 +1,8 @@
 import fs from 'fs';
 import path, { join } from 'path';
+import { Product } from 'sc-changelog';
+import GetProducts from 'sc-changelog/products';
+import { slugify } from 'sc-changelog/utils/stringUtils';
 
 const pagesDirectory = path.join(process.cwd(), 'data/markdown/pages/');
 
@@ -38,6 +41,54 @@ export const getStaticPathsRecursively = async (): Promise<slugPagePaths[]> => {
         return { params: { slug: pathSegments } };
       }
     }
+  });
+
+  return paths;
+};
+
+/* 
+  Newsletter pages
+*/
+
+type NewsletterPathParams = {
+  year: string;
+  month: string;
+};
+
+export type NewsletterPath = { params: NewsletterPathParams };
+
+export const NEWSLETTER_DATA_DIRECTORY = path.join(process.cwd(), 'data/newsletters/');
+
+export const getNewsletterStaticPaths = (): NewsletterPath[] => {
+  const years = fs.readdirSync(NEWSLETTER_DATA_DIRECTORY);
+  years.sort().reverse();
+
+  const paths: NewsletterPath[] = [];
+
+  years.forEach((year) => {
+    const yearPath = path.resolve(NEWSLETTER_DATA_DIRECTORY, year);
+    const months = fs.readdirSync(yearPath);
+
+    months.sort().reverse();
+    months.forEach((month) => {
+      paths.push({ params: { year, month: month.substring(0, month.length - 5) } });
+    });
+  });
+
+  return paths;
+};
+
+type ProductChangeLogPaths = { params: { product: string } };
+
+export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[]> => {
+  const paths: ProductChangeLogPaths[] = [];
+
+  const products = await GetProducts(false).then((response: Product[]) => {
+    return response;
+  });
+
+  products.map((product: Product) => {
+    paths.push({ params: { product: slugify(product.name) } });
   });
 
   return paths;
