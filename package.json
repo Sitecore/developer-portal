@@ -26,9 +26,5 @@
     "turbo": "^1.9.3",
     "ui": "*"
   },
-  "packageManager": "npm@9.5.0^",
-  "dependencies": {
-    "@mdi/js": "^7.2.96",
-    "@mdi/react": "^1.6.1"
-  }
+  "packageManager": "npm@9.5.0^"
 }
