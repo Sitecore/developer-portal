@@ -62,7 +62,7 @@ export const GenericList = (props: GenericListData) => {
               </Stack>
             </CardBody>
             <CardFooter>
-              <ButtonLink href={item.href} text={item.linkText} overrideColor={color} paddingLeft={{ base: 5, md: 0 }} />
+              <ButtonLink href={item.href} text={item.linkText} color={color} paddingLeft={{ base: 5, md: 0 }} iconColor={props.overrideColor && color} />
             </CardFooter>
           </Card>
         ))}
