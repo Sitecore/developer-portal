@@ -50,7 +50,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
             <Alert status="info">
               <AlertIcon />
               You are viewing the public preview of the upcoming Sitecore global changelog.
-              <Link href="/changelog/current" title="View the list of current release notes per product" className="mx-1 font-bold hover:underline">
+              <Link href="/changelog/current" title="View the list of current release notes per product">
                 Click here
               </Link>
               for the current release notes per product

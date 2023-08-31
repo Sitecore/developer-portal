@@ -1,17 +1,19 @@
+import { Alert, AlertIcon, Grid, GridItem, HStack, Text, useColorModeValue } from '@chakra-ui/react';
+import { mdiRss } from '@mdi/js';
+import Icon from '@mdi/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import GetProducts from 'sc-changelog/products';
 import { Product } from 'sc-changelog/types';
 import { slugify } from 'sc-changelog/utils/stringUtils';
-import Button from 'ui/components/buttons/Button';
-import Container from 'ui/components/common/Container';
-import { Message, Type } from 'ui/components/common/Message';
-import VerticalGroup from 'ui/components/common/VerticalGroup';
-import Hero from 'ui/components/heros/Hero';
-import Layout from 'ui/layouts/Layout';
+import Hero from '../../../components/Hero';
 import ChangelogByMonth from '../../../components/changelog/ChangelogByMonth';
 import ChangelogList from '../../../components/changelog/ChangelogList';
+import { ButtonLink } from '../../../components/ui/ButtonLink';
+import { CenteredContent } from '../../../components/ui/CenteredContent';
+import { VerticalGroup } from '../../../components/ui/VerticalGroup';
+import Layout from '../../../layouts/Layout';
 import { getChangelogProductPaths } from '../../../lib/staticPaths';
 
 type ChangelogProps = {
@@ -50,45 +52,43 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
   const description = `Learn more about new versions, changes and improvements for ${currentProduct.name}`;
 
   return (
-    <Layout title={title} description={description}>
+    <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
       <Hero title={title} description={description}>
-        <div className="absolute flex h-8 flex-row dark:hidden">
-          <span className="mr-1 text-xs">Powered by</span>
+        <HStack>
+          <Text variant={'sm'}>Powered by</Text>
           <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
+            <Image
+              src={useColorModeValue('https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e', 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13')}
+              alt="Powered by Content Hub ONE"
+              width={150}
+              height={18}
+            />
           </Link>
-        </div>
-        <div className="absolute hidden h-8 flex-row dark:flex">
-          <span className="mr-1 text-xs">Powered by</span>
-          <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
-          </Link>
-        </div>
+        </HStack>
       </Hero>
+
       <VerticalGroup>
-        <Container>
-          <Message type={Type.Info} className="mt-8">
-            <p>
-              You are viewing the public preview of the upcoming Sitecore global changelog.
-              <Link href="/changelog/current" title="View the list of current release notes per product" className="mx-1 font-bold hover:underline">
-                Click here
-              </Link>
-              for the current release notes per product
-            </p>
-          </Message>
-          <div className="mt-8 grid gap-16 md:grid-cols-5">
-            <div className="col-span-3">
+        <CenteredContent py={8} gap={8}>
+          <Alert status="info">
+            <AlertIcon />
+            You are viewing the public preview of the upcoming Sitecore global changelog.
+            <Link href="/changelog/current" title="View the list of current release notes per product">
+              Click here
+            </Link>
+            for the current release notes per product
+          </Alert>
+
+          <Grid templateColumns="repeat(5, 1fr)" gap={14}>
+            <GridItem colSpan={3}>
               <ChangelogList initialProduct={currentProduct} />
-            </div>
-            <div className="col-span-2 hidden md:block">
-              <div className="flex flex-row">
-                <Button text={'RSS'} href={`${router.asPath}/rss.xml`} variant={'outline'} icon={true} iconName={'feed'} iconPosition="left" size={'xs'} />
-                <Button text={'ATOM'} href={`${router.asPath}/atom.xml`} variant={'outline'} icon={true} iconName={'feed'} iconPosition="left" size={'xs'} />
-              </div>
+            </GridItem>
+            <GridItem colSpan={2}>
+              <ButtonLink text={'RSS'} href={`${router.asPath}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
+              <ButtonLink text={'ATOM'} href={`${router.asPath}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
               <ChangelogByMonth product={currentProduct} />
-            </div>
-          </div>
-        </Container>
+            </GridItem>
+          </Grid>
+        </CenteredContent>
       </VerticalGroup>
     </Layout>
   );
