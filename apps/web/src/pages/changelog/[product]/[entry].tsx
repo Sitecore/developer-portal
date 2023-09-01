@@ -14,6 +14,7 @@ import {
   GridItem,
   HStack,
   Heading,
+  Hide,
   Image,
   Modal,
   ModalBody,
@@ -58,7 +59,7 @@ export async function getServerSideProps(context: any) {
   });
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
-  
+
   try {
     changelogEntry = await ChangelogEntryByTitle(preview, entry, currentProduct?.id);
   } catch {
@@ -106,7 +107,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
           </Alert>
 
           <Grid templateColumns="repeat(5, 1fr)" gap={14}>
-            <GridItem colSpan={3}>
+            <GridItem colSpan={{ base: 5, md: 3 }}>
               <Breadcrumb separator={'>'}>
                 <BreadcrumbItem>
                   <BreadcrumbLink href="/changelog">Changelog</BreadcrumbLink>
@@ -161,9 +162,11 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 </CardFooter>
               </Card>
             </GridItem>
-            <GridItem colSpan={2}>
-              <ChangelogByMonth product={currentProduct} />
-            </GridItem>
+            <Hide below="md">
+              <GridItem colSpan={2}>
+                <ChangelogByMonth product={currentProduct} />
+              </GridItem>
+            </Hide>
           </Grid>
         </CenteredContent>
       </VerticalGroup>

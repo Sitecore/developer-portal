@@ -1,4 +1,4 @@
-import { Alert, AlertIcon, Grid, GridItem, HStack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Text, useColorModeValue } from '@chakra-ui/react';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
 import Image from 'next/image';
@@ -79,14 +79,16 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
           </Alert>
 
           <Grid templateColumns="repeat(5, 1fr)" gap={14}>
-            <GridItem colSpan={3}>
+            <GridItem colSpan={{ base: 5, md: 3 }}>
               <ChangelogList initialProduct={currentProduct} />
             </GridItem>
-            <GridItem colSpan={2}>
-              <ButtonLink text={'RSS'} href={`${router.asPath}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
-              <ButtonLink text={'ATOM'} href={`${router.asPath}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
-              <ChangelogByMonth product={currentProduct} />
-            </GridItem>
+            <Hide below="md">
+              <GridItem colSpan={2}>
+                <ButtonLink text={'RSS'} href={`${router.asPath}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
+                <ButtonLink text={'ATOM'} href={`${router.asPath}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
+                <ChangelogByMonth product={currentProduct} />
+              </GridItem>
+            </Hide>
           </Grid>
         </CenteredContent>
       </VerticalGroup>

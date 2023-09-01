@@ -1,4 +1,4 @@
-import { Box, Button, CloseButton, Link, VisuallyHidden } from '@chakra-ui/react';
+import { Box, Button, CloseButton, Link, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
 import axios from 'axios';
 import NextLink from 'next/link';
 import { useState } from 'react';
@@ -72,10 +72,10 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange }: C
       <Hint products={selectedProducts} enabled={selectedProducts?.length == 1} />
 
       {isLoading && (
-        <>
-          <Skeleton />
-          <Skeleton />
-        </>
+        <Box marginTop={8}>
+          <Placeholder />
+          <Placeholder />
+        </Box>
       )}
 
       {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={data[data.length - 1].hasNext} onEndTriggered={() => setSize(size + 1)} />}
@@ -91,26 +91,11 @@ ChangelogList.defaultProps = {
 
 export default ChangelogList;
 
-const Skeleton = (): JSX.Element => {
-  const skeletonLoaderClasses = 'bg-theme-bg-alt block animate-pulse text-transparent hover:text-transparent m-1';
+const Placeholder = (): JSX.Element => {
   return (
-    <div className="mb-16 mt-8">
-      <h2 className={`${skeletonLoaderClasses} w-full py-2`}>Title</h2>
-      <div className="flex flex-row">
-        <div className={`${skeletonLoaderClasses} h-6 w-1/5`}></div>
-        <div className={`${skeletonLoaderClasses} h-6 w-1/5`}></div>
-        <div className={`${skeletonLoaderClasses} h-6 w-1/5`}></div>
-      </div>
-      <div className="flex-column items-center gap-5 py-2">
-        <div className={`${skeletonLoaderClasses} h-6 w-full`}></div>
-        <div className={`${skeletonLoaderClasses} h-6 w-full`}></div>
-        <div className={`${skeletonLoaderClasses} h-6 w-full`}></div>
-        <div className={`${skeletonLoaderClasses} h-6 w-full`}></div>
-        <div className={`${skeletonLoaderClasses} h-6 w-full`}></div>
-        <div className={`${skeletonLoaderClasses} h-6 w-full`}></div>
-        <div className={`${skeletonLoaderClasses} h-6 w-full`}></div>
-        <div className={`${skeletonLoaderClasses} h-6 w-full`}></div>
-      </div>
-    </div>
+    <>
+      <SkeletonText noOfLines={1} skeletonHeight={'20px'} marginBottom={'20px'} />
+      <SkeletonText noOfLines={8} skeletonHeight={'20px'} />
+    </>
   );
 };

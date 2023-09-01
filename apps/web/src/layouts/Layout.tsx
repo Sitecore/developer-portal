@@ -34,8 +34,6 @@ const Layout = ({ title, description = '', openGraphImage, children, ...rest }: 
         <meta property="og:url" content={`${publicUrl}${path}`} />
         <meta property="og:image" content={openGraphImage ? `${publicUrl}${openGraphImage}` : `${publicUrl}/api/og?title=${title}&subtitle=${description}`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="preload" href="/images/heros/hero-wide-light.webp" as="image" />
-        <link rel="preload" href="/images/heros/hero-wide-dark.webp" as="image" />
       </Head>
 
       <Box as="main" style={{ marginTop: '128px', minHeight: 'calc(100vh - 236px)' }} {...rest}>

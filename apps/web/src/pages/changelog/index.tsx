@@ -1,4 +1,4 @@
-import { Alert, AlertIcon, Grid, GridItem, HStack, Image, Text, useColorModeValue } from '@chakra-ui/react';
+import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
 import Head from 'next/head';
@@ -57,16 +57,18 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
             </Alert>
 
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
-              <GridItem colSpan={3}>
+              <GridItem colSpan={{ base: 5, md: 3 }}>
                 <SWRConfig value={{ fallback }}>
                   <ChangelogList selectedProducts={selectedProduct} onProductsChange={setSelectedProduct} />
                 </SWRConfig>
               </GridItem>
-              <GridItem colSpan={2}>
-                <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
-                <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
-                <ChangelogByMonth selectedProducts={selectedProduct} />
-              </GridItem>
+              <Hide below="md">
+                <GridItem colSpan={{ base: 2 }}>
+                  <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
+                  <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
+                  <ChangelogByMonth selectedProducts={selectedProduct} />
+                </GridItem>
+              </Hide>
             </Grid>
           </CenteredContent>
         </VerticalGroup>

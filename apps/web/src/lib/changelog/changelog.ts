@@ -25,6 +25,20 @@ export function getProductOptions(): Option[] {
   return [];
 }
 
+export function buildProductQuerystring(product: Product, selectedProducts: Option[]): string {
+  let query: string[] = [];
+
+  if (product) query.push(`product=${product.id}`);
+
+  if (selectedProducts) {
+    selectedProducts.map((p) => {
+      query.push(`product=${p.value}`);
+    });
+  }
+
+  return query.join('&');
+}
+
 export function buildQuerystring(products: Option[], changes: Option[], cursor?: string, initialProduct?: Product): string[] {
   const query: string[] = [];
   const PAGE_SIZE = 5;

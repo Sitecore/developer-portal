@@ -8,8 +8,6 @@ type ChangelogItemMetaProps = BoxProps & {
   item: ChangelogEntry;
 };
 
-const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent hover:text-transparent';
-
 export const ChangelogItemMeta = ({ item, loading, ...rest }: ChangelogItemMetaProps) => {
   const colorScheme = (changeType: string) => {
     if (changeType == 'Improvement') return 'purple';
