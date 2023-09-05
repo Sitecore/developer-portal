@@ -10,7 +10,7 @@ export type HeroProps = {
   children?: React.ReactNode | React.ReactNode[];
 };
 
-const Hero = ({ description, title, image, children }: HeroProps): JSX.Element => {
+const Hero = ({ description, title, children }: HeroProps): JSX.Element => {
   return (
     <VerticalGroup maxWidth={'100%'} backgroundImage={`${useColorModeValue('/images/heros/hero-wide-light.webp', '/images/heros/hero-wide-dark.webp')}`} backgroundSize={'cover'} backgroundPosition={'center center'}>
       <CenteredContent gap={2} py={6}>
