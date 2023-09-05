@@ -1,6 +1,7 @@
 ---
 title: 'Features'
 hasInPageNav: true
+hasSubPageNav: true
 ---
 
 **Once I build a XM + Personalize site and deploy it, will I be able to port this site to XM Cloud when that comes out? Do you have a playbook available that we could see?**

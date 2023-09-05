@@ -1,6 +1,7 @@
 ---
-title: 'Introduction'
-hasInPageNav: true
+title: 'Testmva 1'
+description: 'Learn more about how to develop for XM + Personalize.'
+hasSubPageNav: true
 ---
 
 > Disclaimer

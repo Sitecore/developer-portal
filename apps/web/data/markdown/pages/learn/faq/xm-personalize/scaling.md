@@ -1,6 +1,7 @@
 ---
 title: 'Scaling and Availability'
 hasInPageNav: true
+hasSubPageNav: true
 ---
 
 **I need my data to be onshore to match local data sovereignty laws. What regions are available where all products included are hosted locally?**

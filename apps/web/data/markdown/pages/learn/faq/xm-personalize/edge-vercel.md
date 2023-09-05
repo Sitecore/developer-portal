@@ -1,6 +1,7 @@
 ---
 title: 'Edge & Vercel'
 hasInPageNav: true
+hasSubPageNav: true
 ---
 
 **Will changing my infrastructure to use Edge+Vercel instead of CDs, secure that my application won&#39;t require further changes when moving into XM Cloud?**

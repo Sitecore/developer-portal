@@ -11,6 +11,7 @@ type PageInfoCore = {
   pageType?: string;
   description?: string;
   hasInPageNav?: boolean;
+  hasSubPageNav?: boolean;
   heroImage?: string;
   openGraphImage?: string;
   id?: string;
@@ -21,6 +22,7 @@ type PageInfoCore = {
   fileName: string;
   previewMode?: boolean;
   slug: string;
+  menuOrder?: number;
 };
 
 // Input for 3rd party integrations are just strings
@@ -71,11 +73,26 @@ export type PageInfo = PageInfoCore & {
   headings?: ContentHeading[];
 };
 
+export type SubPageNavigation = {
+  title: string;
+  description: string;
+  heading: string;
+  path: string;
+  routes: SubPageNavigationItem[];
+};
+
+export type SubPageNavigationItem = {
+  title: string;
+  path: string;
+  children: SubPageNavigationItem[];
+};
+
 export type ChildPageInfo = {
   description?: string;
   id?: string;
   link: string;
   title: string;
+  children?: ChildPageInfo[];
 };
 
 export type PartialData = {

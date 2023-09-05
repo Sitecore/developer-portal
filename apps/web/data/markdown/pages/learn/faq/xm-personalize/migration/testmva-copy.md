@@ -1,9 +1,7 @@
 ---
-title: 'XM + Personalize FAQ'
+title: 'Testmva 2'
 description: 'Learn more about how to develop for XM + Personalize.'
 hasSubPageNav: true
-hasInPageNav: false
-menuOrder: -1
 ---
 
 > Disclaimer

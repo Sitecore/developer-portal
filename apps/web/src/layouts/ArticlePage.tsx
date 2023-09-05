@@ -3,15 +3,16 @@ import { Grid, GridItem } from '@chakra-ui/react';
 import Hero from '../components/Hero';
 import SocialFeeds from '../components/common/SocialFeeds';
 import { RenderContent, RenderPartialGroups, RenderPartials } from '../components/markdown/MarkdownContent';
+import ChildNavigation from '../components/navigation/ChildNavigation';
 import InPageNav from '../components/navigation/InPageNav';
 import { CenteredContent } from '../components/ui/CenteredContent';
 import PromoCard, { PromoCardProps } from '../components/ui/PromoCard';
 import { VerticalGroup } from '../components/ui/VerticalGroup';
 import { ContentHeading } from '../lib/interfaces/contentheading';
-import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '../lib/interfaces/page-info';
+import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '../lib/interfaces/page-info';
 import Layout from './Layout';
 
-type DefaultContentPageProps = {
+type ArticlePageProps = {
   pageInfo: PageInfo;
   partials?: PartialData;
   partialGroups?: PagePartialGroup[];
@@ -19,11 +20,12 @@ type DefaultContentPageProps = {
   promoAfter?: PromoCardProps[];
   promoBefore?: PromoCardProps[];
   childPageInfo?: ChildPageInfo[];
+  subPageNavigation?: SubPageNavigation;
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
 };
 
-const DefaultContentPage = ({ hasGrid, pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager, childPageInfo }: DefaultContentPageProps) => {
+const ArticlePage = ({ hasGrid, pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager, childPageInfo, subPageNavigation }: ArticlePageProps) => {
   if (!pageInfo) return <>No pageInfo found</>;
 
   // Check for headings in the content
@@ -42,7 +44,11 @@ const DefaultContentPage = ({ hasGrid, pageInfo, partials, partialGroups, promoA
 
           <Grid templateColumns="repeat(6, 1fr)" gap={4}>
             {pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <GridItem>{Nav}</GridItem>}
-
+            {pageInfo.hasSubPageNav && (
+              <GridItem>
+                <ChildNavigation subPageNavigation={subPageNavigation} />
+              </GridItem>
+            )}
             <GridItem colSpan={pageInfo.hasInPageNav || pageInfo.hasSubPageNav ? 4 : 6}>
               <RenderContent content={pageInfo.parsedContent} />
 
@@ -63,4 +69,4 @@ const DefaultContentPage = ({ hasGrid, pageInfo, partials, partialGroups, promoA
   );
 };
 
-export default DefaultContentPage;
+export default ArticlePage;

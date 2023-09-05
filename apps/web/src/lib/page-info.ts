@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import path from 'path';
 // Interfaces
 import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/common/types/sitecoreCommunity';
-import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData } from './interfaces/page-info';
+import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SubPageNavigation } from './interfaces/page-info';
 // Components
 import { SITECORE_COMMUNITY_MAX_COUNT } from 'ui/components/sitecoreCommunity/sitecore-community.constants';
 import SitecoreCommunityApi from 'ui/components/sitecoreCommunity/SitecoreCommunity.api';
@@ -15,6 +15,7 @@ import YouTubeApi from 'ui/components/youtube/YouTube.api';
 import { ChangelogEntriesPaginated } from '@/../../packages/sc-changelog/changelog';
 import { ContentHeading } from './interfaces/contentheading';
 import { ParseContent } from './markdown/mdxParse';
+import { searchForFile } from './utils/fsUtils';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
@@ -47,15 +48,17 @@ const getFileData = (directory: string, file: string): Matter => {
 
   let filePath = hasExtension ? path.join(directory, `${file}`) : path.join(directory, `${file}.md`);
   // Check if file exists, if not then default to index.md
-  if (!fs.existsSync(filePath)) {
-    filePath = path.join(directory, `${file}/index.md`);
-  }
+
   if (!fs.existsSync(filePath)) {
     filePath = path.join(directory, `${file}.mdx`);
   }
   if (!fs.existsSync(filePath)) {
+    filePath = path.join(directory, `${file}/index.md`);
+  }
+  if (!fs.existsSync(filePath)) {
     filePath = path.join(directory, `${file}/index.mdx`);
   }
+
   const fileMarkdown = fs.readFileSync(filePath, 'utf-8');
   // @TODO: Handle failures
   const results = matter(fileMarkdown);
@@ -89,6 +92,7 @@ export const getPageInfo = async (arg: string | ProductSolutionContextParams, pr
     headings: content?.headings,
     previewMode: preview,
     slug: file,
+    hasSubPageNav: searchForFile(path.join(pagesDirectory, `${file}`), 'manifest.json') != null ? true : false,
   } as PageInfo;
 
   /**
@@ -247,6 +251,62 @@ export const getChildPageInfo = async (currentFile: string, preview?: boolean): 
         id: child,
         link: `/${currentFile}/${meta.slug}`,
         title: meta.title,
+        menuOrder: meta.menuOrder ? meta.menuOrder : null,
       } as ChildPageInfo;
     });
 };
+
+export const getChildNavgationInfo = async (currentUrlSegment: string, preview?: boolean): Promise<SubPageNavigation> => {
+  const manifest = searchForFile(path.join(pagesDirectory, currentUrlSegment), 'manifest.json');
+  const fileData: SubPageNavigation = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
+  return fileData
+};
+
+const getChildItems= async (currentUrlSegment: string, fullPath: string, preview?: boolean): Promise<ChildPageInfo[]> => {
+
+  const filesInFolder = fs.readdirSync(fullPath);
+
+  const structure = Promise.all(filesInFolder
+      .filter((obj) => !obj.startsWith('index') || obj == undefined || !fs.statSync(obj).isDirectory())
+      .map(async (child) => {
+          // Return as normal menu item with no sub items
+          const meta = getFileData(fullPath, `${child}`).data as MarkdownMeta;
+
+          return {
+            description: meta.description ? meta.description : null,
+            id: child,
+            link: path.join(currentUrlSegment, meta.slug).replace(/\\/g, '/'),
+            //link: `${currentUrlSegment}/${meta.slug}`,
+            title: meta.title,
+            menuOrder: meta.menuOrder ? meta.menuOrder : null,
+          } as ChildPageInfo;
+        
+      })
+  );
+
+return structure;}
+  // const returnList = Promise.all(
+  //   children
+  //     .filter((obj) => !obj.startsWith('index') || obj == undefined)
+  //     .map(async (child) => {
+  //       const meta = getFileData(directory, `${child}`).data as MarkdownMeta;
+  //       const childDirectory = path.join(directory, child);
+
+  //       if (!child.endsWith('.md') && fs.statSync(childDirectory).isDirectory()) {
+  //         console.log(childDirectory);
+  //         const subChildren = await getChildNavgationInfo(path.join(childDirectory), preview);
+  //         //console.log(subChildren);
+  //       }
+
+  //       return {
+  //         description: meta.description ? meta.description : null,
+  //         id: child,
+  //         link: `/${currentFile}/${meta.slug}`,
+  //         title: meta.title,
+  //         menuOrder: meta.menuOrder ? meta.menuOrder : null,
+  //       } as ChildPageInfo;
+  //     })
+  // );
+
+  // return returnList;
+//};

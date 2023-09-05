@@ -1,6 +1,7 @@
 ---
 title: 'Development'
-hasInPageNav: true
+hasSubPageNav: true
+hasInPageNav: false
 ---
 
 **What technology stack do we need to build sites in XP2XMP?**

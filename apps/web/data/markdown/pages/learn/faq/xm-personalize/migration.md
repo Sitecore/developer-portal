@@ -1,5 +1,6 @@
 ---
-title: 'XM Cloud specifics'
+title: 'XM Cloud specifics Migration'
+hasSubPageNav: true
 hasInPageNav: true
 ---
 

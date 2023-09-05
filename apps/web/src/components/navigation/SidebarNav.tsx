@@ -24,7 +24,7 @@ const SidebarNav = ({ links, title }: SidebarNavProps) => {
       <UnorderedList position={'sticky'} listStyleType={'none'}>
         {links.map((link, i) => {
           return (
-            <ListItem className={styles.sidebarNavItem} border={1} key={i} pb={4} pr={2} pl={8} pt={1} position={'relative'}>
+            <ListItem className={styles.sidebarNavItem} border={1} key={i} pb={4} pr={2} pl={4} pt={1} position={'relative'}>
               <ButtonLink variant={'link'} showIcon={false} href={link.href} text={link.text} textAlign={'left'} />
             </ListItem>
           );
