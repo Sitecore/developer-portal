@@ -74,8 +74,8 @@ const getFileData = (directory: string, file: string): Matter => {
   return results;
 };
 
-export const getPageInfo = async (params: string[], preview?: boolean): Promise<PageInfo | null> => {
-  const relativePath = params.join('/');
+export const getPageInfo = async (params: string | string[], preview?: boolean): Promise<PageInfo | null> => {
+  const relativePath = Array.isArray(params) ? params.join('/') : params;
 
   const fileData = getFileData(pagesDirectory, `${relativePath}`);
   const meta = fileData.data as MarkdownMeta;
