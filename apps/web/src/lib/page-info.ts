@@ -74,15 +74,15 @@ const getFileData = (directory: string, file: string): Matter => {
   return results;
 };
 
-export const getPageInfo = async (arg: string | ProductSolutionContextParams, preview?: boolean): Promise<PageInfo | null> => {
-  const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
-  const fileData = getFileData(pagesDirectory, `${file}`);
+export const getPageInfo = async (params: string[], preview?: boolean): Promise<PageInfo | null> => {
+  const relativePath = params.join('/');
+
+  const fileData = getFileData(pagesDirectory, `${relativePath}`);
   const meta = fileData.data as MarkdownMeta;
   const content = await ParseContent(fileData.content);
-  const fileName = `${repoUrl}/data/markdown/pages/${file}/index.md`;
+  const fileName = `${repoUrl}/data/markdown/pages/${relativePath}/index.md`;
   const pageInfo = {
-    // Default hasInPageNav to true, overwrite with false in md
-    hasInPageNav: true,
+    hasInPageNav: true, // default to true, override in markdown
     ...meta,
     stackexchange: [],
     changelogEntries: [],
@@ -94,8 +94,8 @@ export const getPageInfo = async (arg: string | ProductSolutionContextParams, pr
     parsedContent: content?.result.compiledSource,
     headings: content?.headings,
     previewMode: preview,
-    slug: file,
-    hasSubPageNav: searchForFile(path.join(pagesDirectory, `${file}`), 'manifest.json') != null ? true : false,
+    slug: params[params.length - 1],
+    hasSubPageNav: searchForFile(path.join(pagesDirectory, `${relativePath}`), 'manifest.json') != null ? true : false,
   } as PageInfo;
 
   /**
