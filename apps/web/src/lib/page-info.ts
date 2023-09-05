@@ -256,10 +256,12 @@ export const getChildPageInfo = async (currentFile: string, preview?: boolean): 
     });
 };
 
-export const getChildNavgationInfo = async (currentUrlSegment: string, preview?: boolean): Promise<SubPageNavigation> => {
+export const getChildNavgationInfo = async (currentUrlSegment: string, preview?: boolean): Promise<SubPageNavigation | undefined> => {
   const manifest = searchForFile(path.join(pagesDirectory, currentUrlSegment), 'manifest.json');
-  const fileData: SubPageNavigation = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
-  return fileData
+  if (manifest != null) {
+    const fileData: SubPageNavigation = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
+    return fileData;
+  }
 };
 
 const getChildItems= async (currentUrlSegment: string, fullPath: string, preview?: boolean): Promise<ChildPageInfo[]> => {

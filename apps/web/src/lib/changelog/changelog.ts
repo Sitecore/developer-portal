@@ -25,8 +25,8 @@ export function getProductOptions(): Option[] {
   return [];
 }
 
-export function buildProductQuerystring(product: Product, selectedProducts: Option[]): string {
-  let query: string[] = [];
+export function buildProductQuerystring(product?: Product, selectedProducts?: Option[]): string {
+  const query: string[] = [];
 
   if (product) query.push(`product=${product.id}`);
 

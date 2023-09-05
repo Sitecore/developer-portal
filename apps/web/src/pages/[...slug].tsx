@@ -16,9 +16,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const pageInfo = await getPageInfo(context.params.slug.join('/'), context.preview ? context.preview : null);
+  if (pageInfo == null) return { notFound: true };
+
   const partials = pageInfo.partials != null ? await getPartialsAsArray(pageInfo.partials) : null;
   const partialGroups = pageInfo.partialGroups != null && pageInfo.partialGroups.length > 0 ? await getPartialGroupsAsArray(pageInfo.partialGroups) : null;
-  let childPageInfo = pageInfo.pageType == 'childoverview' ? await getChildPageInfo(context.params.slug.join('/'), context.preview ? context.preview : null) : null;
+  const childPageInfo = pageInfo.pageType == 'childoverview' ? await getChildPageInfo(context.params.slug.join('/'), context.preview ? context.preview : null) : null;
   let subPageNavigation = null;
 
   if (pageInfo.hasSubPageNav) {

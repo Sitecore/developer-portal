@@ -4,7 +4,7 @@ import { VerticalGroup } from './ui/VerticalGroup';
 
 export type HeroProps = {
   title: string;
-  description: string;
+  description?: string;
   image?: string;
   productLogo?: string;
   children?: React.ReactNode | React.ReactNode[];

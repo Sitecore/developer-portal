@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, HStack, Heading, Image, Skeleton, SkeletonText, useColorModeValue } from '@chakra-ui/react';
+import { Card, CardBody, CardHeader, HStack, Heading, Image, Skeleton, SkeletonText } from '@chakra-ui/react';
 
 import Link from 'next/link';
 import { Product } from 'sc-changelog/types';
@@ -8,16 +8,12 @@ import { Option } from 'ui/components/dropdown/MultiSelect';
 import { useGetEntriesByProducts } from '../../lib/changelog/hooks/useGetEntriesByProducts';
 
 type ChangelogByMonthProps = {
-  product?: Product;
-  selectedProducts?: Option[];
+  product: Product;
+  selectedProducts: Option[];
 };
 
 const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps): JSX.Element => {
-  const { entries, isError, isLoading } = useGetEntriesByProducts(product, selectedProducts);
-
-  const productLogoVariant = (item: ChangelogEntrySummary) => {
-    return useColorModeValue(item.lightIcon, item.darkIcon);
-  };
+  const { entries, isLoading } = useGetEntriesByProducts(product, selectedProducts);
 
   const items = entries || [];
 

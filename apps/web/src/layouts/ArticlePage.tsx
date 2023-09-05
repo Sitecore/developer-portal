@@ -20,7 +20,7 @@ type ArticlePageProps = {
   promoAfter?: PromoCardProps[];
   promoBefore?: PromoCardProps[];
   childPageInfo?: ChildPageInfo[];
-  subPageNavigation?: SubPageNavigation;
+  subPageNavigation: SubPageNavigation;
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
 };
@@ -30,7 +30,8 @@ const ArticlePage = ({ hasGrid, pageInfo, partials, partialGroups, promoAfter, p
 
   // Check for headings in the content
   const sectionTitles: ContentHeading[] = [];
-  sectionTitles.push(...pageInfo.headings);
+  if (pageInfo.headings) sectionTitles.push(...pageInfo.headings);
+
   if (partials) sectionTitles.push(...partials.titles);
   const Nav = customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null;
 
@@ -58,7 +59,7 @@ const ArticlePage = ({ hasGrid, pageInfo, partials, partialGroups, promoAfter, p
 
               {customNavPager}
             </GridItem>
-            {pageInfo.hasInPageNav && pageInfo.hasSubPageNav && pageInfo.headings?.length > 0 && <GridItem>{Nav}</GridItem>}
+            {pageInfo.hasInPageNav && pageInfo.hasSubPageNav && sectionTitles.length > 0 && <GridItem>{Nav}</GridItem>}
           </Grid>
 
           {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}

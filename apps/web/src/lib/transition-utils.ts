@@ -15,11 +15,11 @@ export type TransitionProperties = {
   delay?: number | DelayConfig;
 };
 
-type TargetResolver<P = {}> = (props: P & TransitionProperties) => TargetAndTransition;
+type TargetResolver<P = object> = (props: P & TransitionProperties) => TargetAndTransition;
 
-type Variant<P = {}> = TargetAndTransition | TargetResolver<P>;
+type Variant<P = object> = TargetAndTransition | TargetResolver<P>;
 
-export type Variants<P = {}> = {
+export type Variants<P = object> = {
   enter: Variant<P>;
   exit: Variant<P>;
   initial?: Variant<P>;
