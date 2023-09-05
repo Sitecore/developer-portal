@@ -34,8 +34,10 @@ export const getStaticPathsRecursively = async (): Promise<slugPagePaths[]> => {
       const relativePath = filePath.replace(pagesDirectory, '').replace('index.md', '');
       const pathSegments = relativePath.split('\\').map((segment) => segment.replace(/\.[^/.]+$/, '')); // Remove file extension
 
+      const markdownRegex = /\.md(x)?$/;
+
       if (pathSegments != undefined) {
-        paths.push({ params: { slug: pathSegments } });
+        paths.push({ params: { slug: relativePath.replace(markdownRegex, '').split(path.sep) } });
       }
     }
   });
