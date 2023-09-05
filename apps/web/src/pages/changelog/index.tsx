@@ -64,9 +64,9 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
               </GridItem>
               <Hide below="md">
                 <GridItem colSpan={{ base: 2 }}>
-                  <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
-                  <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
-                  <ChangelogByMonth selectedProducts={selectedProduct} />
+                  <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <ChangelogByMonth product={undefined} selectedProducts={selectedProduct} />
                 </GridItem>
               </Hide>
             </Grid>

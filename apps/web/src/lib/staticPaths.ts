@@ -17,7 +17,7 @@ export const getAllFilesRecursively = (dir: string, fileList: string[] = []): st
     if (fs.statSync(filePath).isDirectory()) {
       fileList = getAllFilesRecursively(filePath, fileList);
     } else {
-      fileList.push(filePath);
+      if (filePath.endsWith('.md') || filePath.endsWith('.mdx')) fileList.push(filePath);
     }
   });
 
@@ -27,13 +27,15 @@ export const getAllFilesRecursively = (dir: string, fileList: string[] = []): st
 export const getStaticPathsRecursively = async (): Promise<slugPagePaths[]> => {
   const allFiles = getAllFilesRecursively(pagesDirectory);
 
-  const paths = allFiles.map((filePath) => {
+  const paths: slugPagePaths[] = [];
+
+  allFiles.forEach((filePath) => {
     if (filePath != null || filePath != undefined) {
       const relativePath = filePath.replace(pagesDirectory, '').replace('index.md', '');
       const pathSegments = relativePath.split('\\').map((segment) => segment.replace(/\.[^/.]+$/, '')); // Remove file extension
 
-      if (pathSegments != null) {
-        return { params: { slug: pathSegments } };
+      if (pathSegments != undefined) {
+        paths.push({ params: { slug: pathSegments } });
       }
     }
   });

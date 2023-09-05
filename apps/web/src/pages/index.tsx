@@ -23,7 +23,7 @@ import { PageInfo } from '../lib/interfaces/page-info';
 import { getPageInfo } from '../lib/page-info';
 
 export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo('index', context.preview ? context.preview : null);
+  const pageInfo = await getPageInfo('home', context.preview ? context.preview : null);
 
   return {
     props: {

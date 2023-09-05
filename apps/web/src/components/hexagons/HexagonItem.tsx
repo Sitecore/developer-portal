@@ -8,10 +8,9 @@ import styles from './Hexagons.module.css';
 type HexagonItemProps = ListItemProps & {
   product?: ProductInfoType;
   active?: boolean;
-  showModal?: boolean;
 };
 
-export const HexagonItem = ({ product, active = true, showModal = false }: HexagonItemProps): JSX.Element | null => {
+export const HexagonItem = ({ product, active = true }: HexagonItemProps): JSX.Element | null => {
   if (product == null) return <ListItem listStyleType={'none'} className={`${styles.hexGridItem} ${styles.transparent}`}></ListItem>;
 
   const productInfo = GetProductInfo(product.product);

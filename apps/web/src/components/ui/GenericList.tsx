@@ -32,7 +32,7 @@ const CustomImage = chakra(Image, {
 
 export const GenericList = (props: GenericListData) => {
   const cols = props.column || 4;
-  const color = props.overrideColor != null && useColorModeValue(props.overrideColor.light, props.overrideColor.light);
+  const color = props.overrideColor != null ? useColorModeValue(props.overrideColor.light, props.overrideColor.light) : undefined;
 
   return (
     <Box>

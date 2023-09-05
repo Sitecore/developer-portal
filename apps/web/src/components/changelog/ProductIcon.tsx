@@ -6,14 +6,11 @@ import { getSlug } from 'sc-changelog/utils/stringUtils';
 
 type ProductIconProps = {
   product: SitecoreProduct;
-  isLoading?: boolean;
 };
 
-const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent hover:text-transparent';
-
-export const ProductIcon = ({ product, isLoading }: ProductIconProps): JSX.Element => {
+export const ProductIcon = ({ product }: ProductIconProps): JSX.Element => {
   return (
-    <Link href={`/changelog/${getSlug(product.productName)}`} className="">
+    <Link href={`/changelog/${getSlug(product.productName)}`}>
       <HStack>
         <Image src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName} width={20} height={20} priority={true} />
         <Text>{product.productName}</Text>

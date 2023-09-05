@@ -8,17 +8,8 @@ import { HexagonItem } from './HexagonItem';
 import { HexagonMobileItem } from './HexagonMobileItem';
 import styles from './Hexagons.module.css';
 
-type HexagonsProps = {
-  className?: string;
-};
-
-const Hexagons = ({ className }: HexagonsProps): JSX.Element | null => {
+const Hexagons = (): JSX.Element | null => {
   const [open, setOpen] = useState(0);
-  const [modal, setModal] = useState(0);
-
-  const handleModal = (value: number) => {
-    setModal(modal === value ? 0 : value);
-  };
 
   const handleOpen = (value: number) => {
     setOpen(open === value ? 0 : value);

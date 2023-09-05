@@ -19,7 +19,7 @@ export const ChangelogItemMeta = ({ item, loading, ...rest }: ChangelogItemMetaP
 
   return (
     <HStack {...rest} gap={4}>
-      {item.products != null ? item.products.map((product, key) => <ProductIcon product={product} isLoading={loading} key={key} />) : <Message type={Type.Error} plain={true} message="No product defined" />}
+      {item.products != null ? item.products.map((product, key) => <ProductIcon product={product} key={key} />) : <Message type={Type.Error} plain={true} message="No product defined" />}
 
       <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
 

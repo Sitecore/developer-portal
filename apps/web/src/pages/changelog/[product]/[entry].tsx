@@ -154,7 +154,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     </>
                   )}
                   <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
-                  <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />
+                  {changelogEntry.fullArticle != null && <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />}
                 </CardBody>
                 <CardFooter justifyContent={changelogEntry.readMoreLink ? 'space-between' : 'flex-end'}>
                   {changelogEntry.readMoreLink && <ButtonLink variant="text" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} margin={0} padding={0} />}

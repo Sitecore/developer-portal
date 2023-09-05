@@ -71,6 +71,8 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
 };
 
 export const RenderContent = ({ content }: MarkdownContentProps): JSX.Element => {
+  if (content == null) return <></>;
+
   return <DecoratedMarkdown>{content}</DecoratedMarkdown>;
 };
 
@@ -117,7 +119,8 @@ const MarkdownContent = ({ content, partials, partialGroups }: MarkdownContentPr
   return (
     <>
       {/** Render the page content  */}
-      <DecoratedMarkdown>{content}</DecoratedMarkdown>
+      {content != null && <DecoratedMarkdown>{content}</DecoratedMarkdown>}
+
       {/** Render the partialgroups  */}
       {partialGroups != null &&
         partialGroups.length > 0 &&

@@ -84,8 +84,8 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
             </GridItem>
             <Hide below="md">
               <GridItem colSpan={2}>
-                <ButtonLink text={'RSS'} href={`${router.asPath}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
-                <ButtonLink text={'ATOM'} href={`${router.asPath}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={null} />
+                <ButtonLink text={'RSS'} href={`${router.asPath}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <ButtonLink text={'ATOM'} href={`${router.asPath}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
                 <ChangelogByMonth product={currentProduct} />
               </GridItem>
             </Hide>

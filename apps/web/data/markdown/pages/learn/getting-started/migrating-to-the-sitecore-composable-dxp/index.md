@@ -1,7 +1,6 @@
 ---
 title: 'Migrating to the Sitecore Composable DXP'
 description: 'This resource consists of a collection of various Migration related content from the Sitecore platform DXP (XP, XM or XC) to the Sitecore Composable SaaS DXP.'
-partials: ['learn/getting-started/articles/introduction-to-composable-dxp']
 ---
 
 ## Introduction

@@ -1,6 +1,6 @@
 import { Box, Heading, Stack } from '@chakra-ui/react';
 import React from 'react';
-import { useGlobalState } from '../../lib/globalState';
+//import { useGlobalState } from '../../lib/globalState';
 import { SubPageNavigation } from '../../lib/interfaces/page-info';
 import { ButtonLink } from '../ui/ButtonLink';
 
@@ -9,8 +9,8 @@ interface ChildNavigationProps {
   subPageNavigation: SubPageNavigation;
 }
 
-const ChildNavigation = ({ subPageNavigation, title }: ChildNavigationProps) => {
-  const [navScrolled] = useGlobalState('navScrolled');
+const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
+  //const [navScrolled] = useGlobalState('navScrolled');
 
   return (
     // <nav className={`mb-8 transform-gpu self-start transition-all md:sticky md:mr-16 ${positionalClasses} `}>

@@ -20,10 +20,10 @@ export const ButtonLink = ({ href, text, showIcon, iconColor, icon, color, ...re
       as={NextLink}
       href={href}
       variant={'link'}
-      rightIcon={showIcon != false ? ButtonIcon : null}
+      rightIcon={showIcon != false ? ButtonIcon : undefined}
       size={rest.size ? rest.size : 'sm'}
       {...rest}
-      color={color != null ? useColorModeValue(color ? color : 'inherit', 'white !important') : null}
+      color={color != null ? useColorModeValue(color ? color : 'inherit', 'white !important') : undefined}
       whiteSpace={'normal'}
     >
       {text}

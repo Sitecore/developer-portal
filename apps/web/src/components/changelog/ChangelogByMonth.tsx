@@ -8,8 +8,8 @@ import { Option } from 'ui/components/dropdown/MultiSelect';
 import { useGetEntriesByProducts } from '../../lib/changelog/hooks/useGetEntriesByProducts';
 
 type ChangelogByMonthProps = {
-  product: Product;
-  selectedProducts: Option[];
+  product?: Product;
+  selectedProducts?: Option[];
 };
 
 const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps): JSX.Element => {

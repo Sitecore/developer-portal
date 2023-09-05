@@ -181,12 +181,13 @@ const DesktopSubNav = ({ title, url, subTitle, external, children }: NavItem) =>
       </Link>
       <Text fontSize={'sm'}>{subTitle}</Text>
 
-      {children.map((child, key) => (
-        <Link as={NextLink} href={child.url} isExternal={child.external} display={'block'} pt={2} color={linkColor} key={key}>
-          {child.title}
-          {child.external && <ExternalLinkIcon mx="2px" />}
-        </Link>
-      ))}
+      {children != null &&
+        children.map((child, key) => (
+          <Link as={NextLink} href={child.url} isExternal={child.external} display={'block'} pt={2} color={linkColor} key={key}>
+            {child.title}
+            {child.external && <ExternalLinkIcon mx="2px" />}
+          </Link>
+        ))}
     </Box>
   );
 };
@@ -197,12 +198,20 @@ const MobileNav = () => {
       {mainNavigation.map((navItem) => (
         <MobileNavItem key={navItem.title} {...navItem} />
       ))}
-      <MobileNavItem title={sitecoreQuickLinks.title} key={sitecoreQuickLinks.title} children={sitecoreQuickLinks.children} />
+      <MobileNavItem title={sitecoreQuickLinks.title} key={sitecoreQuickLinks.title}>
+        {sitecoreQuickLinks.children}
+      </MobileNavItem>
     </Box>
   );
 };
 
-const MobileNavItem = ({ title, children, url }: NavItem) => {
+type MobileNavItemProps = {
+  title: string;
+  children?: Array<NavItem>;
+  url?: string;
+};
+
+const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
