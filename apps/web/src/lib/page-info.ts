@@ -50,6 +50,9 @@ const getFileData = (directory: string, file: string): Matter => {
   // Check if file exists, if not then default to index.md
 
   if (!fs.existsSync(filePath)) {
+    filePath = path.join(directory, `${file}.md`);
+  }
+  if (!fs.existsSync(filePath)) {
     filePath = path.join(directory, `${file}.mdx`);
   }
   if (!fs.existsSync(filePath)) {
