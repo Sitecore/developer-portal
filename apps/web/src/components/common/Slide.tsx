@@ -59,7 +59,7 @@ export const Slide = forwardRef<HTMLDivElement, SlideProps>(function Slide(props
 
   return (
     <AnimatePresence custom={custom}>
-      {show && <motion.div {...rest} ref={ref} initial="exit" className={cx('chakra-slide', className)} animate={animate} exit="exit" custom={custom} variants={variants as TVariants} style={computedStyle} {...motionProps} />}
+      {show && <motion.div {...rest} ref={ref} className={cx('chakra-slide', className)} animate={animate} exit="exit" custom={custom} variants={variants as TVariants} style={computedStyle} {...motionProps} />}
     </AnimatePresence>
   );
 });
