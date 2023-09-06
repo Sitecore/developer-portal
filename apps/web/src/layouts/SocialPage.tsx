@@ -2,13 +2,14 @@
 
 import communityListData from '../../data/data-community-list';
 import Hero from '../components/Hero';
+import { RenderContent } from '../components/markdown/MarkdownContent';
 import SitecoreCommunityNews from '../components/sitecoreCommunity/news/SitecoreCommunityNews';
 import SitecoreCommunityQuestions from '../components/sitecoreCommunity/questions/SitecoreCommunityQuestions';
 import StackExchangeFeed from '../components/stackexchange/StackExchangeFeed';
 import CTACard, { CTACardProps } from '../components/ui/CTACard';
 import { CenteredContent } from '../components/ui/CenteredContent';
 import CommunityList from '../components/ui/CommunityList';
-import PromoCard, { PromoCardProps } from '../components/ui/PromoCard';
+import { PromoCardProps } from '../components/ui/PromoCard';
 import { VerticalGroup } from '../components/ui/VerticalGroup';
 import YouTubeFeed from '../components/youtube/YouTubeFeed';
 import { PageInfo } from '../lib/interfaces/page-info';
@@ -26,9 +27,7 @@ const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): 
 
     <VerticalGroup>
       <CenteredContent>
-        {promoBefore.map((promo, i) => (
-          <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />
-        ))}
+        <RenderContent content={pageInfo.parsedContent} />
         <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} />
         <SitecoreCommunityQuestions data={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
         <CommunityList data={communityListData} />

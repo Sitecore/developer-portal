@@ -1,6 +1,7 @@
 import ArticlePage from '../layouts/ArticlePage';
 import ChildOverviewPage from '../layouts/ChildOverviewPage';
 import DefaultContentPage from '../layouts/DefaultContentPage';
+import SocialPage from '../layouts/SocialPage';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '../lib/interfaces/page-info';
 import { getChildNavgationInfo, getChildPageInfo, getPageInfo, getPartialGroupsAsArray, getPartialsAsArray } from '../lib/page-info';
 import { getStaticPathsRecursively } from '../lib/staticPaths';
@@ -34,16 +35,34 @@ export async function getStaticProps(context: any) {
       partials,
       partialGroups,
       childPageInfo,
-      subPageNavigation
+      subPageNavigation,
     },
   };
 }
 
-export default function Slug({ pageInfo, partials, partialGroups, childPageInfo, subPageNavigation }: { pageInfo: PageInfo; partials: PartialData; partialGroups: PagePartialGroup[]; childPageInfo: ChildPageInfo[], subPageNavigation: SubPageNavigation }) {
+export default function Slug({
+  pageInfo,
+  partials,
+  partialGroups,
+  childPageInfo,
+  subPageNavigation,
+}: {
+  pageInfo: PageInfo;
+  partials: PartialData;
+  partialGroups: PagePartialGroup[];
+  childPageInfo: ChildPageInfo[];
+  subPageNavigation: SubPageNavigation;
+}) {
   // Check for other page types
-  if (pageInfo.pageType == 'childoverview') return <ChildOverviewPage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} />;
 
-  if(pageInfo.hasSubPageNav) return <ArticlePage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} childPageInfo={childPageInfo} subPageNavigation={subPageNavigation} />;
+  switch (pageInfo.pageType) {
+    case 'childoverview':
+      return <ChildOverviewPage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} />;
+    case 'social':
+      return <SocialPage pageInfo={pageInfo} />;
+  }
+
+  if (pageInfo.hasSubPageNav) return <ArticlePage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} childPageInfo={childPageInfo} subPageNavigation={subPageNavigation} />;
 
   // return default page
   return <DefaultContentPage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} />;

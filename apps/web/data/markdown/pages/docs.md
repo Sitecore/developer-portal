@@ -17,6 +17,3 @@ partialGroups:
   - title: 'Integrations'
     partials: ['docs/integrations/connect']
 ---
-
-## TestMVA
-
