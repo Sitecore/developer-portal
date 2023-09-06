@@ -46,7 +46,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
         <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.content} />
         <SimpleGrid py={4} gap={4} columns={[1, 1, 2]}>
           <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
-          <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} headingClass="text-lg" listItem={true} />
+          <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} listItem={true} />
         </SimpleGrid>
       </CenteredContent>
     </VerticalGroup>
@@ -65,7 +65,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
 
     <VerticalGroup background={'chakra-bg'}>
       <CenteredContent>
-        <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} columns={3} title="Community news" />
+        <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} title="Community news" />
         <SitecoreCommunityEvents data={pageInfo.sitecoreCommunity.events} title="Community Events" />
         <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
         <CommunityList data={communityListData} />

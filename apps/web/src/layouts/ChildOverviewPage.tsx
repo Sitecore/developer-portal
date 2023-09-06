@@ -22,7 +22,7 @@ type ChildOverviewPageProps = {
   childPageInfo: ChildPageInfo[];
 };
 
-const ChildOverviewPage = ({ hasGrid, pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager, childPageInfo }: ChildOverviewPageProps) => {
+const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo }: ChildOverviewPageProps) => {
   if (!pageInfo) return <>No pageInfo found</>;
 
   // Check for headings in the content

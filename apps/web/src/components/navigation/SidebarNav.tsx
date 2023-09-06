@@ -1,6 +1,5 @@
 import { Box, Heading, ListItem, UnorderedList } from '@chakra-ui/react';
 import { LinkValue } from 'ui/common/types/link-value';
-import { useGlobalState } from '../../lib/globalState';
 import { ButtonLink } from '../ui/ButtonLink';
 import styles from './SidebarNav.module.css';
 
@@ -10,8 +9,7 @@ interface SidebarNavProps {
 }
 
 const SidebarNav = ({ links, title }: SidebarNavProps) => {
-  const [navScrolled] = useGlobalState('navScrolled');
-  const positionalClasses = navScrolled ? 'md:top-24' : 'md:top-36';
+  //const [navScrolled] = useGlobalState('navScrolled');
 
   return (
     // <nav className={`mb-8 transform-gpu self-start transition-all md:sticky md:mr-16 ${positionalClasses} `}>

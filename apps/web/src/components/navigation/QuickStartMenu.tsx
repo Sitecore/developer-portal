@@ -7,7 +7,6 @@ type QuickStartMenuProps = MenuButtonProps;
 
 export const QuickStartMenu = (props: QuickStartMenuProps) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
 
   return (
     <Menu>

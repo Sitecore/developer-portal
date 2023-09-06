@@ -23,7 +23,7 @@ type DefaultContentPageProps = {
   customNavPager?: React.ReactNode;
 };
 
-const DefaultContentPage = ({ hasGrid, pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager, childPageInfo }: DefaultContentPageProps) => {
+const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager }: DefaultContentPageProps) => {
   if (!pageInfo) return <>No pageInfo found</>;
 
   // Check for headings in the content

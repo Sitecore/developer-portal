@@ -13,14 +13,13 @@ type GenericContentPageProps = {
   pageInfo: PageInfo;
   partials?: PartialData;
   partialGroups?: PagePartialGroup[];
-  hasGrid?: boolean;
   promoAfter?: PromoCardProps[];
   promoBefore?: PromoCardProps[];
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
 };
 
-const Content = (partials?: PartialData, partialGroups?: PagePartialGroup[], hasGrid?: boolean): JSX.Element => {
+const Content = (partials?: PartialData, partialGroups?: PagePartialGroup[]): JSX.Element => {
   if (partialGroups) {
     return (
       <VerticalGroup>
@@ -42,7 +41,7 @@ const Content = (partials?: PartialData, partialGroups?: PagePartialGroup[], has
   return <></>;
 };
 
-const GenericContentPage = ({ hasGrid, pageInfo, partialGroups, partials, promoAfter, promoBefore, customNav, customNavPager }: GenericContentPageProps) => {
+const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, promoBefore, customNav, customNavPager }: GenericContentPageProps) => {
   if (!partialGroups && !partials) {
     console.warn('GenericContentPage requires either partials or partialGroups');
     //return <></>;
@@ -61,7 +60,7 @@ const GenericContentPage = ({ hasGrid, pageInfo, partialGroups, partials, promoA
           <Grid templateColumns="repeat(4, 1fr)" gap={4}>
             {pageInfo.hasInPageNav && <GridItem>{Nav}</GridItem>}
             <GridItem colSpan={pageInfo.hasInPageNav ? 3 : 4}>
-              {Content(partials, partialGroups, hasGrid)}
+              {Content(partials, partialGroups)}
               {customNavPager}
             </GridItem>
           </Grid>

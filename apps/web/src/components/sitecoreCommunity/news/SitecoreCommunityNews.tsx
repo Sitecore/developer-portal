@@ -9,14 +9,11 @@ import SitecoreCommunityNewsOrEventItem, { SitecoreCommunityNewsOrEventItemSideb
 type SitecoreCommunityNewsProps = CardProps & {
   title?: string;
   data?: SitecoreCommunityContent[];
-  columns?: number;
-  className?: string;
-  headingClass?: string;
   hideCategory?: boolean;
   listItem?: boolean;
 };
 
-const SitecoreCommunityNews = ({ title, data, columns, className, hideCategory, listItem, ...rest }: SitecoreCommunityNewsProps): JSX.Element => {
+const SitecoreCommunityNews = ({ title, data, hideCategory, listItem, ...rest }: SitecoreCommunityNewsProps): JSX.Element => {
   if (!data || data.length === 0) {
     return <></>;
   }

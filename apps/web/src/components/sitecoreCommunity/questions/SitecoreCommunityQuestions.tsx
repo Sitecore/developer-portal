@@ -49,8 +49,6 @@ const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest }: Site
 
   const items = fetchedResults || data;
 
-  const hasForumKeys = forumKeys && Array.isArray(forumKeys) && forumKeys.length > 1;
-
   return (
     <Card shadow={'none'} {...rest} background={'transparent'} variant={'unstyled'} width={'100%'}>
       <CardHeader justifyContent={'space-between'} display={'flex'}>

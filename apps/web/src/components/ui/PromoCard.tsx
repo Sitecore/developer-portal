@@ -1,5 +1,5 @@
 // Global
-import { Box, Flex, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
 import { ButtonLink } from './ButtonLink';
 // Components
 
@@ -35,13 +35,13 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
   </Box>
 );
 
-const PromoCard = ({ title, description, img, link, className, isImageLeft = true }: PromoCardProps): JSX.Element => (
+const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps): JSX.Element => (
   <SimpleGrid columns={2} gap={6}>
     {isImageLeft && <PromoCardImage img={img} />}
     <Flex alignItems={'flex-start'} justifyContent={'center'} flexDirection={'column'}>
-      <Text as={'h3'}>{title}</Text>
-      <Text>{description}</Text>
-      {!!link && <ButtonLink variant={'solid'} text={link.text ? link.text : 'Read more'} href={link.href} />}
+      <Heading size="2xl">{title}</Heading>
+      <Text pt={8}>{description}</Text>
+      {!!link && <ButtonLink variant={'link'} text={link.text ? link.text : 'Read more'} href={link.href} mt={8} />}
     </Flex>
     {!isImageLeft && <PromoCardImage img={img} />}
   </SimpleGrid>

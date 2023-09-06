@@ -25,7 +25,7 @@ type ArticlePageProps = {
   customNavPager?: React.ReactNode;
 };
 
-const ArticlePage = ({ hasGrid, pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager, childPageInfo, subPageNavigation }: ArticlePageProps) => {
+const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager, subPageNavigation }: ArticlePageProps) => {
   if (!pageInfo) return <>No pageInfo found</>;
 
   // Check for headings in the content

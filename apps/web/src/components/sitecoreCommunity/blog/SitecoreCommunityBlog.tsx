@@ -14,11 +14,9 @@ type SitecoreCommunityBlogProps = CardProps & {
   entries?: SitecoreCommunityContent[];
   sortKeys?: SortOption | SortOption[];
   listItem?: boolean;
-  headingClass?: string;
-  className?: string;
 };
 
-const SitecoreCommunityBlog = ({ entries, sortKeys, headingClass, className, listItem, ...rest }: SitecoreCommunityBlogProps): JSX.Element => {
+const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: SitecoreCommunityBlogProps): JSX.Element => {
   if (!entries || entries.length === 0) {
     return <></>;
   }

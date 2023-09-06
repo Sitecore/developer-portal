@@ -8,7 +8,7 @@ type ChangelogItemMetaProps = BoxProps & {
   item: ChangelogEntry;
 };
 
-export const ChangelogItemMeta = ({ item, loading, ...rest }: ChangelogItemMetaProps) => {
+export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => {
   const colorScheme = (changeType: string) => {
     if (changeType == 'Improvement') return 'purple';
     if (changeType == 'New Feature') return 'teal';

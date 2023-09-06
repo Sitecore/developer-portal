@@ -17,7 +17,7 @@ export type NavBarProps = {
 
 export default function Navbar({ children }: NavBarProps): JSX.Element {
   const { isOpen, onToggle } = useDisclosure();
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   /**
    *  Hook for scroll state
@@ -170,7 +170,6 @@ const DesktopNav = () => {
 
 const DesktopSubNav = ({ title, url, subTitle, external, children }: NavItem) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
 
   return (
     <Box role={'group'} display={'block'} p={2} key={title}>

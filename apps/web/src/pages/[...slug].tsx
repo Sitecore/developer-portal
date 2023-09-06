@@ -16,18 +16,15 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context: any) {
   const pageInfo = await getPageInfo(context.params.slug, context.preview ? context.preview : null);
-  if (pageInfo == null) {
-    console.log(`Content not found: ${context.params.slug.join('/')}`);
-    return { notFound: true };
-  }
+  if (pageInfo == null) return { notFound: true };
 
   const partials = pageInfo.partials != null ? await getPartialsAsArray(pageInfo.partials) : null;
   const partialGroups = pageInfo.partialGroups != null && pageInfo.partialGroups.length > 0 ? await getPartialGroupsAsArray(pageInfo.partialGroups) : null;
-  const childPageInfo = pageInfo.pageType == 'childoverview' ? await getChildPageInfo(context.params.slug.join('/'), context.preview ? context.preview : null) : null;
+  const childPageInfo = pageInfo.pageType == 'childoverview' ? await getChildPageInfo(context.params.slug.join('/')) : null;
   let subPageNavigation = null;
 
   if (pageInfo.hasSubPageNav) {
-    subPageNavigation = await getChildNavgationInfo(context.params.slug.join('/'), context.preview ? context.preview : null);
+    subPageNavigation = await getChildNavgationInfo(context.params.slug.join('/'));
   }
   //navData
 

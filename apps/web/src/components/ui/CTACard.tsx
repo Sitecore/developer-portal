@@ -15,7 +15,7 @@ export type CTACardProps = {
 
 const CTACard = ({ description, href, linkText, title, link2Text, link2href }: CTACardProps): JSX.Element => (
   <Box my={8} px={16} py={10} w="full" background={'neutral-subtle-bg'}>
-    <Heading as="h2" mb={4} fontSize={'2.25rem'}>
+    <Heading as="h2" mb={4} fontSize={'5xl'}>
       {title}
     </Heading>
     <Text variant={'large'} mb={6}>

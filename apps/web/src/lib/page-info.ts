@@ -30,19 +30,6 @@ type Matter = {
   content: string;
 };
 
-type ProductSolutionContextParams = {
-  solution: string;
-  product?: string;
-};
-
-const getSolutionFile = ({ solution }: ProductSolutionContextParams): string => `solution/${solution}`;
-
-const getProductFile = ({ solution, product }: ProductSolutionContextParams): string => `solution/${solution}/product/${product}`;
-
-const getFileFromContext = (params: ProductSolutionContextParams) => {
-  return params.product ? getProductFile(params) : getSolutionFile(params);
-};
-
 const getFileData = (directory: string, file: string): Matter => {
   const hasExtension = file.endsWith('.mdx') || file.endsWith('.md');
 
@@ -231,16 +218,13 @@ export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> =
   };
 };
 
-// const file = typeof arg === 'string' ? arg : getFileFromContext(arg);
-//   const fileData = getFileData(pagesDirectory, `${file}`);
-
 /**
  * Gets a list of ChildPageInfo for use on a parent page
  *
  * @param params The context params for the dynamic page
  * @returns An array of simplified ChildPageInfo for display on a parent page
  */
-export const getChildPageInfo = async (currentFile: string, preview?: boolean): Promise<ChildPageInfo[]> => {
+export const getChildPageInfo = async (currentFile: string): Promise<ChildPageInfo[]> => {
   const directory = path.join(pagesDirectory, currentFile);
   const children = fs.readdirSync(directory);
 
@@ -259,59 +243,10 @@ export const getChildPageInfo = async (currentFile: string, preview?: boolean): 
     });
 };
 
-export const getChildNavgationInfo = async (currentUrlSegment: string, preview?: boolean): Promise<SubPageNavigation | undefined> => {
+export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<SubPageNavigation | undefined> => {
   const manifest = searchForFile(path.join(pagesDirectory, currentUrlSegment), 'manifest.json');
   if (manifest != null) {
     const fileData: SubPageNavigation = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
     return fileData;
   }
 };
-
-const getChildItems= async (currentUrlSegment: string, fullPath: string, preview?: boolean): Promise<ChildPageInfo[]> => {
-
-  const filesInFolder = fs.readdirSync(fullPath);
-
-  const structure = Promise.all(filesInFolder
-      .filter((obj) => !obj.startsWith('index') || obj == undefined || !fs.statSync(obj).isDirectory())
-      .map(async (child) => {
-          // Return as normal menu item with no sub items
-          const meta = getFileData(fullPath, `${child}`).data as MarkdownMeta;
-
-          return {
-            description: meta.description ? meta.description : null,
-            id: child,
-            link: path.join(currentUrlSegment, meta.slug).replace(/\\/g, '/'),
-            //link: `${currentUrlSegment}/${meta.slug}`,
-            title: meta.title,
-            menuOrder: meta.menuOrder ? meta.menuOrder : null,
-          } as ChildPageInfo;
-        
-      })
-  );
-
-return structure;}
-  // const returnList = Promise.all(
-  //   children
-  //     .filter((obj) => !obj.startsWith('index') || obj == undefined)
-  //     .map(async (child) => {
-  //       const meta = getFileData(directory, `${child}`).data as MarkdownMeta;
-  //       const childDirectory = path.join(directory, child);
-
-  //       if (!child.endsWith('.md') && fs.statSync(childDirectory).isDirectory()) {
-  //         console.log(childDirectory);
-  //         const subChildren = await getChildNavgationInfo(path.join(childDirectory), preview);
-  //         //console.log(subChildren);
-  //       }
-
-  //       return {
-  //         description: meta.description ? meta.description : null,
-  //         id: child,
-  //         link: `/${currentFile}/${meta.slug}`,
-  //         title: meta.title,
-  //         menuOrder: meta.menuOrder ? meta.menuOrder : null,
-  //       } as ChildPageInfo;
-  //     })
-  // );
-
-  // return returnList;
-//};
