@@ -32,8 +32,8 @@
   "dependencies": {
     "@remark-embedder/core": "^3.0.1",
     "@remark-embedder/transformer-oembed": "^3.0.0",
-    "@sitecore-search/react": "^2.0.0-alpha.2",
-    "@sitecore-search/ui": "^2.0.0-alpha.2",
+    "@sitecore-search/react": "^2.0.0",
+    "@sitecore-search/ui": "^2.0.0",
     "@types/lodash.throttle": "^4.1.7",
     "@vercel/og": "^0.5.7",
     "axios": "^1.3.5",
