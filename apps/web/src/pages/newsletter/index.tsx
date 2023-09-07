@@ -78,7 +78,7 @@ const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }
 
           <Heading size="lg">Previous newsletters</Heading>
 
-          <CategoryTileList cards={newsletters} headingLevel="h2" />
+          <CategoryTileList cards={newsletters} />
         </CenteredContent>
       </VerticalGroup>
     </Layout>
