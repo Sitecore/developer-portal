@@ -1,0 +1,109 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Sitecore Ukraine Fund",
+      "copy": "Sitecore has set up a Ukraine Fund to provide immediate and direct assistance for Sitecore employees and their extended families in Ukraine. Please note that Sitecore intends to match all donations to this fund so your support will go twice as far.",
+      "image": "https://go.sitecore.com/l/857953/2022-03-17/ffn165/857953/1647538678GQmaZh90/Untitled_design.png",
+      "link": {
+        "text": "Donate now",
+        "href": "https://community.sitecore.com/community?id=community_blog&sys_id=faf2de451b428510722d4042b24bcb4e&view_source=featuredList"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "An Intro to Sitecore Managed Cloud Containers",
+      "copy": "Learn more about how to get started with Sitecore Managed Cloud Containers, and some high level takeaways.",
+      "image": "https://go.sitecore.com/l/857953/2022-02-15/d4y5zm/857953/1644964692cMSlOkpY/Untitled_design__5_.png",
+      "link": {
+        "href": "https://dev.to/kmac23va/sitecore-managed-cloud-containers-an-introduction-3n6l"
+      }
+    },
+    {
+      "title": "Sitecore CDP – User Experience Personalization",
+      "copy": "Learn how to achieve user personalization based on products that are browsed using the demo site.",
+      "image": "https://go.sitecore.com/l/857953/2022-03-17/ffn35p/857953/1647538998ezQeNJTY/5.png",
+      "link": {
+        "href": "https://sitecore.madhav.blog/sitecore-cdp-user-experience-personalization/"
+      }
+    },
+    {
+      "title": "Getting Started with Experience Edge for Content Hub",
+      "copy": "Learn about pre-requisites, the delivery vs preview API endpoints, generating API keys, and making your first GraphQL queries with the integrated GraphQL IDE.",
+      "image": "https://go.sitecore.com/l/857953/2022-03-17/ffn35r/857953/1647539027zwYwa9Vk/7.png",
+      "link": {
+        "href": "https://www.youtube.com/watch?v=UH_f4Fin6KU"
+      }
+    },
+    {
+      "title": "Get Your Tickets to SUGCON",
+      "copy": "SUGCON Europe will be held next week on March 24th-25th in Budapest, Hungary. We are excited to announce that Sitecore CEO, Steve Tzikakis, will be joining us at SUGCON! Don’t miss out on 2 full days of networking, sharing knowledge, activities, and more!  Did you know that you can also take a certification exam at a discounted price?",
+      "image": "https://go.sitecore.com/l/857953/2022-03-17/ffn3vc/857953/1647539098HZk6pAe8/Untitled_design__2_.png",
+      "link": {
+        "text": "Get your tickets now",
+        "href": "https://sugcon2022.rentit.hu/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Thoughts About Sitecore Hackathon 2022 Participation",
+      "copy": "Learn about the overall Hackathon experience, from the signup process to the submission, key takeaways, and more.",
+      "image": "https://go.sitecore.com/l/857953/2022-02-15/d4y4vp/857953/1644964112UyeHKaa1/Untitled_design__1_.png",
+      "link": {
+        "href": "https://www.aharb.me/thoughts-about-sitecore-hackathon-2022-participation/"
+      }
+    },
+    {
+      "title": "Sitecore Content Hub Reset the entity flow state when creating a new version",
+      "copy": "Learn more about how to use Trigger, Action, and Script in Sitecore Content Hub to keep the current state flow for any item when you create a new version.",
+      "image": "https://go.sitecore.com/l/857953/2022-03-17/ffn54y/857953/1647539475H3dZGD1D/1.png",
+      "link": {
+        "href": "https://sitecorebox.blogspot.com/2022/03/sitecore-content-hub-rest-to-initial.html"
+      }
+    },
+    {
+      "title": "Sitecore PowerShell To Fix Broken Renderings",
+      "copy": "Some have reported issues when saving a page in the Sitecore content tree. Learn this PowerShell script to fix the broken renderings in Content Pages.",
+      "image": "https://go.sitecore.com/l/857953/2022-03-17/ffn54w/857953/1647539445SyPHhBmf/2.png",
+      "link": {
+        "href": "https://yehiaibrahim.com/2022/03/08/a-script-to-fix-broken-renderings-in-content-pages/"
+      }
+    },
+    {
+      "title": "Register for Sitecore Virtual Developer Day",
+      "copy": "Sharpen your Sitecore dev skills by registering for this free 24 hour virtual event full of developer-led session. Don’t miss out on technical talks, tips based on the latest technology, and a chance to connect (or reconnect) with the Sitecore developer community and MVPs.",
+      "image": "https://go.sitecore.com/l/857953/2021-11-28/b32pcl/857953/16381453604FGm7vNO/Untitled_design__2_.png",
+      "link": {
+        "text": "Register now",
+        "href": "https://www.sitecore.com/company/news-events/events/2022/03/virtual-developer-day"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "The Sitecore Watercooler Podcast",
+      "copy": "Check out the Sitecore Watercooler Podcast which covers a wide range of topics. Learn something new in each episode! ",
+      "image": "https://go.sitecore.com/l/857953/2022-03-17/ffn3vr/857953/1647539318odd0uqZf/Untitled_design__4_.png",
+      "link": {
+        "text": "Listen now",
+        "href": "https://cms.megaphone.fm/channel/AAE2118464403?selected=AAE1106243998"
+      }
+    },
+    {
+      "title": "Sitecore App Service Backup Problems and solutions",
+      "copy": "Learn how to fix the Web App size when it has crossed its limit causing the backups to fail.",
+      "image": "https://go.sitecore.com/l/857953/2022-03-17/ffn3vt/857953/1647539351Nkit1wb1/3.png",
+      "link": {
+        "href": "https://ratishkr81.blogspot.com/2022/03/sitecore-app-service-backup-problems.html"
+      }
+    },
+    {
+      "title": "What is CDN?",
+      "copy": "CDN’s are everywhere! Learn what Content Delivery Network (CDN) is, what it is not, why you should want your content on a CDN, and more.    ",
+      "image": "https://go.sitecore.com/l/857953/2022-03-17/ffn4kc/857953/164753938663zD4HRq/4.png",
+      "link": {
+        "href": "https://thetombomb.com/posts/what-is-a-cdn"
+      }
+    }
+  ]
+}

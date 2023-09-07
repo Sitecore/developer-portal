@@ -1,0 +1,110 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Pieter Brinkman: Stand up a commerce storefront in five minutes",
+      "copy": "This end-to-end demo will show how simple spinning up a commerce storefront using Next.js Commerce and Sitecore OrderCloud can be with Pieter Brinkman, Vice President of Technical Marketing at Sitecore.",
+      "image": "https://go.sitecore.com/l/857953/2022-11-27/ss8qwt/857953/16695877018pKUbhaz/Untitled_design__3_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=ati9lB4n_2o"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Key points from Symposium 2022",
+      "copy": "Not able to make it to Sitecore Symposium this year? This blog post covers some of the key product and technical takeaways from the conference.",
+      "image": "https://go.sitecore.com/l/857953/2022-11-27/ss8qwx/857953/1669587741tRvzdncT/Untitled_design__2_.png",
+      "link": {
+        "href": "https://blog.jermdavis.dev/posts/2022/symposium-2022"
+      }
+    },
+    {
+      "title": "Get started with XM Cloud + Next.js locally + deploy to Vercel in a matter of minutes",
+      "copy": "Explore this step-by-step guide to help devs get started, better understand the development workflow, have a quick product overview, and so on.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clyv5p/857953/16427875570Ln0tJyy/3.png",
+      "link": {
+        "href": "https://miguelminoldo.fr/2022/10/26/get-started-xmcloud-nextjs-vercel-in-minutes/"
+      }
+    },
+    {
+      "title": "Introducing Sitecore CDP/Personalize Serializer/CLI Tool",
+      "copy": "Learn all about PoC (Proof of Concept) for CDP/Personalize. This PoC is meant to show a new way of building things in your tenant, using the tool that every developer is familiar with, which is Source Control.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clz4fr/857953/1642789617vsQOYO6p/Untitled_design__2_.png",
+      "link": {
+        "href": "https://dylanyoung.dev/insights/sitecore-cdp-personalize-serializer-cli-tool-introduction/"
+      }
+    },
+    {
+      "title": "Apply to become a Sitecore MVP",
+      "copy": "Sitecore MVP applications are still open. This year you do not need to be recommended to apply. The application deadline is November 30th at 8 pm PST.",
+      "image": "https://go.sitecore.com/l/857953/2021-11-28/b32pcl/857953/16381453604FGm7vNO/Untitled_design__2_.png",
+      "link": {
+        "text": "Apply now",
+        "href": "https://mvp.sitecore.com/Become-an-mvp"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Creating Advanced Batch Segments",
+      "copy": "You’ve identified a potential group of users that can be targeted with tailored experiences and content, but how can we group these users into a segment with Sitecore CDP and Personalize? Lucky for us, CDP comes with batch segments, which will help us group our users.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clzfg7/857953/1642791021PUAcmvsn/6.png",
+      "link": {
+        "href": "https://www.xcentium.com/blog/2022/10/13/creating-advanced-batch-segments"
+      }
+    },
+    {
+      "title": "Using .NET 6 as the head for headless sites in Sitecore XM Cloud",
+      "copy": "Learn how to get started with XM Cloud and .NET 6 without running XM locally, which also means that you can do this on Linux or macOS.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clyydm/857953/1642788415CBNmB45Y/4.png",
+      "link": {
+        "href": "https://invokecommand.net/posts/dotnet-head-for-xmcloud"
+      }
+    },
+    {
+      "title": "Dealing with Data Skew in Flink",
+      "copy": "Processing large amounts of data comes with challenges and trade-offs that we must live with. Sitecore Data Engineering shares their journey in dealing with this issue in Flink.",
+      "image": "https://go.sitecore.com/l/857953/2022-11-27/ss8qnx/857953/1669587110RWBtCkpB/2.png",
+      "link": {
+        "href": "https://medium.com/@sanr_71172/dealing-with-data-skew-in-flink-b7e4c82c35ef"
+      }
+    },
+    {
+      "title": "Developing Secure Integrations with Sitecore OrderCloud",
+      "copy": "Learn how OrderCloud’s official project for middleware plug-ins and extensions, Catalyst, can easily provide the necessary authentication helpers for a seamlessly secure experience.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clywxm/857953/1642788100YsC12YCI/2.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=hdMpXSzvd8w"
+      }
+    },
+    {
+      "title": "XM Cloud rendering host options and fast local development with Experience Editor & Pages",
+      "copy": "In the stream of information about Sitecore headless you probably heard the term rendering host more than once.The rendering host is the front-end application that consumes headless Sitecore data. This can be a website, but also an app. It is the head on headless Sitecore.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clywyh/857953/1642788130zta2AulB/1.png",
+      "link": {
+        "href": "https://www.sergevandenoever.nl/XM_Cloud_rendering_host_options_and_fast_local_development/"
+      }
+    },
+    {
+      "title": "Simulating the Stream API in Postman",
+      "copy": "Learn how to create a new session, create different events and trigger a Flow execution all from within Postman. He will walk the user through the Guest Profile in Sitecore CDP, showing how the calls to the API affect the guest profile and the session for the current user.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clz893/857953/1642790291GGtnLzVb/Untitled_design__4_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=CGe6Y4l6ON4&t=3s"
+      }
+    },
+    {
+      "title": "Meet Audience Discovery - AI based segmentation from Sitecore Send",
+      "copy": "A new remarkable turnaround in how you do outbound and email marketing! Sitecore Send just released the all-new audience discovery feature. It utilizes advanced search and ML methods and introduces an innovative way to discover segments according to interest in brands, products, and intent to purchase.",
+      "image": "https://go.sitecore.com/l/857953/2022-11-27/ss8qq1/857953/1669587301jz0fPbNC/1.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=uk3Fc4cftGg"
+      },
+      "variant": "full-width"
+    }
+  ]
+}

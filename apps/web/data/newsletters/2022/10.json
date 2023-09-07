@@ -1,0 +1,112 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Sitecore - Titanium sponsor for Vercel's Next.js conference",
+      "copy": "Don't miss this year's Next.js conference. You can catch Pieter Brinkman, VP of Technical Marketing, showing you how to use Next.js Commerce and Sitecore OrderCloud to build a B2C storefront in only 5 minutes.",
+      "image": "https://go.sitecore.com/l/857953/2022-10-15/r7d57k/857953/1665889790Rw1gEBWr/Pink_Inspirational_Instagram_Quote__1_.png",
+      "link": {
+        "text": "Register now",
+        "href": "https://nextjs.org/conf/speakers/pieterbrink123?utm_source=partner&utm_medium=email&utm_campaign=partner_sitecoreconfpromo"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Deploy your first Headless SXA site to Vercel",
+      "copy": "In this video, Sebastian Winter demos how to publish the content of a headless SXA site to Edge as well as deploy the App to Vercel. Want to know about XM Cloud?",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5c7/857953/1658870987UUkRlEYe/2.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=0UpihW2QxaQ"
+      }
+    },
+    {
+      "title": "Sitecore helpers are there to help you",
+      "copy": "Sitecore comes with a set of ready-to-use HTML field helpers, yet a lot of developers new to Sitecore tend to insist on doing everything themselves, find out how they can make your life easier!",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czn4/857953/1656293027HOmT1QJR/Untitled_design__12_.png",
+      "link": {
+        "href": "https://wttech.blog/blog/2022/sitecore-helpers-are-there-to-help-you/"
+      }
+    },
+    {
+      "title": "[German] Sitecore in 300 Sekunden – Developer Edition",
+      "copy": "Videos, die Tipps & Einblicke umfassen und bei der Konfiguration und Anpassung von Sitecore helfen – jeweils immer nur maximal 300 Sekunden lang.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367z7/857953/1661735738sjzsSAEg/7.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.sitecore.com/de-de/landing/dach/sitecore-in-300-sekunden"
+      }
+    },
+    {
+      "title": "How to become a Sitecore MVP series",
+      "copy": "Are you wondering how you can become a Sitecore MVP? Watch this new video series that covers everything you need to know to become a good MVP Aspirant and grasp the spirit of the Sitecore Community.",
+      "image": "https://go.sitecore.com/l/857953/2022-10-15/r7d59n/857953/1665890761FaqRUiNi/Pink_Inspirational_Instagram_Quote__2_.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://go.sitecore.com/e/857953/OhKEC-E8HtTKMMu2cRGzKHTaSaGTFe/rb557g/439544635"
+      }
+    },
+    {
+      "title": "XM Cloud developer resources",
+      "copy": "Coupons are an important feature of any eCommerce Platform. Learn how to build a Coupons Dashboard that will give Marketing valuable information to help them make better decisions as to how, where and when to use Coupons.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5cb/857953/16588710277UW1trZc/3.png",
+      "link": {
+        "text": "Learn more",
+        "href": "https://developers.sitecore.com/content-management/xm-cloud"
+      }
+    },
+    {
+      "title": "Security Considerations when working with the APIs",
+      "copy": "Learn various considerations when building out applications that use and interact with data in Sitecore CDP/Personalize, including the ingestion APIs (Stream, Interactive, and Batch) as well as authentication to manage tenant assets APIs.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5d1bb/857953/1656295790L4iFnrCN/Untitled_design__4_.png",
+      "link": {
+        "href": "https://community.sitecore.com/community?id=community_blog&sys_id=6d9601561b12d9d0b8954371b24bcb9b"
+      }
+    },
+    {
+      "title": "Fundraising with Sitecore relics",
+      "copy": "Here is an opportunity to get some Sitecore relics and support the Sitecore community in Ukraine. Even if you cannot buy anything please share the message with your community.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czl7/857953/1656292764kM2Vr7NI/Untitled_design__9_.png",
+      "link": {
+        "text": "Learn more",
+        "href": "https://www.linkedin.com/feed/update/urn:li:activity:6938533139371704320/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Setting up an external XM Cloud Rendering Host to work with Experience Editor and Pages",
+      "copy": "A key requirement of this migration project was to ensure that the sites could be edited in both Sitecore Experience Editor, and the next-generation editing interface included with XM Cloud - Sitecore Pages. Learn the steps that were involved in this project.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5cx/857953/1658871118S3sIFHp6/4.png",
+      "link": {
+        "href": "https://robearlam.com/blog/setting-up-an-external-xm-cloud-rendering-host-to-work-with-experience-editor-and-pages"
+      }
+    },
+    {
+      "title": "Strange Docker / Zookeeper errors",
+      "copy": "Docker is a great tool for developers when it works, but it can be tricky to debug when it doesn't. Here's an example of an issue that a few community members have seen running SolrCloud in Docker recently, which has taxed their debugging skills.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czp1/857953/1656293079sSwvv9lq/Untitled_design__11_.png",
+      "link": {
+        "href": "https://blog.jermdavis.dev/posts/2022/docker-zookeeper-solr-fail"
+      }
+    },
+    {
+      "title": "Gatsby Plugin for Sitecore CDP",
+      "copy": "Gatsby is a React-based open-source framework with built-in performance, scalability, and security. The plugin gatsby-plugin-sitecore-cdp connects your Gatsby site to Sitecore CDP and tracks the views throughout the site, without any code. This plugin shows how composable Sitecore CDP actually is.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5hm/857953/1658871187EaGFBnKo/Pink_Floral_Motivational_Instagram_Post.png",
+      "link": {
+        "href": "https://www.vinayjadav.com/posts/gatsby-plugin-sitecore-cdp"
+      }
+    },
+    {
+      "title": "Updated Certification Exams from Sitecore Learning",
+      "copy": "We are excited to announce that Sitecore has updated certifications for Content Hub and OrderCloud. Sitecore CDP and Sitecore Personalize certification exams are coming soon!",
+      "image": "https://go.sitecore.com/l/857953/2022-10-15/r7d55k/857953/1665888525QVNM1kKz/Pink_Inspirational_Instagram_Quote.png",
+      "link": {
+        "text": "Learn more",
+        "href": "https://community.sitecore.com/community?id=community_question&sys_id=b173b75d1b269154722d4042b24bcbe2"
+      },
+      "variant": "full-width"
+    }
+  ]
+}

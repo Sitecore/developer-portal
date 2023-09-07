@@ -1,0 +1,100 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "SUGCON ANZ 2022 RECAP",
+      "copy": "On August 18th-19th the Sitecore community was reunited at SUGCON ANZ in Melbourne, Australia. This post written by a Sitecore noob will cover key takeaways and reflections from this Sitecore User Group Conference.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367z4/857953/1661735663hlqY403R/Untitled_design.png",
+      "link": {
+        "href": "https://cadewhitbourn.com/sitecore/sitecore-user-group-conference-sugcon-anz-2022-reflections-and-key-takeaways/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Docker based Sitecore JSS Setup",
+      "copy": "Nothing teaches better than experience!&nbsp;In this post, Navan shares his experience on how to set up the Sitecore JSS NextJS Docker environment with a Docker-less Sitecore JSS Setup.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p3663b/857953/1661734275Z5JPChhH/_GettyImages_1209420555.jpg__web_hero_banner_medium_desktop_504x476.png",
+      "link": {
+        "text": "Read now",
+        "href": "https://navansitecorenotes.blogspot.com/2022/08/docker-based-sitecore-jss-setup.html"
+      }
+    },
+    {
+      "title": "Getting Started with Sitecore CDP",
+      "copy": "Unofficial Sitecore training covers everything SitecoreJSS-related. This video continues the Sitecore CDP for Employee Experience series. Learn how to send extension data to Sitecore CDP.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p365lx/857953/1661734246kssFR8EO/1.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=md1f26suMAU"
+      }
+    },
+    {
+      "title": "An Introduction to API first",
+      "copy": "This guide will target specifically the CDP and Personalize part of the Platform DXP to Composable DXP transition. There is not a one size that fits all approach to this migration, but a common list of steps and products available that may or may not fit the customer's specific needs.",
+      "image": "https://go.sitecore.com/l/857953/2022-04-21/ggvc2w/857953/1650590313tUyZoKqL/4.png",
+      "link": {
+        "href": "https://andrewowen.net/blog/an-introduction-to-api-first/"
+      }
+    },
+    {
+      "title": "Sitecore CDP & Personalize in a composable context",
+      "copy": "Learn how CDP and Personalize fit within Sitecore Engagement cloud and composable architecture. Ahmed shows the main components of each product and the different business scenarios addressed by each of them such as legacy systems integration, real-time customer behavior tracking, or omni-channel personalization.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367z7/857953/1661735738sjzsSAEg/7.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=auqWnjbZ_5c"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Sitecore SXA Sharing Content",
+      "copy": "XM Cloud is Sitecore’s cloud-native, modern CMS empowering brands to create, manage, and deliver relevant content at lightning-fast speeds. In this post, you will learn a general overview of what XM Cloud offers.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367y4/857953/1661735383bBfR66Yb/3.png",
+      "link": {
+        "href": "https://www.linkedin.com/pulse/sitecore-sxa-sharing-content-ketan-garala/"
+      }
+    },
+    {
+      "title": "Sitecore Commerce - Coupons Dashboard Plugin",
+      "copy": "Coupons are an important feature of any eCommerce Platform. Learn how to build a Coupons Dashboard that will give Marketing valuable information to help them make better decisions as to how, where and when to use Coupons.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367yb/857953/1661735436uMJcQfid/4.png",
+      "link": {
+        "href": "https://www.alyassolutions.com/post/sitecore-commerce-coupons-dashboard-plugin"
+      }
+    },
+    {
+      "title": "Building Your First Node JS CLI",
+      "copy": "In this post, you will learn how you can run a CLI application based on Node and explore how you would create your first node CLI application. ",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5hm/857953/1658871187EaGFBnKo/Pink_Floral_Motivational_Instagram_Post.png",
+      "link": {
+        "href": "https://dylanyoung.dev/insights/building-your-first-node-js-cli/"
+      }
+    },
+    {
+      "title": "Episode 6 - Standard Values Podcast",
+      "copy": "Join Sultan for a conversation with Martin Miles, 6-times Sitecore MVP. During the conversation, they are discussing best practices for contractors to thrive in a global environment.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367yj/857953/16617355365ydKE15a/Untitled_design__1_.png",
+      "link": {
+        "href": "https://www.youtube.com/watch?v=2NNbYyqR12Y"
+      }
+    },
+    {
+      "title": "Component-Level Data Fetching in Sitecore JSS with Next.js",
+      "copy": "Learn how data fetching works in vanilla Next.js, see code and an implementation of component-level data fetching, and see how Incremental Static Regeneration (ISR) fits in as well.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367z1/857953/1661735576D5cjrN65/6.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=Py1l4PPp2H0"
+      }
+    },
+    {
+      "title": "Meet Greece Sitecore User Group Organizer - Anastasia Plati",
+      "copy": "In this series, we feature Sitecore User Group organizers from around the world, and ask them to share their insights, experience, and advice. Meet Anastasia Plati, Greece's Sitecore User Group organizer. Learn about her story and 6 tips for starting a user group.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367yf/857953/1661735502fF32YgP7/8.png",
+      "link": {
+        "href": "https://community.sitecore.com/community?id=community_blog&sys_id=2cc674951bdd1154b8954371b24bcb2c"
+      }
+    }
+  ]
+}

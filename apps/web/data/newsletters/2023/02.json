@@ -1,0 +1,134 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Closing Keynote Speaker at SUGCON - Scott Hanselman",
+      "copy": "If you did not hear the news, Scott Hanselman from Microsoft is virtually joining us as the closing keynote speaker at SUGCON Europe 2023. Don’t miss out. Join us on March 23-24 in Malaga, Spain. Tickets are limited; save your spot now.",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b6k/857953/1677195523V9twTyhL/6.png",
+      "link": {
+        "text": "Get your ticket now",
+        "href": "https://www.eventbrite.co.uk/e/sitecore-user-group-conference-sugcon-europe-2023-tickets-502549066787"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "What is new on the Developer Portal",
+      "copy": "The Developer Portal has an open source repo on GitHub because we want you to be able to contribute and help other developers in the community. Learn about all the changes made since November.",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b6v/857953/16771956411tPzfZ2h/7.png",
+      "link": {
+        "href": "https://community.sitecore.com/community?id=community_blog&sys_id=9432e53a1bf42d5038a46421b24bcb4d"
+      }
+    },
+    {
+      "title": "Finding our way with Sitecore Search",
+      "copy": "Learn how the Sitecore team took searching on Sitecore.com to the next level by delivering personalized results across multiple sites.",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b6n/857953/16771955851YM0tZHZ/1.png",
+      "link": {
+        "href": "https://www.sitecore.com/dx/finding-our-way-with-sitecore-search"
+      }
+    },
+    {
+      "title": "Sitecore Personalize and Mobile App Projects Series",
+      "copy": "This series of blog posts will cover all aspects of delivering personalized content to end users of a mobile app.",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b6r/857953/1677195616bBljtKpD/3.png",
+      "link": {
+        "href": "https://360agileweb.dev/2023/02/03/sitecore-personalize-and-mobile-app-projects-series-part-2/"
+      }
+    },
+    {
+      "title": "Coresampler 200th Episode ft. Dave O'Flanagan",
+      "copy": "Dave O'Flanagan, the Chief Product Officer at Sitecore joins Tamas and Jason on Coresampler to celebrate the 200th episode. Learn about his background, insights on leadership, thoughts on the Sitecore community, industry predictions for 2023, and much more!",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b6y/857953/1677195836lBpzmy2o/Untitled_design__1_.png",
+      "link": {
+        "text": "Listen now",
+        "href": "https://coresampler.fm/200"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Creating a Security Center of Excellence With Elastic",
+      "copy": "Discover how Sitecore uses Elastic SIEM for their new ‘Security Operations Center as a Service’ offering (SOCaaS), which has allowed the company to automate more than 91% of their workflows, increasing productivity in security and compliance, which has reduced time-to-fix issues with minimal human capital.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367y4/857953/1661735383bBfR66Yb/3.png",
+      "link": {
+        "href": "https://www.elastic.co/elasticon/archive/2022/amsterdam/sitecore"
+      }
+    },
+    {
+      "title": "Content Hub One to Drive Content in Sitecore Personalize",
+      "copy": "Sitecore Personalize is an excellent tool for managing the execution of a personalization solution. However, it doesn’t do a great job of managing the content for those experiences. Check out some techniques described for integrating Content Hub One with Sitecore Personalize",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367yb/857953/1661735436uMJcQfid/4.png",
+      "link": {
+        "href": "https://blogs.perficient.com/2023/02/14/using-content-hub-one-to-drive-content-in-sitecore-personalize/"
+      }
+    },
+    {
+      "title": "Sitecore Basic CDP Project",
+      "copy": "Check out this Sitecore CDP project. This project was developed using ASP.NET MVC and created/tested using Sitecore 10.2 and 10.3.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5hm/857953/1658871187EaGFBnKo/Pink_Floral_Motivational_Instagram_Post.png",
+      "link": {
+        "href": "https://coderslifeline.blogspot.com/2023/02/sitecore-basic-cdp-project.html"
+      }
+    },
+    {
+      "title": "3 Big Changes in The New Next.js App Folder Architecture",
+      "copy": "In Next.js 13.1, the new app directory-based architecture beta was released. The new architecture is a significant change to Next.js. Learn how component rendering, data fetching, and routing have changed inside the app directory.",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b7y/857953/1677197080Z4pe4UVH/GettyImages_924212022.jpg",
+      "link": {
+        "href": "https://thetombomb.com/posts/nextjs-app-architecture"
+      }
+    },
+    {
+      "title": "Mastering XM Cloud series",
+      "copy": "If you are just curious about Sitecore XM Cloud, or are taking early steps with this platform, read through the Mastering XM Cloud series. Learn about the new SaaS offering from Sitecore as of today.",
+      "image": "https://go.sitecore.com/l/857953/2022-08-28/p367z1/857953/1661735576D5cjrN65/6.png",
+      "link": {
+        "href": "https://www.linkedin.com/posts/martin-miles_sitecore-xmcloud-activity-7018269087663341568-RKWU/"
+      }
+    },
+    {
+      "title": "A first look at Sitecore Connect",
+      "copy": "In this episode Josh Hover is joined by Ivan Lieckens, Product Manager, Product Connectors at Sitecore. Ivan leads the product delivery team for Sitecore Connect, and in this episode, they discuss Connect and an overview of how it can best be leveraged.",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b85/857953/16771971614uABjMou/GettyImages_1333935767.jpg",
+      "link": {
+        "text": "Listen now",
+        "href": "https://fireside-sitecore-community-discussion.buzzsprout.com/2049944/12294302-a-first-look-at-sitecore-connect"
+      }
+    },
+    {
+      "title": "Join the Sitecore Community Mentor Program",
+      "copy": "The Community Mentor Program pairs existing Sitecore MVPs with Sitecore enthusiasts looking to kick-start their journey in contributing to the community. The deadline to join this program as a mentor or mentee is the end of February.",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b9n/857953/1677200391rWq2RkMq/2.png",
+      "link": {
+        "text": "Learn more",
+        "href": "https://mvp.sitecore.com/Mentor-Program"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "XM Cloud, PowerShell, and remoting",
+      "copy": "Sitecore XM / XM Cloud wouldn’t be as powerful as it is without the power of PowerShell. Learn how to enable PowerShell ISE (disabled by default) and PowerShell remoting.",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b8r/857953/1677198494H7T4Waq0/4.png",
+      "link": {
+        "href": "https://www.sergevandenoever.nl/XM_Cloud_PowerShell_And_Remoting/"
+      }
+    },
+    {
+      "title": "Sitecore Connect FAQ",
+      "copy": "This FAQ addresses common questions customers or partners may have regarding the roadmap vision for taking Sitecore to the next level of SaaS.",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b8y/857953/16771986915dZZt8cw/Untitled_design__2_.png",
+      "link": {
+        "href": "https://developers.sitecore.com/learn/faq/sitecore-connect"
+      }
+    },
+    {
+      "title": "Sitecore Content Hub one: Crawl, Walk & Run",
+      "copy": "Learn through an introduction to modeling, content creation, using the CLI, and using Content Management-, Delivery- and Preview API.",
+      "image": "https://go.sitecore.com/l/857953/2023-02-23/tw3b72/857953/1677195885uutYtt2O/GettyImages_1340755880.jpg",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=hwJ06833_qM"
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "SUGCON India - Call for Speakers",
+      "copy": "SUGCON is back and this time we are heading to New Delhi, India on August 24-25. Call for speakers is now open until June 16th, 2023. If you are interested in sharing your knowledge with the community, make sure you submit your topic.",
+      "image": "https://go.sitecore.com/l/857953/2023-03-29/tw6z7f/857953/1680105734Vrpe2w1b/MicrosoftTeams_image__5_.png",
+      "link": {
+        "text": "Submit now",
+        "href": "https://sessionize.com/sugcon-india-2023"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Upgrading the XM Cloud Introduction repository to Docker Compose v2",
+      "copy": "If you're working with Docker and have heard about the ending of support for version 1 of compose, don't worry— we've got you covered. Learn what changes you might have to make for your Docker solution files.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://robearlam.com/blog/docker-compose-v2"
+      }
+    },
+    {
+      "title": "Remove your Add This component by May 31, 2023",
+      "copy": "Oracle has announced that they will be turning off the AddThis service on May 31, 2023. This is going to impact a lot of websites around the web. Learn how this will affect you and what you should do.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://community.sitecore.com/community?id=community_Blog&sys_id=5b99a78e1b226150b8954371b24bcb23"
+      }
+    },
+    {
+      "title": "Sitecore Content Hub SSO Authentication with OKTA",
+      "copy": "In this video Eric Weiss will walk you through the basic process of setting up SSO authentication with Okta in your Sitecore Content Hub Authentication settings.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=WU_ahPw7FYo"
+      }
+    },
+    {
+      "title": "Introducing the Sitecore Discover JS SDK - Part 2 - Components",
+      "copy": "In this video learn how you can use the component model in the SDK to create interactive catalog components powered by Sitecore Discovers AI.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=hNze4QQwu30&t=1s"
+      }
+    },
+    {
+      "title": "Content Hub ONE – Content API",
+      "copy": "It's true that Content Hub ONE has a content API, but if you're looking for a tool to interact with REST endpoints, you'll want to explore this Postman Collection that's been put together.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.from-sitecore-with-love.de/blog/2023/content-hub-one-postman-collection"
+      }
+    },
+    {
+      "title": "Sitecore Docker Containers — Auto Bind Custom Domains to your CM and CD",
+      "copy": "If you’re developing with Sitecore on Docker and need to bind some custom domains to your CM/CD instances in Traefik, here’s an easy and future-proof way.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://markgibbons25.medium.com/sitecore-docker-containers-auto-bind-custom-domains-to-your-cm-and-cd-2e12d85d3573"
+      }
+    },
+    {
+      "title": "Beyond Vercel: Hosting Alternatives for Next.js ",
+      "copy": "Learn alternative hosting solutions for your Next.js app. You need to host your awesome application to show it to the world, so learn where that hosting makes the most sense for you.",
+      "image": "",
+      "link": {
+        "href": "https://thetombomb.com/posts/nextjs-hosting-alternatives"
+      }
+    },
+    {
+      "title": "Sitecore Connect to Pull Contacts into Sitecore CDP from Salesforce CRM",
+      "copy": "This video will walk you through a use case of using Sitecore Connect to pull contact details, on a continual basis, from Salesforce CRM into Sitecore CDP",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=0sjAk1ZU_Ek"
+      }
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Get your early bird tickets to SUGCON",
+      "copy": "Don’t miss out on attending the largest Sitecore community event in Europe. Be an early bird and buy your tickets before January 31st, 2022. You will save 100 EUR per ticket purchased.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clz1h3/857953/1642788522nFFQCGEA/Untitled_design.png",
+      "link": {
+        "text": "Buy now",
+        "href": "https://go.sitecore.com/e/857953/2022-01-24/cmhgtc/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Sign Your Team up for Sitecore Hackathon 2022",
+      "copy": "Sitecore Hackathon is a free online community- driven event organized by Akshay Sura and supported by Sitecore. Sign up your team by February 18th, 2022 and be entered in a contest.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clz72w/857953/1642789907rmzWEQ4s/Untitled_design__3_.png",
+      "link": {
+        "text": "Sign up now",
+        "href": "https://go.sitecore.com/e/857953/sitecore-hackathon-2022-/cmhgtf/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      }
+    },
+    {
+      "title": "Creating a Postman Collection for Sitecore Send",
+      "copy": "Learn how to convert a Blueprint spec so it can be imported into postman and automatically generate a collection of requests for testing and development with Moosend.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clyv5p/857953/16427875570Ln0tJyy/3.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/ion-for-sitecore-send-moosend-/cmhgth/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      }
+    },
+    {
+      "title": "Web Performance Indicators to Care About",
+      "copy": "Discover the three web performance indicators you should care about. The three metrics discussed in this article will provide you with a good look into the visitor experience on your site.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clz4fr/857953/1642789617vsQOYO6p/Untitled_design__2_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/sts-web-performance-indicators/cmhgtk/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      }
+    },
+    {
+      "title": "Present at Sitecore Virtual Developer Day",
+      "copy": "Due to unforeseen circumstances, Sitecore Virtual Developer Day was moved to April 13th, 2022. We have extended the call for speakers to January 31st, 2022. Submit your topics and share your expertise with the Sitecore Community!",
+      "image": "https://go.sitecore.com/l/857953/2021-11-28/b32pcl/857953/16381453604FGm7vNO/Untitled_design__2_.png",
+      "link": {
+        "text": "Apply now",
+        "href": "https://go.sitecore.com/e/857953/ore-virtual-developer-day-2022/cmhgtm/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Awesome Sitecore List",
+      "copy": "Explore this list of curated Sitecore projects. Find lists that cover analytics, audit and performance, azure, cache, commerce, and more.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clzfg7/857953/1642791021PUAcmvsn/6.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/MartinMiles-Awesome-Sitecore/cmhgtp/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      }
+    },
+    {
+      "title": "Exclude Specific Routes from HTTPS Redirect in .NET",
+      "copy": "Automatically redirecting all traffic coming in on HTTP over to HTTPS is beneficial for many reasons. Learn how to set middleware per route in .NET.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clyydm/857953/1642788415CBNmB45Y/4.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/-from-https-redirect-in-dotnet/cmhgtr/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      }
+    },
+    {
+      "title": "People Behind Sitecore",
+      "copy": "In this series,&nbsp;we turn the spotlight over to Sitecore employees. In this episode, Nicole Montero gets to know Rob Earlam's Sitecore journey, advice, challenges, and much more.",
+      "image": "https://go.sitecore.com/l/857953/2021-12-02/bf3bsd/857953/1638488635ZQubCEnG/Untitled_design.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/FEQVuB-56GY/cmhgtt/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      }
+    },
+    {
+      "title": "Sitecore Send Campaigns",
+      "copy": "Learn how to create a campaign in Sitecore Send. This article covers basic settings, schedule delivery, design templates, and more.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clywxm/857953/1642788100YsC12YCI/2.png",
+      "link": {
+        "href": "https://sitecore.madhav.blog/sitecore-send-sneak-peek-campaigns/"
+      }
+    },
+    {
+      "title": "Building a Blog in Next.Js and Sanity.io",
+      "copy": "Learn how to use Netlify, Jamstack Setup, Next.Js, and Sanity.io to build your next website.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clywyh/857953/1642788130zta2AulB/1.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/blog-in-next-js-and-sanity-io-/cmhgty/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      }
+    },
+    {
+      "title": "Get Setting without Crashing the System",
+      "copy": "Find out the steps required to properly read the settings in Content Hub to avoid&nbsp;Content Hub from crashing.",
+      "image": "https://go.sitecore.com/l/857953/2022-01-21/clz893/857953/1642790291GGtnLzVb/Untitled_design__4_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/g-without-crashing-the-system-/cmhgv1/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      }
+    },
+    {
+      "title": "Presentations from Symposium 2021",
+      "copy": "Check out recently released videos that feature presentations from Symposium 2021. Learn about CDP, Sitecore Experience Edge, OrderCloud, Sitecore Manage Cloud, and more.",
+      "image": "https://go.sitecore.com/l/857953/2021-12-08/blxk76/857953/1639014279lcmgZPrf/Untitled_design__3_.png",
+      "link": {
+        "href": "https://go.sitecore.com/e/857953/JVFm-lGnwNJekQtKze-Th4-rK3Nt-S/cmhgv3/282887704?h=eb485cdml60yAW6N9eCr8mOk7JrbJA-Tu5qdUMAv8VY"
+      },
+      "variant": "full-width"
+    }
+  ]
+}

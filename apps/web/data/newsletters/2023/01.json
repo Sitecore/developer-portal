@@ -1,0 +1,109 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "SUGCON Europe 2023 Early Bird Tickets on Sale",
+      "copy": "Join the Sitecore Community in  Málaga, Spain, on March 23-24. Early bird tickets are now on sale. Buy your ticket before February 1st and save €121.",
+      "image": "https://go.sitecore.com/l/857953/2023-01-15/tvy1yn/857953/16738271176pjpzu4H/Untitled_design__4_.png",
+      "link": {
+        "text": "Save your spot",
+        "href": "https://www.eventbrite.co.uk/e/sitecore-user-group-conference-sugcon-europe-2023-tickets-502549066787"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Sitecore SOLR Search",
+      "copy": "Sitecore SOLR Search in multiselect lists fails unless you add the field to the default SolrIndexConfiguration config",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5c7/857953/1658870987UUkRlEYe/2.png",
+      "link": {
+        "href": "https://briancaos.wordpress.com/2022/12/21/sitecore-solr-search-in-multiselect-lists-fails-unless-you-add-the-field-to-the-defaultsolrindexconfiguration-config/"
+      }
+    },
+    {
+      "title": "Implement the WebFinger Protocol on a NextJS site",
+      "copy": "Learn how to implement the WebFinger Protocol on a NextJS site. This is great as it will allow you to have a single entry point for my Mastodon presence that can remain static even if moved to a new server down the track.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czn4/857953/1656293027HOmT1QJR/Untitled_design__12_.png",
+      "link": {
+        "href": "https://robearlam.com/blog/webfinger-on-nextjs"
+      }
+    },
+    {
+      "title": "Sitecore Send and Moosend certified by CSA",
+      "copy": "Sitecore Send and Moosend, one of the most powerful email marketing platforms and marketing automation systems with world-class features, state-of-the-art automation, and the best Support and Deliverability Teams, is proud to announce that it has been certified by CSA - Certified Senders Alliance.",
+      "image": "https://go.sitecore.com/l/857953/2023-01-15/tvy1yr/857953/1673827336JUlTKyhw/Untitled_design__5_.png",
+      "link": {
+        "href": "https://community.sitecore.com/community?id=community_blog&sys_id=cce80bf31bb79150722d4042b24bcb8d"
+      }
+    },
+    {
+      "title": "All about Sitecore Experience Edge",
+      "copy": "To support the composable journey of your organization in the recent past, Sitecore invested more in outstanding products to become a market leader in the composable digital experience platform (DXP) space. Learn more from this quick guide covering Sitecore Experience Edge.",
+      "image": "https://go.sitecore.com/l/857953/2022-10-15/r7d59n/857953/1665890761FaqRUiNi/Pink_Inspirational_Instagram_Quote__2_.png",
+      "link": {
+        "href": "http://amitkumarmca04.blogspot.com/2022/12/sitecore-experience-edge.html"
+      }
+    },
+    {
+      "title": "Sitecore CDP Developer Artifacts Release Process",
+      "copy": "If you are one of those sophisticated customer technical teams looking to set up DevOps for the resources that are being customized in a tenant you can start here utilizing starter template and set up a project in source control.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5cb/857953/16588710277UW1trZc/3.png",
+      "link": {
+        "href": "https://venuvustipalli.com/get-started-on-sitecore-cdp-automated-ci-cd/"
+      }
+    },
+    {
+      "title": "Personalization Capabilities of Sitecore XM Cloud",
+      "copy": "As organizations look toward their next Sitecore upgrade, many will consider the implications of moving to XM Cloud. Learn what personalization looks like on the XM Cloud Platform.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5d1bb/857953/1656295790L4iFnrCN/Untitled_design__4_.png",
+      "link": {
+        "href": "https://blogs.perficient.com/2022/12/30/personalization-capabilities-of-sitecore-xm-cloud/"
+      }
+    },
+    {
+      "title": "Sitecore Community Mentor Program",
+      "copy": "Sign up to be a mentee in the community mentor program. This program matches self-motivated and high-achieving Sitecore community members with Sitecore 2023 MVPs.The program is designed to help mentees attain their goal of contributing more meaningfully to the Sitecore community and overcoming challenges. Email the MVP program if you are interested at mvp-program@sitecore.net.",
+      "image": "https://go.sitecore.com/l/857953/2023-01-15/tvy1yy/857953/16738282144vgJ6Qze/Untitled_design__6_.png",
+      "link": {
+        "text": "Learn more",
+        "href": "https://mvp.sitecore.com/Mentor-Program"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "XM Cloud: Embedded Personalization FAQ",
+      "copy": "Provided for informational purposes only, this FAQ addresses common questions customers or partners may have regarding the roadmap vision for taking Sitecore to the next level of SaaS. The information provided is general in nature and not intended to provide an exhaustive explanation of Sitecore’s development plans.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5cx/857953/1658871118S3sIFHp6/4.png",
+      "link": {
+        "href": "https://developers.sitecore.com/learn/faq/xm-cloud-embedded-personalization/general"
+      }
+    },
+    {
+      "title": "Sitecore Discover Introduction",
+      "copy": "Sitecore Discover provides intelligent product search powered by AI, but what does it include? And how can you get started developing with it today? Learn about the features, integration options, and more.",
+      "image": "https://go.sitecore.com/l/857953/2022-06-26/l5czp1/857953/1656293079sSwvv9lq/Untitled_design__11_.png",
+      "link": {
+        "href": "https://developers.sitecore.com/learn/getting-started/discover-introduction"
+      }
+    },
+    {
+      "title": "Adding Flexibility to Jamstack with Vercel Edge Middleware",
+      "copy": "Jamstack applications are known for being extremely fast, but lacking flexibility. That ends now! Do more with Jamstack by pushing logic to the edge with Vercel Edge Middleware. Keep the speed by moving logic to the Content Delivery Network (CDN) layer and add flexibility by having more information available to you about your visitors at run time.",
+      "image": "https://go.sitecore.com/l/857953/2022-07-26/mjr5hm/857953/1658871187EaGFBnKo/Pink_Floral_Motivational_Instagram_Post.png",
+      "link": {
+        "text": "Watch Now",
+        "href": "https://www.youtube.com/watch?v=cArItmmECe8"
+      }
+    },
+    {
+      "title": "Sitecore Hackathon 2023",
+      "copy": "Sitecore Hackathon is a free online community-driven event organized by Akshay Sura and supported by Sitecore. Sign your team up by 6 pm EST on February 17, 2023, for the opportunity to participate in a contest.",
+      "image": "https://go.sitecore.com/l/857953/2022-10-15/r7d55k/857953/1665888525QVNM1kKz/Pink_Inspirational_Instagram_Quote.png",
+      "link": {
+        "text": "Sign up now",
+        "href": "https://sitecorehackathon.org/sitecore-hackathon-2023/"
+      },
+      "variant": "full-width"
+    }
+  ]
+}

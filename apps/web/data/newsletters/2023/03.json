@@ -1,0 +1,127 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Get 20% Off Sitecore Certification",
+      "copy": "We are ringing in Spring with a 20% promotion on all our certifications purchased in March! To redeem this offer, please use code SPRING20  at checkout. Please email globaltraining@sitecore.com with any questions.",
+      "image": "https://go.sitecore.com/l/857953/2023-03-29/tw6z7f/857953/1680105734Vrpe2w1b/MicrosoftTeams_image__5_.png",
+      "link": {
+        "text": "Get certified",
+        "href": "mailto:globaltraining@sitecore.com"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Shape Sitecore’s Product Roadmap",
+      "copy": "Interacting with the community in person and getting your direct feedback has been tremendously valuable. Let’s continue the conversation! If you’d like to help shape Sitecore’s product roadmap, we invite you to join our  Collaborative Research Program. You’ll be able to share your thoughts directly with the Product team and get the inside scoop on what’s coming next. Sign up in 2 minutes, via this simple form.",
+      "image": "https://go.sitecore.com/l/857953/2023-03-29/tw7144/857953/1680115379PFrmmYZ8/GettyImages_1272592927.jpg",
+      "link": {
+        "text": "Sign up",
+        "href": "https://www.sitecore.com/help-us-build-products"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Blazor United prototype",
+      "copy": "Check out this video that takes a quick look at some of the experiments we're considering for Blazor in .NET 8.0",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=48G_CEGXZZM"
+      }
+    },
+    {
+      "title": "Secure Sitecore Vanity Domains with Azure Function Apps",
+      "copy": "Sitecore vanity domains can be done quickly, easily, and cost-effectively with Azure Function Apps. Ready to get started creating secure Sitecore vanity domains?",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://bala.one/secure-sitecore-vanity-domains-with-azure-function-apps/"
+      }
+    },
+    {
+      "title": "Bulk Edit Sitecore Content - SPE",
+      "copy": "Content must be constantly updated to stay relevant in today's fast-paced digital world. Learn how to use Sitecore SPE to quickly and easily update website content, streamlining the process and saving time.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://madhuanbalagan.com/efficiently-bulk-edit-sitecore-content-using-sitecore-powershell-extensions-spe"
+      }
+    },
+    {
+      "title": "A Composable Future – SUGCON 2023",
+      "copy": "Get the inside scoop on SUGCON Europe 2023 from an attendee.  Learn about some of his key takeaways from Sitecore’s newest products, what XM Cloud is all about, and much more.",
+      "image": "https://go.sitecore.com/l/857953/2023-03-30/tw74t4/857953/1680193323StgZ8nu0/FsPJjUXWIAAUu9L.jpeg",
+      "link": {
+        "text": "Read now",
+        "href": "https://deanobrien.uk/sugcon-2023-a-composable-future-for-sitecore/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Email Marketing Made Simple - Sitecore Send",
+      "copy": "Jon Price is joined by Paul Brennan, Senior Director for Sitecore Send, Sitecore’s cloud-based email marketing software. They discuss the automation capabilities of Sitecore Send, the implementation of creating transparent campaigns, and more.",
+      "image": "",
+      "link": {
+        "text": "Listen now",
+        "href": "https://www.americaneagle.com/insights/blog/post/the-sitecore-water-cooler-podcast-email-marketing-made-simple-with-sitecore-send"
+      }
+    },
+    {
+      "title": "Understanding App Directory Architecture In Next.js",
+      "copy": "Explore the advantages and pitfalls of this new strategy, reflects on whether you should use it in production now or not, and helps you decide by providing you with alternatives to get started quickly!",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.smashingmagazine.com/2023/02/understanding-app-directory-architecture-next-js/"
+      }
+    },
+    {
+      "title": "Tuning Guide for Sitecore Experience Edge GraphQL",
+      "copy": "Sitecore RAP explores how Sitecore Experience Edge can be used to improve performance and reduce the server load by caching GraphQL queries and media.  Learn the different caching types and how you can clear or administer these caches using the Settings Admin API.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://sitecorerap.wordpress.com/2023/03/02/tuning-guide-for-sitecore-experience-edge-graphql/"
+      }
+    },
+    {
+      "title": "Sitecore Connect & Open AI",
+      "copy": "This video demonstrates how easy it is to integrate Sitecore Content Hub with 3rd-party systems using Sitecore Connect, a low/no-code integration platform.",
+      "image": "https://go.sitecore.com/l/857953/2023-03-29/tw6z9j/857953/1680106543slbcS8BB/GettyImages_145062127.jpeg",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=-FeLY5CuHNk&t=1s"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Next.js App Directory Architecture First Impressions",
+      "copy": "The new Next.js 13 app architecture is a significant change for building your applications and using Next.js in the future. Sitecore Developer Advocate, Thomas Desmond shares insights on the documentation, thinking about Server Components vs. Client Components, & package support.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://thetombomb.com/posts/app-dir-first-impressions"
+      }
+    },
+    {
+      "title": "Standard Values: Tamas Varga & MVP Program",
+      "copy": "In this episode of the Standard Values podcast, you will meet Tamas Varga, Director of Community Programs at Sitecore. Besides being a great Sitecore expert, he leads the Sitecore MVP Program. During this podcast episode, Tamas discusses the MVP program, why Sitecore started it, the benefits of being an MVP, and how to become one.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=zhI9nVBXPr8"
+      }
+    },
+    {
+      "title": "How Headless fits into your Sitecore Composable World",
+      "copy": "In this episode of the Fireside podcast insights on the benefits of headless are shared along with the latest trends in the industry and how Sitecore fits into this exciting space.  If you're interested in learning more about headless and its potential impact on the future of Sitecore development, then you won't want to miss this episode!",
+      "image": "",
+      "link": {
+        "text": "Listen now",
+        "href": "https://podcasts.apple.com/us/podcast/how-headless-fits-into-your-sitecore-composable-world/id1644956117?i=1000605400152"
+      }
+    }
+  ]
+}
