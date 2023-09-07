@@ -27,7 +27,7 @@ const InnerCard = ({ copy, link, title }: NewsletterStoryPartialData) => (
       <Text variant="large">{copy}</Text>
     </CardBody>
     <CardFooter>
-      <TextLink title={link.text || 'Read more'} href={link.href} aria-label={title} variant={'large'} />
+      <TextLink text={link.text || 'Read more'} href={link.href} aria-label={title} variant={'large'} />
     </CardFooter>
   </>
 );
