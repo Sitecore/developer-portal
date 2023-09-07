@@ -1,11 +1,5 @@
 ---
-github:
-  [
-    '/blob/main/data/markdown/partials/trials/jss-connected-demo/exploring-code/updating-component.md',
-  ]
----
-
-## Updating a Component
+title: Updating a component
 
 We can make changes to a component in our local application, then see those changes refreshed in the browser immediately.
 

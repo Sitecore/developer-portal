@@ -1,9 +1,6 @@
 ---
-github:
-  ['/blob/main/data/markdown/partials/trials/jss-connected-demo/getting-started/repository.md']
+title: Cloning and setting up the demo source code
 ---
-
-## Cloning and setting up the demo source code
 
 ### Step 1: Clone or download the Lighthouse Fitness repo
 

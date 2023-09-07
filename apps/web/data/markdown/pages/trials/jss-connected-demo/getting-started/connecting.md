@@ -1,9 +1,6 @@
 ---
-github:
-  ['/blob/main/data/markdown/partials/trials/jss-connected-demo/getting-started/connecting.md']
+title: Connecting to Sitecore
 ---
-
-## Connecting to Sitecore
 
 ### Connecting the local repository to the remote Sitecore instance
 

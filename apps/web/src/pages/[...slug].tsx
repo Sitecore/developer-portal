@@ -55,7 +55,7 @@ export default function Slug({
 }) {
   // Check for other page types
 
-  switch (pageInfo.pageType) {
+  switch (pageInfo.pageType?.toLowerCase()) {
     case 'childoverview':
       return <ChildOverviewPage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} />;
     case 'social':

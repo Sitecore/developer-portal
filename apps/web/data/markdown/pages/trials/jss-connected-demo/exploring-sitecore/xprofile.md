@@ -1,10 +1,6 @@
 ---
-github:
-  ['/blob/main/data/markdown/partials/trials/jss-connected-demo/exploring-sitecore/xprofile.md']
+title: Data Generation for xProfile
 ---
-
-## Data Generation for xProfile
-
 ### Interact with the app to generate data for xProfile
 
 1. From the front-end on your local connected app (http://localhost:3000/), select the "Personalize" item from the upper right corner drop-down menu.

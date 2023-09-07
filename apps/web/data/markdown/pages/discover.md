@@ -5,4 +5,3 @@ partials: ['discover/supportkb', 'discover/cdpkb', 'discover/ordercloud', 'disco
 hasInPageNav: false
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'
----

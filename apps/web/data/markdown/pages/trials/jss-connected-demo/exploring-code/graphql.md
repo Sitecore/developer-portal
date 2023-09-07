@@ -1,8 +1,6 @@
 ---
-github: ['/blob/main/data/markdown/partials/trials/jss-connected-demo/exploring-code/graphql.md']
+title: GraphQL
 ---
-
-## GraphQL
 
 GraphQL is a powerful and flexible query language that empowers developers by enabling them to request exactly the data they need in exactly the format they want.
 

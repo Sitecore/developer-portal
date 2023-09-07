@@ -1,11 +1,6 @@
 ---
-github:
-  [
-    '/blob/main/data/markdown/partials/trials/jss-connected-demo/exploring-sitecore/launch-xprofile.md',
-  ]
+title: Launch Experience Profile
 ---
-
-## Launch Experience Profile
 
 The Experience Profile consists of a timeline and multiple tabs that display a summary of key experience analytics data for individual contacts. You can view one contact at a time.
 
