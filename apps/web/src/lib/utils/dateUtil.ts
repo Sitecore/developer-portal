@@ -1,4 +1,4 @@
-const translateDate = (dateString: string): string => {
+export const translateDate = (dateString: string): string => {
   const locale = 'en-us';
   const date = new Date(dateString.replace(/-/g, '/'));
   return new Intl.DateTimeFormat(locale, {

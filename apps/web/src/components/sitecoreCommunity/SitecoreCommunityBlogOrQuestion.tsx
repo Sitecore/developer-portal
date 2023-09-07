@@ -1,12 +1,8 @@
-// Interfaces
-
-import type { SitecoreCommunityContent } from 'ui/common/types/sitecoreCommunity';
-// Global
-// Lib
-import translateDate from 'ui/common/translate-date';
-// Local
 import { Box, Card, CardBody, Flex, HStack, Heading, Icon, Link, Skeleton, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import { SitecoreCommunityContent } from '../../lib/types/sitecoreCommunity';
+import { translateDate } from '../../lib/utils/dateUtil';
+import { TextLink } from '../ui/TextLink';
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
 
 type SitecoreCommunityBlogOrQuestionProps = {
@@ -14,8 +10,6 @@ type SitecoreCommunityBlogOrQuestionProps = {
   item: SitecoreCommunityContent;
   loading?: boolean;
 };
-
-const skeletonLoaderClasses = 'bg-theme-text-alt animate-pulse text-transparent hover:text-transparent';
 
 const SitecoreCommunityBlogOrQuestion = ({ item, contentType, loading }: SitecoreCommunityBlogOrQuestionProps): JSX.Element => (
   <Card variant={'elevated'} shadow={'md'} justifyContent={'space-between'} marginY={4}>
@@ -72,9 +66,9 @@ export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, contentType, load
       <Skeleton isLoaded={!loading} flexGrow={1}>
         <Stack fontSize={'sm'}>
           <Heading as={'h4'} size="sm">
-            <Link href={`${SITECORE_COMMUNITY_URL}${item.url}`} title={item.title} rel="noreferrer noopener" target="_blank">
+            <TextLink href={`${SITECORE_COMMUNITY_URL}${item.url}`} text={item.title} rel="noreferrer noopener" hideIcon={true}>
               {item.title}
-            </Link>
+            </TextLink>
           </Heading>
           <HStack spacing={'24px'}>
             <Text>{new Date(item.publishDate).toLocaleString('en-US', { dateStyle: 'medium' })}</Text>

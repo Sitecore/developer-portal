@@ -6,29 +6,30 @@ type TextLinkProps = TextProps &
   HeadingProps & {
     href: string;
     text: string;
+    hideIcon?: boolean;
     isHeading?: boolean;
   };
 
-export const TextLink = ({ href, text, isHeading, ...rest }: TextLinkProps) => {
+export const TextLink = ({ href, text, isHeading, hideIcon = false, ...rest }: TextLinkProps) => {
   if (isHeading)
     return (
       <Heading size="lg" {...rest}>
-        <TextWithLink href={href} text={text} />
+        <TextWithLink href={href} text={text} hideIcon={hideIcon} />
       </Heading>
     );
 
   return (
     <Text {...rest}>
-      <TextWithLink href={href} text={text} />
+      <TextWithLink href={href} text={text} hideIcon={hideIcon} />
     </Text>
   );
 };
 
-const TextWithLink = ({ href, text }: TextLinkProps) => (
+const TextWithLink = ({ href, text, hideIcon }: TextLinkProps) => (
   <HStack as={'span'}>
     <Link href={href} color={'neutral.fg'} fontWeight={'semibold'}>
       {text}
     </Link>
-    <Icon path={mdiArrowRight} size={0.8} />
+    {!hideIcon && <Icon path={mdiArrowRight} size={0.8} />}
   </HStack>
 );

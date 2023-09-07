@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 // Local
 import { Card, CardBody, CardHeader, CardProps, Heading } from '@chakra-ui/react';
-import { ButtonLink } from '../../ui/ButtonLink';
+import { TextLink } from '../../ui/TextLink';
 import { SortOption } from '../SitecoreCommunity.api';
 import SitecoreCommunityBlogOrQuestion, { SitecoreCommunityBlogOrQuestionSidebar } from '../SitecoreCommunityBlogOrQuestion';
 
@@ -44,7 +44,7 @@ const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: Sitecor
           Latest blog posts
         </Heading>
 
-        <ButtonLink href="https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba" text="See all" />
+        <TextLink href="https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba" text="See all" />
       </CardHeader>
       <CardBody>
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
