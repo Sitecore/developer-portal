@@ -12,6 +12,8 @@ export const getAllFilesRecursively = (dir: string, fileList: string[] = []): st
   const files = fs.readdirSync(dir);
 
   files.forEach((file) => {
+    if (file.startsWith('_')) return;
+    
     const filePath = join(dir, file);
 
     if (fs.statSync(filePath).isDirectory()) {

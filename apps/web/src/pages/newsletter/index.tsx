@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
     return newsletters;
   };
 
-  const pageInfo = await getPageInfo('newsletter', context.preview ? context.preview : null);
+  const pageInfo = await getPageInfo('_newsletter', context.preview ? context.preview : null);
 
   return {
     props: {
