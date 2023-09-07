@@ -1,6 +1,6 @@
 // Global
 // Interfaces
-import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, HStack, Heading, Link, SimpleGrid, Stack, Text, VisuallyHidden, useColorModeValue } from '@chakra-ui/react';
+import { Box, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Tag, Text, VisuallyHidden, useColorModeValue } from '@chakra-ui/react';
 import type { StackExchangeQuestion } from 'ui/common/types/stackExchange';
 // Components
 import { ButtonLink } from '../ui/ButtonLink';
@@ -41,16 +41,16 @@ const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedProps): JS
                 </Link>
                 <VisuallyHidden>Tags:</VisuallyHidden>
                 {question.tags.length && (
-                  <HStack>
+                  <Stack direction={{ base: 'column', sm: 'row' }}>
                     {question.tags.map((tag) => (
-                      <Button variant={'solid'} color={'primary.700'} size={'sm'} borderRadius={0} key={tag}>
+                      <Tag variant={'solid'} colorScheme="purple" size={'lg'} borderRadius={0} key={tag}>
                         <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')}>
                           {tag}
                           <VisuallyHidden>Opens in a new tab</VisuallyHidden>
                         </Link>
-                      </Button>
+                      </Tag>
                     ))}
-                  </HStack>
+                  </Stack>
                 )}
               </Stack>
             </Flex>
