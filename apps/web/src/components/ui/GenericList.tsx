@@ -1,6 +1,6 @@
 import { Box, Card, CardBody, CardFooter, CardProps, Center, Grid, Heading, Stack, chakra, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
-import { ButtonLink } from './ButtonLink';
+import { TextLink } from './TextLink';
 
 export type GenericListData = CardProps & {
   title: string;
@@ -62,7 +62,7 @@ export const GenericList = (props: GenericListData) => {
               </Stack>
             </CardBody>
             <CardFooter>
-              <ButtonLink href={item.href} text={item.linkText} color={color} paddingLeft={{ base: 5, md: 0 }} iconColor={props.overrideColor && color} />
+              <TextLink text={item.linkText} href={item.href} />
             </CardFooter>
           </Card>
         ))}

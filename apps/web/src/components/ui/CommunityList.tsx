@@ -1,6 +1,6 @@
 import { Box, BoxProps, Heading, Image, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react';
 import { CommunityListData } from 'ui/common/types/communityList';
-import { ButtonLink } from './ButtonLink';
+import { TextLink } from './TextLink';
 
 type CommunityListProps = BoxProps & {
   data: CommunityListData;
@@ -24,7 +24,7 @@ const CommunityList = ({ data, ...rest }: CommunityListProps): JSX.Element => (
           </Heading>
           <Text my={3}>{link.description}</Text>
 
-          <ButtonLink variant="text" text={link.linkText} href={link.href} justifyContent={'left'} paddingLeft={0} />
+          <TextLink text={link.linkText} href={link.href} />
         </Box>
       ))}
     </SimpleGrid>
