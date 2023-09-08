@@ -66,10 +66,8 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
       <Box
         as="header"
         shadow={'sm'}
-        borderBottom={'1px solid #d4d4d4'}
         zIndex={999}
         width={'full'}
-        height={'128px'}
 
         //top={scrolled ? '-14' : '0'}
         //transition={'all'}

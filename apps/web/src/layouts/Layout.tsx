@@ -36,7 +36,7 @@ const Layout = ({ title, description = '', openGraphImage, children, ...rest }: 
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Box as="main" style={{ marginTop: '128px', minHeight: 'calc(100vh - 236px)' }} {...rest}>
+      <Box as="main" style={{ marginTop: '122px', minHeight: 'calc(100vh - 236px)' }} {...rest}>
         {/* a11y announcement for route changes. */}
         <VisuallyHidden aria-live="polite" aria-atomic="true">{`The ${title} page has loaded.`}</VisuallyHidden>
         {children}
