@@ -1,11 +1,11 @@
-import { Box, Grid, GridItem, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react';
+import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
 
 import Hero from '../components/Hero';
 import SocialFeeds from '../components/common/SocialFeeds';
 import { RenderContent } from '../components/markdown/MarkdownContent';
-import { ButtonLink } from '../components/ui/ButtonLink';
 import { CenteredContent } from '../components/ui/CenteredContent';
 import PromoCard, { PromoCardProps } from '../components/ui/PromoCard';
+import { TextLink } from '../components/ui/TextLink';
 import { VerticalGroup } from '../components/ui/VerticalGroup';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '../lib/interfaces/page-info';
 import Layout from './Layout';
@@ -49,10 +49,19 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo }:
         <CenteredContent>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
             {childPageInfo.map((childPage, i) => (
-              <Box key={i} px={8} py={12} background={useColorModeValue('white', 'gray.800')} shadow={'lg'}>
-                <ButtonLink as={'h3'} variant="unstyled" text={childPage.title} href={childPage.link} fontSize={'1.25rem'} fontWeight={700} aria-label={childPage.title} px={0} color={useColorModeValue('black', 'white')} />
-                <Text variant={'large'}>{childPage.description}</Text>
-              </Box>
+              <Card variant={'elevated'} size="md" key={i}>
+                <CardHeader>
+                  <TextLink isHeading as={'h3'} text={childPage.title} aria-label={childPage.title} href={childPage.link} />
+                </CardHeader>
+                <CardBody>
+                  <Text variant={'large'}>{childPage.description}</Text>
+                </CardBody>
+                <CardFooter>
+                  <Button variant={'outline'} colorScheme="neutral">
+                    <Link href={childPage.link}>Read more</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
             ))}
           </SimpleGrid>
         </CenteredContent>
