@@ -1,9 +1,10 @@
 'use client';
 
-import { ChevronDownIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Center, Collapse, Flex, Icon, IconButton, Image, Link, SimpleGrid, Stack, Text, useColorMode, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { Box, Button, Center, Collapse, Flex, Heading, Icon, IconButton, Image, Link, ListItem, SimpleGrid, Stack, Text, UnorderedList, useColorMode, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import throttle from 'lodash.throttle';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { NavItem, mainNavigation, sitecoreQuickLinks } from '../../../data/data-navigation';
 import { setGlobalState, useGlobalState } from '../../lib/globalState';
@@ -94,8 +95,8 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
 
           <Flex flex={{ base: 2, xl: 0 }} justify={'flex-end'} direction={'row'}>
             <DarkModeSwitch />
-            <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
-            <QuickStartMenu display={{ base: 'none', xl: 'flex' }} />
+            <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
+            <QuickStartMenu />
           </Flex>
         </Flex>
 
@@ -211,7 +212,11 @@ type MobileNavItemProps = {
 };
 
 const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onClose, onToggle } = useDisclosure();
+  const router = useRouter();
+  const currentPage = router.asPath;
+  // const isCurrentPage = currentPage === url;
+  // const currentRoute = router.pathname;
 
   return (
     <Stack onClick={children && onToggle}>
@@ -230,19 +235,37 @@ const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
         borderColor={useColorModeValue('gray.200', 'gray.700')}
       >
         <Text fontWeight={600}>{title}</Text>
-        {children && <Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} transform={isOpen ? 'rotate(180deg)' : ''} w={6} h={6} />}
+        {children && <Icon as={ChevronRightIcon} transition={'all .25s ease-in-out'} transform={isOpen ? 'rotate(180deg)' : ''} w={6} h={6} />}
       </Flex>
 
-      <Collapse in={isOpen} animateOpacity>
-        <Stack mt={2} mb={2} pl={4} borderLeft={1} marginTop={'!0'} borderStyle={'solid'} borderColor={useColorModeValue('gray.200', 'gray.700')} align={'start'}>
-          {children &&
-            children.map((child) => (
-              <Box as="a" key={child.title} py={2} href={child.url}>
-                {child.title}
-              </Box>
-            ))}
-        </Stack>
-      </Collapse>
+      <Slide in={isOpen}>
+        <Box position={'fixed'} top={'7.5rem'} width={'full'} background={'chakra-body-bg'} height={'100vh'}>
+          <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} onClick={onClose} width={'full'} borderRadius={0} justifyContent={'left'} px={2} height={14} mb={4} shadow={'lg'}>
+            Back
+          </Button>
+          <Stack mb={2} pl={4} borderLeft={1} borderStyle={'solid'} borderColor={useColorModeValue('gray.200', 'gray.700')} align={'start'}>
+            {children &&
+              children.map((child, key) => (
+                <Box key={key} py={4} borderBottom={1} borderBottomStyle={'solid'} borderBottomColor={'chakra-border-color'} width={'95%'}>
+                  <Box as="a" key={child.title} py={2} href={child.url}>
+                    <Heading as="h2" size="lg" mb={2}>
+                      {child.title}
+                    </Heading>
+                  </Box>
+                  <UnorderedList listStyleType={'none'} m={0}>
+                    {child.children?.map((subchild, i) => (
+                      <ListItem py={2} key={i}>
+                        <Link as={NextLink} aria-current={currentPage === subchild.url} href={subchild.url} isExternal={subchild.external} key={i} color={'neutral.fg'}>
+                          {subchild.title} {subchild.external && <ExternalLinkIcon mx="2px" />}
+                        </Link>
+                      </ListItem>
+                    ))}
+                  </UnorderedList>
+                </Box>
+              ))}
+          </Stack>
+        </Box>
+      </Slide>
     </Stack>
   );
 };

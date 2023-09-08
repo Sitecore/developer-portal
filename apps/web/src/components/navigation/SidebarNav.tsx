@@ -1,7 +1,6 @@
-import { Box, Heading, ListItem, UnorderedList } from '@chakra-ui/react';
-import { LinkValue } from 'ui/common/types/link-value';
-import { ButtonLink } from '../ui/ButtonLink';
-import styles from './SidebarNav.module.css';
+import { Button, ButtonGroup, Heading, Wrap } from '@chakra-ui/react';
+import NextLink from 'next/link';
+import { LinkValue } from '../../lib/types/link-value';
 
 interface SidebarNavProps {
   title?: string;
@@ -12,23 +11,22 @@ const SidebarNav = ({ links, title }: SidebarNavProps) => {
   //const [navScrolled] = useGlobalState('navScrolled');
 
   return (
-    // <nav className={`mb-8 transform-gpu self-start transition-all md:sticky md:mr-16 ${positionalClasses} `}>
-    <Box as="nav" position={'sticky'} top={'9rem'}>
+    <Wrap as={'nav'} direction="column" position={'sticky'} top={'9rem'}>
       {title && (
-        <Heading size={'sm'} mb={8}>
+        <Heading variant={'section'} size={'sm'} mb={8}>
           {title}
         </Heading>
       )}
-      <UnorderedList position={'sticky'} listStyleType={'none'}>
+      <ButtonGroup variant="navigation" orientation="vertical" spacing="1" m="-2.5" position={'sticky'}>
         {links.map((link, i) => {
           return (
-            <ListItem className={styles.sidebarNavItem} border={1} key={i} pb={4} pr={2} pl={4} pt={1} position={'relative'}>
-              <ButtonLink variant={'link'} showIcon={false} href={link.href} text={link.text} textAlign={'left'} />
-            </ListItem>
+            <Button as={NextLink} href={link.href} key={i}>
+              {link.text}
+            </Button>
           );
         })}
-      </UnorderedList>
-    </Box>
+      </ButtonGroup>
+    </Wrap>
   );
 };
 
