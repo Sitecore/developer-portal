@@ -1,7 +1,7 @@
 ---
 solution: ['content-management']
 product: ['experience-manager']
-title: 'Content Management - Experience Manager'
+title: 'Experience Manager'
 description: 'Experience Manager for content management, Web CMS'
 stackexchange:
   [
