@@ -3,7 +3,7 @@
 // Local
 import { Card, CardBody, CardHeader, CardProps, Heading, Stack } from '@chakra-ui/react';
 import { SitecoreCommunityContent } from 'ui/common/types/sitecoreCommunity';
-import { ButtonLink } from '../../ui/ButtonLink';
+import { TextLink } from '../../ui/TextLink';
 import SitecoreCommunityNewsOrEventItem, { SitecoreCommunityNewsOrEventItemSidebar } from '../SitecoreCommunityNewsOrEventItem';
 
 type SitecoreCommunityNewsProps = CardProps & {
@@ -24,7 +24,7 @@ const SitecoreCommunityNews = ({ title, data, hideCategory, listItem, ...rest }:
         <Heading as={'h3'} size={'xl'}>
           {title ? title : 'News and Announcements'}
         </Heading>
-        <ButtonLink href={'https://community.sitecore.com/community?id=community_forum&sys_id=af85dddf1bf17810486a4083b24bcb00'} text={'See all'} />
+        <TextLink href={'https://community.sitecore.com/community?id=community_forum&sys_id=af85dddf1bf17810486a4083b24bcb00'} text={'See all'} />
       </CardHeader>
       <CardBody>
         <Stack spacing={8} direction={{ base: 'column', md: 'row' }}>

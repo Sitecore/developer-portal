@@ -1,16 +1,10 @@
-// Global
-// Interfaces
-import { ValidHeadingLevels } from 'ui/common/types/heading-levels';
-import type { YouTubeSnippet, YouTubeVideo } from 'ui/common/types/youTube';
-// Components
 import { AbsoluteCenter, AspectRatio, Box, Card, CardBody, CardHeader, CardProps, Heading, Image, LinkBox, SimpleGrid, Text, VisuallyHidden } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { ButtonLink } from '../ui/ButtonLink';
+import type { YouTubeSnippet, YouTubeVideo } from 'ui/common/types/youTube';
+import { TextLink } from '../ui/TextLink';
 
 type YouTubeFeedProps = CardProps & {
-  className?: string;
   data: YouTubeVideo[];
-  headingLevel?: ValidHeadingLevels;
   // The playlistTitle is only used if the author has not already supplied a youtubeTitle meta tag
   playlistTitle?: string;
   title?: string;
@@ -21,7 +15,7 @@ type YouTubeItemProps = {
   id: string;
 };
 
-const YouTubeFeed = ({ className, data, headingLevel, playlistTitle, title, ...rest }: YouTubeFeedProps): JSX.Element => {
+const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeedProps): JSX.Element => {
   if (data.length === 0) {
     return <></>;
   }
@@ -32,7 +26,7 @@ const YouTubeFeed = ({ className, data, headingLevel, playlistTitle, title, ...r
         <Heading as={'h3'} size={'xl'}>
           {title ? title : `Latest ${playlistTitle} videos`}
         </Heading>
-        <ButtonLink href={`https://www.youtube.com/playlist?list=${data[0].snippet.playlistId}`} text={'See all videos'} />
+        <TextLink href={`https://www.youtube.com/playlist?list=${data[0].snippet.playlistId}`} text={'See all videos'} />
       </CardHeader>
       <CardBody px={0}>
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
@@ -95,7 +89,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
           </AbsoluteCenter>
         </LinkBox>
       </Box>
-      <Text variant={'strong'} fontSize={'0.95rem'}>
+      <Text variant={'large'} fontWeight={'medium'}>
         {snippet.title}
       </Text>
     </Box>

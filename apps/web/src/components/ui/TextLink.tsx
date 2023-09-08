@@ -1,10 +1,11 @@
-import { HStack, Heading, HeadingProps, Link, Text, TextProps } from '@chakra-ui/react';
+import { HStack, Heading, HeadingProps, Link, LinkProps, Text, TextProps } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 
 type TextLinkProps = TextProps &
-  HeadingProps & {
-    href: string;
+  HeadingProps &
+  LinkProps & {
+    href?: string;
     text: string;
     hideIcon?: boolean;
     isHeading?: boolean;

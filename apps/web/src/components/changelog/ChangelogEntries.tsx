@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug } from 'sc-changelog/utils/stringUtils';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
-import { ButtonLink } from '../ui/ButtonLink';
+import { TextLink } from '../ui/TextLink';
 
 type ChangelogEntriesProps = CardProps & {
   entries: ChangelogEntry[];
@@ -30,7 +30,7 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
           {title != null ? title : 'Sitecore Changelog'}
         </Heading>
 
-        <ButtonLink href={linkHref != null ? linkHref : '/changelog'} text={linkText != null ? linkText : 'See all changes'} />
+        <TextLink href={linkHref != null ? linkHref : '/changelog'} text={linkText != null ? linkText : 'See all changes'} />
       </CardHeader>
       <CardBody>
         {entries.map((entry, key) => {
