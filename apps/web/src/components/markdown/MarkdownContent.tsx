@@ -106,7 +106,7 @@ export const RenderPartialGroups = ({ partialGroups }: MarkdownContentProps): JS
                 {partialGroup.description}
               </Text>
             )}
-            <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+            <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }} gap={6}>
               {partialGroup.partials.content.map((item, key) => RenderPartial({ key: key.toString(), item: item, fileName: partialGroup.partials.fileNames[key] }))}
             </Grid>
           </Box>
