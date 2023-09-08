@@ -40,7 +40,7 @@ const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: Sitecor
   return (
     <Card border={'none'} shadow={'none'} {...rest}>
       <CardHeader justifyContent={'space-between'} display={'flex'}>
-        <Heading as="h2" size="md" className="mb-4">
+        <Heading as="h3" size="md" className="mb-4">
           Latest blog posts
         </Heading>
 
