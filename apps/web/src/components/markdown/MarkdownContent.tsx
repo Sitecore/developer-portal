@@ -157,7 +157,7 @@ const RenderPartial = ({ key, item, fileName }: { key: string; item: string; fil
           <DecoratedMarkdown>{item}</DecoratedMarkdown>
         </CardBody>
         <CardFooter justifyContent={'end'}>
-          <ButtonLink href={fileName} text="Suggest an edit" variant={'link'} size={'xs'} icon={<Icon path={mdiSquareEditOutline} size={0.8} />} />
+          <ButtonLink href={fileName} text="Suggest an edit" variant={'link'} size={'xs'} icon={<Icon path={mdiSquareEditOutline} size={0.8} />} colorScheme="neutral" />
         </CardFooter>
       </Card>
     </GridItem>

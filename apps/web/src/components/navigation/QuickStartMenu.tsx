@@ -8,7 +8,7 @@ import { sitecoreQuickLinks } from '../../../data/data-navigation';
 export const QuickStartMenu = () => {
   return (
     <Menu>
-      <MenuButton size="sm" as={IconButton} variant="ghost" icon={<Icon size={1} path={mdiDotsGrid} />} display={{ base: 'none', xl: 'flex' }} />
+      <MenuButton size="sm" as={IconButton} variant="ghost" icon={<Icon size={1} path={mdiDotsGrid} />} display={{ base: 'none', xl: 'flex' }} aria-label={'Open the menu for links to other Sitecore sites'} />
       <MenuList>
         {sitecoreQuickLinks.children &&
           sitecoreQuickLinks.children.map((link, key) => (

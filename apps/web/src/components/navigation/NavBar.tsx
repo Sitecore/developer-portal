@@ -76,9 +76,9 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
       >
         <Flex as={'nav'} py={{ base: 3 }} px={{ base: 4 }} align={'center'} borderBottom={'1px solid #d4d4d4'} background={'chakra-body-bg'}>
           {/* Logo */}
-          <Box as="a" href="/" flexShrink="0">
-            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/a87c9e14823345f5bafb4d4d8aeba1c2" hidden={colorMode === 'dark'} />
-            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/f04ab6fe01f84ecf8af076728ac13709" hidden={colorMode === 'light'} />
+          <Box as="a" href="/" flexShrink="0" title="Go to the home page">
+            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/a87c9e14823345f5bafb4d4d8aeba1c2" hidden={colorMode === 'dark'} alt="Sitecore logo" />
+            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/f04ab6fe01f84ecf8af076728ac13709" hidden={colorMode === 'light'} alt="Sitecore logo" />
           </Box>
 
           {/* Desktop menu */}
