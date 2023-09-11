@@ -1,3 +1,4 @@
+import { Product } from '../src/lib/assets';
 export interface NavItem {
   title: string;
   subTitle?: string;
@@ -5,45 +6,8 @@ export interface NavItem {
   external?: boolean;
   url?: string;
   pathname?: string;
+  logo?: Product;
 }
-
-export const sitecoreQuickLinks: NavItem = {
-  title: 'External Sitecore Links',
-  children: [
-    {
-      title: 'Sitecore.com',
-      url: 'https://www.sitecore.com',
-    },
-    {
-      title: 'Sitecore Learning',
-      url: 'https://learning.sitecore.com/',
-    },
-    {
-      title: 'Sitecore Community',
-      url: 'https://community.sitecore.com/',
-    },
-    {
-      title: 'Sitecore MVP Program',
-      url: 'https://mvp.sitecore.com/',
-    },
-    {
-      title: 'Sitecore Downloads',
-      url: 'https://dev.sitecore.net/',
-    },
-    {
-      title: 'Sitecore Partner Network',
-      url: 'https://partners.sitecore.com/',
-    },
-    {
-      title: 'Symposium',
-      url: 'https://symposium.sitecore.com/',
-    },
-    {
-      title: 'Support Portal',
-      url: 'https://support.sitecore.com',
-    },
-  ],
-};
 
 export const mainNavigation: NavItem[] = [
   {
@@ -267,7 +231,7 @@ export const mainNavigation: NavItem[] = [
       },
     ],
   },
-  {
+  /*{
     title: 'Product',
     pathname: '/[solution]/[product]',
     children: [
@@ -501,9 +465,157 @@ export const mainNavigation: NavItem[] = [
         ],
       },
     ],
+  },*/
+  {
+    title: 'Products',
+    pathname: '/products',
+    children: [
+      {
+        title: 'Content Cloud',
+        logo: Product.ContentCloud,
+        children: [
+          {
+            title: 'XM Cloud',
+            url: '/content-management/xm-cloud',
+            logo: Product.XMCloud,
+          },
+          {
+            title: 'Search',
+            url: '/content-management/search',
+            logo: Product.Search,
+          },
+          {
+            title: 'Content Hub DAM',
+            url: '/dam-and-content-operations/dam',
+            logo: Product.DAM,
+          },
+          {
+            title: 'Content Hub Operations',
+            url: '/dam-and-content-operations/content-hub',
+            logo: Product.ContentOps,
+          },
+          {
+            title: 'Content Hub ONE',
+            url: '/content-management/content-hub-one',
+            logo: Product.ContentHubOne,
+          },
+        ],
+      },
+      {
+        title: 'Engagement Cloud',
+        logo: Product.EngagementCloud,
+        children: [
+          {
+            title: 'CDP',
+            url: '/customer-data-management/cdp',
+            logo: Product.CDP,
+          },
+          {
+            title: 'Personalize',
+            url: '/personalization-testing/personalize',
+            logo: Product.Personalize,
+          },
+          {
+            title: 'Send',
+            url: '/marketing-automation/send',
+            logo: Product.Send,
+          },
+          {
+            title: 'Connect',
+            url: '/integrations/connect',
+            logo: Product.Connect,
+          },
+        ],
+      },
+      {
+        title: 'Commerce Cloud',
+        url: '/content-management/content-hub-one',
+        logo: Product.CommerceCloud,
+        children: [
+          {
+            title: 'Discover',
+            url: '/commerce/discover',
+            logo: Product.Discover,
+          },
+          {
+            title: 'OrderCloud',
+            url: '/commerce/ordercloud',
+            logo: Product.OrderCloud,
+          },
+        ],
+      },
+
+      {
+        title: 'Platform DXP',
+        url: '/commerce/experience-commerce',
+        children: [
+          {
+            title: 'Experience Manager',
+            url: '/content-management/experience-manager',
+            logo: Product.ExperienceManager,
+          },
+          {
+            title: 'Experience Platform',
+            url: '/marketing-automation/experience-platform',
+            logo: Product.ExperiencePlatform,
+          },
+          {
+            title: 'Experience Commerce',
+            url: '/commerce/experience-commerce',
+            logo: Product.ExperienceCommerce,
+          },
+          {
+            title: 'Managed Cloud',
+            url: '/devops/managed-cloud',
+            logo: Product.Sitecore,
+          },
+        ],
+      },
+    ],
   },
   {
     title: 'Changelog',
     url: '/changelog',
   },
 ];
+
+/*
+ *  External links shown in the top right of the header
+ */
+export const sitecoreQuickLinks: NavItem = {
+  title: 'External Sitecore Links',
+  children: [
+    {
+      title: 'Sitecore.com',
+      url: 'https://www.sitecore.com',
+    },
+    {
+      title: 'Sitecore Learning',
+      url: 'https://learning.sitecore.com/',
+    },
+    {
+      title: 'Sitecore Community',
+      url: 'https://community.sitecore.com/',
+    },
+    {
+      title: 'Sitecore MVP Program',
+      url: 'https://mvp.sitecore.com/',
+    },
+    {
+      title: 'Sitecore Downloads',
+      url: 'https://dev.sitecore.net/',
+    },
+    {
+      title: 'Sitecore Partner Network',
+      url: 'https://partners.sitecore.com/',
+    },
+    {
+      title: 'Symposium',
+      url: 'https://symposium.sitecore.com/',
+    },
+    {
+      title: 'Support Portal',
+      url: 'https://support.sitecore.com',
+    },
+  ],
+};

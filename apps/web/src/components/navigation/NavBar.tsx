@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { NavItem, mainNavigation, sitecoreQuickLinks } from '../../../data/data-navigation';
 import { setGlobalState, useGlobalState } from '../../lib/globalState';
+import ProductIcon from '../common/ProductIcon';
 import { Slide } from '../common/Slide';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
@@ -119,7 +120,8 @@ const DesktopNav = () => {
           <Box
             key={key}
             as="a"
-            p={6}
+            px={6}
+            py={5}
             href={navItem.url ?? '#'}
             fontSize={'lg'}
             overflow={'hidden'}
@@ -167,12 +169,13 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ title, url, subTitle, external, children }: NavItem) => {
+const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavItem) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
 
   return (
     <Box role={'group'} display={'block'} p={2} key={title}>
-      <Link as={NextLink} href={url ? url : '#'} isExternal={external}>
+      <Link as={NextLink} href={url ? url : '#'} isExternal={external} display={'flex'} gap={1} mb={2}>
+        {logo && <ProductIcon product={logo} width={30} height={20} />}
         <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'}>
           {title}
         </Text>
@@ -181,7 +184,8 @@ const DesktopSubNav = ({ title, url, subTitle, external, children }: NavItem) =>
 
       {children != null &&
         children.map((child, key) => (
-          <Link as={NextLink} href={child.url} isExternal={child.external} display={'block'} pt={2} color={linkColor} key={key}>
+          <Link as={NextLink} href={child.url} isExternal={child.external} display={'flex'} gap={1} py={2} color={linkColor} key={key}>
+            {child.logo && <ProductIcon product={child.logo} width={20} height={20} />}
             {child.title}
             {child.external && <ExternalLinkIcon mx="2px" />}
           </Link>
