@@ -1,4 +1,4 @@
-import { Grid, GridItem, HStack, Heading, Image, SimpleGrid, Stack, StackDivider, Tag, Text } from '@chakra-ui/react';
+import { Grid, GridItem, HStack, Heading, Image, Stack, StackDivider, Tag, Text, VStack } from '@chakra-ui/react';
 import { SearchResultsInitialState, WidgetDataType, trackEntityPageViewEvent, useSearchResults, widget } from '@sitecore-search/react';
 //import Image from 'next/image';
 import { Loading } from '../common/Loading';
@@ -91,36 +91,43 @@ export const SearchResults = (props: InitialSearchProps) => {
                           window.open(result.url, '_blank');
                         }}
                       >
-                        <SimpleGrid columns={4} spacing={4} alignItems={'center'} flexDirection={'row'}>
-                          <GridItem colSpan={result.type == 'Video' ? 3 : 4}>
-                            <HStack pb={2}>
-                              {result.type && (
-                                <Tag colorScheme={getColorScheme(result.type)} size="md">
-                                  {result.type}
-                                </Tag>
-                              )}
-                              {result.index_name && <Heading variant={'section'}>{result.site_name}</Heading>}
-                            </HStack>
-                            <Heading as="h3" size="md">
-                              {result.name}
-                            </Heading>
+                        <HStack pb={2}>
+                          {result.type && (
+                            <Tag colorScheme={getColorScheme(result.type)} size="md">
+                              {result.type}
+                            </Tag>
+                          )}
+                          {result.index_name && <Heading variant={'section'}>{result.site_name}</Heading>}
+                        </HStack>
+                        <Heading as="h3" size="md">
+                          {result.name}
+                        </Heading>
 
-                            {result?.highlight?.description && <Text size="sm" noOfLines={3} dangerouslySetInnerHTML={{ __html: result.highlight.description }} my={2} />}
-                            {!result.highlight && result.description && (
+                        <HStack spacing={10} py={4}>
+                          {result.type == 'Video' && (
+                            <>
+                              {result.image_url && <Image width={200} src={result.image_url} alt={result.index_name} shadow={'md'} />}
+                              {!result.image_url && <Image width={200} src="/images/social/social-card-default.jpeg" alt={result.index_name} shadow={'md'} />}
+                            </>
+                          )}
+
+                          {result.type == 'Repository' && (
+                            <>
+                              {result.image_url && <Image width={200} src={result.url.replace('https://github.com', 'https://opengraph.githubassets.com/1')} alt={result.index_name} shadow={'md'} />}
+                              {!result.image_url && <Image width={200} src={result.url.replace('https://github.com', 'https://opengraph.githubassets.com/1')} alt={result.index_name} shadow={'md'} />}
+                            </>
+                          )}
+
+                          {result?.highlight?.description && <Text size="sm" noOfLines={3} dangerouslySetInnerHTML={{ __html: result.highlight.description }} my={2} />}
+                          {!result.highlight && result.description && (
+                            <VStack alignItems={'flex-start'}>
                               <Text size="sm" noOfLines={3}>
                                 {result.description}
                               </Text>
-                            )}
-                          </GridItem>
-
-                          {result.type == 'Video' && (
-                            <GridItem colSpan={1}>
-                              {result.image_url && <Image width={256} src={result.image_url} alt={result.index_name} shadow={'md'} />}
-                              {!result.image_url && <Image width={256} src="/images/social/social-card-default.jpeg" alt={result.index_name} shadow={'md'} />}
-                            </GridItem>
+                              <Text variant={'tiny'}>{result.url}</Text>
+                            </VStack>
                           )}
-                        </SimpleGrid>
-                        <Text variant={'tiny'}>{result.url}</Text>
+                        </HStack>
                       </a>
                     ))}
                 </Stack>
@@ -144,7 +151,7 @@ function getColorScheme(resultType: string) {
     return 'teal';
   }
   if (resultType == 'Repository') {
-    return 'black';
+    return 'gray';
   }
   if (resultType == 'Video') {
     return 'red';
@@ -152,7 +159,7 @@ function getColorScheme(resultType: string) {
   if (resultType == 'ChangeLog') {
     return 'blue';
   }
-  return 'gray';
+  return 'cyan';
 }
 
 const SearchResultsWidget = widget(SearchResults, WidgetDataType.SEARCH_RESULTS, 'content');
