@@ -1,0 +1,23 @@
+/* 
+    Search results page
+*/
+
+.result-type-base {
+  @apply text-white;
+}
+
+.result-type-article {
+  @apply bg-primary-500 dark:bg-primary-900 result-type-base;
+}
+.result-type-forum {
+  @apply result-type-base bg-teal-500 dark:bg-teal-500;
+}
+.result-type-repository {
+  @apply result-type-base bg-gray-500;
+}
+.result-type-video {
+  @apply result-type-base bg-red-500;
+}
+.result-type-changelog {
+  @apply result-type-base bg-orange-500;
+}
