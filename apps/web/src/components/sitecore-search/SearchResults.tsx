@@ -1,6 +1,7 @@
 import { Grid, GridItem, HStack, Heading, Image, Stack, StackDivider, Tag, Text, VStack } from '@chakra-ui/react';
 import { SearchResultsInitialState, WidgetDataType, trackEntityPageViewEvent, useSearchResults, widget } from '@sitecore-search/react';
 //import Image from 'next/image';
+import { getColorScheme } from '@/src/lib/search';
 import { Loading } from '../common/Loading';
 import QuerySummary from './QuerySummary';
 import SearchFacets from './SearchFacets';
@@ -143,24 +144,7 @@ export const SearchResults = (props: InitialSearchProps) => {
   );
 };
 
-function getColorScheme(resultType: string) {
-  if (resultType == 'Article') {
-    return 'purple';
-  }
-  if (resultType == 'Forum') {
-    return 'teal';
-  }
-  if (resultType == 'Repository') {
-    return 'gray';
-  }
-  if (resultType == 'Video') {
-    return 'red';
-  }
-  if (resultType == 'ChangeLog') {
-    return 'blue';
-  }
-  return 'cyan';
-}
+
 
 const SearchResultsWidget = widget(SearchResults, WidgetDataType.SEARCH_RESULTS, 'content');
 export default SearchResultsWidget;

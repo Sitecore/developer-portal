@@ -1,8 +1,11 @@
-import { Badge, Button, ButtonGroup, Card, CardBody, CardHeader, Flex, Grid, HStack, Heading, Image, Input, InputGroup, InputLeftElement, InputRightElement, Link, Tag, Text, Wrap } from '@chakra-ui/react';
 import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchInitialState, PreviewSearchSuggestionQuery, SearchResponseSuggestion, WidgetAction, WidgetDataType, trackEntityPageViewEvent, usePreviewSearch, widget } from '@sitecore-search/react';
+import { NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
+// import Image from 'next/image';
+import { getColorScheme } from '@/src/lib/search';
+import { Badge, Box, Button, Card, CardBody, CardHeader, Flex, FormControl, Grid, HStack, Heading, Image, Input, InputGroup, InputLeftElement, InputRightElement, Link, Tag, Text, VisuallyHidden } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import React, { SyntheticEvent, useCallback, useState } from 'react';
+import { SyntheticEvent, useCallback, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { Loading } from '../common/Loading';
 
@@ -22,45 +25,54 @@ type ArticleModel = {
 };
 
 const Articles = ({ loading = false, articles, onItemClick, suggestionsReturned }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick']; suggestionsReturned?: boolean }) => (
-  <Grid templateColumns="repeat(3, 1fr)" position="relative">
-    {loading && <Loading />}
+  <NavMenu.Content asChild>
+    <Box width={[4 / 5]} position={'absolute'} right={0} top={0} overflow={'hidden'} display={'inline-block'}>
+      <Presence present={loading}>
+        <Loading />
+      </Presence>
+      <NavMenu.List>
+        <Grid templateColumns="repeat(3, 1fr)" position="relative" gap={4}>
+          {/* {loading && <Loading />} */}
 
-    {!loading &&
-      articles.map((article, index) => (
-        <Link
-          key={`${article.id}@${article.source_id}`}
-          href={article.url}
-          onClick={(e) => {
-            e.preventDefault();
-            onItemClick({ id: article.id || '', index: index });
-            if (article.index_name != 'sitecore-devportal-v2') trackEntityPageViewEvent('content', { items: [{ id: article.id }] });
-            window.open(article.url, '_blank');
-          }}
-        >
-          <Card variant={'flat'} size={'sm'}>
-            <CardHeader>
-              <Heading as={'h4'} size={'sm'}>
-                {article.name}
-              </Heading>
-            </CardHeader>
-            <CardBody>
-              <HStack>
-                {article.type && <Tag colorScheme="purple">{article.type}</Tag>}
-                {article.index_name && <Badge>{article.site_name}</Badge>}
-              </HStack>
-              {article.type == 'Video' && (
-                <div className="col-span-1">
-                  {article.image_url && <Image width={256} height={144} src={article.image_url} alt={article.index_name} className="object-scale-down" />}
-                  {!article.image_url && <Image width={256} height={144} src="/images/social/social-card-default.jpeg" alt={article.index_name} className="object-scale-down" />}
-                </div>
-              )}
-              {article.type != 'Video' && article?.highlight?.description && <p className="text-xs line-clamp-5" dangerouslySetInnerHTML={{ __html: article.highlight.description }} />}
-              {article.type != 'Video' && !article.highlight && article.description && <p className="text-xs line-clamp-5">{article.description}</p>}
-            </CardBody>
-          </Card>
-        </Link>
-      ))}
-  </Grid>
+          {!loading &&
+            articles.map((article, index) => (
+              <Link
+                key={`${article.id}@${article.source_id}`}
+                href={article.url}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onItemClick({ id: article.id || '', index: index });
+                  if (article.index_name != 'sitecore-devportal-v2') trackEntityPageViewEvent('content', { items: [{ id: article.id }] });
+                  window.open(article.url, '_blank');
+                }}
+              >
+                <Card variant={'none'} size={'sm'}>
+                  <CardHeader pb={0}>
+                    <Heading as={'h4'} size={'sm'} noOfLines={2}>
+                      {article.name}
+                    </Heading>
+                  </CardHeader>
+                  <CardBody>
+                    <HStack mb={2}>
+                      {article.type && <Tag colorScheme={getColorScheme(article.type)}>{article.type}</Tag>}
+                      {article.index_name && <Badge>{article.site_name}</Badge>}
+                    </HStack>
+                    {article.type == 'Video' && (
+                      <div className="col-span-1">
+                        {article.image_url && <Image width={160} height={90} src={article.image_url} alt={article.index_name} className="object-scale-down" />}
+                        {!article.image_url && <Image width={160} height={90} src="/images/social/social-card-default.jpeg" alt={article.index_name} className="object-scale-down" />}
+                      </div>
+                    )}
+                    {article.type != 'Video' && article?.highlight?.description && <Text noOfLines={4} dangerouslySetInnerHTML={{ __html: article.highlight.description }} />}
+                    {article.type != 'Video' && !article.highlight && article.description && <Text noOfLines={4}>{article.description}</Text>}
+                  </CardBody>
+                </Card>
+              </Link>
+            ))}
+        </Grid>
+      </NavMenu.List>
+    </Box>
+  </NavMenu.Content>
 );
 
 interface SearchItemClickedAction extends WidgetAction {
@@ -88,37 +100,39 @@ const Group = ({
   onGroupTitleClick: (arg: string) => void;
 }) => {
   return (
-    <>
-      <Wrap>
-        <Heading variant={'section'}>{groupTitle}</Heading>
+    <Box width={[1 / 5]} p={2} background={'primary.100'}>
+      <Heading variant="section" px={4}>
+        {groupTitle}
+      </Heading>
+      {articles.map(({ text }) => (
+        <NavMenu.Item value={getGroupId(groupId, text)} key={text} style={{ listStyle: 'none' }}>
+          <NavMenu.Trigger
+            asChild
+            onMouseOver={(e) => {
+              const target = e.target as HTMLLinkElement;
+              target.focus();
+            }}
+            onFocus={() => onActiveItem(getGroupId(groupId, text))}
+            onClick={() => onGroupTitleClick(text)}
+          >
+            <Button variant={'ghost'} colorScheme="neutral" borderRadius={'md'} title={text} textAlign={'left'}>
+              <Text isTruncated width={180}>
+                {text}
+              </Text>
+            </Button>
+          </NavMenu.Trigger>
 
-        <ButtonGroup variant="navigation" orientation="vertical" spacing="1" m="-2">
-          {articles.map(({ text }) => (
-            <>
-              <Button
-                onMouseOver={(e) => {
-                  const target = e.target as HTMLLinkElement;
-                  target.focus();
-                }}
-                maxWidth={'240'}
-                onFocus={() => onActiveItem(getGroupId(groupId, text))}
-                onClick={() => onGroupTitleClick(text)}
-              >
-                <Text isTruncated>{text}</Text>
-              </Button>
-
-              <PreviewSearchSuggestionQuery<ArticleModel> active={activeItem === getGroupId(groupId, text)} value={text} filterAttribute={filterAttribute}>
-                {({ queryResult: { isFetching, data: { content: articles = [] } = {} } }) => <Articles loading={isFetching} articles={articles} onItemClick={onItemClick} suggestionsReturned={true} />}
-              </PreviewSearchSuggestionQuery>
-            </>
-          ))}
-        </ButtonGroup>
-      </Wrap>
-    </>
+          <PreviewSearchSuggestionQuery<ArticleModel> active={activeItem === getGroupId(groupId, text)} value={text} filterAttribute={filterAttribute}>
+            {({ queryResult: { isFetching, data: { content: articles = [] } = {} } }) => <Articles loading={isFetching} articles={articles} onItemClick={onItemClick} suggestionsReturned={true} />}
+          </PreviewSearchSuggestionQuery>
+        </NavMenu.Item>
+      ))}
+    </Box>
   );
 };
 
 const getGroupId = (name: string, value: string) => `${name}@${value}`;
+
 type InitialState = PreviewSearchInitialState<'itemsPerPage' | 'suggestionsList'>;
 
 const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
@@ -155,7 +169,6 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
   const loading = isLoading || isFetching;
   const [activeItem, setActiveItem] = useState('defaultArticlesResults');
   const [value, setValue] = useState('');
-  const ref = React.useRef();
   const onValueChange = (newValue: string) => {
     setValue(newValue);
   };
@@ -185,77 +198,48 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
   }
 
   return (
-    <>
-      <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }} padding={3} paddingX={'2rem'} position={'static'} background={'chakra-body-bg'} shadow={'md'}>
-        <Flex display={{ base: 'flex', md: 'flex' }} justify={'flex-center'} boxSize={'100%'} maxWidth="6xl">
-          <InputGroup size="md" width={'full'} rounded={'none'} onSubmit={handleSubmit}>
-            <InputLeftElement>
-              <FaSearch />
-            </InputLeftElement>
-            <Input name="query" onChange={keyphraseHandler} placeholder="What are you looking for?" onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
-            <InputRightElement width={'200px'}>
-              <Text display={{ base: 'none', sm: 'flex ' }}>Powered by</Text>
-              <Image src="https://developers.sitecore.com/_next/image?url=https%3A%2F%2Fsitecorecontenthub.stylelabs.cloud%2Fapi%2Fpublic%2Fcontent%2F43e414bbc80143e2b21acd0808456e26&w=96&q=75" opacity={0.5} alt="Sitecore Search logo" />
-            </InputRightElement>
-          </InputGroup>
-        </Flex>
-      </Flex>
-      {loading && <Loading />}
-      {!loading && (
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }} position={'static'} id="testmva">
-          <Flex display={{ base: 'flex', md: 'flex' }} justify={'flex-center'} boxSize={'100%'} padding={3} width="full" background={'chakra-body-bg'} shadow={'sm'} maxWidth={'6xl'}>
-            {articleSuggestions.length > 0 && (
-              // <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />
+    <NavMenu.Root onValueChange={onValueChange} value={value} id="NavMenuRoot" style={{ width: '100%' }}>
+      <NavMenu.List style={{ listStyle: 'none' }}>
+        <NavMenu.Item>
+          <FormControl onSubmit={handleSubmit} as="form">
+            <InputGroup width={'full'} rounded={'none'}>
+              <InputLeftElement>
+                <FaSearch />
+              </InputLeftElement>
+              <Input as={NavMenu.InputTrigger} name="query" onChange={keyphraseHandler} placeholder="What are you looking for?" onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
+              <InputRightElement width={'200px'}>
+                <Text display={{ base: 'none', sm: 'flex ' }}>Powered by</Text>
+                <Image src="https://developers.sitecore.com/_next/image?url=https%3A%2F%2Fsitecorecontenthub.stylelabs.cloud%2Fapi%2Fpublic%2Fcontent%2F43e414bbc80143e2b21acd0808456e26&w=96&q=75" alt="Sitecore Search logo" />
+              </InputRightElement>
+            </InputGroup>
+          </FormControl>
 
-              <Wrap>
-                <Heading variant={'section'}>Suggested Terms</Heading>
-
-                <ButtonGroup variant="navigation" orientation="vertical" spacing="1" m="-2">
-                  {articleSuggestions.map(({ text }) => (
-                    <>
-                      <Button
-                        onMouseOver={(e) => {
-                          const target = e.target as HTMLLinkElement;
-                          target.focus();
-                        }}
-                        maxWidth={'240'}
-                        onFocus={() => setActiveItem(getGroupId(keyphrase.toString(), text))}
-                        onClick={() => onGroupTitleClick(text)}
-                      >
-                        <Text isTruncated>{text}</Text>
-                      </Button>
-
-                      <PreviewSearchSuggestionQuery<ArticleModel> active={activeItem === getGroupId(keyphrase.toString(), text)} value={text}>
-                        {({ queryResult: { isFetching, data: { content: articles = [] } = {} } }) => <Articles loading={isFetching} articles={articles} onItemClick={onItemClick} suggestionsReturned={true} />}
-                      </PreviewSearchSuggestionQuery>
-                    </>
-                  ))}
-                </ButtonGroup>
-              </Wrap>
-            )}
-
-            <Articles articles={articles} onItemClick={onItemClick} suggestionsReturned={articleSuggestions.length > 0} />
-          </Flex>
-        </Flex>
-      )}
-      {/* <NavMenu.Content className="relative left-0 justify-center inline-block w-full pt-0 border-b border-r shadow-md bg-theme-bg text-theme-text border-theme-border">
+          <Flex as={NavMenu.Content} position={'relative'} left={0} display={'inline-block'} width={'100%'} justifyContent={'center'} direction={'row'} background={'chakra-body-bg'}>
             <Presence present={loading}>
               <Loading />
             </Presence>
             {!loading && (
-              <NavMenu.SubContent orientation="vertical" value={activeItem} className="box-border block w-full" ref={widgetRef}>
-                <NavMenu.List className="">
-                  {articleSuggestions.length > 0 && (
-                    <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />
-                  )}
-                  <NavMenu.Item value="defaultArticlesResults" key="defaultArticlesResults" className="b-0 bg-none">
-                    <NavMenu.Trigger aria-hidden className="hidden" />
-                  </NavMenu.Item>
-                </NavMenu.List>
-              </NavMenu.SubContent>
+              <Box shadow={'md'}>
+                <NavMenu.SubContent orientation="vertical" value={activeItem} ref={widgetRef}>
+                  <NavMenu.List style={{ listStyle: 'none' }}>
+                    {articleSuggestions.length > 0 && (
+                      <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />
+                    )}
+
+                    <Box as={NavMenu.Item} value="defaultArticlesResults" key="defaultArticlesResults" className="b-0 bg-none">
+                      <VisuallyHidden>
+                        <NavMenu.Trigger aria-hidden />
+                      </VisuallyHidden>
+                      <Articles articles={articles} onItemClick={onItemClick} suggestionsReturned={articleSuggestions.length > 0} />
+                    </Box>
+                  </NavMenu.List>
+                </NavMenu.SubContent>
+              </Box>
             )}
-          </NavMenu.Content> */}
-    </>
+          </Flex>
+        </NavMenu.Item>
+      </NavMenu.List>
+    </NavMenu.Root>
   );
 };
 

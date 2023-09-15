@@ -99,7 +99,13 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
           </Flex>
         </Flex>
 
-        {children && children}
+        {children && (
+          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }} padding={3} paddingX={'2rem'} position={'static'} background={'chakra-body-bg'} shadow={'md'} height={16}>
+            <Box display={'flex'} boxSize={'100%'} maxWidth={'6xl'} width={'100%'}>
+              {children}
+            </Box>
+          </Flex>
+        )}
 
         <Collapse in={isOpen} animateOpacity>
           <MobileNav />

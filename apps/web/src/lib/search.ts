@@ -8,3 +8,22 @@ export const SEARCH_CONFIG = {
 };
 
 export const IsSearchEnabled = () => SEARCH_CONFIG.env && SEARCH_CONFIG.customerKey && SEARCH_CONFIG.apiKey ? true : false;
+
+export function getColorScheme(resultType: string) {
+  if (resultType == 'Article') {
+    return 'purple';
+  }
+  if (resultType == 'Forum') {
+    return 'teal';
+  }
+  if (resultType == 'Repository') {
+    return 'gray';
+  }
+  if (resultType == 'Video') {
+    return 'red';
+  }
+  if (resultType == 'ChangeLog') {
+    return 'blue';
+  }
+  return 'cyan';
+}
