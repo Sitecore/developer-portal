@@ -39,7 +39,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
 
   return (
     <>
-      <Card ref={entryRef} variant={'unstyled'} mt={8} mb={16}>
+      <Card ref={entryRef} variant={'unstyled'} mt={2} mb={8}>
         <CardHeader pb={4}>
           <Heading as="h2" fontSize={'1.25rem'} id={getSlug(item.title)}>
             <Link href={getChangelogEntryUrl(item)} title={item.title}>
@@ -52,7 +52,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
         <CardBody py={0}>
           {item.image.length > 0 && (
             <>
-              <Image src={`${item.image[0].fileUrl}?transform=true&width=670&height=250&fit=crop&gravity=auto`} alt={item.title || ''} borderRadius={'lg'} onClick={onOpen} />
+              <Image src={`${item.image[0].fileUrl}?transform=true&width=670&height=250&fit=crop&gravity=auto`} alt={item.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} />
 
               <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnOverlayClick size={'6xl'}>
                 <ModalOverlay />
