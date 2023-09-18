@@ -9,8 +9,8 @@ import { translateDateAsYearMonth } from 'ui/common/translate-date';
 import Hero from '../../components/Hero';
 import CategoryTileList, { CategoryTileProps } from '../../components/ui/CategoryTileList';
 import { CenteredContent } from '../../components/ui/CenteredContent';
+import { ContentSection } from '../../components/ui/ContentSection';
 import PromoCard from '../../components/ui/PromoCard';
-import { VerticalGroup } from '../../components/ui/VerticalGroup';
 import Layout from '../../layouts/Layout';
 import { PageInfo } from '../../lib/interfaces/page-info';
 import { getNewsletterTitle } from '../../lib/newsletter';
@@ -72,7 +72,7 @@ const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <VerticalGroup>
+      <ContentSection bg="neutral-subtle-bg">
         <CenteredContent>
           <PromoCard {...newsletterPromo} />
 
@@ -80,7 +80,7 @@ const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }
 
           <CategoryTileList cards={newsletters} />
         </CenteredContent>
-      </VerticalGroup>
+      </ContentSection>
     </Layout>
   );
 };

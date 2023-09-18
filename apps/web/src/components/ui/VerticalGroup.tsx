@@ -3,7 +3,6 @@ import { Flex, FlexProps } from '@chakra-ui/react';
 export const VerticalGroup = (props: FlexProps) => (
   <Flex
     as="section"
-    id="verticalgroup"
     direction="column"
     alignItems="center"
     justifyContent="flex-start"
