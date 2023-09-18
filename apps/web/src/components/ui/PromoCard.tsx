@@ -1,5 +1,5 @@
 // Global
-import { Card, CardBody, CardFooter, Heading, Image, Stack, Text } from '@chakra-ui/react';
+import { Card, CardBody, Heading, Hide, Image, Stack, Text } from '@chakra-ui/react';
 import { ButtonLink } from './ButtonLink';
 // Components
 
@@ -34,16 +34,23 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
 const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps): JSX.Element => (
   <Card direction={{ base: 'column', sm: 'row' }} overflow="hidden" variant="outlineRaised">
     {isImageLeft && <PromoCardImage img={img} />}
+    <Hide above="md">
+      <PromoCardImage img={img} />
+    </Hide>
     <Stack>
       <CardBody>
         <Heading as={'h3'} size="md">
           {title}
         </Heading>
         <Text>{description}</Text>
+        {!!link && <ButtonLink variant={'link'} text={link.text ? link.text : 'Read more'} href={link.href} />}
       </CardBody>
-      <CardFooter>{!!link && <ButtonLink variant={'link'} text={link.text ? link.text : 'Read more'} href={link.href} />}</CardFooter>
     </Stack>
-    {!isImageLeft && <PromoCardImage img={img} />}
+    {!isImageLeft && (
+      <Hide below="md">
+        <PromoCardImage img={img} />
+      </Hide>
+    )}
   </Card>
 );
 

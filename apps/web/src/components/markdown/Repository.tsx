@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter, CardHeader, Heading, Text } from '@chakra-ui/react';
+import { Card, CardBody, CardHeader, Heading, Text } from '@chakra-ui/react';
 import { mdiGithub } from '@mdi/js';
 import Icon from '@mdi/react';
 import SvgLogo, { Logo, isValidLogo } from '../common/SvgLogo';
@@ -31,11 +31,8 @@ export const Repository = ({ name, description, repositoryUrl, framework }: Repo
       <CardBody>
         {name && <Heading as="h4">{name}</Heading>}
         {description && <Text>{description}</Text>}
-      </CardBody>
-
-      <CardFooter>
         <ButtonLink href={repositoryUrl} variant="outline" size="sm" icon={<Icon path={mdiGithub} size={1} />} text="Repository" />
-      </CardFooter>
+      </CardBody>
     </Card>
   );
 };
