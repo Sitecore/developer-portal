@@ -1,4 +1,4 @@
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Grid, GridItem, Hide } from '@chakra-ui/react';
 
 import Hero from '../components/Hero';
 import SocialFeeds from '../components/common/SocialFeeds';
@@ -40,10 +40,10 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
         <CenteredContent paddingTop={10}>
           {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
 
-          <Grid templateColumns="repeat(6, 1fr)" gap={4}>
-            {pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <GridItem>{Nav}</GridItem>}
-
-            <GridItem colSpan={pageInfo.hasInPageNav || pageInfo.hasSubPageNav ? 4 : 6}>
+          <Grid templateColumns={{ base: 'repeat(6, 1fr)' }} gap={4}>
+            <Hide below="md">{pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <GridItem>{Nav}</GridItem>}</Hide>
+            <GridItem colSpan={{ base: 6, md: pageInfo.hasInPageNav || pageInfo.hasSubPageNav ? 4 : 6 }}>
+              {/* <Hide above="md">{pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <>{Nav}</>}</Hide> */}
               <RenderContent content={pageInfo.parsedContent} />
 
               <RenderPartialGroups partialGroups={partialGroups} />

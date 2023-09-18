@@ -1,5 +1,5 @@
 // Global
-import { Box, Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import { Card, CardBody, CardFooter, Heading, Image, Stack, Text } from '@chakra-ui/react';
 import { ButtonLink } from './ButtonLink';
 // Components
 
@@ -22,29 +22,29 @@ export type PromoCardProps = PromoCardImage & {
 };
 
 const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
-  <Box>
-    <Image
-      src={img.src}
-      alt={img.alt || ''}
-      className="relative z-10"
-      //priority={true}
-      sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-    />
-  </Box>
+  <Image
+    src={img.src}
+    alt={img.alt || ''}
+    objectFit="cover"
+    maxW={{ base: '100%', sm: '400px' }}
+    //priority={true}
+  />
 );
 
 const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps): JSX.Element => (
-  <SimpleGrid columns={2} gap={6}>
+  <Card direction={{ base: 'column', sm: 'row' }} overflow="hidden" variant="outlineRaised">
     {isImageLeft && <PromoCardImage img={img} />}
-    <Flex alignItems={'flex-start'} justifyContent={'center'} flexDirection={'column'}>
-      <Heading size="2xl">{title}</Heading>
-      <Text pt={8}>{description}</Text>
-      {!!link && <ButtonLink variant={'link'} text={link.text ? link.text : 'Read more'} href={link.href} mt={8} />}
-    </Flex>
+    <Stack>
+      <CardBody>
+        <Heading as={'h3'} size="md">
+          {title}
+        </Heading>
+        <Text>{description}</Text>
+      </CardBody>
+      <CardFooter>{!!link && <ButtonLink variant={'link'} text={link.text ? link.text : 'Read more'} href={link.href} />}</CardFooter>
+    </Stack>
     {!isImageLeft && <PromoCardImage img={img} />}
-  </SimpleGrid>
+  </Card>
 );
 
 export type SimplePromoCardProps = {

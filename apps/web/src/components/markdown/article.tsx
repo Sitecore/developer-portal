@@ -1,6 +1,7 @@
-import { Box, Card, CardBody, CardFooter, CardHeader, Image, Text } from '@chakra-ui/react';
-import Link from 'next/link';
-import { ButtonLink } from '../ui/ButtonLink';
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Image, Link, Text } from '@chakra-ui/react';
+
+import { mdiArrowRight } from '@mdi/js';
+import Icon from '@mdi/react';
 
 type ArticleProps = {
   title: string;
@@ -19,7 +20,7 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
         </Text>
       </CardHeader>
       <CardBody>
-        {description && <p>{description}</p>}
+        {description && <Text>{description}</Text>}
         {imageUrl && link && (
           <Box>
             <Link href={link} title={title} rel="noreferrer noopener">
@@ -37,7 +38,9 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
       </CardBody>
       {link && !hideLinkText && (
         <CardFooter>
-          <ButtonLink variant="solid" text={linktext ? linktext : 'Read more'} href={link} />
+          <Link as={Button} href={link} title={linktext ? linktext : 'Read more'} color={'white'} rightIcon={<Icon path={mdiArrowRight} size={0.8} color={'white'} />}>
+            {linktext ? linktext : 'Read more'}
+          </Link>
         </CardFooter>
       )}
     </Card>
