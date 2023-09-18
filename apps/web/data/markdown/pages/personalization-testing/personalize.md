@@ -2,6 +2,13 @@
 solution: 'personalization-testing'
 product: ['cdp']
 title: 'Personalization & Testing - Sitecore Personalize'
+productLogo: 'Personalize'
+description: 'Use advanced decisioning models and machine learning for personalization in your composable DXP.'
+stackexchange: ['#sitecore-personalize', '#personalization', '#cdp']
+youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
+youtubeTitle: 'Latest Sitecore Personalize videos'
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['personalizationAndTesting']
 ---
 
 <img src="/images/products/personalize/full-stack-AB-testing-optimization.svg" alt="AB Testing and optimization" width="33%" align="right" />

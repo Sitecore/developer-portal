@@ -3,6 +3,12 @@ solution: ['dam-and-content-operations']
 product: ['content-hub']
 title: 'Content Hub'
 description: 'Centralize content strategy and operations for all delivery channels'
+productLogo: 'ContentHub'
+stackexchange: ['#dam', '#content-hub', '#content-hub-scripting']
+youtube: PL1jJVFm_lGnwi3LhIuz-Zbeekh9kehTSZ
+youtubeTitle: Learn more about Sitecore Content Hub
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['contentOperations']
 ---
 
 ## Introduction

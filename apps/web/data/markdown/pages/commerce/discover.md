@@ -2,7 +2,11 @@
 solution: ['search']
 product: ['discover']
 title: 'Sitecore Discover'
+productLogo: 'Discover'
 description: 'From search to sale, Discover helps you create relevant experiences that drive conversions.'
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['searchAndMerchandizing']
+youtube: PL1jJVFm_lGnyaYczFg_KFKVV1pM_mVKhP
 ---
 
 ## Introduction

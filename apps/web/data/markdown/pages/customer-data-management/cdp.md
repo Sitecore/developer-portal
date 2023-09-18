@@ -2,6 +2,12 @@
 solution: 'customer-data-management'
 product: ['cdp']
 title: 'Customer Data Management - Sitecore CDP'
+productLogo: 'CDP'
+description: 'Ingest, connect, and activate customer data across your tech stack and composable DXP'
+stackexchange: ['#cdp']
+youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['customerDataManagement']
 ---
 
 ## Introduction

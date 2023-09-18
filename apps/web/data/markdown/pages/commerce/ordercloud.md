@@ -2,7 +2,11 @@
 solution: ['commerce']
 product: ['orderCloud']
 title: 'Sitecore OrderCloud®'
+productLogo: 'OrderCloud'
 description: 'Cloud-native, headless, and API-first commerce solution'
+youtube: 'PL1jJVFm_lGnxDN-HHtT_WQRpI3zvMdYU-'
+sitecoreCommunityQuestions: true
+sitecoreCommunityQuestionsCategory: ['searchAndMerchandizing', 'storefrontsAndMarketplaces', 'orderManagement']
 ---
 
 ## Introduction
