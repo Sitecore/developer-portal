@@ -16,7 +16,7 @@ export const QuickStartMenu = () => {
               <Link as={NextLink} href={link.url} isExternal display={'block'} width={'90%'} color="neutral-fg">
                 {link.title}
               </Link>
-              {<ExternalLinkIcon />}
+              {<ExternalLinkIcon fillOpacity={0} boxSize={'1em'} />}
             </MenuItem>
           ))}
       </MenuList>
