@@ -4,8 +4,10 @@ import sitecoreTheme from '@sitecore/blok-theme';
 
 import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
 import { AppProps } from 'next/app';
-import { useEffect } from 'react';
+import { Router } from 'next/router';
+import { useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
+import TopBarProgress from 'react-topbar-progress-indicator';
 import { Footer } from '../components/navigation/Footer';
 import Navbar from '../components/navigation/NavBar';
 import SearchInputSwitcher from '../components/sitecore-search/SearchInputSwitcher';
@@ -13,8 +15,25 @@ import { proseBaseStyle } from '../lib/markdown/proseTheme';
 import { IsSearchEnabled, SEARCH_CONFIG } from '../lib/search';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [progress, setProgress] = useState(false);
   const theme = extendTheme(sitecoreTheme, withProse({ baseStyle: proseBaseStyle }));
 
+  TopBarProgress.config({
+    barColors: {
+      '0': '#fca5a5',
+      '0.5': '#b91c1c',
+      '1.0': '#450a0a',
+    },
+    shadowBlur: 2,
+  });
+
+  Router.events.on('routeChangeStart', () => {
+    setProgress(true);
+  });
+
+  Router.events.on('routeChangeComplete', () => {
+    setProgress(false);
+  });
   // useEffect for basic page views tracking via router/gtag.
   useEffect(() => {
     const tagManagerArgs = {
@@ -36,9 +55,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SearchWrapper>
       <ChakraProvider theme={theme}>
+        {progress && <TopBarProgress />}
+
         <Navbar>
-          {/* Search menu 
-          <NavBarSearch />*/}
           <SearchInputSwitcher />
         </Navbar>
         <Component {...pageProps} />
