@@ -78,8 +78,10 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
         <Flex as={'nav'} py={{ base: 3 }} px={{ base: 4 }} align={'center'} borderBottom={'1px solid #d4d4d4'} background={'chakra-body-bg'}>
           {/* Logo */}
           <Box as="a" href="/" flexShrink="0" title="Go to the home page">
-            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/a87c9e14823345f5bafb4d4d8aeba1c2" hidden={colorMode === 'dark'} alt="Sitecore logo" />
-            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/f04ab6fe01f84ecf8af076728ac13709" hidden={colorMode === 'light'} alt="Sitecore logo" />
+            <Image
+              src={useColorModeValue('https://sitecorecontenthub.stylelabs.cloud/api/public/content/a87c9e14823345f5bafb4d4d8aeba1c2', 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/f04ab6fe01f84ecf8af076728ac13709')}
+              alt="Sitecore logo"
+            />
           </Box>
 
           {/* Desktop menu */}
@@ -193,7 +195,7 @@ const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavIt
           <Link as={NextLink} href={child.url} isExternal={child.external} display={'flex'} gap={1} py={2} color={linkColor} key={key}>
             {child.logo && <ProductIcon product={child.logo} width={20} height={20} />}
             {child.title}
-            {child.external && <ExternalLinkIcon mx="2px" />}
+            {child.external && <ExternalLinkIcon mx="2px" w={4} h={4} fillOpacity={0} mt={1} />}
           </Link>
         ))}
     </Box>
@@ -264,7 +266,7 @@ const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
                     {child.children?.map((subchild, i) => (
                       <ListItem py={2} key={i}>
                         <Link as={NextLink} aria-current={currentPage === subchild.url} href={subchild.url} isExternal={subchild.external} key={i} color={'neutral.fg'}>
-                          {subchild.title} {subchild.external && <ExternalLinkIcon mx="2px" />}
+                          {subchild.title} {subchild.external && <Icon as={ExternalLinkIcon} fillOpacity={0} w={4} h={4} />}
                         </Link>
                       </ListItem>
                     ))}
