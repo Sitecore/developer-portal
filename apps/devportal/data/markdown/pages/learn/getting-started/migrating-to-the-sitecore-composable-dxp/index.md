@@ -34,6 +34,10 @@ This guide provides an overview for existing customers of the Platform DXP (XP, 
   <Article title="Custom Content Resolvers" description="Exploration of Custom Content Resolvers and their usage with XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-2" />
   <Article title="The MVP Directory" description="Headless development of custom search interfaces with XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-3" />
   <Article title="Secure Pages" description="How to handle secure pages with external identity providers with XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-4" />
+  <Article title="9 Changes affecting migration estimates" description="Estimating Sitecore XP to XM Cloud upgrade — what challenges lies ahead? (Jack Spektor)" link="https://jackspektor.medium.com/estimating-sitecore-xp-to-xm-cloud-upgrade-what-challenges-lies-ahead-226d1c36b8e" />
+  <Article title="Migration roadmap" description="A Practical Roadmap for Existing Sitecore Customers to Move To XM Cloud (David San Filippo)" link="https://blogs.perficient.com/2022/11/28/a-practical-roadmap-for-existing-sitecore-customers-to-move-to-xm-cloud/" />
+  <YouTube youTubeId="vLAfx7dps_Q" />
+  
   <Link title="Learn more about Sitecore XM Cloud" link="/content-management/xm-cloud" />
 </Row>
 
