@@ -1,9 +1,9 @@
 import { Flex, FlexProps } from '@chakra-ui/react';
 
-export const VerticalGroup = (props: FlexProps) => (
+export const ContentSection = (props: FlexProps) => (
   <Flex
     as="section"
-    id="verticalgroup"
+    id="contentSection"
     direction="column"
     alignItems="center"
     justifyContent="flex-start"

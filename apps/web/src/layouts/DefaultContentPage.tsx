@@ -5,8 +5,8 @@ import SocialFeeds from '../components/common/SocialFeeds';
 import { RenderContent, RenderPartialGroups, RenderPartials } from '../components/markdown/MarkdownContent';
 import InPageNav from '../components/navigation/InPageNav';
 import { CenteredContent } from '../components/ui/CenteredContent';
+import { ContentSection } from '../components/ui/ContentSection';
 import PromoCard, { PromoCardProps } from '../components/ui/PromoCard';
-import { VerticalGroup } from '../components/ui/VerticalGroup';
 import { ContentHeading } from '../lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '../lib/interfaces/page-info';
 import Layout from './Layout';
@@ -36,7 +36,7 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <VerticalGroup>
+      <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-subtle-bg'}>
         <CenteredContent paddingTop={10}>
           {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
 
@@ -58,7 +58,7 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
           {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
           <SocialFeeds pageInfo={pageInfo} />
         </CenteredContent>
-      </VerticalGroup>
+      </ContentSection>
     </Layout>
   );
 };

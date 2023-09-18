@@ -5,6 +5,7 @@ import SocialFeeds from '../components/common/SocialFeeds';
 import MarkdownContent from '../components/markdown/MarkdownContent';
 import InPageNav from '../components/navigation/InPageNav';
 import { CenteredContent } from '../components/ui/CenteredContent';
+import { ContentSection } from '../components/ui/ContentSection';
 import { VerticalGroup } from '../components/ui/VerticalGroup';
 import { PageInfo, PagePartialGroup, PartialData } from '../lib/interfaces/page-info';
 import Layout from './Layout';
@@ -53,7 +54,9 @@ const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, pro
     <Layout title={pageInfo.title} description={pageInfo.description}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <VerticalGroup>
+      {/* background={!pageInfo.hasInPageNav ? 'neutral-subtle-bg' : ''} id="verticalgroup" */}
+
+      <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-subtle-bg'}>
         <CenteredContent>
           {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
 
@@ -68,7 +71,7 @@ const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, pro
           {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
           <SocialFeeds pageInfo={pageInfo} />
         </CenteredContent>
-      </VerticalGroup>
+      </ContentSection>
     </Layout>
   );
 };
