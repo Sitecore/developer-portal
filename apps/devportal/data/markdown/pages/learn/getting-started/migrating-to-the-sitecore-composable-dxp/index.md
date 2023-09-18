@@ -13,10 +13,10 @@ This guide provides an overview for existing customers of the Platform DXP (XP, 
 <YouTube youTubeId="ZTjk5t9dfRQ" />
 
 <Row columns={2}>
-  <Article title="XP Global Brand Use Case Scenario" description="A global brand using heavy personalization across hundreds of sites migrates to SaaS" link="https://jasonstcyr.com/2022/07/25/sitecore-architects-guide-to-saas-migration-xp-global-brand-scenario/" />
-  <Article title="XM Jamstack Use Case Scenario" description="A modern headless architecture with XM and Edge moves to XM Cloud" link="https://jasonstcyr.com/2022/05/20/sitecore-architects-guide-to-saas-migration-xm-jamstack-scenario/" />
-  <Article title="XP Marketing Automation Use Case Scenario" description="An XP solution with EXM and Marketing automation migrates to Send and Personalize" link="https://jasonstcyr.com/2023/03/09/sitecore-architects-guide-to-saas-migration-xp-marketing-automation/" />
-  <Article title="Classic XP with Simple Personalization" description="A .NET MVC solution with simple personalization migrates to .NET headless on XM Cloud" link="https://jasonstcyr.com/2023/05/31/sitecore-architects-guide-to-saas-migration-classic-xp-with-simple-personalization/" />
+  <Article title="XP Global Brand Use Case Scenario" description="A global brand using heavy personalization across hundreds of sites migrates to SaaS" link="https://community.sitecore.com/community?id=community_blog&sys_id=ae56931f1b462554722d4042b24bcb76" />
+  <Article title="XM Jamstack Use Case Scenario" description="A modern headless architecture with XM and Edge moves to XM Cloud" link="https://community.sitecore.com/community?id=community_blog&sys_id=7c74bbfa1bb5e590b8954371b24bcb7b" />
+  <Article title="XP Marketing Automation Use Case Scenario" description="An XP solution with EXM and Marketing automation migrates to Send and Personalize" link="https://community.sitecore.com/community?id=community_blog&sys_id=f61af8f41b176910722d4042b24bcb72" />
+  <Article title="Classic XP with Simple Personalization" description="A .NET MVC solution with simple personalization migrates to .NET headless on XM Cloud" link="https://community.sitecore.com/community?id=community_blog&sys_id=9fb319151b23e510efd0ec22604bcb12" />
 </Row>
 
 ## XM Cloud
