@@ -1,4 +1,4 @@
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Container, Flex, Hide } from '@chakra-ui/react';
 
 import Hero from '../components/Hero';
 import SocialFeeds from '../components/common/SocialFeeds';
@@ -43,14 +43,14 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
         <CenteredContent paddingTop={10}>
           {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
 
-          <Grid templateColumns="repeat(6, 1fr)" gap={4}>
-            {pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <GridItem>{Nav}</GridItem>}
+          <Flex direction={{ base: 'column', md: 'row' }}>
+            {/* {pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <Container w={'full'}>{Nav}</Container>} */}
             {pageInfo.hasSubPageNav && (
-              <GridItem>
+              <Container maxW={{ base: 'full', md: 240 }}>
                 <ChildNavigation subPageNavigation={subPageNavigation} />
-              </GridItem>
+              </Container>
             )}
-            <GridItem colSpan={pageInfo.hasInPageNav || pageInfo.hasSubPageNav ? 4 : 6}>
+            <Container maxW={'full'}>
               <RenderContent content={pageInfo.parsedContent} />
 
               <RenderPartialGroups partialGroups={partialGroups} />
@@ -58,9 +58,9 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
               <RenderPartials partials={partials} />
 
               {customNavPager}
-            </GridItem>
-            {pageInfo.hasInPageNav && pageInfo.hasSubPageNav && sectionTitles.length > 0 && <GridItem>{Nav}</GridItem>}
-          </Grid>
+            </Container>
+            <Hide below="md">{pageInfo.hasInPageNav && sectionTitles.length > 0 && <Container maxW={200}>{Nav}</Container>}</Hide>
+          </Flex>
 
           {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
           <SocialFeeds pageInfo={pageInfo} />

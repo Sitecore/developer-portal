@@ -1,4 +1,4 @@
-import { Grid, GridItem, Hide } from '@chakra-ui/react';
+import { Container, Flex, Hide } from '@chakra-ui/react';
 
 import Hero from '../components/Hero';
 import SocialFeeds from '../components/common/SocialFeeds';
@@ -29,6 +29,7 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
   // Check for headings in the content
   const sectionTitles: ContentHeading[] = [];
   if (pageInfo.headings) sectionTitles.push(...pageInfo.headings);
+
   if (partials) sectionTitles.push(...partials.titles);
   const Nav = customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null;
 
@@ -40,9 +41,11 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
         <CenteredContent paddingTop={10}>
           {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
 
-          <Grid templateColumns={{ base: 'repeat(6, 1fr)' }} gap={4}>
-            <Hide below="md">{pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <GridItem>{Nav}</GridItem>}</Hide>
-            <GridItem colSpan={{ base: 6, md: pageInfo.hasInPageNav || pageInfo.hasSubPageNav ? 4 : 6 }}>
+          {/* Page structure */}
+
+          <Flex direction={{ base: 'column', md: 'row' }} justifyContent={{ base: 'revert', md: 'normal' }}>
+            {pageInfo.hasSubPageNav && <Container maxW={{ base: 'full', md: 100 }}>{Nav}</Container>}
+            <Container maxW={'full'}>
               {/* <Hide above="md">{pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <>{Nav}</>}</Hide> */}
               <RenderContent content={pageInfo.parsedContent} />
 
@@ -51,9 +54,17 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
               <RenderPartials partials={partials} />
 
               {customNavPager}
-            </GridItem>
-            {pageInfo.hasInPageNav && pageInfo.hasSubPageNav && sectionTitles.length > 0 && <GridItem>{Nav}</GridItem>}
-          </Grid>
+            </Container>
+            <Hide below="md">
+              {pageInfo.hasInPageNav && sectionTitles.length > 0 && (
+                <Container maxW={{ base: 'full', md: 180 }} pl={4}>
+                  <InPageNav titles={sectionTitles} />
+                </Container>
+              )}
+            </Hide>
+          </Flex>
+
+          {/* End Page structure */}
 
           {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
           <SocialFeeds pageInfo={pageInfo} />

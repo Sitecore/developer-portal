@@ -1,8 +1,10 @@
-import { Box, Heading, Stack } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Heading, Hide, Menu, MenuButton, MenuItem, MenuList, Show, Stack } from '@chakra-ui/react';
 import React from 'react';
 //import { useGlobalState } from '../../lib/globalState';
+import { ChevronDownIcon } from '@chakra-ui/icons';
+import { mdiMenuDown } from '@mdi/js';
+import { default as Link, default as NextLink } from 'next/link';
 import { SubPageNavigation } from '../../lib/interfaces/page-info';
-import { ButtonLink } from '../ui/ButtonLink';
 
 interface ChildNavigationProps {
   title?: string;
@@ -15,30 +17,60 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
   return (
     // <nav className={`mb-8 transform-gpu self-start transition-all md:sticky md:mr-16 ${positionalClasses} `}>
     <Box as="nav" position={'sticky'} top={'9rem'}>
-      {subPageNavigation.title && (
-        <Heading size={'sm'} mb={8}>
-          {subPageNavigation.title}
-        </Heading>
-      )}
-      <Stack spacing={4} direction="column" align="left">
-        {subPageNavigation?.routes.map((link, i) => {
-          const urlSegment = `${subPageNavigation.path}/${link.path}`;
+      {/* Mobile */}
+      <Hide above="md">
+        <Menu>
+          <MenuButton as={Button} variant={'text'} borderRadius={0} rightIcon={<ChevronDownIcon />} mb={4}>
+            {subPageNavigation.title}
+          </MenuButton>
+          <MenuList>
+            {subPageNavigation?.routes.map((link, i) => {
+              const urlSegment = `${subPageNavigation.path}/${link.path}`;
+              return (
+                <MenuItem key={i}>
+                  <Link href={urlSegment} key={i}>
+                    {link.title}
+                  </Link>
+                </MenuItem>
+              );
+            })}
+          </MenuList>
+        </Menu>
+      </Hide>
 
-          return (
-            <React.Fragment key={i}>
-              <ButtonLink showIcon={false} href={urlSegment} text={link.title} justifyContent={'left'} alignItems={'left'} />
+      {/* Desktop */}
+      <Show above="md">
+        {subPageNavigation.title && (
+          <Heading size={'sm'} mb={{ base: 2, md: 8 }}>
+            {subPageNavigation.title}
+          </Heading>
+        )}
+        <ButtonGroup variant="navigation" orientation="vertical" spacing="1" m="-2.5" position={'sticky'}>
+          {subPageNavigation?.routes.map((link, i) => {
+            const urlSegment = `${subPageNavigation.path}/${link.path}`;
 
-              {link.children?.length > 0 && (
-                <Stack spacing={4} direction="column" paddingLeft={6}>
-                  {link.children?.map((child, i) => {
-                    return <ButtonLink href={`${urlSegment}/${child.path}`} text={child.title} justifyContent={'left'} alignItems={'left'} showIcon={false} key={i} />;
-                  })}
-                </Stack>
-              )}
-            </React.Fragment>
-          );
-        })}
-      </Stack>
+            return (
+              <React.Fragment key={i}>
+                <Button as={NextLink} href={urlSegment} key={i} rightIcon={<path d={mdiMenuDown} />}>
+                  {link.title}
+                </Button>
+
+                {link.children?.length > 0 && (
+                  <Stack paddingLeft={6}>
+                    {link.children?.map((child, i) => {
+                      return (
+                        <Button as={NextLink} href={`${urlSegment}/${child.path}`} key={i}>
+                          {child.title}
+                        </Button>
+                      );
+                    })}
+                  </Stack>
+                )}
+              </React.Fragment>
+            );
+          })}
+        </ButtonGroup>
+      </Show>
     </Box>
   );
 };
