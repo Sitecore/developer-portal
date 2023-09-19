@@ -62,7 +62,7 @@ export const GenericList = (props: GenericListData) => {
               </Stack>
             </CardBody>
             <CardFooter>
-              <TextLink text={item.linkText} href={item.href} title={item.linkText} />
+              <TextLink text={item.linkText} href={item.href} title={`${item.title}`} />
             </CardFooter>
           </Card>
         ))}
