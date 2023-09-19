@@ -13,6 +13,8 @@
     "@chakra-ui/react": "^2.8.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@sitecore-search/react": "^2.0.0-alpha.2",
+    "@sitecore-search/ui": "^2.0.0-alpha.2",
     "@mdi/js": "^7.2.96",
     "@mdi/react": "^1.6.1",
     "@nikolovlazar/chakra-ui-prose": "^1.2.1",
