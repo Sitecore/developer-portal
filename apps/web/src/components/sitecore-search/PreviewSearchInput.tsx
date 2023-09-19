@@ -201,7 +201,7 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
     <NavMenu.Root onValueChange={onValueChange} value={value} id="NavMenuRoot" style={{ width: '100%' }}>
       <NavMenu.List style={{ listStyle: 'none' }}>
         <NavMenu.Item>
-          <FormControl onSubmit={handleSubmit} as="form">
+          <FormControl onSubmit={handleSubmit} as="form" role="searchbox">
             <InputGroup width={'full'} rounded={'none'}>
               <InputLeftElement>
                 <FaSearch />
