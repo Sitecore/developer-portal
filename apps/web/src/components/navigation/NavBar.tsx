@@ -112,7 +112,7 @@ const DesktopNav = () => {
   return (
     <Wrap direction={'row'}>
       {mainNavigation.map((navItem, key) => (
-        <ButtonGroup variant="navigation" orientation="horizontal" spacing="1" mx="-2">
+        <ButtonGroup variant="navigation" orientation="horizontal" spacing="1" mx="-2" key={key}>
           <Box key={navItem.title} role="group">
             <Button key={key} as={NextLink} px={6} py={5} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath == navItem.url}>
               {navItem.title}
