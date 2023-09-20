@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Button, Center, Collapse, Flex, Heading, Icon, IconButton, Image, Link, ListItem, SimpleGrid, Stack, Text, UnorderedList, useColorMode, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Center, Collapse, Flex, Heading, Icon, IconButton, Image, Link, ListItem, SimpleGrid, Stack, Text, UnorderedList, Wrap, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import throttle from 'lodash.throttle';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -19,7 +19,7 @@ export type NavBarProps = {
 
 export default function Navbar({ children }: NavBarProps): JSX.Element {
   const { isOpen, onToggle } = useDisclosure();
-  const { colorMode } = useColorMode();
+  const router = useRouter();
 
   /**
    *  Hook for scroll state
@@ -64,17 +64,7 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
 
   return (
     <Slide in={!scrolled} direction="top-half" style={{ zIndex: 9999 }}>
-      <Box
-        as="header"
-        shadow={'sm'}
-        zIndex={999}
-        width={'full'}
-
-        //top={scrolled ? '-14' : '0'}
-        //transition={'all'}
-        //transitionDuration={'0.15'}
-        //transitionTimingFunction={'cubic-bezier(.4,0,.2,1)'}
-      >
+      <Box as="header" shadow={'sm'} zIndex={999} width={'full'}>
         <Flex as={'nav'} py={{ base: 3 }} px={{ base: 4 }} align={'center'} borderBottom={'1px solid #d4d4d4'} background={'chakra-body-bg'}>
           {/* Logo */}
           <Box as="a" href="/" flexShrink="0" title="Go to the home page">
@@ -118,62 +108,34 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
+  const router = useRouter();
 
   return (
-    <Stack direction={'row'} spacing={4}>
+    <Wrap direction={'row'} spacing={4}>
       {mainNavigation.map((navItem, key) => (
-        <Box key={navItem.title} role="group">
-          <Box
-            key={key}
-            as="a"
-            px={6}
-            py={5}
-            href={navItem.url ?? '#'}
-            fontSize={'lg'}
-            overflow={'hidden'}
-            fontWeight={500}
-            color={linkColor}
-            position={'relative'}
-            _hover={{
-              textDecoration: 'none',
-              color: linkHoverColor,
-              _after: {
-                width: '100%',
-                left: 0,
-              },
-            }}
-            _after={{
-              content: `''`,
-              height: '3px',
-              width: '0',
-              position: 'absolute',
-              bottom: '0',
-              left: '50%',
-              transition: 'all 0.2s ease-in-out',
-              background: useColorModeValue('primary.400', 'primary.800'),
-            }}
-          >
-            {navItem.title}
-            {navItem.children && <Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} _hover={{ rotate: '180deg' }} w={6} h={6} />}
+        <ButtonGroup variant="navigation" orientation="vertical" spacing="1" mx="-2">
+          <Box key={navItem.title} role="group">
+            <Button key={key} as={NextLink} px={6} py={5} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath == navItem.url}>
+              {navItem.title}
+              {navItem.children && <Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} _hover={{ rotate: '180deg' }} w={6} h={6} />}
+            </Button>
+            <Box pos="absolute" left={0} top={'52px'} w="full" zIndex={998} display="none" _groupHover={{ display: 'block' }} bg={useColorModeValue('white', 'gray.800')} shadow={'lg'} transition={'all .25s ease-in-out'}>
+              {navItem.children && (
+                <Center>
+                  <Box width="100%" maxWidth="6xl">
+                    <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 6, sm: 8 }} px={5} py={6} p={{ sm: 8 }}>
+                      {navItem.children.map((child) => (
+                        <DesktopSubNav key={child.title} {...child} />
+                      ))}
+                    </SimpleGrid>
+                  </Box>
+                </Center>
+              )}
+            </Box>
           </Box>
-          <Box pos="absolute" left={0} top={'57px'} w="full" zIndex={998} display="none" _groupHover={{ display: 'block' }} bg={useColorModeValue('white', 'gray.800')} shadow={'lg'} transition={'all .25s ease-in-out'}>
-            {navItem.children && (
-              <Center>
-                <Box width="100%" maxWidth="6xl">
-                  <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 6, sm: 8 }} px={5} py={6} p={{ sm: 8 }}>
-                    {navItem.children.map((child) => (
-                      <DesktopSubNav key={child.title} {...child} />
-                    ))}
-                  </SimpleGrid>
-                </Box>
-              </Center>
-            )}
-          </Box>
-        </Box>
+        </ButtonGroup>
       ))}
-    </Stack>
+    </Wrap>
   );
 };
 
