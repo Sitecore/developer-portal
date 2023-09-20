@@ -65,7 +65,7 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
   return (
     <Slide in={!scrolled} direction="top-half" style={{ zIndex: 9999 }}>
       <Box as="header" shadow={'sm'} zIndex={999} width={'full'}>
-        <Flex as={'nav'} py={{ base: 3 }} px={{ base: 4 }} align={'center'} borderBottom={'1px solid #d4d4d4'} background={'chakra-body-bg'}>
+        <Flex as={'nav'} py={{ base: 3 }} px={{ base: 4 }} align={'center'} borderBottom={'chakra-border-color'} borderBottomWidth={1} borderBottomStyle={'solid'} background={'chakra-body-bg'}>
           {/* Logo */}
           <Box as="a" href="/" flexShrink="0" title="Go to the home page">
             <Image
