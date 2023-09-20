@@ -43,7 +43,7 @@ const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, endDate
     /** className="relative flex flex-col justify-between p-4 border border-theme-text-alt hover:shadow-theme-md" */
   }
   return (
-    <Card variant={'elevated'} shadow={'md'} size="md" padding={5} w={'full'} justifyContent={'space-between'}>
+    <Card variant={'outline'} size="md" padding={5} w={'full'} justifyContent={'space-between'}>
       <CardHeader paddingBottom={0}>
         {!!categoryTitle && <Heading variant="section">{categoryTitle}</Heading>}
 

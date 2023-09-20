@@ -17,7 +17,7 @@ const CommunityList = ({ data, ...rest }: CommunityListProps): JSX.Element => (
     <SimpleGrid columns={{ base: 2, md: 3 }} spacing={8}>
       {data.content.map((link) => (
         <Box key={link.title} justifyContent={'space-between'}>
-          <Flex background={'chakra-subtle-bg'} border={'1px'} borderColor={useColorModeValue('blackAlpha.300', 'whiteAlpha.900')} mb={5} height={{ base: 100, md: 150 }} justifyContent={'center'}>
+          <Flex background={'chakra-subtle-bg'} border={'1px'} borderColor={useColorModeValue('blackAlpha.300', 'whiteAlpha.900')} mb={5} height={{ base: 100, md: 150 }} justifyContent={'center'} rounded="md">
             <Image src={link.img.src} alt={link.img.alt || ''} width="368" height="200" style={{ objectFit: 'contain' }} />
           </Flex>
           <Heading as="h3" size={'md'}>

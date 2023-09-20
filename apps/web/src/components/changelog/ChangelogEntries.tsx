@@ -37,7 +37,7 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
           return (
             <Flex justifyContent={'items-start'} mb={5} key={key}>
               {!hideProductIcon && (
-                <Box display={{ base: 'none', sm: 'block' }} border={'1px'} borderColor={useColorModeValue('gray.300', 'gray.100')} textAlign={'center'} mr={5} height={'43px'} width={'43px'}>
+                <Box display={{ base: 'none', sm: 'block' }} textAlign={'center'} mr={5} height={'43px'} width={'43px'}>
                   <CustomImage boxSize={3} src={useColorModeValue(entry.lightIcon, entry.darkIcon)} alt={entry.productName ? entry.productName : 'Product icon'} width={25} margin={'.5rem'} height={25} priority={true} maxWidth={'auto'} />
                 </Box>
               )}

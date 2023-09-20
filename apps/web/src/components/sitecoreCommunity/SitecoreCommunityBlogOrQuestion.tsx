@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, Flex, HStack, Heading, Icon, Link, Skeleton, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Card, CardBody, Flex, HStack, Heading, Icon, Link, Skeleton, Stack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { SitecoreCommunityContent } from '../../lib/types/sitecoreCommunity';
 import { translateDate } from '../../lib/utils/dateUtil';
@@ -49,7 +49,7 @@ export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, contentType, load
   return (
     <Flex justifyContent={'items-start'} mb={5}>
       <Skeleton isLoaded={!loading}>
-        <Box display={{ base: 'none', sm: 'block' }} border={'1px'} textAlign={'center'} mr={5} height={'min-content'} borderColor={useColorModeValue('gray.300', 'gray.100')}>
+        <Box display={{ base: 'none', sm: 'block' }} textAlign={'center'} mr={5} height={'min-content'}>
           <Icon boxSize={3} viewBox="0 0 30 30" width="25" height="25" margin={'.5rem'}>
             <rect x="1.304" y="1.314" width="27.337" height="27.337" fill="none" stroke="currentColor" />
             <polyline fill="currentColor" stroke="currentColor" points="4.7 3.841 25.19 3.874" />

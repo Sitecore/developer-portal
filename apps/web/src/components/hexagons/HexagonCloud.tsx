@@ -49,8 +49,8 @@ export const HexagonCloud = ({ cloud, isOpen, children, onClick }: HexagonCloudP
       onMouseOver={(e) => mouseOver(e)}
       onMouseOut={() => resetElements()}
       onClick={onClick}
-      backgroundColor={useColorModeValue('transparent', 'white')}
-      color={useColorModeValue('chakra-text', 'chakra-inverse-text')}
+      backgroundColor={useColorModeValue('transparent', 'chakra-subtle-bg')}
+      color={useColorModeValue('chakra-text', 'white')}
       listStyleType={'none'}
     >
       <Box className={styles.hexGridTabTop}>
@@ -60,6 +60,7 @@ export const HexagonCloud = ({ cloud, isOpen, children, onClick }: HexagonCloudP
         </span>
         <Image className={styles.hexGridTabPlus} src="/images/modal-close.svg" alt="open" width={11} height={11} />
       </Box>
+
       <Box id={cloud.id} className={`${styles.hexGridTabItemsMobile} ${isOpen ? styles.block : ''} transition ease-in-out	`}>
         <Text p={'0 15px 1rem'} fontSize={'md'}>
           {cloud.description}

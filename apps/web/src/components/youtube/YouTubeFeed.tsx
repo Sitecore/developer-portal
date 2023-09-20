@@ -52,6 +52,7 @@ const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
                       (max-width: 1200px) 50vw,
                       33vw"
               alt={snippet.title}
+              rounded="md"
             />
           </AspectRatio>
           <AbsoluteCenter>
