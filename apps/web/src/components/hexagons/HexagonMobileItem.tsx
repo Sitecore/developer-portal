@@ -1,8 +1,8 @@
-import { Flex, Heading, ListItem, ListItemProps, Text, useColorModeValue } from '@chakra-ui/react';
-import Image from 'next/image';
-import { GetProductLogoByVariant, Type, Variant } from 'ui/common/assets';
-import { ProductInfoType } from 'ui/components/hexagons/HexagonTypes';
+import { Flex, Heading, ListItem, ListItemProps, Text } from '@chakra-ui/react';
+
+import ProductIcon from '../common/ProductIcon';
 import { ButtonLink } from '../ui/ButtonLink';
+import { ProductInfoType } from './HexagonTypes';
 import styles from './Hexagons.module.css';
 
 type HexagonMobileItemProps = ListItemProps & {
@@ -21,7 +21,7 @@ export const HexagonMobileItem = ({ product }: HexagonMobileItemProps): JSX.Elem
   return (
     <ListItem className={`${styles.mobileHexItem} ${getStyle(product.color)}`} listStyleType={'none'}>
       <Flex justifyContent={'start'}>
-        <Image src={GetProductLogoByVariant(product.product, useColorModeValue(Variant.Light, Variant.Dark), Type.IconOnly)} alt={`${product.name} icon`} width="30" height="30" />
+        <ProductIcon product={product.type} />
         <Heading as="h3" pl={2} mt={1} size={'md'}>
           {product.name}
         </Heading>

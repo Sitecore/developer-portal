@@ -144,8 +144,8 @@ const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavIt
   return (
     <Box role={'group'} display={'block'} p={2} key={title}>
       <Link as={NextLink} href={url ? url : '#'} isExternal={external} display={'flex'} gap={1} mb={2}>
-        {logo && <ProductIcon product={logo} width={30} height={20} />}
-        <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'}>
+        {logo && <ProductIcon product={logo} width={'30px'} height={'20px'} />}
+        <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'} ml={2} mt={-1}>
           {title}
         </Text>
       </Link>
@@ -154,7 +154,7 @@ const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavIt
       {children != null &&
         children.map((child, key) => (
           <Link as={NextLink} href={child.url} isExternal={child.external} display={'flex'} gap={1} py={2} color={linkColor} key={key}>
-            {child.logo && <ProductIcon product={child.logo} width={20} height={20} />}
+            {child.logo && <ProductIcon product={child.logo} width={'24px'} height={'24px'} />}
             {child.title}
             {child.external && <ExternalLinkIcon mx="2px" w={4} h={4} fillOpacity={0} mt={1} />}
           </Link>

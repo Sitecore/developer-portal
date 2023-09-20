@@ -1,6 +1,6 @@
-import { GetProductInfo } from '@/../../packages/ui/common/assets';
-import { Box, Heading, ListItem, ListItemProps, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, useColorModeValue } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, Heading, ListItem, ListItemProps, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text } from '@chakra-ui/react';
+import { GetProductInfo, Variant } from '../../lib/assets';
+import ProductIcon from '../common/ProductIcon';
 import { ButtonLink } from '../ui/ButtonLink';
 import { ProductInfoType } from './HexagonTypes';
 import styles from './Hexagons.module.css';
@@ -13,7 +13,7 @@ type HexagonItemProps = ListItemProps & {
 export const HexagonItem = ({ product, active = true }: HexagonItemProps): JSX.Element | null => {
   if (product == null) return <ListItem listStyleType={'none'} className={`${styles.hexGridItem} ${styles.transparent}`}></ListItem>;
 
-  const productInfo = GetProductInfo(product.product);
+  const productInfo = GetProductInfo(product.type);
 
   const getStyle = (color: string) => {
     if (color == 'red') return styles.hexGridItemContent_red;
@@ -26,8 +26,7 @@ export const HexagonItem = ({ product, active = true }: HexagonItemProps): JSX.E
       <PopoverTrigger>
         <ListItem listStyleType={'none'} className={`${styles.hexGridItem}   ${active ? styles.hexListItemActive : ''} `} data-target={`#${product.cloud}`}>
           <Box className={`${styles.hexGridContent} ${getStyle(product.color)}`}>
-            <Image className={styles.hexGrid__content__icon} src={productInfo.darkIcon} alt={productInfo.name} width={30} height={30} />
-
+            <ProductIcon product={product.type} variant={Variant.Dark} />
             <Heading as="h3" color={'white'} size={'sm'} maxW={'65%'}>
               {productInfo.name}
             </Heading>
@@ -39,12 +38,12 @@ export const HexagonItem = ({ product, active = true }: HexagonItemProps): JSX.E
           <PopoverCloseButton />
           <PopoverHeader>
             <Box className={styles.hexgrid__modal__title}>
-              <Image src={useColorModeValue(productInfo.lightIcon, productInfo.darkIcon)} alt="Sitecore CDP" width="30" height="30" />
+              <ProductIcon product={product.type} alt={product.name} />
               <Heading as="h3">{product.subTitle}</Heading>
             </Box>
           </PopoverHeader>
           <PopoverBody>
-            <p className="hex-grid__modal__description">{product.description}</p>
+            <Text>{product.description}</Text>
             <ButtonLink text={product.linkText} href={product.linkHref} title={`${product.linkText} product page`} className="mobile__hex__item__link" />
           </PopoverBody>
         </Box>

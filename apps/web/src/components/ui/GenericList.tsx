@@ -29,7 +29,7 @@ export type GenericListItem = {
 };
 
 const CustomImage = chakra(Image, {
-  shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
+  shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt', 'fill'].includes(prop),
 });
 
 export const GenericList = (props: GenericListData) => {
@@ -53,7 +53,10 @@ export const GenericList = (props: GenericListData) => {
             <CardBody padding={0}>
               <Stack direction={['column', 'row-reverse', 'column']} spacing={5} padding={{ base: 5, md: 0 }}>
                 <Center>
-                  <CustomImage src={item.img.src} alt={item.img.alt || ''} width={item.img.width || '368'} height={item.img.width || '170'} />
+                  <Box width={'full'} height={170} position={'relative'}>
+                    <Image fill alt="" src={item.img.src} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                  </Box>
+                  {/* // <Image src= alt={item.img.alt || ''} fill={true} style={{ width: 'auto', height: 'auto' }} /> */}
                 </Center>
                 <Box padding={5}>
                   <Heading as="h3" size="sm" mb={2}>

@@ -1,7 +1,7 @@
-import { Product } from 'ui/common/assets';
+import { Product } from '../../lib/assets';
 
 export type ProductInfoType = {
-  product: Product;
+  type: Product;
   name: string;
   subTitle: string;
   description: string;
@@ -13,9 +13,9 @@ export type ProductInfoType = {
 
 export type CloudInfoType = {
   name: string;
+  type: Product;
   id: string;
   color: string;
-  logoUrl: string;
   description: string;
   linkHref: string;
   linkText: string;

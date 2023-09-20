@@ -2,6 +2,7 @@
 import { Box, ListItem, ListItemProps, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
+import ProductIcon from '../common/ProductIcon';
 import { ButtonLink } from '../ui/ButtonLink';
 import { CloudInfoType } from './HexagonTypes';
 import styles from './Hexagons.module.css';
@@ -53,8 +54,10 @@ export const HexagonCloud = ({ cloud, isOpen, children, onClick }: HexagonCloudP
       listStyleType={'none'}
     >
       <Box className={styles.hexGridTabTop}>
-        <Image className={styles.hexGridTabIcon} src={cloud.logoUrl} alt={cloud.name} width={35} height={25} />
-        <span className={styles.hexGridTabTitle}>{cloud.name}</span>
+        <ProductIcon product={cloud.type} width={'35px'} height={'25px'} />
+        <span className={styles.hexGridTabTitle}>
+          <Text ml={4}>{cloud.name}</Text>
+        </span>
         <Image className={styles.hexGridTabPlus} src="/images/modal-close.svg" alt="open" width={11} height={11} />
       </Box>
       <Box id={cloud.id} className={`${styles.hexGridTabItemsMobile} ${isOpen ? styles.block : ''} transition ease-in-out	`}>
