@@ -19,7 +19,6 @@ export type NavBarProps = {
 
 export default function Navbar({ children }: NavBarProps): JSX.Element {
   const { isOpen, onToggle } = useDisclosure();
-  const router = useRouter();
 
   /**
    *  Hook for scroll state
@@ -111,9 +110,9 @@ const DesktopNav = () => {
   const router = useRouter();
 
   return (
-    <Wrap direction={'row'} spacing={4}>
+    <Wrap direction={'row'}>
       {mainNavigation.map((navItem, key) => (
-        <ButtonGroup variant="navigation" orientation="vertical" spacing="1" mx="-2">
+        <ButtonGroup variant="navigation" orientation="horizontal" spacing="1" mx="-2">
           <Box key={navItem.title} role="group">
             <Button key={key} as={NextLink} px={6} py={5} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath == navItem.url}>
               {navItem.title}
