@@ -51,7 +51,7 @@ export const GenericList = (props: GenericListData) => {
             <CardBody padding={0}>
               <Stack direction={['column', 'row-reverse', 'column']} spacing={5} padding={{ base: 5, md: 0 }}>
                 <Center>
-                  <CustomImage src={item.img.src} alt={item.img.alt || ''} width={item.img.width || '368'} height={item.img.width || '150'} />
+                  <CustomImage src={item.img.src} alt={item.img.alt || ''} width={item.img.width || '368'} height={item.img.width || '170'} />
                 </Center>
                 <Box padding={5}>
                   <Heading as="h3" size="sm" mb={2}>
