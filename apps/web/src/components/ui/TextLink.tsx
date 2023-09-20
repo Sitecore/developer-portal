@@ -28,7 +28,7 @@ export const TextLink = ({ href, text, isHeading, hideIcon = false, ...rest }: T
 
 const TextWithLink = ({ href, text, hideIcon }: TextLinkProps) => (
   <HStack as={'span'}>
-    <Link href={href} color={'neutral.fg'} fontWeight={'semibold'}>
+    <Link href={href} color={'primary'} fontWeight={'semibold'}>
       {text}
     </Link>
     {!hideIcon && <Icon path={mdiArrowRight} size={0.8} />}

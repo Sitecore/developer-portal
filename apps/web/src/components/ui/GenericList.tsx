@@ -1,6 +1,8 @@
-import { Box, Card, CardBody, CardFooter, CardProps, Center, Grid, Heading, Stack, chakra, useColorModeValue } from '@chakra-ui/react';
+import { Box, Card, CardBody, CardFooter, CardProps, Center, Grid, HStack, Heading, Link, Stack, chakra, useColorModeValue } from '@chakra-ui/react';
+import { mdiArrowRight } from '@mdi/js';
+import Icon from '@mdi/react';
 import Image from 'next/image';
-import { TextLink } from './TextLink';
+import NextLink from 'next/link';
 
 export type GenericListData = CardProps & {
   title: string;
@@ -62,7 +64,12 @@ export const GenericList = (props: GenericListData) => {
               </Stack>
             </CardBody>
             <CardFooter>
-              <TextLink text={item.linkText} href={item.href} title={`${item.title}`} />
+              <HStack as={'span'}>
+                <Link as={NextLink} href={item.href} color={props.overrideColor != null ? color : 'primary'} fontWeight={'semibold'}>
+                  {item.linkText}
+                </Link>
+                <Icon path={mdiArrowRight} size={0.8} />
+              </HStack>
             </CardFooter>
           </Card>
         ))}
