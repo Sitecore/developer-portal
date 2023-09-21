@@ -1,5 +1,7 @@
-import { Card, CardBody, CardHeader, LinkBox, SimpleGrid, Text } from '@chakra-ui/react';
-import { TextLink } from './TextLink';
+import { Card, CardBody, CardHeader, HStack, Heading, Link, LinkBox, SimpleGrid, Text } from '@chakra-ui/react';
+import { mdiArrowRight } from '@mdi/js';
+import Icon from '@mdi/react';
+import NextLink from 'next/link';
 
 type CategoryTileListProps = {
   cards: CategoryTileProps[];
@@ -17,7 +19,14 @@ const CategoryTileList = ({ cards }: CategoryTileListProps): JSX.Element => (
       <LinkBox as="article" key={i}>
         <Card variant="elevated" size={'lg'}>
           <CardHeader>
-            <TextLink isHeading as="h3" variant={'large'} text={card.title} href={card.href} />
+            <HStack as={'span'}>
+              <Link as={NextLink} href={card.href} color={'chakra-body-text'} fontWeight={'semibold'}>
+                <Heading as="h3" size={'lg'}>
+                  {card.title}
+                </Heading>
+              </Link>
+              <Icon path={mdiArrowRight} size={0.8} />
+            </HStack>
           </CardHeader>
           <CardBody>
             <Text>{card.description}</Text>
