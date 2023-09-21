@@ -1,4 +1,4 @@
-import { Grid, GridItem, HStack, Heading, Image, Stack, StackDivider, Tag, Text, VStack } from '@chakra-ui/react';
+import { Box, Grid, GridItem, HStack, Heading, Hide, Image, Stack, StackDivider, Tag, Text } from '@chakra-ui/react';
 import { SearchResultsInitialState, WidgetDataType, trackEntityPageViewEvent, useSearchResults, widget } from '@sitecore-search/react';
 //import Image from 'next/image';
 import { getColorScheme } from '@/src/lib/search';
@@ -68,14 +68,24 @@ export const SearchResults = (props: InitialSearchProps) => {
         <Grid templateColumns="repeat(6, 1fr)" gap={6} ref={widgetRef}>
           {articles.length > 0 && (
             <>
-              <GridItem colSpan={2}>
-                <SearchFacets onFacetClick={onFacetClick} facets={facets} />
+              <GridItem colSpan={{ base: 6, md: 2 }}>
+                {/* Hide for desktop */}
+                <Hide above="md">
+                  <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
+                </Hide>
+
+                <Box ml={2} display={'inline'}>
+                  <SearchFacets onFacetClick={onFacetClick} facets={facets} />
+                </Box>
               </GridItem>
 
-              <GridItem colSpan={4}>
+              <GridItem colSpan={{ base: 6, md: 4 }}>
                 <HStack justify={'space-between'} pb={8}>
                   {articles.length > 0 && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={initialKeyphrase} />}
-                  <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
+                  {/* Hide for mobile, will be replaced with SearchSort component line 74 */}
+                  <Hide below="md">
+                    <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
+                  </Hide>
                 </HStack>
 
                 <Stack divider={<StackDivider />} gap={2}>
@@ -104,7 +114,7 @@ export const SearchResults = (props: InitialSearchProps) => {
                           {result.name}
                         </Heading>
 
-                        <HStack spacing={10} py={4}>
+                        <HStack spacing={6} py={2}>
                           {result.type == 'Video' && (
                             <>
                               {result.image_url && <Image width={200} src={result.image_url} alt={result.index_name} shadow={'md'} />}
@@ -119,16 +129,14 @@ export const SearchResults = (props: InitialSearchProps) => {
                             </>
                           )}
 
-                          {result?.highlight?.description && <Text size="sm" noOfLines={3} dangerouslySetInnerHTML={{ __html: result.highlight.description }} my={2} />}
+                          {result?.highlight?.description && <Text size="sm" noOfLines={3} dangerouslySetInnerHTML={{ __html: result.highlight.description }} my={0} />}
                           {!result.highlight && result.description && (
-                            <VStack alignItems={'flex-start'}>
-                              <Text size="sm" noOfLines={3}>
-                                {result.description}
-                              </Text>
-                              <Text variant={'tiny'}>{result.url}</Text>
-                            </VStack>
+                            <Text size="sm" noOfLines={3} py={0}>
+                              {result.description}
+                            </Text>
                           )}
                         </HStack>
+                        <Text variant={'tiny'}>{result.url}</Text>
                       </a>
                     ))}
                 </Stack>
@@ -143,8 +151,6 @@ export const SearchResults = (props: InitialSearchProps) => {
     </>
   );
 };
-
-
 
 const SearchResultsWidget = widget(SearchResults, WidgetDataType.SEARCH_RESULTS, 'content');
 export default SearchResultsWidget;
