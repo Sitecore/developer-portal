@@ -1,14 +1,16 @@
 'use client';
 
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Button, ButtonGroup, Center, Collapse, Flex, Heading, Icon, IconButton, Image, Link, ListItem, SimpleGrid, Stack, Text, UnorderedList, Wrap, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Center, Collapse, Flex, Heading, Icon, IconButton, Link, ListItem, SimpleGrid, Stack, Text, UnorderedList, Wrap, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import throttle from 'lodash.throttle';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { NavItem, mainNavigation, sitecoreQuickLinks } from '../../../data/data-navigation';
+import { Product } from '../../lib/assets';
 import { setGlobalState, useGlobalState } from '../../lib/globalState';
 import ProductIcon from '../common/ProductIcon';
+import ProductLogo from '../common/ProductLogo';
 import { Slide } from '../common/Slide';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
@@ -67,10 +69,7 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
         <Flex as={'nav'} py={{ base: 3 }} px={{ base: 4 }} align={'center'} borderBottom={'chakra-border-color'} borderBottomWidth={1} borderBottomStyle={'solid'} background={'chakra-body-bg'}>
           {/* Logo */}
           <Box as="a" href="/" flexShrink="0" title="Go to the home page">
-            <Image
-              src={useColorModeValue('https://sitecorecontenthub.stylelabs.cloud/api/public/content/a87c9e14823345f5bafb4d4d8aeba1c2', 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/f04ab6fe01f84ecf8af076728ac13709')}
-              alt="Sitecore logo"
-            />
+            <ProductLogo product={Product.SitecoreDevelopers} width={227} height={24} />
           </Box>
 
           {/* Desktop menu */}
@@ -144,8 +143,12 @@ const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavIt
   return (
     <Box role={'group'} display={'block'} p={2} key={title}>
       <Link as={NextLink} href={url ? url : '#'} isExternal={external} display={'flex'} gap={1} mb={2}>
-        {logo && <ProductIcon product={logo} width={'30px'} height={'20px'} />}
-        <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'} ml={2} mt={-1}>
+        {logo && (
+          <Box display={'inline'} marginRight={4}>
+            <ProductIcon product={logo} width={'30px'} height={'20px'} />
+          </Box>
+        )}
+        <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'} mt={-1}>
           {title}
         </Text>
       </Link>
@@ -154,7 +157,11 @@ const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavIt
       {children != null &&
         children.map((child, key) => (
           <Link as={NextLink} href={child.url} isExternal={child.external} display={'flex'} gap={1} py={2} color={linkColor} key={key}>
-            {child.logo && <ProductIcon product={child.logo} width={'24px'} height={'24px'} />}
+            {child.logo && (
+              <Box display={'inline'} marginRight={2}>
+                <ProductIcon product={child.logo} width={'24px'} height={'24px'} />
+              </Box>
+            )}
             {child.title}
             {child.external && <ExternalLinkIcon mx="2px" w={4} h={4} fillOpacity={0} mt={1} />}
           </Link>

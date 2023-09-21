@@ -21,6 +21,7 @@ export enum Product {
   EngagementCloud,
   ContentCloud,
   CommerceCloud,
+  SitecoreDevelopers,
 }
 export enum Variant {
   Light,
@@ -341,6 +342,20 @@ const ProductLogos: ProductImage[] = [
     Name: 'Sitecore Commerce Cloud',
     logoFileName: '32cf39e48f1b407a88c6c897701904fe',
     iconFileName: 'de3264544514496bb688d329a5890b10',
+  },
+  {
+    Product: Product.SitecoreDevelopers,
+    Variant: Variant.Dark,
+    Name: 'Sitecore Developer Portal',
+    logoFileName: 'f04ab6fe01f84ecf8af076728ac13709',
+    iconFileName: '50dc07d1bb5f49438c60cd28f82ffbc5',
+  },
+  {
+    Product: Product.SitecoreDevelopers,
+    Variant: Variant.Light,
+    Name: 'Sitecore Developer Portal',
+    logoFileName: 'a87c9e14823345f5bafb4d4d8aeba1c2',
+    iconFileName: 'eb75f6e802994a59bc4091428c75d336',
   },
 ];
 
