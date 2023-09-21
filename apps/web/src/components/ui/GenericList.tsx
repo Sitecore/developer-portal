@@ -51,12 +51,11 @@ export const GenericList = (props: GenericListData) => {
         {props.data.map((item, key) => (
           <Card key={key} background={'whiteAlpha.300'} backdropFilter={'blur(16px)'} color={color} width={props.width} mx={'auto'}>
             <CardBody padding={0}>
-              <Stack direction={['column', 'row-reverse', 'column']} spacing={5} padding={{ base: 5, md: 0 }}>
+              <Stack direction={['column', 'row-reverse', 'column']} spacing={5} padding={{ base: 0, md: 0 }}>
                 <Center>
                   <Box width={'full'} height={170} position={'relative'}>
                     <Image fill alt="" src={item.img.src} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
                   </Box>
-                  {/* // <Image src= alt={item.img.alt || ''} fill={true} style={{ width: 'auto', height: 'auto' }} /> */}
                 </Center>
                 <Box padding={5}>
                   <Heading as="h3" size="sm" mb={2}>
