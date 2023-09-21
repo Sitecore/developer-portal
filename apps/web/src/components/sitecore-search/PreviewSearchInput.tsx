@@ -7,7 +7,9 @@ import { Badge, Box, Button, Card, CardBody, CardHeader, Flex, FormControl, Grid
 import { useRouter } from 'next/router';
 import { SyntheticEvent, useCallback, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
+import { Product } from '../../lib/assets';
 import { Loading } from '../common/Loading';
+import ProductLogo from '../common/ProductLogo';
 
 type ArticleModel = {
   id: string;
@@ -207,14 +209,14 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
                 <FaSearch />
               </InputLeftElement>
               <Input as={NavMenu.InputTrigger} name="query" onChange={keyphraseHandler} placeholder="What are you looking for?" onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
-              <InputRightElement width={'200px'}>
+              <InputRightElement width={{ base: '100px', md: '200px' }} opacity={'0.5'}>
                 <Text display={{ base: 'none', sm: 'flex ' }}>Powered by</Text>
-                <Image src="https://developers.sitecore.com/_next/image?url=https%3A%2F%2Fsitecorecontenthub.stylelabs.cloud%2Fapi%2Fpublic%2Fcontent%2F43e414bbc80143e2b21acd0808456e26&w=96&q=75" alt="Sitecore Search logo" />
+                <ProductLogo product={Product.Search} width={89} height={24} />
               </InputRightElement>
             </InputGroup>
           </FormControl>
 
-          <Flex as={NavMenu.Content} position={'relative'} left={0} display={'inline-block'} width={'100%'} justifyContent={'center'} direction={'row'} background={'chakra-body-bg'}>
+          <Flex as={NavMenu.Content} position={'relative'} left={0} display={{ base: 'none', md: 'inline-block' }} width={'100%'} justifyContent={'center'} direction={'row'} background={'chakra-body-bg'}>
             <Presence present={loading}>
               <Loading />
             </Presence>
