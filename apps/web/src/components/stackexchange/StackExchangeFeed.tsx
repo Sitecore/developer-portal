@@ -17,22 +17,22 @@ const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedProps): JS
 
   return (
     <Card shadow={'none'} {...rest} background={'transparent'}>
-      <CardHeader justifyContent={'space-between'} display={'flex'} px={0}>
-        <Heading as={'h3'} size={'xl'}>
+      <CardHeader justifyContent={'space-between'} display={{ base: 'inline', md: 'flex' }} px={0}>
+        <Heading as={'h3'} size={{ base: 'lg', md: 'xl' }}>
           {title ? title : `The Latest on Sitecore StackExchange`}
         </Heading>
         <ButtonLink href={`https://sitecore.stackexchange.com/}`} text={'See all questions on StackExchange'} />
       </CardHeader>
       <CardBody px={0}>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 2, md: 8 }}>
           {data.map((question) => (
-            <Flex key={question.question_id} alignItems={'flex-start'} gap={8}>
-              <Box border={'1px'} borderColor={useColorModeValue('blackAlpha.300', 'whiteAlpha.900')} p={3}>
+            <Flex key={question.question_id} alignItems={'flex-start'} gap={{ base: 4, md: 8 }}>
+              <Box border={'1px'} borderColor={useColorModeValue('blackAlpha.300', 'whiteAlpha.900')} p={{ base: 1, md: 4 }}>
                 <Text textAlign={'center'}>{question.view_count}</Text>
                 <Text variant={'small'}>Views</Text>
               </Box>
 
-              <Stack>
+              <Stack maxW={{ base: '70%', md: '100%' }}>
                 <Link href={question.link} target="_blank" rel="noopener noreferrer">
                   <Text variant="large" fontWeight={500} color={useColorModeValue('black', 'white')}>
                     {question.title}
@@ -43,7 +43,7 @@ const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedProps): JS
                 {question.tags.length && (
                   <Stack direction={{ base: 'column', sm: 'row' }} shouldWrapChildren>
                     {question.tags.map((tag) => (
-                      <Button variant={'solid'} colorScheme="purple" size={'sm'} borderRadius={0} key={tag}>
+                      <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
                         <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')}>
                           {tag}
                           <VisuallyHidden>Opens in a new tab</VisuallyHidden>

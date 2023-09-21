@@ -22,7 +22,7 @@ const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeedProps):
 
   return (
     <Card shadow={'none'} {...rest} background={'transparent'}>
-      <CardHeader justifyContent={'space-between'} display={'flex'} px={0}>
+      <CardHeader justifyContent={'space-between'} display={{ base: 'inline', md: 'flex' }} px={0}>
         <Heading as={'h3'} size={'xl'}>
           {title ? title : `Latest ${playlistTitle} videos`}
         </Heading>
