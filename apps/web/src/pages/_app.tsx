@@ -52,7 +52,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SearchWrapper>
-      <style>
+      <style jsx global>
         {`
           :root {
             --font-avenir: ${AvenirNextR.style.fontFamily};
