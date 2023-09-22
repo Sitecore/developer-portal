@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sitecore/contenthub-one-api": "^1.1.2",
-    "@sitecore/contenthub-one-sdk": "^1.1.2",
+    "@sitecore/contenthub-one-api": "^1.2.6",
+    "@sitecore/contenthub-one-sdk": "^1.2.6",
     "@tiptap/extension-blockquote": "^2.0.3",
     "@tiptap/extension-bold": "^2.0.3",
     "@tiptap/extension-bullet-list": "^2.0.3",
