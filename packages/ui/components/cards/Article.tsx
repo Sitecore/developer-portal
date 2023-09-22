@@ -1,5 +1,4 @@
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, Image, Link, Text } from '@chakra-ui/react';
-
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 
