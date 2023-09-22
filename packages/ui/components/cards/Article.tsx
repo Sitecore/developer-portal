@@ -1,6 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import Button from '../buttons/Button';
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Image, Link, Text } from '@chakra-ui/react';
+
+import { mdiArrowRight } from '@mdi/js';
+import Icon from '@mdi/react';
 
 type ArticleProps = {
   title: string;
@@ -12,26 +13,36 @@ type ArticleProps = {
 };
 export const Article = ({ title, description, link, linktext, imageUrl, hideLinkText }: ArticleProps) => {
   return (
-    <div className="article">
-      <h4>{title}</h4>
-      {description && <p>{description}</p>}
-      {imageUrl && link && (
-        <div className="not-prose relative aspect-video w-full">
-          <Link href={link} title={title} rel="noreferrer noopener">
-            <Image
-              src={imageUrl}
-              alt={title || ''}
-              className="relative z-10"
-              priority={true}
-              fill
-              sizes="(max-width: 768px) 100vw,
+    <Card variant={'outlineRaised'} size={'sm'}>
+      <CardHeader>
+        <Text as="h3" size={'md'}>
+          {title}
+        </Text>
+      </CardHeader>
+      <CardBody>
+        {description && <Text>{description}</Text>}
+        {imageUrl && link && (
+          <Box>
+            <Link href={link} title={title} rel="noreferrer noopener">
+              <Image
+                src={imageUrl}
+                alt={title || ''}
+                className="relative z-10"
+                sizes="(max-width: 768px) 100vw,
                     (max-width: 1200px) 50vw,
                     33vw"
-            />
+              />
+            </Link>
+          </Box>
+        )}
+      </CardBody>
+      {link && !hideLinkText && (
+        <CardFooter>
+          <Link as={Button} href={link} title={linktext ? linktext : 'Read more'} color={'white'} rightIcon={<Icon path={mdiArrowRight} size={0.8} color={'white'} />}>
+            {linktext ? linktext : 'Read more'}
           </Link>
-        </div>
+        </CardFooter>
       )}
-      {link && !hideLinkText && <Button variant="text" text={linktext ? linktext : 'Read more'} href={link} icon={true} />}
-    </div>
+    </Card>
   );
 };

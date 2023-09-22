@@ -1,9 +1,6 @@
-// Scripts
-import { NewsletterPath } from '@/src/common/static-paths';
-// Lib
-import { translateDateAsYearMonth } from 'ui/common/translate-date';
-// Components
-import SidebarNav from 'ui/layouts/components/sidebar/SidebarNav';
+import { NewsletterPath } from '../../lib/staticPaths';
+import { translateDateAsYearMonth } from '../../lib/utils/dateUtil';
+import SidebarNav from '../navigation/SidebarNav';
 
 interface NewsletterNavProps {
   paths: NewsletterPath[];
@@ -16,9 +13,7 @@ const NewsletterNav = ({ paths, currentYear, currentMonth }: NewsletterNavProps)
     .map((item) => ({
       month: parseInt(item.params.month, 10),
       year: parseInt(item.params.year, 10),
-      active:
-        parseInt(currentMonth, 10) == parseInt(item.params.month, 10) &&
-        parseInt(currentYear, 10) == parseInt(item.params.year, 10),
+      active: parseInt(currentMonth, 10) == parseInt(item.params.month, 10) && parseInt(currentYear, 10) == parseInt(item.params.year, 10),
       // Set the dates as the 3rd of each month to avoid having to deal with timezones rolling it backwards
       text: translateDateAsYearMonth(`${item.params.year}-${item.params.month}-03`),
       href: `/newsletter/${item.params.year}/${item.params.month}`,

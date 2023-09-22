@@ -1,4 +1,4 @@
-import { GenericListData, GenericListItem } from 'ui/common/types/genericList';
+import { GenericListData, GenericListItem } from 'ui/components/lists/genericList/types';
 
 const content: GenericListItem[] = [
   {
@@ -42,8 +42,7 @@ const content: GenericListItem[] = [
 const communityListData: GenericListData = {
   title: 'All-in-one Sitecore Experience Platform',
   subtitle: 'Deliver personalized experiences by combining customer data, AI, and marketing automation with our Sitecore Experience Platform™',
-  CssClass: 'platform',
-  content,
+  data: content,
 };
 
 export default communityListData;

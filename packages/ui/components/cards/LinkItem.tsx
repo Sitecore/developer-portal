@@ -1,15 +1,15 @@
-import Button from '../buttons/Button';
+import { Card } from '@chakra-ui/react';
+import { ButtonLink } from 'ui/components/links/ButtonLink';
 
 type LinkProps = {
   title: string;
   link: string;
   linktext?: string;
-  className?: string;
 };
-export const LinkItem = ({ title, link, className = 'bg-violet-lightest' }: LinkProps) => {
+export const LinkItem = ({ title, link }: LinkProps) => {
   return (
-    <div className={`text-link  ${className}`}>
-      <Button variant="text" text={title} href={link} icon={true} className="no-underline"></Button>
-    </div>
+    <Card variant={'filled'} py={4} px={2}>
+      <ButtonLink variant="text" text={title} href={link}></ButtonLink>
+    </Card>
   );
 };

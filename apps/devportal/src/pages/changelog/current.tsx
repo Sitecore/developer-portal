@@ -1,12 +1,10 @@
+import { Alert } from '@chakra-ui/react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { LinkItem } from 'ui/components/cards/LinkItem';
-import Container from 'ui/components/common/Container';
-import { Message, Type } from 'ui/components/common/Message';
-import { Row } from 'ui/components/common/Row';
-import VerticalGroup from 'ui/components/common/VerticalGroup';
-import Hero from 'ui/components/heros/Hero';
-import Layout from 'ui/layouts/Layout';
+import { LinkItem } from 'ui/components/cards';
+import Hero from 'ui/components/common/Hero';
+import { CenteredContent, Row, VerticalGroup } from 'ui/components/helpers';
+import Layout from '../../layouts/Layout';
 
 export default function ChangelogCurrent() {
   return (
@@ -17,15 +15,15 @@ export default function ChangelogCurrent() {
       <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
         <VerticalGroup>
-          <Container>
-            <Message type={Type.Info} className="mt-8">
+          <CenteredContent>
+            <Alert>
               <p>
                 <Link href="/changelog" className="mr-1 font-bold hover:underline">
                   Click here
                 </Link>
                 to go the public preview of the upcoming Sitecore global changelog.
               </p>
-            </Message>
+            </Alert>
             <div className="mt-10">
               <h3 className="mb-4 heading-md">Current release notes</h3>
               <p>Please check this list to find the current release notes per product</p>
@@ -39,7 +37,7 @@ export default function ChangelogCurrent() {
                 <LinkItem title="Sitecore Experience Commerce" link="https://sitecoredev.azureedge.net/~/media/1EF967E826F84A4CB62732F61F81EBFA.ashx?date=20221201T201304" />
               </Row>
             </div>
-          </Container>
+          </CenteredContent>
         </VerticalGroup>
       </Layout>
     </>

@@ -1,4 +1,4 @@
-import { GenericListData, GenericListItem } from 'ui/common/types/genericList';
+import { GenericListData, GenericListItem } from 'ui/components/lists';
 
 const content: GenericListItem[] = [
   {
@@ -46,7 +46,7 @@ const content: GenericListItem[] = [
 const communityListData: GenericListData = {
   title: 'Latest resources',
   subtitle: '',
-  content,
+  data: content,
 };
 
 export default communityListData;

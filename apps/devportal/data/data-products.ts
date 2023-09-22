@@ -1,9 +1,9 @@
-import { Product } from 'ui/common/assets';
 import { ProductInfoType } from 'ui/components/hexagons/HexagonTypes';
+import { Product } from 'ui/lib/assets';
 import { CommerceCloud, ContentCloud, EngagementCloud } from './data-clouds';
 
 export const ContentHubONE: ProductInfoType = {
-  product: Product.ContentHubOne,
+  type: Product.ContentHubOne,
   name: 'Content Hub ONE',
   subTitle: 'Agile CMS',
   description: 'A powerful and intuitive headless CMS for the simplified creation and management of experiences across channels and devices.',
@@ -13,7 +13,7 @@ export const ContentHubONE: ProductInfoType = {
   color: ContentCloud.color,
 };
 export const CDP: ProductInfoType = {
-  product: Product.CDP,
+  type: Product.CDP,
   name: 'Sitecore CDP',
   subTitle: 'Customer Data Platform',
   description: 'Optimize every experience across every channel with the leading experimentation aConnect and activate customer data across your ecosystem to drive relevance with an intelligent customer data platform.nd personalization platform.',
@@ -23,7 +23,7 @@ export const CDP: ProductInfoType = {
   color: EngagementCloud.color,
 };
 export const Discover: ProductInfoType = {
-  product: Product.Discover,
+  type: Product.Discover,
   name: 'Sitecore Discover',
   subTitle: 'Product Discovery',
   description: 'Amplify customer conversions with hyper-relevant search results and AI-driven, automated merchandising.',
@@ -34,7 +34,7 @@ export const Discover: ProductInfoType = {
 };
 
 export const Connect: ProductInfoType = {
-  product: Product.Connect,
+  type: Product.Connect,
   name: 'Sitecore Connect',
   subTitle: 'Automation',
   description: 'Integrate seamlessly with third-party apps and connectors.',
@@ -44,7 +44,7 @@ export const Connect: ProductInfoType = {
   color: EngagementCloud.color,
 };
 export const Send: ProductInfoType = {
-  product: Product.Send,
+  type: Product.Send,
   name: 'Sitecore Send',
   subTitle: 'Marketing Automation',
   description: 'Automate personalized email engagements that build trust and foster long-term relationships.',
@@ -54,7 +54,7 @@ export const Send: ProductInfoType = {
   color: EngagementCloud.color,
 };
 export const XMCloud: ProductInfoType = {
-  product: Product.XMCloud,
+  type: Product.XMCloud,
   name: 'XM Cloud',
   subTitle: 'Enterprise CMS',
   description: 'Create, manage, and deliver relevant content everywhere, lightning-fast, with a world-leading, enterprise-ready CMS.',
@@ -64,7 +64,7 @@ export const XMCloud: ProductInfoType = {
   color: ContentCloud.color,
 };
 export const Personalize: ProductInfoType = {
-  product: Product.Personalize,
+  type: Product.Personalize,
   name: 'Sitecore Personalize',
   subTitle: 'Personalization and Testing',
   description: 'Optimize every experience across every channel with the leading experimentation and personalization platform.',
@@ -74,7 +74,7 @@ export const Personalize: ProductInfoType = {
   color: EngagementCloud.color,
 };
 export const DAM: ProductInfoType = {
-  product: Product.DAM,
+  type: Product.DAM,
   name: 'Sitecore DAM',
   subTitle: 'Digital Asset Management',
   description: 'Centralize all your digital assets and deliver them to any customer touchpoint with an automated digital asset management (DAM) solution.',
@@ -84,7 +84,7 @@ export const DAM: ProductInfoType = {
   color: ContentCloud.color,
 };
 export const OrderCloud: ProductInfoType = {
-  product: Product.OrderCloud,
+  type: Product.OrderCloud,
   name: 'Sitecore OrderCloud',
   subTitle: 'B2X Commerce',
   description: 'Scale your business, sell on any channel, and future-proof your commerce strategy with the next-generation headless commerce platform.',
@@ -94,7 +94,7 @@ export const OrderCloud: ProductInfoType = {
   color: CommerceCloud.color,
 };
 export const Search: ProductInfoType = {
-  product: Product.Search,
+  type: Product.Search,
   name: 'Sitecore Search',
   subTitle: 'Intelligent Content Search',
   description: 'Predict search intent and display individualized results with a personalized search experience.',
@@ -104,7 +104,7 @@ export const Search: ProductInfoType = {
   color: ContentCloud.color,
 };
 export const ContentOps: ProductInfoType = {
-  product: Product.ContentOps,
+  type: Product.ContentOps,
   name: 'Sitecore Content Operations',
   subTitle: 'Content Operations',
   description: 'Collaborate effortlessly on content strategy, creation, and analytics with an intelligent content operations solution.',

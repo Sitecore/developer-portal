@@ -1,5 +1,5 @@
-import Image from 'next/legacy/image';
-import Button from 'ui/components/buttons/Button';
+import { Card, CardBody, CardFooter, CardHeader, Flex, GridItem, Heading, Image, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { TextLink } from 'ui/components/links/TextLink';
 
 interface NewsletterStoryPartialData {
   copy: string;
@@ -15,42 +15,53 @@ export interface NewsletterStoryData extends NewsletterStoryPartialData {
   image: string;
 }
 
+const InnerCard = ({ copy, link, title }: NewsletterStoryPartialData) => (
+  <>
+    <CardHeader>
+      <Heading as="h2" size={'md'}>
+        {title}
+      </Heading>
+    </CardHeader>
+    <CardBody py={8}>
+      <Text variant="large">{copy}</Text>
+    </CardBody>
+    <CardFooter>
+      <TextLink text={link.text || 'Read more'} href={link.href} aria-label={title} variant={'large'} />
+    </CardFooter>
+  </>
+);
+
 const NewsletterStoryPartial = ({ copy, link, title }: NewsletterStoryPartialData) => (
-  <div className="flex flex-1 flex-col justify-between">
-    <div className="mb-4">
-      <h2 className="heading-sm mb-4">{title}</h2>
-      <p>{copy}</p>
-    </div>
-    <Button variant="text" text={link.text || 'Read more'} href={link.href} icon={true} aria-label={title} />
-  </div>
+  <Card flex={'1 1 0%'} flexDirection={'column'} variant={'unstyled'}>
+    <InnerCard copy={copy} link={link} title={title} />
+  </Card>
 );
 
 const NewsletterStory = ({ variant, image, ...props }: NewsletterStoryData) => {
   if (variant === 'full-width') {
     return (
-      <div className="md:col-span-3 md:grid md:grid-cols-3 md:gap-10">
-        <div className="mb-4 block md:hidden">
-          <Image src={image} alt="" width="300" height="300" />
-        </div>
-        <div className="col-span-2">
-          <NewsletterStoryPartial {...props} />
-        </div>
-        <div className="hidden md:block">
-          <Image src={image} alt="" width="300" height="300" />
-        </div>
-      </div>
+      <GridItem colSpan={3} marginBottom={5} marginTop={5}>
+        <Card flex={'1 1 0%'} flexDirection={{ base: 'column-reverse', md: 'row' }} variant={'unstyled'}>
+          <SimpleGrid columns={3} gap={10}>
+            <GridItem colSpan={2}>
+              <Stack justifyContent={'space-between'}>
+                <InnerCard copy={props.copy} link={props.link} title={props.title} />
+              </Stack>
+            </GridItem>
+            <GridItem colSpan={1}>
+              <Image objectFit="fill" boxSize={250} src={image} alt={props.title} />
+            </GridItem>
+          </SimpleGrid>
+        </Card>
+      </GridItem>
     );
   }
 
   return (
-    <div className="flex flex-col">
-      {image && (
-        <div className="mb-4">
-          <Image src={image} alt="" width="300" height="300" />
-        </div>
-      )}
+    <Flex direction={'column'}>
+      {image && <Image src={image} alt="" objectFit={'fill'} boxSize={250} mb={4} />}
       <NewsletterStoryPartial {...props} />
-    </div>
+    </Flex>
   );
 };
 

@@ -1,19 +1,19 @@
-import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Grid, GridItem, HStack, Hide, Image, Text, useColorModeValue } from '@chakra-ui/react';
+import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
+import ChangelogList from '@components/changelog/ChangelogList';
+import { mdiRss } from '@mdi/js';
+import Icon from '@mdi/react';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
 import { SWRConfig } from 'swr';
-import Button from 'ui/components/buttons/Button';
-import Container from 'ui/components/common/Container';
-import { Message, Type } from 'ui/components/common/Message';
-import VerticalGroup from 'ui/components/common/VerticalGroup';
+import Hero from 'ui/components/common/Hero';
 import { Option } from 'ui/components/dropdown/MultiSelect';
-import Hero from 'ui/components/heros/Hero';
-import Layout from 'ui/layouts/Layout';
-import ChangelogList from '../../components/changelog/ChangelogList';
+import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
+import { ButtonLink } from 'ui/components/links/ButtonLink';
+import Layout from '../../layouts/Layout';
 
 type ChangelogHomeProps = {
   fallback: any;
@@ -31,43 +31,46 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
       </Head>
       <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
-          <div className="absolute flex h-8 flex-row dark:hidden">
-            <span className="mr-1 text-xs">Powered by</span>
+          <HStack>
+            <Text variant={'sm'}>Powered by</Text>
             <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-              <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
+              <Image
+                src={useColorModeValue('https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e', 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13')}
+                alt="Powered by Content Hub ONE"
+                width={150}
+                height={18}
+              />
             </Link>
-          </div>
-          <div className="absolute hidden h-8 flex-row dark:flex">
-            <span className="mr-1 text-xs">Powered by</span>
-            <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-              <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
-            </Link>
-          </div>
+          </HStack>
         </Hero>
+
         <VerticalGroup>
-          <Container>
-            <Message type={Type.Info} className="mt-8">
-              <p>
-                You are viewing the public preview of the upcoming Sitecore global changelog.
-                <Link href="/changelog/current" title="View the list of current release notes per product" className="mx-1 font-bold hover:underline">
-                  Click here
+          <CenteredContent py={8} gap={8}>
+            <Alert status="info">
+              <AlertIcon />
+              <AlertTitle>You are viewing the public preview of the upcoming Sitecore global changelog.</AlertTitle>
+              <AlertDescription>
+                <Link href="/changelog/current" title="View the list of current release notes per product">
+                  Click here for the current release notes per product
                 </Link>
-                for the current release notes per product
-              </p>
-            </Message>
-            <div className="mt-8 grid h-full gap-16 md:grid-cols-5">
-              <SWRConfig value={{ fallback }}>
-                <ChangelogList selectedProducts={selectedProduct} onProductsChange={setSelectedProduct} />
-              </SWRConfig>
-              <div className="col-span-2 hidden md:block">
-                <div className="flex flex-row">
-                  <Button text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'outline'} icon={true} iconName={'feed'} iconPosition="left" size={'xs'} />
-                  <Button text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'outline'} icon={true} iconName={'feed'} iconPosition="left" size={'xs'} />
-                </div>
-                <ChangelogByMonth selectedProducts={selectedProduct} />
-              </div>
-            </div>
-          </Container>
+              </AlertDescription>
+            </Alert>
+
+            <Grid templateColumns="repeat(5, 1fr)" gap={14}>
+              <GridItem colSpan={{ base: 5, md: 3 }}>
+                <SWRConfig value={{ fallback }}>
+                  <ChangelogList selectedProducts={selectedProduct} onProductsChange={setSelectedProduct} />
+                </SWRConfig>
+              </GridItem>
+              <Hide below="md">
+                <GridItem colSpan={{ base: 2 }}>
+                  <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <ChangelogByMonth product={undefined} selectedProducts={selectedProduct} />
+                </GridItem>
+              </Hide>
+            </Grid>
+          </CenteredContent>
         </VerticalGroup>
       </Layout>
     </>

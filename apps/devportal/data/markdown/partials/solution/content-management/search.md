@@ -3,6 +3,11 @@ solution: ['content-management']
 product: ['search']
 title: 'Sitecore Search'
 description: 'Intelligent, blazing-fast search.'
+productLogo: 'Search'
+twitter: ['#SitecoreSearch']
+stackexchange: ['#Sitecore-Search']
+partials: ['solution/content-management/search']
+youtube: PL1jJVFm_lGnyn9WVvW1fwSJrg6AqCndDb
 ---
 
 ## Introduction

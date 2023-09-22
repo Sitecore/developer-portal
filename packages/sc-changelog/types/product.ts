@@ -1,4 +1,4 @@
-import { GetProductLogoByVariant, Product as ProductLogo, Type, Variant } from '../../ui/common/assets';
+import { GetProductLogoByVariant, Product as ProductLogo, Type, Variant } from 'ui/lib/assets';
 import { SitecoreProductResults } from './sitecoreProduct';
 
 export type Product = {

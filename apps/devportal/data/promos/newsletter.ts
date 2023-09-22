@@ -1,4 +1,4 @@
-import type { PromoCardProps } from 'ui/components/cards/PromoCard';
+import { PromoCardProps } from 'ui/components/promos';
 
 const data: PromoCardProps = {
   title: 'Sitecore for Developers',

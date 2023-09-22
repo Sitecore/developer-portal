@@ -1,4 +1,4 @@
-import { CreateFeed } from '@/src/common/changelog-feeds';
+import { CreateFeed } from '@lib/changelog/changelog-feeds';
 import { AllChangelogEntries } from 'sc-changelog/changelog';
 
 // Default export to prevent next.js errors

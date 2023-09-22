@@ -1,32 +1,20 @@
-// Scripts
-import { getPageInfo } from '@/src/common/page-info';
-// Interfaces
-import type { PageInfo } from '@/src/interfaces/page-info';
-import type { CategoryTileProps } from 'ui/components/lists/CategoryTile';
-// Components
-import CTACard from 'ui/components/cards/CTACard';
-import ChangelogEntries from 'ui/components/changelog/ChangelogEntries';
-import Container from 'ui/components/common/Container';
-import VerticalGroup from 'ui/components/common/VerticalGroup';
-import Hero from 'ui/components/heros/Hero';
-import CategoryTileList from 'ui/components/lists/CategoryTileList';
-import CommunityList from 'ui/components/lists/CommunityList';
-import SitecoreCommunityBlog from 'ui/components/sitecoreCommunity/blog/SitecoreCommunityBlog';
-import SitecoreCommunityEvents from 'ui/components/sitecoreCommunity/events/SitecoreCommunityEvents';
-import SitecoreCommunityNews from 'ui/components/sitecoreCommunity/news/SitecoreCommunityNews';
-import SitecoreCommunityQuestions from 'ui/components/sitecoreCommunity/questions/SitecoreCommunityQuestions';
-import StackExchangeFeed from 'ui/components/stackexchange/StackExchangeFeed';
-import YouTubeFeed from 'ui/components/youtube/YouTubeFeed';
-import Layout from 'ui/layouts/Layout';
-// Data
-import communityListData from '@/data/data-community-list';
-import updatesPlatformData from '@/data/data-platform';
-import updatesListData from '@/data/data-updates';
-
-import getHelpCta from '@/data/promos/get-help';
-import { Row } from 'ui/components/common/Row';
-import GenericList from 'ui/components/lists/GenericList';
-import Hexagons from '../../../../packages/ui/components/hexagons/Hexagons';
+import { Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import communityListData from '@data/data-community-list';
+import platformData from '@data/data-platform';
+import { productSolutions } from '@data/data-product-solutions';
+import updatesListData from '@data/data-updates';
+import getHelpCta from '@data/promos/get-help';
+import { PageInfo } from '@lib/interfaces/page-info';
+import { getPageInfo } from '@lib/page-info';
+import Hero from 'ui/components/common/Hero';
+import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
+import Hexagons from 'ui/components/hexagons/Hexagons';
+import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
+import { CategoryTileList, CommunityList, GenericList } from 'ui/components/lists';
+import { CTACard } from 'ui/components/promos';
+import ChangelogEntries from '../components/changelog/ChangelogEntries';
+import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews } from '../components/sitecoreCommunity';
+import Layout from '../layouts/Layout';
 
 export async function getStaticProps(context: any) {
   const pageInfo = await getPageInfo('home', context.preview ? context.preview : null);
@@ -39,105 +27,69 @@ export async function getStaticProps(context: any) {
   };
 }
 
-const productSolutions: CategoryTileProps[] = [
-  {
-    title: 'Content Management (CMS)',
-    description: 'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.',
-    href: '/content-management/',
-  },
-  {
-    title: 'Digital Asset Management (DAM) and Content Operations',
-    description: 'Scale management, workflow and delivery of content, media and static assets',
-    href: '/dam-and-content-operations',
-  },
-  {
-    title: 'Customer Data Management',
-    description: 'Track events, activity, and customer profile information',
-    href: '/customer-data-management/',
-  },
-  {
-    title: 'Personalization and Testing',
-    description: 'Deliver personalized content and test which content is working',
-    href: '/personalization-testing/',
-  },
-  {
-    title: 'Marketing Automation',
-    description: 'Connect with customers using marketing automation',
-    href: '/marketing-automation/',
-  },
-  {
-    title: 'Commerce',
-    description: 'Build out order management, merchandising, marketplaces, and storefronts',
-    href: '/commerce/',
-  },
-  {
-    title: 'DevOps',
-    description: 'Installation, deployment, and architecture',
-    href: '/devops/',
-  },
-];
-
 type HomePageProps = {
   pageInfo: PageInfo;
 };
 
 const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
-  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
-    <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
+  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+    <Hero title={pageInfo.title} description={pageInfo.description} />
 
-    <Container>
-      <VerticalGroup size="lg">
-        <GenericList data={updatesListData} className="mt-8" columns={4} />
-        <Row columns={2} className="gap-14">
-          <ChangelogEntries content={pageInfo.changelogEntries} title="Latest updates" columns={1} headingClass="text-lg" linkText="Full changelog" />
-          <SitecoreCommunityBlog content={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} headingClass="text-lg" listItem={true} />
-        </Row>
-      </VerticalGroup>
-    </Container>
+    <VerticalGroup background={'chakra-bg'}>
+      <CenteredContent paddingTop={2}>
+        <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.data} />
+        <SimpleGrid py={4} gap={4} columns={[1, 1, 2]}>
+          <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
+          <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} listItem={true} />
+        </SimpleGrid>
+      </CenteredContent>
+    </VerticalGroup>
 
-    <section className="bg-theme-bg-alt py-16">
-      <Container>
-        <VerticalGroup size="lg">
-          <Hexagons />
-        </VerticalGroup>
-      </Container>
-    </section>
-    <section className="bg-neutral dark:bg-theme-bg-alt bg-primary-900 py-16">
-      <Container>
-        <VerticalGroup size="lg">
-          <GenericList data={updatesPlatformData} columns={3} />
-        </VerticalGroup>
-      </Container>
-    </section>
-    <Container className="mt-24">
-      <VerticalGroup size="lg">
-        <SitecoreCommunityNews content={pageInfo.sitecoreCommunity.news} columns={3} title="Community news" />
-        <SitecoreCommunityEvents content={pageInfo.sitecoreCommunity.events} />
-        <YouTubeFeed content={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
+    <VerticalGroup background={'chakra-subtle-bg'}>
+      <CenteredContent>
+        <Hexagons />
+      </CenteredContent>
+    </VerticalGroup>
+
+    <VerticalGroup background={'primary.900'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundSize={'cover'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
+      <CenteredContent>
+        <GenericList title={platformData.title} subtitle={platformData.subtitle} data={platformData.data} column={3} overrideColor={{ light: 'white', dark: 'white' }} width={{ base: 'full', md: '2xs' }} />
+      </CenteredContent>
+    </VerticalGroup>
+
+    <VerticalGroup background={'chakra-bg'}>
+      <CenteredContent>
+        <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} title="Community news" />
+        <SitecoreCommunityEvents data={pageInfo.sitecoreCommunity.events} title="Community Events" />
+        <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
         <CommunityList data={communityListData} />
-      </VerticalGroup>
-    </Container>
-    <section className="dark:bg-theme-bg-alt bg-gray-600 py-16">
-      <Container>
-        <div className="mb-8 max-w-prose">
-          <h2 className="heading-md mb-4 text-white">Explore Sitecore by solution</h2>
-          <p className="text-white">How can we help you today? Get all the information you want, depending on your business’s needs.</p>
-        </div>
+      </CenteredContent>
+    </VerticalGroup>
+
+    <VerticalGroup background={'gray.700'}>
+      <CenteredContent gap={6}>
+        <Heading as="h2" color={'white'} mb={0}>
+          Explore Sitecore by solution
+        </Heading>
+        <Text variant={'large'} color={'white'}>
+          How can we help you today? Get all the information you want, depending on your business’s needs.
+        </Text>
         <CategoryTileList cards={productSolutions} />
-      </Container>
-    </section>
-    <Container className="py-16">
-      <CTACard {...getHelpCta} />
-    </Container>
-    <section className="bg-theme-bg-alt py-16">
-      <Container>
-        <VerticalGroup>
-          <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
-          <StackExchangeFeed content={pageInfo.stackexchange} />
-        </VerticalGroup>
-      </Container>
-    </section>
+      </CenteredContent>
+    </VerticalGroup>
+
+    <VerticalGroup>
+      <CenteredContent>
+        <CTACard {...getHelpCta} />
+      </CenteredContent>
+    </VerticalGroup>
+
+    <VerticalGroup>
+      <CenteredContent>
+        {/* <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} /> */}
+        <StackExchangeFeed data={pageInfo.stackexchange} />
+      </CenteredContent>
+    </VerticalGroup>
   </Layout>
 );
-
 export default HomePage;

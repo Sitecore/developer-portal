@@ -1,23 +1,32 @@
-import Image from 'next/image';
-import { GetProductLogoByVariant, Type, Variant } from 'ui/common/assets';
-import { ProductInfoType } from 'ui/components/hexagons/HexagonTypes';
-import Button from '../buttons/Button';
+import { Flex, Heading, ListItem, ListItemProps, Text } from '@chakra-ui/react';
+import ProductIcon from '../common/ProductIcon';
+import { ButtonLink } from '../links/ButtonLink';
+import { ProductInfoType } from './HexagonTypes';
+import styles from './Hexagons.module.css';
 
-type HexagonMobileItemProps = {
+type HexagonMobileItemProps = ListItemProps & {
   product: ProductInfoType;
+};
+//styles.mobileHexItem--${product.color}
+
+const getStyle = (color: string) => {
+  if (color == 'red') return styles.mobileHexItem_red;
+  if (color == 'violet') return styles.mobileHexItem_violet;
+  if (color == 'teal') return styles.mobileHexItem_teal;
+  return '';
 };
 
 export const HexagonMobileItem = ({ product }: HexagonMobileItemProps): JSX.Element | null => {
   return (
-    <li className={`mobile__hex__item mobile__hex__item--${product.color}`}>
-      <div className="flex">
-        <Image src={GetProductLogoByVariant(product.product, Variant.Light, Type.IconOnly)} className=" dark:hidden" alt={`${product.name} icon`} width="30" height="30" />
-        <Image src={GetProductLogoByVariant(product.product, Variant.Dark, Type.IconOnly)} className="hidden dark:block" alt={`${product.name} icon`} width="30" height="30" />
-
-        <h3 className="pl-2 font-semibold">{product.name}</h3>
-      </div>
-      <p className="mobile__hex__item__description">{product.description}</p>
-      <Button variant="text" text={product.linkText} href={product.linkHref} icon={true} />
-    </li>
+    <ListItem className={`${styles.mobileHexItem} ${getStyle(product.color)}`} listStyleType={'none'}>
+      <Flex justifyContent={'start'}>
+        <ProductIcon product={product.type} />
+        <Heading as="h3" pl={2} mt={1} size={'md'}>
+          {product.name}
+        </Heading>
+      </Flex>
+      <Text my={2}>{product.description}</Text>
+      <ButtonLink text={product.linkText} href={product.linkHref} />
+    </ListItem>
   );
 };
