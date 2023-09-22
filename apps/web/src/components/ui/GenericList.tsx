@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, CardFooter, CardHeader, CardProps, Grid, HStack, Heading, Link, Show, Stack, Text, chakra, useColorModeValue } from '@chakra-ui/react';
+import { Box, Card, CardBody, CardFooter, CardHeader, CardProps, Center, Grid, HStack, Heading, Link, Show, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 import Image from 'next/image';
@@ -28,10 +28,6 @@ export type GenericListItem = {
   };
 };
 
-const CustomImage = chakra(Image, {
-  shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt', 'fill'].includes(prop),
-});
-
 export const GenericList = (props: GenericListData) => {
   const cols = props.column || 4;
   const color = props.overrideColor != null ? useColorModeValue(props.overrideColor.light, props.overrideColor.light) : undefined;
@@ -51,9 +47,15 @@ export const GenericList = (props: GenericListData) => {
         {props.data.map((item, key) => (
           <Card key={key} background={'whiteAlpha.300'} backdropFilter={'blur(16px)'} color={color} width={props.width} mx={'auto'} direction={{ base: 'column', sm: 'row', md: 'column' }}>
             <CardHeader p={0}>
-              <Box width={{ base: 'full', sm: '200px', md: '100%' }} height={{ base: '170', sm: 'full', md: '170' }} position={'relative'}>
-                <Image fill alt="" src={item.img.src} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'contain' }} />
-              </Box>
+              {(item.img.width && item.img.height && (
+                <Center mt={10}>
+                  <Image alt="" src={item.img.src} width={item.img.width} height={item.img.height} />
+                </Center>
+              )) || (
+                <Box width={{ base: 'full', sm: '200px', md: '100%' }} height={{ base: '170', sm: 'full', md: '170' }} position={'relative'}>
+                  <Image fill alt="" src={item.img.src} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'contain' }} />
+                </Box>
+              )}
             </CardHeader>
             <CardBody padding={0}>
               <Stack direction={['column', 'row', 'column']} spacing={5} padding={0}>
@@ -62,7 +64,6 @@ export const GenericList = (props: GenericListData) => {
                     {item.title}
                   </Heading>
                   <Text>{item.description}</Text>
-
                   <Show below="lg">
                     <HStack as={'span'} mt={2}>
                       <Link as={NextLink} href={item.href} color={props.overrideColor != null ? color : 'primary'} fontWeight={'semibold'}>
