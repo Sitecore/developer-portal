@@ -16,7 +16,7 @@ const Hero = ({ description, title, children, productLogo }: HeroProps): JSX.Ele
   return (
     <VerticalGroup maxWidth={'100%'} backgroundImage={`${useColorModeValue('/images/heros/hero-wide-light.webp', '/images/heros/hero-wide-dark.webp')}`} backgroundSize={'cover'} backgroundPosition={'center center'}>
       <CenteredContent gap={2} py={6} direction={{ base: 'column-reverse', md: 'column' }}>
-        <Heading as="h2" variant="section" fontSize={useBreakpointValue({ base: 'xs', md: '1rem' })} letterSpacing={0.5}>
+        <Heading as="h2" variant="section" fontSize={useBreakpointValue({ base: 'xs', md: '1rem' })} letterSpacing={0.5} fontWeight={'normal'}>
           {description}
         </Heading>
         {productLogo && <Image src={useColorModeValue(GetProductLogo(productLogo, 'Light'), GetProductLogo(productLogo, 'Dark'))} alt={`${title} logo`} width={'280'} height={'60'} />}

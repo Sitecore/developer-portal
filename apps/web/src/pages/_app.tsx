@@ -1,6 +1,4 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import { withProse } from '@nikolovlazar/chakra-ui-prose';
-import sitecoreTheme from '@sitecore/blok-theme';
+import { ChakraProvider } from '@chakra-ui/react';
 
 import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
 import { AppProps } from 'next/app';
@@ -8,15 +6,15 @@ import { Router } from 'next/router';
 import { useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
+import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
 import { Footer } from '../components/navigation/Footer';
 import Navbar from '../components/navigation/NavBar';
 import SearchInputSwitcher from '../components/sitecore-search/SearchInputSwitcher';
-import { proseBaseStyle } from '../lib/markdown/proseTheme';
 import { IsSearchEnabled, SEARCH_CONFIG } from '../lib/search';
+import { scdpTheme } from '../lib/theme/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(false);
-  const theme = extendTheme(sitecoreTheme, withProse({ baseStyle: proseBaseStyle }));
 
   TopBarProgress.config({
     barColors: {
@@ -54,7 +52,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SearchWrapper>
-      <ChakraProvider theme={theme}>
+      <style>
+        {`
+          :root {
+            --font-avenir: ${AvenirNextR.style.fontFamily};
+          }
+        `}
+      </style>
+      <ChakraProvider theme={scdpTheme}>
         {progress && <TopBarProgress />}
 
         <Navbar>
