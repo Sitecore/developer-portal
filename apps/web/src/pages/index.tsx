@@ -57,7 +57,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       </CenteredContent>
     </VerticalGroup>
 
-    <VerticalGroup background={'primary.900'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
+    <VerticalGroup background={'primary.900'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundSize={'cover'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
       <CenteredContent>
         <GenericList title={platformData.title} subtitle={platformData.subtitle} data={platformData.content} column={3} overrideColor={{ light: 'white', dark: 'white' }} width={{ base: 'full', md: '2xs' }} />
       </CenteredContent>
