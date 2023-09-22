@@ -56,9 +56,7 @@ export const GenericList = (props: GenericListData) => {
               </Box>
             </CardHeader>
             <CardBody padding={0}>
-              <Stack direction={['column', 'row', 'column']} spacing={5} padding={{ base: 5, md: 0 }}>
-                {/* // <Image src= alt={item.img.alt || ''} fill={true} style={{ width: 'auto', height: 'auto' }} /> */}
-
+              <Stack direction={['column', 'row', 'column']} spacing={5} padding={0}>
                 <Box padding={5}>
                   <Heading as="h3" size="sm" mb={2}>
                     {item.title}
