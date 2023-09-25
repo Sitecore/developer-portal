@@ -1,6 +1,5 @@
 import { Box, Card, CardBody, Flex, HStack, Heading, Icon, Link, Skeleton, Stack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { TextLink } from 'ui/components/links/TextLink';
 import { translateDate } from 'ui/lib/utils/dateUtil';
 
 import { SitecoreCommunityContent } from 'ui/components/integrations/sitecoreCommunity';
@@ -67,9 +66,9 @@ export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, loading }: Siteco
       <Skeleton isLoaded={!loading} flexGrow={1}>
         <Stack fontSize={'sm'}>
           <Heading as={'h4'} size="sm">
-            <TextLink href={`${SITECORE_COMMUNITY_URL}${item.url}`} text={item.title} rel="noreferrer noopener" hideIcon={true}>
+            <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'black'}>
               {item.title}
-            </TextLink>
+            </Link>
           </Heading>
           <HStack spacing={'24px'}>
             <Text>{new Date(item.publishDate).toLocaleString('en-US', { dateStyle: 'medium' })}</Text>
