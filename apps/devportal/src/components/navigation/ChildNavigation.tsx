@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Heading, Hide, Menu, MenuButton, MenuItem, MenuList, Show, Stack } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Heading, Hide, Menu, MenuButton, MenuItem, MenuList, Show, Stack, Text, Tooltip } from '@chakra-ui/react';
 import React from 'react';
 //import { useGlobalState } from '../../lib/globalState';
 import { ChevronDownIcon } from '@chakra-ui/icons';
@@ -51,17 +51,22 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
 
             return (
               <React.Fragment key={i}>
-                <Button as={NextLink} href={urlSegment} key={i} rightIcon={<path d={mdiMenuDown} />}>
-                  {link.title}
-                </Button>
-
+                <Tooltip label={link.title} aria-label="A tooltip">
+                  <Button as={NextLink} href={urlSegment} key={i} rightIcon={<path d={mdiMenuDown} />}>
+                    <Text maxW={190} isTruncated>
+                      {link.title}
+                    </Text>
+                  </Button>
+                </Tooltip>
                 {link.children?.length > 0 && (
                   <Stack paddingLeft={6}>
                     {link.children?.map((child, i) => {
                       return (
-                        <Button as={NextLink} href={`${urlSegment}/${child.path}`} key={i}>
-                          {child.title}
-                        </Button>
+                        <Tooltip label={child.title} aria-label="A tooltip" key={i}>
+                          <Button as={NextLink} href={`${urlSegment}/${child.path}`}>
+                            {child.title}
+                          </Button>
+                        </Tooltip>
                       );
                     })}
                   </Stack>
