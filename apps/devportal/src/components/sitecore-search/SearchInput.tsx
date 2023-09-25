@@ -29,7 +29,7 @@ const SearchInput = () => {
           }}
         />
         <InputRightElement width={'200px'}>
-          <Text display={{ base: 'none', sm: 'flex ' }}>Powered by</Text>
+          <Text display={{ base: 'none', md: 'flex ' }}>Powered by</Text>
           <Image src="https://developers.sitecore.com/_next/image?url=https%3A%2F%2Fsitecorecontenthub.stylelabs.cloud%2Fapi%2Fpublic%2Fcontent%2F43e414bbc80143e2b21acd0808456e26&w=96&q=75" alt="Sitecore Search logo" />
         </InputRightElement>
       </InputGroup>

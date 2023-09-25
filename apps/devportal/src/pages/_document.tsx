@@ -13,7 +13,7 @@ export class MyDocument<P = {}> extends Component<DocumentProps & P> {
     return (
       <Html lang="en">
         <Head />
-        <body>
+        <body style={{ scrollMarginTop: '9em' }}>
           <Main />
           <NextScript />
           <VisuallyHidden>

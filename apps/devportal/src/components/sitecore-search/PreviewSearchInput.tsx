@@ -210,7 +210,9 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
               </InputLeftElement>
               <Input as={NavMenu.InputTrigger} name="query" onChange={keyphraseHandler} placeholder="What are you looking for?" onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
               <InputRightElement width={{ base: '100px', md: '200px' }} opacity={'0.5'}>
-                <Text display={{ base: 'none', sm: 'flex ' }}>Powered by</Text>
+                <Text as={'span'} display={{ base: 'none', md: 'flex ' }}>
+                  Powered by
+                </Text>
                 <ProductLogo product={Product.Search} width={89} height={24} />
               </InputRightElement>
             </InputGroup>
