@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, Heading, Text } from '@chakra-ui/react';
+import { Card, CardBody, CardHeader, HStack, Heading, Text } from '@chakra-ui/react';
 import { mdiGithub } from '@mdi/js';
 import Icon from '@mdi/react';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
@@ -22,10 +22,12 @@ export const Repository = ({ name, description, repositoryUrl, framework }: Repo
   return (
     <Card variant={'outlineRaised'} size={'sm'} display={'flex'}>
       <CardHeader justifyContent={'flex-end'}>
-        {frameworks &&
-          frameworkLogos.map((framework, index) => {
-            return <SvgLogo logo={framework as Logo} key={index} height={40} />;
-          })}
+        <HStack>
+          {frameworks &&
+            frameworkLogos.map((framework, index) => {
+              return <SvgLogo logo={framework as Logo} key={index} height={25} />;
+            })}
+        </HStack>
       </CardHeader>
 
       <CardBody>

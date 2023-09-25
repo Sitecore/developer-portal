@@ -12,13 +12,13 @@ type ArticleProps = {
 };
 export const Article = ({ title, description, link, linktext, imageUrl, hideLinkText }: ArticleProps) => {
   return (
-    <Card variant={'outlineRaised'} size={'sm'}>
+    <Card variant={'filled'} size={'md'}>
       <CardHeader>
-        <Text as="h3" size={'md'}>
+        <Text as="h4" size={'md'}>
           {title}
         </Text>
       </CardHeader>
-      <CardBody>
+      <CardBody py={0}>
         {description && <Text>{description}</Text>}
         {imageUrl && link && (
           <Box>
@@ -36,7 +36,7 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
         )}
       </CardBody>
       {link && !hideLinkText && (
-        <CardFooter>
+        <CardFooter pt={0}>
           <Link as={Button} href={link} title={linktext ? linktext : 'Read more'} color={'white'} rightIcon={<Icon path={mdiArrowRight} size={0.8} color={'white'} />}>
             {linktext ? linktext : 'Read more'}
           </Link>

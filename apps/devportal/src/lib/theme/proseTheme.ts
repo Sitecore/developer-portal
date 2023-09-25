@@ -19,8 +19,8 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     fontFamily: 'heading',
     fontWeight: '600',
     fontSize: { base: 'xl', md: '2xl' },
-    mt: { base: 2, md: 4 },
-    mb: { base: 0, md: 0 },
+    mt: { base: 2, md: 8 },
+    mb: { base: 0, md: 4 },
   },
   h4: {
     fontFamily: 'heading',

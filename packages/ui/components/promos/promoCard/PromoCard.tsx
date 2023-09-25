@@ -1,5 +1,5 @@
 // Global
-import { Card, CardBody, Heading, Hide, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, Card, CardBody, Center, Heading, Hide, Image, Stack, Text } from '@chakra-ui/react';
 import { ButtonLink } from '../../links/ButtonLink';
 import { PromoCardImage, PromoCardProps, SimplePromoCardProps } from './types';
 
@@ -14,26 +14,28 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
 );
 
 export const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps): JSX.Element => (
-  <Card direction={{ base: 'column', sm: 'row' }} overflow="hidden" variant="outlineRaised">
-    {isImageLeft && <PromoCardImage img={img} />}
-    <Hide above="md">
-      <PromoCardImage img={img} />
-    </Hide>
-    <Stack>
-      <CardBody>
-        <Heading as={'h3'} size="md">
-          {title}
-        </Heading>
-        <Text>{description}</Text>
-        {!!link && <ButtonLink variant={'link'} text={link.text ? link.text : 'Read more'} href={link.href} />}
-      </CardBody>
-    </Stack>
-    {!isImageLeft && (
-      <Hide below="md">
+  <Center>
+    <Card direction={{ base: 'column', sm: 'row' }} overflow="hidden" variant="outlineRaised" maxW={'container.md'}>
+      {isImageLeft && <PromoCardImage img={img} />}
+      <Hide above="md">
         <PromoCardImage img={img} />
       </Hide>
-    )}
-  </Card>
+      <Stack>
+        <CardBody display={'flex'} justifyContent={'center'} alignItems={'center'}>
+          <Box height={'min-content'}>
+            <Heading as={'h4'}>{title}</Heading>
+            <Text>{description}</Text>
+            {!!link && <ButtonLink variant={'link'} text={link.text ? link.text : 'Read more'} href={link.href} />}
+          </Box>
+        </CardBody>
+      </Stack>
+      {!isImageLeft && (
+        <Hide below="md">
+          <PromoCardImage img={img} />
+        </Hide>
+      )}
+    </Card>
+  </Center>
 );
 
 export const Promo = ({ title, description, linkText, linkHref, imageSource, imageAlt, className, isImageLeft }: SimplePromoCardProps): JSX.Element => {
