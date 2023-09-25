@@ -1,10 +1,10 @@
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
 import { getChildNavgationInfo, getChildPageInfo, getPageInfo, getPartialGroupsAsArray, getPartialsAsArray } from '@lib/page-info';
 import { getStaticPathsRecursively } from '@lib/staticPaths';
-import ArticlePage from '../layouts/ArticlePage';
-import ChildOverviewPage from '../layouts/ChildOverviewPage';
-import DefaultContentPage from '../layouts/DefaultContentPage';
-import SocialPage from '../layouts/SocialPage';
+import ArticlePage from '@src/layouts/ArticlePage';
+import ChildOverviewPage from '@src/layouts/ChildOverviewPage';
+import DefaultContentPage from '@src/layouts/DefaultContentPage';
+import SocialPage from '@src/layouts/SocialPage';
 
 export async function getStaticPaths() {
   const paths = await getStaticPathsRecursively();

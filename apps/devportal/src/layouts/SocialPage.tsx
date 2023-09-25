@@ -2,14 +2,14 @@
 
 import communityListData from '@/data/data-community-list';
 import { PageInfo } from '@lib/interfaces/page-info';
+import { RenderContent } from '@src/components/markdown/MarkdownContent';
+import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
+import { SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
 import { CommunityList } from 'ui/components/lists';
 import { CTACard, CTACardProps, PromoCard, PromoCardProps } from 'ui/components/promos';
-import { RenderContent } from '../components/markdown/MarkdownContent';
-import { SitecoreCommunityNews, SitecoreCommunityQuestions } from '../components/sitecoreCommunity';
-import Layout from './Layout';
 
 type SocialPageProps = {
   pageInfo: PageInfo;

@@ -1,7 +1,7 @@
 import { Card, CardFooter, CardHeader, Heading, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import ConditionalWrapper from 'ui/components/helpers/ConditionalWrapper';
-import { translateDate } from '../../lib/utils/dateUtil';
+import { translateDate } from 'ui/lib/utils/dateUtil';
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
 
 type SitecoreCommunityNewsOrEventItemProps = {

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import SitecoreCommunityApi, { ContentType, ForumOption, SortOption } from '../../components/sitecoreCommunity/SitecoreCommunity.api';
-import { SitecoreCommunityContent, SitecoreCommunityEvent } from '../../components/sitecoreCommunity/types';
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/components/integrations/sitecoreCommunity';
+import SitecoreCommunityApi, { ContentType, ForumOption, SortOption } from 'ui/components/integrations/sitecoreCommunity/SitecoreCommunity.api';
 
 const getQueryValue = (query: string | string[] | undefined): string => {
   if (query == undefined) return '';

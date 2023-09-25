@@ -1,19 +1,18 @@
 /* eslint-disable react/prop-types */
 // Global
-import { PageInfo } from '@lib/interfaces/page-info';
-import fs from 'fs';
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import path from 'path';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '../../../lib/staticPaths';
-
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import NewsletterNav from '@components/newsletter/NewsletterNav';
 import NewsletterStory, { NewsletterStoryData } from '@components/newsletter/NewsletterStory';
+import { PageInfo } from '@lib/interfaces/page-info';
 import { getNewsletterTitle } from '@lib/newsletter';
-import { translateDateAsYearMonth } from '@lib/utils/dateUtil';
+import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
+import Layout from '@src/layouts/Layout';
+import fs from 'fs';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import path from 'path';
 import Hero from 'ui/components/common/Hero';
-import Layout from '../../../layouts/Layout';
+import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
+import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
 // Scripts
 
 // Components

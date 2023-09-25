@@ -1,17 +1,16 @@
 import { ChakraProvider } from '@chakra-ui/react';
-
 import { IsSearchEnabled, SEARCH_CONFIG } from '@lib/search';
 import { scdpTheme } from '@lib/theme/theme';
 import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
+import { Footer } from '@src/components/navigation/Footer';
+import Navbar from '@src/components/navigation/NavBar';
+import SearchInputSwitcher from '@src/components/sitecore-search/SearchInputSwitcher';
 import { AppProps } from 'next/app';
 import { Router } from 'next/router';
 import { useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
-import { Footer } from '../components/navigation/Footer';
-import Navbar from '../components/navigation/NavBar';
-import SearchInputSwitcher from '../components/sitecore-search/SearchInputSwitcher';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(false);

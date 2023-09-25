@@ -1,13 +1,13 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
 
+import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
+import SocialFeeds from '@src/components/common/SocialFeeds';
+import { RenderContent } from '@src/components/markdown/MarkdownContent';
+import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { TextLink } from 'ui/components/links/TextLink';
 import { PromoCard, PromoCardProps } from 'ui/components/promos';
-import SocialFeeds from '../components/common/SocialFeeds';
-import { RenderContent } from '../components/markdown/MarkdownContent';
-import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '../lib/interfaces/page-info';
-import Layout from './Layout';
 
 type ChildOverviewPageProps = {
   pageInfo: PageInfo;

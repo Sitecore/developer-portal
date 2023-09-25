@@ -1,14 +1,14 @@
 import { Container, Flex, Hide } from '@chakra-ui/react';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
+import SocialFeeds from '@src/components/common/SocialFeeds';
+import { RenderContent, RenderPartialGroups, RenderPartials } from '@src/components/markdown/MarkdownContent';
+import ChildNavigation from '@src/components/navigation/ChildNavigation';
+import InPageNav from '@src/components/navigation/InPageNav';
+import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { PromoCard, PromoCardProps } from 'ui/components/promos';
-import SocialFeeds from '../components/common/SocialFeeds';
-import { RenderContent, RenderPartialGroups, RenderPartials } from '../components/markdown/MarkdownContent';
-import ChildNavigation from '../components/navigation/ChildNavigation';
-import InPageNav from '../components/navigation/InPageNav';
-import Layout from './Layout';
 
 type ArticlePageProps = {
   pageInfo: PageInfo;

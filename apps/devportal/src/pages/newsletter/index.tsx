@@ -5,7 +5,7 @@ import { PageInfo } from '@lib/interfaces/page-info';
 import { getNewsletterTitle } from '@lib/newsletter';
 import { getPageInfo } from '@lib/page-info';
 import { NEWSLETTER_DATA_DIRECTORY } from '@lib/staticPaths';
-import { translateDateAsYearMonth } from '@lib/utils/dateUtil';
+import Layout from '@src/layouts/Layout';
 import fs from 'fs';
 import { GetStaticProps, NextPage } from 'next';
 import path from 'path';
@@ -13,7 +13,7 @@ import Hero from 'ui/components/common/Hero';
 import { CenteredContent, ContentSection } from 'ui/components/helpers';
 import { CategoryTileList, CategoryTileProps } from 'ui/components/lists';
 import { PromoCard } from 'ui/components/promos';
-import Layout from '../../layouts/Layout';
+import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];

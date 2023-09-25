@@ -4,6 +4,7 @@ import ChangelogList from '@components/changelog/ChangelogList';
 import { getChangelogProductPaths } from '@lib/staticPaths';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
+import Layout from '@src/layouts/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -13,7 +14,6 @@ import { slugify } from 'sc-changelog/utils/stringUtils';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
-import Layout from '../../../layouts/Layout';
 
 type ChangelogProps = {
   currentProduct: Product;

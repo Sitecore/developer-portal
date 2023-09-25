@@ -1,21 +1,19 @@
 // Global
+import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-// Interfaces
-import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SubPageNavigation } from './interfaces/page-info';
-// Components
 import StackExchangeApi from 'ui/components/integrations/stackexchange/StackExchange.api';
 import TwitterApi from 'ui/components/integrations/twitter/Twitter.api';
 import YouTubeApi from 'ui/components/integrations/youtube/YouTube.api';
-import SitecoreCommunityApi from '../components/sitecoreCommunity/SitecoreCommunity.api';
-import { SITECORE_COMMUNITY_MAX_COUNT } from '../components/sitecoreCommunity/sitecore-community.constants';
 
-import { ChangelogEntriesPaginated } from '@/../../packages/sc-changelog/changelog';
-import { SitecoreCommunityContent, SitecoreCommunityEvent } from '../components/sitecoreCommunity/types';
-import { ContentHeading } from './interfaces/contentheading';
-import { ParseContent } from './markdown/mdxParse';
-import { searchForFile } from './utils/fsUtils';
+import { ContentHeading } from '@lib/interfaces/contentheading';
+import { ParseContent } from '@lib/markdown/mdxParse';
+import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/components/integrations/sitecoreCommunity';
+import SitecoreCommunityApi from 'ui/components/integrations/sitecoreCommunity/SitecoreCommunity.api';
+import { SITECORE_COMMUNITY_MAX_COUNT } from 'ui/components/integrations/sitecoreCommunity/sitecore-community.constants';
+import { searchForFile } from 'ui/lib/utils/fsUtils';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');

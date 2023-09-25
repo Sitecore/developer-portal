@@ -1,13 +1,13 @@
 import { Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 
 import { PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
+import SocialFeeds from '@src/components/common/SocialFeeds';
+import MarkdownContent from '@src/components/markdown/MarkdownContent';
+import InPageNav from '@src/components/navigation/InPageNav';
+import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, ContentSection, VerticalGroup } from 'ui/components/helpers';
 import { PromoCard, PromoCardProps } from 'ui/components/promos';
-import SocialFeeds from '../components/common/SocialFeeds';
-import MarkdownContent from '../components/markdown/MarkdownContent';
-import InPageNav from '../components/navigation/InPageNav';
-import Layout from './Layout';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;

@@ -1,17 +1,8 @@
-// Interfaces
-
-// Global
+import { Card, CardBody, CardHeader, CardProps, Heading } from '@chakra-ui/react';
 import axios from 'axios';
 import { useState } from 'react';
-
-// Local
-import { Card, CardBody, CardHeader, CardProps, Heading } from '@chakra-ui/react';
-
-import { SortOption } from '../SitecoreCommunity.api';
-
-import { SitecoreCommunityContent } from '@/src/components/sitecoreCommunity/types';
+import { SitecoreCommunityBlogOrQuestion, SitecoreCommunityBlogOrQuestionSidebar, SitecoreCommunityContent, SortOption } from 'ui/components/integrations/sitecoreCommunity';
 import { TextLink } from 'ui/components/links/TextLink';
-import { SitecoreCommunityBlogOrQuestion, SitecoreCommunityBlogOrQuestionSidebar } from '../SitecoreCommunityBlogOrQuestion';
 
 type SitecoreCommunityBlogProps = CardProps & {
   entries?: SitecoreCommunityContent[];

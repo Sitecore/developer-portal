@@ -1,7 +1,7 @@
 import { PageInfo } from '@lib/interfaces/page-info';
 import { VerticalGroup } from 'ui/components/helpers';
 import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
-import { SitecoreCommunityBlog, SitecoreCommunityQuestions } from '../sitecoreCommunity';
+import { SitecoreCommunityBlog, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
 
 type SocialFeedsProps = {
   pageInfo: PageInfo;

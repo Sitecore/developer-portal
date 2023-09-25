@@ -28,6 +28,9 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
+import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
+import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
+import Layout from '@src/layouts/Layout';
 import Link from 'next/link';
 import { ChangelogEntryByTitle } from 'sc-changelog/changelog';
 import GetProducts from 'sc-changelog/products';
@@ -39,9 +42,6 @@ import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import SocialShare from 'ui/components/social/SocialShare';
-import ChangelogByMonth from '../../../components/changelog/ChangelogByMonth';
-import { ChangelogItemMeta } from '../../../components/changelog/ChangelogItemMeta';
-import Layout from '../../../layouts/Layout';
 
 type ChangelogProps = {
   currentProduct: Product;

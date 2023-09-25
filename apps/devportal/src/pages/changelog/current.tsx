@@ -1,10 +1,10 @@
 import { Alert } from '@chakra-ui/react';
+import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
 import { LinkItem } from 'ui/components/cards';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, Row, VerticalGroup } from 'ui/components/helpers';
-import Layout from '../../layouts/Layout';
 
 export default function ChangelogCurrent() {
   return (

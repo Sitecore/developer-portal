@@ -3,6 +3,7 @@ import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
+import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -13,7 +14,6 @@ import Hero from 'ui/components/common/Hero';
 import { Option } from 'ui/components/dropdown/MultiSelect';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
-import Layout from '../../layouts/Layout';
 
 type ChangelogHomeProps = {
   fallback: any;

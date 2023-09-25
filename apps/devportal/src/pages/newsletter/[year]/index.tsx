@@ -2,14 +2,14 @@
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getNewsletterTitle } from '@lib/newsletter';
 import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
-import { translateDateAsYearMonth } from '@lib/utils/dateUtil';
+import Layout from '@src/layouts/Layout';
 import fs from 'fs';
 import { GetStaticProps, NextPage } from 'next';
 import path from 'path';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent } from 'ui/components/helpers';
 import { CategoryTileList, CategoryTileProps } from 'ui/components/lists';
-import Layout from '../../../layouts/Layout';
+import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];

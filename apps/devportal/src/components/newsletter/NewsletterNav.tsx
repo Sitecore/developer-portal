@@ -1,5 +1,5 @@
-import { NewsletterPath } from '../../lib/staticPaths';
-import { translateDateAsYearMonth } from '../../lib/utils/dateUtil';
+import { NewsletterPath } from '@lib/staticPaths';
+import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
 import SidebarNav from '../navigation/SidebarNav';
 
 interface NewsletterNavProps {

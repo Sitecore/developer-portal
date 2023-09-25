@@ -1,10 +1,10 @@
 import { Box, Card, CardBody, Flex, HStack, Heading, Icon, Link, Skeleton, Stack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { translateDate } from '../../lib/utils/dateUtil';
-
 import { TextLink } from 'ui/components/links/TextLink';
+import { translateDate } from 'ui/lib/utils/dateUtil';
+
+import { SitecoreCommunityContent } from 'ui/components/integrations/sitecoreCommunity';
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
-import { SitecoreCommunityContent } from './types';
 
 type SitecoreCommunityBlogOrQuestionProps = {
   contentType: 'Blog' | 'Questions';
