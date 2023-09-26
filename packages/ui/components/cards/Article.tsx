@@ -12,7 +12,7 @@ type ArticleProps = {
 };
 export const Article = ({ title, description, link, linktext, imageUrl, hideLinkText }: ArticleProps) => {
   return (
-    <Card variant={'filled'} size={'md'}>
+    <Card variant={'filled'} layerStyle={'interactive.raise'} size={'md'}>
       <CardHeader>
         <Text as="h4" size={'md'}>
           {title}

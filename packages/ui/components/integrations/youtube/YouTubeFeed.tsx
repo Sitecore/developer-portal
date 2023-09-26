@@ -43,8 +43,8 @@ export const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeed
 export const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
   return (
     <Box key={id}>
-      <Box position={'relative'} marginBottom={4}>
-        <LinkBox as={NextLink} href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`} rel="noopener noreferrer">
+      <LinkBox as={NextLink} href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`} rel="noopener noreferrer">
+        <Box position={'relative'} marginBottom={4}>
           <VisuallyHidden>Opens in a new tab</VisuallyHidden>
           <AspectRatio ratio={snippet.thumbnails.medium.width / snippet.thumbnails.medium.height}>
             <Image
@@ -89,11 +89,11 @@ export const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
               </g>
             </svg>
           </AbsoluteCenter>
-        </LinkBox>
-      </Box>
-      <Text variant={'large'} fontWeight={'medium'}>
-        {snippet.title}
-      </Text>
+        </Box>
+        <Text variant={'large'} fontWeight={'medium'}>
+          {snippet.title}
+        </Text>
+      </LinkBox>
     </Box>
   );
 };
