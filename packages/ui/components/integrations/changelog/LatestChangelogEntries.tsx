@@ -31,11 +31,11 @@ const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hidePr
         <Heading as={'h3'} size={'xl'}>
           {title}
         </Heading>
-        {/* {subtitle != '' && (
+        {subtitle && (
           <Heading as="h3" size={'sm'} pb={6} mb={8}>
             {subtitle}
           </Heading>
-        )} */}
+        )}
         <TextLink href={linkHref != null ? linkHref : '/changelog'} text={linkText != null ? linkText : 'See all changes'} />
       </CardHeader>
       <CardBody paddingLeft={0} paddingRight={0} paddingBottom={0}>

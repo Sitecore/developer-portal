@@ -65,7 +65,8 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
           </Flex>
 
           {/* End Page structure */}
-          {pageInfo.changelogEntries && <LatestChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />}
+
+          <LatestChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />
 
           {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
 

@@ -7,5 +7,6 @@ youtubeTitle: 'Latest "Discover Sitecore" videos'
 sitecoreCommunityNews: 3
 sitecoreCommunityEvents: 0
 sitecoreCommunityBlog: 5
+changelog: 5
 heroImage: '/images/violet3d.png'
 ---

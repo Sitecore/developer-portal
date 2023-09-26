@@ -27,6 +27,7 @@ export type MarkdownMeta = PageInfoCore & {
   twitter?: string | string[];
   youtube?: string;
   changelogProductId?: string[];
+  changelog?: string;
   promoBefore?: string[];
   promoAfter?: string[];
   sitecoreCommunityBlog?: number | boolean;

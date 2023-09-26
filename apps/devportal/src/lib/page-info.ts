@@ -90,7 +90,6 @@ export const getPageInfo = async (params: string | string[], preview?: boolean):
    * All of these APIs will return an empty array if the corresponding meta key is null
    */
   pageInfo.stackexchange = await StackExchangeApi.get(meta.stackexchange);
-  pageInfo.changelogEntries = await(await ChangelogEntriesPaginated(false, '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
   pageInfo.twitter = await TwitterApi.get(meta.twitter);
   let twitterHandle: string | undefined = undefined;
   if (meta.twitter) {
@@ -100,6 +99,10 @@ export const getPageInfo = async (params: string | string[], preview?: boolean):
 
   if (twitterHandle) {
     pageInfo.twitterHandle = twitterHandle;
+  }
+
+  if (meta.changelog) {
+    pageInfo.changelogEntries = await(await ChangelogEntriesPaginated(false, meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
   }
 
   const youtubeInfo = await YouTubeApi.get(meta.youtube);
