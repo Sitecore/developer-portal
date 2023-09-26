@@ -1,12 +1,13 @@
 ---
 solution: 'connect'
 product: ['connect']
-title: 'Integrations - Sitecore Connect'
+title: 'Sitecore Connect'
+description: 'Low-code / No-code integration platform built on Workato'
 ---
 
 ## Introduction
 
-<img src="/images/products/connect/connect-capability.svg" alt="Connect capabilities" className="ml-4 inline w-1/3" align="right" />
+<img src="/images/products/connect/connect-capability.svg" alt="Connect capabilities"  width="33%" align="right" />
 Sitecore Connect, is a Low-code / No-code integration platform built on Workato. This platform enables your organization to connect Sitecore products with the rest of your tech stack with ease.
 
 To learn more about [Sitecore Connect](https://www.sitecore.com/products/connect) and how it can help your clients please visit [Sitecore.com](https://www.sitecore.com/products/connect).
