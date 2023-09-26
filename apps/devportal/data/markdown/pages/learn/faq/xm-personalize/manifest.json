@@ -38,17 +38,7 @@
     },
     {
       "title": "Migration",
-      "path": "migration",
-      "children": [
-        {
-          "title": "From XM",
-          "path": "from-xm"
-        },
-        {
-          "title": "From XM + Personalize",
-          "path": "from-xm-personalize"
-        }
-      ]
+      "path": "migration"
     }
   ]
 }
