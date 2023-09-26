@@ -26,7 +26,7 @@ const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hidePr
   }
 
   return (
-    <Card shadow={'none'} {...rest}>
+    <Card shadow={'none'} {...rest} background={'transparent'}>
       <CardHeader justifyContent={'space-between'} display={{ base: 'inline', md: 'flex' }} px={0}>
         <Heading as={'h3'} size={'xl'}>
           {title}
