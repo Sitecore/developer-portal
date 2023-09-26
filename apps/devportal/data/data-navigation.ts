@@ -530,7 +530,6 @@ export const mainNavigation: NavItem[] = [
       },
       {
         title: 'Commerce Cloud',
-        url: '/content-management/content-hub-one',
         logo: Product.CommerceCloud,
         children: [
           {
@@ -548,7 +547,6 @@ export const mainNavigation: NavItem[] = [
 
       {
         title: 'Platform DXP',
-        url: '/commerce/experience-commerce',
         children: [
           {
             title: 'Experience Manager',

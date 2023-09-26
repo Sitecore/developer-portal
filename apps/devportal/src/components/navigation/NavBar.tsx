@@ -156,21 +156,38 @@ const DesktopNav = () => {
   );
 };
 
+const navSection = ({ title, logo }: NavItem) => {
+  const linkColor = useColorModeValue('gray.600', 'gray.200');
+
+  return (
+    <>
+      {logo && (
+        <Box display={'inline'} marginRight={2}>
+          <ProductIcon product={logo} width={'30px'} height={'20px'} />
+        </Box>
+      )}
+      <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'} mt={-1}>
+        {title}
+      </Text>
+    </>
+  );
+};
+
 const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavItem) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
 
   return (
     <Box role={'group'} display={'block'} p={2} key={title}>
-      <Link as={NextLink} href={url ? url : '#'} isExternal={external} display={'flex'} gap={1} mb={2}>
-        {logo && (
-          <Box display={'inline'} marginRight={4}>
-            <ProductIcon product={logo} width={'30px'} height={'20px'} />
-          </Box>
-        )}
-        <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'} mt={-1}>
-          {title}
-        </Text>
-      </Link>
+      {url ? (
+        <Link as={NextLink} href={url ? url : '#'} isExternal={external} display={'flex'} gap={1} mb={2}>
+          {navSection({ title, logo })}
+        </Link>
+      ) : (
+        <Flex gap={1} mb={2}>
+          {navSection({ title, logo })}
+        </Flex>
+      )}
+
       <Text fontSize={'sm'}>{subTitle}</Text>
 
       {children != null &&
@@ -244,11 +261,20 @@ const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
             {children &&
               children.map((child, key) => (
                 <Box key={key} py={4} borderBottom={1} borderBottomStyle={'solid'} borderBottomColor={'chakra-border-color'} width={'95%'}>
-                  <Box as="a" key={child.title} py={2} href={child.url}>
-                    <Heading as="h2" size="lg" mb={2}>
-                      {child.title}
-                    </Heading>
-                  </Box>
+                  {child.url ? (
+                    <Box as="a" key={child.title} py={2} href={child.url}>
+                      <Heading as="h2" size="lg" mb={2}>
+                        {child.title}
+                      </Heading>
+                    </Box>
+                  ) : (
+                    <Box as="span" key={child.title} py={2}>
+                      <Heading as="h2" size="lg" mb={2}>
+                        {child.title}
+                      </Heading>
+                    </Box>
+                  )}
+
                   <UnorderedList listStyleType={'none'} m={0}>
                     {child.children?.map((subchild, i) => (
                       <ListItem py={2} key={i}>
