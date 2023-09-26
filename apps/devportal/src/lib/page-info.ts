@@ -70,6 +70,7 @@ export const getPageInfo = async (params: string | string[], preview?: boolean):
     hasInPageNav: true, // default to true, override in markdown
     ...meta,
     stackexchange: [],
+    changelogProductId: [],
     changelogEntries: [],
     youtube: [],
     twitter: [],
@@ -89,7 +90,7 @@ export const getPageInfo = async (params: string | string[], preview?: boolean):
    * All of these APIs will return an empty array if the corresponding meta key is null
    */
   pageInfo.stackexchange = await StackExchangeApi.get(meta.stackexchange);
-  pageInfo.changelogEntries = await (await ChangelogEntriesPaginated(false, '5', '', '')).entries;
+  pageInfo.changelogEntries = await(await ChangelogEntriesPaginated(false, '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
   pageInfo.twitter = await TwitterApi.get(meta.twitter);
   let twitterHandle: string | undefined = undefined;
   if (meta.twitter) {

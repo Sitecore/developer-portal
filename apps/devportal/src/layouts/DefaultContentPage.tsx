@@ -8,6 +8,7 @@ import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, ContentSection } from 'ui/components/helpers';
+import LatestChangelogEntries from 'ui/components/integrations/changelog/LatestChangelogEntries';
 import { PromoCard, PromoCardProps } from 'ui/components/promos';
 
 type DefaultContentPageProps = {
@@ -64,8 +65,10 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
           </Flex>
 
           {/* End Page structure */}
+          {pageInfo.changelogEntries && <LatestChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />}
 
           {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
+
           <SocialFeeds pageInfo={pageInfo} />
         </CenteredContent>
       </ContentSection>

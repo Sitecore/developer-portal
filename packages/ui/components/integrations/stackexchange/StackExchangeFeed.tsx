@@ -30,7 +30,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
                 <Text variant={'small'}>Views</Text>
               </Box>
 
-              <Stack maxW={{ base: '70%', md: '100%' }}>
+              <Stack>
                 <Link href={question.link} target="_blank" rel="noopener noreferrer">
                   <Text variant="large" fontWeight={500} color={useColorModeValue('black', 'white')}>
                     {question.title}
@@ -39,7 +39,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
                 </Link>
                 <VisuallyHidden>Tags:</VisuallyHidden>
                 {question.tags.length && (
-                  <Stack direction={{ base: 'column', sm: 'row' }} shouldWrapChildren>
+                  <Stack direction={{ base: 'column', sm: 'row' }} shouldWrapChildren maxWidth={'90%'}>
                     {question.tags.map((tag) => (
                       <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
                         <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')}>

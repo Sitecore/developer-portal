@@ -26,6 +26,7 @@ export type MarkdownMeta = PageInfoCore & {
   stackexchange?: string | string[];
   twitter?: string | string[];
   youtube?: string;
+  changelogProductId?: string[];
   promoBefore?: string[];
   promoAfter?: string[];
   sitecoreCommunityBlog?: number | boolean;
@@ -51,7 +52,7 @@ type SitecoreCommunityData = {
 export type PageInfo = PageInfoCore & {
   stackexchange: StackExchangeQuestion[];
   changelogEntries: ChangelogEntry[];
-  changelogProductId?: string;
+  changelogProductId?: string[];
   twitter: Tweet[];
   twitterHandle?: string;
   youtube: YouTubeVideo[];
