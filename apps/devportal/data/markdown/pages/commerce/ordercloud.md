@@ -8,6 +8,7 @@ youtube: 'PL1jJVFm_lGnxDN-HHtT_WQRpI3zvMdYU-'
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['searchAndMerchandizing', 'storefrontsAndMarketplaces', 'orderManagement']
 ---
+
 ## Introduction
 
 <img src="/images/products/ordercloud/scalable-commerce.svg" alt="Scalable Commerce with OrderCloud" className="ml-4 inline w-1/3" align="right" />
