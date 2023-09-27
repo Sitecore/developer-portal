@@ -66,4 +66,4 @@ We also have some integration guides that will help you connect multiple Sitecor
 
 If you are interested and want to learn more, please consider these courses at Learning@Sitecore
 
-- [Sitecore Essentials (FREE eLearning)](https://learning.sitecore.com/pathway/sitecore-essentials) - Introduction to Sitecore OrderCloud
+- [OrderCloud for Developers](https://learning.sitecore.com/learn/learning_plan/view/24/ordercloud-for-developers) - OrderCloud for Developers
