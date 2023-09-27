@@ -7,6 +7,7 @@ export type ProductLogoProps = {
   width?: string;
   height?: string;
   variant?: Variant;
+  style?: string;
 };
 
 const ProductIcon = ({ product, width = '24px', height = '24px', alt, variant, ...rest }: ProductLogoProps): JSX.Element => {
@@ -21,7 +22,7 @@ const ProductIcon = ({ product, width = '24px', height = '24px', alt, variant, .
   }
   return (
     <Box width={width} height={height} position={'relative'}>
-      <Image src={url} alt={alt != null ? alt : ''} fill {...rest} style={{ display: 'inline' }} sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw" />
+      <Image src={url} alt={alt != null ? alt : ''} fill {...rest} style={{ objectFit: 'contain' }} sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw" />
     </Box>
   );
 };

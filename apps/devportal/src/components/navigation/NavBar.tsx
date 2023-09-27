@@ -162,8 +162,8 @@ const navSection = ({ title, logo }: NavItem) => {
   return (
     <>
       {logo && (
-        <Box display={'inline'} marginRight={2}>
-          <ProductIcon product={logo} width={'30px'} height={'20px'} />
+        <Box display={'inline'} marginRight={2} position={'relative'}>
+          <ProductIcon product={logo} height={'20px'} width={'32px'} style={{ objectFit: 'contain' }} />
         </Box>
       )}
       <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'} mt={-1}>
