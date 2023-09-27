@@ -1,9 +1,8 @@
 // Global
 import { Box, BoxProps, VisuallyHidden } from '@chakra-ui/react';
-import { useIsomorphicLayoutEffect } from 'framer-motion';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useRef } from 'react';
+import React from 'react';
 
 type LayoutProps = BoxProps & {
   title: string;
@@ -18,22 +17,6 @@ const Layout = ({ title, description = '', openGraphImage, children, ...rest }: 
   const router = useRouter();
   const { asPath } = router;
   const path = asPath.split(/[?#]/)[0];
-  const mainContentRef = useRef<HTMLAnchorElement>(null);
-
-  // Set focus on the contain <main> element on route changes.
-  useIsomorphicLayoutEffect(() => {
-    let isMounted = false;
-
-    router.events.on('routeChangeComplete', () => {
-      // if (!isMounted) {
-      //   mainContentRef?.current?.focus();
-      // }
-    });
-
-    return () => {
-      isMounted = true;
-    };
-  }, []);
 
   return (
     <>
@@ -61,9 +44,7 @@ const Layout = ({ title, description = '', openGraphImage, children, ...rest }: 
 
       <Box as="main" style={{ paddingTop: 122, minHeight: 'calc(100vh - 236px)' }} {...rest}>
         <VisuallyHidden>
-          <a href="#main-content" ref={mainContentRef}>
-            Skip to main content
-          </a>
+          <a href="#main-content">Skip to main content</a>
         </VisuallyHidden>
         {/* a11y announcement for route changes. */}
         <VisuallyHidden aria-live="polite" aria-atomic="true">{`The ${title} page has loaded.`}</VisuallyHidden>

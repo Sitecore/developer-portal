@@ -6,7 +6,7 @@ import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
+import { StackExchangeFeed, TwitterFeed, YouTubeFeed } from 'ui/components/integrations';
 import { SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
 import { CommunityList } from 'ui/components/lists';
 import { CTACard, CTACardProps, PromoCard, PromoCardProps } from 'ui/components/promos';
@@ -28,7 +28,7 @@ const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): 
         <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} />
         <SitecoreCommunityQuestions data={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
         <CommunityList data={communityListData} />
-        {/* <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} /> */}
+        <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
         <StackExchangeFeed data={pageInfo.stackexchange} />
         <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
         {ctaAfter && <CTACard {...ctaAfter} />}

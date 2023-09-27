@@ -1,10 +1,10 @@
 import { Heading } from '@chakra-ui/react';
-import TwitterTweetEmbed from 'react-twitter-embed';
+import { Tweet } from 'react-tweet';
 import { TextLink } from '../../links/TextLink';
-import { Tweet } from './twitter';
+import { Tweet as TwitterItem } from './twitter';
 
 type TwitterFeedProps = {
-  content?: Tweet[];
+  content?: TwitterItem[];
   handle?: string;
 };
 
@@ -22,7 +22,7 @@ export const TwitterFeed = ({ content, handle }: TwitterFeedProps): JSX.Element 
       <ul className="grid gap-6 md:grid-cols-3">
         {content.map((tweet) => (
           <li key={tweet.id} className="block -mt-2 -mb-2">
-            <TwitterTweetEmbed tweetId={tweet.id} options={{ cards: 'hidden' }} placeholder={<div className="w-full rounded-lg aspect-w-3 aspect-h-4 bg-gray-lightest"></div>} />
+            <Tweet id={tweet.id} />
           </li>
         ))}
       </ul>
