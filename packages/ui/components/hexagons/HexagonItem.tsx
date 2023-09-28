@@ -44,7 +44,7 @@ export const HexagonItem = ({ product, active = true }: HexagonItemProps): JSX.E
           </PopoverHeader>
           <PopoverBody>
             <Text>{product.description}</Text>
-            <ButtonLink text={product.linkText} href={product.linkHref} title={`${product.linkText} product page`} className="mobile__hex__item__link" />
+            <ButtonLink text={product.linkText} href={product.linkHref} title={`${product.name} product page`} className="mobile__hex__item__link" />
           </PopoverBody>
         </Box>
       </PopoverContent>
