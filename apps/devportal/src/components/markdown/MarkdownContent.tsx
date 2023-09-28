@@ -98,7 +98,7 @@ export const RenderPartialGroups = ({ partialGroups }: MarkdownContentProps): JS
         partialGroups.length > 0 &&
         partialGroups.map((partialGroup, i) => (
           <Box key={i}>
-            <Heading as={'h2'} key={i} size={'xl'} mb={4} mt={8} fontWeight={400}>
+            <Heading as={'h2'} key={i} size={'xl'} mb={4} mt={8}>
               {partialGroup.title}
             </Heading>
             {partialGroup.description && (
