@@ -7,8 +7,6 @@ const variants = {
   blurred: definePartsStyle({
     container: {
       backdropFilter: 'blur(16px)',
-      transitionProperty: 'common',
-      transitionDuration: 'normal',
       background: 'whiteAlpha.300',
       color: 'white',
       _dark: {
@@ -34,5 +32,4 @@ const variants = {
   }),
 };
 
-// export variants in the component theme
 export const cardTheme = defineMultiStyleConfig({ variants });
