@@ -1,4 +1,4 @@
-import { CreateFeed } from '@/src/common/changelog-feeds';
+import { CreateFeed } from '@lib/changelog/changelog-feeds';
 import { ChangelogEntriesByProduct } from 'sc-changelog/changelog';
 import GetProducts from 'sc-changelog/products';
 import { Product } from 'sc-changelog/types/product';

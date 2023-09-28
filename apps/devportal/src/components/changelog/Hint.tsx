@@ -1,5 +1,6 @@
-import { getSlug } from '@/../../packages/sc-changelog/utils/stringUtils';
+import { Alert, AlertIcon, AlertTitle, Tooltip } from '@chakra-ui/react';
 import Link from 'next/link';
+import { getSlug } from 'sc-changelog/utils/stringUtils';
 import { Option } from 'ui/components/dropdown/MultiSelect';
 
 type HintProps = {
@@ -11,12 +12,13 @@ export const Hint = ({ products, enabled }: HintProps): JSX.Element => {
   if (!enabled || products == undefined) return <></>;
 
   return (
-    <span className="text-xs italic">
-      Did you know that {products[0].label} has its own
-      <Link href={`/changelog/${getSlug(products[0].label)}`} title="" className="mx-1 font-bold hover:underline">
-        changelog
-      </Link>
-      page for direct access?
-    </span>
+    <Alert status="info" colorScheme="neutral" alignItems="center">
+      <AlertIcon />
+      <AlertTitle>
+        <Tooltip label={`Visit the ${products[0].label} changelog page`} aria-label="A tooltip">
+          <Link href={`/changelog/${getSlug(products[0].label)}`}>Did you know that {products[0].label} has its own changelog page?</Link>
+        </Tooltip>
+      </AlertTitle>
+    </Alert>
   );
 };

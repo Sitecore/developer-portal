@@ -1,3 +1,4 @@
 declare module 'react-twitter-embed' {
-  declare const TwitterTweetEmbed;
+  const TwitterTweetEmbed: any;
+  export default TwitterTweetEmbed;
 }

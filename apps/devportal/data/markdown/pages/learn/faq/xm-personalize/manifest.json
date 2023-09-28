@@ -1,0 +1,44 @@
+{
+  "title": "XM + Personalize FAQ",
+  "description": "Learn more about how to develop for XM + Personalize.",
+  "heading": true,
+  "path": "/learn/faq/xm-personalize",
+  "routes": [
+    {
+      "title": "Features",
+      "path": "features"
+    },
+    {
+      "title": "Development",
+      "path": "development"
+    },
+    {
+      "title": "Upgrades",
+      "path": "upgrades"
+    },
+    {
+      "title": "Customization",
+      "path": "customization"
+    },
+    {
+      "title": "Scaling and Availability",
+      "path": "scaling"
+    },
+    {
+      "title": "Personalize & CDP",
+      "path": "personalize-cdp"
+    },
+    {
+      "title": "Edge & Vercel",
+      "path": "edge-vercel"
+    },
+    {
+      "title": "Managed Cloud",
+      "path": "managed-cloud"
+    },
+    {
+      "title": "Migration",
+      "path": "migration"
+    }
+  ]
+}

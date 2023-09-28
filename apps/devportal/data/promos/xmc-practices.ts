@@ -1,9 +1,8 @@
-import type { PromoCardProps } from 'ui/components/cards/PromoCard';
+import { PromoCardProps } from 'ui/components/promos';
 
 const data: PromoCardProps = {
   title: 'XM Cloud Recommended Practices',
-  description:
-    'Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects! ',
+  description: 'Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects! ',
   img: {
     src: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868',
   },

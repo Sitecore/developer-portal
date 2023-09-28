@@ -6,25 +6,16 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"],
+      "@components/*": ["./src/components/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@data/*": ["./data/*"],
+      "@src/*": ["./src/*"]
     },
     // "rootDirs": [],                              /* List of root folders whose combined content represents the structure of the project at runtime. */
-    "typeRoots": [
-      "./types",
-      "src/common/types",
-      "./node_modules/@types"
-    ] /* List of folders to include type definitions from. */,
+    "typeRoots": ["./types", "src/common/types", "./node_modules/@types"] /* List of folders to include type definitions from. */,
     "moduleResolution": "node"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "types"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "types"]
 }

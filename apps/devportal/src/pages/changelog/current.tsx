@@ -1,12 +1,10 @@
+import { Alert, AlertIcon, AlertTitle, Box, Heading, Text } from '@chakra-ui/react';
+import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
-import { LinkItem } from 'ui/components/cards/LinkItem';
-import Container from 'ui/components/common/Container';
-import { Message, Type } from 'ui/components/common/Message';
-import { Row } from 'ui/components/common/Row';
-import VerticalGroup from 'ui/components/common/VerticalGroup';
-import Hero from 'ui/components/heros/Hero';
-import Layout from 'ui/layouts/Layout';
+import { LinkItem } from 'ui/components/cards';
+import Hero from 'ui/components/common/Hero';
+import { CenteredContent, Row, VerticalGroup } from 'ui/components/helpers';
 
 export default function ChangelogCurrent() {
   return (
@@ -17,18 +15,17 @@ export default function ChangelogCurrent() {
       <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
         <VerticalGroup>
-          <Container>
-            <Message type={Type.Info} className="mt-8">
-              <p>
-                <Link href="/changelog" className="mr-1 font-bold hover:underline">
-                  Click here
-                </Link>
-                to go the public preview of the upcoming Sitecore global changelog.
-              </p>
-            </Message>
-            <div className="mt-10">
-              <h3 className="mb-4 heading-md">Current release notes</h3>
-              <p>Please check this list to find the current release notes per product</p>
+          <CenteredContent>
+            <Alert status="info" alignItems="center">
+              <AlertIcon />
+              <AlertTitle>
+                <Link href="/changelog">Click here to go the public preview of the upcoming Sitecore global changelog.</Link>
+              </AlertTitle>
+            </Alert>
+
+            <Box>
+              <Heading as="h3">Current release notes</Heading>
+              <Text>Please check this list to find the current release notes per product</Text>
 
               <Row columns={2}>
                 <LinkItem title="Sitecore Content Hub" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/release-notes.html" />
@@ -38,8 +35,8 @@ export default function ChangelogCurrent() {
                 <LinkItem title="Sitecore XM/XP" link="https://dev.sitecore.net/en/Downloads/Sitecore%20Experience%20Platform/103/Sitecore%20Experience%20Platform%20103/Release%20Notes" />
                 <LinkItem title="Sitecore Experience Commerce" link="https://sitecoredev.azureedge.net/~/media/1EF967E826F84A4CB62732F61F81EBFA.ashx?date=20221201T201304" />
               </Row>
-            </div>
-          </Container>
+            </Box>
+          </CenteredContent>
         </VerticalGroup>
       </Layout>
     </>

@@ -1,21 +1,45 @@
-import { getChangelogEntryUrl } from '@/../../packages/sc-changelog/utils/urlBuilder';
-import ChangelogByMonth from '@/src/components/changelog/ChangelogByMonth';
-import { ChangelogItemMeta } from '@/src/components/changelog/ChangelogItemMeta';
-import SocialShare from '@/src/components/common/SocialShare';
-import Image from 'next/image';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Center,
+  Grid,
+  GridItem,
+  HStack,
+  Heading,
+  Hide,
+  Image,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+  useColorModeValue,
+  useDisclosure,
+} from '@chakra-ui/react';
+import { Prose } from '@nikolovlazar/chakra-ui-prose';
+import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
+import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
+import Layout from '@src/layouts/Layout';
 import Link from 'next/link';
-import { useState } from 'react';
 import { ChangelogEntryByTitle } from 'sc-changelog/changelog';
 import GetProducts from 'sc-changelog/products';
 import { Product } from 'sc-changelog/types';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
-import Button from 'ui/components/buttons/Button';
-import Container from 'ui/components/common/Container';
-import { Message, Type } from 'ui/components/common/Message';
-import VerticalGroup from 'ui/components/common/VerticalGroup';
-import Hero from 'ui/components/heros/Hero';
-import Layout from 'ui/layouts/Layout';
+import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
+import Hero from 'ui/components/common/Hero';
+import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
+import { ButtonLink } from 'ui/components/links/ButtonLink';
+import SocialShare from 'ui/components/social/SocialShare';
 
 type ChangelogProps = {
   currentProduct: Product;
@@ -32,6 +56,7 @@ export async function getServerSideProps(context: any) {
   });
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
+
   try {
     changelogEntry = await ChangelogEntryByTitle(preview, entry, currentProduct?.id);
   } catch {
@@ -48,98 +73,90 @@ export async function getServerSideProps(context: any) {
 }
 
 const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) => {
-  const [showModal, setShowModal] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const title = `${currentProduct.name} Changelog`;
+  const description = `Learn more about new versions, changes and improvements for ${currentProduct.name}`;
 
   return (
-    <Layout title={`${currentProduct.name} Changelog`} description={changelogEntry.title}>
-      <Hero title={`${currentProduct.name} Changelog`} description={changelogEntry.title}>
-        <div className="absolute flex h-8 flex-row dark:hidden">
-          <span className="mr-1 text-xs">Powered by</span>
+    <Layout title={title} description={changelogEntry.title}>
+      <Hero title={title} description={description}>
+        <HStack>
+          <Text variant={'sm'}>Powered by</Text>
           <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
+            <Image
+              src={useColorModeValue('https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e', 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13')}
+              alt="Powered by Content Hub ONE"
+              width={150}
+              height={18}
+            />
           </Link>
-        </div>
-        <div className="absolute hidden h-8 flex-row dark:flex">
-          <span className="mr-1 text-xs">Powered by</span>
-          <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-            <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13" className="transition hover:scale-105" alt="Powered by Content Hub ONE" width={150} height={18} priority={true} />
-          </Link>
-        </div>
+        </HStack>
       </Hero>
       <VerticalGroup>
-        <Container>
-          <Message type={Type.Info} className="mt-8">
-            <p>
-              You are viewing the public preview of the upcoming Sitecore global changelog.
-              <Link href="/changelog/current" title="View the list of current release notes per product" className="mx-1 font-bold hover:underline">
-                Click here
-              </Link>
-              for the current release notes per product
-            </p>
-          </Message>
-          <div className="mt-8 grid gap-16 md:grid-cols-5">
-            <div className="changelog-item col-span-3">
-              <nav className="mb-8 mt-4 flex" aria-label="Breadcrumb">
-                <ol className="inline-flex items-center space-x-1 md:space-x-3">
-                  <li className="inline-flex items-center">
-                    <Link href="/changelog" className="text-theme-text-alt inline-flex items-center text-sm font-medium">
-                      Changelog
+        <CenteredContent py={8} gap={8}>
+          <Grid templateColumns="repeat(5, 1fr)" gap={14}>
+            <GridItem colSpan={{ base: 5, md: 3 }}>
+              <Breadcrumb separator={'>'}>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/changelog">Changelog</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href={`/changelog/${getSlug(currentProduct.name)}`}>{currentProduct.name}</BreadcrumbLink>
+                </BreadcrumbItem>
+              </Breadcrumb>
+
+              {/* The full changelog item */}
+              <Card variant={'unstyled'} mt={8} mb={16}>
+                <CardHeader pb={4}>
+                  <Heading as="h2" fontSize={'1.25rem'} id={getSlug(changelogEntry.title)}>
+                    <Link href={getChangelogEntryUrl(changelogEntry)} title={changelogEntry.title}>
+                      {changelogEntry.title}
                     </Link>
-                  </li>
-                  <li>
-                    <div className="flex items-center">
-                      <svg aria-hidden="true" className="text-theme-text-alt h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path>
-                      </svg>
-                      <Link href={`/changelog/${getSlug(currentProduct.name)}`} className="text-theme-text-alt ml-1 text-sm font-medium md:ml-2">
-                        {currentProduct.name}
-                      </Link>
-                    </div>
-                  </li>
-                </ol>
-              </nav>
+                  </Heading>
 
-              <h2 className={`heading-sm font-bolder`}>{changelogEntry.title}</h2>
-              <ChangelogItemMeta item={changelogEntry} />
-              {changelogEntry.image.length > 0 && (
-                <>
-                  <div className="mb-4">
-                    <Image
-                      src={`${changelogEntry.image[0].fileUrl}`}
-                      alt={changelogEntry.title || ''}
-                      priority
-                      className="cursor-pointer rounded-lg"
-                      width={changelogEntry.image[0].fileWidth}
-                      height={changelogEntry.image[0].fileHeight}
-                      onClick={() => setShowModal(true)}
-                    />
-                  </div>
+                  <ChangelogItemMeta item={changelogEntry} loading={false} mt={4} />
+                </CardHeader>
+                <CardBody py={0}>
+                  {changelogEntry.image.length > 0 && (
+                    <>
+                      <Image src={`${changelogEntry.image[0].fileUrl}?transform=true&width=670&height=250&fit=crop&gravity=auto`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} />
 
-                  {showModal ? (
-                    <div className="fixed inset-0 z-50 overflow-y-auto ">
-                      <div className="fixed inset-0 h-full w-full cursor-pointer backdrop-blur-sm " onClick={() => setShowModal(false)}>
-                        <div className="flex h-screen items-center justify-center drop-shadow-xl ">
-                          <Image src={`${changelogEntry.image[0].fileUrl}`} alt={changelogEntry.title || ''} width={changelogEntry.image[0].fileWidth} height={changelogEntry.image[0].fileHeight} className="rounded-lg" />
-                        </div>
-                      </div>
-                    </div>
-                  ) : null}
-                </>
-              )}
+                      <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnOverlayClick size={'6xl'}>
+                        <ModalOverlay />
+                        <ModalContent>
+                          <ModalHeader>{changelogEntry.title}</ModalHeader>
+                          <ModalCloseButton />
+                          <ModalBody>
+                            <Center>
+                              <Image src={`${changelogEntry.image[0].fileUrl}`} alt={changelogEntry.title || ''} />
+                            </Center>
+                          </ModalBody>
 
-              <div className={`prose dark:prose-invert my-3 max-w-none text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
-              {changelogEntry.fullArticle && <div className={`prose dark:prose-invert my-3 max-w-none text-sm`} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />}
-
-              <div className="flex flex-row">
-                <div className="grow">{changelogEntry.readMoreLink && <Button variant="text" className="font-medium" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} />}</div>
-                <SocialShare className="w-30" url={getChangelogEntryUrl(changelogEntry, true)} title={changelogEntry.title} />
-              </div>
-            </div>
-            <div className="col-span-2 hidden md:block">
-              <ChangelogByMonth product={currentProduct} />
-            </div>
-          </div>
-        </Container>
+                          <ModalFooter>
+                            <Button colorScheme="neutral" mr={3} onClick={onClose} variant={'outline'}>
+                              Close
+                            </Button>
+                          </ModalFooter>
+                        </ModalContent>
+                      </Modal>
+                    </>
+                  )}
+                  <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
+                  {changelogEntry.fullArticle != null && <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />}
+                </CardBody>
+                <CardFooter justifyContent={changelogEntry.readMoreLink ? 'space-between' : 'flex-end'}>
+                  {changelogEntry.readMoreLink && <ButtonLink variant="text" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} margin={0} padding={0} />}
+                  <SocialShare url={getChangelogEntryUrl(changelogEntry, true)} title={changelogEntry.title} />
+                </CardFooter>
+              </Card>
+            </GridItem>
+            <Hide below="md">
+              <GridItem colSpan={2}>
+                <ChangelogByMonth product={currentProduct} />
+              </GridItem>
+            </Hide>
+          </Grid>
+        </CenteredContent>
       </VerticalGroup>
     </Layout>
   );

@@ -1,0 +1,32 @@
+{
+  "title": "Connect FAQ",
+  "description": "Sitecore Connect FAQ",
+  "heading": true,
+  "path": "/learn/faq/sitecore-connect",
+  "routes": [
+    {
+      "title": "Introduction",
+      "path": ""
+    },
+    {
+      "title": "General",
+      "path": "general"
+    },
+    {
+      "title": "Features and Capabilities",
+      "path": "features"
+    },
+    {
+      "title": "Licensing and Cost Structure",
+      "path": "licensing"
+    },
+    {
+      "title": "Support",
+      "path": "support"
+    },
+    {
+      "title": "For Partners and Developer Community",
+      "path": "partners-developers"
+    }
+  ]
+}

@@ -1,9 +1,13 @@
+'use client';
+import { Box, ListItem, ListItemProps, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
-import Button from '../buttons/Button';
+import ProductIcon from 'ui/components/common/ProductIcon';
+import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { CloudInfoType } from './HexagonTypes';
+import styles from './Hexagons.module.css';
 
-type HexagonCloudProps = {
+type HexagonCloudProps = ListItemProps & {
   cloud: CloudInfoType;
   isOpen?: boolean;
   key: number;
@@ -12,16 +16,16 @@ type HexagonCloudProps = {
 };
 
 function resetElements(invert?: boolean) {
-  const allElements = document.querySelectorAll('#hex-list > li');
+  const allElements = document.querySelectorAll('#hexList > li');
   const allElementsArray = Array.from(allElements);
 
   if (invert) {
     allElementsArray?.forEach((e) => {
-      e.classList.remove('active');
+      e.classList.remove(styles.hexListItemActive);
     });
   } else {
     allElementsArray?.forEach((e) => {
-      e.classList.add('active');
+      e.classList.add(styles.hexListItemActive);
     });
   }
 }
@@ -29,33 +33,41 @@ function resetElements(invert?: boolean) {
 function mouseOver(event: React.MouseEvent<HTMLLIElement>) {
   const value = (event.currentTarget as HTMLElement).getAttribute('data-target');
 
-  const elements = document.querySelectorAll(`#hex-list > [data-target="${value}"]`);
+  const elements = document.querySelectorAll(`#hexList > [data-target="${value}"]`);
   const elementsArray = Array.from(elements);
   resetElements(true);
   elementsArray.forEach((el) => {
-    el.classList.toggle('active');
+    el.classList.toggle(styles.hexListItemActive);
   });
 }
 
 export const HexagonCloud = ({ cloud, isOpen, children, onClick }: HexagonCloudProps): JSX.Element | null => {
   return (
-    <li
-      className={`hex-grid__tab dark:from-whiteAlpha-500 dark:to-whiteAlpha-700 hex-grid__tab--violet active transition-transform	delay-200 dark:bg-gradient-to-r ${isOpen ? 'expanded' : ''}`}
+    <ListItem
+      className={`${styles.hexGridTab} dark:from-whiteAlpha-500 dark:to-whiteAlpha-700 ${styles.hexGridTab_violet} ${styles.active} transition-transformdelay-200 dark:bg-gradient-to-r ${isOpen ? styles.hexGridTabExpand : ''}`}
       data-target={`#${cloud.id}`}
       onMouseOver={(e) => mouseOver(e)}
       onMouseOut={() => resetElements()}
       onClick={onClick}
+      backgroundColor={useColorModeValue('transparent', 'chakra-subtle-bg')}
+      color={useColorModeValue('chakra-text', 'white')}
+      listStyleType={'none'}
     >
-      <div className="hex-grid__tab__top">
-        <Image className="hex-grid__tab__icon" src={cloud.logoUrl} alt={cloud.name} width={35} height={25} />
-        <span className="hex-grid__tab__title">{cloud.name}</span>
-        <Image className="hex-grid__tab__plus" src="/images/modal-close.svg" alt="open" width={11} height={11} />
-      </div>
-      <div id="content-cloud" className={`hex-grid__tab__expand ${isOpen ? 'block' : ''} transition ease-in-out	`}>
-        <p>{cloud.description}</p>
-        {!!cloud.linkHref && !!cloud.linkText && <Button variant="text" icon={true} href={cloud.linkHref} text={cloud.linkText} className="dark:text-blackAlpha-900 ml-1 text-xs" />}
+      <Box className={styles.hexGridTabTop}>
+        <ProductIcon product={cloud.type} width={'35px'} height={'25px'} />
+        <span className={styles.hexGridTabTitle}>
+          <Text ml={4}>{cloud.name}</Text>
+        </span>
+        <Image className={styles.hexGridTabPlus} src="/images/modal-close.svg" alt="open" width={11} height={11} />
+      </Box>
+
+      <Box id={cloud.id} className={`${styles.hexGridTabItemsMobile} ${isOpen ? styles.block : ''} transition ease-in-out	`}>
+        <Text p={'0 15px 1rem'} fontSize={'md'}>
+          {cloud.description}
+          {!!cloud.linkHref && !!cloud.linkText && <ButtonLink href={cloud.linkHref} text={cloud.linkText} />}
+        </Text>
         {children}
-      </div>
-    </li>
+      </Box>
+    </ListItem>
   );
 };

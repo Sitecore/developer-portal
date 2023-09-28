@@ -1,40 +1,53 @@
-import { GetProductInfo } from '@/../../packages/ui/common/assets';
-import Image from 'next/image';
-import Button from '../buttons/Button';
+import { Box, Heading, ListItem, ListItemProps, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text } from '@chakra-ui/react';
+import { GetProductInfo, Variant } from '../../lib/assets';
+import ProductIcon from '../common/ProductIcon';
+import { ButtonLink } from '../links/ButtonLink';
 import { ProductInfoType } from './HexagonTypes';
+import styles from './Hexagons.module.css';
 
-type HexagonItemProps = {
+type HexagonItemProps = ListItemProps & {
   product?: ProductInfoType;
   active?: boolean;
-  showModal?: boolean;
-  onClick?: () => void;
 };
 
-export const HexagonItem = ({ product, active = true, showModal = false, onClick }: HexagonItemProps): JSX.Element | null => {
-  if (product == null) return <li className="hex-grid__item transparent"></li>;
+export const HexagonItem = ({ product, active = true }: HexagonItemProps): JSX.Element | null => {
+  if (product == null) return <ListItem listStyleType={'none'} className={`${styles.hexGridItem} ${styles.transparent}`}></ListItem>;
 
-  const productInfo = GetProductInfo(product.product);
+  const productInfo = GetProductInfo(product.type);
+
+  const getStyle = (color: string) => {
+    if (color == 'red') return styles.hexGridItemContent_red;
+    if (color == 'violet') return styles.hexGridItemContent_violet;
+    if (color == 'teal') return styles.hexGridItemContent_teal;
+  };
 
   return (
-    <li className={`hex-grid__item hex-grid__item--${product.color} ${active ? 'active' : ''} ${showModal ? 'z-10' : ''} `} data-target={`#${product.cloud}`} onClick={onClick}>
-      {showModal ? (
-        <div className="hex-grid__modal dark:bg-theme-bg-alt visible">
-          <Image className="hex-grid__modal__close" src="/images/modal-close.svg" alt="close" width="12" height="12" onClick={onClick} />
-
-          <div className="hex-grid__modal__title">
-            <Image src={productInfo.lightIcon} alt="Sitecore CDP" width="30" height="30" className="dark:hidden" />
-            <Image src={productInfo.darkIcon} alt="Sitecore CDP" width="30" height="30" className="hidden dark:block" />
-            <h3>{product.subTitle}</h3>
-          </div>
-          <p className="hex-grid__modal__description">{product.description}</p>
-          <Button variant="text" text={product.linkText} href={product.linkHref} icon={true} className="mobile__hex__item__link" />
-        </div>
-      ) : null}
-      <div className="hex-grid__content">
-        <Image className="hex-grid__content__icon" src={productInfo.darkIcon} alt={productInfo.name} width={30} height={30} />
-
-        <h3 className="hex-grid__content__title">{productInfo.name}</h3>
-      </div>
-    </li>
+    <Popover placement="top-start" autoFocus={false} closeOnBlur={true} trigger="hover">
+      <PopoverTrigger>
+        <ListItem listStyleType={'none'} className={`${styles.hexGridItem}   ${active ? styles.hexListItemActive : ''} `} data-target={`#${product.cloud}`}>
+          <Box className={`${styles.hexGridContent} ${getStyle(product.color)}`}>
+            <ProductIcon product={product.type} variant={Variant.Dark} />
+            <Heading as="h3" color={'white'} size={'sm'} maxW={'65%'}>
+              {productInfo.name}
+            </Heading>
+          </Box>
+        </ListItem>
+      </PopoverTrigger>
+      <PopoverContent zIndex={'99999'} position={'absolute'}>
+        <Box className={styles.hexgrid__modal} position={'absolute'} background={'chakra-subtle-bg'} display={'block'} width={'320px'} height={'auto'}>
+          <PopoverCloseButton />
+          <PopoverHeader>
+            <Box className={styles.hexgrid__modal__title}>
+              <ProductIcon product={product.type} alt={product.name} />
+              <Heading as="h3">{product.subTitle}</Heading>
+            </Box>
+          </PopoverHeader>
+          <PopoverBody>
+            <Text>{product.description}</Text>
+            <ButtonLink text={product.linkText} href={product.linkHref} title={`${product.name} product page`} className="mobile__hex__item__link" />
+          </PopoverBody>
+        </Box>
+      </PopoverContent>
+    </Popover>
   );
 };

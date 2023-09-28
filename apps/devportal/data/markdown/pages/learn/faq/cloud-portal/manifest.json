@@ -1,0 +1,16 @@
+{
+  "title": "Cloud Portal Technical FAQ",
+  "description": "",
+  "heading": true,
+  "path": "/learn/faq/cloud-portal",
+  "routes": [
+    {
+      "title": "Features",
+      "path": "features"
+    },
+    {
+      "title": "Development",
+      "path": "development"
+    }
+  ]
+}

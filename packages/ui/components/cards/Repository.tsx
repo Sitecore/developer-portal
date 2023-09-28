@@ -1,5 +1,8 @@
-import SvgLogo, { isValidLogo, Logo } from 'ui/components/common/SvgLogo';
-import Button from '../buttons/Button';
+import { Card, CardBody, CardHeader, HStack, Heading, Text } from '@chakra-ui/react';
+import { mdiGithub } from '@mdi/js';
+import Icon from '@mdi/react';
+import { ButtonLink } from 'ui/components/links/ButtonLink';
+import SvgLogo, { Logo, isValidLogo } from 'ui/components/logos/SvgLogo';
 
 export type RepositoryProps = {
   name?: string;
@@ -17,18 +20,21 @@ export const Repository = ({ name, description, repositoryUrl, framework }: Repo
   });
 
   return (
-    <div className="border-theme-border dark:bg-theme-bg-alt relative flex flex-col justify-between border bg-white p-3 shadow-md">
-      <div className="px-5">
-        <div className="ml-auto mr-0 flex flex-row justify-end opacity-75 ">
+    <Card variant={'outlineRaised'} size={'sm'} display={'flex'}>
+      <CardHeader justifyContent={'flex-end'}>
+        <HStack>
           {frameworks &&
             frameworkLogos.map((framework, index) => {
-              return <SvgLogo logo={framework as Logo} className={`ml-4 h-6`} key={index} />;
+              return <SvgLogo logo={framework as Logo} key={index} height={25} />;
             })}
-        </div>
-        {name && <h4>{name}</h4>}
-        {description && <p>{description}</p>}
-      </div>
-      <Button href={repositoryUrl} variant="secondary" icon={true} iconName="github" iconPosition="left" size="sm" text="Repository" className="" />
-    </div>
+        </HStack>
+      </CardHeader>
+
+      <CardBody>
+        {name && <Heading as="h4">{name}</Heading>}
+        {description && <Text>{description}</Text>}
+        <ButtonLink href={repositoryUrl} variant="outline" size="sm" icon={<Icon path={mdiGithub} size={1} />} text="Repository" />
+      </CardBody>
+    </Card>
   );
 };

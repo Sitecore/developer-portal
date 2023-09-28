@@ -26,6 +26,7 @@ module.exports = {
     // needed for NextJS's jsx without react import
     'react/react-in-jsx-scope': 'off',
     'import/no-unused-modules': [1, { unusedExports: true }],
+    'react/no-unknown-property': [2, { ignore: ['jsx', 'global'] }],
   },
   ignorePatterns: ['!.*', 'dist', 'node_modules', '.next'],
   overrides: [],

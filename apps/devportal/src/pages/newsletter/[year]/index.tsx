@@ -1,19 +1,15 @@
 /* eslint-disable react/prop-types */
-// Global
+import { PageInfo } from '@lib/interfaces/page-info';
+import { getNewsletterTitle } from '@lib/newsletter';
+import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
+import Layout from '@src/layouts/Layout';
 import fs from 'fs';
 import { GetStaticProps, NextPage } from 'next';
 import path from 'path';
-// Scripts
-import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@/src/common/static-paths';
-import { PageInfo } from '@/src/interfaces/page-info';
-// Lib
-import { getNewsletterTitle } from '@/src/common/newsletter';
-import { translateDateAsYearMonth } from 'ui/common/translate-date';
-// Components
-import Container from 'ui/components/common/Container';
-import Hero from 'ui/components/heros/Hero';
-import CategoryTile, { CategoryTileProps } from 'ui/components/lists/CategoryTile';
-import Layout from 'ui/layouts/Layout';
+import Hero from 'ui/components/common/Hero';
+import { CenteredContent } from 'ui/components/helpers';
+import { CategoryTileList, CategoryTileProps } from 'ui/components/lists';
+import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];
@@ -79,17 +75,9 @@ const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <Container>
-        <div className="mt-8 grid gap-6 md:grid-cols-4">
-          <div className="col-span-3 grid gap-10 md:grid-cols-3">
-            <ul className="col-span-3 grid gap-6 md:grid-cols-1">
-              {newsletters.map((card, i) => (
-                <CategoryTile key={i} containerTag="li" headingLevel={'h2'} {...card} />
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Container>
+      <CenteredContent>
+        <CategoryTileList cards={newsletters} />
+      </CenteredContent>
     </Layout>
   );
 };

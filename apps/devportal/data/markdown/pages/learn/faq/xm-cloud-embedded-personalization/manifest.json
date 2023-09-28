@@ -1,0 +1,32 @@
+{
+  "title": "XM Cloud Embedded Personalization FAQ",
+  "description": "",
+  "heading": true,
+  "path": "/learn/faq/xm-cloud-embedded-personalization",
+  "routes": [
+    {
+      "title": "Introduction",
+      "path": ""
+    },
+    {
+      "title": "General",
+      "path": "general"
+    },
+    {
+      "title": "Feature Matrix and Product Parities",
+      "path": "feature-matrix"
+    },
+    {
+      "title": "Migrations and Upgrades",
+      "path": "migrations-and-upgrades"
+    },
+    {
+      "title": "Architecture and Data Retention",
+      "path": "architecture-data-retention"
+    },
+    {
+      "title": "Developer Experience",
+      "path": "developer-experience"
+    }
+  ]
+}

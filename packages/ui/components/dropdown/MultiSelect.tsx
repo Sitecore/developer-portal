@@ -98,6 +98,7 @@ export const MultiSelect = (props: any) => {
         [...(props.value ?? []), ...props.options.filter(({ label }: Option) => label.toLowerCase().includes(selectInput?.toLowerCase()) && (props.value ?? []).filter((opt: Option) => opt.label === label).length === 0)].sort(comparator)
       );
     else if (selected.length > 0 && selected[selected.length - 1].value !== allOption.value && JSON.stringify(selected.sort(comparator)) !== JSON.stringify(filteredOptions)) return props.onChange(selected);
+    // eslint-disable-next-line no-unsafe-optional-chaining
     else if (props.value != null) return props.onChange([...props.value?.filter(({ label }: Option) => !label.toLowerCase().includes(selectInput?.toLowerCase()))]);
   };
 

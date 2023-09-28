@@ -1,19 +1,21 @@
 /* eslint-disable react/prop-types */
 // Global
+import { Box, Grid, GridItem } from '@chakra-ui/react';
+import NewsletterNav from '@components/newsletter/NewsletterNav';
+import NewsletterStory, { NewsletterStoryData } from '@components/newsletter/NewsletterStory';
+import { PageInfo } from '@lib/interfaces/page-info';
+import { getNewsletterTitle } from '@lib/newsletter';
+import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
+import Layout from '@src/layouts/Layout';
 import fs from 'fs';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import path from 'path';
+import Hero from 'ui/components/common/Hero';
+import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
+import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
 // Scripts
-import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@/src/common/static-paths';
+
 // Components
-import { getNewsletterTitle } from '@/src/common/newsletter';
-import NewsletterNav from '@/src/components/newsletter/NewsletterNav';
-import NewsletterStory, { NewsletterStoryData } from '@/src/components/newsletter/NewsletterStory';
-import { PageInfo } from '@/src/interfaces/page-info';
-import { translateDateAsYearMonth } from 'ui/common/translate-date';
-import Container from 'ui/components/common/Container';
-import Hero from 'ui/components/heros/Hero';
-import Layout from 'ui/layouts/Layout';
 
 export interface NewsletterContentPageProps {
   content: NewsletterStoryData[];
@@ -77,16 +79,24 @@ const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({ pageInfo,
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <Container>
-        <div className="mt-8 grid gap-6 md:grid-cols-4">
-          <NewsletterNav paths={paths} currentMonth={month} currentYear={year} />
-          <div className="col-span-3 grid gap-10 md:grid-cols-3">
-            {content.map((story) => (
-              <NewsletterStory {...story} key={story.title} />
-            ))}
-          </div>
-        </div>
-      </Container>
+      <VerticalGroup>
+        <CenteredContent>
+          <Box>
+            <Grid gap={6} templateColumns={'repeat(4,minmax(0,1fr))'} mt={8}>
+              <GridItem>
+                <NewsletterNav paths={paths} currentMonth={month} currentYear={year} />
+              </GridItem>
+              <GridItem colSpan={3} gap={10}>
+                <Grid templateColumns={'repeat(3,minmax(0,1fr))'} gap={10}>
+                  {content.map((story) => (
+                    <NewsletterStory {...story} key={story.title} />
+                  ))}
+                </Grid>
+              </GridItem>
+            </Grid>
+          </Box>
+        </CenteredContent>
+      </VerticalGroup>
     </Layout>
   );
 };

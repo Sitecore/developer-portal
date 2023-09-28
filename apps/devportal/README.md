@@ -1,77 +1,30 @@
-![Sitecore logo in red background](https://github.com/Sitecore/developer-portal/raw/main/public/android-chrome-256x256.png)
-
-# Sitecore Developer Portal
-
-Welcome to the Sitecore Developer Portal repository. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
-
-## The Tech
-
-The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
-
-## Build Prerequisites
-
-### Node.js
-
-The developer portal is built with Next.js, so you'll need to have Node.js installed to build the project. You can find the latest version of Node.js [here](https://nodejs.org/en/). We recommend using the LTS version of Node.js.
-
-### Environment Variables
-
-The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables.
-
-The following variables should exist within the .env.local file:
-
-```
-YOUTUBE_API_KEY="An API key with YouTube Data API v3 access enabled"
-TWITTER_BEARER_TOKEN="A bearer token from Twitter "
-```
-
-_Note: The site will still function without the above keys. The components that require these environment variables will fail gracefully and not display on the pages._
-
 ## Getting Started
 
-1. Install [Node.js](htts://nodejs.org/en/), we recommend the LTS version.
-2. Clone the repository.
-3. Inside the repository run `npm install` to install all the dependencies.
-4. Create a `.env.local` file in the root of the project and add the following environment variables:
+First, run the development server:
 
-```
-YOUTUBE_API_KEY=""
-TWITTER_BEARER_TOKEN=""
-COOKIE_CONSENT_URL=
-
-GTM_ID=
-GTM_AUTH=
-GTM_ENVIRONMENT=
-
-NEXT_PUBLIC_SEARCH_APP_API_KEY=
-NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY=
-NEXT_PUBLIC_SEARCH_APP_ENV=
-NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH=
+```bash
+yarn dev
 ```
 
-(For more information on populating environment variables see section **Environment Variables** above.)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-5.  Run `npm run dev` to start the development server.
-6.  Open the **http://localhost:3000** in your browser to see the result!
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Contributions
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-We are very grateful to the community for contributing bug fixes and improvements. We welcome all efforts to evolve and improve the Sitecore Developer Portal; read below to learn how to participate in those efforts.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-### [Code of Conduct](https://github.com/Sitecore/developer-portal/CODE_OF_CONDUCT.md)
+## Learn More
 
-Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/developer-portal/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+To learn more about Next.js, take a look at the following resources:
 
-### Contributing Guide
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn/foundations/about-nextjs) - an interactive Next.js tutorial.
 
-If you want to make changes to the code, follow these steps:
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-1. Fork the Developer Portal Repo GitHub repo.
-2. Clone the forked repo to your local machine.
-3. Create a feature branch from `main` for your changes. e.g. `git checkout -b my-feature-branch`
-4. `npm install`
-5. `npm run dev` (to preview your changes locally)
-6. Make your changes (_if you changes include images please use the `public/images` folder to store the image(s)_)
-7. Commit, push to your remote fork of the Developer Portal repo, then open a pull request (PR) to the `main` branch of the Developer Portal repo.
+## Deploy on Vercel
 
-Your changes will be reviewed and merged if appropriate.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

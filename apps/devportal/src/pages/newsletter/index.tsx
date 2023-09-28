@@ -1,26 +1,19 @@
 /* eslint-disable react/prop-types */
-// eslint-disable-next-line react/prop-types
-// Global
+import newsletterPromo from '@/data/promos/newsletter';
+import { Heading } from '@chakra-ui/react';
+import { PageInfo } from '@lib/interfaces/page-info';
+import { getNewsletterTitle } from '@lib/newsletter';
+import { getPageInfo } from '@lib/page-info';
+import { NEWSLETTER_DATA_DIRECTORY } from '@lib/staticPaths';
+import Layout from '@src/layouts/Layout';
 import fs from 'fs';
 import { GetStaticProps, NextPage } from 'next';
 import path from 'path';
-// Scripts
-import { getPageInfo } from '@/src/common/page-info';
-import { NEWSLETTER_DATA_DIRECTORY } from '@/src/common/static-paths';
-import { PageInfo } from '@/src/interfaces/page-info';
-// Lib
-import { getNewsletterTitle } from '@/src/common/newsletter';
-import { translateDateAsYearMonth } from 'ui/common/translate-date';
-// Components
-import PromoCard from 'ui/components/cards/PromoCard';
-import Container from 'ui/components/common/Container';
-import VerticalGroup from 'ui/components/common/VerticalGroup';
-import { CategoryTileProps } from 'ui/components/lists/CategoryTile';
-import CategoryTileList from 'ui/components/lists/CategoryTileList';
-import Layout from 'ui/layouts/Layout';
-// Data
-import newsletterPromo from '@/data/promos/newsletter';
-import Hero from 'ui/components/heros/Hero';
+import Hero from 'ui/components/common/Hero';
+import { CenteredContent, ContentSection } from 'ui/components/helpers';
+import { CategoryTileList, CategoryTileProps } from 'ui/components/lists';
+import { PromoCard } from 'ui/components/promos';
+import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];
@@ -62,7 +55,7 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
     return newsletters;
   };
 
-  const pageInfo = await getPageInfo('newsletter', context.preview ? context.preview : null);
+  const pageInfo = await getPageInfo('_newsletter', context.preview ? context.preview : null);
 
   return {
     props: {
@@ -77,17 +70,15 @@ const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <Container>
-        <VerticalGroup>
+      <ContentSection bg="neutral-subtle-bg">
+        <CenteredContent>
           <PromoCard {...newsletterPromo} />
-          <div>
-            <h2 className="heading-md">Previous newsletters</h2>
-            <ul className="mt-8">
-              <CategoryTileList cards={newsletters} headingLevel="h2" />
-            </ul>
-          </div>
-        </VerticalGroup>
-      </Container>
+
+          <Heading size="lg">Previous newsletters</Heading>
+
+          <CategoryTileList cards={newsletters} />
+        </CenteredContent>
+      </ContentSection>
     </Layout>
   );
 };
