@@ -11,9 +11,10 @@ sitecoreCommunityQuestionsCategory: ['searchAndMerchandizing', 'storefrontsAndMa
 
 ## Introduction
 
-<img src="/images/products/ordercloud/scalable-commerce.svg" alt="Scalable Commerce with OrderCloud" className="ml-4 inline w-1/3" align="right" />
+<img src="/images/products/ordercloud/scalable-commerce.svg" alt="Scalable Commerce with OrderCloud" width="33%" align="right" />
 With Sitecore OrderCloud®, design your own commerce solution with an API-first, headless cloud platform for B2B, B2C, and B2X. OrderCloud powers custom eCommerce experiences, order management, and B2B marketplace applications for some of the world’s most well-known brands - processing over 25 million transactions and $5 billion in revenue annually.
 
+<br />
 ## Try it yourself
 
 <Row columns={3}>
