@@ -86,7 +86,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
 
     <VerticalGroup>
       <CenteredContent>
-        <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
+        <SitecoreCommunityQuestions data={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
         <StackExchangeFeed data={pageInfo.stackexchange} />
       </CenteredContent>
     </VerticalGroup>
