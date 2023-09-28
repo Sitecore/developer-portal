@@ -6,11 +6,13 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 const variants = {
   blurred: definePartsStyle({
     container: {
+      shadow: 'dark-lg',
       backdropFilter: 'blur(16px)',
       background: 'whiteAlpha.300',
       color: 'white',
       _dark: {
         background: 'blackAlpha.300',
+        shadow: 'dark-lg',
       },
     },
     header: {},
