@@ -1,6 +1,4 @@
 import {
-  Alert,
-  AlertIcon,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -96,15 +94,6 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
       </Hero>
       <VerticalGroup>
         <CenteredContent py={8} gap={8}>
-          <Alert status="info">
-            <AlertIcon />
-            You are viewing the public preview of the upcoming Sitecore global changelog.
-            <Link href="/changelog/current" title="View the list of current release notes per product" className="mx-1 font-bold hover:underline">
-              Click here
-            </Link>
-            for the current release notes per product
-          </Alert>
-
           <Grid templateColumns="repeat(5, 1fr)" gap={14}>
             <GridItem colSpan={{ base: 5, md: 3 }}>
               <Breadcrumb separator={'>'}>

@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Grid, GridItem, HStack, Hide, Image, Text, useColorModeValue } from '@chakra-ui/react';
+import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import { mdiRss } from '@mdi/js';
@@ -46,16 +46,14 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
 
         <VerticalGroup>
           <CenteredContent py={8} gap={8}>
-            <Alert status="info">
+            <Alert status="info" alignItems="center">
               <AlertIcon />
-              <AlertTitle>You are viewing the public preview of the upcoming Sitecore global changelog.</AlertTitle>
-              <AlertDescription>
+              <Tooltip label="Go to the overview of current release notes" aria-label="A tooltip">
                 <Link href="/changelog/current" title="View the list of current release notes per product">
-                  Click here for the current release notes per product
+                  You are viewing the public preview of the upcoming Sitecore global changelog.
                 </Link>
-              </AlertDescription>
+              </Tooltip>
             </Alert>
-
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
                 <SWRConfig value={{ fallback }}>

@@ -1,4 +1,4 @@
-import { Alert } from '@chakra-ui/react';
+import { Alert, AlertIcon, AlertTitle, Box, Heading, Text } from '@chakra-ui/react';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -16,17 +16,16 @@ export default function ChangelogCurrent() {
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
         <VerticalGroup>
           <CenteredContent>
-            <Alert>
-              <p>
-                <Link href="/changelog" className="mr-1 font-bold hover:underline">
-                  Click here
-                </Link>
-                to go the public preview of the upcoming Sitecore global changelog.
-              </p>
+            <Alert status="info" alignItems="center">
+              <AlertIcon />
+              <AlertTitle>
+                <Link href="/changelog">Click here to go the public preview of the upcoming Sitecore global changelog.</Link>
+              </AlertTitle>
             </Alert>
-            <div className="mt-10">
-              <h3 className="mb-4 heading-md">Current release notes</h3>
-              <p>Please check this list to find the current release notes per product</p>
+
+            <Box>
+              <Heading as="h3">Current release notes</Heading>
+              <Text>Please check this list to find the current release notes per product</Text>
 
               <Row columns={2}>
                 <LinkItem title="Sitecore Content Hub" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/release-notes.html" />
@@ -36,7 +35,7 @@ export default function ChangelogCurrent() {
                 <LinkItem title="Sitecore XM/XP" link="https://dev.sitecore.net/en/Downloads/Sitecore%20Experience%20Platform/103/Sitecore%20Experience%20Platform%20103/Release%20Notes" />
                 <LinkItem title="Sitecore Experience Commerce" link="https://sitecoredev.azureedge.net/~/media/1EF967E826F84A4CB62732F61F81EBFA.ashx?date=20221201T201304" />
               </Row>
-            </div>
+            </Box>
           </CenteredContent>
         </VerticalGroup>
       </Layout>
