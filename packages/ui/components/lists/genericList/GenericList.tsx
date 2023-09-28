@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, CardFooter, CardHeader, Center, Grid, HStack, Heading, Link, Show, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Card, CardBody, CardFooter, CardHeader, Center, Grid, HStack, Heading, Link, Show, Stack, Text } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 import Image from 'next/image';
@@ -7,7 +7,7 @@ import { GenericListData } from './types';
 
 export const GenericList = (props: GenericListData) => {
   const cols = props.column || 4;
-  const color = props.overrideColor != null ? useColorModeValue(props.overrideColor.light, props.overrideColor.light) : undefined;
+  const cardVariant = props.cardVariant || 'elevated';
 
   return (
     <Box>
@@ -22,7 +22,7 @@ export const GenericList = (props: GenericListData) => {
 
       <Grid templateColumns={{ base: `repeat(2}, 1fr)`, md: `repeat(${cols / 2}, 1fr)`, lg: `repeat(${cols}, 1fr)` }} gap={6} alignItems={'items-stretch'}>
         {props.data.map((item, key) => (
-          <Card key={key} background={'whiteAlpha.300'} backdropFilter={'blur(16px)'} color={color} width={props.width} mx={'auto'} direction={{ base: 'column', sm: 'row', md: 'column' }}>
+          <Card key={key} variant={cardVariant} width={props.width} mx={'auto'} direction={{ base: 'column', sm: 'row', md: 'column' }}>
             <CardHeader p={0}>
               {(item.img.width && item.img.height && (
                 <Center mt={10}>
@@ -43,7 +43,7 @@ export const GenericList = (props: GenericListData) => {
                   <Text>{item.description}</Text>
                   <Show below="lg">
                     <HStack as={'span'} mt={2}>
-                      <Link as={NextLink} href={item.href} color={props.overrideColor != null ? color : 'primary'} fontWeight={'semibold'}>
+                      <Link as={NextLink} href={item.href} fontWeight={'semibold'}>
                         {item.linkText}
                       </Link>
                       <Icon path={mdiArrowRight} size={0.8} />
@@ -54,7 +54,7 @@ export const GenericList = (props: GenericListData) => {
             </CardBody>
             <CardFooter display={{ base: 'none', lg: 'block' }}>
               <HStack as={'span'} mt={2}>
-                <Link as={NextLink} href={item.href} color={props.overrideColor != null ? color : 'primary'} fontWeight={'semibold'}>
+                <Link as={NextLink} href={item.href} fontWeight={'semibold'}>
                   {item.linkText}
                 </Link>
                 <Icon path={mdiArrowRight} size={0.8} />

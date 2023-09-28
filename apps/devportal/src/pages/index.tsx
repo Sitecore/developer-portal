@@ -12,7 +12,7 @@ import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import Hexagons from 'ui/components/hexagons/Hexagons';
 import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
-import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews } from 'ui/components/integrations/sitecoreCommunity';
+import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
 import { CategoryTileList, CommunityList, GenericList } from 'ui/components/lists';
 import { CTACard } from 'ui/components/promos';
 
@@ -53,7 +53,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
 
     <VerticalGroup background={'primary.900'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundSize={'cover'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
       <CenteredContent>
-        <GenericList title={platformData.title} subtitle={platformData.subtitle} data={platformData.data} column={3} overrideColor={{ light: 'white', dark: 'white' }} width={{ base: 'full', md: '2xs' }} />
+        <GenericList title={platformData.title} subtitle={platformData.subtitle} data={platformData.data} column={3} width={{ base: 'full', md: '2xs' }} cardVariant="blurred" />
       </CenteredContent>
     </VerticalGroup>
 
@@ -86,7 +86,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
 
     <VerticalGroup>
       <CenteredContent>
-        {/* <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} /> */}
+        <SitecoreCommunityQuestions content={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
         <StackExchangeFeed data={pageInfo.stackexchange} />
       </CenteredContent>
     </VerticalGroup>

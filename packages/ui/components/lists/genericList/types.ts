@@ -5,10 +5,7 @@ export type GenericListData = CardProps & {
   subtitle: string;
   data: GenericListItem[];
   column?: number;
-  overrideColor?: {
-    light: string;
-    dark: string;
-  };
+  cardVariant?: string;
 };
 
 export type GenericListItem = {
