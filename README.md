@@ -1,18 +1,19 @@
-# ![Sitecore logo in red background](https://github.com/Sitecore/developer-portal/raw/main/apps/devportal/public/favicon.png) Sitecore Developer Portal
+# ![Sitecore logo in red background](https://github.com/Sitecore/developer-portal/raw/main/apps/devportal/public/favicon-32x32.png) Sitecore Developer Portal
 
 Welcome to the Sitecore Developer Portal repository. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
 
 ## Technology used
 
-The Sitecore developer portal is built with Next.js, Typescript, Tailwind CSS, managed using Turborepo and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
+The Sitecore developer portal is built with Next.js, Typescript, Chakra UI and [Sitecore Blok](https://blok.sitecore.com), managed using Turborepo and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
 
 ### Apps and Packages
 
 - apps
-  - `devportal`: Developer Portal public site ()[Next.js](https://nextjs.org/) based)
-  - `web`: Blank [Next.js](https://nextjs.org/) app
+  - `devportal`: Developer Portal public site ([Next.js](https://nextjs.org/) based)
 - packages
   - `ui`: a React component library shared by both `web` and `devportal` applications
+  - `sc-changelog`: Custom library to retrieve and parse changelog data
+  - `sc-changelog-tests`: Run tests for the changelog
   - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
   - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
@@ -110,6 +111,7 @@ If you want to make changes to the code, follow these steps:
 4. `npm install`
 5. `npm run dev` (to preview your changes locally)
 6. Make your changes (_if you changes include images please use the `public/images` folder to store the image(s)_)
+   1. For more information on how to add content visit the [contribute](https://developers.sitecore.com/contribute) page
 7. Commit, push to your remote fork of the Developer Portal repo, then open a pull request (PR) to the `main` branch of the Developer Portal repo.
 
 Your changes will be reviewed and merged if appropriate.
