@@ -3,7 +3,6 @@ title: 'XM + Personalize FAQ'
 description: 'Learn more about how to develop for XM + Personalize.'
 hasSubPageNav: true
 hasInPageNav: false
-menuOrder: -1
 ---
 
 > Disclaimer
