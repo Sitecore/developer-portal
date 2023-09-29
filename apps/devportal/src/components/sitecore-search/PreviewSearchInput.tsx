@@ -223,7 +223,7 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
               <Loading />
             </Presence>
             {!loading && (
-              <Box shadow={'md'}>
+              <Box shadow={'base'}>
                 <NavMenu.SubContent orientation="vertical" value={activeItem} ref={widgetRef}>
                   <NavMenu.List style={{ listStyle: 'none' }}>
                     {articleSuggestions.length > 0 && (
