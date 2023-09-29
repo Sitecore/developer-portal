@@ -1,17 +1,17 @@
-import { Card, CardBody, CardHeader, HStack, Heading, Text } from '@chakra-ui/react';
+import { Card, CardBody, CardHeader, CardProps, HStack, Heading, Text } from '@chakra-ui/react';
 import { mdiGithub } from '@mdi/js';
 import Icon from '@mdi/react';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import SvgLogo, { Logo, isValidLogo } from 'ui/components/logos/SvgLogo';
 
-export type RepositoryProps = {
+export type RepositoryProps = CardProps & {
   name?: string;
   description: string;
   repositoryUrl: string;
   framework: string;
 };
 
-export const Repository = ({ name, description, repositoryUrl, framework }: RepositoryProps) => {
+export const Repository = ({ name, description, repositoryUrl, framework, ...rest }: RepositoryProps) => {
   const frameworks = framework.split('|');
   const frameworkLogos: string[] = [];
 
@@ -20,7 +20,7 @@ export const Repository = ({ name, description, repositoryUrl, framework }: Repo
   });
 
   return (
-    <Card variant={'outlineRaised'} size={'sm'} display={'flex'}>
+    <Card variant={'outlineRaised'} size={'sm'} display={'flex'} {...rest}>
       <CardHeader justifyContent={'flex-end'}>
         <HStack>
           {frameworks &&
