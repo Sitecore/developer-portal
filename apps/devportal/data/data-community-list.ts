@@ -1,6 +1,6 @@
-import { CommunityListData, CommunityListItem } from 'ui/components/lists';
+import { GenericListData, GenericListItem } from 'ui/components/lists';
 
-const content: CommunityListItem[] = [
+const content: GenericListItem[] = [
   {
     title: 'Slack',
     description: 'Talk to other Sitecore enthusiasts, share ideas, or get answers to your questions.',
@@ -33,10 +33,10 @@ const content: CommunityListItem[] = [
   },
 ];
 
-const communityListData: CommunityListData = {
+const communityListData: GenericListData = {
   title: 'Where Sitecorians hang out',
   subtitle: 'Discover more cool Sitecore groups where the community is active and engaged',
-  content,
+  data: content,
 };
 
 export default communityListData;
