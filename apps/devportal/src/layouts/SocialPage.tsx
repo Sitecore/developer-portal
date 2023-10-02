@@ -1,5 +1,3 @@
-// Interfaces
-
 import communityListData from '@/data/data-community-list';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
@@ -8,7 +6,8 @@ import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { StackExchangeFeed, TwitterFeed, YouTubeFeed } from 'ui/components/integrations';
 import { SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
-import { CommunityList } from 'ui/components/lists';
+import { GenericList } from 'ui/components/lists';
+
 import { CTACard, CTACardProps, PromoCard, PromoCardProps } from 'ui/components/promos';
 
 type SocialPageProps = {
@@ -27,7 +26,7 @@ const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): 
         <RenderContent content={pageInfo.parsedContent} />
         <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} />
         <SitecoreCommunityQuestions data={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
-        <CommunityList data={communityListData} />
+        <GenericList data={communityListData.data} title={communityListData.title} subtitle={communityListData.subtitle} column={3} cardVariant="borderedImage" />
         <TwitterFeed content={pageInfo.twitter} handle={pageInfo.twitterHandle} />
         <StackExchangeFeed data={pageInfo.stackexchange} />
         <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />

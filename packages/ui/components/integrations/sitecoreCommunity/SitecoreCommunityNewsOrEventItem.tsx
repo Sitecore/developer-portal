@@ -1,4 +1,4 @@
-import { Card, CardFooter, CardHeader, Heading, Link } from '@chakra-ui/react';
+import { Card, CardFooter, CardHeader, Heading, Link, LinkBox, LinkOverlay } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import ConditionalWrapper from 'ui/components/helpers/ConditionalWrapper';
 import { translateDate } from 'ui/lib/utils/dateUtil';
@@ -44,46 +44,45 @@ const DateOutput = ({ startDate, endDate }: DateOutputProps): JSX.Element => {
 };
 
 export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, endDate, location, startDate, title, url, viewCount, virtualUrl }: SitecoreCommunityNewsOrEventItemProps): JSX.Element => {
-  {
-    /** className="relative flex flex-col justify-between p-4 border border-theme-text-alt hover:shadow-theme-md" */
-  }
   return (
-    <Card variant={'outline'} size="md" padding={5} w={'full'} justifyContent={'space-between'}>
-      <CardHeader paddingBottom={0}>
-        {!!categoryTitle && <Heading variant="section">{categoryTitle}</Heading>}
+    <LinkBox as="article" display="contents">
+      <Card variant={'outline'} size="lg" w={'full'} justifyContent={'space-between'} layerStyle="interactive.raise">
+        <CardHeader paddingBottom={0}>
+          {!!categoryTitle && <Heading variant="section">{categoryTitle}</Heading>}
 
-        <Heading size={'sm'} my={4}>
-          <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'black'}>
-            {title}
-          </Link>
-        </Heading>
-      </CardHeader>
-      <CardFooter justify="space-between" flexWrap="wrap">
-        <DateOutput startDate={startDate} endDate={endDate} />
+          <Heading size={'sm'} my={4}>
+            <LinkOverlay as={NextLink} href={`${SITECORE_COMMUNITY_URL}${url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'black'}>
+              {title}
+            </LinkOverlay>
+          </Heading>
+        </CardHeader>
+        <CardFooter justify="space-between" flexWrap="wrap">
+          <DateOutput startDate={startDate} endDate={endDate} />
 
-        {!!location && (
-          <p className="mt-1 text-xs">
-            Location:{' '}
-            <ConditionalWrapper
-              condition={!!virtualUrl}
-              wrapper={(children) => (
-                <a className="relative z-20 hover:underline" href={virtualUrl} rel="noreferrer noopener" target="_blank">
-                  {children}
-                </a>
-              )}
-            >
-              <strong className="font-semibold">{location}</strong>
-            </ConditionalWrapper>
-          </p>
-        )}
+          {!!location && (
+            <p className="mt-1 text-xs">
+              Location:{' '}
+              <ConditionalWrapper
+                condition={!!virtualUrl}
+                wrapper={(children) => (
+                  <a className="relative z-20 hover:underline" href={virtualUrl} rel="noreferrer noopener" target="_blank">
+                    {children}
+                  </a>
+                )}
+              >
+                <strong className="font-semibold">{location}</strong>
+              </ConditionalWrapper>
+            </p>
+          )}
 
-        {!!commentCount && !!viewCount && (
-          <p className="mt-2 text-xs">
-            <span className="mr-6">{commentCount} comments</span> {viewCount} views
-          </p>
-        )}
-      </CardFooter>
-    </Card>
+          {!!commentCount && !!viewCount && (
+            <p className="mt-2 text-xs">
+              <span className="mr-6">{commentCount} comments</span> {viewCount} views
+            </p>
+          )}
+        </CardFooter>
+      </Card>
+    </LinkBox>
   );
 };
 

@@ -84,7 +84,7 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
 
   return (
     <Slide in={!scrolled} direction="top-half" style={{ zIndex: 9999 }}>
-      <Box as="header" shadow={'sm'} zIndex={999} width={'full'}>
+      <Box as="header" shadow={'base'} zIndex={999} width={'full'}>
         <Flex as={'nav'} py={{ base: 3 }} px={{ base: 4 }} align={'center'} borderBottom={'chakra-border-color'} borderBottomWidth={1} borderBottomStyle={'solid'} background={'chakra-body-bg'}>
           {/* Logo */}
           <Box as="a" href="/" flexShrink="0" title="Go to the home page">
@@ -109,7 +109,7 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
         </Flex>
 
         {children && (
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }} padding={3} paddingX={'2rem'} position={'static'} background={'chakra-body-bg'} shadow={'md'} height={16}>
+          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }} padding={3} paddingX={'2rem'} position={'static'} background={'chakra-body-bg'} shadow={'base'} height={16}>
             <Box display={'flex'} boxSize={'100%'} maxWidth={'6xl'} width={'100%'}>
               {children}
             </Box>
@@ -136,7 +136,7 @@ const DesktopNav = () => {
               {navItem.title}
               {navItem.children && <Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} _hover={{ rotate: '180deg' }} w={6} h={6} />}
             </Button>
-            <Box pos="absolute" left={0} top={'52px'} w="full" zIndex={998} display="none" _groupHover={{ display: 'block' }} bg={useColorModeValue('white', 'gray.800')} shadow={'lg'} transition={'all .25s ease-in-out'}>
+            <Box pos="absolute" left={0} top={'52px'} w="full" zIndex={998} display="none" _groupHover={{ display: 'block' }} bg={useColorModeValue('white', 'gray.800')} shadow={'base'} transition={'all .25s ease-in-out'}>
               {navItem.children && (
                 <Center>
                   <Box width="100%" maxWidth="6xl">

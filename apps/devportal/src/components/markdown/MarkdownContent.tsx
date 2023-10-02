@@ -47,7 +47,7 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
             const lang = match ? match[1] : '';
             const style = isDark ? a11yDark : a11yLight;
             return match ? (
-              <SyntaxHighlight style={style} language={lang} PreTag="div">
+              <SyntaxHighlight style={a11yDark} language={lang} className="no-prose" PreTag={'div'} customStyle={{ background: 'inherit' }}>
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlight>
             ) : (

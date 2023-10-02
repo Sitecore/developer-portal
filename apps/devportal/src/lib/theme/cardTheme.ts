@@ -32,6 +32,28 @@ const variants = {
       },
     },
   }),
+  borderedImage: definePartsStyle({
+    container: {
+      background: 'transparent',
+      color: 'white',
+      _hover: {
+        shadow: 'none',
+      },
+    },
+    header: {
+      border: 'md',
+      borderRadius: 'md',
+      borderWidth: '1px',
+      background: 'chakra-subtle-bg',
+    },
+    body: {
+      padding: '0',
+      color: 'chakra-body-text',
+    },
+    footer: {
+      color: 'chakra-body-text',
+    },
+  }),
 };
 
 export const cardTheme = defineMultiStyleConfig({ variants });

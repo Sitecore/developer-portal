@@ -13,7 +13,7 @@ import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import Hexagons from 'ui/components/hexagons/Hexagons';
 import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
 import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
-import { CategoryTileList, CommunityList, GenericList } from 'ui/components/lists';
+import { CategoryTileList, GenericList } from 'ui/components/lists';
 import { CTACard } from 'ui/components/promos';
 
 export async function getStaticProps(context: any) {
@@ -62,7 +62,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
         <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} title="Community news" />
         <SitecoreCommunityEvents data={pageInfo.sitecoreCommunity.events} title="Community Events" />
         <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
-        <CommunityList data={communityListData} />
+        <GenericList data={communityListData.data} title={communityListData.title} subtitle={communityListData.subtitle} column={3} cardVariant="borderedImage" />
       </CenteredContent>
     </VerticalGroup>
 
