@@ -26,7 +26,7 @@ export const HexagonMobileItem = ({ product }: HexagonMobileItemProps): JSX.Elem
         </Heading>
       </Flex>
       <Text my={2}>{product.description}</Text>
-      <ButtonLink text={product.linkText} href={product.linkHref} title={`${product.name} product page`} />
+      <ButtonLink text={product.name} href={product.linkHref} title={`${product.name} product page`} />
     </ListItem>
   );
 };
