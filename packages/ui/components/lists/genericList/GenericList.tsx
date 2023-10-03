@@ -22,8 +22,8 @@ export const GenericList = (props: GenericListData) => {
 
       <Grid templateColumns={{ base: `repeat(2}, 1fr)`, md: `repeat(${cols / 2}, 1fr)`, lg: `repeat(${cols}, 1fr)` }} gap={6} alignItems={'items-stretch'}>
         {props.data.map((item, key) => (
-          <LinkBox as="article" display={'inline-flex'}>
-            <Card key={key} variant={cardVariant} layerStyle="interactive.raise" width={props.width} mx={'auto'} direction={{ base: 'column', sm: 'row', md: 'column' }}>
+          <LinkBox as="article" display={'inline-flex'} key={key}>
+            <Card variant={cardVariant} layerStyle="interactive.raise" width={props.width} mx={'auto'} direction={{ base: 'column', sm: 'row', md: 'column' }}>
               <CardHeader p={0}>
                 {(item.img.width && item.img.height && (
                   <Center mt={10}>
