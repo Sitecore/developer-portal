@@ -208,7 +208,7 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
               <InputLeftElement>
                 <FaSearch />
               </InputLeftElement>
-              <Input as={NavMenu.InputTrigger} name="query" onChange={keyphraseHandler} placeholder="What are you looking for?" onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
+              <Input as={NavMenu.InputTrigger} name="query" role="search" onChange={keyphraseHandler} placeholder="What are you looking for?" onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
               <InputRightElement width={{ base: '100px', md: '200px' }} opacity={'0.5'}>
                 <Text as={'span'} display={{ base: 'none', md: 'flex ' }}>
                   Powered by
