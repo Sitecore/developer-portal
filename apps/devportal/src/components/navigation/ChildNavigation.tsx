@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Collapse, Heading, Hide, Icon, Menu, MenuButton, MenuItem, MenuList, Show, Stack, Text, Tooltip, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Hide, Icon, Menu, MenuButton, MenuItem, MenuList, Show, Stack, Text, Tooltip, useDisclosure } from '@chakra-ui/react';
 import React from 'react';
 //import { useGlobalState } from '../../lib/globalState';
 import { ChevronDownIcon } from '@chakra-ui/icons';
@@ -18,28 +18,30 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
   return (
     <Box as="nav" position={'sticky'} top={'9rem'}>
       {/* Mobile */}
-      <Hide above="md">
-        <Menu>
-          <MenuButton as={Button} variant={'text'} borderRadius={0} rightIcon={<ChevronDownIcon />} mb={4}>
-            {subPageNavigation.title}
-          </MenuButton>
-          <MenuList>
-            {subPageNavigation?.routes.map((link, i) => {
-              const urlSegment = `${subPageNavigation.path}/${link.path}`;
-              return (
-                <MenuItem key={i}>
-                  <Link href={urlSegment} key={i}>
-                    {link.title}
-                  </Link>
-                </MenuItem>
-              );
-            })}
-          </MenuList>
-        </Menu>
-      </Hide>
+      <Show below="md">
+        <Flex justifyContent="end">
+          <Menu>
+            <MenuButton as={Button} variant={'text'} borderRadius={0} rightIcon={<ChevronDownIcon />} mb={4} border={'1px solid'} borderColor={'chakra-border-color'}>
+              {subPageNavigation.title}
+            </MenuButton>
+            <MenuList>
+              {subPageNavigation?.routes.map((link, i) => {
+                const urlSegment = `${subPageNavigation.path}/${link.path}`;
+                return (
+                  <MenuItem key={i}>
+                    <Link href={urlSegment} key={i}>
+                      {link.title}
+                    </Link>
+                  </MenuItem>
+                );
+              })}
+            </MenuList>
+          </Menu>
+        </Flex>
+      </Show>
 
       {/* Desktop */}
-      <Show above="md">
+      <Hide below="md">
         {subPageNavigation.title && (
           <Heading size={'sm'} mb={{ base: 2, md: 8 }}>
             {subPageNavigation.title}
@@ -76,7 +78,7 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
             );
           })}
         </ButtonGroup>
-      </Show>
+      </Hide>
     </Box>
   );
 };
