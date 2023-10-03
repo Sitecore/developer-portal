@@ -102,7 +102,7 @@ const Group = ({
   onGroupTitleClick: (arg: string) => void;
 }) => {
   return (
-    <Box width={[1 / 5]} p={2} background={'primary.100'}>
+    <Box width={[1 / 5]} p={2} background={'primary.100'} minH={'400'}>
       <Heading variant="section" px={4}>
         {groupTitle}
       </Heading>
@@ -208,7 +208,7 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
               <InputLeftElement>
                 <FaSearch />
               </InputLeftElement>
-              <Input as={NavMenu.InputTrigger} name="query" onChange={keyphraseHandler} placeholder="What are you looking for?" onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
+              <Input as={NavMenu.InputTrigger} name="query" role="search" onChange={keyphraseHandler} placeholder="What are you looking for?" onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
               <InputRightElement width={{ base: '100px', md: '200px' }} opacity={'0.5'}>
                 <Text as={'span'} display={{ base: 'none', md: 'flex ' }}>
                   Powered by

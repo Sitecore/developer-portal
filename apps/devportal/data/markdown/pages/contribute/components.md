@@ -66,7 +66,7 @@ Card that shows a GitHub repository and the programming language(s) it uses
 ```react
 <Repository framework="Nextjs" 
   name="Sitecore Developer Portal" 
-  description="Open source repo for the Sitecore Developer Portal (https://developers.sitecore.com)" 
+  description="Open source repo for the Sitecore Developer Portal" 
   repositoryUrl="https://github.com/sitecore/developer-portal" 
   maxWidth="md"
 />
@@ -91,19 +91,12 @@ Helper component that can be used to show cards next to each other
 
 ```jsx
 <Row columns={4}>
-  <Link 
-    title="User Documentation" 
-    link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
-  <Link title="Developer Documentation" 
-    link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html" />
-  <Link title="XM Cloud Build Configuration" 
-    link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html" />
-  <Link title="XM Cloud Deploy App" 
-    link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
-  <Link title="Developer Tools" 
-    link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html" />
-  <Link title="XM Cloud development" 
-    link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html" />
+  <Link title="User Documentation" link="https://doc.sitecore.com" />
+  <Link title="Developer Documentation" link="https://doc.sitecore.com" />
+  <Link title="XM Cloud Build Configuration" link="https://doc.sitecore.com" />
+  <Link title="XM Cloud Deploy App" link="https://doc.sitecore.com" />
+  <Link title="Developer Tools" link="https://doc.sitecore.com" />
+  <Link title="XM Cloud development" link="https://doc.sitecore.com" />
 </Row>
 ```
 
@@ -126,8 +119,9 @@ Component that can be used to promote another section within the Developer Porta
 <Promo
   title="Use a better title than this"
   description="This is are where you can add a description or introduction text"
-  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
+  imageSource="../link/to/image.jpg"
   linkText="Link to anywhere"
-  linkHref="https://developers.sitecore.com" isImageLeft={false}
+  linkHref="https://developers.sitecore.com"
+  isImageLeft={false}
 />
 ```

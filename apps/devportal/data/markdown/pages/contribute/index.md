@@ -1,7 +1,7 @@
 ---
 title: 'Introduction'
 description: 'Learn more on how you can contribute to the Developer Portal'
-hasInPageNav: true
+hasInPageNav: false
 hasSubPageNav: true
 ---
 

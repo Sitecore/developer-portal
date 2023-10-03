@@ -45,9 +45,8 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
           code({ className, children }) {
             const match = /language-(\w+)/.exec(className || '');
             const lang = match ? match[1] : '';
-            const style = isDark ? a11yDark : a11yLight;
             return match ? (
-              <SyntaxHighlight style={a11yDark} language={lang} className="no-prose" PreTag={'div'} customStyle={{ background: 'inherit' }}>
+              <SyntaxHighlight style={a11yDark} language={lang} className="no-prose" PreTag={'div'} customStyle={{ background: 'inherit', display: 'inline-grid', width: '100%' }} wrapLongLines wrapLines>
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlight>
             ) : (

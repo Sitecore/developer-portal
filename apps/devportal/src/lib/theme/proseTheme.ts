@@ -80,9 +80,12 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     bg: 'gray.700',
     color: 'gray.50',
     overflow: 'auto',
-    display: 'inline-block',
+    width: 'full',
+    display: 'inline-grid',
     _dark: {
-      bg: 'gray.800',
+      bg: 'gray.700',
+      border: '1px solid',
+      borderColor: 'gray.400',
     },
 
     code: {

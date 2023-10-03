@@ -1,6 +1,7 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, CardProps, Image, Link, Text } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, CardProps, Image, Link, Text, useColorModeValue } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
+import NextLink from 'next/link';
 
 type ArticleProps = CardProps & {
   title: string;
@@ -12,7 +13,7 @@ type ArticleProps = CardProps & {
 };
 export const Article = ({ title, description, link, linktext, imageUrl, hideLinkText, ...rest }: ArticleProps) => {
   return (
-    <Card variant={'filled'} layerStyle={'interactive.raise'} size={'md'} {...rest}>
+    <Card variant={'outlineRaised'} layerStyle={'interactive.raise'} size={'md'} {...rest}>
       <CardHeader>
         <Text as="h4" size={'md'}>
           {title}
@@ -37,9 +38,11 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
       </CardBody>
       {link && !hideLinkText && (
         <CardFooter pt={0}>
-          <Link as={Button} href={link} title={linktext ? linktext : 'Read more'} color={'white'} rightIcon={<Icon path={mdiArrowRight} size={0.8} color={'white'} />}>
-            {linktext ? linktext : 'Read more'}
-          </Link>
+          <Button rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>
+            <Link as={NextLink} href={link} color={useColorModeValue('white', 'black !important')}>
+              {linktext ?? 'Read more'}
+            </Link>
+          </Button>
         </CardFooter>
       )}
     </Card>
