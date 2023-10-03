@@ -102,7 +102,7 @@ const Group = ({
   onGroupTitleClick: (arg: string) => void;
 }) => {
   return (
-    <Box width={[1 / 5]} p={2} background={'primary.100'}>
+    <Box width={[1 / 5]} p={2} background={'primary.100'} minH={'400'}>
       <Heading variant="section" px={4}>
         {groupTitle}
       </Heading>
