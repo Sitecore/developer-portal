@@ -1,6 +1,7 @@
 ---
 title: "Configuration options"
 description: "Learn more on configuring pages"
+hasInPageNav: false
 ---
 
 ## Page Configuration

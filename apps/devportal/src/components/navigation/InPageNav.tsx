@@ -17,16 +17,16 @@ const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
   }));
 
   return (
-    <Wrap as={'nav'} direction="column" position={'sticky'} top={'9rem'}>
+    <Wrap as={'nav'} direction="column" position={'sticky'} top={'9rem'} ml={2}>
       {title && (
         <Heading variant={'section'} size={'sm'} mb={8}>
           Table of contents
         </Heading>
       )}
-      <List spacing="1" m="-2.5" position={'sticky'}>
+      <List spacing="1" position={'sticky'}>
         {links.map((link, i) => {
           return (
-            <ListItem display={'inline-flex'} paddingLeft={2} key={i}>
+            <ListItem display={'flex'} paddingLeft={0} key={i}>
               <ListIcon boxSize={6}>
                 <path d={mdiMenuRight} />
               </ListIcon>
