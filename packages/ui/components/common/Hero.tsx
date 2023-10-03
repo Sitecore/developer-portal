@@ -1,4 +1,4 @@
-import { Heading, Text, useBreakpointValue, useColorModeValue } from '@chakra-ui/react';
+import { Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import { VerticalGroup } from 'ui/components/helpers';
 import { CenteredContent } from 'ui/components/helpers/CenteredContent';
@@ -25,11 +25,11 @@ const Hero = ({ description, title, children, productLogo }: HeroProps): JSX.Ele
       <CenteredContent gap={2} py={{ base: 6, md: 12, xl: 24 }} direction={{ base: 'column-reverse', md: 'column' }}>
         {productLogo && <Image src={useColorModeValue(GetProductLogo(productLogo, 'Light'), GetProductLogo(productLogo, 'Dark'))} alt={`${title} logo`} width={'280'} height={'60'} />}
         {!productLogo && (
-          <Heading as="h1" fontSize={useBreakpointValue({ base: '2xl', md: '6xl' })}>
+          <Heading as="h1" fontSize={{ base: '2xl', md: '6xl' }}>
             {title}
           </Heading>
         )}
-        <Text as="h2" variant="subtle" fontSize={useBreakpointValue({ base: 'sm', md: 'md' })}>
+        <Text as="h2" variant="subtle" fontSize={{ base: 'sm', md: 'md' }}>
           {description}
         </Text>
         {children}
