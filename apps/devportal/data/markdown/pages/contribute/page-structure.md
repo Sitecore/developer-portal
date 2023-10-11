@@ -10,17 +10,9 @@ The Developer Portal uses markdown for most of its pages. The site structure is 
 
 In addition to the pages folder there is also a partials folder (`apps\devportal\data\markdown\partials`). Partials are reusable markdown files that can be referenced within a page.
 
-## Configuration
-Each page can store metadata (frontmatter) in head of the page. Required fields are title and description, but there are lots of other settings possible. A default page setup would look like this
-```markdown
----
-title: 'Page Title'
-description: 'Description of the page'
----
-
-# This is where the content would be
-
-```
+## Custom pages
+Pages that only use a markdown file to define some configuration but use components in a `.tsx` file can be prefixed with a `_`. This exludes them from the getStaticPaths function since it will be picked up by the Next.js build anyway. 
+An example of this would be `apps\devportal\src\pages\search.tsx` using the `apps\devportal\data\markdown\pages\_search.md` file for configuration.
 
 ## Pagetypes
 The Developer Portal has different pagetypes that can be used within the site.
@@ -28,6 +20,8 @@ The Developer Portal has different pagetypes that can be used within the site.
 - Article
 - ChildOverview
 - Social
+
+This does require [configuring](/contribute/configuration#core) the `PageType` setting in the markdown file.
 
 ### Default
 Most of the main sections (Docs, Learn, Discover) use the default page type. The default pagetype uses one column in which content and components can be rendered.

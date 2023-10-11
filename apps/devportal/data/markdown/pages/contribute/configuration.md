@@ -4,8 +4,20 @@ description: "Learn more on configuring pages"
 hasInPageNav: false
 ---
 
-## Page Configuration
-Other configuration options are:
+## Configuration
+Each page can store metadata (frontmatter) in head of the page. Required fields are title and description, but there are lots of other settings possible. A default page setup would look like this
+```markdown
+---
+title: 'Page Title'
+description: 'Description of the page'
+---
+
+# This is where the content would be
+
+```
+
+## Options
+Besides the title and description there are various other options available:
 
 ### Core
 These parameters affect core functionality of a page:
@@ -32,6 +44,12 @@ changelogProductId|string[]|array of productIds to include|
 changelog|string|Number of entries to retrieve|
 promoBefore|string[]|Name of .ts file within `apps\devportal\data\promos` folder (without file extension)|
 promoAfter|string[]|Name of .ts file within `apps\devportal\data\promos` folder (without file extension)|
+
+### Sitecore Community
+These options can enable/disable Sitecore Community integrations on a page level
+
+|Variable|Type|Purpose|
+|-|-|-|
 sitecoreCommunityBlog|number/boolean|[Read more here](content/community)|
 sitecoreCommunityBlogSort|SortOption/SortOption[]|[Read more here](content/community)|
 sitecoreCommunityEvents|boolean|[Read more here](content/community)|

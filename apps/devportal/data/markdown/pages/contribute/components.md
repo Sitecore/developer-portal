@@ -31,7 +31,7 @@ Card that shows a title, descriptive text and a button that links to the full ar
   maxWidth="sm"  
 />
 ```
-
+---
 ## Link
 
 ### Description
@@ -47,7 +47,7 @@ Highlight a link
 <Link title="User Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" maxWidth="sm" />
 
 ```
-
+---
 ## Repository
  
 ### Description
@@ -71,6 +71,7 @@ Card that shows a GitHub repository and the programming language(s) it uses
   maxWidth="md"
 />
 ```
+---
 ## Row
 
 ### Description
@@ -100,6 +101,7 @@ Helper component that can be used to show cards next to each other
 </Row>
 ```
 
+---
 ## Promo
 
 ### Description
@@ -124,4 +126,18 @@ Component that can be used to promote another section within the Developer Porta
   linkHref="https://developers.sitecore.com"
   isImageLeft={false}
 />
+```
+
+---
+## VideoPromo
+Promote a topic using a YouTube video, title and description
+
+### Description
+
+### Example
+<VideoPromo youTubeId="cP2BBlgKZS8" title="Content Hub ONE" description="Content Hub One is designed for brands that need an agile headless CMS to support quickly evolving experiences targeting multiple channels. With Content Hub ONE marketers can deliver consistency across touchpoints while maintaining the content in one central location." />
+
+### Code
+```jsx
+<VideoPromo youTubeId="cP2BBlgKZS8" title="Content Hub ONE" description="Content Hub One is designed for brands that need an agile headless CMS to support quickly evolving experiences targeting multiple channels. With Content Hub ONE marketers can deliver consistency across touchpoints while maintaining the content in one central location." />
 ```
