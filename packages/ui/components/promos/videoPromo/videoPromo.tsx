@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import { ButtonLink } from '../../links/ButtonLink';
 import YouTube from '../../video/YouTube';
 import { VideoPromoProps, VideoProps } from './types';
@@ -15,23 +15,19 @@ export const VideoPromo = ({ title, description, videoUrl, youTubeId, linkText, 
   return (
     <Flex gap={6} my={8}>
       {isImageLeft && videoUrl != undefined && (
-        <Box flexDirection={'column'} width={'50%'}>
+        <Box flexDirection={'column'} width={'50%'} display={'inline-grid'} alignItems={'center'}>
           <Video videoUrl={videoUrl} />
         </Box>
       )}
       {isImageLeft && youTubeId != undefined && (
-        <Box flexDirection={'column'} width={'50%'}>
+        <Box flexDirection={'column'} width={'50%'} display={'inline-grid'} alignItems={'center'}>
           <YouTube youTubeId={youTubeId} />
         </Box>
       )}
       <Box flexDirection={'column'} width={'50%'}>
-        <h2 className="mt-0 mb-4 heading-md">{title}</h2>
-        <p className={`text-theme-text-alt ${linkText ? 'mb-8' : ''}`}>{description}</p>
-        {!!linkText && (
-          <div>
-            <ButtonLink text={linkText ? linkText : 'Read more'} href={linkHref} />
-          </div>
-        )}
+        <Heading as={'h3'}>{title}</Heading>
+        <Text>{description}</Text>
+        {!!linkText && <ButtonLink text={linkText ? linkText : 'Read more'} href={linkHref} />}
       </Box>
       {!isImageLeft && videoUrl != undefined && (
         <Box flexDirection={'column'} width={'50%'}>
