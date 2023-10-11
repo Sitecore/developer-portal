@@ -1,6 +1,6 @@
 ---
-title: 'Try Sitecore products'
-description: 'Learn more about the trials Sitecore offers'
+title: 'Explore Sitecore products'
+description: 'Are you wanting to know more about how to build with Sitecore products? Learn more about the trials Sitecore offers for some of the products in our composable DXP.'
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'
 twitter: ['#LearnSitecore']
@@ -20,13 +20,13 @@ Fully API-driven, our architecture enables your team to build for any channel wi
   <Article 
     title="Sitecore front-end developer trial" 
     description="Are you a front-end developer looking to level-up your career? The trial will teach you the basics of our javascript headless services, step by step. Additionally, you will get a taste of Sitecore's personalization capabilities, one of its most powerful features — it's what distinguishes it from other CMS." 
-    link="https://www.sitecore.com/knowledge-center/getting-started/developer-trial" 
+    link="https://www.sitecore.com/trial" 
     linktext="Sign up now!" />
 
   <Article 
     title="Moosend" 
     description="Moosend provides all the necessary tools to get you started down your email marketing path. If you're well underway on your email marketing journey and you just traversed through other ESPs to our platform, you'll be happy to know that we give you state-of-the art features that will expand your toolbox and make your life easier." 
-    link="https://help.moosend.com/hc/en-us/articles/208062955-How-can-I-create-a-Moosend-account-" 
+    link="https://identity.moosend.com/register/" 
     linktext="Start by creating your own account!" />
 
   <Article 
