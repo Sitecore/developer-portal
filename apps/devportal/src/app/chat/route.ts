@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     messages.push({ role: "user", content: query }); 
 
     const response = await client.getChatCompletions(process.env.AZURE_DEPLOYMENT_ID!, messages);
-    let answers: string[] = [];
+    const answers: string[] = [];
     for (const choice of response.choices) {
         if(choice?.message?.content) {
             console.log(choice.message.content);
