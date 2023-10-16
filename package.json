@@ -25,5 +25,9 @@
     "turbo": "^1.10.14",
     "ui": "*"
   },
-  "packageManager": "npm@9.5.0^"
+  "packageManager": "npm@9.5.0^",
+  "dependencies": {
+    "@azure/openai": "^1.0.0-beta.6",
+    "@mdi/js": "^7.3.67"
+  }
 }
