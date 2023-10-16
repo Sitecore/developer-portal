@@ -35,7 +35,10 @@
         "SITECORE_CHONE_AUTH_TOKEN_PREVIEW",
         "SITECORE_CHONE_AUTH_TOKEN_DELIVERY",
         "PREVIEW_HOSTNAME",
-        "PREVIEW_SECRET"
+        "PREVIEW_SECRET",
+        "AZURE_OPENAI_ENDPOINT",
+        "AZURE_OPENAI_KEY",
+        "AZURE_DEPLOYMENT_ID"
       ],
       "outputs": [".next/**"]
     }
