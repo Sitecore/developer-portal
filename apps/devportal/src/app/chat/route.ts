@@ -28,8 +28,6 @@ export async function POST(request: NextRequest) {
     const client = new OpenAIClient(process.env.AZURE_OPENAI_ENDPOINT!, new AzureKeyCredential(process.env.AZURE_OPENAI_KEY!));
     messages.push({ role: "user", content: query });
 
-    console.log(messages);
-
     const response = await client.getChatCompletions(process.env.AZURE_DEPLOYMENT_ID!, messages);
     return new NextResponse(JSON.stringify(response.choices[0]?.message?.content));
 }
