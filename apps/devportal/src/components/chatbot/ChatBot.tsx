@@ -1,11 +1,15 @@
 import { Message, MessageType } from '@/src/types/Message';
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, FormControl, Heading, Input, useBoolean } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, CloseButton, FormControl, Heading, IconButton, Input, Progress, Stack, Text, Tooltip, Wrap, useBoolean } from '@chakra-ui/react';
 import { mdiCreation, mdiDeleteSweep } from '@mdi/js';
 import Icon from '@mdi/react';
 import { useEffect, useRef, useState } from 'react';
 import { Messages } from './Messages';
 
-export const ChatBot = () => {
+type ChatBotProps = {
+  onClose?: () => void;
+};
+
+export const ChatBot = ({ onClose }: ChatBotProps) => {
   const [isLoading, setIsLoading] = useBoolean(false);
   const [question, setQuestion] = useState('');
   const [messages, setMessage] = useState<Message[]>([
@@ -14,6 +18,8 @@ export const ChatBot = () => {
       text: "Hello! I'm Clippy, your friendly Sitecore helper. How can I help you today?",
     },
   ]);
+
+  const isBlank = question === '';
 
   const requestBody = {
     question: question,
@@ -31,6 +37,7 @@ export const ChatBot = () => {
   }, [messages]);
 
   const askQuestion = function () {
+    if (isBlank) return;
     setIsLoading.on();
     setMessage((old) => [...old, { type: MessageType.User, text: question }]);
     fetch('/chat', {
@@ -56,31 +63,50 @@ export const ChatBot = () => {
   };
 
   return (
-    <Box maxW={'md'}>
-      <Card>
-        <CardHeader>
-          <Heading as="h2">Welcome to Sitecore Clippy</Heading>
-          <Heading variant="section">your friendly Sitecore helper!</Heading>
-        </CardHeader>
-        <CardBody height={'200px'}>
-          <Box overflowY="auto" maxHeight="600px">
-            <Messages messages={...messages} isLoading={isLoading} />
-            <div ref={messagesEndRef} />
-          </Box>
-        </CardBody>
+    <Card variant={'elevated'} size={['sm', 'md', 'lg']} maxW={'lg'} background={'transparent'}>
+      {/* <CardHeader background="primary-fg" color="chakra-inverse-text" borderTopRadius="2xl"> */}
+      <CardHeader bgGradient="linear(to-tr, primary.500, teal.500)" color="chakra-inverse-text" borderTopRadius="2xl">
+        <Stack direction="row" spacing={4} align="top" justify="space-between">
+          <Stack>
+            <Heading as="h2">Sitecore Clippy</Heading>
+            <Text variant="subtle" color="chakra-inverse-text">
+              your friendly Sitecore helper!
+            </Text>
+          </Stack>
+          <CloseButton onClick={onClose} />
+        </Stack>
+      </CardHeader>
+      <CardBody height={'200px'} background={'chakra-body-bg'}>
+        <Box overflowY="auto" maxHeight={['200px', '400px', '600px']}>
+          <Messages messages={...messages} />
+          {isLoading && <Progress mx={5} mt={4} variant="ai" isIndeterminate />}
+          <div ref={messagesEndRef} />
+        </Box>
+      </CardBody>
 
-        <CardFooter gap={4}>
-          <Button onClick={resetSession} variant="ai" leftIcon={<Icon path={mdiDeleteSweep} size={1} />} marginTop={'auto'}>
+      <CardFooter gap={4} background={'chakra-body-bg'} borderBottomRadius={'xl'}>
+        <Tooltip label="Reset">
+          <IconButton onClick={resetSession} variant="outline" icon={<Icon path={mdiDeleteSweep} size={1} />} marginTop={'auto'} aria-label="Reset">
             Reset
-          </Button>
+          </IconButton>
+        </Tooltip>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            askQuestion();
+          }}
+          style={{ width: '100%' }}
+        >
           <FormControl>
-            <Input variant="outline" type="text" placeholder="What would you like to know?" value={question} id="question" onChange={(e) => setQuestion(e.target.value)} />
+            <Input variant="outline" type="text" placeholder="What would you like to know?" value={question} id="question" onChange={(e) => setQuestion(e.target.value)} focusBorderColor="primary-subtle-bg" />
           </FormControl>
+        </form>
+        <Wrap align="center">
           <Button onClick={askQuestion} variant="ai" leftIcon={<Icon path={mdiCreation} size={1} />} marginTop={'auto'}>
             Ask
           </Button>
-        </CardFooter>
-      </Card>
-    </Box>
+        </Wrap>
+      </CardFooter>
+    </Card>
   );
 };
