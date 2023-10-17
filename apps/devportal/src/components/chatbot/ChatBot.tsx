@@ -102,7 +102,7 @@ export const ChatBot = ({ onClose }: ChatBotProps) => {
           </FormControl>
         </form>
         <Wrap align="center">
-          <Button onClick={askQuestion} variant="ai" leftIcon={<Icon path={mdiCreation} size={1} />} marginTop={'auto'}>
+          <Button isDisabled={isLoading} _hover={{ }} onClick={askQuestion} variant="ai" leftIcon={<Icon path={mdiCreation} size={1} />} marginTop={'auto'}>
             Ask
           </Button>
         </Wrap>
