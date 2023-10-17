@@ -15,7 +15,7 @@ export const Clippy = () => {
 
       <ScaleFade in={isOpen} reverse>
         <Box position="fixed" inset="auto 0px 0px auto" margin={['auto 0 0 auto', 'auto 3% 3% auto', 'auto 5% 5% auto']} shadow={'2xl'}>
-          <ChatBot onClose={onClose} />
+          <ChatBot onClose={onClose} isOpen={isOpen} />
         </Box>
       </ScaleFade>
     </>

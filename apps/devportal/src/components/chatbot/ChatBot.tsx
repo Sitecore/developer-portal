@@ -7,9 +7,10 @@ import { Messages } from './Messages';
 
 type ChatBotProps = {
   onClose?: () => void;
+  isOpen?: boolean;
 };
 
-export const ChatBot = ({ onClose }: ChatBotProps) => {
+export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
   const [isLoading, setIsLoading] = useBoolean(false);
   const [question, setQuestion] = useState('');
   const [messages, setMessage] = useState<Message[]>([
@@ -33,7 +34,9 @@ export const ChatBot = ({ onClose }: ChatBotProps) => {
   };
 
   useEffect(() => {
-    scrollToBottom();
+    if (isOpen) {
+      scrollToBottom();
+    }
   }, [messages]);
 
   const askQuestion = function () {
@@ -102,7 +105,7 @@ export const ChatBot = ({ onClose }: ChatBotProps) => {
           </FormControl>
         </form>
         <Wrap align="center">
-          <Button isDisabled={isLoading} _hover={{ }} onClick={askQuestion} variant="ai" leftIcon={<Icon path={mdiCreation} size={1} />} marginTop={'auto'}>
+          <Button isDisabled={isLoading} _hover={{}} onClick={askQuestion} variant="ai" leftIcon={<Icon path={mdiCreation} size={1} />} marginTop={'auto'}>
             Ask
           </Button>
         </Wrap>
