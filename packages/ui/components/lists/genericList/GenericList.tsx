@@ -44,7 +44,8 @@ export const GenericList = (props: GenericListData) => {
                     <Text>{item.description}</Text>
                     <Show below="lg">
                       <HStack as={'span'} mt={2}>
-                        <Link as={NextLink} href={item.href} fontWeight={'semibold'}>
+                        {/* Override zIndex to prevent breaking through chatbox */}
+                        <Link as={NextLink} href={item.href} fontWeight={'semibold'} zIndex={'inherit !important'}>
                           {item.linkText}
                         </Link>
                         <Icon path={mdiArrowRight} size={0.8} />
