@@ -1,4 +1,4 @@
-import { Box, Button, ScaleFade, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ScaleFade, Tooltip, useDisclosure } from '@chakra-ui/react';
 import Image from 'next/image';
 import { ChatBot } from './ChatBot';
 
@@ -7,11 +7,13 @@ export const Clippy = () => {
 
   return (
     <>
-      <Button width={['80px', '120px']} height="12+px" cursor="pointer" position="fixed" inset="auto 0px 0px auto" margin="auto 1% 1% auto" onClick={onToggle} colorScheme="grey">
-        <Image src="/images/clippy.png" width={100} height={100} alt="Get help from Clippy!" />
-      </Button>
+      <Tooltip label="Ask Sitecore Clippy - your personal assistant">
+        <Button width="70px" height="100px" cursor="pointer" position="fixed" inset="auto 0px 0px auto" margin="auto 1% 1% auto" onClick={onToggle} colorScheme="grey">
+          <Image src="/images/clippy.gif" width={66} height={86} alt="Get help from Clippy!" />
+        </Button>
+      </Tooltip>
 
-      <ScaleFade in={isOpen}>
+      <ScaleFade in={isOpen} reverse>
         <Box position="fixed" inset="auto 0px 0px auto" margin={['auto 0 0 auto', 'auto 3% 3% auto', 'auto 5% 5% auto']} shadow={'2xl'}>
           <ChatBot onClose={onClose} />
         </Box>
