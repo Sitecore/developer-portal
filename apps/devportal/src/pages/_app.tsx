@@ -11,9 +11,11 @@ import { useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
+import { EngageTrackerProvider, useEngageTracker } from 'ui/components/integrations';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(false);
+  const engageTracker = useEngageTracker();
 
   TopBarProgress.config({
     barColors: {
@@ -60,12 +62,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       </style>
       <ChakraProvider theme={scdpTheme}>
         {progress && <TopBarProgress />}
-
-        <Navbar>
-          <SearchInputSwitcher />
-        </Navbar>
-        <Component {...pageProps} />
-        <Footer />
+        <EngageTrackerProvider>
+          <Navbar>
+            <SearchInputSwitcher />
+          </Navbar>
+          <Component {...pageProps} />
+          <Footer />
+        </EngageTrackerProvider>
       </ChakraProvider>
     </SearchWrapper>
   );

@@ -19,6 +19,7 @@ type PageInfoCore = {
   previewMode?: boolean;
   slug: string;
   menuOrder?: number;
+  cdpTags?: string[];
 };
 
 // Input for 3rd party integrations are just strings
