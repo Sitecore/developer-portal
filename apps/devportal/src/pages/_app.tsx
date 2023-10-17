@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
+import { Clippy } from '../components/chatbot/Clippy';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(false);
@@ -66,6 +67,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Navbar>
         <Component {...pageProps} />
         <Footer />
+
+        <Clippy />
       </ChakraProvider>
     </SearchWrapper>
   );
