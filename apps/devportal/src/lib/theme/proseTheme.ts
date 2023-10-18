@@ -89,8 +89,8 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     },
 
     code: {
-      fontWeight: 'normal',
-
+      fontWeight: 'semibold',
+      fontFamily: 'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace',
       '&::before, &::after': {
         content: '""',
       },
@@ -98,9 +98,9 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
   },
   code: {
     fontWeight: 'semibold',
-
+    fontFamily: 'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace',
     '&::before, &::after': {
-      content: '"`"',
+      content: '""',
     },
   },
 
@@ -129,17 +129,17 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     my: 3,
   },
   'ol>li::marker': {
-    color: 'gray.400',
+    color: 'chakra-body-text',
 
     _dark: {
-      color: 'gray.500',
+      color: 'chakra-inverse-text',
     },
   },
   'ul>li::marker': {
-    color: 'gray.500',
+    color: 'chakra-body-text',
 
     _dark: {
-      color: 'gray.300',
+      color: 'chakra-inverse-text',
     },
   },
 
