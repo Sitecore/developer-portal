@@ -22,20 +22,26 @@ export const EngageTrackerProvider: FC<EngageTrackerProviderProps> = ({ children
   const initEngageTracker = useCallback(async () => {
     setLoading(true);
 
-    if (!EngageKeys.SitecoreCdpClientKey || !EngageKeys.SitecoreCdpTargetUrl || !EngageKeys.SitecoreCdpCookieDomain || !EngageKeys.SitecoreCdpPointOfSale) {
+    if (!EngageKeys.SitecoreCdpClientKey || !EngageKeys.SitecoreCdpTargetUrl || !EngageKeys.SitecoreCdpPointOfSale) {
       isTrackerEnabled.current = false;
       console.log('Engage tracker is disabled because of missing configuration.');
     }
 
+    const initConfig: any = {
+      clientKey: EngageKeys.SitecoreCdpClientKey,
+      targetURL: EngageKeys.SitecoreCdpTargetUrl,
+      pointOfSale: EngageKeys.SitecoreCdpPointOfSale,
+      cookieExpiryDays: 365,
+      forceServerCookieMode: false,
+      //webPersonalization: true,
+    };
+
+    if (EngageKeys.SitecoreCdpCookieDomain) {
+      initConfig.cookieDomain = EngageKeys.SitecoreCdpCookieDomain;
+    }
+
     if (isTrackerEnabled.current) {
-      const engage = await init({
-        clientKey: EngageKeys.SitecoreCdpClientKey,
-        targetURL: EngageKeys.SitecoreCdpTargetUrl,
-        cookieDomain: EngageKeys.SitecoreCdpCookieDomain,
-        pointOfSale: EngageKeys.SitecoreCdpPointOfSale,
-        cookieExpiryDays: 365,
-        forceServerCookieMode: false,
-      });
+      const engage = await init(initConfig);
       setEngageTracker(engage);
       setLoading(false);
     }
