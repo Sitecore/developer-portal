@@ -1,8 +1,8 @@
 ---
 solution: ['devops']
-product: ['xm', 'experience-platform', 'experience-commerce', 'sif']
+product: ['xm', 'xp', 'experience-commerce', 'sif']
 title: 'Sitecore Install Framework'
-cdpTags: ['xm', 'experience-platform', 'experience-commerce', 'sif']
+cdpTags: ['xm', 'xp', 'experience-commerce', 'sif']
 ---
 
 ## Introduction

@@ -1,5 +1,5 @@
 ---
-product: ['managed-cloud', 'xm', 'experience-platform', 'experience-commerce']
+product: ['managed-cloud', 'xm', 'xp', 'experience-commerce']
 title: 'Getting Started with Sitecore Managed Cloud with Containers'
 description: 'Learn the steps needed to get up and running with Docker and Containers with the latest Managed Cloud offering.'
 ---

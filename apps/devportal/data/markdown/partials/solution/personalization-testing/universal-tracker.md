@@ -1,6 +1,6 @@
 ---
 solution: ['personalization-testing']
-product: ['experience-platform']
+product: ['xp']
 ---
 
 ## Universal Tracker
