@@ -1,7 +1,8 @@
 ---
 solution: ['devops']
-product: ['experience-manager', 'experience-platform', 'experience-commerce', 'armTemplates']
+product: ['experience-manager', 'experience-platform', 'experience-commerce']
 title: 'Sitecore Azure Toolkit'
+cdpTags: ['experience-manager', 'experience-platform', 'experience-commerce']
 ---
 
 ## Introduction

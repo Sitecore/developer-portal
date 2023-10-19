@@ -5,6 +5,7 @@ title: 'Experience Edge for XM'
 description: 'Provide globally replicated scalable access to your content managed within Sitecore Experience Manager'
 twitter: ['#SitecoreExperienceEdge']
 youtube: PL1jJVFm_lGnwB3QBhZf0DqE7KTCfJGvzW
+cdpTags: ['edge-xm']
 ---
 
 ## Introduction
@@ -32,6 +33,7 @@ See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/1
 - [Architecture](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/the-architecture-of-sitecore-experience-edge-for-xm.html)
 
 ## Community Articles
+
 - [Set Up And Verify Experience Edge For Sitecore XM](https://www.getfishtank.com/blog/set-up-and-verify-experience-edge-for-sitecore-xm) (David Austin)
 - [Using a Rendering Contents Resolver with Experience Edge](https://sitecorerap.wordpress.com/2023/01/24/using-a-rendering-contents-resolver-with-experience-edge/) (John Rappel)
 - [Tuning Guide for Sitecore Experience Edge GraphQL](https://sitecorerap.wordpress.com/2023/03/02/tuning-guide-for-sitecore-experience-edge-graphql/) (John Rappel)

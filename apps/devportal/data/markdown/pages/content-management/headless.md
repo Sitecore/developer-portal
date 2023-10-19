@@ -5,7 +5,7 @@ title: 'Sitecore Headless Development'
 description: 'Using Sitecore in a headless architecture'
 stackexchange: ['#jss']
 youtube: 'PL1jJVFm_lGnwZup4L4BjITS2sKr4rpMfI'
-
+cdpTags: ['experience-manager']
 ---
 
 ## Introduction
@@ -54,7 +54,6 @@ Sitecore JSS offers front-end developer of whole new way of working and interact
 - [JSS Slack Channel](https://sitecorechat.slack.com/messages/jss)
 - [Github Repository](https://github.com/sitecore/jss)
 
-
 ## Headless Development
 
 Sitecore Headless Development is based on a rendering host front end and a Sitecore instance back end. This decoupling of logic domains makes a Sitecore solution easy to develop, maintain, scale, and upgrade.
@@ -72,4 +71,3 @@ Sitecore Headless Development is based on a rendering host front end and a Sitec
 ## Downloads
 
 - [Download Sitecore Headless Rendering](https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering.aspx)
-

@@ -2,6 +2,7 @@
 solution: ['devops']
 product: ['experience-manager', 'experience-platform', 'experience-commerce', 'sif']
 title: 'Sitecore Install Framework'
+cdpTags: ['experience-manager', 'experience-platform', 'experience-commerce', 'sif']
 ---
 
 ## Introduction

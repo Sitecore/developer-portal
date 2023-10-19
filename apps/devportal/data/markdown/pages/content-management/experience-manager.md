@@ -28,6 +28,7 @@ youtube: PL1jJVFm_lGnz44RIbnYwTSrBwAm0bE7_C
 youtubeTitle: Installing Sitecore
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['contentManagement']
+cdpTags: ['experience-manager']
 ---
 
 ## Introduction

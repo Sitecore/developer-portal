@@ -8,6 +8,7 @@ stackexchange: ['#cdp']
 youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['customerDataManagement']
+cdpTags: ['cdp']
 ---
 
 ## Introduction
