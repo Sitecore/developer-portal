@@ -2,9 +2,9 @@ import { Message, MessageType } from '@/src/types/Message';
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, CloseButton, FormControl, Heading, IconButton, Input, Progress, Stack, Text, Tooltip, Wrap, useBoolean } from '@chakra-ui/react';
 import { mdiCreation, mdiDeleteSweep } from '@mdi/js';
 import Icon from '@mdi/react';
-import { useRouter } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useEngageTracker } from 'ui/components/integrations';
+import { IExperienceResult } from './IExperienceResult';
 import { Messages } from './Messages';
 
 type ChatBotProps = {
@@ -13,7 +13,6 @@ type ChatBotProps = {
 };
 
 export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
-  const router = useRouter();
   const tracker = useEngageTracker();
   const [isLoading, setIsLoading] = useBoolean(false);
   const [question, setQuestion] = useState('');
@@ -28,8 +27,9 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
   const isBlank = question === '';
 
   const requestBody = {
-    question: question,
+    query: question,
     history: messages,
+    context: personaContext,
   };
 
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
@@ -38,38 +38,56 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Will only run when the page route changes
-  const initPersonalization = useCallback(async () => {
+  const handlePersonalizeContext = useCallback(async () => {
     if (tracker.context.isTrackerEnabled) {
-      const result: IExperienceResult = await tracker.RunPersonalizationFlow('developer_portal_scai_experience');
+      const result = await tracker.RunPersonalizationFlow<IExperienceResult>('developer_portal_scai_experience*');
 
       if (result) {
         setPersonaContext(result);
+        console.log(result);
       }
     }
-  }, [router.asPath]);
+  }, []);
 
   useEffect(() => {
-    initPersonalization();
+    handlePersonalizeContext();
+  }, [handlePersonalizeContext]);
+
+  useEffect(() => {
     if (isOpen) {
       scrollToBottom();
     }
-  }, [messages, initPersonalization]);
+  }, [messages]);
 
-  const askQuestion = function () {
+  const storeQuestionPersonalize = async (question: string) => {
+    if (tracker.context.isTrackerEnabled) {
+      await tracker.TrackEvent('ClippySearch', {
+        question: question,
+      });
+    }
+  };
+
+  const askQuestion = async () => {
     if (isBlank) return;
     setIsLoading.on();
     setMessage((old) => [...old, { type: MessageType.User, text: question }]);
-    fetch('/chat', {
+    await storeQuestionPersonalize(question);
+
+    // TODO: Move this to a lib/service
+    const result: Response = await fetch('/chat', {
       method: 'POST',
       body: JSON.stringify(requestBody),
-    })
-      .then((res) => res.json())
-      .then((data: string) => {
+    });
+
+    if (result.ok) {
+      const data = await result.json();
+
+      if (data) {
         setIsLoading.off();
         setMessage((old) => [...old, { type: MessageType.Assistant, text: data }]);
         setQuestion('');
-      });
+      }
+    }
   };
 
   const resetSession = function () {
@@ -98,7 +116,7 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
       </CardHeader>
       <CardBody height={'200px'} background={'chakra-body-bg'}>
         <Box overflowY="auto" maxHeight={['200px', '400px', '600px']}>
-          <Messages messages={...messages} />
+          <Messages messages={messages} />
           {isLoading && <Progress mx={5} mt={4} variant="ai" isIndeterminate />}
           <div ref={messagesEndRef} />
         </Box>
@@ -122,7 +140,17 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
           </FormControl>
         </form>
         <Wrap align="center">
-          <Button isDisabled={isLoading} _hover={{}} onClick={askQuestion} variant="ai" leftIcon={<Icon path={mdiCreation} size={1} />} marginTop={'auto'}>
+          <Button
+            isDisabled={isLoading}
+            _hover={{}}
+            onClick={(e) => {
+              e.preventDefault();
+              askQuestion();
+            }}
+            variant="ai"
+            leftIcon={<Icon path={mdiCreation} size={1} />}
+            marginTop={'auto'}
+          >
             Ask
           </Button>
         </Wrap>
