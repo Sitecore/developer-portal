@@ -19,6 +19,7 @@ export const MarketingSkills = {
 export const FredPersona: PersonaType = {
   Name: 'Fred',
   Description: 'The four fingered front end developer',
+  CommonAttributes: ['Prefers code examples vs. marketing fluff'],
   ImageUrl: '',
   PersonaKeys: [
     {
@@ -43,6 +44,7 @@ export const FredPersona: PersonaType = {
 export const SallyPersona: PersonaType = {
   Name: 'Sally',
   Description: 'The super savvy marketer',
+  CommonAttributes: ['Prefers marketing fluff vs. code examples'],
   ImageUrl: '',
   PersonaKeys: [
     {

@@ -2,6 +2,7 @@ import { Message, MessageType } from '@/src/types/Message';
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, CloseButton, FormControl, Heading, IconButton, Input, Progress, Stack, Text, Tooltip, Wrap, useBoolean } from '@chakra-ui/react';
 import { mdiCreation, mdiDeleteSweep } from '@mdi/js';
 import Icon from '@mdi/react';
+import { useRouter } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useEngageTracker } from 'ui/components/integrations';
 import { Messages } from './Messages';
@@ -12,10 +13,11 @@ type ChatBotProps = {
 };
 
 export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
+  const router = useRouter();
   const tracker = useEngageTracker();
   const [isLoading, setIsLoading] = useBoolean(false);
   const [question, setQuestion] = useState('');
-  const [personaContext, setPersonaContext] = useState<string>('');
+  const [personaContext, setPersonaContext] = useState<IExperienceResult | undefined>();
   const [messages, setMessage] = useState<Message[]>([
     {
       type: MessageType.Assistant,
@@ -36,16 +38,16 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Will only load once, but should probably detect when routes change and re-run
+  // Will only run when the page route changes
   const initPersonalization = useCallback(async () => {
     if (tracker.context.isTrackerEnabled) {
-      const result = await tracker.RunPersonalizationFlow('developer_portal_scai_experience');
+      const result: IExperienceResult = await tracker.RunPersonalizationFlow('developer_portal_scai_experience');
 
       if (result) {
-        console.log(result);
+        setPersonaContext(result);
       }
     }
-  }, []);
+  }, [router.asPath]);
 
   useEffect(() => {
     initPersonalization();

@@ -6,6 +6,7 @@ export interface PersonaKey {
 export interface PersonaType {
   Name: string;
   Description: string;
+  CommonAttributes: string[];
   ImageUrl: string;
   PersonaKeys: PersonaKey[];
 }
