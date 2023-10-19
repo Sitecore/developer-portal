@@ -1,6 +1,8 @@
 ---
+product: ['connect']
 title: 'Support'
 hasInPageNav: true
+cdpTags: ['connect']
 ---
 
 ### How shall product support and solutions support work between Workato and Sitecore?

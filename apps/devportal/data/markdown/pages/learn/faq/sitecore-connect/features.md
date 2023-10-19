@@ -1,6 +1,8 @@
 ---
+product: ['connect']
 title: 'Features and capabilities'
 hasInPageNav: true
+cdpTags: ['connect']
 ---
 
 ### Please give more insights on the benefits gained with Sitecore Connect features and capabilities

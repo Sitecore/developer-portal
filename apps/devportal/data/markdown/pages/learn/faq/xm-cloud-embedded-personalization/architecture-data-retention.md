@@ -1,6 +1,8 @@
 ---
+product: ['xm-cloud']
 title: 'Architecture and Data Retention'
 hasInPageNav: true
+cdpTags: ['xm-cloud']
 ---
 
 ### How does Embedded Personalization work on Jamstack-ready architecture?

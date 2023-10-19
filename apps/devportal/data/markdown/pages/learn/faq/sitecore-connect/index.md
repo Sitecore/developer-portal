@@ -1,6 +1,8 @@
 ---
+product: ['connect']
 title: 'Sitecore Connect FAQ'
 hasInPageNav: true
+cdpTags: ['connect']
 ---
 
 ### Introduction
