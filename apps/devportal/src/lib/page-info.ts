@@ -84,6 +84,17 @@ export const getPageInfo = async (params: string | string[], preview?: boolean):
     hasSubPageNav: searchForFile(path.join(pagesDirectory, `${relativePath}`), 'manifest.json') != null ? true : false,
   } as PageInfo;
 
+  // Handle Persona Definition Mapping
+  // if (meta.cdpPersonaDefinition) {
+  //   pageInfo.cdpPersonaDefinition = {
+  //     ProfileCards: meta.cdpPersonaDefinition.ProfileCards.map((profileCard: any) => {
+  //       return {
+  //         return JSON.parse(profileCard)
+  //       };
+  //     }),
+  //   };
+  // }
+
   /**
    * Fetch all integrations for the page so we can limit the number of requests
    *
@@ -102,7 +113,7 @@ export const getPageInfo = async (params: string | string[], preview?: boolean):
   }
 
   if (meta.changelog) {
-    pageInfo.changelogEntries = await(await ChangelogEntriesPaginated(false, meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
+    pageInfo.changelogEntries = await (await ChangelogEntriesPaginated(false, meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
   }
 
   const youtubeInfo = await YouTubeApi.get(meta.youtube);
