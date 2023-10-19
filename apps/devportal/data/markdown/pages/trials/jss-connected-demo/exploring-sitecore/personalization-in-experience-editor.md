@@ -1,4 +1,5 @@
 ---
+product: ['xm', 'xp', 'jss']
 title: Personalization in the Experience Editor
 ---
 
