@@ -1,6 +1,6 @@
 ---
 solution: ['content-management']
-product: ['sxa']
+product: ['sxa', 'experience-manager']
 title: 'Sitecore Experience Accelerator'
 description: 'Turbo charge your Sitecore development.'
 stackexchange: ['#sxa']

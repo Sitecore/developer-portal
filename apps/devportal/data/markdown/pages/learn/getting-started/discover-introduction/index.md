@@ -1,4 +1,5 @@
 ---
+product: ['discover']
 title: 'Sitecore Discover Introduction'
 description: 'Sitecore Discover provides intelligent product search powered by AI, but what does it include? And how can you get started developing with it today?'
 promoAfter: ['learning-essentials']

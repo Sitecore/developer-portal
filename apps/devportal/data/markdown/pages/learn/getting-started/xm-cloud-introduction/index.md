@@ -1,4 +1,5 @@
 ---
+product: ['xm-cloud']
 title: 'XM Cloud Introduction'
 description: 'XM Cloud is around the corner. But what is XM Cloud? What does it include? And how can you prepare for it?'
 promoAfter: ['learning-essentials']
