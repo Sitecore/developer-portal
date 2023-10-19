@@ -43,7 +43,7 @@ export const useEngageTracker = () => {
     await context.engageTracker?.event(eventName, eventData, extensionData);
   };
 
-  const RunPersonalizationFlow = async (friendlyId: string) => {
+  const RunPersonalizationFlow = async <T>(friendlyId: string, data?: INestedObject | undefined): Promise<T | undefined> => {
     if (!context.isTrackerEnabled) return;
 
     if (!context.engageTracker === undefined) {
@@ -58,9 +58,13 @@ export const useEngageTracker = () => {
       pointOfSale: context.engageKeys.SitecoreCdpPointOfSale,
     };
 
+    if (data) {
+      personalizationData.params = data;
+    }
+
     const response = await context.engageTracker?.personalize(personalizationData, 10000);
 
-    return response;
+    return response as T;
   };
 
   return { context, TrackPageView, TrackEvent, RunPersonalizationFlow };
