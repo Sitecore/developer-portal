@@ -1,6 +1,6 @@
 ---
 solution: ['content-management']
-product: ['experience-manager']
+product: ['xm']
 title: 'Web Content Management'
 description: 'Integrate CMS into your tech stack to enable marketing teams to own the digital solutions.'
 ---

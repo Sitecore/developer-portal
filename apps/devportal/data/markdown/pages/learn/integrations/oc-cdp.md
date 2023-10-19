@@ -1,9 +1,10 @@
 ---
 title: 'Integrating Sitecore OrderCloud with Sitecore CDP'
 description: 'Leverage Sitecore CDP with Sitecore OrderCloud to build your commerce experiences - including abandoned cart scenarios and commerce specific personalization.'
-product: ['oc', 'cdp']
+product: ['ordercloud', 'cdp']
 area: ['integrations']
 ---
+
 ## Introduction
 
 This document provides guidance on joining together Sitecore OrderCloud with Sitecore Customer Data Platform (CDP). It recommends options for how a developer can integrate these products in a future proof way, so that Sitecore’s customers can start the process of migrating to Sitecore’s Composable DXP solutions.
