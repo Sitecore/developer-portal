@@ -1,22 +1,23 @@
 ---
 title: 'Development'
 hasInPageNav: true
+cdpPersonaDefinition: { PagePattern: [{ 'ProfileKey': 'FrontendSkills', 'value': 6 }, { 'ProfileKey': 'BackendSkills', 'value': 6 }] }
 ---
 
 ## Dev Workflow
+
 [XM Cloud FAQ](https://developers.sitecore.com/learn/faq/xm-cloud/development) - Edge mode vs Fully local mode
 
 > ✅ DO utilize “Edge Mode” if you’re a front-end dev.
 
 > ✅ DO utilize “Fully Local Mode” if you’re a back-end dev.
 
-
 Recommended workflow:
 ![Development Modes with XM Cloud](/images/learn/project-workflow.jpeg)
 
 1. **Analyze designs to identify page types and components**
 
-The Business Analyst or Product Owner analyze the website designs/wireframes and flush out authoring requirements. This information is discussed with the Sitecore architect or dev lead to identify the list of page types needed for the website and the list of components needed on each page type. 
+The Business Analyst or Product Owner analyze the website designs/wireframes and flush out authoring requirements. This information is discussed with the Sitecore architect or dev lead to identify the list of page types needed for the website and the list of components needed on each page type.
 
 This step gets the business side and the technical side of the project into alignment. Content Authors get to see the types of pages they will be able to create, the components they will be able to add to pages, and the fields that will be editable in those components. This information needs to be explicitly communicated with both, back-end and front-end devs. For front-end devs, going through this process promotes “component driven design”, which encourages separation of concerns and improves the maintainability and scalability of the codebase.
 
@@ -52,18 +53,17 @@ Since front-end devs do not run Sitecore locally, they cannot test the authoring
 
 Front-end devs work on components locally (using the cloud endpoint as a Headless CMS) and continuously deploy their changes to the cloud instance, where they regularly verify that their component work and look as expected in the authoring interface. The authoring interface is expected to behave in “desktop” mode, so this is also a good time to plan for responsive layout and consider extra fields that may need to be added to components to allow authors to edit all the different versions on a component.
 
-
 ### Further reading
+
 [Headless Frontend Development with XM Cloud](https://thetombomb.com/posts/frontend-development-xm-cloud) - This article explains what XM Cloud is and provides two common workflows for frontend developers, one simple and one more advanced.
 
-
 ## Code references
+
 In addition to the official starter template, there are a couple of other public repos available to use as a development reference.
 
 **Official starter foundation**
 
 [GitHub - sitecorelabs/xmcloud-foundation-head](https://github.com/sitecorelabs/xmcloud-foundation-head)
-
 
 - Best for new projects
 - Utilizes headless SXA
@@ -73,7 +73,6 @@ In addition to the official starter template, there are a couple of other public
 **MVP/SUGCON Sites**
 
 [GitHub - Sitecore/XM-Cloud-Introduction](https://github.com/Sitecore/XM-Cloud-Introduction)
-
 
 - Good reference for migration use case
 - Shows different rendering hosts (JS & .NET Core) coexisting
@@ -89,7 +88,6 @@ In addition to the official starter template, there are a couple of other public
 - Multilingual
 - Examples of custom components & advanced use cases
 
-
 ## Working with a shared cloud instance
 
 > ✅ DO add new items like components and templates to the cloud instance through code deployments rather than adding them directly in the interface.
@@ -101,6 +99,7 @@ As devs work locally, they may be tempted to save time by testing out quick chan
 It’s best to treat the shared environment as “read only” when it comes to data modeling and not do serialization off of an XM Cloud instance. Serialization in a shared environment can be a source of errors as devs risk wiping out each other’s work. Serialization in a local container environment is safe because the databases used in local containers are not shared.
 
 ## Containers
+
 Based on our discussions with dev teams in the field, the most common source of local development challenges comes from working with Docker containers. Here is the advice and lessons learned that devs shared:
 
 > ✅ DO utilize the powershell scripts provided in the official project template to manage your container
@@ -111,7 +110,6 @@ These scripts address common issues and handle error catching.
 - Use [down.ps1](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/down.ps1) to stop your container
 
 Most of the time, the up script and down script are all you need. These scripts manage your container without touching your local databases (ie they won’t change items in Sitecore). However, sometimes it is useful to reset your databases to whatever is serialized in source control (if you are getting unexpected errors or if you are switching between branches). This can be achieved with the clean.ps1 script.
-
 
 Tips for working with containers:
 

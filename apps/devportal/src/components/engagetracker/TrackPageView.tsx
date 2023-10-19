@@ -20,6 +20,11 @@ export const TrackPageView: FC<TrackPageViewProps> = (props) => {
       additionalData.tags = props.pageInfo.cdpTags;
     }
 
+    // Handle Pattern Cards
+    if (props.pageInfo?.cdpPersonaDefinition) {
+      additionalData.patternCards = props.pageInfo.cdpPersonaDefinition;
+    }
+
     await tracker.TrackPageView(props.pageInfo.slug, additionalData);
   }, [props, tracker]);
 
