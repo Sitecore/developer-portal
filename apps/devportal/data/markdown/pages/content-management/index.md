@@ -1,7 +1,7 @@
 ---
 pageType: 'childoverview'
 solution: ['content-management']
-product: ['content-management']
+product: ['content-management', 'content-hub-one', 'edge-content-hub', 'edge-xm', 'xm', 'search', 'sxa', 'xm-cloud']
 title: 'Content Management and Delivery'
 description: 'Manage content and presentation for your channels and then scale out your delivery'
 stackexchange:
@@ -30,4 +30,5 @@ stackexchange:
 twitter: ['#SitecoreJSS', '#SitecoreForms']
 sitecoreCommunityQuestions: false
 sitecoreCommunityQuestionsCategory: ['contentManagement']
+cdpTags: ['content-management', 'content-hub-one', 'edge-content-hub', 'edge-xm', 'xm', 'search', 'sxa', 'xm-cloud']
 ---

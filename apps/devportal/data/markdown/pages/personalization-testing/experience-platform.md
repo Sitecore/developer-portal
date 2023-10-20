@@ -1,15 +1,11 @@
 ---
 solution: ['customer-data-management']
-product: ['experience-platform']
+product: ['xp']
 title: 'Experience Platform'
 description: 'Leverage xConnect and xDB to provide a 360 view of the customer in your fully integrated DXP platform'
 stackexchange: ['#tracking', '#xconnect', '#xdb']
 youtube: 'PL1jJVFm_lGnxaNZ6AUm_GQNOxFHOjZAGp'
-partials:
-  [
-    'solution/personalization-testing/federated-experience-manager',
-    'solution/personalization-testing/universal-tracker',
-  ]
+partials: ['solution/personalization-testing/federated-experience-manager', 'solution/personalization-testing/universal-tracker']
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['experiencePlatform']
 ---

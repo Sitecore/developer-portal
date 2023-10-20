@@ -1,6 +1,8 @@
 ---
+product: ['connect']
 title: 'Licensing and Cost Structure'
 hasInPageNav: true
+cdpTags: ['connect']
 ---
 
 ### How to license Sitecore Connect?

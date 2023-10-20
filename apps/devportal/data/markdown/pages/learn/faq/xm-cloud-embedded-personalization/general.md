@@ -1,6 +1,8 @@
 ---
+product: ['xm-cloud']
 title: 'General'
 hasInPageNav: true
+cdpTags: ['xm-cloud']
 ---
 
 ### What is XM Cloud?

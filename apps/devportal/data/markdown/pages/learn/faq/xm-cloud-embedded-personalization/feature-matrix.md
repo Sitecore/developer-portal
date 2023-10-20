@@ -1,6 +1,8 @@
 ---
+product: ['xm-cloud']
 title: 'Feature Matrix and Product Parities'
 hasInPageNav: true
+cdpTags: ['xm-cloud']
 ---
 
 ### What are the main features of XM Cloud Embedded Personalization?

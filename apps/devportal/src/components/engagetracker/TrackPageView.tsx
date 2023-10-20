@@ -10,6 +10,7 @@ interface TrackPageViewProps {
 
 export const TrackPageView: FC<TrackPageViewProps> = (props) => {
   const tracker = useEngageTracker();
+  let slug = props.pageInfo.slug;
 
   const callTrackPageView = useCallback(async () => {
     const additionalData: INestedObject = {
@@ -25,7 +26,17 @@ export const TrackPageView: FC<TrackPageViewProps> = (props) => {
       additionalData.patternCards = props.pageInfo.cdpPersonaDefinition;
     }
 
-    await tracker.TrackPageView(props.pageInfo.slug, additionalData);
+    // Handle Products Frontmatter Data
+    if (props.pageInfo?.product) {
+      additionalData.product = props.pageInfo.product;
+    }
+
+    // Handle weird "e" for Homepage slug
+    if (slug === 'e') {
+      slug = 'Home Page';
+    }
+
+    await tracker.TrackPageView(slug, additionalData);
   }, [props, tracker]);
 
   useEffect(() => {

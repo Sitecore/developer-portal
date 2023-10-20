@@ -19,6 +19,7 @@ type PageInfoCore = {
   previewMode?: boolean;
   slug: string;
   menuOrder?: number;
+  product?: string[];
   cdpTags?: string[];
 
   //TODO: Works for AI POC - But i invision this is more like XP Pattern Cards

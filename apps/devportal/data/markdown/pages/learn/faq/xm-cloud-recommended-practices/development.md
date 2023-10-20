@@ -1,7 +1,9 @@
 ---
+product: ['xm-cloud']
 title: 'Development'
 hasInPageNav: true
 cdpPersonaDefinition: { PagePattern: [{ 'ProfileKey': 'FrontendSkills', 'value': 6 }, { 'ProfileKey': 'BackendSkills', 'value': 6 }] }
+cdpTags: ['xm-cloud']
 ---
 
 ## Dev Workflow

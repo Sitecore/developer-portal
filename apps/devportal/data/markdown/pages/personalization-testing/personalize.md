@@ -1,6 +1,6 @@
 ---
 solution: 'personalization-testing'
-product: ['cdp']
+product: ['personalize']
 title: 'Personalization & Testing - Sitecore Personalize'
 productLogo: 'Personalize'
 description: 'Use advanced decisioning models and machine learning for personalization in your composable DXP.'

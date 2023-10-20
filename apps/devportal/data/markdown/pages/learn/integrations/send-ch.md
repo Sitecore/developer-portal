@@ -1,7 +1,7 @@
 ---
 title: 'Integrating Sitecore Send with Sitecore Content Hub'
 description: 'Leverage assets stored in the Sitecore Digital Asset Management (DAM) product that is part of Sitecore Content Hub, in email campaigns, Landing Pages & Subscription Forms created in Sitecore Send.'
-product: ['send', 'ch']
+product: ['send', 'content-hub']
 area: ['integrations']
 ---
 

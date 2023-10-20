@@ -1,6 +1,8 @@
 ---
+product: ['xm-cloud']
 title: 'XM Cloud: Embedded Personalization'
 hasInPageNav: true
+cdpTags: ['xm-cloud']
 ---
 
 ### Introduction
