@@ -9,6 +9,7 @@ stackexchange: ['#xm-cloud']
 youtube: PL1jJVFm_lGnzqYagW1UahIBeqTIYSBQMc
 changelog: 6
 changelogProductId: ['av_GqshF5U2kL8XMGjf-Xw']
+cdpTags: ['xm-cloud']
 ---
 
 <Promo
@@ -71,7 +72,7 @@ The importance of your company's growth comes with the:
 - [Migrating the Sitecore MVP site to XM Cloud blog series](https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-1) (Rob Earlam)
 - [Setting up an external XM Cloud Rendering Host to work with Experience Editor and Pages](https://robearlam.com/blog/setting-up-an-external-xm-cloud-rendering-host-to-work-with-experience-editor-and-pages) (Rob Earlam)
 - [Using Wildcard Items in Sitecore XM Cloud](https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud) (David Austin)
-  
+
 ### Official Sitecore Training
 
 <Row columns={3}>

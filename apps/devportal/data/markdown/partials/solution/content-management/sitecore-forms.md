@@ -1,6 +1,6 @@
 ---
 solution: ['content-management']
-product: ['experience-manager']
+product: ['xm']
 title: 'Sitecore Forms'
 description: 'Develop your forms you can integrate into your website, great to capture key information about your customers.'
 ---

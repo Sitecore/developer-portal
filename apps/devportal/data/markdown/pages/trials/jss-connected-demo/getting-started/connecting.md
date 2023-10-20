@@ -1,4 +1,5 @@
 ---
+product: ['xm', 'xp', 'jss']
 title: Connecting to Sitecore
 ---
 

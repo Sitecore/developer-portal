@@ -1,6 +1,8 @@
 ---
+product: ['cloud-portal']
 title: 'Development'
 hasInPageNav: true
+cdpTags: ['cloud-portal']
 ---
 
 ## Is there security implemented to ensure that bad actors can't access my organization via the command line API?

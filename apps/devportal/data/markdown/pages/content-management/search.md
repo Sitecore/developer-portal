@@ -7,6 +7,7 @@ productLogo: 'Search'
 twitter: ['#SitecoreSearch']
 stackexchange: ['#Sitecore-Search']
 youtube: PL1jJVFm_lGnyn9WVvW1fwSJrg6AqCndDb
+cdpTags: ['search']
 ---
 
 ## Introduction

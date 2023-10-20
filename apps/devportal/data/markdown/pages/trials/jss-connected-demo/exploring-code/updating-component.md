@@ -1,6 +1,8 @@
 ---
+product: ['xm', 'xp', 'jss']
 title: Updating a component
 ---
+
 We can make changes to a component in our local application, then see those changes refreshed in the browser immediately.
 
 1. In your preferred editor, open the EventListItem component file, located in the following location:

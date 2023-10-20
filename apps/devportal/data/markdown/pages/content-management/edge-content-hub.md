@@ -5,6 +5,7 @@ title: 'Experience Edge for Content Hub'
 description: 'Headless content delivery at scale'
 twitter: ['#SitecoreExperienceEdge']
 youtube: PL1jJVFm_lGnwB3QBhZf0DqE7KTCfJGvzW
+cdpTags: ['edge-content-hub']
 ---
 
 ## Introduction
