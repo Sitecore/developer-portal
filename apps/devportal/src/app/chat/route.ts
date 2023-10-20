@@ -6,6 +6,7 @@ import { Message, MessageType } from '../../types/Message';
 
 export async function POST(request: NextRequest) {
   const data = await request.json();
+  const formatMessage = ' Format this answer as HTML, but dont mention it in the reponse';
   const { query, context, history }: { query: string; context: IExperienceResult | undefined; history: Message[] } = data;
 
   if (!query) {
@@ -43,7 +44,7 @@ export async function POST(request: NextRequest) {
   }
 
   const client = new OpenAIClient(OpenAIConfig.AzureOpenAIEndpoint, new AzureKeyCredential(OpenAIConfig.AzureOpenAIKey));
-  messages.push({ role: 'user', content: query });
+  messages.push({ role: 'user', content: query + formatMessage });
 
   const response = await client.getChatCompletions(OpenAIConfig.AzureOpenAIDeploymentId, messages);
 
