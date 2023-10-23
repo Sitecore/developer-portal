@@ -6,6 +6,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useEngageTracker } from 'ui/components/integrations';
 import { IExperienceResult } from './IExperienceResult';
 import { Messages } from './Messages';
+import { PersonalizeBar } from './PersonalizeBar';
 
 type ChatBotProps = {
   onClose?: () => void;
@@ -42,9 +43,10 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
     if (tracker.context.isTrackerEnabled) {
       const result = await tracker.RunPersonalizationFlow<IExperienceResult>('developer_portal_scai_experience*');
 
+      console.log(result);
+
       if (result) {
         setPersonaContext(result);
-        console.log(result);
       }
     }
   }, []);
@@ -116,6 +118,7 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
       </CardHeader>
       <CardBody height={'200px'} background={'chakra-body-bg'}>
         <Box overflowY="auto" maxHeight={['200px', '400px', '600px']}>
+          <PersonalizeBar context={personaContext} />
           <Messages messages={messages} />
           {isLoading && <Progress mx={5} mt={4} variant="ai" isIndeterminate />}
           <div ref={messagesEndRef} />

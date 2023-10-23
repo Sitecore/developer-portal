@@ -21,17 +21,17 @@ export async function POST(request: NextRequest) {
     messages.push({ role: 'user', content: `I'm a ${context.persona.Name} and I value these responses: code samples vs marketing fluff` });
   }
 
-  //   if (context?.recent_search_context) {
-  //     messages.push({ role: 'user', content: `I've recently searched for ${context.recent_search_context}` });
-  //   }
+  if (context?.recent_search_summary) {
+    messages.push({ role: 'user', content: `I've recently searched for ${context.recent_search_summary}` });
+  }
 
   if (context?.relevant_tags) {
     messages.push({ role: 'user', content: `I've recently been interested in the following topics: ${context.relevant_tags}` });
   }
 
-  //   if (context?.recent_products) {
-  //     messages.push({ role: 'user', content: `I've recently viewed the following products: ${context.recent_products.product}` });
-  //   }
+  if (context?.product_details) {
+    messages.push({ role: 'user', content: `I've recently viewed the following products: ${context.product_details.product}` });
+  }
 
   if (history?.length > 0) {
     for (const item of history) {

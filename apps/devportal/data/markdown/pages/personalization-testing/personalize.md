@@ -9,6 +9,7 @@ youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
 youtubeTitle: 'Latest Sitecore Personalize videos'
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['personalizationAndTesting']
+cdpPersonaDefinition: { PagePattern: [{ 'ProfileKey': 'FrontendSkills', 'value': 1 }, { 'ProfileKey': 'BackendSkills', 'value': 1 }, { 'ProfileKey': 'MarketingSkills', 'value': 10 }] }
 ---
 
 <img src="/images/products/personalize/full-stack-AB-testing-optimization.svg" alt="AB Testing and optimization" width="33%" align="right" />
