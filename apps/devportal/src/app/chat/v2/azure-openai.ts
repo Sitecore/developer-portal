@@ -1,3 +1,5 @@
+// Based on https://github.com/thivy/azure-openai-js-stream
+
 /* eslint-disable no-constant-condition */
 import { OpenAIConfig } from '@/src/components/chatbot/OpenAiConfig';
 import { SSEParser } from './sse-parser';
@@ -19,7 +21,7 @@ export type CreateChatCompletionRequest = {
 };
 
 export class AzureOpenAI {
-  public async createChatCompletion(createChatCompletionRequest: CreateChatCompletionRequest) {
+  public async streamChatCompletion(createChatCompletionRequest: CreateChatCompletionRequest) {
     const chatAPI = `${OpenAIConfig.AzureOpenAIEndpoint}openai/deployments/${OpenAIConfig.AzureOpenAIDeploymentId}/chat/completions?api-version=2023-07-01-preview`;
     const jsonString = this.stringifyJsonWithoutNulls(createChatCompletionRequest);
 

@@ -1,3 +1,5 @@
+// Based on https://github.com/thivy/azure-openai-js-stream
+
 export type SSEEvents = {
   onError: (error: unknown) => void;
   onData: (data: string) => void;

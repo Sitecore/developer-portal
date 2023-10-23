@@ -89,8 +89,8 @@ export const ChatBot2 = ({ onClose, isOpen }: ChatBotProps) => {
     const reader = result.body.getReader();
     const decoder = new TextDecoder();
 
+    // Set variable to fill using the streaming data
     let completeResponse = '';
-    //const message
 
     while (true) {
       const { value, done: doneReading } = await reader.read();
@@ -98,17 +98,17 @@ export const ChatBot2 = ({ onClose, isOpen }: ChatBotProps) => {
         break;
       }
 
+      // Get every chunk of data and add it to the complete response
       const chunkValue = decoder.decode(value);
       completeResponse += chunkValue;
 
-      const lastMessage = messages[messages.length - 1];
-      const updatedMessage = { ...lastMessage, text: completeResponse };
+      // Starting to write to the browser so turn of reloading
+      setIsLoading.off();
 
       // if the last message was from the assistant, it's the same message, so update it
-
       setMessage((old) => {
+        const lastMessage = old[old.length - 1];
         if (lastMessage.type === MessageType.Assistant) {
-          const lastMessage = old[old.length - 1];
           const updatedMessage = { ...lastMessage, text: completeResponse };
           return [...old.slice(0, -1), updatedMessage];
         } else {
@@ -116,18 +116,12 @@ export const ChatBot2 = ({ onClose, isOpen }: ChatBotProps) => {
         }
       });
     }
-    setIsLoading.off();
-    scrollToBottom();
-    //setQuestion('');
+
+    setQuestion('');
   };
 
   const resetSession = function () {
-    setMessage(() => [
-      {
-        type: MessageType.Assistant,
-        text: "Hello! I'm Clippy, your friendly Sitecore helper. How can I help you today?",
-      },
-    ]);
+    setMessage(() => intialMessage);
     setQuestion('');
   };
 

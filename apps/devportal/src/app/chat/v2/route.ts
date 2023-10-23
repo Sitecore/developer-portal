@@ -10,7 +10,6 @@ export interface IChatGPTPayload {
 
 export async function POST(request: Request) {
   const data = (await request.json()) as IChatGPTPayload;
-  const formatMessage = ' and output the answer in markdown text';
 
   // Use Context to fill in the LLM with more context data
   const messages = [{ role: 'system', content: 'You are a helpful assistant, designed to help Developers building with Sitecore.' }];
@@ -42,11 +41,10 @@ export async function POST(request: Request) {
     }
   }
   messages.push({ role: 'user', content: data.query });
-  //messages.push({ role: 'system', content: 'you output the message in html' });
 
   const azure = new AzureOpenAI();
 
-  const stream = await azure.createChatCompletion({
+  const stream = await azure.streamChatCompletion({
     messages: messages,
     stream: true, // stream the response
   });
