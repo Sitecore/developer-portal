@@ -1,4 +1,5 @@
 import { IExperienceResult } from '@/src/components/chatbot/IExperienceResult';
+import { NextResponse } from 'next/server';
 import { Message, MessageType } from '../../../types/Message';
 import { AzureOpenAI } from './azure-openai';
 
@@ -12,6 +13,10 @@ export async function POST(request: Request) {
   const data = (await request.json()) as IChatGPTPayload;
   const formatMessage = ' Format this answer as MarkDown, but dont mention it in the reponse';
 
+  if (!data.query) {
+    return new NextResponse('Please provide a query parameter', { status: 400 });
+  }
+
   // Use Context to fill in the LLM with more context data
   const messages = [{ role: 'system', content: 'You are a helpful assistant, designed to help Developers building with Sitecore.' }];
 
@@ -20,19 +25,19 @@ export async function POST(request: Request) {
     messages.push({ role: 'user', content: `I'm a ${data.context.persona} and I value these responses: code samples vs marketing fluff` });
   }
 
-  //   if (context?.recent_search_context) {
-  //     messages.push({ role: 'user', content: `I've recently searched for ${context.recent_search_context}` });
-  //   }
+  if (data.context?.recent_search_summary) {
+    messages.push({ role: 'user', content: `I've recently searched for ${data.context.recent_search_summary}` });
+  }
 
   if (data.context?.relevant_tags) {
     messages.push({ role: 'user', content: `I've recently been interested in the following topics: ${data.context.relevant_tags}` });
   }
 
-  //   if (context?.recent_products) {
-  //     messages.push({ role: 'user', content: `I've recently viewed the following products: ${context.recent_products.product}` });
-  //   }
+  if (data.context?.product_details) {
+    messages.push({ role: 'user', content: `I've recently viewed the following products: ${data.context.product_details}` });
+  }
 
-  if (data.history?.length > 0) {
+  if (history?.length > 0) {
     for (const item of data.history) {
       if (item.type == MessageType.Assistant) {
         messages.push({ role: 'assistant', content: item.text });

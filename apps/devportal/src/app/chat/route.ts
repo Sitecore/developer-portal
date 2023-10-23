@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
   }
 
   const client = new OpenAIClient(OpenAIConfig.AzureOpenAIEndpoint, new AzureKeyCredential(OpenAIConfig.AzureOpenAIKey));
-  messages.push({ role: 'user', content: query + formatMessage });
+  messages.push({ role: 'user', content: data.query + formatMessage });
 
   const response = await client.getChatCompletions(OpenAIConfig.AzureOpenAIDeploymentId, messages);
 
