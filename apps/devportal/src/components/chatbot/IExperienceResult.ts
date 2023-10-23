@@ -1,8 +1,6 @@
-import { PersonaType } from 'ui/components/integrations/engage/PersonaTypes';
-
 export interface IExperienceResult {
-  persona: PersonaType;
+  persona: string;
   relevant_tags: string[];
-  recent_products: { product: string; cloud: string };
-  recent_search_context: string;
+  product_details: { product: string; cloud: string };
+  recent_search_summary: string;
 }
