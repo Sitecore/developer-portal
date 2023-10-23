@@ -10,6 +10,7 @@ export interface IChatGPTPayload {
 
 export async function POST(request: Request) {
   const data = (await request.json()) as IChatGPTPayload;
+  const formatMessage = ' Format this answer as MarkDown, but dont mention it in the reponse';
 
   // Use Context to fill in the LLM with more context data
   const messages = [{ role: 'system', content: 'You are a helpful assistant, designed to help Developers building with Sitecore.' }];
@@ -40,7 +41,7 @@ export async function POST(request: Request) {
       }
     }
   }
-  messages.push({ role: 'user', content: data.query });
+  messages.push({ role: 'user', content: data.query + formatMessage });
 
   const azure = new AzureOpenAI();
 
