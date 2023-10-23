@@ -1,10 +1,12 @@
+import { FredPersona, SallyPersona } from '@/data/data-personas';
+import { CDP, Personalize, Search, Send, XMCloud } from '@/data/data-products';
 import { Message, MessageType } from '@/src/types/Message';
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, CloseButton, FormControl, Heading, IconButton, Input, Progress, Stack, Text, Tooltip, Wrap, useBoolean } from '@chakra-ui/react';
 import { mdiCreation, mdiDeleteSweep } from '@mdi/js';
 import Icon from '@mdi/react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useEngageTracker } from 'ui/components/integrations';
-import { IExperienceResult } from './IExperienceResult';
+import { IExperienceResult, IPersonalizedExperience } from './IExperienceResult';
 import { Messages } from './Messages';
 import { PersonalizeBar } from './PersonalizeBar';
 
@@ -17,7 +19,7 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
   const tracker = useEngageTracker();
   const [isLoading, setIsLoading] = useBoolean(false);
   const [question, setQuestion] = useState('');
-  const [personaContext, setPersonaContext] = useState<IExperienceResult | undefined>();
+  const [personaContext, setPersonaContext] = useState<IPersonalizedExperience | undefined>();
   const [messages, setMessage] = useState<Message[]>([
     {
       type: MessageType.Assistant,
@@ -46,10 +48,55 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
       console.log(result);
 
       if (result) {
-        setPersonaContext(result);
+        // Update model to have correct information
+        const personalizedResult: IPersonalizedExperience = ConvertToPersonalizeResult(result);
+
+        setPersonaContext(personalizedResult);
       }
     }
   }, []);
+
+  const ConvertToPersonalizeResult = (result: IExperienceResult): IPersonalizedExperience => {
+    const experience: IPersonalizedExperience = {
+      recent_search_summary: result.recent_search_summary,
+      relevant_tags: result.relevant_tags,
+    };
+
+    // TODO: Clean this up
+    if (result.persona == 'fredPersona') {
+      experience.persona = FredPersona;
+    } else if (result.persona == 'sallyPersona') {
+      experience.persona = SallyPersona;
+    } else {
+      experience.persona = undefined;
+    }
+
+    // switch over products and set the product
+    if (result.product_details !== undefined) {
+      switch (result.product_details.Product) {
+        case 'xm cloud':
+          experience.product = XMCloud;
+          break;
+        case 'cdp':
+          experience.product = CDP;
+          break;
+        case 'send':
+          experience.product = Send;
+          break;
+        case 'personalize':
+          experience.product = Personalize;
+          break;
+        case 'search':
+          experience.product = Search;
+          break;
+        default:
+          experience.product = undefined;
+          break;
+      }
+    }
+
+    return experience;
+  };
 
   useEffect(() => {
     handlePersonalizeContext();

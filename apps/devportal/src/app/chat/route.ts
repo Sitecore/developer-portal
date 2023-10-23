@@ -1,4 +1,4 @@
-import { IExperienceResult } from '@/src/components/chatbot/IExperienceResult';
+import { IPersonalizedExperience } from '@/src/components/chatbot/IExperienceResult';
 import { OpenAIConfig } from '@/src/components/chatbot/OpenAiConfig';
 import { AzureKeyCredential, OpenAIClient } from '@azure/openai';
 import { NextRequest, NextResponse } from 'next/server';
@@ -7,7 +7,7 @@ import { Message, MessageType } from '../../types/Message';
 export async function POST(request: NextRequest) {
   const data = await request.json();
   const formatMessage = ' Format this answer as MarkDown, but dont mention it in the reponse';
-  const { query, context, history }: { query: string; context: IExperienceResult | undefined; history: Message[] } = data;
+  const { query, context, history }: { query: string; context: IPersonalizedExperience | undefined; history: Message[] } = data;
 
   if (!query) {
     return new NextResponse('Please provide a query parameter', { status: 400 });
@@ -17,8 +17,7 @@ export async function POST(request: NextRequest) {
   const messages = [{ role: 'system', content: 'You are a helpful assistant, designed to help Developers building with Sitecore.' }];
 
   if (context?.persona) {
-    //messages.push({ role: 'user', content: `I'm a ${context.persona.Name} and I value these responses: ${//context.persona.CommonAttributes.join(', ')}` });
-    messages.push({ role: 'user', content: `I'm a ${context.persona} and I value these responses: code samples vs marketing fluff` });
+    messages.push({ role: 'user', content: `I'm a ${context.persona.Name} and I value these responses: ${context.persona.CommonAttributes}` });
   }
 
   if (context?.recent_search_summary) {
@@ -26,11 +25,11 @@ export async function POST(request: NextRequest) {
   }
 
   if (context?.relevant_tags) {
-    messages.push({ role: 'user', content: `I've recently been interested in the following topics: ${context.relevant_tags}` });
+    messages.push({ role: 'user', content: `I've recently been interested in the following topics: ${context.relevant_tags.join(',')}` });
   }
 
-  if (context?.product_details) {
-    messages.push({ role: 'user', content: `I've recently viewed the following products: ${context.product_details}` });
+  if (context?.product) {
+    messages.push({ role: 'user', content: `I've recently viewed the following products: ${context.product.name}` });
   }
 
   if (history?.length > 0) {
