@@ -79,7 +79,7 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
     await storeQuestionPersonalize(question);
 
     // TODO: Move this to a lib/service
-    const result: Response = await fetch('/chat/v2', {
+    const result: Response = await fetch('/chat', {
       method: 'POST',
       body: JSON.stringify(requestBody),
     });
