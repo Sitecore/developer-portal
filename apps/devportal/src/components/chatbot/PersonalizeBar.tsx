@@ -43,7 +43,34 @@ export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
                 <PopoverCloseButton />
                 <PopoverBody>
                   This chatbot uses Sitecore Personalize to provide a more contextually rich conversational experience. Continue reading to learn more about how this works.
-                  <Text my="4">{props.context?.persona && <>Current Persona: {props.context?.persona?.Name}</>}</Text>
+                  <Text my="4">
+                    {props.context?.persona && (
+                      <>
+                        <b>Current Persona:</b> {props.context?.persona?.Name}
+                      </>
+                    )}
+                  </Text>
+                  <Text>
+                    {props.context?.productInfo && (
+                      <>
+                        <b>Product Interest:</b> {props.context?.productInfo?.name}
+                      </>
+                    )}
+                  </Text>
+                  <Text>
+                    {props.context?.relevant_tags && (
+                      <>
+                        <b>Tags your interested in:</b> {props.context?.relevant_tags}
+                      </>
+                    )}
+                  </Text>
+                  <Text>
+                    {props.context?.recent_searches_summary && (
+                      <>
+                        <b>Recent Searches (Summarized by Chat GPT):</b> {props.context?.recent_searches_summary}
+                      </>
+                    )}
+                  </Text>
                   {props.currentPage && <Text>Current Page Data: {JSON.stringify(props.currentPage?.cdpPersonaDefinition, null, 2)}</Text>}
                 </PopoverBody>
               </PopoverContent>

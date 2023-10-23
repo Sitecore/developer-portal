@@ -59,11 +59,9 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
 
   const ConvertToPersonalizeResult = (result: IExperienceResult): IPersonalizedExperience => {
     const experience: IPersonalizedExperience = {
-      recent_search_summary: result.recent_search_summary,
+      recent_searches_summary: result.recent_searches_summary,
       relevant_tags: result.relevant_tags,
     };
-
-    console.log(result);
 
     // TODO: Clean this up
     if (result.persona == 'fredPersona') {
@@ -77,7 +75,7 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
     // switch over products and set the product
     if (result.product_details !== undefined) {
       switch (result.product_details) {
-        case 'XM Cloud':
+        case 'xm-cloud':
           experience.productInfo = XMCloud;
           experience.product = Product.XMCloud;
           break;
@@ -103,6 +101,8 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
           break;
       }
     }
+
+    console.log(experience);
 
     return experience;
   };

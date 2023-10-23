@@ -6,7 +6,7 @@ export interface IExperienceResult {
   persona: string;
   relevant_tags: string[];
   product_details: string;
-  recent_search_summary: string;
+  recent_searches_summary: string;
 }
 
 export interface IPersonalizedExperience {
@@ -14,5 +14,5 @@ export interface IPersonalizedExperience {
   relevant_tags: string[];
   productInfo?: ProductInfoType | undefined;
   product?: Product | undefined;
-  recent_search_summary: string;
+  recent_searches_summary: string;
 }

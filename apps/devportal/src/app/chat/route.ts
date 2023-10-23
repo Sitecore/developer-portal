@@ -24,8 +24,8 @@ export async function POST(request: Request) {
     messages.push({ role: 'user', content: `I'm a ${data.context.persona} and I value these responses: ${data.context.persona.CommonAttributes.join(',')}` });
   }
 
-  if (data.context?.recent_search_summary) {
-    messages.push({ role: 'user', content: `I've recently searched for ${data.context.recent_search_summary}` });
+  if (data.context?.recent_searches_summary) {
+    messages.push({ role: 'user', content: `I've recently searched for ${data.context.recent_searches_summary}` });
   }
 
   if (data.context?.relevant_tags) {
