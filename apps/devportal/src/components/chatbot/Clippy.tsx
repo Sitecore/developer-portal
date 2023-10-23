@@ -1,7 +1,6 @@
+import { ChatBot } from '@/src/components/chatbot/ChatBot';
 import { Box, Button, ScaleFade, Tooltip, useDisclosure } from '@chakra-ui/react';
 import Image from 'next/image';
-// import { ChatBot } from './ChatBot';
-import { ChatBot2 } from './ChatBot2';
 
 export const Clippy = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
@@ -16,8 +15,7 @@ export const Clippy = () => {
 
       <ScaleFade in={isOpen} reverse>
         <Box position="fixed" inset="auto 0px 0px auto" margin={['auto 0 0 auto', 'auto 3% 3% auto', 'auto 5% 5% auto']} shadow={'2xl'}>
-          {/* <ChatBot onClose={onClose} isOpen={isOpen} /> */}
-          <ChatBot2 onClose={onClose} isOpen={isOpen} />
+          <ChatBot onClose={onClose} isOpen={isOpen} />
         </Box>
       </ScaleFade>
     </>

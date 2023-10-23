@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
   if (data.context?.persona) {
     //messages.push({ role: 'user', content: `I'm a ${context.persona.Name} and I value these responses: ${//context.persona.CommonAttributes.join(', ')}` });
-    messages.push({ role: 'user', content: `I'm a ${data.context.persona.Name} and I value these responses: code samples vs marketing fluff` });
+    messages.push({ role: 'user', content: `I'm a ${data.context.persona} and I value these responses: code samples vs marketing fluff` });
   }
 
   //   if (context?.recent_search_context) {
