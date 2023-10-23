@@ -1,6 +1,6 @@
+import { ChatBot } from '@/src/components/chatbot/ChatBot';
 import { Box, Button, ScaleFade, Tooltip, useDisclosure } from '@chakra-ui/react';
 import Image from 'next/image';
-import { ChatBot } from './ChatBot';
 
 export const Clippy = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();

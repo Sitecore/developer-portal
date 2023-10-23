@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 import { FredPersona, SallyPersona } from '@/data/data-personas';
 import { CDP, Personalize, Search, Send, XMCloud } from '@/data/data-products';
 import { Message, MessageType } from '@/src/types/Message';
@@ -15,18 +16,19 @@ type ChatBotProps = {
   isOpen?: boolean;
 };
 
+const intialMessage = [
+  {
+    type: MessageType.Assistant,
+    text: "Hello! I'm Clippy, your friendly Sitecore helper. How can I help you today?",
+  },
+];
+
 export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
   const tracker = useEngageTracker();
   const [isLoading, setIsLoading] = useBoolean(false);
   const [question, setQuestion] = useState('');
   const [personaContext, setPersonaContext] = useState<IPersonalizedExperience | undefined>();
-  const [messages, setMessage] = useState<Message[]>([
-    {
-      type: MessageType.Assistant,
-      text: "Hello! I'm Clippy, your friendly Sitecore helper. How can I help you today?",
-    },
-  ]);
-
+  const [messages, setMessage] = useState<Message[]>(intialMessage);
   const isBlank = question === '';
 
   const requestBody = {
@@ -44,8 +46,6 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
   const handlePersonalizeContext = useCallback(async () => {
     if (tracker.context.isTrackerEnabled) {
       const result = await tracker.RunPersonalizationFlow<IExperienceResult>('developer_portal_scai_experience*');
-
-      console.log(result);
 
       if (result) {
         // Update model to have correct information
@@ -118,8 +118,10 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
 
   const askQuestion = async () => {
     if (isBlank) return;
-    setIsLoading.on();
     setMessage((old) => [...old, { type: MessageType.User, text: question }]);
+
+    setIsLoading.on();
+
     await storeQuestionPersonalize(question);
 
     // TODO: Move this to a lib/service
@@ -128,24 +130,45 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
       body: JSON.stringify(requestBody),
     });
 
-    if (result.ok) {
-      const data = await result.json();
+    if (!result.ok) throw new Error(result.statusText);
+    if (result.body == null) throw new Error('No body in response');
 
-      if (data) {
-        setIsLoading.off();
-        setMessage((old) => [...old, { type: MessageType.Assistant, text: data }]);
-        setQuestion('');
+    const reader = result.body.getReader();
+    const decoder = new TextDecoder();
+
+    // Set variable to fill using the streaming data
+    let completeResponse = '';
+
+    while (true) {
+      const { value, done: doneReading } = await reader.read();
+      if (doneReading) {
+        break;
       }
+
+      // Get every chunk of data and add it to the complete response
+      const chunkValue = decoder.decode(value);
+      completeResponse += chunkValue;
+
+      // Starting to write to the browser so turn of reloading
+      setIsLoading.off();
+
+      // if the last message was from the assistant, it's the same message, so update it
+      setMessage((old) => {
+        const lastMessage = old[old.length - 1];
+        if (lastMessage.type === MessageType.Assistant) {
+          const updatedMessage = { ...lastMessage, text: completeResponse };
+          return [...old.slice(0, -1), updatedMessage];
+        } else {
+          return [...old, { type: MessageType.Assistant, text: completeResponse }];
+        }
+      });
     }
+
+    setQuestion('');
   };
 
   const resetSession = function () {
-    setMessage(() => [
-      {
-        type: MessageType.Assistant,
-        text: "Hello! I'm Clippy, your friendly Sitecore helper. How can I help you today?",
-      },
-    ]);
+    setMessage(() => intialMessage);
     setQuestion('');
   };
 
