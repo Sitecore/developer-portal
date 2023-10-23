@@ -11,6 +11,7 @@ interface PersonalizeBarProps {
 
 export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
   const [personaContext, setPersonaContext] = useState<PersonaType | undefined>();
+  const [preferredProduct, setPreferredProduct] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   //const [];
 
@@ -42,19 +43,20 @@ export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
             <Stack direction="row" spacing={4}>
               {personaContext ? (
                 <Tooltip label={`${personaContext?.Description}`} aria-label={`${personaContext?.Description}`}>
-                  <Avatar name="Persona" size="sm" src={personaContext?.ImageUrl} />
+                  <Avatar name="Persona" size="xs" src={personaContext?.ImageUrl} />
                 </Tooltip>
               ) : (
                 <Tooltip label="Unknown" aria-label="Unknown">
-                  <Avatar name="Persona" size="sm" src="" />
+                  <Avatar name="Persona" size="xs" src="" />
                 </Tooltip>
               )}
-              <Avatar name="product" size="sm" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/e7010cd758d049f6ad9577e2824d5bea" />
+              <Avatar name="product" size="xs" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/e7010cd758d049f6ad9577e2824d5bea" />
               <Popover placement="auto-start" closeOnBlur={true}>
                 <PopoverTrigger>
-                  <IconButton variant="unstyled" icon={<Icon path={mdiInformationVariant} />} marginTop={'auto'} aria-label="Reset" />
+                  <IconButton variant="unstyled" mt="-2" icon={<Icon path={mdiInformationVariant} />} fontSize="12px" aria-label="Reset" />
                 </PopoverTrigger>
-                <PopoverContent>
+
+                <PopoverContent boxSize={{ base: 'sm', lg: 'xl' }}>
                   <PopoverHeader pt={4} fontWeight="bold" border="0">
                     Personalize Context
                   </PopoverHeader>
@@ -69,8 +71,8 @@ export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
             </Stack>
           </Box>
           <Spacer />
-          <Box color="GrayText">
-            Powered by <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/a4cf37afeb8b4002b81e2de9c02a3220" />
+          <Box color="GrayText" opacity="0.6" fontSize="2xs">
+            Powered by <Image src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/a4cf37afeb8b4002b81e2de9c02a3220" sizes="3xs" />
           </Box>
         </Flex>
       )}
