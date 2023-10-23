@@ -20,7 +20,7 @@ export const FredPersona: PersonaType = {
   Name: 'Fred',
   Description: 'The four fingered front end developer',
   CommonAttributes: ['Prefers code examples vs. marketing fluff'],
-  ImageUrl: '',
+  ImageUrl: '/fred.jpg',
   PersonaKeys: [
     {
       ProfileKey: FrontendSkills,
@@ -45,7 +45,7 @@ export const SallyPersona: PersonaType = {
   Name: 'Sally',
   Description: 'The super savvy marketer',
   CommonAttributes: ['Prefers marketing fluff vs. code examples'],
-  ImageUrl: '',
+  ImageUrl: '/sally.png',
   PersonaKeys: [
     {
       ProfileKey: FrontendSkills,

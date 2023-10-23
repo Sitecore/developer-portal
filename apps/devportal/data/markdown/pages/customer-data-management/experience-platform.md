@@ -9,6 +9,7 @@ partials: ['solution/customer-data-management/xdb', 'solution/customer-data-mana
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['experiencePlatform']
 cdpTags: ['xp']
+cdpPersonaDefinition: { PagePattern: [{ 'ProfileKey': 'FrontendSkills', 'value': 1 }, { 'ProfileKey': 'BackendSkills', 'value': 1 }, { 'ProfileKey': 'MarketingSkills', 'value': 10 }] }
 ---
 
 ## Introduction

@@ -1,4 +1,4 @@
-import { Avatar, Box, Flex, Icon, IconButton, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Spacer, Stack, Text, Tooltip } from '@chakra-ui/react';
+import { Avatar, Box, Code, Flex, Icon, IconButton, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Spacer, Stack, Tooltip } from '@chakra-ui/react';
 import { FredPersona, SallyPersona } from '@data/data-personas';
 import { mdiInformationVariant } from '@mdi/js';
 import { FC, useEffect, useState } from 'react';
@@ -42,7 +42,7 @@ export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
           <Box>
             <Stack direction="row" spacing={4}>
               {personaContext ? (
-                <Tooltip label={`${personaContext?.Description}`} aria-label={`${personaContext?.Description}`}>
+                <Tooltip label={`${personaContext.Name}: ${personaContext?.Description}`} aria-label={`${personaContext?.Description}`}>
                   <Avatar name="Persona" size="xs" src={personaContext?.ImageUrl} />
                 </Tooltip>
               ) : (
@@ -50,7 +50,9 @@ export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
                   <Avatar name="Persona" size="xs" src="" />
                 </Tooltip>
               )}
-              <Avatar name="product" size="xs" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/e7010cd758d049f6ad9577e2824d5bea" />
+              <Tooltip label={props.context?.product_details?.Product} aria-label="Product">
+                <Avatar name="product" size="xs" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/e7010cd758d049f6ad9577e2824d5bea" />
+              </Tooltip>
               <Popover placement="auto-start" closeOnBlur={true}>
                 <PopoverTrigger>
                   <IconButton variant="unstyled" mt="-2" icon={<Icon path={mdiInformationVariant} />} fontSize="12px" aria-label="Reset" />
@@ -64,7 +66,9 @@ export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
                   <PopoverCloseButton />
                   <PopoverBody>
                     This chatbot uses Sitecore Personalize to provide a more contextually rich conversational experience. Continue reading to learn more about how this works.
-                    <Text>{JSON.stringify(props.context)}</Text>
+                    <Code display="block" mt="4">
+                      {JSON.stringify(props.context, null, 2)}
+                    </Code>
                   </PopoverBody>
                 </PopoverContent>
               </Popover>

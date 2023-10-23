@@ -9,4 +9,5 @@ twitter: ['#sitecorexp', '#sitecorecdp', '#boxever']
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['customerDataManagement', 'experiencePlatform']
 cdpTags: ['cdp', 'xp']
+cdpPersonaDefinition: { PagePattern: [{ 'ProfileKey': 'FrontendSkills', 'value': 1 }, { 'ProfileKey': 'BackendSkills', 'value': 1 }, { 'ProfileKey': 'MarketingSkills', 'value': 10 }] }
 ---

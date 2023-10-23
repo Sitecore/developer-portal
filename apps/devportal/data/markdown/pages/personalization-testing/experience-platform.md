@@ -8,6 +8,7 @@ youtube: 'PL1jJVFm_lGnxaNZ6AUm_GQNOxFHOjZAGp'
 partials: ['solution/personalization-testing/federated-experience-manager', 'solution/personalization-testing/universal-tracker']
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['experiencePlatform']
+cdpPersonaDefinition: { PagePattern: [{ 'ProfileKey': 'FrontendSkills', 'value': 1 }, { 'ProfileKey': 'BackendSkills', 'value': 1 }, { 'ProfileKey': 'MarketingSkills', 'value': 10 }] }
 ---
 
 ## Introduction
