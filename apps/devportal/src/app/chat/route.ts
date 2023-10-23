@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
   if (context?.persona) {
     //messages.push({ role: 'user', content: `I'm a ${context.persona.Name} and I value these responses: ${//context.persona.CommonAttributes.join(', ')}` });
-    messages.push({ role: 'user', content: `I'm a ${context.persona.Name} and I value these responses: code samples vs marketing fluff` });
+    messages.push({ role: 'user', content: `I'm a ${context.persona} and I value these responses: code samples vs marketing fluff` });
   }
 
   if (context?.recent_search_summary) {
@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
   }
 
   if (context?.product_details) {
-    messages.push({ role: 'user', content: `I've recently viewed the following products: ${context.product_details.product}` });
+    messages.push({ role: 'user', content: `I've recently viewed the following products: ${context.product_details}` });
   }
 
   if (history?.length > 0) {
