@@ -1,4 +1,5 @@
-import { Avatar, Box, Code, Flex, Icon, IconButton, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Spacer, Stack, Tooltip } from '@chakra-ui/react';
+import { PageInfo } from '@/src/lib/interfaces/page-info';
+import { Avatar, Box, Code, Flex, Icon, IconButton, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Spacer, Stack, Text, Tooltip } from '@chakra-ui/react';
 import { FredPersona, SallyPersona } from '@data/data-personas';
 import { mdiInformationVariant } from '@mdi/js';
 import { FC, useEffect, useState } from 'react';
@@ -7,6 +8,7 @@ import { IExperienceResult } from './IExperienceResult';
 
 interface PersonalizeBarProps {
   context: IExperienceResult | undefined;
+  currentPage?: PageInfo | undefined; // TODO: Add Page Data
 }
 
 export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
@@ -69,6 +71,7 @@ export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
                     <Code display="block" mt="4">
                       {JSON.stringify(props.context, null, 2)}
                     </Code>
+                    {props.currentPage && <Text>Current Page Data: {JSON.stringify(props.currentPage?.cdpPersonaDefinition, null, 2)}</Text>}
                   </PopoverBody>
                 </PopoverContent>
               </Popover>
