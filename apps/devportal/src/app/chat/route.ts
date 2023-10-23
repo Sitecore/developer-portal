@@ -20,21 +20,7 @@ export async function POST(request: Request) {
   // Use Context to fill in the LLM with more context data
   const messages = [{ role: 'system', content: 'You are a helpful assistant, designed to help Developers building with Sitecore.' }];
 
-  if (data.context?.persona) {
-    messages.push({ role: 'user', content: `I'm a ${data.context.persona} and I value these responses: ${data.context.persona.CommonAttributes.join(',')}` });
-  }
-
-  if (data.context?.recent_searches_summary) {
-    messages.push({ role: 'user', content: `I've recently searched for ${data.context.recent_searches_summary}` });
-  }
-
-  if (data.context?.relevant_tags) {
-    messages.push({ role: 'user', content: `I've recently been interested in the following topics: ${data.context.relevant_tags}` });
-  }
-
-  if (data.context?.productInfo) {
-    messages.push({ role: 'user', content: `I've recently viewed the following products: ${data.context.productInfo.name} in the ${data.context.productInfo.cloud}` });
-  }
+  messages.push({ role: 'system', content: `When generating responses, use the follow JSON data as additional context: ${JSON.stringify(data.context, null, 2)}` });
 
   if (data.history?.length > 0) {
     for (const item of data.history) {
@@ -46,6 +32,8 @@ export async function POST(request: Request) {
     }
   }
   messages.push({ role: 'user', content: data.query + formatMessage });
+
+  console.log('Chatbot Request', messages);
 
   const azure = new AzureOpenAI();
 
