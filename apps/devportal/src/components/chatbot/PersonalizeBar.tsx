@@ -2,7 +2,7 @@ import { PageInfo } from '@/src/lib/interfaces/page-info';
 import { Avatar, Box, Flex, Icon, IconButton, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Spacer, Stack, Text, Tooltip } from '@chakra-ui/react';
 import { mdiInformationVariant } from '@mdi/js';
 import { FC } from 'react';
-import { GetProductLogo } from 'ui/lib/assets';
+import { GetProductIcon, Variant } from 'ui/lib/assets';
 import { IPersonalizedExperience } from './IExperienceResult';
 
 interface PersonalizeBarProps {
@@ -25,9 +25,9 @@ export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
                 <Avatar name="Persona" size="xs" src="" />
               </Tooltip>
             )}
-            {props.context?.product && (
-              <Tooltip label={`${props.context.product.name}: ${props.context.product.cloud}`} aria-label={`${props.context.product.name}: ${props.context.product.cloud}`}>
-                <Avatar name="Product" size="xs" src={GetProductLogo(props.context.product.name, 'Light')} />
+            {props.context?.productInfo && props.context?.product && (
+              <Tooltip label={`${props.context.productInfo.name}: ${props.context.productInfo.cloud}`} aria-label={`${props.context.productInfo.name}: ${props.context.productInfo.cloud}`}>
+                <Avatar name={props.context.productInfo.name} size="xs" src={GetProductIcon(props.context.product, Variant.Light)} />
               </Tooltip>
             )}
             <Popover placement="auto-start" closeOnBlur={true}>
@@ -43,16 +43,7 @@ export const PersonalizeBar: FC<PersonalizeBarProps> = (props) => {
                 <PopoverCloseButton />
                 <PopoverBody>
                   This chatbot uses Sitecore Personalize to provide a more contextually rich conversational experience. Continue reading to learn more about how this works.
-                  <Text my="4">
-                    {props.context?.persona && (
-                      <>
-                        <Text as="span" fontWeight="bold">
-                          Current Persona:
-                        </Text>{' '}
-                        {props.context?.persona?.Name}
-                      </>
-                    )}
-                  </Text>
+                  <Text my="4">{props.context?.persona && <>Current Persona: {props.context?.persona?.Name}</>}</Text>
                   {props.currentPage && <Text>Current Page Data: {JSON.stringify(props.currentPage?.cdpPersonaDefinition, null, 2)}</Text>}
                 </PopoverBody>
               </PopoverContent>

@@ -32,8 +32,8 @@ export async function POST(request: Request) {
     messages.push({ role: 'user', content: `I've recently been interested in the following topics: ${data.context.relevant_tags}` });
   }
 
-  if (data.context?.product) {
-    messages.push({ role: 'user', content: `I've recently viewed the following products: ${data.context.product.name} in the ${data.context.product.cloud}` });
+  if (data.context?.productInfo) {
+    messages.push({ role: 'user', content: `I've recently viewed the following products: ${data.context.productInfo.name} in the ${data.context.productInfo.cloud}` });
   }
 
   if (data.history?.length > 0) {

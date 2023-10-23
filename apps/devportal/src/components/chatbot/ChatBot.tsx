@@ -7,6 +7,7 @@ import { mdiCreation, mdiDeleteSweep } from '@mdi/js';
 import Icon from '@mdi/react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useEngageTracker } from 'ui/components/integrations';
+import { Product } from 'ui/lib/assets';
 import { IExperienceResult, IPersonalizedExperience } from './IExperienceResult';
 import { Messages } from './Messages';
 import { PersonalizeBar } from './PersonalizeBar';
@@ -62,6 +63,8 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
       relevant_tags: result.relevant_tags,
     };
 
+    console.log(result);
+
     // TODO: Clean this up
     if (result.persona == 'fredPersona') {
       experience.persona = FredPersona;
@@ -73,23 +76,29 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
 
     // switch over products and set the product
     if (result.product_details !== undefined) {
-      switch (result.product_details.Product) {
-        case 'xm cloud':
-          experience.product = XMCloud;
+      switch (result.product_details) {
+        case 'XM Cloud':
+          experience.productInfo = XMCloud;
+          experience.product = Product.XMCloud;
           break;
-        case 'cdp':
-          experience.product = CDP;
+        case 'Sitecore CDP':
+          experience.productInfo = CDP;
+          experience.product = Product.CDP;
           break;
-        case 'send':
-          experience.product = Send;
+        case 'Sitecore Send':
+          experience.productInfo = Send;
+          experience.product = Product.Send;
           break;
-        case 'personalize':
-          experience.product = Personalize;
+        case 'Sitecore Personalize':
+          experience.productInfo = Personalize;
+          experience.product = Product.Personalize;
           break;
-        case 'search':
-          experience.product = Search;
+        case 'Sitecore Search':
+          experience.productInfo = Search;
+          experience.product = Product.Search;
           break;
         default:
+          experience.productInfo = undefined;
           experience.product = undefined;
           break;
       }
