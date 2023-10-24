@@ -17,7 +17,7 @@ type ChatBotProps = {
   isOpen?: boolean;
 };
 
-const intialMessage = [
+const initialMessage = [
   {
     type: MessageType.Assistant,
     text: "Hello! I'm Clippy, your friendly Sitecore helper. How can I help you today?",
@@ -29,7 +29,7 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
   const [isLoading, setIsLoading] = useBoolean(false);
   const [question, setQuestion] = useState('');
   const [personaContext, setPersonaContext] = useState<IPersonalizedExperience | undefined>();
-  const [messages, setMessage] = useState<Message[]>(intialMessage);
+  const [messages, setMessage] = useState<Message[]>(initialMessage);
   const isBlank = question === '';
 
   const requestBody = {
@@ -177,7 +177,7 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
   };
 
   const resetSession = function () {
-    setMessage(() => intialMessage);
+    setMessage(() => initialMessage);
     setQuestion('');
   };
 
@@ -189,7 +189,7 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
           <Stack>
             <Heading as="h2">Sitecore Clippy</Heading>
             <Text variant="subtle" color="chakra-inverse-text">
-              your friendly Sitecore helper!
+              Your friendly Sitecore helper!
             </Text>
           </Stack>
           <CloseButton onClick={onClose} />
