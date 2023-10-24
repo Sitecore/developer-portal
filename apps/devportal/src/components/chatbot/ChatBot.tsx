@@ -2,7 +2,7 @@
 import { FredPersona, SallyPersona } from '@/data/data-personas';
 import { CDP, Personalize, Search, Send, XMCloud } from '@/data/data-products';
 import { Message, MessageType } from '@/src/types/Message';
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, CloseButton, FormControl, Heading, IconButton, Input, Progress, Stack, Text, Tooltip, Wrap, useBoolean } from '@chakra-ui/react';
+import { Button, Card, CardBody, CardFooter, CardHeader, CloseButton, FormControl, Heading, IconButton, Input, Progress, Stack, Text, Tooltip, Wrap, useBoolean } from '@chakra-ui/react';
 import { mdiCreation, mdiDeleteSweep } from '@mdi/js';
 import Icon from '@mdi/react';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -195,13 +195,11 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
           <CloseButton onClick={onClose} />
         </Stack>
       </CardHeader>
-      <CardBody height={'200px'} background={'chakra-body-bg'}>
-        <Box overflowY="auto" maxHeight={['200px', '400px', '600px']}>
-          <PersonalizeBar context={personaContext} />
-          <Messages messages={messages} />
-          {isLoading && <Progress mx={5} mt={4} variant="ai" isIndeterminate />}
-          <div ref={messagesEndRef} />
-        </Box>
+      <CardBody height={'200px'} maxHeight={['200px', '400px', '600px']} background={'chakra-body-bg'} overflowY={'auto'} p={3}>
+        <PersonalizeBar context={personaContext} />
+        <Messages messages={messages} />
+        {isLoading && <Progress mx={5} mt={4} variant="ai" isIndeterminate />}
+        <div ref={messagesEndRef} />
       </CardBody>
 
       <CardFooter gap={4} background={'chakra-body-bg'} borderBottomRadius={'xl'}>
