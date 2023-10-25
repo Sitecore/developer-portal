@@ -33,7 +33,7 @@ const content: GenericListItem[] = [
   },
   {
     title: 'Implementation Guides',
-    description: 'These guidance documents aim to help you understand what kind of project management and implementation practices are recommended by Sitecore to implement Content Hub One.',
+    description: 'These guidance documents aim to help you understand what kind of project management and implementation practices are recommended by Sitecore to implement Content Hub ONE.',
     href: '/content-management/content-hub-one#implementation-guides',
     linkText: 'Learn',
     img: {
