@@ -51,7 +51,7 @@ export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, 
           {!!categoryTitle && <Heading variant="section">{categoryTitle}</Heading>}
 
           <Heading size={'sm'} my={4}>
-            <LinkOverlay as={NextLink} href={`${SITECORE_COMMUNITY_URL}${url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'black'}>
+            <LinkOverlay as={NextLink} href={`${SITECORE_COMMUNITY_URL}${url}`} isExternal={true} rel="noreferrer noopener" target="_blank">
               {title}
             </LinkOverlay>
           </Heading>
