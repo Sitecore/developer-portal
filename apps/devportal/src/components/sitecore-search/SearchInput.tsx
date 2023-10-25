@@ -3,13 +3,19 @@ import { FormControl, Image, Input, InputGroup, InputLeftElement, InputRightElem
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
+import { useEngageTracker } from 'ui/components/integrations';
 
 const SearchInput = () => {
+  const tracker = useEngageTracker();
   const router = useRouter();
   const [keywords, setKeywords] = useState(router.query['q'] ?? '');
 
   const submit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
+
+    // Track search event
+    tracker.TrackEvent('SEARCH', { keywords });
+
     router.push('/search?q=' + keywords).then(() => router.reload());
   };
 
