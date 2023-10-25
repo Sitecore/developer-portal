@@ -18,6 +18,7 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "chakra-react-select": "^4.7.5",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "react-select": "^5.7.2",

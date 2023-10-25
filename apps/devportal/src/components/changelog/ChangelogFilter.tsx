@@ -35,9 +35,6 @@ const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: Ch
         instanceId={id}
         key={id}
         options={options}
-        classNames={{
-          control: () => 'mb-2 text-sm dark:bg-theme-bg',
-        }}
         onChange={(e: Option[]) => {
           setSelectedChange(e);
           onSelectChange(e);
