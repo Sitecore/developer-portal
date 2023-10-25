@@ -65,19 +65,22 @@ The importance of your company's growth comes with the:
 <Repository framework="Nextjs|DotNET" name="Example implementation" description="This repository contains the codebase for a series of sites managed by the developer relations at Sitecore" repositoryUrl="https://github.com/Sitecore/XM-Cloud-Introduction" />
 </Row>
 
-### Other Learning
+### Community Learning Resources
 
 - [Headless Frontend Development with XM Cloud](https://thetombomb.com/posts/frontend-development-xm-cloud) (Thomas Desmond)
 - [Migrating the Sitecore MVP site to XM Cloud blog series](https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-1) (Rob Earlam)
 - [Setting up an external XM Cloud Rendering Host to work with Experience Editor and Pages](https://robearlam.com/blog/setting-up-an-external-xm-cloud-rendering-host-to-work-with-experience-editor-and-pages) (Rob Earlam)
 - [Using Wildcard Items in Sitecore XM Cloud](https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud) (David Austin)
-  
+
 ### Official Sitecore Training
 
 <Row columns={3}>
+  <Link title="XM Cloud eLearning" link="https://learning.sitecore.com/pages/62/content-cloud-learning" />
   <Link title="XM Cloud for JSS Headless Developers" link="https://learning.sitecore.com/learn/learning_plan/view/50/xm-cloud-for-jss-headless-developers" />
   <Link title="XM Cloud for .NET Headless Developers" link="https://learning.sitecore.com/learn/learning_plan/view/51/xm-cloud-for-net-headless-developers" />
   <Link title="Sitecore XM Cloud Developer Fundamentals ILT" link="https://shop.learning.sitecore.com/products/1243" />
+  <Link title="XM Cloud Exam Study Guide" link="https://learning.sitecore.com/learn/course/view/elearning/1253/study-guide-sitecore-xm-cloud-developer-certification-exam" />
+  <Link title="Buy an XM Cloud Certification Exam" link="https://webassessor.com/sitecore" />
 </Row>
 
 ## Access the Portal
