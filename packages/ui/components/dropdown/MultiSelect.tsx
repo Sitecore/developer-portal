@@ -1,8 +1,8 @@
-import { ChakraStylesConfig, Select, SelectComponent } from 'chakra-react-select';
+import { ChakraStylesConfig, Select } from 'chakra-react-select';
 import { useRef, useState } from 'react';
 import { InputAction } from 'react-select';
 
-export type Option = SelectComponent & {
+export type Option = {
   value: number | string;
   label: string;
 };
