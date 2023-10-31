@@ -41,7 +41,7 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
         <CenteredContent paddingTop={10}>
           {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
 
-          <Flex direction={{ base: 'column', md: 'row' }}>
+          <Flex direction={{ base: 'column', md: 'row' }} gap={4}>
             {/* {pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <Container w={'full'}>{Nav}</Container>} */}
             {pageInfo.hasSubPageNav && (
               <Container maxW={{ base: 'full', md: 240 }}>

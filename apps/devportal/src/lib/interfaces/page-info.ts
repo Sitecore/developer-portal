@@ -74,7 +74,7 @@ export type PageInfo = PageInfoCore & {
 export type SubPageNavigation = {
   title: string;
   description: string;
-  heading: string;
+  heading: boolean;
   path: string;
   routes: SubPageNavigationItem[];
 };
