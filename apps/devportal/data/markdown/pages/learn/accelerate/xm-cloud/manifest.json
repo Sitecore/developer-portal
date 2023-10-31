@@ -1,0 +1,120 @@
+{
+  "title": "Sitecore Accelerate for Partners",
+  "description": "Tips for teams working on XM Cloud projects from developers in the field",
+  "heading": false,
+  "path": "/learn/accelerate/xm-cloud",
+  "routes": [
+    {
+      "title": "Pre-development",
+      "path": "pre-development",
+      "children": [
+        {
+          "title": "Discovery",
+          "path": "discovery"
+        },
+        {
+          "title": "Developer Experience",
+          "path": "developer-experience"
+        },
+        {
+          "title": "Security",
+          "path": "security"
+        },
+        {
+          "title": "Information Architecture",
+          "path": "information-architecture"
+        },
+        {
+          "title": "Project Planning",
+          "path": "project-planning"
+        },
+        {
+          "title": "Sprint Zero",
+          "path": "sprint-zero"
+        }
+      ]
+    },
+    {
+      "title": "Implementation",
+      "path": "implementation",
+      "children": [
+        {
+          "title": "Developer Experience",
+          "path": "developer-experience",
+          "children": [
+            {
+              "title": "Branching Strategy",
+              "path": "branching-strategy"
+            },
+            {
+              "title": "Troubleshooting Local Dev Container Env",
+              "path": "troubleshooting"
+            },
+            {
+              "title": "Components Design Best Practices",
+              "path": "components"
+            }
+          ]
+        },
+        {
+          "title": "Information Architecture",
+          "path": "information-architecture"
+        },
+        {
+          "title": "External Data Integration",
+          "path": "external-data-integration",
+          "children": [
+            {
+              "title": "Sub page 1",
+              "path": "sub-page-1"
+            },
+            {
+              "title": "Sub page 2",
+              "path": "sub-page-2",
+              "children": [
+                {
+                  "title": "Sub page 2-1",
+                  "path": "sub-page-2-1"
+                },
+                {
+                  "title": "Sub page 2-2",
+                  "path": "sub-page-2-2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Search",
+          "path": "search"
+        },
+        {
+          "title": "Publishing/Cache Revalidation/SSG",
+          "path": "publishg-cache-revalidation-ssg"
+        }
+      ]
+    },
+    {
+      "title": "Final Steps",
+      "path": "final-steps"
+    },
+    {
+      "title": "Glossary of terms",
+      "path": "glossary-of-terms",
+      "children": [
+        {
+          "title": "XM Cloud Glossary",
+          "path": "xm-cloud-glossary"
+        },
+        {
+          "title": "Next.js",
+          "path": "nextjs"
+        },
+        {
+          "title": "List of recipes",
+          "path": "list-of-recipes"
+        }
+      ]
+    }
+  ]
+}
