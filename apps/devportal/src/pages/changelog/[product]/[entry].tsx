@@ -114,12 +114,12 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     </Link>
                   </Heading>
 
-                  <ChangelogItemMeta item={changelogEntry} loading={false} mt={4} />
+                  <ChangelogItemMeta item={changelogEntry} mt={4} />
                 </CardHeader>
                 <CardBody py={0}>
                   {changelogEntry.image.length > 0 && (
                     <>
-                      <Image src={`${changelogEntry.image[0].fileUrl}?transform=true&width=670&height=250&fit=crop&gravity=auto`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} />
+                      <Image src={`${changelogEntry.image[0].fileUrl}?width=665&fit=contain&transform=true`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
 
                       <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnOverlayClick size={'6xl'}>
                         <ModalOverlay />
