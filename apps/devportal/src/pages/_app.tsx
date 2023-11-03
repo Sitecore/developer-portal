@@ -6,7 +6,7 @@ import { Footer } from '@src/components/navigation/Footer';
 import Navbar from '@src/components/navigation/NavBar';
 import SearchInputSwitcher from '@src/components/sitecore-search/SearchInputSwitcher';
 import { AppProps } from 'next/app';
-import { Router, useRouter } from 'next/router';
+import { Router } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
@@ -24,9 +24,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     shadowBlur: 2,
   });
 
-  const router = useRouter();
   const onScroll = useCallback(() => {
-    if (router.query.fromSearch && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    const params = new URLSearchParams(window.location.search); // id=123
+    const fromSearch = params.get('fromSearch');
+    if (fromSearch && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
       trackEntityPageViewEvent('content', {
         items: [
           {
