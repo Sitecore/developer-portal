@@ -98,8 +98,12 @@ export const SearchResults = (props: InitialSearchProps) => {
                         onClick={(e) => {
                           e.preventDefault();
                           onItemClick({ id: result.id || '', index });
-                          if (result.index_name != 'sitecore-devportal-v2') trackEntityPageViewEvent('content', { items: [{ id: result.id }] });
-                          window.open(result.url, '_blank');
+                          if (result.index_name != 'sitecore-devportal-v2') {
+                            trackEntityPageViewEvent('content', { items: [{ id: result.id }] });
+                            window.open(result.url + '?fromSearch=true', '_blank');
+                          } else {
+                            window.open(result.url, '_blank');
+                          }
                         }}
                       >
                         <HStack pb={2}>

@@ -6,8 +6,8 @@ import { Footer } from '@src/components/navigation/Footer';
 import Navbar from '@src/components/navigation/NavBar';
 import SearchInputSwitcher from '@src/components/sitecore-search/SearchInputSwitcher';
 import { AppProps } from 'next/app';
-import { Router } from 'next/router';
-import { useEffect, useState } from 'react';
+import { Router, useRouter } from 'next/router';
+import { useCallback, useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
@@ -23,6 +23,20 @@ function MyApp({ Component, pageProps }: AppProps) {
     },
     shadowBlur: 2,
   });
+
+  const router = useRouter();
+  const onScroll = useCallback(() => {
+    if (router.query.fromSearch && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      trackEntityPageViewEvent('content', {
+        items: [
+          {
+            id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, ''),
+          },
+        ],
+        actionSubtype: 'conversion',
+      });
+    }
+  }, []);
 
   Router.events.on('routeChangeStart', () => {
     setProgress(true);
@@ -45,6 +59,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       PageController.getContext().setLocale({ country: 'us', language: 'en' });
       trackEntityPageViewEvent('content', { items: [{ id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, '') }] });
     }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll, { passive: true });
+    };
   });
 
   const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
