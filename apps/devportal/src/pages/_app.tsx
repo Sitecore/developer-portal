@@ -58,7 +58,20 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <ChakraProvider theme={scdpTheme}>
+      <ChakraProvider
+        theme={scdpTheme}
+        toastOptions={{
+          defaultOptions: {
+            position: 'bottom-left',
+            variant: 'subtle',
+            containerStyle: {
+              mt: '0',
+              mb: '4',
+              mx: '4',
+            },
+          },
+        }}
+      >
         {progress && <TopBarProgress />}
 
         <Navbar>
