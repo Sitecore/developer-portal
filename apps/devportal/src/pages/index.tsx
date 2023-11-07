@@ -32,7 +32,7 @@ type HomePageProps = {
 };
 
 const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
-  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
     <Hero title={pageInfo.title} description={pageInfo.description} />
 
     <VerticalGroup background={'chakra-bg'}>

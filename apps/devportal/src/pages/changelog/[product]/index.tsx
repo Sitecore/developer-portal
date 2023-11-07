@@ -17,6 +17,7 @@ import { ButtonLink } from 'ui/components/links/ButtonLink';
 
 type ChangelogProps = {
   currentProduct: Product;
+  preview: boolean;
 };
 
 export async function getStaticPaths() {
@@ -40,18 +41,19 @@ export async function getStaticProps(context: any) {
   return {
     props: {
       currentProduct: currentProduct,
+      preview: preview,
     },
     revalidate: 60,
   };
 }
 
-const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
+const ChangelogProduct = ({ currentProduct, preview }: ChangelogProps) => {
   const router = useRouter();
   const title = `${currentProduct.name} Changelog`;
   const description = `Learn more about new versions, changes and improvements for ${currentProduct.name}`;
 
   return (
-    <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
+    <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements" preview={preview}>
       <Hero title={title} description={description}>
         <HStack>
           <Text variant={'sm'}>Powered by</Text>

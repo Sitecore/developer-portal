@@ -27,7 +27,7 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo }) => {
   const currentPage: number = parseInt(router?.query['p'] as string) || 1;
 
   return (
-    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       <VerticalGroup>

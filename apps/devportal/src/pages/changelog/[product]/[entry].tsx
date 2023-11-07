@@ -44,6 +44,7 @@ import SocialShare from 'ui/components/social/SocialShare';
 type ChangelogProps = {
   currentProduct: Product;
   changelogEntry: ChangelogEntry;
+  preview: boolean;
 };
 
 export async function getServerSideProps(context: any) {
@@ -68,17 +69,18 @@ export async function getServerSideProps(context: any) {
     props: {
       currentProduct: currentProduct,
       changelogEntry: changelogEntry,
+      preview: preview,
     },
   };
 }
 
-const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) => {
+const ChangelogProduct = ({ currentProduct, changelogEntry, preview }: ChangelogProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const title = `${currentProduct.name} Changelog`;
   const description = `Learn more about new versions, changes and improvements for ${currentProduct.name}`;
 
   return (
-    <Layout title={title} description={changelogEntry.title}>
+    <Layout title={title} description={changelogEntry.title} preview={preview}>
       <Hero title={title} description={description}>
         <HStack>
           <Text variant={'sm'}>Powered by</Text>
