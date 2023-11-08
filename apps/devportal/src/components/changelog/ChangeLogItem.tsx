@@ -52,7 +52,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
         <CardBody py={0}>
           {item.image.length > 0 && (
             <>
-              <Image src={`${item.image[0].fileUrl}?width=665&fit=contain&transform=true`} alt={item.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} maxH={'450'} />
+              <Image src={`${item.image[0].fileUrl}`} alt={item.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
 
               <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnOverlayClick size={'6xl'}>
                 <ModalOverlay />
