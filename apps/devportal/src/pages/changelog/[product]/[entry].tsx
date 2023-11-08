@@ -119,7 +119,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 <CardBody py={0}>
                   {changelogEntry.image.length > 0 && (
                     <>
-                      <Image src={`${changelogEntry.image[0].fileUrl}?width=665&fit=contain&transform=true`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
+                      <Image src={`${changelogEntry.image[0].fileUrl}`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
 
                       <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnOverlayClick size={'6xl'}>
                         <ModalOverlay />
