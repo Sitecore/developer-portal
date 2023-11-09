@@ -64,8 +64,8 @@ const PreviewProvider = ({ children, preview, currentHostname }: PreviewProvider
 };
 
 const triggerPreview = async (enable: boolean) => {
-  const secret = 'test-staging';
-  const route = enable ? `/api/preview?secret=${process.env.NEXT_PUBLIC_PREVIEW_SECRET}` : `/api/preview?clear`;
+  //const secret = 'test-staging';
+  const route = enable ? `/api/preview` : `/api/preview?clear`;
   const response = await fetch(route, {
     method: 'POST',
   });
@@ -84,3 +84,4 @@ const usePreview = () => {
 };
 
 export { PreviewProvider, usePreview };
+

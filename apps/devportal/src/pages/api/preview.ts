@@ -7,22 +7,23 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  const { clear, secret } = req.query;
+  const { clear } = req.query;
 
-  const preview_secret = process.env.NEXT_PUBLIC_PREVIEW_SECRET;
+  //  const preview_secret = process.env.NEXT_PUBLIC_PREVIEW_SECRET;
 
   if (clear != null) {
     res.clearPreviewData({});
-    //console.log('Preview mode disabled');
+    console.log('Preview mode disabled');
+  } else {
+    res.setPreviewData({});
+    console.log('Preview mode enabled');
   }
 
-  if (secret != null) {
-    // Check the secret and next parameters
-    if (secret == preview_secret) {
-      res.setPreviewData({});
-      //console.log('Preview mode enabled');
-    }
-  }
+  //if (secret != null) {
+  // Check the secret and next parameters
+  //  if (secret == preview_secret) {
+  //}
+  //}
 
   res.end();
 }
