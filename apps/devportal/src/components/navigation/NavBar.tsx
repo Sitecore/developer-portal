@@ -12,6 +12,7 @@ import ProductIcon from 'ui/components/common/ProductIcon';
 import ProductLogo from 'ui/components/common/ProductLogo';
 import { Slide } from 'ui/components/helpers/Slide';
 import { Product } from 'ui/lib/assets';
+import { PreviewModeSwitch } from '../common/PreviewModeSwitch';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 
@@ -85,7 +86,7 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
   return (
     <Slide in={!scrolled} direction="top-half" style={{ zIndex: 9999 }}>
       <Box as="header" shadow={'base'} zIndex={999} width={'full'}>
-        <Flex as={'nav'} py={{ base: 3 }} px={{ base: 4 }} align={'center'} borderBottom={'chakra-border-color'} borderBottomWidth={1} borderBottomStyle={'solid'} background={'chakra-body-bg'}>
+        <Flex as={'nav'} py={{ base: 3 }} px={{ base: 4 }} align={'left'} borderBottom={'chakra-border-color'} borderBottomWidth={1} borderBottomStyle={'solid'} background={'chakra-body-bg'}>
           {/* Logo */}
           <Box as="a" href="/" flexShrink="0" title="Go to the home page">
             <ProductLogo product={Product.SitecoreDevelopers} width={227} height={24} />
@@ -102,6 +103,7 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
           <Flex flex={{ base: 1, xl: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', xl: 'none' }}></Flex>
 
           <Flex flex={{ base: 2, xl: 0 }} justify={'flex-end'} direction={'row'}>
+            <PreviewModeSwitch />
             <DarkModeSwitch />
             <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
             <QuickStartMenu />

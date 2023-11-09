@@ -22,6 +22,7 @@ export async function getStaticProps(context: any) {
   return {
     props: {
       pageInfo,
+      preview: context.preview ? context.preview : null,
     },
     revalidate: 600, // 10 minutes
   };
@@ -29,10 +30,11 @@ export async function getStaticProps(context: any) {
 
 type HomePageProps = {
   pageInfo: PageInfo;
+  preview: boolean;
 };
 
-const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
-  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
+const HomePage = ({ pageInfo, preview }: HomePageProps): JSX.Element => (
+  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={preview}>
     <Hero title={pageInfo.title} description={pageInfo.description} />
 
     <VerticalGroup background={'chakra-bg'}>

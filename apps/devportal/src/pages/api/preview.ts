@@ -1,26 +1,28 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getQueryValue } from 'sc-changelog/utils/requests';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { redirect, clear, secret } = req.query;
+  if (req.method !== 'POST') {
+    res.status(405).json({ message: 'Method not allowed' });
+    return;
+  }
 
-  let redirectUrl = getQueryValue(redirect);
-  const preview_secret = process.env.PREVIEW_SECRET;
+  const { clear, secret } = req.query;
+
+  const preview_secret = process.env.NEXT_PUBLIC_PREVIEW_SECRET;
 
   if (clear != null) {
     res.clearPreviewData({});
-    redirectUrl = 'https://developers.sitecore.com' + redirectUrl;
+    //console.log('Preview mode disabled');
   }
 
   if (secret != null) {
     // Check the secret and next parameters
     if (secret == preview_secret) {
       res.setPreviewData({});
+      //console.log('Preview mode enabled');
     }
   }
 
-  // Redirect to the homepage, or to the URL provided with the `redirect` query
-  if (redirectUrl) {
-    res.redirect(redirectUrl);
-  }
+  res.end();
 }
