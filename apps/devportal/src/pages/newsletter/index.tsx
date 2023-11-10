@@ -22,7 +22,7 @@ interface NewsletterPageProps {
 
 const MAX_RESULTS = 12;
 
-export const getStaticProps: GetStaticProps = async (context: any) => {
+export const getStaticProps: GetStaticProps = async () => {
   const getFirstXNewsletters = () => {
     const years = fs.readdirSync(NEWSLETTER_DATA_DIRECTORY);
 
@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
     return newsletters;
   };
 
-  const pageInfo = await getPageInfo('_newsletter', context.preview ? context.preview : null);
+  const pageInfo = await getPageInfo('_newsletter');
 
   return {
     props: {

@@ -16,13 +16,12 @@ import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, 
 import { CategoryTileList, GenericList } from 'ui/components/lists';
 import { CTACard } from 'ui/components/promos';
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
 
   return {
     props: {
       pageInfo,
-      preview: context.preview ? context.preview : null,
     },
     revalidate: 600, // 10 minutes
   };
@@ -33,7 +32,7 @@ type HomePageProps = {
   preview: boolean;
 };
 
-const HomePage = ({ pageInfo, preview }: HomePageProps): JSX.Element => (
+const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
   <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
     <Hero title={pageInfo.title} description={pageInfo.description} />
 
