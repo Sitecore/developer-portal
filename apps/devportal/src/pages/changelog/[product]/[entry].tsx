@@ -1,4 +1,3 @@
-import { usePreview } from '@/src/context/PreviewContext';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -50,7 +49,7 @@ type ChangelogProps = {
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
   const entry = context.params.entry;
-  const { isPreview } = usePreview();
+  const isPreview = context.preview || false;
 
   const products = await GetProducts(isPreview).then((response: Product[]) => {
     return response;
