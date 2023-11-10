@@ -35,7 +35,7 @@
         "SITECORE_CHONE_AUTH_TOKEN_PREVIEW",
         "SITECORE_CHONE_AUTH_TOKEN_DELIVERY",
         "NEXT_PUBLIC_PREVIEW_HOSTNAME",
-        "NEXT_PUBLIC_PREVIEW_SECRET",
+        "PREVIEW_SECRET",
         "NODE_ENV"
       ],
       "outputs": [".next/**"]

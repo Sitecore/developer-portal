@@ -4,10 +4,11 @@ import { createContext, ReactNode, useContext, useEffect, useState } from 'react
 
 type PreviewContextType = {
   isPreview: boolean;
-  isPreviewEnabled: boolean;
+  isPreviewModeEnabled: boolean;
   togglePreview: () => void;
   refreshPage: () => void;
   enablePreviewMode: () => void;
+  enablePreview: () => void;
 };
 
 export const PreviewContext = createContext<PreviewContextType | null>(null);
@@ -19,7 +20,7 @@ type PreviewProviderProps = {
 };
 
 const PreviewProvider = ({ children, preview, currentHostname }: PreviewProviderProps) => {
-  const [isPreviewEnabled, setIsPreviewEnabled] = useState<boolean>(false);
+  const [isPreviewEnabled, setIsPreviewModeEnabled] = useState<boolean>(false);
   const [isPreview, setIsPreview] = useState<boolean>();
 
   // eslint-disable-next-line turbo/no-undeclared-env-vars
@@ -27,7 +28,7 @@ const PreviewProvider = ({ children, preview, currentHostname }: PreviewProvider
 
   useEffect(() => {
     setIsPreview(preview);
-    setIsPreviewEnabled(isEnabled);
+    setIsPreviewModeEnabled(isEnabled);
   }, [preview, isEnabled]);
 
   const router = useRouter();
@@ -37,7 +38,7 @@ const PreviewProvider = ({ children, preview, currentHostname }: PreviewProvider
   };
 
   const enablePreviewMode = () => {
-    setIsPreviewEnabled(true);
+    setIsPreviewModeEnabled(true);
   };
 
   const togglePreview = async () => {
@@ -48,14 +49,23 @@ const PreviewProvider = ({ children, preview, currentHostname }: PreviewProvider
     }
   };
 
+  const enablePreview = async () => {
+    const success = await triggerPreview(true);
+    if (success) {
+      setIsPreview(!isPreview);
+      refreshPage();
+    }
+  };
+
   return (
     <PreviewContext.Provider
       value={{
         isPreview: preview,
-        isPreviewEnabled: isEnabled,
+        isPreviewModeEnabled: isEnabled,
         togglePreview,
         refreshPage,
         enablePreviewMode,
+        enablePreview,
       }}
     >
       {children}
@@ -65,7 +75,7 @@ const PreviewProvider = ({ children, preview, currentHostname }: PreviewProvider
 
 const triggerPreview = async (enable: boolean) => {
   //const secret = 'test-staging';
-  const route = enable ? `/api/preview` : `/api/preview?clear`;
+  const route = enable ? `/api/context/preview` : `/api/context/preview?clear`;
   const response = await fetch(route, {
     method: 'POST',
   });

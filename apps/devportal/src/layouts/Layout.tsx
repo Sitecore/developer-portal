@@ -1,5 +1,5 @@
 // Global
-import { Alert, AlertDescription, AlertIcon, Box, BoxProps, Button, Link, VisuallyHidden } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, Box, BoxProps, VisuallyHidden } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -50,12 +50,7 @@ const Layout = ({ title, description = '', openGraphImage, preview, children, ..
         {preview && (
           <Alert status="warning">
             <AlertIcon />
-            <AlertDescription>
-              You are browsing the Developer Portal in preview mode.
-              <Button as={Link} variant="link" href="https://developers.sitecore.com">
-                Exit
-              </Button>
-            </AlertDescription>
+            <AlertDescription>Preview mode enabled</AlertDescription>
           </Alert>
         )}
         {children}
