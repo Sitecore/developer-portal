@@ -1,7 +1,7 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
 import { usePreview } from '@/src/context/PreviewContext';
 import { Alert, BoxProps, Button, HStack, Icon, Link, Tag, TagLabel, Tooltip } from '@chakra-ui/react';
-import { mdiLinkEdit } from '@mdi/js';
+import { mdiSquareEditOutline } from '@mdi/js';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { ProductIcon } from './ProductIcon';
 
@@ -49,7 +49,7 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
         <Tooltip label="Edit in Sitecore Content Hub ONE" aria-label="Edit in Sitecore Content Hub">
         <Button variant={'ghost'} size="sm" leftIcon={
             <Icon>
-              <path d={mdiLinkEdit} />
+              <path d={mdiSquareEditOutline} />
             </Icon>
           }
         >
