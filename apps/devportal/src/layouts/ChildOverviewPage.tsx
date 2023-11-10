@@ -26,7 +26,7 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo }:
 
   // Check for headings in the content
   return (
-    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} background={'chakra-subtle-bg'} preview={pageInfo.previewMode}>
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} background={'chakra-subtle-bg'}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       {pageInfo.content && pageInfo.content.length > 0 && (

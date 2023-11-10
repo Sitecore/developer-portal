@@ -1,3 +1,4 @@
+import { usePreview } from '@/src/context/PreviewContext';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -44,22 +45,21 @@ import SocialShare from 'ui/components/social/SocialShare';
 type ChangelogProps = {
   currentProduct: Product;
   changelogEntry: ChangelogEntry;
-  preview: boolean;
 };
 
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
   const entry = context.params.entry;
-  const preview = context.preview ? context.preview : null;
+  const { isPreview } = usePreview();
 
-  const products = await GetProducts(preview).then((response: Product[]) => {
+  const products = await GetProducts(isPreview).then((response: Product[]) => {
     return response;
   });
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
 
   try {
-    changelogEntry = await ChangelogEntryByTitle(preview, entry, currentProduct?.id);
+    changelogEntry = await ChangelogEntryByTitle(isPreview, entry, currentProduct?.id);
   } catch {
     return {
       notFound: true,
@@ -69,18 +69,17 @@ export async function getServerSideProps(context: any) {
     props: {
       currentProduct: currentProduct,
       changelogEntry: changelogEntry,
-      preview: preview,
     },
   };
 }
 
-const ChangelogProduct = ({ currentProduct, changelogEntry, preview }: ChangelogProps) => {
+const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const title = `${currentProduct.name} Changelog`;
   const description = `Learn more about new versions, changes and improvements for ${currentProduct.name}`;
 
   return (
-    <Layout title={title} description={changelogEntry.title} preview={preview}>
+    <Layout title={title} description={changelogEntry.title}>
       <Hero title={title} description={description}>
         <HStack>
           <Text variant={'sm'}>Powered by</Text>

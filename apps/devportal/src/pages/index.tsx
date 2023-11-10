@@ -17,7 +17,7 @@ import { CategoryTileList, GenericList } from 'ui/components/lists';
 import { CTACard } from 'ui/components/promos';
 
 export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo('home', context.preview ? context.preview : null);
+  const pageInfo = await getPageInfo('home');
 
   return {
     props: {
@@ -34,7 +34,7 @@ type HomePageProps = {
 };
 
 const HomePage = ({ pageInfo, preview }: HomePageProps): JSX.Element => (
-  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={preview}>
+  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
     <Hero title={pageInfo.title} description={pageInfo.description} />
 
     <VerticalGroup background={'chakra-bg'}>

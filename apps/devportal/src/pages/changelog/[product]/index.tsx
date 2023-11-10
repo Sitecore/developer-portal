@@ -47,13 +47,13 @@ export async function getStaticProps(context: any) {
   };
 }
 
-const ChangelogProduct = ({ currentProduct, preview }: ChangelogProps) => {
+const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
   const router = useRouter();
   const title = `${currentProduct.name} Changelog`;
   const description = `Learn more about new versions, changes and improvements for ${currentProduct.name}`;
 
   return (
-    <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements" preview={preview}>
+    <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
       <Hero title={title} description={description}>
         <HStack>
           <Text variant={'sm'}>Powered by</Text>

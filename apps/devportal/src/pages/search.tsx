@@ -11,8 +11,8 @@ interface SearchPageProps {
   pageInfo: PageInfo;
 }
 
-export async function getServerSideProps(context: any) {
-  const pageInfo = await getPageInfo('_search', context.preview ? context.preview : null);
+export async function getServerSideProps() {
+  const pageInfo = await getPageInfo('_search');
 
   return {
     props: {
@@ -27,7 +27,7 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo }) => {
   const currentPage: number = parseInt(router?.query['p'] as string) || 1;
 
   return (
-    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       <VerticalGroup>

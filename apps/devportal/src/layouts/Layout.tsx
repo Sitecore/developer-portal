@@ -3,6 +3,7 @@ import { Alert, AlertDescription, AlertIcon, Box, BoxProps, VisuallyHidden } fro
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { usePreview } from '../context/PreviewContext';
 
 type LayoutProps = BoxProps & {
   title: string;
@@ -12,7 +13,8 @@ type LayoutProps = BoxProps & {
   children: React.ReactNode | React.ReactNode[];
 };
 
-const Layout = ({ title, description = '', openGraphImage, preview, children, ...rest }: LayoutProps): JSX.Element => {
+const Layout = ({ title, description = '', openGraphImage, children, ...rest }: LayoutProps): JSX.Element => {
+  const { isPreview } = usePreview();
   const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
   const router = useRouter();
   const { asPath } = router;
@@ -47,7 +49,7 @@ const Layout = ({ title, description = '', openGraphImage, preview, children, ..
         </VisuallyHidden>
         {/* a11y announcement for route changes. */}
         <VisuallyHidden aria-live="polite" aria-atomic="true">{`The ${title} page has loaded.`}</VisuallyHidden>
-        {preview && (
+        {isPreview && (
           <Alert status="warning">
             <AlertIcon />
             <AlertDescription>Preview mode enabled</AlertDescription>

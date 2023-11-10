@@ -59,7 +59,7 @@ const getFileData = (directory: string, file: string): Matter => {
   return results;
 };
 
-export const getPageInfo = async (params: string | string[], preview?: boolean): Promise<PageInfo | null> => {
+export const getPageInfo = async (params: string | string[]): Promise<PageInfo | null> => {
   const relativePath = Array.isArray(params) ? params.join('/') : params;
 
   const fileData = getFileData(pagesDirectory, `${relativePath}`);
@@ -79,7 +79,6 @@ export const getPageInfo = async (params: string | string[], preview?: boolean):
     content: fileData.content,
     parsedContent: content?.result.compiledSource,
     headings: content?.headings,
-    previewMode: preview,
     slug: params[params.length - 1],
     hasSubPageNav: searchForFile(path.join(pagesDirectory, `${relativePath}`), 'manifest.json') != null ? true : false,
   } as PageInfo;
@@ -102,7 +101,7 @@ export const getPageInfo = async (params: string | string[], preview?: boolean):
   }
 
   if (meta.changelog) {
-    pageInfo.changelogEntries = await(await ChangelogEntriesPaginated(false, meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
+    pageInfo.changelogEntries = await (await ChangelogEntriesPaginated(false, meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
   }
 
   const youtubeInfo = await YouTubeApi.get(meta.youtube);

@@ -50,7 +50,7 @@ const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, pro
   const Nav = customNav ? customNav : <InPageNav titles={titles} />;
 
   return (
-    <Layout title={pageInfo.title} description={pageInfo.description} preview={pageInfo.previewMode}>
+    <Layout title={pageInfo.title} description={pageInfo.description}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       {/* background={!pageInfo.hasInPageNav ? 'neutral-subtle-bg' : ''} id="verticalgroup" */}

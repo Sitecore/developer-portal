@@ -20,7 +20,7 @@ type ChangelogHomeProps = {
   preview: boolean;
 };
 
-export default function ChangelogHome({ fallback, preview }: ChangelogHomeProps) {
+export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
   const [selectedProduct, setSelectedProduct] = useState<Option[]>([]);
 
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function ChangelogHome({ fallback, preview }: ChangelogHomeProps)
       <Head>
         <link rel="preload" href="/api/changelog/v1/all?" as="fetch" crossOrigin="anonymous" />
       </Head>
-      <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements" preview={preview}>
+      <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
           <HStack>
             <Text variant={'sm'}>Powered by</Text>

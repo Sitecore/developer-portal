@@ -20,7 +20,7 @@ type PreviewProviderProps = {
 };
 
 const PreviewProvider = ({ children, preview, currentHostname }: PreviewProviderProps) => {
-  const [isPreviewEnabled, setIsPreviewModeEnabled] = useState<boolean>(false);
+  const [isPreviewModeEnabled, setIsPreviewModeEnabled] = useState<boolean>(false);
   const [isPreview, setIsPreview] = useState<boolean>();
 
   // eslint-disable-next-line turbo/no-undeclared-env-vars
@@ -61,7 +61,7 @@ const PreviewProvider = ({ children, preview, currentHostname }: PreviewProvider
     <PreviewContext.Provider
       value={{
         isPreview: preview,
-        isPreviewModeEnabled: isEnabled,
+        isPreviewModeEnabled: isPreviewModeEnabled,
         togglePreview,
         refreshPage,
         enablePreviewMode,
