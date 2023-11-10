@@ -7,6 +7,7 @@ import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug } from 'sc-changelog/utils/stringUtils';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 
+import { usePreview } from '@/src/context/PreviewContext';
 import { Loading } from 'ui/components/common/Loading';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import SocialShare from 'ui/components/social/SocialShare';
@@ -22,6 +23,7 @@ export type ChangeLogItemProps = {
 
 const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isPreview } = usePreview();
   const entryRef = useRef(null);
 
   useEffect(() => {
@@ -41,13 +43,12 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
     <>
       <Card ref={entryRef} variant={'unstyled'} mt={2} mb={8}>
         <CardHeader pb={4}>
-          <Heading as="h2" fontSize={'1.25rem'} id={getSlug(item.title)}>
+          <Heading as="h2" fontSize={'1.25rem'} id={getSlug(item.title)} mb={4}>
             <Link href={getChangelogEntryUrl(item)} title={item.title}>
               {item.title}
             </Link>
           </Heading>
-
-          <ChangelogItemMeta item={item} loading={loading} mt={4} />
+          <ChangelogItemMeta item={item} loading={loading} />
         </CardHeader>
         <CardBody py={0}>
           {item.image.length > 0 && (
