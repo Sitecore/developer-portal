@@ -11,6 +11,7 @@ import { GetProductLogoByVariant, Product, Type, Variant } from 'ui/lib/assets';
 import { PreviewModeSwitch } from '../common/PreviewModeSwitch';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
+import { SearchButton } from './SearchButton';
 
 export type NavigationChildData = {
   title: string;
@@ -56,10 +57,20 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
             </Link>
           </HStack>
           {/* Desktop menu */}
-          <Hide below="md">
+          <Hide below="xl">
             <HStack>
               <DesktopNav />
             </HStack>
+
+            {children && (
+              <Hide below="2xl">
+                <Flex grow={1} flexShrink={0} justify={'flex-end'} mr={12} ml={24}>
+                  <Box display={'flex'} width={'full'} maxWidth={'2xl'}>
+                    {children}
+                  </Box>
+                </Flex>
+              </Hide>
+            )}
           </Hide>
         </Stack>
         {/* Mobile menu button */}
@@ -67,19 +78,12 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
 
         <Flex flex={{ base: 2, xl: 0 }} justify={'flex-end'} direction={'row'}>
           <PreviewModeSwitch />
+          <SearchButton />
           <DarkModeSwitch />
           <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
           <QuickStartMenu />
         </Flex>
       </Flex>
-      {/* 
-        {children && (
-          <Flex flex={{ base: 1 }}>
-            <Box display={'flex'} boxSize={'100%'} maxWidth={'6xl'} width={'100%'}>
-              {children}
-            </Box>
-          </Flex>
-        )} */}
 
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
