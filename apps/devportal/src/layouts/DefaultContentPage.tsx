@@ -2,10 +2,12 @@ import { Container, Flex, Hide } from '@chakra-ui/react';
 
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
+import { trackEntityPageViewEvent } from '@sitecore-search/react';
 import SocialFeeds from '@src/components/common/SocialFeeds';
 import { RenderContent, RenderPartialGroups, RenderPartials } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
+import { useCallback, useEffect, useRef } from 'react';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, ContentSection } from 'ui/components/helpers';
 import LatestChangelogEntries from 'ui/components/integrations/changelog/LatestChangelogEntries';
@@ -25,6 +27,35 @@ type DefaultContentPageProps = {
 
 const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager }: DefaultContentPageProps) => {
   if (!pageInfo) return <>No pageInfo found</>;
+
+  const contentInnerRef = useRef(null);
+  let conversionTriggered = false;
+  const onScroll = useCallback(() => {
+    if (contentInnerRef.current) {
+      const { clientHeight, offsetTop } = contentInnerRef.current;
+      const contentAllViewed = window.scrollY + window.innerHeight >= offsetTop + clientHeight;
+      const params = new URLSearchParams(window.location.search);
+      const fromSearch = params.get('fromSearch');
+      if (contentAllViewed && fromSearch && !conversionTriggered) {
+        conversionTriggered = true;
+        trackEntityPageViewEvent('content', {
+          items: [
+            {
+              id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, ''),
+            },
+          ],
+          actionSubtype: 'conversion',
+        });
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  });
 
   // Check for headings in the content
   const sectionTitles: ContentHeading[] = [];
@@ -47,7 +78,9 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
             {pageInfo.hasSubPageNav && <Container maxW={{ base: 'full', md: 100 }}>{Nav}</Container>}
             <Container maxW={'full'}>
               {/* <Hide above="md">{pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <>{Nav}</>}</Hide> */}
-              <RenderContent content={pageInfo.parsedContent} />
+              <div ref={contentInnerRef}>
+                <RenderContent content={pageInfo.parsedContent} />
+              </div>
 
               <RenderPartialGroups partialGroups={partialGroups} />
 
