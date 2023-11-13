@@ -1,17 +1,13 @@
 'use client';
 
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Button, ButtonGroup, Center, Collapse, Flex, Heading, Icon, IconButton, Link, ListItem, SimpleGrid, Stack, Text, UnorderedList, Wrap, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, Flex, HStack, Heading, Hide, Icon, IconButton, Image, Link, ListItem, SimpleGrid, Stack, Text, UnorderedList, Wrap, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import { NavItem, mainNavigation, sitecoreQuickLinks } from '@data/data-navigation';
-import { setGlobalState, useGlobalState } from '@lib/globalState';
-import { throttle } from 'lodash';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import ProductIcon from 'ui/components/common/ProductIcon';
-import ProductLogo from 'ui/components/common/ProductLogo';
 import { Slide } from 'ui/components/helpers/Slide';
-import { Product } from 'ui/lib/assets';
+import { GetProductLogoByVariant, Product, Type, Variant } from 'ui/lib/assets';
 import { PreviewModeSwitch } from '../common/PreviewModeSwitch';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
@@ -42,87 +38,53 @@ export type NavBarProps = {
 export default function Navbar({ children }: NavBarProps): JSX.Element {
   const { isOpen, onToggle } = useDisclosure();
 
-  /**
-   *  Hook for scroll state
-   */
-  const [scrolled] = useGlobalState('navScrolled');
-
-  /**
-   *  Hook for handling scroll events on header.
-   *
-   *  Throttle the scroll listener with lodash, only handle on mount.
-   */
-  useEffect(() => {
-    const ThrottleSpeed = 250;
-    const Threshold = 140;
-    let lastScrollY = window.pageYOffset;
-
-    const UpdateScrollDirection = () => {
-      const ScrollY = window.pageYOffset;
-
-      // Exit if we haven't crossed the Threshold
-      if (Math.abs(ScrollY - lastScrollY) < Threshold) {
-        return;
-      }
-
-      setGlobalState('navScrolled', ScrollY > lastScrollY ? true : false);
-      lastScrollY = ScrollY > 0 ? ScrollY : 0;
-    };
-
-    const OnScroll = () => {
-      window.requestAnimationFrame(UpdateScrollDirection);
-    };
-
-    // When moutned, add scroll listener, throttle scroll event with lodash.
-    const ThrottleScroll = throttle(OnScroll, ThrottleSpeed);
-    window.addEventListener('scroll', ThrottleScroll);
-
-    // If unmounted, remove listener.
-    return () => window.removeEventListener('scroll', ThrottleScroll);
-  }, [scrolled]);
-
-  //const height = children ? 'h-32' : 'h-16';
-
   return (
-    <Slide in={!scrolled} direction="top-half" style={{ zIndex: 9999 }}>
-      <Box as="header" shadow={'base'} zIndex={999} width={'full'}>
-        <Flex as={'nav'} py={{ base: 3 }} px={{ base: 4 }} align={'left'} borderBottom={'chakra-border-color'} borderBottomWidth={1} borderBottomStyle={'solid'} background={'chakra-body-bg'}>
-          {/* Logo */}
-          <Box as="a" href="/" flexShrink="0" title="Go to the home page">
-            <ProductLogo product={Product.SitecoreDevelopers} width={227} height={24} />
-          </Box>
-
+    <Box layerStyle="section.topbar" shadow={'base'} zIndex={'sticky'} position="sticky" top="0">
+      <Flex h="14" align={'center'} justify="space-between">
+        <Stack direction={'row'} w="full" alignItems={'center'}>
+          <HStack flexShrink={0}>
+            {/* Logo */}
+            <Link href="/">
+              <Image
+                p="1"
+                h="8"
+                w={'auto'}
+                align="left"
+                alt={'Go to the homepage'}
+                src={useColorModeValue(GetProductLogoByVariant(Product.SitecoreDevelopers, Variant.Light, Type.Full), GetProductLogoByVariant(Product.SitecoreDevelopers, Variant.Dark, Type.Full))}
+              />
+            </Link>
+          </HStack>
           {/* Desktop menu */}
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', xl: 'center' }}>
-            <Flex display={{ base: 'none', xl: 'flex' }} justify={'flex-center'} as={'nav'} width="100%" maxWidth="6xl">
+          <Hide below="md">
+            <HStack>
               <DesktopNav />
-            </Flex>
-          </Flex>
+            </HStack>
+          </Hide>
+        </Stack>
+        {/* Mobile menu button */}
+        <Flex flex={{ base: 1, xl: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', xl: 'none' }}></Flex>
 
-          {/* Mobile menu button */}
-          <Flex flex={{ base: 1, xl: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', xl: 'none' }}></Flex>
-
-          <Flex flex={{ base: 2, xl: 0 }} justify={'flex-end'} direction={'row'}>
-            <PreviewModeSwitch />
-            <DarkModeSwitch />
-            <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
-            <QuickStartMenu />
-          </Flex>
+        <Flex flex={{ base: 2, xl: 0 }} justify={'flex-end'} direction={'row'}>
+          <PreviewModeSwitch />
+          <DarkModeSwitch />
+          <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
+          <QuickStartMenu />
         </Flex>
-
+      </Flex>
+      {/* 
         {children && (
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }} padding={3} paddingX={'2rem'} position={'static'} background={'chakra-body-bg'} shadow={'base'} height={16}>
+          <Flex flex={{ base: 1 }}>
             <Box display={'flex'} boxSize={'100%'} maxWidth={'6xl'} width={'100%'}>
               {children}
             </Box>
           </Flex>
-        )}
+        )} */}
 
-        <Collapse in={isOpen} animateOpacity>
-          <MobileNav />
-        </Collapse>
-      </Box>
-    </Slide>
+      <Collapse in={isOpen} animateOpacity>
+        <MobileNav />
+      </Collapse>
+    </Box>
   );
 }
 
@@ -138,17 +100,15 @@ const DesktopNav = () => {
               {navItem.title}
               {navItem.children && <Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} _hover={{ rotate: '180deg' }} w={6} h={6} />}
             </Button>
-            <Box pos="absolute" left={0} top={'52px'} w="full" zIndex={998} display="none" _groupHover={{ display: 'block' }} bg={useColorModeValue('white', 'gray.800')} shadow={'base'} transition={'all .25s ease-in-out'}>
+            <Box pos="absolute" top={'50px'} w="full" zIndex={998} display="none" _groupHover={{ display: 'block' }}>
               {navItem.children && (
-                <Center>
-                  <Box width="100%" maxWidth="6xl">
-                    <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 6, sm: 8 }} px={5} py={6} p={{ sm: 8 }}>
-                      {navItem.children.map((child) => (
-                        <DesktopSubNav key={child.title} {...child} />
-                      ))}
-                    </SimpleGrid>
-                  </Box>
-                </Center>
+                <Box width="100%" maxWidth={'5xl'} bg={useColorModeValue('white', 'gray.800')} shadow={'base'} transition={'all .25s ease-in-out'}>
+                  <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 6, sm: 8 }} px={5} py={6} p={{ sm: 8 }}>
+                    {navItem.children.map((child) => (
+                      <DesktopSubNav key={child.title} {...child} />
+                    ))}
+                  </SimpleGrid>
+                </Box>
               )}
             </Box>
           </Box>
