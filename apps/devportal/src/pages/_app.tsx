@@ -107,7 +107,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Navbar>
             <SearchInputSwitcher />
           </Navbar>
-          <Component {...pageProps} />
+          <div ref={contentInnerRef}>
+            <Component {...pageProps} />
+          </div>
           <Footer />
         </PreviewProvider>
       </ChakraProvider>
