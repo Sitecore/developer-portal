@@ -141,7 +141,7 @@ const navSection = ({ title, logo }: NavItem) => {
 
 const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavItem) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
-
+  //left="50%" transform="translateX(-50%)"
   return (
     <Box role={'group'} display={'block'} p={2} key={title}>
       {url ? (
@@ -174,7 +174,7 @@ const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavIt
 
 const MobileNav = () => {
   return (
-    <Box bg={useColorModeValue('white', 'gray.800')} display={{ xl: 'none' }} shadow={'lg'} height={'100vh'} position={'absolute'} width={'full'}>
+    <Box bg={useColorModeValue('white', 'gray.800')} display={{ xl: 'none' }} shadow={'lg'} height={'100vh'} position={'absolute'} width={'full'} ml={-15}>
       {mainNavigation.map((navItem) => (
         <MobileNavItem key={navItem.title} {...navItem} />
       ))}
@@ -219,7 +219,7 @@ const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
       </Flex>
 
       <Slide in={isOpen}>
-        <Box position={'fixed'} top={'7.5rem'} width={'full'} background={'chakra-body-bg'} height={'100vh'}>
+        <Box position={'fixed'} top={'3.5rem'} width={'full'} background={'chakra-body-bg'} height={'100vh'}>
           <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} onClick={onClose} width={'full'} borderRadius={0} justifyContent={'left'} px={2} height={14} mb={4} shadow={'lg'}>
             Back
           </Button>
@@ -229,13 +229,13 @@ const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
                 <Box key={key} py={4} borderBottom={1} borderBottomStyle={'solid'} borderBottomColor={'chakra-border-color'} width={'95%'}>
                   {child.url ? (
                     <Box as="a" key={child.title} py={2} href={child.url}>
-                      <Heading as="h2" size="lg" mb={2}>
+                      <Heading as="h2" size="md" mb={2}>
                         {child.title}
                       </Heading>
                     </Box>
                   ) : (
                     <Box as="span" key={child.title} py={2}>
-                      <Heading as="h2" size="lg" mb={2}>
+                      <Heading as="h2" size="md" mb={2}>
                         {child.title}
                       </Heading>
                     </Box>
