@@ -16,8 +16,8 @@ import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, 
 import { CategoryTileList, GenericList } from 'ui/components/lists';
 import { CTACard } from 'ui/components/promos';
 
-export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo('home', context.preview ? context.preview : null);
+export async function getStaticProps() {
+  const pageInfo = await getPageInfo('home');
 
   return {
     props: {
@@ -29,6 +29,7 @@ export async function getStaticProps(context: any) {
 
 type HomePageProps = {
   pageInfo: PageInfo;
+  preview: boolean;
 };
 
 const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (

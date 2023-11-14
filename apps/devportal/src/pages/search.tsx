@@ -11,8 +11,8 @@ interface SearchPageProps {
   pageInfo: PageInfo;
 }
 
-export async function getServerSideProps(context: any) {
-  const pageInfo = await getPageInfo('_search', context.preview ? context.preview : null);
+export async function getServerSideProps() {
+  const pageInfo = await getPageInfo('_search');
 
   return {
     props: {

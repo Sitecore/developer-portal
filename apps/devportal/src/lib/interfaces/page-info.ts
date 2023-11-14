@@ -16,7 +16,6 @@ type PageInfoCore = {
   title: string;
   pageTitle?: string;
   fileName: string;
-  previewMode?: boolean;
   slug: string;
   menuOrder?: number;
 };

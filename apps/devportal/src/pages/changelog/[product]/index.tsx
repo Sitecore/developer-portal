@@ -17,6 +17,7 @@ import { ButtonLink } from 'ui/components/links/ButtonLink';
 
 type ChangelogProps = {
   currentProduct: Product;
+  preview: boolean;
 };
 
 export async function getStaticPaths() {
@@ -40,6 +41,7 @@ export async function getStaticProps(context: any) {
   return {
     props: {
       currentProduct: currentProduct,
+      preview: preview,
     },
     revalidate: 60,
   };
