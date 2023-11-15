@@ -55,6 +55,12 @@ The importance of your company's growth comes with the:
 <Link title="XM Cloud development" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html" />
 <Link title="Cloud Portal developer docs" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
 </Row>
+
+## Downloads
+<Row columns={2}>
+<Article title="XM to XMC Migratiob tool" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta maximus enim a laoreet. " link="/downloads/xm-cloud#xm-to-xmc-migration-tool" maxWidth="sm" linktext="Download"  />
+</Row>
+
 ## Learn & Examples
 
 ### Open Source
