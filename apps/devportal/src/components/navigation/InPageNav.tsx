@@ -17,7 +17,7 @@ const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
   }));
 
   return (
-    <Wrap as={'nav'} direction="column" position={'sticky'} top={'9rem'} ml={2}>
+    <Wrap as={'nav'} direction="column" mt={10}>
       {title && (
         <Heading variant={'section'} size={'sm'} mb={8}>
           Table of contents

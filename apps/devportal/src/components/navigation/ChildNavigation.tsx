@@ -1,9 +1,8 @@
-import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Hide, Icon, Menu, MenuButton, MenuItem, MenuList, Show, Stack, Text, Tooltip, useDisclosure } from '@chakra-ui/react';
-import React from 'react';
-//import { useGlobalState } from '../../lib/globalState';
 import { ChevronDownIcon } from '@chakra-ui/icons';
+import { Box, Button, ButtonGroup, Flex, Heading, Hide, Menu, MenuButton, MenuItem, MenuList, Show, Stack, Text } from '@chakra-ui/react';
 import { default as Link, default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
 import { SubPageNavigation, SubPageNavigationItem } from '../../lib/interfaces/page-info';
 
 interface ChildNavigationProps {
@@ -12,7 +11,6 @@ interface ChildNavigationProps {
 }
 
 const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
-  const { isOpen, onToggle } = useDisclosure();
   const router = useRouter();
 
   return (
@@ -53,27 +51,12 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
 
             return (
               <React.Fragment key={i}>
-                {!link.children ? (
-                  <Tooltip label={link.title} aria-label="A tooltip">
-                    <Button as={NextLink} href={urlSegment} key={i}>
-                      <Text maxW={190} isTruncated>
-                        {link.title}
-                      </Text>
-                    </Button>
-                  </Tooltip>
-                ) : (
-                  <>
-                    <Tooltip label={link.title} aria-label="A tooltip">
-                      <Button rightIcon={<Icon onClick={onToggle} as={ChevronDownIcon} w={6} h={6} />} justifyContent={'space-between'} width={'full'}>
-                        <Link href={urlSegment}>{link.title}</Link>
-                      </Button>
-                    </Tooltip>
-                    {/* Child items */}
-                    <Collapse in={router.asPath == urlSegment ? !isOpen : isOpen} animateOpacity>
-                      {link.children?.length > 0 && renderChildren(link, urlSegment)}
-                    </Collapse>
-                  </>
-                )}
+                <Button justifyContent={'space-between'} width={'full'} isActive={router.asPath == urlSegment}>
+                  {link.path != null ? <Link href={urlSegment}>{link.title}</Link> : <Text>{link.title}</Text>}
+                </Button>
+
+                {/* Child items */}
+                {link.children?.length > 0 && renderChildren(link, urlSegment)}
               </React.Fragment>
             );
           })}
@@ -84,31 +67,24 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
 };
 
 function renderChildren(link: SubPageNavigationItem, urlSegment: string): React.ReactNode {
-  const { isOpen, onToggle } = useDisclosure();
-
   return (
     <Stack paddingLeft={4}>
       {link.children?.map((child, i) => {
         return (
           <React.Fragment key={i}>
             {!child.children ? (
-              <Tooltip label={link.title} aria-label="A tooltip">
-                <Button as={NextLink} href={`${urlSegment}/${child.path}`} key={i}>
-                  <Text maxW={190} isTruncated>
-                    {child.title}
-                  </Text>
-                </Button>
-              </Tooltip>
+              <Button as={NextLink} href={`${urlSegment}/${child.path}`} key={i}>
+                <Text maxW={190} isTruncated>
+                  {child.title}
+                </Text>
+              </Button>
             ) : (
               <React.Fragment key={i}>
-                <Tooltip label={child.title} aria-label="A tooltip" key={i}>
-                  <Button rightIcon={<Icon onClick={onToggle} as={ChevronDownIcon} w={6} h={6} />} justifyContent={'space-between'} width={'full'}>
-                    {child.path ? <Link href={`${urlSegment}/${child.path}`}>{child.title}</Link> : <Text>{child.title}</Text>}
-                  </Button>
-                </Tooltip>
-                <Collapse in={isOpen} animateOpacity>
-                  {child.children?.length > 0 && renderChildren(child, urlSegment)}
-                </Collapse>
+                <Button justifyContent={'space-between'} width={'full'}>
+                  {child.path ? <Link href={`${urlSegment}/${child.path}`}>{child.title}</Link> : <Text>{child.title}</Text>}
+                </Button>
+
+                {child.children?.length > 0 && renderChildren(child, urlSegment)}
               </React.Fragment>
             )}
           </React.Fragment>
