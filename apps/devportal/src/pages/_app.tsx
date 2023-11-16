@@ -13,6 +13,8 @@ import TopBarProgress from 'react-topbar-progress-indicator';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
 import { PreviewProvider } from '../context/PreviewContext';
 
+const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
+
 function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(false);
   const [hostname, setHostname] = useState('');
@@ -50,8 +52,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     }
     setHostname(window.location.host);
   });
-
-  const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
 
   return (
     <SearchWrapper>
