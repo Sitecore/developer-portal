@@ -5,10 +5,6 @@ title: 'XM Cloud Tools and Resources'
 productLogo: 'XMCloud'
 description: 'Tools and resource specific to XM Cloud development'
 twitter: ['#XMCloud']
-stackexchange: ['#xm-cloud']
-youtube: PL1jJVFm_lGnzqYagW1UahIBeqTIYSBQMc
-changelog: 6
-changelogProductId: ['av_GqshF5U2kL8XMGjf-Xw']
 hasInPageNav: true
 ---
 
