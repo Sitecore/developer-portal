@@ -1,0 +1,96 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Ready for the latest and greatest in the Sitecore world? We've got all the latest news, updates, and industry trends straight from our community.",
+  "content": [
+    {
+      "title": "Don't miss SUGCON NA 2023!",
+      "copy": "SUGCON will take place next week on October 5th and 6th. Join over 250 Sitecore enthusiasts from different parts of the world, 40+ speakers, and top Sitecore executives such as Sitecore's CEO, Steve-Stathis Tzikakis. Register now spots are limited!",
+      "image": "https://go.sitecore.com/l/857953/2023-09-28/twtvfj/857953/16959535560sPQuRVH/74236ffd_95f2_4007_a398_cefd16a76b60.png",
+      "link": {
+        "text": "Register now",
+        "href": "https://na.sugcon.events/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "How to Build Your Own Framework Implementation for Sitecore JSS?",
+      "copy": "Get started understanding what parts of JSS need to be implemented in order to use your favorite framework instead of one of the Sitecore-provided SDKs.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://exdst.com/posts/20230807-your-own-sitecore-jss-framework"
+      }
+    },
+    {
+      "title": "Digging into Sitecore Content Hub ONE",
+      "copy": "What is a 'pure-play' headless approach and when does Content Hub ONE fit best? How is this different from XM Cloud's headless approach?",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://blogs.perficient.com/2023/08/23/digging-into-sitecore-content-hub-one/"
+      }
+    },
+    {
+      "title": "XM Cloud Tutorials - Rename app #4",
+      "copy": "In the last episode Sebastian Winter, showed how to set up a project and an environment within XM Cloud. He also setup a new site and connected the local code running on a local node server to the preview endpoint of XM Cloud so a developer is ready to start.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=uNkQQSC6n8o"
+      }
+    },
+    {
+      "title": "I Reviewed 1,000s of Opinions on Serverless",
+      "copy": "What's the state of serverless architecture in 2023? Is it all hype? Is there real 100% objective merit to it? Where does serverless excel? Where do the trade-offs make sense?",
+      "link": {
+        "text": "Read now",
+        "href": "https://konfigthis.com/blog/serverless"
+      }
+    },
+    {
+      "title": "Update on Development Practices for Headless Projects",
+      "copy": "We would like to share some clarification regarding the usage of Helix for Sitecore development in the context of Headless projects.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://community.sitecore.com/community?id=community_blog&sys_id=c0c103ea1b81bdd038a46421b24bcba9"
+      }
+    },
+    {
+      "title": "Upgrading to Sitecore Headless Services Next.js Version 21.2. A Step-by-Step Guide",
+      "copy": "Improve your site's performance with Sitecore JSS Next.js version 21.2.*. Take full advantage of server-side rendering when using components built with XM Cloud Component Builder starting in the headless services version 21.2.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://thetombomb.com/posts/upgrade-nextjs-jss"
+      }
+    },
+    {
+      "title": "XM Cloud Tutorials - Setup XM Cloud #3",
+      "copy": "In this episode Sebastian goes through the steps of a Sprint 0 to get familiar with XM Cloud, the Site creation process and the solution. Learn how to setup the dev environment and connect your codebase running on your local rendering host with the preview endpoint of XM Cloud.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=wdyIkUb8uDY"
+      }
+    },
+    {
+      "title": "XM Cloud Tutorials - Serialization #5",
+      "copy": "Everything in XM Cloud is an item: content, configuration, customizations. Some of those items are tightly coupled to functionality provided by developers. So, it makes sense to also have those items serialized as a file in your source code repository, to be under development control.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=BuErZU0wwKM"
+      }
+    },
+    {
+      "title": "Hosting your XM Cloud App on Netlify",
+      "copy": "In this tutorial video, Thomas Desmond demonstrates how to make a production deployment to Netlify for an XM Cloud Next.js application. You'll learn step-by-step instructions for deploying a Sitecore XM Cloud application to Netlify and how to automate Netlify rebuilds on new publishes to Experience Edge.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=bLdPqZ3xcB8"
+      }
+    }
+  ]
+}
