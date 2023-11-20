@@ -7,7 +7,7 @@ import Navbar from '@src/components/navigation/NavBar';
 import SearchInputSwitcher from '@src/components/sitecore-search/SearchInputSwitcher';
 import { AppProps } from 'next/app';
 import { Router, useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
@@ -26,6 +26,28 @@ function MyApp({ Component, pageProps }: AppProps) {
     },
     shadowBlur: 2,
   });
+
+  const contentInnerRef = useRef(null);
+  let conversionTriggered = false;
+  const onScroll = useCallback(() => {
+    if (contentInnerRef.current) {
+      const { clientHeight, offsetTop } = contentInnerRef.current;
+      const contentAllViewed = window.scrollY + window.innerHeight >= offsetTop + clientHeight;
+      const params = new URLSearchParams(window.location.search);
+      const fromSearch = params.get('fromSearch');
+      if (contentAllViewed && fromSearch && !conversionTriggered) {
+        conversionTriggered = true;
+        trackEntityPageViewEvent('content', {
+          items: [
+            {
+              id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, ''),
+            },
+          ],
+          actionSubtype: 'conversion',
+        });
+      }
+    }
+  }, []);
 
   Router.events.on('routeChangeStart', () => {
     setProgress(true);
@@ -49,6 +71,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       trackEntityPageViewEvent('content', { items: [{ id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, '') }] });
     }
     setHostname(window.location.host);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
   });
 
   const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
@@ -81,7 +107,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Navbar>
             <SearchInputSwitcher />
           </Navbar>
-          <Component {...pageProps} />
+          <div ref={contentInnerRef}>
+            <Component {...pageProps} />
+          </div>
           <Footer />
         </PreviewProvider>
       </ChakraProvider>

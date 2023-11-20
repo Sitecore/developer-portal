@@ -44,7 +44,12 @@ const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolea
                 onClick={(e) => {
                   e.preventDefault();
                   onItemClick({ id: article.id || '', index: index });
-                  if (article.index_name != 'sitecore-devportal-v2') trackEntityPageViewEvent('content', { items: [{ id: article.id }] });
+                  if (article.index_name != 'sitecore-devportal-v2') {
+                    trackEntityPageViewEvent('content', { items: [{ id: article.id }] });
+                    window.open(article.url, '_blank');
+                  } else {
+                    window.open(article.url + '?fromSearch=true', '_blank');
+                  }
                   window.open(article.url, '_blank');
                 }}
               >
