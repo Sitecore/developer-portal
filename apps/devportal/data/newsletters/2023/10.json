@@ -1,0 +1,107 @@
+{
+  "title": "Sitecore Developers",
+  "description": "We deliver the latest news, insights and information straight from the Sitecore Community.",
+  "content": [
+    {
+      "title": "Save your spot to SUGCON ANZ 2023!",
+      "copy": "Get your tickets to SUGCON ANZ in Brisbane, Australia on November 23-24. Don't miss out on the opportunity to network with industry leaders, attend insightful sessions, and gain valuable insights into the latest Sitecore developments.",
+      "image": "https://go.sitecore.com/l/857953/2023-10-31/twydl1/857953/1698810330kugI6O2I/Untitled_design__3_.png",
+      "link": {
+        "text": "Register now",
+        "href": "https://anz.sugcon.events"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Keeping in sync with the Sitecore XM Cloud starter kit template",
+      "copy": "Explore the power of using bare repositories to keep a private repo in sync with the XM Cloud starter kits.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://blogs.perficient.com/2023/09/21/keeping-your-own-xm-cloud-repos-in-sync-with-official-xm-cloud-starter-kit-template/"
+      }
+    },
+    {
+      "title": "Component editing options in Sitecore Pages",
+      "copy": "Learn the options for how you can configure the editing options for authors in Sitecore XM Cloud.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "Learn the options for how you can configure the editing options for authors in Sitecore XM Cloud."
+      }
+    },
+    {
+      "title": "Next.js: Why It's the Full-Stack Framework of Choice for Modern Websites",
+      "copy": "In this in depth article, Felix Vemmer unpack why Next.js stands out as a dependable choice and its promising future.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.felixvemmer.com/blog/why-next-js"
+      }
+    },
+    {
+      "title": "Sitecore's Week-long events in Minneapolis: MVP Summit, SUGCON & More",
+      "copy": "An eventful week in Minneapolis hosted the annual MVP Summit and the User group conference with some announcement about XM Cloud Plus and the new Sitecore Accelerate program. For more information check out the article and sign up for the SUGCON videos on the SUGCON YouTube channel (@SUGCON).",
+      "image": "https://go.sitecore.com/l/857953/2023-06-25/twjjgk/857953/1687715386W0SN8Dzs/Untitled_design__10_.png",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.cmswire.com/digital-experience/sitecore-dx-minneapolis-2023-composability-cloud-innovations-unveiled/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Migrating your Sitecore implementation to XM Cloud",
+      "copy": "Learn how to transform to this stack coming from an existing Platform DXP, especially if this is a highly customized implementation. Checkout this developer session demonstrating workflow, migration concepts, tips & tricks on morphing toward composability!",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=ENytl8FzTEg"
+      }
+    },
+    {
+      "title": "Configure SSO Connection in Sitecore Cloud Portal",
+      "copy": "In this video, Krassi Eneva (Product Manager at Sitecore) is showing how to configure a Single Sign On (SSO) connection with an OpenID Connect provider in Sitecore Cloud Portal.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=d9-cuZKS6Es"
+      }
+    },
+    {
+      "title": "Integration Scenarios with Sitecore Personalize and Zendesk",
+      "copy": "Learn various integration scenarios of Sitecore Personalize and Zendesk (Customer Success Software). These specific integrations, show how powerful triggered experiences in Sitecore Personalize can be to facilitate integration into other best-of-breed software like Zendesk.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=8pNuIKSgEo4&t=1s"
+      }
+    },
+    {
+      "title": "Sitecore Search: Event and Analytics",
+      "copy": "The next video in a series highlighting the work completed to integrate Sitecore Search into the Sitecore Developer Portal. In this video Rob talks through the Eventing and Analytics model used in Sitecore Search. He will show how this has been implemented in the Developer Portal, using the Sitecore Search React SDK.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=vczY56y4YDQ"
+      }
+    },
+    {
+      "title": "Join the Sitecore Community on Telegram",
+      "copy": "If you're a Sitecore developer or enthusiast looking to connect with like-minded individuals, join the Sitecore Telegram group today! With over 900 members from around the globe, this community offers a platform for discussions, insights, and sharing Sitecore-related news",
+      "image": "",
+      "link": {
+        "text": "Join now",
+        "href": "https://t.me/SitecoreTelegram"
+      }
+    },
+    {
+      "title": "Sitecore Search - React SDK",
+      "copy": "Learn how to integrate Sitecore Search into the Developer Portal. In this video Rob will talk through the Sitecore Search React SDK used for this integration. He'll show how to get started with the SDK, where you access the different supporting assets and talk through some examples where it was leveraged on the Developer Portal",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=GhQNYlR7pvo"
+      }
+    }
+  ]
+}
