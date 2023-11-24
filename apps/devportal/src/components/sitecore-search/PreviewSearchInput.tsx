@@ -2,7 +2,7 @@ import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchInitialState, P
 import { NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
 // import Image from 'next/image';
-import { Box, Button, Flex, FormControl, Heading, Hide, Input, InputGroup, InputLeftElement, InputRightElement, Link, List, ListItem, Text, VisuallyHidden } from '@chakra-ui/react';
+import { Box, Button, Flex, FormControl, Heading, Input, InputGroup, InputLeftElement, InputRightElement, Link, List, ListItem, Text, VisuallyHidden } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { SyntheticEvent, useCallback, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
@@ -36,7 +36,7 @@ const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolea
         <List spacing="4">
           {!loading &&
             articles.map((article, index) => (
-              <ListItem>
+              <ListItem key={index}>
                 <Link
                   key={`${article.id}@${article.source_id}`}
                   href={article.url}
@@ -200,7 +200,7 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
                 <FaSearch />
               </InputLeftElement>
               <Input as={NavMenu.InputTrigger} name="query" role="search" onChange={keyphraseHandler} onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
-              <InputRightElement width={{ base: '100px', md: '150px' }} opacity={'0.5'}>
+              <InputRightElement width={{ base: '100px', md: '150px' }} opacity={''}>
                 <Text as={'span'} display={{ base: 'none', md: 'flex ' }} variant="tiny">
                   Powered by
                 </Text>
@@ -219,11 +219,11 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
                 <NavMenu.SubContent orientation="vertical" value={activeItem} ref={widgetRef}>
                   <NavMenu.List style={{ listStyle: 'none' }}>
                     {/* Suggested terms */}
-                    <Hide below="2xl">
-                      {articleSuggestions.length > 0 && (
-                        <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />
-                      )}
-                    </Hide>
+
+                    {articleSuggestions.length > 0 && (
+                      <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />
+                    )}
+
                     {/* Results */}
                     <Box as={NavMenu.Item} value="defaultArticlesResults" key="defaultArticlesResults" className="b-0 bg-none">
                       <VisuallyHidden>

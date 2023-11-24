@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Button, ButtonGroup, Collapse, Flex, HStack, Heading, Hide, Icon, IconButton, Image, Link, ListItem, SimpleGrid, Stack, Text, UnorderedList, Wrap, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, Flex, HStack, Heading, Hide, Icon, IconButton, Image, Link, ListItem, Show, SimpleGrid, Stack, Text, UnorderedList, Wrap, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import { NavItem, mainNavigation, sitecoreQuickLinks } from '@data/data-navigation';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -9,6 +9,7 @@ import ProductIcon from 'ui/components/common/ProductIcon';
 import { Slide } from 'ui/components/helpers/Slide';
 import { GetProductLogoByVariant, Product, Type, Variant } from 'ui/lib/assets';
 import { PreviewModeSwitch } from '../common/PreviewModeSwitch';
+import PreviewSearchInput from '../sitecore-search/PreviewSearchInput';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 import { SearchButton } from './SearchButton';
@@ -42,7 +43,7 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
   return (
     <Box layerStyle="section.topbar" shadow={'base'} zIndex={'sticky'} position="sticky" top="0">
       <Flex h="14" align={'center'} justify="space-between">
-        <Stack direction={'row'} w="full" alignItems={'center'}>
+        <Stack direction={'row'} w="full" alignItems={'center'} justifyContent={'space-between'}>
           <HStack flexShrink={0}>
             {/* Logo */}
             <Link href="/">
@@ -55,34 +56,32 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
                 src={useColorModeValue(GetProductLogoByVariant(Product.SitecoreDevelopers, Variant.Light, Type.Full), GetProductLogoByVariant(Product.SitecoreDevelopers, Variant.Dark, Type.Full))}
               />
             </Link>
-          </HStack>
-          {/* Desktop menu */}
-          <Hide below="xl">
-            <HStack>
-              <DesktopNav />
-            </HStack>
 
-            {children && (
-              <Hide below="2xl">
-                <Flex grow={1} flexShrink={0} justify={'flex-end'} mr={12} ml={24}>
-                  <Box display={'flex'} width={'full'} maxWidth={'2xl'}>
-                    {children}
-                  </Box>
-                </Flex>
-              </Hide>
-            )}
-          </Hide>
+            {/* Desktop menu (hide under xl or lower) */}
+            <Show above="xl">
+              <HStack>
+                <DesktopNav />
+              </HStack>
+            </Show>
+          </HStack>
+          {/* Preview search on wide desktop */}
         </Stack>
         {/* Mobile menu button */}
-        <Flex flex={{ base: 1, xl: 'auto' }} ml={{ base: -2 }} display={{ base: 'flex', xl: 'none' }}></Flex>
-
-        <Flex flex={{ base: 2, xl: 0 }} justify={'flex-end'} direction={'row'}>
+        <Stack direction={'row'} alignItems={'flex-end'}>
+          <Hide below="3xl">
+            <Box display={'flex'} width={'2xl'}>
+              <PreviewSearchInput rfkId="rfkid_6" />
+            </Box>
+          </Hide>
+          <Show below="3xl">
+            <SearchButton />
+          </Show>
           <PreviewModeSwitch />
-          <SearchButton />
+
           <DarkModeSwitch />
           <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
           <QuickStartMenu />
-        </Flex>
+        </Stack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -100,7 +99,7 @@ const DesktopNav = () => {
       {mainNavigation.map((navItem, key) => (
         <ButtonGroup variant="navigation" orientation="horizontal" spacing="4" mx="2" key={key} as={'li'}>
           <Box key={navItem.title} role="group">
-            <Button key={key} as={NextLink} px={4} py={5} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath == navItem.url}>
+            <Button key={key} as={NextLink} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath == navItem.url}>
               {navItem.title}
               {navItem.children && <Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} _hover={{ rotate: '180deg' }} w={6} h={6} />}
             </Button>
