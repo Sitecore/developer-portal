@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Button, ButtonGroup, Collapse, Flex, HStack, Heading, Hide, Icon, IconButton, Image, Link, ListItem, Show, SimpleGrid, Stack, Text, UnorderedList, Wrap, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, Flex, HStack, Heading, Icon, IconButton, Image, Link, ListItem, Show, SimpleGrid, Stack, Text, UnorderedList, Wrap, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import { NavItem, mainNavigation, sitecoreQuickLinks } from '@data/data-navigation';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -68,11 +68,11 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
         </Stack>
         {/* Mobile menu button */}
         <Stack direction={'row'} alignItems={'flex-end'}>
-          <Hide below="3xl">
+          <Show above="3xl">
             <Box display={'flex'} width={'2xl'}>
               <PreviewSearchInput rfkId="rfkid_6" />
             </Box>
-          </Hide>
+          </Show>
           <Show below="3xl">
             <SearchButton />
           </Show>
