@@ -37,7 +37,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
     <Hero title={pageInfo.title} description={pageInfo.description} />
 
     <VerticalGroup background={'chakra-bg'}>
-      <CenteredContent paddingTop={2}>
+      <CenteredContent paddingTop={{ base: 1, lg: 2 }}>
         <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.data} />
         <SimpleGrid py={4} gap={4} columns={[1, 1, 2]}>
           <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
