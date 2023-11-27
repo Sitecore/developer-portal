@@ -103,10 +103,11 @@ const DesktopNav = () => {
               {navItem.title}
               {navItem.children && <Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} _hover={{ rotate: '180deg' }} w={6} h={6} />}
             </Button>
-            <Box pos="absolute" top={'50px'} w="full" zIndex={998} display="none" _groupHover={{ display: 'block' }}>
+            <Box pos="absolute" top={'50px'} left={100} w="full" zIndex={998} display="none" _groupHover={{ display: 'block' }}>
               {navItem.children && (
+                // Subnavigation
                 <Box width="100%" maxWidth={'5xl'} bg={useColorModeValue('white', 'gray.800')} shadow={'base'} transition={'all .25s ease-in-out'}>
-                  <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 6, sm: 8 }} px={5} py={6} p={{ sm: 8 }}>
+                  <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 2, sm: 2 }} px={5} py={6} p={{ sm: 8 }}>
                     {navItem.children.map((child) => (
                       <DesktopSubNav key={child.title} {...child} />
                     ))}
