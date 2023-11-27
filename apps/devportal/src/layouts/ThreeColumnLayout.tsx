@@ -10,10 +10,10 @@ type ThreeColumnLayoutProps = {
 
 export const ThreeColumnLayout = ({ sidebar, inPageNav, children }: ThreeColumnLayoutProps) => {
   return (
-    <Flex flexGrow={0} justify={'space-between'} width={'full'}>
+    <Flex flexGrow={0} justify={'space-between'} width={'full'} gap={4} direction={{ base: 'column', md: 'row' }}>
       <Sidebar showBackground>{sidebar}</Sidebar>
 
-      <Box maxW={'7xl'} as="main">
+      <Box maxW={'7xl'} as="main" paddingX={{ base: 4, md: 'inherit' }}>
         <CenteredContent>{children}</CenteredContent>
       </Box>
 
