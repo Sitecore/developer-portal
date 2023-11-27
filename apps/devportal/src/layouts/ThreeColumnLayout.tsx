@@ -9,8 +9,6 @@ type ThreeColumnLayoutProps = {
 };
 
 export const ThreeColumnLayout = ({ sidebar, inPageNav, children }: ThreeColumnLayoutProps) => {
-  console.log('Sidebar: ' + sidebar);
-  console.log('InPageNav: ' + inPageNav);
   return (
     <Flex flexGrow={0} justify={'space-between'} width={'full'}>
       <Sidebar showBackground>{sidebar}</Sidebar>
