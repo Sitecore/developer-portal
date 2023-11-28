@@ -8,19 +8,19 @@ twitter: ['#XMCloud']
 hasInPageNav: true
 ---
 
-# XM Cloud Tools and resources
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta maximus enim a laoreet. Ut quis quam vel lacus egestas elementum non nec leo. Duis ut justo eget libero faucibus lacinia. Vivamus in tempus velit, nec posuere ex. Pellentesque convallis, nibh eget efficitur accumsan, tortor nulla accumsan magna, pretium euismod magna ipsum eget lorem. Ut ornare venenatis erat ac sollicitudin. Proin venenatis, dui non volutpat fermentum, odio arcu malesuada turpis, vitae sodales velit eros eget orci.
-
+# XM Cloud Tools and Resources
+Keep your eye out here for new and updated resources to help with your XM Cloud journey.
 
 ## XM to XMC Migration tool
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta maximus enim a laoreet. Ut quis quam vel lacus egestas elementum non nec leo. Duis ut justo eget libero faucibus lacinia. Vivamus in tempus velit, nec posuere ex. Pellentesque convallis, nibh eget efficitur accumsan, tortor nulla accumsan magna, pretium euismod magna ipsum eget lorem. Ut ornare venenatis erat ac sollicitudin. Proin venenatis, dui non volutpat fermentum, odio arcu malesuada turpis, vitae sodales velit eros eget orci.
+This tool helps migrate content, media and user data from a source XM on-premises instance to an XM Cloud environment. The tool is middleware that simplifies entering and selecting data, and orchestrating the migration. Tool version 1 is based on underlying Sitecore CLI and Sitecore Content Serialization technologies, and supports XM on-premises releases 10.1 and later. 
 
+*Note: this tool is not intended for migrating or converting site layouts/renderings.*
+
+The tool is available in two variants: a graphical user interface and a command line interface. 
 
 <Row columns="2">
-<Article title="Command Line Interface" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta maximus enim a laoreet. " link="/content-management/xm-cloud" maxWidth="sm" linktext="Download"  />
-
-<Article title="GUI version" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta maximus enim a laoreet. " link="/content-management/xm-cloud" maxWidth="sm" linktext="Download" />
+<Article title="Graphical User Interface" description="" link="https://sitecoresdn.blob.core.windows.net/downloads/Sitecore.XM.Migration.GUI.v1.1.151.zip" maxWidth="sm" linktext="Download" />
+<Article title="Command Line Interface" description="" link="https://sitecoresdn.blob.core.windows.net/downloads/Sitecore.XM.Migration.Console.v1.1.151.zip" maxWidth="sm" linktext="Download"  />
 </Row>
 
 ## Open Source resources
