@@ -16,7 +16,7 @@ type IndexingList = {
 type IndexResult = {
   title: string;
   changeTypes: string[];
-  products: string[];
+  products: IndexProduct[];
   date: string;
   description: string;
   fullArticle?: string | null;
@@ -25,6 +25,14 @@ type IndexResult = {
   image?: string | null;
   url: string;
 };
+
+type IndexProduct = {
+  name: string;
+  description: string;
+  darkIcon: string;
+  lightIcon: string;
+  sitecoreClouds: string[];
+}
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<IndexingList>) => {
   // Default Edge pageSize is 10, use parameter to override
@@ -46,7 +54,13 @@ async function GetEntries(list: IndexResult[], end: string, limit: string) {
     list.push({
       title: entry.title,
       changeTypes: entry.changeType.map((obj) => obj.changeType),
-      products: entry.sitecoreProduct.map((obj) => obj.productName),
+      products: entry.sitecoreProduct.map((obj) => <IndexProduct>{
+        name: obj.productName,
+        description: obj.productDescription,
+        darkIcon: obj.darkIcon,
+        lightIcon: obj.lightIcon,
+        sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName)
+      }),
       date: entry.releaseDate,
       image: entry.image[0] != null ? entry.image[0].fileUrl : null,
       description: entry.description,
