@@ -57,8 +57,9 @@ The importance of your company's growth comes with the:
 </Row>
 
 ## Downloads
+
 <Row columns={2}>
-<Article title="XM to XMC Migratiob tool" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porta maximus enim a laoreet. " link="/downloads/xm-cloud#xm-to-xmc-migration-tool" maxWidth="sm" linktext="Download"  />
+<Article title="XM to XMC Migration tool" description="Move content, media and user data from a source XM on-premises instance to a target XM Cloud environment." link="/downloads/xm-cloud#xm-to-xmc-migration-tool" maxWidth="sm" linktext="Download"  />
 </Row>
 
 ## Learn & Examples

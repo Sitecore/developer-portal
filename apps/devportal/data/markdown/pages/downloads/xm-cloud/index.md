@@ -3,24 +3,38 @@ solution: ['content-management']
 product: ['xm-cloud']
 title: 'XM Cloud Tools and Resources'
 productLogo: 'XMCloud'
-description: 'Tools and resource specific to XM Cloud development'
+description: 'Tools and resources specific to XM Cloud development'
 twitter: ['#XMCloud']
 hasInPageNav: true
 ---
 
 # XM Cloud Tools and Resources
-Keep your eye out here for new and updated resources to help with your XM Cloud journey.
+
+This page will provide you with the downloads of new and updated resources to help with your XM Cloud journey. If you are looking for faqs, best practices, docs, videos, and other resources please see our XM Cloud product page:
+
+<Promo
+  title="XM Cloud"
+  description="Sitecore XM Cloud is a hybrid headless CMS that supports both marketing and technology teams and has been built on a history of meeting the needs of the Enterprise."
+  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
+  linkText="Find more XM Cloud resources"
+  linkHref="/content-management/xm-cloud" isImageLeft={false}
+/>
 
 ## XM to XMC Migration tool
-This tool helps migrate content, media and user data from a source XM on-premises instance to an XM Cloud environment. The tool is middleware that simplifies entering and selecting data, and orchestrating the migration. Tool version 1 is based on underlying Sitecore CLI and Sitecore Content Serialization technologies, and supports XM on-premises releases 10.1 and later. Contact us on [Slack, Sitecore XM Cloud channel](https://sitecorechat.slack.com/archives/C03NXTAPKE3).
 
-*Note: this tool is not intended for migrating or converting site layouts/renderings.*
+Use the XM to XMC Migration tool to help move content, media and user data from a source XM on-premises instance to a target XM Cloud environment. This tool acts as middleware that simplifies the task of entering and selecting data, and orchestrating the migration. Our first version is based on the underlying Sitecore CLI and Sitecore Content Serialization (SCS) technologies.
 
-The tool is available in two variants: a graphical user interface and a command line interface. 
+- **Supported versions**: Sitecore XM/XP/XC on-premise releases **10.1 and later**.
+
+- **What can be migrated?** This tool migrates content, media, and user data. It is not intended for migrating or converting site layouts/renderings, xDB data, commerce data, or other data items that are not found in Sitecore XM
+
+- **Questions?** Contact us on the community Slack [#xm-cloud channel](https://sitecorechat.slack.com/archives/C03NXTAPKE3).
+
+There are two options for running the application: a graphical user interface (GUI) and a command line interface (CLI). Download the one that works best for you and your team!
 
 <Row columns="2">
-<Article title="Graphical User Interface" description="" link="https://sitecoresdn.blob.core.windows.net/downloads/Sitecore.XM.Migration.GUI.v1.1.151.zip" maxWidth="sm" linktext="Download" />
-<Article title="Command Line Interface" description="" link="https://sitecoresdn.blob.core.windows.net/downloads/Sitecore.XM.Migration.Console.v1.1.151.zip" maxWidth="sm" linktext="Download"  />
+<Article title="Graphical User Interface (GUI)" description="" link="https://sitecoresdn.blob.core.windows.net/downloads/Sitecore.XM.Migration.GUI.v1.1.151.zip" maxWidth="sm" linktext="Download" />
+<Article title="Command Line Interface (CLI)" description="" link="https://sitecoresdn.blob.core.windows.net/downloads/Sitecore.XM.Migration.Console.v1.1.151.zip" maxWidth="sm" linktext="Download"  />
 </Row>
 
 ## Open Source resources
