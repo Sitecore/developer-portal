@@ -12,7 +12,7 @@ hasInPageNav: true
 Keep your eye out here for new and updated resources to help with your XM Cloud journey.
 
 ## XM to XMC Migration tool
-This tool helps migrate content, media and user data from a source XM on-premises instance to an XM Cloud environment. The tool is middleware that simplifies entering and selecting data, and orchestrating the migration. Tool version 1 is based on underlying Sitecore CLI and Sitecore Content Serialization technologies, and supports XM on-premises releases 10.1 and later. 
+This tool helps migrate content, media and user data from a source XM on-premises instance to an XM Cloud environment. The tool is middleware that simplifies entering and selecting data, and orchestrating the migration. Tool version 1 is based on underlying Sitecore CLI and Sitecore Content Serialization technologies, and supports XM on-premises releases 10.1 and later. Contact us on [Slack, Sitecore XM Cloud channel](https://sitecorechat.slack.com/archives/C03NXTAPKE3).
 
 *Note: this tool is not intended for migrating or converting site layouts/renderings.*
 
