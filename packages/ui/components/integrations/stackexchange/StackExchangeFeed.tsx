@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, VisuallyHidden, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, VisuallyHidden, Wrap, useColorModeValue } from '@chakra-ui/react';
 
 import { ButtonLink } from '../../links/ButtonLink';
 import { StackExchangeQuestion } from './stackExchange';
@@ -24,7 +24,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
       <CardBody px={0}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 2, md: 8 }}>
           {data.map((question) => (
-            <Flex key={question.question_id} alignItems={'flex-start'} gap={{ base: 4, md: 8 }}>
+            <Flex key={question.question_id} alignItems={'flex-start'} gap={{ base: 4, md: 8 }} overflow={'none'}>
               <Box border={'1px'} borderColor={useColorModeValue('blackAlpha.300', 'whiteAlpha.900')} p={{ base: 1, md: 4 }}>
                 <Text textAlign={'center'}>{question.view_count}</Text>
                 <Text variant={'small'}>Views</Text>
@@ -39,7 +39,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
                 </Link>
                 <VisuallyHidden>Tags:</VisuallyHidden>
                 {question.tags.length && (
-                  <Stack direction={{ base: 'column', sm: 'row' }} shouldWrapChildren maxWidth={'90%'}>
+                  <Wrap direction={{ base: 'column', sm: 'row' }}>
                     {question.tags.map((tag) => (
                       <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
                         <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')}>
@@ -48,7 +48,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
                         </Link>
                       </Button>
                     ))}
-                  </Stack>
+                  </Wrap>
                 )}
               </Stack>
             </Flex>
