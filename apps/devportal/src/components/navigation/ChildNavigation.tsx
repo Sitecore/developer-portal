@@ -14,7 +14,7 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
   const router = useRouter();
 
   return (
-    <Box as="nav" position={'sticky'} top={'9rem'}>
+    <Box as="nav" position={'sticky'} top={'9rem'} w={'full'}>
       {/* Mobile */}
       <Show below="md">
         <Flex justifyContent="end">

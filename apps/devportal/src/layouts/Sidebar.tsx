@@ -7,7 +7,7 @@ interface SidebarProps extends WrapProps {
 
 export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarProps): JSX.Element => {
   return (
-    <Box as={'aside'} w={{ base: 'full', md: 'sm' }} order={{ base: -1, md: 0 }} flexShrink={3}>
+    <Box as={'aside'} w={{ base: 'full', md: 'md', sm: 'full' }} order={{ base: -1, md: 0 }} flexShrink={3}>
       {children && (
         <Wrap
           layerStyle={showBackground ? 'section.sidebar' : rest.layerStyle}

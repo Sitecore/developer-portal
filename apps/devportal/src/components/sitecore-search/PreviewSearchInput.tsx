@@ -2,7 +2,8 @@ import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchInitialState, P
 import { NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
 // import Image from 'next/image';
-import { Box, Button, Flex, FormControl, Heading, Input, InputGroup, InputLeftElement, InputRightElement, Link, List, ListItem, Text, VisuallyHidden } from '@chakra-ui/react';
+import { getColorScheme } from '@/src/lib/search';
+import { Badge, Box, Button, Flex, FormControl, HStack, Heading, Input, InputGroup, InputLeftElement, InputRightElement, Link, List, ListItem, Tag, Text, VisuallyHidden } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { SyntheticEvent, useCallback, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
@@ -50,15 +51,15 @@ const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolea
                   <Heading as={'h4'} size={'sm'} noOfLines={2}>
                     {article.name}
                   </Heading>
-                  <Text noOfLines={1}>{article.highlight?.description || article.description}</Text>
-                  {/* <HStack mb={2} width={'full'}>
+                  {/* <Text noOfLines={1}>{article.highlight?.description || article.description}</Text> */}
+                  <HStack mb={2} width={'full'}>
                     {article.type && (
                       <Tag colorScheme={getColorScheme(article.type)} size="sm">
                         {article.type}
                       </Tag>
                     )}
                     {article.index_name && <Badge>{article.site_name}</Badge>}
-                  </HStack> */}
+                  </HStack>
                 </Link>
               </ListItem>
             ))}
@@ -93,7 +94,7 @@ const Group = ({
   onGroupTitleClick: (arg: string) => void;
 }) => {
   return (
-    <Box width={[2 / 6]} p={2} background={'primary.100'} minH={'400'}>
+    <Box width={[2 / 6]} p={2} background={'primary-bg'}>
       <Heading variant="section" px={4}>
         {groupTitle}
       </Heading>
@@ -108,7 +109,7 @@ const Group = ({
             onFocus={() => onActiveItem(getGroupId(groupId, text))}
             onClick={() => onGroupTitleClick(text)}
           >
-            <Button variant={'ghost'} colorScheme="neutral" borderRadius={'md'} title={text} textAlign={'left'}>
+            <Button variant={'ghost'} colorScheme="neutral" borderRadius={'md'} title={text} textAlign={'left'} mb={2}>
               <Text isTruncated width={180}>
                 {text}
               </Text>
@@ -210,12 +211,12 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
             </InputGroup>
           </FormControl>
 
-          <Flex as={NavMenu.Content} position={'absolute'} top={'40px'} display={{ base: 'none', md: 'inline-block' }} width={'100%'} justifyContent={'left'} direction={'row'} background={'chakra-body-bg'}>
+          <Flex as={NavMenu.Content} position={'absolute'} top={10} display={{ base: 'none', md: 'block' }} width={'100%'} justifyContent={'left'} direction={'row'} background={'chakra-body-bg'}>
             <Presence present={loading}>
               <Loading />
             </Presence>
             {!loading && (
-              <Box shadow={'base'}>
+              <Box shadow={'base'} height={'100%'}>
                 <NavMenu.SubContent orientation="vertical" value={activeItem} ref={widgetRef}>
                   <NavMenu.List style={{ listStyle: 'none' }}>
                     {/* Suggested terms */}

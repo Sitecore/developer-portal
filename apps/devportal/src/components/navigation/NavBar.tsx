@@ -94,7 +94,7 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
           {/* Preview search on wide desktop */}
         </Stack>
         {/* Mobile menu button */}
-        <Stack direction={'row'} alignItems={'flex-end'}>
+        <Stack direction={'row'} alignItems={'center'}>
           <Show above="3xl">
             <Box display={'flex'} width={'2xl'}>
               <PreviewSearchInput rfkId="rfkid_6" />
