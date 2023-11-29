@@ -1,10 +1,37 @@
 'use client';
 
-import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Button, ButtonGroup, Collapse, Flex, HStack, Heading, Icon, IconButton, Image, Link, ListItem, Show, SimpleGrid, Stack, Text, UnorderedList, Wrap, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import { ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Collapse,
+  Flex,
+  HStack,
+  Heading,
+  Icon,
+  IconButton,
+  Image,
+  Link,
+  ListItem,
+  Popover,
+  PopoverArrow,
+  PopoverContent,
+  PopoverTrigger,
+  Show,
+  SimpleGrid,
+  Stack,
+  Text,
+  UnorderedList,
+  Wrap,
+  useColorModeValue,
+  useDisclosure,
+} from '@chakra-ui/react';
 import { NavItem, mainNavigation, sitecoreQuickLinks } from '@data/data-navigation';
+import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
 import ProductIcon from 'ui/components/common/ProductIcon';
 import { Slide } from 'ui/components/helpers/Slide';
 import { GetProductLogoByVariant, Product, Type, Variant } from 'ui/lib/assets';
@@ -99,22 +126,33 @@ const DesktopNav = () => {
       {mainNavigation.map((navItem, key) => (
         <ButtonGroup variant="navigation" orientation="horizontal" spacing="4" mx="2" key={key} as={'li'}>
           <Box key={navItem.title} role="group">
-            <Button key={key} as={NextLink} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath == navItem.url}>
-              {navItem.title}
-              {navItem.children && <Icon as={ChevronDownIcon} transition={'all .25s ease-in-out'} _hover={{ rotate: '180deg' }} w={6} h={6} />}
-            </Button>
-            <Box pos="absolute" top={'50px'} left={100} w="full" zIndex={998} display="none" _groupHover={{ display: 'block' }}>
-              {navItem.children && (
-                // Subnavigation
-                <Box width="100%" maxWidth={'5xl'} bg={useColorModeValue('white', 'gray.800')} shadow={'base'} transition={'all .25s ease-in-out'}>
-                  <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 2, sm: 2 }} px={5} py={6} p={{ sm: 8 }}>
-                    {navItem.children.map((child) => (
-                      <DesktopSubNav key={child.title} {...child} />
-                    ))}
-                  </SimpleGrid>
-                </Box>
-              )}
-            </Box>
+            {navItem.url ? (
+              <Button key={key} as={NextLink} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath == navItem.url}>
+                {navItem.title}
+              </Button>
+            ) : (
+              <Popover>
+                {({ isOpen, onClose }) => (
+                  <>
+                    <PopoverTrigger>
+                      <Button key={key} position={'relative'} isActive={router.asPath == navItem.url} rightIcon={<Icon>{isOpen ? <path d={mdiChevronUp} /> : <path d={mdiChevronDown} />}</Icon>}>
+                        {navItem.title}
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent width={'100%'} rounded={'md'} shadow={'base'}>
+                      <PopoverArrow />
+                      <Box width="100%" maxWidth={'5xl'}>
+                        <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 2, sm: 2 }} px={5} py={6} p={{ sm: 8 }}>
+                          {navItem.children?.map((child) => (
+                            <DesktopSubNav key={child.title} {...child} />
+                          ))}
+                        </SimpleGrid>
+                      </Box>
+                    </PopoverContent>
+                  </>
+                )}
+              </Popover>
+            )}
           </Box>
         </ButtonGroup>
       ))}
