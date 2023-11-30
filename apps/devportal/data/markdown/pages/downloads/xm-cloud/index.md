@@ -20,9 +20,9 @@ This page will provide you with the downloads of new and updated resources to he
   linkHref="/content-management/xm-cloud" isImageLeft={false}
 />
 
-## XM to XM Cloud Migration tool
+## XM to XM Cloud Content Migration tool
 
-Use the XM to XM Cloud Migration tool to help move content, media and user data from a source XM on-premises instance to a target XM Cloud environment. This tool acts as middleware that simplifies the task of entering and selecting data, and orchestrating the migration. Our first version is based on the underlying Sitecore CLI and Sitecore Content Serialization (SCS) technologies.
+Use the XM to XM Cloud Content Migration tool to help move content, media and user data from a source XM on-premises instance to a target XM Cloud environment. This tool acts as middleware that simplifies the task of entering and selecting data, and orchestrating the migration. Our first version is based on the underlying Sitecore CLI and Sitecore Content Serialization (SCS) technologies.
 
 - **Supported versions**: Sitecore platform on-premise releases **10.1 and later**.
 
