@@ -1,3 +1,4 @@
+import ChangelogSearchResults from '@/src/components/changelog/search/ChangelogSearchResults';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Text, Tooltip } from '@chakra-ui/react';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
@@ -48,7 +49,7 @@ export default function ChangeSearchlogHome({}: ChangeSearchlogHomeProps) {
             </Alert>
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
-                <p>ChangeLog will appear in here!</p>
+                <ChangelogSearchResults rfkId="rfk_changelog" />
               </GridItem>
               <Hide below="md">
                 <GridItem colSpan={{ base: 2 }}>
