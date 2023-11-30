@@ -127,7 +127,7 @@ const DesktopNav = () => {
         <ButtonGroup variant="navigation" orientation="horizontal" spacing="4" mx="2" key={key} as={'li'}>
           <Box key={navItem.title} role="group">
             {navItem.url ? (
-              <Button key={key} as={NextLink} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath == navItem.url}>
+              <Button key={key} as={NextLink} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath.includes(navItem.url)}>
                 {navItem.title}
               </Button>
             ) : (
