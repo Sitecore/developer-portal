@@ -46,7 +46,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       </CenteredContent>
     </VerticalGroup>
 
-    <VerticalGroup background={'chakra-subtle-bg'}>
+    <VerticalGroup background={'chakra-bg'}>
       <CenteredContent>
         <Hexagons />
       </CenteredContent>

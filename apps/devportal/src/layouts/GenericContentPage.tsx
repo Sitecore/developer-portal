@@ -54,8 +54,8 @@ const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, pro
     <Layout title={pageInfo.title} description={pageInfo.description}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      {/* background={!pageInfo.hasInPageNav ? 'neutral-subtle-bg' : ''} id="verticalgroup" */}
-      <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-subtle-bg'}>
+      {/* background={!pageInfo.hasInPageNav ? 'neutral-bg' : ''} id="verticalgroup" */}
+      <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
         <CenteredContent>
           <PromoList data={promoBefore} />
           <Grid templateColumns="repeat(4, 1fr)" gap={4}>

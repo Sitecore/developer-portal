@@ -49,7 +49,7 @@ export const HexagonCloud = ({ cloud, isOpen, children, onClick }: HexagonCloudP
       onMouseOver={(e) => mouseOver(e)}
       onMouseOut={() => resetElements()}
       onClick={onClick}
-      backgroundColor={useColorModeValue('transparent', 'chakra-subtle-bg')}
+      backgroundColor={useColorModeValue('transparent', 'chakra-bg')}
       color={useColorModeValue('chakra-text', 'white')}
       listStyleType={'none'}
     >
