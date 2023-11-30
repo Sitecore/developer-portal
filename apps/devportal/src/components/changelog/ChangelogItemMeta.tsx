@@ -28,9 +28,9 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
     <HStack {...rest} gap={4}>
       {item.products != null ? item.products.map((product, key) => <ProductIcon product={product} key={key} />) : <Alert status="error">No product defined</Alert>}
 
-      <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
+      <time dateTime="2022-10-21T15:48:00.000Z">{item.releasedate}</time>
 
-      {item.changeTypeName != null ? <Tag colorScheme={colorScheme(item.changeTypeName)}>{item.changeTypeName}</Tag> : <Tag>No changetype defined</Tag>}
+      {item.changetypename != null ? <Tag colorScheme={colorScheme(item.changetypename)}>{item.changetypename}</Tag> : <Tag>No changetype defined</Tag>}
 
       {item.breakingChange && (
         <Tag colorScheme="danger">
@@ -47,17 +47,20 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
       {MetaInfo}
       {isPreview && (
         <Tooltip label="Edit in Sitecore Content Hub ONE" aria-label="Edit in Sitecore Content Hub">
-        <Button variant={'ghost'} size="sm" leftIcon={
-            <Icon>
-              <path d={mdiSquareEditOutline} />
-            </Icon>
-          }
-        >
-          <Link href={`https://content.sitecorecloud.io/content/${item.id}?organization=${organizationId}&tenantName=${tenantId}`} target="_blank">
-            Edit
-          </Link>
+          <Button
+            variant={'ghost'}
+            size="sm"
+            leftIcon={
+              <Icon>
+                <path d={mdiSquareEditOutline} />
+              </Icon>
+            }
+          >
+            <Link href={`https://content.sitecorecloud.io/content/${item.id}?organization=${organizationId}&tenantName=${tenantId}`} target="_blank">
+              Edit
+            </Link>
           </Button>
-          </Tooltip>
+        </Tooltip>
       )}
     </HStack>
   );

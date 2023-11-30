@@ -16,11 +16,13 @@ export type ChangelogEntrySummary = {
   id: string;
   title: string;
   releaseDate: string;
+  releasedate: string;
   lightIcon: string;
   darkIcon: string;
   productName: string | null;
   products: SitecoreProduct[] | null;
   changeTypeName: string | null;
+  changetypename: string | null;
 };
 
 export type ChangelogEntry = ChangelogEntrySummary & {
@@ -70,8 +72,8 @@ function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySumm
     id: changelog.id,
     title: changelog.title,
     releaseDate: new Date(changelog.releaseDate).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
-    lightIcon: changelog.sitecoreProduct.results[0].lightIcon,
-    darkIcon: changelog.sitecoreProduct.results[0].darkIcon,
+    lightIcon: changelog.sitecoreProduct.results[0]?.lightIcon,
+    darkIcon: changelog.sitecoreProduct.results[0]?.darkIcon,
     productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
     products: changelog.sitecoreProduct.results ?? null,
     changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
@@ -92,8 +94,8 @@ export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     version: changelog.version,
     releaseDate: new Date(changelog.releaseDate).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
     image: changelog.image.results,
-    lightIcon: changelog.sitecoreProduct.results[0].lightIcon,
-    darkIcon: changelog.sitecoreProduct.results[0].darkIcon,
+    lightIcon: changelog.sitecoreProduct.results[0]?.lightIcon,
+    darkIcon: changelog.sitecoreProduct.results[0]?.darkIcon,
     productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
     products: changelog.sitecoreProduct.results ?? null,
     changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
