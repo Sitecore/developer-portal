@@ -12,11 +12,7 @@ import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { Product } from 'ui/lib/assets';
 
-type ChangeSearchlogHomeProps = {
-  preview: boolean;
-};
-
-export default function ChangeSearchlogHome({}: ChangeSearchlogHomeProps) {
+export default function ChangeSearchlogHome() {
   const router = useRouter();
   return (
     <>

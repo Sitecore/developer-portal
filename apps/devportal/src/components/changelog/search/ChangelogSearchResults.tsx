@@ -19,8 +19,8 @@ export const ChangelogSearchResults = (props: InitialChangeLogProps) => {
   const {
     widgetRef,
     //actions: { onSortChange, onFacetClick, onPageNumberChange, onItemClick },
-    state: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
-    queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: entries = [], facet: facets = [] } = {} },
+    //state: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
+    queryResult: { isLoading, data: { content: entries = [] } = {} },
   } = useSearchResults<ChangelogEntry, InitialState>({
     query: (query) => query.getRequest().setSources(changeLogSources),
     state: {
