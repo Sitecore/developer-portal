@@ -26,7 +26,13 @@ This guide provides an overview for existing customers of the Platform DXP (XP, 
 <Repository framework="Nextjs" name="XM Cloud Introduction" description="An example of a real XM Cloud implementation that can be useful with your own XM Cloud migration projects." repositoryUrl="https://github.com/sitecore/xm-cloud-introduction" />
 </Row>
 
-### Resources
+### Tools
+
+<Row columns={2}>
+  <Article title="XM to XM Cloud Content Migration tool" description="Move content, media and user data from a source XM on-premises instance to a target XM Cloud environment." link="/downloads/xm-cloud#xm-to-xm-cloud-content-migration-tool" linktext="Download" />
+</Row>
+
+### Articles
 
 <Row columns={2}>
   <Article title="Migrating the Sitecore MVP site" description="An introduction to the purpose of the series and the initial steps to migrate from XM on-Prem to XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-1" />
