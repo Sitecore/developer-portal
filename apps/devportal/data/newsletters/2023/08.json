@@ -1,0 +1,114 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Ready for the latest and greatest in the Sitecore world? We've got all the latest news, updates, and industry trends straight from our Sitecore community.",
+  "content": [
+    {
+      "title": "Registration Open for SUGCON North America",
+      "copy": "Registration is now open for SUGCON NA in Minneapolis on October 5th and 6th, a highly anticipated event that is expecting a turnout of over 300 attendees. Take a look at the exciting lineup of sessions and secure your spot today for this exceptional opportunity to connect and learn in the Sitecore community.",
+      "image": "https://go.sitecore.com/l/857953/2023-09-28/twtvfj/857953/16959535560sPQuRVH/74236ffd_95f2_4007_a398_cefd16a76b60.png",
+      "link": {
+        "text": "Register now",
+        "href": "https://na.sugcon.events/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Transition of Sitecore public feeds from MyGet to NuGet",
+      "copy": "Sitecore will transition its public feed from sitecore.myget.org to a new feed provider. Along with this change, Sitecore's custom NPM feed will move public NPM provider. Sitecore recommends updating build scripts to use the new public feeds to avoid interruptions after November 30.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1002999"
+      }
+    },
+    {
+      "title": "XM Cloud: Work with GraphQL in your local environment",
+      "copy": "Learn how to work with GraphQL in a local environment when using XM Cloud in Sitecore, highlighting the challenges and solutions of retrieving content from the content tree and testing queries in a development environment.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://sitecoretek.wordpress.com/2023/08/28/xm-cloud-how-to-work-with-graphql-in-your-local-environment/"
+      }
+    },
+    {
+      "title": "XM Cloud Tutorials - Analyze Phase #2",
+      "copy": "In the XM Cloud tutorial series Developer Advocate Sebastian Winter is going into the Analyze Phase. Since XM Cloud offers a lot of functionality out of the box, we need to understand what we can use and recommended practices to get the best solution.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=6WMzaK-3swI"
+      }
+    },
+    {
+      "title": "Sitecore Personalize: Triggering Email Sends via Salesforce Marketing Cloud",
+      "copy": "This video demonstrates the powerful capabilities of Sitecore Personalize, as it creates a Triggered Experience based on a Decision Model and executes it independently within Sitecore Personalize.",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=zjXr7BN5-NM"
+      }
+    },
+    {
+      "title": "Sitecore Unplugged - A Candid Conversation with Pieter Brinkman",
+      "copy": "In this episode we cover various topics, including generative AI, the composable trend, and Sitecore's commitment to enhancing the developer experience. Additionally, there is a fun session of rapid-fire questions to get to know Pieter beyond his role at Sitecore.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=JsKBvRnbgv4"
+      }
+    },
+    {
+      "title": "Sitecore launches enhanced documentation site",
+      "copy": "Sitecore has just launched its new Documentation Site, featuring a fresh design, enhanced navigation, and a sleek dark mode. Experience seamless access on your phone or tablet with its responsive design. Don't miss out, check it out now!",
+      "image": "",
+      "link": {
+        "text": "See it now",
+        "href": "https://doc.sitecore.com/"
+      }
+    },
+    {
+      "title": "Diving into Web Components with XM Cloud Component Builder",
+      "copy": "Explore the use of Web Components with the XM Cloud Component Builder, which enables me as a developer to build modular and reusable UI components for web applications. Learn about the benefits of Web Components, including encapsulation, reusability, and framework agnosticism, and more.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://thetombomb.com/posts/web-components-sitecore-components"
+      }
+    },
+    {
+      "title": "Improve your Sitecore Search Development Experience",
+      "copy": "Learn a step-by-step guide on how to provide website markup, document extractor code, and run the extractor on the tool and copy the code back to Sitecore Search. Along with various helpful code snippets and debugging tips.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.studert.com/improve-your-sitecore-search-development-experience/"
+      }
+    },
+    {
+      "title": "Create a Local Chat Assistant with Open AI and Microsoft Chat Copilot ",
+      "copy": "Discover how to create a local chat assistant using the free, open-source repository Microsoft Chat Copilot to integrate with Open AI. Learn about setting up the repository, obtaining an API key, and configuring the chat interface with Open AI, and offers potential enhancements for further development.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://dylanyoung.dev/insights/create-a-local-chat-assistant-with-openai-and-microsoft-chat-copilot/"
+      }
+    },
+    {
+      "title": "Learn Sitecore XM Cloud with me – Part 2",
+      "copy": "Explore this step-by-step guide on creating a Sitecore XM Cloud project and site through the XM Cloud Deploy App. Learn project and site creation, viewing the site in the Content Editor, and deploying it to Vercel for hosting.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://rinkusitecore.wordpress.com/2023/08/12/learn-sitecore-xm-cloud-with-me-part2/"
+      }
+    },
+    {
+      "title": "Building Your First Component in XM Cloud Component Builder",
+      "copy": "Developer Advocate Thomas Desmond demonstrates designing a responsive component from scratch using XM Cloud Component Builder. By leveraging modular design principles, Component Builder makes it easier for content authors, UX designers, and marketers to work in parallel to create on-brand digital experiences that resonate with their customers.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=zfD6oaifp_g"
+      }
+    }
+  ]
+}
