@@ -1,7 +1,8 @@
 import { Box } from '@chakra-ui/react';
 import { SearchResultsInitialState, WidgetDataType, useSearchResults, widget } from '@sitecore-search/react';
+import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { Loading } from 'ui/components/common/Loading';
-import { ChangeLogSearchItem } from './ChangeLogSearchItem';
+import ChangeLogItem from '../ChangeLogItem';
 
 export interface InitialChangeLogProps {
   initialKeyphrase?: string;
@@ -10,28 +11,6 @@ export interface InitialChangeLogProps {
   defaultSortType?: string;
 }
 
-interface ProductDetails {
-  darkIcon: string;
-  lightIcon: string;
-  description: string;
-  name: string;
-  sitecoreClouds: string[];
-}
-
-export interface ChangeLogResultsType {
-  id: string;
-  body: string;
-  breaking_changes: boolean;
-  change_types: string[];
-  index_name: string;
-  name: string;
-  product_names: string[];
-  read_more_link: string;
-  site_name: string;
-  type: string;
-  url: string;
-  product_details: ProductDetails[];
-}
 type InitialState = SearchResultsInitialState<'itemsPerPage' | 'keyphrase' | 'page' | 'sortType'>;
 
 export const ChangelogSearchResults = (props: InitialChangeLogProps) => {
@@ -42,7 +21,7 @@ export const ChangelogSearchResults = (props: InitialChangeLogProps) => {
     //actions: { onSortChange, onFacetClick, onPageNumberChange, onItemClick },
     state: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
     queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: entries = [], facet: facets = [] } = {} },
-  } = useSearchResults<ChangeLogResultsType, InitialState>({
+  } = useSearchResults<ChangelogEntry, InitialState>({
     query: (query) => query.getRequest().setSources(changeLogSources),
     state: {
       sortType: defaultSortType,
@@ -59,7 +38,9 @@ export const ChangelogSearchResults = (props: InitialChangeLogProps) => {
           <Loading />
         </div>
       )}
-      {!isLoading && <Box ref={widgetRef}>{entries.length > 0 && entries.map((entry, index) => <ChangeLogSearchItem entry={entry} index={index} />)}</Box>}
+      {!isLoading && (
+        <Box ref={widgetRef}>{entries.length > 0 && entries.map((entry, i) => <ChangeLogItem item={entry} key={i} loading={isLoading} isLast={i === entries.length - 1} isMore={true} loadEntries={() => window.alert('Load More!')} />)}</Box>
+      )}
     </>
   );
 };
