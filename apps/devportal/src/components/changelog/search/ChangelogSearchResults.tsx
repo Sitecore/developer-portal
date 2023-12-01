@@ -3,6 +3,7 @@ import { SearchResultsInitialState, WidgetDataType, useSearchResults, widget } f
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { Loading } from 'ui/components/common/Loading';
 import ChangeLogItem from '../ChangeLogItem';
+import ChangelogSearchPagination from './ChangelogSearchPagination';
 
 export interface InitialChangeLogProps {
   initialKeyphrase?: string;
@@ -18,9 +19,9 @@ export const ChangelogSearchResults = (props: InitialChangeLogProps) => {
   const { initialKeyphrase = '', initialArticlesPerPage = 10, currentPage = 1, defaultSortType = 'created_at_desc' } = props;
   const {
     widgetRef,
-    //actions: { onSortChange, onFacetClick, onPageNumberChange, onItemClick },
-    //state: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
-    queryResult: { isLoading, data: { content: entries = [] } = {} },
+    actions: { onPageNumberChange },
+    state: { page = currentPage, itemsPerPage = initialArticlesPerPage },
+    queryResult: { isLoading, data: { total_item: totalItems = 0, content: entries = [] } = {} },
   } = useSearchResults<ChangelogEntry, InitialState>({
     query: (query) => query.getRequest().setSources(changeLogSources),
     state: {
@@ -39,7 +40,16 @@ export const ChangelogSearchResults = (props: InitialChangeLogProps) => {
         </div>
       )}
       {!isLoading && (
-        <Box ref={widgetRef}>{entries.length > 0 && entries.map((entry, i) => <ChangeLogItem item={entry} key={i} loading={isLoading} isLast={i === entries.length - 1} isMore={true} loadEntries={() => window.alert('Load More!')} />)}</Box>
+        <Box ref={widgetRef}>
+          {entries.length > 0 && (
+            <>
+              {entries.map((entry, i) => (
+                <ChangeLogItem item={entry} key={i} loading={isLoading} isLast={i === entries.length - 1} isMore={false} loadEntries={() => console.log('infinite scroll would happen now :)')} />
+              ))}
+              <ChangelogSearchPagination defaultCurrentPage={1} onPageNumberChange={(v) => onPageNumberChange({ page: v })} page={page} pageSize={itemsPerPage} totalItems={totalItems} />
+            </>
+          )}
+        </Box>
       )}
     </>
   );
