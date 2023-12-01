@@ -14,11 +14,11 @@ export const CTACard = ({ description, href, linkText, title, link2Text, link2hr
       <Text variant={'large'} mb={6}>
         {description}
       </Text>
-      <Button size={'lg'} variant={'solid'} rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>
-        <Link href={href} as={NextLink} color={useColorModeValue('white', 'black !important')}>
+      <Link href={href} as={NextLink} color={useColorModeValue('white', 'black !important')}>
+        <Button size={'lg'} variant={'solid'} rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>
           {linkText}
-        </Link>
-      </Button>
+        </Button>
+      </Link>
 
       {link2href && link2Text && <ButtonLink href={link2href} text={link2Text} size={'xl'} />}
     </CardBody>
