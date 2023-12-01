@@ -12,8 +12,8 @@ export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarPr
         <Wrap
           layerStyle={showBackground ? 'section.sidebar' : rest.layerStyle}
           direction="column"
-          maxH={{ base: 'auto', md: `100%` }}
-          //h={{ base: 'auto', md: `100vh` }}
+          maxH={{ base: 'auto', md: `100vh` }}
+          h={showBackground ? { base: 'auto', md: `100vh` } : {}}
           top="50"
           overflow={{ base: '', md: 'auto' }}
           shadow={'none'}

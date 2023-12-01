@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from '@chakra-ui/icons';
-import { Box, Button, ButtonGroup, Flex, Heading, Hide, Menu, MenuButton, MenuItem, MenuList, Show, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Flex, Heading, Menu, MenuButton, MenuItem, MenuList, Show, Stack, Text } from '@chakra-ui/react';
 import { default as Link, default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -17,7 +17,7 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
     <Box as="nav" position={'sticky'} top={'9rem'} w={'full'}>
       {/* Mobile */}
       <Show below="md">
-        <Flex justifyContent="end">
+        <Flex justifyContent="end" hideFrom={'md'}>
           <Menu>
             <MenuButton as={Button} variant={'text'} borderRadius={0} rightIcon={<ChevronDownIcon />} mb={4} border={'1px solid'} borderColor={'chakra-border-color'}>
               {subPageNavigation.title}
@@ -39,7 +39,7 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
       </Show>
 
       {/* Desktop */}
-      <Hide below="md">
+      <Show above="md">
         {subPageNavigation.title && (
           <Heading size={'sm'} mb={{ base: 2, md: 8 }}>
             {subPageNavigation.title}
@@ -61,7 +61,7 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
             );
           })}
         </ButtonGroup>
-      </Hide>
+      </Show>
     </Box>
   );
 };
