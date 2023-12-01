@@ -17,13 +17,13 @@ const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
   }));
 
   return (
-    <Wrap as={'nav'} direction="column" mt={{ base: 0, md: 10 }} mr={4}>
+    <Wrap as={'nav'} direction="column" mt={{ base: 0, md: 10 }} mr={4} p={{ base: 2, md: 0 }}>
       {title && (
         <Heading variant={'section'} size={'sm'} mb={{ base: 0, md: 2 }}>
           Table of contents
         </Heading>
       )}
-      <List spacing="1" position={'sticky'}>
+      <List spacing="1">
         {links.map((link, i) => {
           return (
             <ListItem display={'flex'} paddingLeft={0} key={i}>

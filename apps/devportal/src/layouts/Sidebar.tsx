@@ -12,12 +12,12 @@ export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarPr
         <Wrap
           layerStyle={showBackground ? 'section.sidebar' : rest.layerStyle}
           direction="column"
-          maxH={{ base: 'auto', md: `calc(100vh - 3.5rem)` }}
-          h={{ base: 'auto', md: `calc(100vh - 3.5rem)` }}
+          maxH={{ base: 'auto', md: `calc(100vh)` }}
+          h={{ base: 'auto', md: `calc(100vh)` }}
           top="50"
           overflow={{ base: '', md: 'auto' }}
           shadow={'none'}
-          position={'sticky'}
+          position={{ base: 'static', md: 'sticky' }}
           display="flex"
           flexFlow="column nowrap"
           {...rest}
