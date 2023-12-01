@@ -11,7 +11,7 @@ export const SearchButton = () => {
       <Collapse in={isOpen} animateOpacity={false} style={{ width: '100%' }}>
         {/* Mobile version - below navigation bar */}
         <Show below="md">
-          <Flex flex={{ base: 1 }} padding={3} width={'full'} left={0} top={'50px'} pos={'absolute'} background={'chakra-body-bg'} shadow={'md'}>
+          <Flex flex={{ base: 1 }} padding={3} width={'full'} left={0} top={'50px'} pos={'absolute'} background={'chakra-body-bg'} shadow={'md'} zIndex={'999'}>
             {/* <PreviewSearchInput rfkId="rfkid_6" /> */}
             <SearchInput />
           </Flex>
