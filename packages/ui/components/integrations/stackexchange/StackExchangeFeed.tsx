@@ -41,12 +41,12 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
                 {question.tags.length && (
                   <Stack direction={{ base: 'column', sm: 'row' }} shouldWrapChildren maxWidth={'90%'}>
                     {question.tags.map((tag) => (
-                      <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
-                        <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')}>
+                      <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')}>
+                        <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
                           {tag}
                           <VisuallyHidden>Opens in a new tab</VisuallyHidden>
-                        </Link>
-                      </Button>
+                        </Button>
+                      </Link>
                     ))}
                   </Stack>
                 )}
