@@ -74,7 +74,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
             <AlertIcon />
             <Tooltip label="Go to the overview of current release notes" aria-label="A tooltip">
               <Link href="/changelog/current" title="View the list of current release notes per product">
-                You are viewing the public preview of the upcoming Sitecore global changelog.
+                You are viewing the Sitecore Cloud changelog. To see release notes for Sitecore products not yet listed here, click here.
               </Link>
             </Tooltip>
           </Alert>
