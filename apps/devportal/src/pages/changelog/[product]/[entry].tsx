@@ -12,7 +12,6 @@ import {
   GridItem,
   HStack,
   Heading,
-  Hide,
   Image,
   Modal,
   ModalBody,
@@ -150,11 +149,9 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 </CardFooter>
               </Card>
             </GridItem>
-            <Hide below="md">
-              <GridItem colSpan={2}>
-                <ChangelogByMonth product={currentProduct} />
-              </GridItem>
-            </Hide>
+            <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
+              <ChangelogByMonth product={currentProduct} />
+            </GridItem>
           </Grid>
         </CenteredContent>
       </VerticalGroup>
