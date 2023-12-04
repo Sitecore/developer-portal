@@ -1,4 +1,4 @@
-import { Alert, AlertIcon, AlertTitle, Box, Heading, Text } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Heading, Text } from '@chakra-ui/react';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -18,9 +18,7 @@ export default function ChangelogCurrent() {
           <CenteredContent>
             <Alert status="info" alignItems="center">
               <AlertIcon />
-              <AlertTitle>
-                <Link href="/changelog">Click here to go the public preview of the upcoming Sitecore global changelog.</Link>
-              </AlertTitle>
+              <Link href="/changelog">You are viewing the release notes for Sitecore products that have not been added to the Changelog yet. To access the changelog of Sitecore Cloud products, click here.</Link>
             </Alert>
 
             <Box>
