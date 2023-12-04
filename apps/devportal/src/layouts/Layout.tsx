@@ -43,7 +43,7 @@ const Layout = ({ title, description = '', openGraphImage, children, ...rest }: 
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Box as="main" style={{ paddingTop: 122, minHeight: 'calc(100vh - 236px)' }} {...rest}>
+      <Box as="main" style={{ minHeight: 'calc(100vh - 50px)' }} {...rest}>
         <VisuallyHidden>
           <a href="#main-content">Skip to main content</a>
         </VisuallyHidden>

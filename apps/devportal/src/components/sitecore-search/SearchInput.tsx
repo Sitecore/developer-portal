@@ -1,8 +1,10 @@
 // Global
-import { FormControl, Image, Input, InputGroup, InputLeftElement, InputRightElement, Text } from '@chakra-ui/react';
+import { FormControl, Input, InputGroup, InputLeftElement, InputRightElement, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
+import ProductLogo from 'ui/components/common/ProductLogo';
+import { Product } from 'ui/lib/assets';
 
 const SearchInput = () => {
   const router = useRouter();
@@ -21,16 +23,18 @@ const SearchInput = () => {
         </InputLeftElement>
         <Input
           name="scdp-search"
-          placeholder="What are you looking for?"
           autoComplete="off"
           value={keywords}
           onChange={(event) => {
             setKeywords(event.target.value);
           }}
         />
-        <InputRightElement width={'200px'}>
-          <Text display={{ base: 'none', md: 'flex ' }}>Powered by</Text>
-          <Image src="https://developers.sitecore.com/_next/image?url=https%3A%2F%2Fsitecorecontenthub.stylelabs.cloud%2Fapi%2Fpublic%2Fcontent%2F43e414bbc80143e2b21acd0808456e26&w=96&q=75" alt="Sitecore Search logo" />
+        <InputRightElement width={{ base: '100px', md: '150px' }} opacity={'0.5'}>
+          <Text as={'span'} display={{ base: 'none', md: 'flex ' }} variant="tiny">
+            Powered by
+          </Text>
+
+          <ProductLogo product={Product.Search} width={67} height={18} />
         </InputRightElement>
       </InputGroup>
     </FormControl>

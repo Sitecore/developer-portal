@@ -7,6 +7,7 @@ export const ContentSection = (props: FlexProps) => (
     direction="column"
     alignItems="center"
     justifyContent="flex-start"
+    paddingX={{ base: 2, '2xl': 0 }}
     color="black"
     _dark={{
       color: 'white',

@@ -70,7 +70,7 @@ const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <ContentSection bg="neutral-subtle-bg">
+      <ContentSection bg="neutral-bg">
         <CenteredContent>
           <PromoCard {...newsletterPromo} />
 

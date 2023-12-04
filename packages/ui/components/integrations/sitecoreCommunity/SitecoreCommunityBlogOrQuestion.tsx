@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, Flex, HStack, Heading, Icon, Link, Skeleton, Stack, Text } from '@chakra-ui/react';
+import { Box, Card, CardBody, Flex, HStack, Heading, Icon, Link, Skeleton, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { translateDate } from 'ui/lib/utils/dateUtil';
 
@@ -20,7 +20,7 @@ export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommu
             <Heading variant="section">{item.contentType}</Heading>
 
             <Heading size={'md'} my={4}>
-              <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'black'}>
+              <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={useColorModeValue('black', 'white')}>
                 {item.title}
               </Link>
             </Heading>
@@ -66,7 +66,7 @@ export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, loading }: Siteco
       <Skeleton isLoaded={!loading} flexGrow={1}>
         <Stack fontSize={'sm'}>
           <Heading as={'h4'} size="sm">
-            <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'black'}>
+            <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={useColorModeValue('black', 'white')}>
               {item.title}
             </Link>
           </Heading>

@@ -2,6 +2,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { IsSearchEnabled, SEARCH_CONFIG } from '@lib/search';
 import { scdpTheme } from '@lib/theme/theme';
 import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
+import { toastOptions } from '@sitecore/blok-theme';
 import { Footer } from '@src/components/navigation/Footer';
 import Navbar from '@src/components/navigation/NavBar';
 import SearchInputSwitcher from '@src/components/sitecore-search/SearchInputSwitcher';
@@ -88,20 +89,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <ChakraProvider
-        theme={scdpTheme}
-        toastOptions={{
-          defaultOptions: {
-            position: 'bottom-left',
-            variant: 'subtle',
-            containerStyle: {
-              mt: '0',
-              mb: '4',
-              mx: '4',
-            },
-          },
-        }}
-      >
+      <ChakraProvider theme={scdpTheme} toastOptions={toastOptions}>
         <PreviewProvider preview={router.isPreview} currentHostname={hostname}>
           {progress && <TopBarProgress />}
           <Navbar>

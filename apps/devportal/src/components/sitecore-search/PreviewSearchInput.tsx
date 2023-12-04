@@ -3,7 +3,7 @@ import { NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
 // import Image from 'next/image';
 import { getColorScheme } from '@/src/lib/search';
-import { Badge, Box, Button, Card, CardBody, CardHeader, Flex, FormControl, Grid, HStack, Heading, Image, Input, InputGroup, InputLeftElement, InputRightElement, Link, Tag, Text, VisuallyHidden } from '@chakra-ui/react';
+import { Badge, Box, Button, Flex, FormControl, HStack, Heading, Input, InputGroup, InputLeftElement, InputRightElement, Link, List, ListItem, Tag, Text, VisuallyHidden } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { SyntheticEvent, useCallback, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
@@ -28,55 +28,47 @@ type ArticleModel = {
 
 const Articles = ({ loading = false, articles, onItemClick }: { loading?: boolean; articles: Array<ArticleModel>; onItemClick: PreviewSearchActionProps['onItemClick']; suggestionsReturned?: boolean }) => (
   <NavMenu.Content asChild>
-    <Box width={[4 / 5]} position={'absolute'} right={0} top={0} overflow={'hidden'} display={'inline-block'}>
+    <Box width={[4 / 6]} position={'absolute'} right={0} top={0} overflow={'hidden'} display={'inline-block'} p={4}>
       <Presence present={loading}>
         <Loading />
       </Presence>
       <NavMenu.List>
-        <Grid templateColumns="repeat(3, 1fr)" position="relative" gap={4}>
-          {/* {loading && <Loading />} */}
-
+        {/* {loading && <Loading />} */}
+        <List spacing="4">
           {!loading &&
             articles.map((article, index) => (
-              <Link
-                key={`${article.id}@${article.source_id}`}
-                href={article.url}
-                onClick={(e) => {
-                  e.preventDefault();
-                  onItemClick({ id: article.id || '', index: index });
-                  if (article.index_name != 'sitecore-devportal-v2') {
-                    trackEntityPageViewEvent('content', { items: [{ id: article.id }] });
+              <ListItem key={index}>
+                <Link
+                  key={`${article.id}@${article.source_id}`}
+                  href={article.url}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onItemClick({ id: article.id || '', index: index });
+                    if (article.index_name != 'sitecore-devportal-v2') {
+                      trackEntityPageViewEvent('content', { items: [{ id: article.id }] });
+                      window.open(article.url, '_blank');
+                    } else {
+                      window.open(article.url + '?fromSearch=true', '_blank');
+                    }
                     window.open(article.url, '_blank');
-                  } else {
-                    window.open(article.url + '?fromSearch=true', '_blank');
-                  }
-                  window.open(article.url, '_blank');
-                }}
-              >
-                <Card variant={'none'} size={'sm'}>
-                  <CardHeader pb={0}>
-                    <Heading as={'h4'} size={'sm'} noOfLines={2}>
-                      {article.name}
-                    </Heading>
-                  </CardHeader>
-                  <CardBody>
-                    <HStack mb={2}>
-                      {article.type && <Tag colorScheme={getColorScheme(article.type)}>{article.type}</Tag>}
-                      {article.index_name && <Badge>{article.site_name}</Badge>}
-                    </HStack>
-                    {article.type == 'Video' && (
-                      <div className="col-span-1">
-                        {article.image_url && <Image width={160} height={90} src={article.image_url} alt={article.index_name} className="object-scale-down" />}
-                        {!article.image_url && <Image width={160} height={90} src="/images/social/social-card-default.jpeg" alt={article.index_name} className="object-scale-down" />}
-                      </div>
+                  }}
+                >
+                  <Heading as={'h4'} size={'sm'} noOfLines={2}>
+                    {article.name}
+                  </Heading>
+                  {/* <Text noOfLines={1}>{article.highlight?.description || article.description}</Text> */}
+                  <HStack mb={2} width={'full'}>
+                    {article.type && (
+                      <Tag colorScheme={getColorScheme(article.type)} size="sm">
+                        {article.type}
+                      </Tag>
                     )}
-                    {article.type != 'Video' && article?.highlight?.description && <Text noOfLines={4} dangerouslySetInnerHTML={{ __html: article.highlight.description }} />}
-                    {article.type != 'Video' && !article.highlight && article.description && <Text noOfLines={4}>{article.description}</Text>}
-                  </CardBody>
-                </Card>
-              </Link>
+                    {article.index_name && <Badge>{article.site_name}</Badge>}
+                  </HStack>
+                </Link>
+              </ListItem>
             ))}
-        </Grid>
+        </List>
       </NavMenu.List>
     </Box>
   </NavMenu.Content>
@@ -107,7 +99,7 @@ const Group = ({
   onGroupTitleClick: (arg: string) => void;
 }) => {
   return (
-    <Box width={[1 / 5]} p={2} background={'primary.100'} minH={'400'}>
+    <Box width={[2 / 6]} p={2} background={'primary-bg'}>
       <Heading variant="section" px={4}>
         {groupTitle}
       </Heading>
@@ -122,7 +114,7 @@ const Group = ({
             onFocus={() => onActiveItem(getGroupId(groupId, text))}
             onClick={() => onGroupTitleClick(text)}
           >
-            <Button variant={'ghost'} colorScheme="neutral" borderRadius={'md'} title={text} textAlign={'left'}>
+            <Button variant={'ghost'} colorScheme="neutral" borderRadius={'md'} title={text} textAlign={'left'} mb={2}>
               <Text isTruncated width={180}>
                 {text}
               </Text>
@@ -213,28 +205,32 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
               <InputLeftElement>
                 <FaSearch />
               </InputLeftElement>
-              <Input as={NavMenu.InputTrigger} name="query" role="search" onChange={keyphraseHandler} placeholder="What are you looking for?" onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
-              <InputRightElement width={{ base: '100px', md: '200px' }} opacity={'0.5'}>
-                <Text as={'span'} display={{ base: 'none', md: 'flex ' }}>
+              <Input as={NavMenu.InputTrigger} name="query" role="search" onChange={keyphraseHandler} onFocus={() => setActiveItem('defaultArticlesResults')} autoComplete="off" value={keyphrase} />
+              <InputRightElement width={{ base: '100px', md: '150px' }} opacity={''}>
+                <Text as={'span'} display={{ base: 'none', md: 'flex ' }} variant="tiny">
                   Powered by
                 </Text>
-                <ProductLogo product={Product.Search} width={89} height={24} />
+
+                <ProductLogo product={Product.Search} width={67} height={18} />
               </InputRightElement>
             </InputGroup>
           </FormControl>
 
-          <Flex as={NavMenu.Content} position={'relative'} left={0} display={{ base: 'none', md: 'inline-block' }} width={'100%'} justifyContent={'center'} direction={'row'} background={'chakra-body-bg'}>
+          <Flex as={NavMenu.Content} position={'absolute'} top={10} display={{ base: 'none', md: 'block' }} width={'100%'} justifyContent={'left'} direction={'row'} background={'chakra-body-bg'}>
             <Presence present={loading}>
               <Loading />
             </Presence>
             {!loading && (
-              <Box shadow={'base'}>
+              <Box shadow={'base'} height={'100%'}>
                 <NavMenu.SubContent orientation="vertical" value={activeItem} ref={widgetRef}>
                   <NavMenu.List style={{ listStyle: 'none' }}>
+                    {/* Suggested terms */}
+
                     {articleSuggestions.length > 0 && (
                       <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />
                     )}
 
+                    {/* Results */}
                     <Box as={NavMenu.Item} value="defaultArticlesResults" key="defaultArticlesResults" className="b-0 bg-none">
                       <VisuallyHidden>
                         <NavMenu.Trigger aria-hidden />
