@@ -10,8 +10,8 @@ export interface SearchFacetsType {
 export const ChangelogSearchFacets = ({ facets }: SearchFacetsType) => {
   return (
     <>
-      {facets.map((facet) => (
-        <Container marginBottom={4} marginX={0} width={'full'}>
+      {facets.map((facet, index) => (
+        <Container marginBottom={4} marginX={0} width={'full'} key={index}>
           <VisuallyHidden>
             <label className="sr-only" htmlFor={`react-select-${facet.name}-input`}>
               {facet.label}
