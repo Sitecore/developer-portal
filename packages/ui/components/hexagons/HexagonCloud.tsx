@@ -44,7 +44,7 @@ function mouseOver(event: React.MouseEvent<HTMLLIElement>) {
 export const HexagonCloud = ({ cloud, isOpen, children, onClick }: HexagonCloudProps): JSX.Element | null => {
   return (
     <ListItem
-      className={`${styles.hexGridTab} dark:from-whiteAlpha-500 dark:to-whiteAlpha-700 ${styles.hexGridTab_violet} ${styles.active} transition-transformdelay-200 dark:bg-gradient-to-r ${isOpen ? styles.hexGridTabExpand : ''}`}
+      className={`${styles.hexGridTab} dark:from-whiteAlpha-500 dark:to-whiteAlpha-700 ${styles.hexGridTab_violet} ${styles.active} transition-transform delay-200 dark:bg-gradient-to-r ${isOpen ? styles.hexGridTabExpand : ''}`}
       data-target={`#${cloud.id}`}
       onMouseOver={(e) => mouseOver(e)}
       onMouseOut={() => resetElements()}

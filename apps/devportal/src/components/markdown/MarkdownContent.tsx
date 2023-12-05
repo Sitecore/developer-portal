@@ -68,6 +68,16 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
   );
 };
 
+export const MarkDownContent = ({ content, partials, partialGroups }: MarkdownContentProps): JSX.Element => (
+  <>
+    <RenderContent content={content} />
+    <RenderPartialGroups partialGroups={partialGroups} />
+    <RenderPartials partials={partials} />
+  </>
+);
+
+
+
 export const RenderContent = ({ content }: MarkdownContentProps): JSX.Element => {
   if (content == null) return <></>;
 
@@ -96,7 +106,7 @@ export const RenderPartialGroups = ({ partialGroups }: MarkdownContentProps): JS
         partialGroups.length > 0 &&
         partialGroups.map((partialGroup, i) => (
           <Box key={i}>
-            <Heading as={'h2'} key={i} size={'xl'} mb={4} mt={8}>
+            <Heading as={'h2'} key={i} size={'xl'} mb={4} mt={{ base: 0, md: 8 }}>
               {partialGroup.title}
             </Heading>
             {partialGroup.description && (

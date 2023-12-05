@@ -34,7 +34,7 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: 
   return (
     <Card border={'none'} shadow={'none'} {...rest}>
       <CardHeader justifyContent={'space-between'} display={'flex'}>
-        <Heading as="h3" size="md" className="mb-4">
+        <Heading as="h3" size="md">
           Latest blog posts
         </Heading>
 
@@ -43,9 +43,9 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: 
       <CardBody>
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
           <div className="flex justify-end mb-6">
-            <label className="flex items-center text-xs font-semibold">
+            <label>
               Order by:
-              <select onChange={(changeEvent) => fetchNewResults(changeEvent.target.value)} className="bg-theme-bg `text-theme-text ml-2 border-2 p-2 font-semibold">
+              <select onChange={(changeEvent) => fetchNewResults(changeEvent.target.value)}>
                 <option value="created">Recent Questions</option>
                 <option value="view">Most Popular</option>
                 <option value="created">Created</option>

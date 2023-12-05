@@ -26,13 +26,20 @@ This guide provides an overview for existing customers of the Platform DXP (XP, 
 <Repository framework="Nextjs" name="XM Cloud Introduction" description="An example of a real XM Cloud implementation that can be useful with your own XM Cloud migration projects." repositoryUrl="https://github.com/sitecore/xm-cloud-introduction" />
 </Row>
 
-### Resources
+### Tools
+
+<Row columns={2}>
+  <Article title="XM to XM Cloud Content Migration tool" description="Move content, media and user data from a source XM on-premises instance to a target XM Cloud environment." link="/downloads/xm-cloud#xm-to-xm-cloud-content-migration-tool" linktext="Download" />
+</Row>
+
+### Articles
 
 <Row columns={2}>
   <Article title="Migrating the Sitecore MVP site" description="An introduction to the purpose of the series and the initial steps to migrate from XM on-Prem to XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-1" />
   <Article title="Custom Content Resolvers" description="Exploration of Custom Content Resolvers and their usage with XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-2" />
   <Article title="The MVP Directory" description="Headless development of custom search interfaces with XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-3" />
   <Article title="Secure Pages" description="How to handle secure pages with external identity providers with XM Cloud." link="https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-4" />
+  <Article title="Converting a TDS project to Sitecore Content Serialization (SCS)" description="Get ready for XM Cloud by converting your TDS projects to SCS format." link="https://community.sitecore.com/community?id=community_blog&sys_id=9390c8a91b76359438a46421b24bcb40" />
   <Article title="9 Changes affecting migration estimates" description="Estimating Sitecore XP to XM Cloud upgrade — what challenges lies ahead? (Jack Spektor)" link="https://jackspektor.medium.com/estimating-sitecore-xp-to-xm-cloud-upgrade-what-challenges-lies-ahead-226d1c36b8e" />
   <Article title="Migration roadmap" description="A Practical Roadmap for Existing Sitecore Customers to Move To XM Cloud (David San Filippo)" link="https://blogs.perficient.com/2022/11/28/a-practical-roadmap-for-existing-sitecore-customers-to-move-to-xm-cloud/" />
   <YouTube youTubeId="vLAfx7dps_Q" />
