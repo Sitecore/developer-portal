@@ -1,7 +1,6 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
 
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
-import SocialFeeds from '@src/components/common/SocialFeeds';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
@@ -53,7 +52,7 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
           <CenteredContent>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               {childPageInfo.map((childPage, i) => (
-                <Card variant={'elevated'} size="md" key={i}>
+                <Card variant={'outlineRaised'} size="md" layerStyle={'interactive.raise'} key={i}>
                   <CardHeader>
                     <TextLink isHeading as={'h3'} text={childPage.title} aria-label={childPage.title} href={childPage.link} />
                   </CardHeader>
@@ -70,12 +69,15 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
             </SimpleGrid>
           </CenteredContent>
         </VerticalGroup>
-        <VerticalGroup>
+        {/* <VerticalGroup>
           <CenteredContent>
             <PromoList data={promoAfter} />
-            <SocialFeeds pageInfo={pageInfo} />
+            <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
+            <SitecoreCommunityQuestions data={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
+            <StackExchangeFeed data={pageInfo.stackexchange} />
+            <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} />
           </CenteredContent>
-        </VerticalGroup>
+        </VerticalGroup> */}
       </ThreeColumnLayout>
     </Layout>
   );

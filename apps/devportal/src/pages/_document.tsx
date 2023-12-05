@@ -11,7 +11,7 @@ export class MyDocument<P = {}> extends Component<DocumentProps & P> {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" style={{ height: '100%' }}>
         <Head />
         <body style={{ scrollMarginTop: '9em' }}>
           <Main />

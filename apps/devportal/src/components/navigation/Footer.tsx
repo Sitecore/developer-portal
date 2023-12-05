@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react
 import { SocialButton } from 'ui/components/links/SocialButton';
 
 export const Footer = () => (
-  <Box bg={'chakra-subtle-bg'} borderTop={'1px'} borderColor={'chakra-border-color'}>
+  <Box bg={'chakra-subtle-bg'} borderTop={'1px'} borderColor={'chakra-border-color'} position={'absolute'} bottom={0} left={0} width={'full'}>
     <Container as={Stack} maxW={'6xl'} py={4} px={2} direction={{ base: 'column', md: 'column' }} spacing={4}>
       <Stack direction={'row'} spacing={6}>
         <SocialButton label={'Twitter'} href={'https://twitter.com/WeAreSitecore'} aria-label="Twitter">
