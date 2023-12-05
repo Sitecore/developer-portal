@@ -1,6 +1,8 @@
 // Global
-import { Box, Card, CardBody, Center, Heading, Hide, Image, Stack, Text } from '@chakra-ui/react';
-import { ButtonLink } from '../../links/ButtonLink';
+import { Card, CardBody, Center, HStack, Heading, Hide, Image, Link, Stack, Text } from '@chakra-ui/react';
+import { mdiArrowRight } from '@mdi/js';
+import Icon from '@mdi/react';
+import NextLink from 'next/link';
 import { PromoCardImage, PromoCardProps, SimplePromoCardProps } from './types';
 
 const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
@@ -8,25 +10,31 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
     src={img.src}
     alt={img.alt || ''}
     objectFit="cover"
-    maxW={{ base: '100%', sm: '400px' }}
+    maxW={{ base: '100%', md: '400px' }}
+
     //priority={true}
   />
 );
 
 export const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps): JSX.Element => (
   <Center>
-    <Card direction={{ base: 'column', sm: 'row' }} overflow="hidden" variant="outlineRaised" maxW={'container.md'}>
+    <Card direction={{ base: 'column', md: 'row' }} overflow="hidden" variant="outlineRaised" maxW={'container.md'}>
       {isImageLeft && <PromoCardImage img={img} />}
-      <Hide above="md">
-        <PromoCardImage img={img} />
-      </Hide>
+
       <Stack>
-        <CardBody display={'flex'} justifyContent={'center'} alignItems={'center'}>
-          <Box height={'min-content'}>
-            <Heading as={'h4'}>{title}</Heading>
-            <Text>{description}</Text>
-            {!!link && <ButtonLink variant={'link'} text={link.text ? link.text : 'Read more'} href={link.href} />}
-          </Box>
+        <CardBody display={'flex'} justifyContent={'space-between'} flexDirection={'column'} alignItems={'left'}>
+          <Heading as={'h4'} size="md">
+            {title}
+          </Heading>
+          <Text>{description}</Text>
+          {!!link && (
+            <HStack as={'span'} mt={2}>
+              <Link as={NextLink} href={link.href} fontWeight={'semibold'}>
+                {link.text}
+              </Link>
+              <Icon path={mdiArrowRight} size={0.8} />
+            </HStack>
+          )}
         </CardBody>
       </Stack>
       {!isImageLeft && (
