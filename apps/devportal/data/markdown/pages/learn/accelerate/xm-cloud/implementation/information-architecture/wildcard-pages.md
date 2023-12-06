@@ -20,17 +20,20 @@ The solution is to use a Wildcard item in the content tree and then consume that
 
 First, decide what the route for the wildcard path will be and create a wildcard item at that location. For example, if you wanted the route `https://myxmcloudsite.com/blogs/<blog-url-slug>`, you would create the wildcard item under a blogs page item in your site (e.g. `/sitecore/content/Accelerate Sites/Accelerate Recipes/Home/Blogs`):
 
-![Screenshot showing how to add a new wildcard item](../../../../../../public/images/learn/accelerate/xm-cloud/wildcard-pages1.png)
+<img src="/images/learn/accelerate/xm-cloud/wildcard-pages1.png" alt="Screenshot showing how to add a new wildcard item"/>
+<br/>
 
 To create a wildcard item, add a page item and name it `* (/sitecore/content/Accelerate Sites/Accelerate Recipes/Home/Blogs/*)` this tells the CM that this page can map to any route at that path.
 
 It is best practice to give the item a display name that helps the content authors know what that wildcard page is used for. We will call ours `Blog Wildcard Page (*)`.
 
-![Screenshot showing the naming of the item](../../../../../../public/images/learn/accelerate/xm-cloud/wildcard-pages2.png)
+<img src="/images/learn/accelerate/xm-cloud/wildcard-pages2.png" alt="Screenshot showing the naming of the item"/>
+<br/>
 
 The content tree should now look like this:
 
-![Screenshot showing the state of the content tree](../../../../../../public/images/learn/accelerate/xm-cloud/wildcard-pages3.png)
+<img src="/images/learn/accelerate/xm-cloud/wildcard-pages3.png" alt="Screenshot showing the state of the content tree"/>
+<br/>
 
 ### Setting up the presentation
 
@@ -76,6 +79,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 ```
 
+<br/><br/>
+
 #### GetStaticProps
 
 `getStaticProps` takes the route passed in from the request or the results of `getStaticPaths` and gets the matching content and layout for the page, or returns a 404 if the content is not found for the route.
@@ -105,6 +110,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 ```
 
+<br/><br/>
 Things to note:
 
 1. We are storing the original request path in a new property on the `context.params` object so that we can use that path later to get any dynamic data.
@@ -136,6 +142,8 @@ export const config = {
   matcher: ['/', '/((?!api/|_next/|blogs/|sitecore/api/|-/|[\\w-]+\\.\\w+).*)'],
 };
 ```
+
+<br/><br/>
 
 #### Getting the Content
 
@@ -183,6 +191,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 ```
 
+<br/><br/>
+
 #### Component Level Data Fetching
 
 As component level data fetching has its own recipe [Getting Component Specifc Data](https://sitecore.atlassian.net/wiki/spaces/FM1/pages/4459168071), we will just focus on how to get the path segment that we earlier stored in `context.params.requestPath`.
@@ -207,15 +217,15 @@ if (path !== undefined) {
 
 ## Related Recipes
 
-|     | Recipe                                                                                            |
-| --- | ------------------------------------------------------------------------------------------------- |
-| 1   | [Getting Component Specifc Data](https://sitecore.atlassian.net/wiki/spaces/FM1/pages/4459168071) |
+<Row columns={2}>
+  <Link title="Getting Component Specifc Data" link="/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data" />
+</Row>
 
 ## Related Documentation
 
-|     | Documentation Link                                                                                                                                                                         |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 1   | [Using WildCard Items in Sitecore XM Cloud](https://www.paulbonilladev.com/blog/using_wildcard_items)                                                                                      |
-| 2   | [Using Wildcard Items In Sitecore XM Cloud With A Headless NextJs Front-end](https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud)                                   |
-| 3   | [Create a dynamic URL with a wildcard item - Sitecore Documentation](https://doc.sitecore.com/xp/en/users/103/sitecore-experience-platform/create-a-dynamic-url-with-a-wildcard-item.html) |
-| 4   | [Routing: Dynamic Routes](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes)                                                                                  |
+<Row columns={2}>
+  <Link title="Using WildCard Items in Sitecore XM Cloud" link="https://www.paulbonilladev.com/blog/using_wildcard_items" />
+  <Link title="Using Wildcard Items In Sitecore XM Cloud With A Headless NextJs Front-end" link="https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud" />
+  <Link title="Create a dynamic URL with a wildcard item - Sitecore Documentation" link="https://doc.sitecore.com/xp/en/users/103/sitecore-experience-platform/create-a-dynamic-url-with-a-wildcard-item.html" />
+  <Link title="Routing: Dynamic Routes" link="https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes" />
+</Row>
