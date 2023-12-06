@@ -1,4 +1,4 @@
-import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
+import { Alert, AlertIcon, Grid, GridItem, HStack, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import { getChangelogProductPaths } from '@lib/staticPaths';
@@ -17,6 +17,7 @@ import { ButtonLink } from 'ui/components/links/ButtonLink';
 
 type ChangelogProps = {
   currentProduct: Product;
+  preview: boolean;
 };
 
 export async function getStaticPaths() {
@@ -40,6 +41,7 @@ export async function getStaticProps(context: any) {
   return {
     props: {
       currentProduct: currentProduct,
+      preview: preview,
     },
     revalidate: 60,
   };
@@ -72,7 +74,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
             <AlertIcon />
             <Tooltip label="Go to the overview of current release notes" aria-label="A tooltip">
               <Link href="/changelog/current" title="View the list of current release notes per product">
-                You are viewing the public preview of the upcoming Sitecore global changelog.
+                You are viewing the Sitecore Cloud changelog. To see release notes for Sitecore products not yet listed here, click here.
               </Link>
             </Tooltip>
           </Alert>
@@ -81,13 +83,11 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
             <GridItem colSpan={{ base: 5, md: 3 }}>
               <ChangelogList initialProduct={currentProduct} />
             </GridItem>
-            <Hide below="md">
-              <GridItem colSpan={2}>
-                <ButtonLink text={'RSS'} href={`${router.asPath}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                <ButtonLink text={'ATOM'} href={`${router.asPath}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                <ChangelogByMonth product={currentProduct} />
-              </GridItem>
-            </Hide>
+            <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
+              <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+              <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+              <ChangelogByMonth product={currentProduct} />
+            </GridItem>
           </Grid>
         </CenteredContent>
       </VerticalGroup>

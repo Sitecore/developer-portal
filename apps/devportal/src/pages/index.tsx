@@ -16,8 +16,8 @@ import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, 
 import { CategoryTileList, GenericList } from 'ui/components/lists';
 import { CTACard } from 'ui/components/promos';
 
-export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo('home', context.preview ? context.preview : null);
+export async function getStaticProps() {
+  const pageInfo = await getPageInfo('home');
 
   return {
     props: {
@@ -29,6 +29,7 @@ export async function getStaticProps(context: any) {
 
 type HomePageProps = {
   pageInfo: PageInfo;
+  preview: boolean;
 };
 
 const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
@@ -36,7 +37,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
     <Hero title={pageInfo.title} description={pageInfo.description} />
 
     <VerticalGroup background={'chakra-bg'}>
-      <CenteredContent paddingTop={2}>
+      <CenteredContent paddingTop={{ base: 1, lg: 2 }}>
         <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.data} />
         <SimpleGrid py={4} gap={4} columns={[1, 1, 2]}>
           <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
@@ -45,7 +46,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       </CenteredContent>
     </VerticalGroup>
 
-    <VerticalGroup background={'chakra-subtle-bg'}>
+    <VerticalGroup background={'chakra-bg'}>
       <CenteredContent>
         <Hexagons />
       </CenteredContent>

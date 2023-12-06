@@ -8,7 +8,8 @@ import { StackExchangeFeed, TwitterFeed, YouTubeFeed } from 'ui/components/integ
 import { SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
 import { GenericList } from 'ui/components/lists';
 
-import { CTACard, CTACardProps, PromoCard, PromoCardProps } from 'ui/components/promos';
+import { CTACard, CTACardProps, PromoCardProps } from 'ui/components/promos';
+import PromoList from 'ui/components/promos/promoCard/PromoList';
 
 type SocialPageProps = {
   pageInfo: PageInfo;
@@ -17,12 +18,12 @@ type SocialPageProps = {
 };
 
 const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): JSX.Element => (
-  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} preview={pageInfo.previewMode}>
+  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
     <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
     <VerticalGroup>
       <CenteredContent>
-        {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
+        <PromoList data={promoBefore} />
         <RenderContent content={pageInfo.parsedContent} />
         <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} />
         <SitecoreCommunityQuestions data={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />

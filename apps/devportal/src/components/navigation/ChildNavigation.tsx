@@ -1,9 +1,8 @@
 import { Box, Button, ButtonGroup, Collapse, Heading, Icon, Stack, Text, Tooltip, Wrap, useDisclosure } from '@chakra-ui/react';
-import React from 'react';
-//import { useGlobalState } from '../../lib/globalState';
 import { mdiChevronDown, mdiChevronRight } from '@mdi/js';
 import { default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
+import React from 'react';
 import { SubPageNavigation, SubPageNavigationItem } from '../../lib/interfaces/page-info';
 
 interface ChildNavigationProps {
@@ -52,13 +51,11 @@ function renderChildren(link: SubPageNavigationItem, currentBasePath: string): R
         return (
           <React.Fragment key={i}>
             {!child.children ? (
-              <Tooltip label={child.title} aria-label="A tooltip">
-                <Button as={NextLink} href={childUrl} key={i} isActive={router.asPath == childUrl}>
-                  <Text maxW={190} isTruncated px={2}>
-                    {child.title}
-                  </Text>
-                </Button>
-              </Tooltip>
+              <Button as={NextLink} href={childUrl} key={i} isActive={router.asPath == childUrl}>
+                <Text maxW={190} isTruncated px={2}>
+                  {child.title}
+                </Text>
+              </Button>
             ) : (
               renderGroup(i, child, childUrl)
             )}
@@ -75,22 +72,27 @@ function renderGroup(i: number, child: SubPageNavigationItem, basePath: string):
 
   return (
     <React.Fragment key={i}>
-      <Tooltip label={child.title} aria-label="A tooltip">
+      <Tooltip label="Click to icon to toggle subitems" aria-label="A tooltip">
         <Button
-          rightIcon={router.asPath.includes(basePath) ? undefined : <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>}
+          isActive={router.asPath == basePath}
+          rightIcon={
+            router.asPath.includes(basePath) ? (
+              <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronRight} /> : <path d={mdiChevronDown} />}</Icon>
+            ) : (
+              <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>
+            )
+          }
           pl={3}
           justifyContent={'space-between'}
           width={'full'}
           transition={'ease-in-out'}
         >
           {child.path ? (
-            <Text as={NextLink} href={basePath} maxW={190} isTruncated px={2}>
+            <Text as={NextLink} href={basePath} px={2}>
               {child.title}
             </Text>
           ) : (
-            <Text maxW={190} isTruncated px={2}>
-              {child.title}
-            </Text>
+            <Text px={2}>{child.title}</Text>
           )}
         </Button>
       </Tooltip>

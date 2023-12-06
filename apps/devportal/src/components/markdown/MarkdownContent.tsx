@@ -5,7 +5,6 @@ import { mdiSquareEditOutline } from '@mdi/js';
 import { Icon } from '@mdi/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import { MDXRemote } from 'next-mdx-remote';
-import { useEffect, useState } from 'react';
 import { Light as SyntaxHighlight } from 'react-syntax-highlighter';
 import { Article, LinkItem, Repository } from 'ui/components/cards';
 import { Row } from 'ui/components/helpers/Row';
@@ -16,7 +15,7 @@ import YouTube from 'ui/components/video/YouTube';
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { a11yDark, a11yLight } = require('react-syntax-highlighter/dist/cjs/styles/hljs');
+const { a11yDark } = require('react-syntax-highlighter/dist/cjs/styles/hljs');
 
 type MarkdownContentProps = {
   content?: string;
@@ -29,11 +28,11 @@ type DecoratedMarkdownProps = {
 };
 
 export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element => {
-  const [isDark, setIsLight] = useState(false);
+  // const [isDark, setIsLight] = useState(false);
 
-  useEffect(() => {
-    setIsLight(typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-  }, []);
+  // useEffect(() => {
+  //   setIsLight(typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  // }, []);
 
   return (
     <Prose className={styles.richText}>
@@ -69,6 +68,16 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
   );
 };
 
+export const MarkDownContent = ({ content, partials, partialGroups }: MarkdownContentProps): JSX.Element => (
+  <>
+    <RenderContent content={content} />
+    <RenderPartialGroups partialGroups={partialGroups} />
+    <RenderPartials partials={partials} />
+  </>
+);
+
+
+
 export const RenderContent = ({ content }: MarkdownContentProps): JSX.Element => {
   if (content == null) return <></>;
 
@@ -97,7 +106,7 @@ export const RenderPartialGroups = ({ partialGroups }: MarkdownContentProps): JS
         partialGroups.length > 0 &&
         partialGroups.map((partialGroup, i) => (
           <Box key={i}>
-            <Heading as={'h2'} key={i} size={'xl'} mb={4} mt={8}>
+            <Heading as={'h2'} key={i} size={'xl'} mb={4} mt={{ base: 0, md: 8 }}>
               {partialGroup.title}
             </Heading>
             {partialGroup.description && (

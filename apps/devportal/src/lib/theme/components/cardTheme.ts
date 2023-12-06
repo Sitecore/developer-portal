@@ -44,7 +44,7 @@ const variants = {
       border: 'md',
       borderRadius: 'md',
       borderWidth: '1px',
-      background: 'chakra-subtle-bg',
+      background: 'chakra-bg',
     },
     body: {
       padding: '0',
