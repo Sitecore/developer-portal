@@ -5,4 +5,4 @@ hasSubPageNav: true
 hasInPageNav: false
 ---
 
-### Intro
+### Information Architecture
