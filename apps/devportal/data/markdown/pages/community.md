@@ -11,8 +11,8 @@ sitecoreCommunityQuestionsSort: ['publish', 'view']
 
 <Promo
   title="Connect at events around the globe!"
-  description="The Sitecore User Group Conference (SUGCON) series of regional, community-run, events take place all around the world. Join together with Sitecore developers and users to gain knowledge, get inspired, and connect with the rest of the Sitecore community! "
+  description="The Sitecore User Group Conference (SUGCON) is a series of regional, community-run, events that take place all around the world. Join together with Sitecore developers and users to gain knowledge, get inspired, and connect with the rest of the Sitecore community! "
   imageSource="https://sugcon.events/img/SUGCON-Europe-2022.jpg"
-  linkText="Learn more about SUGCON"
+  linkText="Find out where the next SUGCON is happening!"
   linkHref="https://www.sugcon.events" isImageLeft={false}
 />
