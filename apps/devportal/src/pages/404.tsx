@@ -13,7 +13,7 @@ export default function Custom404() {
         <CenteredContent>
           <Stack maxW={'lg'}>
             <Heading size="md" mb="0">
-              You can try to search for the page you requested
+              Maybe you can use our search to find what you are looking for?
             </Heading>
             <HStack>
               <SearchInput showButton />
