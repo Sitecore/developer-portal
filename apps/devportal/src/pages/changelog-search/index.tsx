@@ -3,9 +3,11 @@ import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Text, Tooltip } from '@
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
 import Layout from '@src/layouts/Layout';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import SearchChangeLog, { SearchChangeLogParams } from 'sc-changelog/search';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import Hero from 'ui/components/common/Hero';
 import ProductLogo from 'ui/components/common/ProductLogo';
@@ -63,41 +65,12 @@ export default function ChangeSearchlogHome({ entries }: { entries: ChangelogEnt
   );
 }
 
-export async function getStaticProps() {
-  const req = `{"context":{"page":{"uri":"/changelog-search"}},"widget":{"items":[{"entity":"content","rfk_id":"rfk_changelog","search":{"content":{},"facet":{"all":false,"types":[{"name":"changeTypeName"},{"name":"product_names"}]},"sort":{"value":[{"name":"release_date_desc"}]}}}]}}`;
-
-  // Fetch data from external API
-  const res = await fetch('https://discover.sitecorecloud.io/discover/v2/140623527', {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    headers: {
-      Authorization: process.env.NEXT_PUBLIC_SEARCH_APP_API_KEY ?? '',
-    },
-    body: req, // body data type must match "Content-Type" header
-  });
-  const data = await res.json();
-  const entries =
-    data?.widgets[0]?.content.map((entry: any) => {
-      return {
-        id: entry.id,
-        title: entry.title,
-        name: entry.title,
-        description: entry.description,
-        breakingChange: entry.breakingChange,
-        changeTypeName: entry.changeTypeName,
-        releaseDate: entry.releaseDate,
-        lightIcon: 'lightIcon',
-        darkIcon: 'darkIcon',
-        productName: entry.product_names[0],
-        sitecoreProduct: [],
-        readMoreLink: entry.url,
-        fullArticle: entry.full_article,
-        version: '1234',
-        image: [],
-        products: [],
-        changeType: [],
-      };
-    }) ?? [];
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const searchChangeLogParams: SearchChangeLogParams = {
+    path: context.resolvedUrl,
+  };
+  const entries = await SearchChangeLog(searchChangeLogParams);
 
   // Pass data to the page via props
   return { props: { entries } };
-}
+};
