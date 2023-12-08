@@ -2,6 +2,7 @@ import ChangelogSearchResults from '@/src/components/changelog/search/ChangelogS
 import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Text, Tooltip } from '@chakra-ui/react';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
+import { getUserId } from '@sitecore-search/react';
 import Layout from '@src/layouts/Layout';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
@@ -19,9 +20,10 @@ import { Product } from 'ui/lib/assets';
 type ChangeLogSearchData = {
   entries: ChangelogEntry[];
   path: string;
+  uuid?: string;
 };
 
-export default function ChangeSearchlogHome({ entries, path }: ChangeLogSearchData) {
+export default function ChangeSearchlogHome({ entries, path, uuid }: ChangeLogSearchData) {
   const [changelogData, setchangelogData] = useState<ChangelogEntry[]>(entries);
   const limit = 10;
   const [offset, setOffset] = useState<number>(10);
@@ -31,6 +33,7 @@ export default function ChangeSearchlogHome({ entries, path }: ChangeLogSearchDa
       path: path,
       limit: limit,
       offset: offset,
+      uuid: uuid,
     };
     const newData = changelogData.concat(await SearchChangeLog(searchChangeLogParams));
     setchangelogData(newData);
@@ -87,8 +90,10 @@ export default function ChangeSearchlogHome({ entries, path }: ChangeLogSearchDa
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const uuid = getUserId().uuid;
   const searchChangeLogParams: SearchChangeLogParams = {
     path: context.resolvedUrl,
+    uuid: uuid,
   };
   const entries = await SearchChangeLog(searchChangeLogParams);
 
@@ -97,6 +102,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       entries,
       path: searchChangeLogParams.path,
+      uuid: searchChangeLogParams.uuid,
     },
   };
 };
