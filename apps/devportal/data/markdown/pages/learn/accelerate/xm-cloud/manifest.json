@@ -3,10 +3,12 @@
   "description": "Tips for teams working on XM Cloud projects from developers in the field",
   "heading": false,
   "path": "/learn/accelerate/xm-cloud",
+  "showRootAsSections": true,
   "routes": [
     {
       "title": "Pre-development",
       "path": "pre-development",
+      "ignoreLink": true,
       "children": [
         {
           "title": "Discovery",
@@ -37,6 +39,7 @@
     {
       "title": "Implementation",
       "path": "implementation",
+      "ignoreLink": true,
       "children": [
         {
           "title": "Developer Experience",
@@ -101,6 +104,7 @@
     {
       "title": "Glossary of terms",
       "path": "glossary-of-terms",
+      "ignoreLink": true,
       "children": [
         {
           "title": "XM Cloud Glossary",

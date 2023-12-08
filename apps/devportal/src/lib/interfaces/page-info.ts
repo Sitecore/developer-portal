@@ -75,12 +75,14 @@ export type SubPageNavigation = {
   description: string;
   heading: boolean;
   path: string;
+  showRootAsSections?: boolean;
   routes: SubPageNavigationItem[];
 };
 
 export type SubPageNavigationItem = {
   title: string;
   path: string;
+  ignoreLink?: boolean;
   children: SubPageNavigationItem[];
 };
 

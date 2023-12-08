@@ -1,116 +1,131 @@
-import { Box, Button, ButtonGroup, Collapse, Heading, Icon, Stack, Text, Tooltip, Wrap, useDisclosure } from '@chakra-ui/react';
-import { mdiChevronDown, mdiChevronRight } from '@mdi/js';
+import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Hide, Icon, Link, Text, useDisclosure } from '@chakra-ui/react';
+import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
 import { default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { appendPathToBasePath } from 'ui/lib/utils/stringUtil';
 import { SubPageNavigation, SubPageNavigationItem } from '../../lib/interfaces/page-info';
+import { DropDownMenu } from './DropDownMenu';
 
-interface ChildNavigationProps {
+export interface ChildNavigationProps {
   title?: string;
   subPageNavigation: SubPageNavigation;
 }
 
 const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
-  const basePath = subPageNavigation.path;
+  const router = useRouter();
 
   return (
-    <Box as={'aside'}>
-      <Wrap layerStyle="" direction="column" maxH={`calc(100vh - 3.5rem)`} h={`calc(100vh - 3.5rem)`} top="14" overflow="auto" position={'sticky'} display="flex" flexFlow="column nowrap">
-        {subPageNavigation.heading && (
-          <Heading size="sm" mb={8} paddingLeft={5}>
-            {subPageNavigation.title}
-          </Heading>
-        )}
+    <Box>
+      <SideMenu subPageNavigation={subPageNavigation} />
 
-        {subPageNavigation?.routes.map((link, i) => {
-          const linkUrl = appendPathToBasePath(basePath, link.path);
-
-          return (
-            <Wrap mb={4} key={i}>
-              <Heading variant="section" px={2} fontWeight={'bold'}>
-                {link.title}
-              </Heading>
-              <ButtonGroup variant="navigation" orientation="vertical" spacing="1" mx={-2} width={'full'}>
-                {link.children?.length > 0 && renderChildren(link, linkUrl)}
-              </ButtonGroup>
-            </Wrap>
-          );
-        })}
-      </Wrap>
+      <Hide above="md">
+        <DropDownMenu subPageNavigation={subPageNavigation} key={router.asPath} />
+      </Hide>
     </Box>
   );
 };
 
-function renderChildren(link: SubPageNavigationItem, currentBasePath: string): React.ReactNode {
-  const router = useRouter();
-  return (
-    <Stack py={0}>
-      {link.children?.map((child, i) => {
-        const childUrl = appendPathToBasePath(currentBasePath, child.path);
+const SideMenu = ({ subPageNavigation }: ChildNavigationProps) => {
+  const basePath = subPageNavigation.path;
+  const showRootAsSections = subPageNavigation.showRootAsSections;
 
-        return (
-          <React.Fragment key={i}>
-            {!child.children ? (
-              <Button as={NextLink} href={childUrl} key={i} isActive={router.asPath == childUrl}>
-                <Text maxW={190} isTruncated px={2}>
-                  {child.title}
-                </Text>
-              </Button>
-            ) : (
-              renderGroup(i, child, childUrl)
-            )}
-          </React.Fragment>
-        );
-      })}
-    </Stack>
+  return (
+    <Flex direction="column" maxH={`calc(100vh - 3.5rem)`} h={`calc(100vh - 3.5rem)`} top="14" overflow="auto" position={'sticky'} as={'nav'} hideBelow={'md'}>
+      {subPageNavigation.heading && (
+        <Heading size="sm" mb={8}>
+          {subPageNavigation.title}
+        </Heading>
+      )}
+
+      <ButtonGroup variant="navigation" spacing={1} orientation="vertical" width={'full'} as={'ul'} role="list">
+        {subPageNavigation.routes.map((link, i) => {
+          return (
+            <React.Fragment key={i}>
+              {renderMenuItem(link, basePath, i, showRootAsSections)}
+
+              {link.children?.map((child, i) => {
+                const childUrl = appendPathToBasePath(basePath, link.path);
+
+                if (child.children?.length > 0) {
+                  return renderMenuGroup(child, childUrl, i);
+                }
+                return renderMenuItem(child, childUrl, i, false);
+              })}
+            </React.Fragment>
+          );
+        })}
+      </ButtonGroup>
+    </Flex>
+  );
+};
+
+function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index?: number, showRootAsSections?: boolean): React.ReactNode {
+  const router = useRouter();
+
+  // Show section heading
+  if (showRootAsSections) {
+    if (menuItem.ignoreLink != null && menuItem.ignoreLink)
+      return (
+        <Heading variant="section" px={2} fontWeight={'bold'} width={'full'} mx={-2} as="li" pt={4} pb={4} key={index}>
+          {menuItem.title}
+        </Heading>
+      );
+    // Include link
+    else
+      return (
+        <Heading variant="section" px={2} fontWeight={'bold'} as="li" mx={-2} pt={4} pb={4} key={index}>
+          <NextLink href={appendPathToBasePath(basePath, menuItem.path)}>{menuItem.title}</NextLink>
+        </Heading>
+      );
+  }
+
+  // Show normal link
+  return (
+    <Button colorScheme="neutral" isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'} key={index} as="li">
+      <Link as={NextLink} color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2}>
+        {menuItem.title}
+      </Link>
+    </Button>
   );
 }
 
-function renderGroup(i: number, child: SubPageNavigationItem, basePath: string): React.ReactNode {
-  const { isOpen, onToggle, onOpen } = useDisclosure();
+function renderMenuGroup(child: SubPageNavigationItem, basePath: string, index?: number): React.ReactNode {
+  const { isOpen, onToggle } = useDisclosure();
   const router = useRouter();
 
   return (
-    <React.Fragment key={i}>
-      <Tooltip label="Click to icon to toggle subitems" aria-label="A tooltip">
-        <Button
-          isActive={router.asPath == basePath}
-          rightIcon={
-            router.asPath.includes(basePath) ? (
-              <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronRight} /> : <path d={mdiChevronDown} />}</Icon>
-            ) : (
-              <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>
-            )
-          }
-          pl={3}
-          justifyContent={'space-between'}
-          width={'full'}
-          transition={'ease-in-out'}
-        >
-          {child.path ? (
-            <Text as={NextLink} href={basePath} px={2}>
-              {child.title}
-            </Text>
-          ) : (
-            <Text px={2}>{child.title}</Text>
-          )}
-        </Button>
-      </Tooltip>
+    <React.Fragment key={index}>
+      <Button
+        rightIcon={
+          router.asPath.includes(basePath) ? <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronUp} /> : <path d={mdiChevronDown} />}</Icon> : <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronUp} />}</Icon>
+        }
+        justifyContent={'space-between'}
+        width={'full'}
+        transition={'ease-in-out'}
+      >
+        {child.ignoreLink ? (
+          <Text px={2}>{child.title}</Text>
+        ) : (
+          <Text as={NextLink} href={appendPathToBasePath(basePath, child.path)} px={2}>
+            {child.title}
+          </Text>
+        )}
+      </Button>
 
-      <Collapse in={router.asPath.includes(basePath) ? !isOpen : isOpen} animateOpacity>
-        <Box pl={2}>{child.children?.length > 0 && renderChildren(child, basePath)}</Box>
+      <Collapse animateOpacity in={isOpen}>
+        <Box pl={2}>
+          {child.children?.length > 0 &&
+            child.children.map((link, i) => {
+              if (link.children?.length > 0) {
+                return renderMenuGroup(link, appendPathToBasePath(basePath, child.path), i);
+              }
+
+              return renderMenuItem(link, appendPathToBasePath(basePath, child.path), i);
+            })}
+        </Box>
       </Collapse>
     </React.Fragment>
   );
 }
-
-function appendPathToBasePath(basePath: string, path: string): string {
-  if (basePath.endsWith('/')) {
-    basePath += path;
-  } else {
-    basePath += `/${path}`;
-  }
-  return basePath;
-}
-
 export default ChildNavigation;
