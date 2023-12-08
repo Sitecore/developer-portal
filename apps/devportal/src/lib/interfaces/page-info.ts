@@ -73,14 +73,16 @@ export type PageInfo = PageInfoCore & {
 export type SubPageNavigation = {
   title: string;
   description: string;
-  heading: string;
+  heading: boolean;
   path: string;
+  showRootAsSections?: boolean;
   routes: SubPageNavigationItem[];
 };
 
 export type SubPageNavigationItem = {
   title: string;
   path: string;
+  ignoreLink?: boolean;
   children: SubPageNavigationItem[];
 };
 
