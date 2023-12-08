@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Hide, Icon, Show, Text, Wrap, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Hide, Icon, Text, Wrap, useDisclosure } from '@chakra-ui/react';
 import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
 import { default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
@@ -17,9 +17,8 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
 
   return (
     <Box as={'aside'}>
-      <Show above="md">
-        <SideMenu subPageNavigation={subPageNavigation} />
-      </Show>
+      <SideMenu subPageNavigation={subPageNavigation} />
+
       <Hide above="md">
         <DropDownMenu subPageNavigation={subPageNavigation} key={router.asPath} />
       </Hide>
@@ -32,7 +31,7 @@ const SideMenu = ({ subPageNavigation }: ChildNavigationProps) => {
   const showRootAsSections = subPageNavigation.showRootAsSections;
 
   return (
-    <Flex direction="column" maxH={`calc(100vh - 3.5rem)`} h={`calc(100vh - 3.5rem)`} top="14" overflow="auto" position={'sticky'} as={'nav'}>
+    <Flex direction="column" maxH={`calc(100vh - 3.5rem)`} h={`calc(100vh - 3.5rem)`} top="14" overflow="auto" position={'sticky'} as={'nav'} hideBelow={'md'}>
       {subPageNavigation.heading && (
         <Heading size="sm" mb={8}>
           {subPageNavigation.title}
@@ -43,15 +42,15 @@ const SideMenu = ({ subPageNavigation }: ChildNavigationProps) => {
         {subPageNavigation.routes.map((link, i) => {
           return (
             <Wrap key={i} as="li">
-              {renderMenuItem(link, basePath, showRootAsSections)}
+              {renderMenuItem(link, basePath, i, showRootAsSections)}
 
               {link.children?.map((child, i) => {
                 const childUrl = appendPathToBasePath(basePath, link.path);
 
                 if (child.children?.length > 0) {
-                  return renderMenuGroup(child, childUrl);
+                  return renderMenuGroup(child, childUrl, i);
                 }
-                return renderMenuItem(child, childUrl, false);
+                return renderMenuItem(child, childUrl, i, false);
               })}
             </Wrap>
           );
@@ -61,21 +60,21 @@ const SideMenu = ({ subPageNavigation }: ChildNavigationProps) => {
   );
 };
 
-function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, showRootAsSections?: boolean): React.ReactNode {
+function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index?: number, showRootAsSections?: boolean): React.ReactNode {
   const router = useRouter();
 
   // Show section heading
   if (showRootAsSections) {
     if (menuItem.ignoreLink != null && menuItem.ignoreLink)
       return (
-        <Heading variant="section" px={2} fontWeight={'bold'} width={'full'} as="li" my={4}>
+        <Heading variant="section" px={2} fontWeight={'bold'} width={'full'} as="li" my={4} key={index}>
           {menuItem.title}
         </Heading>
       );
     // Include link
     else
       return (
-        <Heading variant="section" px={2} fontWeight={'bold'} as="li" my={4}>
+        <Heading variant="section" px={2} fontWeight={'bold'} as="li" my={4} key={index}>
           <NextLink href={appendPathToBasePath(basePath, menuItem.path)}>{menuItem.title}</NextLink>
         </Heading>
       );
@@ -83,18 +82,18 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, showR
 
   // Show normal link
   return (
-    <Button as={NextLink} href={appendPathToBasePath(basePath, menuItem.path)} isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'}>
+    <Button as={NextLink} href={appendPathToBasePath(basePath, menuItem.path)} isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'} key={index}>
       <Text px={2}>{menuItem.title}</Text>
     </Button>
   );
 }
 
-function renderMenuGroup(child: SubPageNavigationItem, basePath: string): React.ReactNode {
+function renderMenuGroup(child: SubPageNavigationItem, basePath: string, index?: number): React.ReactNode {
   const { isOpen, onToggle } = useDisclosure();
   const router = useRouter();
 
   return (
-    <React.Fragment>
+    <React.Fragment key={index}>
       <Button
         rightIcon={
           router.asPath.includes(basePath) ? <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronUp} /> : <path d={mdiChevronDown} />}</Icon> : <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronUp} />}</Icon>
