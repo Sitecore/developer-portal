@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Hide, Icon, Text, Wrap, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Hide, Icon, Link, Text, useDisclosure } from '@chakra-ui/react';
 import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
 import { default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
@@ -16,7 +16,7 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
   const router = useRouter();
 
   return (
-    <Box as={'aside'}>
+    <Box>
       <SideMenu subPageNavigation={subPageNavigation} />
 
       <Hide above="md">
@@ -38,10 +38,10 @@ const SideMenu = ({ subPageNavigation }: ChildNavigationProps) => {
         </Heading>
       )}
 
-      <ButtonGroup variant="navigation" orientation="vertical" spacing="1" mx={-2} width={'full'} as={'ul'}>
+      <ButtonGroup variant="navigation" spacing={1} orientation="vertical" width={'full'} as={'ul'} role="list">
         {subPageNavigation.routes.map((link, i) => {
           return (
-            <Wrap key={i} as="li">
+            <React.Fragment key={i}>
               {renderMenuItem(link, basePath, i, showRootAsSections)}
 
               {link.children?.map((child, i) => {
@@ -52,7 +52,7 @@ const SideMenu = ({ subPageNavigation }: ChildNavigationProps) => {
                 }
                 return renderMenuItem(child, childUrl, i, false);
               })}
-            </Wrap>
+            </React.Fragment>
           );
         })}
       </ButtonGroup>
@@ -67,14 +67,14 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
   if (showRootAsSections) {
     if (menuItem.ignoreLink != null && menuItem.ignoreLink)
       return (
-        <Heading variant="section" px={2} fontWeight={'bold'} width={'full'} as="li" my={4} key={index}>
+        <Heading variant="section" px={2} fontWeight={'bold'} width={'full'} mx={-2} as="li" pt={4} pb={4} key={index}>
           {menuItem.title}
         </Heading>
       );
     // Include link
     else
       return (
-        <Heading variant="section" px={2} fontWeight={'bold'} as="li" my={4} key={index}>
+        <Heading variant="section" px={2} fontWeight={'bold'} as="li" mx={-2} pt={4} pb={4} key={index}>
           <NextLink href={appendPathToBasePath(basePath, menuItem.path)}>{menuItem.title}</NextLink>
         </Heading>
       );
@@ -82,8 +82,10 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
 
   // Show normal link
   return (
-    <Button as={NextLink} href={appendPathToBasePath(basePath, menuItem.path)} isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'} key={index}>
-      <Text px={2}>{menuItem.title}</Text>
+    <Button colorScheme="neutral" isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'} key={index} as="li">
+      <Link as={NextLink} color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2}>
+        {menuItem.title}
+      </Link>
     </Button>
   );
 }
@@ -116,10 +118,10 @@ function renderMenuGroup(child: SubPageNavigationItem, basePath: string, index?:
           {child.children?.length > 0 &&
             child.children.map((link, i) => {
               if (link.children?.length > 0) {
-                return renderMenuGroup(link, appendPathToBasePath(basePath, child.path));
+                return renderMenuGroup(link, appendPathToBasePath(basePath, child.path), i);
               }
 
-              return renderMenuItem(link, appendPathToBasePath(basePath, child.path));
+              return renderMenuItem(link, appendPathToBasePath(basePath, child.path), i);
             })}
         </Box>
       </Collapse>
