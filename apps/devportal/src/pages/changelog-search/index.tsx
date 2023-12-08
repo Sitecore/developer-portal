@@ -7,6 +7,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import SearchChangeLog, { SearchChangeLogParams } from 'sc-changelog/search';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import Hero from 'ui/components/common/Hero';
@@ -15,7 +16,27 @@ import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { Product } from 'ui/lib/assets';
 
-export default function ChangeSearchlogHome({ entries }: { entries: ChangelogEntry[] }) {
+type ChangeLogSearchData = {
+  entries: ChangelogEntry[];
+  path: string;
+};
+
+export default function ChangeSearchlogHome({ entries, path }: ChangeLogSearchData) {
+  const [changelogData, setchangelogData] = useState<ChangelogEntry[]>(entries);
+  const limit = 10;
+  const [offset, setOffset] = useState<number>(10);
+
+  const loadEntries = async () => {
+    const searchChangeLogParams: SearchChangeLogParams = {
+      path: path,
+      limit: limit,
+      offset: offset,
+    };
+    const newData = changelogData.concat(await SearchChangeLog(searchChangeLogParams));
+    setchangelogData(newData);
+    setOffset(offset + limit);
+  };
+
   const router = useRouter();
   return (
     <>
@@ -48,7 +69,7 @@ export default function ChangeSearchlogHome({ entries }: { entries: ChangelogEnt
             </Alert>
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
-                <ChangelogSearchResults entries={entries} />
+                <ChangelogSearchResults entries={changelogData} loadEntries={() => loadEntries()} />
               </GridItem>
               <Hide below="md">
                 <GridItem colSpan={{ base: 2 }}>
@@ -72,5 +93,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const entries = await SearchChangeLog(searchChangeLogParams);
 
   // Pass data to the page via props
-  return { props: { entries } };
+  return {
+    props: {
+      entries,
+      path: searchChangeLogParams.path,
+    },
+  };
 };

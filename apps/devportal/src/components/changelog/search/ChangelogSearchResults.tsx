@@ -4,16 +4,17 @@ import ChangeLogSearchItem from './ChangeLogSearchItem';
 
 type ChangeLogSearchItemProps = {
   entries: ChangelogEntry[];
+  loadEntries: () => void;
 };
 
-export const ChangelogSearchResults = ({ entries }: ChangeLogSearchItemProps) => {
+export const ChangelogSearchResults = ({ entries, loadEntries }: ChangeLogSearchItemProps) => {
   return (
     <>
       <Box>
         {entries.length > 0 && (
           <>
             {entries.map((entry, i) => (
-              <ChangeLogSearchItem item={entry} key={i} isLast={i === entries.length - 1} isMore={true} loadEntries={() => window.alert('PAGING!')} />
+              <ChangeLogSearchItem item={entry} key={i} isLast={i === entries.length - 1} isMore={true} loadEntries={loadEntries} />
             ))}
           </>
         )}

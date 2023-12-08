@@ -29,7 +29,7 @@ export async function QuerySearchApi({ query }: QuerySearchApiParams): Promise<C
         sitecoreProduct: [],
         readMoreLink: entry.url,
         fullArticle: entry.full_article,
-        image: entry.image ? [entry.image] : [],
+        image: entry.image ?? [],
         products: entry?.products.map((product: any) => {
           return {
             id: product.id,
@@ -42,6 +42,5 @@ export async function QuerySearchApi({ query }: QuerySearchApiParams): Promise<C
         changeType: [],
       };
     }) ?? [];
-
   return entries;
 }
