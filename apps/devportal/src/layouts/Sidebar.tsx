@@ -1,4 +1,4 @@
-import { Box, Wrap, WrapProps } from '@chakra-ui/react';
+import { Box, WrapProps } from '@chakra-ui/react';
 
 interface SidebarProps extends WrapProps {
   showBackground?: boolean;
@@ -9,7 +9,7 @@ export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarPr
   return (
     <Box as={'aside'} w={{ base: 'full', md: 'sm', sm: 'full' }} order={{ base: -1, md: 0 }} flexShrink={3}>
       {children && (
-        <Wrap
+        <Box
           layerStyle={showBackground ? 'section.sidebar' : rest.layerStyle}
           direction="column"
           maxH={{ base: 'auto', md: `100vh` }}
@@ -20,10 +20,11 @@ export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarPr
           position={{ base: 'static', md: 'sticky' }}
           display="flex"
           flexFlow="column nowrap"
+          as={'div'}
           {...rest}
         >
           {children}
-        </Wrap>
+        </Box>
       )}
     </Box>
   );
