@@ -1,9 +1,4 @@
-export type SearchChangeLogQueryParams = {
-  path: string;
-  limit?: number;
-  offset?: number;
-  uuid?: string;
-}
+import { SearchChangeLogQueryParams } from "./types";
 
 export function buildSearchQuery({ path, limit = 10, offset = 0, uuid }: SearchChangeLogQueryParams) {
   const contextNode = buildContextNode({ path, uuid });
@@ -24,10 +19,18 @@ export function buildSearchQuery({ path, limit = 10, offset = 0, uuid }: SearchC
               "all": false,
               "types": [
                 {
-                  "name": "changeTypeName"
+                  "name": "changeTypeName",
+                  "sort": {
+                      "name": "text",
+                      "order": "asc"
+                  }
                 },
                 {
-                  "name": "product_names"
+                  "name": "product_names",
+                  "sort": {
+                      "name": "text",
+                      "order": "asc"
+                  }
                 }
               ]
             },

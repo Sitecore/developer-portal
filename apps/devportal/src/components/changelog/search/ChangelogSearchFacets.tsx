@@ -1,10 +1,10 @@
 import { Container, VisuallyHidden } from '@chakra-ui/react';
-import { SearchResponseFacet } from '@sitecore-search/react';
+import { ChangeLogSearchFacet } from 'sc-changelog/search/types';
 import MultiSelect from 'ui/components/dropdown/MultiSelect';
 
 export interface SearchFacetsType {
   onFacetClick: (facet: any) => void;
-  facets: SearchResponseFacet[];
+  facets: ChangeLogSearchFacet[];
 }
 
 export const ChangelogSearchFacets = ({ facets }: SearchFacetsType) => {

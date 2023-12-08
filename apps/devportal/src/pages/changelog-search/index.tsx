@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import SearchChangeLog, { SearchChangeLogParams } from 'sc-changelog/search';
+import { QuerySearchApiResult } from 'sc-changelog/search/types';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import Hero from 'ui/components/common/Hero';
 import ProductLogo from 'ui/components/common/ProductLogo';
@@ -18,13 +19,13 @@ import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { Product } from 'ui/lib/assets';
 
 type ChangeLogSearchData = {
-  entries: ChangelogEntry[];
+  searchApiResult: QuerySearchApiResult;
   path: string;
   uuid?: string;
 };
 
-export default function ChangeSearchlogHome({ entries, path, uuid }: ChangeLogSearchData) {
-  const [changelogData, setchangelogData] = useState<ChangelogEntry[]>(entries);
+export default function ChangeSearchlogHome({ searchApiResult, path, uuid }: ChangeLogSearchData) {
+  const [changelogData, setchangelogData] = useState<ChangelogEntry[]>(searchApiResult.entries);
   const limit = 10;
   const [offset, setOffset] = useState<number>(10);
 
@@ -35,7 +36,7 @@ export default function ChangeSearchlogHome({ entries, path, uuid }: ChangeLogSe
       offset: offset,
       uuid: uuid,
     };
-    const newData = changelogData.concat(await SearchChangeLog(searchChangeLogParams));
+    const newData = changelogData.concat((await SearchChangeLog(searchChangeLogParams)).entries);
     setchangelogData(newData);
     setOffset(offset + limit);
   };
@@ -72,7 +73,7 @@ export default function ChangeSearchlogHome({ entries, path, uuid }: ChangeLogSe
             </Alert>
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
-                <ChangelogSearchResults entries={changelogData} loadEntries={() => loadEntries()} />
+                <ChangelogSearchResults entries={changelogData} facets={searchApiResult.facets} loadEntries={() => loadEntries()} />
               </GridItem>
               <Hide below="md">
                 <GridItem colSpan={{ base: 2 }}>
@@ -95,12 +96,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     path: context.resolvedUrl,
     uuid: uuid,
   };
-  const entries = await SearchChangeLog(searchChangeLogParams);
+  const searchApiResult = await SearchChangeLog(searchChangeLogParams);
 
   // Pass data to the page via props
   return {
     props: {
-      entries,
+      searchApiResult,
       path: searchChangeLogParams.path,
       uuid: searchChangeLogParams.uuid,
     },
