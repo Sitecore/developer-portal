@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 import { IsSearchEnabled, SEARCH_CONFIG } from '@lib/search';
 import { scdpTheme } from '@lib/theme/theme';
 import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
@@ -95,9 +95,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Navbar>
             <SearchInputSwitcher />
           </Navbar>
-          <div ref={contentInnerRef}>
+          <Box ref={contentInnerRef} paddingBottom={{ base: 32, md: 20 }}>
             <Component {...pageProps} />
-          </div>
+          </Box>
           <Footer />
         </PreviewProvider>
       </ChakraProvider>
