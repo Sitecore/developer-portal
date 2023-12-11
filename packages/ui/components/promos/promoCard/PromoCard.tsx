@@ -1,5 +1,5 @@
 // Global
-import { Card, CardBody, Center, HStack, Heading, Hide, Image, Link, Stack, Text } from '@chakra-ui/react';
+import { Card, CardBody, Center, HStack, Heading, Hide, Image, LinkBox, LinkOverlay, Stack, Text } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 import NextLink from 'next/link';
@@ -10,7 +10,7 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
     src={img.src}
     alt={img.alt || ''}
     objectFit="cover"
-    maxW={{ base: '100%', md: '400px' }}
+    maxW={{ base: '100%', md: '250px' }}
 
     //priority={true}
   />
@@ -18,7 +18,7 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
 
 export const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps): JSX.Element => (
   <Center>
-    <Card direction={{ base: 'column', md: 'row' }} overflow="hidden" variant="outlineRaised" maxW={'container.md'}>
+    <LinkBox as={Card} direction={{ base: 'column', md: 'row' }} overflow="hidden" variant="outlineRaised" maxW={'container.md'} layerStyle={'interactive.raise'}>
       {isImageLeft && <PromoCardImage img={img} />}
 
       <Stack>
@@ -29,9 +29,9 @@ export const PromoCard = ({ title, description, img, link, isImageLeft = true }:
           <Text>{description}</Text>
           {!!link && (
             <HStack as={'span'} mt={2}>
-              <Link as={NextLink} href={link.href} fontWeight={'semibold'}>
+              <LinkOverlay as={NextLink} href={link.href} fontWeight={'semibold'}>
                 {link.text}
-              </Link>
+              </LinkOverlay>
               <Icon path={mdiArrowRight} size={0.8} />
             </HStack>
           )}
@@ -42,7 +42,7 @@ export const PromoCard = ({ title, description, img, link, isImageLeft = true }:
           <PromoCardImage img={img} />
         </Hide>
       )}
-    </Card>
+    </LinkBox>
   </Center>
 );
 
