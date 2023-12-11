@@ -14,12 +14,14 @@ export type SearchChangeLogQueryParams = {
   limit?: number;
   offset?: number;
   uuid?: string;
+  facets: ChangeLogSearchFacet[];
 }
 
 export type ChangeLogSearchFacetValue = {
   id: string;
   text: string;
   count: number;
+  selected: boolean;
 }
 
 export type ChangeLogSearchFacet = {

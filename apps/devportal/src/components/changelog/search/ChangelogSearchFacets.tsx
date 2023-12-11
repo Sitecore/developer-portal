@@ -1,36 +1,16 @@
-import { Container, VisuallyHidden } from '@chakra-ui/react';
-import { ChangeLogSearchFacet } from 'sc-changelog/search/types';
-import MultiSelect from 'ui/components/dropdown/MultiSelect';
+import { ChangeLogSearchFacet, ChangeLogSearchFacetValue } from 'sc-changelog/search/types';
+import ChangelogSearchFilter from './ChangelogSearchFilter';
 
 export interface SearchFacetsType {
-  onFacetClick: (facet: any) => void;
+  onFacetChange: (facets: ChangeLogSearchFacetValue[], facetName: string) => void;
   facets: ChangeLogSearchFacet[];
 }
 
-export const ChangelogSearchFacets = ({ facets }: SearchFacetsType) => {
+export const ChangelogSearchFacets = ({ facets, onFacetChange }: SearchFacetsType) => {
   return (
     <>
       {facets.map((facet, index) => (
-        <Container marginBottom={4} marginX={0} width={'full'} key={index}>
-          <VisuallyHidden>
-            <label className="sr-only" htmlFor={`react-select-${facet.name}-input`}>
-              {facet.label}
-            </label>
-          </VisuallyHidden>
-
-          <MultiSelect
-            id={facet.name}
-            instanceId={facet.name}
-            key={facet.name}
-            options={facet.value.map((value) => ({
-              label: `${value.text} (${value.count})`,
-              value: value.text,
-            }))}
-            isSelectAll={true}
-            menuPlacement={'bottom'}
-            placeholder={facet.label}
-          />
-        </Container>
+        <ChangelogSearchFilter facet={facet} onFacetChange={onFacetChange} key={index} />
       ))}
     </>
   );

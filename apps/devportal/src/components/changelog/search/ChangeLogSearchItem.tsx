@@ -16,10 +16,10 @@ export type ChangeLogItemProps = {
   item: ChangelogEntry;
   isLast: boolean;
   isMore?: boolean;
-  loadEntries: () => void;
+  onNextPage: () => void;
 };
 
-const ChangeLogSearchItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
+const ChangeLogSearchItem = ({ item, onNextPage, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const entryRef = useRef(null);
 
@@ -28,7 +28,7 @@ const ChangeLogSearchItem = ({ item, loadEntries, isLast, isMore }: ChangeLogIte
 
     const observer = new IntersectionObserver(([entry]) => {
       if (isLast && entry.isIntersecting && isMore) {
-        loadEntries();
+        onNextPage();
         observer.unobserve(entry.target);
       }
     });

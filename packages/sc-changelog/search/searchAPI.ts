@@ -51,7 +51,8 @@ export async function BindResponse(response: Response): Promise<QuerySearchApiRe
         return {
           id: value.id,
           text: value.text,
-          count: value.count
+          count: value.count,
+          selected: false
         }
       })
     }

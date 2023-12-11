@@ -1,7 +1,8 @@
-import { SearchChangeLogQueryParams } from "./types";
+import { ChangeLogSearchFacet, SearchChangeLogQueryParams } from "./types";
 
-export function buildSearchQuery({ path, limit = 10, offset = 0, uuid }: SearchChangeLogQueryParams) {
+export function buildSearchQuery({ path, limit = 10, offset = 0, uuid, facets }: SearchChangeLogQueryParams) {
   const contextNode = buildContextNode({ path, uuid });
+  const facetNode = buildFacetQuery({ facets });
   return `
   {
     ${contextNode}
@@ -15,25 +16,7 @@ export function buildSearchQuery({ path, limit = 10, offset = 0, uuid }: SearchC
             "content": {},
             "limit": ${limit},
             "offset": ${offset},
-            "facet": {
-              "all": false,
-              "types": [
-                {
-                  "name": "changeTypeName",
-                  "sort": {
-                      "name": "text",
-                      "order": "asc"
-                  }
-                },
-                {
-                  "name": "product_names",
-                  "sort": {
-                      "name": "text",
-                      "order": "asc"
-                  }
-                }
-              ]
-            },
+            ${facetNode}
             "sort": {
               "value":
               [
@@ -66,4 +49,48 @@ export function buildContextNode({ path, uuid }: { path: string, uuid: string | 
     }
   `;
   return contextNode;
+}
+
+export function buildFacetQuery({ facets }: { facets: ChangeLogSearchFacet[] }) {
+  return `
+    "facet": {
+      "all": false,
+      "types": [
+        {
+          "name": "changeTypeName",
+          "sort": {
+              "name": "text",
+              "order": "asc"
+          }
+          ${buildFacetSelection('changeTypeName', facets)}
+        },
+        {
+          "name": "product_names",
+          "sort": {
+              "name": "text",
+              "order": "asc"
+          }
+          ${buildFacetSelection('product_names', facets)}
+        }
+      ]
+    },
+  `;
+}
+
+export function buildFacetSelection(facetName: string, facets: ChangeLogSearchFacet[]) {
+  for (let i = 0; i < facets.length; i++) {
+    const facet = facets[i];
+    // console.log(facet.name, facetName, facet.name === facetName);
+    if (facet.name === facetName && facet.value.some((v: { selected: boolean; }) => v.selected)) {
+      return `
+      ,"filter": {
+        "type": "or",
+        "values": [
+          ${facet.value.filter((v: { selected: boolean; }) => v.selected).map((v: { id: string; }) => `"${v.id}"`).join(',')}
+        ]
+      }
+    `;
+    }
+  }
+  return '';
 }

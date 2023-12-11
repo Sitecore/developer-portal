@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import SearchChangeLog, { SearchChangeLogParams } from 'sc-changelog/search';
-import { ChangeLogSearchFacet } from 'sc-changelog/search/types';
+import { ChangeLogSearchFacet, ChangeLogSearchFacetValue } from 'sc-changelog/search/types';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import Hero from 'ui/components/common/Hero';
 import ProductLogo from 'ui/components/common/ProductLogo';
@@ -20,31 +20,63 @@ import { Product } from 'ui/lib/assets';
 export default function ChangeSearchlogHome() {
   const [entries, setEntries] = useState<ChangelogEntry[]>([]);
   const [facets, setFacets] = useState<ChangeLogSearchFacet[]>([]);
-  const limit = 10;
   const [offset, setOffset] = useState<number>(0);
   const [isLoading, setisLoading] = useState<boolean>(true);
+  const limit = 5;
   const uuid = getUserId().uuid;
   const router = useRouter();
 
-  const loadEntries = async () => {
+  const onNextPage = async () => {
     const searchChangeLogParams: SearchChangeLogParams = {
       path: router.pathname,
       limit: limit,
       offset: offset,
       uuid: uuid,
+      facets: facets,
     };
 
-    const apiResponse = await SearchChangeLog(searchChangeLogParams);
-    const newEntries = entries.concat((await SearchChangeLog(searchChangeLogParams)).entries);
-    setEntries(newEntries);
-    setFacets(apiResponse.facets);
-
+    await callSearchApi(searchChangeLogParams, true);
     setOffset(offset + limit);
-    setisLoading(false);
+  };
+
+  const onFacetChange = async (facet: ChangeLogSearchFacetValue[], facetName: string) => {
+    const newFacets = facets.map((f) => {
+      if (f.name == facetName) {
+        return {
+          ...f,
+          value: facet,
+        };
+      } else {
+        return f;
+      }
+    });
+
+    const searchChangeLogParams: SearchChangeLogParams = {
+      path: router.pathname,
+      limit: limit,
+      offset: 0,
+      uuid: uuid,
+      facets: newFacets,
+    };
+
+    await callSearchApi(searchChangeLogParams, false);
+    setOffset(0);
+  };
+
+  const callSearchApi = async (searchChangeLogParams: SearchChangeLogParams, concat: boolean) => {
+    const apiResponse = await SearchChangeLog(searchChangeLogParams);
+    if (concat) {
+      const newEntries = entries.concat(apiResponse.entries);
+      setEntries(newEntries);
+    } else {
+      setEntries(apiResponse.entries);
+    }
+    setFacets(apiResponse.facets);
   };
 
   useEffect(() => {
-    loadEntries();
+    onNextPage();
+    setisLoading(false);
   }, []);
 
   return (
@@ -72,13 +104,13 @@ export default function ChangeSearchlogHome() {
               <AlertIcon />
               <Tooltip label="Go to the overview of current release notes" aria-label="A tooltip">
                 <Link href="/changelog/current" title="View the list of current release notes per product">
-                  You are viewing the public preview of the upcoming Sitecore global changelog.
+                  You are viewing the Sitecore Cloud changelog. To see release notes for Sitecore products not yet listed here, click here.
                 </Link>
               </Tooltip>
             </Alert>
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
-                <ChangelogSearchResults entries={entries} facets={facets} isLoading={isLoading} loadEntries={() => loadEntries()} />
+                <ChangelogSearchResults entries={entries} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} />
               </GridItem>
               <Hide below="md">
                 <GridItem colSpan={{ base: 2 }}>
