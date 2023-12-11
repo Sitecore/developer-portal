@@ -40,8 +40,8 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
                 <VisuallyHidden>Tags:</VisuallyHidden>
                 {question.tags.length && (
                   <Wrap direction={{ base: 'column', sm: 'row' }}>
-                    {question.tags.map((tag) => (
-                      <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')}>
+                    {question.tags.map((tag, i) => (
+                      <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')} key={i}>
                         <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
                           {tag}
                           <VisuallyHidden>Opens in a new tab</VisuallyHidden>

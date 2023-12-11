@@ -5,7 +5,6 @@ import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@site
 import { toastOptions } from '@sitecore/blok-theme';
 import { Footer } from '@src/components/navigation/Footer';
 import Navbar from '@src/components/navigation/NavBar';
-import SearchInputSwitcher from '@src/components/sitecore-search/SearchInputSwitcher';
 import { AppProps } from 'next/app';
 import { Router, useRouter } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -92,9 +91,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={scdpTheme} toastOptions={toastOptions}>
         <PreviewProvider preview={router.isPreview} currentHostname={hostname}>
           {progress && <TopBarProgress />}
-          <Navbar>
-            <SearchInputSwitcher />
-          </Navbar>
+          <Navbar searchEnabled={IsSearchEnabled()} />
           <Box ref={contentInnerRef} paddingBottom={{ base: 32, md: 20 }}>
             <Component {...pageProps} />
           </Box>

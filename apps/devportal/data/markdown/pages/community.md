@@ -10,9 +10,9 @@ sitecoreCommunityQuestionsSort: ['publish', 'view']
 ---
 
 <Promo
-  title="Recommended Practices"
-  description="Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects! "
-  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
-  linkText="Read now!"
-  linkHref="/learn/faq/xm-cloud-recommended-practices" isImageLeft={false}
+  title="Connect at events around the globe!"
+  description="The Sitecore User Group Conference (SUGCON) is a series of regional, community-run, events that take place all around the world. Join together with Sitecore developers and users to gain knowledge, get inspired, and connect with the rest of the Sitecore community! "
+  imageSource="https://sugcon.events/img/SUGCON-Europe-2022.jpg"
+  linkText="Find a SUGCON near you!"
+  linkHref="https://www.sugcon.events" isImageLeft={false}
 />
