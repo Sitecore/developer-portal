@@ -1,3 +1,4 @@
+import frontendSurvey from '@/data/promos/frontend-survey';
 import { Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import communityListData from '@data/data-community-list';
 import platformData from '@data/data-platform';
@@ -14,7 +15,7 @@ import Hexagons from 'ui/components/hexagons/Hexagons';
 import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
 import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
 import { CategoryTileList, GenericList } from 'ui/components/lists';
-import { CTACard } from 'ui/components/promos';
+import { CTACard, PromoCard } from 'ui/components/promos';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
@@ -37,12 +38,15 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
     <Hero title={pageInfo.title} description={pageInfo.description} />
 
     <VerticalGroup background={'chakra-bg'}>
-      <CenteredContent paddingTop={{ base: 1, lg: 2 }}>
-        <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.data} />
+      <CenteredContent>
+        <PromoCard {...frontendSurvey} />
+
         <SimpleGrid py={4} gap={4} columns={[1, 1, 2]}>
           <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
           <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} listItem={true} />
         </SimpleGrid>
+
+        <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.data} />
       </CenteredContent>
     </VerticalGroup>
 
@@ -52,7 +56,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
       </CenteredContent>
     </VerticalGroup>
 
-    <VerticalGroup background={'primary.900'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundSize={'cover'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
+    <VerticalGroup background={'primary.700'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundSize={'cover'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
       <CenteredContent>
         <GenericList title={platformData.title} subtitle={platformData.subtitle} data={platformData.data} column={3} width={{ base: 'full', md: '2xs' }} cardVariant="blurred" />
       </CenteredContent>
