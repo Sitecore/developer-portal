@@ -1,3 +1,4 @@
+import frontendSurvey from '@/data/promos/frontend-survey';
 import { Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import communityListData from '@data/data-community-list';
 import platformData from '@data/data-platform';
@@ -14,7 +15,7 @@ import Hexagons from 'ui/components/hexagons/Hexagons';
 import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
 import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
 import { CategoryTileList, GenericList } from 'ui/components/lists';
-import { CTACard, Promo } from 'ui/components/promos';
+import { CTACard, PromoCard } from 'ui/components/promos';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
@@ -38,14 +39,7 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
 
     <VerticalGroup background={'chakra-bg'}>
       <CenteredContent>
-        <Promo
-          title="Sitecore wants your feedback on your favorite front-end frameworks!"
-          description="Take this VERY short survey from the Sitecore Developer Experience team and let us know what frameworks you use today and which ones you wish you could use! Submit by December 30th, 2023, so that your ideas can be brought into our planning."
-          imageSource="/images/xm-cloud-agility-for-developers.png"
-          linkText="Survey"
-          linkHref="https://forms.office.com/e/21VzBVhyji"
-          isImageLeft={false}
-        />
+        <PromoCard {...frontendSurvey} />
 
         <SimpleGrid py={4} gap={4} columns={[1, 1, 2]}>
           <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
