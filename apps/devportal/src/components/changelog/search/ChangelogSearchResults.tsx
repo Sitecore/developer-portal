@@ -16,6 +16,8 @@ export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading,
   return (
     <>
       <Box>
+        {facets.length > 0 && <ChangelogSearchFacets facets={facets} onFacetChange={onFacetChange} />}
+
         {isLoading && (
           <>
             <Placeholder />
@@ -23,9 +25,7 @@ export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading,
           </>
         )}
 
-        {facets.length > 0 && <ChangelogSearchFacets facets={facets} onFacetChange={onFacetChange} />}
-
-        {entries.length > 0 && entries.map((entry, i) => <ChangeLogSearchItem item={entry} key={i} isLast={i === entries.length - 1} isMore={true} onNextPage={onNextPage} />)}
+        {!isLoading && entries.length > 0 && entries.map((entry, i) => <ChangeLogSearchItem item={entry} key={i} isLast={i === entries.length - 1} isMore={true} onNextPage={onNextPage} />)}
       </Box>
     </>
   );

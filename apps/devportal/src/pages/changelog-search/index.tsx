@@ -40,6 +40,7 @@ export default function ChangeSearchlogHome() {
   };
 
   const onFacetChange = async (facet: ChangeLogSearchFacetValue[], facetName: string) => {
+    setisLoading(true);
     const newFacets = facets.map((f) => {
       if (f.name == facetName) {
         return {
@@ -61,6 +62,7 @@ export default function ChangeSearchlogHome() {
 
     await callSearchApi(searchChangeLogParams, false);
     setOffset(0);
+    setisLoading(false);
   };
 
   const callSearchApi = async (searchChangeLogParams: SearchChangeLogParams, concat: boolean) => {
