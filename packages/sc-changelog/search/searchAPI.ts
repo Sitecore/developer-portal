@@ -1,6 +1,6 @@
-import { QuerySearchApiParams, QuerySearchApiResult } from "./types";
+import { ChangeLogSearchFacet, QuerySearchApiParams, QuerySearchApiResult } from "./types";
 
-export async function QuerySearchApi({ query }: QuerySearchApiParams): Promise<QuerySearchApiResult> {
+export async function QuerySearchApi({ query, selectedFacets }: QuerySearchApiParams): Promise<QuerySearchApiResult> {
 
   const response = await fetch('https://discover.sitecorecloud.io/discover/v2/140623527', {
     method: 'POST',
@@ -10,10 +10,10 @@ export async function QuerySearchApi({ query }: QuerySearchApiParams): Promise<Q
     body: query,
   });
 
-  return await BindResponse(response);
+  return await BindResponse(response, selectedFacets);
 }
 
-export async function BindResponse(response: Response): Promise<QuerySearchApiResult> {
+export async function BindResponse(response: Response, selectedFacets: ChangeLogSearchFacet[]): Promise<QuerySearchApiResult> {
   const data = await response.json();
 
   const entries = data?.widgets[0]?.content.map((entry: any) => {
@@ -52,7 +52,7 @@ export async function BindResponse(response: Response): Promise<QuerySearchApiRe
           id: value.id,
           text: value.text,
           count: value.count,
-          selected: false
+          selected: IsFacetValueSelected(facet.name, value.id, selectedFacets)
         }
       })
     }
@@ -60,6 +60,11 @@ export async function BindResponse(response: Response): Promise<QuerySearchApiRe
 
   return {
     entries,
-    facets
+    facets,
+    isMore: data?.widgets[0].total_item > data?.widgets[0].offset + data?.widgets[0].limit
   }
-} 
+}
+
+export function IsFacetValueSelected(facetName: string, facetValueId: string, selectedFacets: ChangeLogSearchFacet[]) {
+  return selectedFacets.find(facet => facet.name === facetName)?.value.find(value => value.id === facetValueId)?.selected ?? false;
+}

@@ -12,5 +12,5 @@ export type SearchChangeLogParams = {
 
 export default async function SearchChangeLog({ path, limit = 10, offset = 0, uuid, facets }: SearchChangeLogParams): Promise<QuerySearchApiResult> {
   const query = buildSearchQuery({ path, limit, offset, uuid, facets });
-  return await QuerySearchApi({ query });
+  return await QuerySearchApi({ query, selectedFacets: facets });
 }

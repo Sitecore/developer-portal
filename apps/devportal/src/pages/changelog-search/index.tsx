@@ -22,6 +22,7 @@ export default function ChangeSearchlogHome() {
   const [facets, setFacets] = useState<ChangeLogSearchFacet[]>([]);
   const [offset, setOffset] = useState<number>(0);
   const [isLoading, setisLoading] = useState<boolean>(true);
+  const [isMore, setIsMore] = useState<boolean>(true);
   const limit = 5;
   const uuid = getUserId().uuid;
   const router = useRouter();
@@ -61,6 +62,7 @@ export default function ChangeSearchlogHome() {
     };
 
     await callSearchApi(searchChangeLogParams, false);
+    setFacets(newFacets);
     setOffset(0);
     setisLoading(false);
   };
@@ -74,6 +76,7 @@ export default function ChangeSearchlogHome() {
       setEntries(apiResponse.entries);
     }
     setFacets(apiResponse.facets);
+    setIsMore(apiResponse.isMore);
   };
 
   useEffect(() => {
@@ -112,7 +115,7 @@ export default function ChangeSearchlogHome() {
             </Alert>
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
-                <ChangelogSearchResults entries={entries} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} />
+                <ChangelogSearchResults entries={entries} isMore={isMore} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} />
               </GridItem>
               <Hide below="md">
                 <GridItem colSpan={{ base: 2 }}>

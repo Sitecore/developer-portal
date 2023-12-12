@@ -10,9 +10,10 @@ type ChangeLogSearchItemProps = {
   onNextPage: () => void;
   onFacetChange: (facet: ChangeLogSearchFacetValue[], facetName: string) => void;
   isLoading: boolean;
+  isMore: boolean;
 };
 
-export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading, onFacetChange }: ChangeLogSearchItemProps) => {
+export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading, onFacetChange, isMore }: ChangeLogSearchItemProps) => {
   return (
     <>
       <Box>
@@ -25,7 +26,7 @@ export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading,
           </>
         )}
 
-        {!isLoading && entries.length > 0 && entries.map((entry, i) => <ChangeLogSearchItem item={entry} key={i} isLast={i === entries.length - 1} isMore={true} onNextPage={onNextPage} />)}
+        {!isLoading && entries.length > 0 && entries.map((entry, i) => <ChangeLogSearchItem item={entry} key={i} isLast={i === entries.length - 1} isMore={isMore} onNextPage={onNextPage} />)}
       </Box>
     </>
   );
