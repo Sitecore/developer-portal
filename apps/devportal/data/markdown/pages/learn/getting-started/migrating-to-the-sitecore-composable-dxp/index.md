@@ -3,6 +3,15 @@ title: 'Migrating to the Sitecore Composable DXP'
 description: 'This resource consists of a collection of various Migration related content from the Sitecore platform DXP (XP, XM or XC) to the Sitecore Composable SaaS DXP.'
 ---
 
+<Promo
+  title="Migration Advisor"
+  description="Tell the Sitecore Migration Advisor about your solution and then find videos, tutorials, walkthroughs, code examples, and more to help you migrate from Sitecore Platform DXP to Sitecore XM Cloud and the rest of the Sitecore Composable DXP."
+  imageSource="/images/learn/migration-advisor.jpg"
+  linkText="Get Started"
+  linkHref="https://migration.sitecore.com/" 
+  isImageLeft={false}
+/>
+
 ## Introduction
 
 This guide provides an overview for existing customers of the Platform DXP (XP, XM on-prem and XC) of different considerations needed when migrating to the Sitecore Composable DXP. This guide is ordered by Composable SaaS product and the information that is available for that product.
