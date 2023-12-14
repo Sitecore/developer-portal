@@ -1,5 +1,5 @@
 // Global
-import { Box, Card, CardBody, CardFooter, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 import { PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { Icon } from '@mdi/react';
@@ -12,6 +12,8 @@ import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { Promo, VideoPromo } from 'ui/components/promos';
 import YouTube from 'ui/components/video/YouTube';
 
+import { Download } from 'ui/components/cards/Download';
+import { Group } from 'ui/components/cards/Group';
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -52,8 +54,7 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
               <code className={className}>{children}</code>
             );
           },
-          h1: Heading,
-          h2: Heading,
+          //h3: Heading,
           VideoPromo: VideoPromo,
           // CtaCard: CTACard,
           Promo: Promo,
@@ -62,6 +63,13 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
           Repository: Repository,
           Article: Article,
           Link: LinkItem,
+          Download: Download,
+          Group: Group,
+          Card: Card,
+          CardHeader: CardHeader,
+          CardBody: CardBody,
+          Alert: Alert,
+          AlertIcon: AlertIcon,
         }}
       />
     </Prose>
