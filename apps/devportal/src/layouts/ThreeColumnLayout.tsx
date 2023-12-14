@@ -6,8 +6,8 @@ import { Sidebar } from './Sidebar';
 
 type ThreeColumnLayoutProps = {
   sidebar: React.ReactNode;
-  inPageNav: React.ReactNode;
-  inPageLinks: ContentHeading[];
+  inPageNav?: React.ReactNode;
+  inPageLinks?: ContentHeading[];
   children: React.ReactNode;
   background?: string;
 };
@@ -18,7 +18,7 @@ export const ThreeColumnLayout = ({ sidebar, inPageNav, inPageLinks, children, .
       <Sidebar showBackground>{sidebar}</Sidebar>
 
       <Box maxW={'7xl'} as="main" paddingX={{ base: 4, md: 'inherit' }}>
-        <InPageNavSmall hideFrom="xl" titles={inPageLinks} />
+        {inPageLinks && <InPageNavSmall hideFrom={'xl'} titles={inPageLinks} />}
         <CenteredContent>{children}</CenteredContent>
       </Box>
 

@@ -32,7 +32,7 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <ChildNavigation subPageNavigation={subPageNavigation} />} inPageNav={null}>
+      <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <ChildNavigation subPageNavigation={subPageNavigation} />}>
         {pageInfo.content && pageInfo.content.length > 0 && (
           <VerticalGroup>
             <CenteredContent>
