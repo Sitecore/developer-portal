@@ -12,10 +12,10 @@ export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarPr
         <Box
           layerStyle={showBackground ? 'section.sidebar' : rest.layerStyle}
           direction="column"
-          maxH={{ base: 'auto', md: `100vh` }}
-          h={showBackground ? { base: 'auto', md: `100vh` } : {}}
+          h={showBackground ? { base: 'auto', md: `auto` } : {}}
+          minH={{ base: 'auto', md: `100vh` }}
           top="50"
-          overflow={{ base: '', md: 'auto' }}
+          // overflow={{ base: '', md: 'auto' }}
           shadow={'none'}
           position={{ base: 'static', md: 'sticky' }}
           display="flex"

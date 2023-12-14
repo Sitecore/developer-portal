@@ -92,7 +92,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <PreviewProvider preview={router.isPreview} currentHostname={hostname}>
           {progress && <TopBarProgress />}
           <Navbar searchEnabled={IsSearchEnabled()} />
-          <Box ref={contentInnerRef} paddingBottom={{ base: 32, md: 20 }}>
+          <Box ref={contentInnerRef}>
             <Component {...pageProps} />
           </Box>
           <Footer />
