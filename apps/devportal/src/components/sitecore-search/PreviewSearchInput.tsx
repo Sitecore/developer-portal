@@ -2,7 +2,7 @@ import { ActionPropPayload, ItemIndexActionPayload, PreviewSearchInitialState, P
 import { NavMenu, Presence } from '@sitecore-search/ui';
 import type { PreviewSearchActionProps } from '@sitecore-search/widgets';
 // import Image from 'next/image';
-import { getColorScheme } from '@/src/lib/search';
+import { IsSearchEnabled, getColorScheme } from '@/src/lib/search';
 import { Badge, Box, Button, Flex, FormControl, HStack, Heading, Input, InputGroup, InputLeftElement, InputRightElement, Link, List, ListItem, Tag, Text, VisuallyHidden } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { SyntheticEvent, useCallback, useState } from 'react';
@@ -135,6 +135,9 @@ const getGroupId = (name: string, value: string) => `${name}@${value}`;
 type InitialState = PreviewSearchInitialState<'itemsPerPage' | 'suggestionsList'>;
 
 const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
+  if (!IsSearchEnabled()) {
+    return;
+  }
   const router = useRouter();
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { q } = router.query;
