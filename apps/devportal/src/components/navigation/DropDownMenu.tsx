@@ -1,22 +1,22 @@
 import { SubPageNavigation, SubPageNavigationItem } from '@/src/lib/interfaces/page-info';
-import { Box, Button, ButtonGroup, Collapse, Icon, Text, useDisclosure } from '@chakra-ui/react';
+import { Box, BoxProps, Button, ButtonGroup, Collapse, Icon, Text, useDisclosure } from '@chakra-ui/react';
 import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { appendPathToBasePath } from 'ui/lib/utils/stringUtil';
 
-export interface DropdownNavigationProps {
+export type DropdownNavigationProps = BoxProps & {
   title?: string;
   subPageNavigation: SubPageNavigation;
-}
+};
 
-export const DropDownMenu = ({ subPageNavigation }: DropdownNavigationProps) => {
+export const DropDownMenu = ({ subPageNavigation, ...rest }: DropdownNavigationProps) => {
   const { isOpen, onToggle } = useDisclosure();
   const basePath = subPageNavigation.path;
 
   return (
-    <Box as={'nav'}>
+    <Box as={'nav'} {...rest}>
       <Button
         as={Button}
         onClick={onToggle}

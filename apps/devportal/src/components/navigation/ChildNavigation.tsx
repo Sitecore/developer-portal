@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Hide, Icon, Link, Text, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Icon, Link, Text, useDisclosure } from '@chakra-ui/react';
 import { mdiChevronDown, mdiChevronRight } from '@mdi/js';
 import { default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
@@ -17,11 +17,10 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
 
   return (
     <Box>
+      {/* Desktop */}
       <SideMenu subPageNavigation={subPageNavigation} key={router.asPath} />
-
-      <Hide above="md">
-        <DropDownMenu subPageNavigation={subPageNavigation} key={router.asPath} />
-      </Hide>
+      {/* Mobile */}
+      <DropDownMenu subPageNavigation={subPageNavigation} key={router.asPath} hideFrom={'md'} />
     </Box>
   );
 };
@@ -75,7 +74,9 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
     else
       return (
         <Heading variant="section" px={2} fontWeight={'bold'} as="li" mx={-2} pt={4} pb={4} key={index}>
-          <Link href={appendPathToBasePath(basePath, menuItem.path)}>{menuItem.title}</Link>
+          <Link color={'chakra-subtle-text'} href={appendPathToBasePath(basePath, menuItem.path)}>
+            {menuItem.title}
+          </Link>
         </Heading>
       );
   }
@@ -83,7 +84,7 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
   // Show normal link
   return (
     <Button colorScheme="neutral" isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'} key={index} as="li">
-      <Link color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2} title={menuItem.title}>
+      <Link color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2}>
         {menuItem.title}
       </Link>
     </Button>
