@@ -17,7 +17,7 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
 
   return (
     <Box>
-      <SideMenu subPageNavigation={subPageNavigation} />
+      <SideMenu subPageNavigation={subPageNavigation} key={router.asPath} />
 
       <Hide above="md">
         <DropDownMenu subPageNavigation={subPageNavigation} key={router.asPath} />
@@ -38,7 +38,7 @@ const SideMenu = ({ subPageNavigation }: ChildNavigationProps) => {
         </Heading>
       )}
 
-      <ButtonGroup variant="navigation" spacing={1} orientation="vertical" width={'2xs'} as={'ul'} role="list">
+      <ButtonGroup variant="navigation" spacing={1} orientation="vertical" maxWidth={'md'} as={'ul'} role="list">
         {subPageNavigation.routes.map((link, i) => {
           return (
             <React.Fragment key={i}>
@@ -75,15 +75,15 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
     else
       return (
         <Heading variant="section" px={2} fontWeight={'bold'} as="li" mx={-2} pt={4} pb={4} key={index}>
-          <NextLink href={appendPathToBasePath(basePath, menuItem.path)}>{menuItem.title}</NextLink>
+          <Link href={appendPathToBasePath(basePath, menuItem.path)}>{menuItem.title}</Link>
         </Heading>
       );
   }
 
   // Show normal link
   return (
-    <Button colorScheme="neutral" isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'} key={index} as="li" isTruncated maxWidth={'2xs'}>
-      <Link as={NextLink} color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2} title={menuItem.title}>
+    <Button colorScheme="neutral" isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'} key={index} as="li">
+      <Link color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2} title={menuItem.title}>
         {menuItem.title}
       </Link>
     </Button>
