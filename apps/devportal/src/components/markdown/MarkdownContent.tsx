@@ -14,6 +14,7 @@ import YouTube from 'ui/components/video/YouTube';
 
 import { Download } from 'ui/components/cards/Download';
 import { Group } from 'ui/components/cards/Group';
+import { TextLink } from 'ui/components/links/TextLink';
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -70,6 +71,7 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
           CardBody: CardBody,
           Alert: Alert,
           AlertIcon: AlertIcon,
+          TextLink,
         }}
       />
     </Prose>

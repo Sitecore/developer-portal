@@ -16,7 +16,13 @@
         },
         {
           "title": "Developer Experience",
-          "path": "developer-experience"
+          "path": "developer-experience",
+          "children": [
+            {
+              "title": "Components Design Best Practices",
+              "path": "component-design-best-practices"
+            }
+          ]
         },
         {
           "title": "Security",
@@ -117,6 +123,29 @@
         {
           "title": "List of recipes",
           "path": "list-of-recipes"
+        }
+      ]
+    },
+    {
+      "title": "Appendix I",
+      "path": "appendix-i",
+      "ignoreLink": true
+    },
+    {
+      "title": "Appendix II",
+      "path": "appendix-ii",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Example Code",
+          "path": "example-code",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Exported components example",
+              "path": "exported-components-example"
+            }
+          ]
         }
       ]
     }
