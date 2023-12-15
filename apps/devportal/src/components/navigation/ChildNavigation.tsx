@@ -1,5 +1,5 @@
 import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Hide, Icon, Link, Text, useDisclosure } from '@chakra-ui/react';
-import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
+import { mdiChevronDown, mdiChevronRight } from '@mdi/js';
 import { default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -38,7 +38,7 @@ const SideMenu = ({ subPageNavigation }: ChildNavigationProps) => {
         </Heading>
       )}
 
-      <ButtonGroup variant="navigation" spacing={1} orientation="vertical" width={'full'} as={'ul'} role="list">
+      <ButtonGroup variant="navigation" spacing={1} orientation="vertical" width={'2xs'} as={'ul'} role="list">
         {subPageNavigation.routes.map((link, i) => {
           return (
             <React.Fragment key={i}>
@@ -82,8 +82,8 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
 
   // Show normal link
   return (
-    <Button colorScheme="neutral" isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'} key={index} as="li">
-      <Link as={NextLink} color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2}>
+    <Button colorScheme="neutral" isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'} key={index} as="li" isTruncated maxWidth={'2xs'}>
+      <Link as={NextLink} color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2} title={menuItem.title}>
         {menuItem.title}
       </Link>
     </Button>
@@ -98,7 +98,7 @@ function renderMenuGroup(child: SubPageNavigationItem, basePath: string, index?:
     <React.Fragment key={index}>
       <Button
         rightIcon={
-          router.asPath.includes(basePath) ? <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronUp} /> : <path d={mdiChevronDown} />}</Icon> : <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronUp} />}</Icon>
+          router.asPath.includes(basePath) ? <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronRight} /> : <path d={mdiChevronDown} />}</Icon> : <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>
         }
         justifyContent={'space-between'}
         width={'full'}
