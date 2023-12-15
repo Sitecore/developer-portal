@@ -130,12 +130,12 @@ export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
           <PreviewModeSwitch />
           <DarkModeSwitch />
           <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
-          <QuickStartMenu />
+          <QuickStartMenu key={router.asPath} />
         </Stack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav key={router.asPath} />
       </Collapse>
     </Box>
   );

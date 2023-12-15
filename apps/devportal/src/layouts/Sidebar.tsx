@@ -1,6 +1,6 @@
-import { Box, WrapProps } from '@chakra-ui/react';
+import { Box, BoxProps } from '@chakra-ui/react';
 
-interface SidebarProps extends WrapProps {
+interface SidebarProps extends BoxProps {
   showBackground?: boolean;
   children: React.ReactNode;
 }

@@ -9,6 +9,7 @@ import Hero from 'ui/components/common/Hero';
 import { CenteredContent, ContentSection, VerticalGroup } from 'ui/components/helpers';
 import { PromoCardProps } from 'ui/components/promos';
 import PromoList from 'ui/components/promos/promoCard/PromoList';
+import InPageNavSmall from '../components/navigation/InPageNavSmall';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -61,6 +62,7 @@ const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, pro
           <Grid templateColumns="repeat(4, 1fr)" gap={4}>
             {pageInfo.hasInPageNav && <GridItem>{Nav}</GridItem>}
             <GridItem colSpan={pageInfo.hasInPageNav ? 3 : 4}>
+              <InPageNavSmall hideFrom="xl" titles={titles} />
               {Content(partials, partialGroups)}
               {customNavPager}
             </GridItem>
