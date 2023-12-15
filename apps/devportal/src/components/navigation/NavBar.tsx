@@ -22,13 +22,14 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  Tooltip,
   UnorderedList,
   Wrap,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import { NavItem, mainNavigation, sitecoreQuickLinks } from '@data/data-navigation';
-import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
+import { mdiChevronDown, mdiChevronUp, mdiInformationOutline } from '@mdi/js';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -61,11 +62,12 @@ export type NavProps = {
 };
 
 export type NavBarProps = {
-  children?: React.ReactNode | React.ReactNode[];
+  searchEnabled?: boolean;
 };
 
-export default function Navbar({ children }: NavBarProps): JSX.Element {
+export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
   const { isOpen, onToggle } = useDisclosure();
+  const router = useRouter();
 
   return (
     <Box layerStyle="section.topbar" shadow={'base'} zIndex={'sticky'} position="sticky" top="0">
@@ -87,7 +89,7 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
             {/* Desktop menu (hide under xl or lower) */}
             <Show above="xl">
               <HStack>
-                <DesktopNav />
+                <DesktopNav key={router.asPath} />
               </HStack>
             </Show>
           </HStack>
@@ -95,24 +97,45 @@ export default function Navbar({ children }: NavBarProps): JSX.Element {
         </Stack>
         {/* Mobile menu button */}
         <Stack direction={'row'} alignItems={'center'}>
-          <Show above="3xl">
-            <Box display={'flex'} width={'2xl'}>
-              <PreviewSearchInput rfkId="rfkid_6" />
-            </Box>
-          </Show>
-          <Show below="3xl">
-            <SearchButton />
-          </Show>
+          {searchEnabled && (
+            <>
+              <Show above="3xl">
+                <Box display={'flex'} width={'2xl'}>
+                  <PreviewSearchInput rfkId="rfkid_6" />
+                </Box>
+              </Show>
+              <Show below="3xl">
+                <SearchButton />
+              </Show>
+            </>
+          )}
+          {!searchEnabled && (
+            <Tooltip label="Search is disabled on this environment. Click here for more information" aria-label="Search is disabled on this environment" hideBelow={'md'}>
+              <IconButton
+                icon={
+                  <Icon>
+                    <path d={mdiInformationOutline} />
+                  </Icon>
+                }
+                variant="ghost"
+                colorScheme="danger"
+                aria-label={''}
+                as={NextLink}
+                href="/search"
+              >
+                Search disabled
+              </IconButton>
+            </Tooltip>
+          )}
           <PreviewModeSwitch />
-
           <DarkModeSwitch />
           <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
-          <QuickStartMenu />
+          <QuickStartMenu key={router.asPath} />
         </Stack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav key={router.asPath} />
       </Collapse>
     </Box>
   );
@@ -132,7 +155,7 @@ const DesktopNav = () => {
               </Button>
             ) : (
               <Popover>
-                {({ isOpen, onClose }) => (
+                {({ isOpen }) => (
                   <>
                     <PopoverTrigger>
                       <Button key={key} position={'relative'} isActive={router.asPath == navItem.url} rightIcon={<Icon>{isOpen ? <path d={mdiChevronUp} /> : <path d={mdiChevronDown} />}</Icon>}>

@@ -31,15 +31,17 @@ export const DropDownMenu = ({ subPageNavigation }: DropdownNavigationProps) => 
       </Button>
 
       <Collapse in={isOpen}>
-        <ButtonGroup variant="navigation" orientation="vertical" spacing="1" border={'1px'} borderColor={'chakra-border-color'} borderRadius={'lg'} shadow={'base'} mt={2} position={'relative'} bg="chakra-subtle-bg" width={'full'} as="ul">
-          {subPageNavigation.routes.map((link, i) => {
-            if (link.children?.length > 0) {
-              return renderMenuGroup(link, basePath, i);
-            } else {
-              return renderMenuItem(link, basePath, i);
-            }
-          })}
-        </ButtonGroup>
+        <Box border={'1px'} borderColor={'chakra-border-color'} borderRadius={'lg'} shadow={'base'} bg="chakra-subtle-bg" position={'relative'}>
+          <ButtonGroup variant="navigation" orientation="vertical" width={'full'} spacing="1" mt={2} as="ul">
+            {subPageNavigation.routes.map((link, i) => {
+              if (link.children?.length > 0) {
+                return renderMenuGroup(link, basePath, i);
+              } else {
+                return renderMenuItem(link, basePath, i);
+              }
+            })}
+          </ButtonGroup>
+        </Box>
       </Collapse>
     </Box>
   );
@@ -50,13 +52,12 @@ function renderMenuGroup(child: SubPageNavigationItem, basePath: string, i: numb
   const router = useRouter();
 
   return (
-    <React.Fragment key={i}>
+    <ButtonGroup variant="navigation" orientation="vertical" key={i}>
       <Button
         rightIcon={
           router.asPath.includes(basePath) ? <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronUp} /> : <path d={mdiChevronDown} />}</Icon> : <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronUp} />}</Icon>
         }
         justifyContent={'space-between'}
-        width={'full'}
         transition={'ease-in-out'}
         as={'li'}
       >
@@ -70,20 +71,20 @@ function renderMenuGroup(child: SubPageNavigationItem, basePath: string, i: numb
       </Button>
 
       <Collapse animateOpacity in={isOpen}>
-        <Box pl={2} key={i}>
+        <Box pl={2} as="ul" key={i}>
           {child.children?.length > 0 &&
             child.children.map((link, i) => {
               return <React.Fragment key={i}>{link.children?.length > 0 ? renderMenuGroup(link, appendPathToBasePath(basePath, child.path), i) : renderMenuItem(link, appendPathToBasePath(basePath, child.path), i)}</React.Fragment>;
             })}
         </Box>
       </Collapse>
-    </React.Fragment>
+    </ButtonGroup>
   );
 }
 
 function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index?: number): React.ReactNode {
   return (
-    <Button variant="navigation" pl={3} justifyContent={'space-between'} width={'full'} transition={'ease-in-out'} key={index} as="li">
+    <Button variant="navigation" width={'full'} pl={3} justifyContent={'space-between'} transition={'ease-in-out'} key={index} as="li">
       <Text as={NextLink} href={appendPathToBasePath(basePath, menuItem.path)} px={2}>
         {menuItem.title}
       </Text>

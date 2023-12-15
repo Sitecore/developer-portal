@@ -31,7 +31,7 @@ const SideMenu = ({ subPageNavigation }: ChildNavigationProps) => {
   const showRootAsSections = subPageNavigation.showRootAsSections;
 
   return (
-    <Flex direction="column" maxH={`calc(100vh - 3.5rem)`} h={`calc(100vh - 3.5rem)`} top="14" overflow="auto" position={'sticky'} as={'nav'} hideBelow={'md'}>
+    <Flex direction="column" top="14" position={'sticky'} as={'nav'} hideBelow={'md'}>
       {subPageNavigation.heading && (
         <Heading size="sm" mb={8}>
           {subPageNavigation.title}
