@@ -67,7 +67,13 @@
         },
         {
           "title": "Information Architecture",
-          "path": "information-architecture"
+          "path": "information-architecture",
+          "children": [
+            {
+              "title": "Wildcard Pages",
+              "path": "wildcard-pages"
+            }
+          ]
         },
         {
           "title": "External Data Integration",
