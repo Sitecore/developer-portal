@@ -20,7 +20,13 @@
         },
         {
           "title": "Security",
-          "path": "security"
+          "path": "security",
+          "children": [
+            {
+              "title": "Head Application Security",
+              "path": "head-application-security"
+            }
+          ]
         },
         {
           "title": "Information Architecture",
