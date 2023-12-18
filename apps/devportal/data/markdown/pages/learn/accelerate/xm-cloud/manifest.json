@@ -65,22 +65,8 @@
           "path": "external-data-integration",
           "children": [
             {
-              "title": "Sub page 1",
-              "path": "sub-page-1"
-            },
-            {
-              "title": "Sub page 2",
-              "path": "sub-page-2",
-              "children": [
-                {
-                  "title": "Sub page 2-1",
-                  "path": "sub-page-2-1"
-                },
-                {
-                  "title": "Sub page 2-2",
-                  "path": "sub-page-2-2"
-                }
-              ]
+              "title": "Getting Component Specific Data",
+              "path": "getting-component-specific-data"
             }
           ]
         },
