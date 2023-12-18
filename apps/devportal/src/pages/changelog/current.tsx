@@ -1,4 +1,4 @@
-import { Alert, AlertIcon, AlertTitle, Box, Heading, Text } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Heading, Text } from '@chakra-ui/react';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -18,9 +18,7 @@ export default function ChangelogCurrent() {
           <CenteredContent>
             <Alert status="info" alignItems="center">
               <AlertIcon />
-              <AlertTitle>
-                <Link href="/changelog">Click here to go the public preview of the upcoming Sitecore global changelog.</Link>
-              </AlertTitle>
+              <Link href="/changelog">You are viewing the release notes for Sitecore products that have not been added to the Changelog yet. To access the changelog of Sitecore Cloud products, click here.</Link>
             </Alert>
 
             <Box>
@@ -29,11 +27,9 @@ export default function ChangelogCurrent() {
 
               <Row columns={2}>
                 <LinkItem title="Sitecore Content Hub" link="https://doc.sitecore.com/ch/en/users/latest/content-hub/release-notes.html" />
-                <LinkItem title="Sitecore Content Hub ONE" link="https://doc.sitecore.com/ch-one/en/users/content-hub-one/whats-new-in-content-hub-one.html" />
                 <LinkItem title="Sitecore OrderCloud" link="https://ordercloud.io/release-notes/" />
-                <LinkItem title="Sitecore Send" link="https://doc.sitecore.com/send/en/users/sitecore-send/what-s-new-in-sitecore-send.html" />
                 <LinkItem title="Sitecore XM/XP" link="https://dev.sitecore.net/en/Downloads/Sitecore%20Experience%20Platform/103/Sitecore%20Experience%20Platform%20103/Release%20Notes" />
-                <LinkItem title="Sitecore Experience Commerce" link="https://sitecoredev.azureedge.net/~/media/1EF967E826F84A4CB62732F61F81EBFA.ashx?date=20221201T201304" />
+                <LinkItem title="Sitecore Experience Commerce" link="https://sitecoredev.azureedge.net/~/media/47247BF2909D42A4A58941F604DC5B7B.ashx?date=20230612T211713" />
               </Row>
             </Box>
           </CenteredContent>

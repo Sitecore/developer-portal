@@ -1,15 +1,15 @@
-import { Container, Flex, Hide } from '@chakra-ui/react';
-
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import SocialFeeds from '@src/components/common/SocialFeeds';
-import { RenderContent, RenderPartialGroups, RenderPartials } from '@src/components/markdown/MarkdownContent';
+import { MarkDownContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
-import { CenteredContent, ContentSection } from 'ui/components/helpers';
+import { ContentSection } from 'ui/components/helpers';
 import LatestChangelogEntries from 'ui/components/integrations/changelog/LatestChangelogEntries';
-import { PromoCard, PromoCardProps } from 'ui/components/promos';
+import { PromoCardProps } from 'ui/components/promos';
+import PromoList from 'ui/components/promos/promoCard/PromoList';
+import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type DefaultContentPageProps = {
   pageInfo: PageInfo;
@@ -37,41 +37,21 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-subtle-bg'}>
-        <CenteredContent paddingTop={10}>
-          {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
+      <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
+        {/* <CenteredContent paddingTop={10}> */}
+        <PromoList data={promoBefore} />
+        {/* Page structure */}
 
-          {/* Page structure */}
-
-          <Flex direction={{ base: 'column', md: 'row' }} justifyContent={{ base: 'revert', md: 'normal' }}>
-            {pageInfo.hasSubPageNav && <Container maxW={{ base: 'full', md: 100 }}>{Nav}</Container>}
-            <Container maxW={'full'}>
-              {/* <Hide above="md">{pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <>{Nav}</>}</Hide> */}
-              <RenderContent content={pageInfo.parsedContent} />
-
-              <RenderPartialGroups partialGroups={partialGroups} />
-
-              <RenderPartials partials={partials} />
-
-              {customNavPager}
-            </Container>
-            <Hide below="md">
-              {pageInfo.hasInPageNav && sectionTitles.length > 0 && (
-                <Container maxW={{ base: 'full', md: 180 }} pl={4}>
-                  <InPageNav titles={sectionTitles} />
-                </Container>
-              )}
-            </Hide>
-          </Flex>
-
-          {/* End Page structure */}
+        <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && Nav} inPageNav={sectionTitles.length > 0 && <InPageNav titles={sectionTitles} />} inPageLinks={sectionTitles}>
+          <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
 
           <LatestChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />
-
-          {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
-
+          <PromoList data={promoAfter} />
           <SocialFeeds pageInfo={pageInfo} />
-        </CenteredContent>
+        </ThreeColumnLayout>
+        {customNavPager}
+        {/* End Page structure */}
+        {/* </CenteredContent> */}
       </ContentSection>
     </Layout>
   );

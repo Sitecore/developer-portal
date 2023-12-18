@@ -3,13 +3,10 @@ export function getSlug(value: string) {
 }
 
 export function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[^\w\s-.]/g, '') // remove non-alphanumeric characters except the period
-    .replace(/[\s_-]+/g, '-') // replace spaces, underscores, or hyphens with a single hyphen
-    .trim();
+  const slug = encodeURIComponent(text);
+  return slug.toLowerCase().replace(/%20/g, '-');
 }
 
 export function unslugify(text: string): string {
-  return text.toLowerCase().replace('-', ' '); // replace spaces, underscores, or hyphens with a single hyphen
+  return decodeURIComponent(text);
 }

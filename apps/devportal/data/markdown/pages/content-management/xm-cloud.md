@@ -55,6 +55,13 @@ The importance of your company's growth comes with the:
 <Link title="XM Cloud development" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html" />
 <Link title="Cloud Portal developer docs" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
 </Row>
+
+## Downloads
+
+<Row columns={2}>
+<Article title="XM to XM Cloud Content Migration tool" description="Move content, media and user data from a source XM on-premises instance to a target XM Cloud environment." link="/downloads/xm-cloud#xm-to-xm-cloud-content-migration-tool" maxWidth="sm" linktext="Download"  />
+</Row>
+
 ## Learn & Examples
 
 ### Open Source
@@ -71,6 +78,7 @@ The importance of your company's growth comes with the:
 - [Migrating the Sitecore MVP site to XM Cloud blog series](https://robearlam.com/blog/migrating-the-sitecore-mvp-site-to-xm-cloud-part-1) (Rob Earlam)
 - [Setting up an external XM Cloud Rendering Host to work with Experience Editor and Pages](https://robearlam.com/blog/setting-up-an-external-xm-cloud-rendering-host-to-work-with-experience-editor-and-pages) (Rob Earlam)
 - [Using Wildcard Items in Sitecore XM Cloud](https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud) (David Austin)
+- [Sitecore XM Cloud and Vercel Deployment Protection](https://community.sitecore.com/community?id=community_blog&sys_id=0bd592d61b1af91038a46421b24bcb43) (Jason St-Cyr)
 
 ### Official Sitecore Training
 

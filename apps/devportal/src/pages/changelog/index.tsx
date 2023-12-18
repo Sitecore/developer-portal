@@ -1,4 +1,4 @@
-import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
+import { Alert, AlertIcon, Grid, GridItem, HStack, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import { mdiRss } from '@mdi/js';
@@ -50,7 +50,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
               <AlertIcon />
               <Tooltip label="Go to the overview of current release notes" aria-label="A tooltip">
                 <Link href="/changelog/current" title="View the list of current release notes per product">
-                  You are viewing the public preview of the upcoming Sitecore global changelog.
+                  You are viewing the Sitecore Cloud changelog. To see release notes for Sitecore products not yet listed here, click here.
                 </Link>
               </Tooltip>
             </Alert>
@@ -60,13 +60,12 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
                   <ChangelogList selectedProducts={selectedProduct} onProductsChange={setSelectedProduct} />
                 </SWRConfig>
               </GridItem>
-              <Hide below="md">
-                <GridItem colSpan={{ base: 2 }}>
-                  <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                  <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                  <ChangelogByMonth product={undefined} selectedProducts={selectedProduct} />
-                </GridItem>
-              </Hide>
+
+              <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
+                <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <ChangelogByMonth product={undefined} selectedProducts={selectedProduct} />
+              </GridItem>
             </Grid>
           </CenteredContent>
         </VerticalGroup>

@@ -16,18 +16,12 @@ Digital experience is a team sport. Modernize your content management architectu
 
 Fully API-driven, our architecture enables your team to build for any channel with the frameworks you already use, or use connectors to speed up system integration to your existing tech stack.
 
-<Row columns={3}>
-  <Article 
-    title="Sitecore front-end developer trial" 
-    description="Are you a front-end developer looking to level-up your career? The trial will teach you the basics of our javascript headless services, step by step. Additionally, you will get a taste of Sitecore's personalization capabilities, one of its most powerful features — it's what distinguishes it from other CMS." 
-    link="https://www.sitecore.com/trial" 
-    linktext="Sign up now!" />
-
+<Row columns={2}>
   <Article 
     title="Moosend" 
     description="Moosend provides all the necessary tools to get you started down your email marketing path. If you're well underway on your email marketing journey and you just traversed through other ESPs to our platform, you'll be happy to know that we give you state-of-the art features that will expand your toolbox and make your life easier." 
     link="https://identity.moosend.com/register/" 
-    linktext="Start by creating your own account!" />
+    linktext="Create your account!" />
 
   <Article 
     title="Sitecore OrderCloud" 

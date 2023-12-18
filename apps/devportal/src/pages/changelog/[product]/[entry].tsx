@@ -12,7 +12,6 @@ import {
   GridItem,
   HStack,
   Heading,
-  Hide,
   Image,
   Modal,
   ModalBody,
@@ -49,16 +48,16 @@ type ChangelogProps = {
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
   const entry = context.params.entry;
-  const preview = context.preview ? context.preview : null;
+  const isPreview = context.preview || false;
 
-  const products = await GetProducts(preview).then((response: Product[]) => {
+  const products = await GetProducts(isPreview).then((response: Product[]) => {
     return response;
   });
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
 
   try {
-    changelogEntry = await ChangelogEntryByTitle(preview, entry, currentProduct?.id);
+    changelogEntry = await ChangelogEntryByTitle(isPreview, entry, currentProduct?.id);
   } catch {
     return {
       notFound: true,
@@ -119,7 +118,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 <CardBody py={0}>
                   {changelogEntry.image.length > 0 && (
                     <>
-                      <Image src={`${changelogEntry.image[0].fileUrl}?width=665&fit=contain&transform=true`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
+                      <Image src={`${changelogEntry.image[0].fileUrl}`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
 
                       <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnOverlayClick size={'6xl'}>
                         <ModalOverlay />
@@ -150,11 +149,9 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 </CardFooter>
               </Card>
             </GridItem>
-            <Hide below="md">
-              <GridItem colSpan={2}>
-                <ChangelogByMonth product={currentProduct} />
-              </GridItem>
-            </Hide>
+            <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
+              <ChangelogByMonth product={currentProduct} />
+            </GridItem>
           </Grid>
         </CenteredContent>
       </VerticalGroup>
