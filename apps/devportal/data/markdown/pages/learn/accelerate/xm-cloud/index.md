@@ -5,6 +5,4 @@ hasSubPageNav: true
 hasInPageNav: true
 ---
 
-### Intro
-
-Bla
+### Introduction

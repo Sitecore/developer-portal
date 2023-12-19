@@ -66,14 +66,14 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
   if (showRootAsSections) {
     if (menuItem.ignoreLink != null && menuItem.ignoreLink)
       return (
-        <Heading variant="section" px={2} fontWeight={'bold'} width={'full'} mx={-2} as="li" pt={4} pb={4} key={index}>
+        <Heading variant="section" px={2} fontWeight={'bold'} width={'full'} mx={-2} as="li" pt={4} pb={4} key={index} listStyleType={'none'}>
           {menuItem.title}
         </Heading>
       );
     // Include link
     else
       return (
-        <Heading variant="section" px={2} fontWeight={'bold'} as="li" mx={-2} pt={4} pb={4} key={index}>
+        <Heading variant="section" px={2} fontWeight={'bold'} as="li" mx={-2} pt={4} pb={4} key={index} listStyleType={'none'}>
           <Link color={'chakra-subtle-text'} href={appendPathToBasePath(basePath, menuItem.path)}>
             {menuItem.title}
           </Link>
