@@ -184,8 +184,15 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
         _dark: {
           borderColor: 'chakra-border-color',
         },
+        td: {
+          wordBreak: 'normal',
+        },
         'td:nth-of-type(1)': {
-          width: '30%',
+          width: '15%',
+        },
+        'td:nth-of-type(2)': {
+          width: '65%',
+          wordBreak: 'break-word',
         },
         ':nth-last-of-type(1)': {
           borderBottomWidth: '0px',
