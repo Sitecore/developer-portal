@@ -6,3 +6,5 @@ hasInPageNav: false
 ---
 
 ### Project Planning
+
+- 🚀 This Sitecore Accelerate Recipe is coming soon...

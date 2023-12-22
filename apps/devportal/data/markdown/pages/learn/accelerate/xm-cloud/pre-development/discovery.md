@@ -5,4 +5,6 @@ hasSubPageNav: true
 hasInPageNav: false
 ---
 
-### Discover
+### Discovery
+
+- 🚀 This Sitecore Accelerate Recipe is coming soon...

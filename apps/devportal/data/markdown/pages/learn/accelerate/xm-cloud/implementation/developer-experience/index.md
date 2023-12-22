@@ -6,3 +6,5 @@ hasInPageNav: false
 ---
 
 ### DevEx
+
+- 🚀 This Sitecore Accelerate Recipe is coming soon...

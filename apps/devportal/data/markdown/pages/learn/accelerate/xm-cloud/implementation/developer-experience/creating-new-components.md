@@ -171,13 +171,6 @@ Creating a variant is a two-step process. First, you create the code for the var
 
 External data is handled in its own recipe: [External Data Integration](/learn/accelerate/xm-cloud/implementation/external-data-integration)
 
-### Product Gaps
-
-|     | Application          | Details                                                                                                                                |
-| --- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Cloning Component    | Currently unable to clone a component to the Project layer, this breaks the recipe.                                                    |
-| 2   | Available Renderings | If the `Group renderings in sections according to Available Renderings items in the site` is ticked, Pages does not obey that setting. |
-
 ### Related Documentation
 
 <Row columns={2}>

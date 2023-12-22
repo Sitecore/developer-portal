@@ -11,13 +11,22 @@
       "ignoreLink": true,
       "children": [
         {
+          "title": "Project Planning",
+          "path": "project-planning"
+        },
+        {
           "title": "Discovery",
           "path": "discovery"
         },
         {
           "title": "Developer Experience",
           "path": "developer-experience",
+          "ignoreLink": true,
           "children": [
+            {
+              "title": "Branching Strategy",
+              "path": "branching-strategy"
+            },
             {
               "title": "Components Design Best Practices",
               "path": "component-design-best-practices"
@@ -27,6 +36,7 @@
         {
           "title": "Security",
           "path": "security",
+          "ignoreLink": true,
           "children": [
             {
               "title": "Head Application Security",
@@ -39,12 +49,23 @@
           "path": "information-architecture"
         },
         {
-          "title": "Project Planning",
-          "path": "project-planning"
-        },
-        {
           "title": "Sprint Zero",
-          "path": "sprint-zero"
+          "path": "sprint-zero",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Project Solution Setup",
+              "path": "project-solution-setup"
+            },
+            {
+              "title": "Setup Content Serialization",
+              "path": "setup-content-serialization"
+            },
+            {
+              "title": "Devops",
+              "path": "devops"
+            }
+          ]
         }
       ]
     },
@@ -56,24 +77,22 @@
         {
           "title": "Developer Experience",
           "path": "developer-experience",
+          "ignoreLink": true,
           "children": [
             {
-              "title": "Branching Strategy",
-              "path": "branching-strategy"
+              "title": "Creating New Components",
+              "path": "creating-new-components"
             },
             {
               "title": "Troubleshooting Local Dev Container Env",
-              "path": "troubleshooting"
-            },
-            {
-              "title": "Components Design Best Practices",
-              "path": "components"
+              "path": "troubleshooting-docker"
             }
           ]
         },
         {
           "title": "Information Architecture",
           "path": "information-architecture",
+          "ignoreLink": true,
           "children": [
             {
               "title": "Wildcard Pages",
@@ -84,26 +103,7 @@
         {
           "title": "External Data Integration",
           "path": "external-data-integration",
-          "children": [
-            {
-              "title": "Sub page 1",
-              "path": "sub-page-1"
-            },
-            {
-              "title": "Sub page 2",
-              "path": "sub-page-2",
-              "children": [
-                {
-                  "title": "Sub page 2-1",
-                  "path": "sub-page-2-1"
-                },
-                {
-                  "title": "Sub page 2-2",
-                  "path": "sub-page-2-2"
-                }
-              ]
-            }
-          ]
+          "ignoreLink": true
         },
         {
           "title": "Search",
@@ -120,8 +120,8 @@
       "path": "final-steps"
     },
     {
-      "title": "Glossary of terms",
-      "path": "glossary-of-terms",
+      "title": "Appendix I",
+      "path": "appendix-i",
       "ignoreLink": true,
       "children": [
         {
@@ -131,17 +131,8 @@
         {
           "title": "Next.js",
           "path": "nextjs"
-        },
-        {
-          "title": "List of recipes",
-          "path": "list-of-recipes"
         }
       ]
-    },
-    {
-      "title": "Appendix I",
-      "path": "appendix-i",
-      "ignoreLink": true
     },
     {
       "title": "Appendix II",
