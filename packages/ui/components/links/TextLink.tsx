@@ -9,9 +9,10 @@ type TextLinkProps = TextProps &
     text: string;
     hideIcon?: boolean;
     isHeading?: boolean;
+    displayInline?: boolean;
   };
 
-export const TextLink = ({ href, text, isHeading, hideIcon = false, ...rest }: TextLinkProps) => {
+export const TextLink = ({ href, text, isHeading, hideIcon = false, displayInline = false, ...rest }: TextLinkProps) => {
   if (isHeading)
     return (
       <Heading size="lg" {...rest}>
@@ -21,13 +22,13 @@ export const TextLink = ({ href, text, isHeading, hideIcon = false, ...rest }: T
 
   return (
     <Text {...rest}>
-      <TextWithLink href={href} text={text} hideIcon={hideIcon} />
+      <TextWithLink href={href} text={text} hideIcon={hideIcon} displayInline={displayInline} />
     </Text>
   );
 };
 
-const TextWithLink = ({ href, text, hideIcon }: TextLinkProps) => (
-  <HStack as={'span'}>
+const TextWithLink = ({ href, text, hideIcon, displayInline }: TextLinkProps) => (
+  <HStack as={'span'} display={displayInline ? 'inline' : 'flex'}>
     <Link href={href} color={'primary'} fontWeight={'semibold'}>
       {text}
     </Link>
