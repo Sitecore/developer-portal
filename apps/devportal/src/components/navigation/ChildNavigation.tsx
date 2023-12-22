@@ -83,7 +83,7 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
 
   // Show normal link
   return (
-    <Button colorScheme="neutral" isActive={router.asPath == appendPathToBasePath(basePath, menuItem.path)} width={'full'} key={index} as="li">
+    <Button colorScheme="neutral" isActive={router.asPath.includes(appendPathToBasePath(basePath, menuItem.path))} width={'full'} key={index} as="li">
       <Link color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2}>
         {menuItem.title}
       </Link>
