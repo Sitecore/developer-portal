@@ -12,6 +12,7 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     fontFamily: 'heading',
     fontWeight: 'semibold',
     fontSize: { base: '2xl', md: '3xl' },
+    scrollMarginTop: '5rem',
     //mt: { base: 0, md: 0 },
     //mb: { base: 0, md: 0 },
   },
