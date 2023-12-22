@@ -7,7 +7,7 @@ interface SidebarProps extends BoxProps {
 
 export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarProps): JSX.Element => {
   return (
-    <Box as={'aside'} w={{ base: 'full', md: 'sm', sm: 'full' }} order={{ base: -1, md: 0 }} flexShrink={3} layerStyle={showBackground ? 'section.sidebar' : rest.layerStyle}>
+    <Box as={'aside'} w={{ base: 'full', md: 'sm', sm: 'full' }} order={{ base: -1, md: 0 }} flexShrink={3} layerStyle={showBackground && children ? 'section.sidebar' : rest.layerStyle}>
       {children && (
         <Box
           direction="column"
