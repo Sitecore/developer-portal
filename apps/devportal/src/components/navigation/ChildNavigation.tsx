@@ -18,7 +18,7 @@ const ChildNavigation = ({ subPageNavigation }: ChildNavigationProps) => {
   return (
     <Box>
       {/* Desktop */}
-      <SideMenu subPageNavigation={subPageNavigation} key={router.asPath} />
+      <SideMenu subPageNavigation={subPageNavigation} />
       {/* Mobile */}
       <DropDownMenu subPageNavigation={subPageNavigation} key={router.asPath} hideFrom={'md'} />
     </Box>
