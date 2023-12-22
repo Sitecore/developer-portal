@@ -101,17 +101,8 @@
           ]
         },
         {
-          "title": "External Data Integration",
-          "path": "external-data-integration",
-          "ignoreLink": true
-        },
-        {
           "title": "Search",
           "path": "search"
-        },
-        {
-          "title": "Publishing/Cache Revalidation/SSG",
-          "path": "publishg-cache-revalidation-ssg"
         }
       ]
     },
@@ -127,10 +118,6 @@
         {
           "title": "XM Cloud Glossary",
           "path": "xm-cloud-glossary"
-        },
-        {
-          "title": "Next.js",
-          "path": "nextjs"
         }
       ]
     },

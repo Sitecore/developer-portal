@@ -90,7 +90,7 @@ As mentioned earlier, it is required to start using the foundation head solution
 
 The solution contains everything to run XM Cloud locally using Docker Containers as well as running the head application locally connecting towards the GraphQL Preview Endpoint. It contains .env file for managing environment specific connection strings as well as the NextJS application named sxastarter.
 
-<img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.png" alt="Foundation Head Starter Kit"/>
+<img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.jpeg" alt="Foundation Head Starter Kit"/>
 
 ### Items Serialization
 
@@ -162,7 +162,7 @@ The sxastarter folder represents the head application built with NextJS. it cont
 
 When starting in XM Cloud the overall structure needs to be understood. When getting access to the Sitecore Composable DXP through the Sitecore Cloud Portal you’ll be part of an Organization that contains the subscription. Depending on the licensing model of your subscription you’ll be able to create and manage 1 to many XM Cloud projects each one containing 1 to many XM Cloud environments.
 
-<img src="/images/learn/accelerate/xm-cloud/project-solution-setup2.png" alt="Xm Cloud Structure"/>
+<img src="/images/learn/accelerate/xm-cloud/project-solution-setup-2.jpeg" alt="Xm Cloud Structure"/>
 
 ### When to use Site Collections, Site Collection Folders and Site Folders
 

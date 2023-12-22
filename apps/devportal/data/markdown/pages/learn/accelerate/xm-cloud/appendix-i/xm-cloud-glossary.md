@@ -17,7 +17,7 @@ A Project is connected to a source code repository. Each Project can have multip
 
 An Environment is your physical XM Cloud instance. It consists of a Content Management Instance, that provides certain tooling like Pages, Components, User and Roles Management and more. It also provides an internal nodeJS based editing host, that’s used for rendering your app for WYSIWYG editing in Pages or Experience Editor. Last but not least it comes with a geographically scaled deliver layer, called Edge. This layer provides a GraphQL Endpoint to be used by your public facing applications. Please note that your public facing app needs to be hosted on an external rendering host (e.g. provided by Vercel).
 
-<img src="/images/learn/accelerate/xm-cloud/xmc-glossary-1.png" alt="XM Cloud Architecture"/>
+<img src="/images/learn/accelerate/xm-cloud/xmc-glossary-1.jpeg" alt="XM Cloud Architecture"/>
 
 ### Site
 
@@ -25,4 +25,4 @@ A site represents one website or one content repository. A site is able to suppo
 
 Sites can share content and presentation configuration across each other within one site collection if enabled.
 
-<img src="/images/learn/accelerate/xm-cloud/xmc-glossary-2.png" alt="Site Structure in XM Cloud"/>
+<img src="/images/learn/accelerate/xm-cloud/xmc-glossary-2.jpeg" alt="Site Structure in XM Cloud"/>
