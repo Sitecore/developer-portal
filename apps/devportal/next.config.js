@@ -50,6 +50,9 @@ const redirects = [
 ];
 
 const nextConfig = {
+  experimental: {
+    largePageDataBytes: 256 * 100000,
+  },
   transpilePackages: ['ui', 'sc-changelog', 'tailwind-config', 'react-tweet'],
   // Set locales so we have appropriate lang attributes without a custom _document
   // ia8n commentted out due to temporary issue with ISR, see https://github.com/Sitecore/developer-portal/issues/182
