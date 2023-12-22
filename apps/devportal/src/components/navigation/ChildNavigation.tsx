@@ -95,11 +95,13 @@ function renderMenuGroup(child: SubPageNavigationItem, basePath: string, index?:
   const { isOpen, onToggle } = useDisclosure();
   const router = useRouter();
 
+  const currentRouteIncludesChild = child.children?.some((child) => router.asPath.includes(child.path));
+
   return (
     <React.Fragment key={index}>
       <Button
         rightIcon={
-          router.asPath.includes(basePath) ? <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronRight} /> : <path d={mdiChevronDown} />}</Icon> : <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>
+          currentRouteIncludesChild ? <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronRight} /> : <path d={mdiChevronDown} />}</Icon> : <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>
         }
         justifyContent={'space-between'}
         width={'full'}
@@ -114,7 +116,7 @@ function renderMenuGroup(child: SubPageNavigationItem, basePath: string, index?:
         )}
       </Button>
 
-      <Collapse animateOpacity in={isOpen}>
+      <Collapse animateOpacity in={isOpen || currentRouteIncludesChild}>
         <Box pl={2}>
           {child.children?.length > 0 &&
             child.children.map((link, i) => {
