@@ -101,6 +101,17 @@
           ]
         },
         {
+          "title": "External Data Integration",
+          "path": "external-data-integration",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Getting Component Specific Data",
+              "path": "getting-component-specific-data"
+            }
+          ]
+        },
+        {
           "title": "Search",
           "path": "search"
         }
