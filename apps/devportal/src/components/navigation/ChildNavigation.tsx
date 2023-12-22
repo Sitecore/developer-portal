@@ -99,14 +99,7 @@ function renderMenuGroup(child: SubPageNavigationItem, basePath: string, index?:
 
   return (
     <React.Fragment key={index}>
-      <Button
-        rightIcon={
-          currentRouteIncludesChild ? <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronRight} /> : <path d={mdiChevronDown} />}</Icon> : <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>
-        }
-        justifyContent={'space-between'}
-        width={'full'}
-        transition={'ease-in-out'}
-      >
+      <Button rightIcon={currentRouteIncludesChild ? undefined : <Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>} justifyContent={'space-between'} width={'full'} transition={'ease-in-out'}>
         {child.ignoreLink ? (
           <Text px={2}>{child.title}</Text>
         ) : (
