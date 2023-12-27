@@ -1,17 +1,20 @@
 // Global
-import { Box, Card, CardBody, CardFooter, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 import { PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { Icon } from '@mdi/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import { MDXRemote } from 'next-mdx-remote';
-import { Light as SyntaxHighlight } from 'react-syntax-highlighter';
 import { Article, LinkItem, Repository } from 'ui/components/cards';
 import { Row } from 'ui/components/helpers/Row';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { Promo, VideoPromo } from 'ui/components/promos';
 import YouTube from 'ui/components/video/YouTube';
 
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { Download } from 'ui/components/cards/Download';
+import { Group } from 'ui/components/cards/Group';
+import { TextLink } from 'ui/components/links/TextLink';
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -45,15 +48,14 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
             const match = /language-(\w+)/.exec(className || '');
             const lang = match ? match[1] : '';
             return match ? (
-              <SyntaxHighlight style={a11yDark} language={lang} className="no-prose" PreTag={'div'} customStyle={{ background: 'inherit', display: 'inline-grid', width: '100%' }} wrapLongLines wrapLines>
+              <SyntaxHighlighter style={a11yDark} language={lang} className="no-prose" PreTag={'div'} customStyle={{ background: 'inherit', display: 'inline-grid', width: '100%' }} wrapLongLines wrapLines>
                 {String(children).replace(/\n$/, '')}
-              </SyntaxHighlight>
+              </SyntaxHighlighter>
             ) : (
               <code className={className}>{children}</code>
             );
           },
-          h1: Heading,
-          h2: Heading,
+          //h3: Heading,
           VideoPromo: VideoPromo,
           // CtaCard: CTACard,
           Promo: Promo,
@@ -62,6 +64,14 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
           Repository: Repository,
           Article: Article,
           Link: LinkItem,
+          Download: Download,
+          Group: Group,
+          Card: Card,
+          CardHeader: CardHeader,
+          CardBody: CardBody,
+          Alert: Alert,
+          AlertIcon: AlertIcon,
+          TextLink,
         }}
       />
     </Prose>

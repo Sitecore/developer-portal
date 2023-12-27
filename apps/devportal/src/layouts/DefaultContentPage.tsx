@@ -42,7 +42,7 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
         <PromoList data={promoBefore} />
         {/* Page structure */}
 
-        <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && Nav} inPageNav={sectionTitles.length > 0 && <InPageNav titles={sectionTitles} />}>
+        <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && Nav} inPageNav={sectionTitles.length > 0 && <InPageNav titles={sectionTitles} />} inPageLinks={sectionTitles}>
           <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
 
           <LatestChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />

@@ -4,17 +4,19 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
   //h1:where(.prose>:first-child):not(:where([class~=not-prose] *))
   h1: {
     fontFamily: 'heading',
-    fontWeight: '900',
+    fontWeight: 'semibold',
     fontSize: { base: '4xl', md: '5xl' },
     //mb: { base: 2, md: 0 },
   },
   h2: {
     fontFamily: 'heading',
-    fontWeight: '700',
+    fontWeight: 'semibold',
     fontSize: { base: '2xl', md: '3xl' },
+    scrollMarginTop: '5rem',
     //mt: { base: 0, md: 0 },
     //mb: { base: 0, md: 0 },
   },
+
   h3: {
     fontFamily: 'heading',
     fontWeight: '600',
@@ -127,6 +129,9 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
   li: {
     paddingStart: 2,
     my: 3,
+    p: {
+      mb: 0,
+    },
   },
   'ol>li::marker': {
     color: 'chakra-body-text',
@@ -147,20 +152,24 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     width: 'full',
     my: 8,
     textAlign: 'start',
+    borderColor: 'chakra-border-color',
+    shadow: 'sm',
 
     thead: {
-      borderBottomWidth: '1px',
-      borderBottomColor: 'gray.300',
-
-      _dark: {
-        borderBottomColor: 'gray.600',
-      },
+      background: 'primary-fg',
+      color: 'chakra-inverse-text',
     },
 
     th: {
       textAlign: 'inherit',
       fontWeight: 600,
       p: { base: 2, md: 3 },
+      ':nth-of-type(1)': {
+        borderTopLeftRadius: 'md',
+      },
+      ':nth-last-of-type(1)': {
+        borderTopRightRadius: 'md',
+      },
     },
 
     td: {
@@ -171,15 +180,23 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     tbody: {
       tr: {
         borderBottomWidth: '1px',
-        borderBottomColor: 'gray.200',
-
+        borderColor: 'chakra-border-color',
+        paddingTop: 4,
         _dark: {
-          borderBottomColor: 'gray.700',
+          borderColor: 'chakra-border-color',
         },
-
-        ':last-of-type': {
+        'td:nth-of-type(1)': {
+          width: '30%',
+        },
+        ':nth-last-of-type(1)': {
           borderBottomWidth: '0px',
           borderBottomColor: 'transparent',
+        },
+        ':nth-last-of-type(even)': {
+          background: 'primary.50',
+          _dark: {
+            background: 'primary.700',
+          },
         },
       },
     },
@@ -198,5 +215,18 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
 
   'h1 + *, h2 + *, h3 + *, h4 + *, hr + *': {
     mt: 0,
+  },
+  // Custom overrides for prose Markdown components
+  'div.chakra-card__header': {
+    h2: {
+      mt: { base: 0, md: 0 },
+      mb: { base: 0, md: 0 },
+    },
+  },
+  'div.chakra-alert': {
+    p: {
+      mt: { base: 0, md: 0 },
+      mb: { base: 0, md: 0 },
+    },
   },
 });
