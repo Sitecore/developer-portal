@@ -18,6 +18,7 @@ type PageInfoCore = {
   fileName: string;
   slug: string;
   menuOrder?: number;
+  area: string[];
 };
 
 // Input for 3rd party integrations are just strings

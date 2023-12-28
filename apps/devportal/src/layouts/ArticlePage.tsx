@@ -8,6 +8,7 @@ import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
 import { PromoCardProps } from 'ui/components/promos';
 import PromoList from 'ui/components/promos/promoCard/PromoList';
+import GithubContributionNotice from '../components/common/contribute';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ArticlePageProps = {
@@ -41,6 +42,7 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
         <PromoList data={promoBefore} />
 
         <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
+        <GithubContributionNotice pageInfo={pageInfo} />
 
         {customNavPager}
 
