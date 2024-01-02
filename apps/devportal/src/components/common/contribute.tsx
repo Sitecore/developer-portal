@@ -6,9 +6,7 @@ type GithubContributionNoticeProps = {
 };
 
 const GithubContributionNotice = ({ pageInfo }: GithubContributionNoticeProps) => {
-  
-  console.log(pageInfo);
-
+  // Only show this notice on pages that are in the Accelerate area  
   if (pageInfo?.area?.findIndex(a => a.toLocaleLowerCase() === 'accelerate')) {
     return null;
   }
