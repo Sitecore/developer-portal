@@ -3,6 +3,7 @@ title: 'Sitecore Accelerate for partners'
 description: 'Learn more about how to develop for XM Cloud'
 hasSubPageNav: true
 hasInPageNav: false
+area: ['accelerate']
 ---
 
 ## XM Cloud Glossary of Terms
