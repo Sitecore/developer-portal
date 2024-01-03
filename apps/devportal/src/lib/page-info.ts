@@ -81,6 +81,7 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
     headings: content?.headings,
     slug: params[params.length - 1],
     hasSubPageNav: searchForFile(path.join(pagesDirectory, `${relativePath}`), 'manifest.json') != null ? true : false,
+    includeContributionInstructions: false, // default to true, override in markdown
   } as PageInfo;
 
   /**

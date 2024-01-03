@@ -82,13 +82,13 @@ const defaultConfig: JssConfig = {
 
 ## Related Recipes
 
-<Row columns={4}>
+<Row columns={2}>
   <Link title="Content Management" link="/learn/accelerate/xm-cloud/security/content-management-security" />
 </Row>
 
 ## Related Documentation
 
-<Row columns={1}>
+<Row columns={2}>
   <Link title="NextAuth.js" link="https://next-auth.js.org" />
   <Link title="NextAuth Provider List" link="https://next-auth.js.org/providers/" />
   <Link title="Limitations and restrictions of Experience Edge" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/limitations-and-restrictions-of-experience-edge-for-xm.html" />
