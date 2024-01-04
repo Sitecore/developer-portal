@@ -5,7 +5,6 @@ import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
 import { getUserId } from '@sitecore-search/react';
 import Layout from '@src/layouts/Layout';
-import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -89,9 +88,6 @@ export default function ChangeSearchlogHome() {
 
   return (
     <>
-      <Head>
-        <link rel="preload" href="/api/changelog/v1/all?" as="fetch" crossOrigin="anonymous" />
-      </Head>
       <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
           <HStack>
@@ -111,7 +107,7 @@ export default function ChangeSearchlogHome() {
             <Alert status="info" alignItems="center">
               <AlertIcon />
               <Tooltip label="Go to the overview of current release notes" aria-label="A tooltip">
-                <Link href="/changelog/current" title="View the list of current release notes per product">
+                <Link href="/changelog-search/current" title="View the list of current release notes per product">
                   You are viewing the Sitecore Cloud changelog. To see release notes for Sitecore products not yet listed here, click here.
                 </Link>
               </Tooltip>

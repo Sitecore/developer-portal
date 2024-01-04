@@ -11,7 +11,6 @@ type ChangelogSearchByMonthProps = {
 const ChangelogSearchByMonth = ({ entriesByMonth, isLoading }: ChangelogSearchByMonthProps): JSX.Element => {
   const entriesGrouped = entriesByMonth.reduce<Record<string, ChangelogEntrySummary[]>>((group, entry) => {
     const month = new Date(entry.releaseDate).toLocaleString('default', { month: 'short', year: 'numeric' });
-    console.log(month);
     group[month] = group[month] ?? [];
     group[month].push(entry);
     return group;
