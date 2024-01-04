@@ -26,6 +26,24 @@ export function buildSearchQuery({ path, limit = 10, offset = 0, uuid, facets }:
               ]
             }
           }
+        },
+        {
+          "entity": "content",
+          "rfk_id": "rfk_changelogbymonth",
+          "search": {
+            "content": {},
+            "limit": 50,
+            "offset": 0,
+            ${facetNode}
+            "sort": {
+              "value":
+              [
+                {
+                  "name": "release_date_desc"
+                }
+              ]
+            }
+          }
         }
       ]
     }

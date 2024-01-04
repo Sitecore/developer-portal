@@ -1,4 +1,4 @@
-import { ChangelogEntry } from "../types/changeLogEntry";
+import { ChangelogEntry, ChangelogEntrySummary } from "../types/changeLogEntry";
 
 export type QuerySearchApiParams = {
   query: string;
@@ -7,6 +7,7 @@ export type QuerySearchApiParams = {
 
 export type QuerySearchApiResult = {
   entries: ChangelogEntry[];
+  entriesByMonth: ChangelogEntrySummary[];
   facets: ChangeLogSearchFacet[];
   isMore: boolean;
 }

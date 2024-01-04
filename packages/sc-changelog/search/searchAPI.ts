@@ -43,6 +43,27 @@ export async function BindResponse(response: Response, selectedFacets: ChangeLog
     };
   }) ?? [];
 
+  const entriesByMonth = data?.widgets[1]?.content.map((entry: any) => {
+    return {
+      id: entry.id,
+      title: entry.title,
+      releaseDate: entry.releaseDate,
+      lightIcon: entry?.products[0]?.lightIcon,
+      darkIcon: entry?.products[0]?.darkIcon,
+      productName: entry.product_names[0],
+      products: entry?.products.map((product: any) => {
+        return {
+          id: product.id,
+          productName: product.productName,
+          productDescription: product.productDescription,
+          lightIcon: product.lightIcon,
+          darkIcon: product.darkIcon
+        }
+      }) ?? [],
+      changeTypeName: entry.changeTypeName,
+    };
+  }) ?? [];
+
   const facets = data?.widgets[0]?.facet.map((facet: any) => {
     return {
       name: facet.name,
@@ -60,6 +81,7 @@ export async function BindResponse(response: Response, selectedFacets: ChangeLog
 
   return {
     entries,
+    entriesByMonth,
     facets,
     isMore: data?.widgets[0].total_item > data?.widgets[0].offset + data?.widgets[0].limit
   }

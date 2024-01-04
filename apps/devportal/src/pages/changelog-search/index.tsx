@@ -1,3 +1,4 @@
+import ChangelogSearchByMonth from '@/src/components/changelog/search/ChangelogSearchByMonth';
 import ChangelogSearchResults from '@/src/components/changelog/search/ChangelogSearchResults';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Text, Tooltip } from '@chakra-ui/react';
 import { mdiRss } from '@mdi/js';
@@ -10,7 +11,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import SearchChangeLog, { SearchChangeLogParams } from 'sc-changelog/search';
 import { ChangeLogSearchFacet, ChangeLogSearchFacetValue } from 'sc-changelog/search/types';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
+import { ChangelogEntry, ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 import Hero from 'ui/components/common/Hero';
 import ProductLogo from 'ui/components/common/ProductLogo';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
@@ -19,6 +20,7 @@ import { Product } from 'ui/lib/assets';
 
 export default function ChangeSearchlogHome() {
   const [entries, setEntries] = useState<ChangelogEntry[]>([]);
+  const [entriesByMonth, setEntriesByMonth] = useState<ChangelogEntrySummary[]>([]);
   const [facets, setFacets] = useState<ChangeLogSearchFacet[]>([]);
   const [offset, setOffset] = useState<number>(0);
   const [isLoading, setisLoading] = useState<boolean>(true);
@@ -75,6 +77,7 @@ export default function ChangeSearchlogHome() {
     } else {
       setEntries(apiResponse.entries);
     }
+    setEntriesByMonth(apiResponse.entriesByMonth);
     setFacets(apiResponse.facets);
     setIsMore(apiResponse.isMore);
   };
@@ -121,7 +124,7 @@ export default function ChangeSearchlogHome() {
                 <GridItem colSpan={{ base: 2 }}>
                   <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
                   <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                  <p>Changes by month will appear in here!</p>
+                  <ChangelogSearchByMonth isLoading={isLoading} entriesByMonth={entriesByMonth} />
                 </GridItem>
               </Hide>
             </Grid>
