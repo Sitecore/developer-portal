@@ -39,7 +39,7 @@ The developer portal is built with Next.js, so you'll need to have Node.js insta
 
 #### Environment Variables
 
-The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables.
+The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables. Use the `.env.template` file as a starting point.
 
 The following variables should exist within the .env.local file:
 
@@ -71,7 +71,7 @@ _Note: The site will still function if the keys are missing or left blank. Howev
 1. Install [Node.js](htts://nodejs.org/en/), we recommend the LTS version.
 2. Clone the repository.
 3. Inside the repository run `npm install` to install all the dependencies.
-4. Create a `.env.local` file in the root of the project and add the following environment variables:
+4. Create a `.env.local` file in the root of the project from the `.env.template` file. The following environment variables should be included:
 
 ```
 NEXT_PUBLIC_YOUTUBE_API_KEY=""
