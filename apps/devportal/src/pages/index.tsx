@@ -1,4 +1,3 @@
-import frontendSurvey from '@/data/promos/frontend-survey';
 import { Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import communityListData from '@data/data-community-list';
 import platformData from '@data/data-platform';
@@ -15,7 +14,7 @@ import Hexagons from 'ui/components/hexagons/Hexagons';
 import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
 import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
 import { CategoryTileList, GenericList } from 'ui/components/lists';
-import { CTACard, PromoCard } from 'ui/components/promos';
+import { CTACard } from 'ui/components/promos';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
@@ -39,8 +38,6 @@ const HomePage = ({ pageInfo }: HomePageProps): JSX.Element => (
 
     <VerticalGroup background={'chakra-bg'}>
       <CenteredContent>
-        <PromoCard {...frontendSurvey} />
-
         <SimpleGrid py={4} gap={4} columns={[1, 1, 2]}>
           <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
           <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} listItem={true} />
