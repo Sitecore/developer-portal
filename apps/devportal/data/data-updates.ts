@@ -8,7 +8,7 @@ const content: GenericListItem[] = [
     href: 'https://migration.sitecore.com/',
     linkText: 'Get Started',
     img: {
-      src: 'https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/home/knowledge-center/digital-marketing-resources/migrating-to-xm-cloud/gettyimages-898545250.jpg?mw=310&md=20230901T160358Z&hash=CA7AE4A53096E607A51CA4C172B0E5D8&t=300x310',
+      src: 'https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/home/knowledge-center/digital-marketing-resources/migrating-to-xm-cloud/gettyimages-898545250.jpg',
       alt: 'Migration Advisor',
     },
   },
@@ -38,8 +38,8 @@ const content: GenericListItem[] = [
     href: '/learn/accelerate/xm-cloud',
     linkText: 'Read',
     img: {
-      src: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868',
-      alt: 'XM Cloud Recommended practices',
+      src: '/images/accelerate.png',
+      alt: 'Sitecore Accelerate',
     },
   },
 ];

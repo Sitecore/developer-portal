@@ -14,7 +14,7 @@ changelogProductId: ['av_GqshF5U2kL8XMGjf-Xw']
 <Promo
   title="Sitecore Accelerate"
   description="Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products. "
-  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
+  imageSource="/images/accelerate.png"
   linkText="Read more"
   linkHref="/learn/accelerate/xm-cloud" isImageLeft={false}
 />
