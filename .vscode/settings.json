@@ -4,8 +4,8 @@
   "javascript.format.enable": false,
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit"
+    "source.fixAll": true,
+    "source.organizeImports": true
   },
   "[typescript]": {
     "editor.formatOnSave": true
