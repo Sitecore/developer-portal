@@ -3,7 +3,8 @@ import { GenericListData, GenericListItem } from 'ui/components/lists';
 const content: GenericListItem[] = [
   {
     title: 'Migration Advisor',
-    description: 'Tell the Sitecore Migration Advisor about your solution and then find videos, tutorials, walkthroughs, code examples, and more to help you migrate from Sitecore Platform DXP to Sitecore XM Cloud and the rest of the Sitecore Composable DXP.',
+    description:
+      'Tell the Sitecore Migration Advisor about your solution and then find videos, tutorials, walkthroughs, code examples, and more to help you migrate from Sitecore Platform DXP to Sitecore XM Cloud and the rest of the Sitecore Composable DXP.',
     href: 'https://migration.sitecore.com/',
     linkText: 'Get Started',
     img: {
@@ -32,9 +33,9 @@ const content: GenericListItem[] = [
     },
   },
   {
-    title: 'XM Cloud Recommended Practices',
-    description: 'Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects!',
-    href: '/learn/faq/xm-cloud-recommended-practices',
+    title: 'Sitecore Accelerate',
+    description: 'Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products.',
+    href: '/learn/accelerate/xm-cloud',
     linkText: 'Read',
     img: {
       src: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868',
