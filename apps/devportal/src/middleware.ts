@@ -21,6 +21,13 @@ export const config = {
 };
 
 export default function middleware(req: NextRequest) {
+  // Redirect to correct URL when spaces are used in the URL
+  if (req.nextUrl.pathname.startsWith('/downloads')) {
+    if (req.nextUrl.toString().includes('%20')) {
+      return NextResponse.redirect(new URL(req.nextUrl.toString().replaceAll('%20', '_')));
+    }
+  }
+
   const manual = req.cookies.get('_scdp_preview');
 
   // Ignore when preview mode is enabled/disabled manually
