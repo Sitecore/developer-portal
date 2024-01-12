@@ -76,7 +76,7 @@ Picking the right branching strategy can be a sensitive subject, many developers
 
 Ultimately, rather than talking about branching, we need to focus on the why - what do we use branching for? The end game is to control change within our application. A lot of common branching strategies (like GitFlow etc...) promote the use of long lived branches, this can cause problems when making changes because as a developer you are isolating your change away from everyone else's change and you don't have a picture of everything happening to the application. We need to _Embrace Change, don't Hide Change_.
 
-The opposite of a feature branch heavy strategy is trunk based development, where every change happens directly on the `main` or `trunk` branch. This method clearly embraces change, but without very strong testing and devops practices, it can be very easy to introduce breaking changes that block other development activities.
+The opposite of a feature branch heavy strategy is trunk based development, where every change happens directly on the `main` or `trunk` branch. This method clearly embraces change, but without very strong testing and DevOps practices, it can be very easy to introduce breaking changes that block other development activities.
 
 Because of this, we recommend a hybrid approach, based on the [Github Flow](https://docs.github.com/en/get-started/quickstart/github-flow) or [Gitlab Flow](https://about.gitlab.com/topics/version-control/what-is-gitlab-flow/) models.
 
