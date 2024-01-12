@@ -27,13 +27,13 @@ Sitecore Connect™ for Content Hub gives web editors, and content/digital marke
 
  | Resource | Description |
  | --- | --- |
- | [Update resources for Sitecore Connect™ for Content Hub](https://dev.sitecore.net:443/downloads/Resource%20files%20for%20Modules/1x/Resource%20files%20for%20Modules%20100) | Update resources you need to upgrade from Sitecore Connect™ for Content Hub 3.1.1 and 4.0.0 and Sitecore Connect™ for Sitecore CMP 1.0.0 to 3.0.0. |
+ | [Update resources for Sitecore Connect™ for Content Hub](/downloads/Resource%20files%20for%20Modules/1x/Resource%20files%20for%20Modules%20100) | Update resources you need to upgrade from Sitecore Connect™ for Content Hub 3.1.1 and 4.0.0 and Sitecore Connect™ for Sitecore CMP 1.0.0 to 3.0.0. |
 
 ## Release Information
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Connect%20for%20Content%20Hub/5x/Sitecore%20Connect%20for%20Content%20Hub%20510/Release%20Notes) | Release notes for Sitecore Connect™ for Content Hub. |
+ | [Release Notes](/downloads/Sitecore%20Connect%20for%20Content%20Hub/5x/Sitecore%20Connect%20for%20Content%20Hub%20510/Release%20Notes) | Release notes for Sitecore Connect™ for Content Hub. |
  | [Installation Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/install-sitecore-connect-for-content-hub-on-prem.html) | Installation and configuration guide for Sitecore Connect™ for Content Hub. |
  | [Installation Guide for PaaS](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/installing-sitecore-connect-for-content-hub-on-paas.html) | This guide describes how to deploy Sitecore Connect for Content Hub™ in a Sitecore Azure Cloud Service (PaaS) environment. |
  | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/installing-sitecore-connect-for-content-hub-on-containers.html) | This guide describes how to do the Sitecore Connect™ for Content Hub for Docker Compose and Kubernetes deployment. |

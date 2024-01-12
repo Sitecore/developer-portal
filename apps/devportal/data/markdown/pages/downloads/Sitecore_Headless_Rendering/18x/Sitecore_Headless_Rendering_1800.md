@@ -49,7 +49,7 @@ The Sitecore Headless Services module (formerly known as the Sitecore JavaScript
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Headless%20Rendering/18x/Sitecore%20Headless%20Rendering%201800/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Headless%20Rendering/18x/Sitecore%20Headless%20Rendering%201800/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [ASP.NET Core Rendering SDK documentation](https://doc.sitecore.com/developers/101/developer-tools/en/sitecore-headless-development.html) | Official documentation for ASP.NET Core headless rendering. |
  | [JavaScript SDKs (JSS) documentation](https://jss.sitecore.com/docs) | Official documentation for the JavaScript SDKs. |
  | [Experience Edge documentation](https://doc.sitecore.com/en/developers/101/developer-tools/sitecore-experience-edge-for-xm.html) | Official documentation for Experience Edge and the Experience Edge connector. |

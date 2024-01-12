@@ -30,8 +30,8 @@ The Sitecore XP Active Directory module provides the integration of a Microsoft 
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Active%20Directory/1%200/Active%20Directory%201%202/Release%20Notes) | Release notes for Sitecore Active Directory 1.2 rev. 141225. |
- | [Known issues](https://dev.sitecore.net:443/downloads/Active%20Directory/1%200/Active%20Directory%201%202/Known%20Issues) | Known issues for Active Directory 1.2 rev. 141225. |
+ | [Release notes](/downloads/Active%20Directory/1%200/Active%20Directory%201%202/Release%20Notes) | Release notes for Sitecore Active Directory 1.2 rev. 141225. |
+ | [Known issues](/downloads/Active%20Directory/1%200/Active%20Directory%201%202/Known%20Issues) | Known issues for Active Directory 1.2 rev. 141225. |
 
 ## Documentation
 
@@ -45,5 +45,5 @@ The Sitecore XP Active Directory module provides the integration of a Microsoft 
 
  | Resource | Description |
  | --- | --- |
- | [Upgrade guide](https://dev.sitecore.net:443/downloads/Active%20Directory/1%200/Active%20Directory%201%202/Upgrade%20Guide) | Guide to upgrading Active Directory version 1.1 rev. 130705 to version 1.2 rev. 141225. |
+ | [Upgrade guide](/downloads/Active%20Directory/1%200/Active%20Directory%201%202/Upgrade%20Guide) | Guide to upgrading Active Directory version 1.1 rev. 130705 to version 1.2 rev. 141225. |
  | [Upgrade package](https://sitecoredev.azureedge.net/~/media/C81C38F3EFCF485C895AE82D3D794222.ashx?date=20150130T121210) | Update package to update the Active Directory module from version 1.1 rev. 130705 to version 1.2 rev. 141225. |

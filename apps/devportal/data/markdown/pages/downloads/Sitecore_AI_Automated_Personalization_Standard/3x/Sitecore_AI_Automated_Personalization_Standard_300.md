@@ -31,6 +31,6 @@ A module to enable Sitecore AI Auto-Personalization for Sitecore XP installation
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20AI%20Automated%20Personalization%20Standard/3x/Sitecore%20AI%20Automated%20Personalization%20Standard%20300/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20AI%20Automated%20Personalization%20Standard/3x/Sitecore%20AI%20Automated%20Personalization%20Standard%20300/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/E9A13C08FB814C2A9527E5B0E913FD71.ashx?date=20210621T140653) | A guide that provides step-by-step instructions for installing Sitecore AI Auto-Personalization Standard. |
  | [User Documentation](https://doc.sitecore.com/users/101/sitecore-experience-platform/en/sitecore-ai---automated-personalization.html) | A set of conceptual and procedural topics for Sitecore AI Auto-Personalization Standard users. |

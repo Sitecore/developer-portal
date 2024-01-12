@@ -19,6 +19,6 @@ Integrate data from Salesforce with Sitecore, and data from Sitecore with Salesf
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Salesforce%20Connect/Salesforce%20Connect%201/Salesforce%20Connect%201%204%201/Release%20Notes) | Release notes for Salesforce Connect. |
+ | [Release Notes](/downloads/Salesforce%20Connect/Salesforce%20Connect%201/Salesforce%20Connect%201%204%201/Release%20Notes) | Release notes for Salesforce Connect. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/7E7BC548C30E4D5793158A20E03716FF.ashx?date=20190219T101639) | The installation and configuration procedure for the Sitecore Connect for Salesforce CRM. |
  | [Documentation](https://doc.sitecore.com/developers/82/connectors/) | The Sitecore documentation website with all the Salesforce Connect documentation. |

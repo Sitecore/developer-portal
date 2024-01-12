@@ -31,7 +31,7 @@ This release is focused on enhancing Horizon pages and content editing functiona
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201000/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201000/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
 
 ## Documentation
 

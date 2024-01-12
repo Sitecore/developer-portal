@@ -17,7 +17,7 @@ Sitecore Azure Toolkit allows customers to package and deploy Sitecore solutions
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Azure%20Toolkit/1x/Sitecore%20Azure%20Toolkit%20100/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Azure%20Toolkit/1x/Sitecore%20Azure%20Toolkit%20100/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
 
 ## Links
 
@@ -25,4 +25,4 @@ Sitecore Azure Toolkit allows customers to package and deploy Sitecore solutions
  | --- | --- |
  | [Documentation](https://doc.sitecore.net:443/en/Products/Cloud/82/Working%20with%20Sitecore%20Azure) | Read all the information about Sitecore Azure Toolkit on the Doc site. |
  | [Azure RM Templates](https://github.com/Sitecore/Sitecore-Azure-Quickstart-Templates) | Github repository with Microsoft Azure Resource Manager templates for Sitecore configurations. |
- | [Sitecore Experience Platform](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform) | Sitecore Experience Platform download page contains packages for deploying on Microsoft Azure starting with version 8.2 Update-1. |
+ | [Sitecore Experience Platform](/downloads/Sitecore%20Experience%20Platform) | Sitecore Experience Platform download page contains packages for deploying on Microsoft Azure starting with version 8.2 Update-1. |

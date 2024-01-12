@@ -23,7 +23,7 @@ Return to [all available versions](/Downloads/Sitecore_Commerce)
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Commerce/90/Sitecore%20Experience%20Commerce%2090%20Update1/Release%20Notes) | Resolved issues, known issues, compatibility. |
+ | [Release Notes](/downloads/Sitecore%20Commerce/90/Sitecore%20Experience%20Commerce%2090%20Update1/Release%20Notes) | Resolved issues, known issues, compatibility. |
  | [Installation Guide - On Prem](https://sitecoredev.azureedge.net/~/media/8EB5EE92423F49BFBC429C160D5DF75F.ashx?date=20200519T151502) | Instructions for installing Sitecore XC in a single-server configuration on-prem or on a hosted virtual machine. |
  | [Installation Guide - Azure App Service](https://sitecoredev.azureedge.net/~/media/2566234C9B9B4F5F9B8C4EF259E03054.ashx?date=20200519T151643) | Instructions for installing Sitecore XC to a Microsoft Azure App Service. |
  | [Upgrade Guide - XC 9.0 Initial Release to Update 1](https://sitecoredev.azureedge.net/~/media/B9B4B95540944A8281E2F2072753317E.ashx?date=20200519T152342) | Instructions for upgrading from Sitecore XC 9.0 Initial Release to 9.0 Update-1, for On Prem deployments. |

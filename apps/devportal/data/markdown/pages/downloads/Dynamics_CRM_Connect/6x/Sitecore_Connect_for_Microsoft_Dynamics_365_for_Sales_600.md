@@ -33,7 +33,7 @@ Synchronize data between Microsoft Dynamics 365 for Sales and Sitecore Experienc
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Dynamics%20CRM%20Connect/6x/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20for%20Sales%20600/Release%20Notes) | Release notes for Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
+ | [Release Notes](/downloads/Dynamics%20CRM%20Connect/6x/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20for%20Sales%20600/Release%20Notes) | Release notes for Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/1CF42439E71F49D1AB0A99E22198053E.ashx?date=20210611T140343) | The installation and configuration procedure for the Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
  | [Container Deployment Guide](https://sitecoredev.azureedge.net/~/media/8E7022D94F39477EAA4791D20E78C66D.ashx?date=20210611T140401) | This guide describes how to do Sitecore Connect™ for Microsoft Dynamics 365 for Sales for Docker Compose and Kubernetes deployment. |
  | [Documentation](https://doc.sitecore.com/developers/dynamics-crm-connect/60/sitecore-connect-for-microsoft-dynamics-365-for-sales/en/sitecore-connect-for-microsoft-dynamics-365-for-sales-configuration-guide.html) | The Sitecore documentation portal has all of the documentation for Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |

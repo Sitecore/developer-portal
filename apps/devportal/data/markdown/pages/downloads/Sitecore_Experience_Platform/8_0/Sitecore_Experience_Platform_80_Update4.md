@@ -31,7 +31,7 @@ This page contains all the resources for **Sitecore Experience Platform 8.0 rev.
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/8%200/Sitecore%20Experience%20Platform%2080%20Update4/Release%20notes) | The latest news about Sitecore Experience Platform releases. |
+ | [Release notes](/downloads/Sitecore%20Experience%20Platform/8%200/Sitecore%20Experience%20Platform%2080%20Update4/Release%20notes) | The latest news about Sitecore Experience Platform releases. |
  | [Known issues](https://kb.sitecore.net/articles/616431) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/5EDC7100A4CD47A8A406DB744DF62AF6.ashx?date=20180206T091222) | The installation procedure for the Sitecore Experience Platform. |
  | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/96E5F62ECF754FD889E4D1D0CF4F4B82.ashx?date=20151210T113006) | Download and follow the instructions to upgrade to Sitecore Experience Platform 8.0 rev. 150621 (8.0 Update-4).  <br />  <br />If your Sitecore solution runs on an earlier version of Sitecore Experience Platform 8.0, you can update directly to Update-4 (Sitecore updates are cumulative). However, you must also implement the config file changes that have been introduced in each update.  <br />  <br />If your Sitecore solution is based on Sitecore  7.5 or earlier, you must use the upgrade instructions for Sitecore Experience Platform 8 rev. 141212 (initial release) to upgrade from Sitecore 7.5. |
@@ -41,8 +41,8 @@ This page contains all the resources for **Sitecore Experience Platform 8.0 rev.
 
  | Resource | Description |
  | --- | --- |
- | [Email Experience Manager 3.1](https://dev.sitecore.net:443/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2031/Email%20Experience%20Manager%2031%20Update1) | Download files and release information for Sitecore Email Experience Manager 3.1 rev. 150811 (Update-1) |
- | [Web Form For Marketers 8.0](https://dev.sitecore.net:443/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20for%20Marketers%2080/Web%20Forms%20for%20Marketers%2080%20Update4) | <br /><br />Download files and release information for Web Forms for Marketers 8.0 rev.150625 (Update-4)<br /><br />  <br />  <br />  |
+ | [Email Experience Manager 3.1](/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2031/Email%20Experience%20Manager%2031%20Update1) | Download files and release information for Sitecore Email Experience Manager 3.1 rev. 150811 (Update-1) |
+ | [Web Form For Marketers 8.0](/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20for%20Marketers%2080/Web%20Forms%20for%20Marketers%2080%20Update4) | <br /><br />Download files and release information for Web Forms for Marketers 8.0 rev.150625 (Update-4)<br /><br />  <br />  <br />  |
 
 ## Upgrade options
 
@@ -75,5 +75,5 @@ This page contains all the resources for **Sitecore Experience Platform 8.0 rev.
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore IP Geolocation Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
- | [Sitecore xDB Cloud Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |
+ | [Sitecore IP Geolocation Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ | [Sitecore xDB Cloud Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |

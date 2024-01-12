@@ -15,7 +15,7 @@ Looking for a different version? See [all available 8.0 and 8.1 versions](/downl
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Sitecore%20Azure/80/Sitecore%20Azure%2080%20Update1/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
+ | [Release notes](/downloads/Sitecore%20Azure/80/Sitecore%20Azure%2080%20Update1/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
  | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/4B5B51C4950449DEAA07394211958AE8.ashx?date=20160104T151325) | To upgrade from a previous Sitecore Azure version please follow the instructions in this guide |
 
 ## Downloads

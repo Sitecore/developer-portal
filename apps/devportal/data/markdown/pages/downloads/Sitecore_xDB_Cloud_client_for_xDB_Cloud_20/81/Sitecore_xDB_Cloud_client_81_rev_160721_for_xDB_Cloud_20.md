@@ -15,7 +15,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_client_for_xDB_Clo
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20xDB%20Cloud%20client%20for%20xDB%20Cloud%2020/81/Sitecore%20xDB%20Cloud%20client%2081%20rev%20160721%20for%20xDB%20Cloud%2020/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20xDB%20Cloud%20client%20for%20xDB%20Cloud%2020/81/Sitecore%20xDB%20Cloud%20client%2081%20rev%20160721%20for%20xDB%20Cloud%2020/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release. |
 
 ## Links
 

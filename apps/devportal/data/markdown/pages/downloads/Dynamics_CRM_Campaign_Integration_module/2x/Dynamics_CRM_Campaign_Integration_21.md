@@ -14,7 +14,7 @@ Integrate your CRM system with Sitecore, and enrich the CRM with information abo
  | Resource | Description |
  | --- | --- |
  | [Dynamics CRM Campaign Integration](https://sitecoredev.azureedge.net/~/media/65C3FA77CE97463AA73B57D7F5DD1B31.ashx?date=20160822T221858) | Adds `save actions` for Web Forms for Marketers (WFFM) that can update Dynamics CRM using data collected in a web form. |
- | [Dynamics CRM Security Provider](https://dev.sitecore.net:443/downloads/Dynamics%20CRM%20Security%20Provider) | <br /><br />Dynamics CRM Security Provider is used to interact directly with Dynamics CRM.<br /><br />  <Alert variant='warning' mb={4}><br />    <AlertIcon /><br />    <br /><br />This module must be installed prior to installing the Dynamics CRM Campaign Integration module.<br /><br />You must install the version of Dynamics CRM Security Provider that matches your Sitecore server.<br /><br /><br />  </Alert><br />   |
+ | [Dynamics CRM Security Provider](/downloads/Dynamics%20CRM%20Security%20Provider) | <br /><br />Dynamics CRM Security Provider is used to interact directly with Dynamics CRM.<br /><br />  <Alert variant='warning' mb={4}><br />    <AlertIcon /><br />    <br /><br />This module must be installed prior to installing the Dynamics CRM Campaign Integration module.<br /><br />You must install the version of Dynamics CRM Security Provider that matches your Sitecore server.<br /><br /><br />  </Alert><br />   |
 
 ## Links
 

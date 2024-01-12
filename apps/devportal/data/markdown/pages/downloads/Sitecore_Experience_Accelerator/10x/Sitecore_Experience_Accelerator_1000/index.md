@@ -41,7 +41,7 @@ The Sitecore® Experience Accelerator provides reusable, templated UX layouts an
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201000/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201000/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known Issues](https://kb.sitecore.net/articles/196733) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/B5FC951463414AA08A68C39D116F97BE.ashx?date=20200730T153700) | The installation procedure for the Sitecore Experience Accelerator. |
  | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/DAF5997F46054AD6AFF879233750C736.ashx?date=20200730T153817) | To upgrade from a previous SXA version please follow the instructions in this guide. |

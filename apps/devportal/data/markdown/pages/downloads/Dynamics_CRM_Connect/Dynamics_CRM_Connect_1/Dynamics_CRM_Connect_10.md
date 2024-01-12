@@ -19,7 +19,7 @@ Integrate data from Dynamics CRM with Sitecore, and data from Sitecore with Dyna
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Dynamics%20CRM%20Connect/Dynamics%20CRM%20Connect%201/Dynamics%20CRM%20Connect%2010/Release%20Notes) | Release notes for Dynamics CRM Connect. |
+ | [Release Notes](/downloads/Dynamics%20CRM%20Connect/Dynamics%20CRM%20Connect%201/Dynamics%20CRM%20Connect%2010/Release%20Notes) | Release notes for Dynamics CRM Connect. |
  | [Documentation](https://doc.sitecore.net:443/en/Products/CRM%20Connect/10) | Sitecore Documentation Portal with all Dynamics CRM Connect documentation. |
 
 ## Documentation

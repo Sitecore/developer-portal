@@ -33,7 +33,7 @@ Looking for **a different version**? See [all available 8.x versions](/downloads
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/82/Sitecore%20Experience%20Platform%2082%20Initial%20Release/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Experience%20Platform/82/Sitecore%20Experience%20Platform%2082%20Initial%20Release/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known issues](https://kb.sitecore.net/articles/631685) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/43276A72B3EB46F595796E64B4726991.ashx?date=20180206T092520) | The installation procedure for the Sitecore Experience Platform. |
  | [Upgrade guide](https://sitecoredev.azureedge.net/~/media/80F3ABB82AB44D6AA5722F6B654CF2A8.ashx?date=20161207T155240) | To upgrade from a previous Sitecore version please follow the instructions in this guide. |
@@ -44,7 +44,7 @@ Looking for **a different version**? See [all available 8.x versions](/downloads
 
  | Resource | Description |
  | --- | --- |
- | [Web Forms For Marketers 8.2](https://dev.sitecore.net:443/downloads/Web%20Forms%20For%20Marketers/82/Web%20Forms%20For%20Marketers%2082%20Initial%20Version) | Download files and release information for Web Forms for Marketers 8.2 (Initial Release). |
+ | [Web Forms For Marketers 8.2](/downloads/Web%20Forms%20For%20Marketers/82/Web%20Forms%20For%20Marketers%2082%20Initial%20Version) | Download files and release information for Web Forms for Marketers 8.2 (Initial Release). |
 
 ## Upgrade options
 
@@ -53,7 +53,7 @@ Looking for **a different version**? See [all available 8.x versions](/downloads
  | [The Sitecore Update Package](https://sitecoredev.azureedge.net/~/media/933E8A9025AB488DB3A4DEBD29D99E14.ashx?date=20161014T103810) | Download the files that you need for the upgrade process. |
  | [Configuration files for upgrade](https://sitecoredev.azureedge.net/~/media/070CB308791447A1A58AE24D87CB5D89.ashx?date=20160825T104253) | Download this package if you need only web.config and App_config files. |
  | [Sitecore Update Installation Wizard](https://sitecoredev.azureedge.net/~/media/FC694E94D7E243BCA2BF3E169A75FD8D.ashx?date=20160825T111646) | The Update Installation Wizard allows developers to update existing Sitecore Experience Platform using Sitecore update packages. |
- | [Express Migration Tool](https://dev.sitecore.net:443/downloads/Express%20Migration%20Tool/10/Express%20Migration%20Tool%2010%20Initial%20Release) | The Sitecore Express Migration Tool makes it easy for customers to help migrate older instances to the latest version of Sitecore Experience Platform without the need to gradually upgrade from version to version.  <br />The initial release supports migration of any version of Sitecore 7.2 to the initial release of the Sitecore Experience Platform 8.2 |
+ | [Express Migration Tool](/downloads/Express%20Migration%20Tool/10/Express%20Migration%20Tool%2010%20Initial%20Release) | The Sitecore Express Migration Tool makes it easy for customers to help migrate older instances to the latest version of Sitecore Experience Platform without the need to gradually upgrade from version to version.  <br />The initial release supports migration of any version of Sitecore 7.2 to the initial release of the Sitecore Experience Platform 8.2 |
 
 ## Additional Tools
 
@@ -73,6 +73,6 @@ Looking for **a different version**? See [all available 8.x versions](/downloads
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Device Detection Services Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
- | [Sitecore IP Geolocation Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
- | [Sitecore xDB Cloud Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |
+ | [Sitecore Device Detection Services Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
+ | [Sitecore IP Geolocation Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ | [Sitecore xDB Cloud Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |

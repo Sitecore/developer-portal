@@ -45,7 +45,7 @@ Synchronize data between Sitecore and 3rd party systems.
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Data%20Exchange%20Framework/6x/Data%20Exchange%20Framework%20600/Release%20Notes) | Release notes for Data Exchange Framework. |
+ | [Release Notes](/downloads/Data%20Exchange%20Framework/6x/Data%20Exchange%20Framework%20600/Release%20Notes) | Release notes for Data Exchange Framework. |
  | [Installation Guide for Data Exchange Framework](https://sitecoredev.azureedge.net/~/media/38544BA10CB9420689507D48CD4522A1.ashx?date=20210412T111826) | The installation and configuration procedure for the Data Exchange Framework. |
  | [Installation Guide for Data Exchange Tenant Web Service](https://sitecoredev.azureedge.net/~/media/70760E9F37174339B549B4636D374223.ashx?date=20211215T104200) | The installation and configuration procedure for Sitecore Data Exchange Tenant Web Service. |
  | [Container Deployment Guide for Data Exchange Framework](https://sitecoredev.azureedge.net/~/media/0CE7CAD03D8B4F57A83FB4D336406A42.ashx?date=20210527T140816) | This guide describes how to do Sitecore Containers with Data Exchange Framework for Docker Compose & Kubernetes deployment. |

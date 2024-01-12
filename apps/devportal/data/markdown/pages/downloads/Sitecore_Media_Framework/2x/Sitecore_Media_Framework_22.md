@@ -35,7 +35,7 @@ Connectors that were developed for Media Framework 2.1 may not be compatible wit
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Media%20Framework/2x/Sitecore%20Media%20Framework%2022/Release%20Notes) | Release notes for Sitecore Media Framework 2.2. |
+ | [Release Notes](/downloads/Sitecore%20Media%20Framework/2x/Sitecore%20Media%20Framework%2022/Release%20Notes) | Release notes for Sitecore Media Framework 2.2. |
 
 ## Upgrade Information
 

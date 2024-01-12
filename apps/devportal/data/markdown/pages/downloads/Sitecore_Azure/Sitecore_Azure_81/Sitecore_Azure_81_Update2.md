@@ -11,7 +11,7 @@ Sitecore Azure reduces costs and provides scalability and geographical load-bala
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Sitecore%20Azure/Sitecore%20Azure%2081/Sitecore%20Azure%2081%20Update2/Release%20notes%20test) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
+ | [Release notes](/downloads/Sitecore%20Azure/Sitecore%20Azure%2081/Sitecore%20Azure%2081%20Update2/Release%20notes%20test) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
  | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/CE352F4485E9456087E3DA837D66E9C2.ashx?date=20161114T112203) | To upgrade from a previous Sitecore Azure version please follow the instructions in this guide |
 
 ## Downloads

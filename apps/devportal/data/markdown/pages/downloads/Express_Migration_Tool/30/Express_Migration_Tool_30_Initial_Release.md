@@ -25,7 +25,7 @@ The Express Migration Tool Migrates: 
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Express%20Migration%20Tool/30/Express%20Migration%20Tool%2030%20Initial%20Release/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Express%20Migration%20Tool/30/Express%20Migration%20Tool%2030%20Initial%20Release/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known Issues](https://kb.sitecore.net/articles/583017) | Choose this link to access the known issues list on the Sitecore Knowledge Base. |
 
 ## Documentation

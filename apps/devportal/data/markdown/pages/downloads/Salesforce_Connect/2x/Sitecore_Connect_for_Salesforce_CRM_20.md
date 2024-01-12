@@ -27,6 +27,6 @@ Synchronize data between Salesforce CRM and Sitecore Experience Platform.
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Salesforce%20Connect/2x/Sitecore%20Connect%20for%20Salesforce%20CRM%2020/Release%20Notes) | Release notes for Sitecore Connect for Salesforce CRM. |
+ | [Release Notes](/downloads/Salesforce%20Connect/2x/Sitecore%20Connect%20for%20Salesforce%20CRM%2020/Release%20Notes) | Release notes for Sitecore Connect for Salesforce CRM. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/29334656926C48D69F95DB42FBC19E50.ashx?date=20190805T145006) | The installation and configuration procedure for the Sitecore Connect for Salesforce CRM. |
  | [Documentation](https://doc.sitecore.com/developers/salesforce-connect/20/sitecore-connect-for-salesforce-crm/en/index-en.html) | The Sitecore Developer Center has all of the documentation for Sitecore Connect for Salesforce CRM. |

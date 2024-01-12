@@ -32,7 +32,7 @@ Looking for **a different version**? See [all available 8.0 and 8.1 versions](/d
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%2081/Sitecore%20Experience%20Platform%2081%20Update2/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Experience%20Platform/Sitecore%2081/Sitecore%20Experience%20Platform%2081%20Update2/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known issues](https://kb.sitecore.net/articles/750348) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/3FB08A677CB64BF186731109C13555B2.ashx?date=20180206T091954) | The installation procedure for the Sitecore Experience Platform. |
  | [Upgrade guide](https://sitecoredev.azureedge.net/~/media/7F40ED758B144458910E8306F14D69AA.ashx?date=20160304T150734) | To upgrade from a previous Sitecore version please follow the instructions in this guide |
@@ -42,8 +42,8 @@ Looking for **a different version**? See [all available 8.0 and 8.1 versions](/d
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Azure 8.1](https://dev.sitecore.net:443/downloads/Sitecore%20Azure/Sitecore%20Azure%2081/Sitecore%20Azure%2081) | Sitecore Azure reduces costs and provides scalability and geographical load-balancing by automating the deployment of your Sitecore solution to the Microsoft Azure computing cloud. |
- | [Web Forms For Marketers 8.1](https://dev.sitecore.net:443/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20For%20Marketers%2081/Web%20Forms%20For%20Marketers%2081%20Update2) | Download files and release information for Web Forms for Marketers 8.1 rev. 160304 (Update-2). |
+ | [Sitecore Azure 8.1](/downloads/Sitecore%20Azure/Sitecore%20Azure%2081/Sitecore%20Azure%2081) | Sitecore Azure reduces costs and provides scalability and geographical load-balancing by automating the deployment of your Sitecore solution to the Microsoft Azure computing cloud. |
+ | [Web Forms For Marketers 8.1](/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20For%20Marketers%2081/Web%20Forms%20For%20Marketers%2081%20Update2) | Download files and release information for Web Forms for Marketers 8.1 rev. 160304 (Update-2). |
 
 ## Upgrade options
 
@@ -73,6 +73,6 @@ Looking for **a different version**? See [all available 8.0 and 8.1 versions](/d
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Device Detection Services Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
- | [Sitecore IP Geolocation Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
- | [Sitecore xDB Cloud Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |
+ | [Sitecore Device Detection Services Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
+ | [Sitecore IP Geolocation Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ | [Sitecore xDB Cloud Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |

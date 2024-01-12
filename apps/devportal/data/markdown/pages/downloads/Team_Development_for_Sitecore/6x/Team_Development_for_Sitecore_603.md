@@ -20,7 +20,7 @@ In our latest release, we focused on supporting Rainbow Yaml Serialization compa
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Team%20Development%20for%20Sitecore/6x/Team%20Development%20for%20Sitecore%20603/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
+ | [Release Notes](/downloads/Team%20Development%20for%20Sitecore/6x/Team%20Development%20for%20Sitecore%20603/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
 
 ## Documentation
 

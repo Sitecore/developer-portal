@@ -26,7 +26,7 @@ Sitecore Azure Toolkit allows customers to package and deploy Sitecore solutions
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Azure%20Toolkit/2x/Sitecore%20Azure%20Toolkit%20261/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Azure%20Toolkit/2x/Sitecore%20Azure%20Toolkit%20261/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
 
 ## Links
 
@@ -35,4 +35,4 @@ Sitecore Azure Toolkit allows customers to package and deploy Sitecore solutions
  | [Documentation](https://doc.sitecore.com/developers/sat/26/sitecore-azure-toolkit/en/index-en.html) | Read all the information about Sitecore Azure Toolkit on the Doc site. |
  | [Configure Sitecore Power BI Health Reports](https://doc.sitecore.com/developers/91/sitecore-experience-management/en/configure-sitecore-power-bi-health-reports.html) | Read how to configure the Sitecore Power BI Health Reports. |
  | [Azure RM Templates](https://github.com/Sitecore/Sitecore-Azure-Quickstart-Templates) | Github repository with Microsoft Azure Resource Manager templates for Sitecore configurations. |
- | [Sitecore Experience Platform](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform) | Sitecore Experience Platform download page contains packages for deploying on Microsoft Azure starting with version 8.2 Update-1. |
+ | [Sitecore Experience Platform](/downloads/Sitecore%20Experience%20Platform) | Sitecore Experience Platform download page contains packages for deploying on Microsoft Azure starting with version 8.2 Update-1. |

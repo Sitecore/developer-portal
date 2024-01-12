@@ -26,13 +26,13 @@ Synchronize data between Salesforce CRM and Sitecore Experience Platform.
 
  | Resource | Description |
  | --- | --- |
- | [Update resources for Sitecore Connect™ for Salesforce CRM](https://dev.sitecore.net:443/downloads/Resource%20files%20for%20Modules/1x/Resource%20files%20for%20Modules%20100) | Update resources you need to upgrade from Sitecore Connect™ for Salesforce CRM 2.0.0 to 7.0.0. |
+ | [Update resources for Sitecore Connect™ for Salesforce CRM](/downloads/Resource%20files%20for%20Modules/1x/Resource%20files%20for%20Modules%20100) | Update resources you need to upgrade from Sitecore Connect™ for Salesforce CRM 2.0.0 to 7.0.0. |
 
 ## Release Information
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Salesforce%20Connect/7x/Sitecore%20Connect%20for%20Salesforce%20CRM%20700/Release%20Notes) | Release notes for Sitecore Connect™ for Salesforce CRM. |
+ | [Release Notes](/downloads/Salesforce%20Connect/7x/Sitecore%20Connect%20for%20Salesforce%20CRM%20700/Release%20Notes) | Release notes for Sitecore Connect™ for Salesforce CRM. |
  | [Installation Guide](https://doc.sitecore.com/xp/en/developers/salesforce-connect/70/sitecore-connect-for-salesforce-crm/install-sitecore-connect-for-salesforce-crm-on-prem.html) | The installation and configuration procedure for Sitecore Connect™ for Salesforce CRM. |
  | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/salesforce-connect/70/sitecore-connect-for-salesforce-crm/install-sitecore-connect-for-salesforce-crm-on-containers.html) | The installation and configuration procedure for Sitecore Connect™ for Salesforce CRM for Docker/Kubernetes. |
  | [Documentation](https://doc.sitecore.com/developers/salesforce-connect/70/sitecore-connect-for-salesforce-crm/en/sitecore-connect-for-salesforce-crm-configuration-guide.html) | The Sitecore documentation portal has all of the documentation for Sitecore Connect™ for Salesforce CRM. |

@@ -34,6 +34,6 @@ Sitecore Connect™ for Sitecore CMP version 3.0.0 is compatible with Sitecore X
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Connect%20for%20Sitecore%20CMP/30/Sitecore%20Connect%20for%20Sitecore%20CMP%20300/Release%20Notes) | Release notes for Sitecore Connect™ for Sitecore CMP. |
+ | [Release Notes](/downloads/Sitecore%20Connect%20for%20Sitecore%20CMP/30/Sitecore%20Connect%20for%20Sitecore%20CMP%20300/Release%20Notes) | Release notes for Sitecore Connect™ for Sitecore CMP. |
  | [Installation and Configuration Guide](https://sitecoredev.azureedge.net/~/media/B127D93D3E8C4E4BAAF1F6DA1FD561B5.ashx?date=20200916T112412) | Installation and configuration guide for Sitecore Connect™ for Sitecore CMP. |
  | [Sitecore Connect™ CMP Guide](https://doc.sitecore.com/developers/sitecore-cmp/30/sitecore-connect-for-sitecore-cmp/en/index-en.html) | Architecture of the Sitecore Connect™ for Sitecore CMP. |

@@ -19,6 +19,6 @@ Komfo Connector provides a simple and effective way to create custom audiences u
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Komfo%20Connector/10/Komfo%20Connector%2010/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Komfo%20Connector/10/Komfo%20Connector%2010/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Installation Guide](https://doc.sitecore.net:443/en/Products/Social%20Connected/81/Working%20with%20the%20Komfo%20Connector/Setting%20up/Install%20and%20configure%20the%20Komfo%20Connector) | The installation procedure for the Komfo Connector module. |
  | [Documentation](https://doc.sitecore.net:443/en/Products/Social%20Connected/81/Working%20with%20the%20Komfo%20Connector) | Documentation for the Komfo Connector module. |

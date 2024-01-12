@@ -25,7 +25,7 @@ Looking for **a different update**? See [all available WFFM updates](/downloads/
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20for%20Marketers%2080/Web%20Forms%20for%20Marketers%2080%20Update%206/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release notes](/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20for%20Marketers%2080/Web%20Forms%20for%20Marketers%2080%20Update%206/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known issues](https://kb.sitecore.net/articles/616431) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/412A8F4982D247ABABA7CFBD8B74933A.ashx?date=20161103T104931) | The installation procedure for the WFFM module. |
  | [Documentation](https://doc.sitecore.com/legacy-docs/web-forms-for-marketers-8.0.pdf) | Documentation for the WFFM module. |

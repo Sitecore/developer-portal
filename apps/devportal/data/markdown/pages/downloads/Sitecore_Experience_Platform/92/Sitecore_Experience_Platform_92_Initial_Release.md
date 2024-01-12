@@ -38,8 +38,8 @@ Looking for **a different version**? See [all available versions](/downloads/Sit
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Installation Framework](https://dev.sitecore.net:443/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20210) | Follow this link to download the Sitecore Installation Framework (SIF) PowerShell module. Please refer to the Sitecore Experience Platform installation guide for further information on how to install Sitecore with SIF. |
- | [Scripts for Sitecore Security database](https://dev.sitecore.net:443/downloads/Scripts%20for%20Sitecore%20Security%20database) | The package contains the set of scripts for moving Sitecore Security membership provider from the Core database to individual or existing one. |
+ | [Sitecore Installation Framework](/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20210) | Follow this link to download the Sitecore Installation Framework (SIF) PowerShell module. Please refer to the Sitecore Experience Platform installation guide for further information on how to install Sitecore with SIF. |
+ | [Scripts for Sitecore Security database](/downloads/Scripts%20for%20Sitecore%20Security%20database) | The package contains the set of scripts for moving Sitecore Security membership provider from the Core database to individual or existing one. |
  | [Sitecore Remote Distributed Deployment SIF Templates](https://sitecoredev.azureedge.net/~/media/7255CF98254347108E085DFBB6687E02.ashx?date=20181217T093828) | The package contains Sitecore Install Framework deployment templates that can be used to deploy Sitecore Experience Platform remotely to a scalable distributed server cluster from a single workstation or server. |
 
 ## Download options for On Premises deployment
@@ -73,7 +73,7 @@ Looking for **a different version**? See [all available versions](/downloads/Sit
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/92/Sitecore%20Experience%20Platform%2092%20Initial%20Release/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release notes](/downloads/Sitecore%20Experience%20Platform/92/Sitecore%20Experience%20Platform%2092%20Initial%20Release/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known issues](https://kb.sitecore.net/articles/100844) | Choose this link to access the Sitecore Knowledge Base. |
  | [Sitecore Installation Framework (SIF) Configuration Guide](https://sitecoredev.azureedge.net/~/media/ACF5FDEA03034A15A451951945AC1BF5.ashx?date=20190626T122146) | Explains how to use the SIF Microsoft PowerShell module to deploy and configure a Sitecore topology. |
  | [Quick Installation Guide for a Developer Workstation](https://sitecoredev.azureedge.net/~/media/7B1F47E5C84E484FB4C16ACF139494E8.ashx?date=20210303T125343) | Explains how to install the XP Single (XP0) topology on a workstation for development and testing purposes. |
@@ -87,7 +87,7 @@ Looking for **a different version**? See [all available versions](/downloads/Sit
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Identity](https://dev.sitecore.net:443/downloads/Sitecore%20Identity/3x/Sitecore%20Identity%20300) | Download files and release information for Sitecore Identity. |
+ | [Sitecore Identity](/downloads/Sitecore%20Identity/3x/Sitecore%20Identity%20300) | Download files and release information for Sitecore Identity. |
 
 ## Upgrade options
 
@@ -99,7 +99,7 @@ Looking for **a different version**? See [all available versions](/downloads/Sit
  | [Configuration files for upgrade](https://sitecoredev.azureedge.net/~/media/577E97E0D5FC4DFAAF36E2731BD93402.ashx?date=20190611T111335) | This package contains configuration files and database scripts for the upgrade. |
  | [Sitecore Update Installation Wizard for 8.x-9.0](https://sitecoredev.azureedge.net/~/media/485C0D73F6874E2185A19C5D62F2A8F7.ashx?date=20190405T092427) | Sitecore Update Installation Wizard allows developers to update existing Sitecore Experience Platform using Sitecore update packages. |
  | [Sitecore Update Installation Wizard for 9.1](https://sitecoredev.azureedge.net/~/media/21FBE8650BC04BCDBE78F1EC65D31B76.ashx?date=20190405T092428) | Sitecore Update Installation Wizard allows developers to update existing Sitecore Experience Platform using Sitecore update packages. |
- | [Sitecore xDB Data Migration Tool](https://dev.sitecore.net:443/downloads/Sitecore%20xDB%20Data%20Migration%20Tool/3x/xDB%20Data%20Migration%20Tool%20300) | Convert and migrate data from Sitecore Experience Database 8.x to Sitecore Experience Database 9.2. |
+ | [Sitecore xDB Data Migration Tool](/downloads/Sitecore%20xDB%20Data%20Migration%20Tool/3x/xDB%20Data%20Migration%20Tool%20300) | Convert and migrate data from Sitecore Experience Database 8.x to Sitecore Experience Database 9.2. |
 
 ## Client translations
 
@@ -115,6 +115,6 @@ Looking for **a different version**? See [all available versions](/downloads/Sit
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Device Detection Services usage policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
- | [Sitecore IP Geolocation usage policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
- | [Sitecore xDB Cloud usage policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |
+ | [Sitecore Device Detection Services usage policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
+ | [Sitecore IP Geolocation usage policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ | [Sitecore xDB Cloud usage policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |

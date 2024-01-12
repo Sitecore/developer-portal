@@ -11,7 +11,7 @@ Sitecore Azure reduces costs and provides scalability and geographical load-bala
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Sitecore%20Azure/80/Sitecore%20Azure%2080/Release%20notes) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
+ | [Release notes](/downloads/Sitecore%20Azure/80/Sitecore%20Azure%2080/Release%20notes) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
 
 ## Downloads
 

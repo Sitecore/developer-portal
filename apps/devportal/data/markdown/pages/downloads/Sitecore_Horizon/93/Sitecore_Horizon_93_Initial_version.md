@@ -26,7 +26,7 @@ This release includes:
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Horizon/93/Sitecore%20Horizon%2093%20Initial%20version/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Horizon/93/Sitecore%20Horizon%2093%20Initial%20version/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
 
 ## Documentation
 

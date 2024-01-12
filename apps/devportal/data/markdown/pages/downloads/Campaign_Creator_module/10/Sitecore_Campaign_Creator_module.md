@@ -17,5 +17,5 @@ The Sitecore Campaign Creator provides a simple and effective way for marketers 
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Campaign%20Creator%20module/10/Sitecore%20Campaign%20Creator%20module/Release%20Notes) | Release notes for the Sitecore Campaign Creator module 1.0 Rev. 150423. |
+ | [Release notes](/downloads/Campaign%20Creator%20module/10/Sitecore%20Campaign%20Creator%20module/Release%20Notes) | Release notes for the Sitecore Campaign Creator module 1.0 Rev. 150423. |
  | [Documentation](https://doc.sitecore.net/products/sitecore%20experience%20platform/campaigns/configuring%20the%20campaign%20creator) | Link to documentation portal with all documentation for Sitecore Campaign Creator. |

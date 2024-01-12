@@ -22,6 +22,6 @@ Convert and migrate data from Sitecore Experience Database 8.x to Sitecore Exper
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20xDB%20Data%20Migration%20Tool/2x/xDB%20Data%20Migration%20Tool%20202/Release%20Notes) | Release notes for xDB Data Migration Tool. |
+ | [Release Notes](/downloads/Sitecore%20xDB%20Data%20Migration%20Tool/2x/xDB%20Data%20Migration%20Tool%20202/Release%20Notes) | Release notes for xDB Data Migration Tool. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/F5AB4212C143456D8E6104095AE1278B.ashx?date=20191101T135210) | The installation and configuration procedure for the xDB Data Migration Tool. |
  | [Documentation](https://doc.sitecore.com/developers/dmt/21/xdb-data-migration-tool/en/xdb-data-migration-tool.html) | The Sitecore documentation website contains all the documentation for the xDB Data Migration Tool. |

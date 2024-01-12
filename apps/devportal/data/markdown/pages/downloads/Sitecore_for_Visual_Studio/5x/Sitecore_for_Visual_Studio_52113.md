@@ -23,7 +23,7 @@ Requirements: Sitecore 10.0 and up, active SVS license subscription (included wi
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20for%20Visual%20Studio/5x/Sitecore%20for%20Visual%20Studio%2052113/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20for%20Visual%20Studio/5x/Sitecore%20for%20Visual%20Studio%2052113/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
 
 ## Documentation
 

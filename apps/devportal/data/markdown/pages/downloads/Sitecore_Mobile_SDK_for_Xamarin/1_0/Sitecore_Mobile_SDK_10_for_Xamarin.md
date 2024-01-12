@@ -23,5 +23,5 @@ The Sitecore Mobile SDK for Xamarin is a shared source project that has been dev
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Mobile%20SDK%20for%20Xamarin/1%200/Sitecore%20Mobile%20SDK%2010%20for%20Xamarin/Release%20Notes) | Release notes for the Sitecore Mobile SDK for Xamarin. |
+ | [Release Notes](/downloads/Sitecore%20Mobile%20SDK%20for%20Xamarin/1%200/Sitecore%20Mobile%20SDK%2010%20for%20Xamarin/Release%20Notes) | Release notes for the Sitecore Mobile SDK for Xamarin. |
  | [Documentation](https://doc.sitecore.com/legacy-docs/sitecore-mobile-sdk-for-xamarin-web-api-1.0.pdf) | Link to documentation portal with all documentation for Sitecore Mobile SDK for Xamarin. |

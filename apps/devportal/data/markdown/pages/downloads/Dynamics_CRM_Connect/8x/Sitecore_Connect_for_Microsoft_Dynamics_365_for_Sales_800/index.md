@@ -27,13 +27,13 @@ Synchronize data between Microsoft Dynamics 365 for Sales and Sitecore Experienc
 
  | Resource | Description |
  | --- | --- |
- | [Update resources for Sitecore Connect™ for Microsoft Dynamics 365 for Sales](https://dev.sitecore.net:443/downloads/Resource%20files%20for%20Modules/1x/Resource%20files%20for%20Modules%20100) | Update resources you need to upgrade from Sitecore Connect™ for Microsoft Dynamics 365 for Sales 2.0.0 to 8.0.0. |
+ | [Update resources for Sitecore Connect™ for Microsoft Dynamics 365 for Sales](/downloads/Resource%20files%20for%20Modules/1x/Resource%20files%20for%20Modules%20100) | Update resources you need to upgrade from Sitecore Connect™ for Microsoft Dynamics 365 for Sales 2.0.0 to 8.0.0. |
 
 ## Release Information
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Dynamics%20CRM%20Connect/8x/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20for%20Sales%20800/Release%20Notes) | Release notes for Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
+ | [Release Notes](/downloads/Dynamics%20CRM%20Connect/8x/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20for%20Sales%20800/Release%20Notes) | Release notes for Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
  | [Installation Guide](https://doc.sitecore.com/xp/en/developers/dynamics-crm-connect/80/sitecore-connect-for-microsoft-dynamics-365-for-sales/install-sitecore-connect-for-microsoft-dynamics-for-sales-365-on-prem.html) | The installation and configuration procedure for the Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
  | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/dynamics-crm-connect/80/sitecore-connect-for-microsoft-dynamics-365-for-sales/install-sitecore-connect-for-microsoft-dynamics-365-for-sales-on-containers.html) | This guide describes how to deploy Sitecore Connect™ for Microsoft Dynamics 365 for Sales on Docker Compose and Kubernetes. |
  | [Documentation](https://doc.sitecore.com/xp/en/developers/dynamics-crm-connect/80/sitecore-connect-for-microsoft-dynamics-365-for-sales/index-en.html) | The Sitecore documentation portal has all of the documentation for Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |

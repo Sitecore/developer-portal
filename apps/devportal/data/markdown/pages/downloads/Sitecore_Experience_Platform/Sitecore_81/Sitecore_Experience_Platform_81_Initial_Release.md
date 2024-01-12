@@ -33,7 +33,7 @@ Looking for **a different version**? See [all available 8.0 and 8.1 versions](/d
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%2081/Sitecore%20Experience%20Platform%2081%20Initial%20Release/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Experience%20Platform/Sitecore%2081/Sitecore%20Experience%20Platform%2081%20Initial%20Release/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known issues](https://kb.sitecore.net/articles/750348) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/04E5CCD4F6C64FD4A100B5BC94B60750.ashx?date=20180206T091838) | The installation procedure for the Sitecore Experience Platform. |
  | [Upgrade guide](https://sitecoredev.azureedge.net/~/media/ED08679F569742D0B68450E4D1D76AA0.ashx?date=20190225T124631) | To upgrade from a previous Sitecore version please follow the instructions in this guide |
@@ -44,8 +44,8 @@ Looking for **a different version**? See [all available 8.0 and 8.1 versions](/d
 
  | Resource | Description |
  | --- | --- |
- | [Email Experience Manager 3.2](https://dev.sitecore.net:443/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2032/Email%20Experience%20Manager%2032%20Initial%20Release) | Download files and release information for Sitecore Email Experience Manager 3.2 rev. 151020 (Initial Release) |
- | [Web Forms For Marketers 8.1](https://dev.sitecore.net:443/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20For%20Marketers%2081/Web%20Forms%20For%20Marketers%2081%20Initial%20Version) | Download files and release information for Web Forms for Marketers 8.1 rev.151008 (Initial Release). |
+ | [Email Experience Manager 3.2](/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2032/Email%20Experience%20Manager%2032%20Initial%20Release) | Download files and release information for Sitecore Email Experience Manager 3.2 rev. 151020 (Initial Release) |
+ | [Web Forms For Marketers 8.1](/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20For%20Marketers%2081/Web%20Forms%20For%20Marketers%2081%20Initial%20Version) | Download files and release information for Web Forms for Marketers 8.1 rev.151008 (Initial Release). |
 
 ## Upgrade options
 
@@ -77,6 +77,6 @@ Looking for **a different version**? See [all available 8.0 and 8.1 versions](/d
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Device Detection Services Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
- | [Sitecore IP Geolocation Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
- | [Sitecore xDB Cloud Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |
+ | [Sitecore Device Detection Services Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
+ | [Sitecore IP Geolocation Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ | [Sitecore xDB Cloud Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |

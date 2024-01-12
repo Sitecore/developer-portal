@@ -19,7 +19,7 @@ This feature release adds support for separate application and infrastructure de
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Azure%20Toolkit/1x/Sitecore%20Azure%20Toolkit%20110/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Azure%20Toolkit/1x/Sitecore%20Azure%20Toolkit%20110/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
 
 ## Links
 
@@ -27,5 +27,5 @@ This feature release adds support for separate application and infrastructure de
  | --- | --- |
  | [Documentation](https://doc.sitecore.net:443/en/Products/Cloud/82/Working%20with%20Sitecore%20Azure) | Read all the information about Sitecore Azure Toolkit on the Doc site. |
  | [Azure RM Templates](https://github.com/Sitecore/Sitecore-Azure-Quickstart-Templates) | Github repository with Microsoft Azure Resource Manager templates for Sitecore configurations. |
- | [Sitecore Experience Platform](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform) | Sitecore Experience Platform download page contains packages for deploying on Microsoft Azure starting with version 8.2 Update-1. |
- | [Web Forms for Marketers](https://dev.sitecore.net:443/downloads/Web%20Forms%20For%20Marketers/82) | Web Forms for Marketers download page contains packages for deploying on Microsoft Azure starting with version 8.2 Update-3. |
+ | [Sitecore Experience Platform](/downloads/Sitecore%20Experience%20Platform) | Sitecore Experience Platform download page contains packages for deploying on Microsoft Azure starting with version 8.2 Update-1. |
+ | [Web Forms for Marketers](/downloads/Web%20Forms%20For%20Marketers/82) | Web Forms for Marketers download page contains packages for deploying on Microsoft Azure starting with version 8.2 Update-3. |

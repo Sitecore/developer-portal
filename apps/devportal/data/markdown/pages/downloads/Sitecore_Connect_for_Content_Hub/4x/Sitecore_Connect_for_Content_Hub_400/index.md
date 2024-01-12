@@ -31,7 +31,7 @@ Sitecore Connect™ for Content Hub gives web editors, and content/digital marke
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Release%20Notes) | Release notes for Sitecore Connect™ for Content Hub. |
+ | [Release Notes](/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Release%20Notes) | Release notes for Sitecore Connect™ for Content Hub. |
  | [Installation and Configuration Guide](https://sitecoredev.azureedge.net/~/media/4233C3F5C9C3495B8D1DB67B4AFFC58C.ashx?date=20220428T160837) | Installation and configuration guide for Sitecore Connect™ for Content Hub. |
  | [Container Deployment Guide](https://sitecoredev.azureedge.net/~/media/8E7BB6D5FF89460DB0B2574CA1576F02.ashx?date=20211214T141236) | This guide describes how to do the Sitecore Connect™ for Content Hub for Docker Compose and Kubernetes deployment. |
  | [User Guide](https://doc.sitecore.com/developers/connect-for-ch/40/connect-for-content-hub/en/sitecore-connect-for-content-hub.html) | User guide for Sitecore Connect™ for Content Hub. |

@@ -49,7 +49,7 @@ Synchronize data between Sitecore and 3rd party systems.
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Data%20Exchange%20Framework/4x/Data%20Exchange%20Framework%20400/Release%20Notes) | Release notes for Data Exchange Framework. |
+ | [Release Notes](/downloads/Data%20Exchange%20Framework/4x/Data%20Exchange%20Framework%20400/Release%20Notes) | Release notes for Data Exchange Framework. |
  | [Installation Guide for Data Exchange Framework](https://sitecoredev.azureedge.net/~/media/08FE7166B69A4D2BA9399D6F6229E674.ashx?date=20201117T115312) | The installation and configuration procedure for the Data Exchange Framework. |
  | [Installation Guide for Data Exchange Framework Activity for Marketing Automation](https://sitecoredev.azureedge.net/~/media/02D1FBCE6C5D4B258916069107152995.ashx?date=20200113T102547) | The installation and configuration procedure for Data Exchange Framework Activity for Marketing Automation. |
  | [Installation Guide for Data Exchange Framework Save Action for Experience Forms](https://sitecoredev.azureedge.net/~/media/EA188D754D3D4ADB8EFDB124122CFF12.ashx?date=20200113T102615) | The installation and configuration procedure for Data Exchange Framework Save Action for Experience Forms. |

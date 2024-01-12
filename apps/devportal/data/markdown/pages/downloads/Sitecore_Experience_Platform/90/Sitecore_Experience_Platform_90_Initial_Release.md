@@ -28,7 +28,7 @@ To access the new Device Detection features requires you to have a valid license
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Installation Framework](https://dev.sitecore.net:443/downloads/Sitecore%20Installation%20Framework/1x/Sitecore%20Installation%20Framework%2010) | Follow this link to download the Sitecore Installation Framework (SIF) PowerShell module. Please refer to the Sitecore Experience Platform installation guide for further information on how to install Sitecore with SIF. |
+ | [Sitecore Installation Framework](/downloads/Sitecore%20Installation%20Framework/1x/Sitecore%20Installation%20Framework%2010) | Follow this link to download the Sitecore Installation Framework (SIF) PowerShell module. Please refer to the Sitecore Experience Platform installation guide for further information on how to install Sitecore with SIF. |
  | [ZIP archive of the Sitecore site root folder](https://sitecoredev.azureedge.net/~/media/E30F4102F3224859961E15532AEDED5F.ashx?date=20171017T211810) | Choose this link to install Sitecore manually (without the help of the setup.exe installation program). |
  | [Oracle databases](https://sitecoredev.azureedge.net/~/media/C964880602E44695AE1C1653CA586BF2.ashx?date=20171009T095539) | If you intend to use Oracle for the Core db, please download the following file and check the installation guide for instructions on how to install and configure Oracle. |
 
@@ -56,7 +56,7 @@ To access the new Device Detection features requires you to have a valid license
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/90/Sitecore%20Experience%20Platform%2090%20Initial%20Release/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release notes](/downloads/Sitecore%20Experience%20Platform/90/Sitecore%20Experience%20Platform%2090%20Initial%20Release/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known issues](https://kb.sitecore.net/articles/125044) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation guide](https://sitecoredev.azureedge.net/~/media/2D6BD4B57C194E0AA8E22E2E8F05EB02.ashx?date=20200327T152334) | The installation procedure for the Sitecore Experience Platform. |
  | [Upgrade guide](https://sitecoredev.azureedge.net/~/media/01B4871056434A52AC69C4ECC29F7834.ashx?date=20181002T142026) | To upgrade from a previous Sitecore version please follow the instructions in this guide. |
@@ -66,7 +66,7 @@ To access the new Device Detection features requires you to have a valid license
 
  | Resource | Description |
  | --- | --- |
- | [Web Forms For Marketers 9.0](https://dev.sitecore.net:443/downloads/Web%20Forms%20For%20Marketers/90/Web%20Forms%20For%20Marketers%2090%20Initial%20Version) | Download files and release information for Web Forms for Marketers 9.0 (Initial Release). |
+ | [Web Forms For Marketers 9.0](/downloads/Web%20Forms%20For%20Marketers/90/Web%20Forms%20For%20Marketers%2090%20Initial%20Version) | Download files and release information for Web Forms for Marketers 9.0 (Initial Release). |
 
 ## Upgrade options
 
@@ -75,7 +75,7 @@ To access the new Device Detection features requires you to have a valid license
  | [Sitecore update package](https://sitecoredev.azureedge.net/~/media/9D3A433ADDB24F02A97748A2AA4317AD.ashx?date=20171018T005200) | Download files needed for the upgrade process. |
  | [Configuration files for upgrade](https://sitecoredev.azureedge.net/~/media/83D5A3931E0745D7B7FCA75A5C8B6F5C.ashx?date=20171009T093808) | This package contains configuration files and database scripts for the upgrade. |
  | [Sitecore Update Installation Wizard](https://sitecoredev.azureedge.net/~/media/80C63D8F7487406197EF1F60D7553007.ashx?date=20171018T004955) | Sitecore Update Installation Wizard allows developers to update existing Sitecore Experience Platform using Sitecore update packages. |
- | [Sitecore xDB Data Migration Tool](https://dev.sitecore.net:443/downloads/Sitecore%20xDB%20Data%20Migration%20Tool/2x/xDB%20Data%20Migration%20Tool%2020) | Convert and migrate data from Sitecore Experience Database 8.x to Sitecore Experience Database 9.0. |
+ | [Sitecore xDB Data Migration Tool](/downloads/Sitecore%20xDB%20Data%20Migration%20Tool/2x/xDB%20Data%20Migration%20Tool%2020) | Convert and migrate data from Sitecore Experience Database 8.x to Sitecore Experience Database 9.0. |
 
 ## Client translations
 
@@ -90,6 +90,6 @@ To access the new Device Detection features requires you to have a valid license
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Device Detection Services usage policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
- | [Sitecore IP Geolocation usage policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
- | [Sitecore xDB Cloud usage policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |
+ | [Sitecore Device Detection Services usage policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
+ | [Sitecore IP Geolocation usage policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ | [Sitecore xDB Cloud usage policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |

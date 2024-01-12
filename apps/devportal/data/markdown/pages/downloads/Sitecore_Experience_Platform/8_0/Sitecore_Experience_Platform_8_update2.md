@@ -31,7 +31,7 @@ This page contains all the resources for **Sitecore Experience Platform 8.0 rev.
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/8%200/Sitecore%20Experience%20Platform%208%20update2/Release%20Notes) | The latest news about Sitecore Experience Platform releases. |
+ | [Release Notes](/downloads/Sitecore%20Experience%20Platform/8%200/Sitecore%20Experience%20Platform%208%20update2/Release%20Notes) | The latest news about Sitecore Experience Platform releases. |
  | [Known issues](https://kb.sitecore.net/articles/616431) | Choose this link to access the Sitecore Knowledge Base |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/F1BD7928631D4E39B2528912BA31ADCC.ashx?date=20201214T152323) | The installation procedure for the Sitecore Experience Platform. |
  | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/A16FCD2BC9924099A2050210BCA2C416.ashx?date=20150608T120451) | Download and follow the instructions to upgrade from [Sitecore Experience Platform 8.0 rev 150121 (8.0 Update-1)](~/link?_id=B1D33F7DA40441789E2F1AEFE05188B4&_z=z) to Sitecore Experience Platform 8.0 rev. 150223 (8.0 Update-2).  <br />If your Sitecore solution runs on an earlier version of Sitecore Experience Platform 8.0, you can update directly to Update-2 (Sitecore updates are cumulative). However, you **must** also implement the config file changes that have been introduced in each update. If your Sitecore solution is based on Sitecore  7.5 or earlier, you must use the upgrade instructions for [Sitecore Experience Platform 8 rev. 141212 (initial release)](~/link?_id=BBE8D6E386894D049A594D5814F53020&_z=z) to upgrade from Sitecore 7.5. |
@@ -41,8 +41,8 @@ This page contains all the resources for **Sitecore Experience Platform 8.0 rev.
 
  | Resource | Description |
  | --- | --- |
- | [Email Experience Manager 3.0](https://dev.sitecore.net:443/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2030/Email%20Experience%20Manager%2030%20Update2) | Download files and release information for Sitecore Email Experience Manager 3.0 rev. 150223 (Update-2).  <br />  <br />  <br /> |
- | [Web Form For Marketers 8.0](https://dev.sitecore.net:443/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20for%20Marketers%2080/Web%20Forms%20for%20Marketers%2080%20Update2) | Download files and release information for Web Forms for Marketers 8.0 rev.150224 (Update-2)  <br />  <br />  |
+ | [Email Experience Manager 3.0](/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2030/Email%20Experience%20Manager%2030%20Update2) | Download files and release information for Sitecore Email Experience Manager 3.0 rev. 150223 (Update-2).  <br />  <br />  <br /> |
+ | [Web Form For Marketers 8.0](/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20for%20Marketers%2080/Web%20Forms%20for%20Marketers%2080%20Update2) | Download files and release information for Web Forms for Marketers 8.0 rev.150224 (Update-2)  <br />  <br />  |
 
 ## Upgrade options
 
@@ -75,5 +75,5 @@ This page contains all the resources for **Sitecore Experience Platform 8.0 rev.
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore IP Geolocation Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
- | [Sitecore xDB Cloud Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |
+ | [Sitecore IP Geolocation Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ | [Sitecore xDB Cloud Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |

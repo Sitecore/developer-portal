@@ -13,7 +13,7 @@ This hotfix introduces support for Sitecore® Experience Platform™ 8.1 Update 
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Sitecore%20Azure/Sitecore%20Azure%2081/Sitecore%20Azure%2081%20rev%20151119%20Hotfix%201076431/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
+ | [Release notes](/downloads/Sitecore%20Azure/Sitecore%20Azure%2081/Sitecore%20Azure%2081%20rev%20151119%20Hotfix%201076431/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
  | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/6AA5B0B492A144E1AE50A18F12086A1C.ashx?date=20160509T142426) | To upgrade from a previous Sitecore Azure version please follow the instructions in this guide |
 
 ## Downloads

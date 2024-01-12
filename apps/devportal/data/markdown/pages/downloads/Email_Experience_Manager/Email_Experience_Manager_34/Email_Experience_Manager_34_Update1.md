@@ -40,6 +40,6 @@ This page contains all the resources for **Email Experience Manager 3.4 rev. 170
 
  | Resource | Description |
  | --- | --- |
- | [Release notes and known issues](https://dev.sitecore.net:443/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2034/Email%20Experience%20Manager%2034%20Update1/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release notes and known issues](/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2034/Email%20Experience%20Manager%2034%20Update1/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release. |
  | [EXM Installation Guide](https://sitecoredev.azureedge.net/~/media/0A41ADF8E64C4648BD766DD3D3E19F4E.ashx?date=20180413T074051) | The installation procedures for the Email Experience Manager module. |
  | [Documentation](https://doc.sitecore.net/email_experience_manager) | Documentation for the EXM module. |

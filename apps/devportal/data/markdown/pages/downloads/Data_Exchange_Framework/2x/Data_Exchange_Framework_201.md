@@ -52,6 +52,6 @@ Synchronize data between Sitecore and 3rd party systems.
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Data%20Exchange%20Framework/2x/Data%20Exchange%20Framework%20201/Release%20Notes) | Release notes for Data Exchange Framework. |
+ | [Release Notes](/downloads/Data%20Exchange%20Framework/2x/Data%20Exchange%20Framework%20201/Release%20Notes) | Release notes for Data Exchange Framework. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/778F9101D3CE4A88910344B5FB95FFEE.ashx?date=20190219T103824) | The installation and configuration procedure for the Data Exchange Framework. |
  | [Documentation](https://doc.sitecore.com/developers/def/20/data-exchange-framework/en/data-exchange-framework.html) | The Sitecore documentation website with Sitecore Data Exchange Framework documentation. |

@@ -30,7 +30,7 @@ Looking for **a different update**? See [all available 8.0 updates](/downloads/S
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/8%200/Sitecore%20Experience%20Platform%208%200/Release%20Notes) | The latest news about Sitecore Experience Platform releases. |
+ | [Release Notes](/downloads/Sitecore%20Experience%20Platform/8%200/Sitecore%20Experience%20Platform%208%200/Release%20Notes) | The latest news about Sitecore Experience Platform releases. |
  | [Known issues](https://kb.sitecore.net/articles/616431) | Choose this link to access the Sitecore Knowledge Base |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/F1BD7928631D4E39B2528912BA31ADCC.ashx?date=20201214T152323) | The installation procedure for the Sitecore Experience Platform. |
  | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/D1C480A4D4D245E1813FD35D985F8417.ashx?date=20201214T234801) | To upgrade from a previous Sitecore version please follow the instructions in this guide |
@@ -40,8 +40,8 @@ Looking for **a different update**? See [all available 8.0 updates](/downloads/S
 
  | Resource | Description |
  | --- | --- |
- | [Email Experience Manager 3.0](https://dev.sitecore.net:443/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2030/Email%20Experience%20Manager%2030%20Initial%20release) | Download files and release information for Sitecore Email Experience Manager 3.0 rev. 141215 (Initial Release)  <br /> |
- | [Web Form For Marketers 8.0](https://dev.sitecore.net:443/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20for%20Marketers%2080/Web%20Forms%20for%20Marketers%2080%20Update1) | Download files and release information for Web Forms for Marketers 8.0 rev.141217 (Update-1). **Note**: Initial Release and Update-1 of Web Forms for Marketers are identical and have been consolidated into Update-1. |
+ | [Email Experience Manager 3.0](/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2030/Email%20Experience%20Manager%2030%20Initial%20release) | Download files and release information for Sitecore Email Experience Manager 3.0 rev. 141215 (Initial Release)  <br /> |
+ | [Web Form For Marketers 8.0](/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20for%20Marketers%2080/Web%20Forms%20for%20Marketers%2080%20Update1) | Download files and release information for Web Forms for Marketers 8.0 rev.141217 (Update-1). **Note**: Initial Release and Update-1 of Web Forms for Marketers are identical and have been consolidated into Update-1. |
 
 ## Upgrade options
 
@@ -77,5 +77,5 @@ Looking for **a different update**? See [all available 8.0 updates](/downloads/S
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore IP Geolocation Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
- | [Sitecore xDB Cloud Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |
+ | [Sitecore IP Geolocation Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ | [Sitecore xDB Cloud Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |

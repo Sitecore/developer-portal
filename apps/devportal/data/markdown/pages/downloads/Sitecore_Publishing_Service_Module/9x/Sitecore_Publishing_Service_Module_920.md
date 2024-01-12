@@ -19,6 +19,6 @@ Here you will find [all available versions](/downloads/Sitecore_Publishing_Servi
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Publishing%20Service%20Module/9x/Sitecore%20Publishing%20Service%20Module%20920/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Publishing%20Service%20Module/9x/Sitecore%20Publishing%20Service%20Module%20920/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known Issues](https://kb.sitecore.net/articles/431510) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/5FB9C388F6F245F39507D6A9C20F8AE7.ashx?date=20191202T092628) | The installation and configuration procedure for the Sitecore Publishing Module. |

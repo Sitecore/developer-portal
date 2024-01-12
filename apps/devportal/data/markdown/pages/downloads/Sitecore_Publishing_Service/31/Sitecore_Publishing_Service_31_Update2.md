@@ -19,6 +19,6 @@ This version of the Publishing Service is compatible with Sitecore 9.0 Initial R
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Publishing%20Service/31/Sitecore%20Publishing%20Service%2031%20Update2/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Publishing%20Service/31/Sitecore%20Publishing%20Service%2031%20Update2/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known Issues](https://kb.sitecore.net/articles/431510) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/65E5864B7125495D973ED2E9ED470B08.ashx?date=20200204T081804) | The installation and configuration procedure for the Sitecore Publishing Service. |

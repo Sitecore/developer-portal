@@ -42,7 +42,7 @@ origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experi
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2033/Email%20Experience%20Manager%2033%20Initial%20Release/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release notes](/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2033/Email%20Experience%20Manager%2033%20Initial%20Release/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release. |
  | [Known Issues](https://kb.sitecore.net/articles/149565) | Choose this link to access the Sitecore Knowledge Base. |
  | [EXM Installation Guide](https://sitecoredev.azureedge.net/~/media/CD2A56AE4F5F4849B35FF130BEEA1C0F.ashx?date=20180413T073912) | The installation procedures for the Email Experience Manager module. |
  | [Documentation](https://doc.sitecore.net/email_experience_manager) | Documentation for the EXM module. |

@@ -17,7 +17,7 @@ Releases and documentation for Sitecore xDB Cloud client 8.1 rev. 160210
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20xDB%20Cloud%20client/81/Sitecore%20xDB%20Cloud%20client%2081%20rev%20160210/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20xDB%20Cloud%20client/81/Sitecore%20xDB%20Cloud%20client%2081%20rev%20160210/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release. |
 
 ## Links
 

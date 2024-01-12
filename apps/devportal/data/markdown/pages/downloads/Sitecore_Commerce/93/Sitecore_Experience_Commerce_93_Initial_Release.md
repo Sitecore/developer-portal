@@ -23,7 +23,7 @@ Return to [all available versions](/Downloads/Sitecore_Commerce)
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Commerce/93/Sitecore%20Experience%20Commerce%2093%20Initial%20Release/Release%20Notes) | New features/improvements, resolved issues, breaking changes, known issues. Documentation updates are also listed. |
+ | [Release Notes](/downloads/Sitecore%20Commerce/93/Sitecore%20Experience%20Commerce%2093%20Initial%20Release/Release%20Notes) | New features/improvements, resolved issues, breaking changes, known issues. Documentation updates are also listed. |
  | [Installation Guide - Azure App Service](https://sitecoredev.azureedge.net/~/media/3F769554EFB140E4916A4F541E12C245.ashx?date=20200506T134220) | Instructions for installing Commerce to a Microsoft Azure App Service. |
  | [Installation Guide - On Prem](https://sitecoredev.azureedge.net/~/media/802F682C25FD44E08D5269E64AFD1D0A.ashx?date=20200520T151647) | Instructions for installing Sitecore Experience Commerce 9.3 in a single-server configuration on-premise or on a hosted virtual machine using Web Deployment Packages (WDP) |
  | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/D1EB574DBE6746AABA71E5C3E03B7BB4.ashx?date=20200506T133743) | Instructions for upgrading a Sitecore XC 9.2 release to 9.3, for On Premise deployments.  <br /> |

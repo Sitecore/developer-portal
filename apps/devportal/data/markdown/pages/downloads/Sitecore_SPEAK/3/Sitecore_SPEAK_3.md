@@ -22,5 +22,5 @@ SPEAK (Sitecore Process Enablement & Accelerator Kit) is a framework for develop
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20SPEAK/3/Sitecore%20SPEAK%203/Release%20Notes) | A list of new features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20SPEAK/3/Sitecore%20SPEAK%203/Release%20Notes) | A list of new features, improvements, and fixes that have been implemented in this release. |
  | [Documentation](https://doc.sitecore.net:443/en/Products/SPEAK/90/SPEAK%203) | Documentation for the SPEAK framework |

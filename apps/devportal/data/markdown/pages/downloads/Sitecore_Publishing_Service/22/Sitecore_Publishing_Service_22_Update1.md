@@ -19,6 +19,6 @@ This version of the Publishing Service is compatible with Sitecore 8.2 Update-2 
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Publishing%20Service/22/Sitecore%20Publishing%20Service%2022%20Update1/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Publishing%20Service/22/Sitecore%20Publishing%20Service%2022%20Update1/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known Issues](https://kb.sitecore.net/articles/431510) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/62E4151324F34A60B054A1064A01D131.ashx?date=20200204T081631) | The installation and configuration procedure for the Sitecore Publishing Service. |

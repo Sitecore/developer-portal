@@ -31,6 +31,6 @@ Please go here to find [all available versions](/downloads/Sitecore_Publishing_S
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Publishing%20Service/43/Sitecore%20Publishing%20Service%20430/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Publishing%20Service/43/Sitecore%20Publishing%20Service%20430/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known Issues](https://kb.sitecore.net/articles/431510) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/8A81F58BE1064B899113368AA65FC257.ashx?date=20210319T120311) | The installation and configuration procedure for the Sitecore Publishing Service. |

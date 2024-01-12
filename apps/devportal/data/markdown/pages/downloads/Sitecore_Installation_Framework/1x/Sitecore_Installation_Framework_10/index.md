@@ -34,4 +34,4 @@ Please see the Sitecore product installation instructions for more information o
  | Resource | Description |
  | --- | --- |
  | [Sitecore Installation Framework Configuration Guide](https://sitecoredev.azureedge.net/~/media/9C3F04E3DEBA44668FF9A2F660D18237.ashx?date=20171103T141018) | Configuration guide for Sitecore Installation Framework |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Installation%20Framework/1x/Sitecore%20Installation%20Framework%2010/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Installation%20Framework/1x/Sitecore%20Installation%20Framework%2010/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |

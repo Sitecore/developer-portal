@@ -57,6 +57,6 @@ Synchronize data between Microsoft Dynamics 365 for Sales and Sitecore Experienc
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Dynamics%20CRM%20Connect/2x/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20for%20Sales%20210/Release%20Notes) | Release notes for Sitecore Connect for Microsoft Dynamics 365 for Sales. |
+ | [Release Notes](/downloads/Dynamics%20CRM%20Connect/2x/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20for%20Sales%20210/Release%20Notes) | Release notes for Sitecore Connect for Microsoft Dynamics 365 for Sales. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/8CF086484FC742F997BDC2A8EDAA770D.ashx?date=20200122T140639) | The installation and configuration procedure for the Sitecore Connect for Microsoft Dynamics 365 for Sales. |
  | [Documentation](https://doc.sitecore.com/developers/dynamics-crm-connect/21/sitecore-connect-for-microsoft-dynamics-365-for-sales/en/index-en.html) | The Sitecore documentation portal has all of the documentation for Sitecore Connect for Microsoft Dynamics 365 for Sales. |

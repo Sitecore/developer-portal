@@ -11,9 +11,9 @@ Print Experience Manager enables Sitecore customers to manage print production f
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Release%20Notes%20IW) | Latest information about PXM release for Individual Workstation and Automated Document Service. |
+ | [Release Notes](/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Release%20Notes%20IW) | Latest information about PXM release for Individual Workstation and Automated Document Service. |
  | [Known Issues](https://kb.sitecore.net/articles/501304) | List of issues as known and registered. |
- | [Upgrade Information](https://dev.sitecore.net:443/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Upgrade%20Information%20IW) | Please do read upgrade information carefully before upgrading your PXM configuration. |
+ | [Upgrade Information](/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Upgrade%20Information%20IW) | Please do read upgrade information carefully before upgrading your PXM configuration. |
  | [Installation guide](/~/media/71E2B07BCF1849258613FE5099226319.ashx) | Refer to installation instructions for PXM Individual Workstation and Automated Document Service. |
  | [Documentation](https://doc.sitecore.net/products/print%20experience%20manager) | Link to documentation portal with all documentation for PXM. |
  | [Core package](https://sitecoredev.azureedge.net/~/media/CEEE7412BC1548A9B912E6F3F0B8245B.ashx?date=20150217T172406) | Download the PXM core package (for Server) for Individual Workstation and Automated Document Service. |
@@ -48,9 +48,9 @@ Print Experience Manager enables Sitecore customers to manage print production f
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Release%20Notes%20ODG) | Latest information about release of Online Document Generator. |
+ | [Release Notes](/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Release%20Notes%20ODG) | Latest information about release of Online Document Generator. |
  | [Known Issues](https://kb.sitecore.net/articles/501304) | List of issues as known and registered. |
- | [Upgrade Information](https://dev.sitecore.net:443/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Upgrade%20Information%20ODG) | Please do read upgrade instructions carefully before upgrading your ODG configuration. |
+ | [Upgrade Information](/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Upgrade%20Information%20ODG) | Please do read upgrade instructions carefully before upgrading your ODG configuration. |
  | [Documentation](https://doc.sitecore.net/products/print%20experience%20manager) | Link to documentation portal with all documentation for ODG. |
  | [Online Document Generator package](https://sitecoredev.azureedge.net/~/media/1650A16CAC454CB396CAD6775105DFC9.ashx?date=20150206T102816) | Download the ODG package (for Server) for installation on XP. |
 
@@ -58,9 +58,9 @@ Print Experience Manager enables Sitecore customers to manage print production f
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Release%20Notes%20RB) | Latest information about Rendition Builder release for PXM. |
+ | [Release Notes](/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Release%20Notes%20RB) | Latest information about Rendition Builder release for PXM. |
  | [Known Issues](https://kb.sitecore.net/articles/501304) | List of issues as known and registered. |
- | [Upgrade Information](https://dev.sitecore.net:443/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Upgrade%20Information%20RB) | Please do read upgrade information carefully before upgrading your Rendition Builder configuration. |
+ | [Upgrade Information](/downloads/Sitecore%20Print%20Experience%20Manager/8%200/Sitecore%20Print%20Experience%20Manager%20for%208%200/Upgrade%20Information%20RB) | Please do read upgrade information carefully before upgrading your Rendition Builder configuration. |
  | [Documentation](https://doc.sitecore.net/products/print%20experience%20manager) | Link to documentation portal with all documentation for Rendition Builder. |
  | [Rendition Builder package](https://sitecoredev.azureedge.net/~/media/BACCB592AD664ADEADFE0FEFAF50240D.ashx?date=20150206T104138) | Download the Rendition Builder package (for Server) for PXM. |
  | [Rendition Builder x86 CC](https://sitecoredev.azureedge.net/~/media/CD37C7683EBE4335A3AE52903190CC9E.ashx?date=20150206T135619) | Choose this link to download the Rendition Builder CC x86 version setup.exe (packaged as zip) installation program. Extract the package first on your client system and start the setup. Follow the instructions in the setup. |

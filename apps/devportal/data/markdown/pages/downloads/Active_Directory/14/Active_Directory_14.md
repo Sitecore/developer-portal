@@ -25,14 +25,14 @@ Previous versions of this module [can be found here](/downloads/Active_Directory
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Active%20Directory/14/Active%20Directory%2014/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Active%20Directory/14/Active%20Directory%2014/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known Issues](https://kb.sitecore.net/articles/083498) | Choose this link to view the known issues list of the Sitecore Active Directory module. |
 
 ## Upgrade Options
 
  | Resource | Description |
  | --- | --- |
- | [Upgrade Guide](https://dev.sitecore.net:443/downloads/Active%20Directory/14/Active%20Directory%2014/Upgrade%20Guide) | To upgrade from a previous Sitecore version please follow the instructions in this guide. |
+ | [Upgrade Guide](/downloads/Active%20Directory/14/Active%20Directory%2014/Upgrade%20Guide) | To upgrade from a previous Sitecore version please follow the instructions in this guide. |
  | [Upgrade Package](https://sitecoredev.azureedge.net/~/media/5C26A7814D4D458CBB0A383BE994E3DC.ashx?date=20180322T102201) | Download the files that you need for the upgrade process. |
 
 ## Documentation

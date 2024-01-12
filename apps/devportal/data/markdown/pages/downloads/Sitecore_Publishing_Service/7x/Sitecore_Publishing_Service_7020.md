@@ -38,6 +38,6 @@ Please go here to find [all available versions](/downloads/Sitecore_Publishing_
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Publishing%20Service/7x/Sitecore%20Publishing%20Service%207020/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Publishing%20Service/7x/Sitecore%20Publishing%20Service%207020/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known Issues](https://kb.sitecore.net/articles/431510) | Choose this link to access the Sitecore Knowledge Base. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/6ACD58D9B3BF4ED5B414A4E422C05B4F.ashx?date=20230404T100043) | The installation and configuration procedure for the Sitecore Publishing Service. |

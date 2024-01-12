@@ -17,8 +17,8 @@ Print Experience Manager enables Sitecore customers to manage print production f
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Print%20Experience%20Manager/82/Sitecore%20Print%20Experience%20Manager%2082/Release%20Notes) | Latest information about this PXM release. |
- | [Upgrade Information](https://dev.sitecore.net:443/downloads/Sitecore%20Print%20Experience%20Manager/82/Sitecore%20Print%20Experience%20Manager%2082/Upgrade%20information) | Please do read upgrade information carefully before upgrading your PXM configuration. |
+ | [Release Notes](/downloads/Sitecore%20Print%20Experience%20Manager/82/Sitecore%20Print%20Experience%20Manager%2082/Release%20Notes) | Latest information about this PXM release. |
+ | [Upgrade Information](/downloads/Sitecore%20Print%20Experience%20Manager/82/Sitecore%20Print%20Experience%20Manager%2082/Upgrade%20information) | Please do read upgrade information carefully before upgrading your PXM configuration. |
  | [Installation Guide](https://sitecoredev.azureedge.net/~/media/0B48C4BEAB88413F9E10F7F3D80F8540.ashx?date=20170515T131055) | Refer to installation instructions for PXM Individual Workstation and Automated Document Service. |
  | [Documentation](https://doc.sitecore.net/products/print%20experience%20manager) | Link to documentation portal with all documentation for PXM. |
  | [Core package](https://sitecoredev.azureedge.net/~/media/627E2816359F481A8297FA8EDC155E01.ashx?date=20170515T132412) | Download the PXM core package. |

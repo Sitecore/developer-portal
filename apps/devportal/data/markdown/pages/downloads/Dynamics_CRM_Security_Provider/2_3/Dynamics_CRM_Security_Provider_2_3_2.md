@@ -31,5 +31,5 @@ Expose CRM contacts as Sitecore users, CRM marketing lists as Sitecore roles and
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Dynamics%20CRM%20Security%20Provider/2%203/Dynamics%20CRM%20Security%20Provider%202%203%202/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
- | [Installation Guide](https://dev.sitecore.net:443/downloads/Dynamics%20CRM%20Security%20Provider/2%203/Dynamics%20CRM%20Security%20Provider%202%203%202/Installation%20Guide) | Information on how to install and configure Dynamics CRM Security Provider. |
+ | [Release Notes](/downloads/Dynamics%20CRM%20Security%20Provider/2%203/Dynamics%20CRM%20Security%20Provider%202%203%202/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Installation Guide](/downloads/Dynamics%20CRM%20Security%20Provider/2%203/Dynamics%20CRM%20Security%20Provider%202%203%202/Installation%20Guide) | Information on how to install and configure Dynamics CRM Security Provider. |

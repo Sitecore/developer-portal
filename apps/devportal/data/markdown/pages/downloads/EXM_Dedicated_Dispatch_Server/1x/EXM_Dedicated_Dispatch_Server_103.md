@@ -19,7 +19,7 @@ The EXM Dedicated Dispatch Server provides container support for DDS (Dedicated 
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/EXM%20Dedicated%20Dispatch%20Server/1x/EXM%20Dedicated%20Dispatch%20Server%20103/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/EXM%20Dedicated%20Dispatch%20Server/1x/EXM%20Dedicated%20Dispatch%20Server%20103/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
 
 ## Links
 

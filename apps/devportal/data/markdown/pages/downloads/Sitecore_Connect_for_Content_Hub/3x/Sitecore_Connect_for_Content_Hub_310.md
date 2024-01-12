@@ -32,6 +32,6 @@ The Sitecore Connect™ for Content Hub gives web editors, content/digital marke
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Connect%20for%20Content%20Hub/3x/Sitecore%20Connect%20for%20Content%20Hub%20310/Release%20Notes) | Release notes for Sitecore Connect™ for Content Hub. |
+ | [Release Notes](/downloads/Sitecore%20Connect%20for%20Content%20Hub/3x/Sitecore%20Connect%20for%20Content%20Hub%20310/Release%20Notes) | Release notes for Sitecore Connect™ for Content Hub. |
  | [Installation and Configuration Guide](https://sitecoredev.azureedge.net/~/media/361DF6E52B64450F9FA478FAD47BE1E6.ashx?date=20210924T190521) | Installation and configuration guide for Sitecore Connect™ for Content Hub. |
  | [User Guide](https://sitecoredev.azureedge.net/~/media/C32EC7E5E30044438D9260837D8B1573.ashx?date=20210108T130956) | User guide for Sitecore Connect™ for Content Hub. |

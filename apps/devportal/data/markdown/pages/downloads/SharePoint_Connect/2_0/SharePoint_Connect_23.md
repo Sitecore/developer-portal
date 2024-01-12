@@ -30,19 +30,19 @@ SharePoint Connect offers page-level, item-level, and API-level integration. It 
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%2023/Release%20Notes) | Release Notes for SharePoint Connect 2.3 rev.160901. |
+ | [Release Notes](/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%2023/Release%20Notes) | Release Notes for SharePoint Connect 2.3 rev.160901. |
 
 ## Upgrading
 
  | Resource | Description |
  | --- | --- |
- | [Upgrade Guide](https://dev.sitecore.net:443/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%2023/Upgrade%20Guide) | Upgrading from **2.2 rev. 160617** to **version 2.3 rev. 160901**. |
+ | [Upgrade Guide](/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%2023/Upgrade%20Guide) | Upgrading from **2.2 rev. 160617** to **version 2.3 rev. 160901**. |
  | [Upgrade Package](https://sitecoredev.azureedge.net/~/media/FF166FD15B9A41CA8F9E82B0D4D19924.ashx?date=20160906T173559) | Package for upgrading SharePoint Integration Framework from version 2.2 rev. 160617 to SharePoint Connect version 2.3 rev. 160901. |
 
 ## Documentation
 
  | Resource | Description |
  | --- | --- |
- | [Installation Guide](https://dev.sitecore.net:443/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%2023/Installation%20Guide) | The installation procedure for SharePoint Connect 2.3 rev. 160901. |
+ | [Installation Guide](/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%2023/Installation%20Guide) | The installation procedure for SharePoint Connect 2.3 rev. 160901. |
  | [SharePoint Connect Developers Cookbook A4](https://sitecoredev.azureedge.net/~/media/B20E949F3DCE47D7B7E6946F71F01DAB.ashx?date=20160218T145008) | This cookbook is for Sitecore partners and developers, and includes useful tips as well as examples (A4). |
  | [SharePoint Connect Developers Cookbook US-Letter](https://sitecoredev.azureedge.net#) | This cookbook is for Sitecore partners and developers, and includes useful tips as well as examples (US-Letter). |

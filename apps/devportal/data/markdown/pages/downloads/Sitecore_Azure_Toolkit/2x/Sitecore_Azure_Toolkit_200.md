@@ -22,7 +22,7 @@ This maintenance release adds support for Sitecore Experience Platform 9.0, Web 
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Azure%20Toolkit/2x/Sitecore%20Azure%20Toolkit%20200/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Azure%20Toolkit/2x/Sitecore%20Azure%20Toolkit%20200/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
 
 ## Links
 
@@ -31,4 +31,4 @@ This maintenance release adds support for Sitecore Experience Platform 9.0, Web 
  | [Documentation](https://doc.sitecore.net:443/en/Products/Cloud/82/Working%20with%20Sitecore%20Azure) | Read all the information about Sitecore Azure Toolkit on the Doc site. |
  | [Configure Sitecore Power BI Health Reports](https://doc.sitecore.net:443/en/Products/Sitecore%20Experience%20Platform/901/Setting%20up%20and%20maintaining/Sitecore%20on%20Azure/Analytics/Configure%20Sitecore%20Power%20BI%20Health%20Reports) | Read how to configure the Sitecore Power BI Health Reports. |
  | [Azure RM Templates](https://github.com/Sitecore/Sitecore-Azure-Quickstart-Templates) | Github repository with Microsoft Azure Resource Manager templates for Sitecore configurations. |
- | [Sitecore Experience Platform](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform) | Sitecore Experience Platform download page contains packages for deploying on Microsoft Azure starting with version 8.2 Update-1. |
+ | [Sitecore Experience Platform](/downloads/Sitecore%20Experience%20Platform) | Sitecore Experience Platform download page contains packages for deploying on Microsoft Azure starting with version 8.2 Update-1. |

@@ -45,7 +45,7 @@ The Sitecore Headless Services module (also known as the Sitecore JavaScript Ser
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Headless%20Rendering/150/Sitecore%20Headless%20Rendering%201500/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Headless%20Rendering/150/Sitecore%20Headless%20Rendering%201500/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [ASP.NET Core Rendering SDK documentation](https://doc.sitecore.com/developers/100/developer-tools/en/sitecore-headless-development.html) | Official documentation for ASP.NET Core headless rendering. |
  | [Container installation reference](https://containers.doc.sitecore.com/docs/module-reference#javascript-services-jss–sitecore-headless-services) | Instructions for module installation via Dockerfile. |
  | [Known issues](https://kb.sitecore.net/articles/661975) | Known issues for this release in the Sitecore Knowledge Base. |

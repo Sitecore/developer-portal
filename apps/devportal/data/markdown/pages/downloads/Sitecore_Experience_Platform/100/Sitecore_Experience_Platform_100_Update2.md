@@ -60,8 +60,8 @@ This page contains all the resources for **Sitecore Experience Platform 10.0 Upd
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Installation Framework](https://dev.sitecore.net:443/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20230) | Follow this link to download the Sitecore Installation Framework (SIF) PowerShell module. Please refer to the Sitecore Experience Platform installation guide for further information on how to install Sitecore with SIF. |
- | [Scripts for Sitecore Security database](https://dev.sitecore.net:443/downloads/Scripts%20for%20Sitecore%20Security%20database) | The package contains the set of scripts for moving Sitecore Security membership provider from the Core database to individual or existing one. |
+ | [Sitecore Installation Framework](/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20230) | Follow this link to download the Sitecore Installation Framework (SIF) PowerShell module. Please refer to the Sitecore Experience Platform installation guide for further information on how to install Sitecore with SIF. |
+ | [Scripts for Sitecore Security database](/downloads/Scripts%20for%20Sitecore%20Security%20database) | The package contains the set of scripts for moving Sitecore Security membership provider from the Core database to individual or existing one. |
  | [Sitecore Remote Distributed Deployment SIF Templates](https://sitecoredev.azureedge.net/~/media/7255CF98254347108E085DFBB6687E02.ashx?date=20181217T093828) | The package contains Sitecore Install Framework deployment templates that can be used to deploy Sitecore Experience Platform remotely to a scalable distributed server cluster from a single workstation or server. |
 
 ## Download options for On Premises deployment
@@ -94,13 +94,13 @@ This page contains all the resources for **Sitecore Experience Platform 10.0 Upd
 
  | Resource | Description |
  | --- | --- |
- | [Package for XM and XP](https://dev.sitecore.net:443/downloads/Sitecore%20Azure%20Blob%20Storage/1x/Sitecore%20Azure%20Blob%20Storage%20200) | Blob Storage Package for XM Scaled, XP Scaled, XM Developer, XP Developer. |
+ | [Package for XM and XP](/downloads/Sitecore%20Azure%20Blob%20Storage/1x/Sitecore%20Azure%20Blob%20Storage%20200) | Blob Storage Package for XM Scaled, XP Scaled, XM Developer, XP Developer. |
 
 ## Release information
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/100/Sitecore%20Experience%20Platform%20100%20Update2/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release notes](/downloads/Sitecore%20Experience%20Platform/100/Sitecore%20Experience%20Platform%20100%20Update2/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known issues](https://kb.sitecore.net/articles/661975) | Choose this link to access the Sitecore Knowledge Base. |
  | [Sitecore Installation Framework (SIF) Configuration Guide](https://sitecoredev.azureedge.net#) | Explains how to use the SIF Microsoft PowerShell module to deploy and configure a Sitecore topology. |
  | [Installation Guide for the XM Scaled topology](https://sitecoredev.azureedge.net/~/media/98F830E8B4254AE4A2168372D88BA1A7.ashx?date=20210629T164243) | Explains how to install the Sitecore Experience Management (XM1) topology to run the Content Delivery (CD) and Content Management (CM) server roles, and the Sitecore Identity server. This topology does not support xDB and xConnect. |
@@ -115,18 +115,18 @@ This page contains all the resources for **Sitecore Experience Platform 10.0 Upd
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore CLI](https://dev.sitecore.net:443/downloads/Sitecore%20CLI/2x/Sitecore%20CLI%20200) | Download files and release information for latest compatible version of Sitecore CLI. |
- | [Sitecore Connect for Microsoft Dynamics 365 for Sales](https://dev.sitecore.net:443/downloads/Dynamics%20CRM%20Connect/5x/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20for%20Sales%20500) | Download files and release information for latest compatible version of Sitecore Connect for Microsoft Dynamics 365 for Sales. |
- | [Sitecore Connect for Salesforce CRM](https://dev.sitecore.net:443/downloads/Salesforce%20Connect/5x/Sitecore%20Connect%20for%20Salesforce%20CRM%20500) | Download files and release information for latest compatible version of Sitecore Connect for Salesforce CRM. |
- | [Sitecore Connect for Salesforce Marketing Cloud](https://dev.sitecore.net:443/downloads/Sitecore%20Connect%20software%20for%20Salesforce%20Marketing%20Cloud/1x/Sitecore%20Connect%20software%20for%20Salesforce%20Marketing%20Cloud%2050) | Download files and release information for latest compatible version of Sitecore Connect™ for Salesforce Marketing Cloud. |
- | [Sitecore Connect for Sitecore CMP](https://dev.sitecore.net:443/downloads/Sitecore%20Connect%20for%20Sitecore%20CMP/30/Sitecore%20Connect%20for%20Sitecore%20CMP%20300) | Download files and release information for latest compatible version of Sitecore Connect™ for Sitecore CMP. |
- | [Sitecore Data Exchange Framework](https://dev.sitecore.net:443/downloads/Data%20Exchange%20Framework/5x/Data%20Exchange%20Framework%20500) | Download files and release information for latest compatible version of Sitecore Data Exchange Framework. |
- | [Sitecore Experience Accelerator](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201000) | Download files and release information for latest compatible version of Sitecore Experience Accelerator. |
- | [Sitecore Headless Rendering](https://dev.sitecore.net:443/downloads/Sitecore%20Headless%20Rendering/150/Sitecore%20Headless%20Rendering%201501) | Download files and release information for latest compatible version of Sitecore Headless Rendering. |
- | [Sitecore Horizon](https://dev.sitecore.net:443/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201001) | Sitecore Horizon is the next generation Experience Management product for the Sitecore Experience Platform™. |
- | [Sitecore Identity](https://dev.sitecore.net:443/downloads/Sitecore%20Identity/5x/Sitecore%20Identity%20511) | Download files and release information for latest compatible version of Sitecore Identity. |
- | [Sitecore JavaScript Services](https://dev.sitecore.net:443/downloads/Sitecore%20JavaScript%20Services/150/Sitecore%20JavaScript%20Services%201501) | Download files and release information for latest compatible version of Sitecore JavaScript Services. |
- | [Sitecore Publishing Service Module](https://dev.sitecore.net:443/downloads/Sitecore%20Publishing%20Service%20Module/10x/Sitecore%20Publishing%20Service%20Module%201000) | Download files and release information for latest compatible version of Sitecore Publishing Service Module. |
+ | [Sitecore CLI](/downloads/Sitecore%20CLI/2x/Sitecore%20CLI%20200) | Download files and release information for latest compatible version of Sitecore CLI. |
+ | [Sitecore Connect for Microsoft Dynamics 365 for Sales](/downloads/Dynamics%20CRM%20Connect/5x/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20for%20Sales%20500) | Download files and release information for latest compatible version of Sitecore Connect for Microsoft Dynamics 365 for Sales. |
+ | [Sitecore Connect for Salesforce CRM](/downloads/Salesforce%20Connect/5x/Sitecore%20Connect%20for%20Salesforce%20CRM%20500) | Download files and release information for latest compatible version of Sitecore Connect for Salesforce CRM. |
+ | [Sitecore Connect for Salesforce Marketing Cloud](/downloads/Sitecore%20Connect%20software%20for%20Salesforce%20Marketing%20Cloud/1x/Sitecore%20Connect%20software%20for%20Salesforce%20Marketing%20Cloud%2050) | Download files and release information for latest compatible version of Sitecore Connect™ for Salesforce Marketing Cloud. |
+ | [Sitecore Connect for Sitecore CMP](/downloads/Sitecore%20Connect%20for%20Sitecore%20CMP/30/Sitecore%20Connect%20for%20Sitecore%20CMP%20300) | Download files and release information for latest compatible version of Sitecore Connect™ for Sitecore CMP. |
+ | [Sitecore Data Exchange Framework](/downloads/Data%20Exchange%20Framework/5x/Data%20Exchange%20Framework%20500) | Download files and release information for latest compatible version of Sitecore Data Exchange Framework. |
+ | [Sitecore Experience Accelerator](/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201000) | Download files and release information for latest compatible version of Sitecore Experience Accelerator. |
+ | [Sitecore Headless Rendering](/downloads/Sitecore%20Headless%20Rendering/150/Sitecore%20Headless%20Rendering%201501) | Download files and release information for latest compatible version of Sitecore Headless Rendering. |
+ | [Sitecore Horizon](/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201001) | Sitecore Horizon is the next generation Experience Management product for the Sitecore Experience Platform™. |
+ | [Sitecore Identity](/downloads/Sitecore%20Identity/5x/Sitecore%20Identity%20511) | Download files and release information for latest compatible version of Sitecore Identity. |
+ | [Sitecore JavaScript Services](/downloads/Sitecore%20JavaScript%20Services/150/Sitecore%20JavaScript%20Services%201501) | Download files and release information for latest compatible version of Sitecore JavaScript Services. |
+ | [Sitecore Publishing Service Module](/downloads/Sitecore%20Publishing%20Service%20Module/10x/Sitecore%20Publishing%20Service%20Module%201000) | Download files and release information for latest compatible version of Sitecore Publishing Service Module. |
 
 ## Upgrade options
 
@@ -154,6 +154,6 @@ This page contains all the resources for **Sitecore Experience Platform 10.0 Upd
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Device Detection Services usage policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
- | [Sitecore IP Geolocation usage policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
- | [Sitecore xDB Cloud usage policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |
+ | [Sitecore Device Detection Services usage policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20Device%20Detection%20Services%20Usage%20Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
+ | [Sitecore IP Geolocation usage policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ | [Sitecore xDB Cloud usage policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20xDB%20Cloud%20Usage%20Policy) | This policy is applicable if you are using Sitecore xDB Cloud. |

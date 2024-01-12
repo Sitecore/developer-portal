@@ -32,5 +32,5 @@ Please see the Sitecore product installation instructions for more information o
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20200/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20200/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Sitecore Installation Framework Configuration Guide](https://sitecoredev.azureedge.net/~/media/EA8D237B7FF9432DBBC71E6D9F1A6D5E.ashx?date=20181207T132958) | Configuration guide for Sitecore Installation Framework |

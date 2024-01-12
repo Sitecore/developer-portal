@@ -63,4 +63,4 @@ You must download and use the version of the tool that is appropriate for the ve
 
  | Resource | Description |
  | --- | --- |
- | [Resource files for Modules](https://dev.sitecore.net:443/downloads/Resource%20files%20for%20Modules/1x/Resource%20files%20for%20Modules%20100) | Module resource files for upgrading Core, Master and Web. |
+ | [Resource files for Modules](/downloads/Resource%20files%20for%20Modules/1x/Resource%20files%20for%20Modules%20100) | Module resource files for upgrading Core, Master and Web. |

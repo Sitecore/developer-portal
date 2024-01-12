@@ -24,7 +24,7 @@ Return to [all available versions](/Downloads/Sitecore_Commerce)
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Commerce/90/Sitecore%20Experience%20Commerce%2090%20Initial%20Release/Release%20Notes) | New feature/improvements, deprecated/removed, resolved issues, incomplete, known issues. |
+ | [Release Notes](/downloads/Sitecore%20Commerce/90/Sitecore%20Experience%20Commerce%2090%20Initial%20Release/Release%20Notes) | New feature/improvements, deprecated/removed, resolved issues, incomplete, known issues. |
  | [Installation Guide - Azure App Service](https://sitecoredev.azureedge.net/~/media/868D2E3E8B8B41438C714BA80ED16D17.ashx?date=20200519T145246) | Instructions for installing Sitecore XC to Microsoft Azure App Service. |
  | [Installation Guide - On Prem](https://sitecoredev.azureedge.net/~/media/CDF98AD9D44C464A803266E984409DF9.ashx?date=20200519T145019) |  |
  | [Documentation](https://doc.sitecore.com) | Link to Sitecore XC documentation on Sitecore's Documentation portal. |

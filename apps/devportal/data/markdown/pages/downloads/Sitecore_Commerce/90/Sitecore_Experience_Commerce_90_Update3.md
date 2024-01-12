@@ -20,7 +20,7 @@ Return to [all available versions](/Downloads/Sitecore_Commerce)
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Commerce/90/Sitecore%20Experience%20Commerce%2090%20Update3/Release%20Notes) | New features/improvements, resolved issues, breaking changes, known issues. Documentation updates are also listed. |
+ | [Release Notes](/downloads/Sitecore%20Commerce/90/Sitecore%20Experience%20Commerce%2090%20Update3/Release%20Notes) | New features/improvements, resolved issues, breaking changes, known issues. Documentation updates are also listed. |
  | [Installation Guide - Azure App Service](https://sitecoredev.azureedge.net/~/media/E2B4BC9475EA4AA6ABA7FAB1469644AF.ashx?date=20200520T091102) | Instructions for installing Sitecore XC 9.0.3 to a Microsoft Azure App Service. |
  | [Installation Guide - On-Prem](https://sitecoredev.azureedge.net/~/media/46D2BDD3A93B44BEA3071EE38E18F78F.ashx?date=20200520T090840) | Instructions for installing Sitecore XC 9.0.3 in a single-server configuration on-prem or on a hosted virtual machine. |
  | [Documentation](https://doc.sitecore.com) | Link to the Sitecore Documentation website. |

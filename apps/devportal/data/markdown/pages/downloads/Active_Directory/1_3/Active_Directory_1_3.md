@@ -30,14 +30,14 @@ Previous versions of this module [can be found here](/downloads/Active_Directory
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Active%20Directory/1%203/Active%20Directory%201%203/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
- | [Known Issues](https://dev.sitecore.net:443/downloads/Active%20Directory/1%203/Active%20Directory%201%203/Known%20Issues) | Choose this link to view the known issues list in the Sitecore Active Directory 1.3 module. |
+ | [Release Notes](/downloads/Active%20Directory/1%203/Active%20Directory%201%203/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Known Issues](/downloads/Active%20Directory/1%203/Active%20Directory%201%203/Known%20Issues) | Choose this link to view the known issues list in the Sitecore Active Directory 1.3 module. |
 
 ## Upgrade Options
 
  | Resource | Description |
  | --- | --- |
- | [Upgrade Guide](https://dev.sitecore.net:443/downloads/Active%20Directory/1%203/Active%20Directory%201%203/Upgrade%20Guide) | To upgrade from a previous Sitecore version please follow the instructions in this guide. |
+ | [Upgrade Guide](/downloads/Active%20Directory/1%203/Active%20Directory%201%203/Upgrade%20Guide) | To upgrade from a previous Sitecore version please follow the instructions in this guide. |
  | [Upgrade Package](https://sitecoredev.azureedge.net/~/media/96DDB71B2F6E4EDE9C162E4782564F8B.ashx?date=20161020T111638) | Download the files that you need for the upgrade process. |
 
 ## Documentation

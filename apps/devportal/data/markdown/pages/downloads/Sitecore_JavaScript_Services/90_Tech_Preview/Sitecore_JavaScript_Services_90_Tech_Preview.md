@@ -32,8 +32,8 @@ This product requires active subscription license. If you don't have subscriptio
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](https://dev.sitecore.net:443/downloads/Sitecore%20JavaScript%20Services/90%20Tech%20Preview/Sitecore%20JavaScript%20Services%2090%20Tech%20Preview/Release%20Notes) | Release notes for Sitecore JavaScript Services Tech Preview 9.0.0 rev. 171012. |
- | [Known issues](https://dev.sitecore.net:443/downloads/Sitecore%20JavaScript%20Services/90%20Tech%20Preview/Sitecore%20JavaScript%20Services%2090%20Tech%20Preview/Known%20Issues) | Known issues for Sitecore JavaScript Services Tech Preview 9.0.0 rev. 171012. |
+ | [Release notes](/downloads/Sitecore%20JavaScript%20Services/90%20Tech%20Preview/Sitecore%20JavaScript%20Services%2090%20Tech%20Preview/Release%20Notes) | Release notes for Sitecore JavaScript Services Tech Preview 9.0.0 rev. 171012. |
+ | [Known issues](/downloads/Sitecore%20JavaScript%20Services/90%20Tech%20Preview/Sitecore%20JavaScript%20Services%2090%20Tech%20Preview/Known%20Issues) | Known issues for Sitecore JavaScript Services Tech Preview 9.0.0 rev. 171012. |
 
 ## Community Support
 

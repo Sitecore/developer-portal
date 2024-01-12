@@ -25,19 +25,19 @@ SharePoint Connect offers page-level, item-level, and API-level integration. It 
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%202%202/Release%20Notes) | Release notes for SharePoint Connect 2.2 rev. 160617. |
+ | [Release Notes](/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%202%202/Release%20Notes) | Release notes for SharePoint Connect 2.2 rev. 160617. |
 
 ## Upgrading
 
  | Resource | Description |
  | --- | --- |
- | [Upgrade Guide](https://dev.sitecore.net:443/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%202%202/Upgrade%20Guide) | Upgrading from **version 2.1 rev. 150128** to **2.2 rev. 160617**.  <br /> |
+ | [Upgrade Guide](/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%202%202/Upgrade%20Guide) | Upgrading from **version 2.1 rev. 150128** to **2.2 rev. 160617**.  <br /> |
  | [Upgrade Package](https://sitecoredev.azureedge.net/~/media/676A9D51365C463B87DD2BCD795F795A.ashx?date=20160629T095300) | Package for upgrading SharePoint Integration Framework from version 2.1 rev. 150128 to SharePoint Connect version 2.2 rev. 160617. |
 
 ## Documentation
 
  | Resource | Description |
  | --- | --- |
- | [Installation Guide](https://dev.sitecore.net:443/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%202%202/Installation%20Guide) | The installation procedure for SharePoint Connect 2.2 rev. 160617. |
+ | [Installation Guide](/downloads/SharePoint%20Connect/2%200/SharePoint%20Connect%202%202/Installation%20Guide) | The installation procedure for SharePoint Connect 2.2 rev. 160617. |
  | [SharePoint Connect Developers Cookbook A4](https://sitecoredev.azureedge.net/~/media/B20E949F3DCE47D7B7E6946F71F01DAB.ashx?date=20160218T145008) | This cookbook is for Sitecore partners and developers, and includes useful tips as well as examples (A4). |
  | [SharePoint Connect Developers Cookbook US-Letter](https://sitecoredev.azureedge.net/~/media/7BA1B00F06414DD3AD4EEFFB06CFC27A.ashx?date=20160218T145414) | This cookbook is for Sitecore partners and developers, and includes useful tips as well as examples (US-Letter). |

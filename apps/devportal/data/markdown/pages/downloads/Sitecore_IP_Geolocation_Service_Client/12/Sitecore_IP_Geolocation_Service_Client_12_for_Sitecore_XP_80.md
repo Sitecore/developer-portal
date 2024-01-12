@@ -19,6 +19,6 @@ This version of Sitecore® IP Geolocation Service runs on Sitecore XP 7.5-8.0.
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20IP%20Geolocation%20Service%20Client/12/Sitecore%20IP%20Geolocation%20Service%20Client%2012%20for%20Sitecore%20XP%2080/Release%20Notes) | Latest release information for the Sitecore IP Geolocation Service Client. |
+ | [Release Notes](/downloads/Sitecore%20IP%20Geolocation%20Service%20Client/12/Sitecore%20IP%20Geolocation%20Service%20Client%2012%20for%20Sitecore%20XP%2080/Release%20Notes) | Latest release information for the Sitecore IP Geolocation Service Client. |
  | [IP Geolocation Service Set Up Guide](/~/media/E46F4564862941A3A59E66C80D034402.ashx) | Instructions for setting up the Sitecore IP Geolocation service. |
- | [Sitecore IP Geolocation Usage Policy](https://dev.sitecore.net:443/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ | [Sitecore IP Geolocation Usage Policy](/downloads/Sitecore%20Experience%20Platform/Sitecore%20IP%20Geolocation%20Usage%20Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |

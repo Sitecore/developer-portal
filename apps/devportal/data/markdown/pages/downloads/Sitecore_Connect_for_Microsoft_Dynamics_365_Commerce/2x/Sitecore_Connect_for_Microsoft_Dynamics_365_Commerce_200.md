@@ -23,6 +23,6 @@ Easily locate, select, and add brand-approved images, videos and documents from 
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](https://dev.sitecore.net:443/downloads/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20Commerce/2x/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20Commerce%20200/Release%20Notes) | Release notes for Sitecore Connect™ for Microsoft Dynamics 365 Commerce to Content Hub. |
+ | [Release Notes](/downloads/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20Commerce/2x/Sitecore%20Connect%20for%20Microsoft%20Dynamics%20365%20Commerce%20200/Release%20Notes) | Release notes for Sitecore Connect™ for Microsoft Dynamics 365 Commerce to Content Hub. |
  | [Installation and Configuration Guide](https://docs.stylelabs.com/contenthub/4.1.x/content/user-documentation/integrate-with-sitecore/sitecore-connect-for-d365-commerce/configure-the-solution/configure-the-solution.html) | Installation and Configuration Guide for Sitecore Connect™ for Microsoft Dynamics 365 Commerce to Content Hub. |
  | [User Guide](https://docs.stylelabs.com/contenthub/4.1.x/content/user-documentation/integrate-with-sitecore/sitecore-connect-for-d365-commerce/use-the-solution/use-the-solution.html) | User Guide for Sitecore Connect™ for Microsoft Dynamics 365 Commerce to Content Hub. |
