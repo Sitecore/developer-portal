@@ -1,6 +1,11 @@
 ---
 title: Release Notes
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update6/Release_Notes.aspx
+isDownloadPage: false
+isTopicPage: true
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Release Notes

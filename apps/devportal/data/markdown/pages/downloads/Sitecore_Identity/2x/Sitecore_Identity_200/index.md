@@ -1,6 +1,11 @@
 ---
 title: Sitecore Identity 2.0.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/2x/Sitecore_Identity_200
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore Identity 2.0.0
@@ -24,5 +29,5 @@ Sitecore Identity is compatible with Sitecore Membership user storage but may be
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Identity](https://sitecoredev.azureedge.net/~/media/B6C57F3892E14E0291FC80A38439983D.ashx?date=20181126T124600) | Sitecore Identity OnPrem and Cloud WDP installation package. See Sitecore Experience Platform 9.1 Initial Release installation guide for setup instructions. |
- | [Deployment Configuration files](https://sitecoredev.azureedge.net/~/media/3C254C1632324983B539121AF74A6F82.ashx?date=20190130T144931) | Deployment Configuration files for Sitecore Identity server. |
+ | [Sitecore Identity](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/2x/Sitecore%20Identity%20200/Secure/Sitecore.IdentityServer.2.0.0-r00157.scwdp.zip) | Sitecore Identity OnPrem and Cloud WDP installation package. See Sitecore Experience Platform 9.1 Initial Release installation guide for setup instructions. |
+ | [Deployment Configuration files](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/2x/Sitecore%20Identity%20200/Secure/IdentityServer%20Deployment%20Configuration%202.0.0.zip) | Deployment Configuration files for Sitecore Identity server. |

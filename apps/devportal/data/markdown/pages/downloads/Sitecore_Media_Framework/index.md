@@ -1,6 +1,11 @@
 ---
 title: Sitecore Media Framework
 origin: https://dev.sitecore.net/Downloads/Sitecore_Media_Framework.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Media Framework

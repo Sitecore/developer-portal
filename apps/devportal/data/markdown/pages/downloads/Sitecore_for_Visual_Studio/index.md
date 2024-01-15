@@ -1,6 +1,11 @@
 ---
 title: Sitecore for Visual Studio
 origin: https://dev.sitecore.net/Downloads/Sitecore_for_Visual_Studio.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore for Visual Studio

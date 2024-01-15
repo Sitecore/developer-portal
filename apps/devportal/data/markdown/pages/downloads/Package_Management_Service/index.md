@@ -1,6 +1,11 @@
 ---
 title: Package Management Service
 origin: https://dev.sitecore.net/Downloads/Package_Management_Service.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Package Management Service

@@ -1,6 +1,11 @@
 ---
 title: Sitecore Headless Rendering
 origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Headless Rendering

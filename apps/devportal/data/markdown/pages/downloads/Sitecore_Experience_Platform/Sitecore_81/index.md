@@ -1,6 +1,11 @@
 ---
 title: 8.1
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_81.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # 8.1

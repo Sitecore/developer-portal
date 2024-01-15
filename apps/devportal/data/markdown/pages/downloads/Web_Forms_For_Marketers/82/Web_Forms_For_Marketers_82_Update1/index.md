@@ -1,6 +1,11 @@
 ---
 title: Web Forms For Marketers 8.2 Update-1
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Update1
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Web Forms For Marketers 8.2 Update-1
@@ -19,26 +24,26 @@ Looking for **a different release**? See [all available WFFM releases](/download
 
  | Resource | Description |
  | --- | --- |
- | [WFFM Module](https://sitecoredev.azureedge.net/~/media/CC1E96521266447F8DCC0A28866FA3CA.ashx?date=20161207T112149) | Download and install the WFFM module. The package consists of three Sitecore packages – one for CM servers, one for CD servers, and one for Reporting servers. |
+ | [WFFM Module](https://scdp.blob.core.windows.net/downloads/Web%20Forms%20For%20Marketers/82/Web%20Forms%20For%20Marketers%2082%20Update1/Secure/Web%20Forms%20for%20Marketers%208.2%20rev.%20161129%20NOT%20SC%20PACKAGE.zip) | Download and install the WFFM module. The package consists of three Sitecore packages – one for CM servers, one for CD servers, and one for Reporting servers. |
 
 ## Upgrades
 
  | Resource | Description |
  | --- | --- |
- | [WFFM Update Package](https://sitecoredev.azureedge.net/~/media/6F2E7D2BBD19420DBCDFACE86501D9F9.ashx?date=20161207T110909) | Download the files that you need for the upgrade process. |
- | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/55BB3252D36E489B9AFFBC9D4A7911B2.ashx?date=20161216T100702) | To upgrade from a previous WFFM version please follow the instructions in this guide. |
+ | [WFFM Update Package](https://scdp.blob.core.windows.net/downloads/Web%20Forms%20For%20Marketers/82/Web%20Forms%20For%20Marketers%2082%20Update1/Secure/Web%20Forms%20for%20Marketers%208.2%20rev.%20161129%20(update%20package)%20NOT%20SC%20PACKAGE.zip) | Download the files that you need for the upgrade process. |
+ | [Upgrade Guide](https://scdp.blob.core.windows.net/downloads/Web%20Forms%20For%20Marketers/82/Web%20Forms%20For%20Marketers%2082%20Update1/Secure/WFFM-82-Update-1-Upgrade-Guide.pdf) | To upgrade from a previous WFFM version please follow the instructions in this guide. |
 
 ## Modules
 
  | Resource | Description |
  | --- | --- |
- | [EXM-WFFM Integration Module](https://sitecoredev.azureedge.net/~/media/0640584B33B740EBB0EB12DFB29B7C7D.ashx?date=20171005T144859) | Adds an “Send Email Campaign Message” save action, allowing emails to be sent through EXM. |
+ | [EXM-WFFM Integration Module](https://scdp.blob.core.windows.net/downloads/Web%20Forms%20For%20Marketers/Web%20Forms%20For%20Marketers%2081/Web%20Forms%20For%20Marketers%2081%20Update3/Secure/EXM-WFFM%201.0.0%20rev.%20170918.zip) | Adds an “Send Email Campaign Message” save action, allowing emails to be sent through EXM. |
 
 ## Release Information
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](/downloads/Web%20Forms%20For%20Marketers/82/Web%20Forms%20For%20Marketers%2082%20Update1/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Update1/Release_Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [Known issues](https://kb.sitecore.net/articles/631685) | Choose this link to access the Sitecore Knowledge Base. |
- | [Installation Guide](https://sitecoredev.azureedge.net/~/media/3F59F52EC9624B17B84893B5A18869C7.ashx?date=20170824T091750) | The installation procedure for the WFFM module. |
+ | [Installation Guide](https://scdp.blob.core.windows.net/downloads/Web%20Forms%20For%20Marketers/82/Web%20Forms%20For%20Marketers%2082%20Update1/Secure/WFFM-82-Update-1-Installation-Guide.pdf) | The installation procedure for the WFFM module. |
  | [Documentation](https://doc.sitecore.com/developers/82/web-forms-for-marketers/en/index-en.html) | Documentation for the WFFM module. |

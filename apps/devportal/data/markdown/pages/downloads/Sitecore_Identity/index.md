@@ -1,6 +1,11 @@
 ---
 title: Sitecore Identity
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Identity

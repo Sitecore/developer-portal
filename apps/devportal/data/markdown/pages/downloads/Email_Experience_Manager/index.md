@@ -1,6 +1,11 @@
 ---
 title: Email Experience Manager
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Email Experience Manager

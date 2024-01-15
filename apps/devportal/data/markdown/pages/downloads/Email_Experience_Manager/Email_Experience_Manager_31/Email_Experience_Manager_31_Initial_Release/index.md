@@ -1,6 +1,11 @@
 ---
 title: Email Experience Manager 3.1 Initial Release
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_31/Email_Experience_Manager_31_Initial_Release
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Email Experience Manager 3.1 Initial Release
@@ -25,20 +30,20 @@ origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experi
 
  | Resource | Description |
  | --- | --- |
- | [Email Experience Manager](https://sitecoredev.azureedge.net/~/media/383BC967066A4F88A4ED9201EDF1C727.ashx?date=20150706T124255) | Download this package to install the Sitecore Email Experience Manager 3.1 rev. 150703. The EXM installation package includes five zip packages – the Email Experience Manager and four zip files that match specific server roles. For more information on how to install the EXM module, see the EXM Installation Guide. |
+ | [Email Experience Manager](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2031/Email%20Experience%20Manager%2031%20Initial%20Release/Secure/EXM%2031%20rev%20150703.zip) | Download this package to install the Sitecore Email Experience Manager 3.1 rev. 150703. The EXM installation package includes five zip packages – the Email Experience Manager and four zip files that match specific server roles. For more information on how to install the EXM module, see the EXM Installation Guide. |
 
 ## Upgrades
 
  | Resource | Description |
  | --- | --- |
- | [EXM Update Package](https://sitecoredev.azureedge.net/~/media/B3B9A72769584FC3AD0089C19FE58C2C.ashx?date=20150706T123729) | Download the files you need to upgrade from EXM 3.0 to EXM 3.1.  <br /> |
- | [EXM Upgrade Guide](https://sitecoredev.azureedge.net/~/media/24FD8ABCD08E4BF7888A2CE48DC60697.ashx?date=20160620T094611) | Step by step guide to upgrade EXM 3.0 to EXM 3.1. |
+ | [EXM Update Package](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2031/Email%20Experience%20Manager%2031%20Initial%20Release/Secure/Email%20Experience%20Manager%2031%20rev%20150703.update) | Download the files you need to upgrade from EXM 3.0 to EXM 3.1.  <br /> |
+ | [EXM Upgrade Guide](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2031/Email%20Experience%20Manager%2031%20Initial%20Release/Secure/EXM%203%201%20Update%20Instructions.pdf) | Step by step guide to upgrade EXM 3.0 to EXM 3.1. |
 
 ## Release Information
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2031/Email%20Experience%20Manager%2031%20Initial%20Release/Version%20Resources/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
+ | [Release notes](/downloads/Email_Experience_Manager/Email_Experience_Manager_31/Email_Experience_Manager_31_Initial_Release/Version_Resources/Release_Notes) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
  | [Known issues](https://kb.sitecore.net/articles/149565) | Choose this link to access the Sitecore Knowledge Base. |
- | [EXM Installation Guide](https://sitecoredev.azureedge.net/~/media/42C2BE7D37E04D99869FE826EB176A9C.ashx?date=20151209T145534) | The installation procedures for the Email Experience Manager module |
- | [Documentation](https://doc.sitecore.net:443/en/Products/Email%20Experience%20Manager) | Documentation for the EXM module. |
+ | [EXM Installation Guide](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2031/Email%20Experience%20Manager%2031%20Initial%20Release/Secure/EXMInstallationGuide31.pdf) | The installation procedures for the Email Experience Manager module |
+ | [Documentation](https://doc.sitecore.net:443/en/Products/Email_Experience_Manager) | Documentation for the EXM module. |

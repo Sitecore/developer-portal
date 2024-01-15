@@ -1,6 +1,11 @@
 ---
 title: Sitecore JavaScript Services 15.0.1
 origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/150/Sitecore_JavaScript_Services_1501
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore JavaScript Services 15.0.1
@@ -36,18 +41,18 @@ For use of Sitecore JSS with Sitecore 10.1 and later, see [Sitecore Headless Ren
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore JavaScript Services Server for Sitecore XM](https://sitecoredev.azureedge.net/~/media/C1A6417F4990466780D7ABB6DB527F4D.ashx?date=20201119T105223) | Download Sitecore JavaScript Services for use with Experience Platform without XConnect. |
- | [Sitecore JavaScript Services Server for Sitecore XP](https://sitecoredev.azureedge.net/~/media/3EC18366526A45B298D334F6EB899C2D.ashx?date=20201119T105223) | Download Sitecore JavaScript Services for use with Experience Platform with XConnect. |
+ | [Sitecore JavaScript Services Server for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20JavaScript%20Services/150/Sitecore%20JavaScript%20Services%201501/Secure/ZIP/Sitecore%20JavaScript%20Services%20Server%20for%20Sitecore%2010.0.0%20XM%2015.0.1%20rev.%20201112.zip) | Download Sitecore JavaScript Services for use with Experience Platform without XConnect. |
+ | [Sitecore JavaScript Services Server for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20JavaScript%20Services/150/Sitecore%20JavaScript%20Services%201501/Secure/ZIP/Sitecore%20JavaScript%20Services%20Server%20for%20Sitecore%2010.0.0%20XP%2015.0.1%20rev.%20201112.zip) | Download Sitecore JavaScript Services for use with Experience Platform with XConnect. |
  | [NPM packages](https://www.npmjs.com/org/sitecore-jss) | JavaScript packages for JSS. |
 
 ## Download options for Azure AppService and On Premises deployment
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore JavaScript Services Server CD WDP for Sitecore XM](https://sitecoredev.azureedge.net/~/media/2EC995BDC73B4B5CA7D0DAC070B9A6D8.ashx?date=20201119T105253) | WebDeploy package for CD role in XM configuration. |
- | [Sitecore JavaScript Services Server CD WDP for Sitecore XP](https://sitecoredev.azureedge.net/~/media/E23F8E62DA244623B27D6B203BF871B5.ashx?date=20201119T105253) | WebDeploy package for CD role in XP configurations. |
- | [Sitecore JavaScript Services Server WDP for Sitecore XM](https://sitecoredev.azureedge.net/~/media/11530A2E549B4038A47270DD3A78BF8D.ashx?date=20201119T105253) | WebDeploy package for CM role in XM configurations. |
- | [Sitecore JavaScript Services Server WDP for Sitecore XP](https://sitecoredev.azureedge.net/~/media/76207D15A2A540C5A4772E33D6EC0E6D.ashx?date=20201119T105254) | WebDeploy package for CM role in XP configurations. |
+ | [Sitecore JavaScript Services Server CD WDP for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20JavaScript%20Services/150/Sitecore%20JavaScript%20Services%201501/Secure/WDP/Sitecore%20JavaScript%20Services%20Server%20for%20Sitecore%2010.0.0%20XM%2015.0.1%20rev.%20201112%20CD.scwdp.zip) | WebDeploy package for CD role in XM configuration. |
+ | [Sitecore JavaScript Services Server CD WDP for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20JavaScript%20Services/150/Sitecore%20JavaScript%20Services%201501/Secure/WDP/Sitecore%20JavaScript%20Services%20Server%20for%20Sitecore%2010.0.0%20XP%2015.0.1%20rev.%20201112%20CD.scwdp.zip) | WebDeploy package for CD role in XP configurations. |
+ | [Sitecore JavaScript Services Server WDP for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20JavaScript%20Services/150/Sitecore%20JavaScript%20Services%201501/Secure/WDP/Sitecore%20JavaScript%20Services%20Server%20for%20Sitecore%2010.0.0%20XM%2015.0.1%20rev.%20201112.scwdp.zip) | WebDeploy package for CM role in XM configurations. |
+ | [Sitecore JavaScript Services Server WDP for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20JavaScript%20Services/150/Sitecore%20JavaScript%20Services%201501/Secure/WDP/Sitecore%20JavaScript%20Services%20Server%20for%20Sitecore%2010.0.0%20XP%2015.0.1%20rev.%20201112.scwdp.zip) | WebDeploy package for CM role in XP configurations. |
 
 ## Documentation
 

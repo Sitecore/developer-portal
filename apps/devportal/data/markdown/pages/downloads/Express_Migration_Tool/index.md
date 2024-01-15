@@ -1,6 +1,11 @@
 ---
 title: Sitecore Express Migration Tool
 origin: https://dev.sitecore.net/Downloads/Express_Migration_Tool.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Express Migration Tool

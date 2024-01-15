@@ -1,6 +1,11 @@
 ---
 title: Sitecore Connect™ for Sitecore CMP
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Sitecore_CMP.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Connect™ for Sitecore CMP

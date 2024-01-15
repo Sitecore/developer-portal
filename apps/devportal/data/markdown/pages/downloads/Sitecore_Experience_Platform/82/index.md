@@ -1,6 +1,11 @@
 ---
 title: 8.2
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/82.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # 8.2

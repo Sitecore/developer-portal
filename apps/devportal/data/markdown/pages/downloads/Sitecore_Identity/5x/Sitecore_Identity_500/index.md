@@ -1,6 +1,11 @@
 ---
 title: Sitecore Identity 5.0.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/5x/Sitecore_Identity_500
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore Identity 5.0.0
@@ -24,12 +29,12 @@ Sitecore Identity is compatible with Sitecore Membership user storage but may be
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Identity](https://sitecoredev.azureedge.net/~/media/2D1DC7FAB6C8425F8BE0F3DD3D02EBD8.ashx?date=20200729T130911) | Sitecore Identity OnPrem and Cloud WDP installation package. |
- | [Deployment Configuration files](https://sitecoredev.azureedge.net/~/media/C1DC3531CB8F4966AFF0035446064506.ashx?date=20200729T130950) | Deployment Configuration files for Sitecore Identity server. |
+ | [Sitecore Identity](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/5x/Sitecore%20Identity%20500/Secure/Sitecore.IdentityServer.5.0.0-r00277.scwdp.zip) | Sitecore Identity OnPrem and Cloud WDP installation package. |
+ | [Deployment Configuration files](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/5x/Sitecore%20Identity%20500/Secure/IdentityServer%20Deployment%20Configuration%205.0.0.zip) | Deployment Configuration files for Sitecore Identity server. |
 
 ## Release information
 
  | Resource | Description |
  | --- | --- |
- | [Installation Guide for SC XM](https://sitecoredev.azureedge.net/~/media/001767D17218438799E5C26EFA4D3565.ashx?date=20211214T140231) | For the setup instructions, see the Sitecore Experience Platform Installation Guide for XM topology. |
- | [Installation Guide for SC XP](https://sitecoredev.azureedge.net/~/media/DEE5EE8C69E14AE39406641152412614.ashx?date=20211214T140231) | For the setup instructions, see the Sitecore Experience Platform Installation Guide for XP topology. |
+ | [Installation Guide for SC XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/100/Sitecore%20Experience%20Platform%20100/Secure/Installation_Guide_for_the_XM_Scaled_topology-10.0.0.pdf) | For the setup instructions, see the Sitecore Experience Platform Installation Guide for XM topology. |
+ | [Installation Guide for SC XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/100/Sitecore%20Experience%20Platform%20100/Secure/Installation_Guide_for_the_XP_Scaled_topology-10.0.0.pdf) | For the setup instructions, see the Sitecore Experience Platform Installation Guide for XP topology. |

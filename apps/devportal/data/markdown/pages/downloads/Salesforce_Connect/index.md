@@ -1,6 +1,11 @@
 ---
 title: Salesforce Connect
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Salesforce Connect

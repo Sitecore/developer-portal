@@ -1,6 +1,11 @@
 ---
 title: Sitecore Mobile SDK (WebAPI) for Xamarin
 origin: https://dev.sitecore.net/Downloads/Sitecore_Mobile_SDK_for_Xamarin.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Mobile SDK (WebAPI) for Xamarin

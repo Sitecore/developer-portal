@@ -1,6 +1,11 @@
 ---
 title: Scripts for Sitecore Security database
 origin: https://dev.sitecore.net/Downloads/Scripts_for_Sitecore_Security_database
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Scripts for Sitecore Security database

@@ -1,6 +1,11 @@
 ---
 title: Sitecore Experience Commerce
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Experience Commerce

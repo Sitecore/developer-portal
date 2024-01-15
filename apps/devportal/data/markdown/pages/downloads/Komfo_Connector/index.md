@@ -1,6 +1,11 @@
 ---
 title: Komfo Connector
 origin: https://dev.sitecore.net/Downloads/Komfo_Connector.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Komfo Connector

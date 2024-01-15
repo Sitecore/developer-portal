@@ -1,6 +1,11 @@
 ---
 title: Sitecore Publishing Service
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Publishing Service

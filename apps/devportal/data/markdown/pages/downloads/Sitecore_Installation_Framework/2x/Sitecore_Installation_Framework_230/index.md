@@ -1,6 +1,11 @@
 ---
 title: Sitecore Installation Framework 2.3.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_230
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore Installation Framework 2.3.0
@@ -26,11 +31,11 @@ Please see the Sitecore product installation instructions for more information o
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Installation Framework](https://sitecoredev.azureedge.net/~/media/01B8F77BE42047E7B7BAD132BD9B59B7.ashx?date=20200729T162639) | Choose this link to download the Sitecore Installation Framework (SIF) PowerShell module. |
+ | [Sitecore Installation Framework](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20230/Secure/SitecoreInstallFramework%202.3.0%20rev.%20200625.zip) | Choose this link to download the Sitecore Installation Framework (SIF) PowerShell module. |
 
 ## Release Information
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20230/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
- | [Sitecore Installation Framework Configuration Guide](https://sitecoredev.azureedge.net/~/media/13D3551B8020479C8CAC41A9EF2AABE2.ashx?date=20230907T113418) | Configuration guide for Sitecore Installation Framework |
+ | [Release Notes](/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_230/Release_Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Sitecore Installation Framework Configuration Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20230/Secure/Sitecore_Installation_Framework_Configuration_Guide-2.3.0.pdf) | Configuration guide for Sitecore Installation Framework |

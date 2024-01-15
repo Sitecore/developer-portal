@@ -1,6 +1,11 @@
 ---
 title: Email Experience Manager 3.0 Update-2
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_30/Email_Experience_Manager_30_Update2
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Email Experience Manager 3.0 Update-2
@@ -29,27 +34,27 @@ Looking for **a different update**? See [all available EXM 3.0 updates](/downloa
 
  | Resource | Description |
  | --- | --- |
- | [Email Experience Manager](https://sitecoredev.azureedge.net/~/media/39EA424254834A82B10D42FFB96384D2.ashx?date=20150226T175118) | Download this package to install Sitecore Email Experience Manager 3.0 rev. 150223 |
+ | [Email Experience Manager](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/8%200/Sitecore%20Experience%20Platform%208%20update2/Secure/Email%20Experience%20Manager%203.0%20rev.150223%20NOT%20SC%20PACKAGE.zip) | Download this package to install Sitecore Email Experience Manager 3.0 rev. 150223 |
 
 ## Upgrades
 
  | Resource | Description |
  | --- | --- |
- | [EXM Update Package](https://sitecoredev.azureedge.net/~/media/4D3B6785E1A6462293E33A41276EE959.ashx?date=20150623T164216) | Download the files that you need for the upgrade process  <br /> |
- | [EXM Upgrade Guide](https://sitecoredev.azureedge.net/~/media/9EE82BB1052A4126AA8E6D8CD54453CE.ashx?date=20150803T113754) | Step by step guide to the EXM 3.0 Update-2 upgrade process |
+ | [EXM Update Package](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2030/Email%20Experience%20Manager%2030%20Update2/Secure/Email%20Experience%20Manager%2030%20rev150223%20Update%20Package.zip) | Download the files that you need for the upgrade process  <br /> |
+ | [EXM Upgrade Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/8%200/Sitecore%20Experience%20Platform%208%20update2/Secure/EXM%203%200%20Update%202%20Update%20Instructions.pdf) | Step by step guide to the EXM 3.0 Update-2 upgrade process |
 
 ## Release Information
 
  | Resource | Description |
  | --- | --- |
- | [Release notes](/Downloads/Downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2030/Email%20Experience%20Manager%2030%20Initial%20release/Version%20Resources/Release%20Notes#150223) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
+ | [Release notes](/Downloads/Downloads/Email_Experience_Manager/Email_Experience_Manager_30/Email_Experience_Manager_30_Initial_release/Version_Resources/Release_Notes#150223) | Read the list of features, improvements, and fixes that have been implemented in this release.  <br /> |
  | [Known issues](https://kb.sitecore.net/articles/149565) | Choose this link to access the Sitecore Knowledge Base. |
  | [EXM Installation Guide](/~/media/FAD5DEB3A43D4D968AF57EA206AF097E.ashx) | The installation procedures for the Email Experience Manager module |
- | [Documentation](https://doc.sitecore.net:443/en/Products/Email%20Experience%20Manager) | Documentation for the EXM module. |
+ | [Documentation](https://doc.sitecore.net:443/en/Products/Email_Experience_Manager) | Documentation for the EXM module. |
 
 ## Links
 
  | Resource | Description |
  | --- | --- |
- | [Norwegian (nb-NO)](https://sitecoredev.azureedge.net/~/media/5A438FFA9E574245B71228A4FF2A67DB.ashx?date=20150703T140249) | Norwegian language client translation file. |
- | [Swedish (sv-SE)](https://sitecoredev.azureedge.net/~/media/86AD6016CC1648AD85687C2E6571C58F.ashx?date=20150701T100359) | Swedish language client translation file. |
+ | [Norwegian (nb-NO)](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2030/Email%20Experience%20Manager%2030%20Initial%20release/Secure/EXM30nbNO150702.zip) | Norwegian language client translation file. |
+ | [Swedish (sv-SE)](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2030/Email%20Experience%20Manager%2030%20Update2/Secure/EXM30svSE150618.zip) | Swedish language client translation file. |

@@ -1,6 +1,11 @@
 ---
 title: Sitecore Horizon 10.1.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon/100/Sitecore_Horizon_1010
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore Horizon 10.1.0
@@ -25,27 +30,27 @@ This release is focused on enhancing Horizon pages and content editing functiona
  | Resource | Description |
  | --- | --- |
  | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/horizon%2F10.1.0.02700) | The Sitecore Container Deployment Package contains the Docker Compose and Kubernetes specification files used to deploy Sitecore in development and production container environments. |
- | [Docker Deployment Guide](https://sitecoredev.azureedge.net/~/media/A207B056FC8B40D78EA62835C83C1DF7.ashx?date=20211213T170646) | How to install the Horizon container package with Docker Compose. |
- | [Kubernetes Deployment Guide](https://sitecoredev.azureedge.net/~/media/10B3FDFDB782419B8466AC34889D8908.ashx?date=20211213T170704) | How to install the Horizon container package with Kubernetes. |
+ | [Docker Deployment Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201010/Secure/Docker_deployment_guide_for_Sitecore_Horizon_10_1-en.pdf) | How to install the Horizon container package with Docker Compose. |
+ | [Kubernetes Deployment Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201010/Secure/Kubernetes_deployment_guide_for_Sitecore_Horizon_10_1-en.pdf) | How to install the Horizon container package with Kubernetes. |
 
 ## Download options
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Horizon for On Premises deployment](https://sitecoredev.azureedge.net/~/media/449B1DB68287405298A6C6805D282516.ashx?date=20210223T230312) | Download Sitecore Horizon for use with Sitecore Experience Platform deployed On Premises. |
- | [Sitecore Horizon for Azure AppService deployment](https://sitecoredev.azureedge.net/~/media/4EC556E328DE47B88B6705D87D79E58C.ashx?date=20210223T230357) | Download Sitecore Horizon for use with Sitecore Experience Platform deployed as PaaS.The package contains scripts, ARM templates and WDP packages for deploying Sitecore Horizon to Azure AppService. |
+ | [Sitecore Horizon for On Premises deployment](https://scdp.blob.core.windows.net/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201010/Secure/Sitecore%20Horizon%2010.1.0%20rev.%2002700.zip) | Download Sitecore Horizon for use with Sitecore Experience Platform deployed On Premises. |
+ | [Sitecore Horizon for Azure AppService deployment](https://scdp.blob.core.windows.net/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201010/Secure/Sitecore%20Horizon%20for%20Azure%2010.1.0%20rev.%2002700.zip) | Download Sitecore Horizon for use with Sitecore Experience Platform deployed as PaaS.The package contains scripts, ARM templates and WDP packages for deploying Sitecore Horizon to Azure AppService. |
 
 ## Release information
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201010/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore_Horizon/100/Sitecore_Horizon_1010/Release_Notes) | A list of features and improvements that have been implemented in this release. |
 
 ## Documentation
 
  | Resource | Description |
  | --- | --- |
- | [Azure PaaS Installation Guide](https://sitecoredev.azureedge.net/~/media/DD004714454E446B8A48F61014D4B5DD.ashx?date=20211102T120344) | The installation procedure for the Sitecore Horizon on Azure PaaS. |
- | [OnPrem Installation Guide](https://sitecoredev.azureedge.net/~/media/840DBBD280104DD3812C98FEACA21E6C.ashx?date=20220223T153030) | The installation procedure for the Sitecore Horizon on premises. |
- | [Horizon Upgrade Guide](https://sitecoredev.azureedge.net/~/media/029DF725D633420F9CED273FCFC09331.ashx?date=20210224T172923) | Step by step instruction how to upgrade Horizon from version 9.3.0 to 10.1.0 |
+ | [Azure PaaS Installation Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201010/Secure/Azure%20Deployment%20Guide%20-%20Horizon%2010_1.pdf) | The installation procedure for the Sitecore Horizon on Azure PaaS. |
+ | [OnPrem Installation Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201010/Secure/On-prem%20Installation%20Guide%20-%20Horizon%2010_1.pdf) | The installation procedure for the Sitecore Horizon on premises. |
+ | [Horizon Upgrade Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Horizon/100/Sitecore%20Horizon%201010/Secure/Horizon_Upgrade_Guide_10.1.0.pdf) | Step by step instruction how to upgrade Horizon from version 9.3.0 to 10.1.0 |
  | [User Documentation](https://doc.sitecore.com/users/101/sitecore-experience-platform/en/horizon.html) | User documentation for Sitecore Horizon. |

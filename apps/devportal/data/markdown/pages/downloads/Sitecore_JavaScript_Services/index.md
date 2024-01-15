@@ -1,6 +1,11 @@
 ---
 title: Sitecore JavaScript Services
 origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore JavaScript Services

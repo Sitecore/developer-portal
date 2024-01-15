@@ -1,6 +1,11 @@
 ---
 title: 3.0
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_30.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # 3.0

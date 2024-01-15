@@ -1,6 +1,11 @@
 ---
 title: EXM Dedicated Dispatch Server
 origin: https://dev.sitecore.net/Downloads/EXM_Dedicated_Dispatch_Server.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # EXM Dedicated Dispatch Server

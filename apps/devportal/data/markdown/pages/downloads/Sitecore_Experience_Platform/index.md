@@ -1,6 +1,11 @@
 ---
 title: Sitecore Experience Platform
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Experience Platform

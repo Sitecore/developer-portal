@@ -1,6 +1,11 @@
 ---
 title: 8.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/8_0.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # 8.0

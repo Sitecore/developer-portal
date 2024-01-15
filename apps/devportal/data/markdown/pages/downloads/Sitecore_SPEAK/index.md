@@ -1,6 +1,11 @@
 ---
 title: Sitecore SPEAK
 origin: https://dev.sitecore.net/Downloads/Sitecore_SPEAK.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore SPEAK

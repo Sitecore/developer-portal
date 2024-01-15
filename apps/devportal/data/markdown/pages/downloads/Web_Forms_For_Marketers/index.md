@@ -1,6 +1,11 @@
 ---
 title: Web Forms For Marketers
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Web Forms For Marketers

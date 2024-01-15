@@ -1,6 +1,11 @@
 ---
 title: Sitecore CLI 4.0.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/4x/Sitecore_CLI_400
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore CLI 4.0.0
@@ -27,16 +32,16 @@ The Sitecore CLI provides an entry point for interactive and automated command-l
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Management Services Module ZIP Package](https://sitecoredev.azureedge.net/~/media/800CB88CCA0A44DAA2CC394C3AC6BED4.ashx?date=20210917T103007) | Download the Sitecore Management Services module required for the Sitecore CLI. |
- | [Sitecore Management Services Module WDP Package](https://sitecoredev.azureedge.net/~/media/D942F2C3F5D7497AA3DC700393B35EB7.ashx?date=20210917T103037) | Download WebDeploy package for install of the Sitecore Management Services module on Azure App Services. |
- | [Sitecore Management Services Module SIF Templates](https://sitecoredev.azureedge.net/~/media/1082726A2CA948BAA7756EE17377A8FE.ashx?date=20210917T121911) | Download Sitecore Installation Framework script and configuration for on-prem install of the Sitecore Management Services module. |
+ | [Sitecore Management Services Module ZIP Package](https://scdp.blob.core.windows.net/downloads/Sitecore%20CLI/4x/Sitecore%20CLI%20400/Secure/Sitecore%20ManagementServices%204.0.0%20rev.%2000411.zip) | Download the Sitecore Management Services module required for the Sitecore CLI. |
+ | [Sitecore Management Services Module WDP Package](https://scdp.blob.core.windows.net/downloads/Sitecore%20CLI/4x/Sitecore%20CLI%20400/Secure/Sitecore.ManagementServices%204.0.0%20rev.%2000411.scwdp.zip) | Download WebDeploy package for install of the Sitecore Management Services module on Azure App Services. |
+ | [Sitecore Management Services Module SIF Templates](https://scdp.blob.core.windows.net/downloads/Sitecore%20CLI/4x/Sitecore%20CLI%20400/Secure/Sitecore.ManagementServices.SIF.Templates%204.0.0%20rev.%2000411.zip) | Download Sitecore Installation Framework script and configuration for on-prem install of the Sitecore Management Services module. |
  | [Sitecore CLI NuGet Package](https://sitecore.myget.org/feed/sc-packages/package/nuget/Sitecore.Cli) | The "sc-packages" NuGet feed contains the Sitecore CLI "dotnet tool". See documentation for installation details. |
 
 ## Release information
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](/downloads/Sitecore%20CLI/4x/Sitecore%20CLI%20400/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore_CLI/4x/Sitecore_CLI_400/Release_Notes) | A list of features and improvements that have been implemented in this release. |
 
 ## Documentation
 

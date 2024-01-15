@@ -1,6 +1,11 @@
 ---
 title: Sitecore Headless Rendering 19.0.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering/19x/Sitecore_Headless_Rendering_1900
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore Headless Rendering 19.0.0
@@ -27,10 +32,10 @@ The Sitecore Headless Services module (formerly known as the Sitecore JavaScript
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Headless Services for Sitecore XM](https://sitecoredev.azureedge.net/~/media/21D15284BAEE4558ABC319645F8E4CFA.ashx?date=20211103T121004) | Download Sitecore Headless Services module for use with the Experience Platform without XConnect. |
- | [Sitecore Headless Services for Sitecore XP](https://sitecoredev.azureedge.net/~/media/8B0AB2E14228430CA9429757CC6F6155.ashx?date=20211103T121004) | Download Sitecore Headless Services module for use with the Experience Platform with XConnect. |
- | [Experience Edge Connector for Sitecore XM](https://sitecoredev.azureedge.net/~/media/C11382BBD69F4A2A9D57EBDB2E7C38B8.ashx?date=20211103T124814) | Download Experience Edge Connector module for use with the Experience Platform without XConnect. |
- | [Experience Edge Connector for Sitecore XP](https://sitecoredev.azureedge.net/~/media/A991A3AED55A4BC98B31ED225FFB9840.ashx?date=20211103T124814) | Download Experience Edge Connector module for use with the Experience Platform with XConnect. |
+ | [Sitecore Headless Services for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Secure/Sitecore%20Headless%20Services%20Server%20XM%2019.0.0%20rev.%2000508.zip) | Download Sitecore Headless Services module for use with the Experience Platform without XConnect. |
+ | [Sitecore Headless Services for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Secure/Sitecore%20Headless%20Services%20Server%20XP%2019.0.0%20rev.%2000508.zip) | Download Sitecore Headless Services module for use with the Experience Platform with XConnect. |
+ | [Experience Edge Connector for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Secure/Sitecore%20ExperienceEdge%20Connector%20for%20Sitecore%2010.2.0%20XM%2019.0.0%20rev.%2000112.zip) | Download Experience Edge Connector module for use with the Experience Platform without XConnect. |
+ | [Experience Edge Connector for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Secure/Sitecore%20ExperienceEdge%20Connector%20for%20Sitecore%2010.2.0%20XP%2019.0.0%20rev.%2000112.zip) | Download Experience Edge Connector module for use with the Experience Platform with XConnect. |
  | [ASP.NET Core SDK NuGet packages](https://sitecore.myget.org/feed/sc-packages/package/nuget/Sitecore.AspNet.RenderingEngine) | The “sc-packages” NuGet feed contains NuGet packages for the ASP.NET Core Rendering SDK. See documentation for details. |
  | [JavaScript SDK NPM packages](https://www.npmjs.com/org/sitecore-jss) | The @sitecore-jss npm organization contains packages for the headless JavaScript SDKs. See documentation for details. |
 
@@ -38,18 +43,18 @@ The Sitecore Headless Services module (formerly known as the Sitecore JavaScript
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Headless Services CD WDP for Sitecore XM](https://sitecoredev.azureedge.net/~/media/B31AC6C90F654FC09198858C347D8A8D.ashx?date=20211103T120857) | Sitecore Headless Services WebDeploy package for CD role in XM configuration. |
- | [Sitecore Headless Services CD WDP for Sitecore XP](https://sitecoredev.azureedge.net/~/media/133EFDE718AB47BD8F765754CD6FA71D.ashx?date=20211103T120857) | Sitecore Headless Services WebDeploy package for CD role in XP configurations. |
- | [Sitecore Headless Services WDP for Sitecore XM](https://sitecoredev.azureedge.net/~/media/9EBE949165484DC39688CFDA6C93B394.ashx?date=20211103T120856) | Sitecore Headless Services WebDeploy package for CM role in XM configurations. |
- | [Sitecore Headless Services WDP for Sitecore XP](https://sitecoredev.azureedge.net/~/media/3C2B799C0FD642E1A9F470619305BF70.ashx?date=20211103T120857) | Sitecore Headless Services WebDeploy package for CM role in XP configurations. |
- | [Experience Edge Connector WDP for Sitecore XM](https://sitecoredev.azureedge.net/~/media/849251224F6C4D48A92A1111A7C368F0.ashx?date=20211103T124813) | Experience Edge Connector WebDeploy package for CM role in XM configurations. |
- | [Experience Edge Connector WDP for Sitecore XP](https://sitecoredev.azureedge.net/~/media/E212EBF413384E73A50AC278C08EDE1D.ashx?date=20211103T124813) | Experience Edge Connector WebDeploy package for CM role in XP configurations. |
+ | [Sitecore Headless Services CD WDP for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Secure/Sitecore%20Headless%20Services%20Server%20XM%20CD%2019.0.0%20rev.%2000508.scwdp.zip) | Sitecore Headless Services WebDeploy package for CD role in XM configuration. |
+ | [Sitecore Headless Services CD WDP for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Secure/Sitecore%20Headless%20Services%20Server%20XP%20CD%2019.0.0%20rev.%2000508.scwdp.zip) | Sitecore Headless Services WebDeploy package for CD role in XP configurations. |
+ | [Sitecore Headless Services WDP for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Secure/Sitecore%20Headless%20Services%20Server%20XM%2019.0.0%20rev.%2000508.scwdp.zip) | Sitecore Headless Services WebDeploy package for CM role in XM configurations. |
+ | [Sitecore Headless Services WDP for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Secure/Sitecore%20Headless%20Services%20Server%20XP%2019.0.0%20rev.%2000508.scwdp.zip) | Sitecore Headless Services WebDeploy package for CM role in XP configurations. |
+ | [Experience Edge Connector WDP for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Secure/Sitecore%20ExperienceEdge%20Connector%20for%20Sitecore%2010.2.0%20XM%2019.0.0%20rev.%2000112.scwdp.zip) | Experience Edge Connector WebDeploy package for CM role in XM configurations. |
+ | [Experience Edge Connector WDP for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Secure/Sitecore%20ExperienceEdge%20Connector%20for%20Sitecore%2010.2.0%20XP%2019.0.0%20rev.%2000112.scwdp.zip) | Experience Edge Connector WebDeploy package for CM role in XP configurations. |
 
 ## Documentation
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](/downloads/Sitecore%20Headless%20Rendering/19x/Sitecore%20Headless%20Rendering%201900/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore_Headless_Rendering/19x/Sitecore_Headless_Rendering_1900/Release_Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [JavaScript SDKs (JSS) documentation](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/sitecore-javascript-rendering-sdks--jss-.html) | Sitecore JavaScript Rendering SDKs (JSS). |
  | [ASP.NET Core Rendering SDK documentation](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/index-en.html) | Official documentation for ASP.NET Core headless rendering. |
  | [Experience Edge documentation](https://doc.sitecore.com/en/developers/hd/190/sitecore-headless-development/sitecore-experience-edge-for-xm.html) | Official documentation for Experience Edge and the Experience Edge connector. |

@@ -1,6 +1,11 @@
 ---
 title: Sitecore Connect™ for Content Hub 4.0.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Content_Hub/4x/Sitecore_Connect_for_Content_Hub_400
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore Connect™ for Content Hub 4.0.0
@@ -18,12 +23,12 @@ Sitecore Connect™ for Content Hub gives web editors, and content/digital marke
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Connect™ for Content Hub XP 10.1](https://sitecoredev.azureedge.net/~/media/7319842238854399B201BE80B0CF9C4E.ashx?date=20210422T093731) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XP) 10.1. |
- | [Sitecore Connect™ for Content Hub XM 10.1](https://sitecoredev.azureedge.net/~/media/5293F3A61DB4400382C5802926184271.ashx?date=20210422T093731) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XM) 10.1. |
- | [Sitecore Connect™ for Content Hub XP 10.0](https://sitecoredev.azureedge.net/~/media/3CBAEF214B7D4BC9864CA75648956638.ashx?date=20210422T093731) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XP) 10.0. |
- | [Sitecore Connect™ for Content Hub XM 10.0](https://sitecoredev.azureedge.net/~/media/9F7455A06FBB41E9AABED093A5064B0F.ashx?date=20210422T093731) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XM) 10.0. |
- | [Sitecore Connect™ for Content Hub XP 9.3](https://sitecoredev.azureedge.net/~/media/21B9399149F949A2BB73093B569393D1.ashx?date=20210422T093732) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XP) 9.3. |
- | [Sitecore Connect™ for Content Hub XM 9.3](https://sitecoredev.azureedge.net/~/media/2A0187E6298D445BAB13335F43E32D26.ashx?date=20210422T093732) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XM) 9.3. |
+ | [Sitecore Connect™ for Content Hub XP 10.1](https://scdp.blob.core.windows.net/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Secure/Sitecore%20Connect%20for%20Content%20Hub%20XP%20for%2010.1%20v.%204.0.0%20rev.%2000229.zip) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XP) 10.1. |
+ | [Sitecore Connect™ for Content Hub XM 10.1](https://scdp.blob.core.windows.net/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Secure/Sitecore%20Connect%20for%20Content%20Hub%20XM%20for%2010.1%20v.%204.0.0%20rev.%2000229.zip) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XM) 10.1. |
+ | [Sitecore Connect™ for Content Hub XP 10.0](https://scdp.blob.core.windows.net/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Secure/Sitecore%20Connect%20for%20Content%20Hub%20XP%20for%2010.0%20v.%204.0.0%20rev.%2000222.zip) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XP) 10.0. |
+ | [Sitecore Connect™ for Content Hub XM 10.0](https://scdp.blob.core.windows.net/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Secure/Sitecore%20Connect%20for%20Content%20Hub%20XM%20for%2010.0%20v.%204.0.0%20rev.%2000222.zip) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XM) 10.0. |
+ | [Sitecore Connect™ for Content Hub XP 9.3](https://scdp.blob.core.windows.net/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Secure/Sitecore%20Connect%20for%20Content%20Hub%20XP%20for%209.3%20v.%204.0.0%20rev.%2000224.zip) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XP) 9.3. |
+ | [Sitecore Connect™ for Content Hub XM 9.3](https://scdp.blob.core.windows.net/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Secure/Sitecore%20Connect%20for%20Content%20Hub%20XM%20for%209.3%20v.%204.0.0%20rev.%2000224.zip) | Installation package for Sitecore Connect™ for Content Hub compatible with Sitecore Experience Platform (XM) 9.3. |
  | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/chub%2F4.0.0.00229.109) | The Sitecore Connect™ for Content Hub Container Deployment Package contains the Docker Compose and Kubernetes specification files used to Sitecore Connect™ for Content Hub in development and production container environments. |
  | [Image and Tags List](https://github.com/Sitecore/docker-images/tree/master/tags) | Link to the official tags list (.md and .json format) of all published Sitecore images available on Sitecore Container Registry (SCR). |
 
@@ -31,7 +36,7 @@ Sitecore Connect™ for Content Hub gives web editors, and content/digital marke
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Release%20Notes) | Release notes for Sitecore Connect™ for Content Hub. |
- | [Installation and Configuration Guide](https://sitecoredev.azureedge.net/~/media/4233C3F5C9C3495B8D1DB67B4AFFC58C.ashx?date=20220428T160837) | Installation and configuration guide for Sitecore Connect™ for Content Hub. |
- | [Container Deployment Guide](https://sitecoredev.azureedge.net/~/media/8E7BB6D5FF89460DB0B2574CA1576F02.ashx?date=20211214T141236) | This guide describes how to do the Sitecore Connect™ for Content Hub for Docker Compose and Kubernetes deployment. |
+ | [Release Notes](/downloads/Sitecore_Connect_for_Content_Hub/4x/Sitecore_Connect_for_Content_Hub_400/Release_Notes) | Release notes for Sitecore Connect™ for Content Hub. |
+ | [Installation and Configuration Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Secure/Sitecore_Connect_for_Content_Hub_4_0_Installation_Guide-en.pdf) | Installation and configuration guide for Sitecore Connect™ for Content Hub. |
+ | [Container Deployment Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Connect%20for%20Content%20Hub/4x/Sitecore%20Connect%20for%20Content%20Hub%20400/Secure/Sitecore_Connect_for_Content_Hub_4_0_Container_Deployment_Guide-en.pdf) | This guide describes how to do the Sitecore Connect™ for Content Hub for Docker Compose and Kubernetes deployment. |
  | [User Guide](https://doc.sitecore.com/developers/connect-for-ch/40/connect-for-content-hub/en/sitecore-connect-for-content-hub.html) | User guide for Sitecore Connect™ for Content Hub. |

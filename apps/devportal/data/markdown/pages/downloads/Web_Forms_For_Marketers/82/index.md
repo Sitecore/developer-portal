@@ -1,6 +1,11 @@
 ---
 title: 8.2
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/82
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # 8.2

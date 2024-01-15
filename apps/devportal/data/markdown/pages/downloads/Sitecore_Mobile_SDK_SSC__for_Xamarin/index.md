@@ -1,6 +1,11 @@
 ---
 title: Sitecore Mobile SDK (SSC)  for Xamarin
 origin: https://dev.sitecore.net/Downloads/Sitecore_Mobile_SDK_SSC__for_Xamarin.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Mobile SDK (SSC) for Xamarin

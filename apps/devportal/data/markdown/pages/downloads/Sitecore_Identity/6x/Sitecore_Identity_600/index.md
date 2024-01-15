@@ -1,6 +1,11 @@
 ---
 title: Sitecore Identity 6.0.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/6x/Sitecore_Identity_600
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore Identity 6.0.0
@@ -24,12 +29,12 @@ Sitecore Identity is compatible with Sitecore Membership user storage but may be
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Identity](https://sitecoredev.azureedge.net/~/media/9904F9B0F69F476D881FDB77EB3B1327.ashx?date=20210923T150221) | Sitecore Identity OnPrem and Cloud WDP installation package. |
- | [Deployment Configuration files](https://sitecoredev.azureedge.net/~/media/079F3BD0FE554F28BF516377AD4B1443.ashx?date=20210923T150328) | Deployment Configuration files for Sitecore Identity server. |
- | [Upgrade Scripts](https://sitecoredev.azureedge.net/~/media/B6AA0489A722416C8627A29ABE71A9A0.ashx?date=20210923T150353) | The package contains the script for updating the Core/Security database to be compatible with Sitecore Identity Server 6.0.0. |
+ | [Sitecore Identity](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/6x/Sitecore%20Identity%20600/Secure/Sitecore.IdentityServer.6.0.0-r00301.scwdp.zip) | Sitecore Identity OnPrem and Cloud WDP installation package. |
+ | [Deployment Configuration files](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/6x/Sitecore%20Identity%20600/Secure/IdentityServer%20Deployment%20Configuration%206.0.0.zip) | Deployment Configuration files for Sitecore Identity server. |
+ | [Upgrade Scripts](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/6x/Sitecore%20Identity%20600/Secure/Sitecore.IdentityServer.UpgradeScripts.6.0.0.zip) | The package contains the script for updating the Core/Security database to be compatible with Sitecore Identity Server 6.0.0. |
 
 ## Release information
 
  | Resource | Description |
  | --- | --- |
- | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/0D44C8EDE0C6441EA5C007FD67CC7B83.ashx?date=20211005T160910) | Explains how to upgrade from the Sitecore Identity Server 2.0.0 and later to Sitecore Identity Server 6.0.0. |
+ | [Upgrade Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/6x/Sitecore%20Identity%20600/Secure/Sitecore-Identity-Server-6.0.0-Upgrade-Guide-en.pdf) | Explains how to upgrade from the Sitecore Identity Server 2.0.0 and later to Sitecore Identity Server 6.0.0. |

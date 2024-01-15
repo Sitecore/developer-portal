@@ -1,6 +1,11 @@
 ---
 title: Sitecore Connect™ for Salesforce Marketing Cloud
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Connect™ for Salesforce Marketing Cloud

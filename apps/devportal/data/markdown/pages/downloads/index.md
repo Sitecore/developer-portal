@@ -1,6 +1,11 @@
 ---
 title: Downloads
 origin: https://dev.sitecore.net/Downloads.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: true
+isPackageLandingPage: false
 ---
 
 # Downloads

@@ -1,6 +1,11 @@
 ---
 title: Sitecore Print Experience Manager
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Print Experience Manager

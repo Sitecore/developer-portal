@@ -1,6 +1,11 @@
 ---
 title: Sitecore Connect™ for Sitecore DAM
 origin: https://dev.sitecore.net/Downloads/Sitecore_Plugin_for_Stylelabs_DAM.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Connect™ for Sitecore DAM

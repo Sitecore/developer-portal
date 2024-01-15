@@ -1,6 +1,11 @@
 ---
 title: Dynamics CRM Security Provider
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Security_Provider
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Dynamics CRM Security Provider

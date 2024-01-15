@@ -1,6 +1,11 @@
 ---
 title: Email Experience Manager 3.2 Initial Release
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_32/Email_Experience_Manager_32_Initial_Release
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Email Experience Manager 3.2 Initial Release
@@ -25,19 +30,19 @@ origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experi
 
  | Resource | Description |
  | --- | --- |
- | [Email Experience Manager](https://sitecoredev.azureedge.net/~/media/1F566F33CCCA4927AF20F4A34A65E659.ashx?date=20151116T161113) | Download this package to install the Sitecore Email Experience Manager 3.2 rev. 151020. The EXM installation package includes five zip packages – the Email Experience Manager and four zip files that match specific server roles. For more information on how to install the EXM module, see the EXM Installation Guide. |
+ | [Email Experience Manager](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2032/Email%20Experience%20Manager%2032%20Initial%20Release/Secure/Email%20Experience%20Manager%203.2.0%20rev.%20151020%20NOT%20SC%20PACKAGE.zip) | Download this package to install the Sitecore Email Experience Manager 3.2 rev. 151020. The EXM installation package includes five zip packages – the Email Experience Manager and four zip files that match specific server roles. For more information on how to install the EXM module, see the EXM Installation Guide. |
 
 ## Upgrades
 
  | Resource | Description |
  | --- | --- |
- | [EXM Update Package](https://sitecoredev.azureedge.net/~/media/D0AFA0A20E364488856761FFB4C8ECB4.ashx?date=20151026T144622) | Download the files you need to upgrade from EXM 3.1 to EXM 3.2. |
- | [EXM Upgrade Guide](https://sitecoredev.azureedge.net/~/media/833C9B440DB047079EBA8878DC56FFB7.ashx?date=20160222T111526) | Step by step guide to upgrade EXM 3.1 to EXM 3.2. |
+ | [EXM Update Package](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2032/Email%20Experience%20Manager%2032%20Initial%20Release/Secure/Email%20Experience%20Manager%20320%20rev%20151020update.zip) | Download the files you need to upgrade from EXM 3.1 to EXM 3.2. |
+ | [EXM Upgrade Guide](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2032/Email%20Experience%20Manager%2032%20Initial%20Release/Secure/EXM%2032%20Upgrade%20Instructions.pdf) | Step by step guide to upgrade EXM 3.1 to EXM 3.2. |
 
 ## Release Information
 
  | Resource | Description |
  | --- | --- |
- | [Release notes and known issues](/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2032/Email%20Experience%20Manager%2032%20Initial%20Release/Release%20Notes) | Read the list of features, improvements, and fixes that have been implemented in this release. |
- | [EXM Installation Guide](https://sitecoredev.azureedge.net/~/media/784597866517422C8A478D21727807C4.ashx?date=20160204T142924) | The installation procedures for the Email Experience Manager module |
+ | [Release notes and known issues](/downloads/Email_Experience_Manager/Email_Experience_Manager_32/Email_Experience_Manager_32_Initial_Release/Release_Notes) | Read the list of features, improvements, and fixes that have been implemented in this release. |
+ | [EXM Installation Guide](https://scdp.blob.core.windows.net/downloads/Email%20Experience%20Manager/Email%20Experience%20Manager%2032/Email%20Experience%20Manager%2032%20Initial%20Release/Secure/EXMInstallationGuide32.pdf) | The installation procedures for the Email Experience Manager module |
  | [Documentation](https://doc.sitecore.net/email_experience_manager) | Documentation for the EXM module. |

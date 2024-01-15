@@ -1,6 +1,11 @@
 ---
 title: Sitecore Horizon
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Horizon

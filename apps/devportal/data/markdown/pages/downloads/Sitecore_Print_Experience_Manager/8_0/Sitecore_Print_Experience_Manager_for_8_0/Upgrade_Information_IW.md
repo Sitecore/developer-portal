@@ -1,6 +1,11 @@
 ---
 title: Upgrade Information
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/8_0/Sitecore_Print_Experience_Manager_for_8_0/Upgrade_Information_IW.aspx
+isDownloadPage: false
+isTopicPage: true
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Upgrade Information

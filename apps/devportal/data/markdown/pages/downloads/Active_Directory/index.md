@@ -1,6 +1,11 @@
 ---
 title: Active Directory
 origin: https://dev.sitecore.net/Downloads/Active_Directory.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Active Directory

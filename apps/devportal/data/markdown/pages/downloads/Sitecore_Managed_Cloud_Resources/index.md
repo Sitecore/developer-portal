@@ -1,6 +1,11 @@
 ---
 title: Sitecore Managed Cloud Resources
 origin: https://dev.sitecore.net/Downloads/Sitecore_Managed_Cloud_Resources.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Managed Cloud Resources

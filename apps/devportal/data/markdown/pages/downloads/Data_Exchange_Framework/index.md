@@ -1,6 +1,11 @@
 ---
 title: Data Exchange Framework
 origin: https://dev.sitecore.net/Downloads/Data_Exchange_Framework.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Data Exchange Framework

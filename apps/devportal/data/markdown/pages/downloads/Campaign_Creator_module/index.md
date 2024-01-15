@@ -1,6 +1,11 @@
 ---
 title: Campaign Creator module
 origin: https://dev.sitecore.net/Downloads/Campaign_Creator_module.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Campaign Creator module

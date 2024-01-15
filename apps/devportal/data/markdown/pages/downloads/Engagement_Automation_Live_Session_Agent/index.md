@@ -1,6 +1,11 @@
 ---
 title: Engagement Automation Live Session Agent
 origin: https://dev.sitecore.net/Downloads/Engagement_Automation_Live_Session_Agent.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Engagement Automation Live Session Agent

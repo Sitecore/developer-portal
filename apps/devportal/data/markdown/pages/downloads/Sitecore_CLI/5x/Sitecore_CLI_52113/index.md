@@ -1,6 +1,11 @@
 ---
 title: Sitecore CLI 5.2.113
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_52113
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore CLI 5.2.113
@@ -27,16 +32,16 @@ The Sitecore CLI provides an entry point for interactive and automated command-l
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Management Services Module ZIP Package](https://sitecoredev.azureedge.net/~/media/A60A865A4C624624AC452FCBC4AFB5A7.ashx?date=20230614T133357) | Download the Sitecore Management Services module required for the Sitecore CLI. |
- | [Sitecore Management Services Module WDP Package](https://sitecoredev.azureedge.net/~/media/99C062A236244F98BCE408F305A293D3.ashx?date=20230614T133423) | Download WebDeploy package for install of the Sitecore Management Services module on Azure App Services. |
- | [Sitecore Management Services Module SIF Templates](https://sitecoredev.azureedge.net/~/media/FE03C13202FB4B1F90A813B0ECDC07AD.ashx?date=20230614T133439) | Download Sitecore Installation Framework script and configuration for on-prem install of the Sitecore Management Services module. |
+ | [Sitecore Management Services Module ZIP Package](https://scdp.blob.core.windows.net/downloads/Sitecore%20CLI/5x/Sitecore%20CLI%2052113/Secure/Sitecore%20ManagementServices%205.2.113.zip) | Download the Sitecore Management Services module required for the Sitecore CLI. |
+ | [Sitecore Management Services Module WDP Package](https://scdp.blob.core.windows.net/downloads/Sitecore%20CLI/5x/Sitecore%20CLI%2052113/Secure/Sitecore.ManagementServices%205.2.113.scwdp.zip) | Download WebDeploy package for install of the Sitecore Management Services module on Azure App Services. |
+ | [Sitecore Management Services Module SIF Templates](https://scdp.blob.core.windows.net/downloads/Sitecore%20CLI/5x/Sitecore%20CLI%2052113/Secure/Sitecore.ManagementServices.SIF.Templates%205.2.113.zip) | Download Sitecore Installation Framework script and configuration for on-prem install of the Sitecore Management Services module. |
  | [Sitecore CLI NuGet Package](https://sitecore.myget.org/feed/sc-packages/package/nuget/Sitecore.Cli) | The "sc-packages" NuGet feed contains the Sitecore CLI "dotnet tool". See documentation for installation details. |
 
 ## Release information
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](/downloads/Sitecore%20CLI/5x/Sitecore%20CLI%2052113/Release%20Notes) | A list of features and improvements that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore_CLI/5x/Sitecore_CLI_52113/Release_Notes) | A list of features and improvements that have been implemented in this release. |
 
 ## Documentation
 

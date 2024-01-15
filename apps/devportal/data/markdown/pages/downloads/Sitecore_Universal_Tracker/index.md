@@ -1,6 +1,11 @@
 ---
 title: Sitecore Universal Tracker
 origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Universal Tracker

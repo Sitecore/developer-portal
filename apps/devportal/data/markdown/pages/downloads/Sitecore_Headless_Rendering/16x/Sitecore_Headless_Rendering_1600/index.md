@@ -1,6 +1,11 @@
 ---
 title: Sitecore Headless Rendering 16.0.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering/16x/Sitecore_Headless_Rendering_1600
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore Headless Rendering 16.0.0
@@ -27,8 +32,8 @@ The Sitecore Headless Services module (formerly known as the Sitecore JavaScript
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Headless Services for Sitecore XM](https://sitecoredev.azureedge.net/~/media/C44BBA7C342F4103B45635362929C5A8.ashx?date=20210224T204210) | Download Sitecore Headless Services module for use with the Experience Platform without XConnect. |
- | [Sitecore Headless Services for Sitecore XP](https://sitecoredev.azureedge.net/~/media/9BACE47CDC9B4057AFDC55460A8BE3E3.ashx?date=20210224T204210) | Download Sitecore Headless Services module for use with the Experience Platform with XConnect. |
+ | [Sitecore Headless Services for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/16x/Sitecore%20Headless%20Rendering%201600/Secure/ZIP/Sitecore%20Headless%20Services%20Server%20for%20Sitecore%2010.1.0%20XM%2016.0.0%20rev.%20210223.zip) | Download Sitecore Headless Services module for use with the Experience Platform without XConnect. |
+ | [Sitecore Headless Services for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/16x/Sitecore%20Headless%20Rendering%201600/Secure/ZIP/Sitecore%20Headless%20Services%20Server%20for%20Sitecore%2010.1.0%20XP%2016.0.0%20rev.%20210223.zip) | Download Sitecore Headless Services module for use with the Experience Platform with XConnect. |
  | [ASP.NET Core SDK NuGet packages](https://sitecore.myget.org/feed/sc-packages/package/nuget/Sitecore.AspNet.RenderingEngine) | The “sc-packages” NuGet feed contains NuGet packages for the ASP.NET Core Rendering SDK. See documentation for details. |
  | [JavaScript SDK NPM packages](https://www.npmjs.com/org/sitecore-jss) | The @sitecore-jss npm organization contains packages for the headless JavaScript SDKs. See documentation for details. |
 
@@ -36,16 +41,16 @@ The Sitecore Headless Services module (formerly known as the Sitecore JavaScript
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Headless Services CD WDP for Sitecore XM](https://sitecoredev.azureedge.net/~/media/F5A4ACDBC76348479AC775862F5837DC.ashx?date=20210224T204313) | Sitecore Headless Services WebDeploy package for CD role in XM configuration. |
- | [Sitecore Headless Services CD WDP for Sitecore XP](https://sitecoredev.azureedge.net/~/media/634E27E147694BCEB68D44A481854C6D.ashx?date=20210224T204313) | Sitecore Headless Services WebDeploy package for CD role in XP configurations. |
- | [Sitecore Headless Services WDP for Sitecore XM](https://sitecoredev.azureedge.net/~/media/0A445E2089DA4523AA90AB4FD1278FBF.ashx?date=20210224T204313) | Sitecore Headless Services WebDeploy package for CM role in XM configurations. |
- | [Sitecore Headless Services WDP for Sitecore XP](https://sitecoredev.azureedge.net/~/media/8855317E6C3A44C68EC4C39A9459FE87.ashx?date=20210224T204313) | Sitecore Headless Services WebDeploy package for CM role in XP configurations. |
+ | [Sitecore Headless Services CD WDP for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/16x/Sitecore%20Headless%20Rendering%201600/Secure/WDP/Sitecore%20Headless%20Services%20Server%20for%20Sitecore%2010.1.0%20XM%2016.0.0%20rev.%20210223%20CD.scwdp.zip) | Sitecore Headless Services WebDeploy package for CD role in XM configuration. |
+ | [Sitecore Headless Services CD WDP for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/16x/Sitecore%20Headless%20Rendering%201600/Secure/WDP/Sitecore%20Headless%20Services%20Server%20for%20Sitecore%2010.1.0%20XP%2016.0.0%20rev.%20210223%20CD.scwdp.zip) | Sitecore Headless Services WebDeploy package for CD role in XP configurations. |
+ | [Sitecore Headless Services WDP for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/16x/Sitecore%20Headless%20Rendering%201600/Secure/WDP/Sitecore%20Headless%20Services%20Server%20for%20Sitecore%2010.1.0%20XM%2016.0.0%20rev.%20210223.scwdp.zip) | Sitecore Headless Services WebDeploy package for CM role in XM configurations. |
+ | [Sitecore Headless Services WDP for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/16x/Sitecore%20Headless%20Rendering%201600/Secure/WDP/Sitecore%20Headless%20Services%20Server%20for%20Sitecore%2010.1.0%20XP%2016.0.0%20rev.%20210223.scwdp.zip) | Sitecore Headless Services WebDeploy package for CM role in XP configurations. |
 
 ## Documentation
 
  | Resource | Description |
  | --- | --- |
- | [Release Notes](/downloads/Sitecore%20Headless%20Rendering/16x/Sitecore%20Headless%20Rendering%201600/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Release Notes](/downloads/Sitecore_Headless_Rendering/16x/Sitecore_Headless_Rendering_1600/Release_Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
  | [ASP.NET Core Rendering SDK documentation](https://doc.sitecore.com/developers/101/developer-tools/en/sitecore-headless-development.html) | Official documentation for ASP.NET Core headless rendering. |
  | [JavaScript SDKs (JSS) documentation](https://jss.sitecore.com/docs) | Official documentation for the JavaScript SDKs. |
  | [Container installation reference](https://doc.sitecore.com/developers/101/developer-tools/en/sitecore-module-reference.html#idp15853) | Instructions for module installation via Dockerfile. |

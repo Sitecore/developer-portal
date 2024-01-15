@@ -1,6 +1,11 @@
 ---
 title: Dynamics CRM Campaign Integration module
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Campaign_Integration_module.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Dynamics CRM Campaign Integration module

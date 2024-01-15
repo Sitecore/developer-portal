@@ -1,6 +1,11 @@
 ---
 title: Sitecore Embeddable Forms
 origin: https://dev.sitecore.net/Downloads/Sitecore_Embeddable_Forms.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Embeddable Forms

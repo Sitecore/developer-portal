@@ -1,6 +1,11 @@
 ---
 title: Sitecore Installation Framework
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Installation Framework

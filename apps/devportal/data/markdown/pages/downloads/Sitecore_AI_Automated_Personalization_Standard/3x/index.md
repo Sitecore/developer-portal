@@ -1,6 +1,11 @@
 ---
 title: 3.x
 origin: https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization_Standard/3x/
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # 3.x

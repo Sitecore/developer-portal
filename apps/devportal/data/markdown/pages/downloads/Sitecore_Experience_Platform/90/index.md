@@ -1,6 +1,11 @@
 ---
 title: 9.0
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/90.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # 9.0

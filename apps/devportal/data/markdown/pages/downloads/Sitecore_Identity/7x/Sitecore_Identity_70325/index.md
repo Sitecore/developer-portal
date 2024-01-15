@@ -1,6 +1,11 @@
 ---
 title: Sitecore Identity 7.0.325
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/7x/Sitecore_Identity_70325
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore Identity 7.0.325
@@ -24,12 +29,12 @@ Sitecore Identity is compatible with Sitecore Membership user storage but may be
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Identity](https://sitecoredev.azureedge.net/~/media/C5101E019B5A4ADAAEC81B6CCF8B1411.ashx?date=20221108T132026) | Sitecore Identity OnPrem and Cloud WDP installation package. |
- | [Deployment Configuration files](https://sitecoredev.azureedge.net/~/media/ECB6DE03E4C84E43A7374CE3674F0A7F.ashx?date=20221005T095652) | Deployment Configuration files for Sitecore Identity server. |
- | [Upgrade Scripts](https://sitecoredev.azureedge.net/~/media/074AB1392AE94A78BA90A4B1750B135D.ashx?date=20221005T095652) | The package contains the script for updating the Core/Security database to be compatible with Sitecore Identity Server 7.0. |
+ | [Sitecore Identity](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/7x/Sitecore%20Identity%2070325/Secure/Sitecore.IdentityServer.7.0.325.scwdp.zip) | Sitecore Identity OnPrem and Cloud WDP installation package. |
+ | [Deployment Configuration files](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/7x/Sitecore%20Identity%2070325/Secure/IdentityServer%20Deployment%20Configuration%207.0.zip) | Deployment Configuration files for Sitecore Identity server. |
+ | [Upgrade Scripts](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/7x/Sitecore%20Identity%2070325/Secure/Sitecore.IdentityServer.UpgradeScripts.7.0.zip) | The package contains the script for updating the Core/Security database to be compatible with Sitecore Identity Server 7.0. |
 
 ## Release information
 
  | Resource | Description |
  | --- | --- |
- | [Upgrade Guide](https://sitecoredev.azureedge.net/~/media/D6D33350F16843C5841F1D9F5A5BBF61.ashx?date=20221125T174909) | Explains how to upgrade from the Sitecore Identity Server 2.0.0 and later to Sitecore Identity Server 7.0. |
+ | [Upgrade Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/7x/Sitecore%20Identity%2070325/Secure/Sitecore%20Identity%20Server%20Upgrade%20Guide-7.0.0.pdf) | Explains how to upgrade from the Sitecore Identity Server 2.0.0 and later to Sitecore Identity Server 7.0. |

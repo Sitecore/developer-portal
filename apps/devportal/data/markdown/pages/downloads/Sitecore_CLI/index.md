@@ -1,6 +1,11 @@
 ---
 title: Sitecore CLI
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore CLI

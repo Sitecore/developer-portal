@@ -1,6 +1,11 @@
 ---
 title: Sitecore Experience Accelerator
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Experience Accelerator

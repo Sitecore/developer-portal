@@ -1,6 +1,11 @@
 ---
 title: Sitecore Azure
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Azure

@@ -1,6 +1,11 @@
 ---
 title: Sitecore Azure Toolkit
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit.aspx
+isDownloadPage: false
+isTopicPage: false
+isLandingPage: true
+isDownloadsLandingPage: false
+isPackageLandingPage: true
 ---
 
 # Sitecore Azure Toolkit

@@ -1,6 +1,11 @@
 ---
 title: Sitecore Installation Framework 1.1
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/1x/Sitecore_Installation_Framework_11
+isDownloadPage: true
+isTopicPage: false
+isLandingPage: false
+isDownloadsLandingPage: false
+isPackageLandingPage: false
 ---
 
 # Sitecore Installation Framework 1.1
@@ -26,12 +31,12 @@ Please see the Sitecore product installation instructions for more information o
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Installation Framework](https://sitecoredev.azureedge.net/~/media/146D964374D746118FD73A7EA70A7FD9.ashx?date=20180104T123320) | Choose this link to download the Sitecore Installation Framework (SIF) PowerShell module. |
- | [Sitecore Fundamentals](https://sitecoredev.azureedge.net/~/media/A00C0FA91D7240BA9B932CD5F2E16069.ashx?date=20180104T123355) | Choose this link to download the Sitecore Fundamentals module. This is required for local environment developer installations with the Sitecore Install Framework. |
+ | [Sitecore Installation Framework](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/1x/Sitecore%20Installation%20Framework%201.1/Secure/SitecoreInstallFramework%201.1.0%20rev.%20171208.zip) | Choose this link to download the Sitecore Installation Framework (SIF) PowerShell module. |
+ | [Sitecore Fundamentals](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/1x/Sitecore%20Installation%20Framework%201.1/Secure/SitecoreFundamentals.1.1.0%20rev.171208.zip) | Choose this link to download the Sitecore Fundamentals module. This is required for local environment developer installations with the Sitecore Install Framework. |
 
 ## Release Information
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore Installation Framework Configuration Guide](https://sitecoredev.azureedge.net/~/media/CD345E7A733A432D978473EE37E9A262.ashx?date=20180108T081058) | Configuration guide for Sitecore Installation Framework |
- | [Release Notes](/downloads/Sitecore%20Installation%20Framework/1x/Sitecore%20Installation%20Framework%2011/Release%20Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
+ | [Sitecore Installation Framework Configuration Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/1x/Sitecore%20Installation%20Framework%201.1/Secure/Sitecore-Installation-Framework-Configuration-Guide-1.1.pdf) | Configuration guide for Sitecore Installation Framework |
+ | [Release Notes](/downloads/Sitecore_Installation_Framework/1x/Sitecore_Installation_Framework_11/Release_Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
