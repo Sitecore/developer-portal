@@ -4,12 +4,23 @@ on:
    workflow_dispatch:
 
 jobs:
-  markdown-link-check:
+  developer-portal:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: gaurav-nelson/github-action-markdown-link-check@v1
       continue-on-error: true
       with:
-          config-file: '.github/workflows/markdown-links.config.json'
-          folder-path: './apps/devportal/data/markdown'
+        use-quiet-mode: 'yes'
+        config-file: '.github/workflows/markdown-links.devportal.config.json'
+        folder-path: './apps/devportal/data/markdown'
+  downloads:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      continue-on-error: true
+      with:
+        use-quiet-mode: 'yes'
+        config-file: '.github/workflows/markdown-links.downloads.config.json'
+        folder-path: './apps/devportal/data/markdown/pages/downloads'
