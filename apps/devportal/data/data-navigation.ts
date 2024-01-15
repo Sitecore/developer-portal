@@ -70,8 +70,8 @@ export const mainNavigation: NavItem[] = [
     ],
   },
   {
-    title: 'Discover',
-    url: '/discover',
+    title: 'Downloads',
+    url: '/downloads',
   },
   {
     title: 'Solution',
