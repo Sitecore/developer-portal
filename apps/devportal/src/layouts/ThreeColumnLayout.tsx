@@ -17,7 +17,7 @@ export const ThreeColumnLayout = ({ sidebar, inPageNav, inPageLinks, children, .
     <Flex flexGrow={0} justify={'space-between'} width={'full'} gap={0} direction={{ base: 'column', md: 'row' }} {...rest} flexFlow={'column'}>
       <Sidebar showBackground>{sidebar}</Sidebar>
 
-      <Box maxW={'7xl'} as="main" paddingX={{ base: 4, md: 'inherit' }}>
+      <Box maxW={'7xl'} as="main" paddingX={{ base: 4, md: 'inherit' }} width={'full'}>
         {inPageLinks && <InPageNavSmall hideFrom={'xl'} titles={inPageLinks} />}
         <CenteredContent>{children}</CenteredContent>
       </Box>

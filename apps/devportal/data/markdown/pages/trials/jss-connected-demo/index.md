@@ -2,6 +2,7 @@
 title: 'JSS Connected Demo'
 description: 'Unlock the full potential of Sitecore with JSS in a live demo environment.'
 ---
+
 ## Introduction
 
 The trial will teach you the basics of JSS, step by step. Additionally, you will get a taste of Sitecore's personalization capabilities, one of its most powerful features — it's what distinguishes it from other CMSs. The developer trial program offers a pre-configured Sitecore instance, access to guided learning materials, community portals for peer-to-peer support and advanced notice on developer events and giveaways
@@ -12,7 +13,7 @@ This trial is recommended for JavaScript developers who have at least a basic un
 
 ## How can I sign up?
 
-Please follow [this link](https://www.sitecore.com/knowledge-center/getting-started/developer-trial) to register for the trial. You will receive a confirmation email to get you started.
+Please follow [this link](https://developers.sitecore.com/trials) to register for any developer trials available from Sitecore. You will receive a confirmation email to get you started.
 
 ## What does the trial include?
 

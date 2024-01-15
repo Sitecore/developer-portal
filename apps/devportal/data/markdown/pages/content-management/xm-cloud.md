@@ -12,11 +12,11 @@ changelogProductId: ['av_GqshF5U2kL8XMGjf-Xw']
 ---
 
 <Promo
-  title="Recommended Practices"
-  description="Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects! "
-  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
-  linkText="Read now!"
-  linkHref="/learn/faq/xm-cloud-recommended-practices" isImageLeft={false}
+  title="Sitecore Accelerate"
+  description="Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products. "
+  imageSource="/images/accelerate.png"
+  linkText="Read more"
+  linkHref="/learn/accelerate/xm-cloud" isImageLeft={false}
 />
 
 ## Introduction
@@ -42,6 +42,7 @@ The importance of your company's growth comes with the:
   <Article title="Embedded Personalization " description="Learn more about XM Cloud Embedded Personalization." link="/learn/faq/xm-cloud-embedded-personalization" />
   <Article title="XM Cloud FAQ" description="Learn more about XM Cloud and all of the features." link="/learn/faq/xm-cloud" />
   <Article title="Getting started with XM Cloud" description="Read the step by step tutorial on the Sitecore Documentation site." link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
+  <Article title="Sitecore Accelerate" description="Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products." link="/learn/accelerate/xm-cloud" />
 </Row>
 
 ## Documentation
@@ -54,6 +55,7 @@ The importance of your company's growth comes with the:
 <Link title="Developer Tools" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html" />
 <Link title="XM Cloud development" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html" />
 <Link title="Cloud Portal developer docs" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
+<Link title="Sitecore Accelerate" link="/learn/accelerate/xm-cloud" />
 </Row>
 
 ## Downloads

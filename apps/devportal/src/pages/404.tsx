@@ -9,7 +9,7 @@ export default function Custom404() {
     <Layout title={'This page is not available'} description={'The link you have followed might be broken, or the page has been removed'}>
       <Hero title={'This page is not available'} description={'The link you have followed might be broken, or the page has been removed'} />
 
-      <VerticalGroup>
+      <VerticalGroup height={'calc(100vh - 478px)'}>
         <CenteredContent>
           <Stack maxW={'lg'}>
             <Heading size="md" mb="0">

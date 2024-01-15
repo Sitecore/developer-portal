@@ -12,6 +12,7 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     fontFamily: 'heading',
     fontWeight: 'semibold',
     fontSize: { base: '2xl', md: '3xl' },
+    scrollMarginTop: '5rem',
     //mt: { base: 0, md: 0 },
     //mb: { base: 0, md: 0 },
   },
@@ -90,18 +91,28 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     },
 
     code: {
-      fontWeight: 'semibold',
+      fontWeight: 'medium',
       fontFamily: 'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace',
       '&::before, &::after': {
         content: '""',
       },
+      fontSize: 'inherit',
+      backgroundColor: 'transparent',
+      _dark: {
+        backgroundColor: 'transparent',
+      },
     },
   },
   code: {
-    fontWeight: 'semibold',
+    fontWeight: 'medium',
     fontFamily: 'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace',
     '&::before, &::after': {
       content: '""',
+    },
+    fontSize: 'inherit',
+    backgroundColor: 'gray.100',
+    _dark: {
+      backgroundColor: 'gray.700',
     },
   },
 

@@ -11,7 +11,7 @@ const SidebarNav = ({ links, title }: SidebarNavProps) => {
   //const [navScrolled] = useGlobalState('navScrolled');
 
   return (
-    <Wrap as={'nav'} direction="column" position={'sticky'} top={'9rem'}>
+    <Wrap as={'nav'} direction="column" position={'sticky'} top={'9rem'} width={'xs'}>
       {title && (
         <Heading variant={'section'} size={'sm'} mb={8}>
           {title}
