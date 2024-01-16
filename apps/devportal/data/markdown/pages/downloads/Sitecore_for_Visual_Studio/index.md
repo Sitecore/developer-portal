@@ -16,8 +16,6 @@ isPackageLandingPage: true
 </CardHeader>
 <CardBody>
 [Sitecore for Visual Studio 5.2.113](/downloads/Sitecore_for_Visual_Studio/5x/Sitecore_for_Visual_Studio_52113)\
-undefined
-
 
 </CardBody>          
 </Card>

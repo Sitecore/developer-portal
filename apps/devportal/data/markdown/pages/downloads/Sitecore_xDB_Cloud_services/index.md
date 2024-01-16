@@ -20,8 +20,6 @@ Sitecore xDB Cloud edition collects online and offline customer interactions fro
 </CardHeader>
 <CardBody>
 [Sitecore xDB Cloud Services](/downloads/Sitecore_xDB_Cloud_services/current/Sitecore_xDB_Cloud_services)\
-undefined
-
 
 </CardBody>          
 </Card>

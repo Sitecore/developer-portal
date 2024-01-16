@@ -119,14 +119,14 @@ This page contains all the resources for **Sitecore Experience Platform 10.1 Upd
 
  | Resource | Description |
  | --- | --- |
- | [Sitecore CLI](https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_52113) | Download files and release information for latest compatible version of Sitecore CLI. |
+ | [Sitecore CLI](/downloads/Sitecore_CLI/5x/Sitecore_CLI_52113) | Download files and release information for latest compatible version of Sitecore CLI. |
  | [Sitecore Connect for Microsoft Dynamics 365 for Sales](/downloads/Dynamics_CRM_Connect/6x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_600) | Download files and release information for latest compatible version of Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
  | [Sitecore Connect for Salesforce CRM](/downloads/Salesforce_Connect/6x/Sitecore_Connect_for_Salesforce_CRM_600) | Download files and release information for latest compatible version of Sitecore Connect™ for Salesforce CRM. |
  | [Sitecore Connect for Salesforce Marketing Cloud](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_60) | Download files and release information for latest compatible version of Sitecore Connect™ for Salesforce Marketing Cloud. |
  | [Sitecore Connect for Content Hub](/downloads/Sitecore_Connect_for_Content_Hub/4x/Sitecore_Connect_for_Content_Hub_400) | Download files and release information for latest compatible version of Sitecore Connect™ for Content Hub. |
  | [Sitecore Data Exchange Framework](/downloads/Data_Exchange_Framework/6x/Data_Exchange_Framework_600) | Download files and release information for latest compatible version of Sitecore Data Exchange Framework. |
  | [Sitecore Experience Accelerator](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1010) | Download files and release information for latest compatible version of Sitecore Experience Accelerator. To ensure compatibility with the latest Sitecore XP 10.1.x update release, also install the latest cumulative hotfix for SXA 10.1.0. See KB1001756.  |
- | [Sitecore Headless Rendering](https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering/18x/Sitecore_Headless_Rendering_1800) | Download files and release information for latest compatible version of Sitecore Headless Rendering. |
+ | [Sitecore Headless Rendering](/downloads/Sitecore_Headless_Rendering/18x/Sitecore_Headless_Rendering_1800) | Download files and release information for latest compatible version of Sitecore Headless Rendering. |
  | [Sitecore Horizon](/downloads/Sitecore_Horizon/100/Sitecore_Horizon_1011) | Sitecore Horizon is the next generation Experience Management product for the Sitecore Experience Platform™. |
  | [Sitecore Identity](/Downloads/Downloads/Sitecore_Identity/7x/Sitecore_Identity_70327) | Download files and release information for latest compatible version of Sitecore Identity. |
  | [Sitecore Publishing Service Module](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1010) | Download files and release information for latest compatible version of Sitecore Publishing Service Module. |

@@ -36,7 +36,7 @@ For all Email Experience Manager 3.1 documentation, please visit the new [Siteco
 
 ## System requirements
 
-Please see [Sitecore documentation for recommended platform hardware](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update3).
+Please see [Sitecore documentation for recommended platform hardware](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update3).
 
 Sitecore recommends that you place the SQL dispatch database on its own SQL instance (8core CPU, 8GB RAM) for high volume environments (for example, more than 1,000,000 per week).
 

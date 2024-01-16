@@ -12,7 +12,7 @@ isPackageLandingPage: false
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    This version of the Email Experience Manager only runs on **[Sitecore 8.1 rev. 151003 (8.1 Initial Release)](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_81/Sitecore_Experience_Platform_81_Initial_Release)**
+    This version of the Email Experience Manager only runs on **[Sitecore 8.1 rev. 151003 (8.1 Initial Release)](/downloads/Sitecore_Experience_Platform/Sitecore_81/Sitecore_Experience_Platform_81_Initial_Release)**
   </Alert>
   
   <Alert variant='warning' mb={4}>

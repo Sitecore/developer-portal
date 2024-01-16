@@ -18,8 +18,6 @@ The Sitecore Express Migration Tool makes it easy for customers to help migrate 
 </CardHeader>
 <CardBody>
 [Express Migration Tool 3.1](/downloads/Express_Migration_Tool/31/Express_Migration_Tool_31)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -29,8 +27,6 @@ undefined
 </CardHeader>
 <CardBody>
 [Express Migration Tool 3.0](/downloads/Express_Migration_Tool/30/Express_Migration_Tool_30_Initial_Release)\
-undefined
-
 
 </CardBody>          
 </Card>

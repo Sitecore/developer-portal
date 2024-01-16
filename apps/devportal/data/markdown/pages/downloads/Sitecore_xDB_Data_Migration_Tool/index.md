@@ -16,8 +16,6 @@ isPackageLandingPage: true
 </CardHeader>
 <CardBody>
 [xDB Data Migration Tool 5.0.0](/downloads/Sitecore_xDB_Data_Migration_Tool/5x/xDB_Data_Migration_Tool_500)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -27,8 +25,6 @@ undefined
 </CardHeader>
 <CardBody>
 [xDB Data Migration Tool 4.0.0](/downloads/Sitecore_xDB_Data_Migration_Tool/4x/xDB_Data_Migration_Tool_400)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -38,8 +34,6 @@ undefined
 </CardHeader>
 <CardBody>
 [xDB Data Migration Tool 3.0.0](/downloads/Sitecore_xDB_Data_Migration_Tool/3x/xDB_Data_Migration_Tool_300)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -49,17 +43,9 @@ undefined
 </CardHeader>
 <CardBody>
 [xDB Data Migration Tool 2.1.0](/downloads/Sitecore_xDB_Data_Migration_Tool/2x/xDB_Data_Migration_Tool_210)\
-undefined
-
 [xDB Data Migration Tool 2.0.2](/downloads/Sitecore_xDB_Data_Migration_Tool/2x/xDB_Data_Migration_Tool_202)\
-undefined
-
 [xDB Data Migration Tool 2.0.1](/downloads/Sitecore_xDB_Data_Migration_Tool/2x/xDB_Data_Migration_Tool_201)\
-undefined
-
 [xDB Data Migration Tool 2.0](/downloads/Sitecore_xDB_Data_Migration_Tool/2x/xDB_Data_Migration_Tool_20)\
-undefined
-
 
 </CardBody>          
 </Card>

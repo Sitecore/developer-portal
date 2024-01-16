@@ -20,14 +20,8 @@ For security reasons we strongly recommend using **Sitecore Identity 7.0**.
 </CardHeader>
 <CardBody>
 [Sitecore Identity 7.0.328](/downloads/Sitecore_Identity/7x/Sitecore_Identity_70328)\
-undefined
-
 [Sitecore Identity 7.0.327](/downloads/Sitecore_Identity/7x/Sitecore_Identity_70327)\
-undefined
-
 [Sitecore Identity 7.0.326](/downloads/Sitecore_Identity/7x/Sitecore_Identity_70326)\
-undefined
-
 [Sitecore Identity 7.0.325](/downloads/Sitecore_Identity/7x/Sitecore_Identity_70325)\
 Download Sitecore Identity 7.0.325
 
@@ -93,11 +87,7 @@ Download Sitecore Identity 3.0.0
 </CardHeader>
 <CardBody>
 [Sitecore Identity 2.0.1](/downloads/Sitecore_Identity/2x/Sitecore_Identity_201)\
-undefined
-
 [Sitecore Identity 2.0.0](/downloads/Sitecore_Identity/2x/Sitecore_Identity_200)\
-undefined
-
 
 </CardBody>          
 </Card>

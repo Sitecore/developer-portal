@@ -104,23 +104,11 @@ Synchronize data between Sitecore and 3rd party systems.
 </CardHeader>
 <CardBody>
 [Data Exchange Framework 1.4.1](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_1_4_1)\
-undefined
-
 [Data Exchange Framework 1.4](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_1_4)\
-undefined
-
 [Data Exchange Framework 1.3](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_1_3)\
-undefined
-
 [Data Exchange Framework 1.2](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_1_2)\
-undefined
-
 [Data Exchange Framework 1.1](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_11)\
-undefined
-
 [Data Exchange Framework 1.0](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_10)\
-undefined
-
 
 </CardBody>          
 </Card>

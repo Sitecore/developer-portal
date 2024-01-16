@@ -139,23 +139,11 @@ Download Sitecore Experience Platform 9.0 rev. 171002 (9.0 Initial Release).
 </CardHeader>
 <CardBody>
 [Sitecore Experience Platform 8.2 Update-7](/downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update7)\
-undefined
-
 [Sitecore Experience Platform 8.2 Update-6](/downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update6)\
-undefined
-
 [Sitecore Experience Platform 8.2 Update-5](/downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update5)\
-undefined
-
 [Sitecore Experience Platform 8.2 Update-4](/downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update4)\
-undefined
-
 [Sitecore Experience Platform 8.2 Update-3](/downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update3)\
-undefined
-
 [Sitecore Experience Platform 8.2 Update-2](/downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update2)\
-undefined
-
 [Sitecore Experience Platform 8.2 Update-1](/downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update1)\
 Download Sitecore Experience Platform 8.2 rev. 161115 (8.2 Update-1).
 
@@ -171,8 +159,6 @@ Download Sitecore Experience Platform 8.2 rev. 160729 (8.2 Initial Release).
 </CardHeader>
 <CardBody>
 [Sitecore Experience Platform 8.1 Update-3](/downloads/Sitecore_Experience_Platform/Sitecore_81/Sitecore_Experience_Platform_81_Update3)\
-undefined
-
 [Sitecore Experience Platform 8.1 Update-2](/downloads/Sitecore_Experience_Platform/Sitecore_81/Sitecore_Experience_Platform_81_Update2)\
 Download Sitecore Experience Platform 8.1 rev. 160302 (8.1 Update-2).
 
@@ -191,8 +177,6 @@ Download Sitecore Experience Platform 8.1 rev. 151003 (8.1 Initial Release).
 </CardHeader>
 <CardBody>
 [Sitecore Experience Platform 8.0 Service Pack-1](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update7)\
-undefined
-
 [Sitecore Experience Platform 8.0 Update-6](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update6)\
 Download Sitecore Experience Platform 8.0 rev. 151127 (8.0 Update-6)
 

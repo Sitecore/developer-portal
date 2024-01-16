@@ -12,7 +12,7 @@ isPackageLandingPage: false
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    This release is deprecated, please use [Sitecore AI 3.0](https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization_Standard/3x/) instead.
+    This release is deprecated, please use [Sitecore AI 3.0](/downloads/Sitecore_AI_Automated_Personalization_Standard/3x/) instead.
   </Alert>
   
 

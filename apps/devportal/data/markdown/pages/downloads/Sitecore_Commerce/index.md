@@ -62,8 +62,6 @@ Compatible with Sitecore Experience Platform 10.0, including updates 1 through 3
 </CardHeader>
 <CardBody>
 [Sitecore Experience Commerce 9.3 Initial Release](/downloads/Sitecore_Commerce/93/Sitecore_Experience_Commerce_93_Initial_Release)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -95,8 +93,6 @@ Initial launch of Sitecore Experience Commerce 9.1, compatible with Sitecore Exp
 </CardHeader>
 <CardBody>
 [Sitecore Experience Commerce 9.0 Update-3](/downloads/Sitecore_Commerce/90/Sitecore_Experience_Commerce_90_Update3)\
-undefined
-
 [Sitecore Experience Commerce 9.0 Update-2](/downloads/Sitecore_Commerce/90/Sitecore_Experience_Commerce_90_Update2)\
 Update-2 to Sitecore Experience Commerce 9.0, compatible with Sitecore Experience Platform 9.0 Update-2.
 
@@ -144,8 +140,6 @@ Sitecore's powered by Commerce Server product, compatible with Sitecore Experien
 Connectivity module for integrating 3rd party commerce or ERP platforms with the Sitecore Experience Platform. Compatible with Sitecore Experience Platform 8.2 Initial Release through Update-5.
 
 [Commerce Server 11.4](/downloads/Sitecore_Commerce/82/Commerce_Server_114)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -164,8 +158,6 @@ Sitecore's powered by Commerce Server product, compatible with Sitecore Experien
 Connectivity module for integrating 3rd party commerce or ERP platforms with the Sitecore Experience Platform. Compatible with Sitecore Experience Platform 8.1 Update-1 through Update-3.
 
 [Commerce Server 11.3](/downloads/Sitecore_Commerce/81/Sitecore_Commerce_Server_113)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -181,8 +173,6 @@ Sitecore's powered by Microsoft Dynamics commerce product, compatible with Sitec
 Sitecore's powered by Commerce Server product, compatible with Sitecore Experience Platform 8.0 Update-4 through Update-7.
 
 [Commerce Server 11.2 Update-1](/downloads/Sitecore_Commerce/80/Commerce_Server_112_Update1)\
-undefined
-
 [Sitecore Commerce 8.0 powered by Microsoft Dynamics Initial Release](/downloads/Sitecore_Commerce/80/Sitecore_Commerce_80_powered_by_Microsoft_Dynamics_Initial_Release)\
 Sitecore's powered by Microsoft Dynamics commerce product, compatible with Sitecore Experience Platform 8.0 Initial Release through Update-3. Includes connectivity modules for integration with Microsoft Dynamics Retail AX 2012 R3 CU8.
 
@@ -190,8 +180,6 @@ Sitecore's powered by Microsoft Dynamics commerce product, compatible with Sitec
 Sitecore's powered by Commerce Server product, compatible with Sitecore Experience Platform 8.0 Initial Release through Update-3.
 
 [Commerce Server 11.2 Initial Release](/downloads/Sitecore_Commerce/80/Commerce_Server_112_Initial_Release)\
-undefined
-
 [Sitecore Commerce 8.0 Connect](/downloads/Sitecore_Commerce/80/Sitecore_Commerce_80_Connect)\
 Connectivity module for integrating 3rd party commerce or ERP platforms with the Sitecore Experience Platform. Compatible with all Sitecore Experience Platform 8.0 releases (Initial Release through Update-7). There is no Sitecore Commerce Connect 8.0 Update-1 release.
 

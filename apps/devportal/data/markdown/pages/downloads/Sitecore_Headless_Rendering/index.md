@@ -22,8 +22,6 @@ For use of Sitecore JSS with versions of Sitecore prior to 10.1, see [Sitecore J
 </CardHeader>
 <CardBody>
 [Sitecore Headless Rendering 21.0.1](/downloads/Sitecore_Headless_Rendering/21x/Sitecore_Headless_Rendering_2101)\
-undefined
-
 [Sitecore Headless Rendering 21.0.0](/downloads/Sitecore_Headless_Rendering/21x/Sitecore_Headless_Rendering_2100)\
 This version of Sitecore Headless Rendering is compatible with Sitecore 10.3.
 
@@ -36,8 +34,6 @@ This version of Sitecore Headless Rendering is compatible with Sitecore 10.3.
 </CardHeader>
 <CardBody>
 [Sitecore Headless Rendering 20.0.2](/downloads/Sitecore_Headless_Rendering/20x/Sitecore_Headless_Rendering_2002)\
-undefined
-
 [Sitecore Headless Rendering 20.0.0](/downloads/Sitecore_Headless_Rendering/20x/Sitecore_Headless_Rendering_2000)\
 This version of Sitecore Headless Rendering is compatible with Sitecore 10.2.
 
@@ -50,8 +46,6 @@ This version of Sitecore Headless Rendering is compatible with Sitecore 10.2.
 </CardHeader>
 <CardBody>
 [Sitecore Headless Rendering 19.0.1](/downloads/Sitecore_Headless_Rendering/19x/Sitecore_Headless_Rendering_1901)\
-undefined
-
 [Sitecore Headless Rendering 19.0.0](/downloads/Sitecore_Headless_Rendering/19x/Sitecore_Headless_Rendering_1900)\
 This version of Sitecore Headless Rendering is compatible with Sitecore 10.2.
 

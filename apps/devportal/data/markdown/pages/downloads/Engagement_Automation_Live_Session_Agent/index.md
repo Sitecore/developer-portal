@@ -16,8 +16,6 @@ isPackageLandingPage: true
 </CardHeader>
 <CardBody>
 [Sitecore Engagement Automation Live Session Agent 2.0](/downloads/Engagement_Automation_Live_Session_Agent/20/Sitecore_Engagement_Automation_Live_Session_Agent_20)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -27,8 +25,6 @@ undefined
 </CardHeader>
 <CardBody>
 [Sitecore Engagement Automation Live Session Agent 1.0](/downloads/Engagement_Automation_Live_Session_Agent/10/Sitecore_Engagement_Automation_Live_Session_Agent_10)\
-undefined
-
 
 </CardBody>          
 </Card>

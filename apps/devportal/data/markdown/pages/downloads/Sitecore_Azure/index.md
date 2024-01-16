@@ -18,14 +18,8 @@ Sitecore Azure reduces costs and provides scalability and geographical load-bala
 </CardHeader>
 <CardBody>
 [Sitecore Azure 8.1 rev.161109](/downloads/Sitecore_Azure/Sitecore_Azure_81/Sitecore_Azure_81_Update2)\
-undefined
-
 [Sitecore Azure 8.1 rev. 151119 Hotfix 107643-1](/downloads/Sitecore_Azure/Sitecore_Azure_81/Sitecore_Azure_81_rev_151119_Hotfix_1076431)\
-undefined
-
 [Sitecore Azure 8.1](/downloads/Sitecore_Azure/Sitecore_Azure_81/Sitecore_Azure_81)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -35,14 +29,8 @@ undefined
 </CardHeader>
 <CardBody>
 [Sitecore Azure 8.0 rev. 161110](/downloads/Sitecore_Azure/80/Sitecore_Azure_80_Update2)\
-undefined
-
 [Sitecore Azure 8.0 rev. 150522 Hotfix 68545-1](/downloads/Sitecore_Azure/80/Sitecore_Azure_80_Update1)\
-undefined
-
 [Sitecore Azure 8.0](/downloads/Sitecore_Azure/80/Sitecore_Azure_80)\
-undefined
-
 
 </CardBody>          
 </Card>

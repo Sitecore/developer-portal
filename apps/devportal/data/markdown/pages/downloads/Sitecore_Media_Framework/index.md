@@ -18,8 +18,6 @@ Sitecore Media Framework is designed to help developers integrate web video and 
 </CardHeader>
 <CardBody>
 [Sitecore Media Framework 2.1](/downloads/Sitecore_Media_Framework/21/Sitecore_Media_Framework_21)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -29,8 +27,6 @@ undefined
 </CardHeader>
 <CardBody>
 [Sitecore Media Framework 2.2](/downloads/Sitecore_Media_Framework/2x/Sitecore_Media_Framework_22)\
-undefined
-
 
 </CardBody>          
 </Card>

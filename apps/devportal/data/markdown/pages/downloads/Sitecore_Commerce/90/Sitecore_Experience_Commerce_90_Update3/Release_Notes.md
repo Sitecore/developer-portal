@@ -133,7 +133,7 @@ Sitecore XC 9.0 Update-3 introduces configuration changes pertaining to the new 
 ## Documentation updates
 
 We completely overhauled our Sitecore documentation delivery, from back end authoring system through to our new [doc.sitecore.com](https://doc.sitecore.com/) website (was doc.sitecore.net). For Sitecore XC this includes separating the Developer from User experience. Most documentation that was previously in separate html documents is now embedded into our consolidated website. Information is easier to find, by role and by commerce function, and with improved search.  
-We continue to publish install, upgrade, and migration .pdf documents on our [downloads site](https://dev.sitecore.net/Downloads/Sitecore_Commerce).
+We continue to publish install, upgrade, and migration .pdf documents on our [downloads site](/downloads/Sitecore_Commerce).
 
  | Area | Description | TFS no. |
  | --- | --- | --- |

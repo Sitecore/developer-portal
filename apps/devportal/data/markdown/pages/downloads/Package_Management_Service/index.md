@@ -18,8 +18,6 @@ The Package Management Service is an opt-in mechanism for distributing update pa
 </CardHeader>
 <CardBody>
 [Package Management Service 5.0.0](/downloads/Package_Management_Service/5x/Package_Management_Service_500)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -29,8 +27,6 @@ undefined
 </CardHeader>
 <CardBody>
 [Package Management Service 3.0.0](/downloads/Package_Management_Service/3x/Package_Management_Service_300)\
-undefined
-
 
 </CardBody>          
 </Card>

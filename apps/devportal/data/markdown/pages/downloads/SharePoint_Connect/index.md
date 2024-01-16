@@ -19,8 +19,6 @@ isPackageLandingPage: true
 SharePoint Connect offers page-level, item-level, and API-level integration. It can be used with Sitecore XP and gives you the tools to harness the advantages of SharePoint's document management features within Sitecore.
 
 [SharePoint Connect 2.2](/downloads/SharePoint_Connect/2_0/SharePoint_Connect_2_2)\
-undefined
-
 [SharePoint Connect 2.1](/downloads/SharePoint_Connect/2_0/SharePoint_Connect_2_1)\
 SharePoint Connect offers page-level, item-level, and API-level integration. It can be used with Sitecore XP and gives you the tools to harness the advantages of SharePoint's document management features within Sitecore.
 

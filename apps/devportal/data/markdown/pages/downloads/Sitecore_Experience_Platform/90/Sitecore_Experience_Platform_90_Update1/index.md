@@ -21,7 +21,7 @@ Looking for **a different version**? See [all available versions](/downloads/Sit
     **EXM is now included with Sitecore**  
 • With Sitecore 9.0 Update-1, EXM does not need to be installed as a separate module.  
 • You can only migrate EXM to Sitecore XP 9.0 Update 1. It is not part of the Sitecore XP 9.0 Update 1 upgrade procedure.  
-• Find the relevant resources for migrating EXM 3.5 to Sitecore 9.0 Update-1 on the [Email Experience Manager in Sitecore 9.0 Update-1 page](https://dev.sitecore.net/Downloads/Email_Experience_Manager/90/Email_Experience_Manager_in_Sitecore_90_Update1).
+• Find the relevant resources for migrating EXM 3.5 to Sitecore 9.0 Update-1 on the [Email Experience Manager in Sitecore 9.0 Update-1 page](/downloads/Email_Experience_Manager/90/Email_Experience_Manager_in_Sitecore_90_Update1).
   </Alert>
   
   <Alert variant='warning' mb={4}>

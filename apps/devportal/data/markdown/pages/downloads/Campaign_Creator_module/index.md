@@ -16,8 +16,6 @@ isPackageLandingPage: true
 </CardHeader>
 <CardBody>
 [Sitecore Campaign Creator Module 1.0](/downloads/Campaign_Creator_module/10/Sitecore_Campaign_Creator_module)\
-undefined
-
 
 </CardBody>          
 </Card>

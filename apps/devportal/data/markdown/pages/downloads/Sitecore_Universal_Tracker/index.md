@@ -18,8 +18,6 @@ The Universal Tracker is an opt-in mechanism for tracking interactions and event
 </CardHeader>
 <CardBody>
 [Sitecore Universal Tracker 7.0.0](/downloads/Sitecore_Universal_Tracker/7x/Sitecore_Universal_Tracker_700)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -29,8 +27,6 @@ undefined
 </CardHeader>
 <CardBody>
 [Sitecore Universal Tracker 6.0.0](/downloads/Sitecore_Universal_Tracker/6x/Sitecore_Universal_Tracker_600)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -40,8 +36,6 @@ undefined
 </CardHeader>
 <CardBody>
 [Sitecore Universal Tracker 5.0.0](/downloads/Sitecore_Universal_Tracker/5x/Sitecore_Universal_Tracker_500)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -51,8 +45,6 @@ undefined
 </CardHeader>
 <CardBody>
 [Sitecore Universal Tracker 4.0.0](/downloads/Sitecore_Universal_Tracker/4x/Sitecore_Universal_Tracker_400)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -62,8 +54,6 @@ undefined
 </CardHeader>
 <CardBody>
 [Sitecore Universal Tracker 3.0.0](/downloads/Sitecore_Universal_Tracker/3x/Sitecore_Universal_Tracker_300)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -73,8 +63,6 @@ undefined
 </CardHeader>
 <CardBody>
 [Sitecore Universal Tracker 2.0.0](/downloads/Sitecore_Universal_Tracker/2x/Sitecore_Universal_Tracker_200)\
-undefined
-
 
 </CardBody>          
 </Card>
@@ -84,8 +72,6 @@ undefined
 </CardHeader>
 <CardBody>
 [Sitecore Universal Tracker 1.0.0](/downloads/Sitecore_Universal_Tracker/1x/Sitecore_Universal_Tracker_100)\
-undefined
-
 
 </CardBody>          
 </Card>

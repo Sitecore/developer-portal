@@ -30,7 +30,7 @@ Looking for **a different release**? See [all available WFFM releases](/download
 
  | Resource | Description |
  | --- | --- |
- | [WFFM Update Package](https://scdp.blob.core.windows.net/downloads/Web%20Forms%20For%20Marketers/82/Web%20Forms%20For%20Marketers%2082%20Update3/Secure/Web%20Forms%20for%20Marketers%208.2%20rev.%20170413%20(update%20package)%20NOT%20SC%20PACKAGE.zip) | Download the files that you need for the upgrade process.  <br />  <br />**NOTE**: The upgrade instructions for WFFM 8.2 Update 3 are contained in the [upgrade guide for Sitecore 8.2 Update 3](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update3). |
+ | [WFFM Update Package](https://scdp.blob.core.windows.net/downloads/Web%20Forms%20For%20Marketers/82/Web%20Forms%20For%20Marketers%2082%20Update3/Secure/Web%20Forms%20for%20Marketers%208.2%20rev.%20170413%20(update%20package)%20NOT%20SC%20PACKAGE.zip) | Download the files that you need for the upgrade process.  <br />  <br />**NOTE**: The upgrade instructions for WFFM 8.2 Update 3 are contained in the [upgrade guide for Sitecore 8.2 Update 3](/downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update3). |
 
 ## Download options for Azure AppService
 
