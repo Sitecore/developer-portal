@@ -18,7 +18,7 @@ The Items that are considered for synchronization can be configured.
 
 ### Sitecore CLI
 
-Sitecore Content Serialization can be achieved using the Sitecore CLI. You can find a detailed description on how to install the Sitecore CLI and how to use it in the documentation (see link below).
+Sitecore Content Serialization can be achieved using the Sitecore CLI. You can find a detailed description on how to install the Sitecore CLI and how to use it in the documentation (<Link title="Sitecore Content Serialization | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html" />).
 
 ### Configuration
 
