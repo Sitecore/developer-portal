@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import SearchChangeLog, { SearchChangeLogParams } from 'sc-changelog/search';
-import { ChangeLogSearchFacet, ChangeLogSearchFacetValue } from 'sc-changelog/search/types';
+import { ChangeLogSearchFacet, ChangeLogSearchFacetValue, ChangelogFilter } from 'sc-changelog/search/types';
 import { ChangelogEntry, ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 import Hero from 'ui/components/common/Hero';
 import ProductLogo from 'ui/components/common/ProductLogo';
@@ -37,6 +37,13 @@ export default function ChangeSearchlogHome({ currentProduct }: { currentProduct
   const limit = 5;
   const uuid = getUserId().uuid;
   const router = useRouter();
+  const productFilter: ChangelogFilter[] = [
+    {
+      name: 'product_names',
+      type: 'eq',
+      value: currentProduct,
+    },
+  ];
 
   const onNextPage = async () => {
     const searchChangeLogParams: SearchChangeLogParams = {
@@ -46,6 +53,7 @@ export default function ChangeSearchlogHome({ currentProduct }: { currentProduct
       uuid: uuid,
       facets: facets,
       enabledFacets: enabledFacets,
+      filters: productFilter,
     };
 
     await callSearchApi(searchChangeLogParams, true);
@@ -65,15 +73,6 @@ export default function ChangeSearchlogHome({ currentProduct }: { currentProduct
       }
     });
 
-    console.log(newSelectedFacets);
-    newSelectedFacets.forEach((f) => {
-      if (f.name == 'product_names') {
-        f.value.forEach((v) => {
-          v.selected = v.text.toLowerCase() == currentProduct.toLowerCase();
-        });
-      }
-    });
-
     const searchChangeLogParams: SearchChangeLogParams = {
       path: router.pathname,
       limit: limit,
@@ -81,6 +80,7 @@ export default function ChangeSearchlogHome({ currentProduct }: { currentProduct
       uuid: uuid,
       facets: newSelectedFacets,
       enabledFacets: enabledFacets,
+      filters: productFilter,
     };
 
     await callSearchApi(searchChangeLogParams, false);

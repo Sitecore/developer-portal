@@ -19,6 +19,7 @@ export type SearchChangeLogQueryParams = {
   uuid?: string;
   facets: ChangeLogSearchFacet[];
   enabledFacets: string[]
+  filters?: ChangelogFilter[];
 }
 
 export type ChangeLogSearchFacetValue = {
@@ -32,4 +33,10 @@ export type ChangeLogSearchFacet = {
   name: string;
   label: string;
   value: ChangeLogSearchFacetValue[];
+}
+
+export type ChangelogFilter = {
+  name: string;
+  type: string;
+  value: string;
 }

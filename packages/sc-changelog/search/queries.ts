@@ -1,7 +1,8 @@
-import { ChangeLogSearchFacet, SearchChangeLogQueryParams } from "./types";
+import { ChangeLogSearchFacet, ChangelogFilter, SearchChangeLogQueryParams } from "./types";
 
-export function buildSearchQuery({ path, limit = 10, offset = 0, uuid, facets, enabledFacets }: SearchChangeLogQueryParams) {
+export function buildSearchQuery({ path, limit = 10, offset = 0, uuid, facets, enabledFacets, filters }: SearchChangeLogQueryParams) {
   const contextNode = buildContextNode({ path, uuid });
+  const filterNode = buildFilterNode({ filters });
   const facetNode = buildFacetQuery({ facets, enabledFacets });
   return `
   {
@@ -16,6 +17,7 @@ export function buildSearchQuery({ path, limit = 10, offset = 0, uuid, facets, e
             "content": {},
             "limit": ${limit},
             "offset": ${offset},
+            ${filterNode}
             ${facetNode}
             "sort": {
               "value":
@@ -34,6 +36,7 @@ export function buildSearchQuery({ path, limit = 10, offset = 0, uuid, facets, e
             "content": {},
             "limit": 50,
             "offset": 0,
+            ${filterNode}
             ${facetNode}
             "sort": {
               "value":
@@ -67,6 +70,26 @@ export function buildContextNode({ path, uuid }: { path: string, uuid: string | 
     }
   `;
   return contextNode;
+}
+
+export function buildFilterNode({ filters }: { filters?: ChangelogFilter[] }) {
+  if (filters && filters.length > 0) {
+    return `
+      "filter": {
+        "type": "and",
+        "filters": [
+          ${filters.map(f => `
+            {
+              "name": "${f.name}",
+              "type": "${f.type}",
+              "value": "${f.value}"
+            }
+          `).join(',')}
+        ]
+      },
+    `;
+  }
+  return '';
 }
 
 export function buildFacetQuery({ facets, enabledFacets }: { facets: ChangeLogSearchFacet[], enabledFacets: string[] }) {
