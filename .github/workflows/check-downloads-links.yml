@@ -1,0 +1,16 @@
+name: Check Downloads Markdown links
+
+on:
+   workflow_dispatch:
+
+jobs:
+  downloads:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      continue-on-error: true
+      with:
+        use-quiet-mode: 'yes'
+        config-file: '.github/workflows/markdown-links.downloads.config.json'
+        folder-path: './apps/devportal/data/markdown/pages/downloads'

@@ -10,7 +10,7 @@ const PromoCardImage = ({ img }: PromoCardImage): JSX.Element => (
     src={img.src}
     alt={img.alt || ''}
     objectFit="cover"
-    maxW={{ base: '100%', md: '250px' }}
+    maxW={{ base: '100%', md: '310px' }}
 
     //priority={true}
   />
