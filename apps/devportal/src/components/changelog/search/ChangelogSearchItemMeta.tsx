@@ -3,7 +3,7 @@ import { usePreview } from '@/src/context/PreviewContext';
 import { Alert, BoxProps, Button, HStack, Icon, Link, Tag, TagLabel, Tooltip } from '@chakra-ui/react';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { ProductIcon } from '../ProductIcon';
+import { ChangeLogProductIcon } from './ChangeLogProductIcon';
 
 type ChangelogItemMetaProps = BoxProps & {
   loading?: boolean;
@@ -26,7 +26,7 @@ export const ChangelogSearchItemMeta = ({ item, ...rest }: ChangelogItemMetaProp
 
   const MetaInfo = (
     <HStack {...rest} gap={4}>
-      {item.products != null ? item.products.map((product, key) => <ProductIcon product={product} key={key} />) : <Alert status="error">No product defined</Alert>}
+      {item.products != null ? item.products.map((product, key) => <ChangeLogProductIcon product={product} key={key} />) : <Alert status="error">No product defined</Alert>}
 
       <time dateTime="2022-10-21T15:48:00.000Z">{new Date(item.releaseDate).toDateString()}</time>
 
