@@ -1,6 +1,6 @@
 ---
-title: 'Sitecore Accelerate for partners'
-description: 'Learn more about how to develop for XM Cloud'
+title: 'Setup Sitecore Content Serialization | Sitecore Accelerate for partners'
+description: 'In this recipe you will learn how to setup Sitecore Content Serialization (SCS) for XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
