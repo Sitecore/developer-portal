@@ -1,8 +1,8 @@
 import { ChangeLogSearchFacet, SearchChangeLogQueryParams } from "./types";
 
-export function buildSearchQuery({ path, limit = 10, offset = 0, uuid, facets }: SearchChangeLogQueryParams) {
+export function buildSearchQuery({ path, limit = 10, offset = 0, uuid, facets, enabledFacets }: SearchChangeLogQueryParams) {
   const contextNode = buildContextNode({ path, uuid });
-  const facetNode = buildFacetQuery({ facets });
+  const facetNode = buildFacetQuery({ facets, enabledFacets });
   return `
   {
     ${contextNode}
@@ -69,36 +69,48 @@ export function buildContextNode({ path, uuid }: { path: string, uuid: string | 
   return contextNode;
 }
 
-export function buildFacetQuery({ facets }: { facets: ChangeLogSearchFacet[] }) {
+export function buildFacetQuery({ facets, enabledFacets }: { facets: ChangeLogSearchFacet[], enabledFacets: string[] }) {
   return `
     "facet": {
       "all": false,
       "types": [
-        {
-          "name": "changeTypeName",
-          "sort": {
-              "name": "text",
-              "order": "asc"
-          }
-          ${buildFacetSelection('changeTypeName', facets)}
-        },
-        {
-          "name": "product_names",
-          "sort": {
-              "name": "text",
-              "order": "asc"
-          }
-          ${buildFacetSelection('product_names', facets)}
-        }
+        ${buildFacetTypes({ facets, enabledFacets })}
       ]
     },
+  `;
+}
+
+export function buildFacetTypes({ facets, enabledFacets }: { facets: ChangeLogSearchFacet[], enabledFacets: string[] }) {
+  let facetTypes = '';
+
+  if (enabledFacets.includes('changeTypeName'))
+    facetTypes += buildFacetType({ facets, facetName: 'changeTypeName' });
+
+  if (enabledFacets.length > 1)
+    facetTypes += ',';
+
+  if (enabledFacets.includes('product_names'))
+    facetTypes += buildFacetType({ facets, facetName: 'product_names' });
+
+  return facetTypes
+}
+
+export function buildFacetType({ facets, facetName }: { facets: ChangeLogSearchFacet[], facetName: string }) {
+  return `
+    {
+      "name": "${facetName}",
+      "sort": {
+          "name": "text",
+          "order": "asc"
+      }
+      ${buildFacetSelection(facetName, facets)}
+    } 
   `;
 }
 
 export function buildFacetSelection(facetName: string, facets: ChangeLogSearchFacet[]) {
   for (let i = 0; i < facets.length; i++) {
     const facet = facets[i];
-    // console.log(facet.name, facetName, facet.name === facetName);
     if (facet.name === facetName && facet.value.some((v: { selected: boolean; }) => v.selected)) {
       return `
       ,"filter": {

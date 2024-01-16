@@ -18,6 +18,7 @@ export type SearchChangeLogQueryParams = {
   offset?: number;
   uuid?: string;
   facets: ChangeLogSearchFacet[];
+  enabledFacets: string[]
 }
 
 export type ChangeLogSearchFacetValue = {

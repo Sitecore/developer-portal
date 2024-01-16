@@ -8,9 +8,10 @@ export type SearchChangeLogParams = {
   offset?: number;
   uuid?: string;
   facets: ChangeLogSearchFacet[]
+  enabledFacets: string[]
 }
 
-export default async function SearchChangeLog({ path, limit = 10, offset = 0, uuid, facets }: SearchChangeLogParams): Promise<QuerySearchApiResult> {
-  const query = buildSearchQuery({ path, limit, offset, uuid, facets });
+export default async function SearchChangeLog({ path, limit = 10, offset = 0, uuid, facets, enabledFacets }: SearchChangeLogParams): Promise<QuerySearchApiResult> {
+  const query = buildSearchQuery({ path, limit, offset, uuid, facets, enabledFacets });
   return await QuerySearchApi({ query, selectedFacets: facets });
 }

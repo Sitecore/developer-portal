@@ -1,4 +1,5 @@
-import { Box, SkeletonText } from '@chakra-ui/react';
+import { Box, Button, CloseButton, Link, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import { ChangeLogSearchFacet, ChangeLogSearchFacetValue } from 'sc-changelog/search/types';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import ChangeLogSearchItem from './ChangeLogSearchItem';
@@ -11,12 +12,24 @@ type ChangeLogSearchItemProps = {
   onFacetChange: (facet: ChangeLogSearchFacetValue[], facetName: string) => void;
   isLoading: boolean;
   isMore: boolean;
+  initialProduct?: string;
 };
 
-export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading, onFacetChange, isMore }: ChangeLogSearchItemProps) => {
+export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading, onFacetChange, isMore, initialProduct }: ChangeLogSearchItemProps) => {
   return (
     <>
       <Box>
+        {initialProduct && (
+          <>
+            <Link as={NextLink} href="/changelog-search" passHref>
+              <Button rightIcon={<CloseButton as={'div'} color={'white'} />} variant="solid" borderRadius={'sm'} mb={4}>
+                Product: {initialProduct}
+              </Button>
+              <VisuallyHidden>Go back to the changelog overview</VisuallyHidden>
+            </Link>
+          </>
+        )}
+
         {facets.length > 0 && <ChangelogSearchFacets facets={facets} onFacetChange={onFacetChange} />}
 
         {isLoading && (

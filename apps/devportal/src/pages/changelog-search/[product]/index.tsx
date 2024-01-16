@@ -17,14 +17,23 @@ import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { Product } from 'ui/lib/assets';
 
-export default function ChangeSearchlogHome() {
+export async function getServerSideProps(context: any) {
+  const product = context.params.product;
+  return {
+    props: {
+      currentProduct: product,
+    },
+  };
+}
+
+export default function ChangeSearchlogHome({ currentProduct }: { currentProduct: string }) {
   const [entries, setEntries] = useState<ChangelogEntry[]>([]);
   const [entriesByMonth, setEntriesByMonth] = useState<ChangelogEntrySummary[]>([]);
   const [facets, setFacets] = useState<ChangeLogSearchFacet[]>([]);
   const [offset, setOffset] = useState<number>(0);
   const [isLoading, setisLoading] = useState<boolean>(true);
   const [isMore, setIsMore] = useState<boolean>(true);
-  const enabledFacets = ['changeTypeName', 'product_names'];
+  const enabledFacets = ['changeTypeName'];
   const limit = 5;
   const uuid = getUserId().uuid;
   const router = useRouter();
@@ -45,7 +54,7 @@ export default function ChangeSearchlogHome() {
 
   const onFacetChange = async (facet: ChangeLogSearchFacetValue[], facetName: string) => {
     setisLoading(true);
-    const newFacets = facets.map((f) => {
+    const newSelectedFacets = facets.map((f) => {
       if (f.name == facetName) {
         return {
           ...f,
@@ -56,17 +65,26 @@ export default function ChangeSearchlogHome() {
       }
     });
 
+    console.log(newSelectedFacets);
+    newSelectedFacets.forEach((f) => {
+      if (f.name == 'product_names') {
+        f.value.forEach((v) => {
+          v.selected = v.text.toLowerCase() == currentProduct.toLowerCase();
+        });
+      }
+    });
+
     const searchChangeLogParams: SearchChangeLogParams = {
       path: router.pathname,
       limit: limit,
       offset: 0,
       uuid: uuid,
-      facets: newFacets,
+      facets: newSelectedFacets,
       enabledFacets: enabledFacets,
     };
 
     await callSearchApi(searchChangeLogParams, false);
-    setFacets(newFacets);
+    setFacets(newSelectedFacets);
     setOffset(0);
     setisLoading(false);
   };
@@ -117,12 +135,12 @@ export default function ChangeSearchlogHome() {
             </Alert>
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
-                <ChangelogSearchResults entries={entries} isMore={isMore} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} />
+                <ChangelogSearchResults entries={entries} isMore={isMore} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} initialProduct={currentProduct} />
               </GridItem>
               <Hide below="md">
                 <GridItem colSpan={{ base: 2 }}>
-                  <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                  <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <ButtonLink text={'RSS'} href={`${currentProduct}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <ButtonLink text={'ATOM'} href={`${currentProduct}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
                   <ChangelogSearchByMonth isLoading={isLoading} entriesByMonth={entriesByMonth} />
                 </GridItem>
               </Hide>
