@@ -50,7 +50,7 @@ If feature toggles are not an option or if the client requires very structured v
 
 Reference: [GitLab Flow](https://docs.gitlab.cn/14.0/ee/topics/gitlab_flow.html)
 
-## Discusion
+## Discussion
 
 ### Monorepo vs Polyrepo
 
