@@ -64,7 +64,7 @@ Items are required to be serialized when they are created by developers and the 
 
 ### Setup
 
-Please check `template.module.json`
+Please check [`template.module.json`](/learn/accelerate/xm-cloud/appendix-ii/example-code/template-module-json)
 
 Replace the placeholders marked with `<>` with your own data.
 
@@ -83,9 +83,9 @@ In a Multisite approach you configure one module per Site Collection, as templat
 
 Items that are deployed using Sitecore Content Serialization are stored on the target file system instead of the database. Items deployed that way are not meant to be edited from the CM instance. Those are only maintained by developers and shipped by deployments.
 
-If items get edited in a deployed environment, the change is persisted to the DB and is handles prior to the underlying file, meaning that source code changes to that same item/field would never be visible. The item would need to be deleted.
+If items get edited in a deployed environment, the change is persisted to the DB and is handled prior to the underlying file, meaning that source code changes to that same item/field would never be visible. The item would need to be deleted.
 
-You can configure items to be pushed to the database instead of file system using `postActions` in `xmcloud.build.json`. There configure dedicated modules to be used for `postActions`.
+You can configure items to be pushed to the database instead of file system using `postActions` in `xmcloud.build.json`. In that section, you can configure dedicated modules to be used for `postActions`.
 
 Split modules the following way:
 
@@ -122,4 +122,5 @@ Split modules the following way:
   <Link title="The XM Cloud build configuration | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html" />
   <Link title="Github - sitecorelabd/xmcloud-foundation-head" link="https://github.com/sitecorelabs/xmcloud-foundation-head" />
   <Link title="The CLI itemres command | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-itemres-command.html" />
+  <Link title="XM Cloud Tutorials - Seralization #5" link="https://www.youtube.com/watch?v=BuErZU0wwKM" />
 </Row>
