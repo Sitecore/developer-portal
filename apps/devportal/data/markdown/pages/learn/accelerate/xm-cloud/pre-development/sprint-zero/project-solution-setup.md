@@ -1,6 +1,6 @@
 ---
-title: 'Sitecore Accelerate for partners'
-description: 'Learn more about how to develop for XM Cloud'
+title: 'Project Solution Setup | Sitecore Accelerate for partners'
+description: 'How to setup a new project for Docker local development with XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
