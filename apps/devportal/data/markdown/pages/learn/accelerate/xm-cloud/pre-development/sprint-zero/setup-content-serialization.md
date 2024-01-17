@@ -37,13 +37,13 @@ The `sitecore.json` file is located in the root folder of the solution. It comes
 
 Under `modules`, we can see that all files located in the src folder ending with `.module.json` are considered to check what items should be serialized and what to be excluded.
 
-Out of the box there is already a file called `renderinghost.module.json` located in `src` folder of the foundation head repository.
+In the starter kit there is already a file called `renderinghost.module.json` located in `src` folder of the foundation head repository.
 
 In here, we can find a configuration what items shall be serialized. You can have multiple of these `module.json` files. Just make sure that the namespace field is unique.
 
 The items object shows an array of includes. Each include defines what item path in XM Cloud should be considered. In the name field we define the name of the folder the item or items should be stored within our filesystem. The path field is the actual path in XM Cloud to the item. The scope field defines if we just want to serialize a single item (`SingleItem`); `ItemAndChildren` meaning its direct first level subitems; `ItemAndDescendants` meaning all subitems underneath a certain item; or `DescendantsOnly` which excludes the item specified in the path. To ignore a path, set the scope to `Ignored`. ([SCS Configuration Reference](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization-configuration-reference.html))
 
-### What to be serialized
+### What items should be serialized
 
 Items are required to be serialized when they are created by developers and the code depends on them. Out of the box items provided by the base XM Cloud installation should not be serialized. In XM Cloud, the following items require serialization:
 
