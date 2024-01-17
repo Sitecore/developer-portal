@@ -21,7 +21,7 @@ export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading,
       <Box>
         {initialProduct && (
           <>
-            <Link as={NextLink} href="/changelog-search" passHref>
+            <Link as={NextLink} href="/changelog" passHref>
               <Button rightIcon={<CloseButton as={'div'} color={'white'} />} variant="solid" borderRadius={'sm'} mb={4}>
                 Product: {initialProduct}
               </Button>

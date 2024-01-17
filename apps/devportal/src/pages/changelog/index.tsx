@@ -1,45 +1,106 @@
-import { Alert, AlertIcon, Grid, GridItem, HStack, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
-import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
-import ChangelogList from '@components/changelog/ChangelogList';
+import ChangelogSearchByMonth from '@/src/components/changelog/search/ChangelogSearchByMonth';
+import ChangelogSearchResults from '@/src/components/changelog/search/ChangelogSearchResults';
+import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Text, Tooltip } from '@chakra-ui/react';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
+import { getUserId } from '@sitecore-search/react';
 import Layout from '@src/layouts/Layout';
-import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
-import { SWRConfig } from 'swr';
+import { useEffect, useState } from 'react';
+import SearchChangeLog, { SearchChangeLogParams } from 'sc-changelog/search';
+import { ChangeLogSearchFacet, ChangeLogSearchFacetValue } from 'sc-changelog/search/types';
+import { ChangelogEntry, ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 import Hero from 'ui/components/common/Hero';
-import { Option } from 'ui/components/dropdown/MultiSelect';
+import ProductLogo from 'ui/components/common/ProductLogo';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
+import { Product } from 'ui/lib/assets';
 
-type ChangelogHomeProps = {
-  fallback: any;
-  preview: boolean;
-};
-
-export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
-  const [selectedProduct, setSelectedProduct] = useState<Option[]>([]);
-
+export default function ChangeSearchlogHome() {
+  const [entries, setEntries] = useState<ChangelogEntry[]>([]);
+  const [entriesByMonth, setEntriesByMonth] = useState<ChangelogEntrySummary[]>([]);
+  const [facets, setFacets] = useState<ChangeLogSearchFacet[]>([]);
+  const [offset, setOffset] = useState<number>(0);
+  const [isLoading, setisLoading] = useState<boolean>(true);
+  const [isMore, setIsMore] = useState<boolean>(true);
+  const enabledFacets = ['changeTypeName', 'product_names'];
+  const limit = 5;
+  const uuid = getUserId().uuid;
   const router = useRouter();
+
+  const onNextPage = async () => {
+    const searchChangeLogParams: SearchChangeLogParams = {
+      path: router.pathname,
+      limit: limit,
+      offset: offset,
+      uuid: uuid,
+      facets: facets,
+      enabledFacets: enabledFacets,
+    };
+
+    await callSearchApi(searchChangeLogParams, true);
+    setOffset(offset + limit);
+  };
+
+  const onFacetChange = async (facet: ChangeLogSearchFacetValue[], facetName: string) => {
+    setisLoading(true);
+    const newFacets = facets.map((f) => {
+      if (f.name == facetName) {
+        return {
+          ...f,
+          value: facet,
+        };
+      } else {
+        return f;
+      }
+    });
+
+    const searchChangeLogParams: SearchChangeLogParams = {
+      path: router.pathname,
+      limit: limit,
+      offset: 0,
+      uuid: uuid,
+      facets: newFacets,
+      enabledFacets: enabledFacets,
+    };
+
+    await callSearchApi(searchChangeLogParams, false);
+    setFacets(newFacets);
+    setOffset(0);
+    setisLoading(false);
+  };
+
+  const callSearchApi = async (searchChangeLogParams: SearchChangeLogParams, concat: boolean) => {
+    const apiResponse = await SearchChangeLog(searchChangeLogParams);
+    if (concat) {
+      const newEntries = entries.concat(apiResponse.entries);
+      setEntries(newEntries);
+    } else {
+      setEntries(apiResponse.entries);
+    }
+    setEntriesByMonth(apiResponse.entriesByMonth);
+    setFacets(apiResponse.facets);
+    setIsMore(apiResponse.isMore);
+  };
+
+  useEffect(() => {
+    onNextPage();
+    setisLoading(false);
+  }, []);
+
   return (
     <>
-      <Head>
-        <link rel="preload" href="/api/changelog/v1/all?" as="fetch" crossOrigin="anonymous" />
-      </Head>
       <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
         <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
           <HStack>
             <Text variant={'sm'}>Powered by</Text>
             <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-              <Image
-                src={useColorModeValue('https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e', 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13')}
-                alt="Powered by Content Hub ONE"
-                width={150}
-                height={18}
-              />
+              <ProductLogo product={Product.ContentHubOne} width={140} height={18} />
+            </Link>
+            <Text variant={'sm'}>and</Text>
+            <Link href="/content-management/search" title="Visit the Sitecore Search product page to learn more">
+              <ProductLogo product={Product.Search} width={66} height={18} />
             </Link>
           </HStack>
         </Hero>
@@ -56,35 +117,19 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
             </Alert>
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
-                <SWRConfig value={{ fallback }}>
-                  <ChangelogList selectedProducts={selectedProduct} onProductsChange={setSelectedProduct} />
-                </SWRConfig>
+                <ChangelogSearchResults entries={entries} isMore={isMore} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} />
               </GridItem>
-
-              <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
-                <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                <ChangelogByMonth product={undefined} selectedProducts={selectedProduct} />
-              </GridItem>
+              <Hide below="md">
+                <GridItem colSpan={{ base: 2 }}>
+                  <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <ChangelogSearchByMonth isLoading={isLoading} entriesByMonth={entriesByMonth} />
+                </GridItem>
+              </Hide>
             </Grid>
           </CenteredContent>
         </VerticalGroup>
       </Layout>
     </>
   );
-}
-
-export async function getStaticProps(context: any) {
-  const isPreview = context.preview ? context.preview : null;
-  const entries = await ChangelogEntriesPaginated(isPreview, '5', '', '', '');
-
-  return {
-    props: {
-      fallback: {
-        '/api/changelog/v1?limit=5': entries,
-      },
-      preview: isPreview,
-    },
-    revalidate: 60,
-  };
 }

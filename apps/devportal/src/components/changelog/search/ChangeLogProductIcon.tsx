@@ -10,7 +10,7 @@ type ProductIconProps = {
 export const ChangeLogProductIcon = ({ product }: ProductIconProps): JSX.Element => {
   return (
     <Tooltip label={`Go to the ${product.productName} changelog page`} aria-label="A tooltip">
-      <Link href={`/changelog-search/${product.productName}`}>
+      <Link href={`/changelog/${product.productName}`}>
         <HStack>
           <Image src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName} width={20} height={20} priority={true} />
           <Text>{product.productName}</Text>
