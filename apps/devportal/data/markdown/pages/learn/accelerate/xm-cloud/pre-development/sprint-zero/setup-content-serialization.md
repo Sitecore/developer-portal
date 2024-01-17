@@ -18,7 +18,7 @@ The Items that are considered for synchronization can be configured.
 
 ### Sitecore CLI
 
-Sitecore Content Serialization can be achieved using the Sitecore CLI. You can find a detailed description on how to install the Sitecore CLI and how to use it in the documentation (<Link title="Sitecore Content Serialization | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html" />).
+Sitecore Content Serialization can be achieved using the Sitecore CLI. You can find a detailed description on how to install the Sitecore CLI and how to use it in the documentation ([Sitecore Content Serialization | Sitecore Documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html)).
 
 ### Configuration
 
@@ -26,7 +26,14 @@ The configuration for Sitecore Content Serialization consists of two main files.
 
 The `sitecore.json` and files ending with `*.module.json`
 
-The `sitecore.json` file is located in the root folder of the solution. It comes with the XM Cloud Foundation Head. In here we can configure what `*.module.json` files should be considered for serialization configuration, the plugins with it's particular versions and some general settings for the serialization.
+The `sitecore.json` file is located in the root folder of the solution. It comes with the XM Cloud Foundation Head starter kit. In here we can configure what `*.module.json` files should be considered for serialization configuration, the plugins with it's particular versions and some general settings for the serialization.
+
+```json
+{
+  "$schema": "./.sitecore/schemas/RootConfigurationFile.schema.json",
+  "modules": ["src/*/*.module.json"]
+}
+```
 
 Under `modules`, we can see that all files located in the src folder ending with `.module.json` are considered to check what items should be serialized and what to be excluded.
 
@@ -34,7 +41,7 @@ Out of the box there is already a file called `renderinghost.module.json` locate
 
 In here, we can find a configuration what items shall be serialized. You can have multiple of these `module.json` files. Just make sure that the namespace field is unique.
 
-The items object shows an array of includes. Each include defines what item path in XM Cloud should be considered. In the name field we define the name of the folder the item or items should be stored within our filesystem. The path field is the actual path in XM Cloud to the item. The scope field defines if we just want to serialize a single item; `itemwithChildren` meaning its direct first level subitems; `itemsAndDescendants` meaning all subitems underneath a certain item; or `DescendantsOnly` which excludes the item specified in the path.
+The items object shows an array of includes. Each include defines what item path in XM Cloud should be considered. In the name field we define the name of the folder the item or items should be stored within our filesystem. The path field is the actual path in XM Cloud to the item. The scope field defines if we just want to serialize a single item (`SingleItem`); `ItemAndChildren` meaning its direct first level subitems; `ItemAndDescendants` meaning all subitems underneath a certain item; or `DescendantsOnly` which excludes the item specified in the path. To ignore a path, set the scope to `Ignored`. ([SCS Configuration Reference](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization-configuration-reference.html))
 
 ### What to be serialized
 
@@ -110,6 +117,7 @@ Split modules the following way:
 
 <Row columns={2}>
   <Link title="Sitecore Content Serialization | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html" />
+  <Link title="Sitecore Content Serialization Reference | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization-configuration-reference.html" />
   <Link title="Install Sitecore Command Line Interface | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/install-sitecore-command-line-interface.html" />
   <Link title="The XM Cloud build configuration | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html" />
   <Link title="Github - sitecorelabd/xmcloud-foundation-head" link="https://github.com/sitecorelabs/xmcloud-foundation-head" />
