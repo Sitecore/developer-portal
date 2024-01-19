@@ -1,14 +1,8 @@
 ---
 title: Known Issues
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/90_Tech_Preview/Sitecore_JavaScript_Services_90_Tech_Preview/Known_Issues
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Known Issues
 
 The list of known issues which are present in the current version of Sitecore JavaScript Services:
 

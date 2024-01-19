@@ -1,18 +1,10 @@
 ---
 title: Resource files for Modules
-origin: https://dev.sitecore.net/Downloads/Resource_files_for_Modules.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
----
-
-# Resource files for Modules
-
-Module resource files for upgrading Core, Master and Web.
-
+description: 'Module resource files for upgrading Core, Master and Web.
 Download and use the packages for the modules and versions you are upgrading from.
+'
+origin: https://dev.sitecore.net/Downloads/Resource_files_for_Modules.aspx
+---
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

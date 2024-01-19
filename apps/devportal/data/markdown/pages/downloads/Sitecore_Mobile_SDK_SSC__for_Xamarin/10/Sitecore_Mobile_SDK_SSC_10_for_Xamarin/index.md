@@ -1,14 +1,8 @@
 ---
 title: Sitecore Mobile SDK (SSC) 1.0 for Xamarin
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Mobile_SDK_SSC__for_Xamarin/10/Sitecore_Mobile_SDK_SSC_10_for_Xamarin.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Mobile SDK (SSC) 1.0 for Xamarin
 
 Sitecore Mobile SDK for Xamarin is a framework that is designed to help the developer produce native mobile applications that use and serve content that is managed by Sitecore.
 

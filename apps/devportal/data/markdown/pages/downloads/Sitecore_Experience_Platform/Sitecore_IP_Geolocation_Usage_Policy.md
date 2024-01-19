@@ -1,14 +1,8 @@
 ---
 title: Sitecore IP Geolocations Usage Policy
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_IP_Geolocation_Usage_Policy
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore IP Geolocations Usage Policy
 
 **`(last updated 20 April 2015)`**
 

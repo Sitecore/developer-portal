@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/93/Sitecore_Experience_Platform_93_Initial_Release/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **November 2019 – released Sitecore Experience Platform 9.3.0**
 

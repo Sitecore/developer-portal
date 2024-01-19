@@ -1,14 +1,8 @@
 ---
 title: Sitecore Publishing Service 2.0 Update-1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/20/Sitecore_Publishing_Service_20_Update1.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Publishing Service 2.0 Update-1
 
 This version of the Publishing Service is compatible with Sitecore 8.2 Update-2 and Sitecore 8.2 Update-3.
 

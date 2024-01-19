@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_32/Email_Experience_Manager_32_Initial_Release/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **October 2015 – released Sitecore Email Experience Manager 3.2 rev. 151020 (Initial version)**
 

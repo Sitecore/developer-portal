@@ -1,14 +1,8 @@
 ---
 title: Sitecore Connect™ for Content Hub 3.1.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Content_Hub/3x/Sitecore_Connect_for_Content_Hub_310.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Connect™ for Content Hub 3.1.0
 
 The Sitecore Connect™ for Content Hub gives web editors, content/digital marketers:
 

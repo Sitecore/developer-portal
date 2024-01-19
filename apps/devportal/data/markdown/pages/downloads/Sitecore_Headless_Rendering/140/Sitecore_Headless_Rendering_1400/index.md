@@ -1,14 +1,8 @@
 ---
 title: Sitecore Headless Rendering 14.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering/140/Sitecore_Headless_Rendering_1400.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Headless Rendering 14.0.0
 
 The Sitecore Headless Services module (also known as the Sitecore JavaScript Services Server module) provides the server-side APIs and components which are required for the ASP.NET Core Rendering SDK and JavaScript Rendering SDKs (JSS).
 

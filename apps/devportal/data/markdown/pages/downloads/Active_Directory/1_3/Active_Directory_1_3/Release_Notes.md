@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Active_Directory/1_3/Active_Directory_1_3/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 The latest release information for the Active Directory module.
 

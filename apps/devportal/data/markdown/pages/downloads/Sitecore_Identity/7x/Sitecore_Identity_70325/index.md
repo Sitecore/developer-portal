@@ -1,14 +1,8 @@
 ---
 title: Sitecore Identity 7.0.325
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/7x/Sitecore_Identity_70325
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Identity 7.0.325
 
 Sitecore Identity is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication.
 

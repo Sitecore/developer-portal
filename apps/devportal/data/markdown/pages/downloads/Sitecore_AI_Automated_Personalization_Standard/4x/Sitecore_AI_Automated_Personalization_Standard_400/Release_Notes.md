@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization_Standard/4x/Sitecore_AI_Automated_Personalization_Standard_400/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **December 2021 – released Sitecore AI - Automated Personalization Standard 4.0**
 

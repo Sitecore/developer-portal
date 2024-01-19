@@ -1,14 +1,8 @@
 ---
 title: Data Exchange Framework 3.0.1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Data_Exchange_Framework/3x/Data_Exchange_Framework_301.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Data Exchange Framework 3.0.1
 
 Synchronize data between Sitecore and 3rd party systems.
 

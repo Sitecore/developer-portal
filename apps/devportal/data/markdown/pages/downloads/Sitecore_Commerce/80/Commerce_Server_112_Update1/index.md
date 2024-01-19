@@ -1,14 +1,8 @@
 ---
 title: Commerce Server 11.2 Update-1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/80/Commerce_Server_112_Update1.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Commerce Server 11.2 Update-1
 
 Stand-alone version of Commerce Server available for existing customers.  
 

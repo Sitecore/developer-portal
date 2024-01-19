@@ -1,14 +1,8 @@
 ---
 title: Sitecore Mobile SDK (SSC)  for Xamarin
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Mobile_SDK_SSC__for_Xamarin.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Mobile SDK (SSC) for Xamarin
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

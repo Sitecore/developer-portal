@@ -1,16 +1,8 @@
 ---
 title: 8.0
+description: 'Download Sitecore 8.0 and all subsequent updates within this version group.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/8_0.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# 8.0
-
-Download Sitecore 8.0 and all subsequent updates within this version group.
 
 ### [Sitecore Experience Platform 8.0 Service Pack-1](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update7)
 

@@ -1,14 +1,8 @@
 ---
 title: Sitecore Connect™ for Salesforce CRM 7.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/7x/Sitecore_Connect_for_Salesforce_CRM_700
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Connect™ for Salesforce CRM 7.0.0
 
 Synchronize data between Salesforce CRM and Sitecore Experience Platform.
 

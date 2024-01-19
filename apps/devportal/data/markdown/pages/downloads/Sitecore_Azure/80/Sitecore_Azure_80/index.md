@@ -1,14 +1,8 @@
 ---
 title: Sitecore Azure 8.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure/80/Sitecore_Azure_80.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Azure 8.0
 
 Sitecore Azure reduces costs and provides scalability and geographical load-balancing by automating the deployment of your Sitecore solution to the Microsoft Azure computing cloud. After you install Sitecore Azure in your internal content management environment, you can use Sitecore Azure to configure your Sitecore Azure subscription and to manage your Sitecore Azure content delivery instances in the cloud. The Sitecore Azure browser-based user interface contains instructions that describe how to obtain a Sitecore Azure subscription.
 

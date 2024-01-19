@@ -1,16 +1,8 @@
 ---
 title: Sitecore Publishing Service Module
+description: 'The Publishing Service Module provides integration with the opt-in Publishing Service, supporting high-performance publishing in large scale Sitecore setups.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service_Module.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Publishing Service Module
-
-The Publishing Service Module provides integration with the opt-in Publishing Service, supporting high-performance publishing in large scale Sitecore setups.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

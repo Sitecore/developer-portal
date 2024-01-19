@@ -1,14 +1,8 @@
 ---
 title: Sitecore Web Forms for Marketers 8.0 (rev. 151127) - Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/Web_Forms_for_Marketers_80/Web_Forms_for_Marketers_80_Update_6/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Web Forms for Marketers 8.0 (rev. 151127) - Release Notes
 
 **November 2015 – released Sitecore Web Forms for Marketers 8.0 (rev. 151127)**
 

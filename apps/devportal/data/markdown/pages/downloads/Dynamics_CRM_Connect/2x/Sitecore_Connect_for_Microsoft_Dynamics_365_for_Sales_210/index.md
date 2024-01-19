@@ -1,14 +1,8 @@
 ---
 title: Sitecore Connect for Microsoft Dynamics 365 for Sales 2.1.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/2x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_210.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Connect for Microsoft Dynamics 365 for Sales 2.1.0
 
 Synchronize data between Microsoft Dynamics 365 for Sales and Sitecore Experience Platform.
 

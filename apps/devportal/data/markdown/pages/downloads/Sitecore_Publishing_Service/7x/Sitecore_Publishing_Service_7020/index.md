@@ -1,14 +1,8 @@
 ---
 title: Sitecore Publishing Service 7.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/7x/Sitecore_Publishing_Service_7020.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Publishing Service 7.0
 
 Sitecore Publishing Service is an opt-in module providing an alternative to the default Sitecore publishing mechanism focusing on increased performance by doing operations in bulk.
 

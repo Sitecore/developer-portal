@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Campaign_Integration_module/2x/Dynamics_CRM_Campaign_Integration_22/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **October 27, 2015 - released Sitecore Dynamics CRM Campaign Integration 2.2 (rev. 151027)**
 

@@ -1,14 +1,8 @@
 ---
 title: Team Development for Sitecore
+description: ''
 origin: https://dev.sitecore.net/Downloads/Team_Development_for_Sitecore.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Team Development for Sitecore
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

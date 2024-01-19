@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/7x/Sitecore_Connect_for_Salesforce_CRM_700/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **December 2021, released Sitecore Connect for Salesforce CRM 7.0.0**
 

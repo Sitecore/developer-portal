@@ -1,14 +1,8 @@
 ---
 title: Release notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Initial_Release/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release notes
 
 **August 2016 – released Sitecore Experience Platform 8.2 (rev. 160729)**
 

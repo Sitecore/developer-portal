@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 8.2 Update-1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update1.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 8.2 Update-1
 
 Sitecore 8.2 builds on the core functionality released on the 8.x platform and continues to incorporate feedback we have received from customers, partners, and analysts to strengthen the platform since Sitecore 8.0 was released. Commerce usability and functionality have been improved and additional modules such as Experience Accelerator and Express Migrations have been introduced to help customers speed implementation times and assist with moving to the modern 8.x platform.
 

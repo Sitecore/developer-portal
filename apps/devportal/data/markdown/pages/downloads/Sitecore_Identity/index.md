@@ -1,18 +1,9 @@
 ---
 title: Sitecore Identity
+description: 'Sitecore Identity is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication.
+For security reasons we strongly recommend using Sitecore Identity 7.0.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Identity
-
-Sitecore Identity is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication.
-
-For security reasons we strongly recommend using **Sitecore Identity 7.0**.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

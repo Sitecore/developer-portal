@@ -1,14 +1,8 @@
 ---
 title: Sitecore Engagement Automation Live Session Agent 1.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Engagement_Automation_Live_Session_Agent/10/Sitecore_Engagement_Automation_Live_Session_Agent_10.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Engagement Automation Live Session Agent 1.0
 
 The Live Session Agent module enables you to install and configure an additional server role on a Sitecore content delivery instance. This additional server role enables you to trigger and process automation states by timeout, for contacts with live sessions on your website.
 

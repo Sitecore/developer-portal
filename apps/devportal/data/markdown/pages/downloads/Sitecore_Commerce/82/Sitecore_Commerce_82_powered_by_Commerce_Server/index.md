@@ -1,14 +1,8 @@
 ---
 title: Sitecore Commerce 8.2 powered by Commerce Server
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/82/Sitecore_Commerce_82_powered_by_Commerce_Server.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Commerce 8.2 powered by Commerce Server
 
 Sitecore's powered by Commerce Server product, compatible with Sitecore Experience Platform 8.2 Initial Release through Update-5.
 

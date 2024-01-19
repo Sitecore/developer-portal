@@ -1,14 +1,8 @@
 ---
 title: Active Directory 1.3
+description: ''
 origin: https://dev.sitecore.net/Downloads/Active_Directory/1_3/Active_Directory_1_3.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Active Directory 1.3
 
 The Sitecore XP Active Directory module provides the integration of a Microsoft Active Directory domain with a Sitecore XP solution. You can integrate domain users and groups available into Sitecore XP as Sitecore users and Sitecore roles immediately after the module installation and configuration. Moreover, user profiles can be easily extended with custom properties from Active Directory.
 

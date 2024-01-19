@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 8.0 Update-2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_8_update2.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 8.0 Update-2
 
 This page contains all the resources for **Sitecore Experience Platform 8.0 rev.150223 (8.0 Update-2)**. To access Sitecore Experience Platform 8.0 rev.141212 (8.0 Initial Release), click [here](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_8_0) or see [all available 8.0 updates](/downloads/Sitecore_Experience_Platform/8_0).
 

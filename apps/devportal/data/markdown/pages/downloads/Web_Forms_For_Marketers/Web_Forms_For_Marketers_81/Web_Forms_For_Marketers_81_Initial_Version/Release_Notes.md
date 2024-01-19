@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/Web_Forms_For_Marketers_81/Web_Forms_For_Marketers_81_Initial_Version/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **October 20, 2015 – released Sitecore Web Forms for Marketers 8.1 (rev. 151008)**
 

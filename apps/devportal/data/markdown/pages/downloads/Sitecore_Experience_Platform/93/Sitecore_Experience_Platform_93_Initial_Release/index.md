@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 9.3 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/93/Sitecore_Experience_Platform_93_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 9.3 Initial Release
 
 Sitecore® Experience Platform™ 9.3 focuses on product updates and enhancements that increase usability and improve performance – all centered around making it easier and faster to build digital experiences so brands can accelerate their time to value. The new editing environment offers an intuitive interface with everything a user needs for easy navigation as well as real-time contextual insights as content is created and published, giving marketers the knowledge they need to drive improved conversions.
 

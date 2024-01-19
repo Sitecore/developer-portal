@@ -1,5 +1,6 @@
 ---
 title: Downloads
+description: 'Download Sitecore software, tools and resources'
 origin: https://dev.sitecore.net/Downloads.aspx
 isDownloadPage: false
 isTopicPage: false
@@ -7,8 +8,6 @@ isLandingPage: true
 isDownloadsLandingPage: true
 isPackageLandingPage: false
 ---
-
-# Downloads
 
 Download the latest version of the Sitecore Customer Experience Platform - the integration and automation marketers need to win customers for life.
 
@@ -23,7 +22,7 @@ Download the latest version of the Sitecore Customer Experience Platform - the i
   link2href="/downloads/Sitecore_Experience_Platform"
 />
 
-Downloads relating to **Sitecore 7.5 and below** are available on the [Sitecore Experience Platform 7 and below](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/7_0/Sitecore_Experience_Platform_7_and_below) downloads page.
+Downloads relating to **Sitecore 7.5 and below** are available on the [Sitecore Experience Platform 7 and below](/downloads/Sitecore_Experience_Platform/7_0/Sitecore_Experience_Platform_7_and_below) downloads page.
 
 ## Products and Modules
 

@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Commerce 9.2 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/92/Sitecore_Experience_Commerce_92_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Commerce 9.2 Initial Release
 
 Initial launch of Sitecore Experience Commerce 9.2, focusing on increased solution performance and ability to scale, along with functional enhancements and corrective content. Sitecore Commerce 9.2 is compatible with Sitecore Experience Platform 9.2 Initial Release. Refer to the [Sitecore Experience Commerce 9 Compatibility Table](https://kb.sitecore.net/articles/804595) for the software and version prerequisites.
 

@@ -1,19 +1,12 @@
 ---
 title: Sitecore Connect™ for Content Hub
+description: 'Sitecore Connect™ for Content Hub gives web editors, content/digital marketers:
+
+    The ability to work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub.
+    The ability to select assets directly from DAM from within the Sitecore environment. Users can select and Incorporate assets into their web and digital experience creation and delivery.
+'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Content_Hub.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Connect™ for Content Hub
-
-Sitecore Connect™ for Content Hub gives web editors, content/digital marketers:
-
--   The ability to work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub.
--   The ability to select assets directly from DAM from within the Sitecore environment. Users can select and Incorporate assets into their web and digital experience creation and delivery.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

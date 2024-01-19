@@ -1,14 +1,8 @@
 ---
 title: Package Management Service 5.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Package_Management_Service/5x/Package_Management_Service_500.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Package Management Service 5.0.0
 
 This version of the Package Management Service is compatible with Sitecore 9.0 Update-2 and newer.
 

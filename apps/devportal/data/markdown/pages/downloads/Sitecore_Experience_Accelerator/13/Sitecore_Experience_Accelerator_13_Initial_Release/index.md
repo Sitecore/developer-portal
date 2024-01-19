@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Accelerator 1.3
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/13/Sitecore_Experience_Accelerator_13_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Accelerator 1.3
 
 The Sitecore® Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly.
 

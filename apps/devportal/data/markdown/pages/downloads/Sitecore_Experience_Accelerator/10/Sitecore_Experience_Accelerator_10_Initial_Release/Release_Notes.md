@@ -1,14 +1,8 @@
 ---
 title: Release notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/10/Sitecore_Experience_Accelerator_10_Initial_Release/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release notes
 
 **August 2016 – released Sitecore Experience Accelerator 1.0 (rev. 160815)**
 

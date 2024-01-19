@@ -1,16 +1,8 @@
 ---
 title: Sitecore Experience Commerce
+description: 'Sitecore Experience Commerce is a natively integrated, cloud-enabled software platform that enables brands to fully personalize the end-to-end shopping experience—before, during, and after the transaction. It blends content, commerce, and contextual intelligence in a modern commerce platform built on .NET Core.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Experience Commerce
-
-Sitecore Experience Commerce is a natively integrated, cloud-enabled software platform that enables brands to fully personalize the end-to-end shopping experience—before, during, and after the transaction. It blends content, commerce, and contextual intelligence in a modern commerce platform built on .NET Core.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

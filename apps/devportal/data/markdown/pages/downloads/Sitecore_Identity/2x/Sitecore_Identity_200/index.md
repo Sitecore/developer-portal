@@ -1,14 +1,8 @@
 ---
 title: Sitecore Identity 2.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/2x/Sitecore_Identity_200
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Identity 2.0.0
 
 Sitecore Identity is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication.
 

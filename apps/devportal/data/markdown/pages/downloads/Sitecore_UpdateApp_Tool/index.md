@@ -1,18 +1,10 @@
 ---
 title: Sitecore UpdateApp Tool
-origin: https://dev.sitecore.net/Downloads/Sitecore_UpdateApp_Tool.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
----
-
-# Sitecore UpdateApp Tool
-
-This tool updates the Core, Master, and Web databases of Sitecore Experience Platform.
-
+description: 'This tool updates the Core, Master, and Web databases of Sitecore Experience Platform.
 You must download and use the version of the tool that is appropriate for the version and topology of the Sitecore Experience Platform that you are upgrading from.
+'
+origin: https://dev.sitecore.net/Downloads/Sitecore_UpdateApp_Tool.aspx
+---
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

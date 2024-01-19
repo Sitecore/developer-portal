@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/7x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_700/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **December 2021, released Sitecore Connect for Microsoft Dynamics 365 for Sales 7.0.0**
 

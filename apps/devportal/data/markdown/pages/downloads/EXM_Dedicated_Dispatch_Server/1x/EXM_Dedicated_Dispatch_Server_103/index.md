@@ -1,14 +1,8 @@
 ---
 title: EXM Dedicated Dispatch Server 1.0.3
+description: ''
 origin: https://dev.sitecore.net/Downloads/EXM_Dedicated_Dispatch_Server/1x/EXM_Dedicated_Dispatch_Server_103.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# EXM Dedicated Dispatch Server 1.0.3
 
 This page contains all the resources for EXM Dedicated Dispatch Server 1.0.3.
 

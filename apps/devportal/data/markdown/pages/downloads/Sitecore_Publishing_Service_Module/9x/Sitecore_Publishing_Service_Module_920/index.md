@@ -1,14 +1,8 @@
 ---
 title: Sitecore Publishing Service Module 9.2.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service_Module/9x/Sitecore_Publishing_Service_Module_920.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Publishing Service Module 9.2.0
 
 The Publishing Service Module provides integration with the opt-in Publishing Service, supporting high-performance publishing in large scale Sitecore setups.
 

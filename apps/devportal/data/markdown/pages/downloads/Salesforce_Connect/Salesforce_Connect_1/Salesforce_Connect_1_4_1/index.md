@@ -1,14 +1,8 @@
 ---
 title: Salesforce Connect 1.4.1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/Salesforce_Connect_1/Salesforce_Connect_1_4_1.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Salesforce Connect 1.4.1
 
 Integrate data from Salesforce with Sitecore, and data from Sitecore with Salesforce.
 

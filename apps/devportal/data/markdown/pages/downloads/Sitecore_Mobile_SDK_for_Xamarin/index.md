@@ -1,14 +1,8 @@
 ---
 title: Sitecore Mobile SDK (WebAPI) for Xamarin
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Mobile_SDK_for_Xamarin.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Mobile SDK (WebAPI) for Xamarin
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

@@ -1,14 +1,8 @@
 ---
 title: Release notes - Sitecore Azure 8.1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure/Sitecore_Azure_81/Sitecore_Azure_81_Update2/Release_notes_test
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release notes - Sitecore Azure 8.1
 
 **November 2016 – released Sitecore Azure 8.1 (rev. 161109)**
 

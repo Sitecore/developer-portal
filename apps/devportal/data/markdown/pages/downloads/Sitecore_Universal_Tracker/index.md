@@ -1,16 +1,8 @@
 ---
 title: Sitecore Universal Tracker
+description: 'The Universal Tracker is an opt-in mechanism for tracking interactions and events from headless clients.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Universal Tracker
-
-The Universal Tracker is an opt-in mechanism for tracking interactions and events from headless clients.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

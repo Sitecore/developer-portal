@@ -1,14 +1,8 @@
 ---
 title: Sitecore Universal Tracker 1.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker/1x/Sitecore_Universal_Tracker_100.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Universal Tracker 1.0.0
 
 This version of the Universal Tracker is compatible with Sitecore 9.1 Initial Release.
 

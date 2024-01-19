@@ -1,14 +1,8 @@
 ---
 title: Email Experience Manager in Sitecore 9.0 Update-2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/90/Email_Experience_Manager_in_Sitecore_90_Update2.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Email Experience Manager in Sitecore 9.0 Update-2
 
 This page contains all the resources for **EXM in Sitecore 9.0 rev. 180604 (Update-2)**.
 

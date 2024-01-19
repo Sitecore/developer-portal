@@ -1,14 +1,8 @@
 ---
 title: Data Exchange Framework 8.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Data_Exchange_Framework/8x/Data_Exchange_Framework_800
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Data Exchange Framework 8.0.0
 
 Synchronize data between Sitecore and 3rd party systems.
 

@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 10.1 Update-2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/101/Sitecore_Experience_Platform_101_Update2.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 10.1 Update-2
 
 Sitecore® Experience Platform™ 10.1 focuses on product updates and enhancements that improve time-to-market and increase usability and decrease infrastructure costs – all centered around enabling both Marketing and IT teams equally, thus making it easier and faster to launch and evolve digital customer experiences.
 

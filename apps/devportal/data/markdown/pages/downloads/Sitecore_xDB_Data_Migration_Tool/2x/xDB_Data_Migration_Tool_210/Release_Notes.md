@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Data_Migration_Tool/2x/xDB_Data_Migration_Tool_210/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **November 2018 – released Sitecore Experience Platform 9.1 (rev. 001564)**
 

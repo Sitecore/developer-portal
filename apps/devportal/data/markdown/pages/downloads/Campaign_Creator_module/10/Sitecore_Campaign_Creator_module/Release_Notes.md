@@ -1,14 +1,8 @@
 ---
 title: Release notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Campaign_Creator_module/10/Sitecore_Campaign_Creator_module/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release notes
 
 ## Campaign Creator
 

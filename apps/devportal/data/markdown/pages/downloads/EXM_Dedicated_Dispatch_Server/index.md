@@ -1,16 +1,8 @@
 ---
 title: EXM Dedicated Dispatch Server
+description: 'The EXM Dedicated Dispatch Server provides container support for DDS (Dedicated Dispatch Servers), speeding up the message generation and sending process.'
 origin: https://dev.sitecore.net/Downloads/EXM_Dedicated_Dispatch_Server.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# EXM Dedicated Dispatch Server
-
-The EXM Dedicated Dispatch Server provides container support for DDS (Dedicated Dispatch Servers), speeding up the message generation and sending process.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 8.0 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_8_0.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 8.0 Initial Release
 
 This page contains all the resources for **Sitecore Experience Platform 8.0 rev. 141212 (Initial Release)**.  
 Looking for **a different update**? See [all available 8.0 updates](/downloads/Sitecore_Experience_Platform/8_0).

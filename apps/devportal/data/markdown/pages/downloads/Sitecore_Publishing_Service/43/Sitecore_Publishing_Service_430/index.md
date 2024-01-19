@@ -1,14 +1,8 @@
 ---
 title: Sitecore Publishing Service 4.3.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/43/Sitecore_Publishing_Service_430.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Publishing Service 4.3.0
 
 Sitecore Publishing Service is an opt-in module providing an alternative to the default Sitecore publishing mechanism focusing on increased performance by doing operations in bulk.
 

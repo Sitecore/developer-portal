@@ -1,14 +1,8 @@
 ---
 title: Sitecore for Visual Studio 5.2.113
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_for_Visual_Studio/5x/Sitecore_for_Visual_Studio_52113.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore for Visual Studio 5.2.113
 
 Sitecore for Visual Studio gives development teams access to the convenience of GUI tools for developing websites using Sitecore 10’s new developer experience. By using a remote rendering host, developers can build straight from Visual Studio into the rendering host and test changes without needing to recycle Sitecore every time.
 

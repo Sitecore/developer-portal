@@ -1,14 +1,8 @@
 ---
 title: Release Notes - BDE
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_70/Release_Notes__BDE
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes - BDE
 
 **December 2021, released Sitecore Connect for Salesforce Marketing Cloud - Behavioral Data Exchange 7.0.0**
 

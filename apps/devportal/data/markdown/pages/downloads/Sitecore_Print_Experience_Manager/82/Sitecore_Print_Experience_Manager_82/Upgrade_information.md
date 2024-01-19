@@ -1,14 +1,8 @@
 ---
 title: Upgrade Information
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/82/Sitecore_Print_Experience_Manager_82/Upgrade_information
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Upgrade Information
 
 Upgrade information PXM 8.0 to PXM 8.2
 

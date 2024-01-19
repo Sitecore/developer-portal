@@ -1,14 +1,8 @@
 ---
 title: Known Issues
+description: ''
 origin: https://dev.sitecore.net/Downloads/Active_Directory/1_0/Active_Directory_1_2/Known_Issues
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Known Issues
 
 The list of known issues which are present in the current version of the Active Directory module:
 

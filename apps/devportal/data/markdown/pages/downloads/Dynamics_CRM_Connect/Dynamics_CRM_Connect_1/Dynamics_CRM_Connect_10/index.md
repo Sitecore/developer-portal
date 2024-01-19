@@ -1,14 +1,8 @@
 ---
 title: Dynamics CRM Connect 1.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_10.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Dynamics CRM Connect 1.0
 
 Integrate data from Dynamics CRM with Sitecore, and data from Sitecore with Dynamics CRM.
 

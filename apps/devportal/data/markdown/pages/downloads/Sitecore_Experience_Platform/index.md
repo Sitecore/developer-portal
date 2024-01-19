@@ -1,16 +1,8 @@
 ---
 title: Sitecore Experience Platform
+description: 'From a single connected platform easily integrated with other brand and customer platforms comes the ability to predict, optimize, and delight customer experiences. With comprehensive tracking capabilities enabling a single view of the customer, unprecedented reach across all the channels of today and tomorrow, and the elimination of manual, error-prone tasks – the latest version of Sitecore lets you own the customer experience.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Experience Platform
-
-From a single connected platform easily integrated with other brand and customer platforms comes the ability to predict, optimize, and delight customer experiences. With comprehensive tracking capabilities enabling a single view of the customer, unprecedented reach across all the channels of today and tomorrow, and the elimination of manual, error-prone tasks – the latest version of Sitecore lets you own the customer experience.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

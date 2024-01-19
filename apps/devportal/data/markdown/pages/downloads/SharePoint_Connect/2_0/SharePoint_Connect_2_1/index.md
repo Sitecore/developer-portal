@@ -1,14 +1,8 @@
 ---
 title: SharePoint Connect 2.1
+description: ''
 origin: https://dev.sitecore.net/Downloads/SharePoint_Connect/2_0/SharePoint_Connect_2_1.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# SharePoint Connect 2.1
 
 SharePoint Connect provides a flexible framework for creating synergy between your SharePoint assets and your Sitecore content delivery engine. You can use the framework to integrate your Sitecore solution with SharePoint in many different ways - out of the box. It also provides an extensible framework that you can use to customize your solution to meet your specific needs, while keeping the look and feel of your Sitecore site and following Sitecore's best practices.
 

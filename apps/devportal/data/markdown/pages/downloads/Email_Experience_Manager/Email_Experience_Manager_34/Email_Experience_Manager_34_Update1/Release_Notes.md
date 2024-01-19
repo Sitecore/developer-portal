@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_34/Email_Experience_Manager_34_Update1/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **January 2017 – released Sitecore Email Experience Manager 3.4.1 (rev. 170105)**
 

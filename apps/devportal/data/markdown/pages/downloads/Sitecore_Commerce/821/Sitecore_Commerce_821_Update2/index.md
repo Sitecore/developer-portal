@@ -1,14 +1,8 @@
 ---
 title: Sitecore Commerce 8.2.1 Update-2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/821/Sitecore_Commerce_821_Update2.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Commerce 8.2.1 Update-2
 
 This is Update-2 to Sitecore Commerce 8.2.1, compatible with Sitecore Experience Platform 8.2 Update-3 through Update-6. More information on alignment between Sitecore Commerce and Sitecore XP update releases is provided in the [Sitecore Commerce 8 Compatibility Table](https://kb.sitecore.net/articles/316437)
 

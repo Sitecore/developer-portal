@@ -1,14 +1,8 @@
 ---
 title: Sitecore Publishing Service 1.1 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/11/Sitecore_Publishing_Service_11_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Publishing Service 1.1 Initial Release
 
 This version of the Publishing Service is compatible with Sitecore 8.2.
 

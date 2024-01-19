@@ -1,16 +1,8 @@
 ---
 title: 9.0
+description: 'Download Sitecore 9.0 and all subsequent updates within this version group.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/90.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# 9.0
-
-Download Sitecore 9.0 and all subsequent updates within this version group.
 
 ### [Sitecore Experience Platform 9.0 Update-2](/downloads/Sitecore_Experience_Platform/90/Sitecore_Experience_Platform_90_Update2)
 

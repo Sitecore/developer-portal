@@ -1,14 +1,8 @@
 ---
 title: Sitecore UpdateApp Tool 1.3.1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_131
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore UpdateApp Tool 1.3.1
 
 This tool updates the Core, Master, and Web databases of Sitecore Experience Platform.
 

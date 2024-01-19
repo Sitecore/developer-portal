@@ -1,14 +1,8 @@
 ---
 title: Upgrade Information
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/8_0/Sitecore_Print_Experience_Manager_for_8_0/Upgrade_Information_ODG
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Upgrade Information
 
 # Upgrade information ODG 1.0 to ODG 8.0 for Sitecore XP
 

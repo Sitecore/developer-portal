@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Data_Migration_Tool/2x/xDB_Data_Migration_Tool_20/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **October 2017 – released Sitecore xDB Data Migration Tool 2.0 (rev. 171013)**
 

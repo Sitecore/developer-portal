@@ -1,14 +1,8 @@
 ---
 title: Sitecore CLI 4.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/4x/Sitecore_CLI_400
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore CLI 4.0.0
 
 The Sitecore CLI provides an entry point for interactive and automated command-line interaction with a Sitecore instance, including commands for pulling and synchronizing serialized Sitecore items.
 

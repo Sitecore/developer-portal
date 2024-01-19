@@ -1,14 +1,8 @@
 ---
 title: Sitecore Horizon 9.3.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon/93/Sitecore_Horizon_93_Initial_version.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Horizon 9.3.0
 
 Sitecore Horizon is the next generation experience management product for the Sitecore Experience Platform™. 
 

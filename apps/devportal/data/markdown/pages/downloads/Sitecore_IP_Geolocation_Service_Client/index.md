@@ -1,14 +1,8 @@
 ---
 title: Sitecore IP Geolocation Service Client
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_IP_Geolocation_Service_Client.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore IP Geolocation Service Client
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

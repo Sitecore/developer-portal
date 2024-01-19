@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Commerce 10.2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/102/Sitecore_Experience_Commerce_102.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Commerce 10.2
 
 Sitecore Experience Commerce (XC) 10.2 is compatible with Sitecore Experience Platform (XP) 10.2 and 10.2 Update-1. Refer to the [Sitecore Experience Commerce Compatibility Table](https://kb.sitecore.net/articles/804595) for the software and version prerequisites.
 

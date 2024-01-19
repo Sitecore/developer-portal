@@ -1,14 +1,8 @@
 ---
 title: Email Experience Manager 3.5 Update-2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/35/Email_Experience_Manager_35_Update2.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Email Experience Manager 3.5 Update-2
 
 This page contains all the resources for **Email Experience Manager 3.5 rev. 180411 (Update-2)**.  
   <Alert variant='warning' mb={4}>

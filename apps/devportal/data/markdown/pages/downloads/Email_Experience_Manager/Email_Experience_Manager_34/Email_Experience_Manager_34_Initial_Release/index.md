@@ -1,14 +1,8 @@
 ---
 title: Email Experience Manager 3.4 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_34/Email_Experience_Manager_34_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Email Experience Manager 3.4 Initial Release
 
 This page contains all the resources for **Email Experience Manager 3.4 rev. 161028 (Initial Release)**.  
   <Alert variant='warning' mb={4}>

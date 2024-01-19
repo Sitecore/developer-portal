@@ -1,14 +1,8 @@
 ---
 title: Web Forms For Marketers 8.2 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Initial_Version
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Web Forms For Marketers 8.2 Initial Release
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />

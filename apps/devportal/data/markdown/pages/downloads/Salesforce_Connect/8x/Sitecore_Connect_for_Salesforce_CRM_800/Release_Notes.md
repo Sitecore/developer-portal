@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/8x/Sitecore_Connect_for_Salesforce_CRM_800/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **January 2023, released Sitecore Connect for Salesforce CRM 8.0.0**
 

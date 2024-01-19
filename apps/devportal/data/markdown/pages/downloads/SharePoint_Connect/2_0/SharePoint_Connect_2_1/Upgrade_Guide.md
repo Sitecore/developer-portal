@@ -1,14 +1,8 @@
 ---
 title: Upgrade Guide - 2.0 rev.140718 to 2.1 rev.150128
+description: ''
 origin: https://dev.sitecore.net/Downloads/SharePoint_Connect/2_0/SharePoint_Connect_2_1/Upgrade_Guide
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Upgrade Guide - 2.0 rev.140718 to 2.1 rev.150128
 
 To upgrade the SharePoint Integration Framework from version 2.0 rev.140718 to SharePoint Connect version 2.1 rev.150128:
 

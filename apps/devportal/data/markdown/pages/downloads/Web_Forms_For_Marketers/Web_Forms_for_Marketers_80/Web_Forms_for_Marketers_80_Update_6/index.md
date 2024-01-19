@@ -1,14 +1,8 @@
 ---
 title: Web Forms for Marketers 8.0 Update-6
+description: ''
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/Web_Forms_for_Marketers_80/Web_Forms_for_Marketers_80_Update_6
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Web Forms for Marketers 8.0 Update-6
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />

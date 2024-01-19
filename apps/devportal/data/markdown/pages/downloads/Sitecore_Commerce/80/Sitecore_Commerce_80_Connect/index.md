@@ -1,14 +1,8 @@
 ---
 title: Sitecore Commerce 8.0 Connect
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/80/Sitecore_Commerce_80_Connect.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Commerce 8.0 Connect
 
 Connectivity module for integrating 3rd party commerce or ERP platforms with the Sitecore Experience Platform. 
 

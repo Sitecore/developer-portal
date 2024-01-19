@@ -1,14 +1,8 @@
 ---
 title: Sitecore JavaScript Services 9.0 Tech Preview 4
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/90_Tech_Preview/Sitecore_JavaScript_Services_90_Tech_Preview_4.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore JavaScript Services 9.0 Tech Preview 4
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />

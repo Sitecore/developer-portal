@@ -1,14 +1,8 @@
 ---
 title: Sitecore Horizon
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Horizon
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

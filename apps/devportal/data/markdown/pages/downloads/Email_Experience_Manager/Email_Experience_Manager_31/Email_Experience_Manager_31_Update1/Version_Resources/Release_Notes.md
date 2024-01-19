@@ -1,14 +1,8 @@
 ---
 title: Release notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_31/Email_Experience_Manager_31_Update1/Version_Resources/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release notes
 
 ## August 2015 – Email Experience Manager 3.1 rev.150811 (Update-1)
 

@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Sitecore_CMP/30/Sitecore_Connect_for_Sitecore_CMP_300/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **September 2020 – released Sitecore Connect for Sitecore CMP 3.0.0**
 

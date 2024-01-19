@@ -1,14 +1,8 @@
 ---
 title: Sitecore Horizon 10.2.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon/100/Sitecore_Horizon_1020
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Horizon 10.2.0
 
 Sitecore Horizon is the next generation Experience Management product for the Sitecore Experience Platform™.
 

@@ -1,16 +1,8 @@
 ---
 title: Sitecore Connect™ for Sitecore DAM
+description: 'The Sitecore Connect™ for Sitecore DAM gives web editors, content/digital marketers the ability to select assets directly from the DAM from within the Sitecore environment. Users can select and Incorporate assets into their web and digital experience creation and delivery.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Plugin_for_Stylelabs_DAM.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Connect™ for Sitecore DAM
-
-The Sitecore Connect™ for Sitecore DAM gives web editors, content/digital marketers the ability to select assets directly from the DAM from within the Sitecore environment. Users can select and Incorporate assets into their web and digital experience creation and delivery.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

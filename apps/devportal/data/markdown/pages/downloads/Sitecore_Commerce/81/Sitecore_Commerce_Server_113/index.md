@@ -1,14 +1,8 @@
 ---
 title: Commerce Server 11.3
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/81/Sitecore_Commerce_Server_113.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Commerce Server 11.3
 
 Stand-alone version of Commerce Server available for existing customers.  
 

@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_client_for_xDB_Cloud_20/82/Sitecore_xDB_Cloud_client_821_rev_170223_for_xDB_Cloud_20/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **March 2017 – released Sitecore xDB Cloud client 8.2.1 rev. 10223 for xDB Cloud 2.0**
 

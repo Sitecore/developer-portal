@@ -1,14 +1,8 @@
 ---
 title: Sitecore Installation Framework 1.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/1x/Sitecore_Installation_Framework_10
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Installation Framework 1.0
 
 The Sitecore Install Framework (SIF) enables users to deploy and configure a Sitecore environment using a standard configuration design that can be extended through custom PowerShell functions.
 

@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 9.2 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/92/Sitecore_Experience_Platform_92_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 9.2 Initial Release
 
 Sitecore® Experience Platform™ 9.2 begins the integrated experience between ContentHub and Sitecore XP. Starting with integration with ContentHub’s Content Marketing Platform and the Digital Asset Management this is the first step in Sitecore’s integration delivering complete ownership of the content lifecycle.
 

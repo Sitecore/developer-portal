@@ -1,14 +1,8 @@
 ---
 title: Sitecore JavaScript Services 12.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/120/Sitecore_JavaScript_Services_1200.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore JavaScript Services 12.0.0
 
 Sitecore JavaScript Services (JSS) is a complete SDK for JavaScript developers that enables you to build full-fledged solutions using Sitecore and modern JavaScript UI libraries and frameworks.
 

@@ -1,14 +1,8 @@
 ---
 title: Sitecore Embeddable Forms
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Embeddable_Forms.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Embeddable Forms
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

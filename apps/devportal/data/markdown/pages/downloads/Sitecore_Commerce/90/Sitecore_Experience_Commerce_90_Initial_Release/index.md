@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Commerce 9.0 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/90/Sitecore_Experience_Commerce_90_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Commerce 9.0 Initial Release
 
 Sitecore's latest commerce platform with new Catalog management, new Inventory management, new Business Tools, new Storefront built on the latest Sitecore Experience Accelerator (SXA), native integration with Sitecore Experience Platform 9, and new Sitecore Experience Commerce™ (Sitecore XC) branding to match.
 

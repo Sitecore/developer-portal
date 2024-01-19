@@ -1,14 +1,8 @@
 ---
 title: Sitecore JavaScript Services 15.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/150/Sitecore_JavaScript_Services_1500.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore JavaScript Services 15.0.0
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />

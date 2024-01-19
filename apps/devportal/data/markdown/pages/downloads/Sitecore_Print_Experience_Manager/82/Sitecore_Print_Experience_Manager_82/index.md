@@ -1,14 +1,8 @@
 ---
 title: Sitecore Print Experience Manager 8.2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/82/Sitecore_Print_Experience_Manager_82.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Print Experience Manager 8.2
 
 Print Experience Manager enables Sitecore customers to manage print production from within the Sitecore Experience Platform, leveraging a single source of content, familiar design tools and collaborative workflows for smooth, efficient print production that is perfectly aligned with digital content production.
 

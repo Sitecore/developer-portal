@@ -1,14 +1,8 @@
 ---
 title: Email Experience Manager 3.1 Update-2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_31/Email_Experience_Manager_31_Update_2.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Email Experience Manager 3.1 Update-2
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />

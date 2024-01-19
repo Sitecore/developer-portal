@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 9.1 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/91/Sitecore_Experience_Platform_91_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 9.1 Initial Release
 
 Sitecore® 9.1 delivers omnichannel marketing at scale, natively integrated data insights, and enhanced behavioral tracking capabilities. Additional enhancements include Federated Authentication, WCAG 2.0 compliance in SXA, external triggers for Data Exchange Framework 2.1, as well as performance improvements for deployments. Please refer to release notes for all innovations and enhancements in Sitecore® 9.1.
 

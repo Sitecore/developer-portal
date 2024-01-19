@@ -1,14 +1,8 @@
 ---
 title: Sitecore Connect for Salesforce CRM 4.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/4x/Sitecore_Connect_for_Salesforce_CRM_400.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Connect for Salesforce CRM 4.0.0
 
 Synchronize data between Salesforce CRM and Sitecore Experience Platform.
 

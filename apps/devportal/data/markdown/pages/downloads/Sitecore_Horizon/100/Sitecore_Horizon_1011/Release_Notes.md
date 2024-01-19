@@ -1,14 +1,8 @@
 ---
 title: Content Title
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon/100/Sitecore_Horizon_1011/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Content Title
 
 **July 2021– released Horizon 10.1.1**
 

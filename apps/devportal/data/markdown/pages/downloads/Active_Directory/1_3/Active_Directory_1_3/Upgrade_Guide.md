@@ -1,14 +1,8 @@
 ---
 title: Upgrade Guide
+description: ''
 origin: https://dev.sitecore.net/Downloads/Active_Directory/1_3/Active_Directory_1_3/Upgrade_Guide
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Upgrade Guide
 
 To upgrade the module from **version 1.2 rev. 141225** to **version 1.3 rev. 161017**:
 

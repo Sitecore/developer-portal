@@ -1,16 +1,8 @@
 ---
 title: Sitecore Print Experience Manager
+description: 'Print Experience Manager enables Sitecore customers to manage print production from within the Sitecore Experience Platform, leveraging a single source of content, familiar design tools and collaborative workflows for smooth, efficient print production that is perfectly aligned with digital content production.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Print Experience Manager
-
-Print Experience Manager enables Sitecore customers to manage print production from within the Sitecore Experience Platform, leveraging a single source of content, familiar design tools and collaborative workflows for smooth, efficient print production that is perfectly aligned with digital content production.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

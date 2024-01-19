@@ -1,14 +1,8 @@
 ---
 title: Known Issues in Sitecore Active Directory 1.3
+description: ''
 origin: https://dev.sitecore.net/Downloads/Active_Directory/1_3/Active_Directory_1_3/Known_Issues
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Known Issues in Sitecore Active Directory 1.3
 
 ## Known issues
 

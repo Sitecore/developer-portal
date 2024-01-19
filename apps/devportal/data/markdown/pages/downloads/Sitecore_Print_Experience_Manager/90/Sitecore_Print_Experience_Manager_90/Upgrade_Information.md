@@ -1,14 +1,8 @@
 ---
 title: Upgrade Information
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/90/Sitecore_Print_Experience_Manager_90/Upgrade_Information
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Upgrade Information
 
 **Upgrade information PXM 9.0**
 

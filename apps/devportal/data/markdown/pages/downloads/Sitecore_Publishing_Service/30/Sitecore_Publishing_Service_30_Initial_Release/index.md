@@ -1,14 +1,8 @@
 ---
 title: Sitecore Publishing Service 3.0 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/30/Sitecore_Publishing_Service_30_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Publishing Service 3.0 Initial Release
 
 This version of the Publishing Service is compatible with Sitecore 9.0 Initial Release.
 

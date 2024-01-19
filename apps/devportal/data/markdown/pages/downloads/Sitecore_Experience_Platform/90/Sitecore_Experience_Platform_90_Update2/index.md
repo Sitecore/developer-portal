@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 9.0 Update-2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/90/Sitecore_Experience_Platform_90_Update2.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 9.0 Update-2
 
 Sitecore 9.0 delivers innovation, enhancements, and time-to-market capabilities with benefits for both IT and digital marketing teams. Highlights of the release include a brand new Sitecore Forms module to replace WffM; new marketing automation with a modern UI; new Sitecore xConnect™ APIs and services for data integration; support for Federated Authentication and much more. The release is issued after extensive testing and feedback from customers, partners and developers, resulting in a new level of quality across the product and documentation.
 

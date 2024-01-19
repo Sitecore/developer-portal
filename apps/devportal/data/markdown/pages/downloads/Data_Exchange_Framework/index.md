@@ -1,16 +1,8 @@
 ---
 title: Data Exchange Framework
+description: 'Sitecore Data Exchange Framework is designed to facilitate the transfer of data between systems. It allows you to define the logic needed to read data from a source system, transform that data into a format that is compatible with a target system, and write the transformed data into a target system. Developers can build connectors that allow 3rd party systems to serve as source and target systems.'
 origin: https://dev.sitecore.net/Downloads/Data_Exchange_Framework.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Data Exchange Framework
-
-Sitecore Data Exchange Framework is designed to facilitate the transfer of data between systems. It allows you to define the logic needed to read data from a source system, transform that data into a format that is compatible with a target system, and write the transformed data into a target system. Developers can build connectors that allow 3rd party systems to serve as source and target systems.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

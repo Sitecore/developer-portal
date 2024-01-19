@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/90/Sitecore_Experience_Commerce_90_Update2/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **July 2018 – released Sitecore Experience Commerce 9.0 Update 2**. This is a product update. Sitecore recommends that you upgrade to this release if it includes new functionality or fixes that meet the needs of your organization.
 

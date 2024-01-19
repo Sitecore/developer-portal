@@ -1,14 +1,8 @@
 ---
 title: Sitecore Embeddable Forms 1.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Embeddable_Forms/1x/Sitecore_Embeddable_Forms_100.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Embeddable Forms 1.0.0
 
 Sitecore Embeddable Forms Framework (EFF) allow forms to be displayed on any website page, including websites that are not Sitecore applications. They are isolated and unobtrusive; hence they cannot hurt any other functionality or style of the page where they are embedded.
 

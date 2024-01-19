@@ -1,16 +1,8 @@
 ---
 title: Sitecore Express Migration Tool
+description: 'The Sitecore Express Migration Tool makes it easy for customers to help migrate older instances to the latest version of Sitecore Experience Platform without the need to gradually upgrade from version to version.'
 origin: https://dev.sitecore.net/Downloads/Express_Migration_Tool.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Express Migration Tool
-
-The Sitecore Express Migration Tool makes it easy for customers to help migrate older instances to the latest version of Sitecore Experience Platform without the need to gradually upgrade from version to version.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

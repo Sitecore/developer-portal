@@ -1,14 +1,8 @@
 ---
 title: Commerce Server 11.2 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/80/Commerce_Server_112_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Commerce Server 11.2 Initial Release
 
 Stand-alone version of Commerce Server available for existing customers.  
 

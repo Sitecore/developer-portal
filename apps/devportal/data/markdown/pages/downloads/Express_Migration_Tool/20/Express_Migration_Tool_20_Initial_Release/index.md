@@ -1,14 +1,8 @@
 ---
 title: Express Migration Tool 2.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Express_Migration_Tool/20/Express_Migration_Tool_20_Initial_Release
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Express Migration Tool 2.0
 
 The Sitecore Express Migration Tool makes it easy for customers to help migrate Sitecore 7.2 or Sitecore 6.6 to Sitecore Experience Platform 8.2 Update-1 without the need to gradually upgrade from version to version.  
 Please note that DMS data to xDB will still require the use of the conversion tools found on the [Sitecore Experience Platform download pages](/downloads/Sitecore_Experience_Platform).

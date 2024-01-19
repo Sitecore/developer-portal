@@ -1,16 +1,8 @@
 ---
 title: Sitecore Publishing Service
+description: 'The Publishing Service is an opt-in mechanism for high-performance publishing in large scale Sitecore setups.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore Publishing Service
-
-The Publishing Service is an opt-in mechanism for high-performance publishing in large scale Sitecore setups.
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

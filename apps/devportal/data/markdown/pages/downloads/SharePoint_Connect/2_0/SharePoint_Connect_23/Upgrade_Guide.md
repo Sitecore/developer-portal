@@ -1,14 +1,8 @@
 ---
 title: Upgrade Guide
+description: ''
 origin: https://dev.sitecore.net/Downloads/SharePoint_Connect/2_0/SharePoint_Connect_23/Upgrade_Guide
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Upgrade Guide
 
 To upgrade the SharePoint Integration Framework from version 2.2 rev. 160617 to SharePoint Connect version 2.3 rev. 160901:
 

@@ -1,14 +1,8 @@
 ---
 title: Sitecore IP Geolocation Service Client 1.2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_IP_Geolocation_Service_Client/12/Sitecore_IP_Geolocation_Service_Client_12_for_Sitecore_XP_80.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore IP Geolocation Service Client 1.2
 
 The Sitecore® IP Geolocation Service uses a website visitor’s unique IP address to automatically populate the Sitecore Experience Database with information about the country, region, city as well as company information and so on when they visit a Sitecore website. This information helps marketers optimize their segmentation, personalization, and campaigns.
 

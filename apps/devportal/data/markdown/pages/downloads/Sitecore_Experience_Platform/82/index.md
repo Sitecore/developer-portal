@@ -1,16 +1,8 @@
 ---
 title: 8.2
+description: 'Download Sitecore 8.2 and all subsequent updates within this version group.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/82.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# 8.2
-
-Download Sitecore 8.2 and all subsequent updates within this version group.
 
 ### [Sitecore Experience Platform 8.2 Update-7](/downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update7)
 

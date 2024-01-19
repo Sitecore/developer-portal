@@ -1,14 +1,8 @@
 ---
 title: Sitecore xDB Cloud client for xDB Cloud 1.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_client.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore xDB Cloud client for xDB Cloud 1.0
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

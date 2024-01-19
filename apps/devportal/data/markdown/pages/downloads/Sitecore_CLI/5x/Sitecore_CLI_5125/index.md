@@ -1,14 +1,8 @@
 ---
 title: Sitecore CLI 5.1.25
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_5125
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore CLI 5.1.25
 
 The Sitecore CLI provides an entry point for interactive and automated command-line interaction with a Sitecore instance, including commands for pulling and synchronizing serialized Sitecore items.
 

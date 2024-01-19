@@ -1,14 +1,8 @@
 ---
 title: Scripts for Sitecore Security database 0.3.1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_031.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Scripts for Sitecore Security database 0.3.1
 
 The set of scripts for moving Sitecore Security membership provider from the Core database to individual or existing one.
 

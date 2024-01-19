@@ -1,14 +1,8 @@
 ---
 title: Resource files for Modules 1.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Resource_files_for_Modules/1x/Resource_files_for_Modules_100
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Resource files for Modules 1.0.0
 
 Module resource files for upgrading Core, Master and Web.
 

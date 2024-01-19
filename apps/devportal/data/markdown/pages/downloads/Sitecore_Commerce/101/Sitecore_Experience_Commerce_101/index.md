@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Commerce 10.1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/101/Sitecore_Experience_Commerce_101.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Commerce 10.1
 
 Sitecore Experience Commerce (XC) 10.1 is compatible with Sitecore Experience Platform (XP) 10.1, 10.1 Update-1, 10.1 Update-2, and 10.1 Update-3. Compatibility with XP 10.1 Update-2 requires updating an XC host file for connecting to Identity Server as described in [KB1000801](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1000801).
 

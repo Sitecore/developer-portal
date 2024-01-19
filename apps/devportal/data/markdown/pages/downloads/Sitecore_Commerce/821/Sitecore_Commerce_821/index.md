@@ -1,14 +1,8 @@
 ---
 title: Sitecore Commerce 8.2.1 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/821/Sitecore_Commerce_821.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Commerce 8.2.1 Initial Release
 
 This is Sitecore's new Commerce product, simply named Sitecore Commerce. This is a new product, not an update to 8.2. This initial launch is compatible with Sitecore Experience Platform 8.2 Update-1 and Update-2. More information on alignment between Sitecore Commerce and Sitecore XP update releases is provided in the [Sitecore Commerce 8 Compatibility Table](https://kb.sitecore.net/articles/316437)
 

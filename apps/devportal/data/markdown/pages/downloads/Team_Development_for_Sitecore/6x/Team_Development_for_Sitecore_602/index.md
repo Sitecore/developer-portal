@@ -1,14 +1,8 @@
 ---
 title: Team Development for Sitecore 6.0.2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_602.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Team Development for Sitecore 6.0.2
 
 The professional development toolkit for Sitecore deployments, development, and best practices, Sitecore TDS improves team integration and smooths the development process with a wide range of built-in Sitecore automation, synchronization and management features.
 

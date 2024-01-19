@@ -1,14 +1,8 @@
 ---
 title: Sitecore Publishing Service 3.1 Update-1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/31/Sitecore_Publishing_Service_31_Update1.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Publishing Service 3.1 Update-1
 
 This version of the Publishing Service is compatible with Sitecore 9.0 Initial Release and Sitecore 9.0 Update-1 and 9.0 Update-2.
 

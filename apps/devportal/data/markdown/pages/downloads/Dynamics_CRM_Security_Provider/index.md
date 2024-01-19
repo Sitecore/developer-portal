@@ -1,14 +1,8 @@
 ---
 title: Dynamics CRM Security Provider
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Security_Provider
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Dynamics CRM Security Provider
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

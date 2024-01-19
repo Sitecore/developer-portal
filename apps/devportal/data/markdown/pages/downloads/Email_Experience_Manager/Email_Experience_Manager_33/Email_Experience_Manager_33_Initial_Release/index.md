@@ -1,14 +1,8 @@
 ---
 title: Email Experience Manager 3.3 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_33/Email_Experience_Manager_33_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Email Experience Manager 3.3 Initial Release
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />

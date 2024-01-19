@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Accelerator 1.4
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/14/Sitecore_Experience_Accelerator_14_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Accelerator 1.4
 
 The Sitecore® Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly.
 

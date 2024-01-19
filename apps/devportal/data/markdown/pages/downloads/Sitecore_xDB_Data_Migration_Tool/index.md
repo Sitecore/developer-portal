@@ -1,14 +1,8 @@
 ---
 title: Sitecore xDB Data Migration Tool
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Data_Migration_Tool.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Sitecore xDB Data Migration Tool
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

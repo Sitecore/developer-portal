@@ -1,14 +1,8 @@
 ---
 title: Sitecore Identity 5.1.1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/5x/Sitecore_Identity_511
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Identity 5.1.1
 
 Sitecore Identity is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication.
 

@@ -1,14 +1,8 @@
 ---
 title: Dynamics CRM Security Provider 2.2.1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Security_Provider/2_2/Dynamics_CRM_Security_Provider_2_2_1.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Dynamics CRM Security Provider 2.2.1
 
 Expose CRM contacts as Sitecore users, CRM marketing lists as Sitecore roles and interact directly with Dynamics CRM.
 

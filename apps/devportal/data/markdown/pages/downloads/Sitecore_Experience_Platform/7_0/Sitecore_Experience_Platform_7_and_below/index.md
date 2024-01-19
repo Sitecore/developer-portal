@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 7 and below
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/7_0/Sitecore_Experience_Platform_7_and_below.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 7 and below
 
 ## Download options
 

@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Security_Provider/2_3/Dynamics_CRM_Security_Provider_2_3_2/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **January 18, 2017 - released Sitecore Dynamics CRM Security Provider 2.3.2 (rev. 170118)**
 

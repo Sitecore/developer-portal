@@ -1,16 +1,8 @@
 ---
 title: 8.1
+description: 'Download Sitecore 8.1 and all subsequent updates within this product version.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_81.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# 8.1
-
-Download Sitecore 8.1 and all subsequent updates within this product version.
 
 ### [Sitecore Experience Platform 8.1 Update-3](/downloads/Sitecore_Experience_Platform/Sitecore_81/Sitecore_Experience_Platform_81_Update3)
 

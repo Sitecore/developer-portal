@@ -1,14 +1,8 @@
 ---
 title: Sitecore xDB Cloud client 8.1 rev. 160210 for xDB Cloud 1.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_client/81/Sitecore_xDB_Cloud_client_81_rev_160210.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore xDB Cloud client 8.1 rev. 160210 for xDB Cloud 1.0
 
 Releases and documentation for Sitecore xDB Cloud client 8.1 rev. 160210
 

@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 8 – Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update7/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 8 – Release Notes
 
 **January 2016 – released Sitecore 8.0 Service Pack-1 (rev. 160115)**
 

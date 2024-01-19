@@ -1,14 +1,8 @@
 ---
 title: Sitecore Commerce 8.1 powered by Commerce Server
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/81/Sitecore_Commerce_81_powered_by_CS.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Commerce 8.1 powered by Commerce Server
 
 Sitecore's powered by Commerce Server product, compatible with Sitecore Experience Platform 8.1 Update-1 through Update-3. For more information on alignment between releases of Sitecore Commerce and the Sitecore Experience Platform, see the [Sitecore Commerce Compatibility Table](https://kb.sitecore.net/articles/316437)
 

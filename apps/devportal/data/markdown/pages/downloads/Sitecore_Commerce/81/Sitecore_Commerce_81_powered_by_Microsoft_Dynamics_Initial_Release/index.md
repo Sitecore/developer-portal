@@ -1,14 +1,8 @@
 ---
 title: Sitecore Commerce 8.1 powered by Microsoft Dynamics
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/81/Sitecore_Commerce_81_powered_by_Microsoft_Dynamics_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Commerce 8.1 powered by Microsoft Dynamics
 
 Sitecore's powered by Microsoft Dynamics commerce product, compatible with Sitecore Experience Platform 8.1 Update-1 through Update-3. Includes connectivity modules for integration with Microsoft Dynamics Retail AX 2012 R3 CU9. For more information on alignment between releases of Sitecore Commerce and the Sitecore Experience Platform, see the [Sitecore Commerce Compatibility Table](https://kb.sitecore.net/articles/316437)
 

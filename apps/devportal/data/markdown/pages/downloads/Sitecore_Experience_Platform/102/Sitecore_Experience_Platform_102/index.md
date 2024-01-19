@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 10.2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/102/Sitecore_Experience_Platform_102.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 10.2
 
 Sitecore® Experience Platform™ 10.2 focuses on increasing performance and stability while helping to reduce costs so organizations can deliver unforgettable experiences faster than ever before. By providing the ability to incrementally convert to headless Sitecore architectures without a full rebuild, 10.2 also offers a bridge to our composable DXP for those who are interested in that path.
 

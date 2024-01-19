@@ -1,14 +1,8 @@
 ---
 title: Sitecore AI Automated Personalization Standard 3.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization_Standard/3x/Sitecore_AI_Automated_Personalization_Standard_300.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore AI Automated Personalization Standard 3.0.0
 
 A module to enable Sitecore AI Auto-Personalization for Sitecore XP installation with traffic no greater than 12 million visits per year.
 

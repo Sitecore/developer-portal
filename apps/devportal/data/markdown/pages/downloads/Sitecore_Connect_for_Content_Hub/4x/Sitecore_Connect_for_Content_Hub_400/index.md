@@ -1,14 +1,8 @@
 ---
 title: Sitecore Connect™ for Content Hub 4.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Content_Hub/4x/Sitecore_Connect_for_Content_Hub_400
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Connect™ for Content Hub 4.0.0
 
 Sitecore Connect™ for Content Hub gives web editors, and content/digital marketers:
 

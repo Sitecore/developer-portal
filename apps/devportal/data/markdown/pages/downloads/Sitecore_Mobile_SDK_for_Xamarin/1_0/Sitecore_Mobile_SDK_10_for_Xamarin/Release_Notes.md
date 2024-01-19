@@ -1,14 +1,8 @@
 ---
 title: Release notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Mobile_SDK_for_Xamarin/1_0/Sitecore_Mobile_SDK_10_for_Xamarin/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release notes
 
 April 14, released Sitecore Mobile SDK 1.0 for Xamarin.
 

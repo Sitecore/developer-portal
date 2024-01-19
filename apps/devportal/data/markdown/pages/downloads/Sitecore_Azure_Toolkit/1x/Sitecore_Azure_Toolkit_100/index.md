@@ -1,14 +1,8 @@
 ---
 title: Sitecore Azure Toolkit 1.0 rev. 161125
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/1x/Sitecore_Azure_Toolkit_100.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Azure Toolkit 1.0 rev. 161125
 
 Sitecore Azure Toolkit allows customers to package and deploy Sitecore solutions to Microsoft Azure and provides out of the box integration with Azure services such as Application Insights, Redis Cache Service and Azure Search.
 

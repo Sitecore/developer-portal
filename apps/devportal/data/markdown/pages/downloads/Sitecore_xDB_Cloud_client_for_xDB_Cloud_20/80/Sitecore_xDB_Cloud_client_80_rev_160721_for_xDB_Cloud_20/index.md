@@ -1,14 +1,8 @@
 ---
 title: Sitecore xDB Cloud client 8.0 rev. 160721 for xDB Cloud 2.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_client_for_xDB_Cloud_20/80/Sitecore_xDB_Cloud_client_80_rev_160721_for_xDB_Cloud_20.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore xDB Cloud client 8.0 rev. 160721 for xDB Cloud 2.0
 
 ## Download options
 

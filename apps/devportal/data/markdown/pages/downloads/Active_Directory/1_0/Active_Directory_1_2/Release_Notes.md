@@ -1,14 +1,8 @@
 ---
 title: Release notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Active_Directory/1_0/Active_Directory_1_2/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release notes
 
 Released **December 26th, 2014**. Tested with **Sitecore CMS 7.2 rev. 141226 (Update-3)**, **Sitecore CMS 7.5 rev. 141003**, and **Sitecore XP 8.0 rev. 141212**.
 

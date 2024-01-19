@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/EXM_Dedicated_Dispatch_Server/1x/EXM_Dedicated_Dispatch_Server_103/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **June 2021 - Released Sitecore Email Exchange Manager DDS 1.0.3**
 

@@ -1,14 +1,8 @@
 ---
 title: Sitecore Azure Toolkit 2.0 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_200.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Azure Toolkit 2.0 Initial Release
 
 This page contains all the resources for Sitecore Azure Toolkit 2.0 rev. 171010 (Initial Release).
 

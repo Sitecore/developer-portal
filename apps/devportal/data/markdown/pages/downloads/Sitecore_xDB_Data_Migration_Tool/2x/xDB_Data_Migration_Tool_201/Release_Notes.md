@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Data_Migration_Tool/2x/xDB_Data_Migration_Tool_201/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **January 2018 – released xDB Data Migration Tool 2.0.1 (rev. 180108)**
 

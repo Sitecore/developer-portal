@@ -1,14 +1,8 @@
 ---
 title: Sitecore Connect™ for Sitecore CMP 1.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Sitecore_CMP/10/Sitecore_Connect_for_Sitecore_CMP_100.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Connect™ for Sitecore CMP 1.0.0
 
 The Sitecore Connect™ for Sitecore CMP gives web editors, content/digital marketers the ability to work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub.
 

@@ -1,14 +1,8 @@
 ---
 title: Sitecore Publishing Service 4.0.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/40/Sitecore_Publishing_Service_400.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Publishing Service 4.0.0
 
 This version of the Publishing Service is compatible with Sitecore 9.1 Initial Release.
 

@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Platform 8.1 Update-1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_81/Sitecore_Experience_Platform_81_Update1.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Platform 8.1 Update-1
 
 Sitecore 8.1 is a comprehensive improvement across all of Sitecore Version 8.0 incorporating the feedback we’ve received since 8.0 was delivered from customers, analysts and implementation partners. Heavy investment in product quality, stability and usability can be found throughout 8.1 to help our customers take advantage of Context Marketing and engage in full brand experience management. For further details into the specific enhancements of 8.1, please see the Release Notes.
 

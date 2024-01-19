@@ -1,14 +1,8 @@
 ---
 title: Sitecore Media Framework 2.1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Media_Framework/21/Sitecore_Media_Framework_21.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Media Framework 2.1
 
 This version of Sitecore Media Framework is compatible with Sitecore Experience Platform 8.0 and 8.1.
 

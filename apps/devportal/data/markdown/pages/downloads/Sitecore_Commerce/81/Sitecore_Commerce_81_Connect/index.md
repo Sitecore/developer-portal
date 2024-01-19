@@ -1,14 +1,8 @@
 ---
 title: Sitecore Commerce 8.1 Connect
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/81/Sitecore_Commerce_81_Connect.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Commerce 8.1 Connect
 
 Connectivity module for integrating 3rd party commerce or ERP platforms with the Sitecore Experience Platform. Compatible with Sitecore Experience Platform 8.1 Update-1 through Update-3. For more information on alignment between releases of Sitecore Commerce and the Sitecore Experience Platform, see the [Sitecore Commerce Compatibility Table](https://kb.sitecore.net/articles/316437)
 

@@ -1,14 +1,8 @@
 ---
 title: Upgrade Information
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/8_0/Sitecore_Print_Experience_Manager_for_8_0/Upgrade_Information_RB
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Upgrade Information
 
 # Upgrade information Rendition Builder 1.0 to version 8.0 for Sitecore XP
 

@@ -1,14 +1,8 @@
 ---
 title: 8.2
+description: ''
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/82
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# 8.2
 
 ### [Web Forms For Marketers 8.2 Update-7](/downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Update7)
 

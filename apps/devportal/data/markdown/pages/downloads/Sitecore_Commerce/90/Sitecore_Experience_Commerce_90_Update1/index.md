@@ -1,14 +1,8 @@
 ---
 title: Sitecore Experience Commerce 9.0 Update-1
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/90/Sitecore_Experience_Commerce_90_Update1.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Experience Commerce 9.0 Update-1
 
 Update-1 to Sitecore Experience Commerce 9.0, compatible with Sitecore Experience Platform 9.0 Update-1. Update-1 provides corrective updates to the Initial Release. Refer to the [Sitecore Experience Commerce 9 Compatibility Table](https://kb.sitecore.net/articles/804595) or Installation Guides for the software and version prerequisites.
 

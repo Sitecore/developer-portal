@@ -1,14 +1,8 @@
 ---
 title: Release Notes
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization_Standard/2x/Sitecore_AI_Automated_Personalization_Standard_200/Release_Notes
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes
 
 **June 2021 – released Sitecore AI - Automated Personalization Standard 2.0**
 

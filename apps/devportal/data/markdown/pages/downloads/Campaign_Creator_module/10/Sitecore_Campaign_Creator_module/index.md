@@ -1,14 +1,8 @@
 ---
 title: Sitecore Campaign Creator Module 1.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Campaign_Creator_module/10/Sitecore_Campaign_Creator_module.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Campaign Creator Module 1.0
 
 The Sitecore Campaign Creator provides a simple and effective way for marketers to create new campaign activities and apply taxonomy in order classify campaign activities into larger campaign groups.
 

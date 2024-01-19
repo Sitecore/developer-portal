@@ -1,14 +1,8 @@
 ---
 title: Email Experience Manager 3.5 Initial Release
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/35/Email_Experience_Manager_35_Initial_Release.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Email Experience Manager 3.5 Initial Release
 
 This page contains all the resources for **Email Experience Manager 3.5 rev. 170810 (Initial Release)**.  
   <Alert variant='warning' mb={4}>

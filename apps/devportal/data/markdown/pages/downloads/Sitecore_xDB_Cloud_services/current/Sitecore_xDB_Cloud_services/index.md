@@ -1,14 +1,8 @@
 ---
 title: Sitecore xDB Cloud Services
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_services/current/Sitecore_xDB_Cloud_services.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore xDB Cloud Services
 
 Documentation and Release Notes related to the Sitecore xDB Cloud Services.
 

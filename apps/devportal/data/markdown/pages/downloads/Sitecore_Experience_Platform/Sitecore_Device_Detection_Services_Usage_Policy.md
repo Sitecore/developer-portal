@@ -1,14 +1,8 @@
 ---
 title: Sitecore Device Detection Services Usage Policy
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_Device_Detection_Services_Usage_Policy
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Device Detection Services Usage Policy
 
 **`(last updated 20 October 2015)`**
 

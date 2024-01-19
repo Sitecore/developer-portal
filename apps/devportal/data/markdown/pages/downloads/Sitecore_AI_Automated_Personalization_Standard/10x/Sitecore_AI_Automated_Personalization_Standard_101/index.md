@@ -1,14 +1,8 @@
 ---
 title: Sitecore AI Automated Personalization Standard 10.1.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization_Standard/10x/Sitecore_AI_Automated_Personalization_Standard_101.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore AI Automated Personalization Standard 10.1.0
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />

@@ -1,14 +1,8 @@
 ---
 title: Release Notes - CE
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_80/Release_Notes__CE
-isDownloadPage: false
-isTopicPage: true
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Release Notes - CE
 
 **January 2023, released Sitecore Connect for Salesforce Marketing Cloud - Content Exchange 8.0.0**
 

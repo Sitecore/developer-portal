@@ -1,14 +1,8 @@
 ---
 title: Sitecore Commerce 8.2 powered by Microsoft Dynamics
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/82/Sitecore_Commerce_82_powered_by_Microsoft_Dynamics.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Commerce 8.2 powered by Microsoft Dynamics
 
 Sitecore's powered by Microsoft Dynamics commerce product, compatible with Sitecore Experience Platform 8.2 Initial Release through Update-5. Includes connectivity modules for integration with Microsoft Dynamics Retail AX 2012 R3 CU10.
 

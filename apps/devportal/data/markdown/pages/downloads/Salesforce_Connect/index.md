@@ -1,14 +1,8 @@
 ---
 title: Salesforce Connect
+description: ''
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Salesforce Connect
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>

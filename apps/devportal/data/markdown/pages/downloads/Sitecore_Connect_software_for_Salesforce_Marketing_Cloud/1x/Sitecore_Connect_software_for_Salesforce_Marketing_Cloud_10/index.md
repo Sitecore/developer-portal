@@ -1,14 +1,8 @@
 ---
 title: Sitecore Connect™ for Salesforce Marketing Cloud 1.0
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_10.aspx
-isDownloadPage: true
-isTopicPage: false
-isLandingPage: false
-isDownloadsLandingPage: false
-isPackageLandingPage: false
 ---
-
-# Sitecore Connect™ for Salesforce Marketing Cloud 1.0
 
 Sitecore Connect™ unites Sitecore Experience Manager and Sitecore Experience Platform content and data with Salesforce Marketing Cloud.
 

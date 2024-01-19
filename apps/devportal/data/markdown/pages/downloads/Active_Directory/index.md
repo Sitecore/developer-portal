@@ -1,14 +1,8 @@
 ---
 title: Active Directory
+description: ''
 origin: https://dev.sitecore.net/Downloads/Active_Directory.aspx
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: false
-isPackageLandingPage: true
 ---
-
-# Active Directory
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
