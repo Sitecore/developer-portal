@@ -70,6 +70,8 @@ Go with a monorepo strategy and focus on trunk-based deployments rather than git
 
 Deploy often, use feature toggles to prevent code from going live before it should and don't try to work in isolation.
 
+A final thing to note about the Monorepo approach is that currently in XM Cloud it is required for all heads contained within the Monorepo to be running the same version of Node if you want to use the inbuilt Editing Host functionality. If you want to use different Node versions for each head, then you will need to host your Editing Hosts externally by following this approach detailed in our Documentation Site: [Walkthrough: Configuring external editing hosts for XM Cloud instances](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--configuring-external-editing-hosts-for-xm-cloud-instances.html)
+
 ### Branching vs Continuous Integration
 
 Picking the right branching strategy can be a sensitive subject, many developers have very strong views on how branching should be done. In this recipe, we will offer a recommendation that will scale from small to large teams. If your client enforces a different branching strategy, the principles outlined here can still help your team streamline the process.
