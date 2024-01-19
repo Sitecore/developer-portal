@@ -17,7 +17,7 @@ const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
   }));
 
   return (
-    <Wrap as={'nav'} direction="column" mt={{ base: 0, md: 10 }} mr={4} p={{ base: 2, md: 0 }}>
+    <Wrap as={'nav'} direction="column" mt={{ base: 0, md: 10 }} mr={4} p={{ base: 2, md: 0 }} width={'3xs'} hideBelow={'xl'}>
       {title && (
         <Heading variant={'section'} size={'sm'} mb={{ base: 0, md: 2 }}>
           Table of contents
