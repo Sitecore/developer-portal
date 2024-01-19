@@ -199,7 +199,7 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
           wordBreak: 'normal',
         },
         'td:nth-of-type(1)': {
-          width: '15%',
+          width: '20%',
         },
         'td:nth-of-type(2)': {
           width: '65%',
