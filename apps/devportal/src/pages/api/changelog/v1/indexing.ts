@@ -60,8 +60,8 @@ async function GetEntries(list: IndexResult[], end: string, limit: string) {
         description: obj.productDescription,
         darkIcon: obj.darkIcon,
         lightIcon: obj.lightIcon,
-        sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName),
-        slug: slugify(obj.productName)
+        slug: slugify(obj.productName),
+        sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName)
       }),
       date: entry.releaseDate,
       image: entry.image[0] != null ? entry.image[0].fileUrl : null,
