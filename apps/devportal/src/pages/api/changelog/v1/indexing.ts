@@ -2,6 +2,7 @@ import { ChangelogEntry, ChangelogEntryList } from '@/../../packages/sc-changelo
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
 import { getQueryValue } from 'sc-changelog/utils/requests';
+import { slugify } from 'sc-changelog/utils/stringUtils';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
@@ -59,7 +60,8 @@ async function GetEntries(list: IndexResult[], end: string, limit: string) {
         description: obj.productDescription,
         darkIcon: obj.darkIcon,
         lightIcon: obj.lightIcon,
-        sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName)
+        sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName),
+        slug: slugify(obj.productName)
       }),
       date: entry.releaseDate,
       image: entry.image[0] != null ? entry.image[0].fileUrl : null,
