@@ -30,6 +30,10 @@
             {
               "title": "Components Design Best Practices",
               "path": "component-design-best-practices"
+            },
+            {
+              "title": "Development Workflow: Github Codespaces",
+              "path": "dev-workflow-codespaces"
             }
           ]
         },
