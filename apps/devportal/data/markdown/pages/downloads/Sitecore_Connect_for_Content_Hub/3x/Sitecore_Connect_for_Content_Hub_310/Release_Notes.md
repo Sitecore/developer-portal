@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Content_Hub/3x/Sitecore_Connect_for_Content_Hub_310/Release_Notes
 ---
 

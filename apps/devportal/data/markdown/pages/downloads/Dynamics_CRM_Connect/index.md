@@ -1,6 +1,6 @@
 ---
-title: Dynamics CRM Connect
-description: 'Dynamics CRM Connect provides integration between Dynamics CRM and Sitecore Experience Platform.'
+title: "Dynamics CRM Connect"
+description: "Dynamics CRM Connect provides integration between Dynamics CRM and Sitecore Experience Platform."
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect.aspx
 ---
 

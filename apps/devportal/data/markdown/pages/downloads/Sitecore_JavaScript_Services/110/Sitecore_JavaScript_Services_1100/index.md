@@ -1,6 +1,6 @@
 ---
-title: Sitecore JavaScript Services 11.0.0
-description: ''
+title: "Sitecore JavaScript Services 11.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/110/Sitecore_JavaScript_Services_1100.aspx
 ---
 

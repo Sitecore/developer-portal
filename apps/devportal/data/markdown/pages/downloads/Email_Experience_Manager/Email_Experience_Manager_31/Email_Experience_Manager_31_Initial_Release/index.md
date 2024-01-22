@@ -1,6 +1,6 @@
 ---
-title: Email Experience Manager 3.1 Initial Release
-description: ''
+title: "Email Experience Manager 3.1 Initial Release"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_31/Email_Experience_Manager_31_Initial_Release
 ---
 

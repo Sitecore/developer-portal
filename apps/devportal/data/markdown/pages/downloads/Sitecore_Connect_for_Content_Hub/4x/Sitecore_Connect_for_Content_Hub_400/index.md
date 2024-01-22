@@ -1,6 +1,6 @@
 ---
-title: Sitecore Connect™ for Content Hub 4.0.0
-description: ''
+title: "Sitecore Connect™ for Content Hub 4.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Content_Hub/4x/Sitecore_Connect_for_Content_Hub_400
 ---
 

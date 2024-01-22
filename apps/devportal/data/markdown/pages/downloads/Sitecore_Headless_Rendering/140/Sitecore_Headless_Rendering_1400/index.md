@@ -1,6 +1,6 @@
 ---
-title: Sitecore Headless Rendering 14.0.0
-description: ''
+title: "Sitecore Headless Rendering 14.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering/140/Sitecore_Headless_Rendering_1400.aspx
 ---
 

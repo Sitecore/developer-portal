@@ -1,6 +1,6 @@
 ---
-title: Release Notes - CE
-description: ''
+title: "Release Notes - CE"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_70/Release_Notes__CE
 ---
 

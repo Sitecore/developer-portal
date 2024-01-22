@@ -1,6 +1,6 @@
 ---
-title: Komfo Connector
-description: 'Komfo Connector provides a simple and effective way to create custom audiences using Sitecore xDB data that can be used for advertising on social networks. The tool also provides quick access to the Komfo platform and gives an analytics overview of the social channel, therefore allowing social media marketers to bring the power of Sitecore’s xDB segmentation, list management and campaign creation together with Komfo’s media management tools.'
+title: "Komfo Connector"
+description: "Komfo Connector provides a simple and effective way to create custom audiences using Sitecore xDB data that can be used for advertising on social networks. The tool also provides quick access to the Komfo platform and gives an analytics overview of the social channel, therefore allowing social media marketers to bring the power of Sitecore’s xDB segmentation, list management and campaign creation together with Komfo’s media management tools."
 origin: https://dev.sitecore.net/Downloads/Komfo_Connector.aspx
 ---
 

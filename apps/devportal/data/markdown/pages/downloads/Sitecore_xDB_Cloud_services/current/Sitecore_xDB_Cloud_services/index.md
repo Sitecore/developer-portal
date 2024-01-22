@@ -1,6 +1,6 @@
 ---
-title: Sitecore xDB Cloud Services
-description: ''
+title: "Sitecore xDB Cloud Services"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_services/current/Sitecore_xDB_Cloud_services.aspx
 ---
 

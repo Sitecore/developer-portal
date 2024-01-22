@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/3x/Sitecore_CLI_300/Release_Notes
 ---
 

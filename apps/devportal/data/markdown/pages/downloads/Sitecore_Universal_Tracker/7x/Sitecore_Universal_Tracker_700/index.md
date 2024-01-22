@@ -1,6 +1,6 @@
 ---
-title: Sitecore Universal Tracker 7.0.0
-description: ''
+title: "Sitecore Universal Tracker 7.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker/7x/Sitecore_Universal_Tracker_700.aspx
 ---
 

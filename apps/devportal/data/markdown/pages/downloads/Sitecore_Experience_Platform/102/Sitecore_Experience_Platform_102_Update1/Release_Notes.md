@@ -1,6 +1,6 @@
 ---
-title: Release notes
-description: ''
+title: "Release notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/102/Sitecore_Experience_Platform_102_Update1/Release_Notes
 ---
 

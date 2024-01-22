@@ -1,6 +1,6 @@
 ---
-title: Sitecore Azure Blob Storage 3.0.1
-description: ''
+title: "Sitecore Azure Blob Storage 3.0.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_301
 ---
 

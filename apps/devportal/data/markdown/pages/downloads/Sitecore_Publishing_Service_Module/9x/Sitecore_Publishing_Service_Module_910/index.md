@@ -1,6 +1,6 @@
 ---
-title: Sitecore Publishing Service Module 9.1.0
-description: ''
+title: "Sitecore Publishing Service Module 9.1.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service_Module/9x/Sitecore_Publishing_Service_Module_910.aspx
 ---
 

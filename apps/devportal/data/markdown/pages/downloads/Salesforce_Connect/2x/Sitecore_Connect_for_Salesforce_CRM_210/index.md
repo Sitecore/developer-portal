@@ -1,6 +1,6 @@
 ---
-title: Sitecore Connect for Salesforce CRM 2.1.0
-description: ''
+title: "Sitecore Connect for Salesforce CRM 2.1.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/2x/Sitecore_Connect_for_Salesforce_CRM_210.aspx
 ---
 

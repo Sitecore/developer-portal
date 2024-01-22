@@ -1,6 +1,6 @@
 ---
-title: Sitecore Connect™ for Microsoft Dynamics 365 Commerce 2.0.0
-description: ''
+title: "Sitecore Connect™ for Microsoft Dynamics 365 Commerce 2.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce/2x/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce_200.aspx
 ---
 

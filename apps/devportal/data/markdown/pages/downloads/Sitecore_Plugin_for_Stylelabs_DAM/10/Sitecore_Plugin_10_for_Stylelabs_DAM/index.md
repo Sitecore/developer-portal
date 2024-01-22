@@ -1,6 +1,6 @@
 ---
-title: Sitecore Connect™ for Sitecore DAM 1.0.0
-description: ''
+title: "Sitecore Connect™ for Sitecore DAM 1.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Plugin_for_Stylelabs_DAM/10/Sitecore_Plugin_10_for_Stylelabs_DAM.aspx
 ---
 

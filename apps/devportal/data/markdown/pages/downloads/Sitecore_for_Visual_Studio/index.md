@@ -1,6 +1,6 @@
 ---
-title: Sitecore for Visual Studio
-description: ''
+title: "Sitecore for Visual Studio"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_for_Visual_Studio.aspx
 ---
 

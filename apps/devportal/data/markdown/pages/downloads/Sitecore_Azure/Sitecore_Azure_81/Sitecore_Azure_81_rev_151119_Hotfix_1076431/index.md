@@ -1,6 +1,6 @@
 ---
-title: Sitecore Azure 8.1 rev. 151119 Hotfix 107643-1
-description: ''
+title: "Sitecore Azure 8.1 rev. 151119 Hotfix 107643-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure/Sitecore_Azure_81/Sitecore_Azure_81_rev_151119_Hotfix_1076431.aspx
 ---
 

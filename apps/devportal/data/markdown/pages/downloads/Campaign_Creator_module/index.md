@@ -1,6 +1,6 @@
 ---
-title: Campaign Creator module
-description: ''
+title: "Campaign Creator module"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Campaign_Creator_module.aspx
 ---
 

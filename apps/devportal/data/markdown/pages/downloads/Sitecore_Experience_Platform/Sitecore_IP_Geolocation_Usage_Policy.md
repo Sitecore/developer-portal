@@ -1,6 +1,6 @@
 ---
-title: Sitecore IP Geolocations Usage Policy
-description: ''
+title: "Sitecore IP Geolocations Usage Policy"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_IP_Geolocation_Usage_Policy
 ---
 

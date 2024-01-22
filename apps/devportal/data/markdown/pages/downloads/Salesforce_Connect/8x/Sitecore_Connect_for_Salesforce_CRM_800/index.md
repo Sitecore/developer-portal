@@ -1,6 +1,6 @@
 ---
-title: Sitecore Connect™ for Salesforce CRM 8.0.0
-description: ''
+title: "Sitecore Connect™ for Salesforce CRM 8.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/8x/Sitecore_Connect_for_Salesforce_CRM_800
 ---
 

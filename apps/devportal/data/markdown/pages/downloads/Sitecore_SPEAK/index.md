@@ -1,6 +1,6 @@
 ---
-title: Sitecore SPEAK
-description: 'SPEAK (Sitecore Process Enablement & Accelerator Kit) is a framework for developing Sitecore applications with a consistent interface quickly and easily. SPEAK gives you a predefined set of page layouts and components, and a predefined set of user experience guidelines.'
+title: "Sitecore SPEAK"
+description: "SPEAK (Sitecore Process Enablement & Accelerator Kit) is a framework for developing Sitecore applications with a consistent interface quickly and easily. SPEAK gives you a predefined set of page layouts and components, and a predefined set of user experience guidelines."
 origin: https://dev.sitecore.net/Downloads/Sitecore_SPEAK.aspx
 ---
 

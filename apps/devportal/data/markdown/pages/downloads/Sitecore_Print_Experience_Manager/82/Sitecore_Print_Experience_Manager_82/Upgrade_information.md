@@ -1,6 +1,6 @@
 ---
-title: Upgrade Information
-description: ''
+title: "Upgrade Information"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/82/Sitecore_Print_Experience_Manager_82/Upgrade_information
 ---
 

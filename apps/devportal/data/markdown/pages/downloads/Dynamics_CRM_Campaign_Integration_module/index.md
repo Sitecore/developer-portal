@@ -1,6 +1,6 @@
 ---
-title: Dynamics CRM Campaign Integration module
-description: ''
+title: "Dynamics CRM Campaign Integration module"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Campaign_Integration_module.aspx
 ---
 

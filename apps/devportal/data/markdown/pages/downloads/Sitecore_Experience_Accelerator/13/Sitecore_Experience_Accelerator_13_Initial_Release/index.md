@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Accelerator 1.3
-description: ''
+title: "Sitecore Experience Accelerator 1.3"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/13/Sitecore_Experience_Accelerator_13_Initial_Release.aspx
 ---
 

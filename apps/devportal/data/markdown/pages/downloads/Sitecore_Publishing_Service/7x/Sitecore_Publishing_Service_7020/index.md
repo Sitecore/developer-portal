@@ -1,6 +1,6 @@
 ---
-title: Sitecore Publishing Service 7.0
-description: ''
+title: "Sitecore Publishing Service 7.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/7x/Sitecore_Publishing_Service_7020.aspx
 ---
 

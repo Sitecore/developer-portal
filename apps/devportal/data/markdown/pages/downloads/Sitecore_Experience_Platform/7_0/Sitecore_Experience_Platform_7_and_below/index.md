@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Platform 7 and below
-description: ''
+title: "Sitecore Experience Platform 7 and below"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/7_0/Sitecore_Experience_Platform_7_and_below.aspx
 ---
 

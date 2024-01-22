@@ -1,6 +1,6 @@
 ---
-title: Release notes for Sitecore PXM 8.0 - Update 1
-description: ''
+title: "Release notes for Sitecore PXM 8.0 - Update 1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/8_0/PXM_80_U1/Release_Notes
 ---
 

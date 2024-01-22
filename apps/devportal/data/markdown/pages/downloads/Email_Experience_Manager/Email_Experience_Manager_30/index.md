@@ -1,6 +1,6 @@
 ---
-title: 3.0
-description: 'Use EXM to create highly customizable messages that are both personal and relevant to your customers.'
+title: "3.0"
+description: "Use EXM to create highly customizable messages that are both personal and relevant to your customers."
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_30.aspx
 ---
 

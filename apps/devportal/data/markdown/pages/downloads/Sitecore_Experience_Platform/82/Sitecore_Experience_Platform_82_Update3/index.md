@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Platform 8.2 Update-3
-description: ''
+title: "Sitecore Experience Platform 8.2 Update-3"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Update3.aspx
 ---
 

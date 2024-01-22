@@ -1,6 +1,6 @@
 ---
-title: Salesforce Connect 1.4.1
-description: ''
+title: "Salesforce Connect 1.4.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/Salesforce_Connect_1/Salesforce_Connect_1_4_1.aspx
 ---
 

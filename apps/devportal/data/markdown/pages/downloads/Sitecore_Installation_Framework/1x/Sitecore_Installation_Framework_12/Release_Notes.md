@@ -1,6 +1,6 @@
 ---
-title: SIF 1.2 - Release Notes
-description: ''
+title: "SIF 1.2 - Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/1x/Sitecore_Installation_Framework_12/Release_Notes
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Sitecore Connect™ for Content Hub 5.1.0
-description: ''
+title: "Sitecore Connect™ for Content Hub 5.1.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Content_Hub/5x/Sitecore_Connect_for_Content_Hub_510
 ---
 

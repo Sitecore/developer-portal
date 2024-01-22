@@ -1,6 +1,6 @@
 ---
-title: Release notes - Sitecore Azure 8.0
-description: ''
+title: "Release notes - Sitecore Azure 8.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure/80/Sitecore_Azure_80_Update2/Release_notes_test
 ---
 

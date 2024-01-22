@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering/21x/Sitecore_Headless_Rendering_2101/Release_Notes
 ---
 

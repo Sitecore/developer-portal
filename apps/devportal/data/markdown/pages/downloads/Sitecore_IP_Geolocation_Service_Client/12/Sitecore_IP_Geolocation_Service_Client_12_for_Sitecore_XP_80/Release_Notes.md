@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_IP_Geolocation_Service_Client/12/Sitecore_IP_Geolocation_Service_Client_12_for_Sitecore_XP_80/Release_Notes
 ---
 

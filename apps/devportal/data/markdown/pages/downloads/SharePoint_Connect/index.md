@@ -1,6 +1,6 @@
 ---
-title: SharePoint Connect
-description: ''
+title: "SharePoint Connect"
+description: ""
 origin: https://dev.sitecore.net/Downloads/SharePoint_Connect.aspx
 ---
 

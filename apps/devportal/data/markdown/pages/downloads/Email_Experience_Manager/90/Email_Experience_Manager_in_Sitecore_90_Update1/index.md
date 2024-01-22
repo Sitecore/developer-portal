@@ -1,6 +1,6 @@
 ---
-title: Email Experience Manager in Sitecore 9.0 Update-1
-description: ''
+title: "Email Experience Manager in Sitecore 9.0 Update-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/90/Email_Experience_Manager_in_Sitecore_90_Update1.aspx
 ---
 

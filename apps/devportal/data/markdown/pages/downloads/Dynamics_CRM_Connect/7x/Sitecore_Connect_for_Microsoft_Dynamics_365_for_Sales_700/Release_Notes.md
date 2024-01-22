@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/7x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_700/Release_Notes
 ---
 

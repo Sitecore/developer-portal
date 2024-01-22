@@ -1,6 +1,6 @@
 ---
-title: Email Experience Manager 3.0 Update-3
-description: ''
+title: "Email Experience Manager 3.0 Update-3"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_30/Email_Experience_Manager_30_Update3.aspx
 ---
 

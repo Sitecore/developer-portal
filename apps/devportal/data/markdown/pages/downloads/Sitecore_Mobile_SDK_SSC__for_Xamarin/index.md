@@ -1,6 +1,6 @@
 ---
-title: Sitecore Mobile SDK (SSC)  for Xamarin
-description: ''
+title: "Sitecore Mobile SDK (SSC)  for Xamarin"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Mobile_SDK_SSC__for_Xamarin.aspx
 ---
 

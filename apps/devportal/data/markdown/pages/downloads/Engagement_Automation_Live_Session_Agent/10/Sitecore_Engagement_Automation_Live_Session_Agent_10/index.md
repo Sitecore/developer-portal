@@ -1,6 +1,6 @@
 ---
-title: Sitecore Engagement Automation Live Session Agent 1.0
-description: ''
+title: "Sitecore Engagement Automation Live Session Agent 1.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Engagement_Automation_Live_Session_Agent/10/Sitecore_Engagement_Automation_Live_Session_Agent_10.aspx
 ---
 

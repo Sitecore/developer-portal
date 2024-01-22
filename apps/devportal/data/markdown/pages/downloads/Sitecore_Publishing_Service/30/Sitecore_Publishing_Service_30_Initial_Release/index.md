@@ -1,6 +1,6 @@
 ---
-title: Sitecore Publishing Service 3.0 Initial Release
-description: ''
+title: "Sitecore Publishing Service 3.0 Initial Release"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/30/Sitecore_Publishing_Service_30_Initial_Release.aspx
 ---
 

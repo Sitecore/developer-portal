@@ -1,6 +1,6 @@
 ---
-title: 8.2
-description: ''
+title: "8.2"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/82
 ---
 

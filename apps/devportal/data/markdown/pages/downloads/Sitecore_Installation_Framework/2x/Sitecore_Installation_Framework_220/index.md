@@ -1,6 +1,6 @@
 ---
-title: Sitecore Installation Framework 2.2.0
-description: ''
+title: "Sitecore Installation Framework 2.2.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_220
 ---
 

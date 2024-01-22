@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Commerce 10.2
-description: ''
+title: "Sitecore Experience Commerce 10.2"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/102/Sitecore_Experience_Commerce_102.aspx
 ---
 

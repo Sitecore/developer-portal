@@ -1,6 +1,6 @@
 ---
-title: Sitecore Connect™ for Sitecore CMP 1.0.0
-description: ''
+title: "Sitecore Connect™ for Sitecore CMP 1.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Sitecore_CMP/10/Sitecore_Connect_for_Sitecore_CMP_100.aspx
 ---
 

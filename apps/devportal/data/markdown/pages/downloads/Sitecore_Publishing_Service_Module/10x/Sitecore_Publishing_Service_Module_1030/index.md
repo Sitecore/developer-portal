@@ -1,6 +1,6 @@
 ---
-title: Sitecore Publishing Service Module 10.3.0
-description: ''
+title: "Sitecore Publishing Service Module 10.3.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1030
 ---
 

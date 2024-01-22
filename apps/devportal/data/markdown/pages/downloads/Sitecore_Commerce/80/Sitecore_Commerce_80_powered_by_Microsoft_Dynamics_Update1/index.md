@@ -1,6 +1,6 @@
 ---
-title: Sitecore Commerce 8.0 powered by Microsoft Dynamics Update-1
-description: ''
+title: "Sitecore Commerce 8.0 powered by Microsoft Dynamics Update-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/80/Sitecore_Commerce_80_powered_by_Microsoft_Dynamics_Update1.aspx
 ---
 

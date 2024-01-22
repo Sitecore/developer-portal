@@ -1,6 +1,6 @@
 ---
-title: Sitecore Headless Rendering 19.0.1
-description: ''
+title: "Sitecore Headless Rendering 19.0.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering/19x/Sitecore_Headless_Rendering_1901.aspx
 ---
 

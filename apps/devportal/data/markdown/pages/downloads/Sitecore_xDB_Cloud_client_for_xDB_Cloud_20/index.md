@@ -1,6 +1,6 @@
 ---
-title: Sitecore xDB Cloud client for xDB Cloud 2.0
-description: ''
+title: "Sitecore xDB Cloud client for xDB Cloud 2.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_client_for_xDB_Cloud_20.aspx
 ---
 

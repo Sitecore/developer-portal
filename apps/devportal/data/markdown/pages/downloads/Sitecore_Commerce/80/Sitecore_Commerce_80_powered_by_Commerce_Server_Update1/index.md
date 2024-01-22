@@ -1,6 +1,6 @@
 ---
-title: Sitecore Commerce 8.0 powered by Commerce Server Update-1
-description: ''
+title: "Sitecore Commerce 8.0 powered by Commerce Server Update-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/80/Sitecore_Commerce_80_powered_by_Commerce_Server_Update1.aspx
 ---
 

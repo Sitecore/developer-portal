@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce/1x/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce_100/Release_Notes
 ---
 

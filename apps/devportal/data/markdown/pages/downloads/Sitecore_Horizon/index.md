@@ -1,6 +1,6 @@
 ---
-title: Sitecore Horizon
-description: ''
+title: "Sitecore Horizon"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon.aspx
 ---
 

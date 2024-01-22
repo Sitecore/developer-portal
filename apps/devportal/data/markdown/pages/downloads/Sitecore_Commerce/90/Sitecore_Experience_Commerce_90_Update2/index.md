@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Commerce 9.0 Update-2
-description: ''
+title: "Sitecore Experience Commerce 9.0 Update-2"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/90/Sitecore_Experience_Commerce_90_Update2.aspx
 ---
 

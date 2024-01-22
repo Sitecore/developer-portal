@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_client/80/Sitecore_xDB_Cloud_client_80_rev_160210/Release_Notes
 ---
 

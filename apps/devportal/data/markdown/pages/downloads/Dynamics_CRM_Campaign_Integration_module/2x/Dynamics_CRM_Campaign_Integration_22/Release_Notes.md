@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Campaign_Integration_module/2x/Dynamics_CRM_Campaign_Integration_22/Release_Notes
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Upgrade Guide
-description: ''
+title: "Upgrade Guide"
+description: ""
 origin: https://dev.sitecore.net/Downloads/SharePoint_Connect/2_0/SharePoint_Connect_2_2/Upgrade_Guide
 ---
 

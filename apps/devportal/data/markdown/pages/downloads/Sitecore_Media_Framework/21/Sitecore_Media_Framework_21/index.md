@@ -1,6 +1,6 @@
 ---
-title: Sitecore Media Framework 2.1
-description: ''
+title: "Sitecore Media Framework 2.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Media_Framework/21/Sitecore_Media_Framework_21.aspx
 ---
 

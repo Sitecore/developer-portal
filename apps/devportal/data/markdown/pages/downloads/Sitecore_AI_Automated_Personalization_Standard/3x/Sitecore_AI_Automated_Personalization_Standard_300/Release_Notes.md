@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization_Standard/3x/Sitecore_AI_Automated_Personalization_Standard_300/Release_Notes
 ---
 

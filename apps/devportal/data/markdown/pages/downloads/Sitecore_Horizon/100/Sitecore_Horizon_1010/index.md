@@ -1,6 +1,6 @@
 ---
-title: Sitecore Horizon 10.1.0
-description: ''
+title: "Sitecore Horizon 10.1.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon/100/Sitecore_Horizon_1010
 ---
 

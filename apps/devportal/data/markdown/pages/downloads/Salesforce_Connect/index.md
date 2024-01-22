@@ -1,6 +1,6 @@
 ---
-title: Salesforce Connect
-description: ''
+title: "Salesforce Connect"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect.aspx
 ---
 

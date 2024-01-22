@@ -1,6 +1,6 @@
 ---
-title: Content Title
-description: ''
+title: "Content Title"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon/100/Sitecore_Horizon_1011/Release_Notes
 ---
 

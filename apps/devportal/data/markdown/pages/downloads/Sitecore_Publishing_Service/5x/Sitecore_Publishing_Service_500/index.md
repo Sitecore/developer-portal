@@ -1,6 +1,6 @@
 ---
-title: Sitecore Publishing Service 5.0.0
-description: ''
+title: "Sitecore Publishing Service 5.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/5x/Sitecore_Publishing_Service_500.aspx
 ---
 

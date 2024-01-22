@@ -1,6 +1,6 @@
 ---
-title: Sitecore Horizon 9.3.0
-description: ''
+title: "Sitecore Horizon 9.3.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon/93/Sitecore_Horizon_93_Initial_version.aspx
 ---
 

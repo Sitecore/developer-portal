@@ -1,6 +1,6 @@
 ---
-title: Sitecore Commerce 8.2.1 Update-3
-description: ''
+title: "Sitecore Commerce 8.2.1 Update-3"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/821/Sitecore_Commerce_821_Update3.aspx
 ---
 

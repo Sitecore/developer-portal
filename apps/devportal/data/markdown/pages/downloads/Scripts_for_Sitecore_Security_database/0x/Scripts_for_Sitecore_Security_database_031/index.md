@@ -1,6 +1,6 @@
 ---
-title: Scripts for Sitecore Security database 0.3.1
-description: ''
+title: "Scripts for Sitecore Security database 0.3.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_031.aspx
 ---
 

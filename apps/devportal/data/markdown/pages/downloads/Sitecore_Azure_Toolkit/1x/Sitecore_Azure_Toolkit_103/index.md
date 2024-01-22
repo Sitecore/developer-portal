@@ -1,6 +1,6 @@
 ---
-title: Sitecore Azure Toolkit 1.0 rev. 170323
-description: ''
+title: "Sitecore Azure Toolkit 1.0 rev. 170323"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/1x/Sitecore_Azure_Toolkit_103.aspx
 ---
 

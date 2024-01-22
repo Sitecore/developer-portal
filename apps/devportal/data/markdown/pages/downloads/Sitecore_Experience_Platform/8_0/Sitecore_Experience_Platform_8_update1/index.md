@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Platform 8.0 Update-1
-description: ''
+title: "Sitecore Experience Platform 8.0 Update-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_8_update1.aspx
 ---
 

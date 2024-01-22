@@ -1,6 +1,6 @@
 ---
-title: Sitecore Universal Tracker 3.0.0
-description: ''
+title: "Sitecore Universal Tracker 3.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker/3x/Sitecore_Universal_Tracker_300.aspx
 ---
 

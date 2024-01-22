@@ -1,8 +1,6 @@
 ---
-title: Resource files for Modules
-description: 'Module resource files for upgrading Core, Master and Web.
-Download and use the packages for the modules and versions you are upgrading from.
-'
+title: "Resource files for Modules"
+description: "Module resource files for upgrading Core, Master and Web.Download and use the packages for the modules and versions you are upgrading from."
 origin: https://dev.sitecore.net/Downloads/Resource_files_for_Modules.aspx
 ---
 

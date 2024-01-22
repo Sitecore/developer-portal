@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Data_Exchange_Framework/8x/Data_Exchange_Framework_800/Release_Notes
 ---
 

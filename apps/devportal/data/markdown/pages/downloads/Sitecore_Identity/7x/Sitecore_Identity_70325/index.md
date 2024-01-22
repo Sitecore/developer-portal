@@ -1,6 +1,6 @@
 ---
-title: Sitecore Identity 7.0.325
-description: ''
+title: "Sitecore Identity 7.0.325"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/7x/Sitecore_Identity_70325
 ---
 

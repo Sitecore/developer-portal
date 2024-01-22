@@ -1,7 +1,6 @@
 ---
-title: Sitecore Azure Blob Storage
-description: 'Sitecore Blob Storage allows customer to store large number of media items with more efficient hosting cost and greater performance by removing large blobs from SQL Databases and move them to blob storage.
-Releases prior to 2.0.0 are located under the corresponding Sitecore Experience Platform downloads page.'
+title: "Sitecore Azure Blob Storage"
+description: "Sitecore Blob Storage allows customer to store large number of media items with more efficient hosting cost and greater performance by removing large blobs from SQL Databases and move them to blob storage.Releases prior to 2.0.0 are located under the corresponding Sitecore Experience Platform downloads page."
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Blob_Storage.aspx
 ---
 

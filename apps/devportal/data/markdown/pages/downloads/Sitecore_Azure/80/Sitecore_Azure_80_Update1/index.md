@@ -1,6 +1,6 @@
 ---
-title: Sitecore Azure 8.0 rev. 150522 Hotfix 68545-1
-description: ''
+title: "Sitecore Azure 8.0 rev. 150522 Hotfix 68545-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure/80/Sitecore_Azure_80_Update1.aspx
 ---
 

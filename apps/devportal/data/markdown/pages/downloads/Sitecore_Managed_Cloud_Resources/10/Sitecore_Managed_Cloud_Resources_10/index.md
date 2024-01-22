@@ -1,6 +1,6 @@
 ---
-title: Sitecore Managed Cloud Resources 1.0
-description: ''
+title: "Sitecore Managed Cloud Resources 1.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Managed_Cloud_Resources/10/Sitecore_Managed_Cloud_Resources_10.aspx
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Sitecore Publishing Service 6.0.0
-description: ''
+title: "Sitecore Publishing Service 6.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/6x/Sitecore_Publishing_Service_600.aspx
 ---
 

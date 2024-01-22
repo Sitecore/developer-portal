@@ -1,6 +1,6 @@
 ---
-title: Sitecore JavaScript Services 13.0.0
-description: ''
+title: "Sitecore JavaScript Services 13.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/130/Sitecore_JavaScript_Services_1300.aspx
 ---
 

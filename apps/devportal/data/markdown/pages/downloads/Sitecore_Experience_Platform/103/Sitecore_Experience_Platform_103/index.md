@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Platform 10.3
-description: ''
+title: "Sitecore Experience Platform 10.3"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/103/Sitecore_Experience_Platform_103.aspx
 ---
 

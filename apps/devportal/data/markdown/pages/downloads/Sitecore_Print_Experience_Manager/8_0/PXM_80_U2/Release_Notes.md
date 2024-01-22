@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/8_0/PXM_80_U2/Release_Notes
 ---
 

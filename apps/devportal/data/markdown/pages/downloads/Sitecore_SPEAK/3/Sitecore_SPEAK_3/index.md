@@ -1,6 +1,6 @@
 ---
-title: Sitecore SPEAK 3.0 Initial Release
-description: ''
+title: "Sitecore SPEAK 3.0 Initial Release"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_SPEAK/3/Sitecore_SPEAK_3.aspx
 ---
 

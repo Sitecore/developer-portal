@@ -1,6 +1,6 @@
 ---
-title: Email Experience Manager 3.4 Initial Release
-description: ''
+title: "Email Experience Manager 3.4 Initial Release"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_34/Email_Experience_Manager_34_Initial_Release.aspx
 ---
 

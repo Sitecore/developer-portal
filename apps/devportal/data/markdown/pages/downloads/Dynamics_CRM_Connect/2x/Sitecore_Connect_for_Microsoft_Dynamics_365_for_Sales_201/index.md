@@ -1,6 +1,6 @@
 ---
-title: Sitecore Connect for Microsoft Dynamics 365 for Sales 2.0.1
-description: ''
+title: "Sitecore Connect for Microsoft Dynamics 365 for Sales 2.0.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/2x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_201.aspx
 ---
 

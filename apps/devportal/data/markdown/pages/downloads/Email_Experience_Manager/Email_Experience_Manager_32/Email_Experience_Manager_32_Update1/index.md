@@ -1,6 +1,6 @@
 ---
-title: Email Experience Manager 3.2 Update-1
-description: ''
+title: "Email Experience Manager 3.2 Update-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_32/Email_Experience_Manager_32_Update1.aspx
 ---
 

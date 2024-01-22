@@ -1,6 +1,6 @@
 ---
-title: Dynamics CRM Connect 1.4.1
-description: ''
+title: "Dynamics CRM Connect 1.4.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_1_4_1.aspx
 ---
 

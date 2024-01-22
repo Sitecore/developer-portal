@@ -1,7 +1,6 @@
 ---
-title: Web Forms For Marketers
-description: 'Create simple web forms that record and report information provided by visitors to your website
-Note! Web Forms For Marketers was deprecated with the release of Sitecore XP 9.1'
+title: "Web Forms For Marketers"
+description: "Create simple web forms that record and report information provided by visitors to your websiteNote! Web Forms For Marketers was deprecated with the release of Sitecore XP 9.1"
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers.aspx
 ---
 

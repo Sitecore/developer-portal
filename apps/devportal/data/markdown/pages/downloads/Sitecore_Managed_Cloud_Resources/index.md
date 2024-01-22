@@ -1,6 +1,6 @@
 ---
-title: Sitecore Managed Cloud Resources
-description: 'Resources to assist Sitecore Managed Cloud customers.'
+title: "Sitecore Managed Cloud Resources"
+description: "Resources to assist Sitecore Managed Cloud customers."
 origin: https://dev.sitecore.net/Downloads/Sitecore_Managed_Cloud_Resources.aspx
 ---
 

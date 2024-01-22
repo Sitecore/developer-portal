@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Sitecore_CMP/30/Sitecore_Connect_for_Sitecore_CMP_300/Release_Notes
 ---
 

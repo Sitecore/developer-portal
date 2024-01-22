@@ -1,6 +1,6 @@
 ---
-title: Sitecore Azure Toolkit 3.0.0
-description: ''
+title: "Sitecore Azure Toolkit 3.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/3x/Sitecore_Azure_Toolkit_300.aspx
 ---
 

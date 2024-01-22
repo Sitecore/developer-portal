@@ -1,6 +1,6 @@
 ---
-title: Sitecore Publishing Service 3.1 Update-4
-description: ''
+title: "Sitecore Publishing Service 3.1 Update-4"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/31/Sitecore_Publishing_Service_31_Update4.aspx
 ---
 

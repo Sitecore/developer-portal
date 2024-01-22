@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/35/Email_Experience_Manager_35_Initial_Release/Release_Notes
 ---
 

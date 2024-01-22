@@ -1,6 +1,6 @@
 ---
-title: Team Development for Sitecore
-description: ''
+title: "Team Development for Sitecore"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Team_Development_for_Sitecore.aspx
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Sitecore Installation Framework 1.2
-description: ''
+title: "Sitecore Installation Framework 1.2"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/1x/Sitecore_Installation_Framework_12
 ---
 

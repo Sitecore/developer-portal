@@ -1,6 +1,6 @@
 ---
-title: Sitecore Campaign Creator Module 1.0
-description: ''
+title: "Sitecore Campaign Creator Module 1.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Campaign_Creator_module/10/Sitecore_Campaign_Creator_module.aspx
 ---
 

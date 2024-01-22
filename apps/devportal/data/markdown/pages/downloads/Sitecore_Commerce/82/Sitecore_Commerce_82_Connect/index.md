@@ -1,6 +1,6 @@
 ---
-title: Sitecore Commerce 8.2 Connect
-description: ''
+title: "Sitecore Commerce 8.2 Connect"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/82/Sitecore_Commerce_82_Connect.aspx
 ---
 

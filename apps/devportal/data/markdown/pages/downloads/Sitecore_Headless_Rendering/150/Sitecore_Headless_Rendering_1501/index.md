@@ -1,6 +1,6 @@
 ---
-title: Sitecore Headless Rendering 15.0.1
-description: ''
+title: "Sitecore Headless Rendering 15.0.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering/150/Sitecore_Headless_Rendering_1501
 ---
 

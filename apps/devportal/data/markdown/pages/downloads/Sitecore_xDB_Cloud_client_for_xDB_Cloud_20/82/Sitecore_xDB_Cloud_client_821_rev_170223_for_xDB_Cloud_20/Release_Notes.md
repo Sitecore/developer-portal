@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_client_for_xDB_Cloud_20/82/Sitecore_xDB_Cloud_client_821_rev_170223_for_xDB_Cloud_20/Release_Notes
 ---
 

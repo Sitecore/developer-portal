@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Platform 10.3 Update-1
-description: ''
+title: "Sitecore Experience Platform 10.3 Update-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/103/Sitecore_Experience_Platform_103_Update1.aspx
 ---
 

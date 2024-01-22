@@ -1,6 +1,6 @@
 ---
-title: Komfo Connector 1.0 – Release Notes
-description: ''
+title: "Komfo Connector 1.0 – Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Komfo_Connector/10/Komfo_Connector_10/Release_Notes
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Dynamics CRM Campaign Integration 2.1
-description: ''
+title: "Dynamics CRM Campaign Integration 2.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Campaign_Integration_module/2x/Dynamics_CRM_Campaign_Integration_21.aspx
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Sitecore Commerce 8.2.1 Initial Release
-description: ''
+title: "Sitecore Commerce 8.2.1 Initial Release"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/821/Sitecore_Commerce_821.aspx
 ---
 

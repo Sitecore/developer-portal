@@ -1,6 +1,6 @@
 ---
-title: Sitecore Publishing Service 2.0 Update-1
-description: ''
+title: "Sitecore Publishing Service 2.0 Update-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/20/Sitecore_Publishing_Service_20_Update1.aspx
 ---
 

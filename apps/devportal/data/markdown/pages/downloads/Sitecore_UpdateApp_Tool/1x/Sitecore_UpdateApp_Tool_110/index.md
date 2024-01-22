@@ -1,6 +1,6 @@
 ---
-title: Sitecore UpdateApp Tool 1.1.0
-description: ''
+title: "Sitecore UpdateApp Tool 1.1.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_110
 ---
 

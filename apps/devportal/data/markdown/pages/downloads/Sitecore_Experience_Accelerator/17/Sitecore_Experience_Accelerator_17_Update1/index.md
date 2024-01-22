@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Accelerator 1.7 Update-1
-description: ''
+title: "Sitecore Experience Accelerator 1.7 Update-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/17/Sitecore_Experience_Accelerator_17_Update1.aspx
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Sitecore CLI 5.1.25
-description: ''
+title: "Sitecore CLI 5.1.25"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_5125
 ---
 

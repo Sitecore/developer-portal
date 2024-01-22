@@ -1,6 +1,6 @@
 ---
-title: Sitecore CLI
-description: ' '
+title: "Sitecore CLI"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx
 ---
 

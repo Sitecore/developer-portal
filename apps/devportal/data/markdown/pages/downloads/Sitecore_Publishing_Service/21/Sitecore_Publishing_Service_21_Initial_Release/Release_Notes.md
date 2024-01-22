@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/21/Sitecore_Publishing_Service_21_Initial_Release/Release_Notes
 ---
 

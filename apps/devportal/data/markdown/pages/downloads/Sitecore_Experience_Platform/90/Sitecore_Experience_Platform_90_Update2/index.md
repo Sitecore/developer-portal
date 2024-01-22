@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Platform 9.0 Update-2
-description: ''
+title: "Sitecore Experience Platform 9.0 Update-2"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/90/Sitecore_Experience_Platform_90_Update2.aspx
 ---
 

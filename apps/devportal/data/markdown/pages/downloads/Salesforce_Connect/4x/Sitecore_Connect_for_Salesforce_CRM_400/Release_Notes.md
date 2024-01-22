@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/4x/Sitecore_Connect_for_Salesforce_CRM_400/Release_Notes
 ---
 

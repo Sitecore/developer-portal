@@ -1,6 +1,6 @@
 ---
-title: Sitecore Print Experience Manager 9.0
-description: ''
+title: "Sitecore Print Experience Manager 9.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/90/Sitecore_Print_Experience_Manager_90.aspx
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Platform 9.3 Initial Release
-description: ''
+title: "Sitecore Experience Platform 9.3 Initial Release"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/93/Sitecore_Experience_Platform_93_Initial_Release.aspx
 ---
 

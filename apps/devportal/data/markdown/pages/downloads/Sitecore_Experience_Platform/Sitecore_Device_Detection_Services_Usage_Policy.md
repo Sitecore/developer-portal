@@ -1,6 +1,6 @@
 ---
-title: Sitecore Device Detection Services Usage Policy
-description: ''
+title: "Sitecore Device Detection Services Usage Policy"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_Device_Detection_Services_Usage_Policy
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Sitecore CLI 5.2.109
-description: ''
+title: "Sitecore CLI 5.2.109"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_52109.aspx
 ---
 

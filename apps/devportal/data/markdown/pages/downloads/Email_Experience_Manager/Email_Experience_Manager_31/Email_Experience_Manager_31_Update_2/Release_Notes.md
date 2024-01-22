@@ -1,6 +1,6 @@
 ---
-title: Sitecore Email Experience Manager 3.1 rev.151213  – Release Notes
-description: ''
+title: "Sitecore Email Experience Manager 3.1 rev.151213  – Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_31/Email_Experience_Manager_31_Update_2/Release_Notes
 ---
 

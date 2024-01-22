@@ -1,6 +1,6 @@
 ---
-title: Package Management Service 5.0.0
-description: ''
+title: "Package Management Service 5.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Package_Management_Service/5x/Package_Management_Service_500.aspx
 ---
 

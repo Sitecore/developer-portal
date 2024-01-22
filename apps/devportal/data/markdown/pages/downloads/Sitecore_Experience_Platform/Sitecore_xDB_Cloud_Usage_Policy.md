@@ -1,6 +1,6 @@
 ---
-title: Sitecore xDB Cloud Usage Policy
-description: ''
+title: "Sitecore xDB Cloud Usage Policy"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_xDB_Cloud_Usage_Policy
 ---
 

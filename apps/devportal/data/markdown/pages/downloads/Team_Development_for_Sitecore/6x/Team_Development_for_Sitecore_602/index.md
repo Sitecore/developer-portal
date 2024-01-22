@@ -1,6 +1,6 @@
 ---
-title: Team Development for Sitecore 6.0.2
-description: ''
+title: "Team Development for Sitecore 6.0.2"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_602.aspx
 ---
 

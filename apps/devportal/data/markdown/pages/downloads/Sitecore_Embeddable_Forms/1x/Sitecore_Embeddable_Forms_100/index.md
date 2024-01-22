@@ -1,6 +1,6 @@
 ---
-title: Sitecore Embeddable Forms 1.0.0
-description: ''
+title: "Sitecore Embeddable Forms 1.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Embeddable_Forms/1x/Sitecore_Embeddable_Forms_100.aspx
 ---
 

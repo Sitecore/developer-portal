@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_for_Visual_Studio/5x/Sitecore_for_Visual_Studio_52113/Release_Notes
 ---
 

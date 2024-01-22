@@ -1,6 +1,6 @@
 ---
-title: Sitecore JavaScript Services 9.0 Update 1 Tech Preview
-description: ''
+title: "Sitecore JavaScript Services 9.0 Update 1 Tech Preview"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/90_Tech_Preview/Sitecore_JavaScript_Services_90_Update_1_Tech_Preview.aspx
 ---
 

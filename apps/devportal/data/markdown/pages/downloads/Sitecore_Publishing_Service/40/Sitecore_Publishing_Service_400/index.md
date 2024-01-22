@@ -1,6 +1,6 @@
 ---
-title: Sitecore Publishing Service 4.0.0
-description: ''
+title: "Sitecore Publishing Service 4.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/40/Sitecore_Publishing_Service_400.aspx
 ---
 

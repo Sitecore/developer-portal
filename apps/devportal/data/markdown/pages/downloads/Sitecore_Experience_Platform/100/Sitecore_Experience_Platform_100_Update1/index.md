@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Platform 10.0 Update-1
-description: ''
+title: "Sitecore Experience Platform 10.0 Update-1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/100/Sitecore_Experience_Platform_100_Update1.aspx
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Sitecore Azure Toolkit 2.4.0
-description: ''
+title: "Sitecore Azure Toolkit 2.4.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_240.aspx
 ---
 

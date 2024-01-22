@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Accelerator
-description: 'The Sitecore® Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly.'
+title: "Sitecore Experience Accelerator"
+description: "The Sitecore® Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly."
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator.aspx
 ---
 

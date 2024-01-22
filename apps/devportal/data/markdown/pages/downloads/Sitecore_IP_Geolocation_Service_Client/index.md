@@ -1,6 +1,6 @@
 ---
-title: Sitecore IP Geolocation Service Client
-description: ''
+title: "Sitecore IP Geolocation Service Client"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_IP_Geolocation_Service_Client.aspx
 ---
 

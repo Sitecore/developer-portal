@@ -1,6 +1,6 @@
 ---
-title: Sitecore Identity 2.0.0
-description: ''
+title: "Sitecore Identity 2.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/2x/Sitecore_Identity_200
 ---
 

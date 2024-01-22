@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Accelerator 1.9.0
-description: ''
+title: "Sitecore Experience Accelerator 1.9.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/19/Sitecore_Experience_Accelerator_190.aspx
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Active Directory 1.2
-description: ''
+title: "Active Directory 1.2"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Active_Directory/1_0/Active_Directory_1_2.aspx
 ---
 

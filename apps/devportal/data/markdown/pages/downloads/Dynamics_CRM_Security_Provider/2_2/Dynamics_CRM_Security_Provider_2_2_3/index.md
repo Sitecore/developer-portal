@@ -1,6 +1,6 @@
 ---
-title: Dynamics CRM Security Provider 2.2.3
-description: ''
+title: "Dynamics CRM Security Provider 2.2.3"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Security_Provider/2_2/Dynamics_CRM_Security_Provider_2_2_3.aspx
 ---
 

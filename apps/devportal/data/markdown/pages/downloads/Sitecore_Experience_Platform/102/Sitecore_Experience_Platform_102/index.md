@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Platform 10.2
-description: ''
+title: "Sitecore Experience Platform 10.2"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/102/Sitecore_Experience_Platform_102.aspx
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Sitecore Print Experience Manager 8.2
-description: ''
+title: "Sitecore Print Experience Manager 8.2"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/82/Sitecore_Print_Experience_Manager_82.aspx
 ---
 

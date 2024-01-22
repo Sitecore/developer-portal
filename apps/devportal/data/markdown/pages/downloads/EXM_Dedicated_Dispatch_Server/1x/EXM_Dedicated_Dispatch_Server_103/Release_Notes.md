@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/EXM_Dedicated_Dispatch_Server/1x/EXM_Dedicated_Dispatch_Server_103/Release_Notes
 ---
 

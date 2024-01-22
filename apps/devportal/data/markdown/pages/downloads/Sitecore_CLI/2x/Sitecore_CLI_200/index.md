@@ -1,6 +1,6 @@
 ---
-title: Sitecore CLI 2.0.0
-description: ''
+title: "Sitecore CLI 2.0.0"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/2x/Sitecore_CLI_200
 ---
 

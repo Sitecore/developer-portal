@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon/93/Sitecore_Horizon_93_Initial_version/Release_Notes
 ---
 

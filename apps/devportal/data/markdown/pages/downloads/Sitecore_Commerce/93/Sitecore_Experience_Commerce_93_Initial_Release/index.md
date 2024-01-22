@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Commerce 9.3 Initial Release
-description: ''
+title: "Sitecore Experience Commerce 9.3 Initial Release"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/93/Sitecore_Experience_Commerce_93_Initial_Release.aspx
 ---
 

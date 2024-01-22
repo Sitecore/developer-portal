@@ -1,6 +1,6 @@
 ---
-title: SharePoint Connect 2.1
-description: ''
+title: "SharePoint Connect 2.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/SharePoint_Connect/2_0/SharePoint_Connect_2_1.aspx
 ---
 

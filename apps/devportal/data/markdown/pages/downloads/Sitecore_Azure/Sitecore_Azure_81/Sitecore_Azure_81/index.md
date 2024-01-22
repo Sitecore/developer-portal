@@ -1,6 +1,6 @@
 ---
-title: Sitecore Azure 8.1
-description: ''
+title: "Sitecore Azure 8.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure/Sitecore_Azure_81/Sitecore_Azure_81
 ---
 

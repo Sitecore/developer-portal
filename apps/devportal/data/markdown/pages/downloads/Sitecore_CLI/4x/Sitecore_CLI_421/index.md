@@ -1,6 +1,6 @@
 ---
-title: Sitecore CLI 4.2.1
-description: ''
+title: "Sitecore CLI 4.2.1"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/4x/Sitecore_CLI_421.aspx
 ---
 

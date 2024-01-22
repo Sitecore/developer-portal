@@ -1,6 +1,6 @@
 ---
-title: Sitecore Headless Rendering 20.0.2
-description: ''
+title: "Sitecore Headless Rendering 20.0.2"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering/20x/Sitecore_Headless_Rendering_2002
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-description: ''
+title: "Release Notes"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Data_Exchange_Framework/7x/Data_Exchange_Framework_700/Release_Notes
 ---
 

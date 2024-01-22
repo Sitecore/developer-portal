@@ -1,6 +1,6 @@
 ---
-title: Sitecore Experience Platform 8.2 Initial Release
-description: ''
+title: "Sitecore Experience Platform 8.2 Initial Release"
+description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/82/Sitecore_Experience_Platform_82_Initial_Release.aspx
 ---
 
