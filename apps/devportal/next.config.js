@@ -42,6 +42,11 @@ const redirects = [
     destination: '/learn/integrations/xm-smarthub-cdp',
     permanent: true,
   },
+  {
+    source: '/trial',
+    destination: '/trials',
+    permanent: true,
+  },
 ];
 
 const nextConfig = {

@@ -1,14 +1,15 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
 
-import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
-import SocialFeeds from '@src/components/common/SocialFeeds';
-import { TrackPageView } from '@src/components/engagetracker/TrackPageView';
+import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { TextLink } from 'ui/components/links/TextLink';
-import { PromoCard, PromoCardProps } from 'ui/components/promos';
+import { PromoCardProps } from 'ui/components/promos';
+import PromoList from 'ui/components/promos/promoCard/PromoList';
+import ChildNavigation from '../components/navigation/ChildNavigation';
+import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ChildOverviewPageProps = {
   pageInfo: PageInfo;
@@ -20,21 +21,22 @@ type ChildOverviewPageProps = {
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
   childPageInfo: ChildPageInfo[];
+  subPageNavigation: SubPageNavigation;
 };
 
-const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo }: ChildOverviewPageProps) => {
+const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, subPageNavigation }: ChildOverviewPageProps) => {
   if (!pageInfo) return <>No pageInfo found</>;
 
   // Check for headings in the content
   return (
-    <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage} background={'chakra-subtle-bg'}>
-        <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
+      <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <ChildNavigation subPageNavigation={subPageNavigation} />}>
         {pageInfo.content && pageInfo.content.length > 0 && (
           <VerticalGroup>
             <CenteredContent>
-              {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
+              <PromoList data={promoBefore} />
 
               {pageInfo.parsedContent && (
                 <Grid templateColumns="repeat(4, 1fr)" gap={4}>
@@ -50,7 +52,7 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo }:
           <CenteredContent>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               {childPageInfo.map((childPage, i) => (
-                <Card variant={'elevated'} size="md" key={i}>
+                <Card variant={'outlineRaised'} size="md" layerStyle={'interactive.raise'} key={i}>
                   <CardHeader>
                     <TextLink isHeading as={'h3'} text={childPage.title} aria-label={childPage.title} href={childPage.link} />
                   </CardHeader>
@@ -67,14 +69,17 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo }:
             </SimpleGrid>
           </CenteredContent>
         </VerticalGroup>
-        <VerticalGroup>
+        {/* <VerticalGroup>
           <CenteredContent>
-            {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
-            <SocialFeeds pageInfo={pageInfo} />
+            <PromoList data={promoAfter} />
+            <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
+            <SitecoreCommunityQuestions data={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
+            <StackExchangeFeed data={pageInfo.stackexchange} />
+            <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} />
           </CenteredContent>
-        </VerticalGroup>
-      </Layout>
-    </TrackPageView>
+        </VerticalGroup> */}
+      </ThreeColumnLayout>
+    </Layout>
   );
 };
 

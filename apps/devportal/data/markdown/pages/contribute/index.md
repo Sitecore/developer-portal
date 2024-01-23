@@ -9,6 +9,8 @@ hasSubPageNav: true
 
 The Sitecore developer portal is built using Next.js and Chakra UI, and is hosted on Vercel. The application uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
 
+All code for this project can be found in the [public GitHub repository](https://github.com/Sitecore/developer-portal).
+
 ## Build Prerequisites
 
 ### Node.js
@@ -31,7 +33,7 @@ _Note: The site will still function without the above keys. The components that 
 ## Getting Started
 
 1. Install [Node.js](htts://nodejs.org/en/), we recommend the LTS version.
-2. Clone the repository.
+2. Clone the repository `git clone https://github.com/Sitecore/developer-portal.git`
 3. Inside the repository run `npm install` to install all the dependencies.
 4. Create a `.env.local` file in the root of the project and add the following environment variables:
 

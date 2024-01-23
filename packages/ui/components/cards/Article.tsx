@@ -38,11 +38,11 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
       </CardBody>
       {link && !hideLinkText && (
         <CardFooter pt={0}>
-          <Button rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>
-            <Link as={NextLink} href={link} color={useColorModeValue('white', 'black !important')}>
+          <Link as={NextLink} href={link} color={useColorModeValue('white', 'black !important')}>
+            <Button rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>
               {linktext ?? 'Read more'}
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </CardFooter>
       )}
     </Card>

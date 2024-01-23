@@ -33,7 +33,7 @@ export const HexagonItem = ({ product, active = true }: HexagonItemProps): JSX.E
           </Box>
         </ListItem>
       </PopoverTrigger>
-      <PopoverContent zIndex={'99999'} position={'absolute'}>
+      <PopoverContent zIndex={'99999'} position={'absolute'} background={'none'} border={0}>
         <Box className={styles.hexgrid__modal} position={'absolute'} background={'chakra-subtle-bg'} display={'block'} width={'320px'} height={'auto'}>
           <PopoverCloseButton />
           <PopoverHeader>

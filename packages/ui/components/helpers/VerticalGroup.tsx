@@ -7,6 +7,7 @@ export const VerticalGroup = (props: FlexProps) => (
     alignItems="center"
     justifyContent="flex-start"
     color="black"
+    paddingX={{ base: 2, '2xl': 0 }}
     _dark={{
       color: 'white',
     }}

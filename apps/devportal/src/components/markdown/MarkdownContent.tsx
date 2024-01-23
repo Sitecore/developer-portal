@@ -1,22 +1,24 @@
 // Global
-import { Box, Card, CardBody, CardFooter, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 import { PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { Icon } from '@mdi/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import { MDXRemote } from 'next-mdx-remote';
-import { useEffect, useState } from 'react';
-import { Light as SyntaxHighlight } from 'react-syntax-highlighter';
 import { Article, LinkItem, Repository } from 'ui/components/cards';
 import { Row } from 'ui/components/helpers/Row';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { Promo, VideoPromo } from 'ui/components/promos';
 import YouTube from 'ui/components/video/YouTube';
 
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { Download } from 'ui/components/cards/Download';
+import { Group } from 'ui/components/cards/Group';
+import { TextLink } from 'ui/components/links/TextLink';
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { a11yDark, a11yLight } = require('react-syntax-highlighter/dist/cjs/styles/hljs');
+const { a11yDark } = require('react-syntax-highlighter/dist/cjs/styles/hljs');
 
 type MarkdownContentProps = {
   content?: string;
@@ -29,11 +31,11 @@ type DecoratedMarkdownProps = {
 };
 
 export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element => {
-  const [isDark, setIsLight] = useState(false);
+  // const [isDark, setIsLight] = useState(false);
 
-  useEffect(() => {
-    setIsLight(typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
-  }, []);
+  // useEffect(() => {
+  //   setIsLight(typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  // }, []);
 
   return (
     <Prose className={styles.richText}>
@@ -46,15 +48,14 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
             const match = /language-(\w+)/.exec(className || '');
             const lang = match ? match[1] : '';
             return match ? (
-              <SyntaxHighlight style={a11yDark} language={lang} className="no-prose" PreTag={'div'} customStyle={{ background: 'inherit', display: 'inline-grid', width: '100%' }} wrapLongLines wrapLines>
+              <SyntaxHighlighter style={a11yDark} language={lang} className="no-prose" PreTag={'div'} customStyle={{ background: 'inherit', display: 'inline-grid', width: '100%' }} wrapLongLines wrapLines>
                 {String(children).replace(/\n$/, '')}
-              </SyntaxHighlight>
+              </SyntaxHighlighter>
             ) : (
               <code className={className}>{children}</code>
             );
           },
-          h1: Heading,
-          h2: Heading,
+          //h3: Heading,
           VideoPromo: VideoPromo,
           // CtaCard: CTACard,
           Promo: Promo,
@@ -63,11 +64,29 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
           Repository: Repository,
           Article: Article,
           Link: LinkItem,
+          Download: Download,
+          Group: Group,
+          Card: Card,
+          CardHeader: CardHeader,
+          CardBody: CardBody,
+          Alert: Alert,
+          AlertIcon: AlertIcon,
+          TextLink,
         }}
       />
     </Prose>
   );
 };
+
+export const MarkDownContent = ({ content, partials, partialGroups }: MarkdownContentProps): JSX.Element => (
+  <>
+    <RenderContent content={content} />
+    <RenderPartialGroups partialGroups={partialGroups} />
+    <RenderPartials partials={partials} />
+  </>
+);
+
+
 
 export const RenderContent = ({ content }: MarkdownContentProps): JSX.Element => {
   if (content == null) return <></>;
@@ -97,7 +116,7 @@ export const RenderPartialGroups = ({ partialGroups }: MarkdownContentProps): JS
         partialGroups.length > 0 &&
         partialGroups.map((partialGroup, i) => (
           <Box key={i}>
-            <Heading as={'h2'} key={i} size={'xl'} mb={4} mt={8}>
+            <Heading as={'h2'} key={i} size={'xl'} mb={4} mt={{ base: 0, md: 8 }}>
               {partialGroup.title}
             </Heading>
             {partialGroup.description && (

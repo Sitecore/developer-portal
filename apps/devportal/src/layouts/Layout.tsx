@@ -1,8 +1,9 @@
 // Global
-import { Box, BoxProps, VisuallyHidden } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, Box, BoxProps, VisuallyHidden } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { usePreview } from '../context/PreviewContext';
 
 type LayoutProps = BoxProps & {
   title: string;
@@ -13,6 +14,7 @@ type LayoutProps = BoxProps & {
 };
 
 const Layout = ({ title, description = '', openGraphImage, children, ...rest }: LayoutProps): JSX.Element => {
+  const { isPreview } = usePreview();
   const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
   const router = useRouter();
   const { asPath } = router;
@@ -28,13 +30,11 @@ const Layout = ({ title, description = '', openGraphImage, children, ...rest }: 
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5548d9" />
+
         <meta name="msapplication-TileColor" content="#5548d9"></meta>
         <meta name="theme-color" content="#5548d9"></meta>
-        {/*
-          Necessary Meta tags, including Social tags.
-          It's OK if they're empty, same as not printing them.
-        */}
         <meta name="description" content={description} />
+
         <meta property="og:site_name" content="Sitecore Developer Portal" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
@@ -43,12 +43,18 @@ const Layout = ({ title, description = '', openGraphImage, children, ...rest }: 
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Box as="main" style={{ paddingTop: 122, minHeight: 'calc(100vh - 236px)' }} {...rest}>
+      <Box as="main" {...rest}>
         <VisuallyHidden>
           <a href="#main-content">Skip to main content</a>
         </VisuallyHidden>
         {/* a11y announcement for route changes. */}
         <VisuallyHidden aria-live="polite" aria-atomic="true">{`The ${title} page has loaded.`}</VisuallyHidden>
+        {isPreview && (
+          <Alert status="warning">
+            <AlertIcon />
+            <AlertDescription>Preview mode enabled</AlertDescription>
+          </Alert>
+        )}
         {children}
       </Box>
     </>

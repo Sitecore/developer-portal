@@ -18,8 +18,8 @@ import { CategoryTileList, GenericList } from 'ui/components/lists';
 import { CTACard } from 'ui/components/promos';
 import { TrackPageView } from '../components/engagetracker/TrackPageView';
 
-export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo('home', context.preview ? context.preview : null);
+export async function getStaticProps() {
+  const pageInfo = await getPageInfo('home');
 
   return {
     props: {
@@ -31,6 +31,7 @@ export async function getStaticProps(context: any) {
 
 type HomePageProps = {
   pageInfo: PageInfo;
+  preview: boolean;
 };
 
 const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
@@ -40,22 +41,23 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
         <Hero title={pageInfo.title} description={pageInfo.description} />
 
         <VerticalGroup background={'chakra-bg'}>
-          <CenteredContent paddingTop={2}>
-            <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.data} />
+          <CenteredContent>
             <SimpleGrid py={4} gap={4} columns={[1, 1, 2]}>
               <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
               <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} listItem={true} />
             </SimpleGrid>
+
+            <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.data} />
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup background={'chakra-subtle-bg'}>
+        <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
             <Hexagons />
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup background={'primary.900'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundSize={'cover'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
+        <VerticalGroup background={'primary.700'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundSize={'cover'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
           <CenteredContent>
             <GenericList title={platformData.title} subtitle={platformData.subtitle} data={platformData.data} column={3} width={{ base: 'full', md: '2xs' }} cardVariant="blurred" />
           </CenteredContent>

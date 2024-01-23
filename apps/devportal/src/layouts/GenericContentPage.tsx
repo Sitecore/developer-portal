@@ -8,7 +8,9 @@ import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, ContentSection, VerticalGroup } from 'ui/components/helpers';
-import { PromoCard, PromoCardProps } from 'ui/components/promos';
+import { PromoCardProps } from 'ui/components/promos';
+import PromoList from 'ui/components/promos/promoCard/PromoList';
+import InPageNavSmall from '../components/navigation/InPageNavSmall';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -55,26 +57,23 @@ const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, pro
       <Layout title={pageInfo.title} description={pageInfo.description}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-        {/* background={!pageInfo.hasInPageNav ? 'neutral-subtle-bg' : ''} id="verticalgroup" */}
-
-        <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-subtle-bg'}>
-          <CenteredContent>
-            {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
-
-            <Grid templateColumns="repeat(4, 1fr)" gap={4}>
-              {pageInfo.hasInPageNav && <GridItem>{Nav}</GridItem>}
-              <GridItem colSpan={pageInfo.hasInPageNav ? 3 : 4}>
-                {Content(partials, partialGroups)}
-                {customNavPager}
-              </GridItem>
-            </Grid>
-
-            {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
-            <SocialFeeds pageInfo={pageInfo} />
-          </CenteredContent>
-        </ContentSection>
-      </Layout>
-    </TrackPageView>
+      {/* background={!pageInfo.hasInPageNav ? 'neutral-bg' : ''} id="verticalgroup" */}
+      <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
+        <CenteredContent>
+          <PromoList data={promoBefore} />
+          <Grid templateColumns="repeat(4, 1fr)" gap={4}>
+            {pageInfo.hasInPageNav && <GridItem>{Nav}</GridItem>}
+            <GridItem colSpan={pageInfo.hasInPageNav ? 3 : 4}>
+              <InPageNavSmall hideFrom="xl" titles={titles} />
+              {Content(partials, partialGroups)}
+              {customNavPager}
+            </GridItem>
+          </Grid>
+          <PromoList data={promoAfter} />
+          <SocialFeeds pageInfo={pageInfo} />
+        </CenteredContent>
+      </ContentSection>
+    </Layout>
   );
 };
 

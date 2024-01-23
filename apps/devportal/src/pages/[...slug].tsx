@@ -16,7 +16,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo(context.params.slug, context.preview ? context.preview : null);
+  const pageInfo = await getPageInfo(context.params.slug);
+
   if (pageInfo == null) return { notFound: true };
 
   const partials = pageInfo.partials != null ? await getPartialsAsArray(pageInfo.partials) : null;
@@ -54,17 +55,18 @@ export default function Slug({
   subPageNavigation: SubPageNavigation;
 }) {
   // Check for other page types
-
-  switch (pageInfo.pageType?.toLowerCase()) {
-    case 'childoverview':
-      return <ChildOverviewPage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} />;
-    case 'social':
-      return <SocialPage pageInfo={pageInfo} />;
+  if (pageInfo.pageType) {
+    switch (pageInfo.pageType.toLowerCase()) {
+      case 'childoverview':
+        return <ChildOverviewPage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} subPageNavigation={subPageNavigation} />;
+      case 'social':
+        return <SocialPage pageInfo={pageInfo} />;
+    }
   }
 
   if (pageInfo.hasSubPageNav) return <ArticlePage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} childPageInfo={childPageInfo} subPageNavigation={subPageNavigation} />;
 
   // return default page
-  return <DefaultContentPage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} />;
+  return <DefaultContentPage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} />;  
   //  return <DefaultContentPage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} childPageInfo={childPageInfo} />;
 }

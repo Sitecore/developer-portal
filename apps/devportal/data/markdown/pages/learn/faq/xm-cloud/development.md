@@ -160,9 +160,9 @@ Sitecore provides support for all of our XM Cloud hosted services and platform o
 
 Patching will have the same effect as executing a deployment and performing an update to a CM Instance.
 
-## What is the difference between XM Cloud and Content Hub One?
+## What is the difference between XM Cloud and Content Hub ONE?
 
-Both of these products are based on headless technologies and approaches. With headless technology there is a separation between content and presentation. XM Cloud is a headless architecture that provides data modeling and layout and Pages, component building experience, whereas Content Hub One is data modeling and content management only.
+Both of these products are based on headless technologies and approaches. With headless technology there is a separation between content and presentation. XM Cloud is a headless architecture that provides data modeling and layout and Pages, component building experience, whereas Content Hub ONE is data modeling and content management only.
 
 ## What sort of search functionality is still available for XM Cloud?
 

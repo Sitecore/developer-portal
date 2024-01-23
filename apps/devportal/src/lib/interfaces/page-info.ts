@@ -16,9 +16,9 @@ type PageInfoCore = {
   title: string;
   pageTitle?: string;
   fileName: string;
-  previewMode?: boolean;
   slug: string;
   menuOrder?: number;
+  area: string[];
   product?: string[];
   cdpTags?: string[];
 
@@ -83,14 +83,16 @@ export type PageInfo = PageInfoCore & {
 export type SubPageNavigation = {
   title: string;
   description: string;
-  heading: string;
+  heading: boolean;
   path: string;
+  showRootAsSections?: boolean;
   routes: SubPageNavigationItem[];
 };
 
 export type SubPageNavigationItem = {
   title: string;
   path: string;
+  ignoreLink?: boolean;
   children: SubPageNavigationItem[];
 };
 

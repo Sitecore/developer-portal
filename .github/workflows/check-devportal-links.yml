@@ -1,0 +1,23 @@
+name: Check Developer Portal Markdown links
+
+on:
+   workflow_dispatch:
+
+jobs:
+  developer-portal:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      continue-on-error: true
+      with:
+        use-quiet-mode: 'yes'
+        config-file: '.github/workflows/markdown-links.devportal.config.json'
+        folder-path: './apps/devportal/data/markdown/pages'
+        max-depth: 0
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      continue-on-error: true
+      with:
+        use-quiet-mode: 'yes'
+        config-file: '.github/workflows/markdown-links.devportal.config.json'
+        folder-path: './apps/devportal/data/markdown/partials, ./apps/devportal/data/markdown/pages/commerce, ./apps/devportal/data/markdown/pages/content-management, ./apps/devportal/data/markdown/pages/contribute, ./apps/devportal/data/markdown/pages/customer-data-management, , ./apps/devportal/data/markdown/pages/dam-and-content-operations, ./apps/devportal/data/markdown/pages/devops, ./apps/devportal/data/markdown/pages/integrations, ./apps/devportal/data/markdown/pages/learn, ./apps/devportal/data/markdown/pages/marketing-automation, ./apps/devportal/data/markdown/pages/personalization-testing, ./apps/devportal/data/markdown/pages/trials'

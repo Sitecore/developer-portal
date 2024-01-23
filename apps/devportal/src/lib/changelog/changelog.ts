@@ -5,6 +5,7 @@ import { Option } from 'ui/components/dropdown/MultiSelect';
 
 export const entriesApiUrl = '/api/changelog/v1';
 
+
 export function getChangeTypeOptions(): Option[] {
   const fetcher: Fetcher<ChangeType[], string> = async (url: string) => await axios.get(url).then((response) => response.data);
   const { data: changeTypes, error } = useSWR(`${entriesApiUrl}/types`, fetcher);

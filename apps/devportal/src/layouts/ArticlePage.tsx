@@ -1,15 +1,16 @@
-import { Container, Flex, Hide } from '@chakra-ui/react';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
 import SocialFeeds from '@src/components/common/SocialFeeds';
 import { TrackPageView } from '@src/components/engagetracker/TrackPageView';
-import { RenderContent, RenderPartialGroups, RenderPartials } from '@src/components/markdown/MarkdownContent';
+import { MarkDownContent } from '@src/components/markdown/MarkdownContent';
 import ChildNavigation from '@src/components/navigation/ChildNavigation';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { PromoCard, PromoCardProps } from 'ui/components/promos';
+import { PromoCardProps } from 'ui/components/promos';
+import PromoList from 'ui/components/promos/promoCard/PromoList';
+import GithubContributionNotice from '../components/common/contribute';
+import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ArticlePageProps = {
   pageInfo: PageInfo;
@@ -39,35 +40,18 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
       <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-        <VerticalGroup>
-          <CenteredContent paddingTop={10}>
-            {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
+      <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <ChildNavigation subPageNavigation={subPageNavigation} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
+        <PromoList data={promoBefore} />
 
-            <Flex direction={{ base: 'column', md: 'row' }}>
-              {/* {pageInfo.hasInPageNav && !pageInfo.hasSubPageNav && <Container w={'full'}>{Nav}</Container>} */}
-              {pageInfo.hasSubPageNav && (
-                <Container maxW={{ base: 'full', md: 240 }}>
-                  <ChildNavigation subPageNavigation={subPageNavigation} />
-                </Container>
-              )}
-              <Container maxW={'full'}>
-                <RenderContent content={pageInfo.parsedContent} />
+        <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
+        <GithubContributionNotice pageInfo={pageInfo} />
 
-                <RenderPartialGroups partialGroups={partialGroups} />
+        {customNavPager}
 
-                <RenderPartials partials={partials} />
-
-                {customNavPager}
-              </Container>
-              <Hide below="md">{pageInfo.hasInPageNav && sectionTitles.length > 0 && <Container maxW={200}>{Nav}</Container>}</Hide>
-            </Flex>
-
-            {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
-            <SocialFeeds pageInfo={pageInfo} />
-          </CenteredContent>
-        </VerticalGroup>
-      </Layout>
-    </TrackPageView>
+        <PromoList data={promoAfter} />
+        <SocialFeeds pageInfo={pageInfo} />
+      </ThreeColumnLayout>
+    </Layout>
   );
 };
 
