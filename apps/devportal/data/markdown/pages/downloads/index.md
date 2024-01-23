@@ -1,5 +1,5 @@
 ---
-title: Downloads
+title: Sitecore Downloads
 description: 'Download Sitecore software, tools and resources'
 origin: https://dev.sitecore.net/Downloads.aspx
 isDownloadPage: false
@@ -10,8 +10,6 @@ isPackageLandingPage: false
 ---
 
 Download the latest version of the Sitecore Customer Experience Platform - the integration and automation marketers need to win customers for life.
-
-  
 
 <Download 
   title="Sitecore Experience Platform 10.3 Update-1"
@@ -25,6 +23,8 @@ Download the latest version of the Sitecore Customer Experience Platform - the i
 Downloads relating to **Sitecore 7.5 and below** are available on the [Sitecore Experience Platform 7 and below](/downloads/Sitecore_Experience_Platform/7_0/Sitecore_Experience_Platform_7_and_below) downloads page.
 
 ## Products and Modules
+
+<SimpleGrid gap='6' templateColumns='repeat(auto-fill, minmax(var(--sizes-md), 1fr))'>
 
 <Download 
   title="Sitecore Experience Commerce 10.3"
@@ -442,3 +442,5 @@ Downloads relating to **Sitecore 7.5 and below** are available on the [Sitecore 
   link2text="See all versions"
   link2href="/downloads/Web_Forms_For_Marketers"
 />
+
+</SimpleGrid>

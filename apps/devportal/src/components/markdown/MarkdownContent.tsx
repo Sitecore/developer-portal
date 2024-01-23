@@ -1,5 +1,5 @@
 // Global
-import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import { PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { Icon } from '@mdi/react';
@@ -71,6 +71,7 @@ export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Ele
           CardBody: CardBody,
           Alert: Alert,
           AlertIcon: AlertIcon,
+          SimpleGrid: SimpleGrid,
           TextLink,
         }}
       />
