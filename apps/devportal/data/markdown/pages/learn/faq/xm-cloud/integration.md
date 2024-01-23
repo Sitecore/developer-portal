@@ -3,6 +3,11 @@ title: 'Integration'
 hasInPageNav: true
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 ## Can an integration be made with Salesforce?
 A team can do a Salesforce integration if they have licensed Sitecore CDP, or they could do a bespoke Salesforce integration. 
 
