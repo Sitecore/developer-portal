@@ -38,7 +38,7 @@ Your configuration file should contain the following code:
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [3000, 9229],
+  "forwardPorts": [3000],
   "portsAttributes": {
     "3000": {
       "visibility": "public"
@@ -51,7 +51,7 @@ In this file, we are telling Codespaces:
 
 - The base image to use for the development container. For XM Cloud, we will use the dotnet v6 base image. This is to support the Sitecore dotnet tool CLI. When the tool is updated to use dotnet 7.x, the base image can be updated.
 - Next we add Node LTS in as a feature to be able to run the Next.js application.
-- Finally we set ports 3000 & 9229 up for port forwarding for the Codespaces URL and we make port 3000 public so that it can be accessed by Pages.
+- Finally we set port 3000 up for port forwarding for the Codespaces URL and we make port 3000 public so that it can be accessed by Pages.
 
 Commit these changes to your git repository and move on to the next step, based on where your git repository is hosted.
 
@@ -179,7 +179,7 @@ The Sitecore CLI will be installed to the Codespace.
 
 ## Discussion
 
-Get the GraphQL API Key
+### Get the GraphQL API Key
 
 To get the GraphQL API Key, open the XM Cloud Deploy all (https://deploy.sitecorecloud.io) and navigate to your Project, then your Environment. On the Environment details page, change to the Details tab and click the `Generate Preview API token` button under the heading `Preview GraphQL IDE`:
 
@@ -187,12 +187,15 @@ To get the GraphQL API Key, open the XM Cloud Deploy all (https://deploy.sitecor
 
 Thie will reveal the API key GUID.
 
-## Related Documentation
+## Troubleshooting
+
+### Ports are not forwarding
+
+- Please check that any VPN's are disabled
+
+## Related Links
 
 <Row columns={2}>
-  <Link title="Continuous Integration vs Feature Branch Workflow" link="https://www.youtube.com/watch?v=v4Ijkq6Myfc&t=5s" />
-  <Link title="The Seven Rules of a Great Git Commit Message" link="https://cbea.ms/git-commit/#seven-rules" />
-  <Link title="Atomic Git Commits" link="https://dev.to/samuelfaure/how-atomic-git-commits-dramatically-increased-my-productivity-and-will-increase-yours-too-4a84" />
-  <Link title="GitHub Flow" link="https://docs.github.com/en/get-started/quickstart/github-flow" />
-  <Link title="GitLab Flow" link="https://docs.gitlab.cn/14.0/ee/topics/gitlab_flow.html"/>
+  <Link title="Forwarding ports in your codespace" link="https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace" />
+  <Link title="Codespaces Documentation" link="https://docs.github.com/en/codespaces/overview" />
 </Row>
