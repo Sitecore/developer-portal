@@ -35,6 +35,7 @@ export async function BindResponse(response: Response, selectedFacets: ChangeLog
           id: product.id,
           productName: product.productName,
           productDescription: product.productDescription,
+          productSlug: product.productSlug,
           lightIcon: product.lightIcon,
           darkIcon: product.darkIcon
         }

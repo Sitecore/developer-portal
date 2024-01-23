@@ -4,6 +4,7 @@ type SitecoreProduct = {
   id: string;
   productName: string;
   productDescription: string;
+  productSlug: string;
   lightIcon: string;
   darkIcon: string;
   sitecoreCloud: SitecoreCloudResults;

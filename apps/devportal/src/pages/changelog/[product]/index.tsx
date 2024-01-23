@@ -39,7 +39,7 @@ export default function ChangeSearchlogHome({ currentProduct }: { currentProduct
   const router = useRouter();
   const productFilter: ChangelogFilter[] = [
     {
-      name: 'product_names',
+      name: 'product_slugs',
       type: 'eq',
       value: currentProduct,
     },

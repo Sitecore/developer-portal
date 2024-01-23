@@ -33,7 +33,7 @@ import { ChangelogEntryByTitle } from 'sc-changelog/changelog';
 import GetProducts from 'sc-changelog/products';
 import { Product } from 'sc-changelog/types';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
+import { getSlug } from 'sc-changelog/utils/stringUtils';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
@@ -54,7 +54,7 @@ export async function getServerSideProps(context: any) {
     return response;
   });
   let changelogEntry;
-  const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
+  const currentProduct: Product | undefined = products.find((p) => p.name == product);
 
   try {
     changelogEntry = await ChangelogEntryByTitle(isPreview, entry, currentProduct?.id);
