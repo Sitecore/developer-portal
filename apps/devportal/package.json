@@ -35,7 +35,7 @@
     "@nikolovlazar/chakra-ui-prose": "^1.2.1",
     "@remark-embedder/core": "^3.0.1",
     "@remark-embedder/transformer-oembed": "^3.0.0",
-    "@sitecore/engage": "1.4.1",
+    "@sitecore/engage": "1.4.3",
     "@sitecore-search/react": "^2.0.0",
     "@sitecore-search/ui": "^2.0.0",
     "@sitecore/blok-theme": "^1.1.9",

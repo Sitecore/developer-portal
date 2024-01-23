@@ -57,23 +57,24 @@ const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, pro
       <Layout title={pageInfo.title} description={pageInfo.description}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      {/* background={!pageInfo.hasInPageNav ? 'neutral-bg' : ''} id="verticalgroup" */}
-      <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
-        <CenteredContent>
-          <PromoList data={promoBefore} />
-          <Grid templateColumns="repeat(4, 1fr)" gap={4}>
-            {pageInfo.hasInPageNav && <GridItem>{Nav}</GridItem>}
-            <GridItem colSpan={pageInfo.hasInPageNav ? 3 : 4}>
-              <InPageNavSmall hideFrom="xl" titles={titles} />
-              {Content(partials, partialGroups)}
-              {customNavPager}
-            </GridItem>
-          </Grid>
-          <PromoList data={promoAfter} />
-          <SocialFeeds pageInfo={pageInfo} />
-        </CenteredContent>
-      </ContentSection>
-    </Layout>
+        {/* background={!pageInfo.hasInPageNav ? 'neutral-bg' : ''} id="verticalgroup" */}
+        <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
+          <CenteredContent>
+            <PromoList data={promoBefore} />
+            <Grid templateColumns="repeat(4, 1fr)" gap={4}>
+              {pageInfo.hasInPageNav && <GridItem>{Nav}</GridItem>}
+              <GridItem colSpan={pageInfo.hasInPageNav ? 3 : 4}>
+                <InPageNavSmall hideFrom="xl" titles={titles} />
+                {Content(partials, partialGroups)}
+                {customNavPager}
+              </GridItem>
+            </Grid>
+            <PromoList data={promoAfter} />
+            <SocialFeeds pageInfo={pageInfo} />
+          </CenteredContent>
+        </ContentSection>
+      </Layout>
+    </TrackPageView>
   );
 };
 

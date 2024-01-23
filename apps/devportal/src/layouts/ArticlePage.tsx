@@ -40,18 +40,19 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
       <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <ChildNavigation subPageNavigation={subPageNavigation} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
-        <PromoList data={promoBefore} />
+        <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <ChildNavigation subPageNavigation={subPageNavigation} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
+          <PromoList data={promoBefore} />
 
-        <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
-        <GithubContributionNotice pageInfo={pageInfo} />
+          <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
+          <GithubContributionNotice pageInfo={pageInfo} />
 
-        {customNavPager}
+          {customNavPager}
 
-        <PromoList data={promoAfter} />
-        <SocialFeeds pageInfo={pageInfo} />
-      </ThreeColumnLayout>
-    </Layout>
+          <PromoList data={promoAfter} />
+          <SocialFeeds pageInfo={pageInfo} />
+        </ThreeColumnLayout>
+      </Layout>
+    </TrackPageView>
   );
 };
 

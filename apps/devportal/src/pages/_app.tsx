@@ -11,7 +11,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
-import { useEngageTracker } from 'ui/components/integrations';
+import { EngageTrackerProvider } from 'ui/components/integrations';
 import { PreviewProvider } from '../context/PreviewContext';
 
 const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
@@ -19,7 +19,6 @@ const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvid
 function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(false);
   const [hostname, setHostname] = useState('');
-  const engageTracker = useEngageTracker();
 
   const router = useRouter();
   TopBarProgress.config({
@@ -91,14 +90,16 @@ function MyApp({ Component, pageProps }: AppProps) {
         `}
       </style>
       <ChakraProvider theme={scdpTheme} toastOptions={toastOptions}>
-        <PreviewProvider preview={router.isPreview} currentHostname={hostname}>
-          {progress && <TopBarProgress />}
-          <Navbar searchEnabled={IsSearchEnabled()} />
-          <Box ref={contentInnerRef}>
-            <Component {...pageProps} />
-          </Box>
-          <Footer />
-        </PreviewProvider>
+        <EngageTrackerProvider>
+          <PreviewProvider preview={router.isPreview} currentHostname={hostname}>
+            {progress && <TopBarProgress />}
+            <Navbar searchEnabled={IsSearchEnabled()} />
+            <Box ref={contentInnerRef}>
+              <Component {...pageProps} />
+            </Box>
+            <Footer />
+          </PreviewProvider>
+        </EngageTrackerProvider>
       </ChakraProvider>
     </SearchWrapper>
   );

@@ -1,6 +1,7 @@
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import SocialFeeds from '@src/components/common/SocialFeeds';
+import { TrackPageView } from '@src/components/engagetracker/TrackPageView';
 import { MarkDownContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
@@ -38,23 +39,24 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
       <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
-        {/* <CenteredContent paddingTop={10}> */}
-        <PromoList data={promoBefore} />
-        {/* Page structure */}
+        <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
+          {/* <CenteredContent paddingTop={10}> */}
+          <PromoList data={promoBefore} />
+          {/* Page structure */}
 
-        <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && Nav} inPageNav={sectionTitles.length > 0 && <InPageNav titles={sectionTitles} />} inPageLinks={sectionTitles}>
-          <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
+          <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && Nav} inPageNav={sectionTitles.length > 0 && <InPageNav titles={sectionTitles} />} inPageLinks={sectionTitles}>
+            <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
 
-          <LatestChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />
-          <PromoList data={promoAfter} />
-          <SocialFeeds pageInfo={pageInfo} />
-        </ThreeColumnLayout>
-        {customNavPager}
-        {/* End Page structure */}
-        {/* </CenteredContent> */}
-      </ContentSection>
-    </Layout>
+            <LatestChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />
+            <PromoList data={promoAfter} />
+            <SocialFeeds pageInfo={pageInfo} />
+          </ThreeColumnLayout>
+          {customNavPager}
+          {/* End Page structure */}
+          {/* </CenteredContent> */}
+        </ContentSection>
+      </Layout>
+    </TrackPageView>
   );
 };
 
