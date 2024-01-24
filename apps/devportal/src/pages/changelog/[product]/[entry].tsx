@@ -54,7 +54,7 @@ export async function getServerSideProps(context: any) {
     return response;
   });
   let changelogEntry;
-  const currentProduct: Product | undefined = products.find((p) => p.name == product);
+  const currentProduct: Product | undefined = products.find((p) => getSlug(p.name) == product);
 
   try {
     changelogEntry = await ChangelogEntryByTitle(isPreview, entry, currentProduct?.id);
