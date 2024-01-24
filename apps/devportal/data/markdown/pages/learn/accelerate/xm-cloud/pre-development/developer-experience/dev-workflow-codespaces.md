@@ -140,7 +140,7 @@ Now your site is visible to anyone with the link.
 
 Next open up Content Editor in your XM Cloud dev environment. Navigate to `/sitecore/system/Settings/Services/Rendering Hosts`. Here we need to create a new predefined rendering host that points at your Codespaces site.
 
-Right-Click the `Rendering Hosts` folder and insert a new Rendering Host item:
+Right-click the `Rendering Hosts` folder and insert a new Rendering Host item:
 
 <img src="/images/learn/accelerate/xm-cloud/codespaces-5.png" alt="Insert Rendering Host item"/>
 
