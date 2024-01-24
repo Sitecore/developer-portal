@@ -8,7 +8,7 @@ area: ['accelerate']
 
 This recipe will outline the developer workflow and steps to create new components within XM Cloud.
 
-There are 2 types of components within XM Cloud, the Component Builder (Also called XM Cloud Components, or Front End as a Service) and standard React components. At the time of writing, XM Cloud Components are still early access only and do not have a full feature set. Because of this, only standard React/Next.js components should be used. This will be updated once the full feature set of XM Cloud Components is available.
+There are 2 types of components within XM Cloud, the Component Builder (Also called XM Cloud Components, or Front End as a Service) and standard React components. At the time of writing, XM Cloud Components are new and do not have a full feature set. Because of this, only standard React/Next.js components should be used. This will be updated once the full feature set of XM Cloud Components is available.
 
 ## Solution
 
