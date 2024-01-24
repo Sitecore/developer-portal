@@ -1,5 +1,5 @@
 ---
-title: 'Development Workdlow: Github Codespaces | Sitecore Accelerate for Partners'
+title: 'Development Workflow: Github Codespaces | Sitecore Accelerate for Partners'
 description: 'How to setup and configure your development workflow using Github Codespaces and XM Cloud'
 hasSubPageNav: true
 hasInPageNav: false
@@ -12,7 +12,7 @@ The development team needs to be able to develop both the CMS and the Website ap
 
 ## Solution
 
-Github Codespaces provides a simple solution to develop both the web application (Next.js) and the CMS development (data modelling, templates, rendering items etc…) in a common workspace without using docker.
+Github Codespaces provides a simple solution to develop both the web application (Next.js) and the CMS development (data modelling, templates, rendering items etc…) in a common workspace without using Docker.
 
 Using Codespaces also allows XM Cloud to access the development site for the web application over the internet which means Pages and Experience Editor will be able to use the application being developed. This bypasses having to deploy the application for components to be tested within the Pages/Experience Editor environment.
 
@@ -57,7 +57,7 @@ Commit these changes to your git repository and move on to the next step, based 
 
 ### Setting up your Codespace - Github
 
-Setting up your codespace on github is very simple. Navigate to the code page in your repository and click the green Code button on the right. Change to the Codespaces tab and click the Create codespace on main button:
+Setting up your codespace on Github is very simple. Navigate to the code page in your repository and click the green Code button on the right. Change to the Codespaces tab and click the Create codespace on main button:
 
 <img src="/images/learn/accelerate/xm-cloud/codespaces-1.png" alt="Create Codespace on Main"/>
 
@@ -83,9 +83,9 @@ Now, we will add the Azure DevOps repository as a remote.
 git remote add origin git@ssh.dev.azure.com........
 ```
 
-You can copy the SSH or HTTP git url from the repository’s website like this:
+You can copy the SSH or HTTP git URL from the repository’s website like this:
 
-<img src="/images/learn/accelerate/xm-cloud/codespaces-2.png" alt="Get Azure DevOps git repo url"/>
+<img src="/images/learn/accelerate/xm-cloud/codespaces-2.png" alt="Get Azure DevOps git repo URL"/>
 
 Now run:
 
@@ -97,7 +97,7 @@ This will pull the repository into the Codespace ready to run. Before running, t
 
 ### Running your website
 
-To run the website for the first time, first the developer needs to configure the environment variables for the solution.
+To run the web application, first the developer needs to configure the environment variables for the solution.
 
 In Codespaces (or VS Code), navigate to the folder containing your Next.js application. In the starter kit, this is located at `./src/sxastarter`.
 
@@ -105,9 +105,9 @@ Update the `.env` file to populate the following environment variables with the 
 
 ```env
 PUBLIC_URL=https://$CODESPACE_NAME-3000.app.github.dev/
-JSS_EDITING_SECRET=<Get the editing secret from <xmcloud CM url>/sitecore/admin/showconfig.aspx
+JSS_EDITING_SECRET=<Get the editing secret from <xmcloud CM URL>/sitecore/admin/showconfig.aspx
 SITECORE_API_KEY=<Get the API key from the XM Deploy app (see below)>
-SITECORE_API_HOST=<The url of your XM Cloud CM instance>
+SITECORE_API_HOST=<The URL of your XM Cloud CM instance>
 JSS_APP_NAME=<Your JSS app name>
 ```
 
@@ -118,9 +118,9 @@ npm install
 npm run start:connected
 ```
 
-This rull run the next.js application and give you a Url that is accessible by only you. The first time you see it, it will prompt you with this warning:
+This rull run the Next.js application and give you a URL that is accessible by only you. The first time you see it, it will prompt you with this warning:
 
-<img src="/images/learn/accelerate/xm-cloud/codespaces-3.png" alt="Codespaces public url warning"/>
+<img src="/images/learn/accelerate/xm-cloud/codespaces-3.png" alt="Codespaces public URL warning"/>
 
 Click continue to view the site.
 
@@ -128,7 +128,7 @@ Click continue to view the site.
 
 Make sure your site is visible
 
-To enable the application to be used by Pages, first check that the url is public. In Codespaces/VS Code, click on the `Ports` tab. There you will see a list of forwarded ports for your application. You are only interested in port 3000.
+To enable the application to be used by Pages, first check that the URL is public. In Codespaces/VS Code, click on the `Ports` tab. There you will see a list of forwarded ports for your application. You are only interested in port 3000.
 
 If the port visibility is set to `Private`, right-click that entry, go to Port Visibility and click `Public`:
 
@@ -163,9 +163,9 @@ Set the following fields:
 - `Hostname` - set this to your Codespaces forwarded URL for port 3000
 - `Predefined application rendering host` - set this to the new Rendering Host created in the step above.
 
-We also need to change the `Hostname` field on the original `Site` item. By default it will be set to `*` which will override your new `Site` item mapping. Change the `*` to a different URl, usually the URL for your hosted next.js application.
+We also need to change the `Hostname` field on the original `Site` item. By default it will be set to `*` which will override your new `Site` item mapping. Change the `*` to a different URL, usually the URL for your hosted Next.js application.
 
-Once this is all setup, Pages will connect to your application running in Codespaces. The first time this
+Once this is all setup, Pages will connect to your application running in Codespaces. The first time you load Pages, it may have cached the previous editing host details, so if it errors, leave it 10 minutes and try again.
 
 ### Installing the Sitecore CLI
 
@@ -181,17 +181,17 @@ The Sitecore CLI will be installed to the Codespace.
 
 ### Get the GraphQL API Key
 
-To get the GraphQL API Key, open the XM Cloud Deploy all (https://deploy.sitecorecloud.io) and navigate to your Project, then your Environment. On the Environment details page, change to the Details tab and click the `Generate Preview API token` button under the heading `Preview GraphQL IDE`:
+To get the GraphQL API Key, open the XM Cloud Deploy app (https://deploy.sitecorecloud.io) and navigate to your Project, then your Environment. On the Environment details page, change to the Details tab and click the `Generate Preview API token` button under the heading `Preview GraphQL IDE`:
 
 <img src="/images/learn/accelerate/xm-cloud/codespaces-6.png" alt="Get the Preview API Key"/>
 
-Thie will reveal the API key GUID.
+This will reveal the API key GUID.
 
 ## Troubleshooting
 
 ### Ports are not forwarding
 
-- Please check that any VPN's are disabled
+- Please check that any VPNs are disabled
 
 ## Related Links
 
