@@ -126,7 +126,7 @@ Click continue to view the site.
 
 ### Configure Pages/Experience Editor
 
-Make sure your site is visible
+#### Make sure your site is visible
 
 To enable the application to be used by Pages, first check that the URL is public. In Codespaces/VS Code, click on the `Ports` tab. There you will see a list of forwarded ports for your application. You are only interested in port 3000.
 
@@ -136,7 +136,7 @@ If the port visibility is set to `Private`, right-click that entry, go to Port V
 
 Now your site is visible to anyone with the link.
 
-### Create the Rendering Host item
+#### Create the Rendering Host item
 
 Next open up Content Editor in your XM Cloud dev environment. Navigate to `/sitecore/system/Settings/Services/Rendering Hosts`. Here we need to create a new predefined rendering host that points at your Codespaces site.
 
@@ -153,7 +153,7 @@ This will be your unique rendering host, so make sure you name it accordingly.
 
 Save the item.
 
-### Create your development Site Definition item
+#### Create your development Site Definition item
 
 Open `Content Editor` and in your site, navigate to `<site root>/Settings/Site Grouping`. Insert a new `Site` item.
 
