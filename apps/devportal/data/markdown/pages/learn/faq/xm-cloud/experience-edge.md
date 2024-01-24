@@ -3,6 +3,11 @@ title: 'Experience Edge'
 hasInPageNav: true
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 ## How is content delivery connected with Experience Edge?
 XM Cloud publishes and serves content exclusively to Experience Edge. The Edge for XM Connector is preconfigured as part of the XM cloud solution. Edge is a content delivery network (CDN) that uses a set of GraphQL libraries which your front-end application uses to retrieve content.
 

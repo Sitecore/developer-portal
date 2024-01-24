@@ -3,6 +3,11 @@ title: 'Getting Started'
 hasInPageNav: true
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    The information in this article can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 What do devs need to know **before they get started** on a Sitecore XM Cloud project?
 
 ## Onboarding

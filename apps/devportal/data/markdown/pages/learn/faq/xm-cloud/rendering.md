@@ -2,6 +2,10 @@
 title: 'Rendering'
 hasInPageNav: true
 ---
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
 
 ## What rendering technology is supported using XM Cloud?
 
