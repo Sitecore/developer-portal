@@ -58,6 +58,10 @@
               "path": "project-solution-setup"
             },
             {
+              "title": "Creating a Site",
+              "path": "creating-a-site"
+            },
+            {
               "title": "Setup Content Serialization",
               "path": "setup-content-serialization"
             },
