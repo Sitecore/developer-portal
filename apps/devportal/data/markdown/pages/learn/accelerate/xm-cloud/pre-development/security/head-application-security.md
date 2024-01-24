@@ -80,6 +80,10 @@ const defaultConfig: JssConfig = {
 };
 ```
 
+### External Data Fetching
+
+When getting external data in a component using
+
 ## Related Recipes
 
 <Row columns={2}>

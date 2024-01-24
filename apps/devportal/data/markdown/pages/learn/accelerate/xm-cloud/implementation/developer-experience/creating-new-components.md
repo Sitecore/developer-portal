@@ -16,7 +16,7 @@ All components in XM Cloud must be a clone of one of the OOTB XM Cloud component
 
 ### Modules
 
-So that we can clone we first need to create an XM Cloud module.
+To clone a component we need to make sure there is a headless module created to clone into. This module should have been created during the creation of your site collection and site items. See the [Creating a Site recipe](/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site) for more details.
 
 ### Which Component to Clone
 
@@ -36,7 +36,7 @@ For all other components, the developer must clone the OOTB **Page Content** com
 
 ### Cloning Process
 
-Once your module is created (This should be the Project layer module created when a new `Site Collection` is created), you can copy and customize your rendering:
+Once your module is created (This should be the Project layer module created during the `Site Collection` creation step), you can copy and customize your rendering:
 
 1. Navigate to the rendering you want to use based on the decision tree above.
 2. Right click the rendering item and select `Scripts` then `Clone Rendering`
@@ -170,6 +170,12 @@ Creating a variant is a two-step process. First, you create the code for the var
 #### External Data
 
 External data is handled in its own recipe: [External Data Integration](/learn/accelerate/xm-cloud/implementation/external-data-integration)
+
+### Related Recipes
+
+<Row columns={2}>
+  <Link title="Creating a Site" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site" />
+</Row>
 
 ### Related Documentation
 
