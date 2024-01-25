@@ -26,7 +26,7 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
 
   const MetaInfo = (
     <HStack {...rest} gap={4}>
-      {item.products != null ? item.products.map((product, key) => <ProductIcon product={product} key={key} />) : <Alert status="error">No product defined</Alert>}
+      {item.products != null ? item.products.map((product, key) => <ProductIcon product={product} key={key} isPreview={isPreview} />) : <Alert status="error">No product defined</Alert>}
 
       <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
 
