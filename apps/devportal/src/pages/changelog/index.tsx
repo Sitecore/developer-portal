@@ -8,8 +8,8 @@ import Layout from '@src/layouts/Layout';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import SearchChangeLog, { SearchChangeLogParams } from 'sc-changelog/search';
-import { ChangeLogSearchFacet, ChangeLogSearchFacetValue } from 'sc-changelog/search/types';
+import { PreviewChangeLog, SearchChangeLog, SearchChangeLogParams } from 'sc-changelog/search';
+import { ChangeLogSearchFacet, ChangeLogSearchFacetValue, QuerySearchApiResult } from 'sc-changelog/search/types';
 import { ChangelogEntry, ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 import Hero from 'ui/components/common/Hero';
 import ProductLogo from 'ui/components/common/ProductLogo';
@@ -17,7 +17,24 @@ import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { Product } from 'ui/lib/assets';
 
-export default function ChangeSearchlogHome() {
+type ChangelogProps = {
+  isPreview: boolean;
+  previewResponse: QuerySearchApiResult;
+};
+
+export async function getServerSideProps(context: any) {
+  const isPreview = context.preview || false;
+  let previewResponse;
+  if (isPreview) previewResponse = await PreviewChangeLog({ limit: '10', productName: '' });
+  return {
+    props: {
+      isPreview,
+      previewResponse,
+    },
+  };
+}
+
+export default function ChangeSearchlogHome({ isPreview, previewResponse }: ChangelogProps) {
   const [entries, setEntries] = useState<ChangelogEntry[]>([]);
   const [entriesByMonth, setEntriesByMonth] = useState<ChangelogEntrySummary[]>([]);
   const [facets, setFacets] = useState<ChangeLogSearchFacet[]>([]);
@@ -72,7 +89,7 @@ export default function ChangeSearchlogHome() {
   };
 
   const callSearchApi = async (searchChangeLogParams: SearchChangeLogParams, concat: boolean) => {
-    const apiResponse = await SearchChangeLog(searchChangeLogParams);
+    const apiResponse = isPreview ? previewResponse : await SearchChangeLog(searchChangeLogParams);
     if (concat) {
       const newEntries = entries.concat(apiResponse.entries);
       setEntries(newEntries);
@@ -117,7 +134,7 @@ export default function ChangeSearchlogHome() {
             </Alert>
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
-                <ChangelogSearchResults entries={entries} isMore={isMore} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} />
+                <ChangelogSearchResults entries={entries} isMore={isMore} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} isPreview={isPreview} />
               </GridItem>
               <Hide below="md">
                 <GridItem colSpan={{ base: 2 }}>

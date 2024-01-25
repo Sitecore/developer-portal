@@ -17,9 +17,10 @@ export type ChangeLogItemProps = {
   isLast: boolean;
   isMore?: boolean;
   onNextPage: () => void;
+  isPreview: boolean;
 };
 
-const ChangeLogSearchItem = ({ item, onNextPage, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
+const ChangeLogSearchItem = ({ item, onNextPage, isLast, isMore, isPreview }: ChangeLogItemProps): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const entryRef = useRef(null);
 
@@ -45,7 +46,7 @@ const ChangeLogSearchItem = ({ item, onNextPage, isLast, isMore }: ChangeLogItem
               {item.title}
             </Link>
           </Heading>
-          <ChangelogSearchItemMeta item={item} />
+          <ChangelogSearchItemMeta item={item} isPreview={isPreview} />
         </CardHeader>
         <CardBody py={0}>
           {item.image?.length > 0 && (

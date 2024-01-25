@@ -13,9 +13,10 @@ type ChangeLogSearchItemProps = {
   isLoading: boolean;
   isMore: boolean;
   initialProduct?: string;
+  isPreview: boolean;
 };
 
-export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading, onFacetChange, isMore, initialProduct }: ChangeLogSearchItemProps) => {
+export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading, onFacetChange, isMore, initialProduct, isPreview }: ChangeLogSearchItemProps) => {
   return (
     <>
       <Box>
@@ -39,7 +40,7 @@ export const ChangelogSearchResults = ({ entries, facets, onNextPage, isLoading,
           </>
         )}
 
-        {!isLoading && entries.length > 0 && entries.map((entry, i) => <ChangeLogSearchItem item={entry} key={i} isLast={i === entries.length - 1} isMore={isMore} onNextPage={onNextPage} />)}
+        {!isLoading && entries.length > 0 && entries.map((entry, i) => <ChangeLogSearchItem item={entry} key={i} isLast={i === entries.length - 1} isMore={isMore} onNextPage={onNextPage} isPreview={isPreview} />)}
       </Box>
     </>
   );
