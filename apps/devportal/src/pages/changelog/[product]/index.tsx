@@ -1,5 +1,6 @@
 import ChangelogSearchByMonth from '@/src/components/changelog/search/ChangelogSearchByMonth';
 import ChangelogSearchResults from '@/src/components/changelog/search/ChangelogSearchResults';
+import { PreviewChangeLog, SearchPreviewChangeLog } from '@/src/lib/changelog/changelog';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Text, Tooltip } from '@chakra-ui/react';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
@@ -9,18 +10,21 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import GetProducts from 'sc-changelog/products';
-import { PreviewChangeLog, SearchChangeLog, SearchChangeLogParams } from 'sc-changelog/search';
+import { SearchChangeLog, SearchChangeLogParams } from 'sc-changelog/search';
 import { ChangeLogSearchFacet, ChangeLogSearchFacetValue, ChangelogFilter, QuerySearchApiResult } from 'sc-changelog/search/types';
+import { Product as ChangelogProduct } from 'sc-changelog/types';
 import { ChangelogEntry, ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 import { slugify } from 'sc-changelog/utils/stringUtils';
 import Hero from 'ui/components/common/Hero';
 import ProductLogo from 'ui/components/common/ProductLogo';
+import { Option } from 'ui/components/dropdown/MultiSelect';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { Product } from 'ui/lib/assets';
 
 type ChangelogProps = {
   currentProduct: string;
+  previewProduct: ChangelogProduct;
   isPreview: boolean;
   previewResponse: QuerySearchApiResult;
 };
@@ -37,13 +41,15 @@ export async function getServerSideProps(context: any) {
   return {
     props: {
       currentProduct: product,
-      previewResponse,
+      currentProductId: currentProductId,
+      previewProduct: previewProduct,
+      previewResponse: previewResponse != undefined ? previewResponse : {},
       isPreview,
     },
   };
 }
 
-export default function ChangeSearchlogHome({ currentProduct, previewResponse, isPreview }: ChangelogProps) {
+export default function ChangeSearchlogHome({ currentProduct, previewProduct, previewResponse, isPreview }: ChangelogProps) {
   const [entries, setEntries] = useState<ChangelogEntry[]>([]);
   const [entriesByMonth, setEntriesByMonth] = useState<ChangelogEntrySummary[]>([]);
   const [facets, setFacets] = useState<ChangeLogSearchFacet[]>([]);
@@ -75,6 +81,14 @@ export default function ChangeSearchlogHome({ currentProduct, previewResponse, i
 
     await callSearchApi(searchChangeLogParams, true);
     setOffset(offset + limit);
+  };
+
+  const onPreviewFilterChange = async (products: Option[], changes: Option[]) => {
+    setisLoading(true);
+    previewResponse = await SearchPreviewChangeLog({ products: [], changeType: changes, currentProduct: previewProduct });
+    setEntries(previewResponse.entries);
+    setEntriesByMonth(previewResponse.entriesByMonth);
+    setisLoading(false);
   };
 
   const onFacetChange = async (facet: ChangeLogSearchFacetValue[], facetName: string) => {
@@ -152,7 +166,17 @@ export default function ChangeSearchlogHome({ currentProduct, previewResponse, i
             </Alert>
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
-                <ChangelogSearchResults entries={entries} isMore={isMore} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} initialProduct={currentProduct} isPreview={isPreview} />
+                <ChangelogSearchResults
+                  entries={entries}
+                  isMore={isMore}
+                  facets={facets}
+                  isLoading={isLoading}
+                  onNextPage={onNextPage}
+                  onFacetChange={onFacetChange}
+                  onPreviewFilterChange={onPreviewFilterChange}
+                  initialProduct={currentProduct}
+                  isPreview={isPreview}
+                />
               </GridItem>
               <Hide below="md">
                 <GridItem colSpan={{ base: 2 }}>

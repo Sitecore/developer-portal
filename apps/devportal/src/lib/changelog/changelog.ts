@@ -1,10 +1,40 @@
 import axios from 'axios';
+import { ChangelogEntriesPaginated, GetSummaryLatestItemsByProductAndChangeType } from 'sc-changelog/changelog';
+import { QuerySearchApiResult } from 'sc-changelog/search/types';
 import { ChangeType, Product } from 'sc-changelog/types';
 import useSWR, { Fetcher } from 'swr';
 import { Option } from 'ui/components/dropdown/MultiSelect';
 
 export const entriesApiUrl = '/api/changelog/v1';
 
+export type PreviewChangeLogParams = {
+  limit: string;
+  productName: string;
+};
+
+export async function PreviewChangeLog({ limit = '10', productName }: PreviewChangeLogParams): Promise<QuerySearchApiResult> {
+  const previewEntries = await ChangelogEntriesPaginated(true, limit, productName, '');
+  const previewEntriesByMonth = await GetSummaryLatestItemsByProductAndChangeType(true, productName, '');
+  return { entries: previewEntries.entries, facets: [], entriesByMonth: previewEntriesByMonth.entries, isMore: false };
+}
+
+export type PreviewChangeLogSearchParams = {
+  products: Option[];
+  changeType: Option[];
+  currentProduct?: Product;
+};
+
+export async function SearchPreviewChangeLog({ products = [], changeType = [], currentProduct }: PreviewChangeLogSearchParams): Promise<QuerySearchApiResult> {
+  const query = buildQuerystring(products != null ? products : [], changeType, undefined, currentProduct != undefined ? currentProduct : undefined);
+  const url = `${entriesApiUrl}?${query.join('&')}`;
+  const data = await axios.get(url).then((response) => response.data);
+
+  query.push(`limit=50`);
+  const url2 = `${entriesApiUrl}?${query.join('&')}`;
+  const data2 = await axios.get(url2).then((response) => response.data);
+
+  return { entries: data.entries, facets: [], entriesByMonth: data2.entries, isMore: true };
+}
 
 export function getChangeTypeOptions(): Option[] {
   const fetcher: Fetcher<ChangeType[], string> = async (url: string) => await axios.get(url).then((response) => response.data);
@@ -42,7 +72,7 @@ export function buildProductQuerystring(product?: Product, selectedProducts?: Op
 
 export function buildQuerystring(products: Option[], changes: Option[], cursor?: string, initialProduct?: Product): string[] {
   const query: string[] = [];
-  const PAGE_SIZE = 5;
+  const PAGE_SIZE = 10;
 
   if (initialProduct) query.push(`product=${initialProduct.id}`);
 
@@ -57,5 +87,6 @@ export function buildQuerystring(products: Option[], changes: Option[], cursor?:
   if (cursor) {
     query.push(`end=${cursor}`);
   }
+  console.log(query);
   return query;
 }

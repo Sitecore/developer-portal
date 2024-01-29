@@ -1,5 +1,6 @@
 import ChangelogSearchByMonth from '@/src/components/changelog/search/ChangelogSearchByMonth';
 import ChangelogSearchResults from '@/src/components/changelog/search/ChangelogSearchResults';
+import { PreviewChangeLog, SearchPreviewChangeLog } from '@/src/lib/changelog/changelog';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Hide, Text, Tooltip } from '@chakra-ui/react';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
@@ -8,11 +9,12 @@ import Layout from '@src/layouts/Layout';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { PreviewChangeLog, SearchChangeLog, SearchChangeLogParams } from 'sc-changelog/search';
+import { SearchChangeLog, SearchChangeLogParams } from 'sc-changelog/search';
 import { ChangeLogSearchFacet, ChangeLogSearchFacetValue, QuerySearchApiResult } from 'sc-changelog/search/types';
 import { ChangelogEntry, ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
 import Hero from 'ui/components/common/Hero';
 import ProductLogo from 'ui/components/common/ProductLogo';
+import { Option } from 'ui/components/dropdown/MultiSelect';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
 import { Product } from 'ui/lib/assets';
@@ -59,6 +61,14 @@ export default function ChangeSearchlogHome({ isPreview, previewResponse }: Chan
 
     await callSearchApi(searchChangeLogParams, true);
     setOffset(offset + limit);
+  };
+
+  const onPreviewFilterChange = async (products: Option[], changes: Option[]) => {
+    setisLoading(true);
+    previewResponse = await SearchPreviewChangeLog({ products: products, changeType: changes });
+    setEntries(previewResponse.entries);
+    setEntriesByMonth(previewResponse.entriesByMonth);
+    setisLoading(false);
   };
 
   const onFacetChange = async (facet: ChangeLogSearchFacetValue[], facetName: string) => {
@@ -135,7 +145,7 @@ export default function ChangeSearchlogHome({ isPreview, previewResponse }: Chan
             </Alert>
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
-                <ChangelogSearchResults entries={entries} isMore={isMore} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} isPreview={isPreview} />
+                <ChangelogSearchResults entries={entries} isMore={isMore} facets={facets} isLoading={isLoading} onNextPage={onNextPage} onFacetChange={onFacetChange} onPreviewFilterChange={onPreviewFilterChange} isPreview={isPreview} />
               </GridItem>
               <Hide below="md">
                 <GridItem colSpan={{ base: 2 }}>
