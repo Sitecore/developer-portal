@@ -26,10 +26,11 @@ export async function getServerSideProps(context: any) {
   const isPreview = context.preview || false;
   let previewResponse;
   if (isPreview) previewResponse = await PreviewChangeLog({ limit: '10', productName: '' });
+
   return {
     props: {
       isPreview,
-      previewResponse,
+      previewResponse: previewResponse != undefined ? previewResponse : {},
     },
   };
 }
