@@ -35,7 +35,7 @@ const Hero = ({ description, title, children, productLogo }: HeroProps): JSX.Ele
         </Text>
         {productLogo && (
           <Box width="25%">
-            <GuidedDemo link="https://capture.navattic.com/clcurh1oy004l08l218rj0xua" productName={title} productLogo={productLogo} />
+            <GuidedDemo demoId="clcurh1oy004l08l218rj0xua" productName={title} productLogo={productLogo} />
           </Box>
         )}
         {children}
