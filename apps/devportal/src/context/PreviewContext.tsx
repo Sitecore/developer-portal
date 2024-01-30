@@ -15,26 +15,33 @@ export const PreviewContext = createContext<PreviewContextType | null>(null);
 
 type PreviewProviderProps = {
   children: ReactNode | ReactNode[];
-  preview: boolean;
-  currentHostname: string;
+  hostname: string;
 };
 
-const PreviewProvider = ({ children, preview, currentHostname }: PreviewProviderProps) => {
+const PreviewProvider = ({ children, hostname }: PreviewProviderProps) => {
   const [isPreviewModeEnabled, setIsPreviewModeEnabled] = useState<boolean>(false);
   const [isPreview, setIsPreview] = useState<boolean>();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   // eslint-disable-next-line turbo/no-undeclared-env-vars
-  const isEnabled = process.env.NEXT_PUBLIC_PREVIEW_HOSTNAME === currentHostname;
-
-  useEffect(() => {
-    setIsPreview(preview);
-    setIsPreviewModeEnabled(isEnabled);
-  }, [preview, isEnabled]);
-
+  const isPreviewDomain = process.env.NEXT_PUBLIC_PREVIEW_HOSTNAME === hostname;
+  const cookieName = '_scdp_preview_mode';
   const router = useRouter();
 
+  useEffect(() => {
+    const hasVisited = getCookie(cookieName);
+    if (!hasVisited && isPreviewDomain) {
+      setCookie(cookieName, 'true', 1);
+      enablePreview();
+      setIsLoaded(true);
+    }
+    if (isPreviewDomain) {
+      enablePreviewMode();
+    }
+  }, [isPreviewDomain, isLoaded]);
+
   const refreshPage = () => {
-    router.replace(router.asPath);
+    router.reload();
   };
 
   const enablePreviewMode = () => {
@@ -42,7 +49,7 @@ const PreviewProvider = ({ children, preview, currentHostname }: PreviewProvider
   };
 
   const togglePreview = async () => {
-    const success = await triggerPreview(!isPreview);
+    const success = await triggerPreview(!router.isPreview);
     if (success) {
       setIsPreview(!isPreview);
       refreshPage();
@@ -60,7 +67,7 @@ const PreviewProvider = ({ children, preview, currentHostname }: PreviewProvider
   return (
     <PreviewContext.Provider
       value={{
-        isPreview: preview,
+        isPreview: router.isPreview,
         isPreviewModeEnabled: isPreviewModeEnabled,
         togglePreview,
         refreshPage,
@@ -71,6 +78,24 @@ const PreviewProvider = ({ children, preview, currentHostname }: PreviewProvider
       {children}
     </PreviewContext.Provider>
   );
+};
+
+const setCookie = (name: string, value: string, days: number) => {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+};
+
+const getCookie = (name: string) => {
+  const cookieArray = document.cookie.split(';');
+  for (let i = 0; i < cookieArray.length; i++) {
+    const cookiePair = cookieArray[i].split('=');
+    const cookieName = cookiePair[0].trim();
+    if (cookieName === name) {
+      return decodeURIComponent(cookiePair[1]);
+    }
+  }
+  return null;
 };
 
 const triggerPreview = async (enable: boolean) => {

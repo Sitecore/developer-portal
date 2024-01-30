@@ -12,7 +12,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const { clear, redirect } = req.query;
   const redirectUrl = getQueryValue(redirect);
-  res.setHeader('Set-Cookie', ['_scdp_preview=manual; Path=/; Max-Age=3600']);
 
   if (clear != null) {
     res.clearPreviewData({});
