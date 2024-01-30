@@ -1,16 +1,31 @@
-import { Button, CardProps, Link, useColorModeValue } from '@chakra-ui/react';
-import { mdiArrowRight } from '@mdi/js';
-import Icon from '@mdi/react';
-import NextLink from 'next/link';
+import { Button, CardProps, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
 
 type GuidedDemoProps = CardProps & {
   link: string;
   linkText?: string;
 };
 export const GuidedDemo = ({ link, linkText, ...rest }: GuidedDemoProps) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Link as={NextLink} href={link} color={useColorModeValue('white', 'black !important')}>
-      <Button rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>{linkText ?? 'Launch Guided Demo'}</Button>
-    </Link>
+    <>
+      <Button onClick={onOpen}>Open Modal</Button>
+
+      <Modal isOpen={isOpen} onClose={onClose} size="4xl">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Guided Tour: Product Name Here</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <iframe src={link} width="800" height="500"></iframe>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };

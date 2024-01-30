@@ -34,7 +34,7 @@ const Hero = ({ description, title, children, productLogo }: HeroProps): JSX.Ele
           {description}
         </Text>
         {children}
-        <GuidedDemo link="https://jasonstcyr.com" />
+        <GuidedDemo link="https://capture.navattic.com/clcurh1oy004l08l218rj0xua" />
       </CenteredContent>
     </VerticalGroup>
   );
