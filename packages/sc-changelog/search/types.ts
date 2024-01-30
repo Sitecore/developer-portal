@@ -10,6 +10,7 @@ export type QuerySearchApiResult = {
   entriesByMonth: ChangelogEntrySummary[];
   facets: ChangeLogSearchFacet[];
   isMore: boolean;
+  endCursor?: string;
 }
 
 export type SearchChangeLogQueryParams = {

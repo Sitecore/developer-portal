@@ -10,22 +10,24 @@ export const entriesApiUrl = '/api/changelog/v1';
 export type PreviewChangeLogParams = {
   limit: string;
   productName: string;
+  endCursor?: string;
 };
 
-export async function PreviewChangeLog({ limit = '10', productName }: PreviewChangeLogParams): Promise<QuerySearchApiResult> {
-  const previewEntries = await ChangelogEntriesPaginated(true, limit, productName, '');
+export async function PreviewChangeLog({ limit = '10', productName, endCursor }: PreviewChangeLogParams): Promise<QuerySearchApiResult> {
+  const previewEntries = await ChangelogEntriesPaginated(true, limit, productName, '', endCursor);
   const previewEntriesByMonth = await GetSummaryLatestItemsByProductAndChangeType(true, productName, '');
-  return { entries: previewEntries.entries, facets: [], entriesByMonth: previewEntriesByMonth.entries, isMore: false };
+  return { entries: previewEntries.entries, facets: [], entriesByMonth: previewEntriesByMonth.entries, isMore: previewEntries.hasNext, endCursor: previewEntries.endCursor };
 }
 
 export type PreviewChangeLogSearchParams = {
   products: Option[];
   changeType: Option[];
   currentProduct?: Product;
+  cursor?: string
 };
 
-export async function SearchPreviewChangeLog({ products = [], changeType = [], currentProduct }: PreviewChangeLogSearchParams): Promise<QuerySearchApiResult> {
-  const query = buildQuerystring(products != null ? products : [], changeType, undefined, currentProduct != undefined ? currentProduct : undefined);
+export async function SearchPreviewChangeLog({ products = [], changeType = [], currentProduct, cursor }: PreviewChangeLogSearchParams): Promise<QuerySearchApiResult> {
+  const query = buildQuerystring(products != null ? products : [], changeType, cursor ?? undefined, currentProduct != undefined ? currentProduct : undefined);
   const url = `${entriesApiUrl}?${query.join('&')}`;
   const data = await axios.get(url).then((response) => response.data);
 
@@ -33,7 +35,7 @@ export async function SearchPreviewChangeLog({ products = [], changeType = [], c
   const url2 = `${entriesApiUrl}?${query.join('&')}`;
   const data2 = await axios.get(url2).then((response) => response.data);
 
-  return { entries: data.entries, facets: [], entriesByMonth: data2.entries, isMore: true };
+  return { entries: data.entries, facets: [], entriesByMonth: data2.entries, isMore: true, endCursor: data.endCursor };
 }
 
 export function getChangeTypeOptions(): Option[] {
