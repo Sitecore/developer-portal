@@ -1,4 +1,4 @@
-import { Button, CardProps, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
+import { Button, CardProps, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useDisclosure } from '@chakra-ui/react';
 import { Product } from 'ui/lib/assets';
 import ProductIcon from './ProductIcon';
 
@@ -19,8 +19,10 @@ export const GuidedDemo = ({ demoId, linkText, productName, productLogo, ...rest
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            {productLogo && <ProductIcon product={product} />}
-            Guided Tour: {productName}
+            <Flex>
+              {productLogo && <ProductIcon product={product} />}
+              <Text>Guided Tour: {productName}</Text>
+            </Flex>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
