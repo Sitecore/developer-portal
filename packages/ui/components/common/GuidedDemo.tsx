@@ -4,15 +4,16 @@ import ProductIcon from './ProductIcon';
 
 type GuidedDemoProps = CardProps & {
   link: string;
+  linkText?: string;
   productName: string;
   productLogo?: string;
 };
-export const GuidedDemo = ({ link, productName, productLogo, ...rest }: GuidedDemoProps) => {
+export const GuidedDemo = ({ link, linkText, productName, productLogo, ...rest }: GuidedDemoProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   var product: Product = Product[productLogo as keyof typeof Product];
   return (
     <>
-      <Button onClick={onOpen}>Open Modal</Button>
+      <Button onClick={onOpen}>{linkText ?? 'Launch Guided Tour'}</Button>
 
       <Modal isOpen={isOpen} onClose={onClose} size="4xl">
         <ModalOverlay />
