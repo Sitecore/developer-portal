@@ -10,10 +10,11 @@ export type HeroProps = {
   description?: string;
   image?: string;
   productLogo?: string;
+  demoId?: string;
   children?: React.ReactNode | React.ReactNode[];
 };
 
-const Hero = ({ description, title, children, productLogo }: HeroProps): JSX.Element => {
+const Hero = ({ description, title, children, productLogo, demoId }: HeroProps): JSX.Element => {
   return (
     <VerticalGroup
       maxWidth={'full'}
@@ -33,9 +34,9 @@ const Hero = ({ description, title, children, productLogo }: HeroProps): JSX.Ele
         <Text as="h2" variant="subtle" fontSize={{ base: 'sm', md: 'md' }}>
           {description}
         </Text>
-        {productLogo && (
+        {demoId && (
           <Box width="25%">
-            <GuidedDemo demoId="clcurh1oy004l08l218rj0xua" productName={title} productLogo={productLogo} />
+            <GuidedDemo demoId={demoId} productName={title} productLogo={productLogo} />
           </Box>
         )}
         {children}

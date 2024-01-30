@@ -35,7 +35,7 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
 
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
-      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
+      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} demoId={pageInfo.guidedDemoId} />
 
       <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
         {/* <CenteredContent paddingTop={10}> */}
