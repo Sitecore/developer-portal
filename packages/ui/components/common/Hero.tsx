@@ -1,4 +1,4 @@
-import { Heading, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import { VerticalGroup } from 'ui/components/helpers';
 import { CenteredContent } from 'ui/components/helpers/CenteredContent';
@@ -33,8 +33,12 @@ const Hero = ({ description, title, children, productLogo }: HeroProps): JSX.Ele
         <Text as="h2" variant="subtle" fontSize={{ base: 'sm', md: 'md' }}>
           {description}
         </Text>
+        {productLogo && (
+          <Box width="25%">
+            <GuidedDemo link="https://capture.navattic.com/clcurh1oy004l08l218rj0xua" productName={title} productLogo={productLogo} />
+          </Box>
+        )}
         {children}
-        <GuidedDemo link="https://capture.navattic.com/clcurh1oy004l08l218rj0xua" productName={title} productLogo={productLogo} />
       </CenteredContent>
     </VerticalGroup>
   );
