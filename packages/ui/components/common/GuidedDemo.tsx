@@ -13,7 +13,7 @@ export const GuidedDemo = ({ demoId, linkText, productName, productLogo, ...rest
   var product: Product = Product[productLogo as keyof typeof Product];
   return (
     <>
-      <Button onClick={onOpen}>{linkText ?? 'Launch Guided Tour'}</Button>
+      <Button onClick={onOpen}>{linkText ?? 'Launch guided tour'}</Button>
 
       <Modal isOpen={isOpen} onClose={onClose} size="4xl">
         <ModalOverlay />

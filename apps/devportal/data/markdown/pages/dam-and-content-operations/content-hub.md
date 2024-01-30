@@ -9,6 +9,7 @@ youtube: PL1jJVFm_lGnwi3LhIuz-Zbeekh9kehTSZ
 youtubeTitle: Learn more about Sitecore Content Hub
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['contentOperations']
+guidedDemoId: 'clkcumv6600ck08mj12mp13wl'
 ---
 
 ## Introduction
