@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { VerticalGroup } from 'ui/components/helpers';
 import { CenteredContent } from 'ui/components/helpers/CenteredContent';
 import { GetProductLogo } from 'ui/lib/assets';
+import { GuidedDemo } from './GuidedDemo';
 
 export type HeroProps = {
   title: string;
@@ -33,6 +34,7 @@ const Hero = ({ description, title, children, productLogo }: HeroProps): JSX.Ele
           {description}
         </Text>
         {children}
+        <GuidedDemo link="https://jasonstcyr.com" />
       </CenteredContent>
     </VerticalGroup>
   );
