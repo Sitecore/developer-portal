@@ -61,7 +61,7 @@ export default function ChangeSearchlogHome({ isPreview }: ChangelogProps) {
 
   const onPreviewFilterChange = async (products: Option[], changes: Option[]) => {
     setisLoading(true);
-    const previewResponse = await SearchPreviewChangeLog({ products: products, changeType: changes, cursor });
+    const previewResponse = await SearchPreviewChangeLog({ products: products, changeType: changes });
     setEntries(previewResponse.entries);
     setEntriesByMonth(previewResponse.entriesByMonth);
     setCursor(previewResponse.endCursor);

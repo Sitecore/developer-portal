@@ -56,6 +56,7 @@ export default function ChangeSearchlogHome({ currentProduct, previewProduct, pr
   const [offset, setOffset] = useState<number>(0);
   const [isLoading, setisLoading] = useState<boolean>(true);
   const [isMore, setIsMore] = useState<boolean>(true);
+  const [cursor, setCursor] = useState<string | undefined>();
   const enabledFacets = ['changeTypeName'];
   const limit = 5;
   const uuid = getUserId().uuid;
@@ -88,6 +89,7 @@ export default function ChangeSearchlogHome({ currentProduct, previewProduct, pr
     previewResponse = await SearchPreviewChangeLog({ products: [], changeType: changes, currentProduct: previewProduct });
     setEntries(previewResponse.entries);
     setEntriesByMonth(previewResponse.entriesByMonth);
+    setCursor(previewResponse.endCursor);
     setisLoading(false);
   };
 
@@ -121,7 +123,7 @@ export default function ChangeSearchlogHome({ currentProduct, previewProduct, pr
   };
 
   const callSearchApi = async (searchChangeLogParams: SearchChangeLogParams, concat: boolean) => {
-    const apiResponse = isPreview ? previewResponse : await SearchChangeLog(searchChangeLogParams);
+    const apiResponse = isPreview ? await SearchPreviewChangeLog({ products: [], changeType: [], currentProduct: previewProduct, cursor: cursor }) : await SearchChangeLog(searchChangeLogParams);
     if (concat) {
       const newEntries = entries.concat(apiResponse.entries);
       setEntries(newEntries);
@@ -131,6 +133,7 @@ export default function ChangeSearchlogHome({ currentProduct, previewProduct, pr
     setEntriesByMonth(apiResponse.entriesByMonth);
     setFacets(apiResponse.facets);
     setIsMore(apiResponse.isMore);
+    setCursor(apiResponse.endCursor);
   };
 
   useEffect(() => {
