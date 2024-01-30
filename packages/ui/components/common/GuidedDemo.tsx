@@ -17,7 +17,7 @@ export const GuidedDemo = ({ link, productName, product, ...rest }: GuidedDemoPr
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>
-            <ProductIcon product={product} />
+            {product && <ProductIcon product={product} />}
             Guided Tour: {productName}
           </ModalHeader>
           <ModalCloseButton />
