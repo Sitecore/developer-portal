@@ -83,7 +83,9 @@ Personalization in XM Cloud is linked directly to the website that you create in
 
 ### Can I Personalize Sitecore XM Cloud on the level of Components or data sources?
 
-No. Personalization is applied at the page level, where a variant of the page gets assigned to a specified audience. Within that page variant, the user can choose to only personalize one component and leave the rest as default.
+Not in the same way as was done with Sitecore XP. Whereas users of the Sitecore XP Experience Editor could select individual components and swap renderings or datasources at that component-level scope, personalization in XM Cloud is applied at the page level. For any page, multiple variants of the page can be assigned to specified audiences. Within each page variant, the user can choose to personalize one or more components and the rest will stay as the default.
+
+To achieve an XP-style component-level personalization where only one component changes, the user can create a new page variant in XM Cloud and only change that single component. To the visitor, it will appear as if only that one component is changing.
 
 Personalization of content items is not supported, i.e., content items alone cannot be assigned to audiences and then applied to a page – personalization must be applied at page level and then content can be updated for that audience by creating or assigning a new content item.
 
