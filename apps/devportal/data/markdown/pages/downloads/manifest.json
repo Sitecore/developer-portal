@@ -5,14 +5,21 @@
   "showRootAsSections": true,
   "routes": [
     {
-      "title": "Products",
+      "title": "Composable DXP",
       "path": "",
       "ignoreLink": true,
       "children": [
         {
           "title": "Sitecore XM Cloud",
           "path": "xm-cloud"
-        },
+        }
+      ]
+    },
+    {
+      "title": "Platform DXP",
+      "path": "",
+      "ignoreLink": true,
+      "children": [
         {
           "title": "Sitecore Experience Commerce",
           "path": "Sitecore_Commerce"
@@ -20,6 +27,10 @@
         {
           "title": "Sitecore Experience Platform",
           "path": "Sitecore_Experience_Platform"
+        },
+        {
+          "title": "Sitecore Managed Cloud",
+          "path": "Sitecore_Managed_Cloud_Resources"
         }
       ]
     },
@@ -106,10 +117,6 @@
           "path": "Sitecore_Installation_Framework"
         },
         {
-          "title": "Sitecore Managed Cloud Resources",
-          "path": "Sitecore_Managed_Cloud_Resources"
-        },
-        {
           "title": "Sitecore Express Migration Tool",
           "path": "Express_Migration_Tool"
         },
@@ -184,7 +191,7 @@
           "path": "Sitecore_Connect_for_Content_Hub"
         },
         {
-          "title": "Sitecore Connect™ for Microsoft Dynamics 365 Commerce",
+          "title": "Sitecore Connect™ for Dynamics 365 Commerce",
           "path": "Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce"
         },
         {
