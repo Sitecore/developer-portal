@@ -53,6 +53,16 @@
           "path": "information-architecture"
         },
         {
+          "title": "Project Planning",
+          "path": "project-planning",
+          "children": [
+            {
+              "title": "Project Estimation",
+              "path": "project-estimation"
+            }
+          ]
+        },
+        {
           "title": "Sprint Zero",
           "path": "sprint-zero",
           "ignoreLink": true,
