@@ -3,16 +3,11 @@ title: Sitecore Downloads
 description: 'Download Sitecore software, tools and resources'
 origin: https://dev.sitecore.net/Downloads.aspx
 hasInPageNav: false
-isDownloadPage: false
-isTopicPage: false
-isLandingPage: true
-isDownloadsLandingPage: true
-isPackageLandingPage: false
 ---
 
 ## Platform DXP
 
-Download the latest version of the Sitecore Customer Experience Platform - the integration and automation marketers need to win customers for life.
+Download the latest version of the Sitecore Digital Experience Platform.
 
 <Download 
   title="Sitecore Experience Platform 10.3 Update-1"
