@@ -6,7 +6,7 @@ import { Sidebar } from './Sidebar';
 
 type ThreeColumnLayoutProps = {
   sidebar: React.ReactNode;
-  inPageNav?: React.ReactNode;
+  inPageNav?: React.ReactNode | null;
   inPageLinks?: ContentHeading[];
   children: React.ReactNode;
   background?: string;

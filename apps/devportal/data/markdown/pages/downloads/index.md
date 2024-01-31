@@ -2,6 +2,7 @@
 title: Sitecore Downloads
 description: 'Download Sitecore software, tools and resources'
 origin: https://dev.sitecore.net/Downloads.aspx
+hasInPageNav: false
 isDownloadPage: false
 isTopicPage: false
 isLandingPage: true

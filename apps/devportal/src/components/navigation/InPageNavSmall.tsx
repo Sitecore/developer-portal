@@ -21,13 +21,13 @@ const InPageNavSmall = ({ titles, ...rest }: InPageNavProps): JSX.Element => {
   }
 
   return (
-    <Box {...rest}>
+    <Box {...rest} mb={4}>
       <Menu>
         <Tooltip label="Sections on this page" aria-label="Table of contents">
           <MenuButton
             position={'absolute'}
-            right={2}
-            mt={4}
+            right={0}
+            mt={2}
             size="sm"
             as={IconButton}
             variant="ghost"

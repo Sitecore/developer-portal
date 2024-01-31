@@ -32,12 +32,12 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
   if (pageInfo.headings) sectionTitles.push(...pageInfo.headings);
 
   if (partials) sectionTitles.push(...partials.titles);
-  const Nav = customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null;
+
+  const Nav = pageInfo.hasInPageNav != false ? customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null : null;
 
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
-
       <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <ChildNavigation subPageNavigation={subPageNavigation} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
         <PromoList data={promoBefore} />
 
