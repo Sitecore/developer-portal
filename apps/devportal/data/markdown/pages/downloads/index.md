@@ -4,10 +4,11 @@ description: 'Download Sitecore software, tools and resources'
 origin: https://dev.sitecore.net/Downloads.aspx
 hasInPageNav: false
 ---
-
 ## Platform DXP
 
-Download the latest version of the Sitecore Digital Experience Platform.
+Download the latest version of the Sitecore Digital Experience Platform and Sitecore Experience Commerce.
+
+<SimpleGrid gap='6' templateColumns='repeat(auto-fill, minmax(var(--sizes-md), 1fr))'>
 
 <Download 
   title="Sitecore Experience Platform 10.3 Update-1"
@@ -18,12 +19,6 @@ Download the latest version of the Sitecore Digital Experience Platform.
   link2href="/downloads/Sitecore_Experience_Platform"
 />
 
-Downloads relating to **Sitecore 7.5 and below** are available on the [Sitecore Experience Platform 7 and below](/downloads/Sitecore_Experience_Platform/7_0/Sitecore_Experience_Platform_7_and_below) downloads page.
-
-## Products and Modules
-
-<SimpleGrid gap='6' templateColumns='repeat(auto-fill, minmax(var(--sizes-md), 1fr))'>
-
 <Download 
   title="Sitecore Experience Commerce 10.3"
   description="Compatible with Sitecore Experience Platform 10.3, including update 1."
@@ -32,6 +27,15 @@ Downloads relating to **Sitecore 7.5 and below** are available on the [Sitecore 
   link2text="See all versions"
   link2href="/downloads/Sitecore_Commerce"
 />
+
+</SimpleGrid>
+
+Downloads relating to **Sitecore 7.5 and below** are available on the [Sitecore Experience Platform 7 and below](/downloads/Sitecore_Experience_Platform/7_0/Sitecore_Experience_Platform_7_and_below) downloads page.
+
+## Products and Modules
+
+<SimpleGrid gap='6' templateColumns='repeat(auto-fill, minmax(var(--sizes-md), 1fr))'>
+
 <Download 
   title="Sitecore xDB Cloud client 8.1 rev. 160210 for xDB Cloud 1.0"
   description="This module enables the xDB Cloud features on Sitecore XP 8.1"
