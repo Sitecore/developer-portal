@@ -2,6 +2,10 @@
 title: 'Upgrades'
 hasInPageNav: true
 ---
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
 
 ## Will Sitecore keep Sitecore XM Cloud up to date?
 Sitecore will deliver XM Cloud as a cloud-native service, so all aspects of the platform will be kept up-to-date, secure, and performant by Sitecore. Additional details on the environment updates are available in the documentation: [SaaS Environment Updates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-experience-manager-cloud.html#saas-environment-updates)

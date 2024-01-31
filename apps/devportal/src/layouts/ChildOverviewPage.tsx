@@ -45,6 +45,8 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
                   </GridItem>
                 </Grid>
               )}
+
+              <PromoList data={promoAfter} />
             </CenteredContent>
           </VerticalGroup>
         )}

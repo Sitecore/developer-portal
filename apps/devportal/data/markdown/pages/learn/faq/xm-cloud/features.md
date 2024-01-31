@@ -3,6 +3,11 @@ title: 'Features'
 hasInPageNav: true
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 ## What’s included in XM Cloud?
 
 XM Cloud includes:

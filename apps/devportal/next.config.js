@@ -68,18 +68,62 @@ const nextConfig = {
   },
   images: {
     dangerouslyAllowSVG: true,
-    domains: [
-      'sitecorecdn.azureedge.net',
-      'i.ytimg.com',
-      'mss-p-006-delivery.sitecorecontenthub.cloud',
-      'mss-p-006-delivery.stylelabs.cloud',
-      'go.sitecore.com',
-      'sitecorecontenthub.stylelabs.cloud',
-      'mms-delivery.sitecorecloud.io',
-      'wwwsitecorecom.azureedge.net',
-      'www.gitbook.com',
-      'theme.zdassets.com',
-      'opengraph.githubassets.com',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'sitecorecdn.azureedge.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'sitecorecdn.azureedge.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.sitecorecontenthub.cloud',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.stylelabs.cloud',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.sitecore.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.sitecorecloud.io',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'wwwsitecorecom.azureedge.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.gitbook.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'theme.zdassets.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'opengraph.githubassets.com',
+        pathname: '/**',
+      },
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     minimumCacheTTL: 60,

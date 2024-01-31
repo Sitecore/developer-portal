@@ -2,6 +2,10 @@
 title: 'Scaling and Availability'
 hasInPageNav: true
 ---
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
 
 ## Is XM Cloud multi-tenant or single tenant?
 XM Cloud runs the Experience Manager environment as a single-tenant instance. The delivery environment and the composable services such as Sitecore Personalize and Experience Edge are running in our multi-tenant global delivery platform.

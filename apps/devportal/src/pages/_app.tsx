@@ -6,7 +6,7 @@ import { toastOptions } from '@sitecore/blok-theme';
 import { Footer } from '@src/components/navigation/Footer';
 import Navbar from '@src/components/navigation/NavBar';
 import { AppProps } from 'next/app';
-import { Router, useRouter } from 'next/router';
+import { Router } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
@@ -19,7 +19,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(false);
   const [hostname, setHostname] = useState('');
 
-  const router = useRouter();
   TopBarProgress.config({
     barColors: {
       '0': '#fca5a5',
@@ -89,7 +88,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         `}
       </style>
       <ChakraProvider theme={scdpTheme} toastOptions={toastOptions}>
-        <PreviewProvider preview={router.isPreview} currentHostname={hostname}>
+        <PreviewProvider hostname={hostname}>
           {progress && <TopBarProgress />}
           <Navbar searchEnabled={IsSearchEnabled()} />
           <Box ref={contentInnerRef}>

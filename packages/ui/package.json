@@ -8,20 +8,21 @@
     "lint": "eslint \"**/*.ts*\""
   },
   "devDependencies": {
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.38.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.56.0",
     "eslint-config-custom": "*",
     "react": "^18.2.0",
     "tsconfig": "*",
-    "typescript": "^5.0.4"
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "chakra-react-select": "^4.7.5",
-    "class-variance-authority": "^0.6.0",
-    "clsx": "^1.2.1",
-    "react-select": "^5.7.2",
-    "react-tweet": "^3.1.1"
+    "chakra-react-select": "^4.7.6",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "next-share": "^0.27.0",
+    "react-select": "^5.8.0",
+    "react-tweet": "^3.2.0"
   }
 }

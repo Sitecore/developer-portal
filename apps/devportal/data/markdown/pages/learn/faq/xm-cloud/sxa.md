@@ -2,6 +2,10 @@
 title: 'Sitecore Experience Accelerator – SXA'
 hasInPageNav: true
 ---
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
 
 ## How will SXA be supported on XM Cloud since there is no Content Delivery server?
 Sitecore XM Cloud has improved support for Headless SXA tenants since the Content Delivery servers will not be available. The improved SXA will be bundled as part of XM Cloud.
