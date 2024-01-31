@@ -9,7 +9,6 @@ origin: https://dev.sitecore.net/Downloads/Komfo_Connector.aspx
 ## Komfo Connector 1.0
 </CardHeader>
 <CardBody>
-[Komfo Connector 1.0](/downloads/Komfo_Connector/10/Komfo_Connector_10)\
-
+[Komfo Connector 1.0](/downloads/Komfo_Connector/10/Komfo_Connector_10)
 </CardBody>          
 </Card>

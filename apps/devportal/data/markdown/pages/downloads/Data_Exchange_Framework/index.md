@@ -100,7 +100,6 @@ Synchronize data between Sitecore and 3rd party systems.
 [Data Exchange Framework 1.3](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_1_3)\
 [Data Exchange Framework 1.2](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_1_2)\
 [Data Exchange Framework 1.1](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_11)\
-[Data Exchange Framework 1.0](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_10)\
-
+[Data Exchange Framework 1.0](/downloads/Data_Exchange_Framework/1x/Data_Exchange_Framework_10)
 </CardBody>          
 </Card>

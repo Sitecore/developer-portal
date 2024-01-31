@@ -78,8 +78,7 @@ Download Sitecore Azure Toolkit 2.0 rev. 180328 (Update-3).
 Download Sitecore Azure Toolkit 2.0 rev. 180220 (Update-2).
 
 [Sitecore Azure Toolkit 2.0 Update-1](/downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_201)\
-[Sitecore Azure Toolkit 2.0 Initial Release](/downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_200)\
-
+[Sitecore Azure Toolkit 2.0 Initial Release](/downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_200)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -92,7 +91,6 @@ This maintenance release adds support for Sitecore 8.2 Update-4 and Update-5, a
 
 [Sitecore Azure Toolkit 1.1 rev. 170509](/downloads/Sitecore_Azure_Toolkit/1x/Sitecore_Azure_Toolkit_110)\
 [Sitecore Azure Toolkit 1.0 rev. 170323](/downloads/Sitecore_Azure_Toolkit/1x/Sitecore_Azure_Toolkit_103)\
-[Sitecore Azure Toolkit 1.0 rev. 161125](/downloads/Sitecore_Azure_Toolkit/1x/Sitecore_Azure_Toolkit_100)\
-
+[Sitecore Azure Toolkit 1.0 rev. 161125](/downloads/Sitecore_Azure_Toolkit/1x/Sitecore_Azure_Toolkit_100)
 </CardBody>          
 </Card>

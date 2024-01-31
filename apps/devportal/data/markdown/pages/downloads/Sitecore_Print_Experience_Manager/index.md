@@ -57,7 +57,6 @@ This version of PXM runs on Sitecore 8.2 (update-3).
 This is a product update. This version runs on Sitecore 8.0, Sitecore 8.1 and Sitecore 8.2. It is also compatible with Sitecore versions 7.1 through 7.5.
 
 [Sitecore Print Experience Manager 8.0 Update-1](/downloads/Sitecore_Print_Experience_Manager/8_0/PXM_80_U1)\
-[Sitecore Print Experience Manager 8.0](/downloads/Sitecore_Print_Experience_Manager/8_0/Sitecore_Print_Experience_Manager_for_8_0)\
-
+[Sitecore Print Experience Manager 8.0](/downloads/Sitecore_Print_Experience_Manager/8_0/Sitecore_Print_Experience_Manager_for_8_0)
 </CardBody>          
 </Card>

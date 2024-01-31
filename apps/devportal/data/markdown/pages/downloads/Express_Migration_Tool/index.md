@@ -9,8 +9,7 @@ origin: https://dev.sitecore.net/Downloads/Express_Migration_Tool.aspx
 ## Sitecore Express Migration Tool 3.1
 </CardHeader>
 <CardBody>
-[Express Migration Tool 3.1](/downloads/Express_Migration_Tool/31/Express_Migration_Tool_31)\
-
+[Express Migration Tool 3.1](/downloads/Express_Migration_Tool/31/Express_Migration_Tool_31)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -18,8 +17,7 @@ origin: https://dev.sitecore.net/Downloads/Express_Migration_Tool.aspx
 ## Sitecore Express Migration Tool 3.0
 </CardHeader>
 <CardBody>
-[Express Migration Tool 3.0](/downloads/Express_Migration_Tool/30/Express_Migration_Tool_30_Initial_Release)\
-
+[Express Migration Tool 3.0](/downloads/Express_Migration_Tool/30/Express_Migration_Tool_30_Initial_Release)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>

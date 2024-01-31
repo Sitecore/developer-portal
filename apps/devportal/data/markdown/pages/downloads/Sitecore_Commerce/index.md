@@ -53,8 +53,7 @@ Compatible with Sitecore Experience Platform 10.0, including updates 1 through 3
 ## Sitecore Experience Commerce 9.3
 </CardHeader>
 <CardBody>
-[Sitecore Experience Commerce 9.3 Initial Release](/downloads/Sitecore_Commerce/93/Sitecore_Experience_Commerce_93_Initial_Release)\
-
+[Sitecore Experience Commerce 9.3 Initial Release](/downloads/Sitecore_Commerce/93/Sitecore_Experience_Commerce_93_Initial_Release)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -131,8 +130,7 @@ Sitecore's powered by Commerce Server product, compatible with Sitecore Experien
 [Sitecore Commerce 8.2 Connect](/downloads/Sitecore_Commerce/82/Sitecore_Commerce_82_Connect)\
 Connectivity module for integrating 3rd party commerce or ERP platforms with the Sitecore Experience Platform. Compatible with Sitecore Experience Platform 8.2 Initial Release through Update-5.
 
-[Commerce Server 11.4](/downloads/Sitecore_Commerce/82/Commerce_Server_114)\
-
+[Commerce Server 11.4](/downloads/Sitecore_Commerce/82/Commerce_Server_114)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -149,8 +147,7 @@ Sitecore's powered by Commerce Server product, compatible with Sitecore Experien
 [Sitecore Commerce 8.1 Connect](/downloads/Sitecore_Commerce/81/Sitecore_Commerce_81_Connect)\
 Connectivity module for integrating 3rd party commerce or ERP platforms with the Sitecore Experience Platform. Compatible with Sitecore Experience Platform 8.1 Update-1 through Update-3.
 
-[Commerce Server 11.3](/downloads/Sitecore_Commerce/81/Sitecore_Commerce_Server_113)\
-
+[Commerce Server 11.3](/downloads/Sitecore_Commerce/81/Sitecore_Commerce_Server_113)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>

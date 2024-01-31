@@ -97,7 +97,6 @@ Synchronize data between Microsoft Dynamics 365 for Sales and Sitecore Experienc
 [Dynamics CRM Connect 1.3](/downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_1_3)\
 [Dynamics CRM Connect 1.2](/downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_1_2)\
 [Dynamics CRM Connect 1.1](/downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_11)\
-[Dynamics CRM Connect 1.0](/downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_10)\
-
+[Dynamics CRM Connect 1.0](/downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_10)
 </CardBody>          
 </Card>

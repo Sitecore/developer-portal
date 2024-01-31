@@ -20,7 +20,6 @@ This module enables the xDB Cloud features on Sitecore XP 8.1
 ## Sitecore xDB Cloud client for xDB Cloud 1.0 8.0
 </CardHeader>
 <CardBody>
-[Sitecore xDB Cloud client 8.0 rev. 160210 for xDB Cloud 1.0](/downloads/Sitecore_xDB_Cloud_client/80/Sitecore_xDB_Cloud_client_80_rev_160210)\
-
+[Sitecore xDB Cloud client 8.0 rev. 160210 for xDB Cloud 1.0](/downloads/Sitecore_xDB_Cloud_client/80/Sitecore_xDB_Cloud_client_80_rev_160210)
 </CardBody>          
 </Card>

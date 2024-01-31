@@ -9,7 +9,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_for_Visual_Studio.aspx
 ## Sitecore for Visual Studio 5.x
 </CardHeader>
 <CardBody>
-[Sitecore for Visual Studio 5.2.113](/downloads/Sitecore_for_Visual_Studio/5x/Sitecore_for_Visual_Studio_52113)\
-
+[Sitecore for Visual Studio 5.2.113](/downloads/Sitecore_for_Visual_Studio/5x/Sitecore_for_Visual_Studio_52113)
 </CardBody>          
 </Card>

@@ -77,7 +77,6 @@ Download Sitecore Identity 3.0.0
 </CardHeader>
 <CardBody>
 [Sitecore Identity 2.0.1](/downloads/Sitecore_Identity/2x/Sitecore_Identity_201)\
-[Sitecore Identity 2.0.0](/downloads/Sitecore_Identity/2x/Sitecore_Identity_200)\
-
+[Sitecore Identity 2.0.0](/downloads/Sitecore_Identity/2x/Sitecore_Identity_200)
 </CardBody>          
 </Card>

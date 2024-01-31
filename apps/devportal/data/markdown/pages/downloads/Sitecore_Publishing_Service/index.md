@@ -98,8 +98,7 @@ Download Sitecore Publishing Service 3.1 (Update-2)
 [Sitecore Publishing Service 3.1 Update-1](/downloads/Sitecore_Publishing_Service/31/Sitecore_Publishing_Service_31_Update1)\
 Download Sitecore Publishing Service 3.1 (Update-1)
 
-[Sitecore Publishing Service 3.1 Initial Release](/downloads/Sitecore_Publishing_Service/31/Sitecore_Publishing_Service_31_Initial_Release)\
-
+[Sitecore Publishing Service 3.1 Initial Release](/downloads/Sitecore_Publishing_Service/31/Sitecore_Publishing_Service_31_Initial_Release)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -107,8 +106,7 @@ Download Sitecore Publishing Service 3.1 (Update-1)
 ## Sitecore Publishing Service 3.0
 </CardHeader>
 <CardBody>
-[Sitecore Publishing Service 3.0 Initial Release](/downloads/Sitecore_Publishing_Service/30/Sitecore_Publishing_Service_30_Initial_Release)\
-
+[Sitecore Publishing Service 3.0 Initial Release](/downloads/Sitecore_Publishing_Service/30/Sitecore_Publishing_Service_30_Initial_Release)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -119,8 +117,7 @@ Download Sitecore Publishing Service 3.1 (Update-1)
 [Sitecore Publishing Service 2.2 Update-1](/downloads/Sitecore_Publishing_Service/22/Sitecore_Publishing_Service_22_Update1)\
 Download Sitecore Publishing Service 2.2 (Update-1)
 
-[Sitecore Publishing Service 2.2 Initial Release](/downloads/Sitecore_Publishing_Service/22/Sitecore_Publishing_Service_22_Initial_Release)\
-
+[Sitecore Publishing Service 2.2 Initial Release](/downloads/Sitecore_Publishing_Service/22/Sitecore_Publishing_Service_22_Initial_Release)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -128,8 +125,7 @@ Download Sitecore Publishing Service 2.2 (Update-1)
 ## Sitecore Publishing Service 2.1
 </CardHeader>
 <CardBody>
-[Sitecore Publishing Service 2.1 Initial Release](/downloads/Sitecore_Publishing_Service/21/Sitecore_Publishing_Service_21_Initial_Release)\
-
+[Sitecore Publishing Service 2.1 Initial Release](/downloads/Sitecore_Publishing_Service/21/Sitecore_Publishing_Service_21_Initial_Release)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -138,8 +134,7 @@ Download Sitecore Publishing Service 2.2 (Update-1)
 </CardHeader>
 <CardBody>
 [Sitecore Publishing Service 2.0 Update-1](/downloads/Sitecore_Publishing_Service/20/Sitecore_Publishing_Service_20_Update1)\
-[Sitecore Publishing Service 2.0 Initial Release](/downloads/Sitecore_Publishing_Service/20/Sitecore_Publishing_Service_20_Initial_Release)\
-
+[Sitecore Publishing Service 2.0 Initial Release](/downloads/Sitecore_Publishing_Service/20/Sitecore_Publishing_Service_20_Initial_Release)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -147,7 +142,6 @@ Download Sitecore Publishing Service 2.2 (Update-1)
 ## Sitecore Publishing Service 1.1
 </CardHeader>
 <CardBody>
-[Sitecore Publishing Service 1.1 Initial Release](/downloads/Sitecore_Publishing_Service/11/Sitecore_Publishing_Service_11_Initial_Release)\
-
+[Sitecore Publishing Service 1.1 Initial Release](/downloads/Sitecore_Publishing_Service/11/Sitecore_Publishing_Service_11_Initial_Release)
 </CardBody>          
 </Card>

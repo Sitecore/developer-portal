@@ -38,8 +38,7 @@ Download Web Forms For Marketers 8.2 rev. 170807 (Update-5)
 [Web Forms For Marketers 8.2 Update-4](/downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Update4)\
 [Web Forms For Marketers 8.2 Update-3](/downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Update3)\
 [Web Forms For Marketers 8.2 Update-1](/downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Update1)\
-[Web Forms For Marketers 8.2 Initial Release](/downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Initial_Version)\
-
+[Web Forms For Marketers 8.2 Initial Release](/downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Initial_Version)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -50,8 +49,7 @@ Download Web Forms For Marketers 8.2 rev. 170807 (Update-5)
 [Web Forms For Marketers 8.1 Update-3](/downloads/Web_Forms_For_Marketers/Web_Forms_For_Marketers_81/Web_Forms_For_Marketers_81_Update3)\
 [Web Forms For Marketers 8.1 Update-2](/downloads/Web_Forms_For_Marketers/Web_Forms_For_Marketers_81/Web_Forms_For_Marketers_81_Update2)\
 [Web Forms For Marketers 8.1 Update-1](/downloads/Web_Forms_For_Marketers/Web_Forms_For_Marketers_81/Web_forms_for_marketers_81_Update1)\
-[Web Forms For Marketers 8.1 Initial Version](/downloads/Web_Forms_For_Marketers/Web_Forms_For_Marketers_81/Web_Forms_For_Marketers_81_Initial_Version)\
-
+[Web Forms For Marketers 8.1 Initial Version](/downloads/Web_Forms_For_Marketers/Web_Forms_For_Marketers_81/Web_Forms_For_Marketers_81_Initial_Version)
 </CardBody>          
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>

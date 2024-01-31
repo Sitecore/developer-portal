@@ -9,7 +9,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_SPEAK.aspx
 ## Sitecore SPEAK 3.0
 </CardHeader>
 <CardBody>
-[Sitecore SPEAK 3.0 Initial Release](/downloads/Sitecore_SPEAK/3/Sitecore_SPEAK_3)\
-
+[Sitecore SPEAK 3.0 Initial Release](/downloads/Sitecore_SPEAK/3/Sitecore_SPEAK_3)
 </CardBody>          
 </Card>

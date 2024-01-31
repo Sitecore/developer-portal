@@ -9,7 +9,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Managed_Cloud_Resources.aspx
 ## Sitecore Managed Cloud Resources 1.0
 </CardHeader>
 <CardBody>
-[Sitecore Managed Cloud Resources 1.0](/downloads/Sitecore_Managed_Cloud_Resources/10/Sitecore_Managed_Cloud_Resources_10)\
-
+[Sitecore Managed Cloud Resources 1.0](/downloads/Sitecore_Managed_Cloud_Resources/10/Sitecore_Managed_Cloud_Resources_10)
 </CardBody>          
 </Card>

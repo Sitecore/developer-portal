@@ -9,7 +9,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_services.aspx
 ## Sitecore xDB Cloud Services current
 </CardHeader>
 <CardBody>
-[Sitecore xDB Cloud Services](/downloads/Sitecore_xDB_Cloud_services/current/Sitecore_xDB_Cloud_services)\
-
+[Sitecore xDB Cloud Services](/downloads/Sitecore_xDB_Cloud_services/current/Sitecore_xDB_Cloud_services)
 </CardBody>          
 </Card>
