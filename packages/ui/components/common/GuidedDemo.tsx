@@ -21,7 +21,7 @@ export const GuidedDemo = ({ demoId, linkText, productName, productLogo, ...rest
           <ModalHeader>
             <Flex>
               {productLogo && <ProductIcon product={product} />}
-              <Text>Guided Tour: {productName}</Text>
+              <Text>Guided tour: {productName}</Text>
             </Flex>
           </ModalHeader>
           <ModalCloseButton />
