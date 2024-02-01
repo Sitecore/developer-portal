@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import newsletterPromo from '@/data/promos/newsletter';
-import { getFirstXNewsletters } from '@/src/lib/newsletter';
 import { Heading } from '@chakra-ui/react';
 import { PageInfo } from '@lib/interfaces/page-info';
+import { getFirstXNewsletters } from '@lib/newsletter';
 import { getPageInfo } from '@lib/page-info';
 import Layout from '@src/layouts/Layout';
 import { GetStaticProps, NextPage } from 'next';
@@ -16,7 +16,7 @@ interface NewsletterPageProps {
   pageInfo: PageInfo;
 }
 
-export async function getStaticProps(context: any) {
+export const getStaticProps: GetStaticProps = async () => {
   const pageInfo = await getPageInfo('_newsletter');
 
   return {
@@ -27,12 +27,13 @@ export async function getStaticProps(context: any) {
   };
 };
 
+//export default function NewsletterPage() {
 const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }) => {
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <ContentSection bg="neutral-bg">
+      <ContentSection bg="neutral-subtle-bg">
         <CenteredContent>
           <PromoCard {...newsletterPromo} />
 

@@ -62,7 +62,7 @@ export async function getStaticProps(context: any) {
   return {
     props,
   };
-};
+}
 
 const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({ pageInfo, content, paths, year, month }) => {
   return (
