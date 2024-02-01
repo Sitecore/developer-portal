@@ -16,7 +16,7 @@ interface NewsletterPageProps {
   pageInfo: PageInfo;
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export async function getStaticProps(context: any) {
   const pageInfo = await getPageInfo('_newsletter');
 
   return {

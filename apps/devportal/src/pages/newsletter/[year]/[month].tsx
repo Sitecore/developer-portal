@@ -6,7 +6,7 @@ import { PageInfo } from '@lib/interfaces/page-info';
 import { getNewsletter, getNewsletterTitle } from '@lib/newsletter';
 import { NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
 import Layout from '@src/layouts/Layout';
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { NextPage } from 'next';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
@@ -19,16 +19,16 @@ export interface NewsletterContentPageProps {
   year: string;
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export async function getStaticPaths() {
   const paths = getNewsletterStaticPaths();
 
   return {
     paths,
     fallback: false,
   };
-};
+}
 
-export const getStaticProps: GetStaticProps<NewsletterContentPageProps> = async (context) => {
+export async function getStaticProps(context: any) {
   const { year, month } = context.params || {};
 
   if (!year || !month) {

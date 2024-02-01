@@ -39,6 +39,31 @@ export const getFirstXNewsletters = () => {
   return newsletters;
 };
 
+export const getNewslettersByYear = (year: string) => {
+  const newsletters = [];
+  // Using for loops to shortcut early
+  const yearPath = path.resolve(NEWSLETTER_DATA_DIRECTORY, `${year}`);
+  const months = fs.readdirSync(yearPath).sort().reverse();
+
+  for (let j = 0; j < months.length; j++) {
+    const month = months[j];
+    const { title, description } = JSON.parse(fs.readFileSync(path.resolve(yearPath, `${month}`), { encoding: 'utf-8' }));
+
+    const monthWithoutFile = month.substring(0, 2);
+    newsletters.push({
+      title: getNewsletterTitle(translateDateAsYearMonth(`${year}-${monthWithoutFile}-03`), title),
+      description,
+      href: `/newsletter/${year}/${monthWithoutFile}`,
+    });
+
+    if (newsletters.length === MAX_RESULTS) {
+      return newsletters;
+    }
+  }
+
+  return newsletters;
+};
+
 export const getNewsletter = (month: string, year: string) => {
   return JSON.parse(
     fs.readFileSync(path.resolve(NEWSLETTER_DATA_DIRECTORY, `${year}`, `${month}.json`), {
