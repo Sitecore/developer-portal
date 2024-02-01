@@ -1,0 +1,124 @@
+{
+  "title": "Sitecore Developers",
+  "description": "We deliver the latest news, insights and information straight from the Sitecore Community.",
+  "content": [
+    {
+      "title": "Sitecore Migration Advisor",
+      "copy": "Tell the Sitecore Migration Advisor about your current Sitecore Platform DXP solution and then find videos, tutorials, walkthroughs, code examples, and more to help you migrate from Sitecore Platform DXP to Sitecore XM Cloud and the rest of the Sitecore Composable DXP.Take advantage of Sitecore Migration Advisor today. Click on the below link to get started!",
+      "image": "https://go.sitecore.com/l/857953/2023-10-31/twydl1/857953/1698810330kugI6O2I/Untitled_design__3_.png",
+      "link": {
+        "text": "Get started now",
+        "href": "https://migration.sitecore.com/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Show your knowledge: Digital badging is coming soon!",
+      "copy": "Sitecore Learning has introduced digital badging to its credentialing program in collaboration with Credly, a leading digital credentialing provider. This enhancement allows you to showcase your achievements prominently by displaying digital badges. The program kicks off in December 2023 with the release of the first badge for the XM Cloud Developer Certification Exam. Don't forget to share your success on social media using #XMCloudCertified.",
+      "image": "",
+      "link": {
+        "text": "",
+        "href": ""
+      }
+    },
+    {
+      "title": "XM to XM Cloud Migration tool",
+      "copy": "Use the XM to XM Cloud Migration tool to help move content, media and user data from a source XM instance to a target XM Cloud environment.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://developers.sitecore.com/downloads/xm-cloud#xm-to-xmc-migration-tool"
+      }
+    },
+    {
+      "title": "MS Ignite: GitHub Copilot and AI for Developers: Potential and Pitfalls with Scott Hanselman",
+      "copy": "In this session from MS Ignite, Scott shows us how GitHub CoPilot can be leveraged by developers to help make them more productive.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=5pbPLHYB6-0"
+      }
+    },
+    {
+      "title": "Sitecore wants your feedback on your favorite front-end frameworks!",
+      "copy": "Take this VERY short survey from the Sitecore Developer Experience team and let us know what frameworks you use today and which ones you wish you could use! Submit by December 30th, 2023, so that your ideas can be brought into our planning.",
+      "image": "",
+      "link": {
+        "text": "Submit now",
+        "href": "https://forms.office.com/pages/responsepage.aspx?id=hAFwkRTDyU27fqQR30VqHg4LwZWI4HVBgVQWZKVHRpBUNVZEQTZTT05FQk03UzBLNlNXNEFYVFlSMS4u"
+      }
+    },
+    {
+      "title": "Build Custom ASP.NET Core Middleware for Content-Managed 404 Page Display",
+      "copy": "Read an example approach to enable a content managed not found page for your sites built using the Sitecore ASP.NET Rendering SDK.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://navansitecorenotes.blogspot.com/2023/12/create-aspnet-core-custom-rendering.html"
+      }
+    },
+    {
+      "title": "How to become a certified Sitecore XM Cloud Developer",
+      "copy": "Explore this guide on becoming a certified Sitecore XM Cloud Developer. Learn the necessary steps, resources, and tips for successfully completing the certification process.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.kayee.nl/2023/12/06/how-to-become-a-certified-sitecore-xm-cloud-developer/"
+      }
+    },
+    {
+      "title": "Oh-my-Sitecore! I powered up your Sitecore cli with a custom segment for Oh my posh #2",
+      "copy": "Explore improvements to the Sitecore developer experience by introducing \"Oh My Sitecore ISE\" (Integrated Scripting Environment). Learn how this tool can streamline tasks, enhance productivity, and elevate the overall Sitecore shell experience.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://blog.baslijten.com/oh-my-sitecore-I-powered-up-your-shell/"
+      }
+    },
+    {
+      "title": "Thoughts on Planning for Sitecore projects",
+      "copy": "How can you be more efficient with your development project delivery for Sitecore solutions? Read about a focus on strong and thoughtful requirements, embedding developers early in the process, accessibility planning, and more ideas.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://catzclw.blog/2023/11/14/why-is-sitecore-hard-thoughts-on-planning/"
+      }
+    },
+    {
+      "title": "Troubleshooting: Resolving 'Dependency Failed to Start' Error with Unhealthy Container (sxastarter-cm-1)",
+      "copy": "Check out this concise guide on troubleshooting the \"dependency failed to start: container sxastarter-cm-1 is unhealthy\" error. Learn these practical steps and insights to identify and address any issues.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://himadritechblog.wordpress.com/2023/08/26/how-to-troubleshoot-dependency-failed-to-start-container-sxastarter-cm-1-is-unhealthy/"
+      }
+    },
+    {
+      "title": "🎙 Sitecore Unplugged:Exploring Jake Hookom's Tech Journey, future Insights in DXP, and more!",
+      "copy": "In this episode of Sitecore Unplugged we delve into the fascinating tech journey of Jake Hookom, Sitecore's VP of Commerce and Platform. Gain valuable insights into his professional transition from engineering to product management and discover the hottest topics currently resonating in the Sitecore world.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=K7zz793sTLM"
+      }
+    },
+    {
+      "title": "💡 XM Cloud Tutorials - Create a Text Teaser with no code using XM Cloud Component Builder",
+      "copy": "Components are the visual reusable building blocks to design pages in XM Cloud. In this video Sebastian Winter (Developer Advocate) builds the first Component (Text Teaser) for the Company Project using the XM Cloud Component Builder in a no-code approach. He's applying a theme to make the component look as per requirements, handles the mobile design and connects data sources from XM Cloud.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=vQPksrMUnzM"
+      }
+    },
+    {
+      "title": "👨‍💻 XM Cloud Tutorials - Styling a Text Teaser using the XM Cloud Component Builder",
+      "copy": "XM Cloud Components allows building pixel-perfect UI designs using the Component Builder feature as well as the XM Cloud design system. UI Designers and Frontend professionals can transfer the styles from the design tools of their choice into XM Cloud Components, so that Marketers can create Components matching the brand style guides.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=j1OUkECur5c"
+      }
+    }
+  ]
+}
