@@ -3,7 +3,6 @@ import { PageInfo } from '@lib/interfaces/page-info';
 import { getNewslettersByYear } from '@lib/newsletter';
 import { getNewsletterStaticPaths, NewsletterPath } from '@lib/staticPaths';
 import Layout from '@src/layouts/Layout';
-import { NextPage } from 'next';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { CategoryTileList, CategoryTileProps } from 'ui/components/lists';
@@ -16,7 +15,7 @@ interface NewsletterPageProps {
 }
 
 export async function getStaticPaths() {
-  const trialPaths = await getNewsletterStaticPaths();
+  const trialPaths = getNewsletterStaticPaths();
   return {
     paths: trialPaths,
     fallback: false,
@@ -40,7 +39,7 @@ export async function getStaticProps(context: any) {
   };
 }
 
-const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }) => {
+export default function NewsletterPage({ newsletters, pageInfo }: NewsletterPageProps) {
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
@@ -51,6 +50,4 @@ const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }
       </VerticalGroup>
     </Layout>
   );
-};
-
-export default NewsletterPage;
+}

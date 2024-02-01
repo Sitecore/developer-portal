@@ -6,7 +6,6 @@ import { PageInfo } from '@lib/interfaces/page-info';
 import { getNewsletter, getNewsletterTitle } from '@lib/newsletter';
 import { NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
 import Layout from '@src/layouts/Layout';
-import { NextPage } from 'next';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
@@ -41,7 +40,6 @@ export async function getStaticProps(context: any) {
 
   props.month = month;
   props.year = year;
-
   props.paths = getNewsletterStaticPaths().slice(0, 12);
 
   // Set the dates as the 3rd of each month to avoid having to deal with timezones rolling it backwards
@@ -64,7 +62,7 @@ export async function getStaticProps(context: any) {
   };
 }
 
-const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({ pageInfo, content, paths, year, month }) => {
+export default function NewsletterContentPage({ pageInfo, content, paths, year, month }: NewsletterContentPageProps) {
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
@@ -89,6 +87,4 @@ const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({ pageInfo,
       </VerticalGroup>
     </Layout>
   );
-};
-
-export default NewsletterContentPage;
+}

@@ -5,7 +5,6 @@ import { PageInfo } from '@lib/interfaces/page-info';
 import { getFirstXNewsletters } from '@lib/newsletter';
 import { getPageInfo } from '@lib/page-info';
 import Layout from '@src/layouts/Layout';
-import { GetStaticProps, NextPage } from 'next';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, ContentSection } from 'ui/components/helpers';
 import { CategoryTileList, CategoryTileProps } from 'ui/components/lists';
@@ -16,7 +15,7 @@ interface NewsletterPageProps {
   pageInfo: PageInfo;
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export async function getStaticProps() {
   const pageInfo = await getPageInfo('_newsletter');
 
   return {
@@ -25,10 +24,9 @@ export const getStaticProps: GetStaticProps = async () => {
       pageInfo,
     },
   };
-};
+}
 
-//export default function NewsletterPage() {
-const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }) => {
+export default function NewsletterPage({ newsletters, pageInfo }: NewsletterPageProps) {
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
@@ -44,6 +42,4 @@ const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }
       </ContentSection>
     </Layout>
   );
-};
-
-export default NewsletterPage;
+}
