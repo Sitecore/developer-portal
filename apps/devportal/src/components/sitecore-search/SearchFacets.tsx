@@ -1,6 +1,6 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Card, CardBody, CardHeader, Checkbox, Collapse, Heading, Hide, Show, Stack, useDisclosure } from '@chakra-ui/react';
 import { SearchResponseFacet } from '@sitecore-search/react';
-import { AccordionFacets } from '@sitecore-search/ui';
+import { AccordionFacets, SearchResultsAccordionFacets } from '@sitecore-search/ui';
 
 export interface SearchFacetsType {
   onFacetClick: (facet: any) => void;
@@ -35,7 +35,7 @@ export const MobileFacets = (props: SearchFacetsType) => {
   const { onFacetClick, facets } = props;
 
   return (
-    <AccordionFacets.Root defaultFacetTypesExpandedList={facets.map((x) => x.name)} onFacetValueClick={onFacetClick}>
+    <SearchResultsAccordionFacets defaultFacetTypesExpandedList={facets.map((x) => x.name)} onFacetValueClick={onFacetClick}>
       {facets.map((facet) => (
         <Accordion key={facet.name} allowToggle>
           <AccordionItem>
@@ -74,7 +74,7 @@ export const MobileFacets = (props: SearchFacetsType) => {
           </AccordionItem>
         </Accordion>
       ))}
-    </AccordionFacets.Root>
+    </SearchResultsAccordionFacets>
   );
 };
 
@@ -82,7 +82,7 @@ export const Facets = (props: SearchFacetsType) => {
   const { onFacetClick, facets } = props;
 
   return (
-    <AccordionFacets.Root defaultFacetTypesExpandedList={facets.map((x) => x.name)} onFacetValueClick={onFacetClick}>
+    <SearchResultsAccordionFacets defaultFacetTypesExpandedList={facets.map((x) => x.name)} onFacetValueClick={onFacetClick}>
       {facets.map((facet) => (
         <Card variant={'filled'} size={'sm'} marginBottom={4} key={facet.name}>
           <AccordionFacets.Facet facetId={facet.name}>
@@ -121,7 +121,7 @@ export const Facets = (props: SearchFacetsType) => {
           </AccordionFacets.Facet>
         </Card>
       ))}
-    </AccordionFacets.Root>
+    </SearchResultsAccordionFacets>
   );
 };
 
