@@ -12,7 +12,13 @@
       "children": [
         {
           "title": "Project Planning",
-          "path": "project-planning"
+          "path": "project-planning",
+          "children": [
+            {
+              "title": "Project Estimation",
+              "path": "project-estimation"
+            }
+          ]
         },
         {
           "title": "Discovery",
@@ -51,16 +57,6 @@
         {
           "title": "Information Architecture",
           "path": "information-architecture"
-        },
-        {
-          "title": "Project Planning",
-          "path": "project-planning",
-          "children": [
-            {
-              "title": "Project Estimation",
-              "path": "project-estimation"
-            }
-          ]
         },
         {
           "title": "Sprint Zero",
