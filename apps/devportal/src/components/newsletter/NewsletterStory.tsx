@@ -25,9 +25,7 @@ const InnerCard = ({ copy, link, title }: NewsletterStoryPartialData) => (
     <CardBody py={8}>
       <Text variant="large">{copy}</Text>
     </CardBody>
-    <CardFooter>
-      <TextLink text={link.text || 'Read more'} href={link.href} aria-label={title} variant={'large'} />
-    </CardFooter>
+    <CardFooter>{link.href && <TextLink text={link.text || 'Read more'} href={link.href} aria-label={title} variant={'large'} />}</CardFooter>
   </>
 );
 
