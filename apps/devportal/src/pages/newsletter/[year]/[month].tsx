@@ -1,21 +1,15 @@
 /* eslint-disable react/prop-types */
-// Global
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import NewsletterNav from '@components/newsletter/NewsletterNav';
 import NewsletterStory, { NewsletterStoryData } from '@components/newsletter/NewsletterStory';
 import { PageInfo } from '@lib/interfaces/page-info';
-import { getNewsletterTitle } from '@lib/newsletter';
-import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
+import { getNewsletter, getNewsletterTitle } from '@lib/newsletter';
+import { NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
 import Layout from '@src/layouts/Layout';
-import fs from 'fs';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import path from 'path';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
-// Scripts
-
-// Components
 
 export interface NewsletterContentPageProps {
   content: NewsletterStoryData[];
@@ -43,11 +37,7 @@ export const getStaticProps: GetStaticProps<NewsletterContentPageProps> = async 
     };
   }
 
-  const props = JSON.parse(
-    fs.readFileSync(path.resolve(NEWSLETTER_DATA_DIRECTORY, year as string, `${month}.json`), {
-      encoding: 'utf-8',
-    })
-  );
+  const props = getNewsletter(month.toString(), year.toString());
 
   props.month = month;
   props.year = year;

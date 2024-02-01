@@ -38,3 +38,11 @@ export const getFirstXNewsletters = () => {
 
   return newsletters;
 };
+
+export const getNewsletter = (month: string, year: string) => {
+  return JSON.parse(
+    fs.readFileSync(path.resolve(NEWSLETTER_DATA_DIRECTORY, `${year}`, `${month}.json`), {
+      encoding: 'utf-8',
+    })
+  );
+};
