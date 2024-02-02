@@ -80,7 +80,6 @@ interface SearchItemClickedAction extends WidgetAction {
 }
 
 const Group = ({
-  groupTitle,
   groupId,
   filterAttribute,
   articles,
@@ -89,7 +88,6 @@ const Group = ({
   onItemClick,
   onGroupTitleClick,
 }: {
-  groupTitle: string;
   groupId: string;
   filterAttribute?: string;
   articles: Array<SearchResponseSuggestion>;
@@ -99,10 +97,7 @@ const Group = ({
   onGroupTitleClick: (arg: string) => void;
 }) => {
   return (
-    <Box width={[2 / 6]} p={2} background={'primary-bg'}>
-      <Heading variant="section" px={4}>
-        {groupTitle}
-      </Heading>
+    <List>
       {articles.map(({ text }) => (
         <NavMenu.Item value={getGroupId(groupId, text)} key={text} style={{ listStyle: 'none' }}>
           <NavMenu.Trigger
@@ -114,19 +109,18 @@ const Group = ({
             onFocus={() => onActiveItem(getGroupId(groupId, text))}
             onClick={() => onGroupTitleClick(text)}
           >
-            <Button variant={'ghost'} colorScheme="neutral" borderRadius={'md'} title={text} textAlign={'left'} mb={2}>
-              <Text isTruncated width={180}>
+            <Button variant={'ghost'} colorScheme="neutral" borderRadius={'md'} title={text} textAlign={'left'} mb={1}>
+              <Text isTruncated width={200}>
                 {text}
               </Text>
             </Button>
           </NavMenu.Trigger>
-
           <PreviewSearchSuggestionQuery<ArticleModel> active={activeItem === getGroupId(groupId, text)} value={text} filterAttribute={filterAttribute}>
             {({ queryResult: { isFetching, data: { content: articles = [] } = {} } }) => <Articles loading={isFetching} articles={articles} onItemClick={onItemClick} suggestionsReturned={true} />}
           </PreviewSearchSuggestionQuery>
         </NavMenu.Item>
       ))}
-    </Box>
+    </List>
   );
 };
 
@@ -134,7 +128,7 @@ const getGroupId = (name: string, value: string) => `${name}@${value}`;
 
 type InitialState = PreviewSearchInitialState<'itemsPerPage' | 'suggestionsList'>;
 
-const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
+const PreviewSearchInput = ({ defaultItemsPerPage = 8 }) => {
   const router = useRouter();
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { q } = router.query;
@@ -220,15 +214,22 @@ const PreviewSearchInput = ({ defaultItemsPerPage = 6 }) => {
             <Presence present={loading}>
               <Loading />
             </Presence>
-            {!loading && (
-              <Box shadow={'base'} height={'100%'}>
+            {!loading && articles.length > 0 && (
+              <Box shadow={'base'} minHeight="420px">
                 <NavMenu.SubContent orientation="vertical" value={activeItem} ref={widgetRef}>
                   <NavMenu.List style={{ listStyle: 'none' }}>
-                    {/* Suggested terms */}
+                    <Box width={[2 / 7]} p={2} background={'primary-bg'} minHeight="420px">
+                      <Heading variant="section" px={4} my={2}>
+                        Suggested terms
+                      </Heading>
 
-                    {articleSuggestions.length > 0 && (
-                      <Group groupTitle="Suggested Terms" groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />
-                    )}
+                      {articleSuggestions.length > 0 && <Group groupId="keyphrase" articles={articleSuggestions} onItemClick={onItemClick} onGroupTitleClick={onGroupTitleClick} activeItem={activeItem} onActiveItem={setActiveItem} />}
+                      {articleSuggestions.length === 0 && (
+                        <Text px={4} py={2} color={'neutral.500'}>
+                          No suggestions
+                        </Text>
+                      )}
+                    </Box>
 
                     {/* Results */}
                     <Box as={NavMenu.Item} value="defaultArticlesResults" key="defaultArticlesResults" className="b-0 bg-none">

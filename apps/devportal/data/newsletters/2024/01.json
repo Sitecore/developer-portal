@@ -1,0 +1,70 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Grab Your Early Bird Tickets for SUGCON Europe Now!",
+      "copy": "Secure your spot at SUGCON Europe 2024 in Dublin on April 11-12.  Explore the agenda for a knowledge-packed experience, featuring certification exams, workshops, and sessions by 35+ speakers across diverse topics. Catch the opening keynote by Dave O'Flanagan. 🎟 Early bird tickets are limited and only available until January 31st.",
+      "image": "https://go.sitecore.com/l/857953/2024-01-26/txlkmz/857953/17063033742vLoLnUu/Screen_Shot_2024_01_26_at_6.08.12_PM.png",
+      "link": {
+        "text": "Register now",
+        "href": "https://europe.sugcon.events/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "The end of Front-End Development Phase #2",
+      "copy": "Large language models like GPT-4 are becoming increasingly capable, at an alarming rate. Within a couple of years, we won't need developers any more! …Or at least, that's the narrative going viral on Twitter. I'm much more optimistic about what these AI advancements mean for the future of software development.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.joshwcomeau.com/blog/the-end-of-frontend-development/"
+      }
+    },
+    {
+      "title": "Vercel and Netlify's Convenience Layer: Simplify Your Frontend Workflow",
+      "copy": "Improve your web development workflow with Vercel and Netlify's convenience layer, offering a range of features for development, review, deployment, production, and scaling.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://thetombomb.com/posts/frontend-convenience-layer"
+      }
+    },
+    {
+      "title": "XM Cloud Forms Builder released",
+      "copy": "Explore the latest addition to Sitecore XM Cloud – the Composable Forms Builder. Gain insights into how this powerful tool transforms the creation of composable forms, offering unparalleled flexibility for developers.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://blogs.perficient.com/2024/01/25/xm-cloud-forms-builder/"
+      }
+    },
+    {
+      "title": "XM Cloud Tutorials - Creating and assigning a data source to the Text Teaser Component #6.3",
+      "copy": "XM Cloud Components centralize content management, allowing seamless reuse across apps. Watch Sebastian Winter (Developer Advocate) in a video link a data source in XM Cloud to the Text Teaser, the first component in the Company project.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=u5CWcdJd_Ig"
+      }
+    },
+    {
+      "title": "XM Cloud Tutorials - Update your head with the latest foundation head features #7",
+      "copy": "The Foundation Head Repository serves as the initial setup for XM Cloud development with Next JS. Regular updates with new features are added, and in a video, Developer Advocate Sebastian Winter guides users on upgrading their repository to the latest foundation head for optimal improvements.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=xllAcmdKcj0&t=1s"
+      }
+    },
+    {
+      "title": "Tamas Varga Deep Dives into the Sitecore Community, SUGCONs, and more!",
+      "copy": "Join hosts Nicole Montero and Jason St-Cyr in this episode of Sitecore Unplugged, featuring Tamas Varga, the Director of Community Programs and driving force behind the Sitecore Community. Delve into Tamas's Sitecore journey, community management, and the history of SUGCONs.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=U-nJ3NV7m6U"
+      }
+    }
+  ]
+}
