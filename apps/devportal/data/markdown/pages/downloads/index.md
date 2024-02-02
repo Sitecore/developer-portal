@@ -4,6 +4,17 @@ description: 'Download Sitecore software, tools and resources'
 origin: https://dev.sitecore.net/Downloads.aspx
 hasInPageNav: false
 ---
+
+## Composable DXP
+
+<SimpleGrid gap='6' templateColumns='repeat(auto-fill, minmax(var(--sizes-md), 1fr))'>
+<Download 
+  title="Sitecore XM Cloud"
+  description="Download Sitecore XM Cloud tools and resources"
+  link1text="More info"
+  link1href="/downloads/xm-cloud"
+/>
+</SimpleGrid>
 ## Platform DXP
 
 Download the latest version of the Sitecore Digital Experience Platform and Sitecore Experience Commerce.
