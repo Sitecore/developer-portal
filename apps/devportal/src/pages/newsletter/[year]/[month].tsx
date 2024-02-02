@@ -1,21 +1,14 @@
 /* eslint-disable react/prop-types */
-// Global
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import NewsletterNav from '@components/newsletter/NewsletterNav';
 import NewsletterStory, { NewsletterStoryData } from '@components/newsletter/NewsletterStory';
 import { PageInfo } from '@lib/interfaces/page-info';
-import { getNewsletterTitle } from '@lib/newsletter';
-import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
+import { getNewsletter, getNewsletterTitle } from '@lib/newsletter';
+import { NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
 import Layout from '@src/layouts/Layout';
-import fs from 'fs';
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import path from 'path';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
-// Scripts
-
-// Components
 
 export interface NewsletterContentPageProps {
   content: NewsletterStoryData[];
@@ -25,16 +18,16 @@ export interface NewsletterContentPageProps {
   year: string;
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export async function getStaticPaths() {
   const paths = getNewsletterStaticPaths();
 
   return {
     paths,
     fallback: false,
   };
-};
+}
 
-export const getStaticProps: GetStaticProps<NewsletterContentPageProps> = async (context) => {
+export async function getStaticProps(context: any) {
   const { year, month } = context.params || {};
 
   if (!year || !month) {
@@ -43,15 +36,10 @@ export const getStaticProps: GetStaticProps<NewsletterContentPageProps> = async 
     };
   }
 
-  const props = JSON.parse(
-    fs.readFileSync(path.resolve(NEWSLETTER_DATA_DIRECTORY, year as string, `${month}.json`), {
-      encoding: 'utf-8',
-    })
-  );
+  const props = await getNewsletter(month.toString(), year.toString());
 
   props.month = month;
   props.year = year;
-
   props.paths = getNewsletterStaticPaths().slice(0, 12);
 
   // Set the dates as the 3rd of each month to avoid having to deal with timezones rolling it backwards
@@ -72,9 +60,9 @@ export const getStaticProps: GetStaticProps<NewsletterContentPageProps> = async 
   return {
     props,
   };
-};
+}
 
-const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({ pageInfo, content, paths, year, month }) => {
+export default function NewsletterContentPage({ pageInfo, content, paths, year, month }: NewsletterContentPageProps) {
   return (
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
@@ -99,6 +87,4 @@ const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({ pageInfo,
       </VerticalGroup>
     </Layout>
   );
-};
-
-export default NewsletterContentPage;
+}
