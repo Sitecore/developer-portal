@@ -18,7 +18,7 @@ Embedded Personalization comes with XM Cloud Pages and provides a fixed set of o
 Here is a list of the main features available for XM Cloud embedded personalization. Features are organized across features groups that support customers’ users' journeys (Listen, Think, Respond, Learn):
 
 ![Features empowered by XM Cloud Embedded Personalization](https://sitecorecontenthub.stylelabs.cloud/api/public/content/01ee3823736e4b56be66087776033e69?v=ee04d7e2)
-_Real time web data collection for 30 days of view events_
+_Real time web data collection for 30 days (trending) of view events, for a total of 60 days_
 
 ### What features do I get if I license full Sitecore Personalize in addition to XM Cloud?
 
