@@ -10,7 +10,7 @@ youtubeTitle: 'Latest Marketing Automation videos'
 stackexchange: ['#moosend']
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['marketingAutomation']
-guidedDemoId: 'clod753zt00ja08mjbapy8frg'
+guidedDemoId: 'cls58bdv0001a0fk13w45ajxf'
 ---
 
 ## Introduction
