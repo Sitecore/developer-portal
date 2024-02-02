@@ -9,7 +9,7 @@ youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
 youtubeTitle: 'Latest Sitecore Personalize videos'
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['personalizationAndTesting']
-guidedDemoId: 'clhrzp2xo004o08mj2ds8chk9'
+guidedDemoId: 'cls5674xs000b0flaaan84az6'
 ---
 
 <img src="/images/products/personalize/full-stack-AB-testing-optimization.svg" alt="AB Testing and optimization" width="33%" align="right" />
