@@ -36,7 +36,7 @@ export async function getStaticProps(context: any) {
     };
   }
 
-  const props = getNewsletter(month.toString(), year.toString());
+  const props = await getNewsletter(month.toString(), year.toString());
 
   props.month = month;
   props.year = year;

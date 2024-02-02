@@ -20,7 +20,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      newsletters: getFirstXNewsletters(),
+      newsletters: await getFirstXNewsletters(),
       pageInfo,
     },
   };

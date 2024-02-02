@@ -32,7 +32,7 @@ export async function getStaticProps(context: any) {
 
   return {
     props: {
-      newsletters: getNewslettersByYear(year),
+      newsletters: await getNewslettersByYear(year),
       pageInfo,
       year: year,
     },
