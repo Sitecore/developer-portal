@@ -74,7 +74,7 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
     else
       return (
         <Heading variant="section" px={2} fontWeight={'bold'} as="li" mx={-2} pt={4} pb={4} key={index} listStyleType={'none'}>
-          <Link color={'chakra-subtle-text'} href={appendPathToBasePath(basePath, menuItem.path)}>
+          <Link as={NextLink} color={'chakra-subtle-text'} href={appendPathToBasePath(basePath, menuItem.path)}>
             {menuItem.title}
           </Link>
         </Heading>
@@ -84,7 +84,7 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
   // Show normal link
   return (
     <Button colorScheme="neutral" isActive={router.asPath.includes(appendPathToBasePath(basePath, menuItem.path))} width={'full'} key={index} as="li">
-      <Link color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2}>
+      <Link as={NextLink} color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2}>
         {menuItem.title}
       </Link>
     </Button>
