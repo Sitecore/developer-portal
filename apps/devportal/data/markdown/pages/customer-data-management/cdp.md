@@ -8,7 +8,7 @@ stackexchange: ['#cdp']
 youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['customerDataManagement']
-guidedDemoId: 'clhhxu7i3001a08ml3kx2808n'
+guidedDemoId: 'cls53hjn8005r0fl90zuh4zt6'
 ---
 
 ## Introduction
