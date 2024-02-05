@@ -47,7 +47,7 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     cursor: 'pointer',
     textDecoration: 'none',
     outline: 'none',
-    color: 'inherit',
+    color: 'primary-fg',
     _hover: {
       textDecoration: 'underline',
     },
