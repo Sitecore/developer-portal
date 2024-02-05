@@ -7,7 +7,7 @@ hasInPageNav: false
 
 ## Composable DXP
 
-<SimpleGrid columns={{ base: '1', md: '2' }} gap='6'>
+<SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 
 <Download 
   title="Sitecore XM Cloud"
@@ -20,7 +20,7 @@ hasInPageNav: false
 
 Download the latest version of the Sitecore Digital Experience Platform and Sitecore Experience Commerce.
 
-<SimpleGrid columns={{ base: '1', md: '2' }} gap='6'>
+<SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 
 <Download 
   title="Sitecore Experience Platform 10.3 Update-1"
@@ -46,7 +46,7 @@ Downloads relating to **Sitecore 7.5 and below** are available on the [Sitecore 
 
 ## Products and Modules
 
-<SimpleGrid columns={{ base: '1', md: '2' }} gap='6'>
+<SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 
 <Download 
   title="Sitecore xDB Cloud client 8.1 rev. 160210 for xDB Cloud 1.0"
