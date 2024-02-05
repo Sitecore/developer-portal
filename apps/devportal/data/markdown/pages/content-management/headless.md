@@ -43,7 +43,7 @@ Sitecore JSS offers front-end developer of whole new way of working and interact
 - [JSS Developer Trial - Connected Demo guide](/trials/jss-connected-demo/getting-started/prerequisites)
 - [JSS Source Code](https://github.com/Sitecore/jss)
 - [JSS Sample Code](https://github.com/Sitecore/jss/tree/master/packages/create-sitecore-jss/src/templates)
-- [JSS and Headless Services Downloads](https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering.aspx)
+- [JSS and Headless Services Downloads](downloads/Sitecore_Headless_Rendering)
 
 ## Community
 
@@ -68,4 +68,4 @@ Sitecore Headless Development is based on a rendering host front end and a Sitec
 
 ## Downloads
 
-- [Download Sitecore Headless Rendering](https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering.aspx)
+- [Download Sitecore Headless Rendering](downloads/Sitecore_Headless_Rendering)

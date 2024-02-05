@@ -13,5 +13,5 @@ The Sitecore Universal Tracker (UT) lets you collect data from different sources
 
 ### Resources
 
-- [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
-- [Download Sitecore Universal Tracker](https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx)
+- [Download Sitecore Experience Platform](/downloads/Sitecore_Experience_Platform)
+- [Download Sitecore Universal Tracker](/downloads/Sitecore_Universal_Tracker)

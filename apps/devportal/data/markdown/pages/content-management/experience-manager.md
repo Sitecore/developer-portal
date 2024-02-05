@@ -72,7 +72,7 @@ With Experience Manager, you can create, manage, and publish content to your web
 
 ## Download
 
-- [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
+- [Download Sitecore Experience Platform](/downloads/Sitecore_Experience_Platform)
 
 ## Integrations
 

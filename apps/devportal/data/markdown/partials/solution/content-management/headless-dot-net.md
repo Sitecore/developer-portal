@@ -21,4 +21,4 @@ Sitecore Headless Development is based on a rendering host front end and a Sitec
 
 ## Downloads
 
-- [Download Sitecore Headless Rendering](https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering.aspx)
+- [Download Sitecore Headless Rendering](/downloads/Sitecore_Headless_Rendering)

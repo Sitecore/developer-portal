@@ -20,4 +20,4 @@ Learn
 
 Playground
 
-- [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
+- [Download Sitecore Experience Platform](/downloads/Sitecore_Experience_Platform)
