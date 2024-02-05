@@ -169,6 +169,8 @@ Download Sitecore Experience Platform 8.1 rev. 151003 (8.1 Initial Release).
 </CardHeader>
 <CardBody>
 [Sitecore Experience Platform 8.0 Service Pack-1](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update7)\
+Download Sitecore Experience Platform 8.0 rev. 160115 Service Pack 1 (8.0 Update-7)
+
 [Sitecore Experience Platform 8.0 Update-6](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update6)\
 Download Sitecore Experience Platform 8.0 rev. 151127 (8.0 Update-6)
 
@@ -195,11 +197,11 @@ Download Sitecore Experience Platform 8.0 rev. 141212 (8.0 Initial Release).
 </Card>
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
-## Sitecore Experience Platform 7.0
+## Sitecore Experience Platform 7.5
 </CardHeader>
 <CardBody>
-[Sitecore Experience Platform 7 and below](/downloads/Sitecore_Experience_Platform/7_0/Sitecore_Experience_Platform_7_and_below)\
-Download Sitecore Experience Platform 7 and earlier versions
+[Sitecore Experience Platform 7.5 and below](/downloads/Sitecore_Experience_Platform/7_0/Sitecore_Experience_Platform_7_and_below)\
+Download Sitecore Experience Platform 7.5 and earlier versions
 
 
 </CardBody>          
