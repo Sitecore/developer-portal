@@ -244,30 +244,37 @@
       ]
     },
     {
-      "title": "Active Directory",
-      "path": "Active_Directory"
-    },
-    {
-      "title": "Campaign Creator module",
-      "path": "Campaign_Creator_module"
-    },
+      "title": "Miscellaneous",
+      "ignoreLink": true,
+      "path": "",
+      "children": [
+        {
+          "title": "Active Directory",
+          "path": "Active_Directory"
+        },
+        {
+          "title": "Campaign Creator module",
+          "path": "Campaign_Creator_module"
+        },
 
-    {
-      "title": "Engagement Automation Live Session Agent",
-      "path": "Engagement_Automation_Live_Session_Agent"
-    },
-    {
-      "title": "EXM Dedicated Dispatch Server",
-      "path": "EXM_Dedicated_Dispatch_Server"
-    },
-    {
-      "title": "Sitecore IP Geolocation Service Client",
-      "path": "Sitecore_IP_Geolocation_Service_Client"
-    },
+        {
+          "title": "Engagement Automation Live Session Agent",
+          "path": "Engagement_Automation_Live_Session_Agent"
+        },
+        {
+          "title": "EXM Dedicated Dispatch Server",
+          "path": "EXM_Dedicated_Dispatch_Server"
+        },
+        {
+          "title": "Sitecore IP Geolocation Service Client",
+          "path": "Sitecore_IP_Geolocation_Service_Client"
+        },
 
-    {
-      "title": "Sitecore Print Experience Manager",
-      "path": "Sitecore_Print_Experience_Manager"
+        {
+          "title": "Sitecore Print Experience Manager",
+          "path": "Sitecore_Print_Experience_Manager"
+        }
+      ]
     }
   ]
 }

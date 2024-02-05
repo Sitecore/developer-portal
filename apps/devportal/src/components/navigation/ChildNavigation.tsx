@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Icon, Link, Text, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, Flex, Heading, Icon, Text, useDisclosure } from '@chakra-ui/react';
 import { mdiChevronDown, mdiChevronRight } from '@mdi/js';
 import { default as NextLink } from 'next/link';
 import { useRouter } from 'next/router';
@@ -37,7 +37,7 @@ const SideMenu = ({ subPageNavigation }: ChildNavigationProps) => {
         </Heading>
       )}
 
-      <ButtonGroup variant="navigation" spacing={1} orientation="vertical" maxWidth={'md'} as={'ul'} role="list">
+      <ButtonGroup variant="navigation" spacing={1} orientation="vertical">
         {subPageNavigation.routes.map((link, i) => {
           return (
             <React.Fragment key={i}>
@@ -66,27 +66,23 @@ function renderMenuItem(menuItem: SubPageNavigationItem, basePath: string, index
   if (showRootAsSections) {
     if (menuItem.ignoreLink != null && menuItem.ignoreLink)
       return (
-        <Heading variant="section" px={2} fontWeight={'bold'} width={'full'} mx={-2} as="li" pt={4} pb={4} key={index} listStyleType={'none'}>
+        <Heading variant="section" px={2} width={'full'} mx={-2} pt={4} pb={4} key={index}>
           {menuItem.title}
         </Heading>
       );
     // Include link
-    else
-      return (
-        <Heading variant="section" px={2} fontWeight={'bold'} as="li" mx={-2} pt={4} pb={4} key={index} listStyleType={'none'}>
-          <Link as={NextLink} color={'chakra-subtle-text'} href={appendPathToBasePath(basePath, menuItem.path)}>
-            {menuItem.title}
-          </Link>
-        </Heading>
-      );
+    // else
+    //   return (
+    //     <Heading variant="section" px={2} mx={-2} pt={4} pb={4} key={index} as={NextLink} href={appendPathToBasePath(basePath, menuItem.path)}>
+    //       {menuItem.title}
+    //     </Heading>
+    //   );
   }
 
   // Show normal link
   return (
-    <Button colorScheme="neutral" isActive={router.asPath.includes(appendPathToBasePath(basePath, menuItem.path))} width={'full'} key={index} as="li">
-      <Link as={NextLink} color={'neutral-fg'} href={appendPathToBasePath(basePath, menuItem.path)} px={2}>
-        {menuItem.title}
-      </Link>
+    <Button as={NextLink} href={appendPathToBasePath(basePath, menuItem.path)} colorScheme="neutral" isActive={router.asPath.includes(appendPathToBasePath(basePath, menuItem.path))} width={'full'} key={index}>
+      {menuItem.title}
     </Button>
   );
 }
