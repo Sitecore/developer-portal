@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 // Global
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import NewsletterNav from '@components/newsletter/NewsletterNav';
 import NewsletterStory, { NewsletterStoryData } from '@components/newsletter/NewsletterStory';
@@ -76,28 +77,30 @@ export const getStaticProps: GetStaticProps<NewsletterContentPageProps> = async 
 
 const NewsletterContentPage: NextPage<NewsletterContentPageProps> = ({ pageInfo, content, paths, year, month }) => {
   return (
-    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
-      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
+    <TrackPageView pageInfo={pageInfo}>
+      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+        <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <VerticalGroup>
-        <CenteredContent>
-          <Box>
-            <Grid gap={6} templateColumns={'repeat(4,minmax(0,1fr))'} mt={8}>
-              <GridItem>
-                <NewsletterNav paths={paths} currentMonth={month} currentYear={year} />
-              </GridItem>
-              <GridItem colSpan={3} gap={10}>
-                <Grid templateColumns={'repeat(3,minmax(0,1fr))'} gap={10}>
-                  {content.map((story) => (
-                    <NewsletterStory {...story} key={story.title} />
-                  ))}
-                </Grid>
-              </GridItem>
-            </Grid>
-          </Box>
-        </CenteredContent>
-      </VerticalGroup>
-    </Layout>
+        <VerticalGroup>
+          <CenteredContent>
+            <Box>
+              <Grid gap={6} templateColumns={'repeat(4,minmax(0,1fr))'} mt={8}>
+                <GridItem>
+                  <NewsletterNav paths={paths} currentMonth={month} currentYear={year} />
+                </GridItem>
+                <GridItem colSpan={3} gap={10}>
+                  <Grid templateColumns={'repeat(3,minmax(0,1fr))'} gap={10}>
+                    {content.map((story) => (
+                      <NewsletterStory {...story} key={story.title} />
+                    ))}
+                  </Grid>
+                </GridItem>
+              </Grid>
+            </Box>
+          </CenteredContent>
+        </VerticalGroup>
+      </Layout>
+    </TrackPageView>
   );
 };
 

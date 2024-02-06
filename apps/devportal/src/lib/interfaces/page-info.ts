@@ -21,13 +21,6 @@ type PageInfoCore = {
   area: string[];
   product?: string[];
   cdpTags?: string[];
-
-  //TODO: Works for AI POC - But i invision this is more like XP Pattern Cards
-  cdpPersonaDefinition?: {
-    PagePattern: any;
-    //ProfileCards: PersonaType[];
-    //    AdditionalPersonaKeys: PersonaKey[];  //TODO: Add functionality to either overwrite or add additional keys for a page (if you want to fine tune the persona definition for a specific page)
-  };
 };
 
 // Input for 3rd party integrations are just strings

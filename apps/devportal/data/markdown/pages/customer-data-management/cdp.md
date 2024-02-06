@@ -8,8 +8,6 @@ stackexchange: ['#cdp']
 youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['customerDataManagement']
-cdpPersonaDefinition: { PagePattern: [{ 'ProfileKey': 'FrontendSkills', 'value': 1 }, { 'ProfileKey': 'BackendSkills', 'value': 1 }, { 'ProfileKey': 'MarketingSkills', 'value': 10 }] }
-cdpTags: ['cdp']
 ---
 
 ## Introduction

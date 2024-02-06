@@ -1,7 +1,7 @@
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import SocialFeeds from '@src/components/common/SocialFeeds';
-import { TrackPageView } from '@src/components/engagetracker/TrackPageView';
 import { MarkDownContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';

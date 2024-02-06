@@ -8,7 +8,7 @@ import { StackExchangeFeed, TwitterFeed, YouTubeFeed } from 'ui/components/integ
 import { SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
 import { GenericList } from 'ui/components/lists';
 
-import { TrackPageView } from '@src/components/engagetracker/TrackPageView';
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { CTACard, CTACardProps, PromoCardProps } from 'ui/components/promos';
 import PromoList from 'ui/components/promos/promoCard/PromoList';
 

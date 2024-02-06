@@ -1,7 +1,7 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
 
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
-import { TrackPageView } from '@src/components/engagetracker/TrackPageView';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';

@@ -1,8 +1,8 @@
 import { Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import SocialFeeds from '@src/components/common/SocialFeeds';
-import { TrackPageView } from '@src/components/engagetracker/TrackPageView';
 import MarkdownContent from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
