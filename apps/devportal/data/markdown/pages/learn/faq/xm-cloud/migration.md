@@ -5,6 +5,11 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 ## Do you have to be on Sitecore XM/XP 10.2 to move to XM Cloud?
 
 It will depend on how a customer decides to upgrade. For example, customers who are on older versions of Sitecore when they go through an upgrade process, don't always choose to do the incremental upgrades (where the implementation team increments through every version of Sitecore to get to their end goal). Instead, the implementation team creates a new instance of Sitecore XM 10.2 for example, and then begins to migrate or move all of those assets into the new instance. If a team takes that approach, then you will not have the prerequisite of doing XM/XP 10.2 first. However, if you wanted to validate your solution and get it ready for XM Cloud, then upgrading to XM/XP 10.2 now is a good choice as well. You don't have to be on 10.2 prior to going to XM Cloud if part of your migration strategy is doing the upgrade with the move.

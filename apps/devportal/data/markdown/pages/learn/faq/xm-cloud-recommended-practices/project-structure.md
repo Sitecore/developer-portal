@@ -5,6 +5,11 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    The information in this article can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 Separate repos for frontend & backend? Separate repos for each head? Based on feedback from teams in the field, monorepos are good idea because
 
 - no need to worry about version compatibility, so it’s easier to scale over time.

@@ -22,7 +22,7 @@
     "prettier": "latest",
     "sc-changelog": "*",
     "shx": "^0.3.4",
-    "turbo": "^1.10.14",
+    "turbo": "^1.12.2",
     "ui": "*"
   },
   "packageManager": "npm@9.5.0^"

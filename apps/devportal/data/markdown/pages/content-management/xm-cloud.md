@@ -9,6 +9,7 @@ stackexchange: ['#xm-cloud']
 youtube: PL1jJVFm_lGnzqYagW1UahIBeqTIYSBQMc
 changelog: 6
 changelogProductId: ['av_GqshF5U2kL8XMGjf-Xw']
+guidedDemoId: 'cls4wi56f006d0fl3adbt7rjx'
 cdpTags: ['xm-cloud']
 ---
 

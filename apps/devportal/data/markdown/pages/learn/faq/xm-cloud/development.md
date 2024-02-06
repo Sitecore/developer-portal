@@ -5,6 +5,11 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 ## What will the developer experience be with XM Cloud?
 
 The adoption of XM Cloud allows Sitecore developers to continue working in the manner to which they are accustomed -- developers can work in their local environments to build the Content Management implementation. Using the Sitecore CLI, developers can run a local Docker environment provided by Sitecore that replicates the environment and the build deployment steps used by XM Cloud. The CLI will download the base Experience Manager Docker image from the Sitecore container repository and layer the developer’s project files on top. The complete Sitecore installation is automated and provisions within a matter of minutes.

@@ -1,16 +1,12 @@
 /* eslint-disable react/prop-types */
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { PageInfo } from '@lib/interfaces/page-info';
-import { getNewsletterTitle } from '@lib/newsletter';
-import { NEWSLETTER_DATA_DIRECTORY, NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
+import { getNewslettersByYear } from '@lib/newsletter';
+import { getNewsletterStaticPaths, NewsletterPath } from '@lib/staticPaths';
 import Layout from '@src/layouts/Layout';
-import fs from 'fs';
-import { GetStaticProps, NextPage } from 'next';
-import path from 'path';
 import Hero from 'ui/components/common/Hero';
-import { CenteredContent } from 'ui/components/helpers';
+import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { CategoryTileList, CategoryTileProps } from 'ui/components/lists';
-import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];
@@ -19,42 +15,15 @@ interface NewsletterPageProps {
   paths: NewsletterPath[];
 }
 
-const MAX_RESULTS = 12;
-
 export async function getStaticPaths() {
-  const trialPaths = await getNewsletterStaticPaths();
+  const trialPaths = getNewsletterStaticPaths();
   return {
     paths: trialPaths,
     fallback: false,
   };
 }
 
-export const getStaticProps: GetStaticProps = async (context: any) => {
-  const getNewsletters = (year: string) => {
-    const newsletters = [];
-    // Using for loops to shortcut early
-    const yearPath = path.resolve(NEWSLETTER_DATA_DIRECTORY, `${year}`);
-    const months = fs.readdirSync(yearPath).sort().reverse();
-
-    for (let j = 0; j < months.length; j++) {
-      const month = months[j];
-      const { title, description } = JSON.parse(fs.readFileSync(path.resolve(yearPath, `${month}`), { encoding: 'utf-8' }));
-
-      const monthWithoutFile = month.substring(0, 2);
-      newsletters.push({
-        title: getNewsletterTitle(translateDateAsYearMonth(`${year}-${monthWithoutFile}-03`), title),
-        description,
-        href: `/newsletter/${year}/${monthWithoutFile}`,
-      });
-
-      if (newsletters.length === MAX_RESULTS) {
-        return newsletters;
-      }
-    }
-
-    return newsletters;
-  };
-
+export async function getStaticProps(context: any) {
   const year = context?.params?.year;
   const pageInfo = {
     title: `Newsletters from ${year}`,
@@ -64,25 +33,24 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
 
   return {
     props: {
-      newsletters: getNewsletters(year),
+      newsletters: await getNewslettersByYear(year),
       pageInfo,
       year: year,
     },
   };
-};
+}
 
-const NewsletterPage: NextPage<NewsletterPageProps> = ({ newsletters, pageInfo }) => {
+export default function NewsletterPage({ newsletters, pageInfo }: NewsletterPageProps) {
   return (
     <TrackPageView pageInfo={pageInfo}>
       <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
-
-        <CenteredContent>
-          <CategoryTileList cards={newsletters} />
-        </CenteredContent>
+        <VerticalGroup>
+          <CenteredContent>
+            <CategoryTileList cards={newsletters} />
+          </CenteredContent>
+        </VerticalGroup>
       </Layout>
     </TrackPageView>
   );
-};
-
-export default NewsletterPage;
+}

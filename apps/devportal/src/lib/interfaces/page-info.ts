@@ -71,6 +71,7 @@ export type PageInfo = PageInfoCore & {
   parsedContent?: string;
   productLogo?: string;
   headings?: ContentHeading[];
+  guidedDemoId?: string;
 };
 
 export type SubPageNavigation = {

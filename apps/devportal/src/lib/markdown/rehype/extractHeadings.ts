@@ -11,11 +11,11 @@ import { ExtractHeadingsConfig } from '../../interfaces/contentheading';
 
 export default function rehypeExtractHeadings({ rank, headings }: ExtractHeadingsConfig): (tree: Root) => void {
   return (tree: Root) => {
-    visit(tree, 'element', (node) => {
-      if (headingRank(node) === rank && node.properties?.id) {
+    visit(tree, 'element', (node: any) => {
+      if (headingRank(node) === rank && node.properties && node.properties.id) {
         headings.push({
           title: toString(node),
-          id: node.properties['id'].toString(),
+          id: node.properties.id.toString(),
         });
       }
     });

@@ -7,6 +7,7 @@ productLogo: 'Search'
 twitter: ['#SitecoreSearch']
 stackexchange: ['#Sitecore-Search']
 youtube: PL1jJVFm_lGnyn9WVvW1fwSJrg6AqCndDb
+guidedDemoId: 'cls52r26n00940fl13j166b9u'
 cdpTags: ['search']
 ---
 

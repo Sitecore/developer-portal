@@ -30,6 +30,10 @@
             {
               "title": "Components Design Best Practices",
               "path": "component-design-best-practices"
+            },
+            {
+              "title": "Development Workflow: Github Codespaces",
+              "path": "dev-workflow-codespaces"
             }
           ]
         },
@@ -49,6 +53,16 @@
           "path": "information-architecture"
         },
         {
+          "title": "Project Planning",
+          "path": "project-planning",
+          "children": [
+            {
+              "title": "Project Estimation",
+              "path": "project-estimation"
+            }
+          ]
+        },
+        {
           "title": "Sprint Zero",
           "path": "sprint-zero",
           "ignoreLink": true,
@@ -56,6 +70,10 @@
             {
               "title": "Project Solution Setup",
               "path": "project-solution-setup"
+            },
+            {
+              "title": "Creating a Site",
+              "path": "creating-a-site"
             },
             {
               "title": "Setup Content Serialization",

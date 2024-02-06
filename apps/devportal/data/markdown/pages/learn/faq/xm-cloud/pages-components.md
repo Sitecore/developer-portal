@@ -5,6 +5,11 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 ## What are Sitecore Pages?
 
 Sitecore Pages is the new SaaS, web page editor. Pages is a next-generation visual authoring and comes out of the box with XM Cloud and it will be released with the XM Cloud launch. Pages have a modern UI/UX that allows content authors to build the content for their websites. Pages is a foundation for Sitecore's composable and headless solutions and is intended as the editor of choice for XM Cloud, even though Content Editor and Experience Editor are still available.

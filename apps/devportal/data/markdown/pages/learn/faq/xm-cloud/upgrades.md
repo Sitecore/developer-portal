@@ -4,6 +4,10 @@ title: 'Upgrades'
 hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
 
 ## Will Sitecore keep Sitecore XM Cloud up to date?
 
