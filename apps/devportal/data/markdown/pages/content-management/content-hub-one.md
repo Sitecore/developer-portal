@@ -7,6 +7,7 @@ description: 'Centrally manage your omnichannel content with a cloud-hosted head
 twitter: ['#ContentHubONE']
 stackexchange: ['#content-hub-one']
 youtube: PL1jJVFm_lGnxo5WIglnEqtRPWX8wuzVqv
+guidedDemoId: 'cls55uext002o0fl6e1rx5z2j'
 ---
 
 ## Introduction
