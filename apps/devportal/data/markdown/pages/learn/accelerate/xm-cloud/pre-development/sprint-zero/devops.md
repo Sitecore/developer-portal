@@ -19,11 +19,11 @@ When deploying the XM Cloud infrastructure elements, there are two options for h
 1. Use the inbuilt XM Cloud Deploy Application and its GitOps approach
 1. Roll your own CI CD pipeline using your DevOps tooling of choice and the Sitecore CLI
 
-There are a few factors that can help you decide on the best approach for your use case. By default customers are recommended to use the provided XM Cloud Deploy application. This will reduces the client's Time to Market, and means they automatically receive the benefits as the tooling is improved.
+There are a few factors that can help you decide on the best approach for your use case. By default, customers are recommended to use the provided XM Cloud Deploy application. This will reduce the client's Time to Market, and means they automatically receive the benefits as the tooling is improved.
 
 However, there are some scenarios where that might not be possible, some examples of these are:
 
-- Currently GitHub and Azure DevOps are the only two supported source control systems. If you’re using a different source control provider, then you won’t be able to use the Deploy Application
+- Currently, GitHub and Azure DevOps are the only two supported source control systems. If you’re using a different source control provider, then you won’t be able to use the Deploy Application
 - You need to use a Service Account with administrator privileges on your source control system in order for the Deploy application to be able to provision and manage repositories and branches. If this is not possible you won’t be able to use the Deploy Application
 - If you have made an investment in CI/CD tooling for other elements of your infrastructure, and want to continue to manage all deployments from a single location then you might choose to use the CLI to provision your own deployments
 - If your development team uses a poly-repo approach (multiple repositories for the CM and web application code), you will need to use the CLI to deploy your code. The Deploy app requires all the code to be in the same repository.
@@ -69,7 +69,7 @@ This command will create a new environment with the name passed into the -n para
 dotnet sitecore cloud deployment create --environment-id << ENVIRONMENT_NAME >> --upload
 ```
 
-This command will create a new deployment for the previously created environment. The `--Upload` flag is optional, when not provided you will get a clean XM Cloud installation, none of your code is deployed.
+This command will create a new deployment for the previously created environment. The `--Upload` flag is optional, when not provided you will get a clean XM Cloud installation, none of your code will be deployed.
 
 When running the command within a DevOps pipeline, you can use it to upload your custom codebase to the platform.
 
@@ -83,7 +83,7 @@ Sitecore XM Cloud is based on a Headless architecture pattern. This means that y
 
 ### Deploy using the Vercel Connector
 
-If you can use the Vercel Connector then once you have provisioned your XM Cloud Infrastructure and created a Site return to the Sites tab in the Deploy application for your Environment, and click the button on the right and choose “Set up hosting”. Complete the sections and follow the prompts to deploy your site to a new Vercel installation
+Once you have provisioned your XM Cloud Infrastructure and created a Site return to the Sites tab in the Deploy application for your Environment. Then, click the button on the right and choose “Set up hosting”. Complete the sections and follow the prompts to deploy your site to a new Vercel installation.
 
 <Alert>
   <AlertIcon />
@@ -92,7 +92,7 @@ If you can use the Vercel Connector then once you have provisioned your XM Cloud
 
 ### Deploy a custom head Deployment
 
-If you need to create a custom deployment for your head, then the approach you take will vary for each project, depending on the Hosting Platform and CI/CD tooling that you choose to use. You can see some getting started guides for some of the more common hosting providers helow:
+If you need to create a custom deployment for your head, then the approach you take will vary for each project, depending on the Hosting Platform and CI/CD tooling that you choose to use. You can see some getting started guides for some of the more common hosting providers below:
 
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel)
 - [Getting started with Netlify](https://docs.netlify.com/get-started/)
