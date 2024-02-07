@@ -1,6 +1,6 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
 import { usePreview } from '@/src/context/PreviewContext';
-import { Alert, BoxProps, Button, HStack, Icon, Link, Tag, TagLabel, Tooltip } from '@chakra-ui/react';
+import { Alert, Badge, BoxProps, Button, HStack, Icon, Link, Tooltip } from '@chakra-ui/react';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { ProductIcon } from './ProductIcon';
@@ -30,13 +30,14 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
 
       <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
 
-      {item.changeTypeName != null ? <Tag colorScheme={colorScheme(item.changeTypeName)}>{item.changeTypeName}</Tag> : <Tag>No changetype defined</Tag>}
-
-      {item.breakingChange && (
-        <Tag colorScheme="danger">
-          <TagLabel>Breaking change</TagLabel>
-        </Tag>
-      )}
+      {/* {item.changeTypeName != null ? <Badge colorScheme={colorScheme(item.changeTypeName)}>{item.changeTypeName}</Badge> : <Badge>No changetype defined</Badge>} */}
+      {item.changeType.length > 0 &&
+        item.changeType.map((changeTypeItem, key) => (
+          <Badge colorScheme={colorScheme(changeTypeItem.name)} key={key}>
+            {changeTypeItem.name}
+          </Badge>
+        ))}
+      {item.breakingChange && <Badge colorScheme="danger">Breaking change</Badge>}
     </HStack>
   );
 
@@ -47,17 +48,20 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
       {MetaInfo}
       {isPreview && (
         <Tooltip label="Edit in Sitecore Content Hub ONE" aria-label="Edit in Sitecore Content Hub">
-        <Button variant={'ghost'} size="sm" leftIcon={
-            <Icon>
-              <path d={mdiSquareEditOutline} />
-            </Icon>
-          }
-        >
-          <Link href={`https://content.sitecorecloud.io/content/${item.id}?organization=${organizationId}&tenantName=${tenantId}`} target="_blank">
-            Edit
-          </Link>
+          <Button
+            variant={'ghost'}
+            size="sm"
+            leftIcon={
+              <Icon>
+                <path d={mdiSquareEditOutline} />
+              </Icon>
+            }
+          >
+            <Link href={`https://content.sitecorecloud.io/content/${item.id}?organization=${organizationId}&tenantName=${tenantId}`} target="_blank">
+              Edit
+            </Link>
           </Button>
-          </Tooltip>
+        </Tooltip>
       )}
     </HStack>
   );
