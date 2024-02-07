@@ -19,9 +19,6 @@ export const scdpTheme = extendTheme(
       Modal: modalTheme,
     },
     sizes: {},
-    fonts: {
-      heading: 'var(--font-avenir)',
-    },
   },
   withProse({ baseStyle: proseBaseStyle }),
   sitecoreTheme
