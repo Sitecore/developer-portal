@@ -30,7 +30,8 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
 
       <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
 
-      {item.changeTypeName != null ? <Badge colorScheme={colorScheme(item.changeTypeName)}>{item.changeTypeName}</Badge> : <Badge>No changetype defined</Badge>}
+      {/* {item.changeTypeName != null ? <Badge colorScheme={colorScheme(item.changeTypeName)}>{item.changeTypeName}</Badge> : <Badge>No changetype defined</Badge>} */}
+      {item.changeType.length > 0 && item.changeType.map((changeTypeItem, key) => <Badge colorScheme={colorScheme(changeTypeItem.name)}>{changeTypeItem.name}</Badge>)}
       {item.breakingChange && <Badge colorScheme="danger">Breaking change</Badge>}
     </HStack>
   );
