@@ -18,7 +18,7 @@ export const TrackPageView: FC<TrackPageViewProps> = (props) => {
   const prevUrlRef = useRef<string>();
 
   const callTrackPageView = async (url: string) => {
-    if (tracker && tracker.context && tracker.context.isTrackerEnabled) {
+    if (prevUrlRef.current !== url && tracker && tracker.context && tracker.context.isTrackerEnabled) {
       let slugPath = url;
 
       // If slug is provided, override the router slug
@@ -38,12 +38,14 @@ export const TrackPageView: FC<TrackPageViewProps> = (props) => {
       }
 
       await tracker.TrackPageView(slugPath, additionalData);
+      prevUrlRef.current = url;
     }
   };
 
   // Call on initial render
   useEffect(() => {
     callTrackPageView(router.asPath);
+    prevUrlRef.current = router.asPath;
   }, []);
 
   // Listen for route changes
