@@ -70,7 +70,7 @@ _Note: The site will still function if the keys are missing or left blank. Howev
 
 ---
 
-To enable Sitecore Personalize to capture events the following environment variables are required:
+To enable Sitecore CDP/Personalize to capture events the following environment variables are required:
 
 ```
 NEXT_PUBLIC_SITECORE_CDP_CLIENT_KEY=
