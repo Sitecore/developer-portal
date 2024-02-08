@@ -35,7 +35,10 @@ How do we know what our error margins are? This should be based on empirical dat
 
 All these data points and more can be used to measure the estimates for this project and include a margin for error.
 
-> If this data is not yet available for any reason, such as this being your company’s first Sitecore project, then make sure projects are tracked and recorded to better influence future project estimates and planning.
+<Alert status="info">
+  <AlertIcon />
+    If this data is not yet available for any reason, such as this being your company’s first Sitecore project, then make sure projects are tracked and recorded to better influence future project estimates and planning.
+</Alert>
 
 ### Task Breakdowns/Lists
 
