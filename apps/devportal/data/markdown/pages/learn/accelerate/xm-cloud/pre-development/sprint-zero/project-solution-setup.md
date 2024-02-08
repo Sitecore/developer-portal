@@ -12,7 +12,7 @@ As the technical lead on the project, you need to set up the Project and Environ
 
 ## Solution
 
-There are 2 paths to set up the solution, depending on whether you are using a source code provider with a supported integration to the XM Cloud Deploy app or not. Currently, only GitHub is supported.
+There are 2 paths to set up the solution, depending on whether you are using a source code provider with a supported integration to the XM Cloud Deploy app or not. Currently, only GitHub and Azure DevOps are supported.
 
 The XM Cloud Deploy application requires:
 
@@ -24,19 +24,19 @@ If granting those permissions is against your organization’s security policies
 
 ### Setting up your first Project, Environment, and Site - Supported Integration
 
-In the process of creating a new Project, you connect a GitHub Repository. Make sure you grant the following access rights:
+In the process of creating a new Project, you connect a git repository from a supported provider. Make sure you grant the following access rights:
 
 - Read access to metadata
 - Read and write access to administration and code
 - Access to all repositories
 
-The Project and Environment creation process requires these to copy a GitHub project to your private or company repository.
+The Project and Environment creation process requires these to clone a git repository into your private or company git provider.
 
 In the setup process, the project requires a name. Make sure to use proper Naming conventions in case your license allows having more than one project or you are planning more projects in the future.
 
 When creating the first environment, you will choose the name of the environment. Make sure to use a Naming convention.
 
-Each environment needs to be set up to be a production or non-production environment. On a standard license tier, you will have 1 production and 2 non-production environments. So it’s crucial to mark only the production environment accordingly and your QA and UAT environment as non-productions. Give the environments applicable names.
+Each environment needs to be set up to have a Production SLA or Non-Production SLA. On a standard license tier, you will have 1 production and 2 non-production environments. So it’s crucial to mark only the production environment accordingly and your QA and UAT environment as non-productions. Give the environments applicable names.
 
 ### Setting up your first Project, Environment, and Site - No Integration
 
