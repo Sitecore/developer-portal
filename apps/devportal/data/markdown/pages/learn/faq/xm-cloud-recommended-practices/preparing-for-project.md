@@ -1,6 +1,8 @@
 ---
+product: ['xm-cloud']
 title: 'Preparing For A Project'
 hasInPageNav: true
+cdpTags: ['xm-cloud']
 ---
 
 <Alert status="info">
@@ -9,16 +11,17 @@ hasInPageNav: true
 </Alert>
 
 > ## For Business Stakeholders
-Recommended practices for business stakeholders who are ramping up dev teams for Sitecore XM Cloud work.
-
+>
+> Recommended practices for business stakeholders who are ramping up dev teams for Sitecore XM Cloud work.
 
 ### Team Structure
+
 > ✅ DO staff your dev teams with more front-end devs than back-end/Sitecore devs
 
 You’re probably unlikely to customize the CM much. Projects are seeing much less .NET code than past XM projects. This means that teams can consist mostly of front-end developers.
 
-
 ### Project Workflow
+
 Conducting a planning phase where requirements are flushed out and documented is the best way to set up the dev team for success.
 
 Based on feedback from teams in the field, here is the approach that teams like:
@@ -31,7 +34,7 @@ Before any development begins, the Business Analyst or Product Owner needs to an
 
 2. Identify page types and components
 
-The Business Analyst or Product Owner needs to work together with the dev lead to identify the list of page types needed for the website and the list of components needed on each page type. 
+The Business Analyst or Product Owner needs to work together with the dev lead to identify the list of page types needed for the website and the list of components needed on each page type.
 
 Some tips that teams find helpful:
 

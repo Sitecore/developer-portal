@@ -1,6 +1,8 @@
 ---
+product: ['cloud-portal']
 title: 'Cloud Portal Technical FAQ'
 hasInPageNav: true
+cdpTags: ['cloud-portal']
 ---
 
 > Disclaimer

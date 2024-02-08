@@ -1,7 +1,9 @@
 ---
+product: ['xm', 'personalize']
 title: 'Development'
 hasSubPageNav: true
 hasInPageNav: false
+cdpTags: ['xm', 'personalize']
 ---
 
 **What technology stack do we need to build sites in XP2XMP?**

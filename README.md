@@ -55,6 +55,8 @@ NEXT_PUBLIC_GTM_ENVIRONMENT=
 
 _Note: The site will still function without the above keys. The components that require these environment variables will fail gracefully and not display on the pages._
 
+---
+
 To enable search the following environment variables are required:
 
 ```
@@ -65,6 +67,19 @@ NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH=
 ```
 
 _Note: The site will still function if the keys are missing or left blank. However these keys are still required to build the application_
+
+---
+
+To enable Sitecore CDP/Personalize to capture events the following environment variables are required:
+
+```
+NEXT_PUBLIC_SITECORE_CDP_CLIENT_KEY=
+NEXT_PUBLIC_SITECORE_CDP_TARGETURL=
+NEXT_PUBLIC_SITECORE_CDP_COOKIE_DOMAIN=
+NEXT_PUBLIC_SITECORE_CDP_POS=
+```
+
+\_Note: The site will still function if the keys are missing or left blank.
 
 ## Getting Started
 
@@ -86,6 +101,11 @@ NEXT_PUBLIC_SEARCH_APP_API_KEY=
 NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY=
 NEXT_PUBLIC_SEARCH_APP_ENV=
 NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH=
+
+NEXT_PUBLIC_SITECORE_CDP_CLIENT_KEY=
+NEXT_PUBLIC_SITECORE_CDP_TARGETURL=
+NEXT_PUBLIC_SITECORE_CDP_COOKIE_DOMAIN=
+NEXT_PUBLIC_SITECORE_CDP_POS=
 ```
 
 (For more information on populating environment variables see section **Environment Variables** above.)

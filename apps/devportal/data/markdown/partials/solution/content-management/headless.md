@@ -1,6 +1,6 @@
 ---
 solution: ['content-management']
-product: ['experience-manager']
+product: ['xm']
 title: 'Sitecore Headless Development'
 description: 'Develop your website headlessly powered by ASP.NET. or JavaScript frameworks'
 ---

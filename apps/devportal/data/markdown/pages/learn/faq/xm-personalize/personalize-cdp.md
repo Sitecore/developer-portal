@@ -1,7 +1,9 @@
 ---
+product: ['xm', 'personalize']
 title: 'Personalize & CDP'
 hasInPageNav: true
 hasSubPageNav: true
+cdpTags: ['xm', 'personalize']
 ---
 
 **What is the key difference between the real-time data platform available in Sitecore Personalize vs. Sitecore CDP?**

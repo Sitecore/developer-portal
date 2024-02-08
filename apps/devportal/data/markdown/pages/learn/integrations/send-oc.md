@@ -1,7 +1,7 @@
 ---
 title: 'Integrating Sitecore Send with Sitecore OrderCloud'
 description: 'Leverage Sitecore Send to create abandoned cart reminders & personalized product emails integrated with Sitecore OrderCloud.'
-product: ['send', 'oc']
+product: ['send', 'ordercloud']
 area: ['integrations']
 ---
 
@@ -140,13 +140,7 @@ var lineItem = await LineItems.Create('Outgoing', '<orderID>', {
 });
 
 // Forward the event to Sitecore Send
-mootrack(
-  'trackAddToOrder',
-  lineItem.Product.ID,
-  lineItem.UnitPrice,
-  lineItem.Product.xp.url,
-  lineItem.Quantity
-);
+mootrack('trackAddToOrder', lineItem.Product.ID, lineItem.UnitPrice, lineItem.Product.xp.url, lineItem.Quantity);
 ```
 
 ![Sequence diagram showing users interactions being tracked with the storefront][2]

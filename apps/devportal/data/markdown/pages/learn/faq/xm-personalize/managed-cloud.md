@@ -1,7 +1,8 @@
 ---
+product: ['xm', 'personalize', 'managed-cloud']
 title: 'Managed Cloud'
 hasSubPageNav: true
-
+cdpTags: ['xm', 'personalize', 'managed-cloud']
 ---
 
 **Going to XP2XMP requires also switch to Managed Cloud?**

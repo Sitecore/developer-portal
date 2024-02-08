@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getNewslettersByYear } from '@lib/newsletter';
 import { getNewsletterStaticPaths, NewsletterPath } from '@lib/staticPaths';
@@ -41,13 +42,15 @@ export async function getStaticProps(context: any) {
 
 export default function NewsletterPage({ newsletters, pageInfo }: NewsletterPageProps) {
   return (
-    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
-      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
-      <VerticalGroup>
-        <CenteredContent>
-          <CategoryTileList cards={newsletters} />
-        </CenteredContent>
-      </VerticalGroup>
-    </Layout>
+    <TrackPageView pageInfo={pageInfo}>
+      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+        <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
+        <VerticalGroup>
+          <CenteredContent>
+            <CategoryTileList cards={newsletters} />
+          </CenteredContent>
+        </VerticalGroup>
+      </Layout>
+    </TrackPageView>
   );
 }

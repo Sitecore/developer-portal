@@ -84,6 +84,17 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
     includeContributionInstructions: false, // default to true, override in markdown
   } as PageInfo;
 
+  // Handle Persona Definition Mapping
+  // if (meta.cdpPersonaDefinition) {
+  //   pageInfo.cdpPersonaDefinition = {
+  //     ProfileCards: meta.cdpPersonaDefinition.ProfileCards.map((profileCard: any) => {
+  //       return {
+  //         return JSON.parse(profileCard)
+  //       };
+  //     }),
+  //   };
+  // }
+
   /**
    * Fetch all integrations for the page so we can limit the number of requests
    *

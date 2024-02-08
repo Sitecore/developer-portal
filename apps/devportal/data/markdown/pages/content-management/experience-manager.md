@@ -1,6 +1,6 @@
 ---
 solution: ['content-management']
-product: ['experience-manager']
+product: ['xm']
 title: 'Experience Manager'
 description: 'Experience Manager for content management, Web CMS'
 stackexchange:
@@ -28,6 +28,7 @@ youtube: PL1jJVFm_lGnz44RIbnYwTSrBwAm0bE7_C
 youtubeTitle: Installing Sitecore
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['contentManagement']
+cdpTags: ['xm']
 ---
 
 ## Introduction

@@ -1,4 +1,5 @@
 ---
+product: ['xm', 'xp', 'jss']
 title: Cloning and setting up the demo source code
 ---
 

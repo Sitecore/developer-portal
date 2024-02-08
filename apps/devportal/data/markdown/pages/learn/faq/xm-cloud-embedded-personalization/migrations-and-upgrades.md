@@ -1,6 +1,8 @@
 ---
+product: ['xm-cloud']
 title: 'Migrations and Upgrades'
 hasInPageNav: true
+cdpTags: ['xm-cloud']
 ---
 
 ### Can I migrate my current Sitecore 10.x headless JSS implementation personalization rules, variants, and actions to Sitecore XM Cloud Personalization/Personalize?

@@ -1,6 +1,8 @@
 ---
+product: ['cloud-portal']
 title: 'Features'
 hasInPageNav: true
+cdpTags: ['cloud-portal']
 ---
 
 ## What are the features and benefits of the Sitecore Cloud Portal?

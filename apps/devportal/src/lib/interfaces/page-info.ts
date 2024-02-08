@@ -19,6 +19,8 @@ type PageInfoCore = {
   slug: string;
   menuOrder?: number;
   area: string[];
+  product?: string[];
+  cdpTags?: string[];
 };
 
 // Input for 3rd party integrations are just strings

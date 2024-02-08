@@ -1,7 +1,7 @@
 ---
 pageType: 'childoverview'
 solution: ['marketing-automation']
-product: ['marketing-automation']
+product: ['xp', 'send']
 title: 'Marketing Automation'
 description: 'Connect with customers using marketing automation'
 stackexchange: ['#marketing-automation', '#exm']

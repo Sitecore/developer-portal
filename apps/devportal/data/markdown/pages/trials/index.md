@@ -1,6 +1,7 @@
 ---
-title: 'Explore Sitecore products'
-description: 'Are you wanting to know more about how to build with Sitecore products? Learn more about the trials Sitecore offers for some of the products in our composable DXP.'
+product: ['xm', 'xp', 'jss', 'send', 'ordercloud']
+title: 'Try Sitecore products'
+description: 'Learn more about the trials Sitecore offers'
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'
 twitter: ['#LearnSitecore']

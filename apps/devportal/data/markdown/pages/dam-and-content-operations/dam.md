@@ -11,6 +11,7 @@ youtubeTitle: Learn more on DAM & Sitecore Content Hub
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['digitalAssetManagement']
 guidedDemoId: 'cls5813l900ev0fl62v5ubx00'
+cdpTags: ['dam']
 ---
 
 ## What is Sitecore DAM

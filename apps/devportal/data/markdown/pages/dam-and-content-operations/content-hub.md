@@ -10,6 +10,7 @@ youtubeTitle: Learn more about Sitecore Content Hub
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['contentOperations']
 guidedDemoId: 'cls4z7td3001t0gl31rkwg5vh'
+cdpTags: ['content-hub']
 ---
 
 ## Introduction
