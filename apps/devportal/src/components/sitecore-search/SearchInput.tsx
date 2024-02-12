@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import ProductLogo from 'ui/components/common/ProductLogo';
+import { useEngageTracker } from 'ui/components/integrations';
 import { Product } from 'ui/lib/assets';
 
 export interface SearchInputProps {
@@ -11,11 +12,16 @@ export interface SearchInputProps {
 }
 
 const SearchInput = ({ showButton }: SearchInputProps) => {
+  const tracker = useEngageTracker();
   const router = useRouter();
   const [keywords, setKeywords] = useState(router.query['q'] ?? '');
 
   const submit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
+
+    // Track search event
+    tracker.TrackEvent('SEARCH', { keywords });
+
     router.push('/search?q=' + keywords).then(() => router.reload());
   };
 
@@ -61,6 +67,5 @@ const SearchInput = ({ showButton }: SearchInputProps) => {
 SearchInput.defaultProps = {
   className: '',
 };
-
 
 export default SearchInput;

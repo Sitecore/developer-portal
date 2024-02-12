@@ -1,7 +1,8 @@
 ---
 solution: ['devops']
-product: ['experience-manager', 'experience-platform', 'experience-commerce', 'containers']
+product: ['xm', 'xp', 'xc', 'xm-cloud']
 title: 'Containers'
+cdpTags: ['xm', 'xp', 'xc', 'xm-cloud']
 ---
 
 ## Introduction

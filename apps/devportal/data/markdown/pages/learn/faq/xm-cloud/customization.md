@@ -1,6 +1,8 @@
 ---
+product: ['xm-cloud']
 title: 'Customization'
 hasInPageNav: true
+cdpTags: ['xm-cloud']
 ---
 <Alert status="info">
   <AlertIcon />

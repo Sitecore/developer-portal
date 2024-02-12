@@ -1,11 +1,12 @@
 ---
 solution: ['content-management']
-product: ['sxa']
+product: ['sxa', 'xm']
 title: 'Sitecore Experience Accelerator'
 description: 'Turbo charge your Sitecore development.'
 stackexchange: ['#sxa']
 youtube: PL1jJVFm_lGnwKmalgi6sukqDhoYA73JDn
 youtubeTitle: Get started with SXA
+cdpTags: ['sxa']
 ---
 
 ## Introduction

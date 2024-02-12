@@ -1,8 +1,10 @@
 ---
+product: ['xm', 'personalize']
 title: 'XM + Personalize FAQ'
 description: 'Learn more about how to develop for XM + Personalize.'
 hasSubPageNav: true
 hasInPageNav: false
+cdpTags: ['xm', 'personalize']
 ---
 
 > Disclaimer

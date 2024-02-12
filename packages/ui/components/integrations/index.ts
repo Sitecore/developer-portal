@@ -1,3 +1,6 @@
+export * from './engage/EngageTracker';
+export * from './engage/useEngageTracker';
+
 export { StackExchangeFeed } from './stackexchange/StackExchangeFeed';
 export type { StackExchangeQuestion } from './stackexchange/stackExchange';
 

@@ -1,7 +1,9 @@
 ---
+product: ['xm', 'personalize']
 title: 'XM Cloud specifics Migration'
 hasSubPageNav: true
 hasInPageNav: true
+cdpTags: ['xm', 'personalize']
 ---
 
 **How does the migration from XMP (XM on Managed Cloud) to XM Cloud look? Is it seamless?**
@@ -20,7 +22,7 @@ Sitecore intends to deliver new components for headless implementations with a f
 
 Sitecore Experience Manager Cloud is optimized to run Experience Manager as a headless CMS with the Sitecore JavaScript Rendering SDK (JSS), publishing to Sitecore Experience Edge, with a Jamstack framework or .NET Core client application. Sitecore Experience Manager Cloud will not support Content Delivery (CD) servers so current MVC solutions will need to be converted to a JSS implementation where the web solution gets content and layout data from Experience Edge before it can be run in Experience Manager Cloud. Alternatively, customers can host their MVC solutions in Sitecore Managed Cloud, which will continue to support MVC-based solutions into the future. Besides implementing XM as a headless CMS, you will also need to ensure that you are not using XM capabilities which will not be available with XM Cloud. Some examples of these capabilities are custom Solr indexes and use of Sitecore Forms. The list of XM capabilities which will not be available in XM Cloud will follow in the upcoming month.
 
-**What is required to upgrade my current MVC solution so it can run in the XM Cloud environment?** 
+**What is required to upgrade my current MVC solution so it can run in the XM Cloud environment?**
 
 Customers with existing MVC solutions who want to move to XM Cloud will first need to refactor and rebuild their current MVC solution as a Jamstack framework or a .NET Core solution. Experience Manager Cloud will only support headless Experience Manager implementations using the Sitecore JavaScript Rendering SDK (JSS), Sitecore Experience Edge, and a Jamstack framework or .NET Core client application. The process of refactoring applies to the MVC solution&#39;s backend:
 

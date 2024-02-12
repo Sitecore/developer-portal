@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import newsletterPromo from '@/data/promos/newsletter';
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { Heading } from '@chakra-ui/react';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getFirstXNewsletters } from '@lib/newsletter';
@@ -28,18 +29,20 @@ export async function getStaticProps() {
 
 export default function NewsletterPage({ newsletters, pageInfo }: NewsletterPageProps) {
   return (
-    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
-      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
+    <TrackPageView pageInfo={pageInfo}>
+      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+        <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-      <ContentSection bg="neutral-subtle-bg">
-        <CenteredContent>
-          <PromoCard {...newsletterPromo} />
+        <ContentSection bg="neutral-subtle-bg">
+          <CenteredContent>
+            <PromoCard {...newsletterPromo} />
 
-          <Heading size="lg">Previous newsletters</Heading>
+            <Heading size="lg">Previous newsletters</Heading>
 
-          <CategoryTileList cards={newsletters} />
-        </CenteredContent>
-      </ContentSection>
-    </Layout>
+            <CategoryTileList cards={newsletters} />
+          </CenteredContent>
+        </ContentSection>
+      </Layout>
+    </TrackPageView>
   );
 }

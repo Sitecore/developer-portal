@@ -1,6 +1,8 @@
 ---
 title: 'Creating New Components'
 description: 'The developer workflow to create a new component'
+hasSubPageNav: true
+hasInPageNav: false
 area: ['accelerate']
 ---
 

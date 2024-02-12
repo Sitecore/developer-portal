@@ -1,18 +1,20 @@
-import { Heading, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import { VerticalGroup } from 'ui/components/helpers';
 import { CenteredContent } from 'ui/components/helpers/CenteredContent';
 import { GetProductLogo } from 'ui/lib/assets';
+import { GuidedDemo } from './GuidedDemo';
 
 export type HeroProps = {
   title: string;
   description?: string;
   image?: string;
   productLogo?: string;
+  demoId?: string;
   children?: React.ReactNode | React.ReactNode[];
 };
 
-const Hero = ({ description, title, children, productLogo }: HeroProps): JSX.Element => {
+const Hero = ({ description, title, children, productLogo, demoId }: HeroProps): JSX.Element => {
   return (
     <VerticalGroup
       maxWidth={'full'}
@@ -32,6 +34,11 @@ const Hero = ({ description, title, children, productLogo }: HeroProps): JSX.Ele
         <Text as="h2" variant="subtle" fontSize={{ base: 'sm', md: 'md' }}>
           {description}
         </Text>
+        {demoId && (
+          <Box width="25%">
+            <GuidedDemo demoId={demoId} productName={title} productLogo={productLogo} />
+          </Box>
+        )}
         {children}
       </CenteredContent>
     </VerticalGroup>

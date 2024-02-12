@@ -1,6 +1,6 @@
 ---
 solution: ['customer-data-management']
-product: ['experience-platform']
+product: ['xp']
 title: 'Sitecore xDB'
 ---
 

@@ -1,6 +1,8 @@
 ---
+product: ['connect']
 title: 'General'
 hasInPageNav: true
+cdpTags: ['connect']
 ---
 
 ### What is Sitecore Connect?

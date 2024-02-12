@@ -1,6 +1,8 @@
 ---
+product: ['connect']
 title: 'For Partners and Developer Community'
 hasInPageNav: true
+cdpTags: ['connect']
 ---
 
 ### What does Sitecore Connect mean for developers and technicians?

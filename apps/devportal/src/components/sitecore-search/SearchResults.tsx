@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, HStack, Heading, Hide, Image, Stack, StackDivider, Tag, Text } from '@chakra-ui/react';
+import { Badge, Box, Grid, GridItem, HStack, Heading, Hide, Image, Stack, StackDivider, Text } from '@chakra-ui/react';
 import { SearchResultsInitialState, WidgetDataType, trackEntityPageViewEvent, useSearchResults, widget } from '@sitecore-search/react';
 //import Image from 'next/image';
 import { getColorScheme } from '@/src/lib/search';
@@ -87,7 +87,6 @@ export const SearchResults = (props: InitialSearchProps) => {
                     <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
                   </Hide>
                 </HStack>
-
                 <Stack divider={<StackDivider />} gap={2}>
                   {articles.length > 0 &&
                     articles.map((result, index) => (
@@ -108,9 +107,9 @@ export const SearchResults = (props: InitialSearchProps) => {
                       >
                         <HStack pb={2}>
                           {result.type && (
-                            <Tag colorScheme={getColorScheme(result.type)} size="md">
+                            <Badge colorScheme={getColorScheme(result.type)} size="sm">
                               {result.type}
-                            </Tag>
+                            </Badge>
                           )}
                           {result.index_name && <Heading variant={'section'}>{result.site_name}</Heading>}
                         </HStack>
@@ -144,7 +143,6 @@ export const SearchResults = (props: InitialSearchProps) => {
                       </a>
                     ))}
                 </Stack>
-
                 <SearchPagination defaultCurrentPage={1} onPageNumberChange={(v) => onPageNumberChange({ page: v })} page={page} pageSize={itemsPerPage} totalItems={totalItems} />
               </GridItem>
             </>

@@ -10,7 +10,7 @@ import { Router } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
-import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
+import { EngageTrackerProvider } from 'ui/components/integrations';
 import { PreviewProvider } from '../context/PreviewContext';
 
 const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
@@ -80,22 +80,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SearchWrapper>
-      <style jsx global>
-        {`
-          :root {
-            --font-avenir: ${AvenirNextR.style.fontFamily};
-          }
-        `}
-      </style>
       <ChakraProvider theme={scdpTheme} toastOptions={toastOptions}>
-        <PreviewProvider hostname={hostname}>
-          {progress && <TopBarProgress />}
-          <Navbar searchEnabled={IsSearchEnabled()} />
-          <Box ref={contentInnerRef}>
-            <Component {...pageProps} />
-          </Box>
-          <Footer />
-        </PreviewProvider>
+        <EngageTrackerProvider>
+          <PreviewProvider hostname={hostname}>
+            {progress && <TopBarProgress />}
+            <Navbar searchEnabled={IsSearchEnabled()} />
+            <Box ref={contentInnerRef}>
+              <Component {...pageProps} />
+            </Box>
+            <Footer />
+          </PreviewProvider>
+        </EngageTrackerProvider>
       </ChakraProvider>
     </SearchWrapper>
   );

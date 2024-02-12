@@ -1,4 +1,5 @@
 ---
+product: ['xm', 'xp', 'jss']
 title: GraphQL
 ---
 
@@ -61,9 +62,7 @@ Start by calling search, passing in a `fieldsEqual` parameter. This will be an a
 
 ```graphql
 {
-  search(
-    fieldsEqual: [{ name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }]
-  ) {
+  search(fieldsEqual: [{ name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }]) {
     results {
       items {
         name
@@ -95,12 +94,7 @@ This time, specify that you need these items to also have a `_templatename` prop
 
 ```graphql
 {
-  search(
-    fieldsEqual: [
-      { name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }
-      { name: "_templatename", value: "event-page" }
-    ]
-  ) {
+  search(fieldsEqual: [{ name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }, { name: "_templatename", value: "event-page" }]) {
     results {
       items {
         name
@@ -128,12 +122,7 @@ The property you will need is `fields`, an array of _name : value_ pairs associa
 
 ```graphql
 {
-  search(
-    fieldsEqual: [
-      { name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }
-      { name: "_templatename", value: "event-page" }
-    ]
-  ) {
+  search(fieldsEqual: [{ name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }, { name: "_templatename", value: "event-page" }]) {
     results {
       items {
         name
@@ -159,12 +148,7 @@ Start by setting the items' name to the event's `name` field. (for clarity, comm
 
 ```graphql
 {
-  search(
-    fieldsEqual: [
-      { name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }
-      { name: "_templatename", value: "event-page" }
-    ]
-  ) {
+  search(fieldsEqual: [{ name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }, { name: "_templatename", value: "event-page" }]) {
     results {
       items {
         name: field(name: "name")
@@ -186,12 +170,7 @@ Now add a few more fields that you will need, like description, date, image, lat
 
 ```graphql
 {
-  search(
-    fieldsEqual: [
-      { name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }
-      { name: "_templatename", value: "event-page" }
-    ]
-  ) {
+  search(fieldsEqual: [{ name: "_fullpath", value: "/sitecore/content/lighthousefitness/home/events*" }, { name: "_templatename", value: "event-page" }]) {
     results {
       events: items {
         name: field(name: "name")

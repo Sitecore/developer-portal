@@ -1,10 +1,11 @@
 ---
 solution: ['content-management']
-product: ['experience-manager']
+product: ['xm']
 title: 'Sitecore Headless Development'
 description: 'Using Sitecore in a headless architecture'
 stackexchange: ['#jss']
 youtube: 'PL1jJVFm_lGnwZup4L4BjITS2sKr4rpMfI'
+cdpTags: ['xm']
 ---
 
 ## Introduction

@@ -1,6 +1,8 @@
 ---
+product: ['xm-cloud']
 title: 'Deployment & Publishing'
 hasInPageNav: true
+cdpTags: ['xm-cloud']
 ---
 
 <Alert status="info">
@@ -24,7 +26,7 @@ It’s better to use the OOTB GitOps functionality provided by XM Cloud where po
 
 However, there are some scenarios where it might be preferable to roll your own CI/CD pipelines. Here you can utilize the CLI performing all of the interactions with your XM Cloud instance.Some examples of this are:
 
-- If you’re not using GitHub as your Source Control Provider, other providers aren’t currently supported, so you must use your own CI/CD in that instance. 
+- If you’re not using GitHub as your Source Control Provider, other providers aren’t currently supported, so you must use your own CI/CD in that instance.
 
 - If you have already made an investment in CI/CD setups for other parts of your system and want to leverage the same technologies, keeping all your deployment pipelines in one place.
 
@@ -40,6 +42,6 @@ You can find an example of a custom CI/CD configuration using the XM Cloud CLI h
 
 - The recommended approach is to use continuous deployments, which means that every commit is instantly deployed out to the first environment, and every build, every commit I make, or every pull request I do has integration tests and things run against it.
 
-- With the ‘deploy once’ model, you can promote any single build to different environments via the XM Cloud deploy app. 
+- With the ‘deploy once’ model, you can promote any single build to different environments via the XM Cloud deploy app.
 
 - Differences in configs across environment should be handled with environment variables (or like SXA handles it - configuration through Sitecore items)

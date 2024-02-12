@@ -1,6 +1,8 @@
 ---
+product: ['xm-cloud']
 title: 'Developer Experience'
 hasInPageNav: true
+cdpTags: ['xm-cloud']
 ---
 
 ### What does Embedded Personalization mean for developers and technicians?

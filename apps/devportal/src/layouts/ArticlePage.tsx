@@ -1,3 +1,4 @@
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
 import SocialFeeds from '@src/components/common/SocialFeeds';
@@ -36,20 +37,23 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
   const Nav = pageInfo.hasInPageNav != false ? customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null : null;
 
   return (
-    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
-      <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
-      <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <ChildNavigation subPageNavigation={subPageNavigation} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
-        <PromoList data={promoBefore} />
+    <TrackPageView pageInfo={pageInfo}>
+      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+        <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-        <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
-        <GithubContributionNotice pageInfo={pageInfo} />
+        <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <ChildNavigation subPageNavigation={subPageNavigation} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
+          <PromoList data={promoBefore} />
 
-        {customNavPager}
+          <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
+          <GithubContributionNotice pageInfo={pageInfo} />
 
-        <PromoList data={promoAfter} />
-        <SocialFeeds pageInfo={pageInfo} />
-      </ThreeColumnLayout>
-    </Layout>
+          {customNavPager}
+
+          <PromoList data={promoAfter} />
+          <SocialFeeds pageInfo={pageInfo} />
+        </ThreeColumnLayout>
+      </Layout>
+    </TrackPageView>
   );
 };
 

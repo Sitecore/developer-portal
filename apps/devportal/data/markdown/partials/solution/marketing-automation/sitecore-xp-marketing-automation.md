@@ -1,6 +1,6 @@
 ---
 solution: ['marketing-automation']
-product: ['experience-platform']
+product: ['xp']
 title: 'Sitecore XP Marketing Automation and EXM'
 description: 'Connecting with customers using Sitecore Experience Platform marketing automation and email experience manager (EXM)'
 ---

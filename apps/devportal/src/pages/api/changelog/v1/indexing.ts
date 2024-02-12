@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
 import { getQueryValue } from 'sc-changelog/utils/requests';
 import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
+import { removeHtmlTagsAndSpecialChars } from 'ui/lib/utils/stringUtil';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 
@@ -32,7 +33,7 @@ type IndexProduct = {
   darkIcon: string;
   lightIcon: string;
   sitecoreClouds: string[];
-}
+};
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<IndexingList>) => {
   // Default Edge pageSize is 10, use parameter to override
@@ -54,17 +55,20 @@ async function GetEntries(list: IndexResult[], end: string, limit: string) {
     list.push({
       title: entry.title,
       changeTypes: entry.changeType.map((obj) => obj.changeType),
-      products: entry.sitecoreProduct.map((obj) => <IndexProduct>{
-        name: obj.productName,
-        description: obj.productDescription,
-        darkIcon: obj.darkIcon,
-        lightIcon: obj.lightIcon,
-        sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName)
-      }),
+      products: entry.sitecoreProduct.map(
+        (obj) =>
+          <IndexProduct>{
+            name: obj.productName,
+            description: obj.productDescription,
+            darkIcon: obj.darkIcon,
+            lightIcon: obj.lightIcon,
+            sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName),
+          }
+      ),
       date: entry.releaseDate,
       image: entry.image[0] != null ? entry.image[0].fileUrl : null,
-      description: entry.description,
-      fullArticle: entry.fullArticle,
+      description: removeHtmlTagsAndSpecialChars(entry.description),
+      fullArticle: entry.fullArticle ? removeHtmlTagsAndSpecialChars(entry.fullArticle) : null,
       readMoreLink: entry.readMoreLink,
       breakingChange: entry.breakingChange ? true : false,
       url: `${publicUrl}${getChangelogEntryUrl(entry)}`,

@@ -1,6 +1,6 @@
 ---
 solution: ['customer-data-management']
-product: ['experience-platform']
+product: ['xp']
 title: 'Reference Data Service'
 ---
 

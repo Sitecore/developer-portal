@@ -1,6 +1,6 @@
 ---
 solution: ['content-management']
-product: ['experience-manager']
+product: ['xm']
 title: 'Javascript Services'
 description: 'Develop your website headlessly powered by JavaScript.'
 ---
