@@ -13,7 +13,8 @@
           "title": "Sitecore XM Cloud",
           "path": "xm-cloud"
         }
-      ]
+      ],
+      "collapsed": false
     },
     {
       "title": "Platform DXP",
@@ -32,7 +33,8 @@
           "title": "Sitecore Managed Cloud",
           "path": "Sitecore_Managed_Cloud_Resources"
         }
-      ]
+      ],
+      "collapsed": false
     },
     {
       "title": "Modules / Addons",
@@ -85,10 +87,11 @@
           "path": "Sitecore_Horizon"
         },
         {
-          "title": "Sitecore AI Automated Personalization Standard",
+          "title": "Automated Personalization",
           "path": "Sitecore_AI_Automated_Personalization_Standard"
         }
-      ]
+      ],
+      "collapsed": true
     },
 
     {
@@ -149,7 +152,8 @@
           "title": "Team Development for Sitecore",
           "path": "Team_Development_for_Sitecore"
         }
-      ]
+      ],
+      "collapsed": true
     },
 
     {
@@ -162,7 +166,7 @@
           "path": "Data_Exchange_Framework"
         },
         {
-          "title": "Dynamics CRM Campaign Integration module",
+          "title": "CRM Campaign Integration module",
           "path": "Dynamics_CRM_Campaign_Integration_module"
         },
         {
@@ -177,7 +181,6 @@
           "title": "Komfo Connector",
           "path": "Komfo_Connector"
         },
-
         {
           "title": "Salesforce Connect",
           "path": "Salesforce_Connect"
@@ -187,36 +190,45 @@
           "path": "SharePoint_Connect"
         },
         {
-          "title": "Sitecore Connect™ for Content Hub",
-          "path": "Sitecore_Connect_for_Content_Hub"
-        },
-        {
-          "title": "Sitecore Connect™ for Dynamics 365 Commerce",
-          "path": "Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce"
-        },
-        {
-          "title": "Sitecore Connect™ for Sitecore CMP",
-          "path": "Sitecore_Connect_for_Sitecore_CMP"
-        },
-        {
-          "title": "Sitecore Connect™ for Salesforce Marketing Cloud",
-          "path": "Sitecore_Connect_software_for_Salesforce_Marketing_Cloud"
-        },
-        {
-          "title": "Sitecore Connect™ for Sitecore DAM",
-          "path": "Sitecore_Plugin_for_Stylelabs_DAM"
-        },
-        {
           "title": "Sitecore Media Framework",
           "path": "Sitecore_Media_Framework"
         },
         {
-          "title": "Sitecore Mobile SDK (WebAPI) for Xamarin",
+          "title": "Sitecore Mobile SDK (WebAPI)",
           "path": "Sitecore_Mobile_SDK_for_Xamarin"
         },
         {
-          "title": "Sitecore Mobile SDK (SSC)  for Xamarin",
+          "title": "Sitecore Mobile SDK (SSC)",
           "path": "Sitecore_Mobile_SDK_SSC__for_Xamarin"
+        }
+      ],
+      "collapsed": true
+    },
+    {
+      "title": "Sitecore Connect™",
+      "ignoreLink": true,
+      "path": "",
+      "collapsed": true,
+      "children": [
+        {
+          "title": "Content Hub",
+          "path": "Sitecore_Connect_for_Content_Hub"
+        },
+        {
+          "title": "Dynamics 365 Commerce",
+          "path": "Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce"
+        },
+        {
+          "title": "Sitecore CMP",
+          "path": "Sitecore_Connect_for_Sitecore_CMP"
+        },
+        {
+          "title": "Salesforce Marketing Cloud",
+          "path": "Sitecore_Connect_software_for_Salesforce_Marketing_Cloud"
+        },
+        {
+          "title": "Sitecore DAM",
+          "path": "Sitecore_Plugin_for_Stylelabs_DAM"
         }
       ]
     },
@@ -226,11 +238,11 @@
       "path": "",
       "children": [
         {
-          "title": "Sitecore xDB Cloud client for xDB Cloud 1.0",
+          "title": "Cloud client for xDB Cloud 1.0",
           "path": "Sitecore_xDB_Cloud_client"
         },
         {
-          "title": "Sitecore xDB Cloud client for xDB Cloud 2.0",
+          "title": "Cloud client for xDB Cloud 2.0",
           "path": "Sitecore_xDB_Cloud_client_for_xDB_Cloud_20"
         },
         {
@@ -238,10 +250,11 @@
           "path": "Sitecore_xDB_Cloud_services"
         },
         {
-          "title": "Sitecore xDB Data Migration Tool",
+          "title": "xDB Data Migration Tool",
           "path": "Sitecore_xDB_Data_Migration_Tool"
         }
-      ]
+      ],
+      "collapsed": true
     },
     {
       "title": "Miscellaneous",
@@ -258,7 +271,7 @@
         },
 
         {
-          "title": "Engagement Automation Live Session Agent",
+          "title": "EA Live Session Agent",
           "path": "Engagement_Automation_Live_Session_Agent"
         },
         {
@@ -274,7 +287,8 @@
           "title": "Sitecore Print Experience Manager",
           "path": "Sitecore_Print_Experience_Manager"
         }
-      ]
+      ],
+      "collapsed": true
     }
   ]
 }
