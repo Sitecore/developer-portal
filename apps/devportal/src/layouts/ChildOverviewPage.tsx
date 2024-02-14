@@ -1,7 +1,6 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
-
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
+import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
+import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
 import Hero from 'ui/components/common/Hero';
@@ -9,7 +8,7 @@ import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { TextLink } from 'ui/components/links/TextLink';
 import { PromoCardProps } from 'ui/components/promos';
 import PromoList from 'ui/components/promos/promoCard/PromoList';
-import ChildNavigation from '../components/navigation/ChildNavigation';
+import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ChildOverviewPageProps = {
@@ -22,10 +21,10 @@ type ChildOverviewPageProps = {
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
   childPageInfo: ChildPageInfo[];
-  subPageNavigation: SubPageNavigation;
+  sidebarConfig: SidebarNavigationConfig;
 };
 
-const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, subPageNavigation }: ChildOverviewPageProps) => {
+const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, sidebarConfig }: ChildOverviewPageProps) => {
   if (!pageInfo) return <>No pageInfo found</>;
 
   // Check for headings in the content
@@ -34,7 +33,7 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
       <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-        <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <ChildNavigation subPageNavigation={subPageNavigation} />}>
+        <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <SidebarNavigation config={sidebarConfig} />}>
           {pageInfo.content && pageInfo.content.length > 0 && (
             <VerticalGroup>
               <CenteredContent>

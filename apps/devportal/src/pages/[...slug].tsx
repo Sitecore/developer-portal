@@ -1,4 +1,4 @@
-import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
+import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import { getChildNavgationInfo, getChildPageInfo, getPageInfo, getPartialGroupsAsArray, getPartialsAsArray } from '@lib/page-info';
 import { getStaticPathsRecursively } from '@lib/staticPaths';
 import ArticlePage from '@src/layouts/ArticlePage';
@@ -23,10 +23,10 @@ export async function getStaticProps(context: any) {
   const partials = pageInfo.partials != null ? await getPartialsAsArray(pageInfo.partials) : null;
   const partialGroups = pageInfo.partialGroups != null && pageInfo.partialGroups.length > 0 ? await getPartialGroupsAsArray(pageInfo.partialGroups) : null;
   const childPageInfo = pageInfo.pageType == 'childoverview' ? await getChildPageInfo(context.params.slug.join('/')) : null;
-  let subPageNavigation = null;
+  let sidebarNavConfig = null;
 
   if (pageInfo.hasSubPageNav) {
-    subPageNavigation = await getChildNavgationInfo(context.params.slug.join('/'));
+    sidebarNavConfig = await getChildNavgationInfo(context.params.slug.join('/'));
   }
   //navData
 
@@ -36,7 +36,7 @@ export async function getStaticProps(context: any) {
       partials,
       partialGroups,
       childPageInfo,
-      subPageNavigation,
+      sidebarNavConfig,
     },
   };
 }
@@ -46,27 +46,27 @@ export default function Slug({
   partials,
   partialGroups,
   childPageInfo,
-  subPageNavigation,
+  sidebarNavConfig,
 }: {
   pageInfo: PageInfo;
   partials: PartialData;
   partialGroups: PagePartialGroup[];
   childPageInfo: ChildPageInfo[];
-  subPageNavigation: SubPageNavigation;
+  sidebarNavConfig: SidebarNavigationConfig;
 }) {
   // Check for other page types
   if (pageInfo.pageType) {
     switch (pageInfo.pageType.toLowerCase()) {
       case 'childoverview':
-        return <ChildOverviewPage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} subPageNavigation={subPageNavigation} />;
+        return <ChildOverviewPage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} sidebarConfig={sidebarNavConfig} />;
       case 'social':
         return <SocialPage pageInfo={pageInfo} />;
     }
   }
 
-  if (pageInfo.hasSubPageNav) return <ArticlePage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} childPageInfo={childPageInfo} subPageNavigation={subPageNavigation} />;
+  if (pageInfo.hasSubPageNav) return <ArticlePage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} childPageInfo={childPageInfo} sidebarConfig={sidebarNavConfig} />;
 
   // return default page
-  return <DefaultContentPage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} />;  
+  return <DefaultContentPage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} />;
   //  return <DefaultContentPage pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} childPageInfo={childPageInfo} />;
 }
