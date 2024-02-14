@@ -1,6 +1,8 @@
+import { Button, ButtonGroup, Heading, Wrap } from '@chakra-ui/react';
 import { NewsletterPath } from '@lib/staticPaths';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
-import SidebarNav from '../navigation/SidebarNav';
 
 interface NewsletterNavProps {
   paths: NewsletterPath[];
@@ -9,6 +11,8 @@ interface NewsletterNavProps {
 }
 
 const NewsletterNav = ({ paths, currentYear, currentMonth }: NewsletterNavProps) => {
+  const router = useRouter();
+
   const links = paths
     .map((item) => ({
       month: parseInt(item.params.month, 10),
@@ -22,7 +26,23 @@ const NewsletterNav = ({ paths, currentYear, currentMonth }: NewsletterNavProps)
       const yearDiff = b.year - a.year;
       return yearDiff !== 0 ? yearDiff : b.month - a.month;
     });
-  return <SidebarNav links={links} title="Newsletters" />;
+
+  return (
+    <Wrap as={'nav'} direction="column" position={'sticky'} top={'9rem'}>
+      <Heading variant={'section'} size={'sm'} mb={8}>
+        Newsletters
+      </Heading>
+      <ButtonGroup variant="navigation" orientation="vertical" spacing="1" mx="-2" mb="4" pos={'static'}>
+        {links.map((link, i) => {
+          return (
+            <Button as={NextLink} href={link.href} key={i} isActive={router.asPath.includes(link.href)}>
+              {link.text}
+            </Button>
+          );
+        })}
+      </ButtonGroup>
+    </Wrap>
+  );
 };
 
 export default NewsletterNav;

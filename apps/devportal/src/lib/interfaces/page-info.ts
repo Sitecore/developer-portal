@@ -74,20 +74,21 @@ export type PageInfo = PageInfoCore & {
   guidedDemoId?: string;
 };
 
-export type SubPageNavigation = {
+export type SidebarNavigationConfig = {
   title: string;
   description: string;
   heading: boolean;
   path: string;
   showRootAsSections?: boolean;
-  routes: SubPageNavigationItem[];
+  routes: SidebarNavigationItem[];
 };
 
-export type SubPageNavigationItem = {
+export type SidebarNavigationItem = {
   title: string;
   path: string;
   ignoreLink?: boolean;
-  children: SubPageNavigationItem[];
+  children: SidebarNavigationItem[];
+  collapsed?: boolean;
 };
 
 export type ChildPageInfo = {

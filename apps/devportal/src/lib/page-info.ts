@@ -1,5 +1,5 @@
 // Global
-import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
+import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
@@ -256,10 +256,10 @@ export const getChildPageInfo = async (currentFile: string): Promise<ChildPageIn
     });
 };
 
-export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<SubPageNavigation | undefined> => {
+export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<SidebarNavigationConfig | undefined> => {
   const manifest = searchForFile(path.join(pagesDirectory, currentUrlSegment), 'manifest.json');
   if (manifest != null) {
-    const fileData: SubPageNavigation = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
+    const fileData: SidebarNavigationConfig = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
     return fileData;
   }
 };
