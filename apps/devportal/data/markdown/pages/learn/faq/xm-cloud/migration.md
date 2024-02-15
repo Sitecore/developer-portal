@@ -32,7 +32,7 @@ Another benefit of a rebuild is that customers on more traditional MVC or WebFor
 
 Some implementations can quickly and easily move straight to XM Cloud because they're on modern technologies. They're headless. Some of them are already adopting Experience Edge or they preparing for it. Those implementations are really good candidates to quickly move to XM Cloud. There is a level of variance between how much they have to rebuild versus how much they can migrate and port. This type of solution is a good candidate for migration.
 
-If the implemention is headless and on a slightly outdated version of headless services, or maybe they're using content delivery servers rather than Experience Edge for publishing, there may be a little bit more work to do for this scenario to migrate.
+If the implementation is headless and on a slightly outdated version of headless services, or maybe they're using content delivery servers rather than Experience Edge for publishing, there may be a little bit more work to do for this scenario to migrate.
 
 If the build is on an older implementation, from before Sitecore XM 10.x, and the implementation is using a lot of XP features in use and they have a lot of MVC code then the amount of work for a migration will be higher. This should be balanced against the effort for a rebuild in making the decision.
 
