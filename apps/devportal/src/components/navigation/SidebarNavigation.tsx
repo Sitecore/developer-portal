@@ -35,7 +35,9 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
         {!showRootAsSections && (
           <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'}>
             {config.routes.map((link, i) => (
-              <MenuItemLink href={appendPathToBasePath(basePath, link.path)} title={link.title} key={i} />
+              <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'}>
+                <MenuItemLink href={appendPathToBasePath(basePath, link.path)} title={link.title} key={i} />
+              </ButtonGroup>
             ))}
           </ButtonGroup>
         )}
@@ -61,10 +63,11 @@ export const SidebarGroupItem = (SidebarNavigationItem: SidebarNavigationItem) =
           {SidebarNavigationItem.ignoreLink != null && SidebarNavigationItem.ignoreLink && <Heading variant="section">{SidebarNavigationItem.title}</Heading>}
 
           {!showRootAsSections && <MenuItemLink href={SidebarNavigationItem.path} title={SidebarNavigationItem.title} />}
-
-          {SidebarNavigationItem.children?.map((child, i) =>
-            child.children?.length > 0 ? <MenuItemGroup child={child} basePath={currentBasePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(currentBasePath, child.path)} title={child.title} key={i} />
-          )}
+          <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'}>
+            {SidebarNavigationItem.children?.map((child, i) =>
+              child.children?.length > 0 ? <MenuItemGroup child={child} basePath={currentBasePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(currentBasePath, child.path)} title={child.title} key={i} />
+            )}
+          </ButtonGroup>
         </React.Fragment>
       )}
     </Wrap>
