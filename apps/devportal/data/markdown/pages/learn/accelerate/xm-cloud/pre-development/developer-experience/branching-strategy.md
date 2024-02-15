@@ -15,7 +15,7 @@ What is the recommended Branching strategy when setting up an XM Cloud project?
 While most recipes are very prescriptive, setting up a good branching strategy needs to be more flexible due to some clients having very strict rules around the developer workflow. This recipe will guide you on the best practice for scaling a team implementing an XM Cloud project with a Next.js front end.
 
 - A monorepo is the Accelerate recommended approach to store your XM Cloud backend code, item serialization files and front end application code (<a href="#monorepo-vs-polyrepo">See discussion point: Monorepo vs Polyrepo</a>). Other head applications, e.g. mobile apps, can live in their own repositories.
-- A branching stragey that allows continuous integration (<a href="#branching-strategy">See discussion point: Branching Strategy</a>)
+- A branching strategy that allows continuous integration (<a href="#branching-strategy">See discussion point: Branching Strategy</a>)
 
 ### Developer Workflow
 

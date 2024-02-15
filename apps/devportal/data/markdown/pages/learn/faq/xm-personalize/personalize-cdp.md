@@ -20,7 +20,7 @@ Yes! You can target multiple pages within an experience. You can even target the
 
 **What are the limitations in Personalize when it comes to CDP functionality? If you do not buy the CDP product specifically.**
 
-We&#39;re running a lightweight version of the CDP engine to power Personalize. This means we are identifying users, building profiles, and storing states across a limted number of sessions. This also means that if customers want to upgrade to a full CDP with Sitecore Personalize we can do that with a flick of a switch. There is no access to the customer profile directly, segmentation or data export –customers would need CDP to do this.
+We&#39;re running a lightweight version of the CDP engine to power Personalize. This means we are identifying users, building profiles, and storing states across a limited number of sessions. This also means that if customers want to upgrade to a full CDP with Sitecore Personalize we can do that with a flick of a switch. There is no access to the customer profile directly, segmentation or data export –customers would need CDP to do this.
 
 **What is the likelihood of XP customers needing CDP on top of XM + Personalize because without CDP they won&#39;t be able to access customer data as they do in** **xDB** **within XP? Can customers personalize on historic data if they don&#39;t have CDP?**
 
