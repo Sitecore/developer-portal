@@ -23,7 +23,7 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
   return (
     <React.Fragment>
       {config.heading && (
-        <Heading variant={'section'} mt={4}>
+        <Heading variant={'section'} my={4} hideBelow={'md'}>
           {config.title}
         </Heading>
       )}
@@ -57,15 +57,15 @@ export const SidebarGroupItem = (SidebarNavigationItem: SidebarNavigationItem) =
         <SidebarCollapsableGroupItem {...SidebarNavigationItem} />
       ) : (
         // Load the normal menu
-        <Wrap direction="column" mt={4}>
+        <React.Fragment>
           {SidebarNavigationItem.ignoreLink != null && SidebarNavigationItem.ignoreLink && <Heading variant="section">{SidebarNavigationItem.title}</Heading>}
 
-          <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'}>
-            {SidebarNavigationItem.children?.map((child, i) =>
-              child.children?.length > 0 ? <MenuItemGroup child={child} basePath={currentBasePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(currentBasePath, child.path)} title={child.title} key={i} />
-            )}
-          </ButtonGroup>
-        </Wrap>
+          {!showRootAsSections && <MenuItemLink href={SidebarNavigationItem.path} title={SidebarNavigationItem.title} />}
+
+          {SidebarNavigationItem.children?.map((child, i) =>
+            child.children?.length > 0 ? <MenuItemGroup child={child} basePath={currentBasePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(currentBasePath, child.path)} title={child.title} key={i} />
+          )}
+        </React.Fragment>
       )}
     </Wrap>
   );

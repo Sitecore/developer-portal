@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { Box, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Flex, SimpleGrid } from '@chakra-ui/react';
 import NewsletterNav from '@components/newsletter/NewsletterNav';
 import NewsletterStory, { NewsletterStoryData } from '@components/newsletter/NewsletterStory';
 import { PageInfo } from '@lib/interfaces/page-info';
@@ -72,18 +72,18 @@ export default function NewsletterContentPage({ pageInfo, content, paths, year, 
         <VerticalGroup>
           <CenteredContent>
             <Box>
-              <Grid gap={6} templateColumns={'repeat(4,minmax(0,1fr))'} mt={8}>
-                <GridItem>
+              <Flex flexGrow={0} justify={'space-between'} width={'full'} gap={4} direction={{ base: 'column', md: 'row' }} flexFlow={'column'}>
+                <Box w={{ base: 'full' }} as={'nav'}>
                   <NewsletterNav paths={paths} currentMonth={month} currentYear={year} />
-                </GridItem>
-                <GridItem colSpan={3} gap={10}>
-                  <Grid templateColumns={'repeat(3,minmax(0,1fr))'} gap={10}>
+                </Box>
+                <Box gap={10}>
+                  <SimpleGrid columns={{ base: 0, md: 3 }} gap={8}>
                     {content.map((story) => (
                       <NewsletterStory {...story} key={story.title} />
                     ))}
-                  </Grid>
-                </GridItem>
-              </Grid>
+                  </SimpleGrid>
+                </Box>
+              </Flex>
             </Box>
           </CenteredContent>
         </VerticalGroup>

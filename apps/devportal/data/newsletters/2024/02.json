@@ -1,0 +1,97 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Find out the latest news and updates in the Sitecore community.",
+  "content": [
+    {
+      "title": "Secure Your Place at SUGCON EUROPE 2024",
+      "copy": "Secure Your Place at SUGCON EUROPE 2024 Limited spots left. Join us for SUGCON Europe 2024 in Dublin on April 11-12 - Celebrating Our 10th anniversary edition. With a maximum capacity of 300 attendees, don't miss out on this milestone occasion. Explore a jam-packed agenda filled with certification exams, workshops, and sessions led by over 35 speakers covering a diverse range of topics. Connect with industry experts and product leaders, and be sure not to miss the opening keynote by Dave O'Flanagan. Secure your spot now for an unforgettable experience at SUGCON Europe 2024!",
+      "image": "https://go.sitecore.com/l/857953/2024-01-26/txlkmz/857953/17063033742vLoLnUu/Screen_Shot_2024_01_26_at_6.08.12_PM.png",
+      "link": {
+        "text": "Register now",
+        "href": "https://europe.sugcon.events/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Join the Sitecore Hackathon 2024",
+      "copy": "The 2024 Sitecore Hackathon is a free online community-driven event. Eligible teams will have 24 hours — starting Friday, March 1st, 2024, at 8 PM EST and ending Saturday, March 2nd, 2024, at 8 PM EST – to build and submit a Sitecore module best implementing the idea for the Hackathon, as determined by our panel of judges.",
+      "image": "",
+      "link": {
+        "text": "Sign up now",
+        "href": "https://sitecorehackathon.org/sitecore-hackathon-2024/"
+      }
+    },
+    {
+      "title": "Sitecore Unveils Its 2024 MVPs",
+      "copy": "Sitecore has unveiled its 2024 Most Valuable Professionals (MVPs), honouring outstanding contributions to the Sitecore community. Explore the list of this year's recipients, with a special acknowledgment for those recognized as long-time MVPs.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.sitecore.com/company/newsroom/press-releases/2024/02/sitecore-announces-2024-most-valuable-professionals"
+      }
+    },
+    {
+      "title": "Introducing Forms in XM Cloud - Sitecore Community",
+      "copy": "We are thrilled to announce the highly anticipated launch of the forms feature in XM Cloud. The new capability aligns with existing SaaS forms solutions in the market, providing developers and marketers with a user-friendly experience. The addition of forms in XM Cloud will enable customers to create and manage forms with ease, enhancing their content management capabilities and user interactions significantly.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://community.sitecore.com/community?id=community_blog&sys_id=604401d41b5cc61438a46421b24bcba8"
+      }
+    },
+    {
+      "title": "The Sitecore Community Mentorship Program - A Mentor's Journey",
+      "copy": "The Sitecore Community Mentor Program is a great way to get to know the Sitecore Community and start contributing as a mentee, but it is also great for mentors to learn more about our global community and gain new skills through the mentorship. Email us at mvp-program@sitecore.net to be a mentor or mentee today!",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.joshwcomeau.com/blog/the-end-of-frontend-development/"
+      }
+    },
+    {
+      "title": "Sitecore JSS Front-End Development Workflow with Storybook",
+      "copy": "Watch this presentation at SUG Columbus and learn how to integrate Storybook into your JSS Workflow. If you plan to work with XM Cloud and Storybook, this is a good video to start with.",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=LhR-j_yYO1k"
+      }
+    },
+    {
+      "title": "Sitecore + Astro Video Demo",
+      "copy": "Watch Anton Tishchenko build with Astro and Sitecore XM. Astro is a blazing-fast web framework for content-driven websites. Sitecore XM is a powerful and intuitive CMS for the simplified creation and management of experiences across channels and devices. Together, they could be a perfect match!",
+      "image": "",
+      "link": {
+        "text": "Watch now",
+        "href": "https://www.youtube.com/watch?v=pP6pcaO_FhY"
+      }
+    },
+    {
+      "title": "Deploy to Netlify from your own GPT",
+      "copy": "Import Netlify’s new GPT Action to deploy to Netlify from your own GPT. Find out just how easy it is to get started.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.netlify.com/blog/deploy-to-netlify-from-your-own-gpt/"
+      }
+    },
+    {
+      "title": "Migration of Sitecore Vue Website to Astro",
+      "copy": "This article is about how to use the Vue.js integration feature in the Astro web framework for migrating Sitecore Vue.js JSS project to Sitecore Astro JSS.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://exdst.com/posts/20240202-sitecore-jss-vue-astro-migration"
+      }
+    },
+    {
+      "title": "Securing Your XM Cloud Project with NextJS from Clickjacking",
+      "copy": "This blog explores clickjacking, which is a form of Cyber security threat that can affect any website, including XM Cloud with Next.js applications.",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.getfishtank.com/blog/securing-your-xm-cloud-project-with-nextjs-from-clickjacking"
+      }
+    }
+  ]
+}
