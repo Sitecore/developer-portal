@@ -1,7 +1,7 @@
 ---
 product: ['next-js']
 title: 'Next.js Learning Resources'
-twitter: ['#XMCloud']
+twitter: ['#nextjs']
 stackexchange: ['#nextjs']
 youtube: PL1jJVFm_lGnwZup4L4BjITS2sKr4rpMfI
 ---
@@ -20,6 +20,7 @@ Vercel, the creators of Next.js provide a wealth of resources to help you get st
 <Article title="Walkthrough: Page-based Architecture" link="https://nextjs.org/learn-pages-router/foundations/about-nextjs" linktext="Follow Along" description="Build an SEO optimized blog using the Page-based Next.js Architecture" />
 <Article title="Templates and Starter Kits" link="https://vercel.com/templates/next.js" linktext="Explore" description="See how others build with Next.js to learn best practices" />
 <Article title="Next.js Showcase" link="https://nextjs.org/showcase" linktext="Explore" description="See what other applications have been built with Next.js"/>
+<Article title="Debugging Next.js" link="https://nextjs.org/docs/pages/building-your-application/configuring/debugging" linktext="Read the docs" description="Debug your Next.js frontend and backend code"/>
 </Row>
 
 ## Sitecore Headless Development with Next.js
