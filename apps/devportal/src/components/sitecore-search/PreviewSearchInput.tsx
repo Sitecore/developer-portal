@@ -26,7 +26,7 @@ type ArticleModel = {
 };
 
 type InitialState = PreviewSearchInitialState<'itemsPerPage' | 'suggestionsList'>;
-interface PreviewSearchLeftProps {
+interface PreviewSearchProps {
   defaultItemsPerPage: number | 6;
 
   /**
@@ -52,7 +52,7 @@ interface PreviewSearchLeftProps {
    */
   submitRedirectionHandler?: (query: string) => void;
 }
-export const PreviewSearchLeftComponent = ({ defaultItemsPerPage = 6, itemRedirectionHandler, submitRedirectionHandler }: PreviewSearchLeftProps) => {
+export const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps) => {
   const router = useRouter();
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { q } = router.query;
@@ -61,7 +61,7 @@ export const PreviewSearchLeftComponent = ({ defaultItemsPerPage = 6, itemRedire
     state: { keyphrase = q || '' },
     actions: { onItemClick, onKeyphraseChange, onSuggestionClick },
     queryResult,
-    queryResult: { isFetching, isLoading, data: { content: articles = [], suggestion: { name_suggester: articleSuggestions = [] } = {} } = {} },
+    queryResult: { isFetching, isLoading, data: { suggestion: { name_suggester: articleSuggestions = [] } = {} } = {} },
   } = usePreviewSearch<ArticleModel, InitialState>({
     query: (query) =>
       query
@@ -99,7 +99,8 @@ export const PreviewSearchLeftComponent = ({ defaultItemsPerPage = 6, itemRedire
       <FormControl
         onSubmit={(e: SyntheticEvent): void => {
           e.preventDefault();
-          //@ts-ignore
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
           const target = e.target.query as HTMLInputElement;
           router.push('/search?q=' + encodeURIComponent(target.value)).then(() => router.reload());
         }}
@@ -222,5 +223,5 @@ export const PreviewSearchLeftComponent = ({ defaultItemsPerPage = 6, itemRedire
     </PreviewSearch.Root>
   );
 };
-const PreviewSearchInputWidget = widget(PreviewSearchLeftComponent, WidgetDataType.PREVIEW_SEARCH, 'content');
+const PreviewSearchInputWidget = widget(PreviewSearchComponent, WidgetDataType.PREVIEW_SEARCH, 'content');
 export default PreviewSearchInputWidget;

@@ -29,7 +29,7 @@ export const SearchButton = () => {
         <Show above="md">
           <Flex flex={{ base: 1 }} padding={3} width={'full'} left={0} top={'50px'} pos={'absolute'} background={'chakra-body-bg'} shadow={'md'} justifyContent={'center'}>
             <Box display={'flex'} width={'full'} maxWidth={'4xl'}>
-              <PreviewSearchInput rfkId="rfkid_6" />
+              <PreviewSearchInput rfkId="rfkid_6" defaultItemsPerPage={6} />
             </Box>
           </Flex>
         </Show>
