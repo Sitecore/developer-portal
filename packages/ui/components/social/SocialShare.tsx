@@ -1,6 +1,8 @@
-import { HStack, Icon, IconButton, Tooltip, useClipboard, useToast } from '@chakra-ui/react';
+import { HStack, Icon, IconButton, Tooltip, useClipboard, useToast, Button } from '@chakra-ui/react';
 import { mdiCheck, mdiContentCopy } from '@mdi/js';
-import { EmailIcon, EmailShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'next-share';
+import { EmailIcon, EmailShareButton, LinkedinIcon, LinkedinShareButton, RedditIcon, RedditShareButton, TelegramIcon, TelegramShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from 'next-share';
+import { ChevronUpIcon } from '@chakra-ui/icons'
+import { Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverBody } from '@chakra-ui/react';
 
 type SocialShareProps = {
   url: string;
@@ -13,6 +15,27 @@ const SocialShare = ({ title, url }: SocialShareProps): JSX.Element => {
 
   return (
     <HStack>
+      <Popover placement='top'>
+          <PopoverTrigger>
+            <Button variant={'ghost'} mr={-2}><ChevronUpIcon /></Button>
+          </PopoverTrigger>
+        <PopoverContent style={{ maxWidth: 'unset', width: 'unset' }}>
+          <PopoverArrow />
+          <PopoverBody>
+            <HStack>
+              <Tooltip label="Share link by Whatsapp" aria-label="Share link by Whatsapp">
+                <IconButton as={WhatsappShareButton} url={url} title={title} aria-label="Share by Whatsapp" icon={<WhatsappIcon size={32} round />} />
+              </Tooltip>
+              <Tooltip label="Share link by Telegram" aria-label="Share link by Telegram">
+                <IconButton as={TelegramShareButton} url={url} title={title} aria-label="Share by Telegram" icon={<TelegramIcon size={32} round />} />
+              </Tooltip>
+              <Tooltip label="Share link by Reddit" aria-label="Share link by Reddit">
+                <IconButton as={RedditShareButton} url={url} title={title} aria-label="Share by Reddit" icon={<RedditIcon size={32} round />} />
+              </Tooltip>
+            </HStack>
+          </PopoverBody>
+        </PopoverContent>
+      </Popover>
       <Tooltip label="Share link by email" aria-label="Share link by email">
         <IconButton as={EmailShareButton} url={url} title={title} aria-label="Share by email" icon={<EmailIcon size={32} round />} />
       </Tooltip>
