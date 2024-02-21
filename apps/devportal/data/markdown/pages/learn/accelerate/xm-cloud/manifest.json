@@ -132,6 +132,10 @@
         {
           "title": "Search",
           "path": "search"
+        },
+        {
+          "title": "Sitemap",
+          "path": "sitemap"
         }
       ]
     },
