@@ -121,7 +121,7 @@ export const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearc
         </InputGroup>
       </FormControl>
       <PreviewSearch.Content ref={widgetRef} data-control="PreviewSearch.Content">
-        <Flex dir="row" background={'chakra-body-bg'} width={'2xl'} border={'md'} shadow={'md'}>
+        <Flex dir="row" background={'chakra-body-bg'} width={{ base: '4xl', '2xl': '2xl' }} border={'md'} shadow={'md'}>
           <Presence present={!loading}>
             <>
               {articleSuggestions.length > 0 && (
@@ -177,7 +177,7 @@ export const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearc
                           {articles.map((article, index) => (
                             <PreviewSearch.Item key={article.id} asChild data-control="PreviewSearch.Item">
                               <ListItem key={index} w={'full'}>
-                                <LinkBox as="article" p={2} maxW="sm" rounded="md">
+                                <LinkBox as="article" p={2} rounded="md">
                                   <Link
                                     key={`${article.id}@${article.source_id}`}
                                     href={article.url}
