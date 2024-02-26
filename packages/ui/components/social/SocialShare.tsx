@@ -9,7 +9,6 @@ type SocialShareProps = {
 
 const SocialShare = ({ title, url }: SocialShareProps): JSX.Element => {
   const { onCopy, hasCopied } = useClipboard(url);
-
   const toast = useToast();
 
   return (
