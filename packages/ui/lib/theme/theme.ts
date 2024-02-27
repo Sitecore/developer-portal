@@ -1,6 +1,7 @@
 import { extendTheme } from '@chakra-ui/react';
 import { withProse } from '@nikolovlazar/chakra-ui-prose';
-import sitecoreTheme from '@sitecore/blok-theme';
+import sitecoreTheme, { toastOptions } from '@sitecore/blok-theme';
+
 // Load customizations
 import { cardTheme } from './components/cardTheme';
 import { modalTheme } from './components/modalTheme';
@@ -23,3 +24,5 @@ export const scdpTheme = extendTheme(
   withProse({ baseStyle: proseBaseStyle }),
   sitecoreTheme
 );
+
+export { toastOptions };
