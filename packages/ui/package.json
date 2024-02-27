@@ -18,9 +18,15 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@nikolovlazar/chakra-ui-prose": "^1.2.1",
+    "@sitecore/blok-theme": "^1.1.9",
     "chakra-react-select": "^4.7.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.0.3",
     "next-share": "^0.27.0",
     "react-select": "^5.8.0",
     "react-tweet": "^3.2.0"
