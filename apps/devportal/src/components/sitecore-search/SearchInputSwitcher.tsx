@@ -19,7 +19,7 @@ const SearchInputSwitcher = () => {
     <>
       {renderMode === SearchInputRenderMode.Disabled && <Disabled />}
       {renderMode === SearchInputRenderMode.SearchInput && <SearchInput />}
-      {renderMode === SearchInputRenderMode.PreviewSearchInput && <PreviewSearchInput rfkId="rfkid_6" />}
+      {renderMode === SearchInputRenderMode.PreviewSearchInput && <PreviewSearchInput rfkId="rfkid_6" defaultItemsPerPage={6} />}
     </>
   );
 };
