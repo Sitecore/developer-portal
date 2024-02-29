@@ -101,7 +101,7 @@ export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
             <>
               <Show above="3xl">
                 <Box display={'flex'} width={'2xl'}>
-                  <PreviewSearchInput rfkId="rfkid_6" />
+                  <PreviewSearchInput rfkId="rfkid_6" defaultItemsPerPage={6} />
                 </Box>
               </Show>
               <Show below="3xl">

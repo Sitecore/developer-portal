@@ -10,7 +10,7 @@ The purpose of this guide will be to provide a list of existing documentation an
 
 ## Assumptions
 
-There is an assumption that this is for an existing Sitecore solution (however most steps may apply to a new solution as well), that is ran from an existing Source Control Management (SCM) system such as Github, GitLabs, or a separate repository in Azure DevOps. This guide provices a general overview of a Sitecore XP transition to Sitecore MCC that does not consist of Containerization.
+There is an assumption that this is for an existing Sitecore solution (however most steps may apply to a new solution as well), that is ran from an existing Source Control Management (SCM) system such as Github, GitLabs, or a separate repository in Azure DevOps. This guide provides a general overview of a Sitecore XP transition to Sitecore MCC that does not consist of Containerization.
 
 ## Prerequisites
 
@@ -115,7 +115,7 @@ The overall process involves building your images with the CI tool of your choic
 
 ## Adjustments to CD Pipeline
 
-The Continous Delivery (CD) pipeline is hosted in the `Application` repository in MCC and utilizes Ansible to pull the images and release those images to AKS. Once you have successfully pushed your images into your Azure Container Registry (ACR), you'll need to update your `./config/docker-images/docker-images.json`.
+The Continuous Delivery (CD) pipeline is hosted in the `Application` repository in MCC and utilizes Ansible to pull the images and release those images to AKS. Once you have successfully pushed your images into your Azure Container Registry (ACR), you'll need to update your `./config/docker-images/docker-images.json`.
 
 The `Application` and `Infrastructure` repositories in the Managed Cloud with Containers (MCC) Azure DevOps environment are both configured to trigger deployments when a change is made to the `main` branch either directly or via a pull request (however you can also trigger the deployment manually). The best practice would be to create a new feature branch for your latest deployment and in that branch, you'll need to update the configuration to include references to your new custom images in the ACR. This is where you'll need to know the latest build number and branch (or tag version of the latest image in your ACR).
 

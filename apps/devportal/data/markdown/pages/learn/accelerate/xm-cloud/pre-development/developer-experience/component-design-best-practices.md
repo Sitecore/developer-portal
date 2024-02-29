@@ -64,11 +64,6 @@ Name Headless Variant definition items same as the variant in code using short p
 
 The Component Builder also know as XM Cloud Components is currently in early access. Once generally available this recipe will be reworked to include the Component Builder.
 
-## Product Gaps
-
-- Available Renderings Setup do not show effect in Pages
-- XM Cloud Component builder does not work with placeholder restrictions
-
 ## Related Recipes
 
 <Row columns={4}>

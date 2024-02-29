@@ -196,7 +196,7 @@ Developers will need to follow [these instructions](https://help.moosend.com/hc/
 
 ### Marketer Usage
 
-As a marketer, you should now have the appropriate data to power email campaigns with product recommendations. All that remains is to use the Sitecore Send UI to create the automation flow you want. See this tutorial video for an example of a personized product recommendation.
+As a marketer, you should now have the appropriate data to power email campaigns with product recommendations. All that remains is to use the Sitecore Send UI to create the automation flow you want. See this tutorial video for an example of a personalized product recommendation.
 
 https://academy.moosend.com/lessons/how-to-send-personalized-product-recommendations/
 

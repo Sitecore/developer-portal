@@ -101,16 +101,38 @@ To run the web application, first the developer needs to configure the environme
 
 In Codespaces (or VS Code), navigate to the folder containing your Next.js application. In the starter kit, this is located at `./src/sxastarter`.
 
-Update the `.env` file to populate the following environment variables with the values from your XM Cloud instance (do not commit these changes back to the repository):
+Add an `.env.local` file and populate the following environment variables with the values from your XM Cloud instance (do not commit these changes back to the repository):
+
+<Alert status="warning">
+  <AlertIcon /> There is currently a bug in JSS that means the `.env.local` file does not get picked up. As a work around, update the `.env` file directly, but remember not to commit the changes. Once the bug is fixed, `.env.local` should be used.
+  [JSS Changelog](https://github.com/Sitecore/jss/blob/dev/CHANGELOG.md) - [Add .env.* support #1741](https://github.com/Sitecore/jss/pull/1741)
+</Alert>
+&nbsp;
+<Alert status="info">
+  <AlertIcon /> The following configuration is for JSS 21.6 or greater:
+</Alert>
+
+```env
+PUBLIC_URL=https://$CODESPACE_NAME-3000.app.github.dev/
+JSS_EDITING_SECRET=<Get the editing secret from <xmcloud CM URL>/sitecore/admin/showconfig.aspx
+SITECORE_SITE_NAME=<Your Site name>
+SITECORE_EDGE_CONTEXT_ID=<Get the context ID from the Developer Settings tab for your environment in the deploy app>
+```
+
+&nbsp;
+<Alert status="info">
+<AlertIcon /> The following configuration is for JSS 21.5.x or earlier:
+</Alert>
 
 ```env
 PUBLIC_URL=https://$CODESPACE_NAME-3000.app.github.dev/
 JSS_EDITING_SECRET=<Get the editing secret from <xmcloud CM URL>/sitecore/admin/showconfig.aspx
 SITECORE_API_KEY=<Get the API key from the XM Deploy app (see below)>
 SITECORE_API_HOST=<The URL of your XM Cloud CM instance>
-JSS_APP_NAME=<Your JSS app name>
+SITECORE_SITE_NAME=<Your site name>
 ```
 
+&nbsp;
 Now open a terminal in the folder containing your Next.js application and run:
 
 ```powershell

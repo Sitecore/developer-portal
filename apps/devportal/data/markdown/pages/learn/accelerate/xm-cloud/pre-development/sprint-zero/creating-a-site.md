@@ -12,13 +12,13 @@ I need to create a new Site, what is the best way to do it? Should it be in a Si
 
 ## Solution
 
-When creating a Site in XM Cloud, a site collection is always required. The Sites live in a site collection. You can have as many site collections as needed and a site collection can have many Sites.
+When creating a Site in XM Cloud, a site collection is always required. The Sites live in a site collection. You can have as many site collections as needed, and a site collection can have many Sites.
 
 ### Creating a site collection
 
 Before we create a site collection, we need to create an SXA Module for our templates and rendering items to live in. It is important to create the Headless Module before you create the site collection, once the site collection is created, it is not possible to create a headless module.
 
-In your XM Cloud instance, load up Content Editor and navigate to `/sitecore/System/Project`. Right-click and insert a new `Headless Module`. Make sure to name the module with the same name that you will use for your site collection.
+In your XM Cloud instance, load up Content Editor and navigate to `/sitecore/system/Settings/Project`. Right-click and insert a new `Headless Module`. Make sure to name the module with the same name that you will use for your site collection.
 
 <img src="/images/learn/accelerate/xm-cloud/create-a-site-1.png" alt="Create a new headless module"/>
 
@@ -46,7 +46,7 @@ Click OK and wait for the site creation wizard to complete.
 
 ### Do I need a new site collection?
 
-All sites must be placed within a site collection. Site collections are a way to group multiple sites either need to share resources or are authored by a single group. With XM Cloud’s multiple site collections architecture, you can provide each site collection a dedicated share of the XM Cloud instance, including data templates, configuration, user management, and non-functional properties.
+All sites must be placed within a site collection. Site collections are a way to group multiple sites that either need to share resources or are authored by a single group. With XM Cloud’s multiple site collections architecture, you can provide each site collection a dedicated share of the XM Cloud instance, including data templates, configuration, user management, and non-functional properties.
 
 Each site collection can include multiple related sites, for example, to support multiple brands that need to share resources or are authored by a common team, or multiple locations for a single brand.
 

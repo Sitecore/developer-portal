@@ -1,8 +1,6 @@
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import { IsSearchEnabled, SEARCH_CONFIG } from '@lib/search';
-import { scdpTheme } from '@lib/theme/theme';
 import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
-import { toastOptions } from '@sitecore/blok-theme';
 import { Footer } from '@src/components/navigation/Footer';
 import Navbar from '@src/components/navigation/NavBar';
 import { AppProps } from 'next/app';
@@ -11,6 +9,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 import { EngageTrackerProvider } from 'ui/components/integrations';
+import { scdpTheme, toastOptions } from 'ui/lib/theme/theme';
 import { PreviewProvider } from '../context/PreviewContext';
 
 const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);

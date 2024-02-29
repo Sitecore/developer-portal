@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter, CardHeader, Flex, GridItem, Heading, Image, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { Card, CardBody, CardFooter, CardHeader, Flex, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react';
 import { TextLink } from 'ui/components/links/TextLink';
 
 interface NewsletterStoryPartialData {
@@ -8,6 +8,7 @@ interface NewsletterStoryPartialData {
     href: string;
   };
   title: string;
+  image?: string;
 }
 
 export interface NewsletterStoryData extends NewsletterStoryPartialData {
@@ -15,41 +16,38 @@ export interface NewsletterStoryData extends NewsletterStoryPartialData {
   image: string;
 }
 
-const InnerCard = ({ copy, link, title }: NewsletterStoryPartialData) => (
-  <>
+const NewsletterStoryPartial = ({ copy, link, title, image }: NewsletterStoryPartialData) => (
+  <Card flex={'1 1 0%'} flexDirection={'column'} variant={'elevated'}>
+    {image && <Image src={image} alt="" objectFit="cover" maxW={{ base: '100%' }} maxHeight={'200'} />}
     <CardHeader>
       <Heading as="h2" size={'md'}>
         {title}
       </Heading>
     </CardHeader>
-    <CardBody py={8}>
-      <Text variant="large">{copy}</Text>
+    <CardBody>
+      <Text size="lg">{copy}</Text>
     </CardBody>
     <CardFooter>{link.href && <TextLink text={link.text || 'Read more'} href={link.href} aria-label={title} variant={'large'} />}</CardFooter>
-  </>
-);
-
-const NewsletterStoryPartial = ({ copy, link, title }: NewsletterStoryPartialData) => (
-  <Card flex={'1 1 0%'} flexDirection={'column'} variant={'unstyled'}>
-    <InnerCard copy={copy} link={link} title={title} />
   </Card>
 );
 
 const NewsletterStory = ({ variant, image, ...props }: NewsletterStoryData) => {
   if (variant === 'full-width') {
     return (
-      <GridItem colSpan={3} marginBottom={5} marginTop={5}>
-        <Card flex={'1 1 0%'} flexDirection={{ base: 'column-reverse', md: 'row' }} variant={'unstyled'}>
-          <SimpleGrid columns={3} gap={10}>
-            <GridItem colSpan={2}>
-              <Stack justifyContent={'space-between'}>
-                <InnerCard copy={props.copy} link={props.link} title={props.title} />
-              </Stack>
-            </GridItem>
-            <GridItem colSpan={1}>
-              <Image objectFit="fill" boxSize={250} src={image} alt={props.title} />
-            </GridItem>
-          </SimpleGrid>
+      <GridItem colSpan={{ base: 1, md: 3 }}>
+        <Card flex={'0 1 0%'} flexDirection={{ base: 'column-reverse', md: 'row' }} variant={'filled'}>
+          <Stack justifyContent={'space-between'} gap={0}>
+            <CardHeader>
+              <Heading as="h2" size={'md'}>
+                {props.title}
+              </Heading>
+            </CardHeader>
+            <CardBody>
+              <Text size="lg">{props.copy}</Text>
+            </CardBody>
+            <CardFooter>{props.link.href && <TextLink text={props.link.text || 'Read more'} href={props.link.href} aria-label={props.title} variant={'large'} />}</CardFooter>
+          </Stack>
+          <Image objectFit="fill" boxSize={'300'} src={image} alt={props.title} />
         </Card>
       </GridItem>
     );
@@ -57,8 +55,7 @@ const NewsletterStory = ({ variant, image, ...props }: NewsletterStoryData) => {
 
   return (
     <Flex direction={'column'}>
-      {image && <Image src={image} alt="" objectFit={'fill'} boxSize={250} mb={4} />}
-      <NewsletterStoryPartial {...props} />
+      <NewsletterStoryPartial {...props} image={image} />
     </Flex>
   );
 };

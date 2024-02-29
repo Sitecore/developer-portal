@@ -100,6 +100,10 @@
             {
               "title": "Troubleshooting Local Dev Container Env",
               "path": "troubleshooting-docker"
+            },
+            {
+              "title": "Creating a Component Gallery",
+              "path": "creating-a-component-gallery"
             }
           ]
         },
@@ -128,6 +132,10 @@
         {
           "title": "Search",
           "path": "search"
+        },
+        {
+          "title": "Sitemap",
+          "path": "sitemap"
         }
       ]
     },
