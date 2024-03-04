@@ -45,14 +45,22 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     transitionDuration: 'fast',
     transitionTimingFunction: 'ease-out',
     cursor: 'pointer',
-    textDecoration: 'none',
+    textDecoration: 'inherit',
     outline: 'none',
-    color: 'inherit',
+    color: 'primary',
     _hover: {
+      color: 'primary.400',
       textDecoration: 'underline',
     },
     _focus: {
       boxShadow: 'outline',
+    },
+  },
+  'p>a': {
+    textDecoration: 'underline',
+    textDecorationStyle: 'dotted',
+    _hover: {
+      textDecorationStyle: 'dotted',
     },
   },
   hr: {
