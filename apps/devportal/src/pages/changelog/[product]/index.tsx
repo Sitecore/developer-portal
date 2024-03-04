@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import GetProducts from 'sc-changelog/products';
 import { Product } from 'sc-changelog/types';
-import { slugify } from 'sc-changelog/utils/stringUtils';
+import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
 import Hero from 'ui/components/common/Hero';
 import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
 import { ButtonLink } from 'ui/components/links/ButtonLink';
@@ -86,8 +86,8 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
                 <ChangelogList initialProduct={currentProduct} />
               </GridItem>
               <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
-                <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <ButtonLink text={'RSS'} href={`${getSlug(currentProduct.name)}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <ButtonLink text={'ATOM'} href={`${getSlug(currentProduct.name)}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
                 <ChangelogByMonth product={currentProduct} />
               </GridItem>
             </Grid>
