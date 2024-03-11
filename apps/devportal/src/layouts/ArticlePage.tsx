@@ -33,7 +33,8 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
   if (pageInfo.headings) sectionTitles.push(...pageInfo.headings);
 
   if (partials) sectionTitles.push(...partials.titles);
-  const Nav = customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null;
+
+  const Nav = pageInfo.hasInPageNav != false ? customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null : null;
 
   return (
     <TrackPageView pageInfo={pageInfo}>
