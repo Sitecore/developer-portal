@@ -83,7 +83,7 @@ hasInPageNav: false
           {
             "path": "/Dictionary",
             "scope": "ItemAndDescendants",
-            "allowedPushOperations": "Create"
+            "allowedPushOperations": "CreateUpdateAndDelete"
           },
           {
             "path": "/Presentation",
@@ -91,14 +91,14 @@ hasInPageNav: false
             "allowedPushOperations": "CreateUpdateAndDelete"
           },
           {
-            "path": "/Settings",
-            "scope": "ItemAndChildren",
-            "allowedPushOperations": "CreateAndUpdate"
-          },
-          {
             "path": "/Settings/Site Grouping",
             "scope": "ItemAndDescendants",
             "allowedPushOperations": "CreateOnly"
+          },
+          {
+            "path": "/Settings",
+            "scope": "ItemAndChildren",
+            "allowedPushOperations": "CreateAndUpdate"
           },
           {
             "path": "*",
