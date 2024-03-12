@@ -32,15 +32,15 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: 
   };
 
   return (
-    <Card border={'none'} shadow={'none'} {...rest}>
-      <CardHeader justifyContent={'space-between'} display={'flex'}>
+    <Card border={'none'} shadow={'none'} {...rest} size={{ base: 'xs', md: 'md' }}>
+      <CardHeader justifyContent={'space-between'} display={'flex'} py={8}>
         <Heading as="h3" size="md">
           Latest blog posts
         </Heading>
 
         <TextLink href="https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba" text="See all" />
       </CardHeader>
-      <CardBody>
+      <CardBody py={{ base: '2', md: '4' }}>
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
           <div className="flex justify-end mb-6">
             <label>

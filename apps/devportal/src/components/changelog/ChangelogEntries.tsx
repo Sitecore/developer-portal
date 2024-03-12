@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Card, CardBody, CardHeader, CardProps, Flex, HStack, Heading, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, SimpleGrid, Stack, Text, chakra, useColorModeValue } from '@chakra-ui/react';
+import { Badge, Box, Button, Card, CardBody, CardHeader, CardProps, Flex, HStack, Heading, Hide, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, SimpleGrid, Stack, Text, chakra, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
 import { getSlug } from 'sc-changelog/utils/stringUtils';
@@ -25,15 +25,14 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
   }
 
   return (
-    <Card shadow={'none'} {...rest}>
-      <CardHeader justifyContent={'space-between'} display={'flex'}>
+    <Card shadow={'none'} {...rest} size={{ base: 'xs', md: 'md' }}>
+      <CardHeader justifyContent={'space-between'} display={'flex'} py={8}>
         <Heading as={'h3'} size={'md'}>
           {title != null ? title : 'Sitecore Changelog'}
         </Heading>
-
         <TextLink href={linkHref != null ? linkHref : '/changelog'} text={linkText != null ? linkText : 'See all changes'} />
       </CardHeader>
-      <CardBody>
+      <CardBody py={{ base: '2', md: '4' }}>
         <SimpleGrid columns={columns ? columns : 1} spacing={0}>
           {entries.map((entry, key) => {
             return (
@@ -55,7 +54,7 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
 
                     {entry.products != null && entry.products?.length > 1 ? (
                       <HStack spacing={0}>
-                        <Popover placement="bottom-start" trigger="hover" matchWidth>
+                        <Popover placement="bottom-start" trigger="click">
                           <PopoverAnchor>
                             {entry.products != null && (
                               <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} className="">
@@ -64,8 +63,8 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
                             )}
                           </PopoverAnchor>
                           <PopoverTrigger>
-                            <Button variant="unstyled" size={'sm'} ml="1">
-                              + {entry.products.length - 1} {entry.products.length == 1 ? 'other' : 'others'}
+                            <Button variant="unstyled" size={'sm'} hideBelow={'sm'}>
+                              + {entry.products.length - 1} <Hide below="md">{entry.products.length == 1 ? 'other' : 'others'}</Hide>
                             </Button>
                           </PopoverTrigger>
                           <PopoverContent p={2} maxW={'3xs'}>

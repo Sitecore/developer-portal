@@ -42,7 +42,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
 
         <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
-            <SimpleGrid py={4} gap={4} columns={[1, 1, 2]}>
+            <SimpleGrid py={{ base: 0, md: 4 }} gap={{ base: 0, md: 4 }} columns={[1, 1, 2]}>
               <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
               <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} listItem={true} />
             </SimpleGrid>
