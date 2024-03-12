@@ -80,7 +80,7 @@ const SidebarCollapsableGroupItem = (SidebarNavigationItem: SidebarNavigationIte
   return (
     <Wrap direction="column">
       <HStack justifyContent={'space-between'} mt={4}>
-        <Heading variant="section" onClick={onToggle}>
+        <Heading variant="section" onClick={onToggle} cursor={'pointer'}>
           {SidebarNavigationItem.title}
         </Heading>
         <IconButton
