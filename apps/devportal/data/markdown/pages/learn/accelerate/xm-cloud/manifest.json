@@ -171,6 +171,14 @@
             {
               "title": "Exported components example",
               "path": "exported-components-example"
+            },
+            {
+              "title": "template.module.json",
+              "path": "template-module-json"
+            },
+            {
+              "title": "xmcloud.build.json",
+              "path": "xmcloud-build-json"
             }
           ]
         }
