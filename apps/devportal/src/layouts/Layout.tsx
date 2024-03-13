@@ -30,17 +30,24 @@ const Layout = ({ title, description = '', openGraphImage, children, ...rest }: 
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5548d9" />
-
         <meta name="msapplication-TileColor" content="#5548d9"></meta>
         <meta name="theme-color" content="#5548d9"></meta>
-        <meta name="description" content={description} />
 
+        <meta name="description" content={description} />
+        {/*  Facebook Meta Tags */}
         <meta property="og:site_name" content="Sitecore Developer Portal" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`${publicUrl}${path}`} />
         <meta property="og:image" content={openGraphImage ? `${publicUrl}${openGraphImage}` : `${publicUrl}/api/og?title=${title}&subtitle=${description}`} />
+        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="developers.sitecore.com" />
+        <meta property="twitter:url" content={`${publicUrl}${path}`} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={openGraphImage ? `${publicUrl}${openGraphImage}` : `${publicUrl}/api/og?title=${title}&subtitle=${description}`} />
       </Head>
 
       <Box as="main" {...rest}>
