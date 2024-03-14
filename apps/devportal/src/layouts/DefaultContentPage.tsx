@@ -35,8 +35,8 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
   const Nav = customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null;
 
   return (
-    <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <TrackPageView pageInfo={pageInfo}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} demoId={pageInfo.guidedDemoId} />
 
         <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
@@ -55,8 +55,8 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
           {/* End Page structure */}
           {/* </CenteredContent> */}
         </ContentSection>
-      </Layout>
-    </TrackPageView>
+      </TrackPageView>
+    </Layout>
   );
 };
 

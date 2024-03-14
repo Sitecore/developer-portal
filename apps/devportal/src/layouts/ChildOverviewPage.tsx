@@ -29,8 +29,8 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
 
   // Check for headings in the content
   return (
-    <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <TrackPageView pageInfo={pageInfo}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
         <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <SidebarNavigation config={sidebarConfig} />}>
@@ -82,8 +82,8 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
           </CenteredContent>
         </VerticalGroup> */}
         </ThreeColumnLayout>
-      </Layout>
-    </TrackPageView>
+      </TrackPageView>
+    </Layout>
   );
 };
 

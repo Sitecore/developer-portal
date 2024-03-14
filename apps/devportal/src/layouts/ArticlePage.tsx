@@ -37,8 +37,8 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
   const Nav = pageInfo.hasInPageNav != false ? customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null : null;
 
   return (
-    <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <TrackPageView pageInfo={pageInfo}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
         <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <SidebarNavigation config={sidebarConfig} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
@@ -52,8 +52,8 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
           <PromoList data={promoAfter} />
           <SocialFeeds pageInfo={pageInfo} />
         </ThreeColumnLayout>
-      </Layout>
-    </TrackPageView>
+      </TrackPageView>
+    </Layout>
   );
 };
 

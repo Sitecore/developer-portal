@@ -19,8 +19,8 @@ type SocialPageProps = {
 };
 
 const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): JSX.Element => (
-  <TrackPageView pageInfo={pageInfo}>
-    <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+  <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+    <TrackPageView pageInfo={pageInfo}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
       <VerticalGroup>
@@ -36,8 +36,8 @@ const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): 
           {ctaAfter && <CTACard {...ctaAfter} />}
         </CenteredContent>
       </VerticalGroup>
-    </Layout>
-  </TrackPageView>
+    </TrackPageView>
+  </Layout>
 );
 
 export default SocialPage;

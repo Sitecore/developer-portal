@@ -53,8 +53,8 @@ const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, pro
   const Nav = customNav ? customNav : <InPageNav titles={titles} />;
 
   return (
-    <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description}>
+    <Layout title={pageInfo.title} description={pageInfo.description}>
+      <TrackPageView pageInfo={pageInfo}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
         {/* background={!pageInfo.hasInPageNav ? 'neutral-bg' : ''} id="verticalgroup" */}
@@ -73,8 +73,8 @@ const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, pro
             <SocialFeeds pageInfo={pageInfo} />
           </CenteredContent>
         </ContentSection>
-      </Layout>
-    </TrackPageView>
+      </TrackPageView>
+    </Layout>
   );
 };
 
