@@ -53,5 +53,5 @@ export const EngageTrackerProvider: FC<EngageTrackerProviderProps> = ({ children
     initEngageTracker();
   }, [initEngageTracker]);
 
-  return <EngageTrackerContext.Provider value={{ engageTracker, isTrackerEnabled: isTrackerEnabled.current, engageKeys: EngageKeys }}>{loading ? null : children}</EngageTrackerContext.Provider>;
+  return <EngageTrackerContext.Provider value={{ engageTracker, isTrackerEnabled: isTrackerEnabled.current, engageKeys: EngageKeys }}>{children}</EngageTrackerContext.Provider>;
 };
