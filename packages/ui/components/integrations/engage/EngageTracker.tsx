@@ -16,12 +16,10 @@ interface EngageTrackerProviderProps {
 
 export const EngageTrackerProvider: FC<EngageTrackerProviderProps> = ({ children }) => {
   const [engageTracker, setEngageTracker] = useState<Engage | undefined>();
-  const [loading, setLoading] = useState<boolean>(true);
+  
   const isTrackerEnabled = useRef<boolean>(true);
 
   const initEngageTracker = useCallback(async () => {
-    setLoading(true);
-
     if (!EngageKeys.SitecoreCdpClientKey || !EngageKeys.SitecoreCdpTargetUrl || !EngageKeys.SitecoreCdpPointOfSale) {
       isTrackerEnabled.current = false;
       console.log('Engage tracker is disabled because of missing configuration.');
@@ -43,15 +41,12 @@ export const EngageTrackerProvider: FC<EngageTrackerProviderProps> = ({ children
     if (isTrackerEnabled.current) {
       const engage = await init(initConfig);
       setEngageTracker(engage);
-      setLoading(false);
     }
-
-    setLoading(false);
   }, []);
 
   useEffect(() => {
     initEngageTracker();
   }, [initEngageTracker]);
 
-  return <EngageTrackerContext.Provider value={{ engageTracker, isTrackerEnabled: isTrackerEnabled.current, engageKeys: EngageKeys }}>{loading ? null : children}</EngageTrackerContext.Provider>;
+  return <EngageTrackerContext.Provider value={{ engageTracker, isTrackerEnabled: isTrackerEnabled.current, engageKeys: EngageKeys }}>{children}</EngageTrackerContext.Provider>;
 };
