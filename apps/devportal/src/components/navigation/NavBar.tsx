@@ -9,6 +9,7 @@ import {
   Flex,
   HStack,
   Heading,
+  Hide,
   Icon,
   IconButton,
   Image,
@@ -32,7 +33,7 @@ import { NavItem, mainNavigation, sitecoreQuickLinks } from '@data/data-navigati
 import { mdiChevronDown, mdiChevronUp, mdiInformationOutline } from '@mdi/js';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
 import ProductIcon from 'ui/components/common/ProductIcon';
 import { Slide } from 'ui/components/helpers/Slide';
 import { GetProductLogoByVariant, Product, Type, Variant } from 'ui/lib/assets';
@@ -67,6 +68,7 @@ export type NavBarProps = {
 
 export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
   const { isOpen, onToggle } = useDisclosure();
+  const [focusedOnSearch, setFocusedOnSearch] = useState(false);
   const router = useRouter();
 
   return (
@@ -99,11 +101,17 @@ export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
         <Stack direction={'row'} alignItems={'center'}>
           {searchEnabled && (
             <>
-              <Show above="3xl">
-                <Box display={'flex'} width={'2xl'}>
-                  <PreviewSearchInput rfkId="rfkid_6" defaultItemsPerPage={6} />
-                </Box>
-              </Show>
+              <Hide below="3xl">
+                <PreviewSearchInput
+                  rfkId="rfkid_6"
+                  defaultItemsPerPage={6}
+                  onFocus={() => setFocusedOnSearch(true)}
+                  onBlur={() => setFocusedOnSearch(false)}
+                  display={'flex'}
+                  width={focusedOnSearch ? '2xl' : 'lg'}
+                  transition={'width 0.1s ease-in-out'}
+                />
+              </Hide>
               <Show below="3xl">
                 <SearchButton />
               </Show>

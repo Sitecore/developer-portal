@@ -35,8 +35,8 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
         {!showRootAsSections && (
           <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'}>
             {config.routes.map((link, i) => (
-              <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'}>
-                <MenuItemLink href={appendPathToBasePath(basePath, link.path)} title={link.title} key={i} />
+              <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} key={i}>
+                <MenuItemLink href={appendPathToBasePath(basePath, link.path)} title={link.title} />
               </ButtonGroup>
             ))}
           </ButtonGroup>
