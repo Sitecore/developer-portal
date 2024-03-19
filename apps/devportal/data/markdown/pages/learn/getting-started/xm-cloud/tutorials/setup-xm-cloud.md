@@ -127,8 +127,11 @@ Navigate to your GitHub account and download the repository that was cloned earl
 The init script initializes the `.env` file with everything necessary.
 ![In Command Line Tool - Run init script](https://sitecorecontenthub.stylelabs.cloud/api/public/content/8cb688885bc74cf9a3b44468dd58ff57?v=0ca77d8f)
 
-**A note on passwords:**
-_You can use any password and will of course have to use a secure password when dealing with client projects. But for now we use “b”, for tradition’s sake._
+<Alert status="info">
+  <AlertIcon />
+    **A note on passwords:**
+    You can use any password and will of course have to use a secure password when dealing with client projects. But for now we use “b”, for tradition’s sake.
+</Alert>
 
 ### Connect the App to the XM Cloud Instance
 
