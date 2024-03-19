@@ -83,7 +83,10 @@ Lastly, the XM Cloud CLI allows you to manage your XM Cloud instance and deploy,
 
 Once the provisioning and build process are finished, the deployment starts. The moment the deployment is finished, you can start using the new XM Cloud environment. Some actions run in the background to warm up the application.
 
-**Congratulations!** You have successfully connected to XM Cloud and built your first project, that has an environment that is set up and ready to be used. The solution code is ready and connected to a CI/CD pipeline as well – these steps that can take days or weeks are completed within minutes here.
+<Alert status="success">
+   <AlertIcon />
+   **Congratulations!** You have successfully connected to XM Cloud and built your first project, that has an environment that is set up and ready to be used. The solution code is ready and connected to a CI/CD pipeline as well – these steps that can take days or weeks are completed within minutes here.
+</Alert>
 
 ## Setup a Site Collection and Site
 
@@ -194,4 +197,7 @@ Let’s change some content to verify you are in fact connected against the prev
 6. Reload the page, and see the changes appear in your local app.  
    ![Validate changes in local running app](https://sitecorecontenthub.stylelabs.cloud/api/public/content/6bf98e5e22fe4c689898fcea34a03b59?v=756f5d1a)
 
-**Congratulations!** You have successfully set up your dev environment with XM Cloud and created your first webpage! To learn more about XM Cloud and continue on to next steps, check out our next blog post in this series!
+<Alert status="success">
+   <AlertIcon />
+   **Congratulations!** You have successfully set up your dev environment with XM Cloud and created your first webpage! To learn more about XM Cloud and continue on to next steps, check out our next blog post in this series!
+</Alert>
