@@ -107,9 +107,12 @@ Now, that the deployment is finished, you will create your first site in XM Clou
 4. Name the site `Company Dev`.  
    ![Name new Site and Site Collection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1dc9460c15fd452681187485fae6fe37?v=8feccf45)
 
-5. Select a pre-configured language, in this case, English.
+5. Select a pre-configured language, in this case, `English`.
 
-   **NOTE:** At this time, you can also select an existing Site identifier, or create a new one. This is required when connecting [CDP, the Customer Data Platform](https://developers.sitecore.com/customer-data-management/cdp) of Sitecore for embedded analytics and personalization. We will skip that step for now and start the creation process of the site.
+  <Alert status="info">
+   <AlertIcon />
+   At this time, you can also select an existing Site identifier, or create a new one. This is required when connecting [CDP, the Customer Data Platform](https://developers.sitecore.com/customer-data-management/cdp) of Sitecore for embedded analytics and personalization. We will skip that step for now and start the creation process of the site.
+   </Alert>
 
 6. Click `Create site`, which will scaffold the website in the background. This will take a few minutes.
 
