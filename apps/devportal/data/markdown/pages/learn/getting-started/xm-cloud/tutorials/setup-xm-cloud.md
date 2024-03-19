@@ -97,8 +97,11 @@ Now, that the deployment is finished, you will create your first site in XM Clou
    ![Create site](https://sitecorecontenthub.stylelabs.cloud/api/public/content/08c2c56cb94c4ce8969c691a8b6ff4d3?v=c79d9844)
 
 3. In the **New site** step you will choose a site template. Choose `Basic Site`.
+   <Alert status="info">
+   <AlertIcon />
+   You can choose to create an Empty Site, or a Basic Site that already has some content in it. When creating your own websites outside the scope of this tutorial or as a quick demo, we recommend using the Empty Site, as it requires less cleanup than the Basic Site template. However, for this tutorial, you will select to use the basic site.
+   </Alert>
 
-   **Note:** You can choose to create an Empty Site, or a Basic Site that already has some content in it. When creating your own websites outside the scope of this tutorial or as a quick demo, we recommend using the Empty Site, as it requires less cleanup than the Basic Site template. However, for this tutorial, you will select to use the basic site.  
    ![Choose Site Template](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1480ca22c0724a7496c9617b5f65cd6a?v=cf3753f9)
 
 4. Name the site `Company Dev`.  
