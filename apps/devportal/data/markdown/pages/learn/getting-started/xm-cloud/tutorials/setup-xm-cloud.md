@@ -15,17 +15,7 @@ XM Cloud focuses on being a headless, enterprise content and website management 
  
 ## Setup the project and environment  
 
-Now, we will setup the developer project and environment that we will create therein. Let’s get started! In the first stage, we will access the cloud portal and create a new *project*.  
-
-### Log into Sitecore Cloud Portal 
-
-1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.   
-2. Access the XM Cloud project and environment management interface by clicking `XM Cloud Deploy`.  
-![Sitecore Portal - Open XM Cloud Deploy](https://sitecorecontenthub.stylelabs.cloud/api/public/content/42edc85bc7bd41e2914f29b7b260496b?v=94261954)
-
-### A Quick Dive into Projects and Environments  
-
-Let’s take a brief pause and discuss how projects and environments work together in XM Cloud. A project is connected to a source code repository, for example, GitHub.  
+Now, we will setup the project and environment that we will create therein. In the first stage, we will access the cloud portal and create a new *project*. A project is connected to a source code repository, for example, GitHub.  
 
 ![A GitHub repository is mapped to a project in XM Cloud](https://sitecorecontenthub.stylelabs.cloud/api/public/content/142a8648763a42eda1a210b1488cfda5?v=859d5477) 
 
@@ -34,6 +24,15 @@ Each project can have multiple environments. A typical setup is to have one sour
 ![XM Cloud Projects and Environments](https://sitecorecontenthub.stylelabs.cloud/api/public/content/9deae49bb7f5428285baf2ea374fe1ec?v=40ffa388)
  
 We will start with a Dev Environment for now, and create the other environments later. Let’s get back to project creation! 
+
+
+Let’s get started! 
+
+### Log into Sitecore Cloud Portal 
+
+1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.   
+2. Access the XM Cloud project and environment management interface by clicking `XM Cloud Deploy`.  
+![Sitecore Portal - Open XM Cloud Deploy](https://sitecorecontenthub.stylelabs.cloud/api/public/content/42edc85bc7bd41e2914f29b7b260496b?v=94261954)
 
 ### Create a new Project and Authoring Environment 
 
@@ -59,7 +58,9 @@ In step 3 you can choose whether you want to start from the XM Cloud template or
 11. The deployment starts, and provisioning and build run in parallel.  
 ![XM Cloud Deploy Logs - Deployment is running](https://sitecorecontenthub.stylelabs.cloud/api/public/content/81ff5cf671f24d948aeb0dfb6d769411?v=4abce4be) 
 **A note on provisioning and build:**  
-*The Provisioning sets up all the resources you need to run the XM Cloud instance, while the Build is building the software solution you have cloned to your personal repository. This will take a few minutes.*  
+*The Provisioning sets up all the resources you need to run the XM Cloud instance, while the Build is building the software solution you have cloned to your personal repository. This will take a few minutes. Read on for more information on what is going on 'under the hood' as your project sets up.*  
+
+
 
 ## What is provisioned for XM Cloud 
 
@@ -72,7 +73,7 @@ To begin, XM Cloud contains a Content Management instance (CM / purple box) that
 
 In order to utilize the WYSIWYG editing experience, an internal rendering host, or *editing host* (green box), is delivered with XM Cloud. This editing host is managed by Sitecore, and runs a Node server that can host any Node-based application.  
 
-The main way of accessing XM Cloud is through the *Sitecore Cloud Portal*.  This GUI allows you to manage and access your different Sitecore Apps and Users. For an in-depth exploration of the Sitecore Cloud Portal, navigate [here](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html).  
+The main way of accessing XM Cloud is through the *Sitecore Cloud Portal* (solid outlined box, 'Sitecore Cloud').  This GUI allows you to manage and access your different Sitecore Apps and Users. For an in-depth exploration of the Sitecore Cloud Portal, navigate [here](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html).  
 
 When developing with XM Cloud, you can use the available build and deployment services (purple box). XM Cloud has these services built-in, so that you do not have to think about building or provisioning the XM Cloud instance, it is all done for you.  If you have more requirements than currently provided, you can set up your own build and deployment pipeline using the [XM Cloud CLI](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--creating-an-xm-cloud-project-using-the-sitecore-cli.html).  
 
@@ -94,7 +95,7 @@ If you closed that screen already you can also access XM Cloud from the Sitecore
 ![Create new Site](https://sitecorecontenthub.stylelabs.cloud/api/public/content/08c2c56cb94c4ce8969c691a8b6ff4d3?v=c79d9844) 
 Here, you can choose to create an empty site, or a basic site that already has some content in it.  
 
-It is recommended to use the empty site as a starting point when you are creating your own websites outside the scope of this blog. The basic site is more for quick demo purposes, and would require excess cleanup when used for a client project.  However, for this blog, you will select to use the basic site.   
+Note: when creating your own websites outside the scope of this blog or as a quick demo, we recommend using the empty site, as it requires less cleanup than the basic site. However, for this blog, you will select to use the basic site.   
 ![Choose Site Template](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1480ca22c0724a7496c9617b5f65cd6a?v=cf3753f9) 
 
 3. Name the site `Company DEV`.  
@@ -102,7 +103,7 @@ It is recommended to use the empty site as a starting point when you are creatin
 
 4. Select a pre-configured language, in this case, English.  
 
-At this time, you can also select an existing Site identifier, or create a new one. This is required when connecting CDP for embedded analytics and personalization.  
+At this time, you can also select an existing Site identifier, or create a new one. This is required when connecting [CDP, the Customer Data Platform](https://developers.sitecore.com/customer-data-management/cdp) of Sitecore for embedded analytics and personalization.  
 
 Now, let’s start the creation process of the site.  
 
@@ -118,13 +119,13 @@ Once your site is scaffolded in the background, you can access it using XM Cloud
 
 ## Working locally  
 
-Let’s now navigate to your GitHub account and download the repository that was cloned earlier by the Sitecore XM Cloud Deploy App.  
-![GitHub - Clone Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/239fa0b1ce314ca088bc830ee7a699e8?v=ba0d1b2e) 
+Navigate to your GitHub account and download the repository that was cloned earlier by the Sitecore XM Cloud Deploy App. 
+![GitHub - Clone Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/239fa0b1ce314ca088bc830ee7a699e8?v=ba0d1b2e)
 
-### Download Repository  
+### Download Repository
 
 1. In your repositories overview, find the newly created xm-cloud-tutorial-series repo.  
-2. Download the repository to your local file system using the GitHub CLI.Now, open the newly created folder in VS Code, or your text editor of choice.  
+2. Download the repository to your local file system using the GitHub CLI. Now, open the newly created folder in VS Code, or your text editor of choice.  
 3. As per the README, run the init script that was delivered with your source code repository passing the path to your XM Cloud license file, and the admin password of your XM Cloud instance (“b”, in this case). The init script initializes the .env file with everything necessary.  
 ![In Command Line Tool - Run init script](https://sitecorecontenthub.stylelabs.cloud/api/public/content/8cb688885bc74cf9a3b44468dd58ff57?v=0ca77d8f) 
  
@@ -134,7 +135,7 @@ You can use any password and will of course have to use a secure password when d
 
 ### Connect the App to the XM Cloud Instance  
 
-A few things need to be configured upfront to connect to the GraphQL endpoint.  
+As you may remember from the introduction, you need to use a GraphQL endpoint to query the content coming from XM Cloud. To connect a few things need to be configured upfront.
 
 1. Navigate to the .env file within your solution under src\sxastarter, and copy it.  
 
@@ -143,7 +144,7 @@ A few things need to be configured upfront to connect to the GraphQL endpoint.
 You can connect using the delivery endpoint of Edge or to the preview endpoint of your CM instance.   
 ![XM Cloud Architecture - Connect to Preview Endpoint](https://sitecorecontenthub.stylelabs.cloud/api/public/content/e703be66170a49268beb6564c4c34df7?v=5184aace) 
 
-Any app showing content to the public must connect to the Edge Delivery Endpoint that is scaled and geographically distributed. Only published content will be available here.  For development purposes, you will connect to the preview endpoint as you do not need to care about publishing at this point, so created content is instantly available.    
+Any app showing content to the public must connect to the Edge Delivery Endpoint that is scaled and geographically distributed to serve the right performance. Only published content will be available here. For development purposes, you will connect to the preview endpoint as you do not need to care about publishing at this point, so created content is instantly available. This will simplify the development workflow.    
  
 
 Now, you need to set the API key within .env.local. The API key should be already available within your XM Cloud instance.  
