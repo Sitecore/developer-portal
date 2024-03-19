@@ -56,8 +56,12 @@ In step 3 you can choose whether you want to start from the XM Cloud template or
     ![Create Project and Environment Step 5 - Review your selections](https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5cda1bf224c4f99b508fe612e527590?v=6c0f0076)
 11. The deployment starts, and provisioning and build run in parallel.  
     ![XM Cloud Deploy Logs - Deployment is running](https://sitecorecontenthub.stylelabs.cloud/api/public/content/81ff5cf671f24d948aeb0dfb6d769411?v=4abce4be)
+
+<Alert status="info">
+  <AlertIcon />
     **A note on provisioning and build:**  
-    _The Provisioning sets up all the resources you need to run the XM Cloud instance, while the Build is building the software solution you have cloned to your personal repository. This will take a few minutes. Read on for more information on what is going on 'under the hood' as your project sets up._
+    The Provisioning sets up all the resources you need to run the XM Cloud instance, while the Build is building the software solution you have cloned to your personal repository. This will take a few minutes. Read on for more information on what is going on 'under the hood' as your project sets up.
+</Alert>
 
 ## What is provisioned for XM Cloud
 
