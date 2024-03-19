@@ -23,7 +23,7 @@ Each project can have multiple environments. A typical setup is to have one sour
 
 ![XM Cloud Projects and Environments](https://sitecorecontenthub.stylelabs.cloud/api/public/content/9deae49bb7f5428285baf2ea374fe1ec?v=40ffa388)
 
-We will start with a Dev Environment for now, and create the other environments later. Let’s get back to project creation!
+We will start with a Dev Environment for now, and create the other environments later.
 
 Let’s get started!
 
