@@ -31,16 +31,16 @@ Let’s get started!
 
 1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
 2. Access the XM Cloud project and environment management interface by clicking `XM Cloud Deploy`.  
-   ![Sitecore Portal - Open XM Cloud Deploy](https://sitecorecontenthub.stylelabs.cloud/api/public/content/42edc85bc7bd41e2914f29b7b260496b?v=94261954)
+   ![Sitecore Portal - Open XM Cloud Deploy](https://sitecorecontenthub.stylelabs.cloud/api/public/content/817fa236e3434742817279da7329eca6?v=d1261f63)
 
 ### Create a new Project and Authoring Environment
 
 1. From there, create a new project with the XM Cloud Deploy App by clicking `Create project`.  
-   ![Project Overview - Create new Project](https://sitecorecontenthub.stylelabs.cloud/api/public/content/2215cae974524bcb820ce28fd7fe3c51?v=df12ee70)
+   ![Project Overview - Create new Project](https://sitecorecontenthub.stylelabs.cloud/api/public/content/817fa236e3434742817279da7329eca6?v=d1261f63)
 2. From here you provide a Project Name e.g.`XM Cloud Tutorial Series` and click the Continue button
-   ![Create Project and Environment Step 1 - Provide Project Name](https://sitecorecontenthub.stylelabs.cloud/api/public/content/95a7fa3d5e7e4f6997494cae9a5ac70e?v=3678a3bd)
+   ![Create Project and Environment Step 1 - Provide Project Name](https://sitecorecontenthub.stylelabs.cloud/api/public/content/57cf82679be64a498b9d43659c26e900?v=0bb6544a)
 3. Choose whether you want to connect to GitHub or to Azure DevOps. A starter solution will be copied to your connected source code repository as a starting point. For the sake of this tutorial you choose GitHub and press the Continue Button  
-   ![Create Project and Environment Step 2 - Choose Source Code Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/27f501fc072d4a23b2a89a64b6e936f5?v=eafd675a)
+   ![Create Project and Environment Step 2 - Choose Source Code Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/246d3a6f48d54765be0427179c3e9fd1?v=9240ac99)
 
 <Alert status="info">
   <AlertIcon />
@@ -48,17 +48,17 @@ Let’s get started!
 </Alert>
 
 4. Choose a GitHub Account from the dropdown or click on `Connect to a new account` and follow the steps to connect to a different account. Make sure you give rights to create a new repository in your account.
-   ![Create Project and Environment Step 3 - Setup Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/3adbe7059311434d8b7900d691990e22?v=08e2526a)
+   ![Create Project and Environment Step 3 - Setup Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/58034dfd6c90407f89659e3835d609d9?v=7fc739e7)
 5. Provide a name for the repository e.g. `xm-cloud-tutorial-series` and click the Continue button.
 6. Enter a name for the environment e.g. `DEV`  
-   ![Create Project and Environment Step 4 - Provide Environment details](https://sitecorecontenthub.stylelabs.cloud/api/public/content/7f69f87c697148afabc6e55526588d4f?v=751f0044)
+   ![Create Project and Environment Step 4 - Provide Environment details](https://sitecorecontenthub.stylelabs.cloud/api/public/content/c891806b1758495c8af79c44088f07e3?v=c7f37143)
 7. In the **Production SaaS SLA** section you will specify if this new environment is a production environment or not. Select `No` to make this a non-production environment.
 8. Select whether you want to auto deploy on push to the repository. Select “Yes”. This enables the CI/CD pipeline from your main branch. This can be adjusted later.
 9. Press the Continue button.
 10. On the 5th step review your selections and press the “Start deployment” button
     ![Create Project and Environment Step 5 - Review your selections](https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5cda1bf224c4f99b508fe612e527590?v=6c0f0076)
 11. The deployment starts, and provisioning and build run in parallel.  
-    ![XM Cloud Deploy Logs - Deployment is running](https://sitecorecontenthub.stylelabs.cloud/api/public/content/81ff5cf671f24d948aeb0dfb6d769411?v=4abce4be)
+    ![XM Cloud Deploy Logs - Deployment is running](https://sitecorecontenthub.stylelabs.cloud/api/public/content/72df30b6fd564d90b97ed08988d608b1?v=c2841f9b)
 
 <Alert status="info">
   <AlertIcon />
@@ -93,11 +93,11 @@ Once the provisioning and build process are finished, the deployment starts. The
 Now, that the deployment is finished, you will create your first site in XM Cloud.
 
 1. You can access XM Cloud via the XM Cloud Deploy app through the “Go to XM Cloud” button
-   ![XM Cloud Deploy Logs - Finished, Open XM Cloud Dashboard](https://sitecorecontenthub.stylelabs.cloud/api/public/content/51576832a2594fde8dd0fb7f86fbdfd1?v=59c586b8)
+   ![XM Cloud Deploy Logs - Finished, Open XM Cloud Dashboard](https://sitecorecontenthub.stylelabs.cloud/api/public/content/d61e0711c4044fd7a8f4df56df9feb48?v=f5924a41)
    If you closed that screen already you can also access XM Cloud from the Sitecore Cloud Portal. Click the “Open app” button on the top right.
    ![Sitecore Cloud Portal - Open XM Cloud Dashboard](https://sitecorecontenthub.stylelabs.cloud/api/public/content/ef83f2ef7ff94688b9f84b59f57f98b5?v=8bed26f3)
 2. Under the Sites tab, click `Create site`.
-   ![Create site](https://sitecorecontenthub.stylelabs.cloud/api/public/content/08c2c56cb94c4ce8969c691a8b6ff4d3?v=c79d9844)
+   ![Create site](https://sitecorecontenthub.stylelabs.cloud/api/public/content/7feb2d24b3e84117967949d5386fab37?v=c6c49f33)
 
 3. In the **New site** step you will choose a site template. Choose `Basic Site`.
    <Alert status="info">
@@ -108,7 +108,7 @@ Now, that the deployment is finished, you will create your first site in XM Clou
    ![Choose Site Template](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1480ca22c0724a7496c9617b5f65cd6a?v=cf3753f9)
 
 4. Name the site `Company Dev`.  
-   ![Name new Site and Site Collection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1dc9460c15fd452681187485fae6fe37?v=8feccf45)
+   ![Name new Site and Site Collection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/41287d8cc01e4dc8b32a4aede67c98c1?v=dc1b7223)
 
 5. Select a pre-configured language, in this case, `English`.
 
@@ -121,7 +121,7 @@ Now, that the deployment is finished, you will create your first site in XM Clou
 
    Once your site is scaffolded in the background, you can access it using XM Cloud Pages and start editing the content.
 
-   ![Open Pages Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/6438c1971da24b8f8564e3e48335d985?v=c5f57f17)
+   ![Open Pages Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/a178261c39d5449ba23564430b1671c8?v=66730068)
 
 7. Click on the website, which opens up a WYSIWIG editor where you can begin to edit the content, see components that you can use to edit the site, and switch between languages and your sites (top navigation bar).  
    ![In Pages Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/9fb983d0eeec435797a1115f4ae801df?v=2cce57d4)
@@ -141,7 +141,7 @@ Navigate to your GitHub account and download the repository that was cloned earl
    - `-AdminPassword`: the admin password of your XM Cloud instance (“b”, in this case).
 
 The init script initializes the `.env` file with everything necessary.
-![In Command Line Tool - Run init script](https://sitecorecontenthub.stylelabs.cloud/api/public/content/8cb688885bc74cf9a3b44468dd58ff57?v=0ca77d8f)
+![In Command Line Tool - Run init script](https://sitecorecontenthub.stylelabs.cloud/api/public/content/b27d3da0db2746c69915db32955897d0?v=5a043dea)
 
 <Alert status="info">
   <AlertIcon />
@@ -177,9 +177,9 @@ Now, you need to set the API key within `.env.local`. The API key should be alre
 5. Add the Site name (e.g. `Company dev`) to the `SITECORE_SITE_NAME` environment variable in the `.env.local` file.
    ![Set Site name in .env file](https://sitecorecontenthub.stylelabs.cloud/api/public/content/8fbd4505019948f08bfba8c8be4d4043?v=79a1d301)
 6. In your terminal navigate to src/sxastarter (your app folder) and run `npm install`
-   ![In Command Line Interface - Run npm install](https://sitecorecontenthub.stylelabs.cloud/api/public/content/38c87be1d50c4b40abab26556102c4f6?v=474160b6)
+   ![In Command Line Interface - Run npm install](https://sitecorecontenthub.stylelabs.cloud/api/public/content/5971aecb976d43bf840ba260298c5da1?v=212157b9)
 7. Now run `npm run start:connected`
-   ![Start the app locally](https://sitecorecontenthub.stylelabs.cloud/api/public/content/ad26063be71c4ae6b9e62e2579948db3?v=1a82e9cc)
+   ![Start the app locally](https://sitecorecontenthub.stylelabs.cloud/api/public/content/2e06a82c1b414cb9b06e6518983f32a4?v=12ee66db)
 8. Call your app in the browser: http://localhost:3000
    ![Check Website running locally](https://sitecorecontenthub.stylelabs.cloud/api/public/content/358a02664690465289d70fe4c9280eae?v=7c0165d9)
 
@@ -188,7 +188,7 @@ Now, you need to set the API key within `.env.local`. The API key should be alre
 Let’s change some content to verify you are in fact connected against the preview endpoint.
 
 1. Navigate back to your site in XM Cloud.
-   ![XM Cloud Dashboard - Open Pages Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/8da9bc8363914bbda2b8b4a67e0cd31e?v=00d2e820)
+   ![XM Cloud Dashboard - Open Pages Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/4d9aebe26e7c4916bd5c2c982a2bdabd?v=1afb8abf)
 2. Click on the tile that says `Company Dev`. This will open Pages new WYSIWYG page editing experience. When opening for the first time, this might take a moment.
 3. Change the headline to whatever you like. In this case, I’ll add 'in town' to the homepage tagline.
    ![Pages Editor - Change Headline inline](https://sitecorecontenthub.stylelabs.cloud/api/public/content/05ac5bbde7244c809d987106b9226fd8?v=6b47e626)
