@@ -69,7 +69,7 @@ Let’s get started!
 ## What is provisioned for XM Cloud
 
 So, how does this work? Referencing the figure below, let’s walk through the different bits and pieces of XM Cloud.  
-![XM Cloud Architecture](https://sitecorecontenthub.stylelabs.cloud/api/public/content/21cbe922e28b4896b1692be7c85ae6c4?v=c1ed41cb)
+![XM Cloud Architecture](https://sitecorecontenthub.stylelabs.cloud/api/public/content/21cbe922e28b4896b1692be7c85ae6c4?v=4aad3836)
 
 1. XM Cloud contains a Content Management (CM) instance (the violet box on the right) where authors manage their content, layout, and experiences. This is then published to the _Edge_ layer.
 2. Edge (yellow box) is a geographically distributed delivery layer. Edge offers a GraphQL endpoint to allow applications to query for the content coming from XM Cloud.
