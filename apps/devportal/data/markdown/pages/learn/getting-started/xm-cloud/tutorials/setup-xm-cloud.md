@@ -31,7 +31,7 @@ Let’s get started!
 
 1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
 2. Access the XM Cloud project and environment management interface by clicking `XM Cloud Deploy`.  
-   ![Sitecore Portal - Open XM Cloud Deploy](https://sitecorecontenthub.stylelabs.cloud/api/public/content/817fa236e3434742817279da7329eca6?v=d1261f63)
+   ![Sitecore Portal - Open XM Cloud Deploy](https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db)
 
 ### Create a new Project and Authoring Environment
 
@@ -169,7 +169,7 @@ Now, you need to set the API key within `.env.local`. The API key should be alre
    - Click on the name of the project you created e.g. `XM Cloud Tutorial Series`
    - Copy the value in the `Context ID (Preview)` column
 
-   ![Get Context ID from XM Cloud Deploy](https://sitecorecontenthub.stylelabs.cloud/api/public/content/8ecc65168a504cc188ee84cd8951244b?v=a04033a5)
+   ![Get Context ID from XM Cloud Deploy](https://sitecorecontenthub.stylelabs.cloud/api/public/content/73c5f907769a4dc6bb03374bb9a2a229?v=7e9d2bee)
 
 4. Paste the value of the Context ID into the `SITECORE_EDGE_CONTEXT_ID` environment variable in the `.env.local` file.
    ![Copy Context ID into .env file](https://sitecorecontenthub.stylelabs.cloud/api/public/content/e29d1bb0c6a448efb63dce32af047d49?v=2edbe4d1)
