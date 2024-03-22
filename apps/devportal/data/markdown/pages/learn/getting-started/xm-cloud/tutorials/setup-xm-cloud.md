@@ -10,7 +10,7 @@ In this tutorial, we will go through the steps to complete a sprint zero of sett
 
 ## Overview
 
-XM Cloud focuses on being a headless, enterprise content and website management system. You can manage XM Cloud via several UIs, and also through APIs and the CLI. For this blog, we will focus on the XM Cloud deploy UI for building and launching a site with XM Cloud. ( For more information on APIs with XM Cloud, navigate [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html).)
+XM Cloud focuses on being a headless, enterprise content and website management system. You can manage XM Cloud via several UIs, and also through APIs and the CLI. For this tutorial, we will focus on the XM Cloud deploy UI for building and launching a site with XM Cloud. ( For more information on APIs with XM Cloud, navigate [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html).)
 
 ## Prerequisites
 
@@ -211,7 +211,7 @@ Let’s change some content to verify you are in fact connected against the prev
 
 <Alert status="success">
    <AlertIcon />
-   **Congratulations!** You have successfully set up your dev environment with XM Cloud and created your first webpage! To learn more about XM Cloud and continue on to next steps, check out our next blog post in this series!
+   **Congratulations!** You have successfully set up your dev environment with XM Cloud and created your first webpage! To learn more about XM Cloud and continue on to next steps, check out our next tutorial in this series!
 </Alert>
 
 ### Related XM Cloud Documentation
