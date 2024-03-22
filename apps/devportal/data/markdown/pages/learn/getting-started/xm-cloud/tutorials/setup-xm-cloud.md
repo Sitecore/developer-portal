@@ -13,6 +13,20 @@ In this blog, we will go through the steps to complete a sprint zero of setting 
 
 XM Cloud focuses on being a headless, enterprise content and website management system. You can manage XM Cloud via several UIs, and also through APIs and the CLI. For this blog, we will focus on the XM Cloud deploy UI for building and launching a site with XM Cloud. ( For more information on APIs with XM Cloud, navigate [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html).)
 
+## Prerequisites
+
+In order to complete the following tutorial, you will need these resouces:
+
+1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io)
+2. A valid XM Cloud license file.
+   <Alert status="info">
+   <AlertIcon />
+   If you haven't already downloaded a license file, refer to the docs on [downloading your organization's license file from the portal](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cloud-organization-command.html#the-license-subcommand).
+   </Alert>
+3. Organization Admin role access or higher in the Sitecore Cloud portal to access XM Cloud Deploy tools to create projects and environments.
+4. A GitHub source control account.
+5. An IDE such as Visual Studio (VS) Code
+
 ## Setup the project and environment
 
 Now, we will setup the project and environment that we will create therein. In the first stage, we will access the cloud portal and create a new _project_. A project is connected to a source code repository, for example, GitHub.
