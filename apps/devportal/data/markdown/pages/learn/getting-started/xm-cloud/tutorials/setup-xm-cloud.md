@@ -1,13 +1,12 @@
 ---
-title: 'Sprint Zero: How to Set Up and Utilize XM Cloud'
-description: 'In this blog, we will go through the steps to complete a sprint zero of setting up XM Cloud.  In addition to learning the basics of XM Cloud, you will become familiar with setting up a site, setting up the dev environment to support building that site, and how to connect your codebase that runs on your local rendering host to the preview endpoint of XM Cloud.'
-promoAfter: ['learning-essentials']
-openGraphImage: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/1915549492604a64864578fe51d2a597?v=244f9e64'
+title: 'Tutorial: How to Set Up and Utilize XM Cloud'
+description: 'In this tutorial, we will go through the steps to complete a sprint zero of setting up XM Cloud.  In addition to learning the basics of XM Cloud, you will become familiar with setting up a site, setting up the dev environment to support building that site, and how to connect your codebase that runs on your local rendering host to the preview endpoint of XM Cloud.'
+openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 ---
 
 ## Introduction - What You are Going to Learn
 
-In this blog, we will go through the steps to complete a sprint zero of setting up XM Cloud. In addition to learning the basics of XM Cloud, you will become familiar with setting up a site, setting up the dev environment to support building that site, and how to connect your codebase that runs on your local rendering host to the preview endpoint of XM Cloud.
+In this tutorial, we will go through the steps to complete a sprint zero of setting up XM Cloud. In addition to learning the basics of XM Cloud, you will become familiar with setting up a site, setting up the dev environment to support building that site, and how to connect your codebase that runs on your local rendering host to the preview endpoint of XM Cloud.
 
 ## Overview
 
