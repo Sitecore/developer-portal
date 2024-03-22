@@ -37,7 +37,7 @@ Let’s get started!
 
 1. From there, create a new project with the XM Cloud Deploy App by clicking `Create project`.  
    ![Project Overview - Create new Project](https://sitecorecontenthub.stylelabs.cloud/api/public/content/817fa236e3434742817279da7329eca6?v=d1261f63)
-2. From here you provide a Project Name e.g.`XM Cloud Tutorial Series` and click the Continue button
+2. From here you provide a Project Name e.g. `XM Cloud Tutorial Series` and click the Continue button
    ![Create Project and Environment Step 1 - Provide Project Name](https://sitecorecontenthub.stylelabs.cloud/api/public/content/57cf82679be64a498b9d43659c26e900?v=0bb6544a)
 3. Choose whether you want to connect to GitHub or to Azure DevOps. A starter solution will be copied to your connected source code repository as a starting point. For the sake of this tutorial you choose GitHub and press the Continue Button  
    ![Create Project and Environment Step 2 - Choose Source Code Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/246d3a6f48d54765be0427179c3e9fd1?v=9240ac99)
