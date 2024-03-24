@@ -50,7 +50,7 @@ This page contains all the resources for **Sitecore Experience Platform 10.1 Upd
 
  | Resource | Description |
  | --- | --- |
- | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/sxp%2F10.1.0.005207.309) | The Sitecore Container Deployment Package contains the Docker Compose and Kubernetes specification files used to deploy Sitecore in development and production container environments. |
+ | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/sxp%2F10.1.1.005862.645) | The Sitecore Container Deployment Package contains the Docker Compose and Kubernetes specification files used to deploy Sitecore in development and production container environments. |
  | [Installation Guide for Developer Workstation with Containers](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Sitecore_XP_10_1_1_Developer_Workstation_Deployment_With_Docker-en.pdf) | This guide describes how to use Sitecore Containers with Docker Compose to deploy a developer workstation. |
  | [Installation Guide for Production Environment with Kubernetes](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Sitecore_XP_10_1_1_Production_Deployment_With_Kubernetes-en.pdf) | This guide describes how to use Sitecore Containers with Kubernetes to deploy containers to the Azure Kubernetes Service. |
  | [Image and Tags List](https://github.com/Sitecore/docker-images/tree/master/tags) | Link to the official tags list (.md and .json format) of all published Sitecore images available on Sitecore Container Registry (SCR). |
