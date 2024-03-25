@@ -145,7 +145,14 @@
     },
     {
       "title": "Final Steps",
-      "path": "final-steps"
+      "path": "final-steps",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Go-Live Checklist",
+          "path": "go-live-checklist"
+        }
+      ]
     },
     {
       "title": "Appendix I",
