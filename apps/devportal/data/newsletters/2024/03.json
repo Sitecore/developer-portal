@@ -1,0 +1,97 @@
+{
+  "title": "Sitecore Developers",
+  "description": "Welcome to the Sitecore Developer Newsletter, your gateway to the latest updates and insights from our vibrant community. Get ready to dive deep into the latest developments, tips, and tricks. Keep scrolling to stay ahead with the freshest information.",
+  "content": [
+    {
+      "title": "SUGCON India CFS Now Open",
+      "copy": "🎙 Get ready, Bangalore, India! SUGCON (Sitecore User Group Conference) is coming your way on June 6-7! Call for Speakers is now officially open until March 31st. Don’t miss out on this opportunity to share your expertise and insights with over 250 attendees.",
+      "image": "https://go.sitecore.com/l/857953/2023-03-29/tw6z7f/857953/1680105734Vrpe2w1b/MicrosoftTeams_image__5_.png",
+      "link": {
+        "text": "Submit your topic",
+        "href": "https://sessionize.com/sugcon-india-2024/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "Secure Your Place at SUGCON EUROPE 2024",
+      "copy": "Join us in Dublin on April 11-12 for the 10th SUGCON Europe. Hear from top executives like Sitecore's Interim CEO Dave O’Flanagan and connect with the folks from the Sitecore Product team. Delve into cutting-edge insights on Sitecore Content Hub, OrderCloud, AI integration, and Search. Plus, don't miss out on our engaging workshops and training sessions.",
+      "image": "https://go.sitecore.com/l/857953/2024-01-26/txlkmz/857953/17063033742vLoLnUu/Screen_Shot_2024_01_26_at_6.08.12_PM.png",
+      "link": {
+        "text": "Register now",
+        "href": "https://europe.sugcon.events/"
+      },
+      "variant": "full-width"
+    },
+    {
+      "title": "🔎 Sitecore Search - Debugging Crawling Errors",
+      "copy": "When working with Sitecore Search you might run into indexing errors when crawling your different content sources. In this video Rob talks about how you can debug these issues in your implementation.",
+      "image": "https://go.sitecore.com/l/857953/2024-03-06/txqmhm/857953/1709765026NoJlldMG/Left.png",
+      "link": {
+        "text": "Watch now",
+        "href": "https://go.sitecore.com/l/857953/2024-03-06/txqmhm/857953/1709765026NoJlldMG/Left.png"
+      },
+      "variant": "full-width"
+    },
+
+    {
+      "title": "Sitecore Connect with CDP (Audience Export) ",
+      "copy": "",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://abarhoum.wordpress.com/2024/01/29/sitecore-connect-with-cdp-audience-export/"
+      },
+      "variant": "link"
+    },
+    {
+      "title": "Sitecore Downloads Migration: Smooth Transition to the New Portal ",
+      "copy": "",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://community.sitecore.com/community?id=community_blog&sys_id=5b502095c3b88a50176ab01a05013182"
+      },
+      "variant": "link"
+    },
+    {
+      "title": "Introducing Generative AI Features in Sitecore Send",
+      "copy": "",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://community.sitecore.com/community?id=community_Blog&sys_id=41151fd91bac4e90efd0ec22604bcbe8"
+      },
+      "variant": "link"
+    },
+    {
+      "title": "Use Sitecore XM 10.3 as headless CMS",
+      "copy": "",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.sergevandenoever.nl/Sitecore_Demo_Portal_headless_development/"
+      },
+      "variant": "link"
+    },
+    {
+      "title": "Serialize Complex Data for Sitecore XP Headless Development",
+      "copy": "",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://www.velir.com/ideas/2024/02/16/serialize-complex-data-for-sitecore-xp-headless-development"
+      },
+      "variant": "link"
+    },
+    {
+      "title": "Working with GitHub Codespaces and XM Cloud",
+      "copy": "",
+      "image": "",
+      "link": {
+        "text": "Read now",
+        "href": "https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/developer-experience/dev-workflow-codespaces"
+      },
+      "variant": "link"
+    }
+  ]
+}
