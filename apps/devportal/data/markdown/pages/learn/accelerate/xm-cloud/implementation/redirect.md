@@ -215,14 +215,11 @@ keep in mind the example above is a simplified version and you need to consider 
 
 ### Related documentations
 
-Vercel methods for handling redirects:
-
-- [Serverless functions](https://vercel.com/docs/edge-network/redirects#serverless-functions)
-- [Edge functions](https://vercel.com/docs/edge-network/redirects#edge-functions)
-- [Edge middleware](https://vercel.com/docs/edge-network/redirects#edge-middleware)
-- [Edge Configuration redirects](https://vercel.com/docs/edge-network/redirects#configuration-redirects)
-- [Next.js Configuration redirects](https://nextjs.org/docs/app/api-reference/next-config-js/redirects)
-- [How can I increase the limit of redirects or use dynamic redirects on Vercel?](https://vercel.com/guides/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel)
-- [Edge Config Limits](https://vercel.com/docs/storage/edge-config/edge-config-limits)
-- [Netlify Redirects](https://docs.netlify.com/routing/redirects/)
-- [Next.js redirects and rewrites on Netlify](https://docs.netlify.com/frameworks/next-js/runtime-v4/redirects-and-rewrites/)
+<Row columns={2}>
+  <Link title="Edge Redirects | Vercel Documentation" link="https://vercel.com/docs/edge-network/redirects" />
+  <Link title="Next.Js Redirects | Vercel Documentation" link="https://nextjs.org/docs/app/api-reference/next-config-js/redirects" />
+  <Link title="How can I increase the limit of redirects or use dynamic redirects on Vercel? | Vercel Documentation" link="https://vercel.com/guides/how-can-i-increase-the-limit-of-redirects-or-use-dynamic-redirects-on-vercel" />
+  <Link title="Edge Config Limits | Vercel Documentation" link="https://vercel.com/docs/storage/edge-config/edge-config-limits" />
+  <Link title="Redirects | Netlify Documentation" link="https://docs.netlify.com/routing/redirects/" />
+  <Link title="Next.js redirects and rewrites on Netlify | Netlify Documentation" link="https://docs.netlify.com/frameworks/next-js/runtime-v4/redirects-and-rewrites" />
+</Row>
