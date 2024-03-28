@@ -1,14 +1,20 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
 import { usePreview } from '@/src/context/PreviewContext';
-import { Alert, Badge, BoxProps, Button, HStack, Icon, Link, Tooltip } from '@chakra-ui/react';
+import { Badge, BoxProps, Button, HStack, Hide, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Text, Tooltip, chakra, useColorModeValue } from '@chakra-ui/react';
 import { mdiSquareEditOutline } from '@mdi/js';
+import Image from 'next/image';
 import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
+import { getSlug } from 'sc-changelog/utils/stringUtils';
 import { ProductIcon } from './ProductIcon';
 
 type ChangelogItemMetaProps = BoxProps & {
   loading?: boolean;
   item: ChangelogEntry;
 };
+
+const CustomImage = chakra(Image, {
+  shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
+});
 
 export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => {
   const { isPreview } = usePreview();
@@ -26,7 +32,44 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
 
   const MetaInfo = (
     <HStack {...rest} gap={4}>
-      {item.products != null ? item.products.map((product, key) => <ProductIcon product={product} key={key} />) : <Alert status="error">No product defined</Alert>}
+      {item.products != null && item.products?.length > 1 ? (
+        <HStack spacing={0}>
+          <Popover placement="bottom-start" trigger="click">
+            <PopoverAnchor>
+              {item.products != null && (
+                <Link href={`/changelog/${getSlug(item.products[0].productName)}`} className="">
+                  <ProductIcon product={item.products[0]} />
+                </Link>
+              )}
+            </PopoverAnchor>
+            <PopoverTrigger>
+              <Button variant="unstyled" size={'sm'} hideBelow={'sm'} ml={2}>
+                + {item.products.length - 1} <Hide below="md">{item.products.length == 1 ? 'other' : 'others'}</Hide>
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent p={2} maxW={'3xs'}>
+              <PopoverArrow />
+              <Stack>
+                {item.products &&
+                  item.products.slice(1).map((product, key) => (
+                    <HStack key={key}>
+                      <CustomImage boxSize={3} src={useColorModeValue(item.lightIcon, item.darkIcon)} alt={item.productName ? item.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
+                      <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
+                        <Text color={useColorModeValue('black', 'white')}>{product.productName}</Text>
+                      </Link>
+                    </HStack>
+                  ))}
+              </Stack>
+            </PopoverContent>
+          </Popover>
+        </HStack>
+      ) : (
+        item.products != null && (
+          <Link href={`/changelog/${getSlug(item.products[0].productName)}`} className="">
+            <ProductIcon product={item.products[0]} />
+          </Link>
+        )
+      )}
 
       <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
 
