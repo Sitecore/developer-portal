@@ -53,7 +53,7 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
                 {item.products &&
                   item.products.slice(1).map((product, key) => (
                     <HStack key={key}>
-                      <CustomImage boxSize={3} src={useColorModeValue(item.lightIcon, item.darkIcon)} alt={item.productName ? item.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
+                      <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
                       <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
                         <Text color={useColorModeValue('black', 'white')}>{product.productName}</Text>
                       </Link>
