@@ -32,11 +32,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       // Redirect to the download URL
-      res.redirect(307, url);
+      return res.redirect(307, url);
     } catch (err) {
       console.error(err);
       return res.status(500).json({ error: 'Internal server error' });
     }
   }
   res.status(405).send({ error: 'Method not allowed' });
+  res.end;
 }
