@@ -73,7 +73,7 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
                               {entry.products &&
                                 entry.products.slice(1).map((product, key) => (
                                   <HStack key={key}>
-                                    <CustomImage boxSize={3} src={useColorModeValue(entry.lightIcon, entry.darkIcon)} alt={entry.productName ? entry.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
+                                    <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
                                     <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
                                       <Text color={useColorModeValue('black', 'white')}>{product.productName}</Text>
                                     </Link>
