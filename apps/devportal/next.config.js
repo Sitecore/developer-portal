@@ -6,8 +6,6 @@
 const fs = require('fs');
 const path = require('path');
 
-const shouldAnalyzeBundles = process.env.ANALYZE === true;
-
 //const withTM = require('next-transpile-modules'); // pass the modules you would like to see transpiled
 const securityHeaders = [
   {
@@ -46,6 +44,11 @@ const redirects = [
     source: '/trial',
     destination: '/trials',
     permanent: true,
+  },
+  {
+    source: '/~/media/:uid(.*)', // Match any path after "/~/media/"
+    destination: '/api/redirect?type=download&uid=:uid', // Redirect to the specified destination
+    permanent: false, // Set to true for a permanent redirect (301)
   },
 ];
 
