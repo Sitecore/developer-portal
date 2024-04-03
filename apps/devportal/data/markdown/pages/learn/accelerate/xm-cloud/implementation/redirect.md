@@ -149,55 +149,104 @@ This is an simplified example for `/site-redirects.json`:
 }
 ```
 
-And inside your `/src/middleware.ts`:
+And create a new middleware plugin `src/lib/middleware/plugins/staticRedirects.ts`:
 
 ```javascript
-import { default as staticRedirects } from '../site-redirects.json';
-import { get } from '@vercel/edge-config';
-import { type NextFetchEvent, type NextRequest, NextResponse } from 'next/server';
-import middleware from 'lib/middleware';
+import { default as staticRedirects } from '../../../../site-redirects.json';
+import { NextRequest, NextResponse } from 'next/server';
+import { debug } from '@sitecore-jss/sitecore-jss';
+import { MiddlewarePlugin } from '..';
 
-// Check if the page is in preview mode
-const isPreview = (req: NextRequest): boolean => {
-  const preValue = req.cookies.get('__prerender_bypass')?.value;
-  const nextValue = req.cookies.get('__next_preview_data')?.value;
+class StaticRedirectsPlugin implements MiddlewarePlugin {
+    private staticRedirectsMiddleware: StaticRedirectsMiddleware;
+    order = 0;
 
-  return !!preValue || !!nextValue;
-};
-
-export default async function (req: NextRequest, ev: NextFetchEvent) {
-  if (!isPreview(req)) {
-    const reqUrl = new URL(req.url);
-    const hostName = reqUrl.hostname;
-
-    if (staticRedirects.hostName.indexOf(hostName) > -1) {
-      const urlPathName = decodeURIComponent(reqUrl.pathname).toLowerCase();
-
-      for (const redirectItem of staticRedirects.redirects) {
-        if (urlPathName === redirectItem.s) {
-          const destination = redirectItem.d;
-          if (destination.startsWith('http')) {
-            return NextResponse.redirect(new URL(destination), redirectItem.c);
-          } else {
-            return NextResponse.redirect(new URL(destination, req.url), redirectItem.c);
-          }
-        }
-      }
+    constructor() {
+        this.staticRedirectsMiddleware = new StaticRedirectsMiddleware({
+            disabled: () => false,
+        });
     }
-  }
+
+    async exec(req: NextRequest, res?: NextResponse): Promise<NextResponse> {
+        return this.staticRedirectsMiddleware.getHandler()(req, res);
+    }
 }
 
-export const config = {
-  /*
-   * Match all paths except for:
-   * 1. /api routes
-   * 2. /_next (Next.js internals)
-   * 3. /sitecore/api (Sitecore API routes)
-   * 4. /- (Sitecore media)
-   * 6. all root files inside /public
-   */
-  matcher: ['/', '/((?!api/|_next/|sitecore/api/|-/).*)'],
-};
+export type StaticRedirectsMiddlewareConfig = {
+    defaultHostname?: string;
+    disabled?: (req?: NextRequest, res?: NextResponse) => boolean;
+    excludeRoute?: (pathname: string) => boolean;
+}
+
+export class StaticRedirectsMiddleware {
+    private defaultHostname: string;
+    private config: StaticRedirectsMiddlewareConfig;
+
+    constructor(config: StaticRedirectsMiddlewareConfig) {
+        this.defaultHostname = config.defaultHostname || 'localhost';
+        this.config = config;
+    }
+
+    public getHandler() {
+        return async (req: NextRequest, res?: NextResponse) => {
+            try {
+                return await this.handler(req, res);
+            } catch (error) {
+                console.log('Redirect middleware failed:');
+                console.log(error);
+                return res || NextResponse.next();
+            }
+        };
+    }
+
+    private handler = async (req: NextRequest, res?: NextResponse) => {
+        const pathname: string = req.nextUrl.pathname;
+        const hostname: string = this.getHostHeader(req) || this.defaultHostname;
+
+        if (this.isPreview(req) || this.excludeRoute(pathname)) {
+            debug.redirects('skipped (%s)', this.isPreview(req) ? 'preview' : 'route excluded');
+            return res || NextResponse.next();
+        }
+
+        if (staticRedirectsFile.hostName.indexOf(hostname) > -1) {
+            const urlPathName = decodeURIComponent(pathname).toLowerCase();
+
+            for (const redirectItem of staticRedirectsFile.redirects) {
+              if (urlPathName === redirectItem.s) {
+                const destination = redirectItem.d;
+                if (destination.startsWith('http')) {
+                  return NextResponse.redirect(new URL(destination), redirectItem.c);
+                } else {
+                  return NextResponse.redirect(new URL(destination, req.url), redirectItem.c);
+                }
+              }
+            }
+        }
+
+        debug.redirects('skipped (redirect does not exist)');
+        return res || NextResponse.next();
+    }
+
+    protected isPreview(req: NextRequest) {
+        return !!(
+            req.cookies.get('__prerender_bypass')?.value || req.cookies.get('__next_preview_data')?.value
+        );
+    }
+
+    protected excludeRoute(pathname: string) {
+        return (
+            pathname.startsWith('/api/') || // Ignore Next.js API calls
+            pathname.startsWith('/sitecore/') || // Ignore Sitecore API calls
+            pathname.startsWith('/_next') || // Ignore next service calls
+            (this.config?.excludeRoute && this.config?.excludeRoute(pathname))
+        );
+    }
+
+    protected getHostHeader(req: NextRequest) {
+        return req.headers.get('host')?.split(':')[0];
+    }
+}
+
 ```
 
 keep in mind the example above is a simplified version and you need to consider handling the multisite and caching in your implementation.
