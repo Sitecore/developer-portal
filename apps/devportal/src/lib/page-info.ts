@@ -1,15 +1,14 @@
 // Global
 import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { SITECORE_COMMUNITY_MAX_COUNT, SitecoreCommunityApi, StackExchangeApi, YouTubeApi } from '@scdp/ui/components';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import { SITECORE_COMMUNITY_MAX_COUNT, StackExchangeApi, YouTubeApi, SitecoreCommunityApi } from '@scdp/ui/components';
 
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ParseContent } from '@lib/markdown/mdxParse';
 import { ChangelogEntriesPaginated } from '@scdp/changelog';
 import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@scdp/ui/components';
-
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
@@ -44,6 +43,7 @@ const getFileData = (directory: string, file: string): Matter => {
   }
 
   const fileMarkdown = fs.readFileSync(filePath, 'utf-8');
+
   // @TODO: Handle failures
   const results = matter(fileMarkdown);
 
@@ -60,7 +60,7 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
 
   const fileData = getFileData(pagesDirectory, `${relativePath}`);
   const meta = fileData.data as MarkdownMeta;
-  const content = await ParseContent(fileData.content);
+  const content = await ParseContent(Buffer.from(fileData.content));
   const fileName = `${repoUrl}/data/markdown/pages/${relativePath}/index.md`;
   const pageInfo = {
     hasInPageNav: true, // default to true, override in markdown
@@ -171,7 +171,7 @@ export const getPartialsAsArray = async (partials: string[]): Promise<PartialDat
     partials.map(async function (partial) {
       const data = getFileData(partialsDirectory, partial) as Matter;
       const fileName = `${repoUrl}/data/markdown/partials/${partial}.md`;
-      const parsedContent = await ParseContent(data.content);
+      const parsedContent = await ParseContent(Buffer.from(data.content));
 
       if (parsedContent != null) {
         content.push(parsedContent.result.compiledSource);
