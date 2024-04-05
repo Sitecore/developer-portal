@@ -1,6 +1,5 @@
 import { HStack, Heading, Stack } from '@chakra-ui/react';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
+import {Hero, CenteredContent, VerticalGroup } from '@scdp/ui/components';
 import SearchInput from '../components/sitecore-search/SearchInput';
 import Layout from '../layouts/Layout';
 

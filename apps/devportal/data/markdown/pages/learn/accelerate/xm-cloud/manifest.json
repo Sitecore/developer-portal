@@ -134,10 +134,6 @@
           ]
         },
         {
-          "title": "Redirect",
-          "path": "redirect"
-        },
-        {
           "title": "Search",
           "path": "search"
         },

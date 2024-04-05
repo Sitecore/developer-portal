@@ -1,7 +1,7 @@
 import { Alert, AlertIcon, AlertTitle, Tooltip } from '@chakra-ui/react';
 import Link from 'next/link';
-import { getSlug } from 'sc-changelog/utils/stringUtils';
-import { Option } from 'ui/components/dropdown/MultiSelect';
+import { getSlug } from '@scdp/changelog/utils';
+import { Option } from '@scdp/ui/components';
 
 type HintProps = {
   products?: Option[];

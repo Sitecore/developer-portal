@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Button, ButtonGroup, Center, IconButton, Tooltip } from '@chakra-ui/react';
 import { mdiChevronLeft, mdiChevronRight } from '@mdi/js';
 import Icon from '@mdi/react';

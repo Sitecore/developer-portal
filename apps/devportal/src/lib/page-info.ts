@@ -3,17 +3,13 @@ import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PageParti
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import StackExchangeApi from 'ui/components/integrations/stackexchange/StackExchange.api';
-import TwitterApi from 'ui/components/integrations/twitter/Twitter.api';
-import YouTubeApi from 'ui/components/integrations/youtube/YouTube.api';
+import { SITECORE_COMMUNITY_MAX_COUNT, StackExchangeApi, YouTubeApi, SitecoreCommunityApi } from '@scdp/ui/components';
 
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ParseContent } from '@lib/markdown/mdxParse';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
-import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/components/integrations/sitecoreCommunity';
-import SitecoreCommunityApi from 'ui/components/integrations/sitecoreCommunity/SitecoreCommunity.api';
-import { SITECORE_COMMUNITY_MAX_COUNT } from 'ui/components/integrations/sitecoreCommunity/sitecore-community.constants';
-import { searchForFile } from 'ui/lib/utils/fsUtils';
+import { ChangelogEntriesPaginated } from '@scdp/changelog';
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@scdp/ui/components';
+
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
@@ -101,16 +97,16 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
    * All of these APIs will return an empty array if the corresponding meta key is null
    */
   pageInfo.stackexchange = await StackExchangeApi.get(meta.stackexchange);
-  pageInfo.twitter = await TwitterApi.get(meta.twitter);
-  let twitterHandle: string | undefined = undefined;
-  if (meta.twitter) {
-    const twitterAsArray: string[] = Array.isArray(meta.twitter) ? meta.twitter : [meta.twitter];
-    twitterHandle = twitterAsArray && twitterAsArray.length > 0 ? twitterAsArray.find((arg) => arg.startsWith('@')) : '';
-  }
+  // pageInfo.twitter = await TwitterApi.get(meta.twitter);
+  // let twitterHandle: string | undefined = undefined;
+  // if (meta.twitter) {
+  //   const twitterAsArray: string[] = Array.isArray(meta.twitter) ? meta.twitter : [meta.twitter];
+  //   twitterHandle = twitterAsArray && twitterAsArray.length > 0 ? twitterAsArray.find((arg) => arg.startsWith('@')) : '';
+  // }
 
-  if (twitterHandle) {
-    pageInfo.twitterHandle = twitterHandle;
-  }
+  // if (twitterHandle) {
+  //   pageInfo.twitterHandle = twitterHandle;
+  // }
 
   if (meta.changelog) {
     pageInfo.changelogEntries = await (await ChangelogEntriesPaginated(false, meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
@@ -263,3 +259,29 @@ export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<
     return fileData;
   }
 };
+
+function searchForFile(folderPath: string, fileName: string): string | null {
+  const filePath = path.join(folderPath, fileName);
+
+  try {
+    // Check if the file exists in the current folder
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+      return filePath;
+    } else {
+      // If not found, check the parent folder
+      const parentFolder = path.dirname(folderPath);
+
+      // Base case: If we've reached the root folder and still haven't found the file, return null
+      if (parentFolder === folderPath) {
+        return null;
+      }
+
+      // Recursively search in the parent folder
+      return searchForFile(parentFolder, fileName);
+    }
+  } catch (err) {
+    // Handle any errors that occur during the search
+    console.error(`Error searching for file ${fileName}: ${err}`);
+    return null;
+  }
+}

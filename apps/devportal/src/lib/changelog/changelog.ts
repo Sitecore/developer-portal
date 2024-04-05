@@ -1,10 +1,9 @@
+import { ChangeType, Product } from '@scdp/changelog/types';
+import { Option } from '@scdp/ui/components';
 import axios from 'axios';
-import { ChangeType, Product } from 'sc-changelog/types';
 import useSWR, { Fetcher } from 'swr';
-import { Option } from 'ui/components/dropdown/MultiSelect';
 
 export const entriesApiUrl = '/api/changelog/v1';
-
 
 export function getChangeTypeOptions(): Option[] {
   const fetcher: Fetcher<ChangeType[], string> = async (url: string) => await axios.get(url).then((response) => response.data);

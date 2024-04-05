@@ -30,16 +30,16 @@ import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
 import Layout from '@src/layouts/Layout';
 import Link from 'next/link';
-import { ChangelogEntryByTitle } from 'sc-changelog/changelog';
-import GetProducts from 'sc-changelog/products';
-import { Product } from 'sc-changelog/types';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
-import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { ButtonLink } from 'ui/components/links/ButtonLink';
-import SocialShare from 'ui/components/social/SocialShare';
+import { ChangelogEntryByTitle } from '@scdp/changelog';
+import { GetProducts } from '@scdp/changelog';
+import { Product } from '@scdp/changelog/types';
+import { ChangelogEntry } from '@scdp/changelog/types';
+import { getSlug, slugify } from '@scdp/changelog/utils';
+import { getChangelogEntryUrl } from '@scdp/changelog/utils';
+import { Hero } from '@scdp/ui/components';
+import { CenteredContent, VerticalGroup } from '@scdp/ui/components';
+import { ButtonLink } from '@scdp/ui/components';
+import { SocialShare } from '@scdp/ui/components';
 
 type ChangelogProps = {
   currentProduct: Product;

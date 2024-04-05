@@ -1,13 +1,13 @@
+/* eslint-disable no-unused-vars */
 import { Box, Button, CloseButton, Link, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
 import { buildQuerystring, entriesApiUrl, getChangeTypeOptions, getProductOptions } from '@lib/changelog/changelog';
+import { ChangelogEntry, ChangelogEntryList, Product } from '@scdp/changelog/types';
+import { Option } from '@scdp/ui/components';
 import axios from 'axios';
 import NextLink from 'next/link';
 import { useState } from 'react';
-import { Product } from 'sc-changelog/types';
-import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
 import { Fetcher } from 'swr';
 import useSWRInfinite from 'swr/infinite';
-import { Option } from 'ui/components/dropdown/MultiSelect';
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
 import { Hint } from './Hint';
@@ -85,8 +85,7 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange }: C
   );
 };
 ChangelogList.defaultProps = {
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onProductsChange: () => {},
+  onProductsChange: (selectedProducts: Option[]) => {},
 };
 
 export default ChangelogList;

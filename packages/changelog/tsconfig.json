@@ -1,0 +1,12 @@
+{
+  "extends": "@scdp/typescript-config/react-library.json",
+  "compilerOptions": {
+    "lib": ["dom", "ES2015"],
+    "types": ["jest", "node"],
+    "outDir": "dist",
+    "rootDir": "src",
+
+  },
+  "include": ["src", "globals.d.ts"],
+  "exclude": ["node_modules", "dist", "build"]
+}

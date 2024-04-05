@@ -1,6 +1,6 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getQueryValue } from 'sc-changelog/utils/requests';
+import { getQueryValue } from '@scdp/changelog/utils';
 
 // API handler that enables preview mode, executed when the users toggles the preview mode manually
 

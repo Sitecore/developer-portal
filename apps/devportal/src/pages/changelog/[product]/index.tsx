@@ -8,12 +8,12 @@ import Icon from '@mdi/react';
 import Layout from '@src/layouts/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
-import GetProducts from 'sc-changelog/products';
-import { Product } from 'sc-changelog/types';
-import { getSlug, slugify } from 'sc-changelog/utils/stringUtils';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { ButtonLink } from 'ui/components/links/ButtonLink';
+import { GetProducts } from '@scdp/changelog';
+import { Product } from '@scdp/changelog/types';
+import { getSlug, slugify } from '@scdp/changelog/utils';
+import { Hero } from '@scdp/ui/components';
+import { CenteredContent, VerticalGroup } from '@scdp/ui/components';
+import { ButtonLink } from '@scdp/ui/components';
 
 type ChangelogProps = {
   currentProduct: Product;

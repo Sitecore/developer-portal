@@ -5,11 +5,8 @@ import { Heading } from '@chakra-ui/react';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getFirstXNewsletters } from '@lib/newsletter';
 import { getPageInfo } from '@lib/page-info';
+import { CategoryTileList, CategoryTileProps, CenteredContent, ContentSection, Hero, PromoCard } from '@scdp/ui/components';
 import Layout from '@src/layouts/Layout';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, ContentSection } from 'ui/components/helpers';
-import { CategoryTileList, CategoryTileProps } from 'ui/components/lists';
-import { PromoCard } from 'ui/components/promos';
 
 interface NewsletterPageProps {
   newsletters: CategoryTileProps[];

@@ -4,7 +4,7 @@ import { mdiChevronDown, mdiChevronRight, mdiMinus, mdiPlus } from '@mdi/js';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { appendPathToBasePath } from 'ui/lib/utils/stringUtil';
+import {appendPathToBasePath} from '@scdp/ui/lib';
 
 export interface SidebarNavigationProps {
   title?: string;

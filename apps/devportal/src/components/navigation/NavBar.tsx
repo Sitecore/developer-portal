@@ -34,14 +34,14 @@ import { mdiChevronDown, mdiChevronUp, mdiInformationOutline } from '@mdi/js';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import ProductIcon from 'ui/components/common/ProductIcon';
-import { Slide } from 'ui/components/helpers/Slide';
-import { GetProductLogoByVariant, Product, Type, Variant } from 'ui/lib/assets';
+import {ProductIcon, Slide} from '@scdp/ui/components';
+//import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 import { PreviewModeSwitch } from '../common/PreviewModeSwitch';
 import PreviewSearchInput from '../sitecore-search/PreviewSearchInput';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 import { SearchButton } from './SearchButton';
+import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 
 export type NavigationChildData = {
   title: string;

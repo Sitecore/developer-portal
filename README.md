@@ -11,11 +11,11 @@ The Sitecore developer portal is built with Next.js, Typescript, Chakra UI and [
 - apps
   - `devportal`: Developer Portal public site ([Next.js](https://nextjs.org/) based)
 - packages
-  - `ui`: a React component library shared by both `web` and `devportal` applications
-  - `sc-changelog`: Custom library to retrieve and parse changelog data
-  - `sc-changelog-tests`: Run tests for the changelog
-  - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-  - `tsconfig`: `tsconfig.json`s used throughout the monorepo
+  - `@scdp/ui`: a React component library based on [Sitecore Blok](https://blok.sitecore.com) used by `devportal` application
+  - `@scdp/changelog`: Custom library to retrieve and parse changelog data
+  - `@scdp/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+  - `@scdp/jest-presets`: `jest` configuration used throughout the monorepo
+  - `@scdp/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 

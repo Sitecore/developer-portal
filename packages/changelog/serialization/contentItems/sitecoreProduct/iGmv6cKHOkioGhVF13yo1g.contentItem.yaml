@@ -1,0 +1,21 @@
+﻿id: iGmv6cKHOkioGhVF13yo1g
+name: Sitecore Experience Platform (XP)
+fields:
+  productName:
+    value: Sitecore Experience Platform (XP)
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: hcuZ-s8vmESlKhMpV4wWxw
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

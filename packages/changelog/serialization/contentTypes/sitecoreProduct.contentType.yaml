@@ -1,0 +1,55 @@
+﻿id: sitecoreProduct
+name:
+  en-US: Sitecore Product
+description:
+  en-US: Sellable Products that sitecore lists as Hexagons or Private Cloud Products. Can be extended.
+fields:
+- id: productName
+  name:
+    en-US: Product Name
+  type: ShortText
+  required: true
+  helpText:
+    en-US: ''
+- id: abbreviation
+  name:
+    en-US: Abbreviation
+  type: ShortText
+  required: false
+  helpText:
+    en-US: ''
+- id: productDescription
+  name:
+    en-US: Product Description
+  type: LongText
+  required: false
+  helpText:
+    en-US: ''
+- id: sitecoreCloud
+  name:
+    en-US: Sitecore Cloud
+  type: Reference
+  required: false
+  helpText:
+    en-US: ''
+- id: productIcon
+  name:
+    en-US: Product Icon
+  type: Media
+  required: false
+  helpText:
+    en-US: ''
+- id: productIconLight
+  name:
+    en-US: Product icon light
+  type: ShortText
+  required: false
+  helpText:
+    en-US: Image URL to the light product icon
+- id: productIconDark
+  name:
+    en-US: Product icon dark
+  type: ShortText
+  required: false
+  helpText:
+    en-US: Image URL to the dark product icon

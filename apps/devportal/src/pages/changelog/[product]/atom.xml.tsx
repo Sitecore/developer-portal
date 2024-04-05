@@ -1,8 +1,8 @@
 import { CreateFeed } from '@lib/changelog/changelog-feeds';
-import { ChangelogEntriesByProduct } from 'sc-changelog/changelog';
-import GetProducts from 'sc-changelog/products';
-import { Product } from 'sc-changelog/types/product';
-import { slugify } from 'sc-changelog/utils/stringUtils';
+import { ChangelogEntriesByProduct } from '@scdp/changelog';
+import { GetProducts } from '@scdp/changelog';
+import { Product } from '@scdp/changelog/types';
+import { slugify } from '@scdp/changelog/utils';
 
 // Default export to prevent next.js errors
 const FeedPage = () => null;

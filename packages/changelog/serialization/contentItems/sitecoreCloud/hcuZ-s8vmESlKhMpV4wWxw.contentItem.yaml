@@ -1,0 +1,6 @@
+﻿id: hcuZ-s8vmESlKhMpV4wWxw
+name: Private Cloud
+fields:
+  cloudName:
+    value: Private Cloud
+    type: ShortText

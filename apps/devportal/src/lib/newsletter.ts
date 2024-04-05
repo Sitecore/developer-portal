@@ -1,7 +1,8 @@
 import { NEWSLETTER_DATA_DIRECTORY } from '@lib/staticPaths';
+import { translateDateAsYearMonth } from '@scdp/ui/lib';
+
 import fsPromises from 'fs/promises';
 import path from 'path';
-import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
 
 const MAX_RESULTS = 12;
 

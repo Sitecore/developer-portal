@@ -9,12 +9,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
+import { ChangelogEntriesPaginated } from '@scdp/changelog';
 import { SWRConfig } from 'swr';
-import Hero from 'ui/components/common/Hero';
-import { Option } from 'ui/components/dropdown/MultiSelect';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { ButtonLink } from 'ui/components/links/ButtonLink';
+import { Hero } from '@scdp/ui/components';
+import { Option } from '@scdp/ui/components';
+import { CenteredContent, VerticalGroup } from '@scdp/ui/components';
+import { ButtonLink } from '@scdp/ui/components';
 
 type ChangelogHomeProps = {
   fallback: any;

@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getQueryValue } from 'sc-changelog/utils/requests';
+import { getQueryValue } from '@scdp/changelog/utils';
 
 // API handler that enables preview mode, only executed when preview mode is not controlled manually (see middleware.ts)
 // This API is called from the preview hostname when the user visits it for the first time and uses the PREVIEW_SECRET env variable to make sure it's a valid request

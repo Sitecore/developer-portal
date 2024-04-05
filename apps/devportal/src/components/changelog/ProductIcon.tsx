@@ -1,8 +1,8 @@
 import { HStack, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import SitecoreProduct from 'sc-changelog/types/sitecoreProduct';
-import { getSlug } from 'sc-changelog/utils/stringUtils';
+import {SitecoreProduct} from '@scdp/changelog/types';
+import { getSlug } from '@scdp/changelog/utils';
 
 type ProductIconProps = {
   product: SitecoreProduct;

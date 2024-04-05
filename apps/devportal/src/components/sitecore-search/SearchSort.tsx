@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { CheckIcon, ChevronDownIcon } from '@chakra-ui/icons';
 import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { SearchResponseSortChoice } from '@sitecore-search/react';

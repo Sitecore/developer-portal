@@ -1,5 +1,11 @@
 {
-  "extends": "tsconfig/react-library.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "extends": "@scdp/typescript-config/react-library.json",
+  "compilerOptions": {
+    "lib": ["dom", "ES2015"],
+    "types": ["jest", "node"],
+    "outDir": "dist",
+    "rootDir": "./"
+  },
+  "include": ["src","turbo","globals.d.ts"],
+  "exclude": ["node_modules", "dist", "build"]
 }

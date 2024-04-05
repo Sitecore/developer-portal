@@ -1,7 +1,7 @@
 import { Box, Container, HStack, Link, Stack, Text, Tooltip } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { SocialButton } from 'ui/components/links/SocialButton';
+import { SocialButton } from '@scdp/ui/components';
 
 export const Footer = () => (
   <Box bg={'chakra-subtle-bg'} borderTop={'1px'} borderColor={'chakra-border-color'} position={'relative'} bottom={0} left={0} width={'full'}>

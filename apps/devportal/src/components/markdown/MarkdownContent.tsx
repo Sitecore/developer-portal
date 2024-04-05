@@ -4,20 +4,12 @@ import { PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { Icon } from '@mdi/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
+import { Article, ButtonLink, Download, Group, LinkItem, Promo, Repository, Row, TextLink, VideoPromo, YouTube } from '@scdp/ui/components';
 import { MDXRemote } from 'next-mdx-remote';
-import { Article, LinkItem, Repository } from 'ui/components/cards';
-import { Row } from 'ui/components/helpers/Row';
-import { ButtonLink } from 'ui/components/links/ButtonLink';
-import { Promo, VideoPromo } from 'ui/components/promos';
-import YouTube from 'ui/components/video/YouTube';
-
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { Download } from 'ui/components/cards/Download';
-import { Group } from 'ui/components/cards/Group';
-import { TextLink } from 'ui/components/links/TextLink';
+
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { a11yDark } = require('react-syntax-highlighter/dist/cjs/styles/hljs');
 
 type MarkdownContentProps = {

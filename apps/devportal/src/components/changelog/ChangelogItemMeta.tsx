@@ -3,8 +3,8 @@ import { usePreview } from '@/src/context/PreviewContext';
 import { Badge, BoxProps, Button, HStack, Hide, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Text, Tooltip, chakra, useColorModeValue } from '@chakra-ui/react';
 import { mdiSquareEditOutline } from '@mdi/js';
 import Image from 'next/image';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { getSlug } from 'sc-changelog/utils/stringUtils';
+import { ChangelogEntry } from '@scdp/changelog/types';
+import { getSlug } from '@scdp/changelog/utils';
 import { ProductIcon } from './ProductIcon';
 
 type ChangelogItemMetaProps = BoxProps & {

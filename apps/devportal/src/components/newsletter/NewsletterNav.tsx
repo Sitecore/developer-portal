@@ -1,6 +1,7 @@
 import { SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
 import { NewsletterPath } from '@lib/staticPaths';
-import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
+
+import { translateDateAsYearMonth } from '@scdp/ui/lib';
 import { SidebarNavigationItem } from '../../lib/interfaces/page-info';
 import SidebarNavigation from '../navigation/SidebarNavigation';
 

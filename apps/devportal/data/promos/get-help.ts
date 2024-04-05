@@ -1,4 +1,4 @@
-import { CTACardProps } from 'ui/components/promos';
+import { CTACardProps } from '@scdp/ui/components';
 
 const data: CTACardProps = {
   title: 'Get Help',

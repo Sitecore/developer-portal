@@ -1,4 +1,4 @@
-import { PromoCardProps } from 'ui/components/promos';
+import { PromoCardProps } from '@scdp/ui/components';
 
 const data: PromoCardProps = {
   title: 'Sitecore Essentials - FREE',

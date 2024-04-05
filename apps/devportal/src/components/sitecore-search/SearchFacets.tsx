@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Card, CardBody, CardHeader, Checkbox, Collapse, Heading, Hide, Show, Stack, useDisclosure } from '@chakra-ui/react';
 import { SearchResponseFacet } from '@sitecore-search/react';
 import { AccordionFacets, SearchResultsAccordionFacets } from '@sitecore-search/ui';

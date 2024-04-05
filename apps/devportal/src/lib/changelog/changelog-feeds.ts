@@ -1,6 +1,6 @@
 import { Feed } from 'feed';
-import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
-import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
+import { ChangelogEntry, ChangelogEntryList } from '@scdp/changelog/types';
+import { getChangelogEntryUrl } from '@scdp/changelog/utils';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 

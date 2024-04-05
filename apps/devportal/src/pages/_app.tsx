@@ -1,4 +1,4 @@
-import { Box, ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { IsSearchEnabled, SEARCH_CONFIG } from '@lib/search';
 import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
 import { Footer } from '@src/components/navigation/Footer';
@@ -8,8 +8,10 @@ import { Router } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
-import { EngageTrackerProvider } from 'ui/components/integrations';
-import { scdpTheme, toastOptions } from 'ui/lib/theme/theme';
+import { EngageTrackerProvider } from '@scdp/ui/components';
+import sitecoreTheme, { toastOptions } from '@sitecore/blok-theme'
+import { scdpTheme } from '@scdp/ui/theme';
+
 import { PreviewProvider } from '../context/PreviewContext';
 
 const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
@@ -79,7 +81,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SearchWrapper>
-      <ChakraProvider theme={scdpTheme} toastOptions={toastOptions}>
+      <ChakraProvider theme={extendTheme(sitecoreTheme, scdpTheme)} toastOptions={toastOptions}>
         <EngageTrackerProvider>
           <PreviewProvider hostname={hostname}>
             {progress && <TopBarProgress />}

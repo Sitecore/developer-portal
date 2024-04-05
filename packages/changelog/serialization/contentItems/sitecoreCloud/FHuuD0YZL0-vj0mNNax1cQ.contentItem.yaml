@@ -1,0 +1,6 @@
+﻿id: FHuuD0YZL0-vj0mNNax1cQ
+name: Commerce Cloud
+fields:
+  cloudName:
+    value: Commerce Cloud
+    type: ShortText

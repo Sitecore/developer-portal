@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path, { join } from 'path';
-import { Product } from 'sc-changelog';
-import GetProducts from 'sc-changelog/products';
-import { slugify } from 'sc-changelog/utils/stringUtils';
+import { Product } from '@scdp/changelog/types';
+import { slugify } from '@scdp/changelog/utils';
+import {GetProducts} from '@scdp/changelog';
 
 const pagesDirectory = path.join(process.cwd(), 'data/markdown/pages/');
 

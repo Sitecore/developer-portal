@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
-import { ChangelogEntry, ChangelogEntryList } from 'sc-changelog/types/changeLogEntry';
-import { getQueryArray, getQueryValue } from 'sc-changelog/utils/requests';
+import { ChangelogEntriesPaginated } from '@scdp/changelog';
+import { ChangelogEntry, ChangelogEntryList } from '@scdp/changelog/types';
+import { getQueryArray, getQueryValue } from '@scdp/changelog/utils';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
   const products: string[] = getQueryArray(req.query.product);
