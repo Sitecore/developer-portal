@@ -25,6 +25,7 @@ This turborepo has some additional tools already setup:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
+- [Jest](https://jestjs.io/) for testing
 - [Prettier](https://prettier.io) for code formatting
 
 ### Prerequisites
