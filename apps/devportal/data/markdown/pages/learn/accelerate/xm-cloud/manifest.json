@@ -60,7 +60,14 @@
         },
         {
           "title": "Information Architecture",
-          "path": "information-architecture"
+          "path": "information-architecture",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Content Audit",
+              "path": "content-audit"
+            }
+          ]
         },
         {
           "title": "Sprint Zero",
