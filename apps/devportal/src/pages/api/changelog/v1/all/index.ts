@@ -1,9 +1,9 @@
 // Interfaces
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { GetSummaryLatestItemsByProductAndChangeType } from 'sc-changelog/changelog';
-import { ChangeType, Product } from 'sc-changelog/types';
-import { ChangelogEntrySummary } from 'sc-changelog/types/changeLogEntry';
-import { getQueryArray } from 'sc-changelog/utils/requests';
+import { GetSummaryLatestItemsByProductAndChangeType } from '@scdp/changelog';
+import { ChangeType, Product } from '@scdp/changelog/types';
+import { ChangelogEntrySummary } from '@scdp/changelog/types';
+import { getQueryArray } from '@scdp/changelog/utils';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Record<string, ChangelogEntrySummary[]>>) => {
   const products: string[] = getQueryArray(req.query.product);

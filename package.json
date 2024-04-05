@@ -1,29 +1,33 @@
 {
-  "name": "developer-portal-turborepo",
-  "version": "1.0.0",
+  "name": "turborepo-poc",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --no-daemon",
-    "lint": "turbo run lint",
+    "build": "dotenvx run --env-file=.env --env-file=.env.local -- turbo build",
+    "dev": "dotenvx run --env-file=.env --env-file=.env.local -- turbo dev",
+    "start": "dotenvx run --env-file=.env --env-file=.env.local -- turbo start",
+    "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test",
     "clean": "npm exec --workspaces -- shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && shx rm -rf node_modules && shx echo Done!",
     "remove-turbo-cache": "shx rm -rf ./node_modules/.cache/turbo",
     "update-dependencies": "turbo update-dependencies && npx npm-check-updates -u"
   },
-  "devDependencies": {
-    "eslint": "^8.38.0",
-    "eslint-config-custom": "*",
-    "eslint-plugin-import": "^2.27.5",
-    "prettier": "latest",
-    "sc-changelog": "*",
-    "shx": "^0.3.4",
-    "turbo": "^1.12.2",
-    "ui": "*"
+  "dependencies": {
+    "@dotenvx/dotenvx": "^0.29.1"
   },
-  "packageManager": "npm@9.5.0^"
+  "devDependencies": {
+    "@scdp/eslint-config": "*",
+    "@scdp/typescript-config": "*",
+    "prettier": "^3.2.5",
+    "shx": "^0.3.4",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@9.7.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

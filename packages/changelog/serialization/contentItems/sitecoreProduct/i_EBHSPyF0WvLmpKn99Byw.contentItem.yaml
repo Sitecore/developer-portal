@@ -1,0 +1,27 @@
+﻿id: i_EBHSPyF0WvLmpKn99Byw
+name: Send
+fields:
+  productName:
+    value: Send
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/27395bd42ca54b0486190233a0349509
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/3241a593939a41c997dd49a13d641ebc
+    type: ShortText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: dNxyawiMdU2XMzT1UiI7sw
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

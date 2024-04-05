@@ -13,38 +13,11 @@
     "clean": {
       "cache": false
     },
-    "devportal#build": {
-      "dependsOn": ["^build"],
-      "env": [
-        "NEXT_PUBLIC_YOUTUBE_API_KEY",
-        "NEXT_PUBLIC_TWITTER_BEARER_TOKEN",
-        "NEXT_PUBLIC_COOKIE_CONSENT_URL",
-        "NEXT_PUBLIC_GTM_ID",
-        "NEXT_PUBLIC_GTM_AUTH",
-        "NEXT_PUBLIC_GTM_ENVIRONMENT",
-        "NEXT_PUBLIC_PUBLIC_URL",
-        "ANALYZE",
-        "NEXT_PUBLIC_SEARCH_APP_ENV",
-        "NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY",
-        "NEXT_PUBLIC_SEARCH_APP_API_KEY",
-        "NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH",
-        "NEXT_PUBLIC_SEARCH_SOURCES",
-        "NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX",
-        "SITECORE_CHONE_ENDPOINT_PREVIEW",
-        "SITECORE_CHONE_ENDPOINT_DELIVERY",
-        "SITECORE_CHONE_AUTH_TOKEN_PREVIEW",
-        "SITECORE_CHONE_AUTH_TOKEN_DELIVERY",
-        "NEXT_PUBLIC_SITECORE_CDP_CLIENT_KEY",
-        "NEXT_PUBLIC_SITECORE_CDP_TARGETURL",
-        "NEXT_PUBLIC_SITECORE_CDP_COOKIE_DOMAIN",
-        "NEXT_PUBLIC_SITECORE_CDP_POS",
-        "NEXT_PUBLIC_SITECORE_CHONE_ORGANIZATION",
-        "NEXT_PUBLIC_SITECORE_CHONE_TENANT",
-        "NEXT_PUBLIC_PREVIEW_HOSTNAME",
-        "PREVIEW_SECRET",
-        "NODE_ENV"
-      ],
-      "outputs": [".next/**"]
+    "test": {
+      "cache": false
+    },
+    "start": {
+      "dependsOn": ["^build"]
     }
   }
 }

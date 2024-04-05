@@ -1,0 +1,21 @@
+﻿id: ZTMYkjzXSkaOwpB95ZujrQ
+name: Sitecore Cloud Portal
+fields:
+  productName:
+    value: Sitecore Cloud Portal
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: C0s2noNU9U6e6gtCCwcGwg
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

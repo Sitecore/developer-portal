@@ -9,13 +9,10 @@ import { getPageInfo } from '@lib/page-info';
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import Layout from '@src/layouts/Layout';
 import { NextPage } from 'next';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import Hexagons from 'ui/components/hexagons/Hexagons';
-import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
-import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
-import { CategoryTileList, GenericList } from 'ui/components/lists';
-import { CTACard } from 'ui/components/promos';
+import {Hero} from '@scdp/ui/components';
+import { CenteredContent, VerticalGroup } from '@scdp/ui/components';
+import {Hexagons, StackExchangeFeed, YouTubeFeed, SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, CategoryTileList, GenericList } from '@scdp/ui/components';
+import { CTACard } from '@scdp/ui/components';
 import { TrackPageView } from '../components/engagetracker/TrackPageView';
 
 export async function getStaticProps() {

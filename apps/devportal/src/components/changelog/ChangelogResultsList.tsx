@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
+import { ChangelogEntry } from '@scdp/changelog/types';
 import ChangeLogItem from './ChangeLogItem';
 
 type ChangelogResultsListProps = {

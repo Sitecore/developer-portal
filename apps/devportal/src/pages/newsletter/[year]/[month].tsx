@@ -6,10 +6,10 @@ import NewsletterStory, { NewsletterStoryData } from '@components/newsletter/New
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getNewsletter, getNewsletterTitle } from '@lib/newsletter';
 import { NewsletterPath, getNewsletterStaticPaths } from '@lib/staticPaths';
+import { CenteredContent, Hero, VerticalGroup } from '@scdp/ui/components';
+import { translateDateAsYearMonth } from '@scdp/ui/lib';
 import Layout from '@src/layouts/Layout';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import { translateDateAsYearMonth } from 'ui/lib/utils/dateUtil';
+
 
 export interface NewsletterContentPageProps {
   content: NewsletterStoryData[];

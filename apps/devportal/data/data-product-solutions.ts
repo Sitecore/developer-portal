@@ -1,4 +1,4 @@
-import { CategoryTileProps } from 'ui/components/lists';
+import { CategoryTileProps } from '@scdp/ui/components';
 
 export const productSolutions: CategoryTileProps[] = [
   {

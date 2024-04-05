@@ -1,11 +1,9 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { Alert, AlertIcon, Box, Heading, Text } from '@chakra-ui/react';
+import { CenteredContent, Hero, LinkItem, Row, VerticalGroup } from '@scdp/ui/components';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
-import { LinkItem } from 'ui/components/cards';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, Row, VerticalGroup } from 'ui/components/helpers';
 
 export default function ChangelogCurrent() {
   return (

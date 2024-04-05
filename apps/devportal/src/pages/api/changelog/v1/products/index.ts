@@ -1,8 +1,8 @@
 // Interfaces
 import type { NextApiRequest, NextApiResponse } from 'next';
-import GetProducts from 'sc-changelog/products';
-import { Product } from 'sc-changelog/types';
-import { getQueryValue } from 'sc-changelog/utils/requests';
+import { GetProducts } from '@scdp/changelog';
+import { Product } from '@scdp/changelog/types';
+import { getQueryValue } from '@scdp/changelog/utils';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Product[]>) => {
   const showAll: boolean = getQueryValue(req.query.all) == 'false' ? false : true;

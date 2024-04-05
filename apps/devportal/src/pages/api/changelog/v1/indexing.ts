@@ -1,9 +1,8 @@
-import { ChangelogEntry, ChangelogEntryList } from '@/../../packages/sc-changelog/types/changeLogEntry';
+import { ChangelogEntriesPaginated } from '@scdp/changelog';
+import { ChangelogEntry, ChangelogEntryList } from '@scdp/changelog/types';
+import { getChangelogEntryUrl, getQueryValue } from '@scdp/changelog/utils';
+import { removeHtmlTagsAndSpecialChars } from '@scdp/ui/lib';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
-import { getQueryValue } from 'sc-changelog/utils/requests';
-import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
-import { removeHtmlTagsAndSpecialChars } from 'ui/lib/utils/stringUtil';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 

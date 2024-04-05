@@ -5,12 +5,12 @@ import SocialFeeds from '@src/components/common/SocialFeeds';
 import { MarkDownContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
-import Hero from 'ui/components/common/Hero';
-import { ContentSection } from 'ui/components/helpers';
-import LatestChangelogEntries from 'ui/components/integrations/changelog/LatestChangelogEntries';
-import { PromoCardProps } from 'ui/components/promos';
-import PromoList from 'ui/components/promos/promoCard/PromoList';
+import { Hero } from '@scdp/ui/components';
+import { ContentSection } from '@scdp/ui/components';
+import { PromoCardProps } from '@scdp/ui/components';
+import {PromoList} from '@scdp/ui/components';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
+import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 
 type DefaultContentPageProps = {
   pageInfo: PageInfo;
@@ -47,7 +47,7 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
           <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && Nav} inPageNav={sectionTitles.length > 0 && <InPageNav titles={sectionTitles} />} inPageLinks={sectionTitles}>
             <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
 
-            <LatestChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />
+            <ChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />
             <PromoList data={promoAfter} />
             <SocialFeeds pageInfo={pageInfo} />
           </ThreeColumnLayout>

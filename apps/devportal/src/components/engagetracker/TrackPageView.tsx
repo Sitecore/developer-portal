@@ -1,9 +1,9 @@
 import { PageInfo } from '@/src/lib/interfaces/page-info';
-import { INestedObject } from '@sitecore/engage/types/lib/utils/flatten-object';
+import { Product } from '@scdp/changelog/types';
+import { useEngageTracker } from '@scdp/ui/components';
+//import { INestedObject } from '@sitecore/engage/types/lib/utils/flatten-object';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useRef } from 'react';
-import { Product } from 'sc-changelog';
-import { useEngageTracker } from 'ui/components/integrations';
 
 interface TrackPageViewProps {
   children: React.ReactNode;
@@ -26,7 +26,7 @@ export const TrackPageView: FC<TrackPageViewProps> = (props) => {
         slugPath = props.slug;
       }
 
-      const additionalData: INestedObject = {};
+      const additionalData: any = {};
 
       if (props.pageInfo?.product) {
         additionalData.product = props.pageInfo.product;

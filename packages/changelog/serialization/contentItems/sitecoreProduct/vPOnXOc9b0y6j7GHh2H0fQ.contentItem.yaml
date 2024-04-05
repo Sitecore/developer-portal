@@ -1,0 +1,21 @@
+﻿id: vPOnXOc9b0y6j7GHh2H0fQ
+name: Sitecore Experience Manager (XM)
+fields:
+  productName:
+    value: Sitecore Experience Manager (XM)
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: hcuZ-s8vmESlKhMpV4wWxw
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

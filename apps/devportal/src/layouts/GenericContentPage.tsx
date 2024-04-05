@@ -2,14 +2,11 @@ import { Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
+import { CenteredContent, ContentSection, Hero, PromoCardProps, PromoList, VerticalGroup } from '@scdp/ui/components';
 import SocialFeeds from '@src/components/common/SocialFeeds';
 import MarkdownContent from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, ContentSection, VerticalGroup } from 'ui/components/helpers';
-import { PromoCardProps } from 'ui/components/promos';
-import PromoList from 'ui/components/promos/promoCard/PromoList';
 import InPageNavSmall from '../components/navigation/InPageNavSmall';
 
 type GenericContentPageProps = {

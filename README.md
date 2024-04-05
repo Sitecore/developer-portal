@@ -11,11 +11,11 @@ The Sitecore developer portal is built with Next.js, Typescript, Chakra UI and [
 - apps
   - `devportal`: Developer Portal public site ([Next.js](https://nextjs.org/) based)
 - packages
-  - `ui`: a React component library shared by both `web` and `devportal` applications
-  - `sc-changelog`: Custom library to retrieve and parse changelog data
-  - `sc-changelog-tests`: Run tests for the changelog
-  - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-  - `tsconfig`: `tsconfig.json`s used throughout the monorepo
+  - `@scdp/ui`: a React component library based on [Sitecore Blok](https://blok.sitecore.com) used by `devportal` application
+  - `@scdp/changelog`: Custom library to retrieve and parse changelog data
+  - `@scdp/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+  - `@scdp/jest-presets`: `jest` configuration used throughout the monorepo
+  - `@scdp/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -25,6 +25,7 @@ This turborepo has some additional tools already setup:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
+- [Jest](https://jestjs.io/) for testing
 - [Prettier](https://prettier.io) for code formatting
 
 ### Prerequisites
@@ -46,7 +47,6 @@ The following variables should exist within the .env.local file:
 ```
 NEXT_PUBLIC_PUBLIC_URL=
 NEXT_PUBLIC_YOUTUBE_API_KEY="An API key with YouTube Data API v3 access enabled"
-NEXT_PUBLIC_TWITTER_BEARER_TOKEN="A bearer token from Twitter"
 NEXT_PUBLIC_COOKIE_CONSENT_URL=
 NEXT_PUBLIC_GTM_ID=
 NEXT_PUBLIC_GTM_AUTH=
@@ -90,7 +90,6 @@ NEXT_PUBLIC_SITECORE_CDP_POS=
 
 ```
 NEXT_PUBLIC_YOUTUBE_API_KEY=""
-NEXT_PUBLIC_TWITTER_BEARER_TOKEN=""
 NEXT_PUBLIC_COOKIE_CONSENT_URL=
 
 NEXT_PUBLIC_GTM_ID=

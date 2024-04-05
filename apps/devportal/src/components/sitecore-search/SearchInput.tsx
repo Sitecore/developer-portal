@@ -3,9 +3,10 @@ import { Button, FormControl, HStack, Input, InputGroup, InputLeftElement, Input
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import ProductLogo from 'ui/components/common/ProductLogo';
-import { useEngageTracker } from 'ui/components/integrations';
-import { Product } from 'ui/lib/assets';
+import { ProductLogo } from '@scdp/ui/components';
+import { useEngageTracker } from '@scdp/ui/components';
+import { Product } from '@scdp/ui/lib';
+
 
 export interface SearchInputProps {
   showButton?: boolean;

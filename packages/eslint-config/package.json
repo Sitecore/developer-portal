@@ -1,0 +1,22 @@
+{
+  "name": "@scdp/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "library.js",
+    "next.js",
+    "react-internal.js"
+  ],
+  "devDependencies": {
+    "eslint-config-turbo": "^1.13.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-only-warn": "^1.1.0",
+    "eslint-plugin-jest": "^27.9.0",
+    "eslint-plugin-react": "^7.34.1",
+    "@typescript-eslint/parser": "^7.5.0",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "eslint-config-next": "latest",
+    "@next/eslint-plugin-next": "latest",
+    "typescript": "^5.4.4"
+  }
+}

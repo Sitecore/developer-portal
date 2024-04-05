@@ -1,6 +1,5 @@
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { StackExchangeQuestion, Tweet, YouTubeVideo } from 'ui/components/integrations';
-import { ForumOption, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption } from 'ui/components/integrations/sitecoreCommunity';
+import { ChangelogEntry } from '@scdp/changelog/types';
+import { ForumOption, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption, StackExchangeQuestion, YouTubeVideo } from '@scdp/ui/components';
 import { ContentHeading } from './contentheading';
 
 type PageInfoCore = {
@@ -56,7 +55,6 @@ export type PageInfo = PageInfoCore & {
   stackexchange: StackExchangeQuestion[];
   changelogEntries: ChangelogEntry[];
   changelogProductId?: string[];
-  twitter: Tweet[];
   twitterHandle?: string;
   youtube: YouTubeVideo[];
   youtubeTitle?: string;

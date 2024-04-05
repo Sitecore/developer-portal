@@ -1,0 +1,22 @@
+{
+  "extends": ["//"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**"],
+      "env": [
+        "NEXT_PUBLIC_PUBLIC_URL",
+        "NEXT_PUBLIC_SEARCH_SOURCES",
+        "NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH",
+        "NEXT_PUBLIC_SEARCH_APP_ENV",
+        "NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY",
+        "NEXT_PUBLIC_SEARCH_APP_API_KEY",
+        "NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX",
+        "PREVIEW_SECRET",
+        "NEXT_PUBLIC_GTM_ID",
+        "NEXT_PUBLIC_GTM_AUTH",
+        "NEXT_PUBLIC_GTM_ENVIRONMENT"
+      ]
+    }
+  }
+}

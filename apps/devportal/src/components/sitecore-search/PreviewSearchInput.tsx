@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { getColorScheme } from '@/src/lib/search';
 import {
   AbsoluteCenter,
@@ -23,6 +24,8 @@ import {
   Text,
   Tooltip,
 } from '@chakra-ui/react';
+import { ProductLogo } from '@scdp/ui/components';
+import { Product } from '@scdp/ui/lib';
 import type { PreviewSearchInitialState } from '@sitecore-search/react';
 import { WidgetDataType, trackEntityPageViewEvent, usePreviewSearch, widget } from '@sitecore-search/react';
 import { Presence, PreviewSearch } from '@sitecore-search/ui';
@@ -30,8 +33,6 @@ import { useRouter } from 'next/router';
 import type { ChangeEvent, SyntheticEvent } from 'react';
 import { useCallback } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import ProductLogo from 'ui/components/common/ProductLogo';
-import { Product } from 'ui/lib/assets';
 
 type ArticleModel = {
   id: string;
@@ -118,12 +119,11 @@ export const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: Pre
   );
 
   return (
-    <Box display={'flex'} width={rest.width} onFocus={rest.onFocus} onBlur={rest.onBlur} transition={rest.transition} >
+    <Box display={'flex'} width={rest.width} onFocus={rest.onFocus} onBlur={rest.onBlur} transition={rest.transition}>
       <PreviewSearch.Root data-control="PreviewSearch.Root">
         <FormControl
           onSubmit={(e: SyntheticEvent): void => {
             e.preventDefault();
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-expect-error
             const target = e.target.query as HTMLInputElement;
             router.push('/search?q=' + encodeURIComponent(target.value)).then(() => router.reload());

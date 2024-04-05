@@ -9,9 +9,9 @@ import styles from '../../components/markdown/MarkdownContent.module.css';
 import { ContentHeading } from '../interfaces/contentheading';
 import rehypeExtractHeadings from './rehype/extractHeadings';
 
-export async function ParseContent(stream: string) {
+export async function ParseContent(stream: Buffer) {
   const headings: ContentHeading[] = [];
-  const result = await serialize(stream, {
+  const result = await serialize(stream.toString(), {
     mdxOptions: {
       remarkPlugins: [
         remarkGfm,

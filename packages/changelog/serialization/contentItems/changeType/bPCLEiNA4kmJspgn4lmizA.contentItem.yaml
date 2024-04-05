@@ -1,0 +1,6 @@
+﻿id: bPCLEiNA4kmJspgn4lmizA
+name: New Feature
+fields:
+  changeType:
+    value: New Feature
+    type: ShortText

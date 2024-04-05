@@ -1,0 +1,27 @@
+﻿id: av_GqshF5U2kL8XMGjf-Xw
+name: XM Cloud
+fields:
+  productName:
+    value: XM Cloud
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/740b04f7a7ca404e96d69319fb98f6b0
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/1b8773a1ee1041dea31820d22a489a9f
+    type: ShortText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: C0s2noNU9U6e6gtCCwcGwg
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

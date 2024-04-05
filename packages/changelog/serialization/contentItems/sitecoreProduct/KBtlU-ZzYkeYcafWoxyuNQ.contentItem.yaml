@@ -1,0 +1,27 @@
+﻿id: KBtlU-ZzYkeYcafWoxyuNQ
+name: Connect
+fields:
+  productName:
+    value: Connect
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/8ab39b3190204ee796622d8934d19f8b
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/033435b9dc37460098257f65a1a314b1
+    type: ShortText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: dNxyawiMdU2XMzT1UiI7sw
+    type: Reference
+  productIcon:
+    value: []
+    type: Media
