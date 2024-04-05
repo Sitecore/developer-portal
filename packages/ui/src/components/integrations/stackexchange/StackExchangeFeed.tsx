@@ -19,7 +19,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
         <Heading as={'h3'} size={{ base: 'lg', md: 'xl' }}>
           {title ? title : `The Latest on Sitecore StackExchange`}
         </Heading>
-        <ButtonLink href={`https://sitecore.stackexchange.com/}`} text={'See all questions on StackExchange'} />
+        <ButtonLink href={`https://sitecore.stackexchange.com/`} text={'See all questions on StackExchange'} />
       </CardHeader>
       <CardBody px={0}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 2, md: 8 }}>
