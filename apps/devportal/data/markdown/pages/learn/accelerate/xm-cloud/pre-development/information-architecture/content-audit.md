@@ -102,3 +102,20 @@ In Sitecore XM and XP it was common to leverage events when certain actions were
 <Row columns={2}>
 <Link title="Accelerate Head Application Security Recipe" link="https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/security/head-application-security" />
 </Row>
+
+## Related Documentation
+
+<Row columns={2}>
+<Link title="Using SXA Headless for XM Cloud development" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-sxa-for-xm-cloud-development.html" />
+<Link title="Page Designs" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-and-assign-a-page-design-in-the-experience-editor.html" />
+<Link title="Partial Designs" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-and-change-a-partial-design.html" />
+<Link title="Data Sources" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-sources.html" />
+<Link title="Configure a Sitemap" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html" />
+<Link title="Configure the Robots.txt" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-the-robots-txt-file.html" />
+<Link title="Sitecore Item API" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-item-api.html" />
+<Link title="Sitecore Powershell" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-item-api.html" />
+<Link title="User Security" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/user-security.html" />
+<Link title="Limitations and Restrictions of Experience Edge for XM" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/limitations-and-restrictions-of-experience-edge-for-xm.html" />
+<Link title="Sitecore Content Hub" link="https://developers.sitecore.com/dam-and-content-operations/dam" />
+<Link title="Webhooks" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/webhooks.html" />
+</Row>
