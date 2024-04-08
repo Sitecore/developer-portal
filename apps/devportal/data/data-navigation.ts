@@ -200,7 +200,7 @@ export const mainNavigation: NavItem[] = [
           },
           {
             title: 'Sitecore Install Framework',
-            url: '/devops/sif',
+            url: '/devops/sitecore-install-framework',
           },
           {
             title: 'Sitecore ARM Templates',
