@@ -6,7 +6,7 @@ import { CategoryTileListData } from './types';
 
 export const CategoryTileList = (props: CategoryTileListData) => (
   <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
-    {props.cards.map((card, i) => (
+    {props.cards?.map((card, i) => (
       <LinkBox as="article" key={i}>
         <Card variant="flat" size={'lg'} layerStyle={'interactive.fill'}>
           <CardHeader>

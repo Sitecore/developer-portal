@@ -41,8 +41,8 @@ export async function getStaticProps(context: any) {
 export default function NewsletterPage({ newsletters, pageInfo }: NewsletterPageProps) {
   return (
     <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
-        <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
+      <Layout title={pageInfo?.title} description={pageInfo?.description} openGraphImage={pageInfo?.openGraphImage}>
+        <Hero title={pageInfo?.title} description={pageInfo?.description} image={pageInfo?.heroImage} productLogo={pageInfo?.productLogo} />
         <VerticalGroup>
           <CenteredContent>
             <CategoryTileList cards={newsletters} />
