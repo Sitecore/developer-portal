@@ -34,4 +34,4 @@ Sitecore Experience Commerce (XC) empowers marketers and merchandizers to fully 
 
 ## Downloads
 
-- [Downloads](downloads/Sitecore_Commerce)
+- [Downloads](/downloads/Sitecore_Commerce)

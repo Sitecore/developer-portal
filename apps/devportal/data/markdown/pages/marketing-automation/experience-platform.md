@@ -33,6 +33,6 @@ Using Sitecore XP Marketing Automation features you will be able to send automat
 
 ## Resources
 
-- [Download Sitecore Experience Platform](downloads/Sitecore_Experience_Platform)
-- [Download Email Experience Manager (EXM)](downloads/Email_Experience_Manager)
-- [Download EXM Dedicated Dispatch Server](downloads/EXM_Dedicated_Dispatch_Server)
+- [Download Sitecore Experience Platform](/downloads/Sitecore_Experience_Platform)
+- [Download Email Experience Manager (EXM)](/downloads/Email_Experience_Manager)
+- [Download EXM Dedicated Dispatch Server](/downloads/EXM_Dedicated_Dispatch_Server)

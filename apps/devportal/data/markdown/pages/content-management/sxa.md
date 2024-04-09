@@ -35,5 +35,5 @@ In order to get started with SXA you will need a clean installation of Sitecore 
 
 ## Resources
 
-- [Download SXA](downloads/Sitecore_Experience_Accelerator)
+- [Download SXA](/downloads/Sitecore_Experience_Accelerator)
 - [SXA Styleguide](https://github.com/markvanaalst/SXA.Styleguide)
