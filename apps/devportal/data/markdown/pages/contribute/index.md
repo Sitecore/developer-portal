@@ -32,7 +32,7 @@ _Note: The site will still function without the above keys. The components that 
 
 ## Getting Started
 
-1. Install [Node.js](htts://nodejs.org/en/), we recommend the LTS version.
+1. Install [Node.js](https://nodejs.org/en/), we recommend the LTS version.
 2. Clone the repository `git clone https://github.com/Sitecore/developer-portal.git`
 3. Inside the repository run `npm install` to install all the dependencies.
 4. Create a `.env.local` file in the root of the project and add the following environment variables:

@@ -50,10 +50,10 @@ These options can enable/disable Sitecore Community integrations on a page level
 
 |Variable|Type|Purpose|
 |-|-|-|
-sitecoreCommunityBlog|number/boolean|[Read more here](content/community)|
-sitecoreCommunityBlogSort|SortOption/SortOption[]|[Read more here](content/community)|
-sitecoreCommunityEvents|boolean|[Read more here](content/community)|
-sitecoreCommunityNews|boolean|[Read more here](content/community)|
-sitecoreCommunityQuestions|number/boolean|[Read more here](content/community)|
-sitecoreCommunityQuestionsSort|SortOption/SortOption[]|[Read more here](content/community)|
-sitecoreCommunityQuestionsCategory|ForumOption/ForumOption[]|[Read more here](content/community)|
+sitecoreCommunityBlog|number/boolean|[Read more here](/contribute/community)|
+sitecoreCommunityBlogSort|SortOption/SortOption[]|[Read more here](/contribute/community)|
+sitecoreCommunityEvents|boolean|[Read more here](/contribute/community)|
+sitecoreCommunityNews|boolean|[Read more here](/contribute/community)|
+sitecoreCommunityQuestions|number/boolean|[Read more here](/contribute/community)|
+sitecoreCommunityQuestionsSort|SortOption/SortOption[]|[Read more here](/contribute/community)|
+sitecoreCommunityQuestionsCategory|ForumOption/ForumOption[]|[Read more here](/contribute/community)|
