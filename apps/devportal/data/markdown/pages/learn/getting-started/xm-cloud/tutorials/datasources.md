@@ -1,12 +1,12 @@
 ---
-title: 'Tutorial: How to Create Component Datasources in XM Cloud'
-description: 'In this tutorial, we will go through the steps to TODO: DESCRIPTION'
+title: 'Tutorial: How to Create Component Data Sources in XM Cloud'
+description: 'In this tutorial, we will go through the steps to create a new data template for the Text Teaser component. You will update the Text Teaser component to work with this data and configure data shortcuts for your author. You will also learn how to bring your changes into source control.'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 ---
 
 ## Introduction - What You are Going to Learn
 
-In this tutorial, we will go through the steps to TODO: DESCRIPTION
+In this tutorial, we will go through the steps to create a new data template for the Text Teaser component. You will update the Text Teaser component to work with this data and configure data shortcuts for your author. You will also learn how to bring your changes into source control.
 
 ## Overview
 
@@ -247,7 +247,7 @@ Done! We can create the pull request and merge the changes to main.
 
 <Alert status="success">
    <AlertIcon />
-   **Congratulations!** You have done the thing! TODO: What did they do?
+   **Congratulations!** You have now updated the Text Teaser component to work from a piece of re-usable authored content instead of using static content added to the Component directly. You also learned how to configure modules and how to bring your changes into source control.
 </Alert>
 
 ### Related XM Cloud Documentation
