@@ -10,45 +10,182 @@ In this tutorial, we will go through the steps to TODO: DESCRIPTION
 
 ## Overview
 
-TODO: Overview
+XM Cloud Components can be used to centrally manage the content of our components and use those components in different apps for example in your website managed with XM Cloud Pages as seen here. However, I want to use the component as a UI building block in XM Cloud on different pages with different content that’s managed inside of XM Cloud. Therefore, I need to setup the data model for this component and create the content.
+My Component requires the following fields:
+
+- Headline (Single Line Text)
+- Subheadline (Single Line Text)
+- Content (Rich Text)
+
+As the content should be managed in XM Cloud, I navigate back to the Tools Sections and Open Content Editor.
+
+1. I want to create a Data Template that represents my data Model.
+1. Then I want to create a data source item in my site.
+1. When I drag and drop the new component onto one of my pages I want to get asked to select a data source
+   As mentioned: I want to achieve that I can store data source items in my site that I can use when adding a particular component. Data sources in XM Cloud can be either:
+   - a dedicated data source under my site/data/DatasourceFolder/DataSourceItem
+   - , it can be created under my page/data/dataSourceItem.
+   - Or the page itself, the component is placed on,
+
+In this case, I want to apply the 1st option, meaning having data source within the data folder of my site.
+Usually what you would do when creating new items is to spin up your local docker instance of XM Cloud to not interfere with other developers creating items. As I’m using the XM Cloud environment exclusively I can directly work here.
 
 ## Prerequisites
 
 In order to complete the following tutorial, you will need these resouces:
 
 1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io)
-2. An existing XM Cloud environment and site created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
-3. A GitHub source control account.
+1. An existing XM Cloud environment and site created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
+1. A GitHub source control account.
 
-## PART 1
+## Modules
 
-TODO: PART 1 OVERVIEW
+The first thing I want to do, is create a headless module. This helps me to create a consistent folder structure for all my component related items. Also, when managing a multisite environment I can deploy the required item structure for a particular feature in a very easy way. We will probably get more in details with Headless Modules at a later stage.
 
-### SUBSECTION 1
+### Create the module
 
-1. A step
-2. Another step
+1. For now I navigate to : System/Settings/Project. I do a right click to enter the context menu and use the insert options to create a new Folder:
+1. I name this folder after the Name of the Site Collection which is “Company Dev”.
+   <Alert status="info">
+   <AlertIcon />
+   I want to create the headless module within that folder, but as you can see the folder does not provide the insert option for headless Modules. Those are always created from the root node. In this case “Project”.
+   </Alert>
+1. In here I can provide a name for the Module. I call it “Basic Components”.
+1. I select the folder where the module should be created which is “Company Dev”.
+1. Now I need to select where I want the module to create folders. For the Component I just created, I only need Templates and Branch Templates. However, I might need also Renderings and Placeholder Settings later. So I get those created as well.
+1. I will not need:
+   - Settings
+   - Layouts
+   - And Media Library.
+1. I select that this is a Module can be installed on Site and not on the Site Collection Level formerly known as Headless Tenant.
 
-### SUBSECTION 2
+## Template Creation
 
-1. A step
-2. Another step
-3. A final step
+The Headless Module has been created. When looking into the Teamplates Section under Project and Company Dev, I can see that a “Basic Components” Folder has been created as well.
+In here, I can create the required templates.
 
-<Alert status="info">
-  <AlertIcon />
-    Some information
-</Alert>
+### Create the templates
 
-4. A post-final step
+1. First I create the data template with the name: “Text Teaser”.
+1. I can choose where to create the template but the current folder is already preselected.
+1. I also directly create a template for the Text Teaser Folder. This will be the one to contain my Text Teaser Items within the Site/Data Folder.
+1. Back to the Text Teaser template.
+1. We can define sections within the data template to structure the content. This makes especially sense when dealing with many fields that represent the template. So I name the Section “Content”.
 
-## PART 2
+### Create required fields
 
-TODO: Part 2 Overview
+Now I can create the required fields of the data model.
+
+1. The first field I name “Headline”. This can be of type “Single Line Text”.
+1. The Second Field I name “Subheadline” which is also of type “Single Line Text”.
+1. And I create a field called “Content” and I change the Type to Rich Text.
+   <Alert status="info">
+   <AlertIcon />
+   I could change the Icon for both Templates.
+   </Alert>
+
+1. I leave the Text Teaser as is and Change the Text Teaser Folder Icon to an actual Folder.
+
+### Create Insert Options
+
+Next I want to make sure the Marketers and Authors are guided when Creating content. Therefore I want to configure the Insert Options. Within a Text Teaser Folder I want the Authors to create Text Teaser Items or More Text Teaser Folders to structure it even further. I would do that on the so called “Standard Values”. The Standard Values usually contain default Values that are set on Item creation but can overwritten afterwards.
+
+1. I click on the “Builder Options” Tabs and create Standard Values.
+1. Next I click on the “Configure” Tab and then the Assign Button.
+1. In here I can assign the insert options for the Folder Template.
+1. I navigate to the previously created templates
+1. Select first the text teaser with a double click and then the text teaser folder.
+
+## Datasource creation
+
+I told you that I can use modules to install the feature related items to a site. However, that would require an additional step, which I skip for now and just create the data source folder manually.
+
+## Create data source folder manually
+
+1. I navigate to my Site Data folder
+1. Perform a right click and select the Insert Options to Create a Text Teaser Folder.
+   <Alert status="info">
+   <AlertIcon />
+   Now, my newly created Text Teaser Folder is not listed here. But as I am an Administrator I can choose to create items from all templates.
+   </Alert>
+
+1. So I select the Text Teaser Folder to be created under Data.
+1. I name this item: Text Teasers.
+
+   <Alert status="info">
+   <AlertIcon />
+   When checking the insert options of the Text Teaser Folder you can see that we can create Text Teaser Items and More Text Teaser Folders. 
+   </Alert>
+
+1. Let me create a Text Teaser Item and add some dummy content to it.
+   - How to use Components.
+   - Easy and smart ways designing your pages.
+   - Something else that makes sense for the tutorial page.
+
+## Make data source template available in XM Cloud Components
+
+As a last step we need to make the data template available in XM Cloud Components to be used as data source. This we can do on the Settings Item within the Site.
+
+### Create Text Teaser data source
+
+1. I can either search for “Feaas” meaning “Frontend as a service” or just scroll down to the field “Feaas component data source templates”.
+1. Here I can specify all templates that should be used as data sources in the Component Builder. Let’s select the Text Teaser by double clicking it and Save.
+1. Now that we created the data model and a content item I need to go back to the component builder to wire everything up.
+
+### Validate data source is available in Components
+
+So let’s first ensure that the new data source is available in the Component Builder.
+
+1. In the Data source section I can find the Text Teaser data source now listed at the bottom of the page. Great.
+
+### Map data
+
+Currently I use static data in XM Cloud Components. But I can also map the data to a data source template.
+
+1. Therefore I need to select first the Headline2 field.
+1. On the right side, I can choose to set the “Text” from a static to a mapped value:
+1. First I need to select the data source template from the list of available templates.
+1. I select the “Text Teaser” template.
+1. I can preview what fields are available.
+1. Now I click on “Next” to actually select the field from the template that should map to the component field.
+1. I select “Headline” and “Complete” the mapping process.
+1. I repeat the steps for my Headline3.
+1. I set the “Text” to be mapped to the Text Teaser Template
+1. select the “Subheadline field”.
+1. And complete the mapping.
+
+   <Alert status="info">
+   <AlertIcon />
+   As Rich Text Field is not properly shown add HTML Block and remove all paragraphs
+   </Alert>
+
+1. Last but not least I need to map the rich text field.
+1. When copying my content from the html design to the Component, several elements were created.
+1. All of the fields are “paragraphs”.
+1. So if I map my Content Field to the Paragraph I can see that it does not resolve the formatting coming from the XM Cloud Rich Text Editor.
+1. As a Rich Text Field is returning html and Paragraphs strip off many sorts of html formatting I remove all paragraphs
+1. Add an HTML Block Element.
+1. This one I map to the Content field from my template.
+1. And complete.
+
+### Stage Component
+
+1. Let’s restage the component to make the change available in Pages.
+
+### Add to Pages
+
+In Pages I can see that the component I added before is blank as it requires now a data source that has not been set.
+
+1. I’ll remove the component
+1. and add it again.
+1. Now it is asking me for a data source. Let me select the data source I created before.
+1. So I navigate to my Site/Data/Text Teasers/Text Teaser 1
+
+   Yey, The content appears in the component using my design. Just the design of the list item icons are still discs instead of my custom icon. This is because I need to provide proper styling and the images through my app.
 
 <Alert status="success">
    <AlertIcon />
-   **Congratulations!** You have successfully connected to XM Cloud and built your first project, that has an environment that is set up and ready to be used. The solution code is ready and connected to a CI/CD pipeline as well. Setting up a CI/CD pipeline in some development scenarios can take days or weeks, but XM Cloud tools help you complete it within minutes here.
+   **Congratulations!** You have done the thing! TODO: What did they do?
 </Alert>
 
 ### Related XM Cloud Documentation
