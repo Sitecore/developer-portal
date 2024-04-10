@@ -53,7 +53,7 @@ We are very grateful to the community for contributing bug fixes and improvement
 
 ### Code of Conduct
 
-Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/developer-portal/blob/main/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/developer-portal/blob/main/apps/devportal/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
 
 ### Feedback, ideas or found issues?
 
