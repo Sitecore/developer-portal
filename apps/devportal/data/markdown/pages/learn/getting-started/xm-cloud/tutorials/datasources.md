@@ -10,25 +10,25 @@ In this tutorial, we will go through the steps to create a new data template for
 
 ## Overview
 
-XM Cloud Components can be used to centrally manage the content of our components and use those components in different apps for example in your website managed with XM Cloud Pages as seen here. However, I want to use the component as a UI building block in XM Cloud on different pages with different content that’s managed inside of XM Cloud. Therefore, I need to setup the data model for this component and create the content.
-My Component requires the following fields:
+In the previous tutorial, you learned how to use XM Cloud Components to centrally manage the content of a Text Teaser component and use that component in XM Cloud Pages. Now we will evolve the component so it can be used as a reusable visual building block in XM Cloud where the content can be different on each page. To accomplish this, we need a data model for the Text Teaser component so that authors can create different content for each use of the Text Teaser component.
+
+To help authors create the content, we need to set up a data model with the fields needed by the Text Teaser component. We are going to create a data model with the following fields:
 
 - Headline (Single Line Text)
 - Subheadline (Single Line Text)
 - Content (Rich Text)
 
-As the content should be managed in XM Cloud, I navigate back to the Tools Sections and Open Content Editor.
+This data model is referred to as a 'data source' in XM Cloud. Data sources in XM Cloud can be either:
 
-1. I want to create a Data Template that represents my data Model.
-1. Then I want to create a data source item in my site.
-1. When I drag and drop the new component onto one of my pages I want to get asked to select a data source
-   As mentioned: I want to achieve that I can store data source items in my site that I can use when adding a particular component. Data sources in XM Cloud can be either:
-   - a dedicated data source under my site/data/DatasourceFolder/DataSourceItem
-   - , it can be created under my page/data/dataSourceItem.
-   - Or the page itself, the component is placed on,
+- a piece of content stored inside the current site: `site/data/DatasourceFolder/DataSourceItem`
+- a piece of content stored inside the current page: `page/data/dataSourceItem`
+- the page itself, where the component is being placed
 
-In this case, I want to apply the 1st option, meaning having data source within the data folder of my site.
-Usually what you would do when creating new items is to spin up your local docker instance of XM Cloud to not interfere with other developers creating items. As I’m using the XM Cloud environment exclusively I can directly work here.
+For this tutorial, we will be implementing the first option. You will create a piece of content that can be used as a data source for the Text Teaser component and it will be stored inside a data folder within your Company Dev site.
+
+We also need to configure XM Cloud so that authors can create the content and connect it to the Component on the page. Whenever an author drags the Text Teaser component onto the page, we want them to be asked to select an existing piece of content or create a new one.
+
+We also need to setup our solution so that we can store our new data model in source control and deploy them to other environments.
 
 ## Prerequisites
 
@@ -44,6 +44,7 @@ The first thing I want to do, is create a headless module. This helps me to crea
 
 ### Create the module
 
+1. As the content should be managed in XM Cloud, I navigate back to the Tools Sections and Open Content Editor.
 1. For now I navigate to : System/Settings/Project. I do a right click to enter the context menu and use the insert options to create a new Folder:
 1. I name this folder after the Name of the Site Collection which is “Company Dev”.
    <Alert status="info">
