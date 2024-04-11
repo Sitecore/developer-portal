@@ -24,11 +24,14 @@ This data model is referred to as a 'data source' in XM Cloud. Data sources in X
 - a piece of content stored inside the current page: `page/data/dataSourceItem`
 - the page itself, where the component is being placed
 
-For this tutorial, we will be implementing the first option. You will create a piece of content that can be used as a data source for the Text Teaser component and it will be stored inside a data folder within your Company Dev site.
+For this tutorial, you will be implementing the first option. You will:
 
-We also need to configure XM Cloud so that authors can create the content and connect it to the Component on the page. Whenever an author drags the Text Teaser component onto the page, we want them to be asked to select an existing piece of content or create a new one.
-
-We also need to setup our solution so that we can store our new data model in source control and deploy them to other environments.
+1. Create a piece of content that can be used as a data source for the Text Teaser component
+1. Configure it to store inside a data folder within your Company Dev site.
+1. Configure XM Cloud so that authors can create the content
+1. Connect a created data source to the Component on the page.
+1. Configure XM Cloud so that whenever an author drags the Text Teaser component onto the page, they are asked to select an existing piece of content or create a new one.
+1. Setup the solution so that you can store the new data model in source control so it can be deployed to other environments.
 
 ## Prerequisites
 
