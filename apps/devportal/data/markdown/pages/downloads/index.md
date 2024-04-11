@@ -97,10 +97,10 @@ Downloads relating to **Sitecore 7.5 and below** are available on the [Sitecore 
   link2href="/downloads/Sitecore_Universal_Tracker"
 />
 <Download 
-  title="Sitecore Installation Framework 2.3.0"
+  title="Sitecore Installation Framework 2.4.0"
   description="The Sitecore Installation Framework is a Microsoft PowerShell module that supports local and remote installations of Sitecore, and it is fully extensible."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_230"
+  link1href="/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_240"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Installation_Framework"
 />
