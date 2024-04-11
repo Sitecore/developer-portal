@@ -39,29 +39,54 @@ In order to complete the following tutorial, you will need these resouces:
 
 1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io)
 1. An existing XM Cloud environment and site created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
-1. A GitHub source control account.
+1. The Text Teaser component created in [Tutorial: Create a Component using XM Cloud Component Builder](create-a-component)
+1. A GitHub source control account with the repo created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
 
-## Modules
+## Create the module
 
-The first thing I want to do, is create a headless module. This helps me to create a consistent folder structure for all my component related items. Also, when managing a multisite environment I can deploy the required item structure for a particular feature in a very easy way. We will probably get more in details with Headless Modules at a later stage.
+The very first step will be to create a headless module. Modules are ways of organizing content in a consistent structure so it can be re-used by the marketing team. Think of this like an npm package for content. Defining modules makes it very easy for you to make your package/module available to multiple sites and teams. An author will be able to 'install' your module and use it in a consistent way on any site they choose.
 
-### Create the module
+1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
+1. From your dashboard, select the XM Cloud environment where you have your Text Teaser Component created.
 
-1. As the content should be managed in XM Cloud, I navigate back to the Tools Sections and Open Content Editor.
-1. For now I navigate to : System/Settings/Project. I do a right click to enter the context menu and use the insert options to create a new Folder:
-1. I name this folder after the Name of the Site Collection which is “Company Dev”.
+   `INSERT SCREENSHOT OF XM CLOUD APP BEING SELECTED FROM DASHBOARD`
+
+1. From the app context flyout, select "Content Editor" to launch the XM Cloud content tree editing interface.
+
+   `INSERT SCREENSHOT OF XM CLOUD APP CONTEXT FLYOUT`
+
+1. Navigate to: `System/Settings/Project` in the content tree.
+
+   `INSERT SCREENSHOT OF CONTENT TREE EXPANDED TO SHOW PATH`
+
+1. Right-click on the `Project` item in the tree to pop open the context menu.
+1. In the context menu select `Insert` and then `Folder` to create a new Folder.
+
+   `INSERT SCREENSHOT OF INSERT OPTIONS`
+
+1. Name this folder after the Name of the Site Collection: `Company Dev`
    <Alert status="info">
    <AlertIcon />
-   I want to create the headless module within that folder, but as you can see the folder does not provide the insert option for headless Modules. Those are always created from the root node. In this case “Project”.
+   You will store the new headless module inside this new folder. However, the insert option for Headless Module is not available on this folder, only at the 'Project' folder level. We will need to go there to create the new module.
    </Alert>
-1. In here I can provide a name for the Module. I call it “Basic Components”.
-1. I select the folder where the module should be created which is “Company Dev”.
-1. Now I need to select where I want the module to create folders. For the Component I just created, I only need Templates and Branch Templates. However, I might need also Renderings and Placeholder Settings later. So I get those created as well.
-1. I will not need:
-   - Settings
-   - Layouts
-   - And Media Library.
-1. I select that this is a Module can be installed on Site and not on the Site Collection Level formerly known as Headless Tenant.
+1. Right-click on the `Project` item in the tree to pop open the context menu again.
+1. In the context menu select `Insert` and then `Headless Module` to create the new module.
+
+   `INSERT SCREENSHOT OF INSERT OPTIONS`
+
+1. Configure the Headless Module settings:
+
+   - Module name: `Basic Components`
+   - Add to module group: `sitecore/system/settings/Company Dev`
+   - System areas for container folders: `Templates`, `Branch Templates`, `Renderings`, and `Placeholder Settings`
+   - Module scaffolding actions: `Headless Site Setup`
+
+   `INSERT SCREENSHOT OF DIALOG WITH FILLED IN VALUES`
+
+   <Alert status="info">
+   <AlertIcon />
+   When configuring scaffolding actions, you'll notice an option for Headless Tenant Setup. Tenants are an older terminology that are now called Site Collections.
+   </Alert>
 
 ## Template Creation
 
