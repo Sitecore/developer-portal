@@ -74,3 +74,25 @@ export const getNewsletter = async (month: string, year: string) => {
     })
   );
 };
+
+export const getLatestNewsletter = async () => {
+  const newsletterDataDir = path.resolve(NEWSLETTER_DATA_DIRECTORY);
+  const year = fs
+    .readdirSync(newsletterDataDir)
+    .map((y) => parseInt(y, 10))
+    .sort((a, b) => b - a)[0];
+  const month = fs
+    .readdirSync(path.resolve(newsletterDataDir, `${year}`))
+    .map((m: any) => {
+      const name = m.substring(m, m.length - 5);
+      return {
+        name,
+        num: parseInt(name, 10),
+      };
+    })
+    .sort((a, b) => b.num - a.num)[0].name;
+
+  const redirectUrl = `/newsletter/${year}/${month}`;
+
+  return redirectUrl;
+};
