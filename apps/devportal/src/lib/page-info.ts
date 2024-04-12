@@ -235,7 +235,11 @@ export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> =
  */
 export const getChildPageInfo = async (currentFile: string): Promise<ChildPageInfo[]> => {
   const directory = path.join(pagesDirectory, currentFile);
-  const children = fs.readdirSync(directory);
+  let children = fs.readdirSync(directory);
+
+  if (children.includes('manifest.json')) {
+    children = children.filter((child) => child !== 'manifest.json');
+  }
 
   return children
     .filter((obj) => !obj.startsWith('index') || obj == undefined)

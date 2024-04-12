@@ -3,10 +3,8 @@ import { TextLink } from '@scdp/ui/components';
 
 interface NewsletterStoryPartialData {
   copy: string;
-  link: {
-    text?: string;
-    href: string;
-  };
+  linkText?: string;
+  linkHref: string;
   title: string;
   image?: string;
 }
@@ -16,7 +14,7 @@ export interface NewsletterStoryData extends NewsletterStoryPartialData {
   image: string;
 }
 
-const NewsletterStoryPartial = ({ copy, link, title, image }: NewsletterStoryPartialData) => (
+const NewsletterStoryPartial = ({ copy, linkHref, linkText, title, image }: NewsletterStoryPartialData) => (
   <Card flex={'1 1 0%'} flexDirection={'column'} variant={'elevated'}>
     {image && <Image src={image} alt="" objectFit="cover" maxW={{ base: '100%' }} maxHeight={'200'} />}
     <CardHeader>
@@ -27,11 +25,11 @@ const NewsletterStoryPartial = ({ copy, link, title, image }: NewsletterStoryPar
     <CardBody>
       <Text size="lg">{copy}</Text>
     </CardBody>
-    <CardFooter>{link.href && <TextLink text={link.text || 'Read more'} href={link.href} aria-label={title} variant={'large'} />}</CardFooter>
+    <CardFooter>{linkHref && <TextLink text={linkText || 'Read more'} href={linkHref} aria-label={title} variant={'large'} />}</CardFooter>
   </Card>
 );
 
-const NewsletterStory = ({ variant, image, ...props }: NewsletterStoryData) => {
+export const NewsletterStory = ({ variant, image, ...props }: NewsletterStoryData) => {
   if (variant === 'full-width') {
     return (
       <GridItem colSpan={{ base: 1, md: 3 }}>
@@ -45,7 +43,7 @@ const NewsletterStory = ({ variant, image, ...props }: NewsletterStoryData) => {
             <CardBody>
               <Text size="lg">{props.copy}</Text>
             </CardBody>
-            <CardFooter>{props.link.href && <TextLink text={props.link.text || 'Read more'} href={props.link.href} aria-label={props.title} variant={'large'} />}</CardFooter>
+            <CardFooter>{props.linkHref && <TextLink text={props.linkText || 'Read more'} href={props.linkHref} aria-label={props.title} variant={'large'} />}</CardFooter>
           </Stack>
           <Image objectFit="fill" boxSize={'300'} src={image} alt={props.title} />
         </Card>
