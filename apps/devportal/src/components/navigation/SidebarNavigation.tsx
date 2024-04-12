@@ -1,10 +1,10 @@
 import { SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
 import { Box, Button, ButtonGroup, Collapse, HStack, Heading, Icon, IconButton, Text, Wrap, useDisclosure } from '@chakra-ui/react';
 import { mdiChevronDown, mdiChevronRight, mdiMinus, mdiPlus } from '@mdi/js';
+import { appendPathToBasePath } from '@scdp/ui/lib';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import {appendPathToBasePath} from '@scdp/ui/lib';
 
 export interface SidebarNavigationProps {
   title?: string;
@@ -23,7 +23,7 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
   return (
     <React.Fragment>
       {config.heading && (
-        <Heading variant={'section'} my={4} hideBelow={'md'}>
+        <Heading as={NextLink} variant={'section'} my={4} hideBelow={'md'} href={config.path} px={2}>
           {config.title}
         </Heading>
       )}
