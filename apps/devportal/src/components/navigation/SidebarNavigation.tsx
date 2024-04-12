@@ -80,9 +80,15 @@ const SidebarCollapsableGroupItem = (SidebarNavigationItem: SidebarNavigationIte
   return (
     <Wrap direction="column">
       <HStack justifyContent={'space-between'} mt={4}>
-        <Heading variant="section" onClick={onToggle} cursor={'pointer'}>
-          {SidebarNavigationItem.title}
-        </Heading>
+        {SidebarNavigationItem.ignoreLink == false ? (
+          <Heading as={NextLink} variant="section" cursor={'pointer'} href={appendPathToBasePath(basePath, SidebarNavigationItem.path)}>
+            {SidebarNavigationItem.title}
+          </Heading>
+        ) : (
+          <Heading variant="section" onClick={onToggle} cursor={'pointer'}>
+            {SidebarNavigationItem.title}
+          </Heading>
+        )}
         <IconButton
           icon={
             <Icon boxSize={'4'} color={'chakra-subtle-text'}>

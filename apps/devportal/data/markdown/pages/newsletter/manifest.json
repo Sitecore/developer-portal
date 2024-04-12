@@ -1,6 +1,6 @@
 {
   "title": "Archive",
-  "description": "Sitecore Downloads",
+  "description": "Sitecore Developer Newsletter",
   "path": "/newsletter",
   "heading": true,
   "showRootAsSections": true,
@@ -8,7 +8,7 @@
     {
       "title": "2024",
       "path": "2024",
-      "ignoreLink": true,
+      "ignoreLink": false,
       "children": [
         {
           "title": "March 2024",
