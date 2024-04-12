@@ -34,10 +34,10 @@ const NewsLetterPage = ({ pageInfo, partials, sidebarConfig }: NewsLetterPagePag
           <CenteredContent>
             <Box>
               <Flex flexGrow={0} justify={'space-between'} width={'full'} gap={4} direction={{ base: 'column', md: 'row' }} flexFlow={'column'}>
-                <Box w={{ base: 'full' }} as={'nav'}>
+                <Box w={{ base: 'full', md: '25%' }} as={'nav'}>
                   <SidebarNavigation config={sidebarConfig} />
                 </Box>
-                <Box gap={10}>
+                <Box gap={10} w={{ base: 'full' }}>
                   <SimpleGrid columns={{ base: 0, md: 3 }} gap={8}>
                     {pageInfo.parsedContent && <DecoratedMarkdown disabledProse>{pageInfo.parsedContent}</DecoratedMarkdown>}
                   </SimpleGrid>
