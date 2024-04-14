@@ -1,8 +1,8 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { Box, Flex, SimpleGrid } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
 import { ContentHeading } from '@lib/interfaces/contentheading';
-import { PageInfo, PagePartialGroup, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
-import { CenteredContent, Hero, VerticalGroup } from '@scdp/ui/components';
+import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { CenteredContent, Hero, TextLink, VerticalGroup } from '@scdp/ui/components';
 import Layout from '@src/layouts/Layout';
 import GithubContributionNotice from '../components/common/contribute';
 import { DecoratedMarkdown } from '../components/markdown/MarkdownContent';
@@ -14,11 +14,12 @@ type NewsLetterPagePageProps = {
   partialGroups?: PagePartialGroup[];
   hasGrid?: boolean;
   sidebarConfig: SidebarNavigationConfig;
+  childPageInfo: ChildPageInfo[];
 };
 
-const NewsLetterPage = ({ pageInfo, partials, sidebarConfig }: NewsLetterPagePageProps) => {
+const NewsLetterPage = ({ pageInfo, partials, sidebarConfig, childPageInfo }: NewsLetterPagePageProps) => {
   if (!pageInfo) return <>No pageInfo found</>;
-
+  let newsletters: ChildPageInfo[] = [];
   // Check for headings in the content
   const sectionTitles: ContentHeading[] = [];
   if (pageInfo.headings) sectionTitles.push(...pageInfo.headings);
@@ -32,18 +33,42 @@ const NewsLetterPage = ({ pageInfo, partials, sidebarConfig }: NewsLetterPagePag
 
         <VerticalGroup>
           <CenteredContent>
-            <Box>
-              <Flex flexGrow={0} justify={'space-between'} width={'full'} gap={4} direction={{ base: 'column', md: 'row' }} flexFlow={'column'}>
-                <Box w={{ base: 'full', md: '25%' }} as={'nav'}>
-                  <SidebarNavigation config={sidebarConfig} />
+            <Flex flexGrow={0} justify={'space-between'} width={'full'} gap={4} direction={{ base: 'column', md: 'row' }} flexFlow={'column'}>
+              <Box w={{ base: 'full', md: '25%' }} as={'nav'}>
+                <SidebarNavigation config={sidebarConfig} />
+              </Box>
+
+              {/* Show overview is the route has childs */}
+              {childPageInfo.length > 0 ? (
+                <Box gap={10} w={{ base: 'full' }}>
+                  <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+                    {childPageInfo.map((childPage, i) => (
+                      <GridItem order={'-' + i} key={i}>
+                        <Card variant={'outlineRaised'} size="md" layerStyle={'interactive.raise'} key={i}>
+                          <CardHeader>
+                            <TextLink isHeading as={'h3'} text={childPage.title} aria-label={childPage.title} href={childPage.link} />
+                          </CardHeader>
+                          <CardBody>
+                            <Text variant={'large'}>{childPage.description}</Text>
+                          </CardBody>
+                          <CardFooter>
+                            <Button variant={'outline'} colorScheme="neutral">
+                              <Link href={childPage.link}>Read more</Link>
+                            </Button>
+                          </CardFooter>
+                        </Card>
+                      </GridItem>
+                    ))}
+                  </Grid>
                 </Box>
+              ) : (
                 <Box gap={10} w={{ base: 'full' }}>
                   <SimpleGrid columns={{ base: 0, md: 3 }} gap={8}>
                     {pageInfo.parsedContent && <DecoratedMarkdown disabledProse>{pageInfo.parsedContent}</DecoratedMarkdown>}
                   </SimpleGrid>
                 </Box>
-              </Flex>
-            </Box>
+              )}
+            </Flex>
           </CenteredContent>
         </VerticalGroup>
 

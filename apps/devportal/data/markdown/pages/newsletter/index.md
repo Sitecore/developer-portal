@@ -3,7 +3,7 @@ title: Developer Newsletter
 description: ''
 hasInPageNav: false
 hasSubPageNav: false
-pageType: 'childoverview'
+pageType: 'newsletter'
 ---
 
 <Promo

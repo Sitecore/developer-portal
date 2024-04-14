@@ -23,7 +23,7 @@ export async function getStaticProps(context: any) {
 
   const partials = pageInfo.partials != null ? await getPartialsAsArray(pageInfo.partials) : null;
   const partialGroups = pageInfo.partialGroups != null && pageInfo.partialGroups.length > 0 ? await getPartialGroupsAsArray(pageInfo.partialGroups) : null;
-  const childPageInfo = pageInfo.pageType == 'childoverview' ? await getChildPageInfo(context.params.slug.join('/')) : null;
+  const childPageInfo = pageInfo.pageType == 'childoverview' || pageInfo.pageType == 'newsletter' ? await getChildPageInfo(context.params.slug.join('/')) : null;
   let sidebarNavConfig = null;
 
   if (pageInfo.hasSubPageNav) {
@@ -63,7 +63,7 @@ export default function Slug({
       case 'social':
         return <SocialPage pageInfo={pageInfo} />;
       case 'newsletter':
-        return <NewsLetterPage pageInfo={pageInfo} sidebarConfig={sidebarNavConfig} />;
+        return <NewsLetterPage pageInfo={pageInfo} sidebarConfig={sidebarNavConfig} childPageInfo={childPageInfo} />;
     }
   }
 
