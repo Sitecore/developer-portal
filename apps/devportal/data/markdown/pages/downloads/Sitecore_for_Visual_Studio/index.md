@@ -1,6 +1,6 @@
 ---
 title: "Sitecore for Visual Studio"
-description: ""
+description: "Sitecore for Visual Studio is a graphical tool for interacting with SXP from within Visual Studio, an option for users less familiar with command line tools."
 origin: https://dev.sitecore.net/Downloads/Sitecore_for_Visual_Studio.aspx
 ---
 

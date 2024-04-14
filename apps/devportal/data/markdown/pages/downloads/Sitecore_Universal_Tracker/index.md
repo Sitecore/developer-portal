@@ -12,6 +12,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx
 [Sitecore Universal Tracker 7.0.0](/downloads/Sitecore_Universal_Tracker/7x/Sitecore_Universal_Tracker_700)
 </CardBody>          
 </Card>
+
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Universal Tracker 6.x
@@ -20,6 +21,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx
 [Sitecore Universal Tracker 6.0.0](/downloads/Sitecore_Universal_Tracker/6x/Sitecore_Universal_Tracker_600)
 </CardBody>          
 </Card>
+
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Universal Tracker 5.x
@@ -28,6 +30,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx
 [Sitecore Universal Tracker 5.0.0](/downloads/Sitecore_Universal_Tracker/5x/Sitecore_Universal_Tracker_500)
 </CardBody>          
 </Card>
+
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Universal Tracker 4.x
@@ -36,6 +39,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx
 [Sitecore Universal Tracker 4.0.0](/downloads/Sitecore_Universal_Tracker/4x/Sitecore_Universal_Tracker_400)
 </CardBody>          
 </Card>
+
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Universal Tracker 3.x
@@ -44,6 +48,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx
 [Sitecore Universal Tracker 3.0.0](/downloads/Sitecore_Universal_Tracker/3x/Sitecore_Universal_Tracker_300)
 </CardBody>          
 </Card>
+
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Universal Tracker 2.x
@@ -52,6 +57,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx
 [Sitecore Universal Tracker 2.0.0](/downloads/Sitecore_Universal_Tracker/2x/Sitecore_Universal_Tracker_200)
 </CardBody>          
 </Card>
+
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Universal Tracker 1.x

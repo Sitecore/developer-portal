@@ -14,6 +14,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure.aspx
 [Sitecore Azure 8.1](/downloads/Sitecore_Azure/Sitecore_Azure_81/Sitecore_Azure_81)
 </CardBody>          
 </Card>
+
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Azure 8.0

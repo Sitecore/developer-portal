@@ -1,6 +1,6 @@
 ---
 title: "SharePoint Connect"
-description: ""
+description: "SharePoint Connect offers page-level, item-level, and API-level integration. It can be used with Sitecore XP and gives you the tools to harness the advantages of SharePoint's document management features within Sitecore."
 origin: https://dev.sitecore.net/Downloads/SharePoint_Connect.aspx
 ---
 
@@ -10,12 +10,7 @@ origin: https://dev.sitecore.net/Downloads/SharePoint_Connect.aspx
 </CardHeader>
 <CardBody>
 [SharePoint Connect 2.3](/downloads/SharePoint_Connect/2_0/SharePoint_Connect_23)\
-SharePoint Connect offers page-level, item-level, and API-level integration. It can be used with Sitecore XP and gives you the tools to harness the advantages of SharePoint's document management features within Sitecore.
-
 [SharePoint Connect 2.2](/downloads/SharePoint_Connect/2_0/SharePoint_Connect_2_2)\
-[SharePoint Connect 2.1](/downloads/SharePoint_Connect/2_0/SharePoint_Connect_2_1)\
-SharePoint Connect offers page-level, item-level, and API-level integration. It can be used with Sitecore XP and gives you the tools to harness the advantages of SharePoint's document management features within Sitecore.
-
-
+[SharePoint Connect 2.1](/downloads/SharePoint_Connect/2_0/SharePoint_Connect_2_1)
 </CardBody>          
 </Card>
