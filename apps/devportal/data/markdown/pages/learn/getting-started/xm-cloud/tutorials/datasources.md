@@ -88,9 +88,13 @@ The very first step will be to create a headless module. Modules are ways of org
    When configuring scaffolding actions, you'll notice an option for Headless Tenant Setup. Tenants are an older terminology that are now called Site Collections.
    </Alert>
 
-## Create the Text Teaser template
+## Creating the templates
 
-The Headless Module has now been created. We can now check that the required folders exist start creating the required templates. We will create two templates: **Text Teaser** to hold the data from the author and **Text Teaser Folder** to hold created Text Teaser content items. These steps will create the Text Teaser template.
+The Headless Module has now been created. We can now check that the required folders exist and start creating the required templates. We will create two templates: **Text Teaser** to hold the data from the author and **Text Teaser Folder** to hold created Text Teaser content items. We will also configure these templates to make life a little bit easier for the authors who want to create Text Teasers.
+
+### Create the Text Teaser template
+
+These steps will create the Text Teaser template.
 
 1. In the Content Editor tree, navigate to `/sitecore/Templates/Project/Company Dev/` and select the `Basic Components` folder
 1. First we will create the Text Teaser template. Click on the **New Template** button or right-click on the folder and select **Insert > New Template**
@@ -111,7 +115,7 @@ The Headless Module has now been created. We can now check that the required fol
 
 1. Press the **Close** button to exit the wizard. The template has been created.
 
-## Create the fields for the Text Teaser
+### Create the fields for the Text Teaser
 
 We now want to create the fields for the author to enter information for the Text Teaser.
 
@@ -152,7 +156,7 @@ We now want to create the fields for the author to enter information for the Tex
    You may notice there are other options for fields like Source, Unversioned, and Shared. These are for more advanced field definition scenarios that are not covered in this tutorial, but you may want to learn more about Data Templates in the documentation: https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html
    </Alert>
 
-## Create the Text Teaser Folder template
+### Create the Text Teaser Folder template
 
 With the Text Teaser component created, we now need a folder to hold the created Text Teaser content items. These steps will create the **Text Teaser Folder** template.
 
@@ -167,7 +171,7 @@ With the Text Teaser component created, we now need a folder to hold the created
 1. Press the **Next** button to keep the default selection for the location folder.
 1. Press the **Close** button to exit the wizard. The template has been created.
 
-## Configure a template icon
+### Configure a template icon
 
 The icon for the Text Teaser is fine for our purposes, but it would be nice if the folder actually looked like a folder. In these steps we will show how to change the icon for a template.
 
@@ -186,15 +190,40 @@ The icon for the Text Teaser is fine for our purposes, but it would be nice if t
 
    `INSERT SCREENSHOT OF ICONS OPTIONS`
 
-## Create Insert Options
+### Configure Insert Options
 
-Next I want to make sure the Marketers and Authors are guided when Creating content. Therefore I want to configure the Insert Options. Within a Text Teaser Folder I want the Authors to create Text Teaser Items or More Text Teaser Folders to structure it even further. I would do that on the so called “Standard Values”. The Standard Values usually contain default Values that are set on Item creation but can overwritten afterwards.
+Insert Options are guides that we can provide for Marketers and Content Authors to make it easier to create new content. We will configure the options for a Text Teaser Folder so that Authors can easily create new Text Teaser content items or create more Text Teaser Folders to structure their content even further.
 
-1. I click on the “Builder Options” Tabs and create Standard Values.
-1. Next I click on the “Configure” Tab and then the Assign Button.
-1. In here I can assign the insert options for the Folder Template.
-1. I navigate to the previously created templates
-1. Select first the text teaser with a double click and then the text teaser folder.
+   <Alert status="info">
+   <AlertIcon />
+   In this section we will get our first look at Sitecore XM Cloud "Standard Values" for templates. The Standard Values on a template usually contain default values that are automatically set on content creation but can be updated by the author later.
+   
+   If you're interested in learning more about Standard Values, check out the documentation: https://doc.sitecore.com/xmc/en/developers/xm-cloud/standard-values-for-data-template-fields.html
+   </Alert>
+
+1. In the content tree, select the **Text Teaser Folder** template.
+1. In the ribbon, switch to the **Builder Options** tab
+
+   `INSERT SCREENSHOT OF Builder Options TAB`
+
+1. Click on the **Standard values** button to create a new definition for the template. A new item named `__Standard Values` will be created and the UI will automatically update to select this new item.
+1. In the ribbon, switch to the **Configure** tab. We can now configure options for the \_\_Standard Values item.
+1. Click the **Assign** button in the "Insert Options" ribbon chunk to launch the Insert Options dialog. This dialog allows us to select which templates can be inserted when the user has a Text Teaser Folder selected.
+
+   `INSERT SCREENSHOT OF INSERT OPTIONS DIALOG`
+
+1. In the selection tree on the left, navigate to `/Templates/Project/Company Dev/Basic Components`
+1. Double-click on the **Text Teaser** template to add it to the **Selected** pane on the right
+1. Double-click on the **Text Teaser Folder** template to add it to the **Selected** pane on the right
+
+   `INSERT SCREENSHOT OF SELECTED TEMPLATES`
+
+1. Press the **OK** button to save the changes.
+
+   <Alert status="info">
+   <AlertIcon />
+   Learn more about Insert Options: https://doc.sitecore.com/xmc/en/developers/xm-cloud/insert-options.html
+   </Alert>
 
 ## Datasource creation
 
@@ -354,6 +383,8 @@ Done! We can create the pull request and merge the changes to main.
 
 <Row columns={2}>
    <Link title="Data Templates" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html" />
+   <Link title="Standard values for data template fields" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/standard-values-for-data-template-fields.html" />
+   <Link title="Insert Options" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/insert-options.html" />
 </Row>
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
