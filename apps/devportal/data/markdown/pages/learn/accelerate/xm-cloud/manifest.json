@@ -68,6 +68,17 @@
               "path": "content-audit"
             }
           ]
+				},
+				{
+          "title": "Project Architecture",
+          "path": "project-architecture",
+					"ignoreLink": true,
+					"children": [
+						{
+							"title": "Multisite",
+							"path": "multisite"
+						}
+					]
         },
         {
           "title": "Sprint Zero",
