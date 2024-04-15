@@ -1,30 +1,19 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
-import { ContentHeading } from '@lib/interfaces/contentheading';
-import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import { CenteredContent, Hero, TextLink, VerticalGroup } from '@scdp/ui/components';
 import Layout from '@src/layouts/Layout';
-import GithubContributionNotice from '../components/common/contribute';
 import { DecoratedMarkdown, RenderContent } from '../components/markdown/MarkdownContent';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 
 type NewsLetterPagePageProps = {
   pageInfo: PageInfo;
-  partials?: PartialData;
-  partialGroups?: PagePartialGroup[];
-  hasGrid?: boolean;
   sidebarConfig: SidebarNavigationConfig;
   childPageInfo: ChildPageInfo[];
 };
 
-const NewsLetterPage = ({ pageInfo, partials, sidebarConfig, childPageInfo }: NewsLetterPagePageProps) => {
+const NewsLetterPage = ({ pageInfo, sidebarConfig, childPageInfo }: NewsLetterPagePageProps) => {
   if (!pageInfo) return <>No pageInfo found</>;
-  let newsletters: ChildPageInfo[] = [];
-  // Check for headings in the content
-  const sectionTitles: ContentHeading[] = [];
-  if (pageInfo.headings) sectionTitles.push(...pageInfo.headings);
-
-  if (partials) sectionTitles.push(...partials.titles);
 
   return (
     <TrackPageView pageInfo={pageInfo}>
@@ -82,7 +71,6 @@ const NewsLetterPage = ({ pageInfo, partials, sidebarConfig, childPageInfo }: Ne
           </CenteredContent>
         </VerticalGroup>
 
-        <GithubContributionNotice pageInfo={pageInfo} />
       </Layout>
     </TrackPageView>
   );
