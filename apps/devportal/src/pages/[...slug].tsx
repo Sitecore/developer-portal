@@ -5,6 +5,7 @@ import ArticlePage from '@src/layouts/ArticlePage';
 import ChildOverviewPage from '@src/layouts/ChildOverviewPage';
 import DefaultContentPage from '@src/layouts/DefaultContentPage';
 import SocialPage from '@src/layouts/SocialPage';
+import NewsLetterPage from '../layouts/NewsLetterPage';
 
 export async function getStaticPaths() {
   const paths = await getStaticPathsRecursively();
@@ -22,7 +23,7 @@ export async function getStaticProps(context: any) {
 
   const partials = pageInfo.partials != null ? await getPartialsAsArray(pageInfo.partials) : null;
   const partialGroups = pageInfo.partialGroups != null && pageInfo.partialGroups.length > 0 ? await getPartialGroupsAsArray(pageInfo.partialGroups) : null;
-  const childPageInfo = pageInfo.pageType == 'childoverview' ? await getChildPageInfo(context.params.slug.join('/')) : null;
+  const childPageInfo = pageInfo.pageType == 'childoverview' || pageInfo.pageType == 'newsletter' ? await getChildPageInfo(context.params.slug.join('/')) : null;
   let sidebarNavConfig = null;
 
   if (pageInfo.hasSubPageNav) {
@@ -61,6 +62,8 @@ export default function Slug({
         return <ChildOverviewPage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} sidebarConfig={sidebarNavConfig} />;
       case 'social':
         return <SocialPage pageInfo={pageInfo} />;
+      case 'newsletter':
+        return <NewsLetterPage pageInfo={pageInfo} sidebarConfig={sidebarNavConfig} childPageInfo={childPageInfo} />;
     }
   }
 

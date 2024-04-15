@@ -4,8 +4,6 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_xDB_Cloud_Usage_Policy
 ---
 
-**`(last updated 28 August 2015)`**
-
 **A. As a Customer (“You” or “I”), who am I?**
 
 1.  You hereby acknowledge and represent that you are a real person and/or an entity legally organized in any country not subject to U.S. sanction laws.

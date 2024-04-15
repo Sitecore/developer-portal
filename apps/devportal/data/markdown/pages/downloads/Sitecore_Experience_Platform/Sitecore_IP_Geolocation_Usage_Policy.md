@@ -4,8 +4,6 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/Sitecore_IP_Geolocation_Usage_Policy
 ---
 
-**`(last updated 20 April 2015)`**
-
 **A. As a Customer, what am I prohibited from doing?**
 
 1.  Except as authorized by applicable law or by Sitecore expressly in a signed written agreement, Customer will not: (i) reverse engineer, disassemble, decompile or otherwise attempt to discover the source code, object code or underlying structure, ideas or algorithms of any part or all of the Services; (ii) rent, lease, lend, distribute, sell, assign, license, or otherwise transfer its right to access and use the Services; (iii) create derivative works based on the Services; or (iv) copy any portion of the Services except as reasonably required for using the Services as permitted by the Agreement;
