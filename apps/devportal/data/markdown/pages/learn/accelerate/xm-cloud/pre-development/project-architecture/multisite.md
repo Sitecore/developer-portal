@@ -77,7 +77,7 @@ See the github discussion: [In multisite setup, the error pages in XMC are not r
 
 ### Deploying Multiple Editing Hosts
 
-When creating separate applications for sites, you will need to configure the `xmcloud.build.json` to deploy each site to its own editing host for inline editing using Pages. [XM Cloud Build Json for editing hosts](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html#UUID-62230c7d-0e8e-6a81-3434-3b12f25a5808_section-idm4568099360318433299161991908).
+When creating separate applications for sites, you will need to configure the `xmcloud.build.json` to deploy each site to its own editing host for inline editing using Pages. [XM Cloud Build Configuration for editing hosts](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html#UUID-62230c7d-0e8e-6a81-3434-3b12f25a5808_section-idm4568099360318433299161991908).
 
 The `renderingHosts` property is an array of hosts. Out of the box this will be configured to deploy the code to the `xmcloudpreview` editing host. At the start of the project, this will be re-configured to deploy your own code to the editing host. For a project with multiple applications, you can add extra editing hosts here:
 
