@@ -88,34 +88,105 @@ The very first step will be to create a headless module. Modules are ways of org
    When configuring scaffolding actions, you'll notice an option for Headless Tenant Setup. Tenants are an older terminology that are now called Site Collections.
    </Alert>
 
-## Template Creation
+## Create the Text Teaser template
 
-The Headless Module has been created. When looking into the Teamplates Section under Project and Company Dev, I can see that a “Basic Components” Folder has been created as well.
-In here, I can create the required templates.
+The Headless Module has now been created. We can now check that the required folders exist start creating the required templates. We will create two templates: **Text Teaser** to hold the data from the author and **Text Teaser Folder** to hold created Text Teaser content items. These steps will create the Text Teaser template.
 
-### Create the templates
+1. In the Content Editor tree, navigate to `/sitecore/Templates/Project/Company Dev/` and select the `Basic Components` folder
+1. First we will create the Text Teaser template. Click on the **New Template** button or right-click on the folder and select **Insert > New Template**
+1. Write **"Text Teaser"** in the **Name** field to name the template.
 
-1. First I create the data template with the name: “Text Teaser”.
-1. I can choose where to create the template but the current folder is already preselected.
-1. I also directly create a template for the Text Teaser Folder. This will be the one to contain my Text Teaser Items within the Site/Data Folder.
-1. Back to the Text Teaser template.
-1. We can define sections within the data template to structure the content. This makes especially sense when dealing with many fields that represent the template. So I name the Section “Content”.
-
-### Create required fields
-
-Now I can create the required fields of the data model.
-
-1. The first field I name “Headline”. This can be of type “Single Line Text”.
-1. The Second Field I name “Subheadline” which is also of type “Single Line Text”.
-1. And I create a field called “Content” and I change the Type to Rich Text.
    <Alert status="info">
    <AlertIcon />
-   I could change the Icon for both Templates.
+   Leave the Base template with the default value (Standard template) for now. If you were creating a series of templates that inherited fields from each other, you might need to specify a base template to inherit from. The default Standard template will provide all the required fields Sitecore templates need so it is enough for the purpose in this tutorial.
    </Alert>
 
-1. I leave the Text Teaser as is and Change the Text Teaser Folder Icon to an actual Folder.
+1. Press the **Next** button to advance to the Location selection step.
+1. Press the **Next** button to keep the default selection for the location folder.
 
-### Create Insert Options
+   <Alert status="info">
+   <AlertIcon />
+   The currently selected folder is set by default when this step shows. If we hadn't already selected the Basic Components folder in the tree, we could choose it during this step instead.
+   </Alert>
+
+1. Press the **Close** button to exit the wizard. The template has been created.
+
+## Create the fields for the Text Teaser
+
+We now want to create the fields for the author to enter information for the Text Teaser.
+
+1. In the content tree, select the **Text Teaser** template. A field builder interface will show on the main pane
+
+   `INSERT SCREENSHOT OF EMPTY BUILDER TAB`
+
+1. In the **Builder** tab, type **Content** into the **Add a new section** field.
+
+   `INSERT SCREENSHOT OF BUILDER TAB WITH Content SECTION`
+
+   <Alert status="info">
+   <AlertIcon />
+    We define sections within a data template to structure the content for authors. This helps particularly when dealing with many fields on a template. 
+   </Alert>
+
+1. Within the new Content section, create the Headline field:
+
+   - **Add a new field** : Headline
+   - **Type**: Single Line Text
+
+1. Now create the Subheadline field:
+
+   - **Add a new field** : Subheadline
+   - **Type**: Single Line Text
+
+1. Now create the Content field:
+
+   - **Add a new field** : Content
+   - **Type**: Rich Text
+
+1. Click the **Save** button in the ribbon to ensure the new fields are saved.
+
+   `INSERT SCREENSHOT OF BUILDER TAB WITH THE NEW FIELDS`
+
+   <Alert status="info">
+   <AlertIcon />
+   You may notice there are other options for fields like Source, Unversioned, and Shared. These are for more advanced field definition scenarios that are not covered in this tutorial, but you may want to learn more about Data Templates in the documentation: https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html
+   </Alert>
+
+## Create the Text Teaser Folder template
+
+With the Text Teaser component created, we now need a folder to hold the created Text Teaser content items. These steps will create the **Text Teaser Folder** template.
+
+1. Now we will create the Text Teaser Folder template. Click on the **New Template** button or right-click on the folder and select **Insert > New Template**
+   <Alert status="info">
+   <AlertIcon />
+   There is another option called "Template Folder". This can also be used to collect together templates, but we use a standard template because `TODO: WHY DO WE USE IT`
+   </Alert>
+
+1. Write **"Text Teaser Folder"** in the **Name** field to name the template.
+1. Press the **Next** button to advance to the Location selection step.
+1. Press the **Next** button to keep the default selection for the location folder.
+1. Press the **Close** button to exit the wizard. The template has been created.
+
+## Configure a template icon
+
+The icon for the Text Teaser is fine for our purposes, but it would be nice if the folder actually looked like a folder. In these steps we will show how to change the icon for a template.
+
+1. In the content tree, select the **Text Teaser Folder** template.
+1. In the ribbon, switch to the **Configure** tab
+
+   `INSERT SCREENSHOT OF CONFIGURE TAB`
+
+1. Click on the **Icon** button
+   <Alert status="info">
+   <AlertIcon />
+   The first time that you try to load the Icon editing modal, Sitecore XM Cloud will start loading up the options to present to you. There may be a delay for you between clicking and then the display of the options if this is the first time using this feature in your instance.
+   </Alert>
+
+1. Select the Folder icon from the options shown.
+
+   `INSERT SCREENSHOT OF ICONS OPTIONS`
+
+## Create Insert Options
 
 Next I want to make sure the Marketers and Authors are guided when Creating content. Therefore I want to configure the Insert Options. Within a Text Teaser Folder I want the Authors to create Text Teaser Items or More Text Teaser Folders to structure it even further. I would do that on the so called “Standard Values”. The Standard Values usually contain default Values that are set on Item creation but can overwritten afterwards.
 
@@ -282,14 +353,7 @@ Done! We can create the pull request and merge the changes to main.
 ### Related XM Cloud Documentation
 
 <Row columns={2}>
-   <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
-   <Link title="Introduction to the Sitecore Cloud Portal" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
-   <Link title="XM Cloud Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
-   <Link title="Manage an XM Cloud environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html" />
-   <Link title="XM Cloud Deploy API" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html" />
-   <Link title="Creating an XM Cloud Project using the Sitecore CLI" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--creating-an-xm-cloud-project-using-the-sitecore-cli.html" />
-   <Link title="Serialization in XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/serialization-in-sitecore.html" />
-   <Link title="Experience Edge architecture" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html" />
+   <Link title="Data Templates" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html" />
 </Row>
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
