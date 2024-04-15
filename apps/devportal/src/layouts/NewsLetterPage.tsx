@@ -5,7 +5,7 @@ import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SidebarNavigati
 import { CenteredContent, Hero, TextLink, VerticalGroup } from '@scdp/ui/components';
 import Layout from '@src/layouts/Layout';
 import GithubContributionNotice from '../components/common/contribute';
-import { DecoratedMarkdown } from '../components/markdown/MarkdownContent';
+import { DecoratedMarkdown, RenderContent } from '../components/markdown/MarkdownContent';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 
 type NewsLetterPagePageProps = {
@@ -39,8 +39,15 @@ const NewsLetterPage = ({ pageInfo, partials, sidebarConfig, childPageInfo }: Ne
               </Box>
 
               {/* Show overview is the route has childs */}
-              {childPageInfo.length > 0 ? (
+              {childPageInfo.length > 0 && (
                 <Box gap={10} w={{ base: 'full' }}>
+                  {/* Show markdown content if we have some */}
+                  {pageInfo.content && pageInfo.content?.length > 0 && (
+                    <Box mb={10}>
+                      <RenderContent content={pageInfo.parsedContent} />
+                    </Box>
+                  )}
+                  {/* Render the list of child pages */}
                   <Grid templateColumns="repeat(2, 1fr)" gap={4}>
                     {childPageInfo.map((childPage, i) => (
                       <GridItem order={'-' + i} key={i}>
@@ -49,7 +56,7 @@ const NewsLetterPage = ({ pageInfo, partials, sidebarConfig, childPageInfo }: Ne
                             <TextLink isHeading as={'h3'} text={childPage.title} aria-label={childPage.title} href={childPage.link} />
                           </CardHeader>
                           <CardBody>
-                            <Text variant={'large'}>{childPage.description}</Text>
+                            <Text noOfLines={2}>{childPage.description}</Text>
                           </CardBody>
                           <CardFooter>
                             <Button variant={'outline'} colorScheme="neutral">
@@ -61,7 +68,10 @@ const NewsLetterPage = ({ pageInfo, partials, sidebarConfig, childPageInfo }: Ne
                     ))}
                   </Grid>
                 </Box>
-              ) : (
+              )}
+
+              {/* No childpages, show newsletter content */}
+              {childPageInfo.length == 0 && (
                 <Box gap={10} w={{ base: 'full' }}>
                   <SimpleGrid columns={{ base: 0, md: 3 }} gap={8}>
                     {pageInfo.parsedContent && <DecoratedMarkdown disabledProse>{pageInfo.parsedContent}</DecoratedMarkdown>}

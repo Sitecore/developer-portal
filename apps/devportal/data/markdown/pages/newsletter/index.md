@@ -13,3 +13,5 @@ pageType: 'newsletter'
   linkText="Subscribe now"
   linkHref="https://www.sitecore.com/newsletter/sitecore-for-developers" isImageLeft={false}
 />
+
+## Previous newsletters
