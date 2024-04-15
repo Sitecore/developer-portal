@@ -227,29 +227,64 @@ Insert Options are guides that we can provide for Marketers and Content Authors 
 
 ## Datasource creation
 
-I told you that I can use modules to install the feature related items to a site. However, that would require an additional step, which I skip for now and just create the data source folder manually.
+We now have templates created and configured for our authors. We also created the module needed to make our feature-related items available to a site. In a real XM Cloud development project, we would have many different templates and folders defined in our module. We would now usually need to configure our module to create our site-specific structure with all of those templates and folders.
 
-## Create data source folder manually
+For the purpose of this tutorial, however, we're going to skip forward a few steps and manually create our structure since we only have the Text Teaser that we are using right now.
 
-1. I navigate to my Site Data folder
-1. Perform a right click and select the Insert Options to Create a Text Teaser Folder.
+### Create data source folder manually
+
+1. In the Content Editor, navigate to the Data folder in the Company Dev site we created in the previous tutorial: `/sitecore/Content/Company Dev/Company Dev/Data`
+
+   `SCREENSHOT OF CONTENT TREE WITH Data folder selected`
+
+1. Right-click and select **Insert** from the context menu and select **Insert from template** to launch a template selection dialog
    <Alert status="info">
    <AlertIcon />
-   Now, my newly created Text Teaser Folder is not listed here. But as I am an Administrator I can choose to create items from all templates.
+   Note that there are no options for the Text Teaser templates listed in the context menu since we have not configured anything to help us insert into this Data folder. However, if you have logged in as an administrator account you will have the option for **Insert from template**.
+
+   If you do not have that option, you will need to change account to one with full administrator access.
    </Alert>
 
-1. So I select the Text Teaser Folder to be created under Data.
-1. I name this item: Text Teasers.
+   `SCREENSHOT OF DIALOG WITH ONLY Insert from template OPTION`
+
+1. In the dialog, expand the Browse tree to `Templates/Project/Company Dev/Basic Components` so that the Text Teaser templates are visible for selection.
+
+   `SCREENSHOT OF BROWSE TREE EXPANDED TO SHOW TEMPLATES`
+
+1. Select the **Text Teaser Folder** template
+1. In the **Item Name** field type **Text Teasers**. This will be the name given to the folder.
+1. Click **Insert** to create the folder.
 
    <Alert status="info">
    <AlertIcon />
-   When checking the insert options of the Text Teaser Folder you can see that we can create Text Teaser Items and More Text Teaser Folders. 
+   The UI will automatically update to show the Text Teasers folder and will select it for you in the tree.
+
+   If you right-click on the new **Text Teasers** folder, the options for the Insert context menu will now show the configured options from earlier in the tutorial. This is how authors will now be able to create new **Text Teaser** and **Text Teaser Folder** items.
    </Alert>
 
-1. Let me create a Text Teaser Item and add some dummy content to it.
-   - How to use Components.
-   - Easy and smart ways designing your pages.
-   - Something else that makes sense for the tutorial page.
+### Create a sample data source
+
+You can now test out your folder by creating a sample Text Teaser content data source.
+
+1. Right-click on the **Text Teasers** folder to launch the context menu
+1. Select **Insert > Text Teaser** to create a new text teaser.
+1. Type in **How to use Components** as the name for the test teaser.
+1. Click **OK** button to create the Text Teaser content.
+
+   `INSERT SCREENSHOT OF CREATED ITEM`
+
+   <Alert status="info">
+   <AlertIcon />
+   The fields that are shown to you can now be edited. This is where a Content Author will create the parts of their content to be used on the component.
+   </Alert>
+
+1. In the Content pane, specify values for the Text Teaser:
+
+   - **Headline:** How to use Components
+   - **Subheadline:** Easy and smart ways designing your pages
+   - **Content:** The Components builder of XM Cloud Components is a powerful tool that lets you create new components or modify already existing components using an intuitive WYSIWYG builder. It also lets you store the components in organized collections in the Components library. Learn more about how to use Components in this tutorial.
+
+   `INSERT SCREENSHOT OF FILLED OUT FIELDS`
 
 ## Make data source template available in XM Cloud Components
 
