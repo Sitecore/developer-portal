@@ -286,31 +286,87 @@ You can now test out your folder by creating a sample Text Teaser content data s
 
    `INSERT SCREENSHOT OF FILLED OUT FIELDS`
 
-## Make data source template available in XM Cloud Components
+## Make a data source template available in XM Cloud Components
 
-As a last step we need to make the data template available in XM Cloud Components to be used as data source. This we can do on the Settings Item within the Site.
+As a last step we need to take the data template that has been created and make it available in XM Cloud Components to be used as data source. This will be configured on the Settings item in the site.
 
-### Create Text Teaser data source
+### Configure the Text Teaser template for Components
 
-1. I can either search for “Feaas” meaning “Frontend as a service” or just scroll down to the field “Feaas component data source templates”.
-1. Here I can specify all templates that should be used as data sources in the Component Builder. Let’s select the Text Teaser by double clicking it and Save.
-1. Now that we created the data model and a content item I need to go back to the component builder to wire everything up.
+1. In the Content Editor, select the **Settings** node on the **Company Dev** site: `/sitecore/content/Company Dev/Company Dev/Settings`
+1. In the **Content** pane on the right side, scroll down through the fields and find the field named **FeaaS component data source templates**. You will find this field near the bottom of the list of fields.
+
+   `SCREENSHOT OF FEaaS field`
+
+1. On the left side of the field selector, navigate the tree to find your template at: `Templates/Project/Company Dev/Basic Components/Text Teaser`
+1. Double-click on the Text Teaser template to add it to the list of **Selected** templates on the right side of the selector.
+
+   `SCREENSHOT OF SELECTED TEMPLATE AND EXPANDED TREE`
+
+   <Alert status="info">
+   <AlertIcon />
+   Any templates showing in the 'Selected' side of this field are now available as templates that can be used as data sources in the Component Builder.
+   </Alert>
+
+1. Click the **Save** button in the ribbon to save the changes. Now the Text Teaser data template will be available to the Component builder.
 
 ### Validate data source is available in Components
 
-So let’s first ensure that the new data source is available in the Component Builder.
+Before releasing this to the authoring team, you need to ensure that the Text Teaser template is available in the Components builder. In this series of steps you will launch the Components application and try to find the new Text Teaser data source.
 
-1. In the Data source section I can find the Text Teaser data source now listed at the bottom of the page. Great.
+1. Return to the XM Cloud Tools pane. If you've closed that tab, you can get there with these instructions:
 
-### Map data
+   - Login to the [Sitecore Cloud Portal](https://portal.sitecorecloud.io)
+   - Select your App from the Apps list
+   - From the flyout panel, select **Open app**
+   - At the very top switch to **Tools**
 
-Currently I use static data in XM Cloud Components. But I can also map the data to a data source template.
+1. In the **Tools** page, select the **Components** card to launch the Component builder.
+1. At the top, switch to the **Data sources** section
 
-1. Therefore I need to select first the Headline2 field.
-1. On the right side, I can choose to set the “Text” from a static to a mapped value:
-1. First I need to select the data source template from the list of available templates.
-1. I select the “Text Teaser” template.
-1. I can preview what fields are available.
+   `SCREENSHOT OF COMPONENTS DATA SOURCES PAGE`
+
+1. Scroll down through the list of data sources and find the one named **Text Teaser**
+
+   `SCREENSHOT OF TEXT TEASER DATA SOURCE`
+
+### Map component visual elements to data fields
+
+The component that was created in the previous tutorials uses static data in XM Cloud Components. As part of using our new data template, we need to map this Text Teaser data source to the visual elements in XM Cloud Components.
+
+1. Switch to the **Components** tab in the top menu to launch the Components visual builder.
+1. Scroll to the section labelled **Basic Components**. This section will list all the components we have made available in the Basic Components section. Currently, there is only the **Text Teaser**.
+
+   `SCREENSHOT OF COMPONENTS LISTING SHOWING TEXT TEASER`
+
+1. Click on the **Text Teaser** card to launch the editor on this component
+
+   `SCREENSHOT OF Text Teaser COMPONENT`
+
+1. Click on the primary headline in the Component so that you enter the 'editing' mode for that field.
+
+   `SCREENSHOT OF HEADLINE EDITING MODE`
+
+   <Alert status="info">
+   <AlertIcon />
+   As you select visual elements in the editor you will see the details on the right change to show you the new options for that visual element. In this case, we can see the **Text** part in the **Content** area which is where we need to go next.
+   </Alert>
+
+1. On the right side panel, click on the **Text** option. This will show that the text is currently **Static**
+1. Change the mode from **Static** to **Mapped**. This will show you the source mapping options.
+
+   `SCREENSHOT OF MAPPED OPTIONS`
+
+1. Find and select the **Text Teaser** source in the list of available sources.
+
+   `SCREENSHOT OF TEXT TEASER SELECTED - ZOOMED IN`
+
+   <Alert status="info">
+   <AlertIcon />
+   Note that the **Sample** shows some example fields and their values. This can help you make sure you have the right type of source selected for the component you are editing.
+   </Alert>
+
+1. Click on the **Next** button to advance to the **Path** configuration step.
+
 1. Now I click on “Next” to actually select the field from the template that should map to the component field.
 1. I select “Headline” and “Complete” the mapping process.
 1. I repeat the steps for my Headline3.
