@@ -41,7 +41,7 @@
           "title": "Sitecore Identity",
           "path": "Sitecore_Identity"
         },
-		{
+        {
           "title": "Sitecore Experience Accelerator",
           "path": "Sitecore_Experience_Accelerator"
         },
@@ -53,19 +53,19 @@
           "title": "Sitecore Publishing Service Module",
           "path": "Sitecore_Publishing_Service_Module"
         },
-		{
+        {
           "title": "Sitecore Horizon",
           "path": "Sitecore_Horizon"
         },
-		{
+        {
           "title": "Sitecore Headless Rendering",
           "path": "Sitecore_Headless_Rendering"
         },
-		{
+        {
           "title": "Sitecore Embeddable Forms",
           "path": "Sitecore_Embeddable_Forms"
         },
-		{
+        {
           "title": "Sitecore Universal Tracker",
           "path": "Sitecore_Universal_Tracker"
         },
@@ -76,7 +76,7 @@
       ],
       "collapsed": true
     },
-	{
+    {
       "title": "Developer Tools & Resources",
       "ignoreLink": true,
       "path": "",
@@ -85,7 +85,7 @@
           "title": "Sitecore Installation Framework",
           "path": "Sitecore_Installation_Framework"
         },
-		{
+        {
           "title": "Sitecore CLI",
           "path": "Sitecore_CLI"
         },
@@ -97,42 +97,42 @@
           "title": "Team Development for Sitecore",
           "path": "Team_Development_for_Sitecore"
         },
-		{
+        {
           "title": "Sitecore Azure Blob Storage",
           "path": "Sitecore_Azure_Blob_Storage"
         },
-		{
+        {
           "title": "Scripts for Sitecore Security database",
           "path": "Scripts_for_Sitecore_Security_database"
         },
-		{
+        {
           "title": "Items as Resource files for Modules",
           "path": "Resource_files_for_Modules"
         },
-		{
+        {
           "title": "Sitecore UpdateApp Tool",
           "path": "Sitecore_UpdateApp_Tool"
         },
-		{
+        {
           "title": "xDB Data Migration Tool",
           "path": "Sitecore_xDB_Data_Migration_Tool"
-        }
+        },
         {
           "title": "Sitecore Azure Toolkit",
           "path": "Sitecore_Azure_Toolkit"
         },
-		{
+        {
           "title": "EXM Dedicated Dispatch Server",
           "path": "EXM_Dedicated_Dispatch_Server"
         },
-		{
+        {
           "title": "Sitecore Managed Cloud Resources",
           "path": "Sitecore_Managed_Cloud_Resources"
         }
       ],
       "collapsed": true
     },
-	{
+    {
       "title": "Connectors",
       "ignoreLink": true,
       "path": "",
@@ -141,30 +141,30 @@
           "title": "Sitecore XP - Content Hub",
           "path": "Sitecore_Connect_for_Content_Hub"
         },
-		{
+        {
           "title": "Sitecore XP - Dynamics 365 Sales",
           "path": "Dynamics_CRM_Connect"
         },
-		{
+        {
           "title": "Sitecore XP - Salesforce CRM",
           "path": "Salesforce_Connect"
         },
-		{
+        {
           "title": "Sitecore XP - Salesforce Marketing Cloud",
           "path": "Sitecore_Connect_software_for_Salesforce_Marketing_Cloud"
-        }
-		{
+        },
+        {
           "title": "Sitecore XP Data Exchange Framework",
           "path": "Data_Exchange_Framework"
         },
-		{
+        {
           "title": "Sitecore DAM - Dynamics 365 Commerce",
           "path": "Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce"
         }
       ],
       "collapsed": true
     },
-    	{
+    {
       "title": "Archive",
       "ignoreLink": true,
       "path": "",
@@ -173,35 +173,35 @@
           "title": "Sitecore JavaScript Services",
           "path": "Sitecore_JavaScript_Services"
         },
-		{
+        {
           "title": "Web Forms For Marketers",
           "path": "Web_Forms_For_Marketers"
         },
-		{
+        {
           "title": "Sitecore Print Experience Manager",
           "path": "Sitecore_Print_Experience_Manager"
         },
-		{
+        {
           "title": "Email Experience Manager",
           "path": "Email_Experience_Manager"
         },
-		{
+        {
           "title": "Sitecore Azure",
           "path": "Sitecore_Azure"
         },
-		{
+        {
           "title": "Package Management Service",
           "path": "Package_Management_Service"
         },
-		{
+        {
           "title": "Sitecore Express Migration Tool",
           "path": "Express_Migration_Tool"
         },
-		{
+        {
           "title": "Sitecore SPEAK",
           "path": "Sitecore_SPEAK"
         },
-		{
+        {
           "title": "Active Directory",
           "path": "Active_Directory"
         },
@@ -209,51 +209,51 @@
           "title": "Campaign Creator module",
           "path": "Campaign_Creator_module"
         },
-		{
+        {
           "title": "EA Live Session Agent",
           "path": "Engagement_Automation_Live_Session_Agent"
         },
-		{
+        {
           "title": "Sitecore IP Geolocation Service Client",
           "path": "Sitecore_IP_Geolocation_Service_Client"
         },
-		{
+        {
           "title": "Sitecore DAM",
           "path": "Sitecore_Plugin_for_Stylelabs_DAM"
         },
-		{
+        {
           "title": "Sitecore Connect™ for Sitecore CMP",
           "path": "Sitecore_Connect_for_Sitecore_CMP"
         },
-		{
+        {
           "title": "CRM Campaign Integration module",
           "path": "Dynamics_CRM_Campaign_Integration_module"
         },
-		{
+        {
           "title": "Dynamics CRM Security Provider",
           "path": "Dynamics_CRM_Security_Provider"
         },
-		{
+        {
           "title": "Komfo Connector",
           "path": "Komfo_Connector"
         },
-		{
+        {
           "title": "SharePoint Connect",
           "path": "SharePoint_Connect"
         },
-		{
+        {
           "title": "Sitecore Media Framework",
           "path": "Sitecore_Media_Framework"
         },
-		{
+        {
           "title": "Sitecore Mobile SDK (WebAPI)",
           "path": "Sitecore_Mobile_SDK_for_Xamarin"
         },
-		{
+        {
           "title": "Sitecore Mobile SDK (SSC)",
           "path": "Sitecore_Mobile_SDK_SSC__for_Xamarin"
         },
-		{
+        {
           "title": "Cloud client for xDB Cloud 1.0",
           "path": "Sitecore_xDB_Cloud_client"
         },
