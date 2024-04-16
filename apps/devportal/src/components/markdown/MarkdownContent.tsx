@@ -1,5 +1,5 @@
 // Global
-import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Heading, SimpleGrid, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 import { PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { Icon } from '@mdi/react';
@@ -41,7 +41,8 @@ function CustomMdx(children: string) {
             <code className={className}>{children}</code>
           );
         },
-        //h3: Heading,
+        h2: (props) => <Heading as={'h2'} {...props} />,
+        h3: (props) => <Heading as={'h3'} {...props} />,
         VideoPromo: VideoPromo,
         // CtaCard: CTACard,
         Promo: Promo,
@@ -60,6 +61,15 @@ function CustomMdx(children: string) {
         SimpleGrid: SimpleGrid,
         TextLink,
         NewsletterStory,
+        Table,
+        Thead,
+        Tbody,
+        Tfoot,
+        Tr,
+        Th,
+        Td,
+        TableCaption,
+        TableContainer,
       }}
     />
   );
