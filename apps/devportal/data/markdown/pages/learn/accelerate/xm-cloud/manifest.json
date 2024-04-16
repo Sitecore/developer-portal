@@ -44,6 +44,10 @@
             {
               "title": "Development Workflow: Github Codespaces",
               "path": "dev-workflow-codespaces"
+            },
+            {
+              "title": "Hosting Next.js on Azure App Services",
+              "path": "nextjs-azure-app-services"
             }
           ]
         },
@@ -173,10 +177,6 @@
         {
           "title": "Go-Live Checklist",
           "path": "go-live-checklist"
-        },
-        {
-          "title": "Hosting Next.js on Azure App Services",
-          "path": "nextjs-azure-app-services"
         }
       ]
     },
