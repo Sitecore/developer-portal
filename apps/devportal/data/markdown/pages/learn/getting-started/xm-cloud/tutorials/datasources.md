@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: How to Create Component Data Sources in XM Cloud'
-description: 'In this tutorial, we will go through the steps to update the Text Teaser component to use data sources. You will create a new data template for the Text Teaser component. You will update the Text Teaser component to work with this data and configure data shortcuts for your author. You will also learn how to bring your changes into source control.'
+description: 'In this tutorial, we will go through the steps to update the Text Teaser component to use content data sources. You will create a new data template for the Text Teaser component. You will update the Text Teaser component to work with this data and configure data shortcuts for your author. 
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 ---
 
 ## Introduction - What You are Going to Learn
 
-In this tutorial, we will go through the steps to update the Text Teaser component to use data sources. You will create a new data template for the Text Teaser component. You will update the Text Teaser component to work with this data and configure data shortcuts for your author. You will also learn how to bring your changes into source control.
+In this tutorial, we will go through the steps to update the Text Teaser component to use content data sources. You will create a new data template for the Text Teaser component. You will update the Text Teaser component to work with this data and configure data shortcuts for your author.
 
 ## Overview
 
@@ -372,6 +372,8 @@ The component that was created in the previous tutorials uses static data in XM 
 
 1. Click **Complete** to finish the mapping process.
 
+   `TODO: MAP THIS OUT IN FULL`
+
 1. Repeat the process for the the subtitle/subheading component.
    - Map the sub heading visual component to the Text field "Subheadline" in the Text Teaser template
    - Map the text area on the right of the component to the Text field
@@ -438,75 +440,6 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
 <Alert status="success">
    <AlertIcon />
    **Congratulations!** You have now updated the Text Teaser component to work from a piece of re-usable authored content instead of using static content added to the component directly. You also learned how to create templates, how to configure insert options, how to configure modules and how to map visual elements to template fields.
-</Alert>
-
-`TODO: DO WE WANT TO DO THIS SOURCE CONTROL STUFF IN THIS TUTORIAL?`
-
-## Add content changes to source control
-
-As we created items in XM Cloud (meaning Templates, Modules, Folders, etc) we should create another feature branch to collect all changes, serialize them into the repository and merge them into the main branch so we can ship the changes later to higher environments in a consistent way.
-
-### Create a new branch
-
-1. Let’s switch into Visual Studio Code
-1. Open the terminal.
-1. I ensure that I do not have changes and I’m on the main branch.
-1. Now I create a dedicated branch for all changes I’m doing for the Text Teaser Feature.
-
-### Pull the items out of XM Cloud using the Sitecore CLI
-
-In order to pull the items from the XM Cloud environment I need to:
-
-1. Connect first using the command dotnet Sitecore cloud login.
-1. The browser opens and asks me to confirm that it’s correct that a device wants to connect using the CLI.
-1. I confirm,
-1. select the Organizaton I want to connect to.
-1. Next I can pull the changes using dotnet Sitecore ser pull passing the –environment Id from my user.json file that is “dev”.
-
-   <Alert status="info">
-   <AlertIcon />
-   If you want to know more about serialization checkout my previous video. 
-   </Alert>
-
-### Confirm changes are serialized
-
-To confirm if all items have serialized: Let’s go and check all new files:
-
-1. In the placeholder settings we got a new folder named after the site collection (company Dev) and a folder named Basic Components in there.
-1. Same new structure in the project Renderings.
-1. With the Site / Data Folder I find a new Item called “Text Teasers”.
-1. The Text Teaser 1 data source is not there, as we setup the serialization to pull any content related items.
-1. In the templates folder I find the most important ones which are my templates for text teaser and text teaser folder including the standard values.
-
-### Add module to branch
-
-However, one item seems to be missing. The module. This is because I have not configured to pull modules. This can be seen in the company.modules.json
-
-1. Let’s go to the company.modules.json.template
-1. Copy the paragraph for the modules into our document.
-1. I have to exchange the Folder Path from Feature to Project and Save.
-1. I run the dotnet Sitecore ser pull command again.
-
-   <Alert status="info">
-   <AlertIcon />
-   You will get an error. It says the path does not exist. And that’s correct. I forgot to exchange the placeholder for the site collection name by the actual site collection that is Company Dev.
-   </Alert>
-
-1. Let’s change that, and save.
-1. Now I run the command again. And this time it is successful.
-1. Let me check if the files are there now. That looks good.
-
-### Commit changes to branch
-
-1. Let’s add the changes first
-1. Then commit.
-1. And push… or better push and set the upstream.
-
-Done! We can create the pull request and merge the changes to main.
-
-<Alert status="success">
-   <AlertIcon />
-   **Congratulations!** You have now updated the Text Teaser component to work from a piece of re-usable authored content instead of using static content added to the Component directly. You also learned how to configure modules and how to bring your changes into source control.
 </Alert>
 
 ### Related XM Cloud Documentation
