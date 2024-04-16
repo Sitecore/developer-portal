@@ -6,7 +6,7 @@ openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/2
 
 ## Introduction - What You are Going to Learn
 
-In this tutorial, we will go through the steps to update the Text Teaser component to use content data sources. You will learn:
+In this tutorial, you will go through the steps to update the Text Teaser component to use content data sources. You will learn:
 
 - How to create a headless module and new data templates for the Text Teaser component in XM Cloud Content Editor
 - How to create new content items from your templates to be used as data for the Text Teaser component
@@ -14,9 +14,9 @@ In this tutorial, we will go through the steps to update the Text Teaser compone
 
 ## Overview
 
-In the previous tutorial, you learned how to use XM Cloud Components to centrally manage the content of a Text Teaser component and use that component in XM Cloud Pages. Now we will evolve the component so it can be used as a reusable visual building block in XM Cloud where the content can be different on each page. To accomplish this, we need a data model for the Text Teaser component so that authors can create different content for each use of the Text Teaser component.
+In the previous tutorial, you learned how to use XM Cloud Components to centrally manage the content of a Text Teaser component and use that component in XM Cloud Pages. Now you will evolve the component so it can be used as a reusable visual building block in XM Cloud where the content can be different on each page. To accomplish this, you will need a data model for the Text Teaser component so that authors can create different content for each use of the Text Teaser component.
 
-To help authors create the content, we need to set up a data model with the fields needed by the Text Teaser component. We are going to create a data model with the following fields:
+To help authors create the content, you will need to set up a data model with the fields needed by the Text Teaser component. You are going to create a data model with the following fields:
 
 - Headline (Single Line Text)
 - Subheadline (Single Line Text)
@@ -24,15 +24,15 @@ To help authors create the content, we need to set up a data model with the fiel
 
 This data model is referred to as a 'data source' in XM Cloud. Data sources in XM Cloud can be either:
 
-- a piece of content stored inside the current site: `site/data/DatasourceFolder/DataSourceItem`
-- a piece of content stored inside the current page: `page/data/dataSourceItem`
+- a piece of content stored inside the current site. e.g. `site/data/DatasourceFolder/DataSourceItem`
+- a piece of content stored inside the current page. e.g. `page/data/dataSourceItem`
 - the page itself, where the component is being placed
 
 For this tutorial, you will be implementing the first option. You will:
 
-1. Create a piece of content that can be used as a data source for the Text Teaser component
+1. Create a piece of content that can be used as a data source for the Text Teaser component.
 1. Configure it to store inside a data folder within your Company Dev site.
-1. Configure XM Cloud so that authors can create the content
+1. Configure XM Cloud so that authors can create the content.
 1. Connect a created data source to the Component on the page.
 1. Configure XM Cloud so that whenever an author drags the Text Teaser component onto the page, they are asked to select an existing piece of content or create a new one.
 
@@ -43,18 +43,17 @@ In order to complete the following tutorial, you will need these resouces:
 1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io)
 1. An existing XM Cloud environment and site created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
 1. The Text Teaser component created in [Tutorial: Create a Component using XM Cloud Component Builder](create-a-component)
-1. A GitHub source control account with the repo created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
 
 ## Create the module
 
-The very first step will be to create a headless module. Modules are ways of organizing content in a consistent structure so it can be re-used by the marketing team. Think of this like an npm package for content. Defining modules makes it very easy for you to make your package/module available to multiple sites and teams. An author will be able to 'install' your module and use it in a consistent way on any site they choose.
+The very first step will be to create a headless module. Modules are used to organize content in a consistent structure so it can be re-used by the marketing team. Think of a module like an npm package for content. Defining modules makes it very easy for you to make your package/module available to multiple sites and teams. An author will be able to 'install' your module and use it in a consistent way on any site they choose.
 
 1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
 1. From your dashboard, select the XM Cloud environment where you have your Text Teaser Component created.
 
    `INSERT SCREENSHOT OF XM CLOUD APP BEING SELECTED FROM DASHBOARD`
 
-1. From the app context flyout, select "Content Editor" to launch the XM Cloud content tree editing interface.
+1. From the app context flyout, select **Content Editor** to launch the XM Cloud content tree editing interface.
 
    `INSERT SCREENSHOT OF XM CLOUD APP CONTEXT FLYOUT`
 
@@ -62,50 +61,55 @@ The very first step will be to create a headless module. Modules are ways of org
 
    `INSERT SCREENSHOT OF CONTENT TREE EXPANDED TO SHOW PATH`
 
-1. Right-click on the `Project` item in the tree to pop open the context menu.
-1. In the context menu select `Insert` and then `Folder` to create a new Folder.
+1. Right-click on the **Project** item in the tree to pop open the context menu.
+1. In the context menu select **Insert** and then **Folder** to create a new Folder.
 
    `INSERT SCREENSHOT OF INSERT OPTIONS`
 
-1. Name this folder after the Name of the Site Collection: `Company Dev`
+1. Specify **"Company Dev"** as the name of the folder, using the same name as the Site Collection.
    <Alert status="info">
    <AlertIcon />
-   You will store the new headless module inside this new folder. However, the insert option for Headless Module is not available on this folder, only at the 'Project' folder level. We will need to go there to create the new module.
+   You will store the new headless module inside this new folder. However, the insert option for Headless Module is not available on this folder, only at the 'Project' folder level. You will need to go there to create the new module.
    </Alert>
-1. Right-click on the `Project` item in the tree to pop open the context menu again.
-1. In the context menu select `Insert` and then `Headless Module` to create the new module.
+1. Right-click on the **Project** item in the tree to pop open the context menu again.
+1. In the context menu select **Insert** and then **Headless Module** to create the new module.
 
    `INSERT SCREENSHOT OF INSERT OPTIONS`
 
 1. Configure the Headless Module settings:
 
-   - Module name: `Basic Components`
-   - Add to module group: `sitecore/system/settings/Company Dev`
-   - System areas for container folders: `Templates`, `Branch Templates`, `Renderings`, and `Placeholder Settings`
-   - Module scaffolding actions: `Headless Site Setup`
+   - **Module name:** Basic Components
+   - **Add to module group:** `sitecore/system/settings/Company Dev`
+   - **System areas for container folders:** Templates, Branch Templates, Renderings, and Placeholder Settings
+   - **Module scaffolding actions:** Headless Site Setup
 
    `INSERT SCREENSHOT OF DIALOG WITH FILLED IN VALUES`
 
    <Alert status="info">
    <AlertIcon />
-   When configuring scaffolding actions, you'll notice an option for Headless Tenant Setup. Tenants are an older terminology that are now called Site Collections.
+   When configuring scaffolding actions, you'll notice an option for Headless Tenant Setup. Tenants are an older terminology. These are now called Site Collections.
    </Alert>
 
 ## Creating the templates
 
-The Headless Module has now been created. We can now check that the required folders exist and start creating the required templates. We will create two templates: **Text Teaser** to hold the data from the author and **Text Teaser Folder** to hold created Text Teaser content items. We will also configure these templates to make life a little bit easier for the authors who want to create Text Teasers.
+The Headless Module has now been created. You can now check that the required folders exist and start creating the required templates. You will create two templates:
+
+- **Text Teaser** to hold the data from the author, and
+- **Text Teaser Folder** to hold created Text Teaser content items.
+
+You will also configure these templates to make life a little bit easier for the authors who want to create Text Teasers.
 
 ### Create the Text Teaser template
 
 These steps will create the Text Teaser template.
 
-1. In the Content Editor tree, navigate to `/sitecore/Templates/Project/Company Dev/` and select the `Basic Components` folder
-1. First we will create the Text Teaser template. Click on the **New Template** button or right-click on the folder and select **Insert > New Template**
+1. In the Content Editor tree, navigate to `/sitecore/Templates/Project/Company Dev/` and select the **Basic Components** folder
+1. Click on the **New Template** button or right-click on the **Basic Components** folder and select **Insert > New Template**
 1. Write **"Text Teaser"** in the **Name** field to name the template.
 
    <Alert status="info">
    <AlertIcon />
-   Leave the Base template with the default value (Standard template) for now. If you were creating a series of templates that inherited fields from each other, you might need to specify a base template to inherit from. The default Standard template will provide all the required fields Sitecore templates need so it is enough for the purpose in this tutorial.
+   Leave the Base template with the default value (Standard template) for now. If you were creating a series of templates that inherited fields from each other, you might need to specify a base template to inherit from. The default Standard template will provide all the required fields your Text Teaser template will need so it is enough for the purpose of this tutorial.
    </Alert>
 
 1. Press the **Next** button to advance to the Location selection step.
@@ -113,14 +117,14 @@ These steps will create the Text Teaser template.
 
    <Alert status="info">
    <AlertIcon />
-   The currently selected folder is set by default when this step shows. If we hadn't already selected the Basic Components folder in the tree, we could choose it during this step instead.
+   The currently selected folder is set by default when this step shows. If the Basic Components folder wasn't already selected in the tree, you could choose it during this step instead.
    </Alert>
 
 1. Press the **Close** button to exit the wizard. The template has been created.
 
 ### Create the fields for the Text Teaser
 
-We now want to create the fields for the author to enter information for the Text Teaser.
+You will now create the fields for the author to enter information for the Text Teaser.
 
 1. In the content tree, select the **Text Teaser** template. A field builder interface will show on the main pane
 
@@ -132,7 +136,7 @@ We now want to create the fields for the author to enter information for the Tex
 
    <Alert status="info">
    <AlertIcon />
-    We define sections within a data template to structure the content for authors. This helps particularly when dealing with many fields on a template. 
+    Sections are defined within a data template to structure the content for authors. This helps particularly when dealing with many fields on a template. 
    </Alert>
 
 1. Within the new Content section, create the Headline field:
@@ -156,17 +160,17 @@ We now want to create the fields for the author to enter information for the Tex
 
    <Alert status="info">
    <AlertIcon />
-   You may notice there are other options for fields like Source, Unversioned, and Shared. These are for more advanced field definition scenarios that are not covered in this tutorial, but you may want to learn more about Data Templates in the documentation: https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html
+   You may notice there are other field options like Source, Unversioned, and Shared. These are for more advanced field definition scenarios that are not covered in this tutorial, but you may want to learn more about Data Templates in the documentation: https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html
    </Alert>
 
 ### Create the Text Teaser Folder template
 
-With the Text Teaser component created, we now need a folder to hold the created Text Teaser content items. These steps will create the **Text Teaser Folder** template.
+With the Text Teaser component created, you now need a folder to hold the created Text Teaser content items. These steps will create the **Text Teaser Folder** template.
 
-1. Now we will create the Text Teaser Folder template. Click on the **New Template** button or right-click on the folder and select **Insert > New Template**
+1. Now you will create the Text Teaser Folder template. Click on the **New Template** button or right-click on the folder and select **Insert > New Template**
    <Alert status="info">
    <AlertIcon />
-   There is another option called "Template Folder". This can also be used to collect together templates, but we use a standard template because `TODO: WHY DO WE USE IT`
+   There is another option called "Template Folder". This can also be used to collect together templates, but we use a standard template because `TODO: WHY DO WE USE IT. NOTE: If we do not, we should update this to use the Template Folder and remove the icon configuration step`
    </Alert>
 
 1. Write **"Text Teaser Folder"** in the **Name** field to name the template.
@@ -176,7 +180,7 @@ With the Text Teaser component created, we now need a folder to hold the created
 
 ### Configure a template icon
 
-The icon for the Text Teaser is fine for our purposes, but it would be nice if the folder actually looked like a folder. In these steps we will show how to change the icon for a template.
+The icon for the Text Teaser is fine for the purposes of this tutorial, but it would be nice if the folder template looked like a folder. In these steps you will change the icon for a template.
 
 1. In the content tree, select the **Text Teaser Folder** template.
 1. In the ribbon, switch to the **Configure** tab
@@ -195,13 +199,11 @@ The icon for the Text Teaser is fine for our purposes, but it would be nice if t
 
 ### Configure Insert Options
 
-Insert Options are guides that we can provide for Marketers and Content Authors to make it easier to create new content. We will configure the options for a Text Teaser Folder so that Authors can easily create new Text Teaser content items or create more Text Teaser Folders to structure their content even further.
+When an author tries to create a new content item, they are presented with the types of content that are allowed at that location. Insert Options allow you to specify what content options are available to the author. You will now configure the options for a Text Teaser Folder so that Authors can easily create new Text Teaser content items or create more Text Teaser Folders to structure their content even further.
 
    <Alert status="info">
    <AlertIcon />
-   In this section we will get our first look at Sitecore XM Cloud "Standard Values" for templates. The Standard Values on a template usually contain default values that are automatically set on content creation but can be updated by the author later.
-   
-   If you're interested in learning more about Standard Values, check out the documentation: https://doc.sitecore.com/xmc/en/developers/xm-cloud/standard-values-for-data-template-fields.html
+   In this section you will get a first look at Sitecore XM Cloud "Standard Values" for templates. The Standard Values on a template usually contain default values that are automatically set on content creation but can be updated by the author later. If you're interested in learning more about Standard Values, check out the documentation: https://doc.sitecore.com/xmc/en/developers/xm-cloud/standard-values-for-data-template-fields.html
    </Alert>
 
 1. In the content tree, select the **Text Teaser Folder** template.
@@ -210,7 +212,7 @@ Insert Options are guides that we can provide for Marketers and Content Authors 
    `INSERT SCREENSHOT OF Builder Options TAB`
 
 1. Click on the **Standard values** button to create a new definition for the template. A new item named `__Standard Values` will be created and the UI will automatically update to select this new item.
-1. In the ribbon, switch to the **Configure** tab. We can now configure options for the \_\_Standard Values item.
+1. In the ribbon, switch to the **Configure** tab. You can now configure options for the \_\_Standard Values item.
 1. Click the **Assign** button in the "Insert Options" ribbon chunk to launch the Insert Options dialog. This dialog allows us to select which templates can be inserted when the user has a Text Teaser Folder selected.
 
    `INSERT SCREENSHOT OF INSERT OPTIONS DIALOG`
@@ -228,24 +230,22 @@ Insert Options are guides that we can provide for Marketers and Content Authors 
    Learn more about Insert Options: https://doc.sitecore.com/xmc/en/developers/xm-cloud/insert-options.html
    </Alert>
 
-## Datasource creation
+## Create content that can be used as a data source
 
-We now have templates created and configured for our authors. We also created the module needed to make our feature-related items available to a site. In a real XM Cloud development project, we would have many different templates and folders defined in our module. We would now usually need to configure our module to create our site-specific structure with all of those templates and folders.
+You have now created your templates and configured them for the authors. You also created the module needed to make the feature-related items available to a site. In a real XM Cloud development project, there would be many different templates and folders defined in a module. At this stage, a team would usually need to configure the module to create the site-specific structure with all of those templates and folders.
 
-For the purpose of this tutorial, however, we're going to skip forward a few steps and manually create our structure since we only have the Text Teaser that we are using right now.
+For the purpose of this tutorial, however, you will skip forward a few steps and manually create the structure since only the Text Teaser template is being used right now.
 
 ### Create data source folder manually
 
-1. In the Content Editor, navigate to the Data folder in the Company Dev site we created in the previous tutorial: `/sitecore/Content/Company Dev/Company Dev/Data`
+1. In the Content Editor, navigate to the Data folder in the Company Dev site that was created in the previous tutorial: `/sitecore/Content/Company Dev/Company Dev/Data`
 
    `SCREENSHOT OF CONTENT TREE WITH Data folder selected`
 
 1. Right-click and select **Insert** from the context menu and select **Insert from template** to launch a template selection dialog
    <Alert status="info">
    <AlertIcon />
-   Note that there are no options for the Text Teaser templates listed in the context menu since we have not configured anything to help us insert into this Data folder. However, if you have logged in as an administrator account you will have the option for **Insert from template**.
-
-   If you do not have that option, you will need to change account to one with full administrator access.
+   Note that there are no options for the Text Teaser templates listed in the context menu since you have not configured anything to help insert content into this Data folder. However, if you have logged in as an administrator account you will have the option for **Insert from template**. If you do not have that option, you will need to change account to one with full administrator access.
    </Alert>
 
    `SCREENSHOT OF DIALOG WITH ONLY Insert from template OPTION`
@@ -255,7 +255,7 @@ For the purpose of this tutorial, however, we're going to skip forward a few ste
    `SCREENSHOT OF BROWSE TREE EXPANDED TO SHOW TEMPLATES`
 
 1. Select the **Text Teaser Folder** template
-1. In the **Item Name** field type **Text Teasers**. This will be the name given to the folder.
+1. In the **Item Name** field enter the value **"Text Teasers"**. This will be the name given to the folder.
 1. Click **Insert** to create the folder.
 
    <Alert status="info">
@@ -287,9 +287,11 @@ You can now test out your folder by creating a sample Text Teaser content data s
 
    `INSERT SCREENSHOT OF FILLED OUT FIELDS`
 
-## Make a data source template available in XM Cloud Components
+## Use a data source template in XM Cloud Components
 
-As a last step we need to take the data template that has been created and make it available in XM Cloud Components to be used as data source. This will be configured on the Settings item in the site.
+As a final stage for this tutorial, you will update the Text Teaser component in XM Cloud Components to use the new Text Teaser data template as a data source.
+
+To start, you will take the data template that has been created and make it available in XM Cloud Components to be used as data source. This will be configured on the Settings item in the site.
 
 ### Configure the Text Teaser template for Components
 
@@ -330,12 +332,12 @@ Before releasing this to the authoring team, you need to ensure that the Text Te
 
    `SCREENSHOT OF TEXT TEASER DATA SOURCE`
 
-### Map component visual elements to Text data fields
+### Map component heading element to Headline text field
 
-The component that was created in the previous tutorials uses static data in XM Cloud Components. As part of using our new data template, we need to map this Text Teaser data source to the visual elements in XM Cloud Components. We are going to start by mapping the headline and subheadline text fields.
+The component that was created in the previous tutorials uses static data in XM Cloud Components. As part of using the new data template, you need to map this Text Teaser data source to the visual elements in XM Cloud Components. You are going to start by mapping the headline text field.
 
 1. Switch to the **Components** tab in the top menu to launch the Components visual builder.
-1. Scroll to the section labelled **Basic Components**. This section will list all the components we have made available in the Basic Components section. Currently, there is only the **Text Teaser**.
+1. Scroll to the section labelled **Basic Components**. This section will list all the components you have made available in the Basic Components section. Currently, there is only the **Text Teaser**.
 
    `SCREENSHOT OF COMPONENTS LISTING SHOWING TEXT TEASER`
 
@@ -349,7 +351,7 @@ The component that was created in the previous tutorials uses static data in XM 
 
    <Alert status="info">
    <AlertIcon />
-   As you select visual elements in the editor you will see the details on the right change to show you the new options for that visual element. In this case, we can see the **Text** part in the **Content** area which is where we need to go next.
+   As you select visual elements in the editor you will see the details on the right change to show you the new options for that visual element. In this case, you can see the **Text** part in the **Content** area which is where you need to go next.
    </Alert>
 
 1. On the right side panel, click on the **Text** option. This will show that the text is currently **Static**
@@ -366,27 +368,52 @@ The component that was created in the previous tutorials uses static data in XM 
    Note that the **Sample** shows some example fields and their values. This can help you make sure you have the right type of source selected for the component you are editing.
    </Alert>
 
-1. Click on the **Next** button to advance to the **Path** configuration step. This is where we will map the fields from the template to the visual element.
+1. Click on the **Next** button to advance to the **Path** configuration step. This is where you will map the fields from the template to the visual element.
 1. Select the **Headline** field to map the data from that Text Teaser field to the heading element in the component.
 
    `INSERT SCREENSHOT OF MAPPING`
 
 1. Click **Complete** to finish the mapping process.
 
-   `TODO: MAP THIS OUT IN FULL`
+### Map component sub-heading element to Subheadline text field
 
-1. Repeat the process for the the subtitle/subheading component.
-   - Map the sub heading visual component to the Text field "Subheadline" in the Text Teaser template
-   - Map the text area on the right of the component to the Text field
+You will now repeat the process for the the subtitle/subheading component. You will select the subheading visual element and map that to the Text field "Subheadline" in the Text Teaser template
 
-### Mapping a Rich Text field
+   <Alert status="warning">
+   <AlertIcon />
+   **Challenge:** Can you do the mapping with only the information above? If not, continue on for the full detailed steps!
+   </Alert>
 
-In the Text Teaser component that was created in the previous tutorial, the right-side of the component is intended to have a full description (or 'teaser') for the user to read. Initially, the copied content that was used contains several paragraphs and list items, which does not map to a single field. Additionally, the paragraph tags do not render the formatting from a Rich Text field, so even if we have a single paragraph tag this will not meet our needs.
+1. Click on the secondary headline/subheadline in the Component so that you enter the 'editing' mode for that field.
 
-In order to create a section of rich content and then map it to a Rich Text field on a data source and preserve the formatting, we need to do some cleanup to the existing content and put in the correct type of element: an HTML Block. In this section of the tutorial, we will clean up our component and map the Rich Text field to an HTML Block.
+   `SCREENSHOT OF SUBHEADLINE EDITING MODE`
+
+   <Alert status="info">
+   <AlertIcon />
+   The pane on the right updates and you can see the **Text** part in the **Content** area which is where you need to go next.
+   </Alert>
+
+1. On the right side panel, click on the **Text** option. This will show that the text is currently **Static**
+1. Change the mode from **Static** to **Mapped**. This will show you the source mapping options.
+1. Find and select the **Text Teaser** source in the list of available sources.
+1. Click on the **Next** button to advance to the **Path** configuration step. This is where you will map the fields from the template to the visual element.
+1. Select the **Subheadline** field to map the data from that Text Teaser field to the heading element in the component.
+
+   `INSERT SCREENSHOT OF MAPPING`
+
+1. Click **Complete** to finish the mapping process.
+
+### Mapping a Rich Text field to an HTML Block element
+
+In the Text Teaser component that was created in the previous tutorial, the right-side of the component is intended to have a full description (or 'teaser') for the user to read. Initially, the copied content that was used contains several paragraphs and list items, which does not map to a single field. Additionally, the paragraph tags do not render the formatting from a Rich Text field, so even if you have a single paragraph tag this will not meet the need.
+
+In order to create a section of rich content and then map it to a Rich Text field on a data source and preserve the formatting, you need to do some cleanup to the existing content and put in the correct type of element: an HTML Block. In this section of the tutorial, you will clean up the component and map the Rich Text field to an HTML Block.
 
 1. In the Components builder, select the right-side of the Text Teaser component and remove all of the paragraphs of content that are currently there.
-1. Insert an HTML Block
+
+   `SCREENSHOT OF RIGHT-SIDE OF COMPONENT removed`
+
+1. Insert an HTML Block - `TODO: WHAT ARE THE STEPS TO DO THIS?`
 1. Click on the HTML Block element
 1. On the right side panel, click on the **HTMLContent** option. This will show that the text is currently **None**
 1. Map the HTML Block to the **Content** field on the **Text Teaser** data source
@@ -397,7 +424,7 @@ In order to create a section of rich content and then map it to a Rich Text fiel
 
 ### Make the changes to the component available to authors
 
-Now that we have completed all of the mapping changes we need to make the changes available to Pages by staging the component again.
+Now that you have completed all of the mapping changes you will need to make the changes available to Pages by staging the component again.
 
 1. In the Components builder tool, click on the **Restage** button above the component
 
@@ -405,7 +432,7 @@ Now that we have completed all of the mapping changes we need to make the change
 
 ### Update the component in Pages to use a data source
 
-In the previous tutorial, you added a Text Teaser component to the home page. After making these mapping changes, the existing component will now need a data source to display correctly as there is no more static content on the component. We will now go to Pages and fix our component so that it can pull the data from one of the Text Teaser data sources that were created in this tutorial.
+In the previous tutorial, you added a Text Teaser component to the home page. After making these mapping changes, the existing component will now need a data source to display correctly as there is no more static content on the component. You will now go to Pages and fix the component so that it can pull the data from one of the Text Teaser data sources that were created in this tutorial.
 
 1. Return to the XM Cloud Tools pane. If you've closed that tab, you can get there with these instructions:
 
