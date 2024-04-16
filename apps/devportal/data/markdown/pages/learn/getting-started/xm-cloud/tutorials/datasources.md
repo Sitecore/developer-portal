@@ -260,9 +260,7 @@ For the purpose of this tutorial, however, we're going to skip forward a few ste
 
    <Alert status="info">
    <AlertIcon />
-   The UI will automatically update to show the Text Teasers folder and will select it for you in the tree.
-
-   If you right-click on the new **Text Teasers** folder, the options for the Insert context menu will now show the configured options from earlier in the tutorial. This is how authors will now be able to create new **Text Teaser** and **Text Teaser Folder** items.
+   The UI will automatically update to show the Text Teasers folder and will select it for you in the tree. If you right-click on the new **Text Teasers** folder, the options for the Insert context menu will now show the configured options from earlier in the tutorial. This is how authors will now be able to create new **Text Teaser** and **Text Teaser Folder** items.
    </Alert>
 
 ### Create a sample data source
