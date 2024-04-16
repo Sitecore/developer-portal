@@ -3,6 +3,7 @@
   "description": "Sitecore Downloads",
   "path": "/downloads",
   "showRootAsSections": true,
+  "enableSearch": true,
   "routes": [
     {
       "title": "Composable DXP",
