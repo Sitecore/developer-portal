@@ -7,6 +7,7 @@ export * from './integrations'
 export * from './links'
 export * from './lists'
 export * from './logos'
+export * from './newsletter';
 export * from './promos'
 export * from './social'
 export * from './video'

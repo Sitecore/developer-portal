@@ -1,10 +1,10 @@
 // Global
-import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Heading, SimpleGrid, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 import { PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { Icon } from '@mdi/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
-import { Article, ButtonLink, Download, Group, LinkItem, Promo, Repository, Row, TextLink, VideoPromo, YouTube } from '@scdp/ui/components';
+import { Article, ButtonLink, Download, Group, LinkItem, NewsletterStory, Promo, Repository, Row, TextLink, VideoPromo, YouTube } from '@scdp/ui/components';
 import { MDXRemote } from 'next-mdx-remote';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
@@ -20,55 +20,71 @@ type MarkdownContentProps = {
 
 type DecoratedMarkdownProps = {
   children: string;
+  disabledProse?: boolean;
 };
 
-export const DecoratedMarkdown = ({ children }: DecoratedMarkdownProps): JSX.Element => {
+function CustomMdx(children: string) {
+  return (
+    <MDXRemote
+      scope={''}
+      frontmatter={undefined}
+      compiledSource={children}
+      components={{
+        code({ className, children }) {
+          const match = /language-(\w+)/.exec(className || '');
+          const lang = match ? match[1] : '';
+          return match ? (
+            <SyntaxHighlighter style={a11yDark} language={lang} className="no-prose" PreTag={'div'} customStyle={{ background: 'inherit', display: 'inline-grid', width: '100%' }} wrapLongLines wrapLines>
+              {String(children).replace(/\n$/, '')}
+            </SyntaxHighlighter>
+          ) : (
+            <code className={className}>{children}</code>
+          );
+        },
+        h2: (props) => <Heading as={'h2'} {...props} />,
+        h3: (props) => <Heading as={'h3'} {...props} />,
+        VideoPromo: VideoPromo,
+        // CtaCard: CTACard,
+        Promo: Promo,
+        YouTube: YouTube,
+        Row: Row,
+        Repository: Repository,
+        Article: Article,
+        Link: LinkItem,
+        Download: Download,
+        Group: Group,
+        Card: Card,
+        CardHeader: CardHeader,
+        CardBody: CardBody,
+        Alert: Alert,
+        AlertIcon: AlertIcon,
+        SimpleGrid: SimpleGrid,
+        TextLink,
+        NewsletterStory,
+        Table,
+        Thead,
+        Tbody,
+        Tfoot,
+        Tr,
+        Th,
+        Td,
+        TableCaption,
+        TableContainer,
+      }}
+    />
+  );
+}
+
+export const DecoratedMarkdown = ({ children, disabledProse = false }: DecoratedMarkdownProps): JSX.Element => {
   // const [isDark, setIsLight] = useState(false);
 
   // useEffect(() => {
   //   setIsLight(typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
   // }, []);
 
-  return (
-    <Prose className={styles.richText}>
-      <MDXRemote
-        scope={''}
-        frontmatter={undefined}
-        compiledSource={children}
-        components={{
-          code({ className, children }) {
-            const match = /language-(\w+)/.exec(className || '');
-            const lang = match ? match[1] : '';
-            return match ? (
-              <SyntaxHighlighter style={a11yDark} language={lang} className="no-prose" PreTag={'div'} customStyle={{ background: 'inherit', display: 'inline-grid', width: '100%' }} wrapLongLines wrapLines>
-                {String(children).replace(/\n$/, '')}
-              </SyntaxHighlighter>
-            ) : (
-              <code className={className}>{children}</code>
-            );
-          },
-          //h3: Heading,
-          VideoPromo: VideoPromo,
-          // CtaCard: CTACard,
-          Promo: Promo,
-          YouTube: YouTube,
-          Row: Row,
-          Repository: Repository,
-          Article: Article,
-          Link: LinkItem,
-          Download: Download,
-          Group: Group,
-          Card: Card,
-          CardHeader: CardHeader,
-          CardBody: CardBody,
-          Alert: Alert,
-          AlertIcon: AlertIcon,
-          SimpleGrid: SimpleGrid,
-          TextLink,
-        }}
-      />
-    </Prose>
-  );
+  if (disabledProse) return CustomMdx(children);
+  
+  return <Prose className={styles.richText}>{CustomMdx(children)}</Prose>;
 };
 
 export const MarkDownContent = ({ content, partials, partialGroups }: MarkdownContentProps): JSX.Element => (
@@ -78,8 +94,6 @@ export const MarkDownContent = ({ content, partials, partialGroups }: MarkdownCo
     <RenderPartials partials={partials} />
   </>
 );
-
-
 
 export const RenderContent = ({ content }: MarkdownContentProps): JSX.Element => {
   if (content == null) return <></>;
@@ -176,3 +190,6 @@ const RenderPartial = ({ key, item, fileName }: { key: string; item: string; fil
 };
 
 export default MarkdownContent;
+
+
+
