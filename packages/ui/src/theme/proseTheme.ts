@@ -172,10 +172,15 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     textAlign: 'start',
     borderColor: 'chakra-border-color',
     shadow: 'sm',
+    tableLayout: 'auto',
 
     thead: {
       background: 'primary-fg',
       color: 'chakra-inverse-text',
+      _dark: {
+        background: 'neutral.800',
+        color: 'chakra-subtle-text',
+      },
     },
 
     th: {
@@ -202,17 +207,18 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
         paddingTop: 4,
         _dark: {
           borderColor: 'chakra-border-color',
+          background: 'neutral.800',
         },
-        td: {
-          wordBreak: 'normal',
-        },
-        'td:nth-of-type(1)': {
-          width: '20%',
-        },
-        'td:nth-of-type(2)': {
-          width: '65%',
-          wordBreak: 'break-word',
-        },
+        // td: {
+        //   wordBreak: 'normal',
+        // },
+        // 'td:nth-of-type(1)': {
+        //   minWidth: '20%',
+        // },
+        // 'td:nth-of-type(2)': {
+        //   maxWidth: '65%',
+        //   wordBreak: 'break-word',
+        // },
         ':nth-last-of-type(1)': {
           borderBottomWidth: '0px',
           borderBottomColor: 'transparent',
@@ -220,7 +226,7 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
         ':nth-last-of-type(even)': {
           background: 'primary.50',
           _dark: {
-            background: 'primary.700',
+            background: 'neutral.700',
           },
         },
       },
