@@ -1,12 +1,16 @@
 ---
 title: 'Tutorial: How to Create Component Data Sources in XM Cloud'
-description: 'In this tutorial, we will go through the steps to update the Text Teaser component to use content data sources. You will create a new data template for the Text Teaser component. You will update the Text Teaser component to work with this data and configure data shortcuts for your author. 
+description: 'Learn about defining and creating new content items that can be used by authors as data sources in the XM Cloud Component builder. 
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 ---
 
 ## Introduction - What You are Going to Learn
 
-In this tutorial, we will go through the steps to update the Text Teaser component to use content data sources. You will create a new data template for the Text Teaser component. You will update the Text Teaser component to work with this data and configure data shortcuts for your author.
+In this tutorial, we will go through the steps to update the Text Teaser component to use content data sources. You will learn:
+
+- How to create a headless module and new data templates for the Text Teaser component in XM Cloud Content Editor
+- How to create new content items from your templates to be used as data for the Text Teaser component
+- How to update the Text Teaser component to use the data in your content items
 
 ## Overview
 
@@ -31,7 +35,6 @@ For this tutorial, you will be implementing the first option. You will:
 1. Configure XM Cloud so that authors can create the content
 1. Connect a created data source to the Component on the page.
 1. Configure XM Cloud so that whenever an author drags the Text Teaser component onto the page, they are asked to select an existing piece of content or create a new one.
-1. Setup the solution so that you can store the new data model in source control so it can be deployed to other environments.
 
 ## Prerequisites
 
