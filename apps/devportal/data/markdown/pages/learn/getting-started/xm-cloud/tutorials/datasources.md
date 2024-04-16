@@ -392,22 +392,55 @@ In order to create a section of rich content and then map it to a Rich Text fiel
 
 1. Click **Complete** to save the mapping changes.
 
-### Stage Component
+### Make the changes to the component available to authors
 
-Now that we have completed all of the mapping changes
+Now that we have completed all of the mapping changes we need to make the changes available to Pages by staging the component again.
 
-1. Let’s restage the component to make the change available in Pages.
+1. In the Components builder tool, click on the **Restage** button above the component
 
-### Add to Pages
+   `INSERT SCREENSHOT OF RESTAGE BUTTON LOCATION`
 
-In Pages I can see that the component I added before is blank as it requires now a data source that has not been set.
+### Update the component in Pages to use a data source
 
-1. I’ll remove the component
-1. and add it again.
-1. Now it is asking me for a data source. Let me select the data source I created before.
-1. So I navigate to my Site/Data/Text Teasers/Text Teaser 1
+In the previous tutorial, you added a Text Teaser component to the home page. After making these mapping changes, the existing component will now need a data source to display correctly as there is no more static content on the component. We will now go to Pages and fix our component so that it can pull the data from one of the Text Teaser data sources that were created in this tutorial.
 
-   Yey, The content appears in the component using my design. Just the design of the list item icons are still discs instead of my custom icon. This is because I need to provide proper styling and the images through my app.
+1. Return to the XM Cloud Tools pane. If you've closed that tab, you can get there with these instructions:
+
+   - Login to the [Sitecore Cloud Portal](https://portal.sitecorecloud.io)
+   - Select your App from the Apps list
+   - From the flyout panel, select **Open app**
+   - At the very top switch to **Tools**
+
+1. In the **Tools** page, select the **Pages** card to launch the Pages editor. The home page will display and you can see that the Text Teaser component is blank.
+
+   `INSERT SCREENSHOT OF PAGES WITH BLANK COMPONENT`
+
+1. Click on the blank component to select it.
+1. In the context menu above the component, click on the **Delete** action button. This will remove the current version of the component from the page.
+
+   `INSERT SCREENSHOT OF CONTEXT BAR WITH DELETE BUTTON HOVERED OVER BY MOUSE`
+
+1. In the left page, scroll down the **Components** listing to find the **Text Teaser** component.
+
+   `INSERT SCREENSHOT OF COMPONENTS PANE`
+
+1. Drag the Text Teaser card onto the Pages canvas to add the component to the page. A dialog will display prompting you to assign a content item (data source) to the component.
+
+   `INSERT SCREENSHOT OF DIALOG`
+
+1. Expand and navigate the displayed Content items tree to find the Text Teasers folder: `Company Dev/Company Dev/Data/Teasers`
+1. Select the **How to Use Components** content item.
+
+   `INSERT SCREENSHOT OF DIALOG WITH CONTENT ITEM SELECTED`
+
+1. Click the **Assign** button to connect this content item to the Text Teaser component on the page.
+
+<Alert status="success">
+   <AlertIcon />
+   **Congratulations!** You have now updated the Text Teaser component to work from a piece of re-usable authored content instead of using static content added to the component directly. You also learned how to create templates, how to configure insert options, how to configure modules and how to map visual elements to template fields.
+</Alert>
+
+`TODO: DO WE WANT TO DO THIS SOURCE CONTROL STUFF IN THIS TUTORIAL?`
 
 ## Add content changes to source control
 
