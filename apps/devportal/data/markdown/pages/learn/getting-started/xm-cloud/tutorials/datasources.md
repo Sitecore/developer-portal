@@ -329,9 +329,9 @@ Before releasing this to the authoring team, you need to ensure that the Text Te
 
    `SCREENSHOT OF TEXT TEASER DATA SOURCE`
 
-### Map component visual elements to data fields
+### Map component visual elements to Text data fields
 
-The component that was created in the previous tutorials uses static data in XM Cloud Components. As part of using our new data template, we need to map this Text Teaser data source to the visual elements in XM Cloud Components.
+The component that was created in the previous tutorials uses static data in XM Cloud Components. As part of using our new data template, we need to map this Text Teaser data source to the visual elements in XM Cloud Components. We are going to start by mapping the headline and subheadline text fields.
 
 1. Switch to the **Components** tab in the top menu to launch the Components visual builder.
 1. Scroll to the section labelled **Basic Components**. This section will list all the components we have made available in the Basic Components section. Currently, there is only the **Text Teaser**.
@@ -365,30 +365,36 @@ The component that was created in the previous tutorials uses static data in XM 
    Note that the **Sample** shows some example fields and their values. This can help you make sure you have the right type of source selected for the component you are editing.
    </Alert>
 
-1. Click on the **Next** button to advance to the **Path** configuration step.
+1. Click on the **Next** button to advance to the **Path** configuration step. This is where we will map the fields from the template to the visual element.
+1. Select the **Headline** field to map the data from that Text Teaser field to the heading element in the component.
 
-1. Now I click on “Next” to actually select the field from the template that should map to the component field.
-1. I select “Headline” and “Complete” the mapping process.
-1. I repeat the steps for my Headline3.
-1. I set the “Text” to be mapped to the Text Teaser Template
-1. select the “Subheadline field”.
-1. And complete the mapping.
+   `INSERT SCREENSHOT OF MAPPING`
 
-   <Alert status="info">
-   <AlertIcon />
-   As Rich Text Field is not properly shown add HTML Block and remove all paragraphs
-   </Alert>
+1. Click **Complete** to finish the mapping process.
 
-1. Last but not least I need to map the rich text field.
-1. When copying my content from the html design to the Component, several elements were created.
-1. All of the fields are “paragraphs”.
-1. So if I map my Content Field to the Paragraph I can see that it does not resolve the formatting coming from the XM Cloud Rich Text Editor.
-1. As a Rich Text Field is returning html and Paragraphs strip off many sorts of html formatting I remove all paragraphs
-1. Add an HTML Block Element.
-1. This one I map to the Content field from my template.
-1. And complete.
+1. Repeat the process for the the subtitle/subheading component.
+   - Map the sub heading visual component to the Text field "Subheadline" in the Text Teaser template
+   - Map the text area on the right of the component to the Text field
+
+### Mapping a Rich Text field
+
+In the Text Teaser component that was created in the previous tutorial, the right-side of the component is intended to have a full description (or 'teaser') for the user to read. Initially, the copied content that was used contains several paragraphs and list items, which does not map to a single field. Additionally, the paragraph tags do not render the formatting from a Rich Text field, so even if we have a single paragraph tag this will not meet our needs.
+
+In order to create a section of rich content and then map it to a Rich Text field on a data source and preserve the formatting, we need to do some cleanup to the existing content and put in the correct type of element: an HTML Block. In this section of the tutorial, we will clean up our component and map the Rich Text field to an HTML Block.
+
+1. In the Components builder, select the right-side of the Text Teaser component and remove all of the paragraphs of content that are currently there.
+1. Insert an HTML Block
+1. Click on the HTML Block element
+1. On the right side panel, click on the **HTMLContent** option. This will show that the text is currently **None**
+1. Map the HTML Block to the **Content** field on the **Text Teaser** data source
+
+   `INSERT SCREENSHOT OF HTML BLOCK ELEMENT MAPPED TO CONTENT`
+
+1. Click **Complete** to save the mapping changes.
 
 ### Stage Component
+
+Now that we have completed all of the mapping changes
 
 1. Let’s restage the component to make the change available in Pages.
 
