@@ -20,7 +20,8 @@ This release is deployed as part of Sitecore XP 9.1.
 </CardHeader>
 <CardBody>
 [Email Experience Manager in Sitecore 9.0 Update-2](/downloads/Email_Experience_Manager/90/Email_Experience_Manager_in_Sitecore_90_Update2)\
-This release is deployed as part of Sitecore XP 9.0 Update-2. 
+This release is deployed as part of Sitecore XP 9.0 Update-2.
+
 [Email Experience Manager in Sitecore 9.0 Update-1](/downloads/Email_Experience_Manager/90/Email_Experience_Manager_in_Sitecore_90_Update1)\
 This release is deployed as part of Sitecore XP 9.0 Update-1. 
 </CardBody>          

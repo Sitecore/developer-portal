@@ -42,7 +42,7 @@ hasInPageNav: false
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
   title="Sitecore Identity 7.0.328"
-  description="Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or can be extended for use with an external identity provider."
+  description="Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or extended for use with an external identity provider."
   link1text="Get latest"
   link1href="/downloads/Sitecore_Identity/7x/Sitecore_Identity_70328"
   link2text="See all versions"
@@ -74,7 +74,7 @@ hasInPageNav: false
 />
 <Download 
   title="Sitecore Horizon 10.2.0"
-  description="Next generation editor for SXP, whose technology later evolved to become XM Cloud's editing solution. Horizon for SXP is discontinued after SXP 10.2"
+  description="Next generation editor for SXP, whose technology later evolved to become XM Cloud's editing solution. Horizon is discontinued after SXP 10.2"
   link1text="Get latest"
   link1href="/downloads/Sitecore_Horizon/100/Sitecore_Horizon_1020"
   link2text="See all versions"

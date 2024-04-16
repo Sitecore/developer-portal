@@ -9,7 +9,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization
 ## Sitecore AI Automated Personalization Standard 4.x
 </CardHeader>
 <CardBody>
-[Sitecore AI Automated Personalization Standard 4.0.0](/downloads/Sitecore_AI_Automated_Personalization_Standard/4x/Sitecore_AI_Automated_Personalization_Standard_400)
+[Sitecore AI Automated Personalization Standard 4.0.0](/downloads/Sitecore_AI_Automated_Personalization_Standard/4x/Sitecore_AI_Automated_Personalization_Standard_400)\
 This release is compatible with Sitecore XP 10.2.
 </CardBody>          
 </Card>
@@ -19,7 +19,7 @@ This release is compatible with Sitecore XP 10.2.
 ## Sitecore AI Automated Personalization Standard 3.x
 </CardHeader>
 <CardBody>
-[Sitecore AI Automated Personalization Standard 3.0.0](/downloads/Sitecore_AI_Automated_Personalization_Standard/3x/Sitecore_AI_Automated_Personalization_Standard_300)
+[Sitecore AI Automated Personalization Standard 3.0.0](/downloads/Sitecore_AI_Automated_Personalization_Standard/3x/Sitecore_AI_Automated_Personalization_Standard_300)\
 This release is compatible with Sitecore XP 10.1.
 </CardBody>          
 </Card>
@@ -29,7 +29,7 @@ This release is compatible with Sitecore XP 10.1.
 ## Sitecore AI Automated Personalization Standard 2.x
 </CardHeader>
 <CardBody>
-[Sitecore AI Automated Personalization Standard 2.0.0](/downloads/Sitecore_AI_Automated_Personalization_Standard/2x/Sitecore_AI_Automated_Personalization_Standard_200)
+[Sitecore AI Automated Personalization Standard 2.0.0](/downloads/Sitecore_AI_Automated_Personalization_Standard/2x/Sitecore_AI_Automated_Personalization_Standard_200)\
 This release is compatible with Sitecore XP 10.0.
 </CardBody>          
 </Card>
@@ -39,7 +39,7 @@ This release is compatible with Sitecore XP 10.0.
 ## Sitecore AI Automated Personalization Standard 10.x
 </CardHeader>
 <CardBody>
-[Sitecore AI Automated Personalization Standard 10.1.0](/downloads/Sitecore_AI_Automated_Personalization_Standard/10x/Sitecore_AI_Automated_Personalization_Standard_101)
+[Sitecore AI Automated Personalization Standard 10.1.0](/downloads/Sitecore_AI_Automated_Personalization_Standard/10x/Sitecore_AI_Automated_Personalization_Standard_101)\
 This release is deprecated, please use Sitecore AI 3.0 instead.
 </CardBody>          
 </Card>
