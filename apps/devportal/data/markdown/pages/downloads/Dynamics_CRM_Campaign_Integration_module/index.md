@@ -1,6 +1,6 @@
 ---
 title: "Dynamics CRM Campaign Integration module"
-description: ""
+description: "Integrate your CRM system with Sitecore, and enrich the CRM with information about customers' online activity."
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Campaign_Integration_module.aspx
 ---
 
@@ -10,11 +10,6 @@ origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Campaign_Integration_mod
 </CardHeader>
 <CardBody>
 [Dynamics CRM Campaign Integration 2.2](/downloads/Dynamics_CRM_Campaign_Integration_module/2x/Dynamics_CRM_Campaign_Integration_22)\
-Integrate your CRM system with Sitecore, and enrich the CRM with information about customers' online activity.
-
-[Dynamics CRM Campaign Integration 2.1](/downloads/Dynamics_CRM_Campaign_Integration_module/2x/Dynamics_CRM_Campaign_Integration_21)\
-Integrate your CRM system with Sitecore, and enrich the CRM with information about customers' online activity.
-
-
+[Dynamics CRM Campaign Integration 2.1](/downloads/Dynamics_CRM_Campaign_Integration_module/2x/Dynamics_CRM_Campaign_Integration_21)
 </CardBody>          
 </Card>

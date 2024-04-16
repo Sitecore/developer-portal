@@ -1,6 +1,6 @@
 ---
 title: "Campaign Creator module"
-description: ""
+description: "Application for marketers to create and manage new campaign activities."
 origin: https://dev.sitecore.net/Downloads/Campaign_Creator_module.aspx
 ---
 

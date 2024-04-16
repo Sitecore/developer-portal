@@ -9,9 +9,6 @@ origin: https://dev.sitecore.net/Downloads/EXM_Dedicated_Dispatch_Server.aspx
 ## EXM Dedicated Dispatch Server 1.x
 </CardHeader>
 <CardBody>
-[EXM Dedicated Dispatch Server 1.0.3](/downloads/EXM_Dedicated_Dispatch_Server/1x/EXM_Dedicated_Dispatch_Server_103)\
-Download EXM Dedicated Dispatch Server 1.0.3
-
-
+[EXM Dedicated Dispatch Server 1.0.3](/downloads/EXM_Dedicated_Dispatch_Server/1x/EXM_Dedicated_Dispatch_Server_103)
 </CardBody>          
 </Card>
