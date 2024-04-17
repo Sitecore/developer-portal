@@ -77,11 +77,13 @@ const SidebarSearch = ({ config, onFocus, onBlur }: SidebarNavigationProps) => {
           <Box key={i} hidden={filteredRoutes.length == 0 || searchTerm == ''} mt={6}>
             {filteredRoutes.length == 0 && <Heading variant="section">No results found</Heading>}
 
-            <Heading variant="section">{link.title}</Heading>
+            <Heading variant="section" mb="4">
+              {link.title}
+            </Heading>
             {link.children.map((child, j) => (
               <Box key={j}>
                 <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} key={i}>
-                  <Button as={NextLink} colorScheme="neutral" href={appendPathToBasePath(config.path, child.path)} px={2} width={'full'}>
+                  <Button as={NextLink} colorScheme="neutral" href={appendPathToBasePath(config.path, child.path)} px={2} width={'full'} display={'inline-block'} alignContent={'center'}>
                     <Highlight styles={{ px: '0', py: '0.5', bg: 'orange.100' }} query={searchTerm}>
                       {child.title}
                     </Highlight>
