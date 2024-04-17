@@ -93,7 +93,7 @@ This will increase overall build time but can reduce the amount of concurrent re
 
 The JSS SDK and StarterKit for XM Cloud come with a retry mechanism by default to handle Experience Edge rate limit issues that are encountered after all the prior steps have been taken. This can happen when a lot of pages are published or the site is under a heavy load when pages are revalidated and generated.
 
-To enable the retry strategy, follow the instructions here: [Enable Retries for Requests to the XM Cloud Experience Edge GraphQL Endpoint](https://doc.sitecore.com/xmc/en/developers/jss/216/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html). 
+To enable the retry strategy, follow the instructions here: [Enable Retries for Requests to the XM Cloud Experience Edge GraphQL Endpoint](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html). 
 
 When using the default strategy, set the environment variable `GRAPH_QL_SERVICE_RETRIES` to the number of times you want the strategy to retry before an error is returned. This strategy has a default back-off factor of 2. This means that every retry increases the delay before retrying by 2 seconds.
 
@@ -136,7 +136,7 @@ When there is a lot of external content that will generate many pages in the web
 
 <Row columns={2}>
 <Link title="Customize build-time static paths in Next.js apps | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/customize-build-time-static-paths-in-jss-next-js-apps.html" />
-<Link title="Enable retries for requests to the XM Cloud Experience Edge GraphQL endpoint" link="https://doc.sitecore.com/xmc/en/developers/jss/216/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html" />
+<Link title="Enable retries for requests to the XM Cloud Experience Edge GraphQL endpoint" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html" />
 <Link title="Component-level data fetching in JSS Next.js apps" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/component-level-data-fetching-in-jss-next-js-apps.html" />
 </Row>
 
