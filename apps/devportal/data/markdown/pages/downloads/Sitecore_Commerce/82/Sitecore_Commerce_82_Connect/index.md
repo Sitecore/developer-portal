@@ -8,7 +8,7 @@ Connectivity module for integrating 3rd party commerce or ERP platforms with the
 
 Two package versions are available on this page, the initial release and the latest. Select the version that aligns with the version of the Sitecore Experience Platform you are deploying. For more information on alignment between releases of Sitecore Commerce and the Sitecore Experience Platform, see the [Sitecore Commerce Compatibility Table](https://kb.sitecore.net/articles/316437)
 
-Looking for a different version? Return to [all available 8.x versions](/Downloads/Sitecore_Commerce)
+Looking for a different version? Return to [all available 8.x versions](/downloads/Sitecore_Commerce)
 
 ## Core Downloads
 

@@ -6,7 +6,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/81/Sitecore_Commerc
 
 Connectivity module for integrating 3rd party commerce or ERP platforms with the Sitecore Experience Platform. Compatible with Sitecore Experience Platform 8.1 Update-1 through Update-3. For more information on alignment between releases of Sitecore Commerce and the Sitecore Experience Platform, see the [Sitecore Commerce Compatibility Table](https://kb.sitecore.net/articles/316437)
 
-Looking for a different version? Return to [all available 8.x versions](/Downloads/Sitecore_Commerce)
+Looking for a different version? Return to [all available 8.x versions](/downloads/Sitecore_Commerce)
 
 ## Core Downloads
 

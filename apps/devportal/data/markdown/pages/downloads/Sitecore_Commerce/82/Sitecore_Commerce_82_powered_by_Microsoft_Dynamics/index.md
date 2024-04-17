@@ -8,7 +8,7 @@ Sitecore's powered by Microsoft Dynamics commerce product, compatible with Sitec
 
 This page includes the latest available Commerce 8.2 downloads. Where specifically stated, downloads have been updated since the Initial Release to maintain compatibility with Sitecore XP. More information on alignment between Sitecore Commerce 8.2 and Sitecore XP 8.2 update releases is provided in the [Sitecore Commerce Compatibility Table](https://kb.sitecore.net/articles/316437)
 
-Looking for a different version? Return to [all available 8.x versions](/Downloads/Sitecore_Commerce)
+Looking for a different version? Return to [all available 8.x versions](/downloads/Sitecore_Commerce)
 
 ## Core Downloads
 

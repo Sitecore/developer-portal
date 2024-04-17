@@ -12,7 +12,7 @@ Sitecore XC 10.1 adds functional enhancements like data archiving of orders-rel
 
 Refer to the [Sitecore Experience Commerce Compatibility Table](https://kb.sitecore.net/articles/804595) for the software and version prerequisites. 
 
-Return to [all available versions](/Downloads/Sitecore_Commerce)
+Return to [all available versions](/downloads/Sitecore_Commerce)
 
 ## Download Options for Sitecore Container Deployments
 
