@@ -72,17 +72,21 @@
               "path": "content-audit"
             }
           ]
-				},
-				{
+        },
+        {
           "title": "Project Architecture",
           "path": "project-architecture",
-					"ignoreLink": true,
-					"children": [
-						{
-							"title": "Multisite",
-							"path": "multisite"
-						}
-					]
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Multisite",
+              "path": "multisite"
+            },
+            {
+              "title": "Rate Limits and Caching",
+              "path": "rate-limits-and-caching"
+            }
+          ]
         },
         {
           "title": "Sprint Zero",
