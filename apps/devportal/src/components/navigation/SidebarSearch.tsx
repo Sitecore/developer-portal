@@ -1,5 +1,5 @@
 import { Box, Button, ButtonGroup, Heading, Highlight, Icon, IconButton, Input, InputGroup, InputLeftElement, InputRightElement } from '@chakra-ui/react';
-import { mdiClose, mdiMagnify } from '@mdi/js';
+import { mdiClose, mdiFilterVariant } from '@mdi/js';
 import NextLink from 'next/link';
 import React from 'react';
 import { appendPathToBasePath } from '../../../../../packages/ui/src/lib/utils/stringUtil';
@@ -46,11 +46,11 @@ const SidebarSearch = ({ config, onFocus, onBlur }: SidebarNavigationProps) => {
             pointerEvents="none"
             children={
               <Icon>
-                <path d={mdiMagnify} />
+                <path d={mdiFilterVariant} />
               </Icon>
             }
           />
-          <Input placeholder="Search" onChange={handleSearch} value={searchTerm} />
+          <Input placeholder="Filter" onChange={handleSearch} value={searchTerm} />
           <InputRightElement>
             <IconButton
               onClick={reset}

@@ -4,6 +4,7 @@
   "path": "/downloads",
   "showRootAsSections": true,
   "enableSearch": true,
+  "enableBreadcrumb": false,
   "routes": [
     {
       "title": "Composable DXP",
