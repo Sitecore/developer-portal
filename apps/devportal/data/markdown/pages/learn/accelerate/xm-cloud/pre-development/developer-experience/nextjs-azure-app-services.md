@@ -16,7 +16,7 @@ Sitecore does not recommend hosting your XM Cloud head application on Azure App 
 
 The main reason for not recommending Azure App Services is that it takes a server infrastructure approach to hosting, leading to lower performance, difficulty scaling, and higher management complexity.
 
-Currently, we are working on a Hosting your Web Application artciel. This article will cover serverless vs server-based hosting, detailing our recommendation for serverless.
+Currently, we are working on a Hosting your Web Application article. This article will cover serverless vs server-based hosting, detailing our recommendation for serverless.
 
 ### Performance Limitations
 One of Azure App Services' biggest limitations is performance. Since Next.js is a JavaScript application and JavaScript is a single-threaded language, the Node.js runtime for JavaScript is also single-threaded. This means that the single-threaded Node server has to handle all requests to your websites, Experience Edge, image optimization, incremental static regeneration, and more, leading to performance issues.
