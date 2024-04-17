@@ -10,15 +10,15 @@ hasInPageNav: true
 
 The content delivery API on Experience Edge has a fair use rate limit of 80 uncached requests per second. If every user request hits the content delivery API for content, this limit will be very easily reached. 
 
-- How can we build our application to mitigate this rate limit, but still ensure that our users get up to date content when it is changed. 
-- How can we have sections of our site were content is updated regularly?
+- How can we build our application to mitigate this rate limit, but still ensure that our users get up-to-date content when it is changed. 
+- How can we have sections of our site where content is updated regularly?
 - How do we cope with a very large site and cache clears, for example, if after a deployment my site has 10,000 pages and high traffic, so there will likely be a high volume of traffic hitting the content delivery API.
 
 ## Solution
 
 ### SSG vs SSR
 
-The first step to mitigate this rate limit is by making sure that your web application is configured to use Static Site Generation (SSG) and not Server Side Rendering (SSR). When SSG is enabled, the page content is generated on build and stored in the host cache. When a request is made to that page, the host serves the cached version and no request is made to the content delivery API directly.
+The first step to mitigate this rate limit is to make sure that your web application is configured to use Static Site Generation (SSG) and not Server Side Rendering (SSR). When SSG is enabled, the page content is generated on build and stored in the host cache. When a request is made to that page, the host serves the cached version and no request is made to the content delivery API directly.
 
 By default, the XMC Foundation Head starter kit is configured to use SSG. To make sure you are using SSG, check your `[[...path]].tsx` file. In there you should have 2 functions:
 
@@ -29,7 +29,7 @@ These 2 functions handle getting all the routes to be generated on build (`getSt
 
 ## Incremental Static Regeneration
 
-Once the site is configured to use SSG, we can use Incremental Static Regeneration (ISR) to dynamically update content as it is published without requiring a new build and deploy,
+Once the site is configured to use SSG, we can use Incremental Static Regeneration (ISR) to dynamically update content as it is published without requiring a new build and deployment,
 
 To configure ISR for a route (and in this case, all routes in the web application), return a revalidate property in `getStaticProps`.
 
@@ -47,14 +47,14 @@ To configure ISR for a route (and in this case, all routes in the web applicatio
 ```
 <br /><br />
 
-The revalidate property should be set to the longest acceptable or most comfortable time period for content updates to show up for end users on the site; another way looking at this value is “how long should stale content show up for end users of the site.” There may be multiple considerations about the “life time” of content that impact other parts of the organization outside of content authors, such as legal requirements and statements. 
+The revalidate property should be set to the longest acceptable or most comfortable time period for content updates to show up for end users on the site; another way of looking at this value is “how long should stale content show up for end users of the site.” There may be multiple considerations about the “lifetime” of content that impact other parts of the organization outside of content authors, such as legal requirements and statements. 
 
-For more details on configuring ISR and SSG, please see the [Publishing, Cache Revalidation and SSG](/learn/accelerate/xmcloud/implementation/project-architecture/publishing-cache-isr.md) recipe.
+For more details on configuring ISR and SSG, please see the [Publishing, Cache Revalidation, and SSG](/learn/accelerate/xmcloud/implementation/project-architecture/publishing-cache-isr.md) recipe.
 
 
 ### Streamline Your Builds
 
-One side effect of Static Site Generation is that the time to generate all the pages in your site will increase the time it takes to build the Next.js application. By default, the `GraphqlSitemapServicePlugin` fetch all pages in your site. If you use the multisite plugin, this will fetch all pages in all sites in your instance.
+One side effect of Static Site Generation is that the time to generate all the pages on your site will increase the time it takes to build the Next.js application. By default, the `GraphqlSitemapServicePlugin` fetches all pages in your site. If you use the multisite plugin, this will fetch all pages in all sites in your instance.
 
 To improve your build performance, you can [customize the build time static paths](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/customize-build-time-static-paths-in-jss-next-js-apps.html). The linked documentation will take you through the required steps to achieve this.
 
@@ -63,7 +63,7 @@ Through a combination of `includedPaths` and `excludedPaths` you can make sure t
 These can include, but are not limited to:
 
 - Home Page
-- First level navigation pages (optional)
+- First-level navigation pages (optional)
 - Top 10 pages with the highest traffic on the site that is not covered already
 
 There is no set rule, the existing site analytics should be used to determine which pages would have the most impact by being statically generated on build. You can completely disable the SSG fetch for the fastest build times. 
@@ -87,15 +87,15 @@ module.exports = uniformNextConfig({
 ```
 <br /><br />
 
-This will increase overall build time, but can reduce the amount of concurrent requests being made to Experience Edge.
+This will increase overall build time but can reduce the amount of concurrent requests being made to Experience Edge.
 
 ### Enabling LayoutService/Dictionary Retries
 
-The JSS SDK and StarterKit for XM Cloud come with a retry mechanism by default to handle Experience Edge rate limit issues that are encountered after all the pior steps have been taken. This can happen when a lot of pages are published or the site is under a heavy load when pages are revalidated and generated.
+The JSS SDK and StarterKit for XM Cloud come with a retry mechanism by default to handle Experience Edge rate limit issues that are encountered after all the prior steps have been taken. This can happen when a lot of pages are published or the site is under a heavy load when pages are revalidated and generated.
 
 To enable the retry strategy, follow the instructions here: [Enable Retries for Requests to the XM Cloud Experience Edge GraphQL Endpoint](https://doc.sitecore.com/xmc/en/developers/jss/216/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html). 
 
-When using the default strategy, set the environment variable `GRAPH_QL_SERVICE_RETRIES` to the number of times you want the strategy to retry before an error is returned. This strategy has a default back off factor of 2. This means that every retry increases the delay before retrying by 2 seconds.
+When using the default strategy, set the environment variable `GRAPH_QL_SERVICE_RETRIES` to the number of times you want the strategy to retry before an error is returned. This strategy has a default back-off factor of 2. This means that every retry increases the delay before retrying by 2 seconds.
 
 ### Retries on Component Level Data Fetching
 
@@ -123,7 +123,7 @@ item(path:"/sitecore/content/<SiteCollection>/<Site>/Home", language: "en") {
 
 ### Wildcards
 
-When there is a lot of external content that will generate many pages in the web application, good use of wildcard pages can help to reduce the load on Experience Edge. When a single wildcard page item is used to control the presentation for all external content pages, for example a Product Detail page, this means that requests to any product detail page will use the cached layout response for the wildcard page and this does not count against the rate limit.
+When there is a lot of external content that will generate many pages in the web application, good use of wildcard pages can help to reduce the load on Experience Edge. When a single wildcard page item is used to control the presentation for all external content pages, for example, a Product Detail page, this means that requests to any product detail page will use the cached layout response for the wildcard page and this does not count against the rate limit.
 
 ## Related Recipes
 
