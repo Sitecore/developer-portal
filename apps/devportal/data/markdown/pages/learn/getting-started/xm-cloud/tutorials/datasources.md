@@ -413,8 +413,11 @@ In order to create a section of rich content and then map it to a Rich Text fiel
 
    `SCREENSHOT OF RIGHT-SIDE OF COMPONENT removed`
 
-1. Insert an HTML Block - `TODO: WHAT ARE THE STEPS TO DO THIS?`
-1. Click on the HTML Block element
+1. Above the empty placeholder, click on the **Add element** button.
+1. Select the **HTML Block** element to insert it into the placeholder.
+   `SCREENSHOT OF BLOCK ELEMENTS`
+
+1. Click on the HTML Block element that was inserted to focus your editing selection.
 1. On the right side panel, click on the **HTMLContent** option. This will show that the text is currently **None**
 1. Map the HTML Block to the **Content** field on the **Text Teaser** data source
 
