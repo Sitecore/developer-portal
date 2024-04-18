@@ -6,7 +6,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/90/Sitecore_Experie
 
 Update-3 to Sitecore Experience Commerce 9.0, compatible with Sitecore Experience Platform 9.0 Update-2. Refer to the [Sitecore Experience Commerce 9 Compatibility Table](https://kb.sitecore.net/articles/804595) for the software and version prerequisites.
 
-Return to [all available versions](/Downloads/Sitecore_Commerce)
+Return to [all available versions](/downloads/Sitecore_Commerce)
 
 ## Download options
 

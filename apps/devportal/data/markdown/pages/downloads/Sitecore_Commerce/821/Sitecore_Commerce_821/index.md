@@ -8,7 +8,7 @@ This is Sitecore's new Commerce product, simply named Sitecore Commerce. This is
 
 Sitecore Commerce Connect is no longer packaged as a separate product. To access it, download the full Sitecore Commerce release package and extract only the Sitecore Commerce Connect 10.0.174.zip file.
 
-Return to [all available versions](/Downloads/Sitecore_Commerce)
+Return to [all available versions](/downloads/Sitecore_Commerce)
 
 ## Download options
 

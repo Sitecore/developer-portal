@@ -1,13 +1,15 @@
 import { SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
-import { Box, Button, ButtonGroup, Collapse, HStack, Heading, Icon, IconButton, Text, Wrap, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, HStack, Heading, Hide, Icon, IconButton, Text, Wrap, useDisclosure } from '@chakra-ui/react';
 import { mdiChevronDown, mdiChevronRight, mdiMinus, mdiPlus } from '@mdi/js';
 import { appendPathToBasePath } from '@scdp/ui/lib';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
+import SidebarSearch from './SidebarSearch';
 
 export interface SidebarNavigationProps {
   title?: string;
+  showSearch?: boolean;
   config: SidebarNavigationConfig;
 }
 
@@ -16,20 +18,27 @@ let showRootAsSections: boolean | undefined;
 
 const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
   const router = useRouter();
+  const [searchActive, setSearchActive] = useState<boolean>(false);
 
   showRootAsSections = config.showRootAsSections;
   basePath = config.path;
 
   return (
     <React.Fragment>
-      {config.heading && (
+      {config.enableSearch && (
+        <Hide below="md">
+          <SidebarSearch config={config} onFocus={() => setSearchActive(true)} onBlur={() => setSearchActive(false)} />
+        </Hide>
+      )}
+
+      {config.heading && !searchActive && (
         <Heading as={NextLink} variant={'section'} my={4} hideBelow={'md'} href={config.path} px={2}>
           {config.title}
         </Heading>
       )}
 
       {/* Desktop */}
-      <Wrap direction="column" hideBelow={'md'}>
+      <Wrap direction="column" hideBelow={'md'} hidden={searchActive}>
         {showRootAsSections && config.routes.map((link, i) => <SidebarGroupItem {...link} key={i} />)}
 
         {!showRootAsSections && (
@@ -177,7 +186,6 @@ const DropDownMenu = ({ config, ...rest }: SidebarNavigationProps) => {
       >
         {config.title}
       </Button>
-
       <Collapse in={isOpen}>
         <Box position={'relative'}>
           <ButtonGroup variant="navigation" orientation="vertical" width={'full'} spacing="1" mt={2} as="ul">

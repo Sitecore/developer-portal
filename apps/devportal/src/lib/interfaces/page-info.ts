@@ -78,6 +78,8 @@ export type SidebarNavigationConfig = {
   heading: boolean;
   path: string;
   showRootAsSections?: boolean;
+  enableSearch?: boolean;
+  enableBreadcrumb?: boolean;
   routes: SidebarNavigationItem[];
 };
 

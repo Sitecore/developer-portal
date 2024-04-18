@@ -8,7 +8,7 @@ This is Update-2 to Sitecore Commerce 8.2.1, compatible with Sitecore Experience
 
 Sitecore Commerce Connect is no longer packaged as a separate product. To access it, download the full Sitecore Commerce release package and extract only the Sitecore Commerce Connect 10.2.12.zip file.
 
-Return to [all available versions](/Downloads/Sitecore_Commerce)
+Return to [all available versions](/downloads/Sitecore_Commerce)
 
 ## Download
 
