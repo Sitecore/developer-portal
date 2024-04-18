@@ -6,7 +6,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/82/Commerce_Server_
 
 Stand-alone version of Commerce Server available for existing customers.
 
-Looking for a different version? Return to [all available 11.x versions](/Downloads/Sitecore_Commerce)
+Looking for a different version? Return to [all available 11.x versions](/downloads/Sitecore_Commerce)
 
 ## Core Downloads
 

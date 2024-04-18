@@ -29,7 +29,7 @@ Continued performance enhancements
 Framework & 3rd party updates: OData, .NET Standard, .NET Core, Solr, Redis client  
 Corrective content based on feedback from our customers, partners, and developers  
 
-Return to [all available versions](/Downloads/Sitecore_Commerce)
+Return to [all available versions](/downloads/Sitecore_Commerce)
 
 ## Download Options for Sitecore Containers Deployments
 
