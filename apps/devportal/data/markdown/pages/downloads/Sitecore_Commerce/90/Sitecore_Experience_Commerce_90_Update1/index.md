@@ -8,7 +8,7 @@ Update-1 to Sitecore Experience Commerce 9.0, compatible with Sitecore Experienc
 
 Sitecore Commerce Connect is no longer packaged as a separate product. To access it, download the full Packages for On Premises and extract only the Sitecore Commerce Connect Core 11.1.78.zip file. Note that at this time, the product synchronization feature is not implemented as stated in 9.0 Initial Release Notes.
 
-Return to [all available versions](/Downloads/Sitecore_Commerce)  
+Return to [all available versions](/downloads/Sitecore_Commerce)  
   
 
 ## Download options

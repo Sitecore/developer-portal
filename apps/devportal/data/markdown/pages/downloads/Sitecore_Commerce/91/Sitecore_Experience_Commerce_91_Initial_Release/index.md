@@ -6,7 +6,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/91/Sitecore_Experie
 
 Initial launch of Sitecore Commerce 9.1, focusing on compatibility with Sitecore Experience Platform 9.1 Update-1, along with enhancements and corrective content. Refer to the [Sitecore Experience Commerce 9 Compatibility Table](https://kb.sitecore.net/articles/804595) for the software and version prerequisites.
 
-Return to [all available versions](/Downloads/Sitecore_Commerce)
+Return to [all available versions](/downloads/Sitecore_Commerce)
 
 ## Download options
 

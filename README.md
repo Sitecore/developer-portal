@@ -116,9 +116,9 @@ NEXT_PUBLIC_SITECORE_CDP_POS=
 
 We are very grateful to the community for contributing bug fixes and improvements. We welcome all efforts to evolve and improve the Sitecore Developer Portal; read below to learn how to participate in those efforts.
 
-### [Code of Conduct](https://github.com/Sitecore/developer-portal/blob/main/apps/devportal/CODE_OF_CONDUCT.md)
+### [Code of Conduct](https://github.com/Sitecore/developer-portal/blob/main/CODE_OF_CONDUCT.md)
 
-Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/developer-portal/blob/main/apps/devportal/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/developer-portal/blob/main/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
 
 ### Contributing Guide
 

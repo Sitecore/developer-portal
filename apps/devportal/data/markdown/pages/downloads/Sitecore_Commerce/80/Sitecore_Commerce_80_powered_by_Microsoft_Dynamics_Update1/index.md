@@ -6,7 +6,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/80/Sitecore_Commerc
 
 Sitecore's powered by Microsoft Dynamics commerce product, compatible with Sitecore Experience Platform 8.0 Update-4 through Update-7. Includes connectivity modules for integration with Microsoft Dynamics Retail AX 2012 R3 CU8. For more information on alignment between releases of Sitecore Commerce and the Sitecore Experience Platform, see the [Sitecore Commerce Compatibility Table](https://kb.sitecore.net/articles/316437)
 
-Looking for a different version? Return to [all available 8.x versions](/Downloads/Sitecore_Commerce)
+Looking for a different version? Return to [all available 8.x versions](/downloads/Sitecore_Commerce)
 
 ## Core Downloads
 
