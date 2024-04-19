@@ -170,7 +170,7 @@ With the Text Teaser component created, you now need a folder to hold the create
 1. Now you will create the Text Teaser Folder template. Click on the **New Template** button or right-click on the folder and select **Insert > New Template**
    <Alert status="info">
    <AlertIcon />
-   There is another option called "Template Folder". This can also be used to collect together templates, but we use a standard template because `TODO: WHY DO WE USE IT. NOTE: If we do not, we should update this to use the Template Folder and remove the icon configuration step`
+   There is another option called "Template Folder". This can also be used to collect together templates, but we use the regular template because Template Folders do not support Standard Values which we will need in a later step to configure Insert Options.
    </Alert>
 
 1. Write **"Text Teaser Folder"** in the **Name** field to name the template.
