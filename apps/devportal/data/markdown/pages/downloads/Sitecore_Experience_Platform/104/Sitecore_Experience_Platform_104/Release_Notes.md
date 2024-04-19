@@ -1,0 +1,276 @@
+---
+title: "Release Notes"
+description: ""
+origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104/Release_Notes
+---
+
+**April 2024 – released Sitecore Experience Platform 10.4.0**
+
+This release includes new features and improvements made in Sitecore Experience Platform (SXP) 10.4. Sitecore recommends that you upgrade to this release if it aligns with the specific needs of your organization. This release contains significant improvements in functionality worth evaluating.
+
+-   [Highlights](#Highlights)
+-   [New features/improvements](#New)
+-   [Deprecated](#Deprecated)
+-   [Removed](#Removed)
+-   [Resolved issues](#Resolved)
+
+## Highlights
+
+Sitecore Experience Platform (SXP) 10.4 includes updates for improved security, prolonged supportability, performance, and usability. Highlights include:
+
+-   Updated Javascript libraries throughout SXP components.
+-   Improved security hardening throughout SXP to decrease risks due to vulnerabilities.
+-	Updated 3rd party compatibility: SQL Server 2022, latest Azure Kubernetes Service.
+-   Improved accessibility - enabling content authors with poor vision to better manage content in the Content Editor. For example, you can now:
+	-   Navigate the ribbon and use these actions: create, rename, move, and delete items
+	-   Navigate and expand items in the content tree.
+    -	Navigate and select various types of fields in the content area.
+    -	Listen to information about UI elements through assistve third-party technology.
+-	Implemented Solr soft commits to make index changes visible to search.
+-	Added a new *​Sitecore Client Content Reader*​​ user role that grants read access to Content Tree items in the Content Editor and Media Library.
+-	Added the ability to create a custom or regional language directly in the Content Editor, such as `en-EU`, which extends beyond those ISO language formats that are registered in .NET.
+-	Added the ability to trigger campaigns or goals based on rules. This is relevant, for example, if you want to display content from a campaign when certain pages are visited.
+-	Added the ability to bulk assign marketing definitions in xDB to content, improving the usability and efficiency in associate a marketing campaign to multiple content items at the same time.
+-	Added a new `Codeless Schema Extension` module, enabling business users to extend the xConnect schema without requiring code development.
+-	Added an open source module with the ability to extract data from xDB and transform the schema to feed external analytics tools. This also includes templates that show how the reports can be recreated in Power BI.
+
+In addition, our SXP 10.4 release adds flexibility in interworking with new SaaS products across Sitecore's portfolio and with the community ecosystem, enabling our current customers to continue with existing investments in SXP, while innovating on their own pace with Sitecore's other SaaS-based products. Related tooling released along with SXP 10.4 include:
+
+-	XM to XM Cloud Migration Tool for migrating content, media, and users from a source XM instance to an XM Cloud environment. This tool provides an aid for the routine and sometimes recurring back-end migrations, so our customers/partners can focus on migrating developing new front-end sites.
+-	xDB to CDP Migration Tool for transferring site visitor contact facets to Sitecore's CDP and Personalize products, and also via Sitecore Connect to external systems. This provides the ability to interwork with or eventually adopt other SaaS based innovation.
+
+## New features/improvements
+
+ | Context | Description | ADO no. |
+ | --- | --- | --- | 
+ | Platform | Changed the value of the ASP.NET `validateRequest` setting for the *pages* configuration node, to be enabled by default. | 92824 | 
+ | Platform | Image files with the `.ico` extension are now correctly identified as images and displayed in the Media Library. | 230118, 570809 |
+ | Platform | ​The AntiCSRF functionality designed for the Sitecore Client is now disabled in out-of-the-box Content Delivery instances. | 436657 | 
+ | Platform | ​The setting `Rendering.SiteResolvingIncludeStartItem` can now be used to control whether an item must be under site `startItem` or under site `rootPath`, to be considered part of the site. The default value is *true*. | 444353 | 
+ | Platform | The `parseDataSource` pipeline now writes more debug information into the log files. | 486912 |
+ | Platform | An INFO message is now added to the log files when the current `InstanceName` does not match the `PublishingInstance` name. | 528783 | 
+ | Platform | Updated the Domain Manager text in the pop-up window, when creating a new domain. | 555884 |
+ | Platform | Improved user experience by updating several libraries to their latest versions and replacing deprecated libraries with more contemporary alternatives. | 561690 |
+ | Platform | You can now target specific audiences more effectively by adding custom languages, combining any ISO language code with a country/region code. This includes the ability to use nonstandard country/region codes, such `en-EU`. | 562647, 575028, 548481 |
+ | Platform | Added the ability to create a custom or regional language directly in the Content Editor, such as `en-EU`, which extends beyond those ISO language formats that are registered in .NET. | 569366  |
+ | Platform | ​The screenshot functionality that uses PhantomJS can now be disabled by switching the setting to *false*. | 570391 |
+ | Platform | ​The data template name is now included in the payload of a webhook event handler request. | 580191 | 
+ | Platform | The Publish Manager now supports the publishing of multiple items. | 583069 |
+ | Platform | You can now add custom parameters for authentication using Webhooks OAuth2.0 Client Credentials Grant and OAuth2.0 Password Credentials Grant. | 583781 |
+ | Platform | It is now possible to use folder templates in the *Insert from Template* dialog. | 585073 |
+ | Platform | It is now possible to configure the `Rendering.SiteResolvingIncludeStartItem` setting on a per-site basis. | 594030 |
+ | Content Editor | ​Introduced a new security role, granting users read access to items in the Content Editor and the Media Library, intended for providing basic read access. | 555423 |
+ | Content Editor | Enhanced the Content Editor's accessibility in line with the W3C ARIA Authoring Practices Guide, enabling users to seamlessly navigate with a keyboard through ribbons, the content tree, and various field types. Additionally, introduced a visual focus indicator and labels to support users using assistive technologies, ensuring an inclusive user experience. | 561870 |
+ | Search | Implemented Solr Soft Commits to make index changes visible to search. | 97020 |
+ | Search | Used `Delete-By-Id` instead of `Delete-By-Quer` for Solr document deletion. | 561884 |
+ | xDB | Added the ability to bulk assign marketing definitions in xDB to content, improving the usability and efficiency in associate a marketing campaign to multiple content items at the same time. | 579430 |
+ | Experience Analytics | Added a new open source module providing the ability to extract data from xDB and transform the schema to feed external analytics tools. This also includes templates that show how the reports can be recreated in Power BI. | 576755 |
+ | Experience Optimization | Provided compatibility of Content Availability and Experience Optimization features so they can both be enabled together, to address scenarios like A/B testing across multiple regions. | 518578, 519179 |
+ | Experience Optimization | Added the ability in the Marketing Control Panel to associate a goal to multiple items at the same time. | 539923 |
+ | Personalization | Added a new  module called `Codeless Schema Extension`, enabling business users to extend the xConnect schema without requiring code development. | 504800 |
+ | Email Experience Manager | Improved error handling for Chillkat software issues. | 392574 |
+ | Email Experience Manager | Added support for special characters in email campaign descriptions. | 604409 |
+ | Containers | Created a new Kubernetes script, `K8s-init.ps1`, for populating data such as passwords and users for secrets. | 555220 |
+ | Containers | Updated the Kubernetes specifications; `resources` and `replacements` are now used in place of `vars` and `bases`. | 590811 | 
+ | Installation | Updated the .NET 6 hosting-bundle in the `prerequisites.json` file. | 596223 |
+ | Installation | An auto-update link to `vc_redist.x64.exe` has been set in the `prerequisites.json` file, which takes the latest version. | 549000 |
+ | Installation | ​You can now change the default package installation behavior so that the item in the target database preserves the version numbers from the source database. | 193262 |
+ | Installation | Updated the 3rd party license file, `Duende_License.key`, to the Sitecore Identity module. See [KB1003162](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1003162). | 569891 |
+ | Performance | Improved performance of the ​Workbox application. | 198937 |
+ | Performance | Improved performance of `Sitecore.Configuration.Settings.GetTimeSpanSetting`. | 470887 |
+ | Performance | Improved performance of field-level language fallback in a scenario where `enableFieldLanguageFallback` is set to *false*. | 550404 |
+ | Performance | Improved performance of field-level language fallback when processing `item:versionRemoved` events. | 550410 |
+ | Performance | ​Improved performance of the `AccessResultCache` class. | 551213 |
+ | Performance | ​Improved performance of the `HandleSimulationRequest` processor. | 556245 |
+ | Performance | Enabled performance improvements for the Translation cache in the default deployment. | 560817 |
+ | Performance | Improved performance of `getItem` calls in `AddItemLinkReferences`. | 561502 |
+ | Performance | ​Improved performance of retrieving a media item with a whitespace in its name. | 580597 | 
+ | Performance | Optimized the Experience Edge item deletion function for better performance. | 588607 | 
+ | Performance | Improved performance in rebuilding the `sitecore_master_index` have been made. | 589212 |
+ | Performance | ​Improved performance of the `ReferenceReplacementJob`. | 594019, 594018 |
+ | Performance | ​Improved performance of the `LinkDatabase`. | 590416 |
+ | Performance | Improved performance of `Media.ResizeProcessor`. | 595667 |
+ | Logging | Added audit logging for Sitecore logins via Identity Server. | 602417 |
+ | Logging | Added audit logging when unlocking an item in the Content Editor *Review tab - My Items*. | 603209 |
+ | Security | Introduced blocking of SVG files containing JavaScript from being uploaded to the Media Library, as a default configuration. System administrators can disable this default setting as needed. | 580951, 580973 |
+ | Security | Enhanced security and supportability across the product and in 3rd party libraries, to reduce potential vulnerabilities, and to reduce the likelihood of requiring security updates in the future. | 294692, 429078, 507334, 523801, 543815, 546711, 551077, 551078, 552315, 553171, 559074, 561299, 561302, 563856, 564381, 565474, 568150, 572526, 576798, 584731, 584734, 586965, 588740, 594408, 604627, 605980, 609758 | 
+
+## Deprecated
+
+ | Context | Description | ADO no. |
+ | --- | --- | --- |
+ | Platform | Deprecated File Explorer and PhantomJS related APIs from the XM foundation. They will be removed in a future release. | 444858, 591777 |
+
+## Removed
+
+ | Context | Description | ADO no. |
+ | --- | --- | --- |
+ | Platform | Removed Developer Center, Update Center, and various outdated JavaScript libraries. | 525354, 540187 |
+
+
+## Resolved issues
+
+The following issues have been fixed:
+
+ | Context | Description | ADO no. |
+ | --- | --- | --- | 
+ | Platform | The `​Sitecore.Data.ID.TryParse` method does not parse short ID values. | 91923 |
+ | Platform | Some artifacts of the deprecated Developer Center application are still present in Sitecore. | 136226 | 
+ | Platform | When a request that contains illegal characters in the path is sent to the server, ​an error is thrown instead of redirecting to the *​Item Not Found* page. | 290139 |
+ | Platform | If you create a virtual user with a name that contains only numeric characters, an exception is thrown. | 381683 |
+ | Platform | In the Content Editor​, the *​Details* and *​Reset* buttons are inactive when `RequireLockBeforeEditing` is set to *false*. | 438400 |
+ | Platform | A `+` symbol within the `href` attribute in an anchor tag breaks the URL. | 439771 |
+ | Platform | When you detach media from an item, a `​BlobProviderException` error is thrown during publishing. | 490149 |
+ | Platform | `RollingFileAppender` does not write logs to the same log file after a configuration change. | 508897 |
+ | Platform | When you set `Media.UploadAsFiles` to *​true* and use the *​Upload files (advanced)* option, media will be saved to a database. | 509585 |
+ | Platform | ​An external link with a `queryString` in the general link field of rendering parameters is truncated after the symbol  `&`. | 527454 |
+ | Platform | The ​Japanese client translation file contains incorrect translations. | 545127 |
+ | Platform | ​The *Publishing Restrictions* dialog causes unintended item version updates. | 548738 |
+ | Platform | ​The *Broken Links* dialog only shows broken links for the last database, rather than for all selected databases. | 549003 |
+ | Platform | When the `WebEdit.UsePopupContentEditor` setting is enabled, it breaks the SXA metadata partial design. | 552038 |
+ | Platform | ​Circular template references can throw a `StackOverflowException` error. | 553229 |
+ | Platform | When a shared field is updated​, a new version of the item is created silently without workflow state. | 553284 |
+ | Platform | The checkbox field of the rendering parameters resets to the standard value when you delete the data source. | 554399 |
+ | Platform | ​When logging in via AzureAD as a virtual user, an endlesss redirect loop in Horizon occurs. | 555286 |
+ | Platform | ​When you upload to the Media Library with the options *Make uploaded media items versionable* and *Overwrite existing media items*, shared fields from the overridden item persisted. | 558081 |
+ | Platform | ​You cannot set security rights when `PropagationType.Any` is present. | 559389 |
+ | Platform | ​When you remove the alias and publish an item, the alias of the item is not removed from the web database. | 562638 |
+ | Platform | ​The item version number is renumbered after installing the Sitecore package. | 565562 |
+ | Platform | Explore mode core item present in XM topology. | 567784 |
+ | Platform | When `Rendering.SiteResolvingMatchCurrentSite` is set to *​false*, the `​StartItem` setting is ignored when resolving the site. | 569444 |
+ | Platform | ​Standard Value tokens do not work correctly in the fallback version of a cloned item. | 573972 |
+ | Platform | ​Links for items in non-default site language versions are incorrect. | 575848 |
+ | Platform | `IQueryable<T>` cannot be reused for concurrent query execution. | 576428 |
+ | Platform | ​Link generation using a display name with special characters does not work. | 577905 |
+ | Platform | When `enablePreview` is set to *​true*, an incorrect site is resolved during the link generation process. | 578547 |
+ | Platform | After editing the shared `​Renderings` field of an item, publishing to Edge results in a *System.ArgumentNullException: Null ids are not allowed* error. | 578684 |
+ | Platform | When the rendering parameter has an empty value, it causes broken links. | 578783 |
+ | Platform | ​When you rename an item using the Sitecore CLI, `LayoutData` does not publish and the old `LayoutData` is still available. | 581503 |
+ | Platform | When language is not defined in the site definition, the *Link Manager*​ resolves the site incorrectly. | 581545 |
+ | Platform | A deadlock can occur on application start if aggregation runs for the first time and `DeviceResolver` runs simultaneously.| 582497 |
+ | Platform | Page crashes after inserting an image in the Rich Text Editor in a Chrome (version 113.0.5672.64) or Edge (version 113.0.1774.35) browser. See [KB1003010](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1003010). | 584490 | 
+ | Platform | ​The `GetLookupSourceItems` pipeline for the `Droplist` field in the Content Editor does not work correctly. | 585248 |
+ | Platform | In the Content Editor, the EN language might be missing from the publishing form. | 586199 |
+ | Platform | When cache key indexing is enabled, testing a path before creating an item can cause multiple items to be created with the same name. | 586840 |
+ | Platform | Database context changes are lost when switching to Control Panel. | 591103 |
+ | Platform | The internal link to a versioned media item added in the Rich Text Editor contains the wrong language using Sitecore Link via Search when `languageEmbedding` is set to *​always*. | 592301 |
+ | Platform | The internal link to a versioned media item added in an RTE field contains the incorrect language. | 592307 |
+ | Platform | ​Recursive Related Items in Content Dependency do not work correctly. | 593054 |
+ | Platform | `GetRenderingContentDependenciesPipeline` can crash when there are broken links. | 593160 |
+ | Platform | Recursive Related Items and Related Items in Content Dependency will return all items in all languages. | 593323 |
+ | Platform | If the site configuration sets `enablePreview` to *​false*, the `DefaultItemSiteResolver` cannot resolve a site. | 593621 |
+ | Platform | Application cannot be started in case of issues with the Device Detection database. See [KB1003128](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1003128). | 593927 |
+ | Platform | If `alwaysExcludeVirtualFolder` is set to *true*, accessing modal windows from Desktop returns a *Requested Document Not Found* error. | 594740 |
+ | Platform | ​The link provider settings do not take effect on the item's URL properties. | 594913 |
+ | Platform | For some items, the long item path is not being fully displayed. | 596906 |
+ | Platform | *​Link Manager* refers to the item but will not use the display name while processing ancestors if `ItemLanguageFallback` is set to *true*. | 597804 | 
+ | Platform | Standard Values with a validation rule for fatal error cannot be saved. | 598149 |
+ | Platform | Item fallback version provided in the processor argument is not respected. | 609279 |
+ | Platform | OAuth2.0 authentication types for webhooks, configured in the Content Editor to receive event or workflow action notifications, are now compatible with Azure AD and Azure B2C providers. | 607491 |
+ | Platform | The `isLanguageFallbackValid` cache index size was not calculated correctly. This has been fixed by distinguishing between the size of the cache with and without the index. | 600792 |
+  | Platform | The *Unlock All* functionality processed duplicates items incorrectly. | 604856 |
+ | Platform | ​When an item is serialized, the audit log now shows the correct path. | 605214  |
+ | Platform | ​Making changes to media items that are stored as resources no longer causes errors. | 606299 |
+ | Platform | ​When an item is stored as a resource item, the `Created` field in the `Item Properties` window now shows the creation date for the latest version.| 604035 |
+ | Platform | ​When editing multilist fields in the Experience Editor, field validation now works. | 602648 |
+ | Platform | When two threads tried to modify two unrelated items, in some cases, a deadlock issue occurred. | 599633 |
+ | Platform | ​Media folder icons and preview images are now displayed correctly in the *Select Media* dialog within the Content Editor and Experience Editor. | 604495 |
+ | Platform | The *Applications* and *Control Panel Applications* Content Tree search categories are not displayed in the search results for the Core database. | 608605 |
+ | Content Editor | In the Rich Text Editor, when you insert snippets, `<blockquote>` and `<p>` tags do not display correctly. | 329704 |
+ | Content Editor | Modifying tracking fields in search operations overwrites the values in the items. | 419639 |
+ | Content Editor | The field editor does not update images properly. | 535446 |
+ | Content Editor | The results of the Build Search Query have the language as a suffix. | 550188 |
+ | Content Editor | If a virtual user publishes items several times, the ribbon in the Content Editor becomes collapsed. | 554564 |
+ | Content Editor | English language is not visible in the Content Editor *Publish Item* and *Publish Site* dialogs. See [KB1003096](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KB1003096). | 586199 |
+ | Content Editor | Content Tree search categories *Applications* and *Control Panel Applications* are not visible. | 608605 |
+ | Content Editor | ​In the Content Editor, criterion search does not work for different client languages. | 569475 |
+ | Experience Editor | Placeholder permissions are not resolved correctly in the Page Editor. | 95927 |
+ | Experience Editor | Experience Editor doesn't encode HTML entities while saving. | 114860 |
+ | Experience Editor | When editing an empty Multi-Line Text field, `<p>` tags display after saving the changes. See [KB1000668](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KB1000668). | 398289 |
+ | Experience Editor | Launching Experience Editor in two browsers simultaneously after restarting a Sitecore instance causes one of the sessions to crash. | 412499 |
+ | Experience Editor | The *Add here* button sometimes overlays the panel with the tree structure in Experience Editor. | 415386 |
+ | Experience Editor | `HtmlEditor.RemoveScripts` removes scripts even after being set to *false*. | 500604 |
+ | Experience Editor | Clicking results from *General Link with Search* throws an exception because the language is appended to the item ID. | 511692 |
+ | Experience Editor | In the Experience Editor, when saving the Rich Text Editor with a link that contains the characters `#` and `\|`, an unwanted `\|` is added before the `#` symbol. | 552274 |
+ | Experience Editor | Intermittent exceptions occur when trying to add a new component in Experience Editor. | 556913 |
+ | Experience Editor | Adding many conditions in a single personalization rule throws an exception error in the Experience Editor. | 558847 |
+ | Experience Editor | JavaScript errors may occur when opening additional pop-ups in Experience Editor inside EXM. | 561395 |
+ | Experience Editor | The *Lock and Edit* button does not work after the *Save* and *Unlock* actions. | 563584 |
+ | Experience Editor | Experience Editor is unable to save HTML tags in an RTE field if it contains nested tags. | 568200 |
+ | Experience Editor | Breadcrumb navigation in Experience Editor throws a 404 error in multisite environment. | 586738 |
+ | Experience Editor | Duplicate renderings display in the *Select a Rendering* dialog in Experience Editor. See [KB1003214](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1003214"). | 573497 |
+ | Experience Editor | The notification bar with a message is displayed after logging in to preview as another user. | 590276 |
+ | Experience Editor | `DateTime` fields are rendered in UTC time instead of server time. See [KB in progress](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KBXXXXX).  | 591676 |
+ | Experience Editor | The *Go* button in Experience Editor incorrectly resolves site. | 596216 |
+ | Experience Editor | Breadcrumbs do not resolve the correct site when clicking the *Go* button without selecting any item. | 597335 |
+ | Experience Editor | No audit log is added when an item is locked or unlocked in Experience Editor. | 601330 |
+ | Experience Editor | The *WebEdit* button registers changes only once after clicking *Ok* in field editor, and discards any subsequent attempts. | 608455 |
+ | Forms | Incorrect email validation message is shown in Sitecore Forms. See [KB1002247](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1002247). | 294737 |
+ | Forms | Sitecore Forms form submission does not account for sites with virtual folders. | 407458 |
+ | Forms | The next page of a form is not scrolled up automatically. | 429699 |
+ | Forms | Placeholder attribute for a form field is present in the page element of the label for a field where Placeholder was not defined. | 554717 |
+ | Forms | Forms tracking updates the `SC_ANALYTICS_GLOBAL_COOKIE` without the user providing consent to being tracked. | 526015 |
+ | Forms | Redirect to page submit action is not showing the current selection. | 566609 |
+ | Forms | Sitecore forms continue to validate the email field in spite of validation being disabled. | 567867 |
+ | Forms | *Your Changes have not been applied* dialog appears for the form's email field in different languages. | 585622 |
+ | Forms | Forms database encounters a communication error with a *Timeout expired* message. | 592211 |
+ | Forms | A multipage form validates fields on a page that has been skipped. | 592310 | 
+ | Forms | When a form is submitted with *Is Ajax* unchecked, the intended language gets removed from the URL. | 600934 |
+ | Forms | *Unable to access a closed stream* error occurs when saving files from the file storage table to disk. | 603638 |
+ | Media | A fallback language version of a source item becomes a regular language version on the new clone item. See [KB0799555](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0799555). | 120002 |
+ | Media | ​When a media blob is referenced by multiple duplicated media items, deleting one of these duplicated items will result in the deletion of the media blob. | 563054 |
+ | Media | When reattaching media to a file system-based media item, the media is uploaded as a blob and the file path is left empty. | 570288 |
+ | Media | Media PDF file should be opened in *ReadOnly* mode when its content is read for indexing. | 591674 |
+ | Media | Media files are stored in the file system during indexing. | 595670 |
+ | Media | After replacing the image source in the Media Library, the old image continues to appear in the Rich Text Editor field. | 607329 |
+ | Search | The value of the `Search.ContentTreeSearch.MaxResults` setting is ignored. See [KB1001790](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KB1001790). | 515248 |
+ | Search | Deleting Solr documents requires a separate request for every document. See [KB in progress](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KBXXXXX). | 561871 |
+ | Search | The Search API may return incorrect results under load. | 578068 |
+ | Content Search | Content search is not respecting the inherited read access rights. | 581647 |
+ | Search | Date range virtual field is not resolved to a Solr field during searching. | 596145 |
+ | Search | Increased CPU consumption when mapping Solr document fields to POCO class properties. |603381 |
+ | Publishing | Unable to remove a published item when publishing with the *Publish Related Items* setting enabled. | 475856 |
+ | Publishing | An item's sort order edited in the Experience Editor is not reflected when the item is published using the Publishing Service. | 570472 |
+ | Publishing | ​Publishing an item with related items in two languages to Experience Edge can cause an Out-Of-Memory exception. | 601950 |
+ | Email Experience Manager/Security | The HTML import feature is vulnerable to cross-site scripting. | 362927 |
+ | Email Experience Manager | Conditional rules are not executed during the `Preview for recipient` functionality. | 315407 |
+ | Email Experience Manager | The `Included Recipient` count is not updated if the content language differs from English. | 328917 |
+ | Email Experience Manager | The link to data source gets corrupted if it contains Danish characters like `å`, `æ`, and `ø`. | 366194 |
+ | Email Experience Manager | Links with anchors get stripped from external links when emails are dispatched. | 458558 |
+ | Email Experience Manager | Recipients list is not updated when users are unsubscribed from an automated email campaign. | 474132 |
+ | Email Experience Manager | A few automated messages are stuck in the dispatch queue when EXM tries to send messages from DDS. | 483297 |
+ | Email Experience Manager | The message dispatch sometimes does not mark the task status as complete even after all messages are sent (Recipient Count = 0). | 485046 |
+ | Email Experience Manager | Additional unexpected emails are sent to the same recipient through the marketing automation email campaign. | 489331 |
+ | Email Experience Manager | HTML content is truncated after saving. | 565120 |
+ | Email Experience Manager | The email campaign job status is not retrievable by EXM in the second CM instance in a pair. | 569634 |
+ | Email Experience Manager | `ClearSuppressionListMessagesBus` should be disabled on DDS roles. | 605688 |
+ | xDB | The `SC_ANALYTICS_GLOBAL_COOKIE` remains active even after the customer has revoked permission to collect cookies. | 589304 |
+ | xDB | Unable to delete contact identifiers that contain an apostrophe using the `RemoveContactIdentifier` method. | 566931 |
+ | Universal Tracker | An exception is thrown when trying to retrieve contacts that have multiple identifiers in a single batch. | 606531 |
+ | List Manager | Loading segmented lists with lengthy personalization rules causes a serialization exception. | 589574 |
+ | Path Analyzer | A few items were not moved to the final state at the time of publishing the site. | 562911 |
+ | Marketing Automation | The *goal taxonomy facet* rule does not work in the MA plan when the number of goal items is more than 20. | 552034 |
+ | Marketing Automation | Scheduled enrollment adds contacts to MA plans even if a plan is inactive. | 605291 |
+ | Experience Optimization | Leaderboard is empty when choosing it from *Reports*. | 597461 |
+ | Experience Optimization | Component test results display the label as *[Unknown]* if it's created in a language other than English. | 594972 |
+ | Marketing Operations | Unable to retrieve image from a Profile Card. | 477153 |
+ | Marketing Operations | An empty CSV file is generated when *Export Campaign Activities* is triggered in Campaign Creator using SolrCloud. | 556670 |
+ | Personalization | The *Country* personalization condition ot implemented in `Sitecore.CES.GeoIp.Core.Conditions`. See [KB1003208](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KB1003208). | 545860 |
+ | Personalization | When you hide a personalization component that has custom rendering parameters, a `System.Xml.XmlException` error occurs. | 559953 |
+ | Personalization | Long personalization rules in the segmented list can result in a serialization exception. | 589574 |
+ | Personalization | Creating a new segment with rule *Where Contact Has Triggered Goal* hangs when one of the conditions is broken. | 597023 |
+ | Content Testing | An exception occurs in the *Preview and start test* dialog if there is a personalized component in a partial design and there is a content testing component on the page.  | 526905  |
+ | Content Testing | The item does not progress to the next workflow state with the *Approve with test* option in Mozilla Firefox. | 571470  |
+ | Performance | Under high search request load, locks can occur due to concurrency control in `DefaultIndexFieldNameFormatterAttributeReader`, requiring the application to be restarted.  | 499366 |
+ | Performance | A memory leak can occur in the Redis Session Store, so that timed-out commands are not removed from the backlog. | 577894 |
+ | Sitecore PowerShell Extensions | In the `Sitecore.Reflection.Filtering.config` file, a trailing space in the  `OnDoubleClick` method name causes it to fail. See [KB1003097](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KB1003097). | 589519 |
+ | Containers | ​HTTPS requests of a Sitecore environment deployed using Containers are redirected to HTTP. | 548363 | 
+ | Containers | When using a container, the user gets redirected to an instance because a port number gets included in the URL. | 602502 |
+ | Logging | `​RollingFileAppender` stops updating Sitecore log files after the  Application Pool has restarted. | 383771 | 
+ | Logging | The Universal Tracker collection service responds with a 500 error code instead of 400 when the event endpoint is requested with an incorrect parameter. | 592353 |
+ | Logging | After adding an item version, the audit log incorrectly captures the currently open version number, instead of the desired incremented version number. | 601454 |
+ | Logging | No audit logs are added after creating a new item from Experience Editor. | 601870 |
+ | Security/Experience Analytics | Sitecore users with a *Developer* role have access to Experience Analytics. | 286427 |
+ | Security/Experience Profile | Scripts inserted in the email field via List Manager are executed in Experience Profile. | 382565 |
+ | Security | Cortex reporting allows users to perform cross-site scripting while expanding the API request. | 390671 |
+ | Security | A virtual user logging into the `httpRequestBegin` pipeline fails with a *ReportsUserId not found* exception. | 594111 |  
