@@ -1,7 +1,5 @@
 ---
 title: "Release Notes"
-description: ""
-origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104/Release_Notes
 ---
 
 **April 2024 – released Sitecore Experience Platform 10.4.0**

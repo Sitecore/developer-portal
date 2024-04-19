@@ -20,10 +20,10 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
-  title="Sitecore Experience Platform 10.3 Update-1"
+  title="Sitecore Experience Platform 10.4"
   description="Sitecore Experience Platform (SXP) including: XM, XP layer applications, and links to corresponding module releases."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Experience_Platform/103/Sitecore_Experience_Platform_103_Update1"
+  link1href="/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Experience_Platform"
 />
