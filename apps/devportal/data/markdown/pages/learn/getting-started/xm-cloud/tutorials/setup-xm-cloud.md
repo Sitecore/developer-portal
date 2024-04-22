@@ -16,7 +16,7 @@ XM Cloud focuses on being a headless, enterprise content and website management 
 
 In order to complete the following tutorial, you will need these resources:
 
-1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io)
+1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io).
 2. A valid XM Cloud license file.
    <Alert status="info">
    <AlertIcon />
