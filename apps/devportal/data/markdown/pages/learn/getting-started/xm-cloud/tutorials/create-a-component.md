@@ -92,12 +92,12 @@ Within this new collection, you will now create the new Component called “Text
 
 1. Specify the **Name** value as **"Text Teaser"**.
 
-   `INSERT SCREENSHOT OF completed form`
-
 <Alert status="info">
    <AlertIcon />
    You can leave the other fields blank. The **Description** field is optional and the **Collection** field will default to the currently selected Collection so it will be stored in Basic Components as desired.
 </Alert>
+
+`INSERT SCREENSHOT OF completed form`
 
 1. Click on the **Save** button to complete creating the component definition. A message will display telling you that the component was created.
 
@@ -105,15 +105,49 @@ Within this new collection, you will now create the new Component called “Text
 
    `INSERT SCREENSHOT OF Canvas`
 
-By clicking into the section, you will see a grid displayed by default. This can be adjusted on the pane at the right side of the screen, however, for now, leave it as it is.
+### Create the column layout for the Text Teaser component
 
-`INSERT SCREENSHOT of editor with Layout&Alignment section highlighted with a red box`
+Before we begin adding content, we want to ensure we can provide a two-column layout that matches the requirements that were given at the beginning. You will now learn how to create Card elements that can be used to hold other elements.
 
-You can create a new area on the screen by simply pressing and dragging your mouse at the same time. By default, it creates a block element, which you can directly change to a Card. This will become your left column.
+1. Click on the section/canvas. You will see a grid displayed by default.
 
-`INSERT SCREENSHOT of Card`
+   <Alert status="info">
+      <AlertIcon />
+      This can be adjusted on the pane at the right side of the screen, however, for now, leave it as it is.
+   </Alert>
 
-Now, create a second card as your right column following the same pattern.
+   `INSERT SCREENSHOT of editor with Layout&Alignment section highlighted with a red box`
+
+1. Click and drag your mouse across the canvas to create a left column for your Text Teaser.
+
+   <Alert status="info">
+      <AlertIcon />
+      By default, XM Cloud will create a **Block** element. You will want to change this to a **Card** in the following steps.
+   </Alert>
+
+   `INSERT SCREENSHOT of Canvas with drawn Block area`
+
+1. Click on the newly created left column Block area to load the context bar above the area.
+
+1. Click on the element type (Block) in the context bar to change the element type.
+
+1. Select the **Card** element type from the pop-up menu.
+
+   `INSERT SCREENSHOT OF Block elements dialog`
+
+1. Click and drag your mouse across the canvas to create a right column for your Text Teaser.
+
+   `INSERT SCREENSHOT of Canvas with drawn Block area`
+
+1. Click on the newly created right column Block area to load the context bar above the area.
+
+1. Click on the element type (Block) in the context bar to change the element type.
+
+1. Select the **Card** element type from the pop-up menu.
+
+### Add content elements to the columns
+
+Now that the layout is created, you will add content items for the content that was provided.
 
 When clicking on the “add Element” button, you can see all elements that are currently available. Select “headline 2” and click where you want to add it, in this case, on the left card on the top.
 
