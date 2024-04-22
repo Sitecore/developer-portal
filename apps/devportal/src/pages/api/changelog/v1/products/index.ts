@@ -1,8 +1,9 @@
 // Interfaces
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { GetProducts } from '@scdp/changelog';
+import { getChangelogCredentials } from '@/src/lib/changelog/changelog';
+import { Changelog } from '@scdp/changelog';
 import { Product } from '@scdp/changelog/types';
 import { getQueryValue } from '@scdp/changelog/utils';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Product[]>) => {
   const showAll: boolean = getQueryValue(req.query.all) == 'false' ? false : true;
@@ -10,7 +11,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Product[]>) => 
 
   res.setHeader('Cache-Control', 'stale-while-revalidate');
 
-  await GetProducts(isPreview).then((response: Product[]) => {
+  const changelog = new Changelog(getChangelogCredentials(), isPreview);
+
+  await changelog.GetProducts().then((response: Product[]) => {
     if (showAll) {
       res.status(200).json(response);
     } else {

@@ -2,9 +2,9 @@
   "name": "turborepo-poc",
   "private": true,
   "scripts": {
-    "build": "dotenvx run --env-file=.env --env-file=.env.local -- turbo build",
-    "dev": "dotenvx run --env-file=.env --env-file=.env.local -- turbo dev",
-    "start": "dotenvx run --env-file=.env --env-file=.env.local -- turbo start",
+    "build": "dotenv -e .env -c -- turbo build",
+    "dev": "dotenv -e .env -c  -- turbo run dev",
+    "start": "dotenv -e .env -c  -- turbo start",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "turbo run test",
@@ -13,7 +13,8 @@
     "update-dependencies": "turbo update-dependencies && npx npm-check-updates -u"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^0.29.1"
+    "@dotenvx/dotenvx": "^0.29.1",
+    "dotenv-cli": "^7.4.1"
   },
   "devDependencies": {
     "@scdp/eslint-config": "*",

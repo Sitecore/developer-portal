@@ -1,8 +1,9 @@
-import fs from 'fs';
-import path, { join } from 'path';
+import { Changelog } from '@scdp/changelog';
 import { Product } from '@scdp/changelog/types';
 import { slugify } from '@scdp/changelog/utils';
-import {GetProducts} from '@scdp/changelog';
+import fs from 'fs';
+import path, { join } from 'path';
+import { getChangelogCredentials } from './changelog/changelog';
 
 const pagesDirectory = path.join(process.cwd(), 'data/markdown/pages/');
 
@@ -22,7 +23,7 @@ export const getAllFilesRecursively = (dir: string, fileList: string[] = []): st
       if (filePath.endsWith('.md') || filePath.endsWith('.mdx')) fileList.push(filePath);
     }
   });
-  
+
   return fileList;
 };
 
@@ -83,8 +84,8 @@ type ProductChangeLogPaths = { params: { product: string } };
 
 export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[]> => {
   const paths: ProductChangeLogPaths[] = [];
-
-  const products = await GetProducts(false).then((response: Product[]) => {
+  const changelog = new Changelog(getChangelogCredentials(), false);
+  const products = await changelog.GetProducts().then((response: Product[]) => {
     return response;
   });
 
