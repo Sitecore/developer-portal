@@ -1,4 +1,4 @@
-import { GenericListData, GenericListItem } from 'ui/components/lists';
+import { GenericListData, GenericListItem } from '@scdp/ui/components';
 
 const content: GenericListItem[] = [
   {

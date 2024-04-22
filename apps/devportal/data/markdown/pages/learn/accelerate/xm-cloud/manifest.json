@@ -1,0 +1,221 @@
+{
+  "title": "Sitecore Accelerate for Partners",
+  "description": "Tips for teams working on XM Cloud projects from developers in the field",
+  "heading": false,
+  "path": "/learn/accelerate/xm-cloud",
+  "showRootAsSections": true,
+  "routes": [
+    {
+      "title": "Pre-development",
+      "path": "pre-development",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Project Planning",
+          "path": "project-planning",
+          "children": [
+            {
+              "title": "Preparing for an XM Cloud Project",
+              "path": "preparing-for-an-xm-cloud-project"
+            },
+            {
+              "title": "Project Estimation",
+              "path": "project-estimation"
+            }
+          ]
+        },
+        {
+          "title": "Discovery",
+          "path": "discovery"
+        },
+        {
+          "title": "Developer Experience",
+          "path": "developer-experience",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Branching Strategy",
+              "path": "branching-strategy"
+            },
+            {
+              "title": "Components Design Best Practices",
+              "path": "component-design-best-practices"
+            },
+            {
+              "title": "Development Workflow: Github Codespaces",
+              "path": "dev-workflow-codespaces"
+            },
+            {
+              "title": "Hosting Next.js on Azure App Services",
+              "path": "nextjs-azure-app-services"
+            }
+          ]
+        },
+        {
+          "title": "Security",
+          "path": "security",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Head Application Security",
+              "path": "head-application-security"
+            }
+          ]
+        },
+        {
+          "title": "Information Architecture",
+          "path": "information-architecture",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Content Audit",
+              "path": "content-audit"
+            }
+          ]
+				},
+				{
+          "title": "Project Architecture",
+          "path": "project-architecture",
+					"ignoreLink": true,
+					"children": [
+						{
+							"title": "Multisite",
+							"path": "multisite"
+						}
+					]
+        },
+        {
+          "title": "Sprint Zero",
+          "path": "sprint-zero",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Project Solution Setup",
+              "path": "project-solution-setup"
+            },
+            {
+              "title": "Creating a Site",
+              "path": "creating-a-site"
+            },
+            {
+              "title": "Setup Content Serialization",
+              "path": "setup-content-serialization"
+            },
+            {
+              "title": "DevOps",
+              "path": "devops"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Implementation",
+      "path": "implementation",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Developer Experience",
+          "path": "developer-experience",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Creating New Components",
+              "path": "creating-new-components"
+            },
+            {
+              "title": "Troubleshooting Local Dev Container Env",
+              "path": "troubleshooting-docker"
+            },
+            {
+              "title": "Creating a Component Gallery",
+              "path": "creating-a-component-gallery"
+            }
+          ]
+        },
+        {
+          "title": "Information Architecture",
+          "path": "information-architecture",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Wildcard Pages",
+              "path": "wildcard-pages"
+            }
+          ]
+        },
+        {
+          "title": "External Data Integration",
+          "path": "external-data-integration",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Getting Component Specific Data",
+              "path": "getting-component-specific-data"
+            }
+          ]
+        },
+        {
+          "title": "Redirect",
+          "path": "redirect"
+        },
+        {
+          "title": "Search",
+          "path": "search"
+        },
+        {
+          "title": "Sitemap",
+          "path": "sitemap"
+        }
+      ]
+    },
+    {
+      "title": "Final Steps",
+      "path": "final-steps",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Go-Live Checklist",
+          "path": "go-live-checklist"
+        }
+      ]
+    },
+    {
+      "title": "Appendix I",
+      "path": "appendix-i",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "XM Cloud Glossary",
+          "path": "xm-cloud-glossary"
+        }
+      ]
+    },
+    {
+      "title": "Appendix II",
+      "path": "appendix-ii",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Example Code",
+          "path": "example-code",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Exported components example",
+              "path": "exported-components-example"
+            },
+            {
+              "title": "template.module.json",
+              "path": "template-module-json"
+            },
+            {
+              "title": "xmcloud.build.json",
+              "path": "xmcloud-build-json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

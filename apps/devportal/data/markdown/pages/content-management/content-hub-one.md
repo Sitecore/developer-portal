@@ -7,6 +7,7 @@ description: 'Centrally manage your omnichannel content with a cloud-hosted head
 twitter: ['#ContentHubONE']
 stackexchange: ['#content-hub-one']
 youtube: PL1jJVFm_lGnxo5WIglnEqtRPWX8wuzVqv
+guidedDemoId: 'cls55uext002o0fl6e1rx5z2j'
 cdpTags: ['content-hub-one']
 ---
 
@@ -29,7 +30,7 @@ Content Hub ONE consists of:
 
 ### What problems does Content Hub ONE solve for marketers and developers?
 
-<VideoPromo youTubeId="cP2BBlgKZS8" title="" description="Content Hub One is designed for brands that need an agile headless CMS to support quickly evolving experiences targeting multiple channels. With Content Hub ONE marketers can deliver consistency across touchpoints while maintaining the content in one central location." />
+<VideoPromo youTubeId="cP2BBlgKZS8" title="" description="Content Hub ONE is designed for brands that need an agile headless CMS to support quickly evolving experiences targeting multiple channels. With Content Hub ONE marketers can deliver consistency across touchpoints while maintaining the content in one central location." />
 
 ## Quickstarts
 
@@ -56,7 +57,7 @@ The Sitecore Demo Solutions team created demo's that Sitecore partners and selle
 
 ## Implementation Guides
 
-These guidance documents aim to help you understand what kind of project management and implementation practices are recommended by Sitecore to implement Content Hub One.
+These guidance documents aim to help you understand what kind of project management and implementation practices are recommended by Sitecore to implement Content Hub ONE.
 <Row columns={2}>
 
   <Article title="Project Management guidance deck" imageUrl="https://sitecorecontenthub.stylelabs.cloud/api/public/content/db50ce5764ce4b2b9226322137c36e2a?v=dde6138f" link="https://sitecorecontenthub.stylelabs.cloud/api/public/content/1342290fb17642788f410c4055915210?v=9d48b7a1" hideLinkText="true" />

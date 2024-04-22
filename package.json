@@ -7,8 +7,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --no-daemon",
+    "build": "dotenvx run --env-file=.env --env-file=.env.local -- turbo build",
+    "dev": "dotenvx run --env-file=.env --env-file=.env.local -- turbo dev",
+    "start": "dotenvx run --env-file=.env --env-file=.env.local -- turbo start",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean": "npm exec --workspaces -- shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && shx rm -rf node_modules && shx echo Done!",
@@ -19,16 +20,16 @@
     "eslint": "^8.38.0",
     "eslint-config-custom": "*",
     "eslint-plugin-import": "^2.27.5",
-    "prettier": "latest",
-    "sc-changelog": "*",
+    "@scdp/changelog": "*",
+    "@scdp/eslint-config": "*",
+    "@scdp/typescript-config": "*",
+    "prettier": "^3.2.5",
     "shx": "^0.3.4",
-    "turbo": "^1.10.14",
-    "ui": "*"
+    "turbo": "latest"
   },
   "packageManager": "npm@9.5.0^",
   "dependencies": {
     "@azure/openai": "^1.0.0-beta.6",
-    "@mdi/js": "^7.3.67",
-    "react-markdown": "^9.0.0"
+    "@dotenvx/dotenvx": "^0.29.1"
   }
 }

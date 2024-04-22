@@ -1,4 +1,4 @@
-import { PersonaType } from 'ui/components/integrations/engage/PersonaTypes';
+import { PersonaType } from '@scdp/ui/components';
 
 export const FrontendSkills = {
   name: 'FrontendSkills',

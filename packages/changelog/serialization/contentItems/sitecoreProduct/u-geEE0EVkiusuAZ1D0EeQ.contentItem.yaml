@@ -1,0 +1,27 @@
+﻿id: u-geEE0EVkiusuAZ1D0EeQ
+name: OrderCloud
+fields:
+  productName:
+    value: OrderCloud
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/e496fb48ca514bb2a06a48e7337b68d9
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/e6b858aa7d024284bf51398f3b3bd040
+    type: ShortText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: FHuuD0YZL0-vj0mNNax1cQ
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

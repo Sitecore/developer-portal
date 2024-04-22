@@ -1,4 +1,5 @@
-import { Product } from "ui/lib/assets";
+import { Product } from "@scdp/ui/lib";
+
 
 export interface NavItem {
   title: string;
@@ -70,8 +71,8 @@ export const mainNavigation: NavItem[] = [
     ],
   },
   {
-    title: 'Discover',
-    url: '/discover',
+    title: 'Downloads',
+    url: '/downloads',
   },
   {
     title: 'Solution',
@@ -199,7 +200,7 @@ export const mainNavigation: NavItem[] = [
           },
           {
             title: 'Sitecore Install Framework',
-            url: '/devops/sif',
+            url: '/devops/sitecore-install-framework',
           },
           {
             title: 'Sitecore ARM Templates',

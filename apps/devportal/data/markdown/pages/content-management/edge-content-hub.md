@@ -21,19 +21,19 @@ See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/1
 ## Getting Started
 
 - [Getting started](https://doc.sitecore.com/ch/en/users/content-hub/deliver-content--deliver-content-with-experience-edge.html)
-- [Use the APIs](https://doc.sitecore.com/ch/en/users/latest/content-hub/apis-intro.html)
-- [Query the content using GraphQL](https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/graphql-examples.html)
+- [Use the APIs](https://doc.sitecore.com/ch/en/users/content-hub/apis.html)
+- [Query the content using GraphQL](https://doc.sitecore.com/ch/en/developers/cloud-dev/graphql-examples.html)
 
 ## Documentation
 
-- [Introduction](https://doc.sitecore.com/ch/en/users/latest/content-hub/caas-intro.html)
-- [Creating Content](https://doc.sitecore.com/ch/en/users/latest/content-hub/create-create.html)
-- [Authoring](https://doc.sitecore.com/ch/en/users/latest/content-hub/authoring.html)
-- [Publishing](https://doc.sitecore.com/ch/en/users/latest/content-hub/publishing-intro.html)
-- [Content Delivery](https://doc.sitecore.com/ch/en/users/latest/content-hub/delivery.html)
+- [Introduction](https://doc.sitecore.com/ch/en/users/content-hub/get-started-with-content.html)
+- [Creating Content](https://doc.sitecore.com/ch/en/users/content-hub/create-content.html)
+- [Authoring](https://doc.sitecore.com/ch/en/users/content-hub/edit-content.html)
+- [Publishing](https://doc.sitecore.com/ch/en/users/content-hub/publishing.html)
+- [Content Delivery FAQ](https://doc.sitecore.com/ch/en/users/content-hub/deliver-content-faq.html)
 
 ## Learn & Examples
 
 - [Building omni-channel experience with Sitecore Experience Edge & Mobile Blazor Bindings ](https://www.youtube.com/watch?v=MxfDqasm0No&pp=sAQA)
-- [Query Examples](https://doc.sitecore.com/ch/en/developers/latest/cloud-dev/graphql-examples.html)
+- [Query Examples](https://doc.sitecore.com/ch/en/developers/cloud-dev/graphql-examples.html)
 - [Edge Portal](https://github.com/Sitecore/edge-portal/)

@@ -18,4 +18,4 @@ The Reference Data Service can be used by features such as interaction aggregati
 
 ### Download
 
-- [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
+- [Download Sitecore Experience Platform](/downloads/Sitecore_Experience_Platform)

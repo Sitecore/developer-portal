@@ -1,22 +1,25 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { IsSearchEnabled, SEARCH_CONFIG } from '@lib/search';
-import { scdpTheme } from '@lib/theme/theme';
 import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
 import { Footer } from '@src/components/navigation/Footer';
 import Navbar from '@src/components/navigation/NavBar';
-import SearchInputSwitcher from '@src/components/sitecore-search/SearchInputSwitcher';
 import { AppProps } from 'next/app';
 import { Router } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
-import { AvenirNextR } from 'ui/common/fonts/avenirNextR';
-import { EngageTrackerProvider, useEngageTracker } from 'ui/components/integrations';
-import { Clippy } from '../components/chatbot/Clippy';
+
+import sitecoreTheme, { toastOptions } from '@sitecore/blok-theme';
+
+import { EngageTrackerProvider } from '@scdp/ui/components';
+import { scdpTheme } from '@scdp/ui/theme';
+import { PreviewProvider } from '../context/PreviewContext';
+
+const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(false);
-  const engageTracker = useEngageTracker();
+  const [hostname, setHostname] = useState('');
 
   TopBarProgress.config({
     barColors: {
@@ -26,6 +29,28 @@ function MyApp({ Component, pageProps }: AppProps) {
     },
     shadowBlur: 2,
   });
+
+  const contentInnerRef = useRef(null);
+  let conversionTriggered = false;
+  const onScroll = useCallback(() => {
+    if (contentInnerRef.current) {
+      const { clientHeight, offsetTop } = contentInnerRef.current;
+      const contentAllViewed = window.scrollY + window.innerHeight >= offsetTop + clientHeight;
+      const params = new URLSearchParams(window.location.search);
+      const fromSearch = params.get('fromSearch');
+      if (contentAllViewed && fromSearch && !conversionTriggered) {
+        conversionTriggered = true;
+        trackEntityPageViewEvent('content', {
+          items: [
+            {
+              id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, ''),
+            },
+          ],
+          actionSubtype: 'conversion',
+        });
+      }
+    }
+  }, []);
 
   Router.events.on('routeChangeStart', () => {
     setProgress(true);
@@ -48,29 +73,25 @@ function MyApp({ Component, pageProps }: AppProps) {
       PageController.getContext().setLocale({ country: 'us', language: 'en' });
       trackEntityPageViewEvent('content', { items: [{ id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, '') }] });
     }
+    setHostname(window.location.host);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
   });
-
-  const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
 
   return (
     <SearchWrapper>
-      <style jsx global>
-        {`
-          :root {
-            --font-avenir: ${AvenirNextR.style.fontFamily};
-          }
-        `}
-      </style>
-      <ChakraProvider theme={scdpTheme}>
-        {progress && <TopBarProgress />}
+      <ChakraProvider theme={extendTheme(sitecoreTheme, scdpTheme)} toastOptions={toastOptions}>
         <EngageTrackerProvider>
-          <Navbar>
-            <SearchInputSwitcher />
-          </Navbar>
-          <Component {...pageProps} />
-          <Footer />
-
-          <Clippy />
+          <PreviewProvider hostname={hostname}>
+            {progress && <TopBarProgress />}
+            <Navbar searchEnabled={IsSearchEnabled()} />
+            <Box ref={contentInnerRef}>
+              <Component {...pageProps} />
+            </Box>
+            <Footer />
+          </PreviewProvider>
         </EngageTrackerProvider>
       </ChakraProvider>
     </SearchWrapper>

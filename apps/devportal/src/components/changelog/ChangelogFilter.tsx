@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import { Container, Skeleton, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
+import { Product } from '@scdp/changelog/types';
+import { MultiSelect, Option } from '@scdp/ui/components';
 import { useState } from 'react';
-import { Product } from 'sc-changelog/types';
-import MultiSelect, { Option } from 'ui/components/dropdown/MultiSelect';
 
 type ChangelogFilterProps = {
   className?: string;
@@ -35,9 +36,6 @@ const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: Ch
         instanceId={id}
         key={id}
         options={options}
-        classNames={{
-          control: () => 'mb-2 text-sm dark:bg-theme-bg',
-        }}
         onChange={(e: Option[]) => {
           setSelectedChange(e);
           onSelectChange(e);

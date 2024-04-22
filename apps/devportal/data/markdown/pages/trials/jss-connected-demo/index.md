@@ -14,7 +14,7 @@ This trial is recommended for JavaScript developers who have at least a basic un
 
 ## How can I sign up?
 
-Please follow [this link](https://www.sitecore.com/knowledge-center/getting-started/developer-trial) to register for the trial. You will receive a confirmation email to get you started.
+Please follow [this link](https://developers.sitecore.com/trials) to register for any developer trials available from Sitecore. You will receive a confirmation email to get you started.
 
 ## What does the trial include?
 

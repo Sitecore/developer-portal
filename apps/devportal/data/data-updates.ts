@@ -1,6 +1,17 @@
-import { GenericListData, GenericListItem } from 'ui/components/lists';
+import { GenericListData, GenericListItem } from '@scdp/ui/components';
 
 const content: GenericListItem[] = [
+  {
+    title: 'Migration Advisor',
+    description:
+      'Tell the Sitecore Migration Advisor about your solution and then find videos, tutorials, walkthroughs, code examples, and more to help you migrate from Sitecore Platform DXP to Sitecore XM Cloud and the rest of the Sitecore Composable DXP.',
+    href: 'https://migration.sitecore.com/',
+    linkText: 'Get Started',
+    img: {
+      src: 'https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/home/knowledge-center/digital-marketing-resources/migrating-to-xm-cloud/gettyimages-898545250.jpg',
+      alt: 'Migration Advisor',
+    },
+  },
   {
     title: 'Sitecore Changelog',
     description: 'Learn more about new versions, changes and improvements in the public preview of the Sitecore Changelog',
@@ -22,23 +33,13 @@ const content: GenericListItem[] = [
     },
   },
   {
-    title: 'XM Cloud Recommended Practices',
-    description: 'Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects!',
-    href: '/learn/faq/xm-cloud-recommended-practices',
+    title: 'Sitecore Accelerate',
+    description: 'Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products.',
+    href: '/learn/accelerate/xm-cloud',
     linkText: 'Read',
     img: {
-      src: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868',
-      alt: 'XM Cloud Recommended practices',
-    },
-  },
-  {
-    title: 'Implementation Guides',
-    description: 'These guidance documents aim to help you understand what kind of project management and implementation practices are recommended by Sitecore to implement Content Hub One.',
-    href: '/content-management/content-hub-one#implementation-guides',
-    linkText: 'Learn',
-    img: {
-      src: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/db50ce5764ce4b2b9226322137c36e2a?v=dde6138f',
-      alt: 'Content Hub ONE Implementation Guides',
+      src: '/images/accelerate.png',
+      alt: 'Sitecore Accelerate',
     },
   },
 ];

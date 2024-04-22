@@ -11,6 +11,7 @@ stackexchange: ['#moosend']
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['marketingAutomation']
 cdpPersonaDefinition: { PagePattern: [{ 'ProfileKey': 'FrontendSkills', 'value': 1 }, { 'ProfileKey': 'BackendSkills', 'value': 1 }, { 'ProfileKey': 'MarketingSkills', 'value': 10 }] }
+guidedDemoId: 'cls58bdv0001a0fk13w45ajxf'
 ---
 
 ## Introduction

@@ -1,0 +1,13 @@
+﻿id: sitecoreCloud
+name:
+  en-US: Sitecore Cloud
+description:
+  en-US: All Composable products are categorized by its Cloud, e.g. Content Cloud, Commerce Cloud or Engagement Cloud
+fields:
+- id: cloudName
+  name:
+    en-US: Cloud Name
+  type: ShortText
+  required: true
+  helpText:
+    en-US: ''

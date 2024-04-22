@@ -1,8 +1,8 @@
-import { Box, Grid, GridItem, HStack, Heading, Hide, Image, Stack, StackDivider, Tag, Text } from '@chakra-ui/react';
+import { Badge, Box, Grid, GridItem, HStack, Heading, Hide, Image, Stack, StackDivider, Text } from '@chakra-ui/react';
 import { SearchResultsInitialState, WidgetDataType, trackEntityPageViewEvent, useSearchResults, widget } from '@sitecore-search/react';
 //import Image from 'next/image';
 import { getColorScheme } from '@/src/lib/search';
-import { Loading } from 'ui/components/common/Loading';
+import { Loading } from '@scdp/ui/components';
 import QuerySummary from './QuerySummary';
 import SearchFacets from './SearchFacets';
 import SearchPagination from './SearchPagination';
@@ -87,7 +87,6 @@ export const SearchResults = (props: InitialSearchProps) => {
                     <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
                   </Hide>
                 </HStack>
-
                 <Stack divider={<StackDivider />} gap={2}>
                   {articles.length > 0 &&
                     articles.map((result, index) => (
@@ -98,15 +97,19 @@ export const SearchResults = (props: InitialSearchProps) => {
                         onClick={(e) => {
                           e.preventDefault();
                           onItemClick({ id: result.id || '', index });
-                          if (result.index_name != 'sitecore-devportal-v2') trackEntityPageViewEvent('content', { items: [{ id: result.id }] });
-                          window.open(result.url, '_blank');
+                          if (result.index_name != 'sitecore-devportal-v2') {
+                            trackEntityPageViewEvent('content', { items: [{ id: result.id }] });
+                            window.open(result.url, '_blank');
+                          } else {
+                            window.open(result.url + '?fromSearch=true', '_blank');
+                          }
                         }}
                       >
                         <HStack pb={2}>
                           {result.type && (
-                            <Tag colorScheme={getColorScheme(result.type)} size="md">
+                            <Badge colorScheme={getColorScheme(result.type)} size="sm">
                               {result.type}
-                            </Tag>
+                            </Badge>
                           )}
                           {result.index_name && <Heading variant={'section'}>{result.site_name}</Heading>}
                         </HStack>
@@ -140,7 +143,6 @@ export const SearchResults = (props: InitialSearchProps) => {
                       </a>
                     ))}
                 </Stack>
-
                 <SearchPagination defaultCurrentPage={1} onPageNumberChange={(v) => onPageNumberChange({ page: v })} page={page} pageSize={itemsPerPage} totalItems={totalItems} />
               </GridItem>
             </>

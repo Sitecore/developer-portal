@@ -1,9 +1,8 @@
-import { Badge, Box, Card, CardBody, CardHeader, CardProps, Flex, HStack, Heading, Link, SimpleGrid, Stack, Text, chakra, useColorModeValue } from '@chakra-ui/react';
+import { Badge, Box, Button, Card, CardBody, CardHeader, CardProps, Flex, HStack, Heading, Hide, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, SimpleGrid, Stack, Text, chakra, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { getSlug } from 'sc-changelog/utils/stringUtils';
-import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
-import { TextLink } from 'ui/components/links/TextLink';
+import { ChangelogEntry } from '@scdp/changelog/types';
+import { getSlug, getChangelogEntryUrl } from '@scdp/changelog/utils';
+import { TextLink } from '@scdp/ui/components';
 
 type ChangelogEntriesProps = CardProps & {
   entries: ChangelogEntry[];
@@ -25,15 +24,14 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
   }
 
   return (
-    <Card shadow={'none'} {...rest}>
-      <CardHeader justifyContent={'space-between'} display={'flex'}>
+    <Card shadow={'none'} {...rest} size={{ base: 'xs', md: 'md' }}>
+      <CardHeader justifyContent={'space-between'} display={'flex'} py={8}>
         <Heading as={'h3'} size={'md'}>
           {title != null ? title : 'Sitecore Changelog'}
         </Heading>
-
         <TextLink href={linkHref != null ? linkHref : '/changelog'} text={linkText != null ? linkText : 'See all changes'} />
       </CardHeader>
-      <CardBody>
+      <CardBody py={{ base: '2', md: '4' }}>
         <SimpleGrid columns={columns ? columns : 1} spacing={0}>
           {entries.map((entry, key) => {
             return (
@@ -53,13 +51,44 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
                   <HStack spacing={'24px'}>
                     <Text>{new Date(entry.releaseDate).toLocaleString('en-US', { dateStyle: 'medium' })}</Text>
 
-                    {entry.products != null
-                      ? entry.products.map((product, key) => (
-                          <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
-                            <Text color={useColorModeValue('black', 'white')}>{product.productName}</Text>
-                          </Link>
-                        ))
-                      : ''}
+                    {entry.products != null && entry.products?.length > 1 ? (
+                      <HStack spacing={0}>
+                        <Popover placement="bottom-start" trigger="click">
+                          <PopoverAnchor>
+                            {entry.products != null && (
+                              <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} className="">
+                                <Text color={useColorModeValue('black', 'white')}>{entry.products[0].productName}</Text>
+                              </Link>
+                            )}
+                          </PopoverAnchor>
+                          <PopoverTrigger>
+                            <Button variant="unstyled" size={'sm'} hideBelow={'sm'}>
+                              + {entry.products.length - 1} <Hide below="md">{entry.products.length == 1 ? 'other' : 'others'}</Hide>
+                            </Button>
+                          </PopoverTrigger>
+                          <PopoverContent p={2} maxW={'3xs'}>
+                            <PopoverArrow />
+                            <Stack>
+                              {entry.products &&
+                                entry.products.slice(1).map((product, key) => (
+                                  <HStack key={key}>
+                                    <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
+                                    <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
+                                      <Text color={useColorModeValue('black', 'white')}>{product.productName}</Text>
+                                    </Link>
+                                  </HStack>
+                                ))}
+                            </Stack>
+                          </PopoverContent>
+                        </Popover>
+                      </HStack>
+                    ) : (
+                      entry.products != null && (
+                        <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} className="" key={key}>
+                          <Text color={useColorModeValue('black', 'white')}>{entry.products[0].productName}</Text>
+                        </Link>
+                      )
+                    )}
 
                     {entry.changeTypeName != null ? <Badge colorScheme={entry.changeTypeName == 'Resolved' ? 'yellow' : entry.changeTypeName == 'New Feature' ? 'teal' : 'info'}>{entry.changeTypeName}</Badge> : ''}
                     {entry.breakingChange && <Badge colorScheme="danger">Breaking change</Badge>}

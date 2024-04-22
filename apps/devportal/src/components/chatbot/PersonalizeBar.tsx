@@ -1,9 +1,9 @@
 import { PageInfo } from '@/src/lib/interfaces/page-info';
 import { Avatar, Box, Flex, HStack, Heading, Icon, Image, Popover, PopoverArrow, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Spacer, Stack, Tag, TagLabel, Text, Tooltip, Wrap } from '@chakra-ui/react';
 import { mdiExpandAllOutline, mdiInformationVariantCircle, mdiTag } from '@mdi/js';
+import { ProductLogo } from '@scdp/ui/components';
+import { GetProductIcon, GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 import { FC } from 'react';
-import ProductLogo from 'ui/components/common/ProductLogo';
-import { GetProductIcon, GetProductLogoByVariant, Product, Type, Variant } from 'ui/lib/assets';
 import { IPersonalizedExperience } from './IExperienceResult';
 
 interface PersonalizeBarProps {

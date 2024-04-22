@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { IsSearchEnabled } from '@lib/search';
 import PreviewSearchInput from './PreviewSearchInput';
 import SearchInput from './SearchInput';
@@ -19,7 +20,7 @@ const SearchInputSwitcher = () => {
     <>
       {renderMode === SearchInputRenderMode.Disabled && <Disabled />}
       {renderMode === SearchInputRenderMode.SearchInput && <SearchInput />}
-      {renderMode === SearchInputRenderMode.PreviewSearchInput && <PreviewSearchInput rfkId="rfkid_6" />}
+      {renderMode === SearchInputRenderMode.PreviewSearchInput && <PreviewSearchInput rfkId="rfkid_6" defaultItemsPerPage={6} />}
     </>
   );
 };

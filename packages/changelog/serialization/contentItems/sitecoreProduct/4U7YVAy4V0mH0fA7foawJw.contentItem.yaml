@@ -1,0 +1,27 @@
+﻿id: 4U7YVAy4V0mH0fA7foawJw
+name: Search
+fields:
+  productName:
+    value: Search
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/d287e838b00b4dc19b71bf8c09705dd0
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/2c1a438a477d42f5b1ef92b16975c949
+    type: ShortText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: C0s2noNU9U6e6gtCCwcGwg
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

@@ -8,20 +8,26 @@ twitter: ['#LearnSitecore']
 hasInPageNav: false
 ---
 
-### Sitecore front-end developer trial
+<VideoPromo youTubeId="bCZcgFnhjAA" title="Solutions that integrate with your tech stack" description="Sitecore's SaaS-enabled, composable digital experience platform (DXP) allows you to choose which products you want to implement from search to purchase to post-sale marketing with solutions for Content, Experience, and Commerce." className="clear-both" />
 
-Are you a front-end developer looking to level-up your career? The trial will teach you the basics of JSS, step by step. Additionally, you will get a taste of Sitecore's personalization capabilities, one of its most powerful features — it's what distinguishes it from other CMSs.
+Digital experience is a team sport. Modernize your content management architecture and build up your composable stack with Sitecore solutions that:
 
-[Sign up here](https://www.sitecore.com/knowledge-center/getting-started/developer-trial)
+- Give the marketing team the freedom to work independently
+- Allow your technology team the focus to tackle key priorities
 
-### Moosend
+Fully API-driven, our architecture enables your team to build for any channel with the frameworks you already use, or use connectors to speed up system integration to your existing tech stack.
 
-Moosend provides all the necessary tools to get you started down your email marketing path. If you're well underway on your email marketing journey and you just traversed through other ESPs to our platform, you'll be happy to know that we give you state-of-the art features that will expand your toolbox and make your life easier.
+<Row columns={2}>
+  <Article 
+    title="Moosend" 
+    description="Moosend provides all the necessary tools to get you started down your email marketing path. If you're well underway on your email marketing journey and you just traversed through other ESPs to our platform, you'll be happy to know that we give you state-of-the art features that will expand your toolbox and make your life easier." 
+    link="https://identity.moosend.com/register/" 
+    linktext="Create your account!" />
 
-You can start by [creating your Moosend account](https://help.moosend.com/hc/en-us/articles/208062955-How-can-I-create-a-Moosend-account-).
+  <Article 
+    title="Sitecore OrderCloud" 
+    description="OrderCloud is a cloud-hosted B2B eCommerce platform exposed entirely via a RESTful API. It enables rapid development of custom, secure, and scalable B2B eCommerce solutions. Spin up a fully functional B2B app in minutes and customize it to the limits of your imagination." 
+    link="https://ordercloud.io/learn/getting-started/welcome-to-ordercloud" 
+    linktext="Get started today!" />
 
-### Sitecore OrderCloud
-
-OrderCloud is a cloud-hosted B2B eCommerce platform exposed entirely via a RESTful API. It enables rapid development of custom, secure, and scalable B2B eCommerce solutions. Spin up a fully functional B2B app in minutes and customize it to the limits of your imagination.
-
-[Get Started Today!](https://ordercloud.io/learn/getting-started/welcome-to-ordercloud)
+</Row>

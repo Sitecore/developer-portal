@@ -1,19 +1,14 @@
 // Global
-import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SubPageNavigation } from '@lib/interfaces/page-info';
+import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { SITECORE_COMMUNITY_MAX_COUNT, SitecoreCommunityApi, StackExchangeApi, YouTubeApi } from '@scdp/ui/components';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import StackExchangeApi from 'ui/components/integrations/stackexchange/StackExchange.api';
-import TwitterApi from 'ui/components/integrations/twitter/Twitter.api';
-import YouTubeApi from 'ui/components/integrations/youtube/YouTube.api';
 
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ParseContent } from '@lib/markdown/mdxParse';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
-import { SitecoreCommunityContent, SitecoreCommunityEvent } from 'ui/components/integrations/sitecoreCommunity';
-import SitecoreCommunityApi from 'ui/components/integrations/sitecoreCommunity/SitecoreCommunity.api';
-import { SITECORE_COMMUNITY_MAX_COUNT } from 'ui/components/integrations/sitecoreCommunity/sitecore-community.constants';
-import { searchForFile } from 'ui/lib/utils/fsUtils';
+import { ChangelogEntriesPaginated } from '@scdp/changelog';
+import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@scdp/ui/components';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
@@ -48,6 +43,7 @@ const getFileData = (directory: string, file: string): Matter => {
   }
 
   const fileMarkdown = fs.readFileSync(filePath, 'utf-8');
+
   // @TODO: Handle failures
   const results = matter(fileMarkdown);
 
@@ -59,12 +55,12 @@ const getFileData = (directory: string, file: string): Matter => {
   return results;
 };
 
-export const getPageInfo = async (params: string | string[], preview?: boolean): Promise<PageInfo | null> => {
+export const getPageInfo = async (params: string | string[]): Promise<PageInfo | null> => {
   const relativePath = Array.isArray(params) ? params.join('/') : params;
 
   const fileData = getFileData(pagesDirectory, `${relativePath}`);
   const meta = fileData.data as MarkdownMeta;
-  const content = await ParseContent(fileData.content);
+  const content = await ParseContent(Buffer.from(fileData.content));
   const fileName = `${repoUrl}/data/markdown/pages/${relativePath}/index.md`;
   const pageInfo = {
     hasInPageNav: true, // default to true, override in markdown
@@ -79,9 +75,9 @@ export const getPageInfo = async (params: string | string[], preview?: boolean):
     content: fileData.content,
     parsedContent: content?.result.compiledSource,
     headings: content?.headings,
-    previewMode: preview,
     slug: params[params.length - 1],
     hasSubPageNav: searchForFile(path.join(pagesDirectory, `${relativePath}`), 'manifest.json') != null ? true : false,
+    includeContributionInstructions: false, // default to true, override in markdown
   } as PageInfo;
 
   // Handle Persona Definition Mapping
@@ -101,16 +97,16 @@ export const getPageInfo = async (params: string | string[], preview?: boolean):
    * All of these APIs will return an empty array if the corresponding meta key is null
    */
   pageInfo.stackexchange = await StackExchangeApi.get(meta.stackexchange);
-  pageInfo.twitter = await TwitterApi.get(meta.twitter);
-  let twitterHandle: string | undefined = undefined;
-  if (meta.twitter) {
-    const twitterAsArray: string[] = Array.isArray(meta.twitter) ? meta.twitter : [meta.twitter];
-    twitterHandle = twitterAsArray && twitterAsArray.length > 0 ? twitterAsArray.find((arg) => arg.startsWith('@')) : '';
-  }
+  // pageInfo.twitter = await TwitterApi.get(meta.twitter);
+  // let twitterHandle: string | undefined = undefined;
+  // if (meta.twitter) {
+  //   const twitterAsArray: string[] = Array.isArray(meta.twitter) ? meta.twitter : [meta.twitter];
+  //   twitterHandle = twitterAsArray && twitterAsArray.length > 0 ? twitterAsArray.find((arg) => arg.startsWith('@')) : '';
+  // }
 
-  if (twitterHandle) {
-    pageInfo.twitterHandle = twitterHandle;
-  }
+  // if (twitterHandle) {
+  //   pageInfo.twitterHandle = twitterHandle;
+  // }
 
   if (meta.changelog) {
     pageInfo.changelogEntries = await (await ChangelogEntriesPaginated(false, meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
@@ -175,7 +171,7 @@ export const getPartialsAsArray = async (partials: string[]): Promise<PartialDat
     partials.map(async function (partial) {
       const data = getFileData(partialsDirectory, partial) as Matter;
       const fileName = `${repoUrl}/data/markdown/partials/${partial}.md`;
-      const parsedContent = await ParseContent(data.content);
+      const parsedContent = await ParseContent(Buffer.from(data.content));
 
       if (parsedContent != null) {
         content.push(parsedContent.result.compiledSource);
@@ -239,7 +235,16 @@ export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> =
  */
 export const getChildPageInfo = async (currentFile: string): Promise<ChildPageInfo[]> => {
   const directory = path.join(pagesDirectory, currentFile);
-  const children = fs.readdirSync(directory);
+
+  if (fs.existsSync(directory) == false) {
+    return [];
+  }
+
+  let children = fs.readdirSync(directory);
+
+  if (children.includes('manifest.json')) {
+    children = children.filter((child) => child !== 'manifest.json');
+  }
 
   return children
     .filter((obj) => !obj.startsWith('index') || obj == undefined)
@@ -256,10 +261,36 @@ export const getChildPageInfo = async (currentFile: string): Promise<ChildPageIn
     });
 };
 
-export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<SubPageNavigation | undefined> => {
+export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<SidebarNavigationConfig | undefined> => {
   const manifest = searchForFile(path.join(pagesDirectory, currentUrlSegment), 'manifest.json');
   if (manifest != null) {
-    const fileData: SubPageNavigation = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
+    const fileData: SidebarNavigationConfig = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
     return fileData;
   }
 };
+
+function searchForFile(folderPath: string, fileName: string): string | null {
+  const filePath = path.join(folderPath, fileName);
+
+  try {
+    // Check if the file exists in the current folder
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+      return filePath;
+    } else {
+      // If not found, check the parent folder
+      const parentFolder = path.dirname(folderPath);
+
+      // Base case: If we've reached the root folder and still haven't found the file, return null
+      if (parentFolder === folderPath) {
+        return null;
+      }
+
+      // Recursively search in the parent folder
+      return searchForFile(parentFolder, fileName);
+    }
+  } catch (err) {
+    // Handle any errors that occur during the search
+    console.error(`Error searching for file ${fileName}: ${err}`);
+    return null;
+  }
+}

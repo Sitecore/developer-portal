@@ -4,6 +4,10 @@ title: 'Customization'
 hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
 
 ## Are clients able to customize the editorial experience?
 
@@ -11,7 +15,7 @@ The Content Management instance will be fully customizable in XM Cloud as it is 
 
 ## Will it be possible to use custom identity providers?
 
-The initial release of XM Cloud will not support custom identity providers. When support becomes available, authentication will be performed through the Sitecore Cloud Portal, with XM Cloud available as an application through the Sitecore Cloud Portal. Customer SSO integration is enabled with our Sitecore Cloud Portal.
+XM Cloud now supports Single Sign On (SSO) to custom identity providers that use the OpenID Connect (OIDC) protocol. You can read more about how to configure SSO in the [Sitecore Cloud Portal documentation for SSO](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/single-sign-on--sso-.html).
 
 ## Extending pipelines and custom renderings, typically will be compiled .NET code attached to something in Sitecore, is this still allowed in XM Cloud?
 

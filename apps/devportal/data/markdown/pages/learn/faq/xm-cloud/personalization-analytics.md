@@ -5,6 +5,11 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 ## Does XM Cloud support personalization?
 
 Pages is delivered with an embedded personalization capability which provides a fixed set of out-of-the-box page-based personalization capabilities. Embedded personalization will not include API access. Sitecore Personalize is required to be licensed in order to gain full customizability or integration capabilities through the API.

@@ -3,7 +3,7 @@ import { VisuallyHidden } from '@chakra-ui/react';
 import { DocumentContext, DocumentInitialProps, DocumentProps, Head, Html, Main, NextScript } from 'next/document';
 import { Component } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
+// eslint-disable-next-line
 export class MyDocument<P = {}> extends Component<DocumentProps & P> {
   static getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     return ctx.defaultGetInitialProps(ctx);
@@ -11,7 +11,7 @@ export class MyDocument<P = {}> extends Component<DocumentProps & P> {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" style={{ height: '100%' }}>
         <Head />
         <body style={{ scrollMarginTop: '9em' }}>
           <Main />

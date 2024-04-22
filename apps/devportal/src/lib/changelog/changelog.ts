@@ -1,7 +1,7 @@
+import { ChangeType, Product } from '@scdp/changelog/types';
+import { Option } from '@scdp/ui/components';
 import axios from 'axios';
-import { ChangeType, Product } from 'sc-changelog/types';
 import useSWR, { Fetcher } from 'swr';
-import { Option } from 'ui/components/dropdown/MultiSelect';
 
 export const entriesApiUrl = '/api/changelog/v1';
 

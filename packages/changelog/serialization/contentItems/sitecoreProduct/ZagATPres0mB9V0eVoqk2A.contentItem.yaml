@@ -1,0 +1,27 @@
+﻿id: ZagATPres0mB9V0eVoqk2A
+name: Content Hub Operations
+fields:
+  productName:
+    value: Content Hub Operations
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/7d4a03805057487698adbca3359b15a9
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/3ab661c929f84cab9d88f351f20acb75
+    type: ShortText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: C0s2noNU9U6e6gtCCwcGwg
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

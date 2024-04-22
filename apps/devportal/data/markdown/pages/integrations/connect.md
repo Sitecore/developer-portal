@@ -3,6 +3,7 @@ solution: 'connect'
 product: ['connect']
 title: 'Sitecore Connect'
 description: 'Low-code / No-code integration platform built on Workato'
+guidedDemoId: 'cls543wve00p30fjs3dj45i6k'
 cdpTags: ['connect']
 ---
 

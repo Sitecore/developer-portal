@@ -8,8 +8,7 @@ stackexchange: ['#cdp']
 youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
 sitecoreCommunityQuestions: true
 sitecoreCommunityQuestionsCategory: ['customerDataManagement']
-cdpPersonaDefinition: { PagePattern: [{ 'ProfileKey': 'FrontendSkills', 'value': 1 }, { 'ProfileKey': 'BackendSkills', 'value': 1 }, { 'ProfileKey': 'MarketingSkills', 'value': 10 }] }
-cdpTags: ['cdp']
+guidedDemoId: 'cls53hjn8005r0fl90zuh4zt6'
 ---
 
 ## Introduction
@@ -54,6 +53,7 @@ If you are interested and want to learn more, please visit Learning@Sitecore.
 ## Resources
 
 - [XM Cloud: Embedded Personalization FAQ](/learn/faq/xm-cloud-embedded-personalization)
+- [CDP Mobile App Tagging Overview](https://sitecore.cdpknowledgehub.com/docs/mobile-app-tagging-overview)
 - [Blog: Sitecore CDP Audience Sync Automation](https://community.sitecore.com/community?id=community_blog&sys_id=46a5fcc11be15d10b8954371b24bcb85)
 - [Blog: Product Comparisons](https://community.sitecore.com/community?id=community_blog&sys_id=d8fdc45d1bb6811038a46421b24bcbb7)
 - [Blog: Product Specifications/Comparisons part 2](https://community.sitecore.com/community?id=community_blog&sys_id=f0862b751bf6491038a46421b24bcb65)

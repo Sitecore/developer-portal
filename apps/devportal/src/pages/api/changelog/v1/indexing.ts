@@ -1,8 +1,8 @@
-import { ChangelogEntry, ChangelogEntryList } from '@/../../packages/sc-changelog/types/changeLogEntry';
+import { ChangelogEntriesPaginated } from '@scdp/changelog';
+import { ChangelogEntry, ChangelogEntryList } from '@scdp/changelog/types';
+import { getChangelogEntryUrl, getQueryValue } from '@scdp/changelog/utils';
+import { removeHtmlTagsAndSpecialChars } from '@scdp/ui/lib';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ChangelogEntriesPaginated } from 'sc-changelog/changelog';
-import { getQueryValue } from 'sc-changelog/utils/requests';
-import { getChangelogEntryUrl } from 'sc-changelog/utils/urlBuilder';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 
@@ -16,7 +16,7 @@ type IndexingList = {
 type IndexResult = {
   title: string;
   changeTypes: string[];
-  products: string[];
+  products: IndexProduct[];
   date: string;
   description: string;
   fullArticle?: string | null;
@@ -24,6 +24,14 @@ type IndexResult = {
   breakingChange: boolean;
   image?: string | null;
   url: string;
+};
+
+type IndexProduct = {
+  name: string;
+  description: string;
+  darkIcon: string;
+  lightIcon: string;
+  sitecoreClouds: string[];
 };
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<IndexingList>) => {
@@ -46,11 +54,20 @@ async function GetEntries(list: IndexResult[], end: string, limit: string) {
     list.push({
       title: entry.title,
       changeTypes: entry.changeType.map((obj) => obj.changeType),
-      products: entry.sitecoreProduct.map((obj) => obj.productName),
+      products: entry.sitecoreProduct.map(
+        (obj) =>
+          <IndexProduct>{
+            name: obj.productName,
+            description: obj.productDescription,
+            darkIcon: obj.darkIcon,
+            lightIcon: obj.lightIcon,
+            sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName),
+          }
+      ),
       date: entry.releaseDate,
       image: entry.image[0] != null ? entry.image[0].fileUrl : null,
-      description: entry.description,
-      fullArticle: entry.fullArticle,
+      description: removeHtmlTagsAndSpecialChars(entry.description),
+      fullArticle: entry.fullArticle ? removeHtmlTagsAndSpecialChars(entry.fullArticle) : null,
       readMoreLink: entry.readMoreLink,
       breakingChange: entry.breakingChange ? true : false,
       url: `${publicUrl}${getChangelogEntryUrl(entry)}`,

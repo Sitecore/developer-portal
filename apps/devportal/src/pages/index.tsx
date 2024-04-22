@@ -6,20 +6,29 @@ import updatesListData from '@data/data-updates';
 import getHelpCta from '@data/promos/get-help';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getPageInfo } from '@lib/page-info';
+import {
+  CTACard,
+  CategoryTileList,
+  CenteredContent,
+  GenericList,
+  Hero,
+  Hexagons,
+  SitecoreCommunityBlog,
+  SitecoreCommunityEvents,
+  SitecoreCommunityNews,
+  SitecoreCommunityQuestions,
+  StackExchangeFeed,
+  VerticalGroup,
+  YouTubeFeed,
+} from '@scdp/ui/components';
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import Layout from '@src/layouts/Layout';
 import { NextPage } from 'next';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, VerticalGroup } from 'ui/components/helpers';
-import Hexagons from 'ui/components/hexagons/Hexagons';
-import { StackExchangeFeed, YouTubeFeed } from 'ui/components/integrations';
-import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions } from 'ui/components/integrations/sitecoreCommunity';
-import { CategoryTileList, GenericList } from 'ui/components/lists';
-import { CTACard } from 'ui/components/promos';
+import { ChatBot } from '../components/chatbot/ChatBot';
 import { TrackPageView } from '../components/engagetracker/TrackPageView';
 
-export async function getStaticProps(context: any) {
-  const pageInfo = await getPageInfo('home', context.preview ? context.preview : null);
+export async function getStaticProps() {
+  const pageInfo = await getPageInfo('home');
 
   return {
     props: {
@@ -31,6 +40,7 @@ export async function getStaticProps(context: any) {
 
 type HomePageProps = {
   pageInfo: PageInfo;
+  preview: boolean;
 };
 
 const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
@@ -40,22 +50,23 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
         <Hero title={pageInfo.title} description={pageInfo.description} />
 
         <VerticalGroup background={'chakra-bg'}>
-          <CenteredContent paddingTop={2}>
-            <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.data} />
-            <SimpleGrid py={4} gap={4} columns={[1, 1, 2]}>
+          <CenteredContent>
+            <SimpleGrid py={{ base: 0, md: 4 }} gap={{ base: 0, md: 4 }} columns={[1, 1, 2]}>
               <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
               <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} listItem={true} />
             </SimpleGrid>
+
+            <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.data} />
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup background={'chakra-subtle-bg'}>
+        <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
             <Hexagons />
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup background={'primary.900'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundSize={'cover'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
+        <VerticalGroup background={'primary.700'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundSize={'cover'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
           <CenteredContent>
             <GenericList title={platformData.title} subtitle={platformData.subtitle} data={platformData.data} column={3} width={{ base: 'full', md: '2xs' }} cardVariant="blurred" />
           </CenteredContent>
@@ -94,6 +105,8 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
             <StackExchangeFeed data={pageInfo.stackexchange} />
           </CenteredContent>
         </VerticalGroup>
+
+        <ChatBot position={'fixed'} bottom={'150px'} right={'10px'} />
       </Layout>
     </TrackPageView>
   );

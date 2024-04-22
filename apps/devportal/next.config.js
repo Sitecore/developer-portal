@@ -3,11 +3,6 @@
  * @type {import('next').NextConfig}
  */
 
-const fs = require('fs');
-const path = require('path');
-
-const shouldAnalyzeBundles = process.env.ANALYZE === true;
-
 //const withTM = require('next-transpile-modules'); // pass the modules you would like to see transpiled
 const securityHeaders = [
   {
@@ -36,16 +31,30 @@ const securityHeaders = [
     value: '1; mode=block',
   },
 ];
+
 const redirects = [
   {
     source: '/learn/integrations/xm-cdp',
     destination: '/learn/integrations/xm-smarthub-cdp',
     permanent: true,
   },
+  {
+    source: '/trial',
+    destination: '/trials',
+    permanent: true,
+  },
+  {
+    source: '/~/media/:uid(.*)', // Match any path after "/~/media/"
+    destination: '/api/redirect?type=download&uid=:uid', // Redirect to the specified destination
+    permanent: false, // Set to true for a permanent redirect (301)
+  },
 ];
 
 const nextConfig = {
-  transpilePackages: ['ui', 'sc-changelog', 'tailwind-config', 'react-tweet'],
+  experimental: {
+    largePageDataBytes: 256 * 100000,
+  },
+  transpilePackages: ['@scdp/ui', '@scdp-changelog'],
   // Set locales so we have appropriate lang attributes without a custom _document
   // ia8n commentted out due to temporary issue with ISR, see https://github.com/Sitecore/developer-portal/issues/182
   // i18n: {
@@ -60,18 +69,62 @@ const nextConfig = {
   },
   images: {
     dangerouslyAllowSVG: true,
-    domains: [
-      'sitecorecdn.azureedge.net',
-      'i.ytimg.com',
-      'mss-p-006-delivery.sitecorecontenthub.cloud',
-      'mss-p-006-delivery.stylelabs.cloud',
-      'go.sitecore.com',
-      'sitecorecontenthub.stylelabs.cloud',
-      'mms-delivery.sitecorecloud.io',
-      'wwwsitecorecom.azureedge.net',
-      'www.gitbook.com',
-      'theme.zdassets.com',
-      'opengraph.githubassets.com',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'sitecorecdn.azureedge.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'sitecorecdn.azureedge.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.sitecorecontenthub.cloud',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.stylelabs.cloud',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.sitecore.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.sitecorecloud.io',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'wwwsitecorecom.azureedge.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.gitbook.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'theme.zdassets.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'opengraph.githubassets.com',
+        pathname: '/**',
+      },
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     minimumCacheTTL: 60,
@@ -85,31 +138,7 @@ const nextConfig = {
     ];
   },
   async redirects() {
-    // Get the latest newsletter and redirect `newsletter/latest` to it
-    const newsletterDataDir = path.resolve(__dirname, 'data/newsletters/');
-    const year = fs
-      .readdirSync(newsletterDataDir)
-      .map((y) => parseInt(y, 10))
-      .sort((a, b) => b - a)[0];
-    const month = fs
-      .readdirSync(path.resolve(newsletterDataDir, `${year}`))
-      .map((m) => {
-        const name = m.substring(m, m.length - 5);
-        return {
-          name,
-          num: parseInt(name, 10),
-        };
-      })
-      .sort((a, b) => b.num - a.num)[0].name;
-
-    return [
-      ...redirects,
-      {
-        source: '/newsletter/latest',
-        destination: `/newsletter/${year}/${month}`,
-        permanent: false,
-      },
-    ];
+    return [...redirects];
   },
 };
 

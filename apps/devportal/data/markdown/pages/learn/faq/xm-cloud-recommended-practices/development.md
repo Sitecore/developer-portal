@@ -6,6 +6,12 @@ cdpPersonaDefinition: { PagePattern: [{ 'ProfileKey': 'FrontendSkills', 'value':
 cdpTags: ['xm-cloud']
 ---
 
+
+<Alert status="info">
+  <AlertIcon />
+    The information in this article can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 ## Dev Workflow
 
 [XM Cloud FAQ](https://developers.sitecore.com/learn/faq/xm-cloud/development) - Edge mode vs Fully local mode

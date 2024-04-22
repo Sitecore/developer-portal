@@ -11,11 +11,11 @@ The Sitecore developer portal is built with Next.js, Typescript, Chakra UI and [
 - apps
   - `devportal`: Developer Portal public site ([Next.js](https://nextjs.org/) based)
 - packages
-  - `ui`: a React component library shared by both `web` and `devportal` applications
-  - `sc-changelog`: Custom library to retrieve and parse changelog data
-  - `sc-changelog-tests`: Run tests for the changelog
-  - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-  - `tsconfig`: `tsconfig.json`s used throughout the monorepo
+  - `@scdp/ui`: a React component library based on [Sitecore Blok](https://blok.sitecore.com) used by `devportal` application
+  - `@scdp/changelog`: Custom library to retrieve and parse changelog data
+  - `@scdp/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+  - `@scdp/jest-presets`: `jest` configuration used throughout the monorepo
+  - `@scdp/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -25,6 +25,7 @@ This turborepo has some additional tools already setup:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
+- [Jest](https://jestjs.io/) for testing
 - [Prettier](https://prettier.io) for code formatting
 
 ### Prerequisites
@@ -39,14 +40,13 @@ The developer portal is built with Next.js, so you'll need to have Node.js insta
 
 #### Environment Variables
 
-The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables.
+The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables. Use the `.env.template` file as a starting point.
 
 The following variables should exist within the .env.local file:
 
 ```
 NEXT_PUBLIC_PUBLIC_URL=
 NEXT_PUBLIC_YOUTUBE_API_KEY="An API key with YouTube Data API v3 access enabled"
-NEXT_PUBLIC_TWITTER_BEARER_TOKEN="A bearer token from Twitter"
 NEXT_PUBLIC_COOKIE_CONSENT_URL=
 NEXT_PUBLIC_GTM_ID=
 NEXT_PUBLIC_GTM_AUTH=
@@ -70,7 +70,7 @@ _Note: The site will still function if the keys are missing or left blank. Howev
 
 ---
 
-To enable Sitecore Personalize to capture events the following environment variables are required:
+To enable Sitecore CDP/Personalize to capture events the following environment variables are required:
 
 ```
 NEXT_PUBLIC_SITECORE_CDP_CLIENT_KEY=
@@ -83,14 +83,13 @@ NEXT_PUBLIC_SITECORE_CDP_POS=
 
 ## Getting Started
 
-1. Install [Node.js](htts://nodejs.org/en/), we recommend the LTS version.
+1. Install [Node.js](https://nodejs.org/en/), we recommend the LTS version.
 2. Clone the repository.
 3. Inside the repository run `npm install` to install all the dependencies.
-4. Create a `.env.local` file in the root of the project and add the following environment variables:
+4. Create a `.env.local` file in the root of the project from the `.env.template` file. The following environment variables should be included:
 
 ```
 NEXT_PUBLIC_YOUTUBE_API_KEY=""
-NEXT_PUBLIC_TWITTER_BEARER_TOKEN=""
 NEXT_PUBLIC_COOKIE_CONSENT_URL=
 
 NEXT_PUBLIC_GTM_ID=
@@ -117,9 +116,9 @@ NEXT_PUBLIC_SITECORE_CDP_POS=
 
 We are very grateful to the community for contributing bug fixes and improvements. We welcome all efforts to evolve and improve the Sitecore Developer Portal; read below to learn how to participate in those efforts.
 
-### [Code of Conduct](https://github.com/Sitecore/developer-portal/CODE_OF_CONDUCT.md)
+### [Code of Conduct](https://github.com/Sitecore/developer-portal/blob/main/CODE_OF_CONDUCT.md)
 
-Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/developer-portal/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+Sitecore has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](https://github.com/Sitecore/developer-portal/blob/main/CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
 
 ### Contributing Guide
 

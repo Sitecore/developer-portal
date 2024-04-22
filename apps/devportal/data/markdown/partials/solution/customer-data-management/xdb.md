@@ -20,7 +20,7 @@ xConnect is the service layer that sits in between the xDB and any trusted clien
 
 ### Download
 
-- [Download Sitecore Experience Platform](https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform.aspx)
+- [Download Sitecore Experience Platform](/downloads/Sitecore_Experience_Platform)
 
 ### Community
 

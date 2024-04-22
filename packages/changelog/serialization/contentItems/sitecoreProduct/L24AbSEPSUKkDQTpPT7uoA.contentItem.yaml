@@ -1,0 +1,27 @@
+﻿id: L24AbSEPSUKkDQTpPT7uoA
+name: Discover
+fields:
+  productName:
+    value: Discover
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/1a0d50b5bd574889894c1d94fa1c3082
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/2ab14450250a4be0b2b7c522dd3e7f32
+    type: ShortText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: FHuuD0YZL0-vj0mNNax1cQ
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

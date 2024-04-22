@@ -1,6 +1,5 @@
-import { ChangelogEntry } from 'sc-changelog/types/changeLogEntry';
-import { StackExchangeQuestion, Tweet, YouTubeVideo } from 'ui/components/integrations';
-import { ForumOption, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption } from 'ui/components/integrations/sitecoreCommunity';
+import { ChangelogEntry } from '@scdp/changelog/types';
+import { ForumOption, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption, StackExchangeQuestion, YouTubeVideo } from '@scdp/ui/components';
 import { ContentHeading } from './contentheading';
 
 type PageInfoCore = {
@@ -16,12 +15,11 @@ type PageInfoCore = {
   title: string;
   pageTitle?: string;
   fileName: string;
-  previewMode?: boolean;
   slug: string;
   menuOrder?: number;
+  area: string[];
   product?: string[];
   cdpTags?: string[];
-
   //TODO: Works for AI POC - But i invision this is more like XP Pattern Cards
   cdpPersonaDefinition?: {
     PagePattern: any;
@@ -63,7 +61,6 @@ export type PageInfo = PageInfoCore & {
   stackexchange: StackExchangeQuestion[];
   changelogEntries: ChangelogEntry[];
   changelogProductId?: string[];
-  twitter: Tweet[];
   twitterHandle?: string;
   youtube: YouTubeVideo[];
   youtubeTitle?: string;
@@ -78,20 +75,26 @@ export type PageInfo = PageInfoCore & {
   parsedContent?: string;
   productLogo?: string;
   headings?: ContentHeading[];
+  guidedDemoId?: string;
 };
 
-export type SubPageNavigation = {
+export type SidebarNavigationConfig = {
   title: string;
   description: string;
-  heading: string;
+  heading: boolean;
   path: string;
-  routes: SubPageNavigationItem[];
+  showRootAsSections?: boolean;
+  enableSearch?: boolean;
+  enableBreadcrumb?: boolean;
+  routes: SidebarNavigationItem[];
 };
 
-export type SubPageNavigationItem = {
+export type SidebarNavigationItem = {
   title: string;
   path: string;
-  children: SubPageNavigationItem[];
+  ignoreLink?: boolean;
+  children: SidebarNavigationItem[];
+  collapsed?: boolean;
 };
 
 export type ChildPageInfo = {

@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path, { join } from 'path';
-import { Product } from 'sc-changelog';
-import GetProducts from 'sc-changelog/products';
-import { slugify } from 'sc-changelog/utils/stringUtils';
+import { Product } from '@scdp/changelog/types';
+import { slugify } from '@scdp/changelog/utils';
+import {GetProducts} from '@scdp/changelog';
 
 const pagesDirectory = path.join(process.cwd(), 'data/markdown/pages/');
 
@@ -12,8 +12,8 @@ export const getAllFilesRecursively = (dir: string, fileList: string[] = []): st
   const files = fs.readdirSync(dir);
 
   files.forEach((file) => {
-    if (file.startsWith('_')) return;
-    
+    if (file.startsWith('_') || file.startsWith('manifest')) return;
+
     const filePath = join(dir, file);
 
     if (fs.statSync(filePath).isDirectory()) {
@@ -22,7 +22,7 @@ export const getAllFilesRecursively = (dir: string, fileList: string[] = []): st
       if (filePath.endsWith('.md') || filePath.endsWith('.mdx')) fileList.push(filePath);
     }
   });
-
+  
   return fileList;
 };
 

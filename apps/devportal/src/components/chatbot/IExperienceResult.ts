@@ -1,6 +1,5 @@
-import { ProductInfoType } from 'ui/components/hexagons/HexagonTypes';
-import { PersonaType } from 'ui/components/integrations/engage/PersonaTypes';
-import { Product } from 'ui/lib/assets';
+import { PersonaType, ProductInfoType } from '@scdp/ui/components';
+import { Product } from '@scdp/ui/lib';
 
 export interface IExperienceResult {
   persona: string;

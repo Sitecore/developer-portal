@@ -5,6 +5,11 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 ## Do you have to be on Sitecore XM/XP 10.2 to move to XM Cloud?
 
 It will depend on how a customer decides to upgrade. For example, customers who are on older versions of Sitecore when they go through an upgrade process, don't always choose to do the incremental upgrades (where the implementation team increments through every version of Sitecore to get to their end goal). Instead, the implementation team creates a new instance of Sitecore XM 10.2 for example, and then begins to migrate or move all of those assets into the new instance. If a team takes that approach, then you will not have the prerequisite of doing XM/XP 10.2 first. However, if you wanted to validate your solution and get it ready for XM Cloud, then upgrading to XM/XP 10.2 now is a good choice as well. You don't have to be on 10.2 prior to going to XM Cloud if part of your migration strategy is doing the upgrade with the move.
@@ -27,7 +32,7 @@ Another benefit of a rebuild is that customers on more traditional MVC or WebFor
 
 Some implementations can quickly and easily move straight to XM Cloud because they're on modern technologies. They're headless. Some of them are already adopting Experience Edge or they preparing for it. Those implementations are really good candidates to quickly move to XM Cloud. There is a level of variance between how much they have to rebuild versus how much they can migrate and port. This type of solution is a good candidate for migration.
 
-If the implemention is headless and on a slightly outdated version of headless services, or maybe they're using content delivery servers rather than Experience Edge for publishing, there may be a little bit more work to do for this scenario to migrate.
+If the implementation is headless and on a slightly outdated version of headless services, or maybe they're using content delivery servers rather than Experience Edge for publishing, there may be a little bit more work to do for this scenario to migrate.
 
 If the build is on an older implementation, from before Sitecore XM 10.x, and the implementation is using a lot of XP features in use and they have a lot of MVC code then the amount of work for a migration will be higher. This should be balanced against the effort for a rebuild in making the decision.
 

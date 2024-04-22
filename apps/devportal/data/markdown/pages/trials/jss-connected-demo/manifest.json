@@ -3,10 +3,12 @@
   "description": "Unlock the full potential of Sitecore with JSS in a live demo environment.",
   "heading": true,
   "path": "/trials/jss-connected-demo",
+  "showRootAsSections": true,
   "routes": [
     {
       "title": "Getting Started",
       "path": "getting-started",
+      "ignoreLink": true,
       "children": [
         {
           "title": "Prerequisites",
@@ -25,6 +27,7 @@
     {
       "title": "Exploring Sitecore",
       "path": "exploring-sitecore",
+      "ignoreLink": true,
       "children": [
         {
           "title": "Experience Editor",
@@ -47,6 +50,7 @@
     {
       "title": "Exploring Code",
       "path": "exploring-code",
+      "ignoreLink": true,
       "children": [
         {
           "title": "Updating a Component",

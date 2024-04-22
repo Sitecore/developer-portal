@@ -1,0 +1,27 @@
+﻿id: uAwJlln4BUqyOtpExq1O5g
+name: Personalize
+fields:
+  productName:
+    value: Personalize
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/c3477197ba1446a484cb91fb20c96905
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/d4d1ecb699dd40c6934988bc6f69023f
+    type: ShortText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: dNxyawiMdU2XMzT1UiI7sw
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

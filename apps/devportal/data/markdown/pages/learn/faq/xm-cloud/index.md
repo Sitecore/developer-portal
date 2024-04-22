@@ -6,6 +6,12 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
+
+<Alert status="info">
+  <AlertIcon />
+    The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
+</Alert>
+
 > Disclaimer
 >
 > Provided for informational purposes only, this FAQ addresses common questions customers or partners may have regarding the roadmap vision for taking Sitecore to the next level of SaaS. The information provided herein is general in nature and not intended to provide an exhaustive explanation of Sitecore&#39;s development plans.

@@ -6,6 +6,12 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
+<Alert status="info">
+  <AlertIcon />
+    Please note that these best practices pre-date <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> content which will replace these practices soon
+</Alert>
+
+
 # Who will this topic be interesting to?
 
 ## Guides for business stakeholders

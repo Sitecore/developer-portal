@@ -1,14 +1,14 @@
-import { PromoCardProps } from 'ui/components/promos';
+import { PromoCardProps } from '@scdp/ui/components';
 
 const data: PromoCardProps = {
-  title: 'XM Cloud Recommended Practices',
-  description: 'Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects! ',
+  title: 'Sitecore Accelerate',
+  description: 'Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products.',
   img: {
-    src: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868',
+    src: '/public/images/accelerate.png',
   },
   link: {
-    href: '/learn/faq/xm-cloud-recommended-practices',
-    text: 'Read now!',
+    href: '/learn/accelerate/xm-cloud',
+    text: 'Read more',
   },
 };
 

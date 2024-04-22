@@ -1,0 +1,27 @@
+﻿id: K1VyMQaExUGe-OD6eoSvdA
+name: Content Hub DAM
+fields:
+  productName:
+    value: Content Hub DAM
+    type: ShortText
+  abbreviation:
+    value: ''
+    type: ShortText
+  productDescription:
+    value: ''
+    type: LongText
+  productIconLight:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/ffe5bf743f5841fab9529bcccda7cbce
+    type: ShortText
+  productIconDark:
+    value: https://sitecorecontenthub.stylelabs.cloud/api/public/content/2f043bc102b740708071b4936a81a467
+    type: ShortText
+  sitecoreCloud:
+    value:
+    - type: Link
+      relatedType: Content
+      id: C0s2noNU9U6e6gtCCwcGwg
+    type: Reference
+  productIcon:
+    value: []
+    type: Media

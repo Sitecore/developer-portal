@@ -1,18 +1,18 @@
 /* eslint-disable no-constant-condition */
 import { FredPersona, SallyPersona } from '@/data/data-personas';
-import { CDP, Personalize, Search, Send, XMCloud } from '@/data/data-products';
 import { Message, MessageType } from '@/src/types/Message';
-import { Button, Card, CardBody, CardFooter, CardHeader, CloseButton, FormControl, Heading, IconButton, Input, Progress, Stack, Text, Tooltip, Wrap, useBoolean } from '@chakra-ui/react';
+import { Button, Card, CardBody, CardFooter, CardHeader, CardProps, CloseButton, FormControl, Heading, IconButton, Input, Progress, Stack, Text, Tooltip, Wrap, useBoolean } from '@chakra-ui/react';
 import { mdiCreation, mdiDeleteSweep } from '@mdi/js';
 import Icon from '@mdi/react';
+import { useEngageTracker } from '@scdp/ui/components';
+import { CDP, Personalize, Search, Send, XMCloud } from '@scdp/ui/data';
+import { Product } from '@scdp/ui/lib';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useEngageTracker } from 'ui/components/integrations';
-import { Product } from 'ui/lib/assets';
 import { IExperienceResult, IPersonalizedExperience } from './IExperienceResult';
 import { Messages } from './Messages';
 import { PersonalizeBar } from './PersonalizeBar';
 
-type ChatBotProps = {
+type ChatBotProps = CardProps & {
   onClose?: () => void;
   isOpen?: boolean;
 };
@@ -24,7 +24,7 @@ const initialMessage = [
   },
 ];
 
-export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
+export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
   const tracker = useEngageTracker();
   const [isLoading, setIsLoading] = useBoolean(false);
   const [question, setQuestion] = useState('');
@@ -182,7 +182,7 @@ export const ChatBot = ({ onClose, isOpen }: ChatBotProps) => {
   };
 
   return (
-    <Card variant={'elevated'} size={['sm', 'md', 'lg']} maxW={'lg'} background={'transparent'}>
+    <Card variant={'elevated'} size={['sm', 'md', 'lg']} maxW={'lg'} background={'transparent'} {...rest}>
       {/* <CardHeader background="primary-fg" color="chakra-inverse-text" borderTopRadius="2xl"> */}
       <CardHeader bgGradient="linear(to-tr, primary.500, teal.500)" color="chakra-inverse-text" borderTopRadius="2xl">
         <Stack direction="row" spacing={4} align="top" justify="space-between">

@@ -1,14 +1,13 @@
 import { Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
+import { CenteredContent, ContentSection, Hero, PromoCardProps, PromoList, VerticalGroup } from '@scdp/ui/components';
 import SocialFeeds from '@src/components/common/SocialFeeds';
-import { TrackPageView } from '@src/components/engagetracker/TrackPageView';
 import MarkdownContent from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
-import Hero from 'ui/components/common/Hero';
-import { CenteredContent, ContentSection, VerticalGroup } from 'ui/components/helpers';
-import { PromoCard, PromoCardProps } from 'ui/components/promos';
+import InPageNavSmall from '../components/navigation/InPageNavSmall';
 
 type GenericContentPageProps = {
   pageInfo: PageInfo;
@@ -55,21 +54,19 @@ const GenericContentPage = ({ pageInfo, partialGroups, partials, promoAfter, pro
       <Layout title={pageInfo.title} description={pageInfo.description}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-        {/* background={!pageInfo.hasInPageNav ? 'neutral-subtle-bg' : ''} id="verticalgroup" */}
-
-        <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-subtle-bg'}>
+        {/* background={!pageInfo.hasInPageNav ? 'neutral-bg' : ''} id="verticalgroup" */}
+        <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
           <CenteredContent>
-            {promoBefore && promoBefore.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
-
+            <PromoList data={promoBefore} />
             <Grid templateColumns="repeat(4, 1fr)" gap={4}>
               {pageInfo.hasInPageNav && <GridItem>{Nav}</GridItem>}
               <GridItem colSpan={pageInfo.hasInPageNav ? 3 : 4}>
+                <InPageNavSmall hideFrom="xl" titles={titles} />
                 {Content(partials, partialGroups)}
                 {customNavPager}
               </GridItem>
             </Grid>
-
-            {promoAfter && promoAfter.map((promo, i) => <PromoCard {...promo} key={i} isImageLeft={i % 2 === 0} />)}
+            <PromoList data={promoAfter} />
             <SocialFeeds pageInfo={pageInfo} />
           </CenteredContent>
         </ContentSection>
