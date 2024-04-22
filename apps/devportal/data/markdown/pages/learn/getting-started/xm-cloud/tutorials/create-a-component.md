@@ -135,6 +135,11 @@ Before we begin adding content, we want to ensure we can provide a two-column la
 
    `INSERT SCREENSHOT OF Block elements dialog`
 
+<Alert status="warning">
+   <AlertIcon />
+   **Challenge:** You will now create the right side of the column. Try to do it without the steps! If you get stuck, the full steps are here to help you through it.
+</Alert>
+
 1. Click and drag your mouse across the canvas to create a right column for your Text Teaser.
 
    `INSERT SCREENSHOT of Canvas with drawn Block area`
