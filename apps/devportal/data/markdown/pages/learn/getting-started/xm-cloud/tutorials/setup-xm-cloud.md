@@ -70,8 +70,9 @@ Let’s get started!
 9. Press the Continue button.
 10. On the 5th step review your selections and press the “Start deployment” button
     ![Create Project and Environment Step 5 - Review your selections](https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5cda1bf224c4f99b508fe612e527590?v=6c0f0076)
-11. The deployment starts, and provisioning and build run in parallel.  
-    ![XM Cloud Deploy Logs - Deployment is running](https://sitecorecontenthub.stylelabs.cloud/api/public/content/72df30b6fd564d90b97ed08988d608b1?v=c2841f9b)
+
+The deployment starts, and provisioning and build run in parallel.  
+ ![XM Cloud Deploy Logs - Deployment is running](https://sitecorecontenthub.stylelabs.cloud/api/public/content/72df30b6fd564d90b97ed08988d608b1?v=c2841f9b)
 
 <Alert status="info">
   <AlertIcon />
@@ -201,12 +202,17 @@ Let’s change some content to verify you are in fact connected against the prev
 
 1. Navigate back to your site in XM Cloud.
    ![XM Cloud Dashboard - Open Pages Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/4d9aebe26e7c4916bd5c2c982a2bdabd?v=1afb8abf)
-2. Click on the tile that says `Company Dev`. This will open Pages new WYSIWYG page editing experience. When opening for the first time, this might take a moment.
-3. Change the headline to whatever you like. In this case, I’ll add 'in town' to the homepage tagline.
+1. Click on the tile that says `Company Dev`. This will open Pages new WYSIWYG page editing experience. When opening for the first time, this might take a moment.
+1. Change the headline to whatever you like. In this case, I’ll add 'in town' to the homepage tagline.
    ![Pages Editor - Change Headline inline](https://sitecorecontenthub.stylelabs.cloud/api/public/content/05ac5bbde7244c809d987106b9226fd8?v=6b47e626)
-4. Your changes are autosaved.
-5. Switch back to the browser tab where you are viewing the Next.js app on localhost:3000
-6. Reload the page, and see the changes appear in your local app.  
+
+   <Alert status="info">
+   <AlertIcon />
+   Note that your changes are automatically saved.
+   </Alert>
+
+1. Switch back to the browser tab where you are viewing the Next.js app on localhost:3000
+1. Reload the page, and see the changes appear in your local app.  
    ![Validate changes in local running app](https://sitecorecontenthub.stylelabs.cloud/api/public/content/6bf98e5e22fe4c689898fcea34a03b59?v=756f5d1a)
 
 <Alert status="success">
