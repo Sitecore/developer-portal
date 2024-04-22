@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Create your first component'
+title: 'Tutorial: Create your first XM Cloud no-code component'
 description: 'In this tutorial, we will go through the steps to to create a Text Teaser component with a no-code approach using XM Cloud Component builder'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 ---
@@ -14,20 +14,20 @@ In this tutorial, we will go through the steps to to create a Text Teaser compon
 
 ## Overview
 
-Components are the visual, re-usable building blocks to design pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component for your company’s project as referenced in the previous blogs, comparing the different ways that XM Cloud allows you to do so. We will use the XM Cloud component builder, exploring the no-code approach to building components.
+Components are the visual, re-usable building blocks to design pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component for your company’s project as referenced in other tutorials from this series, comparing the different ways that XM Cloud allows you to do so. We will use the XM Cloud component builder, exploring the no-code approach to building components.
 
 <Alert status="info">
    <AlertIcon />
-   **NOTE:** For more advanced styling and building of components, you can also use code!
+   **NOTE:** For more advanced styling and building of components, you can also use a coded approach! Please refer to the [XM Cloud Accelerate article to learn more about creating React/Next.js components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components).
 </Alert>
 
 In this tutorial, you will do the following:
 
-1. Build an XM Cloud component
+1. Build a collection to organize components
+1. Define the layout of a new XM Cloud component called Text Teaser
 1. Apply styling to the component using out-of-the-box themes
+1. Make the component available to editors
 1. Place the component into your existing webpage
-1. Map a data source to a component, and,
-1. Create a mobile-friendly UI version of the component
 
 <Alert status="info">
    <AlertIcon />
@@ -43,18 +43,16 @@ In order to complete the following tutorial, you will need these resouces:
 
 ## What do we need to build?
 
-Now it is time to build the first component. XM Cloud offers 2 ways of building components:
+The first component we want to build is the “Text Teaser” Component. The requirements from the customer design team are as follows:
 
-- Using the XM Cloud Component Builder
-- Or using Headless SXA
+- 2-column centered layout
+- Maximum width of 1320 pixels
+- Within the first column there is a **headline (h2)** and a **sub-headline (h3)**.
+- In the second column, there is a **paragraph text** with formatted text that can be handled by a rich text editor.
+- Use Roboto font for the headlines
+- Use Open Sans font for the paragraph font.
 
-In this tutorial, we focus on using the XM Cloud Component builder. The Headless SXA approach involves more coding, and is outside the scope of this tutorial.
-
-The first component we want to build is the “Text Teaser” Component.
-
-It has a 2-column centered layout with a max width of 1320 pixels.
-
-Within the first column there is a headline (h2) and a sub-headline (h3). In the second column, there is a paragraph text with formatted text that can be handled by a rich text editor. You will use Roboto font for the headlines, and Open Sans for the paragraph font.
+`TODO: Roboto important? Will that be covered in another tutorial? Isn't covered here explicitly?`
 
 This is what your component will look like when it is finished:
 
@@ -143,6 +141,5 @@ I’ll open the Pages editor, which loads my homepage. As the component is stage
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
 
 <Row columns={2}>
-   <Link title="Project Solution Setup" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup" />
-   <Link title="Creating a Site" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site" />
+   <Link title="Creating New Components" link="/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components" />
 </Row>
