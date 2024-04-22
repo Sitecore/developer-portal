@@ -60,21 +60,50 @@ This is what your component will look like when it is finished:
 
 ## Organizing components using collections
 
-You can see that there are already some components available.
+To structure the components a bit, you can use collections. That helps you to navigate the components in the Component builder, but also later in Pages. You will now create a new collection names "Basic Components" to hold your new component.
+
+1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
+
+1. From your dashboard, select the XM Cloud environment where you will create your Text Teaser Component.
+
+   `INSERT SCREENSHOT OF XM CLOUD APP BEING SELECTED FROM DASHBOARD`
+
+1. From the app context flyout, select **Open App** to launch XM Cloud environment apps dashboard
+
+1. At the very top switch to **Tools**
+
+1. In the **Tools** page, select the **Components** card to launch the Component builder. You can see that there are already some components available.
 
 `INSERT SCREENSHOT OF Components listing`
 
-To structure the components a bit, you can use collections. That helps you to navigate the components in the Component builder, but also later in Pages. On the top right, click **add collection**. Let’s name this collection: “Basic Components”.
+1. On the top right, click **Add collection** to create a new collection.
+
+1. Name this collection: **“Basic Components”**
+
+1. Click the **Save** button to complete the collection creation.
 
 `INSERT SCREENSHOT OF Basic Components collection`
 
 ## Create the component
 
-Within this new collection, create the new Component called “Text Teaser”.
+Within this new collection, you will now create the new Component called “Text Teaser”.
 
-You can now add elements to the Canvas or “Section” as it is named in the Builder.
+1. In the "Basic Components" collection, click the "Add component" button to launch the component creation form.
 
-`INSERT SCREENSHOT OF Canvas`
+1. Specify the **Name** value as **"Text Teaser"**.
+
+   `INSERT SCREENSHOT OF completed form`
+
+<Alert status="info">
+   <AlertIcon />
+   You can leave the other fields blank. The **Description** field is optional and the **Collection** field will default to the currently selected Collection so it will be stored in Basic Components as desired.
+</Alert>
+
+1. Click on the **Save** button to complete creating the component definition. A message will display telling you that the component was created.
+
+1. Click on the **Click to start editing** link that is displayed at the top of the Component form. This will launch the canvas (or 'Section') view of the Text Teaser component where you can start adding elements in the builder.
+
+   `INSERT SCREENSHOT OF Canvas`
 
 By clicking into the section, you will see a grid displayed by default. This can be adjusted on the pane at the right side of the screen, however, for now, leave it as it is.
 
