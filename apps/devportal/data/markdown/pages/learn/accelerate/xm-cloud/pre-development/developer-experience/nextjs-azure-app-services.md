@@ -1,6 +1,6 @@
 ---
 title: 'Running Next.js on Azure App Services'
-description: 'Sitecore is not recommending customers host their XM Cloud head application on Azure App Services'
+description: 'Sitecore is not recommending customers host their XM Cloud head application on Azure App Services unless in a highly regulated industry.'
 area: ['accelerate']
 hasSubPageNav: false
 hasInPageNav: true
@@ -8,11 +8,11 @@ hasInPageNav: true
 
 ## Problem
 
-While Sitecore strongly recommends serverless hosting, like Vercel or Netlify, our client has a strict requirement that is forcing the use of Azure App Services to host the Next.js application. What are some of the problems we might face?
+While Sitecore strongly recommends serverless hosting for XM Cloud, like Vercel or Netlify, our client has a strict requirement that is forcing the use of Azure to host the Next.js application. What are some of the problems we might face?
 
 ## Solution
 
-Sitecore does not recommend hosting your XM Cloud head application on Azure App Services. This applies to both Node and Docker web apps in Azure App Services. 
+Sitecore does not recommend hosting your XM Cloud head application on Azure App Services. This applies to both Node and Docker web apps in Azure App Services. For those that need to use Azure as their hosting environment due to being in a highly regulated industry, this article covers problems you may encounter. 
 
 The main reason for not recommending Azure App Services is that it takes a server infrastructure approach to hosting, leading to lower performance, difficulty scaling, and higher management complexity.
 
