@@ -204,12 +204,12 @@ Let’s change some content to verify you are in fact connected against the prev
    ![XM Cloud Dashboard - Open Pages Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/4d9aebe26e7c4916bd5c2c982a2bdabd?v=1afb8abf)
 1. Click on the tile that says `Company Dev`. This will open Pages new WYSIWYG page editing experience. When opening for the first time, this might take a moment.
 1. Change the headline to whatever you like. In this case, I’ll add 'in town' to the homepage tagline.
-   ![Pages Editor - Change Headline inline](https://sitecorecontenthub.stylelabs.cloud/api/public/content/05ac5bbde7244c809d987106b9226fd8?v=6b47e626)
-
    <Alert status="info">
    <AlertIcon />
    Note that your changes are automatically saved.
    </Alert>
+
+   ![Pages Editor - Change Headline inline](https://sitecorecontenthub.stylelabs.cloud/api/public/content/05ac5bbde7244c809d987106b9226fd8?v=6b47e626)
 
 1. Switch back to the browser tab where you are viewing the Next.js app on localhost:3000
 1. Reload the page, and see the changes appear in your local app.  
