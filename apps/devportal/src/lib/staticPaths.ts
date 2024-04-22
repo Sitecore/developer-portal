@@ -85,7 +85,7 @@ type ProductChangeLogPaths = { params: { product: string } };
 export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[]> => {
   const paths: ProductChangeLogPaths[] = [];
   const changelog = new Changelog(getChangelogCredentials(), false);
-  const products = await changelog.GetProducts().then((response: Product[]) => {
+  const products = await changelog.getProducts().then((response: Product[]) => {
     return response;
   });
 

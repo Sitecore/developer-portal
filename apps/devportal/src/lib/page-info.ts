@@ -111,7 +111,7 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
 
   if (meta.changelog) {
     const changelog = new Changelog(getChangelogCredentials());
-    pageInfo.changelogEntries = (await changelog.ChangelogEntriesPaginated(meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
+    pageInfo.changelogEntries = (await changelog.getEntriesPaginated(meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
   }
 
   const youtubeInfo = await YouTubeApi.get(meta.youtube);

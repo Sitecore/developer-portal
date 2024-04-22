@@ -14,7 +14,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
 
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  await changelog.ChangelogEntriesPaginated(limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
+  await changelog.getEntriesPaginated(limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
     res.status(200).json(response);
   });
 };

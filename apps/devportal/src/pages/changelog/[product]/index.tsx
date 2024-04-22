@@ -32,7 +32,7 @@ export async function getStaticProps(context: any) {
   const product = context.params.product;
   const preview = context.preview ? context.preview : null;
   const changelog = new Changelog(getChangelogCredentials(), preview);
-  const products = await changelog.GetProducts().then((response: Product[]) => {
+  const products = await changelog.getProducts().then((response: Product[]) => {
     return response;
   });
 

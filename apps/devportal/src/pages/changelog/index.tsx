@@ -79,7 +79,7 @@ export async function getStaticProps(context: any) {
   const isPreview = context.preview ? context.preview : null;
 
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
-  const entries = await changelog.ChangelogEntriesPaginated('5', '', '', '');
+  const entries = await changelog.getEntriesPaginated('5', '', '', '');
 
   return {
     props: {

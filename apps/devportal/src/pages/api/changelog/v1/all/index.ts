@@ -18,7 +18,7 @@ export default handler;
 
 const getOverviewPerMonth: any = async (isPreview: boolean, products?: Product[], changes?: ChangeType[]) => {
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
-  const items = await changelog.GetSummaryLatestItemsByProductAndChangeType(products?.join('|'), changes?.join('|'));
+  const items = await changelog.getSummarizedEntries(products?.join('|'), changes?.join('|'));
   const entries: ChangelogEntrySummary[] = items.entries;
 
   // Group the entries by month

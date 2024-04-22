@@ -8,7 +8,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangeType[]>) 
   const isPreview = req.preview ? true : false;
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  await changelog.GetChangeTypes().then((response: ChangeType[]) => {
+  await changelog.getChangeTypes().then((response: ChangeType[]) => {
     res.setHeader('Cache-Control', 'stale-while-revalidate');
     res.status(200).json(response);
   });

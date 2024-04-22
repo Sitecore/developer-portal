@@ -13,7 +13,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Product[]>) => 
 
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  await changelog.GetProducts().then((response: Product[]) => {
+  await changelog.getProducts().then((response: Product[]) => {
     if (showAll) {
       res.status(200).json(response);
     } else {

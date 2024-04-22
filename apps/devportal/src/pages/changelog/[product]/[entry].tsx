@@ -47,14 +47,14 @@ export async function getServerSideProps(context: any) {
   const isPreview = context.preview || false;
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  const products = await changelog.GetProducts().then((response: Product[]) => {
+  const products = await changelog.getProducts().then((response: Product[]) => {
     return response;
   });
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
 
   try {
-    changelogEntry = await changelog.ChangelogEntryByTitle(entry, currentProduct?.id);
+    changelogEntry = await changelog.getEntryByTitle(entry, currentProduct?.id);
   } catch {
     return {
       notFound: true,

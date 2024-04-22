@@ -9,7 +9,7 @@ export async function getServerSideProps(context: any) {
   const preview = context.preview ? context.preview : null;
   const changelog = new Changelog(getChangelogCredentials(), preview);
   // Fetch data
-  const changelogEntryList = await changelog.AllChangelogEntries();
+  const changelogEntryList = await changelog.getAllEntries();
   // Fetch data
   const feed = await CreateFeed(changelogEntryList);
   //Set page headers

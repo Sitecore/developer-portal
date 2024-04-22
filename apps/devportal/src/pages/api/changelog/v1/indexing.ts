@@ -50,7 +50,7 @@ export default handler;
 
 async function GetEntries(list: IndexResult[], end: string, limit: string) {
   const changelog = new Changelog(getChangelogCredentials());
-  const entryList: ChangelogEntryList<ChangelogEntry[]> = await changelog.ChangelogEntriesPaginated(limit, '', '', end);
+  const entryList: ChangelogEntryList<ChangelogEntry[]> = await changelog.getEntriesPaginated(limit, '', '', end);
 
   entryList.entries.map((entry) => {
     list.push({
