@@ -1,16 +1,21 @@
 import axios from 'axios';
 import axiosThrottle from 'axios-request-throttle';
+import { ChangelogCredentials } from '../../types/changelog';
 
-export async function fetchAPI(query: string, preview?: boolean) {
+export async function fetchAPI(credentials: ChangelogCredentials, query: string, preview?: boolean) {
   // Default to delivery environment
-  let endpoint: string = process.env.SITECORE_CHONE_ENDPOINT_DELIVERY as string;
-  let token: string = process.env.SITECORE_CHONE_AUTH_TOKEN_DELIVERY as string;
+  let endpoint: string = credentials.production.endpoint as string;
+  let token: string = credentials.production.token as string;
 
   if (preview) {
     // Use preview environment
-    endpoint = process.env.SITECORE_CHONE_ENDPOINT_PREVIEW as string;
-    token = process.env.SITECORE_CHONE_AUTH_TOKEN_PREVIEW as string;
+    endpoint = credentials.preview.endpoint as string;
+    token = credentials.preview.token as string;
     axiosThrottle.use(axios, { requestsPerSecond: 15 });
+  }
+
+  if (endpoint === undefined || token === undefined) {
+    throw new Error('Missing CH ONE endpoint or token');
   }
 
   return axios

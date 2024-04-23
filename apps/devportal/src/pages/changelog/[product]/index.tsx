@@ -1,19 +1,18 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { getChangelogCredentials } from '@/src/lib/changelog/changelog';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import { getChangelogProductPaths } from '@lib/staticPaths';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
+import { Changelog } from '@scdp/changelog';
+import { Product } from '@scdp/changelog/types';
+import { getSlug, slugify } from '@scdp/changelog/utils';
+import { ButtonLink, CenteredContent, Hero, VerticalGroup } from '@scdp/ui/components';
 import Layout from '@src/layouts/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
-import { GetProducts } from '@scdp/changelog';
-import { Product } from '@scdp/changelog/types';
-import { getSlug, slugify } from '@scdp/changelog/utils';
-import { Hero } from '@scdp/ui/components';
-import { CenteredContent, VerticalGroup } from '@scdp/ui/components';
-import { ButtonLink } from '@scdp/ui/components';
 
 type ChangelogProps = {
   currentProduct: Product;
@@ -32,7 +31,8 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: any) {
   const product = context.params.product;
   const preview = context.preview ? context.preview : null;
-  const products = await GetProducts(preview).then((response: Product[]) => {
+  const changelog = new Changelog(getChangelogCredentials(), preview);
+  const products = await changelog.getProducts().then((response: Product[]) => {
     return response;
   });
 
