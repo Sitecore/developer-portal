@@ -107,7 +107,7 @@ Within this new collection, you will now create the new Component called “Text
 
 ### Create the column layout for the Text Teaser component
 
-Before we begin adding content, we want to ensure we can provide a two-column layout that matches the requirements that were given at the beginning. You will now learn how to create Card elements that can be used to hold other elements.
+Before we begin adding content, we want to ensure we can provide a two-column layout that matches the requirements that were given at the beginning. You will now learn how to create Card elements that can be used to hold other elements. For more details on creating layouts, you can take a look at our documentation on [Working with a component layout](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-a-component-layout.html)
 
 1. Click on the section/canvas. You will see a grid displayed by default.
 
@@ -270,7 +270,10 @@ As the component is staged, I can see it in the component list and I can drag it
 ### Related XM Cloud Documentation
 
 <Row columns={2}>
+   <Link title="Get started with XM Cloud Components" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/get-started-with-xm-cloud-components.html" />
    <Link title="Staging and publishing components" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/staging-and-publishing-components.html" />
+   <Link title="Work with components" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-components.html" />
+   <Link title="Work with a component layout" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-a-component-layout.html" />
 </Row>
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
