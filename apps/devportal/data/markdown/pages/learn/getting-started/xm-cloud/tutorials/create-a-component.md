@@ -1,12 +1,12 @@
 ---
 title: 'Tutorial: Create your first XM Cloud no-code component'
-description: 'In this tutorial, we will go through the steps to to create a Text Teaser component with a no-code approach using XM Cloud Component builder'
+description: 'In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Component builder'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 ---
 
 ## Introduction - What You are Going to Learn
 
-In this tutorial, we will go through the steps to to create a Text Teaser component with a no-code approach using XM Cloud Component builder. The walkthrough will not show all possible options, but will take you through a process of defining and laying out a new Component to use on your home page. You will learn:
+In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Component builder. The walkthrough will not show all possible options, but will take you through a process of defining and laying out a new Component to use on your home page. You will learn:
 
 - How to create a collection for your components
 - How to create a new Text Teaser component using the XM Cloud Component builder
@@ -37,7 +37,7 @@ In this tutorial, you will do the following:
 
 ## Prerequisites
 
-In order to complete the following tutorial, you will need these resouces:
+In order to complete the following tutorial, you will need these resources:
 
 1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io)
 1. An existing XM Cloud environment and site created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
@@ -61,7 +61,7 @@ This is what your component will look like when it is finished:
 
 ## Organizing components using collections
 
-To structure the components a bit, you can use collections. That helps you to navigate the components in the Component builder, but also later in Pages. You will now create a new collection names "Basic Components" to hold your new component.
+To structure the components a bit, you can use collections. That helps you to navigate the components in the Component builder, but also later in Pages. You will now create a new collection named "Basic Components" to hold your new component.
 
 1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
 
