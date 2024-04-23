@@ -13,7 +13,7 @@
     "update-dependencies": "turbo update-dependencies && npx npm-check-updates -u"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^0.29.1"
+    "@dotenvx/dotenvx": "latest"
   },
   "devDependencies": {
     "@scdp/eslint-config": "*",
