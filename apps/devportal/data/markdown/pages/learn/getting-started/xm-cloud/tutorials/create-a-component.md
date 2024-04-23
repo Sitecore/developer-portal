@@ -8,9 +8,10 @@ openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/2
 
 In this tutorial, we will go through the steps to to create a Text Teaser component with a no-code approach using XM Cloud Component builder. The walkthrough will not show all possible options, but will take you through a process of defining and laying out a new Component to use on your home page. You will learn:
 
-- `TODO: LEARNING OUTCOME ONE`
-- `TODO: LEARNING OUTCOME TWO`
-- `TODO: LEARNING OUTCOME THREE`
+- How to create a collection for your components
+- How to create a new Text Teaser component using the XM Cloud Component builder
+- How to change the theme on the Text Teaser component
+- How to make the Text Teaser component available in the Pages editor for authors
 
 ## Overview
 
