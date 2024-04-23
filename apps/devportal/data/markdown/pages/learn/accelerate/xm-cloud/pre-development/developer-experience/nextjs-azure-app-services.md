@@ -29,17 +29,17 @@ Efficient scaling requires a content delivery network (CDN). However, Azure App 
 Azure does offer the Azure Content Delivery Network service, but you must manage the endpoint and caching. This leads to further increased complexity. 
 
 ### Azure App Services Specific Limitations
-**Network Connection Limits**
+#### Network Connection Limits
 
 A specific limitation of Azure App Services that XM Cloud customers have experienced is the limited network port capacity for outbound network calls. Customers have hit the network connection limits' upper bounds, leading to severe performance degradation. 
 
 App Services in an out-of-the-box configuration have a soft limit of 128 ports for outbound connections via SNAT. Exceeding 128 ports can cause SNAT Port Exhaustion, leading to connection failures to Edge or any other public endpoint. Please review [Troubleshooting intermittent outbound connection errors in Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-intermittent-outbound-connection-errors), specifically the section "Avoiding the problem" which recommends the use of the vNET Integration feature and NAT Gateway, this greatly alleviates SNAT issues, Please also review [Azure subscription and service limits, quotas, and constraints](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits#app-service-limits) for other limits that you may encounter.
 
-**App Service Sizing**
+#### App Service Sizing
 
 For production workloads, consider Premium v3 Plans, which have superior single-threaded performance over Basic and Standard Plans. Premium v3 App Service plans with Availability Zones enabled have been observed to be more reliable during Azure App Service Platform Updates.
 
-**Geography**
+#### Geography
 
 An App Service Plan is tied to a specific Azure Region, which means increased network latency for end users the further they are located from that Azure Region. Consider this network latency and plan additional App Service Plans in Azure Regions closer to your end users, especially for websites with a global user base
 
