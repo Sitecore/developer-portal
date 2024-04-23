@@ -6,7 +6,7 @@ openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/2
 
 ## Introduction - What You are Going to Learn
 
-In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Component builder. The walkthrough will not show all possible options, but will take you through a process of defining and laying out a new Component to use on your home page. You will learn:
+In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Component builder. The walkthrough will not show all possible options, but will take you through a flow to define and lay out a new Component to use on your home page. You will learn:
 
 - How to create a collection for your components
 - How to create a new Text Teaser component using the XM Cloud Component builder
@@ -15,14 +15,14 @@ In this tutorial, we will go through the steps to create a Text Teaser component
 
 ## Overview
 
-Components are the visual, re-usable building blocks to design web pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component for your company’s project as referenced in other tutorials from this series, comparing the different ways that XM Cloud allows you to do so. We will use the XM Cloud component builder, exploring the no-code approach to building components.
+Components are the visual, re-usable, building blocks to design web pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component in your project. We will use the XM Cloud component builder, exploring the no-code approach to building components.
 
 <Alert status="info">
    <AlertIcon />
    **NOTE:** For more advanced styling and building of components, you can also use a coded approach! Please refer to the [XM Cloud Accelerate article to learn more about creating React/Next.js components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components).
 </Alert>
 
-In this tutorial, you will do the following:
+In this tutorial you will do the following:
 
 1. Build a collection to organize components
 1. Define the layout of a new XM Cloud component called Text Teaser
@@ -47,21 +47,21 @@ In order to complete the following tutorial, you will need these resources:
 The first component we want to build is the “Text Teaser” Component. The requirements from the customer design team are as follows:
 
 - 2-column centered layout
-- Maximum width of 1320 pixels
 - Within the first column there is a **headline (h2)** and a **sub-headline (h3)**.
 - In the second column, there is a **paragraph text** with formatted text that can be handled by a rich text editor.
+- Maximum width of 1320 pixels
 - Use Roboto font for the headlines
 - Use Open Sans font for the paragraph font.
 
-`TODO: Roboto important? Will that be covered in another tutorial? Isn't covered here explicitly?`
-
-This is what your component will look like when it is finished:
+This is what your component should look like when it is finished:
 
 `INSERT SCREENSHOT OF COMPONENT DESIGN`
 
+In this tutorial you will focus on creating the initial definition of the component with the 2-column layout and the desired elements. The specific design requirements for styling will be covered in a later tutorial.
+
 ## Organizing components using collections
 
-To structure the components a bit, you can use collections. That helps you to navigate the components in the Component builder, but also later in Pages. You will now create a new collection named "Basic Components" to hold your new component.
+To structure the components a bit, you can use collections. Collections help you to navigate the components in the Component builder, but also later in Pages. You will now create a new collection named "Basic Components" to hold any components you will create.
 
 1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
 
@@ -75,7 +75,7 @@ To structure the components a bit, you can use collections. That helps you to na
 
 1. In the **Tools** page, select the **Components** card to launch the Component builder. You can see that there are already some components available.
 
-`INSERT SCREENSHOT OF Components listing`
+   `INSERT SCREENSHOT OF Components listing`
 
 1. On the top right, click **Add collection** to create a new collection.
 
@@ -83,7 +83,7 @@ To structure the components a bit, you can use collections. That helps you to na
 
 1. Click the **Save** button to complete the collection creation.
 
-`INSERT SCREENSHOT OF Basic Components collection`
+   `INSERT SCREENSHOT OF Basic Components collection`
 
 ## Create the component
 
@@ -93,12 +93,12 @@ Within this new collection, you will now create the new Component called “Text
 
 1. Specify the **Name** value as **"Text Teaser"**.
 
-<Alert status="info">
-   <AlertIcon />
-   You can leave the other fields blank. The **Description** field is optional and the **Collection** field will default to the currently selected Collection so it will be stored in Basic Components as desired.
-</Alert>
+   <Alert status="info">
+      <AlertIcon />
+      You can leave the other fields blank. The **Description** field is optional and the **Collection** field will default to the currently selected Collection so it will be stored in Basic Components as desired.
+   </Alert>
 
-`INSERT SCREENSHOT OF completed form`
+   `INSERT SCREENSHOT OF completed form`
 
 1. Click on the **Save** button to complete creating the component definition. A message will display telling you that the component was created.
 
@@ -114,7 +114,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
 
    <Alert status="info">
       <AlertIcon />
-      This can be adjusted on the pane at the right side of the screen, however, for now, leave it as it is.
+      This can be adjusted on the pane at the right side of the screen. For now leave it as it is.
    </Alert>
 
    `INSERT SCREENSHOT of editor with Layout&Alignment section highlighted with a red box`
@@ -130,7 +130,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
 
 1. Click on the newly created left column Block area to load the context bar above the area.
 
-1. Click on the element type (Block) in the context bar to change the element type.
+1. Click on the element type **Block** in the context bar to change the element type.
 
 1. Select the **Card** element type from the pop-up menu.
 
@@ -147,7 +147,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
 
 1. Click on the newly created right column Block area to load the context bar above the area.
 
-1. Click on the element type (Block) in the context bar to change the element type.
+1. Click on the element type **Block** in the context bar to change the element type.
 
 1. Select the **Card** element type from the pop-up menu.
 
@@ -159,6 +159,8 @@ In this section you will:
 
 - Create the two headings (H2 and H3) on the left
 - Create the block of content on the right
+
+We will start with the headings in the left column, and then add the element to the right column.
 
 1. Click on the left column Card to focus context on the left column. This will show you the context menu above the Card.
 
@@ -190,12 +192,12 @@ In this section you will:
 
 1. Fill out the Heading 2, Heading 3, and Paragraph elements with some example content to test the layout.
 
-<Alert status="info">
-   <AlertIcon />
-   For the content, you can make up your own text or use a generator tool like [lorem ipsum](https://www.lipsum.com/).
-</Alert>
+   <Alert status="info">
+      <AlertIcon />
+      For the content, you can make up your own text or use a generator tool like [lorem ipsum](https://www.lipsum.com/).
+   </Alert>
 
-`INSERT SCREENSHOT OF COMPONENT WITH ELEMENTS and EXAMPLE TEXT`
+   `INSERT SCREENSHOT OF COMPONENT WITH ELEMENTS and EXAMPLE TEXT`
 
 ## Apply Styling to the Component
 
@@ -206,9 +208,9 @@ At this point, the Text Teaser has an initial element structure but has not yet 
    You can also create your own themes, but that will be covered in a future tutorial. For now, we will use a theme that has already been created so that we can complete our initial component creation.
 </Alert>
 
-1.Staying in the XM Cloud Component builder interface, click on the 'canvas' or 'section' area of the Text Teaser component to focus on the entire component area.
+1. Staying in the XM Cloud Component builder interface, click on the 'canvas' or 'section' area of the Text Teaser component to focus on the entire component area.
 
-`INSERT SCREENSHOT of selected canvas with 'Section' in the right bar`
+   `INSERT SCREENSHOT of selected canvas with 'Section' in the right bar`
 
 1. Above the component, click on the **theme switcher** icon. This will change the right-side flyout to the **Themes** selection pane so that you can change your theme. The currently selected theme will be **Light theme** and you will see options for other themes available.
 
@@ -233,10 +235,10 @@ At this point we have the Text Teaser component layout defined, with some basic 
 
 1. Above the component, click on the **Stage** button. This will move your component out of its current draft state and make it ready for use in Pages.
 
-<Alert status="info">
-   <AlertIcon />
-   When a component is staged, it is available to authors, but it will not display on the published website. When you want that component to be visible on the live website, you must publish it. Learn more about [staging and publishing in the docs](https://doc.sitecore.com/xmc/en/users/xm-cloud/staging-and-publishing-components.html).
-</Alert>
+   <Alert status="info">
+      <AlertIcon />
+      When a component is staged, it is available to authors, but it will not display on the published website. When you want that component to be visible on the live website, you must publish it. Learn more in the docs about [staging and publishing](https://doc.sitecore.com/xmc/en/users/xm-cloud/staging-and-publishing-components.html).
+   </Alert>
 
 1. Return to the XM Cloud Tools pane. If you've closed that tab, you can get there with these instructions:
 
@@ -253,9 +255,12 @@ At this point we have the Text Teaser component layout defined, with some basic 
 
    `INSERT SCREENSHOT OF COMPONENTS TAB`
 
-As the component is staged, I can see it in the component list and I can drag it onto my canvas. Also that looks good as expected.
-
 1. Scroll down on the tab to find the **Basic Components** collection that you created earlier. In the collection you will see the Text Teaser component you have created.
+
+   <Alert status="info">
+      <AlertIcon />
+      This validates that the component is available to authors. If it does not display in this list, then the component may note have been Staged or Published yet.
+   </Alert>
 
    `INSERT SCREENSHOT OF TEXT TEASER IN TAB`
 
