@@ -14,7 +14,7 @@ In this tutorial, we will go through the steps to to create a Text Teaser compon
 
 ## Overview
 
-Components are the visual, re-usable building blocks to design pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component for your company’s project as referenced in other tutorials from this series, comparing the different ways that XM Cloud allows you to do so. We will use the XM Cloud component builder, exploring the no-code approach to building components.
+Components are the visual, re-usable building blocks to design web pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component for your company’s project as referenced in other tutorials from this series, comparing the different ways that XM Cloud allows you to do so. We will use the XM Cloud component builder, exploring the no-code approach to building components.
 
 <Alert status="info">
    <AlertIcon />
@@ -229,30 +229,48 @@ At this point, the Text Teaser has an initial element structure but has not yet 
 ## Make the Component available to authors
 
 At this point we have the Text Teaser component layout defined, with some basic elements, example text, and a sample theme. Now we will make the Text Teaser available so that authors can add it to their web page in the Pages editor.
-Now I Stage the Component. This way, it is available in Pages to be used. As indicated by the Banner that we saw at the bottom of Style section we also need to Stage the Styles. And we can also directly publish the styles.
 
-To be actually shown via the delivery API I would also need to publish the component.  
-Done, back to the component. Nothing changed as expected.  
-[Show that it now can be added to the Screen]
-Now, Let’s check the component in Pages.  
-I’ll open the Pages editor, which loads my homepage. As the component is staged, I can see it in the component list and I can drag it onto my canvas. Also that looks good as expected.
+1. Above the component, click on the **Stage** button. This will move your component out of its current draft state and make it ready for use in Pages.
+
+<Alert status="info">
+   <AlertIcon />
+   When a component is staged, it is available to authors, but it will not display on the published website. When you want that component to be visible on the live website, you must publish it. Learn more about [staging and publishing in the docs](https://doc.sitecore.com/xmc/en/users/xm-cloud/staging-and-publishing-components.html).
+</Alert>
+
+1. Return to the XM Cloud Tools pane. If you've closed that tab, you can get there with these instructions:
+
+   - Login to the [Sitecore Cloud Portal](https://portal.sitecorecloud.io/)
+   - Select your App from the Apps list
+   - From the flyout panel, select **Open app**
+   - At the very top switch to **Tools**
+
+1. In the **Tools** page, select the **Pages** card to launch the Pages editor. The home page will display.
+
+   `INSERT SCREENSHOT OF PAGES WITH HOME PAGE SHOWN`
+
+1. On the left of the home page, click on the **Components** tab to view the list of available components.
+
+   `INSERT SCREENSHOT OF COMPONENTS TAB`
+
+As the component is staged, I can see it in the component list and I can drag it onto my canvas. Also that looks good as expected.
+
+1. Scroll down on the tab to find the **Basic Components** collection that you created earlier. In the collection you will see the Text Teaser component you have created.
+
+   `INSERT SCREENSHOT OF TEXT TEASER IN TAB`
+
+1. Drag the component onto the home page canvas below the title. The component will be added to the page.
+
+   `INSERT SCREENSHOT of teaser on page`
 
 <Alert status="success">
    <AlertIcon />
-   **Congratulations!** You have successfully `TODO: What did we do?`
+   **Congratulations!** You have successfully created a new Text Teaser component, made it available to authors, and then added it to your home page, all without writing any code.
 </Alert>
 
 ### Related XM Cloud Documentation
 
 <Row columns={2}>
-   <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
-   <Link title="Introduction to the Sitecore Cloud Portal" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
-   <Link title="XM Cloud Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
-   <Link title="Manage an XM Cloud environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html" />
-   <Link title="XM Cloud Deploy API" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html" />
-   <Link title="Creating an XM Cloud Project using the Sitecore CLI" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--creating-an-xm-cloud-project-using-the-sitecore-cli.html" />
-   <Link title="Serialization in XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/serialization-in-sitecore.html" />
-   <Link title="Experience Edge architecture" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html" />
+   <Link title="Staging and publishing components" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/staging-and-publishing-components.html" />
 </Row>
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
