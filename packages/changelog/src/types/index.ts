@@ -17,8 +17,9 @@ export enum ProductName {
   XP = 'Experience Platform',
   XM = 'Experience Manager',
 }
-export * from './changeLogEntry'
+export * from './changeLogEntry';
 export * from './changeType';
+export * from './changelog';
 export * from './common/media';
 export * from './product';
 export * from './sitecoreCloud';

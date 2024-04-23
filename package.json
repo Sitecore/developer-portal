@@ -2,9 +2,9 @@
   "name": "turborepo-poc",
   "private": true,
   "scripts": {
-    "build": "dotenvx run --env-file=.env --env-file=.env.local -- turbo build",
-    "dev": "dotenvx run --env-file=.env --env-file=.env.local -- turbo dev",
-    "start": "dotenvx run --env-file=.env --env-file=.env.local -- turbo start",
+    "build": "dotenvx run --env-file=.env --env-file=.env.local -q -- turbo build",
+    "dev": "dotenvx run --env-file=.env --env-file=.env.local -q -- turbo dev",
+    "start": "dotenvx run --env-file=.env --env-file=.env.local -q -- turbo start",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "turbo run test",
