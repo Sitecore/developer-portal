@@ -15,8 +15,7 @@ export async function fetchAPI(credentials: ChangelogCredentials, query: string,
   }
 
   if (endpoint === undefined || token === undefined) {
-    return null;
-    //throw new Error('Missing CH ONE endpoint or token');
+    throw new Error('Missing CH ONE endpoint or token');
   }
 
   return axios
