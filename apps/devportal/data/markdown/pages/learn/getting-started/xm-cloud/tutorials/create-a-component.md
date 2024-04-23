@@ -198,22 +198,37 @@ In this section you will:
 
 ## Apply Styling to the Component
 
-This looks good, but this is not the exact Styling that was requested. So, let’s apply a pre-made company theme to the component to make the styling pixel-perfect.
+At this point, the Text Teaser has an initial element structure but has not yet been styled with a theme. You will now learn how to apply an existing theme to the component.
 
-To change the styling in XM Cloud Components, on the top right of the component, click on the ‘theme switcher’.
+<Alert status="info">
+   <AlertIcon />
+   You can also create your own themes, but that will be covered in a future tutorial. For now, we will use a theme that has already been created so that we can complete our initial component creation.
+</Alert>
 
-`INSERT SCREENSHOT OF BAR WITH THEME SWITCHER BUTTON`
+1.Staying in the XM Cloud Component builder interface, click on the 'canvas' or 'section' area of the Text Teaser component to focus on the entire component area.
 
-Scroll to the bottom of the themes that appear on the right side of the screen and select ‘Company Theme’.
+`INSERT SCREENSHOT of selected canvas with 'Section' in the right bar`
 
-`INSERT SCREENSHOT OF THEME SELECTION ON RIGHT SIDE`
+1. Above the component, click on the **theme switcher** icon. This will change the right-side flyout to the **Themes** selection pane so that you can change your theme. The currently selected theme will be **Light theme** and you will see options for other themes available.
 
-Once you click ‘apply’, you will notice your component updates with the new theme, and it now looks much better.
+   `INSERT SCREENSHOT OF BAR WITH THEME SWITCHER BUTTON`
 
-`INSERT SCREENSHOT OF THEMED COMPONENT`
+1. Scroll to the bottom of the **Themes** selection pane (if necessary) and select the **Dark theme**.
+
+   `INSERT SCREENSHOT OF THEME SELECTION ON RIGHT SIDE`
+
+1. Click on the **Apply** button to apply the **Dark theme** to the current component. This will update the display in the main editing area to show you the new theme.
+
+   `INSERT SCREENSHOT OF THEMED COMPONENT`
+
+<Alert status="info">
+   <AlertIcon />
+   You have now learned how to apply a theme, but the Dark theme selected doesn't fit with the requirements that were provided for the design. In a later tutorial, you will learn how to create your own custom theme.
+</Alert>
 
 ## Make the Component available to authors
 
+At this point we have the Text Teaser component layout defined, with some basic elements, example text, and a sample theme. Now we will make the Text Teaser available so that authors can add it to their web page in the Pages editor.
 Now I Stage the Component. This way, it is available in Pages to be used. As indicated by the Banner that we saw at the bottom of Style section we also need to Stage the Styles. And we can also directly publish the styles.
 
 To be actually shown via the delivery API I would also need to publish the component.  
