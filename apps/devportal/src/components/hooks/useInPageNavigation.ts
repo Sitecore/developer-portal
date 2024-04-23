@@ -30,6 +30,7 @@ const useInPageNavigation = (titles: ContentHeading[], enableHighlight?: boolean
       },
       {
         threshold: 0.5,
+        rootMargin: '0px 0px -90% 0px',
       }
     );
 
