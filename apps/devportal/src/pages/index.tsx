@@ -6,13 +6,24 @@ import updatesListData from '@data/data-updates';
 import getHelpCta from '@data/promos/get-help';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getPageInfo } from '@lib/page-info';
+import {
+  CTACard,
+  CategoryTileList,
+  CenteredContent,
+  GenericList,
+  Hero,
+  Hexagons,
+  SitecoreCommunityBlog,
+  SitecoreCommunityEvents,
+  SitecoreCommunityNews,
+  SitecoreCommunityQuestions,
+  StackExchangeFeed,
+  VerticalGroup,
+  YouTubeFeed,
+} from '@scdp/ui/components';
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import Layout from '@src/layouts/Layout';
 import { NextPage } from 'next';
-import {Hero} from '@scdp/ui/components';
-import { CenteredContent, VerticalGroup } from '@scdp/ui/components';
-import {Hexagons, StackExchangeFeed, YouTubeFeed, SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, CategoryTileList, GenericList } from '@scdp/ui/components';
-import { CTACard } from '@scdp/ui/components';
 import { TrackPageView } from '../components/engagetracker/TrackPageView';
 
 export async function getStaticProps() {

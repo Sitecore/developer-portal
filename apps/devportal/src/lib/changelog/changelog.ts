@@ -18,6 +18,15 @@ export function getChangelogCredentials(): ChangelogCredentials {
   };
 }
 
+export function isChangelogEnabled(): boolean {
+  const credentials = getChangelogCredentials();
+
+  if (credentials.preview.endpoint == null && credentials.preview.token == null && credentials.production.endpoint == null && credentials.production.token == null)
+    return false;
+
+  return true;
+}
+
 export function getChangeTypeOptions(): Option[] {
   const fetcher: Fetcher<ChangeType[], string> = async (url: string) => await axios.get(url).then((response) => response.data);
   const { data: changeTypes, error } = useSWR(`${entriesApiUrl}/types`, fetcher);
