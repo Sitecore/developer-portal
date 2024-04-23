@@ -1,7 +1,7 @@
 import { Box, Container, HStack, Link, Stack, Text, Tooltip } from '@chakra-ui/react';
+import { SocialButton } from '@scdp/ui/components';
 import NextLink from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { SocialButton } from '@scdp/ui/components';
 
 export const Footer = () => (
   <Box bg={'chakra-subtle-bg'} borderTop={'1px'} borderColor={'chakra-border-color'} position={'relative'} bottom={0} left={0} width={'full'}>
@@ -26,7 +26,7 @@ export const Footer = () => (
 
       <Stack direction={{ base: 'column-reverse', md: 'row' }} spacing={3}>
         <HStack>
-          <Text>© Copyright 2023, Sitecore. All Rights Reserved</Text>
+          <Text>© Copyright 2024, Sitecore. All Rights Reserved</Text>
         </HStack>
         <HStack>
           <Text display={{ base: 'none', md: 'block' }}>|</Text>
