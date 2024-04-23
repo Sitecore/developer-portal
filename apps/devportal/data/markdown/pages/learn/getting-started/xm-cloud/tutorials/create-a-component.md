@@ -152,15 +152,49 @@ Before we begin adding content, we want to ensure we can provide a two-column la
 
 ### Add content elements to the columns
 
-Now that the layout is created, you will add content items for the content that was provided.
+Now that the layout is created, you will add content items to the columns to match the requirements provided. Based on the requirements, we need two headings on the left side (an H2 and an H3) and a block of free-form text on the right for the teaser content.
 
-When clicking on the “add Element” button, you can see all elements that are currently available. Select “headline 2” and click where you want to add it, in this case, on the left card on the top.
+In this section you will:
 
-Next add a “headline 3” element below the heading 2 element.
+- Create the two headings (H2 and H3) on the left
+- Create the block of content on the right
 
-In the second column, add a Paragraph Element by selecting ‘add element’ and choosing ‘paragraph’. Add some dummy text to it (lorum ipsum is a great dummy text generator!)
+1. Click on the left column Card to focus context on the left column. This will show you the context menu above the Card.
 
-`INSERT SCREENSHOT OF COMPONENT WITH ELEMENTS`
+1. In the context menu, click on the **Add element** button to see the options for elements that can be inserted.
+
+   `INSERT SCREENSHOT OF ADD ELEMENT OPTIONS`
+
+1. Select **Heading 2** to insert an H2 element to the Card.
+
+1. Click in the top area of the Card to position where the Heading 2 element should be placed.
+
+1. Click **Add element** button again to add another heading.
+
+1. Select **Heading 3** to insert an H3 element to the Card.
+
+1. Click in the area below the Heading 2 element to add the Heading 3 underneath it.
+
+   `INSERT SCREENSHOT OF COMPONENT WITH ELEMENTS`
+
+1. Click on the right column Card to focus context on the right column.
+
+1. In the context menu, click on the **Add element** button to get the element options.
+
+1. Select **Paragraph** element to insert free-form text into the right column.
+
+1. Click on the top part of the right Card to position the element.
+
+   `INSERT SCREENSHOT OF COMPONENT WITH ELEMENTS`
+
+1. Fill out the Heading 2, Heading 3, and Paragraph elements with some example content to test the layout.
+
+<Alert status="info">
+   <AlertIcon />
+   For the content, you can make up your own text or use a generator tool like [lorem ipsum](https://www.lipsum.com/).
+</Alert>
+
+`INSERT SCREENSHOT OF COMPONENT WITH ELEMENTS and EXAMPLE TEXT`
 
 ## Apply Styling to the Component
 
