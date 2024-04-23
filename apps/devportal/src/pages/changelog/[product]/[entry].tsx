@@ -1,4 +1,5 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { getChangelogCredentials } from '@/src/lib/changelog/changelog';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -26,20 +27,14 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
+import { Changelog } from '@scdp/changelog';
+import { ChangelogEntry, Product } from '@scdp/changelog/types';
+import { getChangelogEntryUrl, getSlug, slugify } from '@scdp/changelog/utils';
+import { ButtonLink, CenteredContent, Hero, SocialShare, VerticalGroup } from '@scdp/ui/components';
 import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
 import Layout from '@src/layouts/Layout';
 import Link from 'next/link';
-import { ChangelogEntryByTitle } from '@scdp/changelog';
-import { GetProducts } from '@scdp/changelog';
-import { Product } from '@scdp/changelog/types';
-import { ChangelogEntry } from '@scdp/changelog/types';
-import { getSlug, slugify } from '@scdp/changelog/utils';
-import { getChangelogEntryUrl } from '@scdp/changelog/utils';
-import { Hero } from '@scdp/ui/components';
-import { CenteredContent, VerticalGroup } from '@scdp/ui/components';
-import { ButtonLink } from '@scdp/ui/components';
-import { SocialShare } from '@scdp/ui/components';
 
 type ChangelogProps = {
   currentProduct: Product;
@@ -50,15 +45,16 @@ export async function getServerSideProps(context: any) {
   const product = context.params.product;
   const entry = context.params.entry;
   const isPreview = context.preview || false;
+  const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  const products = await GetProducts(isPreview).then((response: Product[]) => {
+  const products = await changelog.getProducts().then((response: Product[]) => {
     return response;
   });
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
 
   try {
-    changelogEntry = await ChangelogEntryByTitle(isPreview, entry, currentProduct?.id);
+    changelogEntry = await changelog.getEntryByTitle(entry, currentProduct?.id);
   } catch {
     return {
       notFound: true,
