@@ -38,7 +38,7 @@ For this tutorial, you will be implementing the first option. You will:
 
 ## Prerequisites
 
-In order to complete the following tutorial, you will need these resouces:
+In order to complete the following tutorial, you will need these resources:
 
 1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io)
 1. An existing XM Cloud environment and site created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
