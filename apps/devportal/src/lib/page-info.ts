@@ -1,5 +1,5 @@
 // Global
-import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import type { ChildPageInfo, MarkdownMeta, PageInfo, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import { SITECORE_COMMUNITY_MAX_COUNT, SitecoreCommunityApi, StackExchangeApi, YouTubeApi } from '@scdp/ui/components';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -9,15 +9,11 @@ import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ParseContent } from '@lib/markdown/mdxParse';
 import { Changelog } from '@scdp/changelog';
 import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@scdp/ui/components';
+import { NAVIGATION_FILE, PAGES_DIRECTORY, REPO_EDIT_URL, REPO_URL } from '../constants';
 import { getChangelogCredentials, isChangelogEnabled } from './changelog/changelog';
+import { searchForFile } from './fileSystem';
 
-const dataDirectory = path.join(process.cwd(), 'data/markdown');
-const partialsDirectory = path.join(dataDirectory, 'partials');
-const pagesDirectory = path.join(dataDirectory, 'pages');
-
-export const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main/apps/devportal';
-
-type Matter = {
+export type Matter = {
   data: {
     title?: string;
     [name: string]: unknown;
@@ -25,7 +21,7 @@ type Matter = {
   content: string;
 };
 
-const getFileData = (directory: string, file: string): Matter => {
+export const getFileData = (directory: string, file: string): Matter => {
   const hasExtension = file.endsWith('.mdx') || file.endsWith('.md');
 
   let filePath = hasExtension ? path.join(directory, `${file}`) : path.join(directory, `${file}.md`);
@@ -45,13 +41,13 @@ const getFileData = (directory: string, file: string): Matter => {
   }
 
   const fileMarkdown = fs.readFileSync(filePath, 'utf-8');
-
-  // @TODO: Handle failures
   const results = matter(fileMarkdown);
 
   const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
-  const fileName = `${repoUrl}/${relativePath}`;
-  results.data['fileName'] = fileName;
+
+  results.data['fileName'] = `${REPO_URL}/${relativePath}`;
+  results.data['relativeFileName'] = relativePath;
+  results.data['editUrl'] = `${REPO_EDIT_URL}/${relativePath}`;
   results.data['slug'] = file.split('.')[0];
 
   return results;
@@ -60,10 +56,13 @@ const getFileData = (directory: string, file: string): Matter => {
 export const getPageInfo = async (params: string | string[]): Promise<PageInfo | null> => {
   const relativePath = Array.isArray(params) ? params.join('/') : params;
 
-  const fileData = getFileData(pagesDirectory, `${relativePath}`);
+  const fileData = getFileData(PAGES_DIRECTORY, `${relativePath}`);
   const meta = fileData.data as MarkdownMeta;
   const content = await ParseContent(Buffer.from(fileData.content));
-  const fileName = `${repoUrl}/data/markdown/pages/${relativePath}/index.md`;
+
+  // const relativeFileName = `/data/markdown/pages/${relativePath}/index.md`;
+  // const fileName = `${repoUrl}/data/markdown/pages/${relativePath}/index.md`;
+
   const pageInfo = {
     hasInPageNav: true, // default to true, override in markdown
     ...meta,
@@ -73,12 +72,14 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
     youtube: [],
     twitter: [],
     sitecoreCommunity: {},
-    fileName: fileName,
+    fileName: meta.fileName,
+    editUrl: meta.editUrl,
+    relativeFileName: meta.relativeFileName,
     content: fileData.content,
     parsedContent: content?.result.compiledSource,
     headings: content?.headings,
-    slug: params[params.length - 1],
-    hasSubPageNav: searchForFile(path.join(pagesDirectory, `${relativePath}`), 'manifest.json') != null ? true : false,
+    slug: meta.slug,
+    hasSubPageNav: searchForFile(path.join(PAGES_DIRECTORY, `${relativePath}`), NAVIGATION_FILE) != null ? true : false,
     includeContributionInstructions: false, // default to true, override in markdown
   } as PageInfo;
 
@@ -99,17 +100,6 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
    * All of these APIs will return an empty array if the corresponding meta key is null
    */
   pageInfo.stackexchange = await StackExchangeApi.get(meta.stackexchange);
-  // pageInfo.twitter = await TwitterApi.get(meta.twitter);
-  // let twitterHandle: string | undefined = undefined;
-  // if (meta.twitter) {
-  //   const twitterAsArray: string[] = Array.isArray(meta.twitter) ? meta.twitter : [meta.twitter];
-  //   twitterHandle = twitterAsArray && twitterAsArray.length > 0 ? twitterAsArray.find((arg) => arg.startsWith('@')) : '';
-  // }
-
-  // if (twitterHandle) {
-  //   pageInfo.twitterHandle = twitterHandle;
-  // }
-
 
   if (meta.changelog && isChangelogEnabled()) {
     const changelog = new Changelog(getChangelogCredentials());
@@ -118,6 +108,7 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
 
   const youtubeInfo = await YouTubeApi.get(meta.youtube);
   pageInfo.youtube = youtubeInfo.content;
+
   // The playlistTitle is only used if the author has not already supplied a youtubeTitle meta tag
   if (youtubeInfo.playlistTitle) {
     pageInfo.youtubePlaylistTitle = youtubeInfo.playlistTitle;
@@ -159,57 +150,6 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
   return pageInfo;
 };
 
-/**
- * Get partials as an array rather than a keyed object
- *
- * @param partials
- * @returns
- */
-
-export const getPartialsAsArray = async (partials: string[]): Promise<PartialData> => {
-  const content: string[] = [];
-  const titles: ContentHeading[] = [];
-  const fileNames: string[] = [];
-
-  await Promise.all(
-    partials.map(async function (partial) {
-      const data = getFileData(partialsDirectory, partial) as Matter;
-      const fileName = `${repoUrl}/data/markdown/partials/${partial}.md`;
-      const parsedContent = await ParseContent(Buffer.from(data.content));
-
-      if (parsedContent != null) {
-        content.push(parsedContent.result.compiledSource);
-        fileNames.push(fileName);
-        parsedContent.headings.map((heading) => {
-          titles.push(heading);
-        });
-      }
-    })
-  );
-  return {
-    content,
-    titles,
-    fileNames,
-  };
-};
-
-export const getPartialGroupsAsArray = async (partialGroups: PagePartials[]): Promise<PagePartialGroup[]> => {
-  const pagePartialsGroups: PagePartialGroup[] = [];
-
-  await Promise.all(
-    partialGroups.map(async (partialGroup) => {
-      const partialGroupData = {
-        title: partialGroup.title,
-        description: partialGroup.description ? partialGroup.description : null,
-        partials: await getPartialsAsArray(partialGroup.partials),
-      } as PagePartialGroup;
-
-      pagePartialsGroups.push(partialGroupData);
-    })
-  );
-  return pagePartialsGroups;
-};
-
 export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> => {
   const content: string[] = [];
   const titles: ContentHeading[] = [];
@@ -238,7 +178,7 @@ export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> =
  * @returns An array of simplified ChildPageInfo for display on a parent page
  */
 export const getChildPageInfo = async (currentFile: string): Promise<ChildPageInfo[]> => {
-  const directory = path.join(pagesDirectory, currentFile);
+  const directory = path.join(PAGES_DIRECTORY, currentFile);
 
   if (fs.existsSync(directory) == false) {
     return [];
@@ -246,8 +186,8 @@ export const getChildPageInfo = async (currentFile: string): Promise<ChildPageIn
 
   let children = fs.readdirSync(directory);
 
-  if (children.includes('manifest.json')) {
-    children = children.filter((child) => child !== 'manifest.json');
+  if (children.includes(NAVIGATION_FILE)) {
+    children = children.filter((child) => child !== NAVIGATION_FILE);
   }
 
   return children
@@ -266,35 +206,10 @@ export const getChildPageInfo = async (currentFile: string): Promise<ChildPageIn
 };
 
 export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<SidebarNavigationConfig | undefined> => {
-  const manifest = searchForFile(path.join(pagesDirectory, currentUrlSegment), 'manifest.json');
+  const manifest = searchForFile(path.join(PAGES_DIRECTORY, currentUrlSegment), NAVIGATION_FILE);
   if (manifest != null) {
     const fileData: SidebarNavigationConfig = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
     return fileData;
   }
 };
 
-function searchForFile(folderPath: string, fileName: string): string | null {
-  const filePath = path.join(folderPath, fileName);
-
-  try {
-    // Check if the file exists in the current folder
-    if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-      return filePath;
-    } else {
-      // If not found, check the parent folder
-      const parentFolder = path.dirname(folderPath);
-
-      // Base case: If we've reached the root folder and still haven't found the file, return null
-      if (parentFolder === folderPath) {
-        return null;
-      }
-
-      // Recursively search in the parent folder
-      return searchForFile(parentFolder, fileName);
-    }
-  } catch (err) {
-    // Handle any errors that occur during the search
-    console.error(`Error searching for file ${fileName}: ${err}`);
-    return null;
-  }
-}

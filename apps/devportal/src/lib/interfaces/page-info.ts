@@ -15,6 +15,8 @@ type PageInfoCore = {
   title: string;
   pageTitle?: string;
   fileName: string;
+  editUrl: string;
+  relativeFileName: string;
   slug: string;
   menuOrder?: number;
   area: string[];
