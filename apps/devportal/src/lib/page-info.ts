@@ -14,7 +14,8 @@ import { getChangelogCredentials } from './changelog/changelog';
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
 const pagesDirectory = path.join(dataDirectory, 'pages');
-const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main/apps/devportal';
+
+export const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main/apps/devportal';
 
 type Matter = {
   data: {

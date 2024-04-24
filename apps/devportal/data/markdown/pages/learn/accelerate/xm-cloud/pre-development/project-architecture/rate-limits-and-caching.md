@@ -75,7 +75,7 @@ Any page that is not generated at build time will be generated on the first requ
 If there are still a lot of pages to generate during your build process and the rate limit is being hit, it is possible to throttle the build process by using the experimental workerThreads and CPU config in your next.config.js like this: 
 
 ```
-module.exports = uniformNextConfig({
+const nextConfig = {
   experimental: {
     // This is experimental but can
     // be enabled to allow parallel threads
@@ -83,7 +83,7 @@ module.exports = uniformNextConfig({
     workerThreads: false,
     cpus: 1
   },
-});
+};
 ```
 <br /><br />
 
