@@ -67,11 +67,31 @@ Sitecore also recommends as best practices:
 
 ## What will be the migration path from Experience Manager self-hosted to XM Cloud?
 
-Sitecore will provide a migration guide for customers moving from self-hosted Experience Manager to XM Cloud. Our intention is that customers following the guidelines in the previous question will have the smoothest migration path. Clarification coming after Sitecore Symposium 2022.
+Every customer has a unique scenario that drives their migration path, but Sitecore has provided as many guides and recommendations and tools as possible to help you navigate your path. Our intention is that customers following the guidelines in the previous question will have the smoothest migration path.
+
+Some tools that are available today:
+
+1. [Migration Advisor](https://migration.sitecore.com)
+
+   This application asks you questions about your current platform implementation and then suggests possible matching composable products to replicate your current functionality. It also recommends migration content you may be interested in based on your selections.
+
+1. [Composable DXP Migration content](/learn/getting-started/migrating-to-the-sitecore-composable-dxp)
+
+   This page on the Developer Portal lists out content related to migrating from the platform to the Composable DXP, including XM Cloud.
+
+1. [XM to XM Cloud content migration tool](/downloads/xm-cloud#xm-to-xm-cloud-content-migration-tool)
+
+   This tool wraps around XM and XM Cloud and provides a way for you to move content items, users, and media between your XM data store and your new XM Cloud environment.
 
 ## What options are there for content migration from earlier Sitecore versions?
 
-Sitecore Content Serialization can be used for the migration of content. Sitecore is also looking to support Razl for migrating content from earlier versions.
+There are multiple options that can be used for content migration:
+
+1. Sitecore Content Serialization (SCS)
+
+1. [XM to XM Cloud content migration tool](/downloads/xm-cloud#xm-to-xm-cloud-content-migration-tool)
+
+1. [Razl](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1002803)
 
 ## Will Sitecore PowerShell Extensions (SPE) be supported?
 
