@@ -1,9 +1,22 @@
-import { ChangeType, Product } from '@scdp/changelog/types';
+import { ChangeType, ChangelogCredentials, Product } from '@scdp/changelog/types';
 import { Option } from '@scdp/ui/components';
 import axios from 'axios';
 import useSWR, { Fetcher } from 'swr';
 
 export const entriesApiUrl = '/api/changelog/v1';
+
+export function getChangelogCredentials(): ChangelogCredentials {
+  return {
+    production: {
+      endpoint: process.env.SITECORE_CHONE_ENDPOINT_DELIVERY as string,
+      token: process.env.SITECORE_CHONE_AUTH_TOKEN_DELIVERY as string,
+    },
+    preview: {
+      endpoint: process.env.SITECORE_CHONE_ENDPOINT_PREVIEW as string,
+      token: process.env.SITECORE_CHONE_AUTH_TOKEN_PREVIEW as string,
+    },
+  };
+}
 
 export function getChangeTypeOptions(): Option[] {
   const fetcher: Fetcher<ChangeType[], string> = async (url: string) => await axios.get(url).then((response) => response.data);
