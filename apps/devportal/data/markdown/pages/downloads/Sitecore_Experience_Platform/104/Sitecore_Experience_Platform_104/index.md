@@ -2,9 +2,10 @@
 title: "Sitecore Experience Platform 10.4"
 ---
 
-Sitecore® Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability. 
+Sitecore Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability. 
 
-See [all available versions here](/downloads/Sitecore_Experience_Platform). For developer documentation please refer to [Sitecore Documentation](https://doc.sitecore.com/).
+See [all available versions here](/downloads/Sitecore_Experience_Platform)./
+For developer documentation please refer to [Sitecore Documentation](https://doc.sitecore.com).
 
 ## Download options for Azure App Service deployments
  | Resource | Description |
@@ -28,7 +29,7 @@ See [all available versions here](/downloads/Sitecore_Experience_Platform). For 
  | [Installation Guide for XM Scaled Topology](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Installation_Guide_for_XM_Scaled_Topology_10_4_0.pdf) | Guide describing how to install the Sitecore XM Scaled (XM1) topology to run the Content Management (CM), Content Delivery (CD),and Sitecore Identity roles. |
  | [Quick Install Guide for XP Developer Workstation](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Quick_Install_Guide_for_XP_Developer_Workstation_10_4_0.pdf) | Guide describing how to install the Sitecore XP Single (XP0) topology on a workstation for development and testing purposes. |
  | [Installation Guide for XP Scaled Topology](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Installation_Guide_for_XP_Scaled_Topology_10_4_0.pdf) | Guide describing how to install the Sitecore XP Scaled (XP1) topology. |
- | [Sitecore UpdateApp Tool](/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_131) | Tool for updating SXP Core, Master, and Web databases. |
+ | [Sitecore UpdateApp Tool](/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_141) | Tool for updating SXP Core, Master, and Web databases. |
  | [Configuration files for upgrade](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(upgrade%20files).zip) | Package containing configuration files and database scripts for upgrading. |
  | [Upgrade Installation Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Upgrade_Installation_Guide_for_Sitecore_Experience_Platform_10_4_0.pdf) | Guide describing how to upgrade Sitecore XP from previous releases. |
 
@@ -45,14 +46,13 @@ See [all available versions here](/downloads/Sitecore_Experience_Platform). For 
  | Resource | Description |
  | --- | --- |
  | [Sitecore Identity](/downloads/Sitecore_Identity) | **Version 7.1 coming soon.** Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or can be extended for use with an external identity provider. |
- | [Scripts for Sitecore Security database](/downloads/Scripts_for_Sitecore_Security_database) | Set of scripts for moving Sitecore's Security membership objects from the Core database to its own security database. | 
+ | [Scripts for Sitecore Security database](/downloads/Scripts_for_Sitecore_Security_database) | **Version 0.6 coming soon.** Set of scripts for moving Sitecore's Security membership objects from the Core database to its own security database. | 
  | [Sitecore Experience Accelerator](/downloads/Sitecore_Experience_Accelerator) | **Version 10.4.0 coming soon.** Tools to accelerate the production of SXP websites enabled by reuse of templates, layouts, and renderings. |
  | Codeless Schema Extensions | **New module coming soon.** Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development. |
- | [CDN Package](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/91/Sitecore%20Experience%20Platform%2091%20Initial%20Release/Secure/Sitecore.Content.Delivery.Network.Provider.1.0.0-r00010.scwdp.zip) | Template CDN.config patch file for configuring the Sitecore Media Library to use a Content Delivery Network (CDN), applicable for an XM or XP scaled deployment. |
- | [Azure Blob Storage](/downloads/Sitecore_Azure_Blob_Storage) | **Version 6.0.0 coming soon.** Azure Blob Storage package for XM Developer, XM Scaled, XP Developer, XP Scaled configurations. |
+ | [Azure Blob Storage](/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_600) | Azure Blob Storage package for XM Developer, XM Scaled, XP Developer, XP Scaled configurations. |
  | [Sitecore Publishing Service Module](/downloads/Sitecore_Publishing_Service_Module) | **Version 10.4.0 coming soon.** Integrates the optional Sitecore Publishing Service with SXP, which focuses on high performance publishing in large-scale deployments. |
  | [Sitecore Headless Rendering](/downloads/Sitecore_Headless_Rendering) | **Version 22 coming soon.** Headless services bundle including the server-side APIs, Edge Connector, and front-end SDKs for JavaScript (JSS) and ASP.NET rendering. |
- | [Sitecore Universal Tracker](/downloads/Sitecore_Universal_Tracker) | **Version 8.0.0 coming soon.** Optional mechanism for tracking site visitor interactions, well suited for headless implementations and for collecting from different sources. |
+ | [Sitecore Universal Tracker](/downloads/Sitecore_Universal_Tracker/8x/Sitecore_Universal_Tracker_800) | Optional mechanism for tracking site visitor interactions, well suited for headless implementations and for collecting from different sources. |
 
 ## Connectors
  | Resource | Description |

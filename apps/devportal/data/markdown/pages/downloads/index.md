@@ -97,10 +97,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Embeddable_Forms"
 />
 <Download 
-  title="Sitecore Universal Tracker 7.0.0"
+  title="Sitecore Universal Tracker 8.0.0"
   description="Optional mechanism for tracking site visitor interactions, well suited for headless implementations and for collecting from different sources."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Universal_Tracker/7x/Sitecore_Universal_Tracker_700"
+  link1href="/downloads/Sitecore_Universal_Tracker/7x/Sitecore_Universal_Tracker_800"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Universal_Tracker"
 />
@@ -150,10 +150,10 @@ hasInPageNav: false
   link2href="/downloads/Team_Development_for_Sitecore"
 />
 <Download 
-  title="Sitecore Azure Blob Storage 5.0.1"
+  title="Sitecore Azure Blob Storage 6.0.0"
   description="Azure Blob Storage package for XM Developer, XM Scaled, XP Developer, XP Scaled configurations."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_501"
+  link1href="/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_600"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Azure_Blob_Storage"
 />
@@ -174,10 +174,10 @@ hasInPageNav: false
   link2href="/downloads/Resource_files_for_Modules"
 />
 <Download 
-  title="Sitecore UpdateApp Tool 1.3.1"
+  title="Sitecore UpdateApp Tool 1.4.1"
   description="Tool for updating SXP Core, Master, and Web databases."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_131"
+  link1href="/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_141"
   link2text="See all versions"
   link2href="/downloads/Sitecore_UpdateApp_Tool"
 />
