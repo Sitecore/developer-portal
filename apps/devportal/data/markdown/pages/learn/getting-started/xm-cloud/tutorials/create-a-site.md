@@ -1,16 +1,27 @@
 ---
-title: 'Tutorial: How to Set Up and Utilize XM Cloud'
+title: 'Tutorial: How to Create a Site and Connect your App to it'
 description: 'In this tutorial, you will become familiar with setting up a site, setting up the dev environment to support building that site, and how to connect your codebase that runs on your local rendering host to the preview endpoint of XM Cloud.'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 ---
 
 ## Introduction - What You are Going to Learn
 
-In this tutorial, you will become familiar with setting up a site, setting up the dev environment to support building that site, and how to connect your codebase that runs on your local rendering host to the preview endpoint of XM Cloud.
+In this tutorial, you will become familiar with the first steps in building a website in XM Cloud. You will learn:
+
+- How to create a new Site in your XM Cloud environment
+- How to initialize your Next.js application in your local development environment
+- How to connect a Next.js application to your hosted XM Cloud environment
 
 ## Overview
 
-`TODO: Overview?`
+In XM Cloud, a site is a collection of one or more pages, and a page can have several components. Through this tutorial series we will be creating a new Company Dev site and building out pages and components for the site. Uou will use the XM Cloud tools and your local development environment to explore the creation of a new site.
+
+In this tutorial you wil do the following:
+
+1. Create a new site in XM Cloud
+1. Download and initialize your Next.js application
+1. Connect your Next.js application to your XM Cloud instance
+1. Verify that your connection is working by changing some content and viewing the updated content in your Next.js application
 
 ## Prerequisites
 
@@ -29,8 +40,6 @@ In order to complete the following tutorial, you will need these resouces:
 ## Create the site
 
 With the environment initially created, you can now create your first site in XM Cloud. This will verify that the authoring environment is working and you can start the base of your project that will be used in these tutorials.
-
-### Log into the XM Cloud authoring environment
 
 1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
 
@@ -68,9 +77,9 @@ With the environment initially created, you can now create your first site in XM
 1. Click on the website, which opens up a WYSIWIG editor where you can begin to edit the content, see components that you can use to edit the site, and switch between languages and your sites (top navigation bar).  
    ![In Pages Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/9fb983d0eeec435797a1115f4ae801df?v=2cce57d4)
 
-## Create a local app and connect it to your site
+## Download and initialize your Next.js app
 
-You will not get your local application running and connected to XM Cloud. You will need to navigate to your GitHub account and download the repository that was [cloned in the previous tutorial](setup-xm-cloud) by the Sitecore XM Cloud Deploy App.
+You will now get your local application running and connected to XM Cloud. You will need to navigate to your GitHub account and download the repository that was [cloned in the previous tutorial](setup-xm-cloud) by the Sitecore XM Cloud Deploy App.
 ![GitHub - Clone Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/239fa0b1ce314ca088bc830ee7a699e8?v=ba0d1b2e)
 
 ### Download Repository
@@ -91,7 +100,7 @@ The init script initializes the `.env` file with everything necessary.
     You can use any password and will of course have to use a secure password when dealing with client projects. But for now we use “b”, for tradition’s sake.
 </Alert>
 
-### Connect the App to the XM Cloud Instance
+## Connect the App to the XM Cloud Instance
 
 As you may remember from the introduction in the previous tutorial, you need to use a GraphQL endpoint to query the content coming from XM Cloud. To connect to the endpoint, a few things need to be configured up front.
 
@@ -125,7 +134,7 @@ Now, you need to set the API key within `.env.local`. The API key should be alre
 1. Call your app in the browser: http://localhost:3000
    ![Check Website running locally](https://sitecorecontenthub.stylelabs.cloud/api/public/content/358a02664690465289d70fe4c9280eae?v=7c0165d9)
 
-#### Verifying the connection
+## Verify the connection
 
 Let’s change some content to verify you are in fact connected against the preview endpoint.
 
@@ -148,6 +157,7 @@ Let’s change some content to verify you are in fact connected against the prev
 
 <Row columns={2}>
    <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
+   <Link title="Create websites" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/create-websites.html" />
 </Row>
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
