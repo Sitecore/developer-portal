@@ -150,7 +150,7 @@ Let’s change some content to verify you are in fact connected against the prev
 
 <Alert status="success">
    <AlertIcon />
-   **Congratulations!** You have successfully set up your dev environment with XM Cloud and created your first site! To learn more about XM Cloud and continue on to next steps, check out our next tutorial in this series!
+   **Congratulations!** You have successfully set up your dev environment with XM Cloud and created your first site! To learn more about XM Cloud and continue on to next steps, check out our next tutorial in this series.
 </Alert>
 
 ### Related XM Cloud Documentation

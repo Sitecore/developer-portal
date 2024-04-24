@@ -96,7 +96,7 @@ Once the provisioning and build process are finished, the deployment starts. The
 
 <Alert status="success">
    <AlertIcon />
-   **Congratulations!** You have successfully connected to XM Cloud and built your first project, that has an environment that is set up and ready to be used. The solution code is ready and connected to a CI/CD pipeline as well. Setting up a CI/CD pipeline in some development scenarios can take days or weeks, but XM Cloud tools help you complete it within minutes here.
+   **Congratulations!** You have successfully deployed your first XM Cloud project that has an environment that is set up and ready to be used. The solution code is ready and connected to a CI/CD pipeline as well. Setting up a CI/CD pipeline in some development scenarios can take days or weeks but XM Cloud tools help you complete it within minutes here.
 </Alert>
 
 ### Related XM Cloud Documentation
