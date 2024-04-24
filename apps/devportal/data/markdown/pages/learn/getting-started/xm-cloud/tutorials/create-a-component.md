@@ -40,7 +40,8 @@ In this tutorial you will do the following:
 In order to complete the following tutorial, you will need these resources:
 
 1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io)
-1. An existing XM Cloud environment and site created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
+1. An existing XM Cloud environment created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
+1. An existing XM Cloud site created in [Tutorial: How to Create a Site and Connect your App to it](create-a-site)
 
 ## What do we need to build?
 
