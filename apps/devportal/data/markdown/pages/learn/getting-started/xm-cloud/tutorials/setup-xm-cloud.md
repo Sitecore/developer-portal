@@ -19,7 +19,7 @@ XM Cloud focuses on being a headless, enterprise content and website management 
 
 ## Prerequisites
 
-In order to complete the following tutorial, you will need these resouces:
+In order to complete the following tutorial, you will need these resources:
 
 1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io)
 1. Organization Admin role access or higher in the Sitecore Cloud portal to access XM Cloud Deploy tools to create projects and environments.
@@ -69,8 +69,9 @@ Let’s get started!
 1. Press the Continue button.
 1. On the 5th step review your selections and press the “Start deployment” button
    ![Create Project and Environment Step 5 - Review your selections](https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5cda1bf224c4f99b508fe612e527590?v=6c0f0076)
-1. The deployment starts, and provisioning and build run in parallel.  
-   ![XM Cloud Deploy Logs - Deployment is running](https://sitecorecontenthub.stylelabs.cloud/api/public/content/72df30b6fd564d90b97ed08988d608b1?v=c2841f9b)
+
+The deployment starts, and provisioning and build run in parallel.  
+ ![XM Cloud Deploy Logs - Deployment is running](https://sitecorecontenthub.stylelabs.cloud/api/public/content/72df30b6fd564d90b97ed08988d608b1?v=c2841f9b)
 
 <Alert status="info">
   <AlertIcon />
