@@ -131,7 +131,7 @@ Now, you need to set the API key within `.env.local`. The API key should be alre
    ![In Command Line Interface - Run npm install](https://sitecorecontenthub.stylelabs.cloud/api/public/content/5971aecb976d43bf840ba260298c5da1?v=212157b9)
 1. Now run `npm run start:connected`
    ![Start the app locally](https://sitecorecontenthub.stylelabs.cloud/api/public/content/2e06a82c1b414cb9b06e6518983f32a4?v=12ee66db)
-1. Call your app in the browser: http://localhost:3000
+1. Call your app in the browser: [http://localhost:3000](http://localhost:3000)
    ![Check Website running locally](https://sitecorecontenthub.stylelabs.cloud/api/public/content/358a02664690465289d70fe4c9280eae?v=7c0165d9)
 
 ## Verify the connection
@@ -144,7 +144,7 @@ Let’s change some content to verify you are in fact connected against the prev
 1. Change the headline to whatever you like. In this case, I’ll add 'in town' to the homepage tagline.
    ![Pages Editor - Change Headline inline](https://sitecorecontenthub.stylelabs.cloud/api/public/content/05ac5bbde7244c809d987106b9226fd8?v=6b47e626)
 1. Your changes are autosaved.
-1. Switch back to the browser tab where you are viewing the Next.js app on localhost:3000
+1. Switch back to the browser tab where you are viewing the Next.js app on [http://localhost:3000](http://localhost:3000)
 1. Reload the page, and see the changes appear in your local app.  
    ![Validate changes in local running app](https://sitecorecontenthub.stylelabs.cloud/api/public/content/6bf98e5e22fe4c689898fcea34a03b59?v=756f5d1a)
 
