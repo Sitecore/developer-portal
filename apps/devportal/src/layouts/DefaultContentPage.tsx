@@ -1,16 +1,14 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
+import { ContentSection, Hero, PromoCardProps, PromoList } from '@scdp/ui/components';
+import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import SocialFeeds from '@src/components/common/SocialFeeds';
 import { MarkDownContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
-import { Hero } from '@scdp/ui/components';
-import { ContentSection } from '@scdp/ui/components';
-import { PromoCardProps } from '@scdp/ui/components';
-import {PromoList} from '@scdp/ui/components';
+import { useRouter } from 'next/router';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
-import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 
 type DefaultContentPageProps = {
   pageInfo: PageInfo;
@@ -25,6 +23,7 @@ type DefaultContentPageProps = {
 };
 
 const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager }: DefaultContentPageProps) => {
+  const router = useRouter();
   if (!pageInfo) return <>No pageInfo found</>;
 
   // Check for headings in the content
@@ -44,7 +43,7 @@ const DefaultContentPage = ({ pageInfo, partials, partialGroups, promoAfter, pro
           <PromoList data={promoBefore} />
           {/* Page structure */}
 
-          <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && Nav} inPageNav={sectionTitles.length > 0 && <InPageNav titles={sectionTitles} />} inPageLinks={sectionTitles}>
+          <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && Nav} inPageNav={sectionTitles.length > 0 && <InPageNav titles={sectionTitles} key={router.asPath} />} inPageLinks={sectionTitles}>
             <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
 
             <ChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />
