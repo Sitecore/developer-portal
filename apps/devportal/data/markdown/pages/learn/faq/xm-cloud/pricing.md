@@ -17,3 +17,7 @@ Please work with your Sales team on specific pricing questions.
 ## Is the embedded personalization in Pages included in the cost of XM Cloud, or an extra add-on?
 
 XM Cloud will be bundled with both Pages and embedded personalization, so there are no extra costs for either.
+
+## Can Pages be licensed without XM Cloud (for example, have a third-party CMS, buy Sitecore CDP and Pages)
+
+At the moment, Pages is only available as part of the XM Cloud solution.
