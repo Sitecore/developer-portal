@@ -4,6 +4,7 @@ import { Box, BoxProps, Icon, IconButton, Menu, MenuButton, MenuItem, MenuList, 
 import { mdiChevronDown } from '@mdi/js';
 import Link from 'next/link';
 import { ContentHeading } from '../../lib/interfaces/contentheading';
+import useInPageNavigation from '../hooks/useInPageNavigation';
 
 type InPageNavProps = BoxProps & {
   titles: ContentHeading[];
@@ -11,14 +12,11 @@ type InPageNavProps = BoxProps & {
 };
 
 const InPageNavSmall = ({ titles, ...rest }: InPageNavProps): JSX.Element => {
-  const links = titles.map((text) => ({
-    text: text.title,
-    href: `#${text.id}`,
-  }));
-
   if (titles.length == 0) {
     return <></>;
   }
+
+  const links = useInPageNavigation(titles, false);
 
   return (
     <Box {...rest} mb={4}>
