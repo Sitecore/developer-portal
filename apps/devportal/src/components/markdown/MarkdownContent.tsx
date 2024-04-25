@@ -1,10 +1,9 @@
-// Global
-import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Heading, SimpleGrid, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, HStack, Heading, SimpleGrid, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 import { PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { Icon } from '@mdi/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
-import { Article, ButtonLink, Download, Group, LinkItem, NewsletterStory, Promo, Repository, Row, TextLink, VideoPromo, YouTube } from '@scdp/ui/components';
+import { Article, ButtonLink, Download, Group, ImageModal, LinkItem, NewsletterStory, Promo, Repository, Row, TextLink, VideoPromo, YouTube } from '@scdp/ui/components';
 import { MDXRemote } from 'next-mdx-remote';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
@@ -60,6 +59,8 @@ function CustomMdx(children: string) {
         AlertIcon: AlertIcon,
         SimpleGrid: SimpleGrid,
         TextLink,
+        HStack,
+        Image: ImageModal,
         NewsletterStory,
         Table,
         Thead,
@@ -83,7 +84,7 @@ export const DecoratedMarkdown = ({ children, disabledProse = false }: Decorated
   // }, []);
 
   if (disabledProse) return CustomMdx(children);
-  
+
   return <Prose className={styles.richText}>{CustomMdx(children)}</Prose>;
 };
 
@@ -190,6 +191,3 @@ const RenderPartial = ({ key, item, fileName }: { key: string; item: string; fil
 };
 
 export default MarkdownContent;
-
-
-
