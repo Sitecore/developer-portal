@@ -6,7 +6,7 @@ description: ""
 Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication.
 Sitecore Identity Server is compatible with Sitecore Membership user storage but may be be extended with other identity providers to integrate with customers AIM systems.
 
-See [all available versions here](/downloads/Sitecore_Identity).  
+See [all available versions here](/downloads/Sitecore_Identity).  
 
 ## Downloads
 
