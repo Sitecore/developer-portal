@@ -9,6 +9,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 ## Sitecore Identity 7.x
 </CardHeader>
 <CardBody>
+[Sitecore Identity 7.0.330](/downloads/Sitecore_Identity/7x/Sitecore_Identity_70330)\
 [Sitecore Identity 7.0.328](/downloads/Sitecore_Identity/7x/Sitecore_Identity_70328)\
 [Sitecore Identity 7.0.327](/downloads/Sitecore_Identity/7x/Sitecore_Identity_70327)\
 [Sitecore Identity 7.0.326](/downloads/Sitecore_Identity/7x/Sitecore_Identity_70326)\
