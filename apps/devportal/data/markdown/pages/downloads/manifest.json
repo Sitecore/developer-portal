@@ -12,8 +12,12 @@
       "ignoreLink": true,
       "children": [
         {
-          "title": "Sitecore XM Cloud",
+          "title": "XM to XM Cloud Content Migration Tool",
           "path": "xm-cloud"
+        },
+        {
+          "title": "xDB to CDP Migration Tool",
+          "path": "xDB_to_CDP_Migration"
         }
       ],
       "collapsed": false
@@ -40,7 +44,7 @@
       "path": "",
       "children": [
         {
-          "title": "Sitecore Identity",
+          "title": "Sitecore Identity Server",
           "path": "Sitecore_Identity"
         },
         {
@@ -158,10 +162,6 @@
         {
           "title": "Sitecore XP Data Exchange Framework",
           "path": "Data_Exchange_Framework"
-        },
-        {
-          "title": "Sitecore DAM - Dynamics 365 Commerce",
-          "path": "Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce"
         }
       ],
       "collapsed": true
@@ -218,6 +218,10 @@
         {
           "title": "Sitecore IP Geolocation Service Client",
           "path": "Sitecore_IP_Geolocation_Service_Client"
+        },
+        {
+          "title": "Sitecore DAM - Dynamics 365 Commerce",
+          "path": "Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce"
         },
         {
           "title": "Sitecore DAM",

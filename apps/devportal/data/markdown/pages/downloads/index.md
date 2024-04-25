@@ -9,10 +9,16 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
-  title="Sitecore XM Cloud"
-  description="Download Sitecore XM Cloud tools and resources"
+  title="XM to XM Cloud Content Migration Tool"
+  description="Tool for migrating content, media and users from an XM instance to an XM Cloud environment."
   link1text="More info"
   link1href="/downloads/xm-cloud"
+/>
+<Download 
+  title="xDB to CDP Migration Tool"
+  description="Sitecore Connect recipes for migrating visitor contact data from xDB to CDP"
+  link1text="More info"
+  link1href="/downloads/xDB_to_CDP_Migration"
 />
 </SimpleGrid>
 
@@ -41,10 +47,10 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
-  title="Sitecore Identity 7.0.328"
+  title="Sitecore Identity Server 7.1.11"
   description="Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or extended for use with an external identity provider."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Identity/7x/Sitecore_Identity_70328"
+  link1href="/downloads/Sitecore_Identity/7x/Sitecore_Identity_7111"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Identity"
 />
@@ -158,10 +164,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Azure_Blob_Storage"
 />
 <Download 
-  title="Scripts for Sitecore Security database 0.5"
-  description="Scripts for moving the Sitecore security membership provider from the Core to other individual or existing databases."
+  title="Scripts for Sitecore Security database 0.6"
+  description="Scripts for moving the Sitecore security membership provider from the Core to an individual or existing database."
   link1text="Get latest"
-  link1href="/downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_05"
+  link1href="/downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_06"
   link2text="See all versions"
   link2href="/downloads/Scripts_for_Sitecore_Security_database"
 />
@@ -257,14 +263,6 @@ hasInPageNav: false
   link1href="/downloads/Data_Exchange_Framework/8x/Data_Exchange_Framework_800"
   link2text="See all versions"
   link2href="/downloads/Data_Exchange_Framework"
-/>
-<Download 
-  title="Sitecore Connect™ for Microsoft Dynamics 365 Commerce 2.0.0"
-  description="Connector for synchronizing data between Sitecore Digital Asset Management (DAM) and Microsoft Dynamics 365 Commerce."
-  link1text="Get latest"
-  link1href="/downloads/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce/2x/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce_200"
-  link2text="See all versions"
-  link2href="/downloads/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce"
 />
 </SimpleGrid>
 
@@ -366,6 +364,14 @@ hasInPageNav: false
   link1href="/downloads/Sitecore_IP_Geolocation_Service_Client/12/Sitecore_IP_Geolocation_Service_Client_12_for_Sitecore_XP_80"
   link2text="See all versions"
   link2href="/downloads/Sitecore_IP_Geolocation_Service_Client"
+/>
+<Download 
+  title="Sitecore Connect™ for Microsoft Dynamics 365 Commerce 2.0.0"
+  description="Connector for synchronizing data between Sitecore Digital Asset Management (DAM) and Microsoft Dynamics 365 Commerce."
+  link1text="Get latest"
+  link1href="/downloads/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce/2x/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce_200"
+  link2text="See all versions"
+  link2href="/downloads/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce"
 />
 <Download 
   title="Sitecore Connect™ for Sitecore DAM 2.0.0"

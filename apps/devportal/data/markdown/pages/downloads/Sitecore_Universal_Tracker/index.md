@@ -9,7 +9,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx
 ## Sitecore Universal Tracker
 </CardHeader>
 <CardBody>
-[Sitecore Universal Tracker 7.0.0](/downloads/Sitecore_Universal_Tracker/8x/Sitecore_Universal_Tracker_800)\
+[Sitecore Universal Tracker 8.0.0](/downloads/Sitecore_Universal_Tracker/8x/Sitecore_Universal_Tracker_800)\
 [Sitecore Universal Tracker 7.0.0](/downloads/Sitecore_Universal_Tracker/7x/Sitecore_Universal_Tracker_700)\
 [Sitecore Universal Tracker 6.0.0](/downloads/Sitecore_Universal_Tracker/6x/Sitecore_Universal_Tracker_600)\
 [Sitecore Universal Tracker 5.0.0](/downloads/Sitecore_Universal_Tracker/5x/Sitecore_Universal_Tracker_500)\
