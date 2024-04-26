@@ -28,8 +28,8 @@ The Sitecore Headless Services module (formerly known as the Sitecore JavaScript
  | --- | --- |
  | [Sitecore Headless Services for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%20XM%2022.0.11.zip) | Download Sitecore Headless Services module for use with the Experience Platform without XConnect. |
  | [Sitecore Headless Services for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%20XP%2022.0.11.zip) | Download Sitecore Headless Services module for use with the Experience Platform with XConnect. |
- | [Experience Edge Connector for Sitecore XM]() | Download Experience Edge Connector module for use with the Experience Platform without XConnect. |
- | [Experience Edge Connector for Sitecore XP]() | Download Experience Edge Connector module for use with the Experience Platform with XConnect. |
+ | [Experience Edge Connector for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20ExperienceEdge%20Connector%20for%20Sitecore%2010.4.0%20XM%2022.0.2%20rev.%200002.zip) | Download Experience Edge Connector module for use with the Experience Platform without XConnect. |
+ | [Experience Edge Connector for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20ExperienceEdge%20Connector%20for%20Sitecore%2010.4.0%20XP%2022.0.2%20rev.%200002.zip) | Download Experience Edge Connector module for use with the Experience Platform with XConnect. |
  | [JavaScript SDK NPM packages](https://www.npmjs.com/org/sitecore-jss) | The @sitecore-jss npm organization contains packages for the headless JavaScript SDKs. See documentation for details. |
 
 ## Download options for Azure AppService and On Premises deployment
@@ -40,8 +40,8 @@ The Sitecore Headless Services module (formerly known as the Sitecore JavaScript
  | [Sitecore Headless Services CD WDP for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%20XP%20CD%2022.0.11.scwdp.zip) | Sitecore Headless Services WebDeploy package for CD role in XP configurations. |
  | [Sitecore Headless Services WDP for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%20XM%2022.0.11.scwdp.zip) | Sitecore Headless Services WebDeploy package for CM role in XM configurations. |
  | [Sitecore Headless Services WDP for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%20XP%2022.0.11.scwdp.zip) | Sitecore Headless Services WebDeploy package for CM role in XP configurations. |
- | [Experience Edge Connector WDP for Sitecore XM]() | Experience Edge Connector WebDeploy package for CM role in XM configurations. |
- | [Experience Edge Connector WDP for Sitecore XP]() | Experience Edge Connector WebDeploy package for CM role in XP configurations. |
+ | [Experience Edge Connector WDP for Sitecore XM](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20ExperienceEdge%20Connector%20for%20Sitecore%2010.4.0%20XM%2022.0.2%20rev.%200002.scwdp.zip) | Experience Edge Connector WebDeploy package for CM role in XM configurations. |
+ | [Experience Edge Connector WDP for Sitecore XP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20ExperienceEdge%20Connector%20for%20Sitecore%2010.4.0%20XP%2022.0.2%20rev.%200002.scwdp.zip) | Experience Edge Connector WebDeploy package for CM role in XP configurations. |
 
 ## Documentation
 
