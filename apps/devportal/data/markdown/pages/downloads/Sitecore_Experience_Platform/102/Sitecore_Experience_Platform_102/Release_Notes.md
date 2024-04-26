@@ -196,8 +196,7 @@ The following issues have been fixed:
  | Platform | ​The partial retrieval of a media file fails when the range value is larger than the file size.​​​​ | 344806 |
  | Platform | ​​​​​If the `Item name` and `Display name` contain special characters, they are double-encoded. | 393368 |
  | Platform | ​When publishing restrictions are set​, the `MaxAge` ​media cache header causes an error. | 426977 |
- | Platform | ​In a rule condition, s​pecial characters, for example, \, # or ;< are encoded. | 432988 |
- | Platform | ​​​​If you create an item from a branch, ​excessive web requests degrade performance. | 443203 |
+ | Platform | ​In a rule condition, s​pecial characters, for example, \, # or ;< are encoded. | 432988 | 
  | Platform | ​​​​If the value of the language cookie is set to an incorrect value, a​ `Could not parse the language` error occurs. | 444486 |
  | Platform | ​If the httpcookies `domain` attribute contains a value, an iInfinite loop occurs when you log out. | 445560 |
  | Platform | ​If you remove all the personalization rules the `Default` rule is not removed. | 449644 |
