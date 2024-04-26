@@ -8,6 +8,7 @@ import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import { useRouter } from 'next/router';
 import GithubContributionNotice from '../components/common/contribute';
+import { ArticlePaging } from '../components/navigation/ArticlePaging';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
@@ -47,8 +48,11 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
 
           <PromoList data={promoBefore} />
           <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
+          <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
+
           <GithubContributionNotice pageInfo={pageInfo} />
           {customNavPager}
+
           <PromoList data={promoAfter} />
           <SocialFeeds pageInfo={pageInfo} />
         </ThreeColumnLayout>

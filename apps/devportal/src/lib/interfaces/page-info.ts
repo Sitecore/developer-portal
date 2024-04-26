@@ -80,6 +80,7 @@ export type SidebarNavigationConfig = {
   showRootAsSections?: boolean;
   enableSearch?: boolean;
   enableBreadcrumb?: boolean;
+  enableNextPrevious?: boolean;
   routes: SidebarNavigationItem[];
 };
 
