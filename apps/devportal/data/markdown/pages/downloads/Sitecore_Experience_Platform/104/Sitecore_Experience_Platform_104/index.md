@@ -36,7 +36,7 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
 ## Download options for Sitecore Container deployments
  | Resource | Description |
  | --- | --- |
- | [Container Deployment Package](LINK-GITHUB_RELEASEPAGE) | Link to the Sitecore Container Deployment Package on GitHub, containing Docker Compose and Kubernetes specification files for deploying Sitecore in development and production container environments. |
+ | [Container Deployment Package](LINK-GITHUB_RELEASEPAGE) | **GitHub link coming soon** Link to the Sitecore Container Deployment Package on GitHub, containing Docker Compose and Kubernetes specification files for deploying Sitecore in development and production container environments. |
  | [Image and Tags List](https://github.com/Sitecore/docker-images/tree/master/tags) | Link to the official tags list (.md and .json format) of all published Sitecore images available on the Sitecore Container Registry (SCR). |
  | [Developer Workstation Deployment with Docker Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Developer_Workstation_Deployment_With_Docker_10_4_0.pdf) | Guide describing how to use Sitecore Containers with Docker Compose to deploy a developer workstation. |
  | [Production Environment Deployment with Kubernetes Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Production_Environment_Deployment_with_Kubernetes_10_0_4.pdf) | Guide describing how to use Sitecore Containers with Kubernetes to deploy to the Azure Kubernetes Service. |
@@ -45,13 +45,13 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
 ## Modules
  | Resource | Description |
  | --- | --- |
- | [Sitecore Identity](/downloads/Sitecore_Identity) | **Version 7.1 coming soon.** Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or can be extended for use with an external identity provider. |
- | [Scripts for Sitecore Security database](/downloads/Scripts_for_Sitecore_Security_database) | **Version 0.6 coming soon.** Set of scripts for moving Sitecore's Security membership objects from the Core database to its own security database. | 
- | [Sitecore Experience Accelerator](/downloads/Sitecore_Experience_Accelerator) | **Version 10.4.0 coming soon.** Tools to accelerate the production of SXP websites enabled by reuse of templates, layouts, and renderings. |
+ | [Sitecore Identity](/downloads/Sitecore_Identity/7x/Sitecore_Identity_7111) | Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or can be extended for use with an external identity provider. |
+ | [Scripts for Sitecore Security database](/downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_06) | Set of scripts for moving Sitecore's Security membership objects from the Core database to its own security database. | 
+ | [Sitecore Experience Accelerator](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1040) | Tools to accelerate the production of SXP websites enabled by reuse of templates, layouts, and renderings. |
  | Codeless Schema Extensions | **New module coming soon.** Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development. |
  | [Azure Blob Storage](/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_600) | Azure Blob Storage package for XM Developer, XM Scaled, XP Developer, XP Scaled configurations. |
- | [Sitecore Publishing Service Module](/downloads/Sitecore_Publishing_Service_Module) | **Version 10.4.0 coming soon.** Integrates the optional Sitecore Publishing Service with SXP, which focuses on high performance publishing in large-scale deployments. |
- | [Sitecore Headless Rendering](/downloads/Sitecore_Headless_Rendering) | **Version 22 coming soon.** Headless services bundle including the server-side APIs, Edge Connector, and front-end SDKs for JavaScript (JSS) and ASP.NET rendering. |
+ | [Sitecore Publishing Service Module](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1040) | Integrates the optional Sitecore Publishing Service with SXP, which focuses on high performance publishing in large-scale deployments. |
+ | [Sitecore Headless Rendering](/downloads/Sitecore_Headless_Rendering/22x/Sitecore_Headless_Rendering_2200) | Headless services bundle including the server-side APIs, Edge Connector, and front-end SDKs for JavaScript (JSS) and ASP.NET rendering. |
  | [Sitecore Universal Tracker](/downloads/Sitecore_Universal_Tracker/8x/Sitecore_Universal_Tracker_800) | Optional mechanism for tracking site visitor interactions, well suited for headless implementations and for collecting from different sources. |
 
 ## Connectors
@@ -67,16 +67,16 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
  | Resource | Description |
  | --- | --- |
  | [Release notes](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104/Release_Notes) | List of improvements and resolved issues implemented in the release. |
- | [Known issues](https://support.sitecore.com/kb?id=kb_search&kb_knowledge_base=3492d025db70dc109e54320a6896199f&spa=1&language=en&u_affected_software=sitecore_experience_platform) | Link to known issue articles on the Sitecore Knowledge Base. There are no new Sitecore 10.4 issues to publish at this time. |
+ | [Known issues](https://support.sitecore.com/kb?id=kb_search&kb_knowledge_base=3492d025db70dc109e54320a6896199f&spa=1&language=en&u_affected_software=sitecore_experience_platform) | Link to known issue articles on the Sitecore Knowledge Base. |
  | [Assembly list](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore.Platform.Assemblies%2010.4.0%20rev.%20010422.zip) | Complete list of assemblies shipped with the release. |
  
 ## Client translations
  | Resource | Description |
  | --- | --- |
- | [Danish (da-DK)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(da-DK).zip) | Danish language client translation file. See [instructions](~/link?_id=B685CC31771E466080080239FDBEA625&_z=z) **Fix Link** on how to import a new language into the Sitecore installation. |
- | [German (de-DE)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(de-DE).zip) | German language client translation file. See [instructions](~/link?_id=B685CC31771E466080080239FDBEA625&_z=z) **Fix Link** on how to import a new language into the Sitecore installation. |
- | [Japanese (ja-JP)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(ja-JP).zip) | Japanese language client translation file. See [instructions](~/link?_id=B685CC31771E466080080239FDBEA625&_z=z) **Fix Link** on how to import a new language into the Sitecore installation. |
- | [Chinese (zh-CN)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(zh-CN).zip) | Chinese language client translation file. See [instructions](~/link?_id=B685CC31771E466080080239FDBEA625&_z=z) **Fix Link** on how to import a new language into the Sitecore installation. |
+ | [Danish (da-DK)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(da-DK).zip) | Danish language client translation file. See [instructions](/downloads/Sitecore_Experience_Platform/Client_Translations_Manual) on how to import a new language into the Sitecore installation. |
+ | [German (de-DE)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(de-DE).zip) | German language client translation file. See [instructions](/downloads/Sitecore_Experience_Platform/Client_Translations_Manual) on how to import a new language into the Sitecore installation. |
+ | [Japanese (ja-JP)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(ja-JP).zip) | Japanese language client translation file. See [instructions](/downloads/Sitecore_Experience_Platform/Client_Translations_Manual) on how to import a new language into the Sitecore installation. |
+ | [Chinese (zh-CN)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(zh-CN).zip) | Chinese language client translation file. See [instructions](/downloads/Sitecore_Experience_Platform/Client_Translations_Manual) on how to import a new language into the Sitecore installation. |
  | [Chinese GeoIP Localization Pack](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/90/Sitecore%20Experience%20Platform%2090%20Initial%20Release/Secure/GeoIp%20Location%20China%20Localization%20Pack%201.0.0%20rev.%20180226.zip) | The pack provides enhanced region detection for China. The pack should be installed as a regular Sitecore module. |
 
 ## Usage policies

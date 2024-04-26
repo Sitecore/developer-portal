@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Identity"
-description: "Sitecore Identity is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication. For security reasons we strongly recommend using Sitecore Identity 7.0."
+title: "Sitecore Identity Server"
+description: "Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication. For security reasons we strongly recommend using Sitecore Identity Server 7.0 or later."
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 ---
 

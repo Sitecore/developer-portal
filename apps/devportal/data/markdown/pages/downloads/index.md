@@ -55,10 +55,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Identity"
 />
 <Download 
-  title="Sitecore Experience Accelerator 10.3.0"
+  title="Sitecore Experience Accelerator 10.4.0"
   description="Tools to accelerate the production of SXP websites enabled by reuse of templates, layouts, and renderings. "
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1030"
+  link1href="/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1040"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Experience_Accelerator"
 />
@@ -71,10 +71,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Publishing_Service"
 />
 <Download 
-  title="Sitecore Publishing Service Module 10.3.0"
+  title="Sitecore Publishing Service Module 10.4.0"
   description="Integrates the optional Sitecore Publishing Service with SXP, and provides additional features."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1030"
+  link1href="/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1040"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Publishing_Service_Module"
 />
