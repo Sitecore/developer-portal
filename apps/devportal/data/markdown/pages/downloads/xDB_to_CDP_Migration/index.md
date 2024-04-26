@@ -3,12 +3,12 @@ solution: ['customer-data-management']
 product: ['cdp']
 title: 'xDB to CDP Migration Tool'
 productLogo: 'CDP'
-description: 
+description: 'Use Sitecore Connect to migrate visitor data from XP to CDP'
 ---
 
 # xDB to CDP Migration Tool
 
-Use the xDB to CDP Migration tool to facilitate seamless migration of visitor contact data from Sitecore Platform Experience Platform to Sitecore Customer Data Platform using the robust capabilities of Sitecore Connect.
+Use the xDB to CDP Migration tool to facilitate seamless migration of visitor contact data from Sitecore Experience Platform to Sitecore Customer Data Platform using the robust capabilities of Sitecore Connect.
 
 - **Tool contains**: Region-specific sets of recipes that you add to your Sitecore Connect instance.
 
@@ -19,6 +19,8 @@ Use the xDB to CDP Migration tool to facilitate seamless migration of visitor co
 - **Sitecore XP versions supported**: Data can be migrated from Sitecore XP versions 9.0 and later.
 
 - **More information**: See the xDB to CDP Migration Tool at [Sitecore Documentation](https://doc.sitecore.com/)
+
+## Sitecore Connect Recipes
 
 
  | Resource | Description |
@@ -31,4 +33,8 @@ Use the xDB to CDP Migration tool to facilitate seamless migration of visitor co
  
 ## Other Resources
 
-==link to XP== / ==link to CDP== / ==link to Sitecore Connect==
+<Row columns={3}>
+<Link title="Sitecore XP" link="/marketing-automation/experience-platform" />
+<Link title="Sitecore CDP" link="/customer-data-management/cdp" />
+<Link title="Sitecore Connect" link="/integrations/connect" />
+</Row>

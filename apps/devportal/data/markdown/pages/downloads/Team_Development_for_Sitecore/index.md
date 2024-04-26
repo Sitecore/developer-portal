@@ -9,6 +9,7 @@ origin: https://dev.sitecore.net/Downloads/Team_Development_for_Sitecore.aspx
 ## Team Development for Sitecore 6.x
 </CardHeader>
 <CardBody>
+[Team Development for Sitecore 6.0.4](/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_604)\
 [Team Development for Sitecore 6.0.3](/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_603)\
 [Team Development for Sitecore 6.0.2](/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_602)
 </CardBody>          

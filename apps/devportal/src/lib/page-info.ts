@@ -7,13 +7,15 @@ import path from 'path';
 
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ParseContent } from '@lib/markdown/mdxParse';
-import { ChangelogEntriesPaginated } from '@scdp/changelog';
+import { Changelog } from '@scdp/changelog';
 import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@scdp/ui/components';
+import { getChangelogCredentials } from './changelog/changelog';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const partialsDirectory = path.join(dataDirectory, 'partials');
 const pagesDirectory = path.join(dataDirectory, 'pages');
-const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main/apps/devportal';
+
+export const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main/apps/devportal';
 
 type Matter = {
   data: {
@@ -109,7 +111,8 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
   // }
 
   if (meta.changelog) {
-    pageInfo.changelogEntries = await (await ChangelogEntriesPaginated(false, meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
+    const changelog = new Changelog(getChangelogCredentials());
+    pageInfo.changelogEntries = (await changelog.getEntriesPaginated(meta.changelog ?? '6', meta.changelogProductId != null ? meta.changelogProductId.join('|') : '', '')).entries;
   }
 
   const youtubeInfo = await YouTubeApi.get(meta.youtube);
