@@ -41,10 +41,10 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
-  title="Sitecore Identity 7.0.328"
+  title="Sitecore Identity 7.0.330"
   description="Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or extended for use with an external identity provider."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Identity/7x/Sitecore_Identity_70328"
+  link1href="/downloads/Sitecore_Identity/7x/Sitecore_Identity_70330"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Identity"
 />
