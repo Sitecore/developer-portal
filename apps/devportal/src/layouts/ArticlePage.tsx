@@ -6,6 +6,7 @@ import SocialFeeds from '@src/components/common/SocialFeeds';
 import { MarkDownContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
+import { useRouter } from 'next/router';
 import GithubContributionNotice from '../components/common/contribute';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
@@ -25,6 +26,7 @@ type ArticlePageProps = {
 };
 
 const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager, sidebarConfig }: ArticlePageProps) => {
+  const router = useRouter();
   if (!pageInfo) return <>No pageInfo found</>;
 
   // Check for headings in the content
@@ -33,7 +35,7 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
 
   if (partials) sectionTitles.push(...partials.titles);
 
-  const Nav = pageInfo.hasInPageNav != false ? customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null : null;
+  const Nav = pageInfo.hasInPageNav != false ? customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} key={router.asPath} /> : null : null;
 
   return (
     <TrackPageView pageInfo={pageInfo}>
