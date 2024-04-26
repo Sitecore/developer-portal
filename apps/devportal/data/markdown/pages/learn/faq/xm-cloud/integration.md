@@ -18,4 +18,4 @@ See more on [integration between Sitecore CDP and Salesforce Marketing Cloud](ht
 
 ## Is there no more support for front-end search out of the box? Is it required either provision another Solr instance, or use Coveo or another search vendor?
 
-Sitecore XM Cloud is focused on a being an API-first, headless, composable, content management solution. Sitecore will be offering a separate composable site search offering for front end websites.
+Sitecore XM Cloud is focused on a being an API-first, headless, composable, content management solution. Sitecore offers the [Sitecore Search](/content-management/search) product to provide a rich headless content search solution with personalized experiences, AI-driven recommendations, and a rich feature set.
