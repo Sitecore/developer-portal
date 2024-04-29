@@ -19,7 +19,7 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
  | [Packages for XM Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XMScaled%20packages).zip) | Packages for each role of the Sitecore XM Scaled (XM1) topology. |
  | [Packages for XP Single](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XPSingle%20packages).zip) | Packages for the Sitecore XP Single (XP0) instance topology. |
  | [Packages for XP Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XPScaled%20packages).zip) | Packages for each role of the Sitecore XP Scaled (XP1) topology. |
- | [Sitecore Azure Toolkit Resources](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%20Azure%20Toolkit%20Resources%2010.4.0%20rev.%20010422.zip) | SXP release-specific resources for use with the Sitecore Azure Toolkit. The Sitecore Azure Toolkit is [here](/downloads/Sitecore_Azure_toolkit/3x/Sitecore_Azure_Toolkit_300). |
+ | [Sitecore Azure Toolkit Resources](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%20Azure%20Toolkit%20Resources%2010.4.0%20rev.%20010422.zip) | SXP release-specific resources for use with the Sitecore Azure Toolkit. The Sitecore Azure Toolkit is [here](/downloads/Sitecore_Azure_Toolkit/3x/Sitecore_Azure_Toolkit_300). |
  
 ## Download options for On Premises deployments
  | Resource | Description |
@@ -41,9 +41,9 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
 ## Download options for Sitecore Container deployments
  | Resource | Description |
  | --- | --- |
- | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/10.4.0.010422.1755) | Link to the Sitecore Container Deployment Package on GitHub, containing Docker Compose and Kubernetes specification files for deploying Sitecore in development and production container environments. |
+ | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/sxp%2F10.4.0.010422.1755) | Link to the Sitecore Container Deployment Package on GitHub, containing Docker Compose and Kubernetes specification files for deploying Sitecore in development and production container environments. |
  | [Image and Tags List](https://github.com/Sitecore/docker-images/tree/master/tags) | Link to the official tags list (.md and .json format) of all published Sitecore images available on the Sitecore Container Registry (SCR). |
- | [Developer Workstation Deployment with Docker Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Developer_Workstation_Deployment_With_Docker_10_4_0.pdf) | Guide describing how to use Sitecore Containers with Docker Compose to deploy a developer workstation. |
+ | [Developer Workstation Deployment with Docker Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Developer_Workstation_Deployment_With_Docker_10_4_0.pdf) | **Document expected Apr 30 end-of-day!** Guide describing how to use Sitecore Containers with Docker Compose to deploy a developer workstation. |
  | [Production Environment Deployment with Kubernetes Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Production_Environment_Deployment_with_Kubernetes_10_0_4.pdf) | Guide describing how to use Sitecore Containers with Kubernetes to deploy to the Azure Kubernetes Service. |
  | [Upgrade Container Deployment Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Upgrade_Container_Deployment_Guide_10_4_0.pdf) | Guide describing how to use the Sitecore Container Deployment Package to upgrade the SQL Server databases of an existing Sitecore XP 10.0.X installation to 10.4.x. |
 
@@ -53,20 +53,20 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
  | [Sitecore Identity](/downloads/Sitecore_Identity/7x/Sitecore_Identity_7111) | Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or can be extended for use with an external identity provider. |
  | [Scripts for Sitecore Security database](/downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_06) | Set of scripts for moving Sitecore's Security membership objects from the Core database to its own security database. | 
  | [Sitecore Experience Accelerator](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1040) | Tools to accelerate the production of SXP websites enabled by reuse of templates, layouts, and renderings. |
- | Codeless Schema Extensions | **New module coming soon!** Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development. |
  | [Azure Blob Storage](/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_600) | Azure Blob Storage package for XM Developer, XM Scaled, XP Developer, XP Scaled configurations. |
  | [Sitecore Publishing Service Module](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1040) | Integrates the optional Sitecore Publishing Service with SXP, which focuses on high performance publishing in large-scale deployments. |
  | [Sitecore Headless Rendering](/downloads/Sitecore_Headless_Rendering/22x/Sitecore_Headless_Rendering_2200) | Headless services bundle including the server-side APIs, Edge Connector, and front-end SDKs for JavaScript (JSS) and ASP.NET rendering. |
  | [Sitecore Universal Tracker](/downloads/Sitecore_Universal_Tracker/8x/Sitecore_Universal_Tracker_800) | Optional mechanism for tracking site visitor interactions, well suited for headless implementations and for collecting from different sources. |
+ | Codeless Schema Extensions | **New module coming mid May 2024!** Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development. |
 
 ## Connectors
  | Resource | Description |
  | --- | --- |
- | [Sitecore Connect for Content Hub](/downloads/Sitecore_Connect_for_Content_Hub) | **Version 5.2.0 coming soon.** Connector for synchronizing data between SXP and Content Hub. |
- | [Sitecore Connect for Microsoft Dynamics 365 for Sales](/downloads/Dynamics_CRM_Connect) | **Version 9.0.0 coming soon.** Connector for synchronizing data between SXP and Microsoft Dynamics 365 for Sales. |
- | [Sitecore Connect for Salesforce CRM](/downloads/Salesforce_Connect) | **Version 9.0.0 coming soon.** Connector for synchronizing data between SXP and Salesforce CRM. |
- | [Sitecore Connect for Salesforce Marketing Cloud](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud) | **Version 9.0 coming soon.** Connector for synchronizing data between SXP and Salesforce Marketing Cloud. |
- | [Sitecore Data Exchange Framework](/downloads/Data_Exchange_Framework) | **Version 9.0.0 coming soon.** Framework for transforming and transfering data between SXP and 3rd party systems. |
+ | [Sitecore Connect for Content Hub](/downloads/Sitecore_Connect_for_Content_Hub) | **Version 5.2.0 coming mid May 2024!** Connector for synchronizing data between SXP and Content Hub. |
+ | [Sitecore Connect for Microsoft Dynamics 365 for Sales](/downloads/Dynamics_CRM_Connect) | **Version 9.0.0 coming mid May 2024!** Connector for synchronizing data between SXP and Microsoft Dynamics 365 for Sales. |
+ | [Sitecore Connect for Salesforce CRM](/downloads/Salesforce_Connect) | **Version 9.0.0 coming mid May 2024!** Connector for synchronizing data between SXP and Salesforce CRM. |
+ | [Sitecore Connect for Salesforce Marketing Cloud](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud) | **Version 9.0 coming mid May 2024!** Connector for synchronizing data between SXP and Salesforce Marketing Cloud. |
+ | [Sitecore Data Exchange Framework](/downloads/Data_Exchange_Framework) | **Version 9.0.0 coming mid May 2024!** Framework for transforming and transfering data between SXP and 3rd party systems. |
 
 ## Release information
  | Resource | Description |
