@@ -83,9 +83,7 @@ In a Multisite approach you configure one module per Site Collection, as templat
 
 There are two distinct methods for deploying items to XM Cloud with Sitecore Content Serialization, each catering to different requirements as detailed below.
 
-> ⚠️ **IMPORTANT**:
->
-> If items get edited in a deployed environment, the change is persisted in the database and is handled prior to the underlying file (IAR), meaning that source code changes to that same item/field would never be applied. The item must be deleted for the file system (IAR) to regain precedence.
+<Alert status="info" mb={4}><AlertIcon />If items get edited in a deployed environment, the change is persisted in the database and is handled prior to the underlying file (IAR), meaning that source code changes to that same item/field would never be applied. The item must be deleted for the file system (IAR) to regain precedence.</Alert>
 
 #### Deploying Items to the File System using Items as Resources (IAR)
 
