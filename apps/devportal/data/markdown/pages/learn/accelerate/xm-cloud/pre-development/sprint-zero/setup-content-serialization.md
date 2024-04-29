@@ -117,9 +117,7 @@ Here are some examples of items that developers should configure and deploy on t
   - The Presentation Section incl. all subitems
   - The Settings sections incl. all subitems
 
-> ⚠️ **IMPORTANT**:
->
-> Never use this method to serialize and synchronize individual media items - only use it for the parent media item folder. Using this method for individual media items can lead to performance issues. If you need to synchronize media items, utilize the Post Deploy Action. This will efficiently store your media items in Azure Blob Storage.
+<Alert status="info" mb={4}><AlertIcon />Never use this method to serialize and synchronize individual media items - only use it for the parent media item folder. Using this method for individual media items can lead to performance issues. If you need to synchronize media items, utilize the Post Deploy Action. This will efficiently store your media items in Azure Blob Storage.</Alert>
 
 #### Deploying Items to the Database using Post Deploy Actions
 
