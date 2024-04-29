@@ -4,7 +4,7 @@ title: "Sitecore Experience Platform 10.4"
 
 Sitecore Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability. 
 
-See [all available versions here](/downloads/Sitecore_Experience_Platform)./
+See [all available versions here](/downloads/Sitecore_Experience_Platform).\
 For developer documentation please refer to [Sitecore Documentation](https://doc.sitecore.com).
 
 ## Download options for Azure App Service deployments
@@ -36,7 +36,7 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
 ## Download options for Sitecore Container deployments
  | Resource | Description |
  | --- | --- |
- | [Container Deployment Package](LINK-GITHUB_RELEASEPAGE) | **GitHub link coming soon** Link to the Sitecore Container Deployment Package on GitHub, containing Docker Compose and Kubernetes specification files for deploying Sitecore in development and production container environments. |
+ | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/10.4.0.010422.1755) | Link to the Sitecore Container Deployment Package on GitHub, containing Docker Compose and Kubernetes specification files for deploying Sitecore in development and production container environments. |
  | [Image and Tags List](https://github.com/Sitecore/docker-images/tree/master/tags) | Link to the official tags list (.md and .json format) of all published Sitecore images available on the Sitecore Container Registry (SCR). |
  | [Developer Workstation Deployment with Docker Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Developer_Workstation_Deployment_With_Docker_10_4_0.pdf) | Guide describing how to use Sitecore Containers with Docker Compose to deploy a developer workstation. |
  | [Production Environment Deployment with Kubernetes Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Production_Environment_Deployment_with_Kubernetes_10_0_4.pdf) | Guide describing how to use Sitecore Containers with Kubernetes to deploy to the Azure Kubernetes Service. |
@@ -48,7 +48,7 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
  | [Sitecore Identity](/downloads/Sitecore_Identity/7x/Sitecore_Identity_7111) | Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or can be extended for use with an external identity provider. |
  | [Scripts for Sitecore Security database](/downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_06) | Set of scripts for moving Sitecore's Security membership objects from the Core database to its own security database. | 
  | [Sitecore Experience Accelerator](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1040) | Tools to accelerate the production of SXP websites enabled by reuse of templates, layouts, and renderings. |
- | Codeless Schema Extensions | **New module coming soon.** Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development. |
+ | Codeless Schema Extensions | **New module coming soon!** Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development. |
  | [Azure Blob Storage](/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_600) | Azure Blob Storage package for XM Developer, XM Scaled, XP Developer, XP Scaled configurations. |
  | [Sitecore Publishing Service Module](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1040) | Integrates the optional Sitecore Publishing Service with SXP, which focuses on high performance publishing in large-scale deployments. |
  | [Sitecore Headless Rendering](/downloads/Sitecore_Headless_Rendering/22x/Sitecore_Headless_Rendering_2200) | Headless services bundle including the server-side APIs, Edge Connector, and front-end SDKs for JavaScript (JSS) and ASP.NET rendering. |
@@ -85,6 +85,7 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
  | [Sitecore Device Detection Services usage policy](/downloads/Sitecore_Experience_Platform/Sitecore_Device_Detection_Services_Usage_Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
  | [Sitecore IP Geolocation usage policy](/downloads/Sitecore_Experience_Platform/Sitecore_IP_Geolocation_Usage_Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
 
+\
   <Alert variant='warning' mb={4}>
     <AlertIcon />
     Sitecore may collect information such as product version, number of site visits, generic hardware and software information, and recovery actions. This information will be used to help optimize your experience. All data will be processed in accordance with Sitecore’s privacy policy [here](https://www.sitecore.com/trust/privacy-policy). Should you have any queries or wish to discuss this, [please refer to our FAQ](https://kb.sitecore.net/articles/424335), or contact your Sitecore Account Manager.

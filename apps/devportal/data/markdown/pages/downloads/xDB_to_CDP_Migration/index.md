@@ -22,15 +22,14 @@ Use the xDB to CDP Migration tool to facilitate seamless migration of visitor co
 
 ## Sitecore Connect Recipes
 
-
  | Resource | Description |
  | --- | --- |
- | [xDB to CDP - USW](https://scdp.blob.core.windows.net/downloads/xDB_to_CDP_Migration/xDB%20to%20CDP%20-%20USW.zip) | xDB to CDP Migration recipe for Sitecore Connect hosted in the United States West region. |
- | [xDB to CDP - USE](https://scdp.blob.core.windows.net/downloads/xDB_to_CDP_Migration/xDB%20to%20CDP%20-%20USE.zip) | xDB to CDP Migration recipe for Sitecore Connect hosted in the United States East region. |
- | [xDB to CDP - EUW](https://scdp.blob.core.windows.net/downloads/xDB_to_CDP_Migration/xDB%20to%20CDP%20-%20EUW.zip) | xDB to CDP Migration recipe for Sitecore Connect hosted in the Europe West region. |
- | [xDB to CDP - AUE](https://scdp.blob.core.windows.net/downloads/xDB_to_CDP_Migration/xDB%20to%20CDP%20-%20AUE.zip) | xDB to CDP Migration recipe for Sitecore Connect hosted in the Australia region. |
- | [xDB to CDP - JPE](https://scdp.blob.core.windows.net/downloads/xDB_to_CDP_Migration/xDB%20to%20CDP%20-%20JPE.zip) | xDB to CDP Migration recipe for Sitecore Connect hosted in the Japan region. |
- 
+ | [xDB to CDP - USW](https://scdp.blob.core.windows.net/downloads/xDB_to_CDP_Migration/xDB_to_CDP_Migration_1.0/xDB%20to%20CDP%20-%20USW.zip) | xDB to CDP Migration recipe for Sitecore Connect hosted in the United States West region. |
+ | [xDB to CDP - USE](https://scdp.blob.core.windows.net/downloads/xDB_to_CDP_Migration/xDB_to_CDP_Migration_1.0/xDB%20to%20CDP%20-%20USE.zip) | xDB to CDP Migration recipe for Sitecore Connect hosted in the United States East region. |
+ | [xDB to CDP - EUW](https://scdp.blob.core.windows.net/downloads/xDB_to_CDP_Migration/xDB_to_CDP_Migration_1.0/xDB%20to%20CDP%20-%20EUW.zip) | xDB to CDP Migration recipe for Sitecore Connect hosted in the Europe West region. |
+ | [xDB to CDP - AUE](https://scdp.blob.core.windows.net/downloads/xDB_to_CDP_Migration/xDB_to_CDP_Migration_1.0/xDB%20to%20CDP%20-%20AUE.zip) | xDB to CDP Migration recipe for Sitecore Connect hosted in the Australia region. |
+ | [xDB to CDP - JPE](https://scdp.blob.core.windows.net/downloads/xDB_to_CDP_Migration/xDB_to_CDP_Migration_1.0/xDB%20to%20CDP%20-%20JPE.zip) | xDB to CDP Migration recipe for Sitecore Connect hosted in the Japan region. |
+
 ## Other Resources
 
 <Row columns={3}>

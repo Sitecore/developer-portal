@@ -106,7 +106,7 @@ hasInPageNav: false
   title="Sitecore Universal Tracker 8.0.0"
   description="Optional mechanism for tracking site visitor interactions, well suited for headless implementations and for collecting from different sources."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Universal_Tracker/7x/Sitecore_Universal_Tracker_800"
+  link1href="/downloads/Sitecore_Universal_Tracker/8x/Sitecore_Universal_Tracker_800"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Universal_Tracker"
 />
