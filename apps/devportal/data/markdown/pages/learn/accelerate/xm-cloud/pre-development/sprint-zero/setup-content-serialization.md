@@ -116,7 +116,7 @@ Here are some examples of items that developers should configure and deploy on t
   - The Media Item (under site item)
   - The Data item with it’s direct children for the different data source folders
   - Dictionary item with direct children
-  - The Presentation Section incl. all subitem
+  - The Presentation Section incl. all subitems
   - The Settings sections incl. all subitems
 
 > ⚠️ **IMPORTANT**:
