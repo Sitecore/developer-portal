@@ -5,7 +5,7 @@ title: "Sitecore Experience Platform 10.4"
 Sitecore Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability. 
 
 See [all available versions here](/downloads/Sitecore_Experience_Platform).\
-For developer documentation please refer to [Sitecore Documentation](https://doc.sitecore.com).
+For developer documentation please refer to [Sitecore Documentation](https://doc.sitecore.com/xp/en/developers).
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
