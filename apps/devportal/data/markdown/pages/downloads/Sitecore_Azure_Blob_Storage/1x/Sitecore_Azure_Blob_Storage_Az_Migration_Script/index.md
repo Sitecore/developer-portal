@@ -6,12 +6,12 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Blob_Storage/1x/Siteco
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    Impacted Sitecore version that may need to use Az Migration Scripts :
-    -   Sitecore 9.3.X
-    -   Sitecore 10.0.X
-    -   Sitecore 10.1.X
-    -   Sitecore 10.2.X
-    -   Sitecore 10.3.X
+    Impacted Sitecore version that may need to use Az Migration Scripts :  
+    • Sitecore 9.3.X  
+    • Sitecore 10.0.X  
+    • Sitecore 10.1.X  
+    • Sitecore 10.2.X  
+    • Sitecore 10.3.X
   </Alert>
   
   <Alert variant='warning' mb={4}>
