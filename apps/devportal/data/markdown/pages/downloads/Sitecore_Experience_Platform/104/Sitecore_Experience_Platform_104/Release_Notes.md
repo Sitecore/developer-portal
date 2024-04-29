@@ -6,6 +6,8 @@ title: "Release Notes"
 
 This release includes new features and improvements made in Sitecore Experience Platform (SXP) 10.4. Sitecore recommends that you upgrade to this release if it aligns with the specific needs of your organization. This release contains significant improvements in functionality worth evaluating.
 
+With the release of version 10.4, we have released with support for ltsc2022 Windows containers. Any customer wishing to use ltsc2022 can update to this latest release of our platform. We will be releasing container images and support for ltsc2019 on Sitecore XP 10.4 in the coming weeks to support our customers who are not yet ready to upgrade to the latest Long-Term Servicing Channel (LTSC) release. For more information on Windows container versions and their support cycle, please refer to [Microsoft documentation](https://learn.microsoft.com/en-us/windows/release-health/windows-server-release-info#windows-server-major-versions-by-servicing-option--).
+
 -   [Highlights](#Highlights)
 -   [New features/improvements](#New)
 -   [Deprecated](#Deprecated)

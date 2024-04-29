@@ -7,6 +7,11 @@ Sitecore Experience Platform 10.4 introduces enhancements and corrective updates
 See [all available versions here](/downloads/Sitecore_Experience_Platform).\
 For developer documentation please refer to [Sitecore Documentation](https://doc.sitecore.com).
 
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    Please see Release Notes below for information on availability of container images for ltsc2019 on Sitecore XP 10.4.
+  </Alert>
+
 ## Download options for Azure App Service deployments
  | Resource | Description |
  | --- | --- |
@@ -85,7 +90,7 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
  | [Sitecore Device Detection Services usage policy](/downloads/Sitecore_Experience_Platform/Sitecore_Device_Detection_Services_Usage_Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
  | [Sitecore IP Geolocation usage policy](/downloads/Sitecore_Experience_Platform/Sitecore_IP_Geolocation_Usage_Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
 
-\
+
   <Alert variant='warning' mb={4}>
     <AlertIcon />
     Sitecore may collect information such as product version, number of site visits, generic hardware and software information, and recovery actions. This information will be used to help optimize your experience. All data will be processed in accordance with Sitecore’s privacy policy [here](https://www.sitecore.com/trust/privacy-policy). Should you have any queries or wish to discuss this, [please refer to our FAQ](https://kb.sitecore.net/articles/424335), or contact your Sitecore Account Manager.

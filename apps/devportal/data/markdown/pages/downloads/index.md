@@ -87,10 +87,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Horizon"
 />
 <Download 
-  title="Sitecore Headless Rendering 21.0.0"
+  title="Sitecore Headless Rendering 22.0.0"
   description="Headless services bundle including the server-side APIs, Edge Connector, and front-end SDKs for JavaScript (JSS) and ASP.NET rendering."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Headless_Rendering/21x/Sitecore_Headless_Rendering_2100"
+  link1href="/downloads/Sitecore_Headless_Rendering/22x/Sitecore_Headless_Rendering_2200"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Headless_Rendering"
 />
