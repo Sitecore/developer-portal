@@ -99,7 +99,7 @@ This pertains to items intended for developer control and should not be modified
 ```
 
 <br /><br />
-In the given code example, we use `deployItems` to define which module definitions (like Multisite.module.json) from our solution will be deployed as Items as Resources (IAR) onto the XM Cloud file system. It is important to remember that you can use wildcards, as demonstrated in the example, to simplify the configuration of items.
+In the given code example, we use `deployItems` to define which module definitions (like `Multisite.module.json`) from our solution will be deployed as Items as Resources (IAR) onto the XM Cloud file system. It is important to remember that you can use wildcards, as demonstrated in the example, to simplify the configuration of items.
 
 Here are some examples of items that developers should configure and deploy on the file system:
 
