@@ -138,6 +138,7 @@ To set up items for the Content Management database, you will need to modify the
 }
 ```
 
+<br /><br />
 In the provided code, you're defining a post-deploy action known as scsModules. This action uses the same modules definition as you would use with deployActions. For clarity, you should create and configure specific modules that define the items needed for your database deployments in XM Cloud.
 
 ### Related Recipes
