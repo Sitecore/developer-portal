@@ -87,7 +87,7 @@ There are two distinct methods for deploying items to XM Cloud with Sitecore Con
 
 #### Deploying Items to the File System using Items as Resources (IAR)
 
-This pertains to items intended for developer control and should not be modified within the Content Management environment, except when potential impacts have been duly considered. For configuring which items are deployed this way, you would adjust the xmcloud.build.json file located at the root of your solution. To configure the items that will be deployed to the file system (IAR), refer to the example below:
+This pertains to items intended for developer control and should not be modified within the Content Management environment, except when potential impacts have been duly considered. For configuring which items are deployed this way, you would adjust the [`xmcloud.build.json`](/learn/accelerate/xm-cloud/appendix-ii/example-code/xmcloud-build-json) file located at the root of your solution. To configure the items that will be deployed to the file system (IAR), refer to the example below:
 
 ```json
 {
@@ -123,7 +123,7 @@ Here are some examples of items that developers should configure and deploy on t
 
 This refers to items that are typically managed by a content author within the Content Management system. These items, such as the `Home` item, are beneficial for content authors to have when they start creating content.
 
-To set up items for the Content Management database, you will need to modify the `xmcloud.build.json` file located at the root of your solution. This involves configuring the Post Deploy Actions section as follows:
+To set up items for the Content Management database, you will need to modify the [`xmcloud.build.json`](/learn/accelerate/xm-cloud/appendix-ii/example-code/xmcloud-build-json) file located at the root of your solution. This involves configuring the Post Deploy Actions section as follows:
 
 ```json
 {
