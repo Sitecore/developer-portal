@@ -41,10 +41,10 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
-  title="Sitecore Identity 7.0.328"
+  title="Sitecore Identity 7.0.330"
   description="Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or extended for use with an external identity provider."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Identity/7x/Sitecore_Identity_70328"
+  link1href="/downloads/Sitecore_Identity/7x/Sitecore_Identity_70330"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Identity"
 />
@@ -142,10 +142,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_for_Visual_Studio"
 />
 <Download 
-  title="Team Development for Sitecore 6.0.3"
+  title="Team Development for Sitecore 6.0.4"
   description="SDK for working efficiently with SXP development and developer operations."
   link1text="Get latest"
-  link1href="/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_603"
+  link1href="/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_604"
   link2text="See all versions"
   link2href="/downloads/Team_Development_for_Sitecore"
 />
