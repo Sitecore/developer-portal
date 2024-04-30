@@ -14,10 +14,10 @@
     "./utils": "./src/utils/index.ts"
   },
   "devDependencies": {
-    "@tiptap/core": "latest",
     "@scdp/eslint-config": "*",
     "@scdp/jest-presets": "*",
     "@scdp/typescript-config": "*",
+    "@tiptap/core": "latest",
     "@turbo/gen": "^1.13.2",
     "@types/eslint": "^8.56.7",
     "@types/jest": "^29.5.12",
@@ -53,6 +53,7 @@
     "@tiptap/html": "^2.2.4",
     "@tiptap/react": "^2.2.4",
     "axios-request-throttle": "^1.0.0",
-    "prosemirror-to-html-js": "^1.0.2"
+    "prosemirror-to-html-js": "^1.0.2",
+    "ts-results": "^3.3.0"
   }
 }

@@ -27,7 +27,8 @@ export async function fetchAPI(credentials: ChangelogCredentials, query: string,
       },
     })
     .then((response) => response.data)
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(`Changelog error: ${err.message}`))
+    .finally(() => null);
 
   //return fetch(endpoint as string, {
   //  method: 'POST',

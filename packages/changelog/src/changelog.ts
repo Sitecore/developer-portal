@@ -17,12 +17,18 @@ export class Changelog {
 
   async getAllEntries(): Promise<ChangelogEntryList<ChangelogEntry[]>> {
     const response = await Search(this.credentials, this.isPreview);
-    return ParseRawData(response.data);
+
+    if (response.ok) return ParseRawData(response.val.data);
+
+    return { entries: [], total: 0, hasNext: false, endCursor: '' };
   }
 
   async getEntriesByProduct(productId: string): Promise<ChangelogEntryList<ChangelogEntry[]>> {
     const response = await Search(this.credentials, this.isPreview, productId);
-    return ParseRawData(response.data);
+
+    if (response.ok) return ParseRawData(response.val.data);
+
+    return { entries: [], total: 0, hasNext: false, endCursor: '' };
   }
 
   async getEntriesPaginated(pageSize: string, productId: string, changeTypeId: string, endCursor?: string): Promise<ChangelogEntryList<ChangelogEntry[]>> {
@@ -30,29 +36,44 @@ export class Changelog {
     const _endCursor: string = endCursor ?? '';
 
     const response = await PaginatedSearch(this.credentials, this.isPreview, _pageSize, _endCursor, productId, changeTypeId);
-    return ParseRawData(response.data);
+    if (response.ok) return ParseRawData(response.val.data);
+
+    return { entries: [], total: 0, hasNext: false, endCursor: '' };
   }
 
-  async getEntryByTitle(entryTitle: string, productId?: string, changeTypeId?: string): Promise<ChangelogEntry> {
+  async getEntryByTitle(entryTitle: string, productId?: string, changeTypeId?: string): Promise<ChangelogEntry | null> {
     const response = await Search(this.credentials, this.isPreview, productId, changeTypeId, false, entryTitle, 1);
 
-    return parseChangeLogItem(response.data.results[0]);
+    if (response.ok && response.val.data.results.length > 0) return parseChangeLogItem(response.val.data.results[0]);
+
+    return null;
   }
 
   async getSummarizedEntries(productId?: string, changeTypeId?: string): Promise<ChangelogEntryList<ChangelogEntrySummary[]>> {
     const response = await Search(this.credentials, this.isPreview, productId, changeTypeId, true, undefined, 50);
-    return ParseRawSummaryData(response.data);
+
+    if (response.ok) return ParseRawSummaryData(response.val.data);
+
+    return { entries: [], total: 0, hasNext: false, endCursor: '' };
   }
 
   async getChangeTypes(): Promise<ChangeType[]> {
     const response = await GetAllChangeTypes(this.credentials, this.isPreview);
-    return ParseChangeType(response.data);
+
+    if (response.err) {
+      return [];
+    }
+    return ParseChangeType(response.val.data);
   }
 
   async getProducts(): Promise<Product[]> {
     // Get all products
     const response = await GetAllProducts(this.credentials, this.isPreview);
-    const products = ParseProduct(response.data);
+
+    if (response.err) {
+      return [];
+    }
+    const products = ParseProduct(response.val.data);
 
     // Check whether there are entries that have it selected
     const asyncFunc = async () => {
@@ -65,7 +86,10 @@ export class Changelog {
           }
 
           const count = await GetEntryCountByProductId(this.credentials, n.id, this.isPreview);
-          n.hasEntries = count > 0;
+
+          if (count.err) return n;
+
+          n.hasEntries = count.val > 0;
           return n;
         })
       );

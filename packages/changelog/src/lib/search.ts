@@ -1,3 +1,4 @@
+import { Err, Ok } from 'ts-results';
 import { CHANGELOG_QUERY, CHANGELOG_SUMMARY_QUERY } from '../graphQl/changelog-query';
 import { Changelog, ChangelogBase, ChangelogCredentials, ChangelogList } from '../types/changelog';
 import { fetchAPI } from './common/api';
@@ -28,8 +29,8 @@ export async function Search(credentials: ChangelogCredentials, isPreview: boole
   `;
 
   const response = await fetchAPI(credentials, searchQuery, isPreview);
-  if (!response) return { data: [] };
-  return response.data;
+  if (!response) return new Err({ data: [] });
+  return new Ok(response.data);
 }
 
 function buildParameters(productId?: string, changeTypeId?: string, searchTerm?: string, pageSize?: number, endCursor?: string, isPreview?: boolean): string {

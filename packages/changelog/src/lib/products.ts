@@ -1,10 +1,14 @@
+import { Err, Ok } from 'ts-results';
 import { ALL_SITECORE_PRODUCT_QUERY } from '../graphQl/sitecore-product-query';
 import { ChangelogCredentials } from '../types/changelog';
 import { fetchAPI } from './common/api';
 
 export async function GetAllProducts(credentials: ChangelogCredentials, preview: boolean) {
   const response = await fetchAPI(credentials, ALL_SITECORE_PRODUCT_QUERY, preview);
-  return response.data;
+
+  if (!response) return new Err({ data: [] });
+
+  return new Ok(response.data);
 }
 
 export async function GetEntryCountByProductId(credentials: ChangelogCredentials, productId: string, preview: boolean) {
@@ -19,5 +23,8 @@ export async function GetEntryCountByProductId(credentials: ChangelogCredentials
   `,
     preview
   );
-  return response.data.data.total;
+
+  if (!response) return new Err({ data: [] });
+
+  return new Ok(response.data.data.total);
 }
