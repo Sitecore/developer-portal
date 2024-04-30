@@ -5,9 +5,9 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
-<Alert status="info">
+<Alert status="warning">
   <AlertIcon />
-    The content that was previously here has been archived.
+    **The content that was previously here has been archived.**
     
     Please reference our robust document on embedded personalization: [XM Cloud: Embedded Personalization FAQ](/learn/faq/xm-cloud-embedded-personalization);
 </Alert>
