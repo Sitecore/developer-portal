@@ -46,7 +46,7 @@ In order to complete the following tutorial, you will need these resources:
 
 ## Create the module
 
-The very first step will be to create a headless module. Modules are used to organize content in a consistent structure so it can be re-used by the marketing team. Think of a module like an npm package for content. Defining modules makes it very easy for you to make your package/module available to multiple sites and teams. An author will be able to 'install' your module and use it in a consistent way on any site they choose.
+The very first step will be to create a headless module. Modules are used to organize configuration and data models in a consistent structure so they can be re-used by the marketing team. Think of a module like an npm package for the structures you are creating. Defining modules makes it very easy for you to make your package/module available to multiple sites and teams. A site administrator will be able to 'install' your module and use it in a consistent way on any site they choose.
 
 1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
 1. From your dashboard, select the XM Cloud environment where you have your Text Teaser Component created.
@@ -57,7 +57,7 @@ The very first step will be to create a headless module. Modules are used to org
 
    ![Sitecore Cloud Portal - Select Contnet Editor from Context Flyout](https://sitecorecontenthub.stylelabs.cloud/api/public/content/7ce271a777034bb58986652e46aa2786?v=11341d9e)
 
-1. Navigate to: `System/Settings/Project` in the content tree.
+1. Navigate to: `sitecore/System/Settings/Project` in the content tree.
 
    ![Content Editor - Navigate To Settings Project Folder](https://sitecorecontenthub.stylelabs.cloud/api/public/content/9a0696403dcb44ec98b88d6a851137c5?v=017e9c49)
 
@@ -76,11 +76,11 @@ The very first step will be to create a headless module. Modules are used to org
 
    ![Content Editor - Insert Headless Module](https://sitecorecontenthub.stylelabs.cloud/api/public/content/65dd703df1ec4049a28a1e0005b8c10c?v=f60ebb8a)
 
-1. Configure the Headless Module settings:
+1. Configure the Headless Module settings with these values by typing, selecting, or checking the appropriate checkbox:
 
    - **Module name:** Basic Components
-   - **Add to module group:** `sitecore/system/settings/Company Dev`
-   - **System areas for container folders:** Templates, Branch Templates, Renderings, and Placeholder Settings
+   - **Add to module group:** `sitecore/system/settings/Project/Company Dev`
+   - **System areas for which container folders should be created:** Templates, Branches, Renderings, and Placeholder Settings
    - **Module scaffolding actions:** Headless Site Setup
 
    ![Content Editor - Configure Headless Module](https://sitecorecontenthub.stylelabs.cloud/api/public/content/c24f492a9f144836854a0f7e1ae84f7b?v=bfc7888d)
@@ -90,12 +90,14 @@ The very first step will be to create a headless module. Modules are used to org
    When configuring scaffolding actions, you'll notice an option for Headless Tenant Setup. Tenants are an older terminology. These are now called Site Collections.
    </Alert>
 
+1. Click the **Proceed** button to save your choices and create the headless module.
+
 ## Creating the templates
 
 The Headless Module has now been created. You can now check that the required folders exist and start creating the required templates. You will create two templates:
 
 - **Text Teaser** to hold the data from the author, and
-- **Text Teaser Folder** to hold created Text Teaser content items.
+- **Text Teaser Folder** to organize created Text Teaser content items.
 
 You will also configure these templates to make life a little bit easier for the authors who want to create Text Teasers.
 
@@ -334,7 +336,7 @@ Before releasing this to the authoring team, you need to ensure that the Text Te
 
 ### Map component heading element to Headline text field
 
-The component that was created in the previous tutorials uses static data in XM Cloud Components. As part of using the new data template, you need to map this Text Teaser data source to the visual elements in XM Cloud Components. You are going to start by mapping the headline text field.
+The component that was created [in the previous tutorial](create-a-component) uses static data in XM Cloud Components. As part of using the new data template, you need to map this Text Teaser data source to the visual elements in XM Cloud Components. You are going to start by mapping the headline text field.
 
 1. Switch to the **Components** tab in the top menu to launch the Components visual builder.
 1. Scroll to the section labelled **Basic Components**. This section will list all the components you have made available in the Basic Components section. Currently, there is only the **Text Teaser**.
@@ -377,7 +379,7 @@ The component that was created in the previous tutorials uses static data in XM 
 
 ### Map component sub-heading element to Subheadline text field
 
-You will now repeat the process for the the subtitle/subheading component. You will select the subheading visual element and map that to the Text field "Subheadline" in the Text Teaser template
+You will now repeat the process for the the subtitle/subheading element. You will select the subheading visual element and map that to the Text field "Subheadline" in the Text Teaser template
 
    <Alert status="warning">
    <AlertIcon />
@@ -395,7 +397,6 @@ You will now repeat the process for the the subtitle/subheading component. You w
 
 1. On the right side panel, click on the **Text** option. This will show that the text is currently **Static**
 1. Change the mode from **Static** to **Mapped**. This will show you the source mapping options.
-1. Find and select the **Text Teaser** source in the list of available sources.
 1. Click on the **Next** button to advance to the **Path** configuration step. This is where you will map the fields from the template to the visual element.
 1. Select the **Subheadline** field to map the data from that Text Teaser field to the heading element in the component.
 
@@ -457,7 +458,7 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
 
    ![Pages - Add Text Teaser Component again](https://sitecorecontenthub.stylelabs.cloud/api/public/content/bc8c9c8e75ed44798502f47f03b6af03?v=a78c9c08)
 
-1. Drag the Text Teaser card onto the Pages canvas to add the component to the page. A dialog will display prompting you to assign a content item (data source) to the component.
+1. Drag the Text Teaser component onto the Pages canvas to add the component to the page. A dialog will display prompting you to assign a content item (data source) to the component.
 
    ![Pages - Assign Content Item dialog](https://sitecorecontenthub.stylelabs.cloud/api/public/content/2b7b8c5622394ec39e30bc1469d7c209?v=26e474d8)
 
