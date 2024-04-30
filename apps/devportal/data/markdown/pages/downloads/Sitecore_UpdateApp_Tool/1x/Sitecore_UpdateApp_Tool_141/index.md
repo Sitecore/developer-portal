@@ -7,9 +7,9 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_U
 This tool updates the Core, Master, and Web databases of Sitecore Experience Platform.
 
 Use this UpdateApp Tool version 1.4.1 to upgrade to Sitecore XP 10.4.\
-Download the package version below corresponding to the Sitecore XP version and topology from which you are upgrading.
+Download the package 1.4.1 variant below corresponding to the Sitecore XP version and topology from which you are upgrading.
 
-See [all available versions here](/downloads/Sitecore_UpdateApp_Tool).  
+See [all available UpdateApp Tool versions here](/downloads/Sitecore_UpdateApp_Tool).  
 
 ## Downloads
 
