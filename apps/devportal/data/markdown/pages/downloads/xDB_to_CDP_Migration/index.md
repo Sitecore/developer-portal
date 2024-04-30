@@ -18,7 +18,7 @@ Use the xDB to CDP Migration tool to facilitate seamless migration of visitor co
 
 - **Sitecore XP versions supported**: Data can be migrated from Sitecore XP versions 9.0 and later.
 
-- **More information**: See the xDB to CDP Migration Tool at [Sitecore Documentation](https://doc.sitecore.com/)
+- **More information**: See the xDB to CDP Migration Tool at [Sitecore Documentation](https://doc.sitecore.com/xp/en/developers/104/sitecore-experience-platform/the-xdb-to-cdp-migration-tool.html)
 
 ## Sitecore Connect Recipes
 
