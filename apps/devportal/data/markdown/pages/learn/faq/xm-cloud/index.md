@@ -41,7 +41,7 @@ Primarily useful for developers and programmers, PaaS allows the user to develop
 
 A headless CMS is any type of back-end content management system where the content repository, the “body,” is separated or decoupled from the presentation layer, the “head.” Headless CMS allows you to manage content in one place and still be able to deploy that content across any front end you choose. This is key to omnichannel strategies because it lets you integrate content into any system, software, or website just by calling the APIs the headless CMS exposes.
 
-A hybrid headless CMS combines the flexibility and extensibility of headless CMS platform with the personalization and content analytics capabilities offered by traditional coupled CMS. Read more in the article [What is CMS Architecture?](https://www.sitecore.com/knowledge-center/digital-marketing-resources/what-is-cms-architecture)
+A hybrid headless CMS combines the flexibility and extensibility of headless CMS platform with the WYSIWYG editing, personalization, and content analytics capabilities offered by traditional coupled CMS. Read more in the article [What is CMS Architecture?](https://www.sitecore.com/knowledge-center/digital-marketing-resources/what-is-cms-architecture)
 
 ## What problems does XM Cloud solve?
 
