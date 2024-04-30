@@ -4,8 +4,7 @@ title: "Sitecore Experience Platform 10.4"
 
 Sitecore Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability. 
 
-See [all available versions here](/downloads/Sitecore_Experience_Platform).\
-For developer documentation please refer to [Sitecore Documentation](https://doc.sitecore.com/xp/en/developers).
+See [all available versions here](/downloads/Sitecore_Experience_Platform).
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
@@ -73,6 +72,7 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
  | --- | --- |
  | [Release notes](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104/Release_Notes) | List of improvements and resolved issues implemented in the release. |
  | [Known issues](https://support.sitecore.com/kb?id=kb_search&kb_knowledge_base=3492d025db70dc109e54320a6896199f&spa=1&language=en&u_affected_software=sitecore_experience_platform) | Link to known issue articles on the Sitecore Knowledge Base. |
+ | [Developer Documentation](https://doc.sitecore.com/xp/en/developers) | Link to Sitecore developer documentation. |
  | [Assembly list](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore.Platform.Assemblies%2010.4.0%20rev.%20010422.zip) | Complete list of assemblies shipped with the release. |
  
 ## Client translations
