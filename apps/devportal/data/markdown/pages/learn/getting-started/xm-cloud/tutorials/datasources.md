@@ -51,20 +51,20 @@ The very first step will be to create a headless module. Modules are used to org
 1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
 1. From your dashboard, select the XM Cloud environment where you have your Text Teaser Component created.
 
-   `INSERT SCREENSHOT OF XM CLOUD APP BEING SELECTED FROM DASHBOARD`
+   ![Sitecore Cloud Portal - Select App](https://sitecorecontenthub.stylelabs.cloud/api/public/content/2e80e2b3a84140b3b4f39eeebb0e159a?v=a548be2c)
 
 1. From the app context flyout, select **Content Editor** to launch the XM Cloud content tree editing interface.
 
-   `INSERT SCREENSHOT OF XM CLOUD APP CONTEXT FLYOUT`
+   ![Sitecore Cloud Portal - Select Contnet Editor from Context Flyout](https://sitecorecontenthub.stylelabs.cloud/api/public/content/7ce271a777034bb58986652e46aa2786?v=11341d9e)
 
 1. Navigate to: `System/Settings/Project` in the content tree.
 
-   `INSERT SCREENSHOT OF CONTENT TREE EXPANDED TO SHOW PATH`
+   ![Content Editor - Navigate To Settings Project Folder](https://sitecorecontenthub.stylelabs.cloud/api/public/content/9a0696403dcb44ec98b88d6a851137c5?v=017e9c49)
 
 1. Right-click on the **Project** item in the tree to pop open the context menu.
 1. In the context menu select **Insert** and then **Folder** to create a new Folder.
 
-   `INSERT SCREENSHOT OF INSERT OPTIONS`
+   ![Content Editor - Add Folder](https://sitecorecontenthub.stylelabs.cloud/api/public/content/4fb48baa009849829c26f9d1bb0ce864?v=91bbbf2b)
 
 1. Specify **"Company Dev"** as the name of the folder, using the same name as the Site Collection.
    <Alert status="info">
@@ -74,7 +74,7 @@ The very first step will be to create a headless module. Modules are used to org
 1. Right-click on the **Project** item in the tree to pop open the context menu again.
 1. In the context menu select **Insert** and then **Headless Module** to create the new module.
 
-   `INSERT SCREENSHOT OF INSERT OPTIONS`
+   ![Content Editor - Insert Headless Module](https://sitecorecontenthub.stylelabs.cloud/api/public/content/65dd703df1ec4049a28a1e0005b8c10c?v=f60ebb8a)
 
 1. Configure the Headless Module settings:
 
@@ -83,7 +83,7 @@ The very first step will be to create a headless module. Modules are used to org
    - **System areas for container folders:** Templates, Branch Templates, Renderings, and Placeholder Settings
    - **Module scaffolding actions:** Headless Site Setup
 
-   `INSERT SCREENSHOT OF DIALOG WITH FILLED IN VALUES`
+   ![Content Editor - Configure Headless Module](https://sitecorecontenthub.stylelabs.cloud/api/public/content/c24f492a9f144836854a0f7e1ae84f7b?v=bfc7888d)
 
    <Alert status="info">
    <AlertIcon />
@@ -128,11 +128,11 @@ You will now create the fields for the author to enter information for the Text 
 
 1. In the content tree, select the **Text Teaser** template. A field builder interface will show on the main pane
 
-   `INSERT SCREENSHOT OF EMPTY BUILDER TAB`
+   ![Content Editor - Empty Template](https://sitecorecontenthub.stylelabs.cloud/api/public/content/983cc84d9d8a41b392d361f8fec9496c?v=e76ff4da)
 
 1. In the **Builder** tab, type **Content** into the **Add a new section** field.
 
-   `INSERT SCREENSHOT OF BUILDER TAB WITH Content SECTION`
+   ![Content Editor - Section Added](https://sitecorecontenthub.stylelabs.cloud/api/public/content/a9c0e1fbc85c464e93108893bb6f1a32?v=492e4833)
 
    <Alert status="info">
    <AlertIcon />
@@ -156,7 +156,7 @@ You will now create the fields for the author to enter information for the Text 
 
 1. Click the **Save** button in the ribbon to ensure the new fields are saved.
 
-   `INSERT SCREENSHOT OF BUILDER TAB WITH THE NEW FIELDS`
+   ![Content Editor - Text Teaser Template has been created](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f22899c6baf54eb2bfcf23eb033e9107?v=0e490ed4)
 
    <Alert status="info">
    <AlertIcon />
@@ -185,7 +185,7 @@ The icon for the Text Teaser is fine for the purposes of this tutorial, but it w
 1. In the content tree, select the **Text Teaser Folder** template.
 1. In the ribbon, switch to the **Configure** tab
 
-   `INSERT SCREENSHOT OF CONFIGURE TAB`
+   ![Content Editor - Open Configure Tab](https://sitecorecontenthub.stylelabs.cloud/api/public/content/b3b255c288774b05927bc1fc4f7eb3a2?v=b12a111e)
 
 1. Click on the **Icon** button
    <Alert status="info">
@@ -195,7 +195,7 @@ The icon for the Text Teaser is fine for the purposes of this tutorial, but it w
 
 1. Select the Folder icon from the options shown.
 
-   `INSERT SCREENSHOT OF ICONS OPTIONS`
+   [Content Editor - Select Folder icon](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1b93d1b6a6814d27a61bd142aefcc792?v=b3346dfb)
 
 ### Configure Insert Options
 
@@ -209,19 +209,19 @@ When an author tries to create a new content item, they are presented with the t
 1. In the content tree, select the **Text Teaser Folder** template.
 1. In the ribbon, switch to the **Builder Options** tab
 
-   `INSERT SCREENSHOT OF Builder Options TAB`
+   ![Content Editor - Open Builder Options](https://sitecorecontenthub.stylelabs.cloud/api/public/content/05be5f1c4c9e4480979b841a60f0b36a?v=6f3df81a)
 
 1. Click on the **Standard values** button to create a new definition for the template. A new item named `__Standard Values` will be created and the UI will automatically update to select this new item.
 1. In the ribbon, switch to the **Configure** tab. You can now configure options for the \_\_Standard Values item.
 1. Click the **Assign** button in the "Insert Options" ribbon chunk to launch the Insert Options dialog. This dialog allows us to select which templates can be inserted when the user has a Text Teaser Folder selected.
 
-   `INSERT SCREENSHOT OF INSERT OPTIONS DIALOG`
+   ![Content Editor - Assign insert options](https://sitecorecontenthub.stylelabs.cloud/api/public/content/af5561ec5826446cb52f75b7c381e109?v=891bce56)
 
 1. In the selection tree on the left, navigate to `/Templates/Project/Company Dev/Basic Components`
 1. Double-click on the **Text Teaser** template to add it to the **Selected** pane on the right
 1. Double-click on the **Text Teaser Folder** template to add it to the **Selected** pane on the right
 
-   `INSERT SCREENSHOT OF SELECTED TEMPLATES`
+   ![Content Editor - Select Insert Options](https://sitecorecontenthub.stylelabs.cloud/api/public/content/83ca1438aef7402491b87738e61dfb81?v=56fb9f4b)
 
 1. Press the **OK** button to save the changes.
 
@@ -240,7 +240,7 @@ For the purpose of this tutorial, however, you will skip forward a few steps and
 
 1. In the Content Editor, navigate to the Data folder in the Company Dev site that was created in the previous tutorial: `/sitecore/Content/Company Dev/Company Dev/Data`
 
-   `SCREENSHOT OF CONTENT TREE WITH Data folder selected`
+   ![Content Editor - Select Data Folder of Site](https://sitecorecontenthub.stylelabs.cloud/api/public/content/d04350f52aa4495f9c1a665e0442ebad?v=f9a45e21)
 
 1. Right-click and select **Insert** from the context menu and select **Insert from template** to launch a template selection dialog
    <Alert status="info">
@@ -248,11 +248,11 @@ For the purpose of this tutorial, however, you will skip forward a few steps and
    Note that there are no options for the Text Teaser templates listed in the context menu since you have not configured anything to help insert content into this Data folder. However, if you have logged in as an administrator account you will have the option for **Insert from template**. If you do not have that option, you will need to change account to one with full administrator access.
    </Alert>
 
-   `SCREENSHOT OF DIALOG WITH ONLY Insert from template OPTION`
+   ![Content Editor - Insert from Template](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f1f5bae792be49e49144758a953e8d09?v=2bb14d33)
 
 1. In the dialog, expand the Browse tree to `Templates/Project/Company Dev/Basic Components` so that the Text Teaser templates are visible for selection.
 
-   `SCREENSHOT OF BROWSE TREE EXPANDED TO SHOW TEMPLATES`
+   ![Content Editor - Select Text Teaser Folder Template](https://sitecorecontenthub.stylelabs.cloud/api/public/content/2509dbb85e4d4ca69b41fc58d8394ec6?v=acbb1415)
 
 1. Select the **Text Teaser Folder** template
 1. In the **Item Name** field enter the value **"Text Teasers"**. This will be the name given to the folder.
@@ -272,7 +272,7 @@ You can now test out your folder by creating a sample Text Teaser content data s
 1. Type in **How to use Components** as the name for the test teaser.
 1. Click **OK** button to create the Text Teaser content.
 
-   `INSERT SCREENSHOT OF CREATED ITEM`
+   ![Content Editor - Create Data Source Item](https://sitecorecontenthub.stylelabs.cloud/api/public/content/294e3ee4030c45248cc8b7d2f54f5a27?v=372cdf22)
 
    <Alert status="info">
    <AlertIcon />
@@ -285,7 +285,7 @@ You can now test out your folder by creating a sample Text Teaser content data s
    - **Subheadline:** Easy and smart ways designing your pages
    - **Content:** The Components builder of XM Cloud Components is a powerful tool that lets you create new components or modify already existing components using an intuitive WYSIWYG builder. It also lets you store the components in organized collections in the Components library. Learn more about how to use Components in this tutorial.
 
-   `INSERT SCREENSHOT OF FILLED OUT FIELDS`
+   ![Content Editor - Insert Content](https://sitecorecontenthub.stylelabs.cloud/api/public/content/5a0332e9b80e410c87031276a0f1dc4d?v=79d85436)
 
 ## Use a data source template in XM Cloud Components
 
@@ -298,12 +298,12 @@ To start, you will take the data template that has been created and make it avai
 1. In the Content Editor, select the **Settings** node on the **Company Dev** site: `/sitecore/content/Company Dev/Company Dev/Settings`
 1. In the **Content** pane on the right side, scroll down through the fields and find the field named **FeaaS component data source templates**. You will find this field near the bottom of the list of fields.
 
-   `SCREENSHOT OF FEaaS field`
+   ![Content Editor - Settings Item - Find FeaaS Component Data sources field](https://sitecorecontenthub.stylelabs.cloud/api/public/content/c6ff34eac1e94b90b720788f52b23b9c?v=46646a8f)
 
 1. On the left side of the field selector, navigate the tree to find your template at: `Templates/Project/Company Dev/Basic Components/Text Teaser`
 1. Double-click on the Text Teaser template to add it to the list of **Selected** templates on the right side of the selector.
 
-   `SCREENSHOT OF SELECTED TEMPLATE AND EXPANDED TREE`
+   ![Content Editor - Select Text Teaser Template as FeaaS Component Data Source](https://sitecorecontenthub.stylelabs.cloud/api/public/content/7df82fef3a9a430794f4114e693e53e8?v=114c850c)
 
    <Alert status="info">
    <AlertIcon />
@@ -326,11 +326,11 @@ Before releasing this to the authoring team, you need to ensure that the Text Te
 1. In the **Tools** page, select the **Components** card to launch the Component builder.
 1. At the top, switch to the **Data sources** section
 
-   `SCREENSHOT OF COMPONENTS DATA SOURCES PAGE`
+   ![Component Builder - Open Data Sources page](https://sitecorecontenthub.stylelabs.cloud/api/public/content/76acdd81968f4c73a0de16a134e9be12?v=c3035a2c)
 
 1. Scroll down through the list of data sources and find the one named **Text Teaser**
 
-   `SCREENSHOT OF TEXT TEASER DATA SOURCE`
+   ![Component Builder - Find Text Teaser data source listed](https://sitecorecontenthub.stylelabs.cloud/api/public/content/2d0a613e37a64a04ba3e42749a14daed?v=1447baab)
 
 ### Map component heading element to Headline text field
 
@@ -339,15 +339,15 @@ The component that was created in the previous tutorials uses static data in XM 
 1. Switch to the **Components** tab in the top menu to launch the Components visual builder.
 1. Scroll to the section labelled **Basic Components**. This section will list all the components you have made available in the Basic Components section. Currently, there is only the **Text Teaser**.
 
-   `SCREENSHOT OF COMPONENTS LISTING SHOWING TEXT TEASER`
+   ![Component Builder - Find Text Teaser Component Listed](https://sitecorecontenthub.stylelabs.cloud/api/public/content/b37aeebcb7c14554876c34e433007d03?v=38ef5fc1)
 
 1. Click on the **Text Teaser** card to launch the editor on this component
 
-   `SCREENSHOT OF Text Teaser COMPONENT`
+   ![Component Builder - Open Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/6ab1f6b4c32b4965bb0cc67d16adc603?v=c671924c)
 
 1. Click on the primary headline in the Component so that you enter the 'editing' mode for that field.
 
-   `SCREENSHOT OF HEADLINE EDITING MODE`
+   ![Component Builder - Select Headline field](https://sitecorecontenthub.stylelabs.cloud/api/public/content/bd2c84858905440d92b63857035fea7d?v=26ce7b2a)
 
    <Alert status="info">
    <AlertIcon />
@@ -357,11 +357,11 @@ The component that was created in the previous tutorials uses static data in XM 
 1. On the right side panel, click on the **Text** option. This will show that the text is currently **Static**
 1. Change the mode from **Static** to **Mapped**. This will show you the source mapping options.
 
-   `SCREENSHOT OF MAPPED OPTIONS`
+   ![Component Builder - Changed to Mapped](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f3ba1c8340524cef9ee5646351ae2268?v=954c84ea)
 
 1. Find and select the **Text Teaser** source in the list of available sources.
 
-   `SCREENSHOT OF TEXT TEASER SELECTED - ZOOMED IN`
+   ![Component Builder - Map Text Teaser Template](https://sitecorecontenthub.stylelabs.cloud/api/public/content/d021cde978204dc1b49199716d44c79b?v=039710e5)
 
    <Alert status="info">
    <AlertIcon />
@@ -371,7 +371,7 @@ The component that was created in the previous tutorials uses static data in XM 
 1. Click on the **Next** button to advance to the **Path** configuration step. This is where you will map the fields from the template to the visual element.
 1. Select the **Headline** field to map the data from that Text Teaser field to the heading element in the component.
 
-   `INSERT SCREENSHOT OF MAPPING`
+   ![Component Builder - Select Headline Field](https://sitecorecontenthub.stylelabs.cloud/api/public/content/53aea1074001443f9f3db366dc19b6c7?v=fc202ee2)
 
 1. Click **Complete** to finish the mapping process.
 
@@ -386,7 +386,7 @@ You will now repeat the process for the the subtitle/subheading component. You w
 
 1. Click on the secondary headline/subheadline in the Component so that you enter the 'editing' mode for that field.
 
-   `SCREENSHOT OF SUBHEADLINE EDITING MODE`
+   ![Component Builder - Select secondary headline](https://sitecorecontenthub.stylelabs.cloud/api/public/content/c459eff940374dd48cf7609c8ef236a5?v=7bacac4b)
 
    <Alert status="info">
    <AlertIcon />
@@ -399,7 +399,7 @@ You will now repeat the process for the the subtitle/subheading component. You w
 1. Click on the **Next** button to advance to the **Path** configuration step. This is where you will map the fields from the template to the visual element.
 1. Select the **Subheadline** field to map the data from that Text Teaser field to the heading element in the component.
 
-   `INSERT SCREENSHOT OF MAPPING`
+   ![Component Builder - Mapping Template Field with Component Field](https://sitecorecontenthub.stylelabs.cloud/api/public/content/a958a5baf54e475c9eb6d18c089f28c0?v=37bb3625)
 
 1. Click **Complete** to finish the mapping process.
 
@@ -411,17 +411,17 @@ In order to create a section of rich content and then map it to a Rich Text fiel
 
 1. In the Components builder, select the right-side of the Text Teaser component and remove all of the paragraphs of content that are currently there.
 
-   `SCREENSHOT OF RIGHT-SIDE OF COMPONENT removed`
+   ![Component Builder - empty right card](https://sitecorecontenthub.stylelabs.cloud/api/public/content/e3b5ab8995b3441fa3bcd89f58d9e01f?v=461899b9)
 
 1. Above the empty placeholder, click on the **Add element** button.
 1. Select the **HTML Block** element to insert it into the placeholder.
-   `SCREENSHOT OF BLOCK ELEMENTS`
+   ![Component Builder - Add HTML Block Element](https://sitecorecontenthub.stylelabs.cloud/api/public/content/df0f3c37e5f647e1beb62b94990e6d45?v=493fb517)
 
 1. Click on the HTML Block element that was inserted to focus your editing selection.
 1. On the right side panel, click on the **HTMLContent** option. This will show that the text is currently **None**
 1. Map the HTML Block to the **Content** field on the **Text Teaser** data source
 
-   `INSERT SCREENSHOT OF HTML BLOCK ELEMENT MAPPED TO CONTENT`
+   ![Component Builder - Map HTML Block with Content field](https://sitecorecontenthub.stylelabs.cloud/api/public/content/c44b0b9cbd18467fbcd0d9504e4da246?v=23fc0d8c)
 
 1. Click **Complete** to save the mapping changes.
 
@@ -431,7 +431,7 @@ Now that you have completed all of the mapping changes you will need to make the
 
 1. In the Components builder tool, click on the **Restage** button above the component
 
-   `INSERT SCREENSHOT OF RESTAGE BUTTON LOCATION`
+   ![Component Builder - Restage Component](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f290085bb729483dae196e3fa549dff6?v=b24c512e)
 
 ### Update the component in Pages to use a data source
 
@@ -446,25 +446,25 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
 
 1. In the **Tools** page, select the **Pages** card to launch the Pages editor. The home page will display and you can see that the Text Teaser component is blank.
 
-   `INSERT SCREENSHOT OF PAGES WITH BLANK COMPONENT`
+   ![XM Cloud Dashboard - Open Pages Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/ad1c83bf8dde470785dfa96ff0d67a61?v=82be1f21)
 
 1. Click on the blank component to select it.
 1. In the context menu above the component, click on the **Delete** action button. This will remove the current version of the component from the page.
 
-   `INSERT SCREENSHOT OF CONTEXT BAR WITH DELETE BUTTON HOVERED OVER BY MOUSE`
+   ![Pages - Text Teaser Component is blank](https://sitecorecontenthub.stylelabs.cloud/api/public/content/cb12d539ef0d4062aae0456c1c69d31f?v=f9a89b18)
 
 1. In the left page, scroll down the **Components** listing to find the **Text Teaser** component.
 
-   `INSERT SCREENSHOT OF COMPONENTS PANE`
+   ![Pages - Add Text Teaser Component again](https://sitecorecontenthub.stylelabs.cloud/api/public/content/bc8c9c8e75ed44798502f47f03b6af03?v=a78c9c08)
 
 1. Drag the Text Teaser card onto the Pages canvas to add the component to the page. A dialog will display prompting you to assign a content item (data source) to the component.
 
-   `INSERT SCREENSHOT OF DIALOG`
+   ![Pages - Assign Content Item dialog](https://sitecorecontenthub.stylelabs.cloud/api/public/content/2b7b8c5622394ec39e30bc1469d7c209?v=26e474d8)
 
 1. Expand and navigate the displayed Content items tree to find the Text Teasers folder: `Company Dev/Company Dev/Data/Teasers`
 1. Select the **How to Use Components** content item.
 
-   `INSERT SCREENSHOT OF DIALOG WITH CONTENT ITEM SELECTED`
+   ![Pages - Select content item](https://sitecorecontenthub.stylelabs.cloud/api/public/content/0972e8bb48694b578408fe53a71b93ff?v=1dbb7935)
 
 1. Click the **Assign** button to connect this content item to the Text Teaser component on the page.
 
