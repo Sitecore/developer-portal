@@ -33,11 +33,11 @@ XM Cloud includes:
 
 ## How does XM Cloud help business professionals and marketers?
 
-XM Cloud helps marketers and business professionals by giving them an easy-to-use platform to manage content for experiences across touchpoints. By having a headless, cloud-native CMS, marketers can work independently from developers, ensuring faster timelines to launch experiences and more time for understanding audience behavior and personalization.
+XM Cloud helps marketers and business professionals by giving them an easy-to-use platform to manage content for experiences across touchpoints. By having a hybrid headless, cloud-native CMS, marketers can work independently from developers, ensuring faster timelines to launch experiences and more time for understanding audience behavior and personalization.
 
 ## How does XM Cloud help developers and technicians?
 
-Developers benefit from XM Cloud’s self-service tools for rapidly deploying Experience Manager’s Content Management instance along with their own customizations. With the modern headless CMS, the content management backend is decoupled from the front-end presentation and delivery capabilities. Decoupling enables developers to take advantage of popular front-end frameworks to rapidly build new digital experiences. While developers gain agility with this approach, it introduces friction for marketers who now need to rely upon developers for even the smallest of changes to the front-end experience. Developers benefit from XM Cloud’s self-service tools for rapidly deploying Experience Manager’s Content Management instance along with their own customizations.
+Developers benefit from XM Cloud’s self-service tools for rapidly deploying Experience Manager’s Content Management instance along with their own customizations. With the modern hybrid headless CMS, the content management backend is decoupled from the front-end presentation and delivery capabilities. Decoupling enables developers to take advantage of popular front-end frameworks to rapidly build new digital experiences. While developers gain agility with this approach, it introduces friction for marketers who now need to rely upon developers for even the smallest of changes to the front-end experience. Developers benefit from XM Cloud’s self-service tools for rapidly deploying Experience Manager’s Content Management instance along with their own customizations.
 
 ## What features of XM/XP are not supported in XM Cloud?
 
