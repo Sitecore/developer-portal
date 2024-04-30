@@ -6,6 +6,16 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering.aspx
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
+## Sitecore Headless Rendering 22.x
+</CardHeader>
+<CardBody>
+[Sitecore Headless Rendering 22.0.0](/downloads/Sitecore_Headless_Rendering/22x/Sitecore_Headless_Rendering_2200)\
+These releases are compatible with Sitecore XP 10.4.
+</CardBody>          
+</Card>
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
 ## Sitecore Headless Rendering 21.x
 </CardHeader>
 <CardBody>

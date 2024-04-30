@@ -48,9 +48,9 @@ The Sitecore Headless Services module (formerly known as the Sitecore JavaScript
  | Resource | Description |
  | --- | --- |
  | [Release Notes](/downloads/Sitecore_Headless_Rendering/22x/Sitecore_Headless_Rendering_2200/Release_Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
- | [JavaScript SDKs (JSS) documentation](https://doc.sitecore.com/en/developers/hd/220/sitecore-headless-development/sitecore-javascript-rendering-sdks--jss-.html) | Sitecore JavaScript Rendering SDKs (JSS). |
- | [ASP.NET Core Rendering SDK documentation](https://doc.sitecore.com/en/developers/hd/210/sitecore-headless-development/index-en.html) | Official documentation for ASP.NET Core headless rendering. |
- | [Experience Edge documentation](https://doc.sitecore.com/en/developers/hd/220/sitecore-headless-development/sitecore-experience-edge-for-xm.html) | Official documentation for Experience Edge and the Experience Edge connector. |
+ | [JavaScript SDKs (JSS) documentation](https://doc.sitecore.com/xp/en/developers/hd/22/sitecore-headless-development/sitecore-javascript-rendering-sdks--jss-.html) | Sitecore JavaScript Rendering SDKs (JSS). |
+ | [ASP.NET Core Rendering SDK documentation](https://doc.sitecore.com/xp/en/developers/hd/22/sitecore-headless-development/index-en.html) | Official documentation for ASP.NET Core headless rendering. |
+ | [Experience Edge documentation](https://doc.sitecore.com/xp/en/developers/hd/22/sitecore-headless-development/sitecore-experience-edge-for-xm.html) | Official documentation for Experience Edge and the Experience Edge connector. |
  | [Container installation reference](https://doc.sitecore.com/en/developers/104/developer-tools/sitecore-module-reference.html) | Instructions for module installation via Dockerfile. |
  | [Known issues](https://kb.sitecore.net/articles/545609) | Known issues for this release in the Sitecore Knowledge Base. |
 
