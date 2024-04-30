@@ -39,6 +39,10 @@ In addition, our SXP 10.4 release adds flexibility in interworking with new SaaS
 - XM to XM Cloud Migration Tool for migrating content, media, and users from a source XM instance to an XM Cloud environment. This tool provides an aid for the routine and sometimes recurring back-end migrations, so our customers/partners can focus on migrating developing new front-end sites.
 - xDB to CDP Migration Tool for transferring site visitor contact facets to Sitecore's CDP and Personalize products, and also via Sitecore Connect to external systems. This provides the ability to interwork with or eventually adopt other SaaS based innovation.
 
+**Imporatant Change**
+- Media item duplication logic has been updated to resolve issues when deleting duplicates of a media item that shares the same blob. Now, duplicating a media item creates a duplicate of a blob. After upgrading to this version, you must run the
+`/sitecore/admin/duplicates.aspx` admin page to ensure all duplicate media items in your solution refer to a blob copy, not a shared one. Ref: ADO no. 563054 (below in Resolved Issues / Media).
+
 ## New features/improvements
 
 | Context                  | Description                                                                                                                                                                                                                                                                                                                                                           | ADO no.                                                                                                                                                                                                                |
