@@ -6,7 +6,7 @@ title: 'Release Notes'
 
 This release includes new features and improvements made in Sitecore Experience Platform (SXP) 10.4. Sitecore recommends that you upgrade to this release if it aligns with the specific needs of your organization. This release contains significant improvements in functionality worth evaluating.
 
-With the release of version 10.4, we have released with support for ltsc2022 Windows containers. Any customer wishing to use ltsc2022 can update to this latest release of our platform. **We will be releasing container images and support for ltsc2019 on Sitecore XP 10.4 in the coming weeks** to support our customers who are not yet ready to upgrade to the latest Long-Term Servicing Channel (LTSC) release. For more information on Windows container versions and their support cycle, please refer to [Microsoft documentation](https://learn.microsoft.com/en-us/windows/release-health/windows-server-release-info#windows-server-major-versions-by-servicing-option--).
+With the release of version 10.4, we have added support for ltsc2022 Windows containers. Any customer wishing to use ltsc2022 can update to this latest release of our platform. **We will be releasing container images and support for ltsc2019 on Sitecore XP 10.4 in the coming weeks** to support our customers who are not yet ready to upgrade to the latest Long-Term Servicing Channel (LTSC) release. For more information on Windows container versions and their support cycle, please refer to [Microsoft documentation](https://learn.microsoft.com/en-us/windows/release-health/windows-server-release-info#windows-server-major-versions-by-servicing-option--).
 
 - [Highlights](#highlights)
 - [New features/improvements](#new-featuresimprovements)
@@ -25,7 +25,7 @@ Sitecore Experience Platform (SXP) 10.4 includes updates for improved security, 
   - Navigate the ribbon and use these actions: create, rename, move, and delete items
   - Navigate and expand items in the content tree.
   - Navigate and select various types of fields in the content area.
-  - Listen to information about UI elements through assistve third-party technology.
+  - Listen to information about UI elements through assistive third-party technology.
 - Implemented Solr soft commits to make index changes visible to search.
 - Added a new *​Sitecore Client Content Reader*​​ user role that grants read access to Content Tree items in the Content Editor and Media Library.
 - Added the ability to create a custom or regional language directly in the Content Editor, such as `en-EU`, which extends beyond those ISO language formats that are registered in .NET.
@@ -39,10 +39,9 @@ In addition, our SXP 10.4 release adds flexibility in interworking with new SaaS
 - XM to XM Cloud Migration Tool for migrating content, media, and users from a source XM instance to an XM Cloud environment. This tool provides an aid for the routine and sometimes recurring back-end migrations, so our customers/partners can focus on migrating developing new front-end sites.
 - xDB to CDP Migration Tool for transferring site visitor contact facets to Sitecore's CDP and Personalize products, and also via Sitecore Connect to external systems. This provides the ability to interwork with or eventually adopt other SaaS based innovation.
 
-Important Change:
+SXP 10.4 also includes this important change:
 
-- Media item duplication logic has been updated to resolve issues when deleting duplicates of a media item that shares the same blob. Now, duplicating a media item creates a duplicate of a blob. After upgrading to this version, you must run the
-`/sitecore/admin/duplicates.aspx` admin page to ensure all duplicate media items in your solution refer to a blob copy, not a shared one. Ref: ADO no. 563054 (below in Resolved Issues / Media).
+- Updated the media item duplication logic to resolve issues when deleting duplicates of a media item sharing the same blob. Now, duplicating a media item creates a duplicate of a blob. After upgrading to this version, you must run the `/sitecore/admin/duplicates.aspx` admin page to ensure all duplicate media items in your solution refer to a blob copy, not a shared one. See ADO no. 563054 in [Resolved issues](#resolved-issues).
 
 ## New features/improvements
 
@@ -258,7 +257,7 @@ The following issues have been fixed:
 | Experience Optimization           | Component test results display the label as _[Unknown]_ if it's created in a language other than English.                                                                                                                                 | 594972  |
 | Marketing Operations              | Unable to retrieve image from a Profile Card.                                                                                                                                                                                             | 477153  |
 | Marketing Operations              | An empty CSV file is generated when _Export Campaign Activities_ is triggered in Campaign Creator using SolrCloud.                                                                                                                        | 556670  |
-| Personalization                   | The _Country_ personalization condition not implemented in `Sitecore.CES.GeoIp.Core.Conditions`. See [KB1003208](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KB1003208).                                       | 545860  |
+| Personalization                   | The _Country_ personalization condition is not implemented in `Sitecore.CES.GeoIp.Core.Conditions`. See [KB1003208](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KB1003208).                                       | 545860  |
 | Personalization                   | When you hide a personalization component that has custom rendering parameters, a `System.Xml.XmlException` error occurs.                                                                                                                 | 559953  |
 | Personalization                   | Long personalization rules in the segmented list can result in a serialization exception.                                                                                                                                                 | 589574  |
 | Personalization                   | Creating a new segment with rule _Where Contact Has Triggered Goal_ hangs when one of the conditions is broken.                                                                                                                           | 597023  |
