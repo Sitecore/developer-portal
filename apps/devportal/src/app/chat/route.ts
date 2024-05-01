@@ -32,7 +32,9 @@ export async function POST(request: Request) {
 
   messages.push({ role: 'system', content: `When generating responses, use the follow JSON data as additional context: ${JSON.stringify(data.context, null, 2)}` });
 
-  messages.push({ role: 'system', content: `When generating responses you will only use the following data to answer questions. Never answer questions from your own knowledge: ${JSON.stringify(searchResponse, null, 2)}` });
+  const formattedSearchResponse = JSON.stringify(searchResponse);
+  if (formattedSearchResponse)
+    messages.push({ role: 'system', content: `When generating responses you will only use the following data to answer questions. Never answer questions from your own knowledge: ${formattedSearchResponse}` });
 
   if (data.history?.length > 0) {
     for (const item of data.history) {

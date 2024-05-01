@@ -23,15 +23,7 @@ export async function BindResponse(response: Response): Promise<QuerySearchApiRe
       id: entry.id,
       title: entry.title,
       name: entry.title,
-      description: entry.description,
-      breakingChange: entry.breakingChange,
-      changeTypeName: entry.changeTypeName,
-      releaseDate: entry.releaseDate,
-      sitecoreProduct: [],
-      readMoreLink: entry.url,
-      fullArticle: entry.full_article,
-      image: entry.image ?? [],
-      changeType: [],
+      description: JSON.stringify(entry.description),
     };
   }) ?? [];
 

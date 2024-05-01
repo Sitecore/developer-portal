@@ -12,12 +12,33 @@ export function buildSearchQuery({ path, uuid, term }: SearchChangeLogQueryParam
           "entity": "content",
           "rfk_id": "rfkid_7",
           "sources": [
-              "813872"
+            "813854",
+            "813856",
+            "813862",
+            "813864",
+            "813866",
+            "813870",
+            "813872",
+            "819952",
+            "823430",
+            "848150",
+            "925876",
+            "856095",
+            "878961",
+            "848618"
           ],
           "search": {
             "content": {},
+            "limit": 5,
+            "sort": {
+              "value": [
+                  {
+                      "name": "created_at_desc"
+                  }
+              ]
+            },
             "query": {
-              "keyphrase": "${term}"
+              "keyphrase": "${cleanTerm(term)}"
             }
           } 
         }
@@ -25,6 +46,10 @@ export function buildSearchQuery({ path, uuid, term }: SearchChangeLogQueryParam
     }
   }
 `;
+}
+
+function cleanTerm(term: string) {
+  return term.replace(/[sS]itecore/g, '')
 }
 
 export function buildContextNode({ path, uuid }: { path: string, uuid: string | undefined }) {
