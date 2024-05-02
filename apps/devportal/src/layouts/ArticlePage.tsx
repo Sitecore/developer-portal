@@ -45,7 +45,7 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
 
         <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <SidebarNavigation config={sidebarConfig} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
           <BreadcrumbNav enabled={sidebarConfig.enableBreadcrumb} currentPage={pageInfo} config={sidebarConfig} />
-
+          <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
           <PromoList data={promoBefore} />
           <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
           <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
