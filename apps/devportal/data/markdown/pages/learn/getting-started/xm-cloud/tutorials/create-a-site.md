@@ -63,9 +63,9 @@ With the environment initially created, you can now create your first site in XM
 
 1. Select a pre-configured language, in this case, `English`.
 
-  <Alert status="info">
-   <AlertIcon />
-   At this time, you can also select an existing Site identifier, or create a new one. This is required when connecting [CDP, the Customer Data Platform](https://developers.sitecore.com/customer-data-management/cdp) of Sitecore for embedded analytics and personalization. We will skip that step for now and start the creation process of the site.
+   <Alert status="info">
+      <AlertIcon />
+      At this time, you can also select an existing Site identifier, or create a new one. This is required when connecting [CDP, the Customer Data Platform](https://developers.sitecore.com/customer-data-management/cdp) of Sitecore for embedded analytics and personalization. We will skip that step for now and start the creation process of the site.
    </Alert>
 
 1. Click `Create site`, which will scaffold the website in the background. This will take a few minutes.
