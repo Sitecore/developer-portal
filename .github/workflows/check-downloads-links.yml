@@ -1,16 +1,20 @@
-name: Check Downloads Markdown links
-
+name: Markdown Links Check
 on:
-   workflow_dispatch:
+  workflow_dispatch:
+# runs every monday at 9 am
+#  schedule:
+#   - cron: "0 9 * * 1"
 
 jobs:
-  downloads:
+  markdown-links:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
-      continue-on-error: true
-      with:
-        use-quiet-mode: 'yes'
-        config-file: '.github/workflows/markdown-links.downloads.config.json'
-        folder-path: './apps/devportal/data/markdown/pages/downloads'
+      - uses: actions/checkout@v3
+      - uses: gaurav-nelson/github-action-markdown-link-check@a996638015fbc9ef96beef1a41bbad7df8e06154
+        # checks all markdown files from /docs including all subfolders
+        with:
+          use-quiet-mode: 'yes'
+          use-verbose-mode: 'yes'
+          config-file: './.github/workflows/mlc-downloads.config.json'
+          folder-path: './apps/devportal/data/markdown/pages/downloads/'
+       
