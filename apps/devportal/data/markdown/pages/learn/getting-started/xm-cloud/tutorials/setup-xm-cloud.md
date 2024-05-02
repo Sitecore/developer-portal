@@ -54,13 +54,20 @@ Let’s get started!
 1. Choose whether you want to connect to GitHub or to Azure DevOps. A starter solution will be copied to your connected source code repository as a starting point. For the sake of this tutorial you choose GitHub and press the Continue Button  
    ![Create Project and Environment Step 2 - Choose Source Code Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/246d3a6f48d54765be0427179c3e9fd1?v=9240ac99)
 
-<Alert status="info">
-  <AlertIcon />
-    In the next step you can choose whether you want to start from the XM Cloud template or if you want to use your own code. The XM Cloud template is a starter kit based on Next.js, that already contains a rich set of features and sample implementations. It is best practice to start from the template.
-</Alert>
+   <Alert status="info">
+   <AlertIcon />
+      In the next step you can choose whether you want to start from the XM Cloud template or if you want to use your own code. The XM Cloud template is a starter kit based on Next.js, that already contains a rich set of features and sample implementations. It is best practice to start from the template.
+   </Alert>
 
 1. Choose a GitHub Account from the dropdown or click on `Connect to a new account` and follow the steps to connect to a different account. Make sure you give rights to create a new repository in your account.
    ![Create Project and Environment Step 3 - Setup Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/58034dfd6c90407f89659e3835d609d9?v=7fc739e7)
+
+   <Alert status="info">
+      <AlertIcon />
+      Not every GitHub account can or should be used to create a source control connection. For account requirements and recommendation on creating a project with a GitHub source control connection, see [Creating a source control connection with GitHub](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-connections-for-source-control-and-hosting-providers.html#creating-a-source-control-connection-with-github).
+
+   </Alert>
+
 1. Provide a name for the repository e.g. `xm-cloud-tutorial-series` and click the Continue button.
 1. Enter a name for the environment e.g. `DEV`  
    ![Create Project and Environment Step 4 - Provide Environment details](https://sitecorecontenthub.stylelabs.cloud/api/public/content/c891806b1758495c8af79c44088f07e3?v=c7f37143)
@@ -111,6 +118,7 @@ Once the provisioning and build process are finished, the deployment starts. The
    <Link title="Creating an XM Cloud Project using the Sitecore CLI" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--creating-an-xm-cloud-project-using-the-sitecore-cli.html" />
    <Link title="Serialization in XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/serialization-in-sitecore.html" />
    <Link title="Experience Edge architecture" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html" />
+   <Link title="Creating a source control connection with GitHub" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-connections-for-source-control-and-hosting-providers.html#creating-a-source-control-connection-with-github" />
 </Row>
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
