@@ -1,4 +1,4 @@
-name: Markdown Links Check
+name: Downloads Links Checker
 on:
   workflow_dispatch:
 # runs every monday at 9 am
@@ -6,7 +6,7 @@ on:
 #   - cron: "0 9 * * 1"
 
 jobs:
-  markdown-links:
+  downloads-md-links:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
