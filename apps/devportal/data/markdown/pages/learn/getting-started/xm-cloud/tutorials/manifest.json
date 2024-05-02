@@ -1,0 +1,26 @@
+{
+  "title": "XM Cloud Tutorials",
+  "description": "Tips for teams working on XM Cloud projects from developers in the field",
+  "heading": false,
+  "path": "/learn/getting-started/xm-cloud",
+  "showRootAsSections": true,
+  "enableBreadcrumb": false,
+  "enableNextPrevious": true,
+  "routes": [
+    {
+      "title": "XM Cloud Tutorials",
+      "path": "tutorials",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Create a site",
+          "path": "create-a-site"
+        },
+        {
+          "title": "Setup XM Cloud",
+          "path": "setup-xm-cloud"
+        }
+      ]
+    }
+  ]
+}
