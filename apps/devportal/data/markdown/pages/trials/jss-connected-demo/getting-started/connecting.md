@@ -46,8 +46,9 @@ When you have completed the series of prompts, the information provided will be 
 A browser window should launch pointed to the local application, which is now connected to your remote Sitecore Instance!
 
 ### Browse the front-end of the connected app
-
+<!-- markdown-link-check-disable -->
 If it does not launch automatically, go to http://localhost:3000/
+<!-- markdown-link-check-enable -->
 
 The app lists different types of events. Lighthouse Fitness
 

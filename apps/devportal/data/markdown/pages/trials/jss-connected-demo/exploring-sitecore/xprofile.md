@@ -4,8 +4,9 @@ title: Data Generation for xProfile
 ---
 
 ### Interact with the app to generate data for xProfile
-
+<!-- markdown-link-check-disable -->
 1. From the front-end on your local connected app (http://localhost:3000/), select the "Personalize" item from the upper right corner drop-down menu.
+<!-- markdown-link-check-enable -->
 
    ![Lighthouse Fitness menu to personalize the experience](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/2789dadbc33b44a2a9096b7a5db0f71b?v=d273ead7)
 
@@ -66,5 +67,6 @@ title: Data Generation for xProfile
     ![Lighthouse Fitness menu to end the current session](https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/6e5b74ca46a94bb78663b2d54be8392b?v=ba21f7a0)
 
     NOTE: This sends all the data you have generated into xDB so that you can view said data in Sitecore.
-
+<!-- markdown-link-check-disable -->
     **Next: [Launch Experience Profile](http://localhost:3000/trials/jss-connected-demo/exploring-sitecore/launch-xprofile)**
+<!-- markdown-link-check-enable -->
