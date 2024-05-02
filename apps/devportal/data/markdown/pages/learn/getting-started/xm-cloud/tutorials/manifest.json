@@ -13,12 +13,12 @@
       "ignoreLink": true,
       "children": [
         {
-          "title": "Create a site",
-          "path": "create-a-site"
-        },
-        {
           "title": "Setup XM Cloud",
           "path": "setup-xm-cloud"
+        },
+        {
+          "title": "Create a site",
+          "path": "create-a-site"
         }
       ]
     }
