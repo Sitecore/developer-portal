@@ -14,7 +14,7 @@ In this tutorial, you will become familiar with the first steps in building a we
 
 ## Overview
 
-In XM Cloud, a site is a collection of one or more pages, and a page can have several components. Through this tutorial series we will be creating a new Company Dev site and building out pages and components for the site. Uou will use the XM Cloud tools and your local development environment to explore the creation of a new site.
+In XM Cloud, a site is a collection of one or more pages, and a page can have several components. Through this tutorial series we will be creating a new Company Dev site and building out pages and components for the site. You will use the XM Cloud tools and your local development environment to explore the creation of a new site.
 
 In this tutorial you wil do the following:
 
