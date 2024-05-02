@@ -80,5 +80,5 @@ If you have clicked the check box on `<site collection>/<site>/Settings/Sitemap`
 ### Related Recipes
 
 <Row columns={2}>
-  <Link title="Publishing to Edge" link="/learn/accelerate/xm-cloud/pre-development/information-project-architecture/publishing-to-edge" />
+  <Link title="Publishing to Edge" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/publishing-to-edge" />
 </Row>
