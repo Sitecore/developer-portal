@@ -15,7 +15,9 @@ In this tutorial, we will go through the steps to learn the basics of XM Cloud a
 
 ## Overview
 
-XM Cloud focuses on being a headless, enterprise content and website management system. You can manage XM Cloud via several UIs, and also through APIs and the CLI. For this tutorial, we will focus on the XM Cloud deploy UI for creating new XM Cloud projects and environments. ( For more information on APIs with XM Cloud, navigate [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html).)
+XM Cloud focuses on being a headless, enterprise content and website management system. You can manage XM Cloud via several UIs, and also through APIs and the [CLI](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-cloud-command.html). For this tutorial, we will focus on the XM Cloud deploy UI for creating new XM Cloud projects and environments.
+
+For more information on APIs with XM Cloud, navigate [to the documentation on the Deploy API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html).
 
 ## Prerequisites
 
