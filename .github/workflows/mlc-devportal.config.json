@@ -12,6 +12,9 @@
   "ignorePatterns": [
     {
       "pattern": "^#"
+    },
+    {
+      "pattern": "^http://localhost:3000"
     }
   ],
   "httpHeaders": [
