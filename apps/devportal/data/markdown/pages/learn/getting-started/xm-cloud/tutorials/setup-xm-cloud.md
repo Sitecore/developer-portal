@@ -24,7 +24,7 @@ For more information on APIs with XM Cloud, navigate [to the documentation on th
 In order to complete the following tutorial, you will need these resources:
 
 1. A valid organization login for the [Sitecore Cloud portal](https://portal.sitecorecloud.io)
-1. Organization Admin role access or higher in the Sitecore Cloud portal to access XM Cloud Deploy tools to create projects and environments.
+1. Organization Admin [role](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/roles.html) access or higher in the Sitecore Cloud portal to access [XM Cloud Deploy tools](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html) to create projects and environments.
 1. A GitHub source control account.
 
 ## Setup the project and environment
@@ -114,6 +114,8 @@ Once the provisioning and build process are finished, the deployment starts. The
 <Row columns={2}>
    <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
    <Link title="Introduction to the Sitecore Cloud Portal" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
+   <Link title="Sitecore Cloud Portal roles" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/roles.html" />
+   <Link title="Deploying XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html" />
    <Link title="XM Cloud Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
    <Link title="Manage an XM Cloud environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html" />
    <Link title="XM Cloud Deploy API" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html" />
