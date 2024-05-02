@@ -68,3 +68,4 @@ title: Data Generation for xProfile
     NOTE: This sends all the data you have generated into xDB so that you can view said data in Sitecore.
 
     **Next: [Launch Experience Profile](http://localhost:3000/trials/jss-connected-demo/exploring-sitecore/launch-xprofile)**
+

@@ -10,6 +10,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Blob_Storage.aspx
 </CardHeader>
 <CardBody>
 [Sitecore Azure Blob Storage Az Migration Script](/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_Az_Migration_Script)\
+[Sitecore Azure Blob Storage 6.0.0](/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_600)\
 [Sitecore Azure Blob Storage 5.0.1](/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_501)\
 [Sitecore Azure Blob Storage 4.1.1](/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_411)\
 [Sitecore Azure Blob Storage 4.1.0](/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_410)\

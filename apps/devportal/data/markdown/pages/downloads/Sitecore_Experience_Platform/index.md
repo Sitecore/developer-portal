@@ -6,6 +6,15 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
+## Sitecore Experience Platform 10.4
+</CardHeader>
+<CardBody>
+[Sitecore Experience Platform 10.4](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104)
+</CardBody>          
+</Card>
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
 ## Sitecore Experience Platform 10.3
 </CardHeader>
 <CardBody>
