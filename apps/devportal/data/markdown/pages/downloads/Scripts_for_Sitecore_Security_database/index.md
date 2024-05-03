@@ -1,6 +1,6 @@
 ---
 title: "Scripts for Sitecore Security database"
-description: "The set of scripts for moving Sitecore Security membership provider from the Core database to individual or existing one. For security reasons we strongly recommend using Sitecore Identity 7.0. Please use Scripts for Sitecore Security database 0.5 with Sitecore Identity 7.0 and any version of Sitecore XP."
+description: "The set of scripts for moving the Sitecore Security membership provider from the Core to an individual or existing database. For security reasons use Sitecore Identity 7.0 or later."
 origin: https://dev.sitecore.net/Downloads/Scripts_for_Sitecore_Security_database
 ---
 
@@ -9,6 +9,9 @@ origin: https://dev.sitecore.net/Downloads/Scripts_for_Sitecore_Security_databas
 ## Scripts for Sitecore Security database 0.x
 </CardHeader>
 <CardBody>
+[Scripts for Sitecore Security database 0.6](/downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_06)\
+This release is compatible with Sitecore XP 9.1+ and Sitecore Identity 7.1.
+
 [Scripts for Sitecore Security database 0.5](/downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_05)\
 This release is compatible with Sitecore XP 9.1+ and Sitecore Identity 7.0.
 

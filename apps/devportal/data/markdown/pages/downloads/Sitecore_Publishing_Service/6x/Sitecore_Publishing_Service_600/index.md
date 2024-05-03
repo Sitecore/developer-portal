@@ -4,20 +4,11 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/6x/Sitecore_Publishing_Service_600.aspx
 ---
 
-Sitecore Publishing Service is an opt-in module providing an alternative to the default Sitecore publishing mechanism focusing on increased performance by doing operations in bulk.
+The Sitecore Publishing Service is an opt-in service providing an alternative to the default Sitecore publishing mechanism focusing on increased performance by doing operations in bulk. It uses a different approach than the default publishing mechanism and is not a like for like replacement. There are differences to UI, integration points, deployment and in some cases publishing behavior.\
+This page contains Sitecore Publishing Service 6.0.0.
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Note: Sitecore Publishing Service uses a different approach than the default publishing mechanism and is not a like for like replacement. There are differences to UI, integration points, deployment and in some cases publishing behavior.
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore encourages customers to always install latest update of a given version to ensure latest fixes are included in their solution. See [all available versions here](/downloads/Sitecore_Publishing_Service).
-  </Alert>
-  
-
-Please go here to find [all available versions](/downloads/Sitecore_Publishing_Service_Module) of Sitecore Publishing Service Modules.
+See [all available Sitecore Publishing Service versions here](/downloads/Sitecore_Publishing_Service).\
+Integration of this service into Sitecore Experience Platform also requires the Sitecore Publishing Services Module. See [all available Module versions here](/downloads/Sitecore_Publishing_Service_Module).
 
 ## Download options for Sitecore Container deployments
 

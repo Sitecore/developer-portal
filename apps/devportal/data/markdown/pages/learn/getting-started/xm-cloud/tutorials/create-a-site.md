@@ -16,7 +16,7 @@ In this tutorial, you will become familiar with the first steps in building a we
 
 ## Overview
 
-In XM Cloud, a site is a collection of one or more pages, and a page can have several components. Through this tutorial series we will be creating a new Company Dev site and building out pages and components for the site. Uou will use the XM Cloud tools and your local development environment to explore the creation of a new site.
+In XM Cloud, a site is a collection of one or more pages, and a page can have several components. Through this tutorial series we will be creating a new Company Dev site and building out pages and components for the site. You will use the XM Cloud tools and your local development environment to explore the creation of a new site.
 
 In this tutorial you wil do the following:
 
@@ -64,9 +64,9 @@ With the environment initially created, you can now create your first site in XM
 
 1. Select a pre-configured language, in this case, `English`.
 
-  <Alert status="info">
-   <AlertIcon />
-   At this time, you can also select an existing Site identifier, or create a new one. This is required when connecting [CDP, the Customer Data Platform](https://developers.sitecore.com/customer-data-management/cdp) of Sitecore for embedded analytics and personalization. We will skip that step for now and start the creation process of the site.
+   <Alert status="info">
+      <AlertIcon />
+      At this time, you can also select an existing Site identifier, or create a new one. This is required when connecting [CDP, the Customer Data Platform](https://developers.sitecore.com/customer-data-management/cdp) of Sitecore for embedded analytics and personalization. We will skip that step for now and start the creation process of the site.
    </Alert>
 
 1. Click `Create site`, which will scaffold the website in the background. This will take a few minutes.

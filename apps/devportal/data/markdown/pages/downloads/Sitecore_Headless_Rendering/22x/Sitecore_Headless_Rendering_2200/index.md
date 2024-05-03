@@ -4,23 +4,11 @@ description: ""
 origin: 
 ---
 
-The Sitecore Headless Services module (formerly known as the Sitecore JavaScript Services Server module) provides the server-side APIs and components which are required for the ASP.NET Core Rendering SDK and JavaScript Rendering SDKs (JSS).
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    This version of Sitecore Headless Rendering is compatible with Sitecore 10.4.
-  </Alert>
+The Sitecore Headless Rendering module provides the server-side APIs and components which are required for the ASP.NET Core Rendering SDK and JavaScript Rendering SDKs (JSS).\
+Sitecore Headless Rendering 22.0.0 is compatible with Sitecore Experience Platform 10.4.
   
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore encourages customers to always install latest update of a given version to ensure latest fixes are included in their solution. See [all available versions here](/downloads/Sitecore_Headless_Rendering).
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    For use of Sitecore JSS with versions of Sitecore prior to 10.1, see [Sitecore JavaScript Services downloads](/downloads/Sitecore_JavaScript_Services).
-  </Alert>
-  
+See [all available versions here](/downloads/Sitecore_Headless_Rendering).\
+For use of Sitecore JSS with versions of Sitecore prior to 10.1, see [Sitecore JavaScript Services downloads](/downloads/Sitecore_JavaScript_Services).
 
 ## Download options
 
@@ -48,9 +36,9 @@ The Sitecore Headless Services module (formerly known as the Sitecore JavaScript
  | Resource | Description |
  | --- | --- |
  | [Release Notes](/downloads/Sitecore_Headless_Rendering/22x/Sitecore_Headless_Rendering_2200/Release_Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
- | [JavaScript SDKs (JSS) documentation](https://doc.sitecore.com/en/developers/hd/220/sitecore-headless-development/sitecore-javascript-rendering-sdks--jss-.html) | Sitecore JavaScript Rendering SDKs (JSS). |
- | [ASP.NET Core Rendering SDK documentation](https://doc.sitecore.com/en/developers/hd/210/sitecore-headless-development/index-en.html) | Official documentation for ASP.NET Core headless rendering. |
- | [Experience Edge documentation](https://doc.sitecore.com/en/developers/hd/220/sitecore-headless-development/sitecore-experience-edge-for-xm.html) | Official documentation for Experience Edge and the Experience Edge connector. |
+ | [JavaScript SDKs (JSS) documentation](https://doc.sitecore.com/xp/en/developers/hd/22/sitecore-headless-development/sitecore-javascript-rendering-sdks--jss-.html) | Sitecore JavaScript Rendering SDKs (JSS). |
+ | [ASP.NET Core Rendering SDK documentation](https://doc.sitecore.com/xp/en/developers/hd/22/sitecore-headless-development/index-en.html) | Official documentation for ASP.NET Core headless rendering. |
+ | [Experience Edge documentation](https://doc.sitecore.com/xp/en/developers/hd/22/sitecore-headless-development/sitecore-experience-edge-for-xm.html) | Official documentation for Experience Edge and the Experience Edge connector. |
  | [Container installation reference](https://doc.sitecore.com/en/developers/104/developer-tools/sitecore-module-reference.html) | Instructions for module installation via Dockerfile. |
  | [Known issues](https://kb.sitecore.net/articles/545609) | Known issues for this release in the Sitecore Knowledge Base. |
 
@@ -58,10 +46,10 @@ The Sitecore Headless Services module (formerly known as the Sitecore JavaScript
 
  | Resource | Description |
  | --- | --- |
- | [Chinese (zh-CN) for Sitecore Headless Services Server](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%2022.0.11%20(zh-CN).zip) | Chinese language client translation file. Read [instructions](~/link?_id=B685CC31771E466080080239FDBEA625&_z=z) how to import a new language into the Sitecore installation. |
- | [Danish (da-DK) for Sitecore Headless Services Server](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%2022.0.11%20(da-DK).zip) | Danish language client translation file. Read [instructions](~/link?_id=B685CC31771E466080080239FDBEA625&_z=z) how to import a new language into the Sitecore installation. |
- | [German (de-DE) for Sitecore Headless Services Server](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%2022.0.11%20(de-DE).zip) | German language client translation file. Read [instructions](~/link?_id=B685CC31771E466080080239FDBEA625&_z=z) how to import a new language into the Sitecore installation. |
- | [Japanese (ja-JP) for Sitecore Headless Services Server](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%2022.0.11%20(ja-JP).zip) | Japanese language client translation file. Read [instructions](~/link?_id=B685CC31771E466080080239FDBEA625&_z=z) how to import a new language into the Sitecore installation. |
+ | [Chinese (zh-CN) for Sitecore Headless Services Server](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%2022.0.11%20(zh-CN).zip) | Chinese language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/add-a-new-language-to-system-settings.html) how to import a new language into the Sitecore installation. |
+ | [Danish (da-DK) for Sitecore Headless Services Server](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%2022.0.11%20(da-DK).zip) | Danish language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/add-a-new-language-to-system-settings.html) how to import a new language into the Sitecore installation. |
+ | [German (de-DE) for Sitecore Headless Services Server](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%2022.0.11%20(de-DE).zip) | German language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/add-a-new-language-to-system-settings.html) how to import a new language into the Sitecore installation. |
+ | [Japanese (ja-JP) for Sitecore Headless Services Server](https://scdp.blob.core.windows.net/downloads/Sitecore%20Headless%20Rendering/22x/Sitecore%20Headless%20Rendering%202200/Secure/Sitecore%20Headless%20Services%20Server%2022.0.11%20(ja-JP).zip) | Japanese language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/add-a-new-language-to-system-settings.html) how to import a new language into the Sitecore installation. |
 
 ## Community support
 
