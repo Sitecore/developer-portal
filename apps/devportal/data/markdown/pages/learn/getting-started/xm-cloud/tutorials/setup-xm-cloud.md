@@ -11,8 +11,8 @@ In this tutorial, we will go through the steps to learn the basics of XM Cloud a
 - How to login to the Sitecore Cloud Portal
 - How to access the XM Cloud Deploy application
 - How to create a new XM Cloud project using the XM Cloud Deploy application
-- How to create a new XM Cloud environment for a Project"
-  </Introduction>
+- How to create a new XM Cloud environment for a Project
+</Introduction>
 
 ## Overview
 
