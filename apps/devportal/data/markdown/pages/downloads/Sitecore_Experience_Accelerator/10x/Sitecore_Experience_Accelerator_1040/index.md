@@ -1,0 +1,46 @@
+---
+title: "Sitecore Experience Accelerator 10.4.0"
+description: ""
+---
+
+The Sitecore Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly.\
+Sitecore Experience Accelerator 10.4.0 is compatible with Sitecore Experience Platform 10.4.
+
+See [all available versions here](/downloads/Sitecore_Experience_Accelerator).
+
+## Downloads for On Premises deployments
+
+ | Resource | Description |
+ | --- | --- |
+ | [Sitecore Experience Accelerator](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore%20Experience%20Accelerator%2010.4.0%20rev.%2008675.zip) | Sitecore Experience Accelerator package for use with Sitecore Experience Platform. |
+ | [Sitecore Experience Accelerator CD](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore%20Experience%20Accelerator%2010.4.0%20rev.%2008675%20CD.zip) | Sitecore Experience Accelerator CD for use with Sitecore Experience Platform. |
+ | [Sitecore PowerShell Extension for Sitecore](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore.PowerShell.Extensions-7.0-IAR.zip) | Package for Sitecore PowerShell Extensions for Sitecore. |
+ | [SXA SIF templates](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/SXA%20SIF%20Templates%2010.4.0%20rev.%2008675.zip) | Package of SIF templates files (.json) for Sitecore Experience Accelerator. |
+
+## Download options for Azure AppService deployments
+
+ | Resource | Description |
+ | --- | --- |
+ | [Sitecore Experience Accelerator WDP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore%20Experience%20Accelerator%2010.4.0%20rev.%2008675.scwdp.zip) | WebDeploy package for XP0 configuration and for CM role in XM and XP configurations for use with Sitecore Experience Platform. |
+ | [Sitecore Experience Accelerator CD WDP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore%20Experience%20Accelerator%2010.4.0%20rev.%2008675%20CD.scwdp.zip) | WebDeploy package for CD role in XM and XP configurations for use with Sitecore Experience Platform. |
+ | [Sitecore Experience Accelerator XM WDP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore%20Experience%20Accelerator%20XM%2010.4.0%20rev.%2008675.scwdp.zip) | WebDeploy package for CM role in XM Only configuration for use with Sitecore Experience Platform. |
+ | [Sitecore Experience Accelerator CD XM WDP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore%20Experience%20Accelerator%20XM%2010.4.0%20rev.%2008675%20CD.scwdp.zip) | WebDeploy package for CD role in XM Only configuration for use with Sitecore Experience Platform. |
+ | [Sitecore PowerShell Extension WDP for Sitecore](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore.PowerShell.Extensions-7.0-IAR.scwdp.zip) | WebDeploy package for Sitecore PowerShell Extensions for Sitecore. |
+
+## Release Information
+
+ | Resource | Description |
+ | --- | --- |
+ | [Release Notes](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1040/Release_Notes) | List of features, improvements, and fixes implemented in this release. |
+ | [Installation Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/SXA_10_4_0_installation_guide-pdf-en.pdf) | Installation procedures for the Sitecore Experience Accelerator. |
+ | [Upgrade Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/SXA_10_4_0_upgrade_guide-pdf-en.pdf) | Instructions for upgrading from a previous Sitecore Experience Accelerator version. |
+ | [Documentation](https://doc.sitecore.com/developers/sxa/104/sitecore-experience-accelerator/en/index-en.html) | Documentation for Sitecore Experience Accelerator. |
+
+## Client translations
+
+ | Resource | Description |
+ | --- | --- |
+ | [Danish (da-DK)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore%20Experience%20Accelerator%2010.4.0%20rev.%2008675%20(da-DK).zip) | Danish language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/104/sitecore-experience-accelerator/install-a-translation-file-for-sxa.html) how to import a new language into the Sitecore installation. |
+ | [German (de-DE)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore%20Experience%20Accelerator%2010.4.0%20rev.%2008675%20(de-DE).zip) | German language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/104/sitecore-experience-accelerator/install-a-translation-file-for-sxa.html) how to import a new language into the Sitecore installation. |
+ | [Japanese (ja-JP)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore%20Experience%20Accelerator%2010.4.0%20rev.%2008675%20(ja-JP).zip) | Japanese language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/104/sitecore-experience-accelerator/install-a-translation-file-for-sxa.html) how to import a new language into the Sitecore installation. |
+ | [Chinese (zh-CN)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201040/Sitecore%20Experience%20Accelerator%2010.4.0%20rev.%2008675%20(zh-CN).zip) | Chinese language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/104/sitecore-experience-accelerator/install-a-translation-file-for-sxa.html) how to import a new language into the Sitecore installation. |

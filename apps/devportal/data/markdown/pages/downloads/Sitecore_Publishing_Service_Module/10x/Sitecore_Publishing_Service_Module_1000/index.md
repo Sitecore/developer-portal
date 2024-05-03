@@ -4,20 +4,13 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1000
 ---
 
-The Publishing Service Module provides integration with the opt-in Publishing Service, supporting high-performance publishing in large scale Sitecore setups.
-
-Here you will find [all available versions](/downloads/Sitecore_Publishing_Service) of Sitecore Publishing Services.
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    This version of Sitecore Publishing Service Module is compatible with Sitecore 10.0.
-  </Alert>
+The Sitecore Publishing Service Module provides integration with the opt-in Publishing Service, supporting high-performance publishing in large scale Sitecore setups.
+ 
+Sitecore Publishing Service Module 10.0.0 is compatible with Sitecore Experience Platform 10.0.\
+Sitecore Publishing Service Module 10.0.0 is compatible with Sitecore Publishing Service 3.x.
   
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore encourages customers to always install latest update of a given version to ensure latest fixes are included in their solution. See [all available versions here](/downloads/Sitecore_Publishing_Service_Module).
-  </Alert>
-  
+See [all available Sitecore Publishing Service Module versions here](/downloads/Sitecore_Publishing_Service_Module).\
+See [all available Sitecore Publishing Service versions here](/downloads/Sitecore_Publishing_Service).
 
 ## Downloads
 

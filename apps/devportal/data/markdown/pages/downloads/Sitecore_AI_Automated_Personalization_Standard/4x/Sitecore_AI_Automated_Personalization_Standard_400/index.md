@@ -4,13 +4,10 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization_Standard/4x/Sitecore_AI_Automated_Personalization_Standard_400.aspx
 ---
 
-A module to enable Sitecore AI Auto-Personalization for Sitecore XP installation with traffic no greater than 12 million visits per year.
+This module enables AI Auto-Personalization for Sitecore Experience Platform installations with traffic no greater than 12 million visits per year.
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    This release is compatible with Sitecore XP 10.2.
-  </Alert>
-  
+Sitecore AI Automated Personalization Standard 4.0.0 is compatible with Sitecore Experience Platform 10.2. 
+
 
 ## Download options
 
