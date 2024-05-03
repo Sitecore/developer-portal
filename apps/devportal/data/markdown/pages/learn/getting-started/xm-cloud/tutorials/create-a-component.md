@@ -158,7 +158,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
 
 ### Add content elements to the columns
 
-Now that the layout is created, you will add content items to the columns to match the requirements provided. Based on the requirements, we need two headings on the left side (an H2 and an H3) and a block of free-form text on the right for the teaser content.
+Now that the layout is created, you will add text elements to the cards to match the requirements provided. Based on the requirements, we need two headings on the left side (an H2 and an H3) and a block of free-form text on the right for the teaser content.
 
 In this section you will:
 
