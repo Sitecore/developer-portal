@@ -4,47 +4,9 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/101/Sitecore_Experience_Platform_101_Update1.aspx
 ---
 
-Sitecore® Experience Platform™ 10.1 focuses on product updates and enhancements that improve time-to-market and increase usability and decrease infrastructure costs – all centered around enabling both Marketing and IT teams equally, thus making it easier and faster to launch and evolve digital customer experiences.
+Update-1 to Sitecore Experience Platform 10.1.
 
-Sitecore AI Auto-Personalization Standard is available with this release, helps brands jumpstart personalization efforts, automatically identifying visitor trends, creating customer segments and modifying page elements to deliver personalized experiences and enabling users to drive more value out of their Sitecore implementations.
-
-Other highlights include:
-
--   Horizon Enhancements providing new publishing and editing capabilities while reducing the need to switch UIs.
--   Global Search in Content and Pages enabling search within Horizon and making search more efficient.
--   Additional Field type support providing the ability to use Droplinks and Checklists within Horizon.
--   Rules-based content profiling improves marketer productivity with automatic behavioral-based profiling of content based on content tags and taxonomy.
--   Stronger SXA and Horizon integration exposing rendering parameters, components styles, and grid configuration out-of-the-box.
--   Simple Send Email action for sending emails without utilizing EXM and incorporating information from Forms fields.
--   Improved Upgrade Experience by storing default content items outside of the database, removing the need for applying Update packages.
--   Data Purge Tool for XDB provides more control of storage resources and can be used to reduce hosting costs.
--   Reporting role consolidation enables further hosting cost reduction by consolidation the Reporting role with the CM role.
--   New Next.js SDK and sample site are now available for the Sitecore JavaScript SDKs, providing a Jamstack rendering option that improves page performance and site scalability.
-
-For developer documentation please refer to documentation website.
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Please note that as part of your system upgrade to Sitecore Version 10.1, Sitecore may collect additional information such as product version, number of site visits, generic hardware and software information, and recovery actions. This information will be used to help us to optimize your experience. All data will be processed in accordance with Sitecore’s privacy policy [here](https://www.sitecore.com/trust/privacy-policy). Should you have any queries or wish to discuss this, [please refer to our FAQ](https://kb.sitecore.net/articles/424335), or contact your Sitecore Account Manager.
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore Experience Platform 9.1 or later does not support the `Active Directory` module.
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore encourages customers to always install latest update of a given version to ensure latest fixes are included in their solution. See [all available versions here](/downloads/Sitecore_Experience_Platform).
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore has moved its public feed from sitecore.myget.org to a different feed provider. [Learn more](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1002999).
-  </Alert>
-    
-
-This page contains all the resources for **Sitecore Experience Platform 10.1 Update-1**.
+See [all available versions here](/downloads/Sitecore_Experience_Platform).
 
 ## Download options for Sitecore Container deployments
 
@@ -106,6 +68,7 @@ This page contains all the resources for **Sitecore Experience Platform 10.1 Upd
  | [Installation Guide for the XP Scaled topology](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Installation_Guide_for_the_XP_Scaled_topology-10.1.1.pdf) | Explains how to install the fully featured Sitecore Experience Platform Installation (XP1) topology. This topology can be configured to run separated server roles. |
  | [Quick Installation Guide for a Developer Workstation](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Quick_Installation_Guide_for_a_Developer_Workstation-10.1.1.pdf) | Explains how to install the XP Single (XP0) topology on a workstation for development and testing purposes. |
  | [Upgrade Guide for Updates](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Update_Guide-for_Sitecore-XP-10.1.X.pdf) | Explains how to update to the latest release in the Sitecore 10.1.X series. |
+ | [Developer Documentation](https://doc.sitecore.com/xp/en/developers) | Link to Sitecore developer documentation. |
  | [Assembly list](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Sitecore.Platform.Assemblies%2010.1.1%20rev.%20005862.zip) | Complete list of assemblies shipped with this release. |
 
 ## Modules
@@ -135,10 +98,10 @@ This page contains all the resources for **Sitecore Experience Platform 10.1 Upd
 
  | Resource | Description |
  | --- | --- |
- | [Danish (da-DK)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Translations/Sitecore%2010.1.1%20rev.%20005862%20(da-DK).zip) | Danish language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/users/101/sitecore-experience-platform/add-a-new-language-to-system-settings.html) how to import a new language into the Sitecore installation. |
- | [German (de-DE)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Translations/Sitecore%2010.1.1%20rev.%20005862%20(de-DE).zip) | German language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/users/101/sitecore-experience-platform/add-a-new-language-to-system-settings.html) how to import a new language into the Sitecore installation. |
- | [Japanese (ja-JP)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Translations/Sitecore%2010.1.1%20rev.%20005862%20(ja-JP).zip) | Japanese language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/users/101/sitecore-experience-platform/add-a-new-language-to-system-settings.html) how to import a new language into the Sitecore installation. |
- | [Chinese (zh-CN)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Translations/Sitecore%2010.1.1%20rev.%20005862%20(zh-CN).zip) | Chinese language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/users/101/sitecore-experience-platform/add-a-new-language-to-system-settings.html) how to import a new language into the Sitecore installation. |
+ | [Danish (da-DK)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Translations/Sitecore%2010.1.1%20rev.%20005862%20(da-DK).zip) | Danish language client translation file. Read [instructions](/downloads/Sitecore_Experience_Platform/Client_Translations_Manual) how to import a new language into the Sitecore installation. |
+ | [German (de-DE)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Translations/Sitecore%2010.1.1%20rev.%20005862%20(de-DE).zip) | German language client translation file. Read [instructions](/downloads/Sitecore_Experience_Platform/Client_Translations_Manual) how to import a new language into the Sitecore installation. |
+ | [Japanese (ja-JP)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Translations/Sitecore%2010.1.1%20rev.%20005862%20(ja-JP).zip) | Japanese language client translation file. Read [instructions](/downloads/Sitecore_Experience_Platform/Client_Translations_Manual) how to import a new language into the Sitecore installation. |
+ | [Chinese (zh-CN)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/101/Sitecore%20Experience%20Platform%20101%20Update1/Secure/Translations/Sitecore%2010.1.1%20rev.%20005862%20(zh-CN).zip) | Chinese language client translation file. Read [instructions](/downloads/Sitecore_Experience_Platform/Client_Translations_Manual) how to import a new language into the Sitecore installation. |
  | [Chinese GeoIP Localization Pack](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/90/Sitecore%20Experience%20Platform%2090%20Initial%20Release/Secure/GeoIp%20Location%20China%20Localization%20Pack%201.0.0%20rev.%20180226.zip) | The pack provides enhanced region detection for China. The pack should be installed as a regular Sitecore module. |
 
 ## Usage policies
@@ -147,3 +110,9 @@ This page contains all the resources for **Sitecore Experience Platform 10.1 Upd
  | --- | --- |
  | [Sitecore Device Detection Services usage policy](/downloads/Sitecore_Experience_Platform/Sitecore_Device_Detection_Services_Usage_Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
  | [Sitecore IP Geolocation usage policy](/downloads/Sitecore_Experience_Platform/Sitecore_IP_Geolocation_Usage_Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+ 
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    Please note that as part of your system upgrade to Sitecore Version 10.1, Sitecore may collect additional information such as product version, number of site visits, generic hardware and software information, and recovery actions. This information will be used to help us to optimize your experience. All data will be processed in accordance with Sitecore’s privacy policy [here](https://www.sitecore.com/trust/privacy-policy). Should you have any queries or wish to discuss this, [please refer to our FAQ](https://kb.sitecore.net/articles/424335), or contact your Sitecore Account Manager.
+  </Alert>
+  

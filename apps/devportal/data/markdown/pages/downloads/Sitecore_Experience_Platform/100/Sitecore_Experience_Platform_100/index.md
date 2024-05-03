@@ -4,7 +4,7 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/100/Sitecore_Experience_Platform_100.aspx
 ---
 
-Sitecore® Experience Platform™ 10.0 focuses on product updates and enhancements that provide more development and deployment options, increase usability and improve overall performance – all centered around enabling both Marketing and IT teams equally, thus making it easier and faster to launch and evolve digital customer experiences.
+Sitecore Experience Platform 10.0 focuses on product updates and enhancements that provide more development and deployment options, increase usability and improve overall performance – all centered around enabling both Marketing and IT teams equally, thus making it easier and faster to launch and evolve digital customer experiences.
 
 New delivery options including support for Docker, Kubernetes and new Sitecore-provided image repositories, helping delivery teams move to a continuous delivery model more easily with infrastructure-as-code deployments and more efficient solution and team onboarding. The addition of the ASP.NET Core SDK and headless rendering host architecture also provides developers with a new way of building their solutions allowing for faster development iterations.
 
@@ -21,30 +21,7 @@ Other highlights include:
 -   New marketing automation capabilities include capabilities to engage customers with automated birthday campaigns.
 -   Support for GDPR compliance journeys including features that make it easier to enforce and manage consent options as well as supporting the anonymization of personal information submitted via Sitecore Forms.
 
-This release is issued after extensive testing and feedback from customers, partners and developers, resulting in a new level of quality across the product and documentation. For developer documentation please refer to documentation website.
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Please note that as part of your system upgrade to Sitecore Version 10.0, Sitecore may collect additional information such as product version, number of site visits, generic hardware and software information, and recovery actions. This information will be used to help us to optimize your experience. All data will be processed in accordance with Sitecore’s privacy policy [here](https://www.sitecore.com/trust/privacy-policy). Should you have any queries or wish to discuss this, [please refer to our FAQ](https://kb.sitecore.net/articles/424335), or contact your Sitecore Account Manager.
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore Experience Platform 9.1 or later does not support the `Active Directory` module.
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore encourages customers to always install latest update of a given version to ensure latest fixes are included in their solution. See [all available versions here](/downloads/Sitecore_Experience_Platform).
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore has moved its public feed from sitecore.myget.org to a different feed provider. [Learn more](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1002999).
-  </Alert>
-  
-
-This page contains all the resources for **Sitecore Experience Platform 10.0**.
+See [all available versions here](/downloads/Sitecore_Experience_Platform).
 
 ## Download options for Sitecore Container deployments
 
@@ -106,6 +83,7 @@ This page contains all the resources for **Sitecore Experience Platform 10.0**.
  | [Quick Installation Guide for a Developer Workstation](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/100/Sitecore%20Experience%20Platform%20100/Secure/Quick_Installation_Guide_for_a_Developer_Workstation-10.0.0.pdf) | Explains how to install the XP Single (XP0) topology on a workstation for development and testing purposes. |
  | [Upgrade Guide (8.1.0-9.0.1 to 10.0.0)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/100/Sitecore%20Experience%20Platform%20100/Secure/Upgrade_Guide_Sitecore_10.0.0_from_8.1.0-9.0.1.pdf) | Explains how to directly upgrade from Sitecore versions 8.1.0 through 9.0.1 to 10.0.0. |
  | [Upgrade Guide (9.0.2 to 10.0.0)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/100/Sitecore%20Experience%20Platform%20100/Secure/Upgrade_Guide_Sitecore_10.0.0_from_9.0.2_or_later.pdf) | Explains how to directly upgrade from Sitecore 9.0.2 and later to 10.0.0. |
+ | [Developer Documentation](https://doc.sitecore.com/xp/en/developers) | Link to Sitecore developer documentation. |
  | [Assembly list](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/100/Sitecore%20Experience%20Platform%20100/Secure/Sitecore.Platform.Assemblies%2010.0.0%20rev.%20004346.zip) | Complete list of assemblies shipped with this release. |
 
 ## Modules
@@ -153,3 +131,8 @@ This page contains all the resources for **Sitecore Experience Platform 10.0**.
  | --- | --- |
  | [Sitecore Device Detection Services usage policy](/downloads/Sitecore_Experience_Platform/Sitecore_Device_Detection_Services_Usage_Policy) | This policy is applicable if you are using Sitecore Device Detection Service. |
  | [Sitecore IP Geolocation usage policy](/downloads/Sitecore_Experience_Platform/Sitecore_IP_Geolocation_Usage_Policy) | This policy is applicable if you are using Sitecore IP Geolocations Service. |
+
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    Please note that as part of your system upgrade to Sitecore Version 10.0, Sitecore may collect additional information such as product version, number of site visits, generic hardware and software information, and recovery actions. This information will be used to help us to optimize your experience. All data will be processed in accordance with Sitecore’s privacy policy [here](https://www.sitecore.com/trust/privacy-policy). Should you have any queries or wish to discuss this, [please refer to our FAQ](https://kb.sitecore.net/articles/424335), or contact your Sitecore Account Manager.
+  </Alert>

@@ -6,11 +6,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Embeddable_Forms/1x/Sitecore
 
 Sitecore Embeddable Forms Framework (EFF) allow forms to be displayed on any website page, including websites that are not Sitecore applications. They are isolated and unobtrusive; hence they cannot hurt any other functionality or style of the page where they are embedded.
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    This version of Sitecore Embeddable Forms is compatible with Sitecore 10.3.
-  </Alert>
-  
+Sitecore Embeddable Forms 1.0.0 is compatible with Sitecore Experience Platform 10.3 and later.
 
 ## Download options
 
