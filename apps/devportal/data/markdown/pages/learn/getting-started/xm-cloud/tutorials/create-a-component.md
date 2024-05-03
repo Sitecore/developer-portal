@@ -56,7 +56,7 @@ The first component we want to build is the “Text Teaser” Component. The req
 
 This is what your component should look like when it is finished:
 
-`INSERT SCREENSHOT OF COMPONENT DESIGN`
+![Text Teaser Design](https://sitecorecontenthub.stylelabs.cloud/api/public/content/b8eb9bc4d20841caae3a0c4e6e0ccebd?v=b9ae2f2f)
 
 In this tutorial you will focus on creating the initial definition of the component with the 2-column layout and the desired elements. The specific design requirements for styling will be covered in a later tutorial.
 
@@ -68,23 +68,27 @@ To structure the components a bit, you can use collections. Collections help you
 
 1. From your dashboard, select the XM Cloud environment where you will create your Text Teaser Component.
 
-   `INSERT SCREENSHOT OF XM CLOUD APP BEING SELECTED FROM DASHBOARD`
+   ![Sitecore Cloud - Select XM Cloud App](https://sitecorecontenthub.stylelabs.cloud/api/public/content/93b99fcc45b64e2e8bb895b6f9226ef7?v=95956beb)
 
 1. From the app context flyout, select **Open App** to launch XM Cloud environment apps dashboard
+
+   ![Sitecore Cloud - Open XM Cloud Dashboard](https://sitecorecontenthub.stylelabs.cloud/api/public/content/09eafd6810ce4a49838d75803627f123?v=0d05167a)
 
 1. At the very top switch to **Tools**
 
 1. In the **Tools** page, select the **Components** card to launch the Component builder. You can see that there are already some components available.
 
-   `INSERT SCREENSHOT OF Components listing`
+   ![Component Builder - Components overview](https://sitecorecontenthub.stylelabs.cloud/api/public/content/b9989ce4a43c4e89a765b1d553f57d66?v=1ad0d92b)
 
 1. On the top right, click **Add collection** to create a new collection.
+
+   ![Component Builder - Add new Collection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/514db03de4634f54a81b4ccdf6d6de97?v=e1d1710c)
 
 1. Name this collection: **“Basic Components”**
 
 1. Click the **Save** button to complete the collection creation.
 
-   `INSERT SCREENSHOT OF Basic Components collection`
+   ![Component Builder - Collection created](https://sitecorecontenthub.stylelabs.cloud/api/public/content/514db03de4634f54a81b4ccdf6d6de97?v=e1d1710c)
 
 ## Create the component
 
@@ -99,13 +103,13 @@ Within this new collection, you will now create the new Component called “Text
       You can leave the other fields blank. The **Description** field is optional and the **Collection** field will default to the currently selected Collection so it will be stored in Basic Components as desired.
    </Alert>
 
-   `INSERT SCREENSHOT OF completed form`
+   ![Component Builder - Create Component](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f2105312107a4d04bacb73b8fda10206?v=09b3d415)
 
 1. Click on the **Save** button to complete creating the component definition. A message will display telling you that the component was created.
 
 1. Click on the **Click to start editing** link that is displayed at the top of the Component form. This will launch the canvas (or 'Section') view of the Text Teaser component where you can start adding elements in the builder.
 
-   `INSERT SCREENSHOT OF Canvas`
+   ![Component Builder - Component Created](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1a2b7fe7076c45c8847a0db785f54999?v=df5b8c53)
 
 ### Create the column layout for the Text Teaser component
 
@@ -118,7 +122,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
       This can be adjusted on the pane at the right side of the screen. For now leave it as it is.
    </Alert>
 
-   `INSERT SCREENSHOT of editor with Layout&Alignment section highlighted with a red box`
+   ![Component Builder - Section with Grid Layout](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f80922b7c24d4e209eef6735278ba2f7?v=da45206b)
 
 1. Click and drag your mouse across the canvas to create a left column for your Text Teaser.
 
@@ -127,7 +131,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
       By default, XM Cloud will create a **Block** element. You will want to change this to a **Card** in the following steps.
    </Alert>
 
-   `INSERT SCREENSHOT of Canvas with drawn Block area`
+   ![Component Builder - Create the left Card](https://sitecorecontenthub.stylelabs.cloud/api/public/content/7709dabf176d4196b1afc9ace65673c7?v=89228ef6)
 
 1. Click on the newly created left column Block area to load the context bar above the area.
 
@@ -135,7 +139,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
 
 1. Select the **Card** element type from the pop-up menu.
 
-   `INSERT SCREENSHOT OF Block elements dialog`
+   ![Component Builder - Create Card](https://sitecorecontenthub.stylelabs.cloud/api/public/content/ccda9e471d3b491dbd903fac6d3612da?v=cdaecff4)
 
 <Alert status="warning">
    <AlertIcon />
@@ -144,7 +148,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
 
 1. Click and drag your mouse across the canvas to create a right column for your Text Teaser.
 
-   `INSERT SCREENSHOT of Canvas with drawn Block area`
+   ![Component Builder - Create right column](https://sitecorecontenthub.stylelabs.cloud/api/public/content/0323149c70fa4ee9bd3010282ae25535?v=21f4f5a7)
 
 1. Click on the newly created right column Block area to load the context bar above the area.
 
@@ -167,7 +171,7 @@ We will start with the headings in the left column, and then add the element to 
 
 1. In the context menu, click on the **Add element** button to see the options for elements that can be inserted.
 
-   `INSERT SCREENSHOT OF ADD ELEMENT OPTIONS`
+   ![Component Builder - Add Heading 2](https://sitecorecontenthub.stylelabs.cloud/api/public/content/cbd2cfc0dc4a4415ba190e5b2e432672?v=622de512)
 
 1. Select **Heading 2** to insert an H2 element to the Card.
 
@@ -179,7 +183,7 @@ We will start with the headings in the left column, and then add the element to 
 
 1. Click in the area below the Heading 2 element to add the Heading 3 underneath it.
 
-   `INSERT SCREENSHOT OF COMPONENT WITH ELEMENTS`
+   ![Component Builder - Adding Heading 3](https://sitecorecontenthub.stylelabs.cloud/api/public/content/8da7d1dd78954757a14a6572ee8902e6?v=0e77d03f)
 
 1. Click on the right column Card to focus context on the right column.
 
@@ -189,7 +193,7 @@ We will start with the headings in the left column, and then add the element to 
 
 1. Click on the top part of the right Card to position the element.
 
-   `INSERT SCREENSHOT OF COMPONENT WITH ELEMENTS`
+   ![Component Builder - Adding Paragraph](https://sitecorecontenthub.stylelabs.cloud/api/public/content/4d6646183b424926950780be4fc72ba6?v=0610f60e)
 
 1. Fill out the Heading 2, Heading 3, and Paragraph elements with some example content to test the layout.
 
@@ -198,7 +202,7 @@ We will start with the headings in the left column, and then add the element to 
       For the content, you can make up your own text or use a generator tool like [lorem ipsum](https://www.lipsum.com/).
    </Alert>
 
-   `INSERT SCREENSHOT OF COMPONENT WITH ELEMENTS and EXAMPLE TEXT`
+   ![Component Builder - Edit Content](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1dc095d2a6bc4673ba57133a1c4e624e?v=3263ecd1)
 
 ## Apply Styling to the Component
 
@@ -211,19 +215,17 @@ At this point, the Text Teaser has an initial element structure but has not yet 
 
 1. Staying in the XM Cloud Component builder interface, click on the 'canvas' or 'section' area of the Text Teaser component to focus on the entire component area.
 
-   `INSERT SCREENSHOT of selected canvas with 'Section' in the right bar`
+   ![Component Builder - Select Section](https://sitecorecontenthub.stylelabs.cloud/api/public/content/71a5455ff0034f58a7bf3719bc4e32df?v=d4249d7d)
 
 1. Above the component, click on the **theme switcher** icon. This will change the right-side flyout to the **Themes** selection pane so that you can change your theme. The currently selected theme will be **Light theme** and you will see options for other themes available.
 
-   `INSERT SCREENSHOT OF BAR WITH THEME SWITCHER BUTTON`
+   ![Component Builder - Open Theme Selection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f8035d12bca54434bc7466c4bcd191ee?v=42e89801)
 
 1. Scroll to the bottom of the **Themes** selection pane (if necessary) and select the **Dark theme**.
 
-   `INSERT SCREENSHOT OF THEME SELECTION ON RIGHT SIDE`
-
 1. Click on the **Apply** button to apply the **Dark theme** to the current component. This will update the display in the main editing area to show you the new theme.
 
-   `INSERT SCREENSHOT OF THEMED COMPONENT`
+   ![Component Builder - Using Dark Theme](https://sitecorecontenthub.stylelabs.cloud/api/public/content/63773014b8374bc2a2f6061531097c33?v=cf94e4ef)
 
 <Alert status="info">
    <AlertIcon />
@@ -250,11 +252,9 @@ At this point we have the Text Teaser component layout defined, with some basic 
 
 1. In the **Tools** page, select the **Pages** card to launch the Pages editor. The home page will display.
 
-   `INSERT SCREENSHOT OF PAGES WITH HOME PAGE SHOWN`
+   ![Pages - Editing the Home page](https://sitecorecontenthub.stylelabs.cloud/api/public/content/bd4844a88ef145a1bfa4fc742ff42671?v=aeb94bce)
 
 1. On the left of the home page, click on the **Components** tab to view the list of available components.
-
-   `INSERT SCREENSHOT OF COMPONENTS TAB`
 
 1. Scroll down on the tab to find the **Basic Components** collection that you created earlier. In the collection you will see the Text Teaser component you have created.
 
@@ -263,11 +263,11 @@ At this point we have the Text Teaser component layout defined, with some basic 
       This validates that the component is available to authors. If it does not display in this list, then the component may note have been Staged or Published yet.
    </Alert>
 
-   `INSERT SCREENSHOT OF TEXT TEASER IN TAB`
+   ![Pages - Choose the Components to add to the page](https://sitecorecontenthub.stylelabs.cloud/api/public/content/efa421c4da2b4203a62a41f4394de68a?v=acca803d)
 
 1. Drag the component onto the home page canvas below the title. The component will be added to the page.
 
-   `INSERT SCREENSHOT of teaser on page`
+   ![Pages - Text Teaser on page](https://sitecorecontenthub.stylelabs.cloud/api/public/content/fc524f21c84740a1bd36a20bc3f64e80?v=0346b7da)
 
 <Alert status="success">
    <AlertIcon />
