@@ -14,7 +14,7 @@ In this tutorial, you will become familiar with the first steps in building a we
 
 ## Overview
 
-In XM Cloud, a site is a collection of one or more pages, and a page can have several components. Through this tutorial series we will be creating a new Company Dev site and building out pages and components for the site. You will use the XM Cloud tools and your local development environment to explore the creation of a new site.
+In XM Cloud, a [site](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-websites.html) is a collection of one or more [pages](https://doc.sitecore.com/xmc/en/users/xm-cloud/design-webpages.html), and a page can have several [components](https://doc.sitecore.com/xmc/en/users/xm-cloud/understanding-components-in-xm-cloud.html). Through this tutorial series we will be creating a new Company Dev site and building out pages and components for the site. You will use the XM Cloud tools and your local development environment to explore the creation of a new site.
 
 In this tutorial you wil do the following:
 
@@ -61,7 +61,7 @@ With the environment initially created, you can now create your first site in XM
 1. Name the site `Company Dev`.  
    ![Name new Site and Site Collection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/41287d8cc01e4dc8b32a4aede67c98c1?v=dc1b7223)
 
-1. Select a pre-configured language, in this case, `English`.
+1. Select a pre-configured [language](https://doc.sitecore.com/xmc/en/developers/xm-cloud/working-with-languages.html), in this case, `English`.
 
    <Alert status="info">
       <AlertIcon />
@@ -70,7 +70,7 @@ With the environment initially created, you can now create your first site in XM
 
 1. Click `Create site`, which will scaffold the website in the background. This will take a few minutes.
 
-   Once your site is scaffolded in the background, you can access it using XM Cloud Pages and start editing the content.
+   Once your site is scaffolded in the background, you can access it using [XM Cloud Pages](https://doc.sitecore.com/xmc/en/users/xm-cloud/working-with-pages.html) and start editing the content.
 
    ![Open Pages Editor](https://sitecorecontenthub.stylelabs.cloud/api/public/content/a178261c39d5449ba23564430b1671c8?v=66730068)
 
@@ -102,16 +102,16 @@ The init script initializes the `.env` file with everything necessary.
 
 ## Connect the App to the XM Cloud Instance
 
-As you may remember from the introduction in the previous tutorial, you need to use a GraphQL endpoint to query the content coming from XM Cloud. To connect to the endpoint, a few things need to be configured up front.
+As you may remember from the introduction in the previous tutorial, you need to use a [GraphQL endpoint](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/jss-graphql-api.html) to query the content coming from XM Cloud. To connect to the endpoint, a few things need to be configured up front.
 
 1. Navigate to the `.env` file within your solution under src\sxastarter, and copy it.
 
 1. Name it `.env.local`. We do this so that the file is ignored by git by default, so that you do not pass valuable configuration secrets into any repositories.
 
-You can connect using the delivery endpoint of Edge or to the preview endpoint of your CM instance.  
+You can connect using the delivery endpoint of [Edge](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-experience-edge-for-xm.html) or to the preview endpoint of your CM instance.  
 ![XM Cloud Architecture - Connect to Preview Endpoint](https://sitecorecontenthub.stylelabs.cloud/api/public/content/e703be66170a49268beb6564c4c34df7?v=5184aace)
 
-Any app showing content to the public must connect to the Edge Delivery Endpoint that is scaled and geographically distributed to serve the right performance. Only published content will be available here. For development purposes, you will connect to the preview endpoint as you do not need to care about publishing at this point, so created content is instantly available. This will simplify the development workflow. If you want to learn more about endpoints and the edge delivery architecture, check out the docs on [Experience Edge architecture](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html)
+Any app showing content to the public must connect to the Edge Delivery Endpoint that is scaled and geographically distributed to serve the right performance. Only [published content](https://doc.sitecore.com/xmc/en/users/xm-cloud/publishing-in-xm-cloud.html) will be available here. For development purposes, you will connect to the preview endpoint as you do not need to care about publishing at this point, so created content is instantly available. This will simplify the development workflow. If you want to learn more about endpoints and the edge delivery architecture, check out the docs on [Experience Edge architecture](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html)
 
 Now, you need to set the API key within `.env.local`. The API key should be already available within your XM Cloud instance.
 
@@ -158,6 +158,12 @@ Let’s change some content to verify you are in fact connected against the prev
 <Row columns={2}>
    <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
    <Link title="Create websites" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/create-websites.html" />
+   <Link title="Design webpages" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/design-webpages.html" />
+   <Link title="Understanding components in XM Cloud" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/understanding-components-in-xm-cloud.html" />
+   <Link title="Working with languages" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/working-with-languages.html" />
+   <Link title="Working with Pages" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/working-with-pages.html" />
+   <Link title="Publishing in XM Cloud" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/publishing-in-xm-cloud.html" />
+   <Link title="JSS GraphQL API" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/jss-graphql-api.html" />
 </Row>
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
