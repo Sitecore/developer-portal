@@ -1,21 +1,21 @@
 ---
 title: 'Tutorial: Create your first XM Cloud no-code component'
-description: 'In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Component builder'
+description: 'In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Components builder'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 ---
 
 ## Introduction - What You are Going to Learn
 
-In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Component builder. The walkthrough will not show all possible options, but will take you through a flow to define and lay out a new Component to use on your home page. You will learn:
+In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Components builder. The walkthrough will not show all possible options, but will take you through a flow to define and lay out a new Component to use on your home page. You will learn:
 
 - How to create a collection for your components
-- How to create a new Text Teaser component using the XM Cloud Component builder
+- How to create a new Text Teaser component using the XM Cloud Components builder
 - How to change the theme on the Text Teaser component
 - How to make the Text Teaser component available in the Pages editor for authors
 
 ## Overview
 
-Components are the visual, re-usable, building blocks to design web pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component in your project. We will use the XM Cloud component builder, exploring the no-code approach to building components.
+Components are the visual, re-usable, building blocks to design web pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component in your project. We will use the XM Cloud Components builder, exploring the no-code approach to building components.
 
 <Alert status="info">
    <AlertIcon />
@@ -62,7 +62,7 @@ In this tutorial you will focus on creating the initial definition of the compon
 
 ## Organizing components using collections
 
-To structure the components a bit, you can use collections. Collections help you to navigate the components in the Component builder, but also later in Pages. You will now create a new collection named "Basic Components" to hold any components you will create.
+To structure the components a bit, you can use collections. Collections help you to navigate the components in the Components builder, but also later in Pages. You will now create a new collection named "Basic Components" to hold any components you will create.
 
 1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
 
@@ -76,19 +76,19 @@ To structure the components a bit, you can use collections. Collections help you
 
 1. At the very top switch to **Tools**
 
-1. In the **Tools** page, select the **Components** card to launch the Component builder. You can see that there are already some components available.
+1. In the **Tools** page, select the **Components** card to launch the Components builder. You can see that there are already some components available.
 
-   ![Component Builder - Components overview](https://sitecorecontenthub.stylelabs.cloud/api/public/content/b9989ce4a43c4e89a765b1d553f57d66?v=1ad0d92b)
+   ![Components builder - Components overview](https://sitecorecontenthub.stylelabs.cloud/api/public/content/b9989ce4a43c4e89a765b1d553f57d66?v=1ad0d92b)
 
 1. On the top right, click **Add collection** to create a new collection.
 
-   ![Component Builder - Add new Collection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/514db03de4634f54a81b4ccdf6d6de97?v=e1d1710c)
+   ![Components builder - Add new Collection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/514db03de4634f54a81b4ccdf6d6de97?v=e1d1710c)
 
 1. Name this collection: **“Basic Components”**
 
 1. Click the **Save** button to complete the collection creation.
 
-   ![Component Builder - Collection created](https://sitecorecontenthub.stylelabs.cloud/api/public/content/514db03de4634f54a81b4ccdf6d6de97?v=e1d1710c)
+   ![Components builder - Collection created](https://sitecorecontenthub.stylelabs.cloud/api/public/content/514db03de4634f54a81b4ccdf6d6de97?v=e1d1710c)
 
 ## Create the component
 
@@ -103,13 +103,13 @@ Within this new collection, you will now create the new Component called “Text
       You can leave the other fields blank. The **Description** field is optional and the **Collection** field will default to the currently selected Collection so it will be stored in Basic Components as desired.
    </Alert>
 
-   ![Component Builder - Create Component](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f2105312107a4d04bacb73b8fda10206?v=09b3d415)
+   ![Components builder - Create Component](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f2105312107a4d04bacb73b8fda10206?v=09b3d415)
 
 1. Click on the **Save** button to complete creating the component definition. A message will display telling you that the component was created.
 
 1. Click on the **Click to start editing** link that is displayed at the top of the Component form. This will launch the canvas (or 'Section') view of the Text Teaser component where you can start adding elements in the builder.
 
-   ![Component Builder - Component Created](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1a2b7fe7076c45c8847a0db785f54999?v=df5b8c53)
+   ![Components builder - Component Created](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1a2b7fe7076c45c8847a0db785f54999?v=df5b8c53)
 
 ### Create the column layout for the Text Teaser component
 
@@ -122,7 +122,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
       This can be adjusted on the pane at the right side of the screen. For now leave it as it is.
    </Alert>
 
-   ![Component Builder - Section with Grid Layout](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f80922b7c24d4e209eef6735278ba2f7?v=da45206b)
+   ![Components builder - Section with Grid Layout](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f80922b7c24d4e209eef6735278ba2f7?v=da45206b)
 
 1. Click and drag your mouse across the canvas to create a left column for your Text Teaser.
 
@@ -131,7 +131,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
       By default, XM Cloud will create a **Block** element. You will want to change this to a **Card** in the following steps.
    </Alert>
 
-   ![Component Builder - Create the left Card](https://sitecorecontenthub.stylelabs.cloud/api/public/content/7709dabf176d4196b1afc9ace65673c7?v=89228ef6)
+   ![Components builder - Create the left Card](https://sitecorecontenthub.stylelabs.cloud/api/public/content/7709dabf176d4196b1afc9ace65673c7?v=89228ef6)
 
 1. Click on the newly created left column Block area to load the context bar above the area.
 
@@ -139,7 +139,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
 
 1. Select the **Card** element type from the pop-up menu.
 
-   ![Component Builder - Create Card](https://sitecorecontenthub.stylelabs.cloud/api/public/content/ccda9e471d3b491dbd903fac6d3612da?v=cdaecff4)
+   ![Components builder - Create Card](https://sitecorecontenthub.stylelabs.cloud/api/public/content/ccda9e471d3b491dbd903fac6d3612da?v=cdaecff4)
 
 <Alert status="warning">
    <AlertIcon />
@@ -148,7 +148,7 @@ Before we begin adding content, we want to ensure we can provide a two-column la
 
 1. Click and drag your mouse across the canvas to create a right column for your Text Teaser.
 
-   ![Component Builder - Create right column](https://sitecorecontenthub.stylelabs.cloud/api/public/content/0323149c70fa4ee9bd3010282ae25535?v=21f4f5a7)
+   ![Components builder - Create right column](https://sitecorecontenthub.stylelabs.cloud/api/public/content/0323149c70fa4ee9bd3010282ae25535?v=21f4f5a7)
 
 1. Click on the newly created right column Block area to load the context bar above the area.
 
@@ -171,7 +171,7 @@ We will start with the headings in the left column, and then add the element to 
 
 1. In the context menu, click on the **Add element** button to see the options for elements that can be inserted.
 
-   ![Component Builder - Add Heading 2](https://sitecorecontenthub.stylelabs.cloud/api/public/content/cbd2cfc0dc4a4415ba190e5b2e432672?v=622de512)
+   ![Components builder - Add Heading 2](https://sitecorecontenthub.stylelabs.cloud/api/public/content/cbd2cfc0dc4a4415ba190e5b2e432672?v=622de512)
 
 1. Select **Heading 2** to insert an H2 element to the Card.
 
@@ -183,7 +183,7 @@ We will start with the headings in the left column, and then add the element to 
 
 1. Click in the area below the Heading 2 element to add the Heading 3 underneath it.
 
-   ![Component Builder - Adding Heading 3](https://sitecorecontenthub.stylelabs.cloud/api/public/content/8da7d1dd78954757a14a6572ee8902e6?v=0e77d03f)
+   ![Components builder - Adding Heading 3](https://sitecorecontenthub.stylelabs.cloud/api/public/content/8da7d1dd78954757a14a6572ee8902e6?v=0e77d03f)
 
 1. Click on the right column Card to focus context on the right column.
 
@@ -193,7 +193,7 @@ We will start with the headings in the left column, and then add the element to 
 
 1. Click on the top part of the right Card to position the element.
 
-   ![Component Builder - Adding Paragraph](https://sitecorecontenthub.stylelabs.cloud/api/public/content/4d6646183b424926950780be4fc72ba6?v=0610f60e)
+   ![Components builder - Adding Paragraph](https://sitecorecontenthub.stylelabs.cloud/api/public/content/4d6646183b424926950780be4fc72ba6?v=0610f60e)
 
 1. Fill out the Heading 2, Heading 3, and Paragraph elements with some example content to test the layout.
 
@@ -202,7 +202,7 @@ We will start with the headings in the left column, and then add the element to 
       For the content, you can make up your own text or use a generator tool like [lorem ipsum](https://www.lipsum.com/).
    </Alert>
 
-   ![Component Builder - Edit Content](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1dc095d2a6bc4673ba57133a1c4e624e?v=3263ecd1)
+   ![Components builder - Edit Content](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1dc095d2a6bc4673ba57133a1c4e624e?v=3263ecd1)
 
 ## Apply Styling to the Component
 
@@ -213,19 +213,19 @@ At this point, the Text Teaser has an initial element structure but has not yet 
    You can also create your own themes, but that will be covered in a future tutorial. For now, we will use a theme that has already been created so that we can complete our initial component creation.
 </Alert>
 
-1. Staying in the XM Cloud Component builder interface, click on the 'canvas' or 'section' area of the Text Teaser component to focus on the entire component area.
+1. Staying in the XM Cloud Components builder interface, click on the 'canvas' or 'section' area of the Text Teaser component to focus on the entire component area.
 
-   ![Component Builder - Select Section](https://sitecorecontenthub.stylelabs.cloud/api/public/content/71a5455ff0034f58a7bf3719bc4e32df?v=d4249d7d)
+   ![Components builder - Select Section](https://sitecorecontenthub.stylelabs.cloud/api/public/content/71a5455ff0034f58a7bf3719bc4e32df?v=d4249d7d)
 
 1. Above the component, click on the **theme switcher** icon. This will change the right-side flyout to the **Themes** selection pane so that you can change your theme. The currently selected theme will be **Light theme** and you will see options for other themes available.
 
-   ![Component Builder - Open Theme Selection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f8035d12bca54434bc7466c4bcd191ee?v=42e89801)
+   ![Components builder - Open Theme Selection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f8035d12bca54434bc7466c4bcd191ee?v=42e89801)
 
 1. Scroll to the bottom of the **Themes** selection pane (if necessary) and select the **Dark theme**.
 
 1. Click on the **Apply** button to apply the **Dark theme** to the current component. This will update the display in the main editing area to show you the new theme.
 
-   ![Component Builder - Using Dark Theme](https://sitecorecontenthub.stylelabs.cloud/api/public/content/63773014b8374bc2a2f6061531097c33?v=cf94e4ef)
+   ![Components builder - Using Dark Theme](https://sitecorecontenthub.stylelabs.cloud/api/public/content/63773014b8374bc2a2f6061531097c33?v=cf94e4ef)
 
 <Alert status="info">
    <AlertIcon />
