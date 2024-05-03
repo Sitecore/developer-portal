@@ -3,21 +3,11 @@ title: "Sitecore Horizon 10.0.0"
 description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon/100/Sitecore_Horizon_1000
 ---
-
-Sitecore Horizon is the next generation Experience Management product for the Sitecore Experience Platform™.
-
-This release is focused on enhancing Horizon pages and content editing functionality and enabling integration with Sitecore DAM.
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    This version of Sitecore Horizon is compatible with Sitecore 10.0.
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore encourages customers to always install latest update of a given version to ensure latest fixes are included in their solution. See [all available versions here](/downloads/Sitecore_Horizon).
-  </Alert>
-  
+ 
+Sitecore Horizon is the next generation Experience Management product for the Sitecore Experience Platform.\
+Sitecore Horizon 10.0.0 is compatible with Sitecore Experience Platform 10.0.
+ 
+See [all available versions here](/downloads/Sitecore_Horizon).  
 
 ## Download options
 

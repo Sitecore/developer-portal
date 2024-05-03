@@ -3,8 +3,7 @@ title: "Sitecore Experience Accelerator 10.4.0"
 description: ""
 ---
 
-The Sitecore Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly.
-
+The Sitecore Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly.\
 Sitecore Experience Accelerator 10.4.0 is compatible with Sitecore Experience Platform 10.4.
 
 See [all available versions here](/downloads/Sitecore_Experience_Accelerator).
