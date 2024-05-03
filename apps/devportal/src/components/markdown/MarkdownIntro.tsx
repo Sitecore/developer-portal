@@ -5,7 +5,6 @@ type MarkdownIntroProps = CardProps & {
   title: string;
 };
 export const MarkdownIntro = ({ children, title, ...rest }: MarkdownIntroProps) => {
-  console.log(children);
   return (
     <Card variant={'outline'} bg="chakra-subtle-bg" py={4} px={2} size="sm" {...rest}>
       <CardHeader>
