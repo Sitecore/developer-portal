@@ -4,16 +4,9 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker/5x/Sitecore_Universal_Tracker_500.aspx
 ---
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    This version of the Universal Tracker is compatible with Sitecore 10.1.
-  </Alert>
+Universal Tracker 5.0.0 is compatible with Sitecore Experience Platform 10.1.
   
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore encourages customers to always install latest update of a given version to ensure latest fixes are included in their solution. See [all available versions here](/downloads/Sitecore_Universal_Tracker).
-  </Alert>
-  
+See [all available versions here](/downloads/Sitecore_Universal_Tracker).   
 
 ## Downloads
 

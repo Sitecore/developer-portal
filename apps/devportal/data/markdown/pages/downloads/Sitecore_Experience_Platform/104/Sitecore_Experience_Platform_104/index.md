@@ -4,8 +4,7 @@ title: "Sitecore Experience Platform 10.4"
 
 Sitecore Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability. 
 
-See [all available versions here](/downloads/Sitecore_Experience_Platform).\
-For developer documentation please refer to [Sitecore Documentation](https://doc.sitecore.com/xp/en/developers).
+See [all available versions here](/downloads/Sitecore_Experience_Platform).
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
@@ -43,7 +42,7 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
  | --- | --- |
  | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/sxp%2F10.4.0.010422.1755) | Link to the Sitecore Container Deployment Package on GitHub, containing Docker Compose and Kubernetes specification files for deploying Sitecore in development and production container environments. |
  | [Image and Tags List](https://github.com/Sitecore/docker-images/tree/master/tags) | Link to the official tags list (.md and .json format) of all published Sitecore images available on the Sitecore Container Registry (SCR). |
- | [Developer Workstation Deployment with Docker Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Developer_Workstation_Deployment_With_Docker_10_4_0.pdf) | **Document expected Apr 30 end-of-day!** Guide describing how to use Sitecore Containers with Docker Compose to deploy a developer workstation. |
+ | [Developer Workstation Deployment with Docker Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Developer_Workstation_Deployment_with_Docker_10_4_0.pdf) | Guide describing how to use Sitecore Containers with Docker Compose to deploy a developer workstation. |
  | [Production Environment Deployment with Kubernetes Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Production_Environment_Deployment_with_Kubernetes_10_0_4.pdf) | Guide describing how to use Sitecore Containers with Kubernetes to deploy to the Azure Kubernetes Service. |
  | [Upgrade Container Deployment Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Upgrade_Container_Deployment_Guide_10_4_0.pdf) | Guide describing how to use the Sitecore Container Deployment Package to upgrade the SQL Server databases of an existing Sitecore XP 10.0.X installation to 10.4.x. |
 
@@ -73,6 +72,7 @@ For developer documentation please refer to [Sitecore Documentation](https://doc
  | --- | --- |
  | [Release notes](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104/Release_Notes) | List of improvements and resolved issues implemented in the release. |
  | [Known issues](https://support.sitecore.com/kb?id=kb_search&kb_knowledge_base=3492d025db70dc109e54320a6896199f&spa=1&language=en&u_affected_software=sitecore_experience_platform) | Link to known issue articles on the Sitecore Knowledge Base. |
+ | [Developer Documentation](https://doc.sitecore.com/xp/en/developers) | Link to Sitecore developer documentation. |
  | [Assembly list](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore.Platform.Assemblies%2010.4.0%20rev.%20010422.zip) | Complete list of assemblies shipped with the release. |
  
 ## Client translations
