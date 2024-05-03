@@ -2,6 +2,7 @@
 title: 'Tutorial: How to Set Up XM Cloud'
 description: 'In this tutorial, we will go through the steps to learn the basics of XM Cloud and complete a sprint zero of setting up the XM Cloud projects and environments.'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
+menuOrder: 1
 ---
 
 ## What You are Going to Learn

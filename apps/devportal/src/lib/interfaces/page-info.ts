@@ -98,6 +98,7 @@ export type ChildPageInfo = {
   link: string;
   title: string;
   children?: ChildPageInfo[];
+  menuOrder?: number;
 };
 
 export type PartialData = {
