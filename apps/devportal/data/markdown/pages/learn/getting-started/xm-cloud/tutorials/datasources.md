@@ -22,7 +22,7 @@ To help authors create the content, you will need to set up a data model with th
 - Subheadline (Single Line Text)
 - Content (Rich Text)
 
-This data model is referred to as a 'data source' in XM Cloud. Data sources in XM Cloud can be either:
+This data model is referred to as a 'data source' in XM Cloud. [Data sources](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-your-content-from-an-xm-data-source.html) in XM Cloud can be either:
 
 - a piece of content stored inside the current site. e.g. `site/data/DatasourceFolder/DataSourceItem`
 - a piece of content stored inside the current page. e.g. `page/data/dataSourceItem`
@@ -111,7 +111,7 @@ These steps will create the Text Teaser template.
 
    <Alert status="info">
    <AlertIcon />
-   Leave the Base template with the default value (Standard template) for now. If you were creating a series of templates that inherited fields from each other, you might need to specify a base template to inherit from. The default Standard template will provide all the required fields your Text Teaser template will need so it is enough for the purpose of this tutorial.
+   Leave the Base template with the default value ([Standard template](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-standard-template.html)) for now. If you were creating a series of templates that inherited fields from each other, you might need to specify a base template to inherit from. The default Standard template will provide all the required fields your Text Teaser template will need so it is enough for the purpose of this tutorial.
    </Alert>
 
 1. Press the **Next** button to advance to the Location selection step.
@@ -201,7 +201,7 @@ The icon for the Text Teaser is fine for the purposes of this tutorial, but it w
 
 ### Configure Insert Options
 
-When an author tries to create a new content item, they are presented with the types of content that are allowed at that location. Insert Options allow you to specify what content options are available to the author. You will now configure the options for a Text Teaser Folder so that Authors can easily create new Text Teaser content items or create more Text Teaser Folders to structure their content even further.
+When an author tries to create a new content item, they are presented with the types of content that are allowed at that location. [Insert Options](https://doc.sitecore.com/xmc/en/developers/xm-cloud/insert-options.html) allow you to specify what content options are available to the author. You will now configure the options for a Text Teaser Folder so that Authors can easily create new Text Teaser content items or create more Text Teaser Folders to structure their content even further.
 
    <Alert status="info">
    <AlertIcon />
@@ -234,7 +234,7 @@ When an author tries to create a new content item, they are presented with the t
 
 ## Create content that can be used as a data source
 
-You have now created your templates and configured them for the authors. You also created the module needed to make the feature-related items available to a site. In a real XM Cloud development project, there would be many different templates and folders defined in a module. At this stage, a team would usually need to configure the module to create the site-specific structure with all of those templates and folders.
+You have now created your templates and configured them for the authors. You also created the module needed to make the feature-related items available to a site. In a real XM Cloud development project, there would be many different templates and folders defined in a module. At this stage, a team would usually need to configure the module to create the site-specific structure with all of those templates and folders and [add the module to an existing site collection or site](https://doc.sitecore.com/xmc/en/developers/xm-cloud/add-a-module-to-an-existing-site-collection-or-site.html).
 
 For the purpose of this tutorial, however, you will skip forward a few steps and manually create the structure since only the Text Teaser template is being used right now.
 
@@ -336,7 +336,7 @@ Before releasing this to the authoring team, you need to ensure that the Text Te
 
 ### Map component heading element to Headline text field
 
-The component that was created [in the previous tutorial](create-a-component) uses static data in XM Cloud Components. As part of using the new data template, you need to map this Text Teaser data source to the visual elements in XM Cloud Components. You are going to start by mapping the headline text field.
+The component that was created [in the previous tutorial](create-a-component) uses static data in XM Cloud Components. As part of using the new data template, you need to [map this Text Teaser data source to the visual elements](https://doc.sitecore.com/xmc/en/users/xm-cloud/map-data-from-an-xm-data-source-to-a-component.html) in XM Cloud Components. You are going to start by mapping the headline text field.
 
 1. Switch to the **Components** tab in the top menu to launch the Components visual builder.
 1. Scroll to the section labelled **Basic Components**. This section will list all the components you have made available in the Basic Components section. Currently, there is only the **Text Teaser**.
@@ -478,8 +478,13 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
 
 <Row columns={2}>
    <Link title="Data Templates" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html" />
+   <Link title="Data definition and template overview" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-definition-and-template-overview.html" />
+   <Link title="The Standard Template" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-standard-template.html" />
    <Link title="Standard values for data template fields" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/standard-values-for-data-template-fields.html" />
    <Link title="Insert Options" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/insert-options.html" />
+   <Link title="Add a module to an existing site collection or site" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/add-a-module-to-an-existing-site-collection-or-site.html" />
+   <Link title="Get your content from an XM data source" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/get-your-content-from-an-xm-data-source.html" />
+   <Link title="Map data from an XM data source to a component" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/map-data-from-an-xm-data-source-to-a-component.html" />
 </Row>
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
