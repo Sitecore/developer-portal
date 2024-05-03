@@ -5,13 +5,14 @@ openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/2
 menuOrder: 2
 ---
 
-## Introduction - What You are Going to Learn
+<Introduction title="What You are Going to Learn">
 
 In this tutorial, you will become familiar with the first steps in building a website in XM Cloud. You will learn:
 
 - How to create a new Site in your XM Cloud environment
 - How to initialize your Next.js application in your local development environment
 - How to connect a Next.js application to your hosted XM Cloud environment
+</Introduction>
 
 ## Overview
 

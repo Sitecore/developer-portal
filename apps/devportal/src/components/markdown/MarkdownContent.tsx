@@ -8,6 +8,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
+import { MarkdownIntro } from './MarkdownIntro';
 
 const { a11yDark } = require('react-syntax-highlighter/dist/cjs/styles/hljs');
 
@@ -62,6 +63,7 @@ function CustomMdx(children: string) {
         HStack,
         Image: ImageModal,
         NewsletterStory,
+        Introduction: MarkdownIntro,
         Table,
         Thead,
         Tbody,
