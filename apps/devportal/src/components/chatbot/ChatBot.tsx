@@ -30,12 +30,14 @@ export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
   const [question, setQuestion] = useState('');
   const [personaContext, setPersonaContext] = useState<IPersonalizedExperience | undefined>();
   const [messages, setMessage] = useState<Message[]>(initialMessage);
+  //const [searchData, setSearchData] = useState('Rob Earlam');
   const isBlank = question === '';
 
   const requestBody = {
     query: question,
     history: messages,
     context: personaContext,
+    searchData: []
   };
 
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
@@ -133,16 +135,23 @@ export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
 
     await storeQuestionPersonalize(question);
 
+    const searchResponse: Response = await fetch('/searchAPI', {
+      method: 'POST',
+      body: JSON.stringify({ query: question }),
+    });
+    const searchResult = await searchResponse.json();
+    requestBody.searchData = searchResult.answers;
+
     // TODO: Move this to a lib/service
-    const result: Response = await fetch('/chat', {
+    const chatResult: Response = await fetch('/chat', {
       method: 'POST',
       body: JSON.stringify(requestBody),
     });
 
-    if (!result.ok) throw new Error(result.statusText);
-    if (result.body == null) throw new Error('No body in response');
+    if (!chatResult.ok) throw new Error(chatResult.statusText);
+    if (chatResult.body == null) throw new Error('No body in Chat response');
 
-    const reader = result.body.getReader();
+    const reader = chatResult.body.getReader();
     const decoder = new TextDecoder();
 
     // Set variable to fill using the streaming data

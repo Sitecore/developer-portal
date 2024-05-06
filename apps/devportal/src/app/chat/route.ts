@@ -1,5 +1,4 @@
 import { IPersonalizedExperience } from '@/src/components/chatbot/IExperienceResult';
-import { CallSearch } from '@/src/lib/chatbot/search';
 import { NextResponse } from 'next/server';
 import { Message, MessageType } from '../../types/Message';
 import { AzureOpenAI } from './azure-openai';
@@ -8,6 +7,7 @@ export interface IChatGPTPayload {
   query: string;
   context: IPersonalizedExperience | undefined;
   history: Message[];
+  searchData: string[];
 }
 
 export async function POST(request: Request) {
@@ -16,26 +16,14 @@ export async function POST(request: Request) {
     return new NextResponse('Please provide a query parameter', { status: 400 });
   }
 
-  //start by calling the Search API with our query
-  const searchParams = {
-    path: '/',
-    uuid: '1234',
-    term: data.query
-  };
-  const searchResponse = await CallSearch(searchParams);
-  console.log(searchResponse);
-
-  const formatMessage = ' Format this answer as MarkDown, but dont mention it in the reponse';
-
-  // Use Context to fill in the LLM with more context data
+  // Initialise system and Personalize context.
   const messages = [{ role: 'system', content: 'You are a helpful assistant, designed to help Developers building with Sitecore.' }];
-
   messages.push({ role: 'system', content: `When generating responses, use the follow JSON data as additional context: ${JSON.stringify(data.context, null, 2)}` });
 
-  const formattedSearchResponse = JSON.stringify(searchResponse);
-  if (formattedSearchResponse)
-    messages.push({ role: 'system', content: `When generating responses you will only use the following data to answer questions. Never answer questions from your own knowledge: ${formattedSearchResponse}` });
+  // handle the search data
+  messages.push({ role: 'system', content: `When generating responses you will only use the following data to answer questions. Never answer questions from your own knowledge: ${data.searchData}` });
 
+  // Load history of chat for context
   if (data.history?.length > 0) {
     for (const item of data.history) {
       if (item.type == MessageType.Assistant) {
@@ -45,15 +33,15 @@ export async function POST(request: Request) {
       }
     }
   }
-  messages.push({ role: 'user', content: data.query + formatMessage });
 
-  console.log('Chatbot Request', messages);
+  // Add the current user question.
+  messages.push({ role: 'user', content: data.query + ' Format this answer as MarkDown, but dont mention it in the reponse' });
 
+  // Call A-OI
   const azure = new AzureOpenAI();
-
   const stream = await azure.streamChatCompletion({
     messages: messages,
-    stream: true, // stream the response
+    stream: true,
   });
 
   return new Response(stream);

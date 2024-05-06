@@ -15,19 +15,13 @@ export async function QuerySearchApi({ query }: QuerySearchApiParams): Promise<Q
 
 export async function BindResponse(response: Response): Promise<QuerySearchApiResult> {
   const data = await response.json();
-
-  console.log(JSON.stringify(data));
-
-  const entries = data?.widgets[0]?.content.map((entry: any) => {
-    return {
-      id: entry.id,
-      title: entry.title,
-      name: entry.title,
-      description: JSON.stringify(entry.description),
-    };
+  const answers = data?.widgets[0]?.content.map((entry: any) => {
+    return JSON.stringify(entry.description);
   }) ?? [];
 
+  console.log(answers);
+
   return {
-    entries
+    answers
   }
 }

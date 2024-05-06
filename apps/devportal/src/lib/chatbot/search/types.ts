@@ -10,7 +10,7 @@ export type QuerySearchApiParams = {
 }
 
 export type QuerySearchApiResult = {
-  entries: SearchResult[];
+  answers: string[];
 }
 
 export type SearchChangeLogQueryParams = {
