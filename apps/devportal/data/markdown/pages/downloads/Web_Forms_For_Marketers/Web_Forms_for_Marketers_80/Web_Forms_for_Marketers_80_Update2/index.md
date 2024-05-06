@@ -7,11 +7,9 @@ origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/Web_Forms_for
   <Alert variant='warning' mb={4}>
     <AlertIcon />
 
-
 Looking for **a different update**? See [all available WFFM 8.0 updates](/downloads/Web_Forms_For_Marketers/Web_Forms_for_Marketers_80).
 
   </Alert>
-
 
 ## Downloads
 
@@ -28,11 +26,11 @@ Looking for **a different update**? See [all available WFFM 8.0 updates](/downlo
 
 ## Release Info
 
-| Resource                                                                                             | Description                                                                             |
-| ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [Release notes](/downloads/Web_Forms_For_Marketers/Web_Forms_for_Marketers_80/Release_Notes#update2) | A list of features, improvements, and fixes that have been implemented in this release. |
-| [Installation Guide](/~/media/CA0E617E3937492CAAADA24CE2407F87.ashx)                                 | The installation procedure for the WFFM module.                                         |
-| [Documentation](https://doc.sitecore.com/legacy-docs/web-forms-for-marketers-8.0.pdf)                | Documentation for the WFFM module.                                                      |
+| Resource                                                                                                                                                                                                              | Description                                                                             |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [Release notes](/downloads/Web_Forms_For_Marketers/Web_Forms_for_Marketers_80/Release_Notes#update2)                                                                                                                  | A list of features, improvements, and fixes that have been implemented in this release. |
+| [Installation Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/8%200/Sitecore%20Experience%20Platform%208%20update2/Non-secure/WFFM%2080%20Update%202%20Installation%20Guide.pdf) | The installation procedure for the WFFM module.                                         |
+| [Documentation](https://doc.sitecore.com/legacy-docs/web-forms-for-marketers-8.0.pdf)                                                                                                                                 | Documentation for the WFFM module.                                                      |
 
 ## Links
 
