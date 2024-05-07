@@ -43,11 +43,6 @@ const redirects = [
     destination: '/trials',
     permanent: true,
   },
-  {
-    source: '/~/media/:uid(.*)', // Match any path after "/~/media/"
-    destination: '/api/redirect?type=download&uid=:uid', // Redirect to the specified destination
-    permanent: false, // Set to true for a permanent redirect (301)
-  },
 ];
 
 const nextConfig = {
