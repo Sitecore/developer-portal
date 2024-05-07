@@ -25,7 +25,11 @@ export function buildSearchQuery({ path, uuid, term }: SearchChangeLogQueryParam
             "925876",
             "856095",
             "878961",
-            "848618"
+            "848618",
+            "992816",
+            "992815",
+            "992814",
+            "992812"
           ],
           "search": {
             "content": {},
@@ -50,6 +54,7 @@ export function buildSearchQuery({ path, uuid, term }: SearchChangeLogQueryParam
 
 function cleanTerm(term: string) {
   return term.replace(/[sS]itecore/g, '')
+    .replace(/[sS][uU][gG][cC][oO][nN]/g, '');
 }
 
 export function buildContextNode({ path, uuid }: { path: string, uuid: string | undefined }) {
