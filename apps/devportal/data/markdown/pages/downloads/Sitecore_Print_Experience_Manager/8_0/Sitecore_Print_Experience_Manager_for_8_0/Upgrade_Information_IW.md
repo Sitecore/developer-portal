@@ -1,12 +1,12 @@
 ---
-title: "Upgrade Information"
-description: ""
+title: 'Upgrade Information'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/8_0/Sitecore_Print_Experience_Manager_for_8_0/Upgrade_Information_IW.aspx
 ---
 
 # Upgrade information APS 1.4 to PXM 8.0 for Sitecore XP 8.0
 
- | **Note:**<br /><br />All items in core database and the templates in the master database will be merged (installation options merge/merge). This means that the versions of existing APS items will be overwritten. (If custom access rights/ template field values have been changed, they will be overwritten).<br /><br /> |
+| **Note:**<br /><br />All items in core database and the templates in the master database will be merged (installation options merge/merge). This means that the versions of existing APS items will be overwritten. (If custom access rights/ template field values have been changed, they will be overwritten).<br /><br /> |
 
 **PXM package**
 
@@ -18,8 +18,8 @@ Installation of the new PXM version will rename the PrintStudio.config to PrintS
 
 You need to change the logger name to Sitecore.PXM.Diagnostics:
 
-[![PXM logger](/~/media/4E0FDC4323C74966AEDD009F1A020B2D.ashx?la=en)](/~/media/4E0FDC4323C74966AEDD009F1A020B2D.ashx?la=en)
+[![PXM logger](/images/LoggerPXM.png)](/images/LoggerPXM.png)
 
 **PXM Windows Services configurations**
 
- | **Note:**<br /><br />When you upgrade the services, the configuration files are overwritten. Therefore it is recommended to backup or rename the InDesignProcessingService.exe.config and DashBoardServer.exe.config file from the previous version in order to keep your settings values and paths.<br /><br /> |
+| **Note:**<br /><br />When you upgrade the services, the configuration files are overwritten. Therefore it is recommended to backup or rename the InDesignProcessingService.exe.config and DashBoardServer.exe.config file from the previous version in order to keep your settings values and paths.<br /><br /> |
