@@ -63,7 +63,6 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
   const fileData = getFileData(pagesDirectory, `${relativePath}`);
   const meta = fileData.data as MarkdownMeta;
   const content = await ParseContent(Buffer.from(fileData.content));
-  const fileName = `${repoUrl}/data/markdown/pages/${relativePath}/index.md`;
   const pageInfo = {
     hasInPageNav: true, // default to true, override in markdown
     ...meta,
@@ -73,7 +72,6 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
     youtube: [],
     twitter: [],
     sitecoreCommunity: {},
-    fileName: fileName,
     content: fileData.content,
     parsedContent: content?.result.compiledSource,
     headings: content?.headings,
