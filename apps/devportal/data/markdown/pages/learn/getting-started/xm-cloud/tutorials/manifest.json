@@ -19,6 +19,10 @@
         {
           "title": "Create a site",
           "path": "create-a-site"
+        },
+        {
+          "title": "Create Component Data Sources",
+          "path": "datasources"
         }
       ]
     }
