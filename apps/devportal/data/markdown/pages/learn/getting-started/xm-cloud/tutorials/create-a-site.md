@@ -12,7 +12,8 @@ In this tutorial, you will become familiar with the first steps in building a we
 - How to create a new Site in your XM Cloud environment
 - How to initialize your Next.js application in your local development environment
 - How to connect a Next.js application to your hosted XM Cloud environment
-  </Introduction>
+
+</Introduction>
 
 ## Overview
 
