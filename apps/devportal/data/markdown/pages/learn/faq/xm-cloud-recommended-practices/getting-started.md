@@ -20,5 +20,4 @@ cdpTags: ['xm-cloud']
   <Link title="Creating a Site" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site" />
   <Link title="Component Design Best Practices" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/component-design-best-practices" />
   <Link title="Creating New Components" link="/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components" />
-  <Link title="Working with Experience Edge Rate Limits and Caching" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/rate-limits-and-caching" />
 </Row>
