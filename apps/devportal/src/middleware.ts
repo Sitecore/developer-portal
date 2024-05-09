@@ -1,13 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { mediaHandler } from './middlewares/mediaHandler';
+import { stackMiddlewares } from './middlewares/stackHandler';
+import { underscore } from './middlewares/underscore';
 
-// Only run on requests starting with /downloads
-export const config = {
-  matcher: '/downloads/:path*',
-};
-
-export default function middleware(req: NextRequest) {
-  // Redirect to correct URL when spaces are used in the URL
-    if (req.nextUrl.toString().includes('%20')) {
-      return NextResponse.redirect(new URL(req.nextUrl.toString().replaceAll('%20', '_')));
-    }
-}
+const middlewares = [underscore, mediaHandler];
+export default stackMiddlewares(middlewares);
