@@ -4,6 +4,7 @@ title: 'Upgrades'
 hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
+
 <Alert status="info">
   <AlertIcon />
     The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
@@ -16,7 +17,7 @@ Sitecore will deliver XM Cloud as a cloud-native service, so all aspects of the 
 ## Will upgrading my current XM/XP now to the latest version, prepare me for moving into the XM Cloud solution later?
 
 By upgrading to Sitecore Experience Manager 10.2 now, you will be better positioned to transition to XM Cloud because XM Cloud will use a derivative of the 10.2 release. However, note that XM Cloud will only support a headless Experience Manager implementation using the Sitecore JavaScript Rendering SDK (JSS), publishing to Sitecore Experience Edge. If your current XM/XP site is MVC-based, you will need to convert it to a JSS and Experience Edge-based implementation before it can be run in XM Cloud.  
-Besides implementing XM as a headless CMS, you will also need to ensure that you are not using XM capabilities which will not be available with XM Cloud. Some examples of these capabilities are custom Solr indexes and use of Sitecore Forms. Sitecore Experience Manager 10.3 is coming soon, so definitely upgrading to 10.3 will be a better solution.
+Besides implementing XM as a hybrid headless CMS, you will also need to ensure that you are not using XM capabilities which will not be available with XM Cloud. Some examples of these capabilities are custom Solr indexes and use of Sitecore Forms. Sitecore Experience Manager 10.3 is coming soon, so definitely upgrading to 10.3 will be a better solution.
 
 ## Will XM Cloud’s automatic updates to Experience Manager break my Experience Manager customizations?
 
@@ -39,4 +40,4 @@ Sitecore will notify customers and partners in advance of the releases whenever 
 
 ## Will Data Exchange Framework be available?
 
-Adoption and usage scenarios with XM Cloud and Data Exchange Framework are currently being evaluated.
+At this time Data Exchange Framework (DEF) is not the recommended approach for recommendation. For a better integration experience, Sitecore offers [Sitecore Connect](/integrations/connect) as a low-code/no-code integration experience to connect your Sitecore applications to other systems.
