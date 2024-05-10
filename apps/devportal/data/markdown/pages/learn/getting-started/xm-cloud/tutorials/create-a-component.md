@@ -10,7 +10,6 @@ In this tutorial, we will go through the steps to create a Text Teaser component
 
 - How to create a collection for your components
 - How to create a new Text Teaser component using the XM Cloud Components builder
-- How to change the theme on the Text Teaser component
 - How to make the Text Teaser component available in the Pages editor for authors
 
 ## Overview
@@ -26,7 +25,6 @@ In this tutorial you will do the following:
 
 1. Build a collection to organize components
 1. Define the layout of a new XM Cloud component called Text Teaser
-1. Apply styling to the component using out-of-the-box themes
 1. Make the component available to editors
 1. Place the component into your existing webpage
 
@@ -204,33 +202,6 @@ We will start with the headings in the left column, and then add the element to 
 
    ![Components builder - Edit Content](https://sitecorecontenthub.stylelabs.cloud/api/public/content/1dc095d2a6bc4673ba57133a1c4e624e?v=3263ecd1)
 
-## Apply Styling to the Component
-
-At this point, the Text Teaser has an initial element structure but has not yet been styled with a theme. You will now learn how to apply an existing theme to the component.
-
-<Alert status="info">
-   <AlertIcon />
-   You can also create your own themes, but that will be covered in a future tutorial. For now, we will use a theme that has already been created so that we can complete our initial component creation.
-</Alert>
-
-1. Staying in the XM Cloud Components builder interface, click on the 'canvas' or 'section' area of the Text Teaser component to focus on the entire component area.
-
-   ![Components builder - Select Section](https://sitecorecontenthub.stylelabs.cloud/api/public/content/71a5455ff0034f58a7bf3719bc4e32df?v=d4249d7d)
-
-1. Above the component, click on the **theme switcher** icon. This will change the right-side flyout to the **Themes** selection pane so that you can change your theme. The currently selected theme will be **Light theme** and you will see options for other themes available.
-
-   ![Components builder - Open Theme Selection](https://sitecorecontenthub.stylelabs.cloud/api/public/content/f8035d12bca54434bc7466c4bcd191ee?v=42e89801)
-
-1. Scroll to the bottom of the **Themes** selection pane (if necessary) and select the **Dark theme**.
-
-1. Click on the **Apply** button to apply the **Dark theme** to the current component. This will update the display in the main editing area to show you the new theme.
-
-   ![Components builder - Using Dark Theme](https://sitecorecontenthub.stylelabs.cloud/api/public/content/63773014b8374bc2a2f6061531097c33?v=cf94e4ef)
-
-<Alert status="info">
-   <AlertIcon />
-   You have now learned how to apply a theme, but the Dark theme selected doesn't fit with the requirements that were provided for the design. In a later tutorial, you will learn how to create your own custom theme.
-</Alert>
 
 ## Make the Component available to authors
 
@@ -263,11 +234,11 @@ At this point we have the Text Teaser component layout defined, with some basic 
       This validates that the component is available to authors. If it does not display in this list, then the component may note have been Staged or Published yet.
    </Alert>
 
-   ![Pages - Choose the Components to add to the page](https://sitecorecontenthub.stylelabs.cloud/api/public/content/efa421c4da2b4203a62a41f4394de68a?v=acca803d)
+   ![Pages - Choose the Components to add to the page](https://sitecorecontenthub.stylelabs.cloud/api/public/content/ae796b8cca15429aaee9275ef31b047c?v=29e6d8c4)
 
 1. Drag the component onto the home page canvas below the title. The component will be added to the page.
 
-   ![Pages - Text Teaser on page](https://sitecorecontenthub.stylelabs.cloud/api/public/content/fc524f21c84740a1bd36a20bc3f64e80?v=0346b7da)
+   ![Pages - Text Teaser on page](https://sitecorecontenthub.stylelabs.cloud/api/public/content/08467da2714547b8a1041eaa4d643fde?v=f90f38e3)
 
 <Alert status="success">
    <AlertIcon />
