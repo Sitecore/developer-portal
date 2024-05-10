@@ -15,7 +15,8 @@ export async function POST(request: Request) {
   const searchParams = {
     path: '/chatbot',
     uuid: "1234",
-    term: data.query
+    term: data.query,
+    sources: process.env.NEXT_PUBLIC_CHATBOT_SEARCH_SOURCES?.split(',') || []
   };
   const searchResponse = await CallSearch(searchParams);
   const formattedSearchResponse = JSON.stringify(searchResponse)

@@ -1,6 +1,6 @@
 import { SearchChangeLogQueryParams } from "./types";
 
-export function buildSearchQuery({ path, uuid, term }: SearchChangeLogQueryParams) {
+export function buildSearchQuery({ path, uuid, term, sources }: SearchChangeLogQueryParams) {
   const contextNode = buildContextNode({ path, uuid });
   return `
   {
@@ -10,34 +10,15 @@ export function buildSearchQuery({ path, uuid, term }: SearchChangeLogQueryParam
       "items": [
         {
           "entity": "content",
-          "rfk_id": "rfkid_7",
-          "sources": [
-            "813854",
-            "813856",
-            "813862",
-            "813864",
-            "813866",
-            "813870",
-            "813872",
-            "819952",
-            "823430",
-            "848150",
-            "925876",
-            "856095",
-            "878961",
-            "848618",
-            "992816",
-            "992815",
-            "992814",
-            "992812"
-          ],
+          "rfk_id": "rfkid_chatbot",
+          "sources": ${JSON.stringify(sources)},
           "search": {
             "content": {},
             "limit": 5,
             "sort": {
               "value": [
                   {
-                      "name": "created_at_desc"
+                      "name": "suggested"
                   }
               ]
             },

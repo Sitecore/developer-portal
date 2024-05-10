@@ -19,4 +19,5 @@ export type SearchChangeLogQueryParams = {
   offset?: number;
   uuid?: string;
   term: string;
+  sources: string[];
 }
