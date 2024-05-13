@@ -24,7 +24,7 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
   basePath = config.path;
 
   return (
-    <React.Fragment>
+    <Box mt={4}>
       {config.enableSearch && (
         <Hide below="md">
           <SidebarSearch config={config} onFocus={() => setSearchActive(true)} onBlur={() => setSearchActive(false)} />
@@ -54,7 +54,7 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
 
       {/* Mobile */}
       <DropDownMenu config={config} key={router.asPath} />
-    </React.Fragment>
+    </Box>
   );
 };
 

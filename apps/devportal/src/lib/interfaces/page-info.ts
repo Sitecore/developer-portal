@@ -80,6 +80,7 @@ export type SidebarNavigationConfig = {
   showRootAsSections?: boolean;
   enableSearch?: boolean;
   enableBreadcrumb?: boolean;
+  enableNextPrevious?: boolean;
   routes: SidebarNavigationItem[];
 };
 
@@ -97,6 +98,7 @@ export type ChildPageInfo = {
   link: string;
   title: string;
   children?: ChildPageInfo[];
+  menuOrder?: number;
 };
 
 export type PartialData = {

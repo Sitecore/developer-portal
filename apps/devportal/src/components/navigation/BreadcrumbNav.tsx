@@ -3,6 +3,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { appendPathToBasePath } from '../../../../../packages/ui/src/lib/utils/stringUtil';
+import useSidebarNav from '../hooks/useSidebarNav';
 
 export interface BreadcrumbNavProps {
   enabled?: boolean;
@@ -23,6 +24,7 @@ const findRoute = (routes: SidebarNavigationItem[], path: string): SidebarNaviga
 
 const BreadcrumbNav = ({ config, currentPage, enabled = false }: BreadcrumbNavProps) => {
   const router = useRouter();
+  const { currentItem } = useSidebarNav(currentPage, config);
 
   if (!enabled || router.asPath == config.path) return null;
 
@@ -30,15 +32,16 @@ const BreadcrumbNav = ({ config, currentPage, enabled = false }: BreadcrumbNavPr
   return (
     <Breadcrumb>
       <BreadcrumbItem>
-        <BreadcrumbLink href={config.path}>Downloads</BreadcrumbLink>
+        <BreadcrumbLink href={config.path}>{config.title}</BreadcrumbLink>
       </BreadcrumbItem>
 
       {urlSegments.length > 1 &&
         urlSegments
           .map((segment, index) => {
             const matchingRoute = findRoute(config.routes, segment);
+            const isCurrent = router.asPath.endsWith(segment);
 
-            if (matchingRoute) {
+            if (matchingRoute && !isCurrent) {
               return (
                 <BreadcrumbItem key={index}>
                   <BreadcrumbLink as={NextLink} href={appendPathToBasePath(config.path, matchingRoute.path)}>
@@ -51,7 +54,7 @@ const BreadcrumbNav = ({ config, currentPage, enabled = false }: BreadcrumbNavPr
           .filter(Boolean)}
 
       <BreadcrumbItem isCurrentPage>
-        <BreadcrumbLink href="#">{currentPage.title}</BreadcrumbLink>
+        <BreadcrumbLink href="#">{currentItem?.title}</BreadcrumbLink>
       </BreadcrumbItem>
     </Breadcrumb>
   );

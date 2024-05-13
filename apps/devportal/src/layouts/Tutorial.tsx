@@ -9,6 +9,7 @@ import Layout from '@src/layouts/Layout';
 import { useRouter } from 'next/router';
 import GithubContributionNotice from '../components/common/contribute';
 import { ArticlePaging } from '../components/navigation/ArticlePaging';
+import { ArticlePagingNext } from '../components/navigation/ArticlePagingNext';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
@@ -26,7 +27,7 @@ type ArticlePageProps = {
   customNavPager?: React.ReactNode;
 };
 
-const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager, sidebarConfig }: ArticlePageProps) => {
+const Tutorial = ({ pageInfo, partials, partialGroups, promoAfter, promoBefore, customNav, customNavPager, sidebarConfig }: ArticlePageProps) => {
   const router = useRouter();
   if (!pageInfo) return <>No pageInfo found</>;
 
@@ -48,7 +49,7 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
           <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
           <PromoList data={promoBefore} />
           <MarkDownContent content={pageInfo.parsedContent} partialGroups={partialGroups} partials={partials} />
-          <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
+          <ArticlePagingNext enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
 
           <GithubContributionNotice pageInfo={pageInfo} />
           {customNavPager}
@@ -61,4 +62,4 @@ const ArticlePage = ({ pageInfo, partials, partialGroups, promoAfter, promoBefor
   );
 };
 
-export default ArticlePage;
+export default Tutorial;
