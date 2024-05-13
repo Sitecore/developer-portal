@@ -6,17 +6,17 @@ hasSubPageNav: true
 cdpTags: ['xm', 'personalize']
 ---
 
-## Will changing my infrastructure to use Edge+Vercel instead of CDs, secure that my application won&#39;t require further changes when moving into XM Cloud?
+### Will changing my infrastructure to use Edge+Vercel instead of CDs, secure that my application won&#39;t require further changes when moving into XM Cloud?
 
 This will not necessarily secure the application by default. When moving to SaaS there are some components of the Sitecore XM Solution that the customer will have to give up control over to move to SaaS. So, no.
 
 Some examples of XM capabilities that will not be available in XM Cloud are custom Solr indexes and use of Sitecore Forms.
 
-## I already pay for Vercel for other applications we have, can I use my Vercel with XP2XMP?
+### I already pay for Vercel for other applications we have, can I use my Vercel with XP2XMP?
 
 You can use your own Vercel subscription with XP2XMP is you are implementing a headless CMS.
 
-## Why do I need to change to Edge/Vercel, when I only need a presence in my local region? And what would the benefits be?
+### Why do I need to change to Edge/Vercel, when I only need a presence in my local region? And what would the benefits be?
 
 Vercel combines the best developer experience with an obsessive focus on end-user performance. Vercel&#39;s platform enables frontend teams to do their best work.
 
