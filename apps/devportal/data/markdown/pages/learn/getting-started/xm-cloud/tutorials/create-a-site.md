@@ -3,6 +3,7 @@ title: 'Tutorial: How to Create a Site and Connect your App'
 description: 'In this tutorial, you will become familiar with setting up a site, setting up the dev environment to support building that site, and how to connect your codebase that runs on your local rendering host to the preview endpoint of XM Cloud.'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 menuOrder: 2
+pageType: 'tutorial'
 ---
 
 <Introduction title="What You are Going to Learn">
@@ -156,20 +157,14 @@ Let’s change some content to verify you are in fact connected against the prev
 </Alert>
 
 ### Related XM Cloud Documentation
-
-<Row columns={2}>
-   <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
-   <Link title="Create websites" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/create-websites.html" />
-   <Link title="Design webpages" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/design-webpages.html" />
-   <Link title="Understanding components in XM Cloud" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/understanding-components-in-xm-cloud.html" />
-   <Link title="Working with languages" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/working-with-languages.html" />
-   <Link title="Working with Pages" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/working-with-pages.html" />
-   <Link title="Publishing in XM Cloud" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/publishing-in-xm-cloud.html" />
-   <Link title="JSS GraphQL API" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/jss-graphql-api.html" />
-</Row>
+- [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
+- [Create websites](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-websites.html)
+- [Design webpages](https://doc.sitecore.com/xmc/en/users/xm-cloud/design-webpages.html)
+- [Understanding components in XM Cloud](https://doc.sitecore.com/xmc/en/users/xm-cloud/understanding-components-in-xm-cloud.html)
+- [Working with languages](https://doc.sitecore.com/xmc/en/developers/xm-cloud/working-with-languages.html)
+- [Working with Pages](https://doc.sitecore.com/xmc/en/users/xm-cloud/working-with-pages.html)
+- [Publishing in XM Cloud](https://doc.sitecore.com/xmc/en/users/xm-cloud/publishing-in-xm-cloud.html)
+- [JSS GraphQL API](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/jss-graphql-api.html)
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
-
-<Row columns={2}>
-   <Link title="Creating a Site" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site" />
-</Row>
+- [Creating a Site](/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site)

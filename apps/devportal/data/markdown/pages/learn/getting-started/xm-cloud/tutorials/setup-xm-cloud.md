@@ -3,6 +3,7 @@ title: 'Tutorial: How to Set Up XM Cloud'
 description: 'In this tutorial, we will go through the steps to learn the basics of XM Cloud and complete a sprint zero of setting up the XM Cloud projects and environments.'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 menuOrder: 1
+pageType: 'tutorial'
 ---
 
 <Introduction title="What You are Going to Learn">
@@ -112,22 +113,18 @@ Once the provisioning and build process are finished, the deployment starts. The
 
 ### Related XM Cloud Documentation
 
-<Row columns={2}>
-   <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
-   <Link title="Introduction to the Sitecore Cloud Portal" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
-   <Link title="Sitecore Cloud Portal roles" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/roles.html" />
-   <Link title="Deploying XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html" />
-   <Link title="XM Cloud Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
-   <Link title="Manage an XM Cloud environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html" />
-   <Link title="XM Cloud Deploy API" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html" />
-   <Link title="Creating an XM Cloud Project using the Sitecore CLI" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--creating-an-xm-cloud-project-using-the-sitecore-cli.html" />
-   <Link title="Serialization in XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/serialization-in-sitecore.html" />
-   <Link title="Experience Edge architecture" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html" />
-   <Link title="Creating a source control connection with GitHub" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-connections-for-source-control-and-hosting-providers.html#creating-a-source-control-connection-with-github" />
-</Row>
+- [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
+- [Introduction to the Sitecore Cloud Portal](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
+- [Sitecore Cloud Portal roles](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/roles.html)
+- [Deploying XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html)
+- [XM Cloud Deploy app](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
+- [Manage an XM Cloud environment](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html)
+- [XM Cloud Deploy API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html)
+- [Creating an XM Cloud Project using the Sitecore CLI](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--creating-an-xm-cloud-project-using-the-sitecore-cli.html)
+- [Serialization in XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/serialization-in-sitecore.html)
+- [Experience Edge architecture](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html)
+- [Creating a source control connection with GitHub](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-connections-for-source-control-and-hosting-providers.html#creating-a-source-control-connection-with-github)
+
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
-
-<Row columns={2}>
-   <Link title="Project Solution Setup" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup" />
-</Row>
+- [Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup)

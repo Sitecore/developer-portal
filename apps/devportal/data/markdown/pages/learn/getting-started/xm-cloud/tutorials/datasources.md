@@ -2,6 +2,7 @@
 title: 'Tutorial: How to Create Component Data Sources in XM Cloud'
 description: 'Learn about defining and creating new content items that can be used by authors as data sources in the XM Cloud Component builder.'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
+pageType: 'tutorial'
 ---
 
 <Introduction title="What You are Going to Learn">
@@ -478,21 +479,16 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
 </Alert>
 
 ### Related XM Cloud Documentation
+- [Data Templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html)
+- [Data definition and template overview](https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-definition-and-template-overview.html)
+- [The Standard Template](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-standard-template.html)
+- [Standard values for data template fields](https://doc.sitecore.com/xmc/en/developers/xm-cloud/standard-values-for-data-template-fields.html)
+- [Insert Options](https://doc.sitecore.com/xmc/en/developers/xm-cloud/insert-options.html)
+- [Add a module to an existing site collection or site](https://doc.sitecore.com/xmc/en/developers/xm-cloud/add-a-module-to-an-existing-site-collection-or-site.html)
+- [Get your content from an XM data source](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-your-content-from-an-xm-data-source.html)
+- [Map data from an XM data source to a component](https://doc.sitecore.com/xmc/en/users/xm-cloud/map-data-from-an-xm-data-source-to-a-component.html)
 
-<Row columns={2}>
-   <Link title="Data Templates" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html" />
-   <Link title="Data definition and template overview" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-definition-and-template-overview.html" />
-   <Link title="The Standard Template" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-standard-template.html" />
-   <Link title="Standard values for data template fields" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/standard-values-for-data-template-fields.html" />
-   <Link title="Insert Options" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/insert-options.html" />
-   <Link title="Add a module to an existing site collection or site" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/add-a-module-to-an-existing-site-collection-or-site.html" />
-   <Link title="Get your content from an XM data source" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/get-your-content-from-an-xm-data-source.html" />
-   <Link title="Map data from an XM data source to a component" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/map-data-from-an-xm-data-source-to-a-component.html" />
-</Row>
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
-
-<Row columns={2}>
-   <Link title="Project Solution Setup" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup" />
-   <Link title="Creating a Site" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site" />
-</Row>
+- [Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup)
+- [Creating a Site](/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site)

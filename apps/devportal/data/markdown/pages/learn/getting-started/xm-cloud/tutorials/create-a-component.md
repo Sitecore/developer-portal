@@ -2,6 +2,7 @@
 title: 'Tutorial: Create your first XM Cloud no-code component'
 description: 'In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Components builder'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
+pageType: 'tutorial'
 ---
 
 <Introduction title="What You are Going to Learn">
@@ -247,16 +248,12 @@ At this point we have the Text Teaser component layout defined, with some basic 
 </Alert>
 
 ### Related XM Cloud Documentation
+- [Get started with XM Cloud Components](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-started-with-xm-cloud-components.html)
+- [Staging and publishing components](https://doc.sitecore.com/xmc/en/users/xm-cloud/staging-and-publishing-components.html)
+- [Work with components](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-components.html)
+- [Work with a component layout](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-a-component-layout.html)
 
-<Row columns={2}>
-   <Link title="Get started with XM Cloud Components" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/get-started-with-xm-cloud-components.html" />
-   <Link title="Staging and publishing components" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/staging-and-publishing-components.html" />
-   <Link title="Work with components" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-components.html" />
-   <Link title="Work with a component layout" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-a-component-layout.html" />
-</Row>
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
 
-<Row columns={2}>
-   <Link title="Creating New Components" link="/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components" />
-</Row>
+- [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components)
