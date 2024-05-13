@@ -3,6 +3,7 @@ title: 'Tutorial: How to Create Component Data Sources in XM Cloud'
 description: 'Learn about defining and creating new content items that can be used by authors as data sources in the XM Cloud Component builder.'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 pageType: 'tutorial'
+menuOrder: 4
 ---
 
 <Introduction title="What You are Going to Learn">
