@@ -28,12 +28,7 @@ Personalize can track users over time and then personalize off of previous visit
 
 ### Can I migrate my XP personalization rules to Sitecore Personalize?
 
-**Current**
-
-No, you will have to manually recreate your rule logic in Personalize using Decisioning and add it to an experience.
-
-**Future - Coming Soon, not currently Available**
-Experience Targeting: We want the marketer persona to be able to set up an experience that delivers different content based on a pre-defined audience. This pre-defined audience is built upon the same structure as XM/P conditions. The user can combine these conditions into an audience and decide on what output the variant will return. We have high level plans to build some level of integration between XM and Personalize so that the user could set up personalization in XM and it automatically creates an experience with the required variants and assigned audiences. There are some rules in XM that won&#39;t be transferrable. More work to be done here.
+You will have to manually recreate your rule logic in Personalize using Decisioning and add it to an experience. Decision Models combined with Web Experiences or Full Stack Interactive Experiences will provide your best equivalent to the power within XP.
 
 ### We currently use XM Managed Cloud but like the sound of adding Personalize and Send. We use .Net to publish to the web apps in Azure, will we continue to do that if we move to your new XP2XMP offering?
 
