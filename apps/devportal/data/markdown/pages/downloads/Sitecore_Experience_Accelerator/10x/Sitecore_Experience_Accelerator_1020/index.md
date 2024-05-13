@@ -4,18 +4,10 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1020
 ---
 
-The Sitecore® Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly.
+The Sitecore Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly.\
+Sitecore Experience Accelerator 10.2.0 is compatible with Sitecore Experience Platform 10.2.
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    This version of Sitecore Experience Accelerator is compatible with Sitecore 10.2.
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore encourages customers to always install latest update of a given version to ensure latest fixes are included in their solution. See [all available versions here](/downloads/Sitecore_Experience_Accelerator).
-  </Alert>
-  
+See [all available versions here](/downloads/Sitecore_Experience_Accelerator). 
 
 ## Downloads
 
@@ -50,7 +42,7 @@ The Sitecore® Experience Accelerator provides reusable, templated UX layouts an
 
  | Resource | Description |
  | --- | --- |
- | [Danish (da-DK)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201020/Secure/Sitecore%20Experience%20Accelerator%2010.2.0%20rev.%2004247%20(da-DK).zip) | Danish language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/install-a-translation-file-for-sxa.html) how to import a new language into the Sitecore installation. |
- | [German (de-DE)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201020/Secure/Sitecore%20Experience%20Accelerator%2010.2.0%20rev.%2004247%20(de-DE).zip) | German language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/install-a-translation-file-for-sxa.html) how to import a new language into the Sitecore installation. |
- | [Japanese (ja-JP)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201020/Secure/Sitecore%20Experience%20Accelerator%2010.2.0%20rev.%2004247%20(ja-JP).zip) | Japanese language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/install-a-translation-file-for-sxa.html) how to import a new language into the Sitecore installation. |
- | [Chinese (zh-CN)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201020/Secure/Sitecore%20Experience%20Accelerator%2010.2.0%20rev.%2004247%20(zh-CN).zip) | Chinese language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/install-a-translation-file-for-sxa.html) how to import a new language into the Sitecore installation. |
+ | [Danish (da-DK)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201020/Secure/Sitecore%20Experience%20Accelerator%2010.2.0%20rev.%2004247%20(da-DK).zip) | Danish language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/change-the-sxa-gui-language.html) how to import a new language into the Sitecore installation. |
+ | [German (de-DE)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201020/Secure/Sitecore%20Experience%20Accelerator%2010.2.0%20rev.%2004247%20(de-DE).zip) | German language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/change-the-sxa-gui-language.html) how to import a new language into the Sitecore installation. |
+ | [Japanese (ja-JP)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201020/Secure/Sitecore%20Experience%20Accelerator%2010.2.0%20rev.%2004247%20(ja-JP).zip) | Japanese language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/change-the-sxa-gui-language.html) how to import a new language into the Sitecore installation. |
+ | [Chinese (zh-CN)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Accelerator/10x/Sitecore%20Experience%20Accelerator%201020/Secure/Sitecore%20Experience%20Accelerator%2010.2.0%20rev.%2004247%20(zh-CN).zip) | Chinese language client translation file. Read [instructions](https://doc.sitecore.com/xp/en/developers/sxa/102/sitecore-experience-accelerator/change-the-sxa-gui-language.html) how to import a new language into the Sitecore installation. |

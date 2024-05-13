@@ -4,6 +4,7 @@ title: 'Sitecore Experience Accelerator – SXA'
 hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
+
 <Alert status="info">
   <AlertIcon />
     The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
@@ -28,10 +29,6 @@ With the current Sitecore XM 10.2 release, customers can base their headless com
 XM Cloud does not have Content Delivery servers therefore it will not support the rendering of MVC/SXA solutions. Sitecore provides a migration path for developers seeking to convert their Sitecore MVC applications to statically generated websites using Headless Services and Experience Edge. Once the migration is completed, developers can convert components from MVC to headless incrementally.
 
 More information about converting MVC applications to a Jamstack architecture can be found on the [documentation site](https://doc.sitecore.com/xp/en/developers/hd/190/sitecore-headless-development/converting-existing-sitecore-mvc-applications-to-the-jamstack-architecture-with-headless-rendering.html). There are limitations when using SSG for MVC solutions. The current list of [limitations](https://doc.sitecore.com/xp/en/developers/hd/190/sitecore-headless-development/limitations-and-workarounds-for-static-generation-of-mvc-apps-with-jss.html) is published on the documentation site. Please note that this list should not be considered final.
-
-## Will SXA be supported in the XM Cloud solution?
-
-SXA will be supported with XM Cloud in an enhanced form. Customers will be able to continue using SXA’s site scaffolding capabilities as it exists today, but because XM Cloud will not support Content Delivery (CD) servers, SXA components will be refactored to support modern frontend frameworks, beginning with Next.js.
 
 ## Is SXA portable from XM to XM Cloud?
 

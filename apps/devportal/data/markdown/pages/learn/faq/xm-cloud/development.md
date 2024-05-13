@@ -67,11 +67,31 @@ Sitecore also recommends as best practices:
 
 ## What will be the migration path from Experience Manager self-hosted to XM Cloud?
 
-Sitecore will provide a migration guide for customers moving from self-hosted Experience Manager to XM Cloud. Our intention is that customers following the guidelines in the previous question will have the smoothest migration path. Clarification coming after Sitecore Symposium 2022.
+Every customer has a unique scenario that drives their migration path, but Sitecore has provided as many guides and recommendations and tools as possible to help you navigate your path. Our intention is that customers following the guidelines in the previous question will have the smoothest migration path.
+
+Some tools that are available today:
+
+1. [Migration Advisor](https://migration.sitecore.com)
+
+   This application asks you questions about your current platform implementation and then suggests possible matching composable products to replicate your current functionality. It also recommends migration content you may be interested in based on your selections.
+
+1. [Composable DXP Migration content](/learn/getting-started/migrating-to-the-sitecore-composable-dxp)
+
+   This page on the Developer Portal lists out content related to migrating from the platform to the Composable DXP, including XM Cloud.
+
+1. [XM to XM Cloud content migration tool](/downloads/xm-cloud#xm-to-xm-cloud-content-migration-tool)
+
+   This tool wraps around XM and XM Cloud and provides a way for you to move content items, users, and media between your XM data store and your new XM Cloud environment.
 
 ## What options are there for content migration from earlier Sitecore versions?
 
-Sitecore Content Serialization can be used for the migration of content. Sitecore is also looking to support Razl for migrating content from earlier versions.
+There are multiple options that can be used for content migration:
+
+1. Sitecore Content Serialization (SCS)
+
+1. [XM to XM Cloud content migration tool](/downloads/xm-cloud#xm-to-xm-cloud-content-migration-tool)
+
+1. [Razl](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1002803)
 
 ## Will Sitecore PowerShell Extensions (SPE) be supported?
 
@@ -94,11 +114,11 @@ Please note that XM Cloud does not require Vercel or Next.js. Sitecore fully emb
 ## How does the migration from XMP (XM with Personalize on Managed Cloud) to XM Cloud look? Is it seamless?
 
 The actual process of moving a Sitecore XM + Personalize customer from Managed Cloud to XM Cloud is still being determined.   
-However, it is important to note that the XM + Personalize implementation will need to employ Experience Manager as a headless CMS, using the Sitecore JavaScript Rendering SDK (JSS), publishing to Sitecore Experience Edge, and utilizing a Jamstack framework or .NET Core to build the client application, before it can be a candidate for XM Cloud.
+However, it is important to note that the XM + Personalize implementation will need to employ Experience Manager as a hybrid headless CMS, using the Sitecore JavaScript Rendering SDK (JSS), publishing to Sitecore Experience Edge, and utilizing a Jamstack framework or .NET Core to build the client application, before it can be a candidate for XM Cloud.
 
 Sitecore recommends using Next.js as the Jamstack framework because of its flexibility in supporting Static Site Generation (SSG), Incremental Static Regeneration (ISR), and Server-Side Rendering (SSR). If customers want to implement a .NET Core, React, Angular, or Vue.js client application, they will need to host a separate rendering host instance themselves - the rendering host will not be available through XM Cloud. This separate rendering host is not required by Next.js.
 
-Besides implementing Sitecore XM as a headless CMS, customers will need to ensure that they are not using Sitecore XM capabilities that will not be available with Sitecore XM Cloud. Some examples of these capabilities are custom Solr indexes and the use of Sitecore Forms.
+Besides implementing Sitecore XM as a hybrid headless CMS, customers will need to ensure that they are not using Sitecore XM capabilities that will not be available with Sitecore XM Cloud. Some examples of these capabilities are custom Solr indexes and the use of Sitecore Forms.
 
 ## How is content author page orchestration supported?
 
@@ -112,13 +132,13 @@ More information about converting MVC applications to a Jamstack architecture ca
 
 ## Will the existing geo-location services be maintained or will they be replaced with another feature?
 
-With a headless CMS implementation, the geolocation service will now need to be supported by front-end services provided by various vendors. For example, if the customer uses a popular CDN, CDN vendors like Cloudflare, Akamai, etc include geolocation as part of their service. Alternatively, front-end hosting providers like Vercel or Netlify also provide geolocation. The service will not be provided by Sitecore since with a headless CMS approach, XM Cloud will never see the initial request from the visitor, so XM Cloud will not be able to determine the visitor's location.
+With a hybrid headless CMS implementation, the geolocation service will now need to be supported by front-end services provided by various vendors. For example, if the customer uses a popular CDN, CDN vendors like Cloudflare, Akamai, etc include geolocation as part of their service. Alternatively, front-end hosting providers like Vercel or Netlify also provide geolocation. The service will not be provided by Sitecore since with a hybrid headless CMS approach, XM Cloud will never see the initial request from the visitor, so XM Cloud will not be able to determine the visitor's location.
 
 ## How to move my current MVC-based Experience Manager solution into XM Cloud?
 
-Sitecore XM Cloud is optimized to run Experience Manager as a headless CMS with the Sitecore JavaScript Rendering SDK (JSS), publishing to Sitecore Experience Edge, with a Jamstack framework or .NET Core client application. Sitecore XM Cloud will not support Content Delivery (CD) servers so current MVC solutions will need to be converted to a JSS implementation where the web solution gets content and layout data from Experience Edge before it can be run in XM Cloud. Alternatively, customers can host their MVC solutions in Sitecore Managed Cloud, which will continue to support MVC-based solutions into the future.
+Sitecore XM Cloud is optimized to run Experience Manager as a hybrid headless CMS with the Sitecore JavaScript Rendering SDK (JSS), publishing to Sitecore Experience Edge, with a Jamstack framework or .NET Core client application. Sitecore XM Cloud will not support Content Delivery (CD) servers so current MVC solutions will need to be converted to a JSS implementation where the web solution gets content and layout data from Experience Edge before it can be run in XM Cloud. Alternatively, customers can host their MVC solutions in Sitecore Managed Cloud, which will continue to support MVC-based solutions into the future.
 
-Besides implementing Sitecore XM as a headless CMS, you will also need to ensure that you are not using Sitecore XM capabilities which will not be available with Sitecore XM Cloud. Some examples of these capabilities are custom Solr indexes and the use of Sitecore Forms.
+Besides implementing Sitecore XM as a hybrid headless CMS, you will also need to ensure that you are not using Sitecore XM capabilities which will not be available with Sitecore XM Cloud. Some examples of these capabilities are custom Solr indexes and the use of Sitecore Forms.
 
 ## What is required to upgrade the current MVC solution so it can run in the XM Cloud environment?
 
@@ -141,11 +161,11 @@ Once the backend refactoring and the frontend rebuild are done, content and layo
 
 If you pursue a headless Sitecore Experience Manager 10.2 implementation using the Sitecore JavaScript Rendering SDK (JSS), publishing to Sitecore Experience Edge, and using Next.js for the client application, that will be the bulk of the work to move your Experience Manager implementation to XM Cloud.
 
-However, besides implementing Sitecore XM as a headless CMS, you will also need to ensure that you are not using Sitecore XM capabilities which will not be available with Sitecore XM Cloud. Some examples of these capabilities are custom Solr indexes and the use of Sitecore Forms.
+However, besides implementing Sitecore XM as a hybrid headless CMS, you will also need to ensure that you are not using Sitecore XM capabilities which will not be available with Sitecore XM Cloud. Some examples of these capabilities are custom Solr indexes and the use of Sitecore Forms.
 
 ## Will pipeline extensions (e.g., extension/changes to the HTTP request pipeline) on Content Delivery servers persist if someone moves to the XM Cloud solution? If not, what are your recommendations on how to implement the above with a JSS+Edge/Vercel or XM Cloud setup?
 
-Sitecore XM Cloud will not support Content Delivery (CD) servers so HTTP request pipeline extensions will also not be supported. If you implement Experience Manager as a headless CMS using JSS and Edge, and changes are required to the HTTP request, then the changes will need to be made where the client application is being hosted.
+Sitecore XM Cloud will not support Content Delivery (CD) servers so HTTP request pipeline extensions will also not be supported. If you implement Experience Manager as a hybrid headless CMS using JSS and Edge, and changes are required to the HTTP request, then the changes will need to be made where the client application is being hosted.
 
 For example, if the Next.js application is hosted at Vercel, a Vercel Serverless Function can be created to process the incoming HTTP request and to provide a response. If the Next.js application is hosted at Cloudflare Pages, a Cloudflare Worker can be used instead.
 

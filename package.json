@@ -7,14 +7,18 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "dotenvx run --env-file=.env --env-file=.env.local -- turbo build",
-    "dev": "dotenvx run --env-file=.env --env-file=.env.local -- turbo dev",
-    "start": "dotenvx run --env-file=.env --env-file=.env.local -- turbo start",
-    "lint": "turbo run lint",
+    "build": "dotenvx run --env-file=.env --env-file=.env.local -q -- turbo build",
+    "dev": "dotenvx run --env-file=.env --env-file=.env.local -q -- turbo dev",
+    "start": "dotenvx run --env-file=.env --env-file=.env.local -q -- turbo start",
+    "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean": "npm exec --workspaces -- shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && shx rm -rf node_modules && shx echo Done!",
     "remove-turbo-cache": "shx rm -rf ./node_modules/.cache/turbo",
     "update-dependencies": "turbo update-dependencies && npx npm-check-updates -u"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "latest",
+    "@azure/openai": "^1.0.0-beta.6"
   },
   "devDependencies": {
     "eslint": "^8.38.0",
@@ -27,9 +31,5 @@
     "shx": "^0.3.4",
     "turbo": "latest"
   },
-  "packageManager": "npm@9.5.0^",
-  "dependencies": {
-    "@azure/openai": "^1.0.0-beta.6",
-    "@dotenvx/dotenvx": "^0.29.1"
-  }
+  "packageManager": "npm@9.5.0^"
 }

@@ -14,7 +14,7 @@ A customer is about to launch XM Cloud and their front-end "head" application to
 
 #### Published Content
 
-Ensure that all of your content is published to Experience Edge. Review the [Publishing to Edge recipe](../pre-development/information-project-architecture/publishing-to-edge) for more guidance. You should review your Incremental Static Regeneration (ISR) settings in your front-end application as part of the publishing process. This will determine the delay between publishing and when the new content is available to users.
+Ensure that all of your content is published to Experience Edge. Review the [Publishing to Edge recipe](../pre-development/project-architecture/publishing-to-edge) for more guidance. You should review your Incremental Static Regeneration (ISR) settings in your front-end application as part of the publishing process. This will determine the delay between publishing and when the new content is available to users.
 
 #### Security
 

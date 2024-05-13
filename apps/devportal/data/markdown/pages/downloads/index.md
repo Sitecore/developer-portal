@@ -9,10 +9,16 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
-  title="Sitecore XM Cloud"
-  description="Download Sitecore XM Cloud tools and resources"
+  title="XM to XM Cloud Content Migration Tool"
+  description="Tool for migrating content, media and users from an XM instance to an XM Cloud environment."
   link1text="More info"
   link1href="/downloads/xm-cloud"
+/>
+<Download 
+  title="xDB to CDP Migration Tool"
+  description="Sitecore Connect recipes for migrating visitor contact data from xDB to CDP"
+  link1text="More info"
+  link1href="/downloads/xDB_to_CDP_Migration"
 />
 </SimpleGrid>
 
@@ -20,10 +26,10 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
-  title="Sitecore Experience Platform 10.3 Update-1"
+  title="Sitecore Experience Platform 10.4"
   description="Sitecore Experience Platform (SXP) including: XM, XP layer applications, and links to corresponding module releases."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Experience_Platform/103/Sitecore_Experience_Platform_103_Update1"
+  link1href="/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Experience_Platform"
 />
@@ -41,18 +47,18 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
-  title="Sitecore Identity 7.0.328"
+  title="Sitecore Identity Server 7.1.11"
   description="Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or extended for use with an external identity provider."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Identity/7x/Sitecore_Identity_70328"
-  link2text="See all versions"
+  link1href="/downloads/Sitecore_Identity/7x/Sitecore_Identity_7111"
+   link2text="See all versions"
   link2href="/downloads/Sitecore_Identity"
 />
 <Download 
-  title="Sitecore Experience Accelerator 10.3.0"
+  title="Sitecore Experience Accelerator 10.4.0"
   description="Tools to accelerate the production of SXP websites enabled by reuse of templates, layouts, and renderings. "
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1030"
+  link1href="/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1040"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Experience_Accelerator"
 />
@@ -65,10 +71,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Publishing_Service"
 />
 <Download 
-  title="Sitecore Publishing Service Module 10.3.0"
+  title="Sitecore Publishing Service Module 10.4.0"
   description="Integrates the optional Sitecore Publishing Service with SXP, and provides additional features."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1030"
+  link1href="/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1040"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Publishing_Service_Module"
 />
@@ -81,10 +87,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Horizon"
 />
 <Download 
-  title="Sitecore Headless Rendering 21.0.0"
+  title="Sitecore Headless Rendering 22.0.0"
   description="Headless services bundle including the server-side APIs, Edge Connector, and front-end SDKs for JavaScript (JSS) and ASP.NET rendering."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Headless_Rendering/21x/Sitecore_Headless_Rendering_2100"
+  link1href="/downloads/Sitecore_Headless_Rendering/22x/Sitecore_Headless_Rendering_2200"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Headless_Rendering"
 />
@@ -97,10 +103,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Embeddable_Forms"
 />
 <Download 
-  title="Sitecore Universal Tracker 7.0.0"
+  title="Sitecore Universal Tracker 8.0.0"
   description="Optional mechanism for tracking site visitor interactions, well suited for headless implementations and for collecting from different sources."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Universal_Tracker/7x/Sitecore_Universal_Tracker_700"
+  link1href="/downloads/Sitecore_Universal_Tracker/8x/Sitecore_Universal_Tracker_800"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Universal_Tracker"
 />
@@ -142,26 +148,26 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_for_Visual_Studio"
 />
 <Download 
-  title="Team Development for Sitecore 6.0.3"
+  title="Team Development for Sitecore 6.0.4"
   description="SDK for working efficiently with SXP development and developer operations."
   link1text="Get latest"
-  link1href="/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_603"
+  link1href="/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_604"
   link2text="See all versions"
   link2href="/downloads/Team_Development_for_Sitecore"
 />
 <Download 
-  title="Sitecore Azure Blob Storage 5.0.1"
+  title="Sitecore Azure Blob Storage 6.0.0"
   description="Azure Blob Storage package for XM Developer, XM Scaled, XP Developer, XP Scaled configurations."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_501"
+  link1href="/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_600"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Azure_Blob_Storage"
 />
 <Download 
-  title="Scripts for Sitecore Security database 0.5"
-  description="Scripts for moving the Sitecore security membership provider from the Core to other individual or existing databases."
+  title="Scripts for Sitecore Security database 0.6"
+  description="Scripts for moving the Sitecore security membership provider from the Core to an individual or existing database."
   link1text="Get latest"
-  link1href="/downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_05"
+  link1href="/downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_06"
   link2text="See all versions"
   link2href="/downloads/Scripts_for_Sitecore_Security_database"
 />
@@ -174,10 +180,10 @@ hasInPageNav: false
   link2href="/downloads/Resource_files_for_Modules"
 />
 <Download 
-  title="Sitecore UpdateApp Tool 1.3.1"
+  title="Sitecore UpdateApp Tool 1.4.1"
   description="Tool for updating SXP Core, Master, and Web databases."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_131"
+  link1href="/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_141"
   link2text="See all versions"
   link2href="/downloads/Sitecore_UpdateApp_Tool"
 />
@@ -257,14 +263,6 @@ hasInPageNav: false
   link1href="/downloads/Data_Exchange_Framework/8x/Data_Exchange_Framework_800"
   link2text="See all versions"
   link2href="/downloads/Data_Exchange_Framework"
-/>
-<Download 
-  title="Sitecore Connect™ for Microsoft Dynamics 365 Commerce 2.0.0"
-  description="Connector for synchronizing data between Sitecore Digital Asset Management (DAM) and Microsoft Dynamics 365 Commerce."
-  link1text="Get latest"
-  link1href="/downloads/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce/2x/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce_200"
-  link2text="See all versions"
-  link2href="/downloads/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce"
 />
 </SimpleGrid>
 
@@ -366,6 +364,14 @@ hasInPageNav: false
   link1href="/downloads/Sitecore_IP_Geolocation_Service_Client/12/Sitecore_IP_Geolocation_Service_Client_12_for_Sitecore_XP_80"
   link2text="See all versions"
   link2href="/downloads/Sitecore_IP_Geolocation_Service_Client"
+/>
+<Download 
+  title="Sitecore Connect™ for Microsoft Dynamics 365 Commerce 2.0.0"
+  description="Connector for synchronizing data between Sitecore Digital Asset Management (DAM) and Microsoft Dynamics 365 Commerce."
+  link1text="Get latest"
+  link1href="/downloads/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce/2x/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce_200"
+  link2text="See all versions"
+  link2href="/downloads/Sitecore_Connect_for_Microsoft_Dynamics_365_Commerce"
 />
 <Download 
   title="Sitecore Connect™ for Sitecore DAM 2.0.0"

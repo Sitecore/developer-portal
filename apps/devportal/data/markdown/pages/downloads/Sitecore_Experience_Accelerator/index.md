@@ -1,7 +1,6 @@
 ---
 title: "Sitecore Experience Accelerator"
-description: "The Sitecore® Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly."
-origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator.aspx
+description: "The Sitecore Experience Accelerator provides reusable, templated UX layouts and components to help you get up and running quickly."
 ---
 
 <Card variant='outlineRaised' px={0} mb={8}>
@@ -9,6 +8,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator.aspx
 ## Sitecore Experience Accelerator 10.x
 </CardHeader>
 <CardBody>
+[Sitecore Experience Accelerator 10.4.0](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1040)\
 [Sitecore Experience Accelerator 10.3.0](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1030)\
 [Sitecore Experience Accelerator 10.2.0](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1020)\
 [Sitecore Experience Accelerator 10.1.0](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1010)\

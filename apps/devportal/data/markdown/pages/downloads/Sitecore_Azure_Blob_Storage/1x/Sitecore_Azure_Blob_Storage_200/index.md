@@ -6,16 +6,9 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Blob_Storage/1x/Siteco
 
 Sitecore Blob Storage allows customer to store large number of media items with more efficient hosting cost and greater performance by removing large blobs from SQL Databases and move them to blob storage.
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore Azure Blob Storage version 2.0 requires Sitecore Experience Platform version 10.0.
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore encourages customers to always install latest update of a given version to ensure latest fixes are included in their solution. See [all available versions here](/downloads/Sitecore_Azure_Blob_Storage).
-  </Alert>
-  
+Sitecore Azure Blob Storage 2.0.0 is compatible with Sitecore Experience Platform 10.0.
+
+See [all available versions here](/downloads/Sitecore_Azure_Blob_Storage).
 
 ## Downloads
 

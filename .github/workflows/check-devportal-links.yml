@@ -1,0 +1,21 @@
+name: Developer Portal Links Checker
+on:
+  workflow_dispatch:
+# runs every monday at 9 am
+#  schedule:
+#   - cron: "0 9 * * 1"
+
+jobs:
+  devportal-md-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gaurav-nelson/github-action-markdown-link-check@a996638015fbc9ef96beef1a41bbad7df8e06154
+        # checks all markdown files from /docs including all subfolders
+        with:
+          use-quiet-mode: 'yes'
+          use-verbose-mode: 'yes'
+          config-file: './.github/workflows/mlc-devportal.config.json'
+          folder-path: './apps/devportal/data/markdown/partials, ./apps/devportal/data/markdown/pages/commerce, ./apps/devportal/data/markdown/pages/content-management, ./apps/devportal/data/markdown/pages/contribute, ./apps/devportal/data/markdown/pages/customer-data-management, ./apps/devportal/data/markdown/pages/dam-and-content-operations, ./apps/devportal/data/markdown/pages/devops, ./apps/devportal/data/markdown/pages/integrations, ./apps/devportal/data/markdown/pages/learn, ./apps/devportal/data/markdown/pages/marketing-automation, ./apps/devportal/data/markdown/pages/newsletter, ./apps/devportal/data/markdown/pages/personalization-testing, ./apps/devportal/data/markdown/pages/trials'
+          file-path: './apps/devportal/data/markdown/pages/_newsletter.md, ./apps/devportal/data/markdown/pages/_search.md, ./apps/devportal/data/markdown/pages/community.md, ./apps/devportal/data/markdown/pages/discover.md, ./apps/devportal/data/markdown/pages/docs.md, ./apps/devportal/data/markdown/pages/help.md, ./apps/devportal/data/markdown/pages/home.md, ./apps/devportal/data/markdown/pages/learn.md'
+       

@@ -6,18 +6,7 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
-<Alert status="info">
+<Alert status="warning">
   <AlertIcon />
-    Please note that these best practices pre-date <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> content which will replace these practices soon
+    The current recommendations for XM Cloud have been moved to <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a>. Any content remaining in this section is pending being moved over to Accelerate but will be removed once it has been ported to the new location.
 </Alert>
-
-
-# Who will this topic be interesting to?
-
-## Guides for business stakeholders
-
-Recommended practices for business stakeholders who are ramping up dev teams for Sitecore XM Cloud work.
-
-## Guides for developers
-
-Recommended practices for developers building sites powered by Sitecore XM Cloud.

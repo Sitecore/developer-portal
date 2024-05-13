@@ -33,26 +33,20 @@ XM Cloud includes:
 
 ## How does XM Cloud help business professionals and marketers?
 
-XM Cloud helps marketers and business professionals by giving them an easy-to-use platform to manage content for experiences across touchpoints. By having a headless, cloud-native CMS, marketers can work independently from developers, ensuring faster timelines to launch experiences and more time for understanding audience behavior and personalization.
+XM Cloud helps marketers and business professionals by giving them an easy-to-use platform to manage content for experiences across touchpoints. By having a hybrid headless, cloud-native CMS, marketers can work independently from developers, ensuring faster timelines to launch experiences and more time for understanding audience behavior and personalization.
 
 ## How does XM Cloud help developers and technicians?
 
-Developers benefit from XM Cloud’s self-service tools for rapidly deploying Experience Manager’s Content Management instance along with their own customizations. With the modern headless CMS, the content management backend is decoupled from the front-end presentation and delivery capabilities. Decoupling enables developers to take advantage of popular front-end frameworks to rapidly build new digital experiences. While developers gain agility with this approach, it introduces friction for marketers who now need to rely upon developers for even the smallest of changes to the front-end experience. Developers benefit from XM Cloud’s self-service tools for rapidly deploying Experience Manager’s Content Management instance along with their own customizations.
+Developers benefit from XM Cloud’s self-service tools for rapidly deploying Experience Manager’s Content Management instance along with their own customizations. With the modern hybrid headless CMS, the content management backend is decoupled from the front-end presentation and delivery capabilities. Decoupling enables developers to take advantage of popular front-end frameworks to rapidly build new digital experiences. While developers gain agility with this approach, it introduces friction for marketers who now need to rely upon developers for even the smallest of changes to the front-end experience. Developers benefit from XM Cloud’s self-service tools for rapidly deploying Experience Manager’s Content Management instance along with their own customizations.
 
-## What features will be supported for the initial General Availability (GA) release of XM Cloud?
+## What features of XM/XP are not supported in XM Cloud?
 
-Functionality that is being considered for inclusion in future releases includes:
+Note that you can keep up to date on the latest feature changes via the [XM Cloud Changelog](/changelog/xm-cloud).
 
-- Federated Authentication for Edge Delivery (Sitecore security support for website visitors)
-- Installing custom modules
-- Sitecore Forms
-- Authoring login integration through external SSO
-- Computed fields for Experience Edge
+Functionality that is not supported includes:
 
-Functionality that will not be supported includes:
-
-- XP/xConnect functionality including existing personalization rules (new rules will be introduced for XM Cloud)
-- SXA Search components
+- XP/xConnect functionality including existing personalization rules (XM Cloud leverages Personalize for embedded personalization)
+- SXA Search components (XM Cloud projects are intended to use [Sitecore Search](/content-management/search) instead)
 - Custom search indexes
 - Some Sitecore modules (including Universal Tracker, Sitecore Publishing Service)
 - Extranet domain functionality (users/roles)
@@ -61,19 +55,18 @@ _Please note that capabilities shown as not supported, or under consideration, m
 
 ## Will XM Cloud support Federated authentication?
 
-We've heard from customers a desire to have Federated authentication, so that Sitecore can connect our identity system to their identity solution, and that's something that will be coming in the future.  Clarification coming after Sitecore Symposium 2022.
+The Sitecore Cloud Portal does support Single sign-on (SSO) configuration for OpenID and SAML. You can read more in the [Single sign-on (SSO) documentation](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/single-sign-on--sso-.html).
 
 ## How are Forms handled with XM Cloud?
 
-Web forms are an MVC-based approach that have dependencies upon our content delivery servers. Therefore, it cannot be used as is with headless implementations. So, there are really two parts to this answer:
-
-1. In the near-term Sitecore recommends that customers utilize a third-party service. There are any number of third-party API-based/ API-driven forms experiences today that are designed and built for headless implementations. We're aware that customers who already have Salesforce in place could also embed their Salesforce forms directly within their UIs. There are a number of CRMs that also provide that functionality.
-2. Sitecore does have a project to deliver a headless, full-SaaS, forms experience. The plan is to have JavaScript and HTML that you can inject into your frontend and we'll store all of that data in our back end that is managed through the Sitecore SaaS platform. SaaS forms are currently planned for the second half of the year in calendar year 2023.
+Sitecore has [now released XM Cloud Forms functionality](/changelog/xm-cloud/forms-are-now-available-in-xm-cloud). Read additional details in the [Work with Forms](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-forms.html) documentation section.
 
 ## Can existing forms be migrated?
 
-Since XM Cloud does not utilize Content Delivery servers, Sitecore Forms are being enhanced to better support headless implementations. Once the Forms enhancements are available through a future XM release, customers will need to change their existing Forms implementations to get the benefits of the new version. Clarification coming after Sitecore Symposium 2022.
+Since XM Cloud does not utilize Content Delivery servers and therefore existing Sitecore Forms will not work with XM Cloud. For XM Cloud, customers will need to change their existing Forms implementations to use the XM Cloud Forms functionality.
+
+Read additional details in the [Work with Forms](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-forms.html) documentation section.
 
 ## Is XM Cloud SOC 2 certified?
 
-Sitecore is currently in the process of SOC2 certification for XM Cloud. This is a new product and as with all new products, SOC2 certification takes time. Sitecore has ISO27001 certification and a SOC2 report for our other products. A full list of all Sitecore certifications can be found [here](https://www.sitecore.com/trust/security?utm_websource=trust). Further details are available in our [Trust Center](https://www.sitecore.com/trust).
+Sitecore does have SOC2 certification for XM Cloud. A full list of all Sitecore certifications can be found [here](https://www.sitecore.com/legal/compliance-certs). Further details are available in our [Privacy and Security center](https://www.sitecore.com/legal/privacy-and-security).
