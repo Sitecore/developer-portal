@@ -20,19 +20,6 @@ export default function Custom500() {
           </Stack>
         </Center>
       </Box>
-      {/* 
-      <VerticalGroup height={'calc(100vh - 478px)'}>
-        <CenteredContent>
-          <Stack maxW={'lg'}>
-            <Heading size="md" mb="0">
-              Maybe you can search to find what you are looking for?
-            </Heading>
-            <HStack>
-              <SearchInput showButton />
-            </HStack>
-          </Stack>
-        </CenteredContent>
-      </VerticalGroup>*/}
     </Layout>
   );
 }
