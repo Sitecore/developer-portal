@@ -1,20 +1,18 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { getChangelogCredentials } from '@/src/lib/changelog/changelog';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
+import { ButtonLink, CenteredContent, Hero, Option, VerticalGroup } from '@scdp/ui/components';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { ChangelogEntriesPaginated } from '@scdp/changelog';
 import { SWRConfig } from 'swr';
-import { Hero } from '@scdp/ui/components';
-import { Option } from '@scdp/ui/components';
-import { CenteredContent, VerticalGroup } from '@scdp/ui/components';
-import { ButtonLink } from '@scdp/ui/components';
+import { Changelog } from '../../../../../packages/changelog/src/changelog';
 
 type ChangelogHomeProps = {
   fallback: any;
@@ -79,7 +77,9 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
 
 export async function getStaticProps(context: any) {
   const isPreview = context.preview ? context.preview : null;
-  const entries = await ChangelogEntriesPaginated(isPreview, '5', '', '', '');
+
+  const changelog = new Changelog(getChangelogCredentials(), isPreview);
+  const entries = await changelog.getEntriesPaginated('5', '', '', '');
 
   return {
     props: {

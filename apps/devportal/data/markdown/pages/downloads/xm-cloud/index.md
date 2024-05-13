@@ -26,7 +26,7 @@ Use the XM to XM Cloud Content Migration tool to help move content, media and us
 
 - **Supported versions**: Sitecore platform on-premise releases **10.1 and later**.
 
-- **What can be migrated?** This tool migrates content, media, and user data. It is not intended for migrating or converting site layouts/renderings, xDB data, commerce data, or other data items that are not found in Sitecore XM.
+- **What can be migrated?** This tool migrates content, media, and user data. It is not intended for migrating or converting site layouts/renderings, xDB data, commerce data, or other data items that are not found in Sitecore XM Cloud.
 
 - **Is this compatible with XP/XC?** If you have installed XP or XC, the tool will work but it only targets the content portion from XM.
 

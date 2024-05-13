@@ -6,7 +6,6 @@ hasInPageNav: true
 cdpTags: ['xm-cloud']
 ---
 
-
 <Alert status="info">
   <AlertIcon />
     The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
@@ -22,7 +21,7 @@ cdpTags: ['xm-cloud']
 
 ## What is XM Cloud?
 
-Sitecore XM Cloud is a cloud-native, headless CMS, for developers and marketers to efficiently launch engaging omnichannel experiences. XM Cloud bundles:
+Sitecore XM Cloud is a cloud-native, hybrid headless CMS, for developers and marketers to efficiently launch engaging omnichannel experiences. XM Cloud bundles:
 
 - The latest versions of Experience Manager
 - Pages content editor
@@ -38,16 +37,18 @@ Primarily useful for developers and programmers, PaaS allows the user to develop
 
 **Software-as-a-service (SaaS):** Also known as cloud application services, delivers an entire application that is managed by a provider, via a web browser. Software updates, bug fixes, and general software maintenance are handled by the provider and the user connects to the app via a dashboard or API. There’s no installation of the software on individual machines and group access to the program is smoother and more reliable.
 
-## If XM Cloud is a headless CMS, what does that mean?
+## If XM Cloud is a hybrid headless CMS, what does that mean?
 
-A headless CMS, also known as headless software or headless system, is any type of back-end content management system where the content repository, the “body,” is separated or decoupled from the presentation layer, the “head.” Headless CMS allows you to manage content in one place and still be able to deploy that content across any front end you choose. This is key to omnichannel strategies because it lets you integrate content into any system, software, or website just by calling the APIs the headless CMS exposes.
+A headless CMS is any type of back-end content management system where the content repository, the “body,” is separated or decoupled from the presentation layer, the “head.” Headless CMS allows you to manage content in one place and still be able to deploy that content across any front end you choose. This is key to omnichannel strategies because it lets you integrate content into any system, software, or website just by calling the APIs the headless CMS exposes.
+
+A hybrid headless CMS combines the flexibility and extensibility of headless CMS platform with the WYSIWYG editing, personalization, and content analytics capabilities offered by traditional coupled CMS. Read more in the article [What is CMS Architecture?](https://www.sitecore.com/knowledge-center/digital-marketing-resources/what-is-cms-architecture)
 
 ## What problems does XM Cloud solve?
 
-XM Cloud addresses the challenges faced by marketers and developers when using traditional monolithic CMS and modern headless CMS. The monolithic CMS provides convenience through tightly coupled content management and frontend presentation and delivery capabilities in a single application. However, this convenience comes at the cost of decreased developer agility.
+XM Cloud addresses the challenges faced by marketers and developers when using traditional monolithic CMS and modern hybrid headless CMS. The monolithic CMS provides convenience through tightly coupled content management and frontend presentation and delivery capabilities in a single application. However, this convenience comes at the cost of decreased developer agility.
 
-With the modern headless CMS, the content management backend is decoupled from the frontend presentation and delivery capabilities. The decoupling enables developers to take advantage of popular frontend frameworks to rapidly build new digital experiences. While developers gain agility with this approach, it introduces friction for marketers who now need to rely upon developers for even the smallest of changes to the frontend experience.
-XM Cloud re-imagines the CMS and introduces a no-compromise approach that delivers developer agility through the best attributes of the headless CMS, while empowering marketers through a visual page composition experience. With XM Cloud, customers deliver to their markets:
+With the modern hybrid headless CMS, the content management backend is decoupled from the frontend presentation and delivery capabilities. The decoupling enables developers to take advantage of popular frontend frameworks to rapidly build new digital experiences. While developers gain agility with this approach, it introduces friction for marketers who now need to rely upon developers for even the smallest of changes to the frontend experience.
+XM Cloud re-imagines the CMS and introduces a no-compromise approach that delivers developer agility through the best attributes of the hybrid headless CMS, while empowering marketers through a visual page composition experience. With XM Cloud, customers deliver to their markets:
 
 - **Speed:** Visitors are greeted with an experience that loads lightning-fast and engages instantly
 - **Relevance:** Customers are recognized and welcomed back to an experience that understands their needs.
@@ -62,7 +63,7 @@ While gaining for themselves:
 - Sitecore Experience Manager (XM) is Sitecore’s CMS-only offering. It allows you to manage multiple websites, and multilingual content in the same CMS, as well as integrate with third-party applications, systems, and data. It also allows you to deliver content across multiple devices and channels. Sitecore XM also features Experience Editor and Horizon which allows content authors to edit pages, components, and items as they would appear on a page to a visitor.
   XM is part of Sitecore’s PaaS portfolio on Azure Managed Cloud. It can also be managed on-premises with a cloud provider or have a mixture of both fully managed and in the cloud.
 - Sitecore Experience Platform (XP) includes the CMS that you receive with Sitecore Experience Manager, as well as the exciting personalization and marketing automation features that marketers love. It allows marketers to deliver personalized content on any device or channel while giving them a 360-degree view of each customer’s journey. The marketing automation features remove the need for a separate marketing automation platform and allow marketers to nurture prospects using data from multiple sources and touchpoints.
-- Sitecore XM Cloud is a cloud-native SaaS. That means that XM Cloud is developed, designed, and deployed as a cloud-native app built with a composable architecture, centrally hosted, and licensed using a subscription model. XM Cloud is a fully headless Jamstack-ready CMS and introduces next-gen visual authoring through its Pages and Components tools. Pages includes embedded personalization and analytics.
+- Sitecore XM Cloud is a cloud-native SaaS. That means that XM Cloud is developed, designed, and deployed as a cloud-native app built with a composable architecture, centrally hosted, and licensed using a subscription model. XM Cloud is a hybrid headless, Jamstack-ready, CMS and introduces next-gen visual authoring through its Pages and Components tools. Pages includes embedded personalization and analytics.
 
 ## What are the differences between cloud-native SaaS and cloud-hosted SaaS?
 

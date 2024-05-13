@@ -25,5 +25,5 @@ The EXM Dedicated Dispatch Server provides container support for DDS (Dedicated 
  | Resource | Description |
  | --- | --- |
  | [Documentation](https://doc.sitecore.com/developers/exm/100/email-experience-manager/en/using-dedicated-email-dispatch-servers.html) | Read information about Dedicated Dispatch Servers on the Doc site. |
- | [Module Reference](https://docs.dk.sitecore.net/developers/101/developer-tools/en/sitecore-module-reference.html) | Reference for the Dedicated Dispatch Server Docker asset image and the Sitecore runtime Dockerfile instructions. |
- | [Installation Guide](https://docs.dk.sitecore.net/developers/exm/101/email-experience-manager/en/build-a-dedicated-email-dispatch-server-with-an-asset-image.html) | Instructions on how to build a dedicated email dispatch server via an asset image. |
+ | [Module Reference](https://doc.sitecore.com/developers/101/developer-tools/en/sitecore-module-reference.html) | Reference for the Dedicated Dispatch Server Docker asset image and the Sitecore runtime Dockerfile instructions. |
+ | [Installation Guide](https://doc.sitecore.com/developers/exm/101/email-experience-manager/en/build-a-dedicated-email-dispatch-server-with-an-asset-image.html) | Instructions on how to build a dedicated email dispatch server via an asset image. |

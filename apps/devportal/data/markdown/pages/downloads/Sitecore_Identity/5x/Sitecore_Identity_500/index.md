@@ -4,20 +4,10 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/5x/Sitecore_Identity_500
 ---
 
-Sitecore Identity is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication.
+Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication.
+Sitecore Identity Server is compatible with Sitecore Membership user storage but may be be extended with other identity providers to integrate with customers AIM systems.
 
-Sitecore Identity is compatible with Sitecore Membership user storage but may be be extended with other identity providers to integrate with customers AIM systems.
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    For security reasons we strongly recommend using [Sitecore Identity 6.0](/downloads/Sitecore_Identity).
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Note: Sitecore Identity was introduced with Sitecore Experience Platform 9.1 (Initial version). Any Sitecore releases prior to this do not support Sitecore Identity.
-  </Alert>
-  
+See [all available versions here](/downloads/Sitecore_Identity).    
 
 ## Downloads
 

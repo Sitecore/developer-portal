@@ -12,9 +12,9 @@ export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarPr
         <Wrap
           direction="column"
           h={showBackground ? { base: 'auto', md: `auto` } : {}}
-          minH={{ base: 'auto', md: `calc(100vh - 192px)` }}
+          minH={{ base: 'auto', md: `calc(100vh - 235px)` }}
           top="50"
-          // overflow={{ base: '', md: 'auto' }}
+          overflow={{ base: '', md: 'auto' }}
           shadow={'none'}
           position={{ base: 'static', md: 'sticky' }}
           display="flex"

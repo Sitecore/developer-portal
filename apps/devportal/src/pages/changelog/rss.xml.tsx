@@ -1,13 +1,15 @@
+import { getChangelogCredentials } from '@/src/lib/changelog/changelog';
 import { CreateFeed } from '@lib/changelog/changelog-feeds';
-import { AllChangelogEntries } from '@scdp/changelog';
+import { Changelog } from '@scdp/changelog';
 
 // Default export to prevent next.js errors
 const FeedPage = () => null;
 
 export async function getServerSideProps(context: any) {
   const preview = context.preview ? context.preview : null;
+  const changelog = new Changelog(getChangelogCredentials(), preview);
   // Fetch data
-  const changelogEntryList = await AllChangelogEntries(preview);
+  const changelogEntryList = await changelog.getAllEntries();
   const feed = CreateFeed(changelogEntryList);
   //Set page headers
   context.res.setHeader('Content-Type', 'text/xml');

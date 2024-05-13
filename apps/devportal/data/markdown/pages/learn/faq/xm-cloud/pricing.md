@@ -12,8 +12,16 @@ cdpTags: ['xm-cloud']
 
 ## What's going to be the pricing point for XM Cloud?
 
-Once XM Cloud is released, please work with your Sales team on specific pricing questions.
+Please work with your Sales team on specific pricing questions.
 
 ## Is the embedded personalization in Pages included in the cost of XM Cloud, or an extra add-on?
 
 XM Cloud will be bundled with both Pages and embedded personalization, so there are no extra costs for either.
+
+## Can Pages be licensed without XM Cloud (for example, have a third-party CMS, buy Sitecore CDP and Pages)
+
+At the moment, Pages is only available as part of the XM Cloud solution.
+
+## Does Experience Edge come bundled with the XM Cloud subscription?
+
+XM Cloud is bundled with Pages, Headless Services, and Experience Edge together in a single subscription. There is no need to purchase separate modules for these features.
