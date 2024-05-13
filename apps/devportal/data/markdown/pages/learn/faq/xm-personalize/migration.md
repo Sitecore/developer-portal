@@ -6,7 +6,7 @@ hasInPageNav: true
 cdpTags: ['xm', 'personalize']
 ---
 
-### How does the migration from XMP (XM on Managed Cloud) to XM Cloud look? Is it seamless?\*\*
+### How does the migration from XMP (XM on Managed Cloud) to XM Cloud look? Is it seamless?
 
 The actual process of moving an XM + Personalize customer from Managed Cloud to XM Cloud is still being determined. However, it is important to note that the XM + Personalize implementation will need to employ Experience Manager as a headless CMS, using the Sitecore JavaScript Rendering SDK (JSS), publishing to Sitecore Experience Edge, and utilizing a Jamstack framework or .NET Core to build the client application, before it can be a candidate for XM Cloud. Sitecore recommends using Next.js as the Jamstack framework because of its flexibility in supporting Static Site Generation (SSG), Incremental Static Regeneration (ISR), and Server-Side Rendering (SSR). If customers want to implement a .NET Core, React, Angular, or Vue.js client application, they will need to host a separate rendering host instance themselves - the rendering host will not be available through XM Cloud. This separate rendering host is not required by Next.js. Besides implementing XM as a headless CMS, customers will need to ensure that they are not using XM capabilities that will not be available with XM Cloud. Some examples of these capabilities are custom Solr indexes and use of Sitecore Forms.
 
