@@ -8,23 +8,17 @@ cdpTags: ['xm', 'personalize']
 
 ### Once I build a XM + Personalize site and deploy it, will I be able to port this site to XM Cloud when that comes out? Do you have a playbook available that we could see?
 
-If XM + Personalize is implemented as a headless CMS with the Sitecore JavaScript Rendering SDK (JSS), Sitecore Experience Edge, and a Jamstack framework or .NET Core client application, it will be a candidate for being run in XM Cloud. Sitecore Experience Manager Cloud will be optimized for headless Experience Manager implementations therefore, it will not support MVC-based solutions. Sitecore recommends using Next.js as the Jamstack framework because of its flexibility in supporting Static Site Generation (SSG), Incremental Static Regeneration (ISR), and Server-Side Rendering (SSR).
+If XM + Personalize is implemented as a headless CMS with the Sitecore JavaScript Rendering SDK (JSS), Sitecore Experience Edge, and a Jamstack framework or .NET Core client application, it will be a candidate for being run in Sitecore Experience Manager Cloud (XM Cloud). XM Cloud only supports headless implementations. It will not support MVC-based solutions. Sitecore recommends using Next.js as the Jamstack framework for full support of all XM Cloud functionality.
 
 If customers want to implement a .NET Core, React, Angular, or Vue.js client solution, they will need to host a separate rendering host instance themselves - the rendering host will not be available through the XM Cloud platform. This separate rendering host is not required by Next.js as Next.js includes the rendering host capability as part of its run-time.
 
-Besides implementing XM as a headless CMS, you will also need to ensure that you are not using XM capabilities which will not be available with XM Cloud. Some examples of these capabilities are custom Solr indexes, Sitecore Forms, and any capabilities dependent on Content Delivery (CD) servers. The list of XM capabilities which will not be available in XM Cloud will follow in the upcoming month.
+Besides implementing XM as a headless CMS, you will also need to ensure that you are not using XM capabilities which will not be available with XM Cloud. Some examples of these capabilities are custom Solr indexes, Sitecore Forms, and any capabilities dependent on Content Delivery (CD) servers.
 
 ### Will XP2XMP support drag and drop component library like what is supported with SXA today?
 
-Sitecore Experience Manager, which is included as part of the XP2XMP bundle, fully supports SXA for MVC-based solutions. If customers want to use Experience Manager as a headless CMS with the Sitecore JavaScript Rendering SDK (JSS) and publish to Sitecore Experience Edge, then the SXA toolbox, themes, and Creative Exchange capabilities are not supported. An enhanced version of SXA is anticipated for the Experience Manager 10.3 release in late CY2022 that will improve SXA support for headless implementations.
+Sitecore Experience Manager, which is included as part of the XP2XMP bundle, fully supports SXA for MVC-based solutions. If customers want to use Experience Manager as a headless CMS with the Sitecore JavaScript Rendering SDK (JSS) and publish to Sitecore Experience Edge, then the SXA toolbox, themes, and Creative Exchange capabilities are not supported. An enhanced version of SXA which supports headless implementations is available as of the Sitecore XM 10.3 release. It is recommended to implement using this new headless implementation if you are starting a new project.
 
-### Is there an ecommerce version of XP2XMP that also bundles Sitecore OrderCloud?
-
-The &quot;Power of 3&quot; product bundle includes Sitecore OrderCloud + Sitecore Discover + Sitecore Send as a headless commerce proposition. The bundle does not have a frontend tooling component to the degree of XP2XMP but Discover has some limited capabilities which we recommend using in that &quot;Power of 3&quot; play.
-
-The Demo Team is working on a Play Summit commerce demo including XM, JSS, and Discover to start, which will allow us to expand into the XM world from a commerce sales play.
-
-### What about customers who are using analytics within Sitecore XP such as path analyzer?
+### What about customers who are using analytics tools within Sitecore XP such as path analyzer?
 
 If customers want to maintain the use of XP alongside Personalize, they can use a path analyzer for insights where customers may want to apply personalization and testing, and then implement actual personalization in Sitecore Personalize.
 
@@ -32,17 +26,13 @@ If customers want to maintain the use of XP alongside Personalize, they can use 
 
 There is a preview tool in Personalize to test and view draft and live experiences. Customers can also see the data there in terms of performance, impact, etc.
 
-### Are we able to modify the order form for the XM2XMP bundled offering?
-
-The Order Form must remain &quot;as-is&quot; to include all product tables. The Order Form will still have itemized tables for each individual product vs. having one table listing all products within the bundle. On the flip side, there is no requirement to have multiple Order Forms, only one is required, with individual product tables. Due to the different SLAs currently in place, products need to be broken out to protect Sitecore from a contractual and legal perspective.
-
 ### Can we stay on our current hosting solution (not MC) until XM Cloud is released?
 
 Of course! There is no forced move here and the choice of where to host XM is up to the customer.
 
 ### I am a customer that requires HIPAA compliance. Is XP2XMP HIPAA compliant?
 
-The Sitecore Managed Cloud, XP, XM, and Content Hub products will be HIPAA READY by the end of October 2022. Beyond that, we have not committed to making the new SaaS products HIPAA ready yet.
+The Sitecore Managed Cloud, XP, XM, and Content Hub products are HIPAA READY. Sitecore Personalize HIPAA readiness is on the roadmap.
 
 ### What&#39;s the difference in feature parity to Sitecore XP?
 
