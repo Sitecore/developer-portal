@@ -3,6 +3,7 @@ title: 'Tutorial: Create your first XM Cloud no-code component'
 description: 'In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Components builder'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
 pageType: 'tutorial'
+menuOrder: 3
 ---
 
 <Introduction title="What You are Going to Learn">
