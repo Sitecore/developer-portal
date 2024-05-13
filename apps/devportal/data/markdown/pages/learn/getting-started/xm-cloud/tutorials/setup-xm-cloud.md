@@ -13,6 +13,7 @@ In this tutorial, we will go through the steps to learn the basics of XM Cloud a
 - How to access the XM Cloud Deploy application
 - How to create a new XM Cloud project using the XM Cloud Deploy application
 - How to create a new XM Cloud environment for a Project
+
 </Introduction>
 
 ## Overview
@@ -55,7 +56,7 @@ Let’s get started!
    <Image title="Project Overview - Create new Project" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/817fa236e3434742817279da7329eca6?v=d1261f63" maxW="xl" />
 1. From here you provide a Project Name e.g. `XM Cloud Tutorial Series` and click the Continue button
    <Image title="Create Project and Environment Step 1 - Provide Project Name" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/57cf82679be64a498b9d43659c26e900?v=0bb6544a" maxW="xl" />
-1. Choose whether you want to connect to GitHub or to Azure DevOps. A starter solution will be copied to your connected source code repository as a starting point. For the sake of this tutorial you choose GitHub and press the Continue Button  
+1. Choose whether you want to connect to GitHub or to Azure DevOps. A starter solution will be copied to your connected source code repository as a starting point. For the sake of this tutorial you choose GitHub and click the Continue Button  
    <Image title="Create Project and Environment Step 2 - Choose Source Code Repository" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/246d3a6f48d54765be0427179c3e9fd1?v=9240ac99" maxW="xl" />
 
    <Alert status="info">
@@ -77,8 +78,8 @@ Let’s get started!
    <Image title="Create Project and Environment Step 4 - Provide Environment details" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c891806b1758495c8af79c44088f07e3?v=c7f37143" maxW="xl" />
 1. In the **Production SaaS SLA** section you will specify if this new environment is a production environment or not. Select `No` to make this a non-production environment.
 1. Select whether you want to auto deploy on push to the repository. Select “Yes”. This enables the CI/CD pipeline from your main branch. This can be adjusted later.
-1. Press the Continue button.
-1. On the 5th step review your selections and press the “Start deployment” button
+1. Click the Continue button.
+1. On the 5th step review your selections and click the “Start deployment” button
    <Image title="Create Project and Environment Step 5 - Review your selections" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5cda1bf224c4f99b508fe612e527590?v=6c0f0076" maxW="xl" />
 
 The deployment starts, and provisioning and build run in parallel.  
@@ -125,6 +126,6 @@ Once the provisioning and build process are finished, the deployment starts. The
 - [Experience Edge architecture](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html)
 - [Creating a source control connection with GitHub](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-connections-for-source-control-and-hosting-providers.html#creating-a-source-control-connection-with-github)
 
-
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
+
 - [Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup)

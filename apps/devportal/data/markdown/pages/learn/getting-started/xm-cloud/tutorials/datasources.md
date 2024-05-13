@@ -117,15 +117,15 @@ These steps will create the Text Teaser template.
    Leave the Base template with the default value ([Standard template](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-standard-template.html)) for now. If you were creating a series of templates that inherited fields from each other, you might need to specify a base template to inherit from. The default Standard template will provide all the required fields your Text Teaser template will need so it is enough for the purpose of this tutorial.
    </Alert>
 
-1. Press the **Next** button to advance to the Location selection step.
-1. Press the **Next** button to keep the default selection for the location folder.
+1. Click the **Next** button to advance to the Location selection step.
+1. Click the **Next** button to keep the default selection for the location folder.
 
    <Alert status="info">
    <AlertIcon />
    The currently selected folder is set by default when this step shows. If the Basic Components folder wasn't already selected in the tree, you could choose it during this step instead.
    </Alert>
 
-1. Press the **Close** button to exit the wizard. The template has been created.
+1. Click the **Close** button to exit the wizard. The template has been created.
 
 ### Create the fields for the Text Teaser
 
@@ -179,9 +179,9 @@ With the Text Teaser component created, you now need a folder to hold the create
    </Alert>
 
 1. Write **"Text Teaser Folder"** in the **Name** field to name the template.
-1. Press the **Next** button to advance to the Location selection step.
-1. Press the **Next** button to keep the default selection for the location folder.
-1. Press the **Close** button to exit the wizard. The template has been created.
+1. Click the **Next** button to advance to the Location selection step.
+1. Click the **Next** button to keep the default selection for the location folder.
+1. Click the **Close** button to exit the wizard. The template has been created.
 
 ### Configure a template icon
 
@@ -228,7 +228,7 @@ When an author tries to create a new content item, they are presented with the t
 
    <Image title="Content Editor - Select Insert Options" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/83ca1438aef7402491b87738e61dfb81?v=56fb9f4b" maxW="xl" />
 
-1. Press the **OK** button to save the changes.
+1. Click the **OK** button to save the changes.
 
    <Alert status="info">
    <AlertIcon />
@@ -479,6 +479,7 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
 </Alert>
 
 ### Related XM Cloud Documentation
+
 - [Data Templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html)
 - [Data definition and template overview](https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-definition-and-template-overview.html)
 - [The Standard Template](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-standard-template.html)
@@ -488,7 +489,7 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
 - [Get your content from an XM data source](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-your-content-from-an-xm-data-source.html)
 - [Map data from an XM data source to a component](https://doc.sitecore.com/xmc/en/users/xm-cloud/map-data-from-an-xm-data-source-to-a-component.html)
 
-
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
+
 - [Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup)
 - [Creating a Site](/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site)
