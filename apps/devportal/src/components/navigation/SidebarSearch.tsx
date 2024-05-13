@@ -40,7 +40,7 @@ const SidebarSearch = ({ config, onFocus, onBlur }: SidebarNavigationProps) => {
 
   return (
     <>
-      <Box mt={4}>
+      <Box>
         <InputGroup maxW="full">
           <InputLeftElement
             pointerEvents="none"
