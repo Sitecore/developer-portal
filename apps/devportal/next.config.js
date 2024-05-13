@@ -45,6 +45,7 @@ const redirects = [
   },
 ];
 
+
 const nextConfig = {
   experimental: {
     largePageDataBytes: 256 * 100000,
@@ -134,6 +135,14 @@ const nextConfig = {
   },
   async redirects() {
     return [...redirects];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/Downloads/:slug*',
+        destination: '/downloads/:slug*',
+      },
+    ];
   },
 };
 
