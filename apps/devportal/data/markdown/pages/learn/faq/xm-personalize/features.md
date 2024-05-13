@@ -30,9 +30,9 @@ There is a preview tool in Personalize to test and view draft and live experienc
 
 Of course! There is no forced move here and the choice of where to host XM is up to the customer.
 
-### I am a customer that requires HIPAA compliance. Is XP2XMP HIPAA compliant?
+### I am a customer that requires HIPAA compliance. Will I be covered with this solution?
 
-The Sitecore Managed Cloud, XP, and XM products are HIPAA compliant. Sitecore Personalize HIPAA readiness is targeted for June 2024.
+Yes, Sitecore Managed Cloud, XP, and XM products are HIPAA compliant. Sitecore Personalize HIPAA readiness is targeted for June 2024.
 
 ### What&#39;s the difference in feature parity to Sitecore XP?
 
