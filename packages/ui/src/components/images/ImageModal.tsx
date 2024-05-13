@@ -1,9 +1,9 @@
-import { Box, Button, Center, Image, ImageProps, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tooltip, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, Center, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tooltip, useDisclosure } from '@chakra-ui/react';
 
 type ImageModalProps = {
   src: string;
   title?: string;
-  maxW?: ImageProps['maxW'];
+  maxW?: string;
   disableModal?: boolean;
 };
 
@@ -21,7 +21,7 @@ export const ImageModal = ({ src, title, maxW, disableModal }: ImageModalProps) 
   return (
     <Box p={4} my="8" width={'fit-content'} shadow={'sm'} border={'1px'} borderColor={'chakra-border-color'} borderRadius={'lg'}>
       <Tooltip label={'Click to enlarge'} aria-label={'Click to enlarge'}>
-        <Image src={src} alt={title || ''} onClick={onOpen} cursor={'zoom-in'} maxW={maxW ?? 'full'} />
+        <Image src={src} alt={title || ''} onClick={onOpen} cursor={'zoom-in'} maxW={{ base: 'full', md: maxW ? maxW : 'full' }} />
       </Tooltip>
       <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnOverlayClick size={'6xl'}>
         <ModalOverlay />
