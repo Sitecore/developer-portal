@@ -6,13 +6,24 @@ import updatesListData from '@data/data-updates';
 import getHelpCta from '@data/promos/get-help';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getPageInfo } from '@lib/page-info';
+import {
+  CTACard,
+  CategoryTileList,
+  CenteredContent,
+  GenericList,
+  Hero,
+  Hexagons,
+  SitecoreCommunityBlog,
+  SitecoreCommunityEvents,
+  SitecoreCommunityNews,
+  SitecoreCommunityQuestions,
+  StackExchangeFeed,
+  VerticalGroup,
+  YouTubeFeed,
+} from '@scdp/ui/components';
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import Layout from '@src/layouts/Layout';
 import { NextPage } from 'next';
-import {Hero} from '@scdp/ui/components';
-import { CenteredContent, VerticalGroup } from '@scdp/ui/components';
-import {Hexagons, StackExchangeFeed, YouTubeFeed, SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, CategoryTileList, GenericList } from '@scdp/ui/components';
-import { CTACard } from '@scdp/ui/components';
 import { TrackPageView } from '../components/engagetracker/TrackPageView';
 
 export async function getStaticProps() {
@@ -40,7 +51,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
         <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
             <SimpleGrid py={{ base: 0, md: 4 }} gap={{ base: 0, md: 4 }} columns={[1, 1, 2]}>
-              <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
+              <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest changelog updates" linkText="Full changelog" />
               <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} listItem={true} />
             </SimpleGrid>
 
