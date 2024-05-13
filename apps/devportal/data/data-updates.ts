@@ -2,6 +2,16 @@ import { GenericListData, GenericListItem } from '@scdp/ui/components';
 
 const content: GenericListItem[] = [
   {
+    title: 'Sitecore Experience Platform 10.4',
+    description: 'Looking for the latest versions of Sitecore software, including the latest Sitecore Experience Platform 10.4? Have a look at the new download section.',
+    href: '/downloads',
+    linkText: 'Download',
+    img: {
+      src: '/images/downloads.png',
+      alt: 'Sitecore Downloads',
+    },
+  },
+  {
     title: 'Migration Advisor',
     description:
       'Tell the Sitecore Migration Advisor about your solution and then find videos, tutorials, walkthroughs, code examples, and more to help you migrate from Sitecore Platform DXP to Sitecore XM Cloud and the rest of the Sitecore Composable DXP.',
@@ -23,16 +33,6 @@ const content: GenericListItem[] = [
     },
   },
   {
-    title: 'Sitecore Search',
-    description: 'Use our search functionality to search across all the official Sitecore resources, now powered by Sitecore Search',
-    href: '/search',
-    linkText: 'Search',
-    img: {
-      src: '/images/search-page.png',
-      alt: 'Sitecore Search',
-    },
-  },
-  {
     title: 'Sitecore Accelerate',
     description: 'Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products.',
     href: '/learn/accelerate/xm-cloud',
@@ -45,7 +45,7 @@ const content: GenericListItem[] = [
 ];
 
 const communityListData: GenericListData = {
-  title: 'Latest resources',
+  title: 'Featured resources',
   subtitle: '',
   data: content,
 };
