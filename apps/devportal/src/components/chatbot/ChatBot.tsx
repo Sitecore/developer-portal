@@ -30,14 +30,14 @@ export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
   const [question, setQuestion] = useState('');
   const [personaContext, setPersonaContext] = useState<IPersonalizedExperience | undefined>();
   const [messages, setMessage] = useState<Message[]>(initialMessage);
-  //const [searchData, setSearchData] = useState('Rob Earlam');
+  const [searchData, setSearchData] = useState<string[]>([]);
   const isBlank = question === '';
 
   const requestBody = {
     query: question,
     history: messages,
     context: personaContext,
-    searchData: []
+    searchData: [] as string[]
   };
 
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
@@ -130,7 +130,7 @@ export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
   const askQuestion = async () => {
     if (isBlank) return;
     setMessage((old) => [...old, { type: MessageType.User, text: question }]);
-
+    
     setIsLoading.on();
 
     await storeQuestionPersonalize(question);
@@ -140,7 +140,10 @@ export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
       body: JSON.stringify({ query: question }),
     });
     const searchResult = await searchResponse.json();
-    requestBody.searchData = searchResult.answers;
+
+    const updatedAnswers = searchData.concat(searchResult.answers);
+    setSearchData(updatedAnswers);
+    requestBody.searchData = updatedAnswers;
 
     // TODO: Move this to a lib/service
     const chatResult: Response = await fetch('/chat', {
@@ -187,6 +190,7 @@ export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
 
   const resetSession = function () {
     setMessage(() => initialMessage);
+    setSearchData([]);
     setQuestion('');
   };
 

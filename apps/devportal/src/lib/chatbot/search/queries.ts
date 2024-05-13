@@ -13,7 +13,11 @@ export function buildSearchQuery({ path, uuid, term, sources }: SearchChangeLogQ
           "rfk_id": "rfkid_chatbot",
           "sources": ${JSON.stringify(sources)},
           "search": {
-            "content": {},
+            "content": {
+              "fields": [
+                  "description"
+              ]
+            },
             "limit": 5,
             "sort": {
               "value": [
