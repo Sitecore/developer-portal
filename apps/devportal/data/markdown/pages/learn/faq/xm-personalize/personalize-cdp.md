@@ -54,34 +54,34 @@ Personalization is not restricted to just pop-up functionality but instead can a
 
 If the user has purchased Standalone Personalize (or CDP, SmartHub CDP) then they will keep that instance if they move to XM Cloud. The embedded Personalization in Pages will be enhanced with additional condition templates and the user will be able to update the experiences created in Pages by going into the Sitecore Personalize app.
 
-## Do I need to make changes to my current XM/XP implementation in order to utilize Sitecore Personalize (SP)?
+### Do I need to make changes to my current XM/XP implementation in order to utilize Sitecore Personalize (SP)?
 
 Technically, you could use XP and Personalize side by side and could even be some benefits of doing so for a temporary period of time to collect data before fully embracing Personalize. Technically there would be some changes necessary, however the impacts would be minimal. Please refer to developer portal integration documents.
 
 With an existing XP or XM on-prem implementation, to start utilizing Sitecore Personalize, you will need to integrate the web tracking mechanisms into your existing XP/XM instance. This includes placing the Sitecore CDP/Personalize JS Library (Boxever.js) and then adding tracking events in JavaScript, to track view and identity events where appropriate. There are details about these required changes in the Developer Portal ([https://developers.sitecore.com/learn/integrations/xm-smarthub-cdp](https://developers.sitecore.com/learn/integrations/xm-smarthub-cdp))
 
-## I see that Sitecore Personalize (SP) has content (offers), can you store these in Content Hub or XM? Is there a single source of content?
+### I see that Sitecore Personalize (SP) has content (offers), can you store these in Content Hub or XM? Is there a single source of content?
 
 No, you currently cannot store offers in Content Hub or XM and pull these into Sitecore Personalize. However, you can pull content from XM or Content Hub when personalizing a piece of content using a Full Stack experience vs a Web Experience using custom code in your front end.
 
-## How do the personalized full-stack (omni-channel) options work? Can you show me an example of a customer?
+### How do the personalized full-stack (omni-channel) options work? Can you show me an example of a customer?
 
 Regarding a full description, please refer to the documentation website. The following are example use and business cases
 
-**1. Personalised Content for Native Mobile App experiences**
+#### 1. Personalised Content for Native Mobile App experiences
 
 - The mobile app sends a request into a Sitecore CDP full stack interactive experience, personalised content using customer order history and behavioural data is returned.
 - For example, a gaming company sends a request from their mobile app into Sitecore CDP to get the next best game to recommend to the customer based on their previously played games, time on each game and interests.
 
 - The personalised content is AB tested against a control to see which leads to more time spent on the app.
 
-**2. Realtime data sources**
+#### 2. Realtime data sources
 
 - An external third-party system, accessible through a REST API, is called to retrieve information in real-time required for a decision or for personalised content.
 - For example, an airline has a price API that returns the real-time price of a flight.
 - A product recommender is shown to the customer based on their point of sale, recent searches, and order history. The price shown to the customer is taken from the price API which is integrated with in the decision canvas.
 
-**Real-Life Example (Jetstar Airways &amp; Sitecore)**
+#### Real-Life Example (Jetstar Airways &amp; Sitecore)
 
 - [https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways ](https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways%C2%A0)
 
