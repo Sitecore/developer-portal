@@ -62,7 +62,7 @@ With an existing XP or XM on-prem implementation, to start utilizing Sitecore Pe
 
 ### I see that Sitecore Personalize (SP) has content (offers), can you store these in Content Hub or XM? Is there a single source of content?
 
-No, you currently cannot store offers in Content Hub or XM and pull these into Sitecore Personalize. However, you can pull content from XM or Content Hub when personalizing a piece of content using a Full Stack experience vs a Web Experience using custom code in your front end.
+There are two approaches to handling a single content source. The first approach involves using a Decision Model with a Web Experience, which directly pulls content from your content management system within the Decision Model, and then displays the result in your Web Experience. The second approach is to use a Full Stack Interactive experience, where your frontend code requests a decision, receives a JSON result, and then retrieves the correct content items.
 
 ### How do the personalized full-stack (omni-channel) options work? Can you show me an example of a customer?
 
