@@ -234,7 +234,7 @@ At this point we have the Text Teaser component layout defined, with some basic 
 
    <Alert status="info">
       <AlertIcon />
-      This validates that the component is available to authors. If it does not display in this list, then the component may note have been Staged or Published yet.
+      This validates that the component is available to authors. If it does not display in this list, then the component may not have been Staged or Published yet.
    </Alert>
 
    <Image title="Pages - Choose the Components to add to the page" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/ae796b8cca15429aaee9275ef31b047c?v=29e6d8c4" maxW="xl" />
@@ -249,11 +249,11 @@ At this point we have the Text Teaser component layout defined, with some basic 
 </Alert>
 
 ### Related XM Cloud Documentation
+
 - [Get started with XM Cloud Components](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-started-with-xm-cloud-components.html)
 - [Staging and publishing components](https://doc.sitecore.com/xmc/en/users/xm-cloud/staging-and-publishing-components.html)
 - [Work with components](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-components.html)
 - [Work with a component layout](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-a-component-layout.html)
-
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
 
