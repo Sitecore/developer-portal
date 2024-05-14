@@ -26,7 +26,7 @@ If customers want to maintain the use of XP alongside Personalize, they can use 
 
 There is a preview tool in Personalize to test and view draft and live experiences. Customers can also see the data there in terms of performance, impact, etc.
 
-### Can we stay on our current hosting solution (not MC) until XM Cloud is released?
+### Can we stay on our current hosting solution (not Managed Cloud)?
 
 Of course! There is no forced move here and the choice of where to host XM is up to the customer.
 
