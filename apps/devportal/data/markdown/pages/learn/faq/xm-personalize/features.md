@@ -6,7 +6,7 @@ hasSubPageNav: true
 cdpTags: ['xm', 'personalize']
 ---
 
-### Once I build a XM + Personalize site and deploy it, will I be able to port this site to XM Cloud when that comes out? Do you have a playbook available that we could see?
+### Once I build a XM + Personalize site and deploy it, will I be able to port this site to XM Cloud? Do you have a playbook available that we could see?
 
 If XM + Personalize is implemented as a headless CMS with the Sitecore JavaScript Rendering SDK (JSS), Sitecore Experience Edge, and a Jamstack framework or .NET Core client application, it will be a candidate for being run in Sitecore Experience Manager Cloud (XM Cloud). XM Cloud only supports headless implementations. It will not support MVC-based solutions. Sitecore recommends using Next.js as the Jamstack framework for full support of all XM Cloud functionality.
 
