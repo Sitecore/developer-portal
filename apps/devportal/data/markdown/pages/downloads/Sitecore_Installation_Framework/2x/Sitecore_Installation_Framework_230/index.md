@@ -8,6 +8,8 @@ The Sitecore Install Framework (SIF) enables users to deploy and configure a Sit
 
 Please see the Sitecore product installation instructions for more information on how to install Sitecore using SIF.
 
+See [all available versions here](/downloads/Sitecore_Installation_Framework).
+
   <Alert variant='warning' mb={4}>
     <AlertIcon />
     We recommend installing the Sitecore Installation framework through the official Sitecore PowerShell gallery feed. [Read the FAQ for more information](https://doc.sitecore.com/xp/en/developers/100/sitecore-experience-manager/sitecore-powershell-public-nuget-feed-faq.html).
