@@ -30,9 +30,9 @@ Personalize can track users over time and then personalize off of previous visit
 
 You will have to manually recreate your rule logic in Personalize using Decisioning and add it to an experience. Decision Models combined with Web Experiences or Full Stack Interactive Experiences will provide your best equivalent to the power within XP.
 
-### We currently use XM Managed Cloud but like the sound of adding Personalize and Send. We use .Net to publish to the web apps in Azure, will we continue to do that if we move to your new XP2XMP offering?
+### We currently use XM Managed Cloud but like the sound of adding Personalize. We use .Net to publish to the web apps in Azure, will we continue to do that if we move to your new XP2XMP offering?
 
-For customers already using XM On-Prem or Managed Cloud, they will continue to use their existing deployment process for code changes for their environment. The customer will however need to purchase Sitecore Send or Sitecore Personalize to apply to their existing XM instance. These changes will not affect the existing deployment to Azure Platform as a Service (PaaS) or Containers (or any other potential approach). To add Personalize, the customer will apply the Sitecore CDP/Personalize JS Library to begin tracking users on their site and use Sitecore Personalize or SmartHub CDP to then personalize their customers&#39; experiences using a Web or Full Stack Experience.
+For customers already using XM On-Prem or Managed Cloud, they will continue to use their existing deployment process for code changes for their environment. The customer will however need to purchase Sitecore Personalize to apply to their existing XM instance. These changes will not affect the existing deployment to Azure Platform as a Service (PaaS) or Containers (or any other potential approach). To add Personalize, the customer will apply the Sitecore CDP/Personalize JS Library to begin tracking users on their site and use Sitecore Personalize or SmartHub CDP to then personalize their customers&#39; experiences using a Web or Full Stack Experience.
 
 If the customer is using XP and moving to an XM + Personalize, their existing deployment may change slightly. With XP, they needed xConnect and supporting pieces to support this environment, but with XM + Personalize, there is no longer a need to have a dependency on this additional infrastructure. However, any other changes to the Platform as a Service approach would not require additional modifications.
 
@@ -85,7 +85,7 @@ Regarding a full description, please refer to the documentation website. The fol
 
 - [https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways ](https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways%C2%A0)
 
-To solve a challenge of Create and act on insights from a single customer profile driven by an omnichannel experience strategy.**Jetstar** Use Sitecore Experience Manager as the core digital transformation platform, Sitecore CDP to activate customer insights and Sitecore Personalize deployed across multiple channels.
+To solve a challenge of Create and act on insights from a single customer profile driven by an omnichannel experience strategy. **Jetstar** use Sitecore Experience Manager as the core digital transformation platform, Sitecore CDP to activate customer insights and Sitecore Personalize deployed across multiple channels.
 
 ### These products are being sold as a package, will they be properly integrated with data flowing between them automatically, or there will be manual steps to connect them?
 
