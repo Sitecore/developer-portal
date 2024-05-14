@@ -29,4 +29,4 @@ We believe Jamstack implementations are the future of digital experiences and we
 
 ### What is testing and personalization &#39;across the funnel&#39;?
 
-This refers to Personalization &amp;Testing experiences that can run across multiple pages and on experiences that are not being powered by Sitecore today. This is a powerful feature not available in XP that provides more extensibility of the Sitecore Personalize solution and can help organizations demonstrate ROI quicker.
+This refers to Personalization &amp; Testing experiences that can run across multiple pages and on experiences that are not being powered by Sitecore today. This is a powerful feature not available in XP that provides more extensibility of the Sitecore Personalize solution and can help organizations demonstrate ROI quicker.
