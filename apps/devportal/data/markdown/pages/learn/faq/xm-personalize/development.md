@@ -16,7 +16,7 @@ Headless development of sites with Sitecore Experience Manager supports two opti
 
 When using Sitecore Experience Manager from the XP2XMP bundle with the Sitecore JavaScript Rendering SDK (JSS), developers can use Server-Side Rendering (SSR) with their Next.js, React, Angular, or Vue.js applications. React, Angular, and Vue.js require customers to host an [SSR proxy](https://doc.sitecore.com/xp/en/developers/hd/190/sitecore-headless-development/server-side-render-jss-apps-headlessly-using-the-jss-proxy.html) server themselves to support SSR with JSS. Next.js supports SSR without requiring a separate SSR proxy server as this capability is supported through Next.js directly. This is one of the reasons why Sitecore recommends using Next.js as the Jamstack framework for client applications when implementing a headless solution.
 
-### We just launched our XM site on 10.1 using the best practices of SXA. Can we port that site over to XP2XMP so we can take advantage of Personalize and Send that we did not purchase with our XM License?
+### We just launched our XM site on 10.1 using the best practices of SXA. Can we port that site over to XP2XMP so we can take advantage of Personalize that we did not purchase with our XM License?
 
 If your existing XM 10.1 site is using SXA best practices, your site should be compatible with the Sitecore Experience Manager instance included as part of the XP2XMP product bundle. XP2XMP will allow you to take advantage of the Sitecore Personalize capabilities as well.
 
@@ -47,7 +47,7 @@ We are not forcing customers down a particular path yet. As part of this play th
 
 ### How is authentication handled between the different tools?
 
-By default, administrator authentication to XM, Personalize, and Send will be individually managed by each application. Alternatively, SSO can be implemented across the three.
+By default, administrator authentication to XM and Personalize will be individually managed by each application. Alternatively, SSO can be implemented.
 
 ### What is the plan to help migrate customers from XP to XM+Personalize?
 
