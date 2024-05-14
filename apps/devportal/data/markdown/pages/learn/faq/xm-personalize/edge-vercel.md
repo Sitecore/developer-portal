@@ -14,7 +14,7 @@ Some examples of XM capabilities that will not be available in XM Cloud are cust
 
 ### I already pay for Vercel for other applications we have, can I use my Vercel with XP2XMP?
 
-You can use your own Vercel subscription with XP2XMP is you are implementing a headless CMS.
+You can use your own Vercel subscription with XP2XMP if you are implementing a headless CMS.
 
 ### Why do I need to change to Edge/Vercel, when I only need a presence in my local region? And what would the benefits be?
 
