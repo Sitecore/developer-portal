@@ -4,15 +4,9 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Resource_files_for_Modules/1x/Resource_files_for_Modules_100
 ---
 
-Module resource files for upgrading Core, Master and Web.
+Module resource files for upgrading Core, Master and Web databases. Use the packages for the modules and versions from which you are upgrading. Use the version of the [UpdateApp tool](/downloads/Sitecore_UpdateApp_Tool) specifically provided for and compatible with the version from which you are upgrading.
 
-These packages contain module upgrade resource files required to update the Core, Master and Web databases. Download and use the packages for the modules and versions you are upgrading from. Make sure to use the version of the [UpdateApp tool](/downloads/Sitecore_UpdateApp_Tool) specifically provided for and compatible with the version you are upgrading from.
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Please use this version to upgrade to Sitecore XP 10.2 and 10.3. 
-  </Alert>
-  
+Resource files for Modules 1.0.0 is used for upgrading to Sitecore XP 10.2, 10.3, and 10.4.
 
 ## Downloads
 

@@ -4,7 +4,9 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Data_Migration_Tool/4x/xDB_Data_Migration_Tool_400.aspx
 ---
 
-Convert and migrate data from Sitecore Experience Database 8.x to Sitecore Experience Database 9.3.
+xDB Data Migration Tool 4.0.0 converts and migrates data from Sitecore Experience Database 8.x to Sitecore Experience Database 9.3.
+
+See [all available versions here](/downloads/Sitecore_xDB_Data_Migration_Tool).
 
 ## Downloads
 
