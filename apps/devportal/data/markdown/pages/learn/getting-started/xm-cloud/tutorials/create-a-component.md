@@ -18,7 +18,7 @@ In this tutorial, we will go through the steps to create a Text Teaser component
 
 ## Overview
 
-Components are the visual, re-usable, building blocks to design web pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component in your project. We will use the XM Cloud Components builder, exploring the no-code approach to building components. No-code components, sometimes referred to as Front-End as a Service (FEaaS) components, are built using XM Cloud's user interface, allowing non-technical folks to manage layout elements of their site.
+Components are the visual, re-usable, building blocks to design web pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component in your project. We will use the XM Cloud Components builder, exploring the no-code approach to building components. No-code components, sometimes referred to as Front-End as a Service (FEaaS) components, are built using XM Cloud's user interface, allowing non-technical team members to help with the site management.
 
 <Alert status="info">
    <AlertIcon />
