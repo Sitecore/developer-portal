@@ -70,8 +70,8 @@ Regarding a full description, please refer to the documentation website. The fol
 
 #### 1. Personalised Content for Native Mobile App experiences
 
-- The mobile app sends a request into a Sitecore CDP full stack interactive experience, personalised content using customer order history and behavioural data is returned.
-- For example, a gaming company sends a request from their mobile app into Sitecore CDP to get the next best game to recommend to the customer based on their previously played games, time on each game and interests.
+- The mobile app sends a request into a Sitecore Personalize full stack interactive experience, personalised content using customer order history and behavioural data is returned.
+- For example, a gaming company sends a request from their mobile app into Sitecore Personalize to get the next best game to recommend to the customer based on their previously played games, time on each game and interests.
 
 - The personalised content is AB tested against a control to see which leads to more time spent on the app.
 
