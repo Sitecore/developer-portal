@@ -85,7 +85,7 @@ Regarding a full description, please refer to the documentation website. The fol
 
 - [https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways ](https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways%C2%A0)
 
-To solve a challenge of Create and act on insights from a single customer profile driven by an omnichannel experience strategy. **Jetstar** use Sitecore Experience Manager as the core digital transformation platform, Sitecore CDP to activate customer insights and Sitecore Personalize deployed across multiple channels.
+To address the complexity of deriving and implementing insights from a unified customer profile in an omnichannel experience strategy, **Jetstar** uses Sitecore Experience Manager as the main platform for digital transformation. It also uses Sitecore CDP to activate customer insights and Sitecore Personalize across multiple channels.
 
 ### These products are being sold as a package, will they be properly integrated with data flowing between them automatically, or there will be manual steps to connect them?
 
