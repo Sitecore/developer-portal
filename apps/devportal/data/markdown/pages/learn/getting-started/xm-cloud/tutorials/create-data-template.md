@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: How to Create a Component Data Template in XM Cloud'
 description: 'Learn about defining the content model that you can use for data sources in the XM Cloud Component builder.'
-openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
+openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/f22899c6baf54eb2bfcf23eb033e9107?v=0e490ed4'
 pageType: 'tutorial'
 menuOrder: 4
 ---
