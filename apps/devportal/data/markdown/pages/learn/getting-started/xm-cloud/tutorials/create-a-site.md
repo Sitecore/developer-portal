@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: How to Create a Site and Connect your App'
 description: 'In this tutorial, you will become familiar with setting up a site, setting up the dev environment to support building that site, and how to connect your codebase that runs on your local rendering host to the preview endpoint of XM Cloud.'
-openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
+openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/1480ca22c0724a7496c9617b5f65cd6a?v=cf3753f9'
 menuOrder: 2
 pageType: 'tutorial'
 ---
