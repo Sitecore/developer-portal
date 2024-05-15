@@ -127,6 +127,8 @@ Once the provisioning and build process are finished, the deployment starts. The
 - [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
 - [Introduction to the Sitecore Cloud Portal](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
 - [Sitecore Cloud Portal roles](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/roles.html)
+- [What is an XM Cloud Project?](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html#UUID-3ceb7d45-3caf-3196-3a9a-f59a9474182a_xmc_project)
+- [What is an XM Cloud Environment?](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html#UUID-3ceb7d45-3caf-3196-3a9a-f59a9474182a_xmc_environment)
 - [Deploying XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html)
 - [XM Cloud Deploy app](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
 - [Manage an XM Cloud environment](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html)
