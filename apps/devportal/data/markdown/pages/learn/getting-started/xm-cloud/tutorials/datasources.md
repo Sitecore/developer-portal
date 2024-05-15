@@ -279,16 +279,5 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
 
 ### Related XM Cloud Documentation
 
-- [Data Templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html)
-- [Data definition and template overview](https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-definition-and-template-overview.html)
-- [The Standard Template](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-standard-template.html)
-- [Standard values for data template fields](https://doc.sitecore.com/xmc/en/developers/xm-cloud/standard-values-for-data-template-fields.html)
-- [Insert Options](https://doc.sitecore.com/xmc/en/developers/xm-cloud/insert-options.html)
-- [Add a module to an existing site collection or site](https://doc.sitecore.com/xmc/en/developers/xm-cloud/add-a-module-to-an-existing-site-collection-or-site.html)
 - [Get your content from an XM data source](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-your-content-from-an-xm-data-source.html)
 - [Map data from an XM data source to a component](https://doc.sitecore.com/xmc/en/users/xm-cloud/map-data-from-an-xm-data-source-to-a-component.html)
-
-### Related XM Cloud Accelerate guidance for Sitecore Partners
-
-- [Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup)
-- [Creating a Site](/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site)
