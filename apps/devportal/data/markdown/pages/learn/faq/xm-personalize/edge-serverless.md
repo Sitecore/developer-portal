@@ -1,6 +1,6 @@
 ---
 product: ['xm', 'personalize']
-title: 'Experience Edge & Serverless hosting'
+title: 'Experience Edge & Serverless Hosting'
 hasInPageNav: true
 hasSubPageNav: true
 cdpTags: ['xm', 'personalize']
