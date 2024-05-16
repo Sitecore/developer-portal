@@ -21,7 +21,6 @@ Previously, you learned how to use XM Cloud Components to centrally manage the c
 
 For this tutorial, you will:
 
-1. Create a new Text Teaser content item with data
 1. Connect the created data source to the Component on the page.
 1. Configure XM Cloud so that whenever an author drags the Text Teaser component onto the page, they are asked to select an existing piece of content or create a new one.
 
@@ -33,63 +32,6 @@ In order to complete the following tutorial, you will need these resources:
 1. An existing XM Cloud environment and site created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
 1. The Text Teaser component created in [Tutorial: Create a Component using XM Cloud Component Builder](create-a-component)
 1. The Text Teaser data source created in [Tutorial: How to Create a Component Data Template in XM Cloud](create-data-template)
-
-## Create content that can be used as a data source
-
-You have now created your templates and configured them for the authors. You also created the module needed to make the feature-related items available to a site. In a real XM Cloud development project, there would be many different templates and folders defined in a module. At this stage, a team would usually need to configure the module to create the site-specific structure with all of those templates and folders and [add the module to an existing site collection or site](https://doc.sitecore.com/xmc/en/developers/xm-cloud/add-a-module-to-an-existing-site-collection-or-site.html).
-
-For the purpose of this tutorial, however, you will skip forward a few steps and manually create the structure since only the Text Teaser template is being used right now.
-
-### Create data source folder manually
-
-1. In the Content Editor, navigate to the Data folder in the Company Dev site that was created in the previous tutorial: `/sitecore/Content/Company Dev/Company Dev/Data`
-
-   <Image title="Content Editor - Select Data Folder of Site" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d04350f52aa4495f9c1a665e0442ebad?v=f9a45e21" maxW="xl" />
-
-1. Right-click and select **Insert** from the context menu and select **Insert from template** to launch a template selection dialog
-   <Alert status="info">
-   <AlertIcon />
-   Note that there are no options for the Text Teaser templates listed in the context menu since you have not configured anything to help insert content into this Data folder. However, if you have logged in as an administrator account you will have the option for **Insert from template**. If you do not have that option, you will need to change account to one with full administrator access.
-   </Alert>
-
-   <Image title="Content Editor - Insert from Template" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/f1f5bae792be49e49144758a953e8d09?v=2bb14d33" maxW="xl" />
-
-1. In the dialog, expand the Browse tree to `Templates/Project/Company Dev/Basic Components` so that the Text Teaser templates are visible for selection.
-
-   <Image title="Content Editor - Select Text Teaser Folder Template" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/2509dbb85e4d4ca69b41fc58d8394ec6?v=acbb1415" maxW="xl" />
-
-1. Select the **Text Teaser Folder** template
-1. In the **Item Name** field enter the value **"Text Teasers"**. This will be the name given to the folder.
-1. Click **Insert** to create the folder.
-
-   <Alert status="info">
-   <AlertIcon />
-   The UI will automatically update to show the Text Teasers folder and will select it for you in the tree. If you right-click on the new **Text Teasers** folder, the options for the Insert context menu will now show the configured options from earlier in the tutorial. This is how authors will now be able to create new **Text Teaser** and **Text Teaser Folder** items.
-   </Alert>
-
-### Create a sample data source
-
-You can now test out your folder by creating a sample Text Teaser content data source.
-
-1. Right-click on the **Text Teasers** folder to launch the context menu
-1. Select **Insert > Text Teaser** to create a new text teaser.
-1. Type in **How to use Components** as the name for the test teaser.
-1. Click **OK** button to create the Text Teaser content.
-
-   <Image title="Content Editor - Create Data Source Item" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/294e3ee4030c45248cc8b7d2f54f5a27?v=372cdf22" maxW="xl" />
-
-   <Alert status="info">
-   <AlertIcon />
-   The fields that are shown to you can now be edited. This is where a Content Author will create the parts of their content to be used on the component.
-   </Alert>
-
-1. In the Content pane, specify values for the Text Teaser:
-
-   - **Headline:** How to use Components
-   - **Subheadline:** Easy and smart ways designing your pages
-   - **Content:** The Components builder of XM Cloud Components is a powerful tool that lets you create new components or modify already existing components using an intuitive WYSIWYG builder. It also lets you store the components in organized collections in the Components library. Learn more about how to use Components in this tutorial.
-
-   <Image title="Content Editor - Insert Content" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/5a0332e9b80e410c87031276a0f1dc4d?v=79d85436" maxW="xl" />
 
 ## Use a data source template in XM Cloud Components
 
