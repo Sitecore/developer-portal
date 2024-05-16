@@ -16,7 +16,7 @@ export const ChatBotWrapper = () => {
   return chatbot && (
     <>
       <Tooltip label={`Ask ${chatbot.name} - your personal assistant`}>
-        <Button width="237px" height="250px" cursor="pointer" position="fixed" inset="auto 0px 0px auto" onClick={onToggle} colorScheme="grey">
+        <Button width="216px" height="185px" cursor="pointer" position="fixed" inset="auto 0px 0px auto" padding={0} onClick={onToggle} colorScheme="grey">
           {
             (!isOpen)
              ? <Image src={chatbot.image} width={237} height={250} alt={`Get help from ${chatbot.name}!`} />
@@ -26,7 +26,7 @@ export const ChatBotWrapper = () => {
       </Tooltip>
 
       <ScaleFade in={isOpen} reverse>
-        <Box position="fixed" inset="auto 0px 0px auto" margin={['auto 0 0 auto', 'auto 13% 13% auto', 'auto 8% 6% auto']} shadow={'2xl'}>
+        <Box position="fixed" inset="auto 0px 0px auto" margin={['auto 0 0 auto', 'auto 13% 13% auto', 'auto 8% 6% auto']} animation={'ease-in'} shadow={'2xl'}>
           <ChatBot onClose={onClose} isOpen={isOpen} chatBot={chatbot} />
         </Box>
       </ScaleFade>
