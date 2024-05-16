@@ -11,6 +11,7 @@ This a feature release. Sitecore recommends that you upgrade to this release if 
 - [Highlights](#highlights)
 - [New features/improvements](#new-featuresimprovements)
 - [Deprecated/Removed](#deprecatedremoved)
+- [Known issues](#known-issues) 
 - [Resolved issues](#resolved-issues)
 
 ## Highlights
@@ -71,6 +72,14 @@ Sitecore is discontinuing support for the Horizon visual page builder beginning 
 | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | Platform | ​​​​​An unused `Microsoft.IdentityModel.Clients.ActiveDirectory` reference was removed.                                                                                                                                                                         | 430895  |
 | Platform | ​​​The `Developer Center` has been marked as obsolete and will be removed in a future version. <br />The `GridDesigner, IDE, RenderingLister, PageDesigner, Layouter, Imager`, and `PageScreenshots` that were previously marked as obsolete have been removed. | 540188  |
+
+## Known issues
+
+The following is a known issue:
+
+| Context                      | Description                                                                                                                                                                               | ADO no.                                                                                                                                        |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Media                   | ​​When a media blob is referenced by multiple duplicated media items, deleting one of these duplicated items will result in the deletion of the media blob.                                 | 563054
 
 ## Resolved issues
 

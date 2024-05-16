@@ -4,13 +4,10 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/7x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_700
 ---
 
-Synchronize data between Microsoft Dynamics 365 for Sales and Sitecore Experience Platform.
+Synchronize data between Microsoft Dynamics 365 for Sales and Sitecore Experience Platform.\
+Sitecore Connect™ for Microsoft Dynamics 365 for Sales 7.0.0 is compatible with Sitecore XP 10.2.
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore Connect™ for Microsoft Dynamics 365 for Sales version 7.0 requires Sitecore Experience Platform version 10.2.
-  </Alert>
-  
+See [all available versions here](/downloads/Dynamics_CRM_Connect).
 
 ## Downloads
 

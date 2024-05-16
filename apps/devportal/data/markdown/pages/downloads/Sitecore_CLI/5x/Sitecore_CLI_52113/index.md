@@ -1,26 +1,17 @@
 ---
 title: "Sitecore CLI 5.2.113"
 description: ""
-origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_52113
 ---
 
-The Sitecore CLI provides an entry point for interactive and automated command-line interaction with a Sitecore instance, including commands for pulling and synchronizing serialized Sitecore items.
+The Sitecore CLI provides an entry point for interactive and automated command-line interaction with a Sitecore instance, including commands for pulling and synchronizing serialized Sitecore items.\
+Sitecore CLI 5.2.113 is compatible with Sitecore 10.1, 10.2, 10.3, 10.4, and Sitecore XM Cloud.
+
+See [all available versions here](/downloads/Sitecore_CLI).
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    Please note that extensions/customizations to the CLI and Sitecore Management Services module are unsupported. The CLI and module are intended to be used as-is. Please submit feature requests via the Sitecore support portal.
+    Extensions/customizations to the CLI and Sitecore Management Services module are unsupported. The CLI and module are intended to be used as-is. Please submit feature requests via the Sitecore support portal.
   </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    This version of Sitecore CLI is compatible with Sitecore 10.1, 10.2, 10.3 and Sitecore XMCloud.
-  </Alert>
-  
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore encourages customers to always install latest update of a given version to ensure latest fixes are included in their solution. See [all available versions here](/downloads/Sitecore_CLI).
-  </Alert>
-  
 
 ## Download options
 

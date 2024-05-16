@@ -24,7 +24,7 @@ import {
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import Layout from '@src/layouts/Layout';
 import { NextPage } from 'next';
-import { ChatBot } from '../components/chatbot/ChatBot';
+import { ChatBotWrapper } from '../components/chatbot/ChatBotWrapper';
 import { TrackPageView } from '../components/engagetracker/TrackPageView';
 
 export async function getStaticProps() {
@@ -52,7 +52,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
         <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
             <SimpleGrid py={{ base: 0, md: 4 }} gap={{ base: 0, md: 4 }} columns={[1, 1, 2]}>
-              <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest updates" linkText="Full changelog" />
+              <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest changelog updates" linkText="Full changelog" />
               <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} listItem={true} />
             </SimpleGrid>
 
@@ -106,7 +106,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
           </CenteredContent>
         </VerticalGroup>
 
-        <ChatBot position={'fixed'} bottom={'150px'} right={'10px'} />
+        <ChatBotWrapper /> 
       </Layout>
     </TrackPageView>
   );

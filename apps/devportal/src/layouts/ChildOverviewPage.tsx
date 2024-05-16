@@ -1,5 +1,5 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
+import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, Stack, Text } from '@chakra-ui/react';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import { CenteredContent, Hero, PromoCardProps, PromoList, TextLink, VerticalGroup } from '@scdp/ui/components';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
@@ -49,9 +49,9 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
           )}
           <VerticalGroup>
             <CenteredContent>
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+              <Stack gap={10}>
                 {childPageInfo.map((childPage, i) => (
-                  <Card variant={'outlineRaised'} size="md" layerStyle={'interactive.raise'} key={i}>
+                  <Card variant={'outlineRaised'} size="lg" layerStyle={'interactive.raise'} key={i}>
                     <CardHeader>
                       <TextLink isHeading as={'h3'} text={childPage.title} aria-label={childPage.title} href={childPage.link} />
                     </CardHeader>
@@ -65,7 +65,7 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
                     </CardFooter>
                   </Card>
                 ))}
-              </SimpleGrid>
+              </Stack>
             </CenteredContent>
           </VerticalGroup>
           {/* <VerticalGroup>

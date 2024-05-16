@@ -4,13 +4,10 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/5x/Sitecore_Connect_for_Salesforce_CRM_500
 ---
 
-Synchronize data between Salesforce CRM and Sitecore Experience Platform.
+Synchronize data between Salesforce CRM and Sitecore Experience Platform.\
+Sitecore Connect™ for Salesforce CRM version 5.0.0 is compatible with Sitecore XP 10.0.
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Sitecore Connect for Salesforce CRM version 5.0.0 requires Sitecore Experience Platform version 10.0.
-  </Alert>
-  
+See [all available versions here](/downloads/Salesforce_Connect).  
 
 ## Downloads
 

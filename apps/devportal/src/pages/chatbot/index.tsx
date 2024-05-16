@@ -1,7 +1,7 @@
 'use client';
 
-import { ChatBot } from '@/src/components/chatbot/ChatBot';
+import { ChatBotWrapper } from '@/src/components/chatbot/ChatBotWrapper';
 
 export default function Home() {
-  return <ChatBot />;
+  return <ChatBotWrapper />;
 }

@@ -9,6 +9,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/103/Site
 This is a product update. Sitecore recommends that you upgrade to this release if it includes fixes that meet the specific needs of your organization. If this release does not include new functionality or specific fixes that your organization requires, you may benefit from waiting to upgrade until Sitecore releases an update that is relevant for your organization. This is especially true in production environments.
 
 - [New features/improvements](#new-featuresimprovements)
+- [Known issues](#known-issues)
 - [Resolved issues](#resolved-issues)
 
 ## New features/improvements
@@ -18,6 +19,13 @@ This is a product update. Sitecore recommends that you upgrade to this release i
 | Containers   | The Traefik container image has been updated from version 2.5.3 to 2.9.8. | 575660  |
 | Installation | Sitecore Installation Assistant 1.5.1 supports Sitecore XP 10.3.1.        | 583106  |
 
+## Known issues
+
+The following is a known issue:
+
+| Context                  | Description                                                                                                                                                                                                                                      | ADO no.                                        |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------- |
+| Media           | When a media blob is referenced by multiple duplicated media items, deleting one of these duplicated items will result in the deletion of the media blob.                                                                                                  | 563054                         
 ## Resolved issues
 
 The following issues have been fixed:

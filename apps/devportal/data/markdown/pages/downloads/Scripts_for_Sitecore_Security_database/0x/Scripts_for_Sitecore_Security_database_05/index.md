@@ -1,16 +1,12 @@
 ---
 title: "Scripts for Sitecore Security database 0.5"
 description: ""
-origin: https://dev.sitecore.net/Downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_05.aspx
 ---
 
-The set of scripts for moving Sitecore Security membership provider from the Core database to individual or existing one.
+Scripts for Sitecore Security Database contains the set of scripts for moving the Sitecore Security membership provider from the Core database to an individual or existing database.\
+Scripts for Sitecore Security Database 0.5 is compatible with Sitecore XP 9.1 and later, and Sitecore Identity Server 7.0.
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    This release is compatible with Sitecore XP 9.1+ and Sitecore Identity 7.0.
-  </Alert>
-  
+See [all available versions here](/downloads/Scripts_for_Sitecore_Security_database).    
 
 ## Download options
 

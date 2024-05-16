@@ -4,14 +4,13 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Content_Hub/3x/Sitecore_Connect_for_Content_Hub_310.aspx
 ---
 
-The Sitecore Connect™ for Content Hub gives web editors, content/digital marketers:
+Sitecore Connect™ for Content Hub enables web editors and content/digital marketers:
+-   To work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub.
+-   To select assets directly from DAM from within the Sitecore environment. Users can select and Incorporate assets into their web and digital experience creation and delivery.
 
--   The ability to work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub.
--   The ability to select assets directly from DAM from within the Sitecore environment. Users can select and Incorporate assets into their web and digital experience creation and delivery.
+Sitecore Connect™ for Content Hub 3.1.0 is compatible with Sitecore XP 9.1.1 and Sitecore Content Hub 3.4.
 
-**Compatibility:**
-
--   Sitecore Connect™ for Content Hub 3.1 is compatible with Sitecore XM/XP 9.1.1 and Sitecore Content Hub 3.4.
+See [all available versions here](/downloads/Sitecore_Connect_for_Content_Hub).
 
 ## Downloads
 

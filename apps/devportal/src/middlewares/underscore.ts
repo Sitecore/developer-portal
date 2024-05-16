@@ -6,9 +6,11 @@ export const underscore: MiddlewareFactory = (next) => {
   return async (request: NextRequest, _next: NextFetchEvent) => {
     const pathname = request.nextUrl.pathname;
 
-    if (pathname.startsWith('/downloads') && pathname.includes('%20')) {
-      const url = new URL(pathname.replace('%20', '_'), request.nextUrl);
-      return NextResponse.redirect(url);
+    if (pathname.startsWith('/downloads') || pathname.startsWith('/Downloads')) {
+      if (pathname.includes('%20')) {
+        const url = new URL(pathname.replaceAll('%20', '_'), request.nextUrl);
+        return NextResponse.redirect(url);
+      }
     }
     return next(request, _next);
   };
