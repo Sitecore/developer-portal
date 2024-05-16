@@ -14,9 +14,9 @@ If customers want to implement a .NET Core, React, Angular, or Vue.js client sol
 
 Besides implementing XM as a headless CMS, you will also need to ensure that you are not using XM capabilities which will not be available with XM Cloud. Some examples of these capabilities are custom Solr indexes, Sitecore Forms, and any capabilities dependent on Content Delivery (CD) servers.
 
-### Will XP2XMP support drag and drop component library like what is supported with SXA today?
+### Will XM + Personalize support drag and drop component library like what is supported with SXA today?
 
-Sitecore Experience Manager, which is included as part of the XP2XMP bundle, fully supports SXA for MVC-based solutions. If customers want to use Experience Manager as a headless CMS with the Sitecore JavaScript Rendering SDK (JSS) and publish to Sitecore Experience Edge, then the SXA toolbox, themes, and Creative Exchange capabilities are not supported. An enhanced version of SXA which supports headless implementations is available as of the Sitecore XM 10.3 release. It is recommended to implement using this new headless implementation if you are starting a new project.
+Sitecore Experience Manager (XM), which is included as part of the XM + Personalize bundle, fully supports SXA for MVC-based solutions. If customers want to use XM as a headless CMS with the Sitecore JavaScript Rendering SDK (JSS) and publish to Sitecore Experience Edge, then the SXA toolbox, themes, and Creative Exchange capabilities are not supported. An enhanced version of SXA which supports headless implementations is available as of the Sitecore XM 10.3 release. It is recommended to implement using this new headless implementation if you are starting a new project.
 
 ### What about customers who are using analytics tools within Sitecore XP such as path analyzer?
 
@@ -90,7 +90,7 @@ The following table lists features in Sitecore Personalize over Sitecore XP:
 | Purchase history                  | OOB Target based on a customer&#39;s previous purchase history on digital channels                                                      | ✘                                                                   | ✔                                                                  |
 | Offline / omnichannel data        | OOB targeting based on offline behaviours such as store, branch, contact centre, or chat interactions.                                  | ✘                                                                   | ✔                                                                  |
 
-### What are the benefits of using XP2XMP over Sitecore XP ?
+### What are the benefits of using XM + Personalize over Sitecore XP ?
 
 - **Developers Innovation and speed** : Front-end technology for fast delivery of experience customizations.
 - **Marketer Agility, Simplicity, and Results:** Leverage SaaS agile experimentation and 1:1 personalization powered by easy-to-use visual tools.

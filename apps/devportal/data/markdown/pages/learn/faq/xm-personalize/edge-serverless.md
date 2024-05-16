@@ -10,9 +10,9 @@ cdpTags: ['xm', 'personalize']
 
 This will not necessarily secure the application by default. When moving to SaaS there are some components of the Sitecore XM solution that the customer will have to give up control over to move to SaaS. Some examples of XM capabilities that will not be available in XM Cloud are custom Solr indexes and use of Sitecore Forms.
 
-### I already pay for Vercel/Netlify for other applications we have, can I use my current hosting with XP2XMP?
+### I already pay for Vercel/Netlify for other applications we have, can I use my current hosting with XM + Personalize?
 
-You can use your own Vercel/Netlify subscription with XP2XMP if you are implementing a headless CMS. If you are using another serverless host for Next.js applications you should investigate whether they support all of the functionality you require for your implementation.
+You can use your own Vercel/Netlify subscription with XM + Personalize if you are implementing a headless CMS. If you are using another serverless host for Next.js applications you should investigate whether they support all of the functionality you require for your implementation.
 
 **NOTE:** Sitecore is partnered with Vercel and Netlify and have validated they support our product capabilities. Sitecore has not done full evaluation of all hosting providers.
 

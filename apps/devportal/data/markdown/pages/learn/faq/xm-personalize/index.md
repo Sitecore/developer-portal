@@ -17,9 +17,7 @@ cdpTags: ['xm', 'personalize']
 
 ## Introduction
 
-### XP2XMP - General
-
-**What is XP2XMP?**
+### What is "XP to XM + Personalize" (XP2XMP)?
 
 XP2XMP stands for &quot;Experience Platform to Experience Manager with Personalize&quot;.
 

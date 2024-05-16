@@ -5,7 +5,7 @@ hasSubPageNav: true
 cdpTags: ['xm', 'personalize', 'managed-cloud']
 ---
 
-### Does going to XP2XMP also require a switch to Managed Cloud?
+### Does going to XM + Personalize also require a switch to Managed Cloud?
 
 No. The customer can bring their environment over as part of the deal, but this is not a prerequisite. They can pair SaaS (Personalize) with their existing XM installation.
 

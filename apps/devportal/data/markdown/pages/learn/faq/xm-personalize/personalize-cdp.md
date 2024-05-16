@@ -30,7 +30,7 @@ Personalize can track users over time and then personalize off of previous visit
 
 You will have to manually recreate your rule logic in Personalize using Decisioning and add it to an experience. Decision Models combined with Web Experiences or Full Stack Interactive Experiences will provide your best equivalent to the power within XP.
 
-### We currently use XM Managed Cloud but like the sound of adding Personalize. We use .Net to publish to the web apps in Azure, will we continue to do that if we move to your new XP2XMP offering?
+### We currently use XM Managed Cloud but like the sound of adding Personalize. We use .NET to publish to the web apps in Azure. Will we continue to do that if we move to the XM + Personalize offering?
 
 For customers already using XM On-Prem or Managed Cloud, they will continue to use their existing deployment process for code changes for their environment. The customer will however need to purchase Sitecore Personalize to apply to their existing XM instance. These changes will not affect the existing deployment to Azure Platform as a Service (PaaS) or Containers (or any other potential approach). To add Personalize, the customer will apply the Sitecore CDP/Personalize JS Library to begin tracking users on their site and use Sitecore Personalize or SmartHub CDP to then personalize their customers&#39; experiences using a Web or Full Stack Experience.
 
