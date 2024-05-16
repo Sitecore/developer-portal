@@ -7,11 +7,11 @@ export type ChatBotType = {
 
 
 export const AllChatbots: ChatBotType[] = [
-  {
-    name: "Jason",
-    image: "/images/chatbots/Jason.png",
-    talkingImage: "/images/chatbots/Jason-talking.gif"
-  },
+  // {
+  //   name: "Jason",
+  //   image: "/images/chatbots/Jason.png",
+  //   talkingImage: "/images/chatbots/Jason-talking.gif"
+  // },
   {
     name: "Rob",
     image: "/images/chatbots/Rob.png",
