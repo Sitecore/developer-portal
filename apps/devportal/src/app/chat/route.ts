@@ -7,6 +7,7 @@ export interface IChatGPTPayload {
   query: string;
   context: IPersonalizedExperience | undefined;
   history: Message[];
+  searchData: string[];
 }
 
 export async function POST(request: Request) {
@@ -19,8 +20,11 @@ export async function POST(request: Request) {
 
   // Use Context to fill in the LLM with more context data
   const messages = [{ role: 'system', content: 'You are a helpful assistant, designed to help Developers building with Sitecore.' }];
-
   messages.push({ role: 'system', content: `When generating responses, use the follow JSON data as additional context: ${JSON.stringify(data.context, null, 2)}` });
+
+  // handle the search data
+  console.log(data.searchData);
+  messages.push({ role: 'system', content: `When generating responses you will only use the following data to answer questions. Never answer questions from your own knowledge: ${data.searchData}` });
 
   if (data.history?.length > 0) {
     for (const item of data.history) {

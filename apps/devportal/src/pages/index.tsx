@@ -24,7 +24,7 @@ import {
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import Layout from '@src/layouts/Layout';
 import { NextPage } from 'next';
-import { ChatBot } from '../components/chatbot/ChatBot';
+import { ChatBotWrapper } from '../components/chatbot/ChatBotWrapper';
 import { TrackPageView } from '../components/engagetracker/TrackPageView';
 
 export async function getStaticProps() {
@@ -106,7 +106,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
           </CenteredContent>
         </VerticalGroup>
 
-        <ChatBot position={'fixed'} bottom={'150px'} right={'10px'} />
+        <ChatBotWrapper /> 
       </Layout>
     </TrackPageView>
   );

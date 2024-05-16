@@ -1,4 +1,5 @@
 /* eslint-disable no-constant-condition */
+import { ChatBotType } from '@/data/data-chatbots';
 import { FredPersona, SallyPersona } from '@/data/data-personas';
 import { Message, MessageType } from '@/src/types/Message';
 import { Button, Card, CardBody, CardFooter, CardHeader, CardProps, CloseButton, FormControl, Heading, IconButton, Input, Progress, Stack, Text, Tooltip, Wrap, useBoolean } from '@chakra-ui/react';
@@ -15,20 +16,21 @@ import { PersonalizeBar } from './PersonalizeBar';
 type ChatBotProps = CardProps & {
   onClose?: () => void;
   isOpen?: boolean;
+  chatBot: ChatBotType;
 };
 
-const initialMessage = [
-  {
-    type: MessageType.Assistant,
-    text: "Hello! I'm Clippy, your friendly Sitecore helper. How can I help you today?",
-  },
-];
 
-export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
+export const ChatBot = ({ onClose, isOpen, chatBot, ...rest }: ChatBotProps) => {
   const tracker = useEngageTracker();
   const [isLoading, setIsLoading] = useBoolean(false);
   const [question, setQuestion] = useState('');
   const [personaContext, setPersonaContext] = useState<IPersonalizedExperience | undefined>();
+  const initialMessage = [
+    {
+      type: MessageType.Assistant,
+      text: `Hello! I'm ${chatBot.name}, your friendly Sitecore helper. How can I help you today?`,
+    }
+  ];
   const [messages, setMessage] = useState<Message[]>(initialMessage);
   const isBlank = question === '';
 
@@ -119,7 +121,7 @@ export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
 
   const storeQuestionPersonalize = async (question: string) => {
     if (tracker.context.isTrackerEnabled) {
-      await tracker.TrackEvent('ClippySearch', {
+      await tracker.TrackEvent('ChatBotSearch', {
         question: question,
       });
     }
@@ -187,7 +189,7 @@ export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
       <CardHeader bgGradient="linear(to-tr, primary.500, teal.500)" color="chakra-inverse-text" borderTopRadius="2xl">
         <Stack direction="row" spacing={4} align="top" justify="space-between">
           <Stack>
-            <Heading as="h2">Sitecore Clippy</Heading>
+            <Heading as="h2">Ask {chatBot.name}!</Heading>
             <Text variant="subtle" color="chakra-inverse-text">
               Your friendly Sitecore helper!
             </Text>
@@ -197,7 +199,7 @@ export const ChatBot = ({ onClose, isOpen, ...rest }: ChatBotProps) => {
       </CardHeader>
       <CardBody height={'200px'} maxHeight={['200px', '400px', '600px']} background={'chakra-body-bg'} overflowY={'auto'} p={3}>
         <PersonalizeBar context={personaContext} />
-        <Messages messages={messages} />
+        <Messages messages={messages} chatBot={chatBot} />
         {isLoading && <Progress mx={5} mt={4} variant="ai" isIndeterminate />}
         <div ref={messagesEndRef} />
       </CardBody>
