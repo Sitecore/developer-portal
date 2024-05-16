@@ -11,7 +11,7 @@ menuOrder: 4
 In this tutorial, you will go through the steps to create a new content model that can be used for your Text Teaser component. You will learn:
 
 - How to create a headless module in XM Cloud Content Editor
-- How create new data templates for the Text Teaser component in XM Cloud Content Editor
+- How to create new data templates for the Text Teaser component in XM Cloud Content Editor
 
 </Introduction>
 
