@@ -1,27 +1,29 @@
 ---
-title: 'Tutorial: How to Create Component Data Sources in XM Cloud'
-description: 'Learn about defining and creating new content items that can be used by authors as data sources in the XM Cloud Component builder.'
+title: 'Tutorial: How to Map Component Data Sources in XM Cloud'
+description: 'Learn about how to map fields from a data source to the visual elements in the XM Cloud Component builder.'
 openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/a958a5baf54e475c9eb6d18c089f28c0?v=37bb3625'
 pageType: 'tutorial'
-menuOrder: 5
+menuOrder: 6
 ---
 
 <Introduction title="What You are Going to Learn">
 
 In this tutorial, you will go through the steps to update the Text Teaser component to use content data sources. You will learn:
 
-- How to create new content items from your new data templates to be used as data for the Text Teaser component
 - How to update the Text Teaser component to use the data in your content items
+- How to map different types of content
+- How to make your changes available to authors
 
 </Introduction>
 
 ## Overview
 
-Previously, you learned how to use XM Cloud Components to centrally manage the content of a Text Teaser component and use that component in XM Cloud Pages. You then learned how to create a data model for the Text Teaser component. Now you will evolve the component itself so it can be used as a reusable visual building block in XM Cloud where the content can be different on each page. To accomplish this, you will need to create a new data source and then map it to the visual elements in your component.
+Previously, you learned how to use XM Cloud Components to centrally manage the content of a Text Teaser component and use that component in XM Cloud Pages. You then learned how to create a data model for the Text Teaser component and make it available. Now you will evolve the component itself so it can be used as a reusable visual building block in XM Cloud where the content can be different on each page. To accomplish this, you will map a data source to the visual elements in your component.
 
 For this tutorial, you will:
 
-1. Connect the created data source to the Component on the page.
+1. Connect the created Text Teaser data source to the Text Teaser Component on the page and map each visual element to fields.
+1. Share your changes with other authors in XM Cloud
 1. Configure XM Cloud so that whenever an author drags the Text Teaser component onto the page, they are asked to select an existing piece of content or create a new one.
 
 ## Prerequisites
@@ -32,55 +34,15 @@ In order to complete the following tutorial, you will need these resources:
 1. An existing XM Cloud environment and site created in [Tutorial: How to Set Up and Utilize XM Cloud](setup-xm-cloud)
 1. The Text Teaser component created in [Tutorial: Create a Component using XM Cloud Component Builder](create-a-component)
 1. The Text Teaser data source created in [Tutorial: How to Create a Component Data Template in XM Cloud](create-data-template)
+1. A FEaaS data source configuration done in [Tutorial: How to make a data template available to the Component builder in XM Cloud](configure-availabile-components-data-sources)
 
-## Use a data source template in XM Cloud Components
+## Map data source fields to XM Cloud Component visual elements
 
-As a final stage for this tutorial, you will update the Text Teaser component in XM Cloud Components to use the new Text Teaser data template as a data source.
-
-To start, you will take the data template that has been created and make it available in XM Cloud Components to be used as data source. This will be configured on the Settings item in the site.
-
-### Configure the Text Teaser template for Components
-
-1. In the Content Editor, select the **Settings** node on the **Company Dev** site: `/sitecore/content/Company Dev/Company Dev/Settings`
-1. In the **Content** pane on the right side, scroll down through the fields and find the field named **FeaaS component data source templates**. You will find this field near the bottom of the list of fields.
-
-   <Image title="Content Editor - Settings Item - Find FeaaS Component Data sources field" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c6ff34eac1e94b90b720788f52b23b9c?v=46646a8f" maxW="xl" />
-
-1. On the left side of the field selector, navigate the tree to find your template at: `Templates/Project/Company Dev/Basic Components/Text Teaser`
-1. Double-click on the Text Teaser template to add it to the list of **Selected** templates on the right side of the selector.
-
-   <Image title="Content Editor - Select Text Teaser Template as FeaaS Component Data Source" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/7df82fef3a9a430794f4114e693e53e8?v=114c850c" maxW="xl" />
-
-   <Alert status="info">
-   <AlertIcon />
-   Any templates showing in the 'Selected' side of this field are now available as templates that can be used as data sources in the Component Builder.
-   </Alert>
-
-1. Click the **Save** button in the ribbon to save the changes. Now the Text Teaser data template will be available to the Component builder.
-
-### Validate data source is available in Components
-
-Before releasing this to the authoring team, you need to ensure that the Text Teaser template is available in the Components builder. In this series of steps you will launch the Components application and try to find the new Text Teaser data source.
-
-1. Return to the XM Cloud Tools pane. If you've closed that tab, you can get there with these instructions:
-
-   - Login to the [Sitecore Cloud Portal](https://portal.sitecorecloud.io)
-   - Select your App from the Apps list
-   - From the flyout panel, select **Open app**
-   - At the very top switch to **Tools**
-
-1. In the **Tools** page, select the **Components** card to launch the Component builder.
-1. At the top, switch to the **Data sources** section
-
-   <Image title="Component Builder - Open Data Sources page" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/76acdd81968f4c73a0de16a134e9be12?v=c3035a2c" maxW="xl" />
-
-1. Scroll down through the list of data sources and find the one named **Text Teaser**
-
-   <Image title="Component Builder - Find Text Teaser data source listed" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/2d0a613e37a64a04ba3e42749a14daed?v=1447baab" maxW="xl" />
+The Text Teaser component that was created [in a previous tutorial](create-a-component) uses static data in XM Cloud Components. As part of using the new Text Teaser data template, you need to [map this Text Teaser data source to the visual elements](https://doc.sitecore.com/xmc/en/users/xm-cloud/map-data-from-an-xm-data-source-to-a-component.html) in XM Cloud Components.
 
 ### Map component heading element to Headline text field
 
-The component that was created [in the previous tutorial](create-a-component) uses static data in XM Cloud Components. As part of using the new data template, you need to [map this Text Teaser data source to the visual elements](https://doc.sitecore.com/xmc/en/users/xm-cloud/map-data-from-an-xm-data-source-to-a-component.html) in XM Cloud Components. You are going to start by mapping the headline text field.
+You are going to start by mapping the headline text field.
 
 1. Switch to the **Components** tab in the top menu to launch the Components visual builder.
 1. Scroll to the section labelled **Basic Components**. This section will list all the components you have made available in the Basic Components section. Currently, there is only the **Text Teaser**.
@@ -171,7 +133,7 @@ In order to create a section of rich content and then map it to a Rich Text fiel
 
 1. Click **Complete** to save the mapping changes.
 
-### Make the changes to the component available to authors
+## Make the changes to the component available to authors
 
 Now that you have completed all of the mapping changes you will need to make the changes available to Pages by staging the component again.
 
@@ -179,7 +141,7 @@ Now that you have completed all of the mapping changes you will need to make the
 
    <Image title="Component Builder - Restage Component" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/f290085bb729483dae196e3fa549dff6?v=b24c512e" maxW="xl" />
 
-### Update the component in Pages to use a data source
+## Update the existing Text Teaser to use a data source
 
 In the previous tutorial, you added a Text Teaser component to the home page. After making these mapping changes, the existing component will now need a data source to display correctly as there is no more static content on the component. You will now go to Pages and fix the component so that it can pull the data from one of the Text Teaser data sources that were created in this tutorial.
 
@@ -216,7 +178,7 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
 
 <Alert status="success">
    <AlertIcon />
-   **Congratulations!** You have now updated the Text Teaser component to work from a piece of re-usable authored content instead of using static content added to the component directly. You also learned how to  how to map visual elements to template fields.
+   **Congratulations!** You have now updated the Text Teaser component to work from a piece of re-usable authored content instead of using static content added to the component directly. You also learned how to map visual elements to template fields.
 </Alert>
 
 ### Related XM Cloud Documentation

@@ -29,7 +29,11 @@
           "path": "create-data-template"
         },
         {
-          "title": "Create Component Data Sources",
+          "title": "Configure Available Data Sources",
+          "path": "configure-available-components-data-sources"
+        },
+        {
+          "title": "Map Component Data Sources",
           "path": "datasources"
         }
       ]
