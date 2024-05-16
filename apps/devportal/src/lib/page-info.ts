@@ -247,19 +247,22 @@ export const getChildPageInfo = async (currentFile: string): Promise<ChildPageIn
     children = children.filter((child) => child !== 'manifest.json');
   }
 
-  return children
+  const items = children
     .filter((obj) => !obj.startsWith('index') || obj == undefined)
     .map((child) => {
       const meta = getFileData(directory, `${child}`).data as MarkdownMeta;
 
       return {
-        description: meta.description ? meta.description : null,
+        description: meta.description || null,
         id: child,
         link: `/${currentFile}/${meta.slug}`,
         title: meta.title,
-        menuOrder: meta.menuOrder ? meta.menuOrder : null,
+        menuOrder: meta.menuOrder || null,
       } as ChildPageInfo;
-    });
+    })
+    .sort((a, b) => (a.menuOrder || 0) - (b.menuOrder || 0));
+
+  return items;
 };
 
 export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<SidebarNavigationConfig | undefined> => {

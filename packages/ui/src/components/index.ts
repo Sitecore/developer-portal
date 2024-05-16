@@ -3,10 +3,11 @@ export * from './common'
 export * from './dropdown'
 export * from './helpers'
 export * from './hexagons'
-export * from './integrations'
-export * from './links'
-export * from './lists'
-export * from './logos'
+export * from './images';
+export * from './integrations';
+export * from './links';
+export * from './lists';
+export * from './logos';
 export * from './newsletter';
 export * from './promos'
 export * from './social'

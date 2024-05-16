@@ -4,13 +4,10 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Data_Exchange_Framework/5x/Data_Exchange_Framework_500
 ---
 
-Synchronize data between Sitecore and 3rd party systems.
+The Data Exchange Framework enables synchronizing data between Sitecore XP and 3rd party systems.\
+Data Exchange Framework 5.0.0 is compatible with Sitecore XP 10.0.
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Data Exchange Framework version 5.0 requires Sitecore Experience Platform version 10.0.
-  </Alert>
-  
+See [all available versions here](/downloads/Data_Exchange_Framework).
 
 ## Downloads
 

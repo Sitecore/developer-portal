@@ -6,6 +6,7 @@ import ChildOverviewPage from '@src/layouts/ChildOverviewPage';
 import DefaultContentPage from '@src/layouts/DefaultContentPage';
 import SocialPage from '@src/layouts/SocialPage';
 import NewsLetterPage from '../layouts/NewsLetterPage';
+import Tutorial from '../layouts/Tutorial';
 
 export async function getStaticPaths() {
   const paths = await getStaticPathsRecursively();
@@ -64,6 +65,8 @@ export default function Slug({
         return <SocialPage pageInfo={pageInfo} />;
       case 'newsletter':
         return <NewsLetterPage pageInfo={pageInfo} sidebarConfig={sidebarNavConfig} childPageInfo={childPageInfo} />;
+      case 'tutorial':
+        return <Tutorial pageInfo={pageInfo} partials={partials} partialGroups={partialGroups} hasGrid={false} childPageInfo={childPageInfo} sidebarConfig={sidebarNavConfig} />;
     }
   }
 

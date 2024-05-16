@@ -4,19 +4,10 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_70
 ---
 
-Sitecore Connect™ unites Sitecore Experience Manager and Sitecore Experience Platform content and data with Salesforce Marketing Cloud.
+Sitecore Connect™ for Salesforce Marketing Cloud unites Sitecore Experience Platform content and behavioural data with Salesforce Marketing Cloud.\
+Sitecore Connect™ for Salesforce Marketing Cloud 7.0 is compatible with Sitecore XP 10.2.
 
-To integrate Sitecore Experience Manager or Sitecore Experience Platform with Salesforce Marketing Cloud, you must download and install Sitecore Connect 7.0. No additional connector software is required from Salesforce. This jointly developed connector is available from Sitecore and is the only software that you need to integrate the two platforms.
-
-**Behavioral Data Exchange**
-
--   This version is compatible with Sitecore Experience Platform 10.2.
--   The installation is a multi-step process. We provide documentation to assist you with the installation.
-
-**Content Exchange**
-
--   This version is compatible with Sitecore Experience Platform 10.2.
--   The installation is a multi-step process. We provide documentation to assist you with the installation.
+See [all available versions here](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud).
 
 ## Behavioral Data Exchange Downloads
 

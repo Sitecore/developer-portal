@@ -23,7 +23,7 @@ cdpTags: ['xm', 'personalize']
 
 XP2XMP stands for &quot;Experience Platform to Experience Manager with Personalize&quot;.
 
-Experience Manager (XM) + Personalize is intended to be an Experience Platform (XP) replacement solution. The XM + Personalize product bundle includes:
+Experience Manager (XM) + Personalize is intended provided a large portion of an Experience Platform (XP) solution. The XM + Personalize product bundle includes:
 
 - Sitecore Experience Manager (XM) for content management
 - Sitecore Personalize for personalization &amp; testing
