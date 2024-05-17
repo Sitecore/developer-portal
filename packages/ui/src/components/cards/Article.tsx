@@ -13,7 +13,7 @@ type ArticleProps = CardProps & {
 };
 export const Article = ({ title, description, link, linktext, imageUrl, hideLinkText, ...rest }: ArticleProps) => {
   return (
-    <Card variant={'outlineRaised'} layerStyle={'interactive.raise'} size={'md'} {...rest}>
+    <Card variant={'outlineRaised'} size={'md'} {...rest}>
       <CardHeader>
         <Text as="h4" size={'md'}>
           {title}
@@ -39,9 +39,7 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
       {link && !hideLinkText && (
         <CardFooter pt={0}>
           <Link as={NextLink} href={link} color={useColorModeValue('white', 'black !important')}>
-            <Button rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>
-              {linktext ?? 'Read more'}
-            </Button>
+            <Button rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>{linktext ?? 'Read more'}</Button>
           </Link>
         </CardFooter>
       )}
