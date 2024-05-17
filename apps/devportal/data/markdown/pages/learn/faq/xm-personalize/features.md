@@ -32,7 +32,7 @@ Of course! There is no forced move here and the choice of where to host XM is up
 
 ### I am a customer that requires HIPAA compliance. Will I be covered with this solution?
 
-Yes, Sitecore Managed Cloud, XP, and XM products are HIPAA compliant. Sitecore Personalize HIPAA readiness is targeted for June 2024.
+Sitecore Personalize HIPAA readiness is targeted for June 2024. Sitecore Managed Cloud, XP, and XM products are not currently HIPAA compliant.
 
 ### What&#39;s the difference in feature parity to Sitecore XP?
 
