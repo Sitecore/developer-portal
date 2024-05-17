@@ -16,6 +16,11 @@ export async function POST(request: Request) {
     return new NextResponse('Please provide a query parameter', { status: 400 });
   }
 
+  // handle no search data
+  if (data.searchData.length == 0) {
+    return new NextResponse("I'm sorry, I can't help with that. Please try another question.", { status: 200 });
+  }
+
   // Initialise system and Personalize context.
   const messages = [{ role: 'system', content: 'You are a helpful assistant, designed to help Developers building with Sitecore.' }];
   messages.push({ role: 'system', content: `When generating responses, use the follow JSON data as additional context: ${JSON.stringify(data.context, null, 2)}` });

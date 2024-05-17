@@ -15,11 +15,15 @@ export async function QuerySearchApi({ query }: QuerySearchApiParams): Promise<Q
 
 export async function BindResponse(response: Response): Promise<QuerySearchApiResult> {
   const data = await response.json();
+  if (!data?.widgets || data?.widgets.length == 0 || data?.widgets[0].total_item == 0) {
+    return {
+      answers: []
+    }
+  }
+
   const answers = data?.widgets[0]?.content.map((entry: any) => {
     return JSON.stringify(entry.description);
   }) ?? [];
-
-  console.log(answers);
 
   return {
     answers
