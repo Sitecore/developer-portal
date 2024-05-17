@@ -2,20 +2,25 @@
 
 import dynamic from 'next/dynamic';
 
-export enum Logo {
-  Nextjs = 'nextjs',
-  Vue = 'vue',
-  Astro = 'astro',
-  Sveltekit = 'svelte',
-  React = 'react',
-  ReactNative = 'reactnative',
-  JavaScript = 'javascript',
-  DOTNET = 'dotnet',
-  NPM = 'npm',
-}
+const LANGUAGE_ICON_MAPPING: { [key: string]: string } = {
+  nextjs: 'nextjs',
+  vue: 'vue',
+  astro: 'astro',
+  sveltekit: 'svelte',
+  react: 'react',
+  reactNative: 'reactnative',
+  javascript: 'javascript',
+  dotnet: 'dotnet',
+  npm: 'npm',
+  typescript: 'typescript',
+  powershell: 'powershell',
+  'c#': 'dotnet',
+};
 
 export function isValidLogo(value: string): boolean {
-  return Object.values(Logo).some((option) => option.toLowerCase() === value.toLowerCase());
+  if (LANGUAGE_ICON_MAPPING[value.toLowerCase()]) return true;
+
+  return false;
 }
 
 export type LogoComponent = {
@@ -24,13 +29,13 @@ export type LogoComponent = {
 };
 
 export type IconProps = {
-  logo: Logo;
+  logo: string;
   width?: number;
   height?: number;
 };
 
 export const SvgLogo = ({ logo, width, height }: IconProps): JSX.Element => {
-  const LogoComponent = dynamic<LogoComponent>(() => import(`./logos/logo--${logo.toLowerCase()}`));
+  const LogoComponent = dynamic<LogoComponent>(() => import(`./logos/logo--${LANGUAGE_ICON_MAPPING[logo.toLowerCase()].toLowerCase()}`));
 
   return <LogoComponent width={width} height={height} />;
 };
