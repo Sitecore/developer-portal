@@ -15,7 +15,7 @@ interface OpenSourceProps {
 }
 
 export async function getServerSideProps() {
-  const pageInfo = await getPageInfo('opensource');
+  const pageInfo = await getPageInfo('_opensource');
   const repositories = await getGitHubRepositories(9);
 
   return {
