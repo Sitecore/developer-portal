@@ -35,7 +35,7 @@ See [all available versions here](/downloads/Sitecore_Connect_for_Content_Hub).
  | [Installation Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/install-sitecore-connect-for-content-hub-on-prem.html) | Installation and configuration guide for Sitecore Connect™ for Content Hub. |
  | [Installation Guide for PaaS](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/installing-sitecore-connect-for-content-hub-on-paas.html) | This guide describes how to deploy Sitecore Connect for Content Hub™ in a Sitecore Azure Cloud Service (PaaS) environment. |
  | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/installing-sitecore-connect-for-content-hub-on-containers.html) | This guide describes how to do the Sitecore Connect™ for Content Hub for Docker Compose and Kubernetes deployment. |
- | [User Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub) | User guide for Sitecore Connect™ for Content Hub. |
+ | [User Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/index-en.html) | User guide for Sitecore Connect™ for Content Hub. |
 
 ## Client Translations
 
