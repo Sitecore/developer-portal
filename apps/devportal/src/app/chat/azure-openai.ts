@@ -79,14 +79,15 @@ export class AzureOpenAI {
           }
         } else {
           if (!response.ok) {
-            controller.error(response.statusText);
+            const errorResponse = await response.json();
+            console.log(errorResponse.error.message);
+            controller.error(errorResponse.error.message);
           } else {
             controller.error('No response body');
           }
         }
       },
     };
-
     return new ReadableStream(source);
   }
 
