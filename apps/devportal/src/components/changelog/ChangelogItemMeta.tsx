@@ -2,9 +2,9 @@
 import { usePreview } from '@/src/context/PreviewContext';
 import { Badge, BoxProps, Button, HStack, Hide, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Text, Tooltip, chakra, useColorModeValue } from '@chakra-ui/react';
 import { mdiSquareEditOutline } from '@mdi/js';
-import Image from 'next/image';
 import { ChangelogEntry } from '@scdp/changelog/types';
 import { getSlug } from '@scdp/changelog/utils';
+import Image from 'next/image';
 import { ProductIcon } from './ProductIcon';
 
 type ChangelogItemMetaProps = BoxProps & {
@@ -23,9 +23,9 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
   const tenantId = process.env.NEXT_PUBLIC_SITECORE_CHONE_TENANT as string;
 
   const colorScheme = (changeType: string) => {
-    if (changeType.toLowerCase() == 'improvement') return 'primary';
-    if (changeType.toLowerCase() == 'new feature') return 'success';
-    if (changeType.toLowerCase() == 'resolved') return 'orange';
+    if (changeType?.toLowerCase() == 'improvement') return 'primary';
+    if (changeType?.toLowerCase() == 'new feature') return 'success';
+    if (changeType?.toLowerCase() == 'resolved') return 'orange';
 
     return 'default';
   };
