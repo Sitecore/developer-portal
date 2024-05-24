@@ -18,9 +18,19 @@ In this tutorial, we will go through the steps to learn the basics of XM Cloud a
 
 ## Overview
 
-XM Cloud focuses on being a headless, enterprise content and website management system. You can manage XM Cloud via several UIs, and also through APIs and the [CLI](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-cloud-command.html). For this tutorial, we will focus on the XM Cloud deploy UI for creating new XM Cloud projects and environments.
+XM Cloud focuses on being a headless, enterprise content and website management system. You can manage XM Cloud via several UIs, and also through [APIs](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html) and the [CLI](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-cloud-command.html). For this tutorial, we will focus on the XM Cloud deploy UI for creating new XM Cloud projects and environments.
 
-For more information on APIs with XM Cloud, navigate [to the documentation on the Deploy API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html).
+<Alert status="info">
+   <AlertIcon />
+   **What are projects and environments?** We will cover a bit of introduction in this tutorial, but in general a [Project](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html#UUID-3ceb7d45-3caf-3196-3a9a-f59a9474182a_xmc_project) is a group of XM Cloud [environments](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html#UUID-3ceb7d45-3caf-3196-3a9a-f59a9474182a_xmc_environment) (for example: dev, test, production). 
+</Alert>
+
+In this tutorial you wil do the following:
+
+1. Log into the Sitecore Cloud Portal
+1. Create a new XM Cloud Project using the Deploy XM Cloud UI
+1. Setup your GitHub repository for your project
+1. Create the hosted development environment
 
 ## Prerequisites
 
@@ -117,6 +127,8 @@ Once the provisioning and build process are finished, the deployment starts. The
 - [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
 - [Introduction to the Sitecore Cloud Portal](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
 - [Sitecore Cloud Portal roles](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/roles.html)
+- [What is an XM Cloud Project?](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html#UUID-3ceb7d45-3caf-3196-3a9a-f59a9474182a_xmc_project)
+- [What is an XM Cloud Environment?](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html#UUID-3ceb7d45-3caf-3196-3a9a-f59a9474182a_xmc_environment)
 - [Deploying XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html)
 - [XM Cloud Deploy app](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
 - [Manage an XM Cloud environment](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html)

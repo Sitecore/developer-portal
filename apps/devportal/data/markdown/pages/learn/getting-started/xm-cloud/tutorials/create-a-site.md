@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: How to Create a Site and Connect your App'
 description: 'In this tutorial, you will become familiar with setting up a site, setting up the dev environment to support building that site, and how to connect your codebase that runs on your local rendering host to the preview endpoint of XM Cloud.'
-openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
+openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/1480ca22c0724a7496c9617b5f65cd6a?v=cf3753f9'
 menuOrder: 2
 pageType: 'tutorial'
 ---
@@ -61,14 +61,12 @@ With the environment initially created, you can now create your first site in XM
 
    <Image title="Choose Site Template" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/1480ca22c0724a7496c9617b5f65cd6a?v=cf3753f9" maxW="xl" />
 
-1. Name the site `Company Dev`.  
+1. Name the site `Company Dev` and select a pre-configured [language](https://doc.sitecore.com/xmc/en/developers/xm-cloud/working-with-languages.html), in this case, `English`.
    <Image title="Name new Site and Site Collection" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/41287d8cc01e4dc8b32a4aede67c98c1?v=dc1b7223" maxW="xl" />
-
-1. Select a pre-configured [language](https://doc.sitecore.com/xmc/en/developers/xm-cloud/working-with-languages.html), in this case, `English`.
 
    <Alert status="info">
       <AlertIcon />
-      At this time, you can also select an existing Site identifier, or create a new one. This is required when connecting [CDP, the Customer Data Platform](https://developers.sitecore.com/customer-data-management/cdp) of Sitecore for embedded analytics and personalization. We will skip that step for now and start the creation process of the site.
+      In the screenshot and in your dialog you will also see another option where you can select an existing Site identifier, or create a new one. This is required when connecting [Sitecore CDP, the Customer Data Platform](https://developers.sitecore.com/customer-data-management/cdp) for embedded analytics and personalization. We will skip that step for now and start the creation process of the site.
    </Alert>
 
 1. Click `Create site`, which will scaffold the website in the background. This will take a few minutes.
@@ -157,6 +155,7 @@ Let’s change some content to verify you are in fact connected against the prev
 </Alert>
 
 ### Related XM Cloud Documentation
+
 - [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
 - [Create websites](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-websites.html)
 - [Design webpages](https://doc.sitecore.com/xmc/en/users/xm-cloud/design-webpages.html)
@@ -167,4 +166,5 @@ Let’s change some content to verify you are in fact connected against the prev
 - [JSS GraphQL API](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/jss-graphql-api.html)
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
+
 - [Creating a Site](/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site)

@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Create your first XM Cloud no-code component'
 description: 'In this tutorial, we will go through the steps to create a Text Teaser component with a no-code approach using XM Cloud Components builder'
-openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
+openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/1dc095d2a6bc4673ba57133a1c4e624e?v=3263ecd1'
 pageType: 'tutorial'
 menuOrder: 3
 ---
@@ -18,7 +18,7 @@ In this tutorial, we will go through the steps to create a Text Teaser component
 
 ## Overview
 
-Components are the visual, re-usable, building blocks to design web pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component in your project. We will use the XM Cloud Components builder, exploring the no-code approach to building components.
+Components are the visual, re-usable, building blocks to design web pages in XM Cloud. You can think of creating a component like creating a ‘stamp’ that you can use throughout a webpage. In this tutorial, you will build the first component in your project. We will use the XM Cloud Components builder, exploring the no-code approach to building components. No-code components, sometimes referred to as Front-End as a Service (FEaaS) components, are built using XM Cloud's user interface, allowing non-technical team members to help with the site management.
 
 <Alert status="info">
    <AlertIcon />
@@ -234,7 +234,7 @@ At this point we have the Text Teaser component layout defined, with some basic 
 
    <Alert status="info">
       <AlertIcon />
-      This validates that the component is available to authors. If it does not display in this list, then the component may note have been Staged or Published yet.
+      This validates that the component is available to authors. If it does not display in this list, then the component may not have been Staged or Published yet.
    </Alert>
 
    <Image title="Pages - Choose the Components to add to the page" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/ae796b8cca15429aaee9275ef31b047c?v=29e6d8c4" maxW="xl" />
@@ -249,11 +249,11 @@ At this point we have the Text Teaser component layout defined, with some basic 
 </Alert>
 
 ### Related XM Cloud Documentation
+
 - [Get started with XM Cloud Components](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-started-with-xm-cloud-components.html)
 - [Staging and publishing components](https://doc.sitecore.com/xmc/en/users/xm-cloud/staging-and-publishing-components.html)
 - [Work with components](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-components.html)
 - [Work with a component layout](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-a-component-layout.html)
-
 
 ### Related XM Cloud Accelerate guidance for Sitecore Partners
 
