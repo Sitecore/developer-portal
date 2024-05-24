@@ -25,7 +25,15 @@
           "path": "create-a-component"
         },
         {
-          "title": "Create Component Data Sources",
+          "title": "Create Component Data Template",
+          "path": "create-data-template"
+        },
+        {
+          "title": "Configure Available Data Sources",
+          "path": "configure-available-components-data-sources"
+        },
+        {
+          "title": "Map Component Data Sources",
           "path": "datasources"
         }
       ]
