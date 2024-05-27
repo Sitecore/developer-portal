@@ -97,6 +97,7 @@ Here’s a list of great resources that I found helpful.
 
 ### XM Cloud
 
+- [XM Cloud Tutotrials](https://developers.sitecore.com/learn/getting-started/xm-cloud/tutorials)
 - [[Video] **XM Cloud Deploy Demo** -
   by Andy Cohen](https://www.youtube.com/watch?v=a23g2TRUvOI)
 - [[Video] **SaaS Migration** - Migration from Sitecore XP and XM to XM Cloud by Pieter Brinkman and Jason St-Cyr](https://www.youtube.com/watch?v=ZTjk5t9dfRQ)

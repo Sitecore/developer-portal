@@ -36,6 +36,7 @@ The importance of your company's growth comes with the:
   <Article title="Embedded Personalization " description="Learn more about XM Cloud Embedded Personalization." link="/learn/faq/xm-cloud-embedded-personalization" />
   <Article title="XM Cloud FAQ" description="Learn more about XM Cloud and all of the features." link="/learn/faq/xm-cloud" />
   <Article title="Getting started with XM Cloud" description="Read the step by step tutorial on the Sitecore Documentation site." link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
+  <Article title="XM Cloud Tutorials" description="Learn to create an XM Cloud Project from A to Z" link="/learn/getting-started/xm-cloud/tutorials" />
 </Row>
 
 ## Documentation
