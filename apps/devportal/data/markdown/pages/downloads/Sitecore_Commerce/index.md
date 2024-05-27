@@ -4,7 +4,7 @@ description: "Sitecore Experience Commerce is a natively integrated, cloud-enabl
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx
 ---
 
-There will not be a new version of Sitecore Experience Commerce released with Sitecore Eperience Platform 10.4. This means that customers that have Sitecore XC deployed will not be able to upgrade their Sitecore XP solution to 10.4. Sitecore Experience Commerce 10.3 continues to be supported per the [Sitecore Product Support Lifecycle](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0641167).
+There will not be a new version of Sitecore Experience Commerce released with Sitecore Experience Platform 10.4. This means that customers that have Sitecore XC deployed will not be able to upgrade their Sitecore XP solution to 10.4. Sitecore Experience Commerce 10.3 continues to be supported per the [Sitecore Product Support Lifecycle](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0641167).
 
 Sitecore OrderCloud, our headless, API-first commerce platform that is part of Sitecore's composable DXP, powers eCommerce, order management, and B2B2C marketplace solutions for Sitecore customers. Those looking to modernize their eCommerce can learn more about how OrderCloud can complement your existing tech stack at sitecore.com/ordercloud and/or OrderCloud.io.
 

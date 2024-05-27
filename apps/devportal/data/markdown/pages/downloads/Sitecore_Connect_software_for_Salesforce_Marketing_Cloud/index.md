@@ -9,6 +9,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_software_for_Salesfo
 ## Sitecore Connect™ for Salesforce Marketing Cloud
 </CardHeader>
 <CardBody>
+[Sitecore Connect™ for Salesforce Marketing Cloud 9.0](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_90)\
 [Sitecore Connect™ for Salesforce Marketing Cloud 8.0](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_80)\
 [Sitecore Connect™ for Salesforce Marketing Cloud 7.0](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_70)\
 [Sitecore Connect™ for Salesforce Marketing Cloud 6.0](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_60)\

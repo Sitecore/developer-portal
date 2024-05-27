@@ -9,6 +9,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Content_Hub.aspx
 ## Sitecore Connect™ for Content Hub 5.x
 </CardHeader>
 <CardBody>
+[Sitecore Connect™ for Content Hub 5.2.0](/downloads/Sitecore_Connect_for_Content_Hub/5x/Sitecore_Connect_for_Content_Hub_520)\
 [Sitecore Connect™ for Content Hub 5.1.0](/downloads/Sitecore_Connect_for_Content_Hub/5x/Sitecore_Connect_for_Content_Hub_510)\
 [Sitecore Connect™ for Content Hub 5.0.0](/downloads/Sitecore_Connect_for_Content_Hub/5x/Sitecore_Connect_for_Content_Hub_500)
 </CardBody>          

@@ -6,6 +6,15 @@ origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect.aspx
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
+## Sitecore Connect™ for Microsoft Dynamics 365 for Sales 9.x
+</CardHeader>
+<CardBody>
+[Sitecore Connect™ for Microsoft Dynamics 365 for Sales 9.0.0](/downloads/Dynamics_CRM_Connect/9x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_900)
+</CardBody>          
+</Card>
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
 ## Sitecore Connect™ for Microsoft Dynamics 365 for Sales 8.x
 </CardHeader>
 <CardBody>
