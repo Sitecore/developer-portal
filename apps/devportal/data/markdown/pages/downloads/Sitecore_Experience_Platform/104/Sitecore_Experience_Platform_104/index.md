@@ -2,22 +2,25 @@
 title: "Sitecore Experience Platform 10.4"
 ---
 
-Sitecore Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability. 
-
-See [all available versions here](/downloads/Sitecore_Experience_Platform).
-
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    Please see Release Notes below for information on availability of container images for ltsc2019 on Sitecore XP 10.4.
+    **Packages for Azure App Service were republished on May 27, 2024 to add missing Application Insights artifacts. See Release Notes for more info.**
   </Alert>
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    **Container images for ltsc2019 are coming in early June, 2024.**
+  </Alert>
+  
+Sitecore Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability.\
+See [all available versions here](/downloads/Sitecore_Experience_Platform).
 
 ## Download options for Azure App Service deployments
  | Resource | Description |
  | --- | --- |
- | [Packages for XM Single](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XMSingle%20packages).zip) | Packages for the Sitecore XM Single (XM0) instance topology. |
- | [Packages for XM Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XMScaled%20packages).zip) | Packages for each role of the Sitecore XM Scaled (XM1) topology. |
- | [Packages for XP Single](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XPSingle%20packages).zip) | Packages for the Sitecore XP Single (XP0) instance topology. |
- | [Packages for XP Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XPScaled%20packages).zip) | Packages for each role of the Sitecore XP Scaled (XP1) topology. |
+ | [Packages for XM Single](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XMSingle%20packages).zip) | **May 27, 2024 - patched and republished this package to add missing Application Insights artifacts.** Packages for the Sitecore XM Single (XM0) instance topology. |
+ | [Packages for XM Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XMScaled%20packages).zip) | **May 27, 2024 - patched and republished this package to add missing Application Insights artifacts.** Packages for each role of the Sitecore XM Scaled (XM1) topology. |
+ | [Packages for XP Single](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XPSingle%20packages).zip) | **May 27, 2024 - patched and republished this package to add missing Application Insights artifacts.** Packages for the Sitecore XP Single (XP0) instance topology. |
+ | [Packages for XP Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XPScaled%20packages).zip) | **May 27, 2024 - patched and republished this package to add missing Application Insights artifacts.** Packages for each role of the Sitecore XP Scaled (XP1) topology. |
  | [Sitecore Azure Toolkit Resources](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%20Azure%20Toolkit%20Resources%2010.4.0%20rev.%20010422.zip) | SXP release-specific resources for use with the Sitecore Azure Toolkit. The Sitecore Azure Toolkit is [here](/downloads/Sitecore_Azure_Toolkit/3x/Sitecore_Azure_Toolkit_300). |
  
 ## Download options for On Premises deployments
@@ -56,16 +59,16 @@ See [all available versions here](/downloads/Sitecore_Experience_Platform).
  | [Sitecore Publishing Service Module](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1040) | Integrates the optional Sitecore Publishing Service with SXP, which focuses on high performance publishing in large-scale deployments. |
  | [Sitecore Headless Rendering](/downloads/Sitecore_Headless_Rendering/22x/Sitecore_Headless_Rendering_2200) | Headless services bundle including the server-side APIs, Edge Connector, and front-end SDKs for JavaScript (JSS) and ASP.NET rendering. |
  | [Sitecore Universal Tracker](/downloads/Sitecore_Universal_Tracker/8x/Sitecore_Universal_Tracker_800) | Optional mechanism for tracking site visitor interactions, well suited for headless implementations and for collecting from different sources. |
- | Codeless Schema Extensions | **New module coming mid May 2024!** Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development. |
+ | Codeless Schema Extensions | **New module coming May 2024!** Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development. |
 
 ## Connectors
  | Resource | Description |
  | --- | --- |
- | [Sitecore Connect for Content Hub](/downloads/Sitecore_Connect_for_Content_Hub) | **Version 5.2.0 coming mid May 2024!** Connector for synchronizing data between SXP and Content Hub. |
- | [Sitecore Connect for Microsoft Dynamics 365 for Sales](/downloads/Dynamics_CRM_Connect) | **Version 9.0.0 coming mid May 2024!** Connector for synchronizing data between SXP and Microsoft Dynamics 365 for Sales. |
+ | [Sitecore Connect for Content Hub](/downloads/Sitecore_Connect_for_Content_Hub) | **Version 5.2.0 coming May 2024!** Connector for synchronizing data between SXP and Content Hub. |
+ | [Sitecore Connect for Microsoft Dynamics 365 for Sales](/downloads/Dynamics_CRM_Connect) | **Version 9.0.0 coming May 2024!** Connector for synchronizing data between SXP and Microsoft Dynamics 365 for Sales. |
  | [Sitecore Connect for Salesforce CRM](/downloads/Salesforce_Connect) | **Version 9.0.0 coming mid May 2024!** Connector for synchronizing data between SXP and Salesforce CRM. |
- | [Sitecore Connect for Salesforce Marketing Cloud](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud) | **Version 9.0 coming mid May 2024!** Connector for synchronizing data between SXP and Salesforce Marketing Cloud. |
- | [Sitecore Data Exchange Framework](/downloads/Data_Exchange_Framework) | **Version 9.0.0 coming mid May 2024!** Framework for transforming and transfering data between SXP and 3rd party systems. |
+ | [Sitecore Connect for Salesforce Marketing Cloud](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud) | **Version 9.0 coming May 2024!** Connector for synchronizing data between SXP and Salesforce Marketing Cloud. |
+ | [Sitecore Data Exchange Framework](/downloads/Data_Exchange_Framework) | **Version 9.0.0 coming May 2024!** Framework for transforming and transfering data between SXP and 3rd party systems. |
 
 ## Release information
  | Resource | Description |
