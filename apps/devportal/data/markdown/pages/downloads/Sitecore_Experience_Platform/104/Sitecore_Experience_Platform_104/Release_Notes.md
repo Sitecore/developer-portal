@@ -2,11 +2,19 @@
 title: 'Release Notes'
 ---
 
-**April 2024 – released Sitecore Experience Platform 10.4.0**
+**April 30, 2024 – released Sitecore Experience Platform 10.4.0**
+
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    **May 27, 2024 - Patched and republished the four Azure App Service download package options to add missing Application Insights artifacts. Package version numbers were not changed, to avoid re-spinning the entire release. To confirm you have the correct package version, ensure the following file is included in your zip download:**\
+	`Sitecore 10.4.0 rev. 010422 (xx) (Cloud)_xxx.scwdp.zip\Content\Website\ApplicationInsights.config`
+  </Alert>
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    **Container images for ltsc2019 are coming in early June, 2024.**
+  </Alert>
 
 This release includes new features and improvements made in Sitecore Experience Platform (SXP) 10.4. Sitecore recommends that you upgrade to this release if it aligns with the specific needs of your organization. This release contains significant improvements in functionality worth evaluating.
-
-With the release of version 10.4, we have released with support for ltsc2022 Windows containers. Any customer wishing to use ltsc2022 can update to this latest release of our platform. **We will be releasing container images and support for ltsc2019 on Sitecore XP 10.4 in the coming weeks** to support our customers who are not yet ready to upgrade to the latest Long-Term Servicing Channel (LTSC) release. For more information on Windows container versions and their support cycle, please refer to [Microsoft documentation](https://learn.microsoft.com/en-us/windows/release-health/windows-server-release-info#windows-server-major-versions-by-servicing-option--).
 
 - [Highlights](#highlights)
 - [New features/improvements](#new-featuresimprovements)
