@@ -12,11 +12,11 @@ export const AllChatbots: ChatBotType[] = [
   //   image: "/images/chatbots/Jason.png",
   //   talkingImage: "/images/chatbots/Jason-talking.gif"
   // },
-  {
-    name: "Rob",
-    image: "/images/chatbots/Rob.png",
-    talkingImage: "/images/chatbots/Rob-talking.gif"
-  },
+  // {
+  //   name: "Rob",
+  //   image: "/images/chatbots/Rob.png",
+  //   talkingImage: "/images/chatbots/Rob-talking.gif"
+  // },
   {
     name: "Andy",
     image: "/images/chatbots/AndyC.png",
