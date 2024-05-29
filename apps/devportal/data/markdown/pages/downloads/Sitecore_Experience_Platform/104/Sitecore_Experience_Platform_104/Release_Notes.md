@@ -6,8 +6,11 @@ title: 'Release Notes'
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    **May 27, 2024 - Patched and republished the four Azure App Service download package options to add missing Application Insights artifacts. Package version numbers were not changed, to avoid re-spinning the entire release. To confirm you have the correct package version, ensure the following file is included in your zip download:**\
-	`Sitecore 10.4.0 rev. 010422 (xx) (Cloud)_xxx.scwdp.zip\Content\Website\ApplicationInsights.config`
+    **May 28, 2024 - Patched and republished the four Azure App Service download package options and the SAT Resources package to add missing Application Insights configuration. Package version numbers were not changed, to avoid re-spinning the entire release.**\
+	**To confirm you have the correct Azure App Service package version, ensure the following file is included in your zip download:**\
+	`Sitecore 10.4.0 rev. 010422 (xx) (Cloud)_xxx.scwdp.zip\Content\Website\ApplicationInsights.config`\
+	**To confirm you have the correct Sitecore Azure Toolkit Resources 10.4.0 rev. 010422.zip package, ensure the following file is included in your zip download:**\
+	`CargoPayloads\Sitecore.Cloud.ApplicationInsights.sccpl\CopyToWebsite\ApplicationInsights.config` 
   </Alert>
   <Alert variant='warning' mb={4}>
     <AlertIcon />
