@@ -4,7 +4,7 @@ title: "Sitecore Experience Platform 10.4"
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    **Packages for Azure App Service were republished on May 27, 2024 to add missing Application Insights artifacts. See Release Notes for more info.**
+    **Packages for Azure App Service were republished on May 28, 2024 to add missing Application Insights configuration. See Release Notes for more info.**
   </Alert>
   <Alert variant='warning' mb={4}>
     <AlertIcon />
@@ -17,11 +17,11 @@ See [all available versions here](/downloads/Sitecore_Experience_Platform).
 ## Download options for Azure App Service deployments
  | Resource | Description |
  | --- | --- |
- | [Packages for XM Single](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XMSingle%20packages).zip) | **May 27, 2024 - patched and republished this package to add missing Application Insights artifacts.** Packages for the Sitecore XM Single (XM0) instance topology. |
- | [Packages for XM Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XMScaled%20packages).zip) | **May 27, 2024 - patched and republished this package to add missing Application Insights artifacts.** Packages for each role of the Sitecore XM Scaled (XM1) topology. |
- | [Packages for XP Single](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XPSingle%20packages).zip) | **May 27, 2024 - patched and republished this package to add missing Application Insights artifacts.** Packages for the Sitecore XP Single (XP0) instance topology. |
- | [Packages for XP Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XPScaled%20packages).zip) | **May 27, 2024 - patched and republished this package to add missing Application Insights artifacts.** Packages for each role of the Sitecore XP Scaled (XP1) topology. |
- | [Sitecore Azure Toolkit Resources](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%20Azure%20Toolkit%20Resources%2010.4.0%20rev.%20010422.zip) | SXP release-specific resources for use with the Sitecore Azure Toolkit. The Sitecore Azure Toolkit is [here](/downloads/Sitecore_Azure_Toolkit/3x/Sitecore_Azure_Toolkit_300). |
+ | [Packages for XM Single](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XMSingle%20packages).zip) | **May 28, 2024 - republished package to add missing Application Insights configuration.** Packages for the Sitecore XM Single (XM0) instance topology. |
+ | [Packages for XM Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XMScaled%20packages).zip) | **May 28, 2024 - republished package to add missing Application Insights configuration.** Packages for each role of the Sitecore XM Scaled (XM1) topology. |
+ | [Packages for XP Single](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XPSingle%20packages).zip) | **May 28, 2024 - republished package to add missing Application Insights configuration.** Packages for the Sitecore XP Single (XP0) instance topology. |
+ | [Packages for XP Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(WDP%20XPScaled%20packages).zip) | **May 28, 2024 - republished package to add missing Application Insights configuration.** Packages for each role of the Sitecore XP Scaled (XP1) topology. |
+ | [Sitecore Azure Toolkit Resources](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%20Azure%20Toolkit%20Resources%2010.4.0%20rev.%20010422.zip) | **May 28, 2024 - republished package to add missing Application Insights configuration.** SXP release-specific resources for use with the Sitecore Azure Toolkit. The Sitecore Azure Toolkit is [here](/downloads/Sitecore_Azure_Toolkit/3x/Sitecore_Azure_Toolkit_300). |
  
 ## Download options for On Premises deployments
  | Resource | Description |
