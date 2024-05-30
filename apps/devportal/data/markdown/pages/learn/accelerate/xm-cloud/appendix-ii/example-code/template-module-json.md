@@ -19,7 +19,7 @@ If you haven't already, refer to the guide on setting up Content Serialization a
   "items": {
     "includes": [
       {
-        "name": "headlessModule",
+        "name": "module",
         "path": "/sitecore/system/settings/Project/<SITE_COLLECTION_NAME>",
         "allowedPushOperations": "CreateUpdateAndDelete"
       },
