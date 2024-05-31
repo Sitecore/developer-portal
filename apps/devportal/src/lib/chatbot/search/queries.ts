@@ -22,7 +22,7 @@ export function buildSearchQuery({ path, uuid, term, sources }: SearchChangeLogQ
             "sort": {
               "value": [
                   {
-                      "name": "release_date_desc"
+                      "name": "created_at_desc"
                   }
               ]
             },
