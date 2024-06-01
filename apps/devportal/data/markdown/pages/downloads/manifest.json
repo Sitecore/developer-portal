@@ -52,6 +52,10 @@
           "path": "Sitecore_Experience_Accelerator"
         },
         {
+          "title": "Sitecore Codeless Schema Extensions",
+          "path": "Sitecore_Codeless_Schema_Extensions"
+        },
+        {
           "title": "Sitecore Publishing Service",
           "path": "Sitecore_Publishing_Service"
         },
