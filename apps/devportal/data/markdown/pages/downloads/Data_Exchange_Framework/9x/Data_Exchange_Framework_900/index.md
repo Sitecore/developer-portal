@@ -29,7 +29,7 @@ See [all available versions here](/downloads/Data_Exchange_Framework).
  | --- | --- |
  | [Data Exchange Framework Tenant Web Service](https://scdp.blob.core.windows.net/downloads/Data%20Exchange%20Framework/9x/Data%20Exchange%20Framework%20900/Sitecore%20Data%20Exchange%20Framework%20Tenant%20Web%20Service%209.0.7%20rev.%2001658.scwdp.zip) | Sitecore Data Exchange Framework Tenant Web Service – a web service that provides the ability to trigger synchronization process via web based push notifications. |
  | [AppInsights logger for Tenant Service](https://scdp.blob.core.windows.net/downloads/Data%20Exchange%20Framework/9x/Data%20Exchange%20Framework%20900/AppInsights%20logger%20for%20Tenant%20Service%209.0.7%20rev.%2001658.scwdp.zip) | Provides an ability of Application Insights logging for Tenant Service. |
- | **UPDATE** [SIF installation scripts for Tenant Service](https://scdp.blob.core.windows.net/downloads/Data%20Exchange%20Framework/8x/Data%20Exchange%20Framework%20800/Secure/SIFInstallationScriptsforTenantService.zip) | Provides an ability to install Tenant Service using Sitecore Installation Framework. |
+ | [SIF installation scripts for Tenant Service](https://scdp.blob.core.windows.net/downloads/Data%20Exchange%20Framework/9x/Data%20Exchange%20Framework%20900/SIFInstallationScriptsforTenantService.zip) | Provides an ability to install Tenant Service using Sitecore Installation Framework. |
 
 ## Upgrades
 
