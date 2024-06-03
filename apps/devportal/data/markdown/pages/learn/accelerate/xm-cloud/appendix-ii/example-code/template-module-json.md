@@ -19,6 +19,11 @@ If you haven't already, refer to the guide on setting up Content Serialization a
   "items": {
     "includes": [
       {
+        "name": "module",
+        "path": "/sitecore/system/settings/Project/<SITE_COLLECTION_NAME>",
+        "allowedPushOperations": "CreateUpdateAndDelete"
+      },
+      {
         "name": "templatesProject",
         "path": "/sitecore/templates/Project/<SITE_COLLECTION_NAME>",
         "allowedPushOperations": "CreateUpdateAndDelete"
@@ -134,6 +139,19 @@ In the above section, we provided an example template that can be used when defi
 This configuration will provide the basis to our Content Serialization strategy for the current site collection/site/feature that you are implementing. The `$schema` should reference your root schema and provides a blueprint to the structure of our JSON file (this file is provided as part of the foundation head repository). The `namespace` will provide a unique identifier when working with the CLI or when pushing or pulling the serialized items to your environment. Lastly, there is the `includes` element which will provide details on what items in Sitecore should be controlled by serialization (i.e. the file system). It's important that you only serialize items that should be controlled by the developer, such as templates that your code relies on or items representing folders where content editors will add their content. In the example file, we do not use excludes in this configuration file, however these could be useful as well, when there are specific folders you would like to ensure is not controlled by serialization.
 
 ### Includes Configuration
+
+#### Module
+
+```json
+{
+    "name": "module",
+    "path": "/sitecore/system/settings/Project/<SITE_COLLECTION_NAME>",
+    "allowedPushOperations": "CreateUpdateAndDelete"
+},
+```
+
+The module node will provide the main headless SXA Module definition for the Site Collection. This module provides all the scaffolding when a new site is created under the Site Collection and will typically configure available renderings, data folders, headless variants etc. All child items for a module must be developer controled and the push operations will make sure that content in source control is the source of truth for the module. Each Site Collecion must have its own module.
+
 
 #### Tenant Root
 

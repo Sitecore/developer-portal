@@ -47,6 +47,7 @@ The items object shows an array of includes. Each include defines what item path
 
 Items are required to be serialized when they are created by developers and the code depends on them. Out of the box items provided by the base XM Cloud installation should not be serialized. In XM Cloud, the following items require serialization:
 
+- **Modules** from the `/sitecore/system/settings/project` folder, each site collection must have a corresponding headless module created
 - **Templates** from project folder that have been created during site collection creation: `/sitecore/templates/Project/<site collection name>`
 - **Branch Templates** from project folder: `/sitecore/templates/Branches/Project/<site collection name>`
 - **Media Library Folder** with the shared and `<site name>` related folder only, not including media assets: `/sitecore/media library/Project/<site collection name>`
@@ -103,6 +104,7 @@ In the given code example, we use `deployItems` to define which module definitio
 
 Here are some examples of items that developers should configure and deploy on the file system:
 
+- Modules
 - Templates
 - Branch Templates
 - Media Library Folder
