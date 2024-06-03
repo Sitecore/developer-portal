@@ -22,7 +22,7 @@ export function buildSearchQuery({ path, uuid, term, sources }: SearchChangeLogQ
             "sort": {
               "value": [
                   {
-                      "name": "chatbot"
+                      "name": "suggested"
                   }
               ]
             },
