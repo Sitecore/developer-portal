@@ -1,6 +1,7 @@
 ---
 solution: ['content-management']
 product: ['xm']
+productLogo: 'ExperienceManager'
 title: 'Experience Manager'
 description: 'Experience Manager for content management, Web CMS'
 stackexchange:
