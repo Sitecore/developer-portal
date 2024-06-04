@@ -2,6 +2,7 @@
 solution: ['customer-data-management']
 product: ['xp']
 title: 'Experience Platform'
+productLogo: 'ExperiencePlatform'
 description: 'Leverage xConnect and xDB to provide a 360 view of the customer in your fully integrated DXP platform'
 stackexchange: ['#tracking', '#xconnect', '#xdb']
 youtube: 'PL1jJVFm_lGnxaNZ6AUm_GQNOxFHOjZAGp'
