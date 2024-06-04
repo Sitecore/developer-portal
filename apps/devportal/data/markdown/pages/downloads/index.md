@@ -9,7 +9,7 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
-  title="XM to XM Cloud Content Migration Tool"
+  title="XM to XM Cloud Migration Tool"
   description="Tool for migrating content, media and users from an XM instance to an XM Cloud environment."
   link1text="More info"
   link1href="/downloads/xm-cloud"
