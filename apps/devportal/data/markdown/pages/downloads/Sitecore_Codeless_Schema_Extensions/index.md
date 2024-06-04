@@ -9,5 +9,5 @@ description: "Code and segmentation rules enabling business users to extend the 
 </CardHeader>
 <CardBody>
 [Sitecore Codeless Schema Extensions 1.0.0](/downloads/Sitecore_Codeless_Schema_Extensions/1.0.0)
-</CardBody>          
+</CardBody>
 </Card>
