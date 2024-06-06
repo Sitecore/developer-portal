@@ -1,5 +1,4 @@
-import { Product } from "@scdp/ui/lib";
-
+import { Product } from '@scdp/ui/lib';
 
 export interface NavItem {
   title: string;
@@ -567,7 +566,7 @@ export const mainNavigation: NavItem[] = [
           {
             title: 'Managed Cloud',
             url: '/devops/managed-cloud',
-            logo: Product.Sitecore,
+            logo: Product.ManagedCloud,
           },
         ],
       },
