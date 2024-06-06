@@ -63,6 +63,14 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Experience_Accelerator"
 />
 <Download 
+  title="Sitecore Codeless Schema Extensions 1.0.0"
+  description="Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development."
+  link1text="Get latest"
+  link1href="/downloads/Sitecore_Codeless_Schema_Extensions/1.0.0"
+  link2text="See all versions"
+  link2href="/downloads/Sitecore_Codeless_Schema_Extensions"
+/>
+<Download 
   title="Sitecore Publishing Service 7.0"
   description="Optional service as an alternative to the default SXP publishing mechanism, focusing on high performance publishing in large-scale deployments."
   link1text="Get latest"
