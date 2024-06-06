@@ -10,7 +10,7 @@ hasInPageNav: true
 
 # XM Cloud Tools and Resources
 
-This page will provide you with the downloads of new and updated resources to help with your XM Cloud journey. If you are looking for faqs, best practices, docs, videos, and other resources please see our XM Cloud product page:
+This page provides downloads to help with your XM Cloud journey. For FAQs, best practices, docs, videos, and other resources please see our XM Cloud product page:
 
 <Promo
   title="XM Cloud"
@@ -20,29 +20,24 @@ This page will provide you with the downloads of new and updated resources to he
   linkHref="/content-management/xm-cloud" isImageLeft={false}
 />
 
-## XM to XM Cloud Content Migration tool
+## XM to XM Cloud Migration tool
 
-Use the XM to XM Cloud Content Migration tool to help move content, media and user data from a source XM on-premises instance to a target XM Cloud environment. This tool acts as middleware that simplifies the task of entering and selecting data, and orchestrating the migration. Our first version is based on the underlying Sitecore CLI and Sitecore Content Serialization (SCS) technologies.
+This tool helps move content, media and user data from a source XM on-premises instance to a target XM Cloud environment. It is middleware that simplifies the task of entering and selecting data, and orchestrating the migration.
 
-- **Supported versions**: Sitecore platform on-premise releases **10.1 and later**. Future versions of the migration tool will add support for additional versions.
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    This tool focuses on back-end data; it does not migrate front-end site layouts/renderings.
+  </Alert>
 
-- **What can be migrated?** This tool migrates content, media, and user data. It is not intended for migrating or converting site layouts/renderings, xDB data, commerce data, or other data items that are not found in Sitecore XM Cloud.
+**Version 1** is based on underlying Sitecore CLI and Sitecore Content Serialization (SCS) tools. It supports migration from source XM releases **10.1 and later**.
 
-- **Is this compatible with XP/XC?** If you have installed XP or XC, the tool will work but it only targets the content portion from XM.
+ | Releases/Options | Description |
+ | --- | --- |
+ | XM to XM Cloud Migration Tool 1.1.154 - [GUI option](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore.XM.Migration.GUI.v1.1.154.zip) , [CLI option](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore.XM.Migration.Console.v1.1.154.zip) | Jun 2024 - Fixed blocking issues: **616476** - Sitecore replaced its products downloads page which broke the tool's retrieval of Sitecore CLI. **615822** - Tool installs a config file on the source XM's Identity Server, but Identity Server does not restart in some user scenarios. |
+ | XM to XM Cloud Migration Tool 1.1.151 - [GUI option](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore.XM.Migration.GUI.v1.1.151.zip) , [CLI option](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore.XM.Migration.Console.v1.1.151.zip) | Nov 2023 - Initial tool release. The tool is provided in two variants: a Graphical User Interface and a Command Line Interface console. |
 
-- **Questions?** Contact us on the community Slack [#xm-cloud channel](https://sitecorechat.slack.com/archives/C03NXTAPKE3).
 
-There are two options for running the application: a graphical user interface (GUI) and a command line interface (CLI). Download the one that works best for you and your team!
+**Version 2** is in development. It will replace Sitecore CLI and SCS with new native XM Cloud technologies built on Google's Protocol Buffers format. This will enable: migrating from source XM 9 and 10 releases, a significant performance boost, and simplification. Version 2 will also add migrations from PaaS deployments. 
 
-<Row columns="2">
-<Article title="Graphical User Interface (GUI)" description="" link="https://sitecoresdn.blob.core.windows.net/downloads/Sitecore.XM.Migration.GUI.v1.1.151.zip" maxWidth="sm" linktext="Download" />
-<Article title="Command Line Interface (CLI)" description="" link="https://sitecoresdn.blob.core.windows.net/downloads/Sitecore.XM.Migration.Console.v1.1.151.zip" maxWidth="sm" linktext="Download"  />
-</Row>
+**Questions?** Contact us on the community Slack [#xm-cloud channel](https://sitecorechat.slack.com/archives/C03NXTAPKE3).
 
-## Open Source resources
-
-<Row columns={3}>
-<Repository framework="Nextjs" name="Headless SXA Starter Kit" description="This solution is designed to help developers learn and get started quickly with XM Cloud + SXA." repositoryUrl="https://github.com/sitecorelabs/xmcloud-foundation-head" />
-<Repository framework="Nextjs" name="Sitecore PlaySummit Demo" description="The official Sitecore demo used to demo Sitecore DXP including Content Hub and JSS" repositoryUrl="https://github.com/Sitecore/Sitecore.Demo.XmCloud.PlaySummit" />
-<Repository framework="Nextjs|DotNET" name="Example implementation" description="This repository contains the codebase for a series of sites managed by the developer relations at Sitecore" repositoryUrl="https://github.com/Sitecore/XM-Cloud-Introduction" />
-</Row>
