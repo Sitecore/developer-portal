@@ -4,7 +4,7 @@ description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/103/Sitecore_Experience_Platform_103/Release_Notes
 ---
 
-**December 2022 – released Sitecore Experience Platform 10.3.0**
+**December 2022 – released Sitecore Experience Platform 10.3.0 rev. 008463**
 
 This a feature release. Sitecore recommends that you upgrade to this release if it includes features that meet the specific needs of your organization. This release contains significant new feature functionality, and we encourage you to evaluate it.
 

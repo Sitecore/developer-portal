@@ -4,7 +4,7 @@ description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/101/Sitecore_Experience_Platform_101/Release_Notes
 ---
 
-**Feb 2021 – released Sitecore Experience Platform 10.1.0**
+**Feb 2021 – released Sitecore Experience Platform 10.1.0 rev. 005207**
 
 This a feature release. Sitecore recommends that you upgrade to this release if it includes features that meet the specific needs of your organization. This release contains significant new feature functionality, and we encourage you to evaluate it.
 

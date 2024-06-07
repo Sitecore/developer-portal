@@ -4,7 +4,7 @@ description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/102/Sitecore_Experience_Platform_102_Update1/Release_Notes
 ---
 
-**September 2023 – released Sitecore Experience Platform 10.2.1**
+**September 2023 – released Sitecore Experience Platform 10.2.1 rev. 009559**
 
 This is a product update. Sitecore recommends that you upgrade to this release if it includes fixes that meet the specific needs of your organization. If this release does not include new functionality or specific fixes that your organization requires, you may benefit from waiting to upgrade until Sitecore releases an update that is relevant for your organization. This is especially true in production environments.
 
