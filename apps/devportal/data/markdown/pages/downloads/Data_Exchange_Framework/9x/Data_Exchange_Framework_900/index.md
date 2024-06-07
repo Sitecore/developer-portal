@@ -3,6 +3,11 @@ title: "Data Exchange Framework 9.0.0"
 description: ""
 ---
 
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    ltsc2022 is currently supported. ltsc2019 images and configuration are coming soon.
+  </Alert>
+
 The Data Exchange Framework enables synchronizing data between Sitecore XP and 3rd party systems.\
 Data Exchange Framework 9.0.0 is compatible with Sitecore XP 10.4.
 
@@ -13,8 +18,8 @@ See [all available versions here](/downloads/Data_Exchange_Framework).
  | Resource | Description |
  | --- | --- |
  | [Data Exchange Framework](https://scdp.blob.core.windows.net/downloads/Data%20Exchange%20Framework/9x/Data%20Exchange%20Framework%20900/Data%20Exchange%20Framework%209.0.7%20rev.%2001658.zip) | Sitecore Data Exchange Framework provides the ability to define the synchronization processes and data mappings. It also provides the ability to run those processes. |
- | **UPDATE** [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/def%2F8.0.1631.01631.635) | The Sitecore Data Exchange Framework Container Deployment Package contains the Docker Compose and Kubernetes specification files used to deploy Sitecore Data Exchange Framework and Data Exchange Framework Tenant Web Service in development and production container environments. |
- | **UPDATE** [DEF-TS Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/def-ts%2F8.0.1631.01631.290) | <br /><br />The Sitecore Data Exchange Framework - Tenant Service Container Deployment Package contains the Docker Compose and Kubernetes specification files used to deploy Data Exchange Framework - Tenant Service in development and production container environments.<br /><br />  <br />  <br /> |
+ | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/def%2F9.0.7.01658.741) | The Sitecore Data Exchange Framework Container Deployment Package contains the Docker Compose and Kubernetes specification files used to deploy Sitecore Data Exchange Framework and Data Exchange Framework Tenant Web Service in development and production container environments. |
+ | [DEF-TS Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/def-ts%2F9.0.7.01658.388) | The Sitecore Data Exchange Framework - Tenant Service Container Deployment Package contains the Docker Compose and Kubernetes specification files used to deploy Data Exchange Framework - Tenant Service in development and production container environments.<br /><br />  <br />  <br /> |
  | [Image and Tags List](https://github.com/Sitecore/docker-images/tree/master/tags) | Link to the official tags list (.md and .json format) of all published Sitecore images available on Sitecore Container Registry (SCR). |
 
 ## Marketing Automation Plugins
@@ -42,13 +47,13 @@ See [all available versions here](/downloads/Data_Exchange_Framework).
  | Resource | Description |
  | --- | --- |
  | [Release Notes](/downloads/Data_Exchange_Framework/9x/Data_Exchange_Framework_900/Release_Notes) | Release notes for Data Exchange Framework. |
- | [Installation Guide for Data Exchange Framework](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/install-data-exchange-framework-on-prem.html) | The installation and configuration procedure for Data Exchange Framework Activity. |
- | [Installation Guide for Data Exchange Tenant Web Service](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/install-the-tenant-web-service.html) | The installation and configuration procedure for Data Exchange Tenant Web Service. |
- | [Container Deployment Guide for Data Exchange Framework](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/installing-data-exchange-framework-on-containers.html) | This guide describes how to do Sitecore Containers with Data Exchange Framework for Docker Compose & Kubernetes deployment. |
- | [Container Deployment Guide for Data Exchange Tenant Service](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/installing-the-tenant-service-on-containers.html) | This guide describes how to do the Data Exchange Tenant Service Docker Compose & Kubernetes deployment.  <br />  <br /><br /> |
- | [Guide for Data Exchange Framework Activity for Marketing Automation](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/walkthrough--setting-up-a-marketing-automation-action-in-data-exchange-framework.html) | The installation and configuration procedure for Data Exchange Framework Activity for Marketing Automation. |
- | [Guide for Data Exchange Framework Save Action for Experience Forms](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/walkthrough--creating-a-custom-form-save-action.html) | This guide describes how to use Data Exchange Framework Save Action for Experience Forms. |
- | [Documentation](https://doc.sitecore.com/developers/def/80/data-exchange-framework/en/index-en.html) | The Sitecore documentation website with Sitecore Data Exchange Framework documentation. |
+ | [Installation Guide for Data Exchange Framework](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/install-data-exchange-framework-on-prem.html) | **Updated document for 9.0 is coming soon!** The installation and configuration procedure for Data Exchange Framework Activity. |
+ | [Installation Guide for Data Exchange Tenant Web Service](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/install-the-tenant-web-service.html) | **Updated document for 9.0 is coming soon!** The installation and configuration procedure for Data Exchange Tenant Web Service. |
+ | [Container Deployment Guide for Data Exchange Framework](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/installing-data-exchange-framework-on-containers.html) | **Updated document for 9.0 is coming soon!** This guide describes how to do Sitecore Containers with Data Exchange Framework for Docker Compose & Kubernetes deployment. |
+ | [Container Deployment Guide for Data Exchange Tenant Service](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/installing-the-tenant-service-on-containers.html) | **Updated document for 9.0 is coming soon!** This guide describes how to do the Data Exchange Tenant Service Docker Compose & Kubernetes deployment.  <br />  <br /><br /> |
+ | [Guide for Data Exchange Framework Activity for Marketing Automation](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/walkthrough--setting-up-a-marketing-automation-action-in-data-exchange-framework.html) | **Updated document for 9.0 is coming soon!** The installation and configuration procedure for Data Exchange Framework Activity for Marketing Automation. |
+ | [Guide for Data Exchange Framework Save Action for Experience Forms](https://doc.sitecore.com/xp/en/developers/def/80/data-exchange-framework/walkthrough--creating-a-custom-form-save-action.html) | **Updated document for 9.0 is coming soon!** This guide describes how to use Data Exchange Framework Save Action for Experience Forms. |
+ | [Documentation](https://doc.sitecore.com/developers/def/80/data-exchange-framework/en/index-en.html) | **Updated document for 9.0 is coming soon!** The Sitecore documentation website with Sitecore Data Exchange Framework documentation. |
 
 ## Client Translations
 
