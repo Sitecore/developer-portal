@@ -55,20 +55,20 @@ See [all available versions here](/downloads/Sitecore_Experience_Platform).
  | [Sitecore Identity](/downloads/Sitecore_Identity/7x/Sitecore_Identity_7111) | Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or can be extended for use with an external identity provider. |
  | [Scripts for Sitecore Security database](/downloads/Scripts_for_Sitecore_Security_database/0x/Scripts_for_Sitecore_Security_database_06) | Set of scripts for moving Sitecore's Security membership objects from the Core database to its own security database. | 
  | [Sitecore Experience Accelerator](/downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1040) | Tools to accelerate the production of SXP websites enabled by reuse of templates, layouts, and renderings. |
+ | [Sitecore Codeless Schema Extensions](/downloads/Sitecore_Codeless_Schema_Extensions/1.0.0) | Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development. |
  | [Azure Blob Storage](/downloads/Sitecore_Azure_Blob_Storage/1x/Sitecore_Azure_Blob_Storage_600) | Azure Blob Storage package for XM Developer, XM Scaled, XP Developer, XP Scaled configurations. |
  | [Sitecore Publishing Service Module](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1040) | Integrates the optional Sitecore Publishing Service with SXP, which focuses on high performance publishing in large-scale deployments. |
  | [Sitecore Headless Rendering](/downloads/Sitecore_Headless_Rendering/22x/Sitecore_Headless_Rendering_2200) | Headless services bundle including the server-side APIs, Edge Connector, and front-end SDKs for JavaScript (JSS) and ASP.NET rendering. |
  | [Sitecore Universal Tracker](/downloads/Sitecore_Universal_Tracker/8x/Sitecore_Universal_Tracker_800) | Optional mechanism for tracking site visitor interactions, well suited for headless implementations and for collecting from different sources. |
- | Codeless Schema Extensions | **New module coming May 2024!** Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development. |
 
 ## Connectors
  | Resource | Description |
  | --- | --- |
- | [Sitecore Connect for Content Hub](/downloads/Sitecore_Connect_for_Content_Hub) | **Version 5.2.0 coming May 2024!** Connector for synchronizing data between SXP and Content Hub. |
- | [Sitecore Connect for Microsoft Dynamics 365 for Sales](/downloads/Dynamics_CRM_Connect) | **Version 9.0.0 coming May 2024!** Connector for synchronizing data between SXP and Microsoft Dynamics 365 for Sales. |
- | [Sitecore Connect for Salesforce CRM](/downloads/Salesforce_Connect) | **Version 9.0.0 coming mid May 2024!** Connector for synchronizing data between SXP and Salesforce CRM. |
- | [Sitecore Connect for Salesforce Marketing Cloud](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud) | **Version 9.0 coming May 2024!** Connector for synchronizing data between SXP and Salesforce Marketing Cloud. |
- | [Sitecore Data Exchange Framework](/downloads/Data_Exchange_Framework) | **Version 9.0.0 coming May 2024!** Framework for transforming and transfering data between SXP and 3rd party systems. |
+ | [Sitecore Connect for Content Hub](/downloads/Sitecore_Connect_for_Content_Hub) | **Version 5.2.0 coming June 2024!** Connector for synchronizing data between SXP and Content Hub. |
+ | [Sitecore Connect for Microsoft Dynamics 365 for Sales](/downloads/Dynamics_CRM_Connect) | **Version 9.0.0 coming June 2024!** Connector for synchronizing data between SXP and Microsoft Dynamics 365 for Sales. |
+ | [Sitecore Connect for Salesforce CRM](/downloads/Salesforce_Connect) | **Version 9.0.0 coming June 2024!** Connector for synchronizing data between SXP and Salesforce CRM. |
+ | [Sitecore Connect for Salesforce Marketing Cloud](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud) | **Version 9.0 coming June 2024!** Connector for synchronizing data between SXP and Salesforce Marketing Cloud. |
+ | [Sitecore Data Exchange Framework](/downloads/Data_Exchange_Framework) | **Version 9.0.0 coming June 2024!** Framework for transforming and transfering data between SXP and 3rd party systems. |
 
 ## Release information
  | Resource | Description |
