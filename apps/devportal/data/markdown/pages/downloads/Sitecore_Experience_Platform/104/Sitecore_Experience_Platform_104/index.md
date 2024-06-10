@@ -8,7 +8,7 @@ title: "Sitecore Experience Platform 10.4"
   </Alert>
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    **Container images for ltsc2019 are coming in early June, 2024.**
+    **June 11,2024: Added ltsc2019 Container images and support package for Sitecore XP, which includes Identity Server. ltsc 2019 for other modules is coming in June, 2024.**
   </Alert>
   
 Sitecore Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability.\

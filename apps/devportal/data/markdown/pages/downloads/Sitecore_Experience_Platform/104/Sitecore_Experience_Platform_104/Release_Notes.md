@@ -6,7 +6,7 @@ title: 'Release Notes'
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    **May 28, 2024 - Patched and republished the four Azure App Service download package options and the SAT Resources package to add missing Application Insights configuration. Package version numbers were not changed, to avoid re-spinning the entire release.**\
+    **May 28, 2024: Patched and republished the four Azure App Service download package options and the SAT Resources package to add missing Application Insights configuration. Package version numbers were not changed, to avoid re-spinning the entire release.**\
 	**To confirm you have the correct Azure App Service package version, ensure the following file is included in your zip download:**\
 	`Sitecore 10.4.0 rev. 010422 (xx) (Cloud)_xxx.scwdp.zip\Content\Website\ApplicationInsights.config`\
 	**To confirm you have the correct Sitecore Azure Toolkit Resources 10.4.0 rev. 010422.zip package, ensure the following file is included in your zip download:**\
@@ -14,7 +14,7 @@ title: 'Release Notes'
   </Alert>
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    **Container images for ltsc2019 are coming in early June, 2024.**
+    **June 11,2024: Added ltsc2019 Container images and support package for Sitecore XP, which includes Identity Server. ltsc 2019 for other modules is coming in June, 2024.**
   </Alert>
 
 This release includes new features and improvements made in Sitecore Experience Platform (SXP) 10.4. Sitecore recommends that you upgrade to this release if it aligns with the specific needs of your organization. This release contains significant improvements in functionality worth evaluating.
