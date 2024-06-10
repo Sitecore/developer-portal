@@ -7,6 +7,10 @@ description: ""
     <AlertIcon />
     ltsc2022 is currently supported. ltsc2019 images and configuration are coming soon.
   </Alert>
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    Updated documentation for version 9.0 is coming soon. In the interim please refer to 8.0 documents.
+  </Alert>
 
 The Data Exchange Framework enables synchronizing data between Sitecore XP and 3rd party systems.\
 Data Exchange Framework 9.0.0 is compatible with Sitecore XP 10.4.

@@ -7,6 +7,10 @@ description: ""
     <AlertIcon />
     ltsc2022 is currently supported. ltsc2019 images and configuration are coming soon.
   </Alert>
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    Updated documentation for version 9.0 is coming soon. In the interim please refer to 8.0 documents.
+  </Alert>
 
 Sitecore Connect™ for Salesforce Marketing Cloud unites Sitecore Experience Platform content and behavioural data with Salesforce Marketing Cloud.\
 Sitecore Connect™ for Salesforce Marketing Cloud 9.0 is compatible with Sitecore XP 10.4.

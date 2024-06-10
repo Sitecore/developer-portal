@@ -7,6 +7,10 @@ description: ""
     <AlertIcon />
     ltsc2022 is currently supported. ltsc2019 images and configuration are coming soon.
   </Alert>
+  <Alert variant='warning' mb={4}>
+    <AlertIcon />
+    Updated documentation for version 5.2 is coming soon. In the interim please refer to 5.1 documents.
+  </Alert>
 
 Sitecore Connect™ for Content Hub enables web editors and content/digital marketers:
 -   To work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub.
