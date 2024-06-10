@@ -4,7 +4,7 @@ description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/102/Sitecore_Experience_Platform_102/Release_Notes
 ---
 
-**November 2021 – released Sitecore Experience Platform 10.2.0**
+**November 2021 – released Sitecore Experience Platform 10.2.0 rev. 006766**
 
 This a feature release. Sitecore recommends that you upgrade to this release if it includes features that meet the specific needs of your organization. This release contains significant new feature functionality, and we encourage you to evaluate it.
 
