@@ -6,6 +6,15 @@ origin: https://dev.sitecore.net/Downloads/Salesforce_Connect.aspx
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
+## Sitecore Connect™ for Salesforce CRM 9.x
+</CardHeader>
+<CardBody>
+[Sitecore Connect™ for Salesforce CRM 9.0.0](/downloads/Salesforce_Connect/9x/Sitecore_Connect_for_Salesforce_CRM_900)
+</CardBody>          
+</Card>
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
 ## Sitecore Connect™ for Salesforce CRM 8.x
 </CardHeader>
 <CardBody>

@@ -6,6 +6,15 @@ origin: https://dev.sitecore.net/Downloads/Data_Exchange_Framework.aspx
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
+## Sitecore Data Exchange Framework 9.x
+</CardHeader>
+<CardBody>
+[Data Exchange Framework 9.0.0](/downloads/Data_Exchange_Framework/9x/Data_Exchange_Framework_900)
+</CardBody>          
+</Card>
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
 ## Sitecore Data Exchange Framework 8.x
 </CardHeader>
 <CardBody>
