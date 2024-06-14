@@ -11,7 +11,7 @@ The Sitecore Install Framework (SIF) enables users to deploy and configure a Sit
 
 ## Documentation
 
-- [What is the Sitecore Install Framework](https://www.sitecore.com/knowledge-center/blog/359/installing-sitecore-9-what-is-the-sitecore-install-framework-4523)
+- [What is the Sitecore Install Framework](https://community.sitecore.com/community?id=community_blog&sys_id=dcb2af2d1b8370d0b8954371b24bcb08)
 
 ## Getting Started
 
