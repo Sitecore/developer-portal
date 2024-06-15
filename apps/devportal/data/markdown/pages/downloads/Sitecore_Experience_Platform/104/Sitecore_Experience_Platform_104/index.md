@@ -64,11 +64,11 @@ See [all available versions here](/downloads/Sitecore_Experience_Platform).
 ## Connectors
  | Resource | Description |
  | --- | --- |
- | [Sitecore Connect for Content Hub](/downloads/Sitecore_Connect_for_Content_Hub) | **Version 5.2.0 coming June 2024!** Connector for synchronizing data between SXP and Content Hub. |
- | [Sitecore Connect for Microsoft Dynamics 365 for Sales](/downloads/Dynamics_CRM_Connect) | **Version 9.0.0 coming June 2024!** Connector for synchronizing data between SXP and Microsoft Dynamics 365 for Sales. |
- | [Sitecore Connect for Salesforce CRM](/downloads/Salesforce_Connect) | **Version 9.0.0 coming June 2024!** Connector for synchronizing data between SXP and Salesforce CRM. |
- | [Sitecore Connect for Salesforce Marketing Cloud](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud) | **Version 9.0 coming June 2024!** Connector for synchronizing data between SXP and Salesforce Marketing Cloud. |
- | [Sitecore Data Exchange Framework](/downloads/Data_Exchange_Framework) | **Version 9.0.0 coming June 2024!** Framework for transforming and transfering data between SXP and 3rd party systems. |
+ | [Sitecore Connect for Content Hub](/downloads/Sitecore_Connect_for_Content_Hub/5x/Sitecore_Connect_for_Content_Hub_520) | Connector for synchronizing data between SXP and Content Hub. |
+ | [Sitecore Connect for Microsoft Dynamics 365 for Sales](/downloads/Dynamics_CRM_Connect/9x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_900) | Connector for synchronizing data between SXP and Microsoft Dynamics 365 for Sales. |
+ | [Sitecore Connect for Salesforce CRM](/downloads/Salesforce_Connect/9x/Sitecore_Connect_for_Salesforce_CRM_900) | Connector for synchronizing data between SXP and Salesforce CRM. |
+ | [Sitecore Connect for Salesforce Marketing Cloud](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_90) | Connector for synchronizing data between SXP and Salesforce Marketing Cloud. |
+ | [Sitecore Data Exchange Framework](/downloads/Data_Exchange_Framework/9x/Data_Exchange_Framework_900) | Framework for transforming and transfering data between SXP and 3rd party systems. |
 
 ## Release information
  | Resource | Description |

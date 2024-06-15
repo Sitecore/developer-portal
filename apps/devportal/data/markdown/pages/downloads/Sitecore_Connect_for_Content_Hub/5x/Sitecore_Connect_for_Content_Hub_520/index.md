@@ -16,8 +16,7 @@ Sitecore Connect™ for Content Hub enables web editors and content/digital mark
 -   To work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub.
 -   To select assets directly from DAM from within the Sitecore environment. Users can select and Incorporate assets into their web and digital experience creation and delivery.
 
-Sitecore Connect™ for Content Hub 5.2.0 is compatible with Sitecore XP 10.0-10.4 and Sitecore Content Hub 4.0-4.2.
-
+Sitecore Connect™ for Content Hub 5.2.0 is compatible with Sitecore XP 10.0-10.4 and Sitecore Content Hub 4.0-4.2.\
 See [all available versions here](/downloads/Sitecore_Connect_for_Content_Hub).
 
 ## Downloads
