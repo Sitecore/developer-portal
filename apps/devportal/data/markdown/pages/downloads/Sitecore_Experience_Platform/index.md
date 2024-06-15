@@ -28,6 +28,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform
 ## Sitecore Experience Platform 10.2
 </CardHeader>
 <CardBody>
+[Sitecore Experience Platform 10.2 Update-2](/downloads/Sitecore_Experience_Platform/102/Sitecore_Experience_Platform_102_Update2)\
 [Sitecore Experience Platform 10.2 Update-1](/downloads/Sitecore_Experience_Platform/102/Sitecore_Experience_Platform_102_Update1)\
 [Sitecore Experience Platform 10.2](/downloads/Sitecore_Experience_Platform/102/Sitecore_Experience_Platform_102)
 </CardBody>          
