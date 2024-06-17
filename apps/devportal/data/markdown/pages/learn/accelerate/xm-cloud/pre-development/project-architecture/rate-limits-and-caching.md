@@ -96,12 +96,12 @@ To reduce the number of requests to Experience Edge, you can tune the web applic
 * [Dictionary service](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/dictionary-service-factory.ts#L20) 
   * The default cache timeout is 60 seconds, you can increase this to reduce the number of requests to Experience Edge. 
   * Increase `pageSize` (10 default) - this value can go up to 1000 depending on how many dictionary items you have
-* [Personalize middleware](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/middleware/plugins/personalize.ts#L26)
-  * Increase the default `cacheTimeout` (10s default)
-  * If your client is not using Emb Embedded Personalization, disable or remove the middleware
-* [Redirects middleware](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/middleware/plugins/redirects.ts#L12)
-  * Increase the default `cacheTimeout` (10s default)
-  * If you are not using (SXA) redirects, you can disadisable or remove the middleware
+* [Personalize middleware](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/middleware/plugins/personalize.ts#L26) 
+  * IIncrease the default `cacheTimeout` (10s default)
+  * If your client is not using Emb Embedded Personalization, disable or remove the middleware
+* [Redirects middleware](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/middleware/plugins/redirects.ts#L12) 
+  * IIncrease the default `cacheTimeout` (10s default)
+  * If you are not using (SXA) redirects, you can disadisable or remove the middleware
 
 ### Enabling LayoutService/Dictionary Retries
 
