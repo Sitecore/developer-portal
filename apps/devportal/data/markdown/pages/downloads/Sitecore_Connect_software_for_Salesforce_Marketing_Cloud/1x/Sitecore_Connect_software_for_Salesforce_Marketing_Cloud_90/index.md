@@ -13,8 +13,7 @@ description: ""
   </Alert>
 
 Sitecore Connect™ for Salesforce Marketing Cloud unites Sitecore Experience Platform content and behavioural data with Salesforce Marketing Cloud.\
-Sitecore Connect™ for Salesforce Marketing Cloud 9.0 is compatible with Sitecore XP 10.4.
-
+Sitecore Connect™ for Salesforce Marketing Cloud 9.0 is compatible with Sitecore XP 10.4.\
 See [all available versions here](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud).
 
 ## Behavioral Data Exchange Downloads

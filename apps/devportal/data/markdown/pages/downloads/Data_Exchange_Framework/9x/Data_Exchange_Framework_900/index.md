@@ -13,8 +13,7 @@ description: ""
   </Alert>
 
 The Data Exchange Framework enables synchronizing data between Sitecore XP and 3rd party systems.\
-Data Exchange Framework 9.0.0 is compatible with Sitecore XP 10.4.
-
+Data Exchange Framework 9.0.0 is compatible with Sitecore XP 10.4.\
 See [all available versions here](/downloads/Data_Exchange_Framework).
 
 ## Downloads

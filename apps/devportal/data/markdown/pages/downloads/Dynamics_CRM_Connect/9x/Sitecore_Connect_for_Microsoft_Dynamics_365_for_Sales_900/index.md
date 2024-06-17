@@ -9,8 +9,7 @@ description: ""
   </Alert>
 
 Synchronize data between Microsoft Dynamics 365 for Sales and Sitecore Experience Platform.\
-Sitecore Connect™ for Microsoft Dynamics 365 for Sales 9.0.0 is compatible with Sitecore XP 10.4.
-
+Sitecore Connect™ for Microsoft Dynamics 365 for Sales 9.0.0 is compatible with Sitecore XP 10.4.\
 See [all available versions here](/downloads/Dynamics_CRM_Connect).
 
 ## Downloads

@@ -13,8 +13,7 @@ description: ""
   </Alert>
 
 Synchronize data between Salesforce CRM and Sitecore Experience Platform.\
-Sitecore Connect™ for Salesforce CRM version 9.0.0 is compatible with Sitecore XP 10.4.
-
+Sitecore Connect™ for Salesforce CRM version 9.0.0 is compatible with Sitecore XP 10.4.\
 See [all available versions here](/downloads/Salesforce_Connect).  
 
 ## Downloads
