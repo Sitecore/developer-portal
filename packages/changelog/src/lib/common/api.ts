@@ -18,7 +18,6 @@ export async function fetchAPI(credentials: ChangelogCredentials, query: string,
     console.warn('WARNING: Missing CH ONE endpoint or token');
     return null;
   }
-
   return axios
     .post(endpoint as string, JSON.stringify({ query }), {
       headers: {
