@@ -27,7 +27,7 @@ By default, the XMC Foundation Head starter kit is configured to use SSG. To mak
 
 These 2 functions handle getting all the routes to be generated on build (`getStaticPaths`) and then actually generating the page (`getStaticProps).
 
-## Incremental Static Regeneration
+### Incremental Static Regeneration
 
 Once the site is configured to use SSG, we can use Incremental Static Regeneration (ISR) to dynamically update content as it is published without requiring a new build and deployment,
 
@@ -88,6 +88,20 @@ const nextConfig = {
 <br /><br />
 
 This will increase overall build time but can reduce the amount of concurrent requests being made to Experience Edge.
+
+### Web Application Cache Tuning
+
+To reduce the number of requests to Experience Edge, you can tune the web application cache in the following areas:
+
+* [Dictionary service](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/dictionary-service-factory.ts#L20) 
+  * The default `cacheTimeout` is 60 seconds, you can increase this to reduce the number of requests to Experience Edge. 
+  * Increase `pageSize` (10 default) - this value can go up to 1000 depending on how many dictionary items you have
+* [Personalize middleware](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/middleware/plugins/personalize.ts#L26) 
+  * Increase the default `cacheTimeout` (10s default)
+  * If your client is not using Embedded Personalization, disable or remove the middleware
+* [Redirects middleware](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/middleware/plugins/redirects.ts#L12) 
+  * Increase the default `cacheTimeout` (10s default)
+  * If you are not using (SXA) redirects, you can disable or remove the middleware
 
 ### Enabling LayoutService/Dictionary Retries
 
