@@ -4,6 +4,7 @@ import { ChangeType } from './changeType';
 import { Changelog, ChangelogBase, ChangelogList } from './changelog';
 import { Media } from './index';
 import SitecoreProduct from './sitecoreProduct';
+import { DefaultStatus, Status } from './status';
 
 export type ChangelogEntryList<T> = {
   total: number;
@@ -21,6 +22,7 @@ export type ChangelogEntrySummary = {
   productName: string | null;
   products: SitecoreProduct[] | null;
   changeTypeName: string | null;
+  status: Status;
 };
 
 export type ChangelogEntry = ChangelogEntrySummary & {
@@ -75,6 +77,7 @@ function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySumm
     productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
     products: changelog.sitecoreProduct.results ?? null,
     changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
+    status: changelog.status.results[0] ? changelog.status.results[0] : DefaultStatus,
   };
 }
 
@@ -96,6 +99,7 @@ export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     darkIcon: changelog.sitecoreProduct.results[0]?.darkIcon,
     productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
     products: changelog.sitecoreProduct.results ?? null,
+    status: changelog.status.results[0] ? changelog.status.results[0] : DefaultStatus,
     changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
   };
 }
