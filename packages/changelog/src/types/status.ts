@@ -2,6 +2,7 @@ export type Status = {
   id: string;
   name: string;
   identifier: string;
+  description: string;
 };
 
 export type StatusResults = {
@@ -13,6 +14,7 @@ export const DefaultStatus: Status = {
   id: 'pNOVO2dhtESFOSwd4Va84w',
   name: 'Available',
   identifier: 'available',
+  description: 'Now available for customers',
 };
 
 export function ParseStatus(data: StatusResults): Status[] {
@@ -21,6 +23,7 @@ export function ParseStatus(data: StatusResults): Status[] {
       name: x.name,
       id: x.id,
       identifier: x.identifier,
+      description: x.description,
     };
   });
 }

@@ -71,3 +71,16 @@ export function buildQuerystring(products: Option[], changes: Option[], cursor?:
   }
   return query;
 }
+
+export function getStatusBadgeColor(status: string): string {
+  switch (status) {
+    case 'available':
+      return 'success';
+    case 'inprogress':
+      return 'info';
+    case 'scheduled':
+      return 'orange';
+    default:
+      return 'primary';
+  }
+}
