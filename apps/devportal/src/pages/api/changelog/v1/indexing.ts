@@ -32,7 +32,6 @@ type IndexProduct = {
   description: string;
   darkIcon: string;
   lightIcon: string;
-  sitecoreClouds: string[];
 };
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<IndexingList>) => {
@@ -63,7 +62,7 @@ async function GetEntries(list: IndexResult[], end: string, limit: string) {
             description: obj.productDescription,
             darkIcon: obj.darkIcon,
             lightIcon: obj.lightIcon,
-            sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName),
+            //sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName),
           }
       ),
       date: entry.releaseDate,
