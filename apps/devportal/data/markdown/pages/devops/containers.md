@@ -13,14 +13,14 @@ There are a number of reasons why the use of containers is attractive for Siteco
 
 ## Documentation
 
-- [Containers in Sitecore development](https://doc.sitecore.com/xp/en/developers/101/developer-tools/containers-in-sitecore-development.html)
+- [Containers in Sitecore development](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/containers-in-sitecore-development.html)
 - [Sitecore, Docker, and Continuous Integration](https://www.sitecore.com/knowledge-center/getting-started/sitecore-docker-and-continuous-integration)
 - [Running Sitecore on Azure Kubernetes Service (AKS)](https://www.sitecore.com/knowledge-center/getting-started/running-sitecore-on-azure-kubernetes-service)
 
 ## Getting Started
 
 - [Docker: A quick overview](https://www.sitecore.com/knowledge-center/getting-started/docker-a-quick-overview)
-- [Run your first Sitecore instance](https://doc.sitecore.com/xp/en/developers/101/developer-tools/run-your-first-sitecore-instance.html)
+- [Run your first Sitecore instance](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/run-your-first-sitecore-instance.html)
 
 ## Resources
 

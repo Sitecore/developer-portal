@@ -10,8 +10,8 @@ The integrated Sitecore Web Tracker enables you to track and identify contacts a
 
 ### Documentation
 
-- [Web Tracking Documentation](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-platform/web-tracking.html)
-- [Data flow and process](https://doc.sitecore.com/xp/en/developers/101/platform-administration-and-architecture/tracking-and-personalization.html)
+- [Web Tracking Documentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/web-tracking.html)
+- [Data flow and process](https://doc.sitecore.com/xp/en/developers/latest/platform-administration-and-architecture/tracking-and-personalization.html)
 
 ### Download
 

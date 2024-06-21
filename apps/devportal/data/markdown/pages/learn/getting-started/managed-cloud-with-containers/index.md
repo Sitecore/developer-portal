@@ -18,17 +18,17 @@ There is an assumption that this is for an existing Sitecore solution (however m
   - [Learn more about Docker Pricing](https://www.docker.com/pricing)
 - Walkthrough uses Sitecore 10.2
 - Users should have a working MCC environment:
-  - [Access Details](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/getting-started-with-managed-cloud.html)
-  - [Architecture](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/the-managed-cloud-architecture.html)
+  - [Access Details](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/getting-started-with-managed-cloud.html)
+  - [Architecture](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/the-managed-cloud-architecture.html)
 - Users should have correct permissions to the MCC Azure DevOps project:
   - Users should see the "Repository" tab in Azure DevOps, if not, your account may need to have a valid Visual Studio Subscription.
   - Details about Permissions:
-    - [Managed Security Overview](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/managed-cloud-security-overview.html)
-    - [Managed Security Roles](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/the-managed-cloud-security-roles.html)
+    - [Managed Security Overview](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/managed-cloud-security-overview.html)
+    - [Managed Security Roles](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/the-managed-cloud-security-roles.html)
   - MCC project should contain an Infrastructure Repository:
-    - [Infrastructure Documentation](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/deploying-in-managed-cloud.html#infrastructure_body)
+    - [Infrastructure Documentation](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/deploying-in-managed-cloud.html#infrastructure_body)
   - MCC project should contain an Application Repository:
-    - [Application Documentation](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/deploying-in-managed-cloud.html#application_body)
+    - [Application Documentation](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/deploying-in-managed-cloud.html#application_body)
   - If you don't have the correct permissions, you should reach out to Sitecore Support and put in a "Get Access - User service request" to request access.
 - The move to MCC may require a large shift in your existing CI/CD strategy, especially with older versions of Sitecore and if your repository doesn't already use containers.
 - Basic understanding of the following:
@@ -41,9 +41,9 @@ There is an assumption that this is for an existing Sitecore solution (however m
 
 In order to get started with Managed Cloud with Containers (MCC), your existing solution needs to be extended to support containers. Sitecore has multiple resources that can assist with getting your solution configured with Docker.
 
-Before you get started with Docker, you'll need to ensure that Docker Desktop is installed and all pre-requisites to run docker locally are in place: [Pre-requisite list](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/deploying-in-managed-cloud.html).
+Before you get started with Docker, you'll need to ensure that Docker Desktop is installed and all pre-requisites to run docker locally are in place: [Pre-requisite list](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/deploying-in-managed-cloud.html).
 
-You should also ensure you can run a standard instance of Sitecore with Docker on your local environment, before attempting to customize your existing solution locally [Run Your First Docker Instance](https://doc.sitecore.com/xp/en/developers/102/developer-tools/run-your-first-sitecore-instance.html).
+You should also ensure you can run a standard instance of Sitecore with Docker on your local environment, before attempting to customize your existing solution locally [Run Your First Docker Instance](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/run-your-first-sitecore-instance.html).
 
 ### Solution Modifications
 
@@ -53,24 +53,24 @@ It is recommended to use a multi-repository architecture for Managed Cloud, wher
 
 Most of the details listed below are also included in this document:
 
-[Running Your First Sitecore Instance in Docker](https://doc.sitecore.com/xp/en/developers/102/developer-tools/run-your-first-sitecore-instance.html)
+[Running Your First Sitecore Instance in Docker](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/run-your-first-sitecore-instance.html)
 
 - You will start with creating solution images that extend the base images, based on a topology that works well for local development (likely XM or XP0). You can get the basic details for the Out of the Box (OOTB) definitions from the Container Deployment repository on Github.
   - [XP0 Container Deployment Example](https://github.com/Sitecore/container-deployment/tree/master/compose/sxp/10.2/ltsc2019/xp0)
   - You should place the `docker-compose.yml` in the root of your solution.
 - You will need a folder in your solution that contains the definition on creating the images you need for your implementation (contained in a Dockerfile), which should be a series of commands to take in base images, and layer on top of the image, your solution. In most common Sitecore implementations this folder is located at `./docker/build/[role]/Dockerfile`. You should create a file for each of your images, even if you don't intend to have customizations, so that future customizations are easier to make.
-  - [Building Custom Sitecore Images](https://doc.sitecore.com/xp/en/developers/102/developer-tools/building-custom-sitecore-images.html)
-  - [Build Sitecore Solution Guide](https://doc.sitecore.com/xp/en/developers/102/developer-tools/build-sitecore-solutions.html)
+  - [Building Custom Sitecore Images](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/building-custom-sitecore-images.html)
+  - [Build Sitecore Solution Guide](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/build-sitecore-solutions.html)
   - [Common Docker Examples](https://github.com/Sitecore/docker-examples)
 - You will need an environment file `.env` in the root of your solution which will contain basic environment variables to be used throughout your docker compose file, which looks like `${ENVIRONMENT_VARIABLE}`. You can start by reusing the file located to the corresponding version and topology in the following repository:
   - [Container Deployment Repository](https://github.com/Sitecore/container-deployment)
   - It's important to keep your Containers immutable as much as possible, which is why environment variables are important. [Learn more about Best Practices](https://cloud.google.com/architecture/best-practices-for-operating-containers#ensure_that_your_containers_are_stateless_and_immutable).
 - You'll need to define an override file for the OOTB docker-compose definition `docker-compose.override.yml`. This is where you'll define your custom images and pass in any build arguments to create those custom images. It is important to not make changes directly to the main `docker-compose.yml` file, since it contains OOTB topology information. Instead you should use the override file to make customizations, that way, future upgrades to the version of Sitecore will be easier.
   - [Example of an Existing Override File](https://github.com/Sitecore/docker-examples/blob/develop/custom-images/docker-compose.override.yml)
-  - [Recommendations on Docker Compose Configuration](https://doc.sitecore.com/xp/en/developers/101/developer-tools/build-sitecore-solutions.html#configure-in-docker-compose_body)
+  - [Recommendations on Docker Compose Configuration](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/build-sitecore-solutions.html#configure-in-docker-compose_body)
 - You'll likely need two different Powershell scripts to handle developer onboarding, including `init.ps1` used for certificate creation, and `clean.ps1`, which is used for cleaning volume data (such as logs or cores).
-  - [Preparing to Run Docker](https://doc.sitecore.com/xp/en/developers/102/developer-tools/run-your-first-sitecore-instance.html#preparation_body)
-  - [Persistent Storage Cleanup](https://doc.sitecore.com/xp/en/developers/102/developer-tools/run-your-first-sitecore-instance.html#persistent-storage-cleanup_body)
+  - [Preparing to Run Docker](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/run-your-first-sitecore-instance.html#preparation_body)
+  - [Persistent Storage Cleanup](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/run-your-first-sitecore-instance.html#persistent-storage-cleanup_body)
 - You'll need a data folder, where volume data is stored when your containers are running. The standard path you'll see in most repositories is `./docker/data/[role]`, these folders aren't needed for every role.
 - Lastly, you'll need a configuration folder for `Traefik` configuration. Traefik is used as a reverse proxy to facilitate SSL Certificates and friendly host names while running docker locally. This folder is typically located in `./docker/traefik` and contains SSL and other Traefik configuration.
 
@@ -82,15 +82,15 @@ There are often advanced scenarios needed in your images. Custom modules or even
 
 It's possible that you'll run into scenarios where you need to patch the configuration or add files to your images based on a specific scenario. Refer to the links below for handling some of these potential scenarios.
 
-- [Applying Configuration Transforms](https://doc.sitecore.com/xp/en/developers/102/developer-tools/applying-configuration-transforms.html)
+- [Applying Configuration Transforms](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/applying-configuration-transforms.html)
 
 #### Modules
 
 Modules should never directly get installed in your existing containers running in production, because not only would you need to install these modules on each environment, but on your next release, your modules would likely disappear. Instead, any files or item changes (Sitecore or 3rd party modules not committed to Source Control) need to be layered onto the images that are being created. By doing this, you ensure everyone or every environment that pulls those images, will have everything that matches everyone elses images.
 
 - Sitecore Modules
-  - [Add Sitecore Modules](https://doc.sitecore.com/xp/en/developers/102/developer-tools/add-sitecore-modules.html)
-  - [Sitecore Module References](https://doc.sitecore.com/xp/en/developers/102/developer-tools/sitecore-module-reference.html)
+  - [Add Sitecore Modules](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/add-sitecore-modules.html)
+  - [Sitecore Module References](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/sitecore-module-reference.html)
 - [3rd Party Modules Video](https://www.youtube.com/watch?v=R5kdGqXeMcc)
 
 ## Create CI Pipeline for Managed Cloud Deployments
@@ -119,21 +119,21 @@ The Continuous Delivery (CD) pipeline is hosted in the `Application` repository 
 
 The `Application` and `Infrastructure` repositories in the Managed Cloud with Containers (MCC) Azure DevOps environment are both configured to trigger deployments when a change is made to the `main` branch either directly or via a pull request (however you can also trigger the deployment manually). The best practice would be to create a new feature branch for your latest deployment and in that branch, you'll need to update the configuration to include references to your new custom images in the ACR. This is where you'll need to know the latest build number and branch (or tag version of the latest image in your ACR).
 
-- [Define Custom Images](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/configure-managed-cloud.html#add-a-custom-image_body)
+- [Define Custom Images](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/configure-managed-cloud.html#add-a-custom-image_body)
 
 ![Example Docker Images File](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/9f0aca68e6ad43a79e913b51c0214a30?v=01d65206)
 
 Keep in mind that if you have any more complex scenarios, including customizations to Solr or MSSQL, you'll likely need to init these changes to the respective environment to include them. Example if you were using SXA, you'll need to include the latest CM version, but also include instructions or configuration to init these changes in Solr (SearchStax). There are several guides on how to add modules and make these changes.
 
-- [Walkthrough: Adding the SXA Module](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/walkthrough--adding-the-sxa-module.html)
+- [Walkthrough: Adding the SXA Module](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/walkthrough--adding-the-sxa-module.html)
 
 It is important to callout, that in Sitecore 10.2, Sitecore introduced Items as Resources (IAR) for modules, which means that you may not always need to Init MSSQL for a specific module. You should refer to the module references to understand when updates to MSSQL or Solr are required. If you have made changes to the Solr or MSSQL images locally, this likely means you'll need to make the same changes to push these to your MCC environment. Keeping in mind that Solr and MSSQL are not run within containers in a MCC environment.
 
-- [Sitecore Module References](https://doc.sitecore.com/xp/en/developers/102/developer-tools/sitecore-module-reference.html)
+- [Sitecore Module References](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/sitecore-module-reference.html)
 - [Sitecore Items as Resources](https://community.sitecore.com/community?id=community_blog&sys_id=52751abc1bd44110b8954371b24bcb31)
 
 ## New Infrastructure
 
 If you need to configure changes to your infrastructure, you'll need to work with Terraform and the Infrastructure repository, and likely include additional changes to your existing solution images (ie. Adding Horizon for example). Sitecore has provided multiple scenarios and how you would achieve those scenarios listed here:
 
-- [Infrastructure Scenarios](https://doc.sitecore.com/xp/en/developers/102/managed-cloud/configure-managed-cloud.html)
+- [Infrastructure Scenarios](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/configure-managed-cloud.html)

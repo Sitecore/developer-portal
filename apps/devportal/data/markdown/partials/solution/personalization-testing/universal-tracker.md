@@ -9,7 +9,7 @@ The Sitecore Universal Tracker (UT) lets you collect data from different sources
 
 ### Documentation
 
-- [Universal Tracker Documentation](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-platform/universal-tracker.html)
+- [Universal Tracker Documentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/universal-tracker.html)
 
 ### Resources
 

@@ -12,11 +12,11 @@ xConnect is the service layer that sits in between the xDB and any trusted clien
 
 ### Documentation
 
-- [Sitecore xConnect and xDB Documentation](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-platform/xconnect-and-the-xdb.html)
+- [Sitecore xConnect and xDB Documentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/xconnect-and-the-xdb.html)
 
 ### Learn
 
-- [Getting Started with xConnect](https://doc.sitecore.com/xp/en/developers/101/sitecore-experience-platform/getting-started-with-xconnect.html)
+- [Getting Started with xConnect](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/getting-started-with-xconnect.html)
 
 ### Download
 
