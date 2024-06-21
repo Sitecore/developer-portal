@@ -43,7 +43,7 @@ With Experience Manager, you can create, manage, and publish content to your web
 ## Documentation
 
 - [User Documentation](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/experience-manager.html)
-- [Developer Documentation](https://doc.sitecore.com/xp/en/developers/101/xm/index.html)
+- [Developer Documentation](https://doc.sitecore.com/xp/en/developers/latest/xm/index.html)
 
 ## Learn & Examples
 
