@@ -542,8 +542,8 @@
     position: relative;
     grid-column: 1 / span 3;
     grid-row: calc(var(--counter) + var(--counter)) / span 2;
-    -webkit-filter: url(hex-item-round-corners.svg#helix-round-borders) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
-    filter: url(hex-item-round-corners.svg#helix-round-borders) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+    -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
     height: 0;
     padding-bottom: 90%;
     z-index: 0;
@@ -553,25 +553,7 @@
   }
 
   
-  .hexGridItemContent_violet{
-    background-color: #5548d9;
-    background-image: radial-gradient(75% 80% at center, #5548d9, #5548d9, #3b2ca9 100%);
-    box-shadow: inset 0 3px 3px 0 #625ad5, inset 0 -3px 3px 0 #625ad5;
-  }
-
-  .hexGridItemContent_red  {
-    background-color: #eb1f1f;
-    background-image: radial-gradient(75% 80% at center, #eb1f1f, #eb1f1f, #970d0d 100%);
-    box-shadow: inset 0 3px 3px 0 #e33131, inset 0 -3px 3px 0 #e33131;
-  }
-
-  .hexGridItemContent_teal {
-    background-color: #02a79a;
-    background-image: radial-gradient(75% 80% at center, #02a79a, #02a79a, #006c63 100%);
-    box-shadow: inset 0 3px 3px 0 #0ba599, inset 0 -3px 3px 0 #0ba599;
-  }
-
-  .hexGridItem_zTop {
+ .hexGridItem_zTop {
     z-index: 1;
   }
 
