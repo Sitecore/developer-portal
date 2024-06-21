@@ -59,7 +59,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup background={'chakra-bg'}>
+        <VerticalGroup background={'chakra-subtle-bg'}>
           <CenteredContent>
             <Hexagons />
           </CenteredContent>

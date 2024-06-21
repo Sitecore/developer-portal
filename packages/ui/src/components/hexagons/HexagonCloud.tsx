@@ -2,10 +2,10 @@
 import { Box, ListItem, ListItemProps, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
+import ProductIcon from '../common/ProductIcon';
+import { ButtonLink } from '../links/ButtonLink';
 import { CloudInfoType } from './HexagonTypes';
 import styles from './Hexagons.module.css';
-import { ButtonLink } from '../links/ButtonLink';
-import ProductIcon from '../common/ProductIcon';
 
 type HexagonCloudProps = ListItemProps & {
   cloud: CloudInfoType;
@@ -49,7 +49,7 @@ export const HexagonCloud = ({ cloud, isOpen, children, onClick }: HexagonCloudP
       onMouseOver={(e) => mouseOver(e)}
       onMouseOut={() => resetElements()}
       onClick={onClick}
-      backgroundColor={useColorModeValue('transparent', 'chakra-subtle-bg')}
+      backgroundColor={useColorModeValue('', 'gray.700')}
       color={useColorModeValue('chakra-text', 'white')}
       listStyleType={'none'}
     >

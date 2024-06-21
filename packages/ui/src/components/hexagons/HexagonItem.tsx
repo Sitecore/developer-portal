@@ -1,5 +1,5 @@
-import { Box, Heading, ListItem, ListItemProps, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text } from '@chakra-ui/react';
-import { GetProductInfo, Variant } from '../../lib/assets';
+import { Box, Heading, ListItem, ListItemProps, Popover, PopoverBody, PopoverCloseButton, PopoverContent, PopoverHeader, PopoverTrigger, Text, useColorModeValue } from '@chakra-ui/react';
+import { GetProductInfo } from '../../lib/assets';
 import ProductIcon from '../common/ProductIcon';
 import { ButtonLink } from '../links/ButtonLink';
 import { ProductInfoType } from './HexagonTypes';
@@ -15,19 +15,13 @@ export const HexagonItem = ({ product, active = true }: HexagonItemProps): JSX.E
 
   const productInfo = GetProductInfo(product.type);
 
-  const getStyle = (color: string) => {
-    if (color == 'red') return styles.hexGridItemContent_red;
-    if (color == 'violet') return styles.hexGridItemContent_violet;
-    if (color == 'teal') return styles.hexGridItemContent_teal;
-  };
-
   return (
     <Popover placement="top-start" autoFocus={false} closeOnBlur={true} trigger="hover">
       <PopoverTrigger>
         <ListItem listStyleType={'none'} className={`${styles.hexGridItem}   ${active ? styles.hexListItemActive : ''} `} data-target={`#${product.cloud}`}>
-          <Box className={`${styles.hexGridContent} ${getStyle(product.color)}`}>
-            <ProductIcon product={product.type} variant={Variant.Dark} />
-            <Heading as="h3" color={'white'} size={'sm'} maxW={'65%'}>
+          <Box className={`${styles.hexGridContent}`} backgroundColor={useColorModeValue('white', 'gray.700')}>
+            <ProductIcon product={product.type} />
+            <Heading as="h3" color={'chakra-body-text'} size={'sm'} maxW={'65%'} mt="2">
               {productInfo.name}
             </Heading>
           </Box>
@@ -44,7 +38,7 @@ export const HexagonItem = ({ product, active = true }: HexagonItemProps): JSX.E
           </PopoverHeader>
           <PopoverBody>
             <Text>{product.description}</Text>
-            <ButtonLink text={product.name} href={product.linkHref} title={`${product.name} product page`} className="mobile__hex__item__link" />
+            <ButtonLink text={product.name} href={product.linkHref} title={`${product.name} product page`} className="mobile__hex__item__link" mt="5" />
           </PopoverBody>
         </Box>
       </PopoverContent>
