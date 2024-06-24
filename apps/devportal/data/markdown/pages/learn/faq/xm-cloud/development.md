@@ -128,7 +128,7 @@ Page orchestration is supported using JavaScript frameworks, with the initial re
 
 Sitecore’s focus for the Composable DXP is on supporting headless solutions. Sitecore will provide a “bridge” function that allows SSG for MVC renderings, with some limitations, so that existing customers have a migration path.
 
-More information about converting MVC applications to a Jamstack architecture can be found on the [documentation site](https://doc.sitecore.com/xp/en/developers/hd/190/sitecore-headless-development/converting-existing-sitecore-mvc-applications-to-the-jamstack-architecture-with-headless-rendering.html). There are limitations when using SSG for MVC solutions. The current list of [limitations](https://doc.sitecore.com/xp/en/developers/hd/190/sitecore-headless-development/limitations-and-workarounds-for-static-generation-of-mvc-apps-with-jss.html) is published on the documentation site. Please note that this list should not be considered final.
+More information about converting MVC applications to a Jamstack architecture can be found on the [documentation site](https://doc.sitecore.com/xp/en/developers/hd/latest/sitecore-headless-development/converting-existing-sitecore-mvc-applications-to-the-jamstack-architecture-with-headless-rendering.html). There are limitations when using SSG for MVC solutions. The current list of [limitations](https://doc.sitecore.com/xp/en/developers/hd/latest/sitecore-headless-development/limitations-and-workarounds-for-static-generation-of-mvc-apps-with-jss.html) is published on the documentation site. Please note that this list should not be considered final.
 
 ## Will the existing geo-location services be maintained or will they be replaced with another feature?
 

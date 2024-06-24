@@ -128,7 +128,7 @@ Here’s a list of great resources that I found helpful.
 - [[Video] **The ASP.NET Core Rendering SDK** - by Nick Wesselman and Oleg Jytnik](https://www.youtube.com/watch?v=FYyYpmODiBY)
 - [[Video] **Render here, render there, render everywhere** - by Thomas Desmond](https://www.youtube.com/watch?v=zu8qpbtNasg)
 - [[Documentation] **Converting existing Sitecore MVC applications to the Jamstack architecture with Headless Rendering** -
-  Documentation, walkthroughs and a video by Nicole Flynn](https://doc.sitecore.com/xp/en/developers/hd/200/sitecore-headless-development/converting-existing-sitecore-mvc-applications-to-the-jamstack-architecture-with-headless-rendering.html)
+  Documentation, walkthroughs and a video by Nicole Flynn](https://doc.sitecore.com/xp/en/developers/hd/latest/sitecore-headless-development/converting-existing-sitecore-mvc-applications-to-the-jamstack-architecture-with-headless-rendering.html)
 
 ### Serialization
 
