@@ -23,7 +23,7 @@ Once developers are ready to deploy their implementation to the Cloud, they use 
 
 ### Do customers need to work on Vercel/Next JS to enable on-edge personalization? Or does Sitecore Pages personalization support other SSG technologies such as React, Angular, Vue, NextJS?
 
-For XM Cloud, the content delivery is provided by publishing to [Experience Edge](https://doc.sitecore.com/xp/en/developers/hd/210/sitecore-headless-development/sitecore-experience-edge-for-xm.html). Edge delivers content and design information headlessly through the GraphQL endpoint and can be consumed by any head technology such as Next.js, ASP.NET core, Angular, Vue or React.
+For XM Cloud, the content delivery is provided by publishing to [Experience Edge](https://doc.sitecore.com/xp/en/developers/hd/latest/sitecore-headless-development/sitecore-experience-edge-for-xm.html). Edge delivers content and design information headlessly through the GraphQL endpoint and can be consumed by any head technology such as Next.js, ASP.NET core, Angular, Vue or React.
 
 Sitecore XM Cloud Embedded Personalization initial release focuses on Next.js and can automate the process of provisioning or creating Vercel account for clients and connect front-end solution.
 
