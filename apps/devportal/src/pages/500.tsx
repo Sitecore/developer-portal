@@ -8,7 +8,7 @@ export default function Custom500() {
       <Box height={'calc(100vh - 215px)'}>
         <Center layerStyle="section.main" h="full">
           <Stack align="center" textAlign="center" spacing="6" maxW="lg">
-            <Image boxSize="32" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/4e1101727f1a48aab23deba3947b6a9c?" alt="alert" />
+            <Image boxSize="32" src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/spot-alert-circle?" alt="alert" />
             <Stack>
               <Heading as="h1">Internal server error</Heading>
               <Text variant="small">Error 500</Text>

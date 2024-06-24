@@ -321,43 +321,43 @@ const ProductLogos: ProductImage[] = [
     Product: Product.EngagementCloud,
     Variant: Variant.Light,
     Name: 'Sitecore Engagement Cloud',
-    logoFileName: 'f41d09d34df94f00bbfefad9c825ad22',
-    iconFileName: '213ac39971df4ef78b81033a4ee943be',
+    logoFileName: 'logo-engagement_cloud',
+    iconFileName: 'mark-engagement_cloud',
   },
   {
     Product: Product.EngagementCloud,
     Variant: Variant.Dark,
     Name: 'Sitecore Engagement Cloud',
-    logoFileName: '8c16dbb1cb0641ccb78e0d6cc15344aa',
-    iconFileName: '2462b591693346ceaa54f757429093e7',
+    logoFileName: 'logo-engagement_cloud-white',
+    iconFileName: 'mark-engagement_cloud-white',
   },
   {
     Product: Product.ContentCloud,
     Variant: Variant.Light,
     Name: 'Sitecore Content Cloud',
-    logoFileName: 'ffb54c73fe774a70a9a44ef343fd2948',
-    iconFileName: '9dddaae19d5f47e894059d22417cc3aa',
+    logoFileName: 'logo-content_cloud',
+    iconFileName: 'mark-content_cloud',
   },
   {
     Product: Product.ContentCloud,
     Variant: Variant.Dark,
     Name: 'Sitecore Content Cloud',
-    logoFileName: '3d44a4a33a2140989db566b50554d32f',
-    iconFileName: 'f87e895198254d0bbe122fd5e28e6a6f',
+    logoFileName: 'logo-content_cloud-white',
+    iconFileName: 'mark-content_cloud-white',
   },
   {
     Product: Product.CommerceCloud,
     Variant: Variant.Light,
     Name: 'Sitecore Commerce Cloud',
-    logoFileName: '13cc7f7871434f14840e8bae5e00079c',
-    iconFileName: '12bb4966355c4966bfa4e0d23e20bf01',
+    logoFileName: 'logo-commerce_cloud',
+    iconFileName: 'mark-commerce_cloud',
   },
   {
     Product: Product.CommerceCloud,
     Variant: Variant.Dark,
     Name: 'Sitecore Commerce Cloud',
-    logoFileName: '32cf39e48f1b407a88c6c897701904fe',
-    iconFileName: 'de3264544514496bb688d329a5890b10',
+    logoFileName: 'logo-commerce_cloud-white',
+    iconFileName: 'mark-commerce_cloud-white',
   },
   {
     Product: Product.SitecoreDevelopers,
@@ -403,22 +403,16 @@ export function GetProductLogo(productName: string, variant: string) {
 }
 
 export function GetProductIcon(productName: Product, variant: Variant) {
-  //const _product = Product[productName as keyof typeof Product];
-  //const _variant = Variant[variant as keyof typeof Variant];
-
   return GetProductLogoByVariant(productName, variant, Type.IconOnly);
 }
 
-
 export function GetProductLogoByVariant(productName: Product, variant: Variant, type?: Type) {
-  //const baseUrl = 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/';
-
   const first = ProductLogos.find((obj) => {
     return obj.Product === productName && obj.Variant == variant;
   });
 
   const fileName = type == Type.IconOnly ? first?.iconFileName : first?.logoFileName;
-  const baseUrl = fileName != null && fileName.length == 32 ? 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/' : 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/';
+  const baseUrl = 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/';
 
   return baseUrl + fileName;
 }
