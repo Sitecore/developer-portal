@@ -12,7 +12,7 @@ Using Sitecore XP Marketing Automation features you will be able to send automat
 ## Documentation
 
 - [Marketing Automation Documentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/marketing-automation.html)
-- [Email Experience Manager (EXM) Developer Documentation](https://doc.sitecore.com/xp/en/developers/exm/101/email-experience-manager/index-en.html)
+- [Email Experience Manager (EXM) Developer Documentation](https://doc.sitecore.com/xp/en/developers/exm/latest/email-experience-manager/index-en.html)
 - [Marketing Operations Documentation](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/marketing-operations.html)
 - [Segmentation And Conditions Documentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/segmentation-engine.html)
 - [Processing Documentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/processing.html)
@@ -22,7 +22,7 @@ Using Sitecore XP Marketing Automation features you will be able to send automat
 ## Discover
 
 - [Getting started with marketing automation for developers](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/getting-started-with-marketing-automation-for-developers.html)
-- [Getting started with EXM for developers](https://doc.sitecore.com/xp/en/developers/exm/101/email-experience-manager/getting-started-with-exm-for-developers.html)
+- [Getting started with EXM for developers](https://doc.sitecore.com/xp/en/developers/exm/latest/email-experience-manager/getting-started-with-exm-for-developers.html)
 
 ## Learn
 
