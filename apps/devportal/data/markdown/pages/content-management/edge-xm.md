@@ -16,21 +16,21 @@ See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/1
 
 ## Getting Started
 
-- [Connector Installation](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/install-and-configure-the-experience-edge-connector.html)
-- [Testing GraphQL Queries](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/test-your-queries.html)
-- [Next.js Deployment on Vercel with Edge XM](https://doc.sitecore.com/xp/en/developers/hd/200/sitecore-headless-development/walkthrough--deploying-jss-next-js-apps-to-vercel.html)
+- [Connector Installation](http://doc.sitecore.com/en/developers/hd/latest/sitecore-headless-development/install-and-configure-the-experience-edge-connector.html)
+- [Testing GraphQL Queries](http://doc.sitecore.com/en/developers/hd/latest/sitecore-headless-development/test-your-queries.html)
+- [Next.js Deployment on Vercel with Edge XM](https://doc.sitecore.com/xp/en/developers/hd/latest/sitecore-headless-development/walkthrough--deploying-jss-next-js-apps-to-vercel.html)
 
 ## Documentation
 
-- [Documentation](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/sitecore-experience-edge-for-xm.html)
-- [GraphQL Schema](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/the-experience-edge-schema.html)
-- [APIs](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/experience-edge-for-xm-apis.html)
+- [Documentation](http://doc.sitecore.com/en/developers/hd/latest/sitecore-headless-development/sitecore-experience-edge-for-xm.html)
+- [GraphQL Schema](http://doc.sitecore.com/en/developers/hd/latest/sitecore-headless-development/the-experience-edge-schema.html)
+- [APIs](http://doc.sitecore.com/en/developers/hd/latest/sitecore-headless-development/experience-edge-for-xm-apis.html)
 
 ## Learn
 
-- [Best Practices](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/experience-edge-for-xm-best-practices.html)
-- [Connector](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/the-experience-edge-connector.html)
-- [Architecture](http://doc.sitecore.com/en/developers/hd/200/sitecore-headless-development/the-architecture-of-sitecore-experience-edge-for-xm.html)
+- [Best Practices](http://doc.sitecore.com/en/developers/hd/latest/sitecore-headless-development/experience-edge-for-xm-best-practices.html)
+- [Connector](http://doc.sitecore.com/en/developers/hd/latest/sitecore-headless-development/the-experience-edge-connector.html)
+- [Architecture](http://doc.sitecore.com/en/developers/hd/latest/sitecore-headless-development/the-architecture-of-sitecore-experience-edge-for-xm.html)
 
 ## Community Articles
 
