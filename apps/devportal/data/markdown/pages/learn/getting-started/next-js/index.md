@@ -8,7 +8,7 @@ youtube: PL1jJVFm_lGnwZup4L4BjITS2sKr4rpMfI
 
 ## Introduction
 
-Welcome to this comprehensive guide for learning Next.js! Whether you're a beginner looking to start your journey in web development, or an experienced developer interested in expanding your skill set, this article provides a list of resources designed to help you understand and master Next.js. From official documentation, walkthroughs, and templates, to community content and video tutorials. 
+Welcome to this comprehensive guide for learning Next.js! Whether you're a beginner looking to start your journey in web development, or an experienced developer interested in expanding your skill set, this article provides a list of resources designed to help you understand and master Next.js. From official documentation, walkthroughs, and templates, to community content and video tutorials.
 
 ## Vercel Provided Next.js Resources
 
@@ -27,11 +27,10 @@ Vercel, the creators of Next.js provide a wealth of resources to help you get st
 
 <Row columns={3}>
 <YouTube youTubeId="ugPy7BjH0H0"/>
-<Article title="Sitecore JavaScript Rendering SDK (JSS) for Next.js" link="https://doc.sitecore.com/xp/en/developers/hd/19/sitecore-headless-development/sitecore-javascript-rendering-sdk--jss--for-next-js.html" linktext="JSS for Next.js" description="See what other applications have been built with Next.js"/>
-<Article title="Sitecore Headless Service" link="https://doc.sitecore.com/xp/en/developers/hd/20/sitecore-headless-development/sitecore-headless-services.html" linktext="Headless Services" description="Decouple the data application from the rendering application"/>
-<Article title=" Setting up a development environment with the Sitecore Containers template for Next.js" link="https://doc.sitecore.com/xp/en/developers/hd/20/sitecore-headless-development/walkthrough--setting-up-a-development-environment-with-the-sitecore-containers-template-for-next-js.html" linktext="Walkthrough" description="Use containers to build a full stack Next.js with JSS project."/>
+<Article title="Sitecore JavaScript Rendering SDK (JSS) for Next.js" link="https://doc.sitecore.com/xp/en/developers/hd/latest/sitecore-headless-development/sitecore-javascript-rendering-sdk--jss--for-next-js.html" linktext="JSS for Next.js" description="See what other applications have been built with Next.js"/>
+<Article title="Sitecore Headless Service" link="https://doc.sitecore.com/xp/en/developers/hd/latest/sitecore-headless-development/sitecore-headless-services.html" linktext="Headless Services" description="Decouple the data application from the rendering application"/>
+<Article title=" Setting up a development environment with the Sitecore Containers template for Next.js" link="https://doc.sitecore.com/xp/en/developers/hd/latest/sitecore-headless-development/walkthrough--setting-up-a-development-environment-with-the-sitecore-containers-template-for-next-js.html" linktext="Walkthrough" description="Use containers to build a full stack Next.js with JSS project."/>
 </Row>
-
 
 ### Discover Sitecore YouTube Learning Resources
 
@@ -41,7 +40,6 @@ Vercel, the creators of Next.js provide a wealth of resources to help you get st
 <YouTube youTubeId="bLdPqZ3xcB8"/>
 </Row>
 
-
 ## Open Source
 
 <Row columns={3}>
@@ -50,7 +48,6 @@ Vercel, the creators of Next.js provide a wealth of resources to help you get st
 <Repository framework="Nextjs" name="Headless SXA Starter Kit" description="This solution is designed to help developers learn and get started quickly with XM Cloud + SXA." repositoryUrl="https://github.com/sitecorelabs/xmcloud-foundation-head" />
 <Repository framework="Nextjs" name="Awesome Next.js" description=" A curated list of awesome resources : books, videos, articles about using Next.js" repositoryUrl="https://github.com/unicodeveloper/awesome-nextjs" />
 </Row>
-
 
 ## Sitecore Community Content
 
