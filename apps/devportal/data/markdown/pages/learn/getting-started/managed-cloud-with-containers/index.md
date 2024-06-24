@@ -108,7 +108,7 @@ The overall process involves building your images with the CI tool of your choic
    - [Admin Account Overview](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-authentication?tabs=azure-cli#admin-account)
    - If you are using Azure DevOps to configure your CI pipeline, you'll need to complete the following steps:
      - You'll need to create a new Service Connection for your ACR, but specify this registry as a standard docker registry, instead of using an Azure Container Registry. Refer to the image below:
-       ![Service Connection Details for Azure Container Registry Authentication in Azure DevOps](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/05753795f5974b15bca0d6dfe7c80de2?v=bced5b2d)
+       ![Service Connection Details for Azure Container Registry Authentication in Azure DevOps](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/acr-service-connection?v=01485d2b)
      - In your Build Pipeline you'll need to use the following parameters for the use of this service principle.
 5. (Optional) There are several strategies to replace the environment variables in these files, and it may vary upon CI system used, but if you are using Azure DevOps, you can define a Variable Group and if you match them to the variables in your file (ie. `${REGISTRY}` with a key of REGISTRY, and a value), they should automatically get picked up in your file, if you assign the variable group to your build pipeline.
 6. Once you've completed the build and push of your images, you can now move on to the next section, where you'll configured the CD of your release process. You'll need to know your Build Id and Build branch for use with tagging.
@@ -121,7 +121,7 @@ The `Application` and `Infrastructure` repositories in the Managed Cloud with Co
 
 - [Define Custom Images](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/configure-managed-cloud.html#add-a-custom-image_body)
 
-![Example Docker Images File](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/9f0aca68e6ad43a79e913b51c0214a30?v=01d65206)
+![Example Docker Images File](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/example-docker-images?v=2f1881d9)
 
 Keep in mind that if you have any more complex scenarios, including customizations to Solr or MSSQL, you'll likely need to init these changes to the respective environment to include them. Example if you were using SXA, you'll need to include the latest CM version, but also include instructions or configuration to init these changes in Solr (SearchStax). There are several guides on how to add modules and make these changes.
 

@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: How to Map Component Data Sources in XM Cloud'
 description: 'Learn about how to map fields from a data source to the visual elements in the XM Cloud Component builder.'
-openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/a958a5baf54e475c9eb6d18c089f28c0?v=37bb3625'
+openGraphImage: '/images/getting-started/tutorials/xm-cloud/map-component-datasources-08.jpg'
 pageType: 'tutorial'
 menuOrder: 6
 ---
@@ -47,15 +47,15 @@ You are going to start by mapping the headline text field.
 1. Switch to the **Components** tab in the top menu to launch the Components visual builder.
 1. Scroll to the section labelled **Basic Components**. This section will list all the components you have made available in the Basic Components section. Currently, there is only the **Text Teaser**.
 
-   <Image title="Component Builder - Find Text Teaser Component Listed" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/b37aeebcb7c14554876c34e433007d03?v=38ef5fc1" maxW="xl" />
+   <Image title="Component Builder - Find Text Teaser Component Listed" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-01.jpg" maxW="xl" />
 
 1. Click on the **Text Teaser** card to launch the editor on this component
 
-   <Image title="Component Builder - Open Editor" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/6ab1f6b4c32b4965bb0cc67d16adc603?v=c671924c" maxW="xl" />
+   <Image title="Component Builder - Open Editor" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-02.jpg" maxW="xl" />
 
 1. Click on the primary headline in the Component so that you enter the 'editing' mode for that field.
 
-   <Image title="Component Builder - Select Headline field" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/bd2c84858905440d92b63857035fea7d?v=26ce7b2a" maxW="xl" />
+   <Image title="Component Builder - Select Headline field" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-03.jpg" maxW="xl" />
 
    <Alert status="info">
    <AlertIcon />
@@ -65,11 +65,11 @@ You are going to start by mapping the headline text field.
 1. On the right side panel, click on the **Text** option. This will show that the text is currently **Static**
 1. Change the mode from **Static** to **Mapped**. This will show you the source mapping options.
 
-   <Image title="Component Builder - Changed to Mapped" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/f3ba1c8340524cef9ee5646351ae2268?v=954c84ea" maxW="xl" />
+   <Image title="Component Builder - Changed to Mapped" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-04.jpg" maxW="xl" />
 
 1. Find and select the **Text Teaser** source in the list of available sources.
 
-   <Image title="Component Builder - Map Text Teaser Template" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d021cde978204dc1b49199716d44c79b?v=039710e5" maxW="xl" />
+   <Image title="Component Builder - Map Text Teaser Template" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-05.jpg" maxW="xl" />
 
    <Alert status="info">
    <AlertIcon />
@@ -79,7 +79,7 @@ You are going to start by mapping the headline text field.
 1. Click on the **Next** button to advance to the **Path** configuration step. This is where you will map the fields from the template to the visual element.
 1. Select the **Headline** field to map the data from that Text Teaser field to the heading element in the component.
 
-   <Image title="Component Builder - Select Headline Field" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/53aea1074001443f9f3db366dc19b6c7?v=fc202ee2" maxW="xl" />
+   <Image title="Component Builder - Select Headline Field" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-06.jpg" maxW="xl" />
 
 1. Click **Complete** to finish the mapping process.
 
@@ -94,7 +94,7 @@ You will now repeat the process for the the subtitle/subheading element. You wil
 
 1. Click on the secondary headline/subheadline in the Component so that you enter the 'editing' mode for that field.
 
-   <Image title="Component Builder - Select secondary headline" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c459eff940374dd48cf7609c8ef236a5?v=7bacac4b" maxW="xl" />
+   <Image title="Component Builder - Select secondary headline" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-07.jpg" maxW="xl" />
 
    <Alert status="info">
    <AlertIcon />
@@ -106,7 +106,7 @@ You will now repeat the process for the the subtitle/subheading element. You wil
 1. Click on the **Next** button to advance to the **Path** configuration step. This is where you will map the fields from the template to the visual element.
 1. Select the **Subheadline** field to map the data from that Text Teaser field to the heading element in the component.
 
-   <Image title="Component Builder - Mapping Template Field with Component Field" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/a958a5baf54e475c9eb6d18c089f28c0?v=37bb3625" maxW="xl" />
+   <Image title="Component Builder - Mapping Template Field with Component Field" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-08.jpg" maxW="xl" />
 
 1. Click **Complete** to finish the mapping process.
 
@@ -118,18 +118,18 @@ In order to create a section of rich content and then map it to a Rich Text fiel
 
 1. In the Components builder, select the right-side of the Text Teaser component and remove all of the paragraphs of content that are currently there.
 
-   <Image title="Component Builder - empty right card" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/e3b5ab8995b3441fa3bcd89f58d9e01f?v=461899b9" maxW="xl" />
+   <Image title="Component Builder - empty right card" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-09.jpg" maxW="xl" />
 
 1. Above the empty placeholder, click on the **Add element** button.
 1. Select the **HTML Block** element to insert it into the placeholder.
 
-   <Image title="Component Builder - Add HTML Block Element" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/df0f3c37e5f647e1beb62b94990e6d45?v=493fb517" maxW="xl" />
+   <Image title="Component Builder - Add HTML Block Element" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-10.jpg" maxW="xl" />
 
 1. Click on the HTML Block element that was inserted to focus your editing selection.
 1. On the right side panel, click on the **HTMLContent** option. This will show that the text is currently **None**
 1. Map the HTML Block to the **Content** field on the **Text Teaser** data source
 
-   <Image title="Component Builder - Map HTML Block with Content field" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c44b0b9cbd18467fbcd0d9504e4da246?v=23fc0d8c" maxW="xl" />
+   <Image title="Component Builder - Map HTML Block with Content field" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-11.jpg" maxW="xl" />
 
 1. Click **Complete** to save the mapping changes.
 
@@ -139,7 +139,7 @@ Now that you have completed all of the mapping changes you will need to make the
 
 1. In the Components builder tool, click on the **Restage** button above the component
 
-   <Image title="Component Builder - Restage Component" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/f290085bb729483dae196e3fa549dff6?v=b24c512e" maxW="xl" />
+   <Image title="Component Builder - Restage Component" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-12.jpg" maxW="xl" />
 
 ## Update the existing Text Teaser to use a data source
 
@@ -154,25 +154,25 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
 
 1. In the **Tools** page, select the **Pages** card to launch the Pages editor. The home page will display and you can see that the Text Teaser component is blank.
 
-   <Image title="XM Cloud Dashboard - Open Pages Editor" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/ad1c83bf8dde470785dfa96ff0d67a61?v=82be1f21" maxW="xl" />
+   <Image title="XM Cloud Dashboard - Open Pages Editor" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-13.jpg" maxW="xl" />
 
 1. Click on the blank component to select it.
 1. In the context menu above the component, click on the **Delete** action button. This will remove the current version of the component from the page.
 
-   <Image title="Pages - Text Teaser Component is blank" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/cb12d539ef0d4062aae0456c1c69d31f?v=f9a89b18" maxW="xl" />
+   <Image title="Pages - Text Teaser Component is blank" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-14.jpg" maxW="xl" />
 
 1. In the left page, scroll down the **Components** listing to find the **Text Teaser** component.
 
-   <Image title="Pages - Add Text Teaser Component again" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/bc8c9c8e75ed44798502f47f03b6af03?v=a78c9c08" maxW="xl" />
+   <Image title="Pages - Add Text Teaser Component again" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-15.jpg" maxW="xl" />
 
 1. Drag the Text Teaser component onto the Pages canvas to add the component to the page. A dialog will display prompting you to assign a content item (data source) to the component.
 
-   <Image title="Pages - Assign Content Item dialog" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/2b7b8c5622394ec39e30bc1469d7c209?v=26e474d8" maxW="xl" />
+   <Image title="Pages - Assign Content Item dialog" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-16.jpg" maxW="xl" />
 
 1. Expand and navigate the displayed Content items tree to find the Text Teasers folder: `Company Dev/Company Dev/Data/Teasers`
 1. Select the **How to Use Components** content item.
 
-   <Image title="Pages - Select content item" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/0972e8bb48694b578408fe53a71b93ff?v=1dbb7935" maxW="xl" />
+   <Image title="Pages - Select content item" src="/images/getting-started/tutorials/xm-cloud/map-component-datasources-17.jpg" maxW="xl" />
 
 1. Click the **Assign** button to connect this content item to the Text Teaser component on the page.
 

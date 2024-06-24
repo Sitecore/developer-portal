@@ -8,7 +8,7 @@ description: 'Manage the full web experience with a cloud-hosted headless Web CM
 <Promo
   title="Recommended Practices"
   description="Are you getting started with building on XM Cloud? Check out the new recommended tips for teams working on XM Cloud projects! "
-  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
+  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/f469fddd60064d0ca8be64f4be6d621c?v=cc750acc"
   linkText="Read now!"
   linkHref="/learn/faq/xm-cloud-recommended-practices" isImageLeft={false}
 />

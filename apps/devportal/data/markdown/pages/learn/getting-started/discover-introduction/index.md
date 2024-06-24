@@ -3,7 +3,7 @@ product: ['discover']
 title: 'Sitecore Discover Introduction'
 description: 'Sitecore Discover provides intelligent product search powered by AI, but what does it include? And how can you get started developing with it today?'
 promoAfter: ['learning-essentials']
-openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/997f7b64b0f4466687d7b907cdf06308?v=98c891fa'
+openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/1142919976b1406fa4d6acca866c0f77?v=9929ad19'
 ---
 
 ## What is Sitecore Discover?
@@ -84,22 +84,22 @@ The API Access panel will give you all the details you need to manage how, and w
 - Find details of the different API endpoints mentioned above
 - Manage the API keys being used by your applications.
 
-![API Access panel Screenshot](https://sitecorecontenthub.stylelabs.cloud/api/public/content/abae97d03eeb4c7f992a5fdf3cf1e9ec?v=fd0add9b)
+![API Access panel Screenshot](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/Discover-CEC-API-Access?v=30f751b1)
 
 ### API Explorer
 
 The API Explorer Panel gives you a UI to be able to simulate calls to the API. It will let you build out a JSON object containing the request details, including details of the experience you want to simulate and the user you want to simulate it for. You can then send your JSON object to the API and get a JSON object in return showing what data would have been used to build the experience delivered to the user.
 
-![API Explorer panel Screenshot](https://sitecorecontenthub.stylelabs.cloud/api/public/content/8b171fc8dcda4cb89fb120656946c601?v=37337f19)
+![API Explorer panel Screenshot](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/Discover-CEC-API-Explorer?v=a75e3e95)
 
 ### Event Builder
 
 Much in the same way as the API Explorer above, the Event Builder allows you to simulate requests to the Event API. You can choose the page the experience would be running on, the widget you want to test, and the user initiating amongst other values. You can then use this panel to simulate events being sent back to Discover, for example tracking when a user clicks on a displayed product.
 
-![Event Builder panel Screenshot](https://sitecorecontenthub.stylelabs.cloud/api/public/content/195dae1de91e4c16b2d07d102860095f?v=07a6b6d3)
+![Event Builder panel Screenshot](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/Discover-CEC-Event-Builder?v=f9a7c806)
 
 ### Event Monitor & AI Monitor
 
 The Event Monitor and AI Monitor panels allow you to trace what data is being sent back into Discover for a specific user. This allows you to enter your UUID into the panel, then as you browse through the site all of the data being served to deliver your experiences will be displayed on this page, allowing you to debug what data Discover is using to power your product listings.
 
-![Event Monitor panel Screenshot](https://sitecorecontenthub.stylelabs.cloud/api/public/content/b69de6b4961c4a918bbeea88cb4d3caf?v=da444986)
+![Event Monitor panel Screenshot](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/Discover-CEC-Event-Monitor?v=20589621)

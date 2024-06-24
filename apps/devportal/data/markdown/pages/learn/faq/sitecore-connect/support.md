@@ -33,4 +33,4 @@ As Sitecore Connect runs with dependencies of 99.9% uptime guarantee, we do an u
 
 Sitecore deploys Sitecore Connect using the Microsoft Azure network of data centers. Data processed and integrated in Sitecore Connect is processed in data centers within the country or region selected by customers. The following table shows available data centers where system is located, and data is processed:
 
-![Sitecore Connect/Workato Regions](https://sitecorecontenthub.stylelabs.cloud/api/public/content/4c1592715ecd4fe4a5491b42e152b5b0?v=1bf31584)
+![Sitecore Connect/Workato Regions](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/workato-regions?v=37fb1132)

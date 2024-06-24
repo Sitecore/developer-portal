@@ -119,7 +119,7 @@ Component that can be used to promote another section within the Developer Porta
 <Promo
   title="Use a better title than this"
   description="This is are where you can add a description or introduction text"
-  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
+  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/f469fddd60064d0ca8be64f4be6d621c?v=cc750acc"
   linkText="Link to anywhere"
   linkHref="https://developers.sitecore.com" isImageLeft={true}
 />

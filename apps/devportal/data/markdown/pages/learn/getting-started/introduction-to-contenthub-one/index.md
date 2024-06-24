@@ -30,7 +30,7 @@ The Content Hub ONE [Command Line Interface](https://doc.sitecore.com/ch-one/en/
 
 ## Content Hub ONE Architecture
 
-![Content Hub ONE Architecture](https://sitecorecontenthub.stylelabs.cloud/api/public/content/7b4f7805c3474f3082a741807b5f5433?v=122a12bc)
+![Content Hub ONE Architecture](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/chone-architecture?v=3a3d04b3)
 
 Content Hub ONE provides a content management application that allows content modeling, content/ media item creation and management. Content and media is created in a "Draft" state. Publishing makes the content publicly available. Utilizing this workflow Content Hub ONE ensures that content can be worked on independently from what is visible to the public.
 
@@ -54,7 +54,7 @@ Content Hub ONE delivers content headlessly and geographically distributed throu
 
 You need to pass in the API Key created in your Content Hub ONE instance as Http Headers. The IDE supports developers with convenient type ahead functionality.
 
-![Sitecore GraphQL IDE](https://sitecorecontenthub.stylelabs.cloud/api/public/content/fc08adbc4fe848e08edd33c759cbc28d?v=2f046a71)
+![Sitecore GraphQL IDE](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/chone-graphql?v=02df04b0)
 
 ## Getting prepared for Content Hub ONE
 

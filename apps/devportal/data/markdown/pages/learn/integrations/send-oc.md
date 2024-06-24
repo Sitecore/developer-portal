@@ -244,5 +244,5 @@ function Convert(lineItem: LineItem): SitecoreSendProduct {
 }
 ```
 
-[1]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/feaa08425d8c487e94d5acd35d0e2174?v=df24f11e
-[2]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/4794d111b0cc44698cab0f064d123c0a?v=26b9f26d
+[1]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/send-oc?v=9d3a3a22
+[2]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/send-oc-user-interactions?v=c6b40aa6

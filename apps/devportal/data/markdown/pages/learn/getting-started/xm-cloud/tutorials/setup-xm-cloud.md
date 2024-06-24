@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: How to Set Up XM Cloud'
 description: 'In this tutorial, we will go through the steps to learn the basics of XM Cloud and complete a sprint zero of setting up the XM Cloud projects and environments.'
-openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db'
+openGraphImage: '/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-03.png'
 menuOrder: 1
 pageType: 'tutorial'
 ---
@@ -44,11 +44,11 @@ In order to complete the following tutorial, you will need these resources:
 
 Now, we will setup the project and environment that we will create therein. In the first stage, we will access the cloud portal and create a new _project_. A project is connected to a source code repository, for example, GitHub.
 
-<Image title="A GitHub repository is mapped to a project in XM Cloud" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/142a8648763a42eda1a210b1488cfda5?v=859d5477" maxW="xl" />
+<Image title="A GitHub repository is mapped to a project in XM Cloud" src="/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-01.png" maxW="xl" />
 
 Each project can have multiple environments. A typical setup is to have one source code repository for one Brand or legal entity, and then have a DEV environment, QA, Staging or Pre Prod, and Production.
 
-<Image title="XM Cloud Projects and Environments" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/9deae49bb7f5428285baf2ea374fe1ec?v=40ffa388" maxW="xl" />
+<Image title="XM Cloud Projects and Environments" src="/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-02.png" maxW="xl" />
 
 We will start with a Dev Environment for now, and create the other environments later.
 
@@ -58,16 +58,16 @@ Let’s get started!
 
 1. To begin, open the Sitecore Cloud Portal (https://portal.sitecorecloud.io) and log in.
 2. Access the XM Cloud project and environment management interface by clicking `XM Cloud Deploy`.  
-   <Image title="Sitecore Portal - Open XM Cloud Deploy" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/21dabc30da2c475a8549640a04885a46?v=18b721db" maxW="xl" />
+   <Image title="Sitecore Portal - Open XM Cloud Deploy" src="/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-03.png" maxW="xl" />
 
 ### Create a new Project and Authoring Environment
 
 1. From there, create a new project with the XM Cloud Deploy App by clicking `Create project`.  
-   <Image title="Project Overview - Create new Project" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/817fa236e3434742817279da7329eca6?v=d1261f63" maxW="xl" />
+   <Image title="Project Overview - Create new Project" src="/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-04.png" maxW="xl" />
 1. From here you provide a Project Name e.g. `XM Cloud Tutorial Series` and click the Continue button
-   <Image title="Create Project and Environment Step 1 - Provide Project Name" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/57cf82679be64a498b9d43659c26e900?v=0bb6544a" maxW="xl" />
+   <Image title="Create Project and Environment Step 1 - Provide Project Name" src="/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-05.png" maxW="xl" />
 1. Choose whether you want to connect to GitHub or to Azure DevOps. A starter solution will be copied to your connected source code repository as a starting point. For the sake of this tutorial you choose GitHub and click the Continue Button  
-   <Image title="Create Project and Environment Step 2 - Choose Source Code Repository" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/246d3a6f48d54765be0427179c3e9fd1?v=9240ac99" maxW="xl" />
+   <Image title="Create Project and Environment Step 2 - Choose Source Code Repository" src="/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-06.png" maxW="xl" />
 
    <Alert status="info">
    <AlertIcon />
@@ -75,7 +75,7 @@ Let’s get started!
    </Alert>
 
 1. Choose a GitHub Account from the dropdown or click on `Connect to a new account` and follow the steps to connect to a different account. Make sure you give rights to create a new repository in your account.
-   ![Create Project and Environment Step 3 - Setup Repository](https://sitecorecontenthub.stylelabs.cloud/api/public/content/58034dfd6c90407f89659e3835d609d9?v=7fc739e7)
+   ![Create Project and Environment Step 3 - Setup Repository](/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-07.png)
 
    <Alert status="info">
       <AlertIcon />
@@ -85,15 +85,15 @@ Let’s get started!
 
 1. Provide a name for the repository e.g. `xm-cloud-tutorial-series` and click the Continue button.
 1. Enter a name for the environment e.g. `DEV`  
-   <Image title="Create Project and Environment Step 4 - Provide Environment details" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c891806b1758495c8af79c44088f07e3?v=c7f37143" maxW="xl" />
+   <Image title="Create Project and Environment Step 4 - Provide Environment details" src="/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-08.png" maxW="xl" />
 1. In the **Production SaaS SLA** section you will specify if this new environment is a production environment or not. Select `No` to make this a non-production environment.
 1. Select whether you want to auto deploy on push to the repository. Select “Yes”. This enables the CI/CD pipeline from your main branch. This can be adjusted later.
 1. Click the Continue button.
 1. On the 5th step review your selections and click the “Start deployment” button
-   <Image title="Create Project and Environment Step 5 - Review your selections" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5cda1bf224c4f99b508fe612e527590?v=6c0f0076" maxW="xl" />
+   <Image title="Create Project and Environment Step 5 - Review your selections" src="/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-09.png" maxW="xl" />
 
 The deployment starts, and provisioning and build run in parallel.  
- <Image title="XM Cloud Deploy Logs - Deployment is running" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/72df30b6fd564d90b97ed08988d608b1?v=c2841f9b" maxW="xl" />
+ <Image title="XM Cloud Deploy Logs - Deployment is running" src="/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-10.png" maxW="xl" />
 
 <Alert status="info">
   <AlertIcon />
@@ -104,7 +104,7 @@ The deployment starts, and provisioning and build run in parallel.
 ## What is provisioned for XM Cloud
 
 So, how does this work? Referencing the figure below, let’s walk through the different bits and pieces of XM Cloud.  
-<Image title="XM Cloud Architecture" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/21cbe922e28b4896b1692be7c85ae6c4?v=4aad3836" maxW="full" disableModal />
+<Image title="XM Cloud Architecture" src="/images/getting-started/tutorials/xm-cloud/setup-xm-cloud-11.png" maxW="full" disableModal />
 
 1. XM Cloud contains a Content Management (CM) instance (the violet box on the right) where authors manage their content, layout, and experiences. This is then published to the _Edge_ layer.
 1. [Edge](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-experience-edge-for-xm.html) (yellow box) is a geographically distributed delivery layer. Edge offers a GraphQL endpoint to allow applications to query for the content coming from XM Cloud.

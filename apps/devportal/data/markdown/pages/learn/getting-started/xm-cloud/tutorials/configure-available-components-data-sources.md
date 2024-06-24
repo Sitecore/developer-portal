@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: How to make a data template available to the Component builder in XM Cloud'
 description: 'Learn how to take a create data template and make it available for authors to use in the XM Cloud Component interface.'
-openGraphImage: 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/2d0a613e37a64a04ba3e42749a14daed?v=1447baab'
+openGraphImage: '/images/getting-started/tutorials/xm-cloud/configure-available-datasources-04.jpg'
 pageType: 'tutorial'
 menuOrder: 5
 ---
@@ -41,12 +41,12 @@ To start, you will take the data template that has been created and make it avai
 1. In the Content Editor, select the **Settings** node on the **Company Dev** site: `/sitecore/content/Company Dev/Company Dev/Settings`
 1. In the **Content** pane on the right side, scroll down through the fields and find the field named **FeaaS component data source templates**. You will find this field near the bottom of the list of fields.
 
-   <Image title="Content Editor - Settings Item - Find FeaaS Component Data sources field" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c6ff34eac1e94b90b720788f52b23b9c?v=46646a8f" maxW="xl" />
+   <Image title="Content Editor - Settings Item - Find FeaaS Component Data sources field" src="/images/getting-started/tutorials/xm-cloud/configure-available-datasources-01.jpg" maxW="xl" />
 
 1. On the left side of the field selector, navigate the tree to find your template at: `Templates/Project/Company Dev/Basic Components/Text Teaser`
 1. Double-click on the Text Teaser template to add it to the list of **Selected** templates on the right side of the selector.
 
-   <Image title="Content Editor - Select Text Teaser Template as FeaaS Component Data Source" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/7df82fef3a9a430794f4114e693e53e8?v=114c850c" maxW="xl" />
+   <Image title="Content Editor - Select Text Teaser Template as FeaaS Component Data Source" src="/images/getting-started/tutorials/xm-cloud/configure-available-datasources-02.jpg" maxW="xl" />
 
    <Alert status="info">
    <AlertIcon />
@@ -69,11 +69,11 @@ Before releasing this to the authoring team, you need to ensure that the Text Te
 1. In the **Tools** page, select the **Components** card to launch the Component builder.
 1. At the top, switch to the **Data sources** section
 
-   <Image title="Component Builder - Open Data Sources page" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/76acdd81968f4c73a0de16a134e9be12?v=c3035a2c" maxW="xl" />
+   <Image title="Component Builder - Open Data Sources page" src="/images/getting-started/tutorials/xm-cloud/configure-available-datasources-03.jpg" maxW="xl" />
 
 1. Scroll down through the list of data sources and find the one named **Text Teaser**
 
-   <Image title="Component Builder - Find Text Teaser data source listed" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/2d0a613e37a64a04ba3e42749a14daed?v=1447baab" maxW="xl" />
+   <Image title="Component Builder - Find Text Teaser data source listed" src="/images/getting-started/tutorials/xm-cloud/configure-available-datasources-04.jpg" maxW="xl" />
 
 <Alert status="success">
    <AlertIcon />

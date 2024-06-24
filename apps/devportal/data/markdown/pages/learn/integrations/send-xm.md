@@ -98,7 +98,7 @@ You can also find an in depth FAQ list for the Sitecore Send subscription forms 
 
 ![Sequence diagram showing a Sitecore XM site rendering a Subscription Form created in Sitecore Send][4]
 
-[1]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/373fcc70e30c4784bfce13ef52246441?v=30a0afda
-[2]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/ec41bc05179745f882aa2940ece9ac2d?v=bb5c426d
-[3]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/bba3b7290a084172baef5d9a8a3167e7?v=42d099d2
-[4]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/48ff702b8cd24719bb76421b6e8346d0?v=9766364e
+[1]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/send-xm?v=c7c2a6a1
+[2]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/send-tracker-xm?v=18abad80
+[3]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/send-xm-identifying-visitors?v=e106c109
+[4]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/send-xm-subscription-forms?v=5baf9365
