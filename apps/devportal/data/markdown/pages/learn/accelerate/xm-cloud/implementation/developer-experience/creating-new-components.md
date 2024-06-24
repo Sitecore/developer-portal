@@ -183,6 +183,6 @@ External data is handled in its own recipe: [External Data Integration](/learn/a
 
 <Row columns={2}>
   <Link title="Create a new SXA module | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-new-sxa-module.html" />
-  <Link title="Copy and customize a rendering | Sitecore Documentation" link="https://doc.sitecore.com/xp/en/developers/sxa/103/sitecore-experience-accelerator/copy-and-customize-a-rendering.html" />
+  <Link title="Copy and customize a rendering | Sitecore Documentation" link="https://doc.sitecore.com/xp/en/developers/sxa/latest/sitecore-experience-accelerator/copy-and-customize-a-rendering.html" />
   <Link title="Create a variant for a component" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-variant-for-a-component.html" />
 </Row>

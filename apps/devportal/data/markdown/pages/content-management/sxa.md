@@ -22,7 +22,7 @@ In order to get started with SXA you will need a clean installation of Sitecore 
 ## Documentation
 
 - [Introducing Sitecore Experience Accelerator](https://doc.sitecore.com/en/users/sxa/101/sitecore-experience-accelerator/introducing-sitecore-experience-accelerator.html)
-- [Developer Documentation](https://doc.sitecore.com/xp/en/developers/sxa/101/sitecore-experience-accelerator/index-en.html)
+- [Developer Documentation](https://doc.sitecore.com/xp/en/developers/sxa/latest/sitecore-experience-accelerator/index-en.html)
 - [JS Components documentation](https://doc.sitecore.com/xp/en/developers/sxa/components-theme-jsdoc/en/index.html)
 - [Search Components documentation](https://doc.sitecore.com/xp/en/developers/sxa/jsdoc-search-components/en/index.html)
 

@@ -7,7 +7,7 @@ cdpTags: ['xm-cloud']
 
 ### Can I migrate my current Sitecore 10.x headless JSS implementation personalization rules, variants, and actions to Sitecore XM Cloud Personalization/Personalize?
 
-No, it is not possible to migrate [Sitecore XP (SXP) personalization](https://doc.sitecore.com/xp/en/users/102/sitecore-experience-platform/personalization.html) to XMC.
+No, it is not possible to migrate [Sitecore XP (SXP) personalization](https://doc.sitecore.com/xp/en/users/latest/sitecore-experience-platform/personalization.html) to XMC.
 
 ### Can I migrate my XM Cloud embedded personalization to Sitecore Personalize license?
 

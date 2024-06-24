@@ -11,7 +11,7 @@ description: 'Develop your forms you can integrate into your website, great to c
 
 Docs
 
-- [Sitecore Forms Documentation](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/sitecore-forms.html)
+- [Sitecore Forms Documentation](https://doc.sitecore.com/en/users/latest/sitecore-experience-platform/sitecore-forms.html)
 
 Discover
 

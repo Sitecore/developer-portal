@@ -13,7 +13,7 @@ Using Sitecore XP Marketing Automation features you will be able to send automat
 
 - [Marketing Automation Documentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/marketing-automation.html)
 - [Email Experience Manager (EXM) Developer Documentation](https://doc.sitecore.com/xp/en/developers/exm/latest/email-experience-manager/index-en.html)
-- [Marketing Operations Documentation](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/marketing-operations.html)
+- [Marketing Operations Documentation](https://doc.sitecore.com/en/users/latest/sitecore-experience-platform/marketing-operations.html)
 - [Segmentation And Conditions Documentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/segmentation-engine.html)
 - [Processing Documentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/processing.html)
 - [Cortex Processing Engine Documentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/sitecore-cortex-processing-engine.html)
@@ -28,8 +28,8 @@ Using Sitecore XP Marketing Automation features you will be able to send automat
 
 - [Getting started with marketing automation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/getting-started-with-marketing-automation-for-developers.html)
 - [Marketing Automation Engine YouTube playlist](https://www.youtube.com/watch?v=-44xRa0ju2k&list=PL1jJVFm_lGnyicywCcwcWa8RtsoiJEbC9)
-- [Create a Marketing Automation Campaign](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/create-a-marketing-automation-campaign.html)
-- [Digital Marketing Glossary](https://doc.sitecore.com/en/users/101/sitecore-experience-platform/digital-marketing-glossary.html)
+- [Create a Marketing Automation Campaign](https://doc.sitecore.com/en/users/latest/sitecore-experience-platform/create-a-marketing-automation-campaign.html)
+- [Digital Marketing Glossary](https://doc.sitecore.com/en/users/latest/sitecore-experience-platform/digital-marketing-glossary.html)
 
 ## Resources
 
