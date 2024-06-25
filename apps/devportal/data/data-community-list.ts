@@ -7,7 +7,7 @@ const content: GenericListItem[] = [
     href: 'https://sitecore.chat',
     linkText: 'Join the conversation',
     img: {
-      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/54a97a708bdd4ab3a25978f91e04cdba?v=31503a85',
+      src: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/slack-logo?v=c33d7529',
       alt: 'Slack logo',
     },
   },
@@ -17,7 +17,7 @@ const content: GenericListItem[] = [
     href: 'https://sitecore.stackexchange.com',
     linkText: 'Ask a question',
     img: {
-      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/8d9f040f7c6c42b2b7be19c31f15bc3a?v=5b9209f2',
+      src: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/stack-exchange?v=d9693f08',
       alt: 'Stack Exchange logo',
     },
   },
@@ -27,7 +27,7 @@ const content: GenericListItem[] = [
     href: 'https://community.sitecore.com/',
     linkText: 'Start a discussion',
     img: {
-      src: 'https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/2208b6f24622484bb4dc61545f99b01a?v=9b7c0ec4',
+      src: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/sitecore-community?v=1e63b95d',
       alt: 'Sitecore Community forums logo',
     },
   },

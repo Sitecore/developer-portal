@@ -4,7 +4,7 @@ const data: PromoCardProps = {
   title: 'Newsletter archive',
   description: 'Read earlier editions of the Sitecore for Developers newsletter. ',
   img: {
-    src: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/6fb61e46117d40b39cd0f7ba7b2e060c?v=fac3ab80',
+    src: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/newsletter?v=b6070bd5',
   },
   link: {
     href: '/newsletter',

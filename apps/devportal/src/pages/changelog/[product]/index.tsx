@@ -59,7 +59,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
             <Text variant={'sm'}>Powered by</Text>
             <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
               <Image
-                src={useColorModeValue('https://sitecorecontenthub.stylelabs.cloud/api/public/content/91c3d57209b042ff9aacfee56125ef0e', 'https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5e8689d29cc4ef49a74b96e2149af13')}
+                src={useColorModeValue('https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one', 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one-dark')}
                 alt="Powered by Content Hub ONE"
                 width={150}
                 height={18}

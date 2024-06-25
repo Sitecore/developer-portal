@@ -9,7 +9,7 @@ export default function Custom404() {
       <Box height={'calc(100vh - 215px)'}>
         <Center layerStyle="section.main" h="full">
           <Stack align="center" textAlign="center" spacing="6" maxW="lg">
-            <Image boxSize="32" src="https://sitecorecontenthub.stylelabs.cloud/api/public/content/d5bf9fd27c404416953020f5f832aaa5" alt="map-search" />
+            <Image boxSize="32" src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/spot-map-search" alt="map-search" />
             <Stack>
               <Heading as="h1">This page is not available</Heading>
               <Text variant="small">Error 404</Text>

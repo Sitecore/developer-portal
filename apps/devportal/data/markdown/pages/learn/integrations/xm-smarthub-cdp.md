@@ -290,17 +290,17 @@ The sequence diagram below shows data flow between the different systems to faci
 
 As a marketer you can apply the different types of Experiments to the pages in your web channel. Experiments are closely linked to Experiences, as Experiments are effectively an A/B Test between two Experiences. You can read about how you can apply the different types of experiments as a marketer here: https://doc.sitecore.com/cdp/en/users/sitecore-cdp/running-experiments-in-sitecore-cdp.html
 
-[1]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/1a7ace859dea4deaa27e4546c9b812cc?v=ffce0578
-[2]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/27c06a3a3ffd494b9d8100adb8a88a28?v=4a196839
-[3]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/9969b8df76da45828f4bf4e84f9580c8?v=043d8a40
-[4]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/0ac88cd472974986a56cd8d12c5f5b0c?v=2b968cdc
-[5]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/4ed686b087914e5392d80d4ca29f1a51?v=9b1c47a9
-[6]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/ad031ffafb884a37b2151267e6702821?v=24266e3d
-[7]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/61ec52a074a046d99a03517de5c27fd7?v=fab06e2d
-[8]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/51bfb19925e546679b7c1d9d532cf6d3?v=e2504dc7
-[9]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/603516f3dacd4422b7383082199511db?v=38923efa
-[10]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/c098d2031ab74549bacc03286eb842ac?v=346436bb
-[11]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/4b17c298a1d3477daf3ea6291dc66b8f?v=d6fe3e46
-[12]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/4a5e9b213c2f4fd1b6ec50c3f2004408?v=a8792598
-[13]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/ec92f7b8b139456aa74409b8c6fc69d7?v=e99ed3f6
-[14]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/eed79a3c9c574a71b78576d38db81ab5?v=600b95f3
+[1]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/architecture-cdp-xm?v=274a6bf2
+[2]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-visitor-interactions?v=221e6fed
+[3]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-gtm-visitor-interactions?v=8af9d8ea
+[4]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-tracking-serverside?v=fe9c5b45
+[5]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-identity?v=791dae48
+[6]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-gtm-identity?v=93285755
+[7]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-identity-serverside?v=ccd7ef07
+[8]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-crud?v=74a7cd09
+[9]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-goaltracking-clientside?v=76d0b3f9
+[10]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-goaltracking-serverside?v=fb03d8f4
+[11]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-personalization-fullstack?v=0235959d
+[12]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-personalization-web?v=e3ec5f56
+[13]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-interaction-web?v=dda8dd7b
+[14]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/cdp-xm-interaction-fullstack?v=b4eb6a51

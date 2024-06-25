@@ -26,7 +26,7 @@ Sitecore recommends starting from one of the existing Sitecore starter kits. The
 
 For developers there are two ways suggested to interact with XM Cloud and implement customer requirements. Developers can either build using “Edge Mode” or using XM Cloud “fully local”.
 
-![Development Modes with XM Cloud](https://sitecorecontenthub.stylelabs.cloud/api/public/content/9524666e7b5e4d68aead7e49f7906dad?v=572dc6a3)
+![Development Modes with XM Cloud](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/xmc-devmodes?v=16132bef)
 
 ### Edge Mode
 

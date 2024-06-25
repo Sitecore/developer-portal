@@ -190,6 +190,6 @@ These both have the downside that IDs – which can change - must be hard coded.
 
 Sorting and page size can also be controlled with query params. See a guide to [query params in OrderCloud](https://ordercloud.io/knowledge-base/advanced-querying).
 
-[1]: https://mss-p-006-delivery.stylelabs.cloud/api/public/content/839902f10eaf487f9ba5410394ea8ba0?v=7d9f37b2
-[2]: https://mss-p-006-delivery.stylelabs.cloud/api/public/content/78884ced3aff42ad848eb312954ae7ce?v=28f5e296
-[3]: https://mss-p-006-delivery.stylelabs.cloud/api/public/content/0a6767726bac4a90ba8762e9b393e4d8?v=33eb7bee
+[1]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/oc-cdp-architecture?v=f8a4e3fa
+[2]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/oc-cdp-track-visitors?v=3d6e3fd7
+[3]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/oc-cdp-personalize-storefront?v=6458bcbd

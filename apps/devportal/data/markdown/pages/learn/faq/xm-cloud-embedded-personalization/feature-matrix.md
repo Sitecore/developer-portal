@@ -19,7 +19,7 @@ Embedded Personalization comes with XM Cloud Pages and provides a fixed set of o
 
 Here is a list of the main features available for XM Cloud embedded personalization. Features are organized across features groups that support customers’ users' journeys (Listen, Think, Respond, Learn):
 
-![Features empowered by XM Cloud Embedded Personalization](https://sitecorecontenthub.stylelabs.cloud/api/public/content/01ee3823736e4b56be66087776033e69?v=ee04d7e2)
+![Features empowered by XM Cloud Embedded Personalization](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/xmc_ListenThinkRespondLearn?v=b13b00b0)
 _Real time web data collection for 30 days (trending) of view events, for a total of 60 days_
 
 ### What features do I get if I license full Sitecore Personalize in addition to XM Cloud?
@@ -28,7 +28,7 @@ The embedded personalization functionality within XM Cloud provides a simple way
 
 Licensing Sitecore Personalize gives access to all the features included in the XM Cloud Embedded Personalization in addition to Sitecore Personalize features including custom personalization conditions that can be used in XM Cloud, decisioning, and longer data retention limits. Here is a list of features empowered by XM Cloud + Sitecore Personalize:
 
-![Features Empowered by XM Cloud + Sitecore Personalize](https://sitecorecontenthub.stylelabs.cloud/api/public/content/57b4c274a0f343ad909deaa6c5739b3e?v=8d4e7932)
+![Features Empowered by XM Cloud + Sitecore Personalize](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/XMCloudPersonalize_ListenThinkRespondLearn?v=0664e3ed)
 _Features empowered by XM Cloud + Sitecore Personalize_
 
 ### What are the Analytics capabilities provided by XM Cloud?
@@ -50,7 +50,7 @@ XM Cloud: Real time site analytics and Real time Page analytics. It also provide
 If a customer licenses Sitecore CDP and/or Sitecore Personalize and opt out from XM Cloud, they will not have access to pages level personalization available with the content management system. Still, they will have access to a wealth of data and customer experience management tools. Following table lists features available with
 CDP and Personalize (without XM Cloud):
 
-![Features of CDP + Personalize Standalone Only](https://sitecorecontenthub.stylelabs.cloud/api/public/content/987b90a1211f4e1c946b9ccfca0ba8a7?v=abbd56e9)
+![Features of CDP + Personalize Standalone Only](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/CDPP_ListenThinkRespondLearn?v=b8164e36)
 
 _Features empowered by CDP + Personalize (without XM Cloud)_
 
@@ -99,7 +99,7 @@ With full licensed Sitecore Personalize product, users can also utilize all the 
 
 With full licensed Sitecore Personalize product, users can also utilize from all the other types of personalization that Personalize offers like experiences , experiments and decisioning. Check following table for a Sitecore Engagement Listen, Think, Respond, Learn Feature-Matrix:
 
-![Sitecore Engagement Features Matrix](https://sitecorecontenthub.stylelabs.cloud/api/public/content/4784622810e14b3683e4baa633dc4960?v=c454a1a0)
+![Sitecore Engagement Features Matrix](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/EngagementCloud_ListenThinkRespondLearn?v=17ffe0fa)
 
 _Sitecore Engagement: Listen, Think, Respond, Learn Feature-Matrix_
 

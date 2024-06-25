@@ -3,7 +3,7 @@ product: ['xm-cloud']
 title: 'XM Cloud Introduction'
 description: 'XM Cloud is around the corner. But what is XM Cloud? What does it include? And how can you prepare for it?'
 promoAfter: ['learning-essentials']
-openGraphImage: 'https://mss-p-006-delivery.stylelabs.cloud/api/public/content/1915549492604a64864578fe51d2a597?v=244f9e64'
+openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/benefits_of_xmcloud?v=c0c919de'
 ---
 
 ## What is XM Cloud?
@@ -24,7 +24,7 @@ The importance of your company's growth comes with the:
 
 ## Why use XM Cloud?
 
-![Benefits of XM Cloud](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/1915549492604a64864578fe51d2a597?v=244f9e64)
+![Benefits of XM Cloud](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/benefits_of_xmcloud?v=c0c919de)
 
 Experience Manager Cloud addresses the challenges faced by **marketers and developers** when using traditional monolithic CMS and modern headless CMS.
 
@@ -52,7 +52,7 @@ XM Cloud combines the advantages of both worlds. Building new web experiences ba
 
 ## XM Cloud Architecture
 
-![XM Cloud Architecture](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/542ccf865a8344daaa92e1c364ee8dd1?v=522329fa)
+![XM Cloud Architecture](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/xmcloud-architecture?v=d19b994d)
 
 XM Cloud comes with a Content Management application based on Sitecore XM including known but also new editing tools. You will be able to use classic tools such as Content Editor as well as Experience Editor. However, XM Cloud introduces new powerful tools for content design and editing through [Sitecore Pages](https://doc.sitecore.com/xmc/en/users/xm-cloud/the-pages-editor.html), [Content manager](https://doc.sitecore.com/xmc/en/users/xm-cloud/content.html), and many other tools.
 
@@ -64,7 +64,7 @@ Developers and System Administrators can manage the XM Cloud instances and [depl
 
 ## Setting up an XM Cloud environment
 
-![XM Cloud Structure of Organization, Projects and Environments](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/542586d7b8e145838fc7dfe0afd19bfa?v=7e6faa5e)
+![XM Cloud Structure of Organization, Projects and Environments](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/xmcloud_structure?v=d673bcfb)
 
 To interact with XM Cloud, no matter if you go local or in cloud, you require an “Organization”. The Organization is your account at Sitecore. From here you can go on, manage your users, provision Projects and Environments.
 
@@ -91,7 +91,7 @@ XM Cloud Deploy is bundled with XM Cloud and offers REST API first deployment to
 
 You might have recognized that a lot of technologies that we have come across are involved in XM Cloud development. [Edge](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-experience-edge-for-xm.html), [serialization](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html), [headless services](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-headless-services.html), [containers](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--setting-up-your-full-stack-xm-cloud-local-development-environment.html), [JSS](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-javascript-rendering-sdks--jss-.html), [SXA](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-sxa-for-xm-cloud-development.html). So, it definitely makes sense to close some of the knowledge gaps in these areas to get prepared for XM Cloud.
 
-![Getting prepared for XM Cloud learning SXA, JSS, Containers, Headless, Edge, Sitecore Serialize](https://mss-p-006-delivery.stylelabs.cloud/api/public/content/d2ba91e41cd846f19bc6ba8b8f6d29fe?v=0a1eb452)
+![Getting prepared for XM Cloud learning SXA, JSS, Containers, Headless, Edge, Sitecore Serialize](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/xmcloud_technologies?v=10f6d7f2)
 
 Here’s a list of great resources that I found helpful.
 

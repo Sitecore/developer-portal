@@ -31,7 +31,7 @@ To learn more about [Sitecore Connect](https://www.sitecore.com/products/connect
 <Promo
   title="Sitecore Connect FAQ"
   description="We created a FAQ that helps answer questions about our new Sitecore Connect product"
-  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
+  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/f469fddd60064d0ca8be64f4be6d621c?v=cc750acc"
   linkText="Connect FAQ"
   linkHref="/learn/faq/sitecore-connect" isImageLeft={false}
 />

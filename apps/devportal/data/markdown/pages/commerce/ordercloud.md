@@ -48,8 +48,8 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 These guidance documents aim to help you understand what kind of project management and implementation practices are recommended by Sitecore to implement Sitecore OrderCloud.
 <Row columns={2}>
 
-  <Article title="Project Management guidance deck" imageUrl="https://sitecorecontenthub.stylelabs.cloud/api/public/content/e61825561a114e46aeaffea0a2882552?v=56089791" link="https://sitecorecontenthub.stylelabs.cloud/api/public/content/1b5eab8ae01a4912ad1979126aa1bdab?v=8f350046" hideLinkText="true" />
-  <Article title="Estimation guidance document" imageUrl="/images/file-excel-ordercloud.webp" link="https://sitecorecontenthub.stylelabs.cloud/api/public/content/07824ada3e3f41759eb5d918606dc3de?v=4565d7c2" hideLinkText="true" />
+  <Article title="Project Management guidance deck" imageUrl="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/project-management-template?v=801bd3b1" link="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/ordercloud-projectmanagement-template?v=358c0620" hideLinkText="true" />
+  <Article title="Estimation guidance document" imageUrl="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/estimation-guidance-excel?v=2adca1dc" link="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/sitecore-estimation-guidance-excel?v=08607023" hideLinkText="true" />
 </Row>
 
 ## Integrations

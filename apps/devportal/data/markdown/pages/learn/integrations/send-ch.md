@@ -113,7 +113,7 @@ Once you have copied your Public Link, you’re ready to leverage it in your sub
 
 ![Sequence diagram showing assets from Sitecore DAM being used in Subscription Forms][4]
 
-[1]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/a2f2c216fba04a3ba896e857e4aff0c5?v=f0dc87f3
-[2]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/1b3f6f7cfb1844dfbcb44a06ba49fb98?v=e60f2441
-[3]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/59473e6a63ab424387b6ca3af5c99b43?v=e037dbec
-[4]: https://mss-p-006-delivery.sitecorecontenthub.cloud/api/public/content/e370a639fa80468e876e7715ecf21adc?v=6dc67c0a
+[1]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/send-dam-1?v=890d3fb3
+[2]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/send-dam-2?v=01f5dd20
+[3]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/send-dam-3?v=fe574f07
+[4]: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/send-forms?v=940ca539
