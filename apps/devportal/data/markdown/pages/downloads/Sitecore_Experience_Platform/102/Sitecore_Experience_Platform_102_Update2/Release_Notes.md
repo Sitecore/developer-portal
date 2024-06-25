@@ -3,7 +3,7 @@ title: 'Release notes'
 description: ''
 ---
 
-**June 2024 – released Sitecore Experience Platform 10.2.2 rev. 00xxxx**
+**June 2024 – released Sitecore Experience Platform 10.2.2 rev. 010645**
 
 This is a product update. Sitecore recommends that you upgrade to this release if it includes fixes that meet the specific needs of your organization. If this release does not include new functionality or specific fixes that your organization requires, you may benefit from waiting to upgrade until Sitecore releases an update that is relevant for your organization. This is especially true in production environments.
 
