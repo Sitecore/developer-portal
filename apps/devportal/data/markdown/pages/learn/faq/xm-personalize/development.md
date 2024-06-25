@@ -16,7 +16,7 @@ Sitecore recommends using Next.js as the framework because of its flexibility in
 
 ### Can we use XM + Personalize with SSR for JSS headless implementations?
 
-When using Sitecore Experience Manager (XM) with the Sitecore JavaScript Rendering SDK (JSS), developers can use Server-Side Rendering (SSR) with their Next.js, React, Angular, or Vue.js applications. React, Angular, and Vue.js require customers to host an [SSR proxy](https://doc.sitecore.com/xp/en/developers/hd/190/sitecore-headless-development/server-side-render-jss-apps-headlessly-using-the-jss-proxy.html) server themselves to support SSR with JSS.
+When using Sitecore Experience Manager (XM) with the Sitecore JavaScript Rendering SDK (JSS), developers can use Server-Side Rendering (SSR) with their Next.js, React, Angular, or Vue.js applications. React, Angular, and Vue.js require customers to host an [SSR proxy](https://doc.sitecore.com/xp/en/developers/hd/latest/sitecore-headless-development/walkthrough--rendering-a-jss-app-server-side-using-the-headless-jss-proxy.html) server themselves to support SSR with JSS.
 
 Next.js supports SSR without requiring a separate SSR proxy server as this capability is supported through Next.js directly. This is one of the reasons why Sitecore recommends using Next.js as the Jamstack framework for client applications when implementing a headless solution.
 
