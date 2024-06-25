@@ -4,7 +4,8 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_220
 ---
 
-The Sitecore Install Framework (SIF) enables users to deploy and configure a Sitecore environment using a standard configuration design that can be extended through custom PowerShell functions.
+The Sitecore Install Framework (SIF) enables users to deploy and configure a Sitecore environment using a standard configuration design that can be extended through custom PowerShell functions.\
+Sitecore Installation Framework 2.2.0 is compatible with SXP 9.1.1, 9.2, and 9.3. See also the compatibility table in the SIF Configuration Guide.
 
 Please see the Sitecore product installation instructions for more information on how to install Sitecore using SIF.
 

@@ -13,9 +13,9 @@ This is a product update. Sitecore recommends that you upgrade to this release i
 ## New features/improvements
  | Context | Description | ADO no. |
  | --- | --- | --- |
- | Platform | Updated the `ChilkatDotNet47.dll` library version to 9.5.0.77. See [KB100####](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB100####) for guidance on upgrading your Chilkat version. | 615207 |
+ | Platform | Updated the `ChilkatDotNet47.dll` library version to 9.5.0.77. | 615207 |
  | Platform | Added the ability to enable LiveMode in SiteContext in runtime. | 585571 |
- | Security | Enhanced security in product and 3rd party libraries to reduce potential vulnerabilities, and to reduce the likelihood of requiring security updates in the future. | 594651, 606641, 609758, 615391 |
+ | Security | Enhanced security in product and 3rd party libraries to reduce potential vulnerabilities. | 594651, 606641, 609758, 615391 |
 
 ## Resolved issues
  | Context | Description | ADO no. |
