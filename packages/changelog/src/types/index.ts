@@ -24,3 +24,4 @@ export * from './common/media';
 export * from './product';
 //export * from './sitecoreCloud';
 export * from './sitecoreProduct';
+export * from './status';

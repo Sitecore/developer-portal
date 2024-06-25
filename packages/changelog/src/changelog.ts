@@ -1,6 +1,8 @@
 import { GetAllChangeTypes } from './lib/changeType';
 import { GetAllProducts, GetEntryCountByProductId } from './lib/products';
 import { PaginatedSearch, Search } from './lib/search';
+import { GetAllStatuses } from './lib/status';
+import { ParseStatus, Status } from './types';
 import { ChangelogEntry, ChangelogEntryList, ChangelogEntrySummary, ParseRawData, ParseRawSummaryData, parseChangeLogItem } from './types/changeLogEntry';
 import { ChangeType, ParseChangeType } from './types/changeType';
 import { ChangelogCredentials } from './types/changelog';
@@ -47,6 +49,11 @@ export class Changelog {
   async getChangeTypes(): Promise<ChangeType[]> {
     const response = await GetAllChangeTypes(this.credentials, this.isPreview);
     return ParseChangeType(response.data);
+  }
+
+  async getStatus(): Promise<Status[]> {
+    const response = await GetAllStatuses(this.credentials, this.isPreview);
+    return ParseStatus(response.data);
   }
 
   async getProducts(): Promise<Product[]> {
