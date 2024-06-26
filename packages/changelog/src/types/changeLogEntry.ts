@@ -72,7 +72,7 @@ function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySumm
   return {
     id: changelog.id,
     title: changelog.title,
-    releaseDate: new Date(clearTimeStamp(changelog.releaseDate)[0]).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
+    releaseDate: new Date(clearTimeStamp(changelog.releaseDate)).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
     lightIcon: changelog.sitecoreProduct.results[0]?.lightIcon,
     darkIcon: changelog.sitecoreProduct.results[0]?.darkIcon,
     productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
