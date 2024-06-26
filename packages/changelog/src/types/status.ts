@@ -14,7 +14,7 @@ export const DefaultStatus: Status = {
   id: 'pNOVO2dhtESFOSwd4Va84w',
   name: 'Available',
   identifier: 'available',
-  description: 'Now available for customers',
+  description: '',
 };
 
 export function ParseStatus(data: StatusResults): Status[] {
