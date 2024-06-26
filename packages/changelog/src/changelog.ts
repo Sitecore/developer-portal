@@ -1,6 +1,6 @@
 import { GetAllChangeTypes } from './lib/changeType';
 import { GetAllProducts, GetEntryCountByProductId } from './lib/products';
-import { PaginatedSearch, Search } from './lib/search';
+import { PaginatedSearch, Search, SearchByDate } from './lib/search';
 import { GetAllStatuses } from './lib/status';
 import { ParseStatus, Status } from './types';
 import { ChangelogEntry, ChangelogEntryList, ChangelogEntrySummary, ParseRawData, ParseRawSummaryData, parseChangeLogItem } from './types/changeLogEntry';
@@ -39,6 +39,14 @@ export class Changelog {
     const response = await Search(this.credentials, this.isPreview, productId, changeTypeId, false, entryTitle, 1);
 
     return parseChangeLogItem(response.data.results[0]);
+  }
+
+  async getEntriesByDate(date: Date, summary?: boolean, pageSize?: string, endCursor?: string): Promise<ChangelogEntryList<ChangelogEntry[]>> {
+    const _pageSize: number = Number(pageSize) ?? undefined;
+    const _endCursor: string = endCursor ?? '';
+
+    const response = await SearchByDate(this.credentials, this.isPreview, date, summary, _pageSize, _endCursor);
+    return ParseRawData(response.data);
   }
 
   async getSummarizedEntries(productId?: string, changeTypeId?: string): Promise<ChangelogEntryList<ChangelogEntrySummary[]>> {

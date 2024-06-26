@@ -1,5 +1,6 @@
 import { generateHTML } from '@tiptap/html';
 import { richTextProfile } from '../lib/common/richTextConfiguration';
+import { clearTimeStamp } from '../utils/dateUtils';
 import { ChangeType } from './changeType';
 import { Changelog, ChangelogBase, ChangelogList } from './changelog';
 import { Media } from './index';
@@ -71,7 +72,7 @@ function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySumm
   return {
     id: changelog.id,
     title: changelog.title,
-    releaseDate: new Date(changelog.releaseDate).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
+    releaseDate: new Date(clearTimeStamp(changelog.releaseDate)[0]).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
     lightIcon: changelog.sitecoreProduct.results[0]?.lightIcon,
     darkIcon: changelog.sitecoreProduct.results[0]?.darkIcon,
     productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
@@ -87,14 +88,14 @@ export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
     name: changelog.name,
     readMoreLink: changelog.readMoreLink,
     title: changelog.title,
-    description: generateHTML(changelog.description, [richTextProfile]),
+    description: changelog.description ? generateHTML(changelog.description, [richTextProfile]) : '',
     fullArticle: changelog.fullArticle != null && changelog.fullArticle?.content ? generateHTML(changelog.fullArticle, [richTextProfile]) : null,
     breakingChange: changelog.breakingChange,
     sitecoreProduct: changelog.sitecoreProduct.results,
     changeType: changelog.changeType.results,
     version: changelog.version,
-    releaseDate: new Date(changelog.releaseDate).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
-    image: changelog.image.results,
+    releaseDate: new Date(clearTimeStamp(changelog.releaseDate)).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
+    image: changelog.image?.results,
     lightIcon: changelog.sitecoreProduct.results[0]?.lightIcon,
     darkIcon: changelog.sitecoreProduct.results[0]?.darkIcon,
     productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
