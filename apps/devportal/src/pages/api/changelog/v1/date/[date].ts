@@ -5,26 +5,6 @@ import { ChangelogEntry, ChangelogEntryList } from '@scdp/changelog/types';
 import { getQueryArray, getQueryValue } from '@scdp/changelog/utils';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
-//   const date: string[] = getQueryArray(req.query.date);
-//   const isPreview = req.preview ? true : false;
-
-//   const firstDate = date[0];
-//   if (!firstDate || isNaN(Date.parse(firstDate))) {
-//     res.status(500);
-//     return;
-//   } else {
-//     const changelog = new Changelog(getChangelogCredentials(), isPreview);
-//     const items = await changelog.getEntriesByDate(new Date(firstDate));
-
-//     res.status(200).json(items);
-//     res.end();
-//   }
-//   res.end();
-// };
-
-// export default handler;
-
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
   const products: string[] = getQueryArray(req.query.product);
   const changeTypes: string[] = getQueryArray(req.query.changeType);
