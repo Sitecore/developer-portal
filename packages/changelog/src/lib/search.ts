@@ -1,5 +1,6 @@
 import { CHANGELOG_QUERY, CHANGELOG_SUMMARY_QUERY } from '../graphQl/changelog-query';
 import { Changelog, ChangelogBase, ChangelogCredentials, ChangelogList } from '../types/changelog';
+import { clearTimeStamp, getDate } from '../utils/dateUtils';
 import { fetchAPI } from './common/api';
 
 export async function PaginatedSearch(credentials: ChangelogCredentials, isPreview: boolean, pageSize: number, endCursor: string, productId?: string, changeTypeId?: string) {
@@ -32,17 +33,49 @@ export async function Search(credentials: ChangelogCredentials, isPreview: boole
   return response.data;
 }
 
-function buildParameters(productId?: string, changeTypeId?: string, searchTerm?: string, pageSize?: number, endCursor?: string, isPreview?: boolean): string {
-  let parameters = ``;
+export async function SearchByDate(credentials: ChangelogCredentials, isPreview: boolean, date: Date, summary?: boolean, pageSize?: number, endCursor?: string) {
+  const formattedDate = clearTimeStamp(date);
 
+  const searchQuery = `
+    { 
+      data: allChangelog (
+          orderBy: RELEASEDATE_DESC
+          ${addPagingParameters(pageSize, endCursor)}
+          where: { releaseDate_eq: "${formattedDate}" }
+        ) {
+          pageInfo {
+            hasNext
+            endCursor
+          }
+          total
+          results{
+            ${summary ? CHANGELOG_SUMMARY_QUERY : CHANGELOG_QUERY}
+          }
+        }
+      }
+  `;
+  const response = await fetchAPI(credentials, searchQuery, isPreview);
+  if (!response) return { data: [] };
+  return response.data;
+}
+
+function addPagingParameters(pageSize?: number, endCursor?: string, parameters?: string) {
+  if (!parameters) parameters = '';
   if (pageSize) parameters += `first: ${pageSize} \n`;
   if (endCursor) parameters += `after: "${endCursor}" \n`;
-
-  parameters += buildWhereClause(searchTerm, productId, changeTypeId, isPreview);
   return parameters;
 }
 
-const openWHERE = `where: { releaseDate_lt: "${new Date().toISOString()}" `;
+function buildParameters(productId?: string, changeTypeId?: string, searchTerm?: string, pageSize?: number, endCursor?: string, isPreview?: boolean): string {
+  let parameters = ``;
+
+  parameters += addPagingParameters(pageSize, endCursor, parameters);
+  parameters += buildWhereClause(searchTerm, productId, changeTypeId, isPreview);
+
+  return parameters;
+}
+
+const openWHERE = `where: { releaseDate_lt: "${getDate(new Date())}" `;
 const openWHEREinPreview = `where: { `;
 const openAND = ' AND: [';
 const openCombinedANDOR = 'AND: { OR: [';
@@ -57,7 +90,7 @@ const closeWHERE = '}';
 function buildWhereClause(searchTerm?: string, productId?: string, changeTypeId?: string, isPreview?: boolean) {
   if (!searchTerm && !productId && !changeTypeId) {
     if (isPreview) return '';
-    return `where: { releaseDate_lt: "${new Date().toISOString()}" }`;
+    return `where: { releaseDate_lt: "${getDate(new Date())}" }`;
   }
 
   const pId = productId?.split('|');

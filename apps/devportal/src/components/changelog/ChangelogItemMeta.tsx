@@ -5,6 +5,7 @@ import { mdiSquareEditOutline } from '@mdi/js';
 import { ChangelogEntry } from '@scdp/changelog/types';
 import { getSlug } from '@scdp/changelog/utils';
 import Image from 'next/image';
+import { getStatusBadgeColor } from '../../lib/changelog/changelog';
 import { ProductIcon } from './ProductIcon';
 
 type ChangelogItemMetaProps = BoxProps & {
@@ -81,6 +82,14 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
           </Badge>
         ))}
       {item.breakingChange && <Badge colorScheme="danger">Breaking change</Badge>}
+
+      {item.status && (
+        <Tooltip label={item.status.description} aria-label={item.status.description}>
+          <Badge colorScheme={getStatusBadgeColor(item.status.identifier)} variant="outline">
+            {item.status.name}
+          </Badge>
+        </Tooltip>
+      )}
     </HStack>
   );
 

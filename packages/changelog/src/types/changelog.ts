@@ -2,12 +2,14 @@ import { JSONContent } from '@tiptap/core';
 import { ChangeTypeResults } from './changeType';
 import { MediaResults } from './common/media';
 import { SitecoreProductResults } from './sitecoreProduct';
+import { StatusResults } from './status';
 
 export type ChangelogBase = {
   id: string;
   title: string;
   sitecoreProduct: SitecoreProductResults;
   changeType: ChangeTypeResults;
+  status: StatusResults;
   releaseDate: string;
 };
 

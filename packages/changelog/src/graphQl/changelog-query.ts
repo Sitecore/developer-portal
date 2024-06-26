@@ -1,6 +1,7 @@
 import CHANGE_TYPE_QUERY from './change-type-query';
 import MEDIA_QUERY from './common/media-query';
 import SITECORE_PRODUCT_QUERY from './sitecore-product-query';
+import { STATUS_QUERY } from './status.graphql';
 
 export const CHANGELOG_QUERY = `
   id
@@ -37,6 +38,16 @@ export const CHANGELOG_QUERY = `
       }
     }
   }
+  status
+  {
+    total
+    results {
+      __typename
+      ... on Status {
+        ${STATUS_QUERY}
+      }
+    }
+  }
 `;
 
 export const CHANGELOG_SUMMARY_QUERY = `
@@ -59,6 +70,16 @@ export const CHANGELOG_SUMMARY_QUERY = `
       __typename
       ... on Changetype {
         ${CHANGE_TYPE_QUERY}
+      }
+    }
+  }
+  status
+  {
+    total
+    results {
+      __typename
+      ... on Status {
+        ${STATUS_QUERY}
       }
     }
   }

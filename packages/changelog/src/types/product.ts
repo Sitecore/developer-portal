@@ -6,7 +6,6 @@ export type Product = {
   name: string;
   darkIcon: string;
   lightIcon: string;
-  cloud: string;
   hasEntries: boolean;
 };
 
@@ -21,7 +20,6 @@ export function ParseProduct(data: SitecoreProductResults): Product[] {
       description: x.productDescription,
       lightIcon: x.lightIcon != null ? x.lightIcon : lightDefaultLogo,
       darkIcon: x.darkIcon != null ? x.darkIcon : darkDefaultLogo,
-      cloud: x.sitecoreCloud.results[0].cloudName,
       hasEntries: false,
     };
   });
