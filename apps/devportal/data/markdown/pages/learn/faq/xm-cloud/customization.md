@@ -10,9 +10,16 @@ cdpTags: ['xm-cloud']
     The information in this FAQ can be outdated. For the latest guidance on XM Cloud implementations visit the <a href="/learn/accelerate/xm-cloud">Sitecore Accelerate for XM Cloud</a> page
 </Alert>
 
+## Am I able to deploy custom code to the XM Cloud CMS environment?
+
+While currently, it is technically possible to write custom pipelines and events in XM Cloud, **it is strongly discouraged**. 
+
+The XM Cloud platform is designed to be a headless platform, and it is not designed to support customization of the CMS. Instead, you should use the out-of-process APIs to extend the platform.
+
+
 ## Are clients able to customize the editorial experience?
 
-XM Cloud currently offers some of the same tools from traditional on-premise XM (Content Editor, Experience Editor) but it is not recommended to deploy customizations to the editorial experience into the XM Cloud CMS environment itself.
+XM Cloud currently offers some of the same tools from traditional on-premises XM (Content Editor, Experience Editor) but it is not recommended to deploy customizations to the editorial experience into the XM Cloud CMS environment itself.
 
 Instead, complex use cases should be extended via web hooks with headless applications connecting to the APIs. Simpler editing experiences should be embedded in your component code so that Pages can take full advantage of your custom experience.
 
@@ -24,11 +31,15 @@ XM Cloud now supports Single Sign On (SSO) to custom identity providers that use
 
 ## Extending pipelines and custom renderings, typically will be compiled .NET code attached to something in Sitecore, is this still allowed in XM Cloud?
 
-Absolutely, you can write your own custom pipelines and do all the customization you did before. You don’t do it against the web database with the way Experience Edge publishing works. Primarily, Experience Edge publishing works as if you wrote a custom pipeline that changed some items or a new custom item resolver for changed content. The Experience Edge publishing process runs through those rendering pipelines to render the JSON over to Experience Edge. During this process, there are some transformations. Note that with Sitecore XM Cloud, there is not as much need for customization, as most customizations will be needed out in the front end application.
+While currently, it is technically possible to write custom pipelines in XM Cloud, it is strongly discouraged.
+
+In XM Cloud, renderings are not deployed to the Content Management environment. Instead, renderings are part of the front-end application.
 
 ## Will partners still be able to customize pipelines and events on the CM? Are all pipelines going to be available to add to include publishing (like wanting to publish to a Solr index for consumption)
 
-Events and pipelines can still be customized for the Content Management environment within the XM Cloud. There may be some limitations as to which pipelines can be customized, and Sitecore encourages new development to use out-of-process API-based integration as much as possible.
+While currently, it is technically possible to write custom pipelines and events in XM Cloud, it is strongly discouraged.
+
+Events are now available via webhooks in XM Cloud. You can read more about webhooks in the [Sitecore XM Cloud documentation for webhooks with workflow](https://doc.sitecore.com/xp/en/xmc/en/developers/xm-cloud/webhooks.html)
 
 ## How is Sitecore going to manage customizations with a SaaS approach to upgrades?
 
@@ -36,22 +47,13 @@ Sitecore XM Cloud is designed to handle automatic updates and backwards compatib
 
 ## Does XM Cloud have support for custom field types?
 
-Yes, Sitecore XM Cloud supports custom fields.
-
-## Can custom fields be exposed in the GraphQL endpoint?
-
-It is possible to extend the Experience Edge publishing to provide Experience Edge with the custom field values.
-
-## How does XM Cloud support customizations for the GraphQL endpoint?
-
-Sitecore XM Cloud still allows deploying your own code and fields to the XM Cloud instance. For customizations like custom field renders, these should be called as part of the layout. When rendering the layout, the layout pipeline renders JSON and pushes this to Experience Edge. This makes it accessible to your headless front-end.
-
-For Pages, Sitecore is still working on making an extensibility model for customer extensions. This will allow for visualizing customizations on the Pages site in the future.
+No, Sitecore XM Cloud does not support custom field types.
 
 ## Is XM Cloud similar to Sitecore XM running in Sitecore Managed Cloud without being able to add (code) customizations?
 
-No. XM Cloud supports customization with the use of our deployment tooling and services.
+No. XM Cloud is a SaaS platform that has a different architecture and approach to Sitecore XM running in Sitecore Managed Cloud.
+
+XM Cloud only supports headless, API-first implementations, with content being published to Experience Edge. Sitecore XM Cloud is a fully managed headless CMS platform operated by Sitecore and includes automatic updating. Policies exist to ensure XM Cloud instances are kept up to date. The responsibility for the platform and updates belongs to Sitecore. The web application is not hosted by Sitecore and remains the responsibility of the client or partner.
 
 With Managed Cloud customers have complete flexibility to architect and deploy Sitecore solutions using whatever topology and approach they desire. Additionally, with Managed Cloud, there is joint responsibility on the platform and its updates.
 
-XM Cloud only supports headless, API-first implementation, with publishing to Experience Edge. Sitecore XM Cloud is fully managed by Sitecore and includes automatic updating. Policies exist to ensure XM Cloud instances are kept up to date. The responsibility for the platform and updates belongs to Sitecore.
