@@ -19,7 +19,7 @@ Sitecore Experience Commerce (XC) empowers marketers and merchandizers to fully 
 - [Integrate 3rd party services](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-commerce/en/commerce-integration.html)
 - [Commerce Connect](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-commerce/en/commerce-connect.html)
 - [SXA Storefront](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-commerce/en/sxa-storefront.html)
-- [User Documentation](https://doc.sitecore.com/users/101/sitecore-experience-commerce/en/introduction-to-sitecore-experience-commerce.html)
+- [User Documentation](https://doc.sitecore.com/users/latest/sitecore-experience-commerce/en/introduction-to-sitecore-experience-commerce.html)
 
 ## Getting Started
 
