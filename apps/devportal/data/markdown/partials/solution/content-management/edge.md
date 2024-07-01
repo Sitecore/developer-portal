@@ -11,7 +11,7 @@ Experience Edge is a set of services for headless content delivery, and is based
 
 The content is hosted by Sitecore Content Hub™ in the cloud, and it is offered to consumers who need it delivered into any applications or systems whenever required. The content delivered is raw; it can be anything and go anywhere
 
-See the [FAQ](https://www.sitecore.com/company/news-events/press-releases/2020/12/sitecore-advances-saas-platform-with-sitecore-experience-edge/faq) for more information
+See the [FAQ](https://doc.sitecore.com/ch/en/users/content-hub/experience-edge-for-content-hub-faq.html) for more information
 
 ## Getting Started
 
