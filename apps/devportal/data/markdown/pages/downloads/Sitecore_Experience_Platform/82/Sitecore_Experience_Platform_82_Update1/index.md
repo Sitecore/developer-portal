@@ -16,7 +16,7 @@ Sitecore 8.2 Update-1 supports a full Azure PaaS deployment and the release come
 
 This page contains all the resources for **Sitecore Experience Platform 8.2 rev. 161115 (8.2 Update-1)**.
 
-Looking for **a different version**? See [all available 8.x versions](/downloads/Sitecore_Experience_Platform).
+Looking for **a different version**? See [all available versions](/downloads/Sitecore_Experience_Platform).
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
