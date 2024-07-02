@@ -185,7 +185,7 @@ You can see that in the `<header>` and `<footer>` elemebts, we are adding an ext
 
 ### Rate limits
 
-With this change, we are not hitting the Experience Edge API 3 times for each page. This will make it slower to generate the page, but should not affect rate limits negatively. The header and footer layout responses will be the same call for every page, this means that the call will be cached after the first request and then when each page is generated it would be returning the cached data for that route. Cached queries don't count toward the rate limit on Experience Edge, so this shouldn't have an impact.
+With this change, we are now hitting the Experience Edge API 3 times for each page. This will make it slower to generate the page, but should not affect rate limits negatively. The header and footer layout responses will be the same call for every page, this means that the call will be cached after the first request and then when each page is generated it would be returning the cached data for that route. Cached queries don't count toward the rate limit on Experience Edge, so this shouldn't have an impact.
 
 ### Performance
 
