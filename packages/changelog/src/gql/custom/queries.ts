@@ -48,6 +48,7 @@ fragment changelogEntry on Changelog {
   breakingChange
   version
   releaseDate
+  scheduled
   image {
     total
     results {

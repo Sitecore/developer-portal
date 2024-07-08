@@ -1,8 +1,8 @@
-import { Badge, Box, Button, Card, CardBody, CardHeader, CardProps, Flex, HStack, Heading, Hide, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, SimpleGrid, Stack, Text, chakra, useColorModeValue } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, HStack, Heading, Hide, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, SimpleGrid, Stack, Tag, Text, chakra, useColorModeValue } from '@chakra-ui/react';
 import { ChangelogEntry } from '@scdp/changelog/types';
-import { getSlug, getChangelogEntryUrl } from '@scdp/changelog/utils';
+import { getChangelogEntryUrl, getSlug } from '@scdp/changelog/utils';
 import { TextLink } from '@scdp/ui/components';
+import Image from 'next/image';
 
 type ChangelogEntriesProps = CardProps & {
   entries: ChangelogEntry[];
@@ -90,8 +90,18 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
                       )
                     )}
 
-                    {entry.changeTypeName != null ? <Badge colorScheme={entry.changeTypeName == 'Resolved' ? 'yellow' : entry.changeTypeName == 'New Feature' ? 'teal' : 'info'}>{entry.changeTypeName}</Badge> : ''}
-                    {entry.breakingChange && <Badge colorScheme="danger">Breaking change</Badge>}
+                    {entry.changeTypeName != null ? (
+                      <Tag size="sm" colorScheme={entry.changeTypeName == 'Resolved' ? 'yellow' : entry.changeTypeName == 'New Feature' ? 'teal' : 'info'}>
+                        {entry.changeTypeName}
+                      </Tag>
+                    ) : (
+                      ''
+                    )}
+                    {entry.breakingChange && (
+                      <Tag size="sm" colorScheme="danger">
+                        Breaking change
+                      </Tag>
+                    )}
                   </HStack>
                 </Stack>
               </Flex>

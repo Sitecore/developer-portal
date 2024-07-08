@@ -1193,6 +1193,7 @@ export type ChangelogEntryFragment = {
   breakingChange: boolean | null;
   version: string | null;
   releaseDate: Date | null;
+  scheduled: boolean | null;
   image: {
     total: number | null;
     results: Array<{
@@ -1293,6 +1294,7 @@ export type GetLatestEntriesQuery = {
       breakingChange: boolean | null;
       version: string | null;
       releaseDate: Date | null;
+      scheduled: boolean | null;
       image: {
         total: number | null;
         results: Array<{
@@ -1348,6 +1350,7 @@ export type SearchByDateQuery = {
       breakingChange: boolean | null;
       version: string | null;
       releaseDate: Date | null;
+      scheduled: boolean | null;
       image: {
         total: number | null;
         results: Array<{
@@ -1392,6 +1395,7 @@ export type SearchByProductQuery = {
       breakingChange: boolean | null;
       version: string | null;
       releaseDate: Date | null;
+      scheduled: boolean | null;
       image: {
         total: number | null;
         results: Array<{
@@ -1436,6 +1440,7 @@ export type SearchByProductsAndChangeTypesQuery = {
       breakingChange: boolean | null;
       version: string | null;
       releaseDate: Date | null;
+      scheduled: boolean | null;
       image: {
         total: number | null;
         results: Array<{
@@ -1477,6 +1482,7 @@ export type SearchByTitleQuery = {
       breakingChange: boolean | null;
       version: string | null;
       releaseDate: Date | null;
+      scheduled: boolean | null;
       image: {
         total: number | null;
         results: Array<{
@@ -1576,6 +1582,7 @@ export const ChangelogEntryFragmentDoc = new TypedDocumentString(
   breakingChange
   version
   releaseDate
+  scheduled
   image {
     total
     results {
@@ -1782,6 +1789,7 @@ fragment changelogEntry on Changelog {
   breakingChange
   version
   releaseDate
+  scheduled
   image {
     total
     results {
@@ -1887,6 +1895,7 @@ fragment changelogEntry on Changelog {
   breakingChange
   version
   releaseDate
+  scheduled
   image {
     total
     results {
@@ -1971,6 +1980,7 @@ fragment changelogEntry on Changelog {
   breakingChange
   version
   releaseDate
+  scheduled
   image {
     total
     results {
@@ -2055,6 +2065,7 @@ fragment changelogEntry on Changelog {
   breakingChange
   version
   releaseDate
+  scheduled
   image {
     total
     results {
@@ -2137,6 +2148,7 @@ fragment changelogEntry on Changelog {
   breakingChange
   version
   releaseDate
+  scheduled
   image {
     total
     results {

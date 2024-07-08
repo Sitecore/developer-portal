@@ -13,7 +13,7 @@ import * as types from './graphql';
  */
 const documents = {
   'fragment changeType on Changetype {\n  id\n  name\n  changeType\n}': types.ChangeTypeFragmentDoc,
-  'fragment changelogEntry on Changelog {\n  id\n  name\n  title\n  description\n  fullArticle\n  readMoreLink\n  breakingChange\n  version\n  releaseDate\n  image {\n    total\n    results {\n      ...media\n    }\n  }\n  sitecoreProduct {\n    total\n    results {\n      ...product\n    }\n  }\n  changeType {\n    total\n    results {\n      ...changeType\n    }\n  }\n  status {\n    total\n    results {\n      ...status\n    }\n  }\n}':
+  'fragment changelogEntry on Changelog {\n  id\n  name\n  title\n  description\n  fullArticle\n  readMoreLink\n  breakingChange\n  version\n  releaseDate\n  scheduled\n  image {\n    total\n    results {\n      ...media\n    }\n  }\n  sitecoreProduct {\n    total\n    results {\n      ...product\n    }\n  }\n  changeType {\n    total\n    results {\n      ...changeType\n    }\n  }\n  status {\n    total\n    results {\n      ...status\n    }\n  }\n}':
     types.ChangelogEntryFragmentDoc,
   'fragment changelogEntrySummary on Changelog {\n  id\n  name\n  title\n  description\n  readMoreLink\n  breakingChange\n  version\n  releaseDate\n  image {\n    total\n    results {\n      ...media\n    }\n  }\n  sitecoreProduct {\n    total\n    results {\n      ...product\n    }\n  }\n  changeType {\n    total\n    results {\n      ...changeType\n    }\n  }\n  status {\n    total\n    results {\n      ...status\n    }\n  }\n}':
     types.ChangelogEntrySummaryFragmentDoc,
@@ -45,7 +45,7 @@ export function graphql(source: 'fragment changeType on Changetype {\n  id\n  na
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(
-  source: 'fragment changelogEntry on Changelog {\n  id\n  name\n  title\n  description\n  fullArticle\n  readMoreLink\n  breakingChange\n  version\n  releaseDate\n  image {\n    total\n    results {\n      ...media\n    }\n  }\n  sitecoreProduct {\n    total\n    results {\n      ...product\n    }\n  }\n  changeType {\n    total\n    results {\n      ...changeType\n    }\n  }\n  status {\n    total\n    results {\n      ...status\n    }\n  }\n}'
+  source: 'fragment changelogEntry on Changelog {\n  id\n  name\n  title\n  description\n  fullArticle\n  readMoreLink\n  breakingChange\n  version\n  releaseDate\n  scheduled\n  image {\n    total\n    results {\n      ...media\n    }\n  }\n  sitecoreProduct {\n    total\n    results {\n      ...product\n    }\n  }\n  changeType {\n    total\n    results {\n      ...changeType\n    }\n  }\n  status {\n    total\n    results {\n      ...status\n    }\n  }\n}'
 ): typeof import('./graphql').ChangelogEntryFragmentDoc;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.

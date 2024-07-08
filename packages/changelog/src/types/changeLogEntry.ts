@@ -24,6 +24,7 @@ export type ChangelogEntrySummary = {
   productName: string | null;
   products: SitecoreProduct[] | null;
   changeTypeName: string | null;
+  scheduled: boolean;
   status: Status;
 };
 
@@ -68,6 +69,7 @@ export function parseChangeLogItem(changelog: any): ChangelogEntry {
     fullArticle: changelog.fullArticle != null && changelog.fullArticle?.content ? generateHTML(changelog.fullArticle, [richTextProfile]) : null,
     breakingChange: changelog.breakingChange,
     sitecoreProduct: changelog.sitecoreProduct.results,
+    scheduled: changelog.scheduled ? changelog.scheduled : false,
     changeType: changelog.changeType.results,
     version: changelog.version,
     releaseDate: new Date(clearTimeStamp(changelog.releaseDate)).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
