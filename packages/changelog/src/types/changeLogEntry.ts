@@ -1,8 +1,9 @@
 import { generateHTML } from '@tiptap/html';
+import { GetLatestEntriesQuery } from '../gql/generated/graphql';
 import { richTextProfile } from '../lib/common/richTextConfiguration';
 import { clearTimeStamp } from '../utils/dateUtils';
+import { getStringValue } from '../utils/stringUtils';
 import { ChangeType } from './changeType';
-import { Changelog, ChangelogBase, ChangelogList } from './changelog';
 import { Media } from './index';
 import SitecoreProduct from './sitecoreProduct';
 import { DefaultStatus, Status } from './status';
@@ -38,8 +39,8 @@ export type ChangelogEntry = ChangelogEntrySummary & {
   image: Media[];
 };
 
-export function ParseRawData(data: ChangelogList): ChangelogEntryList<ChangelogEntry[]> {
-  if (!data.results || data.results.length == 0)
+export function ParseRawData(data: GetLatestEntriesQuery): ChangelogEntryList<ChangelogEntry[]> {
+  if (!data.changelog?.results)
     return {
       endCursor: '',
       hasNext: false,
@@ -48,43 +49,18 @@ export function ParseRawData(data: ChangelogList): ChangelogEntryList<ChangelogE
     };
 
   return {
-    endCursor: data.pageInfo.endCursor,
-    hasNext: data.pageInfo.hasNext,
-    total: data.total,
-    entries: data.results.map((item: Changelog) => {
+    endCursor: getStringValue(data.changelog.pageInfo?.endCursor),
+    hasNext: data.changelog.pageInfo?.hasNext ?? false,
+    total: data.changelog.total ?? 0,
+    entries: data.changelog.results.map((item) => {
       return parseChangeLogItem(item);
     }),
   };
 }
 
-export function ParseRawSummaryData(data: ChangelogList): ChangelogEntryList<ChangelogEntrySummary[]> {
+export function parseChangeLogItem(changelog: any): ChangelogEntry {
   return {
-    endCursor: data.pageInfo.endCursor,
-    hasNext: data.pageInfo.hasNext,
-    total: data.total,
-    entries: data.results.map((item: Changelog) => {
-      return parseChangeLogSummaryItem(item);
-    }),
-  };
-}
-
-function parseChangeLogSummaryItem(changelog: ChangelogBase): ChangelogEntrySummary {
-  return {
-    id: changelog.id,
-    title: changelog.title,
-    releaseDate: new Date(clearTimeStamp(changelog.releaseDate)).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
-    lightIcon: changelog.sitecoreProduct.results[0]?.lightIcon,
-    darkIcon: changelog.sitecoreProduct.results[0]?.darkIcon,
-    productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
-    products: changelog.sitecoreProduct.results ?? null,
-    changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
-    status: changelog.status.results[0] ? changelog.status.results[0] : DefaultStatus,
-  };
-}
-
-export function parseChangeLogItem(changelog: Changelog): ChangelogEntry {
-  return {
-    id: changelog.id,
+    id: getStringValue(changelog?.id),
     name: changelog.name,
     readMoreLink: changelog.readMoreLink,
     title: changelog.title,

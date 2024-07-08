@@ -1,8 +1,7 @@
-import axios from 'axios';
-import { Product } from '@scdp/changelog/types';
-import { ChangelogEntrySummary } from '@scdp/changelog/types';
-import useSWR, { Fetcher } from 'swr';
+import { ChangelogEntrySummary, Product } from '@scdp/changelog/types';
 import { Option } from '@scdp/ui/components';
+import axios from 'axios';
+import useSWR, { Fetcher } from 'swr';
 import { buildProductQuerystring } from '../changelog';
 
 const fetcher: Fetcher<Record<string, ChangelogEntrySummary[]> | null, string> = async (url: string) => await axios.get(url).then((response) => response.data);

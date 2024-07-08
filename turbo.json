@@ -16,6 +16,9 @@
     "test": {
       "cache": false
     },
+    "generate": {
+      "cache": false
+    },
     "start": {
       "dependsOn": ["^build"]
     }

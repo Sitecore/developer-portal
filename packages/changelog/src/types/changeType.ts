@@ -1,4 +1,5 @@
-import { slugify } from '../utils';
+import { GetAllChangetypesQuery } from '../gql/generated/graphql';
+import { getStringValue, slugify } from '../utils/stringUtils';
 
 export type ChangeType = {
   id: string;
@@ -7,18 +8,15 @@ export type ChangeType = {
   type: string;
 };
 
-export type ChangeTypeResults = {
-  total: string;
-  results: ChangeType[];
-};
+export function ParseChangeType(data: GetAllChangetypesQuery): ChangeType[] {
+  if (!data.allChangetype?.results) {
+    return [];
+  }
 
-export function ParseChangeType(data: ChangeTypeResults): ChangeType[] {
-  return data.results.map((x) => {
-    return {
-      name: x.name,
-      changeType: x.changeType,
-      id: x.id,
-      type: slugify(x.name),
-    };
-  });
+  return data.allChangetype.results?.map((x) => ({
+    name: getStringValue(x?.name),
+    changeType: getStringValue(x?.changeType),
+    id: getStringValue(x?.id),
+    type: slugify(getStringValue(x?.name)),
+  }));
 }

@@ -1,0 +1,36 @@
+fragment changelogEntry on Changelog {
+  id
+  name
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  version
+  releaseDate
+  scheduled
+  image {
+    total
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    total
+    results {
+      ...product
+    }
+  }
+  changeType {
+    total
+    results {
+      ...changeType
+    }
+  }
+  status {
+    total
+    results {
+      ...status
+    }
+  }
+}

@@ -1,0 +1,8 @@
+query GetAllChangetypes {
+  allChangetype {
+    total
+    results {
+      ...changeType
+    }
+  }
+}

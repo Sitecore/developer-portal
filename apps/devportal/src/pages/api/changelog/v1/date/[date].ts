@@ -28,7 +28,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
 
   const dateObject = new Date(isoString);
 
-  await changelog.getEntriesByDate(dateObject, false, limit, end).then((response) => {
+  await changelog.getEntriesByDate(dateObject, Number(limit), end).then((response) => {
     res.status(200).json(response);
   });
 };

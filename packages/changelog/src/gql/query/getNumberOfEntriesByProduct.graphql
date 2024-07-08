@@ -1,0 +1,5 @@
+query getNumberOfEntriesByProduct($productId: [ID]!) {
+  changelog: allChangelog(where: { sitecoreProduct: { changelog_ids: $productId } }) {
+    total
+  }
+}
