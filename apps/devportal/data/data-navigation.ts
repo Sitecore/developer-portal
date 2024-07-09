@@ -16,8 +16,104 @@ export const mainNavigation: NavItem[] = [
     url: '/learn',
   },
   {
-    title: 'Docs',
-    url: '/docs',
+    title: 'Documentation',
+    url: 'https://doc.sitecore.com',
+    children: [
+      {
+        title: 'Content',
+        logo: Product.ContentCloud,
+        children: [
+          {
+            title: 'XM Cloud',
+            url: 'https://doc.sitecore.com/xmc',
+            logo: Product.XMCloud,
+          },
+          {
+            title: 'Content Hub',
+            url: 'https://doc.sitecore.com/ch',
+            logo: Product.ContentHub,
+          },
+          {
+            title: 'Search',
+            url: 'https://doc.sitecore.com/search',
+            logo: Product.Search,
+          },
+          {
+            title: 'Content Hub ONE',
+            url: 'https://doc.sitecore.com/ch-one',
+            logo: Product.ContentHubOne,
+          },
+        ],
+      },
+      {
+        title: 'Engagement',
+        logo: Product.EngagementCloud,
+        children: [
+          {
+            title: 'CDP',
+            url: 'https://doc.sitecore.com/cdp',
+            logo: Product.CDP,
+          },
+          {
+            title: 'Personalize',
+            url: 'https://doc.sitecore.com/personalize',
+            logo: Product.Personalize,
+          },
+          {
+            title: 'Send',
+            url: 'https://doc.sitecore.com/send',
+            logo: Product.Send,
+          },
+          {
+            title: 'Connect',
+            url: 'https://doc.sitecore.com/connect',
+            logo: Product.Connect,
+          },
+        ],
+      },
+      {
+        title: 'Commerce',
+        logo: Product.CommerceCloud,
+        children: [
+          {
+            title: 'OrderCloud',
+            url: 'https://doc.sitecore.com/ordercloud',
+            logo: Product.OrderCloud,
+          },
+          {
+            title: 'Discover',
+            url: 'https://doc.sitecore.com/discover',
+            logo: Product.Discover,
+          },
+        ],
+      },
+
+      {
+        title: 'Platform DXP',
+        children: [
+          {
+            title: 'Experience Manager',
+            url: 'https://doc.sitecore.com/xp',
+            logo: Product.ExperienceManager,
+          },
+          {
+            title: 'Experience Platform',
+            url: 'https://doc.sitecore.com/xp',
+            logo: Product.ExperiencePlatform,
+          },
+          {
+            title: 'Experience Commerce',
+            url: 'https://doc.sitecore.com/xp',
+            logo: Product.ExperienceCommerce,
+          },
+          {
+            title: 'Managed Cloud',
+            url: 'https://doc.sitecore.com/xp',
+            logo: Product.ManagedCloud,
+          },
+        ],
+      },
+    ],
   },
   {
     title: 'Community',
@@ -73,6 +169,7 @@ export const mainNavigation: NavItem[] = [
     title: 'Downloads',
     url: '/downloads',
   },
+  /*
   {
     title: 'Solution',
     pathname: '/[solution]',
@@ -232,7 +329,7 @@ export const mainNavigation: NavItem[] = [
       },
     ],
   },
-  /*{
+  {
     title: 'Product',
     pathname: '/[solution]/[product]',
     children: [
@@ -472,7 +569,7 @@ export const mainNavigation: NavItem[] = [
     pathname: '/products',
     children: [
       {
-        title: 'Content Cloud',
+        title: 'Content',
         logo: Product.ContentCloud,
         children: [
           {
@@ -481,19 +578,14 @@ export const mainNavigation: NavItem[] = [
             logo: Product.XMCloud,
           },
           {
+            title: 'Content Hub',
+            url: '/dam-and-content-operations/content-hub',
+            logo: Product.ContentHub,
+          },
+          {
             title: 'Search',
             url: '/content-management/search',
             logo: Product.Search,
-          },
-          {
-            title: 'Content Hub DAM',
-            url: '/dam-and-content-operations/dam',
-            logo: Product.DAM,
-          },
-          {
-            title: 'Content Hub Operations',
-            url: '/dam-and-content-operations/content-hub',
-            logo: Product.ContentOps,
           },
           {
             title: 'Content Hub ONE',
@@ -503,7 +595,7 @@ export const mainNavigation: NavItem[] = [
         ],
       },
       {
-        title: 'Engagement Cloud',
+        title: 'Engagement',
         logo: Product.EngagementCloud,
         children: [
           {
@@ -529,14 +621,9 @@ export const mainNavigation: NavItem[] = [
         ],
       },
       {
-        title: 'Commerce Cloud',
+        title: 'Commerce',
         logo: Product.CommerceCloud,
         children: [
-          {
-            title: 'Discover',
-            url: '/commerce/discover',
-            logo: Product.Discover,
-          },
           {
             title: 'OrderCloud',
             url: '/commerce/ordercloud',

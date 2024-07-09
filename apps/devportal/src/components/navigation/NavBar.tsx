@@ -31,17 +31,17 @@ import {
 } from '@chakra-ui/react';
 import { NavItem, mainNavigation, sitecoreQuickLinks } from '@data/data-navigation';
 import { mdiChevronDown, mdiChevronUp, mdiInformationOutline } from '@mdi/js';
+import { ProductIcon, Slide } from '@scdp/ui/components';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import {ProductIcon, Slide} from '@scdp/ui/components';
 //import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
+import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 import { PreviewModeSwitch } from '../common/PreviewModeSwitch';
 import PreviewSearchInput from '../sitecore-search/PreviewSearchInput';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 import { SearchButton } from './SearchButton';
-import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 
 export type NavigationChildData = {
   title: string;
@@ -157,12 +157,12 @@ const DesktopNav = () => {
       {mainNavigation.map((navItem, key) => (
         <ButtonGroup variant="navigation" orientation="horizontal" spacing="4" mx="2" key={key} as={'li'}>
           <Box key={navItem.title} role="group">
-            {navItem.url ? (
+            {navItem.url && !navItem.children ? (
               <Button key={key} as={NextLink} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath.includes(navItem.url)}>
                 {navItem.title}
               </Button>
             ) : (
-              <Popover>
+              <Popover trigger="hover">
                 {({ isOpen }) => (
                   <>
                     <PopoverTrigger>
@@ -174,9 +174,7 @@ const DesktopNav = () => {
                       <PopoverArrow />
                       <Box width="100%" maxWidth={'5xl'}>
                         <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 2, sm: 2 }} px={5} py={6} p={{ sm: 8 }}>
-                          {navItem.children?.map((child) => (
-                            <DesktopSubNav key={child.title} {...child} />
-                          ))}
+                          {navItem.children?.map((child) => <DesktopSubNav key={child.title} {...child} />)}
                         </SimpleGrid>
                       </Box>
                     </PopoverContent>
