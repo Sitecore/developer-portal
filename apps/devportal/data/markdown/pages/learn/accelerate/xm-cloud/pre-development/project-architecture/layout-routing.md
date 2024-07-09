@@ -8,16 +8,11 @@ hasInPageNav: true
 
 ## Problem
 
-The way a page in XP or XM is componsed has changed over time. Historically, all components on a page were stored in the presentation details for that page, This meant that common components, like headers, navigation, footers, etc... had to be added to each page. To make this easier, presentation was often applied to the Standard Values of the template. This reduced the amount of components on a page and allowed a single place to change common components, mostly.
+When a page is published to Experience Edge, the publish connector generates a dependency graph to make sure that all page items that are affected by a content change are published correctly. This is because publishing a page creates a snapshot of the content and caches that on Experience Edge<sup>*</sup>.  
 
-This solution had a few drawbacks, the most obvious being that presentation inheritance did not always work as expected.
+This dependency graph can grow very large depending on your information architecture and this can cause performance issues when publishing the site.
 
-When Sitecore Experience Accelerator was released, this problem was solved by introducing Page and Partial Desig:w
-ns. This removed the problem of presentation inheritance, and allowed users to create complex page sections (partial designs) that could be reused accross multiple page templates. At run time, the render pipeline merges the presentation of the partial designs. This works well when the composition of the page happens at runtime.
-
-In XM Cloud, a new problem exists. The time a page is rendered doesn't not happen at runtime, it happens when the page is published. Because of this, the publish pipelines need to run the layout service to generate the response to be published to Experience Edge. The response is cached at the edge. This means that Experience Edge can return the layout response very quickly to the web application.
-
-But this also means that any time we make a change to a datasource item that is used on a page, we need to publish the page to Experience Edge. If the datasource item is included in the header or footer partial design, XM Cloud needs to publish _all_ pages that the partial design is used on. This can have a negative impact on publish times if you need to update content stored on the header or footer.
+<sup>*</sup> _This applies to the V1 release of the Experience Edge connector. The V2 connector will publish references to the datasource items, and the layout response will be composed at the edge on request._
 
 ## Solution
 
