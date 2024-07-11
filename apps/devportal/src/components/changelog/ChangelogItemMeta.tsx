@@ -1,7 +1,8 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
 import { usePreview } from '@/src/context/PreviewContext';
-import { Badge, BoxProps, Button, HStack, Hide, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Text, Tooltip, chakra, useColorModeValue } from '@chakra-ui/react';
-import { mdiSquareEditOutline } from '@mdi/js';
+import { getStatusBadgeColor } from '@/src/lib/changelog/changelog';
+import { BoxProps, Button, HStack, Hide, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Tag, Text, Tooltip, chakra, useColorModeValue } from '@chakra-ui/react';
+import { mdiClockOutline, mdiSquareEditOutline } from '@mdi/js';
 import { ChangelogEntry } from '@scdp/changelog/types';
 import { getSlug } from '@scdp/changelog/utils';
 import Image from 'next/image';
@@ -73,22 +74,31 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
 
       <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
 
-      {/* {item.changeTypeName != null ? <Badge colorScheme={colorScheme(item.changeTypeName)}>{item.changeTypeName}</Badge> : <Badge>No changetype defined</Badge>} */}
       {item.changeType.length > 0 &&
         item.changeType.map((changeTypeItem, key) => (
-          <Badge colorScheme={colorScheme(changeTypeItem.name)} key={key}>
+          <Tag colorScheme={colorScheme(changeTypeItem.name)} size="sm" key={key}>
             {changeTypeItem.name}
-          </Badge>
+          </Tag>
         ))}
-      {item.breakingChange && <Badge colorScheme="danger">Breaking change</Badge>}
-
-      {/* {item.status && (
-        <Tooltip label={item.status.description} aria-label={item.status.description}>
-          <Badge colorScheme={getStatusBadgeColor(item.status.identifier)} variant="outline">
-            {item.status.name}
-          </Badge>
+      {item.breakingChange && (
+        <Tag size="sm" colorScheme="warning">
+          Breaking change
+        </Tag>
+      )}
+      {item.scheduled && (
+        <Tooltip label="This functionality has not been released yet" aria-label="Scheduled">
+          <Icon color="neutral" boxSize={5}>
+            <path d={mdiClockOutline} />
+          </Icon>
         </Tooltip>
-      )} */}
+      )}
+      {!item.scheduled && item.status && item.status.identifier == 'in-progress' && (
+        <Tooltip label={item.status.description} aria-label={item.status.description}>
+          <Tag size="sm" colorScheme={getStatusBadgeColor(item.status.identifier)} variant="outline">
+            {item.status.name}
+          </Tag>
+        </Tooltip>
+      )}
     </HStack>
   );
 

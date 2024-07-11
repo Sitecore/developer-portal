@@ -9,12 +9,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
   const changeTypes: string[] = getQueryArray(req.query.changeType);
   const isPreview = req.preview ? true : false;
 
-  const limit: string = getQueryValue(req.query.limit);
+  const limit = getQueryArray(req.query.limit);
   const end = getQueryValue(req.query.end);
 
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  await changelog.getEntriesPaginated(limit, products.join('|'), changeTypes.join('|'), end).then((response) => {
+  await changelog.getEntries({ productId: products.join('|'), changeTypeId: changeTypes.join('|'), pageSize: Number(limit), endCursor: end }).then((response) => {
     res.status(200).json(response);
   });
 };

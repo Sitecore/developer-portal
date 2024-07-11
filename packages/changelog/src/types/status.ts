@@ -1,3 +1,6 @@
+import { GetAllStatusQuery } from '../gql/generated/graphql';
+import { getStringValue } from '../utils/stringUtils';
+
 export type Status = {
   id: string;
   name: string;
@@ -17,13 +20,17 @@ export const DefaultStatus: Status = {
   description: '',
 };
 
-export function ParseStatus(data: StatusResults): Status[] {
-  return data.results.map((x) => {
+export function ParseStatus(data: GetAllStatusQuery): Status[] {
+  if (!data.allStatus?.results) {
+    return [];
+  }
+
+  return data.allStatus?.results.map((x) => {
     return {
-      name: x.name,
-      id: x.id,
-      identifier: x.identifier,
-      description: x.description,
+      name: getStringValue(x?.name),
+      id: getStringValue(x?.id),
+      identifier: getStringValue(x?.identifier),
+      description: getStringValue(x?.description),
     };
   });
 }
