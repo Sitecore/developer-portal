@@ -1,4 +1,8 @@
+import { Hero } from '@/src/components/common';
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { CenteredContent, VerticalGroup } from '@/src/components/helpers';
+import { ButtonLink } from '@/src/components/links';
+import { SocialShare } from '@/src/components/social';
 import { getChangelogCredentials } from '@/src/lib/changelog/changelog';
 import {
   Breadcrumb,
@@ -30,7 +34,6 @@ import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import { Changelog } from '@scdp/changelog';
 import { ChangelogEntry, Product } from '@scdp/changelog/types';
 import { getChangelogEntryUrl, getSlug, slugify } from '@scdp/changelog/utils';
-import { ButtonLink, CenteredContent, Hero, SocialShare, VerticalGroup } from '@scdp/ui/components';
 import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
 import Layout from '@src/layouts/Layout';
@@ -80,12 +83,12 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
           <HStack>
             <Text variant={'sm'}>Powered by</Text>
             <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-            <Image
-                  src={useColorModeValue('https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one', 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one-dark')}
-                  alt="Powered by Content Hub ONE"
-                  width={150}
-                  height={18}
-                />
+              <Image
+                src={useColorModeValue('https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one', 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one-dark')}
+                alt="Powered by Content Hub ONE"
+                width={150}
+                height={18}
+              />
             </Link>
           </HStack>
         </Hero>

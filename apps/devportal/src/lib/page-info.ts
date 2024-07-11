@@ -1,6 +1,6 @@
 // Global
 import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
-import { SITECORE_COMMUNITY_MAX_COUNT, SitecoreCommunityApi, StackExchangeApi, YouTubeApi } from '@scdp/ui/components';
+
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
@@ -8,7 +8,8 @@ import path from 'path';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ParseContent } from '@lib/markdown/mdxParse';
 import { Changelog } from '@scdp/changelog';
-import { SitecoreCommunityContent, SitecoreCommunityEvent } from '@scdp/ui/components';
+
+import { SITECORE_COMMUNITY_MAX_COUNT, SitecoreCommunityApi, SitecoreCommunityContent, SitecoreCommunityEvent, StackExchangeApi, YouTubeApi } from '../components/integrations';
 import { getChangelogCredentials } from './changelog/changelog';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');

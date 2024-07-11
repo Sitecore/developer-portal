@@ -1,8 +1,8 @@
 import { PageInfo, SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import { appendPathToBasePath } from '@src/lib/utils/stringUtil';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import { appendPathToBasePath } from '../../../../../packages/ui/src/lib/utils/stringUtil';
 import useSidebarNav from '../hooks/useSidebarNav';
 
 export interface BreadcrumbNavProps {

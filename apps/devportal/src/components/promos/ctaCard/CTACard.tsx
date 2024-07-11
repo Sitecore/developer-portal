@@ -1,8 +1,8 @@
 import { Button, Card, CardBody, Heading, Link, Text, useColorModeValue } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import { Icon } from '@mdi/react';
+import { ButtonLink } from '@src/components/links';
 import NextLink from 'next/link';
-import { ButtonLink } from '@scdp/ui/components';
 import { CTACardProps } from './types';
 
 export const CTACard = ({ description, href, linkText, title, link2Text, link2href }: CTACardProps): JSX.Element => (

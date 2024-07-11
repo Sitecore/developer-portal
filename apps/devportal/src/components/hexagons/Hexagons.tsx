@@ -1,8 +1,8 @@
 'use client';
 import { Box, Heading, Text, UnorderedList } from '@chakra-ui/react';
+import { CommerceCloud, ContentCloud, EngagementCloud } from '@data/clouds';
+import { CDP, Connect, ContentHubONE, ContentOps, DAM, Discover, OrderCloud, Personalize, Search, Send, XMCloud } from '@data/products';
 import { useState } from 'react';
-import { CommerceCloud, ContentCloud, EngagementCloud } from '../../data/clouds';
-import { CDP, Connect, ContentHubONE, ContentOps, DAM, Discover, OrderCloud, Personalize, Search, Send, XMCloud } from '../../data/products';
 import { HexagonCloud } from './HexagonCloud';
 import { HexagonItem } from './HexagonItem';
 import { HexagonMobileItem } from './HexagonMobileItem';

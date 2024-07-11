@@ -1,13 +1,16 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
-import { ContentSection, Hero, PromoCardProps, PromoList } from '@scdp/ui/components';
+
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import SocialFeeds from '@src/components/common/SocialFeeds';
 import { MarkDownContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import { useRouter } from 'next/router';
+import { Hero } from '../components/common';
+import { ContentSection } from '../components/helpers';
+import { PromoCardProps, PromoList } from '../components/promos';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type DefaultContentPageProps = {

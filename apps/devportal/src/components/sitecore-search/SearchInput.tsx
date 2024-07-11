@@ -1,11 +1,11 @@
 // Global
+import { Product } from '@/src/lib/assets';
 import { Button, FormControl, HStack, Input, InputGroup, InputLeftElement, InputRightElement, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { ProductLogo } from '@scdp/ui/components';
-import { useEngageTracker } from '@scdp/ui/components';
-import { Product } from '@scdp/ui/lib';
+import { ProductLogo } from '../common';
+import { useEngageTracker } from '../integrations';
 
 
 export interface SearchInputProps {

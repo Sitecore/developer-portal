@@ -1,6 +1,7 @@
 import { Box, Card, CardBody, Flex, HStack, Heading, Icon, Link, Skeleton, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { translateDate } from '@scdp/ui/lib';
+
+import { translateDate } from '@/src/lib/utils';
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
 import { SitecoreCommunityContent } from './types';
 

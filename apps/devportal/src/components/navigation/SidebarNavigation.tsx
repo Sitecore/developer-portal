@@ -1,7 +1,7 @@
 import { SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
 import { Box, Button, ButtonGroup, Collapse, HStack, Heading, Hide, Icon, IconButton, Text, Wrap, useDisclosure } from '@chakra-ui/react';
 import { mdiChevronDown, mdiChevronRight, mdiMinus, mdiPlus } from '@mdi/js';
-import { appendPathToBasePath } from '@scdp/ui/lib';
+import { appendPathToBasePath } from '@src/lib/utils';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';

@@ -1,5 +1,5 @@
-import { CloudInfoType } from '../components/hexagons/HexagonTypes';
-import { Product } from '../lib/assets';
+import { CloudInfoType } from '@/src/components/hexagons';
+import { Product } from '@/src/lib/assets';
 
 export const ContentCloud: CloudInfoType = {
   name: 'Content Cloud',

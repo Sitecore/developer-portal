@@ -2,7 +2,7 @@ import { PageInfo, SidebarNavigationConfig } from '@/src/lib/interfaces/page-inf
 import { getItemUrl } from '@/src/lib/sidebarNav';
 import { Card, CardBody, HStack, Heading, Icon, Stack } from '@chakra-ui/react';
 import { mdiArrowLeft, mdiArrowRight, mdiCheckCircleOutline } from '@mdi/js';
-import { ButtonLink } from '@scdp/ui/components';
+import { ButtonLink } from '@src/components/links';
 import useSidebarNav from '../hooks/useSidebarNav';
 
 export interface ArticlePagingProps {

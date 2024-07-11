@@ -1,5 +1,5 @@
 import { Card, CardBody, CardFooter, CardHeader, Flex, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react';
-import { TextLink } from '@scdp/ui/components';
+import { TextLink } from '@src/components/links';
 
 interface NewsletterStoryPartialData {
   copy: string;

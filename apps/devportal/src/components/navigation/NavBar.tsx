@@ -1,5 +1,6 @@
 'use client';
 
+import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/assets';
 import { ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -34,14 +35,13 @@ import { mdiChevronDown, mdiChevronUp, mdiInformationOutline } from '@mdi/js';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import {ProductIcon, Slide} from '@scdp/ui/components';
-//import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 import { PreviewModeSwitch } from '../common/PreviewModeSwitch';
+import ProductIcon from '../common/ProductIcon';
+import { Slide } from '../helpers/Slide';
 import PreviewSearchInput from '../sitecore-search/PreviewSearchInput';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 import { SearchButton } from './SearchButton';
-import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 
 export type NavigationChildData = {
   title: string;

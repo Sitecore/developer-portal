@@ -1,5 +1,5 @@
-import { ProductInfoType } from '../components/hexagons/HexagonTypes';
-import { Product } from '../lib/assets';
+import { ProductInfoType } from '@/src/components/hexagons';
+import { Product } from '@/src/lib/assets';
 import { CommerceCloud, ContentCloud, EngagementCloud } from './clouds';
 
 export const ContentHubONE: ProductInfoType = {
