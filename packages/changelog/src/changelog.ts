@@ -93,6 +93,8 @@ export class Changelog {
       changeTypeIds: changeTypeId?.split('|') ?? [],
     });
 
+    if (response == null) return ParseRawData(response);
+
     return ParseRawData(response.data);
   }
 

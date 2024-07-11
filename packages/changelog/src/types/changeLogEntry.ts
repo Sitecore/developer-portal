@@ -40,8 +40,8 @@ export type ChangelogEntry = ChangelogEntrySummary & {
   image: Media[];
 };
 
-export function ParseRawData(data: GetLatestEntriesQuery): ChangelogEntryList<ChangelogEntry[]> {
-  if (!data.changelog?.results)
+export function ParseRawData(data: GetLatestEntriesQuery | null): ChangelogEntryList<ChangelogEntry[]> {
+  if (data == null || !data.changelog?.results)
     return {
       endCursor: '',
       hasNext: false,
