@@ -19,7 +19,6 @@
     "@graphql-codegen/client-preset": "^4.3.2",
     "@parcel/watcher": "^2.4.1",
     "@scdp/eslint-config": "*",
-    "@scdp/jest-presets": "*",
     "@scdp/typescript-config": "*",
     "@tiptap/core": "latest",
     "@turbo/gen": "^1.13.2",
