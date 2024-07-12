@@ -1,4 +1,5 @@
-import { getCustomEntryByTitleQuery } from './gql/custom/queries';
+import { getCustomEntryByTitleAndDateQuery, SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables } from './gql/custom/getCustomEntryByTitleAndDateQuery';
+import { getCustomEntryByTitleQuery } from './gql/custom/getCustomEntryByTitleQuery';
 import {
   GetAllChangetypesDocument,
   GetAllChangetypesQuery,
@@ -26,7 +27,7 @@ import {
 } from './gql/generated/graphql';
 import { fetchGraphQL } from './lib/common/fetch';
 import { ParseStatus, Status } from './types';
-import { ChangelogEntry, ChangelogEntryList, ParseRawData, parseChangeLogItem } from './types/changeLogEntry';
+import { ChangelogEntry, ChangelogEntryList, parseChangeLogItem, ParseRawData } from './types/changeLogEntry';
 import { ChangeType, ParseChangeType } from './types/changeType';
 import { ChangelogCredentials } from './types/changelog';
 import { ParseProduct, Product } from './types/product';
@@ -42,6 +43,29 @@ export class Changelog {
 
   async getAllEntries(): Promise<ChangelogEntryList<ChangelogEntry[]>> {
     return this.getEntries({ pageSize: 10 });
+  }
+
+  async getEntryByTitleAndDate(entryTitle: string, date: string, productId?: string): Promise<ChangelogEntry> {
+    const day = parseInt(date.substring(0, 2), 10);
+    const month = parseInt(date.substring(2, 4), 10) - 1;
+    const year = parseInt(date.substring(4), 10);
+
+    const parsedDate = new Date(year, month, day);
+
+    const _startDate = new Date(parsedDate);
+    _startDate.setDate(parsedDate.getDate() - 1);
+
+    const _endDate = new Date(parsedDate);
+    _endDate.setDate(parsedDate.getDate() + 1);
+
+    const CustomEntryByTitleDocument = getCustomEntryByTitleAndDateQuery(entryTitle);
+    const response = await fetchGraphQL<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables>(CustomEntryByTitleDocument, this.credentials, this.isPreview, {
+      startDate: _startDate,
+      endDate: _endDate,
+      productId: productId ? [productId] : [],
+    });
+    console.log(productId);
+    return parseChangeLogItem(response.data.data.results[0]);
   }
 
   async getEntryByTitle(entryTitle: string, productId?: string): Promise<ChangelogEntry> {

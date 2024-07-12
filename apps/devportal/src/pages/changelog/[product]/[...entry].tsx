@@ -36,7 +36,7 @@ import {
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import { Changelog } from '@scdp/changelog';
 import { ChangelogEntry, Product } from '@scdp/changelog/types';
-import { getChangelogEntryUrl, getSlug, slugify } from '@scdp/changelog/utils';
+import { getChangelogEntryUrl, getQueryArray, getSlug, slugify } from '@scdp/changelog/utils';
 import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
 import Layout from '@src/layouts/Layout';
@@ -49,7 +49,8 @@ type ChangelogProps = {
 
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
-  const entry = context.params.entry;
+  const entry = getQueryArray(context.params.entry);
+
   const isPreview = context.preview || false;
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
@@ -58,9 +59,8 @@ export async function getServerSideProps(context: any) {
   });
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
-
   try {
-    changelogEntry = await changelog.getEntryByTitle(entry, currentProduct?.id);
+    changelogEntry = entry.length == 2 ? await changelog.getEntryByTitleAndDate(entry[1], entry[0], currentProduct?.id) : await changelog.getEntryByTitle(entry[0], currentProduct?.id);
   } catch {
     return {
       notFound: true,

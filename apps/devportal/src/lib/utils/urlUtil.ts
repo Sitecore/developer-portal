@@ -1,5 +1,6 @@
 import { ChangelogEntry, ChangelogEntrySummary } from '@scdp/changelog/types';
 import { slugify } from '@scdp/changelog/utils';
+import { formatDate } from './dateUtil';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 
@@ -7,7 +8,8 @@ export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEn
   const segments: string[] = [];
 
   segments.push(slugify(entry.productName ?? entry.title));
-  //segments.push(slugify(entry.changeTypeName));
+  // Add date to the URL to prevent conflicts with entries with the same title
+  segments.push(formatDate(entry.releaseDate));
   segments.push(`${slugify(entry.title)}`);
 
   return segments;

@@ -16,3 +16,18 @@ export const translateDateAsYearMonth = (dateString: string): string => {
     year: 'numeric',
   }).format(date);
 };
+
+function padTo2Digits(num: number): string {
+  return num.toString().padStart(2, '0');
+}
+
+export function formatDate(date: Date | string): string {
+  if (typeof date === 'string') {
+    date = new Date(date);
+  }
+  const day = padTo2Digits(date.getDate());
+  const month = padTo2Digits(date.getMonth() + 1); // Months are zero-indexed
+  const year = date.getFullYear();
+
+  return `${day}${month}${year}`;
+}
