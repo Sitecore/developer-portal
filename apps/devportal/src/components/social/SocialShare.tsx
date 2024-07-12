@@ -1,4 +1,4 @@
-import { HStack, Icon, IconButton, Popover, PopoverArrow, PopoverBody, PopoverContent, PopoverTrigger, Tooltip, useClipboard, useToast } from '@chakra-ui/react';
+import { Box, HStack, Icon, IconButton, Popover, PopoverArrow, PopoverBody, PopoverContent, PopoverTrigger, Tooltip, useClipboard, useToast } from '@chakra-ui/react';
 import { mdiCheck, mdiChevronUp, mdiContentCopy } from '@mdi/js';
 import { EmailIcon, EmailShareButton, LinkedinIcon, LinkedinShareButton, RedditIcon, RedditShareButton, TelegramIcon, TelegramShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from 'next-share';
 
@@ -35,17 +35,17 @@ export const SocialShare = ({ title, url }: SocialShareProps): JSX.Element => {
             <HStack gap={4}>
               <WhatsappShareButton url={url} title={title}>
                 <Tooltip label="Share link by Whatsapp" aria-label="Share link by Whatsapp">
-                  <IconButton variant="ghost" aria-label="Share by Whatsapp" icon={<WhatsappIcon size={32} round />} />
+                  <IconButton variant="ghost" aria-label="Share by Whatsapp" icon={<WhatsappIcon size={32} round />} as={Box} />
                 </Tooltip>
               </WhatsappShareButton>
               <TelegramShareButton url={url} title={title}>
                 <Tooltip label="Share link by Telegram" aria-label="Share link by Telegram">
-                  <IconButton variant="ghost" aria-label="Share by Telegram" icon={<TelegramIcon size={32} round />} />
+                  <IconButton variant="ghost" aria-label="Share by Telegram" icon={<TelegramIcon size={32} round />} as={Box} />
                 </Tooltip>
               </TelegramShareButton>
               <RedditShareButton url={url} title={title}>
                 <Tooltip label="Share link by Reddit" aria-label="Share link by Reddit">
-                  <IconButton variant="ghost" aria-label="Share by Reddit" icon={<RedditIcon size={32} round />} />
+                  <IconButton variant="ghost" aria-label="Share by Reddit" icon={<RedditIcon size={32} round />} as={Box} />
                 </Tooltip>
               </RedditShareButton>
             </HStack>
@@ -55,19 +55,19 @@ export const SocialShare = ({ title, url }: SocialShareProps): JSX.Element => {
 
       <EmailShareButton url={url} title={title}>
         <Tooltip label="Share link by email" aria-label="Share link by email">
-          <IconButton variant={'ghost'} aria-label="Share by email" icon={<EmailIcon size={32} round />} />
+          <IconButton variant={'ghost'} aria-label="Share by email" icon={<EmailIcon size={32} round />} as={Box} />
         </Tooltip>
       </EmailShareButton>
 
       <LinkedinShareButton url={url} title={title}>
         <Tooltip label="Share link on LinkedIn" aria-label="Share link on LinkedIn">
-          <IconButton variant={'ghost'} aria-label="Share by email" icon={<LinkedinIcon size={32} round />} />
+          <IconButton variant={'ghost'} aria-label="Share by email" icon={<LinkedinIcon size={32} round />} as={Box} />
         </Tooltip>
       </LinkedinShareButton>
 
       <TwitterShareButton url={url} title={title}>
         <Tooltip label="Share link on Twitter" aria-label="Share link on Twitter">
-          <IconButton variant={'ghost'} aria-label="Share on Twitter" icon={<TwitterIcon size={32} round />} />
+          <IconButton variant={'ghost'} aria-label="Share on Twitter" icon={<TwitterIcon size={32} round />} as={Box} />
         </Tooltip>
       </TwitterShareButton>
 
@@ -90,6 +90,7 @@ export const SocialShare = ({ title, url }: SocialShareProps): JSX.Element => {
           }
           size={'sm'}
           mx={1}
+          as={Box}
         >
           {hasCopied ? 'Copied!' : 'Copy'}
         </IconButton>

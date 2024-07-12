@@ -36,13 +36,7 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
       {item.products != null && item.products?.length > 1 ? (
         <HStack spacing={0}>
           <Popover placement="bottom-start" trigger="click">
-            <PopoverAnchor>
-              {item.products != null && (
-                <Link href={`/changelog/${getSlug(item.products[0].productName)}`} className="">
-                  <ProductIcon product={item.products[0]} />
-                </Link>
-              )}
-            </PopoverAnchor>
+            <PopoverAnchor>{item.products != null && <ProductIcon product={item.products[0]} />}</PopoverAnchor>
             <PopoverTrigger>
               <Button variant="unstyled" size={'sm'} hideBelow={'sm'} ml={2}>
                 + {item.products.length - 1} <Hide below="md">{item.products.length == 1 ? 'other' : 'others'}</Hide>
@@ -65,11 +59,7 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
           </Popover>
         </HStack>
       ) : (
-        item.products != null && (
-          <Link href={`/changelog/${getSlug(item.products[0].productName)}`} className="">
-            <ProductIcon product={item.products[0]} />
-          </Link>
-        )
+        item.products != null && <ProductIcon product={item.products[0]} />
       )}
 
       <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
