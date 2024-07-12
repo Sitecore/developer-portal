@@ -46,11 +46,8 @@ export class Changelog {
   }
 
   async getEntryByTitleAndDate(entryTitle: string, date: string, productId?: string): Promise<ChangelogEntry> {
-    const day = parseInt(date.substring(0, 2), 10);
-    const month = parseInt(date.substring(2, 4), 10) - 1;
-    const year = parseInt(date.substring(4), 10);
-
-    const parsedDate = new Date(year, month, day);
+    const formattedDate = `${date.slice(4, 8)}-${date.slice(2, 4)}-${date.slice(0, 2)}`;
+    const parsedDate = new Date(formattedDate);
 
     const _startDate = new Date(parsedDate);
     _startDate.setDate(parsedDate.getDate() - 1);
@@ -64,7 +61,7 @@ export class Changelog {
       endDate: _endDate,
       productId: productId ? [productId] : [],
     });
-    console.log(productId);
+
     return parseChangeLogItem(response.data.data.results[0]);
   }
 
