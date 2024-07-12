@@ -5,6 +5,9 @@ import { ButtonLink } from '@/src/components/links';
 import { SocialShare } from '@/src/components/social';
 import { getChangelogCredentials } from '@/src/lib/changelog/changelog';
 import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -115,6 +118,18 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     </Heading>
 
                     <ChangelogItemMeta item={changelogEntry} mt={4} />
+                    {changelogEntry.scheduled && (
+                      <Alert colorScheme="neutral" mt={4}>
+                        <AlertIcon />
+                        <AlertDescription>This functionality has not been released yet</AlertDescription>
+                      </Alert>
+                    )}
+                    {!changelogEntry.scheduled && changelogEntry.status && changelogEntry.status.identifier == 'in-progress' && (
+                      <Alert colorScheme="neutral" mt={4}>
+                        <AlertIcon />
+                        <AlertDescription>This functionality currently being deployed and might not be available to all customers yet</AlertDescription>
+                      </Alert>
+                    )}
                   </CardHeader>
                   <CardBody py={0}>
                     {changelogEntry.image.length > 0 && (

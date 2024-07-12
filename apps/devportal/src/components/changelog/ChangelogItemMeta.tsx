@@ -2,7 +2,7 @@
 import { usePreview } from '@/src/context/PreviewContext';
 import { getStatusBadgeColor } from '@/src/lib/changelog/changelog';
 import { BoxProps, Button, HStack, Hide, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Tag, Text, Tooltip, chakra, useColorModeValue } from '@chakra-ui/react';
-import { mdiClockOutline, mdiSquareEditOutline } from '@mdi/js';
+import { mdiSquareEditOutline } from '@mdi/js';
 import { ChangelogEntry } from '@scdp/changelog/types';
 import { getSlug } from '@scdp/changelog/utils';
 import Image from 'next/image';
@@ -86,10 +86,8 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
         </Tag>
       )}
       {item.scheduled && (
-        <Tooltip label="This functionality has not been released yet" aria-label="Scheduled">
-          <Icon color="neutral" boxSize={5}>
-            <path d={mdiClockOutline} />
-          </Icon>
+        <Tooltip label="This functionality is scheduled" aria-label="This functionality is scheduled">
+          <Tag size="sm">Scheduled</Tag>
         </Tooltip>
       )}
       {!item.scheduled && item.status && item.status.identifier == 'in-progress' && (

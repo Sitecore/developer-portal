@@ -71,6 +71,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
               </Modal>
             </>
           )}
+
           <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: item.description }} />
         </CardBody>
         <CardFooter justifyContent={item.readMoreLink ? 'space-between' : 'flex-end'}>

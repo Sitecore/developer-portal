@@ -78,7 +78,7 @@ export function parseChangeLogItem(changelog: any): ChangelogEntry {
     darkIcon: changelog.sitecoreProduct.results[0]?.darkIcon,
     productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
     products: changelog.sitecoreProduct.results ?? null,
-    status: changelog.status.results[0] ? changelog.status.results[0] : DefaultStatus,
+    status: changelog.scheduled == true ? null : changelog.status.results[0] ? changelog.status.results[0] : DefaultStatus,
     changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
   };
 }
