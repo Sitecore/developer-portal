@@ -15,6 +15,9 @@ This is a product update. Sitecore recommends that you upgrade to this release i
  | --- | --- | --- |
  | Platform | Updated the `ChilkatDotNet47.dll` library version to 9.5.0.77. | 615207 |
  | Platform | Added the ability to enable LiveMode in SiteContext in runtime. | 585571 |
+ | Platform | Updated the Sitecore Installation Assistant to version 1.4.2, as part of adding support for the SXP 10.2.2 update release. This tool is available on the SXP 10.2.2 Downloads page in the *Download options for On Premises deployments* section; see *Installation Assistant for XM Scaled* and *Installation Assistant for XP Single*. | N/A |
+ | Platform | Updated the Traefik container image​​ to version 2.11.0. | 615165 |
+ | Platform | Updated the default SQL server version for container deployments - from an older SQl version to SQL 2019; published a new mssql-developer:2019-ltsc2019(ltsc2022) image. | 614529 |
  | Security | Enhanced security in product and 3rd party libraries to reduce potential vulnerabilities. | 594651, 606641, 609758, 615391 |
 
 ## Resolved issues
