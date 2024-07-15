@@ -17,7 +17,7 @@ export async function fetchGraphQL<TResult, TVariables>(document: TypedDocumentS
     console.warn('WARNING: Missing CH ONE endpoint or token');
     return null;
   }
-
+  //console.log('endpoint', endpoint, 'token', token);
   try {
     const response = await axios.post(
       endpoint as string,
@@ -30,6 +30,10 @@ export async function fetchGraphQL<TResult, TVariables>(document: TypedDocumentS
       }
     );
 
+    if (response.data.errors) {
+      console.error('GraphQL Error:', response.data.errors);
+      return null;
+    }
     return response.data;
   } catch (err) {
     console.log(err);
