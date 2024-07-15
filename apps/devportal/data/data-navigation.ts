@@ -601,10 +601,6 @@ export const sitecoreQuickLinks: NavItem = {
       url: 'https://mvp.sitecore.com/',
     },
     {
-      title: 'Sitecore Downloads',
-      url: 'https://dev.sitecore.net/',
-    },
-    {
       title: 'Sitecore Partner Network',
       url: 'https://partners.sitecore.com/',
     },
