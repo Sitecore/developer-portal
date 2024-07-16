@@ -16,7 +16,7 @@ const CustomImage = chakra(Image, {
   shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
 });
 
-export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => {
+export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
   const { isPreview } = usePreview();
 
   const organizationId = process.env.NEXT_PUBLIC_SITECORE_CHONE_ORGANIZATION as string;

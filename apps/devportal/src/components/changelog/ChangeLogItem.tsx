@@ -18,7 +18,7 @@ export type ChangeLogItemProps = {
   loadEntries: () => void;
 };
 
-const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
+const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const entryRef = useRef(null);
 
@@ -44,7 +44,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
               {item.title}
             </Link>
           </Heading>
-          <ChangelogItemMeta item={item} loading={loading} />
+          <ChangelogItemMeta item={item} />
         </CardHeader>
         <CardBody py={0}>
           {item.image.length > 0 && (
