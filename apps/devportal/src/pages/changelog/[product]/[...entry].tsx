@@ -111,13 +111,13 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 {/* The full changelog item */}
                 <Card variant={'unstyled'} mt={8} mb={16}>
                   <CardHeader pb={4}>
-                    <Heading as="h2" fontSize={'1.25rem'} id={getSlug(changelogEntry.title)}>
+                    <Heading as="h2" fontSize={'1.25rem'} id={getSlug(changelogEntry.title)} mb={4}>
                       <Link href={getChangelogEntryUrl(changelogEntry)} title={changelogEntry.title}>
                         {changelogEntry.title}
                       </Link>
                     </Heading>
 
-                    <ChangelogItemMeta item={changelogEntry} mt={4} />
+                    <ChangelogItemMeta item={changelogEntry} />
                     {changelogEntry.scheduled && (
                       <Alert colorScheme="neutral" mt={4}>
                         <AlertIcon />

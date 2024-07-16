@@ -9,7 +9,6 @@ import Image from 'next/image';
 import { ProductIcon } from './ProductIcon';
 
 type ChangelogItemMetaProps = BoxProps & {
-  loading?: boolean;
   item: ChangelogEntry;
 };
 
@@ -32,7 +31,7 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
   };
 
   const MetaInfo = (
-    <HStack {...rest} gap={4}>
+    <HStack gap={4}>
       {item.products != null && item.products?.length > 1 ? (
         <HStack spacing={0}>
           <Popover placement="bottom-start" trigger="click">
