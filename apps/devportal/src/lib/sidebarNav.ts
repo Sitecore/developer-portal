@@ -1,4 +1,4 @@
-import { appendPathToBasePath } from '@scdp/ui/lib';
+import { appendPathToBasePath } from '@src/lib/utils/stringUtil';
 import { SidebarNavigationConfig, SidebarNavigationItem } from './interfaces/page-info';
 
 /**

@@ -1,5 +1,5 @@
 import { ChangeType, ChangelogCredentials, Product } from '@scdp/changelog/types';
-import { Option } from '@scdp/ui/components';
+import { Option } from '@src/components/dropdown';
 import axios from 'axios';
 import useSWR, { Fetcher } from 'swr';
 

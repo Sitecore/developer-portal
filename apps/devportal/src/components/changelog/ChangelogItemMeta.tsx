@@ -1,6 +1,7 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
 import { usePreview } from '@/src/context/PreviewContext';
-import { Badge, BoxProps, Button, HStack, Hide, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Text, Tooltip, chakra, useColorModeValue } from '@chakra-ui/react';
+import { getStatusBadgeColor } from '@/src/lib/changelog/changelog';
+import { BoxProps, Button, HStack, Hide, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Tag, Text, Tooltip, chakra, useColorModeValue } from '@chakra-ui/react';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { ChangelogEntry } from '@scdp/changelog/types';
 import { getSlug } from '@scdp/changelog/utils';
@@ -8,7 +9,6 @@ import Image from 'next/image';
 import { ProductIcon } from './ProductIcon';
 
 type ChangelogItemMetaProps = BoxProps & {
-  loading?: boolean;
   item: ChangelogEntry;
 };
 
@@ -16,7 +16,7 @@ const CustomImage = chakra(Image, {
   shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
 });
 
-export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => {
+export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
   const { isPreview } = usePreview();
 
   const organizationId = process.env.NEXT_PUBLIC_SITECORE_CHONE_ORGANIZATION as string;
@@ -31,17 +31,11 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
   };
 
   const MetaInfo = (
-    <HStack {...rest} gap={4}>
+    <HStack gap={4}>
       {item.products != null && item.products?.length > 1 ? (
         <HStack spacing={0}>
           <Popover placement="bottom-start" trigger="click">
-            <PopoverAnchor>
-              {item.products != null && (
-                <Link href={`/changelog/${getSlug(item.products[0].productName)}`} className="">
-                  <ProductIcon product={item.products[0]} />
-                </Link>
-              )}
-            </PopoverAnchor>
+            <PopoverAnchor>{item.products != null && <ProductIcon product={item.products[0]} />}</PopoverAnchor>
             <PopoverTrigger>
               <Button variant="unstyled" size={'sm'} hideBelow={'sm'} ml={2}>
                 + {item.products.length - 1} <Hide below="md">{item.products.length == 1 ? 'other' : 'others'}</Hide>
@@ -64,31 +58,34 @@ export const ChangelogItemMeta = ({ item, ...rest }: ChangelogItemMetaProps) => 
           </Popover>
         </HStack>
       ) : (
-        item.products != null && (
-          <Link href={`/changelog/${getSlug(item.products[0].productName)}`} className="">
-            <ProductIcon product={item.products[0]} />
-          </Link>
-        )
+        item.products != null && <ProductIcon product={item.products[0]} />
       )}
 
       <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
 
-      {/* {item.changeTypeName != null ? <Badge colorScheme={colorScheme(item.changeTypeName)}>{item.changeTypeName}</Badge> : <Badge>No changetype defined</Badge>} */}
       {item.changeType.length > 0 &&
         item.changeType.map((changeTypeItem, key) => (
-          <Badge colorScheme={colorScheme(changeTypeItem.name)} key={key}>
+          <Tag colorScheme={colorScheme(changeTypeItem.name)} size="sm" key={key}>
             {changeTypeItem.name}
-          </Badge>
+          </Tag>
         ))}
-      {item.breakingChange && <Badge colorScheme="danger">Breaking change</Badge>}
-
-      {/* {item.status && (
-        <Tooltip label={item.status.description} aria-label={item.status.description}>
-          <Badge colorScheme={getStatusBadgeColor(item.status.identifier)} variant="outline">
-            {item.status.name}
-          </Badge>
+      {item.breakingChange && (
+        <Tag size="sm" colorScheme="warning">
+          Breaking change
+        </Tag>
+      )}
+      {item.scheduled && (
+        <Tooltip label="This functionality is scheduled" aria-label="This functionality is scheduled">
+          <Tag size="sm">Scheduled</Tag>
         </Tooltip>
-      )} */}
+      )}
+      {!item.scheduled && item.status && item.status.identifier == 'in-progress' && (
+        <Tooltip label={item.status.description} aria-label={item.status.description}>
+          <Tag size="sm" colorScheme={getStatusBadgeColor(item.status.identifier)} variant="outline">
+            {item.status.name}
+          </Tag>
+        </Tooltip>
+      )}
     </HStack>
   );
 

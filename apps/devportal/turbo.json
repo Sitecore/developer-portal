@@ -1,6 +1,6 @@
 {
   "extends": ["//"],
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**"],
@@ -20,7 +20,12 @@
         "SITECORE_CHONE_AUTH_TOKEN_DELIVERY",
         "SITECORE_CHONE_ENDPOINT_PREVIEW",
         "SITECORE_CHONE_AUTH_TOKEN_PREVIEW",
-        "NEXT_PUBLIC_PUBLIC_URL"
+        "NEXT_PUBLIC_PUBLIC_URL",
+        "NEXT_PUBLIC_SITECORE_CDP_CLIENT_KEY",
+        "NEXT_PUBLIC_SITECORE_CDP_POS",
+        "NEXT_PUBLIC_SITECORE_CDP_COOKIE_DOMAIN",
+        "NEXT_PUBLIC_SITECORE_CDP_TARGETURL",
+        "NEXT_PUBLIC_YOUTUBE_API_KEY"
       ]
     }
   }

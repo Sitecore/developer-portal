@@ -1,0 +1,6 @@
+fragment status on Status {
+  id
+  name
+  description
+  identifier
+}

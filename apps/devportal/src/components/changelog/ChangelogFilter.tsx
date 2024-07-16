@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Container, Skeleton, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
 import { Product } from '@scdp/changelog/types';
-import { MultiSelect, Option } from '@scdp/ui/components';
+import { MultiSelect, Option } from '@src/components/dropdown';
 import { useState } from 'react';
 
 type ChangelogFilterProps = {

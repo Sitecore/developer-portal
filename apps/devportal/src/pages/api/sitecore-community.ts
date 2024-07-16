@@ -1,4 +1,4 @@
-import { ContentType, ForumOption, SitecoreCommunityApi, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption } from '@scdp/ui/components';
+import { ContentType, ForumOption, SitecoreCommunityApi, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption } from '@src/components/integrations';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const getQueryValue = (query: string | string[] | undefined): string => {

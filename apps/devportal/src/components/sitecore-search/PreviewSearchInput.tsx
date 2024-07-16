@@ -24,8 +24,8 @@ import {
   Text,
   Tooltip,
 } from '@chakra-ui/react';
-import { ProductLogo } from '@scdp/ui/components';
-import { Product } from '@scdp/ui/lib';
+
+import { Product } from '@/src/lib/assets';
 import type { PreviewSearchInitialState } from '@sitecore-search/react';
 import { WidgetDataType, trackEntityPageViewEvent, usePreviewSearch, widget } from '@sitecore-search/react';
 import { Presence, PreviewSearch } from '@sitecore-search/ui';
@@ -33,6 +33,7 @@ import { useRouter } from 'next/router';
 import type { ChangeEvent, SyntheticEvent } from 'react';
 import { useCallback } from 'react';
 import { FaSearch } from 'react-icons/fa';
+import ProductLogo from '../common/ProductLogo';
 
 type ArticleModel = {
   id: string;

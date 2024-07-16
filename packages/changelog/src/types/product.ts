@@ -1,5 +1,6 @@
-import { GetProductLogoByVariant, Product as ProductLogo, Type, Variant } from '@scdp/ui/lib';
-import { SitecoreProductResults } from './sitecoreProduct';
+//import { GetProductLogoByVariant, Product as ProductLogo, Type, Variant } from '@src/lib';
+import { GetAllProductsQuery } from '../gql/generated/graphql';
+import { getStringValue } from '../utils';
 
 export type Product = {
   id: string;
@@ -9,17 +10,19 @@ export type Product = {
   hasEntries: boolean;
 };
 
-export function ParseProduct(data: SitecoreProductResults): Product[] {
-  const darkDefaultLogo = GetProductLogoByVariant(ProductLogo.Default, Variant.Dark, Type.IconOnly);
-  const lightDefaultLogo = GetProductLogoByVariant(ProductLogo.Default, Variant.Light, Type.IconOnly);
+export function ParseProduct(data: GetAllProductsQuery): Product[] {
+  if (!data.allSitecoreProduct?.results) {
+    console.log('No products found');
+    return [];
+  }
 
-  return data.results.map((x) => {
+  return data.allSitecoreProduct.results.map((x) => {
     return {
-      id: x.id,
-      name: x.productName,
-      description: x.productDescription,
-      lightIcon: x.lightIcon != null ? x.lightIcon : lightDefaultLogo,
-      darkIcon: x.darkIcon != null ? x.darkIcon : darkDefaultLogo,
+      id: getStringValue(x?.id),
+      name: getStringValue(x?.productName),
+      description: getStringValue(x?.productDescription),
+      lightIcon: getStringValue(x?.lightIcon),
+      darkIcon: getStringValue(x?.darkIcon),
       hasEntries: false,
     };
   });

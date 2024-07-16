@@ -1,5 +1,5 @@
 import { ChangelogEntry } from '@scdp/changelog/types';
-import { ForumOption, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption, StackExchangeQuestion, YouTubeVideo } from '@scdp/ui/components';
+import { ForumOption, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption, StackExchangeQuestion, YouTubeVideo } from '@src/components/integrations';
 import { ContentHeading } from './contentheading';
 
 type PageInfoCore = {

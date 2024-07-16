@@ -4,9 +4,8 @@
     "lib": ["dom", "ES2015"],
     "types": ["jest", "node"],
     "outDir": "dist",
-    "rootDir": "src",
-
+    "rootDir": "src"
   },
-  "include": ["src", "globals.d.ts"],
+  "include": ["src", "globals.d.ts", "../../apps/devportal/src/lib/utils/urlUtil.ts"],
   "exclude": ["node_modules", "dist", "build"]
 }

@@ -6,25 +6,17 @@ import updatesListData from '@data/data-updates';
 import getHelpCta from '@data/promos/get-help';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getPageInfo } from '@lib/page-info';
-import {
-  CTACard,
-  CategoryTileList,
-  CenteredContent,
-  GenericList,
-  Hero,
-  Hexagons,
-  SitecoreCommunityBlog,
-  SitecoreCommunityEvents,
-  SitecoreCommunityNews,
-  SitecoreCommunityQuestions,
-  StackExchangeFeed,
-  VerticalGroup,
-  YouTubeFeed,
-} from '@scdp/ui/components';
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import Layout from '@src/layouts/Layout';
 import { NextPage } from 'next';
+import Hero from '../components/common/Hero';
 import { TrackPageView } from '../components/engagetracker/TrackPageView';
+import { CenteredContent } from '../components/helpers/CenteredContent';
+import { VerticalGroup } from '../components/helpers/VerticalGroup';
+import { Hexagons } from '../components/hexagons';
+import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '../components/integrations';
+import { CategoryTileList, GenericList } from '../components/lists';
+import { CTACard } from '../components/promos';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');

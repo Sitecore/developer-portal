@@ -1,4 +1,4 @@
-import { Product } from '@scdp/ui/lib';
+import { Product } from '@/src/lib/assets';
 
 export interface NavItem {
   title: string;
