@@ -18,9 +18,4 @@ export const ProductLogo = ({ product, alt, width, height }: ProductLogoProps): 
   return <Image src={url} alt={alt ? alt : `${info.name} logo`} width={width} height={height} />;
 };
 
-ProductLogo.defaultProps = {
-  alt: '',
-  className: '',
-};
-
 export default ProductLogo;
