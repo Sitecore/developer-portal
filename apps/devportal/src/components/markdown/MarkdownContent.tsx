@@ -8,6 +8,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
 import { Article, Download, Group, LinkItem, Repository } from '../cards';
+import { GroupItem } from '../cards/Group';
 import { Row } from '../helpers';
 import { ImageModal } from '../images';
 import { ButtonLink, TextLink } from '../links';
@@ -50,6 +51,7 @@ function CustomMdx(children: string) {
         },
         h2: (props) => <Heading as={'h2'} {...props} />,
         h3: (props) => <Heading as={'h3'} {...props} />,
+        p: (props) => <Text variant={'large'} {...props} />,
         VideoPromo: VideoPromo,
         // CtaCard: CTACard,
         Promo: Promo,
@@ -60,6 +62,7 @@ function CustomMdx(children: string) {
         Link: LinkItem,
         Download: Download,
         Group: Group,
+        GroupItem: GroupItem,
         Card: Card,
         CardHeader: CardHeader,
         CardBody: CardBody,
