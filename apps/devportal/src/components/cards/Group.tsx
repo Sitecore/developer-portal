@@ -4,7 +4,7 @@ import styles from '../markdown/MarkdownContent.module.css'; /* eslint-disable r
 
 type GroupProps = CardProps & {
   title: string;
-  description: string;
+  description?: string;
   columns?: number;
   children: any;
 };
@@ -15,7 +15,7 @@ export const Group = ({ title, description, columns = 2, children }: GroupProps)
       <Heading as="h2" size={'4xl'}>
         {title}
       </Heading>
-      <Text variant="large">{description}</Text>
+      {description && <Text variant="large">{description}</Text>}
 
       <SimpleGrid columns={{ base: 1, lg: columns }} spacing={{ base: 2, md: 10 }} my={4}>
         {children}
