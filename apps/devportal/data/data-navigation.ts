@@ -477,27 +477,22 @@ export const mainNavigation: NavItem[] = [
         children: [
           {
             title: 'XM Cloud',
-            url: '/content-management/xm-cloud',
+            url: '/products/xm-cloud',
             logo: Product.XMCloud,
           },
           {
             title: 'Search',
-            url: '/content-management/search',
+            url: '/products/search',
             logo: Product.Search,
           },
           {
-            title: 'Content Hub DAM',
-            url: '/dam-and-content-operations/dam',
-            logo: Product.DAM,
-          },
-          {
-            title: 'Content Hub Operations',
-            url: '/dam-and-content-operations/content-hub',
-            logo: Product.ContentOps,
+            title: 'Content Hub',
+            url: '/products/content-hub',
+            logo: Product.ContentHub,
           },
           {
             title: 'Content Hub ONE',
-            url: '/content-management/content-hub-one',
+            url: '/products/content-hub-one',
             logo: Product.ContentHubOne,
           },
         ],
@@ -508,22 +503,22 @@ export const mainNavigation: NavItem[] = [
         children: [
           {
             title: 'CDP',
-            url: '/customer-data-management/cdp',
+            url: '/products/cdp',
             logo: Product.CDP,
           },
           {
             title: 'Personalize',
-            url: '/personalization-testing/personalize',
+            url: '/products/personalize',
             logo: Product.Personalize,
           },
           {
             title: 'Send',
-            url: '/marketing-automation/send',
+            url: '/products/send',
             logo: Product.Send,
           },
           {
             title: 'Connect',
-            url: '/integrations/connect',
+            url: '/products/connect',
             logo: Product.Connect,
           },
         ],
@@ -534,12 +529,12 @@ export const mainNavigation: NavItem[] = [
         children: [
           {
             title: 'Discover',
-            url: '/commerce/discover',
+            url: '/products/discover',
             logo: Product.Discover,
           },
           {
             title: 'OrderCloud',
-            url: '/commerce/ordercloud',
+            url: '/products/ordercloud',
             logo: Product.OrderCloud,
           },
         ],
@@ -550,22 +545,22 @@ export const mainNavigation: NavItem[] = [
         children: [
           {
             title: 'Experience Manager',
-            url: '/content-management/experience-manager',
+            url: '/products/experience-platform/xm',
             logo: Product.ExperienceManager,
           },
           {
             title: 'Experience Platform',
-            url: '/marketing-automation/experience-platform',
+            url: '/products/experience-platform',
             logo: Product.ExperiencePlatform,
           },
           {
             title: 'Experience Commerce',
-            url: '/commerce/experience-commerce',
+            url: '/products/experience-commerce',
             logo: Product.ExperienceCommerce,
           },
           {
             title: 'Managed Cloud',
-            url: '/devops/managed-cloud',
+            url: '/products/managed-cloud',
             logo: Product.ManagedCloud,
           },
         ],

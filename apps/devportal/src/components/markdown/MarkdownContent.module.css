@@ -16,3 +16,7 @@
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
+
+.chakra-card__body .chakra-heading {
+  margin-top: 0 !important;
+}

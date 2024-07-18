@@ -10,7 +10,7 @@ export type ProductLogoProps = {
   style?: string;
 };
 
-export const ProductIcon = ({ product, width = '24px', height = '24px', alt, variant, ...rest }: ProductLogoProps): JSX.Element => {
+export const ProductIcon = ({ product, width = '24px', height = '24px', alt = '', variant, ...rest }: ProductLogoProps): JSX.Element => {
   let url;
 
   if (variant) {
@@ -22,14 +22,9 @@ export const ProductIcon = ({ product, width = '24px', height = '24px', alt, var
   }
   return (
     <Box width={width} height={height} position={'relative'}>
-      <Image src={url} alt={alt != null ? alt : ''} fill {...rest} style={{ objectFit: 'contain' }} sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw" />
+      <Image src={url} alt={alt} fill {...rest} style={{ objectFit: 'contain' }} sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw" />
     </Box>
   );
-};
-
-ProductIcon.defaultProps = {
-  alt: '',
-  className: '',
 };
 
 export default ProductIcon;
