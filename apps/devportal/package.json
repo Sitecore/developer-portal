@@ -39,6 +39,7 @@
     "@sitecore-search/ui": "^2.5.2",
     "@sitecore/engage": "^1.4.3",
     "@sitecore/blok-theme": "^1.1.11",
+    "@scdp/changelog": "*",
     "@vercel/edge-config": "^1.1.0",
     "@vercel/og": "^0.6.2",
     "axios": "^1.6.8",
