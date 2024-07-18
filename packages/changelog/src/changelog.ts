@@ -95,7 +95,7 @@ export class Changelog {
   async getEntriesByProduct(productId: string): Promise<ChangelogEntryList<ChangelogEntry[]>> {
     const response = await fetchGraphQL<SearchByProductQuery, SearchByProductQueryVariables>(SearchByProductDocument, this.credentials, this.isPreview, {
       date: new Date(),
-      productId: productId,
+      productId: [productId],
     });
 
     return ParseRawData(response.data);
