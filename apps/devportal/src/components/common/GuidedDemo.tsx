@@ -1,4 +1,4 @@
-import { AspectRatio, Button, CardProps, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+import { AspectRatio, Box, Button, CardProps, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 import { Product, Variant } from '../../lib/assets';
 import ProductIcon from './ProductIcon';
 
@@ -12,8 +12,10 @@ export const GuidedDemo = ({ demoId, linkText, productName, productLogo }: Guide
   const { isOpen, onOpen, onClose } = useDisclosure();
   const product: Product = Product[productLogo as keyof typeof Product];
   return (
-    <>
-      <Button onClick={onOpen}>{linkText ?? 'Launch guided tour'}</Button>
+    <Box width="25%">
+      <Button onClick={onOpen} mt={4}>
+        {linkText ?? 'Launch guided tour'}
+      </Button>
 
       <Modal isCentered isOpen={isOpen} onClose={onClose} size="8xl">
         <ModalOverlay backdropFilter="blur(10px)" />
@@ -32,6 +34,6 @@ export const GuidedDemo = ({ demoId, linkText, productName, productLogo }: Guide
           </ModalBody>
         </ModalContent>
       </Modal>
-    </>
+    </Box>
   );
 };
