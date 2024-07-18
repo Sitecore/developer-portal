@@ -600,7 +600,7 @@ export const mainNavigation: NavItem[] = [
         children: [
           {
             title: 'CDP',
-            url: '/products/cdp',
+            url: '/products/customer-data-platform',
             logo: Product.CDP,
           },
           {
@@ -690,10 +690,6 @@ export const sitecoreQuickLinks: NavItem = {
     {
       title: 'Sitecore MVP Program',
       url: 'https://mvp.sitecore.com/',
-    },
-    {
-      title: 'Sitecore Downloads',
-      url: 'https://dev.sitecore.net/',
     },
     {
       title: 'Sitecore Partner Network',
