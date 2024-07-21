@@ -81,6 +81,38 @@ NEXT_PUBLIC_SITECORE_CDP_POS=
 
 \_Note: The site will still function if the keys are missing or left blank.
 
+#### CEC configuration
+
+The account that will be used must have an initial configuration that needs to be made on CEC:
+
+##### Sources
+
+Information sources must be entered and processed in CEC, to populate the content catalog.
+
+##### Suggestion Blocks
+
+Suggestions blocks must have a field named `name_suggester` (this needs to be configured for the `preview search widget`).
+The following picture shows a sample configuration:
+
+![Suggestion Blocks](apps\devportal\public\images\CEC-Sorting_Option.png)
+
+##### Sorting options
+
+Sorting options must include `suggested` criteria pre-configured. You can provide display name as per your requirements. The picture shows how it should look on CEC:
+
+![Sorting options](apps\devportal\public\images\CEC-Sorting_Option.png)
+
+Remember to reindex the relevant sources after configuring a new sorting option.
+
+##### Pre configured widgets
+
+The account must have the following widgets created before:
+
+| Name                                 | ID        | Type             | Description                                                                                                                  | Used in                         |
+| ------------------------------------ | --------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| [Search Results Page] Search Results | `rfkid_7` | `Search Results` | Search results widget. Will include a grid with the results together with the avility to filter results by different facets. | Search Results Page (`/search`) |
+| Preview Search                       | `rfkid_6` | `Preview Search` | It is an input that does a quick search over the content. It is included on the page header.                                 | Every page                      |
+
 ## Getting Started
 
 1. Install [Node.js](https://nodejs.org/en/), we recommend the LTS version.
@@ -109,8 +141,8 @@ NEXT_PUBLIC_SITECORE_CDP_POS=
 
 (For more information on populating environment variables see section **Environment Variables** above.)
 
-5.  Run `npm run dev` to start the development server.
-6.  Open the **http://localhost:3000** in your browser to see the result!
+5. Run `npm run dev` to start the development server.
+6. Open the **<http://localhost:3000>** in your browser to see the result!
 
 ## Contributions
 
