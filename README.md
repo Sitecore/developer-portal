@@ -57,7 +57,7 @@ _Note: The site will still function without the above keys. The components that 
 
 ---
 
-To enable search the following environment variables are required:
+To enable search the following environment variables (first three) are required:
 
 ```
 NEXT_PUBLIC_SEARCH_APP_API_KEY=
@@ -94,13 +94,13 @@ Information sources must be entered and processed in CEC, to populate the conten
 Suggestions blocks must have a field named `name_suggester` (this needs to be configured for the `preview search widget`).
 The following picture shows a sample configuration:
 
-![Suggestion Blocks](apps\devportal\public\images\CEC-Sorting_Option.png)
+<img src="apps\devportal\public\images\CEC-Suggestion_Block.PNG" title="Suggestion Blocks" alt="Suggestion Blocks" />
 
 ##### Sorting options
 
 Sorting options must include `suggested` criteria pre-configured. You can provide display name as per your requirements. The picture shows how it should look on CEC:
 
-![Sorting options](apps\devportal\public\images\CEC-Sorting_Option.png)
+<img src="apps\devportal\public\images\CEC-Sorting_Option.PNG" title="Sorting options" alt="Sorting options" />
 
 Remember to reindex the relevant sources after configuring a new sorting option.
 
