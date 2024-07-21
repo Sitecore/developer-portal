@@ -1,11 +1,14 @@
+import { Hero } from '@/src/components/common';
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { CenteredContent, VerticalGroup } from '@/src/components/helpers';
+import { ButtonLink } from '@/src/components/links';
 import { getChangelogCredentials } from '@/src/lib/changelog/changelog';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
-import { ButtonLink, CenteredContent, Hero, Option, VerticalGroup } from '@scdp/ui/components';
+import { Option } from '@src/components/dropdown';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';

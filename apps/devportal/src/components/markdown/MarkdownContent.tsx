@@ -3,10 +3,17 @@ import { PagePartialGroup, PartialData } from '@lib/interfaces/page-info';
 import { mdiSquareEditOutline } from '@mdi/js';
 import { Icon } from '@mdi/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
-import { Article, ButtonLink, Download, Group, ImageModal, LinkItem, NewsletterStory, Promo, Repository, Row, TextLink, VideoPromo, YouTube } from '@scdp/ui/components';
+
 import { MDXRemote } from 'next-mdx-remote';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
+import { Article, Download, Group, LinkItem, Repository } from '../cards';
+import { Row } from '../helpers';
+import { ImageModal } from '../images';
+import { ButtonLink, TextLink } from '../links';
+import { NewsletterStory } from '../newsletter';
+import { Promo, VideoPromo } from '../promos';
+import { YouTube } from '../video';
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 import { MarkdownIntro } from './MarkdownIntro';
 

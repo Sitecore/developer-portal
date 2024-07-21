@@ -1,16 +1,14 @@
 import communityListData from '@/data/data-community-list';
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
+import { CTACard, CTACardProps, PromoCardProps, PromoList } from '@src/components/promos';
 import Layout from '@src/layouts/Layout';
-import { Hero } from '@scdp/ui/components';
-import { CenteredContent, VerticalGroup } from '@scdp/ui/components';
-import { StackExchangeFeed, YouTubeFeed } from '@scdp/ui/components';
-import { SitecoreCommunityNews, SitecoreCommunityQuestions } from '@scdp/ui/components';
-import { GenericList } from '@scdp/ui/components';
+import { Hero } from '../components/common';
+import { CenteredContent, VerticalGroup } from '../components/helpers';
+import { SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '../components/integrations';
+import { GenericList } from '../components/lists';
 
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { CTACard, CTACardProps, PromoCardProps } from '@scdp/ui/components';
-import {PromoList} from '@scdp/ui/components';
 
 type SocialPageProps = {
   pageInfo: PageInfo;

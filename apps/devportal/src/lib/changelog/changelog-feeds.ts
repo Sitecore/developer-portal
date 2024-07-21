@@ -1,6 +1,6 @@
-import { Feed } from 'feed';
 import { ChangelogEntry, ChangelogEntryList } from '@scdp/changelog/types';
 import { getChangelogEntryUrl } from '@scdp/changelog/utils';
+import { Feed } from 'feed';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 
@@ -13,7 +13,7 @@ export function CreateFeed(changelogEntryList: ChangelogEntryList<ChangelogEntry
     language: 'en', // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
     image: `${publicUrl}/image.png`,
     favicon: `${publicUrl}/favicon.ico`,
-    copyright: 'All rights reserved 2023, Sitecore',
+    copyright: 'All rights reserved 2024, Sitecore',
     generator: 'Feed for Node.js',
     author: {
       name: 'Sitecore',

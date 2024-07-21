@@ -1,4 +1,4 @@
-import { Product } from '@scdp/ui/lib';
+import { Product } from '@/src/lib/assets';
 
 export interface NavItem {
   title: string;
@@ -599,10 +599,6 @@ export const sitecoreQuickLinks: NavItem = {
     {
       title: 'Sitecore MVP Program',
       url: 'https://mvp.sitecore.com/',
-    },
-    {
-      title: 'Sitecore Downloads',
-      url: 'https://dev.sitecore.net/',
     },
     {
       title: 'Sitecore Partner Network',

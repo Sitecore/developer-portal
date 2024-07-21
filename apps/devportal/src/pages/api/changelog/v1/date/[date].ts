@@ -5,29 +5,7 @@ import { ChangelogEntry, ChangelogEntryList } from '@scdp/changelog/types';
 import { getQueryArray, getQueryValue } from '@scdp/changelog/utils';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
-//   const date: string[] = getQueryArray(req.query.date);
-//   const isPreview = req.preview ? true : false;
-
-//   const firstDate = date[0];
-//   if (!firstDate || isNaN(Date.parse(firstDate))) {
-//     res.status(500);
-//     return;
-//   } else {
-//     const changelog = new Changelog(getChangelogCredentials(), isPreview);
-//     const items = await changelog.getEntriesByDate(new Date(firstDate));
-
-//     res.status(200).json(items);
-//     res.end();
-//   }
-//   res.end();
-// };
-
-// export default handler;
-
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
-  const products: string[] = getQueryArray(req.query.product);
-  const changeTypes: string[] = getQueryArray(req.query.changeType);
   const isPreview = req.preview ? true : false;
   const date: string[] = getQueryArray(req.query.date);
   const limit: string = getQueryValue(req.query.limit);
@@ -48,7 +26,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
 
   const dateObject = new Date(isoString);
 
-  await changelog.getEntriesByDate(dateObject, false, limit, end).then((response) => {
+  await changelog.getEntriesByDate(dateObject, Number(limit), end).then((response) => {
     res.status(200).json(response);
   });
 };

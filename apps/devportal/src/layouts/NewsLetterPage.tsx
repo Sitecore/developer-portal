@@ -1,8 +1,10 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
 import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
-import { CenteredContent, Hero, TextLink, VerticalGroup } from '@scdp/ui/components';
 import Layout from '@src/layouts/Layout';
+import { Hero } from '../components/common';
+import { CenteredContent, VerticalGroup } from '../components/helpers';
+import { TextLink } from '../components/links';
 import { DecoratedMarkdown, RenderContent } from '../components/markdown/MarkdownContent';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 

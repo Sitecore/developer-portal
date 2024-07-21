@@ -1,10 +1,14 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, Stack, Text } from '@chakra-ui/react';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
-import { CenteredContent, Hero, PromoCardProps, PromoList, TextLink, VerticalGroup } from '@scdp/ui/components';
+
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
+import { Hero } from '../components/common';
+import { CenteredContent, VerticalGroup } from '../components/helpers';
+import { TextLink } from '../components/links';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
+import { PromoCardProps, PromoList } from '../components/promos';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ChildOverviewPageProps = {

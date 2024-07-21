@@ -2,7 +2,7 @@ import { Badge, Box, Grid, GridItem, HStack, Heading, Hide, Image, Stack, StackD
 import { SearchResultsInitialState, WidgetDataType, trackEntityPageViewEvent, useSearchResults, widget } from '@sitecore-search/react';
 //import Image from 'next/image';
 import { getColorScheme } from '@/src/lib/search';
-import { Loading } from '@scdp/ui/components';
+import { Loading } from '../common';
 import QuerySummary from './QuerySummary';
 import SearchFacets from './SearchFacets';
 import SearchPagination from './SearchPagination';

@@ -1,5 +1,5 @@
 import { Box, Center, Heading, Image, Stack, Text } from '@chakra-ui/react';
-import { ButtonLink } from '@scdp/ui/components';
+import { ButtonLink } from '../components/links';
 import Layout from '../layouts/Layout';
 
 export default function Custom500() {

@@ -1,13 +1,13 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Center, Heading, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
 //import Image from 'next/image';
+import { ChangelogEntry } from '@scdp/changelog/types';
+import { getChangelogEntryUrl, getSlug } from '@scdp/changelog/utils';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
-import { ChangelogEntry } from '@scdp/changelog/types';
-import { getSlug } from '@scdp/changelog/utils';
-import { getChangelogEntryUrl } from '@scdp/changelog/utils';
-
-import { Loading, ButtonLink, SocialShare } from '@scdp/ui/components';
+import { Loading } from '../common';
+import { ButtonLink } from '../links';
+import { SocialShare } from '../social';
 import { ChangelogItemMeta } from './ChangelogItemMeta';
 
 export type ChangeLogItemProps = {
@@ -18,7 +18,7 @@ export type ChangeLogItemProps = {
   loadEntries: () => void;
 };
 
-const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
+const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const entryRef = useRef(null);
 
@@ -44,7 +44,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
               {item.title}
             </Link>
           </Heading>
-          <ChangelogItemMeta item={item} loading={loading} />
+          <ChangelogItemMeta item={item} />
         </CardHeader>
         <CardBody py={0}>
           {item.image.length > 0 && (
@@ -71,6 +71,7 @@ const ChangeLogItem = ({ item, loading, loadEntries, isLast, isMore }: ChangeLog
               </Modal>
             </>
           )}
+
           <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: item.description }} />
         </CardBody>
         <CardFooter justifyContent={item.readMoreLink ? 'space-between' : 'flex-end'}>

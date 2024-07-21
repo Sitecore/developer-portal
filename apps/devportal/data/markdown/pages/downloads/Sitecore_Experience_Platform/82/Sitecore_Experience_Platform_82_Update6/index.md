@@ -8,7 +8,7 @@ Sitecore 8.2 builds on the core functionality released on the 8.x platform and c
 
 This page contains all the resources for **Sitecore Experience Platform 8.2 rev. 171121 (8.2 Update-6)**.
 
-Looking for **a different version**? See [all available 8.x versions](/downloads/Sitecore_Experience_Platform).
+Looking for **a different version**? See [all available versions](/downloads/Sitecore_Experience_Platform).
 
 ## Download options
 

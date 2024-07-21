@@ -1,8 +1,9 @@
 import { getChangelogCredentials } from '@/src/lib/changelog/changelog';
+import { removeHtmlTagsAndSpecialChars } from '@/src/lib/utils';
 import { Changelog } from '@scdp/changelog';
 import { ChangelogEntry, ChangelogEntryList } from '@scdp/changelog/types';
 import { getChangelogEntryUrl, getQueryValue } from '@scdp/changelog/utils';
-import { removeHtmlTagsAndSpecialChars } from '@scdp/ui/lib';
+
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';

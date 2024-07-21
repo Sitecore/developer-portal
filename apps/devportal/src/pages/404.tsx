@@ -1,5 +1,5 @@
 import { Box, Center, HStack, Heading, Image, Stack, Text } from '@chakra-ui/react';
-import { ButtonLink } from '@scdp/ui/components';
+import { ButtonLink } from '../components/links';
 import SearchInput from '../components/sitecore-search/SearchInput';
 import Layout from '../layouts/Layout';
 

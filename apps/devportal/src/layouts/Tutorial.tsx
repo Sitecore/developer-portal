@@ -1,17 +1,18 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
-import { Hero, PromoCardProps, PromoList } from '@scdp/ui/components';
 import SocialFeeds from '@src/components/common/SocialFeeds';
 import { MarkDownContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import { useRouter } from 'next/router';
+import { Hero } from '../components/common';
 import GithubContributionNotice from '../components/common/contribute';
 import { ArticlePaging } from '../components/navigation/ArticlePaging';
 import { ArticlePagingNext } from '../components/navigation/ArticlePagingNext';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
+import { PromoCardProps, PromoList } from '../components/promos';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ArticlePageProps = {

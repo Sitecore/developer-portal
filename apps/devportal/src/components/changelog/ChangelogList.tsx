@@ -2,7 +2,7 @@
 import { Box, Button, CloseButton, Link, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
 import { buildQuerystring, entriesApiUrl, getChangeTypeOptions, getProductOptions } from '@lib/changelog/changelog';
 import { ChangelogEntry, ChangelogEntryList, Product } from '@scdp/changelog/types';
-import { Option } from '@scdp/ui/components';
+import { Option } from '@src/components/dropdown';
 import axios from 'axios';
 import NextLink from 'next/link';
 import { useState } from 'react';
