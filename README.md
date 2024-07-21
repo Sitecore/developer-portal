@@ -94,13 +94,13 @@ Information sources must be entered and processed in CEC, to populate the conten
 Suggestions blocks must have a field named `name_suggester` (this needs to be configured for the `preview search widget`).
 The following picture shows a sample configuration:
 
-<img src="apps\devportal\public\images\CEC-Suggestion_Block.PNG" title="Suggestion Blocks" alt="Suggestion Blocks" />
+<img src="apps\devportal\public\images\CEC-Suggestion_Block.png" title="Suggestion Blocks" alt="Suggestion Blocks" />
 
 ##### Sorting options
 
 Sorting options must include `suggested` criteria pre-configured. You can provide display name as per your requirements. The picture shows how it should look on CEC:
 
-<img src="apps\devportal\public\images\CEC-Sorting_Option.PNG" title="Sorting options" alt="Sorting options" />
+<img src="apps\devportal\public\images\CEC-Sorting_Option.png" title="Sorting options" alt="Sorting options" />
 
 Remember to reindex the relevant sources after configuring a new sorting option.
 
