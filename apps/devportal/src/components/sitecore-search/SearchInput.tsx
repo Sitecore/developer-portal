@@ -7,7 +7,6 @@ import { FaSearch } from 'react-icons/fa';
 import { ProductLogo } from '../common';
 import { useEngageTracker } from '../integrations';
 
-
 export interface SearchInputProps {
   showButton?: boolean;
 }
@@ -64,9 +63,6 @@ const SearchInput = ({ showButton }: SearchInputProps) => {
       {inputBox}
     </FormControl>
   );
-};
-SearchInput.defaultProps = {
-  className: '',
 };
 
 export default SearchInput;
