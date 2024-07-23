@@ -1,6 +1,7 @@
 import { CDP, Connect, ContentHub, ContentHubONE, Discover, OrderCloud, Personalize, ProductInfoType, Search, Send, XMCloud, XP } from '@/data/products';
 import { GetProductLogoByVariant, Type, Variant } from '@/src/lib/assets';
-import { Box, Card, CardBody, Flex, Heading, Image, SimpleGrid, Spacer, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Card, CardBody, Flex, Heading, SimpleGrid, Spacer, Text, useColorModeValue } from '@chakra-ui/react';
+import Image from 'next/image';
 import React from 'react';
 import { ButtonLink } from '../../links';
 
@@ -66,7 +67,15 @@ export const ProductListItem: React.FC<ProductListItemProps> = ({ product }) => 
     <Card variant={'elevated'}>
       <CardBody>
         <Flex direction={'column'} gap={4} align={'flex-start'}>
-          <Image src={useColorModeValue(GetProductLogoByVariant(product.type, Variant.Light, Type.Full), GetProductLogoByVariant(product.type, Variant.Dark, Type.Full))} alt={`${product.name} logo`} width={'auto'} height={'32px'} />
+          <Box height={'24px'} width={'full'} position={'relative'} sx={{ '& > img': { width: 'auto !important' } }}>
+            <Image
+              src={useColorModeValue(GetProductLogoByVariant(product.type, Variant.Light, Type.Full), GetProductLogoByVariant(product.type, Variant.Dark, Type.Full))}
+              alt={`${product.name} logo`}
+              fill
+              style={{ objectFit: 'fill' }}
+              sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
+            />
+          </Box>
           <Heading as="h4" size="md">
             {product.subTitle}
           </Heading>
