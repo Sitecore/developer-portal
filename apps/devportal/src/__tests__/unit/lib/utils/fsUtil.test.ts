@@ -1,13 +1,17 @@
-import { GetParentFolder } from '@/src/lib/utils/fsUtils';
+import { GetParentFolder, GetRootFile, searchForFile } from '@/src/lib/utils/fsUtils';
 import { vol } from 'memfs';
+import path from 'path';
 
-import { beforeEach, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, test, vi } from 'vitest';
 
-vi.mock('node:fs');
+vi.mock('fs');
 
 beforeEach(() => {
-  // reset the state of in-memory fs
   vol.reset();
+  vol.fromJSON({
+    '/products/xm-cloud/index.md': 'Hello world 1',
+    '/products/manifest.json': 'Hello world 1',
+  });
 });
 
 // Test for GetParentFolder function
@@ -17,45 +21,34 @@ it('GetParentFolder should return the parent folder', () => {
   expect(parentFolder).toBe('/path/to');
 });
 
-// // Test for searchForFile function
-// test('searchForFile should return the file path if found', () => {
-//   vol.fromJSON(
-//     {
-//       '/data/markdown/pages/products/xm-cloud': 'hello dir3',
-//       '/data/markdown/pages/products/manifest.json': 'hello dir3',
-//     },
-//     'apps/devportal'
-//   );
+// Test for searchForFile function
+describe('searchForFile Tests', () => {
+  test('should read a file', async () => {
+    const filePath = searchForFile('\\products\\xm-cloud\\index.md', 'manifest.json');
+    expect(filePath).toBe(path.join('\\products\\manifest.json'));
+  });
 
-//   const folderPath = 'apps/devportal/data/markdown/pages/products/xm-cloud';
-//   const fileName = 'manifest.json';
+  test('searchForFile should return null if file not found', () => {
+    const folderPath = '/c:/Projects/developer-portal/apps/devportal/src/lib/utils';
+    const fileName = 'nonexistent.txt';
+    const filePath = searchForFile(folderPath, fileName);
+    expect(filePath).toBeNull();
+  });
+});
 
-//   const filePath = searchForFile(folderPath, fileName);
-//   expect(filePath).toBe('apps/devportal/data/markdown/pages/products/manifest.json');
-// });
+describe('GetRootFile tests', () => {
+  test('GetRootFile should return the file path if found', async () => {
+    const directory = '\\products\\xm-cloud';
+    const file = 'index.md';
 
-// test('searchForFile should return null if file not found', () => {
-//   const folderPath = '/c:/Projects/developer-portal/apps/devportal/src/lib/utils';
-//   const fileName = 'nonexistent.txt';
-//   const filePath = searchForFile(folderPath, fileName);
-//   expect(filePath).toBeNull();
-// });
-
-// // Test for GetRootFile function
-// test('GetRootFile should return the file path if found', () => {
-//   const directory = '/data/markdown/docs';
-//   const file = 'index.md';
-
-//   vol.fromJSON({ '/markdown/docs/index.md': 'Hello world' }, '/data');
-
-//   const filePath = GetRootFile(directory, file);
-//   expect(filePath).toBe(path.join(directory, file));
-// });
-
-// test('GetRootFile should throw an error if file not found', () => {
-//   const directory = '/data/markdown/docs';
-//   const file = 'nonexistent';
-//   expect(() => {
-//     GetRootFile(directory, file);
-//   }).toThrowError(`File '${file}' not found in '${directory}'`);
-// });
+    const filePath = GetRootFile(directory, file);
+    expect(filePath).toBe(path.join(directory, file));
+  });
+  test('GetRootFile should throw an error if file not found', () => {
+    const directory = '/data/markdown/docs';
+    const file = 'nonexistent';
+    expect(() => {
+      GetRootFile(directory, file);
+    }).toThrowError(`File '${file}' not found in '${directory}'`);
+  });
+});
