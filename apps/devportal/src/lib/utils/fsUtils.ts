@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'node:fs';
 import path from 'path';
 
 export function GetParentFolder(folder: string): string {
@@ -30,22 +30,6 @@ export function searchForFile(folderPath: string, fileName: string): string | nu
     return null;
   }
 }
-
-// export function SearchForFile(location: string, file: string): boolean {
-//   //const folder = path.dirname(location);
-//   const searchStart = path.join(location, file);
-//   //const zzz = searchStart.split(path.delimiter);
-
-//   //for (let i = zzz.length; i < zzz.length; i--) {
-//   //console.log(path.join(zzz[i], file));
-//   const found = fs.existsSync(searchStart);
-//   console.log(searchStart);
-//   if (found) {
-//     return true;
-//   }
-
-//   return false;
-// }
 
 export function GetRootFile(directory: string, file: string): string {
   if (fs.existsSync(path.join(directory, file))) {

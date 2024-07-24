@@ -23,7 +23,8 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "lint": "next lint",
     "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\"",
-    "analyze": "cross-env ANALYZE=true next build"
+    "analyze": "cross-env ANALYZE=true next build",
+    "test": "vitest"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -37,11 +38,13 @@
     "@remark-embedder/transformer-oembed": "^5.0.0",
     "@sitecore-search/react": "^2.5.2",
     "@sitecore-search/ui": "^2.5.2",
-    "@sitecore/engage": "^1.4.3",
     "@sitecore/blok-theme": "^1.1.13",
+    "@sitecore/engage": "^1.4.3",
+    "@testing-library/jest-dom": "^6.4.8",
     "@vercel/edge-config": "^1.2.0",
     "@vercel/og": "^0.6.2",
     "axios": "^1.7.2",
+    "chakra-react-select": "^4.9.1",
     "eslint-config-next": "^14.2.5",
     "feed": "^4.2.2",
     "framer-motion": "^11.3.6",
@@ -51,21 +54,21 @@
     "hastscript": "^9.0.0",
     "next": "^14.2.5",
     "next-mdx-remote": "^5.0.0",
+    "next-share": "^0.27.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
+    "react-lite-youtube-embed": "^2.4.0",
+    "react-select": "^5.8.0",
     "react-syntax-highlighter": "^15.5.0",
     "react-topbar-progress-indicator": "^4.1.1",
+    "react-tweet": "^3.2.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
     "swr": "^2.2.5",
     "unist-util-visit": "^5.0.0",
-    "chakra-react-select": "^4.9.1",
-    "next-share": "^0.27.0",
-    "react-select": "^5.8.0",
-    "react-tweet": "^3.2.1",
-    "react-lite-youtube-embed": "^2.4.0"
+    "memfs": "^4.9.4"
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",
@@ -73,6 +76,7 @@
     "@next/eslint-plugin-next": "^14.2.5",
     "@scdp/eslint-config": "*",
     "@scdp/typescript-config": "*",
+    "@testing-library/react": "^16.0.0",
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -80,11 +84,15 @@
     "@types/react-syntax-highlighter": "^15.5.13",
     "@typescript-eslint/eslint-plugin": "^7.16.1",
     "@typescript-eslint/parser": "^7.16.1",
+    "@vitejs/plugin-react": "^4.3.1",
     "cross-env": "^7.0.3",
     "husky": "^9.1.0",
+    "jsdom": "^24.1.1",
     "lint-staged": "^15.2.7",
     "next-sitemap": "^4.2.3",
     "react-gtm-module": "^2.0.11",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^2.0.4"
   }
 }

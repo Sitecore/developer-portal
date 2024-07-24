@@ -15,7 +15,6 @@ export enum Product {
   DAM,
   Discover,
   Connect,
-  CloudPortal,
   ExperienceCommerce,
   ExperienceManager,
   ExperiencePlatform,

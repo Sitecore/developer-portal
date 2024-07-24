@@ -13,8 +13,10 @@
     "clean": {
       "cache": false
     },
-    "test": {
-      "cache": false
+    "test": {},
+    "test:watch": {
+      "cache": false,
+      "persistent": true
     },
     "generate": {
       "cache": false
