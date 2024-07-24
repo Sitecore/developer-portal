@@ -24,10 +24,17 @@ We can solve this problem by changing how the layout for common page sections is
 
 First, we need to create routes for each of the common page sections. We can do this by using the existing partial design paradigm in SXA. If you have already created a partial design for the header or footer, we can reuse those, otherwise we can create a new partial design for each of the common page sections.
 
+<img src="/images/learn/accelerate/xm-cloud/layoutroutes-1.png" alt="Create the header and footer partial designs"/>
+<br/><br/>
+
 Once we have created the partial designs, we need to create 2 page designs. One that defines what will be rendered on the main page, and one that defines what will be rendered on the header and footer. We will call these `default` and `header-footer` respectively. 
 
 Now we need to add a new field to the base page template for your site collection. We will call this field `LayoutRoute`, is should be a droplink field. Make sure that `Shared` is ticked and that the `Source` property is set to `query:$pageDesigns//*[@@templatename='Page Design']`.
 
+<img src="/images/learn/accelerate/xm-cloud/layoutroutes-2.png" alt="Add the LayoutRoute field to the base page template"/>
+<br/><br/>
+
+Now on each page we can specify which partial designs we want to use for the header and footer by setting the `LayoutRoute` field to the appropriate Page Design.
 
 ### Consuming the Routes
 
@@ -115,7 +122,7 @@ class LayoutRoutesPlugin implements Plugin {
         // get the layout route data from the page prop and then loop through the partial designs
         // to get the layout data for each partial design and add it to the page props
         const layoutRouteData = props?.layoutData?.sitecore?.route?.fields
-            ? props?.layoutData?.sitecore?.route?.fields['LayouitRoute']
+            ? props?.layoutData?.sitecore?.route?.fields['LayoutRoute']
             : [];
         const partialDesigns =
             ((layoutRouteData as Item)?.fields['PartialDesigns'] as Array<Item>) || [];
