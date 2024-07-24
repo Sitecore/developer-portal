@@ -575,7 +575,7 @@ export const mainNavigation: NavItem[] = [
           },
           {
             title: 'Content Hub',
-            url: '/dam-and-content-operations/content-hub',
+            url: '/products/content-hub',
             logo: Product.ContentHub,
           },
           {
