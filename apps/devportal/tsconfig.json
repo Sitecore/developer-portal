@@ -1,7 +1,6 @@
 {
   "extends": "@scdp/typescript-config/nextjs.json",
   "compilerOptions": {
-    "types": ["vitest/globals"],
     "typeRoots": ["./types", "src/common/types", "./node_modules/@types"],
     "baseUrl": ".",
     "paths": {
