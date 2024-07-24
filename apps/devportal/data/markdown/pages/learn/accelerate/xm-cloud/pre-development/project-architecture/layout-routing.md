@@ -18,163 +18,140 @@ This dependency graph can grow very large depending on your information architec
 
 We can solve this problem by changing how the layout for common page sections is composed. Instead of having a single layout for the page that includes the header and footer, we can create special routes for each common section and then use the web application to compose the page layout.
 
+<alert type="info"><alert-icon></alert-icon>In this recipe, we will be focusing on headers and footers, but the same approach can be used for other common page sections.</alert>
+
 ### Setting up the layouts
 
-First, we need to create routes for each of the common page sections. We can do this by creating new items in the content tree. We will need to easily identify this routes so they can be excluded from the JSS sitemap fetcher, so we will create a folder under the home page and call it `_layout`
+First, we need to create routes for each of the common page sections. We can do this by using the existing partial design paradigm in SXA. If you have already created a partial design for the header or footer, we can reuse those, otherwise we can create a new partial design for each of the common page sections.
 
-![Layout folder](/images/learn/accelerate/xm-cloud/layout-folder.png)
+Once we have created the partial designs, we need to create 2 page designs. One that defines what will be rendered on the main page, and one that defines what will be rendered on the header and footer. We will call these `default` and `header-footer` respectively. 
 
-Next, we create a page item for the header, and anotehr for the footer. We will call these `header` and `footer` respectively.
+Now we need to add a new field to the base page template for your site collection. We will call this field `LayoutRoute`, is should be a droplink field. Make sure that `Shared` is ticked and that the `Source` property is set to `query:$pageDesigns//*[@@templatename='Page Design']`.
 
-These 2 page items will effectively replace the need for the `header` and `footer` partial designs. You can add the header and footer partial designs to specific page designs and set those designs for the created pages, or simply add the components for the header or footer directly to the page.
-
-![Add components to the header](/images/learn/accelerate/xm-cloud/add-components-to-header.png)
 
 ### Consuming the Routes
 
 Now that we have the layouts for the header and footer routers, we need to update the web application to consume these layouts and add the components to the page.
 
-To do this, we need to update the `getStaticProps` method in the `pages/[[...path]].tsx` file. First, let's update the `SitecorePageProps` type to include the new layouts. You can find this in `src/lib/page-props.ts`. We will add properties for `headerLayoutData` and `footerLayoutData`:
+To do this, we can make use of the `page-props-factory` plugin pattern. We will create a new plgin that will be responsible for creating the page props for the header and footer and adding them to the main page props.
+
+First we need to create a new serive that will be responsible for fetching the layouts for the partial designs that we created earlier. We will call this service `GraphQLLayoutRouteService`. Create a new folder in the `src/lib/page-props-factory` folder and call it `services`. Inside this folder, create a new file called `layout-route-service.ts`. Here is the code for this service:
 
 ```typescript
-export type SitecorePageProps = {
-    site: SiteInfo;
-    locale: string;
-    dictionary: DictionaryPhrases;
-    notFound: boolean;
-    layoutData: LayoutData;
-    headerLayoutData: LayoutData;
-    footerLayoutData: LayoutData;
-};
-```
-<br />
-Now, let's update `getStaticProps` to get the layouts for the header and footer. We can use the existing `context` object and hard code the path to the header and footer layouts:
+import { GraphQLClient } from '@sitecore-jss/sitecore-jss';
+import {
+    debug,
+    GraphQLLayoutService,
+    GraphQLLayoutServiceConfig,
+    LayoutServiceData,
+} from '@sitecore-jss/sitecore-jss-nextjs';
 
-```typescript
-    const header = await sitecorePagePropsFactory.create({
-        ...context,
-        params: {
-            ...context.params,
-            path: '/_layout/header',
-        },
-    });
+export class GraphQlLayoutRouteService extends GraphQLLayoutService {
+    private myGraphQLClient: GraphQLClient;
 
-    props.headerLayoutData = header.layoutData;
-```
-<br />
-We can do the same for the footer:
+    constructor(public serviceConfig: GraphQLLayoutServiceConfig) {
+        super(serviceConfig);
+        this.myGraphQLClient = this.getGraphQLClient();
+    }
 
-```typescript
-    const footer = await sitecorePagePropsFactory.create({
-        ...context,
-        params: {
-            ...context.params,
-            path: '/_layout/footer',
-        },
-    });
-    props.footerLayoutData = footer.layoutData;
-```
-<br />
+    public async fetchLayoutRoute(routeId: string, language: string): Promise<LayoutServiceData> {
+        const query = this.getQuery(routeId, language);
+        debug.layout('fetching layout route data for routeId: %s %s', routeId, language);
 
-Here is the full `getStaticProps` method:
+        const data = await this.myGraphQLClient.request<{
+            item: { rendered: LayoutServiceData };
+        }>(query);
 
-```typescript
-export const getStaticProps: GetStaticProps = async (context) => {
-    const props = await sitecorePagePropsFactory.create(context);
+        return data.item.rendered;
+    }
 
-    // Call the header
-    const header = await sitecorePagePropsFactory.create({
-        ...context,
-        params: {
-            ...context.params,
-            path: '/_layout/header',
-        },
-    });
-
-    props.headerLayoutData = header.layoutData;
-
-    // Call the footer
-    const footer = await sitecorePagePropsFactory.create({
-        ...context,
-        params: {
-            ...context.params,
-            path: '/_layout/footer',
-        },
-    });
-    props.footerLayoutData = footer.layoutData;
-
-    return {
-        props,
-        // Next.js will attempt to re-generate the page:
-        // - When a request comes in
-        // - At most once every 5 seconds
-        revalidate: 5, // In seconds
-        notFound: props.notFound, // Returns custom 404 page with a status code of 404 when true
-    };
-};
-```
-<br />
-Now we have the layouts for the header and footer, we need to update the `Layout.tsx` to add in the layouts in the right places:
-
-First, lets add the `headerLayoutData` and `footerLayoutData` into the props:
-```typescript
-interface LayoutProps {
-    layoutData: LayoutServiceData;
-    headerLayoutData: LayoutServiceData;
-    footerLayoutData: LayoutServiceData;
-    headLinks: HTMLLink[];
+    private getQuery(routeId: string, language: string) {
+        return `query {
+                item(path: "${routeId}", language: "${language}") {
+                    rendered
+                }
+            }`;
+    }
 }
 ```
-<br />
-Next, we need to update the `Layout.tsx` to add in the header and footer layouts.
+<br /><br />
+
+This service will use an item query to fetch the rendered layout data for the partial design item specified by the routeId.
+
+Now we need to add a new plugin to the `page-props-factory`. In the `src/lib/page-props-factory/plugins` folder, create a new file called `layout-routes.ts`. Here is the code for this plugin:
 
 ```typescript
-const Layout = ({
-    layoutData,
-    headerLayoutData,
-    footerLayoutData,
-    headLinks
-}: LayoutProps): JSX.Element => {
-    const { route } = layoutData.sitecore;
-    const { route: headerRoute } = headerLayoutData.sitecore;
-    const { route: footerRoute } = footerLayoutData.sitecore;
-    const fields = route?.fields as RouteFields;
+import { ComponentRendering, HtmlElementRendering, Item } from '@sitecore-jss/sitecore-jss-nextjs';
+import { SitecorePageProps } from 'lib/page-props';
+import { GetStaticPropsContext, GetServerSidePropsContext } from 'next';
+import config from 'temp/config';
+import { Plugin } from '..';
+import { GraphQlLayoutRouteService } from '../services/layout-route-service';
+import clientFactory from 'lib/graphql-client-factory';
 
-    return (
-        <>
-            <Scripts />
-            <Head>
-                <title>{fields?.Title?.value?.toString() || 'Page'}</title>
-                <link rel="icon" href={`${publicUrl}/favicon.ico`} />
-                {headLinks.map((headLink) => (
-                    <link rel={headLink.rel} key={headLink.href} href={headLink.href} />
-                ))}
-            </Head>
+class LayoutRoutesPlugin implements Plugin {
+    private layoutRequestClient: GraphQlLayoutRouteService;
 
-            {/* root placeholder for the app, which we add components to using route data */}
-            <header>
-                <div id="header"> 
-                    {headerRoute && <Placeholder name="headless-header" rendering={headerRoute} />}
-                    {route && <Placeholder name="headless-header" rendering={route} />}
-                </div>
-            </header>
-            <main>
-                <div id="content">
-                    {route && <Placeholder name="headless-main" rendering={route} />}
-                </div>
-            </main>
-            <footer>
-                <div id="footer">
-                    {footerRoute && <Placeholder name="headless-footer" rendering={footerRoute} />}
-                    {route && <Placeholder name="headless-footer" rendering={route} />}
-                </div>
-            </footer>
-        </>
-    );
-};
+    constructor() {
+        const siteName = config.sitecoreSiteName;
+        this.layoutRequestClient = new GraphQlLayoutRouteService({
+            siteName,
+            clientFactory,
+            retries: (process.env.GRAPH_QL_SERVICE_RETRIES &&
+                parseInt(process.env.GRAPH_QL_SERVICE_RETRIES, 10)) as number,
+        });
+    }
+
+    order = 2;
+
+    async exec(
+        props: SitecorePageProps,
+        context: GetServerSidePropsContext | GetStaticPropsContext
+    ) {
+        if (context.preview) {
+            return props;
+        }
+
+        // get the layout route data from the page prop and then loop through the partial designs
+        // to get the layout data for each partial design and add it to the page props
+        const layoutRouteData = props?.layoutData?.sitecore?.route?.fields
+            ? props?.layoutData?.sitecore?.route?.fields['LayouitRoute']
+            : [];
+        const partialDesigns =
+            ((layoutRouteData as Item)?.fields['PartialDesigns'] as Array<Item>) || [];
+        await Promise.all(
+            partialDesigns.map(async (partialDesign) => {
+                const layoutData = await this.layoutRequestClient.fetchLayoutRoute(
+                    partialDesign.id?.toString() || '',
+                    props.locale
+                );
+
+                // this section could be cleaner and work out the placeholders more 
+                // dynamically.
+                props?.layoutData?.sitecore?.route?.placeholders['headless-header'].push(
+                    ...(layoutData.sitecore.route?.placeholders['headless-header'] as Array<
+                        ComponentRendering | HtmlElementRendering
+                    >)
+                );
+                props?.layoutData?.sitecore?.route?.placeholders['headless-footer'].push(
+                    ...(layoutData.sitecore.route?.placeholders['headless-footer'] as Array<
+                        ComponentRendering | HtmlElementRendering
+                    >)
+                );
+            })
+        );
+        return props;
+    }
+}
+
+export const layoutRoutesPlugin = new LayoutRoutesPlugin();
 ```
-<br />
-You can see that in the `<header>` and `<footer>` elemebts, we are adding an extra placeholder and pasing in the `headerRoute` and `footerRoute` from the layout data. This will make sure that the components added on that route are on the page. Also, we re-use the same placeholder and still pass in the main pages layout route data, this means that the `header` and `footer` placeholders can still have components added at the page level too.
+<br /><br />
+
+In this plugin we are using the Page Design selected in the `LayoutRoute` field to fetch the layout data for the page. We are then looping through the partial designs and fetching the layout data for each of them, and adding it to the page props for each specific placeholder. For the purposes of this recipe we have hard coded the `headless-header` and `headless-footer` placeholders. For a production implementation you may want to make this more dynamic and cope with other placeholders if needed.
+
+Notice that we set the `order` property to `2`. This makes sure that this plugin is executed after the `normal-mode` and `preview-mode` plugins. This is important because we need to make sure that the page props are set before the layout data is added to the page props.
+
 
 ## Discussion
 
