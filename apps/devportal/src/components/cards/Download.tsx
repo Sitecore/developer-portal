@@ -3,7 +3,7 @@ import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 import NextLink from 'next/link';
 
-type DownloadProps = CardProps & {
+export type DownloadProps = CardProps & {
   title: string;
   description: string;
   link1text: string;

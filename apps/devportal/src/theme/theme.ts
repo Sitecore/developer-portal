@@ -1,6 +1,6 @@
 import { extendTheme } from '@chakra-ui/react';
 import { withProse } from '@nikolovlazar/chakra-ui-prose';
-
+import sitecoreTheme from '@sitecore/blok-theme';
 
 // Load customizations
 import { cardTheme } from './components/cardTheme';
@@ -21,6 +21,6 @@ export const scdpTheme = extendTheme(
     },
     sizes: {},
   },
-  withProse({ baseStyle: proseBaseStyle })
+  withProse({ baseStyle: proseBaseStyle }),
+  sitecoreTheme
 );
-
