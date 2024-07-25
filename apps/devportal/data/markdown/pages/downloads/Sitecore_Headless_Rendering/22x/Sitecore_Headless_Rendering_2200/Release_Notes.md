@@ -57,6 +57,7 @@ The following issues have been fixed:
 | Edge Connector    | Publishing big media files causes an error.                                                                                                    | 596819                                 |
 | Edge Connector    | Publishing in preview target forces the layout service to use the final workflow version of a datasource item.                                 | 605712                                 |
 | Edge Connector    | Optimized the publishing performance.                                                                                                          | 585524, 580776, 588640, 589447, 589555 |
+| Headless Services | Support Exp Edge GraphQL query for Form items from custom locations.                                                                           | 544116                                 |
 | Headless Services | Improved performance for GraphQl requests.                                                                                                     | 558835                                 |
 | Headless Services | Dictionary Service does not respect the database set for the app's dictionary domain.                                                          | 559671                                 |
 | Headless Services | Publish with Test workflow command has been removed.                                                                                           | 561444                                 |
@@ -65,6 +66,7 @@ The following issues have been fixed:
 | Headless Services | CreateItem mutation requires ID to be passed.                                                                                                  | 569496                                 |
 | Headless Services | The "Interface field Item.children expects type..." error appears after using the "jss bootstrap" command.                                     | 572005                                 |
 | Headless Services | The "StartIndex cannot be less than zero" error occurs after querying the jss field of the JssExtender if the grouped droplink field is empty. | 577524                                 |
+| Headless Services | Layout service creates a new SiteInfo() for every request.                                                                                     | 584753                                 |
 | Headless Services | Behavior change of GeneralLinkFieldSerializer.                                                                                                 | 580748                                 |
 | Headless Services | The JSS Layout Service incorrectly resolves an item with a display name if a wildcard item (\*) is present at the same level.                  | 582167                                 |
 | Headless Services | Cross site linking behavior change for GeneralLinkFieldSerializer.                                                                             | 583674                                 |
