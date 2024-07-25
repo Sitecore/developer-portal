@@ -18,7 +18,7 @@ type ChangelogListProps = {
   onProductsChange: (selectedProducts: Option[]) => void;
 };
 
-const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange }: ChangelogListProps): JSX.Element => {
+const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps): JSX.Element => {
   const [selectedChange, setSelectedChange] = useState<Option[]>([]);
   const fetcher: Fetcher<ChangelogEntryList<ChangelogEntry[]>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
 
@@ -83,9 +83,6 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange }: C
       {data && !data[data.length - 1].hasNext && <span className={`border-violet text-violet dark:border-teal dark:text-teal mt-5 inline-block w-full border-2 px-3 py-2 text-center text-sm`}>No more results</span>}
     </Box>
   );
-};
-ChangelogList.defaultProps = {
-  onProductsChange: (selectedProducts: Option[]) => {},
 };
 
 export default ChangelogList;
