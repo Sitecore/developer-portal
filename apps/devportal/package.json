@@ -24,7 +24,8 @@
     "lint": "next lint",
     "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\"",
     "analyze": "cross-env ANALYZE=true next build",
-    "test": "vitest"
+    "test": "vitest",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -52,6 +53,7 @@
     "hast-util-heading-rank": "^3.0.0",
     "hast-util-to-string": "^3.0.0",
     "hastscript": "^9.0.0",
+    "memfs": "^4.9.4",
     "next": "^14.2.5",
     "next-mdx-remote": "^5.0.0",
     "next-share": "^0.27.0",
@@ -67,13 +69,13 @@
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
     "swr": "^2.2.5",
-    "unist-util-visit": "^5.0.0",
-    "memfs": "^4.9.4"
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",
     "@next/bundle-analyzer": "^14.2.5",
     "@next/eslint-plugin-next": "^14.2.5",
+    "@playwright/test": "^1.45.3",
     "@scdp/eslint-config": "*",
     "@scdp/typescript-config": "*",
     "@testing-library/react": "^16.0.0",

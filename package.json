@@ -7,6 +7,7 @@
     "start": "dotenvx run --env-file=.env --env-file=.env.local -q -- turbo start",
     "lint": "turbo lint",
     "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
     "test:watch": "turbo run test:watch",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean": "npm exec --workspaces -- shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && shx rm -rf node_modules && shx echo Done!",
