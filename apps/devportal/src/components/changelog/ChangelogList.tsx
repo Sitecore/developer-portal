@@ -15,7 +15,7 @@ import { Hint } from './Hint';
 type ChangelogListProps = {
   initialProduct?: Product;
   selectedProducts?: Option[];
-  onProductsChange: (selectedProducts: Option[]) => void;
+  onProductsChange?: (selectedProducts: Option[]) => void;
 };
 
 const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps): JSX.Element => {
