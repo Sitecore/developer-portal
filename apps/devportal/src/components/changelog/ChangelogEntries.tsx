@@ -18,7 +18,7 @@ const CustomImage = chakra(Image, {
   shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
 });
 
-const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon, columns, ...rest }: ChangelogEntriesProps): JSX.Element => {
+const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/changelog', linkText = 'See all changes', hideProductIcon, columns, ...rest }: ChangelogEntriesProps): JSX.Element => {
   if (entries.length === 0) {
     return <></>;
   }
@@ -27,9 +27,9 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
     <Card shadow={'none'} {...rest} size={{ base: 'xs', md: 'md' }}>
       <CardHeader justifyContent={'space-between'} display={'flex'} py={8}>
         <Heading as={'h3'} size={'md'}>
-          {title != null ? title : 'Sitecore Changelog'}
+          {title}
         </Heading>
-        <TextLink href={linkHref != null ? linkHref : '/changelog'} text={linkText != null ? linkText : 'See all changes'} />
+        <TextLink href={linkHref} text={linkText} />
       </CardHeader>
       <CardBody py={{ base: '2', md: '4' }}>
         <SimpleGrid columns={columns ? columns : 1} spacing={0}>
@@ -84,7 +84,7 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
                       </HStack>
                     ) : (
                       entry.products != null && (
-                        <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} className="" key={key}>
+                        <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} key={key}>
                           <Text color={useColorModeValue('black', 'white')}>{entry.products[0].productName}</Text>
                         </Link>
                       )
@@ -111,10 +111,6 @@ const ChangelogEntries = ({ entries, title, linkHref, linkText, hideProductIcon,
       </CardBody>
     </Card>
   );
-};
-
-ChangelogEntries.defaultProps = {
-  className: '',
 };
 
 export default ChangelogEntries;
