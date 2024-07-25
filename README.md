@@ -38,49 +38,6 @@ This repository is utilizing Turborepo to manage our monorepo setup. More inform
 
 The developer portal is built with Next.js, so you'll need to have Node.js installed to build the project. You can find the latest version of Node.js [here](https://nodejs.org/en/). We recommend using the LTS version of Node.js.
 
-#### Environment Variables
-
-The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables. Use the `.env.template` file as a starting point.
-
-The following variables should exist within the .env.local file:
-
-```
-NEXT_PUBLIC_PUBLIC_URL=
-NEXT_PUBLIC_YOUTUBE_API_KEY="An API key with YouTube Data API v3 access enabled"
-NEXT_PUBLIC_COOKIE_CONSENT_URL=
-NEXT_PUBLIC_GTM_ID=
-NEXT_PUBLIC_GTM_AUTH=
-NEXT_PUBLIC_GTM_ENVIRONMENT=
-```
-
-_Note: The site will still function without the above keys. The components that require these environment variables will fail gracefully and not display on the pages._
-
----
-
-To enable search the following environment variables are required:
-
-```
-NEXT_PUBLIC_SEARCH_APP_API_KEY=
-NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY=
-NEXT_PUBLIC_SEARCH_APP_ENV=
-NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH=
-```
-
-_Note: The site will still function if the keys are missing or left blank. However these keys are still required to build the application_
-
----
-
-To enable Sitecore CDP/Personalize to capture events the following environment variables are required:
-
-```
-NEXT_PUBLIC_SITECORE_CDP_CLIENT_KEY=
-NEXT_PUBLIC_SITECORE_CDP_TARGETURL=
-NEXT_PUBLIC_SITECORE_CDP_COOKIE_DOMAIN=
-NEXT_PUBLIC_SITECORE_CDP_POS=
-```
-
-\_Note: The site will still function if the keys are missing or left blank.
-
 ## Getting Started
 
 1. Install [Node.js](https://nodejs.org/en/), we recommend the LTS version.
@@ -109,8 +66,87 @@ NEXT_PUBLIC_SITECORE_CDP_POS=
 
 (For more information on populating environment variables see section **Environment Variables** above.)
 
-5.  Run `npm run dev` to start the development server.
-6.  Open the **http://localhost:3000** in your browser to see the result!
+5. Run `npm run dev` to start the development server.
+6. Open the **<http://localhost:3000>** in your browser to see the result!
+
+#### Environment Variables
+
+The Sitecore developer portal incorporates a number of third party services to bring in content. For full functionality, you must create a **.env.local** file in the root of the project and add in the below environment variables. Use the `.env.template` file as a starting point.
+
+The following variables should exist within the .env.local file:
+
+```
+NEXT_PUBLIC_PUBLIC_URL=
+NEXT_PUBLIC_YOUTUBE_API_KEY="An API key with YouTube Data API v3 access enabled"
+NEXT_PUBLIC_COOKIE_CONSENT_URL=
+NEXT_PUBLIC_GTM_ID=
+NEXT_PUBLIC_GTM_AUTH=
+NEXT_PUBLIC_GTM_ENVIRONMENT=
+```
+
+_Note: The site will still function without the above keys. The components that require these environment variables will fail gracefully and not display on the pages._
+
+---
+
+#### Sitecore CDP/Personalize
+
+To enable Sitecore CDP/Personalize to capture events the following environment variables are required:
+
+```
+NEXT_PUBLIC_SITECORE_CDP_CLIENT_KEY=
+NEXT_PUBLIC_SITECORE_CDP_TARGETURL=
+NEXT_PUBLIC_SITECORE_CDP_COOKIE_DOMAIN=
+NEXT_PUBLIC_SITECORE_CDP_POS=
+```
+
+_Note: The site will still function if the keys are missing or left blank._
+
+--- 
+
+#### Sitecore Search
+
+To enable search the following environment variables (first three) are required:
+
+```
+NEXT_PUBLIC_SEARCH_APP_API_KEY=
+NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY=
+NEXT_PUBLIC_SEARCH_APP_ENV=
+NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH=
+```
+
+_Note: The site will still function if the keys are missing or left blank. However these keys are still required to build the application_
+
+##### CEC configuration
+
+The account that will be used must have an initial configuration that needs to be made on CEC:
+
+##### Sources
+
+Information sources must be entered and processed in CEC, to populate the content catalog.
+
+##### Suggestion Blocks
+
+Suggestions blocks must have a field named `name_suggester` (this needs to be configured for the `preview search widget`).
+The following picture shows a sample configuration:
+
+<img src=".github\images\CEC-Suggestion_Block.png" title="Suggestion Blocks" alt="Suggestion Blocks" />
+
+##### Sorting options
+
+Sorting options must include `suggested` criteria pre-configured. You can provide display name as per your requirements. The picture shows how it should look on CEC:
+
+<img src=".github\images\CEC-Sorting_Option.png" title="Sorting options" alt="Sorting options" />
+
+Remember to reindex the relevant sources after configuring a new sorting option.
+
+##### Pre configured widgets
+
+The account must have the following widgets created before:
+
+| Name                                 | ID        | Type             | Description                                                                                                                  | Used in                         |
+| ------------------------------------ | --------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| [Search Results Page] Search Results | `rfkid_7` | `Search Results` | Search results widget. Will include a grid with the results together with the avility to filter results by different facets. | Search Results Page (`/search`) |
+| Preview Search                       | `rfkid_6` | `Preview Search` | It is an input that does a quick search over the content. It is included on the page header.                                 | Every page                      |
 
 ## Contributions
 
