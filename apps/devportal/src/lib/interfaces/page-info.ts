@@ -10,8 +10,6 @@ type PageInfoCore = {
   heroImage?: string;
   openGraphImage?: string;
   id?: string;
-  partials?: string[];
-  partialGroups?: PagePartials[];
   title: string;
   pageTitle?: string;
   fileName: string;
@@ -105,16 +103,4 @@ export type PartialData = {
   fileNames: string[];
   content: string[];
   titles: ContentHeading[];
-};
-
-export type PagePartials = {
-  title: string;
-  description?: string;
-  partials: string[];
-};
-
-export type PagePartialGroup = {
-  title: string;
-  description?: string;
-  partials: PartialData;
 };

@@ -1,6 +1,6 @@
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, Stack, Text } from '@chakra-ui/react';
-import { ChildPageInfo, PageInfo, PagePartialGroup, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
@@ -13,8 +13,6 @@ import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ChildOverviewPageProps = {
   pageInfo: PageInfo;
-  partials?: PartialData;
-  partialGroups?: PagePartialGroup[];
   hasGrid?: boolean;
   promoAfter?: PromoCardProps[];
   promoBefore?: PromoCardProps[];

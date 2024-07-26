@@ -1,7 +1,6 @@
-import { Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import { SimpleGrid } from '@chakra-ui/react';
 import communityListData from '@data/data-community-list';
 import platformData from '@data/data-platform';
-import { productSolutions } from '@data/data-product-solutions';
 import updatesListData from '@data/data-updates';
 import getHelpCta from '@data/promos/get-help';
 import { PageInfo } from '@lib/interfaces/page-info';
@@ -13,9 +12,9 @@ import Hero from '../components/common/Hero';
 import { TrackPageView } from '../components/engagetracker/TrackPageView';
 import { CenteredContent } from '../components/helpers/CenteredContent';
 import { VerticalGroup } from '../components/helpers/VerticalGroup';
-import { Hexagons } from '../components/hexagons';
 import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '../components/integrations';
-import { CategoryTileList, GenericList } from '../components/lists';
+import { GenericList } from '../components/lists';
+import ProductList from '../components/lists/products/productList';
 import { CTACard } from '../components/promos';
 
 export async function getStaticProps() {
@@ -53,7 +52,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
 
         <VerticalGroup background={'chakra-subtle-bg'}>
           <CenteredContent>
-            <Hexagons />
+            <ProductList />
           </CenteredContent>
         </VerticalGroup>
 
@@ -72,7 +71,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup background={'gray.700'}>
+        {/* <VerticalGroup background={'gray.700'}>
           <CenteredContent gap={6}>
             <Heading as="h2" color={'white'} mb={0}>
               Explore Sitecore by solution
@@ -82,7 +81,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
             </Text>
             <CategoryTileList cards={productSolutions} />
           </CenteredContent>
-        </VerticalGroup>
+        </VerticalGroup> */}
 
         <VerticalGroup>
           <CenteredContent>

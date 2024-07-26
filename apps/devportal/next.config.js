@@ -33,16 +33,34 @@ const securityHeaders = [
 ];
 
 const redirects = [
-  {
-    source: '/learn/integrations/xm-cdp',
-    destination: '/learn/integrations/xm-smarthub-cdp',
-    permanent: true,
-  },
-  {
-    source: '/trial',
-    destination: '/trials',
-    permanent: true,
-  },
+  { source: '/learn/integrations/xm-cdp', destination: '/learn/integrations/xm-smarthub-cdp', permanent: true },
+  { source: '/trial', destination: '/trials', permanent: true },
+  { source: '/commerce/:path*', destination: '/products/:path*', permanent: true },
+  { source: '/content-management', destination: '/products', permanent: true },
+  { source: '/content-management/content-hub-one', destination: '/products/content-hub-one', permanent: true },
+  { source: '/content-management/edge-xm', destination: '/products/experience-platform/edge', permanent: true },
+  { source: '/content-management/experience-management', destination: '/products/experience-platform/xm', permanent: true },
+  { source: '/content-management/headless', destination: '/products/experience-platform/headless', permanent: true },
+  { source: '/content-management/search', destination: '/products/search', permanent: true },
+  { source: '/content-management/sxa', destination: '/products/experience-platform/sxa', permanent: true },
+  { source: '/content-management/xm-cloud', destination: '/products/xm-cloud', permanent: true },
+  { source: '/customer-data-management', destination: '/products', permanent: true },
+  { source: '/customer-data-management/cdp', destination: '/products/customer-data-platform', permanent: true },
+  { source: '/customer-data-management/experience-platform', destination: '/products/experience-platform', permanent: true },
+  { source: '/dam-and-content-operations', destination: '/products', permanent: true },
+  { source: '/dam-and-content-operations/content-hub', destination: '/products/content-hub', permanent: true },
+  { source: '/dam-and-content-operations/dam', destination: '/products/content-hub', permanent: true },
+  { source: '/devops', destination: '/products/devops-and-tools	', permanent: true },
+  { source: '/devops/arm-templates', destination: '/products/devops-and-tools/arm-templates', permanent: true },
+  { source: '/devops/containers', destination: '/products/devops-and-tools/containers	', permanent: true },
+  { source: '/devops/developer-collection', destination: '/products/devops-and-tools/developer-collection	', permanent: true },
+  { source: '/devops/managed-cloud', destination: '/products/managed-cloud', permanent: true },
+  { source: '/devops/sitecore-install-framework', destination: '/products/devops-and-tools/sif', permanent: true },
+  { source: '/integrations/connect', destination: '/products/connect', permanent: true },
+  { source: '/marketing-automation/experience-platform', destination: '/products/experience-platform', permanent: true },
+  { source: '/marketing-automation/send', destination: '/products/send', permanent: true },
+  { source: '/personalization-testing/experience-platform', destination: '/products/experience-platform', permanent: true },
+  { source: '/personalization-testing/personalize', destination: '/products/personalize', permanent: true },
 ];
 
 

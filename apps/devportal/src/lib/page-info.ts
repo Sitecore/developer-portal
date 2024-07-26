@@ -1,11 +1,10 @@
 // Global
-import type { ChildPageInfo, MarkdownMeta, PageInfo, PagePartialGroup, PagePartials, PartialData, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import type { ChildPageInfo, MarkdownMeta, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 
-import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ParseContent } from '@lib/markdown/mdxParse';
 import { Changelog } from '@scdp/changelog';
 
@@ -13,7 +12,6 @@ import { SITECORE_COMMUNITY_MAX_COUNT, SitecoreCommunityApi, SitecoreCommunityCo
 import { getChangelogCredentials } from './changelog/changelog';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
-const partialsDirectory = path.join(dataDirectory, 'partials');
 const pagesDirectory = path.join(dataDirectory, 'pages');
 
 export const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main/apps/devportal';
@@ -158,78 +156,6 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
   }
 
   return pageInfo;
-};
-
-/**
- * Get partials as an array rather than a keyed object
- *
- * @param partials
- * @returns
- */
-
-export const getPartialsAsArray = async (partials: string[]): Promise<PartialData> => {
-  const content: string[] = [];
-  const titles: ContentHeading[] = [];
-  const fileNames: string[] = [];
-
-  await Promise.all(
-    partials.map(async function (partial) {
-      const data = getFileData(partialsDirectory, partial) as Matter;
-      const fileName = `${repoUrl}/data/markdown/partials/${partial}.md`;
-      const parsedContent = await ParseContent(Buffer.from(data.content));
-
-      if (parsedContent != null) {
-        content.push(parsedContent.result.compiledSource);
-        fileNames.push(fileName);
-        parsedContent.headings.map((heading) => {
-          titles.push(heading);
-        });
-      }
-    })
-  );
-  return {
-    content,
-    titles,
-    fileNames,
-  };
-};
-
-export const getPartialGroupsAsArray = async (partialGroups: PagePartials[]): Promise<PagePartialGroup[]> => {
-  const pagePartialsGroups: PagePartialGroup[] = [];
-
-  await Promise.all(
-    partialGroups.map(async (partialGroup) => {
-      const partialGroupData = {
-        title: partialGroup.title,
-        description: partialGroup.description ? partialGroup.description : null,
-        partials: await getPartialsAsArray(partialGroup.partials),
-      } as PagePartialGroup;
-
-      pagePartialsGroups.push(partialGroupData);
-    })
-  );
-  return pagePartialsGroups;
-};
-
-export const getPageContent = async (pageInfo: PageInfo): Promise<PartialData> => {
-  const content: string[] = [];
-  const titles: ContentHeading[] = [];
-  const fileNames: string[] = [];
-
-  if (pageInfo.parsedContent && pageInfo.content) {
-    content.push(pageInfo.parsedContent);
-    fileNames.push(pageInfo.fileName);
-
-    pageInfo.headings?.map((heading) => {
-      titles.push(heading);
-    });
-  }
-
-  return {
-    content,
-    titles,
-    fileNames,
-  };
 };
 
 /**

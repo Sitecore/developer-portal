@@ -1,8 +1,8 @@
-import { Box, Heading, Text, useColorModeValue } from '@chakra-ui/react';
+import { Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
+import { GetProductLogo } from '../../lib/assets';
 import { VerticalGroup } from '../helpers';
 import { CenteredContent } from '../helpers/CenteredContent';
-import { GetProductLogo } from '../../lib/assets';
 import { GuidedDemo } from './GuidedDemo';
 
 export type HeroProps = {
@@ -24,7 +24,7 @@ export const Hero = ({ description, title, children, productLogo, demoId }: Hero
       borderBottom={'1px'}
       borderColor={'chakra-border-color'}
     >
-      <CenteredContent gap={2} py={{ base: 6, md: 12, xl: 24 }} direction={{ base: 'column', md: 'column' }}>
+      <CenteredContent gap={2} py={{ base: 6, md: 12, xl: 16 }} direction={{ base: 'column', md: 'column' }}>
         {productLogo && <Image src={useColorModeValue(GetProductLogo(productLogo, 'Light'), GetProductLogo(productLogo, 'Dark'))} alt={`${title} logo`} width={'280'} height={'60'} />}
         {!productLogo && (
           <Heading as="h1" fontSize={{ base: '2xl', md: '4xl', xl: '6xl' }}>
@@ -34,11 +34,7 @@ export const Hero = ({ description, title, children, productLogo, demoId }: Hero
         <Text as="h2" variant="subtle" fontSize={{ base: 'sm', md: 'md' }}>
           {description}
         </Text>
-        {demoId && (
-          <Box width="25%">
-            <GuidedDemo demoId={demoId} productName={title} productLogo={productLogo} />
-          </Box>
-        )}
+        {demoId && <GuidedDemo demoId={demoId} productName={title} productLogo={productLogo} />}
         {children}
       </CenteredContent>
     </VerticalGroup>

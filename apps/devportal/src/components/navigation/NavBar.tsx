@@ -1,6 +1,5 @@
 'use client';
 
-import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/assets';
 import { ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -32,11 +31,15 @@ import {
 } from '@chakra-ui/react';
 import { NavItem, mainNavigation, sitecoreQuickLinks } from '@data/data-navigation';
 import { mdiChevronDown, mdiChevronUp, mdiInformationOutline } from '@mdi/js';
+
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+//import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
+
+import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/assets';
+import { ProductIcon } from '../common';
 import { PreviewModeSwitch } from '../common/PreviewModeSwitch';
-import ProductIcon from '../common/ProductIcon';
 import { Slide } from '../helpers/Slide';
 import PreviewSearchInput from '../sitecore-search/PreviewSearchInput';
 import { DarkModeSwitch } from './DarkModeSwitch';
@@ -157,12 +160,12 @@ const DesktopNav = () => {
       {mainNavigation.map((navItem, key) => (
         <ButtonGroup variant="navigation" orientation="horizontal" spacing="4" mx="2" key={key} as={'li'}>
           <Box key={navItem.title} role="group">
-            {navItem.url ? (
+            {navItem.url && !navItem.children ? (
               <Button key={key} as={NextLink} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath.includes(navItem.url)}>
                 {navItem.title}
               </Button>
             ) : (
-              <Popover>
+              <Popover trigger="hover">
                 {({ isOpen }) => (
                   <>
                     <PopoverTrigger>
@@ -174,9 +177,7 @@ const DesktopNav = () => {
                       <PopoverArrow />
                       <Box width="100%" maxWidth={'5xl'}>
                         <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 2, sm: 2 }} px={5} py={6} p={{ sm: 8 }}>
-                          {navItem.children?.map((child) => (
-                            <DesktopSubNav key={child.title} {...child} />
-                          ))}
+                          {navItem.children?.map((child) => <DesktopSubNav key={child.title} {...child} />)}
                         </SimpleGrid>
                       </Box>
                     </PopoverContent>
@@ -201,7 +202,7 @@ const navSection = ({ title, logo }: NavItem) => {
           <ProductIcon product={logo} height={'20px'} width={'32px'} />
         </Box>
       )}
-      <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'} mt={-1}>
+      <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'} mt={-1} height={'26px'}>
         {title}
       </Text>
     </>

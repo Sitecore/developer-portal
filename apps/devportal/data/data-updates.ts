@@ -18,7 +18,7 @@ const content: GenericListItem[] = [
     href: 'https://migration.sitecore.com/',
     linkText: 'Get Started',
     img: {
-      src: 'https://wwwsitecorecom.azureedge.net/-/media/sitecoresite/images/home/knowledge-center/digital-marketing-resources/migrating-to-xm-cloud/gettyimages-898545250.jpg',
+      src: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/79641d4e53c04ad9a1f9307bccae1458?v=ef401c0b',
       alt: 'Migration Advisor',
     },
   },

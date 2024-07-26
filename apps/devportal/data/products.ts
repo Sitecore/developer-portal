@@ -1,115 +1,100 @@
-import { ProductInfoType } from '@/src/components/hexagons';
 import { Product } from '@/src/lib/assets';
-import { CommerceCloud, ContentCloud, EngagementCloud } from './clouds';
+
+export interface ProductInfoType {
+  type: Product;
+  name: string;
+  subTitle: string;
+  description: string;
+  linkHref: string;
+  linkText: string;
+}
 
 export const ContentHubONE: ProductInfoType = {
   type: Product.ContentHubOne,
   name: 'Content Hub ONE',
   subTitle: 'Agile CMS',
-  description: 'A powerful and intuitive headless CMS for the simplified creation and management of experiences across channels and devices.',
-  linkHref: '/content-management/content-hub-one',
-  linkText: 'Learn more',
-  cloud: ContentCloud.id,
-  color: ContentCloud.color,
+  description: 'Headless CMS for the simplified creation and management of experiences across channels and devices.',
+  linkHref: '/products/content-hub-one',
+  linkText: 'Content Hub ONE',
 };
 export const CDP: ProductInfoType = {
   type: Product.CDP,
-  name: 'Sitecore CDP',
+  name: 'CDP',
   subTitle: 'Customer Data Platform',
-  description: 'Optimize every experience across every channel with the leading experimentation aConnect and activate customer data across your ecosystem to drive relevance with an intelligent customer data platform.nd personalization platform.',
-  linkHref: '/customer-data-management/cdp',
-  linkText: 'Learn more',
-  cloud: EngagementCloud.id,
-  color: EngagementCloud.color,
+  description: 'Collect, unify, and unlock the power of customer data to drive personalization and decision-making.',
+  linkHref: '/products/customer-data-platform',
+  linkText: 'CDP',
 };
 export const Discover: ProductInfoType = {
   type: Product.Discover,
-  name: 'Sitecore Discover',
+  name: 'Discover',
   subTitle: 'Product Discovery',
   description: 'Amplify customer conversions with hyper-relevant search results and AI-driven, automated merchandising.',
-  linkHref: '/commerce/discover',
-  linkText: 'Learn more',
-  cloud: CommerceCloud.id,
-  color: CommerceCloud.color,
+  linkHref: '/products/discover',
+  linkText: 'Discover',
 };
 
 export const Connect: ProductInfoType = {
   type: Product.Connect,
-  name: 'Sitecore Connect',
+  name: 'Connect',
   subTitle: 'Automation',
   description: 'Integrate seamlessly with third-party apps and connectors.',
-  linkHref: '/integrations/connect',
-  linkText: 'Learn more',
-  cloud: EngagementCloud.id,
-  color: EngagementCloud.color,
+  linkHref: '/products/connect',
+  linkText: 'Connect',
 };
 export const Send: ProductInfoType = {
   type: Product.Send,
-  name: 'Sitecore Send',
+  name: 'Send',
   subTitle: 'Marketing Automation',
   description: 'Automate personalized email engagements that build trust and foster long-term relationships.',
-  linkHref: '/marketing-automation/send',
-  linkText: 'Learn more',
-  cloud: EngagementCloud.id,
-  color: EngagementCloud.color,
+  linkHref: '/products/send',
+  linkText: 'Send',
 };
 export const XMCloud: ProductInfoType = {
   type: Product.XMCloud,
   name: 'XM Cloud',
-  subTitle: 'Enterprise CMS',
-  description: 'Create, manage, and deliver relevant content everywhere, lightning-fast, with a world-leading, enterprise-ready CMS.',
-  linkHref: '/content-management/xm-cloud',
-  linkText: 'Learn more',
-  cloud: ContentCloud.id,
-  color: ContentCloud.color,
+  subTitle: 'Content Management',
+  description: 'Build exceptional websites with world-leading content management and easy personalization.',
+  linkHref: '/products/xm-cloud',
+  linkText: 'XM Cloud',
 };
 export const Personalize: ProductInfoType = {
   type: Product.Personalize,
-  name: 'Sitecore Personalize',
+  name: 'Personalize',
   subTitle: 'Personalization and Testing',
-  description: 'Optimize every experience across every channel with the leading experimentation and personalization platform.',
-  linkHref: '/personalization-testing/personalize',
-  linkText: 'Learn more',
-  cloud: EngagementCloud.id,
-  color: EngagementCloud.color,
-};
-export const DAM: ProductInfoType = {
-  type: Product.DAM,
-  name: 'Sitecore DAM',
-  subTitle: 'Digital Asset Management',
-  description: 'Centralize all your digital assets and deliver them to any customer touchpoint with an automated digital asset management (DAM) solution.',
-  linkHref: '/dam-and-content-operations/dam',
-  linkText: 'Learn more',
-  cloud: ContentCloud.id,
-  color: ContentCloud.color,
+  description: 'Introduce a test and learn approach with personalization that connects customer experience across every channel.',
+  linkHref: '/products/personalize',
+  linkText: 'Personalize',
 };
 export const OrderCloud: ProductInfoType = {
   type: Product.OrderCloud,
-  name: 'Sitecore OrderCloud',
-  subTitle: 'B2X Commerce',
-  description: 'Scale your business, sell on any channel, and future-proof your commerce strategy with the next-generation headless commerce platform.',
-  linkHref: '/commerce/ordercloud',
-  linkText: 'Learn more',
-  cloud: CommerceCloud.id,
-  color: CommerceCloud.color,
+  name: 'OrderCloud',
+  subTitle: 'Commerce Platform',
+  description: 'Extend your digital sales to any touchpoint, in any environment, for any customer.',
+  linkHref: '/products/ordercloud',
+  linkText: 'OrderCloud',
 };
 export const Search: ProductInfoType = {
   type: Product.Search,
-  name: 'Sitecore Search',
-  subTitle: 'Intelligent Content Search',
-  description: 'Predict search intent and display individualized results with a personalized search experience.',
+  name: 'Search',
+  subTitle: 'Intelligent search',
+  description: 'Delight your visitors with AI-assisted search that serves the right content, quickly.',
   linkHref: '/content-management/search',
-  linkText: 'Learn more',
-  cloud: ContentCloud.id,
-  color: ContentCloud.color,
+  linkText: 'Search',
 };
-export const ContentOps: ProductInfoType = {
-  type: Product.ContentOps,
-  name: 'Sitecore Content Operations',
-  subTitle: 'Content Operations',
-  description: 'Collaborate effortlessly on content strategy, creation, and analytics with an intelligent content operations solution.',
-  linkHref: '/dam-and-content-operations/content-hub',
-  linkText: 'Learn more',
-  cloud: ContentCloud.id,
-  color: ContentCloud.color,
+export const ContentHub: ProductInfoType = {
+  type: Product.ContentHub,
+  name: 'Content Hub',
+  subTitle: 'Content Hub',
+  description: 'Master digital asset management and content operations—all in one.',
+  linkHref: '/products/content-hub',
+  linkText: 'Content Hub',
+};
+export const XP: ProductInfoType = {
+  type: Product.ExperiencePlatform,
+  name: 'Experience Platform',
+  subTitle: 'Your all-in-one DXP',
+  description: 'Meet the all-in-one platform that consolidates content management, personalization, and analytics.',
+  linkHref: '/products/experience-platform',
+  linkText: 'Experience Platform (XP)',
 };
