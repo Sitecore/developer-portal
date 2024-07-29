@@ -45,13 +45,13 @@ In the starter kit solution, you are supplied with a `[[...path]].tsx` under the
 
 In that page file, `getStaticPaths` is used to get all the routes from the `sitemapFetcher` and generate all the pages for the site.
 
-For our example, we want to create a custom route in Next.js, we can do this by adding a `blogs` under the `pages` folder. Then duplicate the original `[[...path]].tsx` and paste it in that folder. Rename the file to `[...path].tsx`.
+For our example, we want to create a custom route in Next.js, we can do this by adding a `blogs` folder under the `pages` folder. Then duplicate the original `[[...path]].tsx` and paste it in that folder. Rename the file to `[...path].tsx`.
 
 > Dynamic Routes in Next.js
 >
 > The new file that we have created is another catch-all segment dynamic route, note that we have change the double square brackets to single, this is so the parent page gets picked up by the default route.
 >
-> For example, `https://myxmcloudsite.com/blogs` will be handled by the catch-all `./src/[[...path]].tsx`, `https://myxmcloudsite.com/blogs/my-blog-page` would be handled by `./src/blogs/[...path].tsx`.
+> For example, `https://myxmcloudsite.com/blogs` will be handled by the catch-all `./src/pages/[[...path]].tsx`, `https://myxmcloudsite.com/blogs/my-blog-page` would be handled by `./src/pages/blogs/[...path].tsx`.
 >
 > Note that this catch-all route will match any page that is a child of `/blogs`. If you want to limit to direct children only, rename `[...path].tsx` to `[path].tsx` - removing the ellipsis.
 >
