@@ -17,7 +17,6 @@ export const mainNavigation: NavItem[] = [
   },
   {
     title: 'Documentation',
-    url: 'https://doc.sitecore.com',
     children: [
       {
         title: 'Experience Management',
