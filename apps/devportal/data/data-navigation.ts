@@ -583,11 +583,6 @@ export const mainNavigation: NavItem[] = [
             logo: Product.Search,
           },
           {
-            title: 'Content Hub',
-            url: '/products/content-hub',
-            logo: Product.ContentHub,
-          },
-          {
             title: 'Content Hub ONE',
             url: '/products/content-hub-one',
             logo: Product.ContentHubOne,
