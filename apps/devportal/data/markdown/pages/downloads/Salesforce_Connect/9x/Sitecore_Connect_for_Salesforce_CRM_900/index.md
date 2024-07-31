@@ -3,15 +3,6 @@ title: "Sitecore Connect™ for Salesforce CRM 9.0.0"
 description: ""
 ---
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    ltsc2022 is currently supported. ltsc2019 images and configuration are coming soon.
-  </Alert>
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Updated documentation for version 9.0 is coming soon. In the interim please refer to 8.0 documents.
-  </Alert>
-
 Synchronize data between Salesforce CRM and Sitecore Experience Platform.\
 Sitecore Connect™ for Salesforce CRM version 9.0.0 is compatible with Sitecore XP 10.4.\
 See [all available versions here](/downloads/Salesforce_Connect).  
@@ -36,9 +27,9 @@ See [all available versions here](/downloads/Salesforce_Connect).
  | Resource | Description |
  | --- | --- |
  | [Release Notes](/downloads/Salesforce_Connect/9x/Sitecore_Connect_for_Salesforce_CRM_900/Release_Notes) | Release notes for Sitecore Connect™ for Salesforce CRM. |
- | [Installation Guide](https://doc.sitecore.com/xp/en/developers/salesforce-connect/80/sitecore-connect-for-salesforce-crm/install-sitecore-connect-for-salesforce-crm-on-prem.html) | **Updated document for 9.0 is coming soon!** The installation and configuration procedure for Sitecore Connect™ for Salesforce CRM. |
- | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/salesforce-connect/80/sitecore-connect-for-salesforce-crm/install-sitecore-connect-for-salesforce-crm-on-containers.html) | **Updated document for 9.0 is coming soon!** The installation and configuration procedure for Sitecore Connect™ for Salesforce CRM for Docker/Kubernetes. |
- | [Documentation](https://doc.sitecore.com/developers/salesforce-connect/80/sitecore-connect-for-salesforce-crm/en/sitecore-connect-for-salesforce-crm-configuration-guide.html) | **Updated document for 9.0 is coming soon!** Link to Sitecore Documentation containing documentation for Sitecore Connect™ for Salesforce CRM. |
+ | [Installation Guide](https://doc.sitecore.com/xp/en/developers/salesforce-connect/80/sitecore-connect-for-salesforce-crm/install-sitecore-connect-for-salesforce-crm-on-prem.html) | **Updated document for 9.0 is to be completed!** The installation and configuration procedure for Sitecore Connect™ for Salesforce CRM. |
+ | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/salesforce-connect/80/sitecore-connect-for-salesforce-crm/install-sitecore-connect-for-salesforce-crm-on-containers.html) | **Updated document for 9.0 is to be completed!** The installation and configuration procedure for Sitecore Connect™ for Salesforce CRM for Docker/Kubernetes. |
+ | [Documentation](https://doc.sitecore.com/developers/salesforce-connect/80/sitecore-connect-for-salesforce-crm/en/sitecore-connect-for-salesforce-crm-configuration-guide.html) | **Updated document for 9.0 is to be completed!** Link to Sitecore Documentation containing documentation for Sitecore Connect™ for Salesforce CRM. |
 
 ## Client Translations
 

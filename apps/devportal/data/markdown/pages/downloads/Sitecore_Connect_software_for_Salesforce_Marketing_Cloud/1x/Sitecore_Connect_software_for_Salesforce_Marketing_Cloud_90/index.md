@@ -3,15 +3,6 @@ title: "Sitecore Connect™ for Salesforce Marketing Cloud 9.0"
 description: ""
 ---
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    ltsc2022 is currently supported. ltsc2019 images and configuration are coming soon.
-  </Alert>
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Updated documentation for version 9.0 is coming soon. In the interim please refer to 8.0 documents.
-  </Alert>
-
 Sitecore Connect™ for Salesforce Marketing Cloud unites Sitecore Experience Platform content and behavioural data with Salesforce Marketing Cloud.\
 Sitecore Connect™ for Salesforce Marketing Cloud 9.0 is compatible with Sitecore XP 10.4.\
 See [all available versions here](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud).
@@ -37,11 +28,11 @@ See [all available versions here](/downloads/Sitecore_Connect_software_for_Sales
  | Resource | Description |
  | --- | --- |
  | [Release Notes](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_90/Release_Notes__BDE) | A list of features, improvements, and fixes that have been implemented in this release. |
- | [Installation and Configuration Guide for Behavioral Data Exchange](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/installing-sfmc-behavioral-data-exchange.html) | **Updated document for 9.0 is coming soon!** The installation and configuration guide for the Sitecore Connect™ for Salesforce Marketing Cloud - Behavioral Data Exchange. |
- | [Installation and Configuration Guide for BDE Marketing Automation Activity](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/install-sfmc-behavioral-data-exchange-activity-for-marketing-automation-on-prem.html) | **Updated document for 9.0 is coming soon!** The installation and configuration guide for the Sitecore Connect™ for Salesforce Marketing Cloud - Activity for Marketing Automation. |
- | [Installation and Configuration Guide for BDE Sitecore Sync](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/walkthrough--installing-sfmc-behavioral-data-exchange-sitecore-sync-on-prem.html) | **Updated document for 9.0 is coming soon!** Provides an ability to trigger BDE Marketing Automation activity from within a Marketing Automation plan by the Tenant Service. |
- | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/installing-sfmc-behavioral-data-exchange-on-containers.html) | **Updated document for 9.0 is coming soon!** The installation and configuration procedure for Sitecore Connect for Sitecore Connect™ for Salesforce Marketing Cloud - Behavioral Data Exchange in Docker or Kubernetes. |
- | [Documentation](https://doc.sitecore.com/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/en/sitecore-connect-for-salesforce-marketing-cloud.html) | **Updated document for 9.0 is coming soon!** The Sitecore documentation website with Sitecore Connect™ for Salesforce Marketing Cloud documentation. |
+ | [Installation and Configuration Guide for Behavioral Data Exchange](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/installing-sfmc-behavioral-data-exchange.html) | **Updated document for 9.0 is to be completed!** The installation and configuration guide for the Sitecore Connect™ for Salesforce Marketing Cloud - Behavioral Data Exchange. |
+ | [Installation and Configuration Guide for BDE Marketing Automation Activity](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/install-sfmc-behavioral-data-exchange-activity-for-marketing-automation-on-prem.html) | **Updated document for 9.0 is to be completed!** The installation and configuration guide for the Sitecore Connect™ for Salesforce Marketing Cloud - Activity for Marketing Automation. |
+ | [Installation and Configuration Guide for BDE Sitecore Sync](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/walkthrough--installing-sfmc-behavioral-data-exchange-sitecore-sync-on-prem.html) | **Updated document for 9.0 is to be completed** Provides an ability to trigger BDE Marketing Automation activity from within a Marketing Automation plan by the Tenant Service. |
+ | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/installing-sfmc-behavioral-data-exchange-on-containers.html) | **Updated document for 9.0 is to be completed!** The installation and configuration procedure for Sitecore Connect for Sitecore Connect™ for Salesforce Marketing Cloud - Behavioral Data Exchange in Docker or Kubernetes. |
+ | [Documentation](https://doc.sitecore.com/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/en/sitecore-connect-for-salesforce-marketing-cloud.html) | **Updated document for 9.0 is to be completed!** The Sitecore documentation website with Sitecore Connect™ for Salesforce Marketing Cloud documentation. |
 
 ## Behavioral Data Exchange Client Translations
 
@@ -71,9 +62,9 @@ See [all available versions here](/downloads/Sitecore_Connect_software_for_Sales
  | Resource | Description |
  | --- | --- |
  | [Release Notes](/downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_90/Release_Notes__CE) | A list of features, improvements, and fixes that have been implemented in this release. |
- | [Installation and Configuration Guide](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/walkthrough--installing-sfmc-content-exchange-on-prem.html) | **Updated document for 9.0 is coming soon!** The installation and configuration guide for the Sitecore Connect™ for Salesforce Marketing Cloud - Content Exchange. |
- | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/installing-sfmc-content-exchange-on-containers.html) | **Updated document for 9.0 is coming soon!** The installation and configuration procedure for Sitecore Connect™ for Salesforce Marketing Cloud - Content Exchange in Docker or Kubernetes. |
- | [Documentation](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/sfmc-content-exchange-architecture.html) | **Updated document for 9.0 is coming soon!** The Sitecore documentation website with Sitecore Connect™ for Salesforce Marketing Cloud documentation. |
+ | [Installation and Configuration Guide](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/walkthrough--installing-sfmc-content-exchange-on-prem.html) | **Updated document for 9.0 is to be completed!** The installation and configuration guide for the Sitecore Connect™ for Salesforce Marketing Cloud - Content Exchange. |
+ | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/installing-sfmc-content-exchange-on-containers.html) | **Updated document for 9.0 is to be completed!** The installation and configuration procedure for Sitecore Connect™ for Salesforce Marketing Cloud - Content Exchange in Docker or Kubernetes. |
+ | [Documentation](https://doc.sitecore.com/xp/en/developers/salesforce-marketing-cloud/80/sitecore-connect-for-salesforce-marketing-cloud/sfmc-content-exchange-architecture.html) | **Updated document for 9.0 is to be completed!** The Sitecore documentation website with Sitecore Connect™ for Salesforce Marketing Cloud documentation. |
 
 ## Content Exchange Client Translations
 
