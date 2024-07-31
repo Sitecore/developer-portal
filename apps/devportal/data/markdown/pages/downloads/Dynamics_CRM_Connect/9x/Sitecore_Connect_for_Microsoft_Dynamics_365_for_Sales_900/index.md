@@ -3,11 +3,6 @@ title: "Sitecore Connect™ for Microsoft Dynamics 365 for Sales 9.0.0"
 description: ""
 ---
 
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Updated documentation for version 9.0 is coming soon. In the interim please refer to 8.0 documents.
-  </Alert>
-
 Synchronize data between Microsoft Dynamics 365 for Sales and Sitecore Experience Platform.\
 Sitecore Connect™ for Microsoft Dynamics 365 for Sales 9.0.0 is compatible with Sitecore XP 10.4.\
 See [all available versions here](/downloads/Dynamics_CRM_Connect).
@@ -33,9 +28,9 @@ See [all available versions here](/downloads/Dynamics_CRM_Connect).
  | Resource | Description |
  | --- | --- |
  | [Release Notes](/downloads/Dynamics_CRM_Connect/9x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_900/Release_Notes) | Release notes for Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
- | [Installation Guide](https://doc.sitecore.com/xp/en/developers/dynamics-crm-connect/80/sitecore-connect-for-microsoft-dynamics-365-for-sales/install-sitecore-connect-for-microsoft-dynamics-for-sales-365-on-prem.html) | **Updated document for 9.0 is coming soon!** The installation and configuration procedure for the Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
- | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/dynamics-crm-connect/80/sitecore-connect-for-microsoft-dynamics-365-for-sales/install-sitecore-connect-for-microsoft-dynamics-365-for-sales-on-containers.html) | **Updated document for 9.0 is coming soon!** Guide describing how to deploy Sitecore Connect™ for Microsoft Dynamics 365 for Sales on Docker Compose and Kubernetes. |
- | [Documentation](https://doc.sitecore.com/xp/en/developers/dynamics-crm-connect/80/sitecore-connect-for-microsoft-dynamics-365-for-sales/index-en.html) | **Updated document for 9.0 is coming soon!** Link to Sitecore Documentation containing documentation for Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
+ | [Installation Guide](https://doc.sitecore.com/xp/en/developers/dynamics-crm-connect/80/sitecore-connect-for-microsoft-dynamics-365-for-sales/install-sitecore-connect-for-microsoft-dynamics-for-sales-365-on-prem.html) | **Updated document for 9.0 is to be completed!** The installation and configuration procedure for the Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
+ | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/dynamics-crm-connect/80/sitecore-connect-for-microsoft-dynamics-365-for-sales/install-sitecore-connect-for-microsoft-dynamics-365-for-sales-on-containers.html) | **Updated document for 9.0 is to be completed!** Guide describing how to deploy Sitecore Connect™ for Microsoft Dynamics 365 for Sales on Docker Compose and Kubernetes. |
+ | [Documentation](https://doc.sitecore.com/xp/en/developers/dynamics-crm-connect/80/sitecore-connect-for-microsoft-dynamics-365-for-sales/index-en.html) | **Updated document for 9.0 is to be completed!** Link to Sitecore Documentation containing documentation for Sitecore Connect™ for Microsoft Dynamics 365 for Sales. |
 
 ## Client Translations
 

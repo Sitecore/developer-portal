@@ -5,11 +5,7 @@ description: ""
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    ltsc2022 is currently supported. ltsc2019 images and configuration are coming soon.
-  </Alert>
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Updated documentation for version 5.2 is coming soon. In the interim please refer to 5.1 documents.
+    July 24, 2024: published ltsc2019 (a.ka. 1809) container images to Sitecore Container Registry (SCR).
   </Alert>
 
 Sitecore Connect™ for Content Hub enables web editors and content/digital marketers:
@@ -39,10 +35,10 @@ See [all available versions here](/downloads/Sitecore_Connect_for_Content_Hub).
  | Resource | Description |
  | --- | --- |
  | [Release Notes](/downloads/Sitecore_Connect_for_Content_Hub/5x/Sitecore_Connect_for_Content_Hub_520/Release_Notes) | Release notes for Sitecore Connect™ for Content Hub. |
- | [Installation Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/install-sitecore-connect-for-content-hub-on-prem.html) | **Updated document for 5.2 is coming soon!** Installation and configuration guide for Sitecore Connect™ for Content Hub. |
- | [Installation Guide for PaaS](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/installing-sitecore-connect-for-content-hub-on-paas.html) | **Updated document for 5.2 is coming soon!** This guide describes how to deploy Sitecore Connect for Content Hub™ in a Sitecore Azure Cloud Service (PaaS) environment. |
- | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/installing-sitecore-connect-for-content-hub-on-containers.html) | **Updated document for 5.2 is coming soon!** This guide describes how to do the Sitecore Connect™ for Content Hub for Docker Compose and Kubernetes deployment. |
- | [User Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/index-en.html) | **Updated document for 5.2 is coming soon!** User guide for Sitecore Connect™ for Content Hub. |
+ | [Installation Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/install-sitecore-connect-for-content-hub-on-prem.html) | **Updated document for 5.2 is to be completed!** Installation and configuration guide for Sitecore Connect™ for Content Hub. |
+ | [Installation Guide for PaaS](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/installing-sitecore-connect-for-content-hub-on-paas.html) | **Updated document for 5.2 is to be completed!** This guide describes how to deploy Sitecore Connect for Content Hub™ in a Sitecore Azure Cloud Service (PaaS) environment. |
+ | [Container Deployment Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/installing-sitecore-connect-for-content-hub-on-containers.html) | **Updated document for 5.2 is to be completed!** This guide describes how to do the Sitecore Connect™ for Content Hub for Docker Compose and Kubernetes deployment. |
+ | [User Guide](https://doc.sitecore.com/xp/en/developers/connect-for-ch/51/connect-for-content-hub/index-en.html) | **Updated document for 5.2 is to be completed!** User guide for Sitecore Connect™ for Content Hub. |
 
 ## Client Translations
 

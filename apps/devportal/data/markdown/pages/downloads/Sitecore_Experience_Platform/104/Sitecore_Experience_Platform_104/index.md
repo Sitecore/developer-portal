@@ -1,16 +1,7 @@
 ---
 title: "Sitecore Experience Platform 10.4"
 ---
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Packages for Azure App Service were republished on May 28, 2024 to add missing Application Insights configuration. See Release Notes for more info.
-  </Alert>
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    June 11,2024: Added ltsc2019 Container images and support package for Sitecore XP, which includes Identity Server. ltsc2019 for other modules is coming in June, 2024.
-  </Alert>
-  
+ 
 Sitecore Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability.\
 See [all available versions here](/downloads/Sitecore_Experience_Platform).
 
