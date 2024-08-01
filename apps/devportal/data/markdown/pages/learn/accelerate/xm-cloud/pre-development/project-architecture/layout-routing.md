@@ -18,7 +18,9 @@ This dependency graph can grow very large depending on your information architec
 
 We can solve this problem by changing how the layout for common page sections is composed. Instead of having a single layout for the page that includes the header and footer, we can create special routes for each common section and then use the web application to compose the page layout.
 
-<alert type="info"><alert-icon></alert-icon>In this recipe, we will be focusing on headers and footers, but the same approach can be used for other common page sections.</alert>
+<Alert type="info">
+    <AlertIcon />In this recipe, we will be focusing on headers and footers, but the same approach can be used for other common page sections.
+</Alert>
 
 ### Setting up the layouts
 
@@ -35,6 +37,11 @@ Now we need to add a new field to the base page template for your site collectio
 <br/><br/>
 
 Now on each page we can specify which partial designs we want to use for the header and footer by setting the `LayoutRoute` field to the appropriate Page Design.
+
+<Alert type="info">
+    <AlertIcon />
+    It is important to note that this approach does change the way that pages are composed in the head application. We are moving the responsibility of composing the page to the web application, and this means that the exiting experience changes slightly. At the time of writing, when an editor edits a page, they will not see the header and footer on the page due to the way the page data is pushed into the web application in preview mode. This problem is being worked on to make the editing experience identical to a standard page layout.
+</Alert>
 
 ### Consuming the Routes
 
@@ -148,11 +155,22 @@ With this change, we are now hitting the Experience Edge API 3 times for each pa
 
 Now that we are hitting the Experience Edge API 3 times per page, there is a potential performance impact. But because the header and footer layouts are the same per page, we can cache the responses in the web application for a short time, this would improve build and generation performance when a lot of pages are generated at the same time.
 
-### Multiple Headers and Footers for a Site
+### Updating the Header and Footer Content
 
-The approach above works well when every page has the same header and footer across the entire site, but what if you have a site with multiple headers and footers?
+With this approach, we can update the header and footer content on the site by updating the content of the corresponding partial designs. This means that instead of publishing the entire site, only the partial design and supporting datasource items that have changed need to be published, dramatically reducing the amount of time it takes to publish these changes to Experience Edge.
 
-In those cases, you will need to way to identify which header and/or footer is used on a specific page. This could be done by page template type, or by adding a field to the page item that identifies the header and footer layout routes. There may also be a way to use page designs and partial designs to identify which layout route to use for headers and footers.
+<Alert type="info">
+    <AlertIcon />
+    When being used on a statically generarted site, you will still need to regenerate all pages that use the header and footer to see the changes. The approach to do this will depend on the business requirements for the site and your chosen hosting provider.
+</Alert>
+
+* ISR: If you are using ISR, then as part of the regular ISR process, each page will be updated to use the new header and footer layouts as the revalidation period times out. This could lead to pages showing different content in the header and footer depending on where they are in the revalidation cycle.
+* On Demand Revalidation: If you are using On Demand Revalidation, then you will need to regenerate the pages that use the header and footer to see the changes. Publishing the partial designs will not trigger a layout detail webhook for all pages. So in your code that responds to the Experience Edge `onupdate` webhook, you will need to check for the partial designs being updated and trigger a sitewide revalidation.
+
+<Alert type="info">
+    <AlertIcon />
+    Sitewide revalidations can be very time consuming, so it is important to consider the impact of this approach. One way to reduce the impact would be to redeploy the current code to your site. When redeploying the current code, your pages will be regenerated, either on build or on first request after the deployment. Please check if your hosting provider completely clears the site cache on a redeploy. (k
+</Alert>
 
 ## Next Steps
 
