@@ -169,9 +169,16 @@ With this approach, we can update the header and footer content on the site by u
 
 <Alert type="info">
     <AlertIcon />
-    Sitewide revalidations can be very time consuming, so it is important to consider the impact of this approach. One way to reduce the impact would be to redeploy the current code to your site. When redeploying the current code, your pages will be regenerated, either on build or on first request after the deployment. Please check if your hosting provider completely clears the site cache on a redeploy. (k
+    Sitewide revalidations can be very time consuming, so it is important to consider the impact of this approach. One way to reduce the impact would be to redeploy the current code to your site. When redeploying the current code, your pages will be regenerated, either on build or on first request after the deployment. Please check if your hosting provider completely clears the site cache on a redeploy. When taking this approach to a sitewide update, you should make sure that your builds are optimized by following the guidelines in this recipe: [Experience Edge Rate Limits and Caching](/learn/accelerate/xm-cloud/pre-development/project-architecture/rate-limits-and-caching)
 </Alert>
 
 ## Next Steps
 
 This recipe highlights a new approach to page composition in XM Cloud. It should be considered a starting point for your project, you should validate the approach and adjust it to fit the needs of your project.
+
+
+## Related Recipes
+
+<Row columns={2}>
+<Link title="Experience Edge Rate Limits and Caching" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/rate-limits-and-caching" />
+</Row>
