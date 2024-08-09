@@ -13,8 +13,8 @@ Sitecore Managed Cloud is an offering that allows users to rely on Sitecore to m
 
 ## Documentation
 
-- [Managed Cloud with Containers](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/introduction-to-managed-cloud.html)
-- [Managed Cloud with PaaS](https://doc.sitecore.com/xp/en/developers/100/managed-cloud/sitecore-cloud-services-overview.html)
+- [Managed Cloud with Containers](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/managed-cloud-containers.html)
+- [Managed Cloud with PaaS](https://doc.sitecore.com/xp/en/developers/latest/managed-cloud/managed-cloud-paas.html)
 
 ## Getting Started
 
