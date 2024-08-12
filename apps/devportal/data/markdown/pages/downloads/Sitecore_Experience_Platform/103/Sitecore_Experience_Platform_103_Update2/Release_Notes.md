@@ -20,8 +20,8 @@ This is a product update. Sitecore recommends that you upgrade to this release i
 ## Resolved issues
  | Context | Description | ADO no. |
  | --- | --- | --- |
- | Experience Editor | After adding text in a multi-line text field, *<p>* tags display instead of displaying text in multiple lines. | 398289 |
- | Experience Editor | Simultaneous launch of Experience Editor in two browsers after restarting Sitecore instance can cause a crash in one of them.  | 412499 |
+ | Experience Editor | After adding text in a multi-line text field, paragraph *p* tags display in a single line instead of displaying text in multiple lines. | 398289 |
+ | Experience Editor | Simultaneous launch of Experience Editor in two browsers after restarting Sitecore instance can cause a crash in one of them. | 412499 |
  | Experience Editor | Duplicate renderings occur in the Experience Editor, add rendering dialog. | 573497 |
  | Experience Editor | The Experience Editor *Go* button incorrectly resolves the site. | 596216 |
  | Experience Editor | Publishing a new form, where the variable *Is Ajax* is unselected, results in the language being removed from the URL of the published form. | 600934 |
