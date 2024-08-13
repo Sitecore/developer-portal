@@ -9,6 +9,7 @@ This is a product update. Sitecore recommends that you upgrade to this release i
 
 - [New features/improvements](#new-featuresimprovements)
 - [Resolved issues](#resolved-issues)
+- [Dependency](#dependency)
 
 ## New features/improvements
  | Context | Description | ADO no. |
@@ -71,3 +72,8 @@ This is a product update. Sitecore recommends that you upgrade to this release i
  | Platform | When a multi-list field with a custom validation displays a pop-up dialog containing a fatal error, upon closing this dialog the field in error does not display a red validation bar as it should. | 616548 |
  | Platform | Unable to remove items from Recycle Bin after applying pre-release 10.3.2 rev. 010586 PRE. | 616843 |
  | Platform | The *Links* table does not include droplist links. | 618724 |
+ 
+ ## Dependency
+  | Context | Description | ADO no. |
+  | --- | --- | --- |
+  | SXA | SXP 10.3.2 requires SXA bug fix *578189 - The content tree appears instead of available renderings in the Select a Rendering dialog*. This SXA fix was hotfixed to SXA 10.3.0 in summer 2023 and is included in the latest [Cumulative Hotfix for SXA 10.3.0 and Sitecore XP 10.3](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1002845). | 578189 |
