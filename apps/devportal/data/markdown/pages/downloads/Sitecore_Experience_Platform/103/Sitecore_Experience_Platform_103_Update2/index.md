@@ -34,7 +34,7 @@ See [all available versions here](/downloads/Sitecore_Experience_Platform).
 ## Download options for Sitecore Container deployments
  | Resource | Description |
  | --- | --- |
- | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/10.3.2.010837.1896) | Link to the Sitecore Container Deployment Package on GitHub, containing Docker Compose and Kubernetes specification files for deploying Sitecore in development and production container environments. |
+ | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/sxp%2F10.3.2.010837.1896) | Link to the Sitecore Container Deployment Package on GitHub, containing Docker Compose and Kubernetes specification files for deploying Sitecore in development and production container environments. |
  | [Image and Tags List](https://github.com/Sitecore/docker-images/tree/master/tags) | Link to the official tags list (.md and .json format) of all published Sitecore images available on the Sitecore Container Registry (SCR). |
  | [Developer Workstation Deployment with Docker Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/103/Sitecore_Experience_Platform_10.3.2/Sitecore_XP_10.3.X_Developer_Workstation_Deployment_With_Docker.pdf) | Guide describing how to use Sitecore Containers with Docker Compose to deploy a developer workstation. |
  | [Production Environment Deployment with Kubernetes Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/103/Sitecore_Experience_Platform_10.3.2/Sitecore_XP_10.3.X_Production_Deployment_With_Kubernetes.pdf) | Guide describing how to use Sitecore Containers with Kubernetes to deploy to the Azure Kubernetes Service. |
