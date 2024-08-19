@@ -1,21 +1,15 @@
 ---
 title: 'Release Notes'
 ---
-
-**April 30, 2024 – released Sitecore Experience Platform 10.4.0**
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    **May 28, 2024: Patched and republished the four Azure App Service download package options and the SAT Resources package to add missing Application Insights configuration. Package version numbers were not changed, to avoid re-spinning the entire release.**\
-	**To confirm you have the correct Azure App Service package version, ensure the following file is included in your zip download:**\
-	`Sitecore 10.4.0 rev. 010422 (xx) (Cloud)_xxx.scwdp.zip\Content\Website\ApplicationInsights.config`\
-	**To confirm you have the correct Sitecore Azure Toolkit Resources 10.4.0 rev. 010422.zip package, ensure the following file is included in your zip download:**\
-	`CargoPayloads\Sitecore.Cloud.ApplicationInsights.sccpl\CopyToWebsite\ApplicationInsights.config` 
-  </Alert>
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    **June 11,2024: Added ltsc2019 Container images and support package for Sitecore XP, which includes Identity Server. ltsc 2019 for other modules is coming in June, 2024.**
-  </Alert>
+- Jul 29, 2024: Added ltsc2019 and ltsc2022 container images for Sitecore Docker Tools Assets compatible with SXP 10.4.
+- Jul 24, 2024: Added ltsc2019 container images for Sitecore Connect™ for Content Hub 5.2.0.
+- Jun 11, 2024: Added ltsc2019 Container images and support package for Sitecore XP 10.4. Added ltsc2019 container images for Identity Server.
+- May 28, 2024: Patched and republished the four Azure App Service download package options and the SAT Resources package to add missing Application Insights configuration. Package version numbers were not changed, to avoid re-spinning the entire release.\
+To confirm you have the correct Azure App Service package version, ensure the following file is included in your zip download:\
+`Sitecore 10.4.0 rev. 010422 (xx) (Cloud)_xxx.scwdp.zip\Content\Website\ApplicationInsights.config`\
+To confirm you have the correct Sitecore Azure Toolkit Resources 10.4.0 rev. 010422.zip package, ensure the following file is included in your zip download:\
+`CargoPayloads\Sitecore.Cloud.ApplicationInsights.sccpl\CopyToWebsite\ApplicationInsights.config`
+- Apr 30, 2024: Released Sitecore Experience Platform 10.4.0.
 
 This release includes new features and improvements made in Sitecore Experience Platform (SXP) 10.4. Sitecore recommends that you upgrade to this release if it aligns with the specific needs of your organization. This release contains significant improvements in functionality worth evaluating.
 

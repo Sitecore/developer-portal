@@ -1,16 +1,7 @@
 ---
 title: "Sitecore Experience Platform 10.4"
 ---
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Packages for Azure App Service were republished on May 28, 2024 to add missing Application Insights configuration. See Release Notes for more info.
-  </Alert>
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    June 11,2024: Added ltsc2019 Container images and support package for Sitecore XP, which includes Identity Server. ltsc2019 for other modules is coming in June, 2024.
-  </Alert>
-  
+ 
 Sitecore Experience Platform 10.4 introduces enhancements and corrective updates that provide improved security, prolonged supportability, performance, and usability.\
 See [all available versions here](/downloads/Sitecore_Experience_Platform).
 
@@ -32,7 +23,7 @@ See [all available versions here](/downloads/Sitecore_Experience_Platform).
  | [Installation Assistant for XM Scaled](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(Setup%20XM1%20Developer%20Workstation%20rev.%201.6.0-r4).zip) | Sitecore Install Assistant tool and resources for installing a Sitecore XM Scaled (XM1) topology. |
  | [Installation Assistant for XP Single](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Sitecore%2010.4.0%20rev.%20010422%20(Setup%20XP0%20Developer%20Workstation%20rev.%201.6.0-r4).zip) | Sitecore Install Assistant tool and resources for installing a Sitecore XP Single (XP0) topology. |
  | [Sitecore Installation Framework](/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_240) | Tooling for configuring and deploying Sitecore topologies to local or remote servers or virtual machines. |
- | [SIF Configuration Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/SIF_Configuration_Guide_2_4.pdf) | Guide describing how to use the Sitecore Installation Framework (SIF), Microsoft PowerShell module to deploy and configure a Sitecore topology. |
+ | [SIF Configuration Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20240/Secure/Sitecore_Installation_Framework_Configuration_Guide-2.4.0.pdf) | Guide describing how to use the Sitecore Installation Framework (SIF), Microsoft PowerShell module to deploy and configure a Sitecore topology. |
  | [Installation Guide for XM Scaled Topology](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Installation_Guide_for_XM_Scaled_Topology_10_4_0.pdf) | Guide describing how to install the Sitecore XM Scaled (XM1) topology to run the Content Management (CM), Content Delivery (CD),and Sitecore Identity roles. |
  | [Quick Install Guide for XP Developer Workstation](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Quick_Install_Guide_for_XP_Developer_Workstation_10_4_0.pdf) | Guide describing how to install the Sitecore XP Single (XP0) topology on a workstation for development and testing purposes. |
  | [Installation Guide for XP Scaled Topology](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore%20Experience%20Platform%20104/Installation_Guide_for_XP_Scaled_Topology_10_4_0.pdf) | Guide describing how to install the Sitecore XP Scaled (XP1) topology. |

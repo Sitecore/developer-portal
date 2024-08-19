@@ -17,7 +17,6 @@ export const mainNavigation: NavItem[] = [
   },
   {
     title: 'Documentation',
-    url: 'https://doc.sitecore.com',
     children: [
       {
         title: 'Experience Management',
@@ -582,11 +581,6 @@ export const mainNavigation: NavItem[] = [
             title: 'Search',
             url: '/products/search',
             logo: Product.Search,
-          },
-          {
-            title: 'Content Hub',
-            url: '/products/content-hub',
-            logo: Product.ContentHub,
           },
           {
             title: 'Content Hub ONE',
