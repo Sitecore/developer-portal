@@ -29,7 +29,7 @@ See [all available versions here](/downloads/Sitecore_Experience_Platform).
  | [Installation Guide for XP Scaled Topology](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/103/Sitecore_Experience_Platform_10.3.2/Sitecore_XP_10.3.X_Installation_Guide_for_the_XP_Scaled_topology.pdf) | Guide describing how to install the Sitecore XP Scaled (XP1) topology. |
  | [Sitecore UpdateApp Tool](/downloads/Sitecore_UpdateApp_Tool/1x/Sitecore_UpdateApp_Tool_131) | Tool for updating SXP Core, Master, and Web databases. |
  | [Configuration files for upgrade](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/103/Sitecore_Experience_Platform_10.3.2/Sitecore%2010.3.2%20rev.%20010837%20(upgrade%20files).zip) | Package containing configuration files and database scripts for upgrading. |
- | [Update Installation Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/103/Sitecore_Experience_Platform_10.3.2/Sitecore_XP_10.3.X_Update_Installation_Guide.pdf) | Guide describing how to update to the latest release in the Sitecore 10.2.X series. |
+ | [Update Installation Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/103/Sitecore_Experience_Platform_10.3.2/Sitecore_XP_10.3.X_Update_Installation_Guide.pdf) | Guide describing how to update to the latest release in the Sitecore 10.3.X series. |
 
 ## Download options for Sitecore Container deployments
  | Resource | Description |
