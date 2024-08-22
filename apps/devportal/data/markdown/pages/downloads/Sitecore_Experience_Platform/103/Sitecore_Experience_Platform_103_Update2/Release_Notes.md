@@ -43,7 +43,7 @@ This is a product update. Sitecore recommends that you upgrade to this release t
  | Search | The Search API may return incorrect results when executed under heavy system loads. | 578068 |
  | Search | The date range virtual field is not resolved to the Solr field during search. | 596145 |
  | Search | Increased CPU consumption when mapping Solr document fields to POCO class properties. | 603381 |
- | Experience Database | `SC_ANALYTICS_GLOBAL_COOKIE` continues to remain active even after the site visotor has revoked permission for the site to collect cookies. | 589304 |
+ | Experience Database | `SC_ANALYTICS_GLOBAL_COOKIE` continues to remain active even after the site visitor has revoked permission for the site to collect cookies. | 589304 |
  | Experience Apps - Content Testing | The LeaderBoard is empty when choosing it from the *Reports* | 597461 |
  | Email Experience Manager | The link from EXM to the intended item in the Content Editor gets corrupted if the item display name contains Danish characters, for example: å æ ø. | 366194 |
  | Email Experience Manager | Email campaign description does not support special characters. | 604409 |
