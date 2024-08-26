@@ -4,10 +4,9 @@ description: ""
 ---
 
 The Sitecore Publishing Service Module provides integration with the opt-in Publishing Service, supporting high-performance publishing in large scale Sitecore setups.
+
+See [Sitecore Publishing Service – compatibility tables](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0761308) for compatibility between versions of Sitecore Publishing Service Module, Sitecore Publishing Service, and Sitecore Experience Platform.
  
-Sitecore Publishing Service Module 10.4.0 is compatible with Sitecore Experience Platform 10.4.\
-Sitecore Publishing Service Module 10.4.0 is compatible with Sitecore Publishing Service 7.0.
-  
 See [all available Sitecore Publishing Service Module versions here](/downloads/Sitecore_Publishing_Service_Module).\
 See [all available Sitecore Publishing Service versions here](/downloads/Sitecore_Publishing_Service).
 

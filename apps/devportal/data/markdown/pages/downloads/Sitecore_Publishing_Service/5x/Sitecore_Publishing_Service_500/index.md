@@ -5,10 +5,14 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/5x/Siteco
 ---
 
 The Sitecore Publishing Service is an opt-in service providing an alternative to the default Sitecore publishing mechanism focusing on increased performance by doing operations in bulk. It uses a different approach than the default publishing mechanism and is not a like for like replacement. There are differences to UI, integration points, deployment and in some cases publishing behavior.\
+
 This page contains Sitecore Publishing Service 5.0.0.
 
+Integrating this service into Sitecore Experience Platform also requires the Sitecore Publishing Services Module.\
+See [Sitecore Publishing Service – compatibility tables](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0761308) for compatibility between versions of Sitecore Publishing Service, Sitecore Publishing Service Module, and Sitecore Experience Platform.
+
 See [all available Sitecore Publishing Service versions here](/downloads/Sitecore_Publishing_Service).\
-Integration of this service into Sitecore Experience Platform also requires the Sitecore Publishing Services Module. See [all available Module versions here](/downloads/Sitecore_Publishing_Service_Module).
+See [all available Module versions here](/downloads/Sitecore_Publishing_Service_Module).
 
 ## Download options for Sitecore Container deployments
 
