@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_252/Release_Notes
 ---
 
@@ -8,6 +8,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Az
 
 ## New features/improvements
 
- | Context | Description | Ref. ID |
- | --- | --- | --- |
- | Installation | ​​Azure Toolkit 2.5.2 is compatible with Sitecore Experience Platform 10.0.2. | 482329 |
+| Context      | Description                                                                   | Ref. ID |
+| ------------ | ----------------------------------------------------------------------------- | ------- |
+| Installation | ​​Azure Toolkit 2.5.2 is compatible with Sitecore Experience Platform 10.0.2. | 482329  |

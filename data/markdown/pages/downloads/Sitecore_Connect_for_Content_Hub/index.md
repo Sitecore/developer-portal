@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Connect™ for Content Hub"
-description: "Sitecore Connect™ for Content Hub synchronizes data between SXP and Content Hub. It gives web editors and content/digital marketers the ability to work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub. Users also have the ability to select assets directly from DAM from within the Sitecore environment. Users can select and Incorporate assets into their web and digital experience creation and delivery."
+title: 'Sitecore Connect™ for Content Hub'
+description: 'Sitecore Connect™ for Content Hub synchronizes data between SXP and Content Hub. It gives web editors and content/digital marketers the ability to work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub. Users also have the ability to select assets directly from DAM from within the Sitecore environment. Users can select and Incorporate assets into their web and digital experience creation and delivery.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Content_Hub.aspx
 ---
 

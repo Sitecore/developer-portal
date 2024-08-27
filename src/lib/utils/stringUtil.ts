@@ -4,11 +4,13 @@ export function appendPathToBasePath(basePath: string, path: string): string {
   } else {
     basePath += `/${path}`;
   }
+
   return basePath;
 }
 
 export function removeHtmlTags(input: string): string {
   const htmlTagsRegex = /<[^>]*>/g;
+
   return input.replace(htmlTagsRegex, '');
 }
 
@@ -56,6 +58,7 @@ export function slugify(text: string | null | undefined): string {
   }
 
   const slug = encodeURIComponent(text);
+
   return slug.toLowerCase().replace(/%20/g, '-');
 }
 

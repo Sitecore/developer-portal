@@ -1,5 +1,5 @@
 export type CategoryTileListData = {
-  cards: CategoryTileProps[];
+  cards: Array<CategoryTileProps>;
 };
 
 export type CategoryTileProps = {

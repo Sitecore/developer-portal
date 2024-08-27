@@ -1,20 +1,20 @@
 import type { SystemStyleFunction } from '@chakra-ui/theme-tools';
 
 export const proseBaseStyle: SystemStyleFunction = () => ({
-  //h1:where(.prose>:first-child):not(:where([class~=not-prose] *))
+  // h1:where(.prose>:first-child):not(:where([class~=not-prose] *))
   h1: {
     fontFamily: 'heading',
     fontWeight: 'semibold',
     fontSize: { base: '4xl', md: '5xl' },
-    //mb: { base: 2, md: 0 },
+    // mb: { base: 2, md: 0 },
   },
   h2: {
     fontFamily: 'heading',
     fontWeight: 'semibold',
     fontSize: { base: '2xl', md: '3xl' },
     scrollMarginTop: '5rem',
-    //mt: { base: 0, md: 0 },
-    //mb: { base: 0, md: 0 },
+    // mt: { base: 0, md: 0 },
+    // mb: { base: 0, md: 0 },
   },
 
   h3: {

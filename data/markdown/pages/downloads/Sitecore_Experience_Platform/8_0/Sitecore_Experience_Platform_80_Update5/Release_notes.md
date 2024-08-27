@@ -1,6 +1,6 @@
 ---
-title: "Release notes"
-description: ""
+title: 'Release notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update5/Release_notes
 ---
 
@@ -10,12 +10,9 @@ For instructions on how to download and install this release, please visit the [
 
 ## Important changes
 
--   Support has been added for MongoDB 3.0. (431956)
-    
--   The MongoDB driver has been upgraded to 1.10.
-    
--   Generic security enhancements have been made.
-    
+- Support has been added for MongoDB 3.0. (431956)
+- The MongoDB driver has been upgraded to 1.10.
+- Generic security enhancements have been made.
 
 ## Documentation
 
@@ -29,9 +26,8 @@ This update does not currently support xDB cloud.
 
 ### Marketing Foundation
 
--   There was an issue where the Sitecore.Analytics.Outcome.Model.ContactOutcome class was not serializable. This has been fixed. (437655)
-    
+- There was an issue where the Sitecore.Analytics.Outcome.Model.ContactOutcome class was not serializable. This has been fixed. (437655)
 
 ## Breaking changes
 
--   The Sitecore.Cloud.Xdb.ServiceModel namespace was moved from Sitecore.Cloud.Xdb.ServiceModel.dll to Sitecore.Cloud.Xdb.dll
+- The Sitecore.Cloud.Xdb.ServiceModel namespace was moved from Sitecore.Cloud.Xdb.ServiceModel.dll to Sitecore.Cloud.Xdb.dll

@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_IP_Geolocation_Service_Client/12/Sitecore_IP_Geolocation_Service_Client_12_for_Sitecore_XP_80/Release_Notes
 ---
 
@@ -16,7 +16,7 @@ This version of Sitecore® IP Geolocation Service runs on Sitecore XP 7.5-8.0.
 
 New features/improvements:
 
--   The IP Geolocation client no longer sends lookup requests for local network IP addresses. (131486)
+- The IP Geolocation client no longer sends lookup requests for local network IP addresses. (131486)
 
 **June 03, 2015**
 
@@ -28,7 +28,7 @@ This version of Sitecore® IP Geolocation Service runs on Sitecore XP 7.5-8.0.
 
 Resolved issues
 
--   Region code formatting was wrong. This issue has been fixed.
+- Region code formatting was wrong. This issue has been fixed.
 
 **May 29, 2015**
 
@@ -40,13 +40,13 @@ This version of Sitecore® IP Geolocation Service runs on Sitecore XP 7.5-8.0.
 
 New Features and Improvements
 
--   Improved exception handling. 
--   Improved stability of resolving IP. The module requests the service’s frond end URL repeatedly in case of unsuccessful requests. 
--   Improved configuration description
+- Improved exception handling.
+- Improved stability of resolving IP. The module requests the service’s frond end URL repeatedly in case of unsuccessful requests.
+- Improved configuration description
 
 Resolved issues
 
--   Fixed issues related to unknown and empty states when resolving IP.
+- Fixed issues related to unknown and empty states when resolving IP.
 
 **May 4, 2015**
 
@@ -60,4 +60,4 @@ This version of Sitecore® IP Geolocation Service runs on Sitecore XP 7.5-8.0.
 
 The list of known issues present in Sitecore® IP Geolocation Service 1.2. The known issues listed in previous releases are still known issues unless otherwise stated or mentioned under fixed issues.
 
--   Sitecore IP Geolocation Service Client provider logs the 400 Bad Request exception in html format.
+- Sitecore IP Geolocation Service Client provider logs the 400 Bad Request exception in html format.

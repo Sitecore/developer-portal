@@ -8,7 +8,7 @@ export type ChangeType = {
   type: string;
 };
 
-export function ParseChangeType(data: GetAllChangetypesQuery): ChangeType[] {
+export function ParseChangeType(data: GetAllChangetypesQuery): Array<ChangeType> {
   if (!data.allChangetype?.results) {
     return [];
   }

@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/35/Email_Experience_Manager_35_Update2/Release_Notes
 ---
 
@@ -12,6 +12,6 @@ This an update. Sitecore recommends that you upgrade to this release if it inclu
 
 The following issues have been fixed:
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | Added support for the `Right to be forgotten`.`` |  | 202771 |
+| Description                                      | Customer ticket ID (or other) | TFS no. |
+| ------------------------------------------------ | ----------------------------- | ------- |
+| Added support for the `Right to be forgotten`.`` |                               | 202771  |

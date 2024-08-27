@@ -1,21 +1,25 @@
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
 import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import Layout from '@src/layouts/Layout';
+
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+
 import { Hero } from '../components/common';
-import { CenteredContent, VerticalGroup } from '../components/helpers';
 import { TextLink } from '../components/links';
 import { DecoratedMarkdown, RenderContent } from '../components/markdown/MarkdownContent';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
+import { CenteredContent, VerticalGroup } from '../components/ui';
 
 type NewsLetterPagePageProps = {
   pageInfo: PageInfo;
   sidebarConfig: SidebarNavigationConfig;
-  childPageInfo: ChildPageInfo[];
+  childPageInfo: Array<ChildPageInfo>;
 };
 
 const NewsLetterPage = ({ pageInfo, sidebarConfig, childPageInfo }: NewsLetterPagePageProps) => {
-  if (!pageInfo) return <>No pageInfo found</>;
+  if (!pageInfo) {
+    return <>No pageInfo found</>;
+  }
 
   return (
     <TrackPageView pageInfo={pageInfo}>
@@ -72,7 +76,6 @@ const NewsLetterPage = ({ pageInfo, sidebarConfig, childPageInfo }: NewsLetterPa
             </Flex>
           </CenteredContent>
         </VerticalGroup>
-
       </Layout>
     </TrackPageView>
   );

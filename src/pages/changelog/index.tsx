@@ -1,20 +1,22 @@
-import { Hero } from '@/src/components/common';
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { CenteredContent, VerticalGroup } from '@/src/components/helpers';
-import { ButtonLink } from '@/src/components/links';
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
+import { Option } from '@/src/components/ui/dropdown';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
-import { Option } from '@src/components/dropdown';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { SWRConfig } from 'swr';
+
+import { Hero } from '@/src/components/common';
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { ButtonLink } from '@/src/components/links';
+import { CenteredContent, VerticalGroup } from '@/src/components/ui';
+import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
+
 import { Changelog } from '../../lib/changelog/changelog';
 
 type ChangelogHomeProps = {
@@ -23,9 +25,10 @@ type ChangelogHomeProps = {
 };
 
 export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
-  const [selectedProduct, setSelectedProduct] = useState<Option[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<Array<Option>>([]);
 
   const router = useRouter();
+
   return (
     <>
       <Head>

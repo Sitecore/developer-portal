@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Publishing Service 4.2.0"
-description: ""
+title: 'Sitecore Publishing Service 4.2.0'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/42/Sitecore_Publishing_Service_420.aspx
 ---
 
@@ -12,15 +12,15 @@ Integration of this service into Sitecore Experience Platform also requires the 
 
 ## Downloads
 
- | Resource | Description |
- | --- | --- |
- | [Sitecore Publishing Service (32 bit)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/42/Sitecore%20Publishing%20Service%20420/Secure/Sitecore%20Publishing%20Service%204.2.0-win-x86.zip) | Publishing Service .NET Core host 32 bit version |
- | [Sitecore Publishing Service (64 bit)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/42/Sitecore%20Publishing%20Service%20420/Secure/Sitecore%20Publishing%20Service%204.2.0-win-x64.zip) | Publishing Service .NET Core host 64 bit version |
+| Resource                                                                                                                                                                                                                 | Description                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
+| [Sitecore Publishing Service (32 bit)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/42/Sitecore%20Publishing%20Service%20420/Secure/Sitecore%20Publishing%20Service%204.2.0-win-x86.zip) | Publishing Service .NET Core host 32 bit version |
+| [Sitecore Publishing Service (64 bit)](https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/42/Sitecore%20Publishing%20Service%20420/Secure/Sitecore%20Publishing%20Service%204.2.0-win-x64.zip) | Publishing Service .NET Core host 64 bit version |
 
 ## Release Information
 
- | Resource | Description |
- | --- | --- |
- | [Release Notes](/downloads/Sitecore_Publishing_Service/42/Sitecore_Publishing_Service_420/Release_Notes) | A list of features, improvements, and fixes that have been implemented in this release. |
- | [Known Issues](https://kb.sitecore.net/articles/431510) | Choose this link to access the Sitecore Knowledge Base. |
- | [Installation Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/42/Sitecore%20Publishing%20Service%20420/Secure/Publishing-Service-Installation-and-Configuration-Guide-4.2.pdf) | The installation and configuration procedure for the Sitecore Publishing Service. |
+| Resource                                                                                                                                                                                                           | Description                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| [Release Notes](/downloads/Sitecore_Publishing_Service/42/Sitecore_Publishing_Service_420/Release_Notes)                                                                                                           | A list of features, improvements, and fixes that have been implemented in this release. |
+| [Known Issues](https://kb.sitecore.net/articles/431510)                                                                                                                                                            | Choose this link to access the Sitecore Knowledge Base.                                 |
+| [Installation Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/42/Sitecore%20Publishing%20Service%20420/Secure/Publishing-Service-Installation-and-Configuration-Guide-4.2.pdf) | The installation and configuration procedure for the Sitecore Publishing Service.       |

@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_1_3/Release_Notes
 ---
 
@@ -12,28 +12,28 @@ Details on these changes are included in the product documentation, available o
 
 ## Highlights
 
--   Support for Data Exchange Framework 1.3
--   Bug fixes
+- Support for Data Exchange Framework 1.3
+- Bug fixes
 
 ## Documentation
 
--   Documentation links are available on the [Downloads](/downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_1_3) page
+- Documentation links are available on the [Downloads](/downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_1_3) page
 
 ## System requirements
 
--   Sitecore Experience Platform 8.1 rev. 151207 (8.1 update-1) or later
+- Sitecore Experience Platform 8.1 rev. 151207 (8.1 update-1) or later
 
 ## Deprecated and removed functionality
 
--   Renamed namespace Sitecore.DataExchange.Providers.DynamicsCrm.ApplyMappingStatusActions to Sitecore.DataExchange.Providers.DynamicsCrm.MappingsAppliedActions
--   Renamed namespace Sitecore.DataExchange.Providers.DynamicsCrm.Converters.ApplyMappingStatusActions to Sitecore.DataExchange.Providers.DynamicsCrm.Converters.MappingsAppliedActions
+- Renamed namespace Sitecore.DataExchange.Providers.DynamicsCrm.ApplyMappingStatusActions to Sitecore.DataExchange.Providers.DynamicsCrm.MappingsAppliedActions
+- Renamed namespace Sitecore.DataExchange.Providers.DynamicsCrm.Converters.ApplyMappingStatusActions to Sitecore.DataExchange.Providers.DynamicsCrm.Converters.MappingsAppliedActions
 
 ## Resolved issues
 
 The following issues have been resolved:
 
--   Filter expression with operator “On or before selected” date does not work (131540)
--   Default entity name is set on template used to update any entity (137924)
--   Certain pipeline steps are not included in the insert options for the pipeline template (137924)
--   Pipeline step template has incorrect name (138275)
--   Unable to write option set values to Dynamics entities (139650)
+- Filter expression with operator “On or before selected” date does not work (131540)
+- Default entity name is set on template used to update any entity (137924)
+- Certain pipeline steps are not included in the insert options for the pipeline template (137924)
+- Pipeline step template has incorrect name (138275)
+- Unable to write option set values to Dynamics entities (139650)

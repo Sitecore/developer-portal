@@ -11,7 +11,6 @@ The Sitecore® Experience Accelerator provides reusable, templated UX layouts an
     You are encouraged to use the latest Sitecore PowerShell Extensions 4.7.2 WebDeploy package as it contains important fixes and improvements.
   </Alert>
 
-
 ## Downloads
 
 | Resource                                                                                                                                                                                                                                                                             | Description                                                                          |

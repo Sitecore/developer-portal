@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure/Sitecore_Azure_81/Sitecore_Azure_81_rev_151119_Hotfix_1076431/Release_Notes
 ---
 
@@ -18,10 +18,10 @@ For all Sitecore Azure 8.1 documentation, please visit the [Sitecore Documentati
 
 Sitecore Azure 8.1 rev. 151119 Hotfix 107643-1 requires:
 
--   Sitecore® Experience PlatformTM1 Update-2 or later
--   Sitecore Azure 8.1 rev. 151119
--   Azure SDK 2.7.1
+- Sitecore® Experience PlatformTM1 Update-2 or later
+- Sitecore Azure 8.1 rev. 151119
+- Azure SDK 2.7.1
 
 ## New features & improvements
 
--   Sitecore Azure now supports all API changes in Sitecore 8.1 Update 2
+- Sitecore Azure now supports all API changes in Sitecore 8.1 Update 2

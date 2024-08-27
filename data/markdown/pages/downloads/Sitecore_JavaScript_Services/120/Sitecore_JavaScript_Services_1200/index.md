@@ -24,7 +24,6 @@ More information can be obtained here: [https://jss.sitecore.com/help](https://j
     This version of JavaScript Services (JSS) is compatible with Sitecore 9.2.
   </Alert>
 
-
 ## Download options
 
 | Resource                                                                                                                                                                                                                                                                                       | Description                                                                              |

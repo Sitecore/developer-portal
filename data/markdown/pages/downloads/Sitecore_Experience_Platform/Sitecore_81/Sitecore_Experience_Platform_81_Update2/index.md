@@ -11,14 +11,11 @@ Looking for **a different version**? See [all available 8.0 and 8.1 versions](/d
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    
-
--   Note: xDB Cloud support will follow approximately 6 weeks after the release of this update.
--   Sitecore 8.1 now requires a license with the “Sitecore.xDB.base” key to enable all features of the Experience Platform. If your license file does not contain this key, Sitecore will default to Experience Management (CMS-only) mode. Any customers or partners with a license to Experience Platform should contact their account manager or [login to SPN](http://spn.sitecore.net/default) if they are missing this key.
-
-
+    <AlertDescription>
+    - Note: xDB Cloud support will follow approximately 6 weeks after the release of this update.
+    - Sitecore 8.1 now requires a license with the “Sitecore.xDB.base” key to enable all features of the Experience Platform. If your license file does not contain this key, Sitecore will default to Experience Management (CMS-only) mode. Any customers or partners with a license to Experience Platform should contact their account manager or [login to SPN](http://spn.sitecore.net/default) if they are missing this key.
+    </AlertDescription>
   </Alert>
-
 
 ## Download options
 

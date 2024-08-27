@@ -7,6 +7,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
     res.status(405).json({ message: 'Method not allowed' });
+
     return;
   }
 
@@ -15,10 +16,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (clear != null) {
     res.clearPreviewData({});
-    //console.log('Preview mode disabled');
+    // console.log('Preview mode disabled');
   } else {
     res.setPreviewData({});
-    //console.log('Preview mode enabled');
+    // console.log('Preview mode enabled');
   }
 
   if (redirectUrl) {

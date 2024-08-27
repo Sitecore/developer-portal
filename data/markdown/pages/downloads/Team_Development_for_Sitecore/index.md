@@ -1,6 +1,6 @@
 ---
-title: "Team Development for Sitecore"
-description: "Reduce deployment time, ensure team integration, and create an environment in which you can easily and quickly move code from your local environment all the way through your development workflow. Click here to learn more."
+title: 'Team Development for Sitecore'
+description: 'Reduce deployment time, ensure team integration, and create an environment in which you can easily and quickly move code from your local environment all the way through your development workflow. Click here to learn more.'
 origin: https://dev.sitecore.net/Downloads/Team_Development_for_Sitecore.aspx
 ---
 

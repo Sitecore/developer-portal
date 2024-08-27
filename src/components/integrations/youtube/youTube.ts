@@ -24,6 +24,6 @@ export type YouTubeVideo = {
 };
 
 export type YouTubeApiResponse = {
-  content: YouTubeVideo[];
+  content: Array<YouTubeVideo>;
   playlistTitle?: string;
 };

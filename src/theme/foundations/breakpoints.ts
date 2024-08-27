@@ -7,4 +7,5 @@ const breakpoints = {
   '2xl': '1536px',
   '3xl': '1792px',
 };
+
 export default breakpoints;

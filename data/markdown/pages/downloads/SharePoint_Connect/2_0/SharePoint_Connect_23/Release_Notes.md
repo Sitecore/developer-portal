@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/SharePoint_Connect/2_0/SharePoint_Connect_23/Release_Notes
 ---
 
@@ -14,4 +14,4 @@ This version of the module runs on Sitecore XP 8.2 with SharePoint Server 2010, 
 
 New features:
 
--   SharePoint Connect now supports Sitecore XP 8.2
+- SharePoint Connect now supports Sitecore XP 8.2

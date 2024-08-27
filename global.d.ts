@@ -1,1 +1,1 @@
-declare module "@sitecore/blok-theme"
+declare module '@sitecore/blok-theme';

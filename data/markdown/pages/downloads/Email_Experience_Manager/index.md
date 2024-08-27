@@ -1,6 +1,6 @@
 ---
-title: "Email Experience Manager"
-description: "Use the Email Experience Manager (EXM) to create highly customizable messages that are both personal and relevant to your customers. As of Sitecore 9.0 Update-1, the Email Experience Manager is included as part of the Sitecore platform deployment."
+title: 'Email Experience Manager'
+description: 'Use the Email Experience Manager (EXM) to create highly customizable messages that are both personal and relevant to your customers. As of Sitecore 9.0 Update-1, the Email Experience Manager is included as part of the Sitecore platform deployment.'
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager.aspx
 ---
 
@@ -23,8 +23,8 @@ This release is deployed as part of Sitecore XP 9.1.
 This release is deployed as part of Sitecore XP 9.0 Update-2.
 
 [Email Experience Manager in Sitecore 9.0 Update-1](/downloads/Email_Experience_Manager/90/Email_Experience_Manager_in_Sitecore_90_Update1)\
-This release is deployed as part of Sitecore XP 9.0 Update-1. 
-</CardBody>          
+This release is deployed as part of Sitecore XP 9.0 Update-1.
+</CardBody>  
 </Card>
 
 <Card variant='outlineRaised' px={0} mb={8}>

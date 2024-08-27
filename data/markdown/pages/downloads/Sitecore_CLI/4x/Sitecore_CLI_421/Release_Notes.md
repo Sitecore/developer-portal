@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/4x/Sitecore_CLI_421/Release_Notes
 ---
 
@@ -10,8 +10,8 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/4x/Sitecore_CLI_421/Rele
 
 The following issues have been fixed:
 
- | Description | ADO no. |
- | --- | --- |
- | Serialization push does not work if there is no 'en' version. | 526511 |
- | ​The "dotnet sitecore ser validate --fix" fails to rename a *.yml file. | 528918 |
- | ​Serialized YML files are not removed from the file system after deleting them from database if they fall under the "DescendantsOnly" scope. | 522659 |
+| Description                                                                                                                                  | ADO no. |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Serialization push does not work if there is no 'en' version.                                                                                | 526511  |
+| ​The "dotnet sitecore ser validate --fix" fails to rename a \*.yml file.                                                                     | 528918  |
+| ​Serialized YML files are not removed from the file system after deleting them from database if they fall under the "DescendantsOnly" scope. | 522659  |

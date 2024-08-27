@@ -1,7 +1,7 @@
 import { Box, Collapse, Flex, Icon, IconButton, Show, useDisclosure } from '@chakra-ui/react';
 import { mdiClose, mdiMagnify } from '@mdi/js';
-import PreviewSearchInput from '../sitecore-search/PreviewSearchInput';
-import SearchInput from '../sitecore-search/SearchInput';
+import { PreviewSearchInput, SearchInput } from '../sitecore-search';
+
 
 export const SearchButton = () => {
   const { isOpen, onToggle } = useDisclosure();

@@ -1,11 +1,11 @@
-import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, HStack, Heading, Hide, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, SimpleGrid, Stack, Tag, Text, chakra, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardHeader, CardProps, chakra, Flex, Heading, Hide, HStack, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, SimpleGrid, Stack, Tag, Text, useColorModeValue } from '@chakra-ui/react';
 import { ChangelogEntry } from '@lib/changelog/types';
 import { getChangelogEntryUrl, getSlug } from '@lib/utils';
 import { TextLink } from '@src/components/links';
 import Image from 'next/image';
 
 type ChangelogEntriesProps = CardProps & {
-  entries: ChangelogEntry[];
+  entries: Array<ChangelogEntry>;
   className?: string;
   title?: string;
   linkHref?: string;

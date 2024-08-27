@@ -9,5 +9,5 @@ export default SitecoreProduct;
 
 export type SitecoreProductResults = {
   total: string;
-  results: SitecoreProduct[];
+  results: Array<SitecoreProduct>;
 };

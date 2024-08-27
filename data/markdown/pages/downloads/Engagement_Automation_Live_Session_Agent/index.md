@@ -1,6 +1,6 @@
 ---
-title: "Engagement Automation Live Session Agent"
-description: "Tooling to deploy a server role on SXP, which automatically processes timeouts of contacts with live sessions on the website."
+title: 'Engagement Automation Live Session Agent'
+description: 'Tooling to deploy a server role on SXP, which automatically processes timeouts of contacts with live sessions on the website.'
 origin: https://dev.sitecore.net/Downloads/Engagement_Automation_Live_Session_Agent.aspx
 ---
 

@@ -1,8 +1,9 @@
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { IconButton, Link, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { mdiDotsGrid } from '@mdi/js';
 import Icon from '@mdi/react';
 import NextLink from 'next/link';
+
 import { sitecoreQuickLinks } from '../../../data/data-navigation';
 
 export const QuickStartMenu = () => {

@@ -1,5 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+
 import styles from './YouTube.module.css';
 
 type VideoProps = {

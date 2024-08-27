@@ -1,6 +1,6 @@
 ---
-title: "3.x"
-description: ""
+title: '3.x'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization_Standard/3x/
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Data_Migration_Tool/2x/xDB_Data_Migration_Tool_210/Release_Notes
 ---
 
@@ -12,4 +12,4 @@ This a feature release. Sitecore recommends that you upgrade to this release if 
 
 Sitecore Experience Platform 9.1 includes:
 
--   The xDB Data Migration Tool now supports Sitecore 9.1.
+- The xDB Data Migration Tool now supports Sitecore 9.1.

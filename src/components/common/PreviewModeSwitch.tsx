@@ -1,6 +1,7 @@
-import { usePreview } from '@/src/context/PreviewContext';
 import { Switch } from '@chakra-ui/react';
 import { useState } from 'react';
+
+import { usePreview } from '@/src/context/PreviewContext';
 
 export const PreviewModeSwitch = () => {
   const { isPreviewModeEnabled, isPreview, togglePreview } = usePreview();

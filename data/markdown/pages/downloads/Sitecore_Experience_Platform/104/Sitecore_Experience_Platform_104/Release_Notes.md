@@ -1,14 +1,15 @@
 ---
 title: 'Release Notes'
 ---
+
 - Jul 29, 2024: Added ltsc2019 and ltsc2022 container images for Sitecore Docker Tools Assets compatible with SXP 10.4.
 - Jul 24, 2024: Added ltsc2019 container images for Sitecore Connect™ for Content Hub 5.2.0.
 - Jun 11, 2024: Added ltsc2019 Container images and support package for Sitecore XP 10.4. Added ltsc2019 container images for Identity Server.
 - May 28, 2024: Patched and republished the four Azure App Service download package options and the SAT Resources package to add missing Application Insights configuration. Package version numbers were not changed, to avoid re-spinning the entire release.\
-To confirm you have the correct Azure App Service package version, ensure the following file is included in your zip download:\
-`Sitecore 10.4.0 rev. 010422 (xx) (Cloud)_xxx.scwdp.zip\Content\Website\ApplicationInsights.config`\
-To confirm you have the correct Sitecore Azure Toolkit Resources 10.4.0 rev. 010422.zip package, ensure the following file is included in your zip download:\
-`CargoPayloads\Sitecore.Cloud.ApplicationInsights.sccpl\CopyToWebsite\ApplicationInsights.config`
+  To confirm you have the correct Azure App Service package version, ensure the following file is included in your zip download:\
+  `Sitecore 10.4.0 rev. 010422 (xx) (Cloud)_xxx.scwdp.zip\Content\Website\ApplicationInsights.config`\
+  To confirm you have the correct Sitecore Azure Toolkit Resources 10.4.0 rev. 010422.zip package, ensure the following file is included in your zip download:\
+  `CargoPayloads\Sitecore.Cloud.ApplicationInsights.sccpl\CopyToWebsite\ApplicationInsights.config`
 - Apr 30, 2024: Released Sitecore Experience Platform 10.4.0.
 
 This release includes new features and improvements made in Sitecore Experience Platform (SXP) 10.4. Sitecore recommends that you upgrade to this release if it aligns with the specific needs of your organization. This release contains significant improvements in functionality worth evaluating.
@@ -138,7 +139,7 @@ The following issues have been fixed:
 | Platform                          | When the `WebEdit.UsePopupContentEditor` setting is enabled, it breaks the SXA metadata partial design.                                                                                                                                   | 552038  |
 | Platform                          | ​Circular template references can throw a `StackOverflowException` error.                                                                                                                                                                 | 553229  |
 | Platform                          | When a shared field is updated​, a new version of the item is created silently without workflow state.                                                                                                                                    | 553284  |
-| Platform                          | The checkbox field of the rendering parameters resets to the standard value when you delete the data source.                                                                                                                             | 554399  |
+| Platform                          | The checkbox field of the rendering parameters resets to the standard value when you delete the data source.                                                                                                                              | 554399  |
 | Platform                          | ​When you upload to the Media Library with the options _Make uploaded media items versionable_ and _Overwrite existing media items_, shared fields from the overridden item persisted.                                                    | 558081  |
 | Platform                          | ​You cannot set security rights when `PropagationType.Any` is present.                                                                                                                                                                    | 559389  |
 | Platform                          | ​When you remove the alias and publish an item, the alias of the item is not removed from the web database.                                                                                                                               | 562638  |
@@ -262,7 +263,7 @@ The following issues have been fixed:
 | Experience Optimization           | Component test results display the label as _[Unknown]_ if it's created in a language other than English.                                                                                                                                 | 594972  |
 | Marketing Operations              | Unable to retrieve image from a Profile Card.                                                                                                                                                                                             | 477153  |
 | Marketing Operations              | An empty CSV file is generated when _Export Campaign Activities_ is triggered in Campaign Creator using SolrCloud.                                                                                                                        | 556670  |
-| Personalization                   | The _Country_ personalization condition is not implemented in `Sitecore.CES.GeoIp.Core.Conditions`. See [KB1003208](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KB1003208).                                       | 545860  |
+| Personalization                   | The _Country_ personalization condition is not implemented in `Sitecore.CES.GeoIp.Core.Conditions`. See [KB1003208](https://sitecore.service-now.com/kb?id=kb_article_view&sysparm_article=KB1003208).                                    | 545860  |
 | Personalization                   | When you hide a personalization component that has custom rendering parameters, a `System.Xml.XmlException` error occurs.                                                                                                                 | 559953  |
 | Personalization                   | Long personalization rules in the segmented list can result in a serialization exception.                                                                                                                                                 | 589574  |
 | Personalization                   | Creating a new segment with rule _Where Contact Has Triggered Goal_ hangs when one of the conditions is broken.                                                                                                                           | 597023  |

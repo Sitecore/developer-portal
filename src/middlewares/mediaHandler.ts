@@ -1,5 +1,6 @@
 import { get } from '@vercel/edge-config';
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
+
 import { MiddlewareFactory } from './middlewareFactory';
 
 export const PUBLIC_DOWNLOAD_HOST = 'https://scdp.blob.core.windows.net/downloads';
@@ -20,6 +21,7 @@ export const mediaHandler: MiddlewareFactory = (next) => {
       } catch {
         return NextResponse.error();
       }
+
       return next(request, _next);
     }
   };

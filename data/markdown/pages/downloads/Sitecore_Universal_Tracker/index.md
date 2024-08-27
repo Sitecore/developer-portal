@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Universal Tracker"
-description: "The Universal Tracker is an opt-in mechanism for tracking interactions and events from headless clients."
+title: 'Sitecore Universal Tracker'
+description: 'The Universal Tracker is an opt-in mechanism for tracking interactions and events from headless clients.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Universal_Tracker.aspx
 ---
 

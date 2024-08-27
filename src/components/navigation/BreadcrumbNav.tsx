@@ -1,9 +1,11 @@
-import { PageInfo, SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import { appendPathToBasePath } from '@src/lib/utils/stringUtil';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import useSidebarNav from '../hooks/useSidebarNav';
+
+import { PageInfo, SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
+
+import useSidebarNav from '../../hooks/useSidebarNav';
 
 export interface BreadcrumbNavProps {
   enabled?: boolean;
@@ -11,14 +13,21 @@ export interface BreadcrumbNavProps {
   config: SidebarNavigationConfig;
 }
 
-const findRoute = (routes: SidebarNavigationItem[], path: string): SidebarNavigationItem | null => {
-  for (let route of routes) {
-    if (route.path === path) return route;
+const findRoute = (routes: Array<SidebarNavigationItem>, path: string): SidebarNavigationItem | null => {
+  for (const route of routes) {
+    if (route.path === path) {
+      return route;
+    }
+
     if (route.children) {
       const foundRoute: SidebarNavigationItem | null = findRoute(route.children, path);
-      if (foundRoute) return foundRoute;
+
+      if (foundRoute) {
+        return foundRoute;
+      }
     }
   }
+
   return null;
 };
 
@@ -26,9 +35,12 @@ const BreadcrumbNav = ({ config, currentPage, enabled = false }: BreadcrumbNavPr
   const router = useRouter();
   const { currentItem } = useSidebarNav(currentPage, config);
 
-  if (!enabled || router.asPath == config.path) return null;
+  if (!enabled || router.asPath == config.path) {
+    return null;
+  }
 
-  const urlSegments: string[] = router.asPath != config.path ? router.asPath.replace(config.path + '/', '').split('/') : [];
+  const urlSegments: Array<string> = router.asPath != config.path ? router.asPath.replace(config.path + '/', '').split('/') : [];
+
   return (
     <Breadcrumb>
       <BreadcrumbItem>

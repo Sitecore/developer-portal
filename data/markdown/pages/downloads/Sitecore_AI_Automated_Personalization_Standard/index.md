@@ -1,6 +1,6 @@
 ---
-title: "Sitecore AI Automated Personalization Standard"
-description: "A module to enable Sitecore AI Auto-Personalization for Sitecore XP installation with traffic no greater than 12 million visits per year."
+title: 'Sitecore AI Automated Personalization Standard'
+description: 'A module to enable Sitecore AI Auto-Personalization for Sitecore XP installation with traffic no greater than 12 million visits per year.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_AI_Automated_Personalization_Standard.aspx
 ---
 

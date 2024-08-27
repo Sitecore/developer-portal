@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/4x/Sitecore_CLI_411/Release_Notes
 ---
 
@@ -10,6 +10,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/4x/Sitecore_CLI_411/Rele
 
 The following issues have been fixed:
 
- | Description | ADO no. |
- | --- | --- |
- | ​If you change the template of an item, a CLI Serialization error occurs. | 513298 |
+| Description                                                               | ADO no. |
+| ------------------------------------------------------------------------- | ------- |
+| ​If you change the template of an item, a CLI Serialization error occurs. | 513298  |

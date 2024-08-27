@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Data_Migration_Tool/2x/xDB_Data_Migration_Tool_202/Release_Notes
 ---
 
@@ -8,16 +8,16 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Data_Migration_Tool/2x/x
 
 ## New features/improvements
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | ​​Support for Sitecore 9.0.2 |  |  |
+| Description                  | Customer ticket ID (or other) | TFS no. |
+| ---------------------------- | ----------------------------- | ------- |
+| ​​Support for Sitecore 9.0.2 |                               |         |
 
 ## Resolved issues
 
 The following issues have been fixed:
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | ​​​Some data is missing in a campaign's report after migration. |  | 224531 |
- | ​​​The population of the `ProfileScores` facet is not aligned with Tracking. |  | 224833 |
- | ​​​Not all addresses are migrated from SC 8.2.6 to SC 9.0.2. |  | 224110 |
+| Description                                                                  | Customer ticket ID (or other) | TFS no. |
+| ---------------------------------------------------------------------------- | ----------------------------- | ------- |
+| ​​​Some data is missing in a campaign's report after migration.              |                               | 224531  |
+| ​​​The population of the `ProfileScores` facet is not aligned with Tracking. |                               | 224833  |
+| ​​​Not all addresses are migrated from SC 8.2.6 to SC 9.0.2.                 |                               | 224110  |

@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/2x/Sitecore_Connect_for_Salesforce_CRM_20/Release_Notes
 ---
 
@@ -10,13 +10,13 @@ This is the first release of a new product.
 
 ## Highlights
 
--   Support for Sitecore 9.0.
--   Support for synchronizing contacts, campaign membership and tasks from Salesforce CRM to Sitecore Experience Database.
+- Support for Sitecore 9.0.
+- Support for synchronizing contacts, campaign membership and tasks from Salesforce CRM to Sitecore Experience Database.
 
 ## Documentation
 
--   Documentation links are available on the [Downloads](/downloads/Salesforce_Connect/2x/Sitecore_Connect_for_Salesforce_CRM_20) page
+- Documentation links are available on the [Downloads](/downloads/Salesforce_Connect/2x/Sitecore_Connect_for_Salesforce_CRM_20) page
 
 ## System requirements
 
--   Sitecore Experience Platform 9.0 rev. 171002 (9.0 initial release)
+- Sitecore Experience Platform 9.0 rev. 171002 (9.0 initial release)

@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/4x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_400/Release_Notes
 ---
 
@@ -8,14 +8,14 @@ origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/4x/Sitecore_Conn
 
 ## New features/improvements
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | Support for Sitecore XP 9.3.0. |  |  |
+| Description                    | Customer ticket ID (or other) | TFS no. |
+| ------------------------------ | ----------------------------- | ------- |
+| Support for Sitecore XP 9.3.0. |                               |         |
 
 ## Resolved issues
 
 The following issues have been fixed:
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | The `Gender` field for a contact is not synchronized from Dynamics CRM to Sitecore. | 532170 | 335537 |
+| Description                                                                         | Customer ticket ID (or other) | TFS no. |
+| ----------------------------------------------------------------------------------- | ----------------------------- | ------- |
+| The `Gender` field for a contact is not synchronized from Dynamics CRM to Sitecore. | 532170                        | 335537  |

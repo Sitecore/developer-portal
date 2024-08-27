@@ -1,6 +1,6 @@
 ---
-title: "Release notes"
-description: ""
+title: 'Release notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_31/Email_Experience_Manager_31_Update1/Version_Resources/Release_Notes
 ---
 
@@ -16,4 +16,4 @@ Email Experience Manager 3.1 Update 1 (rev. 150811) is compatible with Sitecore 
 
 ## Resolved issues
 
--   The previous version of EXM 3.1 did not support Sitecore XP 8.0 Update 4. This has been fixed.
+- The previous version of EXM 3.1 did not support Sitecore XP 8.0 Update 4. This has been fixed.

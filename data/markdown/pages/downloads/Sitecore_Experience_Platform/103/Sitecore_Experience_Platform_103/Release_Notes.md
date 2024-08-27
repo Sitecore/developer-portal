@@ -11,7 +11,7 @@ This a feature release. Sitecore recommends that you upgrade to this release if 
 - [Highlights](#highlights)
 - [New features/improvements](#new-featuresimprovements)
 - [Deprecated/Removed](#deprecatedremoved)
-- [Known issues](#known-issues) 
+- [Known issues](#known-issues)
 - [Resolved issues](#resolved-issues)
 
 ## Highlights
@@ -77,9 +77,9 @@ Sitecore is discontinuing support for the Horizon visual page builder beginning 
 
 The following is a known issue:
 
-| Context                      | Description                                                                                                                                                                               | ADO no.                                                                                                                                        |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Media                   | ​​When a media blob is referenced by multiple duplicated media items, deleting one of these duplicated items will result in the deletion of the media blob.                                 | 563054
+| Context | Description                                                                                                                                                 | ADO no. |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Media   | ​​When a media blob is referenced by multiple duplicated media items, deleting one of these duplicated items will result in the deletion of the media blob. | 563054  |
 
 ## Resolved issues
 
@@ -185,8 +185,8 @@ The following issues have been fixed:
 | Platform                     | ​​The `Custom Properties` of a virtual user are not fetched from the database.                                                                                                            | 510291                                                                                                                                         |
 | Platform                     | ​​​​​​If you log in an external Sitecore site via an external identity provider, the `Sitecore` title appears on the browser tab.                                                         | 510418                                                                                                                                         |
 | Platform                     | ​​​A 404 error for non-existent media files is still cached in `web[paths]` cache even after publishing.                                                                                  | 512303                                                                                                                                         |
-| Platform                     | ​​​The `Sitecore.Diagnostics.Statistics` class is not thread-safe.                                                                                                                        | 512493
-| Platform                     | The behavior of the `Current.ContextItem` field was changed. Now it points to datasource item, if specified.                                                                             | 517662                                                           |
+| Platform                     | ​​​The `Sitecore.Diagnostics.Statistics` class is not thread-safe.                                                                                                                        | 512493                                                                                                                                         |
+| Platform                     | The behavior of the `Current.ContextItem` field was changed. Now it points to datasource item, if specified.                                                                              | 517662                                                                                                                                         |
 | Platform                     | ​Download filename becomes garbled when using non-ASCII characters.                                                                                                                       | 518999                                                                                                                                         |
 | Platform                     | ​When entries are added to a cache, the cache size is calculated incorrectly.                                                                                                             | 520870                                                                                                                                         |
 | Platform                     | ​​`Sitecore.Collections.TemplateDictionary` is not thread-safe.                                                                                                                           | 526344                                                                                                                                         |

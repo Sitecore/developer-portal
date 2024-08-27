@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Connect™ for Sitecore CMP"
-description: "The Sitecore Connect™ for Sitecore CMP gives web editors, content/digital marketers the ability to work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub."
+title: 'Sitecore Connect™ for Sitecore CMP'
+description: 'The Sitecore Connect™ for Sitecore CMP gives web editors, content/digital marketers the ability to work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_for_Sitecore_CMP.aspx
 ---
 

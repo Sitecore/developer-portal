@@ -1,6 +1,6 @@
 ---
-title: "Release notes"
-description: ""
+title: 'Release notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Active_Directory/1_0/Active_Directory_1_2/Release_Notes
 ---
 
@@ -14,10 +14,10 @@ This version of the module only runs on Sitecore 7.2 or later.
 
 Issues resolved:
 
--   The LDAPLogin page did not register the user ticket. The issue has been fixed. **(864)**
--   Single sign-on through the module negatively impacted the Experience Editor ribbon (in preview mode). The issue has been fixed. **(822)**
--   Spaces in the Organization Unit name were not supported. The issue has been fixed. **(861)**
--   AD used the same cache for the same connection string, but with different organizations. The issue has been fixed. **(12526)**
--   The `SitecoreADMembershipProvider` created users with incorrect password question/answer values. The issue has been fixed. **(868)**
--   The `attributeMapName="sAMAccountName"` intermittently caused the `DirectoryNotificationProvider` to stop working. The issue has been fixed. **(12527)**
--   The `SitecoreADRoleProvider` returned no roles if the Role's cache was disabled. The issue has been fixed. **(12893)**
+- The LDAPLogin page did not register the user ticket. The issue has been fixed. **(864)**
+- Single sign-on through the module negatively impacted the Experience Editor ribbon (in preview mode). The issue has been fixed. **(822)**
+- Spaces in the Organization Unit name were not supported. The issue has been fixed. **(861)**
+- AD used the same cache for the same connection string, but with different organizations. The issue has been fixed. **(12526)**
+- The `SitecoreADMembershipProvider` created users with incorrect password question/answer values. The issue has been fixed. **(868)**
+- The `attributeMapName="sAMAccountName"` intermittently caused the `DirectoryNotificationProvider` to stop working. The issue has been fixed. **(12527)**
+- The `SitecoreADRoleProvider` returned no roles if the Role's cache was disabled. The issue has been fixed. **(12893)**

@@ -1,9 +1,11 @@
 // Global
-import { Product } from '@/src/lib/assets';
 import { Button, FormControl, HStack, Input, InputGroup, InputLeftElement, InputRightElement, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
+
+import { Product } from '@/src/lib/assets';
+
 import { ProductLogo } from '../common';
 import { useEngageTracker } from '../integrations';
 
@@ -11,7 +13,7 @@ export interface SearchInputProps {
   showButton?: boolean;
 }
 
-const SearchInput = ({ showButton }: SearchInputProps) => {
+export const SearchInput = ({ showButton }: SearchInputProps) => {
   const tracker = useEngageTracker();
   const router = useRouter();
   const [keywords, setKeywords] = useState(router.query['q'] ?? '');
@@ -48,7 +50,7 @@ const SearchInput = ({ showButton }: SearchInputProps) => {
     </InputGroup>
   );
 
-  if (showButton)
+  if (showButton) {
     return (
       <FormControl onSubmit={submit} as="form">
         <HStack>
@@ -57,6 +59,7 @@ const SearchInput = ({ showButton }: SearchInputProps) => {
         </HStack>
       </FormControl>
     );
+  }
 
   return (
     <FormControl onSubmit={submit} as="form">
@@ -64,5 +67,3 @@ const SearchInput = ({ showButton }: SearchInputProps) => {
     </FormControl>
   );
 };
-
-export default SearchInput;

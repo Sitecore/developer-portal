@@ -5,5 +5,5 @@ export type StackExchangeQuestion = {
   question_id: string;
   title: string;
   view_count: string;
-  tags: string[];
+  tags: Array<string>;
 };

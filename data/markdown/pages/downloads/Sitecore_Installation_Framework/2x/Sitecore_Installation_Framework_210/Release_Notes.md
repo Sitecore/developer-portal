@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_210/Release_Notes
 ---
 
@@ -12,9 +12,9 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/2x/Si
 
 ## Resolved Issues
 
- | Description | ADO no. |
- | --- | --- |
- | ​​The `Install-SitecoreConfiguration` cmdlet reports an incorrect progress percentage ​​for the root and child progress bars.​​ | 302858 |
- | The `Install-SitecoreConfiguration` cmdlet ​​parameter fails to merge multiple nested object types​​. | 288839 |
- | The `Invoke-RemoveSqlDatabaseTask` task reloads the SQL Server module and causes conflicts.​​​​ ​| 294281 |
- | The `Invoke-HostHeaderTask` task can fail to gain access to the hosts file during the uninstallation process.​ | 257822 |
+| Description                                                                                                                     | ADO no. |
+| ------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| ​​The `Install-SitecoreConfiguration` cmdlet reports an incorrect progress percentage ​​for the root and child progress bars.​​ | 302858  |
+| The `Install-SitecoreConfiguration` cmdlet ​​parameter fails to merge multiple nested object types​​.                           | 288839  |
+| The `Invoke-RemoveSqlDatabaseTask` task reloads the SQL Server module and causes conflicts.​​​​ ​                               | 294281  |
+| The `Invoke-HostHeaderTask` task can fail to gain access to the hosts file during the uninstallation process.​                  | 257822  |

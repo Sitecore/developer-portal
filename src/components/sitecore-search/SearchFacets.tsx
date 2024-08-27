@@ -5,7 +5,7 @@ import { AccordionFacets, SearchResultsAccordionFacets } from '@sitecore-search/
 
 export interface SearchFacetsType {
   onFacetClick: (facet: any) => void;
-  facets: SearchResponseFacet[];
+  facets: Array<SearchResponseFacet>;
 }
 
 export const SearchFacets = (props: SearchFacetsType) => {

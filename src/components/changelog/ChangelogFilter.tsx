@@ -1,28 +1,29 @@
 /* eslint-disable no-unused-vars */
+import { MultiSelect, Option } from '@/src/components/ui/dropdown';
 import { Container, Skeleton, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
 import { Product } from '@lib/changelog/types';
-import { MultiSelect, Option } from '@src/components/dropdown';
 import { useState } from 'react';
 
 type ChangelogFilterProps = {
   className?: string;
   initialChangeType?: Product;
-  options: Option[];
+  options: Array<Option>;
   id: string;
   label: string;
   placeholder: string;
-  onSelectChange: (selectedValues: Option[]) => void;
+  onSelectChange: (selectedValues: Array<Option>) => void;
 };
 
 const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: ChangelogFilterProps): JSX.Element => {
-  const [selectedChange, setSelectedChange] = useState<Option[]>([]);
+  const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
 
-  if (!options)
+  if (!options) {
     return (
       <Skeleton>
         <SkeletonText>Loading...</SkeletonText>
       </Skeleton>
     );
+  }
 
   return (
     <Container marginBottom={4} marginX={0} width={'full'}>
@@ -36,7 +37,7 @@ const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: Ch
         instanceId={id}
         key={id}
         options={options}
-        onChange={(e: Option[]) => {
+        onChange={(e: Array<Option>) => {
           setSelectedChange(e);
           onSelectChange(e);
         }}

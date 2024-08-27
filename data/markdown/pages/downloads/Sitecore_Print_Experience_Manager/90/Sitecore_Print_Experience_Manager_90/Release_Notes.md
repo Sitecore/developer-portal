@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/90/Sitecore_Print_Experience_Manager_90/Release_Notes
 ---
 
@@ -8,22 +8,22 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Print_Experience_Manager/90/
 
 **Compatibility**
 
-This version of PXM is compatible with Sitecore 9.0.  
+This version of PXM is compatible with Sitecore 9.0.
 
 **Highlights**
 
 Sitecore PXM 9.0 includes:
 
--   InDesign Connector plugin for Adobe InDesign CC 2015 for Mac OS X and Windows
--   InDesign Connector plugin for Adobe InDesign CC 2017 for Mac OS X and Windows
--   InDesign Server Engine plugin for Adobe InDesign CC 2015 Server
--   InDesign Server Engine plugin for Adobe InDesign CC 2017 Server
+- InDesign Connector plugin for Adobe InDesign CC 2015 for Mac OS X and Windows
+- InDesign Connector plugin for Adobe InDesign CC 2017 for Mac OS X and Windows
+- InDesign Server Engine plugin for Adobe InDesign CC 2015 Server
+- InDesign Server Engine plugin for Adobe InDesign CC 2017 Server
 
 Not included in this version:
 
--   InCopy Connector
--   Rendition Builder
--   Online Documents Generator
+- InCopy Connector
+- Rendition Builder
+- Online Documents Generator
 
 **Documentation**
 

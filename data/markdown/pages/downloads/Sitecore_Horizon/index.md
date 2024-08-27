@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Horizon"
-description: "Sitecore Horizon is the next generation Experience Management product for the Sitecore Experience Platform™."
+title: 'Sitecore Horizon'
+description: 'Sitecore Horizon is the next generation Experience Management product for the Sitecore Experience Platform™.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon.aspx
 ---
 

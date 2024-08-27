@@ -1,13 +1,13 @@
 import { Box, Flex } from '@chakra-ui/react';
-import { CenteredContent } from '../components/helpers';
-import InPageNavSmall from '../components/navigation/InPageNavSmall';
+import InPageNavSmall from '@components/navigation/InPageNavSmall';
+import { CenteredContent } from '@components/ui/sections';
 import { ContentHeading } from '../lib/interfaces/contentheading';
 import { Sidebar } from './Sidebar';
 
 type ThreeColumnLayoutProps = {
   sidebar: React.ReactNode;
   inPageNav?: React.ReactNode | null;
-  inPageLinks?: ContentHeading[];
+  inPageLinks?: Array<ContentHeading>;
   children: React.ReactNode;
   background?: string;
 };

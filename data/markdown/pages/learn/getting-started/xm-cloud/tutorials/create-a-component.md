@@ -197,7 +197,7 @@ We will start with the headings in the left column, and then add the element to 
 
    <Image title="Components builder - Adding Paragraph" src="/images/getting-started/tutorials/xm-cloud/create-a-component-15.jpg" maxW="xl" />
 
-2. Fill out the Heading 2, Heading 3, and Paragraph elements with some example content to test the layout.
+1. Fill out the Heading 2, Heading 3, and Paragraph elements with some example content to test the layout.
 
    <Alert status="info">
       <AlertIcon />

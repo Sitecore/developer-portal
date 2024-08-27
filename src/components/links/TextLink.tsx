@@ -1,4 +1,4 @@
-import { HStack, Heading, HeadingProps, Link, LinkProps, Text, TextProps } from '@chakra-ui/react';
+import { Heading, HeadingProps, HStack, Link, LinkProps, Text, TextProps } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 
@@ -13,12 +13,13 @@ type TextLinkProps = TextProps &
   };
 
 export const TextLink = ({ href, text, isHeading, hideIcon = false, displayInline = false, ...rest }: TextLinkProps) => {
-  if (isHeading)
+  if (isHeading) {
     return (
       <Heading size="lg" {...rest}>
         <TextWithLink href={href} text={text} hideIcon={hideIcon} />
       </Heading>
     );
+  }
 
   return (
     <Text {...rest}>

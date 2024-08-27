@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 import { IsSearchEnabled } from '@lib/search';
-import PreviewSearchInput from './PreviewSearchInput';
-import SearchInput from './SearchInput';
+
+
+import { PreviewSearchInput } from './PreviewSearchInput';
+import { SearchInput } from './SearchInput';
 
 enum SearchInputRenderMode {
   Disabled,

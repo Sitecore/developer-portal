@@ -1,13 +1,14 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Center, Heading, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
-import { Prose } from '@nikolovlazar/chakra-ui-prose';
-//import Image from 'next/image';
+// import Image from 'next/image';
 import { ChangelogEntry } from '@lib/changelog/types';
 import { getChangelogEntryUrl, getSlug } from '@lib/utils';
+import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
+
 import { Loading } from '../common';
 import { ButtonLink } from '../links';
-import { SocialShare } from '../social';
+import { SocialShare } from '../ui/socialShare';
 import { ChangelogItemMeta } from './ChangelogItemMeta';
 
 export type ChangeLogItemProps = {
@@ -23,7 +24,9 @@ const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps
   const entryRef = useRef(null);
 
   useEffect(() => {
-    if (!entryRef?.current) return;
+    if (!entryRef?.current) {
+      return;
+    }
 
     const observer = new IntersectionObserver(([entry]) => {
       if (isLast && entry.isIntersecting && isMore) {

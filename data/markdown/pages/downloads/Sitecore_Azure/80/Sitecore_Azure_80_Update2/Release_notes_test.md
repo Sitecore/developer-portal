@@ -1,6 +1,6 @@
 ---
-title: "Release notes - Sitecore Azure 8.0"
-description: ""
+title: 'Release notes - Sitecore Azure 8.0'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure/80/Sitecore_Azure_80_Update2/Release_notes_test
 ---
 
@@ -12,14 +12,14 @@ Previous versions of Sitecore Azure 8.0 configure Sitecore to use a custom Sessi
 
 ## New feature/improvements
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | ​Sitecore Azure now supports the Sitecore ASP.NET session state provider for Redis, which enables you to use Azure Redis Cache as your session state store.​​ |   
- |   
- |
- | ​​Sitecore Azure now supports using the Azure 2.9.1 SDK.​ ​ |   
- |   
- |
- | ​Support has been added for Azure SQL Database V12 and support for SQL Database V2.0 has been removed - existing deployments will continue to work correctly with Azure SQL V2.0, whereas new deployments will use Azure SQL V12.​ |   
- |   
- |
+| Description                                                                                                                                                                                                                        | Customer ticket ID (or other) | TFS no. |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ------- |
+| ​Sitecore Azure now supports the Sitecore ASP.NET session state provider for Redis, which enables you to use Azure Redis Cache as your session state store.​​                                                                      |
+|  |
+|  |
+| ​​Sitecore Azure now supports using the Azure 2.9.1 SDK.​ ​                                                                                                                                                                        |
+|  |
+|  |
+| ​Support has been added for Azure SQL Database V12 and support for SQL Database V2.0 has been removed - existing deployments will continue to work correctly with Azure SQL V2.0, whereas new deployments will use Azure SQL V12.​ |
+|  |
+|  |

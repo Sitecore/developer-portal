@@ -1,14 +1,16 @@
+import { Option } from '@/src/components/ui/dropdown';
 import { Alert, AlertIcon, AlertTitle, Tooltip } from '@chakra-ui/react';
 import { getSlug } from '@lib/utils';
-import { Option } from '@src/components/dropdown';
 import Link from 'next/link';
 type HintProps = {
-  products?: Option[];
+  products?: Array<Option>;
   enabled: boolean;
 };
 
 export const Hint = ({ products, enabled }: HintProps): JSX.Element => {
-  if (!enabled || products == undefined) return <></>;
+  if (!enabled || products == undefined) {
+    return <></>;
+  }
 
   return (
     <Alert status="info" colorScheme="neutral" alignItems="center" mb={4}>

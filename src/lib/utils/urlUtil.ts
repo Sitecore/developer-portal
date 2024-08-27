@@ -1,11 +1,12 @@
 import { ChangelogEntry, ChangelogEntrySummary } from '@lib/changelog/types';
+
 import { formatDate } from './dateUtil';
 import { slugify } from './stringUtil';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 
-export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEntrySummary): string[] {
-  const segments: string[] = [];
+export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEntrySummary): Array<string> {
+  const segments: Array<string> = [];
 
   segments.push(slugify(entry.productName ?? entry.title));
   // Add date to the URL to prevent conflicts with entries with the same title
@@ -16,12 +17,14 @@ export function getChangelogEntryUrlSegments(entry: ChangelogEntry | ChangelogEn
 }
 
 export function getChangelogEntryUrl(entry: ChangelogEntry | ChangelogEntrySummary, includeServerUrl?: boolean): string {
-  const url: string[] = [];
+  const url: Array<string> = [];
 
   url.push('/changelog');
   url.push(...getChangelogEntryUrlSegments(entry));
 
-  if (includeServerUrl) return `${publicUrl + url.join('/')}`;
+  if (includeServerUrl) {
+    return `${publicUrl + url.join('/')}`;
+  }
 
   return url.join('/');
 }

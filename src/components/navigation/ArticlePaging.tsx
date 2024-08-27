@@ -1,8 +1,10 @@
-import { PageInfo, SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
-import { getItemUrl } from '@/src/lib/sidebarNav';
 import { Button, HStack, Icon, Link } from '@chakra-ui/react';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
-import useSidebarNav from '../hooks/useSidebarNav';
+
+import { PageInfo, SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
+import { getItemUrl } from '@/src/lib/sidebarNav';
+
+import useSidebarNav from '../../hooks/useSidebarNav';
 
 export interface ArticlePagingProps {
   enabled?: boolean;
@@ -13,7 +15,9 @@ export interface ArticlePagingProps {
 export const ArticlePaging = ({ config, currentPage, enabled = false }: ArticlePagingProps) => {
   const { previousItem, nextItem } = useSidebarNav(currentPage, config);
 
-  if (!enabled) return null;
+  if (!enabled) {
+    return null;
+  }
 
   return (
     <HStack justifyContent={'space-around'}>

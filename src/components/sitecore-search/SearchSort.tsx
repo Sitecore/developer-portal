@@ -5,7 +5,7 @@ import { SearchResponseSortChoice } from '@sitecore-search/react';
 
 export interface SearchSortType {
   onSortChange: (sortType: any) => void;
-  sortChoices: SearchResponseSortChoice[];
+  sortChoices: Array<SearchResponseSortChoice>;
   sortType: string;
 }
 
@@ -28,4 +28,3 @@ export const SearchSort = (props: SearchSortType) => {
   );
 };
 
-export default SearchSort;

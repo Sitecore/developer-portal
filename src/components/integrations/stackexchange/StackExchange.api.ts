@@ -1,11 +1,12 @@
 import axios, { AxiosResponse } from 'axios';
+
 import { StackExchangeQuestion } from './stackExchange';
 
 // Global
 
 // Interfaces
 type StackExchangeResponse = {
-  items: StackExchangeQuestion[];
+  items: Array<StackExchangeQuestion>;
 };
 
 export class StackExchangeApi {
@@ -14,16 +15,17 @@ export class StackExchangeApi {
     return new Promise((res) => setTimeout(res, 50));
   }
 
-  public static async get(args?: string | string[]): Promise<StackExchangeQuestion[]> {
+  public static async get(args?: string | Array<string>): Promise<Array<StackExchangeQuestion>> {
     if (!args) {
       return [];
     }
 
     await StackExchangeApi.avoidRateLimit();
 
-    const tags: string[] = [];
+    const tags: Array<string> = [];
 
     const argsAsArray = Array.isArray(args) ? args : [args];
+
     argsAsArray.forEach((arg) => {
       if (arg.startsWith('#')) {
         // API doesn't want the #
@@ -32,6 +34,7 @@ export class StackExchangeApi {
     });
 
     const tagParams = tags.length > 0 ? `&tagged=${tags.join('&tagged=')}` : '';
+
     return axios
       .get(`https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=sitecore${tagParams}`)
       .then((response: AxiosResponse<StackExchangeResponse>) => {

@@ -1,6 +1,6 @@
 export interface ExtractHeadingsConfig {
   rank: number;
-  headings: ContentHeading[];
+  headings: Array<ContentHeading>;
 }
 
 export interface ContentHeading {

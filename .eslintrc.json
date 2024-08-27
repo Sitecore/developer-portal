@@ -1,147 +1,23 @@
 {
-  "ignorePatterns": ["**/__mocks__/**", "**/__test__/**", "**.spec.tsx", "**.jsx", "**/__gen__/**", "**/*.d.ts", "**/*.js", "**/*.mjs", "**/*.cjs", "**/*.json", "**/*.md", "node_modules"],
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "prettier",
-    "plugin:you-dont-need-lodash-underscore/compatible",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript"
-  ],
-  "plugins": ["@typescript-eslint", "react", "you-dont-need-lodash-underscore", "import", "simple-import-sort"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "tsconfig.json",
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+  "extends": ["next", "prettier", "next/core-web-vitals", "eslint:recommended", "plugin:@next/next/recommended"],
+  "globals": {
+    "React": "readonly",
+    "JSX": true
   },
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "plugins": ["only-warn", "jest", "react"],
   "rules": {
-    "react/prop-types": 0,
-    "camelcase": "off",
-    "@typescript-eslint/await-thenable": "off",
-    "@typescript-eslint/camelcase": [
-      "off",
-      {
-        "properties": "never"
-      }
-    ],
-    "@typescript-eslint/array-type": [
-      "warn",
-      {
-        "default": "generic"
-      }
-    ],
-    "@typescript-eslint/explicit-member-accessibility": [
-      "off",
-      {
-        "accessibility": "no-public"
-      }
-    ],
-    "@typescript-eslint/interface-name-prefix": ["off", "always"],
-    "@typescript-eslint/no-parameter-properties": [
-      "warn",
-      {
-        "allows": ["public", "private"]
-      }
-    ],
-    "@typescript-eslint/explicit-function-return-type": [
-      "warn",
-      {
-        "allowExpressions": true
-      }
-    ],
-    "@typescript-eslint/no-non-null-assertion": ["off"],
-    "@typescript-eslint/no-empty-interface": [
-      "error",
-      {
-        "allowSingleExtends": true
-      }
-    ],
-    "@typescript-eslint/ban-ts-ignore": "off",
-    "@typescript-eslint/no-inferrable-types": "off",
-    "@typescript-eslint/no-unsafe-member-access": "warn",
-    "@typescript-eslint/no-unsafe-call": "warn",
-    "@typescript-eslint/no-unsafe-assignment": "warn",
-    "@typescript-eslint/restrict-template-expressions": "off",
-    "@typescript-eslint/no-floating-promises": [
-      "warn",
-      {
-        "ignoreVoid": true
-      }
-    ],
-    "no-void": [
-      "error",
-      {
-        "allowAsStatement": true
-      }
-    ],
-    "react/require-default-props": ["off"],
-    "react/destructuring-assignment": ["off"],
-    "react/jsx-props-no-spreading": ["off"],
-    "no-plusplus": [
-      "error",
-      {
-        "allowForLoopAfterthoughts": true
-      }
-    ],
-    "import/prefer-default-export": "off",
-    "curly": ["error", "all"],
-    "consistent-return": "warn",
-    "jsx-a11y/no-autofocus": ["off"],
-    "padding-line-between-statements": [
-      "error",
-      {
-        "blankLine": "always",
-        "prev": "*",
-        "next": ["return", "block-like", "if"]
-      },
-      {
-        "blankLine": "always",
-        "prev": ["return", "block-like", "if"],
-        "next": "*"
-      },
-      {
-        "blankLine": "always",
-        "prev": ["const", "let", "var"],
-        "next": "*"
-      },
-      {
-        "blankLine": "always",
-        "prev": "*",
-        "next": ["const", "let", "var"]
-      },
-      {
-        "blankLine": "any",
-        "prev": "*",
-        "next": ["case", "default"]
-      },
-      {
-        "blankLine": "any",
-        "prev": ["const", "let", "var"],
-        "next": ["const", "let", "var"]
-      }
-    ],
-    "spaced-comment": [
-      "error",
-      "always",
-      {
-        "markers": ["TODO", "TODO:", "!", "?", "#region", "#endregion"]
-      }
-    ],
-    "you-dont-need-lodash-underscore/throttle": "off",
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    "import/no-unresolved": "off",
-    "react/react-in-jsx-scope": "off"
-  }
+    "react/prop-types": "off",
+    "no-unused-vars": "off"
+    //"import/no-unused-modules": [1, { "unusedExports": true }]
+  },
+  "settings": {},
+  "overrides": [
+    {
+      "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"]
+    }
+  ]
 }

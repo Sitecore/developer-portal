@@ -5,6 +5,7 @@ const NavBarSearch = (): JSX.Element => {
   {
     /* Search menu */
   }
+
   return (
     <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }} padding={3} paddingX={'2rem'} position={'static'} background={'chakra-body-bg'} shadow={'md'}>
       <Flex display={{ base: 'flex', md: 'flex' }} justify={'flex-center'} boxSize={'100%'} maxWidth="6xl">
@@ -22,4 +23,5 @@ const NavBarSearch = (): JSX.Element => {
     </Flex>
   );
 };
+
 export default NavBarSearch;

@@ -1,13 +1,14 @@
-import { Card, CardBody, CardHeader, HStack, Heading, Image, Skeleton, SkeletonText } from '@chakra-ui/react';
-import { useGetEntriesByProducts } from '@lib/changelog/hooks/useGetEntriesByProducts';
+import { useGetEntriesByProducts } from '@/src/hooks/useGetEntriesByProducts';
+import { Card, CardBody, CardHeader, Heading, HStack, Image, Skeleton, SkeletonText } from '@chakra-ui/react';
+
+import { Option } from '@/src/components/ui/dropdown';
 import { ChangelogEntrySummary, Product } from '@lib/changelog/types';
 import { getChangelogEntryUrl } from '@lib/utils';
-import { Option } from '@src/components/dropdown';
 import Link from 'next/link';
 
 type ChangelogByMonthProps = {
   product?: Product;
-  selectedProducts?: Option[];
+  selectedProducts?: Array<Option>;
 };
 
 const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps): JSX.Element => {
@@ -15,7 +16,7 @@ const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps):
 
   const items = entries || [];
 
-  if (isLoading)
+  if (isLoading) {
     return (
       <>
         <Placeholder />
@@ -23,6 +24,7 @@ const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps):
         <Placeholder />
       </>
     );
+  }
 
   return (
     <>

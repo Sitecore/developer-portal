@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/4x/Sitecore_Connect_for_Salesforce_CRM_400/Release_Notes
 ---
 
@@ -8,6 +8,6 @@ origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/4x/Sitecore_Connec
 
 ## New features/improvements
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | Support for Sitecore XP 9.3.0. |  |  |
+| Description                    | Customer ticket ID (or other) | TFS no. |
+| ------------------------------ | ----------------------------- | ------- |
+| Support for Sitecore XP 9.3.0. |                               |         |

@@ -7,7 +7,6 @@ origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experi
   <Alert variant='warning' mb={4}>
     <AlertIcon />
 
-
 Looking for **a different update**? See [all available EXM 3.0 updates](/downloads/Email_Experience_Manager/Email_Experience_Manager_30).
 
   </Alert>
@@ -21,7 +20,6 @@ Looking for **a different update**? See [all available EXM 3.0 updates](/downloa
 • After November 1, 2017, the Sitecore Email Delivery (Dyn) service will no longer be available (**[KB article](https://kb.sitecore.net/articles/669456)**). For customers unable to migrate to Sitecore 8.2, you will be obliged to begin using a Custom SMTP (MTA) solution on your existing version. The use of Dyn to assist in the email delivery process is no longer a necessity in the use of EXM 3.4 and above.  
 • Sitecore has developed a new **[Sitecore Email Cloud](https://doc.sitecore.net/email_experience_manager/configuring_the_delivery_process/message_transfer_agent/the_sitecore_email_cloud_compared_to_the_custom_smtp)** service, replacing the Email Delivery service. Customers will benefit from greater scalability, faster email delivery, global coverage and intensive email support. Should your organization require the use of EXM 3.0-3.3 software, please connect with Sitecore at the earliest convenience by contacting your local Sitecore representative or the appropriate email address found here: **[http://www.sitecore.net/company/contact-us](http://www.sitecore.net/company/contact-us)**.
   </Alert>
-
 
 ## Downloads
 

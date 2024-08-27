@@ -1,22 +1,19 @@
 // Global
+import { Changelog } from '@lib/changelog';
 import type { ChildPageInfo, MarkdownMeta, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
-
+import { ParseContent } from '@lib/markdown/mdxParse';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-
-import { Changelog } from '@lib/changelog';
-import { ParseContent } from '@lib/markdown/mdxParse';
 
 import { SITECORE_COMMUNITY_MAX_COUNT, SitecoreCommunityApi, SitecoreCommunityContent, SitecoreCommunityEvent, StackExchangeApi, YouTubeApi } from '../components/integrations';
 import { getChangelogCredentials } from './changelog/common/credentials';
 import { searchForFile } from './utils/fsUtils';
 
-
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const pagesDirectory = path.join(dataDirectory, 'pages');
 
-export const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main/apps/devportal';
+const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main/apps/devportal';
 
 type Matter = {
   data: {
@@ -35,12 +32,15 @@ const getFileData = (directory: string, file: string): Matter => {
   if (!fs.existsSync(filePath)) {
     filePath = path.join(directory, `${file}.md`);
   }
+
   if (!fs.existsSync(filePath)) {
     filePath = path.join(directory, `${file}.mdx`);
   }
+
   if (!fs.existsSync(filePath)) {
     filePath = path.join(directory, `${file}/index.md`);
   }
+
   if (!fs.existsSync(filePath)) {
     filePath = path.join(directory, `${file}/index.mdx`);
   }
@@ -52,13 +52,14 @@ const getFileData = (directory: string, file: string): Matter => {
 
   const relativePath = path.relative(process.cwd(), filePath).replace(/\\/g, '/');
   const fileName = `${repoUrl}/${relativePath}`;
+
   results.data['fileName'] = fileName;
   results.data['slug'] = file.split('.')[0];
 
   return results;
 };
 
-export const getPageInfo = async (params: string | string[]): Promise<PageInfo | null> => {
+export const getPageInfo = async (params: string | Array<string>): Promise<PageInfo | null> => {
   const relativePath = Array.isArray(params) ? params.join('/') : params;
 
   const fileData = getFileData(pagesDirectory, `${relativePath}`);
@@ -118,7 +119,9 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
   }
 
   const youtubeInfo = await YouTubeApi.get(meta.youtube);
+
   pageInfo.youtube = youtubeInfo.content;
+
   // The playlistTitle is only used if the author has not already supplied a youtubeTitle meta tag
   if (youtubeInfo.playlistTitle) {
     pageInfo.youtubePlaylistTitle = youtubeInfo.playlistTitle;
@@ -134,8 +137,10 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
       maxResults,
       sort,
     });
-    pageInfo.sitecoreCommunity.blog = sCBlog as SitecoreCommunityContent[];
+
+    pageInfo.sitecoreCommunity.blog = sCBlog as Array<SitecoreCommunityContent>;
   }
+
   if (meta.sitecoreCommunityQuestions) {
     const maxResults = typeof meta.sitecoreCommunityQuestions === 'number' ? meta.sitecoreCommunityQuestions : SITECORE_COMMUNITY_MAX_COUNT;
     const sort = meta.sitecoreCommunityQuestionsSort ? (Array.isArray(meta.sitecoreCommunityQuestionsSort) ? meta.sitecoreCommunityQuestionsSort[0] : meta.sitecoreCommunityQuestionsSort) : 'publish';
@@ -146,15 +151,20 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
       sort,
       forum,
     });
-    pageInfo.sitecoreCommunity.questions = sCQuestions as SitecoreCommunityContent[];
+
+    pageInfo.sitecoreCommunity.questions = sCQuestions as Array<SitecoreCommunityContent>;
   }
+
   if (meta.sitecoreCommunityEvents) {
     const sCEvents = await SitecoreCommunityApi.get({ contentType: 'event' });
-    pageInfo.sitecoreCommunity.events = sCEvents as SitecoreCommunityEvent[];
+
+    pageInfo.sitecoreCommunity.events = sCEvents as Array<SitecoreCommunityEvent>;
   }
+
   if (meta.sitecoreCommunityNews) {
     const sCNews = await SitecoreCommunityApi.get({ forum: 'news' });
-    pageInfo.sitecoreCommunity.news = sCNews as SitecoreCommunityContent[];
+
+    pageInfo.sitecoreCommunity.news = sCNews as Array<SitecoreCommunityContent>;
   }
 
   return pageInfo;
@@ -166,7 +176,7 @@ export const getPageInfo = async (params: string | string[]): Promise<PageInfo |
  * @param params The context params for the dynamic page
  * @returns An array of simplified ChildPageInfo for display on a parent page
  */
-export const getChildPageInfo = async (currentFile: string): Promise<ChildPageInfo[]> => {
+export const getChildPageInfo = async (currentFile: string): Promise<Array<ChildPageInfo>> => {
   const directory = path.join(pagesDirectory, currentFile);
 
   if (fs.existsSync(directory) == false) {
@@ -199,8 +209,10 @@ export const getChildPageInfo = async (currentFile: string): Promise<ChildPageIn
 
 export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<SidebarNavigationConfig | undefined> => {
   const manifest = searchForFile(path.join(pagesDirectory, currentUrlSegment), 'manifest.json');
+
   if (manifest != null) {
     const fileData: SidebarNavigationConfig = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
+
     return fileData;
   }
 };

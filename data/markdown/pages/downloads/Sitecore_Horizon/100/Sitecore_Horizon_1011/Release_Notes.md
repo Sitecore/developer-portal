@@ -1,6 +1,6 @@
 ---
-title: "Content Title"
-description: ""
+title: 'Content Title'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Horizon/100/Sitecore_Horizon_1011/Release_Notes
 ---
 
@@ -12,6 +12,6 @@ This is an update.
 
 The following issues have been fixed:
 
- | Description | Customer ticket ID (or other) | AD no. |
- | --- | --- | --- |
- | The `.NET Core Remote Code Execution Vulnerability CVE-2021-24112` has been fixed. | ​​​​​​​​​​​ | 487513 |
+| Description                                                                        | Customer ticket ID (or other) | AD no. |
+| ---------------------------------------------------------------------------------- | ----------------------------- | ------ |
+| The `.NET Core Remote Code Execution Vulnerability CVE-2021-24112` has been fixed. | ​​​​​​​​​​​                   | 487513 |

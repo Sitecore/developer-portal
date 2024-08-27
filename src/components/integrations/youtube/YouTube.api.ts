@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+
 import type { YouTubeApiResponse } from './youTube';
 
 // Global
@@ -35,10 +36,12 @@ export class YouTubeApi {
       axios
         .get(`https://www.googleapis.com/youtube/v3/playlists?key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}&id=${playlistId}&part=snippet`)
         .then((response: AxiosResponse<YouTubeResponse>) => {
-          const items: YouTubePlaylistItem[] = response.data?.items;
+          const items: Array<YouTubePlaylistItem> = response.data?.items;
+
           if (items && items.length > 0) {
             return items[0].snippet?.title || undefined;
           }
+
           return undefined;
         })
         .catch(() => {

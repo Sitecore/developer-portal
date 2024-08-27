@@ -2,13 +2,14 @@
 // Components
 // Local
 import { Card, CardBody, CardHeader, CardProps, Heading, Stack } from '@chakra-ui/react';
+
 import { TextLink } from '../../../links/TextLink';
 import { SitecoreCommunityNewsOrEventItem, SitecoreCommunityNewsOrEventItemSidebar } from '../SitecoreCommunityNewsOrEventItem';
 import { SitecoreCommunityContent } from '../types';
 
 type SitecoreCommunityNewsProps = CardProps & {
   title?: string;
-  data?: SitecoreCommunityContent[];
+  data?: Array<SitecoreCommunityContent>;
   hideCategory?: boolean;
   listItem?: boolean;
 };

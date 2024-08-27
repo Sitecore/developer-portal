@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_1_4/Release_Notes
 ---
 
@@ -12,22 +12,22 @@ Details on these changes are included in the product documentation, available o
 
 ## Highlights
 
--   Support for Data Exchange Framework 1.4
+- Support for Data Exchange Framework 1.4
 
 ## Documentation
 
--   Documentation links are available on the [Downloads](/downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_1_4) page
+- Documentation links are available on the [Downloads](/downloads/Dynamics_CRM_Connect/Dynamics_CRM_Connect_1/Dynamics_CRM_Connect_1_4) page
 
 ## System requirements
 
--   Sitecore Experience Platform 8.1 rev. 151207 (8.1 update-1) or later
+- Sitecore Experience Platform 8.1 rev. 151207 (8.1 update-1) or later
 
 ## Deprecated and removed functionality
 
--   "Delta settings" feature moved from Dynamics CRM Provider to framework
+- "Delta settings" feature moved from Dynamics CRM Provider to framework
 
 ## Resolved issues
 
 The following issues have been resolved:
 
--   Last synced property on the CRM Lists to xDB Sync Pipeline Batch is not updated (153786)
+- Last synced property on the CRM Lists to xDB Sync Pipeline Batch is not updated (153786)

@@ -1,9 +1,3 @@
-import { Hero } from '@/src/components/common';
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { CenteredContent, VerticalGroup } from '@/src/components/helpers';
-import { ButtonLink } from '@/src/components/links';
-import { SocialShare } from '@/src/components/social';
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 import {
   Alert,
   AlertDescription,
@@ -19,8 +13,8 @@ import {
   Center,
   Grid,
   GridItem,
-  HStack,
   Heading,
+  HStack,
   Image,
   Modal,
   ModalBody,
@@ -42,6 +36,13 @@ import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
 import Layout from '@src/layouts/Layout';
 import Link from 'next/link';
 
+import { Hero } from '@/src/components/common';
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { ButtonLink } from '@/src/components/links';
+import { CenteredContent, VerticalGroup } from '@/src/components/ui';
+import { SocialShare } from '@/src/components/ui/socialShare';
+import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
+
 type ChangelogProps = {
   currentProduct: Product;
   changelogEntry: ChangelogEntry;
@@ -54,11 +55,12 @@ export async function getServerSideProps(context: any) {
   const isPreview = context.preview || false;
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  const products = await changelog.getProducts().then((response: Product[]) => {
+  const products = await changelog.getProducts().then((response: Array<Product>) => {
     return response;
   });
   let changelogEntry;
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
+
   try {
     changelogEntry = entry.length == 2 ? await changelog.getEntryByTitleAndDate(entry[1], entry[0], currentProduct?.id) : await changelog.getEntryByTitle(entry[0], currentProduct?.id);
   } catch {
@@ -66,6 +68,7 @@ export async function getServerSideProps(context: any) {
       notFound: true,
     };
   }
+
   return {
     props: {
       currentProduct: currentProduct,

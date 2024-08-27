@@ -5,12 +5,13 @@ import { serialize } from 'next-mdx-remote/serialize';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
+
 import styles from '../../components/markdown/MarkdownContent.module.css';
 import { ContentHeading } from '../interfaces/contentheading';
 import rehypeExtractHeadings from './rehype/extractHeadings';
 
 export async function ParseContent(stream: Buffer) {
-  const headings: ContentHeading[] = [];
+  const headings: Array<ContentHeading> = [];
   const result = await serialize(stream.toString(), {
     mdxOptions: {
       remarkPlugins: [
@@ -45,6 +46,7 @@ export async function ParseContent(stream: Buffer) {
       ],
     },
   });
+
   return {
     result,
     headings,
@@ -53,10 +55,12 @@ export async function ParseContent(stream: Buffer) {
 
 function handleHTML(html: string, info: TransformerInfo) {
   const { url, transformer } = info;
+
   if (transformer.name === '@remark-embedder/transformer-oembed') {
     if (url.includes('www.youtube.com')) {
       return `<div class="embed-youtube aspect-w-16 aspect-h-9">${html}</div>`;
     }
+
     if (url.includes('twitter.com')) {
       return `<div class="embed-twitter h-full">${html}</div>`;
     }

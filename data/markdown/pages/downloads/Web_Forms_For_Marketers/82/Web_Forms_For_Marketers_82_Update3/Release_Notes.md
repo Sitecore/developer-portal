@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Update3/Release_Notes
 ---
 
@@ -14,10 +14,10 @@ Azure Web Apps support for this version of Web Forms for Marketers will be intro
 
 The following issues have been fixed:
 
- | Context | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- | --- |
- | Web Forms for Marketers | If you rename an item, it reverts back to the field title when you save it. |  | 112928 |
- | Web Forms for Marketers | In an MVC layout, a droplist cannot display an empty choice correctly. |  | 109938 |
- | Web Forms for Marketers | In an MVC form, the Success message is not encoded correctly. |  | 67854 |
- | Web Forms for Marketers | In single-instance setups, the Date and Date picker fields use the user language instead of the Sitecore.Context.Language. |  | 121210 |
- | Web Forms for Marketers | The length of an E-mail field cannot be changed in the Form Designer. |  | 99623 |
+| Context                 | Description                                                                                                                | Customer ticket ID (or other) | TFS no. |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ------- |
+| Web Forms for Marketers | If you rename an item, it reverts back to the field title when you save it.                                                |                               | 112928  |
+| Web Forms for Marketers | In an MVC layout, a droplist cannot display an empty choice correctly.                                                     |                               | 109938  |
+| Web Forms for Marketers | In an MVC form, the Success message is not encoded correctly.                                                              |                               | 67854   |
+| Web Forms for Marketers | In single-instance setups, the Date and Date picker fields use the user language instead of the Sitecore.Context.Language. |                               | 121210  |
+| Web Forms for Marketers | The length of an E-mail field cannot be changed in the Form Designer.                                                      |                               | 99623   |

@@ -1,7 +1,6 @@
 import { extendTheme } from '@chakra-ui/react';
 import { withProse } from '@nikolovlazar/chakra-ui-prose';
 
-
 // Load customizations
 import { cardTheme } from './components/cardTheme';
 import { modalTheme } from './components/modalTheme';
@@ -23,4 +22,3 @@ export const scdpTheme = extendTheme(
   },
   withProse({ baseStyle: proseBaseStyle })
 );
-

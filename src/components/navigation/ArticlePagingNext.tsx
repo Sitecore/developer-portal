@@ -1,9 +1,11 @@
-import { PageInfo, SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
-import { getItemUrl } from '@/src/lib/sidebarNav';
-import { Card, CardBody, HStack, Heading, Icon, Stack } from '@chakra-ui/react';
+import { Card, CardBody, Heading, HStack, Icon, Stack } from '@chakra-ui/react';
 import { mdiArrowLeft, mdiArrowRight, mdiCheckCircleOutline } from '@mdi/js';
 import { ButtonLink } from '@src/components/links';
-import useSidebarNav from '../hooks/useSidebarNav';
+
+import { PageInfo, SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
+import { getItemUrl } from '@/src/lib/sidebarNav';
+
+import useSidebarNav from '../../hooks/useSidebarNav';
 
 export interface ArticlePagingProps {
   enabled?: boolean;
@@ -14,7 +16,9 @@ export interface ArticlePagingProps {
 export const ArticlePagingNext = ({ config, currentPage, enabled = false }: ArticlePagingProps) => {
   const { previousItem, nextItem } = useSidebarNav(currentPage, config);
 
-  if (!enabled) return null;
+  if (!enabled) {
+    return null;
+  }
 
   return (
     <HStack justifyContent={'space-around'}>

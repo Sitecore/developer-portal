@@ -1,17 +1,15 @@
-import { Alert, AlertIcon, Card, CardBody, CardHeader, HStack, Heading, SimpleGrid, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, Card, CardBody, CardHeader, Heading, HStack, SimpleGrid, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
-
 import { MDXRemote } from 'next-mdx-remote';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 
-import { Article, Download, Group, LinkItem, Repository } from '../cards';
-import { GroupItem } from '../cards/Group';
-import { Row } from '../helpers';
-import { ImageModal } from '../images';
-import { TextLink } from '../links';
-import { NewsletterStory } from '../newsletter';
-import { Promo, VideoPromo } from '../promos';
-import { YouTube } from '../video';
+import { Article, Download, Group, LinkItem, Promo, Repository, VideoPromo } from '@components/cards';
+import { GroupItem } from '@components/cards/Group';
+import { TextLink } from '@components/links';
+import { NewsletterStory } from '@components/newsletter';
+import { ImageModal } from '@components/ui/imageModal';
+import { Row } from '@components/ui/sections';
+import { YouTube } from '@components/video';
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 import { MarkdownIntro } from './MarkdownIntro';
 
@@ -36,6 +34,7 @@ function CustomMdx(children: string) {
         code({ className, children }) {
           const match = /language-(\w+)/.exec(className || '');
           const lang = match ? match[1] : '';
+
           return match ? (
             <SyntaxHighlighter style={a11yDark} language={lang} className="no-prose" PreTag={'div'} customStyle={{ background: 'inherit', display: 'inline-grid', width: '100%' }} wrapLongLines wrapLines>
               {String(children).replace(/\n$/, '')}
@@ -63,6 +62,7 @@ function CustomMdx(children: string) {
         CardBody: CardBody,
         Alert: Alert,
         AlertIcon: AlertIcon,
+        AlertDescription: AlertDescription,
         SimpleGrid: SimpleGrid,
         TextLink,
         HStack,
@@ -84,13 +84,17 @@ function CustomMdx(children: string) {
 }
 
 export const DecoratedMarkdown = ({ children, disabledProse = false }: DecoratedMarkdownProps): JSX.Element => {
-  if (disabledProse) return CustomMdx(children);
+  if (disabledProse) {
+    return CustomMdx(children);
+  }
 
   return <Prose className={styles.richText}>{CustomMdx(children)}</Prose>;
 };
 
 export const RenderContent = ({ content }: MarkdownContentProps): JSX.Element => {
-  if (content == null) return <></>;
+  if (content == null) {
+    return <></>;
+  }
 
   return <DecoratedMarkdown>{content}</DecoratedMarkdown>;
 };

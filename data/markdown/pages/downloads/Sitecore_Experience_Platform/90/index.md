@@ -1,6 +1,6 @@
 ---
-title: "9.0"
-description: "Download Sitecore 9.0 and all subsequent updates within this version group."
+title: '9.0'
+description: 'Download Sitecore 9.0 and all subsequent updates within this version group.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/90.aspx
 ---
 

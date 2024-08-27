@@ -1,15 +1,16 @@
 import { Card, CardBody, CardHeader, CardProps, Heading } from '@chakra-ui/react';
 import axios from 'axios';
 import { SetStateAction, useState } from 'react';
-//import { SitecoreCommunityBlogOrQuestion, SitecoreCommunityBlogOrQuestionSidebar, SitecoreCommunityContent, SortOption } from '../SitecoreCommunity.api';
+
+// import { SitecoreCommunityBlogOrQuestion, SitecoreCommunityBlogOrQuestionSidebar, SitecoreCommunityContent, SortOption } from '../SitecoreCommunity.api';
 import { TextLink } from '../../../links/TextLink';
-import { SitecoreCommunityContent } from '../types';
-import { SitecoreCommunityBlogOrQuestion, SitecoreCommunityBlogOrQuestionSidebar } from '../SitecoreCommunityBlogOrQuestion';
 import { SortOption } from '../SitecoreCommunity.api';
+import { SitecoreCommunityBlogOrQuestion, SitecoreCommunityBlogOrQuestionSidebar } from '../SitecoreCommunityBlogOrQuestion';
+import { SitecoreCommunityContent } from '../types';
 
 type SitecoreCommunityBlogProps = CardProps & {
-  entries?: SitecoreCommunityContent[];
-  sortKeys?: SortOption | SortOption[];
+  entries?: Array<SitecoreCommunityContent>;
+  sortKeys?: SortOption | Array<SortOption>;
   listItem?: boolean;
 };
 
@@ -19,15 +20,17 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: 
   }
 
   // eslint-disable-next-line no-unused-vars
-  const [fetchedResults, setFetchedResults] = useState<SitecoreCommunityContent[] | null>(null);
+  const [fetchedResults, setFetchedResults] = useState<Array<SitecoreCommunityContent> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchNewResults = (val: string) => {
     setIsLoading(true);
+
     const query = ['contentType=blog', 'forum=blog', `sort=${val}`];
+
     axios
       .get(`/api/sitecore-community?${query.join('&')}`)
-      .then((response: { data: SetStateAction<SitecoreCommunityContent[] | null>; }) => {
+      .then((response: { data: SetStateAction<Array<SitecoreCommunityContent> | null> }) => {
         setFetchedResults(response.data);
         setIsLoading(false);
       })

@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Experience Platform"
-description: "From a single connected platform easily integrated with other brand and customer platforms comes the ability to predict, optimize, and delight customer experiences. With comprehensive tracking capabilities enabling a single view of the customer, unprecedented reach across all the channels of today and tomorrow, and the elimination of manual, error-prone tasks – the latest version of Sitecore lets you own the customer experience."
+title: 'Sitecore Experience Platform'
+description: 'From a single connected platform easily integrated with other brand and customer platforms comes the ability to predict, optimize, and delight customer experiences. With comprehensive tracking capabilities enabling a single view of the customer, unprecedented reach across all the channels of today and tomorrow, and the elimination of manual, error-prone tasks – the latest version of Sitecore lets you own the customer experience.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform
 ---
 
@@ -151,4 +151,4 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform
 </CardBody>          
 </Card>
 
-Visit the [Knowledgebase](http://kb.sitecore.net/) for information about [Sitecore dependency compatibility](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0087164) and [Sitecore modules compatibility](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1000576).  
+Visit the [Knowledgebase](http://kb.sitecore.net/) for information about [Sitecore dependency compatibility](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0087164) and [Sitecore modules compatibility](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1000576).

@@ -1,10 +1,10 @@
-import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, VisuallyHidden, Wrap, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, useColorModeValue, VisuallyHidden, Wrap } from '@chakra-ui/react';
 
 import { ButtonLink } from '../../links/ButtonLink';
 import { StackExchangeQuestion } from './stackExchange';
 
 type StackExchangeFeedProps = CardProps & {
-  data: StackExchangeQuestion[];
+  data: Array<StackExchangeQuestion>;
   title?: string;
 };
 

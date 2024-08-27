@@ -1,6 +1,8 @@
-import { Box, Center, HStack, Heading, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, Center, Heading, HStack, Image, Stack, Text } from '@chakra-ui/react';
+
 import { ButtonLink } from '../components/links';
-import SearchInput from '../components/sitecore-search/SearchInput';
+
+import { SearchInput } from '../components/sitecore-search';
 import Layout from '../layouts/Layout';
 
 export default function Custom404() {

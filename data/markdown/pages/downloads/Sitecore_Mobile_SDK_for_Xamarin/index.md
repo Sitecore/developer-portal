@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Mobile SDK (WebAPI) for Xamarin"
-description: "Sitecore Mobile SDK for Xamarin is a framework that is designed to help the developer produce native mobile applications that use and serve content that is managed by Sitecore."
+title: 'Sitecore Mobile SDK (WebAPI) for Xamarin'
+description: 'Sitecore Mobile SDK for Xamarin is a framework that is designed to help the developer produce native mobile applications that use and serve content that is managed by Sitecore.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Mobile_SDK_for_Xamarin.aspx
 ---
 

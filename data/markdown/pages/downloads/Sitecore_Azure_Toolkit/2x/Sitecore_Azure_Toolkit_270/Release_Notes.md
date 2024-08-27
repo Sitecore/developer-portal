@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_270/Release_Notes
 ---
 
@@ -8,6 +8,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Az
 
 ## New features/improvements
 
- | Description | ADO no. |
- | --- | --- |
- | ​​Azure Toolkit 2.7.0 is compatible with Sitecore Experience Platform 10.2.0​.​ | 494772 |
+| Description                                                                     | ADO no. |
+| ------------------------------------------------------------------------------- | ------- |
+| ​​Azure Toolkit 2.7.0 is compatible with Sitecore Experience Platform 10.2.0​.​ | 494772  |

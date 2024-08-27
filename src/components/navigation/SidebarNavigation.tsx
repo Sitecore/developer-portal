@@ -1,10 +1,12 @@
-import { SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
-import { Box, Button, ButtonGroup, Collapse, HStack, Heading, Hide, Icon, IconButton, Text, Wrap, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, Heading, Hide, HStack, Icon, IconButton, Text, useDisclosure, Wrap } from '@chakra-ui/react';
 import { mdiChevronDown, mdiChevronRight, mdiMinus, mdiPlus } from '@mdi/js';
 import { appendPathToBasePath } from '@src/lib/utils';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+
+import { SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
+
 import SidebarSearch from './SidebarSearch';
 
 export interface SidebarNavigationProps {
@@ -160,6 +162,7 @@ const MenuItemGroup = ({ child, basePath, index }: { child: SidebarNavigationIte
             if (link.children?.length > 0) {
               return <MenuItemGroup child={link} basePath={appendPathToBasePath(currentBasePath, link.path)} key={i} />;
             }
+
             return <MenuItemLink href={appendPathToBasePath(currentBasePath, link.path)} title={link.title} key={i} />;
           })}
         </Box>

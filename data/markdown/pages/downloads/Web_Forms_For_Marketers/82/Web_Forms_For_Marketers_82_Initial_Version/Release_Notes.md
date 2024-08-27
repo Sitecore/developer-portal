@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Initial_Version/Release_Notes
 ---
 
@@ -12,9 +12,9 @@ For all Web Forms for Marketers 8.1 documentation, please visit the [Sitecore Do
 
 ## Breaking changes
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | The \sitecore modules\Shell\Web Forms for Marketers\Themes\mvc folder has been removed.​ |  | 83817 |
- | ​The obsolete javascript code has been removed​. |  | 85218 |
- | Obsolete classes have been removed |  | 85218 |
- | The jQuery and jQueryUI libraries have been excluded from the WFFM package so that they use the same libraries as the Sitecore platform. |  | 83818 |
+| Description                                                                                                                              | Customer ticket ID (or other) | TFS no. |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ------- |
+| The \sitecore modules\Shell\Web Forms for Marketers\Themes\mvc folder has been removed.​                                                 |                               | 83817   |
+| ​The obsolete javascript code has been removed​.                                                                                         |                               | 85218   |
+| Obsolete classes have been removed                                                                                                       |                               | 85218   |
+| The jQuery and jQueryUI libraries have been excluded from the WFFM package so that they use the same libraries as the Sitecore platform. |                               | 83818   |

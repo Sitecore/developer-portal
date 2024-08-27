@@ -1,11 +1,12 @@
 // Interfaces
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 import { Changelog } from '@lib/changelog';
 import { Product } from '@lib/changelog/types';
 import { getQueryValue } from '@lib/utils';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<Product[]>) => {
+import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
+
+const handler = async (req: NextApiRequest, res: NextApiResponse<Array<Product>>) => {
   const showAll: boolean = getQueryValue(req.query.all) == 'false' ? false : true;
   const isPreview = req.preview ? true : false;
 
@@ -13,7 +14,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Product[]>) => 
 
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  await changelog.getProducts().then((response: Product[]) => {
+  await changelog.getProducts().then((response: Array<Product>) => {
     if (showAll) {
       res.status(200).json(response);
     } else {

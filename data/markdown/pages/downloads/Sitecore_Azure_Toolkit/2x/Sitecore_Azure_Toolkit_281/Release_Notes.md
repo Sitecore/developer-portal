@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_281/Release_Notes
 ---
 
@@ -8,7 +8,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Az
 
 ## New features/improvements
 
- | Description | ADO no. |
- | --- | --- |
- | ​​Azure Toolkit 2.8.1 is compatible with Sitecore Experience Platform 10.3.1 | 589194  
- |
+| Description                                                                  | ADO no. |
+| ---------------------------------------------------------------------------- | ------- |
+| ​​Azure Toolkit 2.8.1 is compatible with Sitecore Experience Platform 10.3.1 | 589194  |
+|  |

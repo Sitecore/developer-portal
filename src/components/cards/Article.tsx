@@ -11,6 +11,7 @@ type ArticleProps = CardProps & {
   imageUrl?: string;
   hideLinkText?: boolean;
 };
+
 export const Article = ({ title, description, link, linktext, imageUrl, hideLinkText, ...rest }: ArticleProps) => {
   return (
     <Card variant={'outlineRaised'} size={'md'} {...rest}>

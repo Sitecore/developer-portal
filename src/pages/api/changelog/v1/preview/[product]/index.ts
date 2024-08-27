@@ -1,10 +1,11 @@
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 import { Changelog } from '@lib/changelog';
 import { ChangelogEntry, ChangelogEntryList, Product } from '@lib/changelog/types';
 import { getQueryValue, slugify } from '@lib/utils';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
+import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
+
+const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<Array<ChangelogEntry>>>) => {
   const currentProduct: string = getQueryValue(req.query.product);
   const limit: string = getQueryValue(req.query.limit);
   const end = getQueryValue(req.query.end);
@@ -12,7 +13,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
   // Use preview endpoint
   const changelog = new Changelog(getChangelogCredentials(), true);
 
-  const allProducts = await changelog.getProducts().then((response: Product[]) => {
+  const allProducts = await changelog.getProducts().then((response: Array<Product>) => {
     return response;
   });
 

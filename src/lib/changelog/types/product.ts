@@ -1,4 +1,4 @@
-//import { GetProductLogoByVariant, Product as ProductLogo, Type, Variant } from '@src/lib';
+// import { GetProductLogoByVariant, Product as ProductLogo, Type, Variant } from '@src/lib';
 import { GetAllProductsQuery } from '@data/gql/generated/graphql';
 import { getStringValue } from '@lib/utils';
 
@@ -10,9 +10,10 @@ export type Product = {
   hasEntries: boolean;
 };
 
-export function ParseProduct(data: GetAllProductsQuery): Product[] {
+export function ParseProduct(data: GetAllProductsQuery): Array<Product> {
   if (!data.allSitecoreProduct?.results) {
     console.log('No products found');
+
     return [];
   }
 

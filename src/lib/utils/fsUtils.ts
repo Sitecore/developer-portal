@@ -23,6 +23,7 @@ export function searchForFile(folderPath: string, fileName: string): string | nu
   } catch (err) {
     // Handle any errors that occur during the search
     console.error(`Error searching for file ${fileName}: ${err}`);
+
     return null;
   }
 }

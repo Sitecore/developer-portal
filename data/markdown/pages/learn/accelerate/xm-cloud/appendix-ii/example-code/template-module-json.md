@@ -152,7 +152,6 @@ This configuration will provide the basis to our Content Serialization strategy 
 
 The module node will provide the main headless SXA Module definition for the Site Collection. This module provides all the scaffolding when a new site is created under the Site Collection and will typically configure available renderings, data folders, headless variants etc. All child items for a module must be developer controled and the push operations will make sure that content in source control is the source of truth for the module. Each Site Collecion must have its own module.
 
-
 #### Tenant Root
 
 ```json

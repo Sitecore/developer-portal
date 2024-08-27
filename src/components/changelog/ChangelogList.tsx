@@ -1,30 +1,30 @@
-/* eslint-disable no-unused-vars */
-
-import { entriesApiUrl, getChangeTypeOptions, getProductOptions } from '@/src/lib/changelog/common/changelog';
-import { buildQuerystring } from '@/src/lib/changelog/common/querystring';
+import { Option } from '@/src/components/ui/dropdown';
 import { Box, Button, CloseButton, Link, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
 import { ChangelogEntry, ChangelogEntryList, Product } from '@lib/changelog/types';
-import { Option } from '@src/components/dropdown';
 import axios from 'axios';
 import NextLink from 'next/link';
 import { useState } from 'react';
 import { Fetcher } from 'swr';
 import useSWRInfinite from 'swr/infinite';
+
+import { entriesApiUrl, getChangeTypeOptions, getProductOptions } from '@/src/lib/changelog/common/changelog';
+import { buildQuerystring } from '@/src/lib/changelog/common/querystring';
+
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
 import { Hint } from './Hint';
 
 type ChangelogListProps = {
   initialProduct?: Product;
-  selectedProducts?: Option[];
-  onProductsChange?: (selectedProducts: Option[]) => void;
+  selectedProducts?: Array<Option>;
+  onProductsChange?: (selectedProducts: Array<Option>) => void;
 };
 
 const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps): JSX.Element => {
-  const [selectedChange, setSelectedChange] = useState<Option[]>([]);
-  const fetcher: Fetcher<ChangelogEntryList<ChangelogEntry[]>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
+  const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
+  const fetcher: Fetcher<ChangelogEntryList<Array<ChangelogEntry>>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
 
-  const getKey = (pageIndex: any, previousPageData: ChangelogEntryList<ChangelogEntry[]>) => {
+  const getKey = (pageIndex: any, previousPageData: ChangelogEntryList<Array<ChangelogEntry>>) => {
     if (previousPageData && !previousPageData.hasNext) {
       return null;
     }
@@ -56,7 +56,7 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
           label="Products"
           placeholder="Select one or more products"
           options={getProductOptions()}
-          onSelectChange={function (selectedValues: Option[]): void {
+          onSelectChange={function (selectedValues: Array<Option>): void {
             onProductsChange(selectedValues);
           }}
         />
@@ -66,7 +66,7 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
         label="Changes"
         placeholder="Select one or more "
         options={getChangeTypeOptions()}
-        onSelectChange={function (selectedValues: Option[]): void {
+        onSelectChange={function (selectedValues: Array<Option>): void {
           setSelectedChange(selectedValues);
         }}
       />

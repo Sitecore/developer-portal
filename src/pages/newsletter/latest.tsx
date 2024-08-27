@@ -1,7 +1,8 @@
-import { getLatestNewsletter } from '@/src/lib/newsletter';
 import { Box, Button, Center, Heading, Image, Link, Stack, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+
+import { getLatestNewsletter } from '@/src/lib/newsletter';
 
 export async function getStaticProps() {
   const page = await getLatestNewsletter();

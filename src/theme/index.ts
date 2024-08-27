@@ -1,2 +1,1 @@
-export { scdpTheme } from './theme'
-
+export { scdpTheme } from './theme';

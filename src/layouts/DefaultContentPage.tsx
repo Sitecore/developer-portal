@@ -1,35 +1,42 @@
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
-
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import SocialFeeds from '@src/components/common/SocialFeeds';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import { useRouter } from 'next/router';
+
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+
+import { PromoCardProps, PromoList } from '../components/cards';
 import { Hero } from '../components/common';
-import { ContentSection } from '../components/helpers';
-import { PromoCardProps, PromoList } from '../components/promos';
+import { ContentSection } from '../components/ui';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type DefaultContentPageProps = {
   pageInfo: PageInfo;
   hasGrid?: boolean;
-  promoAfter?: PromoCardProps[];
-  promoBefore?: PromoCardProps[];
-  childPageInfo?: ChildPageInfo[];
+  promoAfter?: Array<PromoCardProps>;
+  promoBefore?: Array<PromoCardProps>;
+  childPageInfo?: Array<ChildPageInfo>;
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
 };
 
 const DefaultContentPage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPager }: DefaultContentPageProps) => {
   const router = useRouter();
-  if (!pageInfo) return <>No pageInfo found</>;
+
+  if (!pageInfo) {
+    return <>No pageInfo found</>;
+  }
 
   // Check for headings in the content
-  const sectionTitles: ContentHeading[] = [];
-  if (pageInfo.headings) sectionTitles.push(...pageInfo.headings);
+  const sectionTitles: Array<ContentHeading> = [];
+
+  if (pageInfo.headings) {
+    sectionTitles.push(...pageInfo.headings);
+  }
 
   const Nav = customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null;
 

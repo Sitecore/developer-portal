@@ -7,9 +7,9 @@ import {
   ButtonGroup,
   Collapse,
   Flex,
-  HStack,
   Heading,
   Hide,
+  HStack,
   Icon,
   IconButton,
   Image,
@@ -25,23 +25,24 @@ import {
   Text,
   Tooltip,
   UnorderedList,
-  Wrap,
   useColorModeValue,
   useDisclosure,
+  Wrap,
 } from '@chakra-ui/react';
-import { NavItem, mainNavigation, sitecoreQuickLinks } from '@data/data-navigation';
+import { mainNavigation, NavItem, sitecoreQuickLinks } from '@data/data-navigation';
 import { mdiChevronDown, mdiChevronUp, mdiInformationOutline } from '@mdi/js';
-
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-//import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 
+// import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/assets';
+
 import { ProductIcon } from '../common';
 import { PreviewModeSwitch } from '../common/PreviewModeSwitch';
-import { Slide } from '../helpers/Slide';
-import PreviewSearchInput from '../sitecore-search/PreviewSearchInput';
+
+import { PreviewSearchInput } from '../sitecore-search';
+import { Slide } from '../ui/chakra/Slide';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 import { SearchButton } from './SearchButton';
@@ -50,19 +51,19 @@ export type NavigationChildData = {
   title: string;
   url?: string;
   external?: boolean;
-  children?: NavigationChildData[];
+  children?: Array<NavigationChildData>;
 };
 
 export type NavigationData = {
   title: string;
   url?: string;
-  children?: NavigationChildData[];
+  children?: Array<NavigationChildData>;
   pathname?: string;
 };
 export type NavProps = {
-  navigationData: NavigationData[];
+  navigationData: Array<NavigationData>;
   sitecoreQuickLinks: NavigationData;
-  children?: React.ReactNode | React.ReactNode[];
+  children?: React.ReactNode | Array<React.ReactNode>;
 };
 
 export type NavBarProps = {
@@ -211,7 +212,8 @@ const navSection = ({ title, logo }: NavItem) => {
 
 const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavItem) => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
-  //left="50%" transform="translateX(-50%)"
+
+  // left="50%" transform="translateX(-50%)"
   return (
     <Box role={'group'} display={'block'} p={2} key={title}>
       {url ? (

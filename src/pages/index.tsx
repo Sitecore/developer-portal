@@ -8,14 +8,14 @@ import { getPageInfo } from '@lib/page-info';
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import Layout from '@src/layouts/Layout';
 import { NextPage } from 'next';
-import Hero from '../components/common/Hero';
-import { TrackPageView } from '../components/engagetracker/TrackPageView';
-import { CenteredContent } from '../components/helpers/CenteredContent';
-import { VerticalGroup } from '../components/helpers/VerticalGroup';
-import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '../components/integrations';
-import { GenericList } from '../components/lists';
-import ProductList from '../components/lists/products/productList';
-import { CTACard } from '../components/promos';
+
+import { CTACard } from '@components/cards';
+import Hero from '@components/common/Hero';
+import { TrackPageView } from '@components/engagetracker/TrackPageView';
+import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '@components/integrations';
+import { GenericList } from '@components/lists';
+import ProductList from '@components/lists/products/productList';
+import { CenteredContent, VerticalGroup } from '@components/ui/sections';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');

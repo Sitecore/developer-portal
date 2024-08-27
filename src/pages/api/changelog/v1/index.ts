@@ -1,12 +1,13 @@
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 import { Changelog } from '@lib/changelog';
 import { ChangelogEntry, ChangelogEntryList } from '@lib/changelog/types';
 import { getQueryArray, getQueryValue } from '@lib/utils';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<ChangelogEntry[]>>) => {
-  const products: string[] = getQueryArray(req.query.product);
-  const changeTypes: string[] = getQueryArray(req.query.changeType);
+import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
+
+const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<Array<ChangelogEntry>>>) => {
+  const products: Array<string> = getQueryArray(req.query.product);
+  const changeTypes: Array<string> = getQueryArray(req.query.changeType);
   const isPreview = req.preview ? true : false;
 
   const limit = getQueryArray(req.query.limit);

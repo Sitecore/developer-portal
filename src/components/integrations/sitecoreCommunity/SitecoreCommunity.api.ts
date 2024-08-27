@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import type { SitecoreCommunityContent, SitecoreCommunityEvent } from './types';
 
 // Interfaces
@@ -76,8 +77,9 @@ export class SitecoreCommunityApi {
     storefrontsAndMarketplaces: '46ce63dd1b16f050486a4083b24bcb8f',
   };
 
-  static async getEvents(maxResults: number): Promise<SitecoreCommunityEvent[]> {
+  static async getEvents(maxResults: number): Promise<Array<SitecoreCommunityEvent>> {
     const params = [`limit=${maxResults}`, 'offset=0', 'upcoming=false', 'sort=start_date', 'eventFilter=all', 'fetchRsvp=false'];
+
     return axios.get(`https://community.sitecore.com/api/sn_communities/v1/community/events?${params.join('&')}`).then((response) => {
       return response.data.result.contents.map((event: SitecoreCommunityEventResponse) => ({
         contentType: 'event',
@@ -91,9 +93,9 @@ export class SitecoreCommunityApi {
         virtualUrl: event.virtual_url,
       }));
     });
-  };
+  }
 
-  static async getContent({ contentType, maxResults, sort, forum }: SitecoreCommunityOptions): Promise<SitecoreCommunityContent[]> {
+  static async getContent({ contentType, maxResults, sort, forum }: SitecoreCommunityOptions): Promise<Array<SitecoreCommunityContent>> {
     const params = [`sort=${sort}`, 'stFrom=0', `before=${new Date().toISOString()}`, `last=${maxResults}`];
 
     if (contentType) {
@@ -118,15 +120,16 @@ export class SitecoreCommunityApi {
         }));
       })
       .catch(Error);
-  };
+  }
 
-  static async get({ contentType = undefined, forum = undefined, maxResults = 3, sort = 'created' as SortOption }: SitecoreCommunityOptions): Promise<SitecoreCommunityEvent[] | SitecoreCommunityContent[]> {
+  static async get({ contentType = undefined, forum = undefined, maxResults = 3, sort = 'created' as SortOption }: SitecoreCommunityOptions): Promise<Array<SitecoreCommunityEvent> | Array<SitecoreCommunityContent>> {
     // Prevent showing more than 5, its just too many
     const count = maxResults > 5 ? 5 : maxResults;
+
     if (contentType === 'event') {
       return SitecoreCommunityApi.getEvents(count);
     }
 
     return SitecoreCommunityApi.getContent({ contentType, maxResults: count, sort, forum });
-  };
+  }
 }

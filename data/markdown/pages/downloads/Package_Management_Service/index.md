@@ -1,6 +1,6 @@
 ---
-title: "Package Management Service"
-description: "The Package Management Service is an opt-in mechanism for distributing update packages to the Update Center content management application."
+title: 'Package Management Service'
+description: 'The Package Management Service is an opt-in mechanism for distributing update packages to the Update Center content management application.'
 origin: https://dev.sitecore.net/Downloads/Package_Management_Service.aspx
 ---
 

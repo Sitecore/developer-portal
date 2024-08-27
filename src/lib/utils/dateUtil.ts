@@ -1,6 +1,7 @@
 export const translateDate = (dateString: string): string => {
   const locale = 'en-us';
   const date = new Date(dateString.replace(/-/g, '/'));
+
   return new Intl.DateTimeFormat(locale, {
     day: 'numeric',
     month: 'numeric',
@@ -11,6 +12,7 @@ export const translateDate = (dateString: string): string => {
 export const translateDateAsYearMonth = (dateString: string): string => {
   const locale = 'en-us';
   const date = new Date(dateString);
+
   return new Intl.DateTimeFormat(locale, {
     month: 'long',
     year: 'numeric',
@@ -25,6 +27,7 @@ export function formatDate(date: Date | string): string {
   if (typeof date === 'string') {
     date = new Date(date);
   }
+
   const day = padTo2Digits(date.getDate());
   const month = padTo2Digits(date.getMonth() + 1); // Months are zero-indexed
   const year = date.getFullYear();
@@ -41,6 +44,7 @@ export function clearTimeStamp(date: string | Date): string {
     return date.split('T')[0];
   } catch (e) {
     console.log(`Could not parse date: ${date}`);
+
     return '';
   }
 }

@@ -1,8 +1,9 @@
 import { Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
+
+import { CenteredContent, VerticalGroup } from '@components/ui/sections';
 import { GetProductLogo } from '../../lib/assets';
-import { VerticalGroup } from '../helpers';
-import { CenteredContent } from '../helpers/CenteredContent';
+
 import { GuidedDemo } from './GuidedDemo';
 
 export type HeroProps = {
@@ -11,7 +12,7 @@ export type HeroProps = {
   image?: string;
   productLogo?: string;
   demoId?: string;
-  children?: React.ReactNode | React.ReactNode[];
+  children?: React.ReactNode | Array<React.ReactNode>;
 };
 
 export const Hero = ({ description, title, children, productLogo, demoId }: HeroProps): JSX.Element => {
@@ -40,4 +41,5 @@ export const Hero = ({ description, title, children, productLogo, demoId }: Hero
     </VerticalGroup>
   );
 };
+
 export default Hero;

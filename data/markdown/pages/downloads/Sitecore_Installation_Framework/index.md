@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Installation Framework"
-description: "The Sitecore Installation Framework is a Microsoft PowerShell module that supports local and remote installations of Sitecore, and it is fully extensible."
+title: 'Sitecore Installation Framework'
+description: 'The Sitecore Installation Framework is a Microsoft PowerShell module that supports local and remote installations of Sitecore, and it is fully extensible.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework.aspx
 ---
 

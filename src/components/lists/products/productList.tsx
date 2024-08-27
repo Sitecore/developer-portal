@@ -1,8 +1,10 @@
-import { CDP, Connect, ContentHub, ContentHubONE, Discover, OrderCloud, Personalize, ProductInfoType, Search, Send, XMCloud, XP } from '@/data/products';
-import { GetProductLogoByVariant, Type, Variant } from '@/src/lib/assets';
 import { Box, Card, CardBody, Flex, Heading, SimpleGrid, Spacer, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
+
+import { CDP, Connect, ContentHub, ContentHubONE, Discover, OrderCloud, Personalize, ProductInfoType, Search, Send, XMCloud, XP } from '@/data/products';
+import { GetProductLogoByVariant, Type, Variant } from '@/src/lib/assets';
+
 import { ButtonLink } from '../../links';
 
 interface ProductListProps {
@@ -16,7 +18,7 @@ interface ProductListItemProps {
 interface ProductListTitleProps {
   title: string;
   description: string;
-  children?: React.ReactNode | React.ReactNode[] | undefined;
+  children?: React.ReactNode | Array<React.ReactNode> | undefined;
 }
 
 export const ProductList: React.FC<ProductListProps> = () => {

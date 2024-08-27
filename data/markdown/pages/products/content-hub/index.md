@@ -37,6 +37,7 @@ Sitecore Content Hub&trade; offers multiple modules. Here is a brief overview of
 
 These guidance documents aim to help you understand what kind of project management and implementation practices are recommended by Sitecore to implement Content Hub DAM.
 <Row columns={3}>
+
   <Article title="Project Management guidance deck" imageUrl="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/contenthub-projectmanagement-download?v=76db3f57" link="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/contenthub-projectmanagement?v=434ab2e8" hideLinkText="true" />
   <Article title="Estimation guidance document" imageUrl="[/images/file-excel-chdam-planning.webp](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/contenthub-estimation-download?v=3cb6ff13)" link="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/contenthub-estimation?v=553dc460" hideLinkText="true" />
   <Article title="Pre-Implementation Questionaire" imageUrl="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/contenthub-questionnaire-download?v=a3d16d0c" link="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/contenthub-questionnaire?v=31c39c6f" hideLinkText="true" />

@@ -12,10 +12,9 @@ cdpTags: ['xm-cloud']
 
 ## Am I able to deploy custom code to the XM Cloud CMS environment?
 
-While currently, it is technically possible to write custom pipelines and events in XM Cloud, **it is strongly discouraged**. 
+While currently, it is technically possible to write custom pipelines and events in XM Cloud, **it is strongly discouraged**.
 
 The XM Cloud platform is designed to be a headless platform, and it is not designed to support customization of the CMS. Instead, you should use the out-of-process APIs to extend the platform.
-
 
 ## Are clients able to customize the editorial experience?
 
@@ -56,4 +55,3 @@ No. XM Cloud is a SaaS platform that has a different architecture and approach t
 XM Cloud only supports headless, API-first implementations, with content being published to Experience Edge. Sitecore XM Cloud is a fully managed headless CMS platform operated by Sitecore and includes automatic updating. Policies exist to ensure XM Cloud instances are kept up to date. The responsibility for the platform and updates belongs to Sitecore. The web application is not hosted by Sitecore and remains the responsibility of the client or partner.
 
 With Managed Cloud customers have complete flexibility to architect and deploy Sitecore solutions using whatever topology and approach they desire. Additionally, with Managed Cloud, there is joint responsibility on the platform and its updates.
-

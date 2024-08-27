@@ -1,6 +1,6 @@
 ---
-title: "Dynamics CRM Security Provider"
-description: "Expose CRM contacts as Sitecore users, CRM marketing lists as Sitecore roles and interact directly with Dynamics CRM."
+title: 'Dynamics CRM Security Provider'
+description: 'Expose CRM contacts as Sitecore users, CRM marketing lists as Sitecore roles and interact directly with Dynamics CRM.'
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Security_Provider
 ---
 

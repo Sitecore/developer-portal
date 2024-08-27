@@ -24,7 +24,7 @@ import { TableRow, TableRowOptions } from '@tiptap/extension-table-row';
 import { Text } from '@tiptap/extension-text';
 import { Underline, UnderlineOptions } from '@tiptap/extension-underline';
 
-export interface richTextOptions {
+interface richTextOptions {
   blockquote: Partial<BlockquoteOptions> | false;
   bold: Partial<BoldOptions> | false;
   bulletList: Partial<BulletListOptions> | false;
@@ -132,18 +132,23 @@ export const richTextProfile = Extension.create<richTextOptions>({
     if (this.options.link !== false) {
       extensions.push(Link.configure(this.options?.link));
     }
+
     if (this.options.underline !== false) {
       extensions.push(Underline.configure(this.options?.underline));
     }
+
     if (this.options.table != false) {
       extensions.push(Table.configure(this.options?.table));
     }
+
     if (this.options.tableCell != false) {
       extensions.push(TableCell.configure(this.options?.tableCell));
     }
+
     if (this.options.tableHeader != false) {
       extensions.push(TableHeader.configure(this.options?.tableHeader));
     }
+
     if (this.options.tableRow != false) {
       extensions.push(TableRow.configure(this.options?.tableRow));
     }

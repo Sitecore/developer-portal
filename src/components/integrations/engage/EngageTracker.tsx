@@ -1,5 +1,6 @@
 import { Engage, init } from '@sitecore/engage';
-import { FC, createContext, useCallback, useEffect, useRef, useState } from 'react';
+import { createContext, FC, useCallback, useEffect, useRef, useState } from 'react';
+
 import { EngageKeys, IEngageConfigKeys } from './EngageKeys';
 
 export const EngageTrackerContext = createContext<EngageTrackerContextType>({} as EngageTrackerContextType);
@@ -16,7 +17,7 @@ interface EngageTrackerProviderProps {
 
 export const EngageTrackerProvider: FC<EngageTrackerProviderProps> = ({ children }) => {
   const [engageTracker, setEngageTracker] = useState<Engage | undefined>();
-  
+
   const isTrackerEnabled = useRef<boolean>(true);
 
   const initEngageTracker = useCallback(async () => {
@@ -31,7 +32,7 @@ export const EngageTrackerProvider: FC<EngageTrackerProviderProps> = ({ children
       pointOfSale: EngageKeys.SitecoreCdpPointOfSale,
       cookieExpiryDays: 365,
       forceServerCookieMode: false,
-      //webPersonalization: true,
+      // webPersonalization: true,
     };
 
     if (EngageKeys.SitecoreCdpCookieDomain) {
@@ -40,6 +41,7 @@ export const EngageTrackerProvider: FC<EngageTrackerProviderProps> = ({ children
 
     if (isTrackerEnabled.current) {
       const engage = await init(initConfig);
+
       setEngageTracker(engage);
     }
   }, []);

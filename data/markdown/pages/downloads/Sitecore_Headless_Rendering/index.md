@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Headless Rendering"
-description: "Sitecore Headless Services and headless client SDKs allow you to develop against the Sitecore Experience Platform in decoupled JavaScript and ASP.NET Core applications. Starting with version 18.0, Sitecore Headless Rendering includes connectivity to Experience Edge, an API-based service from Sitecore that enables globally replicated, scalable access to your Sitecore Experience Platform items, layout, and media. For use of Sitecore JSS with versions of Sitecore prior to 10.1, see Sitecore JavaScript Services downloads."
+title: 'Sitecore Headless Rendering'
+description: 'Sitecore Headless Services and headless client SDKs allow you to develop against the Sitecore Experience Platform in decoupled JavaScript and ASP.NET Core applications. Starting with version 18.0, Sitecore Headless Rendering includes connectivity to Experience Edge, an API-based service from Sitecore that enables globally replicated, scalable access to your Sitecore Experience Platform items, layout, and media. For use of Sitecore JSS with versions of Sitecore prior to 10.1, see Sitecore JavaScript Services downloads.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Headless_Rendering.aspx
 ---
 

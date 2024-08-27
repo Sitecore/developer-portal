@@ -1,8 +1,9 @@
-import { Box, Card, CardBody, CardFooter, CardHeader, Center, Grid, HStack, Heading, Link, LinkBox, LinkOverlay, Show, Stack, Text } from '@chakra-ui/react';
+import { Box, Card, CardBody, CardFooter, CardHeader, Center, Grid, Heading, HStack, Link, LinkBox, LinkOverlay, Show, Stack, Text } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 import Image from 'next/image';
 import NextLink from 'next/link';
+
 import { GenericListData } from './types';
 
 export const GenericList = (props: GenericListData) => {

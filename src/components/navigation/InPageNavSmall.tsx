@@ -3,11 +3,12 @@
 import { Box, BoxProps, Icon, IconButton, Menu, MenuButton, MenuItem, MenuList, Tooltip } from '@chakra-ui/react';
 import { mdiChevronDown } from '@mdi/js';
 import Link from 'next/link';
+
+import useInPageNavigation from '../../hooks/useInPageNavigation';
 import { ContentHeading } from '../../lib/interfaces/contentheading';
-import useInPageNavigation from '../hooks/useInPageNavigation';
 
 type InPageNavProps = BoxProps & {
-  titles: ContentHeading[];
+  titles: Array<ContentHeading>;
   hideFrom?: string;
 };
 

@@ -18,6 +18,7 @@ function getSize(value: string) {
       },
     });
   }
+
   return definePartsStyle({
     dialog: { maxW: value },
   });

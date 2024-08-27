@@ -1,6 +1,7 @@
 import { GetLatestEntriesQuery } from '@data/gql/generated/graphql';
 import { clearTimeStamp, getStringValue } from '@lib/utils';
 import { generateHTML } from '@tiptap/html';
+
 import { richTextProfile } from '../common/richTextConfiguration';
 import { ChangeType } from './changeType';
 import { Media } from './index';
@@ -21,32 +22,33 @@ export type ChangelogEntrySummary = {
   lightIcon: string;
   darkIcon: string;
   productName: string | null;
-  products: SitecoreProduct[] | null;
+  products: Array<SitecoreProduct> | null;
   changeTypeName: string | null;
   scheduled: boolean;
   status: Status;
 };
 
 export type ChangelogEntry = ChangelogEntrySummary & {
-  sitecoreProduct: SitecoreProduct[];
+  sitecoreProduct: Array<SitecoreProduct>;
   name: string;
   readMoreLink: string;
   description: string;
   fullArticle?: string | null;
   breakingChange: boolean;
-  changeType: ChangeType[];
+  changeType: Array<ChangeType>;
   version: string;
-  image: Media[];
+  image: Array<Media>;
 };
 
-export function ParseRawData(data: GetLatestEntriesQuery | null): ChangelogEntryList<ChangelogEntry[]> {
-  if (data == null || !data.changelog?.results)
+export function ParseRawData(data: GetLatestEntriesQuery | null): ChangelogEntryList<Array<ChangelogEntry>> {
+  if (data == null || !data.changelog?.results) {
     return {
       endCursor: '',
       hasNext: false,
       total: 0,
       entries: [],
     };
+  }
 
   return {
     endCursor: getStringValue(data.changelog.pageInfo?.endCursor),

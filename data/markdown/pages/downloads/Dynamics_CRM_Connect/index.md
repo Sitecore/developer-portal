@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Connect™ for Microsoft Dynamics 365 for Sales"
-description: "Connector for synchronizing data between Sitecore Experience Platform and Microsoft Dynamics 365 for Sales (and formerly Microsoft Dynamics CRM)."
+title: 'Sitecore Connect™ for Microsoft Dynamics 365 for Sales'
+description: 'Connector for synchronizing data between Sitecore Experience Platform and Microsoft Dynamics 365 for Sales (and formerly Microsoft Dynamics CRM).'
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect.aspx
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Publishing Service"
-description: "The Publishing Service is an opt-in mechanism for high-performance publishing in large scale Sitecore setups."
+title: 'Sitecore Publishing Service'
+description: 'The Publishing Service is an opt-in mechanism for high-performance publishing in large scale Sitecore setups.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service.aspx
 ---
 

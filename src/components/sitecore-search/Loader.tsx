@@ -1,6 +1,6 @@
 import { Presence } from '@sitecore-search/ui';
 
-const Loader = ({ enabled = true }: { enabled?: boolean }): JSX.Element => (
+export const Loader = ({ enabled = true }: { enabled?: boolean }): JSX.Element => (
   <div className="flex justify-center items-center h-full mb-10">
     <Presence present={enabled}>
       <svg aria-busy={enabled} aria-hidden={!enabled} focusable="false" role="progressbar" viewBox="0 0 20 20" className="m-auto block h-7 w-7 animate-spin">
@@ -9,5 +9,3 @@ const Loader = ({ enabled = true }: { enabled?: boolean }): JSX.Element => (
     </Presence>
   </div>
 );
-
-export default Loader;

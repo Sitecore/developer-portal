@@ -5,8 +5,8 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Hero } from '../components/common';
 import { TrackPageView } from '../components/engagetracker/TrackPageView';
-import { CenteredContent, VerticalGroup } from '../components/helpers';
-import SearchResults from '../components/sitecore-search/SearchResults';
+import { SearchResults } from '../components/sitecore-search/SearchResults';
+import { CenteredContent, VerticalGroup } from '../components/ui';
 import Layout from '../layouts/Layout';
 import { IsSearchEnabled } from '../lib/search';
 

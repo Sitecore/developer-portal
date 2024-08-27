@@ -1,8 +1,7 @@
 ---
-title: "Sitecore Community Integrations"
-description: "Configuration options"
+title: 'Sitecore Community Integrations'
+description: 'Configuration options'
 hasInPageNav: false
-
 ---
 
 ## Configuration

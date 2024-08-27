@@ -1,10 +1,12 @@
+import { Option } from '@/src/components/ui/dropdown';
 import { Product } from '@lib/changelog/types';
-import { Option } from '@src/components/dropdown';
 
-export function buildProductQuerystring(product?: Product, selectedProducts?: Option[]): string {
-  const query: string[] = [];
+export function buildProductQuerystring(product?: Product, selectedProducts?: Array<Option>): string {
+  const query: Array<string> = [];
 
-  if (product) query.push(`product=${product.id}`);
+  if (product) {
+    query.push(`product=${product.id}`);
+  }
 
   if (selectedProducts) {
     selectedProducts.map((p) => {
@@ -15,11 +17,13 @@ export function buildProductQuerystring(product?: Product, selectedProducts?: Op
   return query.join('&');
 }
 
-export function buildQuerystring(products: Option[], changes: Option[], cursor?: string, initialProduct?: Product): string[] {
-  const query: string[] = [];
+export function buildQuerystring(products: Array<Option>, changes: Array<Option>, cursor?: string, initialProduct?: Product): Array<string> {
+  const query: Array<string> = [];
   const PAGE_SIZE = 5;
 
-  if (initialProduct) query.push(`product=${initialProduct.id}`);
+  if (initialProduct) {
+    query.push(`product=${initialProduct.id}`);
+  }
 
   query.push(`limit=${PAGE_SIZE}`);
   products.map((p) => {
@@ -32,5 +36,6 @@ export function buildQuerystring(products: Option[], changes: Option[], cursor?:
   if (cursor) {
     query.push(`end=${cursor}`);
   }
+
   return query;
 }

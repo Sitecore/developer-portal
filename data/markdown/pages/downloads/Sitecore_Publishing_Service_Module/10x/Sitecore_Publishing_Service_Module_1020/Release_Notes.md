@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1020/Release_Notes
 ---
 
@@ -12,6 +12,6 @@ Since Sitecore XP 9.2.0, the Sitecore Publishing Module is released independentl
 
 ## Deprecated/Removed
 
- | Description | ADO no. |
- | --- | --- |
- | ​The `Sitecore.Publishing.Service.ContentAvailability.lucene.config.disabled` file has been removed.​​​​​​​ | 407376 |
+| Description                                                                                                 | ADO no. |
+| ----------------------------------------------------------------------------------------------------------- | ------- |
+| ​The `Sitecore.Publishing.Service.ContentAvailability.lucene.config.disabled` file has been removed.​​​​​​​ | 407376  |

@@ -1,8 +1,9 @@
-import { PageInfo } from '@/src/lib/interfaces/page-info';
 import { Product } from '@lib/changelog/types';
 import { useEngageTracker } from '@src/components/integrations/engage/useEngageTracker';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useRef } from 'react';
+
+import { PageInfo } from '@/src/lib/interfaces/page-info';
 
 interface TrackPageViewProps {
   children: React.ReactNode;

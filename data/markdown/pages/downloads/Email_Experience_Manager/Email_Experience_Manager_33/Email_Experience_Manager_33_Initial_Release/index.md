@@ -23,7 +23,6 @@ origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experi
 • If you need your historical reporting data, you should **[extract and migrate](https://doc.sitecore.net/email_experience_manager/reporting/extract_data_from_earlier_versions_of_exm_to_create_historical_reports)** it to a separate database where you can analyze it with your chosen Business Intelligence (BI) tool.
   </Alert>
 
-
 ## Downloads
 
 | Resource                                                                                                                                                                                                                                                                               | Description                                                                                                                                                                                                                                                                                                                                     |

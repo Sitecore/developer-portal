@@ -10,7 +10,7 @@ export type Status = {
 
 export type StatusResults = {
   total: string;
-  results: Status[];
+  results: Array<Status>;
 };
 
 export const DefaultStatus: Status = {
@@ -20,7 +20,7 @@ export const DefaultStatus: Status = {
   description: '',
 };
 
-export function ParseStatus(data: GetAllStatusQuery): Status[] {
+export function ParseStatus(data: GetAllStatusQuery): Array<Status> {
   if (!data.allStatus?.results) {
     return [];
   }

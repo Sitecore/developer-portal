@@ -50,7 +50,7 @@ export type ProductInfo = {
   lightIcon: string;
 };
 
-const ProductLogos: ProductImage[] = [
+const ProductLogos: Array<ProductImage> = [
   {
     Product: Product.Default,
     Variant: Variant.Dark,
@@ -382,7 +382,9 @@ export function GetProductInfo(product: Product): ProductInfo {
     return obj.Product === product;
   });
 
-  if (first == null) console.error('PRODUCT NAME NOT FOUND');
+  if (first == null) {
+    console.error('PRODUCT NAME NOT FOUND');
+  }
 
   const productInfo: ProductInfo = {
     name: first?.Name ?? 'PRODUCT NAME NOT FOUND',

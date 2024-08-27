@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/Web_Forms_For_Marketers_81/Web_Forms_For_Marketers_81_Update3/Release_Notes
 ---
 
@@ -30,8 +30,8 @@ In this release, we have resolved the following issues:
 
 ### Form Submission
 
--   109417:Users were unable to save list field values.
+- 109417:Users were unable to save list field values.
 
 ### Form Reports
 
--   109894:Form Reports were not shown.
+- 109894:Form Reports were not shown.

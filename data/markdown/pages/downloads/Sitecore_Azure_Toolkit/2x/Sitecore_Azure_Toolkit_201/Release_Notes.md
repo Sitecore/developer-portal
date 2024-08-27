@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_201/Release_Notes
 ---
 
@@ -10,7 +10,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Az
 
 The following issues have been fixed:
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | ​Azure Toolkit 2.0.1 is compatible with Web Forms for Marketers 9.0.1. |  |  |
- | ​Azure Toolkit 2.0.1 is compatible with Sitecore Experience Platform 9.0.1. |  |  |
+| Description                                                                 | Customer ticket ID (or other) | TFS no. |
+| --------------------------------------------------------------------------- | ----------------------------- | ------- |
+| ​Azure Toolkit 2.0.1 is compatible with Web Forms for Marketers 9.0.1.      |                               |         |
+| ​Azure Toolkit 2.0.1 is compatible with Sitecore Experience Platform 9.0.1. |                               |         |

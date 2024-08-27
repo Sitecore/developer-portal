@@ -1,4 +1,3 @@
-/* eslint-disable turbo/no-undeclared-env-vars */
 import { useRouter } from 'next/router';
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
@@ -14,7 +13,7 @@ type PreviewContextType = {
 export const PreviewContext = createContext<PreviewContextType | null>(null);
 
 type PreviewProviderProps = {
-  children: ReactNode | ReactNode[];
+  children: ReactNode | Array<ReactNode>;
   hostname: string;
 };
 
@@ -23,18 +22,19 @@ const PreviewProvider = ({ children, hostname }: PreviewProviderProps) => {
   const [isPreview, setIsPreview] = useState<boolean>();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // eslint-disable-next-line turbo/no-undeclared-env-vars
   const isPreviewDomain = process.env.NEXT_PUBLIC_PREVIEW_HOSTNAME === hostname;
   const cookieName = '_scdp_preview_mode';
   const router = useRouter();
 
   useEffect(() => {
     const hasVisited = getCookie(cookieName);
+
     if (!hasVisited && isPreviewDomain) {
       setCookie(cookieName, 'true', 1);
       enablePreview();
       setIsLoaded(true);
     }
+
     if (isPreviewDomain) {
       enablePreviewMode();
     }
@@ -50,6 +50,7 @@ const PreviewProvider = ({ children, hostname }: PreviewProviderProps) => {
 
   const togglePreview = async () => {
     const success = await triggerPreview(!router.isPreview);
+
     if (success) {
       setIsPreview(!isPreview);
       refreshPage();
@@ -58,6 +59,7 @@ const PreviewProvider = ({ children, hostname }: PreviewProviderProps) => {
 
   const enablePreview = async () => {
     const success = await triggerPreview(true);
+
     if (success) {
       setIsPreview(!isPreview);
       refreshPage();
@@ -82,41 +84,48 @@ const PreviewProvider = ({ children, hostname }: PreviewProviderProps) => {
 
 const setCookie = (name: string, value: string, days: number) => {
   const expires = new Date();
+
   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
   document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
 };
 
 const getCookie = (name: string) => {
   const cookieArray = document.cookie.split(';');
+
   for (let i = 0; i < cookieArray.length; i++) {
     const cookiePair = cookieArray[i].split('=');
     const cookieName = cookiePair[0].trim();
+
     if (cookieName === name) {
       return decodeURIComponent(cookiePair[1]);
     }
   }
+
   return null;
 };
 
 const triggerPreview = async (enable: boolean) => {
-  //const secret = 'test-staging';
+  // const secret = 'test-staging';
   const route = enable ? `/api/context/preview` : `/api/context/preview?clear`;
   const response = await fetch(route, {
     method: 'POST',
   });
+
   if (response.ok) {
     return true;
   }
+
   return false;
 };
 
 const usePreview = () => {
   const context = useContext(PreviewContext);
+
   if (!context) {
     throw new Error('usePreview must be used within a PreviewProvider');
   }
+
   return context;
 };
 
 export { PreviewProvider, usePreview };
-

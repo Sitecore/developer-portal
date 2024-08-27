@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Connect™ for Salesforce CRM "
-description: "Connector for synchronizing data between Sitecore Experience Platform and Salesforce CRM."
+title: 'Sitecore Connect™ for Salesforce CRM '
+description: 'Connector for synchronizing data between Sitecore Experience Platform and Salesforce CRM.'
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect.aspx
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_32/Email_Experience_Manager_32_Update1/Release_Notes
 ---
 
@@ -12,8 +12,8 @@ This is an update to the Email Experience Manager. You must upgrade to this rele
 
 The Sitecore Email Experience Manager 3.2.1 adds:
 
--   Compatibility for Sitecore 8.1 Update-1
--   Bug fixes (see resolved issues)
+- Compatibility for Sitecore 8.1 Update-1
+- Bug fixes (see resolved issues)
 
 ## Documentation
 
@@ -21,9 +21,9 @@ For all Sitecore Experience Platform 8.1 documentation, please visit the new [Si
 
 ## System requirements
 
--   Sitecore Experience Platform 8.1 rev. 151207 (8.1 update-1)
+- Sitecore Experience Platform 8.1 rev. 151207 (8.1 update-1)
 
 ## Resolved issues
 
--   Improved overall security – a potential security vulnerability fix applied (79495)
--   When using the default Newsletter template, changes in the message body could not be saved. This has been fixed. (80397)
+- Improved overall security – a potential security vulnerability fix applied (79495)
+- When using the default Newsletter template, changes in the message body could not be saved. This has been fixed. (80397)

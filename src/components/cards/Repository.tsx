@@ -1,7 +1,8 @@
-import { Badge, Button, Card, CardBody, CardFooter, CardHeader, CardProps, HStack, Icon, Link, Tag, TagLeftIcon, Text, Wrap, useColorModeValue } from '@chakra-ui/react';
+import { Badge, Button, Card, CardBody, CardFooter, CardHeader, CardProps, HStack, Icon, Link, Tag, TagLeftIcon, Text, useColorModeValue, Wrap } from '@chakra-ui/react';
+import { SvgLogo } from '@components/ui';
+import { isValidLogo } from '@components/ui/logos/SvgLogo';
 import { mdiGithub, mdiSourceFork, mdiStar } from '@mdi/js';
 import NextLink from 'next/link';
-import SvgLogo, { isValidLogo } from '../logos/SvgLogo';
 
 export type RepositoryProps = CardProps & {
   name?: string;
@@ -10,17 +11,21 @@ export type RepositoryProps = CardProps & {
   framework: string;
   forks?: number;
   stars?: number;
-  topics?: string[];
+  topics?: Array<string>;
 };
 
 export const Repository = ({ name, description, repositoryUrl, framework, stars, forks, topics, ...rest }: RepositoryProps) => {
   const frameworks = framework?.split('|');
-  const frameworkLogos: string[] = [];
+  const frameworkLogos: Array<string> = [];
 
-  if (frameworks == null || frameworks.length == 0) console.log('frameworks is null or empty');
+  if (frameworks == null || frameworks.length == 0) {
+    console.log('frameworks is null or empty');
+  }
 
   frameworks?.forEach((logo) => {
-    if (isValidLogo(logo)) frameworkLogos.push(logo);
+    if (isValidLogo(logo)) {
+      frameworkLogos.push(logo);
+    }
   });
 
   return (

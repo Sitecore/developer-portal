@@ -1,21 +1,22 @@
 // Interfaces
-import type { SitecoreCommunityContent } from '../types';
-// Global
-import axios from 'axios';
-import { useEffect, useState } from 'react';
 // Components
 // Local
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { Button, Card, CardBody, CardHeader, CardProps, Heading, Icon, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+// Global
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
 import { TextLink } from '../../../links/TextLink';
+import { FORUM_TO_TITLE } from '../sitecore-community.constants';
 import { ForumOption, SortOption } from '../SitecoreCommunity.api';
 import { SitecoreCommunityBlogOrQuestion } from '../SitecoreCommunityBlogOrQuestion';
-import { FORUM_TO_TITLE } from '../sitecore-community.constants';
+import type { SitecoreCommunityContent } from '../types';
 
 type SitecoreCommunityQuestionsProps = CardProps & {
-  data?: SitecoreCommunityContent[];
-  sortKeys?: SortOption | SortOption[];
-  forumKeys?: ForumOption | ForumOption[];
+  data?: Array<SitecoreCommunityContent>;
+  sortKeys?: SortOption | Array<SortOption>;
+  forumKeys?: ForumOption | Array<ForumOption>;
 };
 
 export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest }: SitecoreCommunityQuestionsProps): JSX.Element => {
@@ -23,7 +24,7 @@ export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest 
     return <></>;
   }
 
-  const [fetchedResults, setFetchedResults] = useState<SitecoreCommunityContent[] | null>(null);
+  const [fetchedResults, setFetchedResults] = useState<Array<SitecoreCommunityContent> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [sort, setSort] = useState<string | undefined>(undefined);
   const [forum, setForum] = useState<string | undefined>(undefined);
@@ -31,13 +32,17 @@ export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest 
   useEffect(() => {
     setIsLoading(true);
     console.log('fetching questions');
+
     const query = ['contentType=questions'];
+
     if (sort) {
       query.push(`sort=${sort}`);
     }
+
     if (forum) {
       query.push(`forum=${forum}`);
     }
+
     axios
       .get(`/api/sitecore-community?${query.join('&')}`)
       .then((response) => {

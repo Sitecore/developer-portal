@@ -1,16 +1,14 @@
 import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { IsSearchEnabled, SEARCH_CONFIG } from '@lib/search';
-import { PageController, WidgetsProvider, trackEntityPageViewEvent } from '@sitecore-search/react';
 import sitecoreTheme, { toastOptions } from '@sitecore/blok-theme';
+import { PageController, trackEntityPageViewEvent, WidgetsProvider } from '@sitecore-search/react';
 import { Footer } from '@src/components/navigation/Footer';
 import Navbar from '@src/components/navigation/NavBar';
-
 import { AppProps } from 'next/app';
 import { Router } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
-
 
 import { EngageTrackerProvider } from '../components/integrations';
 import { PreviewProvider } from '../context/PreviewContext';
@@ -39,6 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       const contentAllViewed = window.scrollY + window.innerHeight >= offsetTop + clientHeight;
       const params = new URLSearchParams(window.location.search);
       const fromSearch = params.get('fromSearch');
+
       if (contentAllViewed && fromSearch && !conversionTriggered) {
         conversionTriggered = true;
         trackEntityPageViewEvent('content', {
@@ -67,6 +66,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       auth: process.env.NEXT_PUBLIC_GTM_AUTH as string,
       preview: process.env.NEXT_PUBLIC_GTM_ENVIRONMENT as string,
     };
+
     TagManager.initialize(tagManagerArgs);
 
     if (IsSearchEnabled()) {
@@ -74,8 +74,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       PageController.getContext().setLocale({ country: 'us', language: 'en' });
       trackEntityPageViewEvent('content', { items: [{ id: process.env.NEXT_PUBLIC_SEARCH_DOMAIN_ID_PREFIX + document.location.pathname.replace(/[/:.]/g, '_').replace(/_+$/, '') }] });
     }
+
     setHostname(window.location.host);
     window.addEventListener('scroll', onScroll, { passive: true });
+
     return () => {
       window.removeEventListener('scroll', onScroll);
     };

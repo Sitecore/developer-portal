@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/82/Web_Forms_For_Marketers_82_Update7/Release_Notes
 ---
 
@@ -12,7 +12,7 @@ This is a product update. Sitecore recommends that you upgrade to this release i
 
 The following issues have been fixed:
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | Internal links are broken when you use the non-client `Send Email Message` save action on a CD server.​​​ |  | 209560 |
- | Some security vulnerability fixes​ have been implemented. |  |  |
+| Description                                                                                               | Customer ticket ID (or other) | TFS no. |
+| --------------------------------------------------------------------------------------------------------- | ----------------------------- | ------- |
+| Internal links are broken when you use the non-client `Send Email Message` save action on a CD server.​​​ |                               | 209560  |
+| Some security vulnerability fixes​ have been implemented.                                                 |                               |         |

@@ -5,6 +5,7 @@ import ArticlePage from '@src/layouts/ArticlePage';
 import ChildOverviewPage from '@src/layouts/ChildOverviewPage';
 import DefaultContentPage from '@src/layouts/DefaultContentPage';
 import SocialPage from '@src/layouts/SocialPage';
+
 import NewsLetterPage from '../layouts/NewsLetterPage';
 import Tutorial from '../layouts/Tutorial';
 
@@ -20,7 +21,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: any) {
   const pageInfo = await getPageInfo(context.params.slug);
 
-  if (pageInfo == null) return { notFound: true };
+  if (pageInfo == null) {
+    return { notFound: true };
+  }
 
   const childPageInfo = pageInfo.pageType == 'childoverview' || pageInfo.pageType == 'newsletter' ? await getChildPageInfo(context.params.slug.join('/')) : null;
   let sidebarNavConfig = null;
@@ -28,7 +31,7 @@ export async function getStaticProps(context: any) {
   if (pageInfo.hasSubPageNav) {
     sidebarNavConfig = await getChildNavgationInfo(context.params.slug.join('/'));
   }
-  //navData
+  // navData
 
   return {
     props: {
@@ -39,7 +42,7 @@ export async function getStaticProps(context: any) {
   };
 }
 
-export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pageInfo: PageInfo; childPageInfo: ChildPageInfo[]; sidebarNavConfig: SidebarNavigationConfig }) {
+export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pageInfo: PageInfo; childPageInfo: Array<ChildPageInfo>; sidebarNavConfig: SidebarNavigationConfig }) {
   // Check for other page types
   if (pageInfo.pageType) {
     switch (pageInfo.pageType.toLowerCase()) {
@@ -54,7 +57,9 @@ export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pa
     }
   }
 
-  if (pageInfo.hasSubPageNav) return <ArticlePage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} sidebarConfig={sidebarNavConfig} />;
+  if (pageInfo.hasSubPageNav) {
+    return <ArticlePage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} sidebarConfig={sidebarNavConfig} />;
+  }
 
   return <DefaultContentPage pageInfo={pageInfo} hasGrid={false} />;
 }

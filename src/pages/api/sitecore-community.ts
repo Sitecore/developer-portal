@@ -1,13 +1,15 @@
 import { ContentType, ForumOption, SitecoreCommunityApi, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption } from '@src/components/integrations';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const getQueryValue = (query: string | string[] | undefined): string => {
-  if (query == undefined) return '';
+const getQueryValue = (query: string | Array<string> | undefined): string => {
+  if (query == undefined) {
+    return '';
+  }
 
   return Array.isArray(query) ? query[0] : query;
 };
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<SitecoreCommunityEvent[] | SitecoreCommunityContent[]>) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse<Array<SitecoreCommunityEvent> | Array<SitecoreCommunityContent>>) => {
   const sort = getQueryValue(req.query.sort) as SortOption;
   const maxResults = parseInt(getQueryValue(req.query.maxResults), 10);
   const forum = getQueryValue(req.query.forum) as ForumOption;

@@ -1,6 +1,6 @@
 ---
-title: "Sitecore CLI"
-description: "The Sitecore CLI provides an entry point for interactive and automated command-line interaction with a Sitecore instance, including commands for pulling and synchronizing serialized Sitecore items."
+title: 'Sitecore CLI'
+description: 'The Sitecore CLI provides an entry point for interactive and automated command-line interaction with a Sitecore instance, including commands for pulling and synchronizing serialized Sitecore items.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx
 ---
 

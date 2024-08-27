@@ -1,5 +1,6 @@
 import { Card, CardBody, CardProps, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
+
 import styles from '../markdown/MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 
 type GroupProps = CardProps & {

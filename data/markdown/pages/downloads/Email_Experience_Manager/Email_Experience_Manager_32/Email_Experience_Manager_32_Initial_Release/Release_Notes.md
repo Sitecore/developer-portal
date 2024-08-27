@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Email_Experience_Manager/Email_Experience_Manager_32/Email_Experience_Manager_32_Initial_Release/Release_Notes
 ---
 
@@ -22,14 +22,14 @@ EXM 3.2 is a mid-lifecycle product release focused on increasing stability and i
 
 The Email Experience Manager 3.2 includes:
 
--   All fixes from EXM 3.1 rev. 150811 (Update-1)
--   150+ legacy bugs and minor enhancements
--   UX: New designs for key sections message creation workflow
--   UX: Updates to list pages including better search
--   Significant code reworking in key areas of UX/UI
--   A/B testing removed from triggered messages
--   Better mobile support for embedded images
--   Separate logging for EXM now added
+- All fixes from EXM 3.1 rev. 150811 (Update-1)
+- 150+ legacy bugs and minor enhancements
+- UX: New designs for key sections message creation workflow
+- UX: Updates to list pages including better search
+- Significant code reworking in key areas of UX/UI
+- A/B testing removed from triggered messages
+- Better mobile support for embedded images
+- Separate logging for EXM now added
 
 Scale recommendations have been increased from 2 million emails per month to 10 million emails per month. For sizing recommendations and information, please contact your regional office.
 

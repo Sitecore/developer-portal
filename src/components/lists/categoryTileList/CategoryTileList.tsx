@@ -1,7 +1,8 @@
-import { Card, CardBody, CardHeader, HStack, Heading, LinkBox, LinkOverlay, SimpleGrid, Text } from '@chakra-ui/react';
+import { Card, CardBody, CardHeader, Heading, HStack, LinkBox, LinkOverlay, SimpleGrid, Text } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 import NextLink from 'next/link';
+
 import { CategoryTileListData } from './types';
 
 export const CategoryTileList = (props: CategoryTileListData) => (

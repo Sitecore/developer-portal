@@ -17,7 +17,7 @@ enum PaginationRenderType {
   TruncatePages,
 }
 
-export const SearchResults = (props: SearchPaginationType) => {
+export const SearchPagination = (props: SearchPaginationType) => {
   const { defaultCurrentPage, onPageNumberChange, totalItems, pageSize } = props;
   let { page } = props;
   const pageCount = totalItems < pageSize ? 1 : Math.ceil(totalItems / pageSize);
@@ -60,5 +60,3 @@ export const SearchResults = (props: SearchPaginationType) => {
     </Center>
   );
 };
-
-export default SearchResults;

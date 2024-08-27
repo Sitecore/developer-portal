@@ -1,7 +1,7 @@
 import { Box, Center, Container, HStack, Link, Stack, Text, Tooltip } from '@chakra-ui/react';
-
 import NextLink from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+
 import { SocialButton } from '../links';
 
 export const Footer = () => (

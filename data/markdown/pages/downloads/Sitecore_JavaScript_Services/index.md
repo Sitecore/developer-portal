@@ -1,6 +1,6 @@
 ---
-title: "Sitecore JavaScript Services"
-description: "Sitecore JavaScript Services allow you to develop against the Sitecore Experience Platform in decoupled JavaScript applications. For use of Sitecore JSS with Sitecore 10.1 and later, see Sitecore Headless Rendering downloads."
+title: 'Sitecore JavaScript Services'
+description: 'Sitecore JavaScript Services allow you to develop against the Sitecore Experience Platform in decoupled JavaScript applications. For use of Sitecore JSS with Sitecore 10.1 and later, see Sitecore Headless Rendering downloads.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services.aspx
 ---
 

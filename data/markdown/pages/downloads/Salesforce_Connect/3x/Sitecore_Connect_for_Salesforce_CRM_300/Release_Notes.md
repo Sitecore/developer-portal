@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/3x/Sitecore_Connect_for_Salesforce_CRM_300/Release_Notes
 ---
 
@@ -8,7 +8,7 @@ origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/3x/Sitecore_Connec
 
 ## New features/improvements
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | Support for Sitecore XP 9.2.0. |  |  |
- | The installation and upgrade process has been simplified by combining 2 packages into 1 package. |  |  |
+| Description                                                                                      | Customer ticket ID (or other) | TFS no. |
+| ------------------------------------------------------------------------------------------------ | ----------------------------- | ------- |
+| Support for Sitecore XP 9.2.0.                                                                   |                               |         |
+| The installation and upgrade process has been simplified by combining 2 packages into 1 package. |                               |         |

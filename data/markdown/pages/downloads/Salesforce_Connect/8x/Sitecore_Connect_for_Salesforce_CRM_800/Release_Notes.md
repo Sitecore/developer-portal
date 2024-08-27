@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/8x/Sitecore_Connect_for_Salesforce_CRM_800/Release_Notes
 ---
 
@@ -8,6 +8,6 @@ origin: https://dev.sitecore.net/Downloads/Salesforce_Connect/8x/Sitecore_Connec
 
 ## New features/improvements
 
- | Description | Customer ticket ID (or other) | AD no. |
- | --- | --- | --- |
- | Support for Sitecore XP 10.3.0. |
+| Description                     | Customer ticket ID (or other) | AD no. |
+| ------------------------------- | ----------------------------- | ------ |
+| Support for Sitecore XP 10.3.0. |

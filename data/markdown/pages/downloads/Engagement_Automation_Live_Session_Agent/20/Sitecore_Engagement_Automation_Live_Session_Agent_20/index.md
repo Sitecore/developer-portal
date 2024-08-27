@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Engagement Automation Live Session Agent 2.0"
-description: ""
+title: 'Sitecore Engagement Automation Live Session Agent 2.0'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Engagement_Automation_Live_Session_Agent/20/Sitecore_Engagement_Automation_Live_Session_Agent_20.aspx
 ---
 
@@ -10,13 +10,13 @@ This version of the Live Session Agent runs on [Sitecore Experience Platform 8.2
 
 ## Download options
 
- | Resource | Description |
- | --- | --- |
- | [Engagement Automation Live Session Agent](https://scdp.blob.core.windows.net/downloads/Engagement%20Automation%20Live%20Session%20Agent/20/Sitecore%20Engagement%20Automation%20Live%20Session%20Agent%2020/Secure/Sitecore%20Engagement%20Automation%20Live%20Session%20Agent%202.0.0%20rev.%20160923.zip) | Installation package for the Engagement Automation Live Session Agent module. |
+| Resource                                                                                                                                                                                                                                                                                                     | Description                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| [Engagement Automation Live Session Agent](https://scdp.blob.core.windows.net/downloads/Engagement%20Automation%20Live%20Session%20Agent/20/Sitecore%20Engagement%20Automation%20Live%20Session%20Agent%2020/Secure/Sitecore%20Engagement%20Automation%20Live%20Session%20Agent%202.0.0%20rev.%20160923.zip) | Installation package for the Engagement Automation Live Session Agent module. |
 
 ## Links
 
- | Resource | Description |
- | --- | --- |
- | [Documentation](https://doc.sitecore.net:443/en/Products/Sitecore_Experience_Platform/82/Setting_up_and_maintaining/xDB/Server_considerations/Live_session_agent) | Link to documentation portal with documentation for Engagement Automation Live Session Agent. |
- | [Configuration settings](https://doc.sitecore.net:443/en/Products/Sitecore_Experience_Platform/82/Setting_up_and_maintaining/xDB/Configuring_servers/Live_session_agent_configuration_settings) | Link to documentation portal with documentation for Live session agent configuration settings.  <br /> |
+| Resource                                                                                                                                                                                        | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [Documentation](https://doc.sitecore.net:443/en/Products/Sitecore_Experience_Platform/82/Setting_up_and_maintaining/xDB/Server_considerations/Live_session_agent)                               | Link to documentation portal with documentation for Engagement Automation Live Session Agent.         |
+| [Configuration settings](https://doc.sitecore.net:443/en/Products/Sitecore_Experience_Platform/82/Setting_up_and_maintaining/xDB/Configuring_servers/Live_session_agent_configuration_settings) | Link to documentation portal with documentation for Live session agent configuration settings. <br /> |

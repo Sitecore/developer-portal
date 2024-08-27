@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/7x/Sitecore_Connect_for_Microsoft_Dynamics_365_for_Sales_700/Release_Notes
 ---
 
@@ -8,8 +8,8 @@ origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Connect/7x/Sitecore_Conn
 
 ## New features/improvements
 
- | Description | Customer ticket ID (or other) | ADO no. |
- | --- | --- | --- |
- | Support for Sitecore XP 10.2.0. |  |  |
- | Support for Items as Resources. |  |  |
- | Updated to support the WS-Trust deprecation changes in Dynamics CRM connectors. |  | 489332 |
+| Description                                                                     | Customer ticket ID (or other) | ADO no. |
+| ------------------------------------------------------------------------------- | ----------------------------- | ------- |
+| Support for Sitecore XP 10.2.0.                                                 |                               |         |
+| Support for Items as Resources.                                                 |                               |         |
+| Updated to support the WS-Trust deprecation changes in Dynamics CRM connectors. |                               | 489332  |

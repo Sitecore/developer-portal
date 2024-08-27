@@ -1,11 +1,11 @@
 import { AbsoluteCenter, AspectRatio, Box, Card, CardBody, CardHeader, CardProps, Heading, Image, LinkBox, SimpleGrid, Text, VisuallyHidden } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { TextLink } from '../../links/TextLink';
 
+import { TextLink } from '../../links/TextLink';
 import type { YouTubeSnippet, YouTubeVideo } from './youTube';
 
 type YouTubeFeedProps = CardProps & {
-  data: YouTubeVideo[];
+  data: Array<YouTubeVideo>;
   // The playlistTitle is only used if the author has not already supplied a youtubeTitle meta tag
   playlistTitle?: string;
   title?: string;

@@ -3,34 +3,39 @@ import { Product } from '@lib/changelog/types';
 import { slugify } from '@lib/utils';
 import fs from 'fs';
 import path, { join } from 'path';
+
 import { getChangelogCredentials } from './changelog/common/credentials';
 
 const pagesDirectory = path.join(process.cwd(), 'data/markdown/pages/');
 
-export type slugPagePaths = { params: { slug: string[] } };
+export type slugPagePaths = { params: { slug: Array<string> } };
 
-export const getAllFilesRecursively = (dir: string, fileList: string[] = []): string[] => {
+export const getAllFilesRecursively = (dir: string, fileList: Array<string> = []): Array<string> => {
   const files = fs.readdirSync(dir);
 
   files.forEach((file) => {
-    if (file.startsWith('_') || file.startsWith('manifest')) return;
+    if (file.startsWith('_') || file.startsWith('manifest')) {
+      return;
+    }
 
     const filePath = join(dir, file);
 
     if (fs.statSync(filePath).isDirectory()) {
       fileList = getAllFilesRecursively(filePath, fileList);
     } else {
-      if (filePath.endsWith('.md') || filePath.endsWith('.mdx')) fileList.push(filePath);
+      if (filePath.endsWith('.md') || filePath.endsWith('.mdx')) {
+        fileList.push(filePath);
+      }
     }
   });
 
   return fileList;
 };
 
-export const getStaticPathsRecursively = async (): Promise<slugPagePaths[]> => {
+export const getStaticPathsRecursively = async (): Promise<Array<slugPagePaths>> => {
   const allFiles = getAllFilesRecursively(pagesDirectory);
 
-  const paths: slugPagePaths[] = [];
+  const paths: Array<slugPagePaths> = [];
 
   allFiles.forEach((filePath) => {
     if (filePath != null || filePath != undefined) {
@@ -61,11 +66,12 @@ export type NewsletterPath = { params: NewsletterPathParams };
 
 export const NEWSLETTER_DATA_DIRECTORY = path.join(process.cwd(), 'data/newsletters/');
 
-export const getNewsletterStaticPaths = (): NewsletterPath[] => {
+export const getNewsletterStaticPaths = (): Array<NewsletterPath> => {
   const years = fs.readdirSync(NEWSLETTER_DATA_DIRECTORY);
+
   years.sort().reverse();
 
-  const paths: NewsletterPath[] = [];
+  const paths: Array<NewsletterPath> = [];
 
   years.forEach((year) => {
     const yearPath = path.resolve(NEWSLETTER_DATA_DIRECTORY, year);
@@ -82,10 +88,10 @@ export const getNewsletterStaticPaths = (): NewsletterPath[] => {
 
 type ProductChangeLogPaths = { params: { product: string } };
 
-export const getChangelogProductPaths = async (): Promise<ProductChangeLogPaths[]> => {
-  const paths: ProductChangeLogPaths[] = [];
+export const getChangelogProductPaths = async (): Promise<Array<ProductChangeLogPaths>> => {
+  const paths: Array<ProductChangeLogPaths> = [];
   const changelog = new Changelog(getChangelogCredentials(), false);
-  const products = await changelog.getProducts().then((response: Product[]) => {
+  const products = await changelog.getProducts().then((response: Array<Product>) => {
     return response;
   });
 

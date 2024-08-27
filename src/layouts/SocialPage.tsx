@@ -1,18 +1,19 @@
+import { PageInfo } from '@lib/interfaces/page-info';
+import { CTACard, CTACardProps, PromoCardProps, PromoList } from '@src/components/cards';
+import { RenderContent } from '@src/components/markdown/MarkdownContent';
+import Layout from '@src/layouts/Layout';
+
 import communityListData from '@/data/data-community-list';
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { PageInfo } from '@lib/interfaces/page-info';
-import { RenderContent } from '@src/components/markdown/MarkdownContent';
-import { CTACard, CTACardProps, PromoCardProps, PromoList } from '@src/components/promos';
-import Layout from '@src/layouts/Layout';
+
 import { Hero } from '../components/common';
-import { CenteredContent, VerticalGroup } from '../components/helpers';
 import { SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '../components/integrations';
 import { GenericList } from '../components/lists';
-
+import { CenteredContent, VerticalGroup } from '../components/ui';
 
 type SocialPageProps = {
   pageInfo: PageInfo;
-  promoBefore?: PromoCardProps[];
+  promoBefore?: Array<PromoCardProps>;
   ctaAfter?: CTACardProps;
 };
 

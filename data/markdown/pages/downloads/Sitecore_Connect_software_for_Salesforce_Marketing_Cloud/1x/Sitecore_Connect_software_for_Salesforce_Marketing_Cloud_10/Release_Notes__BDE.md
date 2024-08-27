@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud/1x/Sitecore_Connect_software_for_Salesforce_Marketing_Cloud_10/Release_Notes__BDE
 ---
 
@@ -10,4 +10,4 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Connect_software_for_Salesfo
 
 Sitecore Connect for Salesforce Managed Cloud 1.0 includes:
 
--   You can use contact and behavioral data from Sitecore for email personalization and journey orchestration in Salesforce Marketing Cloud.
+- You can use contact and behavioral data from Sitecore for email personalization and journey orchestration in Salesforce Marketing Cloud.

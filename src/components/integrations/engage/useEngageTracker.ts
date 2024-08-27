@@ -1,16 +1,20 @@
 import { ICustomEventInput, IPageViewEventInput, IPersonalizerInput } from '@sitecore/engage';
-//import { INestedObject } from '@sitecore/engage/types/lib/utils/flatten-object';
+// import { INestedObject } from '@sitecore/engage/types/lib/utils/flatten-object';
 import { useContext } from 'react';
+
 import { EngageTrackerContext } from './EngageTracker';
 
 export const useEngageTracker = () => {
   const context = useContext(EngageTrackerContext);
 
   const TrackPageView = async (pageSlug: string, extensionData: any | undefined) => {
-    if (!context.isTrackerEnabled) return;
+    if (!context.isTrackerEnabled) {
+      return;
+    }
 
     if (!context.engageTracker === undefined) {
       console.log('engageTracker is undefined');
+
       return;
     }
 
@@ -26,10 +30,13 @@ export const useEngageTracker = () => {
   };
 
   const TrackEvent = async (eventName: string, extensionData?: any | undefined) => {
-    if (!context.isTrackerEnabled) return;
+    if (!context.isTrackerEnabled) {
+      return;
+    }
 
     if (!context.engageTracker === undefined) {
       console.log('engageTracker is undefined');
+
       return;
     }
 
@@ -44,10 +51,13 @@ export const useEngageTracker = () => {
   };
 
   const RunPersonalizationFlow = async <T>(friendlyId: string, data?: any | undefined): Promise<T | undefined> => {
-    if (!context.isTrackerEnabled) return;
+    if (!context.isTrackerEnabled) {
+      return;
+    }
 
     if (!context.engageTracker === undefined) {
       console.log('engageTracker is undefined');
+
       return;
     }
 

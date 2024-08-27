@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/SharePoint_Connect/2_0/SharePoint_Connect_2_2/Release_Notes
 ---
 
@@ -14,8 +14,8 @@ This version of the module runs on Sitecore XP 8.1 with SharePoint Server 2010, 
 
 New features:
 
--   SharePoint Connect now supports Sitecore XP 8.1
+- SharePoint Connect now supports Sitecore XP 8.1
 
 Issues resolved:
 
--   53414: [SPIF] SharePoint Online integration no longer working
+- 53414: [SPIF] SharePoint Online integration no longer working

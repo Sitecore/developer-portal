@@ -2,10 +2,11 @@ import { Heading, List, ListItem, Wrap } from '@chakra-ui/react';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import Link from 'next/link';
 import { title } from 'process';
-import useInPageNavigation from '../hooks/useInPageNavigation';
+
+import useInPageNavigation from '../../hooks/useInPageNavigation';
 
 type InPageNavProps = {
-  titles: ContentHeading[];
+  titles: Array<ContentHeading>;
 };
 
 const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {

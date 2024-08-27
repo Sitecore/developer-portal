@@ -1,4 +1,4 @@
-.richText :where(.richText>:first-child):not(:where([class~=notRichText] *)) {
+.richText :where(.richText > :first-child):not(:where([class~='notRichText'] *)) {
   margin-top: 0 !important;
 }
 

@@ -2,7 +2,7 @@ import { visit } from 'unist-util-visit';
 
 type HeaderNodeData = {
   value?: string;
-  children?: HeaderNodeData[];
+  children?: Array<HeaderNodeData>;
   type: string;
   data?: {
     id?: string;
@@ -13,8 +13,7 @@ type HeaderNodeData = {
   depth?: number;
 };
 
-const getSectionId = (title: string) =>
-  `heading-${title.toLowerCase().replace(/[^a-z0-9]/gi, '-')}`;
+const getSectionId = (title: string) => `heading-${title.toLowerCase().replace(/[^a-z0-9]/gi, '-')}`;
 
 /**
  * Transforms all h tags to add an id based on the text value of the heading
@@ -30,6 +29,7 @@ const setHeadingIds = () => {
 
       const firstChild = node.children[0];
       let text = '';
+
       // If our heading is a link, grab it's child text
       if (firstChild.type === 'link' && !!firstChild.children) {
         text = firstChild.children[0].value || '';
@@ -44,9 +44,11 @@ const setHeadingIds = () => {
         if (!node.data) {
           node.data = {};
         }
+
         if (!node.data.hProperties) {
           node.data.hProperties = {};
         }
+
         // Set the id & hProperties id
         node.data.id = node.data.hProperties.id = id;
       }

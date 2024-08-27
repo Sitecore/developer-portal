@@ -2,7 +2,8 @@ import { Card, CardFooter, CardHeader, Heading, Link, LinkBox, LinkOverlay } fro
 import NextLink from 'next/link';
 
 import { translateDate } from '@/src/lib/utils';
-import ConditionalWrapper from '../../helpers/ConditionalWrapper';
+
+import ConditionalWrapper from '../../ui/sections/ConditionalWrapper';
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
 
 type SitecoreCommunityNewsOrEventItemProps = {
@@ -29,9 +30,11 @@ type DateOutputProps = {
   startDate: string;
   endDate?: string;
 };
+
 const DateOutput = ({ startDate, endDate }: DateOutputProps): JSX.Element => {
   const startDateString = translateDate(startDate);
   const endDateString = endDate ? translateDate(endDate) : '';
+
   if (!endDateString || startDateString === endDateString) {
     return <p className="text-xs">{startDateString}</p>;
   }
@@ -118,7 +121,7 @@ export const SitecoreCommunityNewsOrEventItemSidebar = ({ commentCount, startDat
 };
 
 const DateIcon = ({ date, className, type }: DateIconProps): JSX.Element => {
-  if (type == 'calendar')
+  if (type == 'calendar') {
     return (
       <div className={`mr-4 w-10 flex-none rounded-t pb-2 text-center shadow-lg lg:rounded-l lg:rounded-t-none ${className}`}>
         <div className="w-full py-1 text-2xs bg-primary-100 text-primary-900 dark:bg-teal-800 dark:text-teal-100">{new Date(date).toLocaleString('en-US', { month: 'short' })}</div>
@@ -127,6 +130,7 @@ const DateIcon = ({ date, className, type }: DateIconProps): JSX.Element => {
         </div>
       </div>
     );
+  }
 
   return (
     <div className="p-2 mr-4 leading-tight text-center border bg-theme-bg-alt text-theme-text border-theme-border-alt bg-primary">

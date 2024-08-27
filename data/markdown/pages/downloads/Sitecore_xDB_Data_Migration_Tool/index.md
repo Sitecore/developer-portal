@@ -1,6 +1,6 @@
 ---
-title: "Sitecore xDB Data Migration Tool"
-description: "Tooling to convert and migrate data from an SXP 8.x database to SXP 10.0."
+title: 'Sitecore xDB Data Migration Tool'
+description: 'Tooling to convert and migrate data from an SXP 8.x database to SXP 10.0.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Data_Migration_Tool.aspx
 ---
 

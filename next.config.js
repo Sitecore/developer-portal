@@ -63,7 +63,6 @@ const redirects = [
   { source: '/personalization-testing/personalize', destination: '/products/personalize', permanent: true },
 ];
 
-
 const nextConfig = {
   experimental: {
     largePageDataBytes: 256 * 100000,

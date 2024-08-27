@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_251/Release_Notes
 ---
 
@@ -8,6 +8,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Az
 
 ## New features/improvements
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | ​​​​​​​​​S​itecore Azure Toolkit now supports Sitecore XP 10.0.1​. |  | 443834 |
+| Description                                                        | Customer ticket ID (or other) | TFS no. |
+| ------------------------------------------------------------------ | ----------------------------- | ------- |
+| ​​​​​​​​​S​itecore Azure Toolkit now supports Sitecore XP 10.0.1​. |                               | 443834  |

@@ -18,7 +18,6 @@ SharePoint Connect offers page-level, item-level, and API-level integration. It 
     SharePoint Connect is not supported on Sitecore 9 (and greater). We have released the [source code on GitHub](https://github.com/Sitecore/SharePoint-Connect) so you can modify it as needed if you need to use the connector with Sitecore 9.
   </Alert>
 
-
 ## Downloads
 
 | Resource                                                                                                                                                                                                      | Description                                                                                                                                                                                |

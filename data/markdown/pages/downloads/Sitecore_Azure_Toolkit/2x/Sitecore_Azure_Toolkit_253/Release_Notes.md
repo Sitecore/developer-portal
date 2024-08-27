@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_253/Release_Notes
 ---
 
@@ -8,6 +8,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Az
 
 ## New features/improvements
 
- | Context | Description | Ref. ID |
- | --- | --- | --- |
- | Installation | ​​​Azure Toolkit 2.5.3 is compatible with Sitecore Experience Platform 10.0.3​. | 498344 |
+| Context      | Description                                                                     | Ref. ID |
+| ------------ | ------------------------------------------------------------------------------- | ------- |
+| Installation | ​​​Azure Toolkit 2.5.3 is compatible with Sitecore Experience Platform 10.0.3​. | 498344  |

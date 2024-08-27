@@ -1,29 +1,32 @@
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, Stack, Text } from '@chakra-ui/react';
 import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
-
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
+
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+
+import { PromoCardProps, PromoList } from '../components/cards';
 import { Hero } from '../components/common';
-import { CenteredContent, VerticalGroup } from '../components/helpers';
 import { TextLink } from '../components/links';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
-import { PromoCardProps, PromoList } from '../components/promos';
+import { CenteredContent, VerticalGroup } from '../components/ui';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ChildOverviewPageProps = {
   pageInfo: PageInfo;
   hasGrid?: boolean;
-  promoAfter?: PromoCardProps[];
-  promoBefore?: PromoCardProps[];
+  promoAfter?: Array<PromoCardProps>;
+  promoBefore?: Array<PromoCardProps>;
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
-  childPageInfo: ChildPageInfo[];
+  childPageInfo: Array<ChildPageInfo>;
   sidebarConfig: SidebarNavigationConfig;
 };
 
 const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, sidebarConfig }: ChildOverviewPageProps) => {
-  if (!pageInfo) return <>No pageInfo found</>;
+  if (!pageInfo) {
+    return <>No pageInfo found</>;
+  }
 
   // Check for headings in the content
   return (

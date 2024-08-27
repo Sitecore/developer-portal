@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Campaign_Integration_module/2x/Dynamics_CRM_Campaign_Integration_22/Release_Notes
 ---
 
@@ -8,11 +8,10 @@ origin: https://dev.sitecore.net/Downloads/Dynamics_CRM_Campaign_Integration_mod
 
 ### New features & improvements
 
--   Compatible with WFFM 8.1
-    
+- Compatible with WFFM 8.1
 
 ### Resolved issues
 
--   Hotfix 441518 [CRM save actions] Use value from previous save action does not work
--   Hotfix 442313 Connector failing when an existing value is not sent to a mapped optionset in CRM
--   [CRM+WFFM] Complete CRM depending on input value (67779)
+- Hotfix 441518 [CRM save actions] Use value from previous save action does not work
+- Hotfix 442313 Connector failing when an existing value is not sent to a mapped optionset in CRM
+- [CRM+WFFM] Complete CRM depending on input value (67779)

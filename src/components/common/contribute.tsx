@@ -1,6 +1,7 @@
-import { PageInfo } from '@/src/lib/interfaces/page-info';
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, Link, Stack, Text, Tooltip } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+
+import { PageInfo } from '@/src/lib/interfaces/page-info';
 
 type GithubContributionNoticeProps = {
   pageInfo: PageInfo;

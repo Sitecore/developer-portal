@@ -22,13 +22,11 @@ More information can be obtained here: [https://jss.sitecore.com/help](https://j
   <Alert variant='warning' mb={4}>
     <AlertIcon />
 
-
 This version of JavaScript Services (JSS) is compatible with Sitecore 10.0.
 
 For use of Sitecore JSS with Sitecore 10.1 and later, see [Sitecore Headless Rendering downloads](/downloads/Sitecore_Headless_Rendering).
 
   </Alert>
-
 
 ## Download options
 

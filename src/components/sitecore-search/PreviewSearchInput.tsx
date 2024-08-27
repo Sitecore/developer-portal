@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import { getColorScheme } from '@/src/lib/search';
 import {
   AbsoluteCenter,
   Badge,
@@ -10,8 +8,8 @@ import {
   CircularProgress,
   Flex,
   FormControl,
-  HStack,
   Heading,
+  HStack,
   Input,
   InputGroup,
   InputLeftElement,
@@ -24,15 +22,17 @@ import {
   Text,
   Tooltip,
 } from '@chakra-ui/react';
-
-import { Product } from '@/src/lib/assets';
 import type { PreviewSearchInitialState } from '@sitecore-search/react';
-import { WidgetDataType, trackEntityPageViewEvent, usePreviewSearch, widget } from '@sitecore-search/react';
+import { trackEntityPageViewEvent, usePreviewSearch, widget, WidgetDataType } from '@sitecore-search/react';
 import { Presence, PreviewSearch } from '@sitecore-search/ui';
 import { useRouter } from 'next/router';
 import type { ChangeEvent, SyntheticEvent } from 'react';
 import { useCallback } from 'react';
 import { FaSearch } from 'react-icons/fa';
+
+import { Product } from '@/src/lib/assets';
+import { getColorScheme } from '@/src/lib/search';
+
 import ProductLogo from '../common/ProductLogo';
 
 type ArticleModel = {
@@ -77,7 +77,8 @@ interface PreviewSearchProps extends BoxProps {
    */
   submitRedirectionHandler?: (query: string) => void;
 }
-export const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSearchProps) => {
+
+const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSearchProps) => {
   const router = useRouter();
   const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
   const { q } = router.query;
@@ -112,6 +113,7 @@ export const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: Pre
   const keyphraseHandler = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       const target = event.target;
+
       onKeyphraseChange({
         keyphrase: target.value,
       });
@@ -125,8 +127,10 @@ export const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: Pre
         <FormControl
           onSubmit={(e: SyntheticEvent): void => {
             e.preventDefault();
+
             // @ts-expect-error
             const target = e.target.query as HTMLInputElement;
+
             router.push('/search?q=' + encodeURIComponent(target.value)).then(() => router.reload());
           }}
           as="form"
@@ -209,12 +213,14 @@ export const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: Pre
                                       onClick={(e) => {
                                         e.preventDefault();
                                         onItemClick({ id: article.id || '', index: index });
+
                                         if (article.index_name != 'sitecore-devportal-v2') {
                                           trackEntityPageViewEvent('content', { items: [{ id: article.id }] });
                                           window.open(article.url, '_blank');
                                         } else {
                                           window.open(article.url + '?fromSearch=true', '_blank');
                                         }
+
                                         window.open(article.url, '_blank');
                                       }}
                                     >
@@ -249,5 +255,5 @@ export const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: Pre
     </Box>
   );
 };
-const PreviewSearchInputWidget = widget(PreviewSearchComponent, WidgetDataType.PREVIEW_SEARCH, 'content');
-export default PreviewSearchInputWidget;
+
+export const PreviewSearchInput = widget(PreviewSearchComponent, WidgetDataType.PREVIEW_SEARCH, 'content');

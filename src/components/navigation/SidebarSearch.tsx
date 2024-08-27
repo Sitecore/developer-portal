@@ -1,8 +1,10 @@
-import { appendPathToBasePath } from '@/src/lib/utils/stringUtil';
 import { Box, Button, ButtonGroup, Heading, Highlight, Icon, IconButton, Input, InputGroup, InputLeftElement, InputRightElement } from '@chakra-ui/react';
 import { mdiClose, mdiFilterVariant } from '@mdi/js';
 import NextLink from 'next/link';
 import React from 'react';
+
+import { appendPathToBasePath } from '@/src/lib/utils/stringUtil';
+
 import { SidebarNavigationConfig } from '../../lib/interfaces/page-info';
 
 export interface SidebarNavigationProps {
@@ -16,7 +18,9 @@ const SidebarSearch = ({ config, onFocus, onBlur }: SidebarNavigationProps) => {
   const [searchTerm, setSearchTerm] = React.useState('');
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value === '') return reset();
+    if (event.target.value === '') {
+      return reset();
+    }
 
     setSearchTerm(event.target.value);
     onFocus();

@@ -25,12 +25,12 @@ import {
   SearchByTitleQuery,
   SearchByTitleQueryVariables,
 } from '@data/gql/generated/graphql';
-import { fetchGraphQL } from './common/fetch';
 
+import { fetchGraphQL } from './common/fetch';
 import { ParseStatus, Status } from './types';
+import { ChangelogCredentials } from './types/changelog';
 import { ChangelogEntry, ChangelogEntryList, parseChangeLogItem, ParseRawData } from './types/changeLogEntry';
 import { ChangeType, ParseChangeType } from './types/changeType';
-import { ChangelogCredentials } from './types/changelog';
 import { ParseProduct, Product } from './types/product';
 
 export class Changelog {
@@ -42,7 +42,7 @@ export class Changelog {
     this.isPreview = usePreview ?? false;
   }
 
-  async getAllEntries(): Promise<ChangelogEntryList<ChangelogEntry[]>> {
+  async getAllEntries(): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
     return this.getEntries({ pageSize: 10 });
   }
 
@@ -51,9 +51,11 @@ export class Changelog {
     const parsedDate = new Date(formattedDate);
 
     const _startDate = new Date(parsedDate);
+
     _startDate.setDate(parsedDate.getDate() - 1);
 
     const _endDate = new Date(parsedDate);
+
     _endDate.setDate(parsedDate.getDate() + 1);
 
     const CustomEntryByTitleDocument = getCustomEntryByTitleAndDateQuery(entryTitle);
@@ -76,11 +78,13 @@ export class Changelog {
     return parseChangeLogItem(response.data.data.results[0]);
   }
 
-  async getEntriesByDate(date: Date, pageSize?: number, endCursor?: string): Promise<ChangelogEntryList<ChangelogEntry[]>> {
+  async getEntriesByDate(date: Date, pageSize?: number, endCursor?: string): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
     const _startDate = new Date(date);
+
     _startDate.setDate(date.getDate() - 1);
 
     const _endDate = new Date(date);
+
     _endDate.setDate(date.getDate() + 1);
 
     const response = await fetchGraphQL<SearchByDateQuery, SearchByDateQueryVariables>(SearchByDateDocument, this.credentials, this.isPreview, {
@@ -93,7 +97,7 @@ export class Changelog {
     return ParseRawData(response.data);
   }
 
-  async getEntriesByProduct(productId: string): Promise<ChangelogEntryList<ChangelogEntry[]>> {
+  async getEntriesByProduct(productId: string): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
     const response = await fetchGraphQL<SearchByProductQuery, SearchByProductQueryVariables>(SearchByProductDocument, this.credentials, this.isPreview, {
       date: new Date(),
       productId: productId?.split('|') ?? [],
@@ -102,11 +106,11 @@ export class Changelog {
     return ParseRawData(response.data);
   }
 
-  async getEntriesPaginated(pageSize: string, productId: string, changeTypeId: string, endCursor?: string): Promise<ChangelogEntryList<ChangelogEntry[]>> {
+  async getEntriesPaginated(pageSize: string, productId: string, changeTypeId: string, endCursor?: string): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
     return this.getEntries({ productId, changeTypeId, pageSize: Number(pageSize), endCursor });
   }
 
-  async getEntries({ productId, changeTypeId, pageSize, endCursor }: { productId?: string; changeTypeId?: string; pageSize?: number; endCursor?: string } = {}): Promise<ChangelogEntryList<ChangelogEntry[]>> {
+  async getEntries({ productId, changeTypeId, pageSize, endCursor }: { productId?: string; changeTypeId?: string; pageSize?: number; endCursor?: string } = {}): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
     const response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(SearchByProductsAndChangeTypesDocument, this.credentials, this.isPreview, {
       first: pageSize ? pageSize : 5,
       after: endCursor ?? '',
@@ -115,22 +119,26 @@ export class Changelog {
       changeTypeIds: changeTypeId?.split('|') ?? [],
     });
 
-    if (response == null) return ParseRawData(response);
+    if (response == null) {
+      return ParseRawData(response);
+    }
 
     return ParseRawData(response.data);
   }
 
-  async getChangeTypes(): Promise<ChangeType[]> {
+  async getChangeTypes(): Promise<Array<ChangeType>> {
     const response = await fetchGraphQL<GetAllChangetypesQuery, GetAllChangetypesQueryVariables>(GetAllChangetypesDocument, this.credentials, this.isPreview);
+
     return ParseChangeType(response.data);
   }
 
-  async getStatus(): Promise<Status[]> {
+  async getStatus(): Promise<Array<Status>> {
     const response = await fetchGraphQL<GetAllStatusQuery, GetAllStatusQueryVariables>(GetAllStatusDocument, this.credentials, this.isPreview);
+
     return ParseStatus(response.data);
   }
 
-  async getProducts(): Promise<Product[]> {
+  async getProducts(): Promise<Array<Product>> {
     // Get all products
     const response = await fetchGraphQL<GetAllProductsQuery, GetAllProductsQueryVariables>(GetAllProductsDocument, this.credentials, this.isPreview);
     const products = ParseProduct(response.data);
@@ -142,14 +150,18 @@ export class Changelog {
           // No need to check in preview mode
           if (this.isPreview) {
             n.hasEntries = true;
+
             return n;
           }
 
           const count = await GetEntryCountByProductId(this.credentials, n.id, this.isPreview);
+
           n.hasEntries = count > 0;
+
           return n;
         })
       );
+
       return results;
     };
 
@@ -159,6 +171,7 @@ export class Changelog {
 
 export async function GetEntryCountByProductId(credentials: ChangelogCredentials, productId: string, preview: boolean): Promise<number> {
   const response = await fetchGraphQL<GetNumberOfEntriesByProductQuery, GetNumberOfEntriesByProductQueryVariables>(GetNumberOfEntriesByProductDocument, credentials, preview, { productId: [productId] });
+
   1;
 
   return response.data?.changelog.total;

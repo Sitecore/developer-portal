@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/31/Sitecore_Publishing_Service_31_Update2/Release_Notes
 ---
 
@@ -10,6 +10,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service/31/Siteco
 
 The following issues have been fixed:
 
- | Description | Customer ticket ID (or other) | TFS no. |
- | --- | --- | --- |
- | ​Publishing a related template does not publish the section and field items. | 519424 | 276923 |
+| Description                                                                  | Customer ticket ID (or other) | TFS no. |
+| ---------------------------------------------------------------------------- | ----------------------------- | ------- |
+| ​Publishing a related template does not publish the section and field items. | 519424                        | 276923  |

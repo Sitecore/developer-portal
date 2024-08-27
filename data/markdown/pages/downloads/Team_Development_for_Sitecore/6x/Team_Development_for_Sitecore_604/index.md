@@ -1,6 +1,6 @@
 ---
-title: "Team Development for Sitecore 6.0.4"
-description: ""
+title: 'Team Development for Sitecore 6.0.4'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_604.aspx
 ---
 
@@ -10,19 +10,19 @@ In our latest release, we focused on supporting Rainbow Yaml Serialization compa
 
 ## Download options
 
- | Resource | Description |
- | --- | --- |
- | [Team Development for Sitecore x64 installer](https://scdp.blob.core.windows.net/downloads/Team%20Development%20for%20Sitecore/6x/Team%20Development%20for%20Sitecore%20604/Secure/TDS%206.0.4%20x64.zip) | Download the Team Development for Sitecore x64 installer. This version is for VS2022 and above. |
- | [Team Development for Sitecore x86 installer](https://scdp.blob.core.windows.net/downloads/Team%20Development%20for%20Sitecore/6x/Team%20Development%20for%20Sitecore%20604/Secure/TDS%206.0.4%20x86.zip) | Download the Team Development for Sitecore x86 installer. This version is for VS 2019 and below. |
+| Resource                                                                                                                                                                                                  | Description                                                                                      |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [Team Development for Sitecore x64 installer](https://scdp.blob.core.windows.net/downloads/Team%20Development%20for%20Sitecore/6x/Team%20Development%20for%20Sitecore%20604/Secure/TDS%206.0.4%20x64.zip) | Download the Team Development for Sitecore x64 installer. This version is for VS2022 and above.  |
+| [Team Development for Sitecore x86 installer](https://scdp.blob.core.windows.net/downloads/Team%20Development%20for%20Sitecore/6x/Team%20Development%20for%20Sitecore%20604/Secure/TDS%206.0.4%20x86.zip) | Download the Team Development for Sitecore x86 installer. This version is for VS 2019 and below. |
 
 ## Release information
 
- | Resource | Description |
- | --- | --- |
- | [Release Notes](/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_604/Release_Notes) | A list of features and improvements that have been implemented in this release. |
+| Resource                                                                                                     | Description                                                                     |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| [Release Notes](/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_604/Release_Notes) | A list of features and improvements that have been implemented in this release. |
 
 ## Documentation
 
- | Resource | Description |
- | --- | --- |
- | [Team Development for Sitecore Documentation](http://hedgehogdevelopment.github.io/tds/) | Official documentation for the Team Development for Sitecore. |
+| Resource                                                                                 | Description                                                   |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [Team Development for Sitecore Documentation](http://hedgehogdevelopment.github.io/tds/) | Official documentation for the Team Development for Sitecore. |

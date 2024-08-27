@@ -1,4 +1,5 @@
 import { AspectRatio, Box, Button, CardProps, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+
 import { Product, Variant } from '../../lib/assets';
 import ProductIcon from './ProductIcon';
 
@@ -8,9 +9,11 @@ type GuidedDemoProps = CardProps & {
   productName: string;
   productLogo?: string;
 };
+
 export const GuidedDemo = ({ demoId, linkText, productName, productLogo }: GuidedDemoProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const product: Product = Product[productLogo as keyof typeof Product];
+
   return (
     <Box width="25%">
       <Button onClick={onOpen} mt={4}>

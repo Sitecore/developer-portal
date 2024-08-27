@@ -101,7 +101,7 @@ NEXT_PUBLIC_SITECORE_CDP_POS=
 
 _Note: The site will still function if the keys are missing or left blank._
 
---- 
+---
 
 #### Sitecore Search
 

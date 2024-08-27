@@ -7,11 +7,9 @@ origin: https://dev.sitecore.net/Downloads/Web_Forms_For_Marketers/Web_Forms_for
   <Alert variant='warning' mb={4}>
     <AlertIcon />
 
-
 Looking for **a different update**? See [all available WFFM 8.0 updates](/downloads/Web_Forms_For_Marketers/Web_Forms_for_Marketers_80).
 
   </Alert>
-
 
 ## Downloads
 

@@ -1,4 +1,3 @@
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import SocialFeeds from '@src/components/common/SocialFeeds';
@@ -6,21 +5,24 @@ import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import { useRouter } from 'next/router';
+
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+
+import { PromoCardProps, PromoList } from '../components/cards';
 import { Hero } from '../components/common';
 import GithubContributionNotice from '../components/common/contribute';
 import { ArticlePaging } from '../components/navigation/ArticlePaging';
 import { ArticlePagingNext } from '../components/navigation/ArticlePagingNext';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
-import { PromoCardProps, PromoList } from '../components/promos';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ArticlePageProps = {
   pageInfo: PageInfo;
   hasGrid?: boolean;
-  promoAfter?: PromoCardProps[];
-  promoBefore?: PromoCardProps[];
-  childPageInfo?: ChildPageInfo[];
+  promoAfter?: Array<PromoCardProps>;
+  promoBefore?: Array<PromoCardProps>;
+  childPageInfo?: Array<ChildPageInfo>;
   sidebarConfig: SidebarNavigationConfig;
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
@@ -28,11 +30,17 @@ type ArticlePageProps = {
 
 const Tutorial = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPager, sidebarConfig }: ArticlePageProps) => {
   const router = useRouter();
-  if (!pageInfo) return <>No pageInfo found</>;
+
+  if (!pageInfo) {
+    return <>No pageInfo found</>;
+  }
 
   // Check for headings in the content
-  const sectionTitles: ContentHeading[] = [];
-  if (pageInfo.headings) sectionTitles.push(...pageInfo.headings);
+  const sectionTitles: Array<ContentHeading> = [];
+
+  if (pageInfo.headings) {
+    sectionTitles.push(...pageInfo.headings);
+  }
 
   const Nav = pageInfo.hasInPageNav != false ? customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} key={router.asPath} /> : null : null;
 

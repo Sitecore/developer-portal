@@ -9,7 +9,6 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_JavaScript_Services/150/Site
     Sitecore recommends that our customers use [Sitecore JavaScript Services 15.0.1](/downloads/Sitecore_JavaScript_Services/150/Sitecore_JavaScript_Services_1501)
   </Alert>
 
-
 Sitecore JavaScript Services (JSS) is a complete SDK for JavaScript developers that enables you to build full-fledged solutions using Sitecore and modern JavaScript UI libraries and frameworks.
 
 The following JSS products are fully supported:
@@ -28,13 +27,11 @@ More information can be obtained here: [https://jss.sitecore.com/help](https://j
   <Alert variant='warning' mb={4}>
     <AlertIcon />
 
-
 This version of JavaScript Services (JSS) is compatible with Sitecore 10.0.
 
 For use of Sitecore JSS with Sitecore 10.1 and later, see [Sitecore Headless Rendering downloads](/downloads/Sitecore_Headless_Rendering).
 
   </Alert>
-
 
 ## Download options
 

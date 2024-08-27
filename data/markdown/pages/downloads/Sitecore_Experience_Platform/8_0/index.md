@@ -1,6 +1,6 @@
 ---
-title: "8.0"
-description: "Download Sitecore 8.0 and all subsequent updates within this version group."
+title: '8.0'
+description: 'Download Sitecore 8.0 and all subsequent updates within this version group.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform/8_0.aspx
 ---
 
@@ -22,15 +22,15 @@ Download Sitecore Experience Platform 8.0 rev. 150621 (8.0 Update-4).
 
 ### [Sitecore Experience Platform 8.0 Update-3](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_80_Update3)
 
-Download Sitecore Experience Platform 8.0 rev. 150427 (8.0 Update-3). 
+Download Sitecore Experience Platform 8.0 rev. 150427 (8.0 Update-3).
 
 ### [Sitecore Experience Platform 8.0 Update-2](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_8_update2)
 
-Download Sitecore Experience Platform 8.0 rev. 150223 (8.0 Update-2). 
+Download Sitecore Experience Platform 8.0 rev. 150223 (8.0 Update-2).
 
 ### [Sitecore Experience Platform 8.0 Update-1](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_8_update1)
 
-Download Sitecore Experience Platform 8.0 rev. 150121 (8.0 Update-1). 
+Download Sitecore Experience Platform 8.0 rev. 150121 (8.0 Update-1).
 
 ### [Sitecore Experience Platform 8.0 Initial Release](/downloads/Sitecore_Experience_Platform/8_0/Sitecore_Experience_Platform_8_0)
 

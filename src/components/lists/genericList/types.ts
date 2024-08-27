@@ -3,7 +3,7 @@ import { CardProps } from '@chakra-ui/react';
 export type GenericListData = CardProps & {
   title: string;
   subtitle: string;
-  data: GenericListItem[];
+  data: Array<GenericListItem>;
   column?: number;
   cardVariant?: string;
 };

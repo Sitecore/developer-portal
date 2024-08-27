@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Codeless Schema Extensions"
-description: "Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development."
+title: 'Sitecore Codeless Schema Extensions'
+description: 'Code and segmentation rules enabling business users to extend the xConnect schema without requiring code development.'
 ---
 
 <Card variant='outlineRaised' px={0} mb={8}>

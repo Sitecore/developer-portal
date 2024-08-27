@@ -164,8 +164,8 @@ With this approach, we can update the header and footer content on the site by u
     When being used on a statically generarted site, you will still need to regenerate all pages that use the header and footer to see the changes. The approach to do this will depend on the business requirements for the site and your chosen hosting provider.
 </Alert>
 
-* ISR: If you are using ISR, then as part of the regular ISR process, each page will be updated to use the new header and footer layouts as the revalidation period times out. This could lead to pages showing different content in the header and footer depending on where they are in the revalidation cycle.
-* On Demand Revalidation: If you are using On Demand Revalidation, then you will need to regenerate the pages that use the header and footer to see the changes. Publishing the partial designs will not trigger a layout detail webhook for all pages. So in your code that responds to the Experience Edge `onupdate` webhook, you will need to check for the partial designs being updated and trigger a sitewide revalidation.
+- ISR: If you are using ISR, then as part of the regular ISR process, each page will be updated to use the new header and footer layouts as the revalidation period times out. This could lead to pages showing different content in the header and footer depending on where they are in the revalidation cycle.
+- On Demand Revalidation: If you are using On Demand Revalidation, then you will need to regenerate the pages that use the header and footer to see the changes. Publishing the partial designs will not trigger a layout detail webhook for all pages. So in your code that responds to the Experience Edge `onupdate` webhook, you will need to check for the partial designs being updated and trigger a sitewide revalidation.
 
 <Alert type="info">
     <AlertIcon />
@@ -175,7 +175,6 @@ With this approach, we can update the header and footer content on the site by u
 ## Next Steps
 
 This recipe highlights a new approach to page composition in XM Cloud. It should be considered a starting point for your project, you should validate the approach and adjust it to fit the needs of your project.
-
 
 ## Related Recipes
 

@@ -13,5 +13,5 @@ export type Media = {
 
 export type MediaResults = {
   total: string;
-  results: Media[];
+  results: Array<Media>;
 };

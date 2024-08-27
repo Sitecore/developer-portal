@@ -4,7 +4,7 @@ import { Feed } from 'feed';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 
-export function CreateFeed(changelogEntryList: ChangelogEntryList<ChangelogEntry[]>): Feed {
+export function CreateFeed(changelogEntryList: ChangelogEntryList<Array<ChangelogEntry>>): Feed {
   const feed = new Feed({
     title: 'Sitecore Changelog',
     description: 'Learn more about new versions, changes and improvements!',

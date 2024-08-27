@@ -1,10 +1,12 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
-import { usePreview } from '@/src/context/PreviewContext';
-import { BoxProps, Button, HStack, Hide, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Tag, Text, Tooltip, chakra, useColorModeValue } from '@chakra-ui/react';
+import { BoxProps, Button, chakra, Hide, HStack, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Tag, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import { ChangelogEntry } from '@lib/changelog/types';
 import { getSlug } from '@lib/utils';
 import { mdiSquareEditOutline } from '@mdi/js';
 import Image from 'next/image';
+
+import { usePreview } from '@/src/context/PreviewContext';
+
 import { ProductIcon } from './ProductIcon';
 
 type ChangelogItemMetaProps = BoxProps & {
@@ -28,7 +30,6 @@ export function getStatusBadgeColor(status: string): string {
   }
 }
 
-
 export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
   const { isPreview } = usePreview();
 
@@ -36,9 +37,17 @@ export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
   const tenantId = process.env.NEXT_PUBLIC_SITECORE_CHONE_TENANT as string;
 
   const colorScheme = (changeType: string) => {
-    if (changeType?.toLowerCase() == 'improvement') return 'primary';
-    if (changeType?.toLowerCase() == 'new feature') return 'success';
-    if (changeType?.toLowerCase() == 'resolved') return 'orange';
+    if (changeType?.toLowerCase() == 'improvement') {
+      return 'primary';
+    }
+
+    if (changeType?.toLowerCase() == 'new feature') {
+      return 'success';
+    }
+
+    if (changeType?.toLowerCase() == 'resolved') {
+      return 'orange';
+    }
 
     return 'default';
   };
@@ -102,7 +111,9 @@ export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
     </HStack>
   );
 
-  if (!isPreview) return MetaInfo;
+  if (!isPreview) {
+    return MetaInfo;
+  }
 
   return (
     <HStack justifyContent={'space-between'}>

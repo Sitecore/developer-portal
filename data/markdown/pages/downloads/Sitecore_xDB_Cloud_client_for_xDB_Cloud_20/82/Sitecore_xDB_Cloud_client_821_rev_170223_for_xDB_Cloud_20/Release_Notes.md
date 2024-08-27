@@ -1,6 +1,6 @@
 ---
-title: "Release Notes"
-description: ""
+title: 'Release Notes'
+description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_xDB_Cloud_client_for_xDB_Cloud_20/82/Sitecore_xDB_Cloud_client_821_rev_170223_for_xDB_Cloud_20/Release_Notes
 ---
 
@@ -10,5 +10,5 @@ This is the initial release of xDB Cloud client for xDB Cloud 2.0 and Sitecore 8
 
 **Important Notes**
 
--   This version of xDB Cloud client is compatible with Sitecore 8.2 Update-1 and later versions but is not compatible with Sitecore 8.2 RTM.
--   xDB Cloud client for xDB Cloud 2.0 is included into Sitecore 8.2 RTM release packages.
+- This version of xDB Cloud client is compatible with Sitecore 8.2 Update-1 and later versions but is not compatible with Sitecore 8.2 RTM.
+- xDB Cloud client for xDB Cloud 2.0 is included into Sitecore 8.2 RTM release packages.

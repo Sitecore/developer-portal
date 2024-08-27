@@ -1,6 +1,6 @@
 ---
-title: "Sitecore Media Framework"
-description: "Sitecore Media Framework is designed to help developers integrate web video and other media services. Sitecore supports connectors to multiple media services. In addition, developers can build connectors to other media services."
+title: 'Sitecore Media Framework'
+description: 'Sitecore Media Framework is designed to help developers integrate web video and other media services. Sitecore supports connectors to multiple media services. In addition, developers can build connectors to other media services.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Media_Framework.aspx
 ---
 

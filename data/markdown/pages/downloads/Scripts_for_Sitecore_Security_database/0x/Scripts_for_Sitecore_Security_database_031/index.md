@@ -1,12 +1,12 @@
 ---
-title: "Scripts for Sitecore Security database 0.3.1"
-description: ""
+title: 'Scripts for Sitecore Security database 0.3.1'
+description: ''
 ---
 
 Scripts for Sitecore Security Database contains the set of scripts for moving the Sitecore Security membership provider from the Core database to an individual or existing database.\
 Scripts for Sitecore Security Database 0.3.1 is compatible with Sitecore XP 10.0-10.1, and Sitecore Identity Server 5.0-5.1.
 
-See [all available versions here](/downloads/Scripts_for_Sitecore_Security_database).    
+See [all available versions here](/downloads/Scripts_for_Sitecore_Security_database).
 
   <Alert variant='warning' mb={4}>
     <AlertIcon />
@@ -16,6 +16,6 @@ See [all available versions here](/downloads/Scripts_for_Sitecore_Security_data
 
 ## Download options
 
- | Resource | Description |
- | --- | --- |
- | [Scripts for Sitecore Security database](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/100/Sitecore%20Experience%20Platform%20100/Secure/Divide%20Core%20db%20into%20core%20security%20v0.3.1.zip) | The set of scripts for moving Sitecore Security membership provider from the Core database to individual or existing one. |
+| Resource                                                                                                                                                                                                                           | Description                                                                                                               |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| [Scripts for Sitecore Security database](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/100/Sitecore%20Experience%20Platform%20100/Secure/Divide%20Core%20db%20into%20core%20security%20v0.3.1.zip) | The set of scripts for moving Sitecore Security membership provider from the Core database to individual or existing one. |

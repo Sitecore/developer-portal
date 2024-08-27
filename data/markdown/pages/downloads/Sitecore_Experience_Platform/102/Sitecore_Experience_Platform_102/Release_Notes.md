@@ -95,9 +95,10 @@ Sitecore Experience Platform 10.2.0 includes:
 
 The following is a known issue:
 
-| Context                  | Description                                                                                                                                                                                    | ADO no.                                |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| Media         | When a media blob is referenced by multiple duplicated media items, deleting one of these duplicated items will result in the deletion of the media blob.                                                                                      | 563054                                 |
+| Context | Description                                                                                                                                               | ADO no. |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Media   | When a media blob is referenced by multiple duplicated media items, deleting one of these duplicated items will result in the deletion of the media blob. | 563054  |
+
 ## Resolved issues
 
 The following issues have been fixed:
