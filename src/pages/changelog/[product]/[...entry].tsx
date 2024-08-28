@@ -38,8 +38,8 @@ import Link from 'next/link';
 
 import { Hero } from '@/src/components/common';
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { ButtonLink } from '@/src/components/links';
-import { CenteredContent, VerticalGroup } from '@/src/components/ui';
+import { LinkButton } from '@/src/components/links';
+import { CenteredContent, VerticalGroup } from '@/src/components/ui/sections';
 import { SocialShare } from '@/src/components/ui/socialShare';
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 
@@ -163,7 +163,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     {changelogEntry.fullArticle != null && <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />}
                   </CardBody>
                   <CardFooter justifyContent={changelogEntry.readMoreLink ? 'space-between' : 'flex-end'}>
-                    {changelogEntry.readMoreLink && <ButtonLink variant="text" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} margin={0} padding={0} />}
+                    {changelogEntry.readMoreLink && <LinkButton variant="text" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} margin={0} padding={0} />}
                     <SocialShare url={getChangelogEntryUrl(changelogEntry, true)} title={changelogEntry.title} />
                   </CardFooter>
                 </Card>

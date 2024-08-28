@@ -13,8 +13,8 @@ import { SWRConfig } from 'swr';
 
 import { Hero } from '@/src/components/common';
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { ButtonLink } from '@/src/components/links';
-import { CenteredContent, VerticalGroup } from '@/src/components/ui';
+import { LinkButton } from '@/src/components/links';
+import { CenteredContent, VerticalGroup } from '@/src/components/ui/sections';
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 
 import { Changelog } from '../../lib/changelog/changelog';
@@ -68,8 +68,8 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
                 </GridItem>
 
                 <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
-                  <ButtonLink text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                  <ButtonLink text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <LinkButton text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <LinkButton text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
                   <ChangelogByMonth product={undefined} selectedProducts={selectedProduct} />
                 </GridItem>
               </Grid>

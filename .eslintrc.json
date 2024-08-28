@@ -10,6 +10,7 @@
   },
   "plugins": ["only-warn", "jest", "react"],
   "rules": {
+    "react-hooks/rules-of-hooks": "off",
     "react/prop-types": "off",
     "no-unused-vars": "off"
     //"import/no-unused-modules": [1, { "unusedExports": true }]

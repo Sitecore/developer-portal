@@ -1,6 +1,5 @@
 import { Card, CardProps } from '@chakra-ui/react';
-
-import { ButtonLink } from '../links/ButtonLink';
+import { LinkButton } from '../links';
 
 type LinkProps = CardProps & {
   title: string;
@@ -11,7 +10,7 @@ type LinkProps = CardProps & {
 export const LinkItem = ({ title, link, ...rest }: LinkProps) => {
   return (
     <Card variant={'outlineRaised'} layerStyle={'interactive.fill'} py={4} px={2} {...rest}>
-      <ButtonLink variant="text" text={title} href={link}></ButtonLink>
+      <LinkButton variant="text" text={title} href={link}></LinkButton>
     </Card>
   );
 };

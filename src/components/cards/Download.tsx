@@ -1,7 +1,6 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, CardProps, Heading, Link, Text, useColorModeValue } from '@chakra-ui/react';
-import { mdiArrowRight } from '@mdi/js';
-import Icon from '@mdi/react';
+import { Card, CardBody, CardFooter, CardHeader, CardProps, Heading, Link, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import { LinkButton } from '../links';
 
 type DownloadProps = CardProps & {
   title: string;
@@ -26,19 +25,9 @@ export const Download = ({ title, description, link1text, link1href, link2text, 
         <Text>{description}</Text>
       </CardBody>
       <CardFooter pt={0} gap={4}>
-        <Link as={NextLink} href={link1href} color={useColorModeValue('white', 'black !important')}>
-          <Button variant={'solid'} rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>
-            {link1text}
-          </Button>
-        </Link>
+        <LinkButton href={link1href} text={link1text} />
 
-        {link2text && link2href && (
-          <Link as={NextLink} href={link2href} color={useColorModeValue('white', 'black !important')}>
-            <Button variant={'outline'} rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>
-              {link2text}
-            </Button>
-          </Link>
-        )}
+        {link2text && link2href && <LinkButton href={link2href} text={link2text} variant={'outline'} />}
       </CardFooter>
     </Card>
   );

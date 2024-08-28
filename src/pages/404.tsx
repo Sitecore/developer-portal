@@ -1,6 +1,6 @@
 import { Box, Center, Heading, HStack, Image, Stack, Text } from '@chakra-ui/react';
 
-import { ButtonLink } from '../components/links';
+import { LinkButton } from '../components/links';
 
 import { SearchInput } from '../components/sitecore-search';
 import Layout from '../layouts/Layout';
@@ -26,7 +26,7 @@ export default function Custom404() {
             </Stack>
             <Text>The page you are looking for cannot be found.</Text>
             <Stack>
-              <ButtonLink rightIcon={undefined} variant="link" href="/" text="Go to homepage" />
+              <LinkButton rightIcon={undefined} variant="link" href="/" text="Go to homepage" />
             </Stack>
           </Stack>
         </Center>

@@ -1,7 +1,8 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, CardProps, Image, Link, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardFooter, CardHeader, CardProps, Image, Link, Text } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 import NextLink from 'next/link';
+import { LinkButton } from '../links';
 
 type ArticleProps = CardProps & {
   title: string;
@@ -39,7 +40,9 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
       </CardBody>
       {link && !hideLinkText && (
         <CardFooter pt={0}>
-          <Link as={NextLink} href={link} color={useColorModeValue('white', 'black !important')}>
+          <LinkButton href={link} text={linktext ?? 'Read more'} />
+
+          <Link as={NextLink} href={link} color={'chakra-inverse-text'}>
             <Button rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>{linktext ?? 'Read more'}</Button>
           </Link>
         </CardFooter>

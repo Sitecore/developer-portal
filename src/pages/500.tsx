@@ -1,6 +1,6 @@
 import { Box, Center, Heading, Image, Stack, Text } from '@chakra-ui/react';
 
-import { ButtonLink } from '../components/links';
+import { LinkButton } from '../components/links';
 import Layout from '../layouts/Layout';
 
 export default function Custom500() {
@@ -16,7 +16,7 @@ export default function Custom500() {
             </Stack>
             <Text>Apologies, this page seems to be broken.</Text>
             <Stack>
-              <ButtonLink rightIcon={undefined} variant="link" href="/" text="Go to homepage" />
+              <LinkButton rightIcon={undefined} variant="link" href="/" text="Go to homepage" />
             </Stack>
           </Stack>
         </Center>

@@ -1,4 +1,3 @@
-/* eslint-disable turbo/no-undeclared-env-vars */
 import { getQueryValue } from '@lib/utils';
 import type { NextApiRequest, NextApiResponse } from 'next';
 

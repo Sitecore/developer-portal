@@ -1,8 +1,5 @@
-import { Button, Card, CardBody, Heading, Link, Text, useColorModeValue } from '@chakra-ui/react';
-import { mdiArrowRight } from '@mdi/js';
-import { Icon } from '@mdi/react';
-import { ButtonLink } from '@src/components/links';
-import NextLink from 'next/link';
+import { Card, CardBody, Heading, Text } from '@chakra-ui/react';
+import { LinkButton } from '@src/components/links';
 
 export type CTACardProps = {
   description: string;
@@ -22,13 +19,9 @@ export const CTACard = ({ description, href, linkText, title, link2Text, link2hr
       <Text variant={'large'} mb={6}>
         {description}
       </Text>
-      <Link href={href} as={NextLink} color={useColorModeValue('white', 'black !important')}>
-        <Button size={'lg'} variant={'solid'} rightIcon={<Icon path={mdiArrowRight} size={0.8} />}>
-          {linkText}
-        </Button>
-      </Link>
+      <LinkButton href={href} text={linkText} size={'lg'} />
 
-      {link2href && link2Text && <ButtonLink href={link2href} text={link2Text} size={'xl'} />}
+      {link2href && link2Text && <LinkButton href={link2href} text={link2Text} size={'xl'} />}
     </CardBody>
   </Card>
 );

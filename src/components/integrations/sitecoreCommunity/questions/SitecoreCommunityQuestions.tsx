@@ -1,9 +1,5 @@
-// Interfaces
-// Components
-// Local
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { Button, Card, CardBody, CardHeader, CardProps, Heading, Icon, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
-// Global
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -20,10 +16,6 @@ type SitecoreCommunityQuestionsProps = CardProps & {
 };
 
 export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest }: SitecoreCommunityQuestionsProps): JSX.Element => {
-  if (!data || data.length === 0) {
-    return <></>;
-  }
-
   const [fetchedResults, setFetchedResults] = useState<Array<SitecoreCommunityContent> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [sort, setSort] = useState<string | undefined>(undefined);
@@ -53,6 +45,10 @@ export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest 
   }, [sort, forum]);
 
   const items = fetchedResults || data;
+
+  if (!data || data.length === 0) {
+    return <></>;
+  }
 
   return (
     <Card shadow={'none'} {...rest} background={'transparent'} variant={'unstyled'} width={'100%'}>
@@ -91,9 +87,7 @@ export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest 
           </Menu>
         )}
 
-        {items.map((item, i) => (
-          <SitecoreCommunityBlogOrQuestion item={item} contentType="Questions" loading={isLoading} key={i} />
-        ))}
+        {items?.map((item, i) => <SitecoreCommunityBlogOrQuestion item={item} contentType="Questions" loading={isLoading} key={i} />)}
       </CardBody>
     </Card>
   );

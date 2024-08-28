@@ -1,7 +1,7 @@
 import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { IsSearchEnabled, SEARCH_CONFIG } from '@lib/search';
-import sitecoreTheme, { toastOptions } from '@sitecore/blok-theme';
 import { PageController, trackEntityPageViewEvent, WidgetsProvider } from '@sitecore-search/react';
+import sitecoreTheme, { toastOptions } from '@sitecore/blok-theme';
 import { Footer } from '@src/components/navigation/Footer';
 import Navbar from '@src/components/navigation/NavBar';
 import { AppProps } from 'next/app';
@@ -39,6 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       const fromSearch = params.get('fromSearch');
 
       if (contentAllViewed && fromSearch && !conversionTriggered) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         conversionTriggered = true;
         trackEntityPageViewEvent('content', {
           items: [
@@ -81,7 +82,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
-  });
+  }, [onScroll]);
 
   return (
     <SearchWrapper>

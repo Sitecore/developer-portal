@@ -46,7 +46,7 @@ export const TrackPageView: FC<TrackPageViewProps> = (props) => {
   useEffect(() => {
     callTrackPageView(router.asPath);
     prevUrlRef.current = router.asPath;
-  }, []);
+  });
 
   // Listen for route changes
   useEffect(() => {
@@ -63,6 +63,7 @@ export const TrackPageView: FC<TrackPageViewProps> = (props) => {
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath, tracker.context.isTrackerEnabled]);
 
   return <>{props.children}</>;

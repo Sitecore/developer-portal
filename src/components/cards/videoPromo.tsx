@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
-import { ButtonLink } from '../links/ButtonLink';
+import { LinkButton } from '../links';
 import YouTube from '../video/YouTube';
 
 export type VideoProps = {
@@ -39,7 +39,7 @@ export const VideoPromo = ({ title, description, videoUrl, youTubeId, linkText, 
       <Box flexDirection={'column'} width={'50%'}>
         <Heading as={'h3'}>{title}</Heading>
         <Text>{description}</Text>
-        {!!linkText && <ButtonLink text={linkText ? linkText : 'Read more'} href={linkHref} />}
+        {!!linkText && <LinkButton text={linkText ? linkText : 'Read more'} href={linkHref} />}
       </Box>
       {!isImageLeft && videoUrl != undefined && (
         <Box flexDirection={'column'} width={'50%'}>

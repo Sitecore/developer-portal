@@ -46,14 +46,11 @@ const SidebarSearch = ({ config, onFocus, onBlur }: SidebarNavigationProps) => {
     <>
       <Box>
         <InputGroup maxW="full">
-          <InputLeftElement
-            pointerEvents="none"
-            children={
-              <Icon>
-                <path d={mdiFilterVariant} />
-              </Icon>
-            }
-          />
+          <InputLeftElement pointerEvents="none">
+            <Icon>
+              <path d={mdiFilterVariant} />
+            </Icon>
+          </InputLeftElement>
           <Input placeholder="Filter" onChange={handleSearch} value={searchTerm} />
           <InputRightElement>
             <IconButton

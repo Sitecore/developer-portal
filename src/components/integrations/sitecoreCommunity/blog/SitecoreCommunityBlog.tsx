@@ -15,10 +15,6 @@ type SitecoreCommunityBlogProps = CardProps & {
 };
 
 export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: SitecoreCommunityBlogProps): JSX.Element => {
-  if (!entries || entries.length === 0) {
-    return <></>;
-  }
-
   // eslint-disable-next-line no-unused-vars
   const [fetchedResults, setFetchedResults] = useState<Array<SitecoreCommunityContent> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -36,6 +32,10 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: 
       })
       .catch((err: any) => console.log(err));
   };
+
+  if (!entries || entries.length === 0) {
+    return <></>;
+  }
 
   return (
     <Card border={'none'} shadow={'none'} {...rest} size={{ base: 'xs', md: 'md' }}>

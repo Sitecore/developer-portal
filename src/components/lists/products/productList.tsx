@@ -5,7 +5,7 @@ import React from 'react';
 import { CDP, Connect, ContentHub, ContentHubONE, Discover, OrderCloud, Personalize, ProductInfoType, Search, Send, XMCloud, XP } from '@/data/products';
 import { GetProductLogoByVariant, Type, Variant } from '@/src/lib/assets';
 
-import { ButtonLink } from '../../links';
+import { LinkButton } from '../../links';
 
 interface ProductListProps {
   // Define the props for your component here
@@ -83,7 +83,7 @@ export const ProductListItem: React.FC<ProductListItemProps> = ({ product }) => 
           </Heading>
           <Text>{product.description}</Text>
           <Spacer />
-          <ButtonLink href={product.linkHref} text={product.linkText} variant={'outline'} alignContent={'flex-end'} />
+          <LinkButton href={product.linkHref} text={product.linkText} variant={'outline'} alignContent={'flex-end'} />
         </Flex>
       </CardBody>
     </Card>

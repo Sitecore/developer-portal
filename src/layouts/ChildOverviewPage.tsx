@@ -9,7 +9,7 @@ import { PromoCardProps, PromoList } from '../components/cards';
 import { Hero } from '../components/common';
 import { TextLink } from '../components/links';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
-import { CenteredContent, VerticalGroup } from '../components/ui';
+import { CenteredContent, VerticalGroup } from '../components/ui/sections';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ChildOverviewPageProps = {

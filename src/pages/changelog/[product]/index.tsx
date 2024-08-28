@@ -13,8 +13,8 @@ import Link from 'next/link';
 
 import { Hero } from '@/src/components/common';
 import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { ButtonLink } from '@/src/components/links';
-import { CenteredContent, VerticalGroup } from '@/src/components/ui';
+import { LinkButton } from '@/src/components/links';
+import { CenteredContent, VerticalGroup } from '@/src/components/ui/sections';
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 
 type ChangelogProps = {
@@ -87,8 +87,8 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
                 <ChangelogList initialProduct={currentProduct} />
               </GridItem>
               <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
-                <ButtonLink text={'RSS'} href={`${getSlug(currentProduct.name)}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                <ButtonLink text={'ATOM'} href={`${getSlug(currentProduct.name)}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <LinkButton text={'RSS'} href={`${getSlug(currentProduct.name)}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <LinkButton text={'ATOM'} href={`${getSlug(currentProduct.name)}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
                 <ChangelogByMonth product={currentProduct} />
               </GridItem>
             </Grid>

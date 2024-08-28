@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
 import { Loading } from '../common';
-import { ButtonLink } from '../links';
+import { LinkButton } from '../links';
 import { SocialShare } from '../ui/socialShare';
 import { ChangelogItemMeta } from './ChangelogItemMeta';
 
@@ -36,7 +36,7 @@ const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps
     });
 
     observer.observe(entryRef.current);
-  }, [isLast]);
+  }, [isLast, isMore, loadEntries]);
 
   return (
     <>
@@ -78,7 +78,7 @@ const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps
           <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: item.description }} />
         </CardBody>
         <CardFooter justifyContent={item.readMoreLink ? 'space-between' : 'flex-end'}>
-          {item.readMoreLink && <ButtonLink variant="text" href={item.readMoreLink} text="Read more" title={`Read more about ${item.title}`} margin={0} padding={0} />}
+          {item.readMoreLink && <LinkButton variant="text" href={item.readMoreLink} text="Read more" title={`Read more about ${item.title}`} margin={0} padding={0} />}
           <SocialShare url={getChangelogEntryUrl(item, true)} title={item.title} />
         </CardFooter>
       </Card>

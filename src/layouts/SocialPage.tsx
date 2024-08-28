@@ -9,7 +9,7 @@ import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 import { Hero } from '../components/common';
 import { SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '../components/integrations';
 import { GenericList } from '../components/lists';
-import { CenteredContent, VerticalGroup } from '../components/ui';
+import { CenteredContent, VerticalGroup } from '../components/ui/sections';
 
 type SocialPageProps = {
   pageInfo: PageInfo;

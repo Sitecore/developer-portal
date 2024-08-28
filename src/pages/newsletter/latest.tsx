@@ -34,7 +34,7 @@ export default function Latest({ page }: { page: string }) {
           </Stack>
           <Stack>
             <Button variant="link">
-              <Link href={page}>Click here if the redirect doesn't work</Link>
+              <Link href={page}>Click here if the redirect doesn&apos;t work</Link>
             </Button>
           </Stack>
         </Stack>

@@ -1,6 +1,6 @@
 import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, useColorModeValue, VisuallyHidden, Wrap } from '@chakra-ui/react';
 
-import { ButtonLink } from '../../links/ButtonLink';
+import { LinkButton } from '../../links/LinkButton';
 import { StackExchangeQuestion } from './stackExchange';
 
 type StackExchangeFeedProps = CardProps & {
@@ -19,7 +19,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
         <Heading as={'h3'} size={{ base: 'lg', md: 'xl' }}>
           {title ? title : `The Latest on Sitecore StackExchange`}
         </Heading>
-        <ButtonLink href={`https://sitecore.stackexchange.com/`} text={'See all questions on StackExchange'} />
+        <LinkButton href={`https://sitecore.stackexchange.com/`} text={'See all questions on StackExchange'} />
       </CardHeader>
       <CardBody px={0}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 2, md: 8 }}>

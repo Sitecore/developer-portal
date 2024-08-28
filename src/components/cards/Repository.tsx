@@ -1,7 +1,7 @@
-import { Badge, Button, Card, CardBody, CardFooter, CardHeader, CardProps, HStack, Icon, Link, Tag, TagLeftIcon, Text, useColorModeValue, Wrap } from '@chakra-ui/react';
+import { Badge, Card, CardBody, CardFooter, CardHeader, CardProps, HStack, Icon, Link, Tag, TagLeftIcon, Text, Wrap } from '@chakra-ui/react';
 import { isValidLogo, SvgLogo } from '@components/ui/logos';
 import { mdiGithub, mdiSourceFork, mdiStar } from '@mdi/js';
-import NextLink from 'next/link';
+import { LinkButton } from '../links';
 
 export type RepositoryProps = CardProps & {
   name?: string;
@@ -87,19 +87,17 @@ export const Repository = ({ name, description, repositoryUrl, framework, stars,
             </Wrap>
           )}
         </HStack>
-        <Link as={NextLink} href={repositoryUrl} color={useColorModeValue('white', 'black !important')}>
-          <Button
-            colorScheme="neutral"
-            variant={'outline'}
-            rightIcon={
-              <Icon>
-                <path d={mdiGithub} />
-              </Icon>
-            }
-          >
-            Repository
-          </Button>
-        </Link>
+        <LinkButton
+          href={repositoryUrl}
+          text="Repository"
+          icon={
+            <Icon>
+              <path d={mdiGithub} />
+            </Icon>
+          }
+          colorScheme="neutral"
+          variant="outline"
+        />
       </CardFooter>
     </Card>
   );

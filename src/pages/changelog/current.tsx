@@ -1,12 +1,11 @@
+import { LinkItem } from '@/src/components/cards';
+import { Hero } from '@/src/components/common';
+import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { CenteredContent, Row, VerticalGroup } from '@/src/components/ui/sections';
 import { Alert, AlertIcon, Box, Heading, Text } from '@chakra-ui/react';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
-
-import { LinkItem } from '@/src/components/cards';
-import { Hero } from '@/src/components/common';
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { CenteredContent, Row, VerticalGroup } from '@/src/components/ui';
 
 export default function ChangelogCurrent() {
   return (

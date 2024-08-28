@@ -52,7 +52,7 @@ const useSidebarNav = (pageInfo: PageInfo, sidebarNavConfig: SidebarNavigationCo
     setParentItem(parentItem);
     setPreviousItem(previousItem);
     setCurrentLevel(findCurrentLevel(sidebarNavConfig.routes, currentUrlSegment));
-  }, [pageInfo, sidebarNavConfig]);
+  }, [pageInfo, root, router.asPath, sidebarNavConfig]);
 
   return {
     currentItem,

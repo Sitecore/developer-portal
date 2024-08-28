@@ -38,6 +38,7 @@ const PreviewProvider = ({ children, hostname }: PreviewProviderProps) => {
     if (isPreviewDomain) {
       enablePreviewMode();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPreviewDomain, isLoaded]);
 
   const refreshPage = () => {

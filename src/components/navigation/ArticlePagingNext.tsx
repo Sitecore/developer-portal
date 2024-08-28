@@ -1,6 +1,6 @@
 import { Card, CardBody, Heading, HStack, Icon, Stack } from '@chakra-ui/react';
 import { mdiArrowLeft, mdiArrowRight, mdiCheckCircleOutline } from '@mdi/js';
-import { ButtonLink } from '@src/components/links';
+import { LinkButton } from '@src/components/links';
 
 import { PageInfo, SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
 import { getItemUrl } from '@/src/lib/sidebarNav';
@@ -40,7 +40,7 @@ export const ArticlePagingNext = ({ config, currentPage, enabled = false }: Arti
           {nextItem != null && (
             <Stack>
               <Heading variant="section">Next step:</Heading>
-              <ButtonLink
+              <LinkButton
                 hidden={!nextItem}
                 variant="solid"
                 rightIcon={
@@ -64,7 +64,7 @@ export const ArticlePagingNext = ({ config, currentPage, enabled = false }: Arti
           {previousItem != null && (
             <Stack mt={10}>
               <Heading variant="section">go back to:</Heading>
-              <ButtonLink
+              <LinkButton
                 variant="outline"
                 href={getItemUrl(config, previousItem)}
                 text={previousItem.title}

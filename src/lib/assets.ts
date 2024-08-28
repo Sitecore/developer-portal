@@ -418,3 +418,4 @@ export function GetProductLogoByVariant(productName: Product, variant: Variant, 
 
   return baseUrl + fileName;
 }
+

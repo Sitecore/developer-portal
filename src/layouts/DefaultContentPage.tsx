@@ -11,7 +11,7 @@ import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
 
 import { PromoCardProps, PromoList } from '../components/cards';
 import { Hero } from '../components/common';
-import { ContentSection } from '../components/ui';
+import { ContentSection } from '../components/ui/sections';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type DefaultContentPageProps = {

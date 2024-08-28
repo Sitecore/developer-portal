@@ -8,7 +8,7 @@ import { Hero } from '../components/common';
 import { TextLink } from '../components/links';
 import { DecoratedMarkdown, RenderContent } from '../components/markdown/MarkdownContent';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
-import { CenteredContent, VerticalGroup } from '../components/ui';
+import { CenteredContent, VerticalGroup } from '../components/ui/sections';
 
 type NewsLetterPagePageProps = {
   pageInfo: PageInfo;

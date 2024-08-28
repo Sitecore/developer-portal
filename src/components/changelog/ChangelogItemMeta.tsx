@@ -1,4 +1,3 @@
-/* eslint-disable turbo/no-undeclared-env-vars */
 import { BoxProps, Button, chakra, Hide, HStack, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Tag, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import { ChangelogEntry } from '@lib/changelog/types';
 import { getSlug } from '@lib/utils';
@@ -71,7 +70,7 @@ export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
                     <HStack key={key}>
                       <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
                       <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
-                        <Text color={useColorModeValue('black', 'white')}>{product.productName}</Text>
+                        <Text color={'chakra-inverse-text'}>{product.productName}</Text>
                       </Link>
                     </HStack>
                   ))}
