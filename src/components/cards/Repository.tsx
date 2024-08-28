@@ -1,6 +1,5 @@
 import { Badge, Button, Card, CardBody, CardFooter, CardHeader, CardProps, HStack, Icon, Link, Tag, TagLeftIcon, Text, useColorModeValue, Wrap } from '@chakra-ui/react';
-import { SvgLogo } from '@components/ui';
-import { isValidLogo } from '@components/ui/logos/SvgLogo';
+import { isValidLogo, SvgLogo } from '@components/ui/logos';
 import { mdiGithub, mdiSourceFork, mdiStar } from '@mdi/js';
 import NextLink from 'next/link';
 

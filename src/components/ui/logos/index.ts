@@ -1,1 +1,1 @@
-export { SvgLogo } from './SvgLogo';
+export { SvgLogo, isValidLogo } from './SvgLogo';
