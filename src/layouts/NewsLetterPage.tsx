@@ -2,13 +2,12 @@ import { Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Grid, GridIt
 import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import Layout from '@src/layouts/Layout';
 
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
-import { Hero } from '../components/common';
 import { TextLink } from '../components/links';
 import { DecoratedMarkdown, RenderContent } from '../components/markdown/MarkdownContent';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
-import { CenteredContent, VerticalGroup } from '../components/ui/sections';
+import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
 
 type NewsLetterPagePageProps = {
   pageInfo: PageInfo;

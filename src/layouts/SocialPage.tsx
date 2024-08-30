@@ -4,12 +4,11 @@ import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
 
 import communityListData from '@/data/data-community-list';
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
-import { Hero } from '../components/common';
 import { SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '../components/integrations';
 import { GenericList } from '../components/lists';
-import { CenteredContent, VerticalGroup } from '../components/ui/sections';
+import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
 
 type SocialPageProps = {
   pageInfo: PageInfo;

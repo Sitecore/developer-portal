@@ -38,11 +38,11 @@ import React, { useState } from 'react';
 // import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/assets';
 
-import { ProductIcon } from '../common';
-import { PreviewModeSwitch } from '../common/PreviewModeSwitch';
+import { PreviewModeSwitch } from './PreviewModeSwitch';
 
-import { PreviewSearchInput } from '../sitecore-search';
+import { PreviewSearchInput } from '../integrations/sitecore-search';
 import { Slide } from '../ui/chakra/Slide';
+import { ProductIcon } from '../ui/logos';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 import { SearchButton } from './SearchButton';

@@ -1,3 +1,8 @@
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
+import { LinkButton } from '@/src/components/links';
+import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
+import { SocialShare } from '@/src/components/ui/socialShare';
+import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 import {
   Alert,
   AlertDescription,
@@ -35,13 +40,6 @@ import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
 import Layout from '@src/layouts/Layout';
 import Link from 'next/link';
-
-import { Hero } from '@/src/components/common';
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { LinkButton } from '@/src/components/links';
-import { CenteredContent, VerticalGroup } from '@/src/components/ui/sections';
-import { SocialShare } from '@/src/components/ui/socialShare';
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 
 type ChangelogProps = {
   currentProduct: Product;

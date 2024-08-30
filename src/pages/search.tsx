@@ -3,10 +3,9 @@ import { PageInfo } from '@lib/interfaces/page-info';
 import { getPageInfo } from '@lib/page-info';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { Hero } from '../components/common';
-import { TrackPageView } from '../components/engagetracker/TrackPageView';
-import { SearchResults } from '../components/sitecore-search/SearchResults';
-import { CenteredContent, VerticalGroup } from '../components/ui/sections';
+import { TrackPageView } from '../components/integrations/engage/TrackPageView';
+import { SearchResults } from '../components/integrations/sitecore-search/SearchResults';
+import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
 import Layout from '../layouts/Layout';
 import { IsSearchEnabled } from '../lib/search';
 

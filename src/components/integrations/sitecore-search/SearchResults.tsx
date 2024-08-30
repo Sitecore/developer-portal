@@ -4,7 +4,7 @@ import { SearchResultsInitialState, trackEntityPageViewEvent, useSearchResults, 
 // import Image from 'next/image';
 import { getColorScheme } from '@/src/lib/search';
 
-import { Loading } from '../common';
+import { Loading } from '@components/ui';
 import { QuerySummary } from './QuerySummary';
 import SearchFacets from './SearchFacets';
 import { SearchPagination } from './SearchPagination';

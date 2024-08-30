@@ -1,20 +1,20 @@
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
-import SocialFeeds from '@src/components/common/SocialFeeds';
+import { SocialFeeds } from '@src/components/links/SocialFeeds';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import { useRouter } from 'next/router';
 
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
 import { PromoCardProps, PromoList } from '../components/cards';
-import { Hero } from '../components/common';
-import GithubContributionNotice from '../components/common/contribute';
+import GithubContributionNotice from '../components/markdown/contribute';
 import { ArticlePaging } from '../components/navigation/ArticlePaging';
 import { ArticlePagingNext } from '../components/navigation/ArticlePagingNext';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
+import { Hero } from '../components/ui/sections';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ArticlePageProps = {

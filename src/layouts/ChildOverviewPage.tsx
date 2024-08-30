@@ -3,13 +3,12 @@ import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interface
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
 
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
 import { PromoCardProps, PromoList } from '../components/cards';
-import { Hero } from '../components/common';
 import { TextLink } from '../components/links';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
-import { CenteredContent, VerticalGroup } from '../components/ui/sections';
+import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ChildOverviewPageProps = {

@@ -1,5 +1,5 @@
+export * from '../../hooks/useEngageTracker';
 export * from './engage/EngageTracker';
-export * from './engage/useEngageTracker';
 export * from './sitecoreCommunity';
 export type { StackExchangeQuestion } from './stackexchange/stackExchange';
 export { StackExchangeApi } from './stackexchange/StackExchange.api';

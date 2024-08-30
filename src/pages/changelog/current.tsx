@@ -1,7 +1,7 @@
 import { LinkItem } from '@/src/components/cards';
-import { Hero } from '@/src/components/common';
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { CenteredContent, Row, VerticalGroup } from '@/src/components/ui/sections';
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
+import { CenteredContent, Hero, Row, VerticalGroup } from '@/src/components/ui/sections';
+
 import { Alert, AlertIcon, Box, Heading, Text } from '@chakra-ui/react';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';

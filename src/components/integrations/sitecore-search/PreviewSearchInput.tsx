@@ -32,8 +32,7 @@ import { FaSearch } from 'react-icons/fa';
 
 import { Product } from '@/src/lib/assets';
 import { getColorScheme } from '@/src/lib/search';
-
-import ProductLogo from '../common/ProductLogo';
+import { ProductLogo } from '../../ui/logos';
 
 type ArticleModel = {
   id: string;

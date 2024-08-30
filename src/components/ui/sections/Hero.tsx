@@ -2,9 +2,9 @@ import { Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 
 import { CenteredContent, VerticalGroup } from '@components/ui/sections';
-import { GetProductLogo } from '../../lib/assets';
+import { GetProductLogo } from '../../../lib/assets';
 
-import { GuidedDemo } from './GuidedDemo';
+import { GuidedDemo } from '../../links/GuidedDemo';
 
 export type HeroProps = {
   title: string;

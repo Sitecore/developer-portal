@@ -5,7 +5,7 @@ type SocialFeedsProps = {
   pageInfo: PageInfo;
 };
 
-const SocialFeeds = ({ pageInfo }: SocialFeedsProps): JSX.Element => (
+export const SocialFeeds = ({ pageInfo }: SocialFeedsProps): JSX.Element => (
   <>
     <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
     <SitecoreCommunityQuestions data={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
@@ -14,5 +14,3 @@ const SocialFeeds = ({ pageInfo }: SocialFeedsProps): JSX.Element => (
     <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} />
   </>
 );
-
-export default SocialFeeds;

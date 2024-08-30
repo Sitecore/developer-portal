@@ -1,7 +1,7 @@
 import { AspectRatio, Box, Button, CardProps, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react';
 
 import { Product, Variant } from '../../lib/assets';
-import ProductIcon from './ProductIcon';
+import ProductIcon from '../ui/logos/ProductIcon';
 
 type GuidedDemoProps = CardProps & {
   demoId: string;

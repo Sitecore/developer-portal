@@ -1,4 +1,8 @@
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
+import { LinkButton } from '@/src/components/links';
 import { Option } from '@/src/components/ui/dropdown';
+import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
+import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
@@ -10,12 +14,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { SWRConfig } from 'swr';
-
-import { Hero } from '@/src/components/common';
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
-import { LinkButton } from '@/src/components/links';
-import { CenteredContent, VerticalGroup } from '@/src/components/ui/sections';
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 
 import { Changelog } from '../../lib/changelog/changelog';
 

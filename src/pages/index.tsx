@@ -1,4 +1,6 @@
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 import { SimpleGrid } from '@chakra-ui/react';
+import { CTACard } from '@components/cards';
 import communityListData from '@data/data-community-list';
 import platformData from '@data/data-platform';
 import updatesListData from '@data/data-updates';
@@ -9,13 +11,10 @@ import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
 import Layout from '@src/layouts/Layout';
 import { NextPage } from 'next';
 
-import { CTACard } from '@components/cards';
-import Hero from '@components/common/Hero';
-import { TrackPageView } from '@components/engagetracker/TrackPageView';
 import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '@components/integrations';
 import { GenericList } from '@components/lists';
 import ProductList from '@components/lists/products/productList';
-import { CenteredContent, VerticalGroup } from '@components/ui/sections';
+import { CenteredContent, Hero, VerticalGroup } from '@components/ui/sections';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');

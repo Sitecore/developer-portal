@@ -6,7 +6,7 @@ import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
-import { Loading } from '../common';
+import { Loading } from '@components/ui';
 import { LinkButton } from '../links';
 import { SocialShare } from '../ui/socialShare';
 import { ChangelogItemMeta } from './ChangelogItemMeta';

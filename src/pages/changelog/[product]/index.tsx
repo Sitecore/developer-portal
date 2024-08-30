@@ -11,10 +11,9 @@ import Layout from '@src/layouts/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Hero } from '@/src/components/common';
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 import { LinkButton } from '@/src/components/links';
-import { CenteredContent, VerticalGroup } from '@/src/components/ui/sections';
+import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 
 type ChangelogProps = {

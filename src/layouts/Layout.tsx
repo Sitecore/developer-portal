@@ -2,8 +2,8 @@
 import { Alert, AlertDescription, AlertIcon, Box, BoxProps, VisuallyHidden } from '@chakra-ui/react';
 import React from 'react';
 
-import Meta from '../components/common/Meta';
 import { usePreview } from '../context/PreviewContext';
+import Meta from './Meta';
 
 type LayoutProps = BoxProps & {
   title: string;

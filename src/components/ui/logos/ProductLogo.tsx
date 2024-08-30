@@ -1,7 +1,6 @@
+import { GetProductInfo, GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/assets';
 import { useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
-
-import { GetProductInfo, GetProductLogoByVariant, Product, Type, Variant } from '../../lib/assets';
 
 export type ProductLogoProps = {
   product: Product;

@@ -2,7 +2,7 @@ import { Box, Center, Heading, HStack, Image, Stack, Text } from '@chakra-ui/rea
 
 import { LinkButton } from '../components/links';
 
-import { SearchInput } from '../components/sitecore-search';
+import { SearchInput } from '../components/integrations/sitecore-search';
 import Layout from '../layouts/Layout';
 
 export default function Custom404() {

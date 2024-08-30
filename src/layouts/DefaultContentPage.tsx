@@ -1,17 +1,16 @@
 import { ContentHeading } from '@lib/interfaces/contentheading';
 import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
 import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
-import SocialFeeds from '@src/components/common/SocialFeeds';
+import { SocialFeeds } from '@src/components/links/SocialFeeds';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
 import Layout from '@src/layouts/Layout';
 import { useRouter } from 'next/router';
 
-import { TrackPageView } from '@/src/components/engagetracker/TrackPageView';
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
 import { PromoCardProps, PromoList } from '../components/cards';
-import { Hero } from '../components/common';
-import { ContentSection } from '../components/ui/sections';
+import { ContentSection, Hero } from '../components/ui/sections';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type DefaultContentPageProps = {

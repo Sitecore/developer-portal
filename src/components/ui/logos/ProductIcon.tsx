@@ -1,7 +1,7 @@
 import { Box, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 
-import { GetProductLogoByVariant, Product, Type, Variant } from '../../lib/assets';
+import { GetProductLogoByVariant, Product, Type, Variant } from '../../../lib/assets';
 export type ProductLogoProps = {
   product: Product;
   alt?: string;

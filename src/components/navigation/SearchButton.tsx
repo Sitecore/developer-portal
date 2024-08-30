@@ -1,6 +1,6 @@
 import { Box, Collapse, Flex, Icon, IconButton, Show, useDisclosure } from '@chakra-ui/react';
 import { mdiClose, mdiMagnify } from '@mdi/js';
-import { PreviewSearchInput, SearchInput } from '../sitecore-search';
+import { PreviewSearchInput, SearchInput } from '../integrations/sitecore-search';
 
 
 export const SearchButton = () => {

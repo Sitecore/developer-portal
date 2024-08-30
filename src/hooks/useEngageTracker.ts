@@ -2,7 +2,7 @@ import { ICustomEventInput, IPageViewEventInput, IPersonalizerInput } from '@sit
 // import { INestedObject } from '@sitecore/engage/types/lib/utils/flatten-object';
 import { useContext } from 'react';
 
-import { EngageTrackerContext } from './EngageTracker';
+import { EngageTrackerContext } from '../components/integrations/engage/EngageTracker';
 
 export const useEngageTracker = () => {
   const context = useContext(EngageTrackerContext);
