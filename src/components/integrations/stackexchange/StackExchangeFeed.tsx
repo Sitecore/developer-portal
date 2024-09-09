@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, useColorModeValue, VisuallyHidden, Wrap } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
 
 import { LinkButton } from '../../links/LinkButton';
 import { StackExchangeQuestion } from './stackExchange';
@@ -39,7 +39,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
                 </Link>
                 <VisuallyHidden>Tags:</VisuallyHidden>
                 {question.tags.length && (
-                  <Wrap direction={{ base: 'column', sm: 'row' }}>
+                  <Stack direction={{ base: 'column', sm: 'row' }}>
                     {question.tags.map((tag, i) => (
                       <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')} key={i}>
                         <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
@@ -48,7 +48,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
                         </Button>
                       </Link>
                     ))}
-                  </Wrap>
+                  </Stack>
                 )}
               </Stack>
             </Flex>
