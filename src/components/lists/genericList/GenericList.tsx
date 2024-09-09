@@ -28,11 +28,11 @@ export const GenericList = (props: GenericListData) => {
               <CardHeader p={0}>
                 {(item.img.width && item.img.height && (
                   <Center mt={10}>
-                    <Image alt="" src={item.img.src} width={item.img.width} height={item.img.height} />
+                    <Image alt="" src={item.img.src} width={item.img.width} height={item.img.height} priority />
                   </Center>
                 )) || (
                   <Box width={{ base: 'full', sm: '200px', md: '100%' }} height={{ base: '170', sm: 'full', md: '170' }} position={'relative'}>
-                    <Image fill alt="" src={item.img.src} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'contain' }} />
+                    <Image fill alt="" src={item.img.src} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority style={{ objectFit: 'contain' }} />
                   </Box>
                 )}
               </CardHeader>

@@ -27,7 +27,6 @@ import {
   UnorderedList,
   useColorModeValue,
   useDisclosure,
-  Wrap,
 } from '@chakra-ui/react';
 import { mainNavigation, NavItem, sitecoreQuickLinks } from '@data/data-navigation';
 import { mdiChevronDown, mdiChevronUp, mdiInformationOutline } from '@mdi/js';
@@ -157,10 +156,10 @@ const DesktopNav = () => {
   const router = useRouter();
 
   return (
-    <Wrap direction={'row'}>
+    <Stack direction={'row'}>
       {mainNavigation.map((navItem, key) => (
-        <ButtonGroup variant="navigation" orientation="horizontal" spacing="4" mx="2" key={key} as={'li'}>
-          <Box key={navItem.title} role="group">
+        <ButtonGroup variant="navigation" orientation="horizontal" spacing="4" mx="2" key={key}>
+          <Box key={navItem.title}>
             {navItem.url && !navItem.children ? (
               <Button key={key} as={NextLink} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath.includes(navItem.url)}>
                 {navItem.title}
@@ -189,7 +188,7 @@ const DesktopNav = () => {
           </Box>
         </ButtonGroup>
       ))}
-    </Wrap>
+    </Stack>
   );
 };
 
@@ -215,7 +214,7 @@ const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavIt
 
   // left="50%" transform="translateX(-50%)"
   return (
-    <Box role={'group'} display={'block'} p={2} key={title}>
+    <Box display={'block'} p={2} key={title}>
       {url ? (
         <Link as={NextLink} href={url ? url : '#'} isExternal={external} display={'flex'} gap={1} mb={2}>
           {navSection({ title, logo })}
