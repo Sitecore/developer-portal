@@ -13,7 +13,7 @@ type LinkButtonProps = ButtonProps & {
   color?: string;
 };
 
-export const LinkButton = ({ href, text, showIcon, variant, colorScheme, color = 'chakra-inverse-text', icon, ...rest }: LinkButtonProps) => {
+export const LinkButton = ({ href, text, showIcon, variant, colorScheme, color = 'chakra-body-text', icon, ...rest }: LinkButtonProps) => {
   const ButtonIcon = icon != null ? icon : <Icon path={mdiArrowRight} size={0.8} />;
 
   return (

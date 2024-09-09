@@ -19,15 +19,18 @@ const MetaTags: React.FC<MetaProps> = ({ title, description, openGraphImageUrl }
   return (
     <Head>
       <title>{title}</title>
-      <link rel="icon" href={`/favicon.ico`} />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="manifest" href="/site.webmanifest" />
-      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5548d9" />
 
-      <meta name="msapplication-TileColor" content="#5548d9"></meta>
-      <meta name="theme-color" content="#5548d9"></meta>
+      <link rel="icon" type="image/svg+xml" href="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-sitecore" />
+      <link rel="icon" type="image/png" sizes="32x32" href="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/favicon-sitecore?t=favicon32" />
+      <link rel="icon" type="image/png" sizes="128x128" href="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/favicon-sitecore?t=favicon128" />
+      <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/favicon-sitecore?t=favicon180" />
+      <link rel="icon" type="image/png" sizes="192x192" href="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/favicon-sitecore?t=favicon192" />
+
+      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6e3fff	" />
+
+      <meta name="msapplication-TileColor" content="#6e3fff	"></meta>
+      <meta name="theme-color" content="#6e3fff	"></meta>
       <meta name="description" content={description} />
       {/* Open Graph Meta Tags */}
       <meta property="og:site_name" content="Sitecore Developer Portal" />

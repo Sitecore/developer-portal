@@ -21,7 +21,7 @@ export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommu
             <Heading variant="section">{item.contentType}</Heading>
 
             <Heading size={'md'} my={4}>
-              <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={useColorModeValue('black', 'white')}>
+              <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'chakra-body-text'}>
                 {item.title}
               </Link>
             </Heading>

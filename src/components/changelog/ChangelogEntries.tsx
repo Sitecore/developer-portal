@@ -43,7 +43,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                 )}
                 <Stack fontSize={'sm'}>
                   <Heading as={'h4'} size="sm">
-                    <Link href={getChangelogEntryUrl(entry)} title={entry.title} color={'chakra-inverse-text'}>
+                    <Link href={getChangelogEntryUrl(entry)} title={entry.title} color={'chakra-body-text'}>
                       {entry.title}
                     </Link>
                   </Heading>
@@ -57,7 +57,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                           <PopoverAnchor>
                             {entry.products != null && (
                               <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} className="">
-                                <Text color={'chakra-inverse-text'}>{entry.products[0].productName}</Text>
+                                <Text color={'chakra-body-text'}>{entry.products[0].productName}</Text>
                               </Link>
                             )}
                           </PopoverAnchor>
@@ -74,7 +74,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                                   <HStack key={key}>
                                     <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
                                     <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
-                                      <Text color={'chakra-inverse-text'}>{product.productName}</Text>
+                                      <Text color={'chakra-body-text'}>{product.productName}</Text>
                                     </Link>
                                   </HStack>
                                 ))}
@@ -85,7 +85,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                     ) : (
                       entry.products != null && (
                         <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} key={key}>
-                          <Text color={'chakra-inverse-text'}>{entry.products[0].productName}</Text>
+                          <Text color={'chakra-body-text'}>{entry.products[0].productName}</Text>
                         </Link>
                       )
                     )}

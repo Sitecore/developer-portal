@@ -70,7 +70,7 @@ export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
                     <HStack key={key}>
                       <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
                       <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
-                        <Text color={'chakra-inverse-text'}>{product.productName}</Text>
+                        <Text color={'chakra-body-text'}>{product.productName}</Text>
                       </Link>
                     </HStack>
                   ))}
