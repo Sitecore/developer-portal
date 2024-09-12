@@ -1,9 +1,7 @@
-import { Box, Card, CardBody, CardFooter, CardHeader, Center, Grid, Heading, HStack, Link, LinkBox, LinkOverlay, Show, Stack, Text } from '@chakra-ui/react';
-import { mdiArrowRight } from '@mdi/js';
-import Icon from '@mdi/react';
+import { Box, Card, CardBody, CardFooter, CardHeader, Center, Grid, Heading, HStack, LinkBox, Show, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
-import NextLink from 'next/link';
 
+import { LinkButton } from '../../links';
 import { GenericListData } from './types';
 
 export const GenericList = (props: GenericListData) => {
@@ -45,10 +43,7 @@ export const GenericList = (props: GenericListData) => {
                     <Text>{item.description}</Text>
                     <Show below="lg">
                       <HStack as={'span'} mt={2}>
-                        <Link as={NextLink} href={item.href} fontWeight={'semibold'}>
-                          {item.linkText}
-                        </Link>
-                        <Icon path={mdiArrowRight} size={0.8} />
+                        <LinkButton href={item.href} text={item.linkText} variant={'text'} />
                       </HStack>
                     </Show>
                   </Box>
@@ -56,10 +51,7 @@ export const GenericList = (props: GenericListData) => {
               </CardBody>
               <CardFooter display={{ base: 'none', lg: 'block' }}>
                 <HStack as={'span'} mt={2}>
-                  <LinkOverlay as={NextLink} href={item.href} fontWeight={'semibold'}>
-                    {item.linkText}
-                  </LinkOverlay>
-                  <Icon path={mdiArrowRight} size={0.8} />
+                  <LinkButton href={item.href} text={item.linkText} variant={'text'} />
                 </HStack>
               </CardFooter>
             </Card>
