@@ -139,7 +139,7 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
             <InputLeftElement>
               <FaSearch />
             </InputLeftElement>
-            <Input as={PreviewSearch.Input} name="query" role="search" onChange={keyphraseHandler} autoComplete="off" value={keyphrase} />
+            <Input as={PreviewSearch.Input} name="query" onChange={keyphraseHandler} autoComplete="off" value={keyphrase} title="Search across different Sitecore domains" placeholder="search for ..." role="searchbox" />
             <InputRightElement width={{ base: '100px', md: '150px' }} opacity={''}>
               <Text as={'span'} display={{ base: 'none', md: 'flex ' }} variant="tiny">
                 Powered by

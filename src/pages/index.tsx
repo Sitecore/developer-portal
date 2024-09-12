@@ -55,7 +55,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup background={'primary.700'} backgroundImage={'url(/images/3d-neutral.jpg)'} backgroundSize={'cover'} backgroundBlendMode={'multiply'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
+        <VerticalGroup backgroundImage={'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/bg-power-gradient'} backgroundSize={'cover'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
           <CenteredContent>
             <GenericList title={platformData.title} subtitle={platformData.subtitle} data={platformData.data} column={3} width={{ base: 'full', md: '2xs' }} cardVariant="blurred" />
           </CenteredContent>
