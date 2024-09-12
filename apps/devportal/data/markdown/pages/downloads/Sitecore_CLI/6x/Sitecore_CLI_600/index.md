@@ -33,6 +33,6 @@ See [all available versions here](/downloads/Sitecore_CLI).
  | Resource | Description |
  | --- | --- |
  | [Sitecore CLI SXP Documentation](https://doc.sitecore.com/developers/104/developer-tools/en/sitecore-command-line-interface.html) | Official documentation for the Sitecore CLI. |
- | [Sitecore CLI XMCLoud Documentation](https://doc.sitecore.com/developers/104/developer-tools/en/sitecore-command-line-interface.html) | Official documentation for the Sitecore CLI. |
+ | [Sitecore CLI XMCLoud Documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html) | Official documentation for the Sitecore CLI. |
  | [Container installation reference](https://doc.sitecore.com/developers/102/developer-tools/en/sitecore-module-reference.html#sitecore-management-services) | Instructions for Sitecore Management Services module installation via Dockerfile. |
  | [Known issues](https://kb.sitecore.net/articles/545609) | Known issues for this release in the Sitecore Knowledge Base. |
