@@ -1,0 +1,1 @@
+export { scdpTheme } from './theme';

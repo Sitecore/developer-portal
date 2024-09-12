@@ -1,5 +1,0 @@
-fragment changeType on Changetype {
-  id
-  name
-  changeType
-}
