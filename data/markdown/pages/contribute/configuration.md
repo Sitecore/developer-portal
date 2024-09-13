@@ -39,15 +39,15 @@ These parameters affect core functionality of a page:
 
 The configuration options enable and customize different components used on the pages
 
-| Variable           | Type     | Purpose                                                                              |
-| ------------------ | -------- | ------------------------------------------------------------------------------------ | ----------------------------------------- |
-| stackexchange      | string   | string[]                                                                             | string or string array of tags (#tagname) |
-| twitter            | string   | string[]                                                                             | String array of accounts or hashtags      |
-| youtube            | string   | Playlist Id                                                                          |
-| changelogProductId | string[] | array of productIds to include                                                       |
-| changelog          | string   | Number of entries to retrieve                                                        |
-| promoBefore        | string[] | Name of .ts file within `apps\devportal\data\promos` folder (without file extension) |
-| promoAfter         | string[] | Name of .ts file within `apps\devportal\data\promos` folder (without file extension) |
+| Variable           | Type     | Purpose                                                               |
+| ------------------ | -------- | --------------------------------------------------------------------- | ----------------------------------------- |
+| stackexchange      | string   | string[]                                                              | string or string array of tags (#tagname) |
+| twitter            | string   | string[]                                                              | String array of accounts or hashtags      |
+| youtube            | string   | Playlist Id                                                           |
+| changelogProductId | string[] | array of productIds to include                                        |
+| changelog          | string   | Number of entries to retrieve                                         |
+| promoBefore        | string[] | Name of .ts file within `data\promos` folder (without file extension) |
+| promoAfter         | string[] | Name of .ts file within `data\promos` folder (without file extension) |
 
 ### Sitecore Community
 
