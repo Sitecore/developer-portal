@@ -140,10 +140,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Installation_Framework"
 />
 <Download 
-  title="Sitecore CLI 5.2.113"
+  title="Sitecore CLI 6.0.18"
   description="CLI for interactive and automatable interactions with XM Cloud and SXP, including managing the serialization of Sitecore items."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_CLI/5x/Sitecore_CLI_52113"
+  link1href="/downloads/Sitecore_CLI/6x/Sitecore_CLI_600"
   link2text="See all versions"
   link2href="/downloads/Sitecore_CLI"
 />
