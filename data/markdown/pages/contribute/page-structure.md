@@ -7,14 +7,14 @@ hasSubPageNav: true
 
 ## Page Structure
 
-The Developer Portal uses markdown for most of its pages. The site structure is determined withing the `apps\devportal\data\markdown\pages\` folder. All \*.md files in this folder and subfolders represent a single page on the developer portal.
+The Developer Portal uses markdown for most of its pages. The site structure is determined withing the `data\markdown\pages\` folder. All \*.md files in this folder and subfolders represent a single page on the developer portal.
 
-In addition to the pages folder there is also a partials folder (`apps\devportal\data\markdown\partials`). Partials are reusable markdown files that can be referenced within a page.
+In addition to the pages folder there is also a partials folder (`data\markdown\partials`). Partials are reusable markdown files that can be referenced within a page.
 
 ## Custom pages
 
 Pages that only use a markdown file to define some configuration but use components in a `.tsx` file can be prefixed with a `_`. This exludes them from the getStaticPaths function since it will be picked up by the Next.js build anyway.
-An example of this would be `apps\devportal\src\pages\search.tsx` using the `apps\devportal\data\markdown\pages\_search.md` file for configuration.
+An example of this would be `src\pages\search.tsx` using the `data\markdown\pages\_search.md` file for configuration.
 
 ## Pagetypes
 
