@@ -66,7 +66,7 @@ const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hidePr
                         ))
                       : ''}
 
-                    {entry.changeTypeName != null ? <Badge colorScheme={entry.changeTypeName == 'Resolved' ? 'yellow' : entry.changeTypeName == 'New Feature' ? 'teal' : 'info'}>{entry.changeTypeName}</Badge> : ''}
+                    {entry.changeTypeName != null ? <Badge colorScheme={entry.changeTypeName == 'Resolved' ? 'yellow' : entry.changeTypeName == 'New feature' ? 'teal' : 'info'}>{entry.changeTypeName}</Badge> : ''}
                     {entry.breakingChange && <Badge colorScheme="danger">Breaking change</Badge>}
                   </HStack>
                 </Stack>
