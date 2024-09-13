@@ -13,7 +13,7 @@ import { searchForFile } from './utils/fsUtils';
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
 const pagesDirectory = path.join(dataDirectory, 'pages');
 
-const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main/apps/devportal';
+const repoUrl = 'https://github.com/sitecore/developer-portal/edit/main';
 
 type Matter = {
   data: {
