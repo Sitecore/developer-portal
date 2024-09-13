@@ -1,0 +1,32 @@
+{
+  "title": "Contribution Guide",
+  "description": "Contribute to the Developer Portal",
+  "heading": true,
+  "path": "/contribute",
+  "routes": [
+    {
+      "title": "Introduction",
+      "path": ""
+    },
+    {
+      "title": "Page Structure",
+      "path": "page-structure"
+    },
+    {
+      "title": "Configuration",
+      "path": "configuration"
+    },
+    {
+      "title": "Creating Content",
+      "path": "content"
+    },
+    {
+      "title": "Components",
+      "path": "components"
+    },
+    {
+      "title": "Sitecore Community",
+      "path": "community"
+    }
+  ]
+}

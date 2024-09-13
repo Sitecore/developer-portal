@@ -1,0 +1,12 @@
+fragment media on Media {
+  id
+  name
+  fileName
+  fileUrl
+  description
+  fileWidth
+  fileHeight
+  fileId
+  fileSize
+  fileType
+}

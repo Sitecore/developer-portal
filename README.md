@@ -12,7 +12,7 @@ The Sitecore developer portal is built with Next.js, Typescript, Chakra UI and [
   - `devportal`: Developer Portal public site ([Next.js](https://nextjs.org/) based)
 - packages
   - `@scdp/ui`: a React component library based on [Sitecore Blok](https://blok.sitecore.com) used by `devportal` application
-  - `@scdp/changelog`: Custom library to retrieve and parse changelog data
+  - `@lib/changelog`: Custom library to retrieve and parse changelog data
   - `@scdp/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
   - `@scdp/jest-presets`: `jest` configuration used throughout the monorepo
   - `@scdp/typescript-config`: `tsconfig.json`s used throughout the monorepo
@@ -101,7 +101,7 @@ NEXT_PUBLIC_SITECORE_CDP_POS=
 
 _Note: The site will still function if the keys are missing or left blank._
 
---- 
+---
 
 #### Sitecore Search
 
