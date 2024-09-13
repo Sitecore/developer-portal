@@ -1,4 +1,4 @@
-# ![Sitecore logo in red background](https://github.com/Sitecore/developer-portal/raw/main/apps/devportal/public/favicon-32x32.png) Sitecore Developer Portal
+# ![Sitecore logo in red background](https://github.com/Sitecore/developer-portal/raw/main/public/favicon-32x32.png) Sitecore Developer Portal
 
 Welcome to the Sitecore Developer Portal repository. This app was created to help you get started with Sitecore. The developer portal aims to bring all the Sitecore developer tools together in one place.
 
