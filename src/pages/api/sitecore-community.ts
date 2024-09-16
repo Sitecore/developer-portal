@@ -25,6 +25,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Array<SitecoreC
       res.json(response);
     })
     .catch((err) => res.status(403).send(err));
+    
+  res.end();
 };
 
 export default handler;

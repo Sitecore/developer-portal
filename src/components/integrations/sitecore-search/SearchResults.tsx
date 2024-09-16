@@ -1,9 +1,7 @@
-import { Badge, Box, Grid, GridItem, Heading, Hide, HStack, Image, Stack, StackDivider, Text } from '@chakra-ui/react';
-import { SearchResultsInitialState, trackEntityPageViewEvent, useSearchResults, widget, WidgetDataType } from '@sitecore-search/react';
-
-// import Image from 'next/image';
+import { Badge, Box, Grid, GridItem, HStack, Heading, Hide, Image, Stack, StackDivider, Text } from '@chakra-ui/react';
+import { SearchResultsInitialState, WidgetDataType, trackEntityPageViewEvent, useSearchResults, widget } from '@sitecore-search/react';
+//import Image from 'next/image';
 import { getColorScheme } from '@/src/lib/search';
-
 import { Loading } from '@components/ui';
 import { QuerySummary } from './QuerySummary';
 import SearchFacets from './SearchFacets';
@@ -15,7 +13,6 @@ export interface HighlightType {
 }
 export interface InitialSearchProps {
   initialKeyphrase?: string;
-  rfkId: string;
   currentPage?: number;
   initialArticlesPerPage?: number;
   defaultSortType?: string;
@@ -100,7 +97,6 @@ export const SearchResults = (props: InitialSearchProps) => {
                         onClick={(e) => {
                           e.preventDefault();
                           onItemClick({ id: result.id || '', index });
-
                           if (result.index_name != 'sitecore-devportal-v2') {
                             trackEntityPageViewEvent('content', { items: [{ id: result.id }] });
                             window.open(result.url, '_blank');
@@ -159,5 +155,4 @@ export const SearchResults = (props: InitialSearchProps) => {
 };
 
 const SearchResultsWidget = widget(SearchResults, WidgetDataType.SEARCH_RESULTS, 'content');
-
 export default SearchResultsWidget;

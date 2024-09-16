@@ -4,7 +4,7 @@ import { getPageInfo } from '@lib/page-info';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { TrackPageView } from '../components/integrations/engage/TrackPageView';
-import { SearchResults } from '../components/integrations/sitecore-search/SearchResults';
+import SearchResults from '../components/integrations/sitecore-search/SearchResults';
 import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
 import Layout from '../layouts/Layout';
 import { IsSearchEnabled } from '../lib/search';
@@ -36,7 +36,9 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo }) => {
         <VerticalGroup>
           <CenteredContent>
             {IsSearchEnabled() ? (
-              <SearchResults rfkId="rfkid_7" initialKeyphrase={query} currentPage={currentPage} />
+              <>
+                <SearchResults initialKeyphrase={query} currentPage={currentPage} rfkId={'rfkid_7'} />
+              </>
             ) : (
               <Alert status="warning">
                 <AlertIcon />
