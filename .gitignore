@@ -44,3 +44,7 @@ yarn-error.log*
 robots.txt
 sitemap*.xml
 node_modules
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

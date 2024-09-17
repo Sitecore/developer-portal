@@ -115,6 +115,7 @@
     "@next/bundle-analyzer": "^14.2.5",
     "@next/eslint-plugin-next": "^14.2.5",
     "@parcel/watcher": "^2.4.1",
+    "@playwright/test": "^1.47.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.0.1",
     "@tiptap/core": "latest",
