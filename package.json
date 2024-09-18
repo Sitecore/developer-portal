@@ -30,7 +30,10 @@
     "generate": "graphql-codegen --config ./src/gql/codegen.ts",
     "knip": "knip",
     "prettier": "prettier --write .",
-    "test": "vitest"
+    "test": "npm run build && npm run test:unit && npm run test:e2e",
+    "test:unit": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -117,6 +120,7 @@
     "@parcel/watcher": "^2.4.1",
     "@playwright/test": "^1.47.1",
     "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@tiptap/core": "latest",
     "@types/node": "^20.16.1",
@@ -127,6 +131,7 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.16.1",
     "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-v8": "^2.1.1",
     "cross-env": "^7.0.3",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^9.1.0",
