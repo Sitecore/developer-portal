@@ -44,9 +44,11 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
 
   const Nav = pageInfo.hasInPageNav != false ? customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} key={router.asPath} /> : null : null;
 
+  const pageTitle = pageInfo.title.toLowerCase() == sidebarConfig.title.toLowerCase() ? pageInfo.title : `${pageInfo.title} | ${sidebarConfig.title}`;
+
   return (
     <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <Layout title={pageTitle} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} demoId={pageInfo.guidedDemoId} />
 
         <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <SidebarNavigation config={sidebarConfig} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
