@@ -2,6 +2,7 @@
 title: 'Component Design Best Practices'
 description: 'This recipe provides general guidance on best practices when designing components and variants/versions.'
 area: ['accelerate']
+lastUpdated: '2023-12-15'
 ---
 
 ## Problem

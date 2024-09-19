@@ -1,9 +1,10 @@
 ---
-title: 'Creating a Site | Sitecore Accelerate for partners'
+title: 'Creating a Site'
 description: 'How to create your Site and Site Collection in XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
+lastUpdated: '2024-02-15'
 ---
 
 ## Problem

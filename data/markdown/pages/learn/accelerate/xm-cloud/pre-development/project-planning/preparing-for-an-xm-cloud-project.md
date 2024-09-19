@@ -2,6 +2,7 @@
 title: 'Preparing for an XM Cloud Project'
 description: 'This recipe recommends overall strategies when planning to kick off an XM Cloud project'
 area: ['accelerate']
+lastUpdated: '2024-03-06'
 ---
 
 ## Problem

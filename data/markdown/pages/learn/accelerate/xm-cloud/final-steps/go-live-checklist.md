@@ -2,6 +2,7 @@
 title: 'Go-Live Checklist'
 description: 'Checklist and considerations before taking XM Cloud and your front-end application to production.'
 area: ['accelerate']
+lastUpdated: '2024-05-02'
 ---
 
 ## Problem

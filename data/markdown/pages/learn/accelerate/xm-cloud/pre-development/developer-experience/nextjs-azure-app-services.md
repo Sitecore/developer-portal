@@ -4,6 +4,7 @@ description: 'Sitecore is not recommending customers host their XM Cloud head ap
 area: ['accelerate']
 hasSubPageNav: false
 hasInPageNav: true
+lastUpdated: '2024-04-23'
 ---
 
 ## Problem

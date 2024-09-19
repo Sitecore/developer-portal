@@ -1,5 +1,5 @@
 ---
-title: 'Sitecore Accelerate for partners'
+title: 'Sitecore Accelerate for Partners'
 description: 'Learn more about how to develop for XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true

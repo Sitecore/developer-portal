@@ -1,9 +1,10 @@
 ---
-title: 'Layout Routing | Sitecore Accelerate for Partners'
+title: 'Layout Routing'
 description: 'How to setup layout routing in XM CLoud to reduce Information Architecture complexity and improve performance'
 area: ['accelerate']
 hasSubPageNav: false
 hasInPageNav: true
+lastUpdated: '2024-08-01'
 ---
 
 ## Problem

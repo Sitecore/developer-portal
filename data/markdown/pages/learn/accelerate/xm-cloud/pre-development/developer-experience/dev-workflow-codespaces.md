@@ -1,9 +1,10 @@
 ---
-title: 'Development Workflow: Github Codespaces | Sitecore Accelerate for Partners'
+title: 'Development Workflow: Github Codespaces'
 description: 'How to setup and configure your development workflow using Github Codespaces and XM Cloud'
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']
+lastUpdated: '2024-02-28'
 ---
 
 ## Problem

@@ -1,9 +1,10 @@
 ---
-title: 'Project Solution Setup | Sitecore Accelerate for partners'
+title: 'Project Solution Setup'
 description: 'How to setup a new project for Docker local development with XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
+lastUpdated: '2024-02-18'
 ---
 
 ## Problem

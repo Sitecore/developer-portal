@@ -2,6 +2,7 @@
 title: 'Project Estimation'
 description: 'Learn how to forecast the cost and timeline of your project'
 area: ['accelerate']
+lastUpdated: '2024-02-01'
 ---
 
 ## Problem
