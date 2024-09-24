@@ -4,35 +4,19 @@ Welcome to the Sitecore Developer Portal repository. This app was created to hel
 
 ## Technology used
 
-The Sitecore developer portal is built with Next.js, Typescript, Chakra UI and [Sitecore Blok](https://blok.sitecore.com), managed using Turborepo and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
-
-### Apps and Packages
-
-- apps
-  - `devportal`: Developer Portal public site ([Next.js](https://nextjs.org/) based)
-- packages
-  - `@scdp/ui`: a React component library based on [Sitecore Blok](https://blok.sitecore.com) used by `devportal` application
-  - `@lib/changelog`: Custom library to retrieve and parse changelog data
-  - `@scdp/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-  - `@scdp/jest-presets`: `jest` configuration used throughout the monorepo
-  - `@scdp/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+The Sitecore developer portal is built with Next.js, Typescript, Chakra UI and [Sitecore Blok](https://blok.sitecore.com) and is hosted on Vercel. The app uses static site generation to create all the pages at build time. It also utilizes Incremental Static Regeneration (ISR) to automatically update the app when changes to page content are made. Much of the page content is written in Markdown and is converted to HTML at build time. Images that are used are managed in Sitecore DAM and are published to a CDN.
 
 ### Utilities
 
-This turborepo has some additional tools already setup:
+This repository has some additional tools already setup:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
-- [Jest](https://jestjs.io/) for testing
+- [Vitest](https://vitest.dev/) for Unit testing
+- [Playwright](https://playwright.dev/) for E2E testing
 - [Prettier](https://prettier.io) for code formatting
 
 ### Prerequisites
-
-#### Monorepo
-
-This repository is utilizing Turborepo to manage our monorepo setup. More information about Monorepos can be found in the [Monorepo Handbook](https://turbo.build/repo/docs/handbook).
 
 #### Node.js
 
