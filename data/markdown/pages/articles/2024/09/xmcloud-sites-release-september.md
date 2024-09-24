@@ -1,5 +1,5 @@
 ---
-title: 'XM Cloud Sites - What's new? (September 2024)'
+title: 'XM Cloud Sites - What''s new? (September 2024)'
 description: 'Checkout the great new features of the XM Cloud Sites September release'
 ---
 
