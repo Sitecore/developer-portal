@@ -19,6 +19,7 @@ type PageInfoCore = {
   area: Array<string>;
   product?: Array<string>;
   cdpTags?: Array<string>;
+  lastUpdated?: string;
 };
 
 // Input for 3rd party integrations are just strings

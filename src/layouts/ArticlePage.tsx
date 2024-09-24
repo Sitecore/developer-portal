@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
+import { Heading } from '@chakra-ui/react';
 import { PromoCardProps, PromoList } from '../components/cards';
 import { SocialFeeds } from '../components/links';
 import GithubContributionNotice from '../components/markdown/contribute';
@@ -54,13 +55,16 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
         <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <SidebarNavigation config={sidebarConfig} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
           <BreadcrumbNav enabled={sidebarConfig.enableBreadcrumb} currentPage={pageInfo} config={sidebarConfig} />
           <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
+          {pageInfo.lastUpdated && (
+            <Heading variant={'section'} size={'sm'} mb={{ base: 0, md: 2 }}>
+              Last updated: {new Date(pageInfo.lastUpdated).toLocaleString('en-US', { dateStyle: 'medium' })}
+            </Heading>
+          )}
           <PromoList data={promoBefore} />
           <RenderContent content={pageInfo.parsedContent} />
           <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
-
           <GithubContributionNotice pageInfo={pageInfo} />
           {customNavPager}
-
           <PromoList data={promoAfter} />
           <SocialFeeds pageInfo={pageInfo} />
         </ThreeColumnLayout>
