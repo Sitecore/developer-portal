@@ -14,12 +14,12 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
   return (
     <Card variant={'outlineRaised'} size={'md'} {...rest}>
       <CardHeader>
-        <Text as="h4" size={'md'}>
+        <Text as="h4" fontSize={'lg'} fontWeight={'semibold'}>
           {title}
         </Text>
       </CardHeader>
       <CardBody py={0}>
-        {description && <Text>{description}</Text>}
+        {description && <Text mb={8}>{description}</Text>}
         {imageUrl && link && (
           <Box>
             <Link href={link} title={title} rel="noreferrer noopener">

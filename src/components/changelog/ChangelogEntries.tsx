@@ -1,6 +1,32 @@
-import { Box, Button, Card, CardBody, CardHeader, CardProps, chakra, Flex, Heading, Hide, HStack, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, SimpleGrid, Stack, Tag, Text, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  CardProps,
+  chakra,
+  Flex,
+  Heading,
+  Hide,
+  HStack,
+  IconButton,
+  Link,
+  Popover,
+  PopoverAnchor,
+  PopoverArrow,
+  PopoverContent,
+  PopoverTrigger,
+  SimpleGrid,
+  Stack,
+  Tag,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { ChangelogEntry } from '@lib/changelog/types';
 import { getChangelogEntryUrl, getSlug } from '@lib/utils';
+import { mdiRss } from '@mdi/js';
+import Icon from '@mdi/react';
 import { TextLink } from '@src/components/links';
 import Image from 'next/image';
 
@@ -24,11 +50,15 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
   }
 
   return (
-    <Card shadow={'none'} {...rest} size={{ base: 'xs', md: 'md' }}>
+    <Card {...rest} variant={'unstyled'}>
       <CardHeader justifyContent={'space-between'} display={'flex'} py={8}>
         <Heading as={'h3'} size={'md'}>
           {title}
+          <Link href="/changelog/rss.xml" ml={1}>
+            <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="primary" variant="ghost" size={'xs'} />
+          </Link>
         </Heading>
+
         <TextLink href={linkHref} text={linkText} />
       </CardHeader>
       <CardBody py={{ base: '2', md: '4' }}>

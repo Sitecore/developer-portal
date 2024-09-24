@@ -4,7 +4,7 @@ import path from 'path';
 import { convertFileToURL, getAllMdFiles } from '../utils/fsUtils';
 import { AccelerateRecipe } from './types/recipe';
 
-export const getLatestRecipes = async (product: string) => {
+export const getLatestRecipes = async (product: string, count?: number) => {
   const dataDirectory = path.join(process.cwd(), 'data/markdown/pages');
   const recipesRoot = path.join(dataDirectory, 'learn', 'accelerate', product);
 
@@ -41,5 +41,9 @@ export const getLatestRecipes = async (product: string) => {
         return 0;
       }
     }) as Array<AccelerateRecipe>;
+
+  if (count) {
+    return filteredRecipes.slice(0, count);
+  }
   return filteredRecipes;
 };
