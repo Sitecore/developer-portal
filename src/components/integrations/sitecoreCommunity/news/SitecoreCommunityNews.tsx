@@ -20,7 +20,7 @@ export const SitecoreCommunityNews = ({ title, data, hideCategory, listItem }: S
   }
 
   return (
-    <Card variant={'flat'} shadow={'none'}>
+    <Card variant={'unstyled'}>
       <CardHeader justifyContent={'space-between'} display={'flex'} px="0">
         <Heading as={'h3'} size={'xl'}>
           {title ? title : 'News and Announcements'}

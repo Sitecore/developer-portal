@@ -1,9 +1,10 @@
 ---
-title: 'DevOps | Sitecore Accelerate for partners'
+title: 'DevOps'
 description: 'Configuring your DevOps with XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
+lastUpdated: '2024-02-07'
 ---
 
 ## Problem

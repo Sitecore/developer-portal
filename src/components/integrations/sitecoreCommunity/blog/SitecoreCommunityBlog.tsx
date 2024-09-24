@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, CardProps, Heading } from '@chakra-ui/react';
+import { Card, CardBody, CardHeader, CardProps, Heading, Stack } from '@chakra-ui/react';
 import axios from 'axios';
 import { SetStateAction, useState } from 'react';
 
@@ -15,7 +15,6 @@ type SitecoreCommunityBlogProps = CardProps & {
 };
 
 export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: SitecoreCommunityBlogProps): JSX.Element => {
-  // eslint-disable-next-line no-unused-vars
   const [fetchedResults, setFetchedResults] = useState<Array<SitecoreCommunityContent> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -38,15 +37,15 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: 
   }
 
   return (
-    <Card border={'none'} shadow={'none'} {...rest} size={{ base: 'xs', md: 'md' }}>
-      <CardHeader justifyContent={'space-between'} display={'flex'} py={8}>
-        <Heading as="h3" size="md">
-          Latest blog posts
+    <Card variant={'unstyled'} {...rest} size={{ base: 'xs', md: 'md' }}>
+      <CardHeader justifyContent={'space-between'} display={'flex'} py={8} px={0}>
+        <Heading as="h3" size={listItem ? 'md' : 'xl'}>
+          Latest community blog posts
         </Heading>
 
         <TextLink href="https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba" text="See all" />
       </CardHeader>
-      <CardBody py={{ base: '2', md: '4' }}>
+      <CardBody p="0">
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
           <div className="flex justify-end mb-6">
             <label>
@@ -60,7 +59,15 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: 
           </div>
         )}
 
-        {entries.map((item, i) => (listItem ? <SitecoreCommunityBlogOrQuestionSidebar item={item} contentType="Blog" key={i} loading={isLoading} /> : <SitecoreCommunityBlogOrQuestion item={item} contentType="Blog" key={i} loading={isLoading} />))}
+        {listItem ? (
+          entries.map((item, i) => <SitecoreCommunityBlogOrQuestionSidebar item={item} contentType="Blog" key={i} loading={isLoading} />)
+        ) : (
+          <Stack spacing={8} direction={{ base: 'column', md: 'row' }} py={5}>
+            {entries.slice(0, 3).map((item, i) => (
+              <SitecoreCommunityBlogOrQuestion item={item} contentType="Blog" key={i} loading={isLoading} />
+            ))}
+          </Stack>
+        )}
       </CardBody>
     </Card>
   );

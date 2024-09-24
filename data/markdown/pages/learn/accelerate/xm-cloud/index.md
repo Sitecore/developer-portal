@@ -1,6 +1,6 @@
 ---
-title: 'Sitecore Accelerate for partners'
-description: 'Learn more about how to develop for XM Cloud'
+title: 'Sitecore Accelerate for Partners'
+description: 'The Accelerate cookbook provides a set of recipes to help implementing XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true

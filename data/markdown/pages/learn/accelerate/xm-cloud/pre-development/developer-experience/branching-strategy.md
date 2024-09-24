@@ -1,9 +1,10 @@
 ---
 title: 'Branching Strategy'
-description: ''
+description: 'Recommended Branching strategy when setting up an XM Cloud project'
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']
+lastUpdated: '2024-01-17'
 ---
 
 ## Problem

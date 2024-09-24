@@ -1,9 +1,10 @@
 ---
-title: 'Sitecore Accelerate for partners'
+title: 'XM Cloud Glossary of Terms'
 description: 'Learn more about how to develop for XM Cloud'
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']
+lastUpdated: '2023-10-31'
 ---
 
 ## XM Cloud Glossary of Terms

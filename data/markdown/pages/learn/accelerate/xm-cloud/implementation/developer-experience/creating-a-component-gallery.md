@@ -3,6 +3,7 @@ title: 'Creating a Component Gallery'
 description: 'Best practices for designing a component gallery'
 hasSubPageNav: true
 hasInPageNav: false
+lastUpdated: '2024-02-21'
 ---
 
 ## Problem

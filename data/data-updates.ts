@@ -11,17 +11,17 @@ const content: GenericListItem[] = [
       alt: 'Sitecore Downloads',
     },
   },
-  {
-    title: 'Migration Advisor',
-    description:
-      'Tell the Sitecore Migration Advisor about your solution and then find videos, tutorials, walkthroughs, code examples, and more to help you migrate from Sitecore Platform DXP to Sitecore XM Cloud and the rest of the Sitecore Composable DXP.',
-    href: 'https://migration.sitecore.com/',
-    linkText: 'Get Started',
-    img: {
-      src: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/79641d4e53c04ad9a1f9307bccae1458?v=ef401c0b',
-      alt: 'Migration Advisor',
-    },
-  },
+  // {
+  //   title: 'Migration Advisor',
+  //   description:
+  //     'Tell the Sitecore Migration Advisor about your solution and then find videos, tutorials, walkthroughs, code examples, and more to help you migrate from Sitecore Platform DXP to Sitecore XM Cloud and the rest of the Sitecore Composable DXP.',
+  //   href: 'https://migration.sitecore.com/',
+  //   linkText: 'Get Started',
+  //   img: {
+  //     src: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/79641d4e53c04ad9a1f9307bccae1458?v=ef401c0b',
+  //     alt: 'Migration Advisor',
+  //   },
+  // },
   {
     title: 'Sitecore Changelog',
     description: 'Learn more about new versions, changes and improvements in the public preview of the Sitecore Changelog',
@@ -45,8 +45,8 @@ const content: GenericListItem[] = [
 ];
 
 const communityListData: GenericListData = {
-  title: 'Featured resources',
-  subtitle: '',
+  title: '',
+  subtitle: 'Other resources',
   data: content,
 };
 

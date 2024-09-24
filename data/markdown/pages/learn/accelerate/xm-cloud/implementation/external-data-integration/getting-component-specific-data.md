@@ -2,6 +2,7 @@
 title: 'Getting Component Specific Data'
 description: 'This recipe discusses the options when component specific data is required'
 area: ['accelerate']
+lastUpdated: '2023-12-22'
 ---
 
 ## Problem

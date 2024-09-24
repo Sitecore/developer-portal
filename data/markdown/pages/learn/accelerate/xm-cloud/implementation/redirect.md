@@ -4,6 +4,7 @@ description: 'Recipe for handling redirects using XM Cloud.'
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']
+lastUpdated: '2024-04-05'
 ---
 
 ## Problem

@@ -1,9 +1,8 @@
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 import { SimpleGrid } from '@chakra-ui/react';
-import { CTACard } from '@components/cards';
+import { Article, CTACard } from '@components/cards';
 import communityListData from '@data/data-community-list';
 import platformData from '@data/data-platform';
-import updatesListData from '@data/data-updates';
 import getHelpCta from '@data/promos/get-help';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getPageInfo } from '@lib/page-info';
@@ -14,14 +13,19 @@ import { NextPage } from 'next';
 import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '@components/integrations';
 import { GenericList } from '@components/lists';
 import ProductList from '@components/lists/products/productList';
-import { CenteredContent, Hero, VerticalGroup } from '@components/ui/sections';
+import { CenteredContent, Hero, Row, VerticalGroup } from '@components/ui/sections';
+import AccelerateUpdates from '../components/lists/accelerate/AccelerateUpdates';
+import { getLatestRecipes } from '../lib/accelerate/latest';
+import { AccelerateRecipe } from '../lib/accelerate/types/recipe';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
+  const recipes = await getLatestRecipes('xm-cloud', 5);
 
   return {
     props: {
       pageInfo,
+      recipes,
     },
     revalidate: 600, // 10 minutes
   };
@@ -29,10 +33,11 @@ export async function getStaticProps() {
 
 type HomePageProps = {
   pageInfo: PageInfo;
+  recipes: Array<AccelerateRecipe>;
   preview: boolean;
 };
 
-const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
+const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
   return (
     <TrackPageView pageInfo={pageInfo}>
       <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
@@ -40,12 +45,25 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
 
         <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
-            <SimpleGrid py={{ base: 0, md: 4 }} gap={{ base: 0, md: 4 }} columns={[1, 1, 2]}>
+            <SimpleGrid gap="10" mb={0} columns={2}>
               <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest changelog updates" linkText="Full changelog" />
-              <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} listItem={true} />
+              <AccelerateUpdates recipes={recipes} title="Sitecore Accelerate updates" linkHref="/learn/accelerate" linkText="See all recipes" url="/learn/accelerate/xm-cloud" />
             </SimpleGrid>
-
-            <GenericList title={updatesListData.title} subtitle={updatesListData.subtitle} data={updatesListData.data} />
+            <Row columns={3}>
+              <Article
+                title="Sitecore Experience Platform 10.4"
+                description="Looking for the latest versions of Sitecore software, including the latest Sitecore Experience Platform 10.4? Have a look at the new download section."
+                linktext="Download"
+                link="/downloads"
+              />
+              <Article title="Sitecore Changelog" description="Learn more about new versions, changes and improvements in the public preview of the Sitecore Changelog" linktext="View" link="/changelog" />
+              <Article
+                title="Sitecore Accelerate"
+                description="Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products."
+                linktext="Read"
+                link="/learn/accelerate/xm-cloud"
+              />
+            </Row>
           </CenteredContent>
         </VerticalGroup>
 
@@ -63,6 +81,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo }) => {
 
         <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
+            <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} />
             <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} title="Community news" />
             <SitecoreCommunityEvents data={pageInfo.sitecoreCommunity.events} title="Community Events" />
             <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />

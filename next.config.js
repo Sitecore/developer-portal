@@ -159,6 +159,10 @@ const nextConfig = {
         source: '/Downloads/:slug*',
         destination: '/downloads/:slug*',
       },
+      {
+        source: '/learn/accelerate/xm-cloud/updates',
+        destination: '/feeds/rss-accelerate-xmcloud.xml',
+      },
     ];
   },
 };

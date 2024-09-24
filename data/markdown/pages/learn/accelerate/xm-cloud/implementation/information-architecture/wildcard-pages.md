@@ -2,6 +2,7 @@
 title: 'Wildcard Pages'
 description: 'Using wildcard pages for dynamic urls in XM Cloud'
 area: ['accelerate']
+lastUpdated: '2024-07-11'
 ---
 
 ## Problem

@@ -4,6 +4,7 @@ description: 'Detailed breakdown of template.module.json'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
+lastUpdated: '2024-05-30'
 ---
 
 ## Sample Template SCS Configuration File

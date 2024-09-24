@@ -4,6 +4,7 @@ description: 'The developer workflow to create a new component'
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']
+lastUpdated: '2024-06-24'
 ---
 
 ## Problem
