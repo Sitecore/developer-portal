@@ -1,9 +1,10 @@
 ---
-title: 'Setup Sitecore Content Serialization | Sitecore Accelerate for partners'
+title: 'Setup Sitecore Content Serialization'
 description: 'In this recipe you will learn how to setup Sitecore Content Serialization (SCS) for XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
+lastUpdated: '2024-05-30'
 ---
 
 ## Problem

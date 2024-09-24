@@ -10,7 +10,7 @@ export const GenericList = (props: GenericListData) => {
 
   return (
     <Box>
-      <Heading as="h2" pt={6} mb={8}>
+      <Heading as="h2" mb={8}>
         {props.title}
       </Heading>
       {props.subtitle != '' && (

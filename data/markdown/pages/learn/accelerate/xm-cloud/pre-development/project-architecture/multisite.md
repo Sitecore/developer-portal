@@ -1,9 +1,10 @@
 ---
-title: 'Multisite Architecture/Add-On | Sitecore Accelerate for Partners'
+title: 'Multisite Architecture/Add-On'
 description: 'How to setup multisite architecture in XM Cloud'
 area: ['accelerate']
 hasSubPageNav: false
 hasInPageNav: true
+lastUpdated: '2024-04-15'
 ---
 
 ## Problem

@@ -1,9 +1,10 @@
 ---
-title: 'Working with Experience Edge Rate Limits and Caching | Sitecore Accelerate for Partners'
+title: 'Working with Experience Edge Rate Limits and Caching'
 description: 'Working with Experiencce Edge Rate limits and caching'
 area: ['accelerate']
 hasSubPageNav: false
 hasInPageNav: true
+lastUpdated: '2024-06-18'
 ---
 
 ## Problem

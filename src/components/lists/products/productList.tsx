@@ -38,7 +38,7 @@ export const ProductList: React.FC<ProductListProps> = () => {
         <ProductListItem product={Send} />
       </SimpleGrid>
 
-      <SimpleGrid columns={[1, 2, 2]} gap={4} my={4}>
+      <SimpleGrid columns={[1, 2, 2]} gap={4} my={16}>
         <ProductListTitle title="Content lifecycle" description="Take control of your global content lifecycle from strategy to delivery.">
           <ProductListItem product={ContentHub} />
         </ProductListTitle>
@@ -66,7 +66,7 @@ export const ProductListTitle: React.FC<ProductListTitleProps> = ({ title, descr
 
 export const ProductListItem: React.FC<ProductListItemProps> = ({ product }) => {
   return (
-    <Card variant={'elevated'}>
+    <Card variant={'elevated'} layerStyle={'interactive.raise'}>
       <CardBody>
         <Flex direction={'column'} gap={4} align={'flex-start'}>
           <Box height={'24px'} width={'full'} position={'relative'} sx={{ '& > img': { width: 'auto !important' } }}>

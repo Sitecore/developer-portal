@@ -1,9 +1,10 @@
 ---
-title: 'Sitecore Accelerate for partners'
-description: 'Only Export Components that are used by content authors'
+title: 'Only Export Components that are used by content authors'
+description: 'Code example showing exported components that are used by content authors'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
+lastUpdated: '2023-12-15'
 ---
 
 **Only Export Components that are used by content authors**

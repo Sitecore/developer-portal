@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, Flex, Heading, HStack, Icon, Link, Skeleton, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Card, CardBody, CardFooter, Flex, Heading, HStack, Icon, Link, LinkBox, Skeleton, Stack, Text, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 import { translateDate } from '@/src/lib/utils';
@@ -13,37 +13,33 @@ type SitecoreCommunityBlogOrQuestionProps = {
 };
 
 export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps): JSX.Element => (
-  <Card variant={'elevated'} shadow={'md'} justifyContent={'space-between'} marginY={4}>
-    <CardBody>
-      <HStack spacing={16} justifyContent={'space-between'}>
-        <Skeleton isLoaded={!loading} flexGrow={1}>
-          <Stack>
-            <Heading variant="section">{item.contentType}</Heading>
+  <LinkBox as="article" display="contents">
+    <Card variant={'outline'} size="lg" w={'full'} justifyContent={'space-between'} layerStyle="interactive.raise">
+      <CardBody>
+        <HStack spacing={16} justifyContent={'space-between'}>
+          <Skeleton isLoaded={!loading} flexGrow={1}>
+            <Stack>
+              <Heading variant="section">{item.contentType}</Heading>
 
-            <Heading size={'md'} my={4}>
-              <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'chakra-body-text'}>
-                {item.title}
-              </Link>
-            </Heading>
-            <Text>
-              by <strong>{item.userName}</strong>
-            </Text>
-            <Text>
-              Published <strong>{translateDate(item.publishDate)}</strong>
-            </Text>
-          </Stack>
-        </Skeleton>
-        <Skeleton isLoaded={!loading} flexGrow={0}>
-          <Stack justifyItems={'right'}>
-            <Box>
-              <Text>{item.commentCount} comments</Text>
-              <Text>{item.viewCount} views</Text>
-            </Box>
-          </Stack>
-        </Skeleton>
-      </HStack>
-    </CardBody>
-  </Card>
+              <Heading size={'md'} my={4}>
+                <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'chakra-body-text'}>
+                  {item.title}
+                </Link>
+              </Heading>
+            </Stack>
+          </Skeleton>
+        </HStack>
+      </CardBody>
+      <CardFooter justify="space-between" flexWrap="wrap">
+        <Text>
+          by <strong>{item.userName}</strong>
+        </Text>
+        <Text>
+          Published <strong>{translateDate(item.publishDate)}</strong>
+        </Text>
+      </CardFooter>
+    </Card>
+  </LinkBox>
 );
 
 export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps): JSX.Element => {

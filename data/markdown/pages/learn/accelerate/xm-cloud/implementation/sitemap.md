@@ -4,6 +4,7 @@ description: 'Recipe for generation of Sitemap.xml that accurately reflects the 
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']
+lastUpdated: '2024-02-27'
 ---
 
 ## Problem

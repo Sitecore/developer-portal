@@ -27,3 +27,34 @@ export function searchForFile(folderPath: string, fileName: string): string | nu
     return null;
   }
 }
+
+export const getAllMdFiles = (dir: string): string[] => {
+  const files: string[] = [];
+
+  const readDirectory = (directory: string) => {
+    const entries = fs.readdirSync(directory);
+
+    entries.forEach((entry) => {
+      const entryPath = path.join(directory, entry);
+      const stat = fs.statSync(entryPath);
+
+      if (stat.isDirectory()) {
+        readDirectory(entryPath);
+      } else if (path.extname(entryPath) === '.md') {
+        files.push(entryPath);
+      }
+    });
+  };
+
+  readDirectory(dir);
+
+  return files;
+};
+
+export const convertFileToURL = (filePath: string): string | null => {
+  const dataDirectory = path.join(process.cwd(), 'data/markdown/pages');
+
+  const relativePath = path.relative(dataDirectory, filePath);
+
+  return relativePath.replace(/\.md$/, '').replace(/\\/g, '/');
+};

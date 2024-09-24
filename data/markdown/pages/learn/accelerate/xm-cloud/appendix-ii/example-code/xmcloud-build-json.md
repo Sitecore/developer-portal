@@ -1,9 +1,10 @@
 ---
-title: 'Sample xmcloud.build.json | Sitecore Accelerate for partners'
+title: 'Sample xmcloud.build.json'
 description: 'Sample xmcloud.build.json file for Sitecore Content Serialization'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
+lastUpdated: '2024-01-11'
 ---
 
 **Sample template.module.json for Sitecore Content Serialization**
