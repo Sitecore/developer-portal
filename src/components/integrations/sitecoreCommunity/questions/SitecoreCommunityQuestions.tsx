@@ -23,8 +23,6 @@ export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest 
 
   useEffect(() => {
     setIsLoading(true);
-    console.log('fetching questions');
-
     const query = ['contentType=questions'];
 
     if (sort) {
