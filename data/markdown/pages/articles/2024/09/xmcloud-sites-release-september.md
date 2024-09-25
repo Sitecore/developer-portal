@@ -1,16 +1,21 @@
 ---
+product: ['xm-cloud']
 title: 'XM Cloud Sites - What''s new? (September 2024)'
 description: 'Checkout the great new features of the XM Cloud Sites September release'
+lastUpdated: '2024-09-25'
+youtubeTitle: 'Latest "Discover Sitecore" videos'
+youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 ---
 
-## About XM Cloud Sites
+## About XM Cloud Sites - Release Overview
 
 XM Cloud Sites is the visual Site Management in XM Cloud.
 Within the September Release of XM Cloud Sites, we got some great new features that make website management much easier for the whole team to collaborate in one central application.
 
-- Search through your large-scale multisite setups
-- You can create Sites and structure those using Site Collections
-- Manage Settings and Languages of each site or mark sites as Shared Sites
+- Easily find sites in your large scale environments using search
+- Create Sites and Site Collections using Site Templates.
+- Manage Site Settings, Languages and Editing Hosts
+- Enable Shared Sites
 
 But let’s go through them one by one:
 
@@ -72,3 +77,16 @@ If you need your site to support multiple languages, you can simply configure al
 By pressing on the question mark icon in the top right corner, you now also have direct access to documentation. In case you face any issues you can directly raise support tickets from here. 	
 
 ![Documentation and Support](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/documentation-support?v=d303df37)
+
+
+## Watch Video
+<VideoPromo
+  youTubeId="Pq-8pxivroE"
+  title="XM Cloud Sites - What's new? (September 2024)"
+  description="XM Cloud Sites is the visual Site Management in XM Cloud. With the September additions site management has been simplified a lot. You can now:
+  - Easily find sites in your large scale environments using search
+  - Create Sites and Site Collections using Site Templates.
+  - Manage Site Settings, Languages and Editing Hosts
+  - Enable Shared Sites
+"
+/>
