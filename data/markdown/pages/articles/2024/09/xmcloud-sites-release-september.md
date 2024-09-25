@@ -3,8 +3,6 @@ product: ['xm-cloud']
 title: 'XM Cloud Sites - What''s new? (September 2024)'
 description: 'Checkout the great new features of the XM Cloud Sites September release'
 lastUpdated: '2024-09-25'
-youtubeTitle: 'Latest "Discover Sitecore" videos'
-youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 ---
 
 ## About XM Cloud Sites - Release Overview
