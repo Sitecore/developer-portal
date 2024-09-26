@@ -31,7 +31,6 @@ A Site Collections will group your sites and make these more accessible. It allo
 You can also create new sites from XM Cloud Sites within a much better experience!
 Based on the Site Template you select, you get information about what is actually provided with this site template.
 
-[Image Sites 1]
 ![Site Templates](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/site-templates?v=329de69b)
 
 Beside defining the basic information like site name or site language, you can now also choose what site collection to install the site to or if you want to create the site in a new site collection that you can name here.
@@ -42,7 +41,6 @@ Beside defining the basic information like site name or site language, you can n
 
 Especially when having multiple sites to manage, the new Site Search comes in handy. You can search for sites and clear the filter again.
 
-[IMAGE Search]
 ![Search Sites](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/search-sites?v=c46cab90)
 
 ## Manage Site Settings
