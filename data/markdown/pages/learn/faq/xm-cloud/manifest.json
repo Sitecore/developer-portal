@@ -1,0 +1,64 @@
+{
+  "title": "XM Cloud FAQ",
+  "description": "Learn more about what XM Cloud is and what features it has.",
+  "heading": true,
+  "path": "/learn/faq/xm-cloud",
+  "routes": [
+    {
+      "title": "Introduction",
+      "path": ""
+    },
+    {
+      "title": "Features",
+      "path": "features"
+    },
+    {
+      "title": "Development",
+      "path": "development"
+    },
+    {
+      "title": "Upgrades",
+      "path": "upgrades"
+    },
+    {
+      "title": "Migration",
+      "path": "migration"
+    },
+    {
+      "title": "Integration",
+      "path": "integration"
+    },
+    {
+      "title": "Rendering",
+      "path": "rendering"
+    },
+    {
+      "title": "Customization",
+      "path": "customization"
+    },
+    {
+      "title": "Experience Edge",
+      "path": "experience-edge"
+    },
+    {
+      "title": "SXA",
+      "path": "sxa"
+    },
+    {
+      "title": "Pages & Components",
+      "path": "pages-components"
+    },
+    {
+      "title": "Personalize & Analytics",
+      "path": "personalization-analytics"
+    },
+    {
+      "title": "Scaling and Availability",
+      "path": "scaling-availability"
+    },
+    {
+      "title": "Pricing",
+      "path": "pricing"
+    }
+  ]
+}

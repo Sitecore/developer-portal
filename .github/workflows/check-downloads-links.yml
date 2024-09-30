@@ -17,4 +17,3 @@ jobs:
           use-verbose-mode: 'yes'
           config-file: './.github/workflows/mlc-downloads.config.json'
           folder-path: './apps/devportal/data/markdown/pages/downloads/'
-       

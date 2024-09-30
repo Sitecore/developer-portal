@@ -1,0 +1,28 @@
+{
+  "title": "XM Cloud Recommended Practices",
+  "description": "Tips for teams working on XM Cloud projects from developers in the field",
+  "heading": true,
+  "path": "/learn/faq/xm-cloud-recommended-practices",
+  "routes": [
+    {
+      "title": "Preparing for a Project",
+      "path": "preparing-for-project"
+    },
+    {
+      "title": "Getting Started",
+      "path": "getting-started"
+    },
+    {
+      "title": "Development",
+      "path": "development"
+    },
+    {
+      "title": "Project Structure",
+      "path": "project-structure"
+    },
+    {
+      "title": "Deployment & Publishing",
+      "path": "deployment"
+    }
+  ]
+}

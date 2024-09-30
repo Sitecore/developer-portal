@@ -1,0 +1,8 @@
+query GetAllProducts {
+  allSitecoreProduct(first: 25) {
+    total
+    results {
+      ...product
+    }
+  }
+}

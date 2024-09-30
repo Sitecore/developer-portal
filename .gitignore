@@ -39,3 +39,8 @@ yarn-error.log*
 
 .vercel
 .env*.local
+
+# generated postbuild
+robots.txt
+sitemap*.xml
+node_modules

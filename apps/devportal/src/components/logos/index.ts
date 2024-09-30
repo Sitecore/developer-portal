@@ -1,1 +1,0 @@
-export { SvgLogo } from './SvgLogo'

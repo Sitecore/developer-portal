@@ -1,8 +1,0 @@
-fragment product on SitecoreProduct {
-  id
-  name
-  productName
-  productDescription
-  darkIcon: productIconDark
-  lightIcon: productIconLight
-}

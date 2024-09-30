@@ -1,8 +1,0 @@
-query GetStatusByIdentifier($identifier: String) {
-  allStatus(where: { identifier_eq: $identifier }) {
-    total
-    results {
-      ...status
-    }
-  }
-}
