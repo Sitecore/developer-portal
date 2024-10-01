@@ -70,6 +70,7 @@ This is a product update. Sitecore recommends that you upgrade to this release t
  | Platform | The item fallback version provided in the processor argument is not respected. | 609020 |
  | Platform | If the URL contains spaces added before the item name, items are resolved without a space. | 610980 |
  | Platform | When a multi-list field with a custom validation displays a pop-up dialog containing a fatal error, upon closing this dialog the field in error does not display a red validation bar as it should. | 616548 |
+ | Platform | After selecting *select all* on a multi-list field in a situation causing a dialog to pop up containing a fatal error, upon closing this dialog the field in error does not display a red validation bar as it should. | 617539 |
  | Platform | Unable to remove items from Recycle Bin after applying pre-release 10.3.2 rev. 010586 PRE. | 616843 |
  | Platform | The *Links* table does not include droplist links. | 618724 |
  
