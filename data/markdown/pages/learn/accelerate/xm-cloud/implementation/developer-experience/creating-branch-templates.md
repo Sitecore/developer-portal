@@ -4,6 +4,7 @@ description: 'The developer workflow to create a new branch template'
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']
+lastUpdated: '2024-10-01'
 ---
 
 ## Problem
