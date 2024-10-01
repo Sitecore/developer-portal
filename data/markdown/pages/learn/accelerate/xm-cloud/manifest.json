@@ -132,6 +132,10 @@
               "path": "creating-new-components"
             },
             {
+              "title": "Creating Branch Templates",
+              "path": "creating-branch-templates"
+            },
+            {
               "title": "Troubleshooting Local Dev Container Env",
               "path": "troubleshooting-docker"
             },
