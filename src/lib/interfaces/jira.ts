@@ -1,4 +1,6 @@
-interface StatusCategory {
+import { Option } from '@/src/components/ui/dropdown';
+
+export interface StatusCategory {
   self: string;
   id: number;
   key: string;
@@ -6,7 +8,7 @@ interface StatusCategory {
   name: string;
 }
 
-interface Status {
+export interface Status {
   self: string;
   description: string;
   iconUrl: string;
@@ -15,20 +17,20 @@ interface Status {
   statusCategory: StatusCategory;
 }
 
-interface CustomField {
+export interface CustomField {
   self: string;
   value: string;
   id: string;
 }
 
-interface Fields {
+export interface Fields {
   summary: string;
   customfield_15180: CustomField; // Roadmap Phase
   customfield_15258?: CustomField[]; // Product
   status: Status;
 }
 
-interface Issue {
+export interface Issue {
   expand: string;
   id: string;
   self: string;
@@ -36,14 +38,14 @@ interface Issue {
   fields: Fields;
 }
 
-interface Names {
+export interface Names {
   summary: string;
   customfield_15180: string;
-  customfield_15258: string;
+  customfield_15258: string; // Product
   status: string;
 }
 
-interface JiraResponse {
+export interface JiraResponse {
   expand: string;
   startAt: number;
   maxResults: number;
@@ -52,9 +54,7 @@ interface JiraResponse {
   names: Names;
 }
 
-interface RoadmapInformation {
-  done: JiraResponse;
-  now: JiraResponse;
-  next: JiraResponse;
-  future: JiraResponse;
+export interface RoadmapInformation {
+  items: Issue[];
+  products: Option[];
 }
