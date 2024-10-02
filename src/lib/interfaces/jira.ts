@@ -27,6 +27,7 @@ export interface Fields {
   summary: string;
   customfield_15180: CustomField; // Roadmap Phase
   customfield_15258?: CustomField[]; // Product
+  customfield_15555?: string; // Speaker notes
   status: Status;
 }
 

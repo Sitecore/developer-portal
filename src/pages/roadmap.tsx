@@ -51,9 +51,9 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, roadmap }) => {
 
             <SimpleGrid minChildWidth="120px" spacing="5px">
               <RoadmapPhase issues={roadmap.items} title="Done" color="neutral-bg" phase={Phase.DONE} productId={selectedChange.map((option) => option)} />
-              <RoadmapPhase issues={roadmap.items} title="Now" color="success-bg" phase={Phase.NOW} productId={selectedChange.map((option) => option)} />
-              <RoadmapPhase issues={roadmap.items} title="Next" color="warning-bg" phase={Phase.NEXT} productId={selectedChange.map((option) => option)} />
-              <RoadmapPhase issues={roadmap.items} title="Future" color="neutral-bg-active" phase={Phase.FUTURE} productId={selectedChange.map((option) => option)} />
+              <RoadmapPhase issues={roadmap.items} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} productId={selectedChange.map((option) => option)} />
+              <RoadmapPhase issues={roadmap.items} title="Next (next quarter)" color="warning-bg" phase={Phase.NEXT} productId={selectedChange.map((option) => option)} />
+              <RoadmapPhase issues={roadmap.items} title="Future (9+ months)" color="neutral-bg-active" phase={Phase.FUTURE} productId={selectedChange.map((option) => option)} />
             </SimpleGrid>
           </CenteredContent>
         </VerticalGroup>

@@ -36,7 +36,7 @@ async function getRoadmapItems(fieldValue: string): Promise<JiraResponse> {
 
 export async function GetJiraResponse(): Promise<JiraResponse> {
   // Get all issues from Jira where external roadmap is set to 1 (true)
-  const roadmapAPI = `${jiraBaseUrl}?jql=project=SMAP%20AND%20cf[15395]=%221%22&fields=summary,status,customfield_15180,customfield_15258&expand=names&maxResults=100`;
+  const roadmapAPI = `${jiraBaseUrl}?jql=project=SMAP%20AND%20cf[15395]=%221%22&fields=summary,status,customfield_15180,customfield_15258,customfield_15555&expand=names&maxResults=100`;
 
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
