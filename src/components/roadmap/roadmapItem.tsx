@@ -35,7 +35,7 @@ export const RoadmapItem = ({ issue }: RoadmapItemProps) => {
           </Stack>
         </CardBody>
       </Card>
-      <Modal size={'md'} onClose={onClose} isOpen={isOpen} key={issue.id}>
+      <Modal size={'md'} onClose={onClose} isOpen={isOpen} key={issue.id} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>{issue.fields.summary}</ModalHeader>
