@@ -48,6 +48,10 @@
             {
               "title": "Hosting Next.js on Azure App Services",
               "path": "nextjs-azure-app-services"
+            },
+            {
+              "title": "Next.js App Router Preparation",
+              "path": "nextjs-app-router-preparation"
             }
           ]
         },
