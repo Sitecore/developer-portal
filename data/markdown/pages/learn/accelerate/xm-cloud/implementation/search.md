@@ -4,6 +4,7 @@ description: 'Recipe for implementing search experience with XM Cloud and Search
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']
+lastUpdated: '2024-10-01'
 ---
 
 ## Problem
