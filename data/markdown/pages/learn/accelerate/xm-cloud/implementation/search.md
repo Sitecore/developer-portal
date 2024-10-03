@@ -1,10 +1,10 @@
 ---
-title: 'Sitecore Accelerate for partners'
+title: 'Sitecore Search'
 description: 'Recipe for implementing search experience with XM Cloud and Search'
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']
-lastUpdated: '2024-10-01'
+lastUpdated: '2024-10-03'
 ---
 
 ## Problem
