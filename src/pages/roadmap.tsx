@@ -5,16 +5,19 @@ import { getPageInfo } from '@lib/page-info';
 import { MultiValue, Select } from 'chakra-react-select';
 import { NextPage } from 'next';
 import { useState } from 'react';
+import useSWR from 'swr';
 import { TrackPageView } from '../components/integrations/engage/TrackPageView';
 import RoadmapPhase from '../components/roadmap/roadmapPhase';
 import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
 import Layout from '../layouts/Layout';
+import { buildProductQuerystring } from '../lib/changelog/common/querystring';
 import { RoadmapInformation } from '../lib/interfaces/jira';
 import { getRoadmap, Phase } from '../lib/jira';
 
 interface SearchPageProps {
   pageInfo: PageInfo;
-  roadmap: RoadmapInformation;
+  fallback: RoadmapInformation;
+  products: Option[];
 }
 
 export async function getServerSideProps() {
@@ -23,17 +26,29 @@ export async function getServerSideProps() {
 
   return {
     props: {
+      fallback: roadmap,
       pageInfo,
-      roadmap,
+      products: roadmap.products,
     },
   };
 }
 
-const Search: NextPage<SearchPageProps> = ({ pageInfo, roadmap }) => {
+const Search: NextPage<SearchPageProps> = ({ pageInfo, fallback, products }) => {
   const [selectedChange, setSelectedChange] = useState<MultiValue<Option>>([]);
   const handleChange = (newValue: MultiValue<Option>) => {
     setSelectedChange(newValue);
   };
+
+  const qs = buildProductQuerystring(
+    undefined,
+    selectedChange.map((option) => option)
+  );
+
+  const url: string = `/api/roadmap?${qs}`;
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const { data, error, isLoading } = useSWR(url, fetcher);
+
+  if (error) return 'An error has occurred.';
 
   return (
     <TrackPageView pageInfo={pageInfo}>
@@ -47,13 +62,13 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, roadmap }) => {
               regarding the accuracy, completeness, or reliability of the information presented.
             </Text>
 
-            <Select isMulti closeMenuOnSelect={false} selectedOptionStyle="check" options={roadmap.products} onChange={handleChange} colorScheme="primary" selectedOptionColorScheme="primary" placeholder="Filter by product(s)" />
+            <Select instanceId="productSelector" isMulti closeMenuOnSelect={false} selectedOptionStyle="check" options={products} onChange={handleChange} colorScheme="primary" selectedOptionColorScheme="primary" placeholder="Filter by product(s)" />
 
             <SimpleGrid minChildWidth="120px" spacing="5px">
-              <RoadmapPhase issues={roadmap.items} title="Done" color="neutral-bg" phase={Phase.DONE} productId={selectedChange.map((option) => option)} />
-              <RoadmapPhase issues={roadmap.items} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} productId={selectedChange.map((option) => option)} />
-              <RoadmapPhase issues={roadmap.items} title="Next (next quarter)" color="warning-bg" phase={Phase.NEXT} productId={selectedChange.map((option) => option)} />
-              <RoadmapPhase issues={roadmap.items} title="Future (9+ months)" color="neutral-bg-active" phase={Phase.FUTURE} productId={selectedChange.map((option) => option)} />
+              <RoadmapPhase issues={data} title="Done" color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
+              <RoadmapPhase issues={data} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
+              <RoadmapPhase issues={data} title="Next (next two quarter)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
+              <RoadmapPhase issues={data} title="Future (9+ months)" color="neutral-bg-active" phase={Phase.FUTURE} isLoading={isLoading} />
             </SimpleGrid>
           </CenteredContent>
         </VerticalGroup>

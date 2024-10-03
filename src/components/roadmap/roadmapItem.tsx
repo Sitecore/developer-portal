@@ -15,7 +15,7 @@ export const RoadmapItem = ({ issue }: RoadmapItemProps) => {
   };
   return (
     <>
-      <Card key={issue.id} variant={'outlineRaised'} size={'md'}>
+      <Card variant={'outlineRaised'} size={'md'}>
         <CardHeader>
           <Heading size="sm" onClick={handleClick} cursor={'pointer'}>
             {issue.fields.summary}
@@ -35,7 +35,7 @@ export const RoadmapItem = ({ issue }: RoadmapItemProps) => {
           </Stack>
         </CardBody>
       </Card>
-      <Modal size={'md'} onClose={onClose} isOpen={isOpen} key={issue.id} isCentered>
+      <Modal size={'md'} onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>{issue.fields.summary}</ModalHeader>
