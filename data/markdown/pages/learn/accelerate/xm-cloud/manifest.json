@@ -38,6 +38,10 @@
               "title": "Development Workflow: Github Codespaces"
             },
             {
+              "path": "hosting-web-application",
+              "title": "Hosting the Web Application"
+            },
+            {
               "path": "nextjs-azure-app-services",
               "title": "Hosting Next.js on Azure App Services"
             },
@@ -153,6 +157,10 @@
             {
               "path": "wildcard-pages",
               "title": "Wildcard Pages"
+            },
+            {
+              "path": "workflow",
+              "title": "Workflows"
             }
           ],
           "ignoreLink": true,
