@@ -4,7 +4,7 @@ description: 'Learn about Workflows in XM Cloud'
 area: ['accelerate']
 hasSubPageNav: false
 hasInPageNav: true
-lastUpdated: '2024-10-04'
+lastUpdated: '2024-10-07'
 ---
 
 # Problem
