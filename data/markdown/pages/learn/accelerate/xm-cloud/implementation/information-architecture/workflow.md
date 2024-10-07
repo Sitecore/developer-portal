@@ -36,7 +36,7 @@ All pages and the templates that drive them should be configured with workflow. 
 3. Enable `View > Standard Fields` in the Content Editor.
 4. Go to the Workflow tab and set both Workflow and Default Workflow to the workflow you created.
 
-<img src="/images/learn/accelerate/xm-cloud/workflows1.jpg" alt="StandardValuesPageWorkflow"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflows1.jpg" title="StandardValuesPageWorkflow"/>
 
 ## Configure SXA Datasource Workflow
 
@@ -48,7 +48,7 @@ It's important to configure workflow for both pages and the separate data source
 4. Select the Datasource Templates tab and configure any unconfigured templates.
 5. For each data source component, configure the workflow the same way as a page.
 
-<img src="/images/learn/accelerate/xm-cloud/workflows2.jpg" alt="ComponentDatasourceWorkflow"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflows2.jpg" title="ComponentDatasourceWorkflow"/>
 Adding workflow to a data source Standard Value in SXA
 
 ## Configuration of Users/Roles
@@ -62,26 +62,26 @@ For each workflow state that requires a specific set of users, create a Sitecore
 
 You can create these roles in the Role Manager and use the Security Editor to apply security settings.
 
-<img src="/images/learn/accelerate/xm-cloud/workflows3.jpg" alt="exampleRightsEditor"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflows3.png" title="exampleRightsEditor"/>
 *Example rights for Editor*
 
-<img src="/images/learn/accelerate/xm-cloud/workflows4.jpg" alt="accessViewerEditor"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflows4.png" title="accessViewerEditor"/>
 *Access Viewer for Editor*
 
 As shown, Editors get workflow execution rights, but Approve and Reject actions are specifically denied.
 
-<img src="/images/learn/accelerate/xm-cloud/workflows5.jpg" alt="exampleRightsSuperEditor"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflows5.png" title="exampleRightsSuperEditor"/>
 *Example rights for Super Editor*
 
-<img src="/images/learn/accelerate/xm-cloud/workflows6.jpg" alt="accessViewerSuperEditor"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflows6.png" title="accessViewerSuperEditor"/>
 *Access Viewer for Super Editor*
 
 A **Super Editor** has full workflow execution rights with no restrictions. When an Editor pushes an item, it will stop at Awaiting Approval, while Super Editors can push the item further.
 
-<img src="/images/learn/accelerate/xm-cloud/workflows7.jpg" alt="limitedOptionsEditor"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflows7.png" title="limitedOptionsEditor"/>
 *No further workflow options for Editor*
 
-<img src="/images/learn/accelerate/xm-cloud/workflows8.jpg" alt="extendedOptionsSuperEditor"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflows8.png" title="extendedOptionsSuperEditor"/>
 *Further workflow options for Super Editor*
 
 It’s also advised not to assign the Administrator role to content editors, as administrators can override workflow states and interfere with normal operation.
@@ -129,5 +129,3 @@ You can now trigger sending emails or notifications via webhooks when an item re
 
 3. The webhook sends a `POST` request to the specified URL.
 4. Configure the URL and authorization details for your endpoint.
-
-```
