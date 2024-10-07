@@ -190,6 +190,10 @@
         {
           "title": "Sitemap",
           "path": "sitemap"
+        },
+		{
+          "title": "Localization",
+          "path": "localization"
         }
       ]
     },
