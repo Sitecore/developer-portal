@@ -161,6 +161,10 @@
             {
               "title": "Wildcard Pages",
               "path": "wildcard-pages"
+            },
+             {
+              "title": "Workflows",
+              "path": "workflow"
             }
           ]
         },
