@@ -75,10 +75,6 @@
               "title": "Content Audit",
               "path": "content-audit"
             },
-            {
-              "title": "Workflows",
-              "path": "workflow"
-            },
           ]
         },
         {
@@ -172,7 +168,11 @@
             {
               "title": "Getting Component Specific Data",
               "path": "getting-component-specific-data"
-            }
+            },
+              {
+              "title": "Custom Editing UX for 3rd Party Integrations",
+              "path": "/custom-editing-ux-3rd-party-integrations"
+            },
           ]
         },
         {
