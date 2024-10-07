@@ -1,237 +1,241 @@
 {
-  "title": "Sitecore Accelerate for Partners",
   "description": "Tips for teams working on XM Cloud projects from developers in the field",
   "heading": false,
   "path": "/learn/accelerate/xm-cloud",
-  "showRootAsSections": true,
   "routes": [
     {
-      "title": "Pre-development",
-      "path": "pre-development",
-      "ignoreLink": true,
       "children": [
         {
-          "title": "Project Planning",
+          "children": [
+            {
+              "path": "preparing-for-an-xm-cloud-project",
+              "title": "Preparing for an XM Cloud Project"
+            },
+            {
+              "path": "project-estimation",
+              "title": "Project Estimation"
+            }
+          ],
           "path": "project-planning",
+          "title": "Project Planning"
+        },
+        {
+          "path": "discovery",
+          "title": "Discovery"
+        },
+        {
           "children": [
             {
-              "title": "Preparing for an XM Cloud Project",
-              "path": "preparing-for-an-xm-cloud-project"
+              "path": "branching-strategy",
+              "title": "Branching Strategy"
             },
             {
-              "title": "Project Estimation",
-              "path": "project-estimation"
+              "path": "component-design-best-practices",
+              "title": "Components Design Best Practices"
+            },
+            {
+              "path": "dev-workflow-codespaces",
+              "title": "Development Workflow: Github Codespaces"
+            },
+            {
+              "path": "nextjs-azure-app-services",
+              "title": "Hosting Next.js on Azure App Services"
+            },
+            {
+              "path": "nextjs-app-router-preparation",
+              "title": "Next.js App Router Preparation"
             }
-          ]
-        },
-        {
-          "title": "Discovery",
-          "path": "discovery"
-        },
-        {
-          "title": "Developer Experience",
-          "path": "developer-experience",
+          ],
           "ignoreLink": true,
-          "children": [
-            {
-              "title": "Branching Strategy",
-              "path": "branching-strategy"
-            },
-            {
-              "title": "Components Design Best Practices",
-              "path": "component-design-best-practices"
-            },
-            {
-              "title": "Development Workflow: Github Codespaces",
-              "path": "dev-workflow-codespaces"
-            },
-            {
-              "title": "Hosting Next.js on Azure App Services",
-              "path": "nextjs-azure-app-services"
-            },
-            {
-              "title": "Next.js App Router Preparation",
-              "path": "nextjs-app-router-preparation"
-            }
-          ]
+          "path": "developer-experience",
+          "title": "Developer Experience"
         },
         {
-          "title": "Security",
+          "children": [
+            {
+              "path": "head-application-security",
+              "title": "Head Application Security"
+            }
+          ],
+          "ignoreLink": true,
           "path": "security",
-          "ignoreLink": true,
-          "children": [
-            {
-              "title": "Head Application Security",
-              "path": "head-application-security"
-            }
-          ]
+          "title": "Security"
         },
         {
-          "title": "Information Architecture",
+          "children": [
+            {
+              "path": "content-audit",
+              "title": "Content Audit"
+            },
+            {
+              "path": "publishing-to-edge",
+              "title": "Publishing to Edge"
+            }
+          ],
+          "ignoreLink": true,
           "path": "information-architecture",
-          "ignoreLink": true,
-          "children": [
-            {
-              "title": "Content Audit",
-              "path": "content-audit"
-            }
-          ]
+          "title": "Information Architecture"
         },
         {
-          "title": "Project Architecture",
+          "children": [
+            {
+              "path": "layout-routing",
+              "title": "Layout Routing"
+            },
+            {
+              "path": "multisite",
+              "title": "Multisite"
+            },
+            {
+              "path": "rate-limits-and-caching",
+              "title": "Rate Limits and Caching"
+            }
+          ],
+          "ignoreLink": true,
           "path": "project-architecture",
-          "ignoreLink": true,
-          "children": [
-            {
-              "title": "Layout Routing",
-              "path": "layout-routing"
-            },
-            {
-              "title": "Multisite",
-              "path": "multisite"
-            },
-            {
-              "title": "Rate Limits and Caching",
-              "path": "rate-limits-and-caching"
-            }
-          ]
+          "title": "Project Architecture"
         },
         {
-          "title": "Sprint Zero",
+          "children": [
+            {
+              "path": "project-solution-setup",
+              "title": "Project Solution Setup"
+            },
+            {
+              "path": "creating-a-site",
+              "title": "Creating a Site"
+            },
+            {
+              "path": "setup-content-serialization",
+              "title": "Setup Content Serialization"
+            },
+            {
+              "path": "devops",
+              "title": "DevOps"
+            }
+          ],
+          "ignoreLink": true,
           "path": "sprint-zero",
-          "ignoreLink": true,
-          "children": [
-            {
-              "title": "Project Solution Setup",
-              "path": "project-solution-setup"
-            },
-            {
-              "title": "Creating a Site",
-              "path": "creating-a-site"
-            },
-            {
-              "title": "Setup Content Serialization",
-              "path": "setup-content-serialization"
-            },
-            {
-              "title": "DevOps",
-              "path": "devops"
-            }
-          ]
+          "title": "Sprint Zero"
         }
-      ]
+      ],
+      "ignoreLink": true,
+      "path": "pre-development",
+      "title": "Pre-development"
     },
     {
-      "title": "Implementation",
-      "path": "implementation",
-      "ignoreLink": true,
       "children": [
         {
-          "title": "Developer Experience",
+          "children": [
+            {
+              "path": "creating-new-components",
+              "title": "Creating New Components"
+            },
+            {
+              "path": "creating-branch-templates",
+              "title": "Creating Branch Templates"
+            },
+            {
+              "path": "troubleshooting-docker",
+              "title": "Troubleshooting Local Dev Container Env"
+            },
+            {
+              "path": "creating-a-component-gallery",
+              "title": "Creating a Component Gallery"
+            }
+          ],
+          "ignoreLink": true,
           "path": "developer-experience",
-          "ignoreLink": true,
-          "children": [
-            {
-              "title": "Creating New Components",
-              "path": "creating-new-components"
-            },
-            {
-              "title": "Creating Branch Templates",
-              "path": "creating-branch-templates"
-            },
-            {
-              "title": "Troubleshooting Local Dev Container Env",
-              "path": "troubleshooting-docker"
-            },
-            {
-              "title": "Creating a Component Gallery",
-              "path": "creating-a-component-gallery"
-            }
-          ]
+          "title": "Developer Experience"
         },
         {
-          "title": "Information Architecture",
+          "children": [
+            {
+              "path": "wildcard-pages",
+              "title": "Wildcard Pages"
+            }
+          ],
+          "ignoreLink": true,
           "path": "information-architecture",
-          "ignoreLink": true,
-          "children": [
-            {
-              "title": "Wildcard Pages",
-              "path": "wildcard-pages"
-            }
-          ]
+          "title": "Information Architecture"
         },
         {
-          "title": "External Data Integration",
+          "children": [
+            {
+              "path": "getting-component-specific-data",
+              "title": "Getting Component Specific Data"
+            }
+          ],
+          "ignoreLink": true,
           "path": "external-data-integration",
-          "ignoreLink": true,
-          "children": [
-            {
-              "title": "Getting Component Specific Data",
-              "path": "getting-component-specific-data"
-            }
-          ]
+          "title": "External Data Integration"
         },
         {
-          "title": "Redirect",
-          "path": "redirect"
+          "path": "redirect",
+          "title": "Redirect"
         },
         {
-          "title": "Search",
-          "path": "search"
+          "path": "search",
+          "title": "Search"
         },
         {
-          "title": "Sitemap",
-          "path": "sitemap"
+          "path": "sitemap",
+          "title": "Sitemap"
         }
-      ]
+      ],
+      "ignoreLink": true,
+      "path": "implementation",
+      "title": "Implementation"
     },
     {
-      "title": "Final Steps",
+      "children": [
+        {
+          "path": "go-live-checklist",
+          "title": "Go-Live Checklist"
+        }
+      ],
+      "ignoreLink": true,
       "path": "final-steps",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Go-Live Checklist",
-          "path": "go-live-checklist"
-        }
-      ]
+      "title": "Final Steps"
     },
     {
-      "title": "Appendix I",
+      "children": [
+        {
+          "path": "xm-cloud-glossary",
+          "title": "XM Cloud Glossary"
+        }
+      ],
+      "ignoreLink": true,
       "path": "appendix-i",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "XM Cloud Glossary",
-          "path": "xm-cloud-glossary"
-        }
-      ]
+      "title": "Appendix I"
     },
     {
-      "title": "Appendix II",
-      "path": "appendix-ii",
-      "ignoreLink": true,
       "children": [
         {
-          "title": "Example Code",
-          "path": "example-code",
-          "ignoreLink": true,
           "children": [
             {
-              "title": "Exported components example",
-              "path": "exported-components-example"
+              "path": "exported-components-example",
+              "title": "Exported components example"
             },
             {
-              "title": "template.module.json",
-              "path": "template-module-json"
+              "path": "template-module-json",
+              "title": "template.module.json"
             },
             {
-              "title": "xmcloud.build.json",
-              "path": "xmcloud-build-json"
+              "path": "xmcloud-build-json",
+              "title": "xmcloud.build.json"
             }
-          ]
+          ],
+          "ignoreLink": true,
+          "path": "example-code",
+          "title": "Example Code"
         }
-      ]
+      ],
+      "ignoreLink": true,
+      "path": "appendix-ii",
+      "title": "Appendix II"
     }
-  ]
+  ],
+  "showRootAsSections": true,
+  "title": "Sitecore Accelerate for Partners"
 }

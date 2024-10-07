@@ -2,7 +2,7 @@
 title: 'Go-Live Checklist'
 description: 'Checklist and considerations before taking XM Cloud and your front-end application to production.'
 area: ['accelerate']
-lastUpdated: '2024-05-02'
+lastUpdated: '2024-10-07'
 ---
 
 ## Problem
@@ -15,7 +15,7 @@ A customer is about to launch XM Cloud and their front-end "head" application to
 
 #### Published Content
 
-Ensure that all of your content is published to Experience Edge. Review the [Publishing to Edge recipe](../pre-development/project-architecture/publishing-to-edge) for more guidance. You should review your Incremental Static Regeneration (ISR) settings in your front-end application as part of the publishing process. This will determine the delay between publishing and when the new content is available to users.
+Ensure that all of your content is published to Experience Edge. Review the [Publishing to Edge recipe](../pre-development/information-architecture/publishing-to-edge) for more guidance. You should review your Incremental Static Regeneration (ISR) settings in your front-end application as part of the publishing process. This will determine the delay between publishing and when the new content is available to users.
 
 #### Security
 
@@ -73,6 +73,10 @@ Check the [Front End Checklist](https://frontendchecklist.io/) to ensure your fr
 
 - Performance Tuning (coming soon)
 - Sitemap (coming soon)
+<Row columns={2}>
+  <Link title="Publishing to Edge" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />
+
+</Row>
 
 ## Related Documentation
 
