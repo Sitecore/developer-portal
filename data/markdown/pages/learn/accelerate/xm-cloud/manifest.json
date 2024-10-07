@@ -46,6 +46,10 @@
               "path": "dev-workflow-codespaces"
             },
             {
+              "title": "Hosting the Web Application",
+              "path": "hosting-web-application"
+            },
+            {
               "title": "Hosting Next.js on Azure App Services",
               "path": "nextjs-azure-app-services"
             },
