@@ -1,3 +1,12 @@
+---
+title: 'Workflows'
+description: 'Learn about Workflows in XM Cloud'
+area: ['accelerate']
+hasSubPageNav: false
+hasInPageNav: true
+lastUpdated: '2024-10-04'
+---
+
 # Problem
 
 Sitecore comes with a sample workflow that should not be used as an actual configuration but as an example of a simple workflow. Workflow helps customers prevent unplanned content from making it to their website without the proper approvals. It also helps maintain consistent quality across all content. Each step in the editing process—such as fact-checking, style alignment, tone consistency, and further reviews—ensures that the content meets specific standards.
