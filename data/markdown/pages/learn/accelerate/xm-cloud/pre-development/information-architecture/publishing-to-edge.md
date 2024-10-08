@@ -4,7 +4,7 @@ description: 'Recipe to improve the publishing experience on Experience Edge'
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']
-lastUpdated: '2024-10-07'
+lastUpdated: '2024-10-08'
 ---
 
 ## Problem
@@ -118,13 +118,13 @@ A good compromise between smart and full publishing is the incremental option. *
 
 Incremental Publish is only available at site level, for this reason, it might be worth defining the **Web Content Publisher** role that is responsible for the publication of the site and subsequent rollouts. This role, in agreement with marketers, will define the publication windows based on planned campaigns and updates. Using the incremental approach in a recurring way, updates will be linear and stress the whole system less. As already mentioned, to be effective, the contents must be managed by a publishing workflow, this to avoid incomplete content being inadvertently made public.
 
-### Contents Resolvers
+### Custom Contents Resolvers
 
 Contents Resolvers are used with the Sitecore Layout Service to provide more complex data beyond the serialization of a component data source. A Contents Resolver gets executed when the page (layout) is rendered (in the GraphQL response it is the “rendered” property). This occurs in different contexts: in Experience Editor, in the Experience Preview. In these instances, the context is known because XM Cloud parses the request.
 
 This is not possible in Experience Edge - Edge is able to execute “custom” code, so no Contents Resolvers can run on it. So it gets executed at publishing time when the runtime context (eg. from visitor’s browser interactions) is not known.
 
-Due to this, Content Resolvers are not supported in XM Cloud - XM Cloud resolvers such as the Navigation Contents Resolver, that should be utilized but custom Content Resolvers should not be created. If you are migrating from XM/XP, review these resolves and plan where best to transfer.
+Due to this, Custom Content Resolvers are not supported in XM Cloud - XM Cloud resolvers such as the Navigation Contents Resolver, that should be utilized but custom Content Resolvers should not be created. If you are migrating from XM/XP, review these resolves and plan where best to transfer.
 
 ### Integrated GraphQL
 
