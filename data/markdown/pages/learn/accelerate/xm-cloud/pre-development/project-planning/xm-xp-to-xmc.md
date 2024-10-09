@@ -13,7 +13,7 @@ We have a client, currently on XM or XP, they have already selected XM Cloud as 
 
 The best path for migration to XM Cloud will depend on the client's requirements. This recipe will propose a high-level migration path that can be tailored to your specific client.
 
-Keep in mind that migrating to XM Cloud will require a clear understanding of the [Concepts of moving to SaaS](https://sitecore.atlassian.net/wiki/spaces/FM1/pages/5130551318).
+Keep in mind that migrating to XM Cloud will require a clear understanding of the [Concepts of moving to SaaS](/learn/accelerate/xm-cloud/pre-development/discovery/moving-to-saas).
 
 There are two approaches for Migration -
 
@@ -105,7 +105,7 @@ For instance, certain features in version 10.4+ may facilitate migration, but th
 
 <Row columns={2}>
 <Link title="Project Estimation " link="/learn/accelerate/xm-cloud/pre-development/project-planning/project-estimation" />
-<Link title="Moving to SaaS - Concepts You Need to Know " link="/learn/accelerate/xm-cloud/pre-development/discovery" />
+<Link title="Moving to SaaS - Concepts You Need to Know " link="/learn/accelerate/xm-cloud/pre-development/discovery/moving-to-saas" />
 </Row>
 
 ## Related Documentation

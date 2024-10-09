@@ -30,7 +30,14 @@
         },
         {
           "title": "Discovery",
-          "path": "discovery"
+          "path": "discovery",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Moving to SaaS - Concepts You Need to Know",
+              "path": "moving-to-saas"
+            }
+          ]
         },
         {
           "title": "Developer Experience",
