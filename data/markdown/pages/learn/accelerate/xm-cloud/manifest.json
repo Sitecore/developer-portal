@@ -21,6 +21,10 @@
             {
               "title": "Project Estimation",
               "path": "project-estimation"
+            },
+            {
+              "title": "XM or XP to XM Cloud Migration Path",
+              "path": "xm-xp-to-xmc"
             }
           ]
         },
