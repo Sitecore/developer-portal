@@ -24,6 +24,7 @@ Sitecore Headless Rendering 22.0.0 includes:
 | Edge Connector | Added the `EntityBatch` setting to specify the batch size.      | 582256  |
 | Edge Connector | Added `IItemSiteResolver.ResolveSite(Item)` to create SiteInfo. | 585528  |
 | Edge Connector | Improved handling of 520 and 524 errors.                        | 589629  |
+| Edge Connector | Added site logging of multiple filtered items cache created messages, when publishing to Edge. | 619734  |
 
 ## Resolved issues
 
