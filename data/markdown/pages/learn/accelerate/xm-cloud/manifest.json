@@ -82,11 +82,7 @@
             {
               "title": "Content Audit",
               "path": "content-audit"
-            },
-            {
-              "title": "Workflows",
-              "path": "workflow"
-            },
+            }
           ]
         },
         {
