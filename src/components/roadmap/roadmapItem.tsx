@@ -1,6 +1,6 @@
 import { CustomField, Issue } from '@/src/lib/interfaces/jira';
 import { getBadgeColor } from '@/src/lib/jira';
-import { Badge, Button, Card, CardBody, CardHeader, Divider, Heading, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure, Wrap } from '@chakra-ui/react';
+import { Badge, Button, Card, CardBody, CardHeader, Divider, Heading, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure, Wrap } from '@chakra-ui/react';
 import { getStatusColor } from '../../lib/jira';
 
 interface RoadmapItemProps {
@@ -35,7 +35,7 @@ export const RoadmapItem = ({ issue }: RoadmapItemProps) => {
           </Stack>
         </CardBody>
       </Card>
-      <Modal size={'md'} onClose={onClose} isOpen={isOpen} isCentered>
+      <Modal size={'xl'} onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>{issue.fields.summary}</ModalHeader>
@@ -43,6 +43,8 @@ export const RoadmapItem = ({ issue }: RoadmapItemProps) => {
           <ModalBody>
             <Text>{issue.fields.customfield_15555}</Text>
             <Divider my={4} />
+
+            {issue.fields.attachment.length > 0 && <Image src={`${issue.fields.attachment[0].content}`} alt={issue.fields.attachment[0].filename || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />}
 
             <Stack>
               <Wrap>

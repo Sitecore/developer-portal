@@ -23,11 +23,22 @@ export interface CustomField {
   id: string;
 }
 
+export interface Attachment {
+  self: string;
+  id: string;
+  filename: string;
+  mimeType: string;
+  content: string;
+  thumbnail: string;
+}
+
 export interface Fields {
   summary: string;
   customfield_15180: CustomField; // Roadmap Phase
   customfield_15258?: CustomField[]; // Product
   customfield_15555?: string; // Speaker notes
+  customfield_15423?: string; // Marketing title
+  attachment: Attachment[];
   status: Status;
 }
 

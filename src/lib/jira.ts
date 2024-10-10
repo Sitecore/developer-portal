@@ -5,6 +5,9 @@ const jiraBaseUrl = 'https://sitecore.atlassian.net/rest/api/3/search';
 const JIRA_USERNAME = process.env.JIRA_USERNAME;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 
+// Single request URL
+// https://sitecore.atlassian.net/rest/api/3/search?jql=project=SMAP%20AND%20key=%22SMAP-608%22&fields=*all&expand=names
+
 export enum Phase {
   NOW = 'Now',
   NEXT = 'Next',
@@ -28,7 +31,7 @@ async function fetchData<T>(url: string): Promise<T> {
 }
 
 async function getRoadmapItems(fieldValue: string): Promise<JiraResponse> {
-  const roadmapAPI = `${jiraBaseUrl}?jql=project=SMAP%20AND%20cf[15180]=%22${fieldValue}%22&fields=summary,status,customfield_15180,customfield_15258&expand=names`;
+  const roadmapAPI = `${jiraBaseUrl}?jql=project=SMAP%20AND%20cf[15180]=%22${fieldValue}%22&fields=summary,status,customfield_15180,customfield_15258,attachment&expand=names`;
 
   const response = await fetchData<JiraResponse>(roadmapAPI);
   return response;
@@ -36,7 +39,7 @@ async function getRoadmapItems(fieldValue: string): Promise<JiraResponse> {
 
 export async function GetJiraResponse(): Promise<JiraResponse> {
   // Get all issues from Jira where external roadmap is set to 1 (true)
-  const roadmapAPI = `${jiraBaseUrl}?jql=project=SMAP%20AND%20cf[15395]=%221%22&fields=summary,status,customfield_15180,customfield_15258,customfield_15555&expand=names&maxResults=100`;
+  const roadmapAPI = `${jiraBaseUrl}?jql=project=SMAP%20AND%20cf[15395]=%221%22&fields=summary,status,customfield_15180,customfield_15258,customfield_15555,attachment&expand=names&maxResults=100`;
 
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
@@ -63,6 +66,7 @@ export async function getRoadmap(): Promise<RoadmapInformation> {
     items: jiraResponse.issues,
     products: products,
   };
+
   return roadmapInformation;
 }
 
