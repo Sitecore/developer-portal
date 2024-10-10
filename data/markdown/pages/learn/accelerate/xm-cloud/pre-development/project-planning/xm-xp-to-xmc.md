@@ -1,6 +1,6 @@
 ---
-title: 'XM or XP to XM Cloud Migration Path'
-description: 'Learn more about how to develop for XM Cloud'
+title: 'Transition from XM/XP to XM Cloud'
+description: 'Learn more about how to transition to XM Cloud'
 area: ['accelerate']
 lastUpdated: '2024-10-08'
 ---
