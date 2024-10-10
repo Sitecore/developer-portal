@@ -1,13 +1,13 @@
-import { CustomField, Issue } from '@/src/lib/interfaces/jira';
 import { getBadgeColor } from '@/src/lib/jira';
+import { IRoadmapItem, RoadmapProduct } from '@/src/lib/roadmap';
 import { Badge, Button, Card, CardBody, CardHeader, Divider, Heading, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure, Wrap } from '@chakra-ui/react';
 import { getStatusColor } from '../../lib/jira';
 
 interface RoadmapItemProps {
-  issue: Issue;
+  item: IRoadmapItem;
 }
 
-export const RoadmapItem = ({ issue }: RoadmapItemProps) => {
+export const RoadmapItem = ({ item }: RoadmapItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleClick = () => {
@@ -18,46 +18,46 @@ export const RoadmapItem = ({ issue }: RoadmapItemProps) => {
       <Card variant={'outlineRaised'} size={'md'}>
         <CardHeader>
           <Heading size="sm" onClick={handleClick} cursor={'pointer'}>
-            {issue.fields.summary}
+            {item.title}
           </Heading>
         </CardHeader>
         <CardBody>
           <Wrap mb={4}>
-            {issue.fields.customfield_15258?.map((label: CustomField) => (
+            {item.product?.map((label: RoadmapProduct) => (
               <Badge key={label.id} colorScheme={'gray'}>
-                {label.value}
+                {label.name}
               </Badge>
             ))}
           </Wrap>
           <Stack direction="row">
-            <Badge colorScheme={getBadgeColor(issue.fields.customfield_15180.value)}>{issue.fields.customfield_15180.value}</Badge>
-            <Badge colorScheme={getStatusColor(issue.fields.status.name)}>{issue.fields.status.name}</Badge>
+            <Badge colorScheme={getBadgeColor(item.roadmapPhase)}>{item.roadmapPhase}</Badge>
+            <Badge colorScheme={getStatusColor(item.status)}>{item.status}</Badge>
           </Stack>
         </CardBody>
       </Card>
       <Modal size={'xl'} onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{issue.fields.summary}</ModalHeader>
+          <ModalHeader>{item.description}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>{issue.fields.customfield_15555}</Text>
+            <Text>{item.title}</Text>
             <Divider my={4} />
 
-            {issue.fields.attachment.length > 0 && <Image src={`${issue.fields.attachment[0].content}`} alt={issue.fields.attachment[0].filename || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />}
+            {item.attachments.length > 0 && <Image src={`${item.attachments[0].content}`} alt={item.attachments[0].filename || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />}
 
             <Stack>
               <Wrap>
-                <Heading variant={'section'}>Roadmap Phase:</Heading> <Badge colorScheme={getBadgeColor(issue.fields.customfield_15180.value)}>{issue.fields.customfield_15180.value}</Badge>
+                <Heading variant={'section'}>Roadmap Phase:</Heading> <Badge colorScheme={getBadgeColor(item.roadmapPhase)}>{item.roadmapPhase}</Badge>
               </Wrap>
               <Wrap>
-                <Heading variant={'section'}>Status:</Heading> <Badge colorScheme={getStatusColor(issue.fields.status.name)}>{issue.fields.status.name}</Badge>
+                <Heading variant={'section'}>Status:</Heading> <Badge colorScheme={getStatusColor(item.status)}>{item.status}</Badge>
               </Wrap>
               <Wrap>
                 <Heading variant={'section'}>Product(s):</Heading>
-                {issue.fields.customfield_15258?.map((label: CustomField) => (
+                {item.product?.map((label: RoadmapProduct) => (
                   <Badge key={label.id} colorScheme={'gray'}>
-                    {label.value}
+                    {label.name}
                   </Badge>
                 ))}
               </Wrap>

@@ -1,4 +1,5 @@
 import { Option } from '@/src/components/ui/dropdown';
+import { IRoadmapItem } from '../roadmap';
 
 export interface StatusCategory {
   self: string;
@@ -67,6 +68,6 @@ export interface JiraResponse {
 }
 
 export interface RoadmapInformation {
-  items: Issue[];
+  items: IRoadmapItem[];
   products: Option[];
 }

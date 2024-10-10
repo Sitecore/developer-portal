@@ -16,7 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<RoadmapInformat
 
     if (products.length > 0) {
       response.items = response.items.filter((item) => {
-        return item.fields.customfield_15258?.some((product) => products.includes(product.id));
+        return item.product.some((product) => products.includes(product.id));
       });
     }
     return res.json(response);

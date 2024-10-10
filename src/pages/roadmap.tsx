@@ -65,10 +65,10 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, fallback, products }) => 
             <Select instanceId="productSelector" isMulti closeMenuOnSelect={false} selectedOptionStyle="check" options={products} onChange={handleChange} colorScheme="primary" selectedOptionColorScheme="primary" placeholder="Filter by product(s)" />
 
             <SimpleGrid minChildWidth="120px" spacing="5px">
-              <RoadmapPhase issues={data} title="Done" color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
-              <RoadmapPhase issues={data} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
-              <RoadmapPhase issues={data} title="Next (next two quarter)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
-              <RoadmapPhase issues={data} title="Future (9+ months)" color="neutral-bg-active" phase={Phase.FUTURE} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Done" color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Next (next two quarter)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Future (9+ months)" color="neutral-bg-active" phase={Phase.FUTURE} isLoading={isLoading} />
             </SimpleGrid>
           </CenteredContent>
         </VerticalGroup>
