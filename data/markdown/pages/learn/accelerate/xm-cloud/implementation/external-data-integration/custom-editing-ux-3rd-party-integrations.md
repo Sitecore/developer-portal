@@ -11,7 +11,7 @@ lastUpdated: '2024-10-09'
 
 My client has content or data in a 3rd Party system like products in a PIM or Commerce System, assets in a DAM, or anything else from any system. I need to give the editors a way to choose and use such data visually via Pages Editor with WYSIWYG and inline editing capabilities.
 
-💡 **Solution**  
+## Solution
 Within this chapter we will not only cover how to properly offer 3rd Party integrations, but also explicitly highlight ways, how we should not do it anymore in a modern composable XM Cloud architecture.
 
 ❌ **DON’T**  
@@ -26,7 +26,7 @@ One simple way to fill such Id or link is to let the editor copy & paste it from
 
 Pages editor is a SaaS application, which is currently not extendable with custom code as Experience Editor was.
 
----
+### Create a editing component
 
 The table below shows a step by step guide on how to create a custom react editing component, which allows the editors to visually see the 3rd Party data and choose 1 or more of them. The result will be automatically saved back to XM Cloud Datasource item.
 
@@ -42,9 +42,7 @@ To see changes immediately while editing in real-time use either one of these op
 - 1. Use the new reload button in Pages, which reloads the canvas without reloading the entire Pages application.  <Image src="/images/learn/accelerate/xm-cloud/3rdParty9.png" title="Code Splitting Import"/>
 - 2. Or Save the ID or public link of the entity in a special state variable and pass it to the child component to immediately react to changes. New state variable on the parent to store the ID or public link:  <Image src="/images/learn/accelerate/xm-cloud/3rdParty10.png" title="Code Splitting Import"/> Pass through the set functionality to the child component:  <Image src="/images/learn/accelerate/xm-cloud/3rdParty11.png" title="Code Splitting Import"/> The child updates that state on save, leading to a partial reload of the component to reflect the latest changes:  <Image src="/images/learn/accelerate/xm-cloud/3rdParty12.png" title="Code Splitting Import"/>
 
----
-
-### Additional Information
+## Additional Information
 
 In case you want to keep the head application free of editing code, you can extend the webpack build to only include the new editing code for your editing. That way, your website code stays clean, secrets stay hidden, and the webpack bundles remain as small as possible.
 
