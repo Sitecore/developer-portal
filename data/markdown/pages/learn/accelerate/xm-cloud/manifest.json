@@ -89,6 +89,10 @@
             {
               "title": "Content Audit",
               "path": "content-audit"
+            },
+            {
+              "path": "publishing-to-edge",
+              "title": "Publishing to Edge"
             }
           ]
         },
