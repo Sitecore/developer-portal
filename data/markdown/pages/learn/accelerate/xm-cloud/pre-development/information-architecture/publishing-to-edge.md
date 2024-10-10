@@ -137,7 +137,7 @@ This process is different in the [new Connector architecture](https://developers
 ```
 query MyComponentQuery($datasource: String!, $contextItem: String!, $language: String!) {
   ...omissis...
-  extraFields: item(path: "/sitecore/content/<coll>/<site>/Home/About/Data/Text 1", language: "en") {
+  extraFields: item(path: "/sitecore/content/mycoll/mysite/Home/About/Data/Text 1", language: "en") {
     name
     mFields: fields {
       name
@@ -147,7 +147,7 @@ query MyComponentQuery($datasource: String!, $contextItem: String!, $language: S
 }
 ```
 
-It is required to already have published - “/sitecore/content/<coll>/<site>/Home/About/Data/Text 1” . The connector is not aware about the relationships, so it cannot publish integrated GraphQL related items at publishing time.
+It is required to already have published - “/sitecore/content/mycoll/mysite/Home/About/Data/Text 1” . The connector is not aware about the relationships, so it cannot publish integrated GraphQL related items at publishing time.
 
 The Integrated GraphQL' processing time depends on the query - if the query includes several data items, of course, it impacts on the publishing time; for these reasons it is recommended to use integrated GraphQL carefully and if the use case requires.
 
