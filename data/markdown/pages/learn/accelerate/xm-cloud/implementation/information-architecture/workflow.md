@@ -129,3 +129,14 @@ You can now trigger sending emails or notifications via webhooks when an item re
 
 3. The webhook sends a `POST` request to the specified URL.
 4. Configure the URL and authorization details for your endpoint.
+
+## Related Recipes
+
+## Related Documentation
+
+<Row columns={2}>
+  <Link title="Workflow" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow.html" />
+  <Link title="Workflow Cookbook" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow-cookbook.html" />
+  <Link title="Workflow Webhooks" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--using-an-authorization-item.html" />
+  <Link title="Assign a data source workflow action in SXA " link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/assign-a-data-source-workflow-action-in-sxa.html" />
+</Row>
