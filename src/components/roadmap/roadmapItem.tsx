@@ -1,7 +1,8 @@
 import { getBadgeColor } from '@/src/lib/jira';
 import { IRoadmapItem, RoadmapProduct } from '@/src/lib/roadmap';
-import { Badge, Button, Card, CardBody, CardHeader, Divider, Heading, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure, Wrap } from '@chakra-ui/react';
+import { Badge, Button, Card, CardBody, CardHeader, Heading, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure, Wrap } from '@chakra-ui/react';
 import { getStatusColor } from '../../lib/jira';
+import Carousel from '../ui/carousel/carousel';
 
 interface RoadmapItemProps {
   item: IRoadmapItem;
@@ -9,6 +10,8 @@ interface RoadmapItemProps {
 
 export const RoadmapItem = ({ item }: RoadmapItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const images: string[] = item.attachments?.map((attachment) => attachment.content) || [];
 
   const handleClick = () => {
     onOpen();
@@ -38,21 +41,20 @@ export const RoadmapItem = ({ item }: RoadmapItemProps) => {
       <Modal size={'xl'} onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{item.description}</ModalHeader>
+          <ModalHeader>
+            <Heading size={'md'}>{item.title}</Heading>
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>{item.title}</Text>
-            <Divider my={4} />
-
-            {item.attachments.length > 0 && <Image src={`${item.attachments[0].content}`} alt={item.attachments[0].filename || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />}
-
-            <Stack>
-              <Wrap>
-                <Heading variant={'section'}>Roadmap Phase:</Heading> <Badge colorScheme={getBadgeColor(item.roadmapPhase)}>{item.roadmapPhase}</Badge>
-              </Wrap>
-              <Wrap>
-                <Heading variant={'section'}>Status:</Heading> <Badge colorScheme={getStatusColor(item.status)}>{item.status}</Badge>
-              </Wrap>
+            <Stack p={4} border="1px solid" borderRadius={'md'} borderColor={'chakra-border-color'}>
+              <HStack>
+                <Wrap>
+                  <Heading variant={'section'}>Roadmap Phase:</Heading> <Badge colorScheme={getBadgeColor(item.roadmapPhase)}>{item.roadmapPhase}</Badge>
+                </Wrap>
+                <Wrap>
+                  <Heading variant={'section'}>Status:</Heading> <Badge colorScheme={getStatusColor(item.status)}>{item.status}</Badge>
+                </Wrap>
+              </HStack>
               <Wrap>
                 <Heading variant={'section'}>Product(s):</Heading>
                 {item.product?.map((label: RoadmapProduct) => (
@@ -62,6 +64,10 @@ export const RoadmapItem = ({ item }: RoadmapItemProps) => {
                 ))}
               </Wrap>
             </Stack>
+
+            <Text>{item.description}</Text>
+
+            {item.attachments.length > 0 && <Carousel images={images} />}
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
