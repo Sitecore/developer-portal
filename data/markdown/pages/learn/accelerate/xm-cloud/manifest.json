@@ -36,6 +36,10 @@
             {
               "title": "Moving to SaaS - Concepts You Need to Know",
               "path": "moving-to-saas"
+            },
+            {
+              "title": "Requirements Gathering",
+              "path": "requirements-gathering"
             }
           ]
         },
@@ -165,6 +169,10 @@
             {
               "title": "Creating a Component Gallery",
               "path": "creating-a-component-gallery"
+            },
+            {
+              "title": "Using Placeholders",
+              "path": "using-placeholders"
             }
           ]
         },
