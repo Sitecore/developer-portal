@@ -130,8 +130,6 @@ You can now trigger sending emails or notifications via webhooks when an item re
 3. The webhook sends a `POST` request to the specified URL.
 4. Configure the URL and authorization details for your endpoint.
 
-## Related Recipes
-
 ## Related Documentation
 
 <Row columns={2}>
