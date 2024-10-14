@@ -52,24 +52,22 @@ The approach here is called code splitting. With code splitting, you can tell th
 1. **Remove the actual import** of the component:  
    <Image src="/images/learn/accelerate/xm-cloud/3rdParty13.png" title="Code Splitting Import"/>
 2. **Create a new function** to load the component dynamically via the `dynamic` keyword:  
-  <Image src="/images/learn/accelerate/xm-cloud/3rdParty14.png" title="Dynamic Load code"/>
+   <Image src="/images/learn/accelerate/xm-cloud/3rdParty14.png" title="Dynamic Load code"/>
 3. **Add a condition** in the code to load the component under specific circumstances (e.g., specific environment variable or edit mode):  
-  <Image src="/images/learn/accelerate/xm-cloud/3rdParty15.png" title="Special Load condition"/>
+   <Image src="/images/learn/accelerate/xm-cloud/3rdParty15.png" title="Special Load condition"/>
 4. **Replace the actual import** with the conditional dynamic import function:  
    <Image src="/images/learn/accelerate/xm-cloud/3rdParty16.png" title="Load of dynamic component"/>
-
-## Discussion
-
-<Row columns={2}>
-  <Link title="DAM Integration Example" link="[https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow.html](https://hachweb.wordpress.com/2024/04/30/sitecore-xm-cloud-you-need-a-3rd-party-dam-integration-no-problem/)" />
-  <Link title="Commerce Integration Example" link="[https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow-cookbook.html](https://hachweb.wordpress.com/2024/05/05/sitecore-xm-cloud-now-you-also-need-a-3rd-party-product-data-integration-sure-why-not/)" />
-</Row>
-
-## Related Recipes
 
 ## Related Documentation
 
 <Row columns={2}>
   <Link title="Component Level Data Fetching" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/component-level-data-fetching-in-jss-next-js-apps.html" />
   <Link title="Code Splitting" link="https://legacy.reactjs.org/docs/code-splitting.html" />
+</Row>
+
+## Related Learning Materials
+
+<Row columns={2}>
+  <Link title="DAM Integration Example" link="https://hachweb.wordpress.com/2024/04/30/sitecore-xm-cloud-you-need-a-3rd-party-dam-integration-no-problem/" />
+  <Link title="Commerce Integration Example" link="https://hachweb.wordpress.com/2024/05/05/sitecore-xm-cloud-now-you-also-need-a-3rd-party-product-data-integration-sure-why-not/" />
 </Row>
