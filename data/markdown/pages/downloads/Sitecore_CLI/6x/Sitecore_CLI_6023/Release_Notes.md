@@ -4,7 +4,7 @@ description: ""
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_52113/Release_Notes
 ---
 
-**November 2024 – released Sitecore CLI 6.0.23**
+**October 2024 – released Sitecore CLI 6.0.23**
 
 ## Highlights
 
