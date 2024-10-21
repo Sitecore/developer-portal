@@ -1,6 +1,8 @@
 import { getBadgeColor } from '@/src/lib/jira';
 import { IRoadmapItem, RoadmapProduct } from '@/src/lib/roadmap';
-import { Badge, Button, Card, CardBody, CardHeader, Heading, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure, Wrap } from '@chakra-ui/react';
+import { slugify } from '@/src/lib/utils';
+import { Badge, Button, Card, CardBody, CardHeader, Heading, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, Tooltip, useDisclosure, Wrap } from '@chakra-ui/react';
+import Link from 'next/link';
 import { getStatusColor } from '../../lib/jira';
 import Carousel from '../ui/carousel/carousel';
 
@@ -28,7 +30,9 @@ export const RoadmapItem = ({ item }: RoadmapItemProps) => {
           <Wrap mb={4}>
             {item.product?.map((label: RoadmapProduct) => (
               <Badge key={label.id} colorScheme={'gray'}>
-                {label.name}
+                <Tooltip label={`Go to the roadmap page for ${label.name}`}>
+                  <Link href={`/roadmap/${slugify(label.name)}`}>{label.name}</Link>
+                </Tooltip>
               </Badge>
             ))}
           </Wrap>
@@ -59,7 +63,7 @@ export const RoadmapItem = ({ item }: RoadmapItemProps) => {
                 <Heading variant={'section'}>Product(s):</Heading>
                 {item.product?.map((label: RoadmapProduct) => (
                   <Badge key={label.id} colorScheme={'gray'}>
-                    {label.name}
+                    <Link href={`/roadmap/${slugify(label.name)}`}>{label.name}</Link>
                   </Badge>
                 ))}
               </Wrap>

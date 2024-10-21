@@ -64,6 +64,18 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
   return response;
 }
 
+export async function GetJiraAttachement(id: string) {
+  const imageUrl = `${jiraBaseUrl}/rest/api/3/attachment/content/${id}`;
+
+  const response = await fetch(imageUrl, {
+    headers: {
+      Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString('base64')}`,
+    },
+  });
+
+  return response;
+}
+
 export async function getRoadmap(): Promise<RoadmapInformation> {
   const jiraResponse = await GetJiraResponse();
   const products = await getProductsAsOptions(jiraResponse.issues);
