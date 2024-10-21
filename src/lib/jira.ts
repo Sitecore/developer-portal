@@ -1,8 +1,9 @@
+import axios from 'axios';
 import { Option } from '../components/ui/dropdown';
 import { CustomField, Issue, JiraResponse, RoadmapInformation } from './interfaces/jira';
 import { parseJiraIssues } from './roadmap';
 
-const jiraBaseUrl = 'https://sitecore.atlassian.net/rest/api/3/search';
+const jiraBaseUrl = 'https://sitecore.atlassian.net/rest/api/3';
 const JIRA_USERNAME = process.env.JIRA_USERNAME;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 
@@ -45,7 +46,7 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
     'attachment',
   ];
 
-  const roadmapAPI = `${jiraBaseUrl}?jql=project=SMAP%20AND%20cf[15395]=%221%22&fields=${fields.join(',')}&expand=names&maxResults=100`;
+  const roadmapAPI = `${jiraBaseUrl}/search?jql=project=SMAP%20AND%20cf[15395]=%221%22&fields=${fields.join(',')}&expand=names&maxResults=100`;
 
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
@@ -65,12 +66,19 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
 }
 
 export async function GetJiraAttachement(id: string) {
-  const imageUrl = `${jiraBaseUrl}/rest/api/3/attachment/content/${id}`;
+  const imageUrl = `${jiraBaseUrl}/attachment/content/${id}`;
 
-  const response = await fetch(imageUrl, {
+  // https://sitecore.atlassian.net/rest/api/3/search/rest/api/3/attachment/content/356018
+  //  https://sitecore.atlassian.net/rest/api/3/attachment/content/356018
+  console.log(imageUrl);
+  const response = await axios({
+    url: imageUrl,
+    method: 'get',
     headers: {
       Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString('base64')}`,
+      Accept: 'application/json',
     },
+    responseType: 'arraybuffer', // This is to handle binary data (like an image)
   });
 
   return response;

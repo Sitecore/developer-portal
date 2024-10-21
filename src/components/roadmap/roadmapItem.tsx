@@ -13,7 +13,7 @@ interface RoadmapItemProps {
 export const RoadmapItem = ({ item }: RoadmapItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const images: string[] = item.attachments?.map((attachment) => attachment.content) || [];
+  const images: string[] = item.attachments?.map((attachment) => attachment.url) || [];
 
   const handleClick = () => {
     onOpen();

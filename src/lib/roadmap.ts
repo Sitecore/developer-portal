@@ -15,10 +15,12 @@ export interface RoadmapProduct {
   id: string;
 }
 export interface RoadmapAttachment {
+  id: string;
   filename: string;
   mimeType: string;
   content: string;
   thumbnail: string;
+  url: string;
 }
 
 export function parseJiraIssues(issues: Issue[]) {
@@ -33,10 +35,12 @@ export function parseJiraIssue(issue: Issue) {
   const attachments = issue.fields.attachment
     .filter((x) => x.mimeType.includes('image'))
     .map((attachment) => ({
+      id: attachment.id,
       filename: attachment.filename,
       mimeType: attachment.mimeType,
       content: attachment.content,
       thumbnail: attachment.thumbnail != undefined ? attachment.thumbnail : null,
+      url: `/api/roadmap/image?id=${attachment.id}&mt=${attachment.mimeType}`,
     }));
   const status = issue.fields.status.name;
 
