@@ -30,12 +30,14 @@ export function parseJiraIssue(issue: Issue) {
   const product: RoadmapProduct[] = issue.fields.customfield_15258?.map((label) => ({ name: label.value, id: label.id })) || [];
   const description = issue.fields.customfield_15555; // || issue.fields.description;
   const title = issue.fields.customfield_15423 || issue.fields.summary;
-  const attachments = issue.fields.attachment.map((attachment) => ({
-    filename: attachment.filename,
-    mimeType: attachment.mimeType,
-    content: attachment.content,
-    thumbnail: attachment.thumbnail != undefined ? attachment.thumbnail : null,
-  }));
+  const attachments = issue.fields.attachment
+    .filter((x) => x.mimeType.includes('image'))
+    .map((attachment) => ({
+      filename: attachment.filename,
+      mimeType: attachment.mimeType,
+      content: attachment.content,
+      thumbnail: attachment.thumbnail != undefined ? attachment.thumbnail : null,
+    }));
   const status = issue.fields.status.name;
 
   return {

@@ -65,7 +65,7 @@ export const RoadmapItem = ({ item }: RoadmapItemProps) => {
               </Wrap>
             </Stack>
 
-            <Text>{item.description}</Text>
+            <Text py={4}>{item.description}</Text>
 
             {item.attachments.length > 0 && <Carousel images={images} />}
           </ModalBody>
