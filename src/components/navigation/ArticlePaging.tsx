@@ -1,26 +1,27 @@
 import { Button, HStack, Icon, Link } from '@chakra-ui/react';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 
-import { PageInfo, SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
+import { SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
 import { getItemUrl } from '@/src/lib/sidebarNav';
 
 import useSidebarNav from '../../hooks/useSidebarNav';
 
 export interface ArticlePagingProps {
   enabled?: boolean;
-  currentPage: PageInfo;
+  currentfileName: string;
   config: SidebarNavigationConfig;
+  currentPath: string;
 }
 
-export const ArticlePaging = ({ config, currentPage, enabled = false }: ArticlePagingProps) => {
-  const { previousItem, nextItem } = useSidebarNav(currentPage, config);
-
+export const ArticlePaging = ({ config, currentfileName, enabled = false, currentPath }: ArticlePagingProps) => {
+  const { previousItem, nextItem } = useSidebarNav(currentfileName, config, currentPath);
+  console.log(previousItem, nextItem);
   if (!enabled) {
     return null;
   }
 
   return (
-    <HStack justifyContent={'space-around'}>
+    <HStack justifyContent={'space-around'} border={'1px solid'} borderColor={'chakra-border-color'} height={20}>
       {previousItem != null && (
         <Button
           variant="ghostColorOnHover"
