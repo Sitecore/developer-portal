@@ -35,7 +35,8 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "clean": "npx shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && npx shx rm -rf node_modules && npx shx echo Done!"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -143,7 +144,7 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.16.1",
     "@vitejs/plugin-react": "^4.3.1",
-    "@vitest/coverage-v8": "^2.1.1",
+    "@vitest/coverage-v8": "^2.0.5",
     "cross-env": "^7.0.3",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^9.1.0",
@@ -159,7 +160,7 @@
     "knip": "^5.27.4",
     "lint-staged": "^15.2.7",
     "memfs": "^4.11.1",
-    "msw": "^2.4.9",
+    "msw": "^2.4.13",
     "msw-storybook-addon": "^2.0.3",
     "next-sitemap": "^4.2.3",
     "prettier": "^3.3.3",
@@ -167,7 +168,7 @@
     "storybook": "^8.3.3",
     "typescript": "^5.5.4",
     "vite-tsconfig-paths": "^5.0.1",
-    "vitest": "^2.1.1"
+    "vitest": "^2.0.5"
   },
   "msw": {
     "workerDirectory": [

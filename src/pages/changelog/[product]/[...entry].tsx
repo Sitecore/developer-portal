@@ -128,7 +128,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     {!changelogEntry.scheduled && changelogEntry.status && changelogEntry.status.identifier == 'in-progress' && (
                       <Alert colorScheme="neutral" mt={4}>
                         <AlertIcon />
-                        <AlertDescription>This functionality currently being deployed and might not be available to all customers yet</AlertDescription>
+                        <AlertDescription>This functionality currently is being deployed and might not be available to all customers yet</AlertDescription>
                       </Alert>
                     )}
                   </CardHeader>

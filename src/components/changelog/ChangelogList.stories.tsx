@@ -1,6 +1,7 @@
 import { mockedChangelogEntries } from '@/__mocks__/changelog/changelogEntry.mock';
 
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { delay, http, HttpResponse } from 'msw';
 import ChangelogList from './ChangelogList';
 
