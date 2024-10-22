@@ -23,7 +23,7 @@ type Matter = {
   content: string;
 };
 
-const getFileData = (directory: string, file: string): Matter => {
+export const getFileData = (directory: string, file: string): Matter => {
   const hasExtension = file.endsWith('.mdx') || file.endsWith('.md');
 
   let filePath = hasExtension ? path.join(directory, `${file}`) : path.join(directory, `${file}.md`);

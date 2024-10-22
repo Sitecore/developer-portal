@@ -14,7 +14,10 @@ node_modules
 
 # Testing
 coverage
-
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
 # Turbo
 .turbo
 
@@ -44,3 +47,5 @@ yarn-error.log*
 robots.txt
 sitemap*.xml
 node_modules
+
+*storybook.log

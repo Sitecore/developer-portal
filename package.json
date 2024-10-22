@@ -29,7 +29,13 @@
     "analyze": "cross-env ANALYZE=true next build",
     "generate": "graphql-codegen --config ./src/gql/codegen.ts",
     "knip": "knip",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "test": "npm run build && npm run test:unit && npm run test:e2e",
+    "test:unit": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
@@ -109,11 +115,25 @@
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",
+    "@chromatic-com/storybook": "^1.9.0",
     "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/client-preset": "^4.3.2",
     "@next/bundle-analyzer": "^14.2.5",
     "@next/eslint-plugin-next": "^14.2.5",
     "@parcel/watcher": "^2.4.1",
+    "@playwright/test": "^1.47.1",
+    "@storybook/addon-essentials": "^8.3.3",
+    "@storybook/addon-interactions": "^8.3.3",
+    "@storybook/addon-links": "^8.3.3",
+    "@storybook/addon-onboarding": "^8.3.3",
+    "@storybook/addon-themes": "^8.3.3",
+    "@storybook/blocks": "^8.3.3",
+    "@storybook/nextjs": "^8.3.3",
+    "@storybook/react": "^8.3.3",
+    "@storybook/test": "^8.3.3",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
     "@tiptap/core": "latest",
     "@types/node": "^20.16.1",
     "@types/react": "^18.3.3",
@@ -122,6 +142,8 @@
     "@types/react-syntax-highlighter": "^15.5.13",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.16.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-v8": "^2.1.1",
     "cross-env": "^7.0.3",
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^9.1.0",
@@ -130,13 +152,26 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-you-dont-need-lodash-underscore": "^6.14.0",
     "husky": "^9.1.0",
+    "jsdom": "^25.0.0",
     "knip": "^5.27.4",
     "lint-staged": "^15.2.7",
+    "memfs": "^4.11.1",
+    "msw": "^2.4.9",
+    "msw-storybook-addon": "^2.0.3",
     "next-sitemap": "^4.2.3",
     "prettier": "^3.3.3",
     "react-gtm-module": "^2.0.11",
-    "typescript": "^5.5.4"
+    "storybook": "^8.3.3",
+    "typescript": "^5.5.4",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.1.1"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
