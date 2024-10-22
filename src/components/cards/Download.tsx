@@ -24,7 +24,7 @@ export const Download = ({ title, description, link1text, link1href, link2text, 
       <CardBody py={0}>
         <Text>{description}</Text>
       </CardBody>
-      <CardFooter pt={0} gap={4}>
+      <CardFooter pt={0} gap={4} mt={4}>
         <LinkButton href={link1href} text={link1text} />
 
         {link2text && link2href && <LinkButton href={link2href} text={link2text} variant={'outline'} />}

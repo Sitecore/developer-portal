@@ -2,12 +2,12 @@
 title: 'Getting Component Specific Data'
 description: 'This recipe discusses the options when component specific data is required'
 area: ['accelerate']
-lastUpdated: '2023-12-22'
+lastUpdated: '2024-10-08'
 ---
 
 ## Problem
 
-You need to get content that is specific to a component (this can either be CM or external data).
+You need to get content that is specific to a component, this can either be CM or external data.
 
 ## Solution
 
@@ -16,6 +16,11 @@ There are 3 main options to get component specific data:
 1. Integrated GraphQL
 2. Component level data fetching
 3. Connected GraphQL
+
+<Alert status="info">
+<AlertIcon />
+Integrated GraphQL can be utilized based on the use cases that you have but there are limitations in the extensibility and publishing performance.
+</Alert>
 
 ### Integrated GraphQL
 
@@ -27,9 +32,11 @@ To add IGQL to your component, you can add the query to the `Component GraphQL Q
 
 When using integrated GraphQL queries, for the default and jss layout service configurations, values for `$datasource`, `$contextItem`, and `$language` are automatically injected.
 
-> Integrated GraphQL is executed when the content is published to Experience Edge. On building the layout data, if a component contains IGQL, a REST API call is made to the Edge preview end point on the CM. These API calls are not asynchronous.
->
-> If you make a complex query for your component that requires multiple REST API calls, this will impact the publishing performance.
+<Alert status="info">
+<AlertIcon />
+Integrated GraphQL is executed when the content is published to Experience Edge. On building the layout data, if a component contains IGQL, a REST API call is made to the Edge preview end point on the CM. These API calls are not asynchronous.
+If you make a complex query for your component that requires multiple REST API calls, this will impact the publishing performance.
+</Alert>
 
 ### Connected GraphQL
 
@@ -41,13 +48,14 @@ To get component level data, you can use a similar approach to page level data f
 
 If a component defines and exports these functions, the `ComponentPropsService` class runs the function. After applying all side effects, it stores the component data in a `componentProps` object in the format `{ [rendering.uid]: data }`.
 
-> **IMPORTANT**
->
-> Because the `getStaticProps` and `getServerSideProps` are functions provided by JSS, these functions will be included in the client bundle. Do not include any secrets or sensitive information in any of these component-level functions.
->
-> Also included in the client bundle are any imports that the function depends on, even if the client-side code does not use the imports.
->
-> This does not affect page-level `getStaticProps` and `getServerSideProps` functions.
+<Alert status="warning">
+<AlertIcon />
+**IMPORTANT** <br/>
+Because the `getStaticProps` and `getServerSideProps` are functions provided by JSS, these functions will be included in the client bundle. Do not include any secrets or sensitive information in any of these component-level functions.
+Also included in the client bundle are any imports that the function depends on, even if the client-side code does not use the imports.
+This does not affect page-level `getStaticProps` and `getServerSideProps` functions.
+</Alert>
+<br/>
 
 ```typescript
 import { Text, RichText, Field, GetServerSideComponentProps, GetStaticComponentProps, withDatasourceCheck } from '@sitecore-jss/sitecore-jss-nextjs';
@@ -103,13 +111,16 @@ We recommend you use integrated GraphQL when:
 - The datasource template contains extra fields that you do not want to render.
 
 > If the component only uses content template field data, there is no need to write extra GraphQl, the default layout data is sufficient to render the fields.
-> We recommend you use connected GraphQL when:
+
+We recommend you use connected GraphQL when:
 
 - You want to load data asynchronously after the page layout is rendered, or in response to app state changes other than route change.
 
 - The component has to run mutations (updates) or subscriptions (real-time data).
 
 - You want full control over the lifecycle of your queries and states, such as integration with Redux or the [apollo-link-state](https://github.com/apollographql/apollo-link-state) package.
+
+<br/>
 
 We recommend you use Component Level Data Fetching when:
 

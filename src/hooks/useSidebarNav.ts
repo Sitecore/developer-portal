@@ -1,7 +1,6 @@
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { PageInfo, SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
+import { SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
 import { findAdjacentRoute, findCurrentLevel, findRoute, getParentRoute } from '@/src/lib/sidebarNav';
 
 /**
@@ -11,18 +10,17 @@ import { findAdjacentRoute, findCurrentLevel, findRoute, getParentRoute } from '
  * @param sidebarNavConfig - The configuration for the sidebar navigation.
  * @returns An object containing the current, parent, previous, and next navigation items.
  */
-const useSidebarNav = (pageInfo: PageInfo, sidebarNavConfig: SidebarNavigationConfig) => {
+const useSidebarNav = (fileName: string, sidebarNavConfig: SidebarNavigationConfig, currentPath: string) => {
   const [currentItem, setCurrentItem] = useState<SidebarNavigationItem | null>(null);
   const [previousItem, setPreviousItem] = useState<SidebarNavigationItem | null>(null);
   const [nextItem, setNextItem] = useState<SidebarNavigationItem | null>(null);
   const [parentItem, setParentItem] = useState<SidebarNavigationItem | null>(null);
   const [currentLevel, setCurrentLevel] = useState<Array<SidebarNavigationItem> | null>(null);
 
-  const router = useRouter();
-  const root = pageInfo.fileName.endsWith('index.md');
+  const root = fileName.endsWith('index.md');
 
   useEffect(() => {
-    const urlSegments: Array<string> = router.asPath != sidebarNavConfig.path ? router.asPath.replace(sidebarNavConfig.path + '/', '').split('/') : [];
+    const urlSegments: Array<string> = currentPath != sidebarNavConfig.path ? currentPath.replace(sidebarNavConfig.path + '/', '').split('/') : [];
     const currentUrlSegment = urlSegments[urlSegments.length - 1];
 
     // Find the current item in the sidebar navigation
@@ -52,7 +50,7 @@ const useSidebarNav = (pageInfo: PageInfo, sidebarNavConfig: SidebarNavigationCo
     setParentItem(parentItem);
     setPreviousItem(previousItem);
     setCurrentLevel(findCurrentLevel(sidebarNavConfig.routes, currentUrlSegment));
-  }, [pageInfo, root, router.asPath, sidebarNavConfig]);
+  }, [fileName, root, currentPath, sidebarNavConfig]);
 
   return {
     currentItem,

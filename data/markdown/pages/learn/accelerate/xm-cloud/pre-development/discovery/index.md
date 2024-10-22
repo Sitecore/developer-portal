@@ -7,5 +7,3 @@ hasInPageNav: false
 ---
 
 ### Discovery
-
-- 🚀 This Sitecore Accelerate Recipe is coming soon...

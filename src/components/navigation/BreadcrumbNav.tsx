@@ -33,7 +33,7 @@ const findRoute = (routes: Array<SidebarNavigationItem>, path: string): SidebarN
 
 const BreadcrumbNav = ({ config, currentPage, enabled = false }: BreadcrumbNavProps) => {
   const router = useRouter();
-  const { currentItem } = useSidebarNav(currentPage, config);
+  const { currentItem } = useSidebarNav(currentPage.fileName, config, router.asPath);
 
   if (!enabled || router.asPath == config.path) {
     return null;
