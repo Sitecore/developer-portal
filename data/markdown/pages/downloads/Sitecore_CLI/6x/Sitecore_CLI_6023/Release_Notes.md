@@ -1,7 +1,7 @@
 ---
 title: "Release Notes"
 description: ""
-origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_52113/Release_Notes
+origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/6x/Sitecore_CLI_6023/Release_Notes
 ---
 
 **October 2024 – released Sitecore CLI 6.0.23**
@@ -10,7 +10,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_CLI/5x/Sitecore_CLI_52113/Re
 
 Sitecore CLI 6.0.23 includes:
 
--   Update to Sitecore.DevEx.Extensibility.Serialization plugin. Plugin update includes "Progressive metadata pull" feature. This feature lllows to pull large data sets from the XMCloud environments.
+-   Update to Sitecore.DevEx.Extensibility.Serialization plugin. Plugin update includes "Progressive metadata pull" feature. This feature allows to pull large data sets from the XMCloud environments.
 
 Compatibility:
 
