@@ -121,7 +121,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                     )}
 
                     {entry.changeTypeName != null ? (
-                      <Tag size="sm" colorScheme={entry.changeTypeName == 'Resolved' ? 'yellow' : entry.changeTypeName == 'New Feature' ? 'teal' : 'info'}>
+                      <Tag size="sm" colorScheme={entry.changeTypeName == 'Resolved' ? 'yellow' : entry.changeTypeName == 'New feature' ? 'teal' : 'info'}>
                         {entry.changeTypeName}
                       </Tag>
                     ) : (

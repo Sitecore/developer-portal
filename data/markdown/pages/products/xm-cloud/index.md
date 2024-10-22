@@ -36,6 +36,14 @@ The importance of your company's growth comes with the:
 - Agility: Marketers can easily orchestrate the overall experience across digital campaigns
 - Flexibility: Developers can rapidly develop and launch new experience types with modern front-end frameworks
 
+<Promo
+  title="XM Cloud Sites - What's new?"
+  description="Checkout the great new features of the XM Cloud Sites September release"
+  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/xmcloud-sites?v=225411b8"
+  linkText="Read more"
+  linkHref="/articles/2024/09/xmcloud-sites-release-september" isImageLeft={false}
+/>
+
 ## Getting Started
 
 <Row columns={2}>

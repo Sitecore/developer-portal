@@ -31,7 +31,7 @@ With Sitecore OrderCloud®, design your own commerce solution with an API-first,
 <Row columns={2}>
 <Link title="Platform Overview" link="https://ordercloud.io/discover/platform-overview" />
 <Link title="Knowledge Base" link="https://ordercloud.io/knowledge-base" />
-<Link title="Ordercloud Feature Guide" link="https://www.sitecore.com/resources/index/guide/ordercloud-feature-guide" />
+<Link title="Ordercloud Feature Guide" link="https://www.sitecore.com/resources/insights/ecommerce/ordercloud-feature-guide" />
 <Link title="API Reference" link="https://ordercloud.io/api-reference" />
 </Row>
 

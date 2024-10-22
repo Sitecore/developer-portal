@@ -21,12 +21,27 @@
             {
               "title": "Project Estimation",
               "path": "project-estimation"
+            },
+            {
+              "title": "Transition from XM/XP to XM Cloud",
+              "path": "xm-xp-to-xmc"
             }
           ]
         },
         {
           "title": "Discovery",
-          "path": "discovery"
+          "path": "discovery",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Moving to SaaS - Concepts You Need to Know",
+              "path": "moving-to-saas"
+            },
+            {
+              "title": "Requirements Gathering",
+              "path": "requirements-gathering"
+            }
+          ]
         },
         {
           "title": "Developer Experience",
@@ -46,8 +61,16 @@
               "path": "dev-workflow-codespaces"
             },
             {
+              "title": "Hosting the Web Application",
+              "path": "hosting-web-application"
+            },
+            {
               "title": "Hosting Next.js on Azure App Services",
               "path": "nextjs-azure-app-services"
+            },
+            {
+              "title": "Next.js App Router Preparation",
+              "path": "nextjs-app-router-preparation"
             }
           ]
         },
@@ -70,6 +93,10 @@
             {
               "title": "Content Audit",
               "path": "content-audit"
+            },
+            {
+              "path": "publishing-to-edge",
+              "title": "Publishing to Edge"
             }
           ]
         },
@@ -132,12 +159,20 @@
               "path": "creating-new-components"
             },
             {
+              "title": "Creating Branch Templates",
+              "path": "creating-branch-templates"
+            },
+            {
               "title": "Troubleshooting Local Dev Container Env",
               "path": "troubleshooting-docker"
             },
             {
               "title": "Creating a Component Gallery",
               "path": "creating-a-component-gallery"
+            },
+            {
+              "title": "Using Placeholders",
+              "path": "using-placeholders"
             }
           ]
         },
@@ -149,6 +184,10 @@
             {
               "title": "Wildcard Pages",
               "path": "wildcard-pages"
+            },
+             {
+              "title": "Workflows",
+              "path": "workflow"
             }
           ]
         },
@@ -160,6 +199,10 @@
             {
               "title": "Getting Component Specific Data",
               "path": "getting-component-specific-data"
+            },
+	    {
+              "title": "Custom Editing UX for 3rd Party Integrations",
+              "path": "custom-editing-ux-3rd-party-integrations"
             }
           ]
         },
@@ -174,6 +217,10 @@
         {
           "title": "Sitemap",
           "path": "sitemap"
+        },
+		{
+          "title": "Localization",
+          "path": "localization"
         }
       ]
     },

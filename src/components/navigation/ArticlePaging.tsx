@@ -15,7 +15,7 @@ export interface ArticlePagingProps {
 
 export const ArticlePaging = ({ config, currentfileName, enabled = false, currentPath }: ArticlePagingProps) => {
   const { previousItem, nextItem } = useSidebarNav(currentfileName, config, currentPath);
-  console.log(previousItem, nextItem);
+
   if (!enabled) {
     return null;
   }
