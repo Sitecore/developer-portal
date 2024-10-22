@@ -2,15 +2,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { mockedSidebarNavigationConfigRoutes } from '@/__mocks__/navigation/sidebarNavigationItems';
-import { ArticlePaging } from './ArticlePaging';
+import { ArticlePagingNext } from './ArticlePagingNext';
 
-const meta: Meta<typeof ArticlePaging> = {
-  title: 'Components/Navigation/ArticlePaging',
-  component: ArticlePaging,
+const meta: Meta<typeof ArticlePagingNext> = {
+  title: 'Components/Navigation/ArticlePagingNext',
+  component: ArticlePagingNext,
 };
 export default meta;
 
-type Story = StoryObj<typeof ArticlePaging>;
+type Story = StoryObj<typeof ArticlePagingNext>;
 
 export const Basic: Story = {
   parameters: {
@@ -22,7 +22,7 @@ export const Basic: Story = {
   },
   args: {
     enabled: true,
-    currentfileName: 'page-2',
+    currentFileName: 'page-2',
     currentPath: '/example/page-2',
     config: {
       title: 'Test',
