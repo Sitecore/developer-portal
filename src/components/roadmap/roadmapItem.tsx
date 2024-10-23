@@ -36,10 +36,6 @@ export const RoadmapItem = ({ item }: RoadmapItemProps) => {
               </Badge>
             ))}
           </Wrap>
-          <Stack direction="row">
-            <Badge colorScheme={getBadgeColor(item.roadmapPhase)}>{item.roadmapPhase}</Badge>
-            <Badge colorScheme={getStatusColor(item.status)}>{item.status}</Badge>
-          </Stack>
         </CardBody>
       </Card>
       <Modal size={'xl'} onClose={onClose} isOpen={isOpen} isCentered>

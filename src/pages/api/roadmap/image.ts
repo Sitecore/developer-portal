@@ -11,8 +11,6 @@ export default async function handler(req: NextRequest, res: NextResponse) {
     const id = searchParams.get('id');
     const mimeType = searchParams.get('mt');
 
-    console.log(id);
-
     if (id) {
       const jiraResponse = await GetJiraAttachement(id);
       const imageBuffer = Buffer.from(jiraResponse.data, 'binary');
