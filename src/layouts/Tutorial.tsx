@@ -51,10 +51,10 @@ const Tutorial = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPager
 
         <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <SidebarNavigation config={sidebarConfig} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
           <BreadcrumbNav enabled={sidebarConfig.enableBreadcrumb} currentPage={pageInfo} config={sidebarConfig} />
-          <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
+          <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />
           <PromoList data={promoBefore} />
           <RenderContent content={pageInfo.parsedContent} />
-          <ArticlePagingNext enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
+          <ArticlePagingNext enabled={sidebarConfig.enableNextPrevious} currentFileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />
 
           <GithubContributionNotice pageInfo={pageInfo} />
           {customNavPager}

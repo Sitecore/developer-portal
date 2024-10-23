@@ -9,7 +9,8 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx
 ## Sitecore CLI 6.x
 </CardHeader>
 <CardBody>
-[Sitecore CLI 6.0.18](/downloads/Sitecore_CLI/6x/Sitecore_CLI_600)
+[Sitecore CLI 6.0.18](/downloads/Sitecore_CLI/6x/Sitecore_CLI_600)\
+[Sitecore CLI 6.0.23](/downloads/Sitecore_CLI/6x/Sitecore_CLI_6023)
 </CardBody>          
 </Card>
 

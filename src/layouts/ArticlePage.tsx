@@ -54,7 +54,7 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
 
         <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <SidebarNavigation config={sidebarConfig} />} inPageLinks={sectionTitles} inPageNav={sectionTitles.length > 0 && Nav}>
           <BreadcrumbNav enabled={sidebarConfig.enableBreadcrumb} currentPage={pageInfo} config={sidebarConfig} />
-          <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
+          <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />
           {pageInfo.lastUpdated && (
             <Heading variant={'section'} size={'sm'} mb={{ base: 0, md: 2 }}>
               Last updated: {new Date(pageInfo.lastUpdated).toLocaleString('en-US', { dateStyle: 'medium' })}
@@ -62,7 +62,7 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
           )}
           <PromoList data={promoBefore} />
           <RenderContent content={pageInfo.parsedContent} />
-          <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentPage={pageInfo} config={sidebarConfig} />
+          <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />
           <GithubContributionNotice pageInfo={pageInfo} />
           {customNavPager}
           <PromoList data={promoAfter} />

@@ -14,3 +14,27 @@ origin: https://dev.sitecore.net/Downloads/Team_Development_for_Sitecore.aspx
 [Team Development for Sitecore 6.0.2](/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_602)
 </CardBody>          
 </Card>
+
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
+## Team Development for Sitecore 5.x
+</CardHeader>
+<CardBody>
+[Team Development for Sitecore 5.0](/downloads/Team_Development_for_Sitecore/5x/Team_Development_for_Sitecore_50)\
+[Team Development for Sitecore 5.1](/downloads/Team_Development_for_Sitecore/5x/Team_Development_for_Sitecore_51)\
+[Team Development for Sitecore 5.5](/downloads/Team_Development_for_Sitecore/5x/Team_Development_for_Sitecore_55)\
+[Team Development for Sitecore 5.6](/downloads/Team_Development_for_Sitecore/5x/Team_Development_for_Sitecore_56)\
+[Team Development for Sitecore 5.7](/downloads/Team_Development_for_Sitecore/5x/Team_Development_for_Sitecore_57)\
+[Team Development for Sitecore 5.8](/downloads/Team_Development_for_Sitecore/5x/Team_Development_for_Sitecore_58)
+</CardBody>          
+</Card>
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
+## Team Development for Sitecore 4.x
+</CardHeader>
+<CardBody>
+[Team Development for Sitecore 4.0](/downloads/Team_Development_for_Sitecore/4x/Team_Development_for_Sitecore_40)
+</CardBody>          
+</Card>

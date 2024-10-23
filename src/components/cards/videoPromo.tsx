@@ -37,8 +37,10 @@ export const VideoPromo = ({ title, description, videoUrl, youTubeId, linkText, 
         </Box>
       )}
       <Box flexDirection={'column'} width={'50%'}>
-        <Heading as={'h3'}>{title}</Heading>
-        <Text>{description}</Text>
+        <Heading as={'h4'} size="md">
+          {title}
+        </Heading>
+        <Text my="4">{description}</Text>
         {!!linkText && <LinkButton text={linkText ? linkText : 'Read more'} href={linkHref} />}
       </Box>
       {!isImageLeft && videoUrl != undefined && (

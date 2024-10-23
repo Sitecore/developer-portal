@@ -4,7 +4,7 @@ description: 'Learn about Workflows in XM Cloud'
 area: ['accelerate']
 hasSubPageNav: false
 hasInPageNav: true
-lastUpdated: '2024-10-07'
+lastUpdated: '2024-10-21'
 ---
 
 # Problem
@@ -24,32 +24,45 @@ If you are currently on XP/XM and migrating to XM Cloud, there are specific cons
 1. Any .NET customizations affecting items controlled by workflow.
 2. The introduction of webhooks, which offer new ways to implement workflow.
 
-### Changes to Consider:
+### Changes to Consider
+
 - **Email Actions** are no longer supported. Replace them with a Webhook Submit Action. (Using Webhooks to Send Notifications)
 
-## Configure Page Workflow
+## Configure Page and Datasource Workflows
 
-All pages and the templates that drive them should be configured with workflow. You can refer to documentation (Workflow Cookbook) or use the steps below to configure workflow for your pages.
+Two separate workflows are recommended, one for page items and the other for datasources. This allows the main page workflow to stay clean and not cluttered. At a minimum this would be a two stage with draft and approved. The Page Workflow has a Datasource Workflow Action which points to the Approve command on the Datasource Workflow. This is important because it allows you to define the scope which allow datasources like the link list and its child items for example to be moved through the workflow successfully.
 
-1. Create a workflow and define your states.
-2. Assign it using Standard Values to the page template.
-3. Enable `View > Standard Fields` in the Content Editor.
-4. Go to the Workflow tab and set both Workflow and Default Workflow to the workflow you created.
+1. Create a page and datasource workflow and define your states.
+2. If you have configured your workflow states similar to the sample workflow you will need to insert [datasource workflow actions](https://doc.sitecore.com/xmc/en/developers/xm-cloud/assign-a-data-source-workflow-action-in-sxa.html) to Submit, Approve and Reject actions.
+3. For these actions you can specify the Scope to determine what child datasource items should be processed by this action. These should point to the corresponding action in the datasource workflow. See below examples for more information.
 
-<Image src="/images/learn/accelerate/xm-cloud/workflows1.jpg" title="StandardValuesPageWorkflow"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflows9.png" title="Page workflow submit datasource action"/>
 
-## Configure SXA Datasource Workflow
+<Image src="/images/learn/accelerate/xm-cloud/workflows10.png" title="Page workflow approve datasource action"/>
+
+<Image src="/images/learn/accelerate/xm-cloud/workflows11.png" title="Page workflow reject datasource action"/>
+
+<Image src="/images/learn/accelerate/xm-cloud/workflows12.png" title="Datasource workflow"/>
+
+## Assign Page Workflow
+
+1. Assign it using Standard Values to the page template.
+2. Enable `View > Standard Fields` in the Content Editor.
+3. Go to the Workflow tab and set the Default Workflow to the workflow you created.
+
+<Image src="/images/learn/accelerate/xm-cloud/workflows1.png" title="StandardValuesPageWorkflow"/>
+
+## Assign SXA Datasource Workflow
 
 It's important to configure workflow for both pages and the separate data source component items on a page. To do this:
 
 1. Ensure the Standard Values module is installed for your SXA website.
-2. Navigate to the Content Editor and define your components under the Standard Values item in the SXA website settings folder. 
+2. Navigate to the Content Editor and define your components under the Standard Values item in the SXA website settings folder.
 3. Right-click on Standard Values and click on `Insert > Standard Values` to open a dialog.
 4. Select the Datasource Templates tab and configure any unconfigured templates.
 5. For each data source component, configure the workflow the same way as a page.
 
-<Image src="/images/learn/accelerate/xm-cloud/workflows2.jpg" title="ComponentDatasourceWorkflow"/>
-Adding workflow to a data source Standard Value in SXA
+<Image src="/images/learn/accelerate/xm-cloud/workflows2.png" title="ComponentDatasourceWorkflow"/>
 
 ## Configuration of Users/Roles
 

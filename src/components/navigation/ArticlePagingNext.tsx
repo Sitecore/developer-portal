@@ -2,19 +2,20 @@ import { Card, CardBody, Heading, HStack, Icon, Stack } from '@chakra-ui/react';
 import { mdiArrowLeft, mdiArrowRight, mdiCheckCircleOutline } from '@mdi/js';
 import { LinkButton } from '@src/components/links';
 
-import { PageInfo, SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
+import { SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
 import { getItemUrl } from '@/src/lib/sidebarNav';
 
 import useSidebarNav from '../../hooks/useSidebarNav';
 
 export interface ArticlePagingProps {
   enabled?: boolean;
-  currentPage: PageInfo;
+  currentFileName: string;
   config: SidebarNavigationConfig;
+  currentPath: string;
 }
 
-export const ArticlePagingNext = ({ config, currentPage, enabled = false }: ArticlePagingProps) => {
-  const { previousItem, nextItem } = useSidebarNav(currentPage, config);
+export const ArticlePagingNext = ({ config, currentFileName, enabled = false, currentPath }: ArticlePagingProps) => {
+  const { previousItem, nextItem } = useSidebarNav(currentFileName, config, currentPath);
 
   if (!enabled) {
     return null;
