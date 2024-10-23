@@ -6,6 +6,16 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
+## Sitecore CLI 6.x
+</CardHeader>
+<CardBody>
+[Sitecore CLI 6.0.18](/downloads/Sitecore_CLI/6x/Sitecore_CLI_600)\
+[Sitecore CLI 6.0.23](/downloads/Sitecore_CLI/6x/Sitecore_CLI_6023)
+</CardBody>          
+</Card>
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
 ## Sitecore CLI 5.x
 </CardHeader>
 <CardBody>
