@@ -15,7 +15,7 @@ interface RoadmapPhaseProps {
   isLoading: boolean;
 }
 
-const RoadmapPhase: React.FC<RoadmapPhaseProps> = ({ roadmap, title, color, phase, isLoading }) => {
+export const RoadmapPhase: React.FC<RoadmapPhaseProps> = ({ roadmap, title, color, phase, isLoading }: RoadmapPhaseProps) => {
   return (
     <Box p={4} bg={color}>
       <Stack gap={4}>
@@ -27,5 +27,3 @@ const RoadmapPhase: React.FC<RoadmapPhaseProps> = ({ roadmap, title, color, phas
     </Box>
   );
 };
-
-export default RoadmapPhase;

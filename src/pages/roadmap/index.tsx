@@ -1,7 +1,7 @@
 import { Option } from '@/src/components/ui/dropdown';
 import { Alert, AlertIcon, SimpleGrid, Tooltip } from '@chakra-ui/react';
 import { TrackPageView } from '@components/integrations/engage/TrackPageView';
-import RoadmapPhase from '@components/roadmap/roadmapPhase';
+import { RoadmapPhase } from '@components/roadmap/roadmapPhase';
 import { CenteredContent, Hero, VerticalGroup } from '@components/ui/sections';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getPageInfo } from '@lib/page-info';

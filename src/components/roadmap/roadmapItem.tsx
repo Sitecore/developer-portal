@@ -10,7 +10,7 @@ interface RoadmapItemProps {
   item: IRoadmapItem;
 }
 
-export const RoadmapItem = ({ item }: RoadmapItemProps) => {
+export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const images: string[] = item.attachments?.map((attachment) => attachment.url) || [];
