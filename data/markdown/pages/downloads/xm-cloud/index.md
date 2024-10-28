@@ -26,16 +26,21 @@ This tool helps move content, media and user data from a source Sitecore Experie
 It is middleware that simplifies the task of entering and selecting data, and orchestrating the migration.
 The tool is available in both a self-contained Graphical User Interface (GUI) tool, and a Command Line Interface (CLI) comprising operations that you can embed into your own tooling.
 
-Version 2 is based on XM Cloud's Item Transfer technology:\
--Delivers fast data transfers built on Google's Protocol Buffers (Protobuf) format.\
--Supports migrations from Sitecore XM on-premises and PaaS versions 9.1 and later.
+**Version 2 is based on XM Cloud's Item Transfer technology:**
+- Delivers fast data transfers built on Google's Protocol Buffers (Protobuf) format.
+- Supports migrations from Sitecore XM on-premises and PaaS versions 9.1 and later.
+<br/>
 
-Enhancements over version 1 include:\
--Migration dependencies delivered via a Sitecore package.\
--Dependencies contained within a single folder for easier isolation.\
--Self-contained executables with no required prerequisites.\
--No longer depends on Sitecore CLI, Sitecore Content Serialization (SCS), Sitecore Managed Services (SMS).\
--Enhanced console usage by incorporating sub-commands.
+**Enhancements over version 1 include:**
+- Migration dependencies delivered via a Sitecore package.
+- Dependencies contained within a single folder for easier isolation.
+- Self-contained executables with no required prerequisites.
+- No longer depends on Sitecore CLI, Sitecore Content Serialization (SCS), Sitecore Managed Services (SMS).
+- Enhanced console usage by incorporating sub-commands.
+
+<br/>
+
+### Downloads
 
 | Releases/Options                                                                                                                                                                                                                                                                                  | Description                                                                                                                                                                                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -47,5 +52,7 @@ Enhancements over version 1 include:\
     <AlertIcon />
     This tool focuses on back-end data; it does not migrate front-end site layouts/renderings.
   </Alert>
+
+<br/><br/>
 
 **Questions?** Contact us on the community Slack [#xm-cloud channel](https://sitecorechat.slack.com/archives/C03NXTAPKE3).
