@@ -71,7 +71,7 @@ The importance of your company's growth comes with the:
 ## Downloads
 
 <Row columns={2}>
-<Article title="XM to XM Cloud Content Migration tool" description="Move content, media and user data from a source XM on-premises instance to a target XM Cloud environment." link="/downloads/xm-cloud#xm-to-xm-cloud-content-migration-tool" maxWidth="sm" linktext="Download"  />
+<Article title="XM to XM Cloud Migration tool" description="Move content, media and user data from a source XM on-premises instance to a target XM Cloud environment." link="/downloads/xm-cloud#xm-to-xm-cloud-content-migration-tool" maxWidth="sm" linktext="Download"  />
 </Row>
 
 ## Learn & Examples
