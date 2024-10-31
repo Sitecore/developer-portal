@@ -28,7 +28,6 @@ const UserAccount: React.FC<UserAccountProps> = ({ userProfile }) => {
       />
     );
   }
-  console.log(userProfile);
   return (
     <Wrap spacing="10">
       <Menu>

@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 const redirectUri = `${process.env.AUTH0_BASE_URL}/api/auth/callback`;
 
 export const pageRouterAuth: Auth0Server = initAuth0({
+  //auth0Logout: !(process.env.AUTH0_ISSUER_BASE_URL as string).startsWith('http://localhost'),
   routes: {
     login: '/api/auth/login',
     callback: '/api/auth/callback',
@@ -19,7 +20,9 @@ const afterCallback = (req: NextApiRequest, res: NextApiResponse, session: any, 
 };
 
 export default pageRouterAuth.handleAuth({
-  login: pageRouterAuth.handleLogin(),
+  login: pageRouterAuth.handleLogin({
+    authorizationParams: { redirect_uri: redirectUri },
+  }),
   callback: pageRouterAuth.handleCallback({ afterCallback: afterCallback }),
   logout: pageRouterAuth.handleLogout({ returnTo: `${process.env.AUTH0_BASE_URL}/` }),
 });
