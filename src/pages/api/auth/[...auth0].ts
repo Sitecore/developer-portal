@@ -19,9 +19,7 @@ const afterCallback = (req: NextApiRequest, res: NextApiResponse, session: any, 
 };
 
 export default pageRouterAuth.handleAuth({
-  login: pageRouterAuth.handleLogin({
-    authorizationParams: { redirect_uri: redirectUri },
-  }),
-  callback: pageRouterAuth.handleCallback({ redirectUri: redirectUri, afterCallback: afterCallback }),
+  login: pageRouterAuth.handleLogin(),
+  callback: pageRouterAuth.handleCallback({ afterCallback: afterCallback }),
   logout: pageRouterAuth.handleLogout({ returnTo: `${process.env.AUTH0_BASE_URL}/` }),
 });
