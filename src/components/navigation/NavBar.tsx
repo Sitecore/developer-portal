@@ -39,12 +39,14 @@ import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/asset
 
 import { PreviewModeSwitch } from './PreviewModeSwitch';
 
+import { useUser } from '@auth0/nextjs-auth0/client';
 import { PreviewSearchInput } from '../integrations/sitecore-search';
 import { Slide } from '../ui/chakra/Slide';
 import { ProductIcon } from '../ui/logos';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 import { SearchButton } from './SearchButton';
+import UserAccount from './UserAccount';
 
 export type NavigationChildData = {
   title: string;
@@ -73,6 +75,7 @@ export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
   const { isOpen, onToggle } = useDisclosure();
   const [focusedOnSearch, setFocusedOnSearch] = useState(false);
   const router = useRouter();
+  const { user, error, isLoading } = useUser();
 
   return (
     <Box layerStyle="section.topbar" shadow={'base'} zIndex={'sticky'} position="sticky" top="0">
@@ -142,6 +145,7 @@ export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
           <DarkModeSwitch />
           <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
           <QuickStartMenu key={router.asPath} />
+          <UserAccount userProfile={user} />
         </Stack>
       </Flex>
 
