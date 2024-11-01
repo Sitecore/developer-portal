@@ -19,12 +19,12 @@
               "path": "preparing-for-an-xm-cloud-project"
             },
             {
-              "title": "Project Estimation",
-              "path": "project-estimation"
-            },
-            {
               "title": "Transition from XM/XP to XM Cloud",
               "path": "xm-xp-to-xmc"
+            },
+            {
+              "title": "Project Estimation",
+              "path": "project-estimation"
             }
           ]
         },

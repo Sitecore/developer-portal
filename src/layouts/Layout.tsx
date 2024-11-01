@@ -2,6 +2,7 @@
 import { Alert, AlertDescription, AlertIcon, Box, BoxProps, VisuallyHidden } from '@chakra-ui/react';
 import React from 'react';
 
+import ScrollToTop from '../components/navigation/ScrollToTop';
 import { usePreview } from '../context/PreviewContext';
 import Meta from './Meta';
 
@@ -24,6 +25,7 @@ const Layout = ({ title, description = '', openGraphImage, children, ...rest }: 
       </VisuallyHidden>
       {/* a11y announcement for route changes. */}
       <VisuallyHidden aria-live="polite" aria-atomic="true">{`The ${title} page has loaded.`}</VisuallyHidden>
+      <ScrollToTop />
       {isPreview && (
         <Alert status="warning">
           <AlertIcon />

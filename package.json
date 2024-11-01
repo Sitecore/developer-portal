@@ -39,6 +39,7 @@
     "clean": "npx shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && npx shx rm -rf node_modules && npx shx echo Done!"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^3.5.0",
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",

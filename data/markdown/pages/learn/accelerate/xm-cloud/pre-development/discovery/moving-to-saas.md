@@ -21,14 +21,6 @@ For example, XM Cloud is ideal for companies looking for faster time-to-market, 
 
 By keeping these considerations in mind, your team can maximize the value of XM Cloud and deliver a modern, scalable digital experience.
 
-When planning a strategy for customizations in XM Cloud, it's crucial to categorize each customization based on its fit within the new platform. First, assess whether the customization can be maintained directly in XM Cloud, leveraging its built-in capabilities and minimizing the need for external tools. If a customization requires significant changes, move it outside of XM Cloud, in your head application.
-
-For more complex scenarios, where the customization extends beyond the scope of XM Cloud’s native features, it may be necessary to handle it through other Composable DXP product, ensuring a seamless integration with the broader digital experience platform. In cases where a customization no longer aligns with the architecture or goals of XM Cloud, it might be best to drop the old approach and devise a new solution that better fits the platform's capabilities, ensuring a more efficient and maintainable implementation.
-
-<img src="/images/learn/accelerate/xm-cloud/moving-to-saas1.png" alt="Screenshot showing how to deal with customizations"/>
-
-Before diving into the implementation, it’s critical to clarify the value you're seeking from the move to XM Cloud. Often, projects begin without a well-defined target, leading to misalignment between stakeholders. Clearly defined objectives, such as reducing time-to-market, improving content management efficiency, or enhancing scalability, will guide your implementation and ensure all parties are on the same page.
-
 ## Discussion
 
 The following topics are all considerations when migrating from Sitecore XP to XM Cloud -  when planning, it's crucial to review each topic based on the implementation in front of you.
@@ -61,15 +53,33 @@ Unnecessary presentation details in MVC-based implementations may need to be ret
 
 Read more on the [Web Application Hosting recipe](/learn/accelerate/xm-cloud/pre-development/developer-experience/hosting-web-application).  
 
+### Customizations and Integrations
+
+When planning a strategy for customizations in XM Cloud, it's crucial to categorize each customization based on its fit within the new platform. First, assess whether the customization can be maintained directly in XM Cloud, leveraging its built-in capabilities and minimizing the need for external tools. If a customization requires significant changes, move it outside of XM Cloud, in your head application.
+
+For more complex scenarios, where the customization extends beyond the scope of XM Cloud’s native features, it may be necessary to handle it through other Composable DXP product, ensuring a seamless integration with the broader digital experience platform. In cases where a customization no longer aligns with the architecture or goals of XM Cloud, it might be best to drop the old approach and devise a new solution that better fits the platform's capabilities, ensuring a more efficient and maintainable implementation.
+
+<img src="/images/learn/accelerate/xm-cloud/moving-to-saas1.png" alt="Screenshot showing how to deal with customizations"/>
+
+Before diving into the implementation, it’s critical to clarify the value you're seeking from the move to XM Cloud. Often, projects begin without a well-defined target, leading to misalignment between stakeholders. Clearly defined objectives, such as reducing time-to-market, improving content management efficiency, or enhancing scalability, will guide your implementation and ensure all parties are on the same page.
+
 ### Personalization: xDB vs. Embedded vs. CDP/Personalize
 
 XM Cloud does not offer a direct replacement for xDB, but it offers a set of rules targeting audiences and segments where you can define variations of a page based on those audiences
 
-Talk about the rules available, and how these can be extended by Personalize.
+A number of rules are available already out of the box that should cover most use cases including: 
 
-If your current implementation heavily relies on xDB or has requirements for Customer Data management, you’ll need to assess whether these new tools meet your needs or if additional solutions are required - more complex scenarios may require CDP or other integrations. Similarly, email marketing, historically handled by EXM, may need to shift to Sitecore Send or other solutions, depending on your needs.
+- Time-based Conditions: Deliver content at specific times or on certain days, perfect for timed promotions. 
+- Device-based Conditions: Show different content depending on the visitor’s device, such as mobile-specific offers. 
+- Geolocation-based Conditions: Tailor offers or messages based on a visitor’s country or region. 
+- Page View-based Conditions: Deliver content based on the number of times a visitor has viewed a specific page. 
+- User Interaction-based Conditions: Customize content based on the referrer or UTM parameters from external campaigns. 
 
-Documentation is further provided for more detailed breakdown regarding this [Feature Matrix and Product Parities | XM Cloud Embedded Personalization FAQ](https://developers.sitecore.com/learn/faq/xm-cloud-embedded-personalization/feature-matrix).
+If your current implementation heavily relies on xDB or has requirements for Customer Data management, you’ll need to assess whether these new tools meet your needs or if additional solutions are required - more complex scenarios may require CDP or other integrations. Personalize can be used to create custom rules in XM Cloud.
+
+Similarly, email marketing, historically handled by EXM, may need to shift to Sitecore Send or other solutions, depending on your needs.
+
+Documentation is further provided for more detailed breakdown regarding this [Feature Matrix and Product Parities | XM Cloud Embedded Personalization FAQ](learn/faq/xm-cloud-embedded-personalization/feature-matrix).
 
 ### Content Strategy: Do You Need to Migrate Everything?
 
@@ -85,11 +95,13 @@ Sitecore Edge supports a headless architecture, delivering content via APIs to f
 
 ​Consider the content architecture that is required to make publishing easier for the end user - for customization on actions following Publishing, consider that these need to be moved to the ‘head-app' As an example, timed publishing, when you need precise to the second publishing of your content, can be either setup using Personalization rules or leveraging the middleware from Next.JS.
 
+Read more on the [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge).  
+
 ### CMS Customizations: Rethink Your Approach
 
 Historically, PaaS CMS extensive CMS customizations, but XM Cloud may require a different approach. Evaluate whether your current customizations are still necessary or if they can be simplified or eliminated in the new environment. Keep in mind XM Cloud is constantly evolving, with new features and customization options being added.
 
-Example of this is documented in [Custom Editing UX for 3rd Party Integrations](#) (Recipe coming soon...)
+Example of this is documented in [Custom Editing UX for 3rd Party Integrations](/learn/accelerate/xm-cloud/implementation/external-data-integration/custom-editing-ux-3rd-party-integrations)
 
 ### Integrations
 
@@ -139,9 +151,10 @@ A key move of Paas to SaaS means a move to Headless, that can bring further perf
 <Link title="Content Audit | Sitecore Accelerate for Partners " link="/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit" />
 <Link title="Preparing for an XM Cloud Project | Sitecore Accelerate for Partners " link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
 <Link title="Project Estimation | Sitecore Accelerate for Partners" link="/learn/accelerate/xm-cloud/pre-development/project-planning/project-estimation" />
-<Link title="Transition from XM/XP to XM Cloud recipe" link="/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc" />
-<Link title="Web Application Hosting recipe" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/hosting-web-application" />
+<Link title="Transition from XM/XP to XM Cloud recipe | Sitecore Accelerate for Partners" link="/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc" />
+<Link title="Web Application Hosting recipe | Sitecore Accelerate for Partners" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/hosting-web-application" />
 <Link title="Getting Component Specific Data | Sitecore Accelerate for Partners" link="/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data" />
+<Link title="Publishing to Experience Edge | Sitecore Accelerate for Partners" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />
 </Row>
 
 ### Related Documentation
