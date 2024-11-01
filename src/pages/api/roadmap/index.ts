@@ -1,10 +1,11 @@
 import { RoadmapInformation } from '@/src/lib/interfaces/jira';
 import { getRoadmap } from '@/src/lib/jira';
 import { getQueryArray } from '@/src/lib/utils';
+import { pageRouterAuth } from '@lib/auth0';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<RoadmapInformation>) => {
+export default pageRouterAuth.withApiAuthRequired(async (req: NextApiRequest, res: NextApiResponse<RoadmapInformation>) => {
   const products: Array<string> = getQueryArray(req.query.product);
 
   try {
@@ -24,6 +25,4 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<RoadmapInformat
     console.error('Error fetching data:', error);
     return NextResponse.json({ error: 'Failed to fetch roadmap data' }, { status: 500 });
   }
-};
-
-export default handler;
+});
