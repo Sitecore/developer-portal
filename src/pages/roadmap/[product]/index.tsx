@@ -9,6 +9,7 @@ import { NextPage } from 'next';
 import useSWR from 'swr';
 
 import Layout from '@/src/layouts/Layout';
+import { pageRouterAuth } from '@/src/lib/auth0';
 import { slugify } from '@/src/lib/utils';
 import { RoadmapInformation } from '@lib/interfaces/jira';
 import { getRoadmap, Phase } from '@lib/jira';
@@ -21,28 +22,30 @@ interface SearchPageProps {
   currentProduct: Option;
 }
 
-export async function getServerSideProps(context: any) {
-  const product = context.params.product;
-  const pageInfo = await getPageInfo('_roadmap');
-  const roadmap = await getRoadmap();
+export const getServerSideProps = pageRouterAuth.withPageAuthRequired({
+  async getServerSideProps(context) {
+    const product = context?.params?.product;
+    const pageInfo = await getPageInfo('_roadmap');
+    const roadmap = await getRoadmap();
 
-  const products = roadmap.products;
-  const currentProduct: Option | undefined = products.find((p) => slugify(p.label) == product);
+    const products = roadmap.products;
+    const currentProduct: Option | undefined = products.find((p) => slugify(p.label) == product);
 
-  if (currentProduct === undefined) {
+    if (currentProduct === undefined) {
+      return {
+        notFound: true,
+      };
+    }
     return {
-      notFound: true,
+      props: {
+        currentProduct: currentProduct,
+        pageInfo,
+        products: roadmap.products,
+      },
     };
-  }
+  },
+});
 
-  return {
-    props: {
-      currentProduct: currentProduct,
-      pageInfo,
-      products: roadmap.products,
-    },
-  };
-}
 
 const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct, products }) => {
   const url: string = `../api/roadmap?product=${currentProduct.value}`;

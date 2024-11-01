@@ -11,6 +11,7 @@ import { useState } from 'react';
 import useSWR from 'swr';
 
 import Layout from '@/src/layouts/Layout';
+import { pageRouterAuth } from '@/src/lib/auth0';
 import { buildProductQuerystring } from '@lib/changelog/common/querystring';
 import { RoadmapInformation } from '@lib/interfaces/jira';
 import { getRoadmap, Phase } from '@lib/jira';
@@ -21,18 +22,20 @@ interface SearchPageProps {
   products: Option[];
 }
 
-export async function getServerSideProps() {
-  const pageInfo = await getPageInfo('_roadmap');
-  const roadmap = await getRoadmap();
+export const getServerSideProps = pageRouterAuth.withPageAuthRequired({
+  async getServerSideProps(ctx) {
+    const pageInfo = await getPageInfo('_roadmap');
+    const roadmap = await getRoadmap();
 
-  return {
-    props: {
-      fallback: roadmap,
-      pageInfo,
-      products: roadmap.products,
-    },
-  };
-}
+    return {
+      props: {
+        fallback: roadmap,
+        pageInfo,
+        products: roadmap.products,
+      },
+    };
+  },
+});
 
 const Search: NextPage<SearchPageProps> = ({ pageInfo, fallback, products }) => {
   const [selectedChange, setSelectedChange] = useState<MultiValue<Option>>([]);
