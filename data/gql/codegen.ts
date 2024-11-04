@@ -4,12 +4,12 @@ const config: CodegenConfig = {
   overwrite: true,
   schema: [
     {
-      './src/gql/schema/schema.graphql': {
+      './data/gql/schema/schema.graphql': {
         assumeValidSDL: true,
       },
     },
   ],
-  documents: ['./src/gql/query/**/*.graphql'],
+  documents: ['./data/gql/query/**/*.graphql'],
   ignoreNoDocuments: false,
   generates: {
     './src/gql/generated/': {
