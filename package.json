@@ -27,7 +27,7 @@
     "eslint-fix": "npx eslint . --fix",
     "configure-husky": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\"",
     "analyze": "cross-env ANALYZE=true next build",
-    "generate": "graphql-codegen --config ./src/gql/codegen.ts",
+    "generate": "graphql-codegen --config ./data/gql/codegen.ts",
     "knip": "knip",
     "prettier": "prettier --write .",
     "test": "npm run build && npm run test:unit && npm run test:e2e",
