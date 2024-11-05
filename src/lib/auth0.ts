@@ -5,6 +5,6 @@ export const pageRouterAuth: Auth0Server = initAuth0({
   routes: {
     login: '/api/auth/login',
     callback: '/api/auth/callback',
-    postLogoutRedirect: '/',
+    postLogoutRedirect: '/roadmap',
   },
 });

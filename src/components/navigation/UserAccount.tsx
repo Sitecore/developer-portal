@@ -11,12 +11,13 @@ interface UserAccountProps {
 
 const UserAccount: React.FC<UserAccountProps> = ({ userProfile }) => {
   const router = useRouter();
+  const loginUrl = router.asPath != '/' ? '/api/auth/login?returnTo=' + encodeURIComponent(router.asPath) : '/api/auth/login';
 
   if (!userProfile) {
     return (
       <IconButton
         as={Link}
-        href={'/api/auth/login'}
+        href={loginUrl}
         aria-label="Login"
         size={'sm'}
         variant={'ghost'}

@@ -45,7 +45,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
               <Alert status="info" alignItems="center">
                 <AlertIcon />
                 <AlertDescription>To access the detailed roadmaps, please log in using your cloud portal credentials.</AlertDescription>
-                <LinkButton variant="link" href={'/api/auth/login'} text={'Login'} showIcon={false} />
+                <LinkButton variant="link" href={'/api/auth/login?returnTo=/roadmap'} text={'Login'} showIcon={false} />
               </Alert>
             </HideForUsers>
 
