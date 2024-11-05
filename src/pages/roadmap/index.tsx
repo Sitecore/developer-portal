@@ -22,7 +22,7 @@ interface RoadmapPageProps {
 }
 
 export async function getServerSideProps() {
-  const pageInfo = await getPageInfo('roadmap');
+  const pageInfo = await getPageInfo('_roadmap');
   const roadmap = await getRoadmap();
 
   return {
