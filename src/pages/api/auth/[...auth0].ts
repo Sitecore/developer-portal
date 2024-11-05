@@ -1,7 +1,7 @@
 import { pageRouterAuth } from '@/src/lib/auth0';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-const redirectUri = `${process.env.AUTH0_BASE_URL}/api/auth/callback`;
+const redirectUri = `${process.env.AUTH0_BASE_URL}/api/auth/callback?`;
 
 const afterCallback = (req: NextApiRequest, res: NextApiResponse, session: any, state: any) => {
   delete session.refreshToken;

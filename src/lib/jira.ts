@@ -7,9 +7,6 @@ const jiraBaseUrl = 'https://sitecore.atlassian.net/rest/api/3';
 const JIRA_USERNAME = process.env.JIRA_USERNAME;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 
-// Single request URL
-// https://sitecore.atlassian.net/rest/api/3/search?jql=project=SMAP%20AND%20key=%22SMAP-608%22&fields=*all&expand=names
-
 export enum Phase {
   NOW = 'Now',
   NEXT = 'Next',
@@ -68,9 +65,6 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
 export async function GetJiraAttachement(id: string) {
   const imageUrl = `${jiraBaseUrl}/attachment/content/${id}`;
 
-  // https://sitecore.atlassian.net/rest/api/3/search/rest/api/3/attachment/content/356018
-  //  https://sitecore.atlassian.net/rest/api/3/attachment/content/356018
-  console.log(imageUrl);
   const response = await axios({
     url: imageUrl,
     method: 'get',
