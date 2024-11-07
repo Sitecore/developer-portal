@@ -7,6 +7,8 @@ const jiraBaseUrl = 'https://sitecore.atlassian.net/rest/api/3';
 const JIRA_USERNAME = process.env.JIRA_USERNAME;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 
+const excludedProducts = ['Content Hub DAM', 'Content Hub Ops', 'Analytics'];
+
 export enum Phase {
   NOW = 'Now',
   NEXT = 'Next',
@@ -104,7 +106,9 @@ export async function getProductsAsOptions(issues: Issue[]): Promise<Array<Optio
     if (issue.fields.customfield_15258) {
       issue.fields.customfield_15258.forEach((field: CustomField) => {
         if (!options.some((existingOption) => existingOption.value === field.id)) {
-          options.push({ label: field.value, value: field.id });
+          if (!excludedProducts.includes(field.value)) {
+            options.push({ label: field.value, value: field.id });
+          }
         }
       });
     }

@@ -67,13 +67,13 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
               <Image src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/3de0d9d0071446fa95353cfd41748fa9?t=sc700x700" alt="Roadmap" width={300} height={300} />
             </Flex>
 
-            <Alert status="info" alignItems="center">
-              <AlertIcon />
-              Please be advised that all roadmap information displayed on this page is subject to change. The details provided are for general informational purposes only and may be updated or modified without prior notice. No guarantees are made
-              regarding the accuracy, completeness, or reliability of the information presented.
-            </Alert>
-
             <RestrictedContent>
+              <Alert status="info" alignItems="center">
+                <AlertIcon />
+                Please be advised that all roadmap information displayed on this page is subject to change. The details provided are for general informational purposes only and may be updated or modified without prior notice. No guarantees are made
+                regarding the accuracy, completeness, or reliability of the information presented.
+              </Alert>
+
               <Heading size={'sm'}>Available roadmaps</Heading>
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
                 {products.map((product) => (
