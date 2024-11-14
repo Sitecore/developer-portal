@@ -62,6 +62,7 @@ const redirects = [
   { source: '/personalization-testing/experience-platform', destination: '/products/experience-platform', permanent: true },
   { source: '/personalization-testing/personalize', destination: '/products/personalize', permanent: true },
   { source: '/changelog/xm-cloud/14112024/component-a%2fb%2fn-testing-is-now-live-in-xm-cloud', destination: '/changelog/xm-cloud/14112024/component-a-b-n-testing-is-now-live-in-xm-cloud', permanent: true },
+  { source: '/changelog/xm-cloud/13112024/component-a%2fb%2fn-testing-is-now-live-in-xm-cloud', destination: '/changelog/xm-cloud/14112024/component-a-b-n-testing-is-now-live-in-xm-cloud', permanent: true },
 ];
 
 const nextConfig = {
