@@ -3,7 +3,7 @@ import { IRoadmapItem, RoadmapProduct } from '@/src/lib/roadmap';
 import { slugify } from '@/src/lib/utils';
 import { Badge, Button, Card, CardBody, CardHeader, Heading, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, Tooltip, useDisclosure, Wrap } from '@chakra-ui/react';
 import Link from 'next/link';
-import { getStatusColor } from '../../lib/jira';
+import { excludedProducts, getStatusColor } from '../../lib/jira';
 import Carousel from '../ui/carousel/carousel';
 
 interface RoadmapItemProps {
@@ -30,9 +30,13 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
           <Wrap mb={4}>
             {item.product?.map((label: RoadmapProduct) => (
               <Badge key={label.id} colorScheme={'gray'}>
-                <Tooltip label={`Go to the roadmap page for ${label.name}`}>
-                  <Link href={`/roadmap/${slugify(label.name)}`}>{label.name}</Link>
-                </Tooltip>
+                {excludedProducts.includes(label.name) ? (
+                  label.name
+                ) : (
+                  <Tooltip label={`Go to the roadmap page for ${label.name}`}>
+                    <Link href={`/roadmap/${slugify(label.name)}`}>{label.name}</Link>
+                  </Tooltip>
+                )}
               </Badge>
             ))}
           </Wrap>
