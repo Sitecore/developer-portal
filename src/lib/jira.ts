@@ -31,6 +31,10 @@ async function fetchData<T>(url: string): Promise<T> {
   return data;
 }
 
+function createJqlString(filters: { key: string; value: string }[]): string {
+  return filters.map((filter) => `${filter.key}=${filter.value}`).join('%20AND%20');
+}
+
 export async function GetJiraResponse(): Promise<JiraResponse> {
   // Get all issues from Jira where external roadmap is set to 1 (true)
 
@@ -42,12 +46,17 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
     'customfield_15258', // Product
     'customfield_15555', // Speaker notes
     'customfield_15423', // Marketing title
-    //'customfield_15187', // Idea archived
     'attachment',
   ];
 
-  const roadmapAPI = `${jiraBaseUrl}/search?jql=project=SMAP%20AND%20cf[15395]=%221%22%20AND%20cf[15187]=EMPTY&fields=${fields.join(',')}&expand=names&maxResults=100`;
+  const filters = [
+    { key: 'project', value: 'SMAP' },
+    { key: 'cf[15395]', value: '1' }, // External roadmap
+    { key: 'cf[15187]', value: 'EMPTY' }, // Idea archived
+  ];
 
+  const jqlString = createJqlString(filters);
+  const roadmapAPI = `${jiraBaseUrl}/search?jql=${jqlString}&fields=${fields.join(',')}&expand=names&maxResults=100`;
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
   let allIssues = response.issues;
