@@ -42,10 +42,11 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
     'customfield_15258', // Product
     'customfield_15555', // Speaker notes
     'customfield_15423', // Marketing title
+    //'customfield_15187', // Idea archived
     'attachment',
   ];
 
-  const roadmapAPI = `${jiraBaseUrl}/search?jql=project=SMAP%20AND%20cf[15395]=%221%22%20AND%20status!=%22archived%22&fields=${fields.join(',')}&expand=names&maxResults=100`;
+  const roadmapAPI = `${jiraBaseUrl}/search?jql=project=SMAP%20AND%20cf[15395]=%221%22%20AND%20cf[15187]=EMPTY&fields=${fields.join(',')}&expand=names&maxResults=100`;
 
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
