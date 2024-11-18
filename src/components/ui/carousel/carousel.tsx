@@ -7,6 +7,7 @@ import React from 'react';
 // Here we have used react-icons package for the icons
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
+import { ImageModal } from '../imageModal';
 
 // Settings for the slider
 const settings = {
@@ -28,6 +29,11 @@ interface CarouselProps {
 export default function Carousel({ images }: CarouselProps) {
   const [slider, setSlider] = React.useState<Slider | null>(null);
 
+  if (images.length == 1) {
+    return <ImageModal src={images[0]} disableModal={false} border="none" />;
+    //return <Box height={'md'} position="relative" backgroundPosition="center" backgroundSize={'contain'} backgroundRepeat="no-repeat" backgroundImage={`url(${images[0]})`} />;
+  }
+
   return (
     <Box width={'full'} overflow={'hidden'}>
       {/* CSS files for react-slick */}
@@ -37,7 +43,8 @@ export default function Carousel({ images }: CarouselProps) {
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {images.map((url, index) => (
-          <Box key={index} height={'md'} position="relative" backgroundPosition="center" backgroundSize={'contain'} backgroundRepeat="no-repeat" backgroundImage={`url(${url})`} />
+          <ImageModal key={index} src={url} disableModal={false} border="none" />
+          //<Box key={index} height={'md'} position="relative" backgroundPosition="center" backgroundSize={'contain'} backgroundRepeat="no-repeat" backgroundImage={`url(${url})`} />
         ))}
       </Slider>
       {/* Left Icon */}
