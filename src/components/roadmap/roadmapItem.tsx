@@ -1,9 +1,12 @@
 import { getBadgeColor } from '@/src/lib/jira';
 import { IRoadmapItem, RoadmapProduct } from '@/src/lib/roadmap';
-import { slugify } from '@/src/lib/utils';
+import { getQueryValue, slugify } from '@/src/lib/utils';
 import { Badge, Button, Card, CardBody, CardHeader, Heading, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, Tooltip, useDisclosure, Wrap } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import { excludedProducts, getStatusColor } from '../../lib/jira';
+import { LinkedHeading } from '../links/LinkedHeading';
 import Carousel from '../ui/carousel/carousel';
 
 interface RoadmapItemProps {
@@ -12,12 +15,21 @@ interface RoadmapItemProps {
 
 export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const router = useRouter();
+  const { details } = router.query;
+  const selectedItem = getQueryValue(details);
   const images: string[] = item.attachments?.map((attachment) => attachment.url) || [];
+
+  useEffect(() => {
+    if (selectedItem.toLowerCase() === item.key.toLowerCase()) {
+      onOpen();
+    }
+  }, [selectedItem, item.key, onOpen]);
 
   const handleClick = () => {
     onOpen();
   };
+
   return (
     <>
       <Card variant={'outlineRaised'} size={'md'}>
@@ -45,8 +57,8 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
       <Modal size={'xl'} onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>
-            <Heading size={'md'}>{item.title}</Heading>
+          <ModalHeader as={HStack}>
+            <LinkedHeading id={slugify(item.key)}>{item.title}</LinkedHeading>
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
