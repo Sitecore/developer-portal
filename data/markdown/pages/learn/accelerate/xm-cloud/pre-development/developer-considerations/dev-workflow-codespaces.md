@@ -1,8 +1,8 @@
 ---
 title: 'Development Workflow: Github Codespaces'
-description: 'How to setup and configure your development workflow using Github Codespaces and XM Cloud'
+description: 'Configuring your development workflow using Github Codespaces and XM Cloud'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-02-28'
 ---

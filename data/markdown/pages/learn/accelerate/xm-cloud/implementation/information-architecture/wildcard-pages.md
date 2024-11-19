@@ -1,6 +1,8 @@
 ---
 title: 'Wildcard Pages'
 description: 'Using wildcard pages for dynamic urls in XM Cloud'
+hasSubPageNav: true
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-07-11'
 ---

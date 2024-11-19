@@ -61,8 +61,21 @@ const redirects = [
   { source: '/marketing-automation/send', destination: '/products/send', permanent: true },
   { source: '/personalization-testing/experience-platform', destination: '/products/experience-platform', permanent: true },
   { source: '/personalization-testing/personalize', destination: '/products/personalize', permanent: true },
+
   { source: '/changelog/xm-cloud/14112024/component-a%2fb%2fn-testing-is-now-live-in-xm-cloud', destination: '/changelog/xm-cloud/14112024/component-a-b-n-testing-is-now-live-in-xm-cloud', permanent: true },
   { source: '/changelog/xm-cloud/13112024/component-a%2fb%2fn-testing-is-now-live-in-xm-cloud', destination: '/changelog/xm-cloud/14112024/component-a-b-n-testing-is-now-live-in-xm-cloud', permanent: true },
+
+  { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations', permanent: true },
+  { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations/branching-strategy', permanent: true },
+  { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/nextjs-azure-app-services', destination: '/learn/accelerate/xm-cloud/pre-development/hosting-applications/nextjs-azure-app-services', permanent: true },
+  { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/hosting-web-application', destination: '/learn/accelerate/xm-cloud/pre-development/hosting-applications/nextjs-azure-app-services', permanent: true },
+  { source: '/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc', destination: '/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc', permanent: true },
+
+  { source: '/learn/accelerate/xm-cloud/implementation/redirect', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/redirect', permanent: true },
+  { source: '/learn/accelerate/xm-cloud/implementation/sitemap', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/sitemap', permanent: true },
+  { source: '/learn/accelerate/xm-cloud/implementation/localization', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/localization', permanent: true },
+  { source: '/learn/accelerate/xm-cloud/implementation/search', destination: '/learn/accelerate/xm-cloud/implementation/sitecore-search', permanent: true },
+
 ];
 
 const nextConfig = {

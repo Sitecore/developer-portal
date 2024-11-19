@@ -1,8 +1,8 @@
 ---
 title: 'Multisite Architecture/Add-On'
-description: 'How to setup multisite architecture in XM Cloud'
+description: 'Setting up a multisite architecture in XM Cloud'
 area: ['accelerate']
-hasSubPageNav: false
+hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-04-15'
 ---

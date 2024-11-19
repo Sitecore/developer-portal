@@ -1,7 +1,9 @@
 ---
 title: 'Head Application Security'
-description: 'This recipe will define the best practices for securing your Next.js head application.'
+description: 'Best practices for securing your Next.js head application.'
 area: ['accelerate']
+hasSubPageNav: true
+hasInPageNav: true
 lastUpdated: '2023-12-15'
 ---
 

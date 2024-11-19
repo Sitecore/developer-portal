@@ -1,6 +1,8 @@
 ---
 title: 'Component Design Best Practices'
-description: 'This recipe provides general guidance on best practices when designing components and variants/versions.'
+description: 'General guidance on best practices when designing components and variants/versions.'
+hasSubPageNav: true
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2023-12-15'
 ---

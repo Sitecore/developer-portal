@@ -1,9 +1,9 @@
 ---
 title: 'Project Solution Setup'
-description: 'How to setup a new project for Docker local development with XM Cloud'
+description: 'Creating a new project for Docker local development with XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 lastUpdated: '2024-02-18'
 ---
 
@@ -178,7 +178,7 @@ Site Collection Folders organize site collections. They are optional and only re
 
 Site Folders organize sites. They are optional as well and help in case you have a lot of sites within one site collection.
 
-### Related Recipes
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Branching Strategy | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy" />
@@ -186,7 +186,7 @@ Site Folders organize sites. They are optional as well and help in case you have
   <Link title="Setting Up Serialization" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/setup-content-serialization" />
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Getting started with XM Cloud | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />

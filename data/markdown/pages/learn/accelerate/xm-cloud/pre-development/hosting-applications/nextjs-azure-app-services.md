@@ -2,7 +2,7 @@
 title: 'Running Next.js on Azure App Services'
 description: 'Sitecore is not recommending customers host their XM Cloud head application on Azure App Services unless in a highly regulated industry.'
 area: ['accelerate']
-hasSubPageNav: false
+hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-04-23'
 ---
