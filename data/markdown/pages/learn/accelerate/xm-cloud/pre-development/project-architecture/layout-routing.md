@@ -1,6 +1,6 @@
 ---
 title: 'Layout Routing'
-description: 'Setup layout routing in XM CLoud to reduce content complexity and improve performance'
+description: 'Setup layout routing in XM Cloud to reduce content complexity and improve performance'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
