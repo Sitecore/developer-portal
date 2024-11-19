@@ -59,7 +59,7 @@ export function slugify(text: string | null | undefined): string {
 
   const slug = encodeURIComponent(text);
 
-  return slug.toLowerCase().replace(/%20/g, '-');
+  return slug.toLowerCase().replace(/%20/g, '-').replace(/%2f/g, '-');
 }
 
 export function unslugify(text: string): string {
