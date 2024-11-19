@@ -1,6 +1,6 @@
 ---
 title: 'Publishing to Experience Edge'
-description: 'Understand animprove the publishing experience on Experience Edge'
+description: 'Understand and improve the publishing experience on Experience Edge'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
