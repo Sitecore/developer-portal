@@ -2,8 +2,8 @@
 title: 'Requirements Gathering'
 description: 'Requirements gathering is key for the success of any project and will help to shape a comprehensive project plan'
 area: ['accelerate']
-hasSubPageNav: false
-hasInPageNav: false
+hasSubPageNav: true
+hasInPageNav: true
 lastUpdated: '2024-10-11'
 ---
 
@@ -85,7 +85,7 @@ Defining the technical requirements early ensures the implementation can be desi
 - Do we have specific mobile styling rules for these layouts or are the OOTB mobile styling rules from the SXA starter kit enough?
 - Are we able to split their pages with proper page and partial designs?  If we are doing multiple site, what is shared across websites?
 - What are the different components for both site specific and global?
-- If you are coming from XP/XM, what are your Rendering and data source templates? Will we need to be refactored for the new site structure? Take into consideration that there is a streamlined process [we recommend in creating components](/learn/accelerate/xm-cloud/pre-development/developer-experience/component-design-best-practices).
+- If you are coming from XP/XM, what are your Rendering and data source templates? Will they need to be refactored for the new site structure? Take into consideration that there is a streamlined process [we recommend in creating components](/learn/accelerate/xm-cloud/pre-development/developer-experience/component-design-best-practices).
 - Does their site have redirects and how many? Will these be editable by the content team, or can we be moved to the head application? Will there be an effort to purge current redirects before bringing them into XM Cloud?
 
 #### Multi-Site
@@ -165,7 +165,7 @@ These questions should have allowed you to build a wealth of information about t
 
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />

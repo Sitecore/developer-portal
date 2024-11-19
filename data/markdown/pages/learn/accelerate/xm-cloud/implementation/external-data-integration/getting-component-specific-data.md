@@ -1,13 +1,17 @@
 ---
 title: 'Getting Component Specific Data'
-description: 'This recipe discusses the options when component specific data is required'
+description: 'Options available when component specific data is required'
+hasSubPageNav: true
+hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-10-08'
+lastUpdated: '2024-11-18'
 ---
 
 ## Problem
 
-You need to get content that is specific to a component, this can either be CM or external data.
+An e-commerce business wants to display dynamic product details on its website using data from an external Product Information Management (PIM) system. The product details, such as descriptions, prices, availability, and images, are stored in the external system and need to be fetched dynamically based on the product being viewed.
+
+The following content is valid for both third-party integrations and retrieving data from XM Cloud.
 
 ## Solution
 

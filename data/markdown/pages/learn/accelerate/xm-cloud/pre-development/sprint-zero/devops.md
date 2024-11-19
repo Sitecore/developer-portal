@@ -3,7 +3,7 @@ title: 'DevOps'
 description: 'Configuring your DevOps with XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 lastUpdated: '2024-02-07'
 ---
 
@@ -108,13 +108,13 @@ Note that each of the above platforms have different pros/cons, and each support
 Azure App Services and Azure Static WebApps have a lot of limitations so these options are not recommended at this time. Please see this blog post for the reasons why: [Sitecore and Azure Static Web Apps](https://exdst.com/posts/20240121-sitecore-azure-static-web-apps)
 </Alert>
 
-### Related Recipes
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Project Solution Setup" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup" />
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="XM Cloud Deploy app | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />

@@ -1,8 +1,8 @@
 ---
 title: 'Publishing to Experience Edge'
-description: 'Recipe to improve the publishing experience on Experience Edge'
+description: 'Understand animprove the publishing experience on Experience Edge'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-10-08'
 ---
@@ -174,7 +174,7 @@ You can enable debug level logging for the publishing log. This can be done by a
 </configuration>
 ```
 
-### Related Recipes
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Workflow" link="/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data" />
@@ -183,7 +183,7 @@ You can enable debug level logging for the publishing log. This can be done by a
   <Link title="Getting Component Specific Data" link="/learn/accelerate/xm-cloud/implementation/information-architecture/workflow" />
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Publishing to Experience Edge | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html#the-publishing-pipeline" />

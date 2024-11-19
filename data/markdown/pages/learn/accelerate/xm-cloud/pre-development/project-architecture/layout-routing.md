@@ -1,8 +1,8 @@
 ---
 title: 'Layout Routing'
-description: 'How to setup layout routing in XM CLoud to reduce Information Architecture complexity and improve performance'
+description: 'Setup layout routing in XM CLoud to reduce content complexity and improve performance'
 area: ['accelerate']
-hasSubPageNav: false
+hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-08-01'
 ---
@@ -50,7 +50,7 @@ Now that we have the layouts for the header and footer routers, we need to updat
 
 To do this, we can make use of the `page-props-factory` plugin pattern. We will create a new plugin that will be responsible for creating the page props for the header and footer and adding them to the main page props.
 
-First we need to create a new serive that will be responsible for fetching the layouts for the partial designs that we created earlier. We will call this service `GraphQLLayoutRouteService`. Create a new folder in the `src/lib/page-props-factory` folder and call it `services`. Inside this folder, create a new file called `layout-route-service.ts`. Here is the code for this service:
+First we need to create a new service that will be responsible for fetching the layouts for the partial designs that we created earlier. We will call this service `GraphQLLayoutRouteService`. Create a new folder in the `src/lib/page-props-factory` folder and call it `services`. Inside this folder, create a new file called `layout-route-service.ts`. Here is the code for this service:
 
 ```typescript
 import { GraphQLClient } from '@sitecore-jss/sitecore-jss';

@@ -1,6 +1,6 @@
 {
-  "title": "Sitecore Accelerate for Partners",
-  "description": "Tips for teams working on XM Cloud projects from developers in the field",
+  "title": "Sitecore Accelerate Cookbook for XM Cloud",
+  "description": "This Cookbook provides a set of recipes to help implementing XM Cloud through setup, configuration and implemenation.",
   "heading": false,
   "path": "/learn/accelerate/xm-cloud",
   "showRootAsSections": true,
@@ -11,31 +11,16 @@
       "ignoreLink": true,
       "children": [
         {
-          "title": "Project Planning",
-          "path": "project-planning",
-          "children": [
-            {
-              "title": "Preparing for an XM Cloud Project",
-              "path": "preparing-for-an-xm-cloud-project"
-            },
-            {
-              "title": "Transition from XM/XP to XM Cloud",
-              "path": "xm-xp-to-xmc"
-            },
-            {
-              "title": "Project Estimation",
-              "path": "project-estimation"
-            }
-          ]
-        },
-        {
           "title": "Discovery",
           "path": "discovery",
-          "ignoreLink": true,
+          "ignoreLink": false,
           "children": [
             {
               "title": "Moving to SaaS - Concepts You Need to Know",
               "path": "moving-to-saas"
+            },            {
+              "title": "Transition from XM/XP to XM Cloud",
+              "path": "xm-xp-to-xmc"
             },
             {
               "title": "Requirements Gathering",
@@ -44,9 +29,40 @@
           ]
         },
         {
-          "title": "Developer Experience",
-          "path": "developer-experience",
-          "ignoreLink": true,
+          "title": "Project Planning",
+          "path": "project-planning",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Preparing for an XM Cloud Project",
+              "path": "preparing-for-an-xm-cloud-project"
+            },
+
+            {
+              "title": "Project Estimation",
+              "path": "project-estimation"
+            }
+          ]
+        },
+        {
+          "title": "Hosting Applications",
+          "path": "hosting-applications",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Hosting Web Application",
+              "path": "hosting-web-application"
+            },
+            {
+              "title": "Hosting Next.js on Azure App Services",
+              "path": "nextjs-azure-app-services"
+            }
+          ]
+        },
+        {
+          "title": "Developer Considerations",
+          "path": "developer-considerations",
+          "ignoreLink": false,
           "children": [
             {
               "title": "Branching Strategy",
@@ -61,14 +77,6 @@
               "path": "dev-workflow-codespaces"
             },
             {
-              "title": "Hosting the Web Application",
-              "path": "hosting-web-application"
-            },
-            {
-              "title": "Hosting Next.js on Azure App Services",
-              "path": "nextjs-azure-app-services"
-            },
-            {
               "title": "Next.js App Router Preparation",
               "path": "nextjs-app-router-preparation"
             }
@@ -77,7 +85,7 @@
         {
           "title": "Security",
           "path": "security",
-          "ignoreLink": true,
+          "ignoreLink": false,
           "children": [
             {
               "title": "Head Application Security",
@@ -88,7 +96,7 @@
         {
           "title": "Information Architecture",
           "path": "information-architecture",
-          "ignoreLink": true,
+          "ignoreLink": false,
           "children": [
             {
               "title": "Content Audit",
@@ -103,7 +111,7 @@
         {
           "title": "Project Architecture",
           "path": "project-architecture",
-          "ignoreLink": true,
+          "ignoreLink": false,
           "children": [
             {
               "title": "Layout Routing",
@@ -152,7 +160,7 @@
         {
           "title": "Developer Experience",
           "path": "developer-experience",
-          "ignoreLink": true,
+          "ignoreLink": false,
           "children": [
             {
               "title": "Creating New Components",
@@ -161,10 +169,6 @@
             {
               "title": "Creating Branch Templates",
               "path": "creating-branch-templates"
-            },
-            {
-              "title": "Troubleshooting Local Dev Container Env",
-              "path": "troubleshooting-docker"
             },
             {
               "title": "Creating a Component Gallery",
@@ -179,8 +183,20 @@
         {
           "title": "Information Architecture",
           "path": "information-architecture",
-          "ignoreLink": true,
+          "ignoreLink": false,
           "children": [
+            {
+              "title": "Localization",
+              "path": "localization"
+            },
+            {
+              "title": "Redirect",
+              "path": "redirect"
+            },
+            {
+              "title": "Sitemap",
+              "path": "sitemap"
+            },
             {
               "title": "Wildcard Pages",
               "path": "wildcard-pages"
@@ -194,33 +210,22 @@
         {
           "title": "External Data Integration",
           "path": "external-data-integration",
-          "ignoreLink": true,
+          "ignoreLink": false,
           "children": [
+            
+	          {
+              "title": "Custom Editing UX for 3rd Party Integrations",
+              "path": "custom-editing-ux-3rd-party-integrations"
+            },
             {
               "title": "Getting Component Specific Data",
               "path": "getting-component-specific-data"
-            },
-	    {
-              "title": "Custom Editing UX for 3rd Party Integrations",
-              "path": "custom-editing-ux-3rd-party-integrations"
             }
           ]
         },
         {
-          "title": "Redirect",
-          "path": "redirect"
-        },
-        {
-          "title": "Search",
-          "path": "search"
-        },
-        {
-          "title": "Sitemap",
-          "path": "sitemap"
-        },
-		{
-          "title": "Localization",
-          "path": "localization"
+          "title": "Sitecore Search",
+          "path": "sitecore-search"
         }
       ]
     },
