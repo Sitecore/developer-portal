@@ -2,14 +2,12 @@
 title: 'XM Cloud Glossary of Terms'
 description: 'Learn more about how to develop for XM Cloud'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2023-10-31'
 ---
 
 ## XM Cloud Glossary of Terms
-
-> 🚀 This Sitecore Accelerate Recipe is a work in progress...
 
 ### Project
 
@@ -28,3 +26,6 @@ A site represents one website or one content repository. A site is able to suppo
 Sites can share content and presentation configuration across each other within one site collection if enabled.
 
 <img src="/images/learn/accelerate/xm-cloud/xmc-glossary-2.jpeg" alt="Site Structure in XM Cloud"/>
+
+> 🚀 This Sitecore Accelerate Recipe is a work in progress...
+

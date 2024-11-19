@@ -1,8 +1,8 @@
 ---
 title: 'Hosting the Web Application'
-description: 'Clients must choose where and how to host their XM Cloud front-end head application'
+description: 'Every implementation needs to decide where and how to host their XM Cloud front-end head application'
 area: ['accelerate']
-hasSubPageNav: false
+hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-10-04'
 ---

@@ -1,8 +1,8 @@
 ---
 title: 'Branching Strategy'
-description: 'Recommended Branching strategy when setting up an XM Cloud project'
+description: 'Recommended Branching Strategy when setting up an XM Cloud project'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-01-17'
 ---

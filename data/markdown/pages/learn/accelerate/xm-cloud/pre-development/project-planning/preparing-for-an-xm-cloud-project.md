@@ -1,7 +1,9 @@
 ---
 title: 'Preparing for an XM Cloud Project'
-description: 'This recipe recommends overall strategies when planning to kick off an XM Cloud project'
+description: 'Overall strategies when planning to kick off an XM Cloud project'
 area: ['accelerate']
+hasSubPageNav: true
+hasInPageNav: true
 lastUpdated: '2024-03-06'
 ---
 

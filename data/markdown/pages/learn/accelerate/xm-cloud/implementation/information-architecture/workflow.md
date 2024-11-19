@@ -2,33 +2,33 @@
 title: 'Workflows'
 description: 'Learn about Workflows in XM Cloud'
 area: ['accelerate']
-hasSubPageNav: false
+hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-10-21'
+lastUpdated: '2024-11-18'
 ---
 
-# Problem
+## Problem
 
-Sitecore comes with a sample workflow that should not be used as an actual configuration but as an example of a simple workflow. Workflow helps customers prevent unplanned content from making it to their website without the proper approvals. It also helps maintain consistent quality across all content. Each step in the editing process—such as fact-checking, style alignment, tone consistency, and further reviews—ensures that the content meets specific standards.
+XM Cloud comes with a sample workflow that should not be used as an actual configuration but as an example of a simple workflow. Workflow helps customers prevent unplanned content from making it to their website without the proper approvals. It also helps maintain consistent quality across all content. Each step in the editing process—such as fact-checking, style alignment, tone consistency, and further reviews—ensures that the content meets specific standards.
 
-# Solution
+## Solution
 
-## Workflow Planning
+### Workflow Planning
 
 It's recommended to establish a workflow for all content items. This prevents premature publishing to your production environment, whether done automatically or manually. While the sample workflow is provided, it should only be used as an example or template for designing a workflow that fits your business needs. Maintain simplicity in your workflow. Overcomplicating it with numerous states and review levels can slow the process, resulting in a less effective workflow.
 
-## Migration Considerations
+### Migration Considerations
 
 If you are currently on XP/XM and migrating to XM Cloud, there are specific considerations to address. Two key focuses should be:
 
 1. Any .NET customizations affecting items controlled by workflow.
 2. The introduction of webhooks, which offer new ways to implement workflow.
 
-### Changes to Consider
+#### Changes to Consider
 
-- **Email Actions** are no longer supported. Replace them with a Webhook Submit Action. (Using Webhooks to Send Notifications)
+- **Email Actions** are no longer supported. Replace them with a [Webhook Submit Action](#using-webhooks-to-send-notifications).
 
-## Configure Page and Datasource Workflows
+### Configure Page and Datasource Workflows
 
 Two separate workflows are recommended, one for page items and the other for datasources. This allows the main page workflow to stay clean and not cluttered. At a minimum this would be a two stage with draft and approved. The Page Workflow has a Datasource Workflow Action which points to the Approve command on the Datasource Workflow. This is important because it allows you to define the scope which allow datasources like the link list and its child items for example to be moved through the workflow successfully.
 
@@ -44,7 +44,7 @@ Two separate workflows are recommended, one for page items and the other for dat
 
 <Image src="/images/learn/accelerate/xm-cloud/workflows12.png" title="Datasource workflow"/>
 
-## Assign Page Workflow
+### Assign Page Workflow
 
 1. Assign it using Standard Values to the page template.
 2. Enable `View > Standard Fields` in the Content Editor.
@@ -52,7 +52,7 @@ Two separate workflows are recommended, one for page items and the other for dat
 
 <Image src="/images/learn/accelerate/xm-cloud/workflows1.png" title="StandardValuesPageWorkflow"/>
 
-## Assign SXA Datasource Workflow
+### Assign SXA Datasource Workflow
 
 It's important to configure workflow for both pages and the separate data source component items on a page. To do this:
 
@@ -64,7 +64,7 @@ It's important to configure workflow for both pages and the separate data source
 
 <Image src="/images/learn/accelerate/xm-cloud/workflows2.png" title="ComponentDatasourceWorkflow"/>
 
-## Configuration of Users/Roles
+### Configuration of Users/Roles
 
 For each workflow state that requires a specific set of users, create a Sitecore role representing the commands and states this type of user should manage. Assign roles to users rather than configuring permissions for individual users.
 
@@ -99,7 +99,7 @@ A **Super Editor** has full workflow execution rights with no restrictions. When
 
 It’s also advised not to assign the Administrator role to content editors, as administrators can override workflow states and interfere with normal operation.
 
-## Using Webhooks to Send Notifications
+### Using Webhooks to Send Notifications
 
 You can now trigger sending emails or notifications via webhooks when an item reaches a specific state in the workflow. Follow the steps below:
 

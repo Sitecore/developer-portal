@@ -1,8 +1,8 @@
 ---
 title: 'Sitecore Search'
-description: 'Recipe for implementing search experience with XM Cloud and Search'
+description: 'Recipe for implementing search experience using Sitecore Search'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-10-03'
 ---
@@ -105,7 +105,7 @@ In addition, for the pure purpose of prototyping and training, there are the fol
 * Sitecore Search Starter Kit repo: [https://github.com/Sitecore/Sitecore-Search-TS-SDK-Starter-Kit](https://github.com/Sitecore/Sitecore-Search-TS-SDK-Starter-Kit)
 * Sitecore Search React SDK video tutorial: [https://www.youtube.com/watch?v=GhQNYlR7pvo](https://www.youtube.com/watch?v=GhQNYlR7pvo)
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Index Items | Sitecore Documentation" link="https://doc.sitecore.com/search/en/users/search-user-guide/index-items.html" />

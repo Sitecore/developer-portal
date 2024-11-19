@@ -1,10 +1,10 @@
 ---
 title: 'Multilingual content and localization'
 description: 'Setting up XM Cloud and the Next.JS head application for multilingual and regional use cases'
-hasSubPageNav: false
-hasInPageNav: false
+hasSubPageNav: true
+hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-10-07'
+lastUpdated: '2024-11-18'
 ---
 
 ## Problem
@@ -18,16 +18,16 @@ Localization refers to the set of features and overall process of making an appl
 - Language fallback
 - Dictionary phrases
 
-Keep in mind that with XM Cloud, for each of the above of features or configurations, localization happens across two platforms that must be kept in alignment for the correct end user experience:
-
-- Configuration of the Sitecore XMC instance
-- Configuration of the Next.JS head application
-
 ## Solution
 
-### Adding a language to the XMC Environment
+Keep in mind that with XM Cloud, for each of the above of features or configurations, localization happens across two platforms that must be kept in alignment for the correct end user experience:
 
-Regardless of the feature being targeted, the XMC instance must be setup so that the XMC instance understands what is or is not a supported language.
+- Configuration of the Sitecore XM Cloud instance
+- Configuration of the Next.JS head application
+
+### Adding a language to XM Clouds
+
+Regardless of the feature being targeted, the XM Cloud instance must be setup so that the XM Cloud instance understands what is or is not a supported language.
 
 To add a language to XM Cloud, open up the Content Editor and navigate to
 
@@ -38,7 +38,7 @@ To add a language to XM Cloud, open up the Content Editor and navigate to
 <br /><br />
 Right click the Languages item, choose Insert and then select Language. From there follow the wizard to add the desired language. [Alternatively, you can add a new language version directly in XM Cloud Portal Settings.](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-languages-and-locales.html#enable-a-language-for-the-environment) After adding the language, perform a full site publish - consider the best practices needed for publishing, including setting up workflow. Review the Publishing to Edge recipe for more information.
 
-### Adding language versions of Content in XMC
+### Adding language versions of Content in XM Cloud
 
 Once the desired language has been setup [you can add new language versions of existing content. A feature of SXA is that you can use a built-in script to create a new language version of the entire website. All site items and field values are copied from the source language to the target language](https://doc.sitecore.com/xmc/en/developers/xm-cloud/add-a-language-version-to-an-sxa-site.html). Alternatively, you can create language versions of individual items manually. In both cases your alternate language versions of content will be subject to the same workflow as the default language (workflow should be set on standard values so that new items are subject to workflow on creation). Where auto publish is not part of the workflow [and items are subject to bulk publishing] it’s worth remembering that where multiple language versions are concerned, the publishing times for a full site publish could be much greater due to the additional language versions involved.
 
@@ -52,13 +52,13 @@ Language code slugs refer to the part of the URL that indicate the requested lan
 
 Localized page URL’s and page names refers to when a page or route can be requested with a different name that differs from its canonical name and further implies the target or desired language the page should be returned in.
 
-Using the following URL, www.mywebsite.com/about-us the canonical and implied language would be English. Following the steps below, you can configure both XMC and the head application to resolve the following URL as the same page, but for the French language: www.mywebsite.com/qui-sommes-nous
+Using the following URL, www.mywebsite.com/about-us the canonical and implied language would be English. Following the steps below, you can configure both XM Cloud and the head application to resolve the following URL as the same page, but for the French language: www.mywebsite.com/qui-sommes-nous
 
 Sitecore does not allow for different item names based off the language version, however we can achieve localized functionality by using the Display Namefield of each item and updating the URL managers to use the Display Name field instead of the item name itself.
 
-### Patch Configuration for XMC
+### Patch Configuration for XM Cloud
 
-The following patch configuration file should be added to the Visual Studio solution and deployed to XMC. Be sure to check **/sitecore/admin/showconfig.aspx** to ensure the patch configuration has been appropriately applied:
+The following patch configuration file should be added to the Visual Studio solution and deployed to XM Cloud. Be sure to check **/sitecore/admin/showconfig.aspx** to ensure the patch configuration has been appropriately applied:
 
 ```xml
 <configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
@@ -83,7 +83,7 @@ After the patch configuration has been applied, perform a full site publish to r
 
 ### Configuring the Next.JS Application
 
-In the Next.JS application, the following configuration property needs to be updated to including ALL languages that were configured in the XMC environment. The following configuration properties are located in next.config.js – typically at the root of the repository.
+In the Next.JS application, the following configuration property needs to be updated to including ALL languages that were configured in XM Cloud. The following configuration properties are located in next.config.js – typically at the root of the repository.
 
 ```javascript
 i18n: {
@@ -94,12 +94,12 @@ locales: ['en', 'fr-CA', 'es'],
 // prefixed path e.g. `/styleguide`.
 defaultLocale: jssConfig.defaultLanguage
 }
-This configuration step should be done AFTER configuring the XMC environment and publishing changes there. This configuration change to the next.config.js requires a redeployment.
+This configuration step should be done AFTER configuring XM Cloud and publishing changes there. This configuration change to the next.config.js requires a redeployment.
 ```
 
 ### Review
 
-After configuring both the XMC environment and Next.JS application, Experience Edge will resolve routes based off the display name of the item. You can continue to resolve routes based off explicit language parameters (language code URL slugs, for example) in combination with the canonical item name.
+After configuring both XM Cloud and Next.JS application, Experience Edge will resolve routes based off the display name of the item. You can continue to resolve routes based off explicit language parameters (language code URL slugs, for example) in combination with the canonical item name.
 
 #### Multi-domain routing with Localization
 
@@ -126,7 +126,7 @@ On lines 4-8, above, we have added a domain that will target the French Canadian
 
 ### Language Fallback
 
-When requesting an item in a specific language, and the language version for that item or route is not found, XMC (Experience Edge) will not resolve the item and return null or 404. You can configure XMC to “fallback” to a default language when a requested language version is not found on for an item.
+When requesting an item in a specific language, and the language version for that item or route is not found, XM Cloud (Experience Edge) will not resolve the item and return null or 404. You can configure XM Cloud to “fallback” to a default language when a requested language version is not found on for an item.
 
 <Alert status="info">
   <AlertIcon />
@@ -188,13 +188,13 @@ query DictionarySearch($rootItemId: String!, $language: String!, $templates: Str
 }
 ```
 
-### Related Recipes
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Preparing for an XM Cloud Project | Sitecore Accelerate for Partners" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Manage languages and locales | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-languages-and-locales.html#enable-a-language-for-the-environment" />
