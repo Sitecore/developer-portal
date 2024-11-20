@@ -1,7 +1,7 @@
 import { getBadgeColor } from '@/src/lib/jira';
 import { IRoadmapItem, RoadmapProduct } from '@/src/lib/roadmap';
 import { getQueryValue, slugify } from '@/src/lib/utils';
-import { Badge, Box, Button, Card, CardBody, CardHeader, Heading, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Tooltip, useDisclosure, Wrap } from '@chakra-ui/react';
+import { Badge, Box, Card, CardBody, CardHeader, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Heading, HStack, Stack, Tooltip, useDisclosure, Wrap } from '@chakra-ui/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -57,14 +57,14 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
           </Wrap>
         </CardBody>
       </Card>
-      <Modal size={'2xl'} onClose={onClose} isOpen={isOpen} isCentered>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader as={HStack}>
+      <Drawer onClose={onClose} isOpen={isOpen} size={'xl'}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader as={HStack}>
             <LinkedHeading id={slugify(item.key)}>{item.title}</LinkedHeading>
-          </ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
+          </DrawerHeader>
+          <DrawerBody>
             <Stack p={4} border="1px solid" borderRadius={'md'} borderColor={'chakra-border-color'}>
               <HStack>
                 <Wrap>
@@ -84,29 +84,27 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
               </Wrap>
             </Stack>
 
-            <Box height={'500px'} overflowY={'scroll'} my={4}>
-              <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: item.description }} />
-            </Box>
-
-            {item.attachments.length > 0 && (
-              // <Carousel images={images} />
-              <>
-                <Heading variant={'section'}>Attachments:</Heading>
-                <HStack>
+            <Prose margin={0} my={4} padding={0} dangerouslySetInnerHTML={{ __html: item.description }} />
+          </DrawerBody>
+          {item.attachments.length > 0 && (
+            <DrawerFooter>
+              <Stack>
+                <Divider />
+                <Heading mb={1} variant={'section'}>
+                  Attachments:
+                </Heading>
+                <HStack h={'100px'}>
                   {images.map((url, index) => (
-                    <Box width={'25%'} key={index}>
+                    <Box width={'20%'} key={index}>
                       <ImageModal key={index} src={url} disableModal={false} border="none" />
                     </Box>
                   ))}
                 </HStack>
-              </>
-            )}
-          </ModalBody>
-          <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+              </Stack>
+            </DrawerFooter>
+          )}
+        </DrawerContent>
+      </Drawer>
     </>
   );
 };
