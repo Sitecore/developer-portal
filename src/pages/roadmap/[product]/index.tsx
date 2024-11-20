@@ -79,7 +79,7 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct, products 
               <VisuallyHidden>Go back to the changelog overview</VisuallyHidden>
             </Link>
 
-            <SimpleGrid minChildWidth="120px" spacing="5px">
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="5px">
               <RoadmapPhase roadmap={data} title="Done" color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
               <RoadmapPhase roadmap={data} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
               <RoadmapPhase roadmap={data} title="Next (next two quarter)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />

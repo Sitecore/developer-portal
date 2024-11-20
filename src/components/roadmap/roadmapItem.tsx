@@ -41,7 +41,7 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
             {item.title}
           </Heading>
         </CardHeader>
-        <CardBody>
+        <CardBody hideBelow={'sm'}>
           <Wrap mb={4}>
             {item.product?.map((label: RoadmapProduct) => (
               <Badge key={label.id} colorScheme={'gray'}>
@@ -66,14 +66,13 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
           </DrawerHeader>
           <DrawerBody>
             <Stack p={4} border="1px solid" borderRadius={'md'} borderColor={'chakra-border-color'}>
-              <HStack>
-                <Wrap>
-                  <Heading variant={'section'}>Roadmap Phase:</Heading> <Badge colorScheme={getBadgeColor(item.roadmapPhase)}>{item.roadmapPhase}</Badge>
-                </Wrap>
-                <Wrap>
-                  <Heading variant={'section'}>Status:</Heading> <Badge colorScheme={getStatusColor(item.status)}>{item.status}</Badge>
-                </Wrap>
-              </HStack>
+              <Wrap>
+                <Heading variant={'section'}>Roadmap Phase:</Heading> <Badge colorScheme={getBadgeColor(item.roadmapPhase)}>{item.roadmapPhase}</Badge>
+              </Wrap>
+              <Wrap>
+                <Heading variant={'section'}>Status:</Heading> <Badge colorScheme={getStatusColor(item.status)}>{item.status}</Badge>
+              </Wrap>
+
               <Wrap>
                 <Heading variant={'section'}>Product(s):</Heading>
                 {item.product?.map((label: RoadmapProduct) => (
