@@ -1,13 +1,14 @@
 import { getBadgeColor } from '@/src/lib/jira';
 import { IRoadmapItem, RoadmapProduct } from '@/src/lib/roadmap';
 import { getQueryValue, slugify } from '@/src/lib/utils';
-import { Badge, Button, Card, CardBody, CardHeader, Heading, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, Tooltip, useDisclosure, Wrap } from '@chakra-ui/react';
+import { Badge, Box, Button, Card, CardBody, CardHeader, Heading, HStack, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Tooltip, useDisclosure, Wrap } from '@chakra-ui/react';
+import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { excludedProducts, getStatusColor } from '../../lib/jira';
 import { LinkedHeading } from '../links/LinkedHeading';
-import Carousel from '../ui/carousel/carousel';
+import { ImageModal } from '../ui/imageModal';
 
 interface RoadmapItemProps {
   item: IRoadmapItem;
@@ -29,6 +30,8 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
   const handleClick = () => {
     onOpen();
   };
+
+  console.log(item.description);
 
   return (
     <>
@@ -54,7 +57,7 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
           </Wrap>
         </CardBody>
       </Card>
-      <Modal size={'xl'} onClose={onClose} isOpen={isOpen} isCentered>
+      <Modal size={'2xl'} onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader as={HStack}>
@@ -81,9 +84,23 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
               </Wrap>
             </Stack>
 
-            <Text py={4}>{item.description}</Text>
+            <Box height={'500px'} overflowY={'scroll'} my={4}>
+              <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: item.description }} />
+            </Box>
 
-            {item.attachments.length > 0 && <Carousel images={images} />}
+            {item.attachments.length > 0 && (
+              // <Carousel images={images} />
+              <>
+                <Heading variant={'section'}>Attachments:</Heading>
+                <HStack>
+                  {images.map((url, index) => (
+                    <Box width={'25%'} key={index}>
+                      <ImageModal key={index} src={url} disableModal={false} border="none" />
+                    </Box>
+                  ))}
+                </HStack>
+              </>
+            )}
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
