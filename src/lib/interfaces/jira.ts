@@ -49,6 +49,9 @@ export interface Issue {
   self: string;
   key: string;
   fields: Fields;
+  renderedFields?: {
+    description: string;
+  };
 }
 
 export interface Names {
