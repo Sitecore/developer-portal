@@ -3,7 +3,7 @@ title: 'Creating a Site'
 description: 'How to create your Site and Site Collection in XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 lastUpdated: '2024-02-15'
 ---
 
@@ -51,7 +51,7 @@ All sites must be placed within a site collection. Site collections are a way to
 
 Each site collection can include multiple related sites, for example, to support multiple brands that need to share resources or are authored by a common team, or multiple locations for a single brand.
 
-### Related Recipes
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Branching Strategy | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy" />
@@ -59,7 +59,7 @@ Each site collection can include multiple related sites, for example, to support
   <Link title="Setting Up Serialization" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/setup-content-serialization" />
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Getting started with XM Cloud | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />

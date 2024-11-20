@@ -1,6 +1,8 @@
 ---
 title: 'Transition from XM/XP to XM Cloud'
 description: 'Learn more about how to transition to XM Cloud'
+hasSubPageNav: true
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-10-08'
 ---
@@ -27,7 +29,7 @@ CSS Styles and HTML can be reused from the existing MVC site and ported over to 
 
 - This might slow down or block changes on the existing platform as focus in on XM Cloud.
 
-- Content and Information Architecture audit might slow down process if changes expected are drastic fro current state. The process of the audit itself might delay the start.
+- Content and Information Architecture audit might slow down process if changes expected are drastic from current state. The process of the audit itself might delay the start.
 
 ### 2. Hybrid Migration
 

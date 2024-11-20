@@ -2,7 +2,7 @@
 title: 'Creating Branch Templates'
 description: 'The developer workflow to create a new branch template'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-10-01'
 ---
@@ -125,13 +125,13 @@ Please note there are OOTB Rendering Content Resolvers that can also be used to 
 
 <br/>
 
-### Related Recipes
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Creating new components" link="/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components" />
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Branch templates | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/branch-templates.html" />

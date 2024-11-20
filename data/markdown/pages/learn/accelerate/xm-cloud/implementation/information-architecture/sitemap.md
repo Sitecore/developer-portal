@@ -1,15 +1,15 @@
 ---
 title: 'Sitemap'
-description: 'Recipe for generation of Sitemap.xml that accurately reflects the canonical location of all published and not excluded pages.  Content authors should have the ability to control the composition of the sitemap while doing content entry of individual content items.'
+description: 'Configuration of Sitemap in XM Cloud'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-10-07'
 ---
 
 ## Problem
 
-A marketer, strategist. or content author would like to use industry standard SEO tools to ensure that all required content is discoverable and included in search engine indexes. To do this a sitemap is required. This recipe will walk the developer through the steps to configure a Sitemap in XMC.
+A marketer, strategist or content author would like to use industry standard SEO tools to ensure that all required content is discoverable and included in search engine indexes. To do this a sitemap is required. This recipe will walk the developer through the steps to configure a Sitemap in XMC.
 
 ## Solution
 
@@ -78,7 +78,7 @@ Sitecore will cache the last built Sitemap, and even though you’ve published, 
 
 If you have clicked the check box on `<site collection>/<site>/Settings/Sitemap` on the field labeled `Generate sitemap media items - if checked sitemaps will be stored in media items` then the generated output of the Sitemap will be stored in the Media Library. On the `<site collection>/<site>` item you will see a field called `Sitemap media items` which will specify the sitemap(s) that are being used. You can either view this field with the raw values view turned on in order to see the item ID and then search with the ID to find its location in the content tree, or you could also search for `sitemap` to find it as well. Another option is to navigate to the Media Library and the following folder: `Project/<site>/<site>/Sitemaps/<site>` and you'll find a list of your sitemaps.
 
-### Related Recipes
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Publishing to Edge" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />

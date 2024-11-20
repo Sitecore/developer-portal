@@ -1,8 +1,10 @@
 ---
 title: 'Go-Live Checklist'
-description: 'Checklist and considerations before taking XM Cloud and your front-end application to production.'
+description: 'Checklist and considerations before taking XM Cloud and your head application to production.'
+hasSubPageNav: true
+hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-10-07'
+lastUpdated: '2024-10-18'
 ---
 
 ## Problem
@@ -61,7 +63,7 @@ Review and follow the recommended steps to prepare your domain to serve your new
 
 If your hosting platform supports notifications or alerts, consider setting those up for important limits like bandwidth, function invocations, and image optimization.
 
-### Front-end Application Considerations
+### Head Application Considerations
 
 Follow the [Production Checklist](https://nextjs.org/docs/pages/building-your-application/deploying/production-checklist) provided in the Next.js documentation. The list covers front-end optimizations, development best practices, performance testing, and more.
 

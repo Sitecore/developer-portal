@@ -2,7 +2,7 @@
 title: 'Custom Editing UX for 3rd Party Integrations'
 description: 'How do you integrate 3rd Party applications into XM Cloud''s Head Application?'
 area: ['accelerate']
-hasSubPageNav: false
+hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-10-09'
 ---
@@ -26,7 +26,7 @@ One simple way to fill such Id or link is to let the editor copy & paste it from
 
 Pages editor is a SaaS application, which is currently not extendable with custom code as Experience Editor was.
 
-### Create a editing component
+### Create an editing component
 
 The table below shows a step by step guide on how to create a custom react editing component, which allows the editors to visually see the 3rd Party data and choose 1 or more of them. The result will be automatically saved back to XM Cloud Datasource item.
 

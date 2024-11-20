@@ -83,7 +83,7 @@ Regarding a full description, please refer to the documentation website. The fol
 
 #### Real-Life Example (Jetstar Airways &amp; Sitecore)
 
-- [https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways ](https://www.sitecore.com/blog/personalization/the-skys-the-limit-for-jetstar-airways%C2%A0)
+- [https://www.sitecore.com/resources/insights/customer-insights/the-skys-the-limit-for-jetstar-airways](https://www.sitecore.com/resources/insights/customer-insights/the-skys-the-limit-for-jetstar-airways)
 
 To address the complexity of deriving and implementing insights from a unified customer profile in an omnichannel experience strategy, **Jetstar** uses Sitecore Experience Manager as the main platform for digital transformation. It also uses Sitecore CDP to activate customer insights and Sitecore Personalize across multiple channels.
 
