@@ -66,6 +66,7 @@ The following issues have been fixed:
 | Headless Services | GraphQL complexity calculation ignores chained fragments.                                                                                      | 568960                                 |
 | Headless Services | CreateItem mutation requires ID to be passed.                                                                                                  | 569496                                 |
 | Headless Services | The "Interface field Item.children expects type..." error appears after using the "jss bootstrap" command.                                     | 572005                                 |
+| Headless Services | Computed search fields is not available on Edge Preview GraphQL.                                                                               | 575875                                 |
 | Headless Services | The "StartIndex cannot be less than zero" error occurs after querying the jss field of the JssExtender if the grouped droplink field is empty. | 577524                                 |
 | Headless Services | Layout service creates a new SiteInfo() for every request.                                                                                     | 584753                                 |
 | Headless Services | Behavior change of GeneralLinkFieldSerializer.                                                                                                 | 580748                                 |
