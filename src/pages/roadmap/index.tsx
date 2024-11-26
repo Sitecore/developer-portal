@@ -59,7 +59,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
 
                 <UnorderedList ml={5}>
                   <ListItem>Done - presenting completed features and updates</ListItem>
-                  <ListItem>Now - outlining current initiatives</ListItem>
+                  <ListItem>Now - outlining current initiatives which we expect to ship this quarter</ListItem>
                   <ListItem>Next - detailing plans for the upcoming two quarters</ListItem>
                   <ListItem>Future - offering a glimpse into long-term developments beyond nine months.</ListItem>
                 </UnorderedList>
