@@ -15,6 +15,10 @@ export enum Phase {
   DONE = 'Done',
   FUTURE = 'Future',
 }
+enum FilterOption {
+  Equals = '=',
+  NotEquals = '!=',
+}
 
 async function fetchData<T>(url: string): Promise<T> {
   const response = await fetch(url, {
@@ -31,8 +35,8 @@ async function fetchData<T>(url: string): Promise<T> {
   return data;
 }
 
-function createJqlString(filters: { key: string; value: string }[]): string {
-  return filters.map((filter) => `${filter.key}=${filter.value}`).join('%20AND%20');
+function createJqlString(filters: { key: string; value: string; operator: FilterOption }[]): string {
+  return filters.map((filter) => `${filter.key}${filter.operator}${filter.value}`).join('%20AND%20');
 }
 
 export async function GetJiraResponse(): Promise<JiraResponse> {
@@ -50,15 +54,15 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
   ];
 
   const filters = [
-    { key: 'project', value: 'SMAP' },
-    { key: 'cf[15395]', value: '1' }, // External roadmap
-    { key: 'cf[15187]', value: 'EMPTY' }, // Idea archived
+    { key: 'project', value: 'SMAP', operator: FilterOption.Equals },
+    { key: 'cf[15395]', value: '1', operator: FilterOption.Equals }, // External roadmap
+    { key: 'cf[15187]', value: 'EMPTY', operator: FilterOption.Equals }, // Idea archived
+    { key: 'status', value: 'archived', operator: FilterOption.NotEquals }, // second archived status
   ];
 
-  //  %20AND%20status!="archived"
-
   const jqlString = createJqlString(filters);
-  const roadmapAPI = `${jiraBaseUrl}/search?jql=${jqlString}%20AND%20status!="archived"&fields=${fields.join(',')}&expand=names&maxResults=100&expand=renderedFields`;
+  console.log(jqlString);
+  const roadmapAPI = `${jiraBaseUrl}/search?jql=${jqlString}&fields=${fields.join(',')}&expand=names&maxResults=100&expand=renderedFields`;
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
   let allIssues = response.issues;
