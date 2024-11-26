@@ -55,8 +55,10 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
     { key: 'cf[15187]', value: 'EMPTY' }, // Idea archived
   ];
 
+  //  %20AND%20status!="archived"
+
   const jqlString = createJqlString(filters);
-  const roadmapAPI = `${jiraBaseUrl}/search?jql=${jqlString}&fields=${fields.join(',')}&expand=names&maxResults=100&expand=renderedFields`;
+  const roadmapAPI = `${jiraBaseUrl}/search?jql=${jqlString}%20AND%20status!="archived"&fields=${fields.join(',')}&expand=names&maxResults=100&expand=renderedFields`;
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
   let allIssues = response.issues;
