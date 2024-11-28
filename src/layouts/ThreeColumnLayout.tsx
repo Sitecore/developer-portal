@@ -13,7 +13,6 @@ type ThreeColumnLayoutProps = {
 };
 
 export const ThreeColumnLayout = ({ sidebar, inPageNav, inPageLinks, children, ...rest }: ThreeColumnLayoutProps) => {
-  console.log(sidebar);
   return (
     <Flex flexGrow={0} justify={'space-between'} width={'full'} gap={0} direction={{ base: 'column', md: 'row' }} {...rest} flexFlow={'column'}>
       <Sidebar showBackground>{sidebar}</Sidebar>
