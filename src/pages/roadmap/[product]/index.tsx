@@ -10,7 +10,7 @@ import useSWR from 'swr';
 
 import Layout from '@/src/layouts/Layout';
 import { pageRouterAuth } from '@/src/lib/auth0';
-import { slugify } from '@/src/lib/utils';
+import { getQueryArray, slugify } from '@/src/lib/utils';
 import { RoadmapInformation } from '@lib/interfaces/jira';
 import { getRoadmap, Phase } from '@lib/jira';
 import NextLink from 'next/link';
@@ -24,12 +24,12 @@ interface SearchPageProps {
 
 export const getServerSideProps = pageRouterAuth.withPageAuthRequired({
   async getServerSideProps(context) {
-    const product = context?.params?.product;
+    const product = getQueryArray(context?.params?.product);
     const pageInfo = await getPageInfo('_roadmap');
     const roadmap = await getRoadmap();
 
     const products = roadmap.products;
-    const currentProduct: Option | undefined = products.find((p) => slugify(p.label) == product);
+    const currentProduct: Option | undefined = products.find((p) => slugify(p.label) == slugify(product[0]));
 
     if (currentProduct === undefined) {
       return {
