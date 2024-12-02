@@ -106,17 +106,20 @@ export class Changelog {
     return ParseRawData(response.data);
   }
 
-  async getEntriesPaginated(pageSize: string, productId: string, changeTypeId: string, endCursor?: string): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
-    return this.getEntries({ productId, changeTypeId, pageSize: Number(pageSize), endCursor });
+  async getEntriesPaginated(pageSize: string, productId: string, changeTypeId: string, endCursor?: string, breaking?: boolean): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
+    return this.getEntries({ productId, changeTypeId, pageSize: Number(pageSize), endCursor, breaking });
   }
 
-  async getEntries({ productId, changeTypeId, pageSize, endCursor }: { productId?: string; changeTypeId?: string; pageSize?: number; endCursor?: string } = {}): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
+  async getEntries({ productId, changeTypeId, pageSize, endCursor, breaking = false }: { productId?: string; changeTypeId?: string; pageSize?: number; endCursor?: string; breaking?: boolean } = {}): Promise<
+    ChangelogEntryList<Array<ChangelogEntry>>
+  > {
     const response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(SearchByProductsAndChangeTypesDocument, this.credentials, this.isPreview, {
       first: pageSize ? pageSize : 5,
       after: endCursor ?? '',
       date: new Date(),
       productIds: productId?.split('|') ?? [],
       changeTypeIds: changeTypeId?.split('|') ?? [],
+      breaking: breaking,
     });
 
     if (response == null) {
