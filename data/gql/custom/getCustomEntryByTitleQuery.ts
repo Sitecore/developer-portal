@@ -1,4 +1,4 @@
-import { SearchByTitleQuery, SearchByTitleQueryVariables, TypedDocumentString } from '../generated/graphql';
+import { SearchByTitleQuery, SearchByTitleQueryVariables, TypedDocumentString } from '../generated/graphql.ts';
 
 export function getCustomEntryByTitleQuery(entryTitle: string): TypedDocumentString<SearchByTitleQuery, SearchByTitleQueryVariables> {
   let whereClauseSearchTerm = '';

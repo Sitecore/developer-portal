@@ -1424,6 +1424,7 @@ export type SearchByProductsAndChangeTypesQueryVariables = Exact<{
   changeTypeIds: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
   first?: InputMaybe<Scalars['Int']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
+  breaking?: InputMaybe<Scalars['Boolean']['input']>;
 }>;
 
 export type SearchByProductsAndChangeTypesQuery = {
@@ -2033,12 +2034,12 @@ fragment status on Status {
   identifier
 }`) as unknown as TypedDocumentString<SearchByProductQuery, SearchByProductQueryVariables>;
 export const SearchByProductsAndChangeTypesDocument = new TypedDocumentString(`
-    query searchByProductsAndChangeTypes($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "") {
+    query searchByProductsAndChangeTypes($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "", $breaking: Boolean = false) {
   changelog: allChangelog(
     orderBy: RELEASEDATE_DESC
     first: $first
     after: $after
-    where: {releaseDate_lt: $date, OR: [{sitecoreProduct: {changelog_ids: $productIds}}], AND: {OR: [{changeType: {changelog_ids: $changeTypeIds}}]}}
+    where: {releaseDate_lt: $date, breakingChange_eq: $breaking, OR: [{sitecoreProduct: {changelog_ids: $productIds}}], AND: {OR: [{changeType: {changelog_ids: $changeTypeIds}}]}}
   ) {
     pageInfo {
       hasNext

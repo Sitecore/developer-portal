@@ -1,4 +1,4 @@
-import { Exact, InputMaybe, Scalars, TypedDocumentString } from '../generated/graphql';
+import { Exact, InputMaybe, Scalars, TypedDocumentString } from '../generated/graphql.ts';
 
 export function getCustomEntryByTitleAndDateQuery(entryTitle: string): TypedDocumentString<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables> {
   let whereClauseSearchTerm = '';
