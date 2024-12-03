@@ -82,7 +82,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
 
   return (
     <TrackPageView product={currentProduct}>
-      <Layout title={title} description={changelogEntry.title}>
+      <Layout title={title} description={changelogEntry.title} twitterDescription={`Sitecore - ${currentProduct.name} - ${changelogEntry.title}`}>
         <Hero title={title} description={description}>
           <HStack>
             <Text variant={'sm'}>Powered by</Text>

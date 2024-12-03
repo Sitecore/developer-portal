@@ -9,17 +9,18 @@ import Meta from './Meta';
 type LayoutProps = BoxProps & {
   title: string;
   description?: string;
+  twitterDescription?: string;
   openGraphImage?: string;
   preview?: boolean;
   children: React.ReactNode | Array<React.ReactNode>;
 };
 
-const Layout = ({ title, description = '', openGraphImage, children, ...rest }: LayoutProps): JSX.Element => {
+const Layout = ({ title, description = '', openGraphImage, twitterDescription, children, ...rest }: LayoutProps): JSX.Element => {
   const { isPreview } = usePreview();
 
   return (
     <Box as="main" {...rest}>
-      <Meta title={title} description={description} openGraphImageUrl={openGraphImage} />
+      <Meta title={title} description={description} twitterDescription={twitterDescription} openGraphImageUrl={openGraphImage} />
       <VisuallyHidden>
         <a href="#main-content">Skip to main content</a>
       </VisuallyHidden>

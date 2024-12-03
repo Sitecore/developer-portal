@@ -5,10 +5,11 @@ import React from 'react';
 interface MetaProps {
   title: string;
   description: string;
+  twitterDescription?: string;
   openGraphImageUrl?: string;
 }
 
-const MetaTags: React.FC<MetaProps> = ({ title, description, openGraphImageUrl }) => {
+const MetaTags: React.FC<MetaProps> = ({ title, description, twitterDescription, openGraphImageUrl }) => {
   const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
   const router = useRouter();
   const { asPath } = router;
@@ -43,7 +44,7 @@ const MetaTags: React.FC<MetaProps> = ({ title, description, openGraphImageUrl }
       <meta property="twitter:domain" content="developers.sitecore.com" />
       <meta property="twitter:url" content={`${publicUrl}${path}`} />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:description" content={twitterDescription || description} />
       <meta name="twitter:image" content={ogImageUrl} />
     </Head>
   );
