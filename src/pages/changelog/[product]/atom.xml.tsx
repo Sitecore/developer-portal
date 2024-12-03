@@ -1,7 +1,7 @@
 import { Changelog } from '@lib/changelog';
 import { CreateFeed } from '@lib/changelog/feeds';
 import { Product } from '@lib/changelog/types';
-import { slugify } from '@lib/utils';
+import { getQueryValue, slugify } from '@lib/utils';
 
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 
@@ -10,6 +10,7 @@ const FeedPage = () => null;
 
 export async function getServerSideProps(context: any) {
   const product = context.params.product;
+  const search = getQueryValue(context.query?.search);
   const preview = context.preview ? context.preview : null;
   const changelog = new Changelog(getChangelogCredentials(), preview);
   const products = await changelog.getProducts().then((response: Array<Product>) => {
@@ -20,7 +21,8 @@ export async function getServerSideProps(context: any) {
 
   if (currentProduct != null) {
     // Fetch data
-    const changelogEntryList = await changelog.getEntriesByProduct(currentProduct?.id);
+    const changelogEntryList =
+      search != null ? await changelog.getEntriesByTitleProductChangeType({ entryTitle: search.toString(), productId: currentProduct?.id, pageSize: 10 }) : await changelog.getEntries({ pageSize: 10, productId: currentProduct?.id });
     const feed = await CreateFeed(changelogEntryList);
 
     // Set page headers
