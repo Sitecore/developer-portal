@@ -26,6 +26,7 @@ import {
   SearchByTitleQueryVariables,
 } from '@data/gql/generated/graphql';
 
+import { getCustomEntryByTitleProductAndChangeTypeQuery } from '@/data/gql/custom/getCustomEntryByTitleProductAndChangeTypeQuery';
 import { fetchGraphQL } from './common/fetch';
 import { ParseStatus, Status } from './types';
 import { ChangelogCredentials } from './types/changelog';
@@ -106,17 +107,58 @@ export class Changelog {
     return ParseRawData(response.data);
   }
 
-  async getEntriesPaginated(pageSize: string, productId: string, changeTypeId: string, endCursor?: string): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
-    return this.getEntries({ productId, changeTypeId, pageSize: Number(pageSize), endCursor });
+  async getEntriesPaginated(pageSize: string, productId: string, changeTypeId: string, endCursor?: string, breaking?: boolean): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
+    return this.getEntries({ productId, changeTypeId, pageSize: Number(pageSize), endCursor, breaking });
   }
 
-  async getEntries({ productId, changeTypeId, pageSize, endCursor }: { productId?: string; changeTypeId?: string; pageSize?: number; endCursor?: string } = {}): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
+  async getEntriesByTitleProductChangeType({
+    entryTitle,
+    productId,
+    changeTypeId,
+    pageSize,
+    endCursor,
+    breaking = false,
+  }: {
+    entryTitle?: string;
+    productId?: string;
+    changeTypeId?: string;
+    pageSize?: number;
+    endCursor?: string;
+    breaking?: boolean;
+  } = {}): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
+    // If there is no search query provided, return the normal entries
+    if (entryTitle == undefined) {
+      return this.getEntries({ productId, changeTypeId, pageSize, endCursor, breaking });
+    }
+
+    const CustomEntryByTitleProductAndChangeTypeDocument = getCustomEntryByTitleProductAndChangeTypeQuery(entryTitle);
+
+    const response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(CustomEntryByTitleProductAndChangeTypeDocument, this.credentials, this.isPreview, {
+      first: pageSize ? pageSize : 5,
+      after: endCursor ?? '',
+      date: new Date(),
+      productIds: productId?.split('|') ?? [],
+      changeTypeIds: changeTypeId?.split('|') ?? [],
+      breaking: false,
+    });
+
+    if (response == null) {
+      return ParseRawData(response);
+    }
+
+    return ParseRawData(response.data);
+  }
+
+  async getEntries({ productId, changeTypeId, pageSize, endCursor, breaking = false }: { productId?: string; changeTypeId?: string; pageSize?: number; endCursor?: string; breaking?: boolean } = {}): Promise<
+    ChangelogEntryList<Array<ChangelogEntry>>
+  > {
     const response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(SearchByProductsAndChangeTypesDocument, this.credentials, this.isPreview, {
       first: pageSize ? pageSize : 5,
       after: endCursor ?? '',
       date: new Date(),
-      productIds: productId != undefined && productId.length > 0 ? productId.split('|') : [],
-      changeTypeIds: changeTypeId != undefined && changeTypeId.length > 0 ? changeTypeId.split('|') : [],
+      productIds: productId?.split('|') ?? [],
+      changeTypeIds: changeTypeId?.split('|') ?? [],
+      breaking: breaking,
     });
 
     //console.log(this.credentials, this.isPreview);

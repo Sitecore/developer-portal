@@ -91,12 +91,14 @@ export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
           </Tag>
         ))}
       {item.breakingChange && (
-        <Tag size="sm" colorScheme="warning">
-          Breaking change
-        </Tag>
+        <Tooltip label="This change could require manual updates" aria-label="Action required">
+          <Tag size="sm" colorScheme="warning">
+            Action required
+          </Tag>
+        </Tooltip>
       )}
       {item.scheduled && (
-        <Tooltip label="This functionality is scheduled" aria-label="This functionality is scheduled">
+        <Tooltip label="This functionality is scheduled" aria-label="This functionality is scheduled and not yet released">
           <Tag size="sm">Scheduled</Tag>
         </Tooltip>
       )}

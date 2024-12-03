@@ -17,7 +17,7 @@ export function buildProductQuerystring(product?: Product, selectedProducts?: Ar
   return query.join('&');
 }
 
-export function buildQuerystring(products: Array<Option>, changes: Array<Option>, cursor?: string, initialProduct?: Product): Array<string> {
+export function buildQuerystring(products: Array<Option>, changes: Array<Option>, cursor?: string, initialProduct?: Product, breaking?: boolean): Array<string> {
   const query: Array<string> = [];
   const PAGE_SIZE = 5;
 
@@ -35,6 +35,10 @@ export function buildQuerystring(products: Array<Option>, changes: Array<Option>
 
   if (cursor) {
     query.push(`end=${cursor}`);
+  }
+
+  if (breaking) {
+    query.push(`breaking=true`);
   }
 
   return query;
