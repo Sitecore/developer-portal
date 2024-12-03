@@ -73,7 +73,7 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
       />
 
       <Checkbox checked={breaking} onChange={(e) => setBreaking(e.target.checked)}>
-        Only show changes that could require manual updates
+        Only show changes that might require action
       </Checkbox>
 
       <Hint products={selectedProducts} enabled={selectedProducts?.length == 1} />
