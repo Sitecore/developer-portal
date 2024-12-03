@@ -1,5 +1,5 @@
 import { Option } from '@/src/components/ui/dropdown';
-import { Box, Button, Checkbox, CloseButton, Link, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Button, Checkbox, CloseButton, Link, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
 import { ChangelogEntry, ChangelogEntryList, Product } from '@lib/changelog/types';
 import axios from 'axios';
 import NextLink from 'next/link';
@@ -87,7 +87,12 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
 
       {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={data[data.length - 1].hasNext} onEndTriggered={() => setSize(size + 1)} mt={8} />}
 
-      {data && !data[data.length - 1].hasNext && <span className={`border-violet text-violet dark:border-teal dark:text-teal mt-5 inline-block w-full border-2 px-3 py-2 text-center text-sm`}>No more results</span>}
+      {data && !data[data.length - 1].hasNext && (
+        <Alert colorScheme="neutral">
+          <AlertIcon />
+          {items.length == 0 ? 'No entries found' : 'No other entries found'}
+        </Alert>
+      )}
     </Box>
   );
 };
