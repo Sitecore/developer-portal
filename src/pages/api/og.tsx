@@ -25,7 +25,7 @@ export default async function handler(req: NextRequest) {
             width: '100%',
             padding: '10px 40px',
             justifyContent: 'center',
-            backgroundColor: '#fff',
+            background: 'linear-gradient(51deg,#dedbff -10%,#f9f9f9 40%,#f9f9f9 70%,#ffcfcf 120%)',
             fontSize: 32,
             fontWeight: 600,
           }}
