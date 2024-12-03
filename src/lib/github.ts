@@ -4,7 +4,7 @@ import { GitHubRepo } from './interfaces/github';
 export const getGitHubRepositories = async (perPage: number = 6): Promise<GitHubRepo[]> => {
   const response = await axios.get('https://api.github.com/orgs/Sitecore/repos', {
     params: {
-      sort: 'updated',
+      sort: 'pushed',
       per_page: perPage,
       direction: 'desc',
     },

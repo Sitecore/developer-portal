@@ -58,7 +58,7 @@ export const Repository = ({ name, description, repositoryUrl, framework, stars,
         )}
       </CardBody>
       <CardFooter pt={0} justifyContent={'space-between'}>
-        <HStack>
+        <HStack hideBelow={'sm'}>
           {stars && stars > 0 && (
             <Wrap>
               <Tag>
