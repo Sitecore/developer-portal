@@ -88,7 +88,7 @@ hasInPageNav: false
   <GroupItem>
     ### Getting Started with Sitecore Platform DXP product features
     - [Getting Started with xConnect](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/getting-started-with-xconnect.html)
-    - [Getting Started with Sitecore Forms](https://www.sitecore.com/knowledge-center/blog/359/sitecore-forms-create-your-first-form-4570)
+    - [Getting Started with Sitecore Forms](https://community.sitecore.com/community?id=community_blog&sys_id=20b2ef2d1b8370d0b8954371b24bcb5f)
     - [Getting started with marketing automation for developers](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/getting-started-with-marketing-automation-for-developers.html)
     - [Getting started with EXM for developers](https://doc.sitecore.com/xp/en/developers/exm/latest/email-experience-manager/getting-started-with-exm-for-developers.html)
     - [Getting started with custom condition and segmentation](https://doc.sitecore.com/xp/en/developers/latest/sitecore-experience-platform/create-a-custom-condition-and-segmentation-query.html)

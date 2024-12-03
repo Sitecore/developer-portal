@@ -2,7 +2,7 @@
 title: 'Redirect'
 description: 'Recipe for handling redirects using XM Cloud.'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-04-05'
 ---
@@ -263,7 +263,7 @@ keep in mind the example above is a simplified version and you need to consider 
 - If you are using a rewrite that points to a dynamic Next.js page, you must use Next.js rewrites. Next.js has no way of knowing what the rewritten page is when using Netlify rewrites, so the wrong page is likely to be rendered. Note that this only applies to rewrites, not redirects.
 - If you need Next.js-specific features, such as regex path or header matching, you must use Next.js rewrites.
 
-### Related documentations
+## Related Documentations
 
 <Row columns={2}>
   <Link title="Edge Redirects | Vercel Documentation" link="https://vercel.com/docs/edge-network/redirects" />

@@ -2,7 +2,7 @@
 title: 'Using Placeholders'
 description: 'What are Placeholders and how to use them with XM Cloud'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-10-11'
 ---
@@ -189,13 +189,13 @@ export const Default = (props: ComponentProps): JSX.Element => {
 - Organize Placeholders: Keep your placeholders organized within the Placeholder Settings folder to make them easy to manage.
 - Test Thoroughly: Always test your placeholders to ensure they work as expected and render the correct components.
 
-### Related Recipes
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Creating New Components" link="/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components" />
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Working with placeholders in a JSS Next.js app" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/working-with-placeholders-in-a-jss-next-js-app.html#inline-components" />

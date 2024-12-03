@@ -1,8 +1,8 @@
 ---
 title: 'Working with Experience Edge Rate Limits and Caching'
-description: 'Working with Experiencce Edge Rate limits and caching'
+description: 'Configuration of limits and caching to improve performance'
 area: ['accelerate']
-hasSubPageNav: false
+hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-06-18'
 ---

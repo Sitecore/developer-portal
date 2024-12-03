@@ -1,8 +1,8 @@
 ---
 title: 'Next.js App Router Preparation'
-description: 'Sitecore plans to support the Next.js App Router - How can you build now so you can make the transition easier?'
+description: 'How can you build now so you can make the transition easier?'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-10-02'
 ---

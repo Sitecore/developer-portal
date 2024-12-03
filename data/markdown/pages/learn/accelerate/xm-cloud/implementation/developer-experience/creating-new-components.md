@@ -2,7 +2,7 @@
 title: 'Creating New Components'
 description: 'The developer workflow to create a new component'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-06-24'
 ---
@@ -174,13 +174,13 @@ Creating a variant is a two-step process. First, you create the code for the var
 
 External data is handled in its own recipe: [External Data Integration](/learn/accelerate/xm-cloud/implementation/external-data-integration)
 
-### Related Recipes
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Creating a Site" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site" />
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Create a new SXA module | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-new-sxa-module.html" />

@@ -1,10 +1,10 @@
 ---
 title: 'Sitecore Search'
-description: 'Recipe for implementing search experience with XM Cloud and Search'
+description: 'Recipe for implementing search experience using Sitecore Search'
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-10-03'
+lastUpdated: '2024-11-20'
 ---
 
 ## Problem
@@ -98,14 +98,12 @@ Sitecore Search provides three integration methods that you can choose from:
 * [JavaScript Data](https://doc.sitecore.com/search/en/developers/search-developer-guide/integrating-using-search-js-data-package.html) - can be used with vanilla JavaScript or in any JS framework. This is quick way to make search queries and receive responses from Search .
 * [REST APIs](https://doc.sitecore.com/search/en/developers/search-developer-guide/integrating-using-rest-apis.html) - integration involves accessing endpoints that expose Search services. Configure the requests you want to send to Search. You'll also need to handle the responses and translate them into Search experiences.
 
-However, the React SDK does not follow the support lifecycle or SLAs as other SDK’s such as the JSS SDK, so are currently not fit for production or client-based projects.
-
 In addition, for the pure purpose of prototyping and training, there are the following resources:
 
 * Sitecore Search Starter Kit repo: [https://github.com/Sitecore/Sitecore-Search-TS-SDK-Starter-Kit](https://github.com/Sitecore/Sitecore-Search-TS-SDK-Starter-Kit)
 * Sitecore Search React SDK video tutorial: [https://www.youtube.com/watch?v=GhQNYlR7pvo](https://www.youtube.com/watch?v=GhQNYlR7pvo)
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Index Items | Sitecore Documentation" link="https://doc.sitecore.com/search/en/users/search-user-guide/index-items.html" />

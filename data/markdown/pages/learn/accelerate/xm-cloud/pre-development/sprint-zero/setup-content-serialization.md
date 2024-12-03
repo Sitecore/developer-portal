@@ -1,9 +1,9 @@
 ---
 title: 'Setup Sitecore Content Serialization'
-description: 'In this recipe you will learn how to setup Sitecore Content Serialization (SCS) for XM Cloud'
+description: 'Learn how to setup Sitecore Content Serialization (SCS) for XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 lastUpdated: '2024-05-30'
 ---
 
@@ -144,14 +144,14 @@ To set up items for the Content Management database, you will need to modify the
 <br /><br />
 In the provided code, you're defining a post-deploy action known as scsModules. This action uses the same modules definition as you would use with deployActions. For clarity, you should create and configure specific modules that define the items needed for your database deployments in XM Cloud.
 
-### Related Recipes
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Sample template.module.json" link="/learn/accelerate/xm-cloud/appendix-ii/example-code/template-module-json" />
   <Link title="Sample xmcloud.build.json" link="/learn/accelerate/xm-cloud/appendix-ii/example-code/xmcloud-build-json" />
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Sitecore Content Serialization | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html" />

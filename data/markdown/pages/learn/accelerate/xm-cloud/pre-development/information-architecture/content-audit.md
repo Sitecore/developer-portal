@@ -1,7 +1,9 @@
 ---
 title: 'Content Audit'
-description: ''
+description: 'Content Audit is the backbone of any implementation of a web application'
 area: ['accelerate']
+hasSubPageNav: true
+hasInPageNav: true
 lastUpdated: '2024-04-09'
 ---
 

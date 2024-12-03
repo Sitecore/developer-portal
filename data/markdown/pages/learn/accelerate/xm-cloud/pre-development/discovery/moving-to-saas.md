@@ -2,8 +2,8 @@
 title: 'Moving to SaaS - Concepts You Need to Know'
 description: 'Switching to XM Cloud means moving to a SaaS model which is different from PaaS or IaaS.'
 area: ['accelerate']
-hasSubPageNav: false
-hasInPageNav: false
+hasSubPageNav: true
+hasInPageNav: true
 lastUpdated: '2024-10-09'
 ---
 
@@ -157,7 +157,7 @@ A key move of Paas to SaaS means a move to Headless, that can bring further perf
 <Link title="Publishing to Experience Edge | Sitecore Accelerate for Partners" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />
 </Row>
 
-### Related Documentation
+## Related Documentation
 
 <Row columns={2}>
   <Link title="Feature Matrix and Product Parities | XM Cloud Embedded Personalization FAQ " link="/learn/faq/xm-cloud-embedded-personalization/feature-matrix" />

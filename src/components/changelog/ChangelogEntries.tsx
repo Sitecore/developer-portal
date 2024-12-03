@@ -129,7 +129,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                     )}
                     {entry.breakingChange && (
                       <Tag size="sm" colorScheme="danger">
-                        Breaking change
+                        Action required
                       </Tag>
                     )}
                   </HStack>
