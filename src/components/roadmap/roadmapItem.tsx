@@ -31,8 +31,6 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
     onOpen();
   };
 
-  console.log(item.description);
-
   return (
     <>
       <Card variant={'outlineRaised'} size={'md'}>
