@@ -8,14 +8,18 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function ChangelogCurrent() {
+
+  const title = 'Changelog';
+  const description = 'Learn more about new versions, changes and improvements';
+
   return (
     <>
       <Head>
         <link rel="preload" href="/api/changelog/v1/all?" as="fetch" crossOrigin="anonymous" />
       </Head>
       <TrackPageView>
-        <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
-          <Hero title="Changelog" description="Learn more about new versions, changes and improvements" />
+        <Layout title={title} description={description}>
+          <Hero title={title} description={description} />
           <VerticalGroup>
             <CenteredContent>
               <Alert status="info" alignItems="center">

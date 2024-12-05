@@ -4,17 +4,26 @@ import React from 'react';
 
 interface MetaProps {
   title: string;
+  baseTitle?: string;
+  section?: string;
+  pageTitle?: string;
   description: string;
   openGraphImageUrl?: string;
 }
 
-const MetaTags: React.FC<MetaProps> = ({ title, description, openGraphImageUrl }) => {
+const MetaTags: React.FC<MetaProps> = ({ title, description, section, baseTitle = 'Sitecore Developer Portal', openGraphImageUrl }) => {
   const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
   const router = useRouter();
   const { asPath } = router;
   const path = asPath.split(/[?#]/)[0];
 
-  const ogImageUrl = openGraphImageUrl ? `${publicUrl}${openGraphImageUrl}` : `${publicUrl}/api/og?title=${title}&subtitle=${description}`;
+  const ogImageUrl = openGraphImageUrl ? `${publicUrl}${openGraphImageUrl}` : `${publicUrl}/api/og?title=${section ? section : title}&subtitle=${description}`;
+
+  if (section) {
+    title = `${title} | ${section} | ${baseTitle}`;
+  } else {
+    title = title ? `${title} | ${baseTitle}` : baseTitle;
+  }
 
   return (
     <Head>

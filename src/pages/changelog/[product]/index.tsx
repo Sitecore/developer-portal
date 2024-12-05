@@ -55,7 +55,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
 
   return (
     <TrackPageView product={currentProduct}>
-      <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
+      <Layout title={title} description={description}>
         <Hero title={title} description={description}>
           <HStack>
             <Text variant={'sm'}>Powered by</Text>
