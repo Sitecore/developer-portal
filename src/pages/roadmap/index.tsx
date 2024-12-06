@@ -1,5 +1,5 @@
 import { Option } from '@/src/components/ui/dropdown';
-import { Alert, AlertDescription, AlertIcon, Flex, Heading, Image, ListItem, SimpleGrid, Text, UnorderedList, Wrap } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Flex, Heading, Image, ListItem, SimpleGrid, Text, UnorderedList, Wrap } from '@chakra-ui/react';
 import { TrackPageView } from '@components/integrations/engage/TrackPageView';
 import { CenteredContent, Hero, VerticalGroup } from '@components/ui/sections';
 import { PageInfo } from '@lib/interfaces/page-info';
@@ -70,16 +70,31 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
             <RestrictedContent>
               <Alert status="info" alignItems="center">
                 <AlertIcon />
-                Please be advised that all roadmap information displayed on this page is subject to change. The details provided are for general informational purposes only and may be updated or modified without prior notice. No guarantees are made
-                regarding the accuracy, completeness, or reliability of the information presented.
+                <Wrap>
+                  <AlertDescription>
+                    The product roadmap is for informational purposes only and subject to change at Sitecore’s sole discretion. Timelines and features are not commitments, and the roadmap may be amended or discontinued without notice. Customers
+                    should not rely on it for purchasing or planning decisions.
+                  </AlertDescription>
+                </Wrap>
               </Alert>
-
               <Heading size={'sm'}>Available roadmaps</Heading>
+
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
                 {products.map((product) => (
                   <LinkItem link={`/roadmap/${slugify(product.label)}`} key={product.value} title={product.label} />
                 ))}
               </SimpleGrid>
+
+              <Alert status="info" colorScheme="neutral" alignItems="center">
+                <AlertIcon />
+                <Wrap>
+                  <AlertTitle>Confidentiality Disclaimer:</AlertTitle>
+                  <AlertDescription>
+                    This product roadmap contains highly confidential information and is intended solely for the recipient. By accessing this information, you acknowledge that it is subject to the confidentiality obligations set forth in your
+                    existing agreements with Sitecore. Any unauthorized disclosure, distribution, or use of this information is strictly prohibited.
+                  </AlertDescription>
+                </Wrap>
+              </Alert>
             </RestrictedContent>
           </CenteredContent>
         </VerticalGroup>
