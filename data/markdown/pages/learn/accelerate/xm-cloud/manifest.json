@@ -1,5 +1,5 @@
 {
-  "title": "Sitecore Accelerate Cookbook for XM Cloud",
+  "title": "Accelerate Cookbook for XM Cloud",
   "description": "This Cookbook provides a set of recipes to help implementing XM Cloud through setup, configuration and implemenation.",
   "heading": false,
   "path": "/learn/accelerate/xm-cloud",
@@ -18,7 +18,8 @@
             {
               "title": "Moving to SaaS - Concepts You Need to Know",
               "path": "moving-to-saas"
-            },            {
+            },
+            {
               "title": "Transition from XM/XP to XM Cloud",
               "path": "xm-xp-to-xmc"
             },
@@ -201,7 +202,7 @@
               "title": "Wildcard Pages",
               "path": "wildcard-pages"
             },
-             {
+            {
               "title": "Workflows",
               "path": "workflow"
             }
@@ -212,8 +213,7 @@
           "path": "external-data-integration",
           "ignoreLink": false,
           "children": [
-            
-	          {
+            {
               "title": "Custom Editing UX for 3rd Party Integrations",
               "path": "custom-editing-ux-3rd-party-integrations"
             },

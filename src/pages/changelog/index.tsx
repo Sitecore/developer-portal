@@ -33,7 +33,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
         <link rel="preload" href="/api/changelog/v1/all?" as="fetch" crossOrigin="anonymous" />
       </Head>
       <TrackPageView>
-        <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
+        <Layout title="Changelog" description="Learn more about new versions, changes and improvements">
           <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
             <HStack>
               <Text variant={'sm'}>Powered by</Text>

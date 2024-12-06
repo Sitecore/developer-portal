@@ -4,18 +4,27 @@ import React from 'react';
 
 interface MetaProps {
   title: string;
+  baseTitle?: string;
+  section?: string;
+  pageTitle?: string;
   description: string;
   twitterDescription?: string;
   openGraphImageUrl?: string;
 }
 
-const MetaTags: React.FC<MetaProps> = ({ title, description, twitterDescription, openGraphImageUrl }) => {
+const MetaTags: React.FC<MetaProps> = ({ title, description, section, baseTitle = 'Sitecore Developer Portal', openGraphImageUrl }) => {
   const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
   const router = useRouter();
   const { asPath } = router;
   const path = asPath.split(/[?#]/)[0];
 
-  const ogImageUrl = openGraphImageUrl ? `${publicUrl}${openGraphImageUrl}` : `${publicUrl}/api/og?title=${title}&subtitle=${description}`;
+  const ogImageUrl = openGraphImageUrl ? `${publicUrl}${openGraphImageUrl}` : `${publicUrl}/api/og?title=${section ? section : title}&subtitle=${description}`;
+
+  if (section) {
+    title = `${title} | ${section} | ${baseTitle}`;
+  } else {
+    title = title ? `${title} | ${baseTitle}` : baseTitle;
+  }
 
   return (
     <Head>
@@ -44,7 +53,7 @@ const MetaTags: React.FC<MetaProps> = ({ title, description, twitterDescription,
       <meta property="twitter:domain" content="developers.sitecore.com" />
       <meta property="twitter:url" content={`${publicUrl}${path}`} />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={twitterDescription || description} />
+      <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImageUrl} />
     </Head>
   );

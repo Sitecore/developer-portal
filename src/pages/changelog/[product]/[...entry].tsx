@@ -82,7 +82,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
 
   return (
     <TrackPageView product={currentProduct}>
-      <Layout title={title} description={changelogEntry.title} twitterDescription={`Sitecore - ${currentProduct.name} - ${changelogEntry.title}`}>
+      <Layout title={changelogEntry.title} section={title} description={changelogEntry.title}>
         <Hero title={title} description={description}>
           <HStack>
             <Text variant={'sm'}>Powered by</Text>
@@ -162,7 +162,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                   </CardBody>
                   <CardFooter justifyContent={changelogEntry.readMoreLink ? 'space-between' : 'flex-end'}>
                     {changelogEntry.readMoreLink && <LinkButton variant="text" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} margin={0} padding={0} />}
-                    <SocialShare url={getChangelogEntryUrl(changelogEntry, true)} title={changelogEntry.title} />
+                    <SocialShare url={getChangelogEntryUrl(changelogEntry, true)} title={`${changelogEntry.title} - ${changelogEntry.productName} Changelog - Sitecore`} />
                   </CardFooter>
                 </Card>
               </GridItem>
