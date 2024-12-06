@@ -1,10 +1,11 @@
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-import { Box, Button, Card, CardBody, Flex, Grid, GridItem, Heading, Link, SimpleGrid, Spacer, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, Flex, Grid, GridItem, Heading, LinkBox, LinkOverlay, SimpleGrid, Spacer, Text, useColorModeValue } from '@chakra-ui/react';
 import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
 import Image from 'next/image';
 
+import NextLink from 'next/link';
 import { PromoCardProps, PromoList } from '../components/cards';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
@@ -54,32 +55,38 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
             <CenteredContent>
               <SimpleGrid columns={[1, 2, 2]} gap={4} my={4}>
                 {childPageInfo.map((childPage, i) => (
-                  <Card variant={'outlineRaised'} layerStyle={'interactive.raise'} key={i}>
-                    <CardBody>
-                      <Flex direction={'column'} gap={4} align={'flex-start'}>
-                        {childPage.productLogo && (
-                          <Box height={'24px'} width={'full'} position={'relative'} mb={4} sx={{ '& > img': { width: 'auto !important' } }}>
-                            <Image
-                              src={useColorModeValue(GetProductLogo(childPage.productLogo, 'Light'), GetProductLogo(childPage.productLogo, 'Dark'))}
-                              alt={`${childPage.title}`}
-                              fill
-                              style={{ objectFit: 'fill' }}
-                              sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
-                            />
-                          </Box>
-                        )}
-                        <Heading as="h4" size="md">
-                          {childPage.title}
-                        </Heading>
-                        <Text>{childPage.description}</Text>
-                        <Spacer />
+                  <LinkBox as="article" key={i}>
+                    <Card variant={'outlineRaised'} layerStyle={'interactive.raise'}>
+                      <CardBody>
+                        <Flex direction={'column'} gap={4} align={'flex-start'}>
+                          {childPage.productLogo && (
+                            <Box height={'24px'} width={'full'} position={'relative'} mb={4} sx={{ '& > img': { width: 'auto !important' } }}>
+                              <Image
+                                src={useColorModeValue(GetProductLogo(childPage.productLogo, 'Light'), GetProductLogo(childPage.productLogo, 'Dark'))}
+                                alt={`${childPage.title}`}
+                                fill
+                                style={{ objectFit: 'fill' }}
+                                sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
+                              />
+                            </Box>
+                          )}
+                          <Heading as="h4" size="md">
+                            <LinkOverlay as={NextLink} href={childPage.link}>
+                              {childPage.title}
+                            </LinkOverlay>
+                          </Heading>
+                          <Text>{childPage.description}</Text>
+                          <Spacer />
 
-                        <Button variant={'outline'} colorScheme="neutral">
-                          <Link href={childPage.link}>Read more</Link>
-                        </Button>
-                      </Flex>
-                    </CardBody>
-                  </Card>
+                          <Button variant={'outline'} colorScheme="neutral">
+                            <LinkOverlay as={NextLink} href={childPage.link}>
+                              Read more
+                            </LinkOverlay>
+                          </Button>
+                        </Flex>
+                      </CardBody>
+                    </Card>
+                  </LinkBox>
                 ))}
               </SimpleGrid>
             </CenteredContent>
