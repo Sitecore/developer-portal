@@ -20,6 +20,7 @@ type PageInfoCore = {
   product?: Array<string>;
   cdpTags?: Array<string>;
   lastUpdated?: string;
+  productLogo?: string;
 };
 
 // Input for 3rd party integrations are just strings
@@ -67,7 +68,6 @@ export type PageInfo = PageInfoCore & {
   promoAfter: Array<string>;
   content?: string;
   parsedContent?: string;
-  productLogo?: string;
   headings?: Array<ContentHeading>;
   guidedDemoId?: string;
 };
@@ -92,7 +92,7 @@ export type SidebarNavigationItem = {
   collapsed?: boolean;
 };
 
-export type ChildPageInfo = {
+export type ChildPageInfo = PageInfo & {
   description?: string;
   id?: string;
   link: string;
