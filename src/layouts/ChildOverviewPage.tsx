@@ -26,8 +26,6 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
   if (!pageInfo) {
     return <>No pageInfo found</>;
   }
-  console.log({ childPageInfo });
-
   // Check for headings in the content
   return (
     <TrackPageView pageInfo={pageInfo}>
