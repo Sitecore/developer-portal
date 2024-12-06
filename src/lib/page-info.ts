@@ -193,13 +193,13 @@ export const getChildPageInfo = async (currentFile: string): Promise<Array<Child
     .filter((obj) => !obj.startsWith('index') || obj == undefined)
     .map((child) => {
       const meta = getFileData(directory, `${child}`).data as MarkdownMeta;
-
       return {
         description: meta.description || null,
         id: child,
         link: `/${currentFile}/${meta.slug}`,
         title: meta.title,
         menuOrder: meta.menuOrder || null,
+        productLogo: meta.productLogo || null,
       } as ChildPageInfo;
     })
     .sort((a, b) => (a.menuOrder || 0) - (b.menuOrder || 0));
