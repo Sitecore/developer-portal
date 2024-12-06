@@ -74,7 +74,7 @@ const redirects = [
   { source: '/learn/accelerate/xm-cloud/implementation/sitemap', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/sitemap', permanent: true },
   { source: '/learn/accelerate/xm-cloud/implementation/localization', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/localization', permanent: true },
   { source: '/learn/accelerate/xm-cloud/implementation/search', destination: '/learn/accelerate/xm-cloud/implementation/sitecore-search', permanent: true },
-
+  { source: '/accelerate', destination: '/learn/accelerate', permanent: true },
 ];
 
 const nextConfig = {

@@ -1,14 +1,14 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, Grid, GridItem, Link, Stack, Text } from '@chakra-ui/react';
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
+import { Box, Button, Card, CardBody, Flex, Grid, GridItem, Heading, Link, SimpleGrid, Spacer, Text, useColorModeValue } from '@chakra-ui/react';
 import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
-
-import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
+import Image from 'next/image';
 
 import { PromoCardProps, PromoList } from '../components/cards';
-import { TextLink } from '../components/links';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
+import { GetProductLogo } from '../lib/assets';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ChildOverviewPageProps = {
@@ -26,6 +26,7 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
   if (!pageInfo) {
     return <>No pageInfo found</>;
   }
+  console.log({ childPageInfo });
 
   // Check for headings in the content
   return (
@@ -53,23 +54,36 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
           )}
           <VerticalGroup>
             <CenteredContent>
-              <Stack gap={10}>
+              <SimpleGrid columns={[1, 2, 2]} gap={4} my={4}>
                 {childPageInfo.map((childPage, i) => (
-                  <Card variant={'outlineRaised'} size="lg" layerStyle={'interactive.raise'} key={i}>
-                    <CardHeader>
-                      <TextLink isHeading as={'h3'} text={childPage.title} aria-label={childPage.title} href={childPage.link} />
-                    </CardHeader>
+                  <Card variant={'outlineRaised'} layerStyle={'interactive.raise'} key={i}>
                     <CardBody>
-                      <Text variant={'large'}>{childPage.description}</Text>
+                      <Flex direction={'column'} gap={4} align={'flex-start'}>
+                        {childPage.productLogo && (
+                          <Box height={'24px'} width={'full'} position={'relative'} mb={4} sx={{ '& > img': { width: 'auto !important' } }}>
+                            <Image
+                              src={useColorModeValue(GetProductLogo(childPage.productLogo, 'Light'), GetProductLogo(childPage.productLogo, 'Dark'))}
+                              alt={`${childPage.title}`}
+                              fill
+                              style={{ objectFit: 'fill' }}
+                              sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
+                            />
+                          </Box>
+                        )}
+                        <Heading as="h4" size="md">
+                          {childPage.title}
+                        </Heading>
+                        <Text>{childPage.description}</Text>
+                        <Spacer />
+
+                        <Button variant={'outline'} colorScheme="neutral">
+                          <Link href={childPage.link}>Read more</Link>
+                        </Button>
+                      </Flex>
                     </CardBody>
-                    <CardFooter>
-                      <Button variant={'outline'} colorScheme="neutral">
-                        <Link href={childPage.link}>Read more</Link>
-                      </Button>
-                    </CardFooter>
                   </Card>
                 ))}
-              </Stack>
+              </SimpleGrid>
             </CenteredContent>
           </VerticalGroup>
           {/* <VerticalGroup>
