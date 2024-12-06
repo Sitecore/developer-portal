@@ -17,7 +17,12 @@ export type HeroProps = {
 
 export const Hero = ({ description, title, children, productLogo, demoId }: HeroProps): JSX.Element => {
   return (
-    <VerticalGroup maxWidth={'full'} background={'chakra-subtle-bg'} borderBottom={'1px'} borderColor={'chakra-border-color'}>
+    <VerticalGroup
+      maxWidth={'full'}
+      borderBottom={'1px'}
+      borderColor={'chakra-border-color'}
+      background={useColorModeValue('linear-gradient(51deg,#dedbff -10%,#f9f9f9 40%,#f9f9f9 70%,#ffcfcf 120%)', 'linear-gradient(51deg, #2c2c4a -10%, #1a1a1a 40%, #1a1a1a 70%, #4a2c2c 120%)')}
+    >
       <CenteredContent gap={2} py={{ base: 6, md: 12, xl: 16 }} direction={{ base: 'column', md: 'column' }}>
         {productLogo && <Image src={useColorModeValue(GetProductLogo(productLogo, 'Light'), GetProductLogo(productLogo, 'Dark'))} alt={`${title} logo`} width={'280'} height={'60'} />}
         {!productLogo && (
