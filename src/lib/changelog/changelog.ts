@@ -19,6 +19,9 @@ import {
   SearchByProductDocument,
   SearchByProductQuery,
   SearchByProductQueryVariables,
+  SearchByProductsAndChangeTypesAndBreakingChangeDocument,
+  SearchByProductsAndChangeTypesAndBreakingChangeQuery,
+  SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables,
   SearchByProductsAndChangeTypesDocument,
   SearchByProductsAndChangeTypesQuery,
   SearchByProductsAndChangeTypesQueryVariables,
@@ -139,7 +142,6 @@ export class Changelog {
       date: new Date(),
       productIds: productId?.split('|') ?? [],
       changeTypeIds: changeTypeId?.split('|') ?? [],
-      breaking: false,
     });
 
     if (response == null) {
@@ -152,14 +154,23 @@ export class Changelog {
   async getEntries({ productId, changeTypeId, pageSize, endCursor, breaking = false }: { productId?: string; changeTypeId?: string; pageSize?: number; endCursor?: string; breaking?: boolean } = {}): Promise<
     ChangelogEntryList<Array<ChangelogEntry>>
   > {
-    const response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(SearchByProductsAndChangeTypesDocument, this.credentials, this.isPreview, {
-      first: pageSize ? pageSize : 5,
-      after: endCursor ?? '',
-      date: new Date(),
-      productIds: productId?.split('|') ?? [],
-      changeTypeIds: changeTypeId?.split('|') ?? [],
-      breaking: breaking,
-    });
+    const response =
+      breaking == false
+        ? await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(SearchByProductsAndChangeTypesDocument, this.credentials, this.isPreview, {
+            first: pageSize ? pageSize : 5,
+            after: endCursor ?? '',
+            date: new Date(),
+            productIds: productId?.split('|') ?? [],
+            changeTypeIds: changeTypeId?.split('|') ?? [],
+          })
+        : await fetchGraphQL<SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables>(SearchByProductsAndChangeTypesAndBreakingChangeDocument, this.credentials, this.isPreview, {
+            first: pageSize ? pageSize : 5,
+            after: endCursor ?? '',
+            date: new Date(),
+            productIds: productId?.split('|') ?? [],
+            changeTypeIds: changeTypeId?.split('|') ?? [],
+            breaking: breaking,
+          });
 
     if (response == null) {
       return ParseRawData(response);
