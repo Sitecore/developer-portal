@@ -75,6 +75,9 @@ const redirects = [
   { source: '/learn/accelerate/xm-cloud/implementation/localization', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/localization', permanent: true },
   { source: '/learn/accelerate/xm-cloud/implementation/search', destination: '/learn/accelerate/xm-cloud/implementation/sitecore-search', permanent: true },
 
+  { source: '/learn/accelerate/xm-cloud/appendix-i/xm-cloud-glossary', destination: 'https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html', permanent: true },
+
+
 ];
 
 const nextConfig = {
