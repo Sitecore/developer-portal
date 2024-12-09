@@ -105,7 +105,7 @@ The init script initializes the `.env` file with everything necessary.
 
 As you may remember from the introduction in the previous tutorial, you need to use a [GraphQL endpoint](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/jss-graphql-api.html) to query the content coming from XM Cloud. To connect to the endpoint, a few things need to be configured up front.
 
-1. Navigate to the `.env` file within your solution under src\sxastarter, and copy it.
+1. Navigate to the `.env` file within your solution under headapps\nextjs-starter, and copy it.
 
 1. Name it `.env.local`. We do this so that the file is ignored by git by default, so that you do not pass valuable configuration secrets into any repositories.
 
@@ -128,7 +128,7 @@ Now, you need to set the API key within `.env.local`. The API key should be alre
    <Image title="Copy Context ID into .env file" src="/images/getting-started/tutorials/xm-cloud/create-a-site-12.png" maxW="xl" />
 1. Add the Site name (e.g. `Company dev`) to the `SITECORE_SITE_NAME` environment variable in the `.env.local` file.
    <Image title="Set Site name in .env file" src="/images/getting-started/tutorials/xm-cloud/create-a-site-13.png" maxW="xl" />
-1. In your terminal navigate to src/sxastarter (your app folder) and run `npm install`
+1. In your terminal navigate to headapps\nextjs-starter (your app folder) and run `npm install`
    <Image title="In Command Line Interface - Run npm install" src="/images/getting-started/tutorials/xm-cloud/create-a-site-14.png" maxW="xl" />
 1. Now run `npm run start:connected`
    <Image title="Start the app locally" src="/images/getting-started/tutorials/xm-cloud/create-a-site-15.png" maxW="xl" />
