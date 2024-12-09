@@ -92,7 +92,7 @@ As mentioned earlier, it is required to start using the foundation head solution
 
 The solution contains everything to run XM Cloud locally using Docker Containers as well as running the head application locally connecting towards the GraphQL Preview Endpoint. It contains .env file for managing environment specific connection strings as well as the NextJS application named nextjs-starter.
 
-<img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.jpeg" alt="Foundation Head Starter Kit"/>
+<img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.png" alt="Foundation Head Starter Kit"/>
 
 ### Items Serialization
 
