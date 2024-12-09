@@ -90,7 +90,7 @@ While you can use the Sites application for this, each new site created via the 
 
 As mentioned earlier, it is required to start using the foundation head solution. This can be either cloned during the project creation process or forked separately.
 
-The solution contains everything to run XM Cloud locally using Docker Containers as well as running the head application locally connecting towards the GraphQL Preview Endpoint. It contains .env file for managing environment specific connection strings as well as the NextJS application named sxastarter.
+The solution contains everything to run XM Cloud locally using Docker Containers as well as running the head application locally connecting towards the GraphQL Preview Endpoint. It contains .env file for managing environment specific connection strings as well as the NextJS application named nextjs-starter.
 
 <img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.jpeg" alt="Foundation Head Starter Kit"/>
 
@@ -104,9 +104,9 @@ Check out Item serialization for more details: [Setup Content Serialization](./s
 
 The platform folder can contain customizations you want to add to the XM Cloud content management instance. It is not recommended to create customizations to the CM (Including pipelines, event handlers etc...).
 
-### NextJS application “sxastarter”
+### NextJS application “nextjs-starter”
 
-The sxastarter folder represents the head application built with NextJS. it contains its own .env file. The src folder provides already implementation such as a out of the box components but also middleware functionalities such as redirects or personalization.
+The nextjs-starter folder represents the head application built with NextJS. it contains its own .env file. The src folder provides already implementation such as a out of the box components but also middleware functionalities such as redirects or personalization.
 
 > _Please note that the starter template currently uses the page router instead of the newer app router introduced with version 13. [This is on the roadmap]_
 
@@ -114,7 +114,7 @@ The sxastarter folder represents the head application built with NextJS. it cont
 
 #### Using .env.template
 
-- Rename `.env` to `.env.template` in your solution root
+- Rename `.env` to `.env.template` in `local-containers` folder
 
 - remove confidential data from `.env.template`
 
@@ -122,9 +122,9 @@ The sxastarter folder represents the head application built with NextJS. it cont
 
 - update `init.ps1` to copy `.env` from `.env.template` before any of the env variables are set
 
-#### Rename the sxastarter Project
+#### Rename the nextjs-starter Project
 
-- Rename `sxastarter` app folder name to your client related application name
+- Rename `nextjs-starter` app folder name to your client related application name
 
 - Update the `appName` property in the `package.json` to your Site name field of your site item
 
@@ -150,13 +150,11 @@ The sxastarter folder represents the head application built with NextJS. it cont
 
 - In `package-lock.json` change name field and packages name field to `app_folder_name`
 
-- In `render.ts` change the comment from sxastarter to your `app_folder_name`
-
 - In `Platform.csproj `change AssemblyName
 
 - In `AssemblyInfo.cs` change `AssemblyTitle` and `AssemblyProduct` accordingly
 
-- Rename Solution File `XMCloudSXAStarter.sln` to what your are using in Assembly configurations.
+- Rename Solution File `XmCloudAuthoring.sln` to what your are using in Assembly configurations.
 
 ## Discussion
 
