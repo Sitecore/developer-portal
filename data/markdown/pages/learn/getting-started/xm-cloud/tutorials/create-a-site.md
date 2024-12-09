@@ -128,7 +128,7 @@ Now, you need to set the API key within `.env.local`. The API key should be alre
    <Image title="Copy Context ID into .env file" src="/images/getting-started/tutorials/xm-cloud/create-a-site-12.png" maxW="xl" />
 1. Add the Site name (e.g. `Company dev`) to the `SITECORE_SITE_NAME` environment variable in the `.env.local` file.
    <Image title="Set Site name in .env file" src="/images/getting-started/tutorials/xm-cloud/create-a-site-13.png" maxW="xl" />
-1. In your terminal navigate to headapps\nextjs-starter (your app folder) and run `npm install`
+1. In your terminal navigate to headapps/nextjs-starter (your app folder) and run `npm install`
    <Image title="In Command Line Interface - Run npm install" src="/images/getting-started/tutorials/xm-cloud/create-a-site-14.png" maxW="xl" />
 1. Now run `npm run start:connected`
    <Image title="Start the app locally" src="/images/getting-started/tutorials/xm-cloud/create-a-site-15.png" maxW="xl" />
