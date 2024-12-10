@@ -96,7 +96,7 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct, products 
             <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="5px">
               <RoadmapPhase roadmap={data} title="Done" color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
               <RoadmapPhase roadmap={data} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
-              <RoadmapPhase roadmap={data} title="Next (next two quarter)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Next (next two quarters)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
               <RoadmapPhase roadmap={data} title="Future (9+ months)" color="neutral-bg-active" phase={Phase.FUTURE} isLoading={isLoading} />
             </SimpleGrid>
           </CenteredContent>
