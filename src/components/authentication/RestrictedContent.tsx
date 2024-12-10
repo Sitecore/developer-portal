@@ -24,7 +24,9 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
           <Heading as="h3" size="md">
             Restricted
           </Heading>
-          <Text variant="small">You don&apos;t have permission to access this content. Please log in using your Sitecore Cloud Portal credentials</Text>
+          <Text>
+            You don&apos;t have permission to access this content. Please log in using your <b>Sitecore Cloud Portal</b> credentials
+          </Text>
           <LinkButton variant="link" href={returnUrl} text={'Login'} showIcon={false} />
         </Stack>
       </HStack>
