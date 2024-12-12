@@ -22,7 +22,7 @@ const CustomImage = chakra(Image, {
   shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
 });
 
-const AccelerateUpdates = ({ title = 'Sitecore Accelerate updates', linkHref = '/learn/accelerate', linkText = 'See all recipes', recipes, hideProductIcon, columns }: AccelerateUpdatesProps): JSX.Element => {
+const AccelerateUpdates = ({ title = 'Sitecore Accelerate updates', linkHref = '/learn/accelerate', linkText = 'See all recipes', recipes, hideProductIcon, columns }: AccelerateUpdatesProps) => {
   return (
     <Card variant={'unstyled'}>
       <CardHeader justifyContent={'space-between'} display={'flex'} py={8}>

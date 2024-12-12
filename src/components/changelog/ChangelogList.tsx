@@ -19,7 +19,7 @@ type ChangelogListProps = {
   onProductsChange?: (selectedProducts: Array<Option>) => void;
 };
 
-const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps): JSX.Element => {
+const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps) => {
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
   const [breaking, setBreaking] = useState<boolean>(false);
 
@@ -99,7 +99,7 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
 
 export default ChangelogList;
 
-const Placeholder = (): JSX.Element => {
+const Placeholder = () => {
   return (
     <>
       <SkeletonText noOfLines={1} skeletonHeight={'20px'} marginBottom={'20px'} />

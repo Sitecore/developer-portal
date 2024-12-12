@@ -1,10 +1,5 @@
-query searchByProductsAndChangeTypes($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "", $breaking: Boolean = false) {
-  changelog: allChangelog(
-    orderBy: RELEASEDATE_DESC
-    first: $first
-    after: $after
-    where: { releaseDate_lt: $date, breakingChange_eq: $breaking, OR: [{ sitecoreProduct: { changelog_ids: $productIds } }], AND: { OR: [{ changeType: { changelog_ids: $changeTypeIds } }] } }
-  ) {
+query searchByProductsAndChangeTypes($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "") {
+  changelog: allChangelog(orderBy: RELEASEDATE_DESC, first: $first, after: $after, where: { releaseDate_lt: $date, OR: [{ sitecoreProduct: { changelog_ids: $productIds } }], AND: { OR: [{ changeType: { changelog_ids: $changeTypeIds } }] } }) {
     pageInfo {
       hasNext
       endCursor

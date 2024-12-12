@@ -8,7 +8,7 @@ type ProductIconProps = {
   product: SitecoreProduct;
 };
 
-export const ProductIcon = ({ product }: ProductIconProps): JSX.Element => {
+export const ProductIcon = ({ product }: ProductIconProps) => {
   return (
     <Tooltip label={`Go to the ${product.productName} changelog page`} aria-label="A tooltip">
       <Link href={`/changelog/${getSlug(product.productName)}`}>

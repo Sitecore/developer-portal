@@ -10,7 +10,7 @@ type ChangelogResultsListProps = BoxProps & {
   onEndTriggered: () => void;
 };
 
-const ChangelogResultsList = ({ entries, isLoading, hasNext, onEndTriggered, ...rest }: ChangelogResultsListProps): JSX.Element => {
+const ChangelogResultsList = ({ entries, isLoading, hasNext, onEndTriggered, ...rest }: ChangelogResultsListProps) => {
   return <Box {...rest}>{entries && entries.map((item, i) => <ChangeLogItem item={item} key={i} loading={isLoading} isLast={i === entries.length - 1} isMore={hasNext} loadEntries={() => onEndTriggered()} />)}</Box>;
 };
 

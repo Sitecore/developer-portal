@@ -11,7 +11,7 @@ type SitecoreCommunityEventsProps = CardProps & {
   data?: Array<SitecoreCommunityEvent>;
 };
 
-export const SitecoreCommunityEvents = ({ data, title, ...rest }: SitecoreCommunityEventsProps): JSX.Element => {
+export const SitecoreCommunityEvents = ({ data, title, ...rest }: SitecoreCommunityEventsProps) => {
   if (!data || data.length === 0) {
     return <></>;
   }

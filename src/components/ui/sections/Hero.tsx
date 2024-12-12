@@ -15,7 +15,7 @@ export type HeroProps = {
   children?: React.ReactNode | Array<React.ReactNode>;
 };
 
-export const Hero = ({ description, title, children, productLogo, demoId }: HeroProps): JSX.Element => {
+export const Hero = ({ description, title, children, productLogo, demoId }: HeroProps) => {
   return (
     <VerticalGroup
       maxWidth={'full'}
