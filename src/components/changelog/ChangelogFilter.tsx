@@ -14,7 +14,7 @@ type ChangelogFilterProps = {
   onSelectChange: (selectedValues: Array<Option>) => void;
 };
 
-const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: ChangelogFilterProps): JSX.Element => {
+const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: ChangelogFilterProps) => {
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
 
   if (!options) {

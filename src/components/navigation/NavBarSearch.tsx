@@ -1,7 +1,7 @@
 import { Flex, Image, Input, InputGroup, InputLeftElement, InputRightElement, Text } from '@chakra-ui/react';
 import { FaSearch } from 'react-icons/fa';
 
-const NavBarSearch = (): JSX.Element => {
+const NavBarSearch = () => {
   {
     /* Search menu */
   }

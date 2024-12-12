@@ -15,7 +15,7 @@ export function GetProductLogo(light: string, dark: string) {
   return useColorModeValue(light, dark);
 }
 
-export const ProductIcon = ({ product, width = '24px', height = '24px', alt = '', variant, ...rest }: ProductLogoProps): JSX.Element => {
+export const ProductIcon = ({ product, width = '24px', height = '24px', alt = '', variant, ...rest }: ProductLogoProps) => {
   let url;
 
   if (variant) {

@@ -16,7 +16,7 @@ type LayoutProps = BoxProps & {
   children: React.ReactNode | Array<React.ReactNode>;
 };
 
-const Layout = ({ title, description = '', openGraphImage, baseTitle, section, children, ...rest }: LayoutProps): JSX.Element => {
+const Layout = ({ title, description = '', openGraphImage, baseTitle, section, children, ...rest }: LayoutProps) => {
   const { isPreview } = usePreview();
 
   return (

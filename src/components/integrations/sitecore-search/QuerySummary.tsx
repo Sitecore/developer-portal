@@ -7,7 +7,7 @@ export interface IQuerySummary {
   title: string;
 }
 
-export const QuerySummary = (props: IQuerySummary): JSX.Element => {
+export const QuerySummary = (props: IQuerySummary) => {
   const { resultsPerPage, totalResults, currentPage, title } = props;
 
   const showResultFrom = (currentPage - 1) * resultsPerPage + 1;

@@ -2,6 +2,7 @@ import { Button, ButtonProps, Link } from '@chakra-ui/react';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
 import NextLink from 'next/link';
+import { JSX } from 'react';
 
 type LinkButtonProps = ButtonProps & {
   href: string;

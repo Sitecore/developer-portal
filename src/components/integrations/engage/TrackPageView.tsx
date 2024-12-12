@@ -16,7 +16,7 @@ interface TrackPageViewProps {
 export const TrackPageView: FC<TrackPageViewProps> = (props) => {
   const router = useRouter();
   const tracker = useEngageTracker();
-  const prevUrlRef = useRef<string>();
+  const prevUrlRef = useRef<string>('');
 
   const callTrackPageView = async (url: string) => {
     if (prevUrlRef.current !== url && tracker && tracker.context && tracker.context.isTrackerEnabled) {

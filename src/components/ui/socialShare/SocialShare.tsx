@@ -7,7 +7,7 @@ type SocialShareProps = {
   title: string;
 };
 
-export const SocialShare = ({ title, url }: SocialShareProps): JSX.Element => {
+export const SocialShare = ({ title, url }: SocialShareProps) => {
   const { onCopy, hasCopied } = useClipboard(url);
   const { isOpen, onToggle } = useDisclosure();
   const toast = useToast();
