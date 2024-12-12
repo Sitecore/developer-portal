@@ -9,7 +9,7 @@ type VideoProps = {
   playlistCoverId?: string;
 };
 
-export const YouTube = ({ youTubeId, isPlayList, playlistCoverId }: VideoProps): JSX.Element => {
+export const YouTube = ({ youTubeId, isPlayList, playlistCoverId }: VideoProps) => {
   return (
     <Box flexDirection={'column'} alignItems={'center'}>
       <LiteYouTubeEmbed

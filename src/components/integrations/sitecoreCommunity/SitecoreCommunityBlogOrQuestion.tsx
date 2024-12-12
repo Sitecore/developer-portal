@@ -12,7 +12,7 @@ type SitecoreCommunityBlogOrQuestionProps = {
   loading?: boolean;
 };
 
-export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps): JSX.Element => (
+export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps) => (
   <LinkBox as="article" display="contents">
     <Card variant={'outline'} size="lg" w={'full'} justifyContent={'space-between'} layerStyle="interactive.raise">
       <CardBody>
@@ -42,7 +42,7 @@ export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommu
   </LinkBox>
 );
 
-export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps): JSX.Element => {
+export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps) => {
   return (
     <Flex justifyContent={'items-start'} mb={5}>
       <Skeleton isLoaded={!loading}>

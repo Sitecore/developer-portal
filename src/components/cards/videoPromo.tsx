@@ -15,7 +15,7 @@ export type VideoPromoProps = VideoProps & {
   isImageLeft?: boolean;
 };
 
-const Video = ({ videoUrl }: VideoProps): JSX.Element => (
+const Video = ({ videoUrl }: VideoProps) => (
   <Box className="w-full aspect-video">
     <video className="w-full h-full" autoPlay muted controls>
       <source src={videoUrl} type="video/mp4" />
@@ -23,7 +23,7 @@ const Video = ({ videoUrl }: VideoProps): JSX.Element => (
   </Box>
 );
 
-export const VideoPromo = ({ title, description, videoUrl, youTubeId, linkText, linkHref, isImageLeft = true }: VideoPromoProps): JSX.Element => {
+export const VideoPromo = ({ title, description, videoUrl, youTubeId, linkText, linkHref, isImageLeft = true }: VideoPromoProps) => {
   return (
     <Flex gap={6} my={8}>
       {isImageLeft && videoUrl != undefined && (

@@ -5,7 +5,7 @@ interface SidebarProps extends BoxProps {
   children: React.ReactNode;
 }
 
-export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarProps): JSX.Element => {
+export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarProps) => {
   return (
     <Box as={'aside'} w={{ base: 'full', md: 'sm', sm: 'full' }} order={{ base: -1, md: 0 }} layerStyle={showBackground && children ? 'section.sidebar' : rest.layerStyle}>
       {children && (

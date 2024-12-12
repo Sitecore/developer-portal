@@ -8,7 +8,7 @@ type StackExchangeFeedProps = CardProps & {
   title?: string;
 };
 
-export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedProps): JSX.Element => {
+export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedProps) => {
   if (data.length === 0) {
     return <></>;
   }

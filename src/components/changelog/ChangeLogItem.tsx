@@ -19,7 +19,7 @@ export type ChangeLogItemProps = {
   loadEntries: () => void;
 };
 
-const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
+const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const entryRef = useRef(null);
 

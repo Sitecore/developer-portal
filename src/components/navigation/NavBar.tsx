@@ -40,7 +40,6 @@ import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/asset
 import { PreviewModeSwitch } from './PreviewModeSwitch';
 
 import { PreviewSearchInput } from '../integrations/sitecore-search';
-import { Slide } from '../ui/chakra/Slide';
 import { ProductIcon } from '../ui/logos';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
@@ -69,7 +68,7 @@ export type NavBarProps = {
   searchEnabled?: boolean;
 };
 
-export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
+export default function Navbar({ searchEnabled }: NavBarProps): React.ReactNode {
   const { isOpen, onToggle } = useDisclosure();
   const [focusedOnSearch, setFocusedOnSearch] = useState(false);
   const router = useRouter();
@@ -289,43 +288,41 @@ const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
         {children && <Icon as={ChevronRightIcon} transition={'all .25s ease-in-out'} transform={isOpen ? 'rotate(180deg)' : ''} w={6} h={6} />}
       </Flex>
 
-      <Slide in={isOpen}>
-        <Box position={'fixed'} top={'3.5rem'} width={'full'} background={'chakra-body-bg'} height={'100vh'}>
-          <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} onClick={onClose} width={'full'} borderRadius={0} justifyContent={'left'} px={2} height={14} mb={4} shadow={'lg'}>
-            Back
-          </Button>
-          <Stack mb={2} pl={4} borderLeft={1} borderStyle={'solid'} borderColor={useColorModeValue('gray.200', 'gray.700')} align={'start'}>
-            {children &&
-              children.map((child, key) => (
-                <Box key={key} py={4} borderBottom={1} borderBottomStyle={'solid'} borderBottomColor={'chakra-border-color'} width={'95%'}>
-                  {child.url ? (
-                    <Box as="a" key={child.title} py={2} href={child.url}>
-                      <Heading as="h2" size="md" mb={2}>
-                        {child.title}
-                      </Heading>
-                    </Box>
-                  ) : (
-                    <Box as="span" key={child.title} py={2}>
-                      <Heading as="h2" size="md" mb={2}>
-                        {child.title}
-                      </Heading>
-                    </Box>
-                  )}
+      <Box position={'fixed'} top={'3.5rem'} width={'full'} background={'chakra-body-bg'} height={'100vh'}>
+        <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} onClick={onClose} width={'full'} borderRadius={0} justifyContent={'left'} px={2} height={14} mb={4} shadow={'lg'}>
+          Back
+        </Button>
+        <Stack mb={2} pl={4} borderLeft={1} borderStyle={'solid'} borderColor={useColorModeValue('gray.200', 'gray.700')} align={'start'}>
+          {children &&
+            children.map((child, key) => (
+              <Box key={key} py={4} borderBottom={1} borderBottomStyle={'solid'} borderBottomColor={'chakra-border-color'} width={'95%'}>
+                {child.url ? (
+                  <Box as="a" key={child.title} py={2} href={child.url}>
+                    <Heading as="h2" size="md" mb={2}>
+                      {child.title}
+                    </Heading>
+                  </Box>
+                ) : (
+                  <Box as="span" key={child.title} py={2}>
+                    <Heading as="h2" size="md" mb={2}>
+                      {child.title}
+                    </Heading>
+                  </Box>
+                )}
 
-                  <UnorderedList listStyleType={'none'} m={0}>
-                    {child.children?.map((subchild, i) => (
-                      <ListItem py={2} key={i}>
-                        <Link as={NextLink} aria-current={currentPage === subchild.url} href={subchild.url} isExternal={subchild.external} key={i} color={'neutral.fg'}>
-                          {subchild.title} {subchild.external && <Icon as={ExternalLinkIcon} fillOpacity={0} w={4} h={4} />}
-                        </Link>
-                      </ListItem>
-                    ))}
-                  </UnorderedList>
-                </Box>
-              ))}
-          </Stack>
-        </Box>
-      </Slide>
+                <UnorderedList listStyleType={'none'} m={0}>
+                  {child.children?.map((subchild, i) => (
+                    <ListItem py={2} key={i}>
+                      <Link as={NextLink} aria-current={currentPage === subchild.url} href={subchild.url} isExternal={subchild.external} key={i} color={'neutral.fg'}>
+                        {subchild.title} {subchild.external && <Icon as={ExternalLinkIcon} fillOpacity={0} w={4} h={4} />}
+                      </Link>
+                    </ListItem>
+                  ))}
+                </UnorderedList>
+              </Box>
+            ))}
+        </Stack>
+      </Box>
     </Stack>
   );
 };

@@ -1,5 +1,4 @@
 import { withDelay } from '@chakra-ui/react';
-import { cx } from '@chakra-ui/shared-utils';
 import { AnimatePresence, HTMLMotionProps, motion, MotionStyle, Variants as TVariants } from 'framer-motion';
 import { forwardRef } from 'react';
 
@@ -47,6 +46,7 @@ interface SlideOptions {
 }
 interface SlideProps extends WithTransitionConfig<HTMLMotionProps<'div'>>, SlideOptions {
   motionProps?: HTMLMotionProps<'div'>;
+  className: string;
 }
 
 export const Slide = forwardRef<HTMLDivElement, SlideProps>(function Slide(props, ref) {
@@ -57,14 +57,9 @@ export const Slide = forwardRef<HTMLDivElement, SlideProps>(function Slide(props
 
   const show = unmountOnExit ? isOpen && unmountOnExit : true;
   const animate = isOpen || unmountOnExit ? 'enter' : 'exit';
-
   const custom = { transitionEnd, transition, direction, delay };
 
-  return (
-    <AnimatePresence custom={custom}>
-      {show && <motion.div {...rest} ref={ref} className={cx('chakra-slide', className)} animate={animate} exit="exit" custom={custom} variants={variants as TVariants} style={computedStyle} {...motionProps} />}
-    </AnimatePresence>
-  );
+  return <AnimatePresence custom={custom}>{show && <motion.div {...rest} ref={ref} animate={animate} exit="exit" custom={custom} variants={variants as TVariants} style={computedStyle} {...motionProps} />}</AnimatePresence>;
 });
 
 Slide.displayName = 'Slide';

@@ -32,11 +32,11 @@ export type PromoCardProps = PromoCardImage & {
   isImageLeft?: boolean;
 };
 
-function PromoImage({ img }: PromoCardImage): JSX.Element {
+function PromoImage({ img }: PromoCardImage) {
   return <Image src={img.src} alt={img.alt || ''} objectFit="cover" maxW={{ base: '100%', md: '310px' }} />;
 }
 
-export const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps): JSX.Element => (
+export const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps) => (
   <Center>
     <LinkBox as={Card} direction={{ base: 'column', md: 'row' }} overflow="hidden" variant="outlineRaised" maxW={'container.md'} layerStyle={'interactive.raise'}>
       {isImageLeft && <PromoImage img={img} />}
@@ -66,7 +66,7 @@ export const PromoCard = ({ title, description, img, link, isImageLeft = true }:
   </Center>
 );
 
-export const Promo = ({ title, description, linkText, linkHref, imageSource, imageAlt, className, isImageLeft }: SimplePromoCardProps): JSX.Element => {
+export const Promo = ({ title, description, linkText, linkHref, imageSource, imageAlt, className, isImageLeft }: SimplePromoCardProps) => {
   const data: PromoCardProps = {
     title: title,
     description: description,
