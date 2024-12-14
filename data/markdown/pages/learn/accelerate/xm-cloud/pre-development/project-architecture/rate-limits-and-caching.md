@@ -95,13 +95,13 @@ This will increase overall build time but can reduce the amount of concurrent re
 
 To reduce the number of requests to Experience Edge, you can tune the web application cache in the following areas:
 
-- [Dictionary service](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/dictionary-service-factory.ts#L20)
+- [Dictionary service](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/headapps/nextjs-starter/src/lib/dictionary-service-factory.ts#L20)
   - The default `cacheTimeout` is 60 seconds, you can increase this to reduce the number of requests to Experience Edge.
   - Increase `pageSize` (10 default) - this value can go up to 1000 depending on how many dictionary items you have
-- [Personalize middleware](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/middleware/plugins/personalize.ts#L26)
+- [Personalize middleware](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/headapps/nextjs-starter/src/lib/middleware/plugins/personalize.ts#L24)
   - Increase the default `cacheTimeout` (10s default)
   - If your client is not using Embedded Personalization, disable or remove the middleware
-- [Redirects middleware](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/src/sxastarter/src/lib/middleware/plugins/redirects.ts#L12)
+- [Redirects middleware](https://github.com/sitecorelabs/xmcloud-foundation-head/blob/main/headapps/nextjs-starter/src/lib/middleware/plugins/redirects.ts#L12)
   - Increase the default `cacheTimeout` (10s default)
   - If you are not using (SXA) redirects, you can disable or remove the middleware
 
