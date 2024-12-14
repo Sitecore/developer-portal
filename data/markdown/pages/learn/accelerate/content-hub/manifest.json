@@ -1,0 +1,155 @@
+{
+  "title": "Accelerate Cookbook for Content Hub",
+  "description": "This Cookbook provides a set of recipes to help implementing Content Hub through setup, configuration and implemenation.",
+  "heading": false,
+  "path": "/learn/accelerate/content-hub",
+  "showRootAsSections": true,
+  "routes": [
+    {
+      "title": "Pre-development",
+      "path": "pre-development",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Discovery",
+          "path": "discovery",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Discovery Phase",
+              "path": "discovery-phase"
+            },
+            {
+              "title": "Project Planning",
+              "path": "project-planning"
+            },
+            {
+              "title": "Requirements Gathering",
+              "path": "requirements-gathering"
+            }
+          ]
+        },
+        {
+          "title": "Sprint Zero",
+          "path": "sprint-zero",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Multi Environments Deployment",
+              "path": "multi-environments-deployment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Implementation",
+      "path": "implementation",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Configuration",
+          "path": "configuration",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Distribution of assets",
+              "path": "distribution-of-assets"
+            },
+            {
+              "title": "Paths across entity definitions",
+              "path": "paths-across-entity-definitions"
+            }
+          ]
+        },
+        {
+          "title": "Schema Management",
+          "path": "schema-management",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Taxonomy vs Option Lists",
+              "path": "taxonomy-vs-option-list"
+            }
+          ]
+        },
+        {
+          "title": "Custom Logic",
+          "path": "custom-logic",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Conditionally generate renditions",
+              "path": "conditionally-generate-renditions"
+            },{
+              "title": "Developing External Components",
+              "path": "developing-external-components"
+            },
+            {
+              "title": "External Integrations",
+              "path": "external-integrations"
+            },
+            {
+              "title": "Scripts Guidance and Scenarios",
+              "path": "scripting-guidance-and-scenarios"
+            }            
+          ]
+        },
+        {
+          "title": "Functional Security",
+          "path": "functional-security",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Single-Sign On",
+              "path": "sso-on-content-hub"
+            },
+            {
+              "title": "User Groups Setup",
+              "path": "user-groups-setup"
+            },
+            {
+              "title": "Debugging User Security",
+              "path": "debugging-user-security"
+            }
+          ]
+        },
+        {
+          "title": "State Flow and Approval",
+          "path": "state-flow-and-approval"
+        }
+      ]
+    },
+    {
+      "title": "Final Steps",
+      "path": "final-steps",
+      "ignoreLink": true,
+      "children": [
+        
+        {
+          "title": "Migration Guide",
+          "path": "migration-guide"
+        },
+        {
+          "title": "Testing and Quality Assurance",
+          "path": "testing-and-qa"
+        },
+        {
+          "title": "Go-Live Checklist",
+          "path": "go-live-checklist"
+        }
+      ]
+    },
+    {
+      "title": "Appendix I",
+      "path": "appendix-i",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Content Hub Glossary",
+          "path": "content-hub-glossary"
+        }
+      ]
+    }
+  ]
+}

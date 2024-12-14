@@ -24,6 +24,7 @@ export const getLatestRecipes = async (product: string, count?: number) => {
           title: data.title,
           description: data.description,
           url: convertFileToURL(file),
+          audience: data.audience,
         };
       }
       return null;
