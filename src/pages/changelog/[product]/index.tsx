@@ -5,14 +5,12 @@ import { Changelog } from '@lib/changelog';
 import { Product } from '@lib/changelog/types';
 import { getChangelogProductPaths } from '@lib/staticPaths';
 import { getSlug, slugify } from '@lib/utils';
-import { mdiRss } from '@mdi/js';
-import Icon from '@mdi/react';
 import Layout from '@src/layouts/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { ChangelogFeeds } from '@/src/components/changelog/ChangelogFeeds';
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-import { LinkButton } from '@/src/components/links';
 import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 
@@ -55,7 +53,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
 
   return (
     <TrackPageView product={currentProduct}>
-      <Layout title="Sitecore's global changelog" description="Learn more about new versions, changes and improvements">
+      <Layout title={title} description={description}>
         <Hero title={title} description={description}>
           <HStack>
             <Text variant={'sm'}>Powered by</Text>
@@ -86,8 +84,9 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
                 <ChangelogList initialProduct={currentProduct} />
               </GridItem>
               <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
-                <LinkButton text={'RSS'} href={`${getSlug(currentProduct.name)}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                <LinkButton text={'ATOM'} href={`${getSlug(currentProduct.name)}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <ChangelogFeeds url={getSlug(currentProduct.name)} />
+                {/* <LinkButton text={'RSS'} href={`${getSlug(currentProduct.name)}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <LinkButton text={'ATOM'} href={`${getSlug(currentProduct.name)}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} /> */}
                 <ChangelogByMonth product={currentProduct} />
               </GridItem>
             </Grid>

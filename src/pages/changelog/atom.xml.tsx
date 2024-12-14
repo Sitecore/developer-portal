@@ -8,9 +8,10 @@ const FeedPage = () => null;
 
 export async function getServerSideProps(context: any) {
   const preview = context.preview ? context.preview : null;
+  const search = context.query.search ? context.query.search : null;
   const changelog = new Changelog(getChangelogCredentials(), preview);
   // Fetch data
-  const changelogEntryList = await changelog.getEntries({ pageSize: 10 });
+  const changelogEntryList = search != null ? await changelog.getEntriesByTitleProductChangeType({ entryTitle: search, pageSize: 10 }) : await changelog.getEntries({ pageSize: 10 });
   // Fetch data
   const feed = await CreateFeed(changelogEntryList);
 

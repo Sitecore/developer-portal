@@ -10,7 +10,7 @@ export type CTACardProps = {
   title: string;
 };
 
-export const CTACard = ({ description, href, linkText, title, link2Text, link2href }: CTACardProps): JSX.Element => (
+export const CTACard = ({ description, href, linkText, title, link2Text, link2href }: CTACardProps) => (
   <Card variant="filled" size={'lg'}>
     <CardBody>
       <Heading as="h2" mb={4} fontSize={'5xl'}>

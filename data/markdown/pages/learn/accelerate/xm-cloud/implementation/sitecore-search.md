@@ -4,7 +4,7 @@ description: 'Recipe for implementing search experience using Sitecore Search'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-10-03'
+lastUpdated: '2024-11-20'
 ---
 
 ## Problem
@@ -97,8 +97,6 @@ Sitecore Search provides three integration methods that you can choose from:
 * [JavaScript SDK for React](https://doc.sitecore.com/search/en/developers/search-developer-guide/integrating-using-search-js-sdk-for-react.html) - integration involves adding SDK packages containing components and features to your project. Built specially for React applications, the SDK is the fastest way to integrate with Search and requires the least time and development effort.
 * [JavaScript Data](https://doc.sitecore.com/search/en/developers/search-developer-guide/integrating-using-search-js-data-package.html) - can be used with vanilla JavaScript or in any JS framework. This is quick way to make search queries and receive responses from Search .
 * [REST APIs](https://doc.sitecore.com/search/en/developers/search-developer-guide/integrating-using-rest-apis.html) - integration involves accessing endpoints that expose Search services. Configure the requests you want to send to Search. You'll also need to handle the responses and translate them into Search experiences.
-
-However, the React SDK does not follow the support lifecycle or SLAs as other SDK’s such as the JSS SDK, so are currently not fit for production or client-based projects.
 
 In addition, for the pure purpose of prototyping and training, there are the following resources:
 

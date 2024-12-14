@@ -8,18 +8,20 @@ import Meta from './Meta';
 
 type LayoutProps = BoxProps & {
   title: string;
+  baseTitle?: string;
+  section?: string;
   description?: string;
   openGraphImage?: string;
   preview?: boolean;
   children: React.ReactNode | Array<React.ReactNode>;
 };
 
-const Layout = ({ title, description = '', openGraphImage, children, ...rest }: LayoutProps): JSX.Element => {
+const Layout = ({ title, description = '', openGraphImage, baseTitle, section, children, ...rest }: LayoutProps) => {
   const { isPreview } = usePreview();
 
   return (
     <Box as="main" {...rest}>
-      <Meta title={title} description={description} openGraphImageUrl={openGraphImage} />
+      <Meta title={title} description={description} baseTitle={baseTitle} section={section} openGraphImageUrl={openGraphImage} />
       <VisuallyHidden>
         <a href="#main-content">Skip to main content</a>
       </VisuallyHidden>

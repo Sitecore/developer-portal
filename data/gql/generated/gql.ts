@@ -33,6 +33,8 @@ const documents = {
     types.SearchByProductDocument,
   'query searchByProductsAndChangeTypes($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "") {\n  changelog: allChangelog(\n    orderBy: RELEASEDATE_DESC\n    first: $first\n    after: $after\n    where: {releaseDate_lt: $date, OR: [{sitecoreProduct: {changelog_ids: $productIds}}], AND: {OR: [{changeType: {changelog_ids: $changeTypeIds}}]}}\n  ) {\n    pageInfo {\n      hasNext\n      endCursor\n    }\n    total\n    results {\n      ...changelogEntry\n    }\n  }\n}':
     types.SearchByProductsAndChangeTypesDocument,
+  'query searchByProductsAndChangeTypesAndBreakingChange($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "", $breaking: Boolean) {\n  changelog: allChangelog(\n    orderBy: RELEASEDATE_DESC\n    first: $first\n    after: $after\n    where: {releaseDate_lt: $date, breakingChange_eq: $breaking, OR: [{sitecoreProduct: {changelog_ids: $productIds}}], AND: {OR: [{changeType: {changelog_ids: $changeTypeIds}}]}}\n  ) {\n    pageInfo {\n      hasNext\n      endCursor\n    }\n    total\n    results {\n      ...changelogEntry\n    }\n  }\n}':
+    types.SearchByProductsAndChangeTypesAndBreakingChangeDocument,
   'query searchByTitle($date: DateTime, $productId: [ID]) {\n  data: allChangelog(\n    first: 1\n    where: {releaseDate_lt: $date, sitecoreProduct: {changelog_ids: $productId}}\n  ) {\n    pageInfo {\n      hasNext\n      endCursor\n    }\n    total\n    results {\n      ...changelogEntry\n    }\n  }\n}':
     types.SearchByTitleDocument,
 };
@@ -113,6 +115,12 @@ export function graphql(
 export function graphql(
   source: 'query searchByProductsAndChangeTypes($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "") {\n  changelog: allChangelog(\n    orderBy: RELEASEDATE_DESC\n    first: $first\n    after: $after\n    where: {releaseDate_lt: $date, OR: [{sitecoreProduct: {changelog_ids: $productIds}}], AND: {OR: [{changeType: {changelog_ids: $changeTypeIds}}]}}\n  ) {\n    pageInfo {\n      hasNext\n      endCursor\n    }\n    total\n    results {\n      ...changelogEntry\n    }\n  }\n}'
 ): typeof import('./graphql').SearchByProductsAndChangeTypesDocument;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(
+  source: 'query searchByProductsAndChangeTypesAndBreakingChange($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "", $breaking: Boolean) {\n  changelog: allChangelog(\n    orderBy: RELEASEDATE_DESC\n    first: $first\n    after: $after\n    where: {releaseDate_lt: $date, breakingChange_eq: $breaking, OR: [{sitecoreProduct: {changelog_ids: $productIds}}], AND: {OR: [{changeType: {changelog_ids: $changeTypeIds}}]}}\n  ) {\n    pageInfo {\n      hasNext\n      endCursor\n    }\n    total\n    results {\n      ...changelogEntry\n    }\n  }\n}'
+): typeof import('./graphql').SearchByProductsAndChangeTypesAndBreakingChangeDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

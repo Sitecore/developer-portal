@@ -1,5 +1,5 @@
 import { Option } from '@/src/components/ui/dropdown';
-import { Box, Button, CloseButton, Link, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Button, Checkbox, CloseButton, Link, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
 import { ChangelogEntry, ChangelogEntryList, Product } from '@lib/changelog/types';
 import axios from 'axios';
 import NextLink from 'next/link';
@@ -9,7 +9,6 @@ import useSWRInfinite from 'swr/infinite';
 
 import { entriesApiUrl, getChangeTypeOptions, getProductOptions } from '@/src/lib/changelog/common/changelog';
 import { buildQuerystring } from '@/src/lib/changelog/common/querystring';
-
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
 import { Hint } from './Hint';
@@ -20,8 +19,10 @@ type ChangelogListProps = {
   onProductsChange?: (selectedProducts: Array<Option>) => void;
 };
 
-const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps): JSX.Element => {
+const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps) => {
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
+  const [breaking, setBreaking] = useState<boolean>(false);
+
   const fetcher: Fetcher<ChangelogEntryList<Array<ChangelogEntry>>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
 
   const getKey = (pageIndex: any, previousPageData: ChangelogEntryList<Array<ChangelogEntry>>) => {
@@ -30,7 +31,7 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
     }
 
     const cursor = previousPageData ? previousPageData.endCursor : undefined;
-    const query = buildQuerystring(selectedProducts != null ? selectedProducts : [], selectedChange, cursor, initialProduct);
+    const query = buildQuerystring(selectedProducts != null ? selectedProducts : [], selectedChange, cursor, initialProduct, breaking);
 
     return [`${entriesApiUrl}?${query.join('&')}`];
   };
@@ -71,25 +72,34 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
         }}
       />
 
+      <Checkbox checked={breaking} onChange={(e) => setBreaking(e.target.checked)}>
+        Only show changes that might require action
+      </Checkbox>
+
       <Hint products={selectedProducts} enabled={selectedProducts?.length == 1} />
 
       {isLoading && (
-        <Box marginTop={8}>
+        <Box marginTop={12}>
           <Placeholder />
           <Placeholder />
         </Box>
       )}
 
-      {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={data[data.length - 1].hasNext} onEndTriggered={() => setSize(size + 1)} />}
+      {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={data[data.length - 1].hasNext} onEndTriggered={() => setSize(size + 1)} mt={8} />}
 
-      {data && !data[data.length - 1].hasNext && <span className={`border-violet text-violet dark:border-teal dark:text-teal mt-5 inline-block w-full border-2 px-3 py-2 text-center text-sm`}>No more results</span>}
+      {data && !data[data.length - 1].hasNext && (
+        <Alert colorScheme="neutral">
+          <AlertIcon />
+          {items.length == 0 ? 'No entries found' : 'No other entries found'}
+        </Alert>
+      )}
     </Box>
   );
 };
 
 export default ChangelogList;
 
-const Placeholder = (): JSX.Element => {
+const Placeholder = () => {
   return (
     <>
       <SkeletonText noOfLines={1} skeletonHeight={'20px'} marginBottom={'20px'} />

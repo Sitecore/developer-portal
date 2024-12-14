@@ -4,7 +4,7 @@ test.describe('Changelog tests', () => {
   test('Load changelog homepage', async ({ page }) => {
     await page.goto('/changelog');
     const pageTitle = await page.title();
-    expect(pageTitle).toBe("Sitecore's global changelog");
+    expect(pageTitle).toBe('Changelog | Sitecore Developer Portal');
   });
 
   test('Load product selector', async ({ page }) => {
