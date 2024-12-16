@@ -279,7 +279,7 @@ The script would of course need to be updated to first read the environmentId va
 ## Related Recipes
 
 <Row columns={2}>
-<Link title="Developing External Components" link="/learn/accelerate/content-hub/implementation/custom-logic/Developing-External-Components" />
+<Link title="Developing External Components" link="/learn/accelerate/content-hub/implementation/custom-logic/developing-external-components" />
 </Row>
 
 ## Related Documentation
