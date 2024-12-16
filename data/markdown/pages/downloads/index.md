@@ -1,5 +1,5 @@
 ---
-title: Sitecore Downloads
+title: All Downloads
 description: 'Download Sitecore software, tools and resources'
 origin: https://dev.sitecore.net/Downloads.aspx
 hasInPageNav: false

@@ -16,7 +16,7 @@ type YouTubeItemProps = {
   id: string;
 };
 
-export const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeedProps): JSX.Element => {
+export const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeedProps) => {
   if (data.length === 0) {
     return <></>;
   }
@@ -40,7 +40,7 @@ export const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeed
   );
 };
 
-export const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
+export const YouTubeItem = ({ snippet, id }: YouTubeItemProps) => {
   return (
     <Box key={id}>
       <LinkBox as={NextLink} href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`} rel="noopener noreferrer">

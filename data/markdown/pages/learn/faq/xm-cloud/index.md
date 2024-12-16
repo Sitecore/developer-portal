@@ -27,7 +27,7 @@ Sitecore XM Cloud is a cloud-native, hybrid headless CMS, for developers and mar
 - Pages content editor
 - Sitecore Experience Accelerator (SXA)
 - Headless Services
-- Sitecore Next.js SDK
+- Sitecore SDKs including Next.JSS, .NET Core and Angular
 - Experience Edge, since XM Cloud is a SaaS solution
 
 ## What’s the difference between SaaS and PaaS?

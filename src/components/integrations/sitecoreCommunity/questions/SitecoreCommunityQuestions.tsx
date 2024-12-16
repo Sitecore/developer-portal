@@ -15,7 +15,7 @@ type SitecoreCommunityQuestionsProps = CardProps & {
   forumKeys?: ForumOption | Array<ForumOption>;
 };
 
-export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest }: SitecoreCommunityQuestionsProps): JSX.Element => {
+export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest }: SitecoreCommunityQuestionsProps) => {
   const [fetchedResults, setFetchedResults] = useState<Array<SitecoreCommunityContent> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [sort, setSort] = useState<string | undefined>(undefined);

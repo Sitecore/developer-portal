@@ -12,7 +12,7 @@ type InPageNavProps = BoxProps & {
   hideFrom?: string;
 };
 
-const InPageNavSmall = ({ titles, ...rest }: InPageNavProps): JSX.Element => {
+const InPageNavSmall = ({ titles, ...rest }: InPageNavProps) => {
   if (titles.length == 0) {
     return <></>;
   }

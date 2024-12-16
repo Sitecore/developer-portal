@@ -1463,6 +1463,52 @@ export type SearchByProductsAndChangeTypesQuery = {
   } | null;
 };
 
+export type SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables = Exact<{
+  date: Scalars['DateTime']['input'];
+  productIds: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
+  changeTypeIds: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  breaking: InputMaybe<Scalars['Boolean']['input']>;
+}>;
+
+export type SearchByProductsAndChangeTypesAndBreakingChangeQuery = {
+  changelog: {
+    total: number | null;
+    pageInfo: { hasNext: boolean | null; endCursor: string | null } | null;
+    results: Array<{
+      id: string | null;
+      name: string | null;
+      title: string | null;
+      description: any | null;
+      fullArticle: any | null;
+      readMoreLink: string | null;
+      breakingChange: boolean | null;
+      version: string | null;
+      releaseDate: Date | null;
+      scheduled: boolean | null;
+      image: {
+        total: number | null;
+        results: Array<{
+          id: string | null;
+          name: string | null;
+          fileName: string | null;
+          fileUrl: string | null;
+          description: string | null;
+          fileWidth: any | null;
+          fileHeight: any | null;
+          fileId: string | null;
+          fileSize: any | null;
+          fileType: string | null;
+        } | null> | null;
+      };
+      sitecoreProduct: { total: number | null; results: Array<{ id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null } | {} | null> | null };
+      changeType: { total: number | null; results: Array<{ id: string | null; name: string | null; changeType: string | null } | {} | null> | null };
+      status: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null };
+    } | null> | null;
+  } | null;
+};
+
 export type SearchByTitleQueryVariables = Exact<{
   date: InputMaybe<Scalars['DateTime']['input']>;
   productId: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
@@ -2117,6 +2163,91 @@ fragment status on Status {
   description
   identifier
 }`) as unknown as TypedDocumentString<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>;
+export const SearchByProductsAndChangeTypesAndBreakingChangeDocument = new TypedDocumentString(`
+    query searchByProductsAndChangeTypesAndBreakingChange($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "", $breaking: Boolean) {
+  changelog: allChangelog(
+    orderBy: RELEASEDATE_DESC
+    first: $first
+    after: $after
+    where: {releaseDate_lt: $date, breakingChange_eq: $breaking, OR: [{sitecoreProduct: {changelog_ids: $productIds}}], AND: {OR: [{changeType: {changelog_ids: $changeTypeIds}}]}}
+  ) {
+    pageInfo {
+      hasNext
+      endCursor
+    }
+    total
+    results {
+      ...changelogEntry
+    }
+  }
+}
+    fragment changeType on Changetype {
+  id
+  name
+  changeType
+}
+fragment changelogEntry on Changelog {
+  id
+  name
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  version
+  releaseDate
+  scheduled
+  image {
+    total
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    total
+    results {
+      ...product
+    }
+  }
+  changeType {
+    total
+    results {
+      ...changeType
+    }
+  }
+  status {
+    total
+    results {
+      ...status
+    }
+  }
+}
+fragment media on Media {
+  id
+  name
+  fileName
+  fileUrl
+  description
+  fileWidth
+  fileHeight
+  fileId
+  fileSize
+  fileType
+}
+fragment product on SitecoreProduct {
+  id
+  name
+  productName
+  productDescription
+  darkIcon: productIconDark
+  lightIcon: productIconLight
+}
+fragment status on Status {
+  id
+  name
+  description
+  identifier
+}`) as unknown as TypedDocumentString<SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables>;
 export const SearchByTitleDocument = new TypedDocumentString(`
     query searchByTitle($date: DateTime, $productId: [ID]) {
   data: allChangelog(

@@ -7,13 +7,13 @@ type HintProps = {
   enabled: boolean;
 };
 
-export const Hint = ({ products, enabled }: HintProps): JSX.Element => {
+export const Hint = ({ products, enabled }: HintProps) => {
   if (!enabled || products == undefined) {
     return <></>;
   }
 
   return (
-    <Alert status="info" colorScheme="neutral" alignItems="center" mb={4}>
+    <Alert status="info" colorScheme="neutral" alignItems="center" my={4}>
       <AlertIcon />
       <AlertTitle>
         <Tooltip label={`Visit the ${products[0].label} changelog page`} aria-label="A tooltip">

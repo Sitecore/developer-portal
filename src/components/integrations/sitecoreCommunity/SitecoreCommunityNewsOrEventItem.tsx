@@ -31,7 +31,7 @@ type DateOutputProps = {
   endDate?: string;
 };
 
-const DateOutput = ({ startDate, endDate }: DateOutputProps): JSX.Element => {
+const DateOutput = ({ startDate, endDate }: DateOutputProps) => {
   const startDateString = translateDate(startDate);
   const endDateString = endDate ? translateDate(endDate) : '';
 
@@ -47,7 +47,7 @@ const DateOutput = ({ startDate, endDate }: DateOutputProps): JSX.Element => {
   );
 };
 
-export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, endDate, location, startDate, title, url, viewCount, virtualUrl }: SitecoreCommunityNewsOrEventItemProps): JSX.Element => {
+export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, endDate, location, startDate, title, url, viewCount, virtualUrl }: SitecoreCommunityNewsOrEventItemProps) => {
   return (
     <LinkBox as="article" display="contents">
       <Card variant={'outline'} size="lg" w={'full'} justifyContent={'space-between'} layerStyle="interactive.raise">
@@ -90,7 +90,7 @@ export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, 
   );
 };
 
-export const SitecoreCommunityNewsOrEventItemSidebar = ({ commentCount, startDate, title, url, viewCount }: SitecoreCommunityNewsOrEventItemProps): JSX.Element => {
+export const SitecoreCommunityNewsOrEventItemSidebar = ({ commentCount, startDate, title, url, viewCount }: SitecoreCommunityNewsOrEventItemProps) => {
   return (
     <li>
       <div className="flex items-start">
@@ -120,7 +120,7 @@ export const SitecoreCommunityNewsOrEventItemSidebar = ({ commentCount, startDat
   );
 };
 
-const DateIcon = ({ date, className, type }: DateIconProps): JSX.Element => {
+const DateIcon = ({ date, className, type }: DateIconProps) => {
   if (type == 'calendar') {
     return (
       <div className={`mr-4 w-10 flex-none rounded-t pb-2 text-center shadow-lg lg:rounded-l lg:rounded-t-none ${className}`}>

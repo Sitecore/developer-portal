@@ -14,7 +14,7 @@ type SitecoreCommunityNewsProps = CardProps & {
   listItem?: boolean;
 };
 
-export const SitecoreCommunityNews = ({ title, data, hideCategory, listItem }: SitecoreCommunityNewsProps): JSX.Element => {
+export const SitecoreCommunityNews = ({ title, data, hideCategory, listItem }: SitecoreCommunityNewsProps) => {
   if (!data || data.length === 0) {
     return <></>;
   }

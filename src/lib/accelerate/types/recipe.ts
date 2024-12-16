@@ -3,4 +3,6 @@ export type AccelerateRecipe = {
   description: string;
   lastUpdated: string;
   url?: string;
+  audience?: string;
+  product?: string;
 };

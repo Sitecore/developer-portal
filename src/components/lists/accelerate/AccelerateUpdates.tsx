@@ -22,13 +22,13 @@ const CustomImage = chakra(Image, {
   shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
 });
 
-const AccelerateUpdates = ({ title = 'Sitecore Accelerate updates', linkHref = '/learn/accelerate', linkText = 'See all recipes', recipes, hideProductIcon, columns }: AccelerateUpdatesProps): JSX.Element => {
+const AccelerateUpdates = ({ title = 'Sitecore Accelerate updates', linkHref = '/learn/accelerate', linkText = 'See all recipes', recipes, hideProductIcon, columns }: AccelerateUpdatesProps) => {
   return (
     <Card variant={'unstyled'}>
       <CardHeader justifyContent={'space-between'} display={'flex'} py={8}>
         <Heading as={'h3'} size={'md'}>
           {title}
-          <Link href="/learn/accelerate/xm-cloud/updates" ml="1">
+          <Link href="/learn/accelerate/updates" ml="1">
             <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="primary" variant="ghost" size={'xs'} />
           </Link>
         </Heading>
@@ -43,7 +43,7 @@ const AccelerateUpdates = ({ title = 'Sitecore Accelerate updates', linkHref = '
                   <Box display={{ base: 'none', sm: 'block' }} textAlign={'center'} mr={5} height={'43px'} width={'43px'}>
                     <CustomImage
                       boxSize={3}
-                      src={useColorModeValue(GetProductIcon(Product.XMCloud, Variant.Light), GetProductIcon(Product.XMCloud, Variant.Dark))}
+                      src={useColorModeValue(GetProductIcon(entry.product || Product.Default, Variant.Light), GetProductIcon(Product.XMCloud, Variant.Dark))}
                       alt={'XM CLoud'}
                       width={25}
                       margin={'.5rem'}

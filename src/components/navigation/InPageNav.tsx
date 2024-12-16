@@ -9,7 +9,7 @@ type InPageNavProps = {
   titles: Array<ContentHeading>;
 };
 
-const InPageNav = ({ titles }: InPageNavProps): JSX.Element => {
+const InPageNav = ({ titles }: InPageNavProps) => {
   const links = useInPageNavigation(titles, true);
 
   return (

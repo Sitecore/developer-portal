@@ -8,6 +8,7 @@ import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials'
 const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryList<Array<ChangelogEntry>>>) => {
   const products: Array<string> = getQueryArray(req.query.product);
   const changeTypes: Array<string> = getQueryArray(req.query.changeType);
+  const breaking = req.query.breaking ? true : undefined;
   const isPreview = req.preview ? true : false;
 
   const limit = getQueryArray(req.query.limit);
@@ -15,7 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<ChangelogEntryL
 
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  await changelog.getEntries({ productId: products.join('|'), changeTypeId: changeTypes.join('|'), pageSize: Number(limit), endCursor: end }).then((response) => {
+  await changelog.getEntries({ productId: products.join('|'), changeTypeId: changeTypes.join('|'), pageSize: Number(limit), endCursor: end, breaking: breaking }).then((response) => {
     res.status(200).json(response);
   });
 };

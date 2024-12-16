@@ -19,7 +19,7 @@ export type ChangeLogItemProps = {
   loadEntries: () => void;
 };
 
-const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps): JSX.Element => {
+const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const entryRef = useRef(null);
 
@@ -80,7 +80,7 @@ const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps
         </CardBody>
         <CardFooter justifyContent={item.readMoreLink ? 'space-between' : 'flex-end'}>
           {item.readMoreLink && <LinkButton variant="text" href={item.readMoreLink} text="Read more" title={`Read more about ${item.title}`} margin={0} padding={0} />}
-          <SocialShare url={getChangelogEntryUrl(item, true)} title={item.title} />
+          <SocialShare url={getChangelogEntryUrl(item, true)} title={`${item.title} - ${item.productName} Changelog - Sitecore`} />
         </CardFooter>
       </Card>
 

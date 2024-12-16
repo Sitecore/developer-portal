@@ -12,7 +12,7 @@ const config: CodegenConfig = {
   documents: ['./data/gql/query/**/*.graphql'],
   ignoreNoDocuments: false,
   generates: {
-    './src/gql/generated/': {
+    './data/gql/generated/': {
       preset: 'client',
       config: {
         avoidOptionals: {

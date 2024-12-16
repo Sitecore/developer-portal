@@ -83,7 +83,7 @@ function CustomMdx(children: string) {
   );
 }
 
-export const DecoratedMarkdown = ({ children, disabledProse = false }: DecoratedMarkdownProps): JSX.Element => {
+export const DecoratedMarkdown = ({ children, disabledProse = false }: DecoratedMarkdownProps) => {
   if (disabledProse) {
     return CustomMdx(children);
   }
@@ -91,7 +91,7 @@ export const DecoratedMarkdown = ({ children, disabledProse = false }: Decorated
   return <Prose className={styles.richText}>{CustomMdx(children)}</Prose>;
 };
 
-export const RenderContent = ({ content }: MarkdownContentProps): JSX.Element => {
+export const RenderContent = ({ content }: MarkdownContentProps) => {
   if (content == null) {
     return <></>;
   }

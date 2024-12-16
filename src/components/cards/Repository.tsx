@@ -41,7 +41,7 @@ export const Repository = ({ name, description, repositoryUrl, framework, stars,
       <CardBody>
         {name && (
           <Text variant="strong" mb={4}>
-            {name}
+            <Link href={`${repositoryUrl}`}>{name}</Link>
           </Text>
         )}
         {description && <Text>{description}</Text>}
@@ -58,7 +58,7 @@ export const Repository = ({ name, description, repositoryUrl, framework, stars,
         )}
       </CardBody>
       <CardFooter pt={0} justifyContent={'space-between'}>
-        <HStack>
+        <HStack hideBelow={'sm'}>
           {stars && stars > 0 && (
             <Wrap>
               <Tag>
@@ -97,6 +97,7 @@ export const Repository = ({ name, description, repositoryUrl, framework, stars,
           }
           colorScheme="neutral"
           variant="outline"
+          size={'sm'}
         />
       </CardFooter>
     </Card>
