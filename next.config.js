@@ -182,6 +182,10 @@ const nextConfig = {
         source: '/learn/accelerate/xm-cloud/updates',
         destination: '/feeds/rss-accelerate-xmcloud.xml',
       },
+      {
+        source: '/learn/accelerate/content-hub/updates',
+        destination: '/feeds/rss-accelerate-contenthub.xml',
+      },
     ];
   },
 };
