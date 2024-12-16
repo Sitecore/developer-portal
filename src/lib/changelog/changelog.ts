@@ -140,9 +140,11 @@ export class Changelog {
       first: pageSize ? pageSize : 5,
       after: endCursor ?? '',
       date: new Date(),
-      productIds: productId?.split('|') ?? [],
-      changeTypeIds: changeTypeId?.split('|') ?? [],
+      productIds: productId != undefined && productId.length > 0 ? productId.split('|') : [],
+      changeTypeIds: changeTypeId != undefined && changeTypeId.length > 0 ? changeTypeId.split('|') : [],
     });
+
+    //console.log(this.credentials, this.isPreview);
 
     if (response == null) {
       return ParseRawData(response);
