@@ -74,7 +74,12 @@ const redirects = [
   { source: '/learn/accelerate/xm-cloud/implementation/sitemap', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/sitemap', permanent: true },
   { source: '/learn/accelerate/xm-cloud/implementation/localization', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/localization', permanent: true },
   { source: '/learn/accelerate/xm-cloud/implementation/search', destination: '/learn/accelerate/xm-cloud/implementation/sitecore-search', permanent: true },
+
+  { source: '/learn/accelerate/xm-cloud/appendix-i/xm-cloud-glossary', destination: 'https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html', permanent: true },
+  { source: '/learn/accelerate/content-hub/appendix-i/content-hub-glossary', destination: 'https://doc.sitecore.com/ch/en/users/content-hub/glossary.html', permanent: true },
+
   { source: '/accelerate', destination: '/learn/accelerate', permanent: true },
+
 ];
 
 const nextConfig = {
@@ -176,6 +181,14 @@ const nextConfig = {
       {
         source: '/learn/accelerate/xm-cloud/updates',
         destination: '/feeds/rss-accelerate-xmcloud.xml',
+      },
+      {
+        source: '/learn/accelerate/content-hub/updates',
+        destination: '/feeds/rss-accelerate-contenthub.xml',
+      },
+      {
+        source: '/learn/accelerate/updates',
+        destination: '/feeds/rss-accelerate.xml',
       },
     ];
   },

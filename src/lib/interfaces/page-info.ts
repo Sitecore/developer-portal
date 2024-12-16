@@ -21,6 +21,7 @@ type PageInfoCore = {
   cdpTags?: Array<string>;
   lastUpdated?: string;
   productLogo?: string;
+  audience?: string;
 };
 
 // Input for 3rd party integrations are just strings
@@ -81,6 +82,7 @@ export type SidebarNavigationConfig = {
   enableSearch?: boolean;
   enableBreadcrumb?: boolean;
   enableNextPrevious?: boolean;
+  productLogo?: string;
   routes: Array<SidebarNavigationItem>;
 };
 

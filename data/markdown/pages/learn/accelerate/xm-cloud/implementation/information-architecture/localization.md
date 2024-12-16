@@ -191,7 +191,7 @@ query DictionarySearch($rootItemId: String!, $language: String!, $templates: Str
 ## Related Recipes
 
 <Row columns={2}>
-  <Link title="Preparing for an XM Cloud Project | Sitecore Accelerate for Partners" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+  <Link title="Preparing for an XM Cloud Project | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
 </Row>
 
 ## Related Documentation
