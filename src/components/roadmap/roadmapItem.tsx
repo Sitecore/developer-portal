@@ -22,10 +22,10 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
   const images: string[] = item.attachments?.map((attachment) => attachment.url) || [];
 
   useEffect(() => {
-    if (selectedItem.toLowerCase() === item.key.toLowerCase()) {
+    if (selectedItem.toLowerCase() === item.id.toString()) {
       onOpen();
     }
-  }, [selectedItem, item.key, onOpen]);
+  }, [selectedItem, item.id, onOpen]);
 
   const handleClick = () => {
     onOpen();
@@ -60,7 +60,7 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader as={HStack}>
-            <LinkedHeading id={slugify(item.key)}>{item.title}</LinkedHeading>
+            <LinkedHeading id={slugify(item.id.toString())}>{item.title}</LinkedHeading>
           </DrawerHeader>
           <DrawerBody>
             <Stack p={4} border="1px solid" borderRadius={'md'} borderColor={'chakra-border-color'}>
