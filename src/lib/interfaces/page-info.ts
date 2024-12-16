@@ -82,6 +82,7 @@ export type SidebarNavigationConfig = {
   enableSearch?: boolean;
   enableBreadcrumb?: boolean;
   enableNextPrevious?: boolean;
+  productLogo?: string;
   routes: Array<SidebarNavigationItem>;
 };
 

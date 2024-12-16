@@ -186,6 +186,10 @@ const nextConfig = {
         source: '/learn/accelerate/content-hub/updates',
         destination: '/feeds/rss-accelerate-contenthub.xml',
       },
+      {
+        source: '/learn/accelerate/updates',
+        destination: '/feeds/rss-accelerate.xml',
+      },
     ];
   },
 };

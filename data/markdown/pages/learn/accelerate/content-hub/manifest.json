@@ -1,6 +1,7 @@
 {
   "title": "Accelerate Cookbook for Content Hub",
   "description": "This Cookbook provides a set of recipes to help implementing Content Hub through setup, configuration and implemenation.",
+  "productLogo": "ContentHub",
   "heading": false,
   "path": "/learn/accelerate/content-hub",
   "showRootAsSections": true,
@@ -81,7 +82,8 @@
             {
               "title": "Conditionally generate renditions",
               "path": "conditionally-generate-renditions"
-            },{
+            },
+            {
               "title": "Developing External Components",
               "path": "developing-external-components"
             },
@@ -92,7 +94,7 @@
             {
               "title": "Scripts Guidance and Scenarios",
               "path": "scripting-guidance-and-scenarios"
-            }            
+            }
           ]
         },
         {
@@ -125,7 +127,6 @@
       "path": "final-steps",
       "ignoreLink": true,
       "children": [
-        
         {
           "title": "Migration Guide",
           "path": "migration-guide"
