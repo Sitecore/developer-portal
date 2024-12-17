@@ -30,6 +30,7 @@ import {
 } from '@data/gql/generated/graphql';
 
 import { getCustomEntryByTitleProductAndChangeTypeQuery } from '@/data/gql/custom/getCustomEntryByTitleProductAndChangeTypeQuery';
+import { getSelectedIds } from './common/changelog';
 import { fetchGraphQL } from './common/fetch';
 import { ParseStatus, Status } from './types';
 import { ChangelogCredentials } from './types/changelog';
@@ -104,7 +105,7 @@ export class Changelog {
   async getEntriesByProduct(productId: string): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
     const response = await fetchGraphQL<SearchByProductQuery, SearchByProductQueryVariables>(SearchByProductDocument, this.credentials, this.isPreview, {
       date: new Date(),
-      productId: productId?.split('|') ?? [],
+      productId: getSelectedIds(productId),
     });
 
     return ParseRawData(response.data);
@@ -140,11 +141,9 @@ export class Changelog {
       first: pageSize ? pageSize : 5,
       after: endCursor ?? '',
       date: new Date(),
-      productIds: productId != undefined && productId.length > 0 ? productId.split('|') : [],
-      changeTypeIds: changeTypeId != undefined && changeTypeId.length > 0 ? changeTypeId.split('|') : [],
+      productIds: getSelectedIds(productId),
+      changeTypeIds: getSelectedIds(changeTypeId),
     });
-
-    //console.log(this.credentials, this.isPreview);
 
     if (response == null) {
       return ParseRawData(response);
@@ -162,15 +161,15 @@ export class Changelog {
             first: pageSize ? pageSize : 5,
             after: endCursor ?? '',
             date: new Date(),
-            productIds: productId?.split('|') ?? [],
-            changeTypeIds: changeTypeId?.split('|') ?? [],
+            productIds: getSelectedIds(productId),
+            changeTypeIds: getSelectedIds(changeTypeId),
           })
         : await fetchGraphQL<SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables>(SearchByProductsAndChangeTypesAndBreakingChangeDocument, this.credentials, this.isPreview, {
             first: pageSize ? pageSize : 5,
             after: endCursor ?? '',
             date: new Date(),
-            productIds: productId?.split('|') ?? [],
-            changeTypeIds: changeTypeId?.split('|') ?? [],
+            productIds: getSelectedIds(productId),
+            changeTypeIds: getSelectedIds(changeTypeId),
             breaking: breaking,
           });
 
