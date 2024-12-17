@@ -1,13 +1,22 @@
 import { GetJiraAttachement } from '@/src/lib/jira';
-import { NextRequest, NextResponse } from 'next/server';
+import { getSession, withApiAuthRequired } from '@auth0/nextjs-auth0/edge';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 export const config = {
   runtime: 'edge',
 };
 
-export default async function handler(req: NextRequest, res: NextResponse) {
+export default withApiAuthRequired(async (req: NextApiRequest, res: NextApiResponse) => {
+  const session = getSession(req, res);
+
+  if (!session) {
+    res.status(401).json({ error: 'Unauthorized' });
+    return;
+  }
+
   try {
-    const { searchParams } = new URL(req.url);
+    const url = new URL(req.url || `http://${req.headers.host}`);
+    const searchParams = url.searchParams;
     const id = searchParams.get('id');
     const mimeType = searchParams.get('mt');
 
@@ -27,4 +36,4 @@ export default async function handler(req: NextRequest, res: NextResponse) {
       status: 500,
     });
   }
-}
+});
