@@ -1,13 +1,10 @@
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-import { LinkButton } from '@/src/components/links';
 import { Option } from '@/src/components/ui/dropdown';
 import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 import { Alert, AlertIcon, Grid, GridItem, HStack, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
-import { mdiRss } from '@mdi/js';
-import Icon from '@mdi/react';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -15,6 +12,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { SWRConfig } from 'swr';
 
+import { ChangelogFeeds } from '@/src/components/changelog/ChangelogFeeds';
 import { Changelog } from '../../lib/changelog/changelog';
 
 type ChangelogHomeProps = {
@@ -66,8 +64,9 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
                 </GridItem>
 
                 <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
-                  <LinkButton text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                  <LinkButton text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <ChangelogFeeds url={router.pathname} />
+                  {/* <LinkButton text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                  <LinkButton text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} /> */}
                   <ChangelogByMonth product={undefined} selectedProducts={selectedProduct} />
                 </GridItem>
               </Grid>

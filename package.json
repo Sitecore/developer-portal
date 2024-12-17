@@ -15,7 +15,7 @@
     }
   },
   "scripts": {
-    "dev": "next dev --turbopack --port 3000",
+    "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
     "pre-commit": "lint-staged",

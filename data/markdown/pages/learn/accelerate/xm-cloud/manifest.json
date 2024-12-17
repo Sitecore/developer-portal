@@ -1,6 +1,7 @@
 {
   "title": "Accelerate Cookbook for XM Cloud",
   "description": "This Cookbook provides a set of recipes to help implementing XM Cloud through setup, configuration and implemenation.",
+  "productLogo": "XMCloud",
   "heading": false,
   "path": "/learn/accelerate/xm-cloud",
   "showRootAsSections": true,
