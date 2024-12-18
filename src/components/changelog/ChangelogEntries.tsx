@@ -55,7 +55,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
         <Heading as={'h3'} size={'md'}>
           {title}
           <Link href="/changelog/rss.xml" ml={1}>
-            <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="primary" variant="ghost" size={'xs'} />
+            <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="neutral" variant="ghost" size={'xs'} />
           </Link>
         </Heading>
 
