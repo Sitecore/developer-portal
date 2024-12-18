@@ -29,6 +29,11 @@ However, there are some scenarios where that might not be possible, some example
 - If you have made an investment in CI/CD tooling for other elements of your infrastructure, and want to continue to manage all deployments from a single location then you might choose to use the CLI to provision your own deployments
 - If your development team uses a poly-repo approach (multiple repositories for the CM and web application code), you will need to use the CLI to deploy your code. The Deploy app requires all the code to be in the same repository.
 
+<Alert status="info">
+  <AlertIcon />
+  Vercel does not natively support Azure DevOps as a Git provider. To use Azure DevOps with Vercel, you need to use the [Vercel Deployment Extension and set up an Azure Pipeline](https://vercel.com/docs/deployments/git/vercel-for-azure-pipelines)
+</Alert>
+
 ### XM Cloud Deploy Application GitOps
 
 The Sitecore XM Cloud Deploy Application is used to provision XM Cloud Projects/Environments & Deployments. When a new project is created you can either use your own existing repository, or you can allow the application to provision one for you based on the Next.js Foundation Head starter template.
@@ -38,21 +43,35 @@ The Sitecore XM Cloud Deploy Application is used to provision XM Cloud Projects/
   Whether you let the XM Cloud Deploy application create the repository, or you use your own, ALL XM Cloud implementations must start with the [XM Cloud Foundation Head](https://github.com/sitecorelabs/xmcloud-foundation-head) repository.
 </Alert>
 
-You can read more about how to create a new project using the Deploy Application on our Documentation Site: https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html or follow the recipe: [Sprint Zero - Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup).
+You can read more about how to create a new project using the Deploy Application on our Documentation Site: <https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html> or follow the recipe: [Sprint Zero - Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup).
 
 Once the project is created, you will then provision an environment. These can be used to represent the different Production and Non-Production environments that you require. When creating them through the deploy application you can also choose to tie each environment to a different branch in your repository should that be a requirement for you. You can also choose to have the environment automatically deployed when changes are committed to the chosen branch.
 
 After you have entered all the details and chosen to proceed a Deployment will commence that will push the required code and configuration to the newly created environment.
 
+The [deployment log](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-deployment-log.html) displays the progress, status, warnings, and errors of an XM Cloud deployment.
+
 ### Create your deployments using the Sitecore CLI
 
 The Sitecore CLI has a series of Plugins available to enable different functionality. The Cloud Plugin is created to allow you to interact with XM Cloud and perform the provisioning activities normally completed through the Deploy Application. To perform the same process detailed above you would issue the following CLI commands to achieve the same output.
 
+To log in to a Sitecore instance using sitecore login, the CLI allows two flows of authentication and authorization:
+
+- An [interactive user login](https://doc.sitecore.com/xmc/en/developers/xm-cloud/log-in-to-a-sitecore-instance-with-sitecore-command-line-interface.html#use-an-interactive-user-login-device-code-flow), using a device code flow (This command would open a browser window allowing you to authenticate your CLI with the XM Cloud Deploy application.)
+- A non-interactive client login, using a client credentials flow. This is used by clients such as Continuous Integration servers.
+
+For this DevOps recipe we are looking at utlizing a non-interactive client login. To use a non-interactive login flow with a Sitecore XM Cloud instance, you must have the following:
+
+- An authentication/automation client for your organization or environment. It provides a client ID and a client secret.
+- The authority URL. The default authority URL is <https://auth.sitecorecloud.io>.
+- The audience URL <https://api.sitecorecloud.io>.
+- The URL of the Sitecore instance.
+
 ```
-dotnet sitecore cloud login
+dotnet sitecore login --authority https://<authority-url> --cm http://<sitecore-instance> --audience https://<xm-cloud-audience-url> --allow-write true --client-credentials true --client-id <client-id> --client-secret <client-secret>
 ```
 
-This command will open a browser window allowing you to authenticate your CLI with the XM Cloud Deploy application.
+After logging in with the client credentials flow, you can switch to the [device flow](https://doc.sitecore.com/xmc/en/developers/xm-cloud/log-in-to-a-sitecore-instance-with-sitecore-command-line-interface.html#use-a-non-interactive-client-login-client-credentials-flow:~:text=After%20logging%20in%20with%20the%20client%20credentials%20flow%2C%20you%20can%20switch%20to%20the%20device%20flow%20by%20running%20the%20following%20command%3A) (if needed)
 
 ```
 dotnet sitecore project create -n <<PROJECT_NAME>>
@@ -127,4 +146,5 @@ Azure App Services and Azure Static WebApps have a lot of limitations so these o
 
 <Row columns={2}>
   <Link title="Sitecore and Azure Static WebApps" link="https://exdst.com/posts/20240121-sitecore-azure-static-web-apps" />
+    <Link title="How to build out a CI/CD pipeline for XM Cloud" link="https://www.youtube.com/watch?v=VNbieipVGk4" />
 </Row>
