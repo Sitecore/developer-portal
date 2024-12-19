@@ -10,6 +10,7 @@ import { NewsletterStory } from '@components/newsletter';
 import { ImageModal } from '@components/ui/imageModal';
 import { Row } from '@components/ui/sections';
 import { YouTube } from '@components/video';
+import { ChildPagesList } from '../cards/ChildPagesList';
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 import { MarkdownIntro } from './MarkdownIntro';
 
@@ -78,6 +79,7 @@ function CustomMdx(children: string) {
         Td,
         TableCaption,
         TableContainer,
+        ChildPagesList,
       }}
     />
   );
