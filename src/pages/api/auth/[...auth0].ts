@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 const redirectUri = `${process.env.AUTH0_BASE_URL}/api/auth/callback?`;
 
 const afterCallback = (req: NextApiRequest, res: NextApiResponse, session: any, state: any) => {
+  console.log(session);
   delete session.refreshToken;
   delete session.accessTokenScope;
   delete session.accessToken;
