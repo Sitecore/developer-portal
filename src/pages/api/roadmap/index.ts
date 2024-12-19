@@ -1,12 +1,24 @@
 import { RoadmapInformation } from '@/src/lib/interfaces/jira';
 import { getRoadmap } from '@/src/lib/jira';
 import { getQueryArray } from '@/src/lib/utils';
-import { pageRouterAuth } from '@lib/auth0';
+import { getSession, withApiAuthRequired } from '@auth0/nextjs-auth0/edge';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 
-export default pageRouterAuth.withApiAuthRequired(async (req: NextApiRequest, res: NextApiResponse<RoadmapInformation>) => {
-  const products: Array<string> = getQueryArray(req.query.product);
+export const config = {
+  runtime: 'edge',
+};
+
+export default withApiAuthRequired(async (req: NextApiRequest, res: NextApiResponse<RoadmapInformation>) => {
+  const url = new URL(req.url || `http://${req.headers.host}`);
+  const searchParams = url.searchParams;
+  const product = searchParams.get('product') || '';
+  const products: Array<string> = getQueryArray(product);
+  const session = await getSession(req, res);
+
+  if (session?.user?.['https://auth.sitecorecloud.io/claims/org_id'] == null) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
 
   try {
     const response = await getRoadmap();
@@ -20,7 +32,7 @@ export default pageRouterAuth.withApiAuthRequired(async (req: NextApiRequest, re
         return item.product.some((product) => products.includes(product.id));
       });
     }
-    return res.json(response);
+    return NextResponse.json(response);
   } catch (error) {
     console.error('Error fetching data:', error);
     return NextResponse.json({ error: 'Failed to fetch roadmap data' }, { status: 500 });
