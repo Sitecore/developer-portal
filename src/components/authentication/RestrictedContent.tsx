@@ -15,7 +15,7 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
   const orgId = user.user?.[TokenCustomClaimKeysEnum.ORG_ID];
 
   const returnUrl = '/api/auth/login?returnTo=' + encodeURIComponent(router.asPath);
-  const logoutUrl = '/api/auth/logout';
+  const logoutUrl = '/api/auth/logout?returnTo=/';
 
   if (user.user && orgId != null) {
     return props.children;
@@ -33,9 +33,7 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
             <Text>
               The account you&apos;re using is <b>not</b> currently linked to an organization.
             </Text>
-            <Text>
-              This content is available exclusively to customers and partners with a Cloud Portal account linked to their organization. Please log in with your <b>Sitecore Cloud Portal</b> credentials.
-            </Text>
+            <Text>This content is available exclusively to customers and partners with a Cloud Portal account linked to their organization.</Text>
             <LinkButton variant="link" href={logoutUrl} text={'Logout'} showIcon={false} />
           </Stack>
         </HStack>
