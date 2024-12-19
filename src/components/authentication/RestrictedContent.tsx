@@ -15,7 +15,7 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
   const orgId = user.user?.[TokenCustomClaimKeysEnum.ORG_ID];
 
   const returnUrl = '/api/auth/login?returnTo=' + encodeURIComponent(router.asPath);
-  const logoutUrl = '/api/auth/logout';
+  const logoutUrl = '/api/auth/logout?returnTo=/';
 
   if (user.user && orgId != null) {
     return props.children;
