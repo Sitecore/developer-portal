@@ -20,7 +20,7 @@ import { AccelerateRecipe } from '../lib/accelerate/types/recipe';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
-  const recipes = await getLatestRecipes(undefined, 5);
+  const recipes = await getLatestRecipes();
 
   return {
     props: {
