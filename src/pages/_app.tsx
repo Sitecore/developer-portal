@@ -15,7 +15,6 @@ import { PreviewProvider } from '../context/PreviewContext';
 import { scdpTheme } from '../theme';
 
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import { DeveloperPortalProvider } from '../context/DeveloperPortalContext';
 
 const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
 
@@ -92,16 +91,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={extendTheme(sitecoreTheme, scdpTheme)} toastOptions={toastOptions}>
         <UserProvider>
           <EngageTrackerProvider>
-            <DeveloperPortalProvider>
-              <PreviewProvider hostname={hostname}>
-                {progress && <TopBarProgress />}
-                <Navbar searchEnabled={IsSearchEnabled()} />
-                <Box ref={contentInnerRef}>
-                  <Component {...pageProps} />
-                </Box>
-                <Footer />
-              </PreviewProvider>
-            </DeveloperPortalProvider>
+            <PreviewProvider hostname={hostname}>
+              {progress && <TopBarProgress />}
+              <Navbar searchEnabled={IsSearchEnabled()} />
+              <Box ref={contentInnerRef}>
+                <Component {...pageProps} />
+              </Box>
+              <Footer />
+            </PreviewProvider>
           </EngageTrackerProvider>
         </UserProvider>
       </ChakraProvider>

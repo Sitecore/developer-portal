@@ -6,7 +6,6 @@ import ArticlePage from '@src/layouts/ArticlePage';
 import ChildOverviewPage from '@src/layouts/ChildOverviewPage';
 import DefaultContentPage from '@src/layouts/DefaultContentPage';
 import SocialPage from '@src/layouts/SocialPage';
-import { usePageContext } from '../context/DeveloperPortalContext';
 import NewsLetterPage from '../layouts/NewsLetterPage';
 import Tutorial from '../layouts/Tutorial';
 
@@ -32,7 +31,6 @@ export async function getStaticProps(context: any) {
   if (pageInfo.hasSubPageNav) {
     sidebarNavConfig = await getChildNavgationInfo(context.params.slug.join('/'));
   }
-  // navData
 
   return {
     props: {
@@ -44,18 +42,9 @@ export async function getStaticProps(context: any) {
 }
 
 export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pageInfo: PageInfo; childPageInfo: Array<ChildPageInfo>; sidebarNavConfig: SidebarNavigationConfig }) {
-  const { context, setContext } = usePageContext();
-  if (pageInfo != null) {
-    setContext({
-      pageInfo: pageInfo,
-      childPages: childPageInfo,
-      navigation: sidebarNavConfig,
-    });
-  }
-
   // Check for other page types
-  if (context != null && context?.pageInfo?.pageType) {
-    switch (context?.pageInfo?.pageType.toLowerCase()) {
+  if (pageInfo.pageType) {
+    switch (pageInfo?.pageType.toLowerCase()) {
       case 'childoverview':
         return <ChildOverviewPage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} sidebarConfig={sidebarNavConfig} />;
       case 'social':
