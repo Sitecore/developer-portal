@@ -8,7 +8,8 @@ import { useRouter } from 'next/router';
 
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
-import { Heading } from '@chakra-ui/react';
+import { Heading, Link, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react';
+import { mdiArrowRightCircle } from '@mdi/js';
 import { PromoCardProps, PromoList } from '../components/cards';
 import { SocialFeeds } from '../components/links';
 import GithubContributionNotice from '../components/markdown/contribute';
@@ -16,6 +17,8 @@ import { ArticlePaging } from '../components/navigation/ArticlePaging';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { Hero } from '../components/ui/sections';
+import useSidebarNav from '../hooks/useSidebarNav';
+import { getItemUrl } from '../lib/sidebarNav';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ArticlePageProps = {
@@ -31,6 +34,7 @@ type ArticlePageProps = {
 
 const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPager, sidebarConfig }: ArticlePageProps) => {
   const router = useRouter();
+  const { children } = useSidebarNav(pageInfo.fileName, sidebarConfig, router.asPath);
 
   if (!pageInfo) {
     return <>No pageInfo found</>;
@@ -60,6 +64,25 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
           )}
           <PromoList data={promoBefore} />
           <RenderContent content={pageInfo.parsedContent} />
+
+          {/* Child Navigation */}
+          {children && (
+            <Stack gap={4}>
+              <Text fontWeight={'semibold'}>Articles in this section:</Text>
+              <List spacing="2">
+                {children.map((child, i) => (
+                  <ListItem key={i}>
+                    <ListIcon>
+                      <path d={mdiArrowRightCircle} />
+                    </ListIcon>
+
+                    <Link href={getItemUrl(sidebarConfig, child)}>{child.title}</Link>
+                  </ListItem>
+                ))}
+              </List>
+            </Stack>
+          )}
+
           <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />
           <GithubContributionNotice pageInfo={pageInfo} />
           {customNavPager}
