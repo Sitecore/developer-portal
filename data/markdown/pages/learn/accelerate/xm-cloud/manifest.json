@@ -126,6 +126,10 @@
             {
               "title": "Rate Limits and Caching",
               "path": "rate-limits-and-caching"
+            },
+            {
+              "title": "Site management",
+              "path": "site-management"
             }
           ]
         },
