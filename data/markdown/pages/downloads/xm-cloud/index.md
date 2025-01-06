@@ -48,13 +48,13 @@ The tool is available in both a self-contained Graphical User Interface (GUI) to
 | XM to XM Cloud Migration Tool 1.1.154 - [GUI option](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore.XM.Migration.GUI.v1.1.154.zip) , [CLI option](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore.XM.Migration.Console.v1.1.154.zip) | [Deprecated] Jun 2024 - minor version 1 fixes. |
 | XM to XM Cloud Migration Tool 1.1.151 - [GUI option](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore.XM.Migration.GUI.v1.1.151.zip) , [CLI option](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore.XM.Migration.Console.v1.1.151.zip) | [Deprecated] Nov 2023 - initial tool release. Uses Sitecore CLI, SCS, SMS. Migrates from Sitecore XM 10.1+. |                                                                                                                                               |
 
+Download and watch [this video](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore%20XMM%20v2.1%20Instruction.m4v) for a demonstration of the Tool version 2 in action.
+
   <Alert variant='warning' mb={4}>
     <AlertIcon />
     This tool focuses on back-end data; it does not migrate front-end site layouts/renderings.
   </Alert>
 
 <br/><br/>
-
-See [this video](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore%20XMM%20v2.1%20Instruction.m4v) for a demonstration of the Tool version 2 in action, including both the GUI and CLI instances.
 
 **Questions?** Contact us on the community Slack [#xm-cloud channel](https://sitecorechat.slack.com/archives/C03NXTAPKE3).
