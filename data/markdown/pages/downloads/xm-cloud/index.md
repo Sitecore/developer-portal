@@ -55,4 +55,6 @@ The tool is available in both a self-contained Graphical User Interface (GUI) to
 
 <br/><br/>
 
+See [this video](https://scdp.blob.core.windows.net/downloads/XM_to_XMCloud_Migration/Sitecore%20XMM%20v2.1%20Instruction.m4v) for a demonstration of the Tool version 2 in action, including both the GUI and CLI instances.
+
 **Questions?** Contact us on the community Slack [#xm-cloud channel](https://sitecorechat.slack.com/archives/C03NXTAPKE3).
