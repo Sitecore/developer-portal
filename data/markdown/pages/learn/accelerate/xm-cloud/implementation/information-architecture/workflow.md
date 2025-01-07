@@ -64,7 +64,7 @@ It's important to configure workflow for both pages and the separate data source
 
 <Image src="/images/learn/accelerate/xm-cloud/workflows2.png" title="ComponentDatasourceWorkflow"/>
 
-If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB XM Cloud components then all of the necesary configuration should already be in place including base templates.
+If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB XM Cloud components then all of the necessary configuration should already be in place including base templates.
 
 Note that only templates that have the **_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: */sitecore/Templates/Foundation/Experience Accelerator/StandardValues/*. If for some reason your component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the docs site.
 
