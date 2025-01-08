@@ -84,9 +84,7 @@ Furthermore, in compliance with GDPR, the product provides the tool to ensure th
 
 Based on the contract (entitlement), API calls are limited per second and per day. The implementers should always handle rate limiting and handle cases in which they receive the HTTP Status Code 429 (Too Many Requests); in this case, if a retry is needed, it is best to allow for a back-off to avoid going into an infinite retry loop.
 
-The throttle limits can be checked in the CEC>Developer Resources>API Access. The dashboard shows a table like the following:
-
-<img src="/images/learn/accelerate/xm-cloud/search/throttle-limits.png" alt="Throttle limits"/>
+The throttle limits can be checked in the CEC>Developer Resources>API Access by Super Users.
 
 <br/>
 
