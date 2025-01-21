@@ -92,6 +92,7 @@ export type SidebarNavigationItem = {
   ignoreLink?: boolean;
   children: Array<SidebarNavigationItem>;
   collapsed?: boolean;
+  url: string;
 };
 
 export type ChildPageInfo = PageInfo & {
