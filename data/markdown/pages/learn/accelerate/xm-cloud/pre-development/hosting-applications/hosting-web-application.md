@@ -4,7 +4,7 @@ description: 'Every implementation needs to decide where and how to host their X
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-10-04'
+lastUpdated: '2025-01-23'
 ---
 
 ## Problem
@@ -89,6 +89,20 @@ If hosting in a server-based environment many of these features above would need
 
 According to the [Next.js documentation](https://nextjs.org/docs/pages/building-your-application/deploying#self-hosting), you can deploy your application to a Node.js server directly or via containers. While this type of hosting solution is possible, it can lead to degraded performance, difficulty scaling, and high management complexity.
 
+#### Azure Container Apps
+
+Technicaly feasibility with a number of reservations to be carefully considered:
+- Works for hosting but raises concerns under enterprise production loads.
+- Scaling behavior can lead to high costs and degraded performance.
+- Lacks granular control over AKS configuration, vNet integration, and HADR options.
+- Geo-deployment requires multiple region deployments.
+
+Challenges with Next.js
+- Cache invalidation and scaling for serverless functions/image optimization are complex.
+- Container-based Next.js hosting has been know to cause continuous caching problems, **caution** should be applied if proceeding! Consideration should be to use Linux based App Services
+- Next.js architecture conflicts with container-based scaling, which is not natural for this framework.
+- Suggested workaround: Use Azure Functions as the function layer alongside Container Apps.
+
 Sitecore does not recommend hosting your XM Cloud head application on Azure App Services. This applies to both Node and Docker web apps in Azure App Services.
 
 For more information on server-based hosting and specifics to why we do not recommend Azure App Services review: [Running Next.js on Azure App Services](https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/developer-experience/nextjs-azure-app-services).
@@ -98,7 +112,11 @@ For more information on server-based hosting and specifics to why we do not reco
 The providers listed and other server-based hosting options are not recommended.
 
 - Azure App Services
+  - Consider managed services like Dataweavers if hosting on Azure is mandatory
+- Alternative frameworks
+  - Use [ASP.NET Core](https://doc.sitecore.com/xmc/en/developers/asp-net/0/asp-net-core-sdk/sitecore-asp-net-core-sdk.html) instead of Next.js for better compatibility with Azure runtimes
 - AWS Elastic Beanstalk
+  - Explore OpenNext/SST (currently AWS-focused) for containerized hosting of Next.js
 - Google Cloud Run
 - Any container-based service
 
@@ -109,6 +127,7 @@ The providers listed and other server-based hosting options are not recommended.
 <Link title="Deploy your front-end application to Netlify" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-your-front-end-application-to-netlify.html" />
 <Link title="Serverless Environment Preview Deployments" link="https://vercel.com/docs/deployments/preview-deployments" />
 <Link title="Vercel and Sitecore XM Cloud Integration" link="https://vercel.com/docs/integrations/cms/sitecore" />
+<Link title="Sitecore ASP.NET Core SDK" link="https://doc.sitecore.com/xmc/en/developers/asp-net/0/asp-net-core-sdk/sitecore-asp-net-core-sdk.html" />
 </Row>
 
 ## Related Learning Materials
