@@ -1,8 +1,17 @@
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.VERCEL_ENV === 'production';
 
 module.exports = {
   siteUrl: 'https://developers.sitecore.com',
+  frequency: 'daily',
   generateIndexSitemap: false,
-  generateRobotsTxt: isProduction, // Generate robots.txt in production only
-  exclude: isProduction ? [] : ['/'], // Exclude all pages in staging by excluding root or other specific pages
+  generateRobotsTxt: true, // Generate robots.txt in production only
+  exclude: isProduction == false ? ['/'] : [],
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        disallow: isProduction == false ? ['/'] : [],
+      },
+    ],
+  },
 };
