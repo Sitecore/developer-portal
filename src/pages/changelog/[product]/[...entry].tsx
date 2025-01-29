@@ -68,7 +68,7 @@ export async function getServerSideProps(context: any) {
       notFound: true,
     };
   }
-  console.log('Image: ' + changelogEntry.image[0].fileType);
+
   return {
     props: {
       currentProduct: currentProduct,
