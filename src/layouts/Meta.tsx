@@ -38,7 +38,7 @@ const MetaTags: React.FC<MetaProps> = ({ title, description, section, baseTitle 
 
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#6e3fff	" />
-
+      <meta name="google-site-verification" content="nHBgSoKM9MmOHojAXclT8fAzd7-teu8hNEjgp-Cyrxw" />
       <meta name="msapplication-TileColor" content="#6e3fff	"></meta>
       <meta name="theme-color" content="#6e3fff	"></meta>
       <meta name="description" content={description} />

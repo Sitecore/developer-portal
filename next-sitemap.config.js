@@ -1,6 +1,17 @@
+const isProduction = process.env.VERCEL_ENV === 'production';
+
 module.exports = {
   siteUrl: 'https://developers.sitecore.com',
-  generateRobotsTxt: true, // (optional)
+  frequency: 'daily',
   generateIndexSitemap: false,
-  // ...other options
+  generateRobotsTxt: true, // Generate robots.txt in production only
+  exclude: isProduction == false ? ['/'] : [],
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        disallow: isProduction == false ? ['/'] : [],
+      },
+    ],
+  },
 };
