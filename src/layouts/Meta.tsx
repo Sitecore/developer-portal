@@ -8,6 +8,7 @@ interface MetaProps {
   section?: string;
   pageTitle?: string;
   description: string;
+  twitterDescription?: string;
   openGraphImageUrl?: string;
 }
 

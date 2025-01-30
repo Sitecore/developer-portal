@@ -7,7 +7,7 @@ const jiraBaseUrl = 'https://sitecore.atlassian.net/rest/api/3';
 const JIRA_USERNAME = process.env.JIRA_USERNAME;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
 
-export const excludedProducts = ['Content Hub DAM', 'Content Hub Ops', 'Analytics', 'Content Hub ONE', 'Portal', 'Managed Cloud'];
+export const excludedProducts = ['Content Hub DAM', 'Content Hub Ops', 'Analytics', 'Content Hub ONE', 'Portal'];
 
 export enum Phase {
   NOW = 'Now',

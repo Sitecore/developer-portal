@@ -22,7 +22,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
 
   if (currentProduct != null) {
-    console.log('search', search);
     // Fetch data
     const changelogEntryList =
       search != null ? await changelog.getEntriesByTitleProductChangeType({ entryTitle: search.toString(), productId: currentProduct?.id, pageSize: 10 }) : await changelog.getEntries({ pageSize: 10, productId: currentProduct?.id });

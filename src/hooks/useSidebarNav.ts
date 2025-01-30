@@ -14,6 +14,7 @@ const useSidebarNav = (fileName: string, sidebarNavConfig: SidebarNavigationConf
   const [currentItem, setCurrentItem] = useState<SidebarNavigationItem | null>(null);
   const [previousItem, setPreviousItem] = useState<SidebarNavigationItem | null>(null);
   const [nextItem, setNextItem] = useState<SidebarNavigationItem | null>(null);
+  const [children, setChildren] = useState<SidebarNavigationItem[] | null>(null);
   const [parentItem, setParentItem] = useState<SidebarNavigationItem | null>(null);
   const [currentLevel, setCurrentLevel] = useState<Array<SidebarNavigationItem> | null>(null);
 
@@ -39,16 +40,12 @@ const useSidebarNav = (fileName: string, sidebarNavConfig: SidebarNavigationConf
     const parentItem = getParentRoute(sidebarNavConfig.routes, currentItem.path);
 
     // Find the previous and next items in the sidebar navigation
-
-    if (root) {
-      //  nextItem = currentItem?.children[1] || null;
-    }
-
-    // setNextItem(nextItem);
     setNextItem(nextItem);
     setCurrentItem(currentItem);
+    setChildren(currentItem.children);
     setParentItem(parentItem);
     setPreviousItem(previousItem);
+
     setCurrentLevel(findCurrentLevel(sidebarNavConfig.routes, currentUrlSegment));
   }, [fileName, root, currentPath, sidebarNavConfig]);
 
@@ -58,6 +55,7 @@ const useSidebarNav = (fileName: string, sidebarNavConfig: SidebarNavigationConf
     previousItem,
     nextItem,
     currentLevel,
+    children,
   };
 };
 

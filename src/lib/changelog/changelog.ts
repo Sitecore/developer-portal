@@ -173,6 +173,8 @@ export class Changelog {
             breaking: breaking,
           });
 
+    //console.log(this.credentials, this.isPreview);
+
     if (response == null) {
       return ParseRawData(response);
     }

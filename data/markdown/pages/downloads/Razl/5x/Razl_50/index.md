@@ -9,6 +9,19 @@ Developers can move items quickly from one database to another. No matter the si
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
+## Razl v5.1.1
+</CardHeader>
+<CardBody>
+_January 06, 2025_
+
+*   History View entries are displayed using Item created date instead of item updated date when retrieving History entries using index
+[Click here to download](https://scdp.blob.core.windows.net/downloads/Razl/Razl%205.1.1.zip)
+</CardBody>
+
+</Card>
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
 ## Razl v5.1.0
 </CardHeader>
 <CardBody>

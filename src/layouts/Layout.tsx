@@ -11,6 +11,7 @@ type LayoutProps = BoxProps & {
   baseTitle?: string;
   section?: string;
   description?: string;
+  twitterDescription?: string;
   openGraphImage?: string;
   preview?: boolean;
   children: React.ReactNode | Array<React.ReactNode>;
