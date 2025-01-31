@@ -4,7 +4,7 @@ description: 'How to create your Site and Site Collection in XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-01-02'
+lastUpdated: '2025-01-31'
 ---
 
 ## Problem
@@ -35,7 +35,19 @@ If you have a requirement to roll out multiple sites you can start with a pre-co
 
 #### Site templates
 
-Site templates can be used to build a template for your site which is an installation description of the site using modules. See this [recipe](/learn/accelerate/xm-cloud/pre-development/information-architecture/site-templates) for more information.
+Site templates can be used to build a template for your site which is an installation description of the site using modules.
+
+New sites can be created directly from the XM Cloud dashboard using site templates reusing previously created modules along with your features and components. An overview of the steps can be see below:
+
+- Build a site template
+- Build or reuse modules for the site setup
+- Build installation descriptions of common content architecture
+- Create a new site from site template in XM Cloud Sites
+- Select language you want to apply as default
+
+Detailed [documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html) is available on how to configure site templates. This documentation walks you through how to copy and customize some of the existing items already available for the basic site setup. Providing you with a good foundation for further customization and more efficient roll out multiple sites.
+
+<img src="/images/learn/accelerate/xm-cloud/site-templates-1.png" alt="XM Cloud site template" />
 
 #### Duplicate a site
 
@@ -61,7 +73,7 @@ If you are rolling out regional websites, you probably also need to support **di
   <Link title="Branching Strategy | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy" />
   <Link title="DevOps| Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/devops" />
   <Link title="Setting Up Serialization" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/setup-content-serialization" />
-  <Link title="Site templates" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/site-templates" />
+  <Link title="Site management" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/site-management" />
 </Row>
 
 ## Related Documentation
