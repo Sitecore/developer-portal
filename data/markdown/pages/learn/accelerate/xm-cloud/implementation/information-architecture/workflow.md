@@ -4,7 +4,7 @@ description: 'Learn about Workflows in XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-11-18'
+lastUpdated: '2025-01-31'
 ---
 
 ## Problem
@@ -63,6 +63,10 @@ It's important to configure workflow for both pages and the separate data source
 5. For each data source component, configure the workflow the same way as a page.
 
 <Image src="/images/learn/accelerate/xm-cloud/workflows2.png" title="ComponentDatasourceWorkflow"/>
+
+If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB XM Cloud components then all of the necessary configuration should already be in place including base templates.
+
+Note that only templates that have the **_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: */sitecore/Templates/Foundation/Experience Accelerator/StandardValues/*. If for some reason your component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the docs site.
 
 ### Configuration of Users/Roles
 
@@ -143,6 +147,12 @@ You can now trigger sending emails or notifications via webhooks when an item re
 3. The webhook sends a `POST` request to the specified URL.
 4. Configure the URL and authorization details for your endpoint.
 
+## Related Recipes
+
+<Row columns={2}>
+  <Link title="Creating New Components" link="/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components" />
+</Row>
+
 ## Related Documentation
 
 <Row columns={2}>
@@ -150,4 +160,5 @@ You can now trigger sending emails or notifications via webhooks when an item re
   <Link title="Workflow Cookbook" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow-cookbook.html" />
   <Link title="Workflow Webhooks" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--using-an-authorization-item.html" />
   <Link title="Assign a data source workflow action in SXA " link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/assign-a-data-source-workflow-action-in-sxa.html" />
+  <Link title="Add standard values under individual sites" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites" />
 </Row>
