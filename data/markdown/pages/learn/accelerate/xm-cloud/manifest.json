@@ -107,6 +107,10 @@
             {
               "path": "publishing-to-edge",
               "title": "Publishing to Edge"
+            },
+            {
+              "path": "site-templates",
+              "title": "Site templates"
             }
           ]
         },
