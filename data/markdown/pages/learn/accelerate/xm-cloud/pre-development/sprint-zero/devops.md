@@ -7,11 +7,11 @@ hasInPageNav: true
 lastUpdated: '2024-02-07'
 ---
 
-## Problem
+## Context
 
 A customer is required to deploy their application to both production and non-production environments. This will include any assets required to be deployed to the XMC infrastructure, as well as deploying their “head” application. This recipe will go through the different options available to customers to achieve this.
 
-## Solution
+## Execution
 
 ### Provisioning the XM Cloud Infrastructure
 
@@ -117,10 +117,10 @@ Azure App Services and Azure Static WebApps have a lot of limitations so these o
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="XM Cloud Deploy app | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
-  <Link title="Manage an environment | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html" />
-  <Link title="Sitecore Command Line Interface | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html" />
-  <Link title="Sitecore Command Line Interface | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html" />
+  <Link title="XM Cloud Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+  <Link title="Manage an environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html" />
+  <Link title="Sitecore Command Line Interface" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html" />
+  <Link title="Sitecore Command Line Interface" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html" />
 </Row>
 
 ### Related Links

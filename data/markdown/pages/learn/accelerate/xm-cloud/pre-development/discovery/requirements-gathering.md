@@ -4,14 +4,14 @@ description: 'Requirements gathering is key for the success of any project and w
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-10-11'
+lastUpdated: '2025-01-31'
 ---
 
-## Problem
+## Context
 
 We’re starting on a new XM Cloud instance and we will need to determine the acceptance criteria for the solution to be built. There are a number of key questions that need to be answered to make sure we have a proper project plan that can be planned and estimated properly.
 
-## Solution
+## Execution
 
 Getting requirements gathering together is key for the success of any project - whatever tool you are using, you need to document in a way that can be agreed to by customer and partner what the goal is.
 
@@ -19,7 +19,7 @@ Start by decompiling any of the customer’s information into manageable require
 
 Answering these questions should help shape a comprehensive project plan for your XM Cloud implementation. It’s recommended that out of this a detailed requirements backlog is build to allow the creation of a timelines and estimation.
 
-## Discussion
+## Insights
 
 The following topics are the key considerations that need to be captured and answered during your requirements gathering. This is not an exhaustive list, and there will be considerations that will be required based on the implementation needs.
 
@@ -38,6 +38,7 @@ This section helps ensure that the technical solution aligns with broader busine
 - What are the future scalability needs of the solution?
 - What is the expected content lifecycle management plan?
 - What is the current state of your existing content management systems?
+- How many concurrent content authors will you have? Each production environment currently supports fifty (50) concurrent users.
 
 ### Content Management
 
@@ -74,6 +75,8 @@ Defining the technical requirements early ensures the implementation can be desi
 - Are the integrations required on the head application or part of XM Cloud?
 - What APIs or connectors will be required for these integrations?
 - Are there any licensing or data sharing agreements to be considered?
+
+Further information can be found on our [Retrieving Data from 3rd Party Integrations]//learn/accelerate/xm-cloud/implementation/external-data-integration/retrieving-data-from-3rd-party-integrations) recipe.
 
 #### Customizations
 
@@ -122,6 +125,7 @@ To ensure long-term success, teams need the right skills and knowledge to manage
 - What is the level of technical expertise within the team for XM Cloud?
 - Does the customer’s team need to be technically trained on XM Cloud, or any tools in it’s eco system?
 - What are the content editor training needs, between OOTB usage vs implementation needs?
+- What technology stack are your developers trained for? XP/XM is predominantly a .NET solution, those developers may require training on front-end technologies such as React, Next.js and Angular.
 
 ### UAT & Go-live
 

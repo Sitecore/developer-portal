@@ -7,11 +7,11 @@ hasInPageNav: true
 lastUpdated: '2024-05-30'
 ---
 
-## Problem
+## Context
 
 Everything in XM Cloud is an item. Content, Configuration, Customizations, … Some of those items are tightly coupled to functionality provided by Developers. So, we need to ensure that items our code depends on are deployed along with the code.
 
-## Solution
+## Execution
 
 Items are persisted into source code repository by using Sitecore Content Serialization. Sitecore Content Serialization is able to connect to XM Cloud via the Content Management API and pull items from XM Cloud to our local in yml format, but also push the item representation we have in our local filesystem to an XM Cloud instance. This enables you to push the same set of items to different environments.
 
@@ -19,7 +19,7 @@ The Items that are considered for synchronization can be configured.
 
 ### Sitecore CLI
 
-Sitecore Content Serialization can be achieved using the Sitecore CLI. You can find a detailed description on how to install the Sitecore CLI and how to use it in the documentation ([Sitecore Content Serialization | Sitecore Documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html)).
+Sitecore Content Serialization can be achieved using the Sitecore CLI. You can find a detailed description on how to install the Sitecore CLI and how to use it in the documentation ([Sitecore Content Serialization](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html)).
 
 ### Configuration
 
@@ -79,7 +79,7 @@ You can include several sites and site collections as needed.
 
 In a Multisite approach you configure one module per Site Collection, as templates are created per Site Collection and content items can be shared within Site Collections.
 
-## Discussion
+## Insights
 
 ### How items are deployed to XM Cloud
 
@@ -154,11 +154,11 @@ In the provided code, you're defining a post-deploy action known as scsModules. 
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Sitecore Content Serialization | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html" />
-  <Link title="Sitecore Content Serialization Reference | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization-configuration-reference.html" />
-  <Link title="Install Sitecore Command Line Interface | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/install-sitecore-command-line-interface.html" />
-  <Link title="The XM Cloud build configuration | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html" />
+  <Link title="Sitecore Content Serialization" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html" />
+  <Link title="Sitecore Content Serialization Reference" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization-configuration-reference.html" />
+  <Link title="Install Sitecore Command Line Interface" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/install-sitecore-command-line-interface.html" />
+  <Link title="The XM Cloud build configuration" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html" />
   <Link title="Github - sitecorelabd/xmcloud-foundation-head" link="https://github.com/sitecorelabs/xmcloud-foundation-head" />
-  <Link title="The CLI itemres command | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-itemres-command.html" />
+  <Link title="The CLI itemres command" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-itemres-command.html" />
   <Link title="XM Cloud Tutorials - Seralization #5" link="https://www.youtube.com/watch?v=BuErZU0wwKM" />
 </Row>

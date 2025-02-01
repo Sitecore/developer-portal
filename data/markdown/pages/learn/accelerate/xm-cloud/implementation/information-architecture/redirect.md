@@ -7,7 +7,7 @@ area: ['accelerate']
 lastUpdated: '2024-04-05'
 ---
 
-## Problem
+## Context
 
 You need to create redirects for the new Next.js XM Cloud site. The redirects need to support both content authored redirects for creating vanity urls/moving pages, and application/platform redirects to make sure that old pages/urls are redirected when the new site goes live.
 
@@ -55,7 +55,7 @@ Netlify processes and serializes your redirect rules across the `_redirects` and
 
 If you need to set up 10,000 redirects or more, we recommend using wildcards or placeholders as much as possible. For a more complex redirect setup, Edge Functions can be a better option.
 
-## Discussion
+## Insights
 
 ### When use the SXA redirects vs static redirects
 

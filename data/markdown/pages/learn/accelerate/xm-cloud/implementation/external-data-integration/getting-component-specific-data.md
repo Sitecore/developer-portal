@@ -7,13 +7,13 @@ area: ['accelerate']
 lastUpdated: '2024-11-18'
 ---
 
-## Problem
+## Context
 
 An e-commerce business wants to display dynamic product details on its website using data from an external Product Information Management (PIM) system. The product details, such as descriptions, prices, availability, and images, are stored in the external system and need to be fetched dynamically based on the product being viewed.
 
 The following content is valid for both third-party integrations and retrieving data from XM Cloud.
 
-## Solution
+## Execution
 
 There are 3 main options to get component specific data:
 
@@ -103,7 +103,7 @@ export default withDatasourceCheck()<ContentBlockProps>(ContentBlock);
 
 > In the example above, the component contains both implementations of `getStaticProps` and `getServerSideProps`. In a real component, you must only define one of them and it should match the type of page level data fetching for the route this component would be used on.
 
-## Discussion
+## Insights
 
 ### Integrated GraphQL vs Connected GraphQL vs Component Level Data Fetching
 
@@ -147,7 +147,7 @@ We recommend you use Component Level Data Fetching when:
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Component-level data fetching in JSS Next.js apps | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/component-level-data-fetching-in-jss-next-js-apps.html" />
-  <Link title="Integrated GraphQL in JSS apps | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/integrated-graphql-in-jss-apps.html" />
-  <Link title="Connected GraphQL in JSS apps | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/connected-graphql-in-jss-apps.html" />
+  <Link title="Component-level data fetching in JSS Next.js apps" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/component-level-data-fetching-in-jss-next-js-apps.html" />
+  <Link title="Integrated GraphQL in JSS apps" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/integrated-graphql-in-jss-apps.html" />
+  <Link title="Connected GraphQL in JSS apps" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/connected-graphql-in-jss-apps.html" />
 </Row>

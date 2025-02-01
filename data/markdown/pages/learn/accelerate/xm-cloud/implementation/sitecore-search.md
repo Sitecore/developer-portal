@@ -7,13 +7,13 @@ area: ['accelerate']
 lastUpdated: '2024-11-20'
 ---
 
-## Problem
+## Context
 
 Majority of web application require a search tool to achieve content search - customers who purchase both XM Cloud and Search must integrate the two products to enable them to leverage Search in the sites built out using XM Cloud.
 
 This article discusses how to integration Sitecore Search with XM Cloud. If you need to integrate a different Search provider, you will need to read these techniques and see how they can be applied to your scenario.
 
-## Solution
+## Execution
 
 This is a two-step process, first, the customer will need to index their content within [Sitecore Search](https://doc.sitecore.com/search). They will then use that search data to build out Search-based experiences in their applications and use Search events to collect user interactions.
 
@@ -38,7 +38,7 @@ You can read an overview of how to work with Index Sources in Sitecore Search on
 
 Implementing Search in the web application requires you to call Sitecore Search’s REST API endpoints. The REST API endpoints are the recommended way to implement Sitecore Search. Additionally, Sitecore does make available a React SDK ([Documentation](https://doc.sitecore.com/search/en/developers/search-js-sdk-for-react/introduction-to-sitecore-search-js-sdk-for-react.html)) for the development. It is also available a [Starter Kit](https://github.com/Sitecore/Sitecore-Search-TS-SDK-Starter-Kit/tree/main) for Sitecore Search that is intended for exploratory or prototyping purposes at this time.
 
-## Discussion
+## Insights
 
 While the web crawler can be an effective way to index all or part of the site. It is necessary to remember that the execution of the crawler updates the index completely; for this reason the crawlers cannot be used to partially update the source index. For example, if the page ‘/events/last’ changes you cannot use the web crawler to update the index just for '/events/last', you should launch the crawler to re-index the source completely (updates all index documents with the latest data). To partially update a source index, you need to implement the [Incremental Updates](https://doc.sitecore.com/search/en/users/search-user-guide/enable-incremental-updates-for-a-crawler-source.html) that uses, besides the crawler, also the Ingestion API.
 
@@ -103,9 +103,9 @@ In addition, for the pure purpose of prototyping and training, there are the fol
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Index Items | Sitecore Documentation" link="https://doc.sitecore.com/search/en/users/search-user-guide/index-items.html" />
-  <Link title="API Push - create document | Sitecore Documentation" link="https://doc.sitecore.com/search/en/developers/search-developer-guide/creating-a-document-by-passing-attribute-values.html" />
-  <Link title="API Push - update document | Sitecore Documentation" link="https://doc.sitecore.com/search/en/developers/search-developer-guide/updating-a-document.html" />
+  <Link title="Index Items" link="https://doc.sitecore.com/search/en/users/search-user-guide/index-items.html" />
+  <Link title="API Push - create document" link="https://doc.sitecore.com/search/en/developers/search-developer-guide/creating-a-document-by-passing-attribute-values.html" />
+  <Link title="API Push - update document" link="https://doc.sitecore.com/search/en/developers/search-developer-guide/updating-a-document.html" />
   <Link title="Sitecore Search TS SDK Starter-Kit | Sitecore Github" link="https://github.com/Sitecore/Sitecore-Search-TS-SDK-Starter-Kit" />
   <Link title="Sitecore Search React SDK | Discover Sitecore Channel" link="https://www.youtube.com/watch?v=GhQNYlR7pvo" />
 </Row>
