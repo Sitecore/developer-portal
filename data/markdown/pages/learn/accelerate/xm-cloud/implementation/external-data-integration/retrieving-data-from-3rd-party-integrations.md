@@ -80,7 +80,7 @@ Outlined with these approaches, there are numerous tools outside of the XM Cloud
 
 <Row columns={2}>
   <Link title="Publishing to Experience Edge" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />
-  <Link title="Custom Editing UX for 3rd Party Integrations" link="  https://developers.sitecore.com/learn/accelerate/xm-cloud/implementation/external-data-integration/custom-editing-ux-3rd-party-integrations" />
+  <Link title="Custom Editing UX for 3rd Party Integrations" link="https://developers.sitecore.com/learn/accelerate/xm-cloud/implementation/external-data-integration/custom-editing-ux-3rd-party-integrations" />
   <Link title="Getting Component Specific Data" link="https://developers.sitecore.com/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data" />
   <Link title="Rate Limits and Caching" link="https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/project-architecture/rate-limits-and-caching" />
 </Row>
