@@ -8,4 +8,4 @@ hasInPageNav: false
 
 ### Discovery
 
-Discovery is the foundation of every successful implementation. It's where we define the "why," uncover the "what," and plan the "how." In this crucial phase, it's imperative the business needs, align on goals, and chart a path to deliver exceptional digital experiences. From identifying user personas to mapping content strategies, discovery ensures your solution is tailored to drive impact and scalability.
+Discovery is the foundation of every successful implementation. It's where we define the "why", uncover the "what", and plan the "how". In this crucial phase, it's imperative the business needs, align on goals, and chart a path to deliver exceptional digital experiences. From identifying user personas to mapping content strategies, discovery ensures your solution is tailored to drive impact and scalability.

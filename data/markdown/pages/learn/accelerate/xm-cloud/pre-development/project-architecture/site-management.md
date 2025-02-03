@@ -99,7 +99,7 @@ More information on managing site configuration can be found [here](https://doc.
 
 Multisite management simplifies the process of creating and managing multiple sites within a single Sitecore instance, supporting multitenancy for different brands, languages, or regions. It organizes sites into collections, enabling shared content, components, and layout elements among sites within a collection.
 
-See the [multisite recipe](learn/accelerate/xm-cloud/pre-development/project-architecture/multisite) for more detail of how to configure the application architecture.
+See the [multisite recipe](/learn/accelerate/xm-cloud/pre-development/project-architecture/multisite) for more detail of how to configure the application architecture.
 
 ### Shared sites
 

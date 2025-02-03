@@ -13,7 +13,7 @@ Requirements gathering is an integral part of any [Discovery](/learn/accelerate/
 
 Starting this phase early helps identify risks and create a clear roadmap for all involved. Engaging stakeholders at this stage ensures alignment on goals, scope, and priorities, establishing a strong framework for the efficient implementation of Sitecore Content Hub, while also a level of familiarity of the features available.
 
-Sitecore Content Hub will be a central tool for a number of users and processes, so it’s key that these facilitate the end user’s day-to-day job while also streamlining the process. The process of managing assets that are going to be reused in marketing campaigns might differ from the needs of videos asset – and this needs to be captured now.
+Sitecore Content Hub will be a central tool for a number of users and processes, so it’s key that these facilitate the end user’s day-to-day job while also streamlining the process. The process of managing assets that are going to be reused in marketing campaigns might differ from the needs of video assets – and this needs to be captured now.
 
 ## Execution
 
@@ -23,7 +23,7 @@ Deliverables should be reviewed and signed off by the project team, forming the 
 
 ### <strong>Requirements Document</strong>
 
-Requirements is not just about documenting needs; it’s about collaboration, understanding nuances, and planning for effective execution. Identifying key workflows, addressing governance and security, and mapping integrations are key areas that require engaging with stakeholders, to ensure every aspect of their day-to-day is accounted for and adequately planned.
+Requirements are not just about documenting needs; it’s about collaboration, understanding nuances, and planning for effective execution. Identifying key workflows, addressing governance and security, and mapping integrations are key areas that require engaging with stakeholders, to ensure every aspect of their day-to-day is accounted for and adequately planned.
 
 These key topics are suggested for discussion and inclusion within a formalized requirements document.
 
@@ -54,7 +54,7 @@ Content Hub also supports creating collections—groups of related assets that c
 
 
 <strong>Design Considerations</strong><br/>
-While in this phase, consider also any design decisions that need to be taken through the process, mainly - 
+While in this phase, consider also any design decisions that need to be taken through the process, mainly:
 - *Templates*: Use project templates to streamline the creation of similar projects.
 - *Flexibility*: Basic and multi-stage projects allow ad-hoc task additions; jobs do not.
 - *Resource Management*: Both basic and multi-stage projects support resource and budget management, whereas jobs focus solely on workflow execution.
