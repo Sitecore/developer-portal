@@ -4,20 +4,20 @@ description: 'Sitecore is not recommending customers host their XM Cloud head ap
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-04-23'
+lastUpdated: '2025-01-23'
 ---
 
-## Problem
+## Context
 
 While Sitecore strongly recommends serverless hosting for XM Cloud, like Vercel or Netlify, our client has a strict requirement that is forcing the use of Azure to host the Next.js application. What are some of the problems we might face?
 
-## Solution
+## Execution
 
 Sitecore does not recommend hosting your XM Cloud head application on Azure App Services. This applies to both Node and Docker web apps in Azure App Services. For those that need to use Azure as their hosting environment due to being in a highly regulated industry, this article covers problems you may encounter.
 
-The main reason for not recommending Azure App Services is that it takes a server infrastructure approach to hosting, leading to lower performance, difficulty scaling, and higher management complexity.
+The main reason for not recommending Azure App Services is that it takes a server infrastructure approach to hosting, leading to lower performance, difficulty scaling, and higher management complexity. It requires significant effort and knowledge for configuration compared to hosting providers like Vercel/Netlify, which handle much of theses complexities.
 
-Currently, we are working on a Hosting your Web Application article. This article will cover serverless vs server-based hosting, detailing our recommendation for serverless.
+We have written the [Hosting your Web Application article](https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/hosting-applications/hosting-web-application). This article will cover serverless vs server-based hosting, detailing our recommendation for serverless.
 
 ### Performance Limitations
 
@@ -46,6 +46,10 @@ For production workloads, consider Premium v3 Plans, which have superior single-
 #### Geography
 
 An App Service Plan is tied to a specific Azure Region, which means increased network latency for end users the further they are located from that Azure Region. Consider this network latency and plan additional App Service Plans in Azure Regions closer to your end users, especially for websites with a global user base
+
+#### DevOps
+
+App Services does not provide built-in DevOps processes like serverless hosting platforms.
 
 ## Related Documentation
 

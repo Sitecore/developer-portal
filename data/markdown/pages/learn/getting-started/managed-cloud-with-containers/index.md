@@ -45,7 +45,7 @@ Before you get started with Docker, you'll need to ensure that Docker Desktop is
 
 You should also ensure you can run a standard instance of Sitecore with Docker on your local environment, before attempting to customize your existing solution locally [Run Your First Docker Instance](https://doc.sitecore.com/xp/en/developers/latest/developer-tools/run-your-first-sitecore-instance.html).
 
-### Solution Modifications
+### Execution Modifications
 
 To get started with Docker, you must extend the base Sitecore docker images provided by the public Sitecore Container Registry and extend those images to include customizations from your solution. Below are some basic steps and helpful resources to get started.
 

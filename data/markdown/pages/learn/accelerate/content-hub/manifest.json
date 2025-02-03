@@ -21,12 +21,12 @@
               "path": "discovery-phase"
             },
             {
-              "title": "Project Planning",
-              "path": "project-planning"
-            },
-            {
               "title": "Requirements Gathering",
               "path": "requirements-gathering"
+            },
+            {
+              "title": "Project Planning",
+              "path": "project-planning"
             }
           ]
         },
@@ -56,6 +56,10 @@
             {
               "title": "Distribution of assets",
               "path": "distribution-of-assets"
+            },
+            {
+              "title": "Environment Specific Settings",
+              "path": "environment-specific-settings"
             },
             {
               "title": "Paths across entity definitions",
@@ -94,7 +98,11 @@
             {
               "title": "Scripts Guidance and Scenarios",
               "path": "scripting-guidance-and-scenarios"
-            }
+            },
+            {
+              "title": "Webclient SDK Scenarios",
+              "path": "webclient-sdk-scenarios"
+            }            
           ]
         },
         {

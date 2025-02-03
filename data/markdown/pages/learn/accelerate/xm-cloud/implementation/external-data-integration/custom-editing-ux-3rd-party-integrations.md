@@ -7,11 +7,11 @@ hasInPageNav: true
 lastUpdated: '2024-10-09'
 ---
 
-## Problem
+## Context
 
 My client has content or data in a 3rd Party system like products in a PIM or Commerce System, assets in a DAM, or anything else from any system. I need to give the editors a way to choose and use such data visually via Pages Editor with WYSIWYG and inline editing capabilities.
 
-## Solution
+## Execution
 Within this chapter we will not only cover how to properly offer 3rd Party integrations, but also explicitly highlight ways, how we should not do it anymore in a modern composable XM Cloud architecture.
 
 ❌ **DON’T**  
