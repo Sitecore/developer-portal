@@ -6,11 +6,11 @@ hasInPageNav: true
 lastUpdated: '2024-02-21'
 ---
 
-## Problem
+## Context
 
 To empower creatives and marketers to independently craft compelling experiences without reliance on developer resources, it is imperative that they possess a comprehensive understanding of the custom components available. This includes knowledge of their intended usage and awareness of the various potential variants that a component may exhibit.
 
-## Solution
+## Execution
 
 ### Component Gallery Website
 

@@ -7,11 +7,11 @@ hasInPageNav: true
 lastUpdated: '2024-04-09'
 ---
 
-## Problem
+## Context
 
 You have an existing site (on XP or another CMS) that is populated with content, some or all of which will be migrated to the new XMC instance. How do you determine what to move as-is? What will require a rewrite/redesign? What will you delete, and what method will best facilitate the move? If the existing site is on XP, how do you determine the suitability of the existing data templates before planning any necessary redesign of the data model?
 
-## Solution
+## Execution
 
 The aim for customers and partners migrating to XM Cloud should always be to get as close as possible to how a new greenfield project would have been implemented. This will leave the customer in the best possible position to leverage the platform going forward.
 
@@ -37,7 +37,7 @@ When creating the rendering definitions for your different components, you shoul
 
 SXA Headless comes with out-of-the-box functionality to handle both Sitemap and Robots.txt creation. You should ensure that you are configuring this default functionality and not implementing a custom solution if it isn’t required. You can read more about these features on our documentation site pages covering how to [Configure a Sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) and how to [Configure the Robots.txt](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-the-robots-txt-file.html) page.
 
-## Discussion
+## Insights
 
 This section will primarily focus on customers migrating from Sitecore XM or XP to XM Cloud. In this we will discuss some of the Information Architecture patterns that were common in XM/XP, and whether they will still apply when building for XM Cloud.
 

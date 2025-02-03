@@ -7,11 +7,11 @@ area: ['accelerate']
 lastUpdated: '2024-07-11'
 ---
 
-## Problem
+## Context
 
 You need to resolve dynamic Next.js routes to specific items in the content tree so that you do not need to create multiple static pages. This will allow dynamic urls to be created/used for content pulled from external systems, e.g. PIM, Headless Commerce etc…
 
-## Solution
+## Execution
 
 The solution is to use a Wildcard item in the content tree and then consume that in the Next.js application. The following steps will enable a route in the head application to use the wildcard item to provide the layout data for the page. Then the components or the page can handle getting the content to display on the page/components.
 
@@ -72,9 +72,9 @@ For our example, we want to create a custom route in Next.js, we can do this by 
 ```typescript
 export const getStaticPaths: GetStaticPaths = async () => {
   let paths: StaticPath[] = [];
-  let fallback: boolean | 'blocking' = 'blocking';
+  let fallback: boolean | "blocking" = "blocking";
   paths = [];
-  fallback = 'blocking';
+  fallback = "blocking";
   return {
     paths,
     fallback,
@@ -142,11 +142,32 @@ export const config = {
    * 4. /- (Sitecore media)
    * 5. all root files inside /public (e.g. /favicon.ico)
    */
-  matcher: ['/', '/((?!api/|_next/|blogs/|sitecore/api/|-/|[\\w-]+\\.\\w+).*)'],
+  matcher: [
+    "/",
+    "/((?!api/|_next/|blogs/|sitecore/api/|-/|[\\w-]+\\.\\w+).*)",
+  ],
 };
 ```
-
 <br/><br/>
+An alternative approach is to exclude specific paths within the multisite middleware itself, rather than preventing all middleware from running on these paths. To do this, remove the 'blogs/' entry from the matcher in <code>middleware.ts</code>. Then, navigate to <code>multisite.ts</code> in <code>nextjs-starter/src/lib/middleware/plugins/</code> and update the <code>excludeRoute</code> to include the required path.
+
+```typescript
+  constructor() {
+    this.multisiteMiddleware = new MultisiteMiddleware({
+      // This function determines if a route should be excluded from site resolution.
+      // Certain paths are ignored by default (e.g. files and Next.js API routes), but you may wish to exclude more.
+      // This is an important performance consideration since Next.js Edge middleware runs on every request.
+      excludeRoute: (pathname: string) => {
+        const excludedRoutes = ['/blogs/'];
+        return excludedRoutes.some((path) => pathname.startsWith(path));
+      },
+      // Site resolver implementation
+      siteResolver,
+      // This function allows resolving site from sc_site cookie, which could be useful in case of Vercel preview URLs. Accepts NextRequest.
+      useCookieResolution: () => process.env.VERCEL_ENV === 'preview',
+    });
+  }
+```
 
 #### Getting the Content
 
@@ -196,9 +217,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 <br/><br/>
 
+
+## Insights
+
 #### Component Level Data Fetching
 
-As component level data fetching has its own recipe [Getting Component Specifc Data](https://sitecore.atlassian.net/wiki/spaces/FM1/pages/4459168071), we will just focus on how to get the path segment that we earlier stored in `context.params.requestPath`.
+As component level data fetching has its own recipe [Getting Component Specific  Data](/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data), we will just focus on how to get the path segment that we earlier stored in `context.params.requestPath`.
 
 It is important to note that when you are fetching the data in the component, only that component gets the content, so if you need to use this in multiple components, you may want to use page level data fetching or a react context.
 

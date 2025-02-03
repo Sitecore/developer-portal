@@ -7,7 +7,7 @@ area: ['accelerate']
 lastUpdated: '2024-11-18'
 ---
 
-## Problem
+## Context
 
 Localization refers to the set of features and overall process of making an application accessible and consumable to a region or language. Localization needs to be thought of in distinct features, that may be applied together or separately to achieve the desired localization solution:
 
@@ -18,7 +18,7 @@ Localization refers to the set of features and overall process of making an appl
 - Language fallback
 - Dictionary phrases
 
-## Solution
+## Execution
 
 Keep in mind that with XM Cloud, for each of the above of features or configurations, localization happens across two platforms that must be kept in alignment for the correct end user experience:
 
@@ -191,12 +191,12 @@ query DictionarySearch($rootItemId: String!, $language: String!, $templates: Str
 ## Related Recipes
 
 <Row columns={2}>
-  <Link title="Preparing for an XM Cloud Project | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+  <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
 </Row>
 
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Manage languages and locales | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-languages-and-locales.html#enable-a-language-for-the-environment" />
-  <Link title="Add a language version to an SXA site | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/add-a-language-version-to-an-sxa-site.html" />
+  <Link title="Manage languages and locales" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-languages-and-locales.html#enable-a-language-for-the-environment" />
+  <Link title="Add a language version to an SXA site" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/add-a-language-version-to-an-sxa-site.html" />
 </Row>
