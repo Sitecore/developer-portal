@@ -65,7 +65,7 @@ Customer Item Data Providers were a common tool in Sitecore XM and XP to pull co
 
 #### Item Security
 
-In Sitecore XM and XP, Item Security was defined using the in-built security model and defined on the content items. The \_\_Security field is not published to Experience Edge, so this approach is no longer valid. When working headlessly you should integrate your head with a Federated Security provider and handle authentication there. If you need to role-level access to different content items, you will need to implement this via a custom set of fields that will be published to Edge, and then ensure that your head application maintains access. You can also read more about this on the dedicated [Accelerate Head Application Security Recipe](https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/security/head-application-security).
+In Sitecore XM and XP, Item Security was defined using the in-built security model and defined on the content items. The \_\_Security field is not published to Experience Edge, so this approach is no longer valid. When working headlessly you should integrate your head with a Federated Security provider and handle authentication there. If you need to role-level access to different content items, you will need to implement this via a custom set of fields that will be published to Edge, and then ensure that your head application maintains access. You can also read more about this on the dedicated [Head Application Security](https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/security/head-application-security).
 
 Item security can still be applied for usage during the content editing process. This can be useful to control which actions certain content authors can perform. You can read more about this on the [documentation site](https://doc.sitecore.com/xmc/en/developers/xm-cloud/user-security.html), and on the Item Security Accelerate Recipe (coming soon).
 
@@ -103,7 +103,7 @@ In Sitecore XM and XP it was common to leverage events when certain actions were
 ## Related Recipes
 
 <Row columns={2}>
-<Link title="Accelerate Head Application Security Recipe" link="https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/security/head-application-security" />
+<Link title="Head Application Security" link="https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/security/head-application-security" />
 </Row>
 
 ## Related Documentation

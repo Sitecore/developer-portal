@@ -328,7 +328,7 @@ ch-cli serialization pull entity --definition "M.Asset"
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Internal script guidance" link="https://doc.sitecore.com/ch/en/developers/cloud-dev/script-restriction.htmll" />
+  <Link title="Internal script guidance" link="https://doc.sitecore.com/ch/en/developers/cloud-dev/script-restriction.html" />
   <Link title="SDK / API Oveview" link="https://doc.sitecore.com/ch/en/developers/cloud-dev/external-integration.html " />
   <Link title="REST API" link="https://doc.sitecore.com/ch/en/developers/cloud-dev/rest-api.html" />
   <Link title="OAuth Tokens" link="https://doc.sitecore.com/ch/en/developers/cloud-dev/oauth-tokens.html" />

@@ -79,7 +79,7 @@ If your current implementation heavily relies on xDB or has requirements for Cus
 
 Similarly, email marketing, historically handled by EXM, may need to shift to Sitecore Send or other solutions, depending on your needs.
 
-Documentation is further provided for more detailed breakdown regarding this [Feature Matrix and Product Parities | XM Cloud Embedded Personalization FAQ](learn/faq/xm-cloud-embedded-personalization/feature-matrix).
+Documentation is further provided for more detailed breakdown regarding this in [Feature Matrix and Product Parities](/learn/faq/xm-cloud-embedded-personalization/feature-matrix).
 
 ### Content Strategy: Do You Need to Migrate Everything?
 
@@ -95,7 +95,7 @@ Sitecore Edge supports a headless architecture, delivering content via APIs to f
 
 ​Consider the content architecture that is required to make publishing easier for the end user - for customization on actions following Publishing, consider that these need to be moved to the ‘head-app' As an example, timed publishing, when you need precise to the second publishing of your content, can be either setup using Personalization rules or leveraging the middleware from Next.JS.
 
-Read more on the [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge).  
+Read more on the [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge) recipe.  
 
 ### CMS Customizations: Rethink Your Approach
 

@@ -11,7 +11,7 @@ audience: "All"
 Some Content Hub implementations require the need to store some values that are specific to a particular environment, such as integration URLs, or feature flags. The ideal place for these is an environment specific setting; they aren't particularly well known but are super useful and are exactly what we need here. When exporting settings from the Content Hub environment, settings marked as being environment specific are excluded during the package import, meaning you can safely deploy between environments without fear that these values will be overwritten.
 
 ## Execution
-A clear use case for this is as described in the [Single-Sign On](m/learn/accelerate/content-hub/implementation/functional-security/sso-on-content-hub) recipe, where based on the environment in use (DEV, UAT, PROD), a different AD group mapping might be required.
+A clear use case for this is as described in the [Single-Sign On](/learn/accelerate/content-hub/implementation/functional-security/sso-on-content-hub) recipe, where based on the environment in use (DEV, UAT, PROD), a different AD group mapping might be required.
 
 ### Create a Setting Entity
 As environment specific settings cannot be created using the UI, we can instead use the API. To do this create a HTTP POST request to <code>/api/entities</code> with the following body:

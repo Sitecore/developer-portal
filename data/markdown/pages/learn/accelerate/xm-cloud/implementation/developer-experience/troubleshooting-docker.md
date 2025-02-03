@@ -8,7 +8,7 @@ lastUpdated: '2025-01-31'
 ---
 
 ## Context
-In Sitecore XM Cloud, Docker might be required for [full-stack development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-docker-for-full-stack-development.html). Setting up your (local environment)[https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-local-development-environment.html] might not required this, but occassional. Managing and troubleshooting these containers can be challenging due to issues like container connectivity, authorization failures, and platform-specific inconsistencies. 
+In Sitecore XM Cloud, Docker might be required for [full-stack development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-docker-for-full-stack-development.html). Setting up your [local environment](https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-local-development-environment.html) might not required this, but occassional. Managing and troubleshooting these containers can be challenging due to issues like container connectivity, authorization failures, and platform-specific inconsistencies. 
 
 Developers may encounter difficulties when containers can’t communicate with each other, struggle to access DNS services, or face errors during code deployments.
 

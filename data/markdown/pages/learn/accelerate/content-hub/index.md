@@ -9,7 +9,7 @@ hasInPageNav: true
 ---
 
 ## Welcome to Sitecore Accelerate Cookbook for Content Hub
-Sitecore Accelerate Cookbook provides a set of recipes to guide the project team in successfully setting up, configuring, and implementing Sitecore Content Hub. It  covering both technical and business aspects. Starting with [Discovery](/learn/accelerate/content-hub/pre-development/discovery), this guide takes you through the topics and decisions needed for a successful implementation.
+Sitecore Accelerate Cookbook provides a set of recipes to guide the project team in successfully setting up, configuring, and implementing Sitecore Content Hub - covering both technical and business aspects. Starting with [Discovery](/learn/accelerate/content-hub/pre-development/discovery), this guide takes you through the topics and decisions needed for a successful implementation.
 
 > The Accelerate Cookbook is an evolving guide designed to support your journey with Sitecore. Consider it a work in progress—your go-to for continuous learning and development in the ever-changing landscape of digital experience platforms. Stay tuned for ongoing updates as we grow this resource with you in mind!
 
