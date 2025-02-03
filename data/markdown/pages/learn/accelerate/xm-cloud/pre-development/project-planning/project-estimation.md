@@ -7,11 +7,11 @@ hasInPageNav: true
 lastUpdated: '2024-02-01'
 ---
 
-## Problem
+## Context
 
 I need to be able to provide estimates that allow me to make an initial forecast of project cost and timeline. This leads the expectations on when the project can be delivered.
 
-## Solution
+## Execution
 
 Creating an estimate for a Sitecore XM Cloud implementation is a large but important task. At its core, an estimate is a best guess based on experience.
 
@@ -105,7 +105,7 @@ Once the user stories and task breakdowns have been done, this can then be used 
 
 At the end of the estimation phase, the team should have a final justifiable figure for your client.
 
-## Discussion
+## Insights
 
 ### Coping with Unknowns/Vague Requirements
 

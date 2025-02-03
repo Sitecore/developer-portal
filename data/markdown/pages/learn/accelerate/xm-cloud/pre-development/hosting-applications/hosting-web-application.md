@@ -7,11 +7,11 @@ hasInPageNav: true
 lastUpdated: '2025-01-23'
 ---
 
-## Problem
+## Context
 
 Clients must choose where and how to host their XM Cloud front-end head application. The two underlying infrastructure choices are serverless and server-based hosting solutions - the selection depends on the customer’s needs for scalability, control, and cost management.
 
-## Solution
+## Execution
 
 Sitecore recommends a serverless hosting infrastructure. Compared to server-based hosting, a serverless hosting solution is more performant, scales better, and introduces less complexity.
 
@@ -19,7 +19,7 @@ Sitecore recommends two main Hosting Providers - [Vercel](https://vercel.com/par
 
 Both Vercel and Netlify are Sitecore's technology partners and offer developers a comprehensive hosting solution. In addition to hosting, they provide various features that enhance the developer workflow and experience. These features include a global CDN, DevOps pipelines, preview environments, advanced caching, On-demand Incremental Static Regeneration, instant deployment rollback, and more.
 
-## Discussion
+## Insights
 
 ### What is Serverless?
 

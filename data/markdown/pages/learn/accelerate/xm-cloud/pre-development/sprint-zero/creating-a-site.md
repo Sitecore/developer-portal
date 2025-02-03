@@ -7,11 +7,11 @@ hasInPageNav: true
 lastUpdated: '2025-01-31'
 ---
 
-## Problem
+## Context
 
 I need to create a new site, what is the best way to do it? Should it be in a site collection? Should I create a new site collection or put it in an existing one?
 
-## Solution
+## Execution
 
 When creating a site in XM Cloud, a site collection is always required and all sites must be assigned to a site collection. You can have as many site collections as needed and a site collection can have many sites.
 
@@ -70,7 +70,7 @@ If you are rolling out regional websites, you probably also need to support **di
 ## Related Recipes
 
 <Row columns={2}>
-  <Link title="Branching Strategy | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy" />
+  <Link title="Branching Strategy" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy" />
   <Link title="DevOps| Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/devops" />
   <Link title="Setting Up Serialization" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/setup-content-serialization" />
   <Link title="Site management" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/site-management" />
@@ -79,7 +79,7 @@ If you are rolling out regional websites, you probably also need to support **di
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Getting started with XM Cloud | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
+  <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
   <Link title="XM Cloud Foundation Head Repository | Github" link="https://github.com/sitecorelabs/xmcloud-foundation-head" />
   <Link title="XM Cloud Tutorials - Rename app #4" link="https://www.youtube.com/watch?v=uNkQQSC6n8o" />
   <Link title="Sites" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html" />

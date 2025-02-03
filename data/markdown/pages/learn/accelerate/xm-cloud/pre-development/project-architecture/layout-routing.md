@@ -7,7 +7,7 @@ hasInPageNav: true
 lastUpdated: '2024-08-01'
 ---
 
-## Problem
+## Context
 
 When a page is published to Experience Edge, the publish connector generates a dependency graph to make sure that all page items that are affected by a content change are published correctly. This is because publishing a page creates a snapshot of the content and caches that on Experience Edge<sup>\*</sup>.
 
@@ -15,7 +15,7 @@ This dependency graph can grow very large depending on your information architec
 
 <sup>\*</sup> _This applies to the V1 release of the Experience Edge connector. The V2 connector will publish references to the datasource items, and the layout response will be composed at the edge on request._
 
-## Solution
+## Execution
 
 We can solve this problem by changing how the layout for common page sections is composed. Instead of having a single layout for the page that includes the header and footer, we can create special routes for each common section and then use the web application to compose the page layout.
 
@@ -146,7 +146,7 @@ In this plugin we are using the Page Design selected in the `LayoutRoute` field 
 
 Notice that we set the `order` property to `2`. This makes sure that this plugin is executed after the `normal-mode` and `preview-mode` plugins. This is important because we need to make sure that the page props are set before the layout data is added to the page props.
 
-## Discussion
+## Insights
 
 ### Rate limits
 
