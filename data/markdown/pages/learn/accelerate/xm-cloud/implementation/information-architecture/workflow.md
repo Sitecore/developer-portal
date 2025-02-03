@@ -166,10 +166,7 @@ If your requirements on workflow state the need of sending email notifications -
   <Link title="Workflow Cookbook" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow-cookbook.html" />
   <Link title="Workflow Webhooks" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--using-an-authorization-item.html" />
   <Link title="Assign a data source workflow action in SXA " link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/assign-a-data-source-workflow-action-in-sxa.html" />
-<<<<<<< Updated upstream
   <Link title="Add standard values under individual sites" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites" />
-=======
   <Link title="Using an authorization item" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--using-an-authorization-item.html" />
   <Link title="Defining standard values for your sites" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html" />
->>>>>>> Stashed changes
 </Row>
