@@ -185,81 +185,6 @@ export function getStatusColor(status: string): string {
   }
 }
 
-async function getJiraProjectRequest(projectKey: string): Promise<JiraProjectResult> {
-  console.log('getting jira project metadata...');
-
-  const result = await fetchData<JiraProjectResult>(`${jiraBaseUrl}/project/${projectKey}`);
-
-  return result;
-}
-
-async function getJiraIssuePrioritiesRequest(): Promise<Array<JiraIssuePriority>> {
-  console.log('getting jira issue priority metadata...');
-
-  const response = await fetchData<Array<JiraIssuePriority>>(`${jiraBaseUrl}/priority`);
-  return response;
-}
-
-///
-
-async function getSearchUserRequest(query: string): Promise<
-  Array<{
-    accountId: string;
-    accountType: string;
-    emailAddress: string;
-    displayName: string;
-    active: boolean;
-  }>
-> {
-  console.log(`getting jira user(${query})...`);
-
-  const response = await fetch(`${process.env.ATLASSIAN_URL}/rest/api/3/user/search?query=${query.toString()}`, {
-    method: 'GET',
-    headers: {
-      Authorization: 'Basic ' + Buffer.from(process.env.ATLASSIAN_ACCOUNT! + ':' + process.env.ATLASSIAN_PASSWORD!).toString('base64'),
-      Accept: 'application/json',
-    },
-  });
-
-  if (!response.ok) {
-    console.error(await response.text());
-    throw Error('getSearchUserRequest ok!');
-  }
-
-  return (await response.json()) as Array<{
-    accountId: string;
-    accountType: string;
-    emailAddress: string;
-    displayName: string;
-    active: boolean;
-  }>;
-}
-
-async function putJiraTicketAssignUser(issueId: string, userId: string): Promise<void> {
-  console.log(`assigning jira user to the ticket ${issueId} with user ${userId}...`);
-
-  const response = await fetch(`${process.env.ATLASSIAN_URL}/rest/api/3/issue/${issueId}`, {
-    method: 'PUT',
-    cache: 'no-cache',
-    headers: {
-      Authorization: 'Basic ' + Buffer.from(process.env.ATLASSIAN_ACCOUNT! + ':' + process.env.ATLASSIAN_PASSWORD!).toString('base64'),
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      fields: {
-        assignee: {
-          id: userId,
-        },
-      },
-    }),
-  });
-
-  if (!response.ok) {
-    console.error(await response.text());
-    throw Error('ticket not ok!');
-  }
-}
-
 export async function postJiraIssue({
   summary,
   projectKey = 'PRDSCS',
@@ -288,7 +213,7 @@ export async function postJiraIssue({
     },
     body: JSON.stringify({
       fields: {
-        summary: `[feedback] ${summary}`,
+        summary: `[FEEDBACK] ${summary}`,
         project: {
           key: projectKey,
         },
@@ -342,9 +267,7 @@ export async function postJiraIssue({
             },
           ],
         },
-        // priority: {
-        //   id: issuePriorityId,
-        // },
+        labels: ['external-feedback'],
       },
     }),
   });
