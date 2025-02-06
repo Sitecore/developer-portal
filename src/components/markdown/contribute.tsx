@@ -46,7 +46,7 @@ const GithubContributionNotice = ({ pageInfo }: GithubContributionNoticeProps) =
                 If you have a recipe suggestion to share, please <Link href="/contribute">create a pull request</Link> on the Github repository
               </ListItem>
               <ListItem>
-                For questions or feedback, please <Link href={issueLink}>create</Link> an GitHub issue or use the <Feedback variant={'link'} projectId="PRDSCS" issueTypeId="3" /> form.
+                For questions or feedback, please <Link href={issueLink}>create</Link> an GitHub issue or use the <Feedback variant={'link'} projectId="RCPS" issueTypeId="3" /> form.
               </ListItem>
             </List>
           </AlertDescription>
