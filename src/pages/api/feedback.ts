@@ -20,14 +20,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const body = JSON.parse(req.body) as FeedbackBody;
 
   try {
-    console.log({
-      summary: body.summary,
-      description: body.description,
-      name: body.name,
-      email: body.email,
-      url: body.url,
-    });
-    await new Promise((resolve) => setTimeout(resolve, 2000));
     await postJiraIssue({
       summary: body.summary,
       projectKey: body.projectId,
