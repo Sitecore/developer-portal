@@ -19,6 +19,28 @@ enum FilterOption {
   Equals = '=',
   NotEquals = '!=',
 }
+interface JiraIssueType {
+  id: string;
+  self: string;
+  description: string;
+  iconUrl: string;
+  name: string;
+}
+
+interface JiraIssuePriority {
+  id: string;
+  self: string;
+  description: string;
+  iconUrl: string;
+  name: string;
+}
+
+interface JiraProjectResult {
+  id: string;
+  self: string;
+  description: string;
+  issueTypes: Array<JiraIssueType>;
+}
 
 async function fetchData<T>(url: string): Promise<T> {
   const response = await fetch(url, {
@@ -161,4 +183,100 @@ export function getStatusColor(status: string): string {
     default:
       return 'gray';
   }
+}
+
+export async function postJiraIssue({
+  summary,
+  projectKey = 'PRDSCS',
+  issueTypeId = '11808',
+  name,
+  email,
+  description,
+  url,
+}: {
+  summary: string;
+  projectKey: string;
+  issueTypeId: string;
+  name?: string;
+  email?: string;
+  description?: string;
+  url?: string;
+}): Promise<{ id: string; key: string }> {
+  console.log('posting the new jira ticket...');
+
+  const response = await fetch(`${jiraBaseUrl}/issue`, {
+    method: 'POST',
+    cache: 'no-cache',
+    headers: {
+      Authorization: 'Basic ' + Buffer.from(JIRA_USERNAME! + ':' + JIRA_API_TOKEN!).toString('base64'),
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      fields: {
+        summary: `[FEEDBACK] ${summary}`,
+        project: {
+          key: projectKey,
+        },
+        issuetype: {
+          id: issueTypeId,
+        },
+        description: {
+          type: 'doc',
+          version: 1,
+          content: [
+            {
+              type: 'paragraph',
+              content: [
+                {
+                  text: description,
+                  type: 'text',
+                },
+              ],
+            },
+            {
+              type: 'paragraph',
+              content: [
+                {
+                  text: '\nINFO:\nurl: ',
+                  type: 'text',
+                },
+                {
+                  type: 'inlineCard',
+                  attrs: {
+                    url: url ?? '-',
+                  },
+                },
+                {
+                  text: `\nname: ${name == null || name == '' ? '-' : name}`,
+                  type: 'text',
+                },
+                {
+                  text: `\nemail: ${email == null || email == '' ? '-' : email}`,
+                  type: 'text',
+                },
+              ],
+            },
+            {
+              type: 'paragraph',
+              content: [
+                {
+                  text: 'Ticket automatically created from the feedback form on the developer portal.',
+                  type: 'text',
+                },
+              ],
+            },
+          ],
+        },
+        labels: ['external-feedback'],
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+
+    throw Error('ticket not ok! ' + error);
+  }
+
+  return (await response.json()) as { id: string; key: string };
 }
