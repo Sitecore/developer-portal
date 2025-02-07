@@ -153,4 +153,4 @@ If you want to make changes to the code, follow these steps:
    1. For more information on how to add content visit the [contribute](https://developers.sitecore.com/contribute) page
 7. Commit, push to your remote fork of the Developer Portal repo, then open a pull request (PR) to the `main` branch of the Developer Portal repo.
 
-Your changes will be reviewed and merged if appropriate.
+Your changes will be reviewed and merged if appropriate. Changes to Accelerate recipe will be reviewed by the Sitecore teams including Product, before approvals.

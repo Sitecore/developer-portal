@@ -69,11 +69,6 @@ There are pros and cons for each consideration, it is up to the architect to wei
 
 The short answer is no. If you decide that a separately deployed Next.js application is the best option for your project, you can still keep a single Next.js application in your codebase. This is useful if all your sites share markup/styles, but you want the flexibility and benefits of deploying the applications separately. In this case, you would simply deploy the same code to multiple Next.js projects and use environment variables to set the <code>SITECORE_SITE_NAME</code> for each deployment.
 
-### Custom 404 and Error Pages with the Pages Router
-
-Previously the multisite plugin did not support custom 404 or 500 error pages. This now possible and you can [define error pages for a site](https://doc.sitecore.com/xmc/en/users/xm-cloud/define-error-pages-for-a-site.html) which can be configured in Sites within the site settings. If not configured then the default error pages of the front-end applications will be used instead.
-<figure><img src="/images/learn/accelerate/xm-cloud/custom-error-pages.png" alt="Custom 404 and Error Pages with the Pages Router"/><figcaption></figcaption></figure>
-
 ### Deploying Multiple Editing Hosts
 
 When creating separate applications for sites, you will need to configure the <code>xmcloud.build.json</code> to deploy each site to its own editing host for inline editing using Pages. The XM Cloud build configuration. There is a [configuration for the rendering host](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html#configuration-options-for-rendering-hosts).
