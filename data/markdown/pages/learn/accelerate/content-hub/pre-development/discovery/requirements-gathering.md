@@ -137,17 +137,17 @@ Full detail can be found in the [Scripting Guidance](/learn/accelerate/content-h
 |Sitecore Connect for Content Hub|Acting as a middleware to integrate Sitecore Content Hub with XM/XP and XM Cloud, this connector allows you to link assets directly from Content Hub and synchronizes marketing content for omnichannel campaigns. More documentation can be found on for [XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-connect-for-content-hub.html) or [XM/XP](https://doc.sitecore.com/xp/en/developers/connect-for-ch/40/connect-for-content-hub/sitecore-connect-for-content-hub.html)|
 
 <strong>Requirements Gathering Checklist</strong>
--What systems need to integrate with Content Hub (e.g., other Sitecore products, CRM, analytics, ERP)?
--Are there existing APIs, connectors, or middleware solutions available for these integrations?
--What specific data or assets need to flow between Content Hub and these systems?
--Are there any custom development requirements for non-standard integrations?
+- What systems need to integrate with Content Hub (e.g., other Sitecore products, CRM, analytics, ERP)?
+- Are there existing APIs, connectors, or middleware solutions available for these integrations?
+- What specific data or assets need to flow between Content Hub and these systems?
+- Are there any custom development requirements for non-standard integrations?
 -What type of data (e.g., metadata, assets, content, analytics) will be exchanged between systems?
--What is the direction of the data flow (e.g., one-way push, pull, bi-directional)?
--How frequently should the data synchronization occur (real-time, scheduled, on-demand)?
--Are there any specific data formats or standards that need to be adhered to (e.g., JSON, XML)?
--What authentication methods will be used for integration (e.g., OAuth, API key)?
--Are there any limitations or constraints on the existing systems that might impact the integration?
--What is the expected load or volume of data being exchanged?
+- What is the direction of the data flow (e.g., one-way push, pull, bi-directional)?
+- How frequently should the data synchronization occur (real-time, scheduled, on-demand)?
+- Are there any specific data formats or standards that need to be adhered to (e.g., JSON, XML)?
+- What authentication methods will be used for integration (e.g., OAuth, API key)?
+- Are there any limitations or constraints on the existing systems that might impact the integration?
+- What is the expected load or volume of data being exchanged?
 
 #### <strong>Data Migration</strong>
 Data migration involves the process of transferring data from one system to another, ensuring consistency, accuracy, and completeness across platforms. In the context of Sitecore Content Hub, data migration typically involves transferring data from existing systems to Content Hub, ensuring that all relevant data is properly mapped, validated, and integrated into the new environment.
@@ -160,13 +160,13 @@ Reporting is essential for monitoring and evaluating the performance, progress, 
 The reporting system should cater to both high-level strategic needs and detailed, granular insights for operational teams. Additional information on [Reporting Dashboard](https://doc.sitecore.com/ch/en/users/content-hub/reporting-dashboard.html) and [Reporting Pages](https://doc.sitecore.com/ch/en/users/content-hub/reporting-page.html ) can be found on our documentation.
 
 <strong>Requirements Gathering Checklist</strong>
--What are the main objectives for reporting in Content Hub (e.g., tracking project progress, content performance, asset usage)?
--How often will reports need to be generated (e.g., real-time, daily, weekly, monthly)?
--Are there any predefined reporting tools or templates in place (e.g., Google Data Studio, Power BI, Sitecore Analytics)?
--What are the key areas of performance that stakeholders want to track (e.g., asset performance, content consumption, project milestones)?
--Are there any custom metrics that need to tracked?
--What metrics will help measure the success of content or asset usage in Content Hub (e.g., number of assets published, user engagement levels, asset lifecycle status)?
--What metrics are necessary for tracking project progress (e.g., number of tasks completed, percentage of tasks on schedule, overall project timeline)?
+- What are the main objectives for reporting in Content Hub (e.g., tracking project progress, content performance, asset usage)?
+- How often will reports need to be generated (e.g., real-time, daily, weekly, monthly)?
+- Are there any predefined reporting tools or templates in place (e.g., Google Data Studio, Power BI, Sitecore Analytics)?
+- What are the key areas of performance that stakeholders want to track (e.g., asset performance, content consumption, project milestones)?
+- Are there any custom metrics that need to tracked?
+- What metrics will help measure the success of content or asset usage in Content Hub (e.g., number of assets published, user engagement levels, asset lifecycle status)?
+- What metrics are necessary for tracking project progress (e.g., number of tasks completed, percentage of tasks on schedule, overall project timeline)?
 
 ### <strong>Domain Model</strong>
 The Domain Model is the cornerstone of requirements gathering for Sitecore Content Hub. It provides a comprehensive blueprint that defines how assets, content, and metadata are structured, secured, and enhanced within the platform. The domain model is essential to ensure that Content Hub aligns with business requirements and operational workflows, serving as the foundation for a scalable and efficient content management system.
@@ -257,7 +257,7 @@ Suitable for workflows like creative reviews or asset lifecycle management, exam
   <li>Complete Actions: Execute predefined steps to move the job forward.</li>
 </ol>
 
-Introducing the DAM workflow before delving into [Content Operations](https://doc.sitecore.com/ch/en/users/35/content-hub/marketing-resource-management--content-operations.html) workflows provides a logical progression from simple to complex, catering to users with varying needs. It ensures that users understand the foundational capabilities of Content Hub before exploring its advanced functionalities.
+Introducing the DAM workflow before delving into [Content Operations](https://doc.sitecore.com/ch/en/users/content-hub/get-started-with-content.html) workflows provides a logical progression from simple to complex, catering to users with varying needs. It ensures that users understand the foundational capabilities of Content Hub before exploring its advanced functionalities.
 
 ## Related Recipes
 

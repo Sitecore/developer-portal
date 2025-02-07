@@ -20,7 +20,7 @@ When you deploy this to staging using the import/export functionality, the actio
 This can be approached in two  ways: using an out-of-the-box solution or implementing a custom approach tailored to specific needs.
 
 ### <strong>Out of the Box</strong>
-The out of the box solution is only relevant where the environment specific value you want to update is the URL of an action. For any other value, for example, the source url of an external component, the configuration of an external component, or related entity ids only the custom solution can be used.
+The out of the box solution is only relevant where the environment specific value you want to update is the URL of an action. For any other value, for example, the source URL of an external component, the configuration of an external component, or related entity ids only the custom solution can be used.
 
 The out of the box solution is detailed in [Action Types](https://doc.sitecore.com/ch/en/developers/cloud-dev/action-types.html#api-call) and allows an action’s URL to be resolved from an environment specific setting.
 
@@ -220,7 +220,7 @@ export default function createExternalRoot (container) {
 ```
 
 
-You could of course move the script identifier the configuration to make this component more reusable, but I've not done that here for simplicity.
+You could of course move the script identifier to the configuration to make this component more reusable, but I've not done that here for simplicity.
 
 The code will need to be updated to the identifier of the script you just created. We can now create a new page, perhaps called "Post Deployment" and add the external component to it.
 

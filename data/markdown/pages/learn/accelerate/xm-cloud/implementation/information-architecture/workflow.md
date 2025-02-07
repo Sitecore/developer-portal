@@ -19,7 +19,7 @@ It's recommended to establish a workflow for all content items. This prevents pr
 
 ### Migration Considerations
 
-f you are currently on XP/XM and migrating to XM Cloud these are some specific considerations that you should consider when making this transition.  Two specific focuses that should be considered are any .NET customizations that have been made to affect items controlled by workflow as well as the introduction of webhooks which can allow for new ways to implement workflow.  In addition to those considerations, there are existing implementations that should be reviewed and changed based on the information below:
+If you are currently on XP/XM and migrating to XM Cloud these are some specific considerations that you should consider when making this transition.  Two specific focuses that should be considered are any .NET customizations that have been made to affect items controlled by workflow as well as the introduction of webhooks which can allow for new ways to implement workflow.  In addition to those considerations, there are existing implementations that should be reviewed and changed based on the information below:
 
 Email Actions should be implement with a Webhook Submit Action as detailed further down.
 

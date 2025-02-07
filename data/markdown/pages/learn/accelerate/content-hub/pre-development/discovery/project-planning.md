@@ -72,7 +72,7 @@ The Quality Assurance portion of this phase revolves around user acceptance test
 
 Client stakeholders, identified earlier in the project are good candidates for assisting with UAT.  If additional users, who have not been part of the project to this point, will be brought in for testing some lead time is recommended to give them an overview of Content Hub and the goals of the project. 
 
-If is recommended that a test plan be developed which the UAT team can work against.  The test plan should cover all of the project requirements including workflows, security and permissions, and integrations. 
+It is recommended that a test plan be developed which the UAT team can work against.  The test plan should cover all of the project requirements including workflows, security and permissions, and integrations. 
 
 Issues, inconsistencies, or changes identified during testing should be logged with details on the expected outcome versus the actual outcome.  Items should be prioritized and aligned with the client team on which items must be address for go-live and which can be added to a backlog for later consideration 
 
@@ -83,7 +83,7 @@ For further details on Quality Assurance, refer to the [Testing and Quality Assu
 ### <strong>Phase 5: User Training and Change Management</strong> 
 The objective of this phase is to drive user adoption and ensure that all users are equipped to effectively utilize Sitecore Content Hub in their daily workflows. Key milestones include the completion of role-based training sessions tailored to specific user responsibilities, the delivery of comprehensive user guides and support documentation, and obtaining stakeholder sign-off on user readiness. These steps are critical to empowering users, fostering confidence in the platform, and ensuring a smooth transition to Sitecore Content Hub. 
 
-Key tasks in this area include - 
+Key tasks in this area include:
 <ul>
   <li>
     <strong>Training Program Development</strong>: Create role-specific training materials, including documentation and video tutorials for hands-on learning. 
@@ -99,7 +99,7 @@ Key tasks in this area include -
 ### <strong>Phase 6: Launch and Post-Launch Support</strong> 
  The objective is to successfully roll out Sitecore Content Hub across the organization, ensuring a smooth transition supported by continuous monitoring and optimization. Key milestones include the completion of a pilot launch to validate the platform's readiness, the full organizational rollout to all users, and the generation of initial KPI reports to evaluate performance. A post-launch review will follow to identify opportunities for optimization and address any challenges, ensuring the platform continues to align with business objectives and user needs. 
 
-Key tasks in this area include - 
+Key tasks in this area include:
 <ul>
   <li>
 <strong>Pilot Launch</strong>: Conduct a pilot launch with a smaller user group to validate functionality and address any remaining issues. 
