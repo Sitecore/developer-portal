@@ -5,6 +5,7 @@
   "heading": false,
   "path": "/learn/accelerate/content-hub",
   "showRootAsSections": true,
+  "productFeedbackLabel": "Content Hub",
   "routes": [
     {
       "title": "Pre-development",

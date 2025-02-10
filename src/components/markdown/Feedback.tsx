@@ -28,6 +28,7 @@ type FeedbackProps = ButtonProps & {
   text?: string;
   projectId: string;
   issueTypeId: string;
+  product?: string;
 };
 
 type formData = {
@@ -37,7 +38,7 @@ type formData = {
   description: string;
 };
 
-const Feedback = ({ text = 'Feedback', projectId, issueTypeId, ...rest }: FeedbackProps) => {
+const Feedback = ({ text = 'Feedback', projectId, issueTypeId, product, ...rest }: FeedbackProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [submitError, setSubmitError] = useState<boolean>(false);
   const {
@@ -64,6 +65,7 @@ const Feedback = ({ text = 'Feedback', projectId, issueTypeId, ...rest }: Feedba
           description: values.description,
           name: values.name,
           email: values.email,
+          product: product,
           url: window.location.href,
           projectId: projectId,
           issueTypeId: issueTypeId,

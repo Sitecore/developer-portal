@@ -1,13 +1,14 @@
-import { PageInfo } from '@/src/lib/interfaces/page-info';
+import { PageInfo, SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Link, List, ListItem, Stack, Text, Tooltip, useDisclosure } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import Feedback from './Feedback';
 
 type GithubContributionNoticeProps = {
   pageInfo: PageInfo;
+  config: SidebarNavigationConfig;
 };
 
-const GithubContributionNotice = ({ pageInfo }: GithubContributionNoticeProps) => {
+const GithubContributionNotice = ({ pageInfo, config }: GithubContributionNoticeProps) => {
   const { asPath } = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -46,7 +47,7 @@ const GithubContributionNotice = ({ pageInfo }: GithubContributionNoticeProps) =
                 If you have a recipe suggestion to share, please <Link href="/contribute">create a pull request</Link> on the Github repository
               </ListItem>
               <ListItem>
-                For questions or feedback, please <Link href={issueLink}>create</Link> an GitHub issue or use the <Feedback variant={'link'} projectId="RCPS" issueTypeId="3" /> form.
+                For questions or feedback, please <Link href={issueLink}>create</Link> an GitHub issue or use the <Feedback variant={'link'} projectId="RCPS" issueTypeId="3" product={config?.productFeedbackLabel || ''} /> form.
               </ListItem>
             </List>
           </AlertDescription>

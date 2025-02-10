@@ -9,6 +9,7 @@ interface FeedbackBody {
   url?: string;
   projectId: string;
   issueTypeId: string;
+  product?: string;
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -28,6 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       description: body.description,
       url: body.url,
       issueTypeId: body.issueTypeId,
+      product: body.product,
     });
   } catch (e) {
     console.error('error while creating the ticket', e);
