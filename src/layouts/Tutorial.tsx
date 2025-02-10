@@ -56,7 +56,7 @@ const Tutorial = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPager
           <RenderContent content={pageInfo.parsedContent} />
           <ArticlePagingNext enabled={sidebarConfig.enableNextPrevious} currentFileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />
 
-          <GithubContributionNotice pageInfo={pageInfo} />
+          <GithubContributionNotice pageInfo={pageInfo} config={sidebarConfig} />
           {customNavPager}
 
           <PromoList data={promoAfter} />

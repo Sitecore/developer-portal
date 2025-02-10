@@ -74,3 +74,34 @@ export interface RoadmapInformation {
   items: IRoadmapItem[];
   products: Option[];
 }
+
+export type IssueTypeSchemaField = {
+  required: boolean;
+  name: string;
+  key: string;
+  autoCompleteUrl?: string;
+  hasDefaultValue: boolean;
+  operations: string[];
+  fieldId: string;
+  allowedValues?: Array<{
+    self: string;
+    id: string;
+    name?: string;
+    ari?: string;
+    metadata?: Record<string, unknown>;
+    value?: string;
+  }>;
+  defaultValue?: {
+    self: string;
+    iconUrl?: string;
+    name: string;
+    id: string;
+  };
+};
+
+export type IssueTypeSchema = {
+  startAt: number;
+  maxResults: number;
+  total: number;
+  fields: IssueTypeSchemaField[];
+};

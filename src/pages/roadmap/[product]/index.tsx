@@ -1,5 +1,5 @@
 import { Option } from '@/src/components/ui/dropdown';
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, CloseButton, Link, SimpleGrid, VisuallyHidden, Wrap } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, Icon, Link, SimpleGrid, VisuallyHidden, Wrap } from '@chakra-ui/react';
 import { TrackPageView } from '@components/integrations/engage/TrackPageView';
 import { RoadmapPhase } from '@components/roadmap/roadmapPhase';
 import { CenteredContent, Hero, VerticalGroup } from '@components/ui/sections';
@@ -11,6 +11,7 @@ import useSWR from 'swr';
 import Layout from '@/src/layouts/Layout';
 import { pageRouterAuth } from '@/src/lib/auth0';
 import { getQueryArray, slugify } from '@/src/lib/utils';
+import { ChevronLeftIcon } from '@chakra-ui/icons';
 import { RoadmapInformation } from '@lib/interfaces/jira';
 import { getRoadmap, Phase } from '@lib/jira';
 import NextLink from 'next/link';
@@ -73,15 +74,6 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct, products 
               </Wrap>
             </Alert>
 
-            <Wrap>
-              <Link as={NextLink} href="/roadmap" passHref>
-                <Button rightIcon={<CloseButton as={'div'} color={'white'} />} variant="solid" borderRadius={'sm'} mb={4}>
-                  Product: {currentProduct.label}
-                </Button>
-
-                <VisuallyHidden>Go back to the roadmap overview</VisuallyHidden>
-              </Link>
-            </Wrap>
             <Alert status="info" colorScheme="neutral" alignItems="center">
               <AlertIcon />
               <Wrap>
@@ -93,12 +85,21 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct, products 
               </Wrap>
             </Alert>
 
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="5px">
-              <RoadmapPhase roadmap={data} title="Done" color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
-              <RoadmapPhase roadmap={data} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
-              <RoadmapPhase roadmap={data} title="Next (next two quarters)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
-              <RoadmapPhase roadmap={data} title="Future (9+ months)" color="neutral-bg-active" phase={Phase.FUTURE} isLoading={isLoading} />
-            </SimpleGrid>
+            <Wrap>
+              <Link as={NextLink} href="/roadmap" passHref>
+                <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} width={'100%'} variant={'ghost'}>
+                  Go back to the roadmap overview
+                </Button>
+                <VisuallyHidden>Go back to the roadmap overview</VisuallyHidden>
+              </Link>
+
+              <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="5px" width={'full'}>
+                <RoadmapPhase roadmap={data} title="Done" color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
+                <RoadmapPhase roadmap={data} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
+                <RoadmapPhase roadmap={data} title="Next (next two quarters)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
+                <RoadmapPhase roadmap={data} title="Future (9+ months)" color="neutral-bg-active" phase={Phase.FUTURE} isLoading={isLoading} />
+              </SimpleGrid>
+            </Wrap>
           </CenteredContent>
         </VerticalGroup>
       </Layout>
