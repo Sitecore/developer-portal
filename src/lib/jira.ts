@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Option } from '../components/ui/dropdown';
-import { CustomField, Issue, JiraResponse, RoadmapInformation } from './interfaces/jira';
+import { CustomField, Issue, IssueTypeSchema, JiraResponse, RoadmapInformation } from './interfaces/jira';
 import { parseJiraIssues } from './roadmap';
 
 const jiraBaseUrl = 'https://sitecore.atlassian.net/rest/api/3';
@@ -185,10 +185,31 @@ export function getStatusColor(status: string): string {
   }
 }
 
+export async function getIssueTypeSchema({ projectKey, issueTypeId }: { projectKey: string; issueTypeId: string }): Promise<IssueTypeSchema> {
+  console.log(`getting the issue type schema for ${projectKey} with issueType ${issueTypeId}...`);
+  const response = await fetch(`${jiraBaseUrl}/issue/createmeta/${projectKey}/issuetypes/${issueTypeId}`, {
+    method: 'GET',
+    cache: 'no-cache',
+    headers: {
+      Authorization: 'Basic ' + Buffer.from(JIRA_USERNAME! + ':' + JIRA_API_TOKEN!).toString('base64'),
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+
+    throw Error(error);
+  }
+
+  return (await response.json()) as IssueTypeSchema;
+}
+
 export async function postJiraIssue({
   summary,
   projectKey = 'PRDSCS',
   issueTypeId = '11808',
+  product,
   name,
   email,
   description,
@@ -197,12 +218,25 @@ export async function postJiraIssue({
   summary: string;
   projectKey: string;
   issueTypeId: string;
+  product?: string;
   name?: string;
   email?: string;
   description?: string;
   url?: string;
 }): Promise<{ id: string; key: string }> {
   console.log('posting the new jira ticket...');
+
+  let productValue = null;
+
+  if (product) {
+    const schema = await getIssueTypeSchema({ projectKey, issueTypeId });
+    const productField = schema.fields.find((field) => field.name === 'Products');
+    productValue = productField?.allowedValues?.find((x) => x.value?.toLowerCase() === product.toLowerCase());
+
+    if (!productValue) {
+      throw console.error('Product not found in the allowed values');
+    }
+  }
 
   const response = await fetch(`${jiraBaseUrl}/issue`, {
     method: 'POST',
@@ -213,6 +247,7 @@ export async function postJiraIssue({
     },
     body: JSON.stringify({
       fields: {
+        customfield_16781: [productValue],
         summary: `[FEEDBACK] ${summary}`,
         project: {
           key: projectKey,
