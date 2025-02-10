@@ -84,7 +84,7 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
           )}
 
           <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />
-          <GithubContributionNotice pageInfo={pageInfo} />
+          <GithubContributionNotice pageInfo={pageInfo} config={sidebarConfig} />
           {customNavPager}
           <PromoList data={promoAfter} />
           <SocialFeeds pageInfo={pageInfo} />
