@@ -9,7 +9,7 @@ interface FeedbackBody {
   url?: string;
   projectId: string;
   issueTypeId: string;
-  product?: string;
+  product?: string[];
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

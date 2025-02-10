@@ -28,7 +28,7 @@ type FeedbackProps = ButtonProps & {
   text?: string;
   projectId: string;
   issueTypeId: string;
-  product?: string;
+  product?: string[];
 };
 
 type formData = {
