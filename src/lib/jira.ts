@@ -218,7 +218,7 @@ export async function postJiraIssue({
   summary: string;
   projectKey: string;
   issueTypeId: string;
-  product?: string;
+  product?: string[];
   name?: string;
   email?: string;
   description?: string;
@@ -226,14 +226,20 @@ export async function postJiraIssue({
 }): Promise<{ id: string; key: string }> {
   console.log('posting the new jira ticket...');
 
-  let productValue = null;
+  let productValue: any[] = [];
 
   if (product) {
     const schema = await getIssueTypeSchema({ projectKey, issueTypeId });
-    const productField = schema.fields.find((field) => field.name === 'Products');
-    productValue = productField?.allowedValues?.find((x) => x.value?.toLowerCase() === product.toLowerCase());
 
-    if (!productValue) {
+    product.map((p) => {
+      const productField = schema.fields.find((field) => field.name === 'Products');
+      const foundProduct = productField?.allowedValues?.find((x) => x.value?.toLowerCase() === p.toLowerCase());
+      if (foundProduct) {
+        productValue.push(foundProduct);
+      }
+    });
+
+    if (productValue.length == 0) {
       throw console.error('Product not found in the allowed values');
     }
   }
@@ -247,7 +253,7 @@ export async function postJiraIssue({
     },
     body: JSON.stringify({
       fields: {
-        customfield_16781: [productValue],
+        customfield_16781: productValue,
         summary: `[FEEDBACK] ${summary}`,
         project: {
           key: projectKey,
@@ -313,5 +319,6 @@ export async function postJiraIssue({
     throw Error('ticket not ok! ' + error);
   }
 
-  return (await response.json()) as { id: string; key: string };
+  // return (await response.json()) as { id: string; key: string };
+  return { id: '123', key: 'PRDSCS-123' };
 }

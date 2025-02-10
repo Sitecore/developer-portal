@@ -4,7 +4,7 @@
   "productLogo": "XMCloud",
   "heading": false,
   "path": "/learn/accelerate/xm-cloud",
-  "productFeedbackLabel": "XMC",
+  "productFeedbackLabel": ["XMC"],
   "showRootAsSections": true,
   "routes": [
     {

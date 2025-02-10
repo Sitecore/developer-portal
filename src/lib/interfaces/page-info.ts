@@ -84,7 +84,7 @@ export type SidebarNavigationConfig = {
   enableNextPrevious?: boolean;
   productLogo?: string;
   routes: Array<SidebarNavigationItem>;
-  productFeedbackLabel?: string;
+  productFeedbackLabel?: string[];
 };
 
 export type SidebarNavigationItem = {
