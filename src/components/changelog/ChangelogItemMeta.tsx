@@ -1,4 +1,4 @@
-import { BoxProps, Button, chakra, Hide, HStack, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Tag, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
+import { BoxProps, Button, chakra, Hide, HStack, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Tag, Text, Tooltip, useColorModeValue, Wrap } from '@chakra-ui/react';
 import { ChangelogEntry } from '@lib/changelog/types';
 import { getSlug } from '@lib/utils';
 import { mdiSquareEditOutline } from '@mdi/js';
@@ -52,64 +52,66 @@ export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
   };
 
   const MetaInfo = (
-    <HStack gap={4}>
-      {item.products != null && item.products?.length > 1 ? (
-        <HStack spacing={0}>
-          <Popover placement="bottom-start" trigger="click">
-            <PopoverAnchor>{item.products != null && <ProductIcon product={item.products[0]} />}</PopoverAnchor>
-            <PopoverTrigger>
-              <Button variant="unstyled" size={'sm'} hideBelow={'sm'} ml={2}>
-                + {item.products.length - 1} <Hide below="md">{item.products.length == 1 ? 'other' : 'others'}</Hide>
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent p={2} maxW={'3xs'}>
-              <PopoverArrow />
-              <Stack>
-                {item.products &&
-                  item.products.slice(1).map((product, key) => (
-                    <HStack key={key}>
-                      <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
-                      <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
-                        <Text color={'chakra-body-text'}>{product.productName}</Text>
-                      </Link>
-                    </HStack>
-                  ))}
-              </Stack>
-            </PopoverContent>
-          </Popover>
-        </HStack>
-      ) : (
-        item.products != null && <ProductIcon product={item.products[0]} />
-      )}
+    <Stack gap="4" direction={{ base: 'column', sm: 'row' }}>
+      <Wrap>
+        {item.products != null && item.products?.length > 1 ? (
+          <HStack spacing={0}>
+            <Popover placement="bottom-start" trigger="click">
+              <PopoverAnchor>{item.products != null && <ProductIcon product={item.products[0]} />}</PopoverAnchor>
+              <PopoverTrigger>
+                <Button variant="unstyled" size={'sm'} hideBelow={'sm'} ml={2}>
+                  + {item.products.length - 1} <Hide below="md">{item.products.length == 1 ? 'other' : 'others'}</Hide>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent p={2} maxW={'3xs'}>
+                <PopoverArrow />
+                <Stack>
+                  {item.products &&
+                    item.products.slice(1).map((product, key) => (
+                      <HStack key={key}>
+                        <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
+                        <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
+                          <Text color={'chakra-body-text'}>{product.productName}</Text>
+                        </Link>
+                      </HStack>
+                    ))}
+                </Stack>
+              </PopoverContent>
+            </Popover>
+          </HStack>
+        ) : (
+          item.products != null && <ProductIcon product={item.products[0]} />
+        )}
 
-      <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
+        <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
 
-      {item.changeType.length > 0 &&
-        item.changeType.map((changeTypeItem, key) => (
-          <Tag colorScheme={colorScheme(changeTypeItem.name)} size="sm" key={key}>
-            {changeTypeItem.name}
-          </Tag>
-        ))}
-      {item.breakingChange && (
-        <Tooltip label="This change could require manual updates" aria-label="Action required">
-          <Tag size="sm" colorScheme="warning">
-            Action required
-          </Tag>
-        </Tooltip>
-      )}
-      {item.scheduled && (
-        <Tooltip label="This functionality is scheduled" aria-label="This functionality is scheduled and not yet released">
-          <Tag size="sm">Scheduled</Tag>
-        </Tooltip>
-      )}
-      {!item.scheduled && item.status && item.status.identifier == 'in-progress' && (
-        <Tooltip label={item.status.description} aria-label={item.status.description}>
-          <Tag size="sm" colorScheme={getStatusBadgeColor(item.status.identifier)} variant="outline">
-            {item.status.name}
-          </Tag>
-        </Tooltip>
-      )}
-    </HStack>
+        {item.changeType.length > 0 &&
+          item.changeType.map((changeTypeItem, key) => (
+            <Tag colorScheme={colorScheme(changeTypeItem.name)} key={key}>
+              {changeTypeItem.name}
+            </Tag>
+          ))}
+      </Wrap>
+      <Wrap>
+        {item.breakingChange && (
+          <Tooltip label="This change could require manual updates" aria-label="Action required">
+            <Tag colorScheme="warning">Action required</Tag>
+          </Tooltip>
+        )}
+        {item.scheduled && (
+          <Tooltip label="This functionality is scheduled" aria-label="This functionality is scheduled and not yet released">
+            <Tag>Scheduled</Tag>
+          </Tooltip>
+        )}
+        {!item.scheduled && item.status && item.status.identifier == 'in-progress' && (
+          <Tooltip label={item.status.description} aria-label={item.status.description}>
+            <Tag colorScheme={getStatusBadgeColor(item.status.identifier)} variant="outline">
+              {item.status.name}
+            </Tag>
+          </Tooltip>
+        )}
+      </Wrap>
+    </Stack>
   );
 
   if (!isPreview) {
@@ -123,7 +125,6 @@ export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
         <Tooltip label="Edit in Sitecore Content Hub ONE" aria-label="Edit in Sitecore Content Hub">
           <Button
             variant={'ghost'}
-            size="sm"
             leftIcon={
               <Icon>
                 <path d={mdiSquareEditOutline} />

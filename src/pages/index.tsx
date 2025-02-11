@@ -61,7 +61,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
                 title="Sitecore Accelerate"
                 description="Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products."
                 linktext="Read"
-                link="/learn/accelerate/xm-cloud"
+                link="/learn/accelerate"
               />
             </Row>
           </CenteredContent>

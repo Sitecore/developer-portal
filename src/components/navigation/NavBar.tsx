@@ -23,13 +23,12 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  Tooltip,
   UnorderedList,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import { mainNavigation, NavItem, sitecoreQuickLinks } from '@data/data-navigation';
-import { mdiChevronDown, mdiChevronUp, mdiInformationOutline } from '@mdi/js';
+import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -40,7 +39,7 @@ import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/asset
 import { PreviewModeSwitch } from './PreviewModeSwitch';
 
 import { useUser } from '@auth0/nextjs-auth0/client';
-import { PreviewSearchInput } from '../integrations/sitecore-search';
+import { PreviewSearchInput, SearchInput } from '../integrations/sitecore-search';
 import { Slide } from '../ui/chakra/Slide';
 import { ProductIcon } from '../ui/logos';
 import { DarkModeSwitch } from './DarkModeSwitch';
@@ -118,32 +117,18 @@ export default function Navbar({ searchEnabled }: NavBarProps): React.ReactNode 
                   transition={'width 0.1s ease-in-out'}
                 />
               </Hide>
-              <Show below="3xl">
-                <SearchButton />
-              </Show>
+
+              <Hide above="3xl">
+                <Show above="xl">
+                  <SearchButton />
+                </Show>
+              </Hide>
             </>
           )}
-          {!searchEnabled && (
-            <Tooltip label="Search is disabled on this environment. Click here for more information" aria-label="Search is disabled on this environment" hideBelow={'md'}>
-              <IconButton
-                icon={
-                  <Icon>
-                    <path d={mdiInformationOutline} />
-                  </Icon>
-                }
-                variant="ghost"
-                colorScheme="danger"
-                aria-label={''}
-                as={NextLink}
-                href="/search"
-              >
-                Search disabled
-              </IconButton>
-            </Tooltip>
-          )}
+
           <PreviewModeSwitch />
-          <DarkModeSwitch />
           <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
+          <DarkModeSwitch />
           <QuickStartMenu key={router.asPath} />
           <UserAccount userProfile={user} />
         </Stack>
@@ -250,6 +235,10 @@ const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavIt
 const MobileNav = () => {
   return (
     <Box bg={useColorModeValue('white', 'gray.800')} display={{ xl: 'none' }} shadow={'lg'} height={'100vh'} position={'absolute'} width={'full'} ml={-15}>
+      <Box p={4} borderTop={1} borderBottomStyle={'solid'} borderBottomColor={'chakra-border-color'} width={'95%'}>
+        <SearchInput showButton />
+      </Box>
+
       {mainNavigation.map((navItem) => (
         <MobileNavItem key={navItem.title} {...navItem} />
       ))}

@@ -25,7 +25,7 @@ const CustomImage = chakra(Image, {
 const AccelerateUpdates = ({ title = 'Sitecore Accelerate updates', linkHref = '/learn/accelerate', linkText = 'See all recipes', recipes, hideProductIcon, columns }: AccelerateUpdatesProps) => {
   return (
     <Card variant={'unstyled'}>
-      <CardHeader justifyContent={'space-between'} display={'flex'} pt={8}>
+      <CardHeader justifyContent={'space-between'} display={'flex'} pt={8} flexDirection={{ base: 'column', sm: 'row' }}>
         <Heading as={'h3'} size={'md'}>
           {title}
           <Link href="/learn/accelerate/updates" ml="1">
