@@ -2,7 +2,7 @@ import { TrackPageView } from '@/src/components/integrations/engage/TrackPageVie
 import { Option } from '@/src/components/ui/dropdown';
 import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
-import { Alert, AlertIcon, Grid, GridItem, HStack, Image, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
+import { Alert, AlertIcon, Grid, GridItem, Tooltip } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import Layout from '@src/layouts/Layout';
@@ -32,19 +32,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
       </Head>
       <TrackPageView>
         <Layout title="Changelog" description="Learn more about new versions, changes and improvements">
-          <Hero title="Changelog" description="Learn more about new versions, changes and improvements">
-            <HStack>
-              <Text variant={'sm'}>Powered by</Text>
-              <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-                <Image
-                  src={useColorModeValue('https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one', 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one-dark')}
-                  alt="Powered by Content Hub ONE"
-                  width={150}
-                  height={18}
-                />
-              </Link>
-            </HStack>
-          </Hero>
+          <Hero title="Changelog" description="Learn more about new versions, changes and improvements"></Hero>
 
           <VerticalGroup>
             <CenteredContent py={8} gap={8}>
