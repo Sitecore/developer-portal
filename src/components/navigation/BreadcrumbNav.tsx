@@ -11,6 +11,7 @@ export interface BreadcrumbNavProps {
   enabled?: boolean;
   currentPage: PageInfo;
   config: SidebarNavigationConfig;
+  hideCurrentPage?: boolean;
 }
 
 const findRoute = (routes: Array<SidebarNavigationItem>, path: string): SidebarNavigationItem | null => {
@@ -31,15 +32,14 @@ const findRoute = (routes: Array<SidebarNavigationItem>, path: string): SidebarN
   return null;
 };
 
-const BreadcrumbNav = ({ config, currentPage, enabled = false }: BreadcrumbNavProps) => {
+const BreadcrumbNav = ({ config, currentPage, enabled = false, hideCurrentPage = false }: BreadcrumbNavProps) => {
   const router = useRouter();
-  const { currentItem } = useSidebarNav(currentPage.fileName, config, router.asPath);
+
+  const { currentItem, parents, parentItem, previousItem, nextItem } = useSidebarNav(currentPage.fileName, config, router.asPath);
 
   if (!enabled || router.asPath == config.path) {
     return null;
   }
-
-  const urlSegments: Array<string> = router.asPath != config.path ? router.asPath.replace(config.path + '/', '').split('/') : [];
 
   return (
     <Breadcrumb>
@@ -47,27 +47,28 @@ const BreadcrumbNav = ({ config, currentPage, enabled = false }: BreadcrumbNavPr
         <BreadcrumbLink href={config.path}>{config.title}</BreadcrumbLink>
       </BreadcrumbItem>
 
-      {urlSegments.length > 1 &&
-        urlSegments
-          .map((segment, index) => {
-            const matchingRoute = findRoute(config.routes, segment);
-            const isCurrent = router.asPath.endsWith(segment);
+      {parents?.map((parent, index) => {
+        const base = parents.slice(0, index + 1).reduce((acc, parent) => {
+          return appendPathToBasePath(acc, parent.path);
+        }, config.path);
+        return (
+          <BreadcrumbItem key={index}>
+            {parent.ignoreLink ? (
+              <BreadcrumbLink isCurrentPage>{parent.title}</BreadcrumbLink>
+            ) : (
+              <BreadcrumbLink as={NextLink} href={base}>
+                {parent.title}
+              </BreadcrumbLink>
+            )}
+          </BreadcrumbItem>
+        );
+      })}
 
-            if (matchingRoute && !isCurrent) {
-              return (
-                <BreadcrumbItem key={index}>
-                  <BreadcrumbLink as={NextLink} href={appendPathToBasePath(config.path, matchingRoute.path)}>
-                    {matchingRoute.title}
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-              );
-            }
-          })
-          .filter(Boolean)}
-
-      <BreadcrumbItem isCurrentPage>
-        <BreadcrumbLink href="#">{currentItem?.title}</BreadcrumbLink>
-      </BreadcrumbItem>
+      {!hideCurrentPage && (
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink href="#">{currentItem?.title}</BreadcrumbLink>
+        </BreadcrumbItem>
+      )}
     </Breadcrumb>
   );
 };

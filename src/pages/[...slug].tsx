@@ -6,6 +6,7 @@ import ArticlePage from '@src/layouts/ArticlePage';
 import ChildOverviewPage from '@src/layouts/ChildOverviewPage';
 import DefaultContentPage from '@src/layouts/DefaultContentPage';
 import SocialPage from '@src/layouts/SocialPage';
+import AcceleratePage from '../layouts/AcceleratePage';
 import NewsLetterPage from '../layouts/NewsLetterPage';
 import Tutorial from '../layouts/Tutorial';
 
@@ -42,6 +43,9 @@ export async function getStaticProps(context: any) {
 }
 
 export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pageInfo: PageInfo; childPageInfo: Array<ChildPageInfo>; sidebarNavConfig: SidebarNavigationConfig }) {
+  console.log('pageType: ' + pageInfo.pageType);
+  console.log('hasSubPageNav: ' + pageInfo.hasSubPageNav);
+
   // Check for other page types
   if (pageInfo.pageType) {
     switch (pageInfo?.pageType.toLowerCase()) {
@@ -54,6 +58,9 @@ export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pa
       case 'tutorial':
         return <Tutorial pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} sidebarConfig={sidebarNavConfig} />;
     }
+  }
+  if (pageInfo?.area?.includes('accelerate')) {
+    return <AcceleratePage pageInfo={pageInfo} hasGrid={false} sidebarConfig={sidebarNavConfig} />;
   }
 
   if (pageInfo.hasSubPageNav) {

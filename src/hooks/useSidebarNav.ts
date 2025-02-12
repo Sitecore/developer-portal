@@ -15,6 +15,7 @@ const useSidebarNav = (fileName: string, sidebarNavConfig: SidebarNavigationConf
   const [previousItem, setPreviousItem] = useState<SidebarNavigationItem | null>(null);
   const [nextItem, setNextItem] = useState<SidebarNavigationItem | null>(null);
   const [children, setChildren] = useState<SidebarNavigationItem[] | null>(null);
+  const [parents, setParents] = useState<SidebarNavigationItem[] | null>(null);
   const [parentItem, setParentItem] = useState<SidebarNavigationItem | null>(null);
   const [currentLevel, setCurrentLevel] = useState<Array<SidebarNavigationItem> | null>(null);
 
@@ -22,6 +23,8 @@ const useSidebarNav = (fileName: string, sidebarNavConfig: SidebarNavigationConf
 
   useEffect(() => {
     const urlSegments: Array<string> = currentPath != sidebarNavConfig.path ? currentPath.replace(sidebarNavConfig.path + '/', '').split('/') : [];
+
+    console.log('urlSegments: ' + urlSegments);
     const currentUrlSegment = urlSegments[urlSegments.length - 1];
 
     // Find the current item in the sidebar navigation
@@ -35,6 +38,14 @@ const useSidebarNav = (fileName: string, sidebarNavConfig: SidebarNavigationConf
       return;
     }
 
+    const parentItems: SidebarNavigationItem[] = [];
+    let currentParent = getParentRoute(sidebarNavConfig.routes, currentItem.path);
+
+    while (currentParent) {
+      parentItems.push(currentParent);
+      currentParent = getParentRoute(sidebarNavConfig.routes, currentParent.path);
+    }
+
     const nextItem = findAdjacentRoute(sidebarNavConfig.routes, currentItem.path, true);
     const previousItem = findAdjacentRoute(sidebarNavConfig.routes, currentUrlSegment, false);
     const parentItem = getParentRoute(sidebarNavConfig.routes, currentItem.path);
@@ -44,8 +55,8 @@ const useSidebarNav = (fileName: string, sidebarNavConfig: SidebarNavigationConf
     setCurrentItem(currentItem);
     setChildren(currentItem.children);
     setParentItem(parentItem);
+    setParents(parentItems.reverse());
     setPreviousItem(previousItem);
-
     setCurrentLevel(findCurrentLevel(sidebarNavConfig.routes, currentUrlSegment));
   }, [fileName, root, currentPath, sidebarNavConfig]);
 
@@ -56,6 +67,7 @@ const useSidebarNav = (fileName: string, sidebarNavConfig: SidebarNavigationConf
     nextItem,
     currentLevel,
     children,
+    parents,
   };
 };
 

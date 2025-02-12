@@ -71,6 +71,10 @@ export type PageInfo = PageInfoCore & {
   parsedContent?: string;
   headings?: Array<ContentHeading>;
   guidedDemoId?: string;
+  audience?: Array<string>;
+  features?: Array<string>;
+  topics?: Array<string>;
+  level?: Array<string>;
 };
 
 export type SidebarNavigationConfig = {
@@ -92,6 +96,7 @@ export type SidebarNavigationItem = {
   path: string;
   ignoreLink?: boolean;
   children: Array<SidebarNavigationItem>;
+  parents: Array<SidebarNavigationItem>;
   collapsed?: boolean;
   url: string;
 };
