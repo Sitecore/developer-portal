@@ -1,6 +1,6 @@
 import { PageInfo } from '@/src/lib/interfaces/page-info';
 import { Heading, HStack, Icon, Stack, StackDivider, StackProps, Tag, Wrap } from '@chakra-ui/react';
-import { mdiAccountMultipleOutline, mdiCalendarOutline, mdiFinance, mdiTagOutline } from '@mdi/js';
+import { mdiAccount, mdiAccountMultipleOutline, mdiCalendarOutline, mdiFinance, mdiTagOutline } from '@mdi/js';
 import { iconSitecore } from '@sitecore/blok-theme';
 import { JSX } from 'react';
 
@@ -55,6 +55,28 @@ export const AccelerateMetaData = ({ pageInfo, ...rest }: AccelerateMetaDataProp
           icon={
             <Icon>
               <path d={mdiFinance} />
+            </Icon>
+          }
+        />
+      )}
+      {pageInfo.requestedBy && (
+        <MetaDataField
+          field={pageInfo.requestedBy}
+          label="Requested By"
+          icon={
+            <Icon>
+              <path d={mdiAccount} />
+            </Icon>
+          }
+        />
+      )}
+      {pageInfo.created && (
+        <MetaDataField
+          field={new Date(pageInfo.created).toLocaleString('en-US', { dateStyle: 'medium' })}
+          label="Created"
+          icon={
+            <Icon>
+              <path d={mdiCalendarOutline} />
             </Icon>
           }
         />

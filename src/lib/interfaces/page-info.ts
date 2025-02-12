@@ -19,6 +19,7 @@ type PageInfoCore = {
   area: Array<string>;
   product?: Array<string>;
   cdpTags?: Array<string>;
+  created?: string;
   lastUpdated?: string;
   productLogo?: string;
   audience?: string;
@@ -75,6 +76,7 @@ export type PageInfo = PageInfoCore & {
   features?: Array<string>;
   topics?: Array<string>;
   level?: Array<string>;
+  requestedBy?: Array<string>;
 };
 
 export type SidebarNavigationConfig = {
