@@ -1,19 +1,19 @@
-import { Button, ButtonGroup, Heading, Icon, Wrap } from '@chakra-ui/react';
+import { Button, ButtonGroup, Heading, Icon, Wrap, WrapProps } from '@chakra-ui/react';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 
 import { mdiChevronRight } from '@mdi/js';
 import useInPageNavigation from '../../hooks/useInPageNavigation';
 
-type InPageNavProps = {
+type InPageNavProps = WrapProps & {
   title?: string;
   titles: Array<ContentHeading>;
 };
 
-const InPageNav = ({ title, titles }: InPageNavProps) => {
+const InPageNav = ({ title, titles, ...rest }: InPageNavProps) => {
   const links = useInPageNavigation(titles, true);
 
   return (
-    <Wrap as={'nav'} direction="column" mt={{ base: 0, md: 10 }} mr={0} p={{ base: 2, md: 0 }} width={'2xs'} hideBelow={'xl'}>
+    <Wrap as={'nav'} direction="column" mt={rest.mt ? rest.mt : { base: 0, md: 10 }} mr={0} p={{ base: 2, md: 0 }} width={'2xs'} hideBelow={'xl'}>
       <Heading variant={'section'} size={'sm'} mb={{ base: 0, md: 2 }}>
         {title ? title : 'Table of contents'}
       </Heading>

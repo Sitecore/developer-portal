@@ -107,8 +107,8 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
 
           <Sidebar hideBelow={'xl'}>
             <Stack divider={<StackDivider />}>
-              {sectionTitles.length > 1 && <InPageNav titles={sectionTitles} key={router.asPath} title="Topics in this recipe" />}
-              <AccelerateMetaData pageInfo={pageInfo} mt={2} />
+              <AccelerateMetaData pageInfo={pageInfo} mt={10} />
+              {sectionTitles.length > 1 && <InPageNav titles={sectionTitles} key={router.asPath} title="Topics in this recipe" mt={2} />}
             </Stack>
           </Sidebar>
         </Flex>
