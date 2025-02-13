@@ -2,10 +2,12 @@
   "title": "Accelerate Cookbook for Content Hub",
   "description": "This Cookbook provides a set of recipes to help implementing Content Hub through setup, configuration and implemenation.",
   "productLogo": "ContentHub",
-  "heading": false,
   "path": "/learn/accelerate/content-hub",
-  "showRootAsSections": true,
   "productFeedbackLabel": ["Content Hub"],
+  "heading": true,
+  "enableSearch": false,
+  "enableBreadcrumb": true,
+  "showRootAsSections": true,
   "routes": [
     {
       "title": "Pre-development",
@@ -103,7 +105,7 @@
             {
               "title": "Webclient SDK Scenarios",
               "path": "webclient-sdk-scenarios"
-            }            
+            }
           ]
         },
         {

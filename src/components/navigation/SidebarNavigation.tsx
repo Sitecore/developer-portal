@@ -1,12 +1,14 @@
-import { Box, Button, ButtonGroup, Collapse, Heading, Hide, HStack, Icon, IconButton, Text, useDisclosure, Wrap } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Collapse, Heading, Hide, HStack, Icon, IconButton, Text, useColorModeValue, useDisclosure, Wrap } from '@chakra-ui/react';
 import { mdiChevronDown, mdiChevronRight, mdiMinus, mdiPlus } from '@mdi/js';
 import { appendPathToBasePath } from '@src/lib/utils';
+import Image from 'next/image';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
 
+import { GetProductLogo } from '@/src/lib/assets';
 import SidebarSearch from './SidebarSearch';
 
 export interface SidebarNavigationProps {
@@ -34,11 +36,16 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
       )}
 
       {config.heading && !searchActive && (
-        <Heading as={NextLink} variant={'section'} my={4} hideBelow={'md'} href={config.path} px={2}>
+        <Heading as={NextLink} variant={'section'} my={4} mx="0" hideBelow={'md'} href={config.path}>
           {config.title}
         </Heading>
       )}
 
+      {config.productLogo && (
+        <Box height={'24px'} width={'full'} position={'relative'} my={4} sx={{ '& > img': { width: 'auto !important' } }}>
+          <Image src={useColorModeValue(GetProductLogo(config.productLogo, 'Light'), GetProductLogo(config.productLogo, 'Dark'))} alt={`${config.title}`} fill style={{ objectFit: 'fill' }} sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw" />
+        </Box>
+      )}
       {/* Desktop */}
       <Wrap direction="column" hideBelow={'md'} hidden={searchActive}>
         {showRootAsSections && config.routes.map((link, i) => <SidebarGroupItem {...link} key={i} />)}
@@ -64,24 +71,28 @@ export const SidebarGroupItem = (SidebarNavigationItem: SidebarNavigationItem) =
   const currentBasePath = appendPathToBasePath(basePath, SidebarNavigationItem.path);
 
   return (
-    <Wrap direction="column">
+    <>
       {/* Load collapsable menu when the manifest.json contains the property collapsed  */}
       {SidebarNavigationItem.collapsed != null ? (
         <SidebarCollapsableGroupItem {...SidebarNavigationItem} />
       ) : (
         // Load the normal menu
-        <React.Fragment>
-          {SidebarNavigationItem.ignoreLink != null && SidebarNavigationItem.ignoreLink && <Heading variant="section">{SidebarNavigationItem.title}</Heading>}
+        <Box as={'li'}>
+          {SidebarNavigationItem.ignoreLink != null && SidebarNavigationItem.ignoreLink && (
+            <Heading variant="section" data-type="title" my={4}>
+              {SidebarNavigationItem.title}
+            </Heading>
+          )}
 
           {!showRootAsSections && <MenuItemLink href={SidebarNavigationItem.path} title={SidebarNavigationItem.title} />}
-          <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'}>
+          <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} as={'ul'} role="list">
             {SidebarNavigationItem.children?.map((child, i) =>
               child.children?.length > 0 ? <MenuItemGroup child={child} basePath={currentBasePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(currentBasePath, child.path)} title={child.title} key={i} />
             )}
           </ButtonGroup>
-        </React.Fragment>
+        </Box>
       )}
-    </Wrap>
+    </>
   );
 };
 
@@ -89,7 +100,7 @@ const SidebarCollapsableGroupItem = (SidebarNavigationItem: SidebarNavigationIte
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: SidebarNavigationItem.collapsed });
 
   return (
-    <Wrap direction="column">
+    <Wrap direction="column" as={'li'} data-type="collapsable-group-item">
       <HStack justifyContent={'space-between'} mt={4}>
         {SidebarNavigationItem.ignoreLink == false ? (
           <Heading as={NextLink} variant="section" cursor={'pointer'} href={appendPathToBasePath(basePath, SidebarNavigationItem.path)}>
@@ -114,7 +125,7 @@ const SidebarCollapsableGroupItem = (SidebarNavigationItem: SidebarNavigationIte
       </HStack>
 
       <Collapse animateOpacity in={!isOpen}>
-        <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'}>
+        <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} data-type="buttons">
           {SidebarNavigationItem.children?.map((child, i) => (child.children?.length > 0 ? <MenuItemGroup child={child} basePath={basePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(basePath, child.path)} title={child.title} key={i} />))}
         </ButtonGroup>
       </Collapse>
@@ -126,9 +137,11 @@ const MenuItemLink = ({ href, title }: { href: string; title: string }) => {
   const router = useRouter();
 
   return (
-    <Button as={NextLink} colorScheme="neutral" href={href} px={2} width={'full'} isActive={router.asPath.endsWith(href)}>
-      {title}
-    </Button>
+    <Box as="li" listStyleType={'none'}>
+      <Button as={NextLink} colorScheme="neutral" href={href} px={2} width={'full'} isActive={router.asPath.endsWith(href)} data-type="menu-item-link">
+        {title}
+      </Button>
+    </Box>
   );
 };
 
@@ -139,7 +152,7 @@ const MenuItemGroup = ({ child, basePath, index }: { child: SidebarNavigationIte
   const currentBasePath = appendPathToBasePath(basePath, child.path);
 
   return (
-    <React.Fragment key={index}>
+    <Box as="li" key={index} data-type="menu-item-group" listStyleType={'none'}>
       <Button
         rightIcon={<Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>}
         justifyContent={'space-between'}
@@ -157,7 +170,7 @@ const MenuItemGroup = ({ child, basePath, index }: { child: SidebarNavigationIte
       </Button>
 
       <Collapse animateOpacity in={isOpen}>
-        <Box pl={2}>
+        <Box pl={2} as="ul">
           {child.children.map((link, i) => {
             if (link.children?.length > 0) {
               return <MenuItemGroup child={link} basePath={appendPathToBasePath(currentBasePath, link.path)} key={i} />;
@@ -167,7 +180,7 @@ const MenuItemGroup = ({ child, basePath, index }: { child: SidebarNavigationIte
           })}
         </Box>
       </Collapse>
-    </React.Fragment>
+    </Box>
   );
 };
 
