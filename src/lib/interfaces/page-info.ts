@@ -79,29 +79,6 @@ export type PageInfo = PageInfoCore & {
   requestedBy?: Array<string>;
 };
 
-export type SidebarNavigationConfig = {
-  title: string;
-  description: string;
-  heading: boolean;
-  path: string;
-  showRootAsSections?: boolean;
-  enableSearch?: boolean;
-  enableBreadcrumb?: boolean;
-  enableNextPrevious?: boolean;
-  productLogo?: string;
-  routes: Array<SidebarNavigationItem>;
-  productFeedbackLabel?: string[];
-};
-
-export type SidebarNavigationItem = {
-  title: string;
-  path: string;
-  ignoreLink?: boolean;
-  children: Array<SidebarNavigationItem>;
-  parents: Array<SidebarNavigationItem>;
-  collapsed?: boolean;
-  url: string;
-};
 
 export type ChildPageInfo = PageInfo & {
   description?: string;

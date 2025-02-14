@@ -1,5 +1,5 @@
 import { ContentHeading } from '@lib/interfaces/contentheading';
-import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
 
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
@@ -19,8 +19,10 @@ import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import { DropDownNavigation } from '../components/navigation/DropDownNavigation';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { CenteredContent } from '../components/ui/sections';
-import useSidebarNav from '../hooks/useSidebarNav';
-import { getItemUrl } from '../lib/sidebarNav';
+
+import useManifestRoutes from '@/src/hooks/useManifestRoutes';
+import { ManifestConfig } from '../lib/interfaces/manifest';
+import { getItemUrl } from '../lib/manifestHelper';
 import { Sidebar } from './Sidebar';
 
 type ArticlePageProps = {
@@ -29,14 +31,15 @@ type ArticlePageProps = {
   promoAfter?: Array<PromoCardProps>;
   promoBefore?: Array<PromoCardProps>;
   childPageInfo?: Array<ChildPageInfo>;
-  sidebarConfig: SidebarNavigationConfig;
+  sidebarConfig: ManifestConfig;
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
 };
 
 const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPager, sidebarConfig }: ArticlePageProps) => {
   const router = useRouter();
-  const { children } = useSidebarNav(pageInfo.fileName, sidebarConfig, router.asPath);
+  const path = router.asPath;
+  const { children } = useManifestRoutes(pageInfo.fileName, sidebarConfig, path);
 
   if (!pageInfo) {
     return <>No pageInfo found</>;
@@ -74,7 +77,7 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
                   {pageInfo.description}
                 </Text>
               </Stack>
-              <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />
+              <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={path} />
 
               <PromoList data={promoBefore} />
               <RenderContent content={pageInfo.parsedContent} />
@@ -97,7 +100,7 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
                 </Stack>
               )}
 
-              <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />
+              <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={path} />
               <GithubContributionNotice pageInfo={pageInfo} config={sidebarConfig} />
               {customNavPager}
               <PromoList data={promoAfter} />
@@ -108,7 +111,7 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
           <Sidebar hideBelow={'xl'}>
             <Stack divider={<StackDivider />}>
               <AccelerateMetaData pageInfo={pageInfo} mt={10} />
-              {sectionTitles.length > 1 && <InPageNav titles={sectionTitles} key={router.asPath} title="Topics in this recipe" mt={2} />}
+              {sectionTitles.length > 1 && <InPageNav titles={sectionTitles} key={path} title="Topics in this recipe" mt={2} />}
             </Stack>
           </Sidebar>
         </Flex>

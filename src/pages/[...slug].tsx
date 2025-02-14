@@ -1,4 +1,4 @@
-import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
 import { getChildNavgationInfo, getChildPageInfo, getPageInfo } from '@lib/page-info';
 import { getStaticPathsRecursively } from '@lib/staticPaths';
 
@@ -9,6 +9,7 @@ import SocialPage from '@src/layouts/SocialPage';
 import AcceleratePage from '../layouts/AcceleratePage';
 import NewsLetterPage from '../layouts/NewsLetterPage';
 import Tutorial from '../layouts/Tutorial';
+import { ManifestConfig } from '../lib/interfaces/manifest';
 
 export async function getStaticPaths() {
   const paths = await getStaticPathsRecursively();
@@ -42,10 +43,7 @@ export async function getStaticProps(context: any) {
   };
 }
 
-export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pageInfo: PageInfo; childPageInfo: Array<ChildPageInfo>; sidebarNavConfig: SidebarNavigationConfig }) {
-  console.log('pageType: ' + pageInfo.pageType);
-  console.log('hasSubPageNav: ' + pageInfo.hasSubPageNav);
-
+export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pageInfo: PageInfo; childPageInfo: Array<ChildPageInfo>; sidebarNavConfig: ManifestConfig }) {
   // Check for other page types
   if (pageInfo.pageType) {
     switch (pageInfo?.pageType.toLowerCase()) {

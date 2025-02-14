@@ -1,11 +1,12 @@
-import { PageInfo, SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
+import { ManifestConfig } from '@/src/lib/interfaces/manifest';
+import { PageInfo } from '@/src/lib/interfaces/page-info';
 import { Alert, AlertDescription, AlertIcon, AlertTitle, Link, List, ListItem, Stack, Text, Tooltip, useDisclosure } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import Feedback from './Feedback';
 
 type GithubContributionNoticeProps = {
   pageInfo: PageInfo;
-  config: SidebarNavigationConfig;
+  config: ManifestConfig;
 };
 
 const GithubContributionNotice = ({ pageInfo, config }: GithubContributionNoticeProps) => {

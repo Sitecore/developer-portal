@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-import { SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
+import { ManifestConfig, ManifestNavigationItem } from '@/src/lib/interfaces/manifest';
 
 import { GetProductLogo } from '@/src/lib/assets';
 import SidebarSearch from './SidebarSearch';
@@ -14,7 +14,7 @@ import SidebarSearch from './SidebarSearch';
 export interface SidebarNavigationProps {
   title?: string;
   showSearch?: boolean;
-  config: SidebarNavigationConfig;
+  config: ManifestConfig;
 }
 
 let basePath: string;
@@ -67,26 +67,26 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
   );
 };
 
-export const SidebarGroupItem = (SidebarNavigationItem: SidebarNavigationItem) => {
-  const currentBasePath = appendPathToBasePath(basePath, SidebarNavigationItem.path);
+export const SidebarGroupItem = (ManifestNavigationItem: ManifestNavigationItem) => {
+  const currentBasePath = appendPathToBasePath(basePath, ManifestNavigationItem.path);
 
   return (
     <>
       {/* Load collapsable menu when the manifest.json contains the property collapsed  */}
-      {SidebarNavigationItem.collapsed != null ? (
-        <SidebarCollapsableGroupItem {...SidebarNavigationItem} />
+      {ManifestNavigationItem.collapsed != null ? (
+        <SidebarCollapsableGroupItem {...ManifestNavigationItem} />
       ) : (
         // Load the normal menu
         <Box as={'li'}>
-          {SidebarNavigationItem.ignoreLink != null && SidebarNavigationItem.ignoreLink && (
+          {ManifestNavigationItem.ignoreLink != null && ManifestNavigationItem.ignoreLink && (
             <Heading variant="section" data-type="title" my={4}>
-              {SidebarNavigationItem.title}
+              {ManifestNavigationItem.title}
             </Heading>
           )}
 
-          {!showRootAsSections && <MenuItemLink href={SidebarNavigationItem.path} title={SidebarNavigationItem.title} />}
+          {!showRootAsSections && <MenuItemLink href={ManifestNavigationItem.path} title={ManifestNavigationItem.title} />}
           <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} as={'ul'} role="list">
-            {SidebarNavigationItem.children?.map((child, i) =>
+            {ManifestNavigationItem.children?.map((child, i) =>
               child.children?.length > 0 ? <MenuItemGroup child={child} basePath={currentBasePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(currentBasePath, child.path)} title={child.title} key={i} />
             )}
           </ButtonGroup>
@@ -96,19 +96,19 @@ export const SidebarGroupItem = (SidebarNavigationItem: SidebarNavigationItem) =
   );
 };
 
-const SidebarCollapsableGroupItem = (SidebarNavigationItem: SidebarNavigationItem) => {
-  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: SidebarNavigationItem.collapsed });
+const SidebarCollapsableGroupItem = (ManifestNavigationItem: ManifestNavigationItem) => {
+  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: ManifestNavigationItem.collapsed });
 
   return (
     <Wrap direction="column" as={'li'} data-type="collapsable-group-item">
       <HStack justifyContent={'space-between'} mt={4}>
-        {SidebarNavigationItem.ignoreLink == false ? (
-          <Heading as={NextLink} variant="section" cursor={'pointer'} href={appendPathToBasePath(basePath, SidebarNavigationItem.path)}>
-            {SidebarNavigationItem.title}
+        {ManifestNavigationItem.ignoreLink == false ? (
+          <Heading as={NextLink} variant="section" cursor={'pointer'} href={appendPathToBasePath(basePath, ManifestNavigationItem.path)}>
+            {ManifestNavigationItem.title}
           </Heading>
         ) : (
           <Heading variant="section" onClick={onToggle} cursor={'pointer'}>
-            {SidebarNavigationItem.title}
+            {ManifestNavigationItem.title}
           </Heading>
         )}
         <IconButton
@@ -126,7 +126,9 @@ const SidebarCollapsableGroupItem = (SidebarNavigationItem: SidebarNavigationIte
 
       <Collapse animateOpacity in={!isOpen}>
         <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} data-type="buttons">
-          {SidebarNavigationItem.children?.map((child, i) => (child.children?.length > 0 ? <MenuItemGroup child={child} basePath={basePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(basePath, child.path)} title={child.title} key={i} />))}
+          {ManifestNavigationItem.children?.map((child, i) =>
+            child.children?.length > 0 ? <MenuItemGroup child={child} basePath={basePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(basePath, child.path)} title={child.title} key={i} />
+          )}
         </ButtonGroup>
       </Collapse>
     </Wrap>
@@ -145,7 +147,7 @@ const MenuItemLink = ({ href, title }: { href: string; title: string }) => {
   );
 };
 
-const MenuItemGroup = ({ child, basePath, index }: { child: SidebarNavigationItem; basePath: string; index?: number }) => {
+const MenuItemGroup = ({ child, basePath, index }: { child: ManifestNavigationItem; basePath: string; index?: number }) => {
   const router = useRouter();
   const currentRouteIncludesChild = child.children?.some((child) => router.asPath.includes(child.path));
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: currentRouteIncludesChild });
@@ -158,7 +160,7 @@ const MenuItemGroup = ({ child, basePath, index }: { child: SidebarNavigationIte
         justifyContent={'space-between'}
         width={'full'}
         transition={'ease-in-out'}
-        onClick={child.ignoreLink ? onToggle : undefined}
+        onClick={child.ignoreLink ? onToggle : onToggle}
       >
         {child.ignoreLink ? (
           <Text>{child.title}</Text>

@@ -1,5 +1,5 @@
 import { ContentHeading } from '@lib/interfaces/contentheading';
-import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
 
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
@@ -17,8 +17,9 @@ import { ArticlePaging } from '../components/navigation/ArticlePaging';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { Hero } from '../components/ui/sections';
-import useSidebarNav from '../hooks/useSidebarNav';
-import { getItemUrl } from '../lib/sidebarNav';
+import useManifestRoutes from '../hooks/useManifestRoutes';
+import { ManifestConfig } from '../lib/interfaces/manifest';
+import { getItemUrl } from '../lib/manifestHelper';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ArticlePageProps = {
@@ -27,14 +28,14 @@ type ArticlePageProps = {
   promoAfter?: Array<PromoCardProps>;
   promoBefore?: Array<PromoCardProps>;
   childPageInfo?: Array<ChildPageInfo>;
-  sidebarConfig: SidebarNavigationConfig;
+  sidebarConfig: ManifestConfig;
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
 };
 
 const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPager, sidebarConfig }: ArticlePageProps) => {
   const router = useRouter();
-  const { children } = useSidebarNav(pageInfo.fileName, sidebarConfig, router.asPath);
+  const { children } = useManifestRoutes(pageInfo.fileName, sidebarConfig, router.asPath);
 
   if (!pageInfo) {
     return <>No pageInfo found</>;

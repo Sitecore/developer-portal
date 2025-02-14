@@ -1,14 +1,14 @@
 import { Box, Button, ButtonGroup, Collapse, Icon, useDisclosure } from '@chakra-ui/react';
 import { mdiChevronDown } from '@mdi/js';
 
-import { SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
+import { ManifestConfig } from '@/src/lib/interfaces/manifest';
 
 import { SidebarGroupItem } from './SidebarNavigation';
 
 export interface SidebarNavigationProps {
   title?: string;
   showSearch?: boolean;
-  config: SidebarNavigationConfig;
+  config: ManifestConfig;
 }
 
 export const DropDownNavigation = ({ config, ...rest }: SidebarNavigationProps) => {

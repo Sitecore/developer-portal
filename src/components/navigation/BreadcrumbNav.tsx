@@ -3,39 +3,21 @@ import { appendPathToBasePath } from '@src/lib/utils/stringUtil';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
-import { PageInfo, SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
-
-import useSidebarNav from '../../hooks/useSidebarNav';
+import useManifestRoutes from '@/src/hooks/useManifestRoutes';
+import { ManifestConfig } from '@/src/lib/interfaces/manifest';
+import { PageInfo } from '@/src/lib/interfaces/page-info';
 
 export interface BreadcrumbNavProps {
   enabled?: boolean;
   currentPage: PageInfo;
-  config: SidebarNavigationConfig;
+  config: ManifestConfig;
   hideCurrentPage?: boolean;
 }
-
-const findRoute = (routes: Array<SidebarNavigationItem>, path: string): SidebarNavigationItem | null => {
-  for (const route of routes) {
-    if (route.path === path) {
-      return route;
-    }
-
-    if (route.children) {
-      const foundRoute: SidebarNavigationItem | null = findRoute(route.children, path);
-
-      if (foundRoute) {
-        return foundRoute;
-      }
-    }
-  }
-
-  return null;
-};
 
 const BreadcrumbNav = ({ config, currentPage, enabled = false, hideCurrentPage = false }: BreadcrumbNavProps) => {
   const router = useRouter();
 
-  const { currentItem, parents, parentItem, previousItem, nextItem } = useSidebarNav(currentPage.fileName, config, router.asPath);
+  const { currentItem, parents } = useManifestRoutes(currentPage.fileName, config, router.asPath);
 
   if (!enabled || router.asPath == config.path) {
     return null;

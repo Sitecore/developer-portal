@@ -1,6 +1,6 @@
-import { SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
+import { ManifestNavigationItem } from '@/src/lib/interfaces/page-info';
 
-export const mockedSidebarNavigationConfigRoutes: SidebarNavigationItem[] = [
+export const mockedManifestConfigRoutes: ManifestNavigationItem[] = [
   {
     title: 'Page 1',
     path: 'page-1',
