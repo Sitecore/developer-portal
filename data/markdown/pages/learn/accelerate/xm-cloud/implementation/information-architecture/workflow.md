@@ -1,34 +1,29 @@
 ---
 title: 'Workflows'
-description: 'Learn about Workflows in XM Cloud'
+description: 'Setting up workflow on a Page and Components level'
 area: ['accelerate']
-hasSubPageNav: false
+hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2025-02-14'
 ---
 
-# Problem
+## Context
 
-Sitecore comes with a sample workflow that should not be used as an actual configuration but as an example of a simple workflow. Workflow helps customers prevent unplanned content from making it to their website without the proper approvals. It also helps maintain consistent quality across all content. Each step in the editing process—such as fact-checking, style alignment, tone consistency, and further reviews—ensures that the content meets specific standards.
+XM Cloud comes with a sample workflow that should not be used as an actual configuration but as an example of a simple workflow. Workflow helps customers prevent unplanned content from making it to their website without the proper approvals. It also helps maintain consistent quality across all content. Each step in the editing process—such as fact-checking, style alignment, tone consistency, and further reviews—ensures that the content meets specific standards.
 
-# Solution
+## Execution
 
-## Workflow Planning
+### Workflow Planning
 
 It's recommended to establish a workflow for all content items. This prevents premature publishing to your production environment, whether done automatically or manually. While the sample workflow is provided, it should only be used as an example or template for designing a workflow that fits your business needs. Maintain simplicity in your workflow. Overcomplicating it with numerous states and review levels can slow the process, resulting in a less effective workflow.
 
-## Migration Considerations
+### Migration Considerations
 
-If you are currently on XP/XM and migrating to XM Cloud, there are specific considerations to address. Two key focuses should be:
+If you are currently on XP/XM and migrating to XM Cloud there are some specific considerations that you should consider when making this transition. Two specific focuses that should be considered are any .NET customizations that have been made to affect items controlled by workflow as well as the introduction of webhooks which can allow for new ways to implement workflow. In addition to these considerations, there are existing implementations that should be reviewed and changed based on the information below:
 
-1. Any .NET customizations affecting items controlled by workflow.
-2. The introduction of webhooks, which offer new ways to implement workflow.
+Email Actions should be implemented with a Webhook Submit Action as detailed further down.
 
-### Changes to Consider
-
-- **Email Actions** are no longer supported. Replace them with a Webhook Submit Action. (Using Webhooks to Send Notifications)
-
-## Configure Page and Datasource Workflows
+### Configure Page and Datasource Workflows
 
 Two separate workflows are recommended, one for page items and the other for datasources. This allows the main page workflow to stay clean and not cluttered. At a minimum this would be a two stage with draft and approved. The Page Workflow has a Datasource Workflow Action which points to the Approve command on the Datasource Workflow. This is important because it allows you to define the scope which allow datasources like the link list and its child items for example to be moved through the workflow successfully.
 
@@ -44,7 +39,7 @@ Two separate workflows are recommended, one for page items and the other for dat
 
 <Image src="/images/learn/accelerate/xm-cloud/workflows12.png" title="Datasource workflow"/>
 
-## Assign Page Workflow
+### Assign Page Workflow
 
 1. Assign it using Standard Values to the page template.
 2. Enable `View > Standard Fields` in the Content Editor.
@@ -52,7 +47,7 @@ Two separate workflows are recommended, one for page items and the other for dat
 
 <Image src="/images/learn/accelerate/xm-cloud/workflows1.png" title="StandardValuesPageWorkflow"/>
 
-## Assign SXA Datasource Workflow
+### Assign SXA Datasource Workflow
 
 It's important to configure workflow for both pages and the separate data source component items on a page. To do this:
 
@@ -68,11 +63,11 @@ If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/im
 
 Note that only templates that have the **\_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: _/sitecore/Templates/Foundation/Experience Accelerator/StandardValues/_. If for some reason your component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the docs site.
 
-## Configuration of Users/Roles
+### Configuration of Users/Roles
 
 For each workflow state that requires a specific set of users, create a Sitecore role representing the commands and states this type of user should manage. Assign roles to users rather than configuring permissions for individual users.
 
-### Example: Sample Workflow with "Editor" and "Super Editor" Roles
+#### Example: Sample Workflow with "Editor" and "Super Editor" Roles
 
 - **Editor**: Can push an item from Draft to Awaiting Approval.
 - **Super Editor**: Can approve or reject the item.
@@ -103,7 +98,7 @@ A **Super Editor** has full workflow execution rights with no restrictions. When
 
 It’s also advised not to assign the Administrator role to content editors, as administrators can override workflow states and interfere with normal operation.
 
-## Using Webhooks to Send Notifications
+### Using Webhooks to Send Notifications
 
 You can now trigger sending emails or notifications via webhooks when an item reaches a specific state in the workflow. Follow the steps below:
 
@@ -147,11 +142,14 @@ You can now trigger sending emails or notifications via webhooks when an item re
 3. The webhook sends a `POST` request to the specified URL.
 4. Configure the URL and authorization details for your endpoint.
 
-## Related Documentation
+### Related Documentation
 
 <Row columns={2}>
   <Link title="Workflow" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow.html" />
   <Link title="Workflow Cookbook" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow-cookbook.html" />
   <Link title="Workflow Webhooks" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--using-an-authorization-item.html" />
   <Link title="Assign a data source workflow action in SXA " link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/assign-a-data-source-workflow-action-in-sxa.html" />
+  <Link title="Add standard values under individual sites" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites" />
+  <Link title="Using an authorization item" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--using-an-authorization-item.html" />
+  <Link title="Defining standard values for your sites" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html" />
 </Row>
