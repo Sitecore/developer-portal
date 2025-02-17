@@ -55,15 +55,19 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Distribution of assets",
+              "title": "Distribution of Assets",
               "path": "distribution-of-assets"
+            },
+            {
+              "title": "Distribution of Content",
+              "path": "distribution-of-content"
             },
             {
               "title": "Environment Specific Settings",
               "path": "environment-specific-settings"
             },
             {
-              "title": "Paths across entity definitions",
+              "title": "Paths across Entity Definitions",
               "path": "paths-across-entity-definitions"
             }
           ]
@@ -85,9 +89,13 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Conditionally generate renditions",
+              "title": "Catching Renditions Generation",
+              "path": "catching-rendition-generation"
+            }, 
+            {
+              "title": "Conditionally Generate Renditions",
               "path": "conditionally-generate-renditions"
-            },
+            },           
             {
               "title": "Developing External Components",
               "path": "developing-external-components"
@@ -112,16 +120,16 @@
           "ignoreLink": false,
           "children": [
             {
+              "title": "Debugging User Security",
+              "path": "debugging-user-security"
+            },
+            {
               "title": "Single-Sign On",
               "path": "sso-on-content-hub"
             },
             {
               "title": "User Groups Setup",
               "path": "user-groups-setup"
-            },
-            {
-              "title": "Debugging User Security",
-              "path": "debugging-user-security"
             }
           ]
         },
@@ -142,7 +150,18 @@
         },
         {
           "title": "Testing and Quality Assurance",
-          "path": "testing-and-qa"
+          "path": "testing-and-qa",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Implementation Testing",
+              "path": "implementation-testing"
+            },
+            {
+              "title": "Quality Assurance",
+              "path": "quality-assurance"
+            }
+          ]
         },
         {
           "title": "Go-Live Checklist",

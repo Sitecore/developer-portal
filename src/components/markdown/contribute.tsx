@@ -43,11 +43,11 @@ const GithubContributionNotice = ({ pageInfo, config }: GithubContributionNotice
           <AlertTitle>Have feedback or a recipe suggestion?</AlertTitle>
           <AlertDescription>
             <List>
+            <ListItem>
+                For recipe suggestions, questions or feedback, please use the <Feedback variant={'link'} projectId="RCPS" issueTypeId="3" product={config?.productFeedbackLabel} /> form.
+              </ListItem>              
               <ListItem>
-                If you have a recipe suggestion to share, please <Link href="/contribute">create a pull request</Link> on the Github repository
-              </ListItem>
-              <ListItem>
-                For questions or feedback, please <Link href={issueLink}>create</Link> an GitHub issue or use the <Feedback variant={'link'} projectId="RCPS" issueTypeId="3" product={config?.productFeedbackLabel} /> form.
+                For direct contribution, please <Link href="/contribute">create a pull request</Link> on the Github repository for review.
               </ListItem>
             </List>
           </AlertDescription>
