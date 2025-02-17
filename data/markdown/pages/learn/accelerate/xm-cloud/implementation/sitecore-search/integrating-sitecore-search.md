@@ -1,10 +1,10 @@
 ---
-title: 'Sitecore Search'
-description: 'Recipe for implementing search experience using Sitecore Search'
+title: 'Integrating Sitecore Search'
+description: 'Implementing a search experience using Sitecore Search with XM Cloud'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-11-20'
+lastUpdated: '2025-02-14'
 ---
 
 ## Context
@@ -12,6 +12,8 @@ lastUpdated: '2024-11-20'
 Majority of web application require a search tool to achieve content search - customers who purchase both XM Cloud and Search must integrate the two products to enable them to leverage Search in the sites built out using XM Cloud.
 
 This article discusses how to integration Sitecore Search with XM Cloud. If you need to integrate a different Search provider, you will need to read these techniques and see how they can be applied to your scenario.
+
+> The XM Cloud embedded Solr service is only for internal use of XM Cloud's UI. This cannot be customized or modified, for search features, search tools such as Sitecore Search should be used.
 
 ## Execution
 
@@ -27,10 +29,12 @@ Sitecore Search has other indexing methods that offer both pull and push methods
 
 Here is a quick overview of the available indexing methods in Sitecore Search:
 
-* Advanced Web Crawler - Allows for indexing content in multiple languages and parsing web pages with JavaScript to construct indexes.
-* Web Crawler - A simple web crawler that has limited configuration options.
-* API Crawler - Used to consume responses from an HTTP API endpoint that returns JSON. Allows for indexing content in multiple languages and parsing the response with JavaScript.
-* Ingestion API - Used to push content into a Sitecore Search Index.
+<ul>
+<li>**Advanced Web Crawler** - Allows for indexing content in multiple languages and parsing web pages with JavaScript to construct indexes.</li>
+<li>**Web Crawler** - A simple web crawler that has limited configuration options.</li>
+<li>**API Crawler** - Used to consume responses from an HTTP API endpoint that returns JSON. Allows for indexing content in multiple languages and parsing the response with JavaScript.</li>
+<li>**Ingestion API** - Used to push content into a Sitecore Search Index.</li>
+</ul>
 
 You can read an overview of how to work with Index Sources in Sitecore Search on our documentation site: [how to index contents](https://doc.sitecore.com/search/en/users/search-user-guide/using-sources-to-index-content.html).
 
@@ -85,7 +89,6 @@ Furthermore, in compliance with GDPR, the product provides the tool to ensure th
 Based on the contract (entitlement), API calls are limited per second and per day. The implementers should always handle rate limiting and handle cases in which they receive the HTTP Status Code 429 (Too Many Requests); in this case, if a retry is needed, it is best to allow for a back-off to avoid going into an infinite retry loop.
 
 For more detail on your entitlement, speak to your Sitecore account representative.
-<br/>
 
 ### Developer experience
 

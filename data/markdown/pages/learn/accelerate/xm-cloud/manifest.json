@@ -239,7 +239,18 @@
         },
         {
           "title": "Sitecore Search",
-          "path": "sitecore-search"
+          "path": "sitecore-search",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Integrating Sitecore Search",
+              "path": "integrating-sitecore-search"
+            },
+            {
+              "title": "Incremental Search Updates",
+              "path": "incremental-search-updates"
+            }
+          ]
         }
       ]
     },
