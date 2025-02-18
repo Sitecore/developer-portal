@@ -48,18 +48,18 @@ This following outlines key testing activities, a structured test plan, and a sa
 |Integrations & Performance| <ul><li>API and third-party integrations</li><li>File uploads, downloads, and rendition generation</li><li>System performance under load</li></ul>|
 
 ### Sample Test Plan
-Testing plans can take various shapes, the below is a structure to start with but customize based on your process and requirements. 
+Testing plans can take various shapes, the below is a structure to start with but customize based on your process and requirements. For each test make sure you track **Pass/Fail**, **Tester**, **Test Date** and place for **Notes** to capture feedback.
 
-| Test ID |  Action |  Page/Area | Expected Result | Pass/Fail | Notes | Tester | Test Date |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| TST-001 | Upload an asset via UI | Create | Asset is uploaded successfully and appears in Content Hub |  |  |  |  |
-| TST-002 | Edit asset metadata in create area | Create | Metadata changes are saved successfully |  |  |  |  |
-| TST-003 | Submit an asset for approval (required fields missing) | Create | System prevents submission and displays validation errors |  |  |  |  |
-| TST-004 | Approve an asset via details page | Review | Asset is moved to the approved state and available for download |  |  |  |  |
-| TST-005 | Find an asset via advanced search | Assets (Search) | Asset is returned in search results |  |  |  |  |
-| TST-006 | Download a rendition | Asset Details  | Correct file rendition is downloaded |  |  |  |  |
-| TST-007 | Share an asset via public link | Asset Details  | Public link is generated and accessible |  |  |  |  |
-| TST-008 | Add an annotation to an asset | Asset Details  | Annotation appears on the asset |  |  |  |  |
+| Test ID |  Action |  Page/Area | Expected Result | 
+| ----------- | ----------- | ----------- | ----------- | 
+| TST-001 | Upload an asset via UI | Create | Asset is uploaded successfully and appears in Content Hub | 
+| TST-002 | Edit asset metadata in create area | Create | Metadata changes are saved successfully |  
+| TST-003 | Submit an asset for approval (required fields missing) | Create | System prevents submission and displays validation errors | 
+| TST-004 | Approve an asset via details page | Review | Asset is moved to the approved state and available for download |
+| TST-005 | Find an asset via advanced search | Assets (Search) | Asset is returned in search results | 
+| TST-006 | Download a rendition | Asset Details  | Correct file rendition is downloaded |  
+| TST-007 | Share an asset via public link | Asset Details  | Public link is generated and accessible |  
+| TST-008 | Add an annotation to an asset | Asset Details  | Annotation appears on the asset | 
 
 
 ## Related Recipes
