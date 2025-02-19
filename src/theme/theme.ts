@@ -7,8 +7,6 @@ import { modalTheme } from './components/modalTheme';
 import breakpoints from './foundations/breakpoints';
 import { proseBaseStyle } from './proseTheme';
 
-import '@fontsource/dm-sans';
-
 export const scdpTheme = extendTheme(
   sitecoreTheme,
   {
@@ -20,12 +18,6 @@ export const scdpTheme = extendTheme(
     components: {
       Card: cardTheme,
       Modal: modalTheme,
-      // Heading: {
-      //   sizes: {
-      //     xl: { fontFamily: 'DM Sans, sans-serif', fontWeight: '400' },
-      //     md: { fontFamily: 'DM Sans, sans-serif', fontWeight: '500' },
-      //   },
-      // },
     },
     sizes: {},
   },
