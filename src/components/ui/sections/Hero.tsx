@@ -30,7 +30,7 @@ export const Hero = ({ description, title, children, productLogo, demoId }: Hero
             {title}
           </Heading>
         )}
-        <Text as="h2" variant="subtle" fontSize={{ base: 'sm', md: 'xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>
+        <Text as="h2" color={'neutral'} fontSize={{ base: 'sm', md: 'xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'normal'} letterSpacing={'0.5'}>
           {description}
         </Text>
         {demoId && <GuidedDemo demoId={demoId} productName={title} productLogo={productLogo} />}
