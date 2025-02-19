@@ -3,7 +3,7 @@ import type { SystemStyleFunction } from '@chakra-ui/theme-tools';
 export const proseBaseStyle: SystemStyleFunction = () => ({
   // h1:where(.prose>:first-child):not(:where([class~=not-prose] *))
   h1: {
-    fontFamily: '"DM Sans", sans-serif',
+    fontFamily: 'heading',
     fontWeight: 'semibold',
     fontSize: { base: '4xl', md: '5xl' },
     // mb: { base: 2, md: 0 },

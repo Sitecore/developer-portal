@@ -11,8 +11,6 @@ import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import '@fontsource/dm-sans';
-import '@fontsource/dm-sans/700.css';
 import { EngageTrackerProvider } from '../components/integrations';
 import { PreviewProvider } from '../context/PreviewContext';
 import { scdpTheme } from '../theme/theme';
