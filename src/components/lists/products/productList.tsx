@@ -53,10 +53,10 @@ export const ProductList: React.FC<ProductListProps> = () => {
 export const ProductListTitle: React.FC<ProductListTitleProps> = ({ title, description, children }) => {
   return (
     <Box>
-      <Heading as="h3" size={'xl'}>
+      <Heading as="h3" size={'xl'} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
         {title}
       </Heading>
-      <Text variant={'large'} my={4}>
+      <Text variant={'large'} my={4} fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>
         {description}
       </Text>
       {children}
@@ -78,10 +78,12 @@ export const ProductListItem: React.FC<ProductListItemProps> = ({ product }) => 
               sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
             />
           </Box>
-          <Heading as="h4" size="md">
+          <Heading as="h4" size="md" fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
             {product.subTitle}
           </Heading>
-          <Text>{product.description}</Text>
+          <Text fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>
+            {product.description}
+          </Text>
           <Spacer />
           <LinkButton href={product.linkHref} text={product.linkText} variant={'outline'} alignContent={'flex-end'} />
         </Flex>

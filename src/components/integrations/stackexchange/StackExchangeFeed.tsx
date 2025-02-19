@@ -16,7 +16,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
   return (
     <Card shadow={'none'} {...rest} background={'transparent'}>
       <CardHeader justifyContent={'space-between'} display={{ base: 'inline', md: 'flex' }} px={0}>
-        <Heading as={'h3'} size={{ base: 'lg', md: 'xl' }}>
+        <Heading as={'h3'} size={{ base: 'lg', md: 'xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
           {title ? title : `The Latest on Sitecore StackExchange`}
         </Heading>
         <TextLink href={`https://sitecore.stackexchange.com/`} text={'See all questions on StackExchange'} />
