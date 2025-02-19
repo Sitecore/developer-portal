@@ -44,7 +44,6 @@
     "@chakra-ui/react": "^2.10.3",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@fontsource/dm-sans": "^5.1.1",
     "@graphql-typed-document-node/core": "^3.2.0",
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
