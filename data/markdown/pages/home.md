@@ -1,6 +1,6 @@
 ---
 title: 'The platform for forward-thinking technologists'
-description: 'From CMS to DXP, our modular solutions empower you to create exceptional digital experiences.'
+description: 'From CMS to DXP, our solutions empower you to create exceptional digital experiences.'
 stackexchange: ['/questions?tab=Newest']
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'
