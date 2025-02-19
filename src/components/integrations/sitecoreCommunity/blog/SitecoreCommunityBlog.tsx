@@ -39,7 +39,7 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: 
   return (
     <Card variant={'unstyled'} {...rest} size={{ base: 'xs', md: 'md' }}>
       <CardHeader justifyContent={'space-between'} display={'flex'} py={8} px={0}>
-        <Heading as="h3" size={listItem ? 'md' : 'xl'}>
+        <Heading as="h3" size={listItem ? 'md' : 'xl'} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
           Latest community blog posts
         </Heading>
 

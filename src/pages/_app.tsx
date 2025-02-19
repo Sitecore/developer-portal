@@ -1,7 +1,7 @@
-import { Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 import { IsSearchEnabled, SEARCH_CONFIG } from '@lib/search';
 import { PageController, trackEntityPageViewEvent, WidgetsProvider } from '@sitecore-search/react';
-import sitecoreTheme, { toastOptions } from '@sitecore/blok-theme';
+import { toastOptions } from '@sitecore/blok-theme';
 import { Footer } from '@src/components/navigation/Footer';
 import Navbar from '@src/components/navigation/NavBar';
 import { AppProps } from 'next/app';
@@ -10,11 +10,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 
+import { UserProvider } from '@auth0/nextjs-auth0/client';
+import '@fontsource/dm-sans';
+import '@fontsource/dm-sans/700.css';
 import { EngageTrackerProvider } from '../components/integrations';
 import { PreviewProvider } from '../context/PreviewContext';
-import { scdpTheme } from '../theme';
-
-import { UserProvider } from '@auth0/nextjs-auth0/client';
+import { scdpTheme } from '../theme/theme';
 
 const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
 
@@ -88,7 +89,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SearchWrapper>
-      <ChakraProvider theme={extendTheme(sitecoreTheme, scdpTheme)} toastOptions={toastOptions}>
+      <ChakraProvider theme={scdpTheme} toastOptions={toastOptions}>
         <UserProvider>
           <EngageTrackerProvider>
             <PreviewProvider hostname={hostname}>

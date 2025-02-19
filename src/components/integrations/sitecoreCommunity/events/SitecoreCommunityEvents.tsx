@@ -19,7 +19,7 @@ export const SitecoreCommunityEvents = ({ data, title, ...rest }: SitecoreCommun
   return (
     <Card shadow={'none'} {...rest}>
       <CardHeader justifyContent={'space-between'} display={'flex'}>
-        <Heading as={'h3'} size={'xl'}>
+        <Heading as={'h3'} size={'xl'} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
           {title ? title : 'Events'}
         </Heading>
         <TextLink href={'https://community.sitecore.com/community?id=community_forum&sys_id=7a84272f1b313c10486a4083b24bcbd5'} text={'See all'} />
