@@ -19,7 +19,6 @@ import {
   Grid,
   GridItem,
   Heading,
-  HStack,
   Icon,
   Image,
   Modal,
@@ -29,8 +28,6 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Text,
-  useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import { Changelog } from '@lib/changelog';
@@ -86,7 +83,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
     <TrackPageView product={currentProduct}>
       <Layout title={changelogEntry.title} section={title} description={changelogEntry.title}>
         <Hero title={title} description={description}>
-          <HStack>
+          {/* <HStack>
             <Text variant={'sm'}>Powered by</Text>
             <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
               <Image
@@ -96,7 +93,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 height={18}
               />
             </Link>
-          </HStack>
+          </HStack> */}
         </Hero>
         <VerticalGroup>
           <CenteredContent py={8} gap={8}>

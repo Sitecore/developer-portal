@@ -8,13 +8,15 @@ export const GenericList = (props: GenericListData) => {
   const cols = props.column || 4;
   const cardVariant = props.cardVariant || 'elevated';
 
+  let buttonVariant = cardVariant == 'blurred' ? 'text' : 'outline';
+
   return (
     <Box>
-      <Heading as="h2" mb={8} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
+      <Heading as="h2" mb={8} fontWeight={'500'}>
         {props.title}
       </Heading>
       {props.subtitle != '' && (
-        <Heading as="h3" size={'sm'} pb={6} mb={8} fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>
+        <Heading as="h3" size={'md'} pb={6} mb={8}>
           {props.subtitle}
         </Heading>
       )}
@@ -37,7 +39,7 @@ export const GenericList = (props: GenericListData) => {
               <CardBody padding={0}>
                 <Stack direction={['column', 'row', 'column']} spacing={5} padding={0}>
                   <Box padding={5}>
-                    <Heading as="h3" size="sm" mb={2}>
+                    <Heading as="h3" size="lg" mb={2}>
                       {item.title}
                     </Heading>
                     <Text>{item.description}</Text>
@@ -51,7 +53,7 @@ export const GenericList = (props: GenericListData) => {
               </CardBody>
               <CardFooter display={{ base: 'none', lg: 'block' }}>
                 <HStack as={'span'} mt={2}>
-                  <LinkButton href={item.href} text={item.linkText} variant={'text'} />
+                  <LinkButton href={item.href} text={item.linkText} variant={buttonVariant} colorScheme="neutral" />
                 </HStack>
               </CardFooter>
             </Card>

@@ -53,45 +53,44 @@ export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
 
   const MetaInfo = (
     <Stack gap="4" direction={{ base: 'column', sm: 'row' }}>
-      <Wrap>
-        {item.products != null && item.products?.length > 1 ? (
-          <HStack spacing={0}>
-            <Popover placement="bottom-start" trigger="click">
-              <PopoverAnchor>{item.products != null && <ProductIcon product={item.products[0]} />}</PopoverAnchor>
-              <PopoverTrigger>
-                <Button variant="unstyled" size={'sm'} hideBelow={'sm'} ml={2}>
+      {item.products != null && item.products?.length > 1 ? (
+        <HStack spacing={0}>
+          <Popover placement="bottom-start" trigger="click">
+            <PopoverAnchor>{item.products != null && <ProductIcon product={item.products[0]} />}</PopoverAnchor>
+            <PopoverTrigger>
+              <Wrap>
+                <Button variant="unstyled" size={''} hideBelow={'sm'} ml={2}>
                   + {item.products.length - 1} <Hide below="md">{item.products.length == 1 ? 'other' : 'others'}</Hide>
                 </Button>
-              </PopoverTrigger>
-              <PopoverContent p={2} maxW={'3xs'}>
-                <PopoverArrow />
-                <Stack>
-                  {item.products &&
-                    item.products.slice(1).map((product, key) => (
-                      <HStack key={key}>
-                        <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
-                        <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
-                          <Text color={'chakra-body-text'}>{product.productName}</Text>
-                        </Link>
-                      </HStack>
-                    ))}
-                </Stack>
-              </PopoverContent>
-            </Popover>
-          </HStack>
-        ) : (
-          item.products != null && <ProductIcon product={item.products[0]} />
-        )}
+              </Wrap>
+            </PopoverTrigger>
+            <PopoverContent p={2} maxW={'3xs'}>
+              <PopoverArrow />
+              <Stack>
+                {item.products &&
+                  item.products.slice(1).map((product, key) => (
+                    <HStack key={key}>
+                      <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
+                      <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
+                        <Text color={'chakra-body-text'}>{product.productName}</Text>
+                      </Link>
+                    </HStack>
+                  ))}
+              </Stack>
+            </PopoverContent>
+          </Popover>
+        </HStack>
+      ) : (
+        item.products != null && <ProductIcon product={item.products[0]} />
+      )}
+      <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
+      {item.changeType.length > 0 &&
+        item.changeType.map((changeTypeItem, key) => (
+          <Tag colorScheme={colorScheme(changeTypeItem.name)} key={key}>
+            {changeTypeItem.name}
+          </Tag>
+        ))}
 
-        <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
-
-        {item.changeType.length > 0 &&
-          item.changeType.map((changeTypeItem, key) => (
-            <Tag colorScheme={colorScheme(changeTypeItem.name)} key={key}>
-              {changeTypeItem.name}
-            </Tag>
-          ))}
-      </Wrap>
       <Wrap>
         {item.breakingChange && (
           <Tooltip label="This change could require manual updates" aria-label="Action required">

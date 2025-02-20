@@ -67,13 +67,13 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup background={'chakra-subtle-bg'}>
+        <VerticalGroup bg="chakra-subtle-bg">
           <CenteredContent>
             <ProductList />
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup backgroundImage={'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/bg-power-gradient'} backgroundSize={'cover'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
+        <VerticalGroup backgroundImage={{ base: '/images/sc_power-gradient-mobile.svg', md: '/images/sc_power-gradient-desktop.svg' }} backgroundSize={'cover'} color={'primary.50'} textAlign={{ base: 'left', md: 'center' }}>
           <CenteredContent>
             <GenericList title={platformData.title} subtitle={platformData.subtitle} data={platformData.data} column={3} width={{ base: 'full', md: '2xs' }} cardVariant="blurred" />
           </CenteredContent>
