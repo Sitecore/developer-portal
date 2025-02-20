@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, useColorModeValue, VisuallyHidden, Wrap } from '@chakra-ui/react';
 
 import { TextLink } from '../../links';
 import { StackExchangeQuestion } from './stackExchange';
@@ -39,16 +39,18 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
                 </Link>
                 <VisuallyHidden>Tags:</VisuallyHidden>
                 {question.tags.length && (
-                  <Stack direction={{ base: 'column', md: 'row' }}>
-                    {question.tags.map((tag, i) => (
-                      <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')} key={i}>
-                        <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
-                          {tag}
-                          <VisuallyHidden>Opens in a new tab</VisuallyHidden>
-                        </Button>
-                      </Link>
-                    ))}
-                  </Stack>
+                  <Wrap>
+                    <Stack direction={{ base: 'column', xl: 'row' }} hideBelow={'md'}>
+                      {question.tags.map((tag, i) => (
+                        <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')} key={i}>
+                          <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
+                            {tag}
+                            <VisuallyHidden>Opens in a new tab</VisuallyHidden>
+                          </Button>
+                        </Link>
+                      ))}
+                    </Stack>
+                  </Wrap>
                 )}
               </Stack>
             </Flex>
