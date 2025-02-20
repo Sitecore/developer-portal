@@ -26,11 +26,11 @@ export const Hero = ({ description, title, children, productLogo, demoId }: Hero
       <CenteredContent gap={2} py={{ base: 6, md: 12, xl: 16 }} direction={{ base: 'column', md: 'column' }}>
         {productLogo && <Image src={useColorModeValue(GetProductLogo(productLogo, 'Light'), GetProductLogo(productLogo, 'Dark'))} alt={`${title} logo`} width={'280'} height={'60'} />}
         {!productLogo && (
-          <Heading as="h1" fontSize={{ base: '2xl', md: '4xl', xl: '6xl' }}>
+          <Heading as="h1" fontSize={{ base: '2xl', md: '4xl', xl: '6xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
             {title}
           </Heading>
         )}
-        <Text as="h2" variant="subtle" fontSize={{ base: 'sm', md: 'md' }}>
+        <Text as="h2" color={'neutral'} fontSize={{ base: 'sm', md: 'xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'normal'} letterSpacing={'0.5'}>
           {description}
         </Text>
         {demoId && <GuidedDemo demoId={demoId} productName={title} productLogo={productLogo} />}

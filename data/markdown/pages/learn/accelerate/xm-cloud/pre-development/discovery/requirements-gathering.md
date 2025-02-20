@@ -64,6 +64,7 @@ Since content management and personalization are core features of XM Cloud, this
 - What are the user experience (UX) expectations for the solution?
 - Are there any accessibility requirements?
 - What is the level of front-end complexity (e.g., JavaScript frameworks, third-party tools)?
+- What are the search experienced required for the website, both for global search and for context based searches (such as a listing page for articles)?  The XM Cloud embedded Solr service is only for internal use of XM Cloud's UI. This cannot be customized or modified and search tools such as [Sitecore Search](https://doc.sitecore.com/search) should be used.
 
 ### Technical Requirements
 

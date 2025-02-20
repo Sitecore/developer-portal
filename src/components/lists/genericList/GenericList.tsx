@@ -10,11 +10,11 @@ export const GenericList = (props: GenericListData) => {
 
   return (
     <Box>
-      <Heading as="h2" mb={8}>
+      <Heading as="h2" mb={8} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
         {props.title}
       </Heading>
       {props.subtitle != '' && (
-        <Heading as="h3" size={'sm'} pb={6} mb={8}>
+        <Heading as="h3" size={'sm'} pb={6} mb={8} fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>
           {props.subtitle}
         </Heading>
       )}

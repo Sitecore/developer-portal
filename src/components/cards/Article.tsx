@@ -14,7 +14,7 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
   return (
     <Card variant={'outlineRaised'} size={'md'} {...rest}>
       <CardHeader>
-        <Text as="h4" fontSize={'lg'} fontWeight={'semibold'}>
+        <Text as="h4" fontSize={'lg'} fontWeight={'500'} fontFamily={'"DM Sans", sans-serif'} letterSpacing={'-0.195'}>
           {title}
         </Text>
       </CardHeader>

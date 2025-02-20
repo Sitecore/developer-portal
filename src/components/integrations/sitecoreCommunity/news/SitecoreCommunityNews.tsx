@@ -22,7 +22,7 @@ export const SitecoreCommunityNews = ({ title, data, hideCategory, listItem }: S
   return (
     <Card variant={'unstyled'}>
       <CardHeader justifyContent={'space-between'} display={'flex'} px="0">
-        <Heading as={'h3'} size={'xl'}>
+        <Heading as={'h3'} size={'xl'} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
           {title ? title : 'News and Announcements'}
         </Heading>
         <TextLink href={'https://community.sitecore.com/community?id=community_forum&sys_id=af85dddf1bf17810486a4083b24bcb00'} text={'See all'} />

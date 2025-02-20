@@ -1,5 +1,3 @@
-'use client';
-
 import { ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -70,6 +68,17 @@ export type NavBarProps = {
   searchEnabled?: boolean;
 };
 
+function getLogoByPath(asPath: string): string | undefined {
+  // Default to developer logo
+  let logo: Product = Product.SitecoreDevelopers;
+
+  // Use the Sitecore logo for the roadmap pages
+  if (asPath.includes('/roadmap')) {
+    logo = Product.Sitecore;
+  }
+  return useColorModeValue(GetProductLogoByVariant(logo, Variant.Light, Type.Full), GetProductLogoByVariant(logo, Variant.Dark, Type.Full));
+}
+
 export default function Navbar({ searchEnabled }: NavBarProps): React.ReactNode {
   const { isOpen, onToggle } = useDisclosure();
   const [focusedOnSearch, setFocusedOnSearch] = useState(false);
@@ -82,15 +91,8 @@ export default function Navbar({ searchEnabled }: NavBarProps): React.ReactNode 
         <Stack direction={'row'} w="full" alignItems={'center'} justifyContent={'space-between'}>
           <HStack flexShrink={0}>
             {/* Logo */}
-            <Link href="/">
-              <Image
-                p="1"
-                h="8"
-                w={'auto'}
-                align="left"
-                alt={'Go to the homepage'}
-                src={useColorModeValue(GetProductLogoByVariant(Product.SitecoreDevelopers, Variant.Light, Type.Full), GetProductLogoByVariant(Product.SitecoreDevelopers, Variant.Dark, Type.Full))}
-              />
+            <Link href="/" width={'270px'}>
+              <Image p="1" h="8" w={'auto'} align="left" alt={'Go to the homepage'} src={getLogoByPath(router.asPath)} />
             </Link>
 
             {/* Desktop menu (hide under xl or lower) */}

@@ -4,7 +4,7 @@ description: 'Setting up workflow on a Page and Components level'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-01-31'
+lastUpdated: '2025-02-14'
 ---
 
 ## Context
@@ -19,147 +19,130 @@ It's recommended to establish a workflow for all content items. This prevents pr
 
 ### Migration Considerations
 
-If you are currently on XP/XM and migrating to XM Cloud these are some specific considerations that you should consider when making this transition.  Two specific focuses that should be considered are any .NET customizations that have been made to affect items controlled by workflow as well as the introduction of webhooks which can allow for new ways to implement workflow.  In addition to those considerations, there are existing implementations that should be reviewed and changed based on the information below:
+If you are currently on XP/XM and migrating to XM Cloud there are some specific considerations that you should consider when making this transition. Two specific focuses that should be considered are any .NET customizations that have been made to affect items controlled by workflow as well as the introduction of webhooks which can allow for new ways to implement workflow. In addition to these considerations, there are existing implementations that should be reviewed and changed based on the information below:
 
-Email Actions should be implement with a Webhook Submit Action as detailed further down.
+Email Actions should be implemented with a Webhook Submit Action as detailed further down.
 
-### Configure Page Workflows
+### Configure Page and Datasource Workflows
 
-All pages and the templates that drive those pages should be configured with workflow, you can refer to [documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow-cookbook.html) or use the steps below to configure workflow for your pages.
+Two separate workflows are recommended, one for page items and the other for datasources. This allows the main page workflow to stay clean and not cluttered. At a minimum this would be a two stage with draft and approved. The Page Workflow has a Datasource Workflow Action which points to the Approve command on the Datasource Workflow. This is important because it allows you to define the scope which allow datasources like the link list and its child items for example to be moved through the workflow successfully.
 
-<ol>
-<li>First, make sure you have created a workflow and defined your states.</li>
-<li>Assign it using Standard Values to the page template - Make sure you have View > Standard Fields enabled in the Content Editor. Go to the <code>Workflow</code> tab and set both <code>Workflow</code> and <code>Default Workflow</code>to the workflow that you created in step 1.</li>
-</ol>
+1. Create a page and datasource workflow and define your states.
+2. If you have configured your workflow states similar to the sample workflow you will need to insert [datasource workflow actions](https://doc.sitecore.com/xmc/en/developers/xm-cloud/assign-a-data-source-workflow-action-in-sxa.html) to Submit, Approve and Reject actions.
+3. For these actions you can specify the Scope to determine what child datasource items should be processed by this action. These should point to the corresponding action in the datasource workflow. See below examples for more information.
 
-<figure>
-<img src="/images/learn/accelerate/xm-cloud/StandardValuesPageWorkflow.jpg" alt="Standard Values for Workflow"/>
-<figcaption>Standard Values for Workflow</figcaption>
-</figure>
+<Image src="/images/learn/accelerate/xm-cloud/workflows9.png" title="Page workflow submit datasource action"/>
 
-### Configure Datasource Workflows
-It is important to not only configure workflow for your pages, but also the separate data source component items on a given page, so that these changes do not make it into your published website prematurely.  To do this, you will need to configure workflow on each individual component, however due to the nature of SXA, you’ll do that using the steps below:
-<ol>
-<li>Make sure you have <code>Standard Values</code> module installed for your website.</li>
-<li>In your website navigate to the Content Editor and ensure your components are defined under the <code>Standard Values</code> item in the SXA website settings folder. If it isn’t, right click on <code>Standard Values</code> and click on <code>Insert</code> and select <code>Standard Values</code> which will present a dialog</li>
-<li>Select the<code>Datasource Templates</code> tab in the dialog and select any templates that you have not configured yet and click okay.</li>
-<li>Under the <code>Standard Values</code> item, you should see a folder for data sources that contains an item for each of the data source components. Click on each and configure the workflow the same as you would for a page.</li>
-</ol>
+<Image src="/images/learn/accelerate/xm-cloud/workflows10.png" title="Page workflow approve datasource action"/>
 
-<figure>
-<img src="/images/learn/accelerate/xm-cloud/ComponentDatasourceWorkflow.jpg" alt="Standard Values for Datasource"/>
-<figcaption>Standard Values for Datasource</figcaption>
-</figure>
+<Image src="/images/learn/accelerate/xm-cloud/workflows11.png" title="Page workflow reject datasource action"/>
 
-If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB XM Cloud components then all of the necesary configuration should already be in place including base templates.
+<Image src="/images/learn/accelerate/xm-cloud/workflows12.png" title="Datasource workflow"/>
 
-Note that only templates that have the <code>_PerSiteStandardValues</code> base template assigned to them appear in the dialog box. You can find the base template here: */sitecore/Templates/Foundation/Experience Accelerator/StandardValues/*. If for some reason your component does not appear in the dialog box when trying to add standard values this would be the first thing to check. Detailed steps are available in [Defining standard values](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) in the documentation.
+### Assign Page Workflow
+
+1. Assign it using Standard Values to the page template.
+2. Enable `View > Standard Fields` in the Content Editor.
+3. Go to the Workflow tab and set the Default Workflow to the workflow you created.
+
+<Image src="/images/learn/accelerate/xm-cloud/workflows1.png" title="StandardValuesPageWorkflow"/>
+
+### Assign SXA Datasource Workflow
+
+It's important to configure workflow for both pages and the separate data source component items on a page. To do this:
+
+1. Ensure the Standard Values module is installed for your SXA website.
+2. Navigate to the Content Editor and define your components under the Standard Values item in the SXA website settings folder.
+3. Right-click on Standard Values and click on `Insert > Standard Values` to open a dialog.
+4. Select the Datasource Templates tab and configure any unconfigured templates.
+5. For each data source component, configure the workflow the same way as a page.
+
+<Image src="/images/learn/accelerate/xm-cloud/workflows2.png" title="ComponentDatasourceWorkflow"/>
 
 If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB XM Cloud components then all of the necessary configuration should already be in place including base templates.
 
-Note that only templates that have the **_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: */sitecore/Templates/Foundation/Experience Accelerator/StandardValues/*. If for some reason your component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the docs site.
+Note that only templates that have the **\_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: _/sitecore/Templates/Foundation/Experience Accelerator/StandardValues/_. If for some reason your component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the docs site.
 
 ### Configuration of Users/Roles
 
-For each state of workflow that requires a specific set of users to manage items in that state of workflow, you should create a Sitecore role that represents the commands and states that this type of user should be able to manage. Configuring permissions to an individual user is not recommended, but rather these roles should be assigned to users based on their needs to manage specific states in workflow.
+For each workflow state that requires a specific set of users, create a Sitecore role representing the commands and states this type of user should manage. Assign roles to users rather than configuring permissions for individual users.
 
-Let’s take the Sample Workflow as example here. And let’s use two roles <strong>“Editor”</strong> and <strong>“Super Editor”</strong>. The Editor should be able to push an item from Draft to Awaiting Approval. The Super Editor then should be able to either way approve or Reject the Item. We can easily create those roles in the Role Manager in the Sitecore Backend and then open the Security Editor to apply security settings.
+#### Example: Sample Workflow with "Editor" and "Super Editor" Roles
 
-<figure>
-<img src="/images/learn/accelerate/xm-cloud/workflows3.png" alt="Example Rights for Editor"/>
-<figcaption>Example Rights for Editor</figcaption>
-</figure>
+- **Editor**: Can push an item from Draft to Awaiting Approval.
+- **Super Editor**: Can approve or reject the item.
 
-<figure>
-<img src="/images/learn/accelerate/xm-cloud/workflows4.png" alt="Access Viewer for Editor"/>
-<figcaption>Access Viewer for Editor</figcaption>
-</figure>
+You can create these roles in the Role Manager and use the Security Editor to apply security settings.
 
+<Image src="/images/learn/accelerate/xm-cloud/workflows3.png" title="exampleRightsEditor"/>
+*Example rights for Editor*
 
-As you can see, the “Editor” gets workflow execute rights for the Sample workflow. In addition we specifically deny the Approve and Reject, so users with the Editor Role are not permitted to execute that. 
+<Image src="/images/learn/accelerate/xm-cloud/workflows4.png" title="accessViewerEditor"/>
+*Access Viewer for Editor*
 
-<figure>
-<img src="/images/learn/accelerate/xm-cloud/workflows5.png" alt="Example rights for Super Editor"/>
-<figcaption>Example rights for Super Editor</figcaption>
-</figure>
+As shown, Editors get workflow execution rights, but Approve and Reject actions are specifically denied.
 
-<figure>
-<img src="/images/learn/accelerate/xm-cloud/workflows6.png" alt="Access Viewer for Super Editor"/>
-<figcaption>Access Viewer for Super Editor</figcaption>
-</figure>
+<Image src="/images/learn/accelerate/xm-cloud/workflows5.png" title="exampleRightsSuperEditor"/>
+*Example rights for Super Editor*
 
-On the other side we just allow the whole workflow to be executed by the <strong>“Super Editor”</strong> with no restrictions. 
+<Image src="/images/learn/accelerate/xm-cloud/workflows6.png" title="accessViewerSuperEditor"/>
+*Access Viewer for Super Editor*
 
-Based on the following rights, if an editor tries to push an item through the workflow it will end up in Awaiting Approval with no further rights to push the item further 
+A **Super Editor** has full workflow execution rights with no restrictions. When an Editor pushes an item, it will stop at Awaiting Approval, while Super Editors can push the item further.
 
-<figure>
-<img src="/images/learn/accelerate/xm-cloud/workflows7.png" alt="No further workflow options for Editor"/>
-<figcaption>No further workflow options for Editor</figcaption>
-</figure>
+<Image src="/images/learn/accelerate/xm-cloud/workflows7.png" title="limitedOptionsEditor"/>
+*No further workflow options for Editor*
 
-Now, if we have a look at a user, which has the Super Editor Role, we see, that there are more options available now.
+<Image src="/images/learn/accelerate/xm-cloud/workflows8.png" title="extendedOptionsSuperEditor"/>
+*Further workflow options for Super Editor*
 
-<figure>
-<img src="/images/learn/accelerate/xm-cloud/workflows8.png" alt="Further workflow options for Super Editor"/>
-<figcaption>Further workflow options for Super Editor</figcaption>
-</figure>
+It’s also advised not to assign the Administrator role to content editors, as administrators can override workflow states and interfere with normal operation.
 
-It is also advised not to assign the administrator role to anyone working with Content. This is because administrators can override workflow states and often interfere with its normal operation.
-
-## Insights
 ### Using Webhooks to Send Notifications
-If your requirements on workflow state the need of sending email notifications - these cab be done using a Webhook to trigger when an item reaches a specific state in a workflow. To configure this type of flow, you can follow some of the helpful information/steps below.
 
-> Although the below is for email notifications, other types of integrations can be done as required on your scope.
+You can now trigger sending emails or notifications via webhooks when an item reaches a specific state in the workflow. Follow the steps below:
 
-1. Create a new Webhook Submit Action under a specific state or command, depending on your desired needs. For example we can create this Webhook Submit Action under the <code>Approved</code> state, which will then send the following payload to the endpoint that we specify in this item.
+1. Create a new Webhook Submit Action under a specific state or command.
+2. Example payload sent by the webhook:
 
+   ```json
+   {
+     "ActionID": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
+     "ActionName": "Name",
+     "Comments": [],
+     "DataItem": {
+       "Language": "en",
+       "Version": 4,
+       "Id": "f0b5226d-14ce-4dad-9b7b-37539d45ed7c",
+       "Name": "Home",
+       "ParentId": "43bd6a7c-b8a8-4c07-8935-123fe1d0d2a1",
+       "TemplateId": "4d4931c1-2ecf-4a27-a5ce-edbe6237e0d0",
+       "TemplateName": "Page",
+       "MasterId": "45cf9f42-b3ac-4412-aab9-f8441c7e448e",
+       "SharedFields": [],
+       "UnversionedFields": [],
+       "VersionedFields": []
+     },
+     "Message": "",
+     "NextState": null,
+     "PreviousState": {
+       "DisplayName": "Draft",
+       "FinalState": false,
+       "Icon": "Software/16x16/jar.png",
+       "StateID": "{721CD32A-7489-475E-9C7A-24C8C7DE1DE5}",
+       "PreviewPublishingTargets": []
+     },
+     "UserName": "sitecore\\john.doe@example.com",
+     "WorkflowName": "Simple Page Workflow",
+     "WebhookItemId": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
+     "WebhookItemName": "Name"
+   }
+   ```
 
-    ```json
-    {
-      "ActionID": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
-      "ActionName": "Name",
-      "Comments": [],
-      "DataItem": {
-        "Language": "en",
-        "Version": 4,
-        "Id": "f0b5226d-14ce-4dad-9b7b-37539d45ed7c",
-        "Name": "Home",
-        "ParentId": "43bd6a7c-b8a8-4c07-8935-123fe1d0d2a1",
-        "TemplateId": "4d4931c1-2ecf-4a27-a5ce-edbe6237e0d0",
-        "TemplateName": "Page",
-        "MasterId": "45cf9f42-b3ac-4412-aab9-f8441c7e448e",
-        "SharedFields": [],
-        "UnversionedFields": [],
-        "VersionedFields": []
-      },
-      "Message": "",
-      "NextState": null,
-      "PreviousState": {
-        "DisplayName": "Draft",
-        "FinalState": false,
-        "Icon": "Software/16x16/jar.png",
-        "StateID": "{721CD32A-7489-475E-9C7A-24C8C7DE1DE5}",
-        "PreviewPublishingTargets": []
-      },
-      "UserName": "sitecore\\john.doe@example.com",
-      "WorkflowName": "Simple Page Workflow",
-      "WebhookItemId": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
-      "WebhookItemName": "Name"
-    }
-    ```
+3. The webhook sends a `POST` request to the specified URL.
+4. Configure the URL and authorization details for your endpoint.
 
-2. The webhook will send a POST request to the URL that you provided.
-3. Within the Webhook Submit Action you will configure the URL and Authorization details for the url that you are specifying.  If your endpoint requires additional authorization steps before sending the request, use the [Walkthrough to configure authorization](https://doc.sitecore.com/xp/en/developers/103/sitecore-experience-manager/walkthrough--using-an-authorization-item.html) to configure this item before completing the configuration of the Webhook Submit Action.
-
-
-## Related Recipes
-
-<Row columns={2}>
-  <Link title="Creating New Components" link="/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components" />
-</Row>
-
-## Related Documentation
+### Related Documentation
 
 <Row columns={2}>
   <Link title="Workflow" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow.html" />
