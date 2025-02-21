@@ -61,7 +61,7 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
                 <ChangelogFilter
                   id="productSelector"
                   label="Products"
-                  placeholder="Select one or more products"
+                  placeholder="Select products"
                   options={getProductOptions()}
                   onSelectChange={function (selectedValues: Array<Option>): void {
                     onProductsChange(selectedValues);
@@ -76,7 +76,7 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
               <ChangelogFilter
                 id="changeSelector"
                 label="Changes"
-                placeholder="Filter by one or more changes"
+                placeholder="Select changes"
                 options={getChangeTypeOptions()}
                 onSelectChange={function (selectedValues: Array<Option>): void {
                   setSelectedChange(selectedValues);
