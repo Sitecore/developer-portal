@@ -24,7 +24,7 @@ const BreadcrumbNav = ({ config, currentPage, enabled = false, hideCurrentPage =
   }
 
   return (
-    <Breadcrumb>
+    <Breadcrumb mb={4}>
       <BreadcrumbItem>
         <BreadcrumbLink href={config.path}>{config.title}</BreadcrumbLink>
       </BreadcrumbItem>
