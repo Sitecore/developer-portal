@@ -67,13 +67,13 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
           <Box width="full" maxW={'6xl'} as="main" minH={'calc(100vh - 230px)'} paddingX={{ base: 4, md: 'inherit' }}>
             {/* {sectionTitles && <InPageNavSmall hideFrom={'xl'} titles={sectionTitles} />} */}
             <CenteredContent>
-              <Stack gap={4}>
+              <Stack gap={2} mb={4}>
                 <DropDownNavigation config={sidebarConfig} key={router.asPath} />
                 <BreadcrumbNav enabled={sidebarConfig.enableBreadcrumb} currentPage={pageInfo} config={sidebarConfig} hideCurrentPage />
-                <Heading as="h1" fontSize={{ base: '2xl', md: '4xl', xl: '6xl' }} my={1}>
+                <Heading as="h1" fontSize={{ base: '2xl', md: '4xl', xl: '6xl' }} fontWeight={'400'}>
                   {pageInfo.title}
                 </Heading>
-                <Text as="h2" variant="subtle" fontSize={{ base: 'sm', md: 'md' }}>
+                <Text as="h2" color={'neutral'} fontSize={{ base: 'sm', md: 'xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'normal'} letterSpacing={'0.5'}>
                   {pageInfo.description}
                 </Text>
               </Stack>

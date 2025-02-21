@@ -4,15 +4,17 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
   // h1:where(.prose>:first-child):not(:where([class~=not-prose] *))
   h1: {
     fontFamily: 'heading',
-    fontWeight: 'semibold',
+    fontWeight: '500',
     fontSize: { base: '4xl', md: '5xl' },
+    lineHeight: '110%',
     mb: { base: 2, md: 0 },
   },
   h2: {
     fontFamily: 'heading',
-    fontWeight: 'semibold',
-    fontSize: { base: '2xl', md: '3xl' },
-    mb: '0.5rem',
+    fontWeight: '500',
+    lineHeight: '110%',
+    fontSize: { base: '3xl', md: '4xl' },
+    mb: '1.5rem',
   },
 
   h3: {
@@ -24,7 +26,7 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
   },
   h4: {
     fontFamily: 'heading',
-    fontWeight: 'semibold',
+    fontWeight: '700',
     fontSize: { base: 'md', md: 'lg' },
     mt: { base: 0, md: 0 },
     mb: '0.5rem',
