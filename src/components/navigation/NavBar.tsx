@@ -34,7 +34,6 @@ import React, { useState } from 'react';
 // import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/assets';
 
-import { PreviewModeSwitch } from './PreviewModeSwitch';
 
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { PreviewSearchInput, SearchInput } from '../integrations/sitecore-search';
@@ -91,7 +90,7 @@ export default function Navbar({ searchEnabled }: NavBarProps): React.ReactNode 
         <Stack direction={'row'} w="full" alignItems={'center'} justifyContent={'space-between'}>
           <HStack flexShrink={0}>
             {/* Logo */}
-            <Link href="/" width={'270px'}>
+            <Link href="/" width={{ base: 'auto', md: '270px' }}>
               <Image p="1" h="8" w={'auto'} align="left" alt={'Go to the homepage'} src={getLogoByPath(router.asPath)} />
             </Link>
 
@@ -128,7 +127,6 @@ export default function Navbar({ searchEnabled }: NavBarProps): React.ReactNode 
             </>
           )}
 
-          <PreviewModeSwitch />
           <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
           <DarkModeSwitch />
           <QuickStartMenu key={router.asPath} />

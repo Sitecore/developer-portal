@@ -13,6 +13,7 @@ export const MultiSelect = (props: any) => {
       components={{
         ...props.components,
       }}
+      useBasicStyles
       menuPlacement={props.menuPlacement ?? 'auto'}
       isMulti
       closeMenuOnSelect={false}

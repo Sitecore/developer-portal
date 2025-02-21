@@ -6,15 +6,13 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     fontFamily: 'heading',
     fontWeight: 'semibold',
     fontSize: { base: '4xl', md: '5xl' },
-    // mb: { base: 2, md: 0 },
+    mb: { base: 2, md: 0 },
   },
   h2: {
     fontFamily: 'heading',
     fontWeight: 'semibold',
     fontSize: { base: '2xl', md: '3xl' },
-    scrollMarginTop: '5rem',
-    // mt: { base: 0, md: 0 },
-    // mb: { base: 0, md: 0 },
+    mb: '0.5rem',
   },
 
   h3: {
@@ -22,14 +20,14 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     fontWeight: '600',
     fontSize: { base: 'xl', md: '2xl' },
     mt: { base: 2, md: 8 },
-    mb: { base: 0, md: 4 },
+    mb: '0.5rem',
   },
   h4: {
     fontFamily: 'heading',
     fontWeight: 'semibold',
     fontSize: { base: 'md', md: 'lg' },
     mt: { base: 0, md: 0 },
-    mb: 2,
+    mb: '0.5rem',
   },
   p: {
     fontFamily: 'body',
