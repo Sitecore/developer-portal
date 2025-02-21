@@ -1,6 +1,6 @@
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 import { Box, Button, Card, CardBody, Flex, Grid, GridItem, Heading, LinkBox, LinkOverlay, SimpleGrid, Spacer, Text, useColorModeValue } from '@chakra-ui/react';
-import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import Layout from '@src/layouts/Layout';
 import Image from 'next/image';
@@ -10,6 +10,7 @@ import { PromoCardProps, PromoList } from '../components/cards';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
 import { GetProductLogo } from '../lib/assets';
+import { ManifestConfig } from '../lib/interfaces/manifest';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ChildOverviewPageProps = {
@@ -20,7 +21,7 @@ type ChildOverviewPageProps = {
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
   childPageInfo: Array<ChildPageInfo>;
-  sidebarConfig: SidebarNavigationConfig;
+  sidebarConfig: ManifestConfig;
 };
 
 const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, sidebarConfig }: ChildOverviewPageProps) => {

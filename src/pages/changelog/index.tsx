@@ -2,12 +2,11 @@ import { TrackPageView } from '@/src/components/integrations/engage/TrackPageVie
 import { Option } from '@/src/components/ui/dropdown';
 import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
-import { Alert, AlertIcon, Grid, GridItem, Tooltip } from '@chakra-ui/react';
+import { Grid, GridItem } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import Layout from '@src/layouts/Layout';
 import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { SWRConfig } from 'swr';
@@ -36,14 +35,14 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
 
           <VerticalGroup>
             <CenteredContent py={8} gap={8}>
-              <Alert status="info" alignItems="center">
+              {/* <Alert status="info" alignItems="center">
                 <AlertIcon />
                 <Tooltip label="Go to the overview of current release notes" aria-label="A tooltip">
                   <Link href="/changelog/current" title="View the list of current release notes per product">
                     You are viewing the Sitecore Cloud changelog. To see release notes for Sitecore products not yet listed here, click here.
                   </Link>
                 </Tooltip>
-              </Alert>
+              </Alert> */}
               <Grid templateColumns="repeat(5, 1fr)" gap={14}>
                 <GridItem colSpan={{ base: 5, md: 3 }}>
                   <SWRConfig value={{ fallback }}>

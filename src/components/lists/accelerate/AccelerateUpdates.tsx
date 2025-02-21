@@ -1,6 +1,6 @@
 import { AccelerateRecipe } from '@/src/lib/accelerate/types/recipe';
 import { Product, Variant } from '@/src/lib/assets';
-import { Box, Card, CardBody, CardHeader, CardProps, chakra, Flex, Heading, HStack, IconButton, Link, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Card, CardBody, CardFooter, CardHeader, CardProps, chakra, Flex, Heading, HStack, IconButton, Link, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useColorModeValue } from '@chakra-ui/react';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
 import { TextLink } from '@src/components/links';
@@ -25,14 +25,14 @@ const CustomImage = chakra(Image, {
 const AccelerateUpdates = ({ title = 'Sitecore Accelerate updates', linkHref = '/learn/accelerate', linkText = 'See all recipes', recipes, hideProductIcon, columns }: AccelerateUpdatesProps) => {
   return (
     <Card variant={'unstyled'}>
-      <CardHeader justifyContent={'space-between'} display={'flex'} pt={8} flexDirection={{ base: 'column', sm: 'row' }}>
-        <Heading as={'h3'} size={'md'}>
+      <CardHeader justifyContent={{ base: 'left', sm: 'space-between' }} flexDirection={{ base: 'column', sm: 'row' }} display={'flex'} py={8} alignItems={'baseline'}>
+        <Heading as={'h3'} fontSize={'2xl'} fontWeight={'500'}>
           {title}
           <Link href="/learn/accelerate/updates" ml="1">
             <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="neutral" variant="ghost" size={'xs'} />
           </Link>
         </Heading>
-        <TextLink href={linkHref} text={linkText} />
+        <TextLink href={linkHref} text={linkText} hideBelow={'md'} />
       </CardHeader>
       <CardBody py={{ base: '2', md: '4' }}>
         <Tabs size="sm" variant={'soft-rounded'}>
@@ -66,6 +66,9 @@ const AccelerateUpdates = ({ title = 'Sitecore Accelerate updates', linkHref = '
           </TabPanels>
         </Tabs>
       </CardBody>
+      <CardFooter hideFrom={'md'} py={0} alignSelf={'self-end'}>
+        <TextLink href={linkHref} text={linkText} />
+      </CardFooter>
     </Card>
   );
 };
@@ -91,7 +94,7 @@ const RecipeList = ({ recipes, hideProductIcon, columns = 1, show = 5 }: { recip
               </Box>
             )}
             <Stack fontSize={'sm'}>
-              <Heading as={'h4'} size="sm">
+              <Heading as={'h4'} size={'md'}>
                 <Link href={entry.url} title={entry.title} color={'chakra-body-text'}>
                   {entry.title}
                 </Link>

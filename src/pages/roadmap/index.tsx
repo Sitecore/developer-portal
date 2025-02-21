@@ -77,7 +77,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                   </AlertDescription>
                 </Wrap>
               </Alert>
-              <Heading size={'sm'}>Available roadmaps</Heading>
+              <Heading size={'md'}>Available roadmaps</Heading>
 
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
                 {products.map((product) => (

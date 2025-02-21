@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, Flex, Heading, SimpleGrid, Spacer, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Card, CardBody, CardFooter, Flex, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 
@@ -26,7 +26,7 @@ export const ProductList: React.FC<ProductListProps> = () => {
     <Box my={4}>
       <ProductListTitle title="Experience Management" description="Be better to stand out. Deliver exceptional experiences that differentiate your brand." />
 
-      <SimpleGrid columns={[1, 2, 3]} gap={4} my={4}>
+      <SimpleGrid columns={[1, 1, 3]} gap={4} my={4}>
         <ProductListItem product={XMCloud} />
         <ProductListItem product={Search} />
         <ProductListItem product={Personalize} />
@@ -38,11 +38,11 @@ export const ProductList: React.FC<ProductListProps> = () => {
         <ProductListItem product={Send} />
       </SimpleGrid>
 
-      <SimpleGrid columns={[1, 2, 2]} gap={4} my={16}>
+      <SimpleGrid columns={[1, 1, 2]} gap={4} my={16}>
         <ProductListTitle title="Content lifecycle" description="Take control of your global content lifecycle from strategy to delivery.">
           <ProductListItem product={ContentHub} />
         </ProductListTitle>
-        <ProductListTitle title="Commerce" description="Harness commerce growth strategy solutions to grab and keep customer attention.">
+        <ProductListTitle title="Commerce" description="Experience limitless possibilities with leading headless ecommerce.">
           <ProductListItem product={OrderCloud} />
         </ProductListTitle>
       </SimpleGrid>
@@ -53,7 +53,7 @@ export const ProductList: React.FC<ProductListProps> = () => {
 export const ProductListTitle: React.FC<ProductListTitleProps> = ({ title, description, children }) => {
   return (
     <Box>
-      <Heading as="h3" size={'xl'} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
+      <Heading as="h3" size={'lg'}>
         {title}
       </Heading>
       <Text variant={'large'} my={4} fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>
@@ -66,7 +66,7 @@ export const ProductListTitle: React.FC<ProductListTitleProps> = ({ title, descr
 
 export const ProductListItem: React.FC<ProductListItemProps> = ({ product }) => {
   return (
-    <Card variant={'elevated'} layerStyle={'interactive.raise'}>
+    <Card variant={'outlineRaised'}>
       <CardBody>
         <Flex direction={'column'} gap={4} align={'flex-start'}>
           <Box height={'24px'} width={'full'} position={'relative'} sx={{ '& > img': { width: 'auto !important' } }}>
@@ -78,16 +78,17 @@ export const ProductListItem: React.FC<ProductListItemProps> = ({ product }) => 
               sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
             />
           </Box>
-          <Heading as="h4" size="md" fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
+          <Heading as="h4" size="md" hideBelow={'md'}>
             {product.subTitle}
           </Heading>
           <Text fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>
             {product.description}
           </Text>
-          <Spacer />
-          <LinkButton href={product.linkHref} text={product.linkText} variant={'outline'} alignContent={'flex-end'} />
         </Flex>
       </CardBody>
+      <CardFooter>
+        <LinkButton href={product.linkHref} text={product.linkText} variant={'outline'} alignContent={'flex-end'} />
+      </CardFooter>
     </Card>
   );
 };

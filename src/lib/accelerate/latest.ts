@@ -1,7 +1,7 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-import { SidebarNavigationConfig } from '../interfaces/page-info';
+import { ManifestConfig } from '../interfaces/manifest';
 import { convertFileToURL, getAllMdFiles, searchForFile } from '../utils/fsUtils';
 import { AccelerateRecipe } from './types/recipe';
 
@@ -21,7 +21,7 @@ export const getLatestRecipes = async (product?: string, count?: number) => {
       let product = '';
       const manifestFile = searchForFile(file, 'manifest.json');
       if (manifestFile && manifestFile.endsWith('.json')) {
-        const manifest: SidebarNavigationConfig = JSON.parse(await fs.promises.readFile(manifestFile, 'utf-8'));
+        const manifest: ManifestConfig = JSON.parse(await fs.promises.readFile(manifestFile, 'utf-8'));
         product = manifest.productLogo || '';
       }
       const { data } = matter(content);

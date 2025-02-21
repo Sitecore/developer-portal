@@ -59,9 +59,11 @@ export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
             <Popover placement="bottom-start" trigger="click">
               <PopoverAnchor>{item.products != null && <ProductIcon product={item.products[0]} />}</PopoverAnchor>
               <PopoverTrigger>
-                <Button variant="unstyled" size={'sm'} hideBelow={'sm'} ml={2}>
-                  + {item.products.length - 1} <Hide below="md">{item.products.length == 1 ? 'other' : 'others'}</Hide>
-                </Button>
+                <Wrap>
+                  <Button variant="unstyled" size={''} hideBelow={'sm'} ml={2}>
+                    + {item.products.length - 1} <Hide below="md">{item.products.length == 1 ? 'other' : 'others'}</Hide>
+                  </Button>
+                </Wrap>
               </PopoverTrigger>
               <PopoverContent p={2} maxW={'3xs'}>
                 <PopoverArrow />
@@ -82,17 +84,16 @@ export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
         ) : (
           item.products != null && <ProductIcon product={item.products[0]} />
         )}
-
         <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
-
+      </Wrap>
+      <Wrap>
         {item.changeType.length > 0 &&
           item.changeType.map((changeTypeItem, key) => (
             <Tag colorScheme={colorScheme(changeTypeItem.name)} key={key}>
               {changeTypeItem.name}
             </Tag>
           ))}
-      </Wrap>
-      <Wrap>
+
         {item.breakingChange && (
           <Tooltip label="This change could require manual updates" aria-label="Action required">
             <Tag colorScheme="warning">Action required</Tag>

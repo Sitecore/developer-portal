@@ -1,5 +1,5 @@
 import { ContentHeading } from '@lib/interfaces/contentheading';
-import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
 import { SocialFeeds } from '@src/components/links/SocialFeeds';
 import { RenderContent } from '@src/components/markdown/MarkdownContent';
 import InPageNav from '@src/components/navigation/InPageNav';
@@ -15,6 +15,7 @@ import { ArticlePagingNext } from '../components/navigation/ArticlePagingNext';
 import BreadcrumbNav from '../components/navigation/BreadcrumbNav';
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { Hero } from '../components/ui/sections';
+import { ManifestConfig } from '../lib/interfaces/manifest';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ArticlePageProps = {
@@ -23,7 +24,7 @@ type ArticlePageProps = {
   promoAfter?: Array<PromoCardProps>;
   promoBefore?: Array<PromoCardProps>;
   childPageInfo?: Array<ChildPageInfo>;
-  sidebarConfig: SidebarNavigationConfig;
+  sidebarConfig: ManifestConfig;
   customNav?: React.ReactNode;
   customNavPager?: React.ReactNode;
 };
