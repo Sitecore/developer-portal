@@ -45,7 +45,7 @@ const BreadcrumbNav = ({ config, currentPage, enabled = false, hideCurrentPage =
           return appendPathToBasePath(acc, parent.path);
         }, config.path);
         return (
-          <BreadcrumbItem key={index}>
+          <BreadcrumbItem key={index} hideBelow={'md'}>
             {parent.ignoreLink ? (
               <BreadcrumbLink isCurrentPage>{parent.title}</BreadcrumbLink>
             ) : (
