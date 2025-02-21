@@ -1,4 +1,4 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Button, Icon, Link, VisuallyHidden, Wrap } from '@chakra-ui/react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Icon } from '@chakra-ui/react';
 import { appendPathToBasePath } from '@src/lib/utils/stringUtil';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import useManifestRoutes from '@/src/hooks/useManifestRoutes';
 import { ManifestConfig } from '@/src/lib/interfaces/manifest';
 import { PageInfo } from '@/src/lib/interfaces/page-info';
-import { ChevronLeftIcon } from '@chakra-ui/icons';
+import { mdiHomeVariantOutline } from '@mdi/js';
 
 export interface BreadcrumbNavProps {
   enabled?: boolean;
@@ -19,29 +19,23 @@ const BreadcrumbNav = ({ config, currentPage, enabled = false, hideCurrentPage =
   const router = useRouter();
 
   const { currentItem, parents } = useManifestRoutes(currentPage.fileName, config, router.asPath);
+  let parentLink = config.path.split('/').slice(0, -1).join('/');
 
   if (!enabled) {
-    // || router.asPath == config.path) {
     return null;
   }
 
-  if (router.asPath == config.path) {
-    const parentLink = router.asPath.split('/').slice(0, -1).join('/');
-
-    return (
-      <Wrap>
-        <Link as={NextLink} href={parentLink} passHref>
-          <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} width={'100%'} variant={'ghost'} size={'sm'} colorScheme="neutral">
-            Back to the overview
-          </Button>
-          <VisuallyHidden>Go back to the overview</VisuallyHidden>
-        </Link>
-      </Wrap>
-    );
-  }
-
   return (
-    <Breadcrumb mb={4}>
+    <Breadcrumb mb={4} fontFamily={'heading'}>
+      {parentLink && (
+        <BreadcrumbItem>
+          <BreadcrumbLink as={NextLink} href={parentLink}>
+            <Icon>
+              <path d={mdiHomeVariantOutline} />
+            </Icon>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+      )}
       <BreadcrumbItem>
         <BreadcrumbLink href={config.path}>{config.title}</BreadcrumbLink>
       </BreadcrumbItem>
