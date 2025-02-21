@@ -53,7 +53,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
   return (
     <Card {...rest} variant={'unstyled'}>
       <CardHeader justifyContent={{ base: 'left', sm: 'space-between' }} flexDirection={{ base: 'column', sm: 'row' }} display={'flex'} py={8} alignItems={'baseline'}>
-        <Heading as={'h3'} size={'lg'}>
+        <Heading as={'h3'} fontSize={'2xl'} fontWeight={'500'}>
           {title}
           <Link href="/changelog/rss.xml" ml={1}>
             <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="neutral" variant="ghost" size={'xs'} />

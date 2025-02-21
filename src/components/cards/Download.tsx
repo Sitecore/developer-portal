@@ -15,7 +15,7 @@ export const Download = ({ title, description, link1text, link1href, link2text, 
   return (
     <Card variant={'outline'} size={'md'} mb={8} {...rest}>
       <CardHeader>
-        <Heading as="h4" size={'md'}>
+        <Heading as="h4" size={'md'} mt={0}>
           <Link as={NextLink} href={link1href}>
             {title}
           </Link>

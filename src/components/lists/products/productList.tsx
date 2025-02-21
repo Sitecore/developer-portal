@@ -26,7 +26,7 @@ export const ProductList: React.FC<ProductListProps> = () => {
     <Box my={4}>
       <ProductListTitle title="Experience Management" description="Be better to stand out. Deliver exceptional experiences that differentiate your brand." />
 
-      <SimpleGrid columns={[1, 2, 3]} gap={4} my={4}>
+      <SimpleGrid columns={[1, 1, 3]} gap={4} my={4}>
         <ProductListItem product={XMCloud} />
         <ProductListItem product={Search} />
         <ProductListItem product={Personalize} />
@@ -38,7 +38,7 @@ export const ProductList: React.FC<ProductListProps> = () => {
         <ProductListItem product={Send} />
       </SimpleGrid>
 
-      <SimpleGrid columns={[1, 2, 2]} gap={4} my={16}>
+      <SimpleGrid columns={[1, 1, 2]} gap={4} my={16}>
         <ProductListTitle title="Content lifecycle" description="Take control of your global content lifecycle from strategy to delivery.">
           <ProductListItem product={ContentHub} />
         </ProductListTitle>
@@ -53,7 +53,7 @@ export const ProductList: React.FC<ProductListProps> = () => {
 export const ProductListTitle: React.FC<ProductListTitleProps> = ({ title, description, children }) => {
   return (
     <Box>
-      <Heading as="h3" size={'xl'}>
+      <Heading as="h3" size={'lg'}>
         {title}
       </Heading>
       <Text variant={'large'} my={4} fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>
@@ -78,7 +78,7 @@ export const ProductListItem: React.FC<ProductListItemProps> = ({ product }) => 
               sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
             />
           </Box>
-          <Heading as="h4" size="md">
+          <Heading as="h4" size="md" hideBelow={'md'}>
             {product.subTitle}
           </Heading>
           <Text fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>

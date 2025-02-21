@@ -45,7 +45,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
 
         <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
-            <SimpleGrid gap="10" mb={0} columns={[1, 1, 2]}>
+            <SimpleGrid gap={[4, 4, 10]} mb={0} columns={[1, 1, 2]}>
               <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest changelog updates" linkText="Full changelog" />
               <AccelerateUpdates recipes={recipes} title="Sitecore Accelerate updates" linkHref="/learn/accelerate" linkText="See all recipes" url="/learn/accelerate/xm-cloud" />
             </SimpleGrid>

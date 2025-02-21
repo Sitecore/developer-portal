@@ -35,7 +35,7 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
     <>
       <Card variant={'outlineRaised'} size={'md'}>
         <CardHeader>
-          <Heading size="sm" onClick={handleClick} cursor={'pointer'}>
+          <Heading as={'h3'} size="md" onClick={handleClick} cursor={'pointer'}>
             {item.title}
           </Heading>
         </CardHeader>
