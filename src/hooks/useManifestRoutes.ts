@@ -1,5 +1,5 @@
 import { ManifestConfig, ManifestNavigationItem } from '@/src/lib/interfaces/manifest';
-import { getAllParents, getParent, getRouteByFullPath, getSiblingItem } from '@/src/lib/manifestHelper';
+import { getAllParents, getChildren, getParent, getRouteByFullPath, getSiblingItem } from '@/src/lib/manifestHelper';
 import { useEffect, useMemo, useState } from 'react';
 
 /**
@@ -10,7 +10,7 @@ import { useEffect, useMemo, useState } from 'react';
  * @param currentPath - The current path.
  * @returns An object containing the current, parent, previous, and next navigation items.
  */
-const useManifestRoutes = (fileName: string, sidebarNavConfig: ManifestConfig, currentPath: string) => {
+const useManifestRoutes = (sidebarNavConfig: ManifestConfig, currentPath: string) => {
   const [currentItem, setCurrentItem] = useState<ManifestNavigationItem | null>(null);
   const [previousItem, setPreviousItem] = useState<ManifestNavigationItem | null>(null);
   const [nextItem, setNextItem] = useState<ManifestNavigationItem | null>(null);
@@ -37,14 +37,15 @@ const useManifestRoutes = (fileName: string, sidebarNavConfig: ManifestConfig, c
     const nextItem = getSiblingItem(routes, fullPath, true);
     const previousItem = getSiblingItem(routes, fullPath, false);
     const parentItem = getParent(routes, fullPath);
+    const children = getChildren(routes, fullPath);
 
     setCurrentItem(currentItem);
-    setChildren(currentItem.children);
+    setChildren(children);
     setParents(parents);
     setNextItem(nextItem);
     setPreviousItem(previousItem);
     setParentItem(parentItem);
-  }, [fileName, currentPath, path, routes]);
+  }, [currentPath, path, routes]);
 
   return useMemo(
     () => ({

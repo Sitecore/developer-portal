@@ -35,7 +35,7 @@ type ArticlePageProps = {
 
 const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPager, sidebarConfig }: ArticlePageProps) => {
   const router = useRouter();
-  const { children } = useManifestRoutes(pageInfo.fileName, sidebarConfig, router.asPath);
+  const { children } = useManifestRoutes(sidebarConfig, router.asPath);
 
   if (!pageInfo) {
     return <>No pageInfo found</>;

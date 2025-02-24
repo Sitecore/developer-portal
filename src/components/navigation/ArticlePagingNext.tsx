@@ -15,7 +15,7 @@ export interface ArticlePagingProps {
 }
 
 export const ArticlePagingNext = ({ config, currentFileName, enabled = false, currentPath }: ArticlePagingProps) => {
-  const { previousItem, nextItem } = useManifestRoutes(currentFileName, config, currentPath);
+  const { previousItem, nextItem } = useManifestRoutes(config, currentPath);
 
   if (!enabled) {
     return null;

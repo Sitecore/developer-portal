@@ -41,7 +41,7 @@ type ArticlePageProps = {
 const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPager, sidebarConfig }: ArticlePageProps) => {
   const router = useRouter();
   const path = router.asPath;
-  const { children } = useManifestRoutes(pageInfo.fileName, sidebarConfig, path);
+  const { children } = useManifestRoutes(sidebarConfig, path);
 
   if (!pageInfo) {
     return <>No pageInfo found</>;
@@ -69,15 +69,15 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
           <Box width="full" maxW={'6xl'} as="main" minH={'calc(100vh - 215px)'} paddingX={{ base: 4, md: 'inherit' }}>
             {/* {sectionTitles && <InPageNavSmall hideFrom={'xl'} titles={sectionTitles} />} */}
             <CenteredContent minH={'calc(100vh - 400px)'}>
-              <Stack gap={2} mb={4}>
+              <Stack mb={4}>
                 <DropDownNavigation config={sidebarConfig} key={router.asPath} />
                 <BreadcrumbNav enabled={sidebarConfig.enableBreadcrumb} currentPage={pageInfo} config={sidebarConfig} hideCurrentPage />
                 <Heading as="h1" fontSize={{ base: '2xl', md: '4xl', xl: '6xl' }} fontWeight={'400'}>
                   {pageInfo.title}
                 </Heading>
-                <Text as="h2" color={'neutral'} fontSize={{ base: 'sm', md: 'xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'normal'} letterSpacing={'0.5'}>
+                {/* <Text as="h2" color={'neutral'} fontSize={{ base: 'sm', md: 'xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'normal'} letterSpacing={'0.5'}>
                   {pageInfo.description}
-                </Text>
+                </Text> */}
               </Stack>
               <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={path} />
 
