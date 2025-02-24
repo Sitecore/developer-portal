@@ -152,6 +152,7 @@ const MenuItemLink = ({ href, title }: { href: string; title: string }) => {
 const MenuItemGroup = ({ manifestItem, basePath, index }: { manifestItem: ManifestNavigationItem; basePath: string; index?: number }) => {
   const router = useRouter();
   const currentRouteIncludesChild = router.asPath.includes(`${basePath}/${manifestItem.path}`) || manifestItem.children?.some((child) => router.asPath.includes(`${basePath}/${child.path}`));
+  const currentRouteActive = router.asPath.endsWith(`${basePath}/${manifestItem.path}`) || manifestItem.children?.some((child) => router.asPath.includes(`${basePath}/${child.path}`));
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: currentRouteIncludesChild });
   const currentBasePath = appendPathToBasePath(basePath, manifestItem.path);
 
@@ -161,7 +162,7 @@ const MenuItemGroup = ({ manifestItem, basePath, index }: { manifestItem: Manife
         rightIcon={<Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>}
         justifyContent={'space-between'}
         width={'full'}
-        isActive={currentRouteIncludesChild}
+        isActive={currentRouteActive}
         transition={'ease-in-out'}
         onClick={manifestItem.ignoreLink ? onToggle : onToggle}
       >

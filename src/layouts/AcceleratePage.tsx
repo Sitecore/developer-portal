@@ -85,7 +85,7 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
               <RenderContent content={pageInfo.parsedContent} />
 
               {/* Child Navigation */}
-              {children && (
+              {children && children?.length > 0 && (
                 <Stack gap={4}>
                   <Text fontWeight={'semibold'}>Articles in this section:</Text>
                   <List spacing="2">
