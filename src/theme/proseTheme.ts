@@ -13,7 +13,8 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     fontFamily: 'heading',
     fontWeight: '500',
     lineHeight: '110%',
-    fontSize: { base: '3xl', md: '4xl' },
+    fontSize: { base: '3xl', md: '4xl', sm: 'xl' },
+    mt: { base: 4, md: 6, lg: 8 },
     //mb: '1.5rem',
   },
 
@@ -21,7 +22,7 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
     fontFamily: 'heading',
     fontWeight: '500',
     lineHeight: '110%',
-    fontSize: { base: '2xl', md: '3xl' },
+    fontSize: { base: '2xl', md: '3xl', sm: 'lg' },
     //mt: { base: 2, md: 8 },
     //mb: '0.5rem',
   },
@@ -142,9 +143,11 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
   ul: {
     paddingStart: 6,
     listStyleType: 'disc',
+    mb: 8,
   },
   ol: {
     paddingStart: 6,
+    mb: 8,
   },
   li: {
     paddingStart: 2,

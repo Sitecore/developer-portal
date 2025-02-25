@@ -18,7 +18,7 @@ export interface BreadcrumbNavProps {
 const BreadcrumbNav = ({ config, currentPage, enabled = false, hideCurrentPage = false }: BreadcrumbNavProps) => {
   const router = useRouter();
 
-  const { currentItem, parents } = useManifestRoutes(currentPage.fileName, config, router.asPath);
+  const { currentItem, parents } = useManifestRoutes(config, router.asPath);
   let parentLink = config.path.split('/').slice(0, -1).join('/');
 
   if (!enabled) {

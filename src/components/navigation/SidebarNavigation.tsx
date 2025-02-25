@@ -19,8 +19,10 @@ export interface SidebarNavigationProps {
 
 let basePath: string;
 let showRootAsSections: boolean | undefined;
+let manifestConfig = {} as ManifestConfig;
 
 const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
+  manifestConfig = config;
   const router = useRouter();
   const [searchActive, setSearchActive] = useState<boolean>(false);
 
@@ -87,7 +89,7 @@ export const SidebarGroupItem = (ManifestNavigationItem: ManifestNavigationItem)
           {!showRootAsSections && <MenuItemLink href={ManifestNavigationItem.path} title={ManifestNavigationItem.title} />}
           <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} as={'ul'} role="list">
             {ManifestNavigationItem.children?.map((child, i) =>
-              child.children?.length > 0 ? <MenuItemGroup child={child} basePath={currentBasePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(currentBasePath, child.path)} title={child.title} key={i} />
+              child.children?.length > 0 ? <MenuItemGroup manifestItem={child} basePath={currentBasePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(currentBasePath, child.path)} title={child.title} key={i} />
             )}
           </ButtonGroup>
         </Box>
@@ -127,7 +129,7 @@ const SidebarCollapsableGroupItem = (ManifestNavigationItem: ManifestNavigationI
       <Collapse animateOpacity in={!isOpen}>
         <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} data-type="buttons">
           {ManifestNavigationItem.children?.map((child, i) =>
-            child.children?.length > 0 ? <MenuItemGroup child={child} basePath={basePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(basePath, child.path)} title={child.title} key={i} />
+            child.children?.length > 0 ? <MenuItemGroup manifestItem={child} basePath={basePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(basePath, child.path)} title={child.title} key={i} />
           )}
         </ButtonGroup>
       </Collapse>
@@ -147,11 +149,12 @@ const MenuItemLink = ({ href, title }: { href: string; title: string }) => {
   );
 };
 
-const MenuItemGroup = ({ child, basePath, index }: { child: ManifestNavigationItem; basePath: string; index?: number }) => {
+const MenuItemGroup = ({ manifestItem, basePath, index }: { manifestItem: ManifestNavigationItem; basePath: string; index?: number }) => {
   const router = useRouter();
-  const currentRouteIncludesChild = child.children?.some((child) => router.asPath.includes(child.path));
+  const currentRouteIncludesChild = router.asPath.includes(`${basePath}/${manifestItem.path}`) || manifestItem.children?.some((child) => router.asPath.includes(`${basePath}/${child.path}`));
+  const currentRouteActive = router.asPath.endsWith(`${basePath}/${manifestItem.path}`) || manifestItem.children?.some((child) => router.asPath.includes(`${basePath}/${child.path}`));
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: currentRouteIncludesChild });
-  const currentBasePath = appendPathToBasePath(basePath, child.path);
+  const currentBasePath = appendPathToBasePath(basePath, manifestItem.path);
 
   return (
     <Box as="li" key={index} data-type="menu-item-group" listStyleType={'none'}>
@@ -159,23 +162,24 @@ const MenuItemGroup = ({ child, basePath, index }: { child: ManifestNavigationIt
         rightIcon={<Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>}
         justifyContent={'space-between'}
         width={'full'}
+        isActive={currentRouteActive}
         transition={'ease-in-out'}
-        onClick={child.ignoreLink ? onToggle : onToggle}
+        onClick={manifestItem.ignoreLink ? onToggle : onToggle}
       >
-        {child.ignoreLink ? (
-          <Text>{child.title}</Text>
+        {manifestItem.ignoreLink ? (
+          <Text>{manifestItem.title}</Text>
         ) : (
-          <Text as={NextLink} href={appendPathToBasePath(basePath, child.path)}>
-            {child.title}
+          <Text as={NextLink} href={appendPathToBasePath(basePath, manifestItem.path)}>
+            {manifestItem.title}
           </Text>
         )}
       </Button>
 
       <Collapse animateOpacity in={isOpen}>
         <Box pl={2} as="ul">
-          {child.children.map((link, i) => {
+          {manifestItem.children.map((link, i) => {
             if (link.children?.length > 0) {
-              return <MenuItemGroup child={link} basePath={appendPathToBasePath(currentBasePath, link.path)} key={i} />;
+              return <MenuItemGroup manifestItem={link} basePath={appendPathToBasePath(currentBasePath, link.path)} key={i} />;
             }
 
             return <MenuItemLink href={appendPathToBasePath(currentBasePath, link.path)} title={link.title} key={i} />;

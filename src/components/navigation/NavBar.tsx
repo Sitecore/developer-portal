@@ -259,8 +259,6 @@ const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
   const { isOpen, onClose, onToggle } = useDisclosure();
   const router = useRouter();
   const currentPage = router.asPath;
-  // const isCurrentPage = currentPage === url;
-  // const currentRoute = router.pathname;
 
   return (
     <Stack onClick={children && onToggle}>

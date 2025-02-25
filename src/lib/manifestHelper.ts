@@ -170,13 +170,11 @@ export const getChildren = (routes: ManifestNavigationItem[], currentPath: strin
  * @returns The `ManifestNavigationItem` that matches the full path, or `null` if no match is found.
  */
 export const getRouteByFullPath = (routes: Array<ManifestNavigationItem>, fullPath: string): ManifestNavigationItem | null => {
-  console.log('getRouteByFullPath: ' + fullPath);
-
   const paths: Array<string> = fullPath.split('/').filter((path) => path !== '');
 
   for (const route of routes) {
     if (route.path === paths[0]) {
-      if (route.children) {
+      if (route.children && !route.ignoreLink) {
         return getRouteByFullPath(route.children, paths.slice(1).join('/'));
       } else {
         return route;
