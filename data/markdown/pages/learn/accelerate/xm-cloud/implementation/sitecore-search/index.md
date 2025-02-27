@@ -1,12 +1,10 @@
 ---
-title: 'Sitecore Accelerate for XM Cloud'
+title: 'Sitecore Search'
 description: 'This Cookbook provides a set of recipes to help implementing XM Cloud through setup, configuration and implemenation.'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 ---
-
-### Sitecore Search
 
 [Sitecore Search](https://www.sitecore.com/products/search) is an AI-driven, headless content and product discovery platform designed to create predictive and personalized search experiences.
 

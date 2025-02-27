@@ -5,6 +5,8 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-10-09'
+created: '2024-10-09'
+audience: ['Architect','Technical Implementer']
 ---
 
 ## Context
@@ -14,12 +16,12 @@ My client has content or data in a 3rd Party system like products in a PIM or Co
 ## Execution
 Within this chapter we will not only cover how to properly offer 3rd Party integrations, but also explicitly highlight ways, how we should not do it anymore in a modern composable XM Cloud architecture.
 
-❌ **DON’T**  
+**DON’T**  
 We will start with the way to deal with such kind of data, which was heavily used in the past. It was quite usual to build a backend integration between that 3rd Party system and the Sitecore Platform to first import or sync those data as Items into Sitecore. That way the data could be used the same way as any other Item in Sitecore, which fully supports inline editing via WYSIWYG. 
 
 Do not import or sync those data as Items into XM Cloud as it would cause massive unwanted and unneeded maintenance overhead afterwards.
 
-✅ **DO**  
+**DO**  
 Instead of importing or syncing all the data to the Sitecore backend we will just store the external entity Id (or public link in case of an asset) within Sitecore and load all the necessary data directly in the head application. That way we only store the absolutely necessary data within Sitecore and keep the system clean and performant. To do so, it is enough to extend your Datasource with a new Single(Multi)-Line Text field to store that external entity Id (or public link). The head application will use that Id or link to load additional data on the fly, if needed. This can be done via SSG or SSR depending on the type of data or the use case.
 
 One simple way to fill such Id or link is to let the editor copy & paste it from the 3rd Party system. But in case you would like to give the editors a more intuitive and visual way of choosing the data, you can easily build that piece of logic in the head application directly.

@@ -1,12 +1,10 @@
 ---
-title: 'Sitecore Accelerate for XM Cloud'
+title: 'External Data Integration'
 description: 'This Cookbook provides a set of recipes to help implementing XM Cloud through setup, configuration and implemenation.'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 ---
-
-## External Data Integration
 
 Integrating external data is a cornerstone of building dynamic and personalized digital experiences with XM Cloud. This section delves into techniques for seamless interactions between your head application and external systems.
 

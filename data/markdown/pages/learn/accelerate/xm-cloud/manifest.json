@@ -247,6 +247,10 @@
             {
               "title": "Integrating Sitecore Search",
               "path": "integrating-sitecore-search"
+            },
+            {
+              "title": "Incrementally updating Search",
+              "path": "search-incremental-updates"
             }
           ]
         }

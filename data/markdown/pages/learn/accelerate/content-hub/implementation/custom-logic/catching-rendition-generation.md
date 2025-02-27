@@ -5,7 +5,8 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2025-02-14'
-audience: "Technical Implementers, Solution Architects"
+created: '2024-12-13'
+audience: ['Technical Implementers', 'Architects']
 ---
 
 ## Context

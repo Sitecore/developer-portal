@@ -5,7 +5,8 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2025-02-07'
-audience: 'all'
+created: '2024-12-13'
+audience: ['All']
 ---
 ## Context
 Implementation testing is an important step in the Sitecore Content Hub implementation process. It ensures that the platform's configurations, features, and integrations work as intended before progressing further within the project phases. Effective testing minimizes risk and leads to improved user and customer satisfaction.
