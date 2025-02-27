@@ -47,6 +47,12 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
+  title="Sitecore Stream for Platform DXP"
+  description="Sitecore Experience Platform's new AI module!"
+  link1text="More info"
+  link1href="/downloads/Sitecore_Stream_for_Platform_DXP"
+/>
+<Download 
   title="Sitecore Identity Server 7.1.11"
   description="Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or extended for use with an external identity provider."
   link1text="Get latest"
