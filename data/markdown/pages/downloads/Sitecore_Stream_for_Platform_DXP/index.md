@@ -13,6 +13,8 @@ This module interworks with Sitecore's **Sitecore Stream** Software-as-a-Service
 
 **Please contact your Sitecore account representative to get started.**
 
+<br/>
+
 While there is no actual software download on this page, info here will continue to be valuable in tracking module release content, and in sharing pertinent module information.
 
 ### Module Release Information
@@ -28,11 +30,13 @@ v1.0 release features include:
 - Content generation: use AI to optimize generating and transforming your content, incorporating contextual information from your brand kits. For example: generate content based on your prompts, summarize and elaborate on your content, change tone, improve grammar, correct spelling. This feature supports Single Text, Multi Line Text, and Rich Text content fields in both the Content Editor and Experience Editor.
 
 ### Supporting information
-
-Links:
 - [Sitecore Stream](https://doc.sitecore.com/stream/en/users/sitecore-stream/sitecore-stream.html) introduces Sitecore's cross-product Stream service.
 - [Overview of the Sitecore Launchpad](https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/overview-of-the-sitecore-launchpad.html) displays the Stream module apps in the Sitecore Launchpad, where enabled.
 - [AI in Experience Platform](https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/ai-in-experience-platform.html) introduces module capabilities.
 - [AI-assisted content generation](https://doc.sitecore.com/xp/en/users/104/sitecore-experience-platform/ai-assisted-content-generation.html) introduces the content generation feature in particular.
 
 In addition, the module software download includes release-specific information including: readme, FAQ, install, config, known issues, uninstall.
+
+<br/>
+
+**Questions?** Contact us on our [#sitecore-stream](https://app.slack.com/client/T09SHRBNU/C08ECL6KRQT) Sitecore Community Slack channel.
