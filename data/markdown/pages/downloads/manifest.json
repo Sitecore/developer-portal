@@ -44,6 +44,10 @@
       "path": "",
       "children": [
         {
+          "title": "Sitecore Stream for Platform DXP",
+          "path": "Sitecore_Stream_for_Platform_DXP"
+        },
+		{
           "title": "Sitecore Identity Server",
           "path": "Sitecore_Identity"
         },
