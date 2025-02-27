@@ -5,7 +5,8 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2025-01-31'
-audience: "All"
+created: '2025-01-31'
+audience: ['Product Owners','Technical Implementers', 'Architects', 'System Administrators']
 ---
 ## Context
 Some Content Hub implementations require the need to store some values that are specific to a particular environment, such as integration URLs, or feature flags. The ideal place for these is an environment specific setting; they aren't particularly well known but are super useful and are exactly what we need here. When exporting settings from the Content Hub environment, settings marked as being environment specific are excluded during the package import, meaning you can safely deploy between environments without fear that these values will be overwritten.

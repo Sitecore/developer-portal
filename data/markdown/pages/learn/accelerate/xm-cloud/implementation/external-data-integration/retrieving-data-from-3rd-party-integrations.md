@@ -5,6 +5,8 @@ hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2025-01-31'
+created: '2025-01-31'
+audience: ['Architect','Product Owner','Technical Implementer']
 ---
 
 ## Context
@@ -17,7 +19,7 @@ Outlined with these approaches detailed below, there are numerous tools outside 
 ## Execution
 Overall, we would look at the approach in the same way as we described in [Custom Editing UX for 3rd Party Integrations](/learn/accelerate/xm-cloud/implementation/external-data-integration/custom-editing-ux-3rd-party-integrations) recipe. But, different use cases might have different solutions, that require considerations before committing to your path. 
 
-### <strong>Decouple Frontend and Backend Data Fetching</strong>
+### Decouple Frontend and Backend Data Fetching
 
 With Sitecore XM Cloud and modern frameworks like Next.js, you can use [server-side rendering (SSR) or static site generation (SSG)](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/prerendering-methods-and-data-fetching-strategies-in-jss-next-js-apps.html) to control how data is fetched and cached effectively. SSG also allows for [Incremental Static Regeneration (ISR)](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/prerendering-methods-and-data-fetching-strategies-in-jss-next-js-apps.html#incremental-static-regeneration-isr) that allows us to fetch data at build time or periodically regenerate static pages for frequently changing data.
 
@@ -27,11 +29,11 @@ If we want near real-time updates, we can go down the SSR to fetch data from Sal
 
 Publishing and cache invalidation needs to be considered in both; more detail can be found in the [Publishing to Experience Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge) recipe. Further information on Experience Edge rates can be found in the [Rate Limits and Caching](https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/project-architecture/rate-limits-and-caching) recipe.
 
-### <strong>Component level data</strong>
+### Component level data
 
 From a front-end point of view, there is also the possibility of component level data fetching for the integration. This does need to consider the use case required; more detail can be found [Component Level Data Fetching](/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data) recipe.
 
-### <strong>Leverage Edge Middleware with Caching</strong>
+### Leverage Edge Middleware with Caching
 
 Rendering Hosts such as Vercel and Netlify implement edge caching strategies through the middleware – we would look at the possibility of:
 
@@ -42,11 +44,11 @@ Rendering Hosts such as Vercel and Netlify implement edge caching strategies thr
 
 [On-demand ISR](https://vercel.com/docs/incremental-static-regeneration) allows you to revalidate specific pages only when data changes. Webhooks from Salesforce can be integrated to trigger ISR revalidations, and only update this when it’s updated in Salesforce.
 
-### <strong>Implement Progressive Loading on Frontend</strong>
+### Implement Progressive Loading on Frontend
 
 Outside of the Sitecore Search considerations, if some parts of the page (e.g., filters or long lists) need real-time updates, we can look at making sure that only parts of the page retrieve real-time updated using GraphQL, combined with a local caching mechanism. Not all content requires to be loaded at the same time as the rest of the layout.
 
-### <strong>Monitor API Usage</strong>
+### Monitor API Usage
 
 Irrespective of the integration approach, we would still want to make sure that rate-limiting and error handling for any API requests are in place so that they can be optimized.
 <br/>

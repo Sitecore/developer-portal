@@ -4,7 +4,9 @@ description: 'Learn more about how to transition to XM Cloud'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-10-08'
+lastUpdated: '2024-10-09'
+created: '2024-10-09'
+audience: ['All']
 ---
 
 ## Context

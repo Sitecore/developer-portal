@@ -5,7 +5,8 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-12-13'
-audience: 'all'
+created: '2024-12-13'
+audience: ['Technical Implementers', 'Architects']
 ---
 ## Context
 External components in Content Hub allow custom react components to be injected into pages. The possibilities and use cases are endless, as anything that can be done in React, can be done with an external component.

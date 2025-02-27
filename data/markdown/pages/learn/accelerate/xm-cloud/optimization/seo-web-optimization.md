@@ -5,6 +5,9 @@ hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2025-01-31'
+created: '2025-01-31'
+audience: ['Architect','Product Owner','User']
+
 ---
 ## Context
 On-page SEO covers optimizing webpage content for search engines and visitors. When done correctly, pages rank higher on search engines and thus attract more visitors.

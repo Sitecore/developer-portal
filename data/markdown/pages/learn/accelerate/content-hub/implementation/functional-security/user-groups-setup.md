@@ -5,7 +5,8 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-12-13'
-audience: 'all'
+audience: ['All']
+created: '2024-12-13'
 ---
 ## Context
 Defining user groups for Content Hub involves categorizing the users of the system based on their roles, goals, and interaction with the application. These groups should be distinct, reflecting different use cases and expertise levels. But the critical question lies on how many groups should be defined and how the permissions should vary across the user group.

@@ -5,7 +5,8 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-12-13'
-audience: 'Technical Implementers, Solution Architects, System Administrators/IT Ops'
+created: '2024-12-13'
+audience: ['Technical Implementers', 'Architects', 'System Administrators']
 ---
 ## Context
 Content Hub implementations are often developed independently of the production instance, providing a separate space to build, configure, and test changes before releasing them.

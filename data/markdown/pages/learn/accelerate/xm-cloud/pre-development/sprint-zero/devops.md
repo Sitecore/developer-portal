@@ -5,6 +5,8 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-02-07'
+created: '2023-12-22'
+audience: ['Architect','Technical Implementer', 'System Administrator']
 ---
 
 ## Context
@@ -38,7 +40,7 @@ The Sitecore XM Cloud Deploy Application is used to provision XM Cloud Projects/
   Whether you let the XM Cloud Deploy application create the repository, or you use your own, ALL XM Cloud implementations must start with the [XM Cloud Foundation Head](https://github.com/sitecorelabs/xmcloud-foundation-head) repository.
 </Alert>
 
-You can read more about how to create a new project using the Deploy Application on our Documentation Site: https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html or follow the recipe: [Sprint Zero - Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup).
+You can read more about how to create a new project using the Deploy Application on our [Documentation Site](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html) or follow the [Sprint Zero - Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup) recipe.
 
 Once the project is created, you will then provision an environment. These can be used to represent the different Production and Non-Production environments that you require. When creating them through the deploy application you can also choose to tie each environment to a different branch in your repository should that be a requirement for you. You can also choose to have the environment automatically deployed when changes are committed to the chosen branch.
 

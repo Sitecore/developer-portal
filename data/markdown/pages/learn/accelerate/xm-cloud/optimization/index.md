@@ -6,6 +6,6 @@ hasInPageNav: false
 area: ['accelerate']
 ---
 
-### Implementation
+### Optimization
 
 - 🚀 This Sitecore Accelerate Recipe is coming soon...

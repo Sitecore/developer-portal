@@ -1,12 +1,10 @@
 ---
-title: 'Sitecore Accelerate for XM Cloud'
+title: 'Project Planning'
 description: 'This Cookbook provides a set of recipes to help implementing XM Cloud through setup, configuration and implemenation.'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
 ---
-
-### Project Planning
 
 Effective project planning is the key to a smooth and successful XM Cloud implementation. This section provides a comprehensive approach to prepare for your journey, covering everything from initial project readiness to estimating project scope, and adapting to SaaS environments.
 

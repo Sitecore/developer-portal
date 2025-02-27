@@ -5,7 +5,9 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2025-02-14'
-audience: 'all'
+created: '2024-12-13'
+audience: ['All']
+
 ---
 ## Context
 Quality Assurance (QA) ensures that the platform meets user expectations, business objectives, and compliance standards before going live. Unlike [Implementation Testing](/learn/accelerate/content-hub/final-steps/testing-and-qa/implementation-testing), which is performed by the project team to verify that the system meets defined requirements, QA focuses on the end-user perspective—validating usability, workflows, and business processes.
