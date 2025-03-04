@@ -67,7 +67,7 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
           <RenderContent content={pageInfo.parsedContent} />
 
           {/* Child Navigation */}
-          {children && && children?.length > 0 && (
+          {children && children?.length > 0 && (
             <Stack gap={4}>
               <Text fontWeight={'semibold'}>Articles in this section:</Text>
               <List spacing="2">
