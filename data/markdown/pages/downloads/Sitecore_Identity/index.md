@@ -9,7 +9,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 ## Sitecore Identity Server 8.x
 </CardHeader>
 <CardBody>
-[Sitecore Identity Server 8.0.6](/downloads/Sitecore_Identity/8x/Sitecore_Identity_806)
+[Sitecore Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016)
 </CardBody>          
 </Card>
 

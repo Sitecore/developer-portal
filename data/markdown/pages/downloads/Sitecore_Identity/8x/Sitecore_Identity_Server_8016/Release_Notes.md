@@ -2,9 +2,9 @@
 title: 'Release Notes'
 ---
 
-**DRAFT WORK-IN-PROGRESS.**
+## `DRAFT WORK-IN-PROGRESS`
 
-**February 2025 – released Sitecore Identity Server 8.0.6**
+**March 2025 – released Sitecore Identity Server 8.0.16**
 
 ## Improvements
 
@@ -28,3 +28,4 @@ title: 'Release Notes'
 | Description | ADO no. |
 | --- | --- |
 | Microsoft .NET 8 increased the default security configuration in the encryption settings for the security connection string. Microsoft.Data.SqlClient has been updated enabling encryption of all network traffic with SQL Server. For Sitecore Identity Server On=premises and Container deployments this introduces a breaking change. The previous default 'Encrypt Client' setting was *False*, but as of Identity Server version 8 this setting is now *True*. For Sitecore Identity Server deployments to the Microsoft Azure App Service no breaking change is introduced; the 'Encrypt Client' setting was already set to *True* (due to the potentially more exposed nature of the Azure App Service). The default ARM Template configuration in the Application.json file was previously and continues to be: `Encrypt=True;TrustServerCertificate=False`. For more information see the **DRAFT** [Sitecore Identity Server Installation and Upgrade Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore%20Identity%20Server%20Installation%20and%20Upgrade%20Guide-8.0.X%20DRAFT.pdf) and Microsoft's [Encryption and certificate validation in Microsoft.Data.SqlClient](https://learn.microsoft.com/en-us/sql/connect/ado-net/encryption-and-certificate-validation?view=sql-server-ver15#version-40) article pertaining to Version 4.0. | 613902 |
+| Encryption settings to DB for on-prem and containers  TO BE COMPLETED |
