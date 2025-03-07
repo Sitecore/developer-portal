@@ -1,19 +1,24 @@
 ---
-title: 'Sitecore Search'
-description: 'Recipe for implementing search experience using Sitecore Search'
+title: 'Integrating Sitecore Search'
+description: 'Implementing a search experience using Sitecore Search with XM Cloud'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-11-20'
+lastUpdated: '2025-02-14'
+created: '2024-11-19'
+
+audience: ['Architect','Technical Implementer', 'System Administrator', 'User']
 ---
 
-## Problem
+## Context
 
 Majority of web application require a search tool to achieve content search - customers who purchase both XM Cloud and Search must integrate the two products to enable them to leverage Search in the sites built out using XM Cloud.
 
 This article discusses how to integration Sitecore Search with XM Cloud. If you need to integrate a different Search provider, you will need to read these techniques and see how they can be applied to your scenario.
 
-## Solution
+> The XM Cloud embedded Solr service is only for internal use of XM Cloud's UI. This cannot be customized or modified, for search features, search tools such as Sitecore Search should be used.
+
+## Execution
 
 This is a two-step process, first, the customer will need to index their content within [Sitecore Search](https://doc.sitecore.com/search). They will then use that search data to build out Search-based experiences in their applications and use Search events to collect user interactions.
 
@@ -27,10 +32,12 @@ Sitecore Search has other indexing methods that offer both pull and push methods
 
 Here is a quick overview of the available indexing methods in Sitecore Search:
 
-* Advanced Web Crawler - Allows for indexing content in multiple languages and parsing web pages with JavaScript to construct indexes.
-* Web Crawler - A simple web crawler that has limited configuration options.
-* API Crawler - Used to consume responses from an HTTP API endpoint that returns JSON. Allows for indexing content in multiple languages and parsing the response with JavaScript.
-* Ingestion API - Used to push content into a Sitecore Search Index.
+<ul>
+<li>**Advanced Web Crawler** - Allows for indexing content in multiple languages and parsing web pages with JavaScript to construct indexes.</li>
+<li>**Web Crawler** - A simple web crawler that has limited configuration options.</li>
+<li>**API Crawler** - Used to consume responses from an HTTP API endpoint that returns JSON. Allows for indexing content in multiple languages and parsing the response with JavaScript.</li>
+<li>**Ingestion API** - Used to push content into a Sitecore Search Index.</li>
+</ul>
 
 You can read an overview of how to work with Index Sources in Sitecore Search on our documentation site: [how to index contents](https://doc.sitecore.com/search/en/users/search-user-guide/using-sources-to-index-content.html).
 
@@ -38,7 +45,7 @@ You can read an overview of how to work with Index Sources in Sitecore Search on
 
 Implementing Search in the web application requires you to call Sitecore Search’s REST API endpoints. The REST API endpoints are the recommended way to implement Sitecore Search. Additionally, Sitecore does make available a React SDK ([Documentation](https://doc.sitecore.com/search/en/developers/search-js-sdk-for-react/introduction-to-sitecore-search-js-sdk-for-react.html)) for the development. It is also available a [Starter Kit](https://github.com/Sitecore/Sitecore-Search-TS-SDK-Starter-Kit/tree/main) for Sitecore Search that is intended for exploratory or prototyping purposes at this time.
 
-## Discussion
+## Insights
 
 While the web crawler can be an effective way to index all or part of the site. It is necessary to remember that the execution of the crawler updates the index completely; for this reason the crawlers cannot be used to partially update the source index. For example, if the page ‘/events/last’ changes you cannot use the web crawler to update the index just for '/events/last', you should launch the crawler to re-index the source completely (updates all index documents with the latest data). To partially update a source index, you need to implement the [Incremental Updates](https://doc.sitecore.com/search/en/users/search-user-guide/enable-incremental-updates-for-a-crawler-source.html) that uses, besides the crawler, also the Ingestion API.
 
@@ -85,7 +92,6 @@ Furthermore, in compliance with GDPR, the product provides the tool to ensure th
 Based on the contract (entitlement), API calls are limited per second and per day. The implementers should always handle rate limiting and handle cases in which they receive the HTTP Status Code 429 (Too Many Requests); in this case, if a retry is needed, it is best to allow for a back-off to avoid going into an infinite retry loop.
 
 For more detail on your entitlement, speak to your Sitecore account representative.
-<br/>
 
 ### Developer experience
 
@@ -103,9 +109,9 @@ In addition, for the pure purpose of prototyping and training, there are the fol
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Index Items | Sitecore Documentation" link="https://doc.sitecore.com/search/en/users/search-user-guide/index-items.html" />
-  <Link title="API Push - create document | Sitecore Documentation" link="https://doc.sitecore.com/search/en/developers/search-developer-guide/creating-a-document-by-passing-attribute-values.html" />
-  <Link title="API Push - update document | Sitecore Documentation" link="https://doc.sitecore.com/search/en/developers/search-developer-guide/updating-a-document.html" />
+  <Link title="Index Items" link="https://doc.sitecore.com/search/en/users/search-user-guide/index-items.html" />
+  <Link title="API Push - create document" link="https://doc.sitecore.com/search/en/developers/search-developer-guide/creating-a-document-by-passing-attribute-values.html" />
+  <Link title="API Push - update document" link="https://doc.sitecore.com/search/en/developers/search-developer-guide/updating-a-document.html" />
   <Link title="Sitecore Search TS SDK Starter-Kit | Sitecore Github" link="https://github.com/Sitecore/Sitecore-Search-TS-SDK-Starter-Kit" />
   <Link title="Sitecore Search React SDK | Discover Sitecore Channel" link="https://www.youtube.com/watch?v=GhQNYlR7pvo" />
 </Row>

@@ -3,16 +3,17 @@ title: 'Creating a Component Gallery'
 description: 'Best practices for designing a component gallery'
 hasSubPageNav: true
 hasInPageNav: true
+area: ['accelerate']
 lastUpdated: '2024-02-21'
+created: '2024-08-23'
+audience: ['Architect','Product Owner','Project Manager','Technical Implementer', 'User']
 ---
 
-## Problem
+## Context
 
 To empower creatives and marketers to independently craft compelling experiences without reliance on developer resources, it is imperative that they possess a comprehensive understanding of the custom components available. This includes knowledge of their intended usage and awareness of the various potential variants that a component may exhibit.
 
-## Solution
-
-### Component Gallery Website
+## Execution
 
 The Component Gallery Website, a standalone Next.JS/JSS site deployed in parallel with the main site, serves as a comprehensive showcase for all available components. It offers concise descriptions of each component's purpose, showcases their appearance with various customizable options, and provides relevant documentation. Drawing parallels to Storybook, this tailored platform is specifically designed to cater to the needs and preferences of the marketer persona, facilitating a seamless and intuitive component exploration experience.
 

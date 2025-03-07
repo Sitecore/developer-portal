@@ -19,7 +19,9 @@ export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommu
         <HStack spacing={16} justifyContent={'space-between'}>
           <Skeleton isLoaded={!loading} flexGrow={1}>
             <Stack>
-              <Heading variant="section">{item.contentType}</Heading>
+              <Heading variant="eyebrow" size={'sm'}>
+                {item.contentType}
+              </Heading>
 
               <Heading size={'md'} my={4}>
                 <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'chakra-body-text'}>
@@ -34,7 +36,7 @@ export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommu
         <Text>
           by <strong>{item.userName}</strong>
         </Text>
-        <Text>
+        <Text variant={'subtle'}>
           Published <strong>{translateDate(item.publishDate)}</strong>
         </Text>
       </CardFooter>

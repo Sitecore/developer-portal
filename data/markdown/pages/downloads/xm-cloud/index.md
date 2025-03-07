@@ -3,22 +3,10 @@ solution: ['content-management']
 product: ['xm-cloud']
 title: 'XM Cloud Tools and Resources'
 productLogo: 'XMCloud'
-description: 'Tools and resources specific to XM Cloud development'
+description: 'XM to XM Cloud Migration Tool'
 twitter: ['#XMCloud']
 hasInPageNav: true
 ---
-
-# XM Cloud Tools and Resources
-
-This page provides downloads to help with your XM Cloud journey. For FAQs, best practices, docs, videos, and other resources please see our XM Cloud product page:
-
-<Promo
-  title="XM Cloud"
-  description="Sitecore XM Cloud is a hybrid headless CMS that supports both marketing and technology teams and has been built on a history of meeting the needs of the Enterprise."
-  imageSource="https://sitecorecontenthub.stylelabs.cloud/api/public/content/c612f3d1efbe4e0cb946ab96d0b4aea1?v=0cca3868"
-  linkText="Find more XM Cloud resources"
-  linkHref="/content-management/xm-cloud" isImageLeft={false}
-/>
 
 ## XM to XM Cloud Migration tool
 
@@ -40,7 +28,7 @@ The tool is available in both a self-contained Graphical User Interface (GUI) to
 
 <br/>
 
-### Downloads
+## Downloads
 
 | Releases/Options                                                                                                                                                                                                                                                                                  | Description                                                                                                                                                                                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

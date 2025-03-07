@@ -5,13 +5,15 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-02-18'
+created: '2023-12-22'
+audience: ['Architect','Technical Implementer']
 ---
 
-## Problem
+## Context
 
 As the technical lead on the project, you need to set up the Project and Environment(s) in the customer portal, as well as a source code repository, so that the project developers can start implementing the client project, commit, and deploy their code.
 
-## Solution
+## Execution
 
 There are 2 paths to set up the solution, depending on whether you are using a source code provider with a supported integration to the XM Cloud Deploy app or not. Currently, only GitHub and Azure DevOps are supported.
 
@@ -158,7 +160,7 @@ The sxastarter folder represents the head application built with NextJS. it cont
 
 - Rename Solution File `XMCloudSXAStarter.sln` to what your are using in Assembly configurations.
 
-## Discussion
+## Insights
 
 ### Structure in XM Cloud
 
@@ -181,7 +183,7 @@ Site Folders organize sites. They are optional as well and help in case you have
 ## Related Recipes
 
 <Row columns={2}>
-  <Link title="Branching Strategy | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy" />
+  <Link title="Branching Strategy" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy" />
   <Link title="DevOps| Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/devops" />
   <Link title="Setting Up Serialization" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/setup-content-serialization" />
 </Row>
@@ -189,7 +191,7 @@ Site Folders organize sites. They are optional as well and help in case you have
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Getting started with XM Cloud | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
+  <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
   <Link title="XM Cloud Foundation Head Repository | Github" link="https://github.com/sitecorelabs/xmcloud-foundation-head" />
   <Link title="XM Cloud Tutorials - Rename app #4" link="https://www.youtube.com/watch?v=uNkQQSC6n8o" />
 </Row>

@@ -79,7 +79,7 @@ const redirects = [
   { source: '/learn/accelerate/content-hub/appendix-i/content-hub-glossary', destination: 'https://doc.sitecore.com/ch/en/users/content-hub/glossary.html', permanent: true },
 
   { source: '/accelerate', destination: '/learn/accelerate', permanent: true },
-
+  { source: '/changelog/xm-cloud/12112023/personalize-the-presentation-of-a-component-in-xm-cloud-pages-personalize', destination: '/changelog/xm-cloud/12112023/personalize-the-presentation-of-a-component-in-xm-cloud-pages', permanent: true },
 ];
 
 const nextConfig = {

@@ -4,8 +4,9 @@ description: 'Building alignment and setting the foundation for Sitecore Content
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
+created: '2024-12-13'
 lastUpdated: '2024-12-13'
-audience: "All"
+audience: ['All']
 ---
 ## Context
 The Discovery phase is the cornerstone of a successful Sitecore Content Hub implementation. This stage involves defining requirements through the domain model, which outlines the major data elements and UI components. It ensures a clear understanding of the organization's needs, current systems, and goals, aligning stakeholders and laying the groundwork for effective planning and execution. 

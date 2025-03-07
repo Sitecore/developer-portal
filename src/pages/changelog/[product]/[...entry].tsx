@@ -19,7 +19,7 @@ import {
   Grid,
   GridItem,
   Heading,
-  HStack,
+  Icon,
   Image,
   Modal,
   ModalBody,
@@ -28,13 +28,12 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Text,
-  useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import { Changelog } from '@lib/changelog';
 import { ChangelogEntry, Product } from '@lib/changelog/types';
 import { getChangelogEntryUrl, getQueryArray, getSlug, slugify } from '@lib/utils';
+import { mdiDownload } from '@mdi/js';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
@@ -84,7 +83,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
     <TrackPageView product={currentProduct}>
       <Layout title={changelogEntry.title} section={title} description={changelogEntry.title}>
         <Hero title={title} description={description}>
-          <HStack>
+          {/* <HStack>
             <Text variant={'sm'}>Powered by</Text>
             <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
               <Image
@@ -94,7 +93,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                 height={18}
               />
             </Link>
-          </HStack>
+          </HStack> */}
         </Hero>
         <VerticalGroup>
           <CenteredContent py={8} gap={8}>
@@ -133,7 +132,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     )}
                   </CardHeader>
                   <CardBody py={0}>
-                    {changelogEntry.image.length > 0 && (
+                    {changelogEntry.image.length > 0 && changelogEntry.image[0].fileType.includes('image') && (
                       <>
                         <Image src={`${changelogEntry.image[0].fileUrl}`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
 
@@ -158,6 +157,28 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                       </>
                     )}
                     <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
+
+                    {changelogEntry.image.filter((img) => img.fileType.includes('pdf')).length > 0 &&
+                      changelogEntry.image
+                        .filter((img) => img.fileType.includes('pdf'))
+                        .map((pdf, index) => {
+                          return (
+                            <LinkButton
+                              key={index}
+                              text="Download PDF"
+                              variant={'outline'}
+                              size={'sm'}
+                              icon={
+                                <Icon>
+                                  <path d={mdiDownload} />
+                                </Icon>
+                              }
+                              href={pdf.fileUrl}
+                              title={`Download the PDF ${pdf.name}`}
+                            />
+                          );
+                        })}
+
                     {changelogEntry.fullArticle != null && <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />}
                   </CardBody>
                   <CardFooter justifyContent={changelogEntry.readMoreLink ? 'space-between' : 'flex-end'}>

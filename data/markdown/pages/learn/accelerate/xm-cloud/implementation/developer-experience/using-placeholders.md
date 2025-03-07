@@ -5,15 +5,17 @@ hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-10-11'
+created: '2024-08-23'
+audience: ['Architect','Technical Implementer']
 ---
 
-## Problem
+## Context
 
 Using placeholders in Sitecore XM Cloud is beneficial because they offer flexibility, reusability, and scalability. They allow dynamic content insertion, support personalized experiences, and maintain consistent design. Placeholders also simplify development and maintenance, making it easier to manage and update content while ensuring a modular and scalable site structure.
 
 This recipe will detail out what Placeholders we have available, how have they been used in the XM Cloud Starter Kit and how to create custom Placeholders while adhering to best practice.
 
-## Solution
+## Execution
 
 There are two types of placeholders Static and Dynamic and we will cover both in this recipe:
 

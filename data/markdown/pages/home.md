@@ -1,6 +1,6 @@
 ---
-title: 'Home'
-description: 'Direct access to the tools and information you need most in a portal created to enhance your developer experience.'
+title: 'The platform for forward-thinking technologists'
+description: 'From CMS to DXP, our solutions empower you to create exceptional digital experiences.'
 stackexchange: ['/questions?tab=Newest']
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'

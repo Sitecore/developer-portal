@@ -5,15 +5,17 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2023-12-15'
+created: '2023-12-15'
+audience: ['Architect','Technical Implementer', 'System Administrator']
 ---
 
-## Problem
+## Context
 
 The client requires that part or all of the head application is behind a login. This may be a paywall, or just requiring the user to login to get access to specific content.
 
 This recipe will also cover best practice with Experience Edge token handling.
 
-## Solution
+## Execution
 
 ### Authentication/User Management
 
@@ -39,7 +41,7 @@ For some clients, a simple check for login state (Authentication) is not enough 
 
 **The standard Sitecore security fields should not be used for this**. They are designed for Content Management access only. To achieve this, a new field should be added to your project's base page template. This can be a simple text field, or a multilist/treelist that points at a predefined set of roles matching your authentication provider. You can check this field against your user record in either middleware or server side.
 
-## Discussion
+## Insights
 
 ### SSG or SSR
 

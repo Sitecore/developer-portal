@@ -1,5 +1,5 @@
 import { Option } from '@/src/components/ui/dropdown';
-import { Alert, AlertIcon, Box, Button, Checkbox, CloseButton, Link, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
+import { Alert, AlertIcon, Box, Button, Card, CardBody, Checkbox, FormControl, FormLabel, HStack, Icon, Link, SkeletonText, VisuallyHidden, Wrap } from '@chakra-ui/react';
 import { ChangelogEntry, ChangelogEntryList, Product } from '@lib/changelog/types';
 import axios from 'axios';
 import NextLink from 'next/link';
@@ -9,6 +9,7 @@ import useSWRInfinite from 'swr/infinite';
 
 import { entriesApiUrl, getChangeTypeOptions, getProductOptions } from '@/src/lib/changelog/common/changelog';
 import { buildQuerystring } from '@/src/lib/changelog/common/querystring';
+import { ChevronLeftIcon } from '@chakra-ui/icons';
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
 import { Hint } from './Hint';
@@ -42,40 +43,53 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
   return (
     <Box>
       {initialProduct && (
-        <>
+        <Wrap mb={4}>
           <Link as={NextLink} href="/changelog" passHref>
-            <Button rightIcon={<CloseButton as={'div'} color={'white'} />} variant="solid" borderRadius={'sm'} mb={4}>
-              Product: {initialProduct.name}
+            <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} width={'100%'} variant={'ghost'}>
+              Go back to the changelog overview
             </Button>
             <VisuallyHidden>Go back to the changelog overview</VisuallyHidden>
           </Link>
-        </>
+        </Wrap>
       )}
-      {!initialProduct && (
-        <ChangelogFilter
-          id="productSelector"
-          label="Products"
-          placeholder="Select one or more products"
-          options={getProductOptions()}
-          onSelectChange={function (selectedValues: Array<Option>): void {
-            onProductsChange(selectedValues);
-          }}
-        />
-      )}
-      <ChangelogFilter
-        id="changeSelector"
-        label="Changes"
-        placeholder="Select one or more "
-        options={getChangeTypeOptions()}
-        onSelectChange={function (selectedValues: Array<Option>): void {
-          setSelectedChange(selectedValues);
-        }}
-      />
+      <Card variant="filled">
+        <CardBody>
+          {!initialProduct && (
+            <FormControl>
+              <HStack alignItems={'baseline'} justifyContent={'space-between'}>
+                <FormLabel>Products</FormLabel>
+                <ChangelogFilter
+                  id="productSelector"
+                  label="Products"
+                  placeholder="Select products"
+                  options={getProductOptions()}
+                  onSelectChange={function (selectedValues: Array<Option>): void {
+                    onProductsChange(selectedValues);
+                  }}
+                />
+              </HStack>
+            </FormControl>
+          )}
+          <FormControl>
+            <HStack alignItems={'baseline'} justifyContent={'space-between'}>
+              <FormLabel>Changes</FormLabel>
+              <ChangelogFilter
+                id="changeSelector"
+                label="Changes"
+                placeholder="Select changes"
+                options={getChangeTypeOptions()}
+                onSelectChange={function (selectedValues: Array<Option>): void {
+                  setSelectedChange(selectedValues);
+                }}
+              />
+            </HStack>
+          </FormControl>
 
-      <Checkbox checked={breaking} onChange={(e) => setBreaking(e.target.checked)}>
-        Only show changes that might require action
-      </Checkbox>
-
+          <Checkbox checked={breaking} onChange={(e) => setBreaking(e.target.checked)}>
+            Only show changes that might require action
+          </Checkbox>
+        </CardBody>
+      </Card>
       <Hint products={selectedProducts} enabled={selectedProducts?.length == 1} />
 
       {isLoading && (

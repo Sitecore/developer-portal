@@ -5,13 +5,15 @@ hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2023-12-15'
+created: '2023-12-22'
+audience: ['Architect','Project Manager','Technical Implementer']
 ---
 
-## Problem
+## Context
 
 There are several ways to create components in XM Cloud. Developers might not be able to find the optimal way for implementing Components.
 
-## Solution
+## Execution
 
 ### Modular Components
 
@@ -61,7 +63,7 @@ The Headless Variant item will be created under `/sitecore/content/<site-collect
 
 Name Headless Variant definition items same as the variant in code using short prescriptive names. Use thumbnails to identify different variants in Pages.
 
-## Discussion
+## Insights
 
 ### Component Builder Components / XM Cloud Components
 

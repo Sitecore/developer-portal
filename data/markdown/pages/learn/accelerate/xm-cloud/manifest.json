@@ -2,8 +2,11 @@
   "title": "Accelerate Cookbook for XM Cloud",
   "description": "This Cookbook provides a set of recipes to help implementing XM Cloud through setup, configuration and implemenation.",
   "productLogo": "XMCloud",
-  "heading": false,
   "path": "/learn/accelerate/xm-cloud",
+  "productFeedbackLabel": ["XMC"],
+  "heading": true,
+  "enableSearch": false,
+  "enableBreadcrumb": true,
   "showRootAsSections": true,
   "routes": [
     {
@@ -17,7 +20,7 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Moving to SaaS - Concepts You Need to Know",
+              "title": "Moving to SaaS",
               "path": "moving-to-saas"
             },
             {
@@ -120,19 +123,23 @@
               "path": "layout-routing"
             },
             {
-              "title": "Multisite",
+              "title": "Multisite Architecture",
               "path": "multisite"
             },
             {
               "title": "Rate Limits and Caching",
               "path": "rate-limits-and-caching"
+            },
+            {
+              "title": "Site management",
+              "path": "site-management"
             }
           ]
         },
         {
           "title": "Sprint Zero",
           "path": "sprint-zero",
-          "ignoreLink": true,
+          "ignoreLink": false,
           "children": [
             {
               "title": "Project Solution Setup",
@@ -179,6 +186,10 @@
             {
               "title": "Using Placeholders",
               "path": "using-placeholders"
+            },
+            {
+              "title": "Troubleshooting Docker",
+              "path": "troubleshooting-docker"
             }
           ]
         },
@@ -215,7 +226,11 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Custom Editing UX for 3rd Party Integrations",
+              "title": "Retrieving Data from 3rd Party",
+              "path": "retrieving-data-from-3rd-party-integrations"
+            },
+            {
+              "title": "Custom Editing UX for 3rd Party",
               "path": "custom-editing-ux-3rd-party-integrations"
             },
             {
@@ -226,7 +241,18 @@
         },
         {
           "title": "Sitecore Search",
-          "path": "sitecore-search"
+          "path": "sitecore-search",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Integrating Sitecore Search",
+              "path": "integrating-sitecore-search"
+            },
+            {
+              "title": "Incrementally updating Search",
+              "path": "search-incremental-updates"
+            }
+          ]
         }
       ]
     },
@@ -238,6 +264,17 @@
         {
           "title": "Go-Live Checklist",
           "path": "go-live-checklist"
+        }
+      ]
+    },
+    {
+      "title": "Optimization",
+      "path": "optimization",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "On-page SEO optimization",
+          "path": "seo-web-optimization"
         }
       ]
     },

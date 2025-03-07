@@ -5,13 +5,15 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-10-09'
+created: '2024-10-09'
+audience: ['All']
 ---
 
-## Problem
+## Context
 
 As your team transitions from Sitecore XP to XM Cloud, it's essential to understand that implementing Software as a Service (SaaS) is fundamentally different from Platform as a Service (PaaS) or Infrastructure as a service (IaaS). While Sitecore XP offered the capabilities for extensive customization and control, Sitecore XM Cloud operates on a SaaS model that prioritizes agility, scalability, and reduced operational overhead. The following outlines the key considerations, challenges, and opportunities in making this transition, specifically for those familiar with Sitecore XP.
 
-## Solution
+## Execution
 
 Migrating from Sitecore XP to XM Cloud represents a significant shift in how you approach web development, content management, and customer experience. Understanding the differences between SaaS and PaaS, identifying the right use cases, and planning for compliance, customization, and integration challenges will be critical to a successful transition.
 
@@ -21,7 +23,7 @@ For example, XM Cloud is ideal for companies looking for faster time-to-market, 
 
 By keeping these considerations in mind, your team can maximize the value of XM Cloud and deliver a modern, scalable digital experience.
 
-## Discussion
+## Insights
 
 The following topics are all considerations when migrating from Sitecore XP to XM Cloud -  when planning, it's crucial to review each topic based on the implementation in front of you.
 
@@ -79,7 +81,7 @@ If your current implementation heavily relies on xDB or has requirements for Cus
 
 Similarly, email marketing, historically handled by EXM, may need to shift to Sitecore Send or other solutions, depending on your needs.
 
-Documentation is further provided for more detailed breakdown regarding this [Feature Matrix and Product Parities | XM Cloud Embedded Personalization FAQ](learn/faq/xm-cloud-embedded-personalization/feature-matrix).
+Documentation is further provided for more detailed breakdown regarding this in [Feature Matrix and Product Parities](/learn/faq/xm-cloud-embedded-personalization/feature-matrix).
 
 ### Content Strategy: Do You Need to Migrate Everything?
 
@@ -95,7 +97,7 @@ Sitecore Edge supports a headless architecture, delivering content via APIs to f
 
 ​Consider the content architecture that is required to make publishing easier for the end user - for customization on actions following Publishing, consider that these need to be moved to the ‘head-app' As an example, timed publishing, when you need precise to the second publishing of your content, can be either setup using Personalization rules or leveraging the middleware from Next.JS.
 
-Read more on the [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge).  
+Read more on the [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge) recipe.  
 
 ### CMS Customizations: Rethink Your Approach
 
@@ -115,7 +117,7 @@ If your current Sitecore XP implementation includes various integrations, you’
 
 - XM Cloud is heavily involved in comparison to frontend based integrations​. Webhooks or the GraphQL Management API will be key for your back-end integrations based on requirements.​
 
-Review the [Getting Component Specific Data | Sitecore Accelerate](/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data) recipe for further information.
+Review the [External Data Integration](/learn/accelerate/xm-cloud/implementation/external-data-integration) recipes for further information.
 
 ### PaaS to SaaS: Gradual vs. Big-Bang
 
@@ -148,18 +150,18 @@ A key move of Paas to SaaS means a move to Headless, that can bring further perf
 ## Related Recipes
 
 <Row columns={2}>
-<Link title="Content Audit | Sitecore Accelerate " link="/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit" />
-<Link title="Preparing for an XM Cloud Project | Sitecore Accelerate " link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
-<Link title="Project Estimation | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/project-planning/project-estimation" />
-<Link title="Transition from XM/XP to XM Cloud recipe | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc" />
-<Link title="Web Application Hosting recipe | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/hosting-web-application" />
-<Link title="Getting Component Specific Data | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data" />
-<Link title="Publishing to Experience Edge | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />
+<Link title="Content Audit" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit" />
+<Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+<Link title="Project Estimation" link="/learn/accelerate/xm-cloud/pre-development/project-planning/project-estimation" />
+<Link title="Transition from XM/XP to XM Cloud" link="/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc" />
+<Link title="Web Application Hosting" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/hosting-web-application" />
+<Link title="External Data Integration" link="/learn/accelerate/xm-cloud/implementation/external-data-integration" />
+<Link title="Publishing to Experience Edge" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />
 </Row>
 
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Feature Matrix and Product Parities | XM Cloud Embedded Personalization FAQ " link="/learn/faq/xm-cloud-embedded-personalization/feature-matrix" />
-  <Link title="Getting Component Specific Data | Sitecore Accelerate" link="/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data" />
+  <Link title="XM Cloud Documentation" link="https://doc.sitecore.com/xmc"/>
+  <Link title="Feature Matrix and Product Parities" link="/learn/faq/xm-cloud-embedded-personalization/feature-matrix" />
 </Row>

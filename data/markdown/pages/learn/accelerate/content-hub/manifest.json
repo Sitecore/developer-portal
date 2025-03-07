@@ -2,8 +2,11 @@
   "title": "Accelerate Cookbook for Content Hub",
   "description": "This Cookbook provides a set of recipes to help implementing Content Hub through setup, configuration and implemenation.",
   "productLogo": "ContentHub",
-  "heading": false,
   "path": "/learn/accelerate/content-hub",
+  "productFeedbackLabel": ["Content Hub"],
+  "heading": true,
+  "enableSearch": false,
+  "enableBreadcrumb": true,
   "showRootAsSections": true,
   "routes": [
     {
@@ -21,12 +24,12 @@
               "path": "discovery-phase"
             },
             {
-              "title": "Project Planning",
-              "path": "project-planning"
-            },
-            {
               "title": "Requirements Gathering",
               "path": "requirements-gathering"
+            },
+            {
+              "title": "Project Planning",
+              "path": "project-planning"
             }
           ]
         },
@@ -54,11 +57,19 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Distribution of assets",
+              "title": "Distribution of Assets",
               "path": "distribution-of-assets"
             },
             {
-              "title": "Paths across entity definitions",
+              "title": "Distribution of Content",
+              "path": "distribution-of-content"
+            },
+            {
+              "title": "Environment Specific Settings",
+              "path": "environment-specific-settings"
+            },
+            {
+              "title": "Paths across Entity Definitions",
               "path": "paths-across-entity-definitions"
             }
           ]
@@ -80,9 +91,13 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Conditionally generate renditions",
+              "title": "Catching Renditions Generation",
+              "path": "catching-rendition-generation"
+            }, 
+            {
+              "title": "Conditionally Generate Renditions",
               "path": "conditionally-generate-renditions"
-            },
+            },           
             {
               "title": "Developing External Components",
               "path": "developing-external-components"
@@ -94,6 +109,10 @@
             {
               "title": "Scripts Guidance and Scenarios",
               "path": "scripting-guidance-and-scenarios"
+            },
+            {
+              "title": "Webclient SDK Scenarios",
+              "path": "webclient-sdk-scenarios"
             }
           ]
         },
@@ -103,16 +122,16 @@
           "ignoreLink": false,
           "children": [
             {
+              "title": "Debugging User Security",
+              "path": "debugging-user-security"
+            },
+            {
               "title": "Single-Sign On",
               "path": "sso-on-content-hub"
             },
             {
               "title": "User Groups Setup",
               "path": "user-groups-setup"
-            },
-            {
-              "title": "Debugging User Security",
-              "path": "debugging-user-security"
             }
           ]
         },
@@ -133,7 +152,18 @@
         },
         {
           "title": "Testing and Quality Assurance",
-          "path": "testing-and-qa"
+          "path": "testing-and-qa",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Implementation Testing",
+              "path": "implementation-testing"
+            },
+            {
+              "title": "Quality Assurance",
+              "path": "quality-assurance"
+            }
+          ]
         },
         {
           "title": "Go-Live Checklist",

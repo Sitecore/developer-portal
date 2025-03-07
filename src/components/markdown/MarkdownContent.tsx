@@ -43,7 +43,7 @@ function CustomMdx(children: string) {
             <code className={className}>{children}</code>
           );
         },
-        h2: (props) => <Heading as={'h2'} {...props} />,
+        h2: (props) => <Heading as={'h2'} fontWeight={'400'} {...props} />,
         h3: (props) => <Heading as={'h3'} {...props} />,
         p: (props) => <Text variant={'large'} {...props} />,
         VideoPromo: VideoPromo,

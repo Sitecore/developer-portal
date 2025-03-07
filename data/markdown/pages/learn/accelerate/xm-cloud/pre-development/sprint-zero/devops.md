@@ -5,13 +5,15 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-02-07'
+created: '2023-12-22'
+audience: ['Architect','Technical Implementer', 'System Administrator']
 ---
 
-## Problem
+## Context
 
 A customer is required to deploy their application to both production and non-production environments. This will include any assets required to be deployed to the XMC infrastructure, as well as deploying their “head” application. This recipe will go through the different options available to customers to achieve this.
 
-## Solution
+## Execution
 
 ### Provisioning the XM Cloud Infrastructure
 
@@ -38,7 +40,7 @@ The Sitecore XM Cloud Deploy Application is used to provision XM Cloud Projects/
   Whether you let the XM Cloud Deploy application create the repository, or you use your own, ALL XM Cloud implementations must start with the [XM Cloud Foundation Head](https://github.com/sitecorelabs/xmcloud-foundation-head) repository.
 </Alert>
 
-You can read more about how to create a new project using the Deploy Application on our Documentation Site: https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html or follow the recipe: [Sprint Zero - Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup).
+You can read more about how to create a new project using the Deploy Application on our [Documentation Site](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html) or follow the [Sprint Zero - Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup) recipe.
 
 Once the project is created, you will then provision an environment. These can be used to represent the different Production and Non-Production environments that you require. When creating them through the deploy application you can also choose to tie each environment to a different branch in your repository should that be a requirement for you. You can also choose to have the environment automatically deployed when changes are committed to the chosen branch.
 
@@ -117,10 +119,10 @@ Azure App Services and Azure Static WebApps have a lot of limitations so these o
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="XM Cloud Deploy app | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
-  <Link title="Manage an environment | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html" />
-  <Link title="Sitecore Command Line Interface | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html" />
-  <Link title="Sitecore Command Line Interface | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html" />
+  <Link title="XM Cloud Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+  <Link title="Manage an environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html" />
+  <Link title="Sitecore Command Line Interface" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html" />
+  <Link title="Sitecore Command Line Interface" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html" />
 </Row>
 
 ### Related Links

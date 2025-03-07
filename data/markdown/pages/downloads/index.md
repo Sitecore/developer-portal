@@ -5,23 +5,6 @@ origin: https://dev.sitecore.net/Downloads.aspx
 hasInPageNav: false
 ---
 
-## Composable DXP
-
-<SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
-<Download 
-  title="XM to XM Cloud Migration Tool"
-  description="Tool for migrating content, media and users from an XM instance to an XM Cloud environment."
-  link1text="More info"
-  link1href="/downloads/xm-cloud"
-/>
-<Download 
-  title="xDB to CDP Migration Tool"
-  description="Sitecore Connect recipes for migrating visitor contact data from xDB to CDP"
-  link1text="More info"
-  link1href="/downloads/xDB_to_CDP_Migration"
-/>
-</SimpleGrid>
-
 ## Platform DXP Releases
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
@@ -46,6 +29,12 @@ hasInPageNav: false
 ## Platform DXP Modules
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
+<Download 
+  title="Sitecore Stream for Platform DXP"
+  description="Sitecore Experience Platform's new AI module!"
+  link1text="More info"
+  link1href="/downloads/Sitecore_Stream_for_Platform_DXP"
+/>
 <Download 
   title="Sitecore Identity Server 7.1.11"
   description="Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or extended for use with an external identity provider."
@@ -131,6 +120,18 @@ hasInPageNav: false
 ## Developer Tools & Resources
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
+<Download 
+  title="XM to XM Cloud Migration Tool"
+  description="Tool for migrating content, media and users from an XM instance to an XM Cloud environment."
+  link1text="More info"
+  link1href="/downloads/xm-cloud"
+/>
+<Download 
+  title="xDB to CDP Migration Tool"
+  description="Sitecore Connect recipes for migrating visitor contact data from xDB to CDP"
+  link1text="More info"
+  link1href="/downloads/xDB_to_CDP_Migration"
+/>
 <Download 
   title="Sitecore Installation Framework 2.4.0"
   description="Tooling for configuring and deploying Sitecore topologies to local or remote servers or virtual machines."

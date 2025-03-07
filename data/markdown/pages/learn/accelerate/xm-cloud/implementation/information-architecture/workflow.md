@@ -1,17 +1,19 @@
 ---
 title: 'Workflows'
-description: 'Learn about Workflows in XM Cloud'
+description: 'Setting up workflow on a Page and Components level'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-11-18'
+lastUpdated: '2025-02-14'
+created: '2024-10-04'
+audience: ['Architect','Product Owner','Project Manager','Technical Implementer', 'User']
 ---
 
-## Problem
+## Context
 
 XM Cloud comes with a sample workflow that should not be used as an actual configuration but as an example of a simple workflow. Workflow helps customers prevent unplanned content from making it to their website without the proper approvals. It also helps maintain consistent quality across all content. Each step in the editing process—such as fact-checking, style alignment, tone consistency, and further reviews—ensures that the content meets specific standards.
 
-## Solution
+## Execution
 
 ### Workflow Planning
 
@@ -19,14 +21,9 @@ It's recommended to establish a workflow for all content items. This prevents pr
 
 ### Migration Considerations
 
-If you are currently on XP/XM and migrating to XM Cloud, there are specific considerations to address. Two key focuses should be:
+If you are currently on XP/XM and migrating to XM Cloud there are some specific considerations that you should consider when making this transition. Two specific focuses that should be considered are any .NET customizations that have been made to affect items controlled by workflow as well as the introduction of webhooks which can allow for new ways to implement workflow. In addition to these considerations, there are existing implementations that should be reviewed and changed based on the information below:
 
-1. Any .NET customizations affecting items controlled by workflow.
-2. The introduction of webhooks, which offer new ways to implement workflow.
-
-#### Changes to Consider
-
-- **Email Actions** are no longer supported. Replace them with a [Webhook Submit Action](#using-webhooks-to-send-notifications).
+Email Actions should be implemented with a Webhook Submit Action as detailed further down.
 
 ### Configure Page and Datasource Workflows
 
@@ -64,11 +61,15 @@ It's important to configure workflow for both pages and the separate data source
 
 <Image src="/images/learn/accelerate/xm-cloud/workflows2.png" title="ComponentDatasourceWorkflow"/>
 
+If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB XM Cloud components then all of the necessary configuration should already be in place including base templates.
+
+Note that only templates that have the **\_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: _/sitecore/Templates/Foundation/Experience Accelerator/StandardValues/_. If for some reason your component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the docs site.
+
 ### Configuration of Users/Roles
 
 For each workflow state that requires a specific set of users, create a Sitecore role representing the commands and states this type of user should manage. Assign roles to users rather than configuring permissions for individual users.
 
-### Example: Sample Workflow with "Editor" and "Super Editor" Roles
+#### Example: Sample Workflow with "Editor" and "Super Editor" Roles
 
 - **Editor**: Can push an item from Draft to Awaiting Approval.
 - **Super Editor**: Can approve or reject the item.
@@ -106,48 +107,51 @@ You can now trigger sending emails or notifications via webhooks when an item re
 1. Create a new Webhook Submit Action under a specific state or command.
 2. Example payload sent by the webhook:
 
-    ```json
-    {
-      "ActionID": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
-      "ActionName": "Name",
-      "Comments": [],
-      "DataItem": {
-        "Language": "en",
-        "Version": 4,
-        "Id": "f0b5226d-14ce-4dad-9b7b-37539d45ed7c",
-        "Name": "Home",
-        "ParentId": "43bd6a7c-b8a8-4c07-8935-123fe1d0d2a1",
-        "TemplateId": "4d4931c1-2ecf-4a27-a5ce-edbe6237e0d0",
-        "TemplateName": "Page",
-        "MasterId": "45cf9f42-b3ac-4412-aab9-f8441c7e448e",
-        "SharedFields": [],
-        "UnversionedFields": [],
-        "VersionedFields": []
-      },
-      "Message": "",
-      "NextState": null,
-      "PreviousState": {
-        "DisplayName": "Draft",
-        "FinalState": false,
-        "Icon": "Software/16x16/jar.png",
-        "StateID": "{721CD32A-7489-475E-9C7A-24C8C7DE1DE5}",
-        "PreviewPublishingTargets": []
-      },
-      "UserName": "sitecore\\john.doe@example.com",
-      "WorkflowName": "Simple Page Workflow",
-      "WebhookItemId": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
-      "WebhookItemName": "Name"
-    }
-    ```
+   ```json
+   {
+     "ActionID": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
+     "ActionName": "Name",
+     "Comments": [],
+     "DataItem": {
+       "Language": "en",
+       "Version": 4,
+       "Id": "f0b5226d-14ce-4dad-9b7b-37539d45ed7c",
+       "Name": "Home",
+       "ParentId": "43bd6a7c-b8a8-4c07-8935-123fe1d0d2a1",
+       "TemplateId": "4d4931c1-2ecf-4a27-a5ce-edbe6237e0d0",
+       "TemplateName": "Page",
+       "MasterId": "45cf9f42-b3ac-4412-aab9-f8441c7e448e",
+       "SharedFields": [],
+       "UnversionedFields": [],
+       "VersionedFields": []
+     },
+     "Message": "",
+     "NextState": null,
+     "PreviousState": {
+       "DisplayName": "Draft",
+       "FinalState": false,
+       "Icon": "Software/16x16/jar.png",
+       "StateID": "{721CD32A-7489-475E-9C7A-24C8C7DE1DE5}",
+       "PreviewPublishingTargets": []
+     },
+     "UserName": "sitecore\\john.doe@example.com",
+     "WorkflowName": "Simple Page Workflow",
+     "WebhookItemId": "2f00a4eb-9b5a-4d15-a541-dd4e1bad73dc",
+     "WebhookItemName": "Name"
+   }
+   ```
 
 3. The webhook sends a `POST` request to the specified URL.
 4. Configure the URL and authorization details for your endpoint.
 
-## Related Documentation
+### Related Documentation
 
 <Row columns={2}>
   <Link title="Workflow" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow.html" />
   <Link title="Workflow Cookbook" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/workflow-cookbook.html" />
   <Link title="Workflow Webhooks" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--using-an-authorization-item.html" />
   <Link title="Assign a data source workflow action in SXA " link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/assign-a-data-source-workflow-action-in-sxa.html" />
+  <Link title="Add standard values under individual sites" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites" />
+  <Link title="Using an authorization item" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--using-an-authorization-item.html" />
+  <Link title="Defining standard values for your sites" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html" />
 </Row>

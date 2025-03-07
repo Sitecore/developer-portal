@@ -5,13 +5,15 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-03-06'
+created: '2024-03-06'
+audience: ['Architect','Product Owner','Project Manager', 'User']
 ---
 
-## Problem
+## Context
 
 The customer is about to embark on a Sitecore XM Cloud project. To have a successful project, there should be some general planning at the outset.
 
-## Solution
+## Execution
 
 ### Project Roles
 
@@ -94,7 +96,7 @@ Based on this common ground, developers can create layouts and components that r
 
 Once an MVP is delivered to the client, the authors or marketers can start creating content.
 
-## Discussion
+## Insights
 
 **Tips & Tricks**
 

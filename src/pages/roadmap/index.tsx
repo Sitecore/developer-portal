@@ -64,7 +64,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                   <ListItem>Future - offering a glimpse into long-term developments beyond nine months.</ListItem>
                 </UnorderedList>
               </Wrap>
-              <Image src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/3de0d9d0071446fa95353cfd41748fa9?t=sc700x700" alt="Roadmap" width={300} height={300} />
+              <Image src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/3de0d9d0071446fa95353cfd41748fa9?t=sc700x700" alt="Roadmap" width={300} height={300} hideBelow={'md'} />
             </Flex>
 
             <RestrictedContent>
@@ -77,7 +77,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                   </AlertDescription>
                 </Wrap>
               </Alert>
-              <Heading size={'sm'}>Available roadmaps</Heading>
+              <Heading size={'md'}>Available roadmaps</Heading>
 
               <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={4}>
                 {products.map((product) => (

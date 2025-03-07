@@ -5,13 +5,15 @@ hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-02-28'
+created: '2024-02-28'
+audience: ['Architect','Technical Implementer']
 ---
 
-## Problem
+## Context
 
 The development team needs to be able to develop both the CMS and the Website application (Head Next.js application), but it is not possible to use Docker for local development.
 
-## Solution
+## Execution
 
 Github Codespaces provides a simple solution to develop both the web application (Next.js) and the CMS development (data modelling, templates, rendering items etc…) in a common workspace without using Docker.
 
@@ -200,7 +202,7 @@ dotnet tool restore
 
 The Sitecore CLI will be installed to the Codespace.
 
-## Discussion
+## Insights
 
 ### Get the GraphQL API Key
 

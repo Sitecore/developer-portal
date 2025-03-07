@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Option } from '../components/ui/dropdown';
-import { CustomField, Issue, JiraResponse, RoadmapInformation } from './interfaces/jira';
+import { CustomField, Issue, IssueTypeSchema, JiraResponse, RoadmapInformation } from './interfaces/jira';
 import { parseJiraIssues } from './roadmap';
 
 const jiraBaseUrl = 'https://sitecore.atlassian.net/rest/api/3';
@@ -18,6 +18,28 @@ export enum Phase {
 enum FilterOption {
   Equals = '=',
   NotEquals = '!=',
+}
+interface JiraIssueType {
+  id: string;
+  self: string;
+  description: string;
+  iconUrl: string;
+  name: string;
+}
+
+interface JiraIssuePriority {
+  id: string;
+  self: string;
+  description: string;
+  iconUrl: string;
+  name: string;
+}
+
+interface JiraProjectResult {
+  id: string;
+  self: string;
+  description: string;
+  issueTypes: Array<JiraIssueType>;
 }
 
 async function fetchData<T>(url: string): Promise<T> {
@@ -161,4 +183,142 @@ export function getStatusColor(status: string): string {
     default:
       return 'gray';
   }
+}
+
+export async function getIssueTypeSchema({ projectKey, issueTypeId }: { projectKey: string; issueTypeId: string }): Promise<IssueTypeSchema> {
+  console.log(`getting the issue type schema for ${projectKey} with issueType ${issueTypeId}...`);
+  const response = await fetch(`${jiraBaseUrl}/issue/createmeta/${projectKey}/issuetypes/${issueTypeId}`, {
+    method: 'GET',
+    cache: 'no-cache',
+    headers: {
+      Authorization: 'Basic ' + Buffer.from(JIRA_USERNAME! + ':' + JIRA_API_TOKEN!).toString('base64'),
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+
+    throw Error(error);
+  }
+
+  return (await response.json()) as IssueTypeSchema;
+}
+
+export async function postJiraIssue({
+  summary,
+  projectKey = 'PRDSCS',
+  issueTypeId = '11808',
+  product,
+  name,
+  email,
+  description,
+  url,
+}: {
+  summary: string;
+  projectKey: string;
+  issueTypeId: string;
+  product?: string[];
+  name?: string;
+  email?: string;
+  description?: string;
+  url?: string;
+}): Promise<{ id: string; key: string }> {
+  console.log('posting the new jira ticket...');
+
+  let productValue: any[] = [];
+
+  if (product) {
+    const schema = await getIssueTypeSchema({ projectKey, issueTypeId });
+
+    product.map((p) => {
+      const productField = schema.fields.find((field) => field.name === 'Products');
+      const foundProduct = productField?.allowedValues?.find((x) => x.value?.toLowerCase() === p.toLowerCase());
+      if (foundProduct) {
+        productValue.push(foundProduct);
+      }
+    });
+
+    if (productValue.length == 0) {
+      throw console.error('Product not found in the allowed values');
+    }
+  }
+
+  const response = await fetch(`${jiraBaseUrl}/issue`, {
+    method: 'POST',
+    cache: 'no-cache',
+    headers: {
+      Authorization: 'Basic ' + Buffer.from(JIRA_USERNAME! + ':' + JIRA_API_TOKEN!).toString('base64'),
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      fields: {
+        customfield_16781: productValue,
+        summary: `[FEEDBACK] ${summary}`,
+        project: {
+          key: projectKey,
+        },
+        issuetype: {
+          id: issueTypeId,
+        },
+        description: {
+          type: 'doc',
+          version: 1,
+          content: [
+            {
+              type: 'paragraph',
+              content: [
+                {
+                  text: description,
+                  type: 'text',
+                },
+              ],
+            },
+            {
+              type: 'paragraph',
+              content: [
+                {
+                  text: '\nINFO:\nurl: ',
+                  type: 'text',
+                },
+                {
+                  type: 'inlineCard',
+                  attrs: {
+                    url: url ?? '-',
+                  },
+                },
+                {
+                  text: `\nname: ${name == null || name == '' ? '-' : name}`,
+                  type: 'text',
+                },
+                {
+                  text: `\nemail: ${email == null || email == '' ? '-' : email}`,
+                  type: 'text',
+                },
+              ],
+            },
+            {
+              type: 'paragraph',
+              content: [
+                {
+                  text: 'Ticket automatically created from the feedback form on the developer portal.',
+                  type: 'text',
+                },
+              ],
+            },
+          ],
+        },
+        labels: ['external-feedback'],
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+
+    throw Error('ticket not ok! ' + error);
+  }
+
+  // return (await response.json()) as { id: string; key: string };
+  return { id: '123', key: 'PRDSCS-123' };
 }

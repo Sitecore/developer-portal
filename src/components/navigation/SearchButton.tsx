@@ -49,7 +49,7 @@ export const SearchButton = () => {
             </Icon>
           )
         }
-        mr={2}
+        mr={0}
         aria-label="Toggle the search box"
       />
     </>
