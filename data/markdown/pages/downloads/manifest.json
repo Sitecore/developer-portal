@@ -7,22 +7,6 @@
   "enableBreadcrumb": false,
   "routes": [
     {
-      "title": "Composable DXP",
-      "path": "",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "XM to XM Cloud Migration Tool",
-          "path": "xm-cloud"
-        },
-        {
-          "title": "xDB to CDP Migration Tool",
-          "path": "xDB_to_CDP_Migration"
-        }
-      ],
-      "collapsed": true
-    },
-    {
       "title": "Platform DXP Releases",
       "path": "",
       "ignoreLink": true,
@@ -95,6 +79,14 @@
       "ignoreLink": true,
       "path": "",
       "children": [
+        {
+          "title": "XM to XM Cloud Migration Tool",
+          "path": "xm-cloud"
+        },
+        {
+          "title": "xDB to CDP Migration Tool",
+          "path": "xDB_to_CDP_Migration"
+        },
         {
           "title": "Sitecore Installation Framework",
           "path": "Sitecore_Installation_Framework"
