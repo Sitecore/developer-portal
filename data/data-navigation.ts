@@ -559,7 +559,7 @@ export const mainNavigation: NavItem[] = [
         ],
       },
     ],
-  },*/
+  },
   {
     title: 'Products',
     pathname: '/products',
@@ -656,7 +656,7 @@ export const mainNavigation: NavItem[] = [
         ],
       },
     ],
-  },
+  },*/
   {
     title: 'Changelog',
     url: '/changelog',
