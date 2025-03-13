@@ -3,15 +3,17 @@ title: 'DevOps'
 description: 'Configuring your DevOps with XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
-hasInPageNav: false
+hasInPageNav: true
 lastUpdated: '2025-03-13'
+created: '2023-12-22'
+audience: ['Architect','Technical Implementer', 'System Administrator']
 ---
 
-## Problem
+## Context
 
 In XM Cloud, customers need to deploy their application to both production and non-production environments. Non production environments are used for development and testing before deploying to the live (production) environment. This will include any assets required to be deployed to the XMC infrastructure, as well as [deploying their “head” application](https://doc.sitecore.com/xmc/en/developers/xm-cloud/front-end-hosting-applications.html). This recipe will go through the different options available to customers to achieve this.
 
-## Solution
+## Execution
 
 ### Provisioning the XM Cloud Infrastructure
 
@@ -99,6 +101,11 @@ When running the command within a DevOps pipeline, you can use it to upload your
 
 Once you have provisioned your XM Cloud Infrastructure and created a Site return to the Sites tab in the Deploy application for your Environment. Then, click the button on the right and choose “Set up hosting”. Complete the sections and follow the prompts to deploy your site to a new Vercel installation.
 
+<Alert>
+  <AlertIcon />
+  You can learn more about how to manage your Vercel Connector on our Documentation Site: https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-connections-for-source-control-and-hosting-providers.html
+</Alert>
+
 ### Deploying your head
 
 Sitecore XM Cloud is based on a Headless architecture pattern. This means that your site is served by a separate application (or head), to your main XM Cloud Infrastructure. You will need to provision this application as well. Currently, XM Cloud has a connector for Vercel allowing you to provision your head directly from within the XM Cloud Deploy Application. It is recommended to use this connector to deploy your site to Vercel where possible, however there are some scenarios where that won’t be possible and you will have to manage the deployment of this separately, for example
@@ -106,11 +113,6 @@ Sitecore XM Cloud is based on a Headless architecture pattern. This means that y
 - You’re not using Vercel to host your head.
 - You’re not using a Monorepo and your head and XM Cloud application elements are stored in separate repositories.
 - You’re using the CLI to deploy XM Cloud as described above, and want to manage your head deployments using the CI/CD tooling.
-
-<Alert>
-  <AlertIcon />
-  You can learn more about how to manage your Vercel Connector on our Documentation Site: https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-connections-for-source-control-and-hosting-providers.html
-</Alert>
 
 ### Deploy a custom head Deployment
 
