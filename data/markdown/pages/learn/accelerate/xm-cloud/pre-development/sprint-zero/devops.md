@@ -4,12 +4,12 @@ description: 'Configuring your DevOps with XM Cloud'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
-lastUpdated: '2024-02-07'
+lastUpdated: '2025-03-13'
 ---
 
 ## Problem
 
-A customer is required to deploy their application to both production and non-production environments. This will include any assets required to be deployed to the XMC infrastructure, as well as deploying their “head” application. This recipe will go through the different options available to customers to achieve this.
+In XM Cloud, customers need to deploy their application to both production and non-production environments. Non production environments are used for development and testing before deploying to the live (production) environment. This will include any assets required to be deployed to the XMC infrastructure, as well as [deploying their “head” application](https://doc.sitecore.com/xmc/en/developers/xm-cloud/front-end-hosting-applications.html). This recipe will go through the different options available to customers to achieve this.
 
 ## Solution
 
@@ -43,9 +43,11 @@ The Sitecore XM Cloud Deploy Application is used to provision XM Cloud Projects/
   Whether you let the XM Cloud Deploy application create the repository, or you use your own, ALL XM Cloud implementations must start with the [XM Cloud Foundation Head](https://github.com/sitecorelabs/xmcloud-foundation-head) repository.
 </Alert>
 
-You can read more about how to create a new project using the Deploy Application on our Documentation Site: <https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html> or follow the recipe: [Sprint Zero - Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup).
+Using the XM Cloud Foundation head repository is crucial for getting started with a project, as it provides a pre-configured, best-practice foundation that accelerates development, ensures consistency, and simplifies integration with XM Cloud services. If a project doesn’t use it, you may need to manually configure the environment, set up dependencies, and align with best practices to ensure compatibility and smooth deployment.
 
-Once the project is created, you will then provision an environment. These can be used to represent the different Production and Non-Production environments that you require. When creating them through the deploy application you can also choose to tie each environment to a different branch in your repository should that be a requirement for you. You can also choose to have the environment automatically deployed when changes are committed to the chosen branch.
+You can read more about how to create a new project using the Deploy Application on our Documentation Site: <https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html> or follow the recipe: [Sprint Zero - Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup).
+
+Once the project is created, you will then [provision an environment](http://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html). These can be used to represent the different Production and Non-Production environments that you require. When creating them through the deploy application you can also choose to tie each environment to a different branch in your repository should that be a requirement for you. You can also choose to have the environment automatically deployed when changes are committed to the chosen branch.
 
 After you have entered all the details and chosen to proceed a Deployment will commence that will push the required code and configuration to the newly created environment.
 
@@ -93,17 +95,17 @@ This command will create a new deployment for the previously created environment
 
 When running the command within a DevOps pipeline, you can use it to upload your custom codebase to the platform.
 
+### Deploy using the Vercel Connector
+
+Once you have provisioned your XM Cloud Infrastructure and created a Site return to the Sites tab in the Deploy application for your Environment. Then, click the button on the right and choose “Set up hosting”. Complete the sections and follow the prompts to deploy your site to a new Vercel installation.
+
 ### Deploying your head
 
-Sitecore XM Cloud is based on a Headless architecture pattern. This means that your site is served by a separate application (or head), to your main XM Cloud Infrastructure. The customer will need to provision this application as well. Currently, XM Cloud has a connector for Vercel allowing you to provision your head directly from within the XM Cloud Deploy Application. It is recommended to use this connector to deploy your site to Vercel where possible, however there are some scenarios where that won’t be possible and you will have to manage the deployment of this separately, for example
+Sitecore XM Cloud is based on a Headless architecture pattern. This means that your site is served by a separate application (or head), to your main XM Cloud Infrastructure. You will need to provision this application as well. Currently, XM Cloud has a connector for Vercel allowing you to provision your head directly from within the XM Cloud Deploy Application. It is recommended to use this connector to deploy your site to Vercel where possible, however there are some scenarios where that won’t be possible and you will have to manage the deployment of this separately, for example
 
 - You’re not using Vercel to host your head.
 - You’re not using a Monorepo and your head and XM Cloud application elements are stored in separate repositories.
 - You’re using the CLI to deploy XM Cloud as described above, and want to manage your head deployments using the CI/CD tooling.
-
-### Deploy using the Vercel Connector
-
-Once you have provisioned your XM Cloud Infrastructure and created a Site return to the Sites tab in the Deploy application for your Environment. Then, click the button on the right and choose “Set up hosting”. Complete the sections and follow the prompts to deploy your site to a new Vercel installation.
 
 <Alert>
   <AlertIcon />
@@ -138,7 +140,6 @@ Azure App Services and Azure Static WebApps have a lot of limitations so these o
 <Row columns={2}>
   <Link title="XM Cloud Deploy app | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
   <Link title="Manage an environment | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html" />
-  <Link title="Sitecore Command Line Interface | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html" />
   <Link title="Sitecore Command Line Interface | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-command-line-interface.html" />
 </Row>
 
