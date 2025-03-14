@@ -6,6 +6,15 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
+## Sitecore Identity Server 8.x
+</CardHeader>
+<CardBody>
+[Sitecore Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016)
+</CardBody>          
+</Card>
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
 ## Sitecore Identity Server 7.x
 </CardHeader>
 <CardBody>
