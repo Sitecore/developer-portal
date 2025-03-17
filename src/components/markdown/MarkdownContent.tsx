@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertIcon, Card, CardBody, CardHeader, Heading, HStack, SimpleGrid, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, Card, CardBody, CardHeader, Heading, HStack, SimpleGrid, Tab, Table, TableCaption, TableContainer, TabList, TabPanel, TabPanels, Tabs, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import { MDXRemote } from 'next-mdx-remote';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -78,6 +78,11 @@ function CustomMdx(children: string) {
         Td,
         TableCaption,
         TableContainer,
+        Tabs,
+        TabList,
+        Tab,
+        TabPanels,
+        TabPanel,
       }}
     />
   );
