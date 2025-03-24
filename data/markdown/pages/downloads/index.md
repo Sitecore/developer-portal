@@ -36,10 +36,10 @@ hasInPageNav: false
   link1href="/downloads/Sitecore_Stream_for_Platform_DXP"
 />
 <Download 
-  title="Sitecore Identity Server 7.1.11"
+  title="Sitecore Identity Server 8.0.16"
   description="Single sign-on mechanism for SXP deployments, used with Sitecore's membership storage or extended for use with an external identity provider."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Identity/7x/Sitecore_Identity_7111"
+  link1href="/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016"
    link2text="See all versions"
   link2href="/downloads/Sitecore_Identity"
 />

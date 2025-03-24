@@ -1,8 +1,17 @@
 ---
 title: 'Sitecore Identity Server'
-description: 'Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication. For security reasons we strongly recommend using Sitecore Identity Server 7.0 or later.'
+description: 'Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform and Sitecore Experience Commerce.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 ---
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
+## Sitecore Identity Server 8.x
+</CardHeader>
+<CardBody>
+[Sitecore Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016)
+</CardBody>          
+</Card>
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
