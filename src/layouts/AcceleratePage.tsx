@@ -121,7 +121,7 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
 
               <AccelerateMetaData pageInfo={pageInfo} />
             </Stack>
-            <Alert position={'fixed'} bottom={'180'} right={'-4'} maxW={'xs'} shadow="lg">
+            <Alert>
               <AlertIcon />
               <Wrap>
                 <AlertTitle>Questions or suggestions?</AlertTitle>
