@@ -1,12 +1,13 @@
-import { Box, Container, HStack, Link, Stack, Text, Tooltip } from '@chakra-ui/react';
+import { Box, Container, HStack, Icon, Link, Stack, Text, Tooltip } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
 
+import { mdiStarFourPoints } from '@mdi/js';
 import { SocialButton } from '../links';
 
 export const Footer = () => (
   <Box bg={'chakra-subtle-bg'} borderTop={'1px'} borderColor={'chakra-border-color'} position={'relative'} bottom={0} left={0} width={'full'}>
-    <Container as={HStack} maxW={'6xl'} py={8} px={2} direction={{ base: 'column', md: 'column' }} spacing={4} gap={8} width={'full'} justifyContent={'space-between'}>
+    <Container as={HStack} maxW={'7xl'} py={8} px={2} direction={{ base: 'column', md: 'column' }} spacing={4} gap={8} width={'full'} justifyContent={'space-between'}>
       <HStack>
         <Text>© Copyright 2025, Sitecore. All Rights Reserved</Text>
         <Text display={{ base: 'none', md: 'block' }}>|</Text>
@@ -29,7 +30,7 @@ export const Footer = () => (
         </Link>
         <Text>|</Text>
         <Tooltip label="Integrate Sitecore resources using LLMs" placement="top">
-          <Link href={'/llms.txt'} title="Read LLMs">
+          <Link href={'/llms.txt'} title="Read LLM file">
             <Text transition={'all .3s ease'} fontWeight={500} fontSize={'sm'}>
               LLM
             </Text>
@@ -52,6 +53,11 @@ export const Footer = () => (
         </SocialButton>
         <SocialButton label={'Instagram'} href={'https://www.instagram.com/sitecore'} aria-label="instagram">
           <FaInstagram />
+        </SocialButton>
+        <SocialButton label={'LLM'} href={'/llms.txt'} aria-label="LLM">
+          <Icon>
+            <path d={mdiStarFourPoints} />
+          </Icon>
         </SocialButton>
       </Stack>
     </Container>
