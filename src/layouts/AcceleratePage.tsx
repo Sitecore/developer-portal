@@ -8,7 +8,8 @@ import { useRouter } from 'next/router';
 
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
-import { Box, Flex, Heading, Link, List, ListIcon, ListItem, Stack, StackDivider, Text } from '@chakra-ui/react';
+import useManifestRoutes from '@/src/hooks/useManifestRoutes';
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Box, Flex, Heading, Link, List, ListIcon, ListItem, Stack, Text, Wrap } from '@chakra-ui/react';
 import { mdiArrowRightCircle } from '@mdi/js';
 import { PromoCardProps, PromoList } from '../components/cards';
 import { SocialFeeds } from '../components/links';
@@ -19,8 +20,7 @@ import { DropDownNavigation } from '../components/navigation/DropDownNavigation'
 import SidebarNavigation from '../components/navigation/SidebarNavigation';
 import { CenteredContent } from '../components/ui/sections';
 
-import useManifestRoutes from '@/src/hooks/useManifestRoutes';
-
+import UseWithAI from '../components/integrations/ai/useWithAI';
 import GithubContributionNotice from '../components/markdown/contribute';
 import Feedback from '../components/markdown/Feedback';
 import { ManifestConfig } from '../lib/interfaces/manifest';
@@ -113,15 +113,23 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
             </CenteredContent>
           </Box>
 
-          <Sidebar hideBelow={'xl'}>
-            <Stack divider={<StackDivider />}>
-              <AccelerateMetaData pageInfo={pageInfo} mt={10} />
-              {sectionTitles.length > 1 && <InPageNav titles={sectionTitles} key={path} title="Topics in this recipe" mt={2} />}
-            </Stack>
-            <Box mt={4}>
-              <Text mb={4}>Questions or suggestions? We&apos;d love to hear your feedback!</Text>
-              <Feedback variant={'outline'} projectId="RCPS" issueTypeId="3" product={sidebarConfig?.productFeedbackLabel} text="Submit Feedback" />
-            </Box>
+          <Sidebar hideBelow={'xl'} borderLeft={'1px solid'} borderColor={'neutral.200'} minH={'100%'} pl="8" position={'sticky'} top={'0'}>
+            {sectionTitles.length > 1 && <InPageNav titles={sectionTitles} key={path} title="Topics in this recipe" mt={2} />}
+
+            <UseWithAI pageInfo={pageInfo} />
+
+            <AccelerateMetaData pageInfo={pageInfo} />
+
+            <Alert position={'fixed'} bottom={'10'} right={'4'} maxW={'xs'}>
+              <AlertIcon />
+              <Wrap>
+                <AlertTitle>Questions or suggestions?</AlertTitle>
+                <AlertDescription>
+                  <Text variant="subtle">We&apos;d love to hear your feedback!</Text>
+                </AlertDescription>
+                <Feedback variant={'outline'} projectId="RCPS" issueTypeId="3" product={sidebarConfig?.productFeedbackLabel} text="Submit Feedback" />
+              </Wrap>
+            </Alert>
           </Sidebar>
         </Flex>
       </Layout>

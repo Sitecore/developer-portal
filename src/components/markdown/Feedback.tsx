@@ -82,7 +82,7 @@ const Feedback = ({ text = 'Feedback', projectId, issueTypeId, product, ...rest 
 
   return (
     <>
-      <Button {...rest} onClick={onOpen}>
+      <Button {...rest} onClick={onOpen} variant="link">
         {text}
       </Button>
 
