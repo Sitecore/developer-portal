@@ -1,7 +1,7 @@
 import { Button, ButtonGroup, Heading, Icon, Wrap, WrapProps } from '@chakra-ui/react';
 import { ContentHeading } from '@lib/interfaces/contentheading';
 
-import { mdiArrowRightBoldCircleOutline } from '@mdi/js';
+import { mdiChevronRight } from '@mdi/js';
 import useInPageNavigation from '../../hooks/useInPageNavigation';
 
 type InPageNavProps = WrapProps & {
@@ -24,10 +24,9 @@ const InPageNav = ({ title, titles, ...rest }: InPageNavProps) => {
               as="a"
               href={link.href}
               key={i}
-              // isActive={link.active}
               leftIcon={
                 <Icon>
-                  <path d={mdiArrowRightBoldCircleOutline} />
+                  <path d={mdiChevronRight} />
                 </Icon>
               }
             >

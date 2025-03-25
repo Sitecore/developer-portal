@@ -23,12 +23,7 @@ export const useWithAI = ({ pageInfo }: useWithAIProps) => {
       <Heading variant={'section'} size={'sm'} mb={{ base: 0, md: 2 }}>
         Use with AI
       </Heading>
-      <ButtonGroup variant={'toggle'} isAttached>
-        <Tooltip label="Ask questions about this page">
-          <Button leftIcon={<SvgLogo logo={'chatgpt'} height={20} />} as={Button} onClick={() => window.open(chatGPTURL, '_blank')}>
-            ChatGPT
-          </Button>
-        </Tooltip>
+      <ButtonGroup variant="toggle" size="sm" layerStyle="toggleGroup" isAttached shadow={'sm'}>
         <Tooltip label="Copy page as markdown for LLMs">
           <Button
             leftIcon={
@@ -59,6 +54,11 @@ export const useWithAI = ({ pageInfo }: useWithAIProps) => {
             onClick={() => window.open(urltoParse, '_blank')}
           >
             Markdown
+          </Button>
+        </Tooltip>
+        <Tooltip label="Ask questions about this page">
+          <Button leftIcon={<SvgLogo logo={'chatgpt'} height={20} />} as={Button} onClick={() => window.open(chatGPTURL, '_blank')}>
+            ChatGPT
           </Button>
         </Tooltip>
       </ButtonGroup>

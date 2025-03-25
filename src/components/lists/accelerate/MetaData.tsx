@@ -112,7 +112,7 @@ const MetaDataField = ({ label, field, icon }: MetaDataFieldProps) => {
 
   return (
     <HStack alignItems={'flex-start'}>
-      <HStack width={'60%'}>
+      <HStack width={'65%'}>
         {icon}
         <Heading variant={'section'}>{label}</Heading>
       </HStack>

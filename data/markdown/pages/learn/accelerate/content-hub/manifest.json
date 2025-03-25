@@ -8,6 +8,7 @@
   "enableSearch": false,
   "enableBreadcrumb": true,
   "showRootAsSections": true,
+  "generateLLM": true,
   "routes": [
     {
       "title": "Pre-development",
@@ -93,11 +94,11 @@
             {
               "title": "Catching Renditions Generation",
               "path": "catching-rendition-generation"
-            }, 
+            },
             {
               "title": "Conditionally Generate Renditions",
               "path": "conditionally-generate-renditions"
-            },           
+            },
             {
               "title": "Developing External Components",
               "path": "developing-external-components"
