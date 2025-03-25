@@ -15,6 +15,7 @@ const LANGUAGE_ICON_MAPPING: { [key: string]: string } = {
   typescript: 'typescript',
   powershell: 'powershell',
   'c#': 'dotnet',
+  chatgpt: 'chatgpt',
 };
 
 export function isValidLogo(value: string): boolean {

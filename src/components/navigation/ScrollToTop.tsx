@@ -1,5 +1,5 @@
 import { ArrowUpIcon } from '@chakra-ui/icons';
-import { Box, Button } from '@chakra-ui/react';
+import { Box, Button, Hide } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 export default function ScrollToTop() {
@@ -27,14 +27,14 @@ export default function ScrollToTop() {
   }, []);
 
   return (
-    <>
+    <Hide below="md">
       {isVisible && (
-        <Box onClick={scrollToTop} position="fixed" bottom="20px" right={['16px', '84px']} zIndex={3}>
+        <Box onClick={scrollToTop} position="fixed" bottom="120px" right={['16px', '84px']} zIndex={3}>
           <Button rightIcon={<ArrowUpIcon />} colorScheme="neutral" variant="solid">
             Scroll to top
           </Button>
         </Box>
       )}
-    </>
+    </Hide>
   );
 }

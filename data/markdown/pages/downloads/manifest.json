@@ -5,6 +5,7 @@
   "showRootAsSections": true,
   "enableSearch": true,
   "enableBreadcrumb": false,
+  "generateLLM": true,
   "routes": [
     {
       "title": "Platform DXP Releases",
@@ -31,7 +32,7 @@
           "title": "Sitecore Stream for Platform DXP",
           "path": "Sitecore_Stream_for_Platform_DXP"
         },
-		{
+        {
           "title": "Sitecore Identity Server",
           "path": "Sitecore_Identity"
         },
