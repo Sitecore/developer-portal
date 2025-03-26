@@ -2,7 +2,7 @@
 title: 'Release Notes'
 ---
 
-**2025-03-24: released Sitecore Identity Server 8.0.16, certified compatible with Sitecore XP 10.2, 10.3, and 10.4.**
+**2025-03-24: released Sitecore Identity Server 8.0.16, certified compatible with Sitecore XP and Sitecore XC 10.2, 10.3, and 10.4.**
   <Alert variant='warning' mb={4}>
     <AlertIcon />
     Please see the SXP version compatibility alert at the top of the [Sitecore Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016) release page.
@@ -25,3 +25,4 @@ Return to the [Sitecore Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/
 | Description | Ref. |
 | --- | --- |
 | For Identity Server on-premises and containerized deployments, Microsoft .NET 8 enforces higher security in the `Microsoft.Data.SqlClient`, enabling encryption by default for network traffic with SQL Server. For more information see the applicable install or uprade guide. For Azure App Service deployments, encryption was already enabled previous Identity Server versions. | 613902 |
+| Identity Server 8.0 must run in x64 mode. The previous Identity Server 7 version targeted x86, but x86 caused errors in certain Identity Server 8.0 scenarios, so x64 mode only is supported. | 626755 |
