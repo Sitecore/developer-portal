@@ -2,9 +2,9 @@
 title: 'Sitecore Identity Server 8.0.16'
 description: 'Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform and Sitecore Experience Commerce.'
 ---
- <Alert variant='warning' mb={4}>
+  <Alert variant='warning' mb={4}>
     <AlertIcon />
-    Publishing of Sitecore Identity Server 8.0 release artifacts to Myget, Cloudsmith, and Azure Container Registry is expected to complete by March 25.
+    Publishing of Sitecore Identity Server 8.0 release artifacts to Myget, Cloudsmith, and Azure Container Registry is expected to complete by ~~March 25~~ March 27.
   </Alert>
   <Alert variant='warning' mb={4}>
     <AlertIcon />
@@ -13,9 +13,9 @@ description: 'Sitecore Identity Server is the platform single sign-on mechanism 
 	Each Sitecore XP version is not supported for production deployment until a certification statement is made here in this alert.\
 	We recommend you may proceed with pre-production activities for Sitecore XP versions not yet certified for production. The probability of a blocking compatibilty issue is low and its impact would be a patch level update of an artifact.\
 	Please check back here for updates.
-	 - As of 2025-03-24: Identity Server 8.0 is certified compatible with Sitecore XP 10.2, 10.3, and 10.4.
-	 - By 2025-03-28: compatibility with Sitecore XP 10.1 is targeted to be certified.
-	 - By 2025-04-11: compatibility with Sitecore XP 9.1 through 10.0 is targeted to be certified.
+	 - As of 2025-03-24: Identity Server 8.0 is certified compatible with Sitecore XP 10.2, 10.3, and 10.4. This includes Sitecore XC, where applicable.
+	 - By 2025-03-28: compatibility with Sitecore XP and XC 10.1 is targeted to be certified.
+	 - By 2025-04-11: compatibility with Sitecore XP and XC 9.1 through 10.0 is targeted to be certified.
   </Alert>
 See [all available Identity Server versions](/downloads/Sitecore_Identity)
 
