@@ -3,6 +3,7 @@ title: 'Sitecore Identity 5.0.0'
 description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity/5x/Sitecore_Identity_500
 ---
+**DEPRECATED** due to Microsoft's end of support for .NET 2.
 
 Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication.
 Sitecore Identity Server is compatible with Sitecore Membership user storage but may be be extended with other identity providers to integrate with customers AIM systems.
