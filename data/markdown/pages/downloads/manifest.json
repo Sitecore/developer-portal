@@ -5,7 +5,6 @@
   "showRootAsSections": true,
   "enableSearch": true,
   "enableBreadcrumb": false,
-  "generateLLM": true,
   "routes": [
     {
       "title": "Platform DXP Releases",
