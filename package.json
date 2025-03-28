@@ -20,7 +20,7 @@
     "start": "next start",
     "pre-commit": "lint-staged",
     "pre-push": "tsc --project tsconfig.json",
-    "postbuild": "next-sitemap --config next-sitemap.config.js && node scripts/generateLLM.js",
+    "postbuild": "next-sitemap --config next-sitemap.config.js && node scripts/generate-route-lists.js && node scripts/generateDatasets.js",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "eslint": "npx eslint .",

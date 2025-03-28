@@ -55,6 +55,7 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
   }
 
   const Nav = pageInfo.hasInPageNav != false ? customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} key={router.asPath} /> : null : null;
+  const productPath = sidebarConfig.path.split('/').pop();
 
   return (
     <TrackPageView pageInfo={pageInfo}>
@@ -117,7 +118,7 @@ const AcceleratePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNa
             <Stack divider={<StackDivider borderColor={'neutral.100'} />} spacing={4}>
               {sectionTitles.length > 1 && <InPageNav titles={sectionTitles} key={path} title="Topics in this recipe" mt={2} />}
 
-              <UseWithAI pageInfo={pageInfo} />
+              <UseWithAI pageInfo={pageInfo} productFile={productPath} />
 
               <AccelerateMetaData pageInfo={pageInfo} />
             </Stack>

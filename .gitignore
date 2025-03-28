@@ -49,3 +49,6 @@ sitemap*.xml
 node_modules
 
 *storybook.log
+/public/dataset-content-hub.md
+/public/dataset-xm-cloud.md
+/public/llms.txt
