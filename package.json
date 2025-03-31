@@ -39,7 +39,7 @@
     "clean": "npx shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && npx shx rm -rf node_modules && npx shx echo Done!"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^3.5.0",
+    "@auth0/nextjs-auth0": "^3.6.0",
     "@chakra-ui/icons": "^2.2.5",
     "@chakra-ui/react": "^2.10.3",
     "@emotion/react": "^11.11.4",
@@ -84,7 +84,7 @@
     "@tiptap/react": "^2.5.4",
     "@vercel/edge-config": "^1.2.0",
     "@vercel/og": "^0.6.2",
-    "axios": "^1.7.2",
+    "axios": "^1.8.4",
     "axios-request-throttle": "^1.0.0",
     "chakra-react-select": "^4.9.1",
     "eslint-config-next": "^14.2.5",
