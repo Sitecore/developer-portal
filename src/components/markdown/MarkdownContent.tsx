@@ -10,10 +10,9 @@ import { NewsletterStory } from '@components/newsletter';
 import { ImageModal } from '@components/ui/imageModal';
 import { Row } from '@components/ui/sections';
 import { YouTube } from '@components/video';
+import a11yDark from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 import { MarkdownIntro } from './MarkdownIntro';
-
-const { a11yDark } = require('react-syntax-highlighter/dist/cjs/styles/hljs');
 
 type MarkdownContentProps = {
   content?: string;
