@@ -4,7 +4,7 @@ description: 'Switching to XM Cloud means moving to a SaaS model which is differ
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-10-09'
+lastUpdated: '2025-03-29'
 created: '2024-10-09'
 audience: ['All']
 ---
@@ -39,7 +39,7 @@ Training of the team working on this implementation will require to cover specif
 | -------- | ------- |
 | Everyone  | <ul><li>We are moving to a “Head” first approach – we are no longer building a single app but a decoupled front-end application and configuring a SaaS application, looking at API first.</li><li>Look at the processes you have in place, do these still work in a SaaS world?</li></ul>​ |
 | Business, Marketing, Authors | <ul><li>Understand basics of Content Authoring in the new platform and try out an end-to-end authoring workflow.​</li><li>Does your Marketing, Content and SEO Strategy still align to this new implementation? Redefine business, content, marketing workflows if required.​</li><li>Does the content you have for the existing site fit into your new solution, or is there an Information Architecture refresh required?</li><li>Do the tools that you are using, for the implementation and day-to-day, still viable?​ For example:<ul><li>Many traditional, on-premise desktop-based tools are not designed for cloud environments and may lack the integration capabilities needed for SaaS platforms.</li><li>Some proprietary software tools are highly specialized and not built to operate in a SaaS environment due to licensing models, cloud incompatibility, or lack of collaborative features.</li><li>Tools with Limited API Support</li></ul></li></ul>    |
-| Technical Teams    | <ul><li>Your basic Sitecore Developer training is not enough, and we also need to focus also the API development and consumption.​</li><li>React/Next.JS focus on how to handle the Layout Services responses.​</li><li>Experience Edge and GraphQL including updates such as publishing.​</li><li>DevOps processes, managing cloud platforms such as Vercel/Netlify, Docker etc.​</li></ul>    |
+| Technical Teams    | <ul><li>Your regular Sitecore Developer training is not enough, and we also need to focus also the API development and consumption.​ Looking ahead, we should be looking at a CMS Developer vs Web Application Developer roles.</li><li>Front-end focus including Next.JS, Angular etc focus on how to handle the Layout Services responses.​</li><li>Experience Edge and GraphQL including updates such as publishing.​</li><li>DevOps processes, managing cloud platforms such as Vercel/Netlify, Docker etc.​</li></ul>Review the [Preparing for an XM Cloud Project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project) recipe for additional details on the implementation team setup. |
 
 ### Transition from XM/XP to XM Cloud: Not the Same Product
 
@@ -97,7 +97,7 @@ Sitecore Edge supports a headless architecture, delivering content via APIs to f
 
 ​Consider the content architecture that is required to make publishing easier for the end user - for customization on actions following Publishing, consider that these need to be moved to the ‘head-app' As an example, timed publishing, when you need precise to the second publishing of your content, can be either setup using Personalization rules or leveraging the middleware from Next.JS.
 
-Read more on the [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge) recipe.  
+Review th [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge) recipe for more information on Publishing. 
 
 ### CMS Customizations: Rethink Your Approach
 
@@ -109,13 +109,7 @@ Example of this is documented in [Custom Editing UX for 3rd Party Integrations](
 
 If your current Sitecore XP implementation includes various integrations, you’ll need to assess how these will translate to XM Cloud. Integrations with third-party tools may need to be reconfigured to work with webhooks and headless architecture. Those involving data imports, may require significant reconfiguration -do you really need to push the data into the XM Cloud, or a request from the front-end app can manage the request?
 
-#### Frontend based Integrations​
-
-- If you need any kind of real time data to just be displayed in the Frontend without Sitecore XM Cloud even knowing that they are existing, you are good to go with a Frontend based Integration.​
-
-#### Backend based Integrations​
-
-- XM Cloud is heavily involved in comparison to frontend based integrations​. Webhooks or the GraphQL Management API will be key for your back-end integrations based on requirements.​
+- **Front-end based Integrations​** - If you need any kind of real time data to just be displayed in the Frontend without Sitecore XM Cloud even knowing that they are existing, you are good to go with a Frontend based Integration.​- **Backend based Integrations​** - XM Cloud is heavily involved in comparison to frontend based integrations​. Webhooks or the GraphQL Management API will be key for your back-end integrations based on requirements.​
 
 Review the [External Data Integration](/learn/accelerate/xm-cloud/implementation/external-data-integration) recipes for further information.
 

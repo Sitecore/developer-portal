@@ -21,16 +21,16 @@
           "ignoreLink": false,
           "children": [
             {
+              "title": "Project Planning",
+              "path": "project-planning"
+            },            
+            {
               "title": "Discovery Phase",
               "path": "discovery-phase"
             },
             {
               "title": "Requirements Gathering",
               "path": "requirements-gathering"
-            },
-            {
-              "title": "Project Planning",
-              "path": "project-planning"
             }
           ]
         },
@@ -69,6 +69,7 @@
               "title": "Environment Specific Settings",
               "path": "environment-specific-settings"
             },
+            
             {
               "title": "Paths across Entity Definitions",
               "path": "paths-across-entity-definitions"
@@ -135,11 +136,42 @@
               "path": "user-groups-setup"
             }
           ]
-        },
+        },      
         {
           "title": "State Flow and Approval",
           "path": "state-flow-and-approval"
-        }
+        },
+        {
+          "title": "Integrations",
+          "path": "integrations",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Editing assets in 3rd-party tools",
+              "path": "3rd-party-editing-tools"
+            }
+          ]
+        },
+        {
+          "title": "Search Pages",
+          "path": "search",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Considering Search",
+              "path": "considering-search"
+            },
+            {
+              "title": "Setup Search",
+              "path": "setup-search"
+            }
+          ]
+        },
+        {
+          "title": "Digital Rights Management",
+         "path": "digital-rights-management",
+         "ignoreLink": false    
+       }        
       ]
     },
     {
@@ -171,6 +203,18 @@
           "path": "go-live-checklist"
         }
       ]
+    },
+    {
+      "title": "Optimization",
+      "path": "optimization",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Home page customizations",
+          "path": "home-page-customizations"
+        }
+      ]
+      
     },
     {
       "title": "Appendix I",
