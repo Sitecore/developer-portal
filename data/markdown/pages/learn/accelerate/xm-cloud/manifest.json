@@ -62,6 +62,10 @@
             {
               "title": "Hosting Next.js on Azure App Services",
               "path": "nextjs-azure-app-services"
+            },
+            {
+              "title": "Hosting ASP.NET Core App",
+              "path": "hosting-aspnet-core"
             }
           ]
         },
@@ -85,6 +89,10 @@
             {
               "title": "Next.js App Router Preparation",
               "path": "nextjs-app-router-preparation"
+            },
+            {
+              "title": "Web Developer Experience",
+              "path": "web-developer-experience"
             }
           ]
         },
@@ -173,6 +181,10 @@
           "ignoreLink": false,
           "children": [
             {
+              "title": "CMS Error Monitoring",
+              "path": "cms-error-monitoring"
+            },
+            {
               "title": "Creating New Components",
               "path": "creating-new-components"
             },
@@ -191,6 +203,10 @@
             {
               "title": "Troubleshooting Docker",
               "path": "troubleshooting-docker"
+            },
+            {
+              "title": "Web Application Error Monitoring",
+              "path": "web-application-error-handling"
             }
           ]
         },
@@ -203,6 +219,10 @@
               "title": "Localization",
               "path": "localization"
             },
+            {
+              "title": "Preview Website",
+              "path": "preview-website"
+            },            
             {
               "title": "Redirect",
               "path": "redirect"
@@ -241,6 +261,11 @@
           ]
         },
         {
+          "title": "Middleware Invocations",
+          "path": "middleware-invocations",
+          "ignoreLink": false
+        },
+        {
           "title": "Sitecore Search",
           "path": "sitecore-search",
           "ignoreLink": false,
@@ -276,8 +301,12 @@
         {
           "title": "On-page SEO optimization",
           "path": "seo-web-optimization"
-        }
-      ]
+        },
+        {
+          "title": "Optimizing Performance",
+          "path": "performance-optimization"
+        }        
+      ]        
     },
     {
       "title": "Appendix I",
@@ -301,6 +330,9 @@
           "ignoreLink": true,
           "children": [
             {
+              "title": "ASP.NET Core examples",
+              "path": "asp-net-core-examples"
+            },{
               "title": "Exported components example",
               "path": "exported-components-example"
             },
@@ -318,3 +350,4 @@
     }
   ]
 }
+

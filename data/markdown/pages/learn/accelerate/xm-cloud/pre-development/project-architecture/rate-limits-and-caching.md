@@ -4,7 +4,7 @@ description: 'Configuration of limits and caching to improve performance'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-06-18'
+lastUpdated: '2025-03-31'
 created: '2024-04-23'
 audience: ['Architect','Product Owner', 'Technical Implementer']
 ---
@@ -16,6 +16,10 @@ The content delivery API on Experience Edge has a fair use rate limit of 80 unca
 - How can we build our application to mitigate this rate limit, but still ensure that our users get up-to-date content when it is changed.
 - How can we have sections of our site where content is updated regularly?
 - How do we cope with a very large site and cache clears, for example, if after a deployment my site has 10,000 pages and high traffic, so there will likely be a high volume of traffic hitting the content delivery API.
+
+Keep in mind that any functionality that depends on incremental updates, must have [Snapshot Publishing](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html) configured in XM Cloud.
+
+
 
 ## Execution
 
@@ -53,7 +57,6 @@ To configure ISR for a route (and in this case, all routes in the web applicatio
 
 The revalidate property should be set to the longest acceptable or most comfortable time period for content updates to show up for end users on the site; another way of looking at this value is “how long should stale content show up for end users of the site.” There may be multiple considerations about the “lifetime” of content that impact other parts of the organization outside of content authors, such as legal requirements and statements.
 
-For more details on configuring ISR and SSG, please see the [Publishing, Cache Revalidation, and SSG](/learn/accelerate/xmcloud/implementation/project-architecture/publishing-cache-isr.md) recipe.
 
 ### Streamline Your Builds
 
