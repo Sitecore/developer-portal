@@ -1,12 +1,10 @@
 ---
 title: 'Release Notes'
 ---
+Publication history:
+- **2025-04-03:** patched the on-premises *Deployment Configuration Files* package. Please see new Known Issue below.
+- **2025-03-24:** released Sitecore Identity Server 8.0.16, certified compatible with Sitecore XP and Sitecore XC 10.2, 10.3, and 10.4.
 
-**2025-03-24: released Sitecore Identity Server 8.0.16, certified compatible with Sitecore XP and Sitecore XC 10.2, 10.3, and 10.4.**
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    Please see the SXP version compatibility alert at the top of the [Sitecore Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016) release page.
-  </Alert>
 Return to the [Sitecore Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016) release page.
 
 ## Improvements
@@ -26,3 +24,9 @@ Return to the [Sitecore Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/
 | --- | --- |
 | For Identity Server on-premises and containerized deployments, Microsoft .NET 8 enforces higher security in the `Microsoft.Data.SqlClient`, enabling encryption by default for network traffic with SQL Server. For more information see the applicable install or uprade guide. For Azure App Service deployments, encryption was already enabled previous Identity Server versions. | 613902 |
 | Identity Server 8.0 must run in x64 mode. The previous Identity Server 7 version targeted x86, but x86 caused errors in certain Identity Server 8.0 scenarios, so x64 mode only is supported. | 626755 |
+
+## Known Issues
+
+| Description | Ref. |
+| --- | --- |
+| When you install or upgrade to Identity Server 8.0 in a on-premises deployment (only), if you do not implement the instructions in the [Installation and Upgrade Guide - On-premises](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8016/Sitecore_Identity_Server_Installation_&_Upgrade-OnPremises-8.0.pdf), section *Encrypted Communication with SQL Server*, then the default security settings will not be as recommended. The TrustServerCertificate parameter will be set to `true` and will skip certificate validation when connecting to SQL, which is not recommended. There will be no warning message that the certificate is not set up as recommended.<br/><br/>**Solution:** Set the parameters per the instructions in the *Encrypted Communication with SQL Server* section. Or, install the updated *Deployment Configuration Files* package published on 2025-04-03, which will by default correctly require you to set up a certificate for your production environment.<br/><br/>**Note:** The *Deployment Configuration Files* package is not versioned. The new package published on 2025-04-03 introduced a change to the IdentityServer.json file in lines 115 though 119 to modify how these parameters get processed if empty. For example old line 115 says, "Sql.Encrypt.Condition": ..."; updated line 115 says, "Sql.Encrypt.Empty.Condition": ...". | 629703 |
