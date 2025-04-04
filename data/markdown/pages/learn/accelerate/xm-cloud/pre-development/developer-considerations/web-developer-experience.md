@@ -115,8 +115,8 @@ Example package policy for README:
 - Dependencies are updated monthly using `npm-check-updates`
 - Security scans run automatically in CI using `npm audit`
 ```
-
-#### Local Development Tooling:
+<br/><br/>
+#### Local Development Tooling
 - Configure browser development tools and extensions that enhance productivity
 - Set up consistent local mocks for APIs and services
 - Implement hot reloading and fast refresh configurations
@@ -286,6 +286,8 @@ For Web Application developers to work effectively in an XM Cloud project, they 
 | API Documentation | <ul><li>Complete API specifications including endpoints, methods, request/response formats</li><li>Authentication requirements and implementation details</li><li>Error handling conventions and expected response codes</li>  <li>Sample requests and responses for all endpoints</li></ul> |
 | Data Structures |<ul><li>Field definitions for Sitecore templates used in the UI</li><li>Content structure diagrams showing relationships between content types</li><li>Sample data for development and testing purposes</li><li>Clear documentation of required vs. optional fields</li></ul> |
 | Integration Support | <ul><li>Access to staging environments for API testing</li><li>Assistance with configuration of Edge API connections</li><li>Support for debugging integration issues</li><li>Documentation of caching strategies and invalidation mechanisms</li></ul> |
+
+
 
 **System Administrator/DevOps Engineers**
 | Scope |Guidance |

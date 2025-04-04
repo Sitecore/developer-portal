@@ -114,6 +114,13 @@ The solution contains everything to run XM Cloud locally using Docker Containers
   </TabPanels>
 </Tabs>
 
+<br/>
+<Alert status="warning" mb={4}><AlertIcon />
+Don't try and force [Helix](https://helix.sitecore.com/) into your front-end JavaScript application. <br/><br/>Helix is a set of project structure and dependency management principles that was very helpful when Sitecore XM/XP implementations were done entirely in back-end code. Helix is less useful in front-end projects built with JavaScript frameworks. Front-end projects are better off following the project structure best practices published by the front-end framework owners. <br/><br/> For ASP.NET Core, Helix might still be useful since most development is done in Visual Studio.
+</Alert>
+
+
+
 
 
 ### Items Serialization
