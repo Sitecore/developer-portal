@@ -14,7 +14,7 @@ lastUpdated: '2024-01-11'
   "deployItems": ["*.module.json"],
   "renderingHosts": {
     "xmcloudpreview": {
-      "path": "./src/sxastarter",
+      "path": "./headapps/nextjs-starter",
       "nodeVersion": "16.15.1",
       "jssDeploymentSecret": "110F1C44A496B45478640DD36F80C18C9",
       "enabled": true,
