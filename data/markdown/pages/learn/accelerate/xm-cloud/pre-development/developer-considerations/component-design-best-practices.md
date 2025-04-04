@@ -78,7 +78,7 @@ Do not define the nesting structure of components through code. Instead, use the
 
 For more information, please review the [Placeholders](/learn/accelerate/xm-cloud/implementation/developer-experience/using-placeholders) recipe.
 
-### Use Placeholders
+### Hardcoded Text/Multimedia
 Do not hardcode any text or images into components. Instead, use the equivalent Field components provided by JSS. e.g. `<Text field={} />, <Image field={} />`.
 
 ### Headless Variants

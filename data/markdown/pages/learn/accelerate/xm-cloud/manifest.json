@@ -299,13 +299,17 @@
       "ignoreLink": true,
       "children": [
         {
+          "title": "Data Fetching Optimizaton",
+          "path": "data-fetching-optimization"
+        },        
+        {
           "title": "On-page SEO optimization",
           "path": "seo-web-optimization"
         },
         {
-          "title": "Optimizing Performance",
+          "title": "Performance Optimizaton",
           "path": "performance-optimization"
-        }        
+        }       
       ]        
     },
     {

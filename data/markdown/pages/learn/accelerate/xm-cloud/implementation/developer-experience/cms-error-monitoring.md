@@ -7,6 +7,7 @@ area: ['accelerate']
 lastUpdated: '2025-03-31'
 created: '2025-03-31'
 audience: ['Architect','Technical Implementer']
+features: ['Sitecore Cloud CLI', 'XM Cloud Deploy','Experience Edge']
 ---
 
 ## Context
@@ -113,5 +114,4 @@ Troubleshooting steps:
   <Link title="The deployment log" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-deployment-log.html" />
   <Link title="Manage an environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html" />
   <Link title="The cloud deployment command" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cloud-deployment-command.html" />
-  
 </Row>

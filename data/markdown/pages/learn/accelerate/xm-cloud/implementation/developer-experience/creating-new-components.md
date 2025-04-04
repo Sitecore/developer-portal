@@ -7,13 +7,14 @@ area: ['accelerate']
 lastUpdated: '2024-06-24'
 created: '2024-08-23'
 audience: ['Architect','Technical Implementer']
+features: ['Component Builder','Pages', 'Next.JS SDK']
 ---
 
 ## Context
 
 This recipe will outline the developer workflow and steps to create new components within XM Cloud.
 
-There are 2 types of components within XM Cloud, the Component Builder (Also called XM Cloud Components, or Front End as a Service) and standard React components. At the time of writing, XM Cloud Components are new and do not have a full feature set. Because of this, only standard React/Next.js components should be used. This will be updated once the full feature set of XM Cloud Components is available.
+There are 2 types of components within XM Cloud, the Component Builder (also called XM Cloud Components, or Front End as a Service) and standard React components. At the time of writing, XM Cloud Components are new and do not have a full feature set. Because of this, only standard React/Next.js components should be used. This will be updated once the full feature set of XM Cloud Components is available.
 
 ## Execution
 
@@ -174,7 +175,7 @@ Creating a variant is a two-step process. First, you create the code for the var
 
 #### External Data
 
-External data is handled in its own recipe: [External Data Integration](/learn/accelerate/xm-cloud/implementation/external-data-integration)
+Review the [External Data Integration](/learn/accelerate/xm-cloud/implementation/external-data-integration) for additional information on approaching components that retrieve external data.
 
 ## Related Recipes
 

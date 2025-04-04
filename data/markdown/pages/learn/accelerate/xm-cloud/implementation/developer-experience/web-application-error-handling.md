@@ -7,6 +7,7 @@ area: ['accelerate']
 lastUpdated: '2025-03-31'
 created: '2025-03-31'
 audience: ['Architect','Technical Implementer']
+features: ['Next.js SDK']
 ---
 
 ## Context

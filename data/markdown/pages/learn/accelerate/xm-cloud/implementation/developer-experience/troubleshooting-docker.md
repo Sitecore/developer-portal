@@ -7,6 +7,7 @@ area: ['accelerate']
 lastUpdated: '2025-01-31'
 created: '2024-08-23'
 audience: ['Architect','Technical Implementer']
+features: ['XM Cloud Deploy','Docker']
 ---
 
 ## Context
