@@ -55,3 +55,4 @@ The following issues have been fixed:
 | Sitecore Forms           | ​If you resubmit a form, robot detection becomes disabled.                                                                               | 452462                         |
 | Sitecore Forms           | If tracking is disabled, the `Save Data` submit action does not save any data.                                                           | 468105                         |
 | Solr                     | Items that are created and updated by an Admin​ uswer are listed as having been created and updated by `Anonymous`.​​​​                  | 470931, 470558, 455017, 454481 |
+| Telerik                  | Updated Telerik.Web.UI to the latest available version.                                                                             | 440857 |
