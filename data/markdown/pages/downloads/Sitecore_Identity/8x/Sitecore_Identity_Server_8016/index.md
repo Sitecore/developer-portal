@@ -4,12 +4,10 @@ description: 'Sitecore Identity Server is the platform single sign-on mechanism 
 ---
   <Alert variant='warning' mb={4}>
     <AlertIcon />
-    **2025-04-07:** Sitecore Identity Server 8.0 is certified compatible with Sitecore XP 10.1 through 10.4. Certification of compatibilty with Sitecore XP 9.1 through 10.0 is expected by 2025-04-18. Please check back here for updates.
-  </Alert>
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
     **2025-04-03:** Patched the on-premises ***Deployment Configuration Files*** package. Please see the Known Issue on the [Release Notes](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016/Release_Notes) page.
   </Alert>
+
+Sitecore Identity Server 8.0 is compatible with Sitecore XP 9.1 through 10.4.
 
 See [all available Identity Server versions](/downloads/Sitecore_Identity)
 
