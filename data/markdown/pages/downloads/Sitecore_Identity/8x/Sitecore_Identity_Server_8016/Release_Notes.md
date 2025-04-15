@@ -2,6 +2,7 @@
 title: 'Release Notes'
 ---
 Publication history:
+- **2025-04-15:** completed compatibility testing of Sitecore Identity Server 8.0 with Sitecore XP 9.1 through 10.4.
 - **2025-04-03:** patched the on-premises *Deployment Configuration Files* package. Please see new Known Issue below.
 - **2025-03-24:** released Sitecore Identity Server 8.0.16, certified compatible with Sitecore XP and Sitecore XC 10.2, 10.3, and 10.4.
 
