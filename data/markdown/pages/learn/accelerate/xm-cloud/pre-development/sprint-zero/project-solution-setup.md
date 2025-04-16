@@ -183,7 +183,7 @@ Based on your framework, rename the project accordingly -
           <li>In `package-lock.json` change name field and packages name field to `app_folder_name`</li>
           <li>In `Platform.csproj `change AssemblyName</li>
           <li>In `AssemblyInfo.cs` change `AssemblyTitle` and `AssemblyProduct` accordingly</li>
-          <li>Rename Solution File `XMCloudnextjs-starter.sln` to what your are using in Assembly configurations.</li>
+          <li>Rename Solution File `XmCloudAuthoring.sln` to what your are using in Assembly configurations.</li>
           </ol>
       </TabPanel>
       <TabPanel>
