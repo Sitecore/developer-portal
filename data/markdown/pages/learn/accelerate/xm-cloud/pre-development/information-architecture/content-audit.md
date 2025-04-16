@@ -5,13 +5,15 @@ area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
 lastUpdated: '2024-04-09'
+created: '2024-04-09'
+audience: ['Architect','Product Owner', 'Project Manager', 'User']
 ---
 
-## Problem
+## Context
 
 You have an existing site (on XP or another CMS) that is populated with content, some or all of which will be migrated to the new XMC instance. How do you determine what to move as-is? What will require a rewrite/redesign? What will you delete, and what method will best facilitate the move? If the existing site is on XP, how do you determine the suitability of the existing data templates before planning any necessary redesign of the data model?
 
-## Solution
+## Execution
 
 The aim for customers and partners migrating to XM Cloud should always be to get as close as possible to how a new greenfield project would have been implemented. This will leave the customer in the best possible position to leverage the platform going forward.
 
@@ -37,7 +39,7 @@ When creating the rendering definitions for your different components, you shoul
 
 SXA Headless comes with out-of-the-box functionality to handle both Sitemap and Robots.txt creation. You should ensure that you are configuring this default functionality and not implementing a custom solution if it isn’t required. You can read more about these features on our documentation site pages covering how to [Configure a Sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) and how to [Configure the Robots.txt](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-the-robots-txt-file.html) page.
 
-## Discussion
+## Insights
 
 This section will primarily focus on customers migrating from Sitecore XM or XP to XM Cloud. In this we will discuss some of the Information Architecture patterns that were common in XM/XP, and whether they will still apply when building for XM Cloud.
 
@@ -65,7 +67,7 @@ Customer Item Data Providers were a common tool in Sitecore XM and XP to pull co
 
 #### Item Security
 
-In Sitecore XM and XP, Item Security was defined using the in-built security model and defined on the content items. The \_\_Security field is not published to Experience Edge, so this approach is no longer valid. When working headlessly you should integrate your head with a Federated Security provider and handle authentication there. If you need to role-level access to different content items, you will need to implement this via a custom set of fields that will be published to Edge, and then ensure that your head application maintains access. You can also read more about this on the dedicated [Accelerate Head Application Security Recipe](https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/security/head-application-security).
+In Sitecore XM and XP, Item Security was defined using the in-built security model and defined on the content items. The \_\_Security field is not published to Experience Edge, so this approach is no longer valid. When working headlessly you should integrate your head with a Federated Security provider and handle authentication there. If you need to role-level access to different content items, you will need to implement this via a custom set of fields that will be published to Edge, and then ensure that your head application maintains access. You can also read more about this on the dedicated [Head Application Security](https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/security/head-application-security).
 
 Item security can still be applied for usage during the content editing process. This can be useful to control which actions certain content authors can perform. You can read more about this on the [documentation site](https://doc.sitecore.com/xmc/en/developers/xm-cloud/user-security.html), and on the Item Security Accelerate Recipe (coming soon).
 
@@ -103,7 +105,7 @@ In Sitecore XM and XP it was common to leverage events when certain actions were
 ## Related Recipes
 
 <Row columns={2}>
-<Link title="Accelerate Head Application Security Recipe" link="https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/security/head-application-security" />
+<Link title="Head Application Security" link="https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/security/head-application-security" />
 </Row>
 
 ## Related Documentation

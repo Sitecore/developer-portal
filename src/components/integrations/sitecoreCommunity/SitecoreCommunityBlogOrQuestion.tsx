@@ -12,14 +12,16 @@ type SitecoreCommunityBlogOrQuestionProps = {
   loading?: boolean;
 };
 
-export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps): JSX.Element => (
+export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps) => (
   <LinkBox as="article" display="contents">
     <Card variant={'outline'} size="lg" w={'full'} justifyContent={'space-between'} layerStyle="interactive.raise">
       <CardBody>
         <HStack spacing={16} justifyContent={'space-between'}>
           <Skeleton isLoaded={!loading} flexGrow={1}>
             <Stack>
-              <Heading variant="section">{item.contentType}</Heading>
+              <Heading variant="eyebrow" size={'sm'}>
+                {item.contentType}
+              </Heading>
 
               <Heading size={'md'} my={4}>
                 <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'chakra-body-text'}>
@@ -34,7 +36,7 @@ export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommu
         <Text>
           by <strong>{item.userName}</strong>
         </Text>
-        <Text>
+        <Text variant={'subtle'}>
           Published <strong>{translateDate(item.publishDate)}</strong>
         </Text>
       </CardFooter>
@@ -42,7 +44,7 @@ export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommu
   </LinkBox>
 );
 
-export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps): JSX.Element => {
+export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps) => {
   return (
     <Flex justifyContent={'items-start'} mb={5}>
       <Skeleton isLoaded={!loading}>

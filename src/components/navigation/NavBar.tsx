@@ -1,5 +1,3 @@
-'use client';
-
 import { ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
 import {
   Box,
@@ -23,13 +21,12 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  Tooltip,
   UnorderedList,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import { mainNavigation, NavItem, sitecoreQuickLinks } from '@data/data-navigation';
-import { mdiChevronDown, mdiChevronUp, mdiInformationOutline } from '@mdi/js';
+import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -37,14 +34,15 @@ import React, { useState } from 'react';
 // import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
 import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/assets';
 
-import { PreviewModeSwitch } from './PreviewModeSwitch';
 
-import { PreviewSearchInput } from '../integrations/sitecore-search';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import { PreviewSearchInput, SearchInput } from '../integrations/sitecore-search';
 import { Slide } from '../ui/chakra/Slide';
 import { ProductIcon } from '../ui/logos';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 import { SearchButton } from './SearchButton';
+import UserAccount from './UserAccount';
 
 export type NavigationChildData = {
   title: string;
@@ -69,10 +67,22 @@ export type NavBarProps = {
   searchEnabled?: boolean;
 };
 
-export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
+function getLogoByPath(asPath: string): string | undefined {
+  // Default to developer logo
+  let logo: Product = Product.SitecoreDevelopers;
+
+  // Use the Sitecore logo for the roadmap pages
+  if (asPath.includes('/roadmap')) {
+    logo = Product.Sitecore;
+  }
+  return useColorModeValue(GetProductLogoByVariant(logo, Variant.Light, Type.Full), GetProductLogoByVariant(logo, Variant.Dark, Type.Full));
+}
+
+export default function Navbar({ searchEnabled }: NavBarProps): React.ReactNode {
   const { isOpen, onToggle } = useDisclosure();
   const [focusedOnSearch, setFocusedOnSearch] = useState(false);
   const router = useRouter();
+  const { user, error, isLoading } = useUser();
 
   return (
     <Box layerStyle="section.topbar" shadow={'base'} zIndex={'sticky'} position="sticky" top="0">
@@ -80,15 +90,8 @@ export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
         <Stack direction={'row'} w="full" alignItems={'center'} justifyContent={'space-between'}>
           <HStack flexShrink={0}>
             {/* Logo */}
-            <Link href="/">
-              <Image
-                p="1"
-                h="8"
-                w={'auto'}
-                align="left"
-                alt={'Go to the homepage'}
-                src={useColorModeValue(GetProductLogoByVariant(Product.SitecoreDevelopers, Variant.Light, Type.Full), GetProductLogoByVariant(Product.SitecoreDevelopers, Variant.Dark, Type.Full))}
-              />
+            <Link href="/" width={{ base: 'auto', md: '270px' }}>
+              <Image p="1" h="8" w={'auto'} align="left" alt={'Go to the homepage'} src={getLogoByPath(router.asPath)} />
             </Link>
 
             {/* Desktop menu (hide under xl or lower) */}
@@ -115,33 +118,19 @@ export default function Navbar({ searchEnabled }: NavBarProps): JSX.Element {
                   transition={'width 0.1s ease-in-out'}
                 />
               </Hide>
-              <Show below="3xl">
-                <SearchButton />
-              </Show>
+
+              <Hide above="3xl">
+                <Show above="xl">
+                  <SearchButton />
+                </Show>
+              </Hide>
             </>
           )}
-          {!searchEnabled && (
-            <Tooltip label="Search is disabled on this environment. Click here for more information" aria-label="Search is disabled on this environment" hideBelow={'md'}>
-              <IconButton
-                icon={
-                  <Icon>
-                    <path d={mdiInformationOutline} />
-                  </Icon>
-                }
-                variant="ghost"
-                colorScheme="danger"
-                aria-label={''}
-                as={NextLink}
-                href="/search"
-              >
-                Search disabled
-              </IconButton>
-            </Tooltip>
-          )}
-          <PreviewModeSwitch />
-          <DarkModeSwitch />
+
           <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
+          <DarkModeSwitch />
           <QuickStartMenu key={router.asPath} />
+          <UserAccount userProfile={user} />
         </Stack>
       </Flex>
 
@@ -246,6 +235,10 @@ const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavIt
 const MobileNav = () => {
   return (
     <Box bg={useColorModeValue('white', 'gray.800')} display={{ xl: 'none' }} shadow={'lg'} height={'100vh'} position={'absolute'} width={'full'} ml={-15}>
+      <Box p={4} borderTop={1} borderBottomStyle={'solid'} borderBottomColor={'chakra-border-color'} width={'95%'}>
+        <SearchInput showButton />
+      </Box>
+
       {mainNavigation.map((navItem) => (
         <MobileNavItem key={navItem.title} {...navItem} />
       ))}
@@ -266,8 +259,6 @@ const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
   const { isOpen, onClose, onToggle } = useDisclosure();
   const router = useRouter();
   const currentPage = router.asPath;
-  // const isCurrentPage = currentPage === url;
-  // const currentRoute = router.pathname;
 
   return (
     <Stack onClick={children && onToggle}>
@@ -289,7 +280,7 @@ const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
         {children && <Icon as={ChevronRightIcon} transition={'all .25s ease-in-out'} transform={isOpen ? 'rotate(180deg)' : ''} w={6} h={6} />}
       </Flex>
 
-      <Slide in={isOpen}>
+      <Slide in={isOpen} className={''}>
         <Box position={'fixed'} top={'3.5rem'} width={'full'} background={'chakra-body-bg'} height={'100vh'}>
           <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} onClick={onClose} width={'full'} borderRadius={0} justifyContent={'left'} px={2} height={14} mb={4} shadow={'lg'}>
             Back

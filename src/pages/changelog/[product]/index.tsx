@@ -1,18 +1,14 @@
-import { Alert, AlertIcon, Grid, GridItem, HStack, Text, Tooltip, useColorModeValue } from '@chakra-ui/react';
+import { Grid, GridItem } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import { Changelog } from '@lib/changelog';
 import { Product } from '@lib/changelog/types';
 import { getChangelogProductPaths } from '@lib/staticPaths';
 import { getSlug, slugify } from '@lib/utils';
-import { mdiRss } from '@mdi/js';
-import Icon from '@mdi/react';
 import Layout from '@src/layouts/Layout';
-import Image from 'next/image';
-import Link from 'next/link';
 
+import { ChangelogFeeds } from '@/src/components/changelog/ChangelogFeeds';
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-import { LinkButton } from '@/src/components/links';
 import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 
@@ -57,7 +53,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
     <TrackPageView product={currentProduct}>
       <Layout title={title} description={description}>
         <Hero title={title} description={description}>
-          <HStack>
+          {/* <HStack>
             <Text variant={'sm'}>Powered by</Text>
             <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
               <Image
@@ -67,27 +63,28 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
                 height={18}
               />
             </Link>
-          </HStack>
+          </HStack> */}
         </Hero>
 
         <VerticalGroup>
           <CenteredContent py={8} gap={8}>
-            <Alert status="info" alignItems="center">
+            {/* <Alert status="info" alignItems="center">
               <AlertIcon />
               <Tooltip label="Go to the overview of current release notes" aria-label="A tooltip">
                 <Link href="/changelog/current" title="View the list of current release notes per product">
                   You are viewing the Sitecore Cloud changelog. To see release notes for Sitecore products not yet listed here, click here.
                 </Link>
               </Tooltip>
-            </Alert>
+            </Alert> */}
 
             <Grid templateColumns="repeat(5, 1fr)" gap={14}>
               <GridItem colSpan={{ base: 5, md: 3 }}>
                 <ChangelogList initialProduct={currentProduct} />
               </GridItem>
               <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
-                <LinkButton text={'RSS'} href={`${getSlug(currentProduct.name)}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                <LinkButton text={'ATOM'} href={`${getSlug(currentProduct.name)}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <ChangelogFeeds url={getSlug(currentProduct.name)} />
+                {/* <LinkButton text={'RSS'} href={`${getSlug(currentProduct.name)}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+                <LinkButton text={'ATOM'} href={`${getSlug(currentProduct.name)}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} /> */}
                 <ChangelogByMonth product={currentProduct} />
               </GridItem>
             </Grid>

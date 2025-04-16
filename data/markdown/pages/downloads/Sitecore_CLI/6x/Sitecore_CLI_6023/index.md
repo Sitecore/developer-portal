@@ -4,7 +4,9 @@ description: ""
 ---
 
 The Sitecore CLI provides an entry point for interactive and automated command-line interaction with a Sitecore instance, including commands for pulling and synchronizing serialized Sitecore items.\
-Sitecore CLI 6.0.23 is compatible with Sitecore 10.1, 10.2, 10.3, 10.4, and Sitecore XM Cloud.
+Sitecore CLI 6.0.23 is compatible with Sitecore XP 10.1, 10.2, 10.3, 10.4, and Sitecore XM Cloud.
+
+Starting with Sitecore CLI version 6, the CLI is separated from its dependent Sitecore Management Services and need not have same version number. For example, on this page download Sitecore Managed Services version 5.2, which is compatible with Sitecore CLI 6.0 NuGet packages.
 
 See [all available versions here](/downloads/Sitecore_CLI).
 

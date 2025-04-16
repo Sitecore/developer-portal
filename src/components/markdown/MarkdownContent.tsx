@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertIcon, Card, CardBody, CardHeader, Heading, HStack, SimpleGrid, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, Card, CardBody, CardHeader, Heading, HStack, SimpleGrid, Tab, Table, TableCaption, TableContainer, TabList, TabPanel, TabPanels, Tabs, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 import { Prose } from '@nikolovlazar/chakra-ui-prose';
 import { MDXRemote } from 'next-mdx-remote';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -43,7 +43,7 @@ function CustomMdx(children: string) {
             <code className={className}>{children}</code>
           );
         },
-        h2: (props) => <Heading as={'h2'} {...props} />,
+        h2: (props) => <Heading as={'h2'} fontWeight={'400'} {...props} />,
         h3: (props) => <Heading as={'h3'} {...props} />,
         p: (props) => <Text variant={'large'} {...props} />,
         VideoPromo: VideoPromo,
@@ -78,12 +78,17 @@ function CustomMdx(children: string) {
         Td,
         TableCaption,
         TableContainer,
+        Tabs,
+        TabList,
+        Tab,
+        TabPanels,
+        TabPanel,
       }}
     />
   );
 }
 
-export const DecoratedMarkdown = ({ children, disabledProse = false }: DecoratedMarkdownProps): JSX.Element => {
+export const DecoratedMarkdown = ({ children, disabledProse = false }: DecoratedMarkdownProps) => {
   if (disabledProse) {
     return CustomMdx(children);
   }
@@ -91,7 +96,7 @@ export const DecoratedMarkdown = ({ children, disabledProse = false }: Decorated
   return <Prose className={styles.richText}>{CustomMdx(children)}</Prose>;
 };
 
-export const RenderContent = ({ content }: MarkdownContentProps): JSX.Element => {
+export const RenderContent = ({ content }: MarkdownContentProps) => {
   if (content == null) {
     return <></>;
   }

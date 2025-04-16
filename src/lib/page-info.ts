@@ -1,6 +1,6 @@
 // Global
 import { Changelog } from '@lib/changelog';
-import type { ChildPageInfo, MarkdownMeta, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import type { ChildPageInfo, MarkdownMeta, PageInfo } from '@lib/interfaces/page-info';
 import { ParseContent } from '@lib/markdown/mdxParse';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -8,6 +8,7 @@ import path from 'path';
 
 import { SITECORE_COMMUNITY_MAX_COUNT, SitecoreCommunityApi, SitecoreCommunityContent, SitecoreCommunityEvent, StackExchangeApi, YouTubeApi } from '../components/integrations';
 import { getChangelogCredentials } from './changelog/common/credentials';
+import { ManifestConfig } from './interfaces/manifest';
 import { searchForFile } from './utils/fsUtils';
 
 const dataDirectory = path.join(process.cwd(), 'data/markdown');
@@ -207,11 +208,11 @@ export const getChildPageInfo = async (currentFile: string): Promise<Array<Child
   return items;
 };
 
-export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<SidebarNavigationConfig | undefined> => {
+export const getChildNavgationInfo = async (currentUrlSegment: string): Promise<ManifestConfig | undefined> => {
   const manifest = searchForFile(path.join(pagesDirectory, currentUrlSegment), 'manifest.json');
 
   if (manifest != null) {
-    const fileData: SidebarNavigationConfig = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
+    const fileData: ManifestConfig = JSON.parse(fs.readFileSync(manifest, { encoding: 'utf-8' }));
 
     return fileData;
   }

@@ -57,7 +57,7 @@ Sitecore has adopted a Code of Conduct that we expect project participants to ad
 
 ### Feedback, ideas or found issues?
 
-The Sitecore Developer Portal is under constant development. Do you have any feedback or ideas that can improve the developer portal please let us know! Create an issue in our [GitHub repository](https://github.com/Sitecore/developer-portal/issues). Please use the issue or feature request template, label it accordingly and we will review your ticket and follow up if necessary.
+The Sitecore Developer Portal is under constant development. Do you have any feedback or ideas that can improve the developer portal please let us know! Create an issue in our [GitHub repository](https://github.com/Sitecore/developer-portal/issues). Please use the issue or feature request template, label it accordingly and we will review your ticket and follow up if necessary. Changes to Accelerate recipe will be reviewed by the Sitecore teams including Product, before approvals.
 
 ### Contributing Guide
 

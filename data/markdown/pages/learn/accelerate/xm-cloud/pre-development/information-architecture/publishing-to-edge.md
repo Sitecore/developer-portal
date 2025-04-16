@@ -5,15 +5,17 @@ hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-10-08'
+created: '2024-10-08'
+audience: ['Architect','Product Owner','Technical Implementer', 'System Administrator']
 ---
 
-## Problem
+## Context
 
 Publishing is an important moment in any content life cycle. Through publishing, companies effectively communicates with the outside world about messages, mission, products and everything it wants to present.
 
 The publishing process can be on a page, a section or the entire site. Despite the publication item, the process may require publication of other items, so-called related items. For this reason, publishing is a delicate operation that may require many CMS resources to be completed - authors should be aware of the process and requirements on publication operations.
 
-## Solution
+## Execution
 
 The solution to improve the publishing experience is through the application of practices concerning several aspects of the solution design like, for example, the Information Architecture, the configuration of the Connector and the publishing workflow. The following section details out these practices.
 
@@ -80,7 +82,7 @@ The process can be very complex and depends on many factors. We can consider the
 * Introduce the **Web Content Publisher** role if necessary, further detailed is discussed below.
 * **Disable the storing of the Sitemap in cache**. When publishing a large volume of items, XM may need a significant amount of memory to complete. If a large Sitemap is stored in cache, this reduces the memory available for the publishing task. Configure each site to store the Sitemap in file by changing the Sitemap Cache Type from “Stored in cache” to “Stored in file”.
 
-## Discussion
+## Insights
 
 ### Publishing in Pages
 
@@ -177,19 +179,19 @@ You can enable debug level logging for the publishing log. This can be done by a
 ## Related Recipes
 
 <Row columns={2}>
-  <Link title="Workflow" link="/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data" />
+  <Link title="External Data Integration" link="/learn/accelerate/xm-cloud/implementation/external-data-integration" />
 </Row>
 <Row columns={2}>
-  <Link title="Getting Component Specific Data" link="/learn/accelerate/xm-cloud/implementation/information-architecture/workflow" />
+  <Link title="Workflow" link="/learn/accelerate/xm-cloud/implementation/information-architecture/workflow" />
 </Row>
 
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Publishing to Experience Edge | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html#the-publishing-pipeline" />
-  <Link title="Headless Architecture | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html" />
-  <Link title="Admin API | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/admin-api.html" />
-  <Link title="Enable retries to the Experience Edge Graphql Endpoint | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/jss/216/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html" />
-  <Link title="Use a patch file to customize the Sitecore Configuration | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/use-a-patch-file-to-customize-the-sitecore-configuration.html#create-a-patch-file" />
+  <Link title="Publishing to Experience Edge" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html#the-publishing-pipeline" />
+  <Link title="Headless Architecture" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html" />
+  <Link title="Admin API" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/admin-api.html" />
+  <Link title="Enable retries to the Experience Edge Graphql Endpoint" link="https://doc.sitecore.com/xmc/en/developers/jss/216/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html" />
+  <Link title="Use a patch file to customize the Sitecore Configuration" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/use-a-patch-file-to-customize-the-sitecore-configuration.html#create-a-patch-file" />
   <Link title="Slowness during single item publishing to Experience Edge | Sitecore KB" link="https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1003198" />
 </Row>

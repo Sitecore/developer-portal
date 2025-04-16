@@ -5,13 +5,15 @@ hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-01-17'
+created: '2023-12-22'
+audience: ['Architect','Project Manager','Technical Implementer']
 ---
 
-## Problem
+## Context
 
 What is the recommended Branching strategy when setting up an XM Cloud project?
 
-## Solution
+## Execution
 
 While most recipes are very prescriptive, setting up a good branching strategy needs to be more flexible due to some clients having very strict rules around the developer workflow. This recipe will guide you on the best practice for scaling a team implementing an XM Cloud project with a Next.js front end.
 
@@ -51,7 +53,7 @@ If feature toggles are not an option or if the client requires very structured v
 
 Reference: [GitLab Flow](https://docs.gitlab.cn/14.0/ee/topics/gitlab_flow.html)
 
-## Discussion
+## Insights
 
 ### Monorepo vs Polyrepo
 

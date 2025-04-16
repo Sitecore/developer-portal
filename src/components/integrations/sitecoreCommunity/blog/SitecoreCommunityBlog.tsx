@@ -14,7 +14,7 @@ type SitecoreCommunityBlogProps = CardProps & {
   listItem?: boolean;
 };
 
-export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: SitecoreCommunityBlogProps): JSX.Element => {
+export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: SitecoreCommunityBlogProps) => {
   const [fetchedResults, setFetchedResults] = useState<Array<SitecoreCommunityContent> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -39,7 +39,7 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, ...rest }: 
   return (
     <Card variant={'unstyled'} {...rest} size={{ base: 'xs', md: 'md' }}>
       <CardHeader justifyContent={'space-between'} display={'flex'} py={8} px={0}>
-        <Heading as="h3" size={listItem ? 'md' : 'xl'}>
+        <Heading as="h3" size={listItem ? 'md' : 'xl'} fontWeight={'500'}>
           Latest community blog posts
         </Heading>
 

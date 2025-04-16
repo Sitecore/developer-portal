@@ -4,24 +4,26 @@ description: 'Setup layout routing in XM Cloud to reduce content complexity and 
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-08-01'
+lastUpdated: '2025-02-14'
+created: '2024-07-02'
+audience: ['Architect','Technical Implementer', 'System Administrator']
 ---
 
-## Problem
+## Context
 
-When a page is published to Experience Edge, the publish connector generates a dependency graph to make sure that all page items that are affected by a content change are published correctly. This is because publishing a page creates a snapshot of the content and caches that on Experience Edge<sup>\*</sup>.
+When a page is published to Experience Edge, the publish connector generates a dependency graph to make sure that all page items that are affected by a content change are published correctly. This is because publishing a page creates a snapshot of the content and caches that on Experience Edge.
 
 This dependency graph can grow very large depending on your information architecture and this can cause performance issues when publishing the site.
 
-<sup>\*</sup> _This applies to the V1 release of the Experience Edge connector. The V2 connector will publish references to the datasource items, and the layout response will be composed at the edge on request._
+>The following applies to Snapshot Publishing (v1), Edge Publishing (v2) will publish references to the datasource items, and the layout response will be composed at the edge on request. Review the [publishing pipeline documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html#the-publishing-pipeline) for more information.
 
-## Solution
+## Execution
+
+The following highlights a new approach to page composition in XM Cloud. It should be considered a starting point for your project, you should validate the approach and adjust it to fit the needs of your project.
 
 We can solve this problem by changing how the layout for common page sections is composed. Instead of having a single layout for the page that includes the header and footer, we can create special routes for each common section and then use the web application to compose the page layout.
 
-<Alert type="info">
-    <AlertIcon />In this recipe, we will be focusing on headers and footers, but the same approach can be used for other common page sections.
-</Alert>
+<Alert type="info"><AlertIcon />In this recipe, we will be focusing on headers and footers, but the same approach can be used for other common page sections.</Alert>
 
 ### Setting up the layouts
 
@@ -146,7 +148,7 @@ In this plugin we are using the Page Design selected in the `LayoutRoute` field 
 
 Notice that we set the `order` property to `2`. This makes sure that this plugin is executed after the `normal-mode` and `preview-mode` plugins. This is important because we need to make sure that the page props are set before the layout data is added to the page props.
 
-## Discussion
+## Insights
 
 ### Rate limits
 
@@ -173,12 +175,22 @@ With this approach, we can update the header and footer content on the site by u
     Sitewide revalidations can be very time consuming, so it is important to consider the impact of this approach. One way to reduce the impact would be to redeploy the current code to your site. When redeploying the current code, your pages will be regenerated, either on build or on first request after the deployment. Please check if your hosting provider completely clears the site cache on a redeploy. When taking this approach to a sitewide update, you should make sure that your builds are optimized by following the guidelines in this recipe: [Experience Edge Rate Limits and Caching](/learn/accelerate/xm-cloud/pre-development/project-architecture/rate-limits-and-caching)
 </Alert>
 
-## Next Steps
 
-This recipe highlights a new approach to page composition in XM Cloud. It should be considered a starting point for your project, you should validate the approach and adjust it to fit the needs of your project.
+
 
 ## Related Recipes
 
 <Row columns={2}>
-<Link title="Experience Edge Rate Limits and Caching" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/rate-limits-and-caching" />
+  <Link title="Experience Edge Rate Limits and Caching" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/rate-limits-and-caching" />
+<Link title="Publishing to Experience Edge" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />
+
 </Row>
+
+## Related Documentation
+
+<Row columns={2}>
+<Link title="Publishing to Experience Edge" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html" />
+</Row>
+
+
+

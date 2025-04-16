@@ -1,73 +1,67 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Icon } from '@chakra-ui/react';
 import { appendPathToBasePath } from '@src/lib/utils/stringUtil';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
-import { PageInfo, SidebarNavigationConfig, SidebarNavigationItem } from '@/src/lib/interfaces/page-info';
-
-import useSidebarNav from '../../hooks/useSidebarNav';
+import useManifestRoutes from '@/src/hooks/useManifestRoutes';
+import { ManifestConfig } from '@/src/lib/interfaces/manifest';
+import { PageInfo } from '@/src/lib/interfaces/page-info';
+import { mdiHomeVariantOutline } from '@mdi/js';
 
 export interface BreadcrumbNavProps {
   enabled?: boolean;
   currentPage: PageInfo;
-  config: SidebarNavigationConfig;
+  config: ManifestConfig;
+  hideCurrentPage?: boolean;
 }
 
-const findRoute = (routes: Array<SidebarNavigationItem>, path: string): SidebarNavigationItem | null => {
-  for (const route of routes) {
-    if (route.path === path) {
-      return route;
-    }
-
-    if (route.children) {
-      const foundRoute: SidebarNavigationItem | null = findRoute(route.children, path);
-
-      if (foundRoute) {
-        return foundRoute;
-      }
-    }
-  }
-
-  return null;
-};
-
-const BreadcrumbNav = ({ config, currentPage, enabled = false }: BreadcrumbNavProps) => {
+const BreadcrumbNav = ({ config, currentPage, enabled = false, hideCurrentPage = false }: BreadcrumbNavProps) => {
   const router = useRouter();
-  const { currentItem } = useSidebarNav(currentPage.fileName, config, router.asPath);
 
-  if (!enabled || router.asPath == config.path) {
+  const { currentItem, parents } = useManifestRoutes(config, router.asPath);
+  let parentLink = config.path.split('/').slice(0, -1).join('/');
+
+  if (!enabled) {
     return null;
   }
 
-  const urlSegments: Array<string> = router.asPath != config.path ? router.asPath.replace(config.path + '/', '').split('/') : [];
-
   return (
-    <Breadcrumb>
+    <Breadcrumb mb={4} fontFamily={'heading'}>
+      {parentLink && (
+        <BreadcrumbItem>
+          <BreadcrumbLink as={NextLink} href={parentLink}>
+            <Icon>
+              <path d={mdiHomeVariantOutline} />
+            </Icon>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+      )}
       <BreadcrumbItem>
         <BreadcrumbLink href={config.path}>{config.title}</BreadcrumbLink>
       </BreadcrumbItem>
 
-      {urlSegments.length > 1 &&
-        urlSegments
-          .map((segment, index) => {
-            const matchingRoute = findRoute(config.routes, segment);
-            const isCurrent = router.asPath.endsWith(segment);
+      {parents?.map((parent, index) => {
+        const base = parents.slice(0, index + 1).reduce((acc, parent) => {
+          return appendPathToBasePath(acc, parent.path);
+        }, config.path);
+        return (
+          <BreadcrumbItem key={index} hideBelow={'md'}>
+            {parent.ignoreLink ? (
+              <BreadcrumbLink isCurrentPage>{parent.title}</BreadcrumbLink>
+            ) : (
+              <BreadcrumbLink as={NextLink} href={base}>
+                {parent.title}
+              </BreadcrumbLink>
+            )}
+          </BreadcrumbItem>
+        );
+      })}
 
-            if (matchingRoute && !isCurrent) {
-              return (
-                <BreadcrumbItem key={index}>
-                  <BreadcrumbLink as={NextLink} href={appendPathToBasePath(config.path, matchingRoute.path)}>
-                    {matchingRoute.title}
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-              );
-            }
-          })
-          .filter(Boolean)}
-
-      <BreadcrumbItem isCurrentPage>
-        <BreadcrumbLink href="#">{currentItem?.title}</BreadcrumbLink>
-      </BreadcrumbItem>
+      {!hideCurrentPage && (
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink href="#">{currentItem?.title}</BreadcrumbLink>
+        </BreadcrumbItem>
+      )}
     </Breadcrumb>
   );
 };

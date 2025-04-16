@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   CardBody,
+  CardFooter,
   CardHeader,
   CardProps,
   chakra,
@@ -44,35 +45,35 @@ const CustomImage = chakra(Image, {
   shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
 });
 
-const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/changelog', linkText = 'See all changes', hideProductIcon, columns, ...rest }: ChangelogEntriesProps): JSX.Element => {
+const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/changelog', linkText = 'See all changes', hideProductIcon, columns, ...rest }: ChangelogEntriesProps) => {
   if (entries.length === 0) {
     return <></>;
   }
 
   return (
     <Card {...rest} variant={'unstyled'}>
-      <CardHeader justifyContent={'space-between'} display={'flex'} py={8}>
-        <Heading as={'h3'} size={'md'}>
+      <CardHeader justifyContent={{ base: 'left', sm: 'space-between' }} flexDirection={{ base: 'column', sm: 'row' }} display={'flex'} py={8} alignItems={'baseline'}>
+        <Heading as={'h3'} fontSize={'2xl'} fontWeight={'500'}>
           {title}
           <Link href="/changelog/rss.xml" ml={1}>
-            <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="primary" variant="ghost" size={'xs'} />
+            <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="neutral" variant="ghost" size={'xs'} />
           </Link>
         </Heading>
 
-        <TextLink href={linkHref} text={linkText} />
+        <TextLink href={linkHref} text={linkText} hideBelow={'md'} />
       </CardHeader>
       <CardBody py={{ base: '2', md: '4' }}>
         <SimpleGrid columns={columns ? columns : 1} spacing={0}>
           {entries.map((entry, key) => {
             return (
-              <Flex justifyContent={'items-start'} mb={5} key={key}>
+              <Flex justifyContent={'items-start'} mb={4} key={key}>
                 {!hideProductIcon && (
                   <Box display={{ base: 'none', sm: 'block' }} textAlign={'center'} mr={5} height={'43px'} width={'43px'}>
                     <CustomImage boxSize={3} src={useColorModeValue(entry.lightIcon, entry.darkIcon)} alt={entry.productName ? entry.productName : 'Product icon'} width={25} margin={'.5rem'} height={25} priority={true} maxWidth={'auto'} />
                   </Box>
                 )}
                 <Stack fontSize={'sm'}>
-                  <Heading as={'h4'} size="sm">
+                  <Heading as={'h4'} size={'md'}>
                     <Link href={getChangelogEntryUrl(entry)} title={entry.title} color={'chakra-body-text'}>
                       {entry.title}
                     </Link>
@@ -139,6 +140,9 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
           })}
         </SimpleGrid>
       </CardBody>
+      <CardFooter hideFrom={'md'} py={0} alignSelf={'self-end'}>
+        <TextLink href={linkHref} text={linkText} />
+      </CardFooter>
     </Card>
   );
 };

@@ -5,7 +5,7 @@ type SocialFeedsProps = {
   pageInfo: PageInfo;
 };
 
-export const SocialFeeds = ({ pageInfo }: SocialFeedsProps): JSX.Element => (
+export const SocialFeeds = ({ pageInfo }: SocialFeedsProps) => (
   <>
     <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
     <SitecoreCommunityQuestions data={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />

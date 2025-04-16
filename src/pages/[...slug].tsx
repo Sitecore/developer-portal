@@ -1,13 +1,15 @@
-import { ChildPageInfo, PageInfo, SidebarNavigationConfig } from '@lib/interfaces/page-info';
+import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
 import { getChildNavgationInfo, getChildPageInfo, getPageInfo } from '@lib/page-info';
 import { getStaticPathsRecursively } from '@lib/staticPaths';
+
 import ArticlePage from '@src/layouts/ArticlePage';
 import ChildOverviewPage from '@src/layouts/ChildOverviewPage';
 import DefaultContentPage from '@src/layouts/DefaultContentPage';
 import SocialPage from '@src/layouts/SocialPage';
-
+import AcceleratePage from '../layouts/AcceleratePage';
 import NewsLetterPage from '../layouts/NewsLetterPage';
 import Tutorial from '../layouts/Tutorial';
+import { ManifestConfig } from '../lib/interfaces/manifest';
 
 export async function getStaticPaths() {
   const paths = await getStaticPathsRecursively();
@@ -31,7 +33,6 @@ export async function getStaticProps(context: any) {
   if (pageInfo.hasSubPageNav) {
     sidebarNavConfig = await getChildNavgationInfo(context.params.slug.join('/'));
   }
-  // navData
 
   return {
     props: {
@@ -42,10 +43,10 @@ export async function getStaticProps(context: any) {
   };
 }
 
-export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pageInfo: PageInfo; childPageInfo: Array<ChildPageInfo>; sidebarNavConfig: SidebarNavigationConfig }) {
+export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pageInfo: PageInfo; childPageInfo: Array<ChildPageInfo>; sidebarNavConfig: ManifestConfig }) {
   // Check for other page types
   if (pageInfo.pageType) {
-    switch (pageInfo.pageType.toLowerCase()) {
+    switch (pageInfo?.pageType.toLowerCase()) {
       case 'childoverview':
         return <ChildOverviewPage pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} sidebarConfig={sidebarNavConfig} />;
       case 'social':
@@ -55,6 +56,9 @@ export default function Slug({ pageInfo, childPageInfo, sidebarNavConfig }: { pa
       case 'tutorial':
         return <Tutorial pageInfo={pageInfo} hasGrid={false} childPageInfo={childPageInfo} sidebarConfig={sidebarNavConfig} />;
     }
+  }
+  if (pageInfo?.area?.includes('accelerate')) {
+    return <AcceleratePage pageInfo={pageInfo} hasGrid={false} sidebarConfig={sidebarNavConfig} />;
   }
 
   if (pageInfo.hasSubPageNav) {

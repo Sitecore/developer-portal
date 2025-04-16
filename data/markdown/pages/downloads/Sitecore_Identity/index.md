@@ -1,12 +1,22 @@
 ---
 title: 'Sitecore Identity Server'
-description: 'Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication. For security reasons we strongly recommend using Sitecore Identity Server 7.0 or later.'
+description: 'Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform and Sitecore Experience Commerce.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 ---
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
+## Sitecore Identity Server 8.x
+</CardHeader>
+<CardBody>
+[Sitecore Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016)
+</CardBody>          
+</Card>
+
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
 ## Sitecore Identity Server 7.x
+**DEPRECATED:** With the roll-out of Identity Server 8.0 across SXP versions, Identity Server 7 will be deprecated due to Microsoft's end-of-support for .NET 6.
 </CardHeader>
 <CardBody>
 [Sitecore Identity Server 7.1.11](/downloads/Sitecore_Identity/7x/Sitecore_Identity_7111)\
@@ -22,6 +32,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Identity Server 6.x
+**DEPRECATED** due to Microsoft's end of support for .NET 3.
 </CardHeader>
 <CardBody>
 [Sitecore Identity Server 6.0.0](/downloads/Sitecore_Identity/6x/Sitecore_Identity_600)
@@ -31,6 +42,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Identity Server 5.x
+**DEPRECATED** due to Microsoft's end of support for .NET 2.
 </CardHeader>
 <CardBody>
 [Sitecore Identity Server 5.1.1](/downloads/Sitecore_Identity/5x/Sitecore_Identity_511)\
@@ -43,6 +55,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Identity Server 4.x
+**DEPRECATED**
 </CardHeader>
 <CardBody>
 [Sitecore Identity Server 4.0.0](/downloads/Sitecore_Identity/4x/Sitecore_Identity_400)
@@ -52,6 +65,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Identity Server 3.x
+**DEPRECATED**
 </CardHeader>
 <CardBody>
 [Sitecore Identity Server 3.0.0](/downloads/Sitecore_Identity/3x/Sitecore_Identity_300)
@@ -61,6 +75,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Identity Server 2.x
+**DEPRECATED**
 </CardHeader>
 <CardBody>
 [Sitecore Identity Server 2.0.1](/downloads/Sitecore_Identity/2x/Sitecore_Identity_201)\

@@ -9,7 +9,7 @@ export type ProductLogoProps = {
   height?: number;
 };
 
-export const ProductLogo = ({ product, alt, width, height }: ProductLogoProps): JSX.Element => {
+export const ProductLogo = ({ product, alt, width, height }: ProductLogoProps) => {
   const darkProductLogo = GetProductLogoByVariant(product, Variant.Dark, Type.Full);
   const lightProductLogo = GetProductLogoByVariant(product, Variant.Light, Type.Full);
   const url = useColorModeValue(lightProductLogo, darkProductLogo);

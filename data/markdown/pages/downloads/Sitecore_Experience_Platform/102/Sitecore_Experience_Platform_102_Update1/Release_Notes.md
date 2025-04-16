@@ -27,6 +27,7 @@ This is a product update. Sitecore recommends that you upgrade to this release t
 | Compatibility | Sitecore Installation Assistant 1.4.1 supports Sitecore XP 10.2.1.                                                                                                                                                            | 578070         |
 | Compatibility | The patch level version of Identity Server to 7.0.327 has been updated, which includes security updates.                                                                                                                      | 590371         |
 | Compatibility | `ICSharpCode.SharpZipLib` has been updated to version 1.4.2.                                                                                                                                                                  | 578988         |
+| Compatibility | `System.Security.Cryptography.Xml` has been updated to version 4.7.1.                                                                                                                                                         | 590395         |
 
 ## Known issues
 

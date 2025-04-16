@@ -3,13 +3,14 @@ import { mdiClose, mdiFilterVariant } from '@mdi/js';
 import NextLink from 'next/link';
 import React from 'react';
 
+import { ManifestConfig } from '@/src/lib/interfaces/manifest';
 import { appendPathToBasePath } from '@/src/lib/utils/stringUtil';
 
-import { SidebarNavigationConfig } from '../../lib/interfaces/page-info';
+
 
 export interface SidebarNavigationProps {
   title?: string;
-  config: SidebarNavigationConfig;
+  config: ManifestConfig;
   onFocus: () => void;
   onBlur: () => void;
 }

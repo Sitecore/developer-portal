@@ -20,7 +20,7 @@ const CustomImage = chakra(Image, {
   shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
 });
 
-const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hideProductIcon, columns, ...rest }: ChangelogEntriesProps): JSX.Element => {
+const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hideProductIcon, columns, ...rest }: ChangelogEntriesProps) => {
   if (entries.length === 0) {
     return <></>;
   }

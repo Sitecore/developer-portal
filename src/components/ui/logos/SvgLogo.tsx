@@ -15,6 +15,7 @@ const LANGUAGE_ICON_MAPPING: { [key: string]: string } = {
   typescript: 'typescript',
   powershell: 'powershell',
   'c#': 'dotnet',
+  chatgpt: 'chatgpt',
 };
 
 export function isValidLogo(value: string): boolean {
@@ -36,7 +37,7 @@ export type IconProps = {
   height?: number;
 };
 
-export const SvgLogo = ({ logo, width, height }: IconProps): JSX.Element => {
+export const SvgLogo = ({ logo, width, height }: IconProps) => {
   const LogoComponent = dynamic<LogoComponent>(() => import(`./logos/logo--${LANGUAGE_ICON_MAPPING[logo.toLowerCase()].toLowerCase()}`));
 
   return <LogoComponent width={width} height={height} />;

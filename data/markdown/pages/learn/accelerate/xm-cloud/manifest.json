@@ -1,9 +1,14 @@
 {
   "title": "Accelerate Cookbook for XM Cloud",
-  "description": "This Cookbook provides a set of recipes to help implementing XM Cloud through setup, configuration and implemenation.",
-  "heading": false,
+  "description": "This Cookbook provides a set of recipes to help implementing XM Cloud through setup, configuration and implementation.",
+  "productLogo": "XMCloud",
   "path": "/learn/accelerate/xm-cloud",
+  "productFeedbackLabel": ["XMC"],
+  "heading": true,
+  "enableSearch": false,
+  "enableBreadcrumb": true,
   "showRootAsSections": true,
+  "generateLLM": true,
   "routes": [
     {
       "title": "Pre-development",
@@ -16,7 +21,7 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Moving to SaaS - Concepts You Need to Know",
+              "title": "Moving to SaaS",
               "path": "moving-to-saas"
             },
             {
@@ -57,6 +62,10 @@
             {
               "title": "Hosting Next.js on Azure App Services",
               "path": "nextjs-azure-app-services"
+            },
+            {
+              "title": "Hosting ASP.NET Core App",
+              "path": "hosting-aspnet-core"
             }
           ]
         },
@@ -80,6 +89,10 @@
             {
               "title": "Next.js App Router Preparation",
               "path": "nextjs-app-router-preparation"
+            },
+            {
+              "title": "Web Developer Experience",
+              "path": "web-developer-experience"
             }
           ]
         },
@@ -119,19 +132,23 @@
               "path": "layout-routing"
             },
             {
-              "title": "Multisite",
+              "title": "Multisite Architecture",
               "path": "multisite"
             },
             {
               "title": "Rate Limits and Caching",
               "path": "rate-limits-and-caching"
+            },
+            {
+              "title": "Site management",
+              "path": "site-management"
             }
           ]
         },
         {
           "title": "Sprint Zero",
           "path": "sprint-zero",
-          "ignoreLink": true,
+          "ignoreLink": false,
           "children": [
             {
               "title": "Project Solution Setup",
@@ -164,6 +181,10 @@
           "ignoreLink": false,
           "children": [
             {
+              "title": "CMS Error Monitoring",
+              "path": "cms-error-monitoring"
+            },
+            {
               "title": "Creating New Components",
               "path": "creating-new-components"
             },
@@ -178,6 +199,14 @@
             {
               "title": "Using Placeholders",
               "path": "using-placeholders"
+            },
+            {
+              "title": "Troubleshooting Docker",
+              "path": "troubleshooting-docker"
+            },
+            {
+              "title": "Web Application Error Monitoring",
+              "path": "web-application-error-handling"
             }
           ]
         },
@@ -190,6 +219,10 @@
               "title": "Localization",
               "path": "localization"
             },
+            {
+              "title": "Preview Website",
+              "path": "preview-website"
+            },            
             {
               "title": "Redirect",
               "path": "redirect"
@@ -214,7 +247,11 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Custom Editing UX for 3rd Party Integrations",
+              "title": "Retrieving Data from 3rd Party",
+              "path": "retrieving-data-from-3rd-party-integrations"
+            },
+            {
+              "title": "Custom Editing UX for 3rd Party",
               "path": "custom-editing-ux-3rd-party-integrations"
             },
             {
@@ -224,8 +261,24 @@
           ]
         },
         {
+          "title": "Middleware Invocations",
+          "path": "middleware-invocations",
+          "ignoreLink": false
+        },
+        {
           "title": "Sitecore Search",
-          "path": "sitecore-search"
+          "path": "sitecore-search",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Integrating Sitecore Search",
+              "path": "integrating-sitecore-search"
+            },
+            {
+              "title": "Incrementally updating Search",
+              "path": "search-incremental-updates"
+            }
+          ]
         }
       ]
     },
@@ -239,6 +292,25 @@
           "path": "go-live-checklist"
         }
       ]
+    },
+    {
+      "title": "Optimization",
+      "path": "optimization",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Data Fetching Optimizaton",
+          "path": "data-fetching-optimization"
+        },        
+        {
+          "title": "On-page SEO optimization",
+          "path": "seo-web-optimization"
+        },
+        {
+          "title": "Performance Optimizaton",
+          "path": "performance-optimization"
+        }       
+      ]        
     },
     {
       "title": "Appendix I",
@@ -262,6 +334,9 @@
           "ignoreLink": true,
           "children": [
             {
+              "title": "ASP.NET Core examples",
+              "path": "asp-net-core-examples"
+            },{
               "title": "Exported components example",
               "path": "exported-components-example"
             },
@@ -279,3 +354,4 @@
     }
   ]
 }
+

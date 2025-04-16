@@ -5,13 +5,15 @@ hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-10-01'
+created: '2024-08-23'
+audience: ['Architect','Technical Implementer']
 ---
 
-## Problem
+## Context
 
 Within XM Cloud sometimes your content authors will have a requirement to create multiple items which have a predefined consistent structure. Authors need to be able to create these items quickly and efficiently while maintaining this structure. As a developer how can you support this requirement.
 
-## Solution
+## Execution
 
 This is where branch templates in XM Cloud come in to address these common challenges in content management and site development:
 
@@ -134,6 +136,6 @@ Please note there are OOTB Rendering Content Resolvers that can also be used to 
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Branch templates | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/branch-templates.html" />
-  <Link title="Work with a branch template | Sitecore Documentation" link="https://doc.sitecore.com/xp/en/xmc/en/developers/xm-cloud/work-with-a-branch-template.html" />
+  <Link title="Branch templates" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/branch-templates.html" />
+  <Link title="Work with a branch template" link="https://doc.sitecore.com/xp/en/xmc/en/developers/xm-cloud/work-with-a-branch-template.html" />
 </Row>

@@ -1,4 +1,4 @@
-import { Card, CardFooter, CardHeader, Heading, Link, LinkBox, LinkOverlay } from '@chakra-ui/react';
+import { Card, CardFooter, CardHeader, Heading, HStack, Link, LinkBox, LinkOverlay, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 import { translateDate } from '@/src/lib/utils';
@@ -31,30 +31,38 @@ type DateOutputProps = {
   endDate?: string;
 };
 
-const DateOutput = ({ startDate, endDate }: DateOutputProps): JSX.Element => {
+const DateOutput = ({ startDate, endDate }: DateOutputProps) => {
   const startDateString = translateDate(startDate);
   const endDateString = endDate ? translateDate(endDate) : '';
 
   if (!endDateString || startDateString === endDateString) {
-    return <p className="text-xs">{startDateString}</p>;
+    return (
+      <Text variant={'subtle'} size={'xs'}>
+        {startDateString}
+      </Text>
+    );
   }
 
   return (
-    <p className="text-xs">
+    <Text variant={'subtle'}>
       {startDateString} <span className="sr-only">to</span>
       <span aria-hidden="true">-</span> {endDateString}
-    </p>
+    </Text>
   );
 };
 
-export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, endDate, location, startDate, title, url, viewCount, virtualUrl }: SitecoreCommunityNewsOrEventItemProps): JSX.Element => {
+export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, endDate, location, startDate, title, url, viewCount, virtualUrl }: SitecoreCommunityNewsOrEventItemProps) => {
   return (
     <LinkBox as="article" display="contents">
       <Card variant={'outline'} size="lg" w={'full'} justifyContent={'space-between'} layerStyle="interactive.raise">
         <CardHeader paddingBottom={0}>
-          {!!categoryTitle && <Heading variant="section">{categoryTitle}</Heading>}
+          {!!categoryTitle && (
+            <Heading variant="eyebrow" size={'sm'}>
+              {categoryTitle}
+            </Heading>
+          )}
 
-          <Heading size={'sm'} my={4}>
+          <Heading size={'md'} my={4}>
             <LinkOverlay as={NextLink} href={`${SITECORE_COMMUNITY_URL}${url}`} isExternal={true} rel="noreferrer noopener" target="_blank">
               {title}
             </LinkOverlay>
@@ -80,9 +88,10 @@ export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, 
           )}
 
           {!!commentCount && !!viewCount && (
-            <p className="mt-2 text-xs">
-              <span className="mr-6">{commentCount} comments</span> {viewCount} views
-            </p>
+            <HStack>
+              <Text variant={'subtle'}>{commentCount} comments</Text>
+              <Text variant={'subtle'}>{viewCount} views</Text>
+            </HStack>
           )}
         </CardFooter>
       </Card>
@@ -90,7 +99,7 @@ export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, 
   );
 };
 
-export const SitecoreCommunityNewsOrEventItemSidebar = ({ commentCount, startDate, title, url, viewCount }: SitecoreCommunityNewsOrEventItemProps): JSX.Element => {
+export const SitecoreCommunityNewsOrEventItemSidebar = ({ commentCount, startDate, title, url, viewCount }: SitecoreCommunityNewsOrEventItemProps) => {
   return (
     <li>
       <div className="flex items-start">
@@ -120,7 +129,7 @@ export const SitecoreCommunityNewsOrEventItemSidebar = ({ commentCount, startDat
   );
 };
 
-const DateIcon = ({ date, className, type }: DateIconProps): JSX.Element => {
+const DateIcon = ({ date, className, type }: DateIconProps) => {
   if (type == 'calendar') {
     return (
       <div className={`mr-4 w-10 flex-none rounded-t pb-2 text-center shadow-lg lg:rounded-l lg:rounded-t-none ${className}`}>

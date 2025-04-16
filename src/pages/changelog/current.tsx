@@ -32,8 +32,6 @@ export default function ChangelogCurrent() {
                 <Text>Please check this list to find the current release notes per product</Text>
 
                 <Row columns={2}>
-                  <LinkItem title="Sitecore Content Hub" link="https://doc.sitecore.com/ch/en/users/content-hub/what-s-new-in-content-hub.html" />
-                  <LinkItem title="Sitecore OrderCloud" link="https://ordercloud.io/release-notes/" />
                   <LinkItem title="Sitecore XM/XP" link="/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104/Release_Notes" />
                   <LinkItem title="Sitecore Experience Commerce" link="https://scdp.blob.core.windows.net/downloads/Sitecore%20Commerce/103/Sitecore%20Experience%20Commerce%20103/Non-secure/Sitecore%20XC10.3%20Release%20Notes.pdf" />
                 </Row>

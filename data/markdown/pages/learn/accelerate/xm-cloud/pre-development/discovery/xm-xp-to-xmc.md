@@ -4,14 +4,16 @@ description: 'Learn more about how to transition to XM Cloud'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-10-08'
+lastUpdated: '2024-10-09'
+created: '2024-10-09'
+audience: ['All']
 ---
 
-## Problem
+## Context
 
 We have a client, currently on XM or XP, they have already selected XM Cloud as the new platform, what is the best migration path to XM Cloud from their current MVC implementation?
 
-## Solution
+## Execution
 
 The best path for migration to XM Cloud will depend on the client's requirements. This recipe will propose a high-level migration path that can be tailored to your specific client.
 
@@ -49,7 +51,7 @@ It is common in a hybrid migration to focus on content search first so that when
 
 - If there is content behind a login, any security tokens will need to be persisted between each delivery system.
 
-## Discussion
+## Insights
 
 As you are looking through the different approaches, there’s a number of topics you will need to consider.
 

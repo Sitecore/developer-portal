@@ -404,7 +404,10 @@ export function GetProductLogo(productName: string, variant: string) {
   return GetProductLogoByVariant(_product, _variant);
 }
 
-export function GetProductIcon(productName: Product, variant: Variant) {
+export function GetProductIcon(productName: Product | string, variant: Variant) {
+  if (typeof productName === 'string') {
+    productName = Product[productName as keyof typeof Product];
+  }
   return GetProductLogoByVariant(productName, variant, Type.IconOnly);
 }
 

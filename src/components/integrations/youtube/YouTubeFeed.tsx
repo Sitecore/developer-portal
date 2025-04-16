@@ -16,7 +16,7 @@ type YouTubeItemProps = {
   id: string;
 };
 
-export const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeedProps): JSX.Element => {
+export const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeedProps) => {
   if (data.length === 0) {
     return <></>;
   }
@@ -24,7 +24,7 @@ export const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeed
   return (
     <Card shadow={'none'} {...rest} background={'transparent'}>
       <CardHeader justifyContent={'space-between'} display={{ base: 'inline', md: 'flex' }} px={0}>
-        <Heading as={'h3'} size={'xl'}>
+        <Heading as={'h3'} size={'xl'} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
           {title ? title : `Latest ${playlistTitle} videos`}
         </Heading>
         <TextLink href={`https://www.youtube.com/playlist?list=${data[0].snippet.playlistId}`} text={'See all videos'} />
@@ -40,7 +40,7 @@ export const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeed
   );
 };
 
-export const YouTubeItem = ({ snippet, id }: YouTubeItemProps): JSX.Element => {
+export const YouTubeItem = ({ snippet, id }: YouTubeItemProps) => {
   return (
     <Box key={id}>
       <LinkBox as={NextLink} href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`} rel="noopener noreferrer">

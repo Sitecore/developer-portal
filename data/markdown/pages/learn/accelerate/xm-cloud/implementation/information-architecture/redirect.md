@@ -5,26 +5,27 @@ hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
 lastUpdated: '2024-04-05'
+created: '2024-11-18'
+audience: ['Architect','Technical Implementer']
 ---
 
-## Problem
+## Context
 
 You need to create redirects for the new Next.js XM Cloud site. The redirects need to support both content authored redirects for creating vanity urls/moving pages, and application/platform redirects to make sure that old pages/urls are redirected when the new site goes live.
 
-## Content Authored Redirects
+## Execution
+### Content Authored Redirects
 
 The XM Cloud and Next.js app already have OOTB support for [Redirect Item](https://doc.sitecore.com/xmc/en/users/xm-cloud/redirect-a-url.html) and [Redirect Map](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-redirect-map.html).
 Both solutions allow a content author to create and maintain redirects in XM Cloud without requiring a code deployment
 
-### Redirect Item vs Redirect Map
-
 Redirect items provide an easy way to map a single path to another path. Redirect maps will provide much better manageability by grouping redirects together and having regex support. From the maintenace and features perspective, using redirect map could be a better choice.
 
-## Developer Controlled Redirects
+### Developer Controlled Redirects
 
 When you have a large number of redirects, you need to use the hosting provider features to handle it in your frontend application.
 
-### Next.config.js Redirects on Vercel
+#### Next.config.js Redirects on Vercel
 
 You can use use the `redirects` key in `next.config.js`:
 
@@ -44,7 +45,7 @@ module.exports = {
 
 Configuration based redirects will support up to 1024 redirects.
 
-### Redirects on Netlify
+#### Redirects on Netlify
 
 Netlify prefers that you use the Netlify framework for handling redirects. There are two ways to achieve this:
 
@@ -55,7 +56,7 @@ Netlify processes and serializes your redirect rules across the `_redirects` and
 
 If you need to set up 10,000 redirects or more, we recommend using wildcards or placeholders as much as possible. For a more complex redirect setup, Edge Functions can be a better option.
 
-## Discussion
+## Insights
 
 ### When use the SXA redirects vs static redirects
 
@@ -86,7 +87,8 @@ These type of redirects can be simplified with one regex statement in redirect m
 /company/products/arc-(.*)$  -> /products/oil/$1
 ```
 
-  <Alert status="info">
+<br/><br/>
+<Alert status="info">
     <AlertIcon />
       IMPORTANT: Always keep in mind the redirects are processed with every single request, if your regex is too complicated, it my cause a performance issue.
   </Alert>

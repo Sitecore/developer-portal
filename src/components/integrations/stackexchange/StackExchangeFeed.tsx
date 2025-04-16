@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
+import { Box, Button, Card, CardBody, CardHeader, CardProps, Flex, Heading, Link, SimpleGrid, Stack, Text, useColorModeValue, VisuallyHidden, Wrap } from '@chakra-ui/react';
 
 import { TextLink } from '../../links';
 import { StackExchangeQuestion } from './stackExchange';
@@ -8,7 +8,7 @@ type StackExchangeFeedProps = CardProps & {
   title?: string;
 };
 
-export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedProps): JSX.Element => {
+export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedProps) => {
   if (data.length === 0) {
     return <></>;
   }
@@ -16,7 +16,7 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
   return (
     <Card shadow={'none'} {...rest} background={'transparent'}>
       <CardHeader justifyContent={'space-between'} display={{ base: 'inline', md: 'flex' }} px={0}>
-        <Heading as={'h3'} size={{ base: 'lg', md: 'xl' }}>
+        <Heading as="h2" mb={8} fontWeight={'500'}>
           {title ? title : `The Latest on Sitecore StackExchange`}
         </Heading>
         <TextLink href={`https://sitecore.stackexchange.com/`} text={'See all questions on StackExchange'} />
@@ -39,16 +39,18 @@ export const StackExchangeFeed = ({ data, title, ...rest }: StackExchangeFeedPro
                 </Link>
                 <VisuallyHidden>Tags:</VisuallyHidden>
                 {question.tags.length && (
-                  <Stack direction={{ base: 'column', sm: 'row' }}>
-                    {question.tags.map((tag, i) => (
-                      <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')} key={i}>
-                        <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
-                          {tag}
-                          <VisuallyHidden>Opens in a new tab</VisuallyHidden>
-                        </Button>
-                      </Link>
-                    ))}
-                  </Stack>
+                  <Wrap>
+                    <Stack direction={{ base: 'column', xl: 'row' }} hideBelow={'md'}>
+                      {question.tags.map((tag, i) => (
+                        <Link href={`https://sitecore.stackexchange.com/questions/tagged/${tag}`} target="_blank" rel="noopener noreferrer" color={useColorModeValue('white', 'black !important')} key={i}>
+                          <Button variant={'solid'} colorScheme="purple" size={{ base: 'xs', md: 'sm' }} borderRadius={0} key={tag}>
+                            {tag}
+                            <VisuallyHidden>Opens in a new tab</VisuallyHidden>
+                          </Button>
+                        </Link>
+                      ))}
+                    </Stack>
+                  </Wrap>
                 )}
               </Stack>
             </Flex>

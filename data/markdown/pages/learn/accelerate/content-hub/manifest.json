@@ -1,0 +1,231 @@
+{
+  "title": "Accelerate Cookbook for Content Hub",
+  "description": "This Cookbook provides a set of recipes to help implementing Content Hub through setup, configuration and implemenation.",
+  "productLogo": "ContentHub",
+  "path": "/learn/accelerate/content-hub",
+  "productFeedbackLabel": ["Content Hub"],
+  "heading": true,
+  "enableSearch": false,
+  "enableBreadcrumb": true,
+  "showRootAsSections": true,
+  "generateLLM": true,
+  "routes": [
+    {
+      "title": "Pre-development",
+      "path": "pre-development",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Discovery",
+          "path": "discovery",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Project Planning",
+              "path": "project-planning"
+            },            
+            {
+              "title": "Discovery Phase",
+              "path": "discovery-phase"
+            },
+            {
+              "title": "Requirements Gathering",
+              "path": "requirements-gathering"
+            }
+          ]
+        },
+        {
+          "title": "Sprint Zero",
+          "path": "sprint-zero",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Multi Environments Deployment",
+              "path": "multi-environments-deployment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Implementation",
+      "path": "implementation",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Configuration",
+          "path": "configuration",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Distribution of Assets",
+              "path": "distribution-of-assets"
+            },
+            {
+              "title": "Distribution of Content",
+              "path": "distribution-of-content"
+            },
+            {
+              "title": "Environment Specific Settings",
+              "path": "environment-specific-settings"
+            },
+            
+            {
+              "title": "Paths across Entity Definitions",
+              "path": "paths-across-entity-definitions"
+            }
+          ]
+        },
+        {
+          "title": "Schema Management",
+          "path": "schema-management",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Taxonomy vs Option Lists",
+              "path": "taxonomy-vs-option-list"
+            }
+          ]
+        },
+        {
+          "title": "Custom Logic",
+          "path": "custom-logic",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Catching Renditions Generation",
+              "path": "catching-rendition-generation"
+            },
+            {
+              "title": "Conditionally Generate Renditions",
+              "path": "conditionally-generate-renditions"
+            },
+            {
+              "title": "Developing External Components",
+              "path": "developing-external-components"
+            },
+            {
+              "title": "External Integrations",
+              "path": "external-integrations"
+            },
+            {
+              "title": "Scripts Guidance and Scenarios",
+              "path": "scripting-guidance-and-scenarios"
+            },
+            {
+              "title": "Webclient SDK Scenarios",
+              "path": "webclient-sdk-scenarios"
+            }
+          ]
+        },
+        {
+          "title": "Functional Security",
+          "path": "functional-security",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Debugging User Security",
+              "path": "debugging-user-security"
+            },
+            {
+              "title": "Single-Sign On",
+              "path": "sso-on-content-hub"
+            },
+            {
+              "title": "User Groups Setup",
+              "path": "user-groups-setup"
+            }
+          ]
+        },      
+        {
+          "title": "State Flow and Approval",
+          "path": "state-flow-and-approval"
+        },
+        {
+          "title": "Integrations",
+          "path": "integrations",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Editing assets in 3rd-party tools",
+              "path": "3rd-party-editing-tools"
+            }
+          ]
+        },
+        {
+          "title": "Search Pages",
+          "path": "search",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Considering Search",
+              "path": "considering-search"
+            },
+            {
+              "title": "Setup Search",
+              "path": "setup-search"
+            }
+          ]
+        },
+        {
+          "title": "Digital Rights Management",
+         "path": "digital-rights-management",
+         "ignoreLink": false    
+       }        
+      ]
+    },
+    {
+      "title": "Final Steps",
+      "path": "final-steps",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Migration Guide",
+          "path": "migration-guide"
+        },
+        {
+          "title": "Testing and Quality Assurance",
+          "path": "testing-and-qa",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Implementation Testing",
+              "path": "implementation-testing"
+            },
+            {
+              "title": "Quality Assurance",
+              "path": "quality-assurance"
+            }
+          ]
+        },
+        {
+          "title": "Go-Live Checklist",
+          "path": "go-live-checklist"
+        }
+      ]
+    },
+    {
+      "title": "Optimization",
+      "path": "optimization",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Home page customizations",
+          "path": "home-page-customizations"
+        }
+      ]
+      
+    },
+    {
+      "title": "Appendix I",
+      "path": "appendix-i",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Content Hub Glossary",
+          "path": "content-hub-glossary"
+        }
+      ]
+    }
+  ]
+}

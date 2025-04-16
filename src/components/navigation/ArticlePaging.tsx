@@ -1,20 +1,19 @@
 import { Button, HStack, Icon, Link } from '@chakra-ui/react';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 
-import { SidebarNavigationConfig } from '@/src/lib/interfaces/page-info';
-import { getItemUrl } from '@/src/lib/sidebarNav';
-
-import useSidebarNav from '../../hooks/useSidebarNav';
+import useManifestRoutes from '@/src/hooks/useManifestRoutes';
+import { ManifestConfig } from '@/src/lib/interfaces/manifest';
+import { getItemUrl } from '@/src/lib/manifestHelper';
 
 export interface ArticlePagingProps {
   enabled?: boolean;
   currentfileName: string;
-  config: SidebarNavigationConfig;
+  config: ManifestConfig;
   currentPath: string;
 }
 
 export const ArticlePaging = ({ config, currentfileName, enabled = false, currentPath }: ArticlePagingProps) => {
-  const { previousItem, nextItem } = useSidebarNav(currentfileName, config, currentPath);
+  const { previousItem, nextItem } = useManifestRoutes(config, currentPath);
 
   if (!enabled) {
     return null;

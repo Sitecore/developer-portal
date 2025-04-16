@@ -16,7 +16,7 @@ type SocialPageProps = {
   ctaAfter?: CTACardProps;
 };
 
-const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps): JSX.Element => (
+const SocialPage = ({ pageInfo, promoBefore = [], ctaAfter }: SocialPageProps) => (
   <TrackPageView pageInfo={pageInfo}>
     <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
       <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />

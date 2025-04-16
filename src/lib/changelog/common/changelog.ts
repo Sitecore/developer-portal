@@ -34,3 +34,7 @@ export function getProductOptions(): Array<Option> {
 
   return [];
 }
+
+export function getSelectedIds(value: string | undefined): Array<string> {
+  return value != null && value.length > 0 ? value.split('|') : [];
+}

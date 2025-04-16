@@ -4,10 +4,12 @@ description: 'Configuration of limits and caching to improve performance'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-06-18'
+lastUpdated: '2025-03-31'
+created: '2024-04-23'
+audience: ['Architect','Product Owner', 'Technical Implementer']
 ---
 
-## Problem
+## Context
 
 The content delivery API on Experience Edge has a fair use rate limit of 80 uncached requests per second. If every user request hits the content delivery API for content, this limit will be very easily reached.
 
@@ -15,7 +17,11 @@ The content delivery API on Experience Edge has a fair use rate limit of 80 unca
 - How can we have sections of our site where content is updated regularly?
 - How do we cope with a very large site and cache clears, for example, if after a deployment my site has 10,000 pages and high traffic, so there will likely be a high volume of traffic hitting the content delivery API.
 
-## Solution
+Keep in mind that any functionality that depends on incremental updates, must have [Snapshot Publishing](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html) configured in XM Cloud.
+
+
+
+## Execution
 
 ### SSG vs SSR
 
@@ -51,7 +57,6 @@ To configure ISR for a route (and in this case, all routes in the web applicatio
 
 The revalidate property should be set to the longest acceptable or most comfortable time period for content updates to show up for end users on the site; another way of looking at this value is “how long should stale content show up for end users of the site.” There may be multiple considerations about the “lifetime” of content that impact other parts of the organization outside of content authors, such as legal requirements and statements.
 
-For more details on configuring ISR and SSG, please see the [Publishing, Cache Revalidation, and SSG](/learn/accelerate/xmcloud/implementation/project-architecture/publishing-cache-isr.md) recipe.
 
 ### Streamline Your Builds
 
@@ -135,7 +140,7 @@ item(path:"/sitecore/content/<SiteCollection>/<Site>/Home", language: "en") {
 };
 ```
 
-## Discussion
+## Insights
 
 ### Wildcards
 
@@ -151,7 +156,7 @@ When there is a lot of external content that will generate many pages in the web
 ## Related Documentation
 
 <Row columns={2}>
-<Link title="Customize build-time static paths in Next.js apps | Sitecore Documentation" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/customize-build-time-static-paths-in-jss-next-js-apps.html" />
+<Link title="Customize build-time static paths in Next.js apps" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/customize-build-time-static-paths-in-jss-next-js-apps.html" />
 <Link title="Enable retries for requests to the XM Cloud Experience Edge GraphQL endpoint" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html" />
 <Link title="Component-level data fetching in JSS Next.js apps" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/component-level-data-fetching-in-jss-next-js-apps.html" />
 </Row>

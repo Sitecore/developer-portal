@@ -11,7 +11,7 @@ type ChangelogByMonthProps = {
   selectedProducts?: Array<Option>;
 };
 
-const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps): JSX.Element => {
+const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps) => {
   const { entries, isLoading } = useGetEntriesByProducts(product, selectedProducts);
 
   const items = entries || [];
@@ -54,7 +54,7 @@ const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps):
 
 export default ChangelogByMonth;
 
-const Placeholder = (): JSX.Element => {
+const Placeholder = () => {
   return (
     <>
       <Skeleton mb={8}>Loading...</Skeleton>

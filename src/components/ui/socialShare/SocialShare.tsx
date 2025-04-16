@@ -7,7 +7,7 @@ type SocialShareProps = {
   title: string;
 };
 
-export const SocialShare = ({ title, url }: SocialShareProps): JSX.Element => {
+export const SocialShare = ({ title, url }: SocialShareProps) => {
   const { onCopy, hasCopied } = useClipboard(url);
   const { isOpen, onToggle } = useDisclosure();
   const toast = useToast();
@@ -47,6 +47,11 @@ export const SocialShare = ({ title, url }: SocialShareProps): JSX.Element => {
               <IconButton variant="ghost" aria-label="Share by Reddit" icon={<RedditIcon size={32} round />} as={Box} />
             </Tooltip>
           </RedditShareButton>
+          <TwitterShareButton url={url} title={title}>
+            <Tooltip label="Share link on X" aria-label="Share link on X">
+              <IconButton variant={'ghost'} aria-label="Share on X" icon={<TwitterIcon size={32} round />} as={Box} />
+            </Tooltip>
+          </TwitterShareButton>
         </HStack>
       </Collapse>
 
@@ -61,12 +66,6 @@ export const SocialShare = ({ title, url }: SocialShareProps): JSX.Element => {
           <IconButton variant={'ghost'} aria-label="Share by email" icon={<LinkedinIcon size={32} round />} as={Box} />
         </Tooltip>
       </LinkedinShareButton>
-
-      <TwitterShareButton url={url} title={title}>
-        <Tooltip label="Share link on Twitter" aria-label="Share link on Twitter">
-          <IconButton variant={'ghost'} aria-label="Share on Twitter" icon={<TwitterIcon size={32} round />} as={Box} />
-        </Tooltip>
-      </TwitterShareButton>
 
       <Tooltip label="Copy link to clipboard" aria-label="Copy link to clipboard">
         <IconButton

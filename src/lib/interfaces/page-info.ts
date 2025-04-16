@@ -19,8 +19,10 @@ type PageInfoCore = {
   area: Array<string>;
   product?: Array<string>;
   cdpTags?: Array<string>;
+  created?: string;
   lastUpdated?: string;
   productLogo?: string;
+  audience?: string;
 };
 
 // Input for 3rd party integrations are just strings
@@ -70,27 +72,13 @@ export type PageInfo = PageInfoCore & {
   parsedContent?: string;
   headings?: Array<ContentHeading>;
   guidedDemoId?: string;
+  audience?: Array<string>;
+  features?: Array<string>;
+  topics?: Array<string>;
+  level?: Array<string>;
+  requestedBy?: Array<string>;
 };
 
-export type SidebarNavigationConfig = {
-  title: string;
-  description: string;
-  heading: boolean;
-  path: string;
-  showRootAsSections?: boolean;
-  enableSearch?: boolean;
-  enableBreadcrumb?: boolean;
-  enableNextPrevious?: boolean;
-  routes: Array<SidebarNavigationItem>;
-};
-
-export type SidebarNavigationItem = {
-  title: string;
-  path: string;
-  ignoreLink?: boolean;
-  children: Array<SidebarNavigationItem>;
-  collapsed?: boolean;
-};
 
 export type ChildPageInfo = PageInfo & {
   description?: string;

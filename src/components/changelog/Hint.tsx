@@ -7,7 +7,7 @@ type HintProps = {
   enabled: boolean;
 };
 
-export const Hint = ({ products, enabled }: HintProps): JSX.Element => {
+export const Hint = ({ products, enabled }: HintProps) => {
   if (!enabled || products == undefined) {
     return <></>;
   }

@@ -4,32 +4,35 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
   // h1:where(.prose>:first-child):not(:where([class~=not-prose] *))
   h1: {
     fontFamily: 'heading',
-    fontWeight: 'semibold',
+    fontWeight: '500',
     fontSize: { base: '4xl', md: '5xl' },
-    // mb: { base: 2, md: 0 },
+    lineHeight: '110%',
+    //mb: { base: 2, md: 0 },
   },
   h2: {
     fontFamily: 'heading',
-    fontWeight: 'semibold',
-    fontSize: { base: '2xl', md: '3xl' },
-    scrollMarginTop: '5rem',
-    // mt: { base: 0, md: 0 },
-    // mb: { base: 0, md: 0 },
+    fontWeight: '500',
+    lineHeight: '110%',
+    fontSize: { base: '3xl', md: '4xl', sm: 'xl' },
+    mt: { base: 4, md: 6, lg: 8 },
+    //mb: '1.5rem',
   },
 
   h3: {
     fontFamily: 'heading',
-    fontWeight: '600',
-    fontSize: { base: 'xl', md: '2xl' },
-    mt: { base: 2, md: 8 },
-    mb: { base: 0, md: 4 },
+    fontWeight: '500',
+    lineHeight: '110%',
+    fontSize: { base: '2xl', md: '3xl', sm: 'lg' },
+    //mt: { base: 2, md: 8 },
+    //mb: '0.5rem',
   },
   h4: {
     fontFamily: 'heading',
-    fontWeight: 'semibold',
+    fontWeight: '700',
+    lineHeight: '110%',
     fontSize: { base: 'md', md: 'lg' },
     mt: { base: 0, md: 0 },
-    mb: 2,
+    //mb: '0.5rem',
   },
   p: {
     fontFamily: 'body',
@@ -140,9 +143,11 @@ export const proseBaseStyle: SystemStyleFunction = () => ({
   ul: {
     paddingStart: 6,
     listStyleType: 'disc',
+    mb: 8,
   },
   ol: {
     paddingStart: 6,
+    mb: 8,
   },
   li: {
     paddingStart: 2,

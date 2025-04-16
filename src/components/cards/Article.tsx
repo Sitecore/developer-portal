@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, CardFooter, CardHeader, CardProps, Image, Link, Text } from '@chakra-ui/react';
+import { Box, Card, CardBody, CardFooter, CardHeader, CardProps, Heading, Image, Link, Text } from '@chakra-ui/react';
 import { LinkButton } from '../links';
 
 type ArticleProps = CardProps & {
@@ -14,9 +14,9 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
   return (
     <Card variant={'outlineRaised'} size={'md'} {...rest}>
       <CardHeader>
-        <Text as="h4" fontSize={'lg'} fontWeight={'semibold'}>
+        <Heading as="h4" fontSize={'lg'} fontWeight={'500'}>
           {title}
-        </Text>
+        </Heading>
       </CardHeader>
       <CardBody py={0}>
         {description && <Text mb={8}>{description}</Text>}
