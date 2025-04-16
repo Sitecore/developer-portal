@@ -99,9 +99,9 @@ The solution contains everything to run XM Cloud locally using Docker Containers
   </TabList>
     <TabPanels>
       <TabPanel>
-        The Next.js template it contains `.env` file for managing environment specific connection strings as well as the NextJS application named `sxastarter`.
+        The Next.js template it contains `.env` file for managing environment specific connection strings as well as the NextJS application named `nextjs-starter`.
 
-<img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.jpeg" alt="Foundation Head Starter Kit"/>
+<img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.png" alt="Foundation Head Starter Kit"/>
 
 ### Items Serialization
 
@@ -113,9 +113,9 @@ Check out the [Setup Sitecore Content Serialization](/learn/accelerate/xm-cloud/
 
 The platform folder can contain customizations you want to add to the XM Cloud content management instance. It is not recommended to create customizations to the CM (Including pipelines, event handlers etc...).
 
-### NextJS application “sxastarter”
+### NextJS application “nextjs-starter”
 
-The sxastarter folder represents the head application built with NextJS. it contains its own .env file. The src folder provides already implementation such as a out of the box components but also middleware functionalities such as redirects or personalization.
+The nextjs-starter folder represents the head application built with NextJS. it contains its own .env file. The src folder provides already implementation such as a out of the box components but also middleware functionalities such as redirects or personalization.
 
 Please note that the starter template currently uses the page router instead of the newer app router introduced with version 13. 
 
@@ -133,15 +133,15 @@ The head application in ASP.NET Core Starter Kit is created using the new Siteco
 
 #### Using .env.template
 
-- Rename `.env` to `.env.template` in your solution root
+- Rename `.env` to `.env.template` in `local-containers` folder
 
 - remove confidential data from `.env.template`
 - Set `.env` to be ignored by git in `.gitignore` file
 - update `init.ps1` to copy `.env` from `.env.template` before any of the env variables are set
 
-#### Rename the sxastarter Project
+#### Rename the nextjs-starter Project
 
-- Rename `sxastarter` app folder name to your client related application name
+- Rename `nextjs-starter` app folder name to your client related application name
 
 - Update the `appName` property in the `package.json` to your Site name field of your site item
 
@@ -167,13 +167,11 @@ The head application in ASP.NET Core Starter Kit is created using the new Siteco
 
 - In `package-lock.json` change name field and packages name field to `app_folder_name`
 
-- In `render.ts` change the comment from sxastarter to your `app_folder_name`
-
 - In `Platform.csproj `change AssemblyName
 
 - In `AssemblyInfo.cs` change `AssemblyTitle` and `AssemblyProduct` accordingly
 
-- Rename Solution File `XMCloudSXAStarter.sln` to what your are using in Assembly configurations.
+- Rename Solution File `XmCloudAuthoring.sln` to what your are using in Assembly configurations.
 
 ## Discussion
 
