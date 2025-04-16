@@ -101,7 +101,27 @@ The solution contains everything to run XM Cloud locally using Docker Containers
       <TabPanel>
         The Next.js template it contains `.env` file for managing environment specific connection strings as well as the NextJS application named `nextjs-starter`.
 
-<img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.png" alt="Foundation Head Starter Kit"/>
+        <img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.png" alt="Next.JS Foundation Head - Starter Kit"/>
+
+      </TabPanel>
+      <TabPanel>
+        ASP.NET Core Application should be created from the [GitHub Template Repository](https://github.com/Sitecore/xmcloud-starter-dotnet). It contains `headapps\aspnet-core-starter\appsettings.json` file for configuring connection settings to run in connected mode and `local-containers\.env.template` file to use for running local Docker Containers.
+
+        <img src="/images/learn/accelerate/xm-cloud/asp.netcore-starter-kit.png" alt="ASP.NET Core Starter Kit"/>
+        
+
+      </TabPanel>
+  </TabPanels>
+</Tabs>
+
+<br/>
+<Alert status="warning" mb={4}><AlertIcon />
+Don't try and force [Helix](https://helix.sitecore.com/) into your front-end JavaScript application. <br/><br/>Helix is a set of project structure and dependency management principles that was very helpful when Sitecore XM/XP implementations were done entirely in back-end code. Helix is less useful in front-end projects built with JavaScript frameworks. Front-end projects are better off following the project structure best practices published by the front-end framework owners. <br/><br/> For ASP.NET Core, Helix might still be useful since most development is done in Visual Studio.
+</Alert>
+
+
+
+
 
 ### Items Serialization
 
@@ -111,11 +131,16 @@ Check out the [Setup Sitecore Content Serialization](/learn/accelerate/xm-cloud/
 
 ### Platform
 
-The platform folder can contain customizations you want to add to the XM Cloud content management instance. It is not recommended to create customizations to the CM (Including pipelines, event handlers etc...).
+The platform folder can contain customizations you want to add to the XM Cloud content management instance. It is not recommended to do customizations.
 
-### NextJS application “nextjs-starter”
-
-The nextjs-starter folder represents the head application built with NextJS. it contains its own .env file. The src folder provides already implementation such as a out of the box components but also middleware functionalities such as redirects or personalization.
+<Tabs>
+  <TabList>
+    <Tab>Next.JS</Tab>
+    <Tab>ASP.NET Core</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+The nextjs-starter folder represents the head application built with NextJS. it contains its own `.env` file. The `src` folder provides already implementation such as a out of the box components but also middleware functionalities such as redirects or personalization.
 
 Please note that the starter template currently uses the page router instead of the newer app router introduced with version 13. 
 
@@ -134,46 +159,61 @@ The head application in ASP.NET Core Starter Kit is created using the new Siteco
 #### Using .env.template
 
 - Rename `.env` to `.env.template` in `local-containers` folder
-
 - remove confidential data from `.env.template`
 - Set `.env` to be ignored by git in `.gitignore` file
 - update `init.ps1` to copy `.env` from `.env.template` before any of the env variables are set
 
-#### Rename the nextjs-starter Project
+Based on your framework, rename the project accordingly - 
+<Tabs>
+  <TabList>
+    <Tab>Next.JS</Tab>
+    <Tab>ASP.NET Core</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+          Rename the **nextjs-starter** Project:
+          <ol>
+            <li>Rename `nextjs-starter` app folder name to your client related application name</li>
+            <li>Update the `appName` property in the `package.json` to your Site name field of your site item</li>
+            <li>In `.env.template`set `COMPOSITE_PROJECT_NAME` to the new appname and set `RENDERING_HOST` to match your new appname</li>
+          <li>In `init.ps1` <ul><li>change the certificate creation to create certificates according your `RENDERING_HOST` entry</li><li>change initialization of environment variables to use the `RENDERING_HOST` value</li><li>make host file adjustments use the host name from `RENDERING_HOST` environment variable</li></ul></li>
+          <li>In `docker-compose.overwrite.yml` change rendering volumes to `.\src\[YOUR_APP_FOLDER_NAME]:C:\APP`</li>
+          <li>Update the source code path in the `xmcloud.build.json`</li>
+          <li>In `cert_config.yml` change traefik configuration to match the `app_folder_name`</li>
+          <li>In `package-lock.json` change name field and packages name field to `app_folder_name`</li>
+          <li>In `Platform.csproj `change AssemblyName</li>
+          <li>In `AssemblyInfo.cs` change `AssemblyTitle` and `AssemblyProduct` accordingly</li>
+          <li>Rename Solution File `XMCloudnextjs-starter.sln` to what your are using in Assembly configurations.</li>
+          </ol>
+      </TabPanel>
+      <TabPanel>
+      
+      
+      </TabPanel>
+  </TabPanels>
+</Tabs>
 
-- Rename `nextjs-starter` app folder name to your client related application name
 
-- Update the `appName` property in the `package.json` to your Site name field of your site item
+Rename the **aspnet-core-starter** Project:
+<ol>
+<li>Rename `aspnet-core-starter` app folder name to your client related application name. If you are using Visual Studio Code editor - ensure to rename the reference in `headapps\aspnet-core-starter.sln` file alternatively rename it in Visual Studio IDE.</li>
+<li>Rename `headapps\aspnet-core-starter.sln` as well as `headapps\aspnet-mega\aspnet-core-starter.csproj` files.</li>
+<li>Update value of `SITE_NAME` variable in `local-containers\.env.template` to a new `appname`.</li>
+<li>In `local-containers\docker-compose.override.yml` file update following entries to a new `appname`.<br/><img src="/images/learn/accelerate/xm-cloud/asp-net-core-change-values.png" alt="ASP.NET Core. Values to change to a new appname"/></li>
+<li>In `.env.template`:<ul><li>set `COMPOSITE_PROJECT_NAME` to the new appname</li><li>set `RENDERING_HOST` to something matching your new appname</li></ul></li>
+<li>In `init.ps1`: <ul><li>change the certificate creation to create certificates according your `RENDERING_HOST` entry</li><li>change initialization of environment variables to use the `RENDERING_HOST` value</li> <li>make `host` file adjustments use the host name from `RENDERING_HOST` environment variable </li></ul></li>
+<li>In `cert_config.yml` change traefik configuration to match the *app_folder_name*</li>
+<li>In the file `authoring\items\aspnet-core-starter\items\DefaultRenderingHost\Default.yml` update URL values to new one (appname).</li>
+<li>Change name of the item serialization module namespace in the file `authoring\items\aspnet-core-starter\aspnet-core-starter.module.json` to the new `appname`, rename the file `authoring\items\aspnet-mega\aspnet-core-starter.module.json` appropriately.</li>
+<li>Rename the folder` authoring\items\aspnet-core-starter` to use new appname.</li>
+<li>Update the path in COPY instruction to the new one in the file `local-containers\docker\build\aspnet-mega\Dockerfile`</li>
+<li>Rename the folder `local-containers\docker\build\aspnet-core-starter` to use new appname.</li>
+<li>In the file `local-containers\scripts\up.ps1` update following lines to use new appname. <br/><img src="/images/learn/accelerate/xm-cloud/asp-net-core-update-ps1.png" alt="ASP.NET Core. Update up.ps1"/></li>
+</ol>
 
-- In `.env.template`
+Additionally, update references to the new app name in both `README.md` and `local-containers\README.md` files.
 
-  - set `COMPOSITE_PROJECT_NAME` to the new appname
-
-  - set `RENDERING_HOST` to something matching your new appname
-
-- In `init.ps1`
-
-  - change the certificate creation to create certificates according your `RENDERING_HOST` entry
-
-  - change initialization of environment variables to use the `RENDERING_HOST` value
-
-  - make host file adjustments use the host name from `RENDERING_HOST` environment variable
-
-- In `docker-compose.overwrite.yml` change rendering volumes to `.\src\[YOUR_APP_FOLDER_NAME]:C:\APP`
-
-- Update the source code path in the `xmcloud.build.json`
-
-- In `cert_config.yml` change traefik configuration to match the `app_folder_name`
-
-- In `package-lock.json` change name field and packages name field to `app_folder_name`
-
-- In `Platform.csproj `change AssemblyName
-
-- In `AssemblyInfo.cs` change `AssemblyTitle` and `AssemblyProduct` accordingly
-
-- Rename Solution File `XmCloudAuthoring.sln` to what your are using in Assembly configurations.
-
-## Discussion
+## Insights
 
 ### Structure in XM Cloud
 
