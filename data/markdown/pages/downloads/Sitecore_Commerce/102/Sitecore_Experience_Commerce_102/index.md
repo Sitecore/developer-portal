@@ -4,7 +4,7 @@ description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/102/Sitecore_Experience_Commerce_102.aspx
 ---
 
-Sitecore Experience Commerce (XC) 10.2 is compatible with Sitecore Experience Platform (XP) 10.2 and 10.2 Update-1. Refer to the [Sitecore Experience Commerce Compatibility Table](https://kb.sitecore.net/articles/804595) for the software and version prerequisites.
+Sitecore Experience Commerce (XC) 10.2 is compatible with Sitecore Experience Platform (Sitecore XP) 10.2. Refer to the [Sitecore Experience Commerce Compatibility Table](https://kb.sitecore.net/articles/804595) for the software and version prerequisites.
 
 Sitecore XC 10.2 adds deployment and upgrade enhancements including the "Items as Resources" and "Container Asset Images" features (described in the release notes below), business usability enhancements, performance enhancements, and bug fixes and improvements based on input from our customers and partners.
 

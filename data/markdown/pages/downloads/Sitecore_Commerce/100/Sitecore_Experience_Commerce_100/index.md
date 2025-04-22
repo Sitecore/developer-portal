@@ -4,7 +4,7 @@ description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/100/Sitecore_Experience_Commerce_100.aspx
 ---
 
-Sitecore Experience Commerce (XC) 10.0 is compatible with Sitecore Experience Platform (XP) 10.0, 10.0 Update-1, 10.0 Update-2, and 10.0 Update-3. Compatibility with XP 10.0 Update-3 requires updating an XC host file for connecting to Identity Server as described in [KB1000801](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1000801).
+Sitecore Experience Commerce (XC) 10.0 is compatible with Sitecore Experience Platform (Sitecore XP) 10.0. Compatibility with Sitecore XP 10.0 Update-3 requires updating an XC host file for connecting to Identity Server as described in [KB1000801](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1000801).
 
 For containers deployments retrieve the applicable Sitecore Commerce Containers SDK version from [GitHub](https://github.com/Sitecore/container-deployment/releases) for compatibility with the correct XP update release.
 

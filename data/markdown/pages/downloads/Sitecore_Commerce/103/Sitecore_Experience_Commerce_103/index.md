@@ -4,7 +4,7 @@ description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Commerce/103/Sitecore_Experience_Commerce_103.aspx
 ---
 
-Sitecore Experience Commerce (XC) 10.3 is compatible with Sitecore Experience Platform (XP) 10.3 and 10.3 Update-1. Refer to the [Sitecore Experience Commerce Compatibility Table](https://kb.sitecore.net/articles/804595) for the software and version prerequisites.
+Sitecore Experience Commerce (XC) 10.3 is compatible with Sitecore Experience Platform (Sitecore XP) 10.3. Refer to the [Sitecore Experience Commerce Compatibility Table](https://kb.sitecore.net/articles/804595) for the software and version prerequisites.
 
 Sitecore XC 10.3 is a maintenance release comprising bug fixes and providing compatibility with Sitecore Experience Platform and dependent third parties.
 
