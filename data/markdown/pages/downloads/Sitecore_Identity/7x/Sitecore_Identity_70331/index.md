@@ -2,7 +2,7 @@
 title: 'Sitecore Identity Server 7.0.331'
 description: ''
 ---
-**DEPRECATED** With the roll-out of Identity Server 8.0 across SXP versions, Identity Server 7 will be deprecated due to Microsoft's end-of-support for .NET 6.
+**DEPRECATED** due to Microsoft's end-of-support for .NET 6.
 
 Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform, Sitecore Experience Commerce and other Sitecore instances that require authentication.
 Sitecore Identity Server is compatible with Sitecore Membership user storage but may be be extended with other identity providers to integrate with customers AIM systems.
