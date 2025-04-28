@@ -5,6 +5,8 @@ Publication history:<br/>
 **2024-07-29:** Completed the publishing of missing ltsc2019 and ltsc2022 container images.<br/>
 **2024-04-30:** Released Sitecore Experience Platform 10.4.0.
 
+Return to the [Sitecore Experience Platform 10.4](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104) release page.
+
 This release includes new features and improvements made in Sitecore Experience Platform (SXP) 10.4. Sitecore recommends that you upgrade to this release if it aligns with the specific needs of your organization. This release contains significant improvements in functionality worth evaluating.
 
 - [Highlights](#highlights)
