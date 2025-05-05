@@ -4,7 +4,7 @@ description: 'Understand and improve the publishing experience on Experience Edg
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-10-08'
+lastUpdated: '2025-04-30'
 created: '2024-10-08'
 audience: ['Architect','Product Owner','Technical Implementer', 'System Administrator']
 ---
@@ -17,46 +17,51 @@ The publishing process can be on a page, a section or the entire site. Despite t
 
 ## Execution
 
-The solution to improve the publishing experience is through the application of practices concerning several aspects of the solution design like, for example, the Information Architecture, the configuration of the Connector and the publishing workflow. The following section details out these practices.
+The solution to improve the publishing experience is through the application of practices concerning several aspects of the solution design like, for example, the Information Architecture, the configuration of the Connector and the publishing workflow. 
+
 
 ### Publishing Overview
 
-Publishing to Experience Edge works different than publishing with a app server publish (historically known as Content Delivery for XM/XP) because the architecture is different.
+Publishing in a headless setup works different from PaaS/IaaS with the introduction of Edge, in this case Experience Edge.
 
-SaaS CMSs use an Edge service to delivers static information to the client, therefore all layout service logic needs to run during the publish process. Only the layout snapshot is published to Edge.
+Publishing with a app server, historically known as Content Delivery for Sitecore XM/XP and other DXPs, moved data between databases while SaaS CMSs use an Edge service to delivers static information to the client, therefore all layout service logic needs to run during the publish process. 
 
-With Content Delivery servers, single items were published, meaning the were copied from Master database to Web database. On request the Content Delivery server took the items from Web database and generated the Layout Service response.
+With Content Delivery servers, single items were published, meaning the were copied from Master database to Web database. On request the Content Delivery server took the items from Web database and generated the Layout Service response. 
 
 <img src="/images/learn/accelerate/xm-cloud/publish-edge-1.png" alt="How it works with Content Delivery servers"/>
 
 <br/>
 
-With Experience Edge this works different - Edge is **not** a 1-to-1 match to a Sitecore database. Not all properties of an item are published to Edge.
+With Experience Edge this works different - Edge is not a 1-to-1 match to a Sitecore database. Not all properties of an item are published to Edge.
 
-During Publish time on XM Cloud, the Layout Service generates a static Layout response, collecting all necessary items for the pages where the published item is referenced. The generated layout snapshot is then pushed to Experience Edge, which delivers this static data to the Head applications on request via GraphQL.
+During Publish time on XM Cloud, the Layout Service generates a static Layout response, collecting all necessary items for the pages where the published item is referenced. The generated layout snapshot is then pushed to Experience Edge, which delivers this static data to the Head applications on request via GraphQL. 
 
 <img src="/images/learn/accelerate/xm-cloud/publish-edge-2.png" alt="How it works with Experience Edge"/>
 
 <br/>
 
-The following graphic shows in detail how the headless architecture works with Experience Edge. It’s important to highlight the “layout snapshot” that is pushed to Edge via the Experience Edge Connector.
+The following graphic shows in detail how the headless architecture works with Experience Edge. Review the [Architecture of Sitecore Experience Edge](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html) documentation for further detail.
 
 <img src="/images/learn/accelerate/xm-cloud/publish-edge-3.png" alt="The architecture of Sitecore Experience Edge for XM"/>
 
 <br/>
+It’s important to highlight the “layout snapshot” that is pushed to Edge via the Experience Edge Connector might differ based on your type of publishing setup:
+- Snapshot publishing  - stores the JSON as a single entity on Experience Edge.
+- Edge runtime publishing - stores the main structure layout, with separate references to each data source.
 
-[The architecture of Sitecore Experience Edge for XM](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html).
+Review the [publishing pipelines](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html#publishing-all-items) documentation for more additional detail. Consider that the Snapshot publishing is required for Incremental Static Regeneration and [Incrementally updating Search](/learn/accelerate/xm-cloud/implementation/sitecore-search/search-incremental-updates).
+
 
 ### Limitations in Experience Edge
 
-When designing your headless solution, you need to consider both the new architecture (as illustrated above) and [some limitations that Experience Edge has](https://doc.sitecore.com/xmc/en/developers/xm-cloud/limitations-and-restrictions-of-experience-edge-for-xm.html); in particular, about solution design. It is worth mentioning:
+When designing your headless application, consider both the new architecture and [limitations that Experience Edge](https://doc.sitecore.com/xmc/en/developers/xm-cloud/limitations-and-restrictions-of-experience-edge.html) has; in particular, about solution design. It is worth highlight the following:
 
 * Experience Edge for XM does not enforce security constraints on Sitecore content. You must apply publishing restrictions to avoid publishing content that you do not want to be publicly accessible.
 * Experience Edge for XM only utilizes a single content scope for the whole tenant. Security tokens, query cache clearing, and webhooks cannot be limited by site.
 * The maximum size for Media items is 50MB.
 * Experience Edge doesn't support virtual folders and aliases.
 * Although it is a high standard for the CMS industry, the XM Cloud Experience Edge GraphQL endpoint is rate-limited. If you are building a very large website, you must [enable retries for requests to the XM Cloud Experience Edge GraphQL endpoint](https://doc.sitecore.com/xmc/en/developers/jss/216/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html) to complete builds.
-* Layout data in Experience Edge only supports the Default device layer in item presentation.
+* Layout data in Experience Edge only supports the Default device layer in item presentation. Delivering content based on different devices such as mobile is now a front-end responsibility.
 
 ### Dependency resolving during publish
 
@@ -64,11 +69,11 @@ As said, despite the publication item, the process may require publication of ot
 
 When an item is published to Edge, dependencies are calculated for the item and added to the publishing pipeline. Because these items are being published, all items that depend on the new items are also published. Any items identified as a dependency are included in the publication queue, regardless of whether they have changed. The process repeats until no new publishable items are found.
 
-Dependencies are calculated at the item level. For example, you might change a data source item of a page in the navigation. Because the page is dependent on the data source item, and is rendered by the navigation component, any page containing the navigation component has to be republished. Currently, it isn't possible to determine which changes cause an item to be republished.
+Review the [Publishing optimizatio](/learn/accelerate/xm-cloud/optimization/publishing-optimization) recipe for more detail on dependency resolution.
 
-The dependency resolution process is one of the main reasons to implement workflows: it's possible for one user to make a change that causes a page another user is working on to be published. Even a simple two-step workflow consisting of _Draft_ and _Publish_ statuses is sufficient to ensure a website only shows completed content.
+The dependency resolution process is one of the main reasons to implement workflows: it's possible for one user to make a change that causes a page another user is working on to be published. Even a simple two-step workflow consisting of *Draft* and *Publish* statuses is sufficient to ensure a website only shows completed content.
 
-[Publishing to Experience Edge](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html#the-publishing-pipeline)
+Further detail can be found on the [Publishing to Experience Edge](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html#the-publishing-pipeline) documentation.
 
 ### How to increase publishing performance
 
@@ -179,10 +184,10 @@ You can enable debug level logging for the publishing log. This can be done by a
 ## Related Recipes
 
 <Row columns={2}>
-  <Link title="External Data Integration" link="/learn/accelerate/xm-cloud/implementation/external-data-integration" />
-</Row>
-<Row columns={2}>
+<Link title="Layout Routing" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/layout-routing" />
+<Link title="External Data Integration" link="/learn/accelerate/xm-cloud/implementation/external-data-integration" />
   <Link title="Workflow" link="/learn/accelerate/xm-cloud/implementation/information-architecture/workflow" />
+  <Link title="Publishing optimization" link="/learn/accelerate/xm-cloud/optimization/publishing-optimization" />
 </Row>
 
 ## Related Documentation
@@ -192,6 +197,5 @@ You can enable debug level logging for the publishing log. This can be done by a
   <Link title="Headless Architecture" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-architecture-of-sitecore-experience-edge-for-xm.html" />
   <Link title="Admin API" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/admin-api.html" />
   <Link title="Enable retries to the Experience Edge Graphql Endpoint" link="https://doc.sitecore.com/xmc/en/developers/jss/216/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html" />
-  <Link title="Use a patch file to customize the Sitecore Configuration" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/use-a-patch-file-to-customize-the-sitecore-configuration.html#create-a-patch-file" />
   <Link title="Slowness during single item publishing to Experience Edge | Sitecore KB" link="https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1003198" />
 </Row>

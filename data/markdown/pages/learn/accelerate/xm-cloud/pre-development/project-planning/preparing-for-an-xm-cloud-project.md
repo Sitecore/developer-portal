@@ -4,19 +4,35 @@ description: 'Overall strategies when planning to kick off an XM Cloud project'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-03-31'
+lastUpdated: '2025-04-31'
 created: '2024-03-06'
 audience: ['Architect','Product Owner','Project Manager', 'User']
 ---
 
 ## Context
 
-Now that your [Discovery](/learn/accelerate/xm-cloud/pre-development/discovery) is complete, we’re ready to embark on the next step of any XM Cloud project. A successful project doesn’t just happen—it requires intentional planning to set the stage for smooth execution. 
+Every successful XM Cloud project—whether you're starting fresh or evolving from a legacy platform—begins with well-defined objectives, alignment across teams, and a strategy that considers ambition and complexity. Having this in place upfront minimizes risk, prevents misalignment, and keeps delivery on track and efficient.
 
-Before diving into the main phases of the project, it’s crucial to dedicate time to general planning including alignment across stakeholders, clarity in objectives, and a strong foundation to tackle any challenges that may arise along the way. With a solid plan in place, your team will be better equipped to deliver results efficiently and effectively while staying true to the project’s goals.
+Let's dissect the fundamental components of this planning stage—and how nailing them from the beginning positions your project for long-term success.
 
-Let’s take a closer look at the key elements of this planning phase and how it sets the tone for success
 ## Execution
+Good planning sets the tone. It allows you to manage risk, move with speed, and deliver value early. However, a good plan is more than just sequencing tasks—instead, it is a matter of making conscious, fact-based decisions against business priorities. This involves making decisions on what you will be migrating, when go live, what will retire, and whose input will be needed when.
+
+### Project Plan
+Project Plan
+
+There’s no one-size-fits-all approach to migrating to XM Cloud - depends on your business needs, technical sophistication, and risk tolerance. You have to be aware of the different project—and how to cope with the fact of having old and new platforms up and running at the same time.
+
+- Big Bang: Everything goes live at once. - decisive, and time sensitive. 
+- Phased: Content, sites, or regions are rolled out in stages - allows for validation, and supports teams ramp up .
+- Hybrid: Legacy and new platforms run in parallel while teams build, test, and learn.
+
+Most businesses also look at going through a dual-run period—when old and new platforms are both active simultaneously.  You should have a clear understanding of:
+
+- What platform holds what domains and routes
+- Where analytics are tracked
+- How content gets divided or duplicated
+- Measurement of performance between different systems
 
 ### Project Roles
 
@@ -69,7 +85,7 @@ As with any good project delivery, determining the goals and KPIs of this implem
 
 While discovery often starts and ends as a separate project before the main implementation phase, some level of discovery will happen for the lifetime of the project as change management occurs.
 
-Sometimes separated to it’s own phase, during the *Design* phase, UX/UI designers create wireframes and layouts to create the overall design. This should be supported by running quantitative and/or qualitative surveys and user tests to validate if the designs match the customer and clients' requirements. If the project is a migration from an existing site to XM Cloud without a rebrand/redesign, this phase might not be required.
+Sometimes separated to it’s own phase, during the **Design** phase, UX/UI designers create wireframes and layouts to create the overall design. This should be supported by running quantitative and/or qualitative surveys and user tests to validate if the designs match the customer and clients' requirements. If the project is a migration from an existing site to XM Cloud without a rebrand/redesign, this phase might not be required, but still considering what the authoring journey might be and how this might impact the UX/UI.
 
 From the discovery & design phases, a set of user stories can be created to help estimate the project and build out the project's backlog.
 
@@ -99,6 +115,14 @@ Bringing a site from concept to MVP quickly requires an agile approach with the 
   <li>MVP is just the beginning. Use feature flags (example setting up [Modules](https://doc.sitecore.com/xmc/en/developers/xm-cloud/modules.html)) to roll out additional functionality over time. Leverage features such as [Personalize](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html) to refine and optimize based on user behaviour. Although you might be tempted to leave personalization features for later phases, these might be reduce implementation effort - example using Geography based conditions instead of building custom logic to provide content based on location.</li>
   <li>Consider Content Migration from the very beginning - does it make sense to move the existing content? Do you need to automate this process or will it be handled manually? What is the amount of content in place, considering multiple sites and languages. Additional information can be found on the [Content Audit](/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit) recipe.</li>
 </ul>
+
+Beyond tech stack, MVPs also need to take into account governance structures, authoring workflows, integration flexibility, and operational ownership. Getting out the door quickly is important. But getting out the door with something that can live and evolve  is what separates long-term success from short-term success.
+
+It's simple to only concentrate on what is required to ship. However if you don't consider long-term operational realities, you're establishing future teams up for painful rework, tech debt, and unnecessary risk. 
+
+One critical difference compared to traditional .NET MVC projects is that JavaScript ecosystem moves fast. Frameworks like Next.js are constantly evolving, and so is Sitecore - XM Cloud includes starter foundation code that is built into the solution, and is the recommended approach when you [create a project](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html). This is regularly updated to make it more robust and roll out new features, so a consistent update process is required. This avoids the dreaded "upgrade cliff" — where months of ignored updates turn into an excessive project — and keeps your stack healthy and predictable over time.
+
+Review the [Update your starter foundation code](https://doc.sitecore.com/xmc/en/developers/xm-cloud/update-your-starter-foundation-code.html) documentation for further information.
 
 ### Design and UX/UI Handover
 
@@ -152,7 +176,10 @@ Success  relies on clarity, automation, and documentation to maintain efficiency
 ## Related Documentation
 <Row columns={2}>
   <Link title="XM Cloud Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+  <Link title="Deploy a project and environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html" />  
   <Link title="Modules" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/modules.html" />
+  <Link title="Update your starter foundation code" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/update-your-starter-foundation-code.html" />
+
 </Row>
 
 ## Related Links

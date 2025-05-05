@@ -4,9 +4,9 @@ description: 'SSO on Content Hub with Azure Entra ID thought the SAML provider.'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-12-13'
 audience: ['All']
 created: '2024-12-13'
+lastUpdated:  '2025-04-30'
 ---
 
 
@@ -270,6 +270,23 @@ public async Task AddUserGroupsToUserAsync(IEnumerable<long> userGroupIds) {
 
 If everything works as expected, users that login into Content Hub should be automatically assigned to the appropriate user groups, based on group information emitted by your IDP. Important to note here is that the script will adjust your membership situation each time a login is performed, this includes security group movements as well. 
 
+## Insights
+### Troubleshooting
+- Setup SSO first and see if it works before implementing and enabling the mapping script
+- Ensure that all required claims are configured and send to Content Hub. Use a browser extension like SAML tracer to check what claims your are receiving. A common error is when the email claim (mandatory) is wrongly configured in your portal settings or not configured on your IDP.
+- Username / email should be a unique combination. Make sure there are no left over Content Hub users already consuming the username or email as this will violate this rule. As a result you won’t be able to login using SSO.
+- When getting a login error check from where this is originating, often your login is already blocked before being redirected to Content Hub 
+- It is good practice to have a Content Hub managed account (super user) to be able to log-in to the system (only) in case of disaster (eg.: SSO stops working or you lost your access rights due to a claims mapping error)
+- If you don’t have the appropriate security groups assigned after login though SSO - make sure you have logging on you sign-in script so you can check what is going on and make sure claim mapping has been setup correctly.
+
+### For customers that do not want to use SSO
+
+Although we highly recommend the usage of SSO on your Content Hub solution. You could also use Content Hub without a SSO provider configured. Be aware of the following implications on user management for your implementation.
+
+- User and Access management will need to be handled within  Content Hub, as this requires Content Hub knowledge, you will need to have a trained super users to perform this task. Depending on the amount of users you are aiming to onboard on your system, this might become a huge task.
+- Security rights in Content Hub are driven by assigning the correct security groups to a user. Often this is a set of Security Groups. You will need to be aware of what combination is necessary for a particular user, this is something that will need to be done for every user you are managing. 
+- Adjustments to the security groups like introducing a new one, will also require you to adjust assigned user groups on the affected list of users. A task that can easily be automated with a sign-in script.
+- Having user management directly on Content Hub might impose a security risk as opposed to have access management managed centrally on for instance Microsoft Entra ID. For instance: if someone is switching a team of leaves the company, then this needs to be reflected on user management on Content Hub as well. A task that is often forgotten.
 
 ## Related Recipes
 <Row columns={2}>

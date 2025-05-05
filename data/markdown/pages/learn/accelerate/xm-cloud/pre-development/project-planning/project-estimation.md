@@ -61,8 +61,7 @@ It is important to create this task breakdown/list:
 In the task breakdown/list, the team should note down all the major tasks that _every_ team on the project must take to complete the feature. These teams include, but are not limited to:
 
 - CMS Development
-- Web Application Development
-  - Back End/Front End/Full Stack depending on your team structure
+- Web Application Development - Web vs UI
 - QA
 - UAT
 
@@ -72,7 +71,7 @@ Each team will have distinct tasks that are logically grouped for that team.
 
 The following is partial, non-exhaustive example task breakdown. The task breakdown is logically grouped by team for a user story or feature. The types of tasks and associated estimations will vary by factors such as team composition, team experience, project requirements, client asks, and company processes.
 
-This is an example of a task breakdown on a component. The team consists of 2 CMS Developers who can also handle the Web Application back end development, 2 front end only developers and 1 QA person.
+This is an example of a task breakdown on a component. The team consists of 2 CMS Developers who can also handle the Web Application development, 2 UI only developers and 1 QA person.
 
 **My Feature**: Detail out the feature requirements here.
 
@@ -81,13 +80,13 @@ This is an example of a task breakdown on a component. The team consists of 2 CM
 - Sitecore IA - templates: 2 hours
 - Sitecore IA - SCS module: 1 hour
 
-**Web Application Development - Back End**
+**Web Application Development - Web**
 
 - Implement React library/context: 5 hours
 - API endpoint: 12 hours
 - API hardening: 2 hours
 
-**Web Application Development - Front End**
+**Web Application Development - UI**
 
 - React component development: 5 hours
 - Styling: 6 hours

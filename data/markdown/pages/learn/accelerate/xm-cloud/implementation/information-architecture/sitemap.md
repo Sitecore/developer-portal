@@ -4,43 +4,34 @@ description: 'Configuration of Sitemap in XM Cloud'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-10-07'
+lastUpdated: '2025-04-26'
 created: '2024-10-07'
 audience: ['Architect','Technical Implementer']
 ---
 
 ## Context
 
-A marketer, strategist or content author would like to use industry standard SEO tools to ensure that all required content is discoverable and included in search engine indexes. To do this a sitemap is required. This recipe will walk the developer through the steps to configure a Sitemap in XMC.
+A marketer, strategist or content author would like to use industry standard SEO tools to ensure that all required content is discoverable and included in search engine indexes. To do this a sitemap is required. This recipe will walk the developer through the steps to configure a Sitemap in XM Cloud
 
 ## Execution
 
-This solution assumes the developer has already configured an XM Cloud site and the Next.JS web application. XMC uses SXA sitemap functionality by default. However it’s possible to implement additional Sitemap’s directly in the head application to target other sets of content, such as PDF’s or Images.
+This solution assumes the developer has already configured an XM Cloud site and the Next.JS web application. XM Cloud uses SXA sitemap functionality by default. However it’s possible to implement additional Sitemap’s directly in the head application to target other sets of content, such as PDF’s or Images.
 
-### Prerequisites
+Avoid building the XM Cloud sitemap with custom implementations on the Content Management role, it can lead to maintenance challenges, compatibility issues, and unnecessary complexity—leveraging the built-in sitemap generation ensures reliability, scalability, and alignment with best practices.
 
+
+Setting this up will require:
 - An SXA Site with properly configured site definitions
 - The site has been published to Experience Edge.
 
-To configure the Host name for your Sitemap you’ll need to make the following steps:
+To configure the Host name for your Sitemap you’ll need to udpate the target hostnmane and hostname on the `Site` level. Detail of this can be found on the [Configure a sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) documentation.
 
-1. Go to the Content Editor
-2. In the content tree, navigate to the site you want to configure, and find the following item: `<site collection>/<site>/Settings/Site Grouping/Site`
-3. You will need to update the following fields with the domain(s) that you need in your sitemap:
-   - `Target hostname`
-   - `Hostname`
-4. Publish this item
+XM Cloud sitemaps can be managed using the configuration options available in [Sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/configure-a-sitemap-in-sites.html). Configure the sitemap to guide search engines through your site's structure. The sitemap is regenerated after the publishing process ends, depending on the refresh threshold configuration. To ensure that the sitemap link is generated properly for your hosted/live sites, you must configure the target hostname on the site host item. Find the sitemap of hosted/live sites by typing /sitemap.xml after the hostname
 
-### Configuring
+XM Cloud generates the Sitemap media item when an item is published on the Site, but only after a period of time has passed since the last sitemap generation job occurred. This media item contains the Sitemap.xml file that is served in Experience Edge.
 
-XMC generates the Sitemap media item when an item is published on the Site, but only after a period of time has passed since the last sitemap generation job occurred. This media item contains the Sitemap.xml file that is served in Experience Edge.
+XM Cloud sitemaps are configured on `/sitecore/content/<site collection>/<site>/Settings/Sitemap`. Detail of this can be found on the [Configure a sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) documentation.
 
-XMC sitemaps are configured using the following item: `/sitecore/content/<site collection>/<site>/Settings/Sitemap`. The following fields are the only relevant settings that should be configured or updated in XMC:
-
-1. `Refresh threshold` - Duration is defined in minutes, this field controls how often the sitemap can be generated on publish.
-2. `Cache expiration` - Should be configured to match the value set in `Refresh threshold`
-3. `Maximum number of pages per sitemap` - When a value is provided, this field will cause the Sitemap to be generated as a Sitemap index, and limit the number of pages in each sitemap.
-4. `Generate sitemap media items` - This is **required** to be enabled on XMC in order to properly work with Experience Edge.
 
 ### Excluding Items and Publishing
 
@@ -53,6 +44,14 @@ To configure an item so that it’s excluded from the Sitemap you can follow the
 5. Depending on the configuration of the caching configuration of your sitemap, wait until the cache has expired and check again. You can also go to the Sitemap configuration item here: `<site collection>/<site>/Settings/Sitemap` and update the field "Refresh threshold" to test these changes by setting the value to 0. Just make sure to update this value back to the previous value once you complete testing.
 
 ## Insights
+
+### Managing the sitemap in the Head Application
+XM Cloud sitemaps can also be managed directly within the Head application by leveraging [Next.js's built-in sitemap metadata API](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap). This approach allows developers to generate and serve sitemaps dynamically within the app directory.
+
+By defining a `sitemap.ts` file within the `app` directory, you can programmatically structure the sitemap data based on your site's content, fetching necessary routes from the Experience Edge.
+
+While XM Cloud provides built-in sitemap generation, if your sitemap requirements are more complex—such as needing dynamic URL generation, multiple sitemap files, or further conditional route inclusion—managing sitemaps within the Head application can be a viable option. This approach allows greater flexibility, enabling you to fetch and structure sitemap data dynamically based on your XM Cloud content, apply custom logic, integrate with external data sources if needed.
+
 
 ### The Experience Edge sitemap GraphQL query
 
@@ -70,7 +69,7 @@ query SitemapQuery($siteName: String!) {
 
 ### How to Effectively Troubleshoot Issues
 
-Below are some helpful tips to troubleshoot issues with the generation of your Sitemap XML.
+Below are some helpful tips to troubleshoot issues with the generation of your Sitemap XML. Keep in mind that the below has to be actioned in the [Content Editor](https://doc.sitecore.com/xmc/en/users/xm-cloud/the-content-editor.html).
 
 #### The Sitemap is not reflecting the most recent published changes
 
@@ -84,4 +83,13 @@ If you have clicked the check box on `<site collection>/<site>/Settings/Sitemap`
 
 <Row columns={2}>
   <Link title="Publishing to Edge" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />
+  <Link title="Publishing optimization" link="/learn/accelerate/xm-cloud/optimization/publishing-optimization" />  
 </Row>
+
+## Related Documentation
+
+<Row columns={2}>
+  <Link title="Configure a sitemap" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html" />
+   <Link title="Configure a sitemap in Sites" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/configure-a-sitemap-in-sites.html" />
+</Row>
+
