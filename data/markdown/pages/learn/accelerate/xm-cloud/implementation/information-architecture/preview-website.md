@@ -16,12 +16,6 @@ A separate preview environment allows XM Cloud stakeholders who may not have acc
 🚀 This Sitecore Accelerate Recipe is coming soon...
 
 
-## Related Recipes
-
-<Row columns={2}>
-  <Link title="Preparing" link="" />
-</Row>
-
 ## Related Documentation
 
 <Row columns={2}>
@@ -31,10 +25,3 @@ A separate preview environment allows XM Cloud stakeholders who may not have acc
   <Link title="Front-end hosting applications" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/front-end-hosting-applications.html" />
   <Link title="Optimize performance for metadata-based integration" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/optimize-performance-for-metadata-based-integration.html" />
 </Row>
-
-## Related Links
-<Row columns={2}>
-  <Link title="Vercel - Sharelable Links" link="https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links#click-share-button" />
-    <Link title="Deployment Protection on Vercel" link="https://vercel.com/docs/deployment-protection" />
-    <Link title="Site Protection overview" link="https://docs.netlify.com/security/secure-access-to-sites/site-protection/" />
-  </Row>

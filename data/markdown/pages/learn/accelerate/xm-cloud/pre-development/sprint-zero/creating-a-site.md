@@ -73,7 +73,7 @@ If you are rolling out regional websites, you probably also need to support **di
 
 <Row columns={2}>
   <Link title="Branching Strategy" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy" />
-  <Link title="DevOps| Sitecore Accelerate" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/devops" />
+  <Link title="DevOps" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/devops" />
   <Link title="Setting Up Serialization" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/setup-content-serialization" />
   <Link title="Site management" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/site-management" />
 </Row>

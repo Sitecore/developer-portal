@@ -201,6 +201,10 @@
         {
           "title": "Go-Live Checklist",
           "path": "go-live-checklist"
+        },
+        {
+          "title": "Hypercare Strategy",
+          "path": "hypercare-strategy"
         }
       ]
     },
@@ -212,6 +216,17 @@
         {
           "title": "Home page customizations",
           "path": "home-page-customizations"
+        },        
+        {
+          "title": "Reporting",
+          "path": "reporting",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Most searched assets",
+              "path": "most-searched-assets"
+            }
+          ]
         }
       ]
       

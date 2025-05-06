@@ -4,7 +4,7 @@ description: 'Requirements gathering is key for the success of any project and w
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-01-31'
+lastUpdated: '2025-04-30'
 created: '2024-10-09'
 audience: ['All']
 ---
@@ -35,17 +35,21 @@ This section helps ensure that the technical solution aligns with broader busine
 - What are the non-functional requirements (NFRs) like performance, security, and compliance?
 - How does the XM Cloud implementation fit into the long-term digital strategy of the business?
 - What are the technological limitations of their current site and how is that impacting their business?
-- What features of XM Cloud will help their team in overcoming these challenges that their current site fails to do?
 - What is the timeline we are looking to implement XM Cloud? If there are other products purchased with XM Cloud, what are the timelines for those products as well?
 - What are the future scalability needs of the solution?
 - What is the expected content lifecycle management plan?
 - What is the current state of your existing content management systems?
-- How many concurrent content authors will you have? Each production environment currently supports fifty (50) concurrent users.
+- How many concurrent content authors will you have? Each production environment currently supports fifty (50) concurrent users. 
+- What reporting is currently being used and what is required going forward? What events are currently being tracked vs what is needed in the new setup? Ensures  that there is data continuity and that key KPIs don’t get lost in the move.
+- What operational model is currently setup, or needs to be setup to govern across across teams, markets, and content types. What does the permission model need to support? How many authoring teams are involved? What review/approval workflows are required?
 
 ### Content Management
 
-Since content management and personalization are core features of XM Cloud, this section focuses on understanding how content will be created, managed, and personalized to meet business needs.
+Since content management and personalization are core features of XM Cloud, this section focuses on understanding how content will be created, managed, and personalized to meet business needs. Going in, establish what the content model and IA should look like.
 
+- Do we understand how content is structured, reused, and scaled—across taxonomy, metadata, components, multilingual setup.
+- Even if you’re already owning your information architecture, a dedicated content audit will help. This isn’t just about what content exists—it’s about what it takes to move it, improve it, or leave it behind. Take time to evaluate the volume of content, setup of templates (across rigidity, bloat and inconsistency), content interdependencies and structural gaps.
+- This shapes your tooling, timeline, and resourcing. A solid audit now prevents surprises later—and helps set realistic expectations across teams.
 - What are the requirements for content types and templates?
 - Who will be responsible for content management, and how often will updates occur?
 - How much content are we looking to bring into their instance initially? Will it be migrated or created from scratch? What are the different page and content types?
@@ -56,13 +60,14 @@ Since content management and personalization are core features of XM Cloud, this
 - Will there be third-party content that will be coming from other sites that will need to be integrated?
 - Will there be any content that needs to be archived/expired?
 - What are the different user groups and content permissions that the content editors will have? Check out Item Security for more information.
-- What are the current content lifecycle workflows, and will these workflows be changed or will be modified from their current state?
+- What are the current content lifecycle workflows, and will these workflows be changed or will be modified from their current state? 
 - Will there be any content personalization?
 - How will content personalization be handled?
+- What will the Authoring experience look like? This will helps inform what is required to be implemented and identify what currently slows them down, what features they depend on and what pain points exist with their content flow (e.g. workflow, preview, publishing).
 
 ### Overarching Website/s Requirements
-
-- A strong user experience is essential for ensuring customer satisfaction. These questions explore what user interface and design frameworks need to be considered, as well as any special requirements for front-end development.
+ A strong user experience is essential for ensuring customer satisfaction. These questions explore what user interface and design frameworks need to be considered, as well as any special requirements for front-end development.
+- Gather current benchmarks and goals, to be able to measure and keep track in the future - this should include current page load times, Core Web Vitals, SEO baseline and structure (e.g., redirects, sitemaps) and any compliance (GDPR, WCAG, cookie management, data retention) requirements in place.
 - What are the user experience (UX) expectations for the solution?
 - Are there any accessibility requirements?
 - What is the level of front-end complexity (e.g., JavaScript frameworks, third-party tools)?
@@ -79,11 +84,12 @@ Defining the technical requirements early ensures the implementation can be desi
 - What APIs or connectors will be required for these integrations?
 - Are there any licensing or data sharing agreements to be considered?
 
-Further information can be found on our [Retrieving Data from 3rd Party Integrations]//learn/accelerate/xm-cloud/implementation/external-data-integration/retrieving-data-from-3rd-party-integrations) recipe.
+Further information can be found on our [Retrieving Data from 3rd Party Integrations](/learn/accelerate/xm-cloud/implementation/external-data-integration/retrieving-data-from-3rd-party-integrations) recipe.
 
 #### Customizations
 
 - Are you moving from XM/XP? What are the customizations that have been put on the setup - from Content Resolvers to Event Handlers - these should be documented and an approach provided. Further information can be found on our [Transition from XM/XP to XM Cloud recipe](/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc).
+- You might be moving from other CMS, which might have been customized for previous editorial journeys - evaluate these customizations and see what is actually required from an editor view point.
 
 #### Headless Site Design
 
@@ -93,6 +99,7 @@ Further information can be found on our [Retrieving Data from 3rd Party Integrat
 - What are the different components for both site specific and global?
 - If you are coming from XP/XM, what are your Rendering and data source templates? Will they need to be refactored for the new site structure? Take into consideration that there is a streamlined process [we recommend in creating components](/learn/accelerate/xm-cloud/pre-development/developer-experience/component-design-best-practices).
 - Does their site have redirects and how many? Will these be editable by the content team, or can we be moved to the head application? Will there be an effort to purge current redirects before bringing them into XM Cloud?
+What is the plan for hosting the head application? Review the [Hosting Head Application](/learn/accelerate/xm-cloud/pre-development/hosting-applications) recipes for more informaiton.
 
 #### Multi-Site
 

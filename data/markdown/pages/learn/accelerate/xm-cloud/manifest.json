@@ -32,6 +32,12 @@
               "title": "Requirements Gathering",
               "path": "requirements-gathering"
             }
+            ,
+            {
+              "title": "Scope & Governance Framework",
+              "path": "scope-governance-framework"
+            }
+            
           ]
         },
         {
@@ -277,7 +283,11 @@
             {
               "title": "Incrementally updating Search",
               "path": "search-incremental-updates"
-            }
+            },
+            {
+              "title": "Enhancing search with documents",
+              "path": "document-search"
+            }            
           ]
         }
       ]
@@ -287,6 +297,14 @@
       "path": "final-steps",
       "ignoreLink": true,
       "children": [
+        {
+          "title": "Content Migration",
+          "path": "content-migration"
+        },
+        {
+          "title": "Testing Strategy",
+          "path": "testing-strategy"
+        },        
         {
           "title": "Go-Live Checklist",
           "path": "go-live-checklist"
@@ -309,6 +327,10 @@
         {
           "title": "Performance Optimizaton",
           "path": "performance-optimization"
+        }   ,
+        {
+          "title": "Publishing Optimizaton",
+          "path": "publishing-optimization"
         }       
       ]        
     },
