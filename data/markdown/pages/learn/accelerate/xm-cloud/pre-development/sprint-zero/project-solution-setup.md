@@ -99,9 +99,9 @@ The solution contains everything to run XM Cloud locally using Docker Containers
   </TabList>
     <TabPanels>
       <TabPanel>
-        The Next.js template it contains `.env` file for managing environment specific connection strings as well as the NextJS application named `sxastarter`.
+        The Next.js template it contains `.env` file for managing environment specific connection strings as well as the NextJS application named `nextjs-starter`.
 
-        <img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.jpeg" alt="Next.JS Foundation Head - Starter Kit"/>
+        <img src="/images/learn/accelerate/xm-cloud/project-solution-setup-solution.png" alt="Next.JS Foundation Head - Starter Kit"/>
 
       </TabPanel>
       <TabPanel>
@@ -140,7 +140,7 @@ The platform folder can contain customizations you want to add to the XM Cloud c
   </TabList>
     <TabPanels>
       <TabPanel>
-The sxastarter folder represents the head application built with NextJS. it contains its own `.env` file. The `src` folder provides already implementation such as a out of the box components but also middleware functionalities such as redirects or personalization.
+The nextjs-starter folder represents the head application built with NextJS. it contains its own `.env` file. The `src` folder provides already implementation such as a out of the box components but also middleware functionalities such as redirects or personalization.
 
 Please note that the starter template currently uses the page router instead of the newer app router introduced with version 13. 
 
@@ -158,7 +158,7 @@ The head application in ASP.NET Core Starter Kit is created using the new Siteco
 
 #### Using .env.template
 
-- Rename `.env` to `.env.template` in your solution root
+- Rename `.env` to `.env.template` in `local-containers` folder
 - remove confidential data from `.env.template`
 - Set `.env` to be ignored by git in `.gitignore` file
 - update `init.ps1` to copy `.env` from `.env.template` before any of the env variables are set
@@ -171,9 +171,9 @@ Based on your framework, rename the project accordingly -
   </TabList>
     <TabPanels>
       <TabPanel>
-          Rename the **sxastarter** Project:
+          Rename the **nextjs-starter** Project:
           <ol>
-            <li>Rename `sxastarter` app folder name to your client related application name</li>
+            <li>Rename `nextjs-starter` app folder name to your client related application name</li>
             <li>Update the `appName` property in the `package.json` to your Site name field of your site item</li>
             <li>In `.env.template`set `COMPOSITE_PROJECT_NAME` to the new appname and set `RENDERING_HOST` to match your new appname</li>
           <li>In `init.ps1` <ul><li>change the certificate creation to create certificates according your `RENDERING_HOST` entry</li><li>change initialization of environment variables to use the `RENDERING_HOST` value</li><li>make host file adjustments use the host name from `RENDERING_HOST` environment variable</li></ul></li>
@@ -181,10 +181,9 @@ Based on your framework, rename the project accordingly -
           <li>Update the source code path in the `xmcloud.build.json`</li>
           <li>In `cert_config.yml` change traefik configuration to match the `app_folder_name`</li>
           <li>In `package-lock.json` change name field and packages name field to `app_folder_name`</li>
-          <li>In `render.ts` change the comment from sxastarter to your `app_folder_name`</li>
           <li>In `Platform.csproj `change AssemblyName</li>
           <li>In `AssemblyInfo.cs` change `AssemblyTitle` and `AssemblyProduct` accordingly</li>
-          <li>Rename Solution File `XMCloudSXAStarter.sln` to what your are using in Assembly configurations.</li>
+          <li>Rename Solution File `XmCloudAuthoring.sln` to what your are using in Assembly configurations.</li>
           </ol>
       </TabPanel>
       <TabPanel>
