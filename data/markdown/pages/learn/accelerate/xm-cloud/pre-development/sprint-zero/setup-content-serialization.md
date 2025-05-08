@@ -4,18 +4,19 @@ description: 'Learn how to setup Sitecore Content Serialization (SCS) for XM Clo
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-05-30'
+lastUpdated: '2025-04-25'
 created: '2023-12-22'
 audience: ['Architect','Technical Implementer']
 ---
 
 ## Context
 
-Everything in XM Cloud is an item. Content, Configuration, Customizations, … Some of those items are tightly coupled to functionality provided by Developers. So, we need to ensure that items our code depends on are deployed along with the code.
+Everything in XM Cloud is an item. Content, configuration, customizations, and many others. Some of those items are tightly coupled to functionality provided by developers. Therefore you need to ensure that when you deploy new functionality, that the items your code depends on are deployed too.
+
 
 ## Execution
 
-Items are persisted into source code repository by using Sitecore Content Serialization. Sitecore Content Serialization is able to connect to XM Cloud via the Content Management API and pull items from XM Cloud to our local in yml format, but also push the item representation we have in our local filesystem to an XM Cloud instance. This enables you to push the same set of items to different environments.
+Items are persisted into source code repository by using Sitecore Content Serialization. Sitecore Content Serialization is able to connect to XM Cloud via the Content Management API and pull items from XM Cloud to our local in <code>yml</code> format, but also push the item representation we have in our local filesystem to an XM Cloud instance. This enables you to push the same set of items to different environments.
 
 The Items that are considered for synchronization can be configured.
 
@@ -25,9 +26,7 @@ Sitecore Content Serialization can be achieved using the Sitecore CLI. You can f
 
 ### Configuration
 
-The configuration for Sitecore Content Serialization consists of two main files.
-
-The `sitecore.json` and files ending with `*.module.json`
+The configuration for Sitecore Content Serialization consists of two main files - the `sitecore.json` and files ending with `*.module.json`
 
 The `sitecore.json` file is located in the root folder of the solution. It comes with the XM Cloud Foundation Head starter kit. In here we can configure what `*.module.json` files should be considered for serialization configuration, the plugins with it's particular versions and some general settings for the serialization.
 
@@ -60,18 +59,28 @@ The `sitecore.json` file is located in the root folder of the solution. It comes
   }
 }
 ```
-
+<br/><br/>
 Under `modules`, we can see that all files located in the src folder ending with `.module.json` are considered to check what items should be serialized and what to be excluded.
 
-In the starter kit there is already a file called `nextjs-starter.module.json` located in `authoring\items` folder of the foundation head repository.
+Out of the box there is already a file called `nextjs-starter.module.json` for Next.js and `aspnet-core-starter.module.json` for ASP.NET Core, located in `authoring/items` or in `authoring/items/aspnet-core-starter` folders, respectively.
 
-In here, we can find a configuration what items shall be serialized. You can have multiple of these `module.json` files. Just make sure that the namespace field is unique.
+In here, you can find a configuration what items shall be serialized. You can have multiple `module.json` files. Just make sure that the namespace field is unique.
 
-The items object shows an array of includes. Each include defines what item path in XM Cloud should be considered. In the name field we define the name of the folder the item or items should be stored within our filesystem. The path field is the actual path in XM Cloud to the item. The scope field defines if we just want to serialize a single item (`SingleItem`); `ItemAndChildren` meaning its direct first level subitems; `ItemAndDescendants` meaning all subitems underneath a certain item; or `DescendantsOnly` which excludes the item specified in the path. To ignore a path, set the scope to `Ignored`. ([SCS Configuration Reference](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization-configuration-reference.html))
+The items object shows an array of includes:
+
+- Each include defines which item path in XM Cloud should be considered. 
+- In the name field we define the name of the folder the item or items should be stored within our filesystem. 
+- The path field is the actual path in XM Cloud to the item. 
+- The scope field defines if we just want to serialize a single item or:
+ - `itemwithChildren` - its direct first level subitems.
+ - `itemsAndDescendants` - all subitems underneath a certain item.
+ - `DescendantsOnly` excludes the item specified in the path.
+
+Review the ([SCS Configuration Reference](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization-configuration-reference.html)) documentation for further details.
 
 ### What items should be serialized
 
-Items are required to be serialized when they are created by developers and the code depends on them. Out of the box items provided by the base XM Cloud installation should not be serialized. In XM Cloud, the following items require serialization:
+Items created by developers must be serialized if code depends on them. Out of the box items provided by the base XM Cloud installation should not be serialized. In XM Cloud, the following items require serialization:
 
 - **Modules** from the `/sitecore/system/settings/project` folder, each site collection must have a corresponding headless module created
 - **Templates** from project folder that have been created during site collection creation: `/sitecore/templates/Project/<site collection name>`
@@ -187,6 +196,9 @@ To set up items for the Content Management database, you will need to modify the
 
 <br /><br />
 In the provided code, you're defining a post-deploy action known as scsModules. This action uses the same modules definition as you would use with deployActions. For clarity, you should create and configure specific modules that define the items needed for your database deployments in XM Cloud.
+
+#### Deploying custom roles
+If you need to deploy custom roles then you can use the scsModules post action when deploying SCS modules to your Sitecore instance.
 
 ## Related Recipes
 

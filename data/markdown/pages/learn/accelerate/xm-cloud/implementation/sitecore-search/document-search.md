@@ -33,7 +33,22 @@ Before documents can be indexed, you need to determine which assets should be pu
 
 Once the criteria are defined, a connector is required to transfer relevant documents to Sitecore Search. When publishing a document, the connector must ensure that a public link exists. If necessary, it generates one before sending the asset’s metadata and link to Sitecore Search for indexing. When unpublishing a document, the connector removes it from Sitecore Search. It is recommended to write the connector as a servlerless function, with Azure functions being our preference.
 
-It is recommended that a [trigger and action](https://doc.sitecore.com/ch/en/users/content-hub/example---create-a-trigger.html) is configured in Content Hub to call the connector when assets either move into or out of the criteria.
+The connector will need to focus on two specific areas:
+
+**1. Event Hook & Trigger Configuration**
+- Set up a [trigger and action](https://doc.sitecore.com/ch/en/users/content-hub/example---create-a-trigger.html) is configured in Content Hub to call the connector when assets either move into or out of the criteria.
+- Configure Content Hub to trigger these webhooks or events for every relevant content update.
+- Configure Search Push API according to the [API documentation](https://doc.sitecore.com/search/en/users/search-user-guide/configure-api-push.html).
+
+**2. Data Preparation & Transformation**
+- Define what fields and metadata should be indexed by Search for each content type.
+- For large documents (e.g., PDFs), implement logic within the Content Hub event handler to extract and trim text content to a Search size limit (currently 250Kb). Strategies to consider:
+  - Extract only the first N characters/words or relevant summary.
+  - Strip images and unneeded binary content.
+  - Consider running OCR or text summarization if necessary.
+- Log and handle scenarios where content size still exceeds limits after trimming.
+
+
 
 Content Hub’s [Media Processing](https://doc.sitecore.com/ch/en/users/content-hub/media-processing.html) configuration automatically generates a `downloadExtractedContent` rendition for certain file types, including `.doc`, `.docx`, `.pdf`, `.pptx`, `.txt`, and `.xlsx`. This rendition is a plain text file containing the document's extracted text, which can be sent to Sitecore Search to improve ingestion and searchability.
 

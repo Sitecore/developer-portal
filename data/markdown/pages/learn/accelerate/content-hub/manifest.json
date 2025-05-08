@@ -109,6 +109,11 @@
               "path": "external-integrations"
             },
             {
+              "title": "Updating meta-data on pre-commit",
+              "path": "meta-data-on-pre-commit"
+            },            
+            
+            {
               "title": "Scripts Guidance and Scenarios",
               "path": "scripting-guidance-and-scenarios"
             },
