@@ -47,7 +47,7 @@ The Sitecore XM Cloud Deploy Application is used to provision XM Cloud Projects/
 
 Using the XM Cloud Foundation head repository is crucial for getting started with a project, as it provides a pre-configured, best-practice foundation that accelerates development, ensures consistency, and simplifies integration with XM Cloud services. If a project doesn’t use it, you may need to manually configure the environment, set up dependencies, and align with best practices to ensure compatibility and smooth deployment.
 
-You can read more about how to create a new project using the Deploy Application on our Documentation Site: <https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html> or follow the recipe: [Sprint Zero - Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup).
+You can read more about how to create a new project using the Deploy Application on our [Documentation Site](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html) or follow the recipe: [Sprint Zero - Project Solution Setup](/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup).
 
 Once the project is created, you will then [provision an environment](http://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html). These can be used to represent the different Production and Non-Production environments that you require. When creating them through the deploy application you can also choose to tie each environment to a different branch in your repository should that be a requirement for you. You can also choose to have the environment automatically deployed when changes are committed to the chosen branch.
 
@@ -67,8 +67,8 @@ To log in to a Sitecore instance using sitecore login, the CLI allows two flows 
 For this DevOps recipe we are looking at utlizing a non-interactive client login. To use a non-interactive login flow with a Sitecore XM Cloud instance, you must have the following:
 
 - An authentication/automation client for your organization or environment. It provides a client ID and a client secret.
-- The authority URL. The default authority URL is <https://auth.sitecorecloud.io>.
-- The audience URL <https://api.sitecorecloud.io>.
+- The authority URL. The default authority URL is `https://auth.sitecorecloud.io`.
+- The audience URL `https://api.sitecorecloud.io`.
 - The URL of the Sitecore instance.
 
 ```typescript
@@ -86,13 +86,13 @@ dotnet sitecore project create -n <<PROJECT_NAME>>
 This command will create a new project with the name provided as the value for the -n parameter. This command will return the ID of the created project which we will use in subsequent commands.
 
 ```typescript
-dotnet sitecore cloud environment create --project-id <<PROJECT_ID>> -n << ENVIRONMENT_NAME>>
+dotnet sitecore cloud environment create --project-id <<PROJECT_ID>> -n <<ENVIRONMENT_NAME>>
 ```
 
 This command will create a new environment with the name passed into the -n parameter. It will return the ID of the created environment which we will use in subsequent commands.
 
 ```typescript
-dotnet sitecore cloud deployment create --environment-id << ENVIRONMENT_NAME >> --upload
+dotnet sitecore cloud deployment create --environment-id <<ENVIRONMENT_NAME>> --upload
 ```
 
 This command will create a new deployment for the previously created environment. The --Upload flag is optional, when not provided you will get a clean XM Cloud installation, none of your code will be deployed.
@@ -135,9 +135,9 @@ Azure App Services and Azure Static WebApps have a lot of limitations so these o
 
 ## Insights
 
-Sitecore’s Developer Relations team maintain an [open-source example](https://github.com/Sitecore/XM-Cloud-Introduction ) showing how to pull a lot of what is discussed above together. This is designed to showcase how you can build out your own custom deployments for XM Cloud.
+Sitecore’s Developer Relations team maintain an [open-source example](https://github.com/Sitecore/XM-Cloud-Introduction) showing how to pull a lot of what is discussed above together. This is designed to showcase how you can build out your own custom deployments for XM Cloud.
 
-This repository is a multi-site XM Cloud instance with five real-world live sites contained, they are each built with either NextJS or the <http://ASP.NET>  Rendering SDK. The deployments are all handed via the Sitecore CLI for the XM Cloud infrastructure pieces and we use Vercel provisioned via the Vercel CLI to host the different heads. The CI/CD tool used to pull all of this together is GitHub Actions, and you can see the workflow definitions used to achieve this, included in the repository.
+This repository is a multi-site XM Cloud instance with five real-world live sites contained, they are each built with either NextJS or the ASP.NET Rendering SDK. The deployments are all handed via the Sitecore CLI for the XM Cloud infrastructure pieces and we use Vercel provisioned via the Vercel CLI to host the different heads. The CI/CD tool used to pull all of this together is GitHub Actions, and you can see the workflow definitions used to achieve this, included in the repository.
 
 ### Related Recipes
 
@@ -148,8 +148,8 @@ This repository is a multi-site XM Cloud instance with five real-world live site
 ### Related Documentation
 
 <Row columns={2}>
-    <Link title="XM Cloud Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
-    <Link title="Deploying XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html" />
+  <Link title="XM Cloud Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+  <Link title="Deploying XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html" />
   <Link title="The CLI cloud command" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-cloud-command.html" />
   <Link title="The CLI cloud command" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-cloud-command.html" />  
 </Row>
