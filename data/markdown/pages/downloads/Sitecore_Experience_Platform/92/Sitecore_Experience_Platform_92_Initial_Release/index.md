@@ -86,7 +86,7 @@ Looking for **a different version**? See [all available versions](/downloads/Sit
 
 | Resource                                                                   | Description                                                   |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| [Sitecore Identity](/downloads/Sitecore_Identity/3x/Sitecore_Identity_300) | Download files and release information for Sitecore Identity. |
+| [Sitecore Identity Server](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016) | Download files and release information for Sitecore Identity Server. |
 
 ## Upgrade options
 
