@@ -4,8 +4,8 @@ description: 'How a pre-commit script can be setup to adjust a to be saved entit
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-05-09'
-created: '2025-05-09'
+lastUpdated: '2025-05-14'
+created: '2025-05-14'
 audience: ['All']
 ---
 
