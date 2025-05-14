@@ -84,7 +84,7 @@ Once the process of provisioning the CM resources, and deploying your code and f
 
 For a client project, create an empty site - follow the [Creating a Site](/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site) recipe for further detail.
 
-> Sitecore XM Cloud currently does not support the automatic deployment of the editing host for ASP.NET Core Head applications. As a result, after deployment, Page Builder will display an error such as "unable to connect o the remote server". It is currently required to [deploy an external editing host](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-an-external-editing-host.html) to support this.
+> Sitecore XM Cloud currently does not support the automatic deployment of the editing host for ASP.NET Core Head applications. As a result, after deployment, Page Builder will display an error such as "unable to connect to the remote server". It is currently required to [deploy an external editing host](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-an-external-editing-host.html) to support this.
 
 ### Walk through the Solution
 

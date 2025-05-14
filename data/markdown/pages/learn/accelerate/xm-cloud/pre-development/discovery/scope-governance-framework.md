@@ -32,7 +32,7 @@ Lastly, prioritize this list based on three key parameters:
 - Complexity: What has minimal effort vs. high impact?
 - Readiness: What is established and familiar within stakeholders?
 
-Finally, set a phased process starting with a Minimum Viable Product (MVP)—something useful, working, and focused. Everything else can wait in later phases, with timelines and standards decided on first.
+Finally, set a phased process starting with what is considered Time to Impact(TTI) — something useful, working, and focused. Everything else can wait in later phases, with timelines and standards decided on first.
 
 ### Align Stakeholders on scope and timeline
 
@@ -81,7 +81,7 @@ Too many teams begin by copying features from older platforms without asking: Is
 |Accessibility & Privacy|Compliance with WCAG, GDPR, cookie consent, opt-out functionality, data audit trails|
 
 Requirements gathering can quickly gets out of hand - get what truly is important now so you don't build too much for down the road or end up forgetting something that's a must for launch.
-- Don't gather everything simultaneously—start with what's necessary for MVP and then include "Phase 2" requirements.
+- Don't gather everything simultaneously—start with what's necessary for TTI and then include "Phase 2" requirements.
 - Document what is working today and what isn't - that is where the highest returns are.
 - Capture front-end and back-end processes—specifically for authors, marketers, and legal professionals.
 - For each requirement, ask: Who does this belong to? How often is it used? What if it is damaged?

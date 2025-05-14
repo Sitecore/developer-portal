@@ -1,0 +1,128 @@
+{
+  "title": "Accelerate Cookbook for CDP & Personalize",
+  "description": "This Cookbook provides a set of recipes to help implementing CDP and Personalize through setup, configuration and implementation.",
+  "productLogo": "CDP",
+  "path": "/learn/accelerate/cdp-personalize",
+  "productFeedbackLabel": ["CDP"],
+  "heading": true,
+  "enableSearch": false,
+  "enableBreadcrumb": true,
+  "showRootAsSections": true,
+  "generateLLM": true,
+  "routes": [
+    {
+      "title": "Pre-development",
+      "path": "pre-development",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Discovery",
+          "path": "discovery"
+        },
+        {
+          "title": "Use Case Scoping",
+          "path": "use-case-scoping"
+        },
+        {
+          "title":"Omnichannel Preperation",
+          "path":"omnichannel-preperation"
+        },
+        {
+          "title":"Web vs Interactive Experiences",
+          "path":"web-vs-interactive"
+        },
+        {
+          "title":"Developing an Identity Strategy",
+          "path":"identity-strategy"
+        },        
+        {
+          "title":"Segmentation",
+          "path":"segmentation"
+        },
+        {
+          "title":"Experiments Strategy",
+          "path":"experimentation"
+        }
+      ]
+    },
+    {
+      "title": "Implementation",
+      "path": "implementation",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Integrations",
+          "path": "integrations",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "CDP Integrations",
+              "path": "cdp-integration"
+            },
+            {
+              "title": "Peronalize Integrations",
+              "path": "personalize-integrations"
+            }         
+          ]
+        },
+        {
+          "title": "Abandoned Cart Email",
+          "path": "abandoned-cart-email",
+          "ignoreLink": false
+        },
+        {
+          "title": "Before You Fly Reminder",
+          "path": "before-you-fly",
+          "ignoreLink": false
+        },
+        {
+          "title": "Home Page Personalization",
+          "path": "home-page-personalization",
+          "ignoreLink": false
+        },
+        {
+          "title": "Last Search Experience",
+          "path": "last-search-experience",
+          "ignoreLink": false
+        },
+        {
+          "title": "Self Service Nudge",
+          "path": "self-service-nudge",
+          "ignoreLink": false
+        }
+
+        
+          
+      ]
+    },
+    {
+      "title": "Final Steps",
+      "path": "final-steps",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Validating Guest Data",
+          "path": "data-validation",
+          "ignoreLink": false
+        },
+        {
+          "title": "Go-Live Checklist",
+          "path": "go-live-checklist",
+          "ignoreLink": false
+        }                  
+      ]
+    },
+    {
+      "title": "Appendix I",
+      "path": "appendix-i",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Personalize Glossary",
+          "path": "personalize-glossary"
+        }        
+      ]
+    }
+  ]
+}
+
