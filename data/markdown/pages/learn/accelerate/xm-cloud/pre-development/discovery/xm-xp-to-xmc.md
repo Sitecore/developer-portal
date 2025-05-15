@@ -99,11 +99,10 @@ While your platform remains on XM or XP Headless, you will continue to rely on C
 
 While upgrading to the latest version of Sitecore XP before migrating to XM Cloud might seem logical, it’s not always required. Evaluate whether an upgrade will simplify your migration or if you can move directly to XM Cloud.
 
-Due to the fundamental differences between XM Cloud and traditional XM or XP MVC architectures, there is no benefit (efficiency, cost, or stability) to upgrading your XM or XP platform before migration.
+Due to the fundamental differences between XM Cloud and traditional XM or XP MVC architectures, there is no benefit (efficiency, cost, or stability) to upgrading your XM or XP platform before migration. An upgrade to the existing solution is likely to have a high cost and add many weeks to a migration project, especially if the implementation relies on 3rd party or open-source dependencies.
 
-An upgrade to the existing solution is likely to have a high cost and add many weeks to a migration project, especially if the implementation relies on 3rd party or open-source dependencies.
+There were some rare scenarios where a migration to headless first is XP right - generally this is for implementation that have heavily customized editing experiences that won't be supported by Pages or heavily customized CMS that will be migrated in phases.
 
-For instance, certain features in version 10.4+ may facilitate migration, but they are not prerequisites, but upgrade to 10.3 provides you the same Site Management configuration found between products that would make the migration easier. Having these aligned between PaaS and SaaS can make the move easier, especially content migration.
 
 ## Related Recipes
 

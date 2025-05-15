@@ -244,8 +244,9 @@ You've implemented it — now it's time to launch it. Go-live becomes a coordina
   </GroupItem>
   <GroupItem>
     #### Documentation
-
-
+    - [Data privacy](https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-privacy.html)
+    - [Search engine optimization](https://doc.sitecore.com/xmc/en/developers/xm-cloud/search-engine-optimization--seo-.html)
+    - [Manage personalization and analytics for sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html)
   </GroupItem>  
 </Group>
 

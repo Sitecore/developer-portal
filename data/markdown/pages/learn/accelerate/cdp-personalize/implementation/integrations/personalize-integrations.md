@@ -7,7 +7,7 @@ hasInPageNav: true
 lastUpdated: '2025-05-14'
 created: '2025-05-14'
 audience: ['All']
-product: ['Technical Implementers','Solution Architects']
+features: ['Technical Implementers','Solution Architects']
 ---
 
 ## Context
