@@ -34,7 +34,7 @@ Using segmentation in a CDP creates many benefits that help businesses optimize 
 | Enhanced Customer Insights | Analyze segmented data to reveal behavior patterns and preferences. These findings guide strategic planning and allow for more effective marketing campaigns. |
 | Real-Time Data Utalization | Sitecore CDP uses real-time information, which allows segments to be updated after the latest customer interactions. This means that marketing is relevant and timely. |
 | Predictive Analytics | Segment customers by their likelihood to engage, buy, or churn. It supports early engagement and retention. |
-| Cross-Channel Consistency | Use shared segments across channels to provide consistency of message and cohesive customer experiences on web, e-mail, advertising, etc. <br/><br/>Read more on the [Omnichannel Preparation](http://localhost:3000/learn/accelerate/cdp-personalize/pre-development/omnichannel-preparation) recipe. |
+| Cross-Channel Consistency | Use shared segments across channels to provide consistency of message and cohesive customer experiences on web, e-mail, advertising, etc. <br/><br/>Read more on the [Omnichannel Preparation](/learn/accelerate/cdp-personalize/pre-development/omnichannel-preparation) recipe. |
 | Optimization and Testing | Segment targeting enables strategy, message, or experience testing under controlled conditions. Find out what works—and keep refining |
 
 ### Implementing Segmentation
