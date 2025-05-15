@@ -70,6 +70,9 @@ const redirects = [
   { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/hosting-web-application', destination: '/learn/accelerate/xm-cloud/pre-development/hosting-applications/nextjs-azure-app-services', permanent: true },
   { source: '/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc', destination: '/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc', permanent: true },
 
+  { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/dev-workflow-codespaces', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations/dev-workflow-codespaces', permanent:true  },
+  { source: '/learn/faq/xm-cloud/migration', destination: '/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc', permanent: true },
+
   { source: '/learn/accelerate/xm-cloud/implementation/redirect', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/redirect', permanent: true },
   { source: '/learn/accelerate/xm-cloud/implementation/sitemap', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/sitemap', permanent: true },
   { source: '/learn/accelerate/xm-cloud/implementation/localization', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/localization', permanent: true },

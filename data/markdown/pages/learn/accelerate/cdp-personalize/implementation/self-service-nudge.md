@@ -7,7 +7,7 @@ hasInPageNav: true
 lastUpdated: '2025-05-14'
 created: '2025-05-14'
 audience: ['Technical Implementers','Architects', 'Product Owner']
-product: ['CDP', 'Personalize']
+features: ['CDP', 'Personalize']
 ---
 
 ## Context

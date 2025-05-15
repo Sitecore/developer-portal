@@ -135,7 +135,7 @@ The aim of web experiences is to deliver extra value, and we should know that us
 
 <Row columns={2}>
 <Link title="Use Case Scoping" link="/learn/accelerate/cdp-personalize/pre-development/use-case-scoping" />
-<Link title="Omnichannel Preperation" link="/learn/accelerate/cdp-personalize/pre-development/omnichannel-preperation" />
+<Link title="Omnichannel Preparation" link="/learn/accelerate/cdp-personalize/pre-development/omnichannel-preparation" />
 
 </Row>
 
