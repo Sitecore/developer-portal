@@ -1,5 +1,5 @@
 ---
-title: 'Omnichannel Preperation'
+title: 'Omnichannel Preparation'
 description: 'Prepare data, systems, and strategies to support consistent and personalized experiences across all customer touchpoints.  '
 area: ['accelerate']
 hasSubPageNav: true
