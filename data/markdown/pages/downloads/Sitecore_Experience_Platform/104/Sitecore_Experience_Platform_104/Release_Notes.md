@@ -1,16 +1,11 @@
 ---
 title: 'Release Notes'
 ---
+Publication history:<br/>
+**2024-07-29:** Completed the publishing of missing ltsc2019 and ltsc2022 container images.<br/>
+**2024-04-30:** Released Sitecore Experience Platform 10.4.0.
 
-- Jul 29, 2024: Added ltsc2019 and ltsc2022 container images for Sitecore Docker Tools Assets compatible with SXP 10.4.
-- Jul 24, 2024: Added ltsc2019 container images for Sitecore Connect™ for Content Hub 5.2.0.
-- Jun 11, 2024: Added ltsc2019 Container images and support package for Sitecore XP 10.4. Added ltsc2019 container images for Identity Server.
-- May 28, 2024: Patched and republished the four Azure App Service download package options and the SAT Resources package to add missing Application Insights configuration. Package version numbers were not changed, to avoid re-spinning the entire release.\
-  To confirm you have the correct Azure App Service package version, ensure the following file is included in your zip download:\
-  `Sitecore 10.4.0 rev. 010422 (xx) (Cloud)_xxx.scwdp.zip\Content\Website\ApplicationInsights.config`\
-  To confirm you have the correct Sitecore Azure Toolkit Resources 10.4.0 rev. 010422.zip package, ensure the following file is included in your zip download:\
-  `CargoPayloads\Sitecore.Cloud.ApplicationInsights.sccpl\CopyToWebsite\ApplicationInsights.config`
-- Apr 30, 2024: Released Sitecore Experience Platform 10.4.0.
+Return to the [Sitecore Experience Platform 10.4](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104) release page.
 
 This release includes new features and improvements made in Sitecore Experience Platform (SXP) 10.4. Sitecore recommends that you upgrade to this release if it aligns with the specific needs of your organization. This release contains significant improvements in functionality worth evaluating.
 
@@ -126,6 +121,7 @@ The following issues have been fixed:
 | Platform                          | The `​Sitecore.Data.ID.TryParse` method does not parse short ID values.                                                                                                                                                                   | 91923   |
 | Platform                          | Some artifacts of the deprecated Developer Center application are still present in Sitecore.                                                                                                                                              | 136226  |
 | Platform                          | When a request that contains illegal characters in the path is sent to the server, ​an error is thrown instead of redirecting to the _​Item Not Found_ page.                                                                              | 290139  |
+| Platform                          | In the User Manager, searching for a user by their email address does not work for a non-admin user, due to failure to process the '@' character.                                                                                         | 310741 |
 | Platform                          | If you create a virtual user with a name that contains only numeric characters, an exception is thrown.                                                                                                                                   | 381683  |
 | Platform                          | In the Content Editor​, the _​Details_ and _​Reset_ buttons are inactive when `RequireLockBeforeEditing` is set to _false_.                                                                                                               | 438400  |
 | Platform                          | A `+` symbol within the `href` attribute in an anchor tag breaks the URL.                                                                                                                                                                 | 439771  |

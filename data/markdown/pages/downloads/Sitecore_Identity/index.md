@@ -16,7 +16,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
 ## Sitecore Identity Server 7.x
-**DEPRECATED:** With the roll-out of Identity Server 8.0 across SXP versions, Identity Server 7 will be deprecated due to Microsoft's end-of-support for .NET 6.
+**DEPRECATED** due to Microsoft's end-of-support for .NET 6.
 </CardHeader>
 <CardBody>
 [Sitecore Identity Server 7.1.11](/downloads/Sitecore_Identity/7x/Sitecore_Identity_7111)\

@@ -2,11 +2,11 @@
 title: 'Release notes'
 description: ''
 ---
+**2024-08-16:** Released Sitecore Experience Platform 10.3.2 rev. 010837
 
-**August 2024 – released Sitecore Experience Platform 10.3.2 rev. 010837**
+Return to the [Sitecore Experience Platform 10.3.2](/downloads/Sitecore_Experience_Platform/103/Sitecore_Experience_Platform_103_Update2) release page.
 
 This is a product update. Sitecore recommends that you upgrade to this release to apply the fixes and improvements implemented since the initial release of this product version.
-
 - [New features/improvements](#new-featuresimprovements)
 - [Resolved issues](#resolved-issues)
 - [Dependency](#dependency)
