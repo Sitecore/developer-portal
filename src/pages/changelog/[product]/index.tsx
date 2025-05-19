@@ -1,4 +1,4 @@
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Grid, GridItem, Text } from '@chakra-ui/react';
 import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
 import ChangelogList from '@components/changelog/ChangelogList';
 import { Changelog } from '@lib/changelog';
@@ -11,6 +11,7 @@ import { ChangelogFeeds } from '@/src/components/changelog/ChangelogFeeds';
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
+import Link from 'next/link';
 
 type ChangelogProps = {
   currentProduct: Product;
@@ -52,18 +53,14 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
   return (
     <TrackPageView product={currentProduct}>
       <Layout title={title} description={description}>
-        <Hero title={title} description={description}>
-          {/* <HStack>
-            <Text variant={'sm'}>Powered by</Text>
-            <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-              <Image
-                src={useColorModeValue('https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one', 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one-dark')}
-                alt="Powered by Content Hub ONE"
-                width={150}
-                height={18}
-              />
+        <Hero title={title}>
+          <Text as="h2" color={'neutral'} fontSize={{ base: 'sm', md: 'md' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'normal'} letterSpacing={'0.5'}>
+            This changelog provides visibility into key {currentProduct.name} updates, including new features, enhancements, resolutions and architectural improvements. Some minor bug fixes and backend adjustments may not be listed here. If you have
+            a specific bug fix that you want to follow, please visit&nbsp;
+            <Link href="https://support.sitecore.com" title="Go to the support portal" style={{ textDecoration: 'underline' }}>
+              https://support.sitecore.com
             </Link>
-          </HStack> */}
+          </Text>
         </Hero>
 
         <VerticalGroup>
