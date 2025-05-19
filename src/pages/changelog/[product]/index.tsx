@@ -57,7 +57,7 @@ const ChangelogProduct = ({ currentProduct }: ChangelogProps) => {
           <Text as="h2" color={'neutral'} fontSize={{ base: 'sm', md: 'md' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'normal'} letterSpacing={'0.5'}>
             This changelog provides visibility into key {currentProduct.name} updates, including new features, enhancements, resolutions and architectural improvements. Some minor bug fixes and backend adjustments may not be listed here. If you have
             a specific bug fix that you want to follow, please visit&nbsp;
-            <Link href="https://support.sitecore.com" title="Go to the support portal" style={{ textDecoration: 'underline' }}>
+            <Link href="https://support.sitecore.com" title="Go to the support portal" target="_blank" style={{ textDecoration: 'underline' }}>
               https://support.sitecore.com
             </Link>
           </Text>
