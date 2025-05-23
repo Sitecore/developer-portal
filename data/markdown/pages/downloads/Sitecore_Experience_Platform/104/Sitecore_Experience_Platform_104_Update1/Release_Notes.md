@@ -3,7 +3,7 @@ title: 'Release Notes'
 ---
 **2024-06-xx:** Released Sitecore Experience Platform 10.4.1 rev. 01xxxx
 
-Return to the [Sitecore Experience Platform 10.4](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104) release page.
+Return to the [Sitecore Experience Platform 10.4 Update-1](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104_Update1) release page.
 
 This release is the first update to Sitecore XP 10.4. It contains important updates to 3rd party dependencies, and a roll-up of functional and security vulnerability fixes.
 - [Improvements](#improvements)
