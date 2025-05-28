@@ -12,7 +12,7 @@ pageType: 'childoverview'
 
  ## Audience
 
-The Cookbooks are written against a specific audience in mind, specificall:
+The Cookbooks are written against a specific audience in mind, specifically:
 
 - *Architect* - Designing and planning the overall solution architecture and technical roadmap.
 - *Product Owner* - Non-technical stakeholders that need to understand how the product aligns with business goals and user requirements. Looking for articulation of product capabilities, use cases, value propositions, and feature benefits.

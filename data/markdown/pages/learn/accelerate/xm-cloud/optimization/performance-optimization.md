@@ -1,5 +1,5 @@
 ---
-title: 'Performance Optimizing for Web applications'
+title: 'Performance optimization for Web applications'
 description: 'Best practices aimed at optimizing web application performance.'
 hasSubPageNav: true
 hasInPageNav: true

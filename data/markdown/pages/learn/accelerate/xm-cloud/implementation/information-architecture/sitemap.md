@@ -4,7 +4,7 @@ description: 'Configuration of Sitemap in XM Cloud'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2025-04-26'
+lastUpdated: '2025-04-31'
 created: '2024-10-07'
 audience: ['Architect','Technical Implementer']
 ---
@@ -19,12 +19,11 @@ This solution assumes the developer has already configured an XM Cloud site and 
 
 Avoid building the XM Cloud sitemap with custom implementations on the Content Management role, it can lead to maintenance challenges, compatibility issues, and unnecessary complexity—leveraging the built-in sitemap generation ensures reliability, scalability, and alignment with best practices.
 
-
 Setting this up will require:
 - An SXA Site with properly configured site definitions
 - The site has been published to Experience Edge.
 
-To configure the Host name for your Sitemap you’ll need to udpate the target hostnmane and hostname on the `Site` level. Detail of this can be found on the [Configure a sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) documentation.
+To configure the Host name for your Sitemap you’ll need to update the target hostname and hostname on the `Site` level. Detail on this configuration can be found on the [Configure a sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) documentation.
 
 XM Cloud sitemaps can be managed using the configuration options available in [Sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/configure-a-sitemap-in-sites.html). Configure the sitemap to guide search engines through your site's structure. The sitemap is regenerated after the publishing process ends, depending on the refresh threshold configuration. To ensure that the sitemap link is generated properly for your hosted/live sites, you must configure the target hostname on the site host item. Find the sitemap of hosted/live sites by typing /sitemap.xml after the hostname
 
@@ -35,13 +34,7 @@ XM Cloud sitemaps are configured on `/sitecore/content/<site collection>/<site>/
 
 ### Excluding Items and Publishing
 
-To configure an item so that it’s excluded from the Sitemap you can follow the following list of steps:
-
-1. Go to the Content Editor
-2. Find your current site and find a content item that you want to exclude from the Sitemap. For example, the homepage which is located at: `<site collection>/<site>/Home`
-3. Under the "Sitemap settings" section configure the `Change frequency` field to "do not include"
-4. Save and then Publish this item.
-5. Depending on the configuration of the caching configuration of your sitemap, wait until the cache has expired and check again. You can also go to the Sitemap configuration item here: `<site collection>/<site>/Settings/Sitemap` and update the field "Refresh threshold" to test these changes by setting the value to 0. Just make sure to update this value back to the previous value once you complete testing.
+To configure an item so that it’s excluded from the Sitemap you will need to update this on a content level item. Details on this configuration can be found on the [Configure a sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) documentation.
 
 ## Insights
 

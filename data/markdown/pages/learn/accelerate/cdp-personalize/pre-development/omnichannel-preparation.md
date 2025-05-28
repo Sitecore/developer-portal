@@ -11,7 +11,7 @@ product: ['CDP', 'Personalize']
 ---
 
 ## Context
-You are starting a project in which Sitecore Personalize and/or CDP will be use to power customer experiences across various channels—web, email, mobile, app, kiosk, and advertisements. However, personalization cannot operate in isolation.
+You are starting a project in which Sitecore Personalize and/or CDP will be used to power customer experiences across various channels—web, email, mobile, app, kiosk, and advertisements. However, personalization cannot operate in isolation.
 
 Prior to anything getting started, you must have visibility into how your customer data is going to flow: which systems are involved, which use cases you're activating, and how the marketing and technical organizations map against it
 
