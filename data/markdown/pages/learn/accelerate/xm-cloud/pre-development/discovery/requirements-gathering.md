@@ -90,6 +90,8 @@ Further information can be found on our [Retrieving Data from 3rd Party Integrat
 
 - Are you moving from XM/XP? What are the customizations that have been put on the setup - from Content Resolvers to Event Handlers - these should be documented and an approach provided. Further information can be found on our [Transition from XM/XP to XM Cloud recipe](/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc).
 - You might be moving from other CMS, which might have been customized for previous editorial journeys - evaluate these customizations and see what is actually required from an editor view point.
+- Do you expect to build custom backend functionality such as custom pipelines, jobs, or services? Alternatives must be explored using Edge Functions, Headless architecture, or external services.
+- Do you require scheduled background processing? Consider external schedulers, serverless functions, or Edge Middleware.
 
 #### Headless Site Design
 

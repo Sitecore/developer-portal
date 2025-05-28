@@ -17,7 +17,7 @@ Tools and SEO checkers can report issues detected on the website, but cannot ana
 >There are many guides online which cover general SEO best-practice, so in this recipe we relate the topics within the context of Sitecore XM Cloud. Please cross-reference with SEO authorities for deep-dives and the latest on SEO best practice. 
 
 ## Execution
-In the sections below, we cover XM Cloud SEO best practices, relating to common in-page SEO best practice and components concepts SEO best.
+In the sections below, we cover XM Cloud SEO best practices, relating to common in-page SEO best practice and components concepts SEO best. Before deep diving in this, make sure you have reviewed the [Search engine optimization (SEO)](https://doc.sitecore.com/xmc/en/developers/xm-cloud/search-engine-optimization--seo-.html) documentation.
 
 ### SEO recommendation in website
 Many websites suffer from common HTML and structural issues that can negatively impact search rankings, user experience, and crawlability. From poorly structured headings to missing meta tags, unoptimized images, and slow-loading pages, these technical missteps can make it harder for search engines to index and rank content effectively.
@@ -101,9 +101,13 @@ When using Sitecore Forms, several SEO issues can arise that may affect your sit
 ## Related Documentation
 
 <Row columns={2}>
+    <Link title="Search engine optimization" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/search-engine-optimization--seo-.html" />
+
   <Link title="Redirect search traffic" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/redirect-search-traffic.html" />
     <Link title="Configuring the JSS NextImage component" link="https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/configuring-the-jss-nextimage-component.html" />  
 </Row>
+
+
 
 
 

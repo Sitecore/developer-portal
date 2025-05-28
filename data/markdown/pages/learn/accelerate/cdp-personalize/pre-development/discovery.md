@@ -49,7 +49,7 @@ The discovery phase for implementing CDP and Personalize is critical to ensuring
 
 ### Operating Model Planning
 
-Operating models play a crucial role in the context of CDP and Personalize by providing a structured framework to leverage the airlines customer data and plan use case tests based on the overall business objectives. Often the business might be  good at ideation and making use case backlogs, but when it comes down to implementation then there might be some internal issues to implement the overall personalization process. The important points to consider in an operating model are:
+Operating models play a crucial role in the context of CDP and Personalize by providing a structured framework to leverage the customer data and plan use case tests based on the overall business objectives. Often the business might be  good at ideation and making use case backlogs, but when it comes down to implementation then there might be some internal issues to implement the overall personalization process. The important points to consider in an operating model are:
 
 - Team structure: do they have the requisite knowledge to be effective
 - Process: does the current process support your team or get in the way. Where are the bottlenecks and how can they be removed?
@@ -101,7 +101,7 @@ By measuring these goals, you can track the success of your initiatives, identif
 
 <Row columns={2}>
 <Link title="Use Case Scoping" link="/learn/accelerate/cdp-personalize/pre-development/use-case-scoping" />
-<Link title="Omnichannel Preperation" link="/learn/accelerate/cdp-personalize/pre-development/omnichannel-preperation"/>
+<Link title="Omnichannel Preparation" link="/learn/accelerate/cdp-personalize/pre-development/omnichannel-preparation"/>
 </Row>
 
 ## Related Documentation

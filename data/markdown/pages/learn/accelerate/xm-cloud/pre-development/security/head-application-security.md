@@ -85,18 +85,21 @@ const defaultConfig: JssConfig = {
 };
 ```
 
-## Related Recipes
-
-<Row columns={2}>
-  <Link title="Content Management" link="/learn/accelerate/xm-cloud/security/content-management-security" />
-</Row>
 
 ## Related Documentation
 
 <Row columns={2}>
+
+  <Link title="Limitations and restrictions of Experience Edge" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/limitations-and-restrictions-of-experience-edge-for-xm.html" />
+
+</Row>
+
+
+## Related Links
+
+<Row columns={2}>
   <Link title="NextAuth.js" link="https://next-auth.js.org" />
   <Link title="NextAuth Provider List" link="https://next-auth.js.org/providers/" />
-  <Link title="Limitations and restrictions of Experience Edge" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/limitations-and-restrictions-of-experience-edge-for-xm.html" />
-  <Link title="How to secure Experience Edge content delivery token" link="https://sitecore.stackexchange.com/questions/35671/how-can-i-secure-the-experience-edge-content-delivery-token-on-my-next-js-jss-ap" />
+    <Link title="How to secure Experience Edge content delivery token" link="https://sitecore.stackexchange.com/questions/35671/how-can-i-secure-the-experience-edge-content-delivery-token-on-my-next-js-jss-ap" />
   <Link title="Authentication and User Management with Clerk" link="https://clerk.com/docs/quickstarts/nextjs" />
-</Row>
+  </Row>

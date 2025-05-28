@@ -72,6 +72,20 @@ const redirects = [
 
   { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/dev-workflow-codespaces', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations/dev-workflow-codespaces', permanent:true  },
   { source: '/learn/faq/xm-cloud/migration', destination: '/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc', permanent: true },
+  { source: '/learn/faq/xm-cloud/pricing', destination: '/learn/accelerate/xm-cloud/', permanent: true },
+  { source: '/learn/faq/xm-cloud/scaling-availability', destination: 'https://www.sitecore.com/legal/sla/saas', permanent: true },
+  { source: '/learn/faq/xm-cloud/personalization-analytics', destination: 'https://developers.sitecore.com/learn/accelerate/xm-cloud', permanent: true },
+  { source: '/learn/faq/xm-cloud/pages-components', destination: '/learn/accelerate/xm-cloud/implementation/developer-experience', permanent: true },
+  { source: '/learn/faq/xm-cloud/sxa', destination: '/learn/accelerate/xm-cloud/pre-development/project-architecture', permanent: true },
+  { source: '/learn/faq/xm-cloud/experience-edge', destination: '/learn/accelerate/xm-cloud/pre-development/project-architecture/rate-limits-and-caching', permanent: true },
+  { source: '/learn/faq/xm-cloud/customization', destination: '/learn/accelerate/xm-cloud/pre-development/discovery/requirements-gathering', permanent: true },
+  { source: '/learn/faq/xm-cloud/rendering', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations/web-developer-experience', permanent: true },  
+  { source: '/learn/faq/xm-cloud/integration', destination: '/learn/accelerate/xm-cloud/implementation/external-data-integration', permanent: true },  
+  { source: '/learn/faq/xm-cloud/upgrades', destination: 'https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-xm-cloud.html', permanent: true },  
+  { source: '/learn/faq/xm-cloud/development', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations', permanent: true },  
+  { source: '/learn/faq/xm-cloud/features', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/sitecore-xm-cloud.html', permanent: true },  
+  { source: '/learn/faq/xm-cloud', destination: '/learn/accelerate/xm-cloud/', permanent: true },  
+
 
   { source: '/learn/accelerate/xm-cloud/implementation/redirect', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/redirect', permanent: true },
   { source: '/learn/accelerate/xm-cloud/implementation/sitemap', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/sitemap', permanent: true },
