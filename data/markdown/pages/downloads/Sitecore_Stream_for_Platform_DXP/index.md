@@ -17,10 +17,10 @@ While there is no actual software download on this page, info here will continue
 
 | Release | Description |
 | --- | --- |
+| 1.2.45 | Added AI-assisted translation of a site content item, to translate to a selected language, or to generate a new version of same language. |
 | 1.1.63 | Added the ability to generate multiple content variants. Added the ability to select from a list of configured brand kits. |
 | 1.1.34 | Minor release including bug fixes and improvements to installation, configuration, user experience, error handling, and documentation. |
 | 1.0.113 | Initial release of the Sitecore XP module, available for download from the Sitecore Portal. Compatible with Sitecore XP 10.2, 10.3, and 10.4. |
-
 
 ### Supporting information
 
