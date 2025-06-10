@@ -3,7 +3,7 @@ title: 'Release Notes'
 description: ''
 ---
 Publication history:<br/>
-**2025-06-10:** Update release note entry 588808 (below); changed it from a new improvement to a breaking change.<br/>
+**2025-06-10:** Updated release note entry 588808 (below); changed it from a new improvement to a breaking change.<br/>
 **2024-05-24:** Released Sitecore Connect for Content Hub 5.2.0.
 
 Return to the [Sitecore Connect for Content Hub 5.2](/downloads/Sitecore_Connect_for_Content_Hub/5x/Sitecore_Connect_for_Content_Hub_520) release page.
