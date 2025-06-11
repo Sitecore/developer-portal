@@ -35,7 +35,7 @@ Return to the [Sitecore Connect for Content Hub 5.2](/downloads/Sitecore_Connect
 ## Breaking Change
 | Description | Ref. |
 | --- | --- | 
-| Replaced two mapping attributes: `stylelabs-content-id` was replaced with `dam-id`, and `stylelabs-content-type` was replaced with `dam-content-type`. Update your code if it depends on these attributes. The existing synchronization will continue to recognize the former values, but will not automatically replace them.  | 588808 |
+| (DAM) Replaced two mapping attributes: `stylelabs-content-id` was replaced with `dam-id`, and `stylelabs-content-type` was replaced with `dam-content-type`. Update your code if it depends on these attributes. The existing synchronization will continue to recognize the former values, but will not automatically replace them.  | 588808 |
 
 ## Resolved issues
 | Description | Ref. |
