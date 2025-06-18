@@ -8,8 +8,9 @@ import { useRouter } from 'next/router';
 
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
-import { Heading, Link, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, Heading, Link, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react';
 import { mdiArrowRightCircle } from '@mdi/js';
+import { useEffect, useState } from 'react';
 import { PromoCardProps, PromoList } from '../components/cards';
 import { SocialFeeds } from '../components/links';
 import GithubContributionNotice from '../components/markdown/contribute';
@@ -20,6 +21,7 @@ import { Hero } from '../components/ui/sections';
 import useManifestRoutes from '../hooks/useManifestRoutes';
 import { ManifestConfig } from '../lib/interfaces/manifest';
 import { getItemUrl } from '../lib/manifestHelper';
+import { replaceOutgoingLinks } from '../lib/markdown/replaceLinks';
 import { ThreeColumnLayout } from './ThreeColumnLayout';
 
 type ArticlePageProps = {
@@ -48,6 +50,13 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
     sectionTitles.push(...pageInfo.headings);
   }
 
+  const [processedContent, setProcessedContent] = useState(pageInfo.parsedContent ?? '');
+
+  useEffect(() => {
+    // If the content changes or on page load, replace the links
+    setProcessedContent(replaceOutgoingLinks(pageInfo.parsedContent ?? ''));
+  }, [pageInfo.parsedContent]);
+
   const Nav = pageInfo.hasInPageNav != false ? customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} key={router.asPath} /> : null : null;
 
   return (
@@ -64,7 +73,22 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
             </Heading>
           )}
           <PromoList data={promoBefore} />
-          <RenderContent content={pageInfo.parsedContent} />
+
+          {router.asPath.includes('/downloads') && (
+            <Alert status="warning" mb={4}>
+              <AlertIcon />
+
+              <AlertDescription w="full">
+                We have discovered an issue with some of our Developer downloads. Out of an abundance of caution we have temporarily disabled download ability while we address this issue. We hope to have access available as soon as possible; in the
+                meantime please work with your customer support / account executive representative to get the access you need.
+                <div style={{ marginTop: '1rem' }}>
+                  For information on how to file a support case, please refer to <Link href="https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0654910#HowToCreateASupportCase">this article</Link>
+                </div>
+              </AlertDescription>
+            </Alert>
+          )}
+
+          <RenderContent content={processedContent} />
 
           {/* Child Navigation */}
           {children && (
