@@ -5,6 +5,11 @@ origin: https://dev.sitecore.net/Downloads.aspx
 hasInPageNav: false
 ---
 
+<Alert variant='warning' mb={4}>
+  <AlertIcon />
+  We have discovered an issue with some of our Developer downloads. Out of an abundance of caution we have temporarily disabled download ability while we address this issue. We hope to have access available as soon as possible; in the meantime please work with your customer support representative to get the access you need.   
+</Alert>
+
 ## Platform DXP Releases
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
