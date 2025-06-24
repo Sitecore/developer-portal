@@ -39,6 +39,7 @@ This release is the first update to Sitecore XP 10.4. It contains important upda
 | Context | Description | Ref. |
 | --- | --- | --- |
 | Content Editor | Collapsing sections in the Reset Field Values dialog throws an exception. | 95996 |
+| Content Editor | After an item with publishing restrictions is opened in the Experience Editor, the wrong version is displayed in the Content Editor in the upper-right pane. | 619652 |
 | Content Editor | The item path is not resolved correctly in live mode. | 624166 |
 | Content Editor | Inserting an internal link for an image allows selecting media items only for non-admin users. | 624315 |
 | Content Editor | An new log folder gets created when a new language is added in the Content Editor, instead of using the existing log folder. This issue occurs in Azure Web App deloyments of Sitecore XP. | 624954 |
