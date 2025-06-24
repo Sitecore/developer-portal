@@ -53,6 +53,7 @@ async function fetchData<T>(url: string): Promise<T> {
     throw new Error('Failed to fetch data: ' + response.statusText);
   }
   const data: T = await response.json();
+
   return data;
 }
 
@@ -77,7 +78,7 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
   const filters = [
     { key: 'project', value: 'SMAP', operator: FilterOption.Equals },
     { key: 'cf[15395]', value: '1', operator: FilterOption.Equals }, // External roadmap
-    //{ key: 'cf[15187]', value: 'EMPTY', operator: FilterOption.Equals }, // Idea archived
+    { key: 'cf[17325]', value: 'EMPTY', operator: FilterOption.Equals }, // Idea archived
     { key: 'status', value: 'archived', operator: FilterOption.NotEquals }, // second archived status
     { key: 'cf[15180]', value: '"Won\'t do"', operator: FilterOption.NotEquals }, // phase does not equal "Won't do"
   ];
@@ -97,7 +98,6 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
   }
 
   response.issues = allIssues;
-
   return response;
 }
 
@@ -185,7 +185,6 @@ export function getStatusColor(status: string): string {
 }
 
 export async function getIssueTypeSchema({ projectKey, issueTypeId }: { projectKey: string; issueTypeId: string }): Promise<IssueTypeSchema> {
-  console.log(`getting the issue type schema for ${projectKey} with issueType ${issueTypeId}...`);
   const response = await fetch(`${jiraBaseUrl}/issue/createmeta/${projectKey}/issuetypes/${issueTypeId}`, {
     method: 'GET',
     cache: 'no-cache',
