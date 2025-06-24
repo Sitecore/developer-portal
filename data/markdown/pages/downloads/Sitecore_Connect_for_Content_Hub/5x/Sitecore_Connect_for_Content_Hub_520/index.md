@@ -2,14 +2,7 @@
 title: 'Sitecore Connect™ for Content Hub 5.2.0'
 description: ''
 ---
-
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    July 24, 2024: published ltsc2019 (a.ka. 1809) container images to Sitecore Container Registry (SCR).
-  </Alert>
-
 Sitecore Connect™ for Content Hub enables web editors and content/digital marketers:
-
 - To work with content created in Sitecore Content Hub. Content is automatically created and updated when changes are made in Sitecore Content Hub.
 - To select assets directly from DAM from within the Sitecore environment. Users can select and Incorporate assets into their web and digital experience creation and delivery.
 
