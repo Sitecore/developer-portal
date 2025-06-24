@@ -2,10 +2,9 @@
 title: 'Release Notes'
 description: ''
 ---
-**2024-06-23:** Released Sitecore Publishing Service 8.0.3
+**2024-06-25:** Released Sitecore Publishing Service 8.0.3
 
-- [New features/improvements](#new-featuresimprovements)
-- [Breaking changes](#breaking-changes)
+Return to the [Sitecore Publishing Service 8.0.3](/downloads/Sitecore_Publishing_Service/8x/Sitecore_Publishing_Service_803) release page.
 
 ## New features/improvements
 | Description | Ref. |
@@ -16,6 +15,6 @@ description: ''
 ## Breaking changes
 | Description | Ref. |
 | --- | --- |
-| The Sitecore Publishing Service now requires encrypted communication with SQL Server by default. This change is due to the adoption of a newer version of Microsoft.Data.SqlClient that enforces stricter security measures. Ref: *Encrypted Communication with SQL Server* section in the [Sitecore_Publishing_Service_Installation_and_Configuration_Guide_8.0](<https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/8x/Sitecore_Publishing_Service_Installation_and_Configuration_Guide_8.0.pdf>). | 613902 |
+| The Sitecore Publishing Service now requires encrypted communication with SQL Server by default. This change is due to the adoption of a newer version of Microsoft.Data.SqlClient that enforces stricter security measures. Ref: *Encrypted Communication with SQL Server* section in the [Sitecore_Publishing_Service_Installation_and_Configuration_Guide_8.0](<https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/8x/Sitecore_Publishing_Service_803/Sitecore_Publishing_Service_Installation_and_Configuration_Guide_8.0.pdf>). | 613902 |
 | .NET 8 introduces a behavioral change as part of a bug fix to make `ActivatorUtilities.CreateInstance` behave more consistently. Ref: [ActivatorUtilities.CreateInstance behaves consistently](<https://learn.microsoft.com/en-us/dotnet/core/compatibility/extensions/8.0/activatorutilities-createinstance-behavior#new-behavior>). | N/A |
 

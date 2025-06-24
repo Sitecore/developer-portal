@@ -60,10 +60,10 @@ hasInPageNav: false
   link2href="/downloads/Sitecore_Codeless_Schema_Extensions"
 />
 <Download 
-  title="Sitecore Publishing Service 7.0"
+  title="Sitecore Publishing Service 8.0.3"
   description="Optional service as an alternative to the default SXP publishing mechanism, focusing on high performance publishing in large-scale deployments."
   link1text="Get latest"
-  link1href="/downloads/Sitecore_Publishing_Service/7x/Sitecore_Publishing_Service_7020"
+  link1href="/downloads/Sitecore_Publishing_Service/8x/Sitecore_Publishing_Service_803"
   link2text="See all versions"
   link2href="/downloads/Sitecore_Publishing_Service"
 />
