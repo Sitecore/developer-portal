@@ -3,6 +3,14 @@ title: "Sitecore Publishing Service"
 description: "The Publishing Service is an opt-in mechanism for high-performance publishing in large scale Sitecore setups."
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service.aspx
 ---
+<Card variant='outlineRaised' px={0} mb={8}>
+<CardHeader>
+## Sitecore Publishing Service 8.x
+</CardHeader>
+<CardBody>
+[Sitecore Publishing Service 8.0.3](/downloads/Sitecore_Publishing_Service/8x/Sitecore_Publishing_Service_803)
+</CardBody>          
+</Card>
 
 <Card variant='outlineRaised' px={0} mb={8}>
 <CardHeader>
