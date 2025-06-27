@@ -102,7 +102,7 @@ This will pull the repository into the Codespace ready to run. Before running, t
 
 To run the web application, first the developer needs to configure the environment variables for the solution.
 
-In Codespaces (or VS Code), navigate to the folder containing your Next.js application. In the starter kit, this is located at `./src/sxastarter`.
+In Codespaces (or VS Code), navigate to the folder containing your Next.js application. In the starter kit, this is located at `./headapps/nextjs-starter`.
 
 Add an `.env.local` file and populate the following environment variables with the values from your XM Cloud instance (do not commit these changes back to the repository):
 
