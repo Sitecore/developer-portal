@@ -4,7 +4,7 @@ description: 'Learn how to setup Sitecore Content Serialization (SCS) for XM Clo
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-04-25'
+lastUpdated: '2025-04-30'
 created: '2023-12-22'
 audience: ['Architect','Technical Implementer']
 ---

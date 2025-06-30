@@ -71,7 +71,7 @@ Every time this dependency is activated or deactivated by configuration change, 
 </Alert>
 
 ### Item layout’s dependencies and their ancestors dependency
-The IDs of ancestors of item layout dependencies collected in *Item with layout and its datasources and partial designs dependency* will be stored to Edge during publishing.
+The IDs of ancestors of item's layout dependencies collected in *Item with layout and its datasources and partial designs dependency* will be stored to Edge during publishing.
 
 This dependency can be deactivated using the following config -
 

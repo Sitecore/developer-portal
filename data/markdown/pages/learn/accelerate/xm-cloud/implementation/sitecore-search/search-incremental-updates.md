@@ -5,7 +5,7 @@ hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
 created: '2025-02-27'
-lastUpdated: '2025-02-27'
+lastUpdated: '2025-06-30'
 audience: ['Architect','Technical Implementer', 'System Administrator', 'User']
 ---
 
@@ -16,7 +16,7 @@ This article discusses how to integrate Sitecore Search with XM Cloud. If you ne
 
 Any functionality that depends on incremental updates, including the following, must have [Snapshot Publishing](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html) configured in XM Cloud.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements and an end-to-end implementation needs to be setup considering your full authoring lifecycle and requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
 
 
 ## Execution
@@ -91,7 +91,7 @@ If the crawler is going to be scheduled, which is most of the cases, it is recom
 ### Middleware
 Now that XMCloud and Search is setup, we need to move to the Middleware to setup the incremental update - in this recipe, we’ll focus on content updates to existing pages, see [Insights](#insights) for more information on Create/Delete and handling large updates. The Middleware can be implemented in any technology of your preference. The main steps to implement are always the same:
 
-1. Receive the [webhook notification](https://doc.sitecore.com/xmc/en/developers/xm-cloud/webhooks.html) from Experience Edge - The webhook payload has a JSON format like the snippet below named “Webhook notification format”, where the cardinality of the itemupdates is equal to the number of items that XM Cloud sends to Edge, for this reason a single massive publishing operation could generate more than one webhook notification like a chain. The chain is identified via the field invocation_idand terminated when the field continuesassumes false as value. 
+1. Receive the [webhook notification](https://doc.sitecore.com/xmc/en/developers/xm-cloud/webhooks.html) from Experience Edge - The webhook payload has a JSON format like the snippet below named “Webhook notification format”, where the cardinality of the itemupdates is equal to the number of items that XM Cloud sends to Edge, for this reason a single massive publishing operation could generate more than one webhook notification like a chain. The chain is identified via the field `invocation_id` and terminated when the field `continues` assumes `false` as value.  You could decide to process one notification at a time or wait for the whole chain of notifications (the final batch when `continues:false`) from Experience Edge before processing it; it is an implemented choice. 
 
 ```json
 {
@@ -130,7 +130,7 @@ Now that XMCloud and Search is setup, we need to move to the Middleware to setup
 
 2. Filter the `updates` array by selecting the ones with `entity_definition` equals to `LayoutData`.
 3. It is important to remove the ‘-layout’ token from the `identifier` and format it as GUID otherwise the graphQL query may not work.
-4. For each identifier, retrieve the `Title` and the `Content` from Experience Edge via graphQL query.
+4. For each identifier, retrieve the `Title` and the `Content` from Experience Edge via graphQL (the GraphQL query and the fields to retrieve can change based on your requirements; in this recipe, we are going to patch the title and the content of the document).
   <ul>
   <li>It could be done in one single query, for example the query below is able to retrieve more than one item in a single call. As you can see, one or more template ID(s) can be used to be sure to retrieve the expected contents.</li>
   <li>If we are updating existing pages, the field related to the Category will not be retrieved because it is expected that it will not change as it is related to the section of the website.</li>
@@ -235,7 +235,7 @@ const response = await fetch(`https://${REGION}.sitecorecloud.io/ingestion/v1/do
 ```
 
 ### Experience Edge
-Once the Middleware is setup, it needs to be registered via [webhook](https://doc.sitecore.com/xmc/en/developers/xm-cloud/webhook-objects.html) as _OnUpdate_:
+Once the Middleware is setup, it needs to be [registered](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/create-a-webhook.html) via [webhook](https://doc.sitecore.com/xmc/en/developers/xm-cloud/webhook-objects.html) as _OnUpdate_:
 
 ```typescript
 curl https://edge.sitecorecloud.io/api/admin/v1/webhooks -i -X POST /
@@ -263,7 +263,7 @@ Setting this up for an end-to-end setup, there are other area’s that need to b
 <li>Consider the creation of new pages in XM Cloud (documents in Search) in comparison to updates. It could be implemented by executing a [create document](https://doc.sitecore.com/search/en/developers/search-developer-guide/creating-a-document-by-passing-attribute-values.html) if the patch operation returned 404. Another alternative is using [update](https://doc.sitecore.com/search/en/developers/search-developer-guide/updating-a-document.html) - the PUT (update) and PATCH (partially update) methods differ: <ul><li>Use `PUT` (update) to replace all fields with the values you pass and delete fields you do not pass. If the document does not exist, the'PUT' operation returns 200 and creates the document.</li><li>Use `PATCH` to replace the fields you pass and leave other fields as-is. If the document does not exist, the `PATCH` operation returns 404.</li></ul>For this reason, in our case, if you implement `PUT` (update) then you need to pass the attributes `name`, `description` and `category`.</li>
 <li>In this recipe, we use the meta data to index a page - the page content could be indexed by retrieving the `rendered` field in the GraphQL query. </li>
 <li>Regarding the page locale, only `en` is used. The locale is part of the webhook notification, field `entity_culture`. You can leverage it to work with a multi-locale source in Search. </li>
-<li>The Middleware needs to handle removing of existing pages. In this case you should receive a [notification](https://doc.sitecore.com/xmc/en/developers/xm-cloud/webhook-objects.html#webhookedit) from Experience Edge with `operation: 'Delete'`, allowing you to follow the same pattern to implement a [delete](https://doc.sitecore.com/xmc/en/developers/xm-cloud/webhook-objects.html#webhookedit) operation for Search. </li>
+<li>The Middleware needs to handle removing of existing pages. In this case you should receive a [notification](https://doc.sitecore.com/xmc/en/developers/xm-cloud/webhook-objects.html#webhookedit) from Experience Edge with `operation: 'Delete'`, allowing you to follow the same pattern to implement a [delete](https://doc.sitecore.com/xmc/en/developers/xm-cloud/webhook-objects.html#webhookedit) operation for Search. As per [regular publishing practices](https://doc.sitecore.com/xmc/en/users/xm-cloud/publishing.html), the parent of the deleted item needs to be published with it's sub items to trigger the unpublish. </li> 
 <li>Web pages generated by the front-end application often use multiple, external datasources in addition to the content inside of XM Cloud, in which case you would need to retrieve this additional information from the middleware and update the documents in Search accordingly. </li>
 <li>Updates are always coarse because it could be very complex to selectively identify from the source which attributes have been modified for each document. </li>
 </ol>
@@ -334,7 +334,7 @@ or if it is not:
 
 <figure><img src="/images/learn/accelerate/xm-cloud/single-item-publish-event.png" alt="Single publish event"/><figcaption>Single Publish event</figcaption></figure>
 
-If it is a full site publish operation then the middleware will not update Search until an `OnEnd` notification (Experience Edge notification) will come.
+If it is a full site publish operation then the middleware will susped to update Search until an `OnEnd` notification (Experience Edge notification) will come. All notification between `publish:begin` and `OnEnd` will be dropped. 
 
 
 

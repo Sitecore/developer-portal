@@ -19,8 +19,7 @@ Let's dissect the fundamental components of this planning stage—and how nailin
 Good planning sets the tone. It allows you to manage risk, move with speed, and deliver value early. However, a good plan is more than just sequencing tasks—instead, it is a matter of making conscious, fact-based decisions against business priorities. This involves making decisions on what you will be migrating, when go live, what will retire, and whose input will be needed when.
 
 ### Project Plan
-Project Plan
-
+ 
 There’s no one-size-fits-all approach to migrating to XM Cloud - depends on your business needs, technical sophistication, and risk tolerance. You have to be aware of the different project—and how to cope with the fact of having old and new platforms up and running at the same time.
 
 - Big Bang: Everything goes live at once. - decisive, and time sensitive. 
@@ -99,24 +98,24 @@ The implementation phase can start earlier with Sprint Zero, which is used to se
 
 After Sprint Zero, priority should be given to the more simple components that can be used to generate content, followed by more complex components that might require functionality, interactions, or external data integrations. Based on this common ground, developers can create layouts and components that reflect the initial business goals - as much as it might be tempting to create all the components of the Home page first, this might not be the most productive approach.
 
-Once the MVP is delivered to the client, the authors, editors or marketers can already start creating content and feedback on processes, including editing workflow.
+Once the first release is delivered to the client, the authors, editors or marketers can already start creating content and feedback on processes, including editing workflow.
 
 
 ## Insights
 
-### Defining the MVP
-Bringing a site from concept to MVP quickly requires an agile approach with the right tools. Although it might look that this implementation is large, we should always look at how we can optimize it - 
+### Defining the first release
+Bringing a site from concept to the first release quickly requires an agile approach with the right tools. Although it might look that this implementation is large, we should always look at how we can optimize it - 
 
 <ul>
   <li>Prioritize only the essential features that deliver immediate value, deferring nice-to-have elements for later. Make sure you are building components and templates that you absolutely need; try and re-use components to cut development time.</li>
   <li>Conduct regular demos and stakeholder reviews to align expectations and prevent late-stage rework. Do you require a full-feature launch or can you break your timeline down to small, iterative releases?</li>
   <li>Make sure you are aware of OOTB features that can facilitate the implementation - for example - what’s the quickest answer to deployment: do we need to have a custom pipeline or can we rely on [XM Cloud Deploy](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)? </li>
-  <li>Content delays often stall projects. Start content modelling, migration, and creation in parallel with focus on essential pages and metadata, bringing in additional content after MVP. Make sure it’s clear what the path for content migration including automation is, from the start.</li>
-  <li>MVP is just the beginning. Use feature flags (example setting up [Modules](https://doc.sitecore.com/xmc/en/developers/xm-cloud/modules.html)) to roll out additional functionality over time. Leverage features such as [Personalize](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html) to refine and optimize based on user behaviour. Although you might be tempted to leave personalization features for later phases, these might be reduce implementation effort - example using Geography based conditions instead of building custom logic to provide content based on location.</li>
+  <li>Content delays often stall projects. Start content modelling, migration, and creation in parallel with focus on essential pages and metadata, bringing in additional content after first release. Make sure it’s clear what the path for content migration including automation is, from the start.</li>
+  <li>This first release is just the beginning. Use feature flags (example setting up [Modules](https://doc.sitecore.com/xmc/en/developers/xm-cloud/modules.html)) to roll out additional functionality over time. Leverage features such as [Personalize](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html) to refine and optimize based on user behaviour. Although you might be tempted to leave personalization features for later phases, these might be reduce implementation effort - example using Geography based conditions instead of building custom logic to provide content based on location.</li>
   <li>Consider Content Migration from the very beginning - does it make sense to move the existing content? Do you need to automate this process or will it be handled manually? What is the amount of content in place, considering multiple sites and languages. Additional information can be found on the [Content Audit](/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit) recipe.</li>
 </ul>
 
-Beyond tech stack, MVPs also need to take into account governance structures, authoring workflows, integration flexibility, and operational ownership. Getting out the door quickly is important. But getting out the door with something that can live and evolve  is what separates long-term success from short-term success.
+Beyond tech stack, first release also need to take into account governance structures, authoring workflows, integration flexibility, and operational ownership. Getting out the door quickly is important. But getting out the door with something that can live and evolve  is what separates long-term success from short-term success.
 
 It's simple to only concentrate on what is required to ship. However if you don't consider long-term operational realities, you're establishing future teams up for painful rework, tech debt, and unnecessary risk. 
 

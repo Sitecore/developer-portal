@@ -4,7 +4,7 @@ description: 'Make expectations, responsibilities, and governance clear to keep 
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-04-30'
+lastUpdated: '2025-06-16'
 created: '2025-04-30'
 audience: ['All']
 ---
@@ -18,6 +18,9 @@ When there is no clear strategy on migration scope, stakeholder alignment, opera
 ## Execution
 The execution team should build a shared foundation early on by clearly defining your migration scope, aligning stakeholders around priorities and timeline, delegating operational tasks, gathering practical requirements, and creating governance that balances autonomy with standards.
 
+Business adoption is crucial for any project - it's a shift in how teams operate and deliver value. To achieve alignment, engage stakeholders early on in business, content, IT, and marketing functions. Cast the move in terms of business results - accelerated time-to-market, improved personalization, and a more contemporary digital experience- instead of platform functionality.
+
+
 ### Define Scope
 
 Take a moment prior to diving in and building something on XM Cloud to take an honest look at what you're delivering today—and what will get left behind for now, and what will get left behind for now to get reviewed again in the future.. With no scope limits, teams are at risk of over commitment, burnout, or tackling features that deliver no timely value.
@@ -27,10 +30,20 @@ Start out by creating an exhaustive list of your current digital landscape:
 - Which of the external functions (e.g., search, analytics, CRM) are mandatory now vs. nice-to-have?
 - Which functionalities are required as user- and internal team-capabilities?
 
+As an example, the following categorizes the different types of considerations -
+
+| Item                  | Type        | Action     | Justification                     | Owner         | Notes                             |
+|-----------------------|-------------|------------|----------------------------------|----------------|-----------------------------------|
+| Homepage              | Page        | Redesign   | Outdated UX, not mobile optimized | UX Lead        | Align with new brand              |
+| News articles         | Content     | Migrate as-is | Structured, stable taxonomy     | Content Ops    | Review metadata fields            |
+| Hero banner component | Component   | Rebuild    | Custom logic, legacy tech         | Web Developer  | Use new personalization rules     |
+| Search integration    | Integration | Replace    | Old on-prem, move to SaaS         | Architect      | Plan move to Sitecore Search      |
+
+
 Lastly, prioritize this list based on three key parameters:
-- Business value: What contributes to impact or alleviates pain right away?
-- Complexity: What has minimal effort vs. high impact?
-- Readiness: What is established and familiar within stakeholders?
+- What contributes to impact or alleviates pain right away?
+- What has minimal effort vs. high impact?
+- What is established and familiar within stakeholders?
 
 Finally, set a phased process starting with what is considered Time to Impact(TTI) — something useful, working, and focused. Everything else can wait in later phases, with timelines and standards decided on first.
 
@@ -49,7 +62,7 @@ As importantly, outline how scope will be managed in the future. XM Cloud accomm
 
 As straightforward suggestions:
 - Hold an collaborative planning meeting with IT, marketing, business leaders, and lawyers. Use visual tools like journey maps or swimlanes to display dependencies and decision points.
-- Set scope gates—milestones where scope is checked, frozen, or re-evaluated. Define what a scope change is (e.g., adding a new integration or legal requirement).
+- Set scope gates — milestones where scope is checked, frozen, or re-evaluated. Define what a scope change is (e.g., adding a new integration or legal requirement).
 - Use a tangible, human-readable timeline instead of intangible project workstreams. "*Home page ready by June 15" is easier to align around than "Sprint 4: Component X Finalized.*"
 
 Stakeholder alignment is not a one-point of check—morally, it's a continuous promise. Visual planning, documented collaboration, and formal decision points prevent miscommunication and scope creep as you scale.
@@ -94,7 +107,7 @@ XM Cloud enables decentralized teams to go faster—but speed without governance
 
 Great governance provides teams with what they need to build with confidence, while keeping the business secure, consistent, and compliant.
 
-| Action | What It Involves |
+| Action | What it involves |
 | -- | -- |
 | Define Brand, Content & Design Governance  | Set standards for tone, visual style, naming conventions, and content structure. Use reusable components, templates, and brand guidelines across markets. | 
 | Establish Roles & Permissions | Use Sitecore Cloud Portal to configure identity management and role-based access—so the right people can create, review, and publish without bottlenecks. |
@@ -108,8 +121,19 @@ Governance shouldn't slow you down - it should enable you to put in place lightw
 - Enable Governance into tools and templates—not merely documentation.
 - Revisit your governance model quarterly as you scale to new sites or teams.
 
+An example governance framework would cover:
+
+| Area             | Questions to define                                      | Example Roles                         | Tools                            |
+|------------------|----------------------------------------------------------|----------------------------------------|----------------------------------|
+| Decision-making  | Who decides what's in scope? Who owns sign-off?          | Product Owner, Business Lead           | RACI matrix                      |
+| Process          | What’s the approval flow for scope changes or blockers?  | Project Manager, Architects            | JIRA workflow                    |
+| Standards        | How will we ensure consistency across teams/sites?       | Developer, Content Strategist     | Design system, coding guidelines |
+| Visibility       | How is governance communicated and enforced?             | Governance Lead, PMO                   | Confluence, Weekly sync          |
+| Risk Management  | How do we escalate unresolved conflicts?                 | Sponsor, CTO                           | Risk log, Escalation plan        |
+
+
 ## Insights
-Some features or requirements might not be needed for the MVP —but they can make or break your long-term success. These considerations that get missed in early planning are still relevant to make better overall decisions, and can set your team up to scale smoothly as you grow.
+Some features or requirements might not be needed for the first release —but they can make or break your long-term success. These considerations that get missed in early planning are still relevant to make better overall decisions, and can set your team up to scale smoothly as you grow.
 
 ### Change & Scale Management
 
@@ -119,7 +143,7 @@ With all the options, tools, and moving parts, it's easy to confuse or redo. Kee
 
 As you evolve, don't let old pieces drag you down. Every system needs a process of substitution. Without decommissioning and versioning, legacy templates, dormant integrations, and out-of-date styles pile up. Retire in your build cycle. When something new comes out, determine what gets substituted—and when. That's how you stay lean and ready for what's next.
 
-And as XM Cloud takes infrastructure concerns off your plate, don't forget your boundaries—literally. Get to know service quotas, data size limits, API rate limits, and how data rules apply to your setup. These are not obstacles. They're design cues—empowering you to build smarter from the ground up.
+And as XM Cloud takes infrastructure concerns off your plate, don't forget your boundaries—literally. Get to know service quotas, data size limits, API rate limits, and how data rules apply to your setup so you are building smarter.
 
 ### People & Process
 
@@ -129,19 +153,11 @@ XM Cloud redefines roles - creators are closer to the software, marketers have m
 
 Take also the opportunity to understand what content you actually need. You might find that a large chunk of your site hasn’t been visited for a long period and are not driving value. Identify what’s outdated, unused, or irrelevant. Review the [Content Audit](/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit) documentation for further detail.
 
-Post-go-live, ownership is the difference between momentum and chaos. Who owns performance monitoring? Who runs experiments? Who does content QA or regressions fixes? Questions that need to have definitive, clear answers. Without them, issues linger, and opportunities get lost. Build your post-launch model with intention. Assign responsibility, create escalation paths, and empower people to lead—not just react.
-
-And let's talk about agility. It's not necessarily about being fast, it's about moving forward with intent. Too often, teams confuse speed and achievement, but speed without direction is just churn. Establish rituals that force reflection: regular retrospectives, goal check-ins, and stakeholder syncs that ask, "Are we still trying to solve the right problem?" True agility gives your team room to shift direction without losing momentum.
-
 ### Optimization & Insights
 
 Launch is just the beginning. Real value is in the way you watch, learn, and hone after your site goes live. XM Cloud gives you the means to go fast, but to make improved what matters, you need to see what matters. That's where smart observability comes into play.
 
-Monitoring is no longer an IT job. Everyone—development, marketing, operations—has a stake in performance and this is an opportunity to clean up legacy implementation issues. It's not enough to know your site "is up." You need to know whether it's working for your users. Are personalization rules firing as expected? Is content being stuck in publishing? Are APIs slowing down key journeys? When you instrument with metrics that track the experience, not infrastructure, you empower your teams to act—not react.
-
-And while personalization isn't necessarily in your MVP, you should architect for personalization. Too many teams hard-code text, bake into templates, or ignore user context—only to find themselves re-architecting when they need to personalize in the future. By architecting content to be flexible day one, you open the door to growth into personalization without rework. Think of it as future-proofing your story.
-
-And then there is experimentation. XM Cloud enables the newest testing methods—A/B, multivariate, split testing—and if you're serious about maximizing user experience, this is something you simply can't do on an opt-in basis. Experimentation, though, can't be optional. Make your strategy up front. Choose the right tooling, decide who owns the test strategy, and get aligned on success measurement. Done well, experimentation becomes part of your culture—not just a campaign tactic.
+Review the [Operational Governance]() recipe for further details on how to setup the right governance and measures in place post go-live.
 
 
 ## Related Recipes
@@ -149,6 +165,8 @@ And then there is experimentation. XM Cloud enables the newest testing methods�
 <Row columns={2}>
 
  <Link title="Requirements Gathering" link="/learn/accelerate/xm-cloud/pre-development/discovery/requirements-gathering"/>
+ <Link title="Operational Governance" link="/learn/accelerate/xm-cloud/optimization/operational-governance"/>
+
  <Link title="Hosting Head Application" link="/learn/accelerate/xm-cloud/pre-development/hosting-applications"/>
  <Link title="Content Audit" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit"/>
  <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project"/>
@@ -159,3 +177,5 @@ And then there is experimentation. XM Cloud enables the newest testing methods�
 <Row columns={2}>
  <Link title="XM Cloud Documentation" link="https://doc.sitecore.com/xmc"/>
 </Row>
+
+

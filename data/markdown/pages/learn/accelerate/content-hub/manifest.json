@@ -35,6 +35,21 @@
           ]
         },
         {
+          "title": "Data model",
+          "path": "data-model",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "Domain Modelling",
+              "path": "domain-modelling"
+            },
+            {
+              "title": "Content Structuring",
+              "path": "content-structuring"
+            }
+          ]
+        },
+        {
           "title": "Sprint Zero",
           "path": "sprint-zero",
           "ignoreLink": true,
@@ -73,6 +88,11 @@
             {
               "title": "Paths across Entity Definitions",
               "path": "paths-across-entity-definitions"
+            },
+            
+            {
+              "title": "Reporting",
+              "path": "reporting"
             }
           ]
         },
@@ -84,7 +104,11 @@
             {
               "title": "Taxonomy vs Option Lists",
               "path": "taxonomy-vs-option-list"
-            }
+            },
+            {
+              "title": "Migrating Assets",
+              "path": "asset-migration"
+            }            
           ]
         },
         {
@@ -143,10 +167,6 @@
           ]
         },      
         {
-          "title": "State Flow and Approval",
-          "path": "state-flow-and-approval"
-        },
-        {
           "title": "Integrations",
           "path": "integrations",
           "ignoreLink": false,
@@ -176,7 +196,22 @@
           "title": "Digital Rights Management",
          "path": "digital-rights-management",
          "ignoreLink": false    
-       }        
+       },
+        {
+          "title": "Languages",
+          "path": "languages",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Content Translation",
+              "path": "content-translation"
+            },            
+            {
+              "title": "UI Translation",
+              "path": "ui-translation"
+            }
+          ]
+        }        
       ]
     },
     {
@@ -221,16 +256,33 @@
         {
           "title": "Home page customizations",
           "path": "home-page-customizations"
-        },        
+        },    
+        {
+          "title": "Performance Optimization",
+          "path": "performance-optimization"
+        },               
         {
           "title": "Reporting",
           "path": "reporting",
           "ignoreLink": false,
           "children": [
             {
+              "title": "Asset download by type",
+              "path": "asset-download-by-type"
+            },
+            {
+              "title": "External component events",
+              "path": "external-component-events"
+            },            
+            {
               "title": "Most searched assets",
               "path": "most-searched-assets"
+            },            
+            {
+              "title": "Most applied facet filters",
+              "path": "most-applied-facet-filters"
             }
+            
           ]
         }
       ]

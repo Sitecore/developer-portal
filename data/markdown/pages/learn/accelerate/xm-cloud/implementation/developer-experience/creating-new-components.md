@@ -4,17 +4,14 @@ description: 'The developer workflow to create a new component'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-06-24'
+lastUpdated: '2025-06-08'
 created: '2024-08-23'
 audience: ['Architect','Technical Implementer']
 features: ['Component Builder','Pages', 'Next.JS SDK']
 ---
 
 ## Context
-
-This recipe will outline the developer workflow and steps to create new components within XM Cloud.
-
-There are 2 types of components within XM Cloud, the Component Builder (also called XM Cloud Components, or Front End as a Service) and standard React components. At the time of writing, XM Cloud Components are new and do not have a full feature set. Because of this, only standard React/Next.js components should be used. This will be updated once the full feature set of XM Cloud Components is available.
+There are 2 types of components within XM Cloud, the Component Builder (also called XM Cloud Components, or Front End as a Service) and standard React components. At the time of writing, XM Cloud Components do not have a full feature set for end-to-end development. Because of this, only standard React/Next.js components should be used. This will be updated once the full feature set of XM Cloud Components is available.
 
 ## Execution
 
@@ -160,7 +157,7 @@ When creating new components, sometimes we need to provide multiple presentation
 
 An example might be a `Promo` style of component where you might want to display an image on the left, and text content on the right, but also have the option of an image on the right with text content on the left.
 
-Creating a variant is a two-step process. First, you create the code for the variant in the component's `tsx` file. Then create a variant definition in the Content Editor with a matching name. Headless variants are site specific and live under: `\sitecore\content\<Site Collection>\<Site Root>\Presentation\Headless Variants`. See [Create a variant for a component](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-variant-for-a-component.html) for details.
+Creating a variant is a two-step process. First, you create the code for the variant in the component's `tsx` file. Then create a variant definition in the Content Editor with a matching name. Headless variants are site specific and live under: `\sitecore\content\<Site Collection>\<Site Root>\Presentation\Headless Variants`. Review [Create a variant for a component](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-variant-for-a-component.html) documentation for full details.
 
 #### Which JSS fields to use
 
@@ -175,12 +172,14 @@ Creating a variant is a two-step process. First, you create the code for the var
 
 #### External Data
 
-Review the [External Data Integration](/learn/accelerate/xm-cloud/implementation/external-data-integration) for additional information on approaching components that retrieve external data.
+Review the [External Data Integration](/learn/accelerate/xm-cloud/implementation/external-data-integration) recipe for additional information on approaching components that retrieve external data.
 
 ## Related Recipes
 
 <Row columns={2}>
   <Link title="Creating a Site" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site" />
+  <Link title="External Data Integration" link="/learn/accelerate/xm-cloud/implementation/external-data-integration" />  
+  <Link title="Component Design Best Practices" link="/learn/accelerate/xm-cloud/pre-development/developer-considerations/component-design-best-practices" />    
 </Row>
 
 ## Related Documentation

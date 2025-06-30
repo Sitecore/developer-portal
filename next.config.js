@@ -69,6 +69,8 @@ const redirects = [
   { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/nextjs-azure-app-services', destination: '/learn/accelerate/xm-cloud/pre-development/hosting-applications/nextjs-azure-app-services', permanent: true },
   { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/hosting-web-application', destination: '/learn/accelerate/xm-cloud/pre-development/hosting-applications/nextjs-azure-app-services', permanent: true },
   { source: '/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc', destination: '/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc', permanent: true },
+  { source: '/learn/accelerate/xm-cloud/final-steps/testing-strategy', destination: '/learn/accelerate/xm-cloud/final-steps/testing-framework', permanent: true },
+
 
   { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/dev-workflow-codespaces', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations/dev-workflow-codespaces', permanent:true  },
   { source: '/learn/faq/xm-cloud/migration', destination: '/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc', permanent: true },
@@ -85,6 +87,12 @@ const redirects = [
   { source: '/learn/faq/xm-cloud/development', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations', permanent: true },  
   { source: '/learn/faq/xm-cloud/features', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/sitecore-xm-cloud.html', permanent: true },  
   { source: '/learn/faq/xm-cloud', destination: '/learn/accelerate/xm-cloud/', permanent: true },  
+  { source: '/learn/faq/xm-cloud-embedded-personalization', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
+  { source: '/learn/faq/xm-cloud-embedded-personalization/general', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
+  { source: '/learn/faq/xm-cloud-embedded-personalization/feature-matrix', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
+  { source: '/learn/faq/xm-cloud-embedded-personalization/migrations-and-upgrades', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
+  { source: '/learn/faq/xm-cloud-embedded-personalization/architecture-data-retention', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
+  { source: '/learn/faq/xm-cloud-embedded-personalization/developer-experience', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
 
 
   { source: '/learn/accelerate/xm-cloud/implementation/redirect', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/redirect', permanent: true },
