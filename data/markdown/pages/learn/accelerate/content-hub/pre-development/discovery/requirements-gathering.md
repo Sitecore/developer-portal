@@ -4,7 +4,7 @@ description: 'Successful Project Plans start with strong requirements gathering'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-01-31'
+lastUpdated: '2025-06-27'
 created: '2024-12-13'
 audience: "All"
 ---
@@ -33,13 +33,14 @@ Workflows in Sitecore Content Hub define structured processes for managing asset
 
 The standard DAM workflow includes these steps:
 
-<ol>
-  <li>Upload: Add assets, such as photographs or videos, to Content Hub.</li>
-  <li>Edit Metadata: Enhance the asset by adding metadata (e.g., tags, descriptions) for improved searchability and categorization.</li>
-  <li>Review: Leverage annotation tools to provide feedback and ensure asset quality.</li>
-  <li>Share: Make approved assets available for download, editing, or distribution in campaigns.</li>
-  <li>Archive: Move unused assets to the archive for future reference or historical purposes.</li>
-</ol>
+| Step           | Description                                                                                             |
+|----------------|---------------------------------------------------------------------------------------------------------|
+| Upload         | Add assets, such as photographs or videos, to Content Hub.                                              |
+| Edit Metadata  | Enhance the asset by adding metadata (e.g., tags, descriptions) for improved searchability and categorization. |
+| Review         | Leverage annotation tools to provide feedback and ensure asset quality.                                 |
+| Share          | Make approved assets available for download, editing, or distribution in campaigns.                     |
+| Archive        | Move unused assets to the archive for future reference or historical purposes.                          |
+
 
 Content Hub also supports creating collections—groups of related assets that can be shared and collaborated on by multiple users. Collections streamline teamwork by enabling efficient asset sharing and feedback.
 
@@ -55,11 +56,13 @@ Content Hub also supports creating collections—groups of related assets that c
 
 
 <strong>Design Considerations</strong><br/>
-While in this phase, consider also any design decisions that need to be taken through the process, mainly:
-- *Templates*: Use project templates to streamline the creation of similar projects.
-- *Flexibility*: Basic and multi-stage projects allow ad-hoc task additions; jobs do not.
-- *Resource Management*: Both basic and multi-stage projects support resource and budget management, whereas jobs focus solely on workflow execution.
-- *Scalability*: Multi-stage projects are ideal for long-running campaigns that span multiple phases.
+| Feature             | Description                                                                                                       |
+|---------------------|-------------------------------------------------------------------------------------------------------------------|
+| Templates           | Use project templates to streamline the creation of similar projects.                                             |
+| Flexibility         | Basic and multi-stage projects allow ad-hoc task additions; jobs do not.                                          |
+| Resource Management | Both basic and multi-stage projects support resource and budget management, whereas jobs focus solely on workflow execution. |
+| Scalability         | Multi-stage projects are ideal for long-running campaigns that span multiple phases.                              |
+
 
 
 #### <strong>Governance and Functional Security</strong>
@@ -158,7 +161,11 @@ Review our [Migration Guide](/learn/accelerate/content-hub/final-steps/migration
 #### <strong>Reporting</strong>
 Reporting is essential for monitoring and evaluating the performance, progress, and outcomes of asset management within Sitecore Content Hub. By identifying key metrics and establishing clear reporting requirements, stakeholders can gain valuable insights into system usage, content effectiveness, asset performance, and overall project success.
 
-The reporting system should cater to both high-level strategic needs and detailed, granular insights for operational teams. Additional information on [Reporting Dashboard](https://doc.sitecore.com/ch/en/users/content-hub/reporting-dashboard.html) and [Reporting Pages](https://doc.sitecore.com/ch/en/users/content-hub/reporting-page.html ) can be found on our documentation.
+The reporting system should cater to both high-level strategic needs and detailed, granular insights for operational teams. Additional information can be found:
+
+- [Reporting Dashboard](https://doc.sitecore.com/ch/en/users/content-hub/reporting-dashboard.html) and [Reporting Pages](https://doc.sitecore.com/ch/en/users/content-hub/reporting-page.html ) can be found on our documentation.
+- Reporting best practices are found in the [Reporting in Content Hub](/learn/accelerate/content-hub/implementation/configuration/reporting) recipe
+- Reporting in Google Analytics is detailed in the [Customer Reporting](/learn/accelerate/content-hub/optimization/reporting) recipes.
 
 <strong>Requirements Gathering Checklist</strong>
 - What are the main objectives for reporting in Content Hub (e.g., tracking project progress, content performance, asset usage)?
@@ -182,6 +189,9 @@ When creating a Domain Model, this should include:
   <li><strong>Panel Groups</strong> - UI elements that organize metadata into visually distinct sections on entity detail pages. They improve usability by grouping related fields and can have security settings applied to control access.</li>
   <li><strong>Facets</strong> - Taxonomy-driven filters that allow users to refine search results dynamically. Facets improve the search experience by enabling users to drill down into specific metadata categories.</li>
 </ol>
+
+Further information on the domain model can be found in the [Domain modelling](/learn/accelerate/content-hub/pre-development/data-model/domain-modelling) and [Content structuring](/learn/accelerate/content-hub/pre-development/data-model/content-structuring) recipe.
+
 Below is a sample taxonomy definition for the "Brand" property:
 
 | Attribute | Details | 
@@ -263,6 +273,7 @@ Introducing the DAM workflow before delving into [Content Operations](https://do
 ## Related Recipes
 
 <Row columns={2}>
+    <Link title="Data model" link="/learn/accelerate/content-hub/pre-development/data-model" />
   <Link title="Migration Guide" link="/learn/accelerate/content-hub/final-steps/migration-guide" />
   <Link title="Scripts Guidance and Scenarios" link="/learn/accelerate/content-hub/implementation/custom-logic/scripting-guidance-and-scenarios" />
   <Link title="External Integrations" link="/learn/accelerate/content-hub/implementation/custom-logic/external-integrations" />

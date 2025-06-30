@@ -4,7 +4,7 @@ description: 'Learn how to forecast the cost and timeline of your project'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-02-01'
+lastUpdated: '2025-06-08'
 created: '2024-02-01'
 audience: ['Architect','Product Owner','Project Manager', 'User']
 ---
@@ -19,7 +19,7 @@ Creating an estimate for a Sitecore XM Cloud implementation is a large but impor
 
 This recipe assumes a level of experience with creating estimates. Rather than detail every aspect of the process, we will focus on how to make sure that the estimates are realistic, achievable, and informed by the right considerations.
 
-This recipe works very closely with the [XM Cloud Sample Project Plan](xm-cloud-sample-project-plan), [Requirements Gathering](../discovery/requirements-gathering), and [Preparing for an XM Cloud Project](preparing-for-an-xm-cloud-project) recipes.
+This recipe works very closely with the [Requirements Gathering](../discovery/requirements-gathering), and [Preparing for an XM Cloud Project](preparing-for-an-xm-cloud-project) recipes.
 
 ### Preparing for an Estimate
 
@@ -108,15 +108,13 @@ At the end of the estimation phase, the team should have a final justifiable fig
 
 ## Insights
 
-### Coping with Unknowns/Vague Requirements
-
-If client requirements are too vague to estimate without a large number of unknowns being listed, the estimate cannot be completed. Requirements need to be re-validated with the client and clarified so that the project does not start with requirements that could be misinterpreted by both the team or the client.
+If a project requirements are too vague to estimate without a large number of unknowns being listed, the estimate cannot be completed. Requirements need to be re-validated with the client and clarified so that the project does not start with requirements that could be misinterpreted by both the team or the client.
 
 If there is persistent difficulty in achieving clarity around requirements, consider recommending a dedicated, contractual discovery phase.
 
 ## Related Recipes
 
 <Row columns={2}>
-<Link title="XM Cloud Sample Project Plan" link="/learn/accelerate/xm-cloud/pre-development/project-planning/xm-cloud-sample-project-plan" />
+<Link title="Requirements Gathering" link="/learn/accelerate/xm-cloud/pre-development/discovery/requirements-gathering" />
 <Link title="Requirements Gathering" link="/learn/accelerate/xm-cloud/pre-development/discovery/requirements-gathering" />
 </Row>

@@ -24,6 +24,10 @@
           "path": "use-case-scoping"
         },
         {
+          "title": "Change Management",
+          "path": "change-management"
+        },
+        {
           "title":"Omnichannel Preparation",
           "path":"omnichannel-preparation"
         },
@@ -112,6 +116,18 @@
         }                  
       ]
     },
+    {
+      "title": "Optimization",
+      "path": "optimization",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Personalization Vision",
+          "path": "personalization-vision",
+          "ignoreLink": false
+        }                
+      ]
+    },    
     {
       "title": "Appendix I",
       "path": "appendix-i",

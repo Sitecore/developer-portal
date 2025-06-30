@@ -49,11 +49,15 @@
               "title": "Preparing for an XM Cloud Project",
               "path": "preparing-for-an-xm-cloud-project"
             },
-
             {
               "title": "Project Estimation",
               "path": "project-estimation"
-            }
+            },
+
+            {
+              "title": "Planning test strategy",
+              "path": "test-strategy-planning"
+            }            
           ]
         },
         {
@@ -89,7 +93,7 @@
               "path": "component-design-best-practices"
             },
             {
-              "title": "Development Workflow: Github Codespaces",
+              "title": "Development Workflow",
               "path": "dev-workflow-codespaces"
             },
             {
@@ -121,6 +125,10 @@
             {
               "title": "Content Audit",
               "path": "content-audit"
+            },
+                        {
+              "title": "Multisite Strategy",
+              "path": "multisite-strategy"
             },
             {
               "path": "publishing-to-edge",
@@ -157,21 +165,26 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Project Solution Setup",
-              "path": "project-solution-setup"
-            },
-            {
               "title": "Creating a Site",
               "path": "creating-a-site"
+            },
+            {
+              "title": "DevOps",
+              "path": "devops"
+            },
+            {
+              "title": "Project Solution Setup",
+              "path": "project-solution-setup"
             },
             {
               "title": "Setup Content Serialization",
               "path": "setup-content-serialization"
             },
             {
-              "title": "DevOps",
-              "path": "devops"
-            }
+              "title": "Testing foundations",
+              "path": "testing-foundations"
+            }            
+
           ]
         }
       ]
@@ -224,6 +237,10 @@
             {
               "title": "Localization",
               "path": "localization"
+            },
+            {
+              "title": "Page Listing",
+              "path": "page-listing"
             },
             {
               "title": "Preview Website",
@@ -302,8 +319,8 @@
           "path": "content-migration"
         },
         {
-          "title": "Testing Strategy",
-          "path": "testing-strategy"
+          "title": "Testing Framework",
+          "path": "testing-framework"
         },        
         {
           "title": "Go-Live Checklist",
@@ -325,13 +342,36 @@
           "path": "seo-web-optimization"
         },
         {
+          "title": "Operational Governance",
+          "path": "operational-governance"
+        },        
+        {
           "title": "Performance Optimizaton",
           "path": "performance-optimization"
-        }   ,
+        } ,
         {
           "title": "Publishing Optimizaton",
           "path": "publishing-optimization"
-        }       
+        },
+        {
+          "title": "User Experience Optimization",
+          "path": "user-experience-optimization",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Page personalization",
+              "path": "page-personalization"
+            },
+            {
+              "title": "Testing experiences",
+              "path": "testing-experiences"
+            },
+            {
+              "title": "Moving to Sitecore Personalize",
+              "path": "moving-to-Sitecore-personalize"
+            }               
+          ]          
+        }    
       ]        
     },
     {

@@ -16,7 +16,7 @@ Tracking the most searched terms on Content Hub’s Assets search page offers va
 
 ## Execution
 
-The following will walk through how to setup the rights events for GTA and GA to give you visibility into how users search within Content Hub. Once the data starts flowing, use it to refine your search and content strategy. Prioritize metadata improvements for high-frequency searches with poor results, identify popular terms to guide content creation, and analyze filter usage to streamline the search experience. Repeated searches can highlight unmet needs or training gaps, while low-search but important assets may need better tagging or promotion to boost visibility.
+The following guide will walk through how to setup the rights events for GTA and GA to give you visibility into how users search within Content Hub. Once the data starts flowing, use it to refine your search and content strategy. Prioritize metadata improvements for high-frequency searches with poor results, identify popular terms to guide content creation, and analyze filter usage to streamline the search experience. Repeated searches can highlight unmet needs or training gaps, while less-searched but important assets may need better tagging or promotion to boost visibility.
 
 **Step 1. Observing the `fulltextsearch` Event in Tag Assistant**
 

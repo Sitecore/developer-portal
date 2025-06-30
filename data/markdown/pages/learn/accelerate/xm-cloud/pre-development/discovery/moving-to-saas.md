@@ -30,9 +30,9 @@ Defining scope is not merely deciding what is to be moved from one CMS to anothe
 
 XM Cloud offers the agility to develop faster, iterate faster, and scale with no constraints of legacy platforms. However with no clear scope, that agility is at risk: features are committed to that cannot be delivered, timelines slip, and teams are pulled a million different ways.
 
-Use this phase to find your Minimum Viable Product (MVP): most minimal, most valuable version of experience you can ship to make impact. Prioritize content, features, and integrations by business value, readiness, and complexity—not necessarily what's currently included in legacy platform.
+Use this phase to find your Time to Impact: most minimal, most valuable version of experience you can ship to make impact. Prioritize content, features, and integrations by business value, readiness, and complexity—not necessarily what's currently included in legacy platform.
 
-Next, build a plan for what’s coming later. Subsequent phases can include features like personalization, integration with CRM, multilingualism, or regional websites—those don't necessarily have to be slowing down your MVP if not day one critical.
+Next, build a plan for what’s coming later. Subsequent phases can include features like personalization, integration with CRM, multilingualism, or regional websites—those don't necessarily have to be slowing down your build if not day one critical.
 
 This is where you can set expectations, avert surprises, and generate momentum
 
@@ -52,7 +52,7 @@ Training of the team working on this implementation will require to cover specif
 | -------- | ------- |
 | **Everyone**  | <ul><li>We are moving to a “Head” first approach – we are no longer building a single app but a decoupled front-end application and configuring a SaaS application, looking at API first.</li><li>Look at the processes you have in place, do these still work in a SaaS world?</li></ul>​ |
 | **Business, Marketing, Authors** | <ul><li>Understand basics of Content Authoring in the new platform  and  build and test out an end-to-end authoring workflow.​​</li><li>Question if your Marketing, Content and SEO Strategy still align to this new implementation? Redefine business, content, marketing workflows if required.​​</li><li>Does the content you have for the existing site fit into your new solution, or is there an Information Architecture refresh required?</li><li>Are the tools that you are using, for the implementation and day-to-day, still viable?​ For example:<ul><li>Many traditional, on-premise desktop-based tools are not designed for cloud environments and may lack the integration capabilities needed for SaaS platforms.</li><li>Some proprietary software tools are highly specialized and not built to operate in a SaaS environment due to licensing models, cloud incompatibility, or lack of collaborative features.</li><li>Tools with Limited API Support</li></ul></li></ul>    |
-| **Technical Teams**   | <ul><li>Your regular Sitecore Developer training is not enough, and we also need to focus also the API development and consumption.​ Looking ahead, we should be looking at a CMS Developer vs Web Application Developer roles.</li><li>Front-end focus including Next.JS, Angular etc focus on how to handle the Layout Services responses.​</li><li>Experience Edge and GraphQL including updates such as publishing.​</li><li>DevOps processes, managing cloud platforms such as Vercel/Netlify, Docker etc.​</li></ul>Review the [Preparing for an XM Cloud Project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project) recipe for additional details on the implementation team setup. |
+| **Technical Teams**   | <ul><li>Your regular Sitecore Developer training is not enough, and we also need to focus also the API development and consumption.​ Looking ahead, we should be looking at a CMS Developer vs Web Application Developer roles.</li><li>Front-end focus including Next.JS, Angular or ASP.NET Core focus on how to handle the Layout Services responses.​</li><li>Experience Edge and GraphQL including updates such as publishing.​</li><li>DevOps processes, managing cloud platforms such as Vercel/Netlify, Azure App Services, Docker etc.​</li></ul>Review the [Preparing for an XM Cloud Project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project) recipe for additional details on the implementation team setup. |
 
 ### Data Driven Implementation
 One of the most significant considerations for an implementation is that data-driven deployment isn't optional — it's a requirement. If you're launching a new platform, optimizing a current stack, or rolling out a significant upgrade, you must measure the impact not only at launch, but plan for this to be maintained reviewed in an ongoing basis.
@@ -112,7 +112,7 @@ Realistically, for each feature there is 1 solution out of 4 paths:
 | Solution Route | Implications | Examples |
 | - | - | - |
 | **Possible to maintain directly in XM Cloud (now or future roadmap)** | Direct use of components in component library or custom CI/CD pipeline | Forms: dedicate CMS forms functionality in case marketing automation or CRM forms not an option. |
-| **Customization moves to the front-end**  | Direct invocation of custom JavaScript of a component that has been isolated from the CMS and ca be called as a discretionary service. | Measurement of web vitals such as First Contentful Paint and client side analytics |
+| **Customization moves to the front-end**  | Direct invocation of custom JavaScript (Next.JS, Angular) or C# Razor (ASP.NET Core) code of a component that has been isolated from the CMS and can be called as a discretionary service. | Measurement of web vitals such as First Contentful Paint and client side analytics |
 | **Need to be handled by another product** | Specific modules handle specific responsibilities. | Sitecore Search should be utilized for search features, Sitecore Send for marketing automation and email. |
 | **New approach need to be devised** | Consider removing the workaround from the setup, or a new custom approach. | Specific extension in Sitecore XM/XP that cannot be refactored need to be re-thought. Website logs now live in the Rendering Host. |
 
@@ -126,7 +126,7 @@ Read more on the [External Data Integrations](https://developers.sitecore.com/le
 
 
 ### Content Delivery to Rendering Host: Middleware Features
-Hosting in XM Cloud involves platforms a Rendering Host like Vercel and Netlify, which differ from traditional PaaS environments. Features like redirects, custom resolvers, and secure publishing will require new approaches, especially if your current implementation is heavily customized.
+Hosting in XM Cloud involves platforms to contain decoupled Rendering Host such as Vercel and Netlify for Next.js, or Azure App Service containers, or other .NET Core-compatible environments for ASP.NET Core rendering hosts. These platforms differ significantly from traditional integrated Sitecore XM/XP environments. Features like redirects, custom resolvers, and secure publishing will require new approaches, especially if your current implementation is heavily customized.
 
 Unnecessary presentation details in MVC-based implementations may need to be rethought in the new headless environment.
 
@@ -137,7 +137,7 @@ In SaaS, publishing looks very different. Publishing to Content Delivery (CD) an
 
 Sitecore Edge supports a headless architecture, delivering content via APIs to front-end applications, which then render the content. ​When you publish a page from Pages, related items included in that page are also automatically published. 
 
-​Consider the content architecture that is required to make publishing easier for the end user - for customization on actions following Publishing, consider that these need to be moved to the ‘head-app'. As an example, timed publishing, when you need precise to the second publishing of your content, can be either setup using Personalization rules or leveraging the middleware from Next.JS.
+​Consider the content architecture that is required to make publishing easier for the end user - for customization on actions following Publishing, consider that these need to be moved to the ‘head-app'. As an example, timed publishing, when you need precise to the second publishing of your content, can be either setup using Personalization rules or leveraging the middleware from Next.JS or ASP.NET Core.
 
 Review th [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge) recipe for more information on Publishing. 
 
@@ -146,23 +146,52 @@ Review th [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/inform
 
 A key move of Paas to SaaS means a move to Headless, that can bring further performance improvements overall that should be considered while reviewing your project -
 
-- JSS applications created based on the JSS Next.js sample application support all the prerendering forms supported by Next.js applications and, like regular Next.js apps, use different data fetching strategies for each prerendering form.​
+<Tabs>
+  <TabList>
+    <Tab>Next.JS</Tab>
+    <Tab>ASP.NET Core</Tab>
+    <Tab>Angular</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        - JSS applications created based on the JSS Next.js sample application support all the prerendering forms supported by Next.js applications and, like regular Next.js apps, use different data fetching strategies for each prerendering form.​
 
-- Media handling including the use of Next.JS Image can improve the performance of images.​
+        - Media handling including the use of Next.JS Image can improve the performance of images.​
 
-- Avoid using JavaScript Renderings. This type of rendering initializes a new Node instance for each rendering and can noticeably influence load times.​
+        - Avoid using JavaScript Renderings. This type of rendering initializes a new Node instance for each rendering and can noticeably influence load times.​
 
-- Regular front end issues such as Unused third-party dependencies​
+        - Regular front end issues such as Unused third-party dependencies​.
 
-- Query only the necessary data from GraphQL – retrieve only the fields necessary. Make sure they are separated into .graphql files.​
+        - Query only the necessary data from GraphQL – retrieve only the fields necessary. Make sure they are separated into .graphql files.​
 
-- Review the Vercel and Netlify Insights that can provide a lot of information​
+        - Review the Vercel and Netlify Insights that can provide a lot of information​.
 
-- Review the Site building strategies that have been setup, use Next.js’s Bundle Analyzer for items such as Code splitting.​
+        - Review the Site building strategies that have been setup, use Next.js’s Bundle Analyzer for items such as Code splitting.​
 
-- Review Core Web Vitals regularly and make sure to optimize Largest Contentful Paint , First Input Delays etc​
+        - Review Core Web Vitals regularly and make sure to optimize Largest Contentful Paint , First Input Delays etc​.
 
-- Regularly review your SEO as you will find also performance blockers that might be effecting your score.​ Review the [On-page SEO Optimization](/learn/accelerate/xm-cloud/optimization/seo-web-optimization) recipe for further information
+        - Regularly review your SEO as you will find also performance blockers that might be effecting your score.​ Review the [On-page SEO Optimization](/learn/accelerate/xm-cloud/optimization/seo-web-optimization) recipe for further information.
+
+      </TabPanel>
+      <TabPanel>
+
+          - ASP.NET Core apps support Server-side rendering (SSR) pre-rendering form only.
+          - There are no specific media handling features implemented in Image tag helper comparable to ones existing in Image component of Next.js SDK. Those should be implemented additionally.
+          - There are no OOTB bundle analyzing tools or features (such as Webpack Bundle Analyzer or similar) included in the XM Cloud ASP.NET Core Starter Kit project. Such tools should be added to the project additionally.
+          - Depending on hosting solutions, different tools can be used for collecting and reporting on metrics and insights information, e.g. Azure Application Insights, if an app is hosted on Azure, Prometheus & Grafana - in case the app is deployed to containers etc.
+          - Avoid using JavaScript Renderings. This type of rendering initializes a new Node instance for each rendering and can noticeably influence load times.​
+          - Regular front end issues such as Unused third-party dependencies​
+          - Query only the necessary data from GraphQL – retrieve only the fields necessary. Make sure they are separated into .graphql files.​
+          - Review Core Web Vitals regularly and make sure to optimize Largest Contentful Paint, First Input Delays etc​.
+          - Regularly review your SEO as you will also find performance blockers that might be affecting your score.​ Review the [On-page SEO Optimization](/learn/accelerate/xm-cloud/optimization/seo-web-optimization) recipe for further information.
+
+      </TabPanel>
+      <TabPanel>
+        Coming soon
+      </TabPanel>            
+    </TabPanels>
+  </Tabs>
+
 
 
 ## Related Recipes

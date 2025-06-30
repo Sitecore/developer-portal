@@ -20,7 +20,7 @@ Data validation should be integrated in your processes - from spot checks to agg
 
 Turning debug mode on in Sitecore CDP is an easy way to assist with troubleshooting. Debug mode shows data in a table or in JSON format. Follow the [documentation](https://doc.sitecore.com/cdp/en/users/sitecore-cdp/enable-features-in-sitecore-cdp.html) to enable the it.
 
-<img src="/images/learn/accelerate/cdp-personalize/testing/manage features.png" alt="Debug mode"/>
+<img src="/images/learn/accelerate/cdp-personalize/testing/manage features debug.png" alt="Debug mode"/>
 <br/><br/>
 
 On guest profiles, a gear icon will appear. Clicking on the gear icon will launch a window with tabular and JSON info on that current guest. You can see information like guest information, session data, triggered events and data extensions. Additional information can be found in the [Use debug mode](https://doc.sitecore.com/cdp/en/users/sitecore-cdp/use-debug-mode-in-sitecore-cdp.html) documentation.
