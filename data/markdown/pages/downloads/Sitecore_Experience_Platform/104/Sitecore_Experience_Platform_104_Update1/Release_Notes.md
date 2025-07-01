@@ -1,7 +1,7 @@
 ---
 title: 'Release Notes'
 ---
-**2024-06-25:** Released Sitecore Experience Platform 10.4.1 rev. 012149
+**2025-06-25:** Released Sitecore Experience Platform 10.4.1 rev. 012149
 
 Return to the [Sitecore Experience Platform 10.4 Update-1](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104_Update1) release page.
 
