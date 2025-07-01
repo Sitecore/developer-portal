@@ -1,5 +1,5 @@
 ---
-title: 'Develoepr testing foundations'
+title: 'Developer testing foundations'
 description: 'Developer testing foundations for an XM Cloud implementation'
 hasSubPageNav: true
 hasInPageNav: true

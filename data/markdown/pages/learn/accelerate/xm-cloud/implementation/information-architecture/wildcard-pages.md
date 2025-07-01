@@ -253,8 +253,12 @@ if (path !== undefined) {
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Using WildCard Items in Sitecore XM Cloud" link="https://www.paulbonilladev.com/blog/using_wildcard_items" />
-  <Link title="Using Wildcard Items In Sitecore XM Cloud With A Headless NextJs Front-end" link="https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud" />
   <Link title="Create a dynamic URL with a wildcard item - Sitecore Documentation" link="https://doc.sitecore.com/xp/en/users/latest/sitecore-experience-platform/create-a-dynamic-url-with-a-wildcard-item.html" />
+</Row>
+
+## Related Links
+
+<Row columns={2}>
+  <Link title="Using Wildcard Items In Sitecore XM Cloud With A Headless NextJs Front-end" link="https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud" />
   <Link title="Routing: Dynamic Routes" link="https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes" />
 </Row>
