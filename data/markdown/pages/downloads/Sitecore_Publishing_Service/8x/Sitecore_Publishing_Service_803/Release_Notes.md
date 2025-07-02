@@ -2,7 +2,7 @@
 title: 'Release Notes'
 description: ''
 ---
-**2024-06-25:** Released Sitecore Publishing Service 8.0.3
+**2025-06-25:** Released Sitecore Publishing Service 8.0.3
 
 Return to the [Sitecore Publishing Service 8.0.3](/downloads/Sitecore_Publishing_Service/8x/Sitecore_Publishing_Service_803) release page.
 

@@ -15,7 +15,7 @@ See [all available Module versions here](/downloads/Sitecore_Publishing_Service
 | Resource | Description |
 | --- | --- |
 | [Container Deployment Package](<https://github.com/Sitecore/container-deployment/releases/tag/publishing%2F10.4.0.00703.467>) | The Sitecore Container Deployment Package contains the Docker Compose and Kubernetes specification files used to deploy Sitecore in development and production container environments. |
-| [Sitecore Publishing Service Module Container Deployment Guide](<https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/8x/Sitecore_Publishing_Service_803/Sitecore_Publishing_Service_Module_10.4_Container_Deployment_Guide.pdf>) | This guide describes how to deploy the Sitecore Publishing Service and Module in containers with Docker Compose and Kubernetes. |
+| [Sitecore Publishing Service Module Container Deployment Guide](<https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/8x/Sitecore_Publishing_Service_803/Sitecore_Publishing_Service_Module_10.4_Container_Deployment_Guide.pdf>) | Instructions in deploying the Sitecore Publishing Service and Module in containers with Docker Compose and Kubernetes. |
 | [Image and Tags List](<https://github.com/Sitecore/docker-images/tree/master/tags>) | Link to the official tags list (.md and .json format) of all published Sitecore images available on Sitecore Container Registry (SCR). |
 
 ## Downloads
