@@ -17,6 +17,7 @@ While there is no actual software download on this page, info here will continue
 
 | Release | Description |
 | --- | --- |
+| 1.3.xx | Added AI-assisted content extraction from a file, URL, or text; transformed into a structured content item. |
 | 1.2.45 | Added AI-assisted translation of a site content item, to translate to a selected language, or to generate a new version of same language. |
 | 1.1.63 | Added the ability to generate multiple content variants. Added the ability to select from a list of configured brand kits. |
 | 1.1.34 | Minor release including bug fixes and improvements to installation, configuration, user experience, error handling, and documentation. |
