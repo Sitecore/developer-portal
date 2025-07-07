@@ -9,11 +9,13 @@ import { NextPage } from 'next';
 import useSWR from 'swr';
 
 import Layout from '@/src/layouts/Layout';
-import { pageRouterAuth } from '@/src/lib/auth0';
+import { authOptions } from '@/src/lib/auth';
 import { getQueryArray, slugify } from '@/src/lib/utils';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 import { RoadmapInformation } from '@lib/interfaces/jira';
 import { getRoadmap, Phase } from '@lib/jira';
+import { GetServerSideProps } from 'next';
+import { getServerSession } from 'next-auth';
 import NextLink from 'next/link';
 
 interface SearchPageProps {
@@ -23,29 +25,38 @@ interface SearchPageProps {
   currentProduct: Option;
 }
 
-export const getServerSideProps = pageRouterAuth.withPageAuthRequired({
-  async getServerSideProps(context) {
-    const product = getQueryArray(context?.params?.product);
-    const pageInfo = await getPageInfo('_roadmap');
-    const roadmap = await getRoadmap();
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getServerSession(context.req, context.res, authOptions);
 
-    const products = roadmap.products;
-    const currentProduct: Option | undefined = products.find((p) => slugify(p.label) == slugify(product[0]));
-
-    if (currentProduct === undefined) {
-      return {
-        notFound: true,
-      };
-    }
+  if (!session?.user?.orgId) {
     return {
-      props: {
-        currentProduct: currentProduct,
-        pageInfo,
-        products: roadmap.products,
+      redirect: {
+        destination: '/api/auth/signin?callbackUrl=' + encodeURIComponent(context.resolvedUrl),
+        permanent: false,
       },
     };
-  },
-});
+  }
+
+  const product = getQueryArray(context?.params?.product);
+  const pageInfo = await getPageInfo('_roadmap');
+  const roadmap = await getRoadmap();
+
+  const products = roadmap.products;
+  const currentProduct: Option | undefined = products.find((p) => slugify(p.label) == slugify(product[0]));
+
+  if (currentProduct === undefined) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      currentProduct: currentProduct,
+      pageInfo,
+      products: roadmap.products,
+    },
+  };
+};
 
 const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct, products }) => {
   const url: string = `../api/roadmap?product=${currentProduct.value}`;
@@ -68,7 +79,7 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct, products 
               <AlertIcon />
               <Wrap>
                 <AlertDescription>
-                  The product roadmap is for informational purposes only and subject to change at Sitecore’s sole discretion. Timelines and features are not commitments, and the roadmap may be amended or discontinued without notice. Customers should
+                  The product roadmap is for informational purposes only and subject to change at Sitecore's sole discretion. Timelines and features are not commitments, and the roadmap may be amended or discontinued without notice. Customers should
                   not rely on it for purchasing or planning decisions.
                 </AlertDescription>
               </Wrap>

@@ -11,10 +11,12 @@ import { useState } from 'react';
 import useSWR from 'swr';
 
 import Layout from '@/src/layouts/Layout';
-import { pageRouterAuth } from '@/src/lib/auth0';
+import { authOptions } from '@/src/lib/auth';
 import { buildProductQuerystring } from '@lib/changelog/common/querystring';
 import { RoadmapInformation } from '@lib/interfaces/jira';
 import { getRoadmap, Phase } from '@lib/jira';
+import { GetServerSideProps } from 'next';
+import { getServerSession } from 'next-auth';
 
 interface SearchPageProps {
   pageInfo: PageInfo;
@@ -22,20 +24,29 @@ interface SearchPageProps {
   products: Option[];
 }
 
-export const getServerSideProps = pageRouterAuth.withPageAuthRequired({
-  async getServerSideProps(ctx) {
-    const pageInfo = await getPageInfo('_roadmap');
-    const roadmap = await getRoadmap();
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getServerSession(context.req, context.res, authOptions);
 
+  if (!session?.user?.orgId) {
     return {
-      props: {
-        fallback: roadmap,
-        pageInfo,
-        products: roadmap.products,
+      redirect: {
+        destination: '/api/auth/signin?callbackUrl=' + encodeURIComponent(context.resolvedUrl),
+        permanent: false,
       },
     };
-  },
-});
+  }
+
+  const pageInfo = await getPageInfo('_roadmap');
+  const roadmap = await getRoadmap();
+
+  return {
+    props: {
+      fallback: roadmap,
+      pageInfo,
+      products: roadmap.products,
+    },
+  };
+};
 
 const Search: NextPage<SearchPageProps> = ({ pageInfo, fallback, products }) => {
   const [selectedChange, setSelectedChange] = useState<MultiValue<Option>>([]);

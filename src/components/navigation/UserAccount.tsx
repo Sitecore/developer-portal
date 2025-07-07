@@ -1,19 +1,16 @@
-import { UserProfile } from '@auth0/nextjs-auth0/client';
 import { Avatar, Box, Icon, IconButton, Link, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Text, Tooltip, Wrap } from '@chakra-ui/react';
+import { useSession } from 'next-auth/react';
 
 import { mdiAccountCircleOutline, mdiLogin, mdiLogout } from '@mdi/js';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-interface UserAccountProps {
-  userProfile: UserProfile | undefined;
-}
-
-const UserAccount: React.FC<UserAccountProps> = ({ userProfile }) => {
+const UserAccount: React.FC = () => {
+  const { data: session } = useSession();
   const router = useRouter();
-  const loginUrl = router.asPath != '/' ? '/api/auth/login?returnTo=' + encodeURIComponent(router.asPath) : '/api/auth/login';
+  const loginUrl = router.asPath != '/' ? '/api/auth/signin?callbackUrl=' + encodeURIComponent(router.asPath) : '/api/auth/signin';
 
-  if (!userProfile) {
+  if (!session?.user) {
     return (
       <IconButton
         as={Link}
@@ -32,15 +29,15 @@ const UserAccount: React.FC<UserAccountProps> = ({ userProfile }) => {
   return (
     <Wrap spacing="10">
       <Menu>
-        <Tooltip label={userProfile.email}>
+        <Tooltip label={session.user.email}>
           <MenuButton>
-            <Avatar size="sm" name={userProfile.name || userProfile.nickname || ''} src={userProfile.picture || ''} />
+            <Avatar size="sm" name={session.user.name || ''} src={session.user.image || ''} />
           </MenuButton>
         </Tooltip>
         <MenuList>
           <Box px="3.5" py="2">
-            <Text variant="strong">{userProfile.name}</Text>
-            <Text variant="small">{userProfile.email}</Text>
+            <Text variant="strong">{session.user.name}</Text>
+            <Text variant="small">{session.user.email}</Text>
           </Box>
           <MenuItem
             icon={
@@ -81,7 +78,7 @@ const UserAccount: React.FC<UserAccountProps> = ({ userProfile }) => {
               </Icon>
             }
             onClick={() => {
-              router.push('/api/auth/logout');
+              router.push('/api/auth/signout');
             }}
           >
             Log out
