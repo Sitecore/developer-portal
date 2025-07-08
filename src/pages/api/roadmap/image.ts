@@ -1,4 +1,4 @@
-import { authOptions } from '@/src/lib/auth';
+import { authOptions } from '@/src/lib/auth/options';
 import { GetJiraAttachement } from '@/src/lib/jira';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth';

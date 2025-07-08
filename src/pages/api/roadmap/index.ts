@@ -1,4 +1,4 @@
-import { authOptions } from '@/src/lib/auth';
+import { authOptions } from '@/src/lib/auth/options';
 import { RoadmapInformation } from '@/src/lib/interfaces/jira';
 import { getRoadmap } from '@/src/lib/jira';
 import { getQueryArray } from '@/src/lib/utils';

@@ -1,31 +1,7 @@
 import { NextAuthOptions } from 'next-auth';
-import { JWT } from 'next-auth/jwt';
 import Auth0Provider from 'next-auth/providers/auth0';
 import OktaProvider from 'next-auth/providers/okta';
-
-export enum TokenCustomClaimKeysEnum {
-  ORG_DISPLAY_NAME = 'https://auth.sitecorecloud.io/claims/org_display_name',
-  ORG_TYPE = 'https://auth.sitecorecloud.io/claims/org_type',
-  ORG_ID = 'https://auth.sitecorecloud.io/claims/org_id',
-  ORG_ACC_ID = 'https://auth.sitecorecloud.io/claims/org_account_id',
-  TENANT_NAME = 'https://auth.sitecorecloud.io/claims/tenant_name',
-  TENANT_ID = 'https://auth.sitecorecloud.io/claims/tenant_id',
-  ROLES = 'https://auth.sitecorecloud.io/claims/roles',
-}
-
-export interface SitecoreProfile extends Record<string, any> {
-  sub: string;
-  nickname: string;
-  email: string;
-  picture: string;
-  orgId?: string;
-  orgDisplayName?: string;
-  orgType?: string;
-  orgAccId?: string;
-  tenantName?: string;
-  tenantId?: string;
-  roles?: string[];
-}
+import { SitecoreCustomClaims, SitecoreProfile } from './sitecoreProfile';
 
 // Extend NextAuth types
 declare module 'next-auth' {
@@ -103,13 +79,13 @@ export const authOptions: NextAuthOptions = {
         const sitecoreProfile = profile as SitecoreProfile;
         token.userId = sitecoreProfile.sub;
         token.name = sitecoreProfile.name;
-        token.orgId = sitecoreProfile[TokenCustomClaimKeysEnum.ORG_ID];
-        token.orgDisplayName = sitecoreProfile[TokenCustomClaimKeysEnum.ORG_DISPLAY_NAME];
-        token.orgType = sitecoreProfile[TokenCustomClaimKeysEnum.ORG_TYPE];
-        token.orgAccId = sitecoreProfile[TokenCustomClaimKeysEnum.ORG_ACC_ID];
-        token.tenantName = sitecoreProfile[TokenCustomClaimKeysEnum.TENANT_NAME];
-        token.tenantId = sitecoreProfile[TokenCustomClaimKeysEnum.TENANT_ID];
-        token.roles = sitecoreProfile[TokenCustomClaimKeysEnum.ROLES];
+        token.orgId = sitecoreProfile[SitecoreCustomClaims.ORG_ID];
+        token.orgDisplayName = sitecoreProfile[SitecoreCustomClaims.ORG_DISPLAY_NAME];
+        token.orgType = sitecoreProfile[SitecoreCustomClaims.ORG_TYPE];
+        token.orgAccId = sitecoreProfile[SitecoreCustomClaims.ORG_ACC_ID];
+        token.tenantName = sitecoreProfile[SitecoreCustomClaims.TENANT_NAME];
+        token.tenantId = sitecoreProfile[SitecoreCustomClaims.TENANT_ID];
+        token.roles = sitecoreProfile[SitecoreCustomClaims.ROLES];
         token.provider = account.provider;
       }
       return token;

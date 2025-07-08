@@ -9,7 +9,7 @@ import { NextPage } from 'next';
 import useSWR from 'swr';
 
 import Layout from '@/src/layouts/Layout';
-import { authOptions } from '@/src/lib/auth';
+import { authOptions } from '@/src/lib/auth/options';
 import { getQueryArray, slugify } from '@/src/lib/utils';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 import { RoadmapInformation } from '@lib/interfaces/jira';

@@ -11,7 +11,7 @@ import { useState } from 'react';
 import useSWR from 'swr';
 
 import Layout from '@/src/layouts/Layout';
-import { authOptions } from '@/src/lib/auth';
+import { authOptions } from '@/src/lib/auth/options';
 import { buildProductQuerystring } from '@lib/changelog/common/querystring';
 import { RoadmapInformation } from '@lib/interfaces/jira';
 import { getRoadmap, Phase } from '@lib/jira';
