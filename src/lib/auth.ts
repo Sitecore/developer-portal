@@ -1,5 +1,7 @@
 import { NextAuthOptions } from 'next-auth';
+import { JWT } from 'next-auth/jwt';
 import Auth0Provider from 'next-auth/providers/auth0';
+import OktaProvider from 'next-auth/providers/okta';
 
 export enum TokenCustomClaimKeysEnum {
   ORG_DISPLAY_NAME = 'https://auth.sitecorecloud.io/claims/org_display_name',
@@ -25,8 +27,49 @@ export interface SitecoreProfile extends Record<string, any> {
   roles?: string[];
 }
 
+// Extend NextAuth types
+declare module 'next-auth' {
+  interface Session {
+    provider?: string;
+    user: {
+      id?: string;
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+      orgId?: string;
+      orgDisplayName?: string;
+      orgType?: string;
+      orgAccId?: string;
+      tenantName?: string;
+      tenantId?: string;
+      roles?: string[];
+    };
+  }
+}
+
+declare module 'next-auth/jwt' {
+  interface JWT {
+    userId?: string;
+    orgId?: string;
+    orgDisplayName?: string;
+    orgType?: string;
+    orgAccId?: string;
+    tenantName?: string;
+    tenantId?: string;
+    roles?: string[];
+    provider?: string;
+  }
+}
+
 export const authOptions: NextAuthOptions = {
   providers: [
+    OktaProvider({
+      name: 'Okta',
+      id: 'okta',
+      clientId: process.env.OKTA_CLIENT_ID!,
+      clientSecret: process.env.OKTA_CLIENT_SECRET!,
+      issuer: process.env.OKTA_ISSUER!,
+    }),
     Auth0Provider({
       name: 'Sitecore Cloud Portal',
       id: 'sitecore',
@@ -57,21 +100,23 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, account, profile }) {
       if (account && profile) {
-        token.userId = profile.sub;
-        token.name = profile.name;
-        token.orgId = profile[TokenCustomClaimKeysEnum.ORG_ID];
-        token.orgDisplayName = profile[TokenCustomClaimKeysEnum.ORG_DISPLAY_NAME];
-        token.orgType = profile[TokenCustomClaimKeysEnum.ORG_TYPE];
-        token.orgAccId = profile[TokenCustomClaimKeysEnum.ORG_ACC_ID];
-        token.tenantName = profile[TokenCustomClaimKeysEnum.TENANT_NAME];
-        token.tenantId = profile[TokenCustomClaimKeysEnum.TENANT_ID];
-        token.roles = profile[TokenCustomClaimKeysEnum.ROLES];
+        const sitecoreProfile = profile as SitecoreProfile;
+        token.userId = sitecoreProfile.sub;
+        token.name = sitecoreProfile.name;
+        token.orgId = sitecoreProfile[TokenCustomClaimKeysEnum.ORG_ID];
+        token.orgDisplayName = sitecoreProfile[TokenCustomClaimKeysEnum.ORG_DISPLAY_NAME];
+        token.orgType = sitecoreProfile[TokenCustomClaimKeysEnum.ORG_TYPE];
+        token.orgAccId = sitecoreProfile[TokenCustomClaimKeysEnum.ORG_ACC_ID];
+        token.tenantName = sitecoreProfile[TokenCustomClaimKeysEnum.TENANT_NAME];
+        token.tenantId = sitecoreProfile[TokenCustomClaimKeysEnum.TENANT_ID];
+        token.roles = sitecoreProfile[TokenCustomClaimKeysEnum.ROLES];
+        token.provider = account.provider;
       }
       return token;
     },
 
     async session({ session, token }) {
-      if (token) {
+      if (token && session.user) {
         session.user.id = token.userId;
         session.user.orgId = token.orgId;
         session.user.orgDisplayName = token.orgDisplayName;
@@ -80,6 +125,7 @@ export const authOptions: NextAuthOptions = {
         session.user.tenantName = token.tenantName;
         session.user.tenantId = token.tenantId;
         session.user.roles = token.roles;
+        session.provider = token.provider;
       }
       return session;
     },

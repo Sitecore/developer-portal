@@ -1,6 +1,5 @@
 import { Button, Card, Heading, HStack, Image, Stack, Text, Wrap } from '@chakra-ui/react';
 import { signIn, signOut, useSession } from 'next-auth/react';
-import { useRouter } from 'next/router';
 
 export type RestrictedContentProps = {
   children?: React.ReactNode | Array<React.ReactNode>;
@@ -8,12 +7,9 @@ export type RestrictedContentProps = {
 
 export const RestrictedContent = (props: RestrictedContentProps) => {
   const { data: session } = useSession();
-  const router = useRouter();
-
   const orgId = session?.user?.orgId;
 
   if (session?.user && orgId != null) {
-    console.log(session?.user);
     return props.children;
   }
 
@@ -27,7 +23,7 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
               Restricted
             </Heading>
             <Text>
-              The account you&apos;re using is <b>not</b> currently linked to an organization.
+              The account you&apos;re using is <b>not</b> currently linked to an organization or you are using an <b>Okta</b> account.
             </Text>
             <Text>This content is available exclusively to customers and partners with a Cloud Portal account linked to their organization.</Text>
             <Wrap>
@@ -51,7 +47,7 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
           </Heading>
           <Text>You don&apos;t have permission to access this content.</Text>
           <Text>
-            This content is available exclusively to customers and partners with a Cloud Portal account linked to their organization. Please log in with your <b>Sitecore Cloud Portal</b> credentials.
+            This content is available exclusively to customers and partners with a <b>Sitecore Cloud Portal</b> account linked to their organization. Please log in with your <b>Sitecore Cloud Portal</b> credentials.
           </Text>
           <Wrap>
             <Button variant="link" onClick={() => signIn('sitecore')}>
