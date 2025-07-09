@@ -44,14 +44,14 @@ export const authOptions: NextAuthOptions = {
       id: 'okta',
       clientId: process.env.OKTA_CLIENT_ID!,
       clientSecret: process.env.OKTA_CLIENT_SECRET!,
-      issuer: process.env.OKTA_ISSUER!,
+      issuer: process.env.OKTA_ISSUER_BASE_URL!,
     }),
     Auth0Provider({
       name: 'Sitecore Cloud Portal',
       id: 'sitecore',
       clientId: process.env.AUTH0_CLIENT_ID!,
       clientSecret: process.env.AUTH0_CLIENT_SECRET!,
-      issuer: process.env.AUTH0_ISSUER!,
+      issuer: process.env.AUTH0_ISSUER_BASE_URL!,
       authorization: {
         params: {
           scope: 'openid profile email',
