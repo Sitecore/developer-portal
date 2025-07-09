@@ -1,39 +1,29 @@
+import { authOptions } from '@/src/lib/auth/options';
 import { GetJiraAttachement } from '@/src/lib/jira';
-import { getSession, withApiAuthRequired } from '@auth0/nextjs-auth0/edge';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { getServerSession } from 'next-auth';
 
-export const config = {
-  runtime: 'edge',
-};
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const session = await getServerSession(req, res, authOptions);
 
-export default withApiAuthRequired(async (req: NextApiRequest, res: NextApiResponse) => {
-  const session = getSession(req, res);
-
-  if (!session) {
-    res.status(401).json({ error: 'Unauthorized' });
-    return;
+  if (!session?.user?.orgId) {
+    return res.status(401).json({ error: 'Unauthorized' });
   }
 
   try {
-    const url = new URL(req.url || `http://${req.headers.host}`);
-    const searchParams = url.searchParams;
-    const id = searchParams.get('id');
-    const mimeType = searchParams.get('mt');
+    const { id, mt: mimeType } = req.query;
 
-    if (id) {
+    if (id && typeof id === 'string') {
       const jiraResponse = await GetJiraAttachement(id);
       const imageBuffer = Buffer.from(jiraResponse.data, 'binary');
 
-      return new Response(imageBuffer, {
-        headers: {
-          'Content-Type': mimeType || 'image/png',
-        },
-      });
+      res.setHeader('Content-Type', mimeType || 'image/png');
+      return res.send(imageBuffer);
     }
-    return;
+
+    return res.status(400).json({ error: 'Missing image ID' });
   } catch (e: any) {
-    return new Response(`Failed to retrieve the image`, {
-      status: 500,
-    });
+    console.error('Error fetching image:', e);
+    return res.status(500).json({ error: 'Failed to retrieve the image' });
   }
-});
+}

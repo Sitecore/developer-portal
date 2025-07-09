@@ -1,13 +1,13 @@
-import { useUser } from '@auth0/nextjs-auth0/client';
+import { useSession } from 'next-auth/react';
 
 export type HideForUsersProps = {
   children?: React.ReactNode | Array<React.ReactNode>;
 };
 
 export const HideForUsers = (props: HideForUsersProps) => {
-  const user = useUser();
+  const { data: session } = useSession();
 
-  if (user.user) {
+  if (session?.user) {
     return;
   }
 

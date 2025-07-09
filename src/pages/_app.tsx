@@ -10,14 +10,14 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 
-import { UserProvider } from '@auth0/nextjs-auth0/client';
+import { SessionProvider } from 'next-auth/react';
 import { EngageTrackerProvider } from '../components/integrations';
 import { PreviewProvider } from '../context/PreviewContext';
 import { scdpTheme } from '../theme/theme';
 
 const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   const [progress, setProgress] = useState(false);
   const [hostname, setHostname] = useState('');
 
@@ -88,7 +88,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SearchWrapper>
       <ChakraProvider theme={scdpTheme} toastOptions={toastOptions}>
-        <UserProvider>
+        <SessionProvider session={session}>
           <EngageTrackerProvider>
             <PreviewProvider hostname={hostname}>
               {progress && <TopBarProgress />}
@@ -99,7 +99,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               <Footer />
             </PreviewProvider>
           </EngageTrackerProvider>
-        </UserProvider>
+        </SessionProvider>
       </ChakraProvider>
     </SearchWrapper>
   );

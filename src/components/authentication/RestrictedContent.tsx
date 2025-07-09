@@ -1,27 +1,19 @@
-import { TokenCustomClaimKeysEnum } from '@/src/lib/auth0';
-import { UserContext, useUser } from '@auth0/nextjs-auth0/client';
-import { Card, Heading, HStack, Image, Stack, Text } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import { LinkButton } from '../links';
+import { Button, Card, Heading, HStack, Image, Stack, Text, Wrap } from '@chakra-ui/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 export type RestrictedContentProps = {
   children?: React.ReactNode | Array<React.ReactNode>;
 };
 
 export const RestrictedContent = (props: RestrictedContentProps) => {
-  const user: UserContext = useUser();
-  const router = useRouter();
+  const { data: session } = useSession();
+  const orgId = session?.user?.orgId;
 
-  const orgId = user.user?.[TokenCustomClaimKeysEnum.ORG_ID];
-
-  const returnUrl = '/api/auth/login?returnTo=' + encodeURIComponent(router.asPath);
-  const logoutUrl = '/api/auth/logout?returnTo=/';
-
-  if (user.user && orgId != null) {
+  if (session?.user && orgId != null) {
     return props.children;
   }
 
-  if (user.user && orgId == null) {
+  if (session?.user && orgId == null) {
     return (
       <Card variant={'outline'} py={4} px={2}>
         <HStack>
@@ -31,10 +23,14 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
               Restricted
             </Heading>
             <Text>
-              The account you&apos;re using is <b>not</b> currently linked to an organization.
+              The account you&apos;re using is <b>not</b> currently linked to an organization or you are using an <b>Sitecore ID</b> account.
             </Text>
-            <Text>This content is available exclusively to customers and partners with a Cloud Portal account linked to their organization.</Text>
-            <LinkButton variant="link" href={logoutUrl} text={'Logout'} showIcon={false} />
+            <Text>This content is available exclusively to customers and partners with a Sitecore Cloud Portal account linked to their organization.</Text>
+            <Wrap>
+              <Button variant="link" onClick={() => signOut()}>
+                Logout
+              </Button>
+            </Wrap>
           </Stack>
         </HStack>
       </Card>
@@ -51,9 +47,13 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
           </Heading>
           <Text>You don&apos;t have permission to access this content.</Text>
           <Text>
-            This content is available exclusively to customers and partners with a Cloud Portal account linked to their organization. Please log in with your <b>Sitecore Cloud Portal</b> credentials.
+            This content is available exclusively to customers and partners with a <b>Sitecore Cloud Portal</b> account linked to their organization. Please log in with your <b>Sitecore Cloud Portal</b> credentials.
           </Text>
-          <LinkButton variant="link" href={returnUrl} text={'Login'} showIcon={false} />
+          <Wrap>
+            <Button variant="link" onClick={() => signIn('sitecore')}>
+              Login
+            </Button>
+          </Wrap>
         </Stack>
       </HStack>
     </Card>
