@@ -1,5 +1,5 @@
-import { Button, Card, Heading, HStack, Image, Stack, Text, Wrap } from '@chakra-ui/react';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { Button, Card, Heading, HStack, Image, Link, Stack, Text, Wrap } from '@chakra-ui/react';
+import { signIn, useSession } from 'next-auth/react';
 
 export type RestrictedContentProps = {
   children?: React.ReactNode | Array<React.ReactNode>;
@@ -27,9 +27,7 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
             </Text>
             <Text>This content is available exclusively to customers and partners with a Sitecore Cloud Portal account linked to their organization.</Text>
             <Wrap>
-              <Button variant="link" onClick={() => signOut()}>
-                Logout
-              </Button>
+              <Link href="/login?redirect=/roadmap">Logout or switch credentials</Link>
             </Wrap>
           </Stack>
         </HStack>
