@@ -23,9 +23,9 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
               Restricted
             </Heading>
             <Text>
-              The account you&apos;re using is <b>not</b> currently linked to an organization or you are using an <b>Okta</b> account.
+              The account you&apos;re using is <b>not</b> currently linked to an organization or you are using an <b>Sitecore ID</b> account.
             </Text>
-            <Text>This content is available exclusively to customers and partners with a Cloud Portal account linked to their organization.</Text>
+            <Text>This content is available exclusively to customers and partners with a Sitecore Cloud Portal account linked to their organization.</Text>
             <Wrap>
               <Button variant="link" onClick={() => signOut()}>
                 Logout

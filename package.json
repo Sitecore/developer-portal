@@ -39,6 +39,8 @@
     "clean": "npx shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static build-storybook-static && npx shx rm -rf node_modules && npx shx echo Done!"
   },
   "dependencies": {
+    "@azure/identity": "^4.10.2",
+    "@azure/storage-blob": "^12.27.0",
     "@chakra-ui/icons": "^2.2.5",
     "@chakra-ui/react": "^2.10.3",
     "@emotion/react": "^11.11.4",

@@ -35,13 +35,13 @@ import React, { useState } from 'react';
 import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/assets';
 
 import { useSession } from 'next-auth/react';
+import UserAccount from '../authentication/UserAccount';
 import { PreviewSearchInput, SearchInput } from '../integrations/sitecore-search';
 import { Slide } from '../ui/chakra/Slide';
 import { ProductIcon } from '../ui/logos';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 import { SearchButton } from './SearchButton';
-import UserAccount from './UserAccount';
 
 export type NavigationChildData = {
   title: string;

@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
-import { Alert, AlertDescription, AlertIcon, Heading, Link, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react';
+import { Heading, Link, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react';
 import { mdiArrowRightCircle } from '@mdi/js';
 import { useEffect, useState } from 'react';
 import { PromoCardProps, PromoList } from '../components/cards';
@@ -74,7 +74,7 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
           )}
           <PromoList data={promoBefore} />
 
-          {router.asPath.includes('/downloads') && (
+          {/* {router.asPath.includes('/downloads') && (
             <Alert status="warning" mb={4}>
               <AlertIcon />
 
@@ -86,7 +86,7 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
                 </div>
               </AlertDescription>
             </Alert>
-          )}
+          )} */}
 
           <RenderContent content={processedContent} />
 
