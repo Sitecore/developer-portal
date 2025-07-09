@@ -79,8 +79,8 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct, products 
               <AlertIcon />
               <Wrap>
                 <AlertDescription>
-                  The product roadmap is for informational purposes only and subject to change at Sitecore's sole discretion. Timelines and features are not commitments, and the roadmap may be amended or discontinued without notice. Customers should
-                  not rely on it for purchasing or planning decisions.
+                  The product roadmap is for informational purposes only and subject to change at Sitecore&apos;s sole discretion. Timelines and features are not commitments, and the roadmap may be amended or discontinued without notice. Customers
+                  should not rely on it for purchasing or planning decisions.
                 </AlertDescription>
               </Wrap>
             </Alert>
