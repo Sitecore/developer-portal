@@ -1,5 +1,5 @@
 import { Option } from '@/src/components/ui/dropdown';
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Flex, Heading, Image, ListItem, SimpleGrid, Text, UnorderedList, Wrap } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, Flex, Heading, Image, ListItem, SimpleGrid, Text, UnorderedList, Wrap } from '@chakra-ui/react';
 import { TrackPageView } from '@components/integrations/engage/TrackPageView';
 import { CenteredContent, Hero, VerticalGroup } from '@components/ui/sections';
 import { PageInfo } from '@lib/interfaces/page-info';
@@ -9,11 +9,11 @@ import { NextPage } from 'next';
 import { LinkItem } from '@/src/components';
 import { HideForUsers } from '@/src/components/authentication/HideForUsers';
 import { RestrictedContent } from '@/src/components/authentication/RestrictedContent';
-import { LinkButton } from '@/src/components/links';
 import Layout from '@/src/layouts/Layout';
 import { getRoadmap } from '@/src/lib/jira';
 import { slugify } from '@/src/lib/utils';
 import { RoadmapInformation } from '@lib/interfaces/jira';
+import { signIn } from 'next-auth/react';
 
 interface RoadmapPageProps {
   pageInfo: PageInfo;
@@ -45,7 +45,11 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
               <Alert status="info" alignItems="center">
                 <AlertIcon />
                 <AlertDescription>To access the detailed roadmaps, please log in using your cloud portal credentials.</AlertDescription>
-                <LinkButton variant="link" href={'/api/auth/login?returnTo=/roadmap'} text={'Login'} showIcon={false} />
+                <Wrap>
+                  <Button variant="link" onClick={() => signIn('sitecore')}>
+                    Login
+                  </Button>
+                </Wrap>
               </Alert>
             </HideForUsers>
 

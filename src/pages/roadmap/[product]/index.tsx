@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!session?.user?.orgId) {
     return {
       redirect: {
-        destination: '/api/auth/signin?callbackUrl=' + encodeURIComponent(context.resolvedUrl),
+        destination: '/login?redirect=' + encodeURIComponent(context.resolvedUrl),
         permanent: false,
       },
     };
