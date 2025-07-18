@@ -9,19 +9,21 @@ Integrating this service into Sitecore Experience Platform also requires the Sit
 See [Sitecore Publishing Service – compatibility tables](<https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0761308>) for compatibility between versions of Sitecore Publishing Service, Sitecore Publishing Service Module, and Sitecore Experience Platform.
 
 See [all available Sitecore Publishing Service versions here](/downloads/Sitecore_Publishing_Service).\
-See [all available Module versions here](/downloads/Sitecore_Publishing_Service_Module).
+See [all available Sitecore Publishing Service Module versions here](/downloads/Sitecore_Publishing_Service_Module).
 
-## Download options for Sitecore Container deployments
-| Resource | Description |
-| --- | --- |
-| [Container Deployment Package](<https://github.com/Sitecore/container-deployment/releases/tag/publishing%2F10.4.0.00703.467>) | The Sitecore Container Deployment Package contains the Docker Compose and Kubernetes specification files used to deploy Sitecore in development and production container environments. |
-| [Sitecore Publishing Service Module Container Deployment Guide](<https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/8x/Sitecore_Publishing_Service_803/Sitecore_Publishing_Service_Module_10.4_Container_Deployment_Guide.pdf>) | Instructions in deploying the Sitecore Publishing Service and Module in containers with Docker Compose and Kubernetes. |
-| [Image and Tags List](<https://github.com/Sitecore/docker-images/tree/master/tags>) | Link to the official tags list (.md and .json format) of all published Sitecore images available on Sitecore Container Registry (SCR). |
-
-## Downloads
+## Download for On Premises deployments
 | Resource | Description |
 | --- | --- |
 | [Sitecore Publishing Service](<https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service/8x/Sitecore_Publishing_Service_803/Sitecore%20Publishing%20Service%208.0.3%20rev.%200003-net8.0.zip>) | The Sitecore Publishing Service .NET host. |
+
+## Downloads for Container deployments
+Please retrieve the version-specific artifacts from the applicable Sitecore Publishing Service Module release page.
+| Resource | Description |
+| --- | --- |
+| [SPS Module 10.4.0](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1040) | Link to the Sitecore Publishing Service Module 10.4.0 release page. |
+| [SPS Module 10.3.0](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1030) | Link to the Sitecore Publishing Service Module 10.3.0 release page. |
+| [SPS Module 10.2.0](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1020) | Link to the Sitecore Publishing Service Module 10.2.0 release page. |
+| [SPS Module 10.1.0](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1010) | Link to the Sitecore Publishing Service Module 10.1.0 release page. |
 
 ## Release Information
 | Resource | Description |

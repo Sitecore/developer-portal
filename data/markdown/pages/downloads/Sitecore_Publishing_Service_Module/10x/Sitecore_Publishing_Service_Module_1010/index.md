@@ -11,19 +11,20 @@ See [Sitecore Publishing Service – compatibility tables](https://support.sitec
 See [all available Sitecore Publishing Service Module versions here](/downloads/Sitecore_Publishing_Service_Module).\
 See [all available Sitecore Publishing Service versions here](/downloads/Sitecore_Publishing_Service).
 
-## Download options for Sitecore Container deployments
-
- | Resource | Description |
- | --- | --- |
- | [Container Deployment Package](https://github.com/Sitecore/container-deployment/releases/tag/publishing%2F10.1.0.00585.80) | The Sitecore Container Deployment Package contains the Docker Compose and Kubernetes specification files used to deploy Sitecore in development and production container environments. |
- | [Sitecore Publishing Service Container Deployment Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service%20Module/10x/Sitecore%20Publishing%20Service%20Module%201010/Secure/The_Sitecore_Publishing_Service_Container_Deployment_Guide-SC-XP-10.1.0.pdf) | This guide describes how to deploy the Sitecore Publishing Service and module in containers with Docker Compose and Kubernetes. |
- | [Image and Tags List](https://github.com/Sitecore/docker-images/tree/master/tags) | Link to the official tags list (.md and .json format) of all published Sitecore images available on Sitecore Container Registry (SCR). |
-
-## Downloads
+## Downloads for On Premises deployments
 
  | Resource | Description |
  | --- | --- |
  | [Sitecore Publishing Service Module](https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service%20Module/10x/Sitecore%20Publishing%20Service%20Module%201010/Secure/Sitecore%20Publishing%20Module%2010.1.0%20rev.%2000585.zip) | Publishing Service Sitecore installation package for Sitecore Experience Platform |
+
+## Downloads for Container deployments
+
+ | Resource | Description |
+ | --- | --- |
+ | [Container Deployment Package for SPS 8](https://github.com/Sitecore/container-deployment/releases/tag/publishing%2F10.1.0.00632.475) | Package compatible with SPS 8.x. Contains the Docker Compose and Kubernetes specification files used to deploy to Sitecore XP in development and production container environments. |
+ | [Container Deployment Package to SPS 7](https://github.com/Sitecore/container-deployment/releases/tag/publishing%2F10.1.0.00585.318) | **[DEPRECATED]** Package compatible with SPS versions up to 7.x. Contains the Docker Compose and Kubernetes specification files used to deploy Sitecore in development and production container environments. |
+ | [Sitecore Publishing Service Container Deployment Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Publishing%20Service%20Module/10x/Sitecore%20Publishing%20Service%20Module%201010/Secure/The_Sitecore_Publishing_Service_Container_Deployment_Guide-SC-XP-10.1.0.pdf) | This guide describes how to deploy the Sitecore Publishing Service and module in containers with Docker Compose and Kubernetes. |
+ | [Image and Tags List](https://github.com/Sitecore/docker-images/tree/master/tags) | Link to the official tags list (.md and .json format) of all published Sitecore images available on Sitecore Container Registry (SCR). |
 
 ## Release Information
 
