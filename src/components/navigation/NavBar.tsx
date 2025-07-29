@@ -163,8 +163,8 @@ const DesktopNav = () => {
                     </PopoverTrigger>
                     <PopoverContent width={'100%'} rounded={'md'} shadow={'base'}>
                       <PopoverArrow />
-                      <Box width="100%" maxWidth={'5xl'}>
-                        <SimpleGrid columns={{ base: 1, md: 3, lg: 4 }} pos="relative" gap={{ base: 2, sm: 2 }} px={5} py={6} p={{ sm: 8 }}>
+                      <Box width="100%" maxWidth={'6xl'}>
+                        <SimpleGrid columns={{ base: 1, md: 3, lg: 5 }} pos="relative" gap={{ base: 2, sm: 2 }} px={2} py={4} p={{ sm: 8 }}>
                           {navItem.children?.map((child) => <DesktopSubNav key={child.title} {...child} />)}
                         </SimpleGrid>
                       </Box>

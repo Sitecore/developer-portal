@@ -27,19 +27,24 @@ export const mainNavigation: NavItem[] = [
             logo: Product.XMCloud,
           },
           {
-            title: 'Content Hub',
-            url: 'https://doc.sitecore.com/ch',
-            logo: Product.ContentHub,
-          },
-          {
-            title: 'Search',
-            url: 'https://doc.sitecore.com/search',
-            logo: Product.Search,
+            title: 'Experience Platform',
+            url: 'https://doc.sitecore.com/xp',
+            logo: Product.ExperiencePlatform,
           },
           {
             title: 'Content Hub ONE',
             url: 'https://doc.sitecore.com/ch-one',
             logo: Product.ContentHubOne,
+          },
+          {
+            title: 'CDP',
+            url: 'https://doc.sitecore.com/cdp',
+            logo: Product.CDP,
+          },
+          {
+            title: 'Send',
+            url: 'https://doc.sitecore.com/send',
+            logo: Product.Send,
           },
         ],
       },
@@ -47,9 +52,20 @@ export const mainNavigation: NavItem[] = [
         title: ' ',
         children: [
           {
-            title: 'CDP',
-            url: 'https://doc.sitecore.com/cdp',
-            logo: Product.CDP,
+            title: 'Content Hub',
+            url: 'https://doc.sitecore.com/ch',
+            logo: Product.ContentHub,
+          },
+
+          {
+            title: 'Experience Manager',
+            url: 'https://doc.sitecore.com/xp',
+            logo: Product.ExperienceManager,
+          },
+          {
+            title: 'Search',
+            url: 'https://doc.sitecore.com/search',
+            logo: Product.Search,
           },
           {
             title: 'Personalize',
@@ -61,10 +77,25 @@ export const mainNavigation: NavItem[] = [
             url: 'https://doc.sitecore.com/send',
             logo: Product.Send,
           },
+        ],
+      },
+      {
+        title: 'Capabilities',
+        children: [
+          {
+            title: 'Cloud Portal',
+            url: 'https://doc.sitecore.com/portal',
+            logo: Product.Sitecore,
+          },
           {
             title: 'Connect',
             url: 'https://doc.sitecore.com/connect',
             logo: Product.Connect,
+          },
+          {
+            title: 'Marketplace',
+            url: 'https://doc.sitecore.com/marketplace',
+            logo: Product.Sitecore,
           },
         ],
       },
@@ -81,27 +112,17 @@ export const mainNavigation: NavItem[] = [
             url: 'https://doc.sitecore.com/discover',
             logo: Product.Discover,
           },
-        ],
-      },
-
-      {
-        title: 'Platform DXP',
-        children: [
-          {
-            title: 'Experience Manager',
-            url: 'https://doc.sitecore.com/xp',
-            logo: Product.ExperienceManager,
-          },
-          {
-            title: 'Experience Platform',
-            url: 'https://doc.sitecore.com/xp',
-            logo: Product.ExperiencePlatform,
-          },
           {
             title: 'Experience Commerce',
             url: 'https://doc.sitecore.com/xp',
             logo: Product.ExperienceCommerce,
           },
+        ],
+      },
+
+      {
+        title: 'Services',
+        children: [
           {
             title: 'Managed Cloud',
             url: 'https://doc.sitecore.com/xp',
