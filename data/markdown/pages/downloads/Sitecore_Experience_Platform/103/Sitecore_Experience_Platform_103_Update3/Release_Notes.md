@@ -2,7 +2,7 @@
 title: 'Release notes'
 description: ''
 ---
-**2025-07-29:** Released Sitecore Experience Platform 10.3.3 rev. 01xxxx
+**2025-08-01:** Released Sitecore Experience Platform 10.3.3 rev. 012336
 
 Return to the [Sitecore Experience Platform 10.3.3](/downloads/Sitecore_Experience_Platform/103/Sitecore_Experience_Platform_103_Update3) release page.
 
