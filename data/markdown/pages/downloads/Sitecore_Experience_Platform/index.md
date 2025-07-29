@@ -9,9 +9,10 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Platform
 ## Sitecore Experience Platform 10.4
 </CardHeader>
 <CardBody>
+[Sitecore Experience Platform 10.4 Cumulative Hotfix](https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/104/Sitecore_Experience_Platform_10.4_Cumulative_Hotfix/)\
 [Sitecore Experience Platform 10.4 Update-1](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104_Update1)\
 [Sitecore Experience Platform 10.4](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104)
-</CardBody>          
+</CardBody>
 </Card>
 
 <Card variant='outlineRaised' px={0} mb={8}>
