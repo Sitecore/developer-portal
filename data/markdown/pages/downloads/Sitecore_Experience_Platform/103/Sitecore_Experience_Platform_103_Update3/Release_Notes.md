@@ -18,7 +18,7 @@ This update release contains important updates to 3rd party dependencies, and a 
 | Deployment | Added optional automation to simplify installing Sitecore XP cumulative hotfixes, for example Sitecore XP 10.3.4 pre-releases. Added automated application of binding redirects and patching of config files where applicable. Ref: Documentation/Optional deploy automation/readme.md available with each [KB1002844 - Cumulative hotfix for Sitecore XP 10.3](https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1002844) package. | 598738 | 
 | Containers | As part of the separate but related release of mssql-developer images, added ability to configure a TLS certificate for MSSQL. | 625457 |
 | Application Tracking | Introduced a lightweight, secure tracking script to help us better understand how Sitecore’s management UIs are used. This will help us ensure future enhancements are guided by real-world usage patterns. No content, website data, or website visitor information is tracked. Tracking respects privacy settings and licensing controls. | PDXP-9090 |
-| Security | Security enhancements | 619349/PDXP-9109, 628372, 624115/PDXP-1052/PDXP-7591, 629358/PDXP-5517, PDXP-7180, PDXP-7886, PDXP-11391 |
+| Security | Security enhancements | 619349, 628372, 624115/PDXP-1052/PDXP-7591, 629358/PDXP-5517, PDXP-7180, PDXP-7886, PDXP-11391 |
 
 ## Breaking changes
 | Context | Description | Ref. |
