@@ -216,6 +216,10 @@
               "path": "creating-a-component-gallery"
             },
             {
+              "title": "Custom Next.js Image Loader for SSG",
+              "path": "custom-image-loader-ssg"
+            },
+            {
               "title": "Using Placeholders",
               "path": "using-placeholders"
             },
@@ -245,7 +249,11 @@
             {
               "title": "Preview Website",
               "path": "preview-website"
-            },            
+            },
+            {
+              "title": "Scheduled Publishing",
+              "path": "scheduled-publishing"
+            },         
             {
               "title": "Redirect",
               "path": "redirect"

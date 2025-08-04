@@ -75,6 +75,11 @@
           "ignoreLink": false
         },
         {
+          "title": "Alert Bar",
+          "path": "alert-bar",
+          "ignoreLink": false
+        },        
+        {
           "title": "Before You Fly Reminder",
           "path": "before-you-fly",
           "ignoreLink": false
@@ -82,6 +87,11 @@
         {
           "title": "Home Page Personalization",
           "path": "home-page-personalization",
+          "ignoreLink": false
+        },
+        {
+          "title": "Mortgage Jourey Alert",
+          "path": "mortgage-journey-alert",
           "ignoreLink": false
         },
         {
@@ -121,6 +131,11 @@
       "path": "optimization",
       "ignoreLink": true,
       "children": [
+        {
+          "title": "Decision Model Optimization",
+          "path": "decision-model-optimization",
+          "ignoreLink": false
+        }  ,
         {
           "title": "Personalization Vision",
           "path": "personalization-vision",
