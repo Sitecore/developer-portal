@@ -49,6 +49,21 @@
             }
           ]
         },
+          {
+          "title": "User Roles",
+          "path": "user-roles",
+          "ignoreLink": true,          
+          "children": [
+            {
+              "title": "Data Librarian",
+              "path": "librarian"
+            },
+            {
+              "title": "System Administrator",
+              "path": "administrator"
+            }
+          ]
+        },
         {
           "title": "Sprint Zero",
           "path": "sprint-zero",

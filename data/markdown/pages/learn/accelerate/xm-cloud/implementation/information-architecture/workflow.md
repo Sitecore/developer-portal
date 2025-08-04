@@ -11,13 +11,24 @@ audience: ['Architect','Product Owner','Project Manager','Technical Implementer'
 
 ## Context
 
-XM Cloud comes with a sample workflow that should not be used as an actual configuration but as an example of a simple workflow. Workflow helps customers prevent unplanned content from making it to their website without the proper approvals. It also helps maintain consistent quality across all content. Each step in the editing process—such as fact-checking, style alignment, tone consistency, and further reviews—ensures that the content meets specific standards.
+XM Cloud comes with a sample workflow that should not be used as an actual configuration but as an example of a simple workflow. Workflow helps customers prevent unplanned content from making it to their website without the proper approvals. It also helps maintain consistent quality across all content. Each step in the editing process—such as fact-checking, style alignment, tone consistency, and further reviews ensures that the content meets specific standards.
 
 ## Execution
 
 ### Workflow Planning
 
 It's recommended to establish a workflow for all content items. This prevents premature publishing to your production environment, whether done automatically or manually. While the sample workflow is provided, it should only be used as an example or template for designing a workflow that fits your business needs. Maintain simplicity in your workflow. Overcomplicating it with numerous states and review levels can slow the process, resulting in a less effective workflow.
+
+Administrator users bypass workflows and versioning by default. Content authors should not be assigned the admin role as this will impact the content creation process. The following will guide you through the process of creating page and datasource workflows, so that when content authors start editing a component in Page Builder on a previously approved page both component and page will enter workflow and have a new version created, as seen below.
+
+<img src="/images/learn/accelerate/xm-cloud/workflow-admin.png" alt="Version creation"/>
+<br/><br/>
+
+Addtional components changed at this time will also enter workflow. When content authors have finished editing these items can then be submitted and moved through workflow states together directly within Page Builder.
+
+<img src="/images/learn/accelerate/xm-cloud/workflow-submit.png" alt="Workflow submit action"/>
+<br/><br/>
+
 
 ### Migration Considerations
 
@@ -49,12 +60,12 @@ Two separate workflows are recommended, one for page items and the other for dat
 
 <Image src="/images/learn/accelerate/xm-cloud/workflows1.png" title="StandardValuesPageWorkflow"/>
 
-### Assign SXA Datasource Workflow
+### Assign Datasource Workflow
 
 It's important to configure workflow for both pages and the separate data source component items on a page. To do this:
 
-1. Ensure the Standard Values module is installed for your SXA website.
-2. Navigate to the Content Editor and define your components under the Standard Values item in the SXA website settings folder.
+1. Ensure the Standard Values module is installed for your website.
+2. Navigate to the Content Editor and define your components under the Standard Values item in the website settings folder.
 3. Right-click on Standard Values and click on `Insert > Standard Values` to open a dialog.
 4. Select the Datasource Templates tab and configure any unconfigured templates.
 5. For each data source component, configure the workflow the same way as a page.
@@ -143,6 +154,20 @@ You can now trigger sending emails or notifications via webhooks when an item re
 
 3. The webhook sends a `POST` request to the specified URL.
 4. Configure the URL and authorization details for your endpoint.
+
+## Insights
+So what happens if you start editing multiple components on a page with both the components and page items dropping into workflow with the new versions created? How can this be done without impacting any of the other changes.
+
+When editing is complete from this point forward Explorer can be oppened in context for the hero banner item where this item can then be moved through workflow on its own and then published.
+
+Because the other items modified will not be in the final state in the workflow they will not be published. If snapshot publishing is being used then a layout update will still be sent via Edge to allow on-demand ISR to invalid the page. If this is a new component being added to the page then the layout will need to updated and published for the chnages to come through because the dependency is not available on Edge - refer to the [Publishing Optimization](/learn/accelerate/xm-cloud/optimization/publishing-optimization#insights) recipe for further information on publishing flow.
+
+### Related Documentation
+
+<Row columns={2}>
+  <Link title="Publishing to Experience Edge" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />
+  <Link title="Publishing optimization" link="/learn/accelerate/xm-cloud/optimization/publishing-optimization#insights" />
+</Row>
 
 ### Related Documentation
 

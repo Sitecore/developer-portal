@@ -42,6 +42,7 @@ Effective project planning is the key to any successful implementation - ensurin
     - [Scope and Governance Framework](/learn/accelerate/xm-cloud/pre-development/discovery/scope-governance-framework)
     - [Preparing for an XM Cloud Project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project)
     - [Project Estimation](/learn/accelerate/xm-cloud/pre-development/project-planning/project-estimation)
+    - [Planning test strategy](/learn/accelerate/xm-cloud/pre-development/project-planning/test-strategy-planning)    
   </GroupItem>
   <GroupItem>
     #### Documentation
@@ -74,6 +75,8 @@ Information Architecture (IA) is the backbone of any site implementation - ensur
   <GroupItem>
     #### Recipies
     - [Content Audit](/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit)
+    - [Content Migration](/learn/accelerate/xm-cloud/final-steps/content-migration)
+    - [Multisite Strategy](/learn/accelerate/xm-cloud/pre-development/information-architecture/multisite-strategy)
     - [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge)
   </GroupItem>
   <GroupItem>
@@ -117,6 +120,7 @@ With these requirements starting to come together, details of the implementation
     - [Setup Sitecore Content Serialization](/learn/accelerate/xm-cloud/pre-development/sprint-zero/setup-content-serialization)
     - [DevOps](/learn/accelerate/xm-cloud/pre-development/sprint-zero/devops)
     - [Creating a Site](/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site)
+    - [Developer testing foundations](/learn/accelerate/xm-cloud/pre-development/sprint-zero/testing-foundations)
      
   </GroupItem>
   <GroupItem>
@@ -207,6 +211,7 @@ Integrating data into your site is a cornerstone of building dynamic digital exp
     - [Retrieving Data from 3rd Party](/learn/accelerate/xm-cloud/implementation/external-data-integration/retrieving-data-from-3rd-party-integrations)
     - [Custom Editing UX for 3rd Party](/learn/accelerate/xm-cloud/implementation/external-data-integration/custom-editing-ux-3rd-party-integrations)
     - [Getting Component Specific Data](/learn/accelerate/xm-cloud/implementation/external-data-integration/getting-component-specific-data)
+    - [Middleware Invocations](/learn/accelerate/xm-cloud/implementation/middleware-invocations)    
   </GroupItem>
   <GroupItem>
     #### Documentation
@@ -223,7 +228,7 @@ Switching to composable means that not all requirements will be fulfilled by jus
   <GroupItem>
     #### Recipies
     - [Sitecore Search](/learn/accelerate/xm-cloud/implementation/sitecore-search)
-    - [XM Cloud Embedded Personalization]()
+    - [XM Cloud Personalization](/learn/accelerate/xm-cloud/optimization/user-experience-optimization)
   </GroupItem>
   <GroupItem>
     #### Documentation
@@ -241,6 +246,7 @@ You've implemented it — now it's time to launch it. Go-live becomes a coordina
     #### Recipies
     - [Content Migration](/learn/accelerate/xm-cloud/final-steps/content-migration)
     - [Go-Live Checklist](/learn/accelerate/xm-cloud/final-steps/go-live-checklist)
+    - [Testing Framework](/learn/accelerate/xm-cloud/final-steps/testing-framework)    
   </GroupItem>
   <GroupItem>
     #### Documentation
@@ -258,8 +264,10 @@ Launch is just the beginning. Real value is in the way you watch, learn, and hon
     #### Recipies
     - [Data Fetching Optimization](/learn/accelerate/xm-cloud/optimization/data-fetching-optimization)
     - [On-page SEO Optimization](/learn/accelerate/xm-cloud/optimization/seo-web-optimization)
+    - [Operational Governance](/learn/accelerate/xm-cloud/optimization/operational-governance)    
     - [Performance Optimization](/learn/accelerate/xm-cloud/optimization/performance-optimization)
     - [Publishing Optimization](/learn/accelerate/xm-cloud/optimization/publishing-optimization)
+    - [User Experience Optimization](/learn/accelerate/xm-cloud/optimization/user-experience-optimization)
   </GroupItem>
   <GroupItem>
     #### Documentation

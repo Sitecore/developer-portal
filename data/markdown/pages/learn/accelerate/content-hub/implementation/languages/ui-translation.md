@@ -4,7 +4,7 @@ description: 'Multi-language content and portal UI translation in Sitecore Conte
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2025-06-16'
+lastUpdated: '2025-07-30'
 created: '2025-06-16'
 audience: ['Architect','Technical Implementers','Solution Architects']
 ---
@@ -64,6 +64,18 @@ If a portal language is not being used, remove it altogether. Where a portal lan
 Note that a cleanup may be necessary to remove the deleted translations entirely, as removing a language does not automatically remove (for example) that language’s translation from entity labels.
 
 Adding/removing a portal language or importing translations should not cause any graph server activity as these actions are UI-level operations and are isolated from the graph engine. The import process will take a similar amount of time as other import operations to complete, but will not tie up the graph server.
+
+### Best Practices
+- **Understand permissions** - Importing or exporting translations requires either Superuser access or appropriate permissions through user group policies. Ensure the right roles are in place before initiating translation workflows.
+- **Test in a non-Production environment** - before going live, validate your translation setup in a non-production environment. Enable the culture switcher to simulate real-world scenarios and ensure all translations display and behave as expected across different languages.
+
+## Related Recipes
+
+<Row columns={2}>
+  <Link title="Domain modelling" link="/learn/accelerate/content-hub/pre-development/data-model/domain-modelling" />
+  <Link title="Content Structuring" link="/learn/accelerate/content-hub/pre-development/data-model/content-structuring" />  
+</Row>
+
 
 ## Related Documentation
 
