@@ -34,32 +34,3 @@ Sitecore OrderCloud, our headless, API-first commerce platform that is part of S
 [Sitecore Experience Commerce 9.0 Update-2](/downloads/Sitecore_Commerce/90/Sitecore_Experience_Commerce_90_Update2)\
 [Sitecore Experience Commerce 9.0 Update-1](/downloads/Sitecore_Commerce/90/Sitecore_Experience_Commerce_90_Update1)\
 [Sitecore Experience Commerce 9.0 Initial Release](/downloads/Sitecore_Commerce/90/Sitecore_Experience_Commerce_90_Initial_Release)
-
-### Sitecore Commerce 8.2.1
-[Sitecore Commerce 8.2.1 Update-3](/downloads/Sitecore_Commerce/821/Sitecore_Commerce_821_Update3)\
-[Sitecore Commerce 8.2.1 Update-2](/downloads/Sitecore_Commerce/821/Sitecore_Commerce_821_Update2)\
-[Sitecore Commerce 8.2.1 Update-1](/downloads/Sitecore_Commerce/821/Sitecore_Commerce_821_Update1)\
-[Sitecore Commerce 8.2.1 Initial Release](/downloads/Sitecore_Commerce/821/Sitecore_Commerce_821)
-
-### Sitecore Commerce 8.2
-[Sitecore Commerce 8.2 powered by Microsoft Dynamics](/downloads/Sitecore_Commerce/82/Sitecore_Commerce_82_powered_by_Microsoft_Dynamics)\
-[Sitecore Commerce 8.2 powered by Commerce Server](/downloads/Sitecore_Commerce/82/Sitecore_Commerce_82_powered_by_Commerce_Server)\
-[Sitecore Commerce 8.2 Connect](/downloads/Sitecore_Commerce/82/Sitecore_Commerce_82_Connect)\
-[Commerce Server 11.4](/downloads/Sitecore_Commerce/82/Commerce_Server_114)
-
-### Sitecore Commerce 8.1
-[Sitecore Commerce 8.1 powered by Microsoft Dynamics](/downloads/Sitecore_Commerce/81/Sitecore_Commerce_81_powered_by_Microsoft_Dynamics_Initial_Release)\
-[Sitecore Commerce 8.1 powered by Commerce Server](/downloads/Sitecore_Commerce/81/Sitecore_Commerce_81_powered_by_CS)\
-[Sitecore Commerce 8.1 Connect](/downloads/Sitecore_Commerce/81/Sitecore_Commerce_81_Connect)\
-[Commerce Server 11.3](/downloads/Sitecore_Commerce/81/Sitecore_Commerce_Server_113)
-
-### Sitecore Commerce 8.0
-[Sitecore Commerce 8.0 powered by Microsoft Dynamics Update-1](/downloads/Sitecore_Commerce/80/Sitecore_Commerce_80_powered_by_Microsoft_Dynamics_Update1)\
-[Sitecore Commerce 8.0 powered by Commerce Server Update-1](/downloads/Sitecore_Commerce/80/Sitecore_Commerce_80_powered_by_Commerce_Server_Update1)\
-[Commerce Server 11.2 Update-1](/downloads/Sitecore_Commerce/80/Commerce_Server_112_Update1)\
-[Sitecore Commerce 8.0 powered by Microsoft Dynamics Initial Release](/downloads/Sitecore_Commerce/80/Sitecore_Commerce_80_powered_by_Microsoft_Dynamics_Initial_Release)\
-[Sitecore Commerce 8.0 powered by Commerce Server Initial Release](/downloads/Sitecore_Commerce/80/Sitecore_Commerce_80_powered_by_Commerce_Server_Initial_Release)\
-[Commerce Server 11.2 Initial Release](/downloads/Sitecore_Commerce/80/Commerce_Server_112_Initial_Release)\
-[Sitecore Commerce 8.0 Connect](/downloads/Sitecore_Commerce/80/Sitecore_Commerce_80_Connect)
-
-For Sitecore Commerce 7.5 and below, please visit the [Sitecore Developer Network (SDN)](https://archive.doc.sitecore.com/xp/en/sdnarchive/).
