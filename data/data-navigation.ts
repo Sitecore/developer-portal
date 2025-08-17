@@ -94,7 +94,7 @@ export const mainNavigation: NavItem[] = [
           },
           {
             title: 'Marketplace',
-            url: 'https://doc.sitecore.com/marketplace',
+            url: 'https://doc.sitecore.com/mp',
             logo: Product.Sitecore,
           },
         ],
