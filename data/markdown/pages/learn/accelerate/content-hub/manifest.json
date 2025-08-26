@@ -189,7 +189,11 @@
             {
               "title": "Editing assets in 3rd-party tools",
               "path": "3rd-party-editing-tools"
-            }
+            },
+            {
+              "title": "Content distribution",
+              "path": "content-distribution"
+            }            
           ]
         },
         {

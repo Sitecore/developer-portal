@@ -85,6 +85,11 @@
           "ignoreLink": false
         },
         {
+          "title": "Browser Tab Re-engagement",
+          "path": "browser-tab",
+          "ignoreLink": false
+        },
+        {
           "title": "Home Page Personalization",
           "path": "home-page-personalization",
           "ignoreLink": false
@@ -105,7 +110,7 @@
           "ignoreLink": false
         }
 
-        
+       
           
       ]
     },

@@ -4,7 +4,7 @@ description: 'Enhance your website search by making documents easily discoverabl
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2025-04-30'
+lastUpdated: '2025-08-22'
 created: '2025-04-30'
 
 audience: ['Architect','Technical Implementer', 'System Administrator', 'User']
@@ -16,6 +16,8 @@ Content surfaced on sites might not always necessarily exist in your CMS. Produc
 By integrating your DAM such as Sitecore Content Hub with your search provider such as Sitecore Search, we can ensure these types of assets are indexed and discoverable without relying on conventional crawling methods.
 
 > The following scenario will focus on Sitecore products, but similar approaches can be utilized with other products. Other approaches of integrating data into your website are available, that are detailed in [Custom Editing UX for 3rd Party Integrations](/learn/accelerate/xm-cloud/implementation/external-data-integration/custom-editing-ux-3rd-party-integrations) recipe.
+
+A reference connector can be found on GitHub - [Content Hub to Sitecore Search Connector](https://github.com/Sitecore/accelerate-content-hub/tree/main/integrations/Sitecore.ContentHub.Integration.SearchConnector). The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
 
 
 ## Execution
@@ -41,14 +43,16 @@ The connector will need to focus on two specific areas:
 - Configure Search Push API according to the [API documentation](https://doc.sitecore.com/search/en/users/search-user-guide/configure-api-push.html).
 
 **2. Data Preparation & Transformation**
-- Define what fields and metadata should be indexed by Search for each content type.
-- For large documents (e.g., PDFs), implement logic within the Content Hub event handler to extract and trim text content to a Search size limit (currently 250Kb). Strategies to consider:
+- Ensure all required attributes (ID, title, description, image_url, content_type) are configured in Sitecore Search
+- Create and publish an API push source with `Enable Incremental Updates` turned on
+- Obtain an API key with the `ingestion` scope
+- Make a `POST` call for each locale to the [Create Document endpoint](https://doc.sitecore.com/search/en/developers/search-developer-guide/walkthrough--creating-and-updating-index-documents-in-two-locales-using-the-ingestion-api.html) with the source ID, domain ID, and locale, passing the document ID and attribute values
+
+For large documents (e.g., PDFs), implement logic within the Content Hub event handler to extract and trim text content to a Search size limit. Strategies to consider:
   - Extract only the first N characters/words or relevant summary.
   - Strip images and unneeded binary content.
   - Consider running OCR or text summarization if necessary.
 - Log and handle scenarios where content size still exceeds limits after trimming.
-
-
 
 Content Hub’s [Media Processing](https://doc.sitecore.com/ch/en/users/content-hub/media-processing.html) configuration automatically generates a `downloadExtractedContent` rendition for certain file types, including `.doc`, `.docx`, `.pdf`, `.pptx`, `.txt`, and `.xlsx`. This rendition is a plain text file containing the document's extracted text, which can be sent to Sitecore Search to improve ingestion and searchability.
 
@@ -62,6 +66,24 @@ The process of integrating content and structured data into Sitecore Search foll
 Like documents, content items need clear publishing criteria. The best approach is to use [Sitecore Experience Edge](https://doc.sitecore.com/ch/en/users/content-hub/experience-edge-for-content-hub.html), where content conditions are defined, and the connector is triggered when the ``PublishState`` changes. If Experience Edge is not in use, the `FinalLifecycleStatus` of the content can be used instead.
 
 Once the connector is triggered, it will either add or remove content from Sitecore Search. Since Sitecore Search enforces a 256KB payload limit, it’s often practical to send only an abstract or summary rather than the full content. The full article or page can then be retrieved via a Sitecore Search crawler from its published web location, ensuring a balance between search performance and content depth.
+
+*Textual relevance by attribute* in Sitecore Search lets you assign weights (boosts) to specific attributes so that matches in higher-weighted fields rank above matches in lower-weighted ones.
+
+Why weight shorter fields more heavily?
+
+| Reason                        | Explanation                                                                 |
+|-------------------------------|-----------------------------------------------------------------------------|
+| **Precision of intent**       | Short fields like `title`, `tags`, or `category` are concise summaries. A match in these fields almost always indicates strong relevance to the user’s intent. |
+| **Signal-to-noise ratio**     | Long fields (e.g., full `description` or `body` text) contain many words, some peripheral to the core topic. Matching within those large blocks is more likely to be incidental, diluting relevance. |
+| **Performance and stability** | Boosted short-field matches reduce reliance on term-frequency across verbose content, yielding more consistent rankings. |
+
+
+Best practice:
+- Assign highest boost to `title` and `tags`
+- Mid-level boost to short metadata (e.g., `category`, `documentType`)
+- Lower (or zero) boost to long-form fields (`description`, `body`)
+
+This ensures that succinct, highly indicative fields drive result order, while longer fields still contribute to recall without overpowering the ranking.
 
 ### Structured Data
 
@@ -93,5 +115,5 @@ Within Content Hub, an action is configured to call the connector whenever an as
   <Link title="Create a trigger" link="https://doc.sitecore.com/ch/en/users/content-hub/example---create-a-trigger.html" />
   <Link title="Media processing" link="https://doc.sitecore.com/ch/en/users/content-hub/media-processing.html" />
   <Link title="Creating and updating index documents" link="https://doc.sitecore.com/search/en/developers/search-developer-guide/walkthrough--creating-and-updating-index-documents-in-two-locales-using-the-ingestion-api.html" />
-
+  <Link title=" Creating and updating index documents in two locales using the Ingestion API" link="https://doc.sitecore.com/search/en/developers/search-developer-guide/walkthrough--creating-and-updating-index-documents-in-two-locales-using-the-ingestion-api.html"/>
 </Row>
