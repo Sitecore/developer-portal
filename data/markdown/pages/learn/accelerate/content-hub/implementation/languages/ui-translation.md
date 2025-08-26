@@ -70,10 +70,7 @@ Note that a cleanup may be necessary to remove the deleted translations entirely
 Adding/removing a portal language or importing translations should not cause any graph server activity as these actions are UI-level operations and are isolated from the graph engine. The import process will take a similar amount of time as other import operations to complete, but will not tie up the graph server.
 
 ### Best Practices
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 - **Understand permissions** - Importing or exporting translations requires either Superuser access or appropriate permissions through user group policies. Ensure the right roles are in place before initiating translation workflows.
 - **Test in a non-Production environment** - before going live, validate your translation setup in a non-production environment. Enable the culture switcher to simulate real-world scenarios and ensure all translations display and behave as expected across different languages.
 
@@ -84,10 +81,6 @@ Adding/removing a portal language or importing translations should not cause any
   <Link title="Content Structuring" link="/learn/accelerate/content-hub/pre-development/data-model/content-structuring" />  
 </Row>
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 ## Related Documentation
 
 <Row columns={2}>
