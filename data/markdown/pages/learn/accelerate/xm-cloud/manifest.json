@@ -292,6 +292,20 @@
           ]
         },
         {
+          "title": "Extensions",
+          "path": "extensions",
+          "ignoreLink": false,
+          "children": [
+            {
+              "title": "Deployment Dashboard",
+              "path": "deployments-dashboard"
+            },{
+              "title": "Embedding content from Content Hub",
+              "path": "content-assets"
+            }
+          ]
+        },        
+        {
           "title": "Middleware Invocations",
           "path": "middleware-invocations",
           "ignoreLink": false

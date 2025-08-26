@@ -69,7 +69,7 @@ As said, despite the publication item, the process may require publication of ot
 
 When an item is published to Edge, dependencies are calculated for the item and added to the publishing pipeline. Because these items are being published, all items that depend on the new items are also published. Any items identified as a dependency are included in the publication queue, regardless of whether they have changed. The process repeats until no new publishable items are found.
 
-Review the [Publishing optimizatio](/learn/accelerate/xm-cloud/optimization/publishing-optimization) recipe for more detail on dependency resolution.
+Review the [Publishing optimization](/learn/accelerate/xm-cloud/optimization/publishing-optimization) recipe for more detail on dependency resolution.
 
 The dependency resolution process is one of the main reasons to implement workflows: it's possible for one user to make a change that causes a page another user is working on to be published. Even a simple two-step workflow consisting of *Draft* and *Publish* statuses is sufficient to ensure a website only shows completed content.
 
