@@ -13,7 +13,8 @@ The latest package download is available below. **Note:** this download location
 
 | Release | Description |
 | --- | --- |
-| [Download latest 1.3.23](https://scdp.blob.core.windows.net/downloads/Sitecore_Stream_for_Platform_DXP/Sitecore_Stream_for_Platform_DXP.v1.3.23.zip) | Added AI-assisted content extraction from a file, URL, or text; transformed into a structured content item. |
+| [Download latest 1.4.54](https://scdp.blob.core.windows.net/downloads/Sitecore_Stream_for_Platform_DXP/Sitecore_Stream_for_Platform_DXP.v1.4.54.zip) | Added AI-assisted media metadata extraction; analyze an image and suggest its title, description, alt text, and key words. |
+| 1.3.23 | Added AI-assisted content extraction from a file, URL, or text; transformed into a structured content item. |
 | 1.2.45 | Added AI-assisted translation of a site content item, to translate to a selected language, or to generate a new version of same language. |
 | 1.1.63 | Added the ability to generate multiple content variants. Added the ability to select from a list of configured brand kits. |
 | 1.1.34 | Minor release including bug fixes and improvements to installation, configuration, user experience, error handling, and documentation. |
