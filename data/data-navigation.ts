@@ -72,11 +72,6 @@ export const mainNavigation: NavItem[] = [
             url: 'https://doc.sitecore.com/personalize',
             logo: Product.Personalize,
           },
-          {
-            title: 'Send',
-            url: 'https://doc.sitecore.com/send',
-            logo: Product.Send,
-          },
         ],
       },
       {
