@@ -1,15 +1,18 @@
 ---
 product: ['marketplace']
 title: 'From Zero to Deployed: Building with the Sitecore Marketplace Starter Kit'
-description: 'Explore the Sitecore Marketplace — your hub for discovering and building ready-to-use extensions that amplify your digital experience platform. Join our Early Access Program to get started with the Marketplace SDK.'
+description: 'Whether you're building a custom or public app, the process follows a clear path. This guide is tailored for developers who want to get hands-on with Sitecore Marketplace and start building apps. The Marketplace Starter Kit provides the basics to get started along with example implementations of all extension points.  From setup to deployment, this chapter walks you through the essentials so you can go from zero to deployed with confidence.'
 promoAfter: ['learning-essentials']
 openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/d2da3c36914d4b34943ca023f2b5e615?v=cfd5dc08'
 ---
-
-# From Zero to Deployed: Building with the Sitecore Marketplace Starter Kit
-Whether you're building a custom or public app, the process follows a clear path. This guide is tailored for developers who want to get hands-on with Sitecore Marketplace and start building your own app. The Marketplace Starter Kit provides the basics to get started along with example implementations of all extension points.  From setup to deployment, this chapter walks you through the essentials so you can go from zero to deployed with confidence.
-
-Not sure what all these terms mean? Maybe you missed the [marketplace introduction article](https://developers.sitecore.com/learn/getting-started/marketplace).
+<Promo
+  title="Not sure what all these terms mean?"
+  description="Maybe you missed the marketplace introduction article."
+  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/b20cc628bdaf4c3080bd586c98d4ee30?v=947ae0af"
+  linkText="Read more"
+  linkHref="https://developers.sitecore.com/learn/getting-started/marketplace"
+  isImageLeft={false}
+/>
 
 ## 1. Prerequisites
 Building marketplace apps requires **Node.js v18+** and **NPM v9+**. Please also note that the Marketplace SDK supports **React** and **Next.js** only. 
@@ -20,10 +23,7 @@ You can create the app in several ways.
 -	Create empty Next.Js app using app router or page router approach
 -	Using the marketplace starter-kit (uses app router)
 
-**This example builds based on the starter kit. **	
-
-Building based on an empty Next.Js app using app router approach, is described here: https://developers.sitecore.com/learn/getting-started/marketplace/marketplace-nextjs-app-router
-
+**This example builds based on the starter kit.**	
 
 ### 2.1 Fork Marketplace Starter Kit
 Go to https://github.com/Sitecore/marketplace-starter and create a fork of the repository to your own. 
@@ -44,7 +44,7 @@ The file structure should look like that now:
 
 The marketplace starter repository quick starts your implementation by providing a preconfigured solution. The `useMarketplaceClient.ts` instantiates the marketplace client. 
 
-Within the pages folder you find example implementations for each extension point. More information you can find in the ReadMe file of the repository. 
+Within the app folder you can explore example implementations for each extension point. Find more information in the ReadMe file of the repository. 
 
 ### 2.3 Test app
 Start your app running `npm run dev`
@@ -60,9 +60,14 @@ Open e.g. http://localhost:3000/custom-field-extension
 ### 2.4 Consider unified UI
 When starting to build, please note that we strongly recommend designing your app’s UI in line with Sitecore’s interface guidelines to provide a consistent and familiar experience for users.
 
-
-Read further about registering your app with Sitecore Cloud Portal and XM Cloud: https://developers.sitecore.com/learn/getting-started/marketplace/marketplace-register-app 
-
+<Promo
+  title="Want to know how to register your app with Sitecore?"
+  description="Learn how to take your custom Marketplace app from development to deployment. This guide walks you through the final steps—registering your app in the Sitecore Cloud Portal, selecting extension points, configuring API access, and making it available to your organization."
+  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/126130ee2f7e40c79f3496595341e587?v=d568e138"
+  linkText="Read more"
+  linkHref="https://developers.sitecore.com/learn/getting-started/marketplace/marketplace-register-app"
+  isImageLeft={false}
+/>
 
 ## Resoures
 | Resource | Link |
@@ -72,13 +77,10 @@ Read further about registering your app with Sitecore Cloud Portal and XM Cloud:
 |Marketplace NextJS Starter Kit| https://github.com/Sitecore/marketplace-starter|
 
 ## Read more
-<Article 
-  title="Configure and Install a custom marketplace app" 
-  description="Learn how to take your custom Marketplace app from development to deployment. This guide walks you through the final steps—registering your app in the Sitecore Cloud Portal, selecting extension points, configuring API access, and making it available to your organization." 
-  link="/learn/getting-started/marketplace/marketplace-register-app" 
-  maxWidth="sm" />
-<Article 
-  title="Unlock Sitecore’s Potential: Introducing Sitecore Marketplace Custom Apps" 
-  description="Discover how Sitecore Marketplace Custom Apps empower developers, architects, and marketers to extend Sitecore with modular, purpose-built solutions. This article introduces the concept of Custom Apps, explains their role in a composable architecture, and highlights how they unlock new capabilities across Sitecore products—without touching the core." 
-  link="/learn/getting-started/marketplace/marketplace-starter-kit-nextjs-app-router" 
-  maxWidth="sm" />
+
+  <Article 
+    title="Unlock Sitecore’s Potential: Introducing Sitecore Marketplace Custom Apps" 
+    description="Discover how Sitecore Marketplace Custom Apps empower developers, architects, and marketers to extend Sitecore with modular, purpose-built solutions. This article introduces the concept of Custom Apps, explains their role in a composable architecture, and highlights how they unlock new capabilities across Sitecore products—without touching the core." 
+    link="/learn/getting-started/marketplace/marketplace-starter-kit-nextjs-app-router" 
+    maxWidth="sm" />
+ 

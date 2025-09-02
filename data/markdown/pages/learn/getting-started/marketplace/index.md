@@ -1,13 +1,10 @@
 ---
 product: ['xm-marketplace']
 title: 'Unlock Sitecore’s Potential: Introducing Sitecore Marketplace Custom Apps'
-description: 'Discover how Sitecore Marketplace Custom Apps empower developers, architects, and marketers to extend Sitecore with modular, purpose-built solutions. This article introduces the concept of Custom Apps, explains their role in a composable architecture, and highlights how they unlock new capabilities across Sitecore products—without touching the core.'
+description: 'The Sitecore Marketplace has officially opened its doors to Custom Apps giving developers and architects the power to build, deploy, and share solutions that extend Sitecore’s capabilities with speed and precision. Whether you're streamlining workflows, integrating third-party services, or crafting agentic experiences, Marketplace Custom Apps are the way to create UI extensions.'
 promoAfter: ['learning-essentials']
 openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/b20cc628bdaf4c3080bd586c98d4ee30?v=947ae0af'
 ---
-
-# Unlock Sitecore’s Potential: Introducing Sitecore Marketplace Custom Apps
-The Sitecore Marketplace has officially opened its doors to Custom Apps giving developers and architects the power to build, deploy, and share solutions that extend Sitecore’s capabilities with speed and precision. Whether you're streamlining workflows, integrating third-party services, or crafting agentic experiences, Marketplace Custom Apps are the way to create UI extensions.
 
 ## What is the Sitecore Marketplace?
 The Sitecore Marketplace is your trusted hub for managing and discovering curated, ready-to-use extensions that enhance your Sitecore digital experience platform. Seamlessly integrate with preferred third-party services, extend platform capabilities, and maximize your investment. Build apps using provided SDKs to create both standard and custom solutions tailored to your business needs.
@@ -23,14 +20,14 @@ We divide Marketplace apps into **Custom Apps** (available now) and **Public App
 
 | Feature | Custom Apps |	Public Apps |
 |---------------|--------------|--------------|
-|Visibility	    |Private to a specific customer (Cloud Portal Organization).| Available to all Sitecore customers |
-|Purpose	      |Tailored solution for unique business needs                |	Reusable tool for common use cases |
-|Review Process |	Quality and Security is to be ensured with the implementer of the Marketplace App. Sitecore does not review. |	Sitecore will review public apps.|
+|Visibility	    |Private to a specific customer (Cloud Portal Organization).| Available to all Sitecore customers. |
+|Purpose	      |Tailored solution for unique business needs.                |	Reusable tool for common use cases. |
+|Review Process |	Quality and security is to be ensured with the implementer of the Marketplace App. Sitecore does not review. |	Sitecore will review public apps.|
 |Hosting	     |Self-managed                                                |	Self-managed
 |Availability	  | General Availability	                                    | Coming Soon |
 
-Marketplace Custom Apps are modular, plug-and-play solutions built using Sitecore’s Marketplace SDKs and APIs. They’re designed to integrate into Sitecore environments using the Blok Design System enriching dashboards, pages, and workflows with tailored functionality.
-From shoppable images powered by AI to dashboard widgets that surface Google Analytics data, these apps unlock new possibilities for personalization, automation, and extensibility
+Marketplace Custom Apps are modular, plug-and-play solutions built using Sitecore’s Marketplace SDKs and APIs. They’re designed to integrate into Sitecore environments  enriching dashboards, pages, and workflows with tailored functionality.
+From shoppable images powered by AI to dashboard widgets that surface Google Analytics data, these apps unlock new possibilities for personalization, automation and extensibility
 
 ## Using the Apps
 Marketplace Apps extend the out of the box functionality in several places called extension points.  Example of appearance in XM Cloud Page Builder: 
@@ -44,8 +41,6 @@ More extension points across other Sitecore products are planned.
 
 Let us know about you feedback: https://forms.office.com/e/cEndu1JLQc 
 
-**ToDo:** Link Submit Feedback Form here
-
 ### 1. Standalone - Cloud Portal Homepage
 Your app can be launched directly from the Cloud Portal homepage, opening in a new tab. This can be used for general information like health checks, environment overarching information or activities like information transfers.
 
@@ -57,13 +52,13 @@ Triggered from the top bar navigation in XM Cloud Portfolio (Sites), this extens
 ![Annimation showing the Full Screen extension point of Sitecore Marketplace](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/8f1a0691b54649eab4c3be404c9994a6?v=c7c37a48)
 
 ### 3. Pages Context Panel – XMC Page Builder
-Apps appear in a left-side panel within the Page Builder, perfect for page-contextual tools like translation, page related analytics or SEO helpers.
+Apps registered for the page context panel appear in a left-side panel within the Page Builder, perfect for page-contextual tools like translation, page related analytics or SEO helpers.
 
 These apps can be expanded to get a better overview. 
 ![Annimation showing the Page context panel extension point of Sitecore Marketplace](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/c89b87e998a1459da0e021c276fb55e1?v=aa8ce64f)
 
 ### 4. Custom Field – XMC Page Builder
-In XM Cloud Page Builder, enhance content templates (content models) with custom field types  e.g. icon pickers, data sources, or input options. Those can appear with the page template on the left panel or within a component context on the right side. This is ideal for personalization and content enrichment.
+Enhance content templates (content models) with custom field types  e.g. icon pickers, data sources, or input options. In XM Cloud Page Builder those can appear with the page related content on the left panel or within a component context on the right side. This is ideal for personalization and content enrichment.
 
 ![Annimation showing the custom field extension point of Sitecore Marketplace](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/44e335e62cae4b62b23b6671e2045f39?v=88c98fee)
 
@@ -73,17 +68,17 @@ As custom fields belong to the data templates (content modeling) they can also a
 
 ![Opened Marketplace App from custom fields extension point](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/b20cc628bdaf4c3080bd586c98d4ee30?v=947ae0af)
 
-Adding a custom field requires also adding a field on the type Marketplace Types -> Plugin. Readmore: https://doc.sitecore.com/mp/en/developers/marketplace/enable-a-custom-field-in-the-xm-cloud-page-builder.html  
+Adding a custom field requires also adding a field to the data template (content model) of type  "Marketplace Types -> Plugin". Read more: https://doc.sitecore.com/mp/en/developers/marketplace/enable-a-custom-field-in-the-xm-cloud-page-builder.html  
 
 ### 5. Dashboard Widgets – XMC Dashboard
-Add widgets to the dashboard in XM Cloud, such as Google Analytics or SEO data integrations, turning it into a central hub for insights. This extension point is ideal for displaying site-wide performance metrics from a third-party analytics provider. For example, a chart for visualizing bounce rates, channels, a list of popular pages, and more.
+Add widgets to the dashboard in XM Cloud, such as Google Analytics or SEO data integrations, turning it into a central hub for insights. This extension point is ideal for displaying site-wide performance metrics e.g. from a third-party analytics provider. For example, a chart for visualizing bounce rates, channels, a list of popular pages, and more.
 
 ![Annimation showing the Dashboard Widget extension point of Sitecore Marketplace](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/051af5b4a0b248c9b8c734d4c06e1868?v=9d76cf80)
 
 ## Marketplace SDK
 
 ### Client package
-When building a Marketplace app, one of the first things you’ll install is the Marketplace SDK Client Package. This isn’t just a utility—it’s the backbone of how your app securely communicates with Sitecore.
+When building a Marketplace app, one of the first things you’d install (pre-installed in starter kit) is the Marketplace SDK Client package. This isn’t just a utility—it’s the backbone of how your app securely communicates with Sitecore.
 
 #### What it does
 
@@ -100,10 +95,10 @@ Inspired by GraphQL and React Query, the SDK’s query/mutation API handles inte
 #### Why it matters: 
 This package is what makes your app feel native. It’s how your app knows where it’s running, who’s using it, and what it should do next.
 
-Read more about the Client package: https://www.npmjs.com/package/@sitecore-marketplace-sdk/client
+[Read more about the Client package](https://www.npmjs.com/package/@sitecore-marketplace-sdk/client)
 
 ### XMC package
-Once your Marketplace app is wired up with the Client SDK, the next step is unlocking the full power of XM Cloud. That’s where the Marketplace SDK XMC package comes in.
+Once your Marketplace app is wired up with the Client package, the next step is unlocking the full power of XM Cloud. That’s where the XMC package of the Marketplace SDK comes in.
 
 This package extends the Client SDK and gives your app type-safe access to key Sitecore APIs, so you can build smarter, faster, and with confidence.
 
@@ -125,7 +120,15 @@ Administer your Edge tenant. Great for apps that monitor usage, manage configura
 #### Why it matters
 The XMC package turns your app into a true XM Cloud citizen—capable of reading, writing, and orchestrating content and configuration across the platform.
 
-Read more about the XMC package: https://www.npmjs.com/package/@sitecore-marketplace-sdk/xmc
+[Read more about the XMC package:](https://www.npmjs.com/package/@sitecore-marketplace-sdk/xmc)
+
+## Accelerate Development with the Marketplace Starter Kit
+To help developers hit the ground running, Sitecore offers a Marketplace Starter Kit Repository. A ready-to-clone Next.js template that includes everything you need to start building a Marketplace app. It’s pre-configured with the Marketplace SDK, supports React and Next.js, and provides sample implementations for each extension point. Whether you're targeting Pages, Dashboards, or the Cloud Portal homepage, the Starter Kit simplifies setup, enforces best practices, and ensures your app feels native from day one.
+
+[Check out the Marketplace SDK](https://github.com/Sitecore/marketplace-starter) 
+
+## Conclusion: Why Marketplace Custom Apps Matter
+Marketplace Custom Apps are more than just extensions. They’re enablers of agility, innovation at the fingertips of marketers. **For developers**, they offer a secure, scalable way to build modular solutions without touching the core. **For organizations**, they unlock tailored functionality that fits seamlessly into Sitecore’s composable architecture. And **for marketers and authors**, they deliver intuitive tools that enhance productivity and accelerate execution. With the Marketplace, Sitecore becomes not just a platform—but a launchpad for what’s next.
 
 ## Resources:
 | Resource | Link |
@@ -154,13 +157,15 @@ Read more about the XMC package: https://www.npmjs.com/package/@sitecore-marketp
 | How do I prevent others from seeing my locally running app that I registered in Cloud Portal?| Ideally you only register local running apps on non-prod environments. |
 
 ## Read more
-<Article 
-  title="From Zero to Deployed: Building with the Sitecore Marketplace Starter Kit" 
-  description="Explore the Sitecore Marketplace — your hub for discovering and building ready-to-use extensions that amplify your digital experience platform. Join our Early Access Program to get started with the Marketplace SDK." 
-  link="/learn/getting-started/marketplace/marketplace-starter-kit-nextjs-app-router" 
-  maxWidth="sm" />
-<Article 
-  title="Configure and Install a custom marketplace app" 
-  description="Learn how to take your custom Marketplace app from development to deployment. This guide walks you through the final steps—registering your app in the Sitecore Cloud Portal, selecting extension points, configuring API access, and making it available to your organization." 
-  link="/learn/getting-started/marketplace/marketplace-register-app" 
-  maxWidth="sm" />
+<Row columns={3}>
+  <Article 
+    title="From Zero to Deployed: Building with the Sitecore Marketplace Starter Kit" 
+    description="Explore the Sitecore Marketplace — your hub for discovering and building ready-to-use extensions that amplify your digital experience platform. Join our Early Access Program to get started with the Marketplace SDK." 
+    link="/learn/getting-started/marketplace/marketplace-starter-kit-nextjs-app-router" 
+    maxWidth="sm" />
+  <Article 
+    title="Configure and Install a custom marketplace app" 
+    description="Learn how to take your custom Marketplace app from development to deployment. This guide walks you through the final steps—registering your app in the Sitecore Cloud Portal, selecting extension points, configuring API access, and making it available to your organization." 
+    link="/learn/getting-started/marketplace/marketplace-register-app" 
+    maxWidth="sm" />
+  </Row>
