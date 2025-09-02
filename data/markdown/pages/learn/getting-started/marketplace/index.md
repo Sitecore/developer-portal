@@ -1,7 +1,7 @@
 ---
 product: ['xm-marketplace']
 title: 'Unlock Sitecore’s Potential: Introducing Sitecore Marketplace Custom Apps'
-description: 'The Sitecore Marketplace has officially opened its doors to Custom Apps giving developers and architects the power to build, deploy, and share solutions that extend Sitecore’s capabilities with speed and precision. Whether you're streamlining workflows, integrating third-party services, or crafting agentic experiences, Marketplace Custom Apps are the way to create UI extensions.'
+description: 'The Sitecore Marketplace has officially opened its doors to Custom Apps giving developers and architects the power to build, deploy, and share solutions that extend Sitecore’s capabilities with speed and precision. Whether you’re streamlining workflows, integrating third-party services, or crafting agentic experiences, Marketplace Custom Apps are the way to create UI extensions.'
 promoAfter: ['learning-essentials']
 openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/b20cc628bdaf4c3080bd586c98d4ee30?v=947ae0af'
 ---

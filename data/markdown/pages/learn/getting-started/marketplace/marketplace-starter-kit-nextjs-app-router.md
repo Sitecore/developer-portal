@@ -1,7 +1,7 @@
 ---
 product: ['marketplace']
 title: 'From Zero to Deployed: Building with the Sitecore Marketplace Starter Kit'
-description: 'Whether you're building a custom or public app, the process follows a clear path. This guide is tailored for developers who want to get hands-on with Sitecore Marketplace and start building apps. The Marketplace Starter Kit provides the basics to get started along with example implementations of all extension points.  From setup to deployment, this chapter walks you through the essentials so you can go from zero to deployed with confidence.'
+description: 'Whether you’re building a custom or public app, the process follows a clear path. This guide is tailored for developers who want to get hands-on with Sitecore Marketplace and start building apps. The Marketplace Starter Kit provides the basics to get started along with example implementations of all extension points.  From setup to deployment, this chapter walks you through the essentials so you can go from zero to deployed with confidence.'
 promoAfter: ['learning-essentials']
 openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/d2da3c36914d4b34943ca023f2b5e615?v=cfd5dc08'
 ---
