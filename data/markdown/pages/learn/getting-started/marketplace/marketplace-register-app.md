@@ -1,7 +1,7 @@
 ---
 product: ['marketplace']
 title: 'Configure and Install a custom marketplace app'
-description: 'Explore the Sitecore Marketplace — your hub for discovering and building ready-to-use extensions that amplify your digital experience platform. Join our Early Access Program to get started with the Marketplace SDK.'
+description: 'Learn how to take your custom Marketplace app from development to deployment. This guide walks you through the final steps—registering your app in the Sitecore Cloud Portal, selecting extension points, configuring API access, and making it available to your organization.'
 promoAfter: ['learning-essentials']
 openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/126130ee2f7e40c79f3496595341e587?v=d568e138'
 ---
@@ -140,3 +140,17 @@ See details in description above.
 |----------|------|
 |Feedback Form|https://forms.office.com/e/cEndu1JLQc|
 |Documentation about Custom Field extension point|https://doc.sitecore.com/mp/en/developers/marketplace/enable-a-custom-field-in-the-xm-cloud-page-builder.html |
+
+
+<Article 
+  title="Unlock Sitecore’s Potential: Introducing Sitecore Marketplace Custom Apps" 
+  description="Discover how Sitecore Marketplace Custom Apps empower developers, architects, and marketers to extend Sitecore with modular, purpose-built solutions. This article introduces the concept of Custom Apps, explains their role in a composable architecture, and highlights how they unlock new capabilities across Sitecore products—without touching the core." 
+  link="/learn/getting-started/marketplace/marketplace-starter-kit-nextjs-app-router" 
+  maxWidth="sm" 
+/>
+<Article 
+  title="From Zero to Deployed: Building with the Sitecore Marketplace Starter Kit" 
+  description="Explore the Sitecore Marketplace — your hub for discovering and building ready-to-use extensions that amplify your digital experience platform. Join our Early Access Program to get started with the Marketplace SDK." 
+  link="/learn/getting-started/marketplace/marketplace-starter-kit-nextjs-app-router" 
+  maxWidth="sm" 
+/>
