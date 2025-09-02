@@ -153,16 +153,14 @@ Read more about the XMC package: https://www.npmjs.com/package/@sitecore-marketp
 | How do I manage several Marketplace apps?   | Should that be independent Repos or independent apps? Or just different Routes? |
 | How do I prevent others from seeing my locally running app that I registered in Cloud Portal?| Ideally you only register local running apps on non-prod environments. |
 
-
+## Read more
 <Article 
   title="From Zero to Deployed: Building with the Sitecore Marketplace Starter Kit" 
   description="Explore the Sitecore Marketplace — your hub for discovering and building ready-to-use extensions that amplify your digital experience platform. Join our Early Access Program to get started with the Marketplace SDK." 
   link="/learn/getting-started/marketplace/marketplace-starter-kit-nextjs-app-router" 
-  maxWidth="sm" 
-/>
+  maxWidth="sm" />
 <Article 
   title="Configure and Install a custom marketplace app" 
   description="Learn how to take your custom Marketplace app from development to deployment. This guide walks you through the final steps—registering your app in the Sitecore Cloud Portal, selecting extension points, configuring API access, and making it available to your organization." 
   link="/learn/getting-started/marketplace/marketplace-register-app" 
-  maxWidth="sm" 
-/>
+  maxWidth="sm" />

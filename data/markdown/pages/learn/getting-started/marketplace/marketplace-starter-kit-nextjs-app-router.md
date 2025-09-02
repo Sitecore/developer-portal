@@ -71,16 +71,14 @@ Read further about registering your app with Sitecore Cloud Portal and XM Cloud:
 |Documentation|https://doc.sitecore.com/mp/en/developers/marketplace/testing-and-debugging-a-custom-app.html|
 |Marketplace NextJS Starter Kit| https://github.com/Sitecore/marketplace-starter|
 
-
+## Read more
 <Article 
   title="Configure and Install a custom marketplace app" 
   description="Learn how to take your custom Marketplace app from development to deployment. This guide walks you through the final steps—registering your app in the Sitecore Cloud Portal, selecting extension points, configuring API access, and making it available to your organization." 
   link="/learn/getting-started/marketplace/marketplace-register-app" 
-  maxWidth="sm" 
-/>
+  maxWidth="sm" />
 <Article 
   title="Unlock Sitecore’s Potential: Introducing Sitecore Marketplace Custom Apps" 
   description="Discover how Sitecore Marketplace Custom Apps empower developers, architects, and marketers to extend Sitecore with modular, purpose-built solutions. This article introduces the concept of Custom Apps, explains their role in a composable architecture, and highlights how they unlock new capabilities across Sitecore products—without touching the core." 
   link="/learn/getting-started/marketplace/marketplace-starter-kit-nextjs-app-router" 
-  maxWidth="sm" 
-/>
+  maxWidth="sm" />
