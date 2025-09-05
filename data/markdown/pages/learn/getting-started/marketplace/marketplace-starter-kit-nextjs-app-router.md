@@ -61,7 +61,13 @@ Open e.g. http://localhost:3000/custom-field-extension
 
  **Please note:** You don’t see the environment related output because the app is not running in the context of XM Cloud.
 
-### 2.4 Consider unified UI
+### 2.4 Example implementations
+
+Learn from a set of example implementations how to utilize the Marketplace SDK and the different extension points.
+- Icon Picker: https://github.com/Sitecore/marketplace-icon-picker
+- Google Analytics: https://github.com/Sitecore/marketplace-google-analytics
+
+### 2.5 Consider unified UI
 When starting to build, please note that we strongly recommend designing your app’s UI in line with Sitecore’s interface guidelines to provide a consistent and familiar experience for users.
 
 <Promo

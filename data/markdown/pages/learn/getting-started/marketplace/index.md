@@ -22,7 +22,7 @@ We divide Marketplace apps into **Custom Apps** (available now) and **Public App
 |---------------|--------------|--------------|
 |Visibility	    |Private to a specific customer (Cloud Portal Organization).| Available to all Sitecore customers. |
 |Purpose	      |Tailored solution for unique business needs.                |	Reusable tool for common use cases. |
-|App registration | Apps will registered through the Developer studio by the implementer (partner, customer) for a dedicated Organization | Apps will registered through the Developer studio by the implementer (partner, customer) for public usage. Customers can pick and choose apps from a list to enhance their sitecore experience.  |
+|Registration | Apps are registered through the Developer studio by the implementer (partner, customer) for a dedicated Organization | Apps are registered through the Developer studio by the implementer (partner, customer) for public usage. Customers can pick and choose apps from a list to enhance their sitecore experience.  |
 |Review Process |	Quality and security is to be ensured with the implementer of the Marketplace App. Sitecore does not review. |	Sitecore will review public apps.|
 |Hosting	     |Self-managed                                                |	Self-managed
 |Availability	  | General Availability	                                    | Coming Soon |
@@ -141,6 +141,8 @@ Marketplace Custom Apps are more than just extensions. They’re enablers of agi
 | Marketplace SDK - XM Cloud package: | https://www.npmjs.com/package/@sitecore-marketplace-sdk/xmc |
 | Marketplace SDK - Client package | https://www.npmjs.com/package/@sitecore-marketplace-sdk/client |
 | Starter Kits: Clone-ready templates for each extension point.| https://github.com/Sitecore/marketplace-starter |
+|Example implementation: Google Analytics integration | https://github.com/Sitecore/marketplace-google-analytics|
+|Example implementation: Icon picker |https://github.com/Sitecore/marketplace-icon-picker | 
 | Documentation:|  https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html |
 | Quick Start guide: | https://doc.sitecore.com/mp/en/developers/sdk/0/sitecore-marketplace-sdk/quick-start.html |
 |Documentation: Adding Custom fields to the template (Content Model)|https://doc.sitecore.com/mp/en/developers/marketplace/enable-a-custom-field-in-the-xm-cloud-page-builder.html |
