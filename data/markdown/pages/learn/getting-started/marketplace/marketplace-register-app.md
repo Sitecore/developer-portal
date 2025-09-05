@@ -8,7 +8,7 @@ openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/c
 
 ## Provision a deployed custom app
 
-In order to register your app with XM Cloud you need to deploy your app to a hosting provider first. If you want to only run it locally refer to the next chapter about running locally.
+In order to register your app with XM Cloud you either deploy your app to a hosting provider first or run it locally (for testing and development purposes). If you want to only run it locally refer to the next chapter.
 
 ### Deploy your app to a hosting provider
 #### Pre-Requisites:
@@ -26,7 +26,7 @@ Find the app you want to connect with your project. New repos are listed on top.
  ![In Vercel, import Git repository](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/ee0e617d6fb54c8d90a0a947f854c640?v=9f6221d2)
 
 ##### 3. Select the root directory and deploy
-The root directory is marked with a Next.Js logo. 
+The root directory is marked with a Next.js logo. 
 This will also set the Framework preset.
 There is no need for Build and Output Settings changes or Environment Variables at this point.
 
@@ -71,15 +71,31 @@ As this app provides all extension point examples you can also configure the oth
 |  | value |
 | ----|-------|
 | Full screen - Route URL: | /fullscreen-extension |
-| Dashboard widgets - Router URL: | /dashboard-widget-extension |
-| Page context panel - Router URL: | /page-contextpanel-extension|
-| Custom field - Router URL: | /custom-field-extension|
+| Dashboard widgets - Route URL: | /dashboard-widget-extension |
+| Page context panel - Route URL: | /page-contextpanel-extension|
+| Custom field - Route URL: | /custom-field-extension|
 
 Please Note: When using the extension point **Custom Field** you also need to add the custom field to the content template (Content Model) as type "Marketplace Type -> Plugin". 
 
 [Read more in the Sitecore documentation](https://doc.sitecore.com/mp/en/developers/marketplace/enable-a-custom-field-in-the-xm-cloud-page-builder.html) 
 
-###### 5.2 Set Deployment URL
+###### 5.2 API access
+
+Configuring the API access let's you govern what Sitecore APIs or API groups the app is allowed to access. Currently you can only grant access to "XM Cloud APIs" which include access to:
+- Authoring and Management GraphQL API
+- XM Cloud Sites REST API
+- XM Cloud Pages REST API
+- Experience Edge Token REST API
+- Experience Edge Admin REST API
+
+The Marketplace starter kit does not require that access as all data retrieved comes from the [application context](https://doc.sitecore.com/mp/en/developers/sdk/0/sitecore-marketplace-sdk/query-the-application-context.html) (through client package). If you require XM Cloud specific data, e.g. item access, this would need the activation of the API access.
+
+
+![Marketplace Custom Apps - Configure API access](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/f519ceb8b8f046aaa201bdeb85a02dcf?v=b17bbb33) 
+
+[Read more in the Sitecore documentation](https://doc.sitecore.com/mp/en/developers/marketplace/api-access.html) 
+
+###### 5.3 Set Deployment URL
 You need to set the URL where your app is hosted. You find the deployment URL with your hosted project in Vercel.
 
 ![Sitecore Marketplace - Get Deployment URL From Vercel](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/19b8d15d53134c1f816af6419da99979?v=59fab7c4) 
@@ -106,7 +122,7 @@ As I chose the extension point “Standalone” the app is available in the Clou
  
 Once you click it, it will open in a separate window, this time showing also the appContext.name and appContext.id as it is now registered and running in the context of Cloud Portal and XM Cloud.
 
-![Test Sitecore Marketplace App with Standalone extension point](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/412ccc2a9e584c71ae25e829b208e306?v=70774636) 
+![Test Sitecore Marketplace App with Standalone extension point](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/82ded1c704ba43e68238d324d781f74d?v=94d81421) 
 
 
 Now you can start building the logic for your app.
@@ -114,7 +130,7 @@ Find the documentation here: https://doc.sitecore.com/mp/en/developers/marketpla
 
 
 ## Register Local running app
-Running the local app in the context of Cloud Portal XM Cloud is working the same way as setting up your deployed app. This way, all autentication and other connection related configuration is handled by Sitecore.
+Running the local app in the context of Cloud Portal XM Cloud is working the same way as setting up your deployed app. This way, all authentication and other connection related configuration is handled by Sitecore.
 
 You do not need to deploy the app to a hosting provider as you plan run the app on `localhost`. 
 
@@ -127,14 +143,14 @@ Find the steps below. For more details to description above.
 5.	Configure App
     -	Select the extension point e.g.“Standalone”
     -	Set Route to “/standalone-extension”
-    - Set Deployment URL: http://locahost:3000
+    - Set Deployment URL: http://localhost:3000
     - Set App Logo URL e.g. https://placehold.co/512x512.png 
 6.	Install the App
 7.	Test the App (Make sure you have started your app. `npm run dev`)
 
 Ideally you only connect your local running apps on non-productive environments. 
 
-![Test local Sitecore Marketplace App with Standalone extension point](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/6487bc6770a647959ab9c4679e51bfcf?v=589e7974) 
+![Test local Sitecore Marketplace App with Standalone extension point](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/82ded1c704ba43e68238d324d781f74d?v=94d81421) 
 
 ## Resources
 
@@ -142,6 +158,7 @@ Ideally you only connect your local running apps on non-productive environments.
 |----------|------|
 |Feedback Form|https://forms.office.com/e/cEndu1JLQc|
 |Documentation about Custom Field extension point|https://doc.sitecore.com/mp/en/developers/marketplace/enable-a-custom-field-in-the-xm-cloud-page-builder.html |
+|Documentation about API access | https://doc.sitecore.com/mp/en/developers/marketplace/api-access.html |
 
 ## Read more
 <Row columns={3}>

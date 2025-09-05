@@ -39,7 +39,7 @@ Currently there are 5 extension points available. 1 in the Cloud Portal and 4 in
 
 More extension points across other Sitecore products are planned.
 
-Let us know about you feedback: https://forms.office.com/e/cEndu1JLQc 
+Let us know about your feedback: https://forms.office.com/e/cEndu1JLQc 
 
 ### 1. Standalone - Cloud Portal Homepage
 Your app can be launched directly from the Cloud Portal homepage, opening in a new tab. This can be used for general information like health checks, environment overarching information or activities like information transfers.
@@ -108,8 +108,9 @@ The XMC package connects your app to the following Sitecore APIs:
 - [Authoring and Management GraphQL API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-authoring-and-management-graphql-api.html) 
 Manage Sitecore content using GraphQL queries and mutations. Ideal for apps that create, update, or retrieve content in real time.
 
-- [XM Apps REST API](https://api-docs.sitecore.com/xmc/xm-apps-api)
-Interact with sites, site collections, pages, and languages. Perfect for apps that help manage multi-site environments or streamline localization workflows.
+- [XM Apps REST API](https://api-docs.sitecore.com/xmc/sites-api) Use the Pages API for managing your site pages in XM Cloud.
+
+- [XM Cloud Pages REST API.](https://api-docs.sitecore.com/xmc/pages-api)XM Cloud Pages REST API.
 
 - [Experience Edge Token API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/token-api.html)
 Manage API keys for the Delivery API. Use this to securely access published content via Experience Edge.
@@ -133,6 +134,7 @@ Marketplace Custom Apps are more than just extensions. They’re enablers of agi
 ## Resources:
 | Resource | Link |
 |----------|------|
+| Marketplace SDK - Sources |https://github.com/Sitecore/marketplace-sdk|
 | Marketplace SDK - XM Cloud package: | https://www.npmjs.com/package/@sitecore-marketplace-sdk/xmc |
 | Marketplace SDK - Client package | https://www.npmjs.com/package/@sitecore-marketplace-sdk/client |
 | Starter Kits: Clone-ready templates for each extension point.| https://github.com/Sitecore/marketplace-starter |
@@ -144,17 +146,32 @@ Marketplace Custom Apps are more than just extensions. They’re enablers of agi
 
 
 ## FAQ
-| Question | Answer|
-|----------|-------|
-| Does the Marketplace cover Sitecore XM Cloud only? | 	Currently the marketplace SDK handles Cloud Portal and XM Cloud. More integrations with other Sitecore products are planned. | 
-|What Frontend Frameworks are supported? | The Marketplace SDK supports React and Next.Js apps. |
-| What is the difference between public and custom apps?| **Public apps** are available for any Sitecore customer to avail of. Public apps are self served and deployed/enabled by the user. **Custom-built apps** or agents are private, specifically built for one customer or an identified group of specific customers. Custom Apps are deployed/enabled by the vendor. Both can be built by the customer or a partner. 
-| Where do I host Marketplace Custom Apps?  | Currently Sitecore doesn’t offer hosting for Marketplace apps, therefore teams building apps will be required to arrange/manage hosting e.g. using Vecel, Netlify, Azure, or others. |
-| Who supports Custom Apps?| Support agreements can be individually agreed between implementer and consumer/customer. If not agreed differently, the Implementer, e.g. the Partner that implemented it, is responsible for the support. |
-| Is there a review process for custom apps?| The quality of a custom app in terms of security, usability, accessibility has to be ensured by the implementer based on the requirements of the customer.  |
-| What tools are available for developers?| Marketplace SDK (v1) helps apps talk securely with Sitecore, making it easier to use different Sitecore APIs (like for XM Apps, Authoring, and Experience Edge) in a structured way with Sitecore handling authentication. Developers can build and test locally by connecting to an XM Cloud environment. (MCPs will be available in future) |
-| How do I manage several Marketplace apps?   | Should that be independent Repos or independent apps? Or just different Routes? |
-| How do I prevent others from seeing my locally running app that I registered in Cloud Portal?| Ideally you only register local running apps on non-prod environments. |
+
+### Does the Marketplace cover Sitecore XM Cloud only?
+Currently the marketplace SDK handles Cloud Portal and XM Cloud. More integrations with other Sitecore products are planned.
+
+### Does the Marketplace cover Sitecore XM Cloud only?
+What Frontend Frameworks are supported? | The Marketplace SDK supports React and Next.js apps.
+
+### What is the difference between public and custom apps?
+**Public apps** are available for any Sitecore customer to avail of. Public apps are self served and deployed/enabled by the user. **Custom-built apps** or agents are private, specifically built for one customer or an identified group of specific customers. Custom Apps are deployed/enabled by the vendor. Both can be built by the customer or a partner. 
+### Where do I host Marketplace Custom Apps?
+Currently Sitecore doesn’t offer hosting for Marketplace apps, therefore teams building apps will be required to arrange/manage hosting e.g. using Vercel, Netlify, Azure, or others.
+
+### Who supports Custom Apps?
+Support agreements can be individually agreed between implementer and consumer/customer. If not agreed differently, the Implementer, e.g. the Partner that implemented it, is responsible for the support.
+
+### Is there a review process for custom apps?
+The quality of a custom app in terms of security, usability, accessibility has to be ensured by the implementer based on the requirements of the customer.
+
+### What tools are available for developers?
+Marketplace SDK (v1) helps apps talk securely with Sitecore, making it easier to use different Sitecore APIs (like for XM Apps, Authoring, and Experience Edge) in a structured way with Sitecore handling authentication. Developers can build and test locally by connecting to an XM Cloud environment. (MCPs will be available in future)
+
+### How do I manage several Marketplace apps?
+To simplify dependencies you should keep your Marketplace apps dedicated to a single topic. E.g. serving different extension points displaying Google Analytics data should be served from one app. The additional AI translation tool should be a separate app.
+
+### How can developers test apps running on their local developer machine, without other users seeing them?
+You can register your local app similar to to a deployed app through the Developer studio UI. Ideally you only register local running apps on non-prod environments. |
 
 ## Read more
 <Row columns={3}>
