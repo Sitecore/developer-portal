@@ -22,12 +22,15 @@ We divide Marketplace apps into **Custom Apps** (available now) and **Public App
 |---------------|--------------|--------------|
 |Visibility	    |Private to a specific customer (Cloud Portal Organization).| Available to all Sitecore customers. |
 |Purpose	      |Tailored solution for unique business needs.                |	Reusable tool for common use cases. |
+|App registration | Apps will registered through the Developer studio by the implementer (partner, customer) for a dedicated Organization | Apps will registered through the Developer studio by the implementer (partner, customer) for public usage. Customers can pick and choose apps from a list to enhance their sitecore experience.  |
 |Review Process |	Quality and security is to be ensured with the implementer of the Marketplace App. Sitecore does not review. |	Sitecore will review public apps.|
 |Hosting	     |Self-managed                                                |	Self-managed
 |Availability	  | General Availability	                                    | Coming Soon |
 
 Marketplace Custom Apps are modular, plug-and-play solutions built using Sitecore’s Marketplace SDKs and APIs. They’re designed to integrate into Sitecore environments  enriching dashboards, pages, and workflows with tailored functionality.
-From shoppable images powered by AI to dashboard widgets that surface Google Analytics data, these apps unlock new possibilities for personalization, automation and extensibility
+From shoppable images powered by AI to dashboard widgets that surface Google Analytics data, these apps unlock new possibilities for personalization, automation and extensibility.
+
+The process of building custom and public app is the same. It only differs in the way they are registered in the Developer studio later on.  
 
 ## Using the Apps
 Marketplace Apps extend the out of the box functionality in several places called extension points.  Example of appearance in XM Cloud Page Builder: 
