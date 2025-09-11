@@ -49,8 +49,6 @@ async function fetchData<T>(url: string): Promise<T> {
     },
   });
 
-  console.log(url);
-  console.log('response', response);
   if (!response.ok) {
     throw new Error('Failed to fetch data: ' + response.statusText);
   }
