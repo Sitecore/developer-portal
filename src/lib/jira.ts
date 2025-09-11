@@ -49,6 +49,8 @@ async function fetchData<T>(url: string): Promise<T> {
     },
   });
 
+  console.log(url);
+  console.log('response', response);
   if (!response.ok) {
     throw new Error('Failed to fetch data: ' + response.statusText);
   }
@@ -84,7 +86,7 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
   ];
 
   const jqlString = createJqlString(filters);
-  const roadmapAPI = `${jiraBaseUrl}/search?jql=${jqlString}&fields=${fields.join(',')}&expand=names&maxResults=100&expand=renderedFields`;
+  const roadmapAPI = `${jiraBaseUrl}/search/jql?jql=${jqlString}&fields=${fields.join(',')}&expand=names&maxResults=100&expand=renderedFields`;
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
   let allIssues = response.issues;
