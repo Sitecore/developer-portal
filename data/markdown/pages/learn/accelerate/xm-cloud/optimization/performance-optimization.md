@@ -17,7 +17,7 @@ This recipe provides targeted optimization strategies for Next.js applications t
 > The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
 
 ## Execution
-To improve the performance of your web application and deliver a faster, more responsive user experience, review the following guidance.
+To improve the performance of your web application and deliver a faster, more responsive user experience, review the following guidance. Using Next.JS? Review how to How to [Optimize Next.js + Sitecore JSS](https://vercel.com/guides/how-to-optimize-next.js-sitecore-jss).
 
 ### Minimize File Size and Bundle Optimization
 
@@ -356,6 +356,8 @@ Key techniques that should be reviewed include:
 </Row>
 
 
+## Additional Links
 
-
-
+<Row columns={2}>
+<Link title="How to Optimize Next.js + Sitecore JSS" link="https://vercel.com/guides/how-to-optimize-next.js-sitecore-jss" />
+</Row>

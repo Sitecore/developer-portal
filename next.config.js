@@ -102,7 +102,7 @@ const redirects = [
 
   { source: '/learn/accelerate/xm-cloud/appendix-i/xm-cloud-glossary', destination: 'https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html', permanent: true },
   { source: '/learn/accelerate/content-hub/appendix-i/content-hub-glossary', destination: 'https://doc.sitecore.com/ch/en/users/content-hub/glossary.html', permanent: true },
-  { source: '/learn/accelerate/cdp-personalize/appendix-i/cdp-glossary', destination: 'https://doc.sitecore.com/personalize/en/users/sitecore-personalize/glossary.html', permanent: true },
+  { source: '/learn/accelerate/cdp-personalize/appendix-i/cdp-glossary', destination: 'https://doc.sitecore.com/cdp/en/users/sitecore-cdp/glossary.html', permanent: true },
   { source: '/learn/accelerate/cdp-personalize/appendix-i/personalize-glossary', destination: 'https://doc.sitecore.com/personalize/en/users/sitecore-personalize/glossary.html', permanent: true },
 
 
