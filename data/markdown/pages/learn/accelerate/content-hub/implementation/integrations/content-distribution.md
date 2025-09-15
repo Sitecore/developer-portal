@@ -259,4 +259,5 @@ query {
 <Row columns={2}>
   <Link title="Sitecore Marketplace" link="https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html" />
   <Link title="Component-level data fetching in JSS Next.js apps" link="https://doc.sitecore.com/xmc/en/developers/jss/22/jss-xmc/component-level-data-fetching-in-jss-next-js-apps.html" />  
+  <Link title="Marketplace Getting Started" link="https://developers.sitecore.com/learn/getting-started/marketplace" />
 </Row>

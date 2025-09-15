@@ -171,4 +171,5 @@ Once the site stabilizes, formally transition ownership to internal teams for a 
 <Link title="Netlify Domain Documentation" link="https://docs.netlify.com/domains-https/custom-domains/" />
 <Link title="Next.js Production Checklist" link="https://nextjs.org/docs/pages/building-your-application/deploying/production-checklist" />
 <Link title="Front End Checklist" link="https://frontendchecklist.io/" />
+<Link title="How to Optimize Next.js + Sitecore JSS" link="https://vercel.com/guides/how-to-optimize-next.js-sitecore-jss" />
 </Row>

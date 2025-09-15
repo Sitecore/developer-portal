@@ -4,7 +4,7 @@ description: 'Recipe for handling redirects using XM Cloud.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-04-05'
+lastUpdated: '2025-09-15'
 created: '2024-11-18'
 audience: ['Architect','Technical Implementer']
 ---
@@ -155,7 +155,7 @@ This is an simplified example for `/site-redirects.json`:
 And create a new middleware plugin `src/lib/middleware/plugins/staticRedirects.ts`:
 
 ```javascript
-import { default as staticRedirects } from '../../../../site-redirects.json';
+import staticRedirectsFile from '../../../../site-redirects.json';
 import { NextRequest, NextResponse } from 'next/server';
 import { debug } from '@sitecore-jss/sitecore-jss';
 import { MiddlewarePlugin } from '..';
@@ -250,6 +250,8 @@ export class StaticRedirectsMiddleware {
     }
 }
 
+export const staticRedirectsPlugin = new StaticRedirectsPlugin();
+
 ```
 
 keep in mind the example above is a simplified version and you need to consider handling the multisite and caching in your implementation.
@@ -265,7 +267,7 @@ keep in mind the example above is a simplified version and you need to consider 
 - If you are using a rewrite that points to a dynamic Next.js page, you must use Next.js rewrites. Next.js has no way of knowing what the rewritten page is when using Netlify rewrites, so the wrong page is likely to be rendered. Note that this only applies to rewrites, not redirects.
 - If you need Next.js-specific features, such as regex path or header matching, you must use Next.js rewrites.
 
-## Related Documentations
+## Related Links
 
 <Row columns={2}>
   <Link title="Edge Redirects | Vercel Documentation" link="https://vercel.com/docs/edge-network/redirects" />
