@@ -68,6 +68,8 @@ export interface JiraResponse {
   total: number;
   issues: Issue[];
   names: Names;
+  isLast?: boolean;
+  nextPageToken?: string;
 }
 
 export interface RoadmapInformation {

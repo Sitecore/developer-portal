@@ -84,17 +84,18 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
   ];
 
   const jqlString = createJqlString(filters);
-  const roadmapAPI = `${jiraBaseUrl}/search/jql?jql=${jqlString}&fields=${fields.join(',')}&expand=names&maxResults=100&expand=renderedFields`;
+  const roadmapAPI = `${jiraBaseUrl}/search/jql?jql=${jqlString}&fields=${fields.join(',')}&expand=names&maxResults=1000&expand=renderedFields`;
+
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
   let allIssues = response.issues;
-  let startAt = response.startAt + response.maxResults;
+  let currentResponse = response;
 
-  while (allIssues.length < response.total) {
-    const paginatedAPI = `${roadmapAPI}&startAt=${startAt}`;
+  while (!currentResponse.isLast) {
+    const paginatedAPI = `${roadmapAPI}&nextPageToken=${currentResponse.nextPageToken}`;
     const paginatedResponse = await fetchData<JiraResponse>(paginatedAPI);
     allIssues = allIssues.concat(paginatedResponse.issues);
-    startAt += paginatedResponse.maxResults;
+    currentResponse = paginatedResponse; // Update to use the latest response
   }
 
   response.issues = allIssues;
