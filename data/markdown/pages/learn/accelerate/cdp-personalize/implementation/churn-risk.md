@@ -66,7 +66,7 @@ Using Sitecore CDP, you can construct these segments using filters based on cust
 - Session frequency  
 - Customer lifetime value  
 
-By combining recency and frequency, you can build smarter segments identifying inactive vs. churn risk groups that reflect your customers’ behavior patterns—allowing you to act before disengagement becomes permanent.
+By combining recency and frequency, you can build smarter segments identifying inactive vs. churn risk groups that reflect your customers’ behavior patterns, allowing you to act before disengagement becomes permanent.
 
 For example, for an Insurance business this would include:
 - End of contract for a customer and building a segment to identify those who have purchased a new contract or may be considering other options  
@@ -84,4 +84,7 @@ Understanding and segmenting inactive and churn risk isn’t just about calling 
 ## Related Documentation
 
 <Row columns={2}>
+  <Link title="Guest properties" link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/view-guest-properties-in-sitecore-cdp.html" />
+  <Link title="Event data" link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/event-data.html" />
 </Row>
+

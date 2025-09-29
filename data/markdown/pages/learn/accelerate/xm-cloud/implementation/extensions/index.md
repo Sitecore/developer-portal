@@ -6,5 +6,5 @@ hasSubPageNav: true
 hasInPageNav: true
 ---
 
-The [Sitecore Marketplace(https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) is the recommended way to extend a Sitecore environment without modifying or conflicting with its internal code.
+The [Sitecore Marketplace](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) is the recommended way to extend a Sitecore environment without modifying or conflicting with its internal code.
 

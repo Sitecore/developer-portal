@@ -114,9 +114,6 @@
           "path": "self-service-nudge",
           "ignoreLink": false
         }
-
-       
-          
       ]
     },
     {
@@ -129,6 +126,11 @@
           "path": "data-validation",
           "ignoreLink": false
         },
+        {
+          "title": "Decision Models Automated Testing",
+          "path": "decision-model-testing",
+          "ignoreLink": false
+        },        
         {
           "title": "Go-Live Checklist",
           "path": "go-live-checklist",

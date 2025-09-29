@@ -96,6 +96,7 @@ When using Sitecore Forms, several SEO issues can arise that may affect your sit
 
 <Row columns={2}>
   <Link title="Sitemap" link="/learn/accelerate/xm-cloud/implementation/information-architecture/sitemap" />
+  <Link title="Optimizing content for AI" link="/learn/accelerate/xm-cloud/optimization/seo-geo-optimization" />
 </Row>
 
 ## Related Documentation
