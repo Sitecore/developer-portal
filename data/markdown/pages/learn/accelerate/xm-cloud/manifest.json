@@ -370,6 +370,10 @@
         {
           "title": "On-page SEO optimization",
           "path": "seo-web-optimization"
+        } ,        
+        {
+          "title": "Optimizing content for AI",
+          "path": "seo-geo-optimization"
         },
         {
           "title": "Operational Governance",

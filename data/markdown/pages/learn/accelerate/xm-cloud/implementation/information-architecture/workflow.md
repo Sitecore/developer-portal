@@ -4,7 +4,7 @@ description: 'Setting up workflow on a Page and Components level'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-02-14'
+lastUpdated: '2025-09-28'
 created: '2024-10-04'
 audience: ['Architect','Product Owner','Project Manager','Technical Implementer', 'User']
 ---
@@ -38,43 +38,40 @@ Email Actions should be implemented with a Webhook Submit Action as detailed fur
 
 ### Configure Page and Datasource Workflows
 
-Two separate workflows are recommended, one for page items and the other for datasources. This allows the main page workflow to stay clean and not cluttered. At a minimum this would be a two stage with draft and approved. The Page Workflow has a Datasource Workflow Action which points to the Approve command on the Datasource Workflow. This is important because it allows you to define the scope which allow datasources like the link list and its child items for example to be moved through the workflow successfully.
+Two separate workflows are recommended, one for page items and the other for datasources. By default, Sitecore provides you with the *Basic Workflow* for page items and the *Basic Datasource Worksflow* for datasources.
 
-1. Create a page and datasource workflow and define your states.
-2. If you have configured your workflow states similar to the sample workflow you will need to insert [datasource workflow actions](https://doc.sitecore.com/xmc/en/developers/xm-cloud/assign-a-data-source-workflow-action-in-sxa.html) to Submit, Approve and Reject actions.
-3. For these actions you can specify the Scope to determine what child datasource items should be processed by this action. These should point to the corresponding action in the datasource workflow. See below examples for more information.
+This allows the main page workflow to stay clean and not cluttered. At a minimum this would be a two stage with draft and approved. The Basic Workflow has a [Datasource Workflow Action](https://doc.sitecore.com/xmc/en/developers/xm-cloud/assign-a-data-source-workflow-action.html) which points to the Approve command on the Basic Datasource Workflow. This is important because it allows you to define the scope which allow datasources like the link list and its child items for example to be moved through the workflow successfully.
 
-<Image src="/images/learn/accelerate/xm-cloud/workflows9.png" title="Page workflow submit datasource action"/>
 
-<Image src="/images/learn/accelerate/xm-cloud/workflows10.png" title="Page workflow approve datasource action"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflow/datasource-workflow-action.png" title="datasource workflow action"/>
 
-<Image src="/images/learn/accelerate/xm-cloud/workflows11.png" title="Page workflow reject datasource action"/>
+<Image src="/images/learn/accelerate/xm-cloud/workflow/basic-datasource-workflow.png" title="basic datasource
+workflow"/>
+<br/><br/>
 
-<Image src="/images/learn/accelerate/xm-cloud/workflows12.png" title="Datasource workflow"/>
-
-### Assign Page Workflow
-
-1. Assign it using Standard Values to the page template.
-2. Enable `View > Standard Fields` in the Content Editor.
-3. Go to the Workflow tab and set the Default Workflow to the workflow you created.
-
-<Image src="/images/learn/accelerate/xm-cloud/workflows1.png" title="StandardValuesPageWorkflow"/>
-
-### Assign Datasource Workflow
-
+#### Assign Basic Workflow
 It's important to configure workflow for both pages and the separate data source component items on a page. To do this:
+1. Ensure the Standard Values module is installed for your SXA website.
+2. Navigate to the Content Editor and define your components under the Standard Values item in the SXA website settings folder.
+3. Right-click on Standard Values and click on Insert > Standard Values to open a dialog.
+4. Select the Site Collection Templates tab and select required templates.
+5. For each Site Collection Template, configure the default workflow to use the Basic Workflow.
 
-1. Ensure the Standard Values module is installed for your website.
-2. Navigate to the Content Editor and define your components under the Standard Values item in the website settings folder.
-3. Right-click on Standard Values and click on `Insert > Standard Values` to open a dialog.
-4. Select the Datasource Templates tab and configure any unconfigured templates.
-5. For each data source component, configure the workflow the same way as a page.
+<Image src="/images/learn/accelerate/xm-cloud/workflow/site-collection-templates.png" title="site collection templates"/>
+<br/><br/>
 
-<Image src="/images/learn/accelerate/xm-cloud/workflows2.png" title="ComponentDatasourceWorkflow"/>
+#### Assign Basic Datasource Workflow
+1. In the Content Editor and define your components under the Standard Values item in the SXA website settings folder.
+2. Right-click on Standard Values and click on Insert > Standard Values to open a dialog.
+3. Select the Datasource Templates tab and configure any unconfigured templates.
+4. For each data source component, configure the workflow to use the Basic Datasource Workflow.
+
+<Image src="/images/learn/accelerate/xm-cloud/workflow/datasources-test.png" title="datasources test"/>
+<br/><br/>
 
 If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB XM Cloud components then all of the necessary configuration should already be in place including base templates.
 
-Note that only templates that have the **\_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: _/sitecore/Templates/Foundation/Experience Accelerator/StandardValues/_. If for some reason your component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the docs site.
+Note that only templates that have the **\_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: _/sitecore/Templates/Foundation/Experience Accelerator/StandardValues/_.  If for some reason your Site Collection Template or Datasource component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the documentation site.
 
 ### Configuration of Users/Roles
 
