@@ -4,6 +4,7 @@ description: 'Sitecore Identity Server is the platform single sign-on mechanism 
 origin: https://dev.sitecore.net/Downloads/Sitecore_Identity.aspx
 ---
 ### Sitecore Identity Server 8.x
+[Sitecore Identity Server 8.0.28](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8028)\
 [Sitecore Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016)
 
 ### Sitecore Identity Server 7.x
