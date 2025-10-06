@@ -38,8 +38,8 @@ Run load and stress tests in advance to validate page speed to make sure Core We
 ### Content
 Ensure your content is fully created or migrated to XMCloud - all scoped content should be in place, content types follow the new schema and hierarchies and relationships (e.g., navigation, tagging, dependencies) are preserved. Internal links and media references should all be working and point to correct locations.
 
-- If this is a multi-language site, is there any fullback to setup? Is your web application setup correctly? Review the [Localization](/learn/accelerate/xm-cloud/implementation/information-architecture/localization) recipe for more details. Regional variations should be tested to display expected content.
-- Even if you don’t have multi-site at this point, is content & sites structure setup as per recommendations? Review the [Multisite Architecture](/learn/accelerate/xm-cloud/pre-development/project-architecture/multisite) and [Site management](/learn/accelerate/xm-cloud/pre-development/project-architecture/site-management) recipes for more detail.
+- If this is a multi-language site, are there any fallbacks to setup? Is your web application setup correctly? Review the [Localization](/learn/accelerate/xm-cloud/implementation/information-architecture/localization) recipe for more details. Regional variations should be tested to display expected content.
+- Even if you don’t have multi-site at this point, are the content & site structures setup as per recommendations? Review the [Multisite Architecture](/learn/accelerate/xm-cloud/pre-development/project-architecture/multisite) and [Site management](/learn/accelerate/xm-cloud/pre-development/project-architecture/site-management) recipes for more detail.
 - Ensure that all of your content is published to Experience Edge. Review the [Publishing to Edge](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge) recipe for more guidance. You should review your Incremental Static Regeneration (ISR) settings in your front-end application as part of the publishing process. This will determine the delay between publishing and when the new content is available to users.  
 - Shared Components and Data Sources can affect every page that includes them. Publishing a change to a shared item will trigger republishing across all pages that reference it, depending on your publishing setup.
 - Make sure that your content is approved (final step of your [workflow](/learn/accelerate/xm-cloud/implementation/information-architecture/workflow)), double check that your published content shows up on your head application as expected.
@@ -62,6 +62,8 @@ Review the [Head Application Security](https://developers.sitecore.com/learn/acc
 Ensure your application is SEO-optimized. Validate that your [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) and robots.txt are publicly accessible by search engines. Additionally, consider other essential SEO details like alt tags on images, metadata, and open graph data. Run a lighthouse test to detect any potential optimizations that are missed out for performance, Accessibility, Best practices and SEO.
 
 Review the [On-page SEO Optimization](https://developers.sitecore.com/learn/accelerate/xm-cloud/optimization/seo-web-optimization) recipe for any optimization potential.
+
+Ensure the ["Robots content"](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-the-robots-txt-file.html) field for your site has a value so that search engines can crawl your site.
 
 ### Redirects
 Ensure all previous or new redirects are handled. Collect all legacy URLs (from the old site, SEO tools, or analytics) and map them to the correct new URLs in XM Cloud, after removing any that no longer have a destination (404s, retired pages etc). Avoid redirect chains (one redirect should get you to the final URL).
