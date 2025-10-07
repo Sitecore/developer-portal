@@ -3,7 +3,7 @@ title: 'Sitecore Identity Server 8.0.28'
 description: 'Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform and Sitecore Experience Commerce.'
 ---
 
-Sitecore Identity Server 8.0 is compatible with Sitecore XP 9.1 through 10.4.
+Sitecore Identity Server 8.0.28 is compatible with Sitecore XP 9.1 through 10.4.
 
 See [all available Identity Server versions](/downloads/Sitecore_Identity)
 
@@ -13,7 +13,7 @@ See [all available Identity Server versions](/downloads/Sitecore_Identity)
 | --- | --- |
 | [Sitecore Identity Server WDP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8028/Sitecore.IdentityServer.8.0.28.scwdp.zip) | Sitecore Identity Server WDP installation package. |
 | [Identity Server Upgrade Script](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8028/Sitecore.IdentityServer.UpgradeScripts.8.0.zip) | Script for updating the Core/Security database. |
-| [Deployment Configuration Files](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8028/IdentityServer%20Deployment%20Configuration%208.0.zip) | [Release Notes](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8028/Release_Notes) page. |
+| [Deployment Configuration Files](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8028/IdentityServer%20Deployment%20Configuration%208.0.zip) | Configuration files used in installing Identity Server. |
 | [Installation and Upgrade Guide - On-premises](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8028/Sitecore_Identity_Server_Installation_and_Upgrade-OnPremises-8.0.pdf) | Guide describing how to install Identity Server and upgrade it from Sitecore Identity Server 2.0 and later, for on-premises deployments. |
 
 ## Azure App Service deployments
@@ -38,4 +38,4 @@ See [all available Identity Server versions](/downloads/Sitecore_Identity)
 
 | Resource | Description |
 | --- | --- |
-| [Release Notes](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8028/Release_Notes) | Improvements, breaking changes, and known issues. |
+| [Release Notes](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8028/Release_Notes) | List of issues resolved specifically in this version 8.0.28 patch level release. See also the [Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016) initial version release notes, as applicable. |
