@@ -7,7 +7,7 @@ description: 'Sitecore Experience Platform artificial intelligence module.'
 
 This module interworks with Sitecore's **Sitecore Stream** Software-as-a-Service (SaaS) AI service, available in products across Sitecore's portfolio. For example, this module requires an active Sitecore Stream subscription to set it up and run. **Please contact your Sitecore account representative to get started.**
 
-The latest package download is available below. **Note:** this download location is temporary; it will soon be accessible directly from **Sitecore Cloud Portal**.
+The latest package download is available below.
 
 ### Module Releases
 
