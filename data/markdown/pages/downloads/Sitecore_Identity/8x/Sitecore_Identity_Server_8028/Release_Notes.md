@@ -3,8 +3,7 @@ title: 'Release Notes'
 ---
 **2025-10-06:** Released the Sitecore Identity Server 8.0.28 patch level release.
 
-These release notes apply specifically to this version 8.0.28 patch level release.\
-See also the [Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016) initial version release notes, as applicable.
+These release notes apply specifically to this 8.0.28 patch level release. See also the [Identity Server 8.0.16](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016) initial version release notes, where applicable.
 
 Return to the [Sitecore Identity Server 8.0.28](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8028) release page.
 
