@@ -14,7 +14,9 @@ import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, 
 import { GenericList } from '@components/lists';
 import ProductList from '@components/lists/products/productList';
 import { CenteredContent, Hero, Row, VerticalGroup } from '@components/ui/sections';
+import hackerspace from '@data/promos/hackerspace';
 import data from '@data/promos/survey';
+
 import AccelerateUpdates from '../components/lists/accelerate/AccelerateUpdates';
 import { getLatestRecipes } from '../lib/accelerate/latest';
 import { AccelerateRecipe } from '../lib/accelerate/types/recipe';
@@ -66,6 +68,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
                 link="/learn/accelerate"
               />
             </Row>
+            <PromoCard {...hackerspace} />
           </CenteredContent>
         </VerticalGroup>
 
