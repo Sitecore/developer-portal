@@ -1,11 +1,9 @@
 ---
 product: ['marketplace']
 title: 'Marketplace Hackerspace @ Sitecore Symposium 2025 - Build Fast. Showcase Bold. Tailor XM Cloud.'
-description: 'Welcome to the Marketplace Hackerspace, the ultimate developer playground at Sitecore Symposium 2025. Whether you're a seasoned Sitecore architect or just getting started with XM Cloud, this is your chance to build, compete, and connect.'
-promoAfter: ['learning-essentials']
+description: 'Welcome to the Marketplace Hackerspace, the ultimate developer playground at Sitecore Symposium 2025. Whether you are a seasoned Sitecore architect or just getting started with XM Cloud, this is your chance to build, compete, and connect.'
 openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/d2da3c36914d4b34943ca023f2b5e615?v=cfd5dc08'
 ---
-
 
 ## What Is Marketplace Hackerspace?
 Marketplace Hackerspace is a hands-on coding zone at Sitecore Symposium 2025 where developers rapidly learn how to build extensions using Sitecore SDKs, Blok Desgin System and MCPs. It’s designed to showcase the power of XM Clouds extensibility and developer experience using AI tooling - live, on-site, and in real time.
