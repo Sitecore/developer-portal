@@ -51,7 +51,7 @@ Check out the [Marketplace Starter Kit](https://github.com/Sitecore/marketplace-
 <Promo
   title="Get your tickets now!"
   description="Get hands-on experience at the Marketplace Hackerspace, get inspired and learn all about the latest Sitecore news at Sitecore Symposium 2025 in Orlando."
-  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/ca42fc5f7b974d0883a176873371afc7?v=29ba3210"
+  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/2a36fecdeebc48af8282d3eb56f4a4c6?v=b744e380"
   linkText="Read more"
   linkHref="https://symposium.sitecore.com"
   isImageLeft={false}
