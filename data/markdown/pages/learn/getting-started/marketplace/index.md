@@ -5,7 +5,14 @@ description: 'The Sitecore Marketplace has officially opened its doors to Custom
 promoAfter: ['learning-essentials']
 openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/b20cc628bdaf4c3080bd586c98d4ee30?v=947ae0af'
 ---
-
+<Promo
+  title="Join the Marketplace Hackerspace at Sitecore Symposium 2025!"
+  description="Learn more about how you get a quick start in modern developer experience tailoring your XM Cloud experience using Sitecore SDKs, Blok design system and MCPs. Join the ultimate developer playground at Sitecore Symposium 2025."
+  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/ca42fc5f7b974d0883a176873371afc7?v=29ba3210"
+  linkText="Read more"
+  linkHref="/learn/getting-started/marketplace/marketplace-hackerspace"
+  isImageLeft={false}
+/>
 ## What is the Sitecore Marketplace?
 The Sitecore Marketplace is your trusted hub for managing and discovering curated, ready-to-use extensions that enhance your Sitecore digital experience platform. Seamlessly integrate with preferred third-party services, extend platform capabilities, and maximize your investment. Build apps using provided SDKs to create both standard and custom solutions tailored to your business needs.
 
