@@ -4,7 +4,7 @@ description: 'Guide covering how to create a repository for Content Hub External
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-12-13'
+lastUpdated: '2025-10-10'
 created: '2024-12-13'
 audience: ['Technical Implementers', 'Architects']
 ---
@@ -14,7 +14,7 @@ External components in Content Hub allow custom react components to be injected 
 > The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
 
 ## Execution
-Before starting development of external components, a repository should be created to store the code. This will also need to have a transpiler/build flow to package files for consumption in Content Hub. Details of how to create this are beyond the scope of this guide, but examples can be found [here](https://bitbucket.org/stylelabsdev/sitecore.ch.externalcomponents.examples/src).
+Before starting development of external components, a repository should be created to store the code. This will also need to have a transpiler/build flow to package files for consumption in Content Hub. Details of how to create this are beyond the scope of this guide, but examples can be found [here](https://github.com/Sitecore/accelerate-content-hub/tree/main/starters/Sitecore.ContentHub.ExternalComponents).
 
 Let's look at some use cases based on real-life examples. 
 
@@ -282,7 +282,7 @@ One really interesting aspect of this for me, is that it is easy to see that by 
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="External Components Examples" link="https://bitbucket.org/stylelabsdev/sitecore.ch.externalcomponents.examples/src/main/" />
+  <Link title="External Components Examples" link="https://github.com/Sitecore/accelerate-content-hub/tree/main/starters/Sitecore.ContentHub.ExternalComponents/" />
   <Link title="External Page Components" link="https://doc.sitecore.com/ch/en/users/content-hub/external.html" />
 </Row>
 

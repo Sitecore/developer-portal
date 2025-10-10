@@ -4,7 +4,7 @@ description: 'Identifying Churn Risk Using Sitecore CDP: Inactive vs. Churned Cu
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-09-28'
+lastUpdated: '2025-10-10'
 created: '2025-09-28'
 audience: ['Architects', 'Technical Implementers']
 features: ['CDP', 'Personalize']
@@ -18,7 +18,12 @@ Automated tests ensure your decision models behave predictably and catch regress
 
 
 ## Execution
-Before you begin, ensure a decision moel, or at least one decision model variant, are already created and available for testing.
+Before you begin, ensure the following entities are already created and available for testing:
+- A decision model
+- At least one decision model variant
+- Decision table
+- Programmables
+- Offers
 
 Familiarize yourself with:
 - [Sitecore Personalize APIs](https://doc.sitecore.com/personalize/en/developers/api/call-the-personalize-api.html)
@@ -57,6 +62,10 @@ The following example describes Decision Model Variant A that outputs the next b
 | Customer   | 1                | 10% Offer              |
 | Customer   | >1               | Gold Member 20% Offer  |
 | Visitor    | Any              | Sign up 5% Offer       |
+
+<img src="/images/learn/accelerate/cdp-personalize/decision-model-testing.png.png" alt="Decision Model Testing"/>
+<br/><br/>
+
 
 
 ### Implementation Approach
@@ -262,13 +271,6 @@ curl --location --request GET 'https://{host}/v2/decisionModelDefinitions/{uuid}
 
 ```
 curl --location --request GET 'https://{host}/v2/connections' \
---header 'Authorization: Bearer eyJraWQ..qdA'
-```
-
-4. Use the [Offers REST API](https://doc.sitecore.com/cdp/en/developers/api/rest-apis.html) to perform the retrieve offers function to return a list of available offers. The following is an example of a cURL request:
-
-```
-curl --location --request GET 'https://{host}/v3/offers' \
 --header 'Authorization: Bearer eyJraWQ..qdA'
 ```
 

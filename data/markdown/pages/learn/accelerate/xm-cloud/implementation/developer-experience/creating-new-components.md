@@ -62,6 +62,7 @@ Once your module is created (This should be the Project layer module created dur
 
 5. Click `Proceed`. This will create and configure all the required items for the component.
 6. Locate the matching `.tsx` file in the Next.js application (`Promo.tsx` or `PageContent.tsx`) - make a duplicate of the file and rename to match your new component name. Move the new `.tsx` file to a folder structure that matches the rendering item structure.
+7. If Head App uses [Sitecore Content SDK](https://doc.sitecore.com/xmc/en/developers/content-sdk/sitecore-content-sdk-for-xm-cloud.html), register the component in the component map as it is described in [Register a component in the component map](https://doc.sitecore.com/xmc/en/developers/content-sdk/register-a-component-in-the-component-map.html) documentation.
 
 Now you have the scaffolding for your component, you can customize your data model (datasource template), the rendering parameters & the react component to match.
 
