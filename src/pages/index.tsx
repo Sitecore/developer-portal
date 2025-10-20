@@ -15,7 +15,6 @@ import { GenericList } from '@components/lists';
 import ProductList from '@components/lists/products/productList';
 import { CenteredContent, Hero, Row, VerticalGroup } from '@components/ui/sections';
 import hackerspace from '@data/promos/hackerspace';
-import data from '@data/promos/survey';
 
 import AccelerateUpdates from '../components/lists/accelerate/AccelerateUpdates';
 import { getLatestRecipes } from '../lib/accelerate/latest';
@@ -52,7 +51,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
               <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest changelog updates" linkText="Full changelog" />
               <AccelerateUpdates recipes={recipes} title="Sitecore Accelerate updates" linkHref="/learn/accelerate" linkText="See all recipes" url="/learn/accelerate/xm-cloud" />
             </SimpleGrid>
-            <PromoCard {...data} />
+            <PromoCard {...hackerspace} />
             <Row columns={3}>
               <Article
                 title="Sitecore Experience Platform 10.4"
@@ -68,7 +67,6 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
                 link="/learn/accelerate"
               />
             </Row>
-            <PromoCard {...hackerspace} />
           </CenteredContent>
         </VerticalGroup>
 
