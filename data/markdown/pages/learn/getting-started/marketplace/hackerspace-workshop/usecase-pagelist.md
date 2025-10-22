@@ -1,8 +1,44 @@
----
-product: ['marketplace']
-title: 'Marketplace Hackerspace  Workshop @ Sitecore Symposium 2025 - Introduction'
-description: 'Welcome to the Marketplace Hackerspace Workshop, the ultimate developer playground at Sitecore Symposium 2025. Whether you are a seasoned Sitecore architect or just getting started with XM Cloud, this is your chance to build, compete, and connect.'
-openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/d2da3c36914d4b34943ca023f2b5e615?v=cfd5dc08'
----
+# Use case: NAME_OF_THE_USE_CASE
 
-## Use Case: Page list
+A short, descriptive name for the extension or integration.
+
+Example: “AI-Powered Content Tagging Extension for Sitecore Marketplace”
+
+IMAGE_OF_THE_USE_CASE_IN_ACTION
+
+LINK_TO_REFERENCE_REPO
+
+## Summary
+
+A concise paragraph describing what the extension does and why it matters.
+
+Example:
+This extension allows developers to automatically tag content assets using generative AI models, improving discoverability in the Sitecore Content Hub. It showcases how to leverage the Marketplace SDK to integrate external AI APIs.
+
+## Implementation Steps
+
+Outline the key milestones for participants. Prompt examples etc.
+
+Example:
+
+- Set up the developer environment (install SDK, authenticate)
+- Generate project scaffold using AI dev tools
+- Implement business logic (AI call, data handling)
+- Integrate with Sitecore APIs or services
+- Test and debug
+- Package and publish to the Marketplace
+
+### Step 1. Lorem ipsum
+some text here
+
+### Step 2. Dolor sit
+some text here
+
+## Resources
+
+Links or references participants may need.
+
+- SDK Documentation
+- AI Dev Tools Quickstart
+- Example Repository
+- Sitecore Marketplace Developer Portal
