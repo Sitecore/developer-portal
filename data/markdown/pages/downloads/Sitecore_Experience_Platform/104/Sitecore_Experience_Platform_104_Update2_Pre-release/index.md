@@ -61,5 +61,5 @@ Resource | Description
 Resource | Description
 --- | ---
 [Release Notes](/downloads/Sitecore_Experience_Platform/104/Sitecore_Experience_Platform_104_Update2_Pre-release/Release_Notes) | Release notes, cumulated across all Sitecore XP 10.4 update releases.
-[Automated_Cumulative_Hotfix_Instructions_10.4.2_rev_012675](<link>) | Instructions for installing the cumulative hotfix following the deployment automation option.
+[Automated_Cumulative_Hotfix_Instructions](<link>) | Instructions for installing the cumulative hotfix following the deployment automation option.
 [Manual_Cumulative_Hotfix_Instructions_10.4.2_rev_012675](<link>) | Instructions supporting the manual cumulative hotfix installation option. Instructions apply to those fixes that require manual steps.
