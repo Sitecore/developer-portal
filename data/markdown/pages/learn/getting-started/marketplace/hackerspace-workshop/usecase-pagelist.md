@@ -1,14 +1,13 @@
-# Use case: NAME_OF_THE_USE_CASE
+# Use case: Sites- and Pagelist (Spyros)
 
-A short, descriptive name for the extension or integration.
+This use case allows even those **new to Sitecore** to experience how extensions can read and write data within the Cloud Portal, showcasing Vibe Coding with Blok MCP for rapid, interactive development. Using the **Standalone Extension Point**, attendees will build an extension that lists Sites and Pages retrieved using the **Marketplace SDK**. 
 
-Example: “AI-Powered Content Tagging Extension for Sitecore Marketplace”
 
-IMAGE_OF_THE_USE_CASE_IN_ACTION
+TODO: IMAGE_OF_THE_USE_CASE_IN_ACTION
 
-LINK_TO_REFERENCE_REPO
+TODO: LINK_TO_REFERENCE_REPO
 
-## Summary
+## Summary TODO
 
 A concise paragraph describing what the extension does and why it matters.
 

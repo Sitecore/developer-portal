@@ -60,9 +60,13 @@ When you app started successfully you will it running under `http://localhost:30
 
 Blok and Documentation
 
+Read more here: https://blok.sitecore.com/beta 
+
 #### 4b. Cursor
 
 Blok and Documentation
+
+Read more here: https://blok.sitecore.com/beta
 
 ## Use cases
 - [Page List example]() - showcasing Marketplace SDK functionality
