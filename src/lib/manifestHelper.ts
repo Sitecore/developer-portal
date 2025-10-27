@@ -41,39 +41,6 @@ export const getSiblingItem = (routes: ManifestNavigationItem[], currentPath: st
 };
 
 /**
- * Finds the parent of a given route in the sidebar navigation.
- *
- * @param routes - The array of sidebar navigation items to search.
- * @param path - The path of the child item.
- * @returns The parent route if found, otherwise null.
- */
-export const getParentRoute = (routes: Array<ManifestNavigationItem>, path: string): ManifestNavigationItem | null => {
-  if (path.includes('/')) {
-    path = path.split('/').slice(0, -1).join('/');
-    console.log('path: ' + path);
-    return getRouteByFullPath(routes, path);
-  }
-
-  for (const route of routes) {
-    if (route.children) {
-      for (const child of route.children) {
-        if (child.path === path) {
-          return route;
-        }
-      }
-
-      const foundRoute = getParentRoute(route.children, path);
-
-      if (foundRoute) {
-        return foundRoute;
-      }
-    }
-  }
-
-  return null;
-};
-
-/**
  * Recursively searches for the parent of a given route path within a list of routes.
  *
  * @param routes - An array of `ManifestNavigationItem` representing the navigation structure.
@@ -186,21 +153,42 @@ export const getRouteByFullPath = (routes: Array<ManifestNavigationItem>, fullPa
 
 /**
  * Returns the URL for a given sidebar navigation item based on the configuration and current route.
+ * Walks down the tree to avoid ambiguity when duplicate path names exist in different branches.
  * @param config - The sidebar navigation configuration.
  * @param currentRoute - The current sidebar navigation item.
  * @returns The URL for the sidebar navigation item.
  */
 export const getItemUrl = (config: ManifestConfig, currentRoute: ManifestNavigationItem): string => {
-  let url: string = currentRoute.path;
+    const findPathChain = (
+        routes: ManifestNavigationItem[],
+        targetPath: string,
+        chain: ManifestNavigationItem[] = []
+    ): ManifestNavigationItem[] | null => {
+        for (const route of routes) {
+            const newChain = [...chain, route];
 
-  let parentRoute = getParentRoute(config.routes, currentRoute.path);
+            if (route.path === targetPath) {
+                return newChain; // found the route
+            }
 
-  while (parentRoute) {
-    url = appendPathToBasePath(parentRoute.path, url);
-    parentRoute = getParentRoute(config.routes, parentRoute.path);
-  }
+            if (route.children) {
+                const result = findPathChain(route.children, targetPath, newChain);
+                if (result) return result;
+            }
+        }
+        return null;
+    };
 
-  url = appendPathToBasePath(config.path, url);
+    const chain = findPathChain(config.routes, currentRoute.path);
 
-  return url;
+    if (!chain) {
+        console.warn(`getItemUrl: Could not resolve path for ${currentRoute.path}`);
+        return appendPathToBasePath(config.path, currentRoute.path);
+    }
+
+    const segments = chain.map((r) => r.path).filter(Boolean);
+    const fullPath = segments.join('/');
+
+    return appendPathToBasePath(config.path, fullPath);
 };
+
