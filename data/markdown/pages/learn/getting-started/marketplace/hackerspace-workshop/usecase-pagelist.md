@@ -2,7 +2,7 @@
 
 This use case allows even those **new to Sitecore** to experience how extensions can read and write  data using the Marketplace SDK within the Cloud Portal, showcasing Vibe Coding with Blok MCP for rapid, interactive development. Using the **Standalone Extension Point**, attendees will build an extension that lists Sites and Pages retrieved using the **Marketplace SDK**. 
 
-TODO: IMAGE_OF_THE_USE_CASE_IN_ACTION
+![Page List editing functionality](images/Page-List-Edit.png)
 
 TODO: LINK_TO_REFERENCE_REPO
 
