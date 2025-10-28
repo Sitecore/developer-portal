@@ -1,40 +1,69 @@
 # Use case: Sites- and Pagelist (Spyros)
 
-This use case allows even those **new to Sitecore** to experience how extensions can read and write data within the Cloud Portal, showcasing Vibe Coding with Blok MCP for rapid, interactive development. Using the **Standalone Extension Point**, attendees will build an extension that lists Sites and Pages retrieved using the **Marketplace SDK**. 
-
+This use case allows even those **new to Sitecore** to experience how extensions can read and write  data using the Marketplace SDK within the Cloud Portal, showcasing Vibe Coding with Blok MCP for rapid, interactive development. Using the **Standalone Extension Point**, attendees will build an extension that lists Sites and Pages retrieved using the **Marketplace SDK**. 
 
 TODO: IMAGE_OF_THE_USE_CASE_IN_ACTION
 
 TODO: LINK_TO_REFERENCE_REPO
 
+Extension Point: Standalone
+
 ## Summary TODO
 
-A concise paragraph describing what the extension does and why it matters.
-
-Example:
-This extension allows developers to automatically tag content assets using generative AI models, improving discoverability in the Sitecore Content Hub. It showcases how to leverage the Marketplace SDK to integrate external AI APIs.
+In this use case, participants build a **Sites and Pages Listing App** as an XM Cloud Extension using the **Standalone** Extension Point in the Sitecore Cloud Portal. The app allows users to browse all Sites and Pages in a hierarchical tree view, view details, and edit content fields directly from the interface. It demonstrates how to integrate with Sitecore data via the Marketplace and extend developer workflows using Vibe Coding with Blok MCP for a streamlined, interactive development experience.
 
 ## Implementation Steps
-
-Outline the key milestones for participants. Prompt examples etc.
-
+[TODO]
 Example:
 
-- Set up the developer environment (install SDK, authenticate)
-- Generate project scaffold using AI dev tools
-- Implement business logic (AI call, data handling)
-- Integrate with Sitecore APIs or services
-- Test and debug
-- Package and publish to the Marketplace
+1. Check app config in developer studio
+2. Create the sites list component
+3. Create a new Sites listing page
+4. Add first level pages to the sites tree view
+5. Make display name editable
+6. Go recursive to deeper levels of pages
+7. Create the Split screen design
 
-### Step 1. Lorem ipsum
+### Step 1. Check App Config
+Revisit the Developer Studio to check if you have chosen the right extension point for this app. 
+
+### Step 2. Create Sites list Component
+Introduction: Why are we doing this step
+- Create new Component that loads all existing sites similar to the existing components
+
+1. Create file `list-sites.tsx` in [TODO: Path in components folder or in app/pagelist/components?]
+
+
+2. **Prompt:** using the example of @list-languages.tsx I want to create another component inside of @list-sites.tsx that is fetching and listing all xmc sites, using marketplace sdk. Create the component and add it in @/app/page.tsx
+
+3. Review the code and the results in the app
+
+### Step 3. Components.json register blok mcp - is that needed?
 some text here
 
-### Step 2. Dolor sit
-some text here
+### Step 3. New Sites Listing Page
+1. **Prompt:** Let's create a new page where we only list sites in a tree structure. use @blok registry with shadcn mcp to generate the UI.
+
+2. Test: Go to the newly created sites tree page.
+
+### Step 4. Add Pages to the tree list
+1. **Prompt:** Now, let's pull in all pages for each site and render it as part of the collapsible. Use marketplace with xmc.xmapp module.
+
+2. Test: Refresh the page and validate the results.
+
+
+### Step 5. make display name editable
+1. **Prompt:** Take a look at @sites-tree.tsx and @list-sites.tsx to understand how marketplace sdk works and what we have already achieved so far. We want to create a new feature to "inline update a sites display name". you may search node modules for marketplace sdk types to understand how we can achieve this.
+
+2. Test: Refresh the page and validate if you can now change the site and page display names.
+
+### Step 6. Go recursive to deeper levels of pages
+[TODO]
+### Step 7. Create the Split screen design
+[TODO]
 
 ## Resources
-
+[TODO]
 Links or references participants may need.
 
 - SDK Documentation

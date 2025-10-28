@@ -123,6 +123,8 @@ To start your application go to your terminal and navigate into the folder conta
 
 When you app started successfully you will it running under `http://localhost:3000`
 
+Test: Go back to the extension point where the app is registered and reload your app. the app should now show content. 
+
 ### 5. Register MCP
 
 #### 5a. in VS Code
