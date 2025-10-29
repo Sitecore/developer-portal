@@ -42,6 +42,17 @@ To install npm: go to https://nodejs.org/en/download/ and download and run the i
 
 To follow this workshop you need an IDE such as VS Code or Cursor. No, Notepad is not enough. If you have non of the both, here's where you get VS Code: https://code.visualstudio.com/download
 
+### Sign in to VS Code and enable Copilot
+Signing in to VS Code enables the Copilot functionality.
+
+
+1. On the bottom left corner of VS Code click on the profile icon. 
+2. Click Sign in
+3. Ideally use your GitHub Login (if you do not have a GitHub Account you need to create one)
+
+4. On the bottom left corner click the Copilot icon (little head)
+5. Make sure to select Claude Sonnet 3.5 or above.
+
 ## Preparation Steps
 
 ### 1. Register App
@@ -66,7 +77,7 @@ Configure your App:
 
 10. enable API access for **XM Cloud APIs**
 11. For deployment URL use: `http://localhost:3000` as you want to connect your local running app for now.
-12. For the App Logo URL provide a URL to an image file that has square format, minimum 512x512pxl. You can use: [TODO: Url to be provided]
+12. For the App Logo URL provide a URL to an image file that has square format, minimum 512x512pxl. You can use: https://developer.sitecore.com/learn/getting-started/marketplace/hackerspace-workshop/images/HS-Icon.png
 13. Hit the Activate button in the top right corner
 
 For sure there is more to explore here, but let's keep it to your needed steps for now.
