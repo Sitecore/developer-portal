@@ -1,4 +1,4 @@
-# Use case: Sites- and Pagelist (Spyros)
+# Use case: Sites-Tree (Spyros)
 
 This use case allows even those **new to Sitecore** to experience how extensions can read and write  data using the Marketplace SDK within the Cloud Portal, showcasing Vibe Coding with Blok MCP for rapid, interactive development. Using the **Standalone Extension Point**, attendees will build an extension that lists Sites and Pages retrieved using the **Marketplace SDK**. 
 
@@ -31,7 +31,7 @@ Revisit the Developer Studio to check if you have chosen the right extension poi
 Introduction: Why are we doing this step
 - Create new Component that loads all existing sites similar to the existing components
 
-1. Create file `list-sites.tsx` in [TODO: Path in components folder or in app/pagelist/components?]
+1. Create file `list-sites.tsx` in [TODO: Path in components folder or in app/sites-tree/components?]
 
 
 2. **Prompt:** 
