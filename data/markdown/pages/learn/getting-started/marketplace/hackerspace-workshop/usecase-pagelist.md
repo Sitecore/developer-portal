@@ -4,9 +4,9 @@ This use case allows even those **new to Sitecore** to experience how extensions
 
 ![Page List editing functionality](images/Page-List-Edit.png)
 
-TODO: LINK_TO_REFERENCE_REPO
+[Reference Repository](https://github.com/Sitecore/hackerspace-workshop/app/page-list)
 
-Extension Point: Standalone
+Extension Point: **Standalone**
 
 ## Summary TODO
 
@@ -57,10 +57,13 @@ some text here
 
 2. Test: Refresh the page and validate if you can now change the site and page display names.
 
-### Step 6. Go recursive to deeper levels of pages
-[TODO]
-### Step 7. Create the Split screen design
-[TODO]
+
+
+### Step 6. Make the Explorer page the starting point and redesign
+1. **Prompt:** i want us to adapt our UI inside Sites Explorer page. You may access @Browser , it's already in the correct page, dont redirect, to get a snapshot of the UI. The purpose is to make it look closer to XMCloud explorer app. attaching a screenshot for reference. The difference is that XMC explorer app is expanding tree on the right, we want to keep the existing tree view. In the right half of the page, we need to introduce a details panel, similar in context to the screenshot. you may use blok shadcn registry to add components if needed. you may ask questions for clarification. 
+
+Use this image:
+![Page List editing functionality](images/File-Explorer-Screenshot.png.png)
 
 ## Resources
 [TODO]
