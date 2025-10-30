@@ -36,7 +36,7 @@ Revisit the Developer Studio to check if you have chosen the right extension poi
 ### Step 2. Initial app creation
 Prompt
 ```
-Create a Sitecore Marketplace app using React Vite. I want the app to appear in XM Cloud Page builder. Using XM Cloud APIs including the GraphQL API, the app should display the details of every datasource available in the currently opened XM Cloud page.
+Create a Sitecore Marketplace app using Next.js. I want the app to appear in XM Cloud Page builder. Using XM Cloud APIs including the GraphQL API, the app should display the details of every datasource available in the currently opened XM Cloud page.
 
 The datasource details should include: the name of the datasource, which user created it, which user last modified it, date of creation, date of last modified, the text contents of the datasource, internal links in the text datasource, external links in the text datasource.
 
