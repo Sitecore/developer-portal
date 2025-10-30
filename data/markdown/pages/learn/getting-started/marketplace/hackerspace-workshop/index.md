@@ -161,7 +161,6 @@ Test: Go back to the extension point where the app is registered and reload your
     "Sitecore Documentation": {
       "url": "https://doc.sitecore.com/mcp",
       "headers": {
-      }
         "User-Agent": "sitecore-mcp-client/1.0"
     }
   }
@@ -195,7 +194,6 @@ Read more here: https://blok.sitecore.com/beta
     "Sitecore Documentation": {
       "url": "https://doc.sitecore.com/mcp",
       "headers": {
-      }
         "User-Agent": "sitecore-mcp-client/1.0"
     }
   }
