@@ -19,6 +19,11 @@
 ## Docs
 - Short URL for landing page: http://siteco.re/4qodAgS
 
+## Workshop Registrations
+- Workshop 1: Tuesday, Nov. 4th 1-2pm https://sym.sitecore.com/hub/events/8f5f560a-7b6f-4fba-9cf3-55214a6d90d8/sessions/f1449322-488f-4f2b-860b-dcbc168ffd41
+- Workshop 2: Tuesday, Nov. 4th 3-3.30pm https://sym.sitecore.com/hub/events/8f5f560a-7b6f-4fba-9cf3-55214a6d90d8/sessions/17bb9c3a-44d8-405e-a9d4-702133c975fb
+- Workshop 3: Wednesday, Nov. 5th 1-2pm https://sym.sitecore.com/hub/events/8f5f560a-7b6f-4fba-9cf3-55214a6d90d8/sessions/adf792ac-7523-4f21-a820-e8a4cd188511  
+- Workshop 1: Wednesday, Nov. 5th 3-3.30pm https://sym.sitecore.com/hub/events/8f5f560a-7b6f-4fba-9cf3-55214a6d90d8/sessions/cdaf5fe0-6c04-43e2-b038-d2703d3f3478
 
 ## Other
 - Email Communications: https://sitecore1.sharepoint.com/:f:/s/Team-GeneralMarketing-PMMTeam/ErKsrB9a61xNnAx0ryfmpZEBlqkVNGC4i4WLQraF6LsQ_Q?e=11q0Hz 
