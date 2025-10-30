@@ -24,11 +24,16 @@ It's designed to visually display the data source items being consumed by compon
 
 ## Implementation Steps
 
+- Check App Config
 - Initial app creation
 - Fix page subscription
 - Fix GraphQL
 
-### Step 1. Initial app creation
+### Step 1. Check App Config
+Revisit the Developer Studio to check if you have chosen the right extension point for this app. 
+
+
+### Step 2. Initial app creation
 Prompt
 ```
 Create a Sitecore Marketplace app using React Vite. I want the app to appear in XM Cloud Page builder. Using XM Cloud APIs including the GraphQL API, the app should display the details of every datasource available in the currently opened XM Cloud page.
@@ -45,14 +50,14 @@ Install the Marketplace SDK packages at their `latest` versions.
 - In the XM Cloud page context, the page information is stored in `pageContext.pageInfo` (with properties like `id` and `path`), not `pageContext.item`.
 ```
 
-### Step 2. Fix page subscription
+### Step 3. Fix page subscription
 Prompt
 ```
 That worked, thanks! The Marketplace app successfully loads in XM Cloud Page builder.
 
 But there  is an issue. When I open a different page in XM Cloud, I want to see details for that page.
 ```
-### Step 3. Fix GraphQL
+### Step 4. Fix GraphQL
 Prompt
 ```
 The Marketplace app loads in XM Cloud just fine. But the datasources are not displaying in the Marketlace app.

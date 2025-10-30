@@ -8,21 +8,22 @@ This use case allows even those **new to Sitecore** to experience how extensions
 
 Extension Point: **Standalone**
 
+Icon URL: https://cdn-icons.flaticon.com/svg/3914/3914392.svg?token=exp=1761775371~hmac=5be70c90aa4224c18d002dfc797903e1
+
 ## Summary TODO
 
 In this use case, participants build a **Sites and Pages Listing App** as an XM Cloud Extension using the **Standalone** Extension Point in the Sitecore Cloud Portal. The app allows users to browse all Sites and Pages in a hierarchical tree view, view details, and edit content fields directly from the interface. It demonstrates how to integrate with Sitecore data via the Marketplace and extend developer workflows using Vibe Coding with Blok MCP for a streamlined, interactive development experience.
 
 ## Implementation Steps
-[TODO]
-Example:
+
 
 1. Check app config in developer studio
 2. Create the sites list component
 3. Create a new Sites listing page
-4. Add first level pages to the sites tree view
+4. Add Pages to the tree list
 5. Make display name editable
-6. Go recursive to deeper levels of pages
-7. Create the Split screen design
+6. Make the Explorer page the starting point and redesign
+7. Cleanup
 
 ### Step 1. Check App Config
 Revisit the Developer Studio to check if you have chosen the right extension point for this app. 
@@ -43,6 +44,7 @@ Using the example of @list-languages.tsx I want to create another component insi
 
 ### Step 3. Components.json register blok mcp - is that needed?
 some text here
+[TODO]
 
 ### Step 3. New Sites Listing Page
 1. **Prompt:** 
