@@ -1,8 +1,8 @@
-# Use case: Sites-Tree (Spyros)
+# Use case: Sites-Tree
 
 This use case allows even those **new to Sitecore** to experience how extensions can read and write  data using the Marketplace SDK within the Cloud Portal, showcasing Vibe Coding with Blok MCP for rapid, interactive development. Using the **Standalone Extension Point**, attendees will build an extension that lists Sites and Pages retrieved using the **Marketplace SDK**. 
 
-![Page List editing functionality](images/Page-List-Edit.png)
+![Page List editing functionality](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/e76040fb52b748de9c3d342668c35922?v=c550023a)
 
 [Reference Repository](https://github.com/Sitecore/hackerspace-workshop/app/page-list)
 
@@ -10,9 +10,9 @@ Extension Point: **Standalone**
 
 Icon URL: https://cdn-icons.flaticon.com/svg/3914/3914392.svg?token=exp=1761775371~hmac=5be70c90aa4224c18d002dfc797903e1
 
-## Summary TODO
+## Summary 
 
-In this use case, participants build a **Sites and Pages Listing App** as an XM Cloud Extension using the **Standalone** Extension Point in the Sitecore Cloud Portal. The app allows users to browse all Sites and Pages in a hierarchical tree view, view details, and edit content fields directly from the interface. It demonstrates how to integrate with Sitecore data via the Marketplace and extend developer workflows using Vibe Coding with Blok MCP for a streamlined, interactive development experience.
+In this use case, participants build a **Sites Tree App** as an XM Cloud Extension using the **Standalone** Extension Point in the Sitecore Cloud Portal. The app allows users to browse all Sites and Pages in a hierarchical tree view, view details, and edit content fields directly from the interface. It demonstrates how to integrate with Sitecore data via the Marketplace and extend developer workflows using Vibe Coding with Blok MCP for a streamlined, interactive development experience.
 
 ## Implementation Steps
 
@@ -42,9 +42,6 @@ Using the example of @list-languages.tsx I want to create another component insi
 
 3. Review the code and the results in the app
 
-### Step 3. Components.json register blok mcp - is that needed?
-some text here
-[TODO]
 
 ### Step 3. New Sites Listing Page
 1. **Prompt:** 
@@ -77,7 +74,7 @@ Take a look at @sites-tree.tsx and @list-sites.tsx to understand how marketplace
  I want us to adapt our UI inside Sites Explorer page. You may access @Browser , it's already in the correct page, dont redirect, to get a snapshot of the UI. The purpose is to make it look closer to XMCloud explorer app. attaching a screenshot for reference. The difference is that XMC explorer app is expanding tree on the right, we want to keep the existing tree view. In the right half of the page, we need to introduce a details panel, similar in context to the screenshot. you may use blok shadcn registry to add components if needed. you may ask questions for clarification. 
 ```
 Use this image:
-![Page List editing functionality](images/File-Explorer-Screenshot.png.png)
+![Page List editing functionality](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/7805af2691344e1d8595c365ac0339b1?v=a2512f67)
 
 ### 7. Cleanup
 

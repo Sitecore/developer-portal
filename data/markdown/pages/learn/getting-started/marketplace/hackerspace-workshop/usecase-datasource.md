@@ -1,4 +1,4 @@
-# Use case: Data source (Akos)
+# Use case: Data source
 
 This workshop focuses on an advanced use case for developers and power users working within Sitecore XM Cloud.
 
@@ -10,7 +10,7 @@ This use case requires leveraging GraphQL queries to efficiently retrieve real-t
 - Execute advanced GraphQL queries to traverse the content tree and fetch presentation details.
 - Enhance the in-context editing experience by exposing technical information to content authors, making troubleshooting and content management more intuitive.
 
-![Page List editing functionality](images/data-source-use-case.jpg)
+![Page List editing functionality](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/1e1c4539a9c140c8ab31cc52329af359?v=fd7c574b)
 
 [Reference Repository](https://github.com/Sitecore/hackerspace-workshop/app/data-source)
 

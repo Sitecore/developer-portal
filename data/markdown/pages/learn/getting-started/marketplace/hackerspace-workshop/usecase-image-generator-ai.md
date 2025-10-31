@@ -2,7 +2,7 @@
 
 Build an ultra-compact AI-powered image generator that integrates with Sitecore page context using **Vibe Coding with AI** for rapid, interactive development. This use case showcases how to leverage AI assistance to create contextual image generation using free AI services.
 
-![AI Image Generator in Action](images/image-generator.png)
+![AI Image Generator in Action](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/9710ee95f7b44b4a8139d2fc011517e5?v=f8fb84d1)
 
 [Reference Repository](https://github.com/Sitecore/hackerspace-workshop/app/image-generator)
 
