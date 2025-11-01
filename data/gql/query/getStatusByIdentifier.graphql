@@ -1,8 +1,5 @@
-query GetStatusByIdentifier($identifier: String) {
-  allStatus(where: { identifier_eq: $identifier }) {
-    total
-    results {
-      ...status
-    }
+query GetStatusByIdentifier($identifier: String!) {
+  status(id: $identifier, locale: "") {
+    ...status
   }
 }

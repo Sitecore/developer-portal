@@ -1,10 +1,7 @@
 query SearchByDate($startDate: DateTime!, $endDate: DateTime!, $first: Int = 5, $after: String = "") {
-  changelog: allChangelog(first: $first, after: $after, where: { releaseDate_between: [$startDate, $endDate] }) {
-    pageInfo {
-      hasNext
-      endCursor
-    }
-    total
+  changelog: manyChangelog(minimumPageSize: $first, after: $after, filter: { AND: [{ releaseDate: { lessThan: $endDate } }, { releaseDate: { greaterThan: $startDate } }] }) {
+    hasMore
+    cursor
     results {
       ...changelogEntry
     }
