@@ -92,6 +92,13 @@ hasInPageNav: false
     - [Introduction to Discover](/learn/getting-started/discover-introduction)
     - [Sitecore Essentials - Free on-demand learning](https://learning.sitecore.com/pathway/sitecore-essentials)
   </GroupItem>
+  <GroupItem>
+    ### Sitecore Marketplace
+    - [Sitecore Marketplace Introduction](/learn/getting-started/marketplace)
+    - [Building with the Sitecore Marketplace Starter Kit](/learn/getting-started/marketplace/marketplace-starter-kit-nextjs-app-router)
+    - [Configure and Install a custom marketplace app](/learn/getting-started/marketplace/marketplace-register-app)
+    - [Marketplace Hackerspace](/learn/getting-started/marketplace/marketplace-hackerspace)
+  </GroupItem>
 </Group>
 
 <Group title="Getting started with Sitecore Platform DXP" description="Get the hang of the traditional Sitecore XM/XP/XC platform with these beginner-friendly tutorials, walkthroughs, and samples.">

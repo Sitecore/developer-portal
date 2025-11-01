@@ -12,7 +12,7 @@ audience: ['Architect','Technical Implementer']
 ## Context
 Content distribution is the process of making content available to different delivery channels and applications in a consistent, scalable way. When implemented well, a distribution strategy ensures that a single, authoritative source of content can serve many different experiences, formats, and audiences. 
 
-For content authors, this means being able to select and embed assets from their Content Hub directly into their content.
+For content authors, this means being able to select and embed assets from their DAM directly into their content. Content Hub is being used in this case but the same approach can be used for other DAMs.
 
 > The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
 
@@ -20,9 +20,9 @@ For content authors, this means being able to select and embed assets from their
 ## Execution
 [Sitecore Marketplace](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) penables every Cloud Portal organization to build and use applications that add new capabilities to Sitecore. The [XM Cloud Page builder custom field](https://doc.sitecore.com/mp/en/developers/marketplace/page-builder-custom-fields.html) extension point lets you extend the data template of a content item or a page by adding your own custom field to it. XM Cloud users can then populate that field with the data you provide in your Marketplace app.
 
-In this case, we have setup up a Marketplace custom field in XM Cloud that connects to Content Hub via a Marketplace app. It enables editors to select and embed published assets directly into Sitecore Page Builder, using GraphQL-powered components for dynamic rendering.
+In this case, we have setup up a Marketplace custom field in XM Cloud that connects to your DAM - in this case Content Hub, via a Marketplace app. It enables editors to select and embed published assets directly into Sitecore Page Builder, using GraphQL-powered components for dynamic rendering.
 
-Follow the steps in the documentation to [create your Marketplace app](https://doc.sitecore.com/mp/en/developers/marketplace/page-builder-custom-fields.html) for Page Builder custom fields. A dedicated Content Hub page needs to be configured to show only published content. Configuration for this and how to setup the marketplace the code can be seen at the [Content Hub Content Distribution](learn/accelerate/content-hub/implementation/integrations/content-distribution) recipe.
+Follow the steps in the documentation to [create your Marketplace app](https://doc.sitecore.com/mp/en/developers/marketplace/page-builder-custom-fields.html) for Page Builder custom fields. A dedicated Content Hub page needs to be configured to show only published content. Configuration for this and how to setup the marketplace the code can be seen at the [Content Hub Content Distribution](https://developers.sitecore.com/learn/accelerate/content-hub/implementation/integrations/content-distribution) recipe.
 
 In XM Cloud create a new component this will need to have a field set to the marketplace type plugin.
 
@@ -151,13 +151,15 @@ While the example focuses on blogs, the same approach can be extended to other s
 ## Related Recipes
 <Row columns={2}>
    <Link title="Creating New Components" link="/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components" />
-   <Link title="Content distribution from Content Hub to XM Cloud" link="/learn/accelerate/content-hub/implementation/integrations/content-distribution" />   
+   <Link title="Content distribution from Content Hub to XM Cloud" link="https://developers.sitecore.com/learn/accelerate/content-hub/implementation/integrations/content-distribution" />   
 </Row>
 
 ## Related Documentation
 <Row columns={2}>
   <Link title="Introduction to Sitecore Marketplace" link="https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html" />
    <Link title="Create a custom app" link="https://doc.sitecore.com/mp/en/developers/marketplace/create-a-custom-app.html" />
+   <Link title="Marketplace Getting Started" link="https://developers.sitecore.com/learn/getting-started/marketplace" />
 </Row>
+
 
 

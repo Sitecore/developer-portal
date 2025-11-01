@@ -300,9 +300,17 @@
               "title": "Deployment Dashboard",
               "path": "deployments-dashboard"
             },{
-              "title": "Embedding content from Content Hub",
+              "title": "Embedding content from DAM",
               "path": "content-assets"
+            },{
+              "title": "Icon picker",
+              "path": "marketplace-icon-picker"
+            },{
+              "title": "In-Page Analytics",
+              "path": "marketplace-ga"
             }
+
+            
           ]
         },        
         {
@@ -362,6 +370,10 @@
         {
           "title": "On-page SEO optimization",
           "path": "seo-web-optimization"
+        } ,        
+        {
+          "title": "Optimizing content for AI",
+          "path": "seo-geo-optimization"
         },
         {
           "title": "Operational Governance",

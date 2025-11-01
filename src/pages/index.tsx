@@ -1,6 +1,6 @@
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 import { SimpleGrid } from '@chakra-ui/react';
-import { Article, CTACard } from '@components/cards';
+import { Article, CTACard, PromoCard } from '@components/cards';
 import communityListData from '@data/data-community-list';
 import platformData from '@data/data-platform';
 import getHelpCta from '@data/promos/get-help';
@@ -14,6 +14,8 @@ import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, 
 import { GenericList } from '@components/lists';
 import ProductList from '@components/lists/products/productList';
 import { CenteredContent, Hero, Row, VerticalGroup } from '@components/ui/sections';
+import hackerspace from '@data/promos/hackerspace';
+
 import AccelerateUpdates from '../components/lists/accelerate/AccelerateUpdates';
 import { getLatestRecipes } from '../lib/accelerate/latest';
 import { AccelerateRecipe } from '../lib/accelerate/types/recipe';
@@ -49,6 +51,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
               <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest changelog updates" linkText="Full changelog" />
               <AccelerateUpdates recipes={recipes} title="Sitecore Accelerate updates" linkHref="/learn/accelerate" linkText="See all recipes" url="/learn/accelerate/xm-cloud" />
             </SimpleGrid>
+            <PromoCard {...hackerspace} />
             <Row columns={3}>
               <Article
                 title="Sitecore Experience Platform 10.4"

@@ -90,12 +90,17 @@
           "ignoreLink": false
         },
         {
+          "title": "Identifying churn risk",
+          "path": "churn-risk",
+          "ignoreLink": false
+        },        
+        {
           "title": "Home Page Personalization",
           "path": "home-page-personalization",
           "ignoreLink": false
         },
         {
-          "title": "Mortgage Jourey Alert",
+          "title": "Mortgage Journey Alert",
           "path": "mortgage-journey-alert",
           "ignoreLink": false
         },
@@ -109,9 +114,6 @@
           "path": "self-service-nudge",
           "ignoreLink": false
         }
-
-       
-          
       ]
     },
     {
@@ -124,6 +126,11 @@
           "path": "data-validation",
           "ignoreLink": false
         },
+        {
+          "title": "Decision Models Automated Testing",
+          "path": "decision-model-testing",
+          "ignoreLink": false
+        },        
         {
           "title": "Go-Live Checklist",
           "path": "go-live-checklist",
@@ -154,6 +161,9 @@
       "ignoreLink": true,
       "children": [
         {
+          "title": "CDP Glossary",
+          "path": "cdp-glossary"
+        }  ,{
           "title": "Personalize Glossary",
           "path": "personalize-glossary"
         }        

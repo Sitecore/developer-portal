@@ -21,7 +21,7 @@ Marketplace allows us to build a Deployment Dashboard directly accessible from X
 This app uses the [Full screen extension mode](https://doc.sitecore.com/mp/en/developers/marketplace/extension-points.html#standalone) in XM Cloud. This will make it available through the navigation header > Apps. This keeps the deployments in context of this XM Cloud instance.
 
 <video src="/images/learn/accelerate/xm-cloud/deployment-dashboard/vercel-deployments-marketplace.mp4" controls></video>
-
+<br/><br/>
 
 You can find the code to setup, or extend on GitHub - [Vercel Deployments Dashboard](https://github.com/dogabenli/xmc-vercel-deloyments-dashboard).
 
@@ -46,6 +46,7 @@ There’s plenty of ways this can be extended such as integrate with XM Cloud pu
 <Row columns={2}>
   <Link title="XM Cloud Deploy" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
   <Link title="Extension points" link="https://doc.sitecore.com/mp/en/developers/marketplace/extension-points.html#standalone"/>
+  <Link title="Marketplace Getting Started" link="https://developers.sitecore.com/learn/getting-started/marketplace" />
 </Row>
 
 

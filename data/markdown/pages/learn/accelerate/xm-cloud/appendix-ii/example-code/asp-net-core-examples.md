@@ -8,6 +8,8 @@ lastUpdated: '2025-03-31'
 created: '2025-03-31'
 ---
 
+> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+
 ## Example 1: Model-Bound View
 
 Model class: Promo.cs

@@ -220,6 +220,25 @@ Integrating data into your site is a cornerstone of building dynamic digital exp
   </GroupItem>  
 </Group>
 
+### Extensions
+The [Sitecore Marketplace](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) is the recommended way to extend a Sitecore environment without modifying or conflicting with its internal code.  From AI plugins to translation or web analytics tools and more, the Marketplace unlocks the ability to customize Sitecore for your own needs. Before starting development, it's important that you clearly identify the organization's needs and challenges your app will address.
+
+<Group title="" description="">
+  <GroupItem>
+    #### Recipies
+    - [Deployments Dashboard](/learn/accelerate/xm-cloud/implementation/extensions/deployments-dashboard)
+    - [Embedding content from Content Hub](/learn/accelerate/xm-cloud/implementation/extensions/content-assets)
+    - [Icon Picker](/learn/accelerate/xm-cloud/implementation/extensions/marketplace-icon-picker)
+    - [Google Analytics](/learn/accelerate/xm-cloud/implementation/extensions/marketplace-ga)    
+  </GroupItem>
+  <GroupItem>
+    #### Documentation
+    - [Introduction to Marketplace](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html)
+    - [Extension points](https://doc.sitecore.com/mp/en/developers/marketplace/extension-points.html)
+    - [Marketplace SDK](https://doc.sitecore.com/mp/en/developers/sdk/latest/sitecore-marketplace-sdk/sitecore-marketplace-sdk-for-javascript.html)
+  </GroupItem>  
+</Group>
+
 
 ### Configuration of other products
 Switching to composable means that not all requirements will be fulfilled by just XM Cloud and based on your requirements, other tools or products might require configuration to align with your requirements.
@@ -264,6 +283,7 @@ Launch is just the beginning. Real value is in the way you watch, learn, and hon
     #### Recipies
     - [Data Fetching Optimization](/learn/accelerate/xm-cloud/optimization/data-fetching-optimization)
     - [On-page SEO Optimization](/learn/accelerate/xm-cloud/optimization/seo-web-optimization)
+    - [Optimizing content for AI](/learn/accelerate/xm-cloud/optimization/seo-geo-optimization)
     - [Operational Governance](/learn/accelerate/xm-cloud/optimization/operational-governance)    
     - [Performance Optimization](/learn/accelerate/xm-cloud/optimization/performance-optimization)
     - [Publishing Optimization](/learn/accelerate/xm-cloud/optimization/publishing-optimization)
