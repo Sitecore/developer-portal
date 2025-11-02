@@ -43,6 +43,19 @@ Help us drive awareness:
 -	Watch highlights on YouTube (Discover Sitecore)
 -	Read updates on the Developer Portal
 
+## Register
+Choose from one of the Hackerspace Workshop Sessions on the Sitecore Symposium 2025 Agenda. Make sure to secure your seat as we have limited seats.
+
+You can register for:
+- Workshop 1: [Tuesday, Nov. 4 | 1-2pm](https://sym.sitecore.com/hub/events/8f5f560a-7b6f-4fba-9cf3-55214a6d90d8/sessions/f1449322-488f-4f2b-860b-dcbc168ffd41) 
+- Workshop 2: [Tuesday, Nov. 4 | 3.30-4.30pm](https://sym.sitecore.com/hub/events/8f5f560a-7b6f-4fba-9cf3-55214a6d90d8/sessions/17bb9c3a-44d8-405e-a9d4-702133c975fb)
+- Workshop 3: [Wednesday, Nov. 5 | 1-2pm](https://sym.sitecore.com/hub/events/8f5f560a-7b6f-4fba-9cf3-55214a6d90d8/sessions/adf792ac-7523-4f21-a820-e8a4cd188511)
+- Workshop 4: [Wednesday, Nov. 5 | 3.30-4.30pm](https://sym.sitecore.com/hub/events/8f5f560a-7b6f-4fba-9cf3-55214a6d90d8/sessions/cdaf5fe0-6c04-43e2-b038-d2703d3f3478)
+
+To register follow the linked session and Login using the email address you used for Sitecore Symposium 2025 registration.
+
+
+
 ## Get Started
 Want to prep before Symposium?
 Check out the [Marketplace Starter Kit](https://github.com/Sitecore/marketplace-starter) and [Quick Start Guide](https://doc.sitecore.com/mp/en/developers/sdk/0/sitecore-marketplace-sdk/quick-start.html).

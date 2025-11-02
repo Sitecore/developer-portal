@@ -13,6 +13,9 @@ Before we jump into coding, here’s a quick overview of the base setup steps:
 Ready? Let's go! 
 
 ## Pre-Requisites
+- Bring your own Laptop
+- IDE: VS Code or Cursor installed
+- Github account 
 - node version 16 and above
 - npm version 10 and above
 - example consider using VS Code and Co-Pilot
@@ -77,7 +80,7 @@ Configure your App:
 
 10. enable API access for **XM Cloud APIs**
 11. For deployment URL use: `http://localhost:3000` as you want to connect your local running app for now.
-12. For the App Logo URL provide a URL to an image file that has square format, minimum 512x512pxl. You can use: https://developer.sitecore.com/learn/getting-started/marketplace/hackerspace-workshop/images/HS-Icon.png
+12. For the App Logo URL provide a URL to an image file that has square format, minimum 512x512pxl. You can use: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/7bdc2f0410084295955844e57e5158be?v=e01872df
 13. Hit the Activate button in the top right corner
 
 For sure there is more to explore here, but let's keep it to your needed steps for now.
@@ -204,9 +207,6 @@ Read more here: https://blok.sitecore.com/beta
 
 Read more here: https://blok.sitecore.com/beta
 
-## Use cases
-- [Sites Tree example](usecase-sites-tree) - Easy read/write exercise to get familiar with building extensions for XM Cloud using Marketplace SDK functionality.
-- [Data source example](usecase-datasource) - advanced read and write exercise to get familiar with GraphQL 
-- [Image generation example](usecase-image-generation) - implement and AI-driven use case with a custom field type (more advanced)
+
 
 ## Resources
