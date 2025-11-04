@@ -207,6 +207,9 @@ Read more here: https://blok.sitecore.com/beta
 
 Read more here: https://blok.sitecore.com/beta
 
-
+## Use cases
+- [Sites Tree example](hackerspace-workshop/usecase-sites-tree) - Easy read/write exercise to get familiar with building extensions for XM Cloud using Marketplace SDK functionality.
+- [Data source example](hackerspace-workshop/usecase-datasource) - advanced read and write exercise to get familiar with GraphQL 
+- [Image generation example](hackerspace-workshop/usecase-image-generator-ai) - implement and AI-driven use case with a custom field type (more advanced)
 
 ## Resources

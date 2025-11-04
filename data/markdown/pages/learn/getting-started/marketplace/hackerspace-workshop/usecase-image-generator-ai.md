@@ -89,7 +89,7 @@ Build the backend API endpoint for Hugging Face integration using AI prompts.
 ```
 Create a Next.js API route (app/api/generate-image/route.ts) that:
 - Accepts POST requests with a prompt parameter
-- Calls Hugging Face Stable Diffusion XL API (stabilityai/stable-diffusion-xl-base-1.0)
+- Calls Hugging Face Stable Diffusion XL API at https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0
 - Handles rate limiting and model loading errors
 - Converts image blob to base64 data URL
 - Returns JSON response with imageUrl
