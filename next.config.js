@@ -105,9 +105,17 @@ const redirects = [
   { source: '/learn/accelerate/cdp-personalize/appendix-i/cdp-glossary', destination: 'https://doc.sitecore.com/cdp/en/users/sitecore-cdp/glossary.html', permanent: true },
   { source: '/learn/accelerate/cdp-personalize/appendix-i/personalize-glossary', destination: 'https://doc.sitecore.com/personalize/en/users/sitecore-personalize/glossary.html', permanent: true },
 
-
   { source: '/accelerate', destination: '/learn/accelerate', permanent: true },
   { source: '/changelog/xm-cloud/12112023/personalize-the-presentation-of-a-component-in-xm-cloud-pages-personalize', destination: '/changelog/xm-cloud/12112023/personalize-the-presentation-of-a-component-in-xm-cloud-pages', permanent: true },
+
+    { source: '/learn/getting-started/introduction-to-composable-dxp', destination: '/', permanent: true },
+    { source: '/learn/getting-started/migrating-to-the-sitecore-composable-dxp', destination: '/', permanent: true },
+
+    { source: '/learn/getting-started/xm-cloud-introduction', destination: '/sitecoreai', permanent: true },
+    { source: '/learn/getting-started/xm-cloud/tutorials', destination: '/sitecoreai', permanent: true },
+    
+    { source: '/learn/faq/cloud-portal/features', destination: 'https://doc.sitecore.com/cloud-portal/en/users/cloud-portal/features.html', permanent: true },
+
 ];
 
 const nextConfig = {

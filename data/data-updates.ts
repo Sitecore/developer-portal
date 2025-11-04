@@ -24,7 +24,7 @@ const content: GenericListItem[] = [
   // },
   {
     title: 'Sitecore Changelog',
-    description: 'Learn more about new versions, changes and improvements in the public preview of the Sitecore Changelog',
+    description: 'Learn more about new versions, changes and improvements in the public preview of the Sitecore Changelog.',
     href: '/changelog',
     linkText: 'View',
     img: {
@@ -34,8 +34,8 @@ const content: GenericListItem[] = [
   },
   {
     title: 'Sitecore Accelerate',
-    description: 'Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products.',
-    href: '/learn/accelerate/xm-cloud',
+    description: 'Sitecore Accelerate is a dedicated program to help Sitecore customers configure and optimize Sitecore products.',
+    href: '/learn/accelerate/',
     linkText: 'Read',
     img: {
       src: '/images/accelerate.png',
