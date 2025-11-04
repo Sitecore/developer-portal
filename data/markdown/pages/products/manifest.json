@@ -6,25 +6,21 @@
   "showRootAsSections": true,
   "routes": [
     {
-      "title": "Overview",
-      "path": ""
-    },
-    {
-      "title": "Content Lifecycle",
+      "title": "Sitecore Platform DXP",
       "path": "",
       "ignoreLink": true,
       "children": [
         {
-          "title": "Content Hub",
-          "path": "content-hub"
+          "title": "Experience Platform (XM/XP)",
+          "path": "experience-platform"
         }
       ]
-    },
-    {
+    },    {
       "title": "Experience Management",
       "path": "",
       "ignoreLink": true,
       "children": [
+        
         {
           "title": "XM Cloud",
           "path": "xm-cloud"
@@ -46,12 +42,30 @@
           "path": "customer-data-platform"
         },
         {
+          "title": "Send",
+          "path": "send"
+        }
+      ]
+    },
+      {
+      "title": "Capabilities",
+      "path": "",
+      "ignoreLink": true,
+      "children": [
+        {
           "title": "Connect",
           "path": "connect"
-        },
+        }
+      ]
+    },
+    {
+      "title": "Services",
+      "path": "",
+      "ignoreLink": true,
+      "children": [
         {
-          "title": "Experience Platform (XP)",
-          "path": "experience-platform"
+          "title": "Managed Cloud",
+          "path": "managed-cloud"
         }
       ]
     },

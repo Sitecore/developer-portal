@@ -5,6 +5,7 @@ export enum Product {
   OrderCloud,
   CDP,
   ContentHubOne,
+  SitecoreAI,
   XMCloud,
   Personalize,
   CDP_Personalize,
@@ -79,6 +80,13 @@ const ProductLogos: Array<ProductImage> = [
     logoFileName: 'logo-sitecore',
     iconFileName: 'mark-sitecore',
   },
+  {
+    Product: Product.SitecoreAI,
+    Variant: Variant.Light,
+    Name: 'SitecoreAI',
+    logoFileName: 'mark-sitecoreai',
+    iconFileName: 'mark-sitecoreai',
+  },  
   {
     Product: Product.OrderCloud,
     Variant: Variant.Dark,

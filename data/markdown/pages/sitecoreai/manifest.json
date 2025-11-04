@@ -1,0 +1,62 @@
+{
+  "title": "SitecoreAI",
+  "description": "",
+  "heading": false,
+  "path": "/sitecoreai",
+  "showRootAsSections": true,
+  "routes": [
+    {
+      "title": "SitecoreAI",
+      "path": "/",
+      "children": [
+        {
+          "title": "Introduction",
+          "path": "/"
+        },        
+        {
+          "title": "Navigation",
+          "path": "/navigation"
+        },
+        {
+          "title": "Sitecore Studio",
+          "path": "/sitecore-studio"
+        },
+        {
+          "title": "Developer Experience",
+          "path": "/dev-experience"
+        } 
+      ]
+    },
+        {
+      "title": "Capabilities",
+      "path": "",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Content management",
+          "path": "/capabilities/cms"
+        },
+          {
+          "title": "Digital asset management",
+          "path": "/capabilities/dam"
+        },
+                  {
+          "title": "Content operations",
+          "path": "/capabilities/content-ops"
+        },
+                        {
+          "title": "Conversion optimization",
+          "path": "/capabilities/converstion-optimization"
+        },
+                                {
+          "title": "Unified data layer",
+          "path": "/capabilities/unified-data-layer"
+        },
+                {
+          "title": "Commerce",
+          "path": "/capabilities/commerce"
+        }
+      ]
+    }  
+  ]
+}
