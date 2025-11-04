@@ -80,7 +80,7 @@ Configure your App:
 
 10. enable API access for **XM Cloud APIs**
 11. For deployment URL use: `http://localhost:3000` as you want to connect your local running app for now.
-12. For the App Logo URL provide a URL to an image file that has square format, minimum 512x512pxl. You can use: https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/7bdc2f0410084295955844e57e5158be?v=e01872df
+12. For the App Logo URL provide a URL to an image file that has square format, minimum 512x512pxl. You can use: h![ttps://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/7bdc2f0410084295955844e57e5158be?v=e01872df](https://cdn-icons-png.flaticon.com/512/13862/13862255.png)
 13. Hit the Activate button in the top right corner
 
 For sure there is more to explore here, but let's keep it to your needed steps for now.
