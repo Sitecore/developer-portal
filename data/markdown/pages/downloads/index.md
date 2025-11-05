@@ -121,6 +121,12 @@ hasInPageNav: false
 
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
+  title="SitecoreAI Pathway"
+  description="Pre-requisite downloads for the new SitecoreAI Pathway site migration toolset."
+  link1text="More info"
+  link1href="/downloads/SitecoreAI_Pathway"
+/>
+<Download 
   title="XM to XM Cloud Migration Tool"
   description="Tool for migrating content, media and users from an XM instance to an XM Cloud environment."
   link1text="More info"
