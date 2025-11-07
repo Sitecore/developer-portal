@@ -24,6 +24,10 @@
         {
           "title": "Developer Experience",
           "path": "/dev-experience"
+        } ,
+        {
+          "title": "FAQs",
+          "path": "/faq"
         } 
       ]
     },

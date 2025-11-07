@@ -11,13 +11,16 @@ changelog: 6
 changelogProductId: ['av_GqshF5U2kL8XMGjf-Xw']
 cdpTags: ['sitecoreai']
 portalURL: 'https://portal.sitecorecloud.io/'
-pageType: 'childoverview'
+pageType: 'article'
 hasSubPageNav: true
 hasInPageNav: true
 ---
+
+## Navigation
+
 SitecoreAI introduces a streamlined, intuitive navigation that brings all your essential tools together, making it easier than ever to plan, create, launch, and optimise digital experiences. The SitecoreAI navigation is organised into six main areas: Strategy, Channel, Design, Content, Performance, and Agentic. Each area brings together related tools and features, with several new additions and improvements.
 
-<img src="/images/sitecoreai/navigation.png" alt="Debug mode"/>
+<img src="/images/sitecoreai/navigation.png" alt="SitecoreAI Navigation"/>
 <br/><br/>
 
 
@@ -54,7 +57,6 @@ Design
 ## Settings
 Remains the same with access to manage [Languages](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-languages-and-locales.html#enable-a-language-for-the-environment), [Analytics identifiers](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html) and [Publishing jobs](https://doc.sitecore.com/xmc/en/users/xm-cloud/the-publishing-jobs-table.html).
 
-## Icons on the right? 
 <img src="/images/sitecoreai/icons.png" alt="Debug mode"/>
 <br/><br/>
 

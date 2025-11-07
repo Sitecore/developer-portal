@@ -1,11 +1,11 @@
 import { PromoCardProps } from '@components/cards/PromoCardVerticals';
 
 const symposium2025: PromoCardProps = {
-  title: 'Sitecore Symposium 2025',
-  description: 'Join us for the ultimate developer experience at Sitecore Symposium 2025. Connect with industry leaders, learn cutting-edge techniques, and shape the future of digital experiences.',
+  title: 'Symposium may be over, but the magic lives on',
+  description: 'Couldn’t join us live? Or want to revisit your favourite moments? You can still experience the insights, inspiration, and connections that made this year’s symposium unforgettable.',
   image: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/2a36fecdeebc48af8282d3eb56f4a4c6?v=b744e380',
-  link: 'https://symposium.sitecore.com/en/agenda',
-  linkText: 'See agenda',
+  link: 'https://symposium.sitecore.com/',
+  linkText: 'Login',
   variant: 'featured'
 };
 
