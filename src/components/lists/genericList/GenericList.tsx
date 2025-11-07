@@ -59,7 +59,7 @@ export const GenericList = (props: GenericListData) => {
               <Card
                 variant={cardVariant}
                 layerStyle="interactive.raise"
-                width={{ base: '100%', md: props.width }} // full width on mobile
+
                 mx="auto"
                 direction="column"
                 borderRadius="xl"
