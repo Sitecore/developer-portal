@@ -15,12 +15,13 @@ type LinkButtonProps = ButtonProps & {
   target?: HTMLAttributeAnchorTarget | undefined;
 };
 
-export const LinkButton = ({ href, text, showIcon, variant, colorScheme, color = 'chakra-body-text', icon, target, ...rest }: LinkButtonProps) => {
+export const LinkButton = ({ href, text, showIcon, variant, colorScheme, color, icon, target, ...rest }: LinkButtonProps) => {
   const ButtonIcon = icon != null ? icon : <Icon path={mdiArrowRight} size={0.8} />;
+  color = color != null ? color : 'chakra-body-text'
 
   return (
     <Link as={NextLink} href={href} color={color} target={target}>
-      <Button variant={variant} colorScheme={colorScheme} rightIcon={showIcon != false ? ButtonIcon : undefined} size={rest.size ? rest.size : 'md'} {...rest} whiteSpace={'normal'}>
+      <Button variant={variant} color={color} md={color} colorScheme={colorScheme} rightIcon={showIcon != false ? ButtonIcon : undefined} size={rest.size ? rest.size : 'md'} {...rest} whiteSpace={'normal'}>
         {text}
       </Button>
     </Link>

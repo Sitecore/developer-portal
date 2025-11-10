@@ -80,7 +80,9 @@ export const PromoCard: React.FC<PromoCardProps> = ({
           mb={compact ? 4 : 6} 
           flex="1" 
           fontSize={compact ? 'sm' : 'md'}
-          noOfLines={compact ? 3 : undefined} // Truncate text in compact mode
+          noOfLines={compact ? 3 : undefined} 
+          display={{ base: 'none', md: 'block' }}
+
         >
           {description}
         </Text>

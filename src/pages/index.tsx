@@ -13,12 +13,13 @@ import { NextPage } from 'next';
 import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '@components/integrations';
 import { GenericList } from '@components/lists';
 import { CenteredContent, Hero, Row, VerticalGroup } from '@components/ui/sections';
-import hackerspace from '@data/promos/hackerspace';
+import partnerawards from '@data/promos/partnerawards';
 import productwebinar from '@data/promos/productwebinar';
 import symposium2025 from '@data/promos/symposium2025';
 
 import platformData from '@data/data-capabilities';
 
+import { Image } from '@chakra-ui/react';
 import AccelerateUpdates from '../components/lists/accelerate/AccelerateUpdates';
 import { getLatestRecipes } from '../lib/accelerate/latest';
 import { AccelerateRecipe } from '../lib/accelerate/types/recipe';
@@ -50,12 +51,12 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
 
         <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
-            <Flex direction="column" gap={[4, 4, 10]} mb={0} >
-              <Text fontSize="lg" textAlign="left" mx="auto">
-                Explore a unified platform that brings together content, data, personalisation, and intelligent automation: designed for developers, marketers, and partners alike. 
-
-                Join a thriving community of over 4,000 daily active developers shaping the future of digital experience. Whether you're migrating from CMS or scaling across channels, SitecoreAI empowers you to deliver personalised, measurable outcomes.
-              </Text>
+            <Flex 
+              direction="column" 
+              gap={{ base: 4, md: 2 }} 
+              mb={0}
+              mt={{ base: 8, md: 0 }}
+            >
             </Flex>
           </CenteredContent>
           <CenteredContent>
@@ -81,8 +82,8 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
               <Article
                 title="Changelog"
                 description="The changelog provides visibility into key product updates, including new features, enhancements, resolutions and architectural improvements."
-                linktext="Explore Tools"
-                link="/sitecoreai/dev-experience"
+                linktext="View Changelog"
+                link="/changelog"
               />
             </Row>
           </CenteredContent>
@@ -91,18 +92,27 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
 
 
         <VerticalGroup 
-          backgroundImage={{ 
-            base: '/images/sc_power-gradient-mobile.svg', 
-            md: '/images/sc_power-gradient-desktop.svg' 
-          }} 
-          backgroundSize={'cover'} 
+          bgGradient={{ 
+            base: 'linear(to-b, #1d08bd, #170697)',
+            md: 'linear(to-r, #1d08bd, #170697)'
+          }}
           color={'primary.50'} 
-          textAlign={{ base: 'left', md: 'center' }}
+          textAlign={{ base: 'center', md: 'center' }}
+          p={4} 
         >
           <CenteredContent>
+            <Image 
+              src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/4c9ff81f3b9c40be9c1552f3ea21cfd5?v=601c8243" 
+              alt="Logo" 
+              width="280px" 
+              height="67px"
+              mx="auto"
+              display="block"
+              mb={6}
+            />
             <GenericList 
-              title="Platform Capabilities" 
-              subtitle="Discover the power of SitecoreAI with integrated capabilties for every aspect of digital experience delivery." 
+              title="" 
+              subtitle="" 
               data={platformData.data} 
               column={3} 
               width={{ base: 'full', md: '2xs' }} 
@@ -122,7 +132,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
           </Flex>            
            <SimpleGrid gap={4} columns={[1, 2, 3]}>
             <PromoCardVertical {...productwebinar} />
-            <PromoCardVertical {...hackerspace} />
+            <PromoCardVertical {...partnerawards} />
             <PromoCardVertical {...symposium2025} />
           </SimpleGrid>
         </CenteredContent>
@@ -137,7 +147,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
         </CenteredContent>
       </VerticalGroup>
 
-      <VerticalGroup background={'gray.100'}>
+      <VerticalGroup p={4}  background={'gray.100'}>
         <CenteredContent>
           <Flex direction="column" gap={4} textAlign="center" mb={8}>
             <Heading as="h2" size="lg" color={'black'} mb={0}>
