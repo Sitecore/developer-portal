@@ -122,7 +122,7 @@ hasInPageNav: false
 <SimpleGrid columns={{ base: '1', xl: '2' }} gap='6'>
 <Download 
   title="SitecoreAI Pathway"
-  description="Pre-requisite downloads for the new SitecoreAI Pathway site migration toolset."
+  description="Pre-requisite downloads for the SitecoreAI Pathway site migration toolset."
   link1text="More info"
   link1href="/downloads/SitecoreAI_Pathway"
 />
