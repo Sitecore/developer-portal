@@ -84,8 +84,8 @@ const ProductLogos: Array<ProductImage> = [
     Product: Product.SitecoreAI,
     Variant: Variant.Light,
     Name: 'SitecoreAI',
-    logoFileName: 'mark-sitecoreai',
-    iconFileName: 'mark-sitecoreai',
+    logoFileName: 'mark-sitecoreai-dev',
+    iconFileName: 'mark-sitecoreai-dev',
   },  
   {
     Product: Product.OrderCloud,
