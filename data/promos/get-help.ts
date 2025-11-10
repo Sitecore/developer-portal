@@ -4,7 +4,8 @@ const data: CTACardProps = {
   title: 'Get Help',
   description: 'Need answers to your questions?',
   href: 'https://support.sitecore.com',
-  linkText: 'Sitecore Support Poral',
+  linkText: 'Sitecore Support Portal',
+
 };
 
 export default data;

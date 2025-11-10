@@ -14,6 +14,7 @@ interface AutoTooltipProps {
   isExternal?: boolean;
   delay?: number;
   onClose?: () => void;
+  storageKey?: string; // NEW: Allow custom storage key
 }
 
 export const AutoTooltip: React.FC<AutoTooltipProps> = ({
@@ -23,17 +24,25 @@ export const AutoTooltip: React.FC<AutoTooltipProps> = ({
   linkText,
   isExternal = false,
   delay = 1000,
-  onClose
+  onClose,
+  storageKey = 'autoTooltipShown' // NEW: Default storage key
 }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Check if tooltip has already been shown in this session
+    const hasShown = sessionStorage.getItem(storageKey);
+    
+    if (hasShown) return;
+
     const timer = setTimeout(() => {
       setIsVisible(true);
+      // Mark as shown
+      sessionStorage.setItem(storageKey, 'true');
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [delay]);
+  }, [delay, storageKey]);
 
   const handleClose = () => {
     setIsVisible(false);

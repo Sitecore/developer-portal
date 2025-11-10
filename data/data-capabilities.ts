@@ -1,3 +1,12 @@
+import {
+  AudiencesIntelligenceIcon,
+  CommerceIcon,
+  ContentManagementSystemIcon,
+  ContentOperationsIcon,
+  ConversionOptimizationIcon,
+  DigitalAssetManagementIcon,
+} from './sitecore-icons';
+
 const platformData = {
   title: 'Capabilities',
   subtitle: 'Discover the power of SitecoreAI capabilities for every aspect of digital experience delivery.',
@@ -11,7 +20,8 @@ const platformData = {
         src: '/images/capabilities/content-management.svg',
         width: 48,
         height: 48
-      }
+      },
+       icon: ContentManagementSystemIcon
     },
     {
       title: 'Digital asset management',
@@ -22,7 +32,8 @@ const platformData = {
         src: '/images/capabilities/digital-asset-management.svg',
         width: 48,
         height: 48
-      }
+      },
+       icon: DigitalAssetManagementIcon,
     },
     {
       title: 'Content operations',
@@ -33,7 +44,9 @@ const platformData = {
         src: '/images/capabilities/content-operations.svg',
         width: 48,
         height: 48
-      }
+      },
+             icon: ContentOperationsIcon,
+
     },
     {
       title: 'Unified data layer',
@@ -44,7 +57,8 @@ const platformData = {
         src: '/images/capabilities/audience-and-insights.svg',
         width: 48,
         height: 48
-      }
+      },
+             icon: AudiencesIntelligenceIcon
     },
     {
       title: 'Conversion optimization',
@@ -55,7 +69,8 @@ const platformData = {
         src: '/images/capabilities/search-and-personalization.svg',
         width: 48,
         height: 48
-      }
+      },
+             icon: ConversionOptimizationIcon
     },
     {
       title: 'Commerce ',
@@ -66,7 +81,8 @@ const platformData = {
         src: '/images/capabilities/commerce.svg',
         width: 48,
         height: 48
-      }
+      },
+             icon: CommerceIcon
     }
   ]
 };

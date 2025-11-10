@@ -13,12 +13,13 @@ import { NextPage } from 'next';
 import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '@components/integrations';
 import { GenericList } from '@components/lists';
 import { CenteredContent, Hero, Row, VerticalGroup } from '@components/ui/sections';
-import hackerspace from '@data/promos/hackerspace';
+import partnerawards from '@data/promos/partnerawards';
 import productwebinar from '@data/promos/productwebinar';
 import symposium2025 from '@data/promos/symposium2025';
 
 import platformData from '@data/data-capabilities';
 
+import { Image } from '@chakra-ui/react';
 import AccelerateUpdates from '../components/lists/accelerate/AccelerateUpdates';
 import { getLatestRecipes } from '../lib/accelerate/latest';
 import { AccelerateRecipe } from '../lib/accelerate/types/recipe';
@@ -74,8 +75,8 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
               <Article
                 title="Changelog"
                 description="The changelog provides visibility into key product updates, including new features, enhancements, resolutions and architectural improvements."
-                linktext="Explore Tools"
-                link="/sitecoreai/dev-experience"
+                linktext="View Changelog"
+                link="/changelog"
               />
             </Row>
           </CenteredContent>
