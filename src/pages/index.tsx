@@ -19,6 +19,7 @@ import symposium2025 from '@data/promos/symposium2025';
 
 import platformData from '@data/data-capabilities';
 
+import { Image } from '@chakra-ui/react';
 import AccelerateUpdates from '../components/lists/accelerate/AccelerateUpdates';
 import { getLatestRecipes } from '../lib/accelerate/latest';
 import { AccelerateRecipe } from '../lib/accelerate/types/recipe';
@@ -56,13 +57,6 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
               mb={0}
               mt={{ base: 8, md: 0 }}
             >
-              <Text 
-                fontSize="lg" 
-                textAlign="left" 
-                mx="auto"
-                lineHeight={{ base: 1.6, md: 1.5 }}
-              >Explore a unified platform that brings together content, data, personalisation, and intelligent automation: designed for developers, marketers, and partners alike.
-              </Text>
             </Flex>
           </CenteredContent>
           <CenteredContent>
@@ -104,11 +98,21 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
           }}
           color={'primary.50'} 
           textAlign={{ base: 'center', md: 'center' }}
+          p={4} 
         >
           <CenteredContent>
+            <Image 
+              src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/4c9ff81f3b9c40be9c1552f3ea21cfd5?v=601c8243" 
+              alt="Logo" 
+              width="280px" 
+              height="67px"
+              mx="auto"
+              display="block"
+              mb={6}
+            />
             <GenericList 
-              title="Platform Capabilities" 
-              subtitle="Discover the power of SitecoreAI with integrated capabilties for every aspect of digital experience delivery." 
+              title="" 
+              subtitle="" 
               data={platformData.data} 
               column={3} 
               width={{ base: 'full', md: '2xs' }} 
@@ -143,7 +147,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
         </CenteredContent>
       </VerticalGroup>
 
-      <VerticalGroup background={'gray.100'}>
+      <VerticalGroup p={4}  background={'gray.100'}>
         <CenteredContent>
           <Flex direction="column" gap={4} textAlign="center" mb={8}>
             <Heading as="h2" size="lg" color={'black'} mb={0}>

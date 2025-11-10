@@ -70,7 +70,7 @@ export const GenericList = (props: GenericListData) => {
                 backdropFilter={cardVariant === 'blurred' ? 'blur(16px)' : undefined}
                 transition="all 0.2s ease"
                 _hover={{
-                  transform: { base: 'none', md: 'translateY(-4px)' }, // no weird hover lift on touch
+                  transform: { base: 'none', md: 'translateY(-4px)' }, 
                   boxShadow: 'lg',
                 }}
               >
