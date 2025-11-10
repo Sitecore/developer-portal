@@ -13,13 +13,11 @@ import { NextPage } from 'next';
 import { SitecoreCommunityBlog, SitecoreCommunityEvents, SitecoreCommunityNews, SitecoreCommunityQuestions, StackExchangeFeed, YouTubeFeed } from '@components/integrations';
 import { GenericList } from '@components/lists';
 import { CenteredContent, Hero, Row, VerticalGroup } from '@components/ui/sections';
-import partnerawards from '@data/promos/partnerawards';
+import platformData from '@data/data-capabilities';
+import hackerspace from '@data/promos/hackerspace';
 import productwebinar from '@data/promos/productwebinar';
 import symposium2025 from '@data/promos/symposium2025';
 
-import platformData from '@data/data-capabilities';
-
-import { Image } from '@chakra-ui/react';
 import AccelerateUpdates from '../components/lists/accelerate/AccelerateUpdates';
 import { getLatestRecipes } from '../lib/accelerate/latest';
 import { AccelerateRecipe } from '../lib/accelerate/types/recipe';
@@ -54,7 +52,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
             <Flex direction="column" gap={[4, 4, 10]} mb={0}>
               <Text fontSize="md" textAlign="left" mx="auto">
                 Explore a unified platform that brings together content, data, personalisation, and intelligent automation: designed for developers, marketers, and partners alike. Join a thriving community of over 4,000 daily active developers
-                shaping the future of digital experience. Whether you're migrating from CMS or scaling across channels, SitecoreAI empowers you to deliver personalised, measurable outcomes.
+                shaping the future of digital experience. Whether you&apos;re migrating from CMS or scaling across channels, SitecoreAI empowers you to deliver personalised, measurable outcomes.
               </Text>
             </Flex>
           </CenteredContent>
@@ -72,12 +70,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
               <Article title="Get Started" description="New to Sitecore? Start here essential setup documentation to build your first application." linktext="Get started" link="/sitecoreai" />
               <Article title="Documentation" description="Comprehensive product documentation including feature usage and SDK documentation." linktext="Browse Docs" link="https://doc.sitecore.com/" />
               <Article title="Developer Experience" description="Access and development resources to accelerate your workflow." linktext="Explore Tools" link="/sitecoreai/dev-experience" />
-              <Article
-                title="Changelog"
-                description="The changelog provides visibility into key product updates, including new features, enhancements, resolutions and architectural improvements."
-                linktext="View Changelog"
-                link="/changelog"
-              />
+              <Article title="Changelog" description="The changelog provides visibility into key product updates, including new features, enhancements, resolutions and architectural improvements." linktext="View Changelog" link="/changelog" />
             </Row>
           </CenteredContent>
         </VerticalGroup>
