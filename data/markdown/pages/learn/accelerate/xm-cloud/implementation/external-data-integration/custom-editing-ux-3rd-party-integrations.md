@@ -4,7 +4,7 @@ description: 'How do you integrate 3rd Party applications into XM Cloud''s Head 
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2024-10-09'
+lastUpdated: '2025-11-10'
 created: '2024-10-09'
 audience: ['Architect','Technical Implementer']
 ---
@@ -27,7 +27,7 @@ Instead of importing or syncing all the data to the Sitecore backend we will jus
 
 One simple way to fill such Id or link is to let the editor copy & paste it from the 3rd Party system. But in case you would like to give the editors a more intuitive and visual way of choosing the data, you can easily build that piece of logic in the head application directly.
 
-Pages editor is a SaaS application, which is currently not extendable with custom code as Experience Editor was.
+Pages editor is a SaaS application, which is extensible through [Marketplace custom fields](https://doc.sitecore.com/mp/en/developers/marketplace/page-builder-custom-fields.html). Developers can now create tailored UI components and rendering parameters using Marketplace apps, enabling flexible, business-specific editing experiences.
 
 ### Create an editing component
 

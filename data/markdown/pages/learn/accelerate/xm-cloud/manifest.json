@@ -37,6 +37,11 @@
               "title": "Scope & Governance Framework",
               "path": "scope-governance-framework"
             }
+            ,
+            {
+              "title": "Page builder readiness",
+              "path": "page-builder"
+            }
             
           ]
         },
