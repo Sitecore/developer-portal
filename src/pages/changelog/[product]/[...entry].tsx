@@ -56,11 +56,17 @@ export async function getServerSideProps(context: any) {
     return response;
   });
   let changelogEntry;
-  const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
+  let currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
 
   try {
     changelogEntry = entry.length == 2 ? await changelog.getEntryByTitleAndDate(entry[1], entry[0], currentProduct?.id) : await changelog.getEntryByTitle(entry[0], currentProduct?.id);
   } catch {
+    return {
+      notFound: true,
+    };
+  }
+
+  if (currentProduct == undefined) {
     return {
       notFound: true,
     };

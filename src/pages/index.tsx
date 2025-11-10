@@ -50,34 +50,27 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
 
         <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
-            <Flex direction="column" gap={[4, 4, 10]} mb={0} >
-              <Text fontSize="lg" textAlign="left" mx="auto">
-                Explore a unified platform that brings together content, data, personalisation, and intelligent automation: designed for developers, marketers, and partners alike. 
-
-                Join a thriving community of over 4,000 daily active developers shaping the future of digital experience. Whether you're migrating from CMS or scaling across channels, SitecoreAI empowers you to deliver personalised, measurable outcomes.
+            <Flex direction="column" gap={[4, 4, 10]} mb={0}>
+              <Text fontSize="md" textAlign="left" mx="auto">
+                Explore a unified platform that brings together content, data, personalisation, and intelligent automation: designed for developers, marketers, and partners alike. Join a thriving community of over 4,000 daily active developers
+                shaping the future of digital experience. Whether you're migrating from CMS or scaling across channels, SitecoreAI empowers you to deliver personalised, measurable outcomes.
               </Text>
             </Flex>
           </CenteredContent>
+
+          <VerticalGroup background={'chakra-bg'}>
+            <CenteredContent>
+              <SimpleGrid gap={[4, 4, 10]} mb={0} columns={[1, 1, 2]}>
+                <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest changelog updates" linkText="Full changelog" />
+                <AccelerateUpdates recipes={recipes} title="Sitecore Accelerate updates" linkHref="/learn/accelerate" linkText="See all recipes" url="/learn/accelerate/" />
+              </SimpleGrid>
+            </CenteredContent>
+          </VerticalGroup>
           <CenteredContent>
             <Row columns={4}>
-              <Article
-                title="Get Started"
-                description="New to Sitecore? Start here essential setup documentation to build your first application."
-                linktext="Get started"
-                link="/sitecoreai"
-              />
-              <Article
-                title="Documentation"
-                description="Comprehensive product documentation including feature usage and SDK documentation."
-                linktext="Browse Docs"
-                link="https://doc.sitecore.com/"
-              />
-              <Article
-                title="Developer Experience"
-                description="Access and development resources to accelerate your workflow."
-                linktext="Explore Tools"
-                link="/sitecoreai/dev-experience"
-              />
+              <Article title="Get Started" description="New to Sitecore? Start here essential setup documentation to build your first application." linktext="Get started" link="/sitecoreai" />
+              <Article title="Documentation" description="Comprehensive product documentation including feature usage and SDK documentation." linktext="Browse Docs" link="https://doc.sitecore.com/" />
+              <Article title="Developer Experience" description="Access and development resources to accelerate your workflow." linktext="Explore Tools" link="/sitecoreai/dev-experience" />
               <Article
                 title="Changelog"
                 description="The changelog provides visibility into key product updates, including new features, enhancements, resolutions and architectural improvements."
@@ -87,89 +80,74 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
             </Row>
           </CenteredContent>
         </VerticalGroup>
-        
 
-
-        <VerticalGroup 
-          backgroundImage={{ 
-            base: '/images/sc_power-gradient-mobile.svg', 
-            md: '/images/sc_power-gradient-desktop.svg' 
-          }} 
-          backgroundSize={'cover'} 
-          color={'primary.50'} 
+        <VerticalGroup
+          backgroundImage={{
+            base: '/images/sc_power-gradient-mobile.svg',
+            md: '/images/sc_power-gradient-desktop.svg',
+          }}
+          backgroundSize={'cover'}
+          color={'primary.50'}
           textAlign={{ base: 'left', md: 'center' }}
         >
           <CenteredContent>
-            <GenericList 
-              title="Platform Capabilities" 
-              subtitle="Discover the power of SitecoreAI with integrated capabilties for every aspect of digital experience delivery." 
-              data={platformData.data} 
-              column={3} 
-              width={{ base: 'full', md: '2xs' }} 
-              cardVariant="blurred" 
+            <GenericList
+              title="Platform Capabilities"
+              subtitle="Discover the power of SitecoreAI with integrated capabilties for every aspect of digital experience delivery."
+              data={platformData.data}
+              column={3}
+              width={{ base: 'full', md: '2xs' }}
+              cardVariant="blurred"
             />
           </CenteredContent>
         </VerticalGroup>
 
-      <VerticalGroup 
-        backgroundColor={'white'}
-        py={6}>
-        <CenteredContent>  
-          <Flex direction="column" gap={4} textAlign="center" mb={8}>
-            <Heading as="h2" size="lg" color={'black'} mb={0}>
-              
-            </Heading>
-          </Flex>            
-           <SimpleGrid gap={4} columns={[1, 2, 3]}>
-            <PromoCardVertical {...productwebinar} />
-            <PromoCardVertical {...hackerspace} />
-            <PromoCardVertical {...symposium2025} />
-          </SimpleGrid>
-        </CenteredContent>
-      </VerticalGroup>      
-     
-      <VerticalGroup background={'chakra-bg'}>
-        <CenteredContent>        
-          <SimpleGrid gap={[4, 4, 10]} mb={0} columns={[1, 1, 2]}>
-            <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest changelog updates" linkText="Full changelog" />
-            <AccelerateUpdates recipes={recipes} title="Sitecore Accelerate updates" linkHref="/learn/accelerate" linkText="See all recipes" url="/learn/accelerate/" />
-          </SimpleGrid>
-        </CenteredContent>
-      </VerticalGroup>
+        <VerticalGroup backgroundColor={'white'} py={6}>
+          <CenteredContent>
+            <Flex direction="column" gap={4} textAlign="center" mb={8}>
+              <Heading as="h2" size="lg" color={'black'} mb={0}></Heading>
+            </Flex>
+            <SimpleGrid gap={4} columns={[1, 2, 3]}>
+              <PromoCardVertical {...productwebinar} />
+              <PromoCardVertical {...hackerspace} />
+              <PromoCardVertical {...symposium2025} />
+            </SimpleGrid>
+          </CenteredContent>
+        </VerticalGroup>
 
-      <VerticalGroup background={'gray.100'}>
-        <CenteredContent>
-          <Flex direction="column" gap={4} textAlign="center" mb={8}>
-            <Heading as="h2" size="lg" color={'black'} mb={0}>
-              Sitecore Experience Platform
-            </Heading>
-            <Text fontSize="md" color={'black'} maxW="3xl" mx="auto">
-              Deliver personalized experiences by combining customer data, AI, and marketing automation with our Sitecore Experience Platform™
-            </Text>            
-          </Flex>
-          
-          <SimpleGrid gap={6} columns={[1, 2, 3]}>
-            <Article
-              title="Sitecore Experience Platform"
-              description="Create connections, drive conversions, and foster loyalty. With customer data, analytics, marketing automation, and more, with the stand alone Sitecore Experience Platform™."
-              linktext="Experience Platform"
-              link="/products/experience-platform"
-            />
-            <Article
-              title="Sitecore Experience Manager"
-              description="There’s no experience without content. Sitecore Experience Manager® is a powerful and intuitive CMS for the simplified creation and management of experiences across channels and devices."
-              linktext="Experience Manager"
-              link="/products/experience-platform"
-            />
-            <Article
-              title="Sitecore Managed Cloud"
-              description="Sitecore Managed Cloud service actively hosts, monitors, manages, and maintains the installation of Sitecore Experience Platform™ and Sitecore Experience Manager™."
-              linktext="Managed Cloud"
-              link="/products/managed-cloud"
-            />
-          </SimpleGrid>
-        </CenteredContent>
-      </VerticalGroup>
+        <VerticalGroup background={'gray.100'}>
+          <CenteredContent>
+            <Flex direction="column" gap={4} textAlign="center" mb={8}>
+              <Heading as="h2" size="lg" color={'black'} mb={0}>
+                Sitecore Experience Platform
+              </Heading>
+              <Text fontSize="md" color={'black'} maxW="3xl" mx="auto">
+                Deliver personalized experiences by combining customer data, AI, and marketing automation with our Sitecore Experience Platform™
+              </Text>
+            </Flex>
+
+            <SimpleGrid gap={6} columns={[1, 2, 3]}>
+              <Article
+                title="Sitecore Experience Platform"
+                description="Create connections, drive conversions, and foster loyalty. With customer data, analytics, marketing automation, and more, with the stand alone Sitecore Experience Platform™."
+                linktext="Experience Platform"
+                link="/products/experience-platform"
+              />
+              <Article
+                title="Sitecore Experience Manager"
+                description="There’s no experience without content. Sitecore Experience Manager® is a powerful and intuitive CMS for the simplified creation and management of experiences across channels and devices."
+                linktext="Experience Manager"
+                link="/products/experience-platform"
+              />
+              <Article
+                title="Sitecore Managed Cloud"
+                description="Sitecore Managed Cloud service actively hosts, monitors, manages, and maintains the installation of Sitecore Experience Platform™ and Sitecore Experience Manager™."
+                linktext="Managed Cloud"
+                link="/products/managed-cloud"
+              />
+            </SimpleGrid>
+          </CenteredContent>
+        </VerticalGroup>
 
         <VerticalGroup background={'chakra-bg'}>
           <CenteredContent>
@@ -180,7 +158,6 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
             <GenericList data={communityListData.data} title={communityListData.title} subtitle={communityListData.subtitle} column={3} cardVariant="borderedImage" />
           </CenteredContent>
         </VerticalGroup>
-
 
         <VerticalGroup>
           <CenteredContent>

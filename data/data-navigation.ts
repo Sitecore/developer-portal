@@ -22,9 +22,9 @@ export const mainNavigation: NavItem[] = [
         title: 'Experience Management',
         children: [
           {
-            title: 'XM Cloud',
-            url: 'https://doc.sitecore.com/xmc',
-            logo: Product.XMCloud,
+            title: 'SitecoreAI',
+            url: 'https://doc.sitecore.com/sai',
+            logo: Product.SitecoreAI,
           },
           {
             title: 'Experience Platform',
