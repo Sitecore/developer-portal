@@ -115,6 +115,7 @@ const redirects = [
   { source: '/learn/faq/cloud-portal/features', destination: 'https://doc.sitecore.com/cloud-portal/en/users/cloud-portal/features.html', permanent: true },
 
   { source: '/changelog/xm-cloud/:path*', destination: '/changelog/sitecoreai/:path*', permanent: true },
+  { source: '/xm-cloud/:path*', destination: 'https://doc.sitecore.com/sai/en/developers/sitecoreai/sitecoreai.html', permanent: true },
 ];
 
 const nextConfig = {
