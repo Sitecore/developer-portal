@@ -11,7 +11,7 @@ audience: ['Architect','Technical Implementer']
 
 ## Context
 
-Currently, the Sitecore JSS Next.js SDK does not support the new Next.js App Router. However, once support for the App Router is released with JSS and XM Cloud, clients may want to upgrade. In the meantime, how can you best build your applicaiton now in the Pages architecture, so that your migration to the App Router will be easier in the future?
+Currently, the Sitecore JSS Next.js SDK does not support the new Next.js App Router. However, once support for the App Router is released with JSS and XM Cloud, clients may want to upgrade. In the meantime, how can you best build your application now in the Pages architecture, so that your migration to the App Router will be easier in the future?
 
 It's important to note that Vercel, the creators of Next.js, still fully supports the Next.js Pages architecture. They have made no public announcement on the time frame for ending support.
 
