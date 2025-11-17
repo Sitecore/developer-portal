@@ -19,15 +19,21 @@ SitecoreAI is the unified digital experience platform that brings together conte
 
 With AI at its core, SitecoreAI coordinates campaigns, personalises every moment, and tracks performance with precision. 
 
-<img src="/images/sitecoreai/marchitecture.png" alt="Debug mode"/>
-<br/><br/>
+<img src="/images/sitecoreai/marchitecture.png" alt="Marchitecture"/>
+
+### Looking for details of the new UI?
+<Row columns={2}>
+  <Link title="Finding XM Cloud tools in SitecoreAI" link="https://doc.sitecore.com/sai/en/users/sitecoreai/finding-xm-cloud-tools-in-sitecoreai.html" linkText="Read more" />
+  <Link title="SitecoreAI Navigation" link="/sitecoreai/navigation" linkText="Read more" />
+</Row>
+
 
 ## Content management
 Today’s experiences change fast. Our CMS gives your teams the freedom to build, design, and update content at the speed your customers expect with no waiting and no bottlenecks. Manage, design, and deliver experiences that scale with your ambition.
 
 <Row columns={3}>
 <Link title="Get started with Content management" link="/sitecoreai/capabilities/cms"/>
-<Link title="Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
+<Link title="Documentation" link="https://doc.sitecore.com/sai/en/users/sitecoreai/sitecoreai.html" />
 <Link title="Changelog" link="https://developers.sitecore.com/changelog"/>
 </Row>
 
