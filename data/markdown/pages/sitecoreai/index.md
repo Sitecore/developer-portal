@@ -15,14 +15,15 @@ pageType: 'article'
 hasSubPageNav: true
 hasInPageNav: true
 ---
-SitecoreAI is the unified digital experience platform that brings together content, assets, data, and AI in one adaptive system. Designed for marketers, developers, and partners, SitecoreAI helps you move faster, personalise at scale, and deliver measurable results. 
+SitecoreAI is the unified digital experience platform that brings together content, assets, data, and AI in one adaptive system. Designed for marketers, developers, and partners, SitecoreAI helps you move faster, personalise at scale, and deliver measurable results.
 
-With AI at its core, SitecoreAI coordinates campaigns, personalises every moment, and tracks performance with precision. 
+With AI at its core, SitecoreAI coordinates campaigns, personalises every moment, and tracks performance with precision.
 
 <img src="/images/sitecoreai/marchitecture.png" alt="Debug mode"/>
 <br/><br/>
 
 ## Content management
+
 Today’s experiences change fast. Our CMS gives your teams the freedom to build, design, and update content at the speed your customers expect with no waiting and no bottlenecks. Manage, design, and deliver experiences that scale with your ambition.
 
 <Row columns={3}>
@@ -32,7 +33,8 @@ Today’s experiences change fast. Our CMS gives your teams the freedom to build
 </Row>
 
 ## Digital asset management
-Transform every asset into an advantage with a DAM delivers consistent, on-brand content everywhere. Organize, find, and deliver assets fast with a platform that fuels creativity and control. 
+
+Transform every asset into an advantage with a DAM delivers consistent, on-brand content everywhere. Organize, find, and deliver assets fast with a platform that fuels creativity and control.
 <Row columns={3}>
 <Link title="Get started with Digital asset management" link="/sitecoreai/capabilities/dam" />
 <Link title="User Documentation" link="https://doc.sitecore.com/ch/en/users/content-hub/get-started.html" />
@@ -40,7 +42,8 @@ Transform every asset into an advantage with a DAM delivers consistent, on-brand
 </Row>
 
 ## Content operations
-An end-to-end content engine that keeps every project aligned, efficient, and measurable. Unify content and AI in one hub that keeps work moving and results growing. 
+
+An end-to-end content engine that keeps every project aligned, efficient, and measurable. Unify content and AI in one hub that keeps work moving and results growing.
 <Row columns={3}>
 <Link title="Get started with Content operations" link="/sitecoreai/capabilities/content-ops" />
 <Link title="User Documentation" link="https://doc.sitecore.com/ch/en/users/content-hub/get-started-with-content.html" />
@@ -48,7 +51,8 @@ An end-to-end content engine that keeps every project aligned, efficient, and me
 </Row>
 
 ## Unified Data Layer
-Turn data into decisions and awareness into understanding. Unlock your customer data to inform every interaction with real-time insights. 
+
+Turn data into decisions and awareness into understanding. Unlock your customer data to inform every interaction with real-time insights.
 <Row columns={3}>
 <Link title="Get started with Unified Data" link="/sitecoreai/capabilities/unified-data-layer" />
 <Link title="User Documentation" link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/index-en.html" />
@@ -56,17 +60,19 @@ Turn data into decisions and awareness into understanding. Unlock your customer 
 </Row>
 
 ## Conversion optimization
-Help customers find what they need faster and connect with what matters most, every time. Personalize every experience with intelligence that understands your customers. 
+
+Help customers find what they need faster and connect with what matters most, every time. Personalize every experience with intelligence that understands your customers.
 <Row columns={3}>
-<Link title="Get started with Converstion Optimization" link="/capabilities/conversion-optimization" />
+<Link title="Get started with Converstion Optimization" link="/sitecoreai/capabilities/conversion-optimization" />
 <Link title="Search experience documentation" link="https://doc.sitecore.com/search" />
 <Link title="Personalized experience documentation" link="https://doc.sitecore.com/personalize" />
 </Row>
 
 ## Commerce
-Lead change with a results-driven platform that grows with every new idea. Deliver personalized and connected buying experiences that grow with your business. 
+
+Lead change with a results-driven platform that grows with every new idea. Deliver personalized and connected buying experiences that grow with your business.
 <Row columns={3}>
-<Link title="Get started with Commerce" link="/capabilities/commerce" />
+<Link title="Get started with Commerce" link="/sitecoreai/capabilities/commerce" />
 <Link title="User Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
 <Link title="Developer Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html" />
 </Row>
