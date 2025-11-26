@@ -1,5 +1,5 @@
 ---
-title: 'Convestion optimization'
+title: 'Conversion optimization'
 pageType: 'article'
 description: 'Deliver fast, accurate, and engaging experiences customers love.'
 hasSubPageNav: true
@@ -20,8 +20,10 @@ Show every visitor what’s most relevant to them right when they need it, so ev
 </Row>
 
 ## Ready to start setting up?
-Even before you get to platform options or tech design, you need to have alignment on what success even looks like. Sitecore Accelerate provides a set of recipes to guide the project team through a optimization set-up, configuration and implementation, covering both technical and business aspects. Starting with Discovery, this guide takes you through the topics and decisions needed for a successful implementation. 
+
+Even before you get to platform options or tech design, you need to have alignment on what success even looks like. Sitecore Accelerate provides a set of recipes to guide the project team through a optimization set-up, configuration and implementation, covering both technical and business aspects. Starting with Discovery, this guide takes you through the topics and decisions needed for a successful implementation.
 <Row columns={2}>
+
   <Link title="Discovery & Project planning" link="https://developers.sitecore.com/learn/accelerate/cdp-personalize/pre-development/discovery" />
   <Link title="Setting up search in your site" link="https://developers.sitecore.com/learn/accelerate/xm-cloud/implementation/sitecore-search" />
 </Row>
@@ -37,12 +39,13 @@ Even before you get to platform options or tech design, you need to have alignme
 </Row>
 
 ## SDKs
+
 <Row columns={2}>
   <Article title="Cloud SDK" description="The open-source Sitecore Cloud SDK lets developers easily integrate capabilities from various SitecoreAI capabilities." link="https://doc.sitecore.com/sdk/en/developers/latest/cloud-sdk/sitecore-cloud-sdk-for-javascript.html" linkText="Read more" />
 </Row>
 
-
 ## Developer Tools
+
 <Row columns={2}>
 <Repository framework="React" name="Search Starter Kit" description="This repository has an example implementation of a content website using the  Search JS SDK which integrates with search services and supports event tracking." repositoryUrl="https://github.com/Sitecore/Sitecore-Search-JS-SDK-Starter-Kit" />
 <Repository framework="Nextjs" name="Sitecore Developer Portal" description="The Sitecore Developer Portal utilises search, you can see in this repository how it was implemented" repositoryUrl="https://github.com/Sitecore/developer-portal" />
