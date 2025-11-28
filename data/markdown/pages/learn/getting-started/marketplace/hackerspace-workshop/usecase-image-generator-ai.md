@@ -2,7 +2,7 @@
 
 Build an ultra-compact AI-powered image generator that integrates with Sitecore page context using **Vibe Coding with AI** for rapid, interactive development. This use case showcases how to leverage AI assistance to create contextual image generation using free AI services.
 
-![AI Image Generator in Action](images/image-generator.png)
+![AI Image Generator in Action](https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/9710ee95f7b44b4a8139d2fc011517e5?v=f8fb84d1)
 
 [Reference Repository](https://github.com/Sitecore/hackerspace-workshop/app/image-generator)
 
@@ -89,7 +89,7 @@ Build the backend API endpoint for Hugging Face integration using AI prompts.
 ```
 Create a Next.js API route (app/api/generate-image/route.ts) that:
 - Accepts POST requests with a prompt parameter
-- Calls Hugging Face Stable Diffusion XL API (stabilityai/stable-diffusion-xl-base-1.0)
+- Calls Hugging Face Stable Diffusion XL API at https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0
 - Handles rate limiting and model loading errors
 - Converts image blob to base64 data URL
 - Returns JSON response with imageUrl

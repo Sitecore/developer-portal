@@ -1,6 +1,6 @@
 ---
-title: 'The platform for forward-thinking technologists'
-description: 'From CMS to DXP, our solutions empower you to create exceptional digital experiences.'
+title: 'SitecoreAI - Unified, Open and Adaptive'
+description: 'The place where campaigns start, scale, and stay on-brand.'
 stackexchange: ['/questions?tab=Newest']
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'

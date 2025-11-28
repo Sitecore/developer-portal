@@ -71,8 +71,7 @@ const redirects = [
   { source: '/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc', destination: '/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc', permanent: true },
   { source: '/learn/accelerate/xm-cloud/final-steps/testing-strategy', destination: '/learn/accelerate/xm-cloud/final-steps/testing-framework', permanent: true },
 
-
-  { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/dev-workflow-codespaces', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations/dev-workflow-codespaces', permanent:true  },
+  { source: '/learn/accelerate/xm-cloud/pre-development/developer-experience/dev-workflow-codespaces', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations/dev-workflow-codespaces', permanent: true },
   { source: '/learn/faq/xm-cloud/migration', destination: '/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc', permanent: true },
   { source: '/learn/faq/xm-cloud/pricing', destination: '/learn/accelerate/xm-cloud/', permanent: true },
   { source: '/learn/faq/xm-cloud/scaling-availability', destination: 'https://www.sitecore.com/legal/sla/saas', permanent: true },
@@ -81,19 +80,18 @@ const redirects = [
   { source: '/learn/faq/xm-cloud/sxa', destination: '/learn/accelerate/xm-cloud/pre-development/project-architecture', permanent: true },
   { source: '/learn/faq/xm-cloud/experience-edge', destination: '/learn/accelerate/xm-cloud/pre-development/project-architecture/rate-limits-and-caching', permanent: true },
   { source: '/learn/faq/xm-cloud/customization', destination: '/learn/accelerate/xm-cloud/pre-development/discovery/requirements-gathering', permanent: true },
-  { source: '/learn/faq/xm-cloud/rendering', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations/web-developer-experience', permanent: true },  
-  { source: '/learn/faq/xm-cloud/integration', destination: '/learn/accelerate/xm-cloud/implementation/external-data-integration', permanent: true },  
-  { source: '/learn/faq/xm-cloud/upgrades', destination: 'https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-xm-cloud.html', permanent: true },  
-  { source: '/learn/faq/xm-cloud/development', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations', permanent: true },  
-  { source: '/learn/faq/xm-cloud/features', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/sitecore-xm-cloud.html', permanent: true },  
-  { source: '/learn/faq/xm-cloud', destination: '/learn/accelerate/xm-cloud/', permanent: true },  
-  { source: '/learn/faq/xm-cloud-embedded-personalization', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
-  { source: '/learn/faq/xm-cloud-embedded-personalization/general', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
-  { source: '/learn/faq/xm-cloud-embedded-personalization/feature-matrix', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
-  { source: '/learn/faq/xm-cloud-embedded-personalization/migrations-and-upgrades', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
-  { source: '/learn/faq/xm-cloud-embedded-personalization/architecture-data-retention', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
-  { source: '/learn/faq/xm-cloud-embedded-personalization/developer-experience', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },  
-
+  { source: '/learn/faq/xm-cloud/rendering', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations/web-developer-experience', permanent: true },
+  { source: '/learn/faq/xm-cloud/integration', destination: '/learn/accelerate/xm-cloud/implementation/external-data-integration', permanent: true },
+  { source: '/learn/faq/xm-cloud/upgrades', destination: 'https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-xm-cloud.html', permanent: true },
+  { source: '/learn/faq/xm-cloud/development', destination: '/learn/accelerate/xm-cloud/pre-development/developer-considerations', permanent: true },
+  { source: '/learn/faq/xm-cloud/features', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/sitecore-xm-cloud.html', permanent: true },
+  { source: '/learn/faq/xm-cloud', destination: '/learn/accelerate/xm-cloud/', permanent: true },
+  { source: '/learn/faq/xm-cloud-embedded-personalization', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },
+  { source: '/learn/faq/xm-cloud-embedded-personalization/general', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },
+  { source: '/learn/faq/xm-cloud-embedded-personalization/feature-matrix', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },
+  { source: '/learn/faq/xm-cloud-embedded-personalization/migrations-and-upgrades', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },
+  { source: '/learn/faq/xm-cloud-embedded-personalization/architecture-data-retention', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },
+  { source: '/learn/faq/xm-cloud-embedded-personalization/developer-experience', destination: 'https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html', permanent: true },
 
   { source: '/learn/accelerate/xm-cloud/implementation/redirect', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/redirect', permanent: true },
   { source: '/learn/accelerate/xm-cloud/implementation/sitemap', destination: '/learn/accelerate/xm-cloud/implementation/information-architecture/sitemap', permanent: true },
@@ -105,9 +103,19 @@ const redirects = [
   { source: '/learn/accelerate/cdp-personalize/appendix-i/cdp-glossary', destination: 'https://doc.sitecore.com/cdp/en/users/sitecore-cdp/glossary.html', permanent: true },
   { source: '/learn/accelerate/cdp-personalize/appendix-i/personalize-glossary', destination: 'https://doc.sitecore.com/personalize/en/users/sitecore-personalize/glossary.html', permanent: true },
 
-
   { source: '/accelerate', destination: '/learn/accelerate', permanent: true },
   { source: '/changelog/xm-cloud/12112023/personalize-the-presentation-of-a-component-in-xm-cloud-pages-personalize', destination: '/changelog/xm-cloud/12112023/personalize-the-presentation-of-a-component-in-xm-cloud-pages', permanent: true },
+
+  { source: '/learn/getting-started/introduction-to-composable-dxp', destination: '/', permanent: true },
+  { source: '/learn/getting-started/migrating-to-the-sitecore-composable-dxp', destination: '/', permanent: true },
+
+  { source: '/learn/getting-started/xm-cloud-introduction', destination: '/sitecoreai', permanent: true },
+  { source: '/learn/getting-started/xm-cloud/tutorials', destination: '/sitecoreai', permanent: true },
+
+  { source: '/learn/faq/cloud-portal/features', destination: 'https://doc.sitecore.com/cloud-portal/en/users/cloud-portal/features.html', permanent: true },
+
+  { source: '/changelog/xm-cloud/:path*', destination: '/changelog/sitecoreai/:path*', permanent: true },
+  { source: '/xm-cloud/:path*', destination: 'https://doc.sitecore.com/sai/en/developers/sitecoreai/sitecoreai.html', permanent: true },
 ];
 
 const nextConfig = {

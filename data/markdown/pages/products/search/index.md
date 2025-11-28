@@ -13,10 +13,10 @@ cdpTags: ['search']
 
 ## Introduction
 
-<img src="/images/products/search/Fast-predictive-search.svg" alt="Sitecore Search" width="33%" align="right" />
 Predict search intent and display individualized results with a personalized search experience. Unifying easy-to-find content, Driving visitor engagement & displaying results fast\.
 
-To learn more about [Sitecore Search](https://www.sitecore.com/products/search) and how it can help your clients please visit [Sitecore.com](https://www.sitecore.com/products/search).
+> With the release of SitecoreAI, further information can be found in [Converstion optimization](/sitecoreai/capabilities/converstion-optimization).
+
 
 ## Getting Started
 

@@ -19,7 +19,7 @@ export const CTACard = ({ description, href, linkText, title, link2Text, link2hr
       <Text variant={'large'} mb={6}>
         {description}
       </Text>
-      <LinkButton href={href} text={linkText} size={'lg'} />
+      <LinkButton color='white' href={href} text={linkText} size={'lg'} />
 
       {link2href && link2Text && <LinkButton href={link2href} text={link2Text} size={'xl'} />}
     </CardBody>

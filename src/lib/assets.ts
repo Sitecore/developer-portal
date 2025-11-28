@@ -5,6 +5,7 @@ export enum Product {
   OrderCloud,
   CDP,
   ContentHubOne,
+  SitecoreAI,
   XMCloud,
   Personalize,
   CDP_Personalize,
@@ -78,6 +79,20 @@ const ProductLogos: Array<ProductImage> = [
     Name: 'Sitecore',
     logoFileName: 'logo-sitecore',
     iconFileName: 'mark-sitecore',
+  },
+  {
+    Product: Product.SitecoreAI,
+    Variant: Variant.Light,
+    Name: 'SitecoreAI',
+    logoFileName: 'logo-sitecoreai',
+    iconFileName: 'mark-sitecoreai',
+  },
+  {
+    Product: Product.SitecoreAI,
+    Variant: Variant.Dark,
+    Name: 'SitecoreAI',
+    logoFileName: 'logo-sitecoreai',
+    iconFileName: 'mark-sitecoreai',
   },
   {
     Product: Product.OrderCloud,
@@ -412,6 +427,11 @@ export function GetProductIcon(productName: Product | string, variant: Variant) 
 }
 
 export function GetProductLogoByVariant(productName: Product, variant: Variant, type?: Type) {
+  // Quick hack to get the light logo for SitecoreAI since there is not a dark logo available yet (MVA)
+  if (productName == Product.SitecoreAI) {
+    variant = Variant.Light;
+  }
+
   const first = ProductLogos.find((obj) => {
     return obj.Product === productName && obj.Variant == variant;
   });

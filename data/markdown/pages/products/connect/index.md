@@ -4,11 +4,8 @@ product: ['connect']
 title: 'Sitecore Connect'
 productLogo: 'Connect'
 description: 'Low-code / No-code integration platform built on Workato'
-guidedDemoId: 'cls543wve00p30fjs3dj45i6k'
 cdpTags: ['connect']
 ---
-
-<img src="/images/products/connect/connect-capability.svg" alt="Connect capabilities" width="33%" align="right" />
 
 ## Introduction
 
@@ -19,7 +16,7 @@ To learn more about [Sitecore Connect](https://www.sitecore.com/products/connect
 <br />
 <br />
 
-<VideoPromo youTubeId="bHILCWITZlk" title="Sitecore Connect introduction" description="Dylan and Ahmed have a first look at the new Sitecore Connect" className="clear-both" />
+<VideoPromo youTubeId="bHILCWITZlk" title="Sitecore Connect introduction" description="Have a first look at the new Sitecore Connect" className="clear-both" />
 
 ## Documentation
 
@@ -27,15 +24,8 @@ To learn more about [Sitecore Connect](https://www.sitecore.com/products/connect
 <Link title="Introduction" link="https://doc.sitecore.com/connect/en/users/sitecore-connect/introduction-to-sitecore-connect.html" />
 <Link title="Working with Sitecore Connect" link="https://doc.sitecore.com/connect/en/users/sitecore-connect/working-with-sitecore-connect.html" />
 <Link title="Invite Team Members" link="https://doc.sitecore.com/connect/en/users/sitecore-connect/invite-team-members-to-sitecore-connect.html" />
+<Link title="Sitecore Connect FAQ" link="/learn/faq/sitecore-connect" />
 </Row>
-
-<Promo
-  title="Sitecore Connect FAQ"
-  description="We created a FAQ that helps answer questions about our new Sitecore Connect product"
-  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/f469fddd60064d0ca8be64f4be6d621c?v=cc750acc"
-  linkText="Connect FAQ"
-  linkHref="/learn/faq/sitecore-connect" isImageLeft={false}
-/>
 
 ## Learn
 

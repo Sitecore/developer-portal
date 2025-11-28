@@ -7,17 +7,14 @@ description: 'Use advanced decisioning models and machine learning for personali
 stackexchange: ['#sitecore-personalize', '#personalization', '#cdp']
 youtube: PL1jJVFm_lGnx-VFtQBFiOscKJhddMpp2s
 youtubeTitle: 'Latest Sitecore Personalize videos'
-sitecoreCommunityQuestions: true
-sitecoreCommunityQuestionsCategory: ['personalizationAndTesting']
 guidedDemoId: 'cls5674xs000b0flaaan84az6'
 ---
 
-<img src="/images/products/personalize/full-stack-AB-testing-optimization.svg" alt="AB Testing and optimization" width="33%" align="right" />
 ## Introduction
 
 Sitecore Personalize brings together real-time behavioral insights and all your customer data so you can understand and engage every customer (and anonymous visitors) instantly.
 
-To learn more about [Customer Data Platform](https://www.sitecore.com/products/customer-data-platform) and how it can help your clients please visit [Sitecore.com](https://www.sitecore.com/products/customer-data-platform).
+> With the release of SitecoreAI, further information can be found in [Converstion optimization](/sitecoreai/capabilities/converstion-optimization).
 
 ## Documentation
 
@@ -25,7 +22,7 @@ To learn more about [Customer Data Platform](https://www.sitecore.com/products/c
 <Link title="Overview" link="https://doc.sitecore.com/personalize/" />
 <Link title="User Docs" link="https://doc.sitecore.com/personalize/en/users/sitecore-personalize/index-en.html" />
 <Link title="Developer Docs" link="https://doc.sitecore.com/personalize/en/developers/api/index-en.html" />
-<Link title="Knowledge Hub" link="https://sitecore.cdpknowledgehub.com/docs" />
+<Link title="Sitecore Accelerate" link="/learn/accelerate/cdp-personalize" />
 </Row>
 
 ## Integrations

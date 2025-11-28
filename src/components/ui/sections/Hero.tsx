@@ -12,10 +12,11 @@ export type HeroProps = {
   image?: string;
   productLogo?: string;
   demoId?: string;
+  portalURL?: string;
   children?: React.ReactNode | Array<React.ReactNode>;
 };
 
-export const Hero = ({ description, title, children, productLogo, demoId }: HeroProps) => {
+export const Hero = ({ description, title, children, productLogo, demoId, portalURL }: HeroProps) => {
   return (
     <VerticalGroup
       maxWidth={'full'}
@@ -34,6 +35,7 @@ export const Hero = ({ description, title, children, productLogo, demoId }: Hero
           {description}
         </Text>
         {demoId && <GuidedDemo demoId={demoId} productName={title} productLogo={productLogo} />}
+         {portalURL && <a href={portalURL} target='_blank' title='Login' />}
         {children}
       </CenteredContent>
     </VerticalGroup>

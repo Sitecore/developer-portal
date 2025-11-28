@@ -19,9 +19,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: 'File parameter is required' });
     }
 
-    // Validate file is a Sitecore Stream file
-    if (!fileName.includes('Sitecore_Stream')) {
-      return res.status(400).json({ error: 'File is not a Sitecore Stream file' });
+    // Validate file is a Sitecore Stream or SitecoreAI Pathway file
+    if (!fileName.includes('Sitecore_Stream') && !fileName.includes('SitecoreAI')) {
+      return res.status(400).json({ error: 'File is not a Sitecore Stream or SitecoreAI file' });
     }
 
     // Create Azure storage configuration

@@ -2,7 +2,7 @@ import { Box, Card, CardBody, CardFooter, Flex, Heading, SimpleGrid, Text, useCo
 import Image from 'next/image';
 import React from 'react';
 
-import { CDP, Connect, ContentHub, ContentHubONE, Discover, OrderCloud, Personalize, ProductInfoType, Search, Send, XMCloud, XP } from '@/data/products';
+import { ContentHub, OrderCloud, ProductInfoType, SitecoreAI } from '@/data/products';
 import { GetProductLogoByVariant, Type, Variant } from '@/src/lib/assets';
 
 import { LinkButton } from '../../links';
@@ -27,15 +27,7 @@ export const ProductList: React.FC<ProductListProps> = () => {
       <ProductListTitle title="Experience Management" description="Be better to stand out. Deliver exceptional experiences that differentiate your brand." />
 
       <SimpleGrid columns={[1, 1, 3]} gap={4} my={4}>
-        <ProductListItem product={XMCloud} />
-        <ProductListItem product={Search} />
-        <ProductListItem product={Personalize} />
-        <ProductListItem product={CDP} />
-        <ProductListItem product={Connect} />
-        <ProductListItem product={XP} />
-        <ProductListItem product={ContentHubONE} />
-        <ProductListItem product={Discover} />
-        <ProductListItem product={Send} />
+        <ProductListItem product={SitecoreAI} />        
       </SimpleGrid>
 
       <SimpleGrid columns={[1, 1, 2]} gap={4} my={16}>

@@ -93,6 +93,13 @@ export const mockedProducts: Product[] = [
     darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-personalize-dark',
     hasEntries: true,
   },
+  {
+    id: 'QE7yZxFxSIGAWptcuNG7gA',
+    name: 'SitecoreAI',
+    lightIcon: 'https://sitecore.sitecorecontenthub.cloud/api/gateway/identifier/QE7yZxFxSIGAWptcuNG7gA',
+    darkIcon: 'https://sitecore.sitecorecontenthub.cloud/api/gateway/identifier/QE7yZxFxSIGAWptcuNG7gA',
+    hasEntries: true,
+  },
 ];
 
 export function getMockedProductOptions(): Option[] {
