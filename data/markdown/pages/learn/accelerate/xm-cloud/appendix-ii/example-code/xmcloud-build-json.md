@@ -4,7 +4,7 @@ description: 'Sample xmcloud.build.json file for Sitecore Content Serialization'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: false
-lastUpdated: '2025-09-26'
+lastUpdated: '2025-11-28'
 ---
 Sample template.module.json for Sitecore Content Serialization below - an example is also available for [xmcloud-starter.js](https://github.com/Sitecore/xmcloud-starter-js/blob/main/xmcloud.build.json).
 
