@@ -10,6 +10,9 @@ Sample template.module.json for Sitecore Content Serialization below - an exampl
 
 > The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
 
+_Note: this page previously included startCommand in the renderingHosts section. startCommand has been deprecated and is ignored. Use buildCommand and runCommand instead. The lintCommand has also been removed. We suggest using ESLint and 'npm run lint' instead. See this page for more details: https://developers.sitecore.com/changelog/sitecoreai/action-required%3A-review-your-foundation-code_
+
+
 ```json
 {
   "deployItems": {
@@ -26,8 +29,6 @@ Sample template.module.json for Sitecore Content Serialization below - an exampl
       "jssDeploymentSecret": "110F1C44A496B45478640DD36F80C18C9",
       "enabled": true,
       "type": "sxa",
-      "lintCommand": "lint",
-      "startCommand": "start:production",
       "buildCommand": "build",
       "runCommand": "next:start"
     }
