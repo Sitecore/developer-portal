@@ -1,12 +1,26 @@
-query searchByProduct($date: DateTime, $productId: [ID], $changeTypeIds: [ID] = [], $first: Int = 5, $after: String = "") {
-  changelog: allChangelog(orderBy: RELEASEDATE_DESC, first: $first, after: $after, where: { releaseDate_lt: $date, sitecoreProduct: { changelog_ids: $productId }, AND: { OR: [{ changeType: { changelog_ids: $changeTypeIds } }] } }) {
-    pageInfo {
-      hasNext
-      endCursor
+query searchByProduct(
+    $date: CustomDateTime
+    $productId: [String!]
+    $changeTypeIds: [String!] = []
+    $first: Int = 5
+    $after: String = ""
+) {
+    changelog: manyChangelog(
+        orderBy: RELEASE_DATE_DESC
+        minimumPageSize: $first
+        after: $after
+        filter: {
+            AND: [
+                { releaseDate: { lessThan: $date } }
+                { sitecoreProduct: { containsAny: $productId } }
+                { changeType: { containsAny: $changeTypeIds } }
+            ]
+        }
+    ) {
+        results {
+            ...changelogEntry
+        }
+        hasMore
+        cursor
     }
-    total
-    results {
-      ...changelogEntry
-    }
-  }
 }

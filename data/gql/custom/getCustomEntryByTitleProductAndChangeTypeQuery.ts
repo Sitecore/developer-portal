@@ -14,100 +14,99 @@ export function getCustomEntryByTitleProductAndChangeTypeQuery(entryTitle: strin
   }
 
   const query = new TypedDocumentString(`
-  query searchByProductsAndChangeTypes($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "") {
-  changelog: allChangelog(
-    orderBy: RELEASEDATE_DESC, 
-    first: $first, 
-    after: $after, 
-    where: { 
-      releaseDate_lt: $date, 
-      OR: [
-        { sitecoreProduct: { 
-            changelog_ids: $productIds 
-          } 
-        }
-        ], 
-        AND: 
-        { 
-          OR: [{ changeType: { changelog_ids: $changeTypeIds } }]
-          ${whereClauseSearchTerm}
-        },
-      }
-    ) {
-    pageInfo {
-      hasNext
-      endCursor
-    }
-    total
+  query searchByProductsAndChangeTypes(
+    $date: CustomDateTime!, 
+    $productIds: [String!], 
+    $changeTypeIds: [String!], 
+    $first: Int = 5, 
+    $after: String = ""
+  ) {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC, 
+    minimumPageSize: $first, 
+    after: $after,
+    filter: { AND: [
+      { releaseDate: { lessThan: $date } }
+      { sitecoreProduct: { containsAny: $productId } }
+      { changeType: { containsAny: $changeTypeIds } }
+      ${whereClauseSearchTerm}
+    ] }
+  ) {
+    hasMore
+    cursor
     results {
       ...changelogEntry
     }
   }
 }
 fragment changeType on Changetype {
-  id
-  name
+  system {
+    id
+    name
+  }
   changeType
 }
 fragment changelogEntry on Changelog {
-  id
-  name
+  system {
+    id
+    name
+  }
   title
   description
   fullArticle
   readMoreLink
   breakingChange
-  version
+  x_version
   releaseDate
   scheduled
   image {
-    total
     results {
       ...media
     }
   }
   sitecoreProduct {
-    total
     results {
       ...product
     }
   }
   changeType {
-    total
     results {
       ...changeType
     }
   }
   status {
-    total
     results {
       ...status
     }
   }
 }
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  media_publicLink
+  media_fileSize
+  media_type {
+    name
+    label
+  }
 }
 fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark
   lightIcon: productIconLight
 }
 fragment status on Status {
-  id
-  name
+  system {
+    id
+    name
+  }
   description
   identifier
 }`) as unknown as TypedDocumentString<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>;

@@ -8,39 +8,40 @@ export function getCustomEntryByTitleQuery(entryTitle: string): TypedDocumentStr
   if (searchArray.length > 0) {
     whereClauseSearchTerm += `AND: [`;
     searchArray.forEach((term: string) => {
-      whereClauseSearchTerm += `{title_contains: "${term}"}`;
+      whereClauseSearchTerm += `{ title: { contains: "${term}" }}`;
     });
     whereClauseSearchTerm += `]`;
   }
 
   const query = new TypedDocumentString(`
-  query searchByTitle($date: DateTime, $productId: [ID]) {
-  data: allChangelog(
-    first: 1
-    where: {
-      releaseDate_lt: $date
-      sitecoreProduct: { changelog_ids: $productId }
+  query searchByTitle($date: CustomDateTime, $productId: [String!]) {
+  data: manyChangelog(
+    minimumPageSize: 1
+    filter: { AND: [
+      { releaseDate: { lessThan: $date } }
+      { sitecoreProduct: { containsAny: $productId } }
       ${whereClauseSearchTerm}
-    }
+    ] }
   ) {
-    pageInfo {
-      hasNext
-      endCursor
-    }
-    total
+    hasMore
+    cursor
     results {
       ...changelogEntry
     }
   }
 }
-    fragment changeType on Changetype {
-  id
-  name
+fragment changeType on Changetype {
+  system {
+    id
+    name
+  }
   changeType
 }
 fragment changelogEntry on Changelog {
-  id
-  name
+  system {
+    id
+    name
+  }
   title
   description
   fullArticle
@@ -50,53 +51,53 @@ fragment changelogEntry on Changelog {
   releaseDate
   scheduled
   image {
-    total
     results {
       ...media
     }
   }
   sitecoreProduct {
-    total
     results {
       ...product
     }
   }
   changeType {
-    total
     results {
       ...changeType
     }
   }
   status {
-    total
     results {
       ...status
     }
   }
 }
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  media_publicLink
+  media_fileSize
+  media_type {
+    name
+    label
+  }
 }
 fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark
   lightIcon: productIconLight
 }
 fragment status on Status {
-  id
-  name
+  system {
+    id
+    name
+  }
   description
   identifier
 }`) as unknown as TypedDocumentString<SearchByTitleQuery, SearchByTitleQueryVariables>;

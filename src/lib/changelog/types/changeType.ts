@@ -9,14 +9,14 @@ export type ChangeType = {
 };
 
 export function ParseChangeType(data: GetAllChangetypesQuery): Array<ChangeType> {
-  if (!data.allChangetype?.results) {
+  if (!data.manyChangetype?.results) {
     return [];
   }
 
-  return data.allChangetype.results?.map((x) => ({
-    name: getStringValue(x?.name),
+  return data.manyChangetype.results?.map((x) => ({
+    name: getStringValue(x?.system.name),
     changeType: getStringValue(x?.changeType),
-    id: getStringValue(x?.id),
-    type: slugify(getStringValue(x?.name)),
+    id: getStringValue(x?.system.id),
+    type: slugify(getStringValue(x?.system.name)),
   }));
 }

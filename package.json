@@ -126,6 +126,7 @@
     "@chromatic-com/storybook": "^1.9.0",
     "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/client-preset": "^4.3.2",
+    "@graphql-codegen/schema-ast": "^5.0.0",
     "@next/bundle-analyzer": "15.1.0",
     "@next/eslint-plugin-next": "15.1.0",
     "@parcel/watcher": "^2.4.1",

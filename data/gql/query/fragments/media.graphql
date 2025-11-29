@@ -1,4 +1,4 @@
-fragment media on Media {
+fragment media on XMCMedia {
   system {
     id
     name

@@ -1,9 +1,23 @@
-query SearchByDate($startDate: DateTime!, $endDate: DateTime!, $first: Int = 5, $after: String = "") {
-  changelog: manyChangelog(minimumPageSize: $first, after: $after, filter: { AND: [{ releaseDate: { lessThan: $endDate } }, { releaseDate: { greaterThan: $startDate } }] }) {
-    hasMore
-    cursor
-    results {
-      ...changelogEntry
+query SearchByDate(
+    $startDate: CustomDateTime!
+    $endDate: CustomDateTime!
+    $first: Int = 5
+    $after: String = ""
+) {
+    changelog: manyChangelog(
+        minimumPageSize: $first
+        after: $after
+        filter: {
+            AND: [
+                { releaseDate: { lessThan: $endDate } }
+                { releaseDate: { greaterThan: $startDate } }
+            ]
+        }
+    ) {
+        hasMore
+        cursor
+        results {
+            ...changelogEntry
+        }
     }
-  }
 }

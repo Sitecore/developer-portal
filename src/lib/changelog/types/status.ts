@@ -21,14 +21,14 @@ export const DefaultStatus: Status = {
 };
 
 export function ParseStatus(data: GetAllStatusQuery): Array<Status> {
-  if (!data.allStatus?.results) {
+  if (!data.manyStatus?.results) {
     return [];
   }
 
-  return data.allStatus?.results.map((x) => {
+  return data.manyStatus?.results.map((x) => {
     return {
-      name: getStringValue(x?.name),
-      id: getStringValue(x?.id),
+      name: getStringValue(x?.system.name),
+      id: getStringValue(x?.system.id),
       identifier: getStringValue(x?.identifier),
       description: getStringValue(x?.description),
     };

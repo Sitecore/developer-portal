@@ -7,11 +7,24 @@ const config: CodegenConfig = {
       './data/gql/schema/schema.graphql': {
         assumeValidSDL: true,
       },
-    },
+    }
+    /* {
+      '<<GQL URI>>': {
+        headers: {
+          authorization: 'Bearer ey...'
+        }
+      }
+    } */
   ],
   documents: ['./data/gql/query/**/*.graphql'],
   ignoreNoDocuments: false,
   generates: {
+    /* './data/gql/schema/schema.graphql': {
+       plugins: ['schema-ast'],
+       config: {
+         includeDirectives: true
+       },
+    }, */
     './data/gql/generated/': {
       preset: 'client',
       config: {
@@ -31,7 +44,7 @@ const config: CodegenConfig = {
             input: 'string',
             output: 'string',
           },
-          DateTime: 'Date',
+          CustomDateTime: 'Date',
           JSON: '{ [key: string]: any }',
         },
       },

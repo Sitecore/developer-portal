@@ -11,15 +11,15 @@ export type Product = {
 };
 
 export function ParseProduct(data: GetAllProductsQuery): Array<Product> {
-  if (!data.allSitecoreProduct?.results) {
+  if (!data.manySitecoreProduct?.results) {
     console.log('No products found');
 
     return [];
   }
 
-  return data.allSitecoreProduct.results.map((x) => {
+  return data.manySitecoreProduct.results.map((x) => {
     return {
-      id: getStringValue(x?.id),
+      id: getStringValue(x?.system.id),
       name: getStringValue(x?.productName),
       description: getStringValue(x?.productDescription),
       lightIcon: getStringValue(x?.lightIcon),

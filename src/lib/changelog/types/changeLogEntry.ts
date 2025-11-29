@@ -51,9 +51,9 @@ export function ParseRawData(data: GetLatestEntriesQuery | null): ChangelogEntry
   }
 
   return {
-    endCursor: getStringValue(data.changelog.pageInfo?.endCursor),
-    hasNext: data.changelog.pageInfo?.hasNext ?? false,
-    total: data.changelog.total ?? 0,
+    endCursor: getStringValue(data.changelog.cursor),
+    hasNext: data.changelog.hasMore ?? false,
+    total: 0, // TODO [IVA] Where to get totals?
     entries: data.changelog.results.map((item) => {
       return parseChangeLogItem(item);
     }),

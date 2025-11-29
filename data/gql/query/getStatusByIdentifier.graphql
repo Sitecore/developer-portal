@@ -1,4 +1,4 @@
-query GetStatusByIdentifier($identifier: String!) {
+query GetStatusByIdentifier($identifier: ID!) {
   status(id: $identifier, locale: "") {
     ...status
   }

@@ -1,12 +1,21 @@
-query searchByTitle($date: DateTime, $productId: [ID]) {
-  data: allChangelog(first: 1, where: { releaseDate_lt: $date, sitecoreProduct: { changelog_ids: $productId } }) {
-    pageInfo {
-      hasNext
-      endCursor
+query searchByTitle(
+    $date: CustomDateTime
+    $productId: [String!]
+) {
+    data: manyChangelog(
+        orderBy: RELEASE_DATE_DESC
+        minimumPageSize: 1
+        filter: {
+            AND: [
+                { releaseDate: { lessThan: $date } }
+                { sitecoreProduct: { containsAny: $productId } }
+            ]
+        }
+    ) {
+        results {
+            ...changelogEntry
+        }
+        hasMore
+        cursor
     }
-    total
-    results {
-      ...changelogEntry
-    }
-  }
 }

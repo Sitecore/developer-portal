@@ -1,5 +1,14 @@
-query GetLatestEntries($first: Int! = 5, $after: String! = "", $date: DateTime!) {
-  changelog: manyChangelog(orderBy: SYSTEM_UPDATED_DESC, minimumPageSize: $first, after: $after, filter: { AND: [{ releaseDate: { lessThan: $date } }] }) {
+query GetLatestEntries(
+  $first: Int! = 5, 
+  $after: String! = "", 
+  $date: CustomDateTime!
+) {
+  changelog: manyChangelog(
+    orderBy: SYSTEM_UPDATED_DESC, 
+    minimumPageSize: $first, 
+    after: $after, 
+    filter: { AND: [{ releaseDate: { lessThan: $date } }] }
+  ) {
     hasMore
     cursor
     results {
