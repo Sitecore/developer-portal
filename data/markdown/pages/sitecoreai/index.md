@@ -63,7 +63,7 @@ Turn data into decisions and awareness into understanding. Unlock your customer 
 
 Help customers find what they need faster and connect with what matters most, every time. Personalize every experience with intelligence that understands your customers.
 <Row columns={3}>
-<Link title="Get started with Converstion Optimization" link="/sitecoreai/capabilities/conversion-optimization" />
+<Link title="Get started with Conversion Optimization" link="/sitecoreai/capabilities/conversion-optimization" />
 <Link title="Search experience documentation" link="https://doc.sitecore.com/search" />
 <Link title="Personalized experience documentation" link="https://doc.sitecore.com/personalize" />
 </Row>
