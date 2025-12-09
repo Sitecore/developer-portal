@@ -19,29 +19,27 @@ export async function fetchGraphQL<TResult, TVariables>(document: TypedDocumentS
     return null;
   }
 
-  // console.log('endpoint', endpoint, 'token', token);
-  try {
-    const response = await axios.post(
-      endpoint,
-      { query: document.toString(), variables: variables },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'X-GQL-Token': token,
-        },
-      }
-    );
+   try {
+     const response = await axios.post(
+       endpoint,
+       { query: document.toString(), variables: variables },
+       {
+         headers: {
+           'Content-Type': 'application/json',
+           Authorization: `Bearer ${token}`,
+         },
+       }
+     );
 
-    if (response.data.errors) {
-      console.error('GraphQL Error:', response.data.errors);
+     if (response.data.errors) {
+       console.error('GraphQL Error:', response.data.errors);
+       return null;
+     }
 
-      return null;
-    }
+     return response.data;
+   } catch (err) {
+     console.log(err);
 
-    return response.data;
-  } catch (err) {
-    console.log(err);
-
-    return null;
-  }
+     return null;
+   }
 }
