@@ -1,28 +1,36 @@
 import { Exact, InputMaybe, Scalars, TypedDocumentString } from '../generated/graphql';
 
-export function getCustomEntryByTitleAndDateQuery(entryTitle: string): TypedDocumentString<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables> {
-  let whereClauseSearchTerm = '';
-
+export function getCustomEntryByTitleAndDateQuery(entryTitle: string, productId?: string[]): TypedDocumentString<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables> {
+  // Build title filters - flatten them directly into the AND array
+  const titleFilters: string[] = [];
   const searchArray = entryTitle.split('-');
 
   if (searchArray.length > 0) {
-    whereClauseSearchTerm += `AND: [`;
     searchArray.forEach((term: string) => {
-      whereClauseSearchTerm += `{ title: { contains: "${term}" }}`;
+      titleFilters.push(`{ title: { contains: "${term}" } }`);
     });
-    whereClauseSearchTerm += `]`;
   }
+
+  // Build the AND conditions array
+  const andConditions = ['{ releaseDate: { greaterThan: $startDate } }', '{ releaseDate: { lessThan: $endDate } }'];
+
+  // Only include sitecoreProduct filter if productId is provided and not empty
+  if (productId && productId.length > 0) {
+    andConditions.push('{ sitecoreProduct: { containsAny: $productId } }');
+  }
+
+  // Add all title filters
+  andConditions.push(...titleFilters);
+
+  const filterClause = `AND: [\n      ${andConditions.join(',\n      ')}\n    ]`;
 
   const query = new TypedDocumentString(`
   query searchByTitle($startDate: CustomDateTime!, $endDate: CustomDateTime!, $productId: [String!]) {
   data: manyChangelog(
     minimumPageSize: 1
-    filter: { AND: [
-      { releaseDate: { greaterThan: $startDate } }
-      { releaseDate: { lessThan: $endDate } }
-      { sitecoreProduct: { containsAny: $productId } }
-      ${whereClauseSearchTerm}
-    ]}
+    filter: {
+      ${filterClause}
+    }
   ) {
     hasMore
     cursor
@@ -77,11 +85,11 @@ fragment media on XMCMedia {
     id
     name
   }
-  media_publicLink
-  media_fileSize
-  media_type {
-    name
-    label
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
   }
 }
 fragment product on SitecoreProduct {
