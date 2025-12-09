@@ -22,7 +22,6 @@ import {
   SearchByProductsAndChangeTypesAndBreakingChangeDocument,
   SearchByProductsAndChangeTypesAndBreakingChangeQuery,
   SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables,
-  SearchByProductsAndChangeTypesDocument,
   SearchByProductsAndChangeTypesQuery,
   SearchByProductsAndChangeTypesQueryVariables,
   SearchByTitleQuery,
@@ -30,6 +29,7 @@ import {
 } from '@data/gql/generated/graphql';
 
 import { getCustomEntryByTitleProductAndChangeTypeQuery } from '@/data/gql/custom/getCustomEntryByTitleProductAndChangeTypeQuery';
+import { getSearchByProductsAndChangeTypesQuery } from '@/data/gql/custom/getSearchByProductsAndChangeTypesQuery';
 import { getSelectedIds } from './common/changelog';
 import { fetchGraphQL } from './common/fetch';
 import { ParseStatus, Status } from './types';
@@ -63,11 +63,12 @@ export class Changelog {
 
     _endDate.setDate(parsedDate.getDate() + 1);
 
-    const CustomEntryByTitleDocument = getCustomEntryByTitleAndDateQuery(entryTitle);
+    const productIds = productId ? [productId] : [];
+    const CustomEntryByTitleDocument = getCustomEntryByTitleAndDateQuery(entryTitle, productIds);
     const response = await fetchGraphQL<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables>(CustomEntryByTitleDocument, this.credentials, this.isPreview, {
       startDate: _startDate,
       endDate: _endDate,
-      productId: productId ? [productId] : [],
+      productId: productIds.length > 0 ? productIds : null,
     });
 
     return parseChangeLogItem(response.data.data.results[0]);
@@ -155,23 +156,29 @@ export class Changelog {
   async getEntries({ productId, changeTypeId, pageSize, endCursor, breaking = false }: { productId?: string; changeTypeId?: string; pageSize?: number; endCursor?: string; breaking?: boolean } = {}): Promise<
     ChangelogEntryList<Array<ChangelogEntry>>
   > {
-    const response =
-      breaking == false
-        ? await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(SearchByProductsAndChangeTypesDocument, this.credentials, this.isPreview, {
-            first: pageSize ? pageSize : 5,
-            after: endCursor ?? '',
-            date: new Date(),
-            productIds: getSelectedIds(productId),
-            changeTypeIds: getSelectedIds(changeTypeId),
-          })
-        : await fetchGraphQL<SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables>(SearchByProductsAndChangeTypesAndBreakingChangeDocument, this.credentials, this.isPreview, {
-            first: pageSize ? pageSize : 5,
-            after: endCursor ?? '',
-            date: new Date(),
-            productIds: getSelectedIds(productId),
-            changeTypeIds: getSelectedIds(changeTypeId),
-            breaking: breaking,
-          });
+    const productIds = getSelectedIds(productId);
+    const changeTypeIds = getSelectedIds(changeTypeId);
+
+    let response;
+    if (breaking == false) {
+      const queryDocument = getSearchByProductsAndChangeTypesQuery(productIds, changeTypeIds);
+      response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(queryDocument, this.credentials, this.isPreview, {
+        first: pageSize ? pageSize : 5,
+        after: endCursor ?? '',
+        date: new Date(),
+        productIds: productIds.length > 0 ? productIds : null,
+        changeTypeIds: changeTypeIds.length > 0 ? changeTypeIds : null,
+      });
+    } else {
+      response = await fetchGraphQL<SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables>(SearchByProductsAndChangeTypesAndBreakingChangeDocument, this.credentials, this.isPreview, {
+        first: pageSize ? pageSize : 5,
+        after: endCursor ?? '',
+        date: new Date(),
+        productIds: productIds,
+        changeTypeIds: changeTypeIds,
+        breaking: breaking,
+      });
+    }
 
     //console.log(this.credentials, this.isPreview);
 
@@ -197,6 +204,8 @@ export class Changelog {
   async getProducts(): Promise<Array<Product>> {
     // Get all products
     const response = await fetchGraphQL<GetAllProductsQuery, GetAllProductsQueryVariables>(GetAllProductsDocument, this.credentials, this.isPreview);
+
+    console.log('DATA: ' + JSON.stringify(response));
     const products = ParseProduct(response.data);
 
     // Check whether there are entries that have it selected
@@ -228,7 +237,7 @@ export class Changelog {
 export async function GetEntryCountByProductId(credentials: ChangelogCredentials, productId: string, preview: boolean): Promise<number> {
   const response = await fetchGraphQL<GetNumberOfEntriesByProductQuery, GetNumberOfEntriesByProductQueryVariables>(GetNumberOfEntriesByProductDocument, credentials, preview, { productId: [productId] });
 
-  1;
+  console.log(response);
 
-  return response.data?.changelog.total;
+  return response?.data?.changelog.total;
 }
