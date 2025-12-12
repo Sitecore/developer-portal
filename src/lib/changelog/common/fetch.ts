@@ -9,37 +9,37 @@ export async function fetchGraphQL<TResult, TVariables>(document: TypedDocumentS
   const token = environment.token;
 
   if (preview) {
-    // Throttle requests to 15 per second for the preview environment
-    axiosThrottle.use(axios, { requestsPerSecond: 15 });
+    // Throttle requests to 10 per second for the preview environment
+    axiosThrottle.use(axios, { requestsPerSecond: 10 });
   }
 
   if (endpoint === undefined || token === undefined) {
-    console.warn('WARNING: Missing CH ONE endpoint or token');
+    console.warn('WARNING: Missing CS endpoint or token');
 
     return null;
   }
 
-   try {
-     const response = await axios.post(
-       endpoint,
-       { query: document.toString(), variables: variables },
-       {
-         headers: {
-           'Content-Type': 'application/json',
-           Authorization: `Bearer ${token}`,
-         },
-       }
-     );
+  try {
+    const response = await axios.post(
+      endpoint,
+      { query: document.toString(), variables: variables },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
-     if (response.data.errors) {
-       console.error('GraphQL Error:', response.data.errors);
-       return null;
-     }
+    if (response.data.errors) {
+      console.error('GraphQL Error:', response.data.errors);
+      return null;
+    }
 
-     return response.data;
-   } catch (err) {
-     console.log(err);
+    return response.data;
+  } catch (err) {
+    console.log(err);
 
-     return null;
-   }
+    return null;
+  }
 }
