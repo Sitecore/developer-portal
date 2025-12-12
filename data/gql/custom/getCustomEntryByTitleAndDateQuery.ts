@@ -7,16 +7,16 @@ export function getCustomEntryByTitleAndDateQuery(entryTitle: string, productId?
 
   if (searchArray.length > 0) {
     searchArray.forEach((term: string) => {
-      titleFilters.push(`{ title: { contains: "${term}" } }`);
+      titleFilters.push(`{ title: { contains: "${term}", case: INSENSITIVE } }`);
     });
   }
 
   // Build the AND conditions array
-  const andConditions = ['{ releaseDate: { greaterThan: $startDate } }', '{ releaseDate: { lessThan: $endDate } }'];
+  const andConditions = ['{ releaseDate: { inRange: { from: $startDate, to: $endDate } } }', '{ sitecoreProduct: { containsAny: $productId } }'];
 
   // Only include sitecoreProduct filter if productId is provided and not empty
   if (productId && productId.length > 0) {
-    andConditions.push('{ sitecoreProduct: { containsAny: $productId } }');
+    //andConditions.push('{ sitecoreProduct: { containsAny: $productId } }');
   }
 
   // Add all title filters
@@ -106,10 +106,12 @@ fragment status on Status {
   system {
     id
     name
+    label
   }
   description
   identifier
-}`) as unknown as TypedDocumentString<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables>;
+}
+`) as unknown as TypedDocumentString<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables>;
 
   return query;
 }

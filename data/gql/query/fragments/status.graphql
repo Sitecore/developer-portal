@@ -2,6 +2,7 @@ fragment status on Status {
   system {
     id
     name
+    label
   }
   description
   identifier

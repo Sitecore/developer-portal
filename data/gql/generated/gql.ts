@@ -17,7 +17,7 @@ const documents = {
     types.ChangelogEntryFragmentDoc,
   'fragment media on XMCMedia {\n  system {\n    id\n    name\n  }\n  ... on XMCMedia {\n    media_publicLink\n    media_type {\n      name\n    }\n  }\n}': types.MediaFragmentDoc,
   'fragment product on SitecoreProduct {\n  system {\n    id\n    name\n  }\n  productName\n  productDescription\n  darkIcon: productIconDark\n  lightIcon: productIconLight\n}': types.ProductFragmentDoc,
-  'fragment status on Status {\n  system {\n    id\n    name\n  }\n  description\n  identifier\n}': types.StatusFragmentDoc,
+  'fragment status on Status {\n  system {\n    id\n    name\n    label\n  }\n  description\n  identifier\n}': types.StatusFragmentDoc,
   'query GetAllChangetypes {\n  manyChangetype {\n    hasMore\n    cursor\n    results {\n      ...changeType\n    }\n  }\n}': types.GetAllChangetypesDocument,
   'query GetAllProducts {\n  manySitecoreProduct(minimumPageSize: 25) {\n    hasMore\n    cursor\n    results {\n      ...product\n    }\n  }\n}': types.GetAllProductsDocument,
   'query GetAllStatus {\n  manyStatus {\n    hasMore\n    cursor\n    results {\n      ...status\n    }\n  }\n}': types.GetAllStatusDocument,
@@ -61,7 +61,7 @@ export function graphql(
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: 'fragment status on Status {\n  system {\n    id\n    name\n  }\n  description\n  identifier\n}'): typeof import('./graphql').StatusFragmentDoc;
+export function graphql(source: 'fragment status on Status {\n  system {\n    id\n    name\n    label\n  }\n  description\n  identifier\n}'): typeof import('./graphql').StatusFragmentDoc;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

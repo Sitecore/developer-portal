@@ -38,6 +38,43 @@ import { ChangelogEntry, ChangelogEntryList, parseChangeLogItem, ParseRawData } 
 import { ChangeType, ParseChangeType } from './types/changeType';
 import { ParseProduct, Product } from './types/product';
 
+// Cache for entry counts by product ID
+interface CacheEntry {
+  value: number;
+  expiresAt: number;
+}
+
+const entryCountCache = new Map<string, CacheEntry>();
+const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+
+function getCacheKey(productId: string, preview: boolean): string {
+  return `entryCount:${productId}:${preview}`;
+}
+
+function getCachedEntryCount(productId: string, preview: boolean): number | null {
+  const key = getCacheKey(productId, preview);
+  const entry = entryCountCache.get(key);
+  
+  if (!entry) {
+    return null;
+  }
+  
+  if (Date.now() > entry.expiresAt) {
+    entryCountCache.delete(key);
+    return null;
+  }
+  
+  return entry.value;
+}
+
+function setCachedEntryCount(productId: string, preview: boolean, count: number): void {
+  const key = getCacheKey(productId, preview);
+  entryCountCache.set(key, {
+    value: count,
+    expiresAt: Date.now() + CACHE_TTL_MS,
+  });
+}
+
 export class Changelog {
   private credentials: ChangelogCredentials;
   private isPreview: boolean;
@@ -65,11 +102,16 @@ export class Changelog {
 
     const productIds = productId ? [productId] : [];
     const CustomEntryByTitleDocument = getCustomEntryByTitleAndDateQuery(entryTitle, productIds);
+
     const response = await fetchGraphQL<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables>(CustomEntryByTitleDocument, this.credentials, this.isPreview, {
       startDate: _startDate,
       endDate: _endDate,
       productId: productIds.length > 0 ? productIds : null,
     });
+
+    if (!response.data?.data?.results || response.data.data.results.length === 0) {
+      throw new Error(`No changelog entry found for title "${entryTitle}" and date "${date}"`);
+    }
 
     return parseChangeLogItem(response.data.data.results[0]);
   }
@@ -80,6 +122,10 @@ export class Changelog {
       date: new Date(),
       productId: productId ? [productId] : [],
     });
+
+    if (!response.data?.data?.results || response.data.data.results.length === 0) {
+      throw new Error(`No changelog entry found for title "${entryTitle}"`);
+    }
 
     return parseChangeLogItem(response.data.data.results[0]);
   }
@@ -180,8 +226,6 @@ export class Changelog {
       });
     }
 
-    //console.log(this.credentials, this.isPreview);
-
     if (response == null) {
       return ParseRawData(response);
     }
@@ -204,8 +248,6 @@ export class Changelog {
   async getProducts(): Promise<Array<Product>> {
     // Get all products
     const response = await fetchGraphQL<GetAllProductsQuery, GetAllProductsQueryVariables>(GetAllProductsDocument, this.credentials, this.isPreview);
-
-    console.log('DATA: ' + JSON.stringify(response));
     const products = ParseProduct(response.data);
 
     // Check whether there are entries that have it selected
@@ -213,16 +255,13 @@ export class Changelog {
       const results = await Promise.all(
         products.map(async (n) => {
           // No need to check in preview mode
+          // Combined logic: always check or set hasEntries in one block
           if (this.isPreview) {
             n.hasEntries = true;
-
             return n;
           }
-
           const count = await GetEntryCountByProductId(this.credentials, n.id, this.isPreview);
-
           n.hasEntries = count > 0;
-
           return n;
         })
       );
@@ -235,9 +274,19 @@ export class Changelog {
 }
 
 export async function GetEntryCountByProductId(credentials: ChangelogCredentials, productId: string, preview: boolean): Promise<number> {
+  // Check cache first
+  const cachedCount = getCachedEntryCount(productId, preview);
+  if (cachedCount !== null) {
+    return cachedCount;
+  }
+
+  // Fetch from API if not in cache
   const response = await fetchGraphQL<GetNumberOfEntriesByProductQuery, GetNumberOfEntriesByProductQueryVariables>(GetNumberOfEntriesByProductDocument, credentials, preview, { productId: [productId] });
 
-  console.log(response);
+  const count = response?.data?.changelog.results.length ?? 0;
 
-  return response?.data?.changelog.total;
+  // Store in cache
+  setCachedEntryCount(productId, preview, count);
+
+  return count;
 }

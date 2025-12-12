@@ -6,11 +6,12 @@ export function getCustomEntryByTitleProductAndChangeTypeQuery(entryTitle: strin
   const searchArray = entryTitle.split('-');
 
   if (searchArray.length > 0) {
-    whereClauseSearchTerm += `AND: [`;
-    searchArray.forEach((term: string) => {
-      whereClauseSearchTerm += `{title_contains: "${term}"}`;
-    });
-    whereClauseSearchTerm += `]`;
+    const titleFilters = searchArray
+      .map((term: string) => {
+        return `{ title: { contains: "${term}" } }`;
+      })
+      .join(', ');
+    whereClauseSearchTerm = titleFilters;
   }
 
   const query = new TypedDocumentString(`
@@ -26,10 +27,9 @@ export function getCustomEntryByTitleProductAndChangeTypeQuery(entryTitle: strin
     minimumPageSize: $first, 
     after: $after,
     filter: { AND: [
-      { releaseDate: { lessThan: $date } }
-      { sitecoreProduct: { containsAny: $productId } }
-      { changeType: { containsAny: $changeTypeIds } }
-      ${whereClauseSearchTerm}
+      { releaseDate: { lessThan: $date } },
+      { sitecoreProduct: { containsAny: $productIds } },
+      { changeType: { containsAny: $changeTypeIds } }${whereClauseSearchTerm ? `, ${whereClauseSearchTerm}` : ''}
     ] }
   ) {
     hasMore
@@ -106,6 +106,7 @@ fragment status on Status {
   system {
     id
     name
+    label
   }
   description
   identifier

@@ -51,7 +51,7 @@ const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps
           <ChangelogItemMeta item={item} />
         </CardHeader>
         <CardBody py={0}>
-          {item.image.length > 0 && (
+          {item.image.length > 0 && item.image[0].fileUrl && (
             <>
               <Image src={`${item.image[0].fileUrl}`} alt={item.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
 

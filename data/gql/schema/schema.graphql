@@ -224,27 +224,28 @@ input Changelog_changeType_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_changeType_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_changeType_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_changeType_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_changeType_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
-input Changelog_changeType_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations {
+input Changelog_changeType_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_changeType_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_changeType_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_changeType_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_changeType_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   changelog: Changelog_Filter
   changetype: Changetype_Filter
+  ref: Ref_Filter
   sampleArticle: SampleArticle_Filter
   sitecoreCloud: SitecoreCloud_Filter
   sitecoreProduct: SitecoreProduct_Filter
@@ -261,27 +262,28 @@ input Changelog_image_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_image_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_image_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_image_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_image_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
-input Changelog_image_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations {
+input Changelog_image_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_image_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_image_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_image_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_image_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   changelog: Changelog_Filter
   changetype: Changetype_Filter
+  ref: Ref_Filter
   sampleArticle: SampleArticle_Filter
   sitecoreCloud: SitecoreCloud_Filter
   sitecoreProduct: SitecoreProduct_Filter
@@ -298,27 +300,28 @@ input Changelog_sitecoreProduct_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_sitecoreProduct_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_sitecoreProduct_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_sitecoreProduct_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_sitecoreProduct_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
-input Changelog_sitecoreProduct_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations {
+input Changelog_sitecoreProduct_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_sitecoreProduct_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_sitecoreProduct_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_sitecoreProduct_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_sitecoreProduct_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   changelog: Changelog_Filter
   changetype: Changetype_Filter
+  ref: Ref_Filter
   sampleArticle: SampleArticle_Filter
   sitecoreCloud: SitecoreCloud_Filter
   sitecoreProduct: SitecoreProduct_Filter
@@ -335,27 +338,28 @@ input Changelog_status_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_status_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_status_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_status_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_status_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
-input Changelog_status_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations {
+input Changelog_status_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_status_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_status_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_status_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_status_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   changelog: Changelog_Filter
   changetype: Changetype_Filter
+  ref: Ref_Filter
   sampleArticle: SampleArticle_Filter
   sitecoreCloud: SitecoreCloud_Filter
   sitecoreProduct: SitecoreProduct_Filter
@@ -761,6 +765,55 @@ type MediaLibraryFragmentList {
   results: [MediaLibraryFragment]
 }
 
+"""
+Enum type used for sorting in FragmentMany query.
+"""
+enum MediaLibraryFragmentSortingOptions {
+  MEDIA_FILE_SIZE_ASC
+  MEDIA_FILE_SIZE_DESC
+  MEDIA_PUBLIC_LINK_ASC
+  MEDIA_PUBLIC_LINK_DESC
+  MEDIA_THUMBNAIL_LINK_ASC
+  MEDIA_THUMBNAIL_LINK_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
+}
+
+"""
+GraphQL filter for fragments.
+"""
+input MediaLibraryFragment_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [MediaLibraryFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [MediaLibraryFragment_Filter]
+  media_fileSize: DoubleFilterInput
+  media_publicLink: StringFilterInput
+  media_thumbnailLink: StringFilterInput
+  media_type: SelectFilterInput
+  system: SystemTypeFilterInput
+}
+
 enum PublishStatus {
   PREVIEW
   PUBLISHED
@@ -859,6 +912,42 @@ type Query {
     orderBy: ContentItemSortingOptions
   ): ContentItemList
   manyLocale: [Locale]
+  manyMediaLibraryFragment(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_MediaLibraryFragment
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: MediaLibraryFragmentSortingOptions
+  ): MediaLibraryFragmentList
+  manyRef(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_ref
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: RefSortingOptions
+  ): RefList
   manySitecoreCloud(
     """
     A cursor from a previous result.
@@ -941,6 +1030,44 @@ type Query {
     """
     orderBy: UploadSortingOptions
   ): UploadList
+  manyXMCMediaFragment(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_XMCMediaFragment
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: XMCMediaFragmentSortingOptions
+  ): XMCMediaFragmentList
+  mediaLibraryFragment(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): MediaLibraryFragment
+  ref(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): Ref
   sitecoreCloud(
     """
     The ID of the content item
@@ -987,6 +1114,136 @@ type Query {
     """
     locale: String!
   ): Upload
+  xMCMediaFragment(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): XMCMediaFragment
+}
+
+type Ref implements ContentItem {
+  reference(
+    after: String
+    """
+    A filter used for searching the reference items.
+    """
+    filter: Ref_reference_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  system: System!
+  title: String
+}
+
+"""
+Represents a list of content items.
+"""
+type RefList {
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [Ref]
+}
+
+"""
+Enum type used for sorting in QueryMany.
+"""
+enum RefSortingOptions {
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
+  TITLE_ASC
+  TITLE_DESC
+}
+
+"""
+GraphQL filter for content items.
+"""
+input Ref_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Ref_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Ref_Filter]
+  reference: ReferenceFilterInput
+  system: SystemTypeFilterInput
+  title: StringFilterInput
+}
+
+"""
+GraphQL root filter for content items references.
+"""
+input Ref_reference_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Ref_reference_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Ref_reference_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
+}
+
+"""
+Represents the input type for filtering references in GraphQL.
+"""
+input Ref_reference_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Ref_reference_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Ref_reference_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
+  changelog: Changelog_Filter
+  changetype: Changetype_Filter
+  ref: Ref_Filter
+  sampleArticle: SampleArticle_Filter
+  sitecoreCloud: SitecoreCloud_Filter
+  sitecoreProduct: SitecoreProduct_Filter
+  status: Status_Filter
+  system: SystemTypeFilterInput
+  upload: Upload_Filter
+  xMCMedia: XMCMedia_Filter
 }
 
 """
@@ -1034,6 +1291,20 @@ input Root_ContentItem {
 }
 
 """
+Root filter for fragments.
+"""
+input Root_MediaLibraryFragment {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [MediaLibraryFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [MediaLibraryFragment_Filter]
+}
+
+"""
 Root filter for content types.
 """
 input Root_Upload {
@@ -1045,6 +1316,20 @@ input Root_Upload {
   Combines multiple filter conditions.
   """
   OR: [Upload_Filter]
+}
+
+"""
+Root filter for fragments.
+"""
+input Root_XMCMediaFragment {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [XMCMediaFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [XMCMediaFragment_Filter]
 }
 
 """
@@ -1073,6 +1358,20 @@ input Root_changetype {
   Combines multiple filter conditions.
   """
   OR: [Changetype_Filter]
+}
+
+"""
+Root filter for content types.
+"""
+input Root_ref {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Ref_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Ref_Filter]
 }
 
 """
@@ -1213,27 +1512,28 @@ input SampleArticle_relatedArticles_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
-input SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations {
+input SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   changelog: Changelog_Filter
   changetype: Changetype_Filter
+  ref: Ref_Filter
   sampleArticle: SampleArticle_Filter
   sitecoreCloud: SitecoreCloud_Filter
   sitecoreProduct: SitecoreProduct_Filter
@@ -1241,6 +1541,30 @@ input SampleArticle_relatedArticles_SampleArticle__Upload__XMCMedia__changetype_
   system: SystemTypeFilterInput
   upload: Upload_Filter
   xMCMedia: XMCMedia_Filter
+}
+
+"""
+This type allows specifying a search over a Select field.
+"""
+input SelectFieldSearchInput {
+  """
+  Match if the ID is present in the list of selected terms.
+  """
+  id: String
+}
+
+"""
+GraphQL filter for select fields.
+"""
+input SelectFilterInput {
+  """
+  Checks if the selection includes the specified value.
+  """
+  contains: SelectFieldSearchInput
+  """
+  Checks if the selection does not include the specified value.
+  """
+  notContains: SelectFieldSearchInput
 }
 
 type SitecoreCloud implements ContentItem {
@@ -1436,27 +1760,28 @@ input SitecoreProduct_productIcon_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [SitecoreProduct_productIcon_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [SitecoreProduct_productIcon_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [SitecoreProduct_productIcon_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [SitecoreProduct_productIcon_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
-input SitecoreProduct_productIcon_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations {
+input SitecoreProduct_productIcon_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [SitecoreProduct_productIcon_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [SitecoreProduct_productIcon_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [SitecoreProduct_productIcon_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [SitecoreProduct_productIcon_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   changelog: Changelog_Filter
   changetype: Changetype_Filter
+  ref: Ref_Filter
   sampleArticle: SampleArticle_Filter
   sitecoreCloud: SitecoreCloud_Filter
   sitecoreProduct: SitecoreProduct_Filter
@@ -1473,27 +1798,28 @@ input SitecoreProduct_sitecoreCloud_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [SitecoreProduct_sitecoreCloud_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [SitecoreProduct_sitecoreCloud_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [SitecoreProduct_sitecoreCloud_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [SitecoreProduct_sitecoreCloud_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
-input SitecoreProduct_sitecoreCloud_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations {
+input SitecoreProduct_sitecoreCloud_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [SitecoreProduct_sitecoreCloud_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  AND: [SitecoreProduct_sitecoreCloud_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [SitecoreProduct_sitecoreCloud_SampleArticle__Upload__XMCMedia__changetype__sitecoreCloud__status__sitecoreProduct__changelog_Relations]
+  OR: [SitecoreProduct_sitecoreCloud_SampleArticle__Upload__XMCMedia__ref__sitecoreCloud__changetype__status__sitecoreProduct__changelog_Relations]
   changelog: Changelog_Filter
   changetype: Changetype_Filter
+  ref: Ref_Filter
   sampleArticle: SampleArticle_Filter
   sitecoreCloud: SitecoreCloud_Filter
   sitecoreProduct: SitecoreProduct_Filter
@@ -2007,6 +2333,48 @@ type XMCMediaFragmentList {
   The list of content items.
   """
   results: [XMCMediaFragment]
+}
+
+"""
+Enum type used for sorting in FragmentMany query.
+"""
+enum XMCMediaFragmentSortingOptions {
+  MMS_RELATIVE_PATH_ASC
+  MMS_RELATIVE_PATH_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
+}
+
+"""
+GraphQL filter for fragments.
+"""
+input XMCMediaFragment_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [XMCMediaFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [XMCMediaFragment_Filter]
+  mms_relativePath: StringFilterInput
+  system: SystemTypeFilterInput
 }
 
 """

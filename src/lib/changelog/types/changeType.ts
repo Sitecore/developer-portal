@@ -14,7 +14,7 @@ export function ParseChangeType(data: GetAllChangetypesQuery): Array<ChangeType>
   }
 
   return data.manyChangetype.results?.map((x) => ({
-    name: getStringValue(x?.system.name),
+    name: getStringValue(x?.changeType),
     changeType: getStringValue(x?.changeType),
     id: getStringValue(x?.system.id),
     type: slugify(getStringValue(x?.system.name)),

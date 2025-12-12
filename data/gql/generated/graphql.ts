@@ -162,19 +162,20 @@ export type Changelog_Filter = {
 /** GraphQL root filter for content items references. */
 export type Changelog_ChangeType_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations = {
+export type Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
+  ref: InputMaybe<Ref_Filter>;
   sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
@@ -187,19 +188,20 @@ export type Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Changetype__Si
 /** GraphQL root filter for content items references. */
 export type Changelog_Image_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type Changelog_Image_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations = {
+export type Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
+  ref: InputMaybe<Ref_Filter>;
   sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
@@ -212,19 +214,20 @@ export type Changelog_Image_SampleArticle__Upload__XmcMedia__Changetype__Sitecor
 /** GraphQL root filter for content items references. */
 export type Changelog_SitecoreProduct_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations = {
+export type Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
+  ref: InputMaybe<Ref_Filter>;
   sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
@@ -237,19 +240,20 @@ export type Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Changetyp
 /** GraphQL root filter for content items references. */
 export type Changelog_Status_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type Changelog_Status_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations = {
+export type Changelog_Status_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
+  ref: InputMaybe<Ref_Filter>;
   sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
@@ -496,6 +500,47 @@ export type MediaLibraryFragmentList = {
   results: Maybe<Array<Maybe<MediaLibraryFragment>>>;
 };
 
+/** Enum type used for sorting in FragmentMany query. */
+export enum MediaLibraryFragmentSortingOptions {
+  MediaFileSizeAsc = 'MEDIA_FILE_SIZE_ASC',
+  MediaFileSizeDesc = 'MEDIA_FILE_SIZE_DESC',
+  MediaPublicLinkAsc = 'MEDIA_PUBLIC_LINK_ASC',
+  MediaPublicLinkDesc = 'MEDIA_PUBLIC_LINK_DESC',
+  MediaThumbnailLinkAsc = 'MEDIA_THUMBNAIL_LINK_ASC',
+  MediaThumbnailLinkDesc = 'MEDIA_THUMBNAIL_LINK_DESC',
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
+}
+
+/** GraphQL filter for fragments. */
+export type MediaLibraryFragment_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<MediaLibraryFragment_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<MediaLibraryFragment_Filter>>>;
+  media_fileSize: InputMaybe<DoubleFilterInput>;
+  media_publicLink: InputMaybe<StringFilterInput>;
+  media_thumbnailLink: InputMaybe<StringFilterInput>;
+  media_type: InputMaybe<SelectFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
+};
+
 export enum PublishStatus {
   Preview = 'PREVIEW',
   Published = 'PUBLISHED',
@@ -511,16 +556,22 @@ export type Query = {
   manyChangetype: Maybe<ChangetypeList>;
   manyContentItem: Maybe<ContentItemList>;
   manyLocale: Maybe<Array<Maybe<Locale>>>;
+  manyMediaLibraryFragment: Maybe<MediaLibraryFragmentList>;
+  manyRef: Maybe<RefList>;
   manySitecoreCloud: Maybe<SitecoreCloudList>;
   manySitecoreProduct: Maybe<SitecoreProductList>;
   manyStatus: Maybe<StatusList>;
   manyTaxonomy: Maybe<TaxonomyList>;
   manyUpload: Maybe<UploadList>;
+  manyXMCMediaFragment: Maybe<XmcMediaFragmentList>;
+  mediaLibraryFragment: Maybe<MediaLibraryFragment>;
+  ref: Maybe<Ref>;
   sitecoreCloud: Maybe<SitecoreCloud>;
   sitecoreProduct: Maybe<SitecoreProduct>;
   status: Maybe<Status>;
   taxonomy: Maybe<Taxonomy>;
   upload: Maybe<Upload>;
+  xMCMediaFragment: Maybe<XmcMediaFragment>;
 };
 
 export type QueryChangelogArgs = {
@@ -563,6 +614,20 @@ export type QueryManyContentItemArgs = {
   orderBy: InputMaybe<ContentItemSortingOptions>;
 };
 
+export type QueryManyMediaLibraryFragmentArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_MediaLibraryFragment>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<MediaLibraryFragmentSortingOptions>;
+};
+
+export type QueryManyRefArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_Ref>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<RefSortingOptions>;
+};
+
 export type QueryManySitecoreCloudArgs = {
   after: InputMaybe<Scalars['String']['input']>;
   filter: InputMaybe<Root_SitecoreCloud>;
@@ -596,6 +661,23 @@ export type QueryManyUploadArgs = {
   orderBy: InputMaybe<UploadSortingOptions>;
 };
 
+export type QueryManyXmcMediaFragmentArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_XmcMediaFragment>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<XmcMediaFragmentSortingOptions>;
+};
+
+export type QueryMediaLibraryFragmentArgs = {
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
+};
+
+export type QueryRefArgs = {
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
+};
+
 export type QuerySitecoreCloudArgs = {
   id: Scalars['ID']['input'];
   locale: Scalars['String']['input'];
@@ -618,6 +700,97 @@ export type QueryTaxonomyArgs = {
 export type QueryUploadArgs = {
   id: Scalars['ID']['input'];
   locale: Scalars['String']['input'];
+};
+
+export type QueryXMcMediaFragmentArgs = {
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
+};
+
+export type Ref = ContentItem & {
+  reference: Maybe<ContentItemList>;
+  system: System;
+  title: Maybe<Scalars['String']['output']>;
+};
+
+export type RefReferenceArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Ref_Reference_Relations>;
+  minimumPageSize?: InputMaybe<Scalars['Int']['input']>;
+  orderBy: InputMaybe<ContentItemSortingOptions>;
+};
+
+/** Represents a list of content items. */
+export type RefList = {
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
+  results: Maybe<Array<Maybe<Ref>>>;
+};
+
+/** Enum type used for sorting in QueryMany. */
+export enum RefSortingOptions {
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
+  TitleAsc = 'TITLE_ASC',
+  TitleDesc = 'TITLE_DESC',
+}
+
+/** GraphQL filter for content items. */
+export type Ref_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Ref_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Ref_Filter>>>;
+  reference: InputMaybe<ReferenceFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
+  title: InputMaybe<StringFilterInput>;
+};
+
+/** GraphQL root filter for content items references. */
+export type Ref_Reference_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Ref_Reference_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Ref_Reference_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+};
+
+/** Represents the input type for filtering references in GraphQL. */
+export type Ref_Reference_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Ref_Reference_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Ref_Reference_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  changelog: InputMaybe<Changelog_Filter>;
+  changetype: InputMaybe<Changetype_Filter>;
+  ref: InputMaybe<Ref_Filter>;
+  sampleArticle: InputMaybe<SampleArticle_Filter>;
+  sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
+  sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
+  status: InputMaybe<Status_Filter>;
+  system: InputMaybe<SystemTypeFilterInput>;
+  upload: InputMaybe<Upload_Filter>;
+  xMCMedia: InputMaybe<XmcMedia_Filter>;
 };
 
 /** GraphQL filter for reference fields. */
@@ -644,12 +817,28 @@ export type Root_ContentItem = {
   OR: InputMaybe<Array<InputMaybe<ContentItem_Filter>>>;
 };
 
+/** Root filter for fragments. */
+export type Root_MediaLibraryFragment = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<MediaLibraryFragment_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<MediaLibraryFragment_Filter>>>;
+};
+
 /** Root filter for content types. */
 export type Root_Upload = {
   /** Combines multiple filter conditions. */
   AND: InputMaybe<Array<InputMaybe<Upload_Filter>>>;
   /** Combines multiple filter conditions. */
   OR: InputMaybe<Array<InputMaybe<Upload_Filter>>>;
+};
+
+/** Root filter for fragments. */
+export type Root_XmcMediaFragment = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<XmcMediaFragment_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<XmcMediaFragment_Filter>>>;
 };
 
 /** Root filter for content types. */
@@ -666,6 +855,14 @@ export type Root_Changetype = {
   AND: InputMaybe<Array<InputMaybe<Changetype_Filter>>>;
   /** Combines multiple filter conditions. */
   OR: InputMaybe<Array<InputMaybe<Changetype_Filter>>>;
+};
+
+/** Root filter for content types. */
+export type Root_Ref = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Ref_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Ref_Filter>>>;
 };
 
 /** Root filter for content types. */
@@ -749,19 +946,20 @@ export type SampleArticle_Filter = {
 /** GraphQL root filter for content items references. */
 export type SampleArticle_RelatedArticles_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations = {
+export type SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
+  ref: InputMaybe<Ref_Filter>;
   sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
@@ -769,6 +967,20 @@ export type SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Chang
   system: InputMaybe<SystemTypeFilterInput>;
   upload: InputMaybe<Upload_Filter>;
   xMCMedia: InputMaybe<XmcMedia_Filter>;
+};
+
+/** This type allows specifying a search over a Select field. */
+export type SelectFieldSearchInput = {
+  /** Match if the ID is present in the list of selected terms. */
+  id: InputMaybe<Scalars['String']['input']>;
+};
+
+/** GraphQL filter for select fields. */
+export type SelectFilterInput = {
+  /** Checks if the selection includes the specified value. */
+  contains: InputMaybe<SelectFieldSearchInput>;
+  /** Checks if the selection does not include the specified value. */
+  notContains: InputMaybe<SelectFieldSearchInput>;
 };
 
 export type SitecoreCloud = ContentItem & {
@@ -912,19 +1124,20 @@ export type SitecoreProduct_Filter = {
 /** GraphQL root filter for content items references. */
 export type SitecoreProduct_ProductIcon_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations = {
+export type SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
+  ref: InputMaybe<Ref_Filter>;
   sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
@@ -937,19 +1150,20 @@ export type SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Changet
 /** GraphQL root filter for content items references. */
 export type SitecoreProduct_SitecoreCloud_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations = {
+export type SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Changetype__SitecoreCloud__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
+  ref: InputMaybe<Ref_Filter>;
   sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
@@ -1281,6 +1495,40 @@ export type XmcMediaFragmentList = {
   results: Maybe<Array<Maybe<XmcMediaFragment>>>;
 };
 
+/** Enum type used for sorting in FragmentMany query. */
+export enum XmcMediaFragmentSortingOptions {
+  MmsRelativePathAsc = 'MMS_RELATIVE_PATH_ASC',
+  MmsRelativePathDesc = 'MMS_RELATIVE_PATH_DESC',
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
+}
+
+/** GraphQL filter for fragments. */
+export type XmcMediaFragment_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<XmcMediaFragment_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<XmcMediaFragment_Filter>>>;
+  mms_relativePath: InputMaybe<StringFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
+};
+
 /** Represents a list of content items. */
 export type XmcMediaList = {
   /** The pagination cursor. */
@@ -1317,14 +1565,14 @@ export type ChangelogEntryFragment = {
   image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
   sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
   changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
-  status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+  status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
 };
 
 export type MediaFragment = { media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } };
 
 export type ProductFragment = { productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } };
 
-export type StatusFragment = { description: string | null; identifier: string | null; system: { id: string; name: string } };
+export type StatusFragment = { description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } };
 
 export type GetAllChangetypesQueryVariables = Exact<{ [key: string]: never }>;
 
@@ -1342,7 +1590,9 @@ export type GetAllProductsQuery = {
 
 export type GetAllStatusQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetAllStatusQuery = { manyStatus: { hasMore: boolean | null; cursor: string | null; results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string } } | null> | null } | null };
+export type GetAllStatusQuery = {
+  manyStatus: { hasMore: boolean | null; cursor: string | null; results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | null> | null } | null;
+};
 
 export type GetLatestEntriesQueryVariables = Exact<{
   first?: Scalars['Int']['input'];
@@ -1367,7 +1617,7 @@ export type GetLatestEntriesQuery = {
       image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
       sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
       changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
-      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
@@ -1382,7 +1632,7 @@ export type GetStatusByIdentifierQueryVariables = Exact<{
   identifier: Scalars['ID']['input'];
 }>;
 
-export type GetStatusByIdentifierQuery = { status: { description: string | null; identifier: string | null; system: { id: string; name: string } } | null };
+export type GetStatusByIdentifierQuery = { status: { description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | null };
 
 export type SearchByDateQueryVariables = Exact<{
   startDate: Scalars['CustomDateTime']['input'];
@@ -1408,7 +1658,7 @@ export type SearchByDateQuery = {
       image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
       sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
       changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
-      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
@@ -1438,7 +1688,7 @@ export type SearchByProductQuery = {
       image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
       sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
       changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
-      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
@@ -1468,7 +1718,7 @@ export type SearchByProductsAndChangeTypesQuery = {
       image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
       sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
       changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
-      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
@@ -1499,7 +1749,7 @@ export type SearchByProductsAndChangeTypesAndBreakingChangeQuery = {
       image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
       sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
       changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
-      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
@@ -1526,7 +1776,7 @@ export type SearchByTitleQuery = {
       image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
       sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
       changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
-      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
@@ -1595,6 +1845,7 @@ export const StatusFragmentDoc = new TypedDocumentString(
   system {
     id
     name
+    label
   }
   description
   identifier
@@ -1673,6 +1924,7 @@ fragment status on Status {
   system {
     id
     name
+    label
   }
   description
   identifier
@@ -1730,6 +1982,7 @@ export const GetAllStatusDocument = new TypedDocumentString(`
   system {
     id
     name
+    label
   }
   description
   identifier
@@ -1818,6 +2071,7 @@ fragment status on Status {
   system {
     id
     name
+    label
   }
   description
   identifier
@@ -1847,6 +2101,7 @@ export const GetStatusByIdentifierDocument = new TypedDocumentString(`
   system {
     id
     name
+    label
   }
   description
   identifier
@@ -1934,6 +2189,7 @@ fragment status on Status {
   system {
     id
     name
+    label
   }
   description
   identifier
@@ -2022,6 +2278,7 @@ fragment status on Status {
   system {
     id
     name
+    label
   }
   description
   identifier
@@ -2110,6 +2367,7 @@ fragment status on Status {
   system {
     id
     name
+    label
   }
   description
   identifier
@@ -2198,6 +2456,7 @@ fragment status on Status {
   system {
     id
     name
+    label
   }
   description
   identifier
@@ -2285,6 +2544,7 @@ fragment status on Status {
   system {
     id
     name
+    label
   }
   description
   identifier

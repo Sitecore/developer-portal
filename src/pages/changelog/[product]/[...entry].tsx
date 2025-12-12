@@ -138,7 +138,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     )}
                   </CardHeader>
                   <CardBody py={0}>
-                    {changelogEntry.image.length > 0 && changelogEntry.image[0].fileType.includes('image') && (
+                    {changelogEntry.image.length > 0 && changelogEntry.image[0].fileType?.includes('image') && changelogEntry.image[0].fileUrl && (
                       <>
                         <Image src={`${changelogEntry.image[0].fileUrl}`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
 
@@ -164,9 +164,9 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     )}
                     <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
 
-                    {changelogEntry.image.filter((img) => img.fileType.includes('pdf')).length > 0 &&
+                    {changelogEntry.image.filter((img) => img.fileType?.includes('pdf')).length > 0 &&
                       changelogEntry.image
-                        .filter((img) => img.fileType.includes('pdf'))
+                        .filter((img) => img.fileType?.includes('pdf'))
                         .map((pdf, index) => {
                           return (
                             <LinkButton

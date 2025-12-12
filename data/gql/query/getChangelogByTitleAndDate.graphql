@@ -1,0 +1,9 @@
+query getChangelogByTitleAndDate($title: String!, $startDate: CustomDateTime!, $endDate: CustomDateTime!) {
+  data: manyChangelog(minimumPageSize: 1, filter: { AND: [{ title: { equals: $title } }, { releaseDate: { inRange: { from: $startDate, to: $endDate } } }] }) {
+    results {
+      ...changelogEntry
+    }
+    hasMore
+    cursor
+  }
+}

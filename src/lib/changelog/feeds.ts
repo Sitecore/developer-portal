@@ -23,6 +23,10 @@ export function CreateFeed(changelogEntryList: ChangelogEntryList<Array<Changelo
   });
 
   changelogEntryList.entries.forEach((changelogEntry: ChangelogEntry) => {
+    const imageUrl = changelogEntry.image.length > 0 && changelogEntry.image[0]?.fileUrl 
+      ? changelogEntry.image[0].fileUrl.concat('?transform=true') 
+      : '';
+    
     feed.addItem({
       guid: changelogEntry.id,
       title: changelogEntry.title,
@@ -30,7 +34,7 @@ export function CreateFeed(changelogEntryList: ChangelogEntryList<Array<Changelo
       content: changelogEntry.fullArticle ? changelogEntry.fullArticle : '',
       link: `${publicUrl}/${getChangelogEntryUrl(changelogEntry)}`,
       date: new Date(changelogEntry.releaseDate),
-      image: changelogEntry.image.length > 0 ? changelogEntry.image[0].fileUrl.concat('?transform=true') : '',
+      image: imageUrl,
     });
   });
 

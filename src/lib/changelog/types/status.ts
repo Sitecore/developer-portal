@@ -27,7 +27,7 @@ export function ParseStatus(data: GetAllStatusQuery): Array<Status> {
 
   return data.manyStatus?.results.map((x) => {
     return {
-      name: getStringValue(x?.system.name),
+      name: getStringValue(x?.system.label),
       id: getStringValue(x?.system.id),
       identifier: getStringValue(x?.identifier),
       description: getStringValue(x?.description),

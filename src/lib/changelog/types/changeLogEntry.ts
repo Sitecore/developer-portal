@@ -73,8 +73,32 @@ export function parseChangeLogItem(changelog: any): ChangelogEntry {
     scheduled: changelog.scheduled ? changelog.scheduled : false,
     changeType: changelog.changeType?.results ?? [],
     version: changelog.x_version ?? '',
-    releaseDate: new Date(clearTimeStamp(changelog.releaseDate)).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
-    image: changelog.image?.results ?? [],
+    releaseDate: changelog.releaseDate
+      ? (() => {
+          const dateString = clearTimeStamp(changelog.releaseDate);
+          if (!dateString) {
+            return '';
+          }
+          const date = new Date(dateString);
+          if (isNaN(date.getTime())) {
+            console.warn(`Invalid date: ${changelog.releaseDate}`);
+            return '';
+          }
+          return date.toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' });
+        })()
+      : '',
+    image: (changelog.image?.results ?? []).map((img: any) => ({
+      id: getStringValue(img?.system?.id),
+      name: getStringValue(img?.system?.name),
+      fileName: getStringValue(img?.system?.name),
+      fileUrl: img?.media_publicLink ?? '',
+      description: '',
+      fileWidth: 0,
+      fileHeight: 0,
+      fileId: getStringValue(img?.system?.id),
+      fileSize: '',
+      fileType: img?.media_type?.[0]?.name ?? '',
+    })),
     lightIcon: changelog.sitecoreProduct?.results[0]?.lightIcon ?? '',
     darkIcon: changelog.sitecoreProduct?.results[0]?.darkIcon ?? '',
     productName: changelog.sitecoreProduct?.results[0]?.productName ?? null,
