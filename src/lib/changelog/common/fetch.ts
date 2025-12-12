@@ -4,7 +4,12 @@ import axios from 'axios';
 import axiosThrottle from 'axios-request-throttle';
 
 export async function fetchGraphQL<TResult, TVariables>(document: TypedDocumentString<TResult, TVariables> | string, credentials: ChangelogCredentials, preview?: boolean, ...[variables]: TVariables extends Record<string, never> ? [] : [TVariables]) {
-  const environment = preview ? credentials.preview : credentials.production;
+  
+  let environment = preview ? credentials.preview : credentials.production;
+
+  // TODO: Remove this once we have published content
+  environment = credentials.preview;
+
   const endpoint = environment.endpoint;
   const token = environment.token;
 
@@ -37,8 +42,18 @@ export async function fetchGraphQL<TResult, TVariables>(document: TypedDocumentS
     }
 
     return response.data;
-  } catch (err) {
-    console.log(err);
+  } catch (err: any) {
+    if (err.response?.data) {
+      console.error('GraphQL Request Error:', {
+        status: err.response.status,
+        statusText: err.response.statusText,
+        data: err.response.data,
+        query: typeof document === 'string' ? document.substring(0, 200) : 'TypedDocumentString',
+        variables: variables,
+      });
+    } else {
+      console.error('GraphQL Request Error:', err);
+    }
 
     return null;
   }

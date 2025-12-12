@@ -1,4 +1,4 @@
-import { GetLatestEntriesQuery } from '@data/gql/generated/graphql';
+import { SearchByDateQuery, SearchByProductQuery, SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesAndBreakingChangeQuery } from '@data/gql/generated/graphql';
 import { clearTimeStamp, getStringValue } from '@lib/utils';
 import { generateHTML } from '@tiptap/html';
 
@@ -40,7 +40,7 @@ export type ChangelogEntry = ChangelogEntrySummary & {
   image: Array<Media>;
 };
 
-export function ParseRawData(data: GetLatestEntriesQuery | null): ChangelogEntryList<Array<ChangelogEntry>> {
+export function ParseRawData(data: SearchByDateQuery | SearchByProductQuery | SearchByProductsAndChangeTypesQuery | SearchByProductsAndChangeTypesAndBreakingChangeQuery | null): ChangelogEntryList<Array<ChangelogEntry>> {
   if (data == null || !data.changelog?.results) {
     return {
       endCursor: '',

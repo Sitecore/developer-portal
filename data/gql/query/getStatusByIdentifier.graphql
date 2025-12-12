@@ -1,5 +1,0 @@
-query GetStatusByIdentifier($identifier: ID!) {
-  status(id: $identifier, locale: "") {
-    ...status
-  }
-}
