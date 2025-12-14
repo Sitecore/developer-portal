@@ -92,7 +92,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
         >
           <CenteredContent>
             <Image 
-              src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/4c9ff81f3b9c40be9c1552f3ea21cfd5?v=601c8243" 
+              src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/1f173e4830ef499bbfed583245f41e23?v=ee01a64a" 
               alt="Logo" 
               width="280px" 
               height="67px"

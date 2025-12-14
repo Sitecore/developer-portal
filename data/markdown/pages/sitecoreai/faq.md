@@ -39,6 +39,11 @@ hasInPageNav: true
   <p>Content Hub is part of the overall SitecoreAI package and is included in the entitlements purchased by you. For now, it will continue to operate as a separate application that can be provisioned on request; it is not automatically provisioned. </p>
 </details>
 
+<details>
+  <summary><strong>What if I do not have XM Cloud?</strong></summary>
+  <p>Speak to your Account team for further details on how you can transition from your current product to SitecoreAI. </p>
+</details>
+
 
 ## Platform features and capabilities
 
