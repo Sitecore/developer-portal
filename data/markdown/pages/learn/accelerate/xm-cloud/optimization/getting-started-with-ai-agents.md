@@ -25,7 +25,7 @@ An agent is a specialised AI-powered system that acts autonomously to complete t
 > The following prompts are provided as guided examples and should be tailored to your requirements and setup. Please ensure thorough testing is conducted to validate its usability.
 
 ### AEO/SEO researcher
-This agent digs into your priority topics or burning questions, then delivers a cited report with relevant links and sources. It’s built for anyone who needs insights – from marketing, to sales, and planning.
+This agent audits your key pages, keywords, and competitor list, then generates a structured report on technical SEO (Search Engine Optimisation) and AI-readiness for generative search engines. To get started copy the prompt below and adapt it:
 
 Make sure that as part of your prompt, or files provided, you provide:
 - URL/URLs including URLs files.
