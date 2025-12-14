@@ -15,7 +15,7 @@ cdpTags: ['search']
 
 Predict search intent and display individualized results with a personalized search experience. Unifying easy-to-find content, Driving visitor engagement & displaying results fast\.
 
-> With the release of SitecoreAI, further information can be found in [Converstion optimization](/sitecoreai/capabilities/converstion-optimization).
+> With the release of SitecoreAI, further information can be found in [Conversion optimization](/sitecoreai/capabilities/conversion-optimization).
 
 
 ## Getting Started

@@ -40,23 +40,23 @@
           "title": "Content management",
           "path": "/capabilities/cms"
         },
-          {
+        {
           "title": "Digital asset management",
           "path": "/capabilities/dam"
         },
-                  {
+        {
           "title": "Content operations",
           "path": "/capabilities/content-ops"
         },
-                        {
+        {
           "title": "Conversion optimization",
-          "path": "/capabilities/converstion-optimization"
+          "path": "/capabilities/conversion-optimization"
         },
-                                {
+        {
           "title": "Unified data layer",
           "path": "/capabilities/unified-data-layer"
         },
-                {
+        {
           "title": "Commerce",
           "path": "/capabilities/commerce"
         }

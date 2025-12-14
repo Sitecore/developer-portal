@@ -14,7 +14,7 @@ guidedDemoId: 'cls5674xs000b0flaaan84az6'
 
 Sitecore Personalize brings together real-time behavioral insights and all your customer data so you can understand and engage every customer (and anonymous visitors) instantly.
 
-> With the release of SitecoreAI, further information can be found in [Converstion optimization](/sitecoreai/capabilities/converstion-optimization).
+> With the release of SitecoreAI, further information can be found in [Conversion optimization](/sitecoreai/capabilities/conversion-optimization).
 
 ## Documentation
 

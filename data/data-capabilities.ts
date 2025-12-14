@@ -19,21 +19,21 @@ const platformData = {
       img: {
         src: '/images/capabilities/content-management.svg',
         width: 48,
-        height: 48
+        height: 48,
       },
-       icon: ContentManagementSystemIcon
+      icon: ContentManagementSystemIcon,
     },
     {
       title: 'Digital asset management',
       description: 'Organize, find, and deliver assets fast with a platform that fuels creativity and control.',
-      href:'/sitecoreai/capabilities/dam',
+      href: '/sitecoreai/capabilities/dam',
       linkText: 'Explore',
       img: {
         src: '/images/capabilities/digital-asset-management.svg',
         width: 48,
-        height: 48
+        height: 48,
       },
-       icon: DigitalAssetManagementIcon,
+      icon: DigitalAssetManagementIcon,
     },
     {
       title: 'Content operations',
@@ -43,48 +43,47 @@ const platformData = {
       img: {
         src: '/images/capabilities/content-operations.svg',
         width: 48,
-        height: 48
+        height: 48,
       },
-             icon: ContentOperationsIcon,
-
+      icon: ContentOperationsIcon,
     },
     {
       title: 'Unified data layer',
       description: 'Unlock your customer data to inform every interaction with real-time insights.',
-      href: '/sitecoreai/capabilities/united-data-layer',
+      href: '/sitecoreai/capabilities/unified-data-layer',
       linkText: 'Explore',
       img: {
         src: '/images/capabilities/audience-and-insights.svg',
         width: 48,
-        height: 48
+        height: 48,
       },
-             icon: AudiencesIntelligenceIcon
+      icon: AudiencesIntelligenceIcon,
     },
     {
       title: 'Conversion optimization',
       description: 'Personalize every experience with intelligence that understands your customers.',
-      href:'/sitecoreai/capabilities/converstion-optimization',
+      href: '/sitecoreai/capabilities/conversion-optimization',
       linkText: 'Explore',
       img: {
         src: '/images/capabilities/search-and-personalization.svg',
         width: 48,
-        height: 48
+        height: 48,
       },
-             icon: ConversionOptimizationIcon
+      icon: ConversionOptimizationIcon,
     },
     {
       title: 'Commerce ',
       description: 'Deliver buying experiences that grow with your business.',
-      href:'/sitecoreai/capabilities/commerce',
+      href: '/sitecoreai/capabilities/commerce',
       linkText: 'Explore',
       img: {
         src: '/images/capabilities/commerce.svg',
         width: 48,
-        height: 48
+        height: 48,
       },
-             icon: CommerceIcon
-    }
-  ]
+      icon: CommerceIcon,
+    },
+  ],
 };
 
 export default platformData;
