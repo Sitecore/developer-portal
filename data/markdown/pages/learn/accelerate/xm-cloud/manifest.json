@@ -369,6 +369,10 @@
       "ignoreLink": true,
       "children": [
         {
+          "title": "AI Agents",
+          "path": "getting-started-with-ai-agents"
+        },           
+        {
           "title": "Data Fetching Optimizaton",
           "path": "data-fetching-optimization"
         },        

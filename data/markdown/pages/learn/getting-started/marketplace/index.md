@@ -183,7 +183,7 @@ Marketplace SDK (v1) helps apps talk securely with Sitecore, making it easier to
 To simplify dependencies you should keep your Marketplace apps dedicated to a single topic. E.g. serving different extension points displaying Google Analytics data should be served from one app. The additional AI translation tool should be a separate app.
 
 ### How can developers test apps running on their local developer machine, without other users seeing them?
-You can register your local app similar to to a deployed app through the Developer studio UI. Ideally you only register local running apps on non-prod environments. |
+You can register your local app similar to a deployed app through the Developer studio UI. Ideally you only register local running apps on non-prod environments. |
 
 ## Read more
 <Row columns={3}>

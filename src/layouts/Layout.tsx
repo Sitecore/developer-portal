@@ -2,7 +2,6 @@
 import { Alert, AlertDescription, AlertIcon, Box, BoxProps, VisuallyHidden } from '@chakra-ui/react';
 import React from 'react';
 import ScrollToTop from '../components/navigation/ScrollToTop';
-import AutoTooltip from '../components/ui/AutoTooltip';
 import { usePreview } from '../context/PreviewContext';
 import Meta from './Meta';
 
@@ -24,12 +23,7 @@ const Layout = ({ title, description = '', openGraphImage, baseTitle, section, c
     <Box as="main" {...rest}>
       <Meta title={title} description={description} baseTitle={baseTitle} section={section} openGraphImageUrl={openGraphImage} />
       
-          <AutoTooltip
-            title="Experience SitecoreAI and beyond"
-            description="Join us for the launch of SitecoreAI, the next-dimension DXP for the AI era. Discover how AI is transforming digital experience management and explore new updates across the Sitecore product portfolio. "
-            linkHref="https://www.sitecore.com/resources/events-webinars/2025/11/post-symposium-product-update"
-            linkText="Reserve your spot today"
-          />
+     
 
       <VisuallyHidden>
         <a href="#main-content">Skip to main content</a>
