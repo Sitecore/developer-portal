@@ -1,3 +1,4 @@
+import { MediaFragment } from '@data/gql/generated/graphql';
 import { getStringValue } from '@lib/utils';
 
 export type Media = {
@@ -20,29 +21,37 @@ export type MediaResults = {
 
 /**
  * Parse a single Media item from raw GraphQL data
+ * @param rawItem - GraphQL MediaFragment result
+ * @returns Parsed Media
  */
-export function parseMediaItem(rawItem: any): Media {
+export function parseMediaItem(rawItem: MediaFragment | null | undefined): Media {
+  if (!rawItem) {
+    throw new Error('Invalid Media: rawItem is null or undefined');
+  }
+
   return {
-    id: getStringValue(rawItem?.system?.id),
-    name: getStringValue(rawItem?.system?.name),
-    fileName: getStringValue(rawItem?.system?.name),
-    fileUrl: rawItem?.media_publicLink ?? '',
+    id: getStringValue(rawItem.system?.id),
+    name: getStringValue(rawItem.system?.name),
+    fileName: getStringValue(rawItem.system?.name),
+    fileUrl: rawItem.media_publicLink ?? '',
     description: '',
     fileWidth: 0,
     fileHeight: 0,
-    fileId: getStringValue(rawItem?.system?.id),
+    fileId: getStringValue(rawItem.system?.id),
     fileSize: '',
-    fileType: rawItem?.media_type?.[0]?.name ?? '',
+    fileType: rawItem.media_type?.[0]?.name ?? '',
   };
 }
 
 /**
  * Parse multiple Media items from raw GraphQL data array
+ * @param rawItems - Array of GraphQL MediaFragment results
+ * @returns Array of parsed Media items
  */
-export function parseMediaItems(rawItems: any[] | null | undefined): Array<Media> {
+export function parseMediaItems(rawItems: Array<MediaFragment | null> | null | undefined): Array<Media> {
   if (!rawItems) {
     return [];
   }
 
-  return rawItems.map((img) => parseMediaItem(img));
+  return rawItems.filter((img): img is MediaFragment => img !== null).map((img) => parseMediaItem(img));
 }
