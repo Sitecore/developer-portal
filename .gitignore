@@ -49,3 +49,4 @@ sitemap*.xml
 node_modules
 
 *storybook.log
+.env.sandbox
