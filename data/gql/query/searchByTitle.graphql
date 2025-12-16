@@ -1,21 +1,9 @@
-query searchByTitle(
-    $date: CustomDateTime
-    $productId: [String!]
-) {
-    data: manyChangelog(
-        orderBy: RELEASE_DATE_DESC
-        minimumPageSize: 1
-        filter: {
-            AND: [
-                { releaseDate: { lessThan: $date } }
-                { sitecoreProduct: { containsAny: $productId } }
-            ]
-        }
-    ) {
-        results {
-            ...changelogEntry
-        }
-        hasMore
-        cursor
+query searchByTitle($date: CustomDateTime, $productId: [String!], $entryTitle: [String!]) {
+  data: manyChangelog(orderBy: RELEASE_DATE_DESC, minimumPageSize: 1, filter: { AND: [{ releaseDate: { lessThan: $date } }, { sitecoreProduct: { containsAny: $productId } }, { title: { containsAll: $entryTitle, case: INSENSITIVE } }] }) {
+    hasMore
+    cursor
+    results {
+      ...changelogEntry
     }
+  }
 }

@@ -1,0 +1,13 @@
+query searchByTitleAndDate($startDate: CustomDateTime!, $endDate: CustomDateTime!, $productId: String!, $entryTitle: [String!]) {
+  data: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: 1
+    filter: { AND: [{ releaseDate: { inRange: { from: $startDate, to: $endDate } } }, { sitecoreProduct: { contains: $productId } }, { title: { containsAll: $entryTitle, case: INSENSITIVE } }] }
+  ) {
+    results {
+      ...changelogEntry
+    }
+    hasMore
+    cursor
+  }
+}

@@ -1,5 +1,3 @@
-import { getCustomEntryByTitleAndDateQuery, SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables } from '@data/gql/custom/getCustomEntryByTitleAndDateQuery';
-import { getCustomEntryByTitleQuery } from '@data/gql/custom/getCustomEntryByTitleQuery';
 import {
   GetAllChangetypesDocument,
   GetAllChangetypesQuery,
@@ -22,14 +20,17 @@ import {
   SearchByProductsAndChangeTypesAndBreakingChangeDocument,
   SearchByProductsAndChangeTypesAndBreakingChangeQuery,
   SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables,
+  SearchByProductsAndChangeTypesDocument,
   SearchByProductsAndChangeTypesQuery,
   SearchByProductsAndChangeTypesQueryVariables,
+  SearchByTitleAndDateDocument,
+  SearchByTitleAndDateQuery,
+  SearchByTitleAndDateQueryVariables,
+  SearchByTitleDocument,
   SearchByTitleQuery,
   SearchByTitleQueryVariables,
 } from '@data/gql/generated/graphql';
 
-import { getCustomEntryByTitleProductAndChangeTypeQuery } from '@/data/gql/custom/getCustomEntryByTitleProductAndChangeTypeQuery';
-import { getSearchByProductsAndChangeTypesQuery } from '@/data/gql/custom/getSearchByProductsAndChangeTypesQuery';
 import { getSelectedIds } from './common/changelog';
 import { fetchGraphQL } from './common/fetch';
 import { ParseStatus, Status } from './types';
@@ -54,16 +55,16 @@ function getCacheKey(productId: string, preview: boolean): string {
 function getCachedEntryCount(productId: string, preview: boolean): number | null {
   const key = getCacheKey(productId, preview);
   const entry = entryCountCache.get(key);
-  
+
   if (!entry) {
     return null;
   }
-  
+
   if (Date.now() > entry.expiresAt) {
     entryCountCache.delete(key);
     return null;
   }
-  
+
   return entry.value;
 }
 
@@ -88,25 +89,25 @@ export class Changelog {
     return this.getEntries({ pageSize: 10 });
   }
 
-  async getEntryByTitleAndDate(entryTitle: string, date: string, productId?: string): Promise<ChangelogEntry> {
+  async getEntryByTitleAndDate(entryTitle: string, date: string, productId: string): Promise<ChangelogEntry> {
     const formattedDate = `${date.slice(4, 8)}-${date.slice(2, 4)}-${date.slice(0, 2)}`;
     const parsedDate = new Date(formattedDate);
 
     const _startDate = new Date(parsedDate);
-
     _startDate.setDate(parsedDate.getDate() - 1);
 
     const _endDate = new Date(parsedDate);
-
     _endDate.setDate(parsedDate.getDate() + 1);
 
-    const productIds = productId ? [productId] : [];
-    const CustomEntryByTitleDocument = getCustomEntryByTitleAndDateQuery(entryTitle, productIds);
+    if (!entryTitle) {
+      throw new Error('Entry title is required to search by title and date');
+    }
 
-    const response = await fetchGraphQL<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables>(CustomEntryByTitleDocument, this.credentials, this.isPreview, {
+    const response = await fetchGraphQL<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables>(SearchByTitleAndDateDocument, this.credentials, this.isPreview, {
       startDate: _startDate,
       endDate: _endDate,
-      productId: productIds.length > 0 ? productIds : null,
+      productId: productId,
+      entryTitle: entryTitle.split('-').map((term: string) => term.trim()),
     });
 
     if (!response.data?.data?.results || response.data.data.results.length === 0) {
@@ -117,10 +118,10 @@ export class Changelog {
   }
 
   async getEntryByTitle(entryTitle: string, productId?: string): Promise<ChangelogEntry> {
-    const CustomEntryByTitleDocument = getCustomEntryByTitleQuery(entryTitle);
-    const response = await fetchGraphQL<SearchByTitleQuery, SearchByTitleQueryVariables>(CustomEntryByTitleDocument, this.credentials, this.isPreview, {
+    const response = await fetchGraphQL<SearchByTitleQuery, SearchByTitleQueryVariables>(SearchByTitleDocument, this.credentials, this.isPreview, {
       date: new Date(),
       productId: productId ? [productId] : [],
+      entryTitle: entryTitle.split('-').map((term: string) => term.trim()),
     });
 
     if (!response.data?.data?.results || response.data.data.results.length === 0) {
@@ -182,14 +183,15 @@ export class Changelog {
       return this.getEntries({ productId, changeTypeId, pageSize, endCursor, breaking });
     }
 
-    const CustomEntryByTitleProductAndChangeTypeDocument = getCustomEntryByTitleProductAndChangeTypeQuery(entryTitle);
+    const entryTitleArray = entryTitle.split('-').map((term: string) => term.trim());
 
-    const response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(CustomEntryByTitleProductAndChangeTypeDocument, this.credentials, this.isPreview, {
+    const response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(SearchByProductsAndChangeTypesDocument, this.credentials, this.isPreview, {
       first: pageSize ? pageSize : 5,
       after: endCursor ?? '',
       date: new Date(),
       productIds: getSelectedIds(productId),
       changeTypeIds: getSelectedIds(changeTypeId),
+      entryTitle: entryTitleArray,
     });
 
     if (response == null) {
@@ -207,21 +209,22 @@ export class Changelog {
 
     let response;
     if (breaking == false) {
-      const queryDocument = getSearchByProductsAndChangeTypesQuery(productIds, changeTypeIds);
-      response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(queryDocument, this.credentials, this.isPreview, {
+      //const queryDocument = getSearchByProductsAndChangeTypesQuery(productIds, changeTypeIds);
+      response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(SearchByProductsAndChangeTypesDocument, this.credentials, this.isPreview, {
         first: pageSize ? pageSize : 5,
         after: endCursor ?? '',
         date: new Date(),
-        productIds: productIds.length > 0 ? productIds : null,
-        changeTypeIds: changeTypeIds.length > 0 ? changeTypeIds : null,
+        productIds: productIds.length > 0 ? productIds : [],
+        changeTypeIds: changeTypeIds.length > 0 ? changeTypeIds : [],
+        entryTitle: '',
       });
     } else {
       response = await fetchGraphQL<SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables>(SearchByProductsAndChangeTypesAndBreakingChangeDocument, this.credentials, this.isPreview, {
         first: pageSize ? pageSize : 5,
         after: endCursor ?? '',
         date: new Date(),
-        productIds: productIds,
-        changeTypeIds: changeTypeIds,
+        productIds: productIds.length > 0 ? productIds : [],
+        changeTypeIds: changeTypeIds.length > 0 ? changeTypeIds : [],
         breaking: breaking,
       });
     }

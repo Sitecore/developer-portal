@@ -1594,45 +1594,11 @@ export type GetAllStatusQuery = {
   manyStatus: { hasMore: boolean | null; cursor: string | null; results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | null> | null } | null;
 };
 
-export type GetLatestEntriesQueryVariables = Exact<{
-  first?: Scalars['Int']['input'];
-  after?: Scalars['String']['input'];
-  date: Scalars['CustomDateTime']['input'];
-}>;
-
-export type GetLatestEntriesQuery = {
-  changelog: {
-    hasMore: boolean | null;
-    cursor: string | null;
-    results: Array<{
-      title: string | null;
-      description: { [key: string]: any } | null;
-      fullArticle: { [key: string]: any } | null;
-      readMoreLink: string | null;
-      breakingChange: boolean | null;
-      x_version: string | null;
-      releaseDate: any | null;
-      scheduled: boolean | null;
-      system: { id: string; name: string };
-      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
-      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
-      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
-      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
-    } | null> | null;
-  } | null;
-};
-
 export type GetNumberOfEntriesByProductQueryVariables = Exact<{
   productId: Array<Scalars['String']['input']> | Scalars['String']['input'];
 }>;
 
 export type GetNumberOfEntriesByProductQuery = { changelog: { hasMore: boolean | null; results: Array<{ system: { id: string } } | null> | null } | null };
-
-export type GetStatusByIdentifierQueryVariables = Exact<{
-  identifier: Scalars['ID']['input'];
-}>;
-
-export type GetStatusByIdentifierQuery = { status: { description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | null };
 
 export type SearchByDateQueryVariables = Exact<{
   startDate: Scalars['CustomDateTime']['input'];
@@ -1697,6 +1663,7 @@ export type SearchByProductsAndChangeTypesQueryVariables = Exact<{
   date: InputMaybe<Scalars['CustomDateTime']['input']>;
   productIds: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
   changeTypeIds?: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+  entryTitle: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -1757,9 +1724,39 @@ export type SearchByProductsAndChangeTypesAndBreakingChangeQuery = {
 export type SearchByTitleQueryVariables = Exact<{
   date: InputMaybe<Scalars['CustomDateTime']['input']>;
   productId: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+  entryTitle: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
 }>;
 
 export type SearchByTitleQuery = {
+  data: {
+    hasMore: boolean | null;
+    cursor: string | null;
+    results: Array<{
+      title: string | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
+      readMoreLink: string | null;
+      breakingChange: boolean | null;
+      x_version: string | null;
+      releaseDate: any | null;
+      scheduled: boolean | null;
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
+    } | null> | null;
+  } | null;
+};
+
+export type SearchByTitleAndDateQueryVariables = Exact<{
+  startDate: Scalars['CustomDateTime']['input'];
+  endDate: Scalars['CustomDateTime']['input'];
+  productId: Scalars['String']['input'];
+  entryTitle: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+}>;
+
+export type SearchByTitleAndDateQuery = {
   data: {
     hasMore: boolean | null;
     cursor: string | null;
@@ -1987,95 +1984,6 @@ export const GetAllStatusDocument = new TypedDocumentString(`
   description
   identifier
 }`) as unknown as TypedDocumentString<GetAllStatusQuery, GetAllStatusQueryVariables>;
-export const GetLatestEntriesDocument = new TypedDocumentString(`
-    query GetLatestEntries($first: Int! = 5, $after: String! = "", $date: CustomDateTime!) {
-  changelog: manyChangelog(
-    orderBy: SYSTEM_UPDATED_DESC
-    minimumPageSize: $first
-    after: $after
-    filter: {AND: [{releaseDate: {lessThan: $date}}]}
-  ) {
-    hasMore
-    cursor
-    results {
-      ...changelogEntry
-    }
-  }
-}
-    fragment changeType on Changetype {
-  system {
-    id
-    name
-  }
-  changeType
-}
-fragment changelogEntry on Changelog {
-  system {
-    id
-    name
-  }
-  title
-  description
-  fullArticle
-  readMoreLink
-  breakingChange
-  x_version
-  releaseDate
-  scheduled
-  image {
-    hasMore
-    cursor
-    results {
-      ...media
-    }
-  }
-  sitecoreProduct {
-    results {
-      ...product
-    }
-  }
-  changeType {
-    results {
-      ...changeType
-    }
-  }
-  status {
-    results {
-      ...status
-    }
-  }
-}
-fragment media on XMCMedia {
-  system {
-    id
-    name
-  }
-  ... on XMCMedia {
-    media_publicLink
-    media_type {
-      name
-    }
-  }
-}
-fragment product on SitecoreProduct {
-  system {
-    id
-    name
-  }
-  productName
-  productDescription
-  darkIcon: productIconDark
-  lightIcon: productIconLight
-}
-fragment status on Status {
-  system {
-    id
-    name
-    label
-  }
-  description
-  identifier
-}`) as unknown as TypedDocumentString<GetLatestEntriesQuery, GetLatestEntriesQueryVariables>;
 export const GetNumberOfEntriesByProductDocument = new TypedDocumentString(`
     query getNumberOfEntriesByProduct($productId: [String!]!) {
   changelog: manyChangelog(
@@ -2091,21 +1999,6 @@ export const GetNumberOfEntriesByProductDocument = new TypedDocumentString(`
   }
 }
     `) as unknown as TypedDocumentString<GetNumberOfEntriesByProductQuery, GetNumberOfEntriesByProductQueryVariables>;
-export const GetStatusByIdentifierDocument = new TypedDocumentString(`
-    query GetStatusByIdentifier($identifier: ID!) {
-  status(id: $identifier, locale: "") {
-    ...status
-  }
-}
-    fragment status on Status {
-  system {
-    id
-    name
-    label
-  }
-  description
-  identifier
-}`) as unknown as TypedDocumentString<GetStatusByIdentifierQuery, GetStatusByIdentifierQueryVariables>;
 export const SearchByDateDocument = new TypedDocumentString(`
     query SearchByDate($startDate: CustomDateTime!, $endDate: CustomDateTime!, $first: Int = 5, $after: String = "") {
   changelog: manyChangelog(
@@ -2284,12 +2177,12 @@ fragment status on Status {
   identifier
 }`) as unknown as TypedDocumentString<SearchByProductQuery, SearchByProductQueryVariables>;
 export const SearchByProductsAndChangeTypesDocument = new TypedDocumentString(`
-    query searchByProductsAndChangeTypes($date: CustomDateTime, $productIds: [String!], $changeTypeIds: [String!] = [], $first: Int = 5, $after: String = "") {
+    query searchByProductsAndChangeTypes($date: CustomDateTime, $productIds: [String!], $changeTypeIds: [String!] = [], $entryTitle: [String!], $first: Int = 5, $after: String = "") {
   changelog: manyChangelog(
     orderBy: RELEASE_DATE_DESC
     minimumPageSize: $first
     after: $after
-    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productIds}}, {changeType: {containsAny: $changeTypeIds}}]}
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productIds}}, {changeType: {containsAny: $changeTypeIds}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}
   ) {
     results {
       ...changelogEntry
@@ -2462,11 +2355,99 @@ fragment status on Status {
   identifier
 }`) as unknown as TypedDocumentString<SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables>;
 export const SearchByTitleDocument = new TypedDocumentString(`
-    query searchByTitle($date: CustomDateTime, $productId: [String!]) {
+    query searchByTitle($date: CustomDateTime, $productId: [String!], $entryTitle: [String!]) {
   data: manyChangelog(
     orderBy: RELEASE_DATE_DESC
     minimumPageSize: 1
-    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}]}
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}
+  ) {
+    hasMore
+    cursor
+    results {
+      ...changelogEntry
+    }
+  }
+}
+    fragment changeType on Changetype {
+  system {
+    id
+    name
+  }
+  changeType
+}
+fragment changelogEntry on Changelog {
+  system {
+    id
+    name
+  }
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  x_version
+  releaseDate
+  scheduled
+  image {
+    hasMore
+    cursor
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    results {
+      ...product
+    }
+  }
+  changeType {
+    results {
+      ...changeType
+    }
+  }
+  status {
+    results {
+      ...status
+    }
+  }
+}
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
+}
+fragment product on SitecoreProduct {
+  system {
+    id
+    name
+  }
+  productName
+  productDescription
+  darkIcon: productIconDark
+  lightIcon: productIconLight
+}
+fragment status on Status {
+  system {
+    id
+    name
+    label
+  }
+  description
+  identifier
+}`) as unknown as TypedDocumentString<SearchByTitleQuery, SearchByTitleQueryVariables>;
+export const SearchByTitleAndDateDocument = new TypedDocumentString(`
+    query searchByTitleAndDate($startDate: CustomDateTime!, $endDate: CustomDateTime!, $productId: String!, $entryTitle: [String!]) {
+  data: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: 1
+    filter: {AND: [{releaseDate: {inRange: {from: $startDate, to: $endDate}}}, {sitecoreProduct: {contains: $productId}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}
   ) {
     results {
       ...changelogEntry
@@ -2548,4 +2529,4 @@ fragment status on Status {
   }
   description
   identifier
-}`) as unknown as TypedDocumentString<SearchByTitleQuery, SearchByTitleQueryVariables>;
+}`) as unknown as TypedDocumentString<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables>;

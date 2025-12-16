@@ -1,12 +1,12 @@
-import { SearchByDateQuery, SearchByProductQuery, SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesAndBreakingChangeQuery } from '@data/gql/generated/graphql';
-import { clearTimeStamp, getStringValue } from '@lib/utils';
+import { SearchByDateQuery, SearchByProductQuery, SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesQuery } from '@data/gql/generated/graphql';
+import { clearTimeStamp, getStringValue, slugify } from '@lib/utils';
 import { generateHTML } from '@tiptap/html';
 
 import { richTextProfile } from '../common/richTextConfiguration';
 import { ChangeType } from './changeType';
 import { Media } from './index';
 import SitecoreProduct from './sitecoreProduct';
-import { DefaultStatus, Status } from './status';
+import { Status } from './status';
 
 export type ChangelogEntryList<T> = {
   total: number;
@@ -25,7 +25,7 @@ export type ChangelogEntrySummary = {
   products: Array<SitecoreProduct> | null;
   changeTypeName: string | null;
   scheduled: boolean;
-  status: Status;
+  status: Status | null;
 };
 
 export type ChangelogEntry = ChangelogEntrySummary & {
@@ -69,9 +69,21 @@ export function parseChangeLogItem(changelog: any): ChangelogEntry {
     description: changelog.description ? generateHTML(changelog.description, [richTextProfile]) : '',
     fullArticle: changelog.fullArticle != null && changelog.fullArticle?.content ? generateHTML(changelog.fullArticle, [richTextProfile]) : null,
     breakingChange: changelog.breakingChange ?? false,
-    sitecoreProduct: changelog.sitecoreProduct?.results ?? [],
+    sitecoreProduct: (changelog.sitecoreProduct?.results ?? []).map((x: any) => ({
+      id: getStringValue(x?.system?.name),
+      name: getStringValue(x?.productName),
+      productName: getStringValue(x?.productName),
+      productDescription: getStringValue(x?.productDescription),
+      lightIcon: getStringValue(x?.lightIcon),
+      darkIcon: getStringValue(x?.darkIcon),
+    })),
     scheduled: changelog.scheduled ? changelog.scheduled : false,
-    changeType: changelog.changeType?.results ?? [],
+    changeType: (changelog.changeType?.results ?? []).map((x: any) => ({
+      name: getStringValue(x?.changeType),
+      changeType: getStringValue(x?.changeType),
+      id: getStringValue(x?.system?.id),
+      type: slugify(getStringValue(x?.system?.name)),
+    })),
     version: changelog.x_version ?? '',
     releaseDate: changelog.releaseDate
       ? (() => {
@@ -102,8 +114,25 @@ export function parseChangeLogItem(changelog: any): ChangelogEntry {
     lightIcon: changelog.sitecoreProduct?.results[0]?.lightIcon ?? '',
     darkIcon: changelog.sitecoreProduct?.results[0]?.darkIcon ?? '',
     productName: changelog.sitecoreProduct?.results[0]?.productName ?? null,
-    products: changelog.sitecoreProduct?.results ?? null,
-    status: changelog.scheduled == true ? null : changelog.status?.results[0] ? changelog.status.results[0] : DefaultStatus,
+    products: (changelog.sitecoreProduct?.results ?? []).map((x: any) => ({
+      id: getStringValue(x?.system?.name),
+      name: getStringValue(x?.productName),
+      productName: getStringValue(x?.productName),
+      productDescription: getStringValue(x?.productDescription),
+      lightIcon: getStringValue(x?.lightIcon),
+      darkIcon: getStringValue(x?.darkIcon),
+    })),
+    status:
+      changelog.scheduled == true
+        ? null
+        : changelog.status?.results[0]
+          ? {
+              id: getStringValue(changelog.status.results[0]?.system?.name),
+              name: getStringValue(changelog.status.results[0]?.system?.label),
+              identifier: getStringValue(changelog.status.results[0]?.identifier),
+              description: getStringValue(changelog.status.results[0]?.description) || '',
+            }
+          : null,
     changeTypeName: changelog.changeType?.results[0]?.changeType ?? null,
   };
 }

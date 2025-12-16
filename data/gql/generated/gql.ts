@@ -21,21 +21,20 @@ const documents = {
   'query GetAllChangetypes {\n  manyChangetype {\n    hasMore\n    cursor\n    results {\n      ...changeType\n    }\n  }\n}': types.GetAllChangetypesDocument,
   'query GetAllProducts {\n  manySitecoreProduct(minimumPageSize: 25) {\n    hasMore\n    cursor\n    results {\n      ...product\n    }\n  }\n}': types.GetAllProductsDocument,
   'query GetAllStatus {\n  manyStatus {\n    hasMore\n    cursor\n    results {\n      ...status\n    }\n  }\n}': types.GetAllStatusDocument,
-  'query GetLatestEntries($first: Int! = 5, $after: String! = "", $date: CustomDateTime!) {\n  changelog: manyChangelog(\n    orderBy: SYSTEM_UPDATED_DESC\n    minimumPageSize: $first\n    after: $after\n    filter: {AND: [{releaseDate: {lessThan: $date}}]}\n  ) {\n    hasMore\n    cursor\n    results {\n      ...changelogEntry\n    }\n  }\n}':
-    types.GetLatestEntriesDocument,
   'query getNumberOfEntriesByProduct($productId: [String!]!) {\n  changelog: manyChangelog(\n    minimumPageSize: 200\n    filter: {AND: [{sitecoreProduct: {containsAny: $productId}}]}\n  ) {\n    hasMore\n    results {\n      system {\n        id\n      }\n    }\n  }\n}':
     types.GetNumberOfEntriesByProductDocument,
-  'query GetStatusByIdentifier($identifier: ID!) {\n  status(id: $identifier, locale: "") {\n    ...status\n  }\n}': types.GetStatusByIdentifierDocument,
   'query SearchByDate($startDate: CustomDateTime!, $endDate: CustomDateTime!, $first: Int = 5, $after: String = "") {\n  changelog: manyChangelog(\n    minimumPageSize: $first\n    after: $after\n    filter: {AND: [{releaseDate: {lessThan: $endDate}}, {releaseDate: {greaterThan: $startDate}}]}\n  ) {\n    hasMore\n    cursor\n    results {\n      ...changelogEntry\n    }\n  }\n}':
     types.SearchByDateDocument,
   'query searchByProduct($date: CustomDateTime, $productId: [String!], $changeTypeIds: [String!] = [], $first: Int = 5, $after: String = "") {\n  changelog: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: $first\n    after: $after\n    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}, {changeType: {containsAny: $changeTypeIds}}]}\n  ) {\n    results {\n      ...changelogEntry\n    }\n    hasMore\n    cursor\n  }\n}':
     types.SearchByProductDocument,
-  'query searchByProductsAndChangeTypes($date: CustomDateTime, $productIds: [String!], $changeTypeIds: [String!] = [], $first: Int = 5, $after: String = "") {\n  changelog: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: $first\n    after: $after\n    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productIds}}, {changeType: {containsAny: $changeTypeIds}}]}\n  ) {\n    results {\n      ...changelogEntry\n    }\n    hasMore\n    cursor\n  }\n}':
+  'query searchByProductsAndChangeTypes($date: CustomDateTime, $productIds: [String!], $changeTypeIds: [String!] = [], $entryTitle: [String!], $first: Int = 5, $after: String = "") {\n  changelog: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: $first\n    after: $after\n    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productIds}}, {changeType: {containsAny: $changeTypeIds}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}\n  ) {\n    results {\n      ...changelogEntry\n    }\n    hasMore\n    cursor\n  }\n}':
     types.SearchByProductsAndChangeTypesDocument,
   'query searchByProductsAndChangeTypesAndBreakingChange($date: CustomDateTime, $productIds: [String!], $changeTypeIds: [String!] = [], $first: Int = 5, $after: String = "", $breaking: Boolean) {\n  changelog: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: $first\n    after: $after\n    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productIds}}, {changeType: {containsAny: $changeTypeIds}}, {breakingChange: {equals: $breaking}}]}\n  ) {\n    results {\n      ...changelogEntry\n    }\n    hasMore\n    cursor\n  }\n}':
     types.SearchByProductsAndChangeTypesAndBreakingChangeDocument,
-  'query searchByTitle($date: CustomDateTime, $productId: [String!]) {\n  data: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: 1\n    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}]}\n  ) {\n    results {\n      ...changelogEntry\n    }\n    hasMore\n    cursor\n  }\n}':
+  'query searchByTitle($date: CustomDateTime, $productId: [String!], $entryTitle: [String!]) {\n  data: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: 1\n    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}\n  ) {\n    hasMore\n    cursor\n    results {\n      ...changelogEntry\n    }\n  }\n}':
     types.SearchByTitleDocument,
+  'query searchByTitleAndDate($startDate: CustomDateTime!, $endDate: CustomDateTime!, $productId: String!, $entryTitle: [String!]) {\n  data: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: 1\n    filter: {AND: [{releaseDate: {inRange: {from: $startDate, to: $endDate}}}, {sitecoreProduct: {contains: $productId}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}\n  ) {\n    results {\n      ...changelogEntry\n    }\n    hasMore\n    cursor\n  }\n}':
+    types.SearchByTitleAndDateDocument,
 };
 
 /**
@@ -78,18 +77,8 @@ export function graphql(source: 'query GetAllStatus {\n  manyStatus {\n    hasMo
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(
-  source: 'query GetLatestEntries($first: Int! = 5, $after: String! = "", $date: CustomDateTime!) {\n  changelog: manyChangelog(\n    orderBy: SYSTEM_UPDATED_DESC\n    minimumPageSize: $first\n    after: $after\n    filter: {AND: [{releaseDate: {lessThan: $date}}]}\n  ) {\n    hasMore\n    cursor\n    results {\n      ...changelogEntry\n    }\n  }\n}'
-): typeof import('./graphql').GetLatestEntriesDocument;
-/**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function graphql(
   source: 'query getNumberOfEntriesByProduct($productId: [String!]!) {\n  changelog: manyChangelog(\n    minimumPageSize: 200\n    filter: {AND: [{sitecoreProduct: {containsAny: $productId}}]}\n  ) {\n    hasMore\n    results {\n      system {\n        id\n      }\n    }\n  }\n}'
 ): typeof import('./graphql').GetNumberOfEntriesByProductDocument;
-/**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function graphql(source: 'query GetStatusByIdentifier($identifier: ID!) {\n  status(id: $identifier, locale: "") {\n    ...status\n  }\n}'): typeof import('./graphql').GetStatusByIdentifierDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -106,7 +95,7 @@ export function graphql(
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(
-  source: 'query searchByProductsAndChangeTypes($date: CustomDateTime, $productIds: [String!], $changeTypeIds: [String!] = [], $first: Int = 5, $after: String = "") {\n  changelog: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: $first\n    after: $after\n    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productIds}}, {changeType: {containsAny: $changeTypeIds}}]}\n  ) {\n    results {\n      ...changelogEntry\n    }\n    hasMore\n    cursor\n  }\n}'
+  source: 'query searchByProductsAndChangeTypes($date: CustomDateTime, $productIds: [String!], $changeTypeIds: [String!] = [], $entryTitle: [String!], $first: Int = 5, $after: String = "") {\n  changelog: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: $first\n    after: $after\n    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productIds}}, {changeType: {containsAny: $changeTypeIds}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}\n  ) {\n    results {\n      ...changelogEntry\n    }\n    hasMore\n    cursor\n  }\n}'
 ): typeof import('./graphql').SearchByProductsAndChangeTypesDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -118,8 +107,14 @@ export function graphql(
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(
-  source: 'query searchByTitle($date: CustomDateTime, $productId: [String!]) {\n  data: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: 1\n    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}]}\n  ) {\n    results {\n      ...changelogEntry\n    }\n    hasMore\n    cursor\n  }\n}'
+  source: 'query searchByTitle($date: CustomDateTime, $productId: [String!], $entryTitle: [String!]) {\n  data: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: 1\n    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}\n  ) {\n    hasMore\n    cursor\n    results {\n      ...changelogEntry\n    }\n  }\n}'
 ): typeof import('./graphql').SearchByTitleDocument;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(
+  source: 'query searchByTitleAndDate($startDate: CustomDateTime!, $endDate: CustomDateTime!, $productId: String!, $entryTitle: [String!]) {\n  data: manyChangelog(\n    orderBy: RELEASE_DATE_DESC\n    minimumPageSize: 1\n    filter: {AND: [{releaseDate: {inRange: {from: $startDate, to: $endDate}}}, {sitecoreProduct: {contains: $productId}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}\n  ) {\n    results {\n      ...changelogEntry\n    }\n    hasMore\n    cursor\n  }\n}'
+): typeof import('./graphql').SearchByTitleAndDateDocument;
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
