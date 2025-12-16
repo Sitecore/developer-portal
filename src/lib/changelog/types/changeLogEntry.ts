@@ -1,12 +1,13 @@
 import { SearchByDateQuery, SearchByProductQuery, SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesQuery } from '@data/gql/generated/graphql';
-import { clearTimeStamp, getStringValue, slugify } from '@lib/utils';
+import { clearTimeStamp, getStringValue } from '@lib/utils';
 import { generateHTML } from '@tiptap/html';
 
 import { richTextProfile } from '../common/richTextConfiguration';
-import { ChangeType } from './changeType';
+import { ChangeType, parseChangeTypeItem } from './changeType';
+import { parseMediaItem } from './common/media';
 import { Media } from './index';
-import SitecoreProduct from './sitecoreProduct';
-import { Status } from './status';
+import SitecoreProduct, { parseSitecoreProductItem } from './sitecoreProduct';
+import { parseStatusItem, Status } from './status';
 
 export type ChangelogEntryList<T> = {
   total: number;
@@ -60,79 +61,82 @@ export function ParseRawData(data: SearchByDateQuery | SearchByProductQuery | Se
   };
 }
 
+/**
+ * Parse a release date string to a formatted date string
+ */
+function parseReleaseDate(dateString: string | null | undefined): string {
+  if (!dateString) {
+    return '';
+  }
+
+  const clearedDate = clearTimeStamp(dateString);
+  if (!clearedDate) {
+    return '';
+  }
+
+  const date = new Date(clearedDate);
+  if (isNaN(date.getTime())) {
+    console.warn(`Invalid date: ${dateString}`);
+    return '';
+  }
+
+  return date.toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+/**
+ * Parse rich text content to HTML string
+ */
+function parseRichTextContent(content: any): string {
+  if (!content) {
+    return '';
+  }
+
+  return generateHTML(content, [richTextProfile]);
+}
+
+/**
+ * Parse rich text content to HTML string or null
+ */
+function parseRichTextContentNullable(content: any): string | null {
+  if (content == null) {
+    return null;
+  }
+
+  if (!content.content) {
+    return null;
+  }
+
+  return generateHTML(content, [richTextProfile]);
+}
+
 export function parseChangeLogItem(changelog: any): ChangelogEntry {
+  const sitecoreProducts = changelog.sitecoreProduct?.results ?? [];
+  const changeTypes = changelog.changeType?.results ?? [];
+  const images = changelog.image?.results ?? [];
+
+  // Parse all products
+  const parsedProducts = sitecoreProducts.map((x: any) => parseSitecoreProductItem(x));
+  const firstProduct = parsedProducts[0];
+
   return {
     id: getStringValue(changelog?.system?.id),
     name: getStringValue(changelog?.system?.name),
     readMoreLink: changelog.readMoreLink ?? '',
     title: changelog.title ?? '',
-    description: changelog.description ? generateHTML(changelog.description, [richTextProfile]) : '',
-    fullArticle: changelog.fullArticle != null && changelog.fullArticle?.content ? generateHTML(changelog.fullArticle, [richTextProfile]) : null,
+    description: changelog.description ? parseRichTextContent(changelog.description) : '',
+    fullArticle: parseRichTextContentNullable(changelog.fullArticle),
     breakingChange: changelog.breakingChange ?? false,
-    sitecoreProduct: (changelog.sitecoreProduct?.results ?? []).map((x: any) => ({
-      id: getStringValue(x?.system?.name),
-      name: getStringValue(x?.productName),
-      productName: getStringValue(x?.productName),
-      productDescription: getStringValue(x?.productDescription),
-      lightIcon: getStringValue(x?.lightIcon),
-      darkIcon: getStringValue(x?.darkIcon),
-    })),
+    sitecoreProduct: parsedProducts,
     scheduled: changelog.scheduled ? changelog.scheduled : false,
-    changeType: (changelog.changeType?.results ?? []).map((x: any) => ({
-      name: getStringValue(x?.changeType),
-      changeType: getStringValue(x?.changeType),
-      id: getStringValue(x?.system?.id),
-      type: slugify(getStringValue(x?.system?.name)),
-    })),
+    changeType: changeTypes.map((x: any) => parseChangeTypeItem(x)),
     version: changelog.x_version ?? '',
-    releaseDate: changelog.releaseDate
-      ? (() => {
-          const dateString = clearTimeStamp(changelog.releaseDate);
-          if (!dateString) {
-            return '';
-          }
-          const date = new Date(dateString);
-          if (isNaN(date.getTime())) {
-            console.warn(`Invalid date: ${changelog.releaseDate}`);
-            return '';
-          }
-          return date.toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' });
-        })()
-      : '',
-    image: (changelog.image?.results ?? []).map((img: any) => ({
-      id: getStringValue(img?.system?.id),
-      name: getStringValue(img?.system?.name),
-      fileName: getStringValue(img?.system?.name),
-      fileUrl: img?.media_publicLink ?? '',
-      description: '',
-      fileWidth: 0,
-      fileHeight: 0,
-      fileId: getStringValue(img?.system?.id),
-      fileSize: '',
-      fileType: img?.media_type?.[0]?.name ?? '',
-    })),
-    lightIcon: changelog.sitecoreProduct?.results[0]?.lightIcon ?? '',
-    darkIcon: changelog.sitecoreProduct?.results[0]?.darkIcon ?? '',
-    productName: changelog.sitecoreProduct?.results[0]?.productName ?? null,
-    products: (changelog.sitecoreProduct?.results ?? []).map((x: any) => ({
-      id: getStringValue(x?.system?.name),
-      name: getStringValue(x?.productName),
-      productName: getStringValue(x?.productName),
-      productDescription: getStringValue(x?.productDescription),
-      lightIcon: getStringValue(x?.lightIcon),
-      darkIcon: getStringValue(x?.darkIcon),
-    })),
-    status:
-      changelog.scheduled == true
-        ? null
-        : changelog.status?.results[0]
-          ? {
-              id: getStringValue(changelog.status.results[0]?.system?.name),
-              name: getStringValue(changelog.status.results[0]?.system?.label),
-              identifier: getStringValue(changelog.status.results[0]?.identifier),
-              description: getStringValue(changelog.status.results[0]?.description) || '',
-            }
-          : null,
-    changeTypeName: changelog.changeType?.results[0]?.changeType ?? null,
+    releaseDate: parseReleaseDate(changelog.releaseDate),
+    image: images.map((img: any) => parseMediaItem(img)),
+    lightIcon: firstProduct?.lightIcon ?? '',
+    darkIcon: firstProduct?.darkIcon ?? '',
+    productName: firstProduct?.productName ?? null,
+    products: parsedProducts,
+    status: changelog.scheduled == true ? null : changelog.status?.results?.[0] ? parseStatusItem(changelog.status.results[0]) : null,
+    changeTypeName: changeTypes[0]?.changeType ?? null,
   };
 }

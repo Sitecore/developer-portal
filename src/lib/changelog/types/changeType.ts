@@ -8,15 +8,25 @@ export type ChangeType = {
   type: string;
 };
 
+/**
+ * Parse a single ChangeType from raw GraphQL data
+ */
+export function parseChangeTypeItem(rawItem: any): ChangeType {
+  return {
+    name: getStringValue(rawItem?.changeType),
+    changeType: getStringValue(rawItem?.changeType),
+    id: getStringValue(rawItem?.system?.id),
+    type: slugify(getStringValue(rawItem?.system?.name)),
+  };
+}
+
+/**
+ * Parse multiple ChangeTypes from a GraphQL query result
+ */
 export function ParseChangeType(data: GetAllChangetypesQuery): Array<ChangeType> {
   if (!data.manyChangetype?.results) {
     return [];
   }
 
-  return data.manyChangetype.results?.map((x) => ({
-    name: getStringValue(x?.changeType),
-    changeType: getStringValue(x?.changeType),
-    id: getStringValue(x?.system.id),
-    type: slugify(getStringValue(x?.system.name)),
-  }));
+  return data.manyChangetype.results?.map((x) => parseChangeTypeItem(x));
 }

@@ -1,6 +1,6 @@
-// import { GetProductLogoByVariant, Product as ProductLogo, Type, Variant } from '@src/lib';
 import { GetAllProductsQuery } from '@data/gql/generated/graphql';
-import { getStringValue } from '@lib/utils';
+
+import { parseSitecoreProductItem } from './sitecoreProduct';
 
 export type Product = {
   id: string;
@@ -10,20 +10,23 @@ export type Product = {
   hasEntries: boolean;
 };
 
+/**
+ * Parse Product items from a GraphQL query result
+ * Product is a simplified version of SitecoreProduct used for product listings
+ */
 export function ParseProduct(data: GetAllProductsQuery): Array<Product> {
   if (!data.manySitecoreProduct?.results) {
     console.log('No products found');
-
     return [];
   }
 
   return data.manySitecoreProduct.results.map((x) => {
+    const sitecoreProduct = parseSitecoreProductItem(x);
     return {
-      id: getStringValue(x?.system.id),
-      name: getStringValue(x?.productName),
-      description: getStringValue(x?.productDescription),
-      lightIcon: getStringValue(x?.lightIcon),
-      darkIcon: getStringValue(x?.darkIcon),
+      id: sitecoreProduct.id,
+      name: sitecoreProduct.name,
+      lightIcon: sitecoreProduct.lightIcon,
+      darkIcon: sitecoreProduct.darkIcon,
       hasEntries: false,
     };
   });

@@ -20,17 +20,25 @@ export const DefaultStatus: Status = {
   description: '',
 };
 
+/**
+ * Parse a single Status from raw GraphQL data
+ */
+export function parseStatusItem(rawItem: any): Status {
+  return {
+    id: getStringValue(rawItem?.system?.name),
+    name: getStringValue(rawItem?.system?.label),
+    identifier: getStringValue(rawItem?.identifier),
+    description: getStringValue(rawItem?.description) || '',
+  };
+}
+
+/**
+ * Parse multiple Status items from a GraphQL query result
+ */
 export function ParseStatus(data: GetAllStatusQuery): Array<Status> {
   if (!data.manyStatus?.results) {
     return [];
   }
 
-  return data.manyStatus?.results.map((x) => {
-    return {
-      id: getStringValue(x?.system?.name),
-      name: getStringValue(x?.system?.label),
-      identifier: getStringValue(x?.identifier),
-      description: getStringValue(x?.description) || '',
-    };
-  });
+  return data.manyStatus?.results.map((x) => parseStatusItem(x));
 }
