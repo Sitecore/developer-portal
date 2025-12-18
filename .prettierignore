@@ -33,3 +33,5 @@ yarn-error.log*
 
 # generated files
 .graphql
+*.graphql
+data/gql/**/*.graphql
