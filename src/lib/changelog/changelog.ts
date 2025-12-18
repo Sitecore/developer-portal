@@ -11,12 +11,17 @@ import {
   GetNumberOfEntriesByProductDocument,
   GetNumberOfEntriesByProductQuery,
   GetNumberOfEntriesByProductQueryVariables,
+  SearchByChangeTypesAndBreakingChangeDocument,
+  SearchByChangeTypesAndBreakingChangeQuery,
+  SearchByChangeTypesAndBreakingChangeQueryVariables,
   SearchByChangeTypesDocument,
   SearchByChangeTypesQuery,
   SearchByChangeTypesQueryVariables,
   SearchByDateDocument,
   SearchByDateQuery,
   SearchByDateQueryVariables,
+  SearchByProductAndBreakingDocument,
+  SearchByProductAndBreakingQueryVariables,
   SearchByProductDocument,
   SearchByProductQuery,
   SearchByProductQueryVariables,
@@ -33,10 +38,14 @@ import {
   SearchByTitleQuery,
   SearchByTitleQueryVariables,
   SearchDocument,
+  SearchOnlyBreakingChangesDocument,
+  SearchOnlyBreakingChangesQuery,
+  SearchOnlyBreakingChangesQueryVariables,
   SearchQuery,
   SearchQueryVariables,
 } from '@data/gql/generated/graphql';
 
+import { SearchByProductAndBreakingQuery } from '../../../data/gql/generated/graphql';
 import { getCachedEntryCount, requestDeduplicator, setCachedEntryCount } from './cache';
 import { getSelectedIds } from './common/changelog';
 import { fetchGraphQL } from './common/fetch';
@@ -84,6 +93,16 @@ export interface GetEntryByTitleAndDateOptions {
   date: string;
   /** Product ID to filter by */
   productId: string;
+}
+
+/**
+ * Get today's date plus one day
+ * @returns Date object representing tomorrow
+ */
+function getTomorrow(): Date {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  return tomorrow;
 }
 
 /**
@@ -226,7 +245,7 @@ export class Changelog {
     const response = await fetchGraphQL<SearchByProductQuery, SearchByProductQueryVariables>(SearchByProductDocument, this.credentials, this.isPreview, {
       date: new Date(),
       productId: getSelectedIds(productId),
-      breaking: breaking ?? false,
+      //breaking: breaking ?? false,
     });
 
     return ParseRawData(response.data);
@@ -283,13 +302,23 @@ export class Changelog {
     const productIds = getSelectedIds(productId);
     const changeTypeIds = getSelectedIds(changeTypeId);
 
-    // If there is no product ID and no change type ID and no breaking change, get the entries by date and breaking change
+    // If there is no product ID and no change type ID and no breaking change, get the entries by date
     if (productIds.length === 0 && changeTypeIds.length === 0) {
+      if (breaking) {
+        const response = await fetchGraphQL<SearchOnlyBreakingChangesQuery, SearchOnlyBreakingChangesQueryVariables>(SearchOnlyBreakingChangesDocument, this.credentials, this.isPreview, {
+          first: pageSize ?? 5,
+          after: endCursor ?? '',
+          date: getTomorrow(),
+          breaking: breaking,
+        });
+
+        return ParseRawData(response.data);
+      }
+
       const response = await fetchGraphQL<SearchQuery, SearchQueryVariables>(SearchDocument, this.credentials, this.isPreview, {
         first: pageSize ?? 5,
         after: endCursor ?? '',
-        date: new Date(),
-        breaking: breaking,
+        date: getTomorrow(),
       });
 
       return ParseRawData(response.data);
@@ -297,25 +326,46 @@ export class Changelog {
 
     // If there is a product ID and no change type ID and no breaking change, get the entries by product and breaking change if specified
     if (productIds.length > 0 && changeTypeIds.length === 0) {
+      if (breaking) {
+        const response = await fetchGraphQL<SearchByProductAndBreakingQuery, SearchByProductAndBreakingQueryVariables>(SearchByProductAndBreakingDocument, this.credentials, this.isPreview, {
+          first: pageSize ?? 5,
+          after: endCursor ?? '',
+          date: getTomorrow(),
+          productId: productIds,
+          breaking: breaking,
+        });
+
+        return ParseRawData(response.data);
+      }
+
       const response = await fetchGraphQL<SearchByProductQuery, SearchByProductQueryVariables>(SearchByProductDocument, this.credentials, this.isPreview, {
         first: pageSize ?? 5,
         after: endCursor ?? '',
-        date: new Date(),
+        date: getTomorrow(),
         productId: productIds,
-        breaking: breaking,
       });
 
       return ParseRawData(response.data);
     }
 
     // If there is no product ID and a change type ID and no breaking change, get the entries by change type and breaking change if specified
-    if (productIds.length == 0 && changeTypeIds.length > 0 && !breaking) {
+    if (productIds.length == 0 && changeTypeIds.length > 0) {
+      if (breaking === true) {
+        const response = await fetchGraphQL<SearchByChangeTypesAndBreakingChangeQuery, SearchByChangeTypesAndBreakingChangeQueryVariables>(SearchByChangeTypesAndBreakingChangeDocument, this.credentials, this.isPreview, {
+          first: pageSize ?? 5,
+          after: endCursor ?? '',
+          date: getTomorrow(),
+          changeTypeIds: changeTypeIds,
+          breaking: breaking,
+        });
+
+        return ParseRawData(response.data);
+      }
       const response = await fetchGraphQL<SearchByChangeTypesQuery, SearchByChangeTypesQueryVariables>(SearchByChangeTypesDocument, this.credentials, this.isPreview, {
         first: pageSize ?? 5,
         after: endCursor ?? '',
-        date: new Date(),
+        date: getTomorrow(),
         changeTypeIds: changeTypeIds,
-        breaking: breaking,
       });
 
       return ParseRawData(response.data);

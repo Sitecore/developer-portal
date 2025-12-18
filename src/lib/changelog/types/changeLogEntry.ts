@@ -101,6 +101,12 @@ export function ParseRawData(
     total: 0,
     entries: changelogData.results
       .filter((item): item is NonNullable<typeof item> => item !== null)
+      .filter((item) => {
+        // Filter out items that do not have a sitecoreProduct
+        const sitecoreProductResults = item.sitecoreProduct?.results;
+        const sitecoreProducts = Array.isArray(sitecoreProductResults) ? sitecoreProductResults.filter((x): x is NonNullable<typeof x> => x !== null && typeof x === 'object') : [];
+        return sitecoreProducts.length > 0;
+      })
       .map((item) => {
         return parseChangeLogItem(item as ChangelogResultItem);
       }),
@@ -168,6 +174,11 @@ export function parseChangeLogItem(changelog: ChangelogResultItem | null | undef
   const changeTypes = Array.isArray(changeTypeResults) ? changeTypeResults.filter((x): x is NonNullable<typeof x> => x !== null && typeof x === 'object') : [];
   const images = Array.isArray(imageResults) ? imageResults.filter((img): img is NonNullable<typeof img> => img !== null && typeof img === 'object') : [];
   const statuses = Array.isArray(statusResults) ? statusResults.filter((x): x is NonNullable<typeof x> => x !== null && typeof x === 'object') : [];
+
+  // Do not return items that do not have a sitecoreProduct
+  if (sitecoreProducts.length === 0) {
+    throw new Error(`Invalid changelog item: changelog item "${changelog.title ?? changelog.system?.name ?? 'unknown'}" does not have a sitecoreProduct`);
+  }
 
   // Parse all products
   const parsedProducts = sitecoreProducts.map((x) => parseSitecoreProductItem(x as unknown as ProductFragment));

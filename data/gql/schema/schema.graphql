@@ -224,33 +224,27 @@ input Changelog_changeType_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_changeType_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_changeType_changetype_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_changeType_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_changeType_changetype_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
-input Changelog_changeType_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations {
+input Changelog_changeType_changetype_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_changeType_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_changeType_changetype_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_changeType_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-  changelog: Changelog_Filter
+  OR: [Changelog_changeType_changetype_Relations]
   changetype: Changetype_Filter
-  sitecoreCloud: SitecoreCloud_Filter
-  sitecoreProduct: SitecoreProduct_Filter
-  status: Status_Filter
   system: SystemTypeFilterInput
-  upload: Upload_Filter
-  xMCMedia: XMCMedia_Filter
 }
 
 """
@@ -296,33 +290,27 @@ input Changelog_sitecoreProduct_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_sitecoreProduct_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_sitecoreProduct_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
-input Changelog_sitecoreProduct_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations {
+input Changelog_sitecoreProduct_sitecoreProduct_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_sitecoreProduct_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_sitecoreProduct_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-  changelog: Changelog_Filter
-  changetype: Changetype_Filter
-  sitecoreCloud: SitecoreCloud_Filter
+  OR: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
   sitecoreProduct: SitecoreProduct_Filter
-  status: Status_Filter
   system: SystemTypeFilterInput
-  upload: Upload_Filter
-  xMCMedia: XMCMedia_Filter
 }
 
 """
@@ -332,33 +320,27 @@ input Changelog_status_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_status_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_status_status_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_status_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  OR: [Changelog_status_status_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
-input Changelog_status_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations {
+input Changelog_status_status_Relations {
   """
   Combines multiple filter conditions.
   """
-  AND: [Changelog_status_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  AND: [Changelog_status_status_Relations]
   """
   Combines multiple filter conditions.
   """
-  OR: [Changelog_status_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-  changelog: Changelog_Filter
-  changetype: Changetype_Filter
-  sitecoreCloud: SitecoreCloud_Filter
-  sitecoreProduct: SitecoreProduct_Filter
+  OR: [Changelog_status_status_Relations]
   status: Status_Filter
   system: SystemTypeFilterInput
-  upload: Upload_Filter
-  xMCMedia: XMCMedia_Filter
 }
 
 type Changetype implements ContentItem {

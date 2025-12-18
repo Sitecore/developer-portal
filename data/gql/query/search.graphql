@@ -1,5 +1,5 @@
-query search($date: CustomDateTime, $first: Int = 5, $after: String = "", $breaking: Boolean) {
-  changelog: manyChangelog(orderBy: RELEASE_DATE_DESC, minimumPageSize: $first, after: $after, filter: { AND: [{ releaseDate: { lessThan: $date } }, { breakingChange: { equals: $breaking } }] }) {
+query search($date: CustomDateTime, $first: Int = 5, $after: String = "") {
+  changelog: manyChangelog(orderBy: RELEASE_DATE_DESC, minimumPageSize: $first, after: $after, filter: { AND: [{ releaseDate: { lessThan: $date } }] }) {
     results {
       ...changelogEntry
     }
