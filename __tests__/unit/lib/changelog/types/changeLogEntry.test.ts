@@ -70,6 +70,9 @@ describe('ParseRawData', () => {
             system: { id: 'entry-1' },
             title: 'Test Entry',
             releaseDate: '2024-07-12',
+            sitecoreProduct: {
+              results: [{ productName: 'Product A' }],
+            },
           },
         ],
         cursor: 'cursor-123',
@@ -92,6 +95,9 @@ describe('ParseRawData', () => {
           {
             system: { id: 'entry-1' },
             title: 'Test Entry',
+            sitecoreProduct: {
+              results: [{ productName: 'Product A' }],
+            },
           },
         ],
         cursor: 'cursor-456',
@@ -128,9 +134,21 @@ describe('ParseRawData', () => {
     const mockData = {
       changelog: {
         results: [
-          { system: { id: 'entry-1' }, title: 'Entry 1' },
+          {
+            system: { id: 'entry-1' },
+            title: 'Entry 1',
+            sitecoreProduct: {
+              results: [{ productName: 'Product A' }],
+            },
+          },
           null,
-          { system: { id: 'entry-2' }, title: 'Entry 2' },
+          {
+            system: { id: 'entry-2' },
+            title: 'Entry 2',
+            sitecoreProduct: {
+              results: [{ productName: 'Product B' }],
+            },
+          },
           null,
         ],
         cursor: '',
@@ -212,7 +230,9 @@ describe('parseChangeLogItem', () => {
     const mockItem = {
       system: { id: 'entry-1' },
       title: 'Test Entry',
-      sitecoreProduct: { results: [] },
+      sitecoreProduct: {
+        results: [{ productName: 'Product A' }],
+      },
       changeType: { results: [] },
       image: { results: [] },
       status: { results: [] },
@@ -225,7 +245,7 @@ describe('parseChangeLogItem', () => {
     expect(result.description).toBe('');
     expect(result.fullArticle).toBeNull();
     expect(result.readMoreLink).toBe('');
-    expect(result.sitecoreProduct).toEqual([]);
+    expect(result.sitecoreProduct).toHaveLength(1);
     expect(result.changeType).toEqual([]);
     expect(result.image).toEqual([]);
   });
@@ -235,7 +255,9 @@ describe('parseChangeLogItem', () => {
       system: { id: 'entry-1' },
       title: 'Test Entry',
       scheduled: true,
-      sitecoreProduct: { results: [] },
+      sitecoreProduct: {
+        results: [{ productName: 'Product A' }],
+      },
       changeType: { results: [] },
       image: { results: [] },
       status: { results: [] },
@@ -252,7 +274,9 @@ describe('parseChangeLogItem', () => {
       system: { id: 'entry-1' },
       title: 'Test Entry',
       description: { content: 'Rich text content' },
-      sitecoreProduct: { results: [] },
+      sitecoreProduct: {
+        results: [{ productName: 'Product A' }],
+      },
       changeType: { results: [] },
       image: { results: [] },
       status: { results: [] },
@@ -268,7 +292,9 @@ describe('parseChangeLogItem', () => {
       system: { id: 'entry-1' },
       title: 'Test Entry',
       fullArticle: null,
-      sitecoreProduct: { results: [] },
+      sitecoreProduct: {
+        results: [{ productName: 'Product A' }],
+      },
       changeType: { results: [] },
       image: { results: [] },
       status: { results: [] },
@@ -284,7 +310,9 @@ describe('parseChangeLogItem', () => {
       system: { id: 'entry-1' },
       title: 'Test Entry',
       fullArticle: { content: null },
-      sitecoreProduct: { results: [] },
+      sitecoreProduct: {
+        results: [{ productName: 'Product A' }],
+      },
       changeType: { results: [] },
       image: { results: [] },
       status: { results: [] },
