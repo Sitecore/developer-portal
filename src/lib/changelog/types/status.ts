@@ -1,4 +1,4 @@
-import { GetAllStatusQuery } from '@data/gql/generated/graphql';
+import { GetAllStatusQuery, StatusFragment } from '@data/gql/generated/graphql';
 import { getStringValue } from '@lib/utils';
 
 export type Status = {
@@ -20,17 +20,31 @@ export const DefaultStatus: Status = {
   description: '',
 };
 
+/**
+ * Parse a single Status from raw GraphQL data
+ * @param rawItem - GraphQL StatusFragment result
+ * @returns Parsed Status
+ */
+export function parseStatusItem(rawItem: StatusFragment | null | undefined): Status {
+  if (!rawItem) {
+    throw new Error('Invalid Status: rawItem is null or undefined');
+  }
+
+  return {
+    id: getStringValue(rawItem.system?.name),
+    name: getStringValue(rawItem.system?.label),
+    identifier: getStringValue(rawItem.identifier),
+    description: getStringValue(rawItem.description) || '',
+  };
+}
+
+/**
+ * Parse multiple Status items from a GraphQL query result
+ */
 export function ParseStatus(data: GetAllStatusQuery): Array<Status> {
-  if (!data.allStatus?.results) {
+  if (!data.manyStatus?.results) {
     return [];
   }
 
-  return data.allStatus?.results.map((x) => {
-    return {
-      name: getStringValue(x?.name),
-      id: getStringValue(x?.id),
-      identifier: getStringValue(x?.identifier),
-      description: getStringValue(x?.description),
-    };
-  });
+  return data.manyStatus?.results.map((x) => parseStatusItem(x));
 }

@@ -50,6 +50,7 @@ export const MultipleProducts: Story = {
       products: [
         {
           id: '8OiTP5UKXE-RRpU17Vpq4A',
+          name: 'Content Hub',
           productName: 'Content Hub',
           productDescription: '',
           darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub-dark',
@@ -57,6 +58,7 @@ export const MultipleProducts: Story = {
         },
         {
           id: '8OiTP5UKXE-RRpU17Vpq4A',
+          name: 'Content Hub ONE',
           productName: 'Content Hub ONE',
           productDescription: '',
           darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub_one-dark',
@@ -64,6 +66,7 @@ export const MultipleProducts: Story = {
         },
         {
           id: '8OiTP5UKXE-RRpU17Vpq4A',
+          name: 'XM Cloud',
           productName: 'XM Cloud',
           productDescription: '',
           darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud-dark',

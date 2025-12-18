@@ -1,12 +1,32 @@
-import { GetLatestEntriesQuery } from '@data/gql/generated/graphql';
-import { clearTimeStamp, getStringValue } from '@lib/utils';
+import {
+  ChangeTypeFragment,
+  MediaFragment,
+  ProductFragment,
+  SearchByDateQuery,
+  SearchByProductQuery,
+  SearchByProductsAndChangeTypesAndBreakingChangeQuery,
+  SearchByProductsAndChangeTypesQuery,
+  SearchByTitleAndDateQuery,
+  SearchByTitleQuery,
+  StatusFragment,
+} from '@data/gql/generated/graphql';
+import { getStringValue } from '@lib/utils';
 import { generateHTML } from '@tiptap/html';
 
 import { richTextProfile } from '../common/richTextConfiguration';
-import { ChangeType } from './changeType';
+import { formatReleaseDate } from '../utils/date';
+import { ChangeType, parseChangeTypeItem } from './changeType';
+import { parseMediaItem } from './common/media';
 import { Media } from './index';
-import SitecoreProduct from './sitecoreProduct';
-import { DefaultStatus, Status } from './status';
+import SitecoreProduct, { parseSitecoreProductItem } from './sitecoreProduct';
+import { parseStatusItem, Status } from './status';
+
+/**
+ * Type helper to extract changelog result item from query results
+ * All query results have the same structure for the result items
+ * We use the SearchByDateQuery structure as the base since all queries return the same item structure
+ */
+type ChangelogResultItem = NonNullable<NonNullable<NonNullable<SearchByDateQuery['changelog']>['results']>[number]>;
 
 export type ChangelogEntryList<T> = {
   total: number;
@@ -25,7 +45,7 @@ export type ChangelogEntrySummary = {
   products: Array<SitecoreProduct> | null;
   changeTypeName: string | null;
   scheduled: boolean;
-  status: Status;
+  status: Status | null;
 };
 
 export type ChangelogEntry = ChangelogEntrySummary & {
@@ -40,8 +60,31 @@ export type ChangelogEntry = ChangelogEntrySummary & {
   image: Array<Media>;
 };
 
-export function ParseRawData(data: GetLatestEntriesQuery | null): ChangelogEntryList<Array<ChangelogEntry>> {
-  if (data == null || !data.changelog?.results) {
+/**
+ * Helper type to extract the common data structure from different query types
+ */
+type ChangelogQueryData =
+  | SearchByDateQuery['changelog']
+  | SearchByProductQuery['changelog']
+  | SearchByProductsAndChangeTypesQuery['changelog']
+  | SearchByProductsAndChangeTypesAndBreakingChangeQuery['changelog']
+  | SearchByTitleQuery['data']
+  | SearchByTitleAndDateQuery['data']
+  | null
+  | undefined;
+
+/**
+ * Parse raw GraphQL query data into ChangelogEntryList
+ * @param data - GraphQL query result (can be from various query types)
+ * @returns Parsed ChangelogEntryList
+ */
+export function ParseRawData(
+  data: SearchByDateQuery | SearchByProductQuery | SearchByProductsAndChangeTypesQuery | SearchByProductsAndChangeTypesAndBreakingChangeQuery | SearchByTitleQuery | SearchByTitleAndDateQuery | null
+): ChangelogEntryList<Array<ChangelogEntry>> {
+  // Handle different query result structures
+  const changelogData: ChangelogQueryData = data && 'changelog' in data ? data.changelog : data && 'data' in data ? data.data : null;
+
+  if (!changelogData?.results) {
     return {
       endCursor: '',
       hasNext: false,
@@ -51,35 +94,121 @@ export function ParseRawData(data: GetLatestEntriesQuery | null): ChangelogEntry
   }
 
   return {
-    endCursor: getStringValue(data.changelog.pageInfo?.endCursor),
-    hasNext: data.changelog.pageInfo?.hasNext ?? false,
-    total: data.changelog.total ?? 0,
-    entries: data.changelog.results.map((item) => {
-      return parseChangeLogItem(item);
-    }),
+    endCursor: getStringValue(changelogData.cursor),
+    hasNext: changelogData.hasMore ?? false,
+    // Note: GraphQL schema doesn't expose total count in current queries
+    // This would need to be added to the GraphQL query if total count is needed
+    total: 0,
+    entries: changelogData.results
+      .filter((item): item is NonNullable<typeof item> => item !== null)
+      .filter((item) => {
+        // Filter out items that do not have a sitecoreProduct
+        const sitecoreProductResults = item.sitecoreProduct?.results;
+        const sitecoreProducts = Array.isArray(sitecoreProductResults) ? sitecoreProductResults.filter((x): x is NonNullable<typeof x> => x !== null && typeof x === 'object') : [];
+        return sitecoreProducts.length > 0;
+      })
+      .map((item) => {
+        return parseChangeLogItem(item as ChangelogResultItem);
+      }),
   };
 }
 
-export function parseChangeLogItem(changelog: any): ChangelogEntry {
+/**
+ * Parse a release date string to a formatted date string
+ * @param dateString - Date string to parse
+ * @returns Formatted date string
+ */
+function parseReleaseDate(dateString: string | null | undefined): string {
+  return formatReleaseDate(dateString);
+}
+
+/**
+ * Parse rich text content to HTML string
+ * @param content - Rich text content object
+ * @returns HTML string
+ */
+function parseRichTextContent(content: { [key: string]: unknown } | null | undefined): string {
+  if (!content) {
+    return '';
+  }
+
+  return generateHTML(content, [richTextProfile]);
+}
+
+/**
+ * Parse rich text content to HTML string or null
+ * @param content - Rich text content object
+ * @returns HTML string or null if content is empty
+ */
+function parseRichTextContentNullable(content: { [key: string]: unknown } | null | undefined): string | null {
+  if (content == null) {
+    return null;
+  }
+
+  if (!content.content) {
+    return null;
+  }
+
+  return generateHTML(content, [richTextProfile]);
+}
+
+/**
+ * Parse a single changelog item from GraphQL query result
+ * @param changelog - Changelog result item from GraphQL query
+ * @returns Parsed ChangelogEntry
+ */
+export function parseChangeLogItem(changelog: ChangelogResultItem | null | undefined): ChangelogEntry {
+  if (!changelog) {
+    throw new Error('Invalid changelog item: changelog is null or undefined');
+  }
+
+  // Extract and filter arrays safely
+  // TypeScript has difficulty with the complex union types from GraphQL, so we use type assertions
+  // after runtime checks
+  const sitecoreProductResults = changelog.sitecoreProduct?.results;
+  const changeTypeResults = changelog.changeType?.results;
+  const imageResults = changelog.image?.results;
+  const statusResults = changelog.status?.results;
+
+  const sitecoreProducts = Array.isArray(sitecoreProductResults) ? sitecoreProductResults.filter((x): x is NonNullable<typeof x> => x !== null && typeof x === 'object') : [];
+  const changeTypes = Array.isArray(changeTypeResults) ? changeTypeResults.filter((x): x is NonNullable<typeof x> => x !== null && typeof x === 'object') : [];
+  const images = Array.isArray(imageResults) ? imageResults.filter((img): img is NonNullable<typeof img> => img !== null && typeof img === 'object') : [];
+  const statuses = Array.isArray(statusResults) ? statusResults.filter((x): x is NonNullable<typeof x> => x !== null && typeof x === 'object') : [];
+
+  // Do not return items that do not have a sitecoreProduct
+  if (sitecoreProducts.length === 0) {
+    throw new Error(`Invalid changelog item: changelog item "${changelog.title ?? changelog.system?.name ?? 'unknown'}" does not have a sitecoreProduct`);
+  }
+
+  // Parse all products
+  const parsedProducts = sitecoreProducts.map((x) => parseSitecoreProductItem(x as unknown as ProductFragment));
+  const firstProduct = parsedProducts[0];
+
+  const firstStatus = statuses[0];
+
+  // Safely extract changeType from the first change type item
+  const firstChangeType = changeTypes[0];
+  const changeTypeName = firstChangeType && 'changeType' in firstChangeType ? firstChangeType.changeType : null;
+
   return {
-    id: getStringValue(changelog?.id),
-    name: changelog.name,
-    readMoreLink: changelog.readMoreLink,
-    title: changelog.title,
-    description: changelog.description ? generateHTML(changelog.description, [richTextProfile]) : '',
-    fullArticle: changelog.fullArticle != null && changelog.fullArticle?.content ? generateHTML(changelog.fullArticle, [richTextProfile]) : null,
-    breakingChange: changelog.breakingChange,
-    sitecoreProduct: changelog.sitecoreProduct.results,
-    scheduled: changelog.scheduled ? changelog.scheduled : false,
-    changeType: changelog.changeType.results,
-    version: changelog.version,
-    releaseDate: new Date(clearTimeStamp(changelog.releaseDate)).toLocaleDateString(['en-US'], { year: 'numeric', month: 'short', day: 'numeric' }),
-    image: changelog.image?.results,
-    lightIcon: changelog.sitecoreProduct.results[0]?.lightIcon,
-    darkIcon: changelog.sitecoreProduct.results[0]?.darkIcon,
-    productName: changelog.sitecoreProduct.results[0]?.productName ?? null,
-    products: changelog.sitecoreProduct.results ?? null,
-    status: changelog.scheduled == true ? null : changelog.status.results[0] ? changelog.status.results[0] : DefaultStatus,
-    changeTypeName: changelog.changeType.results[0]?.changeType ?? null,
+    id: getStringValue(changelog.system?.id),
+    name: getStringValue(changelog.system?.name),
+    readMoreLink: changelog.readMoreLink ?? '',
+    title: changelog.title ?? '',
+    description: changelog.description ? parseRichTextContent(changelog.description) : '',
+    fullArticle: parseRichTextContentNullable(changelog.fullArticle),
+    breakingChange: changelog.breakingChange ?? false,
+    sitecoreProduct: parsedProducts,
+    scheduled: changelog.scheduled ?? false,
+    changeType: changeTypes.map((x) => parseChangeTypeItem(x as unknown as ChangeTypeFragment)),
+    version: changelog.x_version ?? '',
+    releaseDate: parseReleaseDate(changelog.releaseDate),
+    image: images.map((img) => parseMediaItem(img as unknown as MediaFragment)),
+    lightIcon: firstProduct?.lightIcon ?? '',
+    darkIcon: firstProduct?.darkIcon ?? '',
+    productName: firstProduct?.productName ?? null,
+    products: parsedProducts,
+    status: changelog.scheduled === true ? null : firstStatus ? parseStatusItem(firstStatus as unknown as StatusFragment) : null,
+    changeTypeName,
   };
 }

@@ -20,7 +20,12 @@ export default handler;
 
 const getOverviewPerMonth: any = async (isPreview: boolean, products?: Array<Product>, changes?: Array<ChangeType>, breaking?: boolean) => {
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
-  const items = await changelog.getEntries({ productId: products?.join('|'), changeTypeId: changes?.join('|'), pageSize: 50, breaking: breaking });
+  const items = await changelog.getEntries({
+    productId: products?.join('|'),
+    changeTypeId: changes?.join('|'),
+    pageSize: 50,
+    breaking: breaking,
+  });
 
   const entries: Array<ChangelogEntrySummary> = items.entries;
 

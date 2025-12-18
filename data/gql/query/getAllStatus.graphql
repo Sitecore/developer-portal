@@ -1,6 +1,7 @@
 query GetAllStatus {
-  allStatus {
-    total
+  manyStatus {
+    hasMore
+    cursor
     results {
       ...status
     }

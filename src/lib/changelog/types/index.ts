@@ -9,7 +9,7 @@ export enum ProductName {
   CONTENTHUBOPS = 'Content Hub Operations',
   CONTENTHUBDAM = 'Content Hub DAM',
   SEARCH = 'Sitecore Search',
-  DAM = 'Sitecore DAM', // toDo?
+  DAM = 'Sitecore DAM',
   DISCOVER = 'Sitecore Discover',
   CONNECT = 'Sitecore Connect',
   CLOUDPORTAL = 'Sitecore Cloud Portal',
@@ -22,7 +22,6 @@ export * from './changeLogEntry';
 export * from './changeType';
 export * from './common/media';
 export * from './product';
-// export * from './sitecoreCloud';
 export * from './sitecoreProduct';
 export * from './status';
 
