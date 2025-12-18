@@ -8,6 +8,17 @@ hasInPageNav: true
 
 Today’s experiences change fast. Our Content Management System (CMS) gives your teams the freedom to build, design, and update content at the speed your customers expect with no waiting and no bottlenecks. SitecoreAI provides an agentic co-pilot for content, design and development, including built-in personalization and testing help marketing teams deliver relevance at scale.
 
+
+
+<Promo
+  title="Finding XM Cloud tools in SitecoreAI"
+  description="The SitecoreAI interface introduces a unified workspace. The new interface offers a consistent layout, tighter integrations across tools, and built-in agentic features that make navigation faster and more intuitive. Go through the XM Cloud features and where you can find them in the new UI."
+  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/d1a88f7d4d3842dd999b5b479dc8bc8c?t=sc700x700"
+  linkText="Read more"
+  linkHref="https://doc.sitecore.com/sai/en/users/sitecoreai/finding-xm-cloud-tools-in-sitecoreai.html" isImageLeft={true}
+/>
+
+
 ## Getting started
 
 <Row columns={2}>

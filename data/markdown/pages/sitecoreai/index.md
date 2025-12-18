@@ -19,8 +19,14 @@ SitecoreAI is the unified digital experience platform that brings together conte
 
 With AI at its core, SitecoreAI coordinates campaigns, personalises every moment, and tracks performance with precision.
 
-<img src="/images/sitecoreai/marchitecture.png" alt="Debug mode"/>
-<br/><br/>
+<img src="/images/sitecoreai/marchitecture.png" alt="Marchitecture"/>
+
+### Looking for details of the new UI?
+<Row columns={2}>
+  <Link title="Finding XM Cloud tools in SitecoreAI" link="https://doc.sitecore.com/sai/en/users/sitecoreai/finding-xm-cloud-tools-in-sitecoreai.html" linkText="Read more" />
+  <Link title="SitecoreAI Navigation" link="/sitecoreai/navigation" linkText="Read more" />
+</Row>
+
 
 ## Content management
 
@@ -28,7 +34,7 @@ Today’s experiences change fast. Our CMS gives your teams the freedom to build
 
 <Row columns={3}>
 <Link title="Get started with Content management" link="/sitecoreai/capabilities/cms"/>
-<Link title="Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
+<Link title="Documentation" link="https://doc.sitecore.com/sai/en/users/sitecoreai/sitecoreai.html" />
 <Link title="Changelog" link="https://developers.sitecore.com/changelog"/>
 </Row>
 
@@ -63,7 +69,7 @@ Turn data into decisions and awareness into understanding. Unlock your customer 
 
 Help customers find what they need faster and connect with what matters most, every time. Personalize every experience with intelligence that understands your customers.
 <Row columns={3}>
-<Link title="Get started with Converstion Optimization" link="/sitecoreai/capabilities/conversion-optimization" />
+<Link title="Get started with Conversion Optimization" link="/sitecoreai/capabilities/conversion-optimization" />
 <Link title="Search experience documentation" link="https://doc.sitecore.com/search" />
 <Link title="Personalized experience documentation" link="https://doc.sitecore.com/personalize" />
 </Row>

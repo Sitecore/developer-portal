@@ -10,7 +10,7 @@ audience: ['All']
 ---
 
 ## Context
-Pages is the main authoring interface that offers a wide range of editing and design functionalities for building web pages in XM Cloud. Setting up XM Cloud, you should make sure your project is ready to to benefit from the latest capabilities and features that come with Pages, while also improving their authoring flow to ensure long-term editorial efficiency. If you are moving from XM/XP, it will also be key to switch over from Experience Editor.
+Pages is the main authoring interface that offers a wide range of editing and design functionalities for building web pages in XM Cloud. Setting up XM Cloud, you should make sure your project is ready to benefit from the latest capabilities and features that come with Pages, while also improving their authoring flow to ensure long-term editorial efficiency. If you are moving from XM/XP, it will also be key to switch over from Experience Editor.
 
 ## Execution
 [Pages](https://doc.sitecore.com/xmc/en/users/xm-cloud/build-pages.html) provides modern capabilities such as embedded field support, metadata mode, and streamlined inline editing, making it a more efficient and sustainable tool for content authors. Implementation of templates and components need to be aligned to a Pages first authoring approach. 
