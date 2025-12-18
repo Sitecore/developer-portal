@@ -162,21 +162,19 @@ export type Changelog_Filter = {
 /** GraphQL root filter for content items references. */
 export type Changelog_ChangeType_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_ChangeType_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_ChangeType_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
+export type Changelog_ChangeType_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_ChangeType_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_ChangeType_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
-  ref: InputMaybe<Ref_Filter>;
-  sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
   status: InputMaybe<Status_Filter>;
@@ -188,21 +186,19 @@ export type Changelog_ChangeType_SampleArticle__Upload__XmcMedia__Ref__SitecoreC
 /** GraphQL root filter for content items references. */
 export type Changelog_Image_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_Image_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_Image_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
+export type Changelog_Image_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_Image_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_Image_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
-  ref: InputMaybe<Ref_Filter>;
-  sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
   status: InputMaybe<Status_Filter>;
@@ -214,21 +210,19 @@ export type Changelog_Image_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud_
 /** GraphQL root filter for content items references. */
 export type Changelog_SitecoreProduct_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
+export type Changelog_SitecoreProduct_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
-  ref: InputMaybe<Ref_Filter>;
-  sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
   status: InputMaybe<Status_Filter>;
@@ -240,21 +234,19 @@ export type Changelog_SitecoreProduct_SampleArticle__Upload__XmcMedia__Ref__Site
 /** GraphQL root filter for content items references. */
 export type Changelog_Status_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_Status_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_Status_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type Changelog_Status_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
+export type Changelog_Status_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<Changelog_Status_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Changelog_Status_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<Changelog_Status_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
-  ref: InputMaybe<Ref_Filter>;
-  sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
   status: InputMaybe<Status_Filter>;
@@ -464,6 +456,8 @@ export type LocaleSystemTypeType = {
 export type MediaLibraryFragment = {
   /** The size of the file. */
   media_fileSize: Maybe<Scalars['Float']['output']>;
+  /** The private link to use for the media asset enabling displaying it in authoring without making it publically available. */
+  media_privateLink: Maybe<Scalars['String']['output']>;
   /** The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset. */
   media_publicLink: Maybe<Scalars['String']['output']>;
   /** The thumbnail link to use for the media asset. */
@@ -479,6 +473,8 @@ export type MediaLibraryFragmentImpl = ContentItem &
   MediaLibraryFragment & {
     /** The size of the file. */
     media_fileSize: Maybe<Scalars['Float']['output']>;
+    /** The private link to use for the media asset enabling displaying it in authoring without making it publically available. */
+    media_privateLink: Maybe<Scalars['String']['output']>;
     /** The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset. */
     media_publicLink: Maybe<Scalars['String']['output']>;
     /** The thumbnail link to use for the media asset. */
@@ -504,6 +500,8 @@ export type MediaLibraryFragmentList = {
 export enum MediaLibraryFragmentSortingOptions {
   MediaFileSizeAsc = 'MEDIA_FILE_SIZE_ASC',
   MediaFileSizeDesc = 'MEDIA_FILE_SIZE_DESC',
+  MediaPrivateLinkAsc = 'MEDIA_PRIVATE_LINK_ASC',
+  MediaPrivateLinkDesc = 'MEDIA_PRIVATE_LINK_DESC',
   MediaPublicLinkAsc = 'MEDIA_PUBLIC_LINK_ASC',
   MediaPublicLinkDesc = 'MEDIA_PUBLIC_LINK_DESC',
   MediaThumbnailLinkAsc = 'MEDIA_THUMBNAIL_LINK_ASC',
@@ -535,6 +533,7 @@ export type MediaLibraryFragment_Filter = {
   /** Combines multiple filter conditions. */
   OR: InputMaybe<Array<InputMaybe<MediaLibraryFragment_Filter>>>;
   media_fileSize: InputMaybe<DoubleFilterInput>;
+  media_privateLink: InputMaybe<StringFilterInput>;
   media_publicLink: InputMaybe<StringFilterInput>;
   media_thumbnailLink: InputMaybe<StringFilterInput>;
   media_type: InputMaybe<SelectFilterInput>;
@@ -557,7 +556,6 @@ export type Query = {
   manyContentItem: Maybe<ContentItemList>;
   manyLocale: Maybe<Array<Maybe<Locale>>>;
   manyMediaLibraryFragment: Maybe<MediaLibraryFragmentList>;
-  manyRef: Maybe<RefList>;
   manySitecoreCloud: Maybe<SitecoreCloudList>;
   manySitecoreProduct: Maybe<SitecoreProductList>;
   manyStatus: Maybe<StatusList>;
@@ -565,7 +563,6 @@ export type Query = {
   manyUpload: Maybe<UploadList>;
   manyXMCMediaFragment: Maybe<XmcMediaFragmentList>;
   mediaLibraryFragment: Maybe<MediaLibraryFragment>;
-  ref: Maybe<Ref>;
   sitecoreCloud: Maybe<SitecoreCloud>;
   sitecoreProduct: Maybe<SitecoreProduct>;
   status: Maybe<Status>;
@@ -621,13 +618,6 @@ export type QueryManyMediaLibraryFragmentArgs = {
   orderBy: InputMaybe<MediaLibraryFragmentSortingOptions>;
 };
 
-export type QueryManyRefArgs = {
-  after: InputMaybe<Scalars['String']['input']>;
-  filter: InputMaybe<Root_Ref>;
-  minimumPageSize?: Scalars['Int']['input'];
-  orderBy: InputMaybe<RefSortingOptions>;
-};
-
 export type QueryManySitecoreCloudArgs = {
   after: InputMaybe<Scalars['String']['input']>;
   filter: InputMaybe<Root_SitecoreCloud>;
@@ -673,11 +663,6 @@ export type QueryMediaLibraryFragmentArgs = {
   locale: Scalars['String']['input'];
 };
 
-export type QueryRefArgs = {
-  id: Scalars['ID']['input'];
-  locale: Scalars['String']['input'];
-};
-
 export type QuerySitecoreCloudArgs = {
   id: Scalars['ID']['input'];
   locale: Scalars['String']['input'];
@@ -705,92 +690,6 @@ export type QueryUploadArgs = {
 export type QueryXMcMediaFragmentArgs = {
   id: Scalars['ID']['input'];
   locale: Scalars['String']['input'];
-};
-
-export type Ref = ContentItem & {
-  reference: Maybe<ContentItemList>;
-  system: System;
-  title: Maybe<Scalars['String']['output']>;
-};
-
-export type RefReferenceArgs = {
-  after: InputMaybe<Scalars['String']['input']>;
-  filter: InputMaybe<Ref_Reference_Relations>;
-  minimumPageSize?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<ContentItemSortingOptions>;
-};
-
-/** Represents a list of content items. */
-export type RefList = {
-  /** The pagination cursor. */
-  cursor: Maybe<Scalars['String']['output']>;
-  /** Indicates whether more items are available. */
-  hasMore: Maybe<Scalars['Boolean']['output']>;
-  /** The minimum page size. */
-  minimumPageSize: Scalars['Int']['output'];
-  /** The list of content items. */
-  results: Maybe<Array<Maybe<Ref>>>;
-};
-
-/** Enum type used for sorting in QueryMany. */
-export enum RefSortingOptions {
-  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
-  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
-  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
-  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
-  SystemIdAsc = 'SYSTEM_ID_ASC',
-  SystemIdDesc = 'SYSTEM_ID_DESC',
-  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
-  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
-  SystemNameAsc = 'SYSTEM_NAME_ASC',
-  SystemNameDesc = 'SYSTEM_NAME_DESC',
-  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
-  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
-  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
-  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
-  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
-  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
-  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
-  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
-  TitleAsc = 'TITLE_ASC',
-  TitleDesc = 'TITLE_DESC',
-}
-
-/** GraphQL filter for content items. */
-export type Ref_Filter = {
-  /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Ref_Filter>>>;
-  /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Ref_Filter>>>;
-  reference: InputMaybe<ReferenceFilterInput>;
-  system: InputMaybe<SystemTypeFilterInput>;
-  title: InputMaybe<StringFilterInput>;
-};
-
-/** GraphQL root filter for content items references. */
-export type Ref_Reference_Relations = {
-  /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Ref_Reference_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
-  /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Ref_Reference_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
-};
-
-/** Represents the input type for filtering references in GraphQL. */
-export type Ref_Reference_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
-  /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Ref_Reference_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
-  /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Ref_Reference_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
-  changelog: InputMaybe<Changelog_Filter>;
-  changetype: InputMaybe<Changetype_Filter>;
-  ref: InputMaybe<Ref_Filter>;
-  sampleArticle: InputMaybe<SampleArticle_Filter>;
-  sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
-  sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
-  status: InputMaybe<Status_Filter>;
-  system: InputMaybe<SystemTypeFilterInput>;
-  upload: InputMaybe<Upload_Filter>;
-  xMCMedia: InputMaybe<XmcMedia_Filter>;
 };
 
 /** GraphQL filter for reference fields. */
@@ -858,14 +757,6 @@ export type Root_Changetype = {
 };
 
 /** Root filter for content types. */
-export type Root_Ref = {
-  /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<Ref_Filter>>>;
-  /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<Ref_Filter>>>;
-};
-
-/** Root filter for content types. */
 export type Root_SitecoreCloud = {
   /** Combines multiple filter conditions. */
   AND: InputMaybe<Array<InputMaybe<SitecoreCloud_Filter>>>;
@@ -887,86 +778,6 @@ export type Root_Status = {
   AND: InputMaybe<Array<InputMaybe<Status_Filter>>>;
   /** Combines multiple filter conditions. */
   OR: InputMaybe<Array<InputMaybe<Status_Filter>>>;
-};
-
-/** This is a sample Content Type representing an Article */
-export type SampleArticle = ContentItem & {
-  /** Main content of this article */
-  body: Maybe<Scalars['JSON']['output']>;
-  /** Specify if this article belongs to the news section */
-  isNews: Maybe<Scalars['Boolean']['output']>;
-  /** Target date of the Issue that this article will be included */
-  issueDate: Maybe<Scalars['UTCDateTime']['output']>;
-  /** Number of the Issue that this article will be included */
-  issueNumber: Maybe<Scalars['Float']['output']>;
-  /** Related Articles in the See Also section */
-  relatedArticles: Maybe<ContentItemList>;
-  /** Summary of this article */
-  summary: Maybe<Scalars['String']['output']>;
-  system: System;
-  /** Title */
-  title: Maybe<Scalars['String']['output']>;
-};
-
-/** This is a sample Content Type representing an Article */
-export type SampleArticleRelatedArticlesArgs = {
-  after: InputMaybe<Scalars['String']['input']>;
-  filter: InputMaybe<SampleArticle_RelatedArticles_Relations>;
-  minimumPageSize?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<ContentItemSortingOptions>;
-};
-
-/** Represents a list of content items. */
-export type SampleArticleList = {
-  /** The pagination cursor. */
-  cursor: Maybe<Scalars['String']['output']>;
-  /** Indicates whether more items are available. */
-  hasMore: Maybe<Scalars['Boolean']['output']>;
-  /** The minimum page size. */
-  minimumPageSize: Scalars['Int']['output'];
-  /** The list of content items. */
-  results: Maybe<Array<Maybe<SampleArticle>>>;
-};
-
-/** GraphQL filter for content items. */
-export type SampleArticle_Filter = {
-  /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SampleArticle_Filter>>>;
-  /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SampleArticle_Filter>>>;
-  isNews: InputMaybe<BooleanFilterInput>;
-  issueDate: InputMaybe<DateTimeFilterInput>;
-  issueNumber: InputMaybe<DoubleFilterInput>;
-  relatedArticles: InputMaybe<ReferenceFilterInput>;
-  summary: InputMaybe<StringFilterInput>;
-  system: InputMaybe<SystemTypeFilterInput>;
-  title: InputMaybe<StringFilterInput>;
-};
-
-/** GraphQL root filter for content items references. */
-export type SampleArticle_RelatedArticles_Relations = {
-  /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
-  /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
-};
-
-/** Represents the input type for filtering references in GraphQL. */
-export type SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
-  /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
-  /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SampleArticle_RelatedArticles_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
-  changelog: InputMaybe<Changelog_Filter>;
-  changetype: InputMaybe<Changetype_Filter>;
-  ref: InputMaybe<Ref_Filter>;
-  sampleArticle: InputMaybe<SampleArticle_Filter>;
-  sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
-  sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
-  status: InputMaybe<Status_Filter>;
-  system: InputMaybe<SystemTypeFilterInput>;
-  upload: InputMaybe<Upload_Filter>;
-  xMCMedia: InputMaybe<XmcMedia_Filter>;
 };
 
 /** This type allows specifying a search over a Select field. */
@@ -1124,21 +935,19 @@ export type SitecoreProduct_Filter = {
 /** GraphQL root filter for content items references. */
 export type SitecoreProduct_ProductIcon_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
+export type SitecoreProduct_ProductIcon_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
-  ref: InputMaybe<Ref_Filter>;
-  sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
   status: InputMaybe<Status_Filter>;
@@ -1150,21 +959,19 @@ export type SitecoreProduct_ProductIcon_SampleArticle__Upload__XmcMedia__Ref__Si
 /** GraphQL root filter for content items references. */
 export type SitecoreProduct_SitecoreCloud_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
 };
 
 /** Represents the input type for filtering references in GraphQL. */
-export type SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations = {
+export type SitecoreProduct_SitecoreCloud_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations = {
   /** Combines multiple filter conditions. */
-  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   /** Combines multiple filter conditions. */
-  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_SampleArticle__Upload__XmcMedia__Ref__SitecoreCloud__Changetype__Status__SitecoreProduct__Changelog_Relations>>>;
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
   changelog: InputMaybe<Changelog_Filter>;
   changetype: InputMaybe<Changetype_Filter>;
-  ref: InputMaybe<Ref_Filter>;
-  sampleArticle: InputMaybe<SampleArticle_Filter>;
   sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
   sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
   status: InputMaybe<Status_Filter>;
@@ -1456,6 +1263,8 @@ export type XmcMedia = ContentItem &
   XmcMediaFragment & {
     /** The size of the file. */
     media_fileSize: Maybe<Scalars['Float']['output']>;
+    /** The private link to use for the media asset enabling displaying it in authoring without making it publically available. */
+    media_privateLink: Maybe<Scalars['String']['output']>;
     /** The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset. */
     media_publicLink: Maybe<Scalars['String']['output']>;
     /** The thumbnail link to use for the media asset. */
@@ -1600,6 +1409,65 @@ export type GetNumberOfEntriesByProductQueryVariables = Exact<{
 
 export type GetNumberOfEntriesByProductQuery = { changelog: { hasMore: boolean | null; results: Array<{ system: { id: string } } | null> | null } | null };
 
+export type SearchQueryVariables = Exact<{
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  breaking: InputMaybe<Scalars['Boolean']['input']>;
+}>;
+
+export type SearchQuery = {
+  changelog: {
+    hasMore: boolean | null;
+    cursor: string | null;
+    results: Array<{
+      title: string | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
+      readMoreLink: string | null;
+      breakingChange: boolean | null;
+      x_version: string | null;
+      releaseDate: any | null;
+      scheduled: boolean | null;
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
+    } | null> | null;
+  } | null;
+};
+
+export type SearchByChangeTypesQueryVariables = Exact<{
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  changeTypeIds?: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  breaking: InputMaybe<Scalars['Boolean']['input']>;
+}>;
+
+export type SearchByChangeTypesQuery = {
+  changelog: {
+    hasMore: boolean | null;
+    cursor: string | null;
+    results: Array<{
+      title: string | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
+      readMoreLink: string | null;
+      breakingChange: boolean | null;
+      x_version: string | null;
+      releaseDate: any | null;
+      scheduled: boolean | null;
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
+    } | null> | null;
+  } | null;
+};
+
 export type SearchByDateQueryVariables = Exact<{
   startDate: Scalars['CustomDateTime']['input'];
   endDate: Scalars['CustomDateTime']['input'];
@@ -1632,9 +1500,9 @@ export type SearchByDateQuery = {
 export type SearchByProductQueryVariables = Exact<{
   date: InputMaybe<Scalars['CustomDateTime']['input']>;
   productId: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
-  changeTypeIds?: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
+  breaking: InputMaybe<Scalars['Boolean']['input']>;
 }>;
 
 export type SearchByProductQuery = {
@@ -1999,6 +1867,184 @@ export const GetNumberOfEntriesByProductDocument = new TypedDocumentString(`
   }
 }
     `) as unknown as TypedDocumentString<GetNumberOfEntriesByProductQuery, GetNumberOfEntriesByProductQueryVariables>;
+export const SearchDocument = new TypedDocumentString(`
+    query search($date: CustomDateTime, $first: Int = 5, $after: String = "", $breaking: Boolean) {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
+    after: $after
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {breakingChange: {equals: $breaking}}]}
+  ) {
+    results {
+      ...changelogEntry
+    }
+    hasMore
+    cursor
+  }
+}
+    fragment changeType on Changetype {
+  system {
+    id
+    name
+  }
+  changeType
+}
+fragment changelogEntry on Changelog {
+  system {
+    id
+    name
+  }
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  x_version
+  releaseDate
+  scheduled
+  image {
+    hasMore
+    cursor
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    results {
+      ...product
+    }
+  }
+  changeType {
+    results {
+      ...changeType
+    }
+  }
+  status {
+    results {
+      ...status
+    }
+  }
+}
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
+}
+fragment product on SitecoreProduct {
+  system {
+    id
+    name
+  }
+  productName
+  productDescription
+  darkIcon: productIconDark
+  lightIcon: productIconLight
+}
+fragment status on Status {
+  system {
+    id
+    name
+    label
+  }
+  description
+  identifier
+}`) as unknown as TypedDocumentString<SearchQuery, SearchQueryVariables>;
+export const SearchByChangeTypesDocument = new TypedDocumentString(`
+    query searchByChangeTypes($date: CustomDateTime, $changeTypeIds: [String!] = [], $first: Int = 5, $after: String = "", $breaking: Boolean) {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
+    after: $after
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {changeType: {containsAny: $changeTypeIds}}, {breakingChange: {equals: $breaking}}]}
+  ) {
+    results {
+      ...changelogEntry
+    }
+    hasMore
+    cursor
+  }
+}
+    fragment changeType on Changetype {
+  system {
+    id
+    name
+  }
+  changeType
+}
+fragment changelogEntry on Changelog {
+  system {
+    id
+    name
+  }
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  x_version
+  releaseDate
+  scheduled
+  image {
+    hasMore
+    cursor
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    results {
+      ...product
+    }
+  }
+  changeType {
+    results {
+      ...changeType
+    }
+  }
+  status {
+    results {
+      ...status
+    }
+  }
+}
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
+}
+fragment product on SitecoreProduct {
+  system {
+    id
+    name
+  }
+  productName
+  productDescription
+  darkIcon: productIconDark
+  lightIcon: productIconLight
+}
+fragment status on Status {
+  system {
+    id
+    name
+    label
+  }
+  description
+  identifier
+}`) as unknown as TypedDocumentString<SearchByChangeTypesQuery, SearchByChangeTypesQueryVariables>;
 export const SearchByDateDocument = new TypedDocumentString(`
     query SearchByDate($startDate: CustomDateTime!, $endDate: CustomDateTime!, $first: Int = 5, $after: String = "") {
   changelog: manyChangelog(
@@ -2088,12 +2134,12 @@ fragment status on Status {
   identifier
 }`) as unknown as TypedDocumentString<SearchByDateQuery, SearchByDateQueryVariables>;
 export const SearchByProductDocument = new TypedDocumentString(`
-    query searchByProduct($date: CustomDateTime, $productId: [String!], $changeTypeIds: [String!] = [], $first: Int = 5, $after: String = "") {
+    query searchByProduct($date: CustomDateTime, $productId: [String!], $first: Int = 5, $after: String = "", $breaking: Boolean) {
   changelog: manyChangelog(
     orderBy: RELEASE_DATE_DESC
     minimumPageSize: $first
     after: $after
-    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}, {changeType: {containsAny: $changeTypeIds}}]}
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}, {breakingChange: {equals: $breaking}}]}
   ) {
     results {
       ...changelogEntry

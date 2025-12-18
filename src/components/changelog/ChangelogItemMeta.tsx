@@ -31,11 +31,9 @@ export function getStatusBadgeColor(status: string): string {
 
 export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
   const { isPreview } = usePreview();
-console.log(item);
+
 const organizationId = process.env.NEXT_PUBLIC_SITECORE_CHONE_ORGANIZATION as string;
 const tenantId = process.env.NEXT_PUBLIC_SITECORE_CHONE_TENANT as string;
-
-console.log(item.changeType);
 
 const colorScheme = (changeType: string) => {
   if (changeType?.toLowerCase() == 'improvement') {

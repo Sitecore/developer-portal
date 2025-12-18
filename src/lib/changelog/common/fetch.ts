@@ -3,7 +3,9 @@ import { ChangelogCredentials } from '@lib/changelog/types';
 import axios, { AxiosInstance } from 'axios';
 import axiosThrottle from 'axios-request-throttle';
 
+import { Log } from '@lib/utils';
 import { ChangelogConfigurationError, ChangelogGraphQLError, ChangelogNetworkError } from '../errors';
+import { extractQueryName } from '../utils/graphql';
 
 /**
  * Create a throttled axios instance for preview requests
@@ -54,10 +56,15 @@ export async function fetchGraphQL<TResult, TVariables>(
 
   const axiosInstance = getAxiosInstance(preview ?? false);
 
+  const queryString = typeof document === 'string' ? document : document.toString();
+  const queryName = extractQueryName(queryString);
+
   try {
+    Log.debug(`Executing GraphQL [query: ${queryName}, variables: ${variables ? JSON.stringify(variables) : 'no variables'}]`);
+
     const response = await axiosInstance.post<{ data: TResult; errors?: Array<unknown> }>(
       endpoint,
-      { query: typeof document === 'string' ? document : document.toString(), variables: variables ?? {} },
+      { query: queryString, variables: variables ?? {} },
       {
         headers: {
           'Content-Type': 'application/json',
