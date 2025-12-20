@@ -36,7 +36,6 @@ const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps
     });
 
     observer.observe(entryRef.current);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLast]);
 
   return (

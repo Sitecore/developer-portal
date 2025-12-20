@@ -1,5 +1,5 @@
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-import { Flex, Heading, Image, SimpleGrid, Text } from '@chakra-ui/react';
+import { Flex, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react';
 import { Article, CTACard } from '@components/cards';
 import PromoCardVertical from '@components/cards/PromoCardVerticals';
 import communityListData from '@data/data-community-list';
@@ -20,8 +20,10 @@ import productwebinar from '@data/promos/productwebinar';
 import symposium2025 from '@data/promos/symposium2025';
 
 import AccelerateUpdates from '../components/lists/accelerate/AccelerateUpdates';
+import { ProductLogo } from '../components/ui/logos';
 import { getLatestRecipes } from '../lib/accelerate/latest';
 import { AccelerateRecipe } from '../lib/accelerate/types/recipe';
+import { Product } from '../lib/assets';
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo('home');
@@ -49,20 +51,6 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
         <Hero title={pageInfo.title} description={pageInfo.description} />
 
         <VerticalGroup background={'chakra-bg'}>
-          <CenteredContent>
-            <Flex 
-              direction="column" 
-              gap={{ base: 4, md: 2 }} 
-              mb={0}
-              mt={{ base: 8, md: 0 }}
-            > 
-              <Text fontSize="md" textAlign="left" mx="auto">
-                Explore a unified platform that brings together content, data, personalisation, and intelligent automation: designed for developers, marketers, and partners alike. Join a thriving community of over 4,000 daily active developers
-                shaping the future of digital experience. Whether you&apos;re migrating from CMS or scaling across channels, SitecoreAI empowers you to deliver personalised, measurable outcomes.
-              </Text>
-            </Flex>
-          </CenteredContent>
-
           <VerticalGroup background={'chakra-bg'}>
             <CenteredContent>
               <SimpleGrid gap={[4, 4, 10]} mb={0} columns={[1, 1, 2]}>
@@ -70,7 +58,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
                 <AccelerateUpdates recipes={recipes} title="Sitecore Accelerate updates" linkHref="/learn/accelerate" linkText="See all recipes" url="/learn/accelerate/" />
               </SimpleGrid>
             </CenteredContent>
-          </VerticalGroup>  
+          </VerticalGroup>
           <CenteredContent>
             <Row columns={4}>
               <Article title="Get Started" description="New to Sitecore? Start here essential setup documentation to build your first application." linktext="Get started" link="/sitecoreai" />
@@ -81,33 +69,20 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup 
-          bgGradient={{ 
-            base: 'linear(to-b, #1d08bd, #170697)',
-            md: 'linear(to-r, #1d08bd, #170697)'
-          }}
-          color={'primary.50'} 
+        <VerticalGroup
+          background={useColorModeValue('linear-gradient(51deg,#dedbff -10%,#f9f9f9 40%,#f9f9f9 70%,#ffcfcf 120%)', 'linear-gradient(51deg, #2c2c4a -10%, #1a1a1a 40%, #1a1a1a 70%, #4a2c2c 120%)')}
           textAlign={{ base: 'center', md: 'center' }}
-          p={4} 
+          p={4}
         >
-          <CenteredContent>
-            <Image 
-              src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/1f173e4830ef499bbfed583245f41e23?v=ee01a64a" 
-              alt="Logo" 
-              width="280px" 
-              height="67px"
-              mx="auto"
-              display="block"
-              mb={6}
-            />
-            <GenericList 
-              title="" 
-              subtitle="" 
-              data={platformData.data} 
-              column={3} 
-              width={{ base: 'full', md: '2xs' }} 
-              cardVariant="blurred" 
-            />
+          <CenteredContent alignItems="center" textColor={useColorModeValue('black', 'white')}>
+            <ProductLogo product={Product.SitecoreAI} width={280} height={67} />
+            <CenteredContent>
+              <Text fontSize="lg" textAlign="center" mx="auto">
+                Explore a unified platform that brings together content, data, personalisation, and intelligent automation: designed for developers, marketers, and partners alike. Join a thriving community of over 4,000 daily active developers
+                shaping the future of digital experience. Whether you&apos;re migrating from CMS or scaling across channels, SitecoreAI empowers you to deliver personalised, measurable outcomes.
+              </Text>
+            </CenteredContent>
+            <GenericList title="" subtitle="" data={platformData.data} column={3} width={{ base: 'full', md: '2xs' }} variant="blurred" />
           </CenteredContent>
         </VerticalGroup>
 
@@ -124,9 +99,9 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup p={4}  background={'gray.100'}>
+        <VerticalGroup p={4} background={'gray.100'}>
           <CenteredContent>
-             <Flex direction="column" gap={4} textAlign="center" mb={8}>
+            <Flex direction="column" gap={4} textAlign="center" mb={8}>
               <Heading as="h2" size="lg" color={'black'} mb={0}>
                 Sitecore Experience Platform
               </Heading>

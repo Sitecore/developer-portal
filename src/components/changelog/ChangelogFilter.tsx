@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { MultiSelect, Option } from '@/src/components/ui/dropdown';
 import { Container, Skeleton, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
 import { Product } from '@lib/changelog/types';
