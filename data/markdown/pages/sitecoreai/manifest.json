@@ -2,65 +2,65 @@
   "title": "SitecoreAI",
   "description": "",
   "heading": false,
-  "path": "/sitecoreai",
+  "path": "sitecoreai",
   "showRootAsSections": true,
   "routes": [
     {
       "title": "SitecoreAI",
-      "path": "/",
+      "path": "",
       "children": [
         {
           "title": "Introduction",
-          "path": "/"
-        },        
+          "path": ""
+        },
         {
           "title": "Navigation",
-          "path": "/navigation"
+          "path": "navigation"
         },
         {
           "title": "Sitecore Studio",
-          "path": "/sitecore-studio"
+          "path": "sitecore-studio"
         },
         {
           "title": "Developer Experience",
-          "path": "/dev-experience"
-        } ,
+          "path": "dev-experience"
+        },
         {
           "title": "FAQs",
-          "path": "/faq"
-        } 
+          "path": "faq"
+        }
       ]
     },
-        {
+    {
       "title": "Capabilities",
-      "path": "",
+      "path": "capabilities",
       "ignoreLink": true,
       "children": [
         {
           "title": "Content management",
-          "path": "/capabilities/cms"
+          "path": "cms"
         },
         {
           "title": "Digital asset management",
-          "path": "/capabilities/dam"
+          "path": "dam"
         },
         {
           "title": "Content operations",
-          "path": "/capabilities/content-ops"
+          "path": "content-ops"
         },
         {
           "title": "Conversion optimization",
-          "path": "/capabilities/conversion-optimization"
+          "path": "conversion-optimization"
         },
         {
           "title": "Unified data layer",
-          "path": "/capabilities/unified-data-layer"
+          "path": "unified-data-layer"
         },
         {
           "title": "Commerce",
-          "path": "/capabilities/commerce"
+          "path": "commerce"
         }
       ]
-    }  
+    }
   ]
 }

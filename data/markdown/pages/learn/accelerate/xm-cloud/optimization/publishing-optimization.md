@@ -136,7 +136,7 @@ Once the update-to-date dependencies are recorded in Edge, anytime the dependenc
 
 <Row columns={2}>
   <Link title="Publishing in XM Cloud" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/publishing-in-xm-cloud.html" /> 
-  <Link title="Publishing to Edge" link="  https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html" /> 
+  <Link title="Publishing to Edge" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html" /> 
     <Link title="Language Fallback" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/language-fallback.html" /> 
 </Row>
 
