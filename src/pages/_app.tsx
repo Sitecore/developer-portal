@@ -1,9 +1,6 @@
-import { Box, ChakraProvider } from '@chakra-ui/react';
 import { IsSearchEnabled, SEARCH_CONFIG } from '@lib/search';
 import { PageController, trackEntityPageViewEvent, WidgetsProvider } from '@sitecore-search/react';
-import { toastOptions } from '@sitecore/blok-theme';
 import { Footer } from '@src/components/navigation/Footer';
-import Navbar from '@src/components/navigation/NavBar';
 import { AppProps } from 'next/app';
 import { Router } from 'next/router';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -11,9 +8,11 @@ import TagManager from 'react-gtm-module';
 import TopBarProgress from 'react-topbar-progress-indicator';
 
 import { SessionProvider } from 'next-auth/react';
+import { ThemeProvider } from 'next-themes';
 import { EngageTrackerProvider } from '../components/integrations';
+import TopNav from '../components/navigation/topNav';
 import { PreviewProvider } from '../context/PreviewContext';
-import { scdpTheme } from '../theme/theme';
+import './globals.css';
 
 const SearchWrapper = ({ children }: any) => (IsSearchEnabled() ? <WidgetsProvider {...SEARCH_CONFIG}>{children}</WidgetsProvider> : children);
 
@@ -87,20 +86,21 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 
   return (
     <SearchWrapper>
-      <ChakraProvider theme={scdpTheme} toastOptions={toastOptions}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <SessionProvider session={session}>
           <EngageTrackerProvider>
             <PreviewProvider hostname={hostname}>
               {progress && <TopBarProgress />}
-              <Navbar searchEnabled={IsSearchEnabled()} />
-              <Box ref={contentInnerRef}>
+              <TopNav searchEnabled={IsSearchEnabled()} />
+              {/* <Navbar searchEnabled={IsSearchEnabled()} /> */}
+              <div ref={contentInnerRef}>
                 <Component {...pageProps} />
-              </Box>
+              </div>
               <Footer />
             </PreviewProvider>
           </EngageTrackerProvider>
         </SessionProvider>
-      </ChakraProvider>
+      </ThemeProvider>
     </SearchWrapper>
   );
 }

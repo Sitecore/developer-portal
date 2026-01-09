@@ -1,10 +1,9 @@
-import { Card, CardFooter, CardHeader, Heading, HStack, Link, LinkBox, LinkOverlay, Text } from '@chakra-ui/react';
-import NextLink from 'next/link';
-
-import { translateDate } from '@/src/lib/utils';
-
+import Link from 'next/link';
+import { Card, CardFooter, CardHeader } from '@components/ui/card';
+import { translateDate } from '@/src/lib/utils/dateUtil';
 import ConditionalWrapper from '../../ui/sections/ConditionalWrapper';
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
+import { cn } from '@lib/utils';
 
 type SitecoreCommunityNewsOrEventItemProps = {
   categoryTitle?: 'News and Announcements' | 'Event';
@@ -37,38 +36,43 @@ const DateOutput = ({ startDate, endDate }: DateOutputProps) => {
 
   if (!endDateString || startDateString === endDateString) {
     return (
-      <Text variant={'subtle'} size={'xs'}>
+      <p className="text-sm text-muted-foreground text-xs">
         {startDateString}
-      </Text>
+      </p>
     );
   }
 
   return (
-    <Text variant={'subtle'}>
+    <p className="text-sm text-muted-foreground">
       {startDateString} <span className="sr-only">to</span>
       <span aria-hidden="true">-</span> {endDateString}
-    </Text>
+    </p>
   );
 };
 
 export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, endDate, location, startDate, title, url, viewCount, virtualUrl }: SitecoreCommunityNewsOrEventItemProps) => {
   return (
-    <LinkBox as="article" display="contents">
-      <Card variant={'outline'} size="lg" w={'full'} justifyContent={'space-between'} layerStyle="interactive.raise">
-        <CardHeader paddingBottom={0}>
+    <article>
+      <Card className="border shadow-md hover:shadow-lg transition-shadow w-full">
+        <CardHeader className="pb-0">
           {!!categoryTitle && (
-            <Heading variant="eyebrow" size={'sm'}>
+            <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">
               {categoryTitle}
-            </Heading>
+            </p>
           )}
 
-          <Heading size={'md'} my={4}>
-            <LinkOverlay as={NextLink} href={`${SITECORE_COMMUNITY_URL}${url}`} isExternal={true} rel="noreferrer noopener" target="_blank">
+          <h3 className="text-lg font-heading my-4">
+            <Link
+              href={`${SITECORE_COMMUNITY_URL}${url}`}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-foreground hover:underline"
+            >
               {title}
-            </LinkOverlay>
-          </Heading>
+            </Link>
+          </h3>
         </CardHeader>
-        <CardFooter justify="space-between" flexWrap="wrap">
+        <CardFooter className="justify-between flex-wrap">
           <DateOutput startDate={startDate} endDate={endDate} />
 
           {!!location && (
@@ -88,14 +92,14 @@ export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, 
           )}
 
           {!!commentCount && !!viewCount && (
-            <HStack>
-              <Text variant={'subtle'}>{commentCount} comments</Text>
-              <Text variant={'subtle'}>{viewCount} views</Text>
-            </HStack>
+            <div className="flex items-center gap-2">
+              <p className="text-sm text-muted-foreground">{commentCount} comments</p>
+              <p className="text-sm text-muted-foreground">{viewCount} views</p>
+            </div>
           )}
         </CardFooter>
       </Card>
-    </LinkBox>
+    </article>
   );
 };
 

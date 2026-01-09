@@ -1,18 +1,21 @@
-// Lib
-
-import { Box, BoxProps, Icon, IconButton, Menu, MenuButton, MenuItem, MenuList, Tooltip } from '@chakra-ui/react';
-import { mdiChevronDown } from '@mdi/js';
 import Link from 'next/link';
-
+import { Button } from '@components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@components/ui/dropdown-menu';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
+import { mdiChevronDown } from '@mdi/js';
+import Icon from '@mdi/react';
 import useInPageNavigation from '../../hooks/useInPageNavigation';
 import { ContentHeading } from '../../lib/interfaces/contentheading';
+import { cn } from '@lib/utils';
 
-type InPageNavProps = BoxProps & {
+type InPageNavProps = {
   titles: Array<ContentHeading>;
   hideFrom?: string;
+  className?: string;
+  mb?: number;
 };
 
-const InPageNavSmall = ({ titles, ...rest }: InPageNavProps) => {
+const InPageNavSmall = ({ titles, className, mb = 4 }: InPageNavProps) => {
   if (titles.length == 0) {
     return <></>;
   }
@@ -20,38 +23,39 @@ const InPageNavSmall = ({ titles, ...rest }: InPageNavProps) => {
   const links = useInPageNavigation(titles, false);
 
   return (
-    <Box {...rest} mb={4}>
-      <Menu>
-        <Tooltip label="Sections on this page" aria-label="Table of contents">
-          <MenuButton
-            position={'absolute'}
-            right={0}
-            mt={2}
-            size="sm"
-            as={IconButton}
-            variant="ghost"
-            icon={
-              <Icon>
-                <path d={mdiChevronDown} />
-              </Icon>
-            }
-            w={8}
-            p="2"
-          />
-        </Tooltip>
-        <MenuList>
+    <div className={cn(`mb-${mb}`, className)}>
+      <DropdownMenu>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="absolute right-0 mt-2 w-8 p-2"
+                >
+                  <Icon path={mdiChevronDown} size={1} />
+                </Button>
+              </DropdownMenuTrigger>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Sections on this page</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        <DropdownMenuContent>
           {links.map((link, i) => {
             return (
-              <MenuItem key={i}>
-                <Link href={link.href} key={i} title={link.text}>
+              <DropdownMenuItem key={i} asChild>
+                <Link href={link.href} title={link.text}>
                   {link.text}
                 </Link>
-              </MenuItem>
+              </DropdownMenuItem>
             );
           })}
-        </MenuList>
-      </Menu>
-    </Box>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   );
 };
 

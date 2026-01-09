@@ -8,6 +8,7 @@ export interface NavItem {
   url?: string;
   pathname?: string;
   logo?: Product;
+  type?: 'grouped' | 'cta';
 }
 
 export const mainNavigation: NavItem[] = [
@@ -17,6 +18,7 @@ export const mainNavigation: NavItem[] = [
   },
   {
     title: 'Documentation',
+    type: 'grouped',
     children: [
       {
         title: 'Experience Management',
@@ -129,51 +131,34 @@ export const mainNavigation: NavItem[] = [
   },
   {
     title: 'Community',
+    url: '/community',
+    type: 'cta',
     children: [
       {
-        title: 'Community overview',
-        url: '/community',
-        children: [
-          {
-            title: 'News and Announcements',
-            url: 'https://community.sitecore.com/community?id=community_forum&sys_id=af85dddf1bf17810486a4083b24bcb00',
-            external: true,
-          },
-          {
-            title: 'Forums',
-            url: 'https://community.sitecore.com',
-            external: true,
-          },
-          {
-            title: 'Blog',
-            url: 'https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba',
-            external: true,
-          },
-          {
-            title: 'Events',
-            url: 'https://community.sitecore.com/community?id=community_forum&sys_id=7a84272f1b313c10486a4083b24bcbd5',
-            external: true,
-          },
-          {
-            title: 'MVP Program',
-            url: 'https://mvp.sitecore.com',
-            external: true,
-          },
-        ],
+        title: 'MVP Program',
+        url: 'https://mvp.sitecore.com',
+        external: true,
+        subTitle: 'Celebrate the most active Sitecore Community members from around the world who provide valuable expertise to the Sitecore ecosystem.',
       },
       {
-        title: 'Newsletter',
-        url: '/newsletter',
-        children: [
-          {
-            title: 'Latest edition',
-            url: '/newsletter/latest',
-          },
-          {
-            title: 'Archive',
-            url: '/newsletter',
-          },
-        ],
+        title: 'News and Announcements',
+        url: 'https://community.sitecore.com/community?id=community_forum&sys_id=af85dddf1bf17810486a4083b24bcb00',
+        external: true,
+      },
+      {
+        title: 'Forums',
+        url: 'https://community.sitecore.com',
+        external: true,
+      },
+      {
+        title: 'Blog',
+        url: 'https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba',
+        external: true,
+      },
+      {
+        title: 'Events',
+        url: 'https://community.sitecore.com/community?id=community_forum&sys_id=7a84272f1b313c10486a4083b24bcbd5',
+        external: true,
       },
     ],
   },

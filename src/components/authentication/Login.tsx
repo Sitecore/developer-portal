@@ -1,6 +1,11 @@
-import { AbsoluteCenter, Box, Button, Card, Divider, Heading, Icon, Stack, Text, Tooltip, Wrap } from '@chakra-ui/react';
-import { iconSitecore } from '@sitecore/blok-theme';
+import { Button } from '@components/ui/button';
+import { Card, CardContent } from '@components/ui/card';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
+// Placeholder for Sitecore icon - replace with actual icon path if needed
+const iconSitecore = 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5';
 import { signIn } from 'next-auth/react';
+import Icon from '@mdi/react';
+import { cn } from '@lib/utils';
 
 interface LoginProps {
   redirectUrl?: string;
@@ -11,77 +16,84 @@ export const Login = ({ redirectUrl = '/' }: LoginProps) => {
   const isDownloadsRedirect = redirectUrl.startsWith('/downloads');
 
   return (
-    <Stack align="center" textAlign="center" spacing="6" maxW="lg">
-      <Stack>
-        <Heading as="h1">Login</Heading>
-      </Stack>
-      <Stack maxW={'lg'}>
+    <div className="flex flex-col items-center text-center gap-6 max-w-lg">
+      <div className="flex flex-col gap-2">
+        <h1 className="text-3xl font-heading">Login</h1>
+      </div>
+      <div className="flex flex-col gap-2 max-w-lg">
         {!isDownloadsRedirect && !isRoadmapRedirect && (
-          <Heading variant="section" mb="0" fontSize="xl">
+          <h2 className="text-sm uppercase tracking-wide text-muted-foreground mb-0 text-xl">
             Choose your preferred sign-in method
-          </Heading>
+          </h2>
         )}
-      </Stack>
-      ?re
-      <Card variant={'elevated'}>
-        <Stack py={10} px={4}>
+      </div>
+      <Card className="shadow-lg">
+        <CardContent className="py-10 px-4">
           {!isRoadmapRedirect && (
             <>
-              <Text variant="small" mb={8}>
+              <p className="text-sm mb-8">
                 To access the downloads, please sign in using your Sitecore ID
-              </Text>
-              <Wrap justify="center">
-                <Tooltip label="Sign in using your Sitecore ID to get access to the downloads">
-                  <Button
-                    variant="outline"
-                    leftIcon={
-                      <Icon boxSize="icon.md" color="red">
-                        <path d={iconSitecore} />
-                      </Icon>
-                    }
-                    onClick={() => signIn('okta', { callbackUrl: redirectUrl })}
-                  >
-                    Sitecore ID
-                  </Button>
-                </Tooltip>
-              </Wrap>
+              </p>
+              <div className="flex justify-center">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        variant="outline"
+                        onClick={() => signIn('okta', { callbackUrl: redirectUrl })}
+                        className="flex items-center gap-2"
+                      >
+                        <Icon path={iconSitecore} size={1} className="text-red-500" />
+                        Sitecore ID
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Sign in using your Sitecore ID to get access to the downloads</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </div>
             </>
           )}
           {!isRoadmapRedirect && !isDownloadsRedirect && (
             <>
-              <Box position="relative" py={10} px={4}>
-                <Divider />
-                <AbsoluteCenter bg="chakra-body-bg" px="4" color="neutral.400">
-                  OR
-                </AbsoluteCenter>
-              </Box>
+              <div className="relative py-10 px-4">
+                <div className="border-t border-border" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="bg-background px-4 text-muted-foreground">OR</span>
+                </div>
+              </div>
             </>
           )}
 
           {!isDownloadsRedirect && (
             <>
-              <Text variant="small" mb={8}>
+              <p className="text-sm mb-8">
                 To access the roadmap, please sign in using your Sitecore Cloud Portal account
-              </Text>
-              <Wrap justify="center" align="center">
-                <Tooltip label="Sign in using your Sitecore ID to get access to the roadmap">
-                  <Button
-                    variant="outline"
-                    leftIcon={
-                      <Icon boxSize="icon.md" color="red">
-                        <path d={iconSitecore} />
-                      </Icon>
-                    }
-                    onClick={() => signIn('sitecore', { callbackUrl: redirectUrl })}
-                  >
-                    Sitecore Cloud Portal
-                  </Button>
-                </Tooltip>
-              </Wrap>
+              </p>
+              <div className="flex justify-center items-center">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        variant="outline"
+                        onClick={() => signIn('sitecore', { callbackUrl: redirectUrl })}
+                        className="flex items-center gap-2"
+                      >
+                        <Icon path={iconSitecore} size={1} className="text-red-500" />
+                        Sitecore Cloud Portal
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Sign in using your Sitecore ID to get access to the roadmap</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </div>
             </>
           )}
-        </Stack>
+        </CardContent>
       </Card>
-    </Stack>
+    </div>
   );
 };

@@ -1,5 +1,5 @@
 import { MultiSelect, Option } from '@/src/components/ui/dropdown';
-import { Container, Skeleton, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
+import { Skeleton } from '@components/ui/skeleton';
 import { Product } from '@lib/changelog/types';
 import { useState } from 'react';
 
@@ -18,19 +18,17 @@ const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: Ch
 
   if (!options) {
     return (
-      <Skeleton>
-        <SkeletonText>Loading...</SkeletonText>
+      <Skeleton className="h-10 w-full">
+        Loading...
       </Skeleton>
     );
   }
 
   return (
-    <Container marginBottom={4} marginX={0} width={'full'}>
-      <VisuallyHidden>
-        <label className="sr-only" htmlFor={`react-select-${id}-input`}>
-          {label}
-        </label>
-      </VisuallyHidden>
+    <div className="mb-4 mx-0 w-full">
+      <label className="sr-only" htmlFor={`react-select-${id}-input`}>
+        {label}
+      </label>
       <MultiSelect
         id={id}
         instanceId={id}
@@ -45,7 +43,7 @@ const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: Ch
         menuPlacement={'bottom'}
         placeholder={placeholder}
       />
-    </Container>
+    </div>
   );
 };
 

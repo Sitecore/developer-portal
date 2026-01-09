@@ -1,32 +1,29 @@
-import { Card, CardBody, CardHeader, Heading, HStack, LinkBox, LinkOverlay, SimpleGrid, Text } from '@chakra-ui/react';
+import Link from 'next/link';
+import { Card, CardContent, CardHeader } from '@components/ui/card';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
-import NextLink from 'next/link';
-
 import { CategoryTileListData } from './types';
 
 export const CategoryTileList = (props: CategoryTileListData) => (
-  <SimpleGrid columns={{ base: 1, md: 2 }} gap={6}>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
     {props.cards.map((card, i) => (
-      <LinkBox as="article" key={i}>
-        <Card variant="flat" size={'lg'} layerStyle={'interactive.fill'}>
-          <CardHeader>
-            <HStack as={'span'}>
-              <LinkOverlay href={card.href} as={NextLink}>
-                {/* <Link as={NextLink} href={card.href} color={'chakra-body-text'} fontWeight={'semibold'}> */}
-                <Heading as="h3" size={'lg'}>
+      <article key={i}>
+        <Link href={card.href} className="block">
+          <Card className="border shadow-md hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <h3 className="text-2xl font-heading">
                   {card.title}
-                </Heading>
-                {/* </Link> */}
-              </LinkOverlay>
-              <Icon path={mdiArrowRight} size={0.8} />
-            </HStack>
-          </CardHeader>
-          <CardBody>
-            <Text>{card.description}</Text>
-          </CardBody>
-        </Card>
-      </LinkBox>
+                </h3>
+                <Icon path={mdiArrowRight} size={0.8} />
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p>{card.description}</p>
+            </CardContent>
+          </Card>
+        </Link>
+      </article>
     ))}
-  </SimpleGrid>
+  </div>
 );

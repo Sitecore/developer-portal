@@ -1,37 +1,21 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  CardProps,
-  chakra,
-  Flex,
-  Heading,
-  Hide,
-  HStack,
-  IconButton,
-  Link,
-  Popover,
-  PopoverAnchor,
-  PopoverArrow,
-  PopoverContent,
-  PopoverTrigger,
-  SimpleGrid,
-  Stack,
-  Tag,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
+'use client';
+
+import { useTheme } from 'next-themes';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
+import { Button } from '@components/ui/button';
+import { Badge } from '@components/ui/badge';
+import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover';
 import { ChangelogEntry } from '@lib/changelog/types';
-import { getChangelogEntryUrl, getSlug } from '@lib/utils';
+import { getSlug } from '@/src/lib/utils/stringUtil';
+import { getChangelogEntryUrl } from '@/src/lib/utils/urlUtil';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
 import { TextLink } from '@src/components/links';
-import Image from 'next/image';
+import { cn } from '@lib/utils';
 
-type ChangelogEntriesProps = CardProps & {
+type ChangelogEntriesProps = {
   entries: Array<ChangelogEntry>;
   className?: string;
   title?: string;
@@ -41,106 +25,132 @@ type ChangelogEntriesProps = CardProps & {
   columns?: number;
 };
 
-const CustomImage = chakra(Image, {
-  shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
-});
+const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/changelog', linkText = 'See all changes', hideProductIcon, columns }: ChangelogEntriesProps) => {
+  const { theme } = useTheme();
 
-const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/changelog', linkText = 'See all changes', hideProductIcon, columns, ...rest }: ChangelogEntriesProps) => {
   if (entries.length === 0) {
     return <></>;
   }
 
   return (
-    <Card {...rest} variant={'unstyled'}>
-      <CardHeader justifyContent={{ base: 'left', sm: 'space-between' }} flexDirection={{ base: 'column', sm: 'row' }} display={'flex'} py={8} alignItems={'baseline'}>
-        <Heading as={'h3'} fontSize={'2xl'} fontWeight={'500'}>
+    <Card className="border-0 shadow-none">
+      <CardHeader className="flex flex-col sm:flex-row justify-between sm:justify-between py-8 items-baseline">
+        <h3 className="text-2xl font-heading font-medium flex items-center gap-2">
           {title}
-          <Link href="/changelog/rss.xml" ml={1}>
-            <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="neutral" variant="ghost" size={'xs'} />
+          <Link href="/changelog/rss.xml" className="ml-1">
+            <Button variant="ghost" size="sm" aria-label="RSS" className="h-6 w-6 p-0">
+              <Icon path={mdiRss} size={0.8} />
+            </Button>
           </Link>
-        </Heading>
+        </h3>
 
-        <TextLink href={linkHref} text={linkText} hideBelow={'md'} />
+        <div className="hidden md:block">
+          <TextLink href={linkHref} text={linkText} />
+        </div>
       </CardHeader>
-      <CardBody py={{ base: '2', md: '4' }}>
-        <SimpleGrid columns={columns ? columns : 1} spacing={0}>
+      <CardContent className={cn('py-2 md:py-4')}>
+        <div className={cn('grid', columns ? `grid-cols-${columns}` : 'grid-cols-1', 'gap-0')}>
           {entries.map((entry, key) => {
+            const iconSrc = theme === 'dark' ? entry.darkIcon : entry.lightIcon;
             return (
-              <Flex justifyContent={'items-start'} mb={4} key={key}>
+              <div className="flex items-start mb-4" key={key}>
                 {!hideProductIcon && (
-                  <Box display={{ base: 'none', sm: 'block' }} textAlign={'center'} mr={5} height={'43px'} width={'43px'}>
-                    <CustomImage boxSize={3} src={useColorModeValue(entry.lightIcon, entry.darkIcon)} alt={entry.productName ? entry.productName : 'Product icon'} width={25} margin={'.5rem'} height={25} priority={true} maxWidth={'auto'} />
-                  </Box>
+                  <div className="hidden sm:block text-center mr-5 h-[43px] w-[43px]">
+                    <Image
+                      src={iconSrc}
+                      alt={entry.productName ? entry.productName : 'Product icon'}
+                      width={25}
+                      height={25}
+                      priority
+                      className="m-2"
+                    />
+                  </div>
                 )}
-                <Stack fontSize={'sm'}>
-                  <Heading as={'h4'} size={'md'}>
-                    <Link href={getChangelogEntryUrl(entry)} title={entry.title} color={'chakra-body-text'}>
+                <div className="text-sm">
+                  <h4 className="text-lg font-heading mb-2">
+                    <Link href={getChangelogEntryUrl(entry)} title={entry.title} className="text-foreground hover:underline">
                       {entry.title}
                     </Link>
-                  </Heading>
+                  </h4>
 
-                  <HStack spacing={'24px'}>
-                    <Text>{new Date(entry.releaseDate).toLocaleString('en-US', { dateStyle: 'medium' })}</Text>
+                  <div className="flex flex-row items-center gap-6">
+                    <p>{new Date(entry.releaseDate).toLocaleString('en-US', { dateStyle: 'medium' })}</p>
 
                     {entry.products != null && entry.products?.length > 1 ? (
-                      <HStack spacing={0}>
-                        <Popover placement="bottom-start" trigger="click">
-                          <PopoverAnchor>
+                      <div className="flex flex-row items-center gap-0">
+                        <Popover>
+                          <div className="flex items-center gap-1">
                             {entry.products != null && (
-                              <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} className="">
-                                <Text color={'chakra-body-text'}>{entry.products[0].productName}</Text>
+                              <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} className="text-foreground hover:underline">
+                                {entry.products[0].productName}
                               </Link>
                             )}
-                          </PopoverAnchor>
-                          <PopoverTrigger>
-                            <Button variant="unstyled" size={'sm'} hideBelow={'sm'}>
-                              + {entry.products.length - 1} <Hide below="md">{entry.products.length == 1 ? 'other' : 'others'}</Hide>
-                            </Button>
-                          </PopoverTrigger>
-                          <PopoverContent p={2} maxW={'3xs'}>
-                            <PopoverArrow />
-                            <Stack>
+                            <PopoverTrigger asChild>
+                              <Button variant="ghost" size="sm" className="hidden sm:inline-flex h-auto py-0">
+                                + {entry.products.length - 1} <span className="hidden md:inline">{entry.products.length == 1 ? 'other' : 'others'}</span>
+                              </Button>
+                            </PopoverTrigger>
+                          </div>
+                          <PopoverContent className="p-2 max-w-xs">
+                            <div className="flex flex-col gap-2">
                               {entry.products &&
-                                entry.products.slice(1).map((product, key) => (
-                                  <HStack key={key}>
-                                    <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
-                                    <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
-                                      <Text color={'chakra-body-text'}>{product.productName}</Text>
-                                    </Link>
-                                  </HStack>
-                                ))}
-                            </Stack>
+                                entry.products.slice(1).map((product, key) => {
+                                  const productIconSrc = theme === 'dark' ? product.darkIcon : product.lightIcon;
+                                  return (
+                                    <div key={key} className="flex items-center gap-2">
+                                      <Image
+                                        src={productIconSrc}
+                                        alt={product.productName ? product.productName : 'Product icon'}
+                                        width={15}
+                                        height={15}
+                                        priority
+                                      />
+                                      <Link href={`/changelog/${getSlug(product.productName)}`} className="text-foreground hover:underline">
+                                        {product.productName}
+                                      </Link>
+                                    </div>
+                                  );
+                                })}
+                            </div>
                           </PopoverContent>
                         </Popover>
-                      </HStack>
+                      </div>
                     ) : (
                       entry.products != null && (
-                        <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} key={key}>
-                          <Text color={'chakra-body-text'}>{entry.products[0].productName}</Text>
+                        <Link href={`/changelog/${getSlug(entry.products[0].productName)}`} key={key} className="text-foreground hover:underline">
+                          {entry.products[0].productName}
                         </Link>
                       )
                     )}
 
-                    {entry.changeTypeName != null ? (
-                      <Tag size="sm" colorScheme={entry.changeTypeName == 'Resolved' ? 'yellow' : entry.changeTypeName == 'New feature' ? 'teal' : 'info'}>
+                    {entry.changeTypeName != null && (
+                      <Badge
+                        variant="default"
+                        colorScheme={
+                          entry.changeTypeName == 'Resolved'
+                            ? 'neutral'
+                            : entry.changeTypeName == 'New feature'
+                              ? 'primary'
+                              : 'neutral'
+                        }
+                        className="text-xs"
+                      >
                         {entry.changeTypeName}
-                      </Tag>
-                    ) : (
-                      ''
+                      </Badge>
                     )}
                     {entry.breakingChange && (
-                      <Tag size="sm" colorScheme="danger">
+                      <Badge variant="destructive" className="text-xs">
                         Action required
-                      </Tag>
+                      </Badge>
                     )}
-                  </HStack>
-                </Stack>
-              </Flex>
+                  </div>
+                </div>
+              </div>
             );
           })}
-        </SimpleGrid>
-      </CardBody>
-      <CardFooter hideFrom={'md'} py={0} alignSelf={'self-end'}>
+        </div>
+      </CardContent>
+      <CardFooter className="md:hidden py-0 self-end">
         <TextLink href={linkHref} text={linkText} />
       </CardFooter>
     </Card>

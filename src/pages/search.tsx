@@ -1,4 +1,5 @@
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Code, Stack, Text } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert';
+import { AlertTriangle } from 'lucide-react';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getPageInfo } from '@lib/page-info';
 import { NextPage } from 'next';
@@ -40,24 +41,22 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo }) => {
                 <SearchResults initialKeyphrase={query} currentPage={currentPage} rfkId={'rfkid_7'} />
               </>
             ) : (
-              <Alert status="warning">
-                <AlertIcon />
-                <Stack direction="column">
-                  <AlertTitle>Search is not enabled on this environment</AlertTitle>
-                  <AlertDescription>
-                    To enable search please update the following environment variables in the <Code>.env</Code> file:
-                    <Stack direction="column" mt={4}>
-                      <Code>
-                        <Text>NEXT_PUBLIC_SEARCH_API_KEY</Text>
-                        <Text>NEXT_PUBLIC_SEARCH_APP_ENV</Text>
-                        <Text>NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY</Text>
-                        <Text>NEXT_PUBLIC_SEARCH_APP_API_KEY</Text>
-                        <Text>NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH</Text>
-                        <Text>NEXT_PUBLIC_CHANGELOG_SEARCH_SOURCE</Text>
-                      </Code>
-                    </Stack>
-                  </AlertDescription>
-                </Stack>
+              <Alert variant="default" className="border-yellow-500 bg-yellow-50 dark:bg-yellow-900/20">
+                <AlertTriangle className="h-4 w-4" />
+                <AlertTitle>Search is not enabled on this environment</AlertTitle>
+                <AlertDescription>
+                  <div className="flex flex-col gap-2 mt-4">
+                    <p>To enable search please update the following environment variables in the <code className="px-1 py-0.5 bg-muted rounded text-sm">.env</code> file:</p>
+                    <div className="flex flex-col gap-1 mt-2">
+                      <code className="px-2 py-1 bg-muted rounded text-sm">NEXT_PUBLIC_SEARCH_API_KEY</code>
+                      <code className="px-2 py-1 bg-muted rounded text-sm">NEXT_PUBLIC_SEARCH_APP_ENV</code>
+                      <code className="px-2 py-1 bg-muted rounded text-sm">NEXT_PUBLIC_SEARCH_APP_CUSTOMER_KEY</code>
+                      <code className="px-2 py-1 bg-muted rounded text-sm">NEXT_PUBLIC_SEARCH_APP_API_KEY</code>
+                      <code className="px-2 py-1 bg-muted rounded text-sm">NEXT_PUBLIC_SEARCH_ENABLE_PREVIEW_SEARCH</code>
+                      <code className="px-2 py-1 bg-muted rounded text-sm">NEXT_PUBLIC_CHANGELOG_SEARCH_SOURCE</code>
+                    </div>
+                  </div>
+                </AlertDescription>
               </Alert>
             )}
           </CenteredContent>

@@ -1,3 +1,22 @@
-import { Stack, StackProps } from '@chakra-ui/react';
+import { cn } from '@lib/utils';
+import React from 'react';
 
-export const CenteredContent = (props: StackProps) => <Stack width="100%" maxWidth="7xl" gap={{ base: 2, md: 8 }} py={{ base: 0, md: 8 }} px={{ base: 1, md: 8 }} {...props} />;
+type CenteredContentProps = React.HTMLAttributes<HTMLDivElement> & {
+  direction?: 'row' | 'column';
+};
+
+export const CenteredContent = React.forwardRef<HTMLDivElement, CenteredContentProps>(
+  ({ className, direction = 'column', ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(
+        'w-full max-w-7xl',
+        direction === 'column' ? 'flex flex-col gap-2 md:gap-8' : 'flex flex-row gap-2 md:gap-8',
+        'py-0 md:py-8 px-1 md:px-8',
+        className
+      )}
+      {...props}
+    />
+  )
+);
+CenteredContent.displayName = 'CenteredContent';

@@ -8,8 +8,9 @@ import { useRouter } from 'next/router';
 
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
 
-import { Heading, Link, List, ListIcon, ListItem, Stack, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 import { mdiArrowRightCircle } from '@mdi/js';
+import Icon from '@mdi/react';
 import { useEffect, useState } from 'react';
 import { PromoCardProps, PromoList } from '../components/cards';
 import { SocialFeeds } from '../components/links';
@@ -68,9 +69,9 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
           <BreadcrumbNav enabled={sidebarConfig.enableBreadcrumb} currentPage={pageInfo} config={sidebarConfig} />
           <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />
           {pageInfo.lastUpdated && (
-            <Heading variant={'section'} size={'sm'} mb={{ base: 0, md: 2 }}>
+            <p className="text-sm uppercase tracking-wide text-muted-foreground mb-0 md:mb-2">
               Last updated: {new Date(pageInfo.lastUpdated).toLocaleString('en-US', { dateStyle: 'medium' })}
-            </Heading>
+            </p>
           )}
           <PromoList data={promoBefore} />
 
@@ -92,20 +93,17 @@ const ArticlePage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPa
 
           {/* Child Navigation */}
           {children && (
-            <Stack gap={4}>
-              <Text fontWeight={'semibold'}>Articles in this section:</Text>
-              <List spacing="2">
+            <div className="flex flex-col gap-4">
+              <p className="font-semibold">Articles in this section:</p>
+              <ul className="flex flex-col gap-2 list-none">
                 {children.map((child, i) => (
-                  <ListItem key={i}>
-                    <ListIcon>
-                      <path d={mdiArrowRightCircle} />
-                    </ListIcon>
-
-                    <Link href={getItemUrl(sidebarConfig, child)}>{child.title}</Link>
-                  </ListItem>
+                  <li key={i} className="flex items-center gap-2">
+                    <Icon path={mdiArrowRightCircle} size={1} />
+                    <Link href={getItemUrl(sidebarConfig, child)} className="hover:underline">{child.title}</Link>
+                  </li>
                 ))}
-              </List>
-            </Stack>
+              </ul>
+            </div>
           )}
 
           <ArticlePaging enabled={sidebarConfig.enableNextPrevious} currentfileName={pageInfo.fileName} config={sidebarConfig} currentPath={router.asPath} />

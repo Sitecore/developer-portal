@@ -1,17 +1,21 @@
-import { Flex, FlexProps } from '@chakra-ui/react';
+import { cn } from '@lib/utils';
+import React from 'react';
 
-export const VerticalGroup = (props: FlexProps) => (
-  <Flex
-    as="section"
-    direction="column"
-    alignItems="center"
-    justifyContent="flex-start"
-    color="black"
-    paddingX={{ base: 2, '2xl': 0 }}
-    _dark={{
-      color: 'white',
-    }}
-    transition="all 0.15s ease-out"
-    {...props}
-  />
+type VerticalGroupProps = React.HTMLAttributes<HTMLElement>;
+
+export const VerticalGroup = React.forwardRef<HTMLElement, VerticalGroupProps>(
+  ({ className, ...props }, ref) => (
+    <section
+      ref={ref}
+      className={cn(
+        'flex flex-col items-center justify-start',
+        'text-black dark:text-white',
+        'px-2 2xl:px-0',
+        'transition-all duration-150 ease-out',
+        className
+      )}
+      {...props}
+    />
+  )
 );
+VerticalGroup.displayName = 'VerticalGroup';

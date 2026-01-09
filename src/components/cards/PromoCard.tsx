@@ -1,7 +1,9 @@
-import { Card, CardBody, Center, Heading, Hide, HStack, Image, LinkBox, LinkOverlay, Stack, Text } from '@chakra-ui/react';
+import Image from 'next/image';
+import NextLink from 'next/link';
+import { Card, CardContent } from '@components/ui/card';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
-import NextLink from 'next/link';
+import { cn } from '@lib/utils';
 
 export type SimplePromoCardProps = {
   title: string;
@@ -33,37 +35,46 @@ export type PromoCardProps = PromoCardImage & {
 };
 
 function PromoImage({ img }: PromoCardImage) {
-  return <Image src={img.src} alt={img.alt || ''} objectFit="cover" maxW={{ base: '100%', md: '310px' }} />;
+  return (
+    <div className="relative w-full md:w-[310px] h-48 md:h-auto">
+      <Image
+        src={img.src}
+        alt={img.alt || ''}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 310px"
+      />
+    </div>
+  );
 }
 
-export const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps) => (
-  <Center>
-    <LinkBox as={Card} direction={{ base: 'column', md: 'row' }} overflow="hidden" variant="outlineRaised" maxW={'container.md'} layerStyle={'interactive.raise'}>
-      {isImageLeft && <PromoImage img={img} />}
-
-      <Stack>
-        <CardBody display={'flex'} justifyContent={'space-between'} flexDirection={'column'} alignItems={'left'}>
-          <Heading as={'h4'} size="md">
-            {title}
-          </Heading>
-          <Text>{description}</Text>
-          {!!link && (
-            <HStack as={'span'} mt={2}>
-              <LinkOverlay as={NextLink} href={link.href} fontWeight={'semibold'}>
-                {link.text}
-              </LinkOverlay>
+export const PromoCard = ({ title, description, img, link, isImageLeft = true, className }: PromoCardProps) => (
+  <div className="flex justify-center">
+    <Card className={cn('overflow-hidden border shadow-md hover:shadow-lg transition-shadow max-w-2xl', className)}>
+      <div className="flex flex-col md:flex-row">
+        {isImageLeft && <PromoImage img={img} />}
+        <CardContent className="flex flex-col justify-between items-start">
+          <div>
+            <h4 className="text-lg font-heading mb-2">
+              {title}
+            </h4>
+            <p className="mb-4">{description}</p>
+          </div>
+          {link && (
+            <NextLink href={link.href} className="inline-flex items-center gap-1 font-semibold hover:underline mt-2">
+              {link.text}
               <Icon path={mdiArrowRight} size={0.8} />
-            </HStack>
+            </NextLink>
           )}
-        </CardBody>
-      </Stack>
-      {!isImageLeft && (
-        <Hide below="md">
-          <PromoImage img={img} />
-        </Hide>
-      )}
-    </LinkBox>
-  </Center>
+        </CardContent>
+        {!isImageLeft && (
+          <div className="hidden md:block">
+            <PromoImage img={img} />
+          </div>
+        )}
+      </div>
+    </Card>
+  </div>
 );
 
 export const Promo = ({ title, description, linkText, linkHref, imageSource, imageAlt, className, isImageLeft }: SimplePromoCardProps) => {

@@ -1,6 +1,7 @@
 import { Changelog } from '@lib/changelog';
 import { ChangelogEntry, ChangelogEntryList, Product } from '@lib/changelog/types';
-import { getQueryValue, slugify } from '@lib/utils';
+import { getQueryValue } from '@/src/lib/utils/requests';
+import { slugify } from '@/src/lib/utils/stringUtil';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';

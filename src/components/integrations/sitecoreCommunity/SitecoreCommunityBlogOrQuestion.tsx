@@ -1,10 +1,13 @@
-import { Box, Card, CardBody, CardFooter, Flex, Heading, HStack, Icon, Link, LinkBox, Skeleton, Stack, Text, useColorModeValue } from '@chakra-ui/react';
+'use client';
+
+import { useTheme } from 'next-themes';
 import NextLink from 'next/link';
-
-import { translateDate } from '@/src/lib/utils';
-
+import { Card, CardContent, CardFooter } from '@components/ui/card';
+import { Skeleton } from '@components/ui/skeleton';
+import { translateDate } from '@/src/lib/utils/dateUtil';
 import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
 import { SitecoreCommunityContent } from './types';
+import { cn } from '@lib/utils';
 
 type SitecoreCommunityBlogOrQuestionProps = {
   contentType: 'Blog' | 'Questions';
@@ -13,43 +16,53 @@ type SitecoreCommunityBlogOrQuestionProps = {
 };
 
 export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps) => (
-  <LinkBox as="article" display="contents">
-    <Card variant={'outline'} size="lg" w={'full'} justifyContent={'space-between'} layerStyle="interactive.raise">
-      <CardBody>
-        <HStack spacing={16} justifyContent={'space-between'}>
-          <Skeleton isLoaded={!loading} flexGrow={1}>
-            <Stack>
-              <Heading variant="eyebrow" size={'sm'}>
-                {item.contentType}
-              </Heading>
-
-              <Heading size={'md'} my={4}>
-                <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={'chakra-body-text'}>
-                  {item.title}
-                </Link>
-              </Heading>
-            </Stack>
-          </Skeleton>
-        </HStack>
-      </CardBody>
-      <CardFooter justify="space-between" flexWrap="wrap">
-        <Text>
+  <article>
+    <Card className="border shadow-md hover:shadow-lg transition-shadow w-full">
+      <CardContent>
+        <div className="flex gap-16 justify-between">
+          {loading ? (
+            <Skeleton className="flex-grow h-20" />
+          ) : (
+            <div className="flex-grow">
+              <div>
+                <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">
+                  {item.contentType}
+                </p>
+                <h3 className="text-lg font-heading my-4">
+                  <NextLink
+                    href={`${SITECORE_COMMUNITY_URL}${item.url}`}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="text-foreground hover:underline"
+                  >
+                    {item.title}
+                  </NextLink>
+                </h3>
+              </div>
+            </div>
+          )}
+        </div>
+      </CardContent>
+      <CardFooter className="justify-between flex-wrap">
+        <p>
           by <strong>{item.userName}</strong>
-        </Text>
-        <Text variant={'subtle'}>
+        </p>
+        <p className="text-sm text-muted-foreground">
           Published <strong>{translateDate(item.publishDate)}</strong>
-        </Text>
+        </p>
       </CardFooter>
     </Card>
-  </LinkBox>
+  </article>
 );
 
 export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps) => {
   return (
-    <Flex justifyContent={'items-start'} mb={5}>
-      <Skeleton isLoaded={!loading}>
-        <Box display={{ base: 'none', sm: 'block' }} textAlign={'center'} mr={5} height={'min-content'}>
-          <Icon boxSize={3} viewBox="0 0 30 30" width="25" height="25" margin={'.5rem'}>
+    <div className="flex items-start mb-5">
+      {loading ? (
+        <Skeleton className="hidden sm:block w-[25px] h-[25px] mr-5" />
+      ) : (
+        <div className="hidden sm:block text-center mr-5 h-min">
+          <svg viewBox="0 0 30 30" width="25" height="25" className="m-2 text-current">
             <rect x="1.304" y="1.314" width="27.337" height="27.337" fill="none" stroke="currentColor" />
             <polyline fill="currentColor" stroke="currentColor" points="4.7 3.841 25.19 3.874" />
             <polyline fill="currentColor" stroke="currentColor" points="4.7 15.624 25.19 15.657" />
@@ -59,23 +72,30 @@ export const SitecoreCommunityBlogOrQuestionSidebar = ({ item, loading }: Siteco
             <rect x="5.197" y="6.323" width="19.496" height="7.117" fill="currentColor" stroke="currentColor" />
             <polyline fill="currentColor" stroke="currentColor" points="4.7 23.486 25.19 23.519" />
             <polyline fill="currentColor" stroke="currentColor" points="4.7 25.406 25.19 25.439" />
-          </Icon>
-        </Box>
-      </Skeleton>
-      <Skeleton isLoaded={!loading} flexGrow={1}>
-        <Stack fontSize={'sm'}>
-          <Heading as={'h4'} size="sm">
-            <Link as={NextLink} href={`${SITECORE_COMMUNITY_URL}${item.url}`} isExternal={true} rel="noreferrer noopener" target="_blank" color={useColorModeValue('black', 'white')}>
+          </svg>
+        </div>
+      )}
+      {loading ? (
+        <Skeleton className="flex-grow h-16" />
+      ) : (
+        <div className="flex-grow text-sm">
+          <h4 className="text-base font-heading">
+            <NextLink
+              href={`${SITECORE_COMMUNITY_URL}${item.url}`}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-foreground hover:underline"
+            >
               {item.title}
-            </Link>
-          </Heading>
-          <HStack spacing={'24px'}>
-            <Text>{new Date(item.publishDate).toLocaleString('en-US', { dateStyle: 'medium' })}</Text>
-            <Text>{item.commentCount} comments</Text>
-            <Text>{item.viewCount} views</Text>
-          </HStack>
-        </Stack>
-      </Skeleton>
-    </Flex>
+            </NextLink>
+          </h4>
+          <div className="flex items-center gap-6">
+            <p>{new Date(item.publishDate).toLocaleString('en-US', { dateStyle: 'medium' })}</p>
+            <p>{item.commentCount} comments</p>
+            <p>{item.viewCount} views</p>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };

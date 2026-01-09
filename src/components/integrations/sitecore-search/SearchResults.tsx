@@ -1,12 +1,13 @@
-import { Badge, Box, Grid, GridItem, HStack, Heading, Hide, Image, Stack, StackDivider, Text } from '@chakra-ui/react';
+import Image from 'next/image';
+import { Badge } from '@components/ui/badge';
 import { SearchResultsInitialState, WidgetDataType, trackEntityPageViewEvent, useSearchResults, widget } from '@sitecore-search/react';
-//import Image from 'next/image';
 import { getColorScheme } from '@/src/lib/search';
 import { Loading } from '@components/ui';
 import { QuerySummary } from './QuerySummary';
 import SearchFacets from './SearchFacets';
 import { SearchPagination } from './SearchPagination';
 import { SearchSort } from './SearchSort';
+import { cn } from '@lib/utils';
 
 export interface HighlightType {
   description?: string;
@@ -65,35 +66,35 @@ export const SearchResults = (props: InitialSearchProps) => {
         </div>
       )}
       {!isLoading && (
-        <Grid templateColumns="repeat(6, 1fr)" gap={6} ref={widgetRef}>
+        <div className="grid grid-cols-6 gap-6" ref={widgetRef}>
           {articles.length > 0 && (
             <>
-              <GridItem colSpan={{ base: 6, md: 2 }}>
+              <div className="col-span-6 md:col-span-2">
                 {/* Hide for desktop */}
-                <Hide above="md">
+                <div className="md:hidden">
                   <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
-                </Hide>
+                </div>
 
-                <Box ml={2} display={'inline'}>
+                <div className="ml-2 inline-block">
                   <SearchFacets onFacetClick={onFacetClick} facets={facets} />
-                </Box>
-              </GridItem>
+                </div>
+              </div>
 
-              <GridItem colSpan={{ base: 6, md: 4 }}>
-                <HStack justify={'space-between'} pb={8}>
+              <div className="col-span-6 md:col-span-4">
+                <div className="flex justify-between items-center pb-8">
                   {articles.length > 0 && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={initialKeyphrase} />}
-                  {/* Hide for mobile, will be replaced with SearchSort component line 74 */}
-                  <Hide below="md">
+                  {/* Hide for mobile, will be replaced with SearchSort component above */}
+                  <div className="hidden md:block">
                     <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
-                  </Hide>
-                </HStack>
-                <Stack divider={<StackDivider />} gap={2}>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
                   {articles.length > 0 &&
                     articles.map((result, index) => (
                       <a
                         href={result.url}
                         key={index}
-                        className="group"
+                        className="group border-b border-border pb-4 last:border-0"
                         onClick={(e) => {
                           e.preventDefault();
                           onItemClick({ id: result.id || '', index });
@@ -105,50 +106,52 @@ export const SearchResults = (props: InitialSearchProps) => {
                           }
                         }}
                       >
-                        <HStack pb={2}>
+                        <div className="flex items-center gap-2 pb-2">
                           {result.type && (
-                            <Badge colorScheme={getColorScheme(result.type)} size="sm">
+                            <Badge variant="default" className="text-xs">
                               {result.type}
                             </Badge>
                           )}
-                          {result.index_name && <Heading variant={'section'}>{result.site_name}</Heading>}
-                        </HStack>
-                        <Heading as="h3" size="md">
+                          {result.index_name && <p className="text-sm uppercase tracking-wide text-muted-foreground">{result.site_name}</p>}
+                        </div>
+                        <h3 className="text-lg font-heading mb-2">
                           {result.name}
-                        </Heading>
+                        </h3>
 
-                        <HStack spacing={6} py={2}>
+                        <div className="flex gap-6 py-2">
                           {result.type == 'Video' && (
                             <>
-                              {result.image_url && <Image width={200} src={result.image_url} alt={result.index_name} shadow={'md'} />}
-                              {!result.image_url && <Image width={200} src="/images/social/social-card-default.jpeg" alt={result.index_name} shadow={'md'} />}
+                              {result.image_url && <Image width={200} height={112} src={result.image_url} alt={result.index_name} className="shadow-md rounded" />}
+                              {!result.image_url && <Image width={200} height={112} src="/images/social/social-card-default.jpeg" alt={result.index_name} className="shadow-md rounded" />}
                             </>
                           )}
 
                           {result.type == 'Repository' && (
                             <>
-                              {result.image_url && <Image width={200} src={result.url.replace('https://github.com', 'https://opengraph.githubassets.com/1')} alt={result.index_name} shadow={'md'} />}
-                              {!result.image_url && <Image width={200} src={result.url.replace('https://github.com', 'https://opengraph.githubassets.com/1')} alt={result.index_name} shadow={'md'} />}
+                              {result.image_url && <Image width={200} height={112} src={result.url.replace('https://github.com', 'https://opengraph.githubassets.com/1')} alt={result.index_name} className="shadow-md rounded" />}
+                              {!result.image_url && <Image width={200} height={112} src={result.url.replace('https://github.com', 'https://opengraph.githubassets.com/1')} alt={result.index_name} className="shadow-md rounded" />}
                             </>
                           )}
 
-                          {result?.highlight?.description && <Text size="sm" noOfLines={3} dangerouslySetInnerHTML={{ __html: result.highlight.description }} my={0} />}
-                          {!result.highlight && result.description && (
-                            <Text size="sm" noOfLines={3} py={0}>
-                              {result.description}
-                            </Text>
+                          {result?.highlight?.description && (
+                            <p className="text-sm line-clamp-3 my-0" dangerouslySetInnerHTML={{ __html: result.highlight.description }} />
                           )}
-                        </HStack>
-                        <Text variant={'tiny'}>{result.url}</Text>
+                          {!result.highlight && result.description && (
+                            <p className="text-sm line-clamp-3 py-0">
+                              {result.description}
+                            </p>
+                          )}
+                        </div>
+                        <p className="text-xs text-muted-foreground">{result.url}</p>
                       </a>
                     ))}
-                </Stack>
+                </div>
                 <SearchPagination defaultCurrentPage={1} onPageNumberChange={(v) => onPageNumberChange({ page: v })} page={page} pageSize={itemsPerPage} totalItems={totalItems} />
-              </GridItem>
+              </div>
             </>
           )}
           {articles.length === 0 && <p className="md:col-span-3">Your search terms did not return any results, please use the input above to try again.</p>}
-        </Grid>
+        </div>
       )}
     </>
   );

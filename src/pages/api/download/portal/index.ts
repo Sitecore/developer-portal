@@ -1,5 +1,5 @@
 import { AzureStorageConfig, getAzureStorageConfig, validateAndGenerateSasUrl } from '@/src/lib/downloads/azure';
-import { getQueryValue } from '@/src/lib/utils';
+import { getQueryValue } from '@/src/lib/utils/requests';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

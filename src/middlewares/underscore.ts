@@ -1,10 +1,10 @@
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
-import { MiddlewareFactory } from './middlewareFactory';
+import { ProxyFactory } from './proxyFactory';
 
 // Only run on requests starting with /downloads
-export const underscore: MiddlewareFactory = (next) => {
-  return async (request: NextRequest, _next: NextFetchEvent) => {
+export const underscore: ProxyFactory = (proxy) => {
+  return async (request: NextRequest, next: NextFetchEvent) => {
     const pathname = request.nextUrl.pathname;
 
     if (pathname.startsWith('/downloads') || pathname.startsWith('/Downloads')) {
@@ -15,6 +15,6 @@ export const underscore: MiddlewareFactory = (next) => {
       }
     }
 
-    return next(request, _next);
+    return proxy(request, next);
   };
 };

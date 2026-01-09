@@ -1,11 +1,15 @@
 import React from 'react';
-import { Icon, IconProps } from '@chakra-ui/react';
+
+export type IconProps = React.SVGProps<SVGSVGElement> & {
+  boxSize?: string | number;
+  viewBox?: string;
+};
 
 // 1. Content Management System
 export const ContentManagementSystemIcon = (props: IconProps) =>
   React.createElement(
-    Icon,
-    { viewBox: '0 0 640 640', ...props },
+    'svg',
+    { viewBox: '0 0 640 640', width: props.boxSize || 24, height: props.boxSize || 24, ...props },
     React.createElement('path', {
       d: 'M88 576c-6.2 0-12.3-2.3-17-7-9.4-9.4-9.4-24.6 0-33.9L375 231c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L105 569c-4.7 4.7-10.8 7-17 7',
       fill: '#eb001a',
@@ -20,8 +24,8 @@ export const ContentManagementSystemIcon = (props: IconProps) =>
 // 2. Digital Asset Management
 export const DigitalAssetManagementIcon = (props: IconProps) =>
   React.createElement(
-    Icon,
-    { viewBox: '0 0 640 640', ...props },
+    'svg',
+    { viewBox: '0 0 640 640', width: props.boxSize || 24, height: props.boxSize || 24, ...props },
     React.createElement('path', {
       d: 'M96 160v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H160c-35.3 0-64 28.7-64 64m66.7 307.1c-4.1-7.9-3.5-17.5 1.6-24.8l56-80c4.5-6.4 11.8-10.2 19.7-10.2s15.2 3.8 19.7 10.2l26.4 37.8 61.4-100.5c4.4-7.1 12.1-11.5 20.5-11.5s16.1 4.4 20.5 11.5l88 144c4.5 7.4 4.7 16.7.5 24.3S464.7 480 456 480H184c-8.9 0-17.2-5-21.3-12.9M272 224c0 26.5-21.5 48-48 48s-48-21.5-48-48 21.5-48 48-48 48 21.5 48 48',
       fill: '#eb001a',
@@ -36,8 +40,8 @@ export const DigitalAssetManagementIcon = (props: IconProps) =>
 // 3. Content Operations
 export const ContentOperationsIcon = (props: IconProps) =>
   React.createElement(
-    Icon,
-    { viewBox: '0 0 640 640', ...props },
+    'svg',
+    { viewBox: '0 0 640 640', width: props.boxSize || 24, height: props.boxSize || 24, ...props },
     React.createElement('path', {
       d: 'M96 480c0 35.3 28.7 64 64 64 23.7 0 44.4-12.9 55.4-32H248v8c0 9.7 5.8 18.5 14.8 22.2s19.3 1.7 26.2-5.2l40-40c9.4-9.4 9.4-24.6 0-33.9l-40-40c-6.9-6.9-17.2-8.9-26.2-5.2S248 430.3 248 440v8h-32.6c-11.1-19.1-31.7-32-55.4-32-35.3 0-64 28.7-64 64m320-320c0 35.3 28.7 64 64 64s64-28.7 64-64-28.7-64-64-64-64 28.7-64 64',
       fill: '#eb001a',
@@ -52,8 +56,8 @@ export const ContentOperationsIcon = (props: IconProps) =>
 // 4. Audiences and Intelligence
 export const AudiencesIntelligenceIcon = (props: IconProps) =>
   React.createElement(
-    Icon,
-    { viewBox: '0 0 640 640', ...props },
+    'svg',
+    { viewBox: '0 0 640 640', width: props.boxSize || 24, height: props.boxSize || 24, ...props },
     React.createElement('path', {
       d: 'M128 160v49c5.2-.7 10.6-1 16-1 70.7 0 128 57.3 128 128 0 27.7-8.8 53.4-23.8 74.4C291 427.9 323.3 465.8 333 512h211c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H192c-35.3 0-64 28.7-64 64m175 111c9.4-9.4 24.6-9.4 33.9 0l31 31 78.1-78.1h-30.1c-13.3 0-24-10.7-24-24s10.7-24 24-24h88c13.3 0 24 10.7 24 24v88c0 13.3-10.7 24-24 24s-24-10.7-24-24v-30.1l-95 95c-4.5 4.5-10.6 7-17 7s-12.5-2.5-17-7l-48-48c-9.4-9.4-9.4-24.6 0-33.9z',
       fill: '#eb001a',
@@ -68,8 +72,8 @@ export const AudiencesIntelligenceIcon = (props: IconProps) =>
 // 5. Conversion Optimization
 export const ConversionOptimizationIcon = (props: IconProps) =>
   React.createElement(
-    Icon,
-    { viewBox: '0 0 640 640', ...props },
+    'svg',
+    { viewBox: '0 0 640 640', width: props.boxSize || 24, height: props.boxSize || 24, ...props },
     React.createElement('path', {
       d: 'M64 320c0 11.8.8 23.5 2.4 34.9 6.6-6.7 15.1-12.1 25.4-15.6l36.4-12.1c-.1-2.4-.1-4.8-.1-7.2 0-106 86-192 192-192s192 86 192 192-86 192-192 192c-2.4 0-4.8 0-7.2-.1l-12.1 36.4c-3.4 10.3-8.9 18.8-15.6 25.4 11.4 1.6 23 2.4 34.9 2.4 141.4 0 256-114.6 256-256S461.4 64 320 64 64 178.6 64 320m112.3-8.9 70.6-23.5c12.4-28 40.5-47.6 73.2-47.6 44.2 0 80 35.8 80 80 0 32.6-19.6 60.7-47.6 73.2L329 463.8c75.4-4.6 135.1-67.2 135.1-143.7s-64.5-144-144-144S181 235.8 176.4 311.2z',
       fill: '#eb001a',
@@ -84,8 +88,8 @@ export const ConversionOptimizationIcon = (props: IconProps) =>
 // 6. Commerce
 export const CommerceIcon = (props: IconProps) =>
   React.createElement(
-    Icon,
-    { viewBox: '0 0 640 640', ...props },
+    'svg',
+    { viewBox: '0 0 640 640', width: props.boxSize || 24, height: props.boxSize || 24, ...props },
     React.createElement('path', {
       d: 'm124.8 96 46.5 256h303.6c30.8 0 57.2-21.9 62.9-52.2l31.1-165.9c3.7-19.7-11.4-37.9-31.5-37.9z',
       fill: '#eb001a',

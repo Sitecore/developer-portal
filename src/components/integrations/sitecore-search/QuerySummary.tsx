@@ -1,5 +1,3 @@
-import { Text } from '@chakra-ui/react';
-
 export interface IQuerySummary {
   resultsPerPage: number;
   totalResults: number;
@@ -14,11 +12,11 @@ export const QuerySummary = (props: IQuerySummary) => {
   const showResultTo = showResultFrom + resultsPerPage - 1;
 
   return (
-    <Text>
-      Showing <Text as="b">{showResultFrom}</Text> to
-      <Text as="b"> {showResultTo < totalResults ? showResultTo : totalResults} </Text>
-      from <Text as="b">{totalResults} </Text> results for <Text as="b">&quot;{title}&quot;</Text>
-    </Text>
+    <p>
+      Showing <strong>{showResultFrom}</strong> to
+      <strong> {showResultTo < totalResults ? showResultTo : totalResults} </strong>
+      from <strong>{totalResults} </strong> results for <strong>&quot;{title}&quot;</strong>
+    </p>
   );
 };
 

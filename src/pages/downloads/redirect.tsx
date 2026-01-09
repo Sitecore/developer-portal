@@ -1,5 +1,4 @@
-import { Box, Center, Link, Text } from '@chakra-ui/react';
-
+import Link from 'next/link';
 import { NextPage } from 'next';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
@@ -16,12 +15,12 @@ const RedirectPage: NextPage = () => {
 
   if (isAuthenticatedCloudPortalUser(session)) {
     return (
-      <Layout title={'Downloading...'} backgroundColor={'chakra-subtle-bg'}>
-        <Box height={'calc(100vh - 165px)'}>
-          <Center layerStyle="section.main" h="full" backgroundColor={'chakra-subtle-bg'}>
+      <Layout title={'Downloading...'}>
+        <div className="h-[calc(100vh-165px)]">
+          <div className="flex items-center justify-center h-full bg-muted">
             <p>Please use your Sitecore ID account to download this file.</p>
-          </Center>
-        </Box>
+          </div>
+        </div>
       </Layout>
     );
   }
@@ -46,14 +45,14 @@ const RedirectPage: NextPage = () => {
   }, [file, redirect, router, session]);
 
   return (
-    <Layout title={'Downloading...'} backgroundColor={'chakra-subtle-bg'}>
-      <Box height={'calc(100vh - 165px)'}>
-        <Center layerStyle="section.main" h="full" backgroundColor={'chakra-subtle-bg'}>
-          <Text>
-            Please wait while we prepare your download. <Link href={downloadUrl}>Click here</Link> to start the download manually.
-          </Text>
-        </Center>
-      </Box>
+    <Layout title={'Downloading...'}>
+      <div className="h-[calc(100vh-165px)]">
+        <div className="flex items-center justify-center h-full bg-muted">
+          <p>
+            Please wait while we prepare your download. <Link href={downloadUrl} className="text-primary hover:underline">Click here</Link> to start the download manually.
+          </p>
+        </div>
+      </div>
     </Layout>
   );
 };

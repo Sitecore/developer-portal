@@ -1,11 +1,13 @@
 import { Option } from '@/src/components/ui/dropdown';
-import { Alert, AlertIcon, SimpleGrid, Tooltip } from '@chakra-ui/react';
+import { Alert, AlertDescription } from '@components/ui/alert';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
+import { Info } from 'lucide-react';
 import { TrackPageView } from '@components/integrations/engage/TrackPageView';
 import { RoadmapPhase } from '@components/roadmap/roadmapPhase';
 import { CenteredContent, Hero, VerticalGroup } from '@components/ui/sections';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { getPageInfo } from '@lib/page-info';
-import { MultiValue, Select } from 'chakra-react-select';
+import Select, { MultiValue } from 'react-select';
 import { NextPage } from 'next';
 import { useState } from 'react';
 import useSWR from 'swr';
@@ -72,22 +74,31 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, fallback, products }) => 
 
         <VerticalGroup>
           <CenteredContent>
-            <Alert status="info" alignItems="center">
-              <AlertIcon />
-              <Tooltip label="Go to the overview of current release notes" aria-label="A tooltip">
-                Please be advised that all roadmap information displayed on this page is subject to change. The details provided are for general informational purposes only and may be updated or modified without prior notice. No guarantees are made
-                regarding the accuracy, completeness, or reliability of the information presented.
-              </Tooltip>
+            <Alert variant="default" className="mb-4">
+              <Info className="h-4 w-4" />
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <AlertDescription>
+                      Please be advised that all roadmap information displayed on this page is subject to change. The details provided are for general informational purposes only and may be updated or modified without prior notice. No guarantees are made
+                      regarding the accuracy, completeness, or reliability of the information presented.
+                    </AlertDescription>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Go to the overview of current release notes</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </Alert>
 
-            <Select instanceId="productSelector" isMulti closeMenuOnSelect={false} selectedOptionStyle="check" options={products} onChange={handleChange} colorScheme="primary" selectedOptionColorScheme="primary" placeholder="Filter by product(s)" />
+            <Select instanceId="productSelector" isMulti closeMenuOnSelect={false} options={products} onChange={handleChange} placeholder="Filter by product(s)" className="react-select-container" classNamePrefix="react-select" />
 
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="5px">
-              <RoadmapPhase roadmap={data} title="Done" color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
-              <RoadmapPhase roadmap={data} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
-              <RoadmapPhase roadmap={data} title="Next (next two quarter)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
-              <RoadmapPhase roadmap={data} title="Future (9+ months)" color="neutral-bg-active" phase={Phase.FUTURE} isLoading={isLoading} />
-            </SimpleGrid>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[5px]">
+              <RoadmapPhase roadmap={data} title="Done" color="var(--muted)" phase={Phase.DONE} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Now (this quarter)" color="hsl(142.1 76.2% 36.3%)" phase={Phase.NOW} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Next (next two quarter)" color="hsl(38 92% 50%)" phase={Phase.NEXT} isLoading={isLoading} />
+              <RoadmapPhase roadmap={data} title="Future (9+ months)" color="hsl(var(--muted))" phase={Phase.FUTURE} isLoading={isLoading} />
+            </div>
           </CenteredContent>
         </VerticalGroup>
       </Layout>

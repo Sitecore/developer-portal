@@ -1,5 +1,10 @@
 import { Option } from '@/src/components/ui/dropdown';
-import { Alert, AlertIcon, Box, Button, Card, CardBody, Checkbox, FormControl, FormLabel, HStack, Icon, Link, SkeletonText, VisuallyHidden, Wrap } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert';
+import { Button } from '@components/ui/button';
+import { Card, CardContent } from '@components/ui/card';
+import { Checkbox } from '@components/ui/checkbox';
+import { Label } from '@components/ui/label';
+import { Skeleton } from '@components/ui/skeleton';
 import { ChangelogEntry, ChangelogEntryList, ChangeType, Product } from '@lib/changelog/types';
 import axios from 'axios';
 import NextLink from 'next/link';
@@ -7,13 +12,13 @@ import { useState } from 'react';
 import { Fetcher } from 'swr';
 import useSWR from 'swr';
 import useSWRInfinite from 'swr/infinite';
-
+import { ChevronLeft } from 'lucide-react';
 import { entriesApiUrl } from '@/src/lib/changelog/common/changelog';
 import { buildQuerystring } from '@/src/lib/changelog/common/querystring';
-import { ChevronLeftIcon } from '@chakra-ui/icons';
 import ChangelogFilter from './ChangelogFilter';
 import ChangelogResultsList from './ChangelogResultsList';
 import { Hint } from './Hint';
+import { cn } from '@lib/utils';
 
 type ChangelogListProps = {
   initialProduct?: Product;
@@ -80,73 +85,70 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
   const items = data ? data.flatMap((data) => data.entries.map((entry) => entry)) : [];
 
   return (
-    <Box>
+    <div>
       {initialProduct && (
-        <Wrap mb={4}>
-          <Link as={NextLink} href="/changelog" passHref>
-            <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} width={'100%'} variant={'ghost'}>
+        <div className="mb-4">
+          <Button variant="ghost" className="w-full" asChild>
+            <NextLink href="/changelog">
+              <ChevronLeft className="mr-2 h-6 w-6" />
               Go back to the changelog overview
-            </Button>
-            <VisuallyHidden>Go back to the changelog overview</VisuallyHidden>
-          </Link>
-        </Wrap>
+            </NextLink>
+          </Button>
+          <span className="sr-only">Go back to the changelog overview</span>
+        </div>
       )}
-      <Card variant="filled">
-        <CardBody>
+      <Card className="bg-muted">
+        <CardContent>
           {!initialProduct && (
-            <FormControl>
-              <HStack alignItems={'baseline'} justifyContent={'space-between'}>
-                <FormLabel>Products</FormLabel>
-                <ChangelogFilter
-                  id="productSelector"
-                  label="Products"
-                  placeholder="Select products"
-                  options={getProductOptions()}
-                  onSelectChange={function (selectedValues: Array<Option>): void {
-                    onProductsChange(selectedValues);
-                  }}
-                />
-              </HStack>
-            </FormControl>
-          )}
-          <FormControl>
-            <HStack alignItems={'baseline'} justifyContent={'space-between'}>
-              <FormLabel>Changes</FormLabel>
+            <div className="flex items-baseline justify-between mb-4">
+              <Label>Products</Label>
               <ChangelogFilter
-                id="changeSelector"
-                label="Changes"
-                placeholder="Select changes"
-                options={getChangeTypeOptions()}
+                id="productSelector"
+                label="Products"
+                placeholder="Select products"
+                options={getProductOptions()}
                 onSelectChange={function (selectedValues: Array<Option>): void {
-                  setSelectedChange(selectedValues);
+                  onProductsChange(selectedValues);
                 }}
               />
-            </HStack>
-          </FormControl>
+            </div>
+          )}
+          <div className="flex items-baseline justify-between mb-4">
+            <Label>Changes</Label>
+            <ChangelogFilter
+              id="changeSelector"
+              label="Changes"
+              placeholder="Select changes"
+              options={getChangeTypeOptions()}
+              onSelectChange={function (selectedValues: Array<Option>): void {
+                setSelectedChange(selectedValues);
+              }}
+            />
+          </div>
 
-          <Checkbox checked={breaking} onChange={(e) => setBreaking(e.target.checked)}>
-            Only show changes that might require action
-          </Checkbox>
-        </CardBody>
+          <div className="flex items-center gap-2">
+            <Checkbox checked={breaking} onCheckedChange={(checked) => setBreaking(checked === true)} />
+            <Label>Only show changes that might require action</Label>
+          </div>
+        </CardContent>
       </Card>
       <Hint products={selectedProducts} enabled={selectedProducts?.length == 1} />
 
       {isLoading && (
-        <Box marginTop={12}>
+        <div className="mt-12">
           <Placeholder />
           <Placeholder />
-        </Box>
+        </div>
       )}
 
-      {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={data[data.length - 1].hasNext} onEndTriggered={() => setSize(size + 1)} mt={8} />}
+      {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={data[data.length - 1].hasNext} onEndTriggered={() => setSize(size + 1)} className="mt-8" />}
 
       {data && !data[data.length - 1].hasNext && (
-        <Alert colorScheme="neutral">
-          <AlertIcon />
-          {items.length == 0 ? 'No entries found' : 'No other entries found'}
+        <Alert variant="default" className="mt-4">
+          <AlertTitle>{items.length == 0 ? 'No entries found' : 'No other entries found'}</AlertTitle>
         </Alert>
       )}
-    </Box>
+    </div>
   );
 };
 
@@ -154,9 +156,18 @@ export default ChangelogList;
 
 const Placeholder = () => {
   return (
-    <>
-      <SkeletonText noOfLines={1} skeletonHeight={'20px'} marginBottom={'20px'} />
-      <SkeletonText noOfLines={8} skeletonHeight={'20px'} />
-    </>
+    <div className="mb-5">
+      <Skeleton className="h-5 mb-5" />
+      <div className="space-y-2">
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+      </div>
+    </div>
   );
 };

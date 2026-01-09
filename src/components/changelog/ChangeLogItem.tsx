@@ -1,15 +1,19 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, Center, Heading, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
-// import Image from 'next/image';
-import { ChangelogEntry } from '@lib/changelog/types';
-import { getChangelogEntryUrl, getSlug } from '@lib/utils';
-import { Prose } from '@nikolovlazar/chakra-ui-prose';
-import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+'use client';
 
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@components/ui/dialog';
+import { Button } from '@components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
+import { ChangelogEntry } from '@lib/changelog/types';
+import { getSlug } from '@/src/lib/utils/stringUtil';
+import { getChangelogEntryUrl } from '@/src/lib/utils/urlUtil';
 import { Loading } from '@components/ui';
 import { LinkButton } from '../links';
 import { SocialShare } from '../ui/socialShare';
 import { ChangelogItemMeta } from './ChangelogItemMeta';
+import { cn } from '@lib/utils';
 
 export type ChangeLogItemProps = {
   item: ChangelogEntry;
@@ -20,8 +24,8 @@ export type ChangeLogItemProps = {
 };
 
 const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const entryRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const entryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!entryRef?.current) {
@@ -36,49 +40,63 @@ const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps
     });
 
     observer.observe(entryRef.current);
-  }, [isLast]);
+  }, [isLast, isMore, loadEntries]);
 
   return (
     <>
-      <Card ref={entryRef} variant={'unstyled'} mt={2} mb={8}>
-        <CardHeader pb={4}>
-          <Heading as="h2" fontSize={'1.25rem'} id={getSlug(item.title)} mb={4}>
-            <Link href={getChangelogEntryUrl(item)} title={item.title}>
+      <Card ref={entryRef} className="border-0 shadow-none mt-2 mb-8">
+        <CardHeader className="pb-4">
+          <h2 className="text-xl font-heading" id={getSlug(item.title)}>
+            <Link href={getChangelogEntryUrl(item)} title={item.title} className="hover:underline">
               {item.title}
             </Link>
-          </Heading>
+          </h2>
           <ChangelogItemMeta item={item} />
         </CardHeader>
-        <CardBody py={0}>
+        <CardContent className="py-0">
           {item.image.length > 0 && item.image[0].fileUrl && (
             <>
-              <Image src={`${item.image[0].fileUrl}`} alt={item.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
+              <div className="relative mb-4 cursor-zoom-in" onClick={() => setIsOpen(true)}>
+                <Image
+                  src={item.image[0].fileUrl}
+                  alt={item.title || ''}
+                  width={800}
+                  height={600}
+                  className="rounded-lg max-w-full"
+                />
+              </div>
 
-              <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnOverlayClick size={'6xl'}>
-                <ModalOverlay />
-                <ModalContent>
-                  <ModalHeader>{item.title}</ModalHeader>
-                  <ModalCloseButton />
-                  <ModalBody>
-                    <Center>
-                      <Image src={`${item.image[0].fileUrl}`} alt={item.title || ''} />
-                    </Center>
-                  </ModalBody>
-
-                  <ModalFooter>
-                    <Button colorScheme="neutral" mr={3} onClick={onClose} variant={'outline'}>
+              <Dialog open={isOpen} onOpenChange={setIsOpen}>
+                <DialogContent className="max-w-[90vw] max-h-[90vh]">
+                  <DialogHeader>
+                    <DialogTitle>{item.title}</DialogTitle>
+                    {item.title && <DialogDescription>Click outside to close</DialogDescription>}
+                  </DialogHeader>
+                  <div className="flex items-center justify-center overflow-auto">
+                    <Image
+                      src={item.image[0].fileUrl}
+                      alt={item.title || ''}
+                      width={1200}
+                      height={900}
+                      className="max-w-full max-h-[70vh] object-contain"
+                    />
+                  </div>
+                  <DialogFooter>
+                    <Button variant="outline" onClick={() => setIsOpen(false)}>
                       Close
                     </Button>
-                  </ModalFooter>
-                </ModalContent>
-              </Modal>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </>
           )}
 
-          <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: item.description }} />
-        </CardBody>
-        <CardFooter justifyContent={item.readMoreLink ? 'space-between' : 'flex-end'}>
-          {item.readMoreLink && <LinkButton variant="text" href={item.readMoreLink} text="Read more" title={`Read more about ${item.title}`} margin={0} padding={0} />}
+          <div className="prose prose-lg max-w-none my-0 py-0" dangerouslySetInnerHTML={{ __html: item.description }} />
+        </CardContent>
+        <CardFooter className={cn('justify-between', !item.readMoreLink && 'justify-end')}>
+          {item.readMoreLink && (
+            <LinkButton variant="ghost" href={item.readMoreLink} text="Read more" title={`Read more about ${item.title}`} />
+          )}
           <SocialShare url={getChangelogEntryUrl(item, true)} title={`${item.title} - ${item.productName} Changelog - Sitecore`} />
         </CardFooter>
       </Card>

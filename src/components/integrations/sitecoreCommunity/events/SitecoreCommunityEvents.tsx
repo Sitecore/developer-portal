@@ -1,36 +1,35 @@
-// Interfaces
-import { Card, CardBody, CardHeader, CardProps, Heading, Stack } from '@chakra-ui/react';
-
+import { Card, CardContent, CardHeader } from '@components/ui/card';
 import { TextLink } from '@/src/components/links/TextLink';
-
 import { SitecoreCommunityNewsOrEventItem } from '../SitecoreCommunityNewsOrEventItem';
 import type { SitecoreCommunityEvent } from '../types';
+import { cn } from '@lib/utils';
 
-type SitecoreCommunityEventsProps = CardProps & {
+type SitecoreCommunityEventsProps = {
   title?: string;
   data?: Array<SitecoreCommunityEvent>;
+  className?: string;
 };
 
-export const SitecoreCommunityEvents = ({ data, title, ...rest }: SitecoreCommunityEventsProps) => {
+export const SitecoreCommunityEvents = ({ data, title, className }: SitecoreCommunityEventsProps) => {
   if (!data || data.length === 0) {
     return <></>;
   }
 
   return (
-    <Card shadow={'none'} {...rest}>
-      <CardHeader justifyContent={'space-between'} display={'flex'}>
-        <Heading as={'h3'} size={'xl'} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
+    <Card className={cn('shadow-none', className)}>
+      <CardHeader className="flex justify-between">
+        <h3 className="text-2xl font-heading font-normal">
           {title ? title : 'Events'}
-        </Heading>
-        <TextLink href={'https://community.sitecore.com/community?id=community_forum&sys_id=7a84272f1b313c10486a4083b24bcbd5'} text={'See all'} />
+        </h3>
+        <TextLink href="https://community.sitecore.com/community?id=community_forum&sys_id=7a84272f1b313c10486a4083b24bcbd5" text="See all" />
       </CardHeader>
-      <CardBody>
-        <Stack spacing={8} direction={{ base: 'column', md: 'row' }}>
+      <CardContent>
+        <div className="flex flex-col md:flex-row gap-8">
           {data.map((event, i) => (
             <SitecoreCommunityNewsOrEventItem {...event} categoryTitle="Event" key={i} />
           ))}
-        </Stack>
-      </CardBody>
+        </div>
+      </CardContent>
     </Card>
   );
 };

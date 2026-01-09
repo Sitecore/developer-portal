@@ -1,5 +1,8 @@
-import { Box, Button, Link as ChakraLink, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from '@components/ui/button';
+import { Badge } from '@components/ui/badge';
+import { cn } from '@lib/utils';
 
 export interface PromoCardProps {
   title: string;
@@ -25,96 +28,79 @@ export const PromoCard: React.FC<PromoCardProps> = ({
   const isExternal = link.startsWith('http');
 
   return (
-    <Box
-      bg="whiteAlpha.900"
-      backdropFilter="blur(10px)"
-      borderRadius="lg"
-      overflow="hidden"
-      boxShadow={compact ? 'md' : 'xl'} // Smaller shadow in compact mode
-      transition="all 0.3s"
-      _hover={{
-        transform: compact ? 'translateY(-2px)' : 'translateY(-4px)', // Less movement in compact
-        boxShadow: compact ? 'lg' : '2xl',
-      }}
-      height="100%"
-      display="flex"
-      flexDirection="column"
+    <div
+      className={cn(
+        'bg-white/90 dark:bg-background/90 backdrop-blur-md rounded-lg overflow-hidden',
+        compact ? 'shadow-md hover:shadow-lg' : 'shadow-xl hover:shadow-2xl',
+        'transition-all duration-300 h-full flex flex-col',
+        compact ? 'hover:-translate-y-0.5' : 'hover:-translate-y-1'
+      )}
     >
       {/* Image Section */}
       {image && (
-        <Box position="relative" height={compact ? "160px" : "200px"} overflow="hidden">
+        <div className={cn('relative overflow-hidden', compact ? 'h-40' : 'h-50')}>
           <Image
             src={image}
             alt={title}
-            objectFit="cover"
-            width="100%"
-            height="100%"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
           {badge && (
-            <Box
-              position="absolute"
-              top={compact ? 2 : 4}
-              right={compact ? 2 : 4}
-              bg="primary.500"
-              color="white"
-              px={compact ? 2 : 3}
-              py={compact ? 0.5 : 1}
-              borderRadius="full"
-              fontSize={compact ? 'xs' : 'sm'}
-              fontWeight="bold"
+            <div
+              className={cn(
+                'absolute top-2 right-2 md:top-4 md:right-4',
+                'bg-primary text-white rounded-full font-bold',
+                compact ? 'px-2 py-0.5 text-xs' : 'px-3 py-1 text-sm'
+              )}
             >
               {badge}
-            </Box>
+            </div>
           )}
-        </Box>
+        </div>
       )}
 
       {/* Content Section */}
-      <Flex direction="column" p={compact ? 4 : 6} flex="1">
-        <Heading as="h3" size={compact ? 'sm' : 'md'} mb={compact ? 2 : 3} color="gray.900">
+      <div className={cn('flex flex-col flex-1', compact ? 'p-4' : 'p-6')}>
+        <h3 className={cn('font-heading mb-2 md:mb-3 text-gray-900 dark:text-foreground', compact ? 'text-sm' : 'text-base')}>
           {title}
-        </Heading>
+        </h3>
         
-        <Text 
-          color="gray.700" 
-          mb={compact ? 4 : 6} 
-          flex="1" 
-          fontSize={compact ? 'sm' : 'md'}
-          noOfLines={compact ? 3 : undefined} 
-          display={{ base: 'none', md: 'block' }}
-
+        <p 
+          className={cn(
+            'text-gray-700 dark:text-muted-foreground mb-4 md:mb-6 flex-1',
+            compact ? 'text-sm' : 'text-base',
+            compact ? 'line-clamp-3' : '',
+            'hidden md:block'
+          )}
         >
           {description}
-        </Text>
+        </p>
 
         {/* CTA Button */}
         {isExternal ? (
-          <ChakraLink href={link} isExternal _hover={{ textDecoration: 'none' }}>
+          <Link href={link} target="_blank" rel="noopener noreferrer" className="hover:no-underline">
             <Button
-              colorScheme="primary"
-              size={compact ? 'md' : 'lg'}
-              width="full"
-              variant={variant === 'featured' ? 'solid' : 'outline'}
+              size={compact ? 'default' : 'lg'}
+              className="w-full"
+              variant={variant === 'featured' ? 'default' : 'outline'}
             >
               {linkText}
             </Button>
-          </ChakraLink>
+          </Link>
         ) : (
-          <Link href={link} passHref legacyBehavior>
-            <ChakraLink _hover={{ textDecoration: 'none' }}>
-              <Button
-                colorScheme="primary"
-                size={compact ? 'md' : 'lg'}
-                width="full"
-                variant={variant === 'featured' ? 'solid' : 'outline'}
-              >
-                {linkText}
-              </Button>
-            </ChakraLink>
+          <Link href={link} className="hover:no-underline">
+            <Button
+              size={compact ? 'default' : 'lg'}
+              className="w-full"
+              variant={variant === 'featured' ? 'default' : 'outline'}
+            >
+              {linkText}
+            </Button>
           </Link>
         )}
-      </Flex>
-    </Box>
+      </div>
+    </div>
   );
 };
 

@@ -1,26 +1,21 @@
-import { Flex, Image, Input, InputGroup, InputLeftElement, InputRightElement, Text } from '@chakra-ui/react';
-import { FaSearch } from 'react-icons/fa';
+import Image from 'next/image';
+import { Input } from '@components/ui/input';
+import { Search } from 'lucide-react';
 
 const NavBarSearch = () => {
-  {
-    /* Search menu */
-  }
-
   return (
-    <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'center' }} padding={3} paddingX={'2rem'} position={'static'} background={'chakra-body-bg'} shadow={'md'}>
-      <Flex display={{ base: 'flex', md: 'flex' }} justify={'flex-center'} boxSize={'100%'} maxWidth="6xl">
-        <InputGroup size="md" width={'full'} rounded={'none'}>
-          <InputLeftElement>
-            <FaSearch />
-          </InputLeftElement>
-          <Input placeholder="What are you looking for?" />
-          <InputRightElement width={'200px'}>
-            <Text display={{ base: 'none', sm: 'flex ' }}>Powered by</Text>
-            <Image src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-search" opacity={0.5} alt="Sitecore Search logo" />
-          </InputRightElement>
-        </InputGroup>
-      </Flex>
-    </Flex>
+    <div className="flex-1 flex justify-center p-3 px-8 static bg-background shadow-md">
+      <div className="flex justify-center w-full max-w-6xl">
+        <div className="relative w-full">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <Input placeholder="What are you looking for?" className="pl-10 pr-[200px] rounded-none" />
+          <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center gap-2 w-[200px]">
+            <span className="hidden sm:flex text-sm">Powered by</span>
+            <Image src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-search" width={100} height={20} alt="Sitecore Search logo" className="opacity-50" />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

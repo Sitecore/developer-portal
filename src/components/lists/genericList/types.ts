@@ -1,13 +1,12 @@
-import { CardProps, IconProps } from '@chakra-ui/react';
-import { ComponentType } from 'react';
+import { ComponentType, ReactNode } from 'react';
 
-
-export type GenericListData = CardProps & {
+export type GenericListData = {
   title: string;
   subtitle: string;
   data: Array<GenericListItem>;
   column?: number;
   cardVariant?: string;
+  className?: string;
 };
 
 export type GenericListItem = {
@@ -22,6 +21,6 @@ export type GenericListItem = {
     height?: number;
   };
   color?: string;
-  icon?: ComponentType<IconProps>;
+  icon?: ComponentType<{ className?: string; size?: number | string }>;
 
 };

@@ -10,7 +10,7 @@ import {
   SearchByTitleQuery,
   StatusFragment,
 } from '@data/gql/generated/graphql';
-import { getStringValue } from '@lib/utils';
+import { getStringValue } from '@/src/lib/utils/stringUtil';
 import { generateHTML } from '@tiptap/html';
 
 import { richTextProfile } from '../common/richTextConfiguration';

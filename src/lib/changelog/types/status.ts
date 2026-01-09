@@ -1,5 +1,5 @@
 import { GetAllStatusQuery, StatusFragment } from '@data/gql/generated/graphql';
-import { getStringValue } from '@lib/utils';
+import { getStringValue } from '@/src/lib/utils/stringUtil';
 
 export type Status = {
   id: string;

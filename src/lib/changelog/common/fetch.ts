@@ -3,7 +3,7 @@ import { ChangelogCredentials } from '@lib/changelog/types';
 import axios, { AxiosInstance } from 'axios';
 import axiosThrottle from 'axios-request-throttle';
 
-import { Log } from '@lib/utils';
+import { Log } from '@/src/lib/utils/logger';
 import { ChangelogConfigurationError, ChangelogGraphQLError, ChangelogNetworkError } from '../errors';
 import { extractQueryName } from '../utils/graphql';
 

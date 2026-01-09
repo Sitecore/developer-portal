@@ -1,6 +1,6 @@
 import { aspxExtension } from './middlewares/aspxExtension';
 import { mediaHandler } from './middlewares/mediaHandler';
-import { stackMiddlewares } from './middlewares/stackHandler';
+import { stackProxies } from './middlewares/stackHandler';
 import { underscore } from './middlewares/underscore';
 
 export const config = {
@@ -16,6 +16,6 @@ export const config = {
   ],
 };
 
-const middlewares = [aspxExtension, underscore, mediaHandler];
+const proxies = [aspxExtension, underscore, mediaHandler];
 
-export default stackMiddlewares(middlewares);
+export default stackProxies(proxies);

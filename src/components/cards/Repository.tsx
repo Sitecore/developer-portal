@@ -1,9 +1,13 @@
-import { Badge, Card, CardBody, CardFooter, CardHeader, CardProps, HStack, Icon, Link, Tag, TagLeftIcon, Text, Wrap } from '@chakra-ui/react';
+import Link from 'next/link';
+import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
+import { Badge } from '@components/ui/badge';
 import { isValidLogo, SvgLogo } from '@components/ui/logos';
 import { mdiGithub, mdiSourceFork, mdiStar } from '@mdi/js';
+import Icon from '@mdi/react';
 import { LinkButton } from '../links';
+import { cn } from '@lib/utils';
 
-export type RepositoryProps = CardProps & {
+export type RepositoryProps = {
   name?: string;
   description: string;
   repositoryUrl: string;
@@ -11,9 +15,10 @@ export type RepositoryProps = CardProps & {
   forks?: number;
   stars?: number;
   topics?: Array<string>;
+  className?: string;
 };
 
-export const Repository = ({ name, description, repositoryUrl, framework, stars, forks, topics, ...rest }: RepositoryProps) => {
+export const Repository = ({ name, description, repositoryUrl, framework, stars, forks, topics, className }: RepositoryProps) => {
   const frameworks = framework?.split('|');
   const frameworkLogos: Array<string> = [];
 
@@ -28,76 +33,59 @@ export const Repository = ({ name, description, repositoryUrl, framework, stars,
   });
 
   return (
-    <Card variant={'outline'} size={'sm'} display={'flex'} {...rest}>
-      <CardHeader justifyContent={'flex-end'}>
-        <HStack>
+    <Card className={cn('border flex flex-col', className)}>
+      <CardHeader className="justify-end">
+        <div className="flex items-center gap-2">
           {frameworks &&
             frameworkLogos.map((framework, index) => {
               return <SvgLogo logo={framework} key={index} height={25} />;
             })}
-        </HStack>
+        </div>
       </CardHeader>
 
-      <CardBody>
+      <CardContent>
         {name && (
-          <Text variant="strong" mb={4}>
-            <Link href={`${repositoryUrl}`}>{name}</Link>
-          </Text>
+          <p className="font-semibold mb-4">
+            <Link href={repositoryUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">
+              {name}
+            </Link>
+          </p>
         )}
-        {description && <Text>{description}</Text>}
+        {description && <p>{description}</p>}
         {topics && topics.length > 0 && (
-          <Wrap mt={4}>
+          <div className="flex flex-wrap gap-2 mt-4">
             {topics.map((topic, index) => {
               return (
-                <Badge key={index} colorScheme="info">
+                <Badge key={index} variant="default">
                   {topic}
                 </Badge>
               );
             })}
-          </Wrap>
+          </div>
         )}
-      </CardBody>
-      <CardFooter pt={0} justifyContent={'space-between'}>
-        <HStack hideBelow={'sm'}>
+      </CardContent>
+      <CardFooter className="pt-0 justify-between">
+        <div className="hidden sm:flex items-center gap-2">
           {stars && stars > 0 && (
-            <Wrap>
-              <Tag>
-                <TagLeftIcon>
-                  <Icon>
-                    <path d={mdiStar} />
-                  </Icon>
-                </TagLeftIcon>
-                {stars}
-              </Tag>
-            </Wrap>
+            <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-muted">
+              <Icon path={mdiStar} size={0.8} />
+              <span className="text-sm">{stars}</span>
+            </div>
           )}
 
           {forks && (
-            <Wrap>
-              <Link href={`${repositoryUrl}/forks`} isExternal>
-                <Tag>
-                  <TagLeftIcon>
-                    <Icon>
-                      <path d={mdiSourceFork} />
-                    </Icon>
-                  </TagLeftIcon>
-                  {forks}
-                </Tag>
-              </Link>
-            </Wrap>
+            <Link href={`${repositoryUrl}/forks`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-2 py-1 rounded-md bg-muted hover:bg-muted/80">
+              <Icon path={mdiSourceFork} size={0.8} />
+              <span className="text-sm">{forks}</span>
+            </Link>
           )}
-        </HStack>
+        </div>
         <LinkButton
           href={repositoryUrl}
           text="Repository"
-          icon={
-            <Icon>
-              <path d={mdiGithub} />
-            </Icon>
-          }
-          colorScheme="neutral"
+          icon={<Icon path={mdiGithub} size={1} />}
           variant="outline"
-          size={'sm'}
+          size="sm"
         />
       </CardFooter>
     </Card>

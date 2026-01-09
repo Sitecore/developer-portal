@@ -1,26 +1,30 @@
-import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { IconButton, Link, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@components/ui/dropdown-menu';
+import { Button } from '@components/ui/button';
 import { mdiDotsGrid } from '@mdi/js';
 import Icon from '@mdi/react';
 import NextLink from 'next/link';
-
+import { ExternalLink } from 'lucide-react';
 import { sitecoreQuickLinks } from '../../../data/data-navigation';
 
 export const QuickStartMenu = () => {
   return (
-    <Menu>
-      <MenuButton size="sm" as={IconButton} variant="ghost" icon={<Icon size={1} path={mdiDotsGrid} />} display={{ base: 'none', xl: 'flex' }} aria-label={'Open the menu for links to other Sitecore sites'} />
-      <MenuList>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size="sm" className="hidden xl:flex" aria-label="Open the menu for links to other Sitecore sites">
+          <Icon size={1} path={mdiDotsGrid} />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
         {sitecoreQuickLinks.children &&
           sitecoreQuickLinks.children.map((link, key) => (
-            <MenuItem key={key}>
-              <Link as={NextLink} href={link.url} isExternal display={'block'} width={'90%'} color="neutral-fg">
+            <DropdownMenuItem key={key} asChild>
+              <NextLink href={link.url || '#'} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between w-[90%]">
                 {link.title}
-              </Link>
-              {<ExternalLinkIcon fillOpacity={0} boxSize={'1em'} />}
-            </MenuItem>
+                <ExternalLink className="h-4 w-4 ml-2" />
+              </NextLink>
+            </DropdownMenuItem>
           ))}
-      </MenuList>
-    </Menu>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

@@ -1,30 +1,17 @@
-import {
-  Alert,
-  AlertIcon,
-  Button,
-  ButtonProps,
-  Center,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
-  HStack,
-  Input,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  Stack,
-  Text,
-  Textarea,
-  useDisclosure,
-} from '@chakra-ui/react';
+'use client';
+
 import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { Button, ButtonProps } from '@components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@components/ui/dialog';
+import { Input } from '@components/ui/input';
+import { Textarea } from '@components/ui/textarea';
+import { Label } from '@components/ui/label';
+import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert';
+import { AlertCircle } from 'lucide-react';
+import { cn } from '@lib/utils';
 
-type FeedbackProps = ButtonProps & {
+type FeedbackProps = Omit<ButtonProps, 'onClick'> & {
   text?: string;
   projectId: string;
   issueTypeId: string;
@@ -38,8 +25,8 @@ type formData = {
   description: string;
 };
 
-const Feedback = ({ text = 'Feedback', projectId, issueTypeId, product, ...rest }: FeedbackProps) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+const Feedback = ({ text = 'Feedback', projectId, issueTypeId, product, className, ...rest }: FeedbackProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [submitError, setSubmitError] = useState<boolean>(false);
   const {
     register,
@@ -50,8 +37,11 @@ const Feedback = ({ text = 'Feedback', projectId, issueTypeId, product, ...rest 
 
   const closeModal: () => void = () => {
     reset();
-    onClose();
+    setIsOpen(false);
   };
+
+  const onOpen = () => setIsOpen(true);
+  const onClose = () => setIsOpen(false);
 
   const onSubmit: SubmitHandler<formData> = async (values) => {
     if (isSubmitting) return;
@@ -82,88 +72,115 @@ const Feedback = ({ text = 'Feedback', projectId, issueTypeId, product, ...rest 
 
   return (
     <>
-      <Button {...rest} onClick={onOpen} variant="link">
+      <Button {...rest} onClick={onOpen} variant="link" className={cn(className)}>
         {text}
       </Button>
 
-      <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose} size={'2xl'} motionPreset="scale">
-        <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px)" />
-        <ModalContent>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="max-w-2xl">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <ModalHeader>Feedback or suggestions</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <Stack spacing="8" hidden={isSubmitSuccessful && !submitError}>
-                <Text fontWeight="bold" mb="1rem">
-                  Your comments, suggestions, and feedback help us improve the accelerate recipes.
-                </Text>
-                {submitError && (
-                  <Alert status="error" mb={4}>
-                    <AlertIcon />
-                    Apologies, we encountered an issue with submitting the feedback. Please try again later.
-                  </Alert>
-                )}
-                <FormControl isRequired id="name" isInvalid={!!errors.name}>
-                  <FormLabel>Name</FormLabel>
-                  <Input {...register('name', { required: true, min: 3 })} disabled={isSubmitting} placeholder="Your name" />
-                  <FormErrorMessage>{errors.name && errors.name.message}</FormErrorMessage>
-                </FormControl>
-                <FormControl isRequired id="email" isInvalid={!!errors.email}>
-                  <FormLabel>Email address</FormLabel>
-                  <Input
-                    placeholder="Your email address"
-                    type="email"
-                    {...register('email', {
-                      required: 'Email is required',
-                      pattern: {
-                        value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                        message: 'Invalid email address',
-                      },
-                    })}
-                    disabled={isSubmitting}
-                  />
-                  <FormErrorMessage>{errors.email && errors.email.message}</FormErrorMessage>
-                </FormControl>
-
-                <FormControl isRequired id="summary" isInvalid={!!errors.summary}>
-                  <FormLabel>Summary / Title</FormLabel>
-                  <Input placeholder="Please provide an abstract of the feedback" {...register('summary', { required: 'Please provide a summary', min: 3 })} disabled={isSubmitting} />
-                  <FormErrorMessage>{errors.summary && errors.summary.message}</FormErrorMessage>
-                </FormControl>
-                <FormControl isRequired id="details" isInvalid={!!errors.description}>
-                  <FormLabel>More details</FormLabel>
-                  <Textarea rows={8} placeholder="More details that you would like to share" {...register('description', { required: true, min: 3 })} disabled={isSubmitting} />
-                  <FormErrorMessage>{errors.description && errors.description.message}</FormErrorMessage>
-                </FormControl>
-
-                <HStack alignContent={'center'} justifyContent={'flex-end'}></HStack>
-              </Stack>
-
-              <Center layerStyle="section.main" h="full" hidden={!isSubmitSuccessful || submitError}>
-                <Stack align="center" textAlign="center" spacing="6" maxW="sm">
-                  <Text fontWeight="bold">Thank you for your feedback!</Text>
-                  <Text>Your feedback has been submitted successfully.</Text>
-                  <Button
-                    onClick={() => {
-                      closeModal();
-                    }}
-                  >
-                    Close
-                  </Button>
-                </Stack>
-              </Center>
-            </ModalBody>
-            <ModalFooter hidden={isSubmitSuccessful && !submitError}>
-              <Button onClick={onClose} variant="outline">
-                Close
-              </Button>
-              <Button isLoading={isSubmitting} type="submit" hidden={submitError}>
-                Submit
-              </Button>
-            </ModalFooter>
+            <DialogHeader>
+              <DialogTitle>Feedback or suggestions</DialogTitle>
+              <DialogDescription>
+                Your comments, suggestions, and feedback help us improve the accelerate recipes.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-6 py-4">
+              {!isSubmitSuccessful || submitError ? (
+                <>
+                  {submitError && (
+                    <Alert variant="destructive">
+                      <AlertCircle className="h-4 w-4" />
+                      <AlertTitle>Error</AlertTitle>
+                      <AlertDescription>
+                        Apologies, we encountered an issue with submitting the feedback. Please try again later.
+                      </AlertDescription>
+                    </Alert>
+                  )}
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">
+                        Name <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="name"
+                        {...register('name', { required: 'Name is required', minLength: { value: 3, message: 'Name must be at least 3 characters' } })}
+                        disabled={isSubmitting}
+                        placeholder="Your name"
+                        className={errors.name ? 'border-destructive' : ''}
+                      />
+                      {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">
+                        Email address <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="email"
+                        placeholder="Your email address"
+                        type="email"
+                        {...register('email', {
+                          required: 'Email is required',
+                          pattern: {
+                            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                            message: 'Invalid email address',
+                          },
+                        })}
+                        disabled={isSubmitting}
+                        className={errors.email ? 'border-destructive' : ''}
+                      />
+                      {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="summary">
+                        Summary / Title <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="summary"
+                        placeholder="Please provide an abstract of the feedback"
+                        {...register('summary', { required: 'Please provide a summary', minLength: { value: 3, message: 'Summary must be at least 3 characters' } })}
+                        disabled={isSubmitting}
+                        className={errors.summary ? 'border-destructive' : ''}
+                      />
+                      {errors.summary && <p className="text-sm text-destructive">{errors.summary.message}</p>}
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="details">
+                        More details <span className="text-destructive">*</span>
+                      </Label>
+                      <Textarea
+                        id="details"
+                        rows={8}
+                        placeholder="More details that you would like to share"
+                        {...register('description', { required: 'Description is required', minLength: { value: 3, message: 'Description must be at least 3 characters' } })}
+                        disabled={isSubmitting}
+                        className={errors.description ? 'border-destructive' : ''}
+                      />
+                      {errors.description && <p className="text-sm text-destructive">{errors.description.message}</p>}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="flex flex-col items-center justify-center text-center space-y-6 py-8">
+                  <p className="font-bold text-lg">Thank you for your feedback!</p>
+                  <p>Your feedback has been submitted successfully.</p>
+                  <Button onClick={closeModal}>Close</Button>
+                </div>
+              )}
+            </div>
+            {(!isSubmitSuccessful || submitError) && (
+              <DialogFooter>
+                <Button onClick={onClose} variant="outline" type="button">
+                  Close
+                </Button>
+                <Button type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
+                </Button>
+              </DialogFooter>
+            )}
           </form>
-        </ModalContent>
-      </Modal>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };

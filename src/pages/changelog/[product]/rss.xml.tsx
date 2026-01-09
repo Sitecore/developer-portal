@@ -1,7 +1,8 @@
 import { Changelog } from '@lib/changelog';
 import { CreateFeed } from '@lib/changelog/feeds';
 import { Product } from '@lib/changelog/types';
-import { getQueryValue, slugify } from '@lib/utils';
+import { getQueryValue } from '@/src/lib/utils/requests';
+import { slugify } from '@/src/lib/utils/stringUtil';
 import { GetServerSidePropsContext } from 'next';
 
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';

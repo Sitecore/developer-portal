@@ -1,6 +1,6 @@
 import { Changelog } from '@lib/changelog';
 import { Product } from '@lib/changelog/types';
-import { slugify } from '@lib/utils';
+import { slugify } from '@/src/lib/utils/stringUtil';
 import fs from 'fs';
 import path, { join } from 'path';
 

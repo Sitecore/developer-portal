@@ -1,5 +1,5 @@
 import { MediaFragment } from '@data/gql/generated/graphql';
-import { getStringValue } from '@lib/utils';
+import { getStringValue } from '@/src/lib/utils/stringUtil';
 
 export type Media = {
   id: string;

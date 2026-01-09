@@ -1,4 +1,4 @@
-import { getQueryValue } from '@lib/utils';
+import { getQueryValue } from '@/src/lib/utils/requests';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // API handler that enables preview mode, only executed when preview mode is not controlled manually (see middleware.ts)

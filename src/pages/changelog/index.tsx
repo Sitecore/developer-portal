@@ -1,18 +1,16 @@
-import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-import { Option } from '@/src/components/ui/dropdown';
-import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
-import { Grid, GridItem, Text } from '@chakra-ui/react';
-import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
-import ChangelogList from '@components/changelog/ChangelogList';
-import Layout from '@src/layouts/Layout';
+import Link from 'next/link';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { SWRConfig } from 'swr';
-
+import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
+import { Option } from '@/src/components/ui/dropdown';
+import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
+import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
+import ChangelogByMonth from '@components/changelog/ChangelogByMonth';
+import ChangelogList from '@components/changelog/ChangelogList';
+import Layout from '@src/layouts/Layout';
 import { ChangelogFeeds } from '@/src/components/changelog/ChangelogFeeds';
-import Link from 'next/link';
 import { Changelog } from '../../lib/changelog/changelog';
 
 type ChangelogHomeProps = {
@@ -33,35 +31,29 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
       <TrackPageView>
         <Layout title="Changelog" description="Learn more about new versions, changes and improvements">
           <Hero title="Changelog">
-            <Text as="h2" color={'neutral'} fontSize={{ base: 'sm', md: 'md' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'normal'} letterSpacing={'0.5'}>
+            <h2 className="text-sm md:text-base font-normal tracking-wide text-muted-foreground">
               This changelog provides visibility into key product updates, including new features, enhancements, resolutions and architectural improvements. Some bug fixes and backend adjustments may not be listed here. If you have a specific bug fix
               that you want to follow, please visit&nbsp;
-              <Link href="https://support.sitecore.com" title="Go to the support portal" target="_blank" style={{ textDecoration: 'underline' }}>
+              <Link href="https://support.sitecore.com" title="Go to the support portal" target="_blank" className="underline">
                 https://support.sitecore.com
               </Link>
-            </Text>
+            </h2>
           </Hero>
 
           <VerticalGroup>
-            <CenteredContent py={8} gap={8}>
-              {/* <Alert status="info" alignItems="center">
-                <AlertIcon />
-
-              </Alert> */}
-              <Grid templateColumns="repeat(5, 1fr)" gap={14}>
-                <GridItem colSpan={{ base: 5, md: 3 }}>
+            <CenteredContent className="py-8 gap-8">
+              <div className="grid grid-cols-5 gap-14">
+                <div className="col-span-5 md:col-span-3">
                   <SWRConfig value={{ fallback }}>
                     <ChangelogList selectedProducts={selectedProduct} onProductsChange={setSelectedProduct} />
                   </SWRConfig>
-                </GridItem>
+                </div>
 
-                <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
+                <div className="col-span-2 hidden md:block">
                   <ChangelogFeeds url={router.pathname} />
-                  {/* <LinkButton text={'RSS'} href={`${router.pathname}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-                  <LinkButton text={'ATOM'} href={`${router.pathname}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} /> */}
                   <ChangelogByMonth product={undefined} selectedProducts={selectedProduct} />
-                </GridItem>
-              </Grid>
+                </div>
+              </div>
             </CenteredContent>
           </VerticalGroup>
         </Layout>

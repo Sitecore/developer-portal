@@ -1,37 +1,16 @@
-import {
-  AbsoluteCenter,
-  Badge,
-  Box,
-  BoxProps,
-  Button,
-  ButtonGroup,
-  CircularProgress,
-  Flex,
-  FormControl,
-  Heading,
-  HStack,
-  Input,
-  InputGroup,
-  InputLeftElement,
-  InputRightElement,
-  Link,
-  LinkBox,
-  List,
-  ListItem,
-  Tag,
-  Text,
-  Tooltip,
-} from '@chakra-ui/react';
+import { Product } from '@/src/lib/assets';
+import { Badge } from '@components/ui/badge';
+import { Button } from '@components/ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
+import { cn } from '@lib/utils';
 import type { PreviewSearchInitialState } from '@sitecore-search/react';
 import { trackEntityPageViewEvent, usePreviewSearch, widget, WidgetDataType } from '@sitecore-search/react';
 import { Presence, PreviewSearch } from '@sitecore-search/ui';
+import { Search } from 'lucide-react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import type { ChangeEvent, SyntheticEvent } from 'react';
 import { useCallback } from 'react';
-import { FaSearch } from 'react-icons/fa';
-
-import { Product } from '@/src/lib/assets';
-import { getColorScheme } from '@/src/lib/search';
 import { ProductLogo } from '../../ui/logos';
 
 type ArticleModel = {
@@ -50,8 +29,13 @@ type ArticleModel = {
 };
 
 type InitialState = PreviewSearchInitialState<'itemsPerPage' | 'suggestionsList'>;
-interface PreviewSearchProps extends BoxProps {
+interface PreviewSearchProps {
   defaultItemsPerPage: number | 6;
+  className?: string;
+  width?: string;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  transition?: string;
 
   /**
    * An optional custom redirection handler that will be called when the user clicks on an article.
@@ -121,9 +105,9 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
   );
 
   return (
-    <Box display={'flex'} width={rest.width} onFocus={rest.onFocus} onBlur={rest.onBlur} transition={rest.transition}>
+    <div className={cn('flex', rest.className)} style={{ width: rest.width, transition: rest.transition }} onFocus={rest.onFocus} onBlur={rest.onBlur}>
       <PreviewSearch.Root data-control="PreviewSearch.Root">
-        <FormControl
+        <form
           onSubmit={(e: SyntheticEvent): void => {
             e.preventDefault();
 
@@ -132,80 +116,93 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
 
             router.push('/search?q=' + encodeURIComponent(target.value)).then(() => router.reload());
           }}
-          as="form"
           role="searchbox"
+          className="w-full"
         >
-          <InputGroup rounded={'none'}>
-            <InputLeftElement>
-              <FaSearch />
-            </InputLeftElement>
-            <Input as={PreviewSearch.Input} name="query" onChange={keyphraseHandler} autoComplete="off" value={keyphrase} title="Search across different Sitecore domains" placeholder="search for ..." role="searchbox" />
-            <InputRightElement width={{ base: '100px', md: '150px' }} opacity={''}>
-              <Text as={'span'} display={{ base: 'none', md: 'flex ' }} variant="tiny">
+          <div className="relative rounded-none">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <div className="pl-10 pr-[150px]">
+              <PreviewSearch.Input 
+                name="query" 
+                onChange={keyphraseHandler} 
+                autoComplete="off" 
+                value={keyphrase}
+                className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm rounded-none" 
+                title="Search across different Sitecore domains" 
+                placeholder="search for ..." 
+                role="searchbox" 
+              />
+            </div>
+            <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center gap-2 w-[150px]">
+              <span className="hidden md:flex text-xs text-muted-foreground">
                 Powered by
-              </Text>
+              </span>
               <ProductLogo product={Product.Search} width={67} height={18} />
-            </InputRightElement>
-          </InputGroup>
-        </FormControl>
+            </div>
+          </div>
+        </form>
         <PreviewSearch.Content ref={widgetRef} data-control="PreviewSearch.Content">
-          <Flex dir="row" background={'chakra-body-bg'} width={{ base: '4xl', '2xl': '2xl' }} border={'md'} shadow={'md'}>
+          <div className="flex flex-row bg-background w-full max-w-4xl 2xl:max-w-2xl border rounded-md shadow-md">
             <Presence present={!loading}>
               <>
                 {articleSuggestions.length > 0 && (
                   <PreviewSearch.Suggestions>
-                    <Box background={'primary-bg'} h="100%">
+                    <div className="bg-primary h-full">
                       <PreviewSearch.SuggestionsGroup id="article_name_context_aware">
-                        <Heading variant="section" px={4} py={2}>
+                        <p className="text-sm uppercase tracking-wide text-muted-foreground px-4 py-2">
                           Suggested terms
-                        </Heading>
-                        <ButtonGroup variant="navigation" orientation="vertical" spacing="1">
+                        </p>
+                        <div className="flex flex-col gap-1">
                           {articleSuggestions.map(({ text }) => (
                             <PreviewSearch.SuggestionTrigger id={text} key={text}>
-                              <Tooltip label={text} aria-label={text}>
-                                <Button
-                                  variant={'ghost'}
-                                  colorScheme="neutral"
-                                  borderRadius={'md'}
-                                  textAlign={'left'}
-                                  mb={1}
-                                  onClick={() => {
-                                    onSuggestionClick({
-                                      name: 'article_name_context_aware',
-                                      title: 'Suggestions',
-                                      value: text,
-                                      displayName: text,
-                                    });
-                                  }}
-                                >
-                                  <Text isTruncated width={200}>
-                                    {text}
-                                  </Text>
-                                </Button>
-                              </Tooltip>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <Button
+                                      variant="ghost"
+                                      className="rounded-md text-left mb-1 justify-start"
+                                      onClick={() => {
+                                        onSuggestionClick({
+                                          name: 'article_name_context_aware',
+                                          title: 'Suggestions',
+                                          value: text,
+                                          displayName: text,
+                                        });
+                                      }}
+                                    >
+                                      <span className="truncate w-[200px]">
+                                        {text}
+                                      </span>
+                                    </Button>
+                                  </TooltipTrigger>
+                                  <TooltipContent>
+                                    <p>{text}</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
                             </PreviewSearch.SuggestionTrigger>
                           ))}
-                        </ButtonGroup>
+                        </div>
                       </PreviewSearch.SuggestionsGroup>
-                    </Box>
+                    </div>
                   </PreviewSearch.Suggestions>
                 )}
                 <PreviewSearch.Results defaultQueryResult={queryResult}>
                   {({ isFetching: loading, data: { content: articles = [] } = {} }) => (
                     <PreviewSearch.Items data-loading={loading} data-control="PreviewSearch.Items" asChild>
-                      <Box p={2} w="full">
+                      <div className="p-2 w-full">
                         <Presence present={loading}>
-                          <AbsoluteCenter>
-                            <CircularProgress isIndeterminate capIsRound color="primary" trackColor="neutral-color.200" />
-                          </AbsoluteCenter>
+                          <div className="flex items-center justify-center h-full">
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                          </div>
                         </Presence>
 
                         {!loading && (
-                          <List>
+                          <ul className="list-none">
                             {articles.map((article, index) => (
                               <PreviewSearch.Item key={article.id} asChild data-control="PreviewSearch.Item">
-                                <ListItem key={index} w={'full'}>
-                                  <LinkBox as="article" p={2} rounded="md">
+                                <li key={index} className="w-full">
+                                  <article className="p-2 rounded-md hover:bg-muted">
                                     <Link
                                       key={`${article.id}@${article.source_id}`}
                                       href={article.url}
@@ -219,39 +216,38 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
                                         } else {
                                           window.open(article.url + '?fromSearch=true', '_blank');
                                         }
-
-                                        window.open(article.url, '_blank');
                                       }}
+                                      className="block"
                                     >
-                                      <Heading as={'h4'} size={'sm'} noOfLines={1}>
+                                      <h4 className="text-sm font-heading line-clamp-1">
                                         {article.name}
-                                      </Heading>
-                                      <Text noOfLines={1}>{article.description}</Text>
-                                      <HStack mb={2} width={'full'}>
+                                      </h4>
+                                      <p className="line-clamp-1 text-sm">{article.description}</p>
+                                      <div className="flex items-center gap-2 mb-2 w-full">
                                         {article.type && (
-                                          <Tag colorScheme={getColorScheme(article.type)} size="sm">
+                                          <Badge variant="default" className="text-xs">
                                             {article.type}
-                                          </Tag>
+                                          </Badge>
                                         )}
-                                        {article.index_name && <Badge>{article.site_name}</Badge>}
-                                      </HStack>
+                                        {article.index_name && <Badge variant="default" className="text-xs">{article.site_name}</Badge>}
+                                      </div>
                                     </Link>
-                                  </LinkBox>
-                                </ListItem>
+                                  </article>
+                                </li>
                               </PreviewSearch.Item>
                             ))}
-                          </List>
+                          </ul>
                         )}
-                      </Box>
+                      </div>
                     </PreviewSearch.Items>
                   )}
                 </PreviewSearch.Results>
               </>
             </Presence>
-          </Flex>
+          </div>
         </PreviewSearch.Content>
       </PreviewSearch.Root>
-    </Box>
+    </div>
   );
 };
 

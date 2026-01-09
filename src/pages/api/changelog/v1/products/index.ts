@@ -1,7 +1,7 @@
 // Interfaces
 import { Changelog } from '@lib/changelog';
 import { Product } from '@lib/changelog/types';
-import { getQueryValue } from '@lib/utils';
+import { getQueryValue } from '@/src/lib/utils/requests';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';

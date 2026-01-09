@@ -1,5 +1,7 @@
-import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Box, Link as ChakraLink, CloseButton, Flex, Heading, Text } from '@chakra-ui/react';
+'use client';
+
+import Link from 'next/link';
+import { X, ExternalLink } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 // ============================================
@@ -52,72 +54,51 @@ export const AutoTooltip: React.FC<AutoTooltipProps> = ({
   if (!isVisible) return null;
 
   return (
-    <Box
-      position="fixed"
-      bottom={4}
-      right={4}
-      bg="white"
-      borderRadius="lg"
-      boxShadow="2xl"
-      maxW="320px"
-      zIndex={9999}
-      overflow="hidden"
-      animation="slideIn 0.3s ease-out"
-      sx={{
-        '@keyframes slideIn': {
-          from: {
-            transform: 'translateX(100%)',
-            opacity: 0
-          },
-          to: {
-            transform: 'translateX(0)',
-            opacity: 1
-          }
-        }
-      }}
+    <div
+      className="fixed bottom-4 right-4 bg-white rounded-lg shadow-2xl max-w-[320px] z-[9999] overflow-hidden animate-in slide-in-from-right duration-300"
     >
       {/* Colored Header */}
-      <Flex 
-        justify="space-between" 
-        align="center" 
-        p={3} 
-        bg="primary.500" 
-        color="white"
+      <div 
+        className="flex justify-between items-center p-3 bg-primary text-white"
       >
-        <Heading as="h4" size="xs" color="white">
+        <h4 className="text-xs font-heading text-white">
           {title}
-        </Heading>
-        <CloseButton 
-          size="sm" 
+        </h4>
+        <button 
+          className="h-6 w-6 p-0 text-white/80 hover:text-white"
           onClick={handleClose}
-          color="whiteAlpha.800"
-          _hover={{ color: 'white' }}
-        />
-      </Flex>
+          aria-label="Close"
+        >
+          <X className="h-4 w-4" />
+        </button>
+      </div>
       
       {/* White Body */}
-      <Box p={4}>
-        <Text fontSize="xs" color="gray.700" mb={3}>
+      <div className="p-4">
+        <p className="text-xs text-gray-700 mb-3">
           {description}
-        </Text>
+        </p>
         
-        <ChakraLink
-          href={linkHref}
-          isExternal={isExternal}
-          fontSize="xs"
-          color="primary.600"
-          fontWeight="bold"
-          display="flex"
-          alignItems="center"
-          gap={1}
-          _hover={{ color: 'primary.700', textDecoration: 'underline' }}
-        >
-          {linkText}
-          {isExternal && <ExternalLinkIcon boxSize={3} />}
-          {!isExternal && ' →'}
-        </ChakraLink>
-      </Box>
-    </Box>
+        {isExternal ? (
+          <a
+            href={linkHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-primary-600 font-bold flex items-center gap-1 hover:text-primary-700 hover:underline"
+          >
+            {linkText}
+            <ExternalLink className="h-3 w-3" />
+          </a>
+        ) : (
+          <Link
+            href={linkHref}
+            className="text-xs text-primary-600 font-bold flex items-center gap-1 hover:text-primary-700 hover:underline"
+          >
+            {linkText} →
+          </Link>
+        )}
+      </div>
+    </div>
   );
 };
 

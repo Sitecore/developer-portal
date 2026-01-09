@@ -1,5 +1,8 @@
+import Link from 'next/link';
+import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert';
+import { Button } from '@components/ui/button';
+import { ChevronLeft, Info } from 'lucide-react';
 import { Option } from '@/src/components/ui/dropdown';
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Button, Icon, Link, SimpleGrid, VisuallyHidden, Wrap } from '@chakra-ui/react';
 import { TrackPageView } from '@components/integrations/engage/TrackPageView';
 import { RoadmapPhase } from '@components/roadmap/roadmapPhase';
 import { CenteredContent, Hero, VerticalGroup } from '@components/ui/sections';
@@ -7,16 +10,14 @@ import { PageInfo } from '@lib/interfaces/page-info';
 import { getPageInfo } from '@lib/page-info';
 import { NextPage } from 'next';
 import useSWR from 'swr';
-
 import Layout from '@/src/layouts/Layout';
 import { authOptions } from '@/src/lib/auth/options';
-import { getQueryArray, slugify } from '@/src/lib/utils';
-import { ChevronLeftIcon } from '@chakra-ui/icons';
+import { getQueryArray } from '@/src/lib/utils/requests';
+import { slugify } from '@/src/lib/utils/stringUtil';
 import { RoadmapInformation } from '@lib/interfaces/jira';
 import { getRoadmap, Phase } from '@lib/jira';
 import { GetServerSideProps } from 'next';
 import { getServerSession } from 'next-auth';
-import NextLink from 'next/link';
 
 interface SearchPageProps {
   pageInfo: PageInfo;
@@ -75,42 +76,39 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct, products 
 
         <VerticalGroup>
           <CenteredContent>
-            <Alert status="info" alignItems="center">
-              <AlertIcon />
-              <Wrap>
-                <AlertDescription>
-                  The product roadmap is for informational purposes only and subject to change at Sitecore&apos;s sole discretion. Timelines and features are not commitments, and the roadmap may be amended or discontinued without notice. Customers
-                  should not rely on it for purchasing or planning decisions.
-                </AlertDescription>
-              </Wrap>
+            <Alert variant="default" className="mb-4">
+              <Info className="h-4 w-4" />
+              <AlertDescription>
+                The product roadmap is for informational purposes only and subject to change at Sitecore&apos;s sole discretion. Timelines and features are not commitments, and the roadmap may be amended or discontinued without notice. Customers
+                should not rely on it for purchasing or planning decisions.
+              </AlertDescription>
             </Alert>
 
-            <Alert status="info" colorScheme="neutral" alignItems="center">
-              <AlertIcon />
-              <Wrap>
-                <AlertTitle>Confidentiality Disclaimer:</AlertTitle>
-                <AlertDescription>
-                  This product roadmap contains highly confidential information and is intended solely for the recipient. By accessing this information, you acknowledge that it is subject to the confidentiality obligations set forth in your existing
-                  agreements with Sitecore. Any unauthorized disclosure, distribution, or use of this information is strictly prohibited.
-                </AlertDescription>
-              </Wrap>
+            <Alert variant="default" className="mb-4">
+              <Info className="h-4 w-4" />
+              <AlertTitle>Confidentiality Disclaimer:</AlertTitle>
+              <AlertDescription>
+                This product roadmap contains highly confidential information and is intended solely for the recipient. By accessing this information, you acknowledge that it is subject to the confidentiality obligations set forth in your existing
+                agreements with Sitecore. Any unauthorized disclosure, distribution, or use of this information is strictly prohibited.
+              </AlertDescription>
             </Alert>
 
-            <Wrap>
-              <Link as={NextLink} href="/roadmap" passHref>
-                <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} width={'100%'} variant={'ghost'}>
+            <div className="flex flex-col gap-4 w-full">
+              <Button asChild variant="ghost" className="w-full justify-start">
+                <Link href="/roadmap">
+                  <ChevronLeft className="mr-2 h-6 w-6" />
                   Go back to the roadmap overview
-                </Button>
-                <VisuallyHidden>Go back to the roadmap overview</VisuallyHidden>
-              </Link>
+                </Link>
+              </Button>
+              <span className="sr-only">Go back to the roadmap overview</span>
 
-              <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing="5px" width={'full'}>
-                <RoadmapPhase roadmap={data} title="Done" color="neutral-bg" phase={Phase.DONE} isLoading={isLoading} />
-                <RoadmapPhase roadmap={data} title="Now (this quarter)" color="success-bg" phase={Phase.NOW} isLoading={isLoading} />
-                <RoadmapPhase roadmap={data} title="Next (next two quarters)" color="warning-bg" phase={Phase.NEXT} isLoading={isLoading} />
-                <RoadmapPhase roadmap={data} title="Future (9+ months)" color="neutral-bg-active" phase={Phase.FUTURE} isLoading={isLoading} />
-              </SimpleGrid>
-            </Wrap>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[5px] w-full">
+                <RoadmapPhase roadmap={data} title="Done" color="var(--muted)" phase={Phase.DONE} isLoading={isLoading} />
+                <RoadmapPhase roadmap={data} title="Now (this quarter)" color="hsl(142.1 76.2% 36.3%)" phase={Phase.NOW} isLoading={isLoading} />
+                <RoadmapPhase roadmap={data} title="Next (next two quarters)" color="hsl(38 92% 50%)" phase={Phase.NEXT} isLoading={isLoading} />
+                <RoadmapPhase roadmap={data} title="Future (9+ months)" color="hsl(var(--muted))" phase={Phase.FUTURE} isLoading={isLoading} />
+              </div>
+            </div>
           </CenteredContent>
         </VerticalGroup>
       </Layout>

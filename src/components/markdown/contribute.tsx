@@ -1,6 +1,9 @@
+import Link from 'next/link';
+import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
+import { Info } from 'lucide-react';
 import { ManifestConfig } from '@/src/lib/interfaces/manifest';
 import { PageInfo } from '@/src/lib/interfaces/page-info';
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Link, List, ListItem, Stack, Text, Tooltip, useDisclosure } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import Feedback from './Feedback';
 
@@ -11,7 +14,6 @@ type GithubContributionNoticeProps = {
 
 const GithubContributionNotice = ({ pageInfo, config }: GithubContributionNoticeProps) => {
   const { asPath } = useRouter();
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const URL = `https://developers.sitecore.com${asPath.split('#')[0]}`;
   const fileName = pageInfo.fileName.replace('https://github.com/sitecore/developer-portal/edit/main/data/', '');
@@ -19,42 +21,43 @@ const GithubContributionNotice = ({ pageInfo, config }: GithubContributionNotice
 
   if (!pageInfo?.area?.includes('accelerate')) {
     return (
-      <Stack direction={'row'} justifyContent={'flex-end'}>
-        <Link href={pageInfo.fileName}>
-          <Text fontWeight={'medium'} fontSize={'xs'} color={'chakra-subtle-text'}>
-            Edit this page on GitHub
-          </Text>
+      <div className="flex flex-row justify-end gap-4">
+        <Link href={pageInfo.fileName} className="text-xs font-medium text-muted-foreground hover:underline">
+          Edit this page on GitHub
         </Link>
-        <Tooltip label="Report an issue or provide feedback">
-          <Link href={issueLink}>
-            <Text fontWeight={'medium'} fontSize={'xs'} color={'chakra-subtle-text'}>
-              Feedback
-            </Text>
-          </Link>
-        </Tooltip>
-      </Stack>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link href={issueLink} className="text-xs font-medium text-muted-foreground hover:underline">
+                Feedback
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Report an issue or provide feedback</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
     );
   }
 
   return (
-    <>
-      <Alert>
-        <AlertIcon />
-        <Stack align={'flex-start'}>
-          <AlertTitle>Have feedback or a recipe suggestion?</AlertTitle>
-          <AlertDescription>
-            <List>
-            <ListItem>
-                For recipe suggestions, questions or feedback, please use the <Feedback variant={'link'} projectId="RCPS" issueTypeId="3" product={config?.productFeedbackLabel} /> form.
-              </ListItem>              
-              <ListItem>
-                For direct contribution, please <Link href="/contribute">create a pull request</Link> on the Github repository for review.
-              </ListItem>
-            </List>
-          </AlertDescription>
-        </Stack>
-      </Alert>
-    </>
+    <Alert variant="default">
+      <Info className="h-4 w-4" />
+      <div className="flex flex-col items-start">
+        <AlertTitle>Have feedback or a recipe suggestion?</AlertTitle>
+        <AlertDescription>
+          <ul className="list-disc list-inside space-y-2">
+            <li>
+              For recipe suggestions, questions or feedback, please use the <Feedback variant={'link'} projectId="RCPS" issueTypeId="3" product={config?.productFeedbackLabel} /> form.
+            </li>              
+            <li>
+              For direct contribution, please <Link href="/contribute" className="text-primary hover:underline">create a pull request</Link> on the Github repository for review.
+            </li>
+          </ul>
+        </AlertDescription>
+      </div>
+    </Alert>
   );
 };
 

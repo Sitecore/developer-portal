@@ -1,6 +1,10 @@
-import { Button, Card, Heading, Icon, Stack, Text, Tooltip, Wrap } from '@chakra-ui/react';
+import { Button } from '@components/ui/button';
+import { Card, CardContent } from '@components/ui/card';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
 import { mdiLogout } from '@mdi/js';
-import { iconSitecore } from '@sitecore/blok-theme';
+// Placeholder for Sitecore icon - replace with actual icon path if needed
+const iconSitecore = 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5';
+import Icon from '@mdi/react';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
@@ -15,44 +19,44 @@ export const SwitchAuthentication = () => {
   }
   console.log(redirect);
   return (
-    <Stack align="center" textAlign="center" spacing="6" maxW="lg">
-      <Stack maxW={'lg'}>
-        <Heading variant="section" mb="0" fontSize="xl">
+    <div className="flex flex-col items-center text-center gap-6 max-w-lg">
+      <div className="flex flex-col gap-2 max-w-lg">
+        <h2 className="text-sm uppercase tracking-wide text-muted-foreground mb-0 text-xl">
           Welcome back
-        </Heading>
-      </Stack>
-      <Card variant={'elevated'}>
-        <Stack py={10} px={4}>
-          <Text>You are currently logged in using {session?.provider == 'okta' ? 'Sitecore ID' : 'Sitecore Cloud Portal'} credentials.</Text>
-          <Wrap justify="center" mt={8}>
-            <Tooltip label={`Sign in using your ${session?.provider == 'sitecore' ? 'Sitecore ID' : 'Sitecore Cloud Portal'} credentials`}>
-              <Button
-                variant="outline"
-                leftIcon={
-                  <Icon boxSize="icon.md" color="red">
-                    <path d={iconSitecore} />
-                  </Icon>
-                }
-                onClick={() => signIn(session?.provider == 'sitecore' ? 'okta' : 'sitecore', { callbackUrl: redirectUrl })}
-              >
-                Switch to {session?.provider == 'sitecore' ? 'Sitecore ID' : 'Sitecore Cloud Portal'}
-              </Button>
-            </Tooltip>
-          </Wrap>
-        </Stack>
+        </h2>
+      </div>
+      <Card className="shadow-lg">
+        <CardContent className="py-10 px-4">
+          <p>You are currently logged in using {session?.provider == 'okta' ? 'Sitecore ID' : 'Sitecore Cloud Portal'} credentials.</p>
+          <div className="flex justify-center mt-8">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="outline"
+                    onClick={() => signIn(session?.provider == 'sitecore' ? 'okta' : 'sitecore', { callbackUrl: redirectUrl })}
+                    className="flex items-center gap-2"
+                  >
+                    <Icon path={iconSitecore} size={1} className="text-red-500" />
+                    Switch to {session?.provider == 'sitecore' ? 'Sitecore ID' : 'Sitecore Cloud Portal'}
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Sign in using your {session?.provider == 'sitecore' ? 'Sitecore ID' : 'Sitecore Cloud Portal'} credentials</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
+        </CardContent>
       </Card>
       <Button
-        leftIcon={
-          <Icon>
-            <path d={mdiLogout} />
-          </Icon>
-        }
         variant="link"
-        colorScheme="neutral"
         onClick={() => signOut({ callbackUrl: '/' })}
+        className="flex items-center gap-2"
       >
+        <Icon path={mdiLogout} size={1} />
         Logout
       </Button>
-    </Stack>
+    </div>
   );
 };

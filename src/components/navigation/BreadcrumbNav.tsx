@@ -1,8 +1,8 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, Icon } from '@chakra-ui/react';
 import { appendPathToBasePath } from '@src/lib/utils/stringUtil';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@components/ui/breadcrumb';
+import Icon from '@mdi/react';
 import useManifestRoutes from '@/src/hooks/useManifestRoutes';
 import { ManifestConfig } from '@/src/lib/interfaces/manifest';
 import { PageInfo } from '@/src/lib/interfaces/page-info';
@@ -26,42 +26,55 @@ const BreadcrumbNav = ({ config, currentPage, enabled = false, hideCurrentPage =
   }
 
   return (
-    <Breadcrumb mb={4} fontFamily={'heading'}>
-      {parentLink && (
+    <Breadcrumb className="mb-4 font-heading">
+      <BreadcrumbList>
+        {parentLink && (
+          <>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <NextLink href={parentLink}>
+                  <Icon path={mdiHomeVariantOutline} size={1} />
+                </NextLink>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+          </>
+        )}
         <BreadcrumbItem>
-          <BreadcrumbLink as={NextLink} href={parentLink}>
-            <Icon>
-              <path d={mdiHomeVariantOutline} />
-            </Icon>
+          <BreadcrumbLink asChild>
+            <NextLink href={config.path}>{config.title}</NextLink>
           </BreadcrumbLink>
         </BreadcrumbItem>
-      )}
-      <BreadcrumbItem>
-        <BreadcrumbLink href={config.path}>{config.title}</BreadcrumbLink>
-      </BreadcrumbItem>
 
-      {parents?.map((parent, index) => {
-        const base = parents.slice(0, index + 1).reduce((acc, parent) => {
-          return appendPathToBasePath(acc, parent.path);
-        }, config.path);
-        return (
-          <BreadcrumbItem key={index} hideBelow={'md'}>
-            {parent.ignoreLink ? (
-              <BreadcrumbLink isCurrentPage>{parent.title}</BreadcrumbLink>
-            ) : (
-              <BreadcrumbLink as={NextLink} href={base}>
-                {parent.title}
-              </BreadcrumbLink>
-            )}
-          </BreadcrumbItem>
-        );
-      })}
+        {parents?.map((parent, index) => {
+          const base = parents.slice(0, index + 1).reduce((acc, parent) => {
+            return appendPathToBasePath(acc, parent.path);
+          }, config.path);
+          return (
+            <div key={index} className="hidden md:flex items-center">
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                {parent.ignoreLink ? (
+                  <BreadcrumbPage>{parent.title}</BreadcrumbPage>
+                ) : (
+                  <BreadcrumbLink asChild>
+                    <NextLink href={base}>{parent.title}</NextLink>
+                  </BreadcrumbLink>
+                )}
+              </BreadcrumbItem>
+            </div>
+          );
+        })}
 
-      {!hideCurrentPage && (
-        <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink href="#">{currentItem?.title}</BreadcrumbLink>
-        </BreadcrumbItem>
-      )}
+        {!hideCurrentPage && currentItem && (
+          <>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{currentItem.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </>
+        )}
+      </BreadcrumbList>
     </Breadcrumb>
   );
 };

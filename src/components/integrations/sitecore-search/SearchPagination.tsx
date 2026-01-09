@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { Button, ButtonGroup, Center, IconButton, Tooltip } from '@chakra-ui/react';
+import { Button } from '@components/ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
 import { mdiChevronLeft, mdiChevronRight } from '@mdi/js';
 import Icon from '@mdi/react';
 import { Pagination } from '@sitecore-search/ui';
+import { cn } from '@lib/utils';
 
 export interface SearchPaginationType {
   page: number;
@@ -33,30 +35,48 @@ export const SearchPagination = (props: SearchPaginationType) => {
   }
 
   return (
-    <Center>
+    <div className="flex items-center justify-center">
       <Pagination.Root currentPage={page} defaultCurrentPage={defaultCurrentPage} totalPages={pageCount} onPageChange={onPageNumberChange} className="flex items-center justify-center mt-8">
-        <ButtonGroup size="sm" variant="pagination" spacing="1" marginTop={8}>
+        <div className="flex items-center gap-1 mt-8">
           <Pagination.PrevPage onClick={(e) => e.preventDefault()}>
-            <Tooltip label="Previous">
-              <IconButton variant="pagination" size={'sm'} icon={<Icon path={mdiChevronLeft} />} isDisabled={page == 1} aria-label={'Previous'} />
-            </Tooltip>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="outline" size="sm" disabled={page == 1} aria-label="Previous">
+                    <Icon path={mdiChevronLeft} size={1} />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Previous</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </Pagination.PrevPage>
-          {paginationRenderType == PaginationRenderType.TruncatePages && page > 5 && <Button isDisabled>…</Button>}
+          {paginationRenderType == PaginationRenderType.TruncatePages && page > 5 && <Button variant="ghost" disabled>…</Button>}
           <Pagination.Pages>
             {pages.map((p) => (
               <Pagination.Page key={p} aria-label={`Page ${p}`} page={p} onClick={(e) => e.preventDefault()}>
-                <Button isActive={p == page}>{p}</Button>
+                <Button variant={p == page ? 'default' : 'outline'} size="sm">{p}</Button>
               </Pagination.Page>
             ))}
           </Pagination.Pages>
-          {paginationRenderType == PaginationRenderType.TruncatePages && pageCount !== 1 && <Button isDisabled>…</Button>}
+          {paginationRenderType == PaginationRenderType.TruncatePages && pageCount !== 1 && <Button variant="ghost" disabled>…</Button>}
           <Pagination.NextPage onClick={(e) => e.preventDefault()}>
-            <Tooltip label="Next">
-              <IconButton variant="Next" size={'sm'} icon={<Icon path={mdiChevronRight} />} isDisabled={page == pageCount} aria-label={'Next'} />
-            </Tooltip>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="outline" size="sm" disabled={page == pageCount} aria-label="Next">
+                    <Icon path={mdiChevronRight} size={1} />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Next</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </Pagination.NextPage>
-        </ButtonGroup>
+        </div>
       </Pagination.Root>
-    </Center>
+    </div>
   );
 };

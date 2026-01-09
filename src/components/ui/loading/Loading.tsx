@@ -1,10 +1,8 @@
-import { Container, Spinner, VisuallyHidden } from '@chakra-ui/react';
-
 export const Loading = () => {
   return (
-    <Container textAlign={'center'}>
-      <Spinner size="sm" />
-      <VisuallyHidden>Loading...</VisuallyHidden>
-    </Container>
+    <div className="container mx-auto text-center">
+      <div className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-current border-r-transparent" />
+      <span className="sr-only">Loading...</span>
+    </div>
   );
 };

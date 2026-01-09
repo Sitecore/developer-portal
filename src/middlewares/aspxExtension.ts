@@ -1,10 +1,10 @@
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
-import { MiddlewareFactory } from './middlewareFactory';
+import { ProxyFactory } from './proxyFactory';
 
 // Only run on requests starting with /downloads
-export const aspxExtension: MiddlewareFactory = (next) => {
-  return async (request: NextRequest, _next: NextFetchEvent) => {
+export const aspxExtension: ProxyFactory = (proxy) => {
+  return async (request: NextRequest, next: NextFetchEvent) => {
     const pathname = request.nextUrl.pathname;
 
     if (pathname.endsWith('.aspx')) {
@@ -13,6 +13,6 @@ export const aspxExtension: MiddlewareFactory = (next) => {
       return NextResponse.redirect(url);
     }
 
-    return next(request, _next);
+    return proxy(request, next);
   };
 };

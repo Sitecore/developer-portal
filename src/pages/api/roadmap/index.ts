@@ -1,7 +1,7 @@
 import { authOptions } from '@/src/lib/auth/options';
 import { RoadmapInformation } from '@/src/lib/interfaces/jira';
 import { getRoadmap } from '@/src/lib/jira';
-import { getQueryArray } from '@/src/lib/utils';
+import { getQueryArray } from '@/src/lib/utils/requests';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth';
 

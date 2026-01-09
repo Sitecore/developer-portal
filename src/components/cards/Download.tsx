@@ -1,33 +1,34 @@
-import { Card, CardBody, CardFooter, CardHeader, CardProps, Heading, Link, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
 import { LinkButton } from '../links';
+import { cn } from '@lib/utils';
 
-type DownloadProps = CardProps & {
+type DownloadProps = {
   title: string;
   description: string;
   link1text: string;
   link1href: string;
   link2text?: string;
   link2href?: string;
+  className?: string;
 };
 
-export const Download = ({ title, description, link1text, link1href, link2text, link2href, ...rest }: DownloadProps) => {
+export const Download = ({ title, description, link1text, link1href, link2text, link2href, className }: DownloadProps) => {
   return (
-    <Card variant={'outline'} size={'md'} mb={8} {...rest}>
+    <Card className={cn('border mb-8', className)}>
       <CardHeader>
-        <Heading as="h4" size={'md'} mt={0}>
-          <Link as={NextLink} href={link1href}>
+        <h4 className="text-lg font-heading mt-0">
+          <NextLink href={link1href} className="hover:underline">
             {title}
-          </Link>
-        </Heading>
+          </NextLink>
+        </h4>
       </CardHeader>
-      <CardBody py={0}>
-        <Text>{description}</Text>
-      </CardBody>
-      <CardFooter pt={0} gap={4} mt={4}>
+      <CardContent className="py-0">
+        <p>{description}</p>
+      </CardContent>
+      <CardFooter className="pt-0 gap-4 mt-4">
         <LinkButton href={link1href} text={link1text} />
-
-        {link2text && link2href && <LinkButton href={link2href} text={link2text} variant={'outline'} />}
+        {link2text && link2href && <LinkButton href={link2href} text={link2text} variant="outline" />}
       </CardFooter>
     </Card>
   );

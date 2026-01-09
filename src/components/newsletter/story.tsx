@@ -1,4 +1,5 @@
-import { Card, CardBody, CardFooter, CardHeader, Flex, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react';
+import Image from 'next/image';
+import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
 import { TextLink } from '@src/components/links';
 
 interface NewsletterStoryPartialData {
@@ -15,46 +16,46 @@ export interface NewsletterStoryData extends NewsletterStoryPartialData {
 }
 
 const NewsletterStoryPartial = ({ copy, linkHref, linkText, title, image }: NewsletterStoryPartialData) => (
-  <Card flex={'1 1 0%'} flexDirection={'column'} variant={'elevated'}>
-    {image && <Image src={image} alt="" objectFit="cover" maxW={{ base: '100%' }} maxHeight={'200'} />}
+  <Card className="flex-1 flex flex-col shadow-lg">
+    {image && <Image src={image} alt="" width={400} height={200} className="w-full max-h-[200px] object-cover" />}
     <CardHeader>
-      <Heading as="h2" size={'md'}>
+      <h2 className="text-lg font-heading">
         {title}
-      </Heading>
+      </h2>
     </CardHeader>
-    <CardBody>
-      <Text size="lg">{copy}</Text>
-    </CardBody>
-    <CardFooter>{linkHref && <TextLink text={linkText || 'Read more'} href={linkHref} aria-label={title} variant={'large'} />}</CardFooter>
+    <CardContent>
+      <p className="text-lg">{copy}</p>
+    </CardContent>
+    <CardFooter>{linkHref && <TextLink text={linkText || 'Read more'} href={linkHref} aria-label={title} />}</CardFooter>
   </Card>
 );
 
 export const NewsletterStory = ({ variant, image, ...props }: NewsletterStoryData) => {
   if (variant === 'full-width') {
     return (
-      <GridItem colSpan={{ base: 1, md: 3 }}>
-        <Card flex={'0 1 0%'} flexDirection={{ base: 'column-reverse', md: 'row' }} variant={'filled'}>
-          <Stack justifyContent={'space-between'} gap={0}>
+      <div className="col-span-1 md:col-span-3">
+        <Card className="flex-0 flex flex-col-reverse md:flex-row bg-muted">
+          <div className="flex flex-col justify-between gap-0">
             <CardHeader>
-              <Heading as="h2" size={'md'}>
+              <h2 className="text-lg font-heading">
                 {props.title}
-              </Heading>
+              </h2>
             </CardHeader>
-            <CardBody>
-              <Text size="lg">{props.copy}</Text>
-            </CardBody>
-            <CardFooter>{props.linkHref && <TextLink text={props.linkText || 'Read more'} href={props.linkHref} aria-label={props.title} variant={'large'} />}</CardFooter>
-          </Stack>
-          <Image objectFit="fill" boxSize={'300'} src={image} alt={props.title} />
+            <CardContent>
+              <p className="text-lg">{props.copy}</p>
+            </CardContent>
+            <CardFooter>{props.linkHref && <TextLink text={props.linkText || 'Read more'} href={props.linkHref} aria-label={props.title} size="lg" />}</CardFooter>
+          </div>
+          <Image width={300} height={300} src={image} alt={props.title} className="object-fill" />
         </Card>
-      </GridItem>
+      </div>
     );
   }
 
   return (
-    <Flex direction={'column'}>
+    <div className="flex flex-col">
       <NewsletterStoryPartial {...props} image={image} />
-    </Flex>
+    </div>
   );
 };
 

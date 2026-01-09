@@ -44,7 +44,7 @@ const DefaultContentPage = ({ pageInfo, promoAfter, promoBefore, customNav, cust
       <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} demoId={pageInfo.guidedDemoId} />
 
-        <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
+        <ContentSection className={pageInfo.hasInPageNav ? 'bg-gray-50 dark:bg-gray-900' : ''}>
           {/* <CenteredContent paddingTop={10}> */}
           <PromoList data={promoBefore} />
           {/* Page structure */}

@@ -1,7 +1,7 @@
 import { authOptions } from '@/src/lib/auth/options';
 import { isAuthenticatedOktaUser } from '@/src/lib/auth/verify';
 import { AzureStorageConfig, getAzureStorageConfig, validateAndGenerateSasUrl } from '@/src/lib/downloads/azure';
-import { getQueryValue } from '@/src/lib/utils';
+import { getQueryValue } from '@/src/lib/utils/requests';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth';
 

@@ -1,11 +1,11 @@
-import { Card, CardBody, Heading, HStack, Icon, Stack } from '@chakra-ui/react';
+import { Card, CardContent } from '@components/ui/card';
 import { mdiArrowLeft, mdiArrowRight, mdiCheckCircleOutline } from '@mdi/js';
+import Icon from '@mdi/react';
 import { LinkButton } from '@src/components/links';
-
 import { ManifestConfig } from '@/src/lib/interfaces/manifest';
 import { getItemUrl } from '@/src/lib/manifestHelper';
-
 import useManifestRoutes from '@/src/hooks/useManifestRoutes';
+import { cn } from '@lib/utils';
 
 export interface ArticlePagingProps {
   enabled?: boolean;
@@ -22,64 +22,39 @@ export const ArticlePagingNext = ({ config, currentFileName, enabled = false, cu
   }
 
   return (
-    <HStack justifyContent={'space-around'}>
-      {/* {previousItem != null && (
-        <Button
-          variant="ghostColorOnHover"
-          leftIcon={
-            <Icon>
-              <path d={mdiArrowLeft} />
-            </Icon>
-          }
-        >
-          <Link href={getItemUrl(config, previousItem)}>{previousItem?.title}</Link>
-        </Button>
-      )} */}
-
-      <Card variant="outlineRaised" size="sm" textAlign={'center'} py={10} px={20}>
-        <CardBody gap={10}>
+    <div className="flex justify-around">
+      <Card className="border shadow-md text-center py-10 px-20">
+        <CardContent className="flex flex-col gap-10">
           {nextItem != null && (
-            <Stack>
-              <Heading variant="section">Next step:</Heading>
+            <div className="flex flex-col gap-4">
+              <h2 className="text-sm uppercase tracking-wide text-muted-foreground">Next step:</h2>
               <LinkButton
-                hidden={!nextItem}
-                variant="solid"
-                rightIcon={
-                  <Icon>
-                    <path d={mdiArrowRight} />
-                  </Icon>
-                }
+                variant="default"
                 href={getItemUrl(config, nextItem)}
                 text={nextItem.title}
+                icon={<Icon path={mdiArrowRight} size={1} />}
               />
-            </Stack>
+            </div>
           )}
           {nextItem == null && (
-            <>
-              <Icon color="success" boxSize="icon.3xl">
-                <path d={mdiCheckCircleOutline} />
-              </Icon>
-              <Heading variant="section">You have completed this tutorial!</Heading>
-            </>
+            <div className="flex flex-col items-center gap-4">
+              <Icon path={mdiCheckCircleOutline} size={3} className="text-green-500" />
+              <h2 className="text-sm uppercase tracking-wide text-muted-foreground">You have completed this tutorial!</h2>
+            </div>
           )}
           {previousItem != null && (
-            <Stack mt={10}>
-              <Heading variant="section">go back to:</Heading>
+            <div className="flex flex-col gap-4 mt-10">
+              <h2 className="text-sm uppercase tracking-wide text-muted-foreground">go back to:</h2>
               <LinkButton
                 variant="outline"
                 href={getItemUrl(config, previousItem)}
                 text={previousItem.title}
-                leftIcon={
-                  <Icon>
-                    <path d={mdiArrowLeft} />
-                  </Icon>
-                }
-                rightIcon={undefined}
+                icon={<Icon path={mdiArrowLeft} size={1} />}
               />
-            </Stack>
+            </div>
           )}
-        </CardBody>
+        </CardContent>
       </Card>
-    </HStack>
+    </div>
   );
 };

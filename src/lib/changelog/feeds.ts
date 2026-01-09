@@ -1,5 +1,5 @@
 import { ChangelogEntry, ChangelogEntryList } from '@lib/changelog/types';
-import { getChangelogEntryUrl } from '@lib/utils';
+import { } from '@lib/utils';
 import { Feed } from 'feed';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
@@ -32,7 +32,7 @@ export function CreateFeed(changelogEntryList: ChangelogEntryList<Array<Changelo
       title: changelogEntry.title,
       description: changelogEntry.description,
       content: changelogEntry.fullArticle ? changelogEntry.fullArticle : '',
-      link: `${publicUrl}/${getChangelogEntryUrl(changelogEntry)}`,
+      link: `${publicUrl}/${(changelogEntry)}`,
       date: new Date(changelogEntry.releaseDate),
       image: imageUrl,
     });

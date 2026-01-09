@@ -1,10 +1,11 @@
-import { Box, Card, CardBody, CardFooter, Flex, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react';
+'use client';
+
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import React from 'react';
-
+import { Card, CardContent, CardFooter } from '@components/ui/card';
 import { ContentHub, OrderCloud, ProductInfoType, SitecoreAI } from '@/data/products';
 import { GetProductLogoByVariant, Type, Variant } from '@/src/lib/assets';
-
 import { LinkButton } from '../../links';
 
 interface ProductListProps {
@@ -23,63 +24,69 @@ interface ProductListTitleProps {
 
 export const ProductList: React.FC<ProductListProps> = () => {
   return (
-    <Box my={4}>
+    <div className="my-4">
       <ProductListTitle title="Experience Management" description="Be better to stand out. Deliver exceptional experiences that differentiate your brand." />
 
-      <SimpleGrid columns={[1, 1, 3]} gap={4} my={4}>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
         <ProductListItem product={SitecoreAI} />        
-      </SimpleGrid>
+      </div>
 
-      <SimpleGrid columns={[1, 1, 2]} gap={4} my={16}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-16">
         <ProductListTitle title="Content lifecycle" description="Take control of your global content lifecycle from strategy to delivery.">
           <ProductListItem product={ContentHub} />
         </ProductListTitle>
         <ProductListTitle title="Commerce" description="Experience limitless possibilities with leading headless ecommerce.">
           <ProductListItem product={OrderCloud} />
         </ProductListTitle>
-      </SimpleGrid>
-    </Box>
+      </div>
+    </div>
   );
 };
 
 export const ProductListTitle: React.FC<ProductListTitleProps> = ({ title, description, children }) => {
   return (
-    <Box>
-      <Heading as="h3" size={'lg'}>
+    <div>
+      <h3 className="text-2xl font-heading">
         {title}
-      </Heading>
-      <Text variant={'large'} my={4} fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>
+      </h3>
+      <p className="text-lg my-4 font-sans font-light">
         {description}
-      </Text>
+      </p>
       {children}
-    </Box>
+    </div>
   );
 };
 
 export const ProductListItem: React.FC<ProductListItemProps> = ({ product }) => {
+  const { theme } = useTheme();
+  const logoSrc = theme === 'dark' 
+    ? GetProductLogoByVariant(product.type, Variant.Dark, Type.Full)
+    : GetProductLogoByVariant(product.type, Variant.Light, Type.Full);
+
   return (
-    <Card variant={'outlineRaised'}>
-      <CardBody>
-        <Flex direction={'column'} gap={4} align={'flex-start'}>
-          <Box height={'24px'} width={'full'} position={'relative'} sx={{ '& > img': { width: 'auto !important' } }}>
+    <Card className="border shadow-md">
+      <CardContent>
+        <div className="flex flex-col gap-4 items-start">
+          <div className="h-6 w-full relative">
             <Image
-              src={useColorModeValue(GetProductLogoByVariant(product.type, Variant.Light, Type.Full), GetProductLogoByVariant(product.type, Variant.Dark, Type.Full))}
+              src={logoSrc}
               alt={`${product.name} logo`}
               fill
               style={{ objectFit: 'fill' }}
               sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
+              className="!w-auto"
             />
-          </Box>
-          <Heading as="h4" size="md" hideBelow={'md'}>
+          </div>
+          <h4 className="text-lg font-heading hidden md:block">
             {product.subTitle}
-          </Heading>
-          <Text fontFamily={'"DM Sans", sans-serif'} fontWeight={'300'}>
+          </h4>
+          <p className="font-sans font-light">
             {product.description}
-          </Text>
-        </Flex>
-      </CardBody>
+          </p>
+        </div>
+      </CardContent>
       <CardFooter>
-        <LinkButton href={product.linkHref} text={product.linkText} variant={'outline'} alignContent={'flex-end'} />
+        <LinkButton href={product.linkHref} text={product.linkText} variant="outline" />
       </CardFooter>
     </Card>
   );

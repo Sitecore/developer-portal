@@ -1,18 +1,20 @@
-import { Box, BoxProps, Stack } from '@chakra-ui/react';
+import { cn } from '@lib/utils';
 
-interface SidebarProps extends BoxProps {
+interface SidebarProps {
   showBackground?: boolean;
   children: React.ReactNode;
+  className?: string;
+  hideBelow?: string;
 }
 
-export const Sidebar = ({ children, showBackground = false, ...rest }: SidebarProps) => {
+export const Sidebar = ({ children, showBackground = false, className, hideBelow = 'lg', ...rest }: SidebarProps) => {
   return (
-    <Box as={'aside'} w={{ base: 'full', md: 'sm', sm: 'full' }} order={{ base: -1, md: 0 }} layerStyle={showBackground && children ? 'section.sidebar' : rest.layerStyle} padding={5} hideBelow={rest.hideBelow ? rest.hideBelow : 'lg'}>
+    <aside className={cn('w-full md:w-80 sm:w-full', hideBelow === 'lg' && 'hidden lg:block', 'order-[-1] md:order-0', showBackground && children && 'bg-muted', 'p-5', className)} {...rest}>
       {children && (
-        <Stack gap={8} direction="column" h={showBackground ? { base: 'auto', md: `auto` } : {}} top="50" shadow={'none'} display="flex" flexFlow="column nowrap" as={'div'} {...rest}>
+        <div className={cn('flex flex-col gap-8', showBackground && 'h-auto')}>
           {children}
-        </Stack>
+        </div>
       )}
-    </Box>
+    </aside>
   );
 };

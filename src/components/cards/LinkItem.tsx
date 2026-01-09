@@ -1,16 +1,18 @@
-import { Card, CardProps } from '@chakra-ui/react';
+import { Card } from '@components/ui/card';
 import { LinkButton } from '../links';
+import { cn } from '@lib/utils';
 
-type LinkProps = CardProps & {
+type LinkProps = {
   title: string;
   link: string;
   linktext?: string;
+  className?: string;
 };
 
-export const LinkItem = ({ title, link, ...rest }: LinkProps) => {
+export const LinkItem = ({ title, link, className }: LinkProps) => {
   return (
-    <Card variant={'outlineRaised'} layerStyle={'interactive.fill'} py={4} px={2} {...rest}>
-      <LinkButton variant="text" text={title} href={link}></LinkButton>
+    <Card className={cn('border shadow-md hover:shadow-lg transition-shadow py-4 px-2', className)}>
+      <LinkButton variant="ghost" text={title} href={link} />
     </Card>
   );
 };

@@ -1,11 +1,13 @@
+'use client';
+
+import { useState } from 'react';
+import { ChevronDown, X } from 'lucide-react';
 import { Option } from '@/src/components/ui/dropdown';
 import { RoadmapInformation } from '@/src/lib/interfaces/jira';
 import { Phase } from '@/src/lib/jira';
-import { ChevronDownIcon, CloseIcon } from '@chakra-ui/icons';
-import { Box, Collapse, Heading, HStack, Show, Stack, useDisclosure } from '@chakra-ui/react';
-import React from 'react';
 import { Loading } from '../ui';
 import { RoadmapItem } from './roadmapItem';
+import { cn } from '@lib/utils';
 
 interface RoadmapPhaseProps {
   roadmap?: RoadmapInformation;
@@ -17,32 +19,32 @@ interface RoadmapPhaseProps {
 }
 
 export const RoadmapPhase: React.FC<RoadmapPhaseProps> = ({ roadmap, title, color, phase, isLoading }: RoadmapPhaseProps) => {
-  const { isOpen, onToggle } = useDisclosure();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Box p={4} bg={color}>
-      <Stack gap={4} hideBelow={'md'}>
-        <Heading variant={'section'}>{title}</Heading>
+    <div className="p-4" style={{ backgroundColor: color }}>
+      <div className="flex flex-col gap-4 hidden md:flex">
+        <p className="text-sm uppercase tracking-wide text-muted-foreground">{title}</p>
 
         {isLoading && <Loading />}
         {!isLoading && roadmap?.items?.filter((x) => x.roadmapPhase == phase).map((issue, key) => <RoadmapItem item={issue} key={key} />)}
-      </Stack>
+      </div>
 
-      <Show below="md">
-        <Stack gap={4}>
-          <HStack justifyContent="space-between" alignItems="center" onClick={onToggle} cursor="pointer">
-            <Heading variant={'section'}>{title}</Heading>
-            {isOpen ? <CloseIcon w={3} h={3} /> : <ChevronDownIcon w={5} h={5} />}
-          </HStack>
+      <div className="md:hidden">
+        <div className="flex flex-col gap-4">
+          <div className="flex justify-between items-center cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+            <p className="text-sm uppercase tracking-wide text-muted-foreground">{title}</p>
+            {isOpen ? <X className="h-3 w-3" /> : <ChevronDown className="h-5 w-5" />}
+          </div>
 
-          <Collapse in={isOpen} animateOpacity>
-            <Stack gap={4}>
+          {isOpen && (
+            <div className="flex flex-col gap-4">
               {isLoading && <Loading />}
               {!isLoading && roadmap?.items?.filter((x) => x.roadmapPhase == phase).map((issue, key) => <RoadmapItem item={issue} key={key} />)}
-            </Stack>
-          </Collapse>
-        </Stack>
-      </Show>
-    </Box>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };

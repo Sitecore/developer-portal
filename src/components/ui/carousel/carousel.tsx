@@ -1,8 +1,8 @@
 'use client';
 
-import { Box, Center, Icon, IconButton, Spacer } from '@chakra-ui/react';
+import { Button } from '@components/ui/button';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
-
+import Icon from '@mdi/react';
 import React from 'react';
 // Here we have used react-icons package for the icons
 // And react-slick as our Carousel Lib
@@ -31,11 +31,10 @@ export default function Carousel({ images }: CarouselProps) {
 
   if (images.length == 1) {
     return <ImageModal src={images[0]} disableModal={false} border="none" />;
-    //return <Box height={'md'} position="relative" backgroundPosition="center" backgroundSize={'contain'} backgroundRepeat="no-repeat" backgroundImage={`url(${images[0]})`} />;
   }
 
   return (
-    <Box width={'full'} overflow={'hidden'}>
+    <div className="w-full overflow-hidden">
       {/* CSS files for react-slick */}
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
@@ -44,37 +43,30 @@ export default function Carousel({ images }: CarouselProps) {
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {images.map((url, index) => (
           <ImageModal key={index} src={url} disableModal={false} border="none" />
-          //<Box key={index} height={'md'} position="relative" backgroundPosition="center" backgroundSize={'contain'} backgroundRepeat="no-repeat" backgroundImage={`url(${url})`} />
         ))}
       </Slider>
       {/* Left Icon */}
 
-      <Center>
-        <IconButton
+      <div className="flex items-center justify-center">
+        <Button
           aria-label="left-arrow"
-          variant={'ghost'}
-          zIndex={2}
+          variant="ghost"
+          className="z-[2]"
           onClick={() => slider?.slickPrev()}
-          icon={
-            <Icon>
-              <path d={mdiArrowLeft} />
-            </Icon>
-          }
-        />
-        <Spacer />
+        >
+          <Icon path={mdiArrowLeft} size={1} />
+        </Button>
+        <div className="flex-1" />
         {/* Right Icon */}
-        <IconButton
+        <Button
           aria-label="right-arrow"
-          variant={'ghost'}
-          zIndex={2}
+          variant="ghost"
+          className="z-[2]"
           onClick={() => slider?.slickNext()}
-          icon={
-            <Icon>
-              <path d={mdiArrowRight} />
-            </Icon>
-          }
-        />
-      </Center>
-    </Box>
+        >
+          <Icon path={mdiArrowRight} size={1} />
+        </Button>
+      </div>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Select } from 'chakra-react-select';
+import Select from 'react-select';
 
 export type Option = {
   value: number | string;
@@ -13,7 +13,6 @@ export const MultiSelect = (props: any) => {
       components={{
         ...props.components,
       }}
-      useBasicStyles
       menuPlacement={props.menuPlacement ?? 'auto'}
       isMulti
       closeMenuOnSelect={false}
@@ -21,8 +20,9 @@ export const MultiSelect = (props: any) => {
       backspaceRemovesValue={false}
       hideSelectedOptions={false}
       blurInputOnSelect={false}
-      selectedOptionStyle="check"
       isSearchable={false}
+      className="react-select-container"
+      classNamePrefix="react-select"
     />
   );
 };

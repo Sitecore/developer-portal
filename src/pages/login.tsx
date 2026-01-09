@@ -1,5 +1,3 @@
-import { Box, Center } from '@chakra-ui/react';
-
 import { NextPage } from 'next';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
@@ -21,13 +19,13 @@ const LoginPage: NextPage = () => {
   const { data: session } = useSession();
 
   return (
-    <Layout title={'Login'} description={'Use this page to login using your Sitecore ID (Okta) or Sitecore Cloud Portal account'} backgroundColor={'chakra-subtle-bg'}>
-      <Box height={'calc(100vh - 165px)'}>
-        <Center layerStyle="section.main" h="full" backgroundColor={'chakra-subtle-bg'}>
+    <Layout title={'Login'} description={'Use this page to login using your Sitecore ID (Okta) or Sitecore Cloud Portal account'}>
+      <div className="h-[calc(100vh-165px)]">
+        <div className="flex items-center justify-center h-full bg-muted">
           {session?.user != null && <SwitchAuthentication />}
           {session?.user == null && <Login redirectUrl={redirectUrl} />}
-        </Center>
-      </Box>
+        </div>
+      </div>
     </Layout>
   );
 };

@@ -1,143 +1,180 @@
-import { BoxProps, Button, chakra, Hide, HStack, Icon, Link, Popover, PopoverAnchor, PopoverArrow, PopoverContent, PopoverTrigger, Stack, Tag, Text, Tooltip, useColorModeValue, Wrap } from '@chakra-ui/react';
-import { ChangelogEntry } from '@lib/changelog/types';
-import { getSlug } from '@lib/utils';
-import { mdiSquareEditOutline } from '@mdi/js';
+'use client';
+
+import { useTheme } from 'next-themes';
+import Link from 'next/link';
 import Image from 'next/image';
-
+import { Button } from '@components/ui/button';
+import { Badge } from '@components/ui/badge';
+import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
+import { ChangelogEntry } from '@lib/changelog/types';
+import { getSlug } from '@/src/lib/utils/stringUtil';
+import { mdiSquareEditOutline } from '@mdi/js';
+import Icon from '@mdi/react';
 import { usePreview } from '@/src/context/PreviewContext';
-
 import { ProductIcon } from './ProductIcon';
+import { cn } from '@lib/utils';
 
-type ChangelogItemMetaProps = BoxProps & {
+type ChangelogItemMetaProps = {
   item: ChangelogEntry;
+  className?: string;
 };
 
-const CustomImage = chakra(Image, {
-  shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
-});
-
-export function getStatusBadgeColor(status: string): string {
+export function getStatusBadgeVariant(status: string): 'default' | 'secondary' | 'destructive' | 'outline' {
   switch (status) {
     case 'available':
-      return 'success';
+      return 'default';
     case 'inprogress':
-      return 'info';
+      return 'secondary';
     case 'scheduled':
-      return 'orange';
+      return 'outline';
     default:
-      return 'primary';
+      return 'default';
   }
 }
 
-export const ChangelogItemMeta = ({ item }: ChangelogItemMetaProps) => {
+export const ChangelogItemMeta = ({ item, className }: ChangelogItemMetaProps) => {
   const { isPreview } = usePreview();
+  const { theme } = useTheme();
 
-const organizationId = process.env.NEXT_PUBLIC_SITECORE_CHONE_ORGANIZATION as string;
-const tenantId = process.env.NEXT_PUBLIC_SITECORE_CHONE_TENANT as string;
+  const organizationId = process.env.NEXT_PUBLIC_SITECORE_CHONE_ORGANIZATION as string;
+  const tenantId = process.env.NEXT_PUBLIC_SITECORE_CHONE_TENANT as string;
 
-const colorScheme = (changeType: string) => {
-  if (changeType?.toLowerCase() == 'improvement') {
-    return 'primary';
-  }
+  const getBadgeVariant = (changeType: string): 'default' | 'secondary' | 'destructive' | 'outline' => {
+    if (changeType?.toLowerCase() == 'improvement') {
+      return 'default';
+    }
+    if (changeType?.toLowerCase() == 'new feature') {
+      return 'default';
+    }
+    if (changeType?.toLowerCase() == 'resolved') {
+      return 'secondary';
+    }
+    return 'outline';
+  };
 
-  if (changeType?.toLowerCase() == 'new feature') {
-    return 'success';
-  }
+  const MetaInfo = (
+    <div className={cn('flex flex-col sm:flex-row gap-4', className)}>
+      <div className="flex flex-wrap items-center gap-2">
+        {item.products != null && item.products?.length > 1 ? (
+          <div className="flex items-center gap-0">
+            <Popover>
+              <div className="flex items-center gap-2">
+                {item.products != null && <ProductIcon product={item.products[0]} />}
+                <PopoverTrigger asChild>
+                  <Button variant="ghost" size="sm" className="hidden sm:inline-flex ml-2">
+                    + {item.products.length - 1} <span className="hidden md:inline">{item.products.length == 1 ? 'other' : 'others'}</span>
+                  </Button>
+                </PopoverTrigger>
+              </div>
+              <PopoverContent className="p-2 max-w-xs">
+                <div className="flex flex-col gap-2">
+                  {item.products &&
+                    item.products.slice(1).map((product, key) => {
+                      const iconSrc = theme === 'dark' ? product.darkIcon : product.lightIcon;
+                      return (
+                        <div key={key} className="flex items-center gap-2">
+                          <Image
+                            src={iconSrc}
+                            alt={product.productName ? product.productName : 'Product icon'}
+                            width={15}
+                            height={15}
+                            priority
+                          />
+                          <Link href={`/changelog/${getSlug(product.productName)}`} className="text-foreground hover:underline">
+                            {product.productName}
+                          </Link>
+                        </div>
+                      );
+                    })}
+                </div>
+              </PopoverContent>
+            </Popover>
+          </div>
+        ) : (
+          item.products != null && <ProductIcon product={item.products[0]} />
+        )}
+        <time dateTime={item.releaseDate}>{item.releaseDate}</time>
+      </div>
+      <div className="flex flex-wrap items-center gap-2">
+        {item.changeType.length > 0 &&
+          item.changeType.map((changeTypeItem, key) => (
+            <Badge variant={getBadgeVariant(changeTypeItem.name)} key={key}>
+              {changeTypeItem.name}
+            </Badge>
+          ))}
 
-  if (changeType?.toLowerCase() == 'resolved') {
-    return 'orange';
-  }
-
-  return 'default';
-};
-
-const MetaInfo = (
-  <Stack gap="4" direction={{ base: 'column', sm: 'row' }}>
-    <Wrap>
-      {item.products != null && item.products?.length > 1 ? (
-        <HStack spacing={0}>
-          <Popover placement="bottom-start" trigger="click">
-            <PopoverAnchor>{item.products != null && <ProductIcon product={item.products[0]} />}</PopoverAnchor>
-            <PopoverTrigger>
-              <Wrap>
-                <Button variant="unstyled" size={''} hideBelow={'sm'} ml={2}>
-                  + {item.products.length - 1} <Hide below="md">{item.products.length == 1 ? 'other' : 'others'}</Hide>
-                </Button>
-              </Wrap>
-            </PopoverTrigger>
-            <PopoverContent p={2} maxW={'3xs'}>
-              <PopoverArrow />
-              <Stack>
-                {item.products &&
-                  item.products.slice(1).map((product, key) => (
-                    <HStack key={key}>
-                      <CustomImage boxSize={3} src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority={true} maxWidth={'auto'} />
-                      <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
-                        <Text color={'chakra-body-text'}>{product.productName}</Text>
-                      </Link>
-                    </HStack>
-                  ))}
-              </Stack>
-            </PopoverContent>
-          </Popover>
-        </HStack>
-      ) : (
-        item.products != null && <ProductIcon product={item.products[0]} />
-      )}
-      <time dateTime="2022-10-21T15:48:00.000Z">{item.releaseDate}</time>
-    </Wrap>
-    <Wrap>
-      {item.changeType.length > 0 &&
-        item.changeType.map((changeTypeItem, key) => (
-          <Tag colorScheme={colorScheme(changeTypeItem.name)} key={key}>
-            {changeTypeItem.name}
-          </Tag>
-        ))}
-
-      {item.breakingChange && (
-        <Tooltip label="This change could require manual updates" aria-label="Action required">
-          <Tag colorScheme="warning">Action required</Tag>
-        </Tooltip>
-      )}
-      {item.scheduled && (
-        <Tooltip label="This functionality is scheduled" aria-label="This functionality is scheduled and not yet released">
-          <Tag>Scheduled</Tag>
-        </Tooltip>
-      )}
-      {!item.scheduled && item.status != null && (
-        <Tooltip label={item.status.description} aria-label={item.status.description}>
-          <Tag colorScheme={getStatusBadgeColor(item.status.identifier)} variant="outline">
-            {item.status.name}
-          </Tag>
-        </Tooltip>
-      )}
-    </Wrap>
-  </Stack>
-);
+        {item.breakingChange && (
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Badge variant="destructive">Action required</Badge>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>This change could require manual updates</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
+        {item.scheduled && (
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Badge variant="outline">Scheduled</Badge>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>This functionality is scheduled and not yet released</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
+        {!item.scheduled && item.status != null && (
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Badge variant={getStatusBadgeVariant(item.status.identifier)}>
+                  {item.status.name}
+                </Badge>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{item.status.description}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        )}
+      </div>
+    </div>
+  );
 
   if (!isPreview) {
     return MetaInfo;
   }
 
   return (
-    <HStack justifyContent={'space-between'}>
+    <div className="flex justify-between items-center">
       {MetaInfo}
       {isPreview && (
-        <Tooltip label="Edit in Sitecore Content Hub ONE" aria-label="Edit in Sitecore Content Hub">
-          <Button
-            variant={'ghost'}
-            leftIcon={
-              <Icon>
-                <path d={mdiSquareEditOutline} />
-              </Icon>
-            }
-          >
-            <Link href={`https://content.sitecorecloud.io/content/${item.id}?organization=${organizationId}&tenantName=${tenantId}`} target="_blank">
-              Edit
-            </Link>
-          </Button>
-        </Tooltip>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="ghost" asChild>
+                <Link
+                  href={`https://content.sitecorecloud.io/content/${item.id}?organization=${organizationId}&tenantName=${tenantId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Icon path={mdiSquareEditOutline} size={1} />
+                  Edit
+                </Link>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Edit in Sitecore Content Hub ONE</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       )}
-    </HStack>
+    </div>
   );
 };

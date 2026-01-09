@@ -1,5 +1,5 @@
 import { ProductFragment } from '@data/gql/generated/graphql';
-import { getStringValue } from '@lib/utils';
+import { getStringValue } from '@/src/lib/utils/stringUtil';
 
 export type SitecoreProduct = {
   id: string;

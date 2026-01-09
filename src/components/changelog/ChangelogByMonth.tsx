@@ -1,10 +1,14 @@
-import { useGetEntriesByProducts } from '@/src/hooks/useGetEntriesByProducts';
-import { Card, CardBody, CardHeader, Heading, HStack, Image, Skeleton, SkeletonText } from '@chakra-ui/react';
+'use client';
 
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Card, CardContent, CardHeader } from '@components/ui/card';
+import { Skeleton } from '@components/ui/skeleton';
+import { useGetEntriesByProducts } from '@/src/hooks/useGetEntriesByProducts';
 import { Option } from '@/src/components/ui/dropdown';
 import { ChangelogEntrySummary, Product } from '@lib/changelog/types';
-import { getChangelogEntryUrl } from '@lib/utils';
-import Link from 'next/link';
+import { getChangelogEntryUrl } from '@/src/lib/utils/urlUtil';
 
 type ChangelogByMonthProps = {
   product?: Product;
@@ -12,6 +16,7 @@ type ChangelogByMonthProps = {
 };
 
 const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps) => {
+  const { theme } = useTheme();
   const { entries, isLoading } = useGetEntriesByProducts(product, selectedProducts);
 
   const items = entries || [];
@@ -29,23 +34,25 @@ const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps) 
   return (
     <>
       {Object.entries(items).map(([month, changelogItems], i) => (
-        <Card variant="unstyled" key={i}>
-          <CardHeader mt={8}>
-            <Heading as="h3" size="sm" variant={'section'}>
+        <Card key={i} className="border-0 shadow-none">
+          <CardHeader className="mt-8">
+            <h3 className="text-sm uppercase tracking-wide text-muted-foreground">
               {month}
-            </Heading>
+            </h3>
           </CardHeader>
-          <CardBody>
-            {changelogItems.map((item: ChangelogEntrySummary, index) => (
-              <HStack as="div" py={2} verticalAlign={'top'} key={index}>
-                <Image src={item.lightIcon} alt={item.productName ?? item.title} width={'20px'} height={'20px'} _dark={{ display: 'none' }} />
-                <Image src={item.darkIcon} alt={item.productName ?? item.title} display={'none'} width={'20px'} height={'20px'} _dark={{ display: 'block' }} />
-                <Link className="text-xs text-violet dark:text-teal hover:underline" href={getChangelogEntryUrl(item)} title={`(${item.releaseDate}) ${item.productName} - ${item.title}`}>
-                  {item.title}
-                </Link>
-              </HStack>
-            ))}
-          </CardBody>
+          <CardContent>
+            {changelogItems.map((item: ChangelogEntrySummary, index) => {
+              const iconSrc = theme === 'dark' ? item.darkIcon : item.lightIcon;
+              return (
+                <div className="flex items-start py-2" key={index}>
+                  <Image src={iconSrc} alt={item.productName ?? item.title} width={20} height={20} className="mr-2" />
+                  <Link className="text-xs text-violet dark:text-teal hover:underline" href={getChangelogEntryUrl(item)} title={`(${item.releaseDate}) ${item.productName} - ${item.title}`}>
+                    {item.title}
+                  </Link>
+                </div>
+              );
+            })}
+          </CardContent>
         </Card>
       ))}
     </>
@@ -56,9 +63,18 @@ export default ChangelogByMonth;
 
 const Placeholder = () => {
   return (
-    <>
-      <Skeleton mb={8}>Loading...</Skeleton>
-      <SkeletonText noOfLines={8} skeletonHeight={'20px'} />
-    </>
+    <div className="mb-8">
+      <Skeleton className="h-6 mb-4">Loading...</Skeleton>
+      <div className="space-y-2">
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+      </div>
+    </div>
   );
 };

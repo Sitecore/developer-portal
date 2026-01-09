@@ -2,7 +2,7 @@
  * Date manipulation utilities for changelog entries
  */
 
-import { clearTimeStamp } from '@lib/utils';
+import { clearTimeStamp } from '@/src/lib/utils/dateUtil';
 
 /**
  * Parse a date string in format DDMMYYYY to a Date object

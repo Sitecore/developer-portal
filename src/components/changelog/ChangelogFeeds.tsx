@@ -1,24 +1,8 @@
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  Heading,
-  HStack,
-  IconButton,
-  Input,
-  Popover,
-  PopoverArrow,
-  PopoverBody,
-  PopoverCloseButton,
-  PopoverContent,
-  PopoverFooter,
-  PopoverHeader,
-  PopoverTrigger,
-  Radio,
-  RadioGroup,
-  Stack,
-  useClipboard,
-} from '@chakra-ui/react';
+import { Button } from '@components/ui/button';
+import { Input } from '@components/ui/input';
+import { Label } from '@components/ui/label';
+import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover';
+import { RadioGroup, RadioGroupItem } from '@components/ui/radio-group';
 import { mdiCogOutline, mdiOpenInNew, mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
 import React from 'react';
@@ -31,7 +15,8 @@ type ChangelogFeedsProps = {
 export const ChangelogFeeds = ({ url }: ChangelogFeedsProps) => {
   const [feedType, setFeedType] = React.useState('1');
   const [titleFilter, setTitleFilter] = React.useState('');
-  const { onCopy, value, setValue, hasCopied } = useClipboard('');
+  const [value, setValue] = React.useState('');
+  const [hasCopied, setHasCopied] = React.useState(false);
 
   const generateFeedUrl = React.useCallback(() => {
     const feed = feedType === '1' ? 'rss' : 'atom';
@@ -42,65 +27,71 @@ export const ChangelogFeeds = ({ url }: ChangelogFeedsProps) => {
     }
 
     setValue(`${url}/${feed}.xml${params.toString() ? `?${params.toString()}` : ''}`);
-  }, [url, feedType, titleFilter, setValue]);
+  }, [url, feedType, titleFilter]);
 
   React.useEffect(() => {
     generateFeedUrl();
   }, [feedType, titleFilter, generateFeedUrl]);
 
+  const onCopy = () => {
+    navigator.clipboard.writeText(value);
+    setHasCopied(true);
+    setTimeout(() => setHasCopied(false), 2000);
+  };
+
   return (
-    <HStack>
-      <LinkButton text={'RSS'} href={`${url}/rss.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
-      <LinkButton text={'ATOM'} href={`${url}/atom.xml`} variant={'ghost'} leftIcon={<Icon path={mdiRss} size={1} />} rightIcon={undefined} />
+    <div className="flex items-center gap-2">
+      <LinkButton text="RSS" href={`${url}/rss.xml`} variant="ghost" icon={<Icon path={mdiRss} size={1} />} />
+      <LinkButton text="ATOM" href={`${url}/atom.xml`} variant="ghost" icon={<Icon path={mdiRss} size={1} />} />
 
       <Popover>
-        <PopoverTrigger>
-          <IconButton icon={<Icon path={mdiCogOutline} size={1} />} size="sm" aria-label={'Customize feed'} title="Customize feed" variant={'ghost'} />
+        <PopoverTrigger asChild>
+          <Button variant="ghost" size="sm" aria-label="Customize feed" title="Customize feed">
+            <Icon path={mdiCogOutline} size={1} />
+          </Button>
         </PopoverTrigger>
         <PopoverContent>
-          <PopoverArrow />
-          <PopoverCloseButton />
-          <PopoverHeader border="0" pt={4}>
-            <Heading size={'sm'} fontWeight={'semibold'}>
-              Customize feed
-            </Heading>
-          </PopoverHeader>
-          <PopoverBody>
-            <Stack spacing={4} direction="column">
-              <Stack spacing={4} direction="row">
-                <FormControl>
-                  <FormLabel>Feed type</FormLabel>
-                  <RadioGroup onChange={setFeedType} value={feedType}>
-                    <Stack direction="row">
-                      <Radio size={'md'} value="1">
-                        RSS
-                      </Radio>
-                      <Radio size={'md'} value="2">
-                        Atom
-                      </Radio>
-                    </Stack>
+          <div className="border-0 pt-4">
+            <h3 className="text-sm font-semibold">Customize feed</h3>
+          </div>
+          <div className="py-4">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-row gap-4">
+                <div>
+                  <Label>Feed type</Label>
+                  <RadioGroup value={feedType} onValueChange={setFeedType} className="mt-2">
+                    <div className="flex flex-row gap-4">
+                      <div className="flex items-center gap-2">
+                        <RadioGroupItem value="1" id="rss" />
+                        <Label htmlFor="rss">RSS</Label>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <RadioGroupItem value="2" id="atom" />
+                        <Label htmlFor="atom">Atom</Label>
+                      </div>
+                    </div>
                   </RadioGroup>
-                </FormControl>
-              </Stack>
-              <FormControl>
-                <FormLabel>Title filter (optional)</FormLabel>
+                </div>
+              </div>
+              <div>
+                <Label>Title filter (optional)</Label>
                 <Input
-                  size="sm"
                   value={titleFilter}
                   onChange={(e) => {
                     setTitleFilter(e.target.value);
                   }}
                   placeholder="Title must contain"
+                  className="mt-2"
                 />
-              </FormControl>
-            </Stack>
-          </PopoverBody>
-          <PopoverFooter border="0" display="flex" alignItems="center" justifyContent="space-between" pb={4}>
+              </div>
+            </div>
+          </div>
+          <div className="border-0 flex items-center justify-between pb-4">
             <Button onClick={onCopy}>{hasCopied ? 'Copied!' : 'Copy'}</Button>
-            <LinkButton text={'Preview'} href={value} target="_blank" variant={'ghost'} rightIcon={<Icon path={mdiOpenInNew} size={0.5} />} leftIcon={undefined} />
-          </PopoverFooter>
+            <LinkButton text="Preview" href={value} target="_blank" variant="ghost" icon={<Icon path={mdiOpenInNew} size={0.5} />} />
+          </div>
         </PopoverContent>
       </Popover>
-    </HStack>
+    </div>
   );
 };

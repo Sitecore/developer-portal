@@ -1,47 +1,25 @@
-import { ChevronLeftIcon, ChevronRightIcon, CloseIcon, ExternalLinkIcon, HamburgerIcon } from '@chakra-ui/icons';
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Collapse,
-  Flex,
-  Heading,
-  Hide,
-  HStack,
-  Icon,
-  IconButton,
-  Image,
-  Link,
-  ListItem,
-  Popover,
-  PopoverArrow,
-  PopoverContent,
-  PopoverTrigger,
-  Show,
-  SimpleGrid,
-  Stack,
-  Text,
-  UnorderedList,
-  useColorModeValue,
-  useDisclosure,
-} from '@chakra-ui/react';
-import { mainNavigation, NavItem, sitecoreQuickLinks } from '@data/data-navigation';
-import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
-import NextLink from 'next/link';
+'use client';
+
+import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-
-// import { GetProductLogoByVariant, Product, Type, Variant } from '@scdp/ui/lib';
+import { useTheme } from 'next-themes';
+import { Button } from '@components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover';
+import { mainNavigation, NavItem, sitecoreQuickLinks } from '@data/data-navigation';
+import { mdiChevronDown, mdiChevronUp, mdiMenu, mdiClose, mdiChevronLeft, mdiChevronRight } from '@mdi/js';
+import Icon from '@mdi/react';
+import { ExternalLink } from 'lucide-react';
 import { GetProductLogoByVariant, Product, Type, Variant } from '@/src/lib/assets';
-
 import { useSession } from 'next-auth/react';
 import UserAccount from '../authentication/UserAccount';
 import { PreviewSearchInput, SearchInput } from '../integrations/sitecore-search';
-import { Slide } from '../ui/chakra/Slide';
 import { ProductIcon } from '../ui/logos';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
 import { SearchButton } from './SearchButton';
+import { cn } from '@lib/utils';
 
 export type NavigationChildData = {
   title: string;
@@ -66,7 +44,7 @@ export type NavBarProps = {
   searchEnabled?: boolean;
 };
 
-function getLogoByPath(asPath: string): string | undefined {
+function getLogoByPath(asPath: string, theme: string | undefined): string | undefined {
   // Default to developer logo
   let logo: Product = Product.SitecoreDevelopers;
 
@@ -74,69 +52,72 @@ function getLogoByPath(asPath: string): string | undefined {
   if (asPath.includes('/roadmap')) {
     logo = Product.Sitecore;
   }
-  return useColorModeValue(GetProductLogoByVariant(logo, Variant.Light, Type.Full), GetProductLogoByVariant(logo, Variant.Dark, Type.Full));
+  return theme === 'dark' 
+    ? GetProductLogoByVariant(logo, Variant.Dark, Type.Full)
+    : GetProductLogoByVariant(logo, Variant.Light, Type.Full);
 }
 
 export default function Navbar({ searchEnabled }: NavBarProps): React.ReactNode {
-  const { isOpen, onToggle } = useDisclosure();
+  const [isOpen, setIsOpen] = useState(false);
   const [focusedOnSearch, setFocusedOnSearch] = useState(false);
   const router = useRouter();
   const { data: session } = useSession();
+  const { theme } = useTheme();
 
   return (
-    <Box layerStyle="section.topbar" shadow={'base'} zIndex={'sticky'} position="sticky" top="0">
-      <Flex h="14" align={'center'} justify="space-between">
-        <Stack direction={'row'} w="full" alignItems={'center'} justifyContent={'space-between'}>
-          <HStack flexShrink={0}>
+    <div className="sticky top-0 z-50 bg-background shadow-md border-b">
+      <div className="h-14 flex items-center justify-between px-4">
+        <div className="flex flex-row w-full items-center justify-between">
+          <div className="flex items-center flex-shrink-0">
             {/* Logo */}
-            <Link href="/" width={{ base: 'auto', md: '270px' }}>
-              <Image p="1" h="8" w={'auto'} align="left" alt={'Go to the homepage'} src={getLogoByPath(router.asPath)} />
+            <Link href="/" className="w-auto md:w-[270px]">
+              <Image src={getLogoByPath(router.asPath, theme) || ''} alt="Go to the homepage" width={270} height={32} className="p-1 h-8 w-auto" />
             </Link>
 
             {/* Desktop menu (hide under xl or lower) */}
-            <Show above="xl">
-              <HStack>
+            <div className="hidden xl:block">
+              <div className="flex items-center">
                 <DesktopNav key={router.asPath} />
-              </HStack>
-            </Show>
-          </HStack>
+              </div>
+            </div>
+          </div>
           {/* Preview search on wide desktop */}
-        </Stack>
+        </div>
         {/* Mobile menu button */}
-        <Stack direction={'row'} alignItems={'center'}>
+        <div className="flex items-center gap-2">
           {searchEnabled && (
             <>
-              <Hide below="3xl">
+              <div className="hidden 3xl:block">
                 <PreviewSearchInput
                   rfkId="rfkid_6"
                   defaultItemsPerPage={6}
                   onFocus={() => setFocusedOnSearch(true)}
                   onBlur={() => setFocusedOnSearch(false)}
-                  display={'flex'}
-                  width={focusedOnSearch ? '2xl' : 'lg'}
-                  transition={'width 0.1s ease-in-out'}
+                  className={cn('flex transition-all duration-100 ease-in-out', focusedOnSearch ? 'w-2xl' : 'w-lg')}
                 />
-              </Hide>
+              </div>
 
-              <Hide above="3xl">
-                <Show above="xl">
-                  <SearchButton />
-                </Show>
-              </Hide>
+              <div className="3xl:hidden xl:block">
+                <SearchButton />
+              </div>
             </>
           )}
 
-          <IconButton onClick={onToggle} icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />} size="sm" variant={'ghost'} aria-label={'Toggle Navigation'} display={{ base: 'flex', xl: 'none' }} />
+          <Button onClick={() => setIsOpen(!isOpen)} variant="ghost" size="sm" aria-label="Toggle Navigation" className="xl:hidden">
+            {isOpen ? <Icon path={mdiClose} size={1} /> : <Icon path={mdiMenu} size={1.25} />}
+          </Button>
           <DarkModeSwitch />
           <QuickStartMenu key={router.asPath} />
           <UserAccount />
-        </Stack>
-      </Flex>
+        </div>
+      </div>
 
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav key={router.asPath} />
-      </Collapse>
-    </Box>
+      {isOpen && (
+        <div className="xl:hidden">
+          <MobileNav key={router.asPath} onClose={() => setIsOpen(false)} />
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -144,107 +125,96 @@ const DesktopNav = () => {
   const router = useRouter();
 
   return (
-    <Stack direction={'row'}>
+    <div className="flex flex-row items-center gap-4">
       {mainNavigation.map((navItem, key) => (
-        <ButtonGroup variant="navigation" orientation="horizontal" spacing="4" mx="2" key={key}>
-          <Box key={navItem.title}>
-            {navItem.url && !navItem.children ? (
-              <Button key={key} as={NextLink} href={navItem.url ?? '#'} position={'relative'} isActive={router.asPath.includes(navItem.url)}>
+        <div key={key} className="mx-2">
+          {navItem.url && !navItem.children ? (
+            <Button key={key} asChild variant="ghost" className={cn('relative', router.asPath.includes(navItem.url) && 'bg-accent')}>
+              <Link href={navItem.url ?? '#'}>
                 {navItem.title}
-              </Button>
-            ) : (
-              <Popover trigger="hover">
-                {({ isOpen }) => (
-                  <>
-                    <PopoverTrigger>
-                      <Button key={key} position={'relative'} isActive={router.asPath == navItem.url} rightIcon={<Icon>{isOpen ? <path d={mdiChevronUp} /> : <path d={mdiChevronDown} />}</Icon>}>
-                        {navItem.title}
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent width={'100%'} rounded={'md'} shadow={'base'}>
-                      <PopoverArrow />
-                      <Box width="100%" maxWidth={'6xl'}>
-                        <SimpleGrid columns={{ base: 1, md: 3, lg: 5 }} pos="relative" gap={{ base: 2, sm: 2 }} px={2} py={4} p={{ sm: 8 }}>
-                          {navItem.children?.map((child) => <DesktopSubNav key={child.title} {...child} />)}
-                        </SimpleGrid>
-                      </Box>
-                    </PopoverContent>
-                  </>
-                )}
-              </Popover>
-            )}
-          </Box>
-        </ButtonGroup>
+              </Link>
+            </Button>
+          ) : (
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="ghost" className={cn('relative', router.asPath == navItem.url && 'bg-accent')}>
+                  {navItem.title}
+                  <Icon path={mdiChevronDown} size={1} className="ml-1" />
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="w-full max-w-6xl rounded-md shadow-md p-2 sm:p-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 relative gap-2 px-2 py-4">
+                  {navItem.children?.map((child) => <DesktopSubNav key={child.title} {...child} />)}
+                </div>
+              </PopoverContent>
+            </Popover>
+          )}
+        </div>
       ))}
-    </Stack>
+    </div>
   );
 };
 
 const navSection = ({ title, logo }: NavItem) => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-
   return (
     <>
       {logo && (
-        <Box display={'inline'} marginRight={2} position={'relative'}>
-          <ProductIcon product={logo} height={'20px'} width={'32px'} />
-        </Box>
+        <div className="inline-block mr-2 relative">
+          <ProductIcon product={logo} height="20px" width="32px" />
+        </div>
       )}
-      <Text transition={'all .3s ease'} fontWeight={500} color={linkColor} fontSize={'lg'} mt={-1} height={'26px'}>
+      <span className="transition-all duration-300 ease-in-out font-medium text-foreground text-lg -mt-1 h-[26px]">
         {title}
-      </Text>
+      </span>
     </>
   );
 };
 
 const DesktopSubNav = ({ title, url, subTitle, external, children, logo }: NavItem) => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-
-  // left="50%" transform="translateX(-50%)"
   return (
-    <Box display={'block'} p={2} key={title}>
+    <div className="block p-2" key={title}>
       {url ? (
-        <Link as={NextLink} href={url ? url : '#'} isExternal={external} display={'flex'} gap={1} mb={2}>
+        <Link href={url ? url : '#'} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined} className="flex gap-1 mb-2">
           {navSection({ title, logo })}
         </Link>
       ) : (
-        <Flex gap={1} mb={2}>
+        <div className="flex gap-1 mb-2">
           {navSection({ title, logo })}
-        </Flex>
+        </div>
       )}
 
-      <Text fontSize={'sm'}>{subTitle}</Text>
+      <p className="text-sm text-muted-foreground">{subTitle}</p>
 
       {children != null &&
         children.map((child, key) => (
-          <Link as={NextLink} href={child.url} isExternal={child.external} display={'flex'} gap={1} py={2} color={linkColor} key={key}>
+          <Link href={child.url || '#'} target={child.external ? '_blank' : undefined} rel={child.external ? 'noopener noreferrer' : undefined} className="flex gap-1 py-2 text-muted-foreground" key={key}>
             {child.logo && (
-              <Box display={'inline'} marginRight={2}>
-                <ProductIcon product={child.logo} width={'24px'} height={'24px'} />
-              </Box>
+              <div className="inline-block mr-2">
+                <ProductIcon product={child.logo} width="24px" height="24px" />
+              </div>
             )}
             {child.title}
-            {child.external && <ExternalLinkIcon mx="2px" w={4} h={4} fillOpacity={0} mt={1} />}
+            {child.external && <ExternalLink className="mx-0.5 h-4 w-4 mt-1" />}
           </Link>
         ))}
-    </Box>
+    </div>
   );
 };
 
-const MobileNav = () => {
+const MobileNav = ({ onClose }: { onClose: () => void }) => {
   return (
-    <Box bg={useColorModeValue('white', 'gray.800')} display={{ xl: 'none' }} shadow={'lg'} height={'100vh'} position={'absolute'} width={'full'} ml={-15}>
-      <Box p={4} borderTop={1} borderBottomStyle={'solid'} borderBottomColor={'chakra-border-color'} width={'95%'}>
+    <div className="xl:hidden bg-background shadow-lg h-screen absolute w-full -ml-15">
+      <div className="p-4 border-t border-b border-border w-[95%]">
         <SearchInput showButton />
-      </Box>
+      </div>
 
       {mainNavigation.map((navItem) => (
-        <MobileNavItem key={navItem.title} {...navItem} />
+        <MobileNavItem key={navItem.title} {...navItem} onClose={onClose} />
       ))}
-      <MobileNavItem title={sitecoreQuickLinks.title} key={sitecoreQuickLinks.title}>
+      <MobileNavItem title={sitecoreQuickLinks.title} key={sitecoreQuickLinks.title} onClose={onClose}>
         {sitecoreQuickLinks.children}
       </MobileNavItem>
-    </Box>
+    </div>
   );
 };
 
@@ -252,70 +222,62 @@ type MobileNavItemProps = {
   title: string;
   children?: Array<NavItem>;
   url?: string;
+  onClose: () => void;
 };
 
-const MobileNavItem = ({ title, children, url }: MobileNavItemProps) => {
-  const { isOpen, onClose, onToggle } = useDisclosure();
+const MobileNavItem = ({ title, children, url, onClose }: MobileNavItemProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const currentPage = router.asPath;
 
   return (
-    <Stack onClick={children && onToggle}>
-      <Flex
-        px={4}
-        py={4}
-        as="a"
+    <div onClick={() => children && setIsOpen(!isOpen)}>
+      <a
         href={url ?? '#'}
-        justifyContent="space-between"
-        alignItems="center"
-        _hover={{
-          textDecoration: 'none',
-        }}
-        borderTop={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.700')}
+        className="flex px-4 py-4 justify-between items-center hover:no-underline border-t border-border"
       >
-        <Text fontWeight={600}>{title}</Text>
-        {children && <Icon as={ChevronRightIcon} transition={'all .25s ease-in-out'} transform={isOpen ? 'rotate(180deg)' : ''} w={6} h={6} />}
-      </Flex>
+        <span className="font-semibold">{title}</span>
+        {children && <Icon path={mdiChevronRight} size={1.5} className={cn('transition-all duration-250 ease-in-out', isOpen && 'rotate-180')} />}
+      </a>
 
-      <Slide in={isOpen} className={''}>
-        <Box position={'fixed'} top={'3.5rem'} width={'full'} background={'chakra-body-bg'} height={'100vh'}>
-          <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} onClick={onClose} width={'full'} borderRadius={0} justifyContent={'left'} px={2} height={14} mb={4} shadow={'lg'}>
+      {isOpen && (
+        <div className="fixed top-14 w-full bg-background h-screen">
+          <Button onClick={() => setIsOpen(false)} className="w-full rounded-none justify-start px-2 h-14 mb-4 shadow-lg" variant="ghost">
+            <Icon path={mdiChevronLeft} size={1.5} className="mr-2" />
             Back
           </Button>
-          <Stack mb={2} pl={4} borderLeft={1} borderStyle={'solid'} borderColor={useColorModeValue('gray.200', 'gray.700')} align={'start'}>
+          <div className="mb-2 pl-4 border-l border-border flex flex-col items-start">
             {children &&
               children.map((child, key) => (
-                <Box key={key} py={4} borderBottom={1} borderBottomStyle={'solid'} borderBottomColor={'chakra-border-color'} width={'95%'}>
+                <div key={key} className="py-4 border-b border-border w-[95%]">
                   {child.url ? (
-                    <Box as="a" key={child.title} py={2} href={child.url}>
-                      <Heading as="h2" size="md" mb={2}>
+                    <a key={child.title} href={child.url} className="py-2 block">
+                      <h2 className="text-lg font-heading mb-2">
                         {child.title}
-                      </Heading>
-                    </Box>
+                      </h2>
+                    </a>
                   ) : (
-                    <Box as="span" key={child.title} py={2}>
-                      <Heading as="h2" size="md" mb={2}>
+                    <span key={child.title} className="py-2 block">
+                      <h2 className="text-lg font-heading mb-2">
                         {child.title}
-                      </Heading>
-                    </Box>
+                      </h2>
+                    </span>
                   )}
 
-                  <UnorderedList listStyleType={'none'} m={0}>
+                  <ul className="list-none m-0">
                     {child.children?.map((subchild, i) => (
-                      <ListItem py={2} key={i}>
-                        <Link as={NextLink} aria-current={currentPage === subchild.url} href={subchild.url} isExternal={subchild.external} key={i} color={'neutral.fg'}>
-                          {subchild.title} {subchild.external && <Icon as={ExternalLinkIcon} fillOpacity={0} w={4} h={4} />}
+                      <li className="py-2" key={i}>
+                        <Link href={subchild.url || '#'} target={subchild.external ? '_blank' : undefined} rel={child.external ? 'noopener noreferrer' : undefined} aria-current={currentPage === subchild.url ? 'page' : undefined} className="text-foreground">
+                          {subchild.title} {subchild.external && <ExternalLink className="inline h-4 w-4" />}
                         </Link>
-                      </ListItem>
+                      </li>
                     ))}
-                  </UnorderedList>
-                </Box>
+                  </ul>
+                </div>
               ))}
-          </Stack>
-        </Box>
-      </Slide>
-    </Stack>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };

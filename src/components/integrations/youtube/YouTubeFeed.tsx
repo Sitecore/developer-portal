@@ -1,14 +1,16 @@
-import { AbsoluteCenter, AspectRatio, Box, Card, CardBody, CardHeader, CardProps, Heading, Image, LinkBox, SimpleGrid, Text, VisuallyHidden } from '@chakra-ui/react';
 import NextLink from 'next/link';
-
+import Image from 'next/image';
+import { Card, CardContent, CardHeader } from '@components/ui/card';
 import { TextLink } from '../../links/TextLink';
 import type { YouTubeSnippet, YouTubeVideo } from './youTube';
+import { cn } from '@lib/utils';
 
-type YouTubeFeedProps = CardProps & {
+type YouTubeFeedProps = {
   data: Array<YouTubeVideo>;
   // The playlistTitle is only used if the author has not already supplied a youtubeTitle meta tag
   playlistTitle?: string;
   title?: string;
+  className?: string;
 };
 
 type YouTubeItemProps = {
@@ -16,47 +18,53 @@ type YouTubeItemProps = {
   id: string;
 };
 
-export const YouTubeFeed = ({ data, playlistTitle, title, ...rest }: YouTubeFeedProps) => {
+export const YouTubeFeed = ({ data, playlistTitle, title, className }: YouTubeFeedProps) => {
   if (data.length === 0) {
     return <></>;
   }
 
   return (
-    <Card shadow={'none'} {...rest} background={'transparent'}>
-      <CardHeader justifyContent={'space-between'} display={{ base: 'inline', md: 'flex' }} px={0}>
-        <Heading as={'h3'} size={'xl'} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
+    <Card className={cn('shadow-none bg-transparent', className)}>
+      <CardHeader className="flex flex-col md:flex-row justify-between px-0">
+        <h3 className="text-2xl font-heading font-normal">
           {title ? title : `Latest ${playlistTitle} videos`}
-        </Heading>
-        <TextLink href={`https://www.youtube.com/playlist?list=${data[0].snippet.playlistId}`} text={'See all videos'} />
+        </h3>
+        <TextLink href={`https://www.youtube.com/playlist?list=${data[0].snippet.playlistId}`} text="See all videos" />
       </CardHeader>
-      <CardBody px={0}>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
+      <CardContent className="px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {data.map(({ snippet, id }) => (
             <YouTubeItem snippet={snippet} id={id} key={id} />
           ))}
-        </SimpleGrid>
-      </CardBody>
+        </div>
+      </CardContent>
     </Card>
   );
 };
 
 export const YouTubeItem = ({ snippet, id }: YouTubeItemProps) => {
+  const aspectRatio = snippet.thumbnails.medium.width / snippet.thumbnails.medium.height;
+  
   return (
-    <Box key={id}>
-      <LinkBox as={NextLink} href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`} rel="noopener noreferrer">
-        <Box position={'relative'} marginBottom={4}>
-          <VisuallyHidden>Opens in a new tab</VisuallyHidden>
-          <AspectRatio ratio={snippet.thumbnails.medium.width / snippet.thumbnails.medium.height}>
+    <div key={id}>
+      <NextLink
+        href={`https://www.youtube.com/watch?v=${snippet.resourceId.videoId}&list=${snippet.playlistId}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        <div className="relative mb-4">
+          <span className="sr-only">Opens in a new tab</span>
+          <div style={{ aspectRatio: aspectRatio.toString() }} className="relative">
             <Image
               src={snippet.thumbnails.medium.url}
-              sizes="(max-width: 768px) 100vw,
-                      (max-width: 1200px) 50vw,
-                      33vw"
               alt={snippet.title}
-              rounded="md"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="rounded-md object-cover"
             />
-          </AspectRatio>
-          <AbsoluteCenter>
+          </div>
+          <div className="absolute inset-0 flex items-center justify-center">
             <svg width="58" height="59" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
               <defs>
                 <filter x="-18.4%" y="-18.4%" width="150%" height="150%" filterUnits="objectBoundingBox" id="a">
@@ -88,12 +96,12 @@ export const YouTubeItem = ({ snippet, id }: YouTubeItemProps) => {
                 </g>
               </g>
             </svg>
-          </AbsoluteCenter>
-        </Box>
-        <Text variant={'large'} fontWeight={'medium'}>
+          </div>
+        </div>
+        <p className="text-lg font-medium">
           {snippet.title}
-        </Text>
-      </LinkBox>
-    </Box>
+        </p>
+      </NextLink>
+    </div>
   );
 };

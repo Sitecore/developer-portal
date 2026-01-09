@@ -1,10 +1,13 @@
-import { Avatar, Box, Divider, HStack, Icon, IconButton, Link, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Text, Wrap } from '@chakra-ui/react';
-import { signOut, useSession } from 'next-auth/react';
-
-import { mdiAccountCircleOutline, mdiLogin, mdiLogout } from '@mdi/js';
-import { iconSitecore } from '@sitecore/blok-theme';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import { signOut, useSession } from 'next-auth/react';
+import { Avatar, AvatarFallback, AvatarImage } from '@components/ui/avatar';
+import { Button } from '@components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@components/ui/dropdown-menu';
+import { mdiAccountCircleOutline, mdiLogin, mdiLogout } from '@mdi/js';
+// Placeholder for Sitecore icon - replace with actual icon path if needed
+const iconSitecore = 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5';
+import Icon from '@mdi/react';
 
 const UserAccount: React.FC = () => {
   const { data: session } = useSession();
@@ -13,66 +16,50 @@ const UserAccount: React.FC = () => {
 
   if (!session?.user) {
     return (
-      <IconButton
-        as={Link}
-        href={loginUrl}
-        aria-label="Login"
-        size={'sm'}
-        variant={'ghost'}
-        icon={
-          <Icon>
-            <path d={mdiLogin} />
-          </Icon>
-        }
-      />
+      <Button variant="ghost" size="sm" asChild>
+        <Link href={loginUrl} aria-label="Login">
+          <Icon path={mdiLogin} size={1} />
+        </Link>
+      </Button>
     );
   }
   return (
-    <Wrap spacing="10">
-      <Menu>
-        <MenuButton>
-          <Avatar size="sm" name={session.user.name || ''} src={session.user.image || ''} />
-        </MenuButton>
+    <div className="flex items-center gap-2">
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost" className="h-8 w-8 rounded-full p-0">
+            <Avatar className="h-8 w-8">
+              <AvatarImage src={session.user.image || ''} alt={session.user.name || ''} />
+              <AvatarFallback>
+                {session.user.name?.charAt(0).toUpperCase() || 'U'}
+              </AvatarFallback>
+            </Avatar>
+          </Button>
+        </DropdownMenuTrigger>
 
-        <MenuList>
-          <Box px="3.5" py="2">
-            <HStack>
-              <Icon boxSize="icon.md" color="red">
-                <path d={iconSitecore} />
-              </Icon>
-              <Text variant="strong">{session.provider == 'okta' ? 'Sitecore ID' : 'Cloud Portal'}</Text>
-            </HStack>
-            <Divider my="2" mx="3.5" />
-            <Text variant="strong">{session.user.name}</Text>
-            <Text variant="small">{session.user.email}</Text>
-          </Box>
-          <MenuDivider />
+        <DropdownMenuContent align="end">
+          <div className="px-3.5 py-2">
+            <div className="flex items-center gap-2 mb-2">
+              <Icon path={iconSitecore} size={1} className="text-red-500" />
+              <span className="font-semibold">{session.provider == 'okta' ? 'Sitecore ID' : 'Cloud Portal'}</span>
+            </div>
+            <div className="border-t border-border my-2 mx-3.5" />
+            <p className="font-semibold">{session.user.name}</p>
+            <p className="text-sm text-muted-foreground">{session.user.email}</p>
+          </div>
+          <DropdownMenuSeparator />
 
-          <MenuItem
-            icon={
-              <Icon>
-                <path d={mdiAccountCircleOutline} />
-              </Icon>
-            }
-            onClick={() => {
-              router.push('/login');
-            }}
-          >
+          <DropdownMenuItem onClick={() => router.push('/login')}>
+            <Icon path={mdiAccountCircleOutline} size={1} className="mr-2" />
             Switch account
-          </MenuItem>
-          <MenuItem
-            icon={
-              <Icon>
-                <path d={mdiLogout} />
-              </Icon>
-            }
-            onClick={() => signOut({ callbackUrl: '/' })}
-          >
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => signOut({ callbackUrl: '/' })}>
+            <Icon path={mdiLogout} size={1} className="mr-2" />
             Log out
-          </MenuItem>
-        </MenuList>
-      </Menu>
-    </Wrap>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   );
 };
 

@@ -1,21 +1,24 @@
-import { ChevronDownIcon } from '@chakra-ui/icons';
-import { Button, Card, CardBody, CardHeader, CardProps, Heading, Icon, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
+import { Card, CardContent, CardHeader } from '@components/ui/card';
+import { Button } from '@components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@components/ui/dropdown-menu';
+import { ChevronDown } from 'lucide-react';
 import { TextLink } from '../../../links/TextLink';
 import { FORUM_TO_TITLE } from '../sitecore-community.constants';
 import { ForumOption, SortOption } from '../SitecoreCommunity.api';
 import { SitecoreCommunityBlogOrQuestion } from '../SitecoreCommunityBlogOrQuestion';
 import type { SitecoreCommunityContent } from '../types';
+import { cn } from '@lib/utils';
 
-type SitecoreCommunityQuestionsProps = CardProps & {
+type SitecoreCommunityQuestionsProps = {
   data?: Array<SitecoreCommunityContent>;
   sortKeys?: SortOption | Array<SortOption>;
   forumKeys?: ForumOption | Array<ForumOption>;
+  className?: string;
 };
 
-export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest }: SitecoreCommunityQuestionsProps) => {
+export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, className, ...rest }: SitecoreCommunityQuestionsProps) => {
   const [fetchedResults, setFetchedResults] = useState<Array<SitecoreCommunityContent> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [sort, setSort] = useState<string | undefined>(undefined);
@@ -49,44 +52,52 @@ export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, ...rest 
   }
 
   return (
-    <Card shadow={'none'} {...rest} background={'transparent'} variant={'unstyled'} width={'100%'}>
-      <CardHeader justifyContent={'space-between'} display={'flex'}>
-        <Heading as={'h3'} size={'xl'}>
+    <Card className={cn('shadow-none bg-transparent border-0 w-full', className)}>
+      <CardHeader className="flex justify-between">
+        <h3 className="text-2xl font-heading">
           Questions from the community
-        </Heading>
-        <TextLink href={'https://community.sitecore.com/community?id=community_forum&sys_id=671511531b357810486a4083b24bcb62'} text={'See all'} />
+        </h3>
+        <TextLink href="https://community.sitecore.com/community?id=community_forum&sys_id=671511531b357810486a4083b24bcb62" text="See all" />
       </CardHeader>
-      <CardBody paddingTop={8}>
-        {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
-          <Menu>
-            <MenuButton as={Button} rightIcon={<Icon as={ChevronDownIcon} w={6} h={6} />}>
-              Order by
-            </MenuButton>
-            <MenuList>
-              <MenuItem onClick={() => setSort('publish')}>Recent Questions</MenuItem>
-              <MenuItem onClick={() => setSort('view')}>Most Popular</MenuItem>
-              <MenuItem onClick={() => setSort('created')}>Created</MenuItem>
-            </MenuList>
-          </Menu>
-        )}
+      <CardContent className="pt-8">
+        <div className="flex gap-4 mb-4">
+          {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline">
+                  Order by
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem onClick={() => setSort('publish')}>Recent Questions</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSort('view')}>Most Popular</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setSort('created')}>Created</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
 
-        {forumKeys && Array.isArray(forumKeys) && forumKeys.length > 1 && (
-          <Menu>
-            <MenuButton as={Button} rightIcon={<Icon as={ChevronDownIcon} w={6} h={6} />}>
-              Filter by
-            </MenuButton>
-            <MenuList>
-              {forumKeys.map((key) => (
-                <MenuItem key={key} value={key} onClick={(changeEvent) => setForum(changeEvent.currentTarget.value)}>
-                  {FORUM_TO_TITLE[key]}
-                </MenuItem>
-              ))}
-            </MenuList>
-          </Menu>
-        )}
+          {forumKeys && Array.isArray(forumKeys) && forumKeys.length > 1 && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline">
+                  Filter by
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                {forumKeys.map((key) => (
+                  <DropdownMenuItem key={key} onClick={() => setForum(key)}>
+                    {FORUM_TO_TITLE[key]}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
+        </div>
 
         {items?.map((item, i) => <SitecoreCommunityBlogOrQuestion item={item} contentType="Questions" loading={isLoading} key={i} />)}
-      </CardBody>
+      </CardContent>
     </Card>
   );
 };

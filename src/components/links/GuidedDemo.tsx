@@ -1,42 +1,53 @@
-import { AspectRatio, Box, Button, CardProps, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useColorModeValue, useDisclosure } from '@chakra-ui/react';
+'use client';
 
+import { useState } from 'react';
+import { useTheme } from 'next-themes';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@components/ui/dialog';
+import { Button } from '@components/ui/button';
 import { Product, Variant } from '../../lib/assets';
 import ProductIcon from '../ui/logos/ProductIcon';
+import { cn } from '@lib/utils';
 
-type GuidedDemoProps = CardProps & {
+type GuidedDemoProps = {
   demoId: string;
   linkText?: string;
   productName: string;
   productLogo?: string;
+  className?: string;
 };
 
-export const GuidedDemo = ({ demoId, linkText, productName, productLogo }: GuidedDemoProps) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+export const GuidedDemo = ({ demoId, linkText, productName, productLogo, className }: GuidedDemoProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
   const product: Product = Product[productLogo as keyof typeof Product];
 
   return (
-    <Box width="25%">
-      <Button onClick={onOpen} mt={4}>
+    <div className={cn('w-1/4', className)}>
+      <Button onClick={() => setIsOpen(true)} className="mt-4">
         {linkText ?? 'Launch guided tour'}
       </Button>
 
-      <Modal isCentered isOpen={isOpen} onClose={onClose} size="8xl">
-        <ModalOverlay backdropFilter="blur(10px)" />
-        <ModalContent background={'transparent'} shadow={'lg'}>
-          <ModalHeader background={useColorModeValue('primary.600', 'gray.700')} textColor={'white'} roundedTop={'3xl'} boxShadow={'lg'}>
-            <Flex>
-              {productLogo && <ProductIcon product={product} variant={Variant.Dark} />}
-              <Text marginLeft={2}>Guided tour: {productName}</Text>
-            </Flex>
-          </ModalHeader>
-          <ModalCloseButton color={'white'} />
-          <ModalBody padding={0} background={'chakra-body-bg'}>
-            <AspectRatio maxW="full" ratio={4 / 3}>
-              <iframe src={'https://capture.navattic.com/' + demoId}></iframe>
-            </AspectRatio>
-          </ModalBody>
-        </ModalContent>
-      </Modal>
-    </Box>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="max-w-[90vw] bg-transparent shadow-lg border-0 p-0">
+          <div className="bg-primary dark:bg-gray-700 text-white rounded-t-3xl shadow-lg p-6">
+            <DialogHeader>
+              <div className="flex items-center">
+                {productLogo && <ProductIcon product={product} variant={Variant.Dark} />}
+                <DialogTitle className="ml-2 text-white">Guided tour: {productName}</DialogTitle>
+              </div>
+            </DialogHeader>
+          </div>
+          <div className="bg-background p-0">
+            <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+              <iframe
+                src={`https://capture.navattic.com/${demoId}`}
+                className="absolute inset-0 w-full h-full"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </div>
   );
 };

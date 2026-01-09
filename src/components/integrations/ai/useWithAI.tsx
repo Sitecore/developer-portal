@@ -1,6 +1,12 @@
-import { Button, ButtonGroup, Heading, Icon, Stack, Tooltip, useClipboard, useToast } from '@chakra-ui/react';
+'use client';
+
+import { useState } from 'react';
+import { Button } from '@components/ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
+import { toast } from 'sonner';
 import { PageInfo } from '@lib/interfaces/page-info';
 import { mdiCheck, mdiContentCopy, mdiLanguageMarkdownOutline } from '@mdi/js';
+import Icon from '@mdi/react';
 import SvgLogo from '../../ui/logos/SvgLogo';
 
 export type useWithAIProps = {
@@ -14,55 +20,81 @@ export const useWithAI = ({ pageInfo }: useWithAIProps) => {
   const urltoParse = pageInfo.fileName.replace(editUrl, rawUrl);
   const chatGPTURL = `https://chatgpt.com/?hints=search&q=Read+${encodeURIComponent(urltoParse)}+so+I+can+ask+questions+about+it`;
 
-  const { onCopy, hasCopied } = useClipboard(pageInfo.content || '');
-  // const { isOpen, onToggle } = useDisclosure();
-  const toast = useToast();
+  const [hasCopied, setHasCopied] = useState(false);
+
+  const onCopy = () => {
+    navigator.clipboard.writeText(pageInfo.content || '');
+    setHasCopied(true);
+    setTimeout(() => setHasCopied(false), 2000);
+    toast('Link copied to clipboard');
+  };
 
   return (
-    <Stack gap={4}>
-      <Heading variant={'section'} size={'sm'} mb={{ base: 0, md: 2 }}>
+    <div className="flex flex-col gap-4">
+      <p className="text-sm uppercase tracking-wide text-muted-foreground mb-0 md:mb-2">
         Use with AI
-      </Heading>
-      <ButtonGroup variant="toggle" size="sm" layerStyle="toggleGroup" isAttached shadow={'sm'}>
-        <Tooltip label="Copy page as markdown for LLMs">
-          <Button
-            leftIcon={
-              hasCopied ? (
-                <Icon boxSize={4}>
-                  <path d={mdiCheck} />
-                </Icon>
-              ) : (
-                <Icon boxSize={4}>
-                  <path d={mdiContentCopy} />
-                </Icon>
-              )
-            }
-            onClick={() => {
-              onCopy(), toast({ title: 'Link copied to clipboard', status: 'info', duration: 2000 });
-            }}
-          >
-            Copy page
-          </Button>
-        </Tooltip>
-        <Tooltip label="View as Markdown">
-          <Button
-            leftIcon={
-              <Icon boxSize={4}>
-                <path d={mdiLanguageMarkdownOutline} />
-              </Icon>
-            }
-            onClick={() => window.open(urltoParse, '_blank')}
-          >
-            Markdown
-          </Button>
-        </Tooltip>
-        <Tooltip label="Ask questions about this page">
-          <Button leftIcon={<SvgLogo logo={'chatgpt'} height={20} />} as={Button} onClick={() => window.open(chatGPTURL, '_blank')}>
-            ChatGPT
-          </Button>
-        </Tooltip>
-      </ButtonGroup>
-    </Stack>
+      </p>
+      <div className="flex items-center gap-0 shadow-sm rounded-md border">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="outline"
+                size="sm"
+                className="rounded-r-none border-r-0"
+                onClick={onCopy}
+              >
+                {hasCopied ? (
+                  <Icon path={mdiCheck} size={1} className="mr-2" />
+                ) : (
+                  <Icon path={mdiContentCopy} size={1} className="mr-2" />
+                )}
+                Copy page
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Copy page as markdown for LLMs</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="outline"
+                size="sm"
+                className="rounded-none border-r-0"
+                onClick={() => window.open(urltoParse, '_blank')}
+              >
+                <Icon path={mdiLanguageMarkdownOutline} size={1} className="mr-2" />
+                Markdown
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>View as Markdown</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="outline"
+                size="sm"
+                className="rounded-l-none"
+                onClick={() => window.open(chatGPTURL, '_blank')}
+              >
+                <span className="mr-2"><SvgLogo logo={'chatgpt'} height={20} /></span>
+                ChatGPT
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Ask questions about this page</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
+    </div>
   );
 };
 

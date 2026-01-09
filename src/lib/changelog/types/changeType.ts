@@ -1,5 +1,5 @@
 import { ChangeTypeFragment, GetAllChangetypesQuery } from '@data/gql/generated/graphql';
-import { getStringValue, slugify } from '@lib/utils';
+import { getStringValue, slugify } from '@/src/lib/utils/stringUtil';
 
 export type ChangeType = {
   id: string;

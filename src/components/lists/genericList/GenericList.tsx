@@ -1,92 +1,55 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Center,
-  Grid,
-  Heading,
-  HStack,
-  LinkBox,
-  Show,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
+import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
+import { cn } from '@lib/utils';
 import Image from 'next/image';
-
 import { LinkButton } from '../../links';
 import { GenericListData } from './types';
+
+const gridColsMap: Record<number, Record<string, string>> = {
+  1: { base: 'grid-cols-1', sm: 'sm:grid-cols-1', md: 'md:grid-cols-1', lg: 'lg:grid-cols-1' },
+  2: { base: 'grid-cols-1', sm: 'sm:grid-cols-2', md: 'md:grid-cols-1', lg: 'lg:grid-cols-2' },
+  3: { base: 'grid-cols-1', sm: 'sm:grid-cols-2', md: 'md:grid-cols-2', lg: 'lg:grid-cols-3' },
+  4: { base: 'grid-cols-1', sm: 'sm:grid-cols-2', md: 'md:grid-cols-2', lg: 'lg:grid-cols-4' },
+};
 
 export const GenericList = (props: GenericListData) => {
   const cols = props.column || 4;
   const cardVariant = props.cardVariant || 'elevated';
-  const buttonVariant = cardVariant === 'blurred' ? 'text' : 'outline';
+  const buttonVariant = cardVariant === 'blurred' ? 'ghost' : 'outline';
+  const gridClasses = gridColsMap[cols] || gridColsMap[4];
 
   return (
-    <Box w="100%" px={{ base: 4, md: 0 }}>
-      <Heading as="h2" mb={{ base: 4, md: 8 }} fontWeight="500" textAlign={{ base: 'center', md: 'left' }}>
+    <div className="w-full px-4 md:px-0">
+      <h2 className="text-2xl font-heading font-medium mb-4 md:mb-8 text-center md:text-left">
         {props.title}
-      </Heading>
+      </h2>
 
       {props.subtitle && props.subtitle !== '' && (
-        <Heading
-          as="h3"
-          size="md"
-          pb={{ base: 3, md: 6 }}
-          mb={{ base: 4, md: 8 }}
-          textAlign={{ base: 'center', md: 'left' }}
-        >
+        <h3 className="text-lg font-heading pb-3 md:pb-6 mb-4 md:mb-8 text-center md:text-left">
           {props.subtitle}
-        </Heading>
+        </h3>
       )}
 
-      <Grid
-        templateColumns={{
-          base: '1fr',                      // 1 card per row on mobile
-          sm: 'repeat(2, 1fr)',             // 2 columns on small screens
-          md: `repeat(${cols / 2}, 1fr)`,   // existing behavior
-          lg: `repeat(${cols}, 1fr)`,
-        }}
-        gap={{ base: 4, md: 6 }}
-        alignItems="stretch"
-      >
+      <div className={cn('grid', gridClasses.base, gridClasses.sm, gridClasses.md, gridClasses.lg, 'gap-4 md:gap-6 items-stretch')}>
         {props.data.map((item, key) => {
           const Icon = item.icon;
 
           return (
-            <LinkBox as="article" display="flex" w="100%" key={key}>
+            // <Link href={item.href || '#'} key={key} className="flex w-full">
               <Card
-                variant={cardVariant}
-                layerStyle="interactive.raise"
-
-                mx="auto"
-                direction="column"
-                borderRadius="xl"
-                overflow="hidden"
-                bg={cardVariant === 'blurred' ? 'whiteAlpha.50' : undefined}
-                borderWidth={cardVariant === 'blurred' ? '1px' : undefined}
-                borderColor={cardVariant === 'blurred' ? 'whiteAlpha.300' : undefined}
-                backdropFilter={cardVariant === 'blurred' ? 'blur(16px)' : undefined}
-                transition="all 0.2s ease"
-                _hover={{
-                  transform: { base: 'none', md: 'translateY(-4px)' }, 
-                  boxShadow: 'lg',
-                }}
+                className={cn(
+                  'mx-auto flex flex-col rounded-xl overflow-hidden transition-all duration-200',
+                  cardVariant === 'blurred'
+                    ? 'bg-white/50 dark:bg-black/30 backdrop-blur-md border border-white/30'
+                    : 'shadow-md hover:shadow-lg',
+                  'hover:-translate-y-1 md:hover:-translate-y-1'
+                )}
               >
-                <CardHeader p={0}>
-                  <Center pt={{ base: 6, md: 10 }}>
+                <CardHeader className="p-0">
+                  <div className="flex items-center justify-center pt-6 md:pt-10">
                     {Icon ? (
-                      <Box
-                        borderRadius="full"
-                        bg="rgba(235, 0, 26, 0.08)"
-                        display="inline-flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        p={{ base: 3, md: 4 }}
-                      >
-                        <Icon boxSize={{ base: 8, md: 10 }} />
-                      </Box>
+                      <div className="rounded-full bg-[rgba(235,0,26,0.08)] inline-flex items-center justify-center p-3 md:p-4">
+                        <Icon className="w-8 h-8 md:w-10 md:h-10" />
+                      </div>
                     ) : item.img?.src ? (
                       item.img.width && item.img.height ? (
                         <Image
@@ -97,73 +60,57 @@ export const GenericList = (props: GenericListData) => {
                           priority
                         />
                       ) : (
-                        <Box
-                          width={{ base: 'full', sm: '200px', md: '100%' }}
-                          height={{ base: '170px', sm: 'full', md: '170px' }}
-                          position="relative"
-                        >
+                        <div className="relative w-full sm:w-[200px] md:w-full h-[170px] sm:h-full md:h-[170px]">
                           <Image
                             fill
                             alt=""
                             src={item.img.src}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             priority
-                            style={{ objectFit: 'contain' }}
+                            className="object-contain"
                           />
-                        </Box>
+                        </div>
                       )
                     ) : null}
-                  </Center>
+                  </div>
                 </CardHeader>
 
-                <CardBody p={0}>
-                  <Stack direction="column" spacing={5} p={0}>
-                    <Box p={{ base: 4, md: 5 }}>
-                      <Heading
-                        as="h3"
-                        size={{ base: 'md', md: 'lg' }}
-                        mb={2}
-                        textAlign="center"
-                      >
+                <CardContent className="p-0">
+                  <div className="flex flex-col gap-5 p-0">
+                    <div className="p-4 md:p-5">
+                      <h3 className="text-lg md:text-xl font-heading mb-2 text-center">
                         {item.title}
-                      </Heading>
-                      <Text fontSize={{ base: 'sm', md: 'md' }} textAlign="center">
+                      </h3>
+                      <p className="text-sm md:text-base text-center">
                         {item.description}
-                      </Text>
-                      <Show below="lg">
-                        <Center mt={3}>
-                          <HStack as="span">
-                            <LinkButton
-                              href={item.href}
-                              text={item.linkText}
-                              variant="text"
-                              color="white"
+                      </p>
+                      <div className="lg:hidden flex items-center justify-center mt-3">
+                        <LinkButton
+                          href={item.href}
+                          text={item.linkText}
+                          variant="ghost"
+                          color="white"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
 
-                            />
-                          </HStack>
-                        </Center>
-                      </Show>
-                    </Box>
-                  </Stack>
-                </CardBody>
-
-                <CardFooter display={{ base: 'none', lg: 'block' }}>
-                  <Center>
-                    <HStack as="span" mt={2}>
-                      <LinkButton
-                        href={item.href}
-                        text={item.linkText}
-                        variant={buttonVariant}
-                        color="white"
-                      />
-                    </HStack>
-                  </Center>
+                <CardFooter className="hidden lg:block">
+                  <div className="flex items-center justify-center mt-2">
+                    <LinkButton
+                      href={item.href}
+                      text={item.linkText}
+                      variant={buttonVariant}
+                      color="white"
+                    />
+                  </div>
                 </CardFooter>
               </Card>
-            </LinkBox>
+            // </Link>
           );
         })}
-      </Grid>
-    </Box>
+      </div>
+    </div>
   );
 };

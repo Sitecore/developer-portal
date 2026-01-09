@@ -1,4 +1,10 @@
-import { Box, Button, Center, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tooltip, useDisclosure } from '@chakra-ui/react';
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@components/ui/dialog';
+import { Button } from '@components/ui/button';
+import { cn } from '@lib/utils';
 
 type ImageModalProps = {
   src: string;
@@ -9,40 +15,51 @@ type ImageModalProps = {
 };
 
 export const ImageModal = ({ src, title, maxW, disableModal, border = '1px' }: ImageModalProps) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isOpen, setIsOpen] = useState(false);
 
   if (disableModal) {
     return (
-      <Box p={4} my="8" width={'fit-content'} border={border} borderColor={'chakra-border-color'} borderRadius={'lg'}>
-        <Image src={src} alt={title || ''} maxW={maxW ?? 'full'} />
-      </Box>
+      <div className={cn('p-4 my-8 w-fit border rounded-lg', border === '0' ? 'border-0' : 'border-border')}>
+        <Image src={src} alt={title || ''} width={800} height={600} className={cn('max-w-full', maxW)} />
+      </div>
     );
   }
 
   return (
-    <Box p={4} my="8" width={'fit-content'} border={border} borderColor={'chakra-border-color'} borderRadius={'lg'}>
-      <Tooltip label={'Click to enlarge'} aria-label={'Click to enlarge'}>
-        <Image src={src} alt={title || ''} onClick={onOpen} cursor={'zoom-in'} maxW={{ base: 'full', md: maxW ? maxW : 'full' }} />
-      </Tooltip>
-      <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnOverlayClick size={'8xl'} closeOnEsc>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{title}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Center>
-              <Image src={src} alt={title || ''} />
-            </Center>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="neutral" mr={3} onClick={onClose} variant={'outline'}>
+    <>
+      <div className={cn('p-4 my-8 w-fit border rounded-lg', border === '0' ? 'border-0' : 'border-border')}>
+        <div
+          className="cursor-zoom-in"
+          onClick={() => setIsOpen(true)}
+          title="Click to enlarge"
+          aria-label="Click to enlarge"
+        >
+          <Image
+            src={src}
+            alt={title || ''}
+            width={800}
+            height={600}
+            className={cn('max-w-full md:max-w-full', maxW && `md:max-w-[${maxW}]`)}
+          />
+        </div>
+      </div>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogContent className="max-w-[90vw] max-h-[90vh]">
+          <DialogHeader>
+            <DialogTitle>{title}</DialogTitle>
+            {title && <DialogDescription>Click outside to close</DialogDescription>}
+          </DialogHeader>
+          <div className="flex items-center justify-center overflow-auto">
+            <Image src={src} alt={title || ''} width={1200} height={900} className="max-w-full max-h-[70vh] object-contain" />
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setIsOpen(false)}>
               Close
             </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </Box>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 

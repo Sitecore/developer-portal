@@ -1,9 +1,12 @@
-import { Box, Button, ButtonGroup, Collapse, Icon, useDisclosure } from '@chakra-ui/react';
+'use client';
+
+import { useState } from 'react';
+import { Button } from '@components/ui/button';
 import { mdiChevronDown } from '@mdi/js';
-
+import Icon from '@mdi/react';
 import { ManifestConfig } from '@/src/lib/interfaces/manifest';
-
 import { SidebarGroupItem } from './SidebarNavigation';
+import { cn } from '@lib/utils';
 
 export interface SidebarNavigationProps {
   title?: string;
@@ -12,32 +15,27 @@ export interface SidebarNavigationProps {
 }
 
 export const DropDownNavigation = ({ config, ...rest }: SidebarNavigationProps) => {
-  const { isOpen, onToggle } = useDisclosure();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Box as={'nav'} hideFrom={'lg'} {...rest}>
+    <nav className="lg:hidden" {...rest}>
       <Button
-        as={Button}
-        onClick={onToggle}
-        variant={'outline'}
-        width={'full'}
-        rightIcon={
-          <Icon layerStyle="menuButtonIcon">
-            <path d={mdiChevronDown} />
-          </Icon>
-        }
+        onClick={() => setIsOpen(!isOpen)}
+        variant="outline"
+        className="w-full flex items-center justify-between"
       >
         {config.title}
+        <Icon path={mdiChevronDown} size={1} className={cn('transition-transform', isOpen && 'rotate-180')} />
       </Button>
-      <Collapse in={isOpen}>
-        <Box position={'relative'}>
-          <ButtonGroup variant="navigation" orientation="vertical" width={'full'} spacing="1" mt={2} as="ul">
+      {isOpen && (
+        <div className="relative">
+          <ul className="flex flex-col gap-1 mt-2 w-full">
             {config.routes.map((link, i) => (
               <SidebarGroupItem {...link} key={i} />
             ))}
-          </ButtonGroup>
-        </Box>
-      </Collapse>
-    </Box>
+          </ul>
+        </div>
+      )}
+    </nav>
   );
 };

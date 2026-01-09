@@ -1,9 +1,11 @@
-import { Button, HStack, Icon, Link } from '@chakra-ui/react';
+import Link from 'next/link';
+import { Button } from '@components/ui/button';
 import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
-
+import Icon from '@mdi/react';
 import useManifestRoutes from '@/src/hooks/useManifestRoutes';
 import { ManifestConfig } from '@/src/lib/interfaces/manifest';
 import { getItemUrl } from '@/src/lib/manifestHelper';
+import { cn } from '@lib/utils';
 
 export interface ArticlePagingProps {
   enabled?: boolean;
@@ -20,32 +22,23 @@ export const ArticlePaging = ({ config, currentfileName, enabled = false, curren
   }
 
   return (
-    <HStack justifyContent={'space-around'} border={'1px solid'} borderColor={'chakra-border-color'} height={20}>
+    <div className="flex justify-around items-center border border-border h-20">
       {previousItem != null && (
-        <Button
-          variant="ghostColorOnHover"
-          leftIcon={
-            <Icon>
-              <path d={mdiArrowLeft} />
-            </Icon>
-          }
-        >
-          <Link href={getItemUrl(config, previousItem)}>{previousItem?.title}</Link>
+        <Button variant="ghost" asChild>
+          <Link href={getItemUrl(config, previousItem)} className="flex items-center gap-2">
+            <Icon path={mdiArrowLeft} size={1} />
+            {previousItem?.title}
+          </Link>
         </Button>
       )}
       {nextItem != null && (
-        <Button
-          hidden={!nextItem}
-          variant="ghostColorOnHover"
-          rightIcon={
-            <Icon>
-              <path d={mdiArrowRight} />
-            </Icon>
-          }
-        >
-          <Link href={getItemUrl(config, nextItem)}>{nextItem.title}</Link>
+        <Button variant="ghost" asChild className={cn(!nextItem && 'hidden')}>
+          <Link href={getItemUrl(config, nextItem)} className="flex items-center gap-2">
+            {nextItem.title}
+            <Icon path={mdiArrowRight} size={1} />
+          </Link>
         </Button>
       )}
-    </HStack>
+    </div>
   );
 };

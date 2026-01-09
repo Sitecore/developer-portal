@@ -1,4 +1,4 @@
-import { getQueryValue } from '@lib/utils';
+import { getQueryValue } from '@/src/lib/utils/requests';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 // API handler that enables preview mode, executed when the users toggles the preview mode manually

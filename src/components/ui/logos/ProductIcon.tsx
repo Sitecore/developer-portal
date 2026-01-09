@@ -1,6 +1,7 @@
-import { Box, useColorModeValue } from '@chakra-ui/react';
-import Image from 'next/image';
+'use client';
 
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
 import { GetProductLogoByVariant, Product, Type, Variant } from '../../../lib/assets';
 export type ProductLogoProps = {
   product: Product;
@@ -11,11 +12,12 @@ export type ProductLogoProps = {
   style?: string;
 };
 
-export function GetProductLogo(light: string, dark: string) {
-  return useColorModeValue(light, dark);
+export function GetProductLogo(light: string, dark: string, theme?: string) {
+  return theme === 'dark' ? dark : light;
 }
 
 export const ProductIcon = ({ product, width = '24px', height = '24px', alt = '', variant, ...rest }: ProductLogoProps) => {
+  const { theme } = useTheme();
   let url;
 
   if (variant) {
@@ -24,13 +26,13 @@ export const ProductIcon = ({ product, width = '24px', height = '24px', alt = ''
     const darkProductIcon = GetProductLogoByVariant(product, Variant.Dark, Type.IconOnly);
     const lightProductIcon = GetProductLogoByVariant(product, Variant.Light, Type.IconOnly);
 
-    url = useColorModeValue(lightProductIcon, darkProductIcon);
+    url = theme === 'dark' ? darkProductIcon : lightProductIcon;
   }
 
   return (
-    <Box width={width} height={height} position={'relative'}>
+    <div className="relative" style={{ width, height }}>
       <Image src={url} alt={alt} fill {...rest} style={{ objectFit: 'contain' }} sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw" />
-    </Box>
+    </div>
   );
 };
 

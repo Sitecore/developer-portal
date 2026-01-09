@@ -1,5 +1,11 @@
-import { Box, Collapse, HStack, Icon, IconButton, Tooltip, useClipboard, useDisclosure, useToast } from '@chakra-ui/react';
+'use client';
+
+import { useState } from 'react';
+import { Button } from '@components/ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
 import { mdiCheck, mdiChevronLeft, mdiChevronRight, mdiContentCopy } from '@mdi/js';
+import Icon from '@mdi/react';
+import { toast } from 'sonner';
 import { EmailIcon, EmailShareButton, LinkedinIcon, LinkedinShareButton, RedditIcon, RedditShareButton, TelegramIcon, TelegramShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from 'next-share';
 
 type SocialShareProps = {
@@ -8,90 +14,156 @@ type SocialShareProps = {
 };
 
 export const SocialShare = ({ title, url }: SocialShareProps) => {
-  const { onCopy, hasCopied } = useClipboard(url);
-  const { isOpen, onToggle } = useDisclosure();
-  const toast = useToast();
+  const [hasCopied, setHasCopied] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onCopy = () => {
+    navigator.clipboard.writeText(url);
+    setHasCopied(true);
+    setTimeout(() => setHasCopied(false), 2000);
+    toast('Link copied to clipboard');
+  };
 
   return (
-    <HStack gap={0}>
-      <Tooltip label="More sharing methods" aria-label="More sharing methods">
-        <IconButton
-          variant="ghost"
-          aria-label="More sharing methods"
-          onClick={onToggle}
-          icon={
-            <Icon>
-              <path d={isOpen ? mdiChevronRight : mdiChevronLeft} />
-            </Icon>
-          }
-          boxSize={8}
-          minWidth={4}
-          mx={1}
-        />
-      </Tooltip>
+    <div className="flex items-center gap-0">
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              variant="ghost"
+              aria-label="More sharing methods"
+              onClick={() => setIsOpen(!isOpen)}
+              className="h-8 w-8 p-0 mx-1"
+            >
+              <Icon path={isOpen ? mdiChevronRight : mdiChevronLeft} size={1} />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>More sharing methods</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
 
-      <Collapse in={isOpen} animateOpacity>
-        <HStack hidden={!isOpen} gap={0}>
+      {isOpen && (
+        <div className="flex items-center gap-0">
           <WhatsappShareButton url={url} title={title}>
-            <Tooltip label="Share link by Whatsapp" aria-label="Share link by Whatsapp">
-              <IconButton variant="ghost" aria-label="Share by Whatsapp" icon={<WhatsappIcon size={32} round />} as={Box} />
-            </Tooltip>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" aria-label="Share by Whatsapp" className="h-8 w-8 p-0">
+                    <WhatsappIcon size={32} round />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Share link by Whatsapp</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </WhatsappShareButton>
           <TelegramShareButton url={url} title={title}>
-            <Tooltip label="Share link by Telegram" aria-label="Share link by Telegram">
-              <IconButton variant="ghost" aria-label="Share by Telegram" icon={<TelegramIcon size={32} round />} as={Box} />
-            </Tooltip>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" aria-label="Share by Telegram" className="h-8 w-8 p-0">
+                    <TelegramIcon size={32} round />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Share link by Telegram</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </TelegramShareButton>
           <RedditShareButton url={url} title={title}>
-            <Tooltip label="Share link by Reddit" aria-label="Share link by Reddit">
-              <IconButton variant="ghost" aria-label="Share by Reddit" icon={<RedditIcon size={32} round />} as={Box} />
-            </Tooltip>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" aria-label="Share by Reddit" className="h-8 w-8 p-0">
+                    <RedditIcon size={32} round />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Share link by Reddit</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </RedditShareButton>
           <TwitterShareButton url={url} title={title}>
-            <Tooltip label="Share link on X" aria-label="Share link on X">
-              <IconButton variant={'ghost'} aria-label="Share on X" icon={<TwitterIcon size={32} round />} as={Box} />
-            </Tooltip>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="ghost" aria-label="Share on X" className="h-8 w-8 p-0">
+                    <TwitterIcon size={32} round />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Share link on X</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </TwitterShareButton>
-        </HStack>
-      </Collapse>
+        </div>
+      )}
 
       <EmailShareButton url={url} title={title}>
-        <Tooltip label="Share link by email" aria-label="Share link by email">
-          <IconButton variant={'ghost'} aria-label="Share by email" icon={<EmailIcon size={32} round />} as={Box} />
-        </Tooltip>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="ghost" aria-label="Share by email" className="h-8 w-8 p-0">
+                <EmailIcon size={32} round />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Share link by email</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </EmailShareButton>
 
       <LinkedinShareButton url={url} title={title}>
-        <Tooltip label="Share link on LinkedIn" aria-label="Share link on LinkedIn">
-          <IconButton variant={'ghost'} aria-label="Share by email" icon={<LinkedinIcon size={32} round />} as={Box} />
-        </Tooltip>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="ghost" aria-label="Share on LinkedIn" className="h-8 w-8 p-0">
+                <LinkedinIcon size={32} round />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Share link on LinkedIn</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </LinkedinShareButton>
 
-      <Tooltip label="Copy link to clipboard" aria-label="Copy link to clipboard">
-        <IconButton
-          onClick={() => {
-            onCopy(), toast({ title: 'Link copied to clipboard', status: 'info', duration: 2000 });
-          }}
-          aria-label={'Copy'}
-          icon={
-            hasCopied ? (
-              <Icon boxSize={4}>
-                <path d={mdiCheck} />
-              </Icon>
-            ) : (
-              <Icon boxSize={4}>
-                <path d={mdiContentCopy} />
-              </Icon>
-            )
-          }
-          size={'sm'}
-          mx={1}
-          as={Box}
-        >
-          {hasCopied ? 'Copied!' : 'Copy'}
-        </IconButton>
-      </Tooltip>
-    </HStack>
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button
+              onClick={onCopy}
+              aria-label="Copy"
+              variant="ghost"
+              size="sm"
+              className="mx-1"
+            >
+              {hasCopied ? (
+                <>
+                  <Icon path={mdiCheck} size={1} className="mr-1" />
+                  Copied!
+                </>
+              ) : (
+                <>
+                  <Icon path={mdiContentCopy} size={1} className="mr-1" />
+                  Copy
+                </>
+              )}
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Copy link to clipboard</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </div>
   );
 };
 

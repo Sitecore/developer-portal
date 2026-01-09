@@ -1,6 +1,6 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import { LinkButton } from '../links';
 import YouTube from '../video/YouTube';
+import { cn } from '@lib/utils';
 
 export type VideoProps = {
   videoUrl?: string;
@@ -13,46 +13,47 @@ export type VideoPromoProps = VideoProps & {
   linkText: string;
   linkHref: string;
   isImageLeft?: boolean;
+  className?: string;
 };
 
 const Video = ({ videoUrl }: VideoProps) => (
-  <Box className="w-full aspect-video">
+  <div className="w-full aspect-video">
     <video className="w-full h-full" autoPlay muted controls>
       <source src={videoUrl} type="video/mp4" />
     </video>
-  </Box>
+  </div>
 );
 
-export const VideoPromo = ({ title, description, videoUrl, youTubeId, linkText, linkHref, isImageLeft = true }: VideoPromoProps) => {
+export const VideoPromo = ({ title, description, videoUrl, youTubeId, linkText, linkHref, isImageLeft = true, className }: VideoPromoProps) => {
   return (
-    <Flex gap={6} my={8}>
+    <div className={cn('flex gap-6 my-8', className)}>
       {isImageLeft && videoUrl != undefined && (
-        <Box flexDirection={'column'} width={'50%'} display={'inline-grid'} alignItems={'center'}>
+        <div className="flex flex-col w-1/2 inline-grid items-center">
           <Video videoUrl={videoUrl} />
-        </Box>
+        </div>
       )}
       {isImageLeft && youTubeId != undefined && (
-        <Box flexDirection={'column'} width={'50%'} display={'inline-grid'} alignItems={'center'}>
+        <div className="flex flex-col w-1/2 inline-grid items-center">
           <YouTube youTubeId={youTubeId} />
-        </Box>
+        </div>
       )}
-      <Box flexDirection={'column'} width={'50%'}>
-        <Heading as={'h4'} size="md">
+      <div className="flex flex-col w-1/2">
+        <h4 className="text-lg font-heading">
           {title}
-        </Heading>
-        <Text my="4">{description}</Text>
+        </h4>
+        <p className="my-4">{description}</p>
         {!!linkText && <LinkButton text={linkText ? linkText : 'Read more'} href={linkHref} />}
-      </Box>
+      </div>
       {!isImageLeft && videoUrl != undefined && (
-        <Box flexDirection={'column'} width={'50%'}>
+        <div className="flex flex-col w-1/2">
           <Video videoUrl={videoUrl} />
-        </Box>
+        </div>
       )}
       {!isImageLeft && youTubeId != undefined && (
-        <Box flexDirection={'column'} width={'50%'}>
+        <div className="flex flex-col w-1/2">
           <YouTube youTubeId={youTubeId} />
-        </Box>
+        </div>
       )}
-    </Flex>
+    </div>
   );
 };

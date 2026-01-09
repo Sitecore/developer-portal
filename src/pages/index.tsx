@@ -1,5 +1,4 @@
 import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-import { Flex, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react';
 import { Article, CTACard } from '@components/cards';
 import PromoCardVertical from '@components/cards/PromoCardVerticals';
 import communityListData from '@data/data-community-list';
@@ -50,13 +49,13 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
       <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageInfo.title} description={pageInfo.description} />
 
-        <VerticalGroup background={'chakra-bg'}>
-          <VerticalGroup background={'chakra-bg'}>
+        <VerticalGroup>
+          <VerticalGroup>
             <CenteredContent>
-              <SimpleGrid gap={[4, 4, 10]} mb={0} columns={[1, 1, 2]}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 mb-0">
                 <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest changelog updates" linkText="Full changelog" />
                 <AccelerateUpdates recipes={recipes} title="Sitecore Accelerate updates" linkHref="/learn/accelerate" linkText="See all recipes" url="/learn/accelerate/" />
-              </SimpleGrid>
+              </div>
             </CenteredContent>
           </VerticalGroup>
           <CenteredContent>
@@ -69,48 +68,44 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup
-          background={useColorModeValue('linear-gradient(51deg,#dedbff -10%,#f9f9f9 40%,#f9f9f9 70%,#ffcfcf 120%)', 'linear-gradient(51deg, #2c2c4a -10%, #1a1a1a 40%, #1a1a1a 70%, #4a2c2c 120%)')}
-          textAlign={{ base: 'center', md: 'center' }}
-          p={4}
-        >
-          <CenteredContent alignItems="center" textColor={useColorModeValue('black', 'white')}>
+        <VerticalGroup className="bg-gradient-to-br from-[#dedbff] via-[#f9f9f9] to-[#ffcfcf] dark:from-[#2c2c4a] dark:via-[#1a1a1a] dark:to-[#4a2c2c] text-center p-4">
+          <CenteredContent className="items-center text-black dark:text-white">
             <ProductLogo product={Product.SitecoreAI} width={280} height={67} />
             <CenteredContent>
-              <Text fontSize="lg" textAlign="center" mx="auto">
+              <p className="text-lg text-center mx-auto">
                 Explore a unified platform that brings together content, data, personalisation, and intelligent automation: designed for developers, marketers, and partners alike. Join a thriving community of over 4,000 daily active developers
                 shaping the future of digital experience. Whether you&apos;re migrating from CMS or scaling across channels, SitecoreAI empowers you to deliver personalised, measurable outcomes.
-              </Text>
+              </p>
             </CenteredContent>
-            <GenericList title="" subtitle="" data={platformData.data} column={3} width={{ base: 'full', md: '2xs' }} variant="blurred" />
+            <GenericList title="" subtitle="" data={platformData.data} column={3} cardVariant="blurred" />
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup backgroundColor={'white'} py={6}>
+        <VerticalGroup className="bg-white dark:bg-background py-6">
           <CenteredContent>
-            <Flex direction="column" gap={4} textAlign="center" mb={8}>
-              <Heading as="h2" size="lg" color={'black'} mb={0}></Heading>
-            </Flex>
-            <SimpleGrid gap={4} columns={[1, 2, 3]}>
+            <div className="flex flex-col gap-4 text-center mb-8">
+              <h2 className="text-xl font-heading text-black dark:text-foreground mb-0"></h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <PromoCardVertical {...productwebinar} />
               <PromoCardVertical {...partnerawards} />
               <PromoCardVertical {...symposium2025} />
-            </SimpleGrid>
+            </div>
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup p={4} background={'gray.100'}>
+        <VerticalGroup className="p-4 bg-gray-100 dark:bg-muted">
           <CenteredContent>
-            <Flex direction="column" gap={4} textAlign="center" mb={8}>
-              <Heading as="h2" size="lg" color={'black'} mb={0}>
+            <div className="flex flex-col gap-4 text-center mb-8">
+              <h2 className="text-xl font-heading text-black dark:text-foreground mb-0">
                 Sitecore Experience Platform
-              </Heading>
-              <Text fontSize="md" color={'black'} maxW="3xl" mx="auto">
+              </h2>
+              <p className="text-base text-black dark:text-foreground max-w-3xl mx-auto">
                 Deliver personalized experiences by combining customer data, AI, and marketing automation with our Sitecore Experience Platform™
-              </Text>
-            </Flex>
+              </p>
+            </div>
 
-            <SimpleGrid gap={6} columns={[1, 2, 3]}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Article
                 title="Sitecore Experience Platform"
                 description="Create connections, drive conversions, and foster loyalty. With customer data, analytics, marketing automation, and more, with the stand alone Sitecore Experience Platform™."
@@ -119,7 +114,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
               />
               <Article
                 title="Sitecore Experience Manager"
-                description="There’s no experience without content. Sitecore Experience Manager® is a powerful and intuitive CMS for the simplified creation and management of experiences across channels and devices."
+                description="There's no experience without content. Sitecore Experience Manager® is a powerful and intuitive CMS for the simplified creation and management of experiences across channels and devices."
                 linktext="Experience Manager"
                 link="/products/experience-platform"
               />
@@ -129,11 +124,11 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
                 linktext="Managed Cloud"
                 link="/products/managed-cloud"
               />
-            </SimpleGrid>
+            </div>
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup background={'chakra-bg'}>
+        <VerticalGroup>
           <CenteredContent>
             <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} />
             <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} title="Community news" />

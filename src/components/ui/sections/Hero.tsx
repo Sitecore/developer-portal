@@ -1,5 +1,8 @@
-import { Heading, Text, useColorModeValue } from '@chakra-ui/react';
+'use client';
+
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import { CenteredContent, VerticalGroup } from '@components/ui/sections';
 import { GetProductLogo } from '../../../lib/assets';
@@ -17,25 +20,25 @@ export type HeroProps = {
 };
 
 export const Hero = ({ description, title, children, productLogo, demoId, portalURL }: HeroProps) => {
+  const [mounted, setMounted] = useState(false);
+  const { theme, systemTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Determine if dark mode is active
+  const isDark = mounted && (theme === 'dark' || (theme === 'system' && systemTheme === 'dark'));
+  const logoSrc = productLogo ? GetProductLogo(productLogo, isDark ? 'Dark' : 'Light') : '';
+
   return (
-    <VerticalGroup
-      maxWidth={'full'}
-      borderBottom={'1px'}
-      borderColor={'chakra-border-color'}
-      background={useColorModeValue('linear-gradient(51deg,#dedbff -10%,#f9f9f9 40%,#f9f9f9 70%,#ffcfcf 120%)', 'linear-gradient(51deg, #2c2c4a -10%, #1a1a1a 40%, #1a1a1a 70%, #4a2c2c 120%)')}
-    >
-      <CenteredContent gap={2} py={{ base: 6, md: 12, xl: 16 }} direction={{ base: 'column', md: 'column' }}>
-        {productLogo && <Image src={useColorModeValue(GetProductLogo(productLogo, 'Light'), GetProductLogo(productLogo, 'Dark'))} alt={`${title} logo`} width={'280'} height={'60'} />}
-        {!productLogo && (
-          <Heading as="h1" fontSize={{ base: '2xl', md: '4xl', xl: '6xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
-            {title}
-          </Heading>
-        )}
-        <Text as="h2" color={'neutral'} fontSize={{ base: 'sm', md: 'xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'normal'} letterSpacing={'0.5'}>
-          {description}
-        </Text>
+    <VerticalGroup className="max-w-full border-b border-border bg-gradient-to-br from-[#dedbff] via-[#f9f9f9] to-[#ffcfcf] dark:from-[#2c2c4a] dark:via-[#1a1a1a] dark:to-[#4a2c2c]">
+      <CenteredContent className="py-6 md:py-12 xl:py-16" direction="column">
+        {productLogo && logoSrc && <Image src={logoSrc} alt={`${title} logo`} width={280} height={60} />}
+        {!productLogo && <h1 className="text-2xl md:text-4xl xl:text-6xl font-heading font-normal">{title}</h1>}
+        {description && <h2 className="text-sm md:text-xl font-heading font-normal tracking-wider text-neutral-600 dark:text-neutral-400">{description}</h2>}
         {demoId && <GuidedDemo demoId={demoId} productName={title} productLogo={productLogo} />}
-         {portalURL && <a href={portalURL} target='_blank' title='Login' />}
+        {portalURL && <a href={portalURL} target="_blank" rel="noopener noreferrer" title="Login" />}
         {children}
       </CenteredContent>
     </VerticalGroup>

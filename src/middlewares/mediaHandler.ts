@@ -1,13 +1,13 @@
 import { get } from '@vercel/edge-config';
 import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 
-import { MiddlewareFactory } from './middlewareFactory';
+import { ProxyFactory } from './proxyFactory';
 
 export const PUBLIC_DOWNLOAD_HOST = 'https://scdp.blob.core.windows.net/downloads';
 
 // Only run on requests starting with /~/media
-export const mediaHandler: MiddlewareFactory = (next) => {
-  return async (request: NextRequest, _next: NextFetchEvent) => {
+export const mediaHandler: ProxyFactory = (proxy) => {
+  return async (request: NextRequest, next: NextFetchEvent) => {
     const pathname = request.nextUrl.pathname;
 
     if (pathname.startsWith('/~/media')) {
@@ -22,7 +22,7 @@ export const mediaHandler: MiddlewareFactory = (next) => {
         return NextResponse.error();
       }
 
-      return next(request, _next);
+      return proxy(request, next);
     }
   };
 };

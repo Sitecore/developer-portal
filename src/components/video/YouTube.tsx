@@ -1,6 +1,4 @@
-import { Box } from '@chakra-ui/react';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
-
 import styles from './YouTube.module.css';
 
 type VideoProps = {
@@ -11,7 +9,7 @@ type VideoProps = {
 
 export const YouTube = ({ youTubeId, isPlayList, playlistCoverId }: VideoProps) => {
   return (
-    <Box flexDirection={'column'} alignItems={'center'}>
+    <div className="flex flex-col items-center">
       <LiteYouTubeEmbed
         id={`${youTubeId}`}
         adNetwork={false}
@@ -28,7 +26,7 @@ export const YouTube = ({ youTubeId, isPlayList, playlistCoverId }: VideoProps) 
         playerClass={styles.ltyPlaybtn}
         activatedClass={styles.ltyActivated}
       />
-    </Box>
+    </div>
   );
 };
 

@@ -1,15 +1,16 @@
-import { NextMiddleware, NextResponse } from 'next/server';
+import { NextFetchEvent, NextProxy, NextRequest, NextResponse } from 'next/server';
 
-import { MiddlewareFactory } from './middlewareFactory';
+import { ProxyFactory } from './proxyFactory';
 
-export function stackMiddlewares(functions: Array<MiddlewareFactory> = [], index = 0): NextMiddleware {
+export function stackProxies(functions: Array<ProxyFactory> = [], index = 0): NextProxy {
   const current = functions[index];
 
   if (current) {
-    const next = stackMiddlewares(functions, index + 1);
-
-    return current(next);
+    return (request: NextRequest, next: NextFetchEvent) => {
+      const proxy = stackProxies(functions, index + 1);
+      return current(proxy)(request, next);
+    };
+  } else {
+    return () => NextResponse.next();
   }
-
-  return () => NextResponse.next();
 }

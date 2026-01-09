@@ -1,38 +1,51 @@
-import { Heading, HeadingProps, HStack, Link, LinkProps, Text, TextProps } from '@chakra-ui/react';
+import Link from 'next/link';
 import { mdiArrowRight } from '@mdi/js';
 import Icon from '@mdi/react';
+import { cn } from '@lib/utils';
 
-type TextLinkProps = TextProps &
-  HeadingProps &
-  LinkProps & {
-    href?: string;
-    text: string;
-    hideIcon?: boolean;
-    isHeading?: boolean;
-    displayInline?: boolean;
+type TextLinkProps = {
+  href?: string;
+  text: string;
+  hideIcon?: boolean;
+  isHeading?: boolean;
+  displayInline?: boolean;
+  className?: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+};
+
+export const TextLink = ({ href, text, isHeading, hideIcon = false, displayInline = false, className, size = 'md' }: TextLinkProps) => {
+  const sizeClasses = {
+    sm: 'text-sm',
+    md: 'text-base',
+    lg: 'text-lg',
+    xl: 'text-xl',
+    '2xl': 'text-2xl',
   };
 
-export const TextLink = ({ href, text, isHeading, hideIcon = false, displayInline = false, ...rest }: TextLinkProps) => {
   if (isHeading) {
     return (
-      <Heading size="lg" {...rest}>
+      <h2 className={cn('font-heading', sizeClasses[size], className)}>
         <TextWithLink href={href} text={text} hideIcon={hideIcon} />
-      </Heading>
+      </h2>
     );
   }
 
   return (
-    <Text {...rest}>
+    <p className={cn(className)}>
       <TextWithLink href={href} text={text} hideIcon={hideIcon} displayInline={displayInline} />
-    </Text>
+    </p>
   );
 };
 
-const TextWithLink = ({ href, text, hideIcon, displayInline }: TextLinkProps) => (
-  <HStack as={'span'} display={displayInline ? 'inline' : 'flex'}>
-    <Link href={href} color={'primary'} fontWeight={'semibold'}>
-      {text}
-    </Link>
+const TextWithLink = ({ href, text, hideIcon, displayInline }: Pick<TextLinkProps, 'href' | 'text' | 'hideIcon' | 'displayInline'>) => (
+  <span className={cn(displayInline ? 'inline-flex' : 'flex', 'items-center gap-1')}>
+    {href ? (
+      <Link href={href} className="text-primary font-semibold hover:underline">
+        {text}
+      </Link>
+    ) : (
+      <span className="text-primary font-semibold">{text}</span>
+    )}
     {!hideIcon && <Icon path={mdiArrowRight} size={0.8} />}
-  </HStack>
+  </span>
 );

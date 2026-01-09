@@ -1,15 +1,18 @@
-import { Box, Button, ButtonGroup, Collapse, Heading, Hide, HStack, Icon, IconButton, Text, useColorModeValue, useDisclosure, Wrap } from '@chakra-ui/react';
-import { mdiChevronDown, mdiChevronRight, mdiMinus, mdiPlus } from '@mdi/js';
-import { appendPathToBasePath } from '@src/lib/utils';
-import Image from 'next/image';
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+'use client';
+
 import { useState } from 'react';
-
+import Link from 'next/link';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
+import { Button } from '@components/ui/button';
+import { mdiChevronDown, mdiChevronRight, mdiMinus, mdiPlus } from '@mdi/js';
+import Icon from '@mdi/react';
+import { appendPathToBasePath } from '@/src/lib/utils/stringUtil';
 import { ManifestConfig, ManifestNavigationItem } from '@/src/lib/interfaces/manifest';
-
 import { GetProductLogo } from '@/src/lib/assets';
 import SidebarSearch from './SidebarSearch';
+import { cn } from '@lib/utils';
 
 export interface SidebarNavigationProps {
   title?: string;
@@ -29,43 +32,50 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
   showRootAsSections = config.showRootAsSections;
   basePath = config.path;
 
+  const { theme } = useTheme();
+  const logoSrc = config.productLogo 
+    ? (theme === 'dark' 
+        ? GetProductLogo(config.productLogo, 'Dark')
+        : GetProductLogo(config.productLogo, 'Light'))
+    : undefined;
+
   return (
-    <Box mt={4}>
+    <div className="mt-4">
       {config.enableSearch && (
-        <Hide below="md">
+        <div className="hidden md:block">
           <SidebarSearch config={config} onFocus={() => setSearchActive(true)} onBlur={() => setSearchActive(false)} />
-        </Hide>
+        </div>
       )}
 
       {config.heading && !searchActive && (
-        <Heading as={NextLink} variant={'section'} my={4} mx="0" hideBelow={'md'} href={config.path}>
+        <Link href={config.path} className="hidden md:block text-sm uppercase tracking-wide text-muted-foreground my-4 mx-0 hover:underline">
           {config.title}
-        </Heading>
+        </Link>
       )}
 
-      {config.productLogo && (
-        <Box height={'24px'} width={'full'} position={'relative'} my={4} sx={{ '& > img': { width: 'auto !important' } }}>
-          <Image src={useColorModeValue(GetProductLogo(config.productLogo, 'Light'), GetProductLogo(config.productLogo, 'Dark'))} alt={`${config.title}`} fill style={{ objectFit: 'fill' }} sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw" />
-        </Box>
+      {config.productLogo && logoSrc && (
+        <div className="h-6 w-full relative my-4">
+          <Image src={logoSrc} alt={config.title} fill style={{ objectFit: 'fill' }} sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw" className="!w-auto" />
+        </div>
       )}
       {/* Desktop */}
-      <Wrap direction="column" hideBelow={'md'} hidden={searchActive}>
+      <div className={cn('flex flex-col hidden md:flex', searchActive && 'hidden')}>
         {showRootAsSections && config.routes.map((link, i) => <SidebarGroupItem {...link} key={i} />)}
 
         {!showRootAsSections && (
-          <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'}>
+          <ul className="flex flex-col gap-1 w-full">
             {config.routes.map((link, i) => (
-              <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} key={i}>
+              <li key={i} className="flex flex-col gap-1 w-full">
                 <MenuItemLink href={appendPathToBasePath(basePath, link.path)} title={link.title} />
-              </ButtonGroup>
+              </li>
             ))}
-          </ButtonGroup>
+          </ul>
         )}
-      </Wrap>
+      </div>
 
       {/* Mobile */}
       <DropDownMenu config={config} key={router.asPath} />
-    </Box>
+    </div>
   );
 };
 
@@ -79,61 +89,59 @@ export const SidebarGroupItem = (ManifestNavigationItem: ManifestNavigationItem)
         <SidebarCollapsableGroupItem {...ManifestNavigationItem} />
       ) : (
         // Load the normal menu
-        <Box as={'li'}>
+        <li>
           {ManifestNavigationItem.ignoreLink != null && ManifestNavigationItem.ignoreLink && (
-            <Heading variant="section" data-type="title" my={4}>
+            <p className="text-sm uppercase tracking-wide text-muted-foreground my-4" data-type="title">
               {ManifestNavigationItem.title}
-            </Heading>
+            </p>
           )}
 
           {!showRootAsSections && <MenuItemLink href={ManifestNavigationItem.path} title={ManifestNavigationItem.title} />}
-          <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} as={'ul'} role="list">
+          <ul className="flex flex-col gap-1 w-full" role="list">
             {ManifestNavigationItem.children?.map((child, i) =>
               child.children?.length > 0 ? <MenuItemGroup manifestItem={child} basePath={currentBasePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(currentBasePath, child.path)} title={child.title} key={i} />
             )}
-          </ButtonGroup>
-        </Box>
+          </ul>
+        </li>
       )}
     </>
   );
 };
 
 const SidebarCollapsableGroupItem = (ManifestNavigationItem: ManifestNavigationItem) => {
-  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: ManifestNavigationItem.collapsed });
+  const [isOpen, setIsOpen] = useState(ManifestNavigationItem.collapsed ?? false);
 
   return (
-    <Wrap direction="column" as={'li'} data-type="collapsable-group-item">
-      <HStack justifyContent={'space-between'} mt={4}>
+    <li className="flex flex-col" data-type="collapsable-group-item">
+      <div className="flex justify-between items-center mt-4">
         {ManifestNavigationItem.ignoreLink == false ? (
-          <Heading as={NextLink} variant="section" cursor={'pointer'} href={appendPathToBasePath(basePath, ManifestNavigationItem.path)}>
+          <Link href={appendPathToBasePath(basePath, ManifestNavigationItem.path)} className="text-sm uppercase tracking-wide text-muted-foreground cursor-pointer hover:underline">
             {ManifestNavigationItem.title}
-          </Heading>
+          </Link>
         ) : (
-          <Heading variant="section" onClick={onToggle} cursor={'pointer'}>
+          <button onClick={() => setIsOpen(!isOpen)} className="text-sm uppercase tracking-wide text-muted-foreground cursor-pointer hover:underline">
             {ManifestNavigationItem.title}
-          </Heading>
+          </button>
         )}
-        <IconButton
-          icon={
-            <Icon boxSize={'4'} color={'chakra-subtle-text'}>
-              <path d={isOpen ? mdiPlus : mdiMinus} />
-            </Icon>
-          }
+        <Button
           variant="ghost"
-          size={'xs'}
-          aria-label={''}
-          onClick={onToggle}
-        />
-      </HStack>
+          size="sm"
+          className="h-6 w-6 p-0"
+          aria-label=""
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <Icon path={isOpen ? mdiPlus : mdiMinus} size={1} className="text-muted-foreground" />
+        </Button>
+      </div>
 
-      <Collapse animateOpacity in={!isOpen}>
-        <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} data-type="buttons">
+      {!isOpen && (
+        <ul className="flex flex-col gap-1 w-full mt-2" data-type="buttons">
           {ManifestNavigationItem.children?.map((child, i) =>
             child.children?.length > 0 ? <MenuItemGroup manifestItem={child} basePath={basePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(basePath, child.path)} title={child.title} key={i} />
           )}
-        </ButtonGroup>
-      </Collapse>
-    </Wrap>
+        </ul>
+      )}
+    </li>
   );
 };
 
@@ -141,11 +149,13 @@ const MenuItemLink = ({ href, title }: { href: string; title: string }) => {
   const router = useRouter();
 
   return (
-    <Box as="li" listStyleType={'none'}>
-      <Button as={NextLink} colorScheme="neutral" href={href} px={2} width={'full'} isActive={router.asPath.endsWith(href)} data-type="menu-item-link">
-        {title}
+    <li className="list-none">
+      <Button asChild variant="ghost" className={cn('px-2 w-full justify-start', router.asPath.endsWith(href) && 'bg-accent')} data-type="menu-item-link">
+        <Link href={href}>
+          {title}
+        </Link>
       </Button>
-    </Box>
+    </li>
   );
 };
 
@@ -153,30 +163,28 @@ const MenuItemGroup = ({ manifestItem, basePath, index }: { manifestItem: Manife
   const router = useRouter();
   const currentRouteIncludesChild = router.asPath.includes(`${basePath}/${manifestItem.path}`) || manifestItem.children?.some((child) => router.asPath.includes(`${basePath}/${child.path}`));
   const currentRouteActive = router.asPath.endsWith(`${basePath}/${manifestItem.path}`) || manifestItem.children?.some((child) => router.asPath.includes(`${basePath}/${child.path}`));
-  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: currentRouteIncludesChild });
+  const [isOpen, setIsOpen] = useState(currentRouteIncludesChild);
   const currentBasePath = appendPathToBasePath(basePath, manifestItem.path);
 
   return (
-    <Box as="li" key={index} data-type="menu-item-group" listStyleType={'none'}>
+    <li key={index} data-type="menu-item-group" className="list-none">
       <Button
-        rightIcon={<Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>}
-        justifyContent={'space-between'}
-        width={'full'}
-        isActive={currentRouteActive}
-        transition={'ease-in-out'}
-        onClick={manifestItem.ignoreLink ? onToggle : onToggle}
+        variant="ghost"
+        className={cn('justify-between w-full transition ease-in-out', currentRouteActive && 'bg-accent')}
+        onClick={() => setIsOpen(!isOpen)}
       >
         {manifestItem.ignoreLink ? (
-          <Text>{manifestItem.title}</Text>
+          <span>{manifestItem.title}</span>
         ) : (
-          <Text as={NextLink} href={appendPathToBasePath(basePath, manifestItem.path)}>
+          <Link href={appendPathToBasePath(basePath, manifestItem.path)} className="flex-1 text-left">
             {manifestItem.title}
-          </Text>
+          </Link>
         )}
+        <Icon path={isOpen ? mdiChevronDown : mdiChevronRight} size={1} />
       </Button>
 
-      <Collapse animateOpacity in={isOpen}>
-        <Box pl={2} as="ul">
+      {isOpen && (
+        <ul className="pl-2">
           {manifestItem.children.map((link, i) => {
             if (link.children?.length > 0) {
               return <MenuItemGroup manifestItem={link} basePath={appendPathToBasePath(currentBasePath, link.path)} key={i} />;
@@ -184,40 +192,35 @@ const MenuItemGroup = ({ manifestItem, basePath, index }: { manifestItem: Manife
 
             return <MenuItemLink href={appendPathToBasePath(currentBasePath, link.path)} title={link.title} key={i} />;
           })}
-        </Box>
-      </Collapse>
-    </Box>
+        </ul>
+      )}
+    </li>
   );
 };
 
 const DropDownMenu = ({ config, ...rest }: SidebarNavigationProps) => {
-  const { isOpen, onToggle } = useDisclosure();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Box as={'nav'} hideFrom={'md'} {...rest}>
+    <nav className="md:hidden" {...rest}>
       <Button
-        as={Button}
-        onClick={onToggle}
-        variant={'outline'}
-        width={'full'}
-        rightIcon={
-          <Icon layerStyle="menuButtonIcon">
-            <path d={mdiChevronDown} />
-          </Icon>
-        }
+        onClick={() => setIsOpen(!isOpen)}
+        variant="outline"
+        className="w-full flex items-center justify-between"
       >
         {config.title}
+        <Icon path={mdiChevronDown} size={1} className={cn('transition-transform', isOpen && 'rotate-180')} />
       </Button>
-      <Collapse in={isOpen}>
-        <Box position={'relative'}>
-          <ButtonGroup variant="navigation" orientation="vertical" width={'full'} spacing="1" mt={2} as="ul">
+      {isOpen && (
+        <div className="relative">
+          <ul className="flex flex-col gap-1 w-full mt-2">
             {config.routes.map((link, i) => (
               <SidebarGroupItem {...link} key={i} />
             ))}
-          </ButtonGroup>
-        </Box>
-      </Collapse>
-    </Box>
+          </ul>
+        </div>
+      )}
+    </nav>
   );
 };
 

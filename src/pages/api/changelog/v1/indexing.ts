@@ -1,6 +1,7 @@
 import { Changelog } from '@lib/changelog';
 import { ChangelogEntry, ChangelogEntryList } from '@lib/changelog/types';
-import { getChangelogEntryUrl, getQueryValue, removeHtmlTagsAndSpecialChars } from '@lib/utils';
+import { getQueryValue } from '@/src/lib/utils/requests';
+import { removeHtmlTagsAndSpecialChars } from '@/src/lib/utils/stringUtil';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
@@ -71,7 +72,7 @@ async function GetEntries(list: Array<IndexResult>, end: string, limit: string) 
       fullArticle: entry.fullArticle ? removeHtmlTagsAndSpecialChars(entry.fullArticle) : null,
       readMoreLink: entry.readMoreLink,
       breakingChange: entry.breakingChange ? true : false,
-      url: `${publicUrl}${getChangelogEntryUrl(entry)}`,
+      url: `${publicUrl}${(entry)}`,
     });
   });
 
