@@ -1,19 +1,19 @@
 'use client';
 
-import { useTheme } from 'next-themes';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
-import { Button } from '@components/ui/button';
-import { Badge } from '@components/ui/badge';
-import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover';
-import { ChangelogEntry } from '@lib/changelog/types';
 import { getSlug } from '@/src/lib/utils/stringUtil';
 import { getChangelogEntryUrl } from '@/src/lib/utils/urlUtil';
+import { Badge } from '@components/ui/badge';
+import { Button } from '@components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@components/ui/card';
+import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover';
+import { ChangelogEntry } from '@lib/changelog/types';
+import { cn } from '@lib/utils';
 import { mdiRss } from '@mdi/js';
 import Icon from '@mdi/react';
 import { TextLink } from '@src/components/links';
-import { cn } from '@lib/utils';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import Link from 'next/link';
 
 type ChangelogEntriesProps = {
   entries: Array<ChangelogEntry>;
@@ -56,14 +56,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
               <div className="flex items-start mb-4" key={key}>
                 {!hideProductIcon && (
                   <div className="hidden sm:block text-center mr-5 h-[43px] w-[43px]">
-                    <Image
-                      src={iconSrc}
-                      alt={entry.productName ? entry.productName : 'Product icon'}
-                      width={25}
-                      height={25}
-                      priority
-                      className="m-2"
-                    />
+                    <Image src={iconSrc} alt={entry.productName ? entry.productName : 'Product icon'} width={25} height={25} priority className="m-2" />
                   </div>
                 )}
                 <div className="text-sm">
@@ -98,13 +91,7 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                                   const productIconSrc = theme === 'dark' ? product.darkIcon : product.lightIcon;
                                   return (
                                     <div key={key} className="flex items-center gap-2">
-                                      <Image
-                                        src={productIconSrc}
-                                        alt={product.productName ? product.productName : 'Product icon'}
-                                        width={15}
-                                        height={15}
-                                        priority
-                                      />
+                                      <Image src={productIconSrc} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority />
                                       <Link href={`/changelog/${getSlug(product.productName)}`} className="text-foreground hover:underline">
                                         {product.productName}
                                       </Link>
@@ -124,22 +111,12 @@ const ChangelogEntries = ({ entries, title = 'Sitecore Changelog', linkHref = '/
                     )}
 
                     {entry.changeTypeName != null && (
-                      <Badge
-                        variant="default"
-                        colorScheme={
-                          entry.changeTypeName == 'Resolved'
-                            ? 'neutral'
-                            : entry.changeTypeName == 'New feature'
-                              ? 'primary'
-                              : 'neutral'
-                        }
-                        className="text-xs"
-                      >
+                      <Badge variant="default" colorScheme={entry.changeTypeName == 'Resolved' ? 'neutral' : entry.changeTypeName == 'New feature' ? 'primary' : 'neutral'} className="text-xs">
                         {entry.changeTypeName}
                       </Badge>
                     )}
                     {entry.breakingChange && (
-                      <Badge variant="destructive" className="text-xs">
+                      <Badge variant="bold" className="text-xs">
                         Action required
                       </Badge>
                     )}

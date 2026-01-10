@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@components/ui/card';
-import { LinkButton } from '@src/components/links';
 import { cn } from '@lib/utils';
+import { LinkButton } from '@src/components/links';
 
 export type CTACardProps = {
   description: string;
@@ -15,12 +15,8 @@ export type CTACardProps = {
 export const CTACard = ({ description, href, linkText, title, link2Text, link2href, className }: CTACardProps) => (
   <Card className={cn('bg-muted', className)}>
     <CardContent>
-      <h2 className="text-5xl font-heading mb-4">
-        {title}
-      </h2>
-      <p className="text-lg mb-6">
-        {description}
-      </p>
+      <h2 className="text-5xl font-heading mb-4">{title}</h2>
+      <p className="text-lg mb-6">{description}</p>
       <div className="flex flex-col sm:flex-row gap-4">
         <LinkButton color="white" href={href} text={linkText} size="lg" />
         {link2href && link2Text && <LinkButton href={link2href} text={link2Text} size="lg" />}

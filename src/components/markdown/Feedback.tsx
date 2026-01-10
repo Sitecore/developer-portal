@@ -1,17 +1,17 @@
 'use client';
 
-import { useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { Button, ButtonProps } from '@components/ui/button';
+import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert';
+import { Button } from '@components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@components/ui/dialog';
 import { Input } from '@components/ui/input';
-import { Textarea } from '@components/ui/textarea';
 import { Label } from '@components/ui/label';
-import { Alert, AlertDescription, AlertTitle } from '@components/ui/alert';
-import { AlertCircle } from 'lucide-react';
+import { Textarea } from '@components/ui/textarea';
 import { cn } from '@lib/utils';
+import { AlertCircle } from 'lucide-react';
+import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
-type FeedbackProps = Omit<ButtonProps, 'onClick'> & {
+type FeedbackProps = Omit<React.ComponentProps<typeof Button>, 'onClick'> & {
   text?: string;
   projectId: string;
   issueTypeId: string;
@@ -81,20 +81,16 @@ const Feedback = ({ text = 'Feedback', projectId, issueTypeId, product, classNam
           <form onSubmit={handleSubmit(onSubmit)}>
             <DialogHeader>
               <DialogTitle>Feedback or suggestions</DialogTitle>
-              <DialogDescription>
-                Your comments, suggestions, and feedback help us improve the accelerate recipes.
-              </DialogDescription>
+              <DialogDescription>Your comments, suggestions, and feedback help us improve the accelerate recipes.</DialogDescription>
             </DialogHeader>
             <div className="space-y-6 py-4">
               {!isSubmitSuccessful || submitError ? (
                 <>
                   {submitError && (
-                    <Alert variant="destructive">
+                    <Alert variant="warning">
                       <AlertCircle className="h-4 w-4" />
                       <AlertTitle>Error</AlertTitle>
-                      <AlertDescription>
-                        Apologies, we encountered an issue with submitting the feedback. Please try again later.
-                      </AlertDescription>
+                      <AlertDescription>Apologies, we encountered an issue with submitting the feedback. Please try again later.</AlertDescription>
                     </Alert>
                   )}
                   <div className="space-y-4">

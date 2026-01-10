@@ -1,15 +1,15 @@
 'use client';
 
-import { useTheme } from 'next-themes';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Badge } from '@components/ui/badge';
-import { Card, CardContent, CardHeader } from '@components/ui/card';
-import { ChangelogEntry } from '@lib/changelog/types';
 import { getSlug } from '@/src/lib/utils/stringUtil';
 import { getChangelogEntryUrl } from '@/src/lib/utils/urlUtil';
 import { TextLink } from '@components/links/TextLink';
+import { Badge } from '@components/ui/badge';
+import { Card, CardContent, CardHeader } from '@components/ui/card';
+import { ChangelogEntry } from '@lib/changelog/types';
 import { cn } from '@lib/utils';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import Link from 'next/link';
 
 type ChangelogEntriesProps = {
   entries: Array<ChangelogEntry>;
@@ -33,14 +33,8 @@ const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hidePr
     <Card className={cn('shadow-none bg-transparent', className)}>
       <CardHeader className="flex flex-col md:flex-row justify-between px-0">
         <div>
-          <h3 className="text-2xl font-heading">
-            {title}
-          </h3>
-          {subtitle && (
-            <h3 className="text-sm font-heading pb-6 mb-8">
-              {subtitle}
-            </h3>
-          )}
+          <h3 className="text-2xl font-heading">{title}</h3>
+          {subtitle && <h3 className="text-sm font-heading pb-6 mb-8">{subtitle}</h3>}
         </div>
         <TextLink href={linkHref != null ? linkHref : '/changelog'} text={linkText != null ? linkText : 'See all changes'} />
       </CardHeader>
@@ -52,14 +46,7 @@ const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hidePr
               <div className="flex items-start mb-5" key={key}>
                 {!hideProductIcon && (
                   <div className="hidden sm:block text-center mr-2 h-[43px] w-[43px]">
-                    <Image
-                      src={iconSrc}
-                      alt={entry.productName ? entry.productName : 'Product icon'}
-                      width={25}
-                      height={25}
-                      priority
-                      className="m-2"
-                    />
+                    <Image src={iconSrc} alt={entry.productName ? entry.productName : 'Product icon'} width={25} height={25} priority className="m-2" />
                   </div>
                 )}
                 <div className="text-sm">
@@ -81,11 +68,15 @@ const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hidePr
                       : ''}
 
                     {entry.changeTypeName != null && (
-                      <Badge variant={entry.changeTypeName == 'Resolved' ? 'secondary' : entry.changeTypeName == 'New feature' ? 'default' : 'outline'}>
+                      <Badge variant="default" colorScheme={entry.changeTypeName == 'Resolved' ? 'neutral' : entry.changeTypeName == 'New feature' ? 'primary' : 'neutral'}>
                         {entry.changeTypeName}
                       </Badge>
                     )}
-                    {entry.breakingChange && <Badge variant="destructive">Breaking change</Badge>}
+                    {entry.breakingChange && (
+                      <Badge variant="default" colorScheme="danger">
+                        Breaking change
+                      </Badge>
+                    )}
                   </div>
                 </div>
               </div>

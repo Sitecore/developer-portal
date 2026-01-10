@@ -1,33 +1,33 @@
 'use client';
 
-import { useTheme } from 'next-themes';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Button } from '@components/ui/button';
+import { usePreview } from '@/src/context/PreviewContext';
+import { getSlug } from '@/src/lib/utils/stringUtil';
 import { Badge } from '@components/ui/badge';
+import { Button } from '@components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@components/ui/popover';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
 import { ChangelogEntry } from '@lib/changelog/types';
-import { getSlug } from '@/src/lib/utils/stringUtil';
+import { cn } from '@lib/utils';
 import { mdiSquareEditOutline } from '@mdi/js';
 import Icon from '@mdi/react';
-import { usePreview } from '@/src/context/PreviewContext';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import Link from 'next/link';
 import { ProductIcon } from './ProductIcon';
-import { cn } from '@lib/utils';
 
 type ChangelogItemMetaProps = {
   item: ChangelogEntry;
   className?: string;
 };
 
-export function getStatusBadgeVariant(status: string): 'default' | 'secondary' | 'destructive' | 'outline' {
+export function getStatusBadgeVariant(status: string): 'default' | 'bold' {
   switch (status) {
     case 'available':
       return 'default';
     case 'inprogress':
-      return 'secondary';
+      return 'default';
     case 'scheduled':
-      return 'outline';
+      return 'default';
     default:
       return 'default';
   }
@@ -40,7 +40,7 @@ export const ChangelogItemMeta = ({ item, className }: ChangelogItemMetaProps) =
   const organizationId = process.env.NEXT_PUBLIC_SITECORE_CHONE_ORGANIZATION as string;
   const tenantId = process.env.NEXT_PUBLIC_SITECORE_CHONE_TENANT as string;
 
-  const getBadgeVariant = (changeType: string): 'default' | 'secondary' | 'destructive' | 'outline' => {
+  const getBadgeVariant = (changeType: string): 'default' | 'bold' => {
     if (changeType?.toLowerCase() == 'improvement') {
       return 'default';
     }
@@ -48,9 +48,9 @@ export const ChangelogItemMeta = ({ item, className }: ChangelogItemMetaProps) =
       return 'default';
     }
     if (changeType?.toLowerCase() == 'resolved') {
-      return 'secondary';
+      return 'bold';
     }
-    return 'outline';
+    return 'default';
   };
 
   const MetaInfo = (
@@ -74,13 +74,7 @@ export const ChangelogItemMeta = ({ item, className }: ChangelogItemMetaProps) =
                       const iconSrc = theme === 'dark' ? product.darkIcon : product.lightIcon;
                       return (
                         <div key={key} className="flex items-center gap-2">
-                          <Image
-                            src={iconSrc}
-                            alt={product.productName ? product.productName : 'Product icon'}
-                            width={15}
-                            height={15}
-                            priority
-                          />
+                          <Image src={iconSrc} alt={product.productName ? product.productName : 'Product icon'} width={15} height={15} priority />
                           <Link href={`/changelog/${getSlug(product.productName)}`} className="text-foreground hover:underline">
                             {product.productName}
                           </Link>
@@ -108,7 +102,7 @@ export const ChangelogItemMeta = ({ item, className }: ChangelogItemMetaProps) =
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Badge variant="destructive">Action required</Badge>
+                <Badge variant="bold">Action required</Badge>
               </TooltipTrigger>
               <TooltipContent>
                 <p>This change could require manual updates</p>
@@ -120,7 +114,7 @@ export const ChangelogItemMeta = ({ item, className }: ChangelogItemMetaProps) =
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Badge variant="outline">Scheduled</Badge>
+                <Badge variant="default">Scheduled</Badge>
               </TooltipTrigger>
               <TooltipContent>
                 <p>This functionality is scheduled and not yet released</p>
@@ -132,9 +126,7 @@ export const ChangelogItemMeta = ({ item, className }: ChangelogItemMetaProps) =
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Badge variant={getStatusBadgeVariant(item.status.identifier)}>
-                  {item.status.name}
-                </Badge>
+                <Badge variant={getStatusBadgeVariant(item.status.identifier)}>{item.status.name}</Badge>
               </TooltipTrigger>
               <TooltipContent>
                 <p>{item.status.description}</p>
@@ -158,12 +150,7 @@ export const ChangelogItemMeta = ({ item, className }: ChangelogItemMetaProps) =
           <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="ghost" asChild>
-                <Link
-                  href={`https://content.sitecorecloud.io/content/${item.id}?organization=${organizationId}&tenantName=${tenantId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
+                <Link href={`https://content.sitecorecloud.io/content/${item.id}?organization=${organizationId}&tenantName=${tenantId}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Icon path={mdiSquareEditOutline} size={1} />
                   Edit
                 </Link>
