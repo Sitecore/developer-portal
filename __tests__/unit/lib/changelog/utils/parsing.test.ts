@@ -1,8 +1,8 @@
 import {
-	safeArrayValue,
-	safeFirstItem,
-	safeStringValue,
-} from "@lib/changelog/utils/parsing";
+    safeArrayValue,
+    safeFirstItem,
+    safeStringValue,
+} from "@src/lib/changelog/utils/parsing";
 import { describe, expect, test } from "vitest";
 
 describe("safeStringValue", () => {

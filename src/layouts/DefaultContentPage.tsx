@@ -12,90 +12,90 @@ import { useRouter } from "next/router";
 import { ThreeColumnLayout } from "./ThreeColumnLayout";
 
 type DefaultContentPageProps = {
-	pageInfo: PageInfo;
-	hasGrid?: boolean;
-	promoAfter?: Array<PromoCardProps>;
-	promoBefore?: Array<PromoCardProps>;
-	childPageInfo?: Array<ChildPageInfo>;
-	customNav?: React.ReactNode;
-	customNavPager?: React.ReactNode;
+  pageInfo: PageInfo;
+  hasGrid?: boolean;
+  promoAfter?: Array<PromoCardProps>;
+  promoBefore?: Array<PromoCardProps>;
+  childPageInfo?: Array<ChildPageInfo>;
+  customNav?: React.ReactNode;
+  customNavPager?: React.ReactNode;
 };
 
 const DefaultContentPage = ({
-	pageInfo,
-	promoAfter,
-	promoBefore,
-	customNav,
-	customNavPager,
+  pageInfo,
+  promoAfter,
+  promoBefore,
+  customNav,
+  customNavPager,
 }: DefaultContentPageProps) => {
-	const router = useRouter();
+  const router = useRouter();
 
-	if (!pageInfo) {
-		return <>No pageInfo found</>;
-	}
+  if (!pageInfo) {
+    return <>No pageInfo found</>;
+  }
 
-	// Check for headings in the content
-	const sectionTitles: Array<ContentHeading> = [];
+  // Check for headings in the content
+  const sectionTitles: Array<ContentHeading> = [];
 
-	if (pageInfo.headings) {
-		sectionTitles.push(...pageInfo.headings);
-	}
+  if (pageInfo.headings) {
+    sectionTitles.push(...pageInfo.headings);
+  }
 
-	const Nav = customNav ? (
-		customNav
-	) : sectionTitles != null ? (
-		<InPageNav titles={sectionTitles} />
-	) : null;
+  const Nav = customNav ? (
+    customNav
+  ) : sectionTitles != null ? (
+    <InPageNav titles={sectionTitles} />
+  ) : null;
 
-	return (
-		<TrackPageView pageInfo={pageInfo}>
-			<Layout
-				title={pageInfo.title}
-				description={pageInfo.description}
-				openGraphImage={pageInfo.openGraphImage}
-			>
-				<Hero
-					title={pageInfo.title}
-					description={pageInfo.description}
-					image={pageInfo.heroImage}
-					productLogo={pageInfo.productLogo}
-					demoId={pageInfo.guidedDemoId}
-				/>
+  return (
+    <TrackPageView pageInfo={pageInfo}>
+      <Layout
+        title={pageInfo.title}
+        description={pageInfo.description}
+        openGraphImage={pageInfo.openGraphImage}
+      >
+        <Hero
+          title={pageInfo.title}
+          description={pageInfo.description}
+          image={pageInfo.heroImage}
+          productLogo={pageInfo.productLogo}
+          demoId={pageInfo.guidedDemoId}
+        />
 
-				<ContentSection
-					className={pageInfo.hasInPageNav ? "bg-gray-50 dark:bg-gray-900" : ""}
-				>
-					{/* <CenteredContent paddingTop={10}> */}
-					<PromoList data={promoBefore} />
-					{/* Page structure */}
+        <ContentSection
+          className={pageInfo.hasInPageNav ? "bg-gray-50 dark:bg-gray-900" : ""}
+        >
+          {/* <CenteredContent paddingTop={10}> */}
+          <PromoList data={promoBefore} />
+          {/* Page structure */}
 
-					<ThreeColumnLayout
-						sidebar={pageInfo.hasSubPageNav && Nav}
-						inPageNav={
-							sectionTitles.length > 0 && (
-								<InPageNav titles={sectionTitles} key={router.asPath} />
-							)
-						}
-						inPageLinks={sectionTitles}
-					>
-						<RenderContent content={pageInfo.parsedContent} />
+          <ThreeColumnLayout
+            sidebar={pageInfo.hasSubPageNav && Nav}
+            inPageNav={
+              sectionTitles.length > 0 && (
+                <InPageNav titles={sectionTitles} key={router.asPath} />
+              )
+            }
+            inPageLinks={sectionTitles}
+          >
+            <RenderContent content={pageInfo.parsedContent} />
 
-						<ChangelogEntries
-							entries={pageInfo.changelogEntries}
-							title={`Latest product updates`}
-							linkText="Full changelog"
-							columns={2}
-						/>
-						<PromoList data={promoAfter} />
-						<SocialFeeds pageInfo={pageInfo} />
-					</ThreeColumnLayout>
-					{customNavPager}
-					{/* End Page structure */}
-					{/* </CenteredContent> */}
-				</ContentSection>
-			</Layout>
-		</TrackPageView>
-	);
+            <ChangelogEntries
+              entries={pageInfo.changelogEntries}
+              title={`Latest product updates`}
+              linkText="Full changelog"
+              columns={2}
+            />
+            <PromoList data={promoAfter} />
+            <SocialFeeds pageInfo={pageInfo} />
+          </ThreeColumnLayout>
+          {customNavPager}
+          {/* End Page structure */}
+          {/* </CenteredContent> */}
+        </ContentSection>
+      </Layout>
+    </TrackPageView>
+  );
 };
 
 export default DefaultContentPage;

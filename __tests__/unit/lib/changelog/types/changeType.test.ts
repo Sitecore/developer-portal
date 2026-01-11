@@ -1,10 +1,10 @@
 import {
-	ParseChangeType,
-	parseChangeTypeItem,
-} from "@lib/changelog/types/changeType";
+    ParseChangeType,
+    parseChangeTypeItem,
+} from "@src/lib/changelog/types/changeType";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
-vi.mock("@lib/utils", () => ({
+vi.mock("@src/lib/utils", () => ({
 	getStringValue: vi.fn((value) => value ?? ""),
 	slugify: vi.fn((value) => value?.toLowerCase().replace(/\s+/g, "-") ?? ""),
 }));

@@ -8,7 +8,7 @@
  * @returns Array of ID strings
  */
 export function getSelectedIds(value: string | undefined): Array<string> {
-	return value != null && value.length > 0 ? value.split("|") : [];
+  return value != null && value.length > 0 ? value.split("|") : [];
 }
 
 /**

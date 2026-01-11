@@ -1,8 +1,8 @@
 import {
-	buildProductQuerystring,
-	buildQuerystring,
-} from "@lib/changelog/common/querystring";
-import type { Product } from "@lib/changelog/types";
+    buildProductQuerystring,
+    buildQuerystring,
+} from "@src/lib/changelog/common/querystring";
+import type { Product } from "@src/lib/changelog/types";
 import { describe, expect, test } from "vitest";
 
 describe("buildProductQuerystring", () => {

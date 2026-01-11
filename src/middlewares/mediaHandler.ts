@@ -1,33 +1,33 @@
 import { get } from "@vercel/edge-config";
 import {
-	type NextFetchEvent,
-	type NextRequest,
-	NextResponse,
+  type NextFetchEvent,
+  type NextRequest,
+  NextResponse,
 } from "next/server";
 
 import type { ProxyFactory } from "./proxyFactory";
 
 export const PUBLIC_DOWNLOAD_HOST =
-	"https://scdp.blob.core.windows.net/downloads";
+  "https://scdp.blob.core.windows.net/downloads";
 
 // Only run on requests starting with /~/media
 export const mediaHandler: ProxyFactory = (proxy) => {
-	return async (request: NextRequest, next: NextFetchEvent) => {
-		const pathname = request.nextUrl.pathname;
+  return async (request: NextRequest, next: NextFetchEvent) => {
+    const pathname = request.nextUrl.pathname;
 
-		if (pathname.startsWith("/~/media")) {
-			try {
-				const id = pathname.split("/")[3].split(".")[0];
-				const url = await get<string>(id);
+    if (pathname.startsWith("/~/media")) {
+      try {
+        const id = pathname.split("/")[3].split(".")[0];
+        const url = await get<string>(id);
 
-				if (url !== undefined) {
-					return NextResponse.redirect(PUBLIC_DOWNLOAD_HOST.concat(url), 302);
-				}
-			} catch {
-				return NextResponse.error();
-			}
+        if (url !== undefined) {
+          return NextResponse.redirect(PUBLIC_DOWNLOAD_HOST.concat(url), 302);
+        }
+      } catch {
+        return NextResponse.error();
+      }
 
-			return proxy(request, next);
-		}
-	};
+      return proxy(request, next);
+    }
+  };
 };

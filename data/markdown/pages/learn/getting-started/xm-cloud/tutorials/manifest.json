@@ -1,42 +1,42 @@
 {
-	"title": "XM Cloud Tutorials",
-	"description": "Tips for teams working on XM Cloud projects from developers in the field",
-	"heading": false,
-	"path": "/learn/getting-started/xm-cloud",
-	"showRootAsSections": true,
-	"enableBreadcrumb": false,
-	"enableNextPrevious": true,
-	"routes": [
-		{
-			"title": "XM Cloud Tutorials",
-			"path": "tutorials",
-			"ignoreLink": true,
-			"children": [
-				{
-					"title": "Setup XM Cloud",
-					"path": "setup-xm-cloud"
-				},
-				{
-					"title": "Create a site",
-					"path": "create-a-site"
-				},
-				{
-					"title": "Create a Component",
-					"path": "create-a-component"
-				},
-				{
-					"title": "Create Component Data Template",
-					"path": "create-data-template"
-				},
-				{
-					"title": "Configure Available Data Sources",
-					"path": "configure-available-components-data-sources"
-				},
-				{
-					"title": "Map Component Data Sources",
-					"path": "datasources"
-				}
-			]
-		}
-	]
+  "title": "XM Cloud Tutorials",
+  "description": "Tips for teams working on XM Cloud projects from developers in the field",
+  "heading": false,
+  "path": "/learn/getting-started/xm-cloud",
+  "showRootAsSections": true,
+  "enableBreadcrumb": false,
+  "enableNextPrevious": true,
+  "routes": [
+    {
+      "title": "XM Cloud Tutorials",
+      "path": "tutorials",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Setup XM Cloud",
+          "path": "setup-xm-cloud"
+        },
+        {
+          "title": "Create a site",
+          "path": "create-a-site"
+        },
+        {
+          "title": "Create a Component",
+          "path": "create-a-component"
+        },
+        {
+          "title": "Create Component Data Template",
+          "path": "create-data-template"
+        },
+        {
+          "title": "Configure Available Data Sources",
+          "path": "configure-available-components-data-sources"
+        },
+        {
+          "title": "Map Component Data Sources",
+          "path": "datasources"
+        }
+      ]
+    }
+  ]
 }

@@ -1,12 +1,5 @@
 "use client";
 
-import { Button } from "@src/components/ui/button";
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from "@src/components/ui/tooltip";
 import {
 	mdiCheck,
 	mdiChevronLeft,
@@ -14,6 +7,13 @@ import {
 	mdiContentCopy,
 } from "@mdi/js";
 import Icon from "@mdi/react";
+import { Button } from "@src/components/ui/button";
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from "@src/components/ui/tooltip";
 import {
 	EmailIcon,
 	EmailShareButton,

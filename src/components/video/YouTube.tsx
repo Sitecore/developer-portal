@@ -2,36 +2,36 @@ import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import styles from "./YouTube.module.css";
 
 type VideoProps = {
-	youTubeId: string;
-	isPlayList?: boolean;
-	playlistCoverId?: string;
+  youTubeId: string;
+  isPlayList?: boolean;
+  playlistCoverId?: string;
 };
 
 export const YouTube = ({
-	youTubeId,
-	isPlayList,
-	playlistCoverId,
+  youTubeId,
+  isPlayList,
+  playlistCoverId,
 }: VideoProps) => {
-	return (
-		<div className="flex flex-col items-center">
-			<LiteYouTubeEmbed
-				id={`${youTubeId}`}
-				adNetwork={false}
-				params={`loop=1&playlist=${youTubeId}`}
-				aspectHeight={9}
-				aspectWidth={16}
-				playlist={isPlayList}
-				playlistCoverId={playlistCoverId}
-				poster="maxresdefault"
-				title="YouTube Embed"
-				noCookie={true}
-				wrapperClass={styles.ytLite}
-				iframeClass=""
-				playerClass={styles.ltyPlaybtn}
-				activatedClass={styles.ltyActivated}
-			/>
-		</div>
-	);
+  return (
+    <div className="flex flex-col items-center">
+      <LiteYouTubeEmbed
+        id={`${youTubeId}`}
+        adNetwork={false}
+        params={`loop=1&playlist=${youTubeId}`}
+        aspectHeight={9}
+        aspectWidth={16}
+        playlist={isPlayList}
+        playlistCoverId={playlistCoverId}
+        poster="maxresdefault"
+        title="YouTube Embed"
+        noCookie={true}
+        wrapperClass={styles.ytLite}
+        iframeClass=""
+        playerClass={styles.ltyPlaybtn}
+        activatedClass={styles.ltyActivated}
+      />
+    </div>
+  );
 };
 
 export default YouTube;

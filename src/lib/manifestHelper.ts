@@ -1,7 +1,7 @@
-import { appendPathToBasePath } from "@src/lib/utils/stringUtil";
+import { appendPathToBasePath } from "@/src/lib/util/stringUtil";
 import type {
-	ManifestConfig,
-	ManifestNavigationItem,
+  ManifestConfig,
+  ManifestNavigationItem,
 } from "./interfaces/manifest";
 
 /**
@@ -13,42 +13,42 @@ import type {
  * @returns The sibling `ManifestNavigationItem` if found, otherwise `null`.
  */
 export const getSiblingItem = (
-	routes: ManifestNavigationItem[],
-	currentPath: string,
-	isNext: boolean,
+  routes: ManifestNavigationItem[],
+  currentPath: string,
+  isNext: boolean,
 ): ManifestNavigationItem | null => {
-	for (let i = 0; i < routes.length; i++) {
-		const route = routes[i];
+  for (let i = 0; i < routes.length; i++) {
+    const route = routes[i];
 
-		// If the current route matches the path
-		if (route.path === currentPath) {
-			if (isNext && i + 1 < routes.length) {
-				// Return the next item if isNext is true
-				return routes[i + 1];
-			} else if (!isNext && i - 1 >= 0) {
-				// Return the previous item if isNext is false
-				return routes[i - 1];
-			} else {
-				// No next/previous item found (edge cases)
-				return null;
-			}
-		}
+    // If the current route matches the path
+    if (route.path === currentPath) {
+      if (isNext && i + 1 < routes.length) {
+        // Return the next item if isNext is true
+        return routes[i + 1];
+      } else if (!isNext && i - 1 >= 0) {
+        // Return the previous item if isNext is false
+        return routes[i - 1];
+      } else {
+        // No next/previous item found (edge cases)
+        return null;
+      }
+    }
 
-		// If the route has children, traverse them recursively
-		if (route.children) {
-			const found = getSiblingItem(
-				route.children,
-				currentPath.replace(`${route.path}/`, ""),
-				isNext,
-			);
-			if (found) {
-				return found;
-			}
-		}
-	}
+    // If the route has children, traverse them recursively
+    if (route.children) {
+      const found = getSiblingItem(
+        route.children,
+        currentPath.replace(`${route.path}/`, ""),
+        isNext,
+      );
+      if (found) {
+        return found;
+      }
+    }
+  }
 
-	// Return null if no match is found
-	return null;
+  // Return null if no match is found
+  return null;
 };
 
 /**
@@ -60,32 +60,32 @@ export const getSiblingItem = (
  * @returns The parent `ManifestNavigationItem` if found, otherwise `null`.
  */
 export const getParent = (
-	routes: ManifestNavigationItem[],
-	currentPath: string,
-	parent: ManifestNavigationItem | null = null,
+  routes: ManifestNavigationItem[],
+  currentPath: string,
+  parent: ManifestNavigationItem | null = null,
 ): ManifestNavigationItem | null => {
-	for (const route of routes) {
-		// Check if the current route matches the path
-		if (route.path === currentPath) {
-			return parent;
-		}
+  for (const route of routes) {
+    // Check if the current route matches the path
+    if (route.path === currentPath) {
+      return parent;
+    }
 
-		// If the route has children, search within them
-		if (route.children) {
-			const foundParent = getParent(
-				route.children,
-				currentPath.replace(`${route.path}/`, ""),
-				route,
-			);
+    // If the route has children, search within them
+    if (route.children) {
+      const foundParent = getParent(
+        route.children,
+        currentPath.replace(`${route.path}/`, ""),
+        route,
+      );
 
-			if (foundParent) {
-				return foundParent;
-			}
-		}
-	}
+      if (foundParent) {
+        return foundParent;
+      }
+    }
+  }
 
-	// Return null if no parent is found
-	return null;
+  // Return null if no parent is found
+  return null;
 };
 
 /**
@@ -97,34 +97,34 @@ export const getParent = (
  * @returns {ManifestNavigationItem[]} An array of parent routes leading to the current path.
  */
 export const getAllParents = (
-	routes: ManifestNavigationItem[],
-	currentPath: string,
-	parents: ManifestNavigationItem[] = [],
+  routes: ManifestNavigationItem[],
+  currentPath: string,
+  parents: ManifestNavigationItem[] = [],
 ): ManifestNavigationItem[] => {
-	for (const route of routes) {
-		// If the current route matches the path, return the collected parents
-		if (route.path === currentPath) {
-			return parents;
-		}
+  for (const route of routes) {
+    // If the current route matches the path, return the collected parents
+    if (route.path === currentPath) {
+      return parents;
+    }
 
-		// If the route has children, traverse them recursively
-		if (route.children) {
-			const updatedParents = [...parents, route]; // Add current route to parents
+    // If the route has children, traverse them recursively
+    if (route.children) {
+      const updatedParents = [...parents, route]; // Add current route to parents
 
-			// Recursively search within children
-			const foundParents = getAllParents(
-				route.children,
-				currentPath.replace(`${route.path}/`, ""),
-				updatedParents,
-			);
-			if (foundParents.length > 0) {
-				return foundParents;
-			}
-		}
-	}
+      // Recursively search within children
+      const foundParents = getAllParents(
+        route.children,
+        currentPath.replace(`${route.path}/`, ""),
+        updatedParents,
+      );
+      if (foundParents.length > 0) {
+        return foundParents;
+      }
+    }
+  }
 
-	// Return an empty array if no parents are found (i.e., item not found)
-	return [];
+  // Return an empty array if no parents are found (i.e., item not found)
+  return [];
 };
 
 /**
@@ -135,31 +135,31 @@ export const getAllParents = (
  * @returns An array of `ManifestNavigationItem` representing the direct children of the matched route.
  */
 export const getChildren = (
-	routes: ManifestNavigationItem[],
-	currentPath: string,
+  routes: ManifestNavigationItem[],
+  currentPath: string,
 ): ManifestNavigationItem[] => {
-	for (const route of routes) {
-		// Check if the current route matches the path
-		if (route.path === currentPath) {
-			// Return the direct children if found
-			return route.children || [];
-		}
+  for (const route of routes) {
+    // Check if the current route matches the path
+    if (route.path === currentPath) {
+      // Return the direct children if found
+      return route.children || [];
+    }
 
-		// If the route has children, traverse them recursively
-		if (route.children) {
-			const foundChildren = getChildren(
-				route.children,
-				currentPath.replace(`${route.path}/`, ""),
-			);
+    // If the route has children, traverse them recursively
+    if (route.children) {
+      const foundChildren = getChildren(
+        route.children,
+        currentPath.replace(`${route.path}/`, ""),
+      );
 
-			if (foundChildren.length > 0) {
-				return foundChildren;
-			}
-		}
-	}
+      if (foundChildren.length > 0) {
+        return foundChildren;
+      }
+    }
+  }
 
-	// Return an empty array if no children are found
-	return [];
+  // Return an empty array if no children are found
+  return [];
 };
 
 /**
@@ -170,23 +170,23 @@ export const getChildren = (
  * @returns The `ManifestNavigationItem` that matches the full path, or `null` if no match is found.
  */
 export const getRouteByFullPath = (
-	routes: Array<ManifestNavigationItem>,
-	fullPath: string,
+  routes: Array<ManifestNavigationItem>,
+  fullPath: string,
 ): ManifestNavigationItem | null => {
-	const paths: Array<string> = fullPath
-		.split("/")
-		.filter((path) => path !== "");
+  const paths: Array<string> = fullPath
+    .split("/")
+    .filter((path) => path !== "");
 
-	for (const route of routes) {
-		if (route.path === paths[0]) {
-			if (route.children && !route.ignoreLink) {
-				return getRouteByFullPath(route.children, paths.slice(1).join("/"));
-			} else {
-				return route;
-			}
-		}
-	}
-	return null;
+  for (const route of routes) {
+    if (route.path === paths[0]) {
+      if (route.children && !route.ignoreLink) {
+        return getRouteByFullPath(route.children, paths.slice(1).join("/"));
+      } else {
+        return route;
+      }
+    }
+  }
+  return null;
 };
 
 /**
@@ -197,38 +197,38 @@ export const getRouteByFullPath = (
  * @returns The URL for the sidebar navigation item.
  */
 export const getItemUrl = (
-	config: ManifestConfig,
-	currentRoute: ManifestNavigationItem,
+  config: ManifestConfig,
+  currentRoute: ManifestNavigationItem,
 ): string => {
-	const findPathChain = (
-		routes: ManifestNavigationItem[],
-		targetPath: string,
-		chain: ManifestNavigationItem[] = [],
-	): ManifestNavigationItem[] | null => {
-		for (const route of routes) {
-			const newChain = [...chain, route];
+  const findPathChain = (
+    routes: ManifestNavigationItem[],
+    targetPath: string,
+    chain: ManifestNavigationItem[] = [],
+  ): ManifestNavigationItem[] | null => {
+    for (const route of routes) {
+      const newChain = [...chain, route];
 
-			if (route.path === targetPath) {
-				return newChain; // found the route
-			}
+      if (route.path === targetPath) {
+        return newChain; // found the route
+      }
 
-			if (route.children) {
-				const result = findPathChain(route.children, targetPath, newChain);
-				if (result) return result;
-			}
-		}
-		return null;
-	};
+      if (route.children) {
+        const result = findPathChain(route.children, targetPath, newChain);
+        if (result) return result;
+      }
+    }
+    return null;
+  };
 
-	const chain = findPathChain(config.routes, currentRoute.path);
+  const chain = findPathChain(config.routes, currentRoute.path);
 
-	if (!chain) {
-		console.warn(`getItemUrl: Could not resolve path for ${currentRoute.path}`);
-		return appendPathToBasePath(config.path, currentRoute.path);
-	}
+  if (!chain) {
+    console.warn(`getItemUrl: Could not resolve path for ${currentRoute.path}`);
+    return appendPathToBasePath(config.path, currentRoute.path);
+  }
 
-	const segments = chain.map((r) => r.path).filter(Boolean);
-	const fullPath = segments.join("/");
+  const segments = chain.map((r) => r.path).filter(Boolean);
+  const fullPath = segments.join("/");
 
-	return appendPathToBasePath(config.path, fullPath);
+  return appendPathToBasePath(config.path, fullPath);
 };

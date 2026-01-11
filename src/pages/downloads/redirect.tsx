@@ -1,7 +1,7 @@
 import Layout from "@src/layouts/Layout";
 import {
-	isAuthenticatedCloudPortalUser,
-	isAuthenticatedOktaUser,
+  isAuthenticatedCloudPortalUser,
+  isAuthenticatedOktaUser,
 } from "@src/lib/auth/verify";
 import type { NextPage } from "next";
 import Link from "next/link";
@@ -10,58 +10,58 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
 const RedirectPage: NextPage = () => {
-	const router = useRouter();
-	const { data: session } = useSession();
-	const { file, redirect = "/" } = router.query;
+  const router = useRouter();
+  const { data: session } = useSession();
+  const { file, redirect = "/" } = router.query;
 
-	const [downloadUrl, setDownloadUrl] = useState<string>("");
+  const [downloadUrl, setDownloadUrl] = useState<string>("");
 
-	useEffect(() => {
-		if (isAuthenticatedOktaUser(session) && file) {
-			fetch(`/api/download/url?file=${encodeURIComponent(file.toString())}`)
-				.then((res) => res.json())
-				.then((data) => {
-					if (data.url) {
-						setDownloadUrl(data.url);
-						window.location.href = data.url;
-						setTimeout(() => {
-							router.replace(redirect.toString());
-						}, 3000);
-					} else {
-						alert("Failed to generate download URL");
-						router.replace(redirect.toString());
-					}
-				});
-		}
-	}, [file, redirect, router, session]);
+  useEffect(() => {
+    if (isAuthenticatedOktaUser(session) && file) {
+      fetch(`/api/download/url?file=${encodeURIComponent(file.toString())}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.url) {
+            setDownloadUrl(data.url);
+            window.location.href = data.url;
+            setTimeout(() => {
+              router.replace(redirect.toString());
+            }, 3000);
+          } else {
+            alert("Failed to generate download URL");
+            router.replace(redirect.toString());
+          }
+        });
+    }
+  }, [file, redirect, router, session]);
 
-	if (isAuthenticatedCloudPortalUser(session)) {
-		return (
-			<Layout title={"Downloading..."}>
-				<div className="h-[calc(100vh-165px)]">
-					<div className="flex items-center justify-center h-full bg-muted">
-						<p>Please use your Sitecore ID account to download this file.</p>
-					</div>
-				</div>
-			</Layout>
-		);
-	}
+  if (isAuthenticatedCloudPortalUser(session)) {
+    return (
+      <Layout title={"Downloading..."}>
+        <div className="h-[calc(100vh-165px)]">
+          <div className="flex items-center justify-center h-full bg-muted">
+            <p>Please use your Sitecore ID account to download this file.</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
 
-	return (
-		<Layout title={"Downloading..."}>
-			<div className="h-[calc(100vh-165px)]">
-				<div className="flex items-center justify-center h-full bg-muted">
-					<p>
-						Please wait while we prepare your download.{" "}
-						<Link href={downloadUrl} className="text-primary hover:underline">
-							Click here
-						</Link>{" "}
-						to start the download manually.
-					</p>
-				</div>
-			</div>
-		</Layout>
-	);
+  return (
+    <Layout title={"Downloading..."}>
+      <div className="h-[calc(100vh-165px)]">
+        <div className="flex items-center justify-center h-full bg-muted">
+          <p>
+            Please wait while we prepare your download.{" "}
+            <Link href={downloadUrl} className="text-primary hover:underline">
+              Click here
+            </Link>{" "}
+            to start the download manually.
+          </p>
+        </div>
+      </div>
+    </Layout>
+  );
 };
 
 export default RedirectPage;

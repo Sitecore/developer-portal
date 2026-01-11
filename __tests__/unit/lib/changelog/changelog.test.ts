@@ -1,42 +1,42 @@
-import { Changelog, GetEntryCountByProductId } from "@lib/changelog/changelog";
+import { Changelog, GetEntryCountByProductId } from "@src/lib/changelog/changelog";
 import {
-	ChangelogNotFoundError,
-	ChangelogValidationError,
-} from "@lib/changelog/errors";
-import type { ChangelogCredentials } from "@lib/changelog/types";
+    ChangelogNotFoundError,
+    ChangelogValidationError,
+} from "@src/lib/changelog/errors";
+import type { ChangelogCredentials } from "@src/lib/changelog/types";
 import {
-	mockedChangelogEntries,
-	mockedChangelogEntry,
+    mockedChangelogEntries,
+    mockedChangelogEntry,
 } from "__mocks__/changelog/changelogEntry.mock";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
 // Mock dependencies
-vi.mock("@lib/changelog/common/fetch");
-vi.mock("@lib/changelog/cache");
-vi.mock("@lib/changelog/types/changeLogEntry", async () => {
-	const actual = await vi.importActual("@lib/changelog/types/changeLogEntry");
+vi.mock("@src/lib/changelog/common/fetch");
+vi.mock("@src/lib/changelog/cache");
+vi.mock("@src/lib/changelog/types/changeLogEntry", async () => {
+	const actual = await vi.importActual("@src/lib/changelog/types/changeLogEntry");
 	return {
 		...actual,
 		ParseRawData: vi.fn(),
 		parseChangeLogItem: vi.fn(),
 	};
 });
-vi.mock("@lib/changelog/types/changeType", async () => {
-	const actual = await vi.importActual("@lib/changelog/types/changeType");
+vi.mock("@src/lib/changelog/types/changeType", async () => {
+	const actual = await vi.importActual("@src/lib/changelog/types/changeType");
 	return {
 		...actual,
 		ParseChangeType: vi.fn(),
 	};
 });
-vi.mock("@lib/changelog/types/status", async () => {
-	const actual = await vi.importActual("@lib/changelog/types/status");
+vi.mock("@src/lib/changelog/types/status", async () => {
+	const actual = await vi.importActual("@src/lib/changelog/types/status");
 	return {
 		...actual,
 		ParseStatus: vi.fn(),
 	};
 });
-vi.mock("@lib/changelog/types/product", async () => {
-	const actual = await vi.importActual("@lib/changelog/types/product");
+vi.mock("@src/lib/changelog/types/product", async () => {
+	const actual = await vi.importActual("@src/lib/changelog/types/product");
 	return {
 		...actual,
 		ParseProduct: vi.fn(),
@@ -44,18 +44,18 @@ vi.mock("@lib/changelog/types/product", async () => {
 });
 
 import {
-	getCachedEntryCount,
-	requestDeduplicator,
-	setCachedEntryCount,
-} from "@lib/changelog/cache";
-import { fetchGraphQL } from "@lib/changelog/common/fetch";
+    getCachedEntryCount,
+    requestDeduplicator,
+    setCachedEntryCount,
+} from "@src/lib/changelog/cache";
+import { fetchGraphQL } from "@src/lib/changelog/common/fetch";
 import {
-	ParseRawData,
-	parseChangeLogItem,
-} from "@lib/changelog/types/changeLogEntry";
-import { ParseChangeType } from "@lib/changelog/types/changeType";
-import { ParseProduct } from "@lib/changelog/types/product";
-import { ParseStatus } from "@lib/changelog/types/status";
+    ParseRawData,
+    parseChangeLogItem,
+} from "@src/lib/changelog/types/changeLogEntry";
+import { ParseChangeType } from "@src/lib/changelog/types/changeType";
+import { ParseProduct } from "@src/lib/changelog/types/product";
+import { ParseStatus } from "@src/lib/changelog/types/status";
 
 describe("Changelog", () => {
 	const mockCredentials: ChangelogCredentials = {

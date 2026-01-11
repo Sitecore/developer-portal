@@ -1,36 +1,36 @@
 fragment changelogEntry on Changelog {
-	system {
-		id
-		name
-	}
-	title
-	description
-	fullArticle
-	readMoreLink
-	breakingChange
-	x_version
-	releaseDate
-	scheduled
-	image {
-		hasMore
-		cursor
-		results {
-			...media
-		}
-	}
-	sitecoreProduct {
-		results {
-			...product
-		}
-	}
-	changeType {
-		results {
-			...changeType
-		}
-	}
-	status {
-		results {
-			...status
-		}
-	}
+  system {
+    id
+    name
+  }
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  x_version
+  releaseDate
+  scheduled
+  image {
+    hasMore
+    cursor
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    results {
+      ...product
+    }
+  }
+  changeType {
+    results {
+      ...changeType
+    }
+  }
+  status {
+    results {
+      ...status
+    }
+  }
 }

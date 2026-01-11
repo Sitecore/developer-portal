@@ -1,10 +1,10 @@
 import {
-	parseMediaItem,
-	parseMediaItems,
-} from "@lib/changelog/types/common/media";
+    parseMediaItem,
+    parseMediaItems,
+} from "@src/lib/changelog/types/common/media";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
-vi.mock("@lib/utils", () => ({
+vi.mock("@src/lib/utils", () => ({
 	getStringValue: vi.fn((value) => value ?? ""),
 }));
 

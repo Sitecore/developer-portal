@@ -1,66 +1,66 @@
 {
-	"title": "SitecoreAI",
-	"description": "",
-	"heading": false,
-	"path": "sitecoreai",
-	"showRootAsSections": true,
-	"routes": [
-		{
-			"title": "SitecoreAI",
-			"path": "",
-			"children": [
-				{
-					"title": "Introduction",
-					"path": ""
-				},
-				{
-					"title": "Navigation",
-					"path": "navigation"
-				},
-				{
-					"title": "Sitecore Studio",
-					"path": "sitecore-studio"
-				},
-				{
-					"title": "Developer Experience",
-					"path": "dev-experience"
-				},
-				{
-					"title": "FAQs",
-					"path": "faq"
-				}
-			]
-		},
-		{
-			"title": "Capabilities",
-			"path": "capabilities",
-			"ignoreLink": true,
-			"children": [
-				{
-					"title": "Content management",
-					"path": "cms"
-				},
-				{
-					"title": "Digital asset management",
-					"path": "dam"
-				},
-				{
-					"title": "Content operations",
-					"path": "content-ops"
-				},
-				{
-					"title": "Conversion optimization",
-					"path": "conversion-optimization"
-				},
-				{
-					"title": "Unified data layer",
-					"path": "unified-data-layer"
-				},
-				{
-					"title": "Commerce",
-					"path": "commerce"
-				}
-			]
-		}
-	]
+  "title": "SitecoreAI",
+  "description": "",
+  "heading": false,
+  "path": "sitecoreai",
+  "showRootAsSections": true,
+  "routes": [
+    {
+      "title": "SitecoreAI",
+      "path": "",
+      "children": [
+        {
+          "title": "Introduction",
+          "path": ""
+        },
+        {
+          "title": "Navigation",
+          "path": "navigation"
+        },
+        {
+          "title": "Sitecore Studio",
+          "path": "sitecore-studio"
+        },
+        {
+          "title": "Developer Experience",
+          "path": "dev-experience"
+        },
+        {
+          "title": "FAQs",
+          "path": "faq"
+        }
+      ]
+    },
+    {
+      "title": "Capabilities",
+      "path": "capabilities",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Content management",
+          "path": "cms"
+        },
+        {
+          "title": "Digital asset management",
+          "path": "dam"
+        },
+        {
+          "title": "Content operations",
+          "path": "content-ops"
+        },
+        {
+          "title": "Conversion optimization",
+          "path": "conversion-optimization"
+        },
+        {
+          "title": "Unified data layer",
+          "path": "unified-data-layer"
+        },
+        {
+          "title": "Commerce",
+          "path": "commerce"
+        }
+      ]
+    }
+  ]
 }

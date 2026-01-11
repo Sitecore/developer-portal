@@ -1,10 +1,10 @@
-import { fetchGraphQL } from "@lib/changelog/common/fetch";
+import { fetchGraphQL } from "@src/lib/changelog/common/fetch";
 import {
-	ChangelogConfigurationError,
-	ChangelogGraphQLError,
-	ChangelogNetworkError,
-} from "@lib/changelog/errors";
-import type { ChangelogCredentials } from "@lib/changelog/types";
+    ChangelogConfigurationError,
+    ChangelogGraphQLError,
+    ChangelogNetworkError,
+} from "@src/lib/changelog/errors";
+import type { ChangelogCredentials } from "@src/lib/changelog/types";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
 // Mock global fetch

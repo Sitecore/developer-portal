@@ -9,10 +9,10 @@
  * @returns String value or default
  */
 export function safeStringValue(
-	value: string | null | undefined,
-	defaultValue: string = "",
+  value: string | null | undefined,
+  defaultValue: string = "",
 ): string {
-	return value ?? defaultValue;
+  return value ?? defaultValue;
 }
 
 /**
@@ -21,7 +21,7 @@ export function safeStringValue(
  * @returns Array or empty array
  */
 export function safeArrayValue<T>(value: T[] | null | undefined): T[] {
-	return value ?? [];
+  return value ?? [];
 }
 
 /**
@@ -30,5 +30,5 @@ export function safeArrayValue<T>(value: T[] | null | undefined): T[] {
  * @returns First item or undefined
  */
 export function safeFirstItem<T>(array: T[] | null | undefined): T | undefined {
-	return array && array.length > 0 ? array[0] : undefined;
+  return array && array.length > 0 ? array[0] : undefined;
 }

@@ -1,10 +1,10 @@
 import {
-	parseSitecoreProductItem,
-	parseSitecoreProductItems,
-} from "@lib/changelog/types/sitecoreProduct";
+    parseSitecoreProductItem,
+    parseSitecoreProductItems,
+} from "@src/lib/changelog/types/sitecoreProduct";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
-vi.mock("@lib/utils", () => ({
+vi.mock("@src/lib/utils", () => ({
 	getStringValue: vi.fn((value) => value ?? ""),
 }));
 

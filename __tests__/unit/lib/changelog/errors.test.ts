@@ -1,11 +1,11 @@
 import {
-	ChangelogConfigurationError,
-	ChangelogError,
-	ChangelogGraphQLError,
-	ChangelogNetworkError,
-	ChangelogNotFoundError,
-	ChangelogValidationError,
-} from "@lib/changelog/errors";
+    ChangelogConfigurationError,
+    ChangelogError,
+    ChangelogGraphQLError,
+    ChangelogNetworkError,
+    ChangelogNotFoundError,
+    ChangelogValidationError,
+} from "@src/lib/changelog/errors";
 import { describe, expect, test } from "vitest";
 
 describe("ChangelogError", () => {

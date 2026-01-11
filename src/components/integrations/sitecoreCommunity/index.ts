@@ -3,14 +3,14 @@ export { SitecoreCommunityEvents } from "./events/SitecoreCommunityEvents";
 export { SitecoreCommunityNews } from "./news/SitecoreCommunityNews";
 export { SitecoreCommunityQuestions } from "./questions/SitecoreCommunityQuestions";
 export type {
-	ContentType,
-	ForumOption,
-	SortOption,
+  ContentType,
+  ForumOption,
+  SortOption,
 } from "./SitecoreCommunity.api";
 export { SitecoreCommunityApi } from "./SitecoreCommunity.api";
 export {
-	SitecoreCommunityBlogOrQuestion,
-	SitecoreCommunityBlogOrQuestionSidebar,
+  SitecoreCommunityBlogOrQuestion,
+  SitecoreCommunityBlogOrQuestionSidebar,
 } from "./SitecoreCommunityBlogOrQuestion";
 export { SitecoreCommunityNewsOrEventItem } from "./SitecoreCommunityNewsOrEventItem";
 export * from "./sitecore-community.constants";

@@ -1,174 +1,174 @@
 {
-	"title": "Accelerate Cookbook for CDP & Personalize",
-	"description": "This Cookbook provides a set of recipes to help implementing CDP and Personalize through setup, configuration and implementation.",
-	"productLogo": "CDP",
-	"path": "/learn/accelerate/cdp-personalize",
-	"productFeedbackLabel": ["CDP"],
-	"heading": true,
-	"enableSearch": false,
-	"enableBreadcrumb": true,
-	"showRootAsSections": true,
-	"generateLLM": true,
-	"routes": [
-		{
-			"title": "Pre-development",
-			"path": "pre-development",
-			"ignoreLink": true,
-			"children": [
-				{
-					"title": "Discovery",
-					"path": "discovery"
-				},
-				{
-					"title": "Use Case Scoping",
-					"path": "use-case-scoping"
-				},
-				{
-					"title": "Change Management",
-					"path": "change-management"
-				},
-				{
-					"title": "Omnichannel Preparation",
-					"path": "omnichannel-preparation"
-				},
-				{
-					"title": "Web vs Interactive Experiences",
-					"path": "web-vs-interactive"
-				},
-				{
-					"title": "Developing an Identity Strategy",
-					"path": "identity-strategy"
-				},
-				{
-					"title": "Segmentation",
-					"path": "segmentation"
-				},
-				{
-					"title": "Experiments Strategy",
-					"path": "experimentation"
-				}
-			]
-		},
-		{
-			"title": "Implementation",
-			"path": "implementation",
-			"ignoreLink": true,
-			"children": [
-				{
-					"title": "Integrations",
-					"path": "integrations",
-					"ignoreLink": true,
-					"children": [
-						{
-							"title": "CDP Integrations",
-							"path": "cdp-integration"
-						},
-						{
-							"title": "Personalize Integrations",
-							"path": "personalize-integrations"
-						}
-					]
-				},
-				{
-					"title": "Abandoned Cart Email",
-					"path": "abandoned-cart-email",
-					"ignoreLink": false
-				},
-				{
-					"title": "Alert Bar",
-					"path": "alert-bar",
-					"ignoreLink": false
-				},
-				{
-					"title": "Before You Fly Reminder",
-					"path": "before-you-fly",
-					"ignoreLink": false
-				},
-				{
-					"title": "Browser Tab Re-engagement",
-					"path": "browser-tab",
-					"ignoreLink": false
-				},
-				{
-					"title": "Identifying churn risk",
-					"path": "churn-risk",
-					"ignoreLink": false
-				},
-				{
-					"title": "Home Page Personalization",
-					"path": "home-page-personalization",
-					"ignoreLink": false
-				},
-				{
-					"title": "Mortgage Journey Alert",
-					"path": "mortgage-journey-alert",
-					"ignoreLink": false
-				},
-				{
-					"title": "Last Search Experience",
-					"path": "last-search-experience",
-					"ignoreLink": false
-				},
-				{
-					"title": "Self Service Nudge",
-					"path": "self-service-nudge",
-					"ignoreLink": false
-				}
-			]
-		},
-		{
-			"title": "Final Steps",
-			"path": "final-steps",
-			"ignoreLink": true,
-			"children": [
-				{
-					"title": "Validating Guest Data",
-					"path": "data-validation",
-					"ignoreLink": false
-				},
-				{
-					"title": "Decision Models Automated Testing",
-					"path": "decision-model-testing",
-					"ignoreLink": false
-				},
-				{
-					"title": "Go-Live Checklist",
-					"path": "go-live-checklist",
-					"ignoreLink": false
-				}
-			]
-		},
-		{
-			"title": "Optimization",
-			"path": "optimization",
-			"ignoreLink": true,
-			"children": [
-				{
-					"title": "Decision Model Optimization",
-					"path": "decision-model-optimization",
-					"ignoreLink": false
-				},
-				{
-					"title": "Personalization Vision",
-					"path": "personalization-vision",
-					"ignoreLink": false
-				}
-			]
-		},
-		{
-			"title": "Appendix I",
-			"path": "appendix-i",
-			"ignoreLink": true,
-			"children": [
-				{
-					"title": "CDP Glossary",
-					"path": "cdp-glossary"
-				},
-				{
-					"title": "Personalize Glossary",
-					"path": "personalize-glossary"
-				}
-			]
-		}
-	]
+  "title": "Accelerate Cookbook for CDP & Personalize",
+  "description": "This Cookbook provides a set of recipes to help implementing CDP and Personalize through setup, configuration and implementation.",
+  "productLogo": "CDP",
+  "path": "/learn/accelerate/cdp-personalize",
+  "productFeedbackLabel": ["CDP"],
+  "heading": true,
+  "enableSearch": false,
+  "enableBreadcrumb": true,
+  "showRootAsSections": true,
+  "generateLLM": true,
+  "routes": [
+    {
+      "title": "Pre-development",
+      "path": "pre-development",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Discovery",
+          "path": "discovery"
+        },
+        {
+          "title": "Use Case Scoping",
+          "path": "use-case-scoping"
+        },
+        {
+          "title": "Change Management",
+          "path": "change-management"
+        },
+        {
+          "title": "Omnichannel Preparation",
+          "path": "omnichannel-preparation"
+        },
+        {
+          "title": "Web vs Interactive Experiences",
+          "path": "web-vs-interactive"
+        },
+        {
+          "title": "Developing an Identity Strategy",
+          "path": "identity-strategy"
+        },
+        {
+          "title": "Segmentation",
+          "path": "segmentation"
+        },
+        {
+          "title": "Experiments Strategy",
+          "path": "experimentation"
+        }
+      ]
+    },
+    {
+      "title": "Implementation",
+      "path": "implementation",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Integrations",
+          "path": "integrations",
+          "ignoreLink": true,
+          "children": [
+            {
+              "title": "CDP Integrations",
+              "path": "cdp-integration"
+            },
+            {
+              "title": "Personalize Integrations",
+              "path": "personalize-integrations"
+            }
+          ]
+        },
+        {
+          "title": "Abandoned Cart Email",
+          "path": "abandoned-cart-email",
+          "ignoreLink": false
+        },
+        {
+          "title": "Alert Bar",
+          "path": "alert-bar",
+          "ignoreLink": false
+        },
+        {
+          "title": "Before You Fly Reminder",
+          "path": "before-you-fly",
+          "ignoreLink": false
+        },
+        {
+          "title": "Browser Tab Re-engagement",
+          "path": "browser-tab",
+          "ignoreLink": false
+        },
+        {
+          "title": "Identifying churn risk",
+          "path": "churn-risk",
+          "ignoreLink": false
+        },
+        {
+          "title": "Home Page Personalization",
+          "path": "home-page-personalization",
+          "ignoreLink": false
+        },
+        {
+          "title": "Mortgage Journey Alert",
+          "path": "mortgage-journey-alert",
+          "ignoreLink": false
+        },
+        {
+          "title": "Last Search Experience",
+          "path": "last-search-experience",
+          "ignoreLink": false
+        },
+        {
+          "title": "Self Service Nudge",
+          "path": "self-service-nudge",
+          "ignoreLink": false
+        }
+      ]
+    },
+    {
+      "title": "Final Steps",
+      "path": "final-steps",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Validating Guest Data",
+          "path": "data-validation",
+          "ignoreLink": false
+        },
+        {
+          "title": "Decision Models Automated Testing",
+          "path": "decision-model-testing",
+          "ignoreLink": false
+        },
+        {
+          "title": "Go-Live Checklist",
+          "path": "go-live-checklist",
+          "ignoreLink": false
+        }
+      ]
+    },
+    {
+      "title": "Optimization",
+      "path": "optimization",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "Decision Model Optimization",
+          "path": "decision-model-optimization",
+          "ignoreLink": false
+        },
+        {
+          "title": "Personalization Vision",
+          "path": "personalization-vision",
+          "ignoreLink": false
+        }
+      ]
+    },
+    {
+      "title": "Appendix I",
+      "path": "appendix-i",
+      "ignoreLink": true,
+      "children": [
+        {
+          "title": "CDP Glossary",
+          "path": "cdp-glossary"
+        },
+        {
+          "title": "Personalize Glossary",
+          "path": "personalize-glossary"
+        }
+      ]
+    }
+  ]
 }

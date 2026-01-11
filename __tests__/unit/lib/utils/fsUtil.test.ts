@@ -1,6 +1,6 @@
-import path from "node:path";
-import { searchForFile } from "@lib/utils/fsUtils";
+import { searchForFile } from "@/src/lib/util/fsUtils";
 import { vol } from "memfs";
+import path from "node:path";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
 vi.mock("fs");

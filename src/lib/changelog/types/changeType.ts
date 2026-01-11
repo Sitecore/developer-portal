@@ -1,14 +1,14 @@
 import type {
-	ChangeTypeFragment,
-	GetAllChangetypesQuery,
+  ChangeTypeFragment,
+  GetAllChangetypesQuery,
 } from "@data/gql/generated/graphql";
-import { getStringValue, slugify } from "@src/lib/utils/stringUtil";
+import { getStringValue, slugify } from "@/src/lib/util/stringUtil";
 
 export type ChangeType = {
-	id: string;
-	name: string;
-	changeType: string;
-	type: string;
+  id: string;
+  name: string;
+  changeType: string;
+  type: string;
 };
 
 /**
@@ -17,29 +17,29 @@ export type ChangeType = {
  * @returns Parsed ChangeType
  */
 export function parseChangeTypeItem(
-	rawItem: ChangeTypeFragment | null | undefined,
+  rawItem: ChangeTypeFragment | null | undefined,
 ): ChangeType {
-	if (!rawItem) {
-		throw new Error("Invalid ChangeType: rawItem is null or undefined");
-	}
+  if (!rawItem) {
+    throw new Error("Invalid ChangeType: rawItem is null or undefined");
+  }
 
-	return {
-		name: getStringValue(rawItem.changeType),
-		changeType: getStringValue(rawItem.changeType),
-		id: getStringValue(rawItem.system?.id),
-		type: slugify(getStringValue(rawItem.system?.name)),
-	};
+  return {
+    name: getStringValue(rawItem.changeType),
+    changeType: getStringValue(rawItem.changeType),
+    id: getStringValue(rawItem.system?.id),
+    type: slugify(getStringValue(rawItem.system?.name)),
+  };
 }
 
 /**
  * Parse multiple ChangeTypes from a GraphQL query result
  */
 export function ParseChangeType(
-	data: GetAllChangetypesQuery,
+  data: GetAllChangetypesQuery,
 ): Array<ChangeType> {
-	if (!data.manyChangetype?.results) {
-		return [];
-	}
+  if (!data.manyChangetype?.results) {
+    return [];
+  }
 
-	return data.manyChangetype.results?.map((x) => parseChangeTypeItem(x));
+  return data.manyChangetype.results?.map((x) => parseChangeTypeItem(x));
 }

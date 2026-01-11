@@ -1,22 +1,22 @@
 import {
-	ParseRawData,
-	parseChangeLogItem,
-} from "@lib/changelog/types/changeLogEntry";
+    ParseRawData,
+    parseChangeLogItem,
+} from "@src/lib/changelog/types/changeLogEntry";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
 vi.mock("@tiptap/html", () => ({
 	generateHTML: vi.fn((content) => `<p>${JSON.stringify(content)}</p>`),
 }));
 
-vi.mock("@lib/changelog/utils/date", () => ({
+vi.mock("@src/lib/changelog/utils/date", () => ({
 	formatReleaseDate: vi.fn((date) => (date ? "Jul 12, 2024" : "")),
 }));
 
-vi.mock("@lib/utils", () => ({
+vi.mock("@src/lib/utils", () => ({
 	getStringValue: vi.fn((value) => value ?? ""),
 }));
 
-vi.mock("@lib/changelog/types/changeType", () => ({
+vi.mock("@src/lib/changelog/types/changeType", () => ({
 	parseChangeTypeItem: vi.fn((_item) => ({
 		id: "change-1",
 		name: "Feature",
@@ -25,7 +25,7 @@ vi.mock("@lib/changelog/types/changeType", () => ({
 	})),
 }));
 
-vi.mock("@lib/changelog/types/common/media", () => ({
+vi.mock("@src/lib/changelog/types/common/media", () => ({
 	parseMediaItem: vi.fn((_item) => ({
 		id: "media-1",
 		name: "image.png",
@@ -40,7 +40,7 @@ vi.mock("@lib/changelog/types/common/media", () => ({
 	})),
 }));
 
-vi.mock("@lib/changelog/types/sitecoreProduct", () => ({
+vi.mock("@src/lib/changelog/types/sitecoreProduct", () => ({
 	parseSitecoreProductItem: vi.fn((_item) => ({
 		id: "product-1",
 		name: "Product A",
@@ -51,7 +51,7 @@ vi.mock("@lib/changelog/types/sitecoreProduct", () => ({
 	})),
 }));
 
-vi.mock("@lib/changelog/types/status", () => ({
+vi.mock("@src/lib/changelog/types/status", () => ({
 	parseStatusItem: vi.fn((_item) => ({
 		id: "status-1",
 		name: "Available",

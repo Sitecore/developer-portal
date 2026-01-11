@@ -1,11 +1,11 @@
 import {
-	DefaultStatus,
-	ParseStatus,
-	parseStatusItem,
-} from "@lib/changelog/types/status";
+    DefaultStatus,
+    ParseStatus,
+    parseStatusItem,
+} from "@src/lib/changelog/types/status";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
-vi.mock("@lib/utils", () => ({
+vi.mock("@src/lib/utils", () => ({
 	getStringValue: vi.fn((value) => value ?? ""),
 }));
 

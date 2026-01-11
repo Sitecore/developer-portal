@@ -20,72 +20,72 @@ if (!env) missingVars.push("SITECORE_CS_ENV");
 if (!token) missingVars.push("SITECORE_CS_AUTH_TOKEN_PREVIEW");
 
 if (missingVars.length > 0) {
-	console.error("\n❌ Missing required environment variables:");
-	for (const varName of missingVars) {
-		console.error(`   - ${varName}`);
-	}
-	console.error("\n💡 Please ensure these variables are set in:");
-	console.error("   - .env.local (recommended for local development)");
-	console.error("   - .env");
-	console.error("   - System environment variables\n");
-	process.exit(1);
+  console.error("\n❌ Missing required environment variables:");
+  for (const varName of missingVars) {
+    console.error(`   - ${varName}`);
+  }
+  console.error("\n💡 Please ensure these variables are set in:");
+  console.error("   - .env.local (recommended for local development)");
+  console.error("   - .env");
+  console.error("   - System environment variables\n");
+  process.exit(1);
 }
 
 // Build preview endpoint URL (same as credentials.ts)
 const previewEndpoint = `${endpoint}/${tenant}/${env}?preview=true`;
 
 const config: CodegenConfig = {
-	overwrite: true,
-	schema: [
-		{
-			[previewEndpoint]: {
-				headers: {
-					Authorization: `Bearer ${token}`,
-					"Content-Type": "application/json",
-				},
-			},
-		},
-	],
-	documents: ["./data/gql/query/**/*.graphql"],
-	ignoreNoDocuments: false,
-	generates: {
-		// Generate schema file from the fetched schema
-		"./data/gql/schema/schema.graphql": {
-			plugins: ["schema-ast"],
-			config: {
-				includeDirectives: true,
-			},
-		},
-		// Generate TypeScript types and client code
-		"./data/gql/generated/": {
-			preset: "client",
-			config: {
-				avoidOptionals: {
-					field: true,
-					inputValue: true,
-					object: true,
-					defaultValue: true,
-				},
-				documentMode: "string",
-				skipTypename: true,
-				skipDocumentsValidation: {
-					skipValidationAgainstSchema: true,
-				},
-				scalars: {
-					ID: {
-						input: "string",
-						output: "string",
-					},
-					CustomDateTime: "Date",
-					JSON: "{ [key: string]: any }",
-				},
-			},
-			presetConfig: {
-				fragmentMasking: false,
-			},
-		},
-	},
-	hooks: { afterAllFileWrite: ["prettier --write"] },
+  overwrite: true,
+  schema: [
+    {
+      [previewEndpoint]: {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      },
+    },
+  ],
+  documents: ["./data/gql/query/**/*.graphql"],
+  ignoreNoDocuments: false,
+  generates: {
+    // Generate schema file from the fetched schema
+    "./data/gql/schema/schema.graphql": {
+      plugins: ["schema-ast"],
+      config: {
+        includeDirectives: true,
+      },
+    },
+    // Generate TypeScript types and client code
+    "./data/gql/generated/": {
+      preset: "client",
+      config: {
+        avoidOptionals: {
+          field: true,
+          inputValue: true,
+          object: true,
+          defaultValue: true,
+        },
+        documentMode: "string",
+        skipTypename: true,
+        skipDocumentsValidation: {
+          skipValidationAgainstSchema: true,
+        },
+        scalars: {
+          ID: {
+            input: "string",
+            output: "string",
+          },
+          CustomDateTime: "Date",
+          JSON: "{ [key: string]: any }",
+        },
+      },
+      presetConfig: {
+        fragmentMasking: false,
+      },
+    },
+  },
+  hooks: { afterAllFileWrite: ["prettier --write"] },
 };
 
 export default config;

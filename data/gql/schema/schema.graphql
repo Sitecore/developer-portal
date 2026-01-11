@@ -1,563 +1,563 @@
 schema {
-	query: Query
+  query: Query
 }
 
 """
 The purpose of the `cost` directive is to define a `weight` for GraphQL types, fields, and arguments. Static analysis can use these weights when calculating the overall cost of a query or response.
 """
 directive @cost(
-	"""
-	The `weight` argument defines what value to add to the overall cost for every appearance, or possible appearance, of a type, field, argument, etc.
-	"""
-	weight: String!
+  """
+  The `weight` argument defines what value to add to the overall cost for every appearance, or possible appearance, of a type, field, argument, etc.
+  """
+  weight: String!
 ) on ARGUMENT_DEFINITION | ENUM | FIELD_DEFINITION | INPUT_FIELD_DEFINITION | OBJECT | SCALAR
 
 """
 GraphQL filter for boolean fields.
 """
 input BooleanFilterInput {
-	"""
-	Matches the specified value.
-	"""
-	equals: Boolean
-	"""
-	Does not match the specified value.
-	"""
-	notEquals: Boolean
+  """
+  Matches the specified value.
+  """
+  equals: Boolean
+  """
+  Does not match the specified value.
+  """
+  notEquals: Boolean
 }
 
 """
 Indicates whether a string comparison should be case-sensitive or case-insensitive.
 """
 enum CaseSensitive {
-	"""
-	Case-insensitive match.
-	"""
-	INSENSITIVE
-	"""
-	Case-sensitive match.
-	"""
-	SENSITIVE
+  """
+  Case-insensitive match.
+  """
+  INSENSITIVE
+  """
+  Case-sensitive match.
+  """
+  SENSITIVE
 }
 
 type Changelog implements ContentItem {
-	"""
-	Does this change include a breaking change? (does not apply to XM Cloud)
-	"""
-	breakingChange: Boolean
-	"""
-	Please select a change type
-	"""
-	changeType(
-		after: String
-		"""
-		A filter used for searching the reference items.
-		"""
-		filter: Changelog_changeType_Relations
-		minimumPageSize: Int = 20
-		"""
-		Order the results
-		"""
-		orderBy: ContentItemSortingOptions
-	): ContentItemList
-	"""
-	The text that will be rendered in the overview
-	"""
-	description: JSON
-	"""
-	The content that will be visible on the detail page (not required)
-	"""
-	fullArticle: JSON
-	image(
-		after: String
-		"""
-		A filter used for searching the reference items.
-		"""
-		filter: Changelog_image_Relations
-		minimumPageSize: Int = 20
-		"""
-		Order the results
-		"""
-		orderBy: ContentItemSortingOptions
-	): ContentItemList
-	"""
-	Mentions the related issue number (if applicable)
-	"""
-	issueNumber: String
-	"""
-	You can link to an external page where more information can be found
-	"""
-	readMoreLink: String
-	releaseDate: UTCDateTime
-	"""
-	Should this changelog item be considered as an announcement?
-	"""
-	scheduled: Boolean
-	"""
-	Please select one product from the list
-	"""
-	sitecoreProduct(
-		after: String
-		"""
-		A filter used for searching the reference items.
-		"""
-		filter: Changelog_sitecoreProduct_Relations
-		minimumPageSize: Int = 20
-		"""
-		Order the results
-		"""
-		orderBy: ContentItemSortingOptions
-	): ContentItemList
-	"""
-	Please select a release status
-	"""
-	status(
-		after: String
-		"""
-		A filter used for searching the reference items.
-		"""
-		filter: Changelog_status_Relations
-		minimumPageSize: Int = 20
-		"""
-		Order the results
-		"""
-		orderBy: ContentItemSortingOptions
-	): ContentItemList
-	system: System!
-	title: String
-	"""
-	Only use the version field if applicable
-	"""
-	x_version: String
+  """
+  Does this change include a breaking change? (does not apply to XM Cloud)
+  """
+  breakingChange: Boolean
+  """
+  Please select a change type
+  """
+  changeType(
+    after: String
+    """
+    A filter used for searching the reference items.
+    """
+    filter: Changelog_changeType_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  """
+  The text that will be rendered in the overview
+  """
+  description: JSON
+  """
+  The content that will be visible on the detail page (not required)
+  """
+  fullArticle: JSON
+  image(
+    after: String
+    """
+    A filter used for searching the reference items.
+    """
+    filter: Changelog_image_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  """
+  Mentions the related issue number (if applicable)
+  """
+  issueNumber: String
+  """
+  You can link to an external page where more information can be found
+  """
+  readMoreLink: String
+  releaseDate: UTCDateTime
+  """
+  Should this changelog item be considered as an announcement?
+  """
+  scheduled: Boolean
+  """
+  Please select one product from the list
+  """
+  sitecoreProduct(
+    after: String
+    """
+    A filter used for searching the reference items.
+    """
+    filter: Changelog_sitecoreProduct_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  """
+  Please select a release status
+  """
+  status(
+    after: String
+    """
+    A filter used for searching the reference items.
+    """
+    filter: Changelog_status_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  system: System!
+  title: String
+  """
+  Only use the version field if applicable
+  """
+  x_version: String
 }
 
 """
 Represents a list of content items.
 """
 type ChangelogList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of content items.
-	"""
-	results: [Changelog]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [Changelog]
 }
 
 """
 Enum type used for sorting in QueryMany.
 """
 enum ChangelogSortingOptions {
-	BREAKING_CHANGE_ASC
-	BREAKING_CHANGE_DESC
-	ISSUE_NUMBER_ASC
-	ISSUE_NUMBER_DESC
-	READ_MORE_LINK_ASC
-	READ_MORE_LINK_DESC
-	RELEASE_DATE_ASC
-	RELEASE_DATE_DESC
-	SCHEDULED_ASC
-	SCHEDULED_DESC
-	SYSTEM_CREATED_ASC
-	SYSTEM_CREATED_BY_ASC
-	SYSTEM_CREATED_BY_DESC
-	SYSTEM_CREATED_DESC
-	SYSTEM_ID_ASC
-	SYSTEM_ID_DESC
-	SYSTEM_LOCALE_ASC
-	SYSTEM_LOCALE_DESC
-	SYSTEM_NAME_ASC
-	SYSTEM_NAME_DESC
-	SYSTEM_STATUS_ASC
-	SYSTEM_STATUS_DESC
-	SYSTEM_UPDATED_ASC
-	SYSTEM_UPDATED_BY_ASC
-	SYSTEM_UPDATED_BY_DESC
-	SYSTEM_UPDATED_DESC
-	SYSTEM_VERSION_ASC
-	SYSTEM_VERSION_DESC
-	TITLE_ASC
-	TITLE_DESC
-	X_VERSION_ASC
-	X_VERSION_DESC
+  BREAKING_CHANGE_ASC
+  BREAKING_CHANGE_DESC
+  ISSUE_NUMBER_ASC
+  ISSUE_NUMBER_DESC
+  READ_MORE_LINK_ASC
+  READ_MORE_LINK_DESC
+  RELEASE_DATE_ASC
+  RELEASE_DATE_DESC
+  SCHEDULED_ASC
+  SCHEDULED_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
+  TITLE_ASC
+  TITLE_DESC
+  X_VERSION_ASC
+  X_VERSION_DESC
 }
 
 """
 GraphQL filter for content items.
 """
 input Changelog_Filter {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changelog_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changelog_Filter]
-	breakingChange: BooleanFilterInput
-	changeType: ReferenceFilterInput
-	image: ReferenceFilterInput
-	issueNumber: StringFilterInput
-	readMoreLink: StringFilterInput
-	releaseDate: DateTimeFilterInput
-	scheduled: BooleanFilterInput
-	sitecoreProduct: ReferenceFilterInput
-	status: ReferenceFilterInput
-	system: SystemTypeFilterInput
-	title: StringFilterInput
-	x_version: StringFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_Filter]
+  breakingChange: BooleanFilterInput
+  changeType: ReferenceFilterInput
+  image: ReferenceFilterInput
+  issueNumber: StringFilterInput
+  readMoreLink: StringFilterInput
+  releaseDate: DateTimeFilterInput
+  scheduled: BooleanFilterInput
+  sitecoreProduct: ReferenceFilterInput
+  status: ReferenceFilterInput
+  system: SystemTypeFilterInput
+  title: StringFilterInput
+  x_version: StringFilterInput
 }
 
 """
 GraphQL root filter for content items references.
 """
 input Changelog_changeType_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changelog_changeType_changetype_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changelog_changeType_changetype_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_changeType_changetype_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_changeType_changetype_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
 input Changelog_changeType_changetype_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changelog_changeType_changetype_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changelog_changeType_changetype_Relations]
-	changetype: Changetype_Filter
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_changeType_changetype_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_changeType_changetype_Relations]
+  changetype: Changetype_Filter
+  system: SystemTypeFilterInput
 }
 
 """
 GraphQL root filter for content items references.
 """
 input Changelog_image_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
 input Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-	changelog: Changelog_Filter
-	changetype: Changetype_Filter
-	sitecoreCloud: SitecoreCloud_Filter
-	sitecoreProduct: SitecoreProduct_Filter
-	status: Status_Filter
-	system: SystemTypeFilterInput
-	upload: Upload_Filter
-	xMCMedia: XMCMedia_Filter
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  changelog: Changelog_Filter
+  changetype: Changetype_Filter
+  sitecoreCloud: SitecoreCloud_Filter
+  sitecoreProduct: SitecoreProduct_Filter
+  status: Status_Filter
+  system: SystemTypeFilterInput
+  upload: Upload_Filter
+  xMCMedia: XMCMedia_Filter
 }
 
 """
 GraphQL root filter for content items references.
 """
 input Changelog_sitecoreProduct_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
 input Changelog_sitecoreProduct_sitecoreProduct_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
-	sitecoreProduct: SitecoreProduct_Filter
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
+  sitecoreProduct: SitecoreProduct_Filter
+  system: SystemTypeFilterInput
 }
 
 """
 GraphQL root filter for content items references.
 """
 input Changelog_status_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changelog_status_status_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changelog_status_status_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_status_status_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_status_status_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
 input Changelog_status_status_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changelog_status_status_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changelog_status_status_Relations]
-	status: Status_Filter
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_status_status_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_status_status_Relations]
+  status: Status_Filter
+  system: SystemTypeFilterInput
 }
 
 type Changetype implements ContentItem {
-	changeType: String
-	system: System!
+  changeType: String
+  system: System!
 }
 
 """
 Represents a list of content items.
 """
 type ChangetypeList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of content items.
-	"""
-	results: [Changetype]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [Changetype]
 }
 
 """
 Enum type used for sorting in QueryMany.
 """
 enum ChangetypeSortingOptions {
-	CHANGE_TYPE_ASC
-	CHANGE_TYPE_DESC
-	SYSTEM_CREATED_ASC
-	SYSTEM_CREATED_BY_ASC
-	SYSTEM_CREATED_BY_DESC
-	SYSTEM_CREATED_DESC
-	SYSTEM_ID_ASC
-	SYSTEM_ID_DESC
-	SYSTEM_LOCALE_ASC
-	SYSTEM_LOCALE_DESC
-	SYSTEM_NAME_ASC
-	SYSTEM_NAME_DESC
-	SYSTEM_STATUS_ASC
-	SYSTEM_STATUS_DESC
-	SYSTEM_UPDATED_ASC
-	SYSTEM_UPDATED_BY_ASC
-	SYSTEM_UPDATED_BY_DESC
-	SYSTEM_UPDATED_DESC
-	SYSTEM_VERSION_ASC
-	SYSTEM_VERSION_DESC
+  CHANGE_TYPE_ASC
+  CHANGE_TYPE_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
 }
 
 """
 GraphQL filter for content items.
 """
 input Changetype_Filter {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changetype_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changetype_Filter]
-	changeType: StringFilterInput
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changetype_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changetype_Filter]
+  changeType: StringFilterInput
+  system: SystemTypeFilterInput
 }
 
 """
 Represents common fields for all content types.
 """
 interface ContentItem {
-	"""
-	The system fields of the content item.
-	"""
-	system: System
+  """
+  The system fields of the content item.
+  """
+  system: System
 }
 
 """
 Represents a list of content items.
 """
 type ContentItemList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of content items.
-	"""
-	results: [ContentItem]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [ContentItem]
 }
 
 """
 Enum type used for sorting in Reference fields.
 """
 enum ContentItemSortingOptions {
-	"""
-	Indicates sorting by CreatedAt system field ascending.
-	"""
-	SYSTEM_CREATEDAT_ASC
-	"""
-	Indicates sorting by CreatedAt system field descending.
-	"""
-	SYSTEM_CREATEDAT_DESC
-	"""
-	Indicates sorting by CreatedBy system field ascending.
-	"""
-	SYSTEM_CREATED_ASC
-	"""
-	Indicates sorting by CreatedBy system field descending.
-	"""
-	SYSTEM_CREATED_DESC
-	"""
-	Indicates sorting by ID ascending.
-	"""
-	SYSTEM_ID_ASC
-	"""
-	Indicates sorting by ID descending.
-	"""
-	SYSTEM_ID_DESC
-	"""
-	Indicates sorting by Locale ascending.
-	"""
-	SYSTEM_LOCALE_ASC
-	"""
-	Indicates sorting by Locale descending.
-	"""
-	SYSTEM_LOCALE_DESC
-	"""
-	Indicates sorting by Name descending.
-	"""
-	SYSTEM_NAME_ASC
-	"""
-	Sort by Name descending.
-	"""
-	SYSTEM_NAME_DESC
-	"""
-	Indicates sorting by PublishingStatus system field ascending.
-	"""
-	SYSTEM_STATUS_ASC
-	"""
-	Indicates sorting by PublishingStatus system field descending.
-	"""
-	SYSTEM_STATUS_DESC
-	"""
-	Indicates sorting by UpdatedAt system field ascending.
-	"""
-	SYSTEM_UPDATEDAT_ASC
-	"""
-	Indicates sorting by UpdatedAt system field descending.
-	"""
-	SYSTEM_UPDATEDAT_DESC
-	"""
-	Indicates sorting by UpdatedBy system field ascending.
-	"""
-	SYSTEM_UPDATED_ASC
-	"""
-	Indicates sorting by UpdatedBy system field ascending.
-	"""
-	SYSTEM_UPDATED_DESC
-	"""
-	Indicates sorting by Version ascending.
-	"""
-	SYSTEM_VERSION_ASC
-	"""
-	Indicates sorting by Version descending.
-	"""
-	SYSTEM_VERSION_DESC
+  """
+  Indicates sorting by CreatedAt system field ascending.
+  """
+  SYSTEM_CREATEDAT_ASC
+  """
+  Indicates sorting by CreatedAt system field descending.
+  """
+  SYSTEM_CREATEDAT_DESC
+  """
+  Indicates sorting by CreatedBy system field ascending.
+  """
+  SYSTEM_CREATED_ASC
+  """
+  Indicates sorting by CreatedBy system field descending.
+  """
+  SYSTEM_CREATED_DESC
+  """
+  Indicates sorting by ID ascending.
+  """
+  SYSTEM_ID_ASC
+  """
+  Indicates sorting by ID descending.
+  """
+  SYSTEM_ID_DESC
+  """
+  Indicates sorting by Locale ascending.
+  """
+  SYSTEM_LOCALE_ASC
+  """
+  Indicates sorting by Locale descending.
+  """
+  SYSTEM_LOCALE_DESC
+  """
+  Indicates sorting by Name descending.
+  """
+  SYSTEM_NAME_ASC
+  """
+  Sort by Name descending.
+  """
+  SYSTEM_NAME_DESC
+  """
+  Indicates sorting by PublishingStatus system field ascending.
+  """
+  SYSTEM_STATUS_ASC
+  """
+  Indicates sorting by PublishingStatus system field descending.
+  """
+  SYSTEM_STATUS_DESC
+  """
+  Indicates sorting by UpdatedAt system field ascending.
+  """
+  SYSTEM_UPDATEDAT_ASC
+  """
+  Indicates sorting by UpdatedAt system field descending.
+  """
+  SYSTEM_UPDATEDAT_DESC
+  """
+  Indicates sorting by UpdatedBy system field ascending.
+  """
+  SYSTEM_UPDATED_ASC
+  """
+  Indicates sorting by UpdatedBy system field ascending.
+  """
+  SYSTEM_UPDATED_DESC
+  """
+  Indicates sorting by Version ascending.
+  """
+  SYSTEM_VERSION_ASC
+  """
+  Indicates sorting by Version descending.
+  """
+  SYSTEM_VERSION_DESC
 }
 
 """
 Represents common fields for all content types.
 """
 type ContentItemType implements ContentItem {
-	system: System!
+  system: System!
 }
 
 """
 GraphQL filter for content items.
 """
 input ContentItem_Filter {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [ContentItem_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [ContentItem_Filter]
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [ContentItem_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [ContentItem_Filter]
+  system: SystemTypeFilterInput
 }
 
 """
 Represents the GraphQL object type for ContentTypeSummary.
 """
 type ContentTypeSummary {
-	id: ID!
-	name: String!
-	version: Int!
+  id: ID!
+  name: String!
+  version: Int!
 }
 
 """
 Graphql filter for content type summaries.
 """
 input ContentTypeSummary_Filter {
-	id: StringFilterInput
+  id: StringFilterInput
 }
 
 scalar CustomDateTime
@@ -566,88 +566,88 @@ scalar CustomDateTime
 GraphQL filter for datetime ranges.
 """
 input DateRangeInput {
-	"""
-	The start date.
-	"""
-	from: CustomDateTime!
-	"""
-	The end date.
-	"""
-	to: CustomDateTime!
+  """
+  The start date.
+  """
+  from: CustomDateTime!
+  """
+  The end date.
+  """
+  to: CustomDateTime!
 }
 
 """
 GraphQL filter for DateTime fields.
 """
 input DateTimeFilterInput {
-	"""
-	Matches the specified value.
-	"""
-	equals: CustomDateTime
-	"""
-	Matches values greater than the specified value.
-	"""
-	greaterThan: CustomDateTime
-	"""
-	Matches values within a specified range.
-	"""
-	inRange: DateRangeInput
-	"""
-	Matches values less than the specified value.
-	"""
-	lessThan: CustomDateTime
-	"""
-	Does not match the specified value.
-	"""
-	notEquals: CustomDateTime
-	"""
-	Excludes values within a specified range.
-	"""
-	notInRange: DateRangeInput
+  """
+  Matches the specified value.
+  """
+  equals: CustomDateTime
+  """
+  Matches values greater than the specified value.
+  """
+  greaterThan: CustomDateTime
+  """
+  Matches values within a specified range.
+  """
+  inRange: DateRangeInput
+  """
+  Matches values less than the specified value.
+  """
+  lessThan: CustomDateTime
+  """
+  Does not match the specified value.
+  """
+  notEquals: CustomDateTime
+  """
+  Excludes values within a specified range.
+  """
+  notInRange: DateRangeInput
 }
 
 """
 GraphQL filter for integer fields.
 """
 input DoubleFilterInput {
-	"""
-	Matches the specified value.
-	"""
-	equals: Float
-	"""
-	Matches values greater than the specified value.
-	"""
-	greaterThan: Float
-	"""
-	Matches values within a specified range.
-	"""
-	inRange: DoubleRangeInput
-	"""
-	Matches values less than the specified value.
-	"""
-	lessThan: Float
-	"""
-	Does not match the specified value.
-	"""
-	notEquals: Float
-	"""
-	Excludes values within a specified range.
-	"""
-	notInRange: DoubleRangeInput
+  """
+  Matches the specified value.
+  """
+  equals: Float
+  """
+  Matches values greater than the specified value.
+  """
+  greaterThan: Float
+  """
+  Matches values within a specified range.
+  """
+  inRange: DoubleRangeInput
+  """
+  Matches values less than the specified value.
+  """
+  lessThan: Float
+  """
+  Does not match the specified value.
+  """
+  notEquals: Float
+  """
+  Excludes values within a specified range.
+  """
+  notInRange: DoubleRangeInput
 }
 
 """
 GraphQL filter for number ranges.
 """
 input DoubleRangeInput {
-	"""
-	The lower boundary of the range.
-	"""
-	from: Float!
-	"""
-	The upper boundary of the range.
-	"""
-	to: Float!
+  """
+  The lower boundary of the range.
+  """
+  from: Float!
+  """
+  The upper boundary of the range.
+  """
+  to: Float!
 }
 
 scalar JSON
@@ -656,1214 +656,1214 @@ scalar JSON
 Represents a language and regional setting.
 """
 type Locale {
-	system: LocaleSystemTypeType
+  system: LocaleSystemTypeType
 }
 
 type LocaleSystemTypeType {
-	createdAt: UTCDateTime!
-	createdBy: String!
-	id: ID!
-	label: String
-	updatedAt: UTCDateTime!
-	updatedBy: String!
+  createdAt: UTCDateTime!
+  createdBy: String!
+  id: ID!
+  label: String
+  updatedAt: UTCDateTime!
+  updatedBy: String!
 }
 
 """
 Represents common interface for all content types containing MediaLibraryFragment fragment.
 """
 interface MediaLibraryFragment implements ContentItem {
-	"""
-	The size of the file.
-	"""
-	media_fileSize: Float
-	"""
-	The private link to use for the media asset enabling displaying it in authoring without making it publically available.
-	"""
-	media_privateLink: String
-	"""
-	The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset.
-	"""
-	media_publicLink: String
-	"""
-	The thumbnail link to use for the media asset.
-	"""
-	media_thumbnailLink: String
-	"""
-	The file type of the media asset.
-	"""
-	media_type: [TaxonomyTerm]
-	"""
-	The system fields of the content item.
-	"""
-	system: System
+  """
+  The size of the file.
+  """
+  media_fileSize: Float
+  """
+  The private link to use for the media asset enabling displaying it in authoring without making it publically available.
+  """
+  media_privateLink: String
+  """
+  The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset.
+  """
+  media_publicLink: String
+  """
+  The thumbnail link to use for the media asset.
+  """
+  media_thumbnailLink: String
+  """
+  The file type of the media asset.
+  """
+  media_type: [TaxonomyTerm]
+  """
+  The system fields of the content item.
+  """
+  system: System
 }
 
 """
 Represents an implementation for MediaLibraryFragment fragment interface.
 """
 type MediaLibraryFragmentImpl implements ContentItem & MediaLibraryFragment {
-	"""
-	The size of the file.
-	"""
-	media_fileSize: Float
-	"""
-	The private link to use for the media asset enabling displaying it in authoring without making it publically available.
-	"""
-	media_privateLink: String
-	"""
-	The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset.
-	"""
-	media_publicLink: String
-	"""
-	The thumbnail link to use for the media asset.
-	"""
-	media_thumbnailLink: String
-	"""
-	The file type of the media asset.
-	"""
-	media_type: [TaxonomyTerm]
-	system: System!
+  """
+  The size of the file.
+  """
+  media_fileSize: Float
+  """
+  The private link to use for the media asset enabling displaying it in authoring without making it publically available.
+  """
+  media_privateLink: String
+  """
+  The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset.
+  """
+  media_publicLink: String
+  """
+  The thumbnail link to use for the media asset.
+  """
+  media_thumbnailLink: String
+  """
+  The file type of the media asset.
+  """
+  media_type: [TaxonomyTerm]
+  system: System!
 }
 
 """
 Represents a list of content items.
 """
 type MediaLibraryFragmentList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of content items.
-	"""
-	results: [MediaLibraryFragment]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [MediaLibraryFragment]
 }
 
 """
 Enum type used for sorting in FragmentMany query.
 """
 enum MediaLibraryFragmentSortingOptions {
-	MEDIA_FILE_SIZE_ASC
-	MEDIA_FILE_SIZE_DESC
-	MEDIA_PRIVATE_LINK_ASC
-	MEDIA_PRIVATE_LINK_DESC
-	MEDIA_PUBLIC_LINK_ASC
-	MEDIA_PUBLIC_LINK_DESC
-	MEDIA_THUMBNAIL_LINK_ASC
-	MEDIA_THUMBNAIL_LINK_DESC
-	SYSTEM_CREATED_ASC
-	SYSTEM_CREATED_BY_ASC
-	SYSTEM_CREATED_BY_DESC
-	SYSTEM_CREATED_DESC
-	SYSTEM_ID_ASC
-	SYSTEM_ID_DESC
-	SYSTEM_LOCALE_ASC
-	SYSTEM_LOCALE_DESC
-	SYSTEM_NAME_ASC
-	SYSTEM_NAME_DESC
-	SYSTEM_STATUS_ASC
-	SYSTEM_STATUS_DESC
-	SYSTEM_UPDATED_ASC
-	SYSTEM_UPDATED_BY_ASC
-	SYSTEM_UPDATED_BY_DESC
-	SYSTEM_UPDATED_DESC
-	SYSTEM_VERSION_ASC
-	SYSTEM_VERSION_DESC
+  MEDIA_FILE_SIZE_ASC
+  MEDIA_FILE_SIZE_DESC
+  MEDIA_PRIVATE_LINK_ASC
+  MEDIA_PRIVATE_LINK_DESC
+  MEDIA_PUBLIC_LINK_ASC
+  MEDIA_PUBLIC_LINK_DESC
+  MEDIA_THUMBNAIL_LINK_ASC
+  MEDIA_THUMBNAIL_LINK_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
 }
 
 """
 GraphQL filter for fragments.
 """
 input MediaLibraryFragment_Filter {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [MediaLibraryFragment_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [MediaLibraryFragment_Filter]
-	media_fileSize: DoubleFilterInput
-	media_privateLink: StringFilterInput
-	media_publicLink: StringFilterInput
-	media_thumbnailLink: StringFilterInput
-	media_type: SelectFilterInput
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [MediaLibraryFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [MediaLibraryFragment_Filter]
+  media_fileSize: DoubleFilterInput
+  media_privateLink: StringFilterInput
+  media_publicLink: StringFilterInput
+  media_thumbnailLink: StringFilterInput
+  media_type: SelectFilterInput
+  system: SystemTypeFilterInput
 }
 
 enum PublishStatus {
-	PREVIEW
-	PUBLISHED
+  PREVIEW
+  PUBLISHED
 }
 
 type Query {
-	changelog(
-		"""
-		The ID of the content item
-		"""
-		id: ID!
-		"""
-		The locale of the content item. Use an empty string for invariant culture
-		"""
-		locale: String!
-	): Changelog
-	changetype(
-		"""
-		The ID of the content item
-		"""
-		id: ID!
-		"""
-		The locale of the content item. Use an empty string for invariant culture
-		"""
-		locale: String!
-	): Changetype
-	contentItem(
-		"""
-		The ID of the content item
-		"""
-		id: ID!
-		"""
-		The locale of the content item. Use an empty string for invariant culture
-		"""
-		locale: String!
-	): ContentItem
-	cost: Int
-	locale(
-		"""
-		The ID of the content locale
-		"""
-		id: ID!
-	): Locale
-	manyChangelog(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		A filter used for searching the content items.
-		"""
-		filter: Root_changelog
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-		"""
-		Order the results
-		"""
-		orderBy: ChangelogSortingOptions
-	): ChangelogList
-	manyChangetype(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		A filter used for searching the content items.
-		"""
-		filter: Root_changetype
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-		"""
-		Order the results
-		"""
-		orderBy: ChangetypeSortingOptions
-	): ChangetypeList
-	manyContentItem(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		A filter used for searching the content items.
-		"""
-		filter: Root_ContentItem
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-		"""
-		Order the results
-		"""
-		orderBy: ContentItemSortingOptions
-	): ContentItemList
-	manyLocale: [Locale]
-	manyMediaLibraryFragment(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		A filter used for searching the content items.
-		"""
-		filter: Root_MediaLibraryFragment
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-		"""
-		Order the results
-		"""
-		orderBy: MediaLibraryFragmentSortingOptions
-	): MediaLibraryFragmentList
-	manySitecoreCloud(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		A filter used for searching the content items.
-		"""
-		filter: Root_sitecoreCloud
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-		"""
-		Order the results
-		"""
-		orderBy: SitecoreCloudSortingOptions
-	): SitecoreCloudList
-	manySitecoreProduct(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		A filter used for searching the content items.
-		"""
-		filter: Root_sitecoreProduct
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-		"""
-		Order the results
-		"""
-		orderBy: SitecoreProductSortingOptions
-	): SitecoreProductList
-	manyStatus(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		A filter used for searching the content items.
-		"""
-		filter: Root_status
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-		"""
-		Order the results
-		"""
-		orderBy: StatusSortingOptions
-	): StatusList
-	manyTaxonomy(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-	): TaxonomyList
-	manyUpload(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		A filter used for searching the content items.
-		"""
-		filter: Root_Upload
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-		"""
-		Order the results
-		"""
-		orderBy: UploadSortingOptions
-	): UploadList
-	manyXMCMediaFragment(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		A filter used for searching the content items.
-		"""
-		filter: Root_XMCMediaFragment
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-		"""
-		Order the results
-		"""
-		orderBy: XMCMediaFragmentSortingOptions
-	): XMCMediaFragmentList
-	mediaLibraryFragment(
-		"""
-		The ID of the content item
-		"""
-		id: ID!
-		"""
-		The locale of the content item. Use an empty string for invariant culture
-		"""
-		locale: String!
-	): MediaLibraryFragment
-	sitecoreCloud(
-		"""
-		The ID of the content item
-		"""
-		id: ID!
-		"""
-		The locale of the content item. Use an empty string for invariant culture
-		"""
-		locale: String!
-	): SitecoreCloud
-	sitecoreProduct(
-		"""
-		The ID of the content item
-		"""
-		id: ID!
-		"""
-		The locale of the content item. Use an empty string for invariant culture
-		"""
-		locale: String!
-	): SitecoreProduct
-	status(
-		"""
-		The ID of the content item
-		"""
-		id: ID!
-		"""
-		The locale of the content item. Use an empty string for invariant culture
-		"""
-		locale: String!
-	): Status
-	taxonomy(
-		"""
-		The ID of the content taxonomy
-		"""
-		id: ID!
-	): Taxonomy
-	upload(
-		"""
-		The ID of the content item
-		"""
-		id: ID!
-		"""
-		The locale of the content item. Use an empty string for invariant culture
-		"""
-		locale: String!
-	): Upload
-	xMCMediaFragment(
-		"""
-		The ID of the content item
-		"""
-		id: ID!
-		"""
-		The locale of the content item. Use an empty string for invariant culture
-		"""
-		locale: String!
-	): XMCMediaFragment
+  changelog(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): Changelog
+  changetype(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): Changetype
+  contentItem(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): ContentItem
+  cost: Int
+  locale(
+    """
+    The ID of the content locale
+    """
+    id: ID!
+  ): Locale
+  manyChangelog(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_changelog
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: ChangelogSortingOptions
+  ): ChangelogList
+  manyChangetype(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_changetype
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: ChangetypeSortingOptions
+  ): ChangetypeList
+  manyContentItem(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_ContentItem
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  manyLocale: [Locale]
+  manyMediaLibraryFragment(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_MediaLibraryFragment
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: MediaLibraryFragmentSortingOptions
+  ): MediaLibraryFragmentList
+  manySitecoreCloud(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_sitecoreCloud
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: SitecoreCloudSortingOptions
+  ): SitecoreCloudList
+  manySitecoreProduct(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_sitecoreProduct
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: SitecoreProductSortingOptions
+  ): SitecoreProductList
+  manyStatus(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_status
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: StatusSortingOptions
+  ): StatusList
+  manyTaxonomy(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+  ): TaxonomyList
+  manyUpload(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_Upload
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: UploadSortingOptions
+  ): UploadList
+  manyXMCMediaFragment(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_XMCMediaFragment
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: XMCMediaFragmentSortingOptions
+  ): XMCMediaFragmentList
+  mediaLibraryFragment(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): MediaLibraryFragment
+  sitecoreCloud(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): SitecoreCloud
+  sitecoreProduct(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): SitecoreProduct
+  status(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): Status
+  taxonomy(
+    """
+    The ID of the content taxonomy
+    """
+    id: ID!
+  ): Taxonomy
+  upload(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): Upload
+  xMCMediaFragment(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): XMCMediaFragment
 }
 
 """
 GraphQL filter for reference fields.
 """
 input ReferenceFilterInput {
-	"""
-	Checks if the value contains the specified text.
-	"""
-	contains: String
-	"""
-	Checks if the value contains all of the specified texts.
-	"""
-	containsAll: [String!]
-	"""
-	Checks if the value contains any of the specified texts.
-	"""
-	containsAny: [String!]
-	"""
-	Checks if the value does not contain the specified text.
-	"""
-	notContains: String
-	"""
-	Checks if the value does not contain all of the specified texts.
-	"""
-	notContainsAll: [String!]
-	"""
-	Checks if the value does not contain any of the specified texts.
-	"""
-	notContainsAny: [String!]
+  """
+  Checks if the value contains the specified text.
+  """
+  contains: String
+  """
+  Checks if the value contains all of the specified texts.
+  """
+  containsAll: [String!]
+  """
+  Checks if the value contains any of the specified texts.
+  """
+  containsAny: [String!]
+  """
+  Checks if the value does not contain the specified text.
+  """
+  notContains: String
+  """
+  Checks if the value does not contain all of the specified texts.
+  """
+  notContainsAll: [String!]
+  """
+  Checks if the value does not contain any of the specified texts.
+  """
+  notContainsAny: [String!]
 }
 
 """
 Root filter for content items.
 """
 input Root_ContentItem {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [ContentItem_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [ContentItem_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [ContentItem_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [ContentItem_Filter]
 }
 
 """
 Root filter for fragments.
 """
 input Root_MediaLibraryFragment {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [MediaLibraryFragment_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [MediaLibraryFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [MediaLibraryFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [MediaLibraryFragment_Filter]
 }
 
 """
 Root filter for content types.
 """
 input Root_Upload {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Upload_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Upload_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Upload_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Upload_Filter]
 }
 
 """
 Root filter for fragments.
 """
 input Root_XMCMediaFragment {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [XMCMediaFragment_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [XMCMediaFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [XMCMediaFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [XMCMediaFragment_Filter]
 }
 
 """
 Root filter for content types.
 """
 input Root_changelog {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changelog_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changelog_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_Filter]
 }
 
 """
 Root filter for content types.
 """
 input Root_changetype {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Changetype_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Changetype_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changetype_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changetype_Filter]
 }
 
 """
 Root filter for content types.
 """
 input Root_sitecoreCloud {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [SitecoreCloud_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [SitecoreCloud_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreCloud_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreCloud_Filter]
 }
 
 """
 Root filter for content types.
 """
 input Root_sitecoreProduct {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [SitecoreProduct_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [SitecoreProduct_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_Filter]
 }
 
 """
 Root filter for content types.
 """
 input Root_status {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Status_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Status_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Status_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Status_Filter]
 }
 
 """
 This type allows specifying a search over a Select field.
 """
 input SelectFieldSearchInput {
-	"""
-	Match if the ID is present in the list of selected terms.
-	"""
-	id: String
+  """
+  Match if the ID is present in the list of selected terms.
+  """
+  id: String
 }
 
 """
 GraphQL filter for select fields.
 """
 input SelectFilterInput {
-	"""
-	Checks if the selection includes the specified value.
-	"""
-	contains: SelectFieldSearchInput
-	"""
-	Checks if the selection does not include the specified value.
-	"""
-	notContains: SelectFieldSearchInput
+  """
+  Checks if the selection includes the specified value.
+  """
+  contains: SelectFieldSearchInput
+  """
+  Checks if the selection does not include the specified value.
+  """
+  notContains: SelectFieldSearchInput
 }
 
 type SitecoreCloud implements ContentItem {
-	cloudName: String
-	system: System!
+  cloudName: String
+  system: System!
 }
 
 """
 Represents a list of content items.
 """
 type SitecoreCloudList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of content items.
-	"""
-	results: [SitecoreCloud]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [SitecoreCloud]
 }
 
 """
 Enum type used for sorting in QueryMany.
 """
 enum SitecoreCloudSortingOptions {
-	CLOUD_NAME_ASC
-	CLOUD_NAME_DESC
-	SYSTEM_CREATED_ASC
-	SYSTEM_CREATED_BY_ASC
-	SYSTEM_CREATED_BY_DESC
-	SYSTEM_CREATED_DESC
-	SYSTEM_ID_ASC
-	SYSTEM_ID_DESC
-	SYSTEM_LOCALE_ASC
-	SYSTEM_LOCALE_DESC
-	SYSTEM_NAME_ASC
-	SYSTEM_NAME_DESC
-	SYSTEM_STATUS_ASC
-	SYSTEM_STATUS_DESC
-	SYSTEM_UPDATED_ASC
-	SYSTEM_UPDATED_BY_ASC
-	SYSTEM_UPDATED_BY_DESC
-	SYSTEM_UPDATED_DESC
-	SYSTEM_VERSION_ASC
-	SYSTEM_VERSION_DESC
+  CLOUD_NAME_ASC
+  CLOUD_NAME_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
 }
 
 """
 GraphQL filter for content items.
 """
 input SitecoreCloud_Filter {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [SitecoreCloud_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [SitecoreCloud_Filter]
-	cloudName: StringFilterInput
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreCloud_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreCloud_Filter]
+  cloudName: StringFilterInput
+  system: SystemTypeFilterInput
 }
 
 type SitecoreProduct implements ContentItem {
-	abbreviation: String
-	productDescription: String
-	productIcon(
-		after: String
-		"""
-		A filter used for searching the reference items.
-		"""
-		filter: SitecoreProduct_productIcon_Relations
-		minimumPageSize: Int = 20
-		"""
-		Order the results
-		"""
-		orderBy: ContentItemSortingOptions
-	): ContentItemList
-	"""
-	Image URL to the dark product icon
-	"""
-	productIconDark: String
-	"""
-	Image URL to the light product icon
-	"""
-	productIconLight: String
-	productName: String
-	sitecoreCloud(
-		after: String
-		"""
-		A filter used for searching the reference items.
-		"""
-		filter: SitecoreProduct_sitecoreCloud_Relations
-		minimumPageSize: Int = 20
-		"""
-		Order the results
-		"""
-		orderBy: ContentItemSortingOptions
-	): ContentItemList
-	system: System!
+  abbreviation: String
+  productDescription: String
+  productIcon(
+    after: String
+    """
+    A filter used for searching the reference items.
+    """
+    filter: SitecoreProduct_productIcon_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  """
+  Image URL to the dark product icon
+  """
+  productIconDark: String
+  """
+  Image URL to the light product icon
+  """
+  productIconLight: String
+  productName: String
+  sitecoreCloud(
+    after: String
+    """
+    A filter used for searching the reference items.
+    """
+    filter: SitecoreProduct_sitecoreCloud_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  system: System!
 }
 
 """
 Represents a list of content items.
 """
 type SitecoreProductList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of content items.
-	"""
-	results: [SitecoreProduct]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [SitecoreProduct]
 }
 
 """
 Enum type used for sorting in QueryMany.
 """
 enum SitecoreProductSortingOptions {
-	ABBREVIATION_ASC
-	ABBREVIATION_DESC
-	PRODUCT_DESCRIPTION_ASC
-	PRODUCT_DESCRIPTION_DESC
-	PRODUCT_ICON_DARK_ASC
-	PRODUCT_ICON_DARK_DESC
-	PRODUCT_ICON_LIGHT_ASC
-	PRODUCT_ICON_LIGHT_DESC
-	PRODUCT_NAME_ASC
-	PRODUCT_NAME_DESC
-	SYSTEM_CREATED_ASC
-	SYSTEM_CREATED_BY_ASC
-	SYSTEM_CREATED_BY_DESC
-	SYSTEM_CREATED_DESC
-	SYSTEM_ID_ASC
-	SYSTEM_ID_DESC
-	SYSTEM_LOCALE_ASC
-	SYSTEM_LOCALE_DESC
-	SYSTEM_NAME_ASC
-	SYSTEM_NAME_DESC
-	SYSTEM_STATUS_ASC
-	SYSTEM_STATUS_DESC
-	SYSTEM_UPDATED_ASC
-	SYSTEM_UPDATED_BY_ASC
-	SYSTEM_UPDATED_BY_DESC
-	SYSTEM_UPDATED_DESC
-	SYSTEM_VERSION_ASC
-	SYSTEM_VERSION_DESC
+  ABBREVIATION_ASC
+  ABBREVIATION_DESC
+  PRODUCT_DESCRIPTION_ASC
+  PRODUCT_DESCRIPTION_DESC
+  PRODUCT_ICON_DARK_ASC
+  PRODUCT_ICON_DARK_DESC
+  PRODUCT_ICON_LIGHT_ASC
+  PRODUCT_ICON_LIGHT_DESC
+  PRODUCT_NAME_ASC
+  PRODUCT_NAME_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
 }
 
 """
 GraphQL filter for content items.
 """
 input SitecoreProduct_Filter {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [SitecoreProduct_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [SitecoreProduct_Filter]
-	abbreviation: StringFilterInput
-	productDescription: StringFilterInput
-	productIcon: ReferenceFilterInput
-	productIconDark: StringFilterInput
-	productIconLight: StringFilterInput
-	productName: StringFilterInput
-	sitecoreCloud: ReferenceFilterInput
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_Filter]
+  abbreviation: StringFilterInput
+  productDescription: StringFilterInput
+  productIcon: ReferenceFilterInput
+  productIconDark: StringFilterInput
+  productIconLight: StringFilterInput
+  productName: StringFilterInput
+  sitecoreCloud: ReferenceFilterInput
+  system: SystemTypeFilterInput
 }
 
 """
 GraphQL root filter for content items references.
 """
 input SitecoreProduct_productIcon_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
 input SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-	changelog: Changelog_Filter
-	changetype: Changetype_Filter
-	sitecoreCloud: SitecoreCloud_Filter
-	sitecoreProduct: SitecoreProduct_Filter
-	status: Status_Filter
-	system: SystemTypeFilterInput
-	upload: Upload_Filter
-	xMCMedia: XMCMedia_Filter
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  changelog: Changelog_Filter
+  changetype: Changetype_Filter
+  sitecoreCloud: SitecoreCloud_Filter
+  sitecoreProduct: SitecoreProduct_Filter
+  status: Status_Filter
+  system: SystemTypeFilterInput
+  upload: Upload_Filter
+  xMCMedia: XMCMedia_Filter
 }
 
 """
 GraphQL root filter for content items references.
 """
 input SitecoreProduct_sitecoreCloud_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
 }
 
 """
 Represents the input type for filtering references in GraphQL.
 """
 input SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
-	changelog: Changelog_Filter
-	changetype: Changetype_Filter
-	sitecoreCloud: SitecoreCloud_Filter
-	sitecoreProduct: SitecoreProduct_Filter
-	status: Status_Filter
-	system: SystemTypeFilterInput
-	upload: Upload_Filter
-	xMCMedia: XMCMedia_Filter
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  changelog: Changelog_Filter
+  changetype: Changetype_Filter
+  sitecoreCloud: SitecoreCloud_Filter
+  sitecoreProduct: SitecoreProduct_Filter
+  status: Status_Filter
+  system: SystemTypeFilterInput
+  upload: Upload_Filter
+  xMCMedia: XMCMedia_Filter
 }
 
 type Status implements ContentItem {
-	description: String
-	"""
-	Identifier used in code
-	"""
-	identifier: String
-	system: System!
+  description: String
+  """
+  Identifier used in code
+  """
+  identifier: String
+  system: System!
 }
 
 """
 Represents a list of content items.
 """
 type StatusList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of content items.
-	"""
-	results: [Status]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [Status]
 }
 
 """
 Enum type used for sorting in QueryMany.
 """
 enum StatusSortingOptions {
-	DESCRIPTION_ASC
-	DESCRIPTION_DESC
-	IDENTIFIER_ASC
-	IDENTIFIER_DESC
-	SYSTEM_CREATED_ASC
-	SYSTEM_CREATED_BY_ASC
-	SYSTEM_CREATED_BY_DESC
-	SYSTEM_CREATED_DESC
-	SYSTEM_ID_ASC
-	SYSTEM_ID_DESC
-	SYSTEM_LOCALE_ASC
-	SYSTEM_LOCALE_DESC
-	SYSTEM_NAME_ASC
-	SYSTEM_NAME_DESC
-	SYSTEM_STATUS_ASC
-	SYSTEM_STATUS_DESC
-	SYSTEM_UPDATED_ASC
-	SYSTEM_UPDATED_BY_ASC
-	SYSTEM_UPDATED_BY_DESC
-	SYSTEM_UPDATED_DESC
-	SYSTEM_VERSION_ASC
-	SYSTEM_VERSION_DESC
+  DESCRIPTION_ASC
+  DESCRIPTION_DESC
+  IDENTIFIER_ASC
+  IDENTIFIER_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
 }
 
 """
 GraphQL filter for content items.
 """
 input Status_Filter {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Status_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Status_Filter]
-	description: StringFilterInput
-	identifier: StringFilterInput
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Status_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Status_Filter]
+  description: StringFilterInput
+  identifier: StringFilterInput
+  system: SystemTypeFilterInput
 }
 
 """
 GraphQL filter for string fields.
 """
 input StringFilterInput {
-	"""
-	Specifies whether the string comparison should be case-sensitive or not.
-	"""
-	case: CaseSensitive
-	"""
-	Checks if the value contains the specified text.
-	"""
-	contains: String
-	"""
-	Checks if the value contains all of the specified texts.
-	"""
-	containsAll: [String!]
-	"""
-	Checks if the value contains any of the specified texts.
-	"""
-	containsAny: [String!]
-	"""
-	Matches values that end with the specified text.
-	"""
-	endsWith: String
-	"""
-	Matches the specified value.
-	"""
-	equals: String
-	"""
-	Matches any of the specified values.
-	"""
-	equalsAny: [String!]
-	"""
-	Checks if the value does not contain the specified text.
-	"""
-	notContains: String
-	"""
-	Checks if the value does not contain all of the specified texts.
-	"""
-	notContainsAll: [String!]
-	"""
-	Checks if the value does not contain any of the specified texts.
-	"""
-	notContainsAny: [String!]
-	"""
-	Excludes values that end with the specified text.
-	"""
-	notEndsWith: String
-	"""
-	Does not match the specified value.
-	"""
-	notEquals: String
-	"""
-	Does not match any of the specified values.
-	"""
-	notEqualsAny: [String!]
-	"""
-	Excludes values that start with the specified text.
-	"""
-	notStartsWith: String
-	"""
-	Matches values that start with the specified text.
-	"""
-	startsWith: String
+  """
+  Specifies whether the string comparison should be case-sensitive or not.
+  """
+  case: CaseSensitive
+  """
+  Checks if the value contains the specified text.
+  """
+  contains: String
+  """
+  Checks if the value contains all of the specified texts.
+  """
+  containsAll: [String!]
+  """
+  Checks if the value contains any of the specified texts.
+  """
+  containsAny: [String!]
+  """
+  Matches values that end with the specified text.
+  """
+  endsWith: String
+  """
+  Matches the specified value.
+  """
+  equals: String
+  """
+  Matches any of the specified values.
+  """
+  equalsAny: [String!]
+  """
+  Checks if the value does not contain the specified text.
+  """
+  notContains: String
+  """
+  Checks if the value does not contain all of the specified texts.
+  """
+  notContainsAll: [String!]
+  """
+  Checks if the value does not contain any of the specified texts.
+  """
+  notContainsAny: [String!]
+  """
+  Excludes values that end with the specified text.
+  """
+  notEndsWith: String
+  """
+  Does not match the specified value.
+  """
+  notEquals: String
+  """
+  Does not match any of the specified values.
+  """
+  notEqualsAny: [String!]
+  """
+  Excludes values that start with the specified text.
+  """
+  notStartsWith: String
+  """
+  Matches values that start with the specified text.
+  """
+  startsWith: String
 }
 
 """
 GraphQL filter for string list fields.
 """
 input StringListFilterInput {
-	"""
-	Checks if the list contains the specified value.
-	"""
-	contains: String
-	"""
-	Checks if the list contains all of the specified values.
-	"""
-	containsAll: [String!]
-	"""
-	Checks if the list contains any of the specified values.
-	"""
-	containsAny: [String!]
-	"""
-	Checks if the list does not contain the specified value.
-	"""
-	notContains: String
-	"""
-	Checks if the list does not contain all of the specified values.
-	"""
-	notContainsAll: [String!]
-	"""
-	Checks if the list does not contain any of the specified values.
-	"""
-	notContainsAny: [String!]
+  """
+  Checks if the list contains the specified value.
+  """
+  contains: String
+  """
+  Checks if the list contains all of the specified values.
+  """
+  containsAll: [String!]
+  """
+  Checks if the list contains any of the specified values.
+  """
+  containsAny: [String!]
+  """
+  Checks if the list does not contain the specified value.
+  """
+  notContains: String
+  """
+  Checks if the list does not contain all of the specified values.
+  """
+  notContainsAll: [String!]
+  """
+  Checks if the list does not contain any of the specified values.
+  """
+  notContainsAny: [String!]
 }
 
 """
 Represents system properties.
 """
 type System implements SystemItem {
-	contentType: ContentTypeSummary!
-	createdAt: UTCDateTime!
-	createdBy: String!
-	id: ID!
-	label: String
-	locale: String!
-	name: String!
-	publishStatus: PublishStatus!
-	updatedAt: UTCDateTime!
-	updatedBy: String!
-	version: Int!
+  contentType: ContentTypeSummary!
+  createdAt: UTCDateTime!
+  createdBy: String!
+  id: ID!
+  label: String
+  locale: String!
+  name: String!
+  publishStatus: PublishStatus!
+  updatedAt: UTCDateTime!
+  updatedBy: String!
+  version: Int!
 }
 
 """
 Represents common system fields for content types.
 """
 interface SystemItem {
-	"""
-	The content type information of this content item.
-	"""
-	contentType: ContentTypeSummary!
-	"""
-	The timestamp when the content item was created.
-	"""
-	createdAt: UTCDateTime!
-	"""
-	The user who created the content item.
-	"""
-	createdBy: String!
-	"""
-	The ID of the content item.
-	"""
-	id: ID!
-	"""
-	The locale of the content item.
-	"""
-	locale: String!
-	"""
-	The name of the content item.
-	"""
-	name: String!
-	"""
-	The publishing status of the content item.
-	"""
-	publishStatus: PublishStatus!
-	"""
-	The timestamp when the content item was last updated.
-	"""
-	updatedAt: UTCDateTime!
-	"""
-	The user who last updated the content item.
-	"""
-	updatedBy: String!
-	"""
-	The version of the content item.
-	"""
-	version: Int!
+  """
+  The content type information of this content item.
+  """
+  contentType: ContentTypeSummary!
+  """
+  The timestamp when the content item was created.
+  """
+  createdAt: UTCDateTime!
+  """
+  The user who created the content item.
+  """
+  createdBy: String!
+  """
+  The ID of the content item.
+  """
+  id: ID!
+  """
+  The locale of the content item.
+  """
+  locale: String!
+  """
+  The name of the content item.
+  """
+  name: String!
+  """
+  The publishing status of the content item.
+  """
+  publishStatus: PublishStatus!
+  """
+  The timestamp when the content item was last updated.
+  """
+  updatedAt: UTCDateTime!
+  """
+  The user who last updated the content item.
+  """
+  updatedBy: String!
+  """
+  The version of the content item.
+  """
+  version: Int!
 }
 
 """
 GraphQL filter for system types.
 """
 input SystemTypeFilterInput {
-	contentType: ContentTypeSummary_Filter
-	createdAt: DateTimeFilterInput
-	createdBy: StringFilterInput
-	id: StringFilterInput
-	locale: StringFilterInput
-	name: StringFilterInput
-	updatedAt: DateTimeFilterInput
-	updatedBy: StringFilterInput
-	version: DoubleFilterInput
-	versionTags: StringListFilterInput
+  contentType: ContentTypeSummary_Filter
+  createdAt: DateTimeFilterInput
+  createdBy: StringFilterInput
+  id: StringFilterInput
+  locale: StringFilterInput
+  name: StringFilterInput
+  updatedAt: DateTimeFilterInput
+  updatedBy: StringFilterInput
+  version: DoubleFilterInput
+  versionTags: StringListFilterInput
 }
 
 """
 Represents a taxonomy.
 """
 type Taxonomy {
-	system: TaxonomySystemTypeType
-	"""
-	The terms in the taxonomy.
-	"""
-	terms(
-		"""
-		A cursor from a previous result.
-		"""
-		after: String
-		"""
-		The minimum number of results to return per page
-		"""
-		minimumPageSize: Int! = 20
-	): TaxonomyTermList
+  system: TaxonomySystemTypeType
+  """
+  The terms in the taxonomy.
+  """
+  terms(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+  ): TaxonomyTermList
 }
 
 """
 Represents a list of taxonomies.
 """
 type TaxonomyList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of taxonomies.
-	"""
-	results: [Taxonomy]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of taxonomies.
+  """
+  results: [Taxonomy]
 }
 
 type TaxonomySystemTypeType {
-	createdAt: UTCDateTime!
-	createdBy: String!
-	id: ID!
-	label: String
-	name: String!
-	publishStatus: PublishStatus!
-	updatedAt: UTCDateTime!
-	updatedBy: String!
-	version: Int!
+  createdAt: UTCDateTime!
+  createdBy: String!
+  id: ID!
+  label: String
+  name: String!
+  publishStatus: PublishStatus!
+  updatedAt: UTCDateTime!
+  updatedBy: String!
+  version: Int!
 }
 
 """
 Represents a single taxonomy term.
 """
 type TaxonomyTerm {
-	"""
-	The ID of the taxonomy term.
-	"""
-	id: ID!
-	"""
-	The label of the taxonomy term.
-	"""
-	label: String
-	"""
-	The name of the taxonomy term.
-	"""
-	name: String!
+  """
+  The ID of the taxonomy term.
+  """
+  id: ID!
+  """
+  The label of the taxonomy term.
+  """
+  label: String
+  """
+  The name of the taxonomy term.
+  """
+  name: String!
 }
 
 """
 Represents a list of taxonomy terms.
 """
 type TaxonomyTermList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of taxonomy terms.
-	"""
-	results: [TaxonomyTerm]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of taxonomy terms.
+  """
+  results: [TaxonomyTerm]
 }
 
 """
@@ -1875,237 +1875,237 @@ scalar UTCDateTime
 Content type for uploading Media via the Worksets API
 """
 type Upload implements ContentItem & XMCMediaFragment {
-	"""
-	The relative path for creation of the public link.
-	"""
-	mms_relativePath: String
-	system: System!
-	"""
-	A content type that has a media fragment associated with it.
-	"""
-	target_content_type_id: String
+  """
+  The relative path for creation of the public link.
+  """
+  mms_relativePath: String
+  system: System!
+  """
+  A content type that has a media fragment associated with it.
+  """
+  target_content_type_id: String
 }
 
 """
 Represents a list of content items.
 """
 type UploadList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of content items.
-	"""
-	results: [Upload]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [Upload]
 }
 
 """
 Enum type used for sorting in QueryMany.
 """
 enum UploadSortingOptions {
-	MMS_RELATIVE_PATH_ASC
-	MMS_RELATIVE_PATH_DESC
-	SYSTEM_CREATED_ASC
-	SYSTEM_CREATED_BY_ASC
-	SYSTEM_CREATED_BY_DESC
-	SYSTEM_CREATED_DESC
-	SYSTEM_ID_ASC
-	SYSTEM_ID_DESC
-	SYSTEM_LOCALE_ASC
-	SYSTEM_LOCALE_DESC
-	SYSTEM_NAME_ASC
-	SYSTEM_NAME_DESC
-	SYSTEM_STATUS_ASC
-	SYSTEM_STATUS_DESC
-	SYSTEM_UPDATED_ASC
-	SYSTEM_UPDATED_BY_ASC
-	SYSTEM_UPDATED_BY_DESC
-	SYSTEM_UPDATED_DESC
-	SYSTEM_VERSION_ASC
-	SYSTEM_VERSION_DESC
-	TARGET_CONTENT_TYPE_ID_ASC
-	TARGET_CONTENT_TYPE_ID_DESC
+  MMS_RELATIVE_PATH_ASC
+  MMS_RELATIVE_PATH_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
+  TARGET_CONTENT_TYPE_ID_ASC
+  TARGET_CONTENT_TYPE_ID_DESC
 }
 
 """
 GraphQL filter for content items.
 """
 input Upload_Filter {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [Upload_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [Upload_Filter]
-	mms_relativePath: StringFilterInput
-	system: SystemTypeFilterInput
-	target_content_type_id: StringFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Upload_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Upload_Filter]
+  mms_relativePath: StringFilterInput
+  system: SystemTypeFilterInput
+  target_content_type_id: StringFilterInput
 }
 
 """
 Media content type to create media items.
 """
 type XMCMedia implements ContentItem & MediaLibraryFragment & XMCMediaFragment {
-	"""
-	The size of the file.
-	"""
-	media_fileSize: Float
-	"""
-	The private link to use for the media asset enabling displaying it in authoring without making it publically available.
-	"""
-	media_privateLink: String
-	"""
-	The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset.
-	"""
-	media_publicLink: String
-	"""
-	The thumbnail link to use for the media asset.
-	"""
-	media_thumbnailLink: String
-	"""
-	The file type of the media asset.
-	"""
-	media_type: [TaxonomyTerm]
-	"""
-	The relative path for creation of the public link.
-	"""
-	mms_relativePath: String
-	system: System!
+  """
+  The size of the file.
+  """
+  media_fileSize: Float
+  """
+  The private link to use for the media asset enabling displaying it in authoring without making it publically available.
+  """
+  media_privateLink: String
+  """
+  The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset.
+  """
+  media_publicLink: String
+  """
+  The thumbnail link to use for the media asset.
+  """
+  media_thumbnailLink: String
+  """
+  The file type of the media asset.
+  """
+  media_type: [TaxonomyTerm]
+  """
+  The relative path for creation of the public link.
+  """
+  mms_relativePath: String
+  system: System!
 }
 
 """
 Represents common interface for all content types containing XMCMediaFragment fragment.
 """
 interface XMCMediaFragment implements ContentItem {
-	"""
-	The relative path for creation of the public link.
-	"""
-	mms_relativePath: String
-	"""
-	The system fields of the content item.
-	"""
-	system: System
+  """
+  The relative path for creation of the public link.
+  """
+  mms_relativePath: String
+  """
+  The system fields of the content item.
+  """
+  system: System
 }
 
 """
 Represents an implementation for XMCMediaFragment fragment interface.
 """
 type XMCMediaFragmentImpl implements ContentItem & XMCMediaFragment {
-	"""
-	The relative path for creation of the public link.
-	"""
-	mms_relativePath: String
-	system: System!
+  """
+  The relative path for creation of the public link.
+  """
+  mms_relativePath: String
+  system: System!
 }
 
 """
 Represents a list of content items.
 """
 type XMCMediaFragmentList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of content items.
-	"""
-	results: [XMCMediaFragment]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [XMCMediaFragment]
 }
 
 """
 Enum type used for sorting in FragmentMany query.
 """
 enum XMCMediaFragmentSortingOptions {
-	MMS_RELATIVE_PATH_ASC
-	MMS_RELATIVE_PATH_DESC
-	SYSTEM_CREATED_ASC
-	SYSTEM_CREATED_BY_ASC
-	SYSTEM_CREATED_BY_DESC
-	SYSTEM_CREATED_DESC
-	SYSTEM_ID_ASC
-	SYSTEM_ID_DESC
-	SYSTEM_LOCALE_ASC
-	SYSTEM_LOCALE_DESC
-	SYSTEM_NAME_ASC
-	SYSTEM_NAME_DESC
-	SYSTEM_STATUS_ASC
-	SYSTEM_STATUS_DESC
-	SYSTEM_UPDATED_ASC
-	SYSTEM_UPDATED_BY_ASC
-	SYSTEM_UPDATED_BY_DESC
-	SYSTEM_UPDATED_DESC
-	SYSTEM_VERSION_ASC
-	SYSTEM_VERSION_DESC
+  MMS_RELATIVE_PATH_ASC
+  MMS_RELATIVE_PATH_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
 }
 
 """
 GraphQL filter for fragments.
 """
 input XMCMediaFragment_Filter {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [XMCMediaFragment_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [XMCMediaFragment_Filter]
-	mms_relativePath: StringFilterInput
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [XMCMediaFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [XMCMediaFragment_Filter]
+  mms_relativePath: StringFilterInput
+  system: SystemTypeFilterInput
 }
 
 """
 Represents a list of content items.
 """
 type XMCMediaList {
-	"""
-	The pagination cursor.
-	"""
-	cursor: String
-	"""
-	Indicates whether more items are available.
-	"""
-	hasMore: Boolean
-	"""
-	The minimum page size.
-	"""
-	minimumPageSize: Int!
-	"""
-	The list of content items.
-	"""
-	results: [XMCMedia]
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [XMCMedia]
 }
 
 """
 GraphQL filter for content items.
 """
 input XMCMedia_Filter {
-	"""
-	Combines multiple filter conditions.
-	"""
-	AND: [XMCMedia_Filter]
-	"""
-	Combines multiple filter conditions.
-	"""
-	OR: [XMCMedia_Filter]
-	system: SystemTypeFilterInput
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [XMCMedia_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [XMCMedia_Filter]
+  system: SystemTypeFilterInput
 }

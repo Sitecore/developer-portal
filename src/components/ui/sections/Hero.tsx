@@ -1,12 +1,12 @@
 "use client";
 
+
+import { GuidedDemo } from "@src/components/links/GuidedDemo";
 import { CenteredContent, VerticalGroup } from "@src/components/ui/sections";
+import { GetProductLogo } from "@src/lib/assets";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { GetProductLogo } from "@src/lib/assets";
-
-import { GuidedDemo } from "@src/components/links/GuidedDemo";
 
 export type HeroProps = {
 	title: string;

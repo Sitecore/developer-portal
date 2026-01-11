@@ -5,26 +5,24 @@ import { getLatestRecipes } from "@src/lib/accelerate/latest";
 const FeedPage = () => null;
 
 export async function getServerSideProps(context: any) {
-	const _preview = context.preview ? context.preview : null;
+  const recipes = await getLatestRecipes(undefined, 10);
+  if (recipes === null) {
+    return { notFound: true };
+  }
 
-	const recipes = await getLatestRecipes(undefined, 10);
-	if (recipes === null) {
-		return { notFound: true };
-	}
+  const feed = CreateAccelerateFeed(recipes);
 
-	const feed = CreateAccelerateFeed(recipes);
+  // Set page headers
+  context.res.setHeader("Content-Type", "text/xml");
+  // cache for 600s
+  context.res.setHeader(
+    "Cache-Control",
+    "s-maxage=600, stale-while-revalidate",
+  );
+  context.res.write(feed.rss2());
+  context.res.end();
 
-	// Set page headers
-	context.res.setHeader("Content-Type", "text/xml");
-	// cache for 600s
-	context.res.setHeader(
-		"Cache-Control",
-		"s-maxage=600, stale-while-revalidate",
-	);
-	context.res.write(feed.rss2());
-	context.res.end();
-
-	return { props: {} };
+  return { props: {} };
 }
 
 export default FeedPage;

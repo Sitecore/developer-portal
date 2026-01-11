@@ -1,9 +1,9 @@
 import {
-	clearEntryCountCache,
-	getCachedEntryCount,
-	requestDeduplicator,
-	setCachedEntryCount,
-} from "@lib/changelog/cache";
+    clearEntryCountCache,
+    getCachedEntryCount,
+    requestDeduplicator,
+    setCachedEntryCount,
+} from "@src/lib/changelog/cache";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
 describe("CacheManager", () => {

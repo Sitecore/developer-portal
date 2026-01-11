@@ -1,11 +1,11 @@
 import {
-	createDateRange,
-	formatReleaseDate,
-	parseDateString,
-} from "@lib/changelog/utils/date";
+    createDateRange,
+    formatReleaseDate,
+    parseDateString,
+} from "@src/lib/changelog/utils/date";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 
-vi.mock("@lib/utils", () => ({
+vi.mock("@src/lib/utils", () => ({
 	clearTimeStamp: vi.fn((date) => date),
 }));
 
@@ -100,7 +100,7 @@ describe("formatReleaseDate", () => {
 	});
 
 	test("should format valid date string", async () => {
-		const { clearTimeStamp } = await import("@lib/utils");
+		const { clearTimeStamp } = await import("@/src/lib/util");
 		vi.mocked(clearTimeStamp).mockReturnValue("2024-07-12T00:00:00Z");
 
 		const result = formatReleaseDate("2024-07-12T00:00:00Z");
@@ -129,7 +129,7 @@ describe("formatReleaseDate", () => {
 	});
 
 	test("should return empty string when clearTimeStamp returns empty string", async () => {
-		const { clearTimeStamp } = await import("@lib/utils");
+		const { clearTimeStamp } = await import("@/src/lib/util");
 		vi.mocked(clearTimeStamp).mockReturnValue("");
 
 		const result = formatReleaseDate("invalid-date");
@@ -139,7 +139,7 @@ describe("formatReleaseDate", () => {
 
 	test("should return empty string and warn for invalid date", async () => {
 		const consoleSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
-		const { clearTimeStamp } = await import("@lib/utils");
+		const { clearTimeStamp } = await import("@/src/lib/util");
 		vi.mocked(clearTimeStamp).mockReturnValue("invalid-date-string");
 
 		const result = formatReleaseDate("invalid-date");
@@ -151,7 +151,7 @@ describe("formatReleaseDate", () => {
 	});
 
 	test("should format different date formats", async () => {
-		const { clearTimeStamp } = await import("@lib/utils");
+		const { clearTimeStamp } = await import("@/src/lib/util");
 		vi.mocked(clearTimeStamp).mockReturnValue("2024-01-15T00:00:00Z");
 
 		const result = formatReleaseDate("2024-01-15T00:00:00Z");

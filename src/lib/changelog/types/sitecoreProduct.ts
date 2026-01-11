@@ -1,19 +1,19 @@
 import type { ProductFragment } from "@data/gql/generated/graphql";
-import { getStringValue } from "@src/lib/utils/stringUtil";
+import { getStringValue } from "@/src/lib/util/stringUtil";
 
 export type SitecoreProduct = {
-	id: string;
-	name: string;
-	productName: string;
-	productDescription: string;
-	lightIcon: string;
-	darkIcon: string;
+  id: string;
+  name: string;
+  productName: string;
+  productDescription: string;
+  lightIcon: string;
+  darkIcon: string;
 };
 export default SitecoreProduct;
 
 export type SitecoreProductResults = {
-	total: string;
-	results: Array<SitecoreProduct>;
+  total: string;
+  results: Array<SitecoreProduct>;
 };
 
 /**
@@ -22,20 +22,20 @@ export type SitecoreProductResults = {
  * @returns Parsed SitecoreProduct
  */
 export function parseSitecoreProductItem(
-	rawItem: ProductFragment | null | undefined,
+  rawItem: ProductFragment | null | undefined,
 ): SitecoreProduct {
-	if (!rawItem) {
-		throw new Error("Invalid SitecoreProduct: rawItem is null or undefined");
-	}
+  if (!rawItem) {
+    throw new Error("Invalid SitecoreProduct: rawItem is null or undefined");
+  }
 
-	return {
-		id: getStringValue(rawItem.system?.id),
-		name: getStringValue(rawItem.productName),
-		productName: getStringValue(rawItem.productName),
-		productDescription: getStringValue(rawItem.productDescription),
-		lightIcon: getStringValue(rawItem.lightIcon),
-		darkIcon: getStringValue(rawItem.darkIcon),
-	};
+  return {
+    id: getStringValue(rawItem.system?.id),
+    name: getStringValue(rawItem.productName),
+    productName: getStringValue(rawItem.productName),
+    productDescription: getStringValue(rawItem.productDescription),
+    lightIcon: getStringValue(rawItem.lightIcon),
+    darkIcon: getStringValue(rawItem.darkIcon),
+  };
 }
 
 /**
@@ -44,13 +44,13 @@ export function parseSitecoreProductItem(
  * @returns Array of parsed SitecoreProduct items
  */
 export function parseSitecoreProductItems(
-	rawItems: Array<ProductFragment | null> | null | undefined,
+  rawItems: Array<ProductFragment | null> | null | undefined,
 ): Array<SitecoreProduct> {
-	if (!rawItems) {
-		return [];
-	}
+  if (!rawItems) {
+    return [];
+  }
 
-	return rawItems
-		.filter((x): x is ProductFragment => x !== null)
-		.map((x) => parseSitecoreProductItem(x));
+  return rawItems
+    .filter((x): x is ProductFragment => x !== null)
+    .map((x) => parseSitecoreProductItem(x));
 }

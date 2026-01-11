@@ -1,5 +1,5 @@
 import downloads, { PUBLIC_DOWNLOAD_HOST } from "@data/data-downloads";
-import { getDownloadItemByUid, getDownloadUrl } from "@lib/downloads";
+import { getDownloadItemByUid, getDownloadUrl } from "@src/lib/downloads";
 import { describe, expect, it } from "vitest";
 
 describe("getDownloadItemByUid", () => {

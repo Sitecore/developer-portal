@@ -6,11 +6,11 @@ import type { Session } from "next-auth";
  * @returns true if the user is authenticated via Okta or Cloud Portal, false otherwise
  */
 export function isVerifiedUser(session: Session | null): boolean {
-	if (!session) {
-		return false;
-	}
+  if (!session) {
+    return false;
+  }
 
-	return session.provider === "okta" || session.provider === "sitecore";
+  return session.provider === "okta" || session.provider === "sitecore";
 }
 
 /**
@@ -19,11 +19,11 @@ export function isVerifiedUser(session: Session | null): boolean {
  * @returns true if the user is authenticated and is an Okta user, false otherwise
  */
 export function isAuthenticatedOktaUser(session: Session | null): boolean {
-	if (!session || !session.user) {
-		return false;
-	}
+  if (!session || !session.user) {
+    return false;
+  }
 
-	return session.provider === "okta";
+  return session.provider === "okta";
 }
 
 /**
@@ -32,11 +32,11 @@ export function isAuthenticatedOktaUser(session: Session | null): boolean {
  * @returns true if the user is authenticated and is an Cloud Portal user, false otherwise
  */
 export function isAuthenticatedCloudPortalUser(
-	session: Session | null,
+  session: Session | null,
 ): boolean {
-	if (!session || !session.user) {
-		return false;
-	}
+  if (!session || !session.user) {
+    return false;
+  }
 
-	return session.provider === "sitecore";
+  return session.provider === "sitecore";
 }

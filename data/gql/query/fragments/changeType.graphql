@@ -1,7 +1,7 @@
 fragment changeType on Changetype {
-	system {
-		id
-		name
-	}
-	changeType
+  system {
+    id
+    name
+  }
+  changeType
 }

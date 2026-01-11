@@ -1,9 +1,9 @@
 query GetAllChangetypes {
-	manyChangetype {
-		hasMore
-		cursor
-		results {
-			...changeType
-		}
-	}
+  manyChangetype {
+    hasMore
+    cursor
+    results {
+      ...changeType
+    }
+  }
 }

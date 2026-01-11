@@ -1,11 +1,11 @@
 "use client";
 
 import { mdiChevronDown } from "@mdi/js";
-import { Icon } from "@src/components/lib/icon";
+import { Icon } from "@/src/lib/icon";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import type * as React from "react";
 
-import { cn } from "@src/components/lib/utils";
+import { cn } from "@/src/lib/util/index";
 
 function Accordion({
   ...props

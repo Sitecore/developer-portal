@@ -1,24 +1,24 @@
 import {
-	type NextFetchEvent,
-	type NextProxy,
-	type NextRequest,
-	NextResponse,
+  type NextFetchEvent,
+  type NextProxy,
+  type NextRequest,
+  NextResponse,
 } from "next/server";
 
 import type { ProxyFactory } from "./proxyFactory";
 
 export function stackProxies(
-	functions: Array<ProxyFactory> = [],
-	index = 0,
+  functions: Array<ProxyFactory> = [],
+  index = 0,
 ): NextProxy {
-	const current = functions[index];
+  const current = functions[index];
 
-	if (current) {
-		return (request: NextRequest, next: NextFetchEvent) => {
-			const proxy = stackProxies(functions, index + 1);
-			return current(proxy)(request, next);
-		};
-	} else {
-		return () => NextResponse.next();
-	}
+  if (current) {
+    return (request: NextRequest, next: NextFetchEvent) => {
+      const proxy = stackProxies(functions, index + 1);
+      return current(proxy)(request, next);
+    };
+  } else {
+    return () => NextResponse.next();
+  }
 }

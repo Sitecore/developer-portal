@@ -1,13 +1,13 @@
-import type { ChangelogEntryList } from "@lib/changelog/types";
+import type { ChangelogEntryList } from "@src/lib/changelog/types";
 import {
-	mockedChangelogEntries,
-	mockedChangelogEntry,
+    mockedChangelogEntries,
+    mockedChangelogEntry,
 } from "__mocks__/changelog/changelogEntry.mock";
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 
 const originalEnv = process.env.NEXT_PUBLIC_PUBLIC_URL;
 
-vi.mock("@lib/utils", () => ({
+vi.mock("@src/lib/utils", () => ({
 	getChangelogEntryUrl: vi.fn((entry) => `changelog/${entry.id}`),
 }));
 
@@ -26,7 +26,7 @@ describe("CreateFeed", () => {
 
 	test("should create feed with correct metadata", async () => {
 		const { CreateFeed: CreateFeedReloaded } = await import(
-			"@lib/changelog/feeds"
+			"@src/lib/changelog/feeds"
 		);
 		const entryList: ChangelogEntryList<Array<typeof mockedChangelogEntry>> = {
 			total: 1,
@@ -59,7 +59,7 @@ describe("CreateFeed", () => {
 		delete process.env.NEXT_PUBLIC_PUBLIC_URL;
 		vi.resetModules();
 		const { CreateFeed: CreateFeedReloaded } = await import(
-			"@lib/changelog/feeds"
+			"@src/lib/changelog/feeds"
 		);
 
 		const entryList: ChangelogEntryList<Array<typeof mockedChangelogEntry>> = {
@@ -77,7 +77,7 @@ describe("CreateFeed", () => {
 
 	test("should add entries to feed", async () => {
 		const { CreateFeed: CreateFeedReloaded } = await import(
-			"@lib/changelog/feeds"
+			"@src/lib/changelog/feeds"
 		);
 		const entryList: ChangelogEntryList<Array<typeof mockedChangelogEntry>> = {
 			total: 1,
@@ -102,7 +102,7 @@ describe("CreateFeed", () => {
 
 	test("should handle entries with fullArticle", async () => {
 		const { CreateFeed: CreateFeedReloaded } = await import(
-			"@lib/changelog/feeds"
+			"@src/lib/changelog/feeds"
 		);
 		const entryWithFullArticle = {
 			...mockedChangelogEntry,
@@ -123,7 +123,7 @@ describe("CreateFeed", () => {
 
 	test("should handle entries with images", async () => {
 		const { CreateFeed: CreateFeedReloaded } = await import(
-			"@lib/changelog/feeds"
+			"@src/lib/changelog/feeds"
 		);
 
 		// Create entry with image
@@ -162,7 +162,7 @@ describe("CreateFeed", () => {
 
 	test("should handle entries without images", async () => {
 		const { CreateFeed: CreateFeedReloaded } = await import(
-			"@lib/changelog/feeds"
+			"@src/lib/changelog/feeds"
 		);
 		const entryWithoutImage = {
 			...mockedChangelogEntry,
@@ -183,7 +183,7 @@ describe("CreateFeed", () => {
 
 	test("should handle entries with empty image array", async () => {
 		const { CreateFeed: CreateFeedReloaded } = await import(
-			"@lib/changelog/feeds"
+			"@src/lib/changelog/feeds"
 		);
 		const entryWithEmptyImage = {
 			...mockedChangelogEntry,
@@ -204,7 +204,7 @@ describe("CreateFeed", () => {
 
 	test("should handle multiple entries", async () => {
 		const { CreateFeed: CreateFeedReloaded } = await import(
-			"@lib/changelog/feeds"
+			"@src/lib/changelog/feeds"
 		);
 		const entryList: ChangelogEntryList<Array<typeof mockedChangelogEntry>> = {
 			total: 2,
@@ -222,7 +222,7 @@ describe("CreateFeed", () => {
 
 	test("should handle empty entry list", async () => {
 		const { CreateFeed: CreateFeedReloaded } = await import(
-			"@lib/changelog/feeds"
+			"@src/lib/changelog/feeds"
 		);
 		const entryList: ChangelogEntryList<Array<typeof mockedChangelogEntry>> = {
 			total: 0,
@@ -238,7 +238,7 @@ describe("CreateFeed", () => {
 
 	test("should format release date correctly", async () => {
 		const { CreateFeed: CreateFeedReloaded } = await import(
-			"@lib/changelog/feeds"
+			"@src/lib/changelog/feeds"
 		);
 		const entryList: ChangelogEntryList<Array<typeof mockedChangelogEntry>> = {
 			total: 1,
