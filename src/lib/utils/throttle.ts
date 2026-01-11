@@ -5,55 +5,59 @@
  * @returns Throttled function
  */
 export function throttle<T extends (...args: any[]) => Promise<any>>(
-  func: T,
-  delay: number
+	func: T,
+	delay: number,
 ): T {
-  let lastCallTime = 0;
-  let pendingCall: { resolve: (value: any) => void; reject: (error: any) => void; args: Parameters<T> } | null = null;
-  let timeoutId: NodeJS.Timeout | null = null;
+	let lastCallTime = 0;
+	let pendingCall: {
+		resolve: (value: any) => void;
+		reject: (error: any) => void;
+		args: Parameters<T>;
+	} | null = null;
+	let timeoutId: NodeJS.Timeout | null = null;
 
-  const throttled = async (...args: Parameters<T>): Promise<ReturnType<T>> => {
-    return new Promise((resolve, reject) => {
-      const now = Date.now();
-      const timeSinceLastCall = now - lastCallTime;
+	const throttled = async (...args: Parameters<T>): Promise<ReturnType<T>> => {
+		return new Promise((resolve, reject) => {
+			const now = Date.now();
+			const timeSinceLastCall = now - lastCallTime;
 
-      if (timeSinceLastCall >= delay) {
-        // Can execute immediately
-        lastCallTime = now;
-        func(...args)
-          .then(resolve)
-          .catch(reject);
-      } else {
-        // Need to wait
-        const waitTime = delay - timeSinceLastCall;
+			if (timeSinceLastCall >= delay) {
+				// Can execute immediately
+				lastCallTime = now;
+				func(...args)
+					.then(resolve)
+					.catch(reject);
+			} else {
+				// Need to wait
+				const waitTime = delay - timeSinceLastCall;
 
-        // Cancel any pending call
-        if (pendingCall) {
-          pendingCall.reject(new Error('Throttled: superseded by newer call'));
-        }
+				// Cancel any pending call
+				if (pendingCall) {
+					pendingCall.reject(new Error("Throttled: superseded by newer call"));
+				}
 
-        // Schedule this call
-        pendingCall = { resolve, reject, args };
-        
-        if (timeoutId) {
-          clearTimeout(timeoutId);
-        }
+				// Schedule this call
+				pendingCall = { resolve, reject, args };
 
-        timeoutId = setTimeout(() => {
-          if (pendingCall) {
-            lastCallTime = Date.now();
-            func(...pendingCall.args)
-              .then(pendingCall.resolve)
-              .catch(pendingCall.reject);
-            pendingCall = null;
-            timeoutId = null;
-          }
-        }, waitTime);
-      }
-    });
-  };
+				if (timeoutId) {
+					clearTimeout(timeoutId);
+				}
 
-  return throttled as T;
+				timeoutId = setTimeout(() => {
+					if (pendingCall) {
+						lastCallTime = Date.now();
+						func(...pendingCall.args)
+							.then(pendingCall.resolve)
+							.catch(pendingCall.reject);
+						pendingCall = null;
+						timeoutId = null;
+					}
+				}, waitTime);
+			}
+		});
+	};
+
+	return throttled as T;
 }
 
 /**
@@ -62,7 +66,7 @@ export function throttle<T extends (...args: any[]) => Promise<any>>(
  * @returns Throttled fetch function
  */
 export function createThrottledFetch(requestsPerSecond: number) {
-  const delay = 1000 / requestsPerSecond; // Convert to milliseconds between requests
-  
-  return throttle(fetch, delay);
+	const delay = 1000 / requestsPerSecond; // Convert to milliseconds between requests
+
+	return throttle(fetch, delay);
 }

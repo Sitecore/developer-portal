@@ -1,9 +1,9 @@
 query GetAllStatus {
-  manyStatus {
-    hasMore
-    cursor
-    results {
-      ...status
-    }
-  }
+	manyStatus {
+		hasMore
+		cursor
+		results {
+			...status
+		}
+	}
 }

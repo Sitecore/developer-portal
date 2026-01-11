@@ -1,13 +1,13 @@
 query getNumberOfEntriesByProduct($productId: [String!]!) {
-  changelog: manyChangelog(
-    minimumPageSize: 200
-    filter: { AND: [{ sitecoreProduct: { containsAny: $productId } }] }
-  ) {
-    hasMore
-    results {
-      system {
-        id
-      }
-    }
-  }
+	changelog: manyChangelog(
+		minimumPageSize: 200
+		filter: { AND: [{ sitecoreProduct: { containsAny: $productId } }] }
+	) {
+		hasMore
+		results {
+			system {
+				id
+			}
+		}
+	}
 }

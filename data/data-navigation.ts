@@ -1,172 +1,173 @@
-import { Product } from '@src/lib/assets';
+import { Product } from "@lib/assets";
 
 export interface NavItem {
-  title: string;
-  subTitle?: string;
-  children?: Array<NavItem>;
-  external?: boolean;
-  url?: string;
-  pathname?: string;
-  logo?: Product;
-  type?: 'grouped' | 'cta';
+	title: string;
+	subTitle?: string;
+	children?: Array<NavItem>;
+	external?: boolean;
+	url?: string;
+	pathname?: string;
+	logo?: Product;
+	type?: "grouped" | "cta";
 }
 
 export const mainNavigation: NavItem[] = [
-  {
-    title: 'Learn',
-    url: '/learn',
-  },
-  {
-    title: 'Documentation',
-    type: 'grouped',
-    children: [
-      {
-        title: 'Experience Management',
-        children: [
-          {
-            title: 'SitecoreAI',
-            url: 'https://doc.sitecore.com/sai',
-            logo: Product.SitecoreAI,
-          },
-          {
-            title: 'Experience Platform',
-            url: 'https://doc.sitecore.com/xp',
-            logo: Product.ExperiencePlatform,
-          },
-          {
-            title: 'Content Hub ONE',
-            url: 'https://doc.sitecore.com/ch-one',
-            logo: Product.ContentHubOne,
-          },
-          {
-            title: 'CDP',
-            url: 'https://doc.sitecore.com/cdp',
-            logo: Product.CDP,
-          },
-          {
-            title: 'Send',
-            url: 'https://doc.sitecore.com/send',
-            logo: Product.Send,
-          },
-        ],
-      },
-      {
-        title: ' ',
-        children: [
-          {
-            title: 'Content Hub',
-            url: 'https://doc.sitecore.com/ch',
-            logo: Product.ContentHub,
-          },
+	{
+		title: "Learn",
+		url: "/learn",
+	},
+	{
+		title: "Documentation",
+		type: "grouped",
+		children: [
+			{
+				title: "Experience Management",
+				children: [
+					{
+						title: "SitecoreAI",
+						url: "https://doc.sitecore.com/sai",
+						logo: Product.SitecoreAI,
+					},
+					{
+						title: "Experience Platform",
+						url: "https://doc.sitecore.com/xp",
+						logo: Product.ExperiencePlatform,
+					},
+					{
+						title: "Content Hub ONE",
+						url: "https://doc.sitecore.com/ch-one",
+						logo: Product.ContentHubOne,
+					},
+					{
+						title: "CDP",
+						url: "https://doc.sitecore.com/cdp",
+						logo: Product.CDP,
+					},
+					{
+						title: "Send",
+						url: "https://doc.sitecore.com/send",
+						logo: Product.Send,
+					},
+				],
+			},
+			{
+				title: " ",
+				children: [
+					{
+						title: "Content Hub",
+						url: "https://doc.sitecore.com/ch",
+						logo: Product.ContentHub,
+					},
 
-          {
-            title: 'Experience Manager',
-            url: 'https://doc.sitecore.com/xp',
-            logo: Product.ExperienceManager,
-          },
-          {
-            title: 'Search',
-            url: 'https://doc.sitecore.com/search',
-            logo: Product.Search,
-          },
-          {
-            title: 'Personalize',
-            url: 'https://doc.sitecore.com/personalize',
-            logo: Product.Personalize,
-          },
-        ],
-      },
-      {
-        title: 'Capabilities',
-        children: [
-          {
-            title: 'Cloud Portal',
-            url: 'https://doc.sitecore.com/portal',
-            logo: Product.Sitecore,
-          },
-          {
-            title: 'Connect',
-            url: 'https://doc.sitecore.com/connect',
-            logo: Product.Connect,
-          },
-          {
-            title: 'Marketplace',
-            url: 'https://doc.sitecore.com/mp',
-            logo: Product.Sitecore,
-          },
-        ],
-      },
-      {
-        title: 'Commerce',
-        children: [
-          {
-            title: 'OrderCloud',
-            url: 'https://doc.sitecore.com/ordercloud',
-            logo: Product.OrderCloud,
-          },
-          {
-            title: 'Discover',
-            url: 'https://doc.sitecore.com/discover',
-            logo: Product.Discover,
-          },
-          {
-            title: 'Experience Commerce',
-            url: 'https://doc.sitecore.com/xp',
-            logo: Product.ExperienceCommerce,
-          },
-        ],
-      },
+					{
+						title: "Experience Manager",
+						url: "https://doc.sitecore.com/xp",
+						logo: Product.ExperienceManager,
+					},
+					{
+						title: "Search",
+						url: "https://doc.sitecore.com/search",
+						logo: Product.Search,
+					},
+					{
+						title: "Personalize",
+						url: "https://doc.sitecore.com/personalize",
+						logo: Product.Personalize,
+					},
+				],
+			},
+			{
+				title: "Capabilities",
+				children: [
+					{
+						title: "Cloud Portal",
+						url: "https://doc.sitecore.com/portal",
+						logo: Product.Sitecore,
+					},
+					{
+						title: "Connect",
+						url: "https://doc.sitecore.com/connect",
+						logo: Product.Connect,
+					},
+					{
+						title: "Marketplace",
+						url: "https://doc.sitecore.com/mp",
+						logo: Product.Sitecore,
+					},
+				],
+			},
+			{
+				title: "Commerce",
+				children: [
+					{
+						title: "OrderCloud",
+						url: "https://doc.sitecore.com/ordercloud",
+						logo: Product.OrderCloud,
+					},
+					{
+						title: "Discover",
+						url: "https://doc.sitecore.com/discover",
+						logo: Product.Discover,
+					},
+					{
+						title: "Experience Commerce",
+						url: "https://doc.sitecore.com/xp",
+						logo: Product.ExperienceCommerce,
+					},
+				],
+			},
 
-      {
-        title: 'Services',
-        children: [
-          {
-            title: 'Managed Cloud',
-            url: 'https://doc.sitecore.com/xp',
-            logo: Product.ManagedCloud,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Community',
-    url: '/community',
-    type: 'cta',
-    children: [
-      {
-        title: 'MVP Program',
-        url: 'https://mvp.sitecore.com',
-        external: true,
-        subTitle: 'Celebrate the most active Sitecore Community members from around the world who provide valuable expertise to the Sitecore ecosystem.',
-      },
-      {
-        title: 'News and Announcements',
-        url: 'https://community.sitecore.com/community?id=community_forum&sys_id=af85dddf1bf17810486a4083b24bcb00',
-        external: true,
-      },
-      {
-        title: 'Forums',
-        url: 'https://community.sitecore.com',
-        external: true,
-      },
-      {
-        title: 'Blog',
-        url: 'https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba',
-        external: true,
-      },
-      {
-        title: 'Events',
-        url: 'https://community.sitecore.com/community?id=community_forum&sys_id=7a84272f1b313c10486a4083b24bcbd5',
-        external: true,
-      },
-    ],
-  },
-  {
-    title: 'Downloads',
-    url: '/downloads',
-  },
-  /*
+			{
+				title: "Services",
+				children: [
+					{
+						title: "Managed Cloud",
+						url: "https://doc.sitecore.com/xp",
+						logo: Product.ManagedCloud,
+					},
+				],
+			},
+		],
+	},
+	{
+		title: "Community",
+		url: "/community",
+		type: "cta",
+		children: [
+			{
+				title: "MVP Program",
+				url: "https://mvp.sitecore.com",
+				external: true,
+				subTitle:
+					"Celebrate the most active Sitecore Community members from around the world who provide valuable expertise to the Sitecore ecosystem.",
+			},
+			{
+				title: "News and Announcements",
+				url: "https://community.sitecore.com/community?id=community_forum&sys_id=af85dddf1bf17810486a4083b24bcb00",
+				external: true,
+			},
+			{
+				title: "Forums",
+				url: "https://community.sitecore.com",
+				external: true,
+			},
+			{
+				title: "Blog",
+				url: "https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba",
+				external: true,
+			},
+			{
+				title: "Events",
+				url: "https://community.sitecore.com/community?id=community_forum&sys_id=7a84272f1b313c10486a4083b24bcbd5",
+				external: true,
+			},
+		],
+	},
+	{
+		title: "Downloads",
+		url: "/downloads",
+	},
+	/*
   {
     title: 'Solution',
     pathname: '/[solution]',
@@ -658,49 +659,49 @@ export const mainNavigation: NavItem[] = [
       },
     ],
   },*/
-  {
-    title: 'Changelog',
-    url: '/changelog',
-  },
-  {
-    title: 'Roadmap',
-    url: '/roadmap',
-  },
+	{
+		title: "Changelog",
+		url: "/changelog",
+	},
+	{
+		title: "Roadmap",
+		url: "/roadmap",
+	},
 ];
 
 /*
  *  External links shown in the top right of the header
  */
 export const sitecoreQuickLinks: NavItem = {
-  title: 'External Sitecore Links',
-  children: [
-    {
-      title: 'Sitecore.com',
-      url: 'https://www.sitecore.com',
-    },
-    {
-      title: 'Sitecore Learning',
-      url: 'https://learning.sitecore.com/',
-    },
-    {
-      title: 'Sitecore Community',
-      url: 'https://community.sitecore.com/',
-    },
-    {
-      title: 'Sitecore MVP Program',
-      url: 'https://mvp.sitecore.com/',
-    },
-    {
-      title: 'Sitecore Partner Network',
-      url: 'https://partners.sitecore.com/',
-    },
-    {
-      title: 'Symposium',
-      url: 'https://symposium.sitecore.com/',
-    },
-    {
-      title: 'Support Portal',
-      url: 'https://support.sitecore.com',
-    },
-  ],
+	title: "External Sitecore Links",
+	children: [
+		{
+			title: "Sitecore.com",
+			url: "https://www.sitecore.com",
+		},
+		{
+			title: "Sitecore Learning",
+			url: "https://learning.sitecore.com/",
+		},
+		{
+			title: "Sitecore Community",
+			url: "https://community.sitecore.com/",
+		},
+		{
+			title: "Sitecore MVP Program",
+			url: "https://mvp.sitecore.com/",
+		},
+		{
+			title: "Sitecore Partner Network",
+			url: "https://partners.sitecore.com/",
+		},
+		{
+			title: "Symposium",
+			url: "https://symposium.sitecore.com/",
+		},
+		{
+			title: "Support Portal",
+			url: "https://support.sitecore.com",
+		},
+	],
 };

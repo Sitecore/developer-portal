@@ -1,26 +1,28 @@
 // Interfaces
-import { Changelog } from '@lib/changelog';
-import { Product } from '@lib/changelog/types';
-import { getQueryValue } from '@/src/lib/utils/requests';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { Changelog } from "@src/lib/changelog";
+import { getChangelogCredentials } from "@src/lib/changelog/common/credentials";
+import type { Product } from "@src/lib/changelog/types";
+import { getQueryValue } from "@src/lib/utils/requests";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
+const handler = async (
+	req: NextApiRequest,
+	res: NextApiResponse<Array<Product>>,
+) => {
+	const showAll: boolean = getQueryValue(req.query.all) !== "false";
+	const isPreview = !!req.preview;
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<Array<Product>>) => {
-  const showAll: boolean = getQueryValue(req.query.all) == 'false' ? false : true;
-  const isPreview = req.preview ? true : false;
+	res.setHeader("Cache-Control", "stale-while-revalidate");
 
-  res.setHeader('Cache-Control', 'stale-while-revalidate');
+	const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  const changelog = new Changelog(getChangelogCredentials(), isPreview);
-
-  await changelog.getProducts().then((response: Array<Product>) => {
-    if (showAll) {
-      res.status(200).json(response);
-    } else {
-      res.status(200).json(response.filter((e) => e.hasEntries));
-    }
-  });
+	await changelog.getProducts().then((response: Array<Product>) => {
+		if (showAll) {
+			res.status(200).json(response);
+		} else {
+			res.status(200).json(response.filter((e) => e.hasEntries));
+		}
+	});
 };
 
 export default handler;

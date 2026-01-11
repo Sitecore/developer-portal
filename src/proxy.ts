@@ -1,19 +1,17 @@
-import { aspxExtension } from './middlewares/aspxExtension';
-import { mediaHandler } from './middlewares/mediaHandler';
-import { stackProxies } from './middlewares/stackHandler';
-import { underscore } from './middlewares/underscore';
+import { aspxExtension } from "./middlewares/aspxExtension";
+import { mediaHandler } from "./middlewares/mediaHandler";
+import { stackProxies } from "./middlewares/stackHandler";
+import { underscore } from "./middlewares/underscore";
 
 export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-  ],
+	matcher: [
+		/*
+		 * Optimized matcher: Only run middleware on routes that need it
+		 * - Exclude API routes, static files, images, and common assets
+		 * - Include specific routes that need middleware processing
+		 */
+		"/((?!api|_next/static|_next/image|favicon.ico|.*\\.(ico|png|jpg|jpeg|svg|gif|webp|woff|woff2|ttf|eot)).*)",
+	],
 };
 
 const proxies = [aspxExtension, underscore, mediaHandler];

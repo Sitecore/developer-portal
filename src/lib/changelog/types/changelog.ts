@@ -1,9 +1,9 @@
 export type ChangelogCredentials = {
-  preview: ChangelogEndpoint;
-  production: ChangelogEndpoint;
+	preview: ChangelogEndpoint;
+	production: ChangelogEndpoint;
 };
 
 export type ChangelogEndpoint = {
-  endpoint: string;
-  token: string;
+	endpoint: string;
+	token: string;
 };

@@ -1,322 +1,320 @@
 {
-  "title": "Accelerate Cookbook for Content Hub",
-  "description": "This Cookbook provides a set of recipes to help implementing Content Hub through setup, configuration and implemenation.",
-  "productLogo": "ContentHub",
-  "path": "/learn/accelerate/content-hub",
-  "productFeedbackLabel": ["Content Hub"],
-  "heading": true,
-  "enableSearch": false,
-  "enableBreadcrumb": true,
-  "showRootAsSections": true,
-  "generateLLM": true,
-  "routes": [
-    {
-      "title": "Pre-development",
-      "path": "pre-development",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Discovery",
-          "path": "discovery",
-          "ignoreLink": false,
-          "children": [
-            {
-              "title": "Project Planning",
-              "path": "project-planning"
-            },            
-            {
-              "title": "Discovery Phase",
-              "path": "discovery-phase"
-            },
-            {
-              "title": "Requirements Gathering",
-              "path": "requirements-gathering"
-            }
-          ]
-        },
-        {
-          "title": "Data model",
-          "path": "data-model",
-          "ignoreLink": true,
-          "children": [
-            {
-              "title": "Domain Modelling",
-              "path": "domain-modelling"
-            },
-            {
-              "title": "Content Structuring",
-              "path": "content-structuring"
-            }
-          ]
-        },
-          {
-          "title": "User Roles",
-          "path": "user-roles",
-          "ignoreLink": true,          
-          "children": [
-            {
-              "title": "Data Librarian",
-              "path": "librarian"
-            },
-            {
-              "title": "System Administrator",
-              "path": "administrator"
-            }
-          ]
-        },
-        {
-          "title": "Sprint Zero",
-          "path": "sprint-zero",
-          "ignoreLink": true,
-          "children": [
-            {
-              "title": "Multi Environments Deployment",
-              "path": "multi-environments-deployment"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Implementation",
-      "path": "implementation",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Configuration",
-          "path": "configuration",
-          "ignoreLink": false,
-          "children": [
-            {
-              "title": "Distribution of Assets",
-              "path": "distribution-of-assets"
-            },
-            {
-              "title": "Distribution of Content",
-              "path": "distribution-of-content"
-            },
-            {
-              "title": "Environment Specific Settings",
-              "path": "environment-specific-settings"
-            },
-            
-            {
-              "title": "Paths across Entity Definitions",
-              "path": "paths-across-entity-definitions"
-            },
-            
-            {
-              "title": "Reporting",
-              "path": "reporting"
-            }
-          ]
-        },
-        {
-          "title": "Schema Management",
-          "path": "schema-management",
-          "ignoreLink": false,
-          "children": [
-            {
-              "title": "Taxonomy vs Option Lists",
-              "path": "taxonomy-vs-option-list"
-            },
-            {
-              "title": "Migrating Assets",
-              "path": "asset-migration"
-            }            
-          ]
-        },
-        {
-          "title": "Custom Logic",
-          "path": "custom-logic",
-          "ignoreLink": false,
-          "children": [
-            {
-              "title": "Catching Renditions Generation",
-              "path": "catching-rendition-generation"
-            },
-            {
-              "title": "Conditionally Generate Renditions",
-              "path": "conditionally-generate-renditions"
-            },
-            {
-              "title": "Developing External Components",
-              "path": "developing-external-components"
-            },
-            {
-              "title": "External Integrations",
-              "path": "external-integrations"
-            },
-            {
-              "title": "Updating meta-data on pre-commit",
-              "path": "meta-data-on-pre-commit"
-            },            
-            
-            {
-              "title": "Scripts Guidance and Scenarios",
-              "path": "scripting-guidance-and-scenarios"
-            },
-            {
-              "title": "Webclient SDK Scenarios",
-              "path": "webclient-sdk-scenarios"
-            }
-          ]
-        },
-        {
-          "title": "Functional Security",
-          "path": "functional-security",
-          "ignoreLink": false,
-          "children": [
-            {
-              "title": "Debugging User Security",
-              "path": "debugging-user-security"
-            },
-            {
-              "title": "Single-Sign On",
-              "path": "sso-on-content-hub"
-            },
-            {
-              "title": "User Groups Setup",
-              "path": "user-groups-setup"
-            }
-          ]
-        },      
-        {
-          "title": "Integrations",
-          "path": "integrations",
-          "ignoreLink": false,
-          "children": [
-            {
-              "title": "Editing assets in 3rd-party tools",
-              "path": "3rd-party-editing-tools"
-            },
-            {
-              "title": "Content distribution",
-              "path": "content-distribution"
-            }            
-          ]
-        },
-        {
-          "title": "Search Pages",
-          "path": "search",
-          "ignoreLink": false,
-          "children": [
-            {
-              "title": "Considering Search",
-              "path": "considering-search"
-            },
-            {
-              "title": "Setup Search",
-              "path": "setup-search"
-            }
-          ]
-        },
-        {
-          "title": "Digital Rights Management",
-         "path": "digital-rights-management",
-         "ignoreLink": false    
-       },
-        {
-          "title": "Languages",
-          "path": "languages",
-          "ignoreLink": false,
-          "children": [
-            {
-              "title": "Content Translation",
-              "path": "content-translation"
-            },            
-            {
-              "title": "UI Translation",
-              "path": "ui-translation"
-            }
-          ]
-        }        
-      ]
-    },
-    {
-      "title": "Final Steps",
-      "path": "final-steps",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Migration Guide",
-          "path": "migration-guide"
-        },
-        {
-          "title": "Testing and Quality Assurance",
-          "path": "testing-and-qa",
-          "ignoreLink": false,
-          "children": [
-            {
-              "title": "Implementation Testing",
-              "path": "implementation-testing"
-            },
-            {
-              "title": "Quality Assurance",
-              "path": "quality-assurance"
-            }
-          ]
-        },
-        {
-          "title": "Go-Live Checklist",
-          "path": "go-live-checklist"
-        },
-        {
-          "title": "Hypercare Strategy",
-          "path": "hypercare-strategy"
-        }
-      ]
-    },
-    {
-      "title": "Optimization",
-      "path": "optimization",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Home page customizations",
-          "path": "home-page-customizations"
-        },    
-        {
-          "title": "Performance Optimization",
-          "path": "performance-optimization"
-        },               
-        {
-          "title": "Reporting",
-          "path": "reporting",
-          "ignoreLink": false,
-          "children": [
-            {
-              "title": "Asset download by type",
-              "path": "asset-download-by-type"
-            },
-            {
-              "title": "External component events",
-              "path": "external-component-events"
-            },            
-            {
-              "title": "Most searched assets",
-              "path": "most-searched-assets"
-            },            
-            {
-              "title": "Most applied facet filters",
-              "path": "most-applied-facet-filters"
-            }
-            
-          ]
-        }
-      ]
-      
-    },
-    {
-      "title": "Appendix I",
-      "path": "appendix-i",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Content Hub Glossary",
-          "path": "content-hub-glossary"
-        }
-      ]
-    }
-  ]
+	"title": "Accelerate Cookbook for Content Hub",
+	"description": "This Cookbook provides a set of recipes to help implementing Content Hub through setup, configuration and implemenation.",
+	"productLogo": "ContentHub",
+	"path": "/learn/accelerate/content-hub",
+	"productFeedbackLabel": ["Content Hub"],
+	"heading": true,
+	"enableSearch": false,
+	"enableBreadcrumb": true,
+	"showRootAsSections": true,
+	"generateLLM": true,
+	"routes": [
+		{
+			"title": "Pre-development",
+			"path": "pre-development",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Discovery",
+					"path": "discovery",
+					"ignoreLink": false,
+					"children": [
+						{
+							"title": "Project Planning",
+							"path": "project-planning"
+						},
+						{
+							"title": "Discovery Phase",
+							"path": "discovery-phase"
+						},
+						{
+							"title": "Requirements Gathering",
+							"path": "requirements-gathering"
+						}
+					]
+				},
+				{
+					"title": "Data model",
+					"path": "data-model",
+					"ignoreLink": true,
+					"children": [
+						{
+							"title": "Domain Modelling",
+							"path": "domain-modelling"
+						},
+						{
+							"title": "Content Structuring",
+							"path": "content-structuring"
+						}
+					]
+				},
+				{
+					"title": "User Roles",
+					"path": "user-roles",
+					"ignoreLink": true,
+					"children": [
+						{
+							"title": "Data Librarian",
+							"path": "librarian"
+						},
+						{
+							"title": "System Administrator",
+							"path": "administrator"
+						}
+					]
+				},
+				{
+					"title": "Sprint Zero",
+					"path": "sprint-zero",
+					"ignoreLink": true,
+					"children": [
+						{
+							"title": "Multi Environments Deployment",
+							"path": "multi-environments-deployment"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Implementation",
+			"path": "implementation",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Configuration",
+					"path": "configuration",
+					"ignoreLink": false,
+					"children": [
+						{
+							"title": "Distribution of Assets",
+							"path": "distribution-of-assets"
+						},
+						{
+							"title": "Distribution of Content",
+							"path": "distribution-of-content"
+						},
+						{
+							"title": "Environment Specific Settings",
+							"path": "environment-specific-settings"
+						},
+
+						{
+							"title": "Paths across Entity Definitions",
+							"path": "paths-across-entity-definitions"
+						},
+
+						{
+							"title": "Reporting",
+							"path": "reporting"
+						}
+					]
+				},
+				{
+					"title": "Schema Management",
+					"path": "schema-management",
+					"ignoreLink": false,
+					"children": [
+						{
+							"title": "Taxonomy vs Option Lists",
+							"path": "taxonomy-vs-option-list"
+						},
+						{
+							"title": "Migrating Assets",
+							"path": "asset-migration"
+						}
+					]
+				},
+				{
+					"title": "Custom Logic",
+					"path": "custom-logic",
+					"ignoreLink": false,
+					"children": [
+						{
+							"title": "Catching Renditions Generation",
+							"path": "catching-rendition-generation"
+						},
+						{
+							"title": "Conditionally Generate Renditions",
+							"path": "conditionally-generate-renditions"
+						},
+						{
+							"title": "Developing External Components",
+							"path": "developing-external-components"
+						},
+						{
+							"title": "External Integrations",
+							"path": "external-integrations"
+						},
+						{
+							"title": "Updating meta-data on pre-commit",
+							"path": "meta-data-on-pre-commit"
+						},
+
+						{
+							"title": "Scripts Guidance and Scenarios",
+							"path": "scripting-guidance-and-scenarios"
+						},
+						{
+							"title": "Webclient SDK Scenarios",
+							"path": "webclient-sdk-scenarios"
+						}
+					]
+				},
+				{
+					"title": "Functional Security",
+					"path": "functional-security",
+					"ignoreLink": false,
+					"children": [
+						{
+							"title": "Debugging User Security",
+							"path": "debugging-user-security"
+						},
+						{
+							"title": "Single-Sign On",
+							"path": "sso-on-content-hub"
+						},
+						{
+							"title": "User Groups Setup",
+							"path": "user-groups-setup"
+						}
+					]
+				},
+				{
+					"title": "Integrations",
+					"path": "integrations",
+					"ignoreLink": false,
+					"children": [
+						{
+							"title": "Editing assets in 3rd-party tools",
+							"path": "3rd-party-editing-tools"
+						},
+						{
+							"title": "Content distribution",
+							"path": "content-distribution"
+						}
+					]
+				},
+				{
+					"title": "Search Pages",
+					"path": "search",
+					"ignoreLink": false,
+					"children": [
+						{
+							"title": "Considering Search",
+							"path": "considering-search"
+						},
+						{
+							"title": "Setup Search",
+							"path": "setup-search"
+						}
+					]
+				},
+				{
+					"title": "Digital Rights Management",
+					"path": "digital-rights-management",
+					"ignoreLink": false
+				},
+				{
+					"title": "Languages",
+					"path": "languages",
+					"ignoreLink": false,
+					"children": [
+						{
+							"title": "Content Translation",
+							"path": "content-translation"
+						},
+						{
+							"title": "UI Translation",
+							"path": "ui-translation"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Final Steps",
+			"path": "final-steps",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Migration Guide",
+					"path": "migration-guide"
+				},
+				{
+					"title": "Testing and Quality Assurance",
+					"path": "testing-and-qa",
+					"ignoreLink": false,
+					"children": [
+						{
+							"title": "Implementation Testing",
+							"path": "implementation-testing"
+						},
+						{
+							"title": "Quality Assurance",
+							"path": "quality-assurance"
+						}
+					]
+				},
+				{
+					"title": "Go-Live Checklist",
+					"path": "go-live-checklist"
+				},
+				{
+					"title": "Hypercare Strategy",
+					"path": "hypercare-strategy"
+				}
+			]
+		},
+		{
+			"title": "Optimization",
+			"path": "optimization",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Home page customizations",
+					"path": "home-page-customizations"
+				},
+				{
+					"title": "Performance Optimization",
+					"path": "performance-optimization"
+				},
+				{
+					"title": "Reporting",
+					"path": "reporting",
+					"ignoreLink": false,
+					"children": [
+						{
+							"title": "Asset download by type",
+							"path": "asset-download-by-type"
+						},
+						{
+							"title": "External component events",
+							"path": "external-component-events"
+						},
+						{
+							"title": "Most searched assets",
+							"path": "most-searched-assets"
+						},
+						{
+							"title": "Most applied facet filters",
+							"path": "most-applied-facet-filters"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title": "Appendix I",
+			"path": "appendix-i",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Content Hub Glossary",
+					"path": "content-hub-glossary"
+				}
+			]
+		}
+	]
 }

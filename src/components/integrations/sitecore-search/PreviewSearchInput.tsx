@@ -1,17 +1,17 @@
-import { Product } from '@/src/lib/assets';
-import { Badge } from '@components/ui/badge';
-import { Button } from '@components/ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@components/ui/tooltip';
-import { cn } from '@lib/utils';
 import type { PreviewSearchInitialState } from '@sitecore-search/react';
 import { trackEntityPageViewEvent, usePreviewSearch, widget, WidgetDataType } from '@sitecore-search/react';
 import { Presence, PreviewSearch } from '@sitecore-search/ui';
+import { Badge } from '@src/components/ui/badge';
+import { Button } from '@src/components/ui/button';
+import { ProductLogo } from '@src/components/ui/logos';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@src/components/ui/tooltip';
+import { Product } from '@src/lib/assets';
+import { cn } from '@src/lib/utils';
 import { Search } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import type { ChangeEvent, SyntheticEvent } from 'react';
-import { useCallback } from 'react';
-import { ProductLogo } from '../../ui/logos';
+import React, { useCallback } from 'react';
 
 type ArticleModel = {
   id: string;
@@ -104,6 +104,7 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
     [onKeyphraseChange]
   );
 
+  // biome-ignore lint/a11y/noStaticElementInteractions: Focus handlers for child element focus management
   return (
     <div className={cn('flex', rest.className)} style={{ width: rest.width, transition: rest.transition }} onFocus={rest.onFocus} onBlur={rest.onBlur}>
       <PreviewSearch.Root data-control="PreviewSearch.Root">
@@ -114,29 +115,26 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
             // @ts-expect-error
             const target = e.target.query as HTMLInputElement;
 
-            router.push('/search?q=' + encodeURIComponent(target.value)).then(() => router.reload());
+            router.push(`/search?q=${encodeURIComponent(target.value)}`).then(() => router.reload());
           }}
-          role="searchbox"
           className="w-full"
         >
           <div className="relative rounded-none">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <div className="pl-10 pr-[150px]">
-              <PreviewSearch.Input 
-                name="query" 
-                onChange={keyphraseHandler} 
-                autoComplete="off" 
+              <PreviewSearch.Input
+                name="query"
+                onChange={keyphraseHandler}
+                autoComplete="off"
                 value={keyphrase}
-                className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm rounded-none" 
-                title="Search across different Sitecore domains" 
-                placeholder="search for ..." 
-                role="searchbox" 
+                className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm rounded-none"
+                title="Search across different Sitecore domains"
+                placeholder="search for ..."
+                role="searchbox"
               />
             </div>
             <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center gap-2 w-[150px]">
-              <span className="hidden md:flex text-xs text-muted-foreground">
-                Powered by
-              </span>
+              <span className="hidden md:flex text-xs text-muted-foreground">Powered by</span>
               <ProductLogo product={Product.Search} width={67} height={18} />
             </div>
           </div>
@@ -144,14 +142,12 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
         <PreviewSearch.Content ref={widgetRef} data-control="PreviewSearch.Content">
           <div className="flex flex-row bg-background w-full max-w-4xl 2xl:max-w-2xl border rounded-md shadow-md">
             <Presence present={!loading}>
-              <>
+              <React.Fragment>
                 {articleSuggestions.length > 0 && (
                   <PreviewSearch.Suggestions>
                     <div className="bg-primary h-full">
                       <PreviewSearch.SuggestionsGroup id="article_name_context_aware">
-                        <p className="text-sm uppercase tracking-wide text-muted-foreground px-4 py-2">
-                          Suggested terms
-                        </p>
+                        <p className="text-sm uppercase tracking-wide text-muted-foreground px-4 py-2">Suggested terms</p>
                         <div className="flex flex-col gap-1">
                           {articleSuggestions.map(({ text }) => (
                             <PreviewSearch.SuggestionTrigger id={text} key={text}>
@@ -170,9 +166,7 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
                                         });
                                       }}
                                     >
-                                      <span className="truncate w-[200px]">
-                                        {text}
-                                      </span>
+                                      <span className="truncate w-[200px]">{text}</span>
                                     </Button>
                                   </TooltipTrigger>
                                   <TooltipContent>
@@ -201,27 +195,30 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
                           <ul className="list-none">
                             {articles.map((article, index) => (
                               <PreviewSearch.Item key={article.id} asChild data-control="PreviewSearch.Item">
-                                <li key={index} className="w-full">
+                                <li key={`${article.id}-li`} className="w-full">
                                   <article className="p-2 rounded-md hover:bg-muted">
                                     <Link
                                       key={`${article.id}@${article.source_id}`}
                                       href={article.url}
                                       onClick={(e) => {
                                         e.preventDefault();
-                                        onItemClick({ id: article.id || '', index: index });
+                                        onItemClick({
+                                          id: article.id || '',
+                                          index: index,
+                                        });
 
-                                        if (article.index_name != 'sitecore-devportal-v2') {
-                                          trackEntityPageViewEvent('content', { items: [{ id: article.id }] });
+                                        if (article.index_name !== 'sitecore-devportal-v2') {
+                                          trackEntityPageViewEvent('content', {
+                                            items: [{ id: article.id }],
+                                          });
                                           window.open(article.url, '_blank');
                                         } else {
-                                          window.open(article.url + '?fromSearch=true', '_blank');
+                                          window.open(`${article.url}?fromSearch=true`, '_blank');
                                         }
                                       }}
                                       className="block"
                                     >
-                                      <h4 className="text-sm font-heading line-clamp-1">
-                                        {article.name}
-                                      </h4>
+                                      <h4 className="text-sm font-heading line-clamp-1">{article.name}</h4>
                                       <p className="line-clamp-1 text-sm">{article.description}</p>
                                       <div className="flex items-center gap-2 mb-2 w-full">
                                         {article.type && (
@@ -229,7 +226,11 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
                                             {article.type}
                                           </Badge>
                                         )}
-                                        {article.index_name && <Badge variant="default" className="text-xs">{article.site_name}</Badge>}
+                                        {article.index_name && (
+                                          <Badge variant="default" className="text-xs">
+                                            {article.site_name}
+                                          </Badge>
+                                        )}
                                       </div>
                                     </Link>
                                   </article>
@@ -242,7 +243,7 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6, ...rest }: PreviewSea
                     </PreviewSearch.Items>
                   )}
                 </PreviewSearch.Results>
-              </>
+              </React.Fragment>
             </Presence>
           </div>
         </PreviewSearch.Content>

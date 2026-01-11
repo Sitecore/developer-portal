@@ -1,13 +1,13 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "javascript.format.enable": false,
-  "editor.tabSize": 2,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit"
-  },
-  "[typescript]": {
-    "editor.formatOnSave": true
-  }
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"javascript.format.enable": false,
+	"editor.tabSize": 2,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit",
+		"source.organizeImports": "explicit"
+	},
+	"[typescript]": {
+		"editor.formatOnSave": true
+	}
 }

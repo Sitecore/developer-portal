@@ -1,19 +1,24 @@
+// biome-ignore lint/complexity/noStaticOnlyClass: Utility class with static methods
 export class SortUtil {
-  static sortByProperty<T>(array: Array<T>, propName: keyof T, order: 'ASC' | 'DESC'): void {
-    array.sort((a, b) => {
-      if (a[propName] < b[propName]) {
-        return -1;
-      }
+	static sortByProperty<T>(
+		array: Array<T>,
+		propName: keyof T,
+		order: "ASC" | "DESC",
+	): void {
+		array.sort((a, b) => {
+			if (a[propName] < b[propName]) {
+				return -1;
+			}
 
-      if (a[propName] > b[propName]) {
-        return 1;
-      }
+			if (a[propName] > b[propName]) {
+				return 1;
+			}
 
-      return 0;
-    });
+			return 0;
+		});
 
-    if (order === 'DESC') {
-      array.reverse();
-    }
-  }
+		if (order === "DESC") {
+			array.reverse();
+		}
+	}
 }

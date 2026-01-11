@@ -1,92 +1,92 @@
 {
-  "title": "Product Overview",
-  "description": "",
-  "heading": false,
-  "path": "/products",
-  "showRootAsSections": true,
-  "routes": [
-    {
-      "title": "Sitecore Platform DXP",
-      "path": "",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Experience Platform (XM/XP)",
-          "path": "experience-platform"
-        }
-      ]
-    },    {
-      "title": "Experience Management",
-      "path": "",
-      "ignoreLink": true,
-      "children": [
-        
-        {
-          "title": "XM Cloud",
-          "path": "xm-cloud"
-        },
-        {
-          "title": "Content Hub ONE",
-          "path": "content-hub-one"
-        },
-        {
-          "title": "Search",
-          "path": "search"
-        },
-        {
-          "title": "Personalize",
-          "path": "personalize"
-        },
-        {
-          "title": "CDP",
-          "path": "customer-data-platform"
-        },
-        {
-          "title": "Send",
-          "path": "send"
-        }
-      ]
-    },
-      {
-      "title": "Capabilities",
-      "path": "",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Connect",
-          "path": "connect"
-        }
-      ]
-    },
-    {
-      "title": "Services",
-      "path": "",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Managed Cloud",
-          "path": "managed-cloud"
-        }
-      ]
-    },
-    {
-      "title": "Commerce",
-      "path": "",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "OrderCloud",
-          "path": "ordercloud"
-        },
-        {
-          "title": "Discover",
-          "path": "discover"
-        },
-        {
-          "title": "Experience Commerce",
-          "path": "experience-commerce"
-        }
-      ]
-    }
-  ]
+	"title": "Product Overview",
+	"description": "",
+	"heading": false,
+	"path": "/products",
+	"showRootAsSections": true,
+	"routes": [
+		{
+			"title": "Sitecore Platform DXP",
+			"path": "",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Experience Platform (XM/XP)",
+					"path": "experience-platform"
+				}
+			]
+		},
+		{
+			"title": "Experience Management",
+			"path": "",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "XM Cloud",
+					"path": "xm-cloud"
+				},
+				{
+					"title": "Content Hub ONE",
+					"path": "content-hub-one"
+				},
+				{
+					"title": "Search",
+					"path": "search"
+				},
+				{
+					"title": "Personalize",
+					"path": "personalize"
+				},
+				{
+					"title": "CDP",
+					"path": "customer-data-platform"
+				},
+				{
+					"title": "Send",
+					"path": "send"
+				}
+			]
+		},
+		{
+			"title": "Capabilities",
+			"path": "",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Connect",
+					"path": "connect"
+				}
+			]
+		},
+		{
+			"title": "Services",
+			"path": "",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Managed Cloud",
+					"path": "managed-cloud"
+				}
+			]
+		},
+		{
+			"title": "Commerce",
+			"path": "",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "OrderCloud",
+					"path": "ordercloud"
+				},
+				{
+					"title": "Discover",
+					"path": "discover"
+				},
+				{
+					"title": "Experience Commerce",
+					"path": "experience-commerce"
+				}
+			]
+		}
+	]
 }

@@ -1,2 +1,2 @@
-export { MultiSelect } from './MultiSelect';
-export type { Option } from './MultiSelect';
+export type { Option } from "./MultiSelect";
+export { MultiSelect } from "./MultiSelect";

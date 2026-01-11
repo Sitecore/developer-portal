@@ -1,53 +1,67 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useTheme } from 'next-themes';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@components/ui/dialog';
-import { Button } from '@components/ui/button';
-import { Product, Variant } from '../../lib/assets';
-import ProductIcon from '../ui/logos/ProductIcon';
-import { cn } from '@lib/utils';
+import { Button } from "@src/components/ui/button";
+import {
+	Dialog,
+	DialogContent,
+	DialogHeader,
+	DialogTitle,
+} from "@src/components/ui/dialog";
+import { Product, Variant } from "@src/lib/assets";
+import { cn } from "@src/lib/utils";
+import { useState } from "react";
+import ProductIcon from "@src/components/ui/logos/ProductIcon";
 
 type GuidedDemoProps = {
-  demoId: string;
-  linkText?: string;
-  productName: string;
-  productLogo?: string;
-  className?: string;
+	demoId: string;
+	linkText?: string;
+	productName: string;
+	productLogo?: string;
+	className?: string;
 };
 
-export const GuidedDemo = ({ demoId, linkText, productName, productLogo, className }: GuidedDemoProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const { theme } = useTheme();
-  const product: Product = Product[productLogo as keyof typeof Product];
+export const GuidedDemo = ({
+	demoId,
+	linkText,
+	productName,
+	productLogo,
+	className,
+}: GuidedDemoProps) => {
+	const [isOpen, setIsOpen] = useState(false);
+	const product: Product = Product[productLogo as keyof typeof Product];
 
-  return (
-    <div className={cn('w-1/4', className)}>
-      <Button onClick={() => setIsOpen(true)} className="mt-4">
-        {linkText ?? 'Launch guided tour'}
-      </Button>
+	return (
+		<div className={cn("w-1/4", className)}>
+			<Button onClick={() => setIsOpen(true)} className="mt-4">
+				{linkText ?? "Launch guided tour"}
+			</Button>
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-[90vw] bg-transparent shadow-lg border-0 p-0">
-          <div className="bg-primary dark:bg-gray-700 text-white rounded-t-3xl shadow-lg p-6">
-            <DialogHeader>
-              <div className="flex items-center">
-                {productLogo && <ProductIcon product={product} variant={Variant.Dark} />}
-                <DialogTitle className="ml-2 text-white">Guided tour: {productName}</DialogTitle>
-              </div>
-            </DialogHeader>
-          </div>
-          <div className="bg-background p-0">
-            <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
-              <iframe
-                src={`https://capture.navattic.com/${demoId}`}
-                className="absolute inset-0 w-full h-full"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
-    </div>
-  );
+			<Dialog open={isOpen} onOpenChange={setIsOpen}>
+				<DialogContent className="max-w-[90vw] bg-transparent shadow-lg border-0 p-0">
+					<div className="bg-primary dark:bg-gray-700 text-white rounded-t-3xl shadow-lg p-6">
+						<DialogHeader>
+							<div className="flex items-center">
+								{productLogo && (
+									<ProductIcon product={product} variant={Variant.Dark} />
+								)}
+								<DialogTitle className="ml-2 text-white">
+									Guided tour: {productName}
+								</DialogTitle>
+							</div>
+						</DialogHeader>
+					</div>
+					<div className="bg-background p-0">
+						<div className="relative w-full" style={{ aspectRatio: "4/3" }}>
+							<iframe
+								src={`https://capture.navattic.com/${demoId}`}
+								className="absolute inset-0 w-full h-full"
+								allowFullScreen
+								title="Interactive demo"
+							/>
+						</div>
+					</div>
+				</DialogContent>
+			</Dialog>
+		</div>
+	);
 };

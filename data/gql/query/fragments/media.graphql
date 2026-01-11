@@ -1,12 +1,12 @@
 fragment media on XMCMedia {
-  system {
-    id
-    name
-  }
-  ... on XMCMedia {
-    media_publicLink
-    media_type {
-      name
-    }
-  }
+	system {
+		id
+		name
+	}
+	... on XMCMedia {
+		media_publicLink
+		media_type {
+			name
+		}
+	}
 }

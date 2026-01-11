@@ -1,29 +1,35 @@
 {
-  "replacementPatterns": [
-    {
-      "pattern": "^/",
-      "replacement": "https://developers.sitecore.com/"
-    },
-    {
-      "pattern": "^https://kb.sitecore.net/articles/",
-      "replacement": "https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0"
-    }
-  ],
-  "ignorePatterns": [
-    {
-      "pattern": "^#"
-    }
-  ],
-  "httpHeaders": [
-    {
-      "urls": ["https://github.com/", "https://guides.github.com/", "https://help.github.com/", "https://docs.github.com/", "kb.sitecore.net"],
-      "headers": {
-        "Accept-Encoding": "zstd, br, gzip, deflate"
-      }
-    }
-  ],
-  "retryOn429": true,
-  "retryCount": 5,
-  "fallbackRetryDelay": "30s",
-  "aliveStatusCodes": [200, 206, 403]
+	"replacementPatterns": [
+		{
+			"pattern": "^/",
+			"replacement": "https://developers.sitecore.com/"
+		},
+		{
+			"pattern": "^https://kb.sitecore.net/articles/",
+			"replacement": "https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0"
+		}
+	],
+	"ignorePatterns": [
+		{
+			"pattern": "^#"
+		}
+	],
+	"httpHeaders": [
+		{
+			"urls": [
+				"https://github.com/",
+				"https://guides.github.com/",
+				"https://help.github.com/",
+				"https://docs.github.com/",
+				"kb.sitecore.net"
+			],
+			"headers": {
+				"Accept-Encoding": "zstd, br, gzip, deflate"
+			}
+		}
+	],
+	"retryOn429": true,
+	"retryCount": 5,
+	"fallbackRetryDelay": "30s",
+	"aliveStatusCodes": [200, 206, 403]
 }

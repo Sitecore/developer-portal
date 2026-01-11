@@ -1,9 +1,9 @@
 query GetAllProducts {
-  manySitecoreProduct(minimumPageSize: 25) {
-    hasMore
-    cursor
-    results {
-      ...product
-    }
-  }
+	manySitecoreProduct(minimumPageSize: 25) {
+		hasMore
+		cursor
+		results {
+			...product
+		}
+	}
 }

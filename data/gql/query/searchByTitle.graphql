@@ -1,23 +1,23 @@
 query searchByTitle(
-  $date: CustomDateTime
-  $productId: [String!]
-  $entryTitle: [String!]
+	$date: CustomDateTime
+	$productId: [String!]
+	$entryTitle: [String!]
 ) {
-  data: manyChangelog(
-    orderBy: RELEASE_DATE_DESC
-    minimumPageSize: 1
-    filter: {
-      AND: [
-        { releaseDate: { lessThan: $date } }
-        { sitecoreProduct: { containsAny: $productId } }
-        { title: { containsAll: $entryTitle, case: INSENSITIVE } }
-      ]
-    }
-  ) {
-    hasMore
-    cursor
-    results {
-      ...changelogEntry
-    }
-  }
+	data: manyChangelog(
+		orderBy: RELEASE_DATE_DESC
+		minimumPageSize: 1
+		filter: {
+			AND: [
+				{ releaseDate: { lessThan: $date } }
+				{ sitecoreProduct: { containsAny: $productId } }
+				{ title: { containsAll: $entryTitle, case: INSENSITIVE } }
+			]
+		}
+	) {
+		hasMore
+		cursor
+		results {
+			...changelogEntry
+		}
+	}
 }

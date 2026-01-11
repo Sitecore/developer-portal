@@ -1,9 +1,9 @@
 export type CategoryTileListData = {
-  cards: Array<CategoryTileProps>;
+	cards: Array<CategoryTileProps>;
 };
 
 export type CategoryTileProps = {
-  description: string;
-  href: string;
-  title: string;
+	description: string;
+	href: string;
+	title: string;
 };

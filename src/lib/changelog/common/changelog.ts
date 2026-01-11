@@ -8,10 +8,10 @@
  * @returns Array of ID strings
  */
 export function getSelectedIds(value: string | undefined): Array<string> {
-  return value != null && value.length > 0 ? value.split('|') : [];
+	return value != null && value.length > 0 ? value.split("|") : [];
 }
 
 /**
  * API URL for changelog entries
  */
-export const entriesApiUrl = '/api/changelog/v1';
+export const entriesApiUrl = "/api/changelog/v1";

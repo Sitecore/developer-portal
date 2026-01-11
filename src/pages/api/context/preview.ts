@@ -1,29 +1,29 @@
-import { getQueryValue } from '@/src/lib/utils/requests';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { getQueryValue } from "@src/lib/utils/requests";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 // API handler that enables preview mode, executed when the users toggles the preview mode manually
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    res.status(405).json({ message: 'Method not allowed' });
+	if (req.method !== "POST") {
+		res.status(405).json({ message: "Method not allowed" });
 
-    return;
-  }
+		return;
+	}
 
-  const { clear, redirect } = req.query;
-  const redirectUrl = getQueryValue(redirect);
+	const { clear, redirect } = req.query;
+	const redirectUrl = getQueryValue(redirect);
 
-  if (clear != null) {
-    res.clearPreviewData({});
-    // console.log('Preview mode disabled');
-  } else {
-    res.setPreviewData({});
-    // console.log('Preview mode enabled');
-  }
+	if (clear != null) {
+		res.clearPreviewData({});
+		// console.log('Preview mode disabled');
+	} else {
+		res.setPreviewData({});
+		// console.log('Preview mode enabled');
+	}
 
-  if (redirectUrl) {
-    res.redirect(redirectUrl);
-  }
+	if (redirectUrl) {
+		res.redirect(redirectUrl);
+	}
 
-  res.end();
+	res.end();
 }

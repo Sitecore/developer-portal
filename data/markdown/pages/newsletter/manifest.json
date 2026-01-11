@@ -1,129 +1,129 @@
 {
-  "title": "Archive",
-  "description": "Sitecore Developer Newsletter",
-  "path": "/newsletter",
-  "heading": true,
-  "showRootAsSections": true,
-  "routes": [
-    {
-      "title": "2024",
-      "path": "2024",
-      "ignoreLink": false,
-      "children": [
-        {
-          "title": "March 2024",
-          "path": "2024/03"
-        },
-        {
-          "title": "February 2024",
-          "path": "2024/02"
-        },
-        {
-          "title": "January 2024",
-          "path": "2024/01"
-        }
-      ],
-      "collapsed": false
-    },
-    {
-      "title": "2023",
-      "path": "2023",
-      "ignoreLink": false,
-      "children": [
-        {
-          "title": "December 2023",
-          "path": "2023/12"
-        },
-        {
-          "title": "October 2023",
-          "path": "2023/10"
-        },
-        {
-          "title": "September 2023",
-          "path": "2023/09"
-        },
-        {
-          "title": "August 2023",
-          "path": "2023/08"
-        },
-        {
-          "title": "July 2023",
-          "path": "2023/07"
-        },
-        {
-          "title": "June 2023",
-          "path": "2023/06"
-        },
-        {
-          "title": "May 2023",
-          "path": "2023/05"
-        },
-        {
-          "title": "March 2023",
-          "path": "2023/03"
-        },
-        {
-          "title": "February 2023",
-          "path": "2023/02"
-        },
-        {
-          "title": "January 2023",
-          "path": "2023/01"
-        }
-      ],
-      "collapsed": false
-    },
-    {
-      "title": "2022",
-      "path": "2022",
-      "ignoreLink": false,
-      "children": [
-        {
-          "title": "December 2022",
-          "path": "2022/12"
-        },
-        {
-          "title": "November 2022",
-          "path": "2022/11"
-        },
-        {
-          "title": "October 2022",
-          "path": "2022/10"
-        },
-        {
-          "title": "August 2022",
-          "path": "2022/08"
-        },
-        {
-          "title": "July 2022",
-          "path": "2022/07"
-        },
-        {
-          "title": "June 2022",
-          "path": "2022/06"
-        },
-        {
-          "title": "May 2022",
-          "path": "2022/05"
-        },
-        {
-          "title": "April 2022",
-          "path": "2022/04"
-        },
-        {
-          "title": "March 2022",
-          "path": "2022/03"
-        },
-        {
-          "title": "February 2022",
-          "path": "2022/02"
-        },
-        {
-          "title": "January 2022",
-          "path": "2022/01"
-        }
-      ],
-      "collapsed": true
-    }
-  ]
+	"title": "Archive",
+	"description": "Sitecore Developer Newsletter",
+	"path": "/newsletter",
+	"heading": true,
+	"showRootAsSections": true,
+	"routes": [
+		{
+			"title": "2024",
+			"path": "2024",
+			"ignoreLink": false,
+			"children": [
+				{
+					"title": "March 2024",
+					"path": "2024/03"
+				},
+				{
+					"title": "February 2024",
+					"path": "2024/02"
+				},
+				{
+					"title": "January 2024",
+					"path": "2024/01"
+				}
+			],
+			"collapsed": false
+		},
+		{
+			"title": "2023",
+			"path": "2023",
+			"ignoreLink": false,
+			"children": [
+				{
+					"title": "December 2023",
+					"path": "2023/12"
+				},
+				{
+					"title": "October 2023",
+					"path": "2023/10"
+				},
+				{
+					"title": "September 2023",
+					"path": "2023/09"
+				},
+				{
+					"title": "August 2023",
+					"path": "2023/08"
+				},
+				{
+					"title": "July 2023",
+					"path": "2023/07"
+				},
+				{
+					"title": "June 2023",
+					"path": "2023/06"
+				},
+				{
+					"title": "May 2023",
+					"path": "2023/05"
+				},
+				{
+					"title": "March 2023",
+					"path": "2023/03"
+				},
+				{
+					"title": "February 2023",
+					"path": "2023/02"
+				},
+				{
+					"title": "January 2023",
+					"path": "2023/01"
+				}
+			],
+			"collapsed": false
+		},
+		{
+			"title": "2022",
+			"path": "2022",
+			"ignoreLink": false,
+			"children": [
+				{
+					"title": "December 2022",
+					"path": "2022/12"
+				},
+				{
+					"title": "November 2022",
+					"path": "2022/11"
+				},
+				{
+					"title": "October 2022",
+					"path": "2022/10"
+				},
+				{
+					"title": "August 2022",
+					"path": "2022/08"
+				},
+				{
+					"title": "July 2022",
+					"path": "2022/07"
+				},
+				{
+					"title": "June 2022",
+					"path": "2022/06"
+				},
+				{
+					"title": "May 2022",
+					"path": "2022/05"
+				},
+				{
+					"title": "April 2022",
+					"path": "2022/04"
+				},
+				{
+					"title": "March 2022",
+					"path": "2022/03"
+				},
+				{
+					"title": "February 2022",
+					"path": "2022/02"
+				},
+				{
+					"title": "January 2022",
+					"path": "2022/01"
+				}
+			],
+			"collapsed": true
+		}
+	]
 }

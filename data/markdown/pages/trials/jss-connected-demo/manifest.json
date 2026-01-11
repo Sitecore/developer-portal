@@ -1,66 +1,66 @@
 {
-  "title": "JSS Connected Demo",
-  "description": "Unlock the full potential of Sitecore with JSS in a live demo environment.",
-  "heading": true,
-  "path": "/trials/jss-connected-demo",
-  "showRootAsSections": true,
-  "routes": [
-    {
-      "title": "Getting Started",
-      "path": "getting-started",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Prerequisites",
-          "path": "prerequisites"
-        },
-        {
-          "title": "Cloning repository",
-          "path": "repository"
-        },
-        {
-          "title": "Connecting to Sitecore",
-          "path": "connecting"
-        }
-      ]
-    },
-    {
-      "title": "Exploring Sitecore",
-      "path": "exploring-sitecore",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Experience Editor",
-          "path": "experience-editor"
-        },
-        {
-          "title": "Personalization",
-          "path": "personalization-in-experience-editor"
-        },
-        {
-          "title": "Generating Data for xProfile",
-          "path": "xprofile"
-        },
-        {
-          "title": "Launching xProfile",
-          "path": "launch-xprofile"
-        }
-      ]
-    },
-    {
-      "title": "Exploring Code",
-      "path": "exploring-code",
-      "ignoreLink": true,
-      "children": [
-        {
-          "title": "Updating a Component",
-          "path": "updating-component"
-        },
-        {
-          "title": "GraphQL",
-          "path": "graphql"
-        }
-      ]
-    }
-  ]
+	"title": "JSS Connected Demo",
+	"description": "Unlock the full potential of Sitecore with JSS in a live demo environment.",
+	"heading": true,
+	"path": "/trials/jss-connected-demo",
+	"showRootAsSections": true,
+	"routes": [
+		{
+			"title": "Getting Started",
+			"path": "getting-started",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Prerequisites",
+					"path": "prerequisites"
+				},
+				{
+					"title": "Cloning repository",
+					"path": "repository"
+				},
+				{
+					"title": "Connecting to Sitecore",
+					"path": "connecting"
+				}
+			]
+		},
+		{
+			"title": "Exploring Sitecore",
+			"path": "exploring-sitecore",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Experience Editor",
+					"path": "experience-editor"
+				},
+				{
+					"title": "Personalization",
+					"path": "personalization-in-experience-editor"
+				},
+				{
+					"title": "Generating Data for xProfile",
+					"path": "xprofile"
+				},
+				{
+					"title": "Launching xProfile",
+					"path": "launch-xprofile"
+				}
+			]
+		},
+		{
+			"title": "Exploring Code",
+			"path": "exploring-code",
+			"ignoreLink": true,
+			"children": [
+				{
+					"title": "Updating a Component",
+					"path": "updating-component"
+				},
+				{
+					"title": "GraphQL",
+					"path": "graphql"
+				}
+			]
+		}
+	]
 }

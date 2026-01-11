@@ -1,33 +1,13 @@
 {
   "compilerOptions": {
-    "typeRoots": [
-      "./types",
-      "src/common/types",
-      "./node_modules/@types"
-    ],
+    "typeRoots": ["./types", "src/common/types", "./node_modules/@types"],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@lib/*": [
-        "./src/lib/*"
-      ],
-      "@data/*": [
-        "./data/*"
-      ],
-      "@src/*": [
-        "./src/*"
-      ]
+      "@/*": ["./*"],
+      "@data/*": ["./data/*"],
+      "@src/*": ["./src/*"]
     },
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "incremental": true,
     "resolveJsonModule": true,
     "composite": false,
@@ -39,8 +19,8 @@
     "isolatedModules": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
@@ -54,16 +34,6 @@
     "noEmit": true,
     "target": "ESNext"
   },
-  "include": [
-    "next-env.d.ts",
-    "next.config.js",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "data/gql/generated/graphql.ts",
-    ".next/dev/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "next.config.js", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "data/gql/generated/graphql.ts", ".next/dev/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
