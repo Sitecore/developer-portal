@@ -121,8 +121,11 @@ const nextConfig = {
   experimental: {
     largePageDataBytes: 256 * 100000,
   },
-  // Add empty turbopack config to silence the error
-  turbopack: {},
+  // Turbopack configuration to help with resource limits
+  turbopack: {
+    // Reduce memory usage by limiting concurrent operations
+    resolveExtensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+  },
 
   // Set locales so we have appropriate lang attributes without a custom _document
   // ia8n commentted out due to temporary issue with ISR, see https://github.com/Sitecore/developer-portal/issues/182

@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (id && typeof id === 'string') {
       const jiraResponse = await GetJiraAttachement(id);
-      const imageBuffer = Buffer.from(jiraResponse.data, 'binary');
+      const imageBuffer = Buffer.from(jiraResponse.data);
 
       res.setHeader('Content-Type', mimeType || 'image/png');
       return res.send(imageBuffer);

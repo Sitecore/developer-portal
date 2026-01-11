@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader } from '@components/ui/card';
 import { Button } from '@components/ui/button';
@@ -36,10 +35,13 @@ export const SitecoreCommunityQuestions = ({ data, sortKeys, forumKeys, classNam
       query.push(`forum=${forum}`);
     }
 
-    axios
-      .get(`/api/sitecore-community?${query.join('&')}`)
-      .then((response) => {
-        setFetchedResults(response.data);
+    fetch(`/api/sitecore-community?${query.join('&')}`)
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setFetchedResults(data);
         setIsLoading(false);
       })
       .catch((err) => console.log(err));

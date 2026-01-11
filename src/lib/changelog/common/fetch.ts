@@ -1,28 +1,26 @@
+import { createThrottledFetch } from '@/src/lib/utils/throttle';
 import { TypedDocumentString } from '@data/gql/generated/graphql';
 import { ChangelogCredentials } from '@lib/changelog/types';
-import axios, { AxiosInstance } from 'axios';
-import axiosThrottle from 'axios-request-throttle';
 
 import { Log } from '@/src/lib/utils/logger';
 import { ChangelogConfigurationError, ChangelogGraphQLError, ChangelogNetworkError } from '../errors';
 import { extractQueryName } from '../utils/graphql';
 
 /**
- * Create a throttled axios instance for preview requests
- * This is scoped to avoid affecting other axios requests
+ * Create a throttled fetch function for preview requests
+ * This is scoped to avoid affecting other fetch requests
  */
-let throttledAxiosInstance: AxiosInstance | null = null;
+let throttledFetch: typeof fetch | null = null;
 
-function getAxiosInstance(preview: boolean): AxiosInstance {
+function getFetchFunction(preview: boolean): typeof fetch {
   if (preview) {
-    if (!throttledAxiosInstance) {
-      throttledAxiosInstance = axios.create();
+    if (!throttledFetch) {
       // Throttle requests to 10 per second for the preview environment
-      axiosThrottle.use(throttledAxiosInstance, { requestsPerSecond: 10 });
+      throttledFetch = createThrottledFetch(10);
     }
-    return throttledAxiosInstance;
+    return throttledFetch;
   }
-  return axios;
+  return fetch;
 }
 
 /**
@@ -54,7 +52,7 @@ export async function fetchGraphQL<TResult, TVariables>(
     });
   }
 
-  const axiosInstance = getAxiosInstance(preview ?? false);
+  const fetchFunction = getFetchFunction(preview ?? false);
 
   const queryString = typeof document === 'string' ? document : document.toString();
   const queryName = extractQueryName(queryString);
@@ -62,46 +60,51 @@ export async function fetchGraphQL<TResult, TVariables>(
   try {
     Log.debug(`Executing GraphQL [query: ${queryName}, variables: ${variables ? JSON.stringify(variables) : 'no variables'}]`);
 
-    const response = await axiosInstance.post<{ data: TResult; errors?: Array<unknown> }>(
-      endpoint,
-      { query: queryString, variables: variables ?? {} },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
+    const response = await fetchFunction(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ query: queryString, variables: variables ?? {} }),
+    });
+
+    if (!response.ok) {
+      const statusCode = response.status;
+      let errorData: any;
+      try {
+        errorData = await response.json();
+      } catch {
+        errorData = await response.text();
       }
-    );
 
-    if (response.data.errors && response.data.errors.length > 0) {
-      throw new ChangelogGraphQLError('GraphQL query returned errors', response.data.errors, {
-        query: typeof document === 'string' ? document.substring(0, 200) : 'TypedDocumentString',
-        variables,
-      });
-    }
-
-    if (!response.data.data) {
-      throw new ChangelogGraphQLError('GraphQL response missing data', undefined, {
-        query: typeof document === 'string' ? document.substring(0, 200) : 'TypedDocumentString',
-        variables,
-      });
-    }
-
-    return { data: response.data.data };
-  } catch (err) {
-    if (axios.isAxiosError(err)) {
-      const statusCode = err.response?.status;
-      const errorData = err.response?.data;
-
-      throw new ChangelogNetworkError(`GraphQL request failed: ${err.message}`, statusCode, {
+      throw new ChangelogNetworkError(`GraphQL request failed: ${response.statusText}`, statusCode, {
         status: statusCode,
-        statusText: err.response?.statusText,
+        statusText: response.statusText,
         data: errorData,
         query: typeof document === 'string' ? document.substring(0, 200) : 'TypedDocumentString',
         variables,
       });
     }
 
+    const responseData: { data: TResult; errors?: Array<unknown> } = await response.json();
+
+    if (responseData.errors && responseData.errors.length > 0) {
+      throw new ChangelogGraphQLError('GraphQL query returned errors', responseData.errors, {
+        query: typeof document === 'string' ? document.substring(0, 200) : 'TypedDocumentString',
+        variables,
+      });
+    }
+
+    if (!responseData.data) {
+      throw new ChangelogGraphQLError('GraphQL response missing data', undefined, {
+        query: typeof document === 'string' ? document.substring(0, 200) : 'TypedDocumentString',
+        variables,
+      });
+    }
+
+    return { data: responseData.data };
+  } catch (err) {
     // Re-throw if it's already a ChangelogError
     if (err instanceof ChangelogGraphQLError || err instanceof ChangelogNetworkError) {
       throw err;

@@ -1,17 +1,21 @@
-import axios from 'axios';
 import { GitHubRepo } from './interfaces/github';
 
 export const getGitHubRepositories = async (perPage: number = 6): Promise<GitHubRepo[]> => {
-  const response = await axios.get('https://api.github.com/orgs/Sitecore/repos', {
-    params: {
-      sort: 'pushed',
-      per_page: perPage,
-      direction: 'desc',
-    },
+  const params = new URLSearchParams({
+    sort: 'pushed',
+    per_page: perPage.toString(),
+    direction: 'desc',
+  });
+
+  const response = await fetch(`https://api.github.com/orgs/Sitecore/repos?${params.toString()}`, {
     headers: {
       Accept: 'application/vnd.github.v3+json',
     },
   });
 
-  return response.data;
+  if (!response.ok) {
+    throw new Error(`GitHub API error: ${response.statusText}`);
+  }
+
+  return response.json();
 };

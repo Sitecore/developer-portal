@@ -1,5 +1,3 @@
-import axios, { AxiosResponse } from 'axios';
-
 import { StackExchangeQuestion } from './stackExchange';
 
 // Global
@@ -35,10 +33,13 @@ export class StackExchangeApi {
 
     const tagParams = tags.length > 0 ? `&tagged=${tags.join('&tagged=')}` : '';
 
-    return axios
-      .get(`https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=sitecore${tagParams}`)
-      .then((response: AxiosResponse<StackExchangeResponse>) => {
-        return response.data.items.slice(0, 4);
+    return fetch(`https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=sitecore${tagParams}`)
+      .then(async (response) => {
+        if (!response.ok) {
+          return [];
+        }
+        const data: StackExchangeResponse = await response.json();
+        return data.items.slice(0, 4);
       })
       .catch(() => {
         return [];

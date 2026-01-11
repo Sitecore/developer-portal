@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { Option } from '../components/ui/dropdown';
 import { CustomField, Issue, IssueTypeSchema, JiraResponse, RoadmapInformation } from './interfaces/jira';
 import { parseJiraIssues } from './roadmap';
@@ -105,17 +104,25 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
 export async function GetJiraAttachement(id: string) {
   const imageUrl = `${jiraBaseUrl}/attachment/content/${id}`;
 
-  const response = await axios({
-    url: imageUrl,
-    method: 'get',
+  const response = await fetch(imageUrl, {
+    method: 'GET',
     headers: {
       Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString('base64')}`,
       Accept: 'application/json',
     },
-    responseType: 'arraybuffer', // This is to handle binary data (like an image)
   });
 
-  return response;
+  if (!response.ok) {
+    throw new Error(`Failed to fetch attachment: ${response.statusText}`);
+  }
+
+  // Return array buffer for binary data (like an image)
+  return {
+    data: await response.arrayBuffer(),
+    status: response.status,
+    statusText: response.statusText,
+    headers: response.headers,
+  };
 }
 
 export async function getRoadmap(): Promise<RoadmapInformation> {

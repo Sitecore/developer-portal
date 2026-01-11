@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { SetStateAction, useState } from 'react';
 import { Card, CardContent, CardHeader } from '@components/ui/card';
 import { TextLink } from '../../../links/TextLink';
@@ -23,10 +22,13 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, className, 
 
     const query = ['contentType=blog', 'forum=blog', `sort=${val}`];
 
-    axios
-      .get(`/api/sitecore-community?${query.join('&')}`)
-      .then((response: { data: SetStateAction<Array<SitecoreCommunityContent> | null> }) => {
-        setFetchedResults(response.data);
+    fetch(`/api/sitecore-community?${query.join('&')}`)
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setFetchedResults(data);
         setIsLoading(false);
       })
       .catch((err: any) => console.log(err));

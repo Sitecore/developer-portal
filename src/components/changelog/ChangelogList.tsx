@@ -6,7 +6,6 @@ import { Checkbox } from '@components/ui/checkbox';
 import { Label } from '@components/ui/label';
 import { Skeleton } from '@components/ui/skeleton';
 import { ChangelogEntry, ChangelogEntryList, ChangeType, Product } from '@lib/changelog/types';
-import axios from 'axios';
 import NextLink from 'next/link';
 import { useState } from 'react';
 import { Fetcher } from 'swr';
@@ -31,7 +30,13 @@ type ChangelogListProps = {
  * This should be used in React components only
  */
 function getChangeTypeOptions(): Array<Option> {
-  const fetcher: Fetcher<Array<ChangeType>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
+  const fetcher: Fetcher<Array<ChangeType>, string> = async (url: string) => {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  };
   const { data: changeTypes, error } = useSWR(`${entriesApiUrl}/types`, fetcher);
 
   if (error) {
@@ -50,7 +55,13 @@ function getChangeTypeOptions(): Array<Option> {
  * This should be used in React components only
  */
 function getProductOptions(): Array<Option> {
-  const fetcher: Fetcher<Array<Product>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
+  const fetcher: Fetcher<Array<Product>, string> = async (url: string) => {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  };
   const { data: products, error } = useSWR(`${entriesApiUrl}/products?all=false`, fetcher);
 
   if (error) {
@@ -68,7 +79,13 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
   const [breaking, setBreaking] = useState<boolean>(false);
 
-  const fetcher: Fetcher<ChangelogEntryList<Array<ChangelogEntry>>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
+  const fetcher: Fetcher<ChangelogEntryList<Array<ChangelogEntry>>, string> = async (url: string) => {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  };
 
   const getKey = (pageIndex: any, previousPageData: ChangelogEntryList<Array<ChangelogEntry>>) => {
     if (previousPageData && !previousPageData.hasNext) {

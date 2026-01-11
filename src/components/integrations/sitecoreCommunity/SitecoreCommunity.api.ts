@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import type { SitecoreCommunityContent, SitecoreCommunityEvent } from './types';
 
 // Interfaces
@@ -80,19 +78,24 @@ export class SitecoreCommunityApi {
   static async getEvents(maxResults: number): Promise<Array<SitecoreCommunityEvent>> {
     const params = [`limit=${maxResults}`, 'offset=0', 'upcoming=false', 'sort=start_date', 'eventFilter=all', 'fetchRsvp=false'];
 
-    return axios.get(`https://community.sitecore.com/api/sn_communities/v1/community/events?${params.join('&')}`).then((response) => {
-      return response.data.result.contents.map((event: SitecoreCommunityEventResponse) => ({
-        contentType: 'event',
-        editedDate: event.edited_date_display,
-        endDate: event.end_date,
-        location: event.location_name,
-        startDate: event.start_date,
-        title: event.title,
-        url: `/community?id=community_event&sys_id=${event.sys_id}`,
-        userName: event.userAvatarObject.name,
-        virtualUrl: event.virtual_url,
-      }));
-    });
+    return fetch(`https://community.sitecore.com/api/sn_communities/v1/community/events?${params.join('&')}`)
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data.result.contents.map((event: SitecoreCommunityEventResponse) => ({
+          contentType: 'event',
+          editedDate: event.edited_date_display,
+          endDate: event.end_date,
+          location: event.location_name,
+          startDate: event.start_date,
+          title: event.title,
+          url: `/community?id=community_event&sys_id=${event.sys_id}`,
+          userName: event.userAvatarObject.name,
+          virtualUrl: event.virtual_url,
+        }));
+      });
   }
 
   static async getContent({ contentType, maxResults, sort, forum }: SitecoreCommunityOptions): Promise<Array<SitecoreCommunityContent>> {
@@ -106,10 +109,13 @@ export class SitecoreCommunityApi {
       params.push(`forum=${SitecoreCommunityApi.FORUM_IDS[forum]}`);
     }
 
-    return axios
-      .get(`https://community.sitecore.com/api/sn_communities/v1/community/contents?${params.join('&')}`)
-      .then((response) => {
-        return response.data.result.contents.map((item: SitecoreCommunityContentResponse) => ({
+    return fetch(`https://community.sitecore.com/api/sn_communities/v1/community/contents?${params.join('&')}`)
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data.result.contents.map((item: SitecoreCommunityContentResponse) => ({
           commentCount: item.comment_count,
           contentType: item.content_type.name,
           publishDate: item.published_date,
