@@ -1,11 +1,11 @@
 "use client";
 
-import * as React from "react";
-import { mdiArrowLeft, mdiArrowRight } from "@mdi/js";
-import { Icon } from "@/src/lib/icon";
+import { Icon } from '@/src/lib/icon';
+import { mdiArrowLeft, mdiArrowRight } from '@mdi/js';
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
+import * as React from 'react';
 
 import { Button } from "@/src/components/ui/button";
 import { cn } from "@/src/lib/util/index";
@@ -236,11 +236,4 @@ function CarouselNext({
   );
 }
 
-export {
-  type CarouselApi,
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-};
+export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi };

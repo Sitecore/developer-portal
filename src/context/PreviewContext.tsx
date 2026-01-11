@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 
@@ -29,6 +30,8 @@ const PreviewProvider = ({ children, hostname }: PreviewProviderProps) => {
     useState<boolean>(false);
   const [isPreview, setIsPreview] = useState<boolean>();
   const [_isLoaded, setIsLoaded] = useState(false);
+  const hasTriggeredPreviewRef = useRef(false); // Prevent infinite reloads
+  const isDevMode = process.env.NODE_ENV === "development";
 
   const isPreviewDomain = process.env.NEXT_PUBLIC_PREVIEW_HOSTNAME === hostname;
   const cookieName = "_scdp_preview_mode";
@@ -61,18 +64,46 @@ const PreviewProvider = ({ children, hostname }: PreviewProviderProps) => {
   }, [isPreview, refreshPage, router]);
 
   useEffect(() => {
+    // Only run in browser (not during SSR)
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    // Completely skip auto-enable logic in dev mode to prevent compilation hangs
+    // Preview functionality can still be manually triggered if needed
+    if (isDevMode) {
+      // Just set preview mode enabled if on preview domain, but don't auto-enable
+      if (isPreviewDomain) {
+        enablePreviewMode();
+      }
+      return;
+    }
+
+    // Prevent infinite reloads - only trigger once
+    if (hasTriggeredPreviewRef.current) {
+      return;
+    }
+
+    // Only proceed if hostname is set (not empty string)
+    if (!hostname) {
+      return;
+    }
+
     const hasVisited = getCookie(cookieName);
 
-    if (!hasVisited && isPreviewDomain) {
+    // Only enable preview if we haven't visited and we're on the preview domain
+    // Also check if we're already in preview mode to avoid unnecessary reloads
+    if (!hasVisited && isPreviewDomain && !router.isPreview) {
+      hasTriggeredPreviewRef.current = true; // Mark as triggered before async operation
       setCookie(cookieName, "true", 1);
       enablePreview();
       setIsLoaded(true);
-    }
-
-    if (isPreviewDomain) {
+    } else if (isPreviewDomain) {
+      // If we've already visited or are already in preview, just enable preview mode
       enablePreviewMode();
     }
-  }, [isPreviewDomain, enablePreview, enablePreviewMode]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hostname, isPreviewDomain, isDevMode]); // Include isDevMode to prevent re-runs
 
   return (
     <PreviewContext.Provider
@@ -91,6 +122,9 @@ const PreviewProvider = ({ children, hostname }: PreviewProviderProps) => {
 };
 
 const setCookie = (name: string, value: string, days: number) => {
+  if (typeof document === "undefined") {
+    return;
+  }
   const expires = new Date();
 
   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
@@ -98,6 +132,9 @@ const setCookie = (name: string, value: string, days: number) => {
 };
 
 const getCookie = (name: string) => {
+  if (typeof document === "undefined") {
+    return null;
+  }
   const cookieArray = document.cookie.split(";");
 
   for (let i = 0; i < cookieArray.length; i++) {

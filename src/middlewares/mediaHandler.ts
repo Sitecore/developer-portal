@@ -29,5 +29,8 @@ export const mediaHandler: ProxyFactory = (proxy) => {
 
       return proxy(request, next);
     }
+
+    // Always return a response - continue to next middleware if path doesn't match
+    return proxy(request, next);
   };
 };
