@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertTitle } from '@src/components/ui/alert';
+import { Alert, AlertDescription } from '@src/components/ui/alert';
 import { MDXRemote } from 'next-mdx-remote';
 import dynamic from 'next/dynamic';
 
@@ -16,9 +16,9 @@ import { NewsletterStory } from '@src/components/newsletter';
 import { Card, CardContent, CardHeader } from '@src/components/ui/card';
 import { ImageModal } from '@src/components/ui/imageModal';
 import { Row } from '@src/components/ui/sections';
+import { Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow } from '@src/components/ui/table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@src/components/ui/tabs';
 import { YouTube } from '@src/components/video';
-import { AlertCircle } from 'lucide-react';
 import styles from './MarkdownContent.module.css'; /* eslint-disable react/no-unknown-property */
 import { MarkdownIntro } from './MarkdownIntro';
 
@@ -68,8 +68,8 @@ function CustomMdx(children: string) {
             <code className={className}>{children}</code>
           );
         },
-        h2: (props: any) => <h2 className="text-3xl md:text-4xl font-heading font-normal mt-6 md:mt-8 mb-4" {...props} />,
-        h3: (props: any) => <h3 className="text-2xl md:text-3xl font-heading font-medium mt-6 mb-3" {...props} />,
+        h2: (props: any) => <h2 className="text-3xl md:text-4xl font-heading font-semibold" {...props} />,
+        h3: (props: any) => <h3 className="text-2xl md:text-3xl font-heading font-medium" {...props} />,
         h4: (props: any) => <h4 className="text-lg md:text-xl font-heading font-bold mt-4 mb-2" {...props} />,
         p: (props: any) => <p className="text-base leading-6 mb-6" {...props} />,
         VideoPromo: VideoPromo,
@@ -88,8 +88,6 @@ function CustomMdx(children: string) {
         CardBody: CardContent, // Alias for backward compatibility with markdown files
         Alert: ({ children, status, ...props }: any) => (
           <Alert variant={status === 'error' ? 'destructive' : 'default'} {...props}>
-            <AlertCircle className="h-4 w-4" />
-            <AlertTitle>{status || 'Info'}</AlertTitle>
             <AlertDescription>{children}</AlertDescription>
           </Alert>
         ),
@@ -101,22 +99,56 @@ function CustomMdx(children: string) {
         Image: ImageModal,
         NewsletterStory,
         Introduction: MarkdownIntro,
-        table: (props: any) => (
-          <div className="overflow-x-auto my-8">
-            <table className="w-full border-collapse" {...props} />
-          </div>
-        ),
-        thead: (props: any) => <thead className="bg-primary text-primary-foreground dark:bg-neutral-800" {...props} />,
-        tbody: (props: any) => <tbody {...props} />,
-        tfoot: (props: any) => <tfoot className="border-t border-border" {...props} />,
-        tr: (props: any) => <tr className="border-b border-border even:bg-primary/5 dark:even:bg-neutral-800" {...props} />,
-        th: (props: any) => <th className="text-left font-semibold p-2 md:p-3" {...props} />,
-        td: (props: any) => <td className="p-2 md:p-3 align-baseline" {...props} />,
+
         Tabs: ({ children, ...props }: any) => <Tabs {...props}>{children}</Tabs>,
         TabList: ({ children, ...props }: any) => <TabsList {...props}>{children}</TabsList>,
         Tab: ({ children, ...props }: any) => <TabsTrigger {...props}>{children}</TabsTrigger>,
         TabPanels: ({ children, ...props }: any) => <div {...props}>{children}</div>,
         TabPanel: ({ children, ...props }: any) => <TabsContent {...props}>{children}</TabsContent>,
+        table: ({ children, ...props }: any) => (
+          <Table {...props} className="border-collapse">
+            {children}
+          </Table>
+        ),
+        thead: ({ children, ...props }: any) => (
+          <TableHeader className="bg-primary dark:bg-neutral-800" {...props}>
+            {children}
+          </TableHeader>
+        ),
+        tbody: ({ children, ...props }: any) => (
+          <TableBody className="bg-primary/5 dark:bg-neutral-800" {...props}>
+            {children}
+          </TableBody>
+        ),
+        tfoot: ({ children, ...props }: any) => (
+          <TableFooter className="border-t border-border" {...props}>
+            {children}
+          </TableFooter>
+        ),
+        tr: ({ children, ...props }: any) => (
+          <TableRow className="border-b border-border even:bg-primary/5 dark:even:bg-neutral-800" {...props}>
+            {children}
+          </TableRow>
+        ),
+        th: ({ children, ...props }: any) => (
+          <TableHead className="text-left text-white text-base font-semibold p-2 md:p-3 ps-2!" {...props}>
+            {children}
+          </TableHead>
+        ),
+        td: ({ children, ...props }: any) => (
+          <TableCell
+            className="p-2 md:p-3 align-baseline text-base whitespace-break-spaces ps-2!
+"
+            {...props}
+          >
+            {children}
+          </TableCell>
+        ),
+        caption: ({ children, ...props }: any) => (
+          <TableCaption className="mt-4 text-muted-foreground text-sm" {...props}>
+            {children}
+          </TableCaption>
+        ),
       }}
     />
   );

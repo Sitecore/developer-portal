@@ -12,12 +12,3 @@
 :where(h2, h3, h4, h5, h6):hover .anchor {
   opacity: 1;
 }
-
-.chakra-text {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.chakra-card__body .chakra-heading {
-  margin-top: 0;
-}
