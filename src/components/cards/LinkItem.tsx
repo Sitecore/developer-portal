@@ -1,6 +1,6 @@
-import { Card } from "@src/components/ui/card";
-import { cn } from "@/src/lib/util";
-import { LinkButton } from "../links";
+import { cn } from '@/src/lib/util';
+import { Card } from '@src/components/ui/card';
+import { LinkButton } from '../links';
 
 type LinkProps = {
   title: string;
@@ -11,12 +11,7 @@ type LinkProps = {
 
 export const LinkItem = ({ title, link, className }: LinkProps) => {
   return (
-    <Card
-      className={cn(
-        "border shadow-md hover:shadow-lg transition-shadow py-4 px-2",
-        className,
-      )}
-    >
+    <Card className={cn('border shadow-md hover:shadow-lg transition-shadow py-4 px-2', className)}>
       <LinkButton variant="ghost" text={title} href={link} />
     </Card>
   );

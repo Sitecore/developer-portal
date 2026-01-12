@@ -9,17 +9,8 @@ import type {
 import { parseJiraIssues } from "./roadmap";
 
 const jiraBaseUrl = "https://sitecore.atlassian.net/rest/api/3";
-
-const getJiraEnvVar = (name: string): string => {
-  const value = process.env[name];
-  if (!value) {
-    throw new Error(`Missing required environment variable: ${name}`);
-  }
-  return value;
-};
-
-const JIRA_USERNAME = getJiraEnvVar("JIRA_USERNAME");
-const JIRA_API_TOKEN = getJiraEnvVar("JIRA_API_TOKEN");
+const JIRA_USERNAME = process.env.JIRA_USERNAME as string;
+const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN as string;
 
 export const excludedProducts = [
   "Content Hub DAM",
