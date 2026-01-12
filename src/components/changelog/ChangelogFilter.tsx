@@ -2,6 +2,7 @@ import { MultiSelect, type Option } from "@src/components/ui/dropdown";
 import { Skeleton } from "@src/components/ui/skeleton";
 import type { Product } from "@src/lib/changelog/types";
 import { useState } from "react";
+import { Field, FieldLabel } from '../ui/field';
 
 type ChangelogFilterProps = {
   className?: string;
@@ -13,13 +14,7 @@ type ChangelogFilterProps = {
   onSelectChange: (selectedValues: Array<Option>) => void;
 };
 
-const ChangelogFilter = ({
-  options,
-  id,
-  label,
-  placeholder,
-  onSelectChange,
-}: ChangelogFilterProps) => {
+const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: ChangelogFilterProps) => {
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
 
   if (!options) {
@@ -27,10 +22,9 @@ const ChangelogFilter = ({
   }
 
   return (
-    <div className="mb-4 mx-0 w-full">
-      <label className="sr-only" htmlFor={`react-select-${id}-input`}>
-        {label}
-      </label>
+    <Field orientation="horizontal">
+      <FieldLabel htmlFor={`react-select-${id}-input`}>{label}</FieldLabel>
+
       <MultiSelect
         id={id}
         instanceId={id}
@@ -42,10 +36,11 @@ const ChangelogFilter = ({
         }}
         value={selectedChange}
         isSelectAll={true}
-        menuPlacement={"bottom"}
+        menuPlacement={'bottom'}
         placeholder={placeholder}
+        className="sm:min-w-[450px] text-md"
       />
-    </div>
+    </Field>
   );
 };
 

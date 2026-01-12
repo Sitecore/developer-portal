@@ -1,29 +1,23 @@
 "use client";
 
-import { Card, CardContent, CardHeader } from "@src/components/ui/card";
-import type { Option } from "@src/components/ui/dropdown";
-import { Skeleton } from "@src/components/ui/skeleton";
-import { useGetEntriesByProducts } from "@src/hooks/useGetEntriesByProducts";
-import type { ChangelogEntrySummary, Product } from "@src/lib/changelog/types";
-import Image from "next/image";
-import Link from "next/link";
-import { useTheme } from "next-themes";
-import { getChangelogEntryUrl } from "@/src/lib/util/urlUtil";
+import { getChangelogEntryUrl } from '@/src/lib/util/urlUtil';
+import type { Option } from '@src/components/ui/dropdown';
+import { Skeleton } from '@src/components/ui/skeleton';
+import { useGetEntriesByProducts } from '@src/hooks/useGetEntriesByProducts';
+import type { ChangelogEntrySummary, Product } from '@src/lib/changelog/types';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Item, ItemContent, ItemGroup, ItemMedia, ItemTitle } from '../ui/item';
 
 type ChangelogByMonthProps = {
   product?: Product;
   selectedProducts?: Array<Option>;
 };
 
-const ChangelogByMonth = ({
-  product,
-  selectedProducts,
-}: ChangelogByMonthProps) => {
+const ChangelogByMonth = ({ product, selectedProducts }: ChangelogByMonthProps) => {
   const { theme } = useTheme();
-  const { entries, isLoading } = useGetEntriesByProducts(
-    product,
-    selectedProducts,
-  );
+  const { entries, isLoading } = useGetEntriesByProducts(product, selectedProducts);
 
   const items = entries || [];
 
@@ -40,37 +34,30 @@ const ChangelogByMonth = ({
   return (
     <>
       {Object.entries(items).map(([month, changelogItems]) => (
-        <Card key={month} className="border-0 shadow-none">
-          <CardHeader className="mt-8">
-            <h3 className="text-sm uppercase tracking-wide text-muted-foreground">
-              {month}
-            </h3>
-          </CardHeader>
-          <CardContent>
-            {changelogItems.map((item: ChangelogEntrySummary) => {
-              const iconSrc = theme === "dark" ? item.darkIcon : item.lightIcon;
-              const itemKey = `${item.id || item.title}-${item.releaseDate || ""}`;
-              return (
-                <div className="flex items-start py-2" key={itemKey}>
-                  <Image
-                    src={iconSrc}
-                    alt={item.productName ?? item.title}
-                    width={20}
-                    height={20}
-                    className="mr-2"
-                  />
-                  <Link
-                    className="text-xs text-violet dark:text-teal hover:underline"
-                    href={getChangelogEntryUrl(item)}
-                    title={`(${item.releaseDate}) ${item.productName} - ${item.title}`}
-                  >
-                    {item.title}
-                  </Link>
-                </div>
-              );
-            })}
-          </CardContent>
-        </Card>
+        <ItemGroup key={month} className="mb-4">
+          <ItemTitle>
+            <h3 className="text-sm font-medium font-heading uppercase tracking-wide text-muted-foreground">{month}</h3>
+          </ItemTitle>
+
+          {changelogItems.map((item: ChangelogEntrySummary) => {
+            const iconSrc = theme === 'dark' ? item.darkIcon : item.lightIcon;
+            const itemKey = `${item.id || item.title}-${item.releaseDate || ''}`;
+            return (
+              <Item key={itemKey} size="sm" className="px-0">
+                <ItemMedia variant={'default'}>
+                  <Image src={iconSrc} alt={item.productName ?? item.title} width={20} height={20} />
+                </ItemMedia>
+                <ItemContent>
+                  <ItemTitle>
+                    <Link className="text-base font-normal hover:underline" href={getChangelogEntryUrl(item)} title={`(${item.releaseDate}) ${item.productName} - ${item.title}`}>
+                      {item.title}
+                    </Link>
+                  </ItemTitle>
+                </ItemContent>
+              </Item>
+            );
+          })}
+        </ItemGroup>
       ))}
     </>
   );

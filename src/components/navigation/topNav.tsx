@@ -1,5 +1,5 @@
 import { mainNavigation } from '@/data/data-navigation';
-import { mdiClose, mdiDotsGrid, mdiMenu } from '@mdi/js';
+import { mdiClose, mdiMenu } from '@mdi/js';
 import UserAccount from '@src/components/authentication/UserAccount';
 import { PreviewSearchInput } from '@src/components/integrations/sitecore-search';
 import { Icon } from '@src/components/lib/icon';
@@ -10,6 +10,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { GetProductLogoByVariant, Product, Type, Variant } from '@src/lib/assets';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { DarkModeSwitch } from './DarkModeSwitch';
@@ -31,12 +32,14 @@ export default function TopNav({ searchEnabled }: TopNavProps) {
       <div className="flex h-16 items-center px-4 justify-between">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" colorScheme="neutral" aria-label="Menu">
+            {/* <Button variant="ghost" size="icon" colorScheme="neutral" aria-label="Menu">
               <Icon path={mdiDotsGrid} size={1} />
-            </Button>
+            </Button> */}
             <div className="flex items-center gap-1">
               <span className="text-xl font-bold text-red-500">
-                <Image alt="Logo" className="shrink-0 grow-0 rounded-md object-cover object-left p-1 block" src={getLogoByPath(router.asPath, theme) || ''} width={240} height={40} />
+                <Link href="/" className="w-auto md:w-[270px]">
+                  <Image alt="Logo" className="shrink-0 grow-0 rounded-md object-cover object-left p-1 block" src={getLogoByPath(router.asPath, theme) || ''} width={240} height={40} />
+                </Link>
               </span>
               <span className="text-lg font-semibold"></span>
             </div>

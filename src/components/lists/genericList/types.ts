@@ -1,11 +1,14 @@
-import type { ComponentType } from "react";
+import type { ExtendedStyle, OriginalStyle } from '@src/components/ui/custom/card-extended';
+import type { ComponentType } from 'react';
+
+export type CardVariant = OriginalStyle | ExtendedStyle;
 
 export type GenericListData = {
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
   data: Array<GenericListItem>;
   column?: number;
-  cardVariant?: string;
+  cardVariant?: CardVariant;
   className?: string;
 };
 

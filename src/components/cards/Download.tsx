@@ -1,12 +1,7 @@
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@src/components/ui/card";
-import NextLink from "next/link";
-import { cn } from "@/src/lib/util";
-import { LinkButton } from "../links";
+import { cn } from '@/src/lib/util';
+import { Card, CardContent, CardFooter, CardHeader } from '@src/components/ui/card';
+import NextLink from 'next/link';
+import { LinkButton } from '../links';
 
 type DownloadProps = {
   title: string;
@@ -18,17 +13,9 @@ type DownloadProps = {
   className?: string;
 };
 
-export const Download = ({
-  title,
-  description,
-  link1text,
-  link1href,
-  link2text,
-  link2href,
-  className,
-}: DownloadProps) => {
+export const Download = ({ title, description, link1text, link1href, link2text, link2href, className }: DownloadProps) => {
   return (
-    <Card className={cn("border mb-8", className)}>
+    <Card style="outline" className={cn(className)}>
       <CardHeader>
         <h4 className="text-lg font-heading mt-0">
           <NextLink href={link1href} className="hover:underline">
@@ -36,14 +23,12 @@ export const Download = ({
           </NextLink>
         </h4>
       </CardHeader>
-      <CardContent className="py-0">
+      <CardContent>
         <p>{description}</p>
       </CardContent>
-      <CardFooter className="pt-0 gap-4 mt-4">
-        <LinkButton href={link1href} text={link1text} />
-        {link2text && link2href && (
-          <LinkButton href={link2href} text={link2text} variant="outline" />
-        )}
+      <CardFooter className="space-x-4">
+        <LinkButton href={link1href} text={link1text} variant={'default'} />
+        {link2text && link2href && <LinkButton href={link2href} text={link2text} variant="outline" />}
       </CardFooter>
     </Card>
   );

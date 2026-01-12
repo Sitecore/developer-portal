@@ -1,59 +1,45 @@
 "use client";
 
-import { Card, CardContent, CardFooter } from "@src/components/ui/card";
-import { Skeleton } from "@src/components/ui/skeleton";
-import NextLink from "next/link";
-import { translateDate } from "@/src/lib/util/dateUtil";
-import { SITECORE_COMMUNITY_URL } from "./sitecore-community.constants";
-import type { SitecoreCommunityContent } from "./types";
+import { translateDate } from '@/src/lib/util/dateUtil';
+import { Card, CardContent, CardFooter } from '@src/components/ui/card';
+import { Skeleton } from '@src/components/ui/skeleton';
+import NextLink from 'next/link';
+import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
+import type { SitecoreCommunityContent } from './types';
 
 type SitecoreCommunityBlogOrQuestionProps = {
-  contentType: "Blog" | "Questions";
+  contentType: 'Blog' | 'Questions';
   item: SitecoreCommunityContent;
   loading?: boolean;
 };
 
-export const SitecoreCommunityBlogOrQuestion = ({
-  item,
-  loading,
-}: SitecoreCommunityBlogOrQuestionProps) => (
-  <article>
-    <Card className="border shadow-md hover:shadow-lg transition-shadow w-full">
-      <CardContent>
-        <div className="flex gap-16 justify-between">
-          {loading ? (
-            <Skeleton className="flex-grow h-20" />
-          ) : (
-            <div className="flex-grow">
-              <div>
-                <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">
-                  {item.contentType}
-                </p>
-                <h3 className="text-lg font-heading my-4">
-                  <NextLink
-                    href={`${SITECORE_COMMUNITY_URL}${item.url}`}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="text-foreground hover:underline"
-                  >
-                    {item.title}
-                  </NextLink>
-                </h3>
-              </div>
-            </div>
-          )}
-        </div>
-      </CardContent>
-      <CardFooter className="justify-between flex-wrap">
-        <p>
-          by <strong>{item.userName}</strong>
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Published <strong>{translateDate(item.publishDate)}</strong>
-        </p>
-      </CardFooter>
-    </Card>
-  </article>
+export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps) => (
+  <Card style="flat" elevation="md">
+    <CardContent>
+      <div className="flex gap-16 justify-between">
+        {loading ? (
+          <Skeleton className="grow h-20" />
+        ) : (
+          <div className="grow">
+            <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">{item.contentType}</p>
+            <h3 className="text-lg font-semibold font-heading my-4">
+              <NextLink href={`${SITECORE_COMMUNITY_URL}${item.url}`} target="_blank" rel="noreferrer noopener" className="text-foreground hover:underline">
+                {item.title}
+              </NextLink>
+            </h3>
+          </div>
+        )}
+      </div>
+    </CardContent>
+    <CardFooter className="justify-between flex-wrap">
+      <p>
+        by <strong>{item.userName}</strong>
+      </p>
+      <p className="text-sm text-muted-foreground">
+        Published <strong>{translateDate(item.publishDate)}</strong>
+      </p>
+    </CardFooter>
+  </Card>
 );
 
 export const SitecoreCommunityBlogOrQuestionSidebar = ({

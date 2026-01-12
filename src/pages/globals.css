@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -670,4 +671,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.prose {
+  @apply prose-neutral prose-sm prose-a:text-primary-500 dark:prose-a:text-primary-200 prose-a:font-semibold max-w-none dark:prose-p:text-whiteAlpha-700 dark:prose-strong:text-whiteAlpha-700;
 }

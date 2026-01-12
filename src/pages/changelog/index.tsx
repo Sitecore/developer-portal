@@ -30,31 +30,15 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
   return (
     <>
       <Head>
-        <link
-          rel="preload"
-          href="/api/changelog/v1/all?"
-          as="fetch"
-          crossOrigin="anonymous"
-        />
+        <link rel="preload" href="/api/changelog/v1/all?" as="fetch" crossOrigin="anonymous" />
       </Head>
       <TrackPageView>
-        <Layout
-          title="Changelog"
-          description="Learn more about new versions, changes and improvements"
-        >
+        <Layout title="Changelog" description="Learn more about new versions, changes and improvements">
           <Hero title="Changelog">
             <h2 className="text-sm md:text-base font-normal tracking-wide text-muted-foreground">
-              This changelog provides visibility into key product updates,
-              including new features, enhancements, resolutions and
-              architectural improvements. Some bug fixes and backend adjustments
-              may not be listed here. If you have a specific bug fix that you
-              want to follow, please visit&nbsp;
-              <Link
-                href="https://support.sitecore.com"
-                title="Go to the support portal"
-                target="_blank"
-                className="underline"
-              >
+              This changelog provides visibility into key product updates, including new features, enhancements, resolutions and architectural improvements. Some bug fixes and backend adjustments may not be listed here. If you have a specific bug fix
+              that you want to follow, please visit&nbsp;
+              <Link href="https://support.sitecore.com" title="Go to the support portal" target="_blank" className="underline">
                 https://support.sitecore.com
               </Link>
             </h2>
@@ -65,19 +49,13 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
               <div className="grid grid-cols-5 gap-14">
                 <div className="col-span-5 md:col-span-3">
                   <SWRConfig value={{ fallback }}>
-                    <ChangelogList
-                      selectedProducts={selectedProduct}
-                      onProductsChange={setSelectedProduct}
-                    />
+                    <ChangelogList selectedProducts={selectedProduct} onProductsChange={setSelectedProduct} />
                   </SWRConfig>
                 </div>
 
-                <div className="col-span-2 hidden md:block">
+                <div className="col-span-2 hidden md:block space-y-8">
                   <ChangelogFeeds url={router.pathname} />
-                  <ChangelogByMonth
-                    product={undefined}
-                    selectedProducts={selectedProduct}
-                  />
+                  <ChangelogByMonth product={undefined} selectedProducts={selectedProduct} />
                 </div>
               </div>
             </CenteredContent>

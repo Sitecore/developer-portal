@@ -1,11 +1,11 @@
-import { Card, CardFooter, CardHeader } from "@src/components/ui/card";
-import Link from "next/link";
-import { translateDate } from "@/src/lib/util/dateUtil";
-import ConditionalWrapper from "../../ui/sections/ConditionalWrapper";
-import { SITECORE_COMMUNITY_URL } from "./sitecore-community.constants";
+import { translateDate } from '@/src/lib/util/dateUtil';
+import { Card, CardFooter, CardHeader } from '@src/components/ui/card';
+import Link from 'next/link';
+import ConditionalWrapper from '../../ui/sections/ConditionalWrapper';
+import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
 
 type SitecoreCommunityNewsOrEventItemProps = {
-  categoryTitle?: "News and Announcements" | "Event";
+  categoryTitle?: 'News and Announcements' | 'Event';
   commentCount?: string;
   endDate?: string;
   location?: string;
@@ -16,7 +16,7 @@ type SitecoreCommunityNewsOrEventItemProps = {
   url: string;
 };
 
-export type DateIconVariant = "simple" | "calendar";
+export type DateIconVariant = 'simple' | 'calendar';
 
 export type DateIconProps = {
   type: DateIconVariant;
@@ -28,12 +28,10 @@ type DateOutputProps = { startDate: string; endDate?: string };
 
 const DateOutput = ({ startDate, endDate }: DateOutputProps) => {
   const startDateString = translateDate(startDate);
-  const endDateString = endDate ? translateDate(endDate) : "";
+  const endDateString = endDate ? translateDate(endDate) : '';
 
   if (!endDateString || startDateString === endDateString) {
-    return (
-      <p className="text-sm text-muted-foreground text-xs">{startDateString}</p>
-    );
+    return <p className="text-muted-foreground text-xs">{startDateString}</p>;
   }
 
   return (
@@ -44,91 +42,55 @@ const DateOutput = ({ startDate, endDate }: DateOutputProps) => {
   );
 };
 
-export const SitecoreCommunityNewsOrEventItem = ({
-  categoryTitle,
-  commentCount,
-  endDate,
-  location,
-  startDate,
-  title,
-  url,
-  viewCount,
-  virtualUrl,
-}: SitecoreCommunityNewsOrEventItemProps) => {
+export const SitecoreCommunityNewsOrEventItem = ({ categoryTitle, commentCount, endDate, location, startDate, title, url, viewCount, virtualUrl }: SitecoreCommunityNewsOrEventItemProps) => {
   return (
-    <article>
-      <Card className="border shadow-md hover:shadow-lg transition-shadow w-full">
-        <CardHeader className="pb-0">
-          {!!categoryTitle && (
-            <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">
-              {categoryTitle}
-            </p>
-          )}
+    <Card style="flat" elevation="md">
+      <CardHeader>
+        {!!categoryTitle && <p className="text-sm uppercase tracking-wide text-muted-foreground font-semibold">{categoryTitle}</p>}
 
-          <h3 className="text-lg font-heading my-4">
-            <Link
-              href={`${SITECORE_COMMUNITY_URL}${url}`}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="text-foreground hover:underline"
+        <h3 className="text-lg font-heading font-semibold my-4">
+          <Link href={`${SITECORE_COMMUNITY_URL}${url}`} target="_blank" rel="noreferrer noopener" className="hover:underline">
+            {title}
+          </Link>
+        </h3>
+      </CardHeader>
+      <CardFooter className="justify-between flex-wrap">
+        <DateOutput startDate={startDate} endDate={endDate} />
+
+        {!!location && (
+          <p className="mt-1 text-xs">
+            Location:{' '}
+            <ConditionalWrapper
+              condition={!!virtualUrl}
+              wrapper={(children) => (
+                <a className="relative z-20 hover:underline" href={virtualUrl} rel="noreferrer noopener" target="_blank">
+                  {children}
+                </a>
+              )}
             >
-              {title}
-            </Link>
-          </h3>
-        </CardHeader>
-        <CardFooter className="justify-between flex-wrap">
-          <DateOutput startDate={startDate} endDate={endDate} />
+              <strong className="font-semibold">{location}</strong>
+            </ConditionalWrapper>
+          </p>
+        )}
 
-          {!!location && (
-            <p className="mt-1 text-xs">
-              Location:{" "}
-              <ConditionalWrapper
-                condition={!!virtualUrl}
-                wrapper={(children) => (
-                  <a
-                    className="relative z-20 hover:underline"
-                    href={virtualUrl}
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    {children}
-                  </a>
-                )}
-              >
-                <strong className="font-semibold">{location}</strong>
-              </ConditionalWrapper>
-            </p>
-          )}
-
-          {!!commentCount && !!viewCount && (
-            <div className="flex items-center gap-2">
-              <p className="text-sm text-muted-foreground">
-                {commentCount} comments
-              </p>
-              <p className="text-sm text-muted-foreground">{viewCount} views</p>
-            </div>
-          )}
-        </CardFooter>
-      </Card>
-    </article>
+        {!!commentCount && !!viewCount && (
+          <div className="flex items-center gap-2">
+            <p className="text-sm text-muted-foreground">{commentCount} comments</p>
+            <p className="text-sm text-muted-foreground">{viewCount} views</p>
+          </div>
+        )}
+      </CardFooter>
+    </Card>
   );
 };
 
-export const SitecoreCommunityNewsOrEventItemSidebar = ({
-  commentCount,
-  startDate,
-  title,
-  url,
-  viewCount,
-}: SitecoreCommunityNewsOrEventItemProps) => {
+export const SitecoreCommunityNewsOrEventItemSidebar = ({ commentCount, startDate, title, url, viewCount }: SitecoreCommunityNewsOrEventItemProps) => {
   return (
     <li>
       <div className="flex items-start">
         <DateIcon date={startDate} type="calendar" />
         <div className="">
-          <span
-            className={`hover:text-violet dark:hover:text-teal  font-semibold hover:underline`}
-          >
+          <span className={`hover:text-violet dark:hover:text-teal  font-semibold hover:underline`}>
             <Link href={url} title={title}>
               {title}
             </Link>
@@ -153,18 +115,12 @@ export const SitecoreCommunityNewsOrEventItemSidebar = ({
 };
 
 const DateIcon = ({ date, className, type }: DateIconProps) => {
-  if (type === "calendar") {
+  if (type === 'calendar') {
     return (
-      <div
-        className={`mr-4 w-10 flex-none rounded-t pb-2 text-center shadow-lg lg:rounded-l lg:rounded-t-none ${className}`}
-      >
-        <div className="w-full py-1 text-2xs bg-primary-100 text-primary-900 dark:bg-teal-800 dark:text-teal-100">
-          {new Date(date).toLocaleString("en-US", { month: "short" })}
-        </div>
+      <div className={`mr-4 w-10 flex-none rounded-t pb-2 text-center shadow-lg lg:rounded-l lg:rounded-t-none ${className}`}>
+        <div className="w-full py-1 text-2xs bg-primary-100 text-primary-900 dark:bg-teal-800 dark:text-teal-100">{new Date(date).toLocaleString('en-US', { month: 'short' })}</div>
         <div className="pt-1 bg-white border-l border-r border-white dark:text-teal-900">
-          <span className="text-lg font-semibold leading-tight">
-            {new Date(date).toLocaleString("en-US", { day: "2-digit" })}
-          </span>
+          <span className="text-lg font-semibold leading-tight">{new Date(date).toLocaleString('en-US', { day: '2-digit' })}</span>
         </div>
       </div>
     );
@@ -172,13 +128,10 @@ const DateIcon = ({ date, className, type }: DateIconProps) => {
 
   return (
     <div className="p-2 mr-4 leading-tight text-center border bg-theme-bg-alt text-theme-text border-theme-border-alt bg-primary">
-      <time
-        className={`flex items-center justify-center text-xs`}
-        dateTime="2022-10-21T15:48:00.000Z"
-      >
+      <time className={`flex items-center justify-center text-xs`} dateTime="2022-10-21T15:48:00.000Z">
         {new Date(date).getDay()}
         <br />
-        {new Date(date).toLocaleString("en-US", { month: "short" })}
+        {new Date(date).toLocaleString('en-US', { month: 'short' })}
       </time>
     </div>
   );

@@ -1,31 +1,19 @@
 "use client";
 
-import { LinkButton } from "@src/components/links";
-import { Loading } from "@src/components/ui";
-import { Button } from "@src/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@src/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@src/components/ui/dialog";
-import { SocialShare } from "@src/components/ui/socialShare";
-import type { ChangelogEntry } from "@src/lib/changelog/types";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { cn } from "@/src/lib/util";
-import { getSlug } from "@/src/lib/util/stringUtil";
-import { getChangelogEntryUrl } from "@/src/lib/util/urlUtil";
-import { ChangelogItemMeta } from "./ChangelogItemMeta";
+import { cn } from '@/src/lib/util';
+import { getSlug } from '@/src/lib/util/stringUtil';
+import { getChangelogEntryUrl } from '@/src/lib/util/urlUtil';
+import { LinkButton } from '@src/components/links';
+import { Loading } from '@src/components/ui';
+import { Button } from '@src/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@src/components/ui/card';
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@src/components/ui/dialog';
+import { SocialShare } from '@src/components/ui/socialShare';
+import type { ChangelogEntry } from '@src/lib/changelog/types';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import { ChangelogItemMeta } from './ChangelogItemMeta';
 
 export type ChangeLogItemProps = {
   item: ChangelogEntry;
@@ -35,12 +23,7 @@ export type ChangeLogItemProps = {
   loadEntries: () => void;
 };
 
-const ChangeLogItem = ({
-  item,
-  loadEntries,
-  isLast,
-  isMore,
-}: ChangeLogItemProps) => {
+const ChangeLogItem = ({ item, loadEntries, isLast, isMore }: ChangeLogItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const entryRef = useRef<HTMLDivElement>(null);
 
@@ -61,14 +44,10 @@ const ChangeLogItem = ({
 
   return (
     <>
-      <Card ref={entryRef} className="border-0 shadow-none mt-2 mb-8">
-        <CardHeader className="pb-4">
-          <h2 className="text-xl font-heading" id={getSlug(item.title)}>
-            <Link
-              href={getChangelogEntryUrl(item)}
-              title={item.title}
-              className="hover:underline"
-            >
+      <Card ref={entryRef} style="flat" elevation="none" padding="sm">
+        <CardHeader className="space-y-3">
+          <h2 className="text-xl font-medium font-heading" id={getSlug(item.title)}>
+            <Link href={getChangelogEntryUrl(item)} title={item.title} className="hover:underline">
               {item.title}
             </Link>
           </h2>
@@ -77,39 +56,18 @@ const ChangeLogItem = ({
         <CardContent className="py-0">
           {item.image.length > 0 && item.image[0].fileUrl && (
             <>
-              <button
-                type="button"
-                className="relative mb-4 cursor-zoom-in border-0 bg-transparent p-0"
-                onClick={() => setIsOpen(true)}
-                aria-label={`View full size image for ${item.title || ""}`}
-              >
-                <Image
-                  src={item.image[0].fileUrl}
-                  alt={item.title || ""}
-                  width={800}
-                  height={600}
-                  className="rounded-lg max-w-full"
-                />
+              <button type="button" className="relative mb-4 cursor-zoom-in border-0 bg-transparent p-0" onClick={() => setIsOpen(true)} aria-label={`View full size image for ${item.title || ''}`}>
+                <Image src={item.image[0].fileUrl} alt={item.title || ''} width={800} height={600} className="rounded-lg max-w-full" />
               </button>
 
               <Dialog open={isOpen} onOpenChange={setIsOpen}>
                 <DialogContent className="max-w-[90vw] max-h-[90vh]">
                   <DialogHeader>
                     <DialogTitle>{item.title}</DialogTitle>
-                    {item.title && (
-                      <DialogDescription>
-                        Click outside to close
-                      </DialogDescription>
-                    )}
+                    {item.title && <DialogDescription>Click outside to close</DialogDescription>}
                   </DialogHeader>
                   <div className="flex items-center justify-center overflow-auto">
-                    <Image
-                      src={item.image[0].fileUrl}
-                      alt={item.title || ""}
-                      width={1200}
-                      height={900}
-                      className="max-w-full max-h-[70vh] object-contain"
-                    />
+                    <Image src={item.image[0].fileUrl} alt={item.title || ''} width={1200} height={900} className="max-w-full max-h-[70vh] object-contain" />
                   </div>
                   <DialogFooter>
                     <Button variant="outline" onClick={() => setIsOpen(false)}>
@@ -121,26 +79,11 @@ const ChangeLogItem = ({
             </>
           )}
 
-          <div
-            className="prose prose-lg max-w-none my-0 py-0"
-            dangerouslySetInnerHTML={{ __html: item.description }}
-          />
+          <div className="prose prose-neutral prose-sm" dangerouslySetInnerHTML={{ __html: item.description }} />
         </CardContent>
-        <CardFooter
-          className={cn("justify-between", !item.readMoreLink && "justify-end")}
-        >
-          {item.readMoreLink && (
-            <LinkButton
-              variant="ghost"
-              href={item.readMoreLink}
-              text="Read more"
-              title={`Read more about ${item.title}`}
-            />
-          )}
-          <SocialShare
-            url={getChangelogEntryUrl(item, true)}
-            title={`${item.title} - ${item.productName} Changelog - Sitecore`}
-          />
+        <CardFooter className={cn('justify-between', !item.readMoreLink && 'justify-end')}>
+          {item.readMoreLink && <LinkButton variant="ghost" href={item.readMoreLink} text="Read more" title={`Read more about ${item.title}`} />}
+          <SocialShare url={getChangelogEntryUrl(item, true)} title={`${item.title} - ${item.productName} Changelog - Sitecore`} />
         </CardFooter>
       </Card>
 
