@@ -66,6 +66,9 @@ const nextConfig = {
       {
         pathname: '/api/roadmap/image',
       },
+      {
+        pathname: '/images/**',
+      },
     ],
     remotePatterns: [
       {
