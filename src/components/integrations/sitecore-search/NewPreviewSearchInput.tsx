@@ -6,7 +6,7 @@ import { Button } from '@src/components/ui/button';
 import { Input } from '@src/components/ui/input';
 import { ProductLogo } from '@src/components/ui/logos';
 import { Product } from '@src/lib/assets';
-import { ArrowRight, Search, X } from 'lucide-react';
+import { ArrowRight, Loader2, Search, X } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import type { ChangeEvent, FormEvent } from 'react';
@@ -159,11 +159,16 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
           {/* Search Results and Suggestions Side by Side */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             {/* Search Results */}
-            <div className="lg:col-span-3 space-y-2">
-              <ul className="list-none">
-                {!isLoading &&
-                  !isFetching &&
-                  articles.map((article, index) => (
+            <div className="lg:col-span-3 space-y-2 min-h-[400px]">
+              {(isLoading || isFetching) && (
+                <div className="flex justify-center items-center min-h-[400px]">
+                  <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+                  <span className="sr-only">Loading search results...</span>
+                </div>
+              )}
+              {!isLoading && !isFetching && (
+                <ul className="list-none">
+                  {articles.map((article, index) => (
                     <li key={`${article.id}-${article.source_id}`} className="w-full">
                       <article className="p-2 rounded-md hover:bg-muted">
                         <Link
@@ -204,10 +209,11 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
                       </article>
                     </li>
                   ))}
-              </ul>
+                </ul>
+              )}
 
               {/* No Results Message */}
-              {!isFetching && articles.length === 0 && keyphrase.toString().trim().length > 0 && (
+              {!isLoading && !isFetching && articles.length === 0 && keyphrase.toString().trim().length > 0 && (
                 <div className="flex justify-center items-center py-8">
                   <span className="text-sm text-center text-muted-foreground">
                     <span className="font-medium">{keyphrase}</span> returned <span className="font-medium">{articles.length}</span> results
@@ -216,7 +222,7 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
               )}
 
               {/* View All Results Button */}
-              {articles.length > 0 && (
+              {!isLoading && !isFetching && articles.length > 0 && (
                 <div className="flex justify-center pt-2">
                   <Button
                     variant="outline"
