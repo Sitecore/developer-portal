@@ -1,7 +1,7 @@
 import { mainNavigation } from '@/data/data-navigation';
 import { mdiClose, mdiMenu } from '@mdi/js';
 import UserAccount from '@src/components/authentication/UserAccount';
-import { PreviewSearchInput } from '@src/components/integrations/sitecore-search';
+import { PreviewSearchInput } from '@src/components/integrations/sitecore-search/NewPreviewSearchInput';
 import { Icon } from '@src/components/lib/icon';
 import { cn } from '@src/components/lib/utils';
 import { Button } from '@src/components/ui/button';
@@ -15,7 +15,6 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { DarkModeSwitch } from './DarkModeSwitch';
 import { QuickStartMenu } from './QuickStartMenu';
-import { SearchButton } from './SearchButton';
 
 export type TopNavProps = {
   searchEnabled?: boolean;
@@ -101,23 +100,13 @@ export default function TopNav({ searchEnabled }: TopNavProps) {
           </NavigationMenu>
         </div>
         <div className="flex items-center gap-2">
-          {searchEnabled && (
-            <>
-              <div className="hidden 3xl:block">
-                <PreviewSearchInput
-                  rfkId="rfkid_6"
-                  defaultItemsPerPage={6}
-                  onFocus={() => setFocusedOnSearch(true)}
-                  onBlur={() => setFocusedOnSearch(false)}
-                  className={cn('flex transition-all duration-100 ease-in-out', focusedOnSearch ? 'w-2xl' : 'w-lg')}
-                />
-              </div>
-
-              <div className="3xl:hidden xl:block">
-                <SearchButton />
-              </div>
-            </>
-          )}
+          <PreviewSearchInput
+            rfkId="rfkid_6"
+            defaultItemsPerPage={6}
+            onFocus={() => setFocusedOnSearch(true)}
+            onBlur={() => setFocusedOnSearch(false)}
+            className={cn('flex transition-all duration-100 ease-in-out', focusedOnSearch ? 'w-2xl' : 'w-lg')}
+          />
 
           <Button onClick={() => setIsOpen(!isOpen)} variant="ghost" size="sm" aria-label="Toggle Navigation" className="xl:hidden">
             {isOpen ? <Icon path={mdiClose} size={1} /> : <Icon path={mdiMenu} size={1.25} />}
