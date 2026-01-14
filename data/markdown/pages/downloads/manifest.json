@@ -80,6 +80,10 @@
       "path": "",
       "children": [
         {
+          "title": "SitecoreAI Pathway",
+          "path": "SitecoreAI_Pathway"
+        },
+        {
           "title": "XM to XM Cloud Migration Tool",
           "path": "xm-cloud"
         },
