@@ -96,7 +96,7 @@ To make sure that your components support the advanced editing features of XM Cl
 A component should match the following structure:
 
 ```typescript
-import React from 'react';
+import React, { type JSX } from 'react';
 import { Image as JssImage, Link as JssLink, RichText as JssRichText, ImageField, Field, LinkField, Text } from '@sitecore-jss/sitecore-jss-nextjs';
 
 interface Fields {
