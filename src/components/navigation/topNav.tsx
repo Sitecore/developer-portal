@@ -100,13 +100,7 @@ export default function TopNav({ searchEnabled }: TopNavProps) {
           </NavigationMenu>
         </div>
         <div className="flex items-center gap-2">
-          <PreviewSearchInput
-            rfkId="rfkid_6"
-            defaultItemsPerPage={6}
-            onFocus={() => setFocusedOnSearch(true)}
-            onBlur={() => setFocusedOnSearch(false)}
-            className={cn('flex transition-all duration-100 ease-in-out', focusedOnSearch ? 'w-2xl' : 'w-lg')}
-          />
+          <PreviewSearchInput rfkId="rfkid_6" defaultItemsPerPage={6} />
 
           <Button onClick={() => setIsOpen(!isOpen)} variant="ghost" size="sm" aria-label="Toggle Navigation" className="xl:hidden">
             {isOpen ? <Icon path={mdiClose} size={1} /> : <Icon path={mdiMenu} size={1.25} />}
