@@ -1,13 +1,14 @@
 import { Option } from '@/src/components/ui/dropdown';
 import { Alert, AlertIcon, Box, Button, Card, CardBody, Checkbox, FormControl, FormLabel, HStack, Icon, Link, SkeletonText, VisuallyHidden, Wrap } from '@chakra-ui/react';
-import { ChangelogEntry, ChangelogEntryList, Product } from '@lib/changelog/types';
+import { ChangelogEntry, ChangelogEntryList, ChangeType, Product } from '@lib/changelog/types';
 import axios from 'axios';
 import NextLink from 'next/link';
 import { useState } from 'react';
 import { Fetcher } from 'swr';
+import useSWR from 'swr';
 import useSWRInfinite from 'swr/infinite';
 
-import { entriesApiUrl, getChangeTypeOptions, getProductOptions } from '@/src/lib/changelog/common/changelog';
+import { entriesApiUrl } from '@/src/lib/changelog/common/changelog';
 import { buildQuerystring } from '@/src/lib/changelog/common/querystring';
 import { ChevronLeftIcon } from '@chakra-ui/icons';
 import ChangelogFilter from './ChangelogFilter';
@@ -19,6 +20,44 @@ type ChangelogListProps = {
   selectedProducts?: Array<Option>;
   onProductsChange?: (selectedProducts: Array<Option>) => void;
 };
+
+/**
+ * Get change type options using SWR hook
+ * This should be used in React components only
+ */
+function getChangeTypeOptions(): Array<Option> {
+  const fetcher: Fetcher<Array<ChangeType>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
+  const { data: changeTypes, error } = useSWR(`${entriesApiUrl}/types`, fetcher);
+
+  if (error) {
+    console.log(error);
+  }
+
+  if (changeTypes) {
+    return changeTypes?.map((e: ChangeType) => ({ label: e.name, value: e.id }));
+  }
+
+  return [];
+}
+
+/**
+ * Get product options using SWR hook
+ * This should be used in React components only
+ */
+function getProductOptions(): Array<Option> {
+  const fetcher: Fetcher<Array<Product>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
+  const { data: products, error } = useSWR(`${entriesApiUrl}/products?all=false`, fetcher);
+
+  if (error) {
+    console.log(error);
+  }
+
+  if (products) {
+    return products?.map((e: Product) => ({ label: e.name, value: e.id }));
+  }
+
+  return [];
+}
 
 const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps) => {
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);

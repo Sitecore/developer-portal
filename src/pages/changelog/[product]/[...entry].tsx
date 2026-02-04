@@ -56,17 +56,16 @@ export async function getServerSideProps(context: any) {
     return response;
   });
   let changelogEntry;
-  let currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
-
-  try {
-    changelogEntry = entry.length == 2 ? await changelog.getEntryByTitleAndDate(entry[1], entry[0], currentProduct?.id) : await changelog.getEntryByTitle(entry[0], currentProduct?.id);
-  } catch {
+  const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
+  if (!currentProduct) {
     return {
       notFound: true,
     };
   }
 
-  if (currentProduct == undefined) {
+  try {
+    changelogEntry = entry.length == 2 ? await changelog.getEntryByTitleAndDate(entry[1], entry[0], currentProduct.id) : await changelog.getEntryByTitle(entry[0], currentProduct?.id);
+  } catch {
     return {
       notFound: true,
     };
@@ -124,6 +123,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     </Heading>
 
                     <ChangelogItemMeta item={changelogEntry} />
+
                     {changelogEntry.scheduled && (
                       <Alert colorScheme="neutral" mt={4}>
                         <AlertIcon />
@@ -138,7 +138,7 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     )}
                   </CardHeader>
                   <CardBody py={0}>
-                    {changelogEntry.image.length > 0 && changelogEntry.image[0].fileType.includes('image') && (
+                    {changelogEntry.image.length > 0 && changelogEntry.image[0].fileUrl && (
                       <>
                         <Image src={`${changelogEntry.image[0].fileUrl}`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
 
@@ -164,9 +164,9 @@ const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) =>
                     )}
                     <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
 
-                    {changelogEntry.image.filter((img) => img.fileType.includes('pdf')).length > 0 &&
+                    {changelogEntry.image.filter((img) => img.fileType?.includes('pdf')).length > 0 &&
                       changelogEntry.image
-                        .filter((img) => img.fileType.includes('pdf'))
+                        .filter((img) => img.fileType?.includes('pdf'))
                         .map((pdf, index) => {
                           return (
                             <LinkButton

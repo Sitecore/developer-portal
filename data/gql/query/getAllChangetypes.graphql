@@ -1,6 +1,7 @@
 query GetAllChangetypes {
-  allChangetype {
-    total
+  manyChangetype {
+    hasMore
+    cursor
     results {
       ...changeType
     }

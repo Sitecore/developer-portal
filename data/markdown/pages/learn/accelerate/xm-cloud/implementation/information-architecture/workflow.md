@@ -4,7 +4,7 @@ description: 'Setting up workflow on a Page and Components level'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-09-28'
+lastUpdated: '2025-12-14'
 created: '2024-10-04'
 audience: ['Architect','Product Owner','Project Manager','Technical Implementer', 'User']
 ---
@@ -72,6 +72,20 @@ It's important to configure workflow for both pages and the separate data source
 If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB XM Cloud components then all of the necessary configuration should already be in place including base templates.
 
 Note that only templates that have the **\_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: _/sitecore/Templates/Foundation/Experience Accelerator/StandardValues/_.  If for some reason your Site Collection Template or Datasource component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the documentation site.
+
+### Configuration of component child items
+To allow local components with child items to move through the workflow correctly in Page Builder there is an additional base template which need to be assigned to the parent component.
+
+> This template should not be added to child items only the parent datasource item. 
+
+The **_HorizonDatasourceGrouping** when present will allow Page Builder to show the Manage Items panel for that datasource and authors can insert child items based on the Insert Options configured in the datasource template. 
+
+<Image src="/images/learn/accelerate/xm-cloud/HorizonDatasourceGrouping.png" title="HorizonDatasourceGrouping"/>
+*/sitecore/templates/Foundation/Experience Accelerator/Horizon/_HorizonDatasourceGrouping*
+
+
+
+If you insert/edit a new child under a parent datasource that uses this template and the parent is in a final workflow state, Sitecore creates a new version of the parent item. This is expected behaviour for publishing consistency.
 
 ### Configuration of Users/Roles
 
@@ -159,7 +173,7 @@ When editing is complete from this point forward Explorer can be oppened in cont
 
 Because the other items modified will not be in the final state in the workflow they will not be published. If snapshot publishing is being used then a layout update will still be sent via Edge to allow on-demand ISR to invalid the page. If this is a new component being added to the page then the layout will need to updated and published for the chnages to come through because the dependency is not available on Edge - refer to the [Publishing Optimization](/learn/accelerate/xm-cloud/optimization/publishing-optimization#insights) recipe for further information on publishing flow.
 
-### Related Documentation
+### Related Recipies
 
 <Row columns={2}>
   <Link title="Publishing to Experience Edge" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />

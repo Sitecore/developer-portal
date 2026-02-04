@@ -8,15 +8,22 @@ type ProductIconProps = {
   product: SitecoreProduct;
 };
 
+
+
 export const ProductIcon = ({ product }: ProductIconProps) => {
-  return (
-    <Tooltip label={`Go to the ${product.productName} changelog page`} aria-label="A tooltip">
-      <Link href={`/changelog/${getSlug(product.productName)}`}>
-        <HStack>
-          <Image src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName} width={20} height={20} priority={true} />
-          <Text>{product.productName}</Text>
-        </HStack>
-      </Link>
-    </Tooltip>
-  );
+  try {
+    return (
+      <Tooltip label={`Go to the ${product.productName} changelog page`} aria-label="A tooltip">
+        <Link href={`/changelog/${getSlug(product.productName)}`}>
+          <HStack>
+            <Image src={useColorModeValue(product.lightIcon, product.darkIcon)} alt={product.productName} width={20} height={20} priority={true} />
+            <Text>{product.productName}</Text>
+          </HStack>
+        </Link>
+      </Tooltip>
+    );
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 };

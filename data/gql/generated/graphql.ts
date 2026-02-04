@@ -14,1459 +14,1593 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean };
   Int: { input: number; output: number };
   Float: { input: number; output: number };
-  DateTime: { input: Date; output: Date };
-  Json: { input: any; output: any };
-  Long: { input: any; output: any };
-  MultiplierPath: { input: any; output: any };
+  CustomDateTime: { input: Date; output: Date };
+  JSON: { input: { [key: string]: any }; output: { [key: string]: any } };
+  /** Datetime in UTC format */
+  UTCDateTime: { input: any; output: any };
 };
 
-export type Changelog = {
-  __sysCreatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysCreatedBy: Maybe<Scalars['String']['output']>;
-  __sysUpdatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysUpdatedBy: Maybe<Scalars['String']['output']>;
-  __sysVersion: Maybe<Scalars['String']['output']>;
+/** GraphQL filter for boolean fields. */
+export type BooleanFilterInput = {
+  /** Matches the specified value. */
+  equals: InputMaybe<Scalars['Boolean']['input']>;
+  /** Does not match the specified value. */
+  notEquals: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Indicates whether a string comparison should be case-sensitive or case-insensitive. */
+export enum CaseSensitive {
+  /** Case-insensitive match. */
+  Insensitive = 'INSENSITIVE',
+  /** Case-sensitive match. */
+  Sensitive = 'SENSITIVE',
+}
+
+export type Changelog = ContentItem & {
+  /** Does this change include a breaking change? (does not apply to XM Cloud) */
   breakingChange: Maybe<Scalars['Boolean']['output']>;
-  changeType: Changelog__ChangeType_Parent_Types_List;
-  description: Maybe<Scalars['Json']['output']>;
-  fullArticle: Maybe<Scalars['Json']['output']>;
-  id: Maybe<Scalars['ID']['output']>;
-  image: MediaList;
+  /** Please select a change type */
+  changeType: Maybe<ContentItemList>;
+  /** The text that will be rendered in the overview */
+  description: Maybe<Scalars['JSON']['output']>;
+  /** The content that will be visible on the detail page (not required) */
+  fullArticle: Maybe<Scalars['JSON']['output']>;
+  image: Maybe<ContentItemList>;
+  /** Mentions the related issue number (if applicable) */
   issueNumber: Maybe<Scalars['String']['output']>;
-  name: Maybe<Scalars['String']['output']>;
+  /** You can link to an external page where more information can be found */
   readMoreLink: Maybe<Scalars['String']['output']>;
-  releaseDate: Maybe<Scalars['DateTime']['output']>;
+  releaseDate: Maybe<Scalars['UTCDateTime']['output']>;
+  /** Should this changelog item be considered as an announcement? */
   scheduled: Maybe<Scalars['Boolean']['output']>;
-  sitecoreProduct: Changelog__SitecoreProduct_Parent_Types_List;
-  status: StatusList;
+  /** Please select one product from the list */
+  sitecoreProduct: Maybe<ContentItemList>;
+  /** Please select a release status */
+  status: Maybe<ContentItemList>;
+  system: System;
   title: Maybe<Scalars['String']['output']>;
-  version: Maybe<Scalars['String']['output']>;
+  /** Only use the version field if applicable */
+  x_version: Maybe<Scalars['String']['output']>;
 };
 
 export type ChangelogChangeTypeArgs = {
   after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
+  filter: InputMaybe<Changelog_ChangeType_Relations>;
+  minimumPageSize?: InputMaybe<Scalars['Int']['input']>;
+  orderBy: InputMaybe<ContentItemSortingOptions>;
 };
 
 export type ChangelogImageArgs = {
   after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<Array<InputMaybe<MediaSorts>>>;
-  where: InputMaybe<MediaPredicate>;
+  filter: InputMaybe<Changelog_Image_Relations>;
+  minimumPageSize?: InputMaybe<Scalars['Int']['input']>;
+  orderBy: InputMaybe<ContentItemSortingOptions>;
 };
 
 export type ChangelogSitecoreProductArgs = {
   after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
+  filter: InputMaybe<Changelog_SitecoreProduct_Relations>;
+  minimumPageSize?: InputMaybe<Scalars['Int']['input']>;
+  orderBy: InputMaybe<ContentItemSortingOptions>;
 };
 
 export type ChangelogStatusArgs = {
   after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<Array<InputMaybe<StatusSorts>>>;
-  where: InputMaybe<StatusPredicate>;
+  filter: InputMaybe<Changelog_Status_Relations>;
+  minimumPageSize?: InputMaybe<Scalars['Int']['input']>;
+  orderBy: InputMaybe<ContentItemSortingOptions>;
 };
 
+/** Represents a list of content items. */
 export type ChangelogList = {
-  pageInfo: Maybe<PageInfo>;
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
   results: Maybe<Array<Maybe<Changelog>>>;
-  total: Maybe<Scalars['Int']['output']>;
 };
 
-export type ChangelogPredicate = {
-  AND: InputMaybe<Array<ChangelogPredicate>>;
-  OR: InputMaybe<Array<ChangelogPredicate>>;
-  __sysCreatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysCreatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysUpdatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_contains: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_eq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_neq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_startswith: InputMaybe<Scalars['String']['input']>;
-  breakingChange_eq: InputMaybe<Scalars['Boolean']['input']>;
-  breakingChange_neq: InputMaybe<Scalars['Boolean']['input']>;
-  changeType: InputMaybe<Changelog__ChangeTypePredicate>;
-  id_anyOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  id_eq: InputMaybe<Scalars['ID']['input']>;
-  id_neq: InputMaybe<Scalars['ID']['input']>;
-  id_noneOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  image: InputMaybe<Changelog__ImagePredicate>;
-  issueNumber_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  issueNumber_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  issueNumber_contains: InputMaybe<Scalars['String']['input']>;
-  issueNumber_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  issueNumber_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  issueNumber_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  issueNumber_endswith: InputMaybe<Scalars['String']['input']>;
-  issueNumber_eq: InputMaybe<Scalars['String']['input']>;
-  issueNumber_neq: InputMaybe<Scalars['String']['input']>;
-  issueNumber_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  issueNumber_startswith: InputMaybe<Scalars['String']['input']>;
-  name_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_contains: InputMaybe<Scalars['String']['input']>;
-  name_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  name_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  name_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  name_endswith: InputMaybe<Scalars['String']['input']>;
-  name_eq: InputMaybe<Scalars['String']['input']>;
-  name_neq: InputMaybe<Scalars['String']['input']>;
-  name_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_startswith: InputMaybe<Scalars['String']['input']>;
-  readMoreLink_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  readMoreLink_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  readMoreLink_contains: InputMaybe<Scalars['String']['input']>;
-  readMoreLink_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  readMoreLink_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  readMoreLink_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  readMoreLink_endswith: InputMaybe<Scalars['String']['input']>;
-  readMoreLink_eq: InputMaybe<Scalars['String']['input']>;
-  readMoreLink_neq: InputMaybe<Scalars['String']['input']>;
-  readMoreLink_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  readMoreLink_startswith: InputMaybe<Scalars['String']['input']>;
-  releaseDate_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  releaseDate_eq: InputMaybe<Scalars['DateTime']['input']>;
-  releaseDate_gt: InputMaybe<Scalars['DateTime']['input']>;
-  releaseDate_lt: InputMaybe<Scalars['DateTime']['input']>;
-  releaseDate_neq: InputMaybe<Scalars['DateTime']['input']>;
-  scheduled_eq: InputMaybe<Scalars['Boolean']['input']>;
-  scheduled_neq: InputMaybe<Scalars['Boolean']['input']>;
-  sitecoreProduct: InputMaybe<Changelog__SitecoreProductPredicate>;
-  status: InputMaybe<Changelog__StatusPredicate>;
-  title_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  title_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  title_contains: InputMaybe<Scalars['String']['input']>;
-  title_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  title_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  title_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  title_endswith: InputMaybe<Scalars['String']['input']>;
-  title_eq: InputMaybe<Scalars['String']['input']>;
-  title_neq: InputMaybe<Scalars['String']['input']>;
-  title_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  title_startswith: InputMaybe<Scalars['String']['input']>;
-  version_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  version_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  version_contains: InputMaybe<Scalars['String']['input']>;
-  version_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  version_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  version_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  version_endswith: InputMaybe<Scalars['String']['input']>;
-  version_eq: InputMaybe<Scalars['String']['input']>;
-  version_neq: InputMaybe<Scalars['String']['input']>;
-  version_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  version_startswith: InputMaybe<Scalars['String']['input']>;
-};
-
-export enum ChangelogSorts {
-  BreakingchangeAsc = 'BREAKINGCHANGE_ASC',
-  BreakingchangeDesc = 'BREAKINGCHANGE_DESC',
-  IdAsc = 'ID_ASC',
-  IdDesc = 'ID_DESC',
-  IssuenumberAsc = 'ISSUENUMBER_ASC',
-  IssuenumberDesc = 'ISSUENUMBER_DESC',
-  NameAsc = 'NAME_ASC',
-  NameDesc = 'NAME_DESC',
-  ReadmorelinkAsc = 'READMORELINK_ASC',
-  ReadmorelinkDesc = 'READMORELINK_DESC',
-  ReleasedateAsc = 'RELEASEDATE_ASC',
-  ReleasedateDesc = 'RELEASEDATE_DESC',
+/** Enum type used for sorting in QueryMany. */
+export enum ChangelogSortingOptions {
+  BreakingChangeAsc = 'BREAKING_CHANGE_ASC',
+  BreakingChangeDesc = 'BREAKING_CHANGE_DESC',
+  IssueNumberAsc = 'ISSUE_NUMBER_ASC',
+  IssueNumberDesc = 'ISSUE_NUMBER_DESC',
+  ReadMoreLinkAsc = 'READ_MORE_LINK_ASC',
+  ReadMoreLinkDesc = 'READ_MORE_LINK_DESC',
+  ReleaseDateAsc = 'RELEASE_DATE_ASC',
+  ReleaseDateDesc = 'RELEASE_DATE_DESC',
   ScheduledAsc = 'SCHEDULED_ASC',
   ScheduledDesc = 'SCHEDULED_DESC',
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
   TitleAsc = 'TITLE_ASC',
   TitleDesc = 'TITLE_DESC',
-  VersionAsc = 'VERSION_ASC',
-  VersionDesc = 'VERSION_DESC',
-  SyscreatedatAsc = '__SYSCREATEDAT_ASC',
-  SyscreatedatDesc = '__SYSCREATEDAT_DESC',
-  SyscreatedbyAsc = '__SYSCREATEDBY_ASC',
-  SyscreatedbyDesc = '__SYSCREATEDBY_DESC',
-  SysupdatedatAsc = '__SYSUPDATEDAT_ASC',
-  SysupdatedatDesc = '__SYSUPDATEDAT_DESC',
-  SysupdatedbyAsc = '__SYSUPDATEDBY_ASC',
-  SysupdatedbyDesc = '__SYSUPDATEDBY_DESC',
-  SysversionAsc = '__SYSVERSION_ASC',
-  SysversionDesc = '__SYSVERSION_DESC',
+  XVersionAsc = 'X_VERSION_ASC',
+  XVersionDesc = 'X_VERSION_DESC',
 }
 
-export type Changelog__ChangeTypePredicate = {
-  changelog_ids: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  image: InputMaybe<Changelog__ImagePredicate>;
-  sitecoreProduct: InputMaybe<Changelog__SitecoreProductPredicate>;
-  status: InputMaybe<Changelog__StatusPredicate>;
+/** GraphQL filter for content items. */
+export type Changelog_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changelog_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changelog_Filter>>>;
+  breakingChange: InputMaybe<BooleanFilterInput>;
+  changeType: InputMaybe<ReferenceFilterInput>;
+  image: InputMaybe<ReferenceFilterInput>;
+  issueNumber: InputMaybe<StringFilterInput>;
+  readMoreLink: InputMaybe<StringFilterInput>;
+  releaseDate: InputMaybe<DateTimeFilterInput>;
+  scheduled: InputMaybe<BooleanFilterInput>;
+  sitecoreProduct: InputMaybe<ReferenceFilterInput>;
+  status: InputMaybe<ReferenceFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
+  title: InputMaybe<StringFilterInput>;
+  x_version: InputMaybe<StringFilterInput>;
 };
 
-export type Changelog__ChangeType_Parent_Types = Changelog | Changetype | SitecoreCloud | SitecoreProduct | Status;
-
-export type Changelog__ChangeType_Parent_Types_List = {
-  pageInfo: Maybe<PageInfo>;
-  results: Maybe<Array<Maybe<Changelog__ChangeType_Parent_Types>>>;
-  total: Maybe<Scalars['Int']['output']>;
+/** GraphQL root filter for content items references. */
+export type Changelog_ChangeType_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changelog_ChangeType_Changetype_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changelog_ChangeType_Changetype_Relations>>>;
 };
 
-export type Changelog__ImagePredicate = {
-  media_ids: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+/** Represents the input type for filtering references in GraphQL. */
+export type Changelog_ChangeType_Changetype_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changelog_ChangeType_Changetype_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changelog_ChangeType_Changetype_Relations>>>;
+  changetype: InputMaybe<Changetype_Filter>;
+  system: InputMaybe<SystemTypeFilterInput>;
 };
 
-export type Changelog__SitecoreProductPredicate = {
-  changeType: InputMaybe<Changelog__ChangeTypePredicate>;
-  changelog_ids: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  image: InputMaybe<Changelog__ImagePredicate>;
-  status: InputMaybe<Changelog__StatusPredicate>;
+/** GraphQL root filter for content items references. */
+export type Changelog_Image_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changelog_Image_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changelog_Image_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
 };
 
-export type Changelog__SitecoreProduct_Parent_Types = Changelog | Changetype | SitecoreCloud | SitecoreProduct | Status;
-
-export type Changelog__SitecoreProduct_Parent_Types_List = {
-  pageInfo: Maybe<PageInfo>;
-  results: Maybe<Array<Maybe<Changelog__SitecoreProduct_Parent_Types>>>;
-  total: Maybe<Scalars['Int']['output']>;
+/** Represents the input type for filtering references in GraphQL. */
+export type Changelog_Image_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changelog_Image_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changelog_Image_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
+  changelog: InputMaybe<Changelog_Filter>;
+  changetype: InputMaybe<Changetype_Filter>;
+  sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
+  sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
+  status: InputMaybe<Status_Filter>;
+  system: InputMaybe<SystemTypeFilterInput>;
+  upload: InputMaybe<Upload_Filter>;
+  xMCMedia: InputMaybe<XmcMedia_Filter>;
 };
 
-export type Changelog__StatusPredicate = {
-  status_ids: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+/** GraphQL root filter for content items references. */
+export type Changelog_SitecoreProduct_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SitecoreProduct_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SitecoreProduct_Relations>>>;
 };
 
-export type Changetype = {
-  __sysCreatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysCreatedBy: Maybe<Scalars['String']['output']>;
-  __sysUpdatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysUpdatedBy: Maybe<Scalars['String']['output']>;
-  __sysVersion: Maybe<Scalars['String']['output']>;
+/** Represents the input type for filtering references in GraphQL. */
+export type Changelog_SitecoreProduct_SitecoreProduct_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SitecoreProduct_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changelog_SitecoreProduct_SitecoreProduct_Relations>>>;
+  sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
+  system: InputMaybe<SystemTypeFilterInput>;
+};
+
+/** GraphQL root filter for content items references. */
+export type Changelog_Status_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changelog_Status_Status_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changelog_Status_Status_Relations>>>;
+};
+
+/** Represents the input type for filtering references in GraphQL. */
+export type Changelog_Status_Status_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changelog_Status_Status_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changelog_Status_Status_Relations>>>;
+  status: InputMaybe<Status_Filter>;
+  system: InputMaybe<SystemTypeFilterInput>;
+};
+
+export type Changetype = ContentItem & {
   changeType: Maybe<Scalars['String']['output']>;
-  id: Maybe<Scalars['ID']['output']>;
-  name: Maybe<Scalars['String']['output']>;
+  system: System;
 };
 
+/** Represents a list of content items. */
 export type ChangetypeList = {
-  pageInfo: Maybe<PageInfo>;
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
   results: Maybe<Array<Maybe<Changetype>>>;
-  total: Maybe<Scalars['Int']['output']>;
 };
 
-export type ChangetypePredicate = {
-  AND: InputMaybe<Array<ChangetypePredicate>>;
-  OR: InputMaybe<Array<ChangetypePredicate>>;
-  __sysCreatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysCreatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysUpdatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_contains: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_eq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_neq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_startswith: InputMaybe<Scalars['String']['input']>;
-  changeType_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  changeType_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  changeType_contains: InputMaybe<Scalars['String']['input']>;
-  changeType_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  changeType_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  changeType_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  changeType_endswith: InputMaybe<Scalars['String']['input']>;
-  changeType_eq: InputMaybe<Scalars['String']['input']>;
-  changeType_neq: InputMaybe<Scalars['String']['input']>;
-  changeType_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  changeType_startswith: InputMaybe<Scalars['String']['input']>;
-  id_anyOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  id_eq: InputMaybe<Scalars['ID']['input']>;
-  id_neq: InputMaybe<Scalars['ID']['input']>;
-  id_noneOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  name_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_contains: InputMaybe<Scalars['String']['input']>;
-  name_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  name_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  name_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  name_endswith: InputMaybe<Scalars['String']['input']>;
-  name_eq: InputMaybe<Scalars['String']['input']>;
-  name_neq: InputMaybe<Scalars['String']['input']>;
-  name_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_startswith: InputMaybe<Scalars['String']['input']>;
-};
-
-export enum ChangetypeSorts {
-  ChangetypeAsc = 'CHANGETYPE_ASC',
-  ChangetypeDesc = 'CHANGETYPE_DESC',
-  IdAsc = 'ID_ASC',
-  IdDesc = 'ID_DESC',
-  NameAsc = 'NAME_ASC',
-  NameDesc = 'NAME_DESC',
-  SyscreatedatAsc = '__SYSCREATEDAT_ASC',
-  SyscreatedatDesc = '__SYSCREATEDAT_DESC',
-  SyscreatedbyAsc = '__SYSCREATEDBY_ASC',
-  SyscreatedbyDesc = '__SYSCREATEDBY_DESC',
-  SysupdatedatAsc = '__SYSUPDATEDAT_ASC',
-  SysupdatedatDesc = '__SYSUPDATEDAT_DESC',
-  SysupdatedbyAsc = '__SYSUPDATEDBY_ASC',
-  SysupdatedbyDesc = '__SYSUPDATEDBY_DESC',
-  SysversionAsc = '__SYSVERSION_ASC',
-  SysversionDesc = '__SYSVERSION_DESC',
+/** Enum type used for sorting in QueryMany. */
+export enum ChangetypeSortingOptions {
+  ChangeTypeAsc = 'CHANGE_TYPE_ASC',
+  ChangeTypeDesc = 'CHANGE_TYPE_DESC',
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
 }
 
-export type Media = {
-  __sysCreatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysCreatedBy: Maybe<Scalars['String']['output']>;
-  __sysUpdatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysUpdatedBy: Maybe<Scalars['String']['output']>;
-  __sysVersion: Maybe<Scalars['String']['output']>;
-  description: Maybe<Scalars['String']['output']>;
-  fileHeight: Maybe<Scalars['Long']['output']>;
-  fileId: Maybe<Scalars['String']['output']>;
-  fileName: Maybe<Scalars['String']['output']>;
-  fileSize: Maybe<Scalars['Long']['output']>;
-  fileType: Maybe<Scalars['String']['output']>;
-  fileUrl: Maybe<Scalars['String']['output']>;
-  fileWidth: Maybe<Scalars['Long']['output']>;
-  id: Maybe<Scalars['ID']['output']>;
-  name: Maybe<Scalars['String']['output']>;
+/** GraphQL filter for content items. */
+export type Changetype_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changetype_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changetype_Filter>>>;
+  changeType: InputMaybe<StringFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
 };
 
-export type MediaFileUrlArgs = {
-  transform: InputMaybe<MediaUrlTransformInput>;
+/** Represents common fields for all content types. */
+export type ContentItem = {
+  /** The system fields of the content item. */
+  system: Maybe<System>;
 };
 
-export type MediaList = {
-  pageInfo: Maybe<PageInfo>;
-  results: Maybe<Array<Maybe<Media>>>;
-  total: Maybe<Scalars['Int']['output']>;
+/** Represents a list of content items. */
+export type ContentItemList = {
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
+  results: Maybe<Array<Maybe<ContentItem>>>;
 };
 
-export type MediaPredicate = {
-  AND: InputMaybe<Array<MediaPredicate>>;
-  OR: InputMaybe<Array<MediaPredicate>>;
-  __sysCreatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysCreatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysUpdatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_contains: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_eq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_neq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_startswith: InputMaybe<Scalars['String']['input']>;
-  description_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_contains: InputMaybe<Scalars['String']['input']>;
-  description_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  description_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  description_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  description_endswith: InputMaybe<Scalars['String']['input']>;
-  description_eq: InputMaybe<Scalars['String']['input']>;
-  description_neq: InputMaybe<Scalars['String']['input']>;
-  description_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_startswith: InputMaybe<Scalars['String']['input']>;
-  fileHeight_between: InputMaybe<Array<InputMaybe<Scalars['Long']['input']>>>;
-  fileHeight_eq: InputMaybe<Scalars['Long']['input']>;
-  fileHeight_gt: InputMaybe<Scalars['Long']['input']>;
-  fileHeight_lt: InputMaybe<Scalars['Long']['input']>;
-  fileHeight_neq: InputMaybe<Scalars['Long']['input']>;
-  fileId_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileId_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileId_contains: InputMaybe<Scalars['String']['input']>;
-  fileId_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  fileId_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  fileId_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  fileId_endswith: InputMaybe<Scalars['String']['input']>;
-  fileId_eq: InputMaybe<Scalars['String']['input']>;
-  fileId_neq: InputMaybe<Scalars['String']['input']>;
-  fileId_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileId_startswith: InputMaybe<Scalars['String']['input']>;
-  fileName_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileName_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileName_contains: InputMaybe<Scalars['String']['input']>;
-  fileName_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  fileName_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  fileName_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  fileName_endswith: InputMaybe<Scalars['String']['input']>;
-  fileName_eq: InputMaybe<Scalars['String']['input']>;
-  fileName_neq: InputMaybe<Scalars['String']['input']>;
-  fileName_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileName_startswith: InputMaybe<Scalars['String']['input']>;
-  fileSize_between: InputMaybe<Array<InputMaybe<Scalars['Long']['input']>>>;
-  fileSize_eq: InputMaybe<Scalars['Long']['input']>;
-  fileSize_gt: InputMaybe<Scalars['Long']['input']>;
-  fileSize_lt: InputMaybe<Scalars['Long']['input']>;
-  fileSize_neq: InputMaybe<Scalars['Long']['input']>;
-  fileType_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileType_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileType_contains: InputMaybe<Scalars['String']['input']>;
-  fileType_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  fileType_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  fileType_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  fileType_endswith: InputMaybe<Scalars['String']['input']>;
-  fileType_eq: InputMaybe<Scalars['String']['input']>;
-  fileType_neq: InputMaybe<Scalars['String']['input']>;
-  fileType_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileType_startswith: InputMaybe<Scalars['String']['input']>;
-  fileUrl_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileUrl_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileUrl_contains: InputMaybe<Scalars['String']['input']>;
-  fileUrl_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  fileUrl_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  fileUrl_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  fileUrl_endswith: InputMaybe<Scalars['String']['input']>;
-  fileUrl_eq: InputMaybe<Scalars['String']['input']>;
-  fileUrl_neq: InputMaybe<Scalars['String']['input']>;
-  fileUrl_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  fileUrl_startswith: InputMaybe<Scalars['String']['input']>;
-  fileWidth_between: InputMaybe<Array<InputMaybe<Scalars['Long']['input']>>>;
-  fileWidth_eq: InputMaybe<Scalars['Long']['input']>;
-  fileWidth_gt: InputMaybe<Scalars['Long']['input']>;
-  fileWidth_lt: InputMaybe<Scalars['Long']['input']>;
-  fileWidth_neq: InputMaybe<Scalars['Long']['input']>;
-  id_anyOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  id_eq: InputMaybe<Scalars['ID']['input']>;
-  id_neq: InputMaybe<Scalars['ID']['input']>;
-  id_noneOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  name_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_contains: InputMaybe<Scalars['String']['input']>;
-  name_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  name_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  name_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  name_endswith: InputMaybe<Scalars['String']['input']>;
-  name_eq: InputMaybe<Scalars['String']['input']>;
-  name_neq: InputMaybe<Scalars['String']['input']>;
-  name_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_startswith: InputMaybe<Scalars['String']['input']>;
-};
-
-export enum MediaSorts {
-  DescriptionAsc = 'DESCRIPTION_ASC',
-  DescriptionDesc = 'DESCRIPTION_DESC',
-  FileheightAsc = 'FILEHEIGHT_ASC',
-  FileheightDesc = 'FILEHEIGHT_DESC',
-  FileidAsc = 'FILEID_ASC',
-  FileidDesc = 'FILEID_DESC',
-  FilesizeAsc = 'FILESIZE_ASC',
-  FilesizeDesc = 'FILESIZE_DESC',
-  FiletypeAsc = 'FILETYPE_ASC',
-  FiletypeDesc = 'FILETYPE_DESC',
-  FileurlAsc = 'FILEURL_ASC',
-  FileurlDesc = 'FILEURL_DESC',
-  FilewidthAsc = 'FILEWIDTH_ASC',
-  FilewidthDesc = 'FILEWIDTH_DESC',
-  IdAsc = 'ID_ASC',
-  IdDesc = 'ID_DESC',
-  NameAsc = 'NAME_ASC',
-  NameDesc = 'NAME_DESC',
-  SyscreatedatAsc = '__SYSCREATEDAT_ASC',
-  SyscreatedatDesc = '__SYSCREATEDAT_DESC',
-  SyscreatedbyAsc = '__SYSCREATEDBY_ASC',
-  SyscreatedbyDesc = '__SYSCREATEDBY_DESC',
-  SysupdatedatAsc = '__SYSUPDATEDAT_ASC',
-  SysupdatedatDesc = '__SYSUPDATEDAT_DESC',
-  SysupdatedbyAsc = '__SYSUPDATEDBY_ASC',
-  SysupdatedbyDesc = '__SYSUPDATEDBY_DESC',
-  SysversionAsc = '__SYSVERSION_ASC',
-  SysversionDesc = '__SYSVERSION_DESC',
+/** Enum type used for sorting in Reference fields. */
+export enum ContentItemSortingOptions {
+  /** Indicates sorting by CreatedAt system field ascending. */
+  SystemCreatedatAsc = 'SYSTEM_CREATEDAT_ASC',
+  /** Indicates sorting by CreatedAt system field descending. */
+  SystemCreatedatDesc = 'SYSTEM_CREATEDAT_DESC',
+  /** Indicates sorting by CreatedBy system field ascending. */
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  /** Indicates sorting by CreatedBy system field descending. */
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  /** Indicates sorting by ID ascending. */
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  /** Indicates sorting by ID descending. */
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  /** Indicates sorting by Locale ascending. */
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  /** Indicates sorting by Locale descending. */
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  /** Indicates sorting by Name descending. */
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  /** Sort by Name descending. */
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  /** Indicates sorting by PublishingStatus system field ascending. */
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  /** Indicates sorting by PublishingStatus system field descending. */
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  /** Indicates sorting by UpdatedAt system field ascending. */
+  SystemUpdatedatAsc = 'SYSTEM_UPDATEDAT_ASC',
+  /** Indicates sorting by UpdatedAt system field descending. */
+  SystemUpdatedatDesc = 'SYSTEM_UPDATEDAT_DESC',
+  /** Indicates sorting by UpdatedBy system field ascending. */
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  /** Indicates sorting by UpdatedBy system field ascending. */
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  /** Indicates sorting by Version ascending. */
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  /** Indicates sorting by Version descending. */
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
 }
 
-export enum MediaTransformCompression {
-  Fast = 'FAST',
-}
-
-export type MediaTransformCoordinatesInput = {
-  x: Scalars['Float']['input'];
-  y: Scalars['Float']['input'];
+/** Represents common fields for all content types. */
+export type ContentItemType = ContentItem & {
+  system: System;
 };
 
-export enum MediaTransformError {
-  Redirect = 'REDIRECT',
-}
-
-export enum MediaTransformFit {
-  Contain = 'CONTAIN',
-  Cover = 'COVER',
-  Crop = 'CROP',
-  Pad = 'PAD',
-  Scaledown = 'SCALEDOWN',
-}
-
-export enum MediaTransformFormat {
-  Auto = 'AUTO',
-  Avif = 'AVIF',
-  Gif = 'GIF',
-  Jpeg = 'JPEG',
-  Json = 'JSON',
-  Png = 'PNG',
-  Svg = 'SVG',
-  Webp = 'WEBP',
-}
-
-export enum MediaTransformGravitySide {
-  Auto = 'AUTO',
-  Bottom = 'BOTTOM',
-  Left = 'LEFT',
-  Right = 'RIGHT',
-  Top = 'TOP',
-}
-
-export type MediaTransformGravitySpecificationInput = {
-  coordinates: InputMaybe<MediaTransformCoordinatesInput>;
-  side: InputMaybe<MediaTransformGravitySide>;
+/** GraphQL filter for content items. */
+export type ContentItem_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<ContentItem_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<ContentItem_Filter>>>;
+  system: InputMaybe<SystemTypeFilterInput>;
 };
 
-export enum MediaTransformMetadata {
-  Copyright = 'COPYRIGHT',
-  Keep = 'KEEP',
-  None = 'NONE',
+/** Represents the GraphQL object type for ContentTypeSummary. */
+export type ContentTypeSummary = {
+  id: Scalars['ID']['output'];
+  name: Scalars['String']['output'];
+  version: Scalars['Int']['output'];
+};
+
+/** Graphql filter for content type summaries. */
+export type ContentTypeSummary_Filter = {
+  id: InputMaybe<StringFilterInput>;
+};
+
+/** GraphQL filter for datetime ranges. */
+export type DateRangeInput = {
+  /** The start date. */
+  from: Scalars['CustomDateTime']['input'];
+  /** The end date. */
+  to: Scalars['CustomDateTime']['input'];
+};
+
+/** GraphQL filter for DateTime fields. */
+export type DateTimeFilterInput = {
+  /** Matches the specified value. */
+  equals: InputMaybe<Scalars['CustomDateTime']['input']>;
+  /** Matches values greater than the specified value. */
+  greaterThan: InputMaybe<Scalars['CustomDateTime']['input']>;
+  /** Matches values within a specified range. */
+  inRange: InputMaybe<DateRangeInput>;
+  /** Matches values less than the specified value. */
+  lessThan: InputMaybe<Scalars['CustomDateTime']['input']>;
+  /** Does not match the specified value. */
+  notEquals: InputMaybe<Scalars['CustomDateTime']['input']>;
+  /** Excludes values within a specified range. */
+  notInRange: InputMaybe<DateRangeInput>;
+};
+
+/** GraphQL filter for integer fields. */
+export type DoubleFilterInput = {
+  /** Matches the specified value. */
+  equals: InputMaybe<Scalars['Float']['input']>;
+  /** Matches values greater than the specified value. */
+  greaterThan: InputMaybe<Scalars['Float']['input']>;
+  /** Matches values within a specified range. */
+  inRange: InputMaybe<DoubleRangeInput>;
+  /** Matches values less than the specified value. */
+  lessThan: InputMaybe<Scalars['Float']['input']>;
+  /** Does not match the specified value. */
+  notEquals: InputMaybe<Scalars['Float']['input']>;
+  /** Excludes values within a specified range. */
+  notInRange: InputMaybe<DoubleRangeInput>;
+};
+
+/** GraphQL filter for number ranges. */
+export type DoubleRangeInput = {
+  /** The lower boundary of the range. */
+  from: Scalars['Float']['input'];
+  /** The upper boundary of the range. */
+  to: Scalars['Float']['input'];
+};
+
+/** Represents a language and regional setting. */
+export type Locale = {
+  system: Maybe<LocaleSystemTypeType>;
+};
+
+export type LocaleSystemTypeType = {
+  createdAt: Scalars['UTCDateTime']['output'];
+  createdBy: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  label: Maybe<Scalars['String']['output']>;
+  updatedAt: Scalars['UTCDateTime']['output'];
+  updatedBy: Scalars['String']['output'];
+};
+
+/** Represents common interface for all content types containing MediaLibraryFragment fragment. */
+export type MediaLibraryFragment = {
+  /** The size of the file. */
+  media_fileSize: Maybe<Scalars['Float']['output']>;
+  /** The private link to use for the media asset enabling displaying it in authoring without making it publically available. */
+  media_privateLink: Maybe<Scalars['String']['output']>;
+  /** The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset. */
+  media_publicLink: Maybe<Scalars['String']['output']>;
+  /** The thumbnail link to use for the media asset. */
+  media_thumbnailLink: Maybe<Scalars['String']['output']>;
+  /** The file type of the media asset. */
+  media_type: Maybe<Array<Maybe<TaxonomyTerm>>>;
+  /** The system fields of the content item. */
+  system: Maybe<System>;
+};
+
+/** Represents an implementation for MediaLibraryFragment fragment interface. */
+export type MediaLibraryFragmentImpl = ContentItem &
+  MediaLibraryFragment & {
+    /** The size of the file. */
+    media_fileSize: Maybe<Scalars['Float']['output']>;
+    /** The private link to use for the media asset enabling displaying it in authoring without making it publically available. */
+    media_privateLink: Maybe<Scalars['String']['output']>;
+    /** The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset. */
+    media_publicLink: Maybe<Scalars['String']['output']>;
+    /** The thumbnail link to use for the media asset. */
+    media_thumbnailLink: Maybe<Scalars['String']['output']>;
+    /** The file type of the media asset. */
+    media_type: Maybe<Array<Maybe<TaxonomyTerm>>>;
+    system: System;
+  };
+
+/** Represents a list of content items. */
+export type MediaLibraryFragmentList = {
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
+  results: Maybe<Array<Maybe<MediaLibraryFragment>>>;
+};
+
+/** Enum type used for sorting in FragmentMany query. */
+export enum MediaLibraryFragmentSortingOptions {
+  MediaFileSizeAsc = 'MEDIA_FILE_SIZE_ASC',
+  MediaFileSizeDesc = 'MEDIA_FILE_SIZE_DESC',
+  MediaPrivateLinkAsc = 'MEDIA_PRIVATE_LINK_ASC',
+  MediaPrivateLinkDesc = 'MEDIA_PRIVATE_LINK_DESC',
+  MediaPublicLinkAsc = 'MEDIA_PUBLIC_LINK_ASC',
+  MediaPublicLinkDesc = 'MEDIA_PUBLIC_LINK_DESC',
+  MediaThumbnailLinkAsc = 'MEDIA_THUMBNAIL_LINK_ASC',
+  MediaThumbnailLinkDesc = 'MEDIA_THUMBNAIL_LINK_DESC',
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
 }
 
-export type MediaTransformRectangleInput = {
-  bottom: InputMaybe<Scalars['Int']['input']>;
-  left: InputMaybe<Scalars['Int']['input']>;
-  right: InputMaybe<Scalars['Int']['input']>;
-  top: InputMaybe<Scalars['Int']['input']>;
+/** GraphQL filter for fragments. */
+export type MediaLibraryFragment_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<MediaLibraryFragment_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<MediaLibraryFragment_Filter>>>;
+  media_fileSize: InputMaybe<DoubleFilterInput>;
+  media_privateLink: InputMaybe<StringFilterInput>;
+  media_publicLink: InputMaybe<StringFilterInput>;
+  media_thumbnailLink: InputMaybe<StringFilterInput>;
+  media_type: InputMaybe<SelectFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
 };
 
-export type MediaUrlTransformInput = {
-  anim: InputMaybe<Scalars['Boolean']['input']>;
-  background: InputMaybe<Scalars['String']['input']>;
-  blur: InputMaybe<Scalars['Int']['input']>;
-  brightness: InputMaybe<Scalars['Float']['input']>;
-  compression: InputMaybe<MediaTransformCompression>;
-  contrast: InputMaybe<Scalars['Float']['input']>;
-  dpr: InputMaybe<Scalars['Int']['input']>;
-  fit: InputMaybe<MediaTransformFit>;
-  format: InputMaybe<MediaTransformFormat>;
-  gamma: InputMaybe<Scalars['Float']['input']>;
-  gravity: InputMaybe<MediaTransformGravitySpecificationInput>;
-  height: InputMaybe<Scalars['Int']['input']>;
-  metadata: InputMaybe<MediaTransformMetadata>;
-  onError: InputMaybe<MediaTransformError>;
-  quality: InputMaybe<Scalars['Int']['input']>;
-  rotate: InputMaybe<Scalars['Int']['input']>;
-  sharpen: InputMaybe<Scalars['Float']['input']>;
-  trim: InputMaybe<MediaTransformRectangleInput>;
-  width: InputMaybe<Scalars['Int']['input']>;
-};
-
-export type PageInfo = {
-  endCursor: Maybe<Scalars['String']['output']>;
-  hasNext: Maybe<Scalars['Boolean']['output']>;
-};
+export enum PublishStatus {
+  Preview = 'PREVIEW',
+  Published = 'PUBLISHED',
+}
 
 export type Query = {
-  allChangelog: Maybe<ChangelogList>;
-  allChangetype: Maybe<ChangetypeList>;
-  allMedia: Maybe<MediaList>;
-  allSitecoreCloud: Maybe<SitecoreCloudList>;
-  allSitecoreProduct: Maybe<SitecoreProductList>;
-  allStatus: Maybe<StatusList>;
-  allTaxonomy_releaseStatus: Maybe<Taxonomy_ReleaseStatusList>;
   changelog: Maybe<Changelog>;
   changetype: Maybe<Changetype>;
-  media: Maybe<Media>;
+  contentItem: Maybe<ContentItem>;
+  cost: Maybe<Scalars['Int']['output']>;
+  locale: Maybe<Locale>;
+  manyChangelog: Maybe<ChangelogList>;
+  manyChangetype: Maybe<ChangetypeList>;
+  manyContentItem: Maybe<ContentItemList>;
+  manyLocale: Maybe<Array<Maybe<Locale>>>;
+  manyMediaLibraryFragment: Maybe<MediaLibraryFragmentList>;
+  manySitecoreCloud: Maybe<SitecoreCloudList>;
+  manySitecoreProduct: Maybe<SitecoreProductList>;
+  manyStatus: Maybe<StatusList>;
+  manyTaxonomy: Maybe<TaxonomyList>;
+  manyUpload: Maybe<UploadList>;
+  manyXMCMediaFragment: Maybe<XmcMediaFragmentList>;
+  mediaLibraryFragment: Maybe<MediaLibraryFragment>;
   sitecoreCloud: Maybe<SitecoreCloud>;
   sitecoreProduct: Maybe<SitecoreProduct>;
   status: Maybe<Status>;
-  taxonomy_releaseStatus: Maybe<Taxonomy_ReleaseStatus>;
-};
-
-export type QueryAllChangelogArgs = {
-  after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<Array<InputMaybe<ChangelogSorts>>>;
-  where: InputMaybe<ChangelogPredicate>;
-};
-
-export type QueryAllChangetypeArgs = {
-  after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<Array<InputMaybe<ChangetypeSorts>>>;
-  where: InputMaybe<ChangetypePredicate>;
-};
-
-export type QueryAllMediaArgs = {
-  after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<Array<InputMaybe<MediaSorts>>>;
-  where: InputMaybe<MediaPredicate>;
-};
-
-export type QueryAllSitecoreCloudArgs = {
-  after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<Array<InputMaybe<SitecoreCloudSorts>>>;
-  where: InputMaybe<SitecoreCloudPredicate>;
-};
-
-export type QueryAllSitecoreProductArgs = {
-  after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<Array<InputMaybe<SitecoreProductSorts>>>;
-  where: InputMaybe<SitecoreProductPredicate>;
-};
-
-export type QueryAllStatusArgs = {
-  after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<Array<InputMaybe<StatusSorts>>>;
-  where: InputMaybe<StatusPredicate>;
-};
-
-export type QueryAllTaxonomy_ReleaseStatusArgs = {
-  after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  where: InputMaybe<Taxonomy_ReleaseStatusPredicate>;
+  taxonomy: Maybe<Taxonomy>;
+  upload: Maybe<Upload>;
+  xMCMediaFragment: Maybe<XmcMediaFragment>;
 };
 
 export type QueryChangelogArgs = {
-  id: Scalars['String']['input'];
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
 };
 
 export type QueryChangetypeArgs = {
-  id: Scalars['String']['input'];
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
 };
 
-export type QueryMediaArgs = {
-  id: Scalars['String']['input'];
+export type QueryContentItemArgs = {
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
+};
+
+export type QueryLocaleArgs = {
+  id: Scalars['ID']['input'];
+};
+
+export type QueryManyChangelogArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_Changelog>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<ChangelogSortingOptions>;
+};
+
+export type QueryManyChangetypeArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_Changetype>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<ChangetypeSortingOptions>;
+};
+
+export type QueryManyContentItemArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_ContentItem>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<ContentItemSortingOptions>;
+};
+
+export type QueryManyMediaLibraryFragmentArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_MediaLibraryFragment>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<MediaLibraryFragmentSortingOptions>;
+};
+
+export type QueryManySitecoreCloudArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_SitecoreCloud>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<SitecoreCloudSortingOptions>;
+};
+
+export type QueryManySitecoreProductArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_SitecoreProduct>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<SitecoreProductSortingOptions>;
+};
+
+export type QueryManyStatusArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_Status>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<StatusSortingOptions>;
+};
+
+export type QueryManyTaxonomyArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  minimumPageSize?: Scalars['Int']['input'];
+};
+
+export type QueryManyUploadArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_Upload>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<UploadSortingOptions>;
+};
+
+export type QueryManyXmcMediaFragmentArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  filter: InputMaybe<Root_XmcMediaFragment>;
+  minimumPageSize?: Scalars['Int']['input'];
+  orderBy: InputMaybe<XmcMediaFragmentSortingOptions>;
+};
+
+export type QueryMediaLibraryFragmentArgs = {
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
 };
 
 export type QuerySitecoreCloudArgs = {
-  id: Scalars['String']['input'];
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
 };
 
 export type QuerySitecoreProductArgs = {
-  id: Scalars['String']['input'];
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
 };
 
 export type QueryStatusArgs = {
-  id: Scalars['String']['input'];
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
 };
 
-export type QueryTaxonomy_ReleaseStatusArgs = {
-  id: Scalars['String']['input'];
+export type QueryTaxonomyArgs = {
+  id: Scalars['ID']['input'];
 };
 
-export type SitecoreCloud = {
-  __sysCreatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysCreatedBy: Maybe<Scalars['String']['output']>;
-  __sysUpdatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysUpdatedBy: Maybe<Scalars['String']['output']>;
-  __sysVersion: Maybe<Scalars['String']['output']>;
+export type QueryUploadArgs = {
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
+};
+
+export type QueryXMcMediaFragmentArgs = {
+  id: Scalars['ID']['input'];
+  locale: Scalars['String']['input'];
+};
+
+/** GraphQL filter for reference fields. */
+export type ReferenceFilterInput = {
+  /** Checks if the value contains the specified text. */
+  contains: InputMaybe<Scalars['String']['input']>;
+  /** Checks if the value contains all of the specified texts. */
+  containsAll: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Checks if the value contains any of the specified texts. */
+  containsAny: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Checks if the value does not contain the specified text. */
+  notContains: InputMaybe<Scalars['String']['input']>;
+  /** Checks if the value does not contain all of the specified texts. */
+  notContainsAll: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Checks if the value does not contain any of the specified texts. */
+  notContainsAny: InputMaybe<Array<Scalars['String']['input']>>;
+};
+
+/** Root filter for content items. */
+export type Root_ContentItem = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<ContentItem_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<ContentItem_Filter>>>;
+};
+
+/** Root filter for fragments. */
+export type Root_MediaLibraryFragment = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<MediaLibraryFragment_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<MediaLibraryFragment_Filter>>>;
+};
+
+/** Root filter for content types. */
+export type Root_Upload = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Upload_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Upload_Filter>>>;
+};
+
+/** Root filter for fragments. */
+export type Root_XmcMediaFragment = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<XmcMediaFragment_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<XmcMediaFragment_Filter>>>;
+};
+
+/** Root filter for content types. */
+export type Root_Changelog = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changelog_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changelog_Filter>>>;
+};
+
+/** Root filter for content types. */
+export type Root_Changetype = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Changetype_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Changetype_Filter>>>;
+};
+
+/** Root filter for content types. */
+export type Root_SitecoreCloud = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<SitecoreCloud_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<SitecoreCloud_Filter>>>;
+};
+
+/** Root filter for content types. */
+export type Root_SitecoreProduct = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_Filter>>>;
+};
+
+/** Root filter for content types. */
+export type Root_Status = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Status_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Status_Filter>>>;
+};
+
+/** This type allows specifying a search over a Select field. */
+export type SelectFieldSearchInput = {
+  /** Match if the ID is present in the list of selected terms. */
+  id: InputMaybe<Scalars['String']['input']>;
+};
+
+/** GraphQL filter for select fields. */
+export type SelectFilterInput = {
+  /** Checks if the selection includes the specified value. */
+  contains: InputMaybe<SelectFieldSearchInput>;
+  /** Checks if the selection does not include the specified value. */
+  notContains: InputMaybe<SelectFieldSearchInput>;
+};
+
+export type SitecoreCloud = ContentItem & {
   cloudName: Maybe<Scalars['String']['output']>;
-  id: Maybe<Scalars['ID']['output']>;
-  name: Maybe<Scalars['String']['output']>;
+  system: System;
 };
 
+/** Represents a list of content items. */
 export type SitecoreCloudList = {
-  pageInfo: Maybe<PageInfo>;
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
   results: Maybe<Array<Maybe<SitecoreCloud>>>;
-  total: Maybe<Scalars['Int']['output']>;
 };
 
-export type SitecoreCloudPredicate = {
-  AND: InputMaybe<Array<SitecoreCloudPredicate>>;
-  OR: InputMaybe<Array<SitecoreCloudPredicate>>;
-  __sysCreatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysCreatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysUpdatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_contains: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_eq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_neq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_startswith: InputMaybe<Scalars['String']['input']>;
-  cloudName_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  cloudName_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  cloudName_contains: InputMaybe<Scalars['String']['input']>;
-  cloudName_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  cloudName_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  cloudName_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  cloudName_endswith: InputMaybe<Scalars['String']['input']>;
-  cloudName_eq: InputMaybe<Scalars['String']['input']>;
-  cloudName_neq: InputMaybe<Scalars['String']['input']>;
-  cloudName_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  cloudName_startswith: InputMaybe<Scalars['String']['input']>;
-  id_anyOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  id_eq: InputMaybe<Scalars['ID']['input']>;
-  id_neq: InputMaybe<Scalars['ID']['input']>;
-  id_noneOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  name_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_contains: InputMaybe<Scalars['String']['input']>;
-  name_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  name_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  name_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  name_endswith: InputMaybe<Scalars['String']['input']>;
-  name_eq: InputMaybe<Scalars['String']['input']>;
-  name_neq: InputMaybe<Scalars['String']['input']>;
-  name_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_startswith: InputMaybe<Scalars['String']['input']>;
-};
-
-export enum SitecoreCloudSorts {
-  CloudnameAsc = 'CLOUDNAME_ASC',
-  CloudnameDesc = 'CLOUDNAME_DESC',
-  IdAsc = 'ID_ASC',
-  IdDesc = 'ID_DESC',
-  NameAsc = 'NAME_ASC',
-  NameDesc = 'NAME_DESC',
-  SyscreatedatAsc = '__SYSCREATEDAT_ASC',
-  SyscreatedatDesc = '__SYSCREATEDAT_DESC',
-  SyscreatedbyAsc = '__SYSCREATEDBY_ASC',
-  SyscreatedbyDesc = '__SYSCREATEDBY_DESC',
-  SysupdatedatAsc = '__SYSUPDATEDAT_ASC',
-  SysupdatedatDesc = '__SYSUPDATEDAT_DESC',
-  SysupdatedbyAsc = '__SYSUPDATEDBY_ASC',
-  SysupdatedbyDesc = '__SYSUPDATEDBY_DESC',
-  SysversionAsc = '__SYSVERSION_ASC',
-  SysversionDesc = '__SYSVERSION_DESC',
+/** Enum type used for sorting in QueryMany. */
+export enum SitecoreCloudSortingOptions {
+  CloudNameAsc = 'CLOUD_NAME_ASC',
+  CloudNameDesc = 'CLOUD_NAME_DESC',
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
 }
 
-export type SitecoreProduct = {
-  __sysCreatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysCreatedBy: Maybe<Scalars['String']['output']>;
-  __sysUpdatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysUpdatedBy: Maybe<Scalars['String']['output']>;
-  __sysVersion: Maybe<Scalars['String']['output']>;
+/** GraphQL filter for content items. */
+export type SitecoreCloud_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<SitecoreCloud_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<SitecoreCloud_Filter>>>;
+  cloudName: InputMaybe<StringFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
+};
+
+export type SitecoreProduct = ContentItem & {
   abbreviation: Maybe<Scalars['String']['output']>;
-  id: Maybe<Scalars['ID']['output']>;
-  name: Maybe<Scalars['String']['output']>;
   productDescription: Maybe<Scalars['String']['output']>;
-  productIcon: MediaList;
+  productIcon: Maybe<ContentItemList>;
+  /** Image URL to the dark product icon */
   productIconDark: Maybe<Scalars['String']['output']>;
+  /** Image URL to the light product icon */
   productIconLight: Maybe<Scalars['String']['output']>;
   productName: Maybe<Scalars['String']['output']>;
-  sitecoreCloud: SitecoreProduct__SitecoreCloud_Parent_Types_List;
+  sitecoreCloud: Maybe<ContentItemList>;
+  system: System;
 };
 
 export type SitecoreProductProductIconArgs = {
   after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
-  orderBy: InputMaybe<Array<InputMaybe<MediaSorts>>>;
-  where: InputMaybe<MediaPredicate>;
+  filter: InputMaybe<SitecoreProduct_ProductIcon_Relations>;
+  minimumPageSize?: InputMaybe<Scalars['Int']['input']>;
+  orderBy: InputMaybe<ContentItemSortingOptions>;
 };
 
 export type SitecoreProductSitecoreCloudArgs = {
   after: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
+  filter: InputMaybe<SitecoreProduct_SitecoreCloud_Relations>;
+  minimumPageSize?: InputMaybe<Scalars['Int']['input']>;
+  orderBy: InputMaybe<ContentItemSortingOptions>;
 };
 
+/** Represents a list of content items. */
 export type SitecoreProductList = {
-  pageInfo: Maybe<PageInfo>;
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
   results: Maybe<Array<Maybe<SitecoreProduct>>>;
-  total: Maybe<Scalars['Int']['output']>;
 };
 
-export type SitecoreProductPredicate = {
-  AND: InputMaybe<Array<SitecoreProductPredicate>>;
-  OR: InputMaybe<Array<SitecoreProductPredicate>>;
-  __sysCreatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysCreatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysUpdatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_contains: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_eq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_neq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_startswith: InputMaybe<Scalars['String']['input']>;
-  abbreviation_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  abbreviation_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  abbreviation_contains: InputMaybe<Scalars['String']['input']>;
-  abbreviation_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  abbreviation_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  abbreviation_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  abbreviation_endswith: InputMaybe<Scalars['String']['input']>;
-  abbreviation_eq: InputMaybe<Scalars['String']['input']>;
-  abbreviation_neq: InputMaybe<Scalars['String']['input']>;
-  abbreviation_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  abbreviation_startswith: InputMaybe<Scalars['String']['input']>;
-  id_anyOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  id_eq: InputMaybe<Scalars['ID']['input']>;
-  id_neq: InputMaybe<Scalars['ID']['input']>;
-  id_noneOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  name_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_contains: InputMaybe<Scalars['String']['input']>;
-  name_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  name_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  name_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  name_endswith: InputMaybe<Scalars['String']['input']>;
-  name_eq: InputMaybe<Scalars['String']['input']>;
-  name_neq: InputMaybe<Scalars['String']['input']>;
-  name_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_startswith: InputMaybe<Scalars['String']['input']>;
-  productIcon: InputMaybe<SitecoreProduct__ProductIconPredicate>;
-  productIconDark_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  productIconDark_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  productIconDark_contains: InputMaybe<Scalars['String']['input']>;
-  productIconDark_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  productIconDark_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  productIconDark_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  productIconDark_endswith: InputMaybe<Scalars['String']['input']>;
-  productIconDark_eq: InputMaybe<Scalars['String']['input']>;
-  productIconDark_neq: InputMaybe<Scalars['String']['input']>;
-  productIconDark_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  productIconDark_startswith: InputMaybe<Scalars['String']['input']>;
-  productIconLight_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  productIconLight_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  productIconLight_contains: InputMaybe<Scalars['String']['input']>;
-  productIconLight_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  productIconLight_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  productIconLight_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  productIconLight_endswith: InputMaybe<Scalars['String']['input']>;
-  productIconLight_eq: InputMaybe<Scalars['String']['input']>;
-  productIconLight_neq: InputMaybe<Scalars['String']['input']>;
-  productIconLight_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  productIconLight_startswith: InputMaybe<Scalars['String']['input']>;
-  productName_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  productName_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  productName_contains: InputMaybe<Scalars['String']['input']>;
-  productName_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  productName_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  productName_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  productName_endswith: InputMaybe<Scalars['String']['input']>;
-  productName_eq: InputMaybe<Scalars['String']['input']>;
-  productName_neq: InputMaybe<Scalars['String']['input']>;
-  productName_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  productName_startswith: InputMaybe<Scalars['String']['input']>;
-  sitecoreCloud: InputMaybe<SitecoreProduct__SitecoreCloudPredicate>;
-};
-
-export enum SitecoreProductSorts {
+/** Enum type used for sorting in QueryMany. */
+export enum SitecoreProductSortingOptions {
   AbbreviationAsc = 'ABBREVIATION_ASC',
   AbbreviationDesc = 'ABBREVIATION_DESC',
-  IdAsc = 'ID_ASC',
-  IdDesc = 'ID_DESC',
-  NameAsc = 'NAME_ASC',
-  NameDesc = 'NAME_DESC',
-  ProducticondarkAsc = 'PRODUCTICONDARK_ASC',
-  ProducticondarkDesc = 'PRODUCTICONDARK_DESC',
-  ProducticonlightAsc = 'PRODUCTICONLIGHT_ASC',
-  ProducticonlightDesc = 'PRODUCTICONLIGHT_DESC',
-  ProductnameAsc = 'PRODUCTNAME_ASC',
-  ProductnameDesc = 'PRODUCTNAME_DESC',
-  SyscreatedatAsc = '__SYSCREATEDAT_ASC',
-  SyscreatedatDesc = '__SYSCREATEDAT_DESC',
-  SyscreatedbyAsc = '__SYSCREATEDBY_ASC',
-  SyscreatedbyDesc = '__SYSCREATEDBY_DESC',
-  SysupdatedatAsc = '__SYSUPDATEDAT_ASC',
-  SysupdatedatDesc = '__SYSUPDATEDAT_DESC',
-  SysupdatedbyAsc = '__SYSUPDATEDBY_ASC',
-  SysupdatedbyDesc = '__SYSUPDATEDBY_DESC',
-  SysversionAsc = '__SYSVERSION_ASC',
-  SysversionDesc = '__SYSVERSION_DESC',
+  ProductDescriptionAsc = 'PRODUCT_DESCRIPTION_ASC',
+  ProductDescriptionDesc = 'PRODUCT_DESCRIPTION_DESC',
+  ProductIconDarkAsc = 'PRODUCT_ICON_DARK_ASC',
+  ProductIconDarkDesc = 'PRODUCT_ICON_DARK_DESC',
+  ProductIconLightAsc = 'PRODUCT_ICON_LIGHT_ASC',
+  ProductIconLightDesc = 'PRODUCT_ICON_LIGHT_DESC',
+  ProductNameAsc = 'PRODUCT_NAME_ASC',
+  ProductNameDesc = 'PRODUCT_NAME_DESC',
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
 }
 
-export type SitecoreProduct__ProductIconPredicate = {
-  media_ids: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+/** GraphQL filter for content items. */
+export type SitecoreProduct_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_Filter>>>;
+  abbreviation: InputMaybe<StringFilterInput>;
+  productDescription: InputMaybe<StringFilterInput>;
+  productIcon: InputMaybe<ReferenceFilterInput>;
+  productIconDark: InputMaybe<StringFilterInput>;
+  productIconLight: InputMaybe<StringFilterInput>;
+  productName: InputMaybe<StringFilterInput>;
+  sitecoreCloud: InputMaybe<ReferenceFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
 };
 
-export type SitecoreProduct__SitecoreCloudPredicate = {
-  productIcon: InputMaybe<SitecoreProduct__ProductIconPredicate>;
-  sitecoreProduct_ids: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+/** GraphQL root filter for content items references. */
+export type SitecoreProduct_ProductIcon_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
 };
 
-export type SitecoreProduct__SitecoreCloud_Parent_Types = Changelog | Changetype | SitecoreCloud | SitecoreProduct | Status;
-
-export type SitecoreProduct__SitecoreCloud_Parent_Types_List = {
-  pageInfo: Maybe<PageInfo>;
-  results: Maybe<Array<Maybe<SitecoreProduct__SitecoreCloud_Parent_Types>>>;
-  total: Maybe<Scalars['Int']['output']>;
+/** Represents the input type for filtering references in GraphQL. */
+export type SitecoreProduct_ProductIcon_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_ProductIcon_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
+  changelog: InputMaybe<Changelog_Filter>;
+  changetype: InputMaybe<Changetype_Filter>;
+  sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
+  sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
+  status: InputMaybe<Status_Filter>;
+  system: InputMaybe<SystemTypeFilterInput>;
+  upload: InputMaybe<Upload_Filter>;
+  xMCMedia: InputMaybe<XmcMedia_Filter>;
 };
 
-export type Status = {
-  __sysCreatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysCreatedBy: Maybe<Scalars['String']['output']>;
-  __sysUpdatedAt: Maybe<Scalars['DateTime']['output']>;
-  __sysUpdatedBy: Maybe<Scalars['String']['output']>;
-  __sysVersion: Maybe<Scalars['String']['output']>;
+/** GraphQL root filter for content items references. */
+export type SitecoreProduct_SitecoreCloud_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
+};
+
+/** Represents the input type for filtering references in GraphQL. */
+export type SitecoreProduct_SitecoreCloud_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<SitecoreProduct_SitecoreCloud_XmcMedia__Upload__Changetype__Status__SitecoreCloud__SitecoreProduct__Changelog_Relations>>>;
+  changelog: InputMaybe<Changelog_Filter>;
+  changetype: InputMaybe<Changetype_Filter>;
+  sitecoreCloud: InputMaybe<SitecoreCloud_Filter>;
+  sitecoreProduct: InputMaybe<SitecoreProduct_Filter>;
+  status: InputMaybe<Status_Filter>;
+  system: InputMaybe<SystemTypeFilterInput>;
+  upload: InputMaybe<Upload_Filter>;
+  xMCMedia: InputMaybe<XmcMedia_Filter>;
+};
+
+export type Status = ContentItem & {
   description: Maybe<Scalars['String']['output']>;
-  id: Maybe<Scalars['ID']['output']>;
+  /** Identifier used in code */
   identifier: Maybe<Scalars['String']['output']>;
-  name: Maybe<Scalars['String']['output']>;
+  system: System;
 };
 
+/** Represents a list of content items. */
 export type StatusList = {
-  pageInfo: Maybe<PageInfo>;
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
   results: Maybe<Array<Maybe<Status>>>;
-  total: Maybe<Scalars['Int']['output']>;
 };
 
-export type StatusPredicate = {
-  AND: InputMaybe<Array<StatusPredicate>>;
-  OR: InputMaybe<Array<StatusPredicate>>;
-  __sysCreatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysCreatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysCreatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysCreatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysCreatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedAt_between: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
-  __sysUpdatedAt_eq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_gt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_lt: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedAt_neq: InputMaybe<Scalars['DateTime']['input']>;
-  __sysUpdatedBy_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_contains: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_eq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_neq: InputMaybe<Scalars['String']['input']>;
-  __sysUpdatedBy_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysUpdatedBy_startswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_contains: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_endswith: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_eq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_neq: InputMaybe<Scalars['String']['input']>;
-  __sysVersion_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  __sysVersion_startswith: InputMaybe<Scalars['String']['input']>;
-  description_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_contains: InputMaybe<Scalars['String']['input']>;
-  description_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  description_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  description_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  description_endswith: InputMaybe<Scalars['String']['input']>;
-  description_eq: InputMaybe<Scalars['String']['input']>;
-  description_neq: InputMaybe<Scalars['String']['input']>;
-  description_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_startswith: InputMaybe<Scalars['String']['input']>;
-  id_anyOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  id_eq: InputMaybe<Scalars['ID']['input']>;
-  id_neq: InputMaybe<Scalars['ID']['input']>;
-  id_noneOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  identifier_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  identifier_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  identifier_contains: InputMaybe<Scalars['String']['input']>;
-  identifier_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  identifier_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  identifier_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  identifier_endswith: InputMaybe<Scalars['String']['input']>;
-  identifier_eq: InputMaybe<Scalars['String']['input']>;
-  identifier_neq: InputMaybe<Scalars['String']['input']>;
-  identifier_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  identifier_startswith: InputMaybe<Scalars['String']['input']>;
-  name_allOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_anyOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_contains: InputMaybe<Scalars['String']['input']>;
-  name_doesnotcontain: InputMaybe<Scalars['String']['input']>;
-  name_doesnotendwith: InputMaybe<Scalars['String']['input']>;
-  name_doesnotstartwith: InputMaybe<Scalars['String']['input']>;
-  name_endswith: InputMaybe<Scalars['String']['input']>;
-  name_eq: InputMaybe<Scalars['String']['input']>;
-  name_neq: InputMaybe<Scalars['String']['input']>;
-  name_noneOf: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_startswith: InputMaybe<Scalars['String']['input']>;
-};
-
-export enum StatusSorts {
+/** Enum type used for sorting in QueryMany. */
+export enum StatusSortingOptions {
   DescriptionAsc = 'DESCRIPTION_ASC',
   DescriptionDesc = 'DESCRIPTION_DESC',
   IdentifierAsc = 'IDENTIFIER_ASC',
   IdentifierDesc = 'IDENTIFIER_DESC',
-  IdAsc = 'ID_ASC',
-  IdDesc = 'ID_DESC',
-  NameAsc = 'NAME_ASC',
-  NameDesc = 'NAME_DESC',
-  SyscreatedatAsc = '__SYSCREATEDAT_ASC',
-  SyscreatedatDesc = '__SYSCREATEDAT_DESC',
-  SyscreatedbyAsc = '__SYSCREATEDBY_ASC',
-  SyscreatedbyDesc = '__SYSCREATEDBY_DESC',
-  SysupdatedatAsc = '__SYSUPDATEDAT_ASC',
-  SysupdatedatDesc = '__SYSUPDATEDAT_DESC',
-  SysupdatedbyAsc = '__SYSUPDATEDBY_ASC',
-  SysupdatedbyDesc = '__SYSUPDATEDBY_DESC',
-  SysversionAsc = '__SYSVERSION_ASC',
-  SysversionDesc = '__SYSVERSION_DESC',
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
 }
 
-export type Taxonomy_ReleaseStatus = {
-  id: Maybe<Scalars['ID']['output']>;
+/** GraphQL filter for content items. */
+export type Status_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Status_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Status_Filter>>>;
+  description: InputMaybe<StringFilterInput>;
+  identifier: InputMaybe<StringFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
 };
 
-export type Taxonomy_ReleaseStatusList = {
-  pageInfo: Maybe<PageInfo>;
-  results: Maybe<Array<Maybe<Taxonomy_ReleaseStatus>>>;
-  total: Maybe<Scalars['Int']['output']>;
+/** GraphQL filter for string fields. */
+export type StringFilterInput = {
+  /** Specifies whether the string comparison should be case-sensitive or not. */
+  case: InputMaybe<CaseSensitive>;
+  /** Checks if the value contains the specified text. */
+  contains: InputMaybe<Scalars['String']['input']>;
+  /** Checks if the value contains all of the specified texts. */
+  containsAll: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Checks if the value contains any of the specified texts. */
+  containsAny: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches values that end with the specified text. */
+  endsWith: InputMaybe<Scalars['String']['input']>;
+  /** Matches the specified value. */
+  equals: InputMaybe<Scalars['String']['input']>;
+  /** Matches any of the specified values. */
+  equalsAny: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Checks if the value does not contain the specified text. */
+  notContains: InputMaybe<Scalars['String']['input']>;
+  /** Checks if the value does not contain all of the specified texts. */
+  notContainsAll: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Checks if the value does not contain any of the specified texts. */
+  notContainsAny: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Excludes values that end with the specified text. */
+  notEndsWith: InputMaybe<Scalars['String']['input']>;
+  /** Does not match the specified value. */
+  notEquals: InputMaybe<Scalars['String']['input']>;
+  /** Does not match any of the specified values. */
+  notEqualsAny: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Excludes values that start with the specified text. */
+  notStartsWith: InputMaybe<Scalars['String']['input']>;
+  /** Matches values that start with the specified text. */
+  startsWith: InputMaybe<Scalars['String']['input']>;
 };
 
-export type Taxonomy_ReleaseStatusPredicate = {
-  AND: InputMaybe<Array<Taxonomy_ReleaseStatusPredicate>>;
-  OR: InputMaybe<Array<Taxonomy_ReleaseStatusPredicate>>;
-  id_anyOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
-  id_eq: InputMaybe<Scalars['ID']['input']>;
-  id_neq: InputMaybe<Scalars['ID']['input']>;
-  id_noneOf: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+/** GraphQL filter for string list fields. */
+export type StringListFilterInput = {
+  /** Checks if the list contains the specified value. */
+  contains: InputMaybe<Scalars['String']['input']>;
+  /** Checks if the list contains all of the specified values. */
+  containsAll: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Checks if the list contains any of the specified values. */
+  containsAny: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Checks if the list does not contain the specified value. */
+  notContains: InputMaybe<Scalars['String']['input']>;
+  /** Checks if the list does not contain all of the specified values. */
+  notContainsAll: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Checks if the list does not contain any of the specified values. */
+  notContainsAny: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
-export type ChangeTypeFragment = { id: string | null; name: string | null; changeType: string | null };
+/** Represents system properties. */
+export type System = SystemItem & {
+  contentType: ContentTypeSummary;
+  createdAt: Scalars['UTCDateTime']['output'];
+  createdBy: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  label: Maybe<Scalars['String']['output']>;
+  locale: Scalars['String']['output'];
+  name: Scalars['String']['output'];
+  publishStatus: PublishStatus;
+  updatedAt: Scalars['UTCDateTime']['output'];
+  updatedBy: Scalars['String']['output'];
+  version: Scalars['Int']['output'];
+};
+
+/** Represents common system fields for content types. */
+export type SystemItem = {
+  /** The content type information of this content item. */
+  contentType: ContentTypeSummary;
+  /** The timestamp when the content item was created. */
+  createdAt: Scalars['UTCDateTime']['output'];
+  /** The user who created the content item. */
+  createdBy: Scalars['String']['output'];
+  /** The ID of the content item. */
+  id: Scalars['ID']['output'];
+  /** The locale of the content item. */
+  locale: Scalars['String']['output'];
+  /** The name of the content item. */
+  name: Scalars['String']['output'];
+  /** The publishing status of the content item. */
+  publishStatus: PublishStatus;
+  /** The timestamp when the content item was last updated. */
+  updatedAt: Scalars['UTCDateTime']['output'];
+  /** The user who last updated the content item. */
+  updatedBy: Scalars['String']['output'];
+  /** The version of the content item. */
+  version: Scalars['Int']['output'];
+};
+
+/** GraphQL filter for system types. */
+export type SystemTypeFilterInput = {
+  contentType: InputMaybe<ContentTypeSummary_Filter>;
+  createdAt: InputMaybe<DateTimeFilterInput>;
+  createdBy: InputMaybe<StringFilterInput>;
+  id: InputMaybe<StringFilterInput>;
+  locale: InputMaybe<StringFilterInput>;
+  name: InputMaybe<StringFilterInput>;
+  updatedAt: InputMaybe<DateTimeFilterInput>;
+  updatedBy: InputMaybe<StringFilterInput>;
+  version: InputMaybe<DoubleFilterInput>;
+  versionTags: InputMaybe<StringListFilterInput>;
+};
+
+/** Represents a taxonomy. */
+export type Taxonomy = {
+  system: Maybe<TaxonomySystemTypeType>;
+  /** The terms in the taxonomy. */
+  terms: Maybe<TaxonomyTermList>;
+};
+
+/** Represents a taxonomy. */
+export type TaxonomyTermsArgs = {
+  after: InputMaybe<Scalars['String']['input']>;
+  minimumPageSize?: Scalars['Int']['input'];
+};
+
+/** Represents a list of taxonomies. */
+export type TaxonomyList = {
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of taxonomies. */
+  results: Maybe<Array<Maybe<Taxonomy>>>;
+};
+
+export type TaxonomySystemTypeType = {
+  createdAt: Scalars['UTCDateTime']['output'];
+  createdBy: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  label: Maybe<Scalars['String']['output']>;
+  name: Scalars['String']['output'];
+  publishStatus: PublishStatus;
+  updatedAt: Scalars['UTCDateTime']['output'];
+  updatedBy: Scalars['String']['output'];
+  version: Scalars['Int']['output'];
+};
+
+/** Represents a single taxonomy term. */
+export type TaxonomyTerm = {
+  /** The ID of the taxonomy term. */
+  id: Scalars['ID']['output'];
+  /** The label of the taxonomy term. */
+  label: Maybe<Scalars['String']['output']>;
+  /** The name of the taxonomy term. */
+  name: Scalars['String']['output'];
+};
+
+/** Represents a list of taxonomy terms. */
+export type TaxonomyTermList = {
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of taxonomy terms. */
+  results: Maybe<Array<Maybe<TaxonomyTerm>>>;
+};
+
+/** Content type for uploading Media via the Worksets API */
+export type Upload = ContentItem &
+  XmcMediaFragment & {
+    /** The relative path for creation of the public link. */
+    mms_relativePath: Maybe<Scalars['String']['output']>;
+    system: System;
+    /** A content type that has a media fragment associated with it. */
+    target_content_type_id: Maybe<Scalars['String']['output']>;
+  };
+
+/** Represents a list of content items. */
+export type UploadList = {
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
+  results: Maybe<Array<Maybe<Upload>>>;
+};
+
+/** Enum type used for sorting in QueryMany. */
+export enum UploadSortingOptions {
+  MmsRelativePathAsc = 'MMS_RELATIVE_PATH_ASC',
+  MmsRelativePathDesc = 'MMS_RELATIVE_PATH_DESC',
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
+  TargetContentTypeIdAsc = 'TARGET_CONTENT_TYPE_ID_ASC',
+  TargetContentTypeIdDesc = 'TARGET_CONTENT_TYPE_ID_DESC',
+}
+
+/** GraphQL filter for content items. */
+export type Upload_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<Upload_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<Upload_Filter>>>;
+  mms_relativePath: InputMaybe<StringFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
+  target_content_type_id: InputMaybe<StringFilterInput>;
+};
+
+/** Media content type to create media items. */
+export type XmcMedia = ContentItem &
+  MediaLibraryFragment &
+  XmcMediaFragment & {
+    /** The size of the file. */
+    media_fileSize: Maybe<Scalars['Float']['output']>;
+    /** The private link to use for the media asset enabling displaying it in authoring without making it publically available. */
+    media_privateLink: Maybe<Scalars['String']['output']>;
+    /** The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset. */
+    media_publicLink: Maybe<Scalars['String']['output']>;
+    /** The thumbnail link to use for the media asset. */
+    media_thumbnailLink: Maybe<Scalars['String']['output']>;
+    /** The file type of the media asset. */
+    media_type: Maybe<Array<Maybe<TaxonomyTerm>>>;
+    /** The relative path for creation of the public link. */
+    mms_relativePath: Maybe<Scalars['String']['output']>;
+    system: System;
+  };
+
+/** Represents common interface for all content types containing XMCMediaFragment fragment. */
+export type XmcMediaFragment = {
+  /** The relative path for creation of the public link. */
+  mms_relativePath: Maybe<Scalars['String']['output']>;
+  /** The system fields of the content item. */
+  system: Maybe<System>;
+};
+
+/** Represents an implementation for XMCMediaFragment fragment interface. */
+export type XmcMediaFragmentImpl = ContentItem &
+  XmcMediaFragment & {
+    /** The relative path for creation of the public link. */
+    mms_relativePath: Maybe<Scalars['String']['output']>;
+    system: System;
+  };
+
+/** Represents a list of content items. */
+export type XmcMediaFragmentList = {
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
+  results: Maybe<Array<Maybe<XmcMediaFragment>>>;
+};
+
+/** Enum type used for sorting in FragmentMany query. */
+export enum XmcMediaFragmentSortingOptions {
+  MmsRelativePathAsc = 'MMS_RELATIVE_PATH_ASC',
+  MmsRelativePathDesc = 'MMS_RELATIVE_PATH_DESC',
+  SystemCreatedAsc = 'SYSTEM_CREATED_ASC',
+  SystemCreatedByAsc = 'SYSTEM_CREATED_BY_ASC',
+  SystemCreatedByDesc = 'SYSTEM_CREATED_BY_DESC',
+  SystemCreatedDesc = 'SYSTEM_CREATED_DESC',
+  SystemIdAsc = 'SYSTEM_ID_ASC',
+  SystemIdDesc = 'SYSTEM_ID_DESC',
+  SystemLocaleAsc = 'SYSTEM_LOCALE_ASC',
+  SystemLocaleDesc = 'SYSTEM_LOCALE_DESC',
+  SystemNameAsc = 'SYSTEM_NAME_ASC',
+  SystemNameDesc = 'SYSTEM_NAME_DESC',
+  SystemStatusAsc = 'SYSTEM_STATUS_ASC',
+  SystemStatusDesc = 'SYSTEM_STATUS_DESC',
+  SystemUpdatedAsc = 'SYSTEM_UPDATED_ASC',
+  SystemUpdatedByAsc = 'SYSTEM_UPDATED_BY_ASC',
+  SystemUpdatedByDesc = 'SYSTEM_UPDATED_BY_DESC',
+  SystemUpdatedDesc = 'SYSTEM_UPDATED_DESC',
+  SystemVersionAsc = 'SYSTEM_VERSION_ASC',
+  SystemVersionDesc = 'SYSTEM_VERSION_DESC',
+}
+
+/** GraphQL filter for fragments. */
+export type XmcMediaFragment_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<XmcMediaFragment_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<XmcMediaFragment_Filter>>>;
+  mms_relativePath: InputMaybe<StringFilterInput>;
+  system: InputMaybe<SystemTypeFilterInput>;
+};
+
+/** Represents a list of content items. */
+export type XmcMediaList = {
+  /** The pagination cursor. */
+  cursor: Maybe<Scalars['String']['output']>;
+  /** Indicates whether more items are available. */
+  hasMore: Maybe<Scalars['Boolean']['output']>;
+  /** The minimum page size. */
+  minimumPageSize: Scalars['Int']['output'];
+  /** The list of content items. */
+  results: Maybe<Array<Maybe<XmcMedia>>>;
+};
+
+/** GraphQL filter for content items. */
+export type XmcMedia_Filter = {
+  /** Combines multiple filter conditions. */
+  AND: InputMaybe<Array<InputMaybe<XmcMedia_Filter>>>;
+  /** Combines multiple filter conditions. */
+  OR: InputMaybe<Array<InputMaybe<XmcMedia_Filter>>>;
+  system: InputMaybe<SystemTypeFilterInput>;
+};
+
+export type ChangeTypeFragment = { changeType: string | null; system: { id: string; name: string } };
 
 export type ChangelogEntryFragment = {
-  id: string | null;
-  name: string | null;
   title: string | null;
-  description: any | null;
-  fullArticle: any | null;
+  description: { [key: string]: any } | null;
+  fullArticle: { [key: string]: any } | null;
   readMoreLink: string | null;
   breakingChange: boolean | null;
-  version: string | null;
-  releaseDate: Date | null;
+  x_version: string | null;
+  releaseDate: any | null;
   scheduled: boolean | null;
-  image: {
-    total: number | null;
-    results: Array<{
-      id: string | null;
-      name: string | null;
-      fileName: string | null;
-      fileUrl: string | null;
-      description: string | null;
-      fileWidth: any | null;
-      fileHeight: any | null;
-      fileId: string | null;
-      fileSize: any | null;
-      fileType: string | null;
-    } | null> | null;
-  };
-  sitecoreProduct: { total: number | null; results: Array<{ id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null } | {} | null> | null };
-  changeType: { total: number | null; results: Array<{ id: string | null; name: string | null; changeType: string | null } | {} | null> | null };
-  status: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null };
+  system: { id: string; name: string };
+  image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+  sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+  changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+  status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
 };
 
-export type ChangelogEntrySummaryFragment = {
-  id: string | null;
-  name: string | null;
-  title: string | null;
-  description: any | null;
-  readMoreLink: string | null;
-  breakingChange: boolean | null;
-  version: string | null;
-  releaseDate: Date | null;
-  image: {
-    total: number | null;
-    results: Array<{
-      id: string | null;
-      name: string | null;
-      fileName: string | null;
-      fileUrl: string | null;
-      description: string | null;
-      fileWidth: any | null;
-      fileHeight: any | null;
-      fileId: string | null;
-      fileSize: any | null;
-      fileType: string | null;
-    } | null> | null;
-  };
-  sitecoreProduct: { total: number | null; results: Array<{ id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null } | {} | null> | null };
-  changeType: { total: number | null; results: Array<{ id: string | null; name: string | null; changeType: string | null } | {} | null> | null };
-  status: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null };
-};
+export type MediaFragment = { media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } };
 
-export type MediaFragment = {
-  id: string | null;
-  name: string | null;
-  fileName: string | null;
-  fileUrl: string | null;
-  description: string | null;
-  fileWidth: any | null;
-  fileHeight: any | null;
-  fileId: string | null;
-  fileSize: any | null;
-  fileType: string | null;
-};
+export type ProductFragment = { productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } };
 
-export type ProductFragment = { id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null };
-
-export type StatusFragment = { id: string | null; name: string | null; description: string | null; identifier: string | null };
+export type StatusFragment = { description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } };
 
 export type GetAllChangetypesQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetAllChangetypesQuery = { allChangetype: { total: number | null; results: Array<{ id: string | null; name: string | null; changeType: string | null } | null> | null } | null };
+export type GetAllChangetypesQuery = { manyChangetype: { hasMore: boolean | null; cursor: string | null; results: Array<{ changeType: string | null; system: { id: string; name: string } } | null> | null } | null };
 
 export type GetAllProductsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GetAllProductsQuery = {
-  allSitecoreProduct: { total: number | null; results: Array<{ id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null } | null> | null } | null;
+  manySitecoreProduct: {
+    hasMore: boolean | null;
+    cursor: string | null;
+    results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | null> | null;
+  } | null;
 };
 
 export type GetAllStatusQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetAllStatusQuery = { allStatus: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null } | null };
+export type GetAllStatusQuery = {
+  manyStatus: { hasMore: boolean | null; cursor: string | null; results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | null> | null } | null;
+};
 
-export type GetLatestEntriesQueryVariables = Exact<{
-  first?: InputMaybe<Scalars['Int']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  date: Scalars['DateTime']['input'];
+export type GetNumberOfEntriesByProductQueryVariables = Exact<{
+  productId: Array<Scalars['String']['input']> | Scalars['String']['input'];
 }>;
 
-export type GetLatestEntriesQuery = {
+export type GetNumberOfEntriesByProductQuery = { changelog: { hasMore: boolean | null; results: Array<{ system: { id: string } } | null> | null } | null };
+
+export type SearchQueryVariables = Exact<{
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+export type SearchQuery = {
   changelog: {
-    total: number | null;
-    pageInfo: { hasNext: boolean | null; endCursor: string | null } | null;
+    hasMore: boolean | null;
+    cursor: string | null;
     results: Array<{
-      id: string | null;
-      name: string | null;
       title: string | null;
-      description: any | null;
-      fullArticle: any | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
       readMoreLink: string | null;
       breakingChange: boolean | null;
-      version: string | null;
-      releaseDate: Date | null;
+      x_version: string | null;
+      releaseDate: any | null;
       scheduled: boolean | null;
-      image: {
-        total: number | null;
-        results: Array<{
-          id: string | null;
-          name: string | null;
-          fileName: string | null;
-          fileUrl: string | null;
-          description: string | null;
-          fileWidth: any | null;
-          fileHeight: any | null;
-          fileId: string | null;
-          fileSize: any | null;
-          fileType: string | null;
-        } | null> | null;
-      };
-      sitecoreProduct: { total: number | null; results: Array<{ id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null } | {} | null> | null };
-      changeType: { total: number | null; results: Array<{ id: string | null; name: string | null; changeType: string | null } | {} | null> | null };
-      status: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null };
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
 
-export type GetNumberOfEntriesByProductQueryVariables = Exact<{
-  productId: Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>;
+export type SearchByChangeTypesQueryVariables = Exact<{
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  changeTypeIds?: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
 }>;
 
-export type GetNumberOfEntriesByProductQuery = { changelog: { total: number | null } | null };
+export type SearchByChangeTypesQuery = {
+  changelog: {
+    hasMore: boolean | null;
+    cursor: string | null;
+    results: Array<{
+      title: string | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
+      readMoreLink: string | null;
+      breakingChange: boolean | null;
+      x_version: string | null;
+      releaseDate: any | null;
+      scheduled: boolean | null;
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
+    } | null> | null;
+  } | null;
+};
 
-export type GetStatusByIdentifierQueryVariables = Exact<{
-  identifier: InputMaybe<Scalars['String']['input']>;
+export type SearchByChangeTypesAndBreakingChangeQueryVariables = Exact<{
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  changeTypeIds?: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  breaking: InputMaybe<Scalars['Boolean']['input']>;
 }>;
 
-export type GetStatusByIdentifierQuery = { allStatus: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null } | null };
+export type SearchByChangeTypesAndBreakingChangeQuery = {
+  changelog: {
+    hasMore: boolean | null;
+    cursor: string | null;
+    results: Array<{
+      title: string | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
+      readMoreLink: string | null;
+      breakingChange: boolean | null;
+      x_version: string | null;
+      releaseDate: any | null;
+      scheduled: boolean | null;
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
+    } | null> | null;
+  } | null;
+};
 
 export type SearchByDateQueryVariables = Exact<{
-  startDate: Scalars['DateTime']['input'];
-  endDate: Scalars['DateTime']['input'];
+  startDate: Scalars['CustomDateTime']['input'];
+  endDate: Scalars['CustomDateTime']['input'];
   first?: InputMaybe<Scalars['Int']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 export type SearchByDateQuery = {
   changelog: {
-    total: number | null;
-    pageInfo: { hasNext: boolean | null; endCursor: string | null } | null;
+    hasMore: boolean | null;
+    cursor: string | null;
     results: Array<{
-      id: string | null;
-      name: string | null;
       title: string | null;
-      description: any | null;
-      fullArticle: any | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
       readMoreLink: string | null;
       breakingChange: boolean | null;
-      version: string | null;
-      releaseDate: Date | null;
+      x_version: string | null;
+      releaseDate: any | null;
       scheduled: boolean | null;
-      image: {
-        total: number | null;
-        results: Array<{
-          id: string | null;
-          name: string | null;
-          fileName: string | null;
-          fileUrl: string | null;
-          description: string | null;
-          fileWidth: any | null;
-          fileHeight: any | null;
-          fileId: string | null;
-          fileSize: any | null;
-          fileType: string | null;
-        } | null> | null;
-      };
-      sitecoreProduct: { total: number | null; results: Array<{ id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null } | {} | null> | null };
-      changeType: { total: number | null; results: Array<{ id: string | null; name: string | null; changeType: string | null } | {} | null> | null };
-      status: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null };
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
 
 export type SearchByProductQueryVariables = Exact<{
-  date: InputMaybe<Scalars['DateTime']['input']>;
-  productId: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
-  changeTypeIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  productId: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 export type SearchByProductQuery = {
   changelog: {
-    total: number | null;
-    pageInfo: { hasNext: boolean | null; endCursor: string | null } | null;
+    hasMore: boolean | null;
+    cursor: string | null;
     results: Array<{
-      id: string | null;
-      name: string | null;
       title: string | null;
-      description: any | null;
-      fullArticle: any | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
       readMoreLink: string | null;
       breakingChange: boolean | null;
-      version: string | null;
-      releaseDate: Date | null;
+      x_version: string | null;
+      releaseDate: any | null;
       scheduled: boolean | null;
-      image: {
-        total: number | null;
-        results: Array<{
-          id: string | null;
-          name: string | null;
-          fileName: string | null;
-          fileUrl: string | null;
-          description: string | null;
-          fileWidth: any | null;
-          fileHeight: any | null;
-          fileId: string | null;
-          fileSize: any | null;
-          fileType: string | null;
-        } | null> | null;
-      };
-      sitecoreProduct: { total: number | null; results: Array<{ id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null } | {} | null> | null };
-      changeType: { total: number | null; results: Array<{ id: string | null; name: string | null; changeType: string | null } | {} | null> | null };
-      status: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null };
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
+    } | null> | null;
+  } | null;
+};
+
+export type SearchByProductAndBreakingQueryVariables = Exact<{
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  productId: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  breaking: InputMaybe<Scalars['Boolean']['input']>;
+}>;
+
+export type SearchByProductAndBreakingQuery = {
+  changelog: {
+    hasMore: boolean | null;
+    cursor: string | null;
+    results: Array<{
+      title: string | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
+      readMoreLink: string | null;
+      breakingChange: boolean | null;
+      x_version: string | null;
+      releaseDate: any | null;
+      scheduled: boolean | null;
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
 
 export type SearchByProductsAndChangeTypesQueryVariables = Exact<{
-  date: Scalars['DateTime']['input'];
-  productIds: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
-  changeTypeIds: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  productIds: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+  changeTypeIds?: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+  entryTitle: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 export type SearchByProductsAndChangeTypesQuery = {
   changelog: {
-    total: number | null;
-    pageInfo: { hasNext: boolean | null; endCursor: string | null } | null;
+    hasMore: boolean | null;
+    cursor: string | null;
     results: Array<{
-      id: string | null;
-      name: string | null;
       title: string | null;
-      description: any | null;
-      fullArticle: any | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
       readMoreLink: string | null;
       breakingChange: boolean | null;
-      version: string | null;
-      releaseDate: Date | null;
+      x_version: string | null;
+      releaseDate: any | null;
       scheduled: boolean | null;
-      image: {
-        total: number | null;
-        results: Array<{
-          id: string | null;
-          name: string | null;
-          fileName: string | null;
-          fileUrl: string | null;
-          description: string | null;
-          fileWidth: any | null;
-          fileHeight: any | null;
-          fileId: string | null;
-          fileSize: any | null;
-          fileType: string | null;
-        } | null> | null;
-      };
-      sitecoreProduct: { total: number | null; results: Array<{ id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null } | {} | null> | null };
-      changeType: { total: number | null; results: Array<{ id: string | null; name: string | null; changeType: string | null } | {} | null> | null };
-      status: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null };
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
 
 export type SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables = Exact<{
-  date: Scalars['DateTime']['input'];
-  productIds: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
-  changeTypeIds: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  productIds: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+  changeTypeIds?: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Int']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
   breaking: InputMaybe<Scalars['Boolean']['input']>;
@@ -1474,79 +1608,108 @@ export type SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables = Exac
 
 export type SearchByProductsAndChangeTypesAndBreakingChangeQuery = {
   changelog: {
-    total: number | null;
-    pageInfo: { hasNext: boolean | null; endCursor: string | null } | null;
+    hasMore: boolean | null;
+    cursor: string | null;
     results: Array<{
-      id: string | null;
-      name: string | null;
       title: string | null;
-      description: any | null;
-      fullArticle: any | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
       readMoreLink: string | null;
       breakingChange: boolean | null;
-      version: string | null;
-      releaseDate: Date | null;
+      x_version: string | null;
+      releaseDate: any | null;
       scheduled: boolean | null;
-      image: {
-        total: number | null;
-        results: Array<{
-          id: string | null;
-          name: string | null;
-          fileName: string | null;
-          fileUrl: string | null;
-          description: string | null;
-          fileWidth: any | null;
-          fileHeight: any | null;
-          fileId: string | null;
-          fileSize: any | null;
-          fileType: string | null;
-        } | null> | null;
-      };
-      sitecoreProduct: { total: number | null; results: Array<{ id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null } | {} | null> | null };
-      changeType: { total: number | null; results: Array<{ id: string | null; name: string | null; changeType: string | null } | {} | null> | null };
-      status: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null };
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
 
 export type SearchByTitleQueryVariables = Exact<{
-  date: InputMaybe<Scalars['DateTime']['input']>;
-  productId: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>> | InputMaybe<Scalars['ID']['input']>>;
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  productId: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+  entryTitle: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
 }>;
 
 export type SearchByTitleQuery = {
   data: {
-    total: number | null;
-    pageInfo: { hasNext: boolean | null; endCursor: string | null } | null;
+    hasMore: boolean | null;
+    cursor: string | null;
     results: Array<{
-      id: string | null;
-      name: string | null;
       title: string | null;
-      description: any | null;
-      fullArticle: any | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
       readMoreLink: string | null;
       breakingChange: boolean | null;
-      version: string | null;
-      releaseDate: Date | null;
+      x_version: string | null;
+      releaseDate: any | null;
       scheduled: boolean | null;
-      image: {
-        total: number | null;
-        results: Array<{
-          id: string | null;
-          name: string | null;
-          fileName: string | null;
-          fileUrl: string | null;
-          description: string | null;
-          fileWidth: any | null;
-          fileHeight: any | null;
-          fileId: string | null;
-          fileSize: any | null;
-          fileType: string | null;
-        } | null> | null;
-      };
-      sitecoreProduct: { total: number | null; results: Array<{ id: string | null; name: string | null; productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null } | {} | null> | null };
-      changeType: { total: number | null; results: Array<{ id: string | null; name: string | null; changeType: string | null } | {} | null> | null };
-      status: { total: number | null; results: Array<{ id: string | null; name: string | null; description: string | null; identifier: string | null } | null> | null };
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
+    } | null> | null;
+  } | null;
+};
+
+export type SearchByTitleAndDateQueryVariables = Exact<{
+  startDate: Scalars['CustomDateTime']['input'];
+  endDate: Scalars['CustomDateTime']['input'];
+  productId: Scalars['String']['input'];
+  entryTitle: InputMaybe<Array<Scalars['String']['input']> | Scalars['String']['input']>;
+}>;
+
+export type SearchByTitleAndDateQuery = {
+  data: {
+    hasMore: boolean | null;
+    cursor: string | null;
+    results: Array<{
+      title: string | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
+      readMoreLink: string | null;
+      breakingChange: boolean | null;
+      x_version: string | null;
+      releaseDate: any | null;
+      scheduled: boolean | null;
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
+    } | null> | null;
+  } | null;
+};
+
+export type SearchOnlyBreakingChangesQueryVariables = Exact<{
+  date: InputMaybe<Scalars['CustomDateTime']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  breaking: InputMaybe<Scalars['Boolean']['input']>;
+}>;
+
+export type SearchOnlyBreakingChangesQuery = {
+  changelog: {
+    hasMore: boolean | null;
+    cursor: string | null;
+    results: Array<{
+      title: string | null;
+      description: { [key: string]: any } | null;
+      fullArticle: { [key: string]: any } | null;
+      readMoreLink: string | null;
+      breakingChange: boolean | null;
+      x_version: string | null;
+      releaseDate: any | null;
+      scheduled: boolean | null;
+      system: { id: string; name: string };
+      image: { hasMore: boolean | null; cursor: string | null; results: Array<{ media_publicLink: string | null; media_type: Array<{ name: string } | null> | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      sitecoreProduct: { results: Array<{ productName: string | null; productDescription: string | null; darkIcon: string | null; lightIcon: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      changeType: { results: Array<{ changeType: string | null; system: { id: string; name: string } } | {} | null> | null } | null;
+      status: { results: Array<{ description: string | null; identifier: string | null; system: { id: string; name: string; label: string | null } } | {} | null> | null } | null;
     } | null> | null;
   } | null;
 };
@@ -1567,17 +1730,17 @@ export class TypedDocumentString<TResult, TVariables> extends String implements 
 }
 export const MediaFragmentDoc = new TypedDocumentString(
   `
-    fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
+    fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
 }
     `,
   { fragmentName: 'media' }
@@ -1585,8 +1748,10 @@ export const MediaFragmentDoc = new TypedDocumentString(
 export const ProductFragmentDoc = new TypedDocumentString(
   `
     fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark
@@ -1598,8 +1763,10 @@ export const ProductFragmentDoc = new TypedDocumentString(
 export const ChangeTypeFragmentDoc = new TypedDocumentString(
   `
     fragment changeType on Changetype {
-  id
-  name
+  system {
+    id
+    name
+  }
   changeType
 }
     `,
@@ -1608,8 +1775,11 @@ export const ChangeTypeFragmentDoc = new TypedDocumentString(
 export const StatusFragmentDoc = new TypedDocumentString(
   `
     fragment status on Status {
-  id
-  name
+  system {
+    id
+    name
+    label
+  }
   description
   identifier
 }
@@ -1619,169 +1789,113 @@ export const StatusFragmentDoc = new TypedDocumentString(
 export const ChangelogEntryFragmentDoc = new TypedDocumentString(
   `
     fragment changelogEntry on Changelog {
-  id
-  name
+  system {
+    id
+    name
+  }
   title
   description
   fullArticle
   readMoreLink
   breakingChange
-  version
+  x_version
   releaseDate
   scheduled
   image {
-    total
+    hasMore
+    cursor
     results {
       ...media
     }
   }
   sitecoreProduct {
-    total
     results {
       ...product
     }
   }
   changeType {
-    total
     results {
       ...changeType
     }
   }
   status {
-    total
     results {
       ...status
     }
   }
 }
     fragment changeType on Changetype {
-  id
-  name
+  system {
+    id
+    name
+  }
   changeType
 }
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
 }
 fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark
   lightIcon: productIconLight
 }
 fragment status on Status {
-  id
-  name
+  system {
+    id
+    name
+    label
+  }
   description
   identifier
 }`,
   { fragmentName: 'changelogEntry' }
 ) as unknown as TypedDocumentString<ChangelogEntryFragment, unknown>;
-export const ChangelogEntrySummaryFragmentDoc = new TypedDocumentString(
-  `
-    fragment changelogEntrySummary on Changelog {
-  id
-  name
-  title
-  description
-  readMoreLink
-  breakingChange
-  version
-  releaseDate
-  image {
-    total
-    results {
-      ...media
-    }
-  }
-  sitecoreProduct {
-    total
-    results {
-      ...product
-    }
-  }
-  changeType {
-    total
-    results {
-      ...changeType
-    }
-  }
-  status {
-    total
-    results {
-      ...status
-    }
-  }
-}
-    fragment changeType on Changetype {
-  id
-  name
-  changeType
-}
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
-}
-fragment product on SitecoreProduct {
-  id
-  name
-  productName
-  productDescription
-  darkIcon: productIconDark
-  lightIcon: productIconLight
-}
-fragment status on Status {
-  id
-  name
-  description
-  identifier
-}`,
-  { fragmentName: 'changelogEntrySummary' }
-) as unknown as TypedDocumentString<ChangelogEntrySummaryFragment, unknown>;
 export const GetAllChangetypesDocument = new TypedDocumentString(`
     query GetAllChangetypes {
-  allChangetype {
-    total
+  manyChangetype {
+    hasMore
+    cursor
     results {
       ...changeType
     }
   }
 }
     fragment changeType on Changetype {
-  id
-  name
+  system {
+    id
+    name
+  }
   changeType
 }`) as unknown as TypedDocumentString<GetAllChangetypesQuery, GetAllChangetypesQueryVariables>;
 export const GetAllProductsDocument = new TypedDocumentString(`
     query GetAllProducts {
-  allSitecoreProduct(first: 25) {
-    total
+  manySitecoreProduct(minimumPageSize: 25) {
+    hasMore
+    cursor
     results {
       ...product
     }
   }
 }
     fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark
@@ -1789,545 +1903,1011 @@ export const GetAllProductsDocument = new TypedDocumentString(`
 }`) as unknown as TypedDocumentString<GetAllProductsQuery, GetAllProductsQueryVariables>;
 export const GetAllStatusDocument = new TypedDocumentString(`
     query GetAllStatus {
-  allStatus {
-    total
+  manyStatus {
+    hasMore
+    cursor
     results {
       ...status
     }
   }
 }
     fragment status on Status {
-  id
-  name
+  system {
+    id
+    name
+    label
+  }
   description
   identifier
 }`) as unknown as TypedDocumentString<GetAllStatusQuery, GetAllStatusQueryVariables>;
-export const GetLatestEntriesDocument = new TypedDocumentString(`
-    query GetLatestEntries($first: Int = 5, $after: String = "", $date: DateTime!) {
-  changelog: allChangelog(
-    orderBy: RELEASEDATE_DESC
-    first: $first
-    after: $after
-    where: {releaseDate_lt: $date}
-  ) {
-    pageInfo {
-      hasNext
-      endCursor
-    }
-    total
-    results {
-      ...changelogEntry
-    }
-  }
-}
-    fragment changeType on Changetype {
-  id
-  name
-  changeType
-}
-fragment changelogEntry on Changelog {
-  id
-  name
-  title
-  description
-  fullArticle
-  readMoreLink
-  breakingChange
-  version
-  releaseDate
-  scheduled
-  image {
-    total
-    results {
-      ...media
-    }
-  }
-  sitecoreProduct {
-    total
-    results {
-      ...product
-    }
-  }
-  changeType {
-    total
-    results {
-      ...changeType
-    }
-  }
-  status {
-    total
-    results {
-      ...status
-    }
-  }
-}
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
-}
-fragment product on SitecoreProduct {
-  id
-  name
-  productName
-  productDescription
-  darkIcon: productIconDark
-  lightIcon: productIconLight
-}
-fragment status on Status {
-  id
-  name
-  description
-  identifier
-}`) as unknown as TypedDocumentString<GetLatestEntriesQuery, GetLatestEntriesQueryVariables>;
 export const GetNumberOfEntriesByProductDocument = new TypedDocumentString(`
-    query getNumberOfEntriesByProduct($productId: [ID]!) {
-  changelog: allChangelog(where: {sitecoreProduct: {changelog_ids: $productId}}) {
-    total
+    query getNumberOfEntriesByProduct($productId: [String!]!) {
+  changelog: manyChangelog(
+    minimumPageSize: 200
+    filter: {AND: [{sitecoreProduct: {containsAny: $productId}}]}
+  ) {
+    hasMore
+    results {
+      system {
+        id
+      }
+    }
   }
 }
     `) as unknown as TypedDocumentString<GetNumberOfEntriesByProductQuery, GetNumberOfEntriesByProductQueryVariables>;
-export const GetStatusByIdentifierDocument = new TypedDocumentString(`
-    query GetStatusByIdentifier($identifier: String) {
-  allStatus(where: {identifier_eq: $identifier}) {
-    total
-    results {
-      ...status
-    }
-  }
-}
-    fragment status on Status {
-  id
-  name
-  description
-  identifier
-}`) as unknown as TypedDocumentString<GetStatusByIdentifierQuery, GetStatusByIdentifierQueryVariables>;
-export const SearchByDateDocument = new TypedDocumentString(`
-    query SearchByDate($startDate: DateTime!, $endDate: DateTime!, $first: Int = 5, $after: String = "") {
-  changelog: allChangelog(
-    first: $first
+export const SearchDocument = new TypedDocumentString(`
+    query search($date: CustomDateTime, $first: Int = 5, $after: String = "") {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
     after: $after
-    where: {releaseDate_between: [$startDate, $endDate]}
+    filter: {AND: [{releaseDate: {lessThan: $date}}]}
   ) {
-    pageInfo {
-      hasNext
-      endCursor
-    }
-    total
     results {
       ...changelogEntry
     }
+    hasMore
+    cursor
   }
 }
     fragment changeType on Changetype {
-  id
-  name
+  system {
+    id
+    name
+  }
   changeType
 }
 fragment changelogEntry on Changelog {
-  id
-  name
+  system {
+    id
+    name
+  }
   title
   description
   fullArticle
   readMoreLink
   breakingChange
-  version
+  x_version
   releaseDate
   scheduled
   image {
-    total
+    hasMore
+    cursor
     results {
       ...media
     }
   }
   sitecoreProduct {
-    total
     results {
       ...product
     }
   }
   changeType {
-    total
     results {
       ...changeType
     }
   }
   status {
-    total
     results {
       ...status
     }
   }
 }
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
 }
 fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark
   lightIcon: productIconLight
 }
 fragment status on Status {
-  id
-  name
+  system {
+    id
+    name
+    label
+  }
+  description
+  identifier
+}`) as unknown as TypedDocumentString<SearchQuery, SearchQueryVariables>;
+export const SearchByChangeTypesDocument = new TypedDocumentString(`
+    query searchByChangeTypes($date: CustomDateTime, $changeTypeIds: [String!] = [], $first: Int = 5, $after: String = "") {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
+    after: $after
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {changeType: {containsAny: $changeTypeIds}}]}
+  ) {
+    results {
+      ...changelogEntry
+    }
+    hasMore
+    cursor
+  }
+}
+    fragment changeType on Changetype {
+  system {
+    id
+    name
+  }
+  changeType
+}
+fragment changelogEntry on Changelog {
+  system {
+    id
+    name
+  }
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  x_version
+  releaseDate
+  scheduled
+  image {
+    hasMore
+    cursor
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    results {
+      ...product
+    }
+  }
+  changeType {
+    results {
+      ...changeType
+    }
+  }
+  status {
+    results {
+      ...status
+    }
+  }
+}
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
+}
+fragment product on SitecoreProduct {
+  system {
+    id
+    name
+  }
+  productName
+  productDescription
+  darkIcon: productIconDark
+  lightIcon: productIconLight
+}
+fragment status on Status {
+  system {
+    id
+    name
+    label
+  }
+  description
+  identifier
+}`) as unknown as TypedDocumentString<SearchByChangeTypesQuery, SearchByChangeTypesQueryVariables>;
+export const SearchByChangeTypesAndBreakingChangeDocument = new TypedDocumentString(`
+    query searchByChangeTypesAndBreakingChange($date: CustomDateTime, $changeTypeIds: [String!] = [], $first: Int = 5, $after: String = "", $breaking: Boolean) {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
+    after: $after
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {changeType: {containsAny: $changeTypeIds}}, {breakingChange: {equals: $breaking}}]}
+  ) {
+    results {
+      ...changelogEntry
+    }
+    hasMore
+    cursor
+  }
+}
+    fragment changeType on Changetype {
+  system {
+    id
+    name
+  }
+  changeType
+}
+fragment changelogEntry on Changelog {
+  system {
+    id
+    name
+  }
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  x_version
+  releaseDate
+  scheduled
+  image {
+    hasMore
+    cursor
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    results {
+      ...product
+    }
+  }
+  changeType {
+    results {
+      ...changeType
+    }
+  }
+  status {
+    results {
+      ...status
+    }
+  }
+}
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
+}
+fragment product on SitecoreProduct {
+  system {
+    id
+    name
+  }
+  productName
+  productDescription
+  darkIcon: productIconDark
+  lightIcon: productIconLight
+}
+fragment status on Status {
+  system {
+    id
+    name
+    label
+  }
+  description
+  identifier
+}`) as unknown as TypedDocumentString<SearchByChangeTypesAndBreakingChangeQuery, SearchByChangeTypesAndBreakingChangeQueryVariables>;
+export const SearchByDateDocument = new TypedDocumentString(`
+    query SearchByDate($startDate: CustomDateTime!, $endDate: CustomDateTime!, $first: Int = 5, $after: String = "") {
+  changelog: manyChangelog(
+    minimumPageSize: $first
+    after: $after
+    filter: {AND: [{releaseDate: {lessThan: $endDate}}, {releaseDate: {greaterThan: $startDate}}]}
+  ) {
+    hasMore
+    cursor
+    results {
+      ...changelogEntry
+    }
+  }
+}
+    fragment changeType on Changetype {
+  system {
+    id
+    name
+  }
+  changeType
+}
+fragment changelogEntry on Changelog {
+  system {
+    id
+    name
+  }
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  x_version
+  releaseDate
+  scheduled
+  image {
+    hasMore
+    cursor
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    results {
+      ...product
+    }
+  }
+  changeType {
+    results {
+      ...changeType
+    }
+  }
+  status {
+    results {
+      ...status
+    }
+  }
+}
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
+}
+fragment product on SitecoreProduct {
+  system {
+    id
+    name
+  }
+  productName
+  productDescription
+  darkIcon: productIconDark
+  lightIcon: productIconLight
+}
+fragment status on Status {
+  system {
+    id
+    name
+    label
+  }
   description
   identifier
 }`) as unknown as TypedDocumentString<SearchByDateQuery, SearchByDateQueryVariables>;
 export const SearchByProductDocument = new TypedDocumentString(`
-    query searchByProduct($date: DateTime, $productId: [ID], $changeTypeIds: [ID] = [], $first: Int = 5, $after: String = "") {
-  changelog: allChangelog(
-    orderBy: RELEASEDATE_DESC
-    first: $first
+    query searchByProduct($date: CustomDateTime, $productId: [String!], $first: Int = 5, $after: String = "") {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
     after: $after
-    where: {releaseDate_lt: $date, sitecoreProduct: {changelog_ids: $productId}, AND: {OR: [{changeType: {changelog_ids: $changeTypeIds}}]}}
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}]}
   ) {
-    pageInfo {
-      hasNext
-      endCursor
-    }
-    total
     results {
       ...changelogEntry
     }
+    hasMore
+    cursor
   }
 }
     fragment changeType on Changetype {
-  id
-  name
+  system {
+    id
+    name
+  }
   changeType
 }
 fragment changelogEntry on Changelog {
-  id
-  name
+  system {
+    id
+    name
+  }
   title
   description
   fullArticle
   readMoreLink
   breakingChange
-  version
+  x_version
   releaseDate
   scheduled
   image {
-    total
+    hasMore
+    cursor
     results {
       ...media
     }
   }
   sitecoreProduct {
-    total
     results {
       ...product
     }
   }
   changeType {
-    total
     results {
       ...changeType
     }
   }
   status {
-    total
     results {
       ...status
     }
   }
 }
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
 }
 fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark
   lightIcon: productIconLight
 }
 fragment status on Status {
-  id
-  name
+  system {
+    id
+    name
+    label
+  }
   description
   identifier
 }`) as unknown as TypedDocumentString<SearchByProductQuery, SearchByProductQueryVariables>;
-export const SearchByProductsAndChangeTypesDocument = new TypedDocumentString(`
-    query searchByProductsAndChangeTypes($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "") {
-  changelog: allChangelog(
-    orderBy: RELEASEDATE_DESC
-    first: $first
+export const SearchByProductAndBreakingDocument = new TypedDocumentString(`
+    query searchByProductAndBreaking($date: CustomDateTime, $productId: [String!], $first: Int = 5, $after: String = "", $breaking: Boolean) {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
     after: $after
-    where: {releaseDate_lt: $date, OR: [{sitecoreProduct: {changelog_ids: $productIds}}], AND: {OR: [{changeType: {changelog_ids: $changeTypeIds}}]}}
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}, {breakingChange: {equals: $breaking}}]}
   ) {
-    pageInfo {
-      hasNext
-      endCursor
-    }
-    total
     results {
       ...changelogEntry
     }
+    hasMore
+    cursor
   }
 }
     fragment changeType on Changetype {
-  id
-  name
+  system {
+    id
+    name
+  }
   changeType
 }
 fragment changelogEntry on Changelog {
-  id
-  name
+  system {
+    id
+    name
+  }
   title
   description
   fullArticle
   readMoreLink
   breakingChange
-  version
+  x_version
   releaseDate
   scheduled
   image {
-    total
+    hasMore
+    cursor
     results {
       ...media
     }
   }
   sitecoreProduct {
-    total
     results {
       ...product
     }
   }
   changeType {
-    total
     results {
       ...changeType
     }
   }
   status {
-    total
     results {
       ...status
     }
   }
 }
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
 }
 fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark
   lightIcon: productIconLight
 }
 fragment status on Status {
-  id
-  name
+  system {
+    id
+    name
+    label
+  }
+  description
+  identifier
+}`) as unknown as TypedDocumentString<SearchByProductAndBreakingQuery, SearchByProductAndBreakingQueryVariables>;
+export const SearchByProductsAndChangeTypesDocument = new TypedDocumentString(`
+    query searchByProductsAndChangeTypes($date: CustomDateTime, $productIds: [String!], $changeTypeIds: [String!] = [], $entryTitle: [String!], $first: Int = 5, $after: String = "") {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
+    after: $after
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productIds}}, {changeType: {containsAny: $changeTypeIds}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}
+  ) {
+    results {
+      ...changelogEntry
+    }
+    hasMore
+    cursor
+  }
+}
+    fragment changeType on Changetype {
+  system {
+    id
+    name
+  }
+  changeType
+}
+fragment changelogEntry on Changelog {
+  system {
+    id
+    name
+  }
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  x_version
+  releaseDate
+  scheduled
+  image {
+    hasMore
+    cursor
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    results {
+      ...product
+    }
+  }
+  changeType {
+    results {
+      ...changeType
+    }
+  }
+  status {
+    results {
+      ...status
+    }
+  }
+}
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
+}
+fragment product on SitecoreProduct {
+  system {
+    id
+    name
+  }
+  productName
+  productDescription
+  darkIcon: productIconDark
+  lightIcon: productIconLight
+}
+fragment status on Status {
+  system {
+    id
+    name
+    label
+  }
   description
   identifier
 }`) as unknown as TypedDocumentString<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>;
 export const SearchByProductsAndChangeTypesAndBreakingChangeDocument = new TypedDocumentString(`
-    query searchByProductsAndChangeTypesAndBreakingChange($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "", $breaking: Boolean) {
-  changelog: allChangelog(
-    orderBy: RELEASEDATE_DESC
-    first: $first
+    query searchByProductsAndChangeTypesAndBreakingChange($date: CustomDateTime, $productIds: [String!], $changeTypeIds: [String!] = [], $first: Int = 5, $after: String = "", $breaking: Boolean) {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
     after: $after
-    where: {releaseDate_lt: $date, breakingChange_eq: $breaking, OR: [{sitecoreProduct: {changelog_ids: $productIds}}], AND: {OR: [{changeType: {changelog_ids: $changeTypeIds}}]}}
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productIds}}, {changeType: {containsAny: $changeTypeIds}}, {breakingChange: {equals: $breaking}}]}
   ) {
-    pageInfo {
-      hasNext
-      endCursor
-    }
-    total
     results {
       ...changelogEntry
     }
+    hasMore
+    cursor
   }
 }
     fragment changeType on Changetype {
-  id
-  name
+  system {
+    id
+    name
+  }
   changeType
 }
 fragment changelogEntry on Changelog {
-  id
-  name
+  system {
+    id
+    name
+  }
   title
   description
   fullArticle
   readMoreLink
   breakingChange
-  version
+  x_version
   releaseDate
   scheduled
   image {
-    total
+    hasMore
+    cursor
     results {
       ...media
     }
   }
   sitecoreProduct {
-    total
     results {
       ...product
     }
   }
   changeType {
-    total
     results {
       ...changeType
     }
   }
   status {
-    total
     results {
       ...status
     }
   }
 }
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
 }
 fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark
   lightIcon: productIconLight
 }
 fragment status on Status {
-  id
-  name
+  system {
+    id
+    name
+    label
+  }
   description
   identifier
 }`) as unknown as TypedDocumentString<SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables>;
 export const SearchByTitleDocument = new TypedDocumentString(`
-    query searchByTitle($date: DateTime, $productId: [ID]) {
-  data: allChangelog(
-    first: 1
-    where: {releaseDate_lt: $date, sitecoreProduct: {changelog_ids: $productId}}
+    query searchByTitle($date: CustomDateTime, $productId: [String!], $entryTitle: [String!]) {
+  data: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: 1
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {sitecoreProduct: {containsAny: $productId}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}
   ) {
-    pageInfo {
-      hasNext
-      endCursor
-    }
-    total
+    hasMore
+    cursor
     results {
       ...changelogEntry
     }
   }
 }
     fragment changeType on Changetype {
-  id
-  name
+  system {
+    id
+    name
+  }
   changeType
 }
 fragment changelogEntry on Changelog {
-  id
-  name
+  system {
+    id
+    name
+  }
   title
   description
   fullArticle
   readMoreLink
   breakingChange
-  version
+  x_version
   releaseDate
   scheduled
   image {
-    total
+    hasMore
+    cursor
     results {
       ...media
     }
   }
   sitecoreProduct {
-    total
     results {
       ...product
     }
   }
   changeType {
-    total
     results {
       ...changeType
     }
   }
   status {
-    total
     results {
       ...status
     }
   }
 }
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
 }
 fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark
   lightIcon: productIconLight
 }
 fragment status on Status {
-  id
-  name
+  system {
+    id
+    name
+    label
+  }
   description
   identifier
 }`) as unknown as TypedDocumentString<SearchByTitleQuery, SearchByTitleQueryVariables>;
+export const SearchByTitleAndDateDocument = new TypedDocumentString(`
+    query searchByTitleAndDate($startDate: CustomDateTime!, $endDate: CustomDateTime!, $productId: String!, $entryTitle: [String!]) {
+  data: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: 1
+    filter: {AND: [{releaseDate: {inRange: {from: $startDate, to: $endDate}}}, {sitecoreProduct: {contains: $productId}}, {title: {containsAll: $entryTitle, case: INSENSITIVE}}]}
+  ) {
+    results {
+      ...changelogEntry
+    }
+    hasMore
+    cursor
+  }
+}
+    fragment changeType on Changetype {
+  system {
+    id
+    name
+  }
+  changeType
+}
+fragment changelogEntry on Changelog {
+  system {
+    id
+    name
+  }
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  x_version
+  releaseDate
+  scheduled
+  image {
+    hasMore
+    cursor
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    results {
+      ...product
+    }
+  }
+  changeType {
+    results {
+      ...changeType
+    }
+  }
+  status {
+    results {
+      ...status
+    }
+  }
+}
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
+}
+fragment product on SitecoreProduct {
+  system {
+    id
+    name
+  }
+  productName
+  productDescription
+  darkIcon: productIconDark
+  lightIcon: productIconLight
+}
+fragment status on Status {
+  system {
+    id
+    name
+    label
+  }
+  description
+  identifier
+}`) as unknown as TypedDocumentString<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables>;
+export const SearchOnlyBreakingChangesDocument = new TypedDocumentString(`
+    query searchOnlyBreakingChanges($date: CustomDateTime, $first: Int = 5, $after: String = "", $breaking: Boolean) {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
+    after: $after
+    filter: {AND: [{releaseDate: {lessThan: $date}}, {breakingChange: {equals: $breaking}}]}
+  ) {
+    results {
+      ...changelogEntry
+    }
+    hasMore
+    cursor
+  }
+}
+    fragment changeType on Changetype {
+  system {
+    id
+    name
+  }
+  changeType
+}
+fragment changelogEntry on Changelog {
+  system {
+    id
+    name
+  }
+  title
+  description
+  fullArticle
+  readMoreLink
+  breakingChange
+  x_version
+  releaseDate
+  scheduled
+  image {
+    hasMore
+    cursor
+    results {
+      ...media
+    }
+  }
+  sitecoreProduct {
+    results {
+      ...product
+    }
+  }
+  changeType {
+    results {
+      ...changeType
+    }
+  }
+  status {
+    results {
+      ...status
+    }
+  }
+}
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
+}
+fragment product on SitecoreProduct {
+  system {
+    id
+    name
+  }
+  productName
+  productDescription
+  darkIcon: productIconDark
+  lightIcon: productIconLight
+}
+fragment status on Status {
+  system {
+    id
+    name
+    label
+  }
+  description
+  identifier
+}`) as unknown as TypedDocumentString<SearchOnlyBreakingChangesQuery, SearchOnlyBreakingChangesQueryVariables>;

@@ -1,12 +1,12 @@
-fragment media on Media {
-  id
-  name
-  fileName
-  fileUrl
-  description
-  fileWidth
-  fileHeight
-  fileId
-  fileSize
-  fileType
+fragment media on XMCMedia {
+  system {
+    id
+    name
+  }
+  ... on XMCMedia {
+    media_publicLink
+    media_type {
+      name
+    }
+  }
 }
