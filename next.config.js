@@ -116,6 +116,12 @@ const redirects = [
 
   { source: '/changelog/xm-cloud/:path*', destination: '/changelog/sitecoreai/:path*', permanent: true },
   { source: '/xm-cloud/:path*', destination: 'https://doc.sitecore.com/sai/en/developers/sitecoreai/sitecoreai.html', permanent: true },
+
+  { source: '/sitecoreai/capabilities/unified-data-layer', destination: 'https://doc.sitecore.com/sai/en/users/sitecoreai/audience-and-insights.html', permanent: true },
+ { source: '/sitecoreai/capabilities/conversion-optimization', destination: 'https://doc.sitecore.com/sai/en/users/sitecoreai/conversion-optimization.html', permanent: true },
+
+  
+
 ];
 
 const nextConfig = {

@@ -5,14 +5,13 @@ twitter: ['@DocsSitecore']
 hasInPageNav: false
 ---
 
-<Group title="Content Management and Delivery">
+<Group>
   <GroupItem>
-    ### Sitecore XM Cloud
-    - [Developer Documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-experience-manager-cloud.html)
-    - [XM Cloud Build Configuration](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html)
-    - [XM Cloud Deploy App](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
-    - [Developer Tools](https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html)
-    - [XM Cloud development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html)
+    ### SitecoreAI
+    - [Developer Documentation](https://doc.sitecore.com/sai/en/developers/sitecoreai/index.html)
+    - [Build Configuration](https://doc.sitecore.com/sai/en/developers/sitecoreai/the-sitecoreai-build-configuration.html)
+    - [Deploy App](https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html)
+    - [Developer Tools](https://doc.sitecore.com/sai/en/developers/sitecoreai/sitecore-command-line-interface.html)
     - [Cloud Portal developer docs](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
   </GroupItem>
   <GroupItem>
@@ -43,7 +42,7 @@ hasInPageNav: false
   </GroupItem>
 </Group>
 
-<Group title="Customer Data Management">
+<Group>
   <GroupItem>
     ### Sitecore CDP
     - [Sitecore CDP for developers](https://doc.sitecore.com/cdp/en/developers/api/index-en.html)
@@ -59,7 +58,7 @@ hasInPageNav: false
   </GroupItem>
 </Group>
 
-<Group title="Personalization and Testing">
+<Group>
   <GroupItem>
     ### Sitecore Personalize
     - [Sitecore Personalize for developers](https://doc.sitecore.com/personalize/en/developers/api/index-en.html)
@@ -76,7 +75,7 @@ hasInPageNav: false
   </GroupItem>
 </Group>
 
-<Group title="Marketing Automation">
+<Group>
   <GroupItem>
     ### Sitecore Send
     - [User Documentation](https://doc.sitecore.com/send/)
@@ -92,7 +91,7 @@ hasInPageNav: false
   </GroupItem>
 </Group>
 
-<Group title="Commerce">
+<Group>
   <GroupItem>
     ### OrderCloud
     - [API reference](https://ordercloud.io/api-reference)
@@ -118,7 +117,7 @@ hasInPageNav: false
   </GroupItem>
 </Group>
 
-<Group title="Integrations">
+<Group>
   <GroupItem>
     ### Sitecore Connect
     - [Introduction to Sitecore Connect](https://doc.sitecore.com/connect/en/users/sitecore-connect/introduction-to-sitecore-connect.html)
