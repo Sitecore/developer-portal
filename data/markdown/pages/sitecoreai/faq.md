@@ -56,8 +56,7 @@ hasInPageNav: true
 
 <details>
   <summary><strong>How can I navigate between different capabilities like CDP, Personalize, Search and Content Hub within SitecoreAI.</strong></summary>
-  <p>The SitecoreAI navigation brings all core capabilities together in one interface, making it easy for users to move between content, personalization, and AI features without switching applications. The navigation is [documented here](/sitecoreai/navigation).</p>
-  <p>From the SitecoreAI navigation, users can directly access key capabilities such as CDP, Personalize, and Search. Content Hub remains a separate application that can be accessed through the Sitecore Cloud Portal and will be integrated more closely with SitecoreAI in future releases.  </p>
+  <p>The SitecoreAI navigation brings all core capabilities together in one interface, making it easy for users to move between content, personalization, and AI features without switching applications. The navigation is [documented here](https://doc.sitecore.com/sai/en/users/sitecoreai/navigating-the-interface.html).</p>
 </details>
 
 <details>
