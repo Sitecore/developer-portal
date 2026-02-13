@@ -32,18 +32,17 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo }) => {
 
         <VerticalGroup minH={'calc(100vh - 430px)'}>
           <CenteredContent>
- 
 
-              <Alert status="info" alignItems="top">
+            <Alert>
                 <AlertIcon />
-                <Wrap>
-                  <AlertTitle>Roadmap Update</AlertTitle>
-                  <AlertDescription>
-                    <Text mb={4}>We’re refreshing how we present our product roadmap on this site to ensure consistency across all public materials.</Text>
-                    <Text>We’ll continue to share forward-looking information through an updated roadmap on this site at a later stage</Text> 
-                  </AlertDescription>
+                <Wrap w="full" direction={'column'}>
+                    <AlertTitle>Roadmap Update</AlertTitle>
+                    <AlertDescription>
+                      <Text mb={2}>We’re refreshing how we present our product roadmap on this site to ensure consistency across all public materials.</Text>
+                      <Text>We’ll continue to share forward-looking information through an updated roadmap on this site at a later stage</Text> 
+                    </AlertDescription>
                 </Wrap>
-              </Alert>
+            </Alert>
 
           </CenteredContent>
         </VerticalGroup>
