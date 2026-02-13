@@ -37,7 +37,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo }) => {
               <Alert status="info" alignItems="top">
                 <AlertIcon />
                 <Wrap>
-                  <AlertTitle>Roadmap Update:</AlertTitle>
+                  <AlertTitle>Roadmap Update</AlertTitle>
                   <AlertDescription>
                     <Text mb={4}>We’re refreshing how we present our product roadmap on this site to ensure consistency across all public materials.</Text>
                     <Text>We’ll continue to share forward-looking information through an updated roadmap on this site at a later stage</Text> 
