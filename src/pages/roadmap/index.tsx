@@ -1,4 +1,4 @@
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Wrap } from '@chakra-ui/react';
+import { Alert, AlertDescription, AlertIcon, AlertTitle, Text, Wrap } from '@chakra-ui/react';
 import { TrackPageView } from '@components/integrations/engage/TrackPageView';
 import { CenteredContent, Hero, VerticalGroup } from '@components/ui/sections';
 import { PageInfo } from '@lib/interfaces/page-info';
@@ -34,16 +34,16 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo }) => {
           <CenteredContent>
  
 
-<Alert status="info" alignItems="top">
+              <Alert status="info" alignItems="top">
                 <AlertIcon />
                 <Wrap>
                   <AlertTitle>Roadmap Update:</AlertTitle>
                   <AlertDescription>
-          We’re refreshing how we present our product roadmap on this site to ensure consistency across all public materials.
-          As part of this update, the roadmap previously published on this site has been removed. We’ll share forward-looking information through updated roadmap materials and future product communications.                  </AlertDescription>
+                    <Text mb={4}>We’re refreshing how we present our product roadmap on this site to ensure consistency across all public materials.</Text>
+                    <Text>We’ll continue to share forward-looking information through an updated roadmap on this site at a later stage</Text> 
+                  </AlertDescription>
                 </Wrap>
               </Alert>
-
 
           </CenteredContent>
         </VerticalGroup>
