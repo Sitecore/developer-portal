@@ -4,7 +4,7 @@ description: 'Handling date/time sensitive content based on publishing requireme
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2025-07-30'
+lastUpdated: '2026-02-19'
 created: '2025-06-30'
 audience: ['Architect','Technical Implementer']
 ---
@@ -18,21 +18,21 @@ The ability to publish content at specific times is a common requirement that Si
 
 
 ## Execution
-[Date and Time personalization conditions](https://doc.sitecore.com/xmc/en/users/xm-cloud/specifying-variables-for-conditions.html) are  a simple approach to manage the display of content at specific dates/times. By setting up rules that check the current date or time, you can control when specific content on the page without needing to trigger a publish. This is especially useful for seasonal content, or phased announcements, where visibility - not content state - is what matters.
+[Date and Time personalization conditions](https://doc.sitecore.com/xmc/en/users/xm-cloud/specifying-variables-for-conditions.html) are a simple approach to manage the display of content at specific dates/times. By setting up rules that check the current date or time, you can control when specific content appears on the page without needing to trigger a publish. This is especially useful for seasonal content, or phased announcements, where visibility - not content state - is what matters.
 
 ### Content availability through date/time conditions
 In this tactical solution, it’s not the act of publishing the content that makes it available, rather we create page variant(s) that have the content changes we wish to be visible as the published version. 
 
-For more cases, schedule publishing availability of a page via versions should cover your requirements - review the [Schedule publishing availability of a page](https://doc.sitecore.com/xmc/en/users/xm-cloud/schedule-publishing-availability-of-a-page.html) documentation for further detail.
+For most cases, schedule publishing availability of a page via versions should cover your requirements - review the [Schedule publishing availability of a page](https://doc.sitecore.com/xmc/en/users/xm-cloud/schedule-publishing-availability-of-a-page.html) documentation for further detail.
 
-Leaveraging [Personalization](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html), we can create a [condition](https://doc.sitecore.com/xmc/en/users/xm-cloud/specifying-variables-for-conditions.html) that specifies that the version of the page is only visible after the specific date that it is required. Make sure that [workflow](/learn/accelerate/xm-cloud/implementation/information-architecture/workflow) is setup to handle the different states of the content. 
+Leveraging [Personalization](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html), we can create a [condition](https://doc.sitecore.com/xmc/en/users/xm-cloud/specifying-variables-for-conditions.html) that specifies that the version of the page is only visible after the specific date that it is required. Make sure that [workflow](/learn/accelerate/xm-cloud/implementation/information-architecture/workflow) is setup to handle the different states of the content. 
 
 Assuming that we create the content ahead of time and ensure that publishing has happened, we can be sure that after the specified date the correct content will be visible immediately with minimal latency. Since all the personalisation variants are all available on the Edge it’s simply a case of the personalisation middleware gating the content according to whether the personalisation condition is satisfied. This will work for both Static Site Generation (SSG) and Server-Side Rendering (SSR) rendering methods - review the [Prerendering methods and data fetching strategies in JSS Next.js apps](http://doc.sitecore.com/xmc/en/developers/jss/215/jss-xmc/prerendering-methods-and-data-fetching-strategies-in-jss-next-js-apps.html) documentation for further information.
 
 
 #### Setup Steps
 
-**1. Map out the publishing content flow** - this can be useful to understand and communicate all the steps with your business users. Use the tool of your choice of choice as per your organisation choice e.g Miro and ensure that the [workflow](/learn/accelerate/xm-cloud/implementation/information-architecture/workflow) is setup to handle the different states of the content. 
+**1. Map out the publishing content flow** - this can be useful to understand and communicate all the steps with your business users. Use the tool of your choice as per your organisation e.g Miro and ensure that the [workflow](/learn/accelerate/xm-cloud/implementation/information-architecture/workflow) is setup to handle the different states of the content. 
 
 **2. Create personalisation variant in XM Cloud Pages** -
 
@@ -42,7 +42,7 @@ Assuming that we create the content ahead of time and ensure that publishing has
 **3. Specify Personalisation condition** - specify the date and time after which you wish the new content to “go live“:
 <img src="/images/learn/accelerate/xm-cloud/scheduled-publishing/page-variant.png" alt=""/>
 <br/><br/>
-When creating multiple date/time conditions (or where the content is subject to  an expiry date) you may wish to specify an end conditions, “the visit is before".
+When creating multiple date/time conditions (or where the content is subject to an expiry date) you may wish to specify an end conditions, “the visit is before".
 <img src="/images/learn/accelerate/xm-cloud/scheduled-publishing/page-variant-2.png" alt=""/>
 <br/><br/>
 
@@ -53,16 +53,16 @@ When creating multiple date/time conditions (or where the content is subject to 
 **5. Save, publish and deploy** - Publish all the content changes around the personalisation and page variants and where using SSG you would also generate and redeploy your static content.
 
 
-> If timeouts are encountered around the personalisation variant display processing, then it may be necessary to increase the values of  **PERSONALIZE_MIDDLEWARE_CDP_TIMEOUT** and/or **PERSONALIZE_MIDDLEWARE_EDGE_TIMEOUT** environment variables - review the [Troubleshooting personalization and tracking events](https://doc.sitecore.com/xmc/en/developers/jss/22/jss-xmc/troubleshooting-personalization-and-tracking-events.html) documentation for further detail.
+> If timeouts are encountered around the personalisation variant display processing, then it may be necessary to increase the values of **PERSONALIZE_MIDDLEWARE_CDP_TIMEOUT** and/or **PERSONALIZE_MIDDLEWARE_EDGE_TIMEOUT** environment variables - review the [Troubleshooting personalization and tracking events](https://doc.sitecore.com/xmc/en/developers/jss/22/jss-xmc/troubleshooting-personalization-and-tracking-events.html) documentation for further detail.
 
-### Multi-app, time sensative content
-In other requirements, the completion of the process and availability of content across different applications at specific times is the driving factor. For these scenarios where content must be published at a specific time, with a guarantee around that in terms of precision timing, latecy might be a blocker from using the Embeeded Personalization.
+### Multi-app, time-sensitive content
+In other requirements, the completion of the process and availability of content across different applications at specific times is the driving factor. For these scenarios where content must be published at a specific time, with a guarantee around that in terms of precision timing, latency might be a blocker from using the Embedded Personalization.
 
-> This recipe is focused around the pure content publishing aspect, leveraging on-demand republishing is available in the [Incremental Static Regeneration (ISR)]() recipie. 
+> This recipe is focused around the pure content publishing aspect, leveraging on-demand republishing is available in the [Incremental Static Regeneration (ISR)]() recipe. 
 
 Although it’s possible to use the Sitecore Task Scheduler to implement scheduled publishing in XM Cloud, since task schedules are based on interval execution it’s impossible to schedule a task to execute at a specific hour, minute or second value. 
 
-Instead, we would advise to leverage a standalone third party scheduler that is decoupled from the Sitecore instance, preferably one that also supports [Cron syntax](https://en.wikipedia.org/wiki/Cron) (given that this is a well established standard for job scheduling). Within the Cron scheduler you would invoke the [Sitecore CLI publish command](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-publish-command.html) using the [non-interactive client login (client credentials flow) ](https://doc.sitecore.com/xmc/en/developers/xm-cloud/log-in-to-a-sitecore-instance-with-sitecore-command-line-interface.html#use-a-non-interactive-client-login-client-credentials-flow) to execute the publish command. This will decouple the implementation with proper seperation of concerns between the scheduling and the content management.
+Instead, we would advise to leverage a standalone third party scheduler that is decoupled from the Sitecore instance, preferably one that also supports [Cron syntax](https://en.wikipedia.org/wiki/Cron) (given that this is a well established standard for job scheduling). Within the Cron scheduler you would invoke the [Sitecore CLI publish command](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-publish-command.html) using the [non-interactive client login (client credentials flow) ](https://doc.sitecore.com/xmc/en/developers/xm-cloud/log-in-to-a-sitecore-instance-with-sitecore-command-line-interface.html#use-a-non-interactive-client-login-client-credentials-flow) to execute the publish command. This will decouple the implementation with proper separation of concerns between the scheduling and the content management.
 
 For organisations that use Azure, one implementation option would be to use the [Cron Scheduler available within the Azure DevOps publishing pipeline](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/scheduled-triggers?view=azure-devops&tabs=yaml#cron-syntax). As there is no actual deployment of code required, it’s important set the pipeline trigger to be the Cron expression (as opposed to an event that is triggered via the repository, such as a git Push). The pipeline conveniently offers the option to define variables that can be used to ensure that the client id and client secret are not exposed via code in the repository. [Azure Functions](https://azure.microsoft.com/en-us/products/functions) could also be an approach as it supports Cron syntax.
 
@@ -120,7 +120,7 @@ If there is a match and personalised page variants are pre-generated, the middle
 
 If the visitor does not match any audiences, then the default page variant will be returned to the user using the statically generated HTML if it exists.
 
-## Related Recipies
+## Related Recipes
 
 <Row columns={2}>
   <Link title="Publishing to Experience Edge" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge" />
