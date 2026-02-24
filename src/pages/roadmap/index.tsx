@@ -44,63 +44,14 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
 
         <VerticalGroup className="min-h-[calc(100vh-430px)]">
           <CenteredContent>
-            <HideForUsers>
-              <Alert variant="default" className="mb-4">
-                <AlertDescription>
-                  To access the detailed roadmaps, please log in using your cloud portal credentials.
-                  <Button variant="link" onClick={() => signIn('sitecore')} className="ml-2">
-                    Login
-                  </Button>
-                </AlertDescription>
-              </Alert>
-            </HideForUsers>
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="flex-1">
-                <h2 className="text-xl font-heading font-semibold mb-4">Roadmap overview</h2>
-
-                <p className="my-4 text-sm">This section provides a comprehensive view of the development progress for each of our products, structured into four distinct phases:</p>
-
-                <ul className="list-disc ml-5 space-y-2 text-sm">
-                  <li>Done - presenting completed features and updates</li>
-                  <li>Now - outlining current initiatives which we expect to ship this quarter</li>
-                  <li>Next - detailing plans for the upcoming two quarters</li>
-                  <li>Future - offering a glimpse into long-term developments beyond nine months.</li>
-                </ul>
-              </div>
-              <Image src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/3de0d9d0071446fa95353cfd41748fa9?t=sc700x700" alt="Roadmap" width={300} height={300} className="hidden md:block" />
-            </div>
-
-            <RestrictedContent>
-              <Alert variant="default" className="my-4">
-                <AlertDescription>
-                  The product roadmap is for informational purposes only and subject to change at Sitecore's sole discretion. Timelines and features are not commitments, and the roadmap may be amended or discontinued without notice. Customers should
-                  not rely on it for purchasing or planning decisions.
-                </AlertDescription>
-              </Alert>
-              <h2 className="text-xl font-heading font-semibold mb-4">Available roadmaps</h2>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {products.map((product) => (
-                  <Item variant="outline" size="default" asChild>
-                    <Link href={`/roadmap/${slugify(product.label)}`} key={product.value} title={fixTitle(product.label)} className="font-semibold">
-                      <ItemContent>{fixTitle(product.label)}</ItemContent>
-                      <ItemActions>
-                        <Icon path={mdiArrowRight} size={0.8} />
-                      </ItemActions>
-                    </Link>
-                  </Item>
-                ))}
-              </div>
 
               <Alert variant="default" className="my-4">
-                <AlertTitle>Confidentiality Disclaimer:</AlertTitle>
+                <AlertTitle>Roadmap Update</AlertTitle>
                 <AlertDescription>
-                  This product roadmap contains highly confidential information and is intended solely for the recipient. By accessing this information, you acknowledge that it is subject to the confidentiality obligations set forth in your existing
-                  agreements with Sitecore. Any unauthorized disclosure, distribution, or use of this information is strictly prohibited.
+                      <p>We are refreshing how we present our product roadmap on this site to ensure consistency across all public materials. We will continue to share forward-looking information through an updated roadmap on this site at a later stage.</p>
                 </AlertDescription>
               </Alert>
-            </RestrictedContent>
+
           </CenteredContent>
         </VerticalGroup>
       </Layout>

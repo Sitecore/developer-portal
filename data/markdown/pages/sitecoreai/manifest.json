@@ -49,12 +49,12 @@
           "path": "content-ops"
         },
         {
-          "title": "Conversion optimization",
-          "path": "conversion-optimization"
+          "title": "Conversion Optimization",
+          "path": "/capabilities/conversion-optimization"
         },
         {
-          "title": "Unified data layer",
-          "path": "unified-data-layer"
+          "title": "Audience & Insights",
+          "path": "/capabilities/audience-and-insights"
         },
         {
           "title": "Commerce",

@@ -56,22 +56,22 @@ An end-to-end content engine that keeps every project aligned, efficient, and me
 <Link title="Configuration Documentation" link="https://doc.sitecore.com/ch/en/users/content-hub/content-management-configuration.html" />
 </Row>
 
-## Unified Data Layer
+## Audience and Insights
 
 Turn data into decisions and awareness into understanding. Unlock your customer data to inform every interaction with real-time insights.
 <Row columns={3}>
-<Link title="Get started with Unified Data" link="/sitecoreai/capabilities/unified-data-layer" />
-<Link title="User Documentation" link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/index-en.html" />
-<Link title="Developer Documentation" link="https://doc.sitecore.com/cdp/en/developers/api/index.html" />
+<Link title="User Documentation" link="https://doc.sitecore.com/sai/en/users/sitecoreai/audience-and-insights.html" />
 </Row>
 
 ## Conversion optimization
 
 Help customers find what they need faster and connect with what matters most, every time. Personalize every experience with intelligence that understands your customers.
 <Row columns={3}>
-<Link title="Get started with Conversion Optimization" link="/sitecoreai/capabilities/conversion-optimization" />
-<Link title="Search experience documentation" link="https://doc.sitecore.com/search" />
-<Link title="Personalized experience documentation" link="https://doc.sitecore.com/personalize" />
+<Link title="Get started with Conversion Optimization" link="https://doc.sitecore.com/sai/en/users/sitecoreai/conversion-optimization.html" />
+<Link title="Search experience documentation" link="https://doc.sitecore.com/sai/en/users/sitecoreai/search-experiences.html" />
+<Link title="Personalized experience documentation" link="https://doc.sitecore.com/sai/en/users/sitecoreai/personalize.html" />
+<Link title="A/B/n testing documentation" link="https://doc.sitecore.com/sai/en/users/sitecoreai/a-b-n-testing.html" />
+<Link title="Performance insights documentation" link="https://doc.sitecore.com/sai/en/users/sitecoreai/get-performance-insights.html" />
 </Row>
 
 ## Commerce
