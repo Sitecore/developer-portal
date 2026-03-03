@@ -3,7 +3,7 @@
 
 ## Repos
 - Github for UseCases: https://github.com/Sitecore/hackerspace-workshop
-- Github repo to setup Environments: https://github.com/Sitecore/symposium-2025-hackerspace-workshop-xmc-env
+- Github repo to setup Environments: https://github.com/Sitecore/city-tour-2026-mp-code-jam 
 
 
 ## Slide Decks
@@ -27,5 +27,4 @@
 - Workshop SUGCON India:  Thursday, June 4th (time?) (Registration as add on via the event registration) Link comming soon 
 
 ## Other
-- Email Communications: https://sitecore1.sharepoint.com/:f:/s/Team-GeneralMarketing-PMMTeam/ErKsrB9a61xNnAx0ryfmpZEBlqkVNGC4i4WLQraF6LsQ_Q?e=11q0Hz 
-- Recording of Workshop Introduction: https://sitecore1.sharepoint.com/:v:/r/sites/Team-GeneralMarketing-PMMTeam/Shared%20Documents/TEAM%20FOLDERS/Sebastian/FY26/H1/Symposium/Marketplace%20Hackerspace/presentations%20for%20workshop/01%20-%2010%20min%20Workshop%20Intro.mp4?csf=1&web=1&e=nbd3KK
+- Recording of Workshop Introduction: https://sitecore1.sharepoint.com/:v:/s/Team-GeneralMarketing-PMMTeam/IQDwlv3kdhdGQq1azgzl9BzgAUkO163x9oh0IzDBoKq5hrk?e=xX9qL0 

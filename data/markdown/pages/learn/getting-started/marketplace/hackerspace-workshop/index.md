@@ -1,4 +1,4 @@
-# Welcome to the SitecoreAI MarketplaceCode Jam – From Idea to App in One Session - Introduction
+# Welcome to the SitecoreAI Marketplace Code Jam – From Idea to App in One Session - Introduction
 
 Get ready to dive into the world of SitecoreAI extensibility and hands-on innovation. In this workshop, you’ll learn how to build custom extensions and explore composed architecture in a fast-paced, developer-focused environment.
 Before we jump into coding, here’s a quick overview of the base setup steps:
@@ -13,7 +13,8 @@ Ready? Let's go!
 ## Pre-Requisites
 - Bring your own Laptop
 - IDE: VS Code or Cursor installed
-- Github account 
+- GitHub Copilot or other AI tooling installed to IDE
+- Check for your GitHub CoPilot Tokens in VS Code
 - node version 16 and above
 - npm version 10 and above
 - examples consider using VS Code and Co-Pilot
@@ -57,4 +58,4 @@ Signing in to VS Code enables the Copilot functionality.
 
 
 ## Next
-[Go to loca setup](hackerspace-workshop/setup)
+[Go to local setup](hackerspace-workshop/setup)
