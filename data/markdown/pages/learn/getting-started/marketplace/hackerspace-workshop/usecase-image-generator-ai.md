@@ -18,7 +18,7 @@ This tutorial uses **Vibe Coding with AI** to build an image generator that auto
 - ✅ Registered app in Developer Studio (choose **Page context panel** extension point)
 - ✅ App installed in your assigned environment
 - ✅ Blok and Docs MCP configured in your IDE
-- ✅ Marketplace app running locally at `http://localhost:3000`
+- ✅ Custom app running locally at `http://localhost:3000`
 
 Key features built with AI assistance:
 - Auto-detects page `displayName` from Sitecore context
