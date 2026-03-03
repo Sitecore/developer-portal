@@ -15,7 +15,7 @@ This tutorial uses **Vibe Coding with AI** to build an image generator that auto
 **Prerequisites:** Before starting this tutorial, ensure you have completed the [Workshop Preparation Steps](index.md):
 - ✅ Node.js 16+ and npm 10+ installed
 - ✅ VS Code or Cursor with GitHub Copilot
-- ✅ Registered app in Developer Studio (choose **Standalone** extension point)
+- ✅ Registered app in Developer Studio (choose **Page context panel** extension point)
 - ✅ App installed in your assigned environment
 - ✅ Blok and Docs MCP configured in your IDE
 - ✅ Marketplace app running locally at `http://localhost:3000`
