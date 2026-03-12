@@ -22,7 +22,7 @@ See [all available Identity Server versions](/downloads/Sitecore_Identity)
 | --- | --- |
 | [Sitecore Identity Server WDP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8037/Sitecore.IdentityServer.8.0.37.scwdp.zip) | Sitecore Identity Server WDP installation package (same package as above). |
 | [Identity Server Upgrade Script](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8037/Sitecore.IdentityServer.UpgradeScripts.8.0.zip) | Script for updating the Core/Security database (same script as above). | 
-| [ARM Templates](https://github.com/Sitecore/Sitecore-Azure-Quickstart-Templates/releases/tag/8.0.37) | Link to ARM templates specifically for deploying the Sitecore Identity Server module; as of Identity Server 8.0 this template is now separate from the Sitecore ARM templates. |
+| [ARM Templates](https://github.com/Sitecore/Sitecore-Azure-Quickstart-Templates/releases/tag/8.0.16) | Link to ARM templates for deploying Sitecore Identity Server module versions 8.0.x. As of Identity Server 8.0 this template is now separate from the Sitecore ARM templates. |
 | [Upgrade Guide - Azure App Service](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8037/Sitecore_Identity_Server_Upgrade-AzureAppService-8.0.pdf) | Guide describing how to upgrade Identity Server from Sitecore Identity Server 2.0 and later, for Azure App Service deployments. Includes setting the new Application Insights - Connection String. |
 
 ## Container deployments
