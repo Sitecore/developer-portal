@@ -15,14 +15,15 @@ This page tracks release history including features added and other pertinent re
 
 | Release | Description |
 | --- | --- |
+| 1.7.26 | Added **Tree translation** (PREMIUM) feature - translate an entire content tree (a parent item and all its descendants) into a target language in a single operation. |
 | 1.6.78 | Added **Sitecore validation rules with AI** enhancement - enable Sitecore's existing field validation rules feature to guide AI-powered features. Specifically, field validation rules can now be applied to the AI prompting of the **Content generation** and **Media metadata extraction** features. |  
-| 1.5.89 | Added **Page translation** feature - translate an entire page with one operation.<br/>Added **User access control** feature - assign users access to specific Stream features. |
+| 1.5.89 | Added **Page translation** (PREMIUM) feature - translate an entire page with one operation.<br/>Added **User access control** feature - assign users access to specific Stream features. |
 | 1.4.54 | Added **Media metadata extraction** feature - analyze an image and suggest its title, description, alt text, and key words. |
 | 1.3.23 | Added **Content extraction** feature - AI-assisted extraction of text from a file, URL, or text; transformed into a structured content item. |
 | 1.2.45 | Added **Item translation** feature - AI-assisted translation of a site content item, to translate to a selected language, or to generate a new version of same language. |
 | 1.1.63 | Added **Content variants** feature - prompt AI to generate multiple content variants.<br/>Added **Select brand kit** enhancement - select from a list of configured brand kits. |
 | 1.1.34 | Minor release including bug fixes and improvements to installation, configuration, user experience, error handling, and documentation. |
-| 1.0.113 | Initial release of the Sitecore XP module, delivering **Content generation** and **Brand kits**. Compatible with Sitecore XP 10.2, 10.3, and 10.4. |
+| 1.0.113 | Initial release of the Sitecore XP module, delivering **Content generation** feature and **Brand kits** (PREMIUM) feature. Compatible with Sitecore XP 10.2, 10.3, and 10.4. |
 
 ### Supporting information
 
