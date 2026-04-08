@@ -1,5 +1,5 @@
 import { mdiArrowRightCircle } from "@mdi/js";
-import Icon from "@mdi/react";
+
 import { type PromoCardProps, PromoList } from "@src/components/cards";
 import UseWithAI from "@src/components/integrations/ai/useWithAI";
 import { TrackPageView } from "@src/components/integrations/engage/TrackPageView";
@@ -14,6 +14,7 @@ import { DropDownNavigation } from "@src/components/navigation/DropDownNavigatio
 import InPageNav from "@src/components/navigation/InPageNav";
 import SidebarNavigation from "@src/components/navigation/SidebarNavigation";
 import { Alert, AlertDescription, AlertTitle } from "@src/components/ui/alert";
+import { Icon } from "@src/components/ui/icon";
 import { CenteredContent } from "@src/components/ui/sections";
 import useManifestRoutes from "@src/hooks/useManifestRoutes";
 import Layout from "@src/layouts/Layout";
@@ -21,7 +22,6 @@ import type { ContentHeading } from "@src/lib/interfaces/contentheading";
 import type { ManifestConfig } from "@src/lib/interfaces/manifest";
 import type { ChildPageInfo, PageInfo } from "@src/lib/interfaces/page-info";
 import { getItemUrl } from "@src/lib/manifestHelper";
-import { Info } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Sidebar } from "./Sidebar";
@@ -75,8 +75,8 @@ const AcceleratePage = ({
           </Sidebar>
 
           <main className="w-full max-w-6xl min-h-[calc(100vh-215px)] px-4 md:px-0">
-            <CenteredContent className="min-h-[calc(100vh-400px)]">
-              <div className="flex flex-col gap-4 mb-4">
+            <CenteredContent className="min-h-[calc(100vh-400px)] prose-sm md:py-0">
+              <div className="flex flex-col">
                 <DropDownNavigation
                   config={sidebarConfig}
                   key={router.asPath}
@@ -111,10 +111,13 @@ const AcceleratePage = ({
                         key={child.path || child.title}
                         className="flex gap-2 items-center"
                       >
-                        <Icon path={mdiArrowRightCircle} size={1} />
+                        <Icon
+                          path={mdiArrowRightCircle}
+                          colorScheme="neutral"
+                        />
                         <Link
                           href={getItemUrl(sidebarConfig, child)}
-                          className="hover:underline"
+                          className="text-primary"
                         >
                           {child.title}
                         </Link>
@@ -160,15 +163,15 @@ const AcceleratePage = ({
 
               <AccelerateMetaData pageInfo={pageInfo} />
             </div>
-            <Alert variant="default" className="mt-4">
-              <Info className="w-4 h-4" />
+            <Alert variant="primary" className="mt-4">
               <AlertTitle>Questions or suggestions?</AlertTitle>
               <AlertDescription>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground pt-2">
                   We&apos;d love to hear your feedback!
                 </p>
                 <Feedback
-                  variant={"outline"}
+                  variant={"link"}
+                  className="p-0 mt-2"
                   projectId="RCPS"
                   issueTypeId="3"
                   product={sidebarConfig?.productFeedbackLabel}

@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/src/lib/util";
 import { Alert, AlertDescription, AlertTitle } from "@src/components/ui/alert";
 import { Button } from "@src/components/ui/button";
 import {
@@ -16,7 +17,6 @@ import { Textarea } from "@src/components/ui/textarea";
 import { AlertCircle } from "lucide-react";
 import { useState } from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
-import { cn } from "@/src/lib/util";
 
 type FeedbackProps = Omit<React.ComponentProps<typeof Button>, "onClick"> & {
   text?: string;
@@ -89,7 +89,7 @@ const Feedback = ({
       <Button
         {...rest}
         onClick={onOpen}
-        variant="link"
+        variant={rest.variant ?? "link"}
         className={cn(className)}
       >
         {text}

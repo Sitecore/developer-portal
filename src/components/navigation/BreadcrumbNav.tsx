@@ -1,3 +1,4 @@
+import { appendPathToBasePath } from "@/src/lib/util/stringUtil";
 import { mdiHomeVariantOutline } from "@mdi/js";
 import Icon from "@mdi/react";
 import {
@@ -13,7 +14,6 @@ import type { ManifestConfig } from "@src/lib/interfaces/manifest";
 import type { PageInfo } from "@src/lib/interfaces/page-info";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import { appendPathToBasePath } from "@/src/lib/util/stringUtil";
 
 export interface BreadcrumbNavProps {
   enabled?: boolean;
@@ -39,7 +39,7 @@ const BreadcrumbNav = ({
 
   return (
     <Breadcrumb className="mb-4 font-heading">
-      <BreadcrumbList>
+      <BreadcrumbList className="p-0 gap-1">
         {parentLink && (
           <>
             <BreadcrumbItem>

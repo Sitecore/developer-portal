@@ -7,15 +7,23 @@ import { EngageTrackerProvider } from "@src/components/integrations";
 import { Footer } from "@src/components/navigation/Footer";
 import TopNav from "@src/components/navigation/topNav";
 import { PreviewProvider } from "@src/context/PreviewContext";
-import { IsSearchEnabled, SEARCH_CONFIG } from '@src/lib/search';
+import { IsSearchEnabled, SEARCH_CONFIG } from "@src/lib/search";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
-import type { AppProps } from 'next/app';
-import { Router } from 'next/router';
+import type { AppProps } from "next/app";
+import { DM_Sans } from "next/font/google";
+import { Router } from "next/router";
 import { useCallback, useEffect, useRef, useState } from "react";
 import TagManager from "react-gtm-module";
 import TopBarProgress from "react-topbar-progress-indicator";
-import "./globals.css";
+import "../styles/global.css";
+
+const scHeadFont = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+  preload: true,
+});
 
 const SearchWrapper = ({ children }: any) =>
   IsSearchEnabled() ? (
@@ -109,21 +117,21 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
 
   return (
     <SearchWrapper>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <SessionProvider session={session}>
-          <EngageTrackerProvider>
-            <PreviewProvider hostname={hostname}>
-              {progress && <TopBarProgress />}
-              <TopNav searchEnabled={IsSearchEnabled()} />
-              {/* <Navbar searchEnabled={IsSearchEnabled()} /> */}
-              <div ref={contentInnerRef}>
-                <Component {...pageProps} />
-              </div>
-              <Footer />
-            </PreviewProvider>
-          </EngageTrackerProvider>
-        </SessionProvider>
-      </ThemeProvider>
+      <div className={scHeadFont.variable}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SessionProvider session={session}>
+            <EngageTrackerProvider>
+              <PreviewProvider hostname={hostname}>
+                {progress && <TopBarProgress />}
+                <TopNav searchEnabled={IsSearchEnabled()} />
+                {/* <Navbar searchEnabled={IsSearchEnabled()} /> */}
+                <Component {...pageProps} ref={contentInnerRef} />
+                <Footer />
+              </PreviewProvider>
+            </EngageTrackerProvider>
+          </SessionProvider>
+        </ThemeProvider>
+      </div>
     </SearchWrapper>
   );
 }

@@ -1,11 +1,11 @@
 "use client";
 
+import { Icon } from "@/lib/icon";
 import { mdiChevronDown } from "@mdi/js";
-import { Icon } from "@/src/lib/icon";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { Accordion as AccordionPrimitive } from "radix-ui";
 import type * as React from "react";
 
-import { cn } from "@/src/lib/util/index";
+import { cn } from "@/src/lib/util";
 
 function Accordion({
   ...props
@@ -29,14 +29,17 @@ function AccordionItem({
 function AccordionTrigger({
   className,
   children,
+  actions,
   ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
+}: React.ComponentProps<typeof AccordionPrimitive.Trigger> & {
+  actions?: React.ReactNode;
+}) {
   return (
-    <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Header className="flex items-center hover:bg-blackAlpha-50 transition-colors w-full min-w-0">
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "focus-visible:border-ring focus-visible:ring-ring/50 text-md font-regular hover:bg-blackAlpha-50 flex flex-1 cursor-pointer items-start justify-between gap-4 px-2 py-4 text-left transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
+          "focus-visible:border-ring focus-visible:ring-ring/50 text-md font-regular flex flex-1 cursor-pointer items-center justify-between gap-4 px-2 py-4 text-left transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180 min-w-0",
           className,
         )}
         {...props}
@@ -44,9 +47,17 @@ function AccordionTrigger({
         {children}
         <Icon
           path={mdiChevronDown}
-          className="transition-transform duration-200 size-6 "
+          className="transition-transform duration-200 size-6 shrink-0"
         />
       </AccordionPrimitive.Trigger>
+      {actions && (
+        <div
+          className="flex items-center shrink-0 py-4 px-2"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {actions}
+        </div>
+      )}
     </AccordionPrimitive.Header>
   );
 }

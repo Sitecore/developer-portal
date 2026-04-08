@@ -7,7 +7,6 @@ import {
 } from "@src/components/ui/tooltip";
 import type { ManifestConfig } from "@src/lib/interfaces/manifest";
 import type { PageInfo } from "@src/lib/interfaces/page-info";
-import { Info } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Feedback from "./Feedback";
@@ -60,15 +59,14 @@ const GithubContributionNotice = ({
 
   return (
     <Alert variant="default">
-      <Info className="h-4 w-4" />
-      <div className="flex flex-col items-start">
         <AlertTitle>Have feedback or a recipe suggestion?</AlertTitle>
         <AlertDescription>
-          <ul className="list-disc list-inside space-y-2">
+          <ul className="list-disc list-inside">
             <li>
               For recipe suggestions, questions or feedback, please use the{" "}
               <Feedback
                 variant={"link"}
+                className="p-0"
                 projectId="RCPS"
                 issueTypeId="3"
                 product={config?.productFeedbackLabel}
@@ -84,7 +82,7 @@ const GithubContributionNotice = ({
             </li>
           </ul>
         </AlertDescription>
-      </div>
+      
     </Alert>
   );
 };

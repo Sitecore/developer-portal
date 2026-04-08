@@ -4,8 +4,8 @@
 import { GuidedDemo } from "@src/components/links/GuidedDemo";
 import { CenteredContent, VerticalGroup } from "@src/components/ui/sections";
 import { GetProductLogo } from "@src/lib/assets";
-import Image from "next/image";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export type HeroProps = {
@@ -42,18 +42,18 @@ export const Hero = ({
 		: "";
 
 	return (
-		<VerticalGroup className="max-w-full border-b border-border bg-gradient-to-br from-[#dedbff] via-[#f9f9f9] to-[#ffcfcf] dark:from-[#2c2c4a] dark:via-[#1a1a1a] dark:to-[#4a2c2c]">
+		<VerticalGroup className="max-w-full bg-hero-gradient">
 			<CenteredContent className="py-6 md:py-12 xl:py-16" direction="column">
 				{productLogo && logoSrc && (
 					<Image src={logoSrc} alt={`${title} logo`} width={280} height={60} />
 				)}
 				{!productLogo && (
-					<h1 className="text-2xl md:text-4xl xl:text-6xl font-heading font-normal">
+					<h1 className="mb-0 text-4xl font-semibold sm:text-5xl lg:text-6xl font-sans">
 						{title}
 					</h1>
 				)}
 				{description && (
-					<h2 className="text-sm md:text-xl font-heading font-normal tracking-wider text-neutral-600 dark:text-neutral-400">
+					<h2 className="text-sm md:text-xl font-sans font-normal text-neutral-600 dark:text-neutral-400">
 						{description}
 					</h2>
 				)}

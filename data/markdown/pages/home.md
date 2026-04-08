@@ -1,6 +1,6 @@
 ---
-title: 'SitecoreAI - Unified, Open and Adaptive'
-description: 'The place where campaigns start, scale, and stay on-brand.'
+title: 'Sitecore Developer Portal'
+description: 'Access to the tools and information you need most in a portal created to enhance your developer experience.'
 stackexchange: ['/questions?tab=Newest']
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'

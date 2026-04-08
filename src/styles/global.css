@@ -1,13 +1,14 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
+
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -670,6 +671,18 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+
+  .bg-hero-gradient {
+    @apply bg-[linear-gradient(51deg,oklch(95.5%_.025_278deg),oklch(96.5%_.02_275deg)_10%,oklch(98.5%_.01_270deg)_20%,oklch(99%_.003_260deg)_40%,oklch(99%_.003_20deg)_60%,oklch(98%_.015_20deg)_80%,oklch(96%_.025_20deg)_90%,oklch(91%_.045_20deg))];
+  }
+
+  .dark .bg-hero-gradient {
+    /* Use a full linear-gradient for multiple 'via' stops */
+    @apply bg-[linear-gradient(51deg,#2c2c4a_10%,#1a1a1a_40%,#1a1a1a_70%,#4a2c2c_120%)];
   }
 }
 

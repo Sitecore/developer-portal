@@ -20,7 +20,7 @@ export class MyDocument<P = Record<string, never>> extends Component<
 
   render() {
     return (
-      <Html lang="en" style={{ height: "100%" }}>
+      <Html lang="en" className="w-full h-full antialiased">
         <Head />
         <body style={{ scrollMarginTop: "9em" }}>
           <Main />

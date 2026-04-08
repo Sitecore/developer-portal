@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/src/lib/util";
 import {
   mainNavigation,
   type NavItem,
@@ -32,14 +33,13 @@ import {
   Variant,
 } from "@src/lib/assets";
 import { ExternalLink } from "lucide-react";
+import { useSession } from "next-auth/react";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useSession } from "next-auth/react";
-import { useTheme } from "next-themes";
 import type React from "react";
 import { useState } from "react";
-import { cn } from "@/src/lib/util";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import { QuickStartMenu } from "./QuickStartMenu";
 import { SearchButton } from "./SearchButton";
@@ -93,8 +93,8 @@ export default function Navbar({
   const { theme } = useTheme();
 
   return (
-    <div className="sticky top-0 z-50 bg-background shadow-md border-b">
-      <div className="h-14 flex items-center justify-between px-4">
+    <div className="top-0 z-30 w-full px-2 bg-background max-w-none py-0 lg:px-4 shadow-[0_1px_3px_rgba(0,0,0,0.1),0_1px_2px_rgba(0,0,0,0.06)] h-14">
+      <div className="flex justify-between items-center mx-auto w-full h-14 lg:gap-x-2">
         <div className="flex flex-row w-full items-center justify-between">
           <div className="flex items-center flex-shrink-0">
             {/* Logo */}
