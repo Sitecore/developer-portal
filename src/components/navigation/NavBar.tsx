@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/src/lib/util";
 import {
   mainNavigation,
   type NavItem,
@@ -33,13 +32,14 @@ import {
   Variant,
 } from "@src/lib/assets";
 import { ExternalLink } from "lucide-react";
-import { useSession } from "next-auth/react";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
+import { useTheme } from "next-themes";
 import type React from "react";
 import { useState } from "react";
+import { cn } from "@/src/lib/util";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import { QuickStartMenu } from "./QuickStartMenu";
 import { SearchButton } from "./SearchButton";

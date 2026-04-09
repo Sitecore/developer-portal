@@ -1,11 +1,11 @@
 // Global
 
-import { cn } from "@/src/lib/util";
 import ScrollToTop from "@src/components/navigation/ScrollToTop";
 import { Alert, AlertDescription, AlertTitle } from "@src/components/ui/alert";
 import { usePreview } from "@src/context/PreviewContext";
 import { AlertTriangle } from "lucide-react";
 import type React from "react";
+import { cn } from "@/src/lib/util";
 import Meta from "./Meta";
 
 type LayoutProps = {
@@ -32,7 +32,7 @@ const Layout = ({
   const { isPreview } = usePreview();
 
   return (
-    <main className={cn('bg-subtle-bg',className)}>
+    <main className={cn("bg-subtle-bg", className)}>
       <Meta
         title={title}
         description={description}

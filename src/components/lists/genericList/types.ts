@@ -1,5 +1,8 @@
-import type { ExtendedStyle, OriginalStyle } from '@src/components/ui/custom/card-extended';
-import type { ComponentType } from 'react';
+import type {
+  ExtendedStyle,
+  OriginalStyle,
+} from "@src/components/ui/custom/card-extended";
+import type { ComponentType } from "react";
 
 export type CardVariant = OriginalStyle | ExtendedStyle;
 

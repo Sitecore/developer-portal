@@ -1,30 +1,45 @@
 "use client";
 
-import { cn } from '@/src/lib/util';
-import { getQueryValue } from '@/src/lib/util/requests';
-import { slugify } from '@/src/lib/util/stringUtil';
-import { LinkedHeading } from '@src/components/links/LinkedHeading';
-import { Badge } from '@src/components/ui/badge';
-import { Card, CardContent, CardHeader } from '@src/components/ui/card';
-import { ImageModal } from '@src/components/ui/imageModal';
-import { Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle } from '@src/components/ui/sheet';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@src/components/ui/tooltip';
-import { excludedProducts, getBadgeColor, getStatusColor } from '@src/lib/jira';
-import type { IRoadmapItem, RoadmapProduct } from '@src/lib/roadmap';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { LinkedHeading } from "@src/components/links/LinkedHeading";
+import { Badge } from "@src/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@src/components/ui/card";
+import { ImageModal } from "@src/components/ui/imageModal";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+} from "@src/components/ui/sheet";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@src/components/ui/tooltip";
+import { excludedProducts, getBadgeColor, getStatusColor } from "@src/lib/jira";
+import type { IRoadmapItem, RoadmapProduct } from "@src/lib/roadmap";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { cn } from "@/src/lib/util";
+import { getQueryValue } from "@/src/lib/util/requests";
+import { slugify } from "@/src/lib/util/stringUtil";
 
 interface RoadmapItemProps {
   item: IRoadmapItem;
 }
 
-export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemProps) => {
+export const RoadmapItem: React.FC<RoadmapItemProps> = ({
+  item,
+}: RoadmapItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const { details } = router.query;
   const selectedItem = getQueryValue(details);
-  const images: string[] = item.attachments?.map((attachment) => attachment.url) || [];
+  const images: string[] =
+    item.attachments?.map((attachment) => attachment.url) || [];
 
   useEffect(() => {
     if (selectedItem.toLowerCase() === item.id.toString()) {
@@ -40,7 +55,11 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
     <>
       <Card style="outline" elevation="xs" padding="sm">
         <CardHeader>
-          <button type="button" className="text-base font-heading font-semibold cursor-pointer hover:underline text-left w-full" onClick={handleClick}>
+          <button
+            type="button"
+            className="text-base font-heading font-semibold cursor-pointer hover:underline text-left w-full"
+            onClick={handleClick}
+          >
             {item.title}
           </button>
         </CardHeader>
@@ -54,7 +73,10 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Link href={`/roadmap/${slugify(label.name)}`} className="hover:underline">
+                        <Link
+                          href={`/roadmap/${slugify(label.name)}`}
+                          className="hover:underline"
+                        >
                           {label.name}
                         </Link>
                       </TooltipTrigger>
@@ -73,30 +95,47 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
         <SheetContent className="w-full sm:max-w-2xl">
           <SheetHeader>
             <SheetTitle>
-              <LinkedHeading id={slugify(item.id.toString())}>{item.title}</LinkedHeading>
+              <LinkedHeading id={slugify(item.id.toString())}>
+                {item.title}
+              </LinkedHeading>
             </SheetTitle>
           </SheetHeader>
           <SheetDescription>
             <Card style="outline" elevation="xs" padding="sm" className="mx-4">
               <CardContent>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground">Roadmap Phase:</p>
-                  <Badge variant="default" className={getBadgeColor(item.roadmapPhase)}>
+                  <p className="text-sm uppercase tracking-wide text-muted-foreground">
+                    Roadmap Phase:
+                  </p>
+                  <Badge
+                    variant="default"
+                    className={getBadgeColor(item.roadmapPhase)}
+                  >
                     {item.roadmapPhase}
                   </Badge>
                 </div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground">Status:</p>
-                  <Badge variant="default" className={getStatusColor(item.status)}>
+                  <p className="text-sm uppercase tracking-wide text-muted-foreground">
+                    Status:
+                  </p>
+                  <Badge
+                    variant="default"
+                    className={getStatusColor(item.status)}
+                  >
                     {item.status}
                   </Badge>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <p className="text-sm uppercase tracking-wide text-muted-foreground">Product(s):</p>
+                  <p className="text-sm uppercase tracking-wide text-muted-foreground">
+                    Product(s):
+                  </p>
                   {item.product?.map((label: RoadmapProduct) => (
                     <Badge key={label.id} variant="default">
-                      <Link href={`/roadmap/${slugify(label.name)}`} className="hover:underline">
+                      <Link
+                        href={`/roadmap/${slugify(label.name)}`}
+                        className="hover:underline"
+                      >
                         {label.name}
                       </Link>
                     </Badge>
@@ -104,19 +143,33 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
                 </div>
               </CardContent>
             </Card>
-            <div className={cn('flex-1 overflow-y-auto mt-2', item.attachments.length > 0 ? 'max-h-[550px]' : 'max-h-[750px]')}>
-              <article className="prose max-w-none p-4" dangerouslySetInnerHTML={{ __html: item.description }} />
+            <div
+              className={cn(
+                "flex-1 overflow-y-auto mt-2",
+                item.attachments.length > 0 ? "max-h-[550px]" : "max-h-[750px]",
+              )}
+            >
+              <article
+                className="prose max-w-none p-4"
+                dangerouslySetInnerHTML={{ __html: item.description }}
+              />
             </div>
           </SheetDescription>
           {item.attachments.length > 0 && (
             <SheetFooter className="flex-col items-start">
               <div className="w-full">
                 <hr className="my-4" />
-                <p className="text-sm uppercase tracking-wide text-muted-foreground mb-1">Attachments:</p>
+                <p className="text-sm uppercase tracking-wide text-muted-foreground mb-1">
+                  Attachments:
+                </p>
                 <div className="flex gap-2 h-[100px]">
                   {images.map((url) => (
                     <div className="w-[20%] shrink-0" key={url}>
-                      <ImageModal src={url} disableModal={false} border="none" />
+                      <ImageModal
+                        src={url}
+                        disableModal={false}
+                        border="none"
+                      />
                     </div>
                   ))}
                 </div>

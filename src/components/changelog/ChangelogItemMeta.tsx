@@ -1,11 +1,5 @@
 "use client";
 
-import {
-  getColorSchemebyChangeType,
-  getColorSchemebyStatus,
-} from "@/src/lib/changelog/utils/variants";
-import { cn } from "@/src/lib/util";
-import { getSlug } from "@/src/lib/util/stringUtil";
 import { mdiSquareEditOutline } from "@mdi/js";
 import Icon from "@mdi/react";
 import { Badge } from "@src/components/ui/badge";
@@ -23,9 +17,15 @@ import {
 } from "@src/components/ui/tooltip";
 import { usePreview } from "@src/context/PreviewContext";
 import type { ChangelogEntry } from "@src/lib/changelog/types";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import {
+  getColorSchemebyChangeType,
+  getColorSchemebyStatus,
+} from "@/src/lib/changelog/utils/variants";
+import { cn } from "@/src/lib/util";
+import { getSlug } from "@/src/lib/util/stringUtil";
 import { ProductIcon } from "./ProductIcon";
 
 type ChangelogItemMetaProps = {

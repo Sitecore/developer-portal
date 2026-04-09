@@ -1,4 +1,3 @@
-import { cn } from "@/src/lib/util";
 import { Button } from "@src/components/ui/button";
 import {
   Card,
@@ -9,6 +8,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { cn } from "@/src/lib/util";
 
 type ArticleProps = {
   title: string;

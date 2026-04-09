@@ -1,6 +1,6 @@
-import { cn } from "@/src/lib/util";
 import { LinkButton } from "@src/components/links";
 import { Card, CardContent } from "@src/components/ui/card";
+import { cn } from "@/src/lib/util";
 
 export type CTACardProps = {
   description: string;

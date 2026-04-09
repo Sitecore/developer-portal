@@ -45,7 +45,7 @@ const nextConfig = {
   // Turbopack configuration to help with resource limits
   turbopack: {
     // Reduce memory usage by limiting concurrent operations
-    resolveExtensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+    resolveExtensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
   },
 
   // Set locales so we have appropriate lang attributes without a custom _document
@@ -64,62 +64,62 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     localPatterns: [
       {
-        pathname: '/api/roadmap/image',
+        pathname: "/api/roadmap/image",
       },
       {
-        pathname: '/images/**',
+        pathname: "/images/**",
       },
     ],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'sitecorecdn.azureedge.net',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "sitecorecdn.azureedge.net",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'i.ytimg.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: '**.sitecorecontenthub.cloud',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "**.sitecorecontenthub.cloud",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: '**.stylelabs.cloud',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "**.stylelabs.cloud",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: '**.sitecore.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "**.sitecore.com",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: '**.sitecorecloud.io',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "**.sitecorecloud.io",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'wwwsitecorecom.azureedge.net',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "wwwsitecorecom.azureedge.net",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: '**.gitbook.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "**.gitbook.com",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'theme.zdassets.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "theme.zdassets.com",
+        pathname: "/**",
       },
       {
-        protocol: 'https',
-        hostname: 'opengraph.githubassets.com',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "opengraph.githubassets.com",
+        pathname: "/**",
       },
     ],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
@@ -128,7 +128,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: "/(.*)",
         headers: securityHeaders,
       },
     ];
@@ -139,20 +139,20 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/Downloads/:slug*',
-        destination: '/downloads/:slug*',
+        source: "/Downloads/:slug*",
+        destination: "/downloads/:slug*",
       },
       {
-        source: '/learn/accelerate/xm-cloud/updates',
-        destination: '/feeds/rss-accelerate-xmcloud.xml',
+        source: "/learn/accelerate/xm-cloud/updates",
+        destination: "/feeds/rss-accelerate-xmcloud.xml",
       },
       {
-        source: '/learn/accelerate/content-hub/updates',
-        destination: '/feeds/rss-accelerate-contenthub.xml',
+        source: "/learn/accelerate/content-hub/updates",
+        destination: "/feeds/rss-accelerate-contenthub.xml",
       },
       {
-        source: '/learn/accelerate/updates',
-        destination: '/feeds/rss-accelerate.xml',
+        source: "/learn/accelerate/updates",
+        destination: "/feeds/rss-accelerate.xml",
       },
     ];
   },

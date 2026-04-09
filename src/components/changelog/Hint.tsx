@@ -1,8 +1,13 @@
-import { getSlug } from '@/src/lib/util/stringUtil';
-import { Alert, AlertTitle } from '@src/components/ui/alert';
-import type { Option } from '@src/components/ui/dropdown';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@src/components/ui/tooltip';
-import Link from 'next/link';
+import { Alert, AlertTitle } from "@src/components/ui/alert";
+import type { Option } from "@src/components/ui/dropdown";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@src/components/ui/tooltip";
+import Link from "next/link";
+import { getSlug } from "@/src/lib/util/stringUtil";
 
 type HintProps = { products?: Array<Option>; enabled: boolean };
 
@@ -17,8 +22,12 @@ export const Hint = ({ products, enabled }: HintProps) => {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Link href={`/changelog/${getSlug(products[0].label)}`} className="hover:underline">
-                Did you know that {products[0].label} has its own changelog page?
+              <Link
+                href={`/changelog/${getSlug(products[0].label)}`}
+                className="hover:underline"
+              >
+                Did you know that {products[0].label} has its own changelog
+                page?
               </Link>
             </TooltipTrigger>
             <TooltipContent>

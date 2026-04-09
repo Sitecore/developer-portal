@@ -1,9 +1,9 @@
-import type { NextFetchEvent, NextRequest } from 'next/server';
+import type { NextFetchEvent, NextRequest } from "next/server";
 
-import { aspxExtension } from './middlewares/aspxExtension';
-import { mediaHandler } from './middlewares/mediaHandler';
-import { stackProxies } from './middlewares/stackHandler';
-import { underscore } from './middlewares/underscore';
+import { aspxExtension } from "./middlewares/aspxExtension";
+import { mediaHandler } from "./middlewares/mediaHandler";
+import { stackProxies } from "./middlewares/stackHandler";
+import { underscore } from "./middlewares/underscore";
 
 export const config = {
   matcher: [
@@ -12,7 +12,7 @@ export const config = {
      * - Exclude API routes, static files, images, HMR routes, and common assets
      * - Include specific routes that need proxy processing
      */
-    '/((?!api|_next/static|_next/image|_next/webpack-hmr|_next/data|favicon.ico|.*\\.(?:ico|png|jpg|jpeg|svg|gif|webp|woff|woff2|ttf|eot)).*)',
+    "/((?!api|_next/static|_next/image|_next/webpack-hmr|_next/data|favicon.ico|.*\\.(?:ico|png|jpg|jpeg|svg|gif|webp|woff|woff2|ttf|eot)).*)",
   ],
 };
 

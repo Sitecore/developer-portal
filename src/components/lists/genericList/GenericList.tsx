@@ -1,8 +1,8 @@
-import { cn } from "@/src/lib/util";
 import { LinkButton } from "@src/components/links";
 import { CardContent, CardFooter, CardHeader } from "@src/components/ui/card";
 import { ExtendedCard } from "@src/components/ui/custom/card-extended";
 import Image from "next/image";
+import { cn } from "@/src/lib/util";
 import type { CardVariant, GenericListData, GenericListItem } from "./types";
 
 const GRID_COLUMN_CLASSES: Record<number, string> = {

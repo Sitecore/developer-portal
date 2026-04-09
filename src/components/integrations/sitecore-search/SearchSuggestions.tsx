@@ -1,5 +1,5 @@
-import { cn } from '@src/components/lib/utils';
-import { Button } from '@src/components/ui/button';
+import { cn } from "@src/components/lib/utils";
+import { Button } from "@src/components/ui/button";
 
 interface SuggestionArticle {
   text?: string;
@@ -16,12 +16,19 @@ interface SearchSuggestionsProps {
   onActiveItem?: (item: string) => void;
 }
 
-export const SearchSuggestions = ({ groupTitle, groupId, articles, onItemClick, activeItem, onActiveItem }: SearchSuggestionsProps) => {
+export const SearchSuggestions = ({
+  groupTitle,
+  groupId,
+  articles,
+  onItemClick,
+  activeItem,
+  onActiveItem,
+}: SearchSuggestionsProps) => {
   const getText = (article: SuggestionArticle | string): string => {
-    if (typeof article === 'string') {
+    if (typeof article === "string") {
       return article;
     }
-    return article.text || article.value || article.displayName || '';
+    return article.text || article.value || article.displayName || "";
   };
 
   const handleClick = (text: string) => {
@@ -37,7 +44,9 @@ export const SearchSuggestions = ({ groupTitle, groupId, articles, onItemClick, 
 
   return (
     <div>
-      <p className="px-2 py-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">{groupTitle}</p>
+      <p className="px-2 py-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+        {groupTitle}
+      </p>
       <div className="flex flex-col gap-1">
         {articles.map((article, index) => {
           const text = getText(article);
@@ -49,7 +58,15 @@ export const SearchSuggestions = ({ groupTitle, groupId, articles, onItemClick, 
           }
 
           return (
-            <Button key={`${itemId}-${index}`} variant="ghost" className={cn('justify-start text-left h-auto py-1.5 px-2 text-sm rounded-md', isActive && 'bg-muted')} onClick={() => handleClick(text)}>
+            <Button
+              key={`${itemId}-${index}`}
+              variant="ghost"
+              className={cn(
+                "justify-start text-left h-auto py-1.5 px-2 text-sm rounded-md",
+                isActive && "bg-muted",
+              )}
+              onClick={() => handleClick(text)}
+            >
               <span className="truncate">{text}</span>
             </Button>
           );

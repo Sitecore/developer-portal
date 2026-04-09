@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/src/lib/util";
 import { mdiRss } from "@mdi/js";
 import Icon from "@mdi/react";
 import { TextLink } from "@src/components/links";
@@ -19,9 +18,10 @@ import {
 } from "@src/components/ui/tabs";
 import type { AccelerateRecipe } from "@src/lib/accelerate/types/recipe";
 import { GetProductIcon, Product, Variant } from "@src/lib/assets";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { cn } from "@/src/lib/util";
 
 type AccelerateUpdatesProps = {
   recipes: AccelerateRecipe[];

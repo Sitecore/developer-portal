@@ -1,9 +1,9 @@
 "use client";
 
-import { translateDate } from "@/src/lib/util/dateUtil";
 import { Card, CardContent, CardFooter } from "@src/components/ui/card";
 import { Skeleton } from "@src/components/ui/skeleton";
 import NextLink from "next/link";
+import { translateDate } from "@/src/lib/util/dateUtil";
 import { SITECORE_COMMUNITY_URL } from "./sitecore-community.constants";
 import type { SitecoreCommunityContent } from "./types";
 

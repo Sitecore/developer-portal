@@ -2,7 +2,7 @@ import { MultiSelect, type Option } from "@src/components/ui/dropdown";
 import { Skeleton } from "@src/components/ui/skeleton";
 import type { Product } from "@src/lib/changelog/types";
 import { useState } from "react";
-import { Field, FieldLabel } from '../ui/field';
+import { Field, FieldLabel } from "../ui/field";
 
 type ChangelogFilterProps = {
   className?: string;
@@ -14,7 +14,13 @@ type ChangelogFilterProps = {
   onSelectChange: (selectedValues: Array<Option>) => void;
 };
 
-const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: ChangelogFilterProps) => {
+const ChangelogFilter = ({
+  options,
+  id,
+  label,
+  placeholder,
+  onSelectChange,
+}: ChangelogFilterProps) => {
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
 
   if (!options) {
@@ -36,7 +42,7 @@ const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: Ch
         }}
         value={selectedChange}
         isSelectAll={true}
-        menuPlacement={'bottom'}
+        menuPlacement={"bottom"}
         placeholder={placeholder}
         className="sm:min-w-[450px] text-md"
       />

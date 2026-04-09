@@ -59,30 +59,29 @@ const GithubContributionNotice = ({
 
   return (
     <Alert variant="default">
-        <AlertTitle>Have feedback or a recipe suggestion?</AlertTitle>
-        <AlertDescription>
-          <ul className="list-disc list-inside">
-            <li>
-              For recipe suggestions, questions or feedback, please use the{" "}
-              <Feedback
-                variant={"link"}
-                className="p-0"
-                projectId="RCPS"
-                issueTypeId="3"
-                product={config?.productFeedbackLabel}
-              />{" "}
-              form.
-            </li>
-            <li>
-              For direct contribution, please{" "}
-              <Link href="/contribute" className="text-primary hover:underline">
-                create a pull request
-              </Link>{" "}
-              on the Github repository for review.
-            </li>
-          </ul>
-        </AlertDescription>
-      
+      <AlertTitle>Have feedback or a recipe suggestion?</AlertTitle>
+      <AlertDescription>
+        <ul className="list-disc list-inside">
+          <li>
+            For recipe suggestions, questions or feedback, please use the{" "}
+            <Feedback
+              variant={"link"}
+              className="p-0"
+              projectId="RCPS"
+              issueTypeId="3"
+              product={config?.productFeedbackLabel}
+            />{" "}
+            form.
+          </li>
+          <li>
+            For direct contribution, please{" "}
+            <Link href="/contribute" className="text-primary hover:underline">
+              create a pull request
+            </Link>{" "}
+            on the Github repository for review.
+          </li>
+        </ul>
+      </AlertDescription>
     </Alert>
   );
 };

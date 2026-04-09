@@ -1,18 +1,28 @@
-import { cn } from '@/src/lib/util';
-import type { PreviewSearchInitialState } from '@sitecore-search/react';
-import { trackEntityPageViewEvent, usePreviewSearch, widget, WidgetDataType } from '@sitecore-search/react';
-import { Badge } from '@src/components/ui/badge';
-import { Button } from '@src/components/ui/button';
-import { Input } from '@src/components/ui/input';
-import { ProductLogo } from '@src/components/ui/logos';
-import { Product } from '@src/lib/assets';
-import { ArrowRight, Loader2, Search, X } from 'lucide-react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import type { ChangeEvent, FormEvent } from 'react';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '../../ui/dialog';
-import { SearchSuggestions } from './SearchSuggestions';
+import type { PreviewSearchInitialState } from "@sitecore-search/react";
+import {
+  trackEntityPageViewEvent,
+  usePreviewSearch,
+  WidgetDataType,
+  widget,
+} from "@sitecore-search/react";
+import { Badge } from "@src/components/ui/badge";
+import { Button } from "@src/components/ui/button";
+import { Input } from "@src/components/ui/input";
+import { ProductLogo } from "@src/components/ui/logos";
+import { Product } from "@src/lib/assets";
+import { ArrowRight, Loader2, Search, X } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import type { ChangeEvent, FormEvent } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { cn } from "@/src/lib/util";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "../../ui/dialog";
+import { SearchSuggestions } from "./SearchSuggestions";
 
 type ArticleModel = {
   id: string;
@@ -29,35 +39,46 @@ type ArticleModel = {
   };
 };
 
-type InitialState = PreviewSearchInitialState<'itemsPerPage' | 'suggestionsList'>;
+type InitialState = PreviewSearchInitialState<
+  "itemsPerPage" | "suggestionsList"
+>;
 
 interface PreviewSearchProps {
   defaultItemsPerPage?: number;
 }
 
-const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps) => {
+const PreviewSearchComponent = ({
+  defaultItemsPerPage = 6,
+}: PreviewSearchProps) => {
   const router = useRouter();
-  const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
+  const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(",") || [];
   const { q } = router.query;
   const {
-    state: { keyphrase = q || '' },
+    state: { keyphrase = q || "" },
     actions: { onItemClick, onKeyphraseChange, onSuggestionClick },
-    queryResult: { isFetching, isLoading, data: { content: articles = [], suggestion: { name_suggester: articleSuggestions = [] } = {} } = {} },
+    queryResult: {
+      isFetching,
+      isLoading,
+      data: {
+        content: articles = [],
+        suggestion: { name_suggester: articleSuggestions = [] } = {},
+      } = {},
+    },
   } = usePreviewSearch<ArticleModel, InitialState>({
     query: (query) =>
       query
         .getRequest()
         .setSearchQueryHighlight({
-          fields: ['description'],
+          fields: ["description"],
           fragment_size: 100,
-          pre_tag: '<strong>',
-          post_tag: '</strong>',
+          pre_tag: "<strong>",
+          post_tag: "</strong>",
         })
         .setSources(indexSources),
     state: {
       suggestionsList: [
         {
-          suggestion: 'name_suggester',
+          suggestion: "name_suggester",
           max: 10,
         },
       ],
@@ -74,14 +95,16 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
         keyphrase: event.target.value,
       });
     },
-    [onKeyphraseChange]
+    [onKeyphraseChange],
   );
 
   const onGotoFullSearch = useCallback(
     (text: string) => {
-      router.push(`/search?q=${encodeURIComponent(text)}`).then(() => router.reload());
+      router
+        .push(`/search?q=${encodeURIComponent(text)}`)
+        .then(() => router.reload());
     },
-    [router]
+    [router],
   );
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -94,7 +117,7 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
   };
 
   const handleClearSearch = () => {
-    onKeyphraseChange({ keyphrase: '' });
+    onKeyphraseChange({ keyphrase: "" });
     inputRef.current?.focus();
   };
 
@@ -110,7 +133,12 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
-        <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full hover:bg-muted/50 transition-colors" onClick={() => setIsDialogOpen(true)}>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-10 w-10 rounded-full hover:bg-muted/50 transition-colors"
+          onClick={() => setIsDialogOpen(true)}
+        >
           <Search className="h-5 w-5" />
           <span className="sr-only">Open search</span>
         </Button>
@@ -134,7 +162,11 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
                 ref={inputRef}
                 onChange={keyphraseHandler}
                 placeholder="search for..."
-                className={cn('w-full h-12 pl-10 pr-10 bg-background border border-input rounded-md text-sm transition-colors', 'focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent', 'placeholder:text-muted-foreground text-lg')}
+                className={cn(
+                  "w-full h-12 pl-10 pr-10 bg-background border border-input rounded-md text-sm transition-colors",
+                  "focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
+                  "placeholder:text-muted-foreground text-lg",
+                )}
                 name="query"
                 value={keyphrase}
                 onFocus={() => setIsDialogOpen(true)}
@@ -142,7 +174,13 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
               />
             </div>
             {keyphrase.length > 0 && (
-              <Button type="button" variant="ghost" size="sm" className="absolute right-2 top-1/2 transform -translate-y-1/2 h-6 w-6 p-0 hover:bg-muted" onClick={handleClearSearch}>
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 h-6 w-6 p-0 hover:bg-muted"
+                onClick={handleClearSearch}
+              >
                 <X className="h-4 w-4" />
               </Button>
             )}
@@ -150,7 +188,9 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
             {/* Powered by section inside the input */}
             {keyphrase.length === 0 && (
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none select-none flex items-center">
-                <span className="mr-1 text-xs text-muted-foreground">Powered by</span>
+                <span className="mr-1 text-xs text-muted-foreground">
+                  Powered by
+                </span>
                 <ProductLogo product={Product.Search} width={67} height={18} />
               </div>
             )}
@@ -169,30 +209,42 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
               {!isLoading && !isFetching && (
                 <ul className="list-none">
                   {articles.map((article, index) => (
-                    <li key={`${article.id}-${article.source_id}`} className="w-full">
+                    <li
+                      key={`${article.id}-${article.source_id}`}
+                      className="w-full"
+                    >
                       <article className="p-2 rounded-md hover:bg-muted">
                         <Link
                           href={article.url}
                           onClick={(e) => {
                             e.preventDefault();
                             onItemClick({
-                              id: article.id || '',
+                              id: article.id || "",
                               index,
                             });
 
-                            if (article.index_name !== 'sitecore-devportal-v2') {
-                              trackEntityPageViewEvent('content', {
+                            if (
+                              article.index_name !== "sitecore-devportal-v2"
+                            ) {
+                              trackEntityPageViewEvent("content", {
                                 items: [{ id: article.id }],
                               });
-                              window.open(article.url, '_blank');
+                              window.open(article.url, "_blank");
                             } else {
-                              window.open(`${article.url}?fromSearch=true`, '_blank');
+                              window.open(
+                                `${article.url}?fromSearch=true`,
+                                "_blank",
+                              );
                             }
                           }}
                           className="block"
                         >
-                          <h4 className="text-sm font-heading line-clamp-1">{article.name}</h4>
-                          <p className="text-sm line-clamp-1">{article.description}</p>
+                          <h4 className="text-sm font-heading line-clamp-1">
+                            {article.name}
+                          </h4>
+                          <p className="text-sm line-clamp-1">
+                            {article.description}
+                          </p>
                           <div className="flex gap-2 items-center mb-2 w-full">
                             {article.type && (
                               <Badge variant="default" className="text-xs">
@@ -213,13 +265,18 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
               )}
 
               {/* No Results Message */}
-              {!isLoading && !isFetching && articles.length === 0 && keyphrase.toString().trim().length > 0 && (
-                <div className="flex justify-center items-center py-8">
-                  <span className="text-sm text-center text-muted-foreground">
-                    <span className="font-medium">{keyphrase}</span> returned <span className="font-medium">{articles.length}</span> results
-                  </span>
-                </div>
-              )}
+              {!isLoading &&
+                !isFetching &&
+                articles.length === 0 &&
+                keyphrase.toString().trim().length > 0 && (
+                  <div className="flex justify-center items-center py-8">
+                    <span className="text-sm text-center text-muted-foreground">
+                      <span className="font-medium">{keyphrase}</span> returned{" "}
+                      <span className="font-medium">{articles.length}</span>{" "}
+                      results
+                    </span>
+                  </div>
+                )}
 
               {/* View All Results Button */}
               {!isLoading && !isFetching && articles.length > 0 && (
@@ -243,7 +300,9 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
             {articleSuggestions.length > 0 && (
               <div className="lg:col-span-1">
                 <div className="mb-2">
-                  <span className="font-medium text-muted-foreground">Suggestions</span>
+                  <span className="font-medium text-muted-foreground">
+                    Suggestions
+                  </span>
                 </div>
                 <div className="space-y-1">
                   <SearchSuggestions
@@ -252,8 +311,8 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
                     articles={articleSuggestions}
                     onItemClick={(text) =>
                       onSuggestionClick({
-                        name: 'article_name_context_aware',
-                        title: 'Suggestions',
+                        name: "article_name_context_aware",
+                        title: "Suggestions",
                         value: text,
                         displayName: text,
                       })
@@ -269,4 +328,8 @@ const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }: PreviewSearchProps)
   );
 };
 
-export const PreviewSearchInput = widget(PreviewSearchComponent, WidgetDataType.PREVIEW_SEARCH, 'content');
+export const PreviewSearchInput = widget(
+  PreviewSearchComponent,
+  WidgetDataType.PREVIEW_SEARCH,
+  "content",
+);

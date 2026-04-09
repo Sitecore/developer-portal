@@ -1,6 +1,6 @@
 import type { Product } from "@src/lib/changelog/types";
 import type { PageInfo } from "@src/lib/interfaces/page-info";
-import { type FC } from "react";
+import type { FC } from "react";
 
 interface TrackPageViewProps {
   children: React.ReactNode;

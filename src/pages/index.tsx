@@ -51,20 +51,54 @@ type HomePageProps = {
 const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
   return (
     <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
+      <Layout
+        title={pageInfo.title}
+        description={pageInfo.description}
+        openGraphImage={pageInfo.openGraphImage}
+      >
         <Hero title={pageInfo.title} description={pageInfo.description} />
 
         <VerticalGroup>
-          <CenteredContent >
+          <CenteredContent>
             <Row columns={2}>
-              <ChangelogEntries entries={pageInfo.changelogEntries.slice(0, 5)} title="Latest changelog updates" linkText="Full changelog" />
-              <AccelerateUpdates recipes={recipes} title="Sitecore Accelerate updates" linkHref="/learn/accelerate" linkText="See all recipes" url="/learn/accelerate/" />
+              <ChangelogEntries
+                entries={pageInfo.changelogEntries.slice(0, 5)}
+                title="Latest changelog updates"
+                linkText="Full changelog"
+              />
+              <AccelerateUpdates
+                recipes={recipes}
+                title="Sitecore Accelerate updates"
+                linkHref="/learn/accelerate"
+                linkText="See all recipes"
+                url="/learn/accelerate/"
+              />
             </Row>
             <Row columns={4}>
-              <Article title="Get Started" description="New to Sitecore? Start here essential setup documentation to build your first application." linktext="Get started" link="/sitecoreai" />
-              <Article title="Documentation" description="Comprehensive product documentation including feature usage and SDK documentation." linktext="Browse Docs" link="https://doc.sitecore.com/" />
-              <Article title="Developer Experience" description="Access and development resources to accelerate your workflow." linktext="Explore Tools" link="/sitecoreai/dev-experience" />
-              <Article title="Changelog" description="The changelog provides visibility into key product updates, including new features, enhancements, resolutions and architectural improvements." linktext="View Changelog" link="/changelog" />
+              <Article
+                title="Get Started"
+                description="New to Sitecore? Start here essential setup documentation to build your first application."
+                linktext="Get started"
+                link="/sitecoreai"
+              />
+              <Article
+                title="Documentation"
+                description="Comprehensive product documentation including feature usage and SDK documentation."
+                linktext="Browse Docs"
+                link="https://doc.sitecore.com/"
+              />
+              <Article
+                title="Developer Experience"
+                description="Access and development resources to accelerate your workflow."
+                linktext="Explore Tools"
+                link="/sitecoreai/dev-experience"
+              />
+              <Article
+                title="Changelog"
+                description="The changelog provides visibility into key product updates, including new features, enhancements, resolutions and architectural improvements."
+                linktext="View Changelog"
+                link="/changelog"
+              />
             </Row>
           </CenteredContent>
         </VerticalGroup>
@@ -74,11 +108,20 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
             <ProductLogo product={Product.SitecoreAI} width={280} height={67} />
 
             <p className="hidden md:block text-lg text-center mx-auto text-muted-foreground font-medium font-sans">
-              Explore a unified platform that brings together content, data, personalisation, and intelligent automation: designed for developers, marketers, and partners alike. Join a thriving community of over 4,000 daily active developers shaping
-              the future of digital experience. Whether you&apos;re migrating from CMS or scaling across channels, SitecoreAI empowers you to deliver personalised, measurable outcomes.
+              Explore a unified platform that brings together content, data,
+              personalisation, and intelligent automation: designed for
+              developers, marketers, and partners alike. Join a thriving
+              community of over 4,000 daily active developers shaping the future
+              of digital experience. Whether you&apos;re migrating from CMS or
+              scaling across channels, SitecoreAI empowers you to deliver
+              personalised, measurable outcomes.
             </p>
 
-            <GenericList data={platformData.data} column={3} cardVariant="blurred" />
+            <GenericList
+              data={platformData.data}
+              column={3}
+              cardVariant="blurred"
+            />
           </CenteredContent>
         </VerticalGroup>
 
@@ -95,8 +138,13 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
         <VerticalGroup className="p-4 bg-gray-100 dark:bg-muted">
           <CenteredContent>
             <div className="flex flex-col gap-4 text-center mb-8">
-              <h2 className="text-4xl font-heading font-medium">Sitecore Experience Platform</h2>
-              <p className="text-muted-foreground">Deliver personalized experiences by combining customer data, AI, and marketing automation with our Sitecore Experience Platform™</p>
+              <h2 className="text-4xl font-heading font-medium">
+                Sitecore Experience Platform
+              </h2>
+              <p className="text-muted-foreground">
+                Deliver personalized experiences by combining customer data, AI,
+                and marketing automation with our Sitecore Experience Platform™
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -124,11 +172,30 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
 
         <VerticalGroup>
           <CenteredContent className="space-y-4">
-            <SitecoreCommunityBlog entries={pageInfo.sitecoreCommunity.blog} sortKeys={pageInfo.sitecoreCommunityBlogSort} />
-            <SitecoreCommunityNews data={pageInfo.sitecoreCommunity.news} title="Community news" />
-            <SitecoreCommunityEvents data={pageInfo.sitecoreCommunity.events} title="Community Events" />
-            <YouTubeFeed data={pageInfo.youtube} title={pageInfo.youtubeTitle} playlistTitle={pageInfo.youtubePlaylistTitle} />
-            <GenericList data={communityListData.data} title={communityListData.title} subtitle={communityListData.subtitle} column={3} cardVariant="borderedImage" />
+            <SitecoreCommunityBlog
+              entries={pageInfo.sitecoreCommunity.blog}
+              sortKeys={pageInfo.sitecoreCommunityBlogSort}
+            />
+            <SitecoreCommunityNews
+              data={pageInfo.sitecoreCommunity.news}
+              title="Community news"
+            />
+            <SitecoreCommunityEvents
+              data={pageInfo.sitecoreCommunity.events}
+              title="Community Events"
+            />
+            <YouTubeFeed
+              data={pageInfo.youtube}
+              title={pageInfo.youtubeTitle}
+              playlistTitle={pageInfo.youtubePlaylistTitle}
+            />
+            <GenericList
+              data={communityListData.data}
+              title={communityListData.title}
+              subtitle={communityListData.subtitle}
+              column={3}
+              cardVariant="borderedImage"
+            />
           </CenteredContent>
         </VerticalGroup>
 
@@ -140,7 +207,11 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
 
         <VerticalGroup>
           <CenteredContent>
-            <SitecoreCommunityQuestions data={pageInfo.sitecoreCommunity.questions} sortKeys={pageInfo.sitecoreCommunityQuestionsSort} forumKeys={pageInfo.sitecoreCommunityQuestionsCategory} />
+            <SitecoreCommunityQuestions
+              data={pageInfo.sitecoreCommunity.questions}
+              sortKeys={pageInfo.sitecoreCommunityQuestionsSort}
+              forumKeys={pageInfo.sitecoreCommunityQuestionsCategory}
+            />
             <StackExchangeFeed data={pageInfo.stackexchange} />
           </CenteredContent>
         </VerticalGroup>

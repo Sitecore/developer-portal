@@ -1,9 +1,5 @@
 "use client";
 
-import { getColorSchemebyChangeType } from "@/src/lib/changelog/utils/variants";
-import { cn } from "@/src/lib/util";
-import { getSlug } from "@/src/lib/util/stringUtil";
-import { getChangelogEntryUrl } from "@/src/lib/util/urlUtil";
 import { mdiRss } from "@mdi/js";
 import Icon from "@mdi/react";
 import { TextLink } from "@src/components/links";
@@ -21,9 +17,13 @@ import {
   PopoverTrigger,
 } from "@src/components/ui/popover";
 import type { ChangelogEntry } from "@src/lib/changelog/types";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { getColorSchemebyChangeType } from "@/src/lib/changelog/utils/variants";
+import { cn } from "@/src/lib/util";
+import { getSlug } from "@/src/lib/util/stringUtil";
+import { getChangelogEntryUrl } from "@/src/lib/util/urlUtil";
 
 type ChangelogEntriesProps = {
   entries: Array<ChangelogEntry>;

@@ -7,8 +7,14 @@ import type { PageInfo } from "@src/lib/interfaces/page-info";
 import { useState } from "react";
 import { toast } from "sonner";
 import { ButtonGroup } from "../../ui/button-group";
-import { OpenIn, OpenInChatGPT, OpenInClaude, OpenInContent, OpenInCursor, OpenInTrigger } from "../../ui/custom/open-in-chat";
-
+import {
+  OpenIn,
+  OpenInChatGPT,
+  OpenInClaude,
+  OpenInContent,
+  OpenInCursor,
+  OpenInTrigger,
+} from "../../ui/custom/open-in-chat";
 
 export type useWithAIProps = {
   pageInfo: PageInfo;
@@ -16,11 +22,12 @@ export type useWithAIProps = {
 
 export const useWithAI = ({ pageInfo }: useWithAIProps) => {
   const editUrl = "https://github.com/sitecore/developer-portal/edit";
-  const rawUrl = "https://raw.githubusercontent.com/Sitecore/developer-portal/refs/heads";
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/+$/, '') ?? ''
+  const rawUrl =
+    "https://raw.githubusercontent.com/Sitecore/developer-portal/refs/heads";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/+$/, "") ?? "";
   const urltoParse = pageInfo.fileName.replace(editUrl, rawUrl);
-  const markdownUrl = `${baseUrl}${encodeURIComponent(urltoParse)}`
-  const sampleQuery = `Read this article ${decodeURIComponent(markdownUrl)} so I can questions about it`
+  const markdownUrl = `${baseUrl}${encodeURIComponent(urltoParse)}`;
+  const sampleQuery = `Read this article ${decodeURIComponent(markdownUrl)} so I can questions about it`;
 
   const [isCopied, setIsCopied] = useState(false);
 
@@ -34,7 +41,12 @@ export const useWithAI = ({ pageInfo }: useWithAIProps) => {
   return (
     <div className="w-full z-1 xl:block not-prose">
       <ButtonGroup>
-        <Button variant="outline" size="sm" onClick={onCopy} className="rounded-sm">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={onCopy}
+          className="rounded-sm"
+        >
           <span className="text-sm">Copy link</span>
           {isCopied ? (
             <Icon path={mdiCheck} size={0.9} />

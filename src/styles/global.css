@@ -675,7 +675,6 @@
 }
 
 @layer utilities {
-
   .bg-hero-gradient {
     @apply bg-[linear-gradient(51deg,oklch(95.5%_.025_278deg),oklch(96.5%_.02_275deg)_10%,oklch(98.5%_.01_270deg)_20%,oklch(99%_.003_260deg)_40%,oklch(99%_.003_20deg)_60%,oklch(98%_.015_20deg)_80%,oklch(96%_.025_20deg)_90%,oklch(91%_.045_20deg))];
   }

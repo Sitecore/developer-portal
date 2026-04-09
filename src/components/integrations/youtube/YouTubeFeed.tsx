@@ -1,9 +1,9 @@
-import { cn } from "@/src/lib/util";
 import { TextLink } from "@src/components/links/TextLink";
 import { CardContent, CardHeader } from "@src/components/ui/card";
 import { ExtendedCard } from "@src/components/ui/custom/card-extended";
 import Image from "next/image";
 import NextLink from "next/link";
+import { cn } from "@/src/lib/util";
 import type { YouTubeSnippet, YouTubeVideo } from "./youTube";
 
 type YouTubeFeedProps = {
