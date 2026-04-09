@@ -1,9 +1,10 @@
+import { cn } from "@/src/lib/util";
 import type { PreviewSearchInitialState } from "@sitecore-search/react";
 import {
   trackEntityPageViewEvent,
   usePreviewSearch,
-  WidgetDataType,
   widget,
+  WidgetDataType,
 } from "@sitecore-search/react";
 import { Badge } from "@src/components/ui/badge";
 import { Button } from "@src/components/ui/button";
@@ -15,7 +16,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import type { ChangeEvent, FormEvent } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { cn } from "@/src/lib/util";
 import {
   Dialog,
   DialogContent,
@@ -154,11 +154,12 @@ const PreviewSearchComponent = ({
 
           <form onSubmit={handleSubmit} className="relative mb-6">
             <div className="relative">
-              <label className="sr-only">Search:</label>
+              <label htmlFor="search-input" className="sr-only">Search:</label>
               <div className="absolute left-3 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none select-none">
                 <Search className="h-4 w-4 text-muted-foreground" />
               </div>
               <Input
+                id="search-input"
                 ref={inputRef}
                 onChange={keyphraseHandler}
                 placeholder="search for..."

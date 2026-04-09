@@ -58,7 +58,9 @@ export const SearchSuggestions = ({
           }
 
           return (
+            
             <Button
+            // biome-ignore lint/suspicious/noArrayIndexKey: Using index as key is acceptable here because the list is static and does not change order.
               key={`${itemId}-${index}`}
               variant="ghost"
               className={cn(
