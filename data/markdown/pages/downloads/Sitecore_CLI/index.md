@@ -3,16 +3,21 @@ title: 'Sitecore CLI'
 description: 'The Sitecore CLI provides an entry point for interactive and automated command-line interaction with a Sitecore instance, including commands for pulling and synchronizing serialized Sitecore items.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx
 ---
+
 ### Sitecore CLI 6.x
+
 [Sitecore CLI 6.0.23](/downloads/Sitecore_CLI/6x/Sitecore_CLI_6023)\
 [Sitecore CLI 6.0.18](/downloads/Sitecore_CLI/6x/Sitecore_CLI_600)
 
 ### Sitecore CLI 5.x
+
+[Sitecore CLI 5.2.127](/downloads/Sitecore_CLI/5x/Sitecore_CLI_52129)\
 [Sitecore CLI 5.2.113](/downloads/Sitecore_CLI/5x/Sitecore_CLI_52113)\
 [Sitecore CLI 5.2.109](/downloads/Sitecore_CLI/5x/Sitecore_CLI_52109)\
 [Sitecore CLI 5.1.25](/downloads/Sitecore_CLI/5x/Sitecore_CLI_5125)
 
 ### Sitecore CLI 4.x
+
 [Sitecore CLI 4.2.1](/downloads/Sitecore_CLI/4x/Sitecore_CLI_421)\
 [Sitecore CLI 4.2.0](/downloads/Sitecore_CLI/4x/Sitecore_CLI_420)\
 [Sitecore CLI 4.1.1](/downloads/Sitecore_CLI/4x/Sitecore_CLI_411)\
@@ -21,7 +26,9 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx
 [Sitecore CLI 4.0.0](/downloads/Sitecore_CLI/4x/Sitecore_CLI_400)
 
 ### Sitecore CLI 3.x
+
 [Sitecore CLI 3.0.0](/downloads/Sitecore_CLI/3x/Sitecore_CLI_300)
 
 ### Sitecore CLI 2.x
+
 [Sitecore CLI 2.0.0](/downloads/Sitecore_CLI/2x/Sitecore_CLI_200)
