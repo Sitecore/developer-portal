@@ -1,11 +1,7 @@
 import platformData from "@data/data-capabilities";
 import communityListData from "@data/data-community-list";
 import getHelpCta from "@data/promos/get-help";
-import partnerawards from "@data/promos/partnerawards";
-import productwebinar from "@data/promos/productwebinar";
-import symposium2025 from "@data/promos/symposium2025";
 import { Article, CTACard } from "@src/components/cards";
-import PromoCardVertical from "@src/components/cards/PromoCardVerticals";
 import ChangelogEntries from "@src/components/changelog/ChangelogEntries";
 import {
   SitecoreCommunityBlog,
@@ -59,13 +55,11 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
         <Hero title={pageInfo.title} description={pageInfo.description} />
 
         <VerticalGroup>
-          <CenteredContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 mb-0">
-              <ChangelogEntries entries={pageInfo.changelogEntries} title="Latest changelog updates" linkText="Full changelog" />
+          <CenteredContent >
+            <Row columns={2}>
+              <ChangelogEntries entries={pageInfo.changelogEntries.slice(0, 5)} title="Latest changelog updates" linkText="Full changelog" />
               <AccelerateUpdates recipes={recipes} title="Sitecore Accelerate updates" linkHref="/learn/accelerate" linkText="See all recipes" url="/learn/accelerate/" />
-            </div>
-          </CenteredContent>
-          <CenteredContent>
+            </Row>
             <Row columns={4}>
               <Article title="Get Started" description="New to Sitecore? Start here essential setup documentation to build your first application." linktext="Get started" link="/sitecoreai" />
               <Article title="Documentation" description="Comprehensive product documentation including feature usage and SDK documentation." linktext="Browse Docs" link="https://doc.sitecore.com/" />
@@ -79,7 +73,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
           <CenteredContent className="items-center text-black dark:text-white px-0">
             <ProductLogo product={Product.SitecoreAI} width={280} height={67} />
 
-            <p className="hidden md:block text-md text-center mx-auto text-muted-foreground">
+            <p className="hidden md:block text-lg text-center mx-auto text-muted-foreground font-medium font-sans">
               Explore a unified platform that brings together content, data, personalisation, and intelligent automation: designed for developers, marketers, and partners alike. Join a thriving community of over 4,000 daily active developers shaping
               the future of digital experience. Whether you&apos;re migrating from CMS or scaling across channels, SitecoreAI empowers you to deliver personalised, measurable outcomes.
             </p>
@@ -88,7 +82,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
           </CenteredContent>
         </VerticalGroup>
 
-        <VerticalGroup className="bg-white dark:bg-background py-6">
+        {/* <VerticalGroup className="bg-white dark:bg-background py-6">
           <CenteredContent>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <PromoCardVertical {...productwebinar} />
@@ -96,7 +90,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
               <PromoCardVertical {...symposium2025} />
             </div>
           </CenteredContent>
-        </VerticalGroup>
+        </VerticalGroup> */}
 
         <VerticalGroup className="p-4 bg-gray-100 dark:bg-muted">
           <CenteredContent>

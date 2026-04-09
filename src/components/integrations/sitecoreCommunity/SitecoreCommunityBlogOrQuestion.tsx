@@ -1,29 +1,39 @@
 "use client";
 
-import { translateDate } from '@/src/lib/util/dateUtil';
-import { Card, CardContent, CardFooter } from '@src/components/ui/card';
-import { Skeleton } from '@src/components/ui/skeleton';
-import NextLink from 'next/link';
-import { SITECORE_COMMUNITY_URL } from './sitecore-community.constants';
-import type { SitecoreCommunityContent } from './types';
+import { translateDate } from "@/src/lib/util/dateUtil";
+import { Card, CardContent, CardFooter } from "@src/components/ui/card";
+import { Skeleton } from "@src/components/ui/skeleton";
+import NextLink from "next/link";
+import { SITECORE_COMMUNITY_URL } from "./sitecore-community.constants";
+import type { SitecoreCommunityContent } from "./types";
 
 type SitecoreCommunityBlogOrQuestionProps = {
-  contentType: 'Blog' | 'Questions';
+  contentType: "Blog" | "Questions";
   item: SitecoreCommunityContent;
   loading?: boolean;
 };
 
-export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommunityBlogOrQuestionProps) => (
-  <Card style="flat" elevation="md">
+export const SitecoreCommunityBlogOrQuestion = ({
+  item,
+  loading,
+}: SitecoreCommunityBlogOrQuestionProps) => (
+  <Card style="flat" elevation="xs">
     <CardContent>
       <div className="flex gap-16 justify-between">
         {loading ? (
           <Skeleton className="grow h-20" />
         ) : (
           <div className="grow">
-            <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">{item.contentType}</p>
-            <h3 className="text-lg font-semibold font-heading my-4">
-              <NextLink href={`${SITECORE_COMMUNITY_URL}${item.url}`} target="_blank" rel="noreferrer noopener" className="text-foreground hover:underline">
+            <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2 font-medium">
+              {item.contentType}
+            </p>
+            <h3 className="text-lg font-medium font-heading">
+              <NextLink
+                href={`${SITECORE_COMMUNITY_URL}${item.url}`}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="hover:underline"
+              >
                 {item.title}
               </NextLink>
             </h3>
@@ -31,7 +41,7 @@ export const SitecoreCommunityBlogOrQuestion = ({ item, loading }: SitecoreCommu
         )}
       </div>
     </CardContent>
-    <CardFooter className="justify-between flex-wrap">
+    <CardFooter className="justify-between flex-wrap text-sm">
       <p>
         by <strong>{item.userName}</strong>
       </p>

@@ -44,7 +44,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
             </h2>
           </Hero>
 
-          <VerticalGroup>
+          <VerticalGroup className="bg-white dark:bg-body-bg">
             <CenteredContent className="py-8 gap-8">
               <div className="grid grid-cols-5 gap-14">
                 <div className="col-span-5 md:col-span-3">

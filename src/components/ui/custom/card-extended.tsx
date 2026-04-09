@@ -8,7 +8,7 @@ const extendedStyleVariants = {
   // Add your new style variants below:
   blurred: 'bg-white/50 dark:bg-black/30 backdrop-blur-md border border-white/30',
   glass: 'bg-white/50 dark:bg-black/30 backdrop-blur-md border border-white/30',
-  borderedImage: 'border-none shadow-none',
+  borderedImage: 'border-none shadow-xs',
 } as const;
 
 export type ExtendedStyle = keyof typeof extendedStyleVariants;
@@ -46,3 +46,4 @@ export function ExtendedCard({ className, style, ...props }: ExtendedCardProps) 
 
 // Re-export all other Card components for convenience
 export { CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../card';
+

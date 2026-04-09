@@ -21,7 +21,7 @@ export const Footer = () => (
     <div className="flex flex-col md:flex-row w-full justify-between max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row gap-6 items-center">
         <p className="text-sm">
-          © Copyright 2025, Sitecore. All Rights Reserved
+          © Copyright {new Date().getFullYear()}, Sitecore. All Rights Reserved
         </p>
 
         <div className="flex flex-row items-center gap-2 mb-4 md:mb-0">

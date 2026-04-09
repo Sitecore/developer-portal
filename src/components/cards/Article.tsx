@@ -1,9 +1,14 @@
-import { cn } from '@/src/lib/util';
-import { Button } from '@src/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader } from '@src/components/ui/card';
-import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { cn } from "@/src/lib/util";
+import { Button } from "@src/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@src/components/ui/card";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 type ArticleProps = {
   title: string;
@@ -15,9 +20,17 @@ type ArticleProps = {
   className?: string;
 };
 
-export const Article = ({ title, description, link, linktext, imageUrl, hideLinkText, className }: ArticleProps) => {
+export const Article = ({
+  title,
+  description,
+  link,
+  linktext,
+  imageUrl,
+  hideLinkText,
+  className,
+}: ArticleProps) => {
   return (
-    <Card className={cn(className)} style="outline" elevation="xs">
+    <Card className={cn(className)} style="flat" elevation="xs">
       <CardHeader>
         <h4 className="text-lg font-medium font-heading">{title}</h4>
       </CardHeader>
@@ -28,7 +41,7 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
             <Link href={link} title={title} rel="noreferrer noopener">
               <Image
                 src={imageUrl}
-                alt={title || ''}
+                alt={title || ""}
                 className="relative z-10"
                 width={400}
                 height={300}
@@ -44,7 +57,7 @@ export const Article = ({ title, description, link, linktext, imageUrl, hideLink
         <CardFooter>
           <Link href={link}>
             <Button variant="outline" size="default" colorScheme="primary">
-              {linktext ?? 'Read more'}
+              {linktext ?? "Read more"}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>

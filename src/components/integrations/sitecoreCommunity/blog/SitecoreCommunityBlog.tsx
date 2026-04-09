@@ -1,11 +1,14 @@
-import { ExtendedCard } from '@/src/components/ui/custom/card-extended';
-import { cn } from '@/src/lib/util';
-import { TextLink } from '@src/components/links/TextLink';
-import { CardContent, CardHeader } from '@src/components/ui/card';
-import { useState } from 'react';
-import type { SortOption } from '../SitecoreCommunity.api';
-import { SitecoreCommunityBlogOrQuestion, SitecoreCommunityBlogOrQuestionSidebar } from '../SitecoreCommunityBlogOrQuestion';
-import type { SitecoreCommunityContent } from '../types';
+import { ExtendedCard } from "@/src/components/ui/custom/card-extended";
+import { cn } from "@/src/lib/util";
+import { TextLink } from "@src/components/links/TextLink";
+import { CardContent, CardHeader } from "@src/components/ui/card";
+import { useState } from "react";
+import type { SortOption } from "../SitecoreCommunity.api";
+import {
+  SitecoreCommunityBlogOrQuestion,
+  SitecoreCommunityBlogOrQuestionSidebar,
+} from "../SitecoreCommunityBlogOrQuestion";
+import type { SitecoreCommunityContent } from "../types";
 
 type SitecoreCommunityBlogProps = {
   entries?: Array<SitecoreCommunityContent>;
@@ -14,16 +17,22 @@ type SitecoreCommunityBlogProps = {
   className?: string;
 };
 
-export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, className }: SitecoreCommunityBlogProps) => {
-  const [_fetchedResults, setFetchedResults] = useState<Array<SitecoreCommunityContent> | null>(null);
+export const SitecoreCommunityBlog = ({
+  entries,
+  sortKeys,
+  listItem,
+  className,
+}: SitecoreCommunityBlogProps) => {
+  const [_fetchedResults, setFetchedResults] =
+    useState<Array<SitecoreCommunityContent> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchNewResults = (val: string) => {
     setIsLoading(true);
 
-    const query = ['contentType=blog', 'forum=blog', `sort=${val}`];
+    const query = ["contentType=blog", "forum=blog", `sort=${val}`];
 
-    fetch(`/api/sitecore-community?${query.join('&')}`)
+    fetch(`/api/sitecore-community?${query.join("&")}`)
       .then(async (response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -40,17 +49,36 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, className }
   }
 
   return (
-    <ExtendedCard className={cn('p-0', className)} style="flat" elevation="none">
-      <CardHeader className="flex justify-between py-8 px-0">
-        <h3 className={cn('font-heading font-medium', listItem ? 'text-base' : 'text-2xl')}>Latest community blog posts</h3>
-        <TextLink href="https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba" text="See all" />
+    <ExtendedCard
+      className={cn("bg-transparent", "p-0", className)}
+      style="flat"
+      elevation="none"
+    >
+      <CardHeader className="flex justify-between">
+        <h3
+          className={cn(
+            "font-heading font-medium",
+            listItem ? "text-base" : "text-2xl",
+          )}
+        >
+          Latest community blog posts
+        </h3>
+        <TextLink
+          href="https://community.sitecore.com/community?id=community_forum&sys_id=a1c2eb6b1b313c10486a4083b24bcbba"
+          text="See all"
+        />
       </CardHeader>
       <CardContent className="p-0">
         {sortKeys && Array.isArray(sortKeys) && sortKeys.length > 1 && (
           <div className="flex justify-end mb-6">
             <label>
               Order by:
-              <select onChange={(changeEvent) => fetchNewResults(changeEvent.target.value)} className="ml-2 px-2 py-1 border rounded">
+              <select
+                onChange={(changeEvent) =>
+                  fetchNewResults(changeEvent.target.value)
+                }
+                className="ml-2 px-2 py-1 border rounded"
+              >
                 <option value="created">Recent Questions</option>
                 <option value="view">Most Popular</option>
                 <option value="created">Created</option>
@@ -60,11 +88,23 @@ export const SitecoreCommunityBlog = ({ entries, sortKeys, listItem, className }
         )}
 
         {listItem ? (
-          entries.map((item) => <SitecoreCommunityBlogOrQuestionSidebar item={item} contentType="Blog" key={item.url} loading={isLoading} />)
+          entries.map((item) => (
+            <SitecoreCommunityBlogOrQuestionSidebar
+              item={item}
+              contentType="Blog"
+              key={item.url}
+              loading={isLoading}
+            />
+          ))
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {entries.slice(0, 3).map((item) => (
-              <SitecoreCommunityBlogOrQuestion item={item} contentType="Blog" key={item.url} loading={isLoading} />
+              <SitecoreCommunityBlogOrQuestion
+                item={item}
+                contentType="Blog"
+                key={item.url}
+                loading={isLoading}
+              />
             ))}
           </div>
         )}

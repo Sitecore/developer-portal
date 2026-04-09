@@ -1,5 +1,6 @@
 "use client";
 
+import { getColorSchemebyChangeType } from "@/src/lib/changelog/utils/variants";
 import { cn } from "@/src/lib/util";
 import { getSlug } from "@/src/lib/util/stringUtil";
 import { getChangelogEntryUrl } from "@/src/lib/util/urlUtil";
@@ -49,7 +50,7 @@ const ChangelogEntries = ({
   }
 
   return (
-    <Card style="flat" elevation="none">
+    <Card style="flat" elevation="xs">
       <CardHeader className="flex flex-col sm:flex-row justify-between sm:justify-between items-baseline">
         <h3 className="text-2xl font-medium font-heading flex items-center gap-2">
           {title}
@@ -194,13 +195,9 @@ const ChangelogEntries = ({
                     {entry.changeTypeName != null && (
                       <Badge
                         variant="default"
-                        colorScheme={
-                          entry.changeTypeName === "Resolved"
-                            ? "neutral"
-                            : entry.changeTypeName === "New feature"
-                              ? "primary"
-                              : "neutral"
-                        }
+                        colorScheme={getColorSchemebyChangeType(
+                          entry.changeTypeName,
+                        )}
                         className="text-xs"
                       >
                         {entry.changeTypeName}

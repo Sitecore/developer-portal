@@ -8,7 +8,7 @@ import { buildQuerystring } from '@src/lib/changelog/common/querystring';
 import type { ChangelogEntry, ChangelogEntryList, ChangeType, Product } from '@src/lib/changelog/types';
 import { ChevronLeft } from 'lucide-react';
 import NextLink from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Fetcher } from 'swr';
 import useSWR from 'swr';
 import useSWRInfinite from 'swr/infinite';
@@ -78,6 +78,7 @@ function useProductOptions(): Array<Option> {
 const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps) => {
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
   const [breaking, setBreaking] = useState<boolean>(false);
+  const pendingLoadRef = useRef(false);
   const changeTypeOptions = useChangeTypeOptions();
   const productOptions = useProductOptions();
 
@@ -100,7 +101,24 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
     return [`${entriesApiUrl}?${query.join('&')}`];
   };
 
-  const { data, error, size, setSize, isLoading } = useSWRInfinite(getKey, fetcher);
+  const { data, error, setSize, isLoading, isValidating } = useSWRInfinite(getKey, fetcher);
+  const hasNext = data ? data[data.length - 1].hasNext : false;
+
+  useEffect(() => {
+    if (!isValidating) {
+      pendingLoadRef.current = false;
+    }
+  }, [isValidating]);
+
+  const handleEndTriggered = (): void => {
+    if (!data || !hasNext || isValidating || pendingLoadRef.current) {
+      return;
+    }
+
+    pendingLoadRef.current = true;
+    void setSize((currentSize) => currentSize + 1);
+  };
+
   const items = data ? data.flatMap((data) => data.entries.map((entry) => entry)) : [];
 
   return (
@@ -155,9 +173,9 @@ const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = ()
         </div>
       )}
 
-      {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={data[data.length - 1].hasNext} onEndTriggered={() => setSize(size + 1)} className="mt-8" />}
+      {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={hasNext} onEndTriggered={handleEndTriggered} className="mt-8" />}
 
-      {data && !data[data.length - 1].hasNext && (
+      {data && !hasNext && (
         <Alert variant="default" className="mt-4">
           <AlertTitle>{items.length === 0 ? 'No entries found' : 'No other entries found'}</AlertTitle>
         </Alert>

@@ -687,5 +687,5 @@
 }
 
 .prose {
-  @apply prose-neutral prose-sm prose-a:text-primary-500 dark:prose-a:text-primary-200 prose-a:font-semibold max-w-none dark:prose-p:text-whiteAlpha-700 dark:prose-strong:text-whiteAlpha-700;
+  @apply prose-neutral prose-sm prose-a:text-primary-500 dark:prose-a:text-primary-200 prose-a:font-semibold max-w-none dark:prose-p:text-whiteAlpha-700 dark:prose-code:text-whiteAlpha-700 dark:prose-strong:text-whiteAlpha-700;
 }
