@@ -5,7 +5,8 @@
     "paths": {
       "@/*": ["./*"],
       "@data/*": ["./data/*"],
-      "@src/*": ["./src/*"]
+      "@src/*": ["./src/*"],
+      "@/lib/*": ["./src/lib/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "incremental": true,

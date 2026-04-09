@@ -35,7 +35,6 @@ export type TopNavProps = {
 
 export default function TopNav({ searchEnabled }: TopNavProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [focusedOnSearch, setFocusedOnSearch] = useState(false);
   const router = useRouter();
   const { theme } = useTheme();
 
@@ -150,8 +149,9 @@ export default function TopNav({ searchEnabled }: TopNavProps) {
 
         {/* Top Right */}
         <div className="flex items-center gap-x-0.5 md:gap-x-2 xl:flex-1 xl:justify-end xl:gap-x-3">
-          <PreviewSearchInput rfkId="rfkid_6" defaultItemsPerPage={6} />
-
+          {searchEnabled && (
+            <PreviewSearchInput rfkId="rfkid_6" defaultItemsPerPage={6} />
+          )}
           <Button
             onClick={() => setIsOpen(!isOpen)}
             variant="ghost"

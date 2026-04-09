@@ -1,4 +1,3 @@
-import { RestrictedContent } from '@src/components/authentication/RestrictedContent';
 import { TrackPageView } from '@src/components/integrations/engage/TrackPageView';
 import { Alert, AlertDescription, AlertTitle } from '@src/components/ui/alert';
 import type { Option } from '@src/components/ui/dropdown';
@@ -6,7 +5,6 @@ import { CenteredContent, Hero, VerticalGroup } from '@src/components/ui/section
 import Layout from '@src/layouts/Layout';
 import type { RoadmapInformation } from '@src/lib/interfaces/jira';
 import type { PageInfo } from '@src/lib/interfaces/page-info';
-import { getRoadmap } from '@src/lib/jira';
 import { getPageInfo } from '@src/lib/page-info';
 import type { NextPage } from 'next';
 
