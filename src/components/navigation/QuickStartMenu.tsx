@@ -15,12 +15,7 @@ export const QuickStartMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          size="sm"
-          className="hidden xl:flex"
-          aria-label="Open the menu for links to other Sitecore sites"
-        >
+        <Button variant="ghost" size={'icon'} className="hidden md:inline-flex">
           <Icon size={1} path={mdiDotsGrid} />
         </Button>
       </DropdownMenuTrigger>

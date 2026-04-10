@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/src/lib/util";
 import { GuidedDemo } from "@src/components/links/GuidedDemo";
 import { CenteredContent, VerticalGroup } from "@src/components/ui/sections";
 import { GetProductLogo } from "@src/lib/assets";
@@ -15,6 +16,7 @@ export type HeroProps = {
 	demoId?: string;
 	portalURL?: string;
 	children?: React.ReactNode | Array<React.ReactNode>;
+	className?: string;
 };
 
 export const Hero = ({
@@ -24,6 +26,7 @@ export const Hero = ({
 	productLogo,
 	demoId,
 	portalURL,
+	className
 }: HeroProps) => {
 	const [mounted, setMounted] = useState(false);
 	const { theme, systemTheme } = useTheme();
@@ -41,7 +44,7 @@ export const Hero = ({
 		: "";
 
 	return (
-		<VerticalGroup className="max-w-full border-b border-t border-border-color bg-hero-gradient">
+		<VerticalGroup className={cn("max-w-full border-b border-t border-border-color bg-hero-gradient", className)}>
 			<CenteredContent className="py-6 px-4 md:py-12 xl:py-16" direction="column">
 				{productLogo && logoSrc && (
 					<Image src={logoSrc} alt={`${title} logo`} width={280} height={60} />

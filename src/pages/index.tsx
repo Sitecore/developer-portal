@@ -56,7 +56,7 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
         description={pageInfo.description}
         openGraphImage={pageInfo.openGraphImage}
       >
-        <Hero title={pageInfo.title} description={pageInfo.description} />
+        <Hero title={pageInfo.title} description={pageInfo.description} className='border-b-0' />
 
         <VerticalGroup>
           <CenteredContent>

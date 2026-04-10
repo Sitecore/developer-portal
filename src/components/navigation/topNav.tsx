@@ -168,9 +168,9 @@ export default function TopNav({ searchEnabled }: TopNavProps) {
               <Icon path={mdiMenu} size={1.25} />
             )}
           </Button>
+          <UserAccount />
           <DarkModeSwitch />
           <QuickStartMenu key={router.asPath} />
-          <UserAccount />
         </div>
       </div>
     </header>
