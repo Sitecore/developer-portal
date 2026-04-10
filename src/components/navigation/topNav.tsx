@@ -1,3 +1,4 @@
+import { mainNavigation } from "@/data/data-navigation";
 import { mdiClose, mdiMenu } from "@mdi/js";
 import UserAccount from "@src/components/authentication/UserAccount";
 import { PreviewSearchInput } from "@src/components/integrations/sitecore-search/NewPreviewSearchInput";
@@ -20,12 +21,12 @@ import {
   Type,
   Variant,
 } from "@src/lib/assets";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useTheme } from "next-themes";
 import React, { useState } from "react";
-import { mainNavigation } from "@/data/data-navigation";
+import ToggleAiAssistantButton from "../integrations/ai/toggleAiAssistantButton";
 import { DarkModeSwitch } from "./DarkModeSwitch";
 import { QuickStartMenu } from "./QuickStartMenu";
 
@@ -149,6 +150,8 @@ export default function TopNav({ searchEnabled }: TopNavProps) {
 
         {/* Top Right */}
         <div className="flex items-center gap-x-0.5 md:gap-x-2 xl:flex-1 xl:justify-end xl:gap-x-3">
+          <ToggleAiAssistantButton text="Ask AI" />
+
           {searchEnabled && (
             <PreviewSearchInput rfkId="rfkid_6" defaultItemsPerPage={6} />
           )}
