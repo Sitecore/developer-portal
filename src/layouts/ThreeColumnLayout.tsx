@@ -58,6 +58,7 @@ export const ThreeColumnLayout = ({
             className={cn(
               "w-full min-h-0",
               hasLeftSidebar && !hasRightSidebar && "xl:pr-72",
+              !hasLeftSidebar && hasRightSidebar && "xl:pl-72",
             )}
             style={
               {
