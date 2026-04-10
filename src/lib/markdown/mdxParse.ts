@@ -12,6 +12,7 @@ import rehypeExtractHeadings from "./rehype/extractHeadings";
 export async function ParseContent(stream: Buffer) {
   const headings: Array<ContentHeading> = [];
   const result = await serialize(stream.toString(), {
+    blockJS: false,
     mdxOptions: {
       remarkPlugins: [
         remarkGfm,

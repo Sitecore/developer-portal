@@ -43,7 +43,7 @@ export default function ChangelogHome({ fallback }: ChangelogHomeProps) {
           description="Learn more about new versions, changes and improvements"
         >
           <Hero title="Changelog">
-            <h2 className="text-sm md:text-base font-normal tracking-wide text-muted-foreground">
+            <h2 className="text-base font-sans font-normal text-neutral-600 dark:text-neutral-400">
               This changelog provides visibility into key product updates,
               including new features, enhancements, resolutions and
               architectural improvements. Some bug fixes and backend adjustments

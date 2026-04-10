@@ -52,7 +52,7 @@ export const Hero = ({
 					</h1>
 				)}
 				{description && (
-					<h2 className="text-sm md:text-xl font-sans font-normal text-neutral-600 dark:text-neutral-400">
+					<h2 className="text-base font-sans font-normal text-neutral-600 dark:text-neutral-400">
 						{description}
 					</h2>
 				)}

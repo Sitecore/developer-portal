@@ -1,5 +1,5 @@
-import { Card } from "@src/components/ui/card";
 import { cn } from "@/src/lib/util";
+import { Card } from "@src/components/ui/card";
 import { LinkButton } from "../links";
 
 type LinkProps = {
@@ -12,12 +12,17 @@ type LinkProps = {
 export const LinkItem = ({ title, link, className }: LinkProps) => {
   return (
     <Card
-      className={cn(
-        "border shadow-md hover:shadow-lg transition-shadow py-4 px-2",
-        className,
-      )}
+      style="outline"
+      elevation="xs"
+      className={cn("py-4 px-2", "hover:bg-subtle-bg", className)}
     >
-      <LinkButton variant="ghost" text={title} href={link} />
+      <LinkButton
+        colorScheme="primary"
+        variant="link"
+        text={title}
+        href={link}
+        className="w-full h-full justify-between"
+      />
     </Card>
   );
 };

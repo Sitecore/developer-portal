@@ -9,6 +9,7 @@ import {
   NextScript,
 } from "next/document";
 import { Component } from "react";
+import KapaAssistant from "../components/integrations/ai/kapaAssistant";
 
 // eslint-disable-next-line
 export class MyDocument<P = Record<string, never>> extends Component<
@@ -22,6 +23,7 @@ export class MyDocument<P = Record<string, never>> extends Component<
     return (
       <Html lang="en" className="w-full h-full antialiased">
         <Head />
+        <KapaAssistant />
         <body style={{ scrollMarginTop: "9em" }}>
           <Main />
           <NextScript />

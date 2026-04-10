@@ -33,8 +33,8 @@ export default function ScrollToTop() {
   }
 
   return (
-    <div className="hidden md:block fixed bottom-[120px] right-4 md:right-[84px] z-[3]">
-      <Button onClick={scrollToTop} variant="default" className="gap-2">
+    <div className="hidden md:block fixed bottom-[25px] right-4 md:right-[84px] z-[3]">
+      <Button onClick={scrollToTop} variant="outline" colorScheme="neutral" className="gap-2">
         Scroll to top
         <ArrowUp className="h-4 w-4" />
       </Button>

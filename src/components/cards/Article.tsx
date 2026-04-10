@@ -1,3 +1,4 @@
+import { cn } from "@/src/lib/util";
 import { Button } from "@src/components/ui/button";
 import {
   Card,
@@ -8,7 +9,6 @@ import {
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/src/lib/util";
 
 type ArticleProps = {
   title: string;
@@ -30,9 +30,14 @@ export const Article = ({
   className,
 }: ArticleProps) => {
   return (
-    <Card className={cn(className)} style="flat" elevation="xs">
+    <Card
+      className={cn("not-prose", className)}
+      style="outline"
+      elevation="xs"
+      padding="md"
+    >
       <CardHeader>
-        <h4 className="text-lg font-medium font-heading">{title}</h4>
+        <h4 className="text-lg m-0 font-medium font-heading">{title}</h4>
       </CardHeader>
       <CardContent className="grow">
         {description && <p className="text-sm">{description}</p>}
@@ -56,7 +61,7 @@ export const Article = ({
       {link && !hideLinkText && (
         <CardFooter>
           <Link href={link}>
-            <Button variant="outline" size="default" colorScheme="primary">
+            <Button variant="default" size="default" colorScheme="primary">
               {linktext ?? "Read more"}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

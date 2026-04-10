@@ -203,7 +203,7 @@ export const SidebarGroupItem = ({
           <button
             type="button"
             onClick={() => setIsExpanded((prev) => !prev)}
-            className="my-4 text-left flex-1 text-sm uppercase tracking-wide text-muted-foreground"
+            className="my-4 text-left flex-1 text-sm uppercase tracking-wide font-medium text-muted-foreground"
           >
             {item.title}
           </button>

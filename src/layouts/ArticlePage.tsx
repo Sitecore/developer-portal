@@ -120,24 +120,10 @@ const ArticlePage = ({
           )}
           <PromoList data={promoBefore} />
 
-          {/* {router.asPath.includes('/downloads') && (
-            <Alert status="warning" mb={4}>
-              <AlertIcon />
-
-              <AlertDescription w="full">
-                We have discovered an issue with some of our Developer downloads. Out of an abundance of caution we have temporarily disabled download ability while we address this issue. We hope to have access available as soon as possible; in the
-                meantime please work with your customer support / account executive representative to get the access you need.
-                <div style={{ marginTop: '1rem' }}>
-                  For information on how to file a support case, please refer to <Link href="https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB0654910#HowToCreateASupportCase">this article</Link>
-                </div>
-              </AlertDescription>
-            </Alert>
-          )} */}
-
           <RenderContent content={processedContent} />
 
           {/* Child Navigation */}
-          {children && (
+          {children && children.length > 0 && (
             <div className="flex flex-col gap-4">
               <p className="font-semibold">Articles in this section:</p>
               <ul className="flex flex-col gap-2 list-none">
