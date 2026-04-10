@@ -24,7 +24,7 @@ import type { ChildPageInfo, PageInfo } from "@src/lib/interfaces/page-info";
 import { getItemUrl } from "@src/lib/manifestHelper";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Sidebar } from "./Sidebar";
+import { ThreeColumnLayout } from "./ThreeColumnLayout";
 
 type ArticlePageProps = {
   pageInfo: PageInfo;
@@ -69,118 +69,109 @@ const AcceleratePage = ({
       >
         {/* <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} demoId={pageInfo.guidedDemoId} /> */}
 
-        <div className="flex flex-col flex-grow-0 gap-0 justify-between w-full md:flex-row">
-          <Sidebar showBackground>
-            <SidebarNavigation config={sidebarConfig} />
-          </Sidebar>
-
-          <main className="w-full max-w-6xl min-h-[calc(100vh-215px)] px-4 md:px-0">
-            <CenteredContent className="min-h-[calc(100vh-400px)] prose-sm md:py-0">
-              <div className="flex flex-col">
-                <DropDownNavigation
-                  config={sidebarConfig}
-                  key={router.asPath}
-                />
-                <BreadcrumbNav
-                  enabled={sidebarConfig.enableBreadcrumb}
-                  currentPage={pageInfo}
-                  config={sidebarConfig}
-                  hideCurrentPage
-                />
-                <h1 className="text-2xl font-normal md:text-4xl xl:text-6xl font-heading">
-                  {pageInfo.title}
-                </h1>
-              </div>
-              <ArticlePaging
-                enabled={sidebarConfig.enableNextPrevious}
-                currentfileName={pageInfo.fileName}
-                config={sidebarConfig}
-                currentPath={path}
-              />
-
-              <PromoList data={promoBefore} />
-              <RenderContent content={pageInfo.parsedContent} />
-
-              {/* Child Navigation */}
-              {children && children?.length > 0 && (
-                <div className="flex flex-col gap-4">
-                  <p className="font-semibold">Articles in this section:</p>
-                  <ul className="flex flex-col gap-2 list-none">
-                    {children.map((child) => (
-                      <li
-                        key={child.path || child.title}
-                        className="flex gap-2 items-center"
-                      >
-                        <Icon
-                          path={mdiArrowRightCircle}
-                          colorScheme="neutral"
-                        />
-                        <Link
-                          href={getItemUrl(sidebarConfig, child)}
-                          className="text-primary"
-                        >
-                          {child.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              <ArticlePaging
-                enabled={sidebarConfig.enableNextPrevious}
-                currentfileName={pageInfo.fileName}
-                config={sidebarConfig}
-                currentPath={path}
-              />
-
-              {customNavPager}
-              <PromoList data={promoAfter} />
-              <SocialFeeds pageInfo={pageInfo} />
-            </CenteredContent>
-            <CenteredContent>
-              <GithubContributionNotice
-                pageInfo={pageInfo}
-                config={sidebarConfig}
-              />
-            </CenteredContent>
-          </main>
-
-          <Sidebar className="hidden sticky top-0 pl-4 min-h-full border-l xl:block border-border">
-            <div className="flex flex-col gap-4">
-              <div className="pb-4 border-b border-border">
+        <ThreeColumnLayout
+          sidebar={<SidebarNavigation config={sidebarConfig} disableMobileMenu />}
+          inPageNav={
+            <>
+              <div className="flex flex-col gap-4">
                 {sectionTitles.length > 1 && (
-                  <InPageNav
-                    titles={sectionTitles}
-                    key={path}
-                    title="Topics in this recipe"
-                    className="mt-2"
-                  />
+                  <div className="pb-4 border-b border-border">
+                    <InPageNav
+                      titles={sectionTitles}
+                      key={path}
+                      title="Topics in this recipe"
+                      className="mt-2"
+                    />
+                  </div>
                 )}
+
+                <UseWithAI pageInfo={pageInfo} />
+
+                <AccelerateMetaData pageInfo={pageInfo} />
               </div>
-
-              <UseWithAI pageInfo={pageInfo} />
-
-              <AccelerateMetaData pageInfo={pageInfo} />
+              <Alert variant="primary" className="mt-4">
+                <AlertTitle>Questions or suggestions?</AlertTitle>
+                <AlertDescription>
+                  <p className="text-sm text-muted-foreground pt-2">
+                    We&apos;d love to hear your feedback!
+                  </p>
+                  <Feedback
+                    variant={"link"}
+                    className="p-0 mt-2"
+                    projectId="RCPS"
+                    issueTypeId="3"
+                    product={sidebarConfig?.productFeedbackLabel}
+                    text="Submit Feedback"
+                  />
+                </AlertDescription>
+              </Alert>
+            </>
+          }
+        >
+          <CenteredContent className="min-h-[calc(100vh-400px)] prose-sm md:py-0">
+            <div className="flex flex-col">
+              <DropDownNavigation config={sidebarConfig} key={router.asPath} />
+              <BreadcrumbNav
+                enabled={sidebarConfig.enableBreadcrumb}
+                currentPage={pageInfo}
+                config={sidebarConfig}
+                hideCurrentPage
+              />
+              <h1 className="text-2xl font-normal md:text-4xl xl:text-6xl font-heading">
+                {pageInfo.title}
+              </h1>
             </div>
-            <Alert variant="primary" className="mt-4">
-              <AlertTitle>Questions or suggestions?</AlertTitle>
-              <AlertDescription>
-                <p className="text-sm text-muted-foreground pt-2">
-                  We&apos;d love to hear your feedback!
-                </p>
-                <Feedback
-                  variant={"link"}
-                  className="p-0 mt-2"
-                  projectId="RCPS"
-                  issueTypeId="3"
-                  product={sidebarConfig?.productFeedbackLabel}
-                  text="Submit Feedback"
-                />
-              </AlertDescription>
-            </Alert>
-          </Sidebar>
-        </div>
+            <ArticlePaging
+              enabled={sidebarConfig.enableNextPrevious}
+              currentfileName={pageInfo.fileName}
+              config={sidebarConfig}
+              currentPath={path}
+            />
+
+            <PromoList data={promoBefore} />
+            <RenderContent content={pageInfo.parsedContent} />
+
+            {/* Child Navigation */}
+            {children && children?.length > 0 && (
+              <div className="flex flex-col gap-4">
+                <p className="font-semibold">Articles in this section:</p>
+                <ul className="flex flex-col gap-2 list-none">
+                  {children.map((child) => (
+                    <li
+                      key={child.path || child.title}
+                      className="flex gap-2 items-center"
+                    >
+                      <Icon
+                        path={mdiArrowRightCircle}
+                        colorScheme="neutral"
+                      />
+                      <Link
+                        href={getItemUrl(sidebarConfig, child)}
+                        className="text-primary"
+                      >
+                        {child.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <ArticlePaging
+              enabled={sidebarConfig.enableNextPrevious}
+              currentfileName={pageInfo.fileName}
+              config={sidebarConfig}
+              currentPath={path}
+            />
+
+            {customNavPager}
+            <PromoList data={promoAfter} />
+            <SocialFeeds pageInfo={pageInfo} />
+          </CenteredContent>
+          <CenteredContent>
+            <GithubContributionNotice pageInfo={pageInfo} config={sidebarConfig} />
+          </CenteredContent>
+        </ThreeColumnLayout>
       </Layout>
     </TrackPageView>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-
 import { GuidedDemo } from "@src/components/links/GuidedDemo";
 import { CenteredContent, VerticalGroup } from "@src/components/ui/sections";
 import { GetProductLogo } from "@src/lib/assets";
@@ -43,7 +42,7 @@ export const Hero = ({
 
 	return (
 		<VerticalGroup className="max-w-full border-b border-t border-border-color bg-hero-gradient">
-			<CenteredContent className="py-6 md:py-12 xl:py-16" direction="column">
+			<CenteredContent className="py-6 px-4 md:py-12 xl:py-16" direction="column">
 				{productLogo && logoSrc && (
 					<Image src={logoSrc} alt={`${title} logo`} width={280} height={60} />
 				)}

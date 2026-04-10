@@ -76,7 +76,6 @@ const DefaultContentPage = ({
                 <InPageNav titles={sectionTitles} key={router.asPath} />
               )
             }
-            inPageLinks={sectionTitles}
           >
             <RenderContent content={pageInfo.parsedContent} />
 

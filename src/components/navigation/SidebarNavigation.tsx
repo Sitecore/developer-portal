@@ -1,5 +1,7 @@
 "use client";
 
+import { cn } from "@/src/lib/util";
+import { appendPathToBasePath } from "@/src/lib/util/stringUtil";
 import { mdiChevronDown, mdiChevronRight, mdiMinus, mdiPlus } from "@mdi/js";
 import Icon from "@mdi/react";
 import { Button } from "@src/components/ui/button";
@@ -8,30 +10,33 @@ import type {
   ManifestConfig,
   ManifestNavigationItem,
 } from "@src/lib/interfaces/manifest";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useTheme } from "next-themes";
 import { useState } from "react";
-import { cn } from "@/src/lib/util";
-import { appendPathToBasePath } from "@/src/lib/util/stringUtil";
 import SidebarSearch from "./SidebarSearch";
 
 export interface SidebarNavigationProps {
-  title?: string;
-  showSearch?: boolean;
   config: ManifestConfig;
+  disableMobileMenu?: boolean;
 }
 
-let basePath: string;
-let showRootAsSections: boolean | undefined;
+type SidebarGroupItemProps = {
+  item: ManifestNavigationItem;
+  rootBasePath: string;
+  showRootAsSections?: boolean;
+};
 
-const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
+const SidebarNavigation = ({
+  config,
+  disableMobileMenu = false,
+}: SidebarNavigationProps) => {
   const router = useRouter();
   const [searchActive, setSearchActive] = useState<boolean>(false);
 
-  showRootAsSections = config.showRootAsSections;
-  basePath = config.path;
+  const showRootAsSections = config.showRootAsSections;
+  const basePath = config.path;
 
   const { theme } = useTheme();
   const logoSrc = config.productLogo
@@ -43,7 +48,7 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
   return (
     <div className="mt-4">
       {config.enableSearch && (
-        <div className="hidden md:block">
+        <div className={cn(disableMobileMenu ? "block" : "hidden md:block")}>
           <SidebarSearch
             config={config}
             onFocus={() => setSearchActive(true)}
@@ -55,7 +60,10 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
       {config.heading && !searchActive && (
         <Link
           href={config.path}
-          className="hidden md:block text-sm uppercase tracking-wide text-muted-foreground my-4 mx-0 hover:underline"
+          className={cn(
+            "text-sm uppercase tracking-wide text-muted-foreground my-4 mx-0 hover:underline",
+            disableMobileMenu ? "block" : "hidden md:block",
+          )}
         >
           {config.title}
         </Link>
@@ -75,11 +83,20 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
       )}
       {/* Desktop */}
       <div
-        className={cn("flex flex-col hidden md:flex", searchActive && "hidden")}
+        className={cn(
+          "flex flex-col",
+          disableMobileMenu ? "flex" : "hidden md:flex",
+          searchActive && "hidden",
+        )}
       >
         {showRootAsSections &&
           config.routes.map((link) => (
-            <SidebarGroupItem {...link} key={link.path || link.title} />
+            <SidebarGroupItem
+              item={link}
+              rootBasePath={basePath}
+              showRootAsSections={showRootAsSections}
+              key={link.path || link.title}
+            />
           ))}
 
         {!showRootAsSections && (
@@ -100,45 +117,42 @@ const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
       </div>
 
       {/* Mobile */}
-      <DropDownMenu config={config} key={router.asPath} />
+      {!disableMobileMenu && (
+        <DropDownMenu config={config} key={router.asPath} />
+      )}
     </div>
   );
 };
 
-export const SidebarGroupItem = (
-  ManifestNavigationItem: ManifestNavigationItem,
-) => {
-  const currentBasePath = appendPathToBasePath(
-    basePath,
-    ManifestNavigationItem.path,
-  );
+export const SidebarGroupItem = ({
+  item,
+  rootBasePath,
+  showRootAsSections,
+}: SidebarGroupItemProps) => {
+  const currentBasePath = appendPathToBasePath(rootBasePath, item.path);
 
   return (
     <>
       {/* Load collapsable menu when the manifest.json contains the property collapsed  */}
-      {ManifestNavigationItem.collapsed != null ? (
-        <SidebarCollapsableGroupItem {...ManifestNavigationItem} />
+      {item.collapsed != null ? (
+        <SidebarCollapsableGroupItem item={item} rootBasePath={rootBasePath} />
       ) : (
         // Load the normal menu
         <li>
-          {ManifestNavigationItem.ignoreLink != null &&
-            ManifestNavigationItem.ignoreLink && (
-              <p
-                className="text-sm uppercase tracking-wide text-muted-foreground my-4"
-                data-type="title"
-              >
-                {ManifestNavigationItem.title}
-              </p>
-            )}
+          {item.ignoreLink != null && item.ignoreLink && (
+            <p
+              className="text-sm uppercase tracking-wide text-muted-foreground my-4"
+              data-type="title"
+            >
+              {item.title}
+            </p>
+          )}
 
           {!showRootAsSections && (
-            <MenuItemLink
-              href={ManifestNavigationItem.path}
-              title={ManifestNavigationItem.title}
-            />
+            <MenuItemLink href={item.path} title={item.title} />
           )}
           <ul className="flex flex-col gap-1 w-full">
-            {ManifestNavigationItem.children?.map((child) =>
+            {item.children?.map((child) =>
               child.children?.length > 0 ? (
                 <MenuItemGroup
                   manifestItem={child}
@@ -160,22 +174,24 @@ export const SidebarGroupItem = (
   );
 };
 
-const SidebarCollapsableGroupItem = (
-  ManifestNavigationItem: ManifestNavigationItem,
-) => {
-  const [isOpen, setIsOpen] = useState(
-    ManifestNavigationItem.collapsed ?? false,
-  );
+const SidebarCollapsableGroupItem = ({
+  item,
+  rootBasePath,
+}: {
+  item: ManifestNavigationItem;
+  rootBasePath: string;
+}) => {
+  const [isOpen, setIsOpen] = useState(item.collapsed ?? false);
 
   return (
     <li className="flex flex-col" data-type="collapsable-group-item">
       <div className="flex justify-between items-center mt-4">
-        {ManifestNavigationItem.ignoreLink === false ? (
+        {item.ignoreLink === false ? (
           <Link
-            href={appendPathToBasePath(basePath, ManifestNavigationItem.path)}
+            href={appendPathToBasePath(rootBasePath, item.path)}
             className="text-sm uppercase tracking-wide text-muted-foreground cursor-pointer hover:underline"
           >
-            {ManifestNavigationItem.title}
+            {item.title}
           </Link>
         ) : (
           <button
@@ -183,7 +199,7 @@ const SidebarCollapsableGroupItem = (
             onClick={() => setIsOpen(!isOpen)}
             className="text-sm uppercase tracking-wide text-muted-foreground cursor-pointer hover:underline"
           >
-            {ManifestNavigationItem.title}
+            {item.title}
           </button>
         )}
         <Button
@@ -203,16 +219,16 @@ const SidebarCollapsableGroupItem = (
 
       {!isOpen && (
         <ul className="flex flex-col gap-1 w-full mt-2" data-type="buttons">
-          {ManifestNavigationItem.children?.map((child) =>
+          {item.children?.map((child) =>
             child.children?.length > 0 ? (
               <MenuItemGroup
                 manifestItem={child}
-                basePath={basePath}
+                basePath={rootBasePath}
                 key={child.path || child.title}
               />
             ) : (
               <MenuItemLink
-                href={appendPathToBasePath(basePath, child.path)}
+                href={appendPathToBasePath(rootBasePath, child.path)}
                 title={child.title}
                 key={child.path || child.title}
               />
@@ -317,11 +333,11 @@ const MenuItemGroup = ({
   );
 };
 
-const DropDownMenu = ({ config, ...rest }: SidebarNavigationProps) => {
+const DropDownMenu = ({ config }: { config: ManifestConfig }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="md:hidden" {...rest}>
+    <nav className="md:hidden">
       <Button
         onClick={() => setIsOpen(!isOpen)}
         variant="outline"
@@ -338,7 +354,12 @@ const DropDownMenu = ({ config, ...rest }: SidebarNavigationProps) => {
         <div className="relative">
           <ul className="flex flex-col gap-1 w-full mt-2">
             {config.routes.map((link) => (
-              <SidebarGroupItem {...link} key={link.path || link.title} />
+              <SidebarGroupItem
+                item={link}
+                rootBasePath={config.path}
+                showRootAsSections={config.showRootAsSections}
+                key={link.path || link.title}
+              />
             ))}
           </ul>
         </div>

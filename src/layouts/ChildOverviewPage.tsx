@@ -7,17 +7,17 @@ import SidebarNavigation from "@src/components/navigation/SidebarNavigation";
 import { Button } from "@src/components/ui/button";
 import { Card, CardContent } from "@src/components/ui/card";
 import {
-  CenteredContent,
-  Hero,
-  VerticalGroup,
+    CenteredContent,
+    Hero,
+    VerticalGroup,
 } from "@src/components/ui/sections";
 import Layout from "@src/layouts/Layout";
 import { GetProductLogo } from "@src/lib/assets";
 import type { ManifestConfig } from "@src/lib/interfaces/manifest";
 import type { ChildPageInfo, PageInfo } from "@src/lib/interfaces/page-info";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { ThreeColumnLayout } from "./ThreeColumnLayout";
 
 type ChildOverviewPageProps = {
@@ -61,7 +61,7 @@ const ChildOverviewPage = ({
         <ThreeColumnLayout
           sidebar={
             pageInfo.hasSubPageNav && (
-              <SidebarNavigation config={sidebarConfig} />
+              <SidebarNavigation config={sidebarConfig} disableMobileMenu />
             )
           }
         >

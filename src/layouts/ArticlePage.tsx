@@ -94,10 +94,9 @@ const ArticlePage = ({
         <ThreeColumnLayout
           sidebar={
             pageInfo.hasSubPageNav && (
-              <SidebarNavigation config={sidebarConfig} />
+              <SidebarNavigation config={sidebarConfig} disableMobileMenu />
             )
           }
-          inPageLinks={sectionTitles}
           inPageNav={sectionTitles.length > 0 && Nav}
         >
           <BreadcrumbNav

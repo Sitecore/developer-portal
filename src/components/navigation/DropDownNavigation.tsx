@@ -1,27 +1,22 @@
 "use client";
 
+import { cn } from "@/src/lib/util";
 import { mdiChevronDown } from "@mdi/js";
 import Icon from "@mdi/react";
 import { Button } from "@src/components/ui/button";
 import type { ManifestConfig } from "@src/lib/interfaces/manifest";
 import { useState } from "react";
-import { cn } from "@/src/lib/util";
 import { SidebarGroupItem } from "./SidebarNavigation";
 
 export interface SidebarNavigationProps {
-  title?: string;
-  showSearch?: boolean;
   config: ManifestConfig;
 }
 
-export const DropDownNavigation = ({
-  config,
-  ...rest
-}: SidebarNavigationProps) => {
+export const DropDownNavigation = ({ config }: SidebarNavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="lg:hidden" {...rest}>
+    <nav className="lg:hidden">
       <Button
         onClick={() => setIsOpen(!isOpen)}
         variant="outline"
@@ -38,7 +33,12 @@ export const DropDownNavigation = ({
         <div className="relative">
           <ul className="flex flex-col gap-1 mt-2 w-full">
             {config.routes.map((link) => (
-              <SidebarGroupItem {...link} key={link.path || link.title} />
+              <SidebarGroupItem
+                item={link}
+                rootBasePath={config.path}
+                showRootAsSections={config.showRootAsSections}
+                key={link.path || link.title}
+              />
             ))}
           </ul>
         </div>

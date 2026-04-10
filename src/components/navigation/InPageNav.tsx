@@ -1,9 +1,9 @@
+import { cn } from "@/src/lib/util";
 import { mdiChevronRight } from "@mdi/js";
 import Icon from "@mdi/react";
 import { Button } from "@src/components/ui/button";
 import useInPageNavigation from "@src/hooks/useInPageNavigation";
 import type { ContentHeading } from "@src/lib/interfaces/contentheading";
-import { cn } from "@/src/lib/util";
 
 type InPageNavProps = {
   title?: string;
@@ -21,7 +21,6 @@ const InPageNav = ({ title, titles, className, mt }: InPageNavProps) => {
         "flex flex-col",
         mt ? `mt-${mt}` : "mt-0 md:mt-10",
         "mr-0 p-2 md:p-0 w-48",
-        "hidden xl:block",
         className,
       )}
     >
