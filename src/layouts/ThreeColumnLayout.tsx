@@ -4,8 +4,7 @@ import {
   Sidebar as ShadcnSidebar,
   SidebarContent,
   SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
+  SidebarProvider
 } from "@src/components/ui/sidebar";
 import type { CSSProperties, HTMLAttributes } from "react";
 
@@ -46,11 +45,11 @@ export const ThreeColumnLayout = ({
         )}
 
         <div className="relative flex w-full flex-1 flex-col">
-          {hasLeftSidebar && (
+          {/* {hasLeftSidebar && (
             <div className="flex justify-start px-4 pt-2 lg:hidden">
               <SidebarTrigger aria-label="Open section navigation" />
             </div>
-          )}
+          )} */}
 
           <SidebarProvider
             mobileBreakpoint={1280}
@@ -68,14 +67,14 @@ export const ThreeColumnLayout = ({
           >
             <SidebarInset className="">
               <main className="w-full max-w-7xl mx-auto min-h-[calc(100vh-430px)] px-2 2xl:px-0">
-                {hasRightSidebar && (
+                {/* {hasRightSidebar && (
                   <div className="mb-2 flex justify-end xl:hidden">
                     <SidebarTrigger
                       aria-label="Open table of contents"
                       className="[&_svg]:rotate-180"
                     />
                   </div>
-                )}
+                )} */}
                 <CenteredContent>{children}</CenteredContent>
               </main>
             </SidebarInset>

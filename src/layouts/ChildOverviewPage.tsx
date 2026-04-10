@@ -7,9 +7,9 @@ import SidebarNavigation from "@src/components/navigation/SidebarNavigation";
 import { Button } from "@src/components/ui/button";
 import { Card, CardContent } from "@src/components/ui/card";
 import {
-    CenteredContent,
-    Hero,
-    VerticalGroup,
+  CenteredContent,
+  Hero,
+  VerticalGroup,
 } from "@src/components/ui/sections";
 import Layout from "@src/layouts/Layout";
 import { GetProductLogo } from "@src/lib/assets";
@@ -94,7 +94,7 @@ const ChildOverviewPage = ({
 
                   return (
                     <article key={childPage.link || childPage.title}>
-                      <Card className="border shadow-md hover:shadow-lg transition-shadow">
+                      <Card style="outline" elevation="xs">
                         <CardContent>
                           <div className="flex flex-col gap-4 items-start">
                             {childPage.productLogo && logoSrc && (
@@ -109,7 +109,7 @@ const ChildOverviewPage = ({
                                 />
                               </div>
                             )}
-                            <h4 className="text-lg font-heading">
+                            <h4 className="text-lg font-sans font-medium">
                               <Link
                                 href={childPage.link}
                                 className="hover:underline"
@@ -117,7 +117,7 @@ const ChildOverviewPage = ({
                                 {childPage.title}
                               </Link>
                             </h4>
-                            <p>{childPage.description}</p>
+                            <p className="text-base">{childPage.description}</p>
                             <div className="flex-grow" />
 
                             <Button variant="outline" asChild>

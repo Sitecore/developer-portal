@@ -16,11 +16,11 @@ export const DropDownNavigation = ({ config }: SidebarNavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="lg:hidden">
+    <nav className="lg:hidden -mx-6 ">
       <Button
         onClick={() => setIsOpen(!isOpen)}
         variant="outline"
-        className="w-full flex items-center justify-between"
+        className="w-full flex items-center justify-between rounded-none border-t-0 border-l-0 border-r-0"
       >
         {config.title}
         <Icon
@@ -31,7 +31,7 @@ export const DropDownNavigation = ({ config }: SidebarNavigationProps) => {
       </Button>
       {isOpen && (
         <div className="relative">
-          <ul className="flex flex-col gap-1 mt-2 w-full">
+          <ul className="flex flex-col gap-0 mt-1 w-full">
             {config.routes.map((link) => (
               <SidebarGroupItem
                 item={link}

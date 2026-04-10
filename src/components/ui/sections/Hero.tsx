@@ -50,7 +50,7 @@ export const Hero = ({
 					<Image src={logoSrc} alt={`${title} logo`} width={280} height={60} />
 				)}
 				{!productLogo && (
-					<h1 className="mb-0 text-4xl font-semibold sm:text-5xl lg:text-6xl font-sans">
+					<h1 className="mb-0 text-4xl font-semibold lg:text-6xl font-sans">
 						{title}
 					</h1>
 				)}

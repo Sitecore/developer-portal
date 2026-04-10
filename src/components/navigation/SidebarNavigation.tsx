@@ -21,7 +21,7 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SidebarSearch from "./SidebarSearch";
 
 export interface SidebarNavigationProps {
@@ -81,6 +81,21 @@ const hasActiveDescendant = (
       hasActiveDescendant(currentPath, child, itemHref),
     ) ?? false
   );
+};
+
+const getDefaultExpandedState = (
+  item: ManifestNavigationItem,
+  branchIsActive: boolean,
+) => {
+  if (item.collapsed === false) {
+    return true;
+  }
+
+  if (item.collapsed === true) {
+    return false;
+  }
+
+  return branchIsActive;
 };
 
 const SidebarNavigation = ({
@@ -178,9 +193,12 @@ export const SidebarGroupItem = ({
     item,
     rootBasePath,
   );
-  const defaultExpanded: boolean =
-    item.collapsed != null ? !item.collapsed : sectionBranchIsActive;
+  const defaultExpanded = getDefaultExpandedState(item, sectionBranchIsActive);
   const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
+
+  useEffect(() => {
+    setIsExpanded(defaultExpanded);
+  }, [defaultExpanded]);
 
   if (!showRootAsSections) {
     return <MenuTreeItem item={item} basePath={rootBasePath} />;
@@ -193,7 +211,7 @@ export const SidebarGroupItem = ({
           <Link
             href={sectionBasePath}
             className={cn(
-              "my-4 mx-0 flex-1 text-sm font-medium uppercase hover:underline",
+              "my-1 md:my-4 mx-0 flex-1 text-sm font-medium uppercase hover:underline",
               sectionIsActive ? "text-primary-fg" : "text-muted-foreground",
             )}
           >
@@ -203,25 +221,24 @@ export const SidebarGroupItem = ({
           <button
             type="button"
             onClick={() => setIsExpanded((prev) => !prev)}
-            className="my-4 text-left flex-1 text-sm uppercase tracking-wide font-medium text-muted-foreground"
+            className="my-1 md:my-4 text-left flex-1 text-sm uppercase tracking-wide font-medium text-muted-foreground"
           >
             {item.title}
           </button>
         ) : (
           <p
-            className="my-4 text-sm uppercase tracking-wide text-muted-foreground"
+            className="my-1 md:my-4 text-sm uppercase tracking-wide text-muted-foreground"
             data-type="title"
           >
             {item.title}
           </p>
         )}
-
         {hasChildren && (
           <Button
             variant="ghost"
             size="sm"
             className={cn(
-              "ml-1 h-8 w-8 p-0",
+              "ml-0 md:ml-1 h-8 w-8 p-0",
               sectionBranchIsActive &&
                 "text-primary-fg hover:bg-primary-bg hover:text-primary-fg",
             )}
@@ -238,7 +255,7 @@ export const SidebarGroupItem = ({
       </div>
 
       {hasChildren && isExpanded && (
-        <SidebarMenu className="w-full">
+        <SidebarMenu className="not-prose w-full gap-0 md:gap-1">
           {item.children?.map((child) => (
             <MenuTreeItem
               item={child}
@@ -298,9 +315,12 @@ const MenuTreeItem = ({ item, basePath, depth = 0 }: MenuTreeItemProps) => {
   const hasChildren = item.children?.length > 0;
   const itemIsActive = isPathActive(router.asPath, itemHref);
   const branchIsActive = hasActiveDescendant(router.asPath, item, basePath);
-  const defaultExpanded: boolean =
-    item.collapsed != null ? !item.collapsed : branchIsActive;
+  const defaultExpanded = getDefaultExpandedState(item, branchIsActive);
   const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
+
+  useEffect(() => {
+    setIsExpanded(defaultExpanded);
+  }, [defaultExpanded]);
 
   if (!hasChildren) {
     return (

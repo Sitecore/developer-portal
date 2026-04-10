@@ -1,7 +1,7 @@
-import { TextLink } from "@src/components/links/TextLink";
-import { CardContent, CardHeader } from "@src/components/ui/card";
 import { ExtendedCard } from "@/src/components/ui/custom/card-extended";
 import { cn } from "@/src/lib/util";
+import { TextLink } from "@src/components/links/TextLink";
+import { CardContent, CardHeader } from "@src/components/ui/card";
 import {
   SitecoreCommunityNewsOrEventItem,
   SitecoreCommunityNewsOrEventItemSidebar,
@@ -29,7 +29,7 @@ export const SitecoreCommunityNews = ({
 
   return (
     <ExtendedCard
-      className={cn("bg-transparent", "p-0", className)}
+      className={cn("bg-transparent", "p-2 md:p-0", className)}
       style="flat"
       elevation="none"
     >

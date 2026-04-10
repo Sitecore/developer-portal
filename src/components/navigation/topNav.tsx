@@ -1,10 +1,15 @@
-import { mainNavigation } from "@/data/data-navigation";
+import { mainNavigation, type NavItem } from "@/data/data-navigation";
 import { mdiClose, mdiMenu } from "@mdi/js";
 import UserAccount from "@src/components/authentication/UserAccount";
 import { PreviewSearchInput } from "@src/components/integrations/sitecore-search/NewPreviewSearchInput";
 import { Icon } from "@src/components/lib/icon";
 import { cn } from "@src/components/lib/utils";
 import { Button } from "@src/components/ui/button";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@src/components/ui/collapsible";
 import { ProductIcon } from "@src/components/ui/logos";
 import {
   NavigationMenu,
@@ -16,11 +21,19 @@ import {
   navigationMenuTriggerStyle,
 } from "@src/components/ui/navigation-menu";
 import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@src/components/ui/sheet";
+import {
   GetProductLogoByVariant,
   Product,
   Type,
   Variant,
 } from "@src/lib/assets";
+import { ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
@@ -155,22 +168,32 @@ export default function TopNav({ searchEnabled }: TopNavProps) {
           {searchEnabled && (
             <PreviewSearchInput rfkId="rfkid_6" defaultItemsPerPage={6} />
           )}
-          <Button
-            onClick={() => setIsOpen(!isOpen)}
-            variant="ghost"
-            size="sm"
-            aria-label="Toggle Navigation"
-            className="xl:hidden"
-          >
-            {isOpen ? (
-              <Icon path={mdiClose} size={1} />
-            ) : (
-              <Icon path={mdiMenu} size={1.25} />
-            )}
-          </Button>
+
           <UserAccount />
           <DarkModeSwitch />
           <QuickStartMenu key={router.asPath} />
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="sm"
+                aria-label="Toggle Navigation"
+                className="md:hidden h-9 w-9 p-0"
+              >
+                {isOpen ? (
+                  <Icon path={mdiClose} size={1} />
+                ) : (
+                  <Icon path={mdiMenu} size={1.25} />
+                )}
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-full max-w-[380px] p-0">
+              <SheetHeader className="border-b px-4 py-4">
+                <SheetTitle>Navigation</SheetTitle>
+              </SheetHeader>
+              <MobileNavigation onNavigate={() => setIsOpen(false)} />
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
@@ -191,6 +214,161 @@ function getLogoByPath(
   return theme === "dark"
     ? GetProductLogoByVariant(logo, Variant.Dark, Type.Full)
     : GetProductLogoByVariant(logo, Variant.Light, Type.Full);
+}
+
+type MobileNavigationProps = {
+  onNavigate: () => void;
+};
+
+function MobileNavigation({ onNavigate }: MobileNavigationProps) {
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  const toggleExpanded = (key: string, isOpen: boolean) => {
+    setExpanded((prev) => ({ ...prev, [key]: isOpen }));
+  };
+
+  return (
+    <nav className="max-h-[calc(100dvh-5rem)] overflow-y-auto px-4 py-2">
+      <ul className="flex flex-col">
+        {mainNavigation.map((navItem) => {
+          const key = navItem.url || navItem.title;
+          const isExpanded = expanded[key] ?? false;
+
+          if (navItem.url && !navItem.children) {
+            return (
+              <li key={key} className="border-b last:border-b-0">
+                <Link
+                  href={navItem.url}
+                  onClick={onNavigate}
+                  className="flex items-center py-3 text-base font-medium"
+                >
+                  {navItem.title}
+                </Link>
+              </li>
+            );
+          }
+
+          return (
+            <li key={key} className="border-b last:border-b-0">
+              <Collapsible
+                open={isExpanded}
+                onOpenChange={(open) => toggleExpanded(key, open)}
+              >
+                <CollapsibleTrigger asChild>
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between py-3 text-left text-base font-medium"
+                    aria-expanded={isExpanded}
+                  >
+                    <span>{navItem.title}</span>
+                    <ChevronDown
+                      aria-hidden="true"
+                      className={cn(
+                        "h-3.5 w-3.5 shrink-0 text-foreground transition-transform duration-200",
+                        isExpanded && "rotate-180",
+                      )}
+                    />
+                  </button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="pb-3">
+                  <MobileNavChildren
+                    navItem={navItem}
+                    onNavigate={onNavigate}
+                  />
+                </CollapsibleContent>
+              </Collapsible>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
+}
+
+type MobileNavChildrenProps = {
+  navItem: NavItem;
+  onNavigate: () => void;
+};
+
+function MobileNavChildren({ navItem, onNavigate }: MobileNavChildrenProps) {
+  if (navItem.type === "grouped") {
+    return (
+      <div className="space-y-4 pl-1">
+        {navItem.children?.map((group) => (
+          <div key={group.url || group.title}>
+            {group.title.trim().length > 0 && (
+              <p className="mb-2 text-xs uppercase tracking-wide text-muted-foreground">
+                {group.title}
+              </p>
+            )}
+            <ul className="space-y-1">
+              {group.children?.map((product) => (
+                <li key={product.url || product.title}>
+                  <Link
+                    href={product.url || "#"}
+                    onClick={onNavigate}
+                    target={product.external ? "_blank" : undefined}
+                    rel={product.external ? "noopener noreferrer" : undefined}
+                    className="flex items-center gap-3 rounded-md px-2 py-2 text-sm hover:bg-accent"
+                  >
+                    <ProductIcon
+                      product={product.logo || Product.Sitecore}
+                      height="18px"
+                      width="30px"
+                    />
+                    <span>{product.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (navItem.type === "cta") {
+    return (
+      <ul className="space-y-1 pl-1">
+        {navItem.children?.map((child) => (
+          <li key={child.url || child.title}>
+            <Link
+              href={child.url || "#"}
+              onClick={onNavigate}
+              target={child.external ? "_blank" : undefined}
+              rel={child.external ? "noopener noreferrer" : undefined}
+              className="block rounded-md px-2 py-2 hover:bg-accent"
+            >
+              <span className="text-sm font-medium">{child.title}</span>
+              {child.subTitle && (
+                <p className="mt-1 text-xs text-muted-foreground line-clamp-2">
+                  {child.subTitle}
+                </p>
+              )}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  return (
+    <ul className="space-y-1 pl-1">
+      {navItem.children?.map((child) => (
+        <li key={child.url || child.title}>
+          <Link
+            href={child.url || "#"}
+            onClick={onNavigate}
+            target={child.external ? "_blank" : undefined}
+            rel={child.external ? "noopener noreferrer" : undefined}
+            className="block rounded-md px-2 py-2 text-sm hover:bg-accent"
+          >
+            {child.title}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 const MenuItem = React.forwardRef<

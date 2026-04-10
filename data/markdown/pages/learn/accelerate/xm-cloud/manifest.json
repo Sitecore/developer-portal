@@ -14,6 +14,7 @@
       "title": "Pre-development",
       "path": "pre-development",
       "ignoreLink": true,
+      "collapsed": false,
       "children": [
         {
           "title": "Discovery",

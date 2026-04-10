@@ -9,7 +9,7 @@ export const CategoryTileList = (props: CategoryTileListData) => (
     {props.cards.map((card) => (
       <article key={card.href || card.title}>
         <Link href={card.href} className="block">
-          <Card className="border shadow-md hover:shadow-lg transition-shadow">
+          <Card style="flat" elevation="xs">
             <CardHeader>
               <div className="flex items-center gap-2">
                 <h3 className="text-2xl font-heading">{card.title}</h3>

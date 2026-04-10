@@ -108,7 +108,7 @@ const AcceleratePage = ({
             </>
           }
         >
-          <CenteredContent className="min-h-[calc(100vh-400px)] prose-sm md:py-0">
+          <CenteredContent className="min-h-[calc(100vh-400px)] prose-sm md:py-0 px-4">
             <div className="flex flex-col">
               <DropDownNavigation config={sidebarConfig} key={router.asPath} />
               <BreadcrumbNav
@@ -117,7 +117,7 @@ const AcceleratePage = ({
                 config={sidebarConfig}
                 hideCurrentPage
               />
-              <h1 className="text-2xl font-normal md:text-4xl xl:text-6xl font-heading">
+              <h1 className="text-xl font-normal md:text-2xl lg:text-4xl xl:text-6xl font-heading">
                 {pageInfo.title}
               </h1>
             </div>
@@ -168,7 +168,7 @@ const AcceleratePage = ({
             <PromoList data={promoAfter} />
             <SocialFeeds pageInfo={pageInfo} />
           </CenteredContent>
-          <CenteredContent>
+          <CenteredContent className="px-4">
             <GithubContributionNotice pageInfo={pageInfo} config={sidebarConfig} />
           </CenteredContent>
         </ThreeColumnLayout>

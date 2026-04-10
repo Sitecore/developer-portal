@@ -8,9 +8,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@src/components/ui/dropdown-menu";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { signOut, useSession } from "next-auth/react";
 
 // Placeholder for Sitecore icon - replace with actual icon path if needed
 const iconSitecore = "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5";
@@ -27,7 +27,7 @@ const UserAccount: React.FC = () => {
 
   if (!session?.user) {
     return (
-      <Button variant="ghost" size="sm" asChild>
+      <Button variant="ghost" size="sm" asChild className="h-9 w-9 p-0">
         <Link href={loginUrl} aria-label="Login">
           <Icon path={mdiLogin} size={1} />
         </Link>

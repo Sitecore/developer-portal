@@ -1,8 +1,8 @@
+import { ExtendedCard } from "@/src/components/ui/custom/card-extended";
+import { cn } from "@/src/lib/util";
 import { TextLink } from "@src/components/links/TextLink";
 import { CardContent, CardHeader } from "@src/components/ui/card";
 import { useState } from "react";
-import { ExtendedCard } from "@/src/components/ui/custom/card-extended";
-import { cn } from "@/src/lib/util";
 import type { SortOption } from "../SitecoreCommunity.api";
 import {
   SitecoreCommunityBlogOrQuestion,
@@ -50,7 +50,7 @@ export const SitecoreCommunityBlog = ({
 
   return (
     <ExtendedCard
-      className={cn("bg-transparent", "p-0", className)}
+      className={cn("bg-transparent", "p-2 md:p-0", className)}
       style="flat"
       elevation="none"
     >
