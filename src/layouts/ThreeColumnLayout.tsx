@@ -65,7 +65,7 @@ export const ThreeColumnLayout = ({
               } as CSSProperties
             }
           >
-            <SidebarInset className="">
+            <SidebarInset className="px-4">
               <main className="w-full max-w-7xl mx-auto min-h-[calc(100vh-430px)] px-2 2xl:px-0">
                 {/* {hasRightSidebar && (
                   <div className="mb-2 flex justify-end xl:hidden">
