@@ -63,11 +63,18 @@ function handleHTML(html: string, info: TransformerInfo) {
   const { url, transformer } = info;
 
   if (transformer.name === "@remark-embedder/transformer-oembed") {
-    if (url.includes("www.youtube.com")) {
+    let host = "";
+    try {
+      host = new URL(url).hostname.toLowerCase();
+    } catch {
+      return html;
+    }
+
+    if (host === "www.youtube.com") {
       return `<div class="embed-youtube aspect-w-16 aspect-h-9">${html}</div>`;
     }
 
-    if (url.includes("twitter.com")) {
+    if (host === "twitter.com" || host.endsWith(".twitter.com")) {
       return `<div class="embed-twitter h-full">${html}</div>`;
     }
   }
