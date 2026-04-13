@@ -17,6 +17,10 @@ export default async function handler(
     const { id, mt: mimeType } = req.query;
 
     if (id && typeof id === "string") {
+      if (!/^\d+$/.test(id)) {
+        return res.status(400).json({ error: "Invalid image ID" });
+      }
+
       const jiraResponse = await GetJiraAttachement(id);
       const imageBuffer = Buffer.from(jiraResponse.data);
 

@@ -54,6 +54,12 @@ function createJqlString(
     .join("%20AND%20");
 }
 
+function assertValidJiraAttachmentId(id: string): void {
+  if (!/^\d+$/.test(id)) {
+    throw new Error("Invalid Jira attachment id");
+  }
+}
+
 export async function GetJiraResponse(): Promise<JiraResponse> {
   // Get all issues from Jira where external roadmap is set to 1 (true)
 
@@ -100,6 +106,7 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
 }
 
 export async function GetJiraAttachement(id: string) {
+  assertValidJiraAttachmentId(id);
   const imageUrl = `${jiraBaseUrl}/attachment/content/${id}`;
 
   const response = await fetch(imageUrl, {
