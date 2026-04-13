@@ -675,6 +675,10 @@
 }
 
 @layer utilities {
+  .prose {
+    @apply max-w-none;
+    --tw-prose-links: var(--color-primary-fg);
+  }
   .bg-hero-gradient {
     @apply bg-[linear-gradient(51deg,oklch(95.5%_.025_278deg),oklch(96.5%_.02_275deg)_10%,oklch(98.5%_.01_270deg)_20%,oklch(99%_.003_260deg)_40%,oklch(99%_.003_20deg)_60%,oklch(98%_.015_20deg)_80%,oklch(96%_.025_20deg)_90%,oklch(91%_.045_20deg))];
   }
@@ -686,5 +690,8 @@
 }
 
 .prose {
-  @apply prose-neutral prose-sm prose-a:text-primary-500 dark:prose-a:text-primary-200 prose-a:font-semibold max-w-none dark:prose-p:text-whiteAlpha-700 dark:prose-code:text-whiteAlpha-700 dark:prose-strong:text-whiteAlpha-700;
+  @apply prose-neutral prose-sm;
+}
+.dark .prose {
+  @apply prose-invert;
 }
