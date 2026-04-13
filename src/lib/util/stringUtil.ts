@@ -10,8 +10,15 @@ export function appendPathToBasePath(basePath: string, path: string): string {
 
 export function removeHtmlTags(input: string): string {
   const htmlTagsRegex = /<[^>]*>/g;
+  let previous: string;
+  let cleanedString = input;
 
-  return input.replace(htmlTagsRegex, "");
+  do {
+    previous = cleanedString;
+    cleanedString = cleanedString.replace(htmlTagsRegex, "");
+  } while (cleanedString !== previous);
+
+  return cleanedString;
 }
 
 export function removeHtmlTagsAndSpecialChars(input: string): string {
@@ -32,8 +39,13 @@ export function removeHtmlTagsAndSpecialChars(input: string): string {
     // Add more mappings as needed
   };
 
-  // Replace HTML tags with empty string
-  let cleanedString = input.replace(htmlTagsRegex, "");
+  // Replace HTML tags with empty string (repeatedly to avoid reappearance)
+  let previous: string;
+  let cleanedString = input;
+  do {
+    previous = cleanedString;
+    cleanedString = cleanedString.replace(htmlTagsRegex, "");
+  } while (cleanedString !== previous);
 
   // Replace HTML special characters with their actual values
   cleanedString = cleanedString.replace(htmlSpecialCharsRegex, (match) => {
@@ -44,6 +56,12 @@ export function removeHtmlTagsAndSpecialChars(input: string): string {
       return match;
     }
   });
+
+  // Decode can introduce '<' and '>', so strip tags again until stable
+  do {
+    previous = cleanedString;
+    cleanedString = cleanedString.replace(htmlTagsRegex, "");
+  } while (cleanedString !== previous);
 
   return cleanedString;
 }
