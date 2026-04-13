@@ -55,7 +55,12 @@ export function validateSasUrl(sasUrl: string): boolean {
     }
 
     // Validate URL format
-    if (!url.hostname.includes(".blob.core.windows.net")) {
+    const hostname = url.hostname.toLowerCase();
+    const isAzureBlobHost =
+      hostname === "blob.core.windows.net" ||
+      hostname.endsWith(".blob.core.windows.net");
+
+    if (!isAzureBlobHost) {
       console.error("Invalid Azure Blob Storage URL format");
       return false;
     }
