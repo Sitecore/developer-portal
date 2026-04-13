@@ -214,6 +214,11 @@ export function getStatusColor(status: string): string {
       return "gray";
   }
 }
+export async function getIssueTypeSchema(params: {
+  projectKey: string;
+  issueTypeId: string;
+}): Promise<IssueTypeSchema> {
+  const { projectKey, issueTypeId } = params;
 
   assertValidProjectKey(projectKey);
   assertValidIssueTypeId(issueTypeId);
@@ -221,15 +226,8 @@ export function getStatusColor(status: string): string {
   const safeProjectKey = encodeURIComponent(projectKey);
   const safeIssueTypeId = encodeURIComponent(issueTypeId);
 
-export async function getIssueTypeSchema({
-    `${jiraBaseUrl}/issue/createmeta/${safeProjectKey}/issuetypes/${safeIssueTypeId}`,
-  issueTypeId,
-}: {
-  projectKey: string;
-  issueTypeId: string;
-}): Promise<IssueTypeSchema> {
   const response = await fetch(
-    `${jiraBaseUrl}/issue/createmeta/${projectKey}/issuetypes/${issueTypeId}`,
+    `${jiraBaseUrl}/issue/createmeta/${safeProjectKey}/issuetypes/${safeIssueTypeId}`,
     {
       method: "GET",
       cache: "no-cache",
