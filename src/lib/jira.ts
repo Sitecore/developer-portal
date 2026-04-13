@@ -12,6 +12,18 @@ const jiraBaseUrl = "https://sitecore.atlassian.net/rest/api/3";
 const JIRA_USERNAME = process.env.JIRA_USERNAME as string;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN as string;
 
+function assertValidProjectKey(projectKey: string): void {
+  if (!/^[A-Z0-9_-]{1,20}$/.test(projectKey)) {
+    throw new Error("Invalid project key");
+  }
+}
+
+function assertValidIssueTypeId(issueTypeId: string): void {
+  if (!/^[0-9]{1,20}$/.test(issueTypeId)) {
+    throw new Error("Invalid issue type id");
+  }
+}
+
 export const excludedProducts = [
   "Content Hub DAM",
   "Content Hub Ops",
@@ -203,8 +215,14 @@ export function getStatusColor(status: string): string {
   }
 }
 
+  assertValidProjectKey(projectKey);
+  assertValidIssueTypeId(issueTypeId);
+
+  const safeProjectKey = encodeURIComponent(projectKey);
+  const safeIssueTypeId = encodeURIComponent(issueTypeId);
+
 export async function getIssueTypeSchema({
-  projectKey,
+    `${jiraBaseUrl}/issue/createmeta/${safeProjectKey}/issuetypes/${safeIssueTypeId}`,
   issueTypeId,
 }: {
   projectKey: string;
