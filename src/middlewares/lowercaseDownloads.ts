@@ -1,18 +1,25 @@
-import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
+import {
+  type NextFetchEvent,
+  type NextRequest,
+  NextResponse,
+} from "next/server";
 
-import { MiddlewareFactory } from './middlewareFactory';
+import type { ProxyFactory } from "./proxyFactory";
 
 // Only run on requests starting with /Downloads
-export const lowercaseDownloads: MiddlewareFactory = (next) => {
-  return async (request: NextRequest, _next: NextFetchEvent) => {
+export const lowercaseDownloads: ProxyFactory = (proxy) => {
+  return async (request: NextRequest, next: NextFetchEvent) => {
     const pathname = request.nextUrl.pathname;
 
-    if (pathname.startsWith('/Downloads')) {
-      const url = new URL(pathname.replace('/Downloads', '/downloads'), request.nextUrl);
+    if (pathname.startsWith("/Downloads")) {
+      const url = new URL(
+        pathname.replace("/Downloads", "/downloads"),
+        request.nextUrl,
+      );
 
       return NextResponse.redirect(url);
     }
 
-    return next(request, _next);
+    return proxy(request, next);
   };
 };

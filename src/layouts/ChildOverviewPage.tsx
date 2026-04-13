@@ -1,17 +1,24 @@
-import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-import { Box, Button, Card, CardBody, Flex, Grid, GridItem, Heading, LinkBox, LinkOverlay, SimpleGrid, Spacer, Text, useColorModeValue } from '@chakra-ui/react';
-import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
-import { RenderContent } from '@src/components/markdown/MarkdownContent';
-import Layout from '@src/layouts/Layout';
-import Image from 'next/image';
+"use client";
 
-import NextLink from 'next/link';
-import { PromoCardProps, PromoList } from '../components/cards';
-import SidebarNavigation from '../components/navigation/SidebarNavigation';
-import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
-import { GetProductLogo } from '../lib/assets';
-import { ManifestConfig } from '../lib/interfaces/manifest';
-import { ThreeColumnLayout } from './ThreeColumnLayout';
+import { type PromoCardProps, PromoList } from "@src/components/cards";
+import { TrackPageView } from "@src/components/integrations/engage/TrackPageView";
+import { RenderContent } from "@src/components/markdown/MarkdownContent";
+import SidebarNavigation from "@src/components/navigation/SidebarNavigation";
+import { Button } from "@src/components/ui/button";
+import { Card, CardContent } from "@src/components/ui/card";
+import {
+  CenteredContent,
+  Hero,
+  VerticalGroup,
+} from "@src/components/ui/sections";
+import Layout from "@src/layouts/Layout";
+import { GetProductLogo } from "@src/lib/assets";
+import type { ManifestConfig } from "@src/lib/interfaces/manifest";
+import type { ChildPageInfo, PageInfo } from "@src/lib/interfaces/page-info";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import Link from "next/link";
+import { ThreeColumnLayout } from "./ThreeColumnLayout";
 
 type ChildOverviewPageProps = {
   pageInfo: PageInfo;
@@ -24,28 +31,51 @@ type ChildOverviewPageProps = {
   sidebarConfig: ManifestConfig;
 };
 
-const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, sidebarConfig }: ChildOverviewPageProps) => {
+const ChildOverviewPage = ({
+  pageInfo,
+  promoAfter,
+  promoBefore,
+  childPageInfo,
+  sidebarConfig,
+}: ChildOverviewPageProps) => {
+  const { theme } = useTheme();
+
   if (!pageInfo) {
     return <>No pageInfo found</>;
   }
   // Check for headings in the content
   return (
     <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
-        <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
+      <Layout
+        title={pageInfo.title}
+        description={pageInfo.description}
+        openGraphImage={pageInfo.openGraphImage}
+      >
+        <Hero
+          title={pageInfo.title}
+          description={pageInfo.description}
+          image={pageInfo.heroImage}
+          productLogo={pageInfo.productLogo}
+        />
 
-        <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && <SidebarNavigation config={sidebarConfig} />}>
+        <ThreeColumnLayout
+          sidebar={
+            pageInfo.hasSubPageNav && (
+              <SidebarNavigation config={sidebarConfig} disableMobileMenu />
+            )
+          }
+        >
           {pageInfo.content && pageInfo.content.length > 0 && (
             <VerticalGroup>
               <CenteredContent>
                 <PromoList data={promoBefore} />
 
                 {pageInfo.parsedContent && (
-                  <Grid templateColumns="repeat(4, 1fr)" gap={4}>
-                    <GridItem colSpan={4}>
+                  <div className="grid grid-cols-4 gap-4">
+                    <div className="col-span-4">
                       <RenderContent content={pageInfo.parsedContent} />
-                    </GridItem>
-                  </Grid>
+                    </div>
+                  </div>
                 )}
 
                 <PromoList data={promoAfter} />
@@ -54,42 +84,52 @@ const ChildOverviewPage = ({ pageInfo, promoAfter, promoBefore, childPageInfo, s
           )}
           <VerticalGroup>
             <CenteredContent>
-              <SimpleGrid columns={[1, 2, 2]} gap={4} my={4}>
-                {childPageInfo.map((childPage, i) => (
-                  <LinkBox as="article" key={i}>
-                    <Card variant={'outlineRaised'} layerStyle={'interactive.raise'}>
-                      <CardBody>
-                        <Flex direction={'column'} gap={4} align={'flex-start'}>
-                          {childPage.productLogo && (
-                            <Box height={'24px'} width={'full'} position={'relative'} mb={4} sx={{ '& > img': { width: 'auto !important' } }}>
-                              <Image
-                                src={useColorModeValue(GetProductLogo(childPage.productLogo, 'Light'), GetProductLogo(childPage.productLogo, 'Dark'))}
-                                alt={`${childPage.title}`}
-                                fill
-                                style={{ objectFit: 'fill' }}
-                                sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
-                              />
-                            </Box>
-                          )}
-                          <Heading as="h4" size="md">
-                            <LinkOverlay as={NextLink} href={childPage.link}>
-                              {childPage.title}
-                            </LinkOverlay>
-                          </Heading>
-                          <Text>{childPage.description}</Text>
-                          <Spacer />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                {childPageInfo.map((childPage) => {
+                  const logoSrc = childPage.productLogo
+                    ? theme === "dark"
+                      ? GetProductLogo(childPage.productLogo, "Dark")
+                      : GetProductLogo(childPage.productLogo, "Light")
+                    : undefined;
 
-                          <Button variant={'outline'} colorScheme="neutral">
-                            <LinkOverlay as={NextLink} href={childPage.link}>
-                              Read more
-                            </LinkOverlay>
-                          </Button>
-                        </Flex>
-                      </CardBody>
-                    </Card>
-                  </LinkBox>
-                ))}
-              </SimpleGrid>
+                  return (
+                    <article key={childPage.link || childPage.title}>
+                      <Card style="outline" elevation="xs">
+                        <CardContent>
+                          <div className="flex flex-col gap-4 items-start">
+                            {childPage.productLogo && logoSrc && (
+                              <div className="h-6 w-full relative mb-4">
+                                <Image
+                                  src={logoSrc}
+                                  alt={childPage.title}
+                                  fill
+                                  style={{ objectFit: "fill" }}
+                                  sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
+                                  className="!w-auto"
+                                />
+                              </div>
+                            )}
+                            <h4 className="text-lg font-sans font-medium">
+                              <Link
+                                href={childPage.link}
+                                className="hover:underline"
+                              >
+                                {childPage.title}
+                              </Link>
+                            </h4>
+                            <p className="text-base">{childPage.description}</p>
+                            <div className="flex-grow" />
+
+                            <Button variant="outline" asChild>
+                              <Link href={childPage.link}>Read more</Link>
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </article>
+                  );
+                })}
+              </div>
             </CenteredContent>
           </VerticalGroup>
           {/* <VerticalGroup>

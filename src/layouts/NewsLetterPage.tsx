@@ -1,14 +1,26 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Grid, GridItem, Link, SimpleGrid, Text } from '@chakra-ui/react';
-import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
-import Layout from '@src/layouts/Layout';
-
-import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-
-import { TextLink } from '../components/links';
-import { DecoratedMarkdown, RenderContent } from '../components/markdown/MarkdownContent';
-import SidebarNavigation from '../components/navigation/SidebarNavigation';
-import { CenteredContent, Hero, VerticalGroup } from '../components/ui/sections';
-import { ManifestConfig } from '../lib/interfaces/manifest';
+import { TrackPageView } from "@src/components/integrations/engage/TrackPageView";
+import { TextLink } from "@src/components/links";
+import {
+  DecoratedMarkdown,
+  RenderContent,
+} from "@src/components/markdown/MarkdownContent";
+import SidebarNavigation from "@src/components/navigation/SidebarNavigation";
+import { Button } from "@src/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@src/components/ui/card";
+import {
+  CenteredContent,
+  Hero,
+  VerticalGroup,
+} from "@src/components/ui/sections";
+import Layout from "@src/layouts/Layout";
+import type { ManifestConfig } from "@src/lib/interfaces/manifest";
+import type { ChildPageInfo, PageInfo } from "@src/lib/interfaces/page-info";
+import Link from "next/link";
 
 type NewsLetterPagePageProps = {
   pageInfo: PageInfo;
@@ -16,64 +28,91 @@ type NewsLetterPagePageProps = {
   childPageInfo: Array<ChildPageInfo>;
 };
 
-const NewsLetterPage = ({ pageInfo, sidebarConfig, childPageInfo }: NewsLetterPagePageProps) => {
+const NewsLetterPage = ({
+  pageInfo,
+  sidebarConfig,
+  childPageInfo,
+}: NewsLetterPagePageProps) => {
   if (!pageInfo) {
     return <>No pageInfo found</>;
   }
 
   return (
     <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
-        <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
+      <Layout
+        title={pageInfo.title}
+        description={pageInfo.description}
+        openGraphImage={pageInfo.openGraphImage}
+      >
+        <Hero
+          title={pageInfo.title}
+          description={pageInfo.description}
+          image={pageInfo.heroImage}
+          productLogo={pageInfo.productLogo}
+        />
 
         <VerticalGroup>
           <CenteredContent>
-            <Flex flexGrow={0} justify={'space-between'} width={'full'} gap={4} direction={{ base: 'column', md: 'row' }} flexFlow={'column'}>
-              <Box w={{ base: 'full', md: '25%' }} as={'nav'}>
+            <div className="flex flex-grow-0 justify-between w-full gap-4 flex-col md:flex-row">
+              <nav className="w-full md:w-1/4">
                 <SidebarNavigation config={sidebarConfig} />
-              </Box>
+              </nav>
 
               {/* Show overview is the route has childs */}
               {childPageInfo.length > 0 && (
-                <Box gap={10} w={{ base: 'full' }}>
+                <div className="flex flex-col gap-10 w-full">
                   {/* Show markdown content if we have some */}
                   {pageInfo.content && pageInfo.content?.length > 0 && (
-                    <Box mb={10}>
+                    <div className="mb-10">
                       <RenderContent content={pageInfo.parsedContent} />
-                    </Box>
+                    </div>
                   )}
                   {/* Render the list of child pages */}
-                  <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+                  <div className="grid grid-cols-2 gap-4">
                     {childPageInfo.map((childPage, i) => (
-                      <GridItem order={'-' + i} key={i}>
-                        <Card variant={'outlineRaised'} size="md" layerStyle={'interactive.raise'} key={i}>
+                      <div
+                        key={childPage.link || childPage.title || i}
+                        style={{ order: -i }}
+                      >
+                        <Card className="border shadow-md hover:shadow-lg transition-shadow">
                           <CardHeader>
-                            <TextLink isHeading as={'h3'} text={childPage.title} aria-label={childPage.title} href={childPage.link} />
+                            <TextLink
+                              isHeading
+                              text={childPage.title}
+                              aria-label={childPage.title}
+                              href={childPage.link}
+                            />
                           </CardHeader>
-                          <CardBody>
-                            <Text noOfLines={2}>{childPage.description}</Text>
-                          </CardBody>
+                          <CardContent>
+                            <p className="line-clamp-2">
+                              {childPage.description}
+                            </p>
+                          </CardContent>
                           <CardFooter>
-                            <Button variant={'outline'} colorScheme="neutral">
+                            <Button variant="outline" asChild>
                               <Link href={childPage.link}>Read more</Link>
                             </Button>
                           </CardFooter>
                         </Card>
-                      </GridItem>
+                      </div>
                     ))}
-                  </Grid>
-                </Box>
+                  </div>
+                </div>
               )}
 
               {/* No childpages, show newsletter content */}
-              {childPageInfo.length == 0 && (
-                <Box gap={10} w={{ base: 'full' }}>
-                  <SimpleGrid columns={{ base: 0, md: 3 }} gap={8}>
-                    {pageInfo.parsedContent && <DecoratedMarkdown disabledProse>{pageInfo.parsedContent}</DecoratedMarkdown>}
-                  </SimpleGrid>
-                </Box>
+              {childPageInfo.length === 0 && (
+                <div className="flex flex-col gap-10 w-full">
+                  <div className="grid grid-cols-0 md:grid-cols-3 gap-8">
+                    {pageInfo.parsedContent && (
+                      <DecoratedMarkdown disabledProse>
+                        {pageInfo.parsedContent}
+                      </DecoratedMarkdown>
+                    )}
+                  </div>
+                </div>
               )}
-            </Flex>
+            </div>
           </CenteredContent>
         </VerticalGroup>
       </Layout>

@@ -1,69 +1,82 @@
-import { ICustomEventInput, IPageViewEventInput, IPersonalizerInput } from '@sitecore/engage';
+import type {
+  ICustomEventInput,
+  IPageViewEventInput,
+  IPersonalizerInput,
+} from "@sitecore/engage";
 // import { INestedObject } from '@sitecore/engage/types/lib/utils/flatten-object';
-import { useContext } from 'react';
+import { useContext } from "react";
 
-import { EngageTrackerContext } from '../components/integrations/engage/EngageTracker';
+import { EngageTrackerContext } from "../components/integrations/engage/EngageTracker";
 
 export const useEngageTracker = () => {
   const context = useContext(EngageTrackerContext);
 
-  const TrackPageView = async (pageSlug: string, extensionData: any | undefined) => {
+  const TrackPageView = async (
+    pageSlug: string,
+    extensionData: any | undefined,
+  ) => {
     if (!context.isTrackerEnabled) {
       return;
     }
 
     if (!context.engageTracker === undefined) {
-      console.log('engageTracker is undefined');
+      console.log("engageTracker is undefined");
 
       return;
     }
 
     const pageViewData: IPageViewEventInput = {
-      channel: 'WEB',
-      currency: 'USD',
+      channel: "WEB",
+      currency: "USD",
       pointOfSale: context.engageKeys.SitecoreCdpPointOfSale,
-      language: 'EN',
+      language: "EN",
       page: pageSlug,
     };
 
     await context.engageTracker?.pageView(pageViewData, extensionData);
   };
 
-  const TrackEvent = async (eventName: string, extensionData?: any | undefined) => {
+  const TrackEvent = async (
+    eventName: string,
+    extensionData?: any | undefined,
+  ) => {
     if (!context.isTrackerEnabled) {
       return;
     }
 
     if (!context.engageTracker === undefined) {
-      console.log('engageTracker is undefined');
+      console.log("engageTracker is undefined");
 
       return;
     }
 
     const eventData: ICustomEventInput = {
-      channel: 'WEB',
-      currency: 'USD',
+      channel: "WEB",
+      currency: "USD",
       pointOfSale: context.engageKeys.SitecoreCdpPointOfSale,
-      language: 'EN',
+      language: "EN",
     };
 
     await context.engageTracker?.event(eventName, eventData, extensionData);
   };
 
-  const RunPersonalizationFlow = async <T>(friendlyId: string, data?: any | undefined): Promise<T | undefined> => {
+  const RunPersonalizationFlow = async <T>(
+    friendlyId: string,
+    data?: any | undefined,
+  ): Promise<T | undefined> => {
     if (!context.isTrackerEnabled) {
       return;
     }
 
     if (!context.engageTracker === undefined) {
-      console.log('engageTracker is undefined');
+      console.log("engageTracker is undefined");
 
       return;
     }
 
     const personalizationData: IPersonalizerInput = {
-      channel: 'WEB',
-      currency: 'USD',
+      channel: "WEB",
+      currency: "USD",
       friendlyId,
       pointOfSale: context.engageKeys.SitecoreCdpPointOfSale,
     };
@@ -72,7 +85,10 @@ export const useEngageTracker = () => {
       personalizationData.params = data;
     }
 
-    const response = await context.engageTracker?.personalize(personalizationData, 10000);
+    const response = await context.engageTracker?.personalize(
+      personalizationData,
+      10000,
+    );
 
     return response as T;
   };

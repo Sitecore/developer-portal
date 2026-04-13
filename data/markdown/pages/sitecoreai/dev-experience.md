@@ -23,7 +23,7 @@ SitecoreAI includes a rich offering of developer tools for setting up including 
 ### Content SDK
 The Sitecore Content SDK is a toolkit for building scalable, personalized digital experiences with XM Cloud. It streamlines development using modern frameworks like Next.js, offering unified APIs for layout, content, and tracking, all designed to accelerate delivery and simplify workflows.
 
-<Row columns={3}>
+<Row columns="3">
 <Link title="Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
 <Link title="Release Notes" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html" />
 </Row>
@@ -33,7 +33,7 @@ The open-source Marketplace SDK enables developers to build JavaScript or TypeSc
 - App-to-SitecoreAI interactions: The required client package securely connects your app to SitecoreAI, allowing it to appear in and interact with SitecoreAI extension points.
 - API access to SitecoreAI: Optional packages provide type-safe interfaces for accessing Sitecore product APIs, supporting both client-side and server-side operations as needed.
 
-<Row columns={3}>
+<Row columns="3">
   <Link title="Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
   <Link title="Release Notes" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html" />
 </Row>
@@ -48,7 +48,7 @@ For example, Gradial uses the Agent API to turn marketing requests into real out
 You can build similar workflows, connecting your own tools and AI assistants to Sitecore to drive intelligent automation and accelerate time to market.
 
 
-<Row columns={3}>
+<Row columns="3">
   <Link title="Agent API" link="https://api-docs.sitecore.com/ai-capabilities/agent-api" />
   <Link title="Integrating Sitecore with agentic platforms" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/integrating-sitecore-with-agentic-platforms.html" />
 </Row>
@@ -67,7 +67,7 @@ Work directly in your preferred AI assistant. With a simple prompt like "Launch 
 - **End-to-end workflow orchestration**
 Coordinate Sitecore with other MCP-enabled tools, such as Asana, Figma, or analytics platforms using a prompt like "Pull new tasks from Asana and publish the approved campaign page in Sitecore.” Because Marketer MCP follows an open standard, you can unify actions across systems, using AI as the control hub for your marketing stack. This creates streamlined workflows, less friction, and consistent execution across channels and tools.
 
-<Row columns={3}>
+<Row columns="3">
   <Link title="Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/marketer-mcp.html" />
 </Row>
 
@@ -78,7 +78,7 @@ BlokCN streamlines frontend development with an open UI component library that e
 - The Blok MCP lets users generate visually-consistent apps or prototypes with AI prompts – no deep technical skills required.
 - Partners can publish their BlokCN-built apps to the marketplace, reaching new customers and unlocking monetization opportunities.
 
-<Row columns={3}>
+<Row columns="3">
 <Link title="Documentation" link="https://blok.sitecore.com/beta " />
 </Row>
 

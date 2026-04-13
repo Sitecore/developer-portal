@@ -1,6 +1,8 @@
-import { ArrowUpIcon } from '@chakra-ui/icons';
-import { Box, Button, Hide } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+"use client";
+
+import { Button } from "@src/components/ui/button";
+import { ArrowUp } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,7 +10,7 @@ export default function ScrollToTop() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -21,20 +23,21 @@ export default function ScrollToTop() {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
 
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
+  if (!isVisible) {
+    return null;
+  }
+
   return (
-    <Hide below="md">
-      {isVisible && (
-        <Box onClick={scrollToTop} position="fixed" bottom="120px" right={['16px', '84px']} zIndex={3}>
-          <Button rightIcon={<ArrowUpIcon />} colorScheme="neutral" variant="solid">
-            Scroll to top
-          </Button>
-        </Box>
-      )}
-    </Hide>
+    <div className="hidden md:block fixed bottom-[25px] right-4 md:right-[84px] z-[3]">
+      <Button onClick={scrollToTop} variant="outline" colorScheme="neutral" className="gap-2">
+        Scroll to top
+        <ArrowUp className="h-4 w-4" />
+      </Button>
+    </div>
   );
 }

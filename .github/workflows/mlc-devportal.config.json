@@ -19,7 +19,13 @@
   ],
   "httpHeaders": [
     {
-      "urls": ["https://github.com/", "https://guides.github.com/", "https://help.github.com/", "https://docs.github.com/", "kb.sitecore.net"],
+      "urls": [
+        "https://github.com/",
+        "https://guides.github.com/",
+        "https://help.github.com/",
+        "https://docs.github.com/",
+        "kb.sitecore.net"
+      ],
       "headers": {
         "Accept-Encoding": "zstd, br, gzip, deflate"
       }

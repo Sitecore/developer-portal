@@ -1,4 +1,4 @@
-import { entriesApiUrl, getSelectedIds } from '@lib/changelog/common/changelog';
+import { entriesApiUrl, getSelectedIds } from '@src/lib/changelog/common/changelog';
 import { describe, expect, test } from 'vitest';
 
 describe('getSelectedIds', () => {
@@ -36,4 +36,3 @@ describe('entriesApiUrl', () => {
     expect(entriesApiUrl).toBe('/api/changelog/v1');
   });
 });
-

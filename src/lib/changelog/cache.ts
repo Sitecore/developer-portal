@@ -38,7 +38,7 @@ class CacheManager<T> {
         () => {
           this.cleanup();
         },
-        5 * 60 * 1000
+        5 * 60 * 1000,
       );
     }
   }
@@ -162,7 +162,10 @@ function getEntryCountCacheKey(productId: string, preview: boolean): string {
 /**
  * Get cached entry count
  */
-export function getCachedEntryCount(productId: string, preview: boolean): number | null {
+export function getCachedEntryCount(
+  productId: string,
+  preview: boolean,
+): number | null {
   const key = getEntryCountCacheKey(productId, preview);
   return entryCountCache.get(key);
 }
@@ -170,7 +173,11 @@ export function getCachedEntryCount(productId: string, preview: boolean): number
 /**
  * Set cached entry count
  */
-export function setCachedEntryCount(productId: string, preview: boolean, count: number): void {
+export function setCachedEntryCount(
+  productId: string,
+  preview: boolean,
+  count: number,
+): void {
   const key = getEntryCountCacheKey(productId, preview);
   entryCountCache.set(key, count);
 }

@@ -1,4 +1,4 @@
-import { getChangelogCredentials } from '@lib/changelog/common/credentials';
+import { getChangelogCredentials } from '@src/lib/changelog/common/credentials';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 
 describe('getChangelogCredentials', () => {
@@ -69,4 +69,3 @@ describe('getChangelogCredentials', () => {
     expect(credentials.preview.token).toBe('prev-token');
   });
 });
-

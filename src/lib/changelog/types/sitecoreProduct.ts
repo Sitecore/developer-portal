@@ -1,5 +1,5 @@
-import { ProductFragment } from '@data/gql/generated/graphql';
-import { getStringValue } from '@lib/utils';
+import type { ProductFragment } from "@data/gql/generated/graphql";
+import { getStringValue } from "@/src/lib/util/stringUtil";
 
 export type SitecoreProduct = {
   id: string;
@@ -21,9 +21,11 @@ export type SitecoreProductResults = {
  * @param rawItem - GraphQL ProductFragment result
  * @returns Parsed SitecoreProduct
  */
-export function parseSitecoreProductItem(rawItem: ProductFragment | null | undefined): SitecoreProduct {
+export function parseSitecoreProductItem(
+  rawItem: ProductFragment | null | undefined,
+): SitecoreProduct {
   if (!rawItem) {
-    throw new Error('Invalid SitecoreProduct: rawItem is null or undefined');
+    throw new Error("Invalid SitecoreProduct: rawItem is null or undefined");
   }
 
   return {
@@ -41,10 +43,14 @@ export function parseSitecoreProductItem(rawItem: ProductFragment | null | undef
  * @param rawItems - Array of GraphQL ProductFragment results
  * @returns Array of parsed SitecoreProduct items
  */
-export function parseSitecoreProductItems(rawItems: Array<ProductFragment | null> | null | undefined): Array<SitecoreProduct> {
+export function parseSitecoreProductItems(
+  rawItems: Array<ProductFragment | null> | null | undefined,
+): Array<SitecoreProduct> {
   if (!rawItems) {
     return [];
   }
 
-  return rawItems.filter((x): x is ProductFragment => x !== null).map((x) => parseSitecoreProductItem(x));
+  return rawItems
+    .filter((x): x is ProductFragment => x !== null)
+    .map((x) => parseSitecoreProductItem(x));
 }

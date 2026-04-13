@@ -1,61 +1,69 @@
+import type { SearchByProductAndBreakingQuery } from "@data/gql/generated/graphql";
 import {
   GetAllChangetypesDocument,
-  GetAllChangetypesQuery,
-  GetAllChangetypesQueryVariables,
+  type GetAllChangetypesQuery,
+  type GetAllChangetypesQueryVariables,
   GetAllProductsDocument,
-  GetAllProductsQuery,
-  GetAllProductsQueryVariables,
+  type GetAllProductsQuery,
+  type GetAllProductsQueryVariables,
   GetAllStatusDocument,
-  GetAllStatusQuery,
-  GetAllStatusQueryVariables,
+  type GetAllStatusQuery,
+  type GetAllStatusQueryVariables,
   GetNumberOfEntriesByProductDocument,
-  GetNumberOfEntriesByProductQuery,
-  GetNumberOfEntriesByProductQueryVariables,
+  type GetNumberOfEntriesByProductQuery,
+  type GetNumberOfEntriesByProductQueryVariables,
   SearchByChangeTypesAndBreakingChangeDocument,
-  SearchByChangeTypesAndBreakingChangeQuery,
-  SearchByChangeTypesAndBreakingChangeQueryVariables,
+  type SearchByChangeTypesAndBreakingChangeQuery,
+  type SearchByChangeTypesAndBreakingChangeQueryVariables,
   SearchByChangeTypesDocument,
-  SearchByChangeTypesQuery,
-  SearchByChangeTypesQueryVariables,
+  type SearchByChangeTypesQuery,
+  type SearchByChangeTypesQueryVariables,
   SearchByDateDocument,
-  SearchByDateQuery,
-  SearchByDateQueryVariables,
+  type SearchByDateQuery,
+  type SearchByDateQueryVariables,
   SearchByProductAndBreakingDocument,
-  SearchByProductAndBreakingQueryVariables,
+  type SearchByProductAndBreakingQueryVariables,
   SearchByProductDocument,
-  SearchByProductQuery,
-  SearchByProductQueryVariables,
+  type SearchByProductQuery,
+  type SearchByProductQueryVariables,
   SearchByProductsAndChangeTypesAndBreakingChangeDocument,
-  SearchByProductsAndChangeTypesAndBreakingChangeQuery,
-  SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables,
+  type SearchByProductsAndChangeTypesAndBreakingChangeQuery,
+  type SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables,
   SearchByProductsAndChangeTypesDocument,
-  SearchByProductsAndChangeTypesQuery,
-  SearchByProductsAndChangeTypesQueryVariables,
+  type SearchByProductsAndChangeTypesQuery,
+  type SearchByProductsAndChangeTypesQueryVariables,
   SearchByTitleAndDateDocument,
-  SearchByTitleAndDateQuery,
-  SearchByTitleAndDateQueryVariables,
+  type SearchByTitleAndDateQuery,
+  type SearchByTitleAndDateQueryVariables,
   SearchByTitleDocument,
-  SearchByTitleQuery,
-  SearchByTitleQueryVariables,
+  type SearchByTitleQuery,
+  type SearchByTitleQueryVariables,
   SearchDocument,
   SearchOnlyBreakingChangesDocument,
-  SearchOnlyBreakingChangesQuery,
-  SearchOnlyBreakingChangesQueryVariables,
-  SearchQuery,
-  SearchQueryVariables,
-} from '@data/gql/generated/graphql';
-
-import { SearchByProductAndBreakingQuery } from '../../../data/gql/generated/graphql';
-import { getCachedEntryCount, requestDeduplicator, setCachedEntryCount } from './cache';
-import { getSelectedIds } from './common/changelog';
-import { fetchGraphQL } from './common/fetch';
-import { ChangelogNotFoundError, ChangelogValidationError } from './errors';
-import { ParseStatus, Status } from './types';
-import { ChangelogCredentials } from './types/changelog';
-import { ChangelogEntry, ChangelogEntryList, parseChangeLogItem, ParseRawData } from './types/changeLogEntry';
-import { ChangeType, ParseChangeType } from './types/changeType';
-import { ParseProduct, Product } from './types/product';
-import { createDateRange, parseDateString } from './utils/date';
+  type SearchOnlyBreakingChangesQuery,
+  type SearchOnlyBreakingChangesQueryVariables,
+  type SearchQuery,
+  type SearchQueryVariables,
+} from "@data/gql/generated/graphql";
+import {
+  getCachedEntryCount,
+  requestDeduplicator,
+  setCachedEntryCount,
+} from "./cache";
+import { getSelectedIds } from "./common/changelog";
+import { fetchGraphQL } from "./common/fetch";
+import { ChangelogNotFoundError, ChangelogValidationError } from "./errors";
+import { ParseStatus, type Status } from "./types";
+import {
+  type ChangelogEntry,
+  type ChangelogEntryList,
+  ParseRawData,
+  parseChangeLogItem,
+} from "./types/changeLogEntry";
+import type { ChangelogCredentials } from "./types/changelog";
+import { type ChangeType, ParseChangeType } from "./types/changeType";
+import { ParseProduct, type Product } from "./types/product";
+import { createDateRange, parseDateString } from "./utils/date";
 
 /**
  * Options for getting changelog entries
@@ -117,7 +125,10 @@ export class Changelog {
    * @param changelogCredentials - Credentials for accessing changelog API
    * @param usePreview - Whether to use preview endpoint (default: false)
    */
-  constructor(changelogCredentials: ChangelogCredentials, usePreview?: boolean) {
+  constructor(
+    changelogCredentials: ChangelogCredentials,
+    usePreview?: boolean,
+  ) {
     this.credentials = changelogCredentials;
     this.isPreview = usePreview ?? false;
   }
@@ -140,13 +151,19 @@ export class Changelog {
    * @throws ChangelogValidationError if entryTitle is missing
    * @throws ChangelogNotFoundError if entry is not found
    */
-  async getEntryByTitleAndDate(optionsOrTitle: GetEntryByTitleAndDateOptions | string, date?: string, productId?: string): Promise<ChangelogEntry> {
+  async getEntryByTitleAndDate(
+    optionsOrTitle: GetEntryByTitleAndDateOptions | string,
+    date?: string,
+    productId?: string,
+  ): Promise<ChangelogEntry> {
     let options: GetEntryByTitleAndDateOptions;
 
     // Handle legacy signature
-    if (typeof optionsOrTitle === 'string') {
+    if (typeof optionsOrTitle === "string") {
       if (!date || !productId) {
-        throw new ChangelogValidationError('Date and productId are required when using legacy signature');
+        throw new ChangelogValidationError(
+          "Date and productId are required when using legacy signature",
+        );
       }
       options = { entryTitle: optionsOrTitle, date, productId };
     } else {
@@ -154,7 +171,9 @@ export class Changelog {
     }
 
     if (!options.entryTitle) {
-      throw new ChangelogValidationError('Entry title is required to search by title and date');
+      throw new ChangelogValidationError(
+        "Entry title is required to search by title and date",
+      );
     }
 
     const parsedDate = parseDateString(options.date);
@@ -163,21 +182,32 @@ export class Changelog {
     const cacheKey = `entry:${options.entryTitle}:${options.date}:${options.productId}`;
 
     return requestDeduplicator.execute(cacheKey, async () => {
-      const response = await fetchGraphQL<SearchByTitleAndDateQuery, SearchByTitleAndDateQueryVariables>(SearchByTitleAndDateDocument, this.credentials, this.isPreview, {
+      const response = await fetchGraphQL<
+        SearchByTitleAndDateQuery,
+        SearchByTitleAndDateQueryVariables
+      >(SearchByTitleAndDateDocument, this.credentials, this.isPreview, {
         startDate,
         endDate,
         productId: options.productId,
-        entryTitle: options.entryTitle.split('-').map((term: string) => term.trim()),
+        entryTitle: options.entryTitle
+          .split("-")
+          .map((term: string) => term.trim()),
       });
 
-      const results = response.data.data?.results?.filter((r): r is NonNullable<typeof r> => r !== null) ?? [];
+      const results =
+        response.data.data?.results?.filter(
+          (r): r is NonNullable<typeof r> => r !== null,
+        ) ?? [];
 
       if (results.length === 0) {
-        throw new ChangelogNotFoundError(`No changelog entry found for title "${options.entryTitle}" and date "${options.date}"`, {
-          entryTitle: options.entryTitle,
-          date: options.date,
-          productId: options.productId,
-        });
+        throw new ChangelogNotFoundError(
+          `No changelog entry found for title "${options.entryTitle}" and date "${options.date}"`,
+          {
+            entryTitle: options.entryTitle,
+            date: options.date,
+            productId: options.productId,
+          },
+        );
       }
 
       return parseChangeLogItem(results[0]);
@@ -191,25 +221,42 @@ export class Changelog {
    * @returns Changelog entry
    * @throws ChangelogNotFoundError if entry is not found
    */
-  async getEntryByTitle(optionsOrTitle: GetEntryByTitleOptions | string, productId?: string): Promise<ChangelogEntry> {
-    const options: GetEntryByTitleOptions = typeof optionsOrTitle === 'string' ? { entryTitle: optionsOrTitle, productId } : optionsOrTitle;
+  async getEntryByTitle(
+    optionsOrTitle: GetEntryByTitleOptions | string,
+    productId?: string,
+  ): Promise<ChangelogEntry> {
+    const options: GetEntryByTitleOptions =
+      typeof optionsOrTitle === "string"
+        ? { entryTitle: optionsOrTitle, productId }
+        : optionsOrTitle;
 
-    const cacheKey = `entry:${options.entryTitle}:${options.productId ?? 'all'}`;
+    const cacheKey = `entry:${options.entryTitle}:${options.productId ?? "all"}`;
 
     return requestDeduplicator.execute(cacheKey, async () => {
-      const response = await fetchGraphQL<SearchByTitleQuery, SearchByTitleQueryVariables>(SearchByTitleDocument, this.credentials, this.isPreview, {
+      const response = await fetchGraphQL<
+        SearchByTitleQuery,
+        SearchByTitleQueryVariables
+      >(SearchByTitleDocument, this.credentials, this.isPreview, {
         date: new Date(),
         productId: options.productId ? [options.productId] : [],
-        entryTitle: options.entryTitle.split('-').map((term: string) => term.trim()),
+        entryTitle: options.entryTitle
+          .split("-")
+          .map((term: string) => term.trim()),
       });
 
-      const results = response.data.data?.results?.filter((r): r is NonNullable<typeof r> => r !== null) ?? [];
+      const results =
+        response.data.data?.results?.filter(
+          (r): r is NonNullable<typeof r> => r !== null,
+        ) ?? [];
 
       if (results.length === 0) {
-        throw new ChangelogNotFoundError(`No changelog entry found for title "${options.entryTitle}"`, {
-          entryTitle: options.entryTitle,
-          productId: options.productId,
-        });
+        throw new ChangelogNotFoundError(
+          `No changelog entry found for title "${options.entryTitle}"`,
+          {
+            entryTitle: options.entryTitle,
+            productId: options.productId,
+          },
+        );
       }
 
       return parseChangeLogItem(results[0]);
@@ -223,10 +270,17 @@ export class Changelog {
    * @param endCursor - Cursor for pagination
    * @returns List of changelog entries
    */
-  async getEntriesByDate(date: Date, pageSize?: number, endCursor?: string): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
+  async getEntriesByDate(
+    date: Date,
+    pageSize?: number,
+    endCursor?: string,
+  ): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
     const { startDate, endDate } = createDateRange(date);
 
-    const response = await fetchGraphQL<SearchByDateQuery, SearchByDateQueryVariables>(SearchByDateDocument, this.credentials, this.isPreview, {
+    const response = await fetchGraphQL<
+      SearchByDateQuery,
+      SearchByDateQueryVariables
+    >(SearchByDateDocument, this.credentials, this.isPreview, {
       startDate,
       endDate,
       first: pageSize ?? 5,
@@ -241,8 +295,14 @@ export class Changelog {
    * @param productId - Product ID to filter by
    * @returns List of changelog entries
    */
-  async getEntriesByProduct(productId: string, breaking?: boolean): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
-    const response = await fetchGraphQL<SearchByProductQuery, SearchByProductQueryVariables>(SearchByProductDocument, this.credentials, this.isPreview, {
+  async getEntriesByProduct(
+    productId: string,
+    _breaking?: boolean,
+  ): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
+    const response = await fetchGraphQL<
+      SearchByProductQuery,
+      SearchByProductQueryVariables
+    >(SearchByProductDocument, this.credentials, this.isPreview, {
       date: new Date(),
       productId: getSelectedIds(productId),
       //breaking: breaking ?? false,
@@ -261,8 +321,20 @@ export class Changelog {
    * @param breaking - Filter for breaking changes
    * @returns List of changelog entries
    */
-  async getEntriesPaginated(pageSize: string, productId: string, changeTypeId: string, endCursor?: string, breaking?: boolean): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
-    return this.getEntries({ productId, changeTypeId, pageSize: Number(pageSize), endCursor, breaking });
+  async getEntriesPaginated(
+    pageSize: string,
+    productId: string,
+    changeTypeId: string,
+    endCursor?: string,
+    breaking?: boolean,
+  ): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
+    return this.getEntries({
+      productId,
+      changeTypeId,
+      pageSize: Number(pageSize),
+      endCursor,
+      breaking,
+    });
   }
 
   /**
@@ -270,24 +342,49 @@ export class Changelog {
    * @param options - Options for filtering entries
    * @returns List of changelog entries
    */
-  async getEntriesByTitleProductChangeType(options: GetEntriesOptions & { entryTitle?: string }): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
-    const { entryTitle, productId, changeTypeId, pageSize, endCursor, breaking = false } = options;
+  async getEntriesByTitleProductChangeType(
+    options: GetEntriesOptions & { entryTitle?: string },
+  ): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
+    const {
+      entryTitle,
+      productId,
+      changeTypeId,
+      pageSize,
+      endCursor,
+      breaking = false,
+    } = options;
 
     // If there is no search query provided, return the normal entries
     if (entryTitle === undefined) {
-      return this.getEntries({ productId, changeTypeId, pageSize, endCursor, breaking });
+      return this.getEntries({
+        productId,
+        changeTypeId,
+        pageSize,
+        endCursor,
+        breaking,
+      });
     }
 
-    const entryTitleArray = entryTitle.split('-').map((term: string) => term.trim());
+    const entryTitleArray = entryTitle
+      .split("-")
+      .map((term: string) => term.trim());
 
-    const response = await fetchGraphQL<SearchByProductsAndChangeTypesQuery, SearchByProductsAndChangeTypesQueryVariables>(SearchByProductsAndChangeTypesDocument, this.credentials, this.isPreview, {
-      first: pageSize ?? 5,
-      after: endCursor ?? '',
-      date: new Date(),
-      productIds: getSelectedIds(productId),
-      changeTypeIds: getSelectedIds(changeTypeId),
-      entryTitle: entryTitleArray,
-    });
+    const response = await fetchGraphQL<
+      SearchByProductsAndChangeTypesQuery,
+      SearchByProductsAndChangeTypesQueryVariables
+    >(
+      SearchByProductsAndChangeTypesDocument,
+      this.credentials,
+      this.isPreview,
+      {
+        first: pageSize ?? 5,
+        after: endCursor ?? "",
+        date: new Date(),
+        productIds: getSelectedIds(productId),
+        changeTypeIds: getSelectedIds(changeTypeId),
+        entryTitle: entryTitleArray,
+      },
+    );
 
     return ParseRawData(response.data);
   }
@@ -297,17 +394,28 @@ export class Changelog {
    * @param options - Options for filtering and pagination
    * @returns List of changelog entries
    */
-  async getEntries(options: GetEntriesOptions = {}): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
-    const { productId, changeTypeId, pageSize, endCursor, breaking = false } = options;
+  async getEntries(
+    options: GetEntriesOptions = {},
+  ): Promise<ChangelogEntryList<Array<ChangelogEntry>>> {
+    const {
+      productId,
+      changeTypeId,
+      pageSize,
+      endCursor,
+      breaking = false,
+    } = options;
     const productIds = getSelectedIds(productId);
     const changeTypeIds = getSelectedIds(changeTypeId);
 
     // If there is no product ID and no change type ID and no breaking change, get the entries by date
     if (productIds.length === 0 && changeTypeIds.length === 0) {
       if (breaking) {
-        const response = await fetchGraphQL<SearchOnlyBreakingChangesQuery, SearchOnlyBreakingChangesQueryVariables>(SearchOnlyBreakingChangesDocument, this.credentials, this.isPreview, {
+        const response = await fetchGraphQL<
+          SearchOnlyBreakingChangesQuery,
+          SearchOnlyBreakingChangesQueryVariables
+        >(SearchOnlyBreakingChangesDocument, this.credentials, this.isPreview, {
           first: pageSize ?? 5,
-          after: endCursor ?? '',
+          after: endCursor ?? "",
           date: getTomorrow(),
           breaking: breaking,
         });
@@ -315,11 +423,16 @@ export class Changelog {
         return ParseRawData(response.data);
       }
 
-      const response = await fetchGraphQL<SearchQuery, SearchQueryVariables>(SearchDocument, this.credentials, this.isPreview, {
-        first: pageSize ?? 5,
-        after: endCursor ?? '',
-        date: getTomorrow(),
-      });
+      const response = await fetchGraphQL<SearchQuery, SearchQueryVariables>(
+        SearchDocument,
+        this.credentials,
+        this.isPreview,
+        {
+          first: pageSize ?? 5,
+          after: endCursor ?? "",
+          date: getTomorrow(),
+        },
+      );
 
       return ParseRawData(response.data);
     }
@@ -327,20 +440,31 @@ export class Changelog {
     // If there is a product ID and no change type ID and no breaking change, get the entries by product and breaking change if specified
     if (productIds.length > 0 && changeTypeIds.length === 0) {
       if (breaking) {
-        const response = await fetchGraphQL<SearchByProductAndBreakingQuery, SearchByProductAndBreakingQueryVariables>(SearchByProductAndBreakingDocument, this.credentials, this.isPreview, {
-          first: pageSize ?? 5,
-          after: endCursor ?? '',
-          date: getTomorrow(),
-          productId: productIds,
-          breaking: breaking,
-        });
+        const response = await fetchGraphQL<
+          SearchByProductAndBreakingQuery,
+          SearchByProductAndBreakingQueryVariables
+        >(
+          SearchByProductAndBreakingDocument,
+          this.credentials,
+          this.isPreview,
+          {
+            first: pageSize ?? 5,
+            after: endCursor ?? "",
+            date: getTomorrow(),
+            productId: productIds,
+            breaking: breaking,
+          },
+        );
 
         return ParseRawData(response.data);
       }
 
-      const response = await fetchGraphQL<SearchByProductQuery, SearchByProductQueryVariables>(SearchByProductDocument, this.credentials, this.isPreview, {
+      const response = await fetchGraphQL<
+        SearchByProductQuery,
+        SearchByProductQueryVariables
+      >(SearchByProductDocument, this.credentials, this.isPreview, {
         first: pageSize ?? 5,
-        after: endCursor ?? '',
+        after: endCursor ?? "",
         date: getTomorrow(),
         productId: productIds,
       });
@@ -349,21 +473,32 @@ export class Changelog {
     }
 
     // If there is no product ID and a change type ID and no breaking change, get the entries by change type and breaking change if specified
-    if (productIds.length == 0 && changeTypeIds.length > 0) {
+    if (productIds.length === 0 && changeTypeIds.length > 0) {
       if (breaking === true) {
-        const response = await fetchGraphQL<SearchByChangeTypesAndBreakingChangeQuery, SearchByChangeTypesAndBreakingChangeQueryVariables>(SearchByChangeTypesAndBreakingChangeDocument, this.credentials, this.isPreview, {
-          first: pageSize ?? 5,
-          after: endCursor ?? '',
-          date: getTomorrow(),
-          changeTypeIds: changeTypeIds,
-          breaking: breaking,
-        });
+        const response = await fetchGraphQL<
+          SearchByChangeTypesAndBreakingChangeQuery,
+          SearchByChangeTypesAndBreakingChangeQueryVariables
+        >(
+          SearchByChangeTypesAndBreakingChangeDocument,
+          this.credentials,
+          this.isPreview,
+          {
+            first: pageSize ?? 5,
+            after: endCursor ?? "",
+            date: getTomorrow(),
+            changeTypeIds: changeTypeIds,
+            breaking: breaking,
+          },
+        );
 
         return ParseRawData(response.data);
       }
-      const response = await fetchGraphQL<SearchByChangeTypesQuery, SearchByChangeTypesQueryVariables>(SearchByChangeTypesDocument, this.credentials, this.isPreview, {
+      const response = await fetchGraphQL<
+        SearchByChangeTypesQuery,
+        SearchByChangeTypesQueryVariables
+      >(SearchByChangeTypesDocument, this.credentials, this.isPreview, {
         first: pageSize ?? 5,
-        after: endCursor ?? '',
+        after: endCursor ?? "",
         date: getTomorrow(),
         changeTypeIds: changeTypeIds,
       });
@@ -372,14 +507,22 @@ export class Changelog {
     }
 
     // If there is a product ID and a change type ID and a breaking change, get the entries by product and change type and breaking change
-    const response = await fetchGraphQL<SearchByProductsAndChangeTypesAndBreakingChangeQuery, SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables>(SearchByProductsAndChangeTypesAndBreakingChangeDocument, this.credentials, this.isPreview, {
-      first: pageSize ?? 5,
-      after: endCursor ?? '',
-      date: new Date(),
-      productIds: productIds.length > 0 ? productIds : [],
-      changeTypeIds: changeTypeIds.length > 0 ? changeTypeIds : [],
-      breaking: breaking,
-    });
+    const response = await fetchGraphQL<
+      SearchByProductsAndChangeTypesAndBreakingChangeQuery,
+      SearchByProductsAndChangeTypesAndBreakingChangeQueryVariables
+    >(
+      SearchByProductsAndChangeTypesAndBreakingChangeDocument,
+      this.credentials,
+      this.isPreview,
+      {
+        first: pageSize ?? 5,
+        after: endCursor ?? "",
+        date: new Date(),
+        productIds: productIds.length > 0 ? productIds : [],
+        changeTypeIds: changeTypeIds.length > 0 ? changeTypeIds : [],
+        breaking: breaking,
+      },
+    );
 
     return ParseRawData(response.data);
   }
@@ -392,7 +535,10 @@ export class Changelog {
     const cacheKey = `changeTypes:${this.isPreview}`;
 
     return requestDeduplicator.execute(cacheKey, async () => {
-      const response = await fetchGraphQL<GetAllChangetypesQuery, GetAllChangetypesQueryVariables>(GetAllChangetypesDocument, this.credentials, this.isPreview);
+      const response = await fetchGraphQL<
+        GetAllChangetypesQuery,
+        GetAllChangetypesQueryVariables
+      >(GetAllChangetypesDocument, this.credentials, this.isPreview);
 
       return ParseChangeType(response.data);
     });
@@ -406,7 +552,10 @@ export class Changelog {
     const cacheKey = `statuses:${this.isPreview}`;
 
     return requestDeduplicator.execute(cacheKey, async () => {
-      const response = await fetchGraphQL<GetAllStatusQuery, GetAllStatusQueryVariables>(GetAllStatusDocument, this.credentials, this.isPreview);
+      const response = await fetchGraphQL<
+        GetAllStatusQuery,
+        GetAllStatusQueryVariables
+      >(GetAllStatusDocument, this.credentials, this.isPreview);
 
       return ParseStatus(response.data);
     });
@@ -418,7 +567,10 @@ export class Changelog {
    */
   async getProducts(): Promise<Array<Product>> {
     // Get all products
-    const response = await fetchGraphQL<GetAllProductsQuery, GetAllProductsQueryVariables>(GetAllProductsDocument, this.credentials, this.isPreview);
+    const response = await fetchGraphQL<
+      GetAllProductsQuery,
+      GetAllProductsQueryVariables
+    >(GetAllProductsDocument, this.credentials, this.isPreview);
     const products = ParseProduct(response.data);
 
     // Check whether there are entries that have it selected
@@ -431,10 +583,14 @@ export class Changelog {
           return product;
         }
 
-        const count = await GetEntryCountByProductId(this.credentials, product.id, this.isPreview);
+        const count = await GetEntryCountByProductId(
+          this.credentials,
+          product.id,
+          this.isPreview,
+        );
         product.hasEntries = count > 0;
         return product;
-      })
+      }),
     );
 
     return results;
@@ -449,7 +605,11 @@ export class Changelog {
  * @param preview - Whether to use preview endpoint
  * @returns Number of entries for the product
  */
-export async function GetEntryCountByProductId(credentials: ChangelogCredentials, productId: string, preview: boolean): Promise<number> {
+export async function GetEntryCountByProductId(
+  credentials: ChangelogCredentials,
+  productId: string,
+  preview: boolean,
+): Promise<number> {
   // Check cache first
   const cachedCount = getCachedEntryCount(productId, preview);
   if (cachedCount !== null) {
@@ -467,7 +627,12 @@ export async function GetEntryCountByProductId(credentials: ChangelogCredentials
     }
 
     // Fetch from API if not in cache
-    const response = await fetchGraphQL<GetNumberOfEntriesByProductQuery, GetNumberOfEntriesByProductQueryVariables>(GetNumberOfEntriesByProductDocument, credentials, preview, { productId: [productId] });
+    const response = await fetchGraphQL<
+      GetNumberOfEntriesByProductQuery,
+      GetNumberOfEntriesByProductQueryVariables
+    >(GetNumberOfEntriesByProductDocument, credentials, preview, {
+      productId: [productId],
+    });
 
     const count = response.data.changelog?.results?.length ?? 0;
 

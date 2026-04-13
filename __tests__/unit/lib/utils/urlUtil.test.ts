@@ -1,5 +1,5 @@
-import { ChangelogEntry } from '@lib/changelog/types';
-import { getChangelogEntryUrl, getChangelogEntryUrlSegments } from '@lib/utils/urlUtil';
+import { getChangelogEntryUrl, getChangelogEntryUrlSegments } from '@/src/lib/util/urlUtil';
+import type { ChangelogEntry } from '@src/lib/changelog/types';
 import { describe, expect, test } from 'vitest';
 
 const dummyEntry: ChangelogEntry = {
@@ -20,14 +20,7 @@ const dummyEntry: ChangelogEntry = {
     },
   ],
   scheduled: false,
-  changeType: [
-    {
-      id: 'jNZQWrssyEaU7gwlIYpJnQ',
-      name: 'Resolved',
-      changeType: 'Resolved',
-      type: 'Resolved',
-    },
-  ],
+  changeType: [{ id: 'jNZQWrssyEaU7gwlIYpJnQ', name: 'Resolved', changeType: 'Resolved', type: 'Resolved' }],
   version: '',
   releaseDate: 'Jul 22, 2024',
   image: [],
@@ -43,12 +36,7 @@ const dummyEntry: ChangelogEntry = {
       lightIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub',
     },
   ],
-  status: {
-    id: 'pNOVO2dhtESFOSwd4Va84w',
-    name: 'Available',
-    identifier: 'available',
-    description: '',
-  },
+  status: { id: 'pNOVO2dhtESFOSwd4Va84w', name: 'Available', identifier: 'available', description: '' },
   changeTypeName: 'Resolved',
 };
 

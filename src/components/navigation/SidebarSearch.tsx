@@ -1,12 +1,14 @@
-import { Box, Button, ButtonGroup, Heading, Highlight, Icon, IconButton, Input, InputGroup, InputLeftElement, InputRightElement } from '@chakra-ui/react';
-import { mdiClose, mdiFilterVariant } from '@mdi/js';
-import NextLink from 'next/link';
-import React from 'react';
+"use client";
 
-import { ManifestConfig } from '@/src/lib/interfaces/manifest';
-import { appendPathToBasePath } from '@/src/lib/utils/stringUtil';
-
-
+import { mdiClose, mdiFilterVariant } from "@mdi/js";
+import Icon from "@mdi/react";
+import { Button } from "@src/components/ui/button";
+import { Input } from "@src/components/ui/input";
+import type { ManifestConfig } from "@src/lib/interfaces/manifest";
+import Link from "next/link";
+import React from "react";
+import { cn } from "@/src/lib/util";
+import { appendPathToBasePath } from "@/src/lib/util/stringUtil";
 
 export interface SidebarNavigationProps {
   title?: string;
@@ -16,10 +18,10 @@ export interface SidebarNavigationProps {
 }
 
 const SidebarSearch = ({ config, onFocus, onBlur }: SidebarNavigationProps) => {
-  const [searchTerm, setSearchTerm] = React.useState('');
+  const [searchTerm, setSearchTerm] = React.useState("");
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.value === '') {
+    if (event.target.value === "") {
       return reset();
     }
 
@@ -28,7 +30,7 @@ const SidebarSearch = ({ config, onFocus, onBlur }: SidebarNavigationProps) => {
   };
 
   const reset = () => {
-    setSearchTerm('');
+    setSearchTerm("");
     onBlur();
   };
 
@@ -36,66 +38,102 @@ const SidebarSearch = ({ config, onFocus, onBlur }: SidebarNavigationProps) => {
     return config.routes
       .map((route) => ({
         ...route,
-        children: route.children.filter((child) => child.title.toLowerCase().includes(searchTerm.toLowerCase())),
+        children: route.children.filter((child) =>
+          child.title.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
       }))
-      .filter((route) => route.title.toLowerCase().includes(searchTerm.toLowerCase()) || route.children.length > 0);
+      .filter(
+        (route) =>
+          route.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          route.children.length > 0,
+      );
   };
 
   const filteredRoutes = searchRoutes(searchTerm);
 
+  const highlightText = (text: string, query: string) => {
+    if (!query) return text;
+    const parts = text.split(new RegExp(`(${query})`, "gi"));
+    return parts.map((part, i) => {
+      const key = `${text}-${part}-${i}`;
+      return part.toLowerCase() === query.toLowerCase() ? (
+        <mark key={key} className="px-0 py-0.5 bg-orange-100">
+          {part}
+        </mark>
+      ) : (
+        <span key={key}>{part}</span>
+      );
+    });
+  };
+
   return (
     <>
-      <Box>
-        <InputGroup maxW="full">
-          <InputLeftElement pointerEvents="none">
-            <Icon>
-              <path d={mdiFilterVariant} />
-            </Icon>
-          </InputLeftElement>
-          <Input placeholder="Filter" onChange={handleSearch} value={searchTerm} />
-          <InputRightElement>
-            <IconButton
+      <div>
+        <div className="relative max-w-full">
+          <Icon
+            path={mdiFilterVariant}
+            size={1}
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-muted-foreground"
+          />
+          <Input
+            placeholder="Filter"
+            onChange={handleSearch}
+            value={searchTerm}
+            className="pl-10 pr-10"
+          />
+          {searchTerm && (
+            <Button
               onClick={reset}
               variant="ghost"
-              icon={
-                <Icon>
-                  <path d={mdiClose} />
-                </Icon>
-              }
               size="sm"
-              aria-label={'Close'}
-            />
-          </InputRightElement>
-        </InputGroup>
-      </Box>
-      <Box>
-        {filteredRoutes.length == 0 && (
-          <Heading variant="section" p="2">
+              className="absolute right-1 top-1/2 transform -translate-y-1/2 h-6 w-6 p-0"
+              aria-label="Close"
+            >
+              <Icon path={mdiClose} size={1} />
+            </Button>
+          )}
+        </div>
+      </div>
+      <div>
+        {filteredRoutes.length === 0 && (
+          <p className="text-sm uppercase tracking-wide text-muted-foreground p-2">
             No results found
-          </Heading>
+          </p>
         )}
 
-        {filteredRoutes.map((link, i) => (
-          <Box key={i} hidden={filteredRoutes.length == 0 || searchTerm == ''} mt={6}>
-            {filteredRoutes.length == 0 && <Heading variant="section">No results found</Heading>}
-
-            <Heading variant="section" mb="4">
+        {filteredRoutes.map((link) => (
+          <div
+            key={link.path || link.title}
+            className={cn(
+              "mt-6",
+              (filteredRoutes.length === 0 || searchTerm === "") && "hidden",
+            )}
+          >
+            <p className="text-sm uppercase tracking-wide text-muted-foreground mb-4">
               {link.title}
-            </Heading>
-            {link.children.map((child, j) => (
-              <Box key={j}>
-                <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} key={i}>
-                  <Button as={NextLink} colorScheme="neutral" href={appendPathToBasePath(config.path, child.path)} px={2} width={'full'} display={'inline-block'} alignContent={'center'}>
-                    <Highlight styles={{ px: '0', py: '0.5', bg: 'orange.100' }} query={searchTerm}>
-                      {child.title}
-                    </Highlight>
-                  </Button>
-                </ButtonGroup>
-              </Box>
+            </p>
+            {link.children.map((child) => (
+              <div key={child.path || child.title}>
+                <ul className="flex flex-col gap-1 w-full">
+                  <li>
+                    <Button
+                      asChild
+                      variant="ghost"
+                      className="px-2 w-full inline-block text-left justify-start"
+                    >
+                      <Link
+                        href={appendPathToBasePath(config.path, child.path)}
+                      >
+                        {highlightText(child.title, searchTerm)}
+                      </Link>
+                    </Button>
+                  </li>
+                </ul>
+              </div>
             ))}
-          </Box>
+          </div>
         ))}
-      </Box>
+      </div>
     </>
   );
 };

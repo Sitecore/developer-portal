@@ -4,10 +4,10 @@
 export class ChangelogError extends Error {
   constructor(
     message: string,
-    public readonly context?: Record<string, unknown>
+    public readonly context?: Record<string, unknown>,
   ) {
     super(message);
-    this.name = 'ChangelogError';
+    this.name = "ChangelogError";
     Object.setPrototypeOf(this, ChangelogError.prototype);
   }
 }
@@ -18,7 +18,7 @@ export class ChangelogError extends Error {
 export class ChangelogNotFoundError extends ChangelogError {
   constructor(message: string, context?: Record<string, unknown>) {
     super(message, context);
-    this.name = 'ChangelogNotFoundError';
+    this.name = "ChangelogNotFoundError";
     Object.setPrototypeOf(this, ChangelogNotFoundError.prototype);
   }
 }
@@ -29,7 +29,7 @@ export class ChangelogNotFoundError extends ChangelogError {
 export class ChangelogValidationError extends ChangelogError {
   constructor(message: string, context?: Record<string, unknown>) {
     super(message, context);
-    this.name = 'ChangelogValidationError';
+    this.name = "ChangelogValidationError";
     Object.setPrototypeOf(this, ChangelogValidationError.prototype);
   }
 }
@@ -41,10 +41,10 @@ export class ChangelogNetworkError extends ChangelogError {
   constructor(
     message: string,
     public readonly statusCode?: number,
-    context?: Record<string, unknown>
+    context?: Record<string, unknown>,
   ) {
     super(message, context);
-    this.name = 'ChangelogNetworkError';
+    this.name = "ChangelogNetworkError";
     Object.setPrototypeOf(this, ChangelogNetworkError.prototype);
   }
 }
@@ -55,7 +55,7 @@ export class ChangelogNetworkError extends ChangelogError {
 export class ChangelogConfigurationError extends ChangelogError {
   constructor(message: string, context?: Record<string, unknown>) {
     super(message, context);
-    this.name = 'ChangelogConfigurationError';
+    this.name = "ChangelogConfigurationError";
     Object.setPrototypeOf(this, ChangelogConfigurationError.prototype);
   }
 }
@@ -67,10 +67,10 @@ export class ChangelogGraphQLError extends ChangelogError {
   constructor(
     message: string,
     public readonly graphQLErrors?: Array<unknown>,
-    context?: Record<string, unknown>
+    context?: Record<string, unknown>,
   ) {
     super(message, context);
-    this.name = 'ChangelogGraphQLError';
+    this.name = "ChangelogGraphQLError";
     Object.setPrototypeOf(this, ChangelogGraphQLError.prototype);
   }
 }

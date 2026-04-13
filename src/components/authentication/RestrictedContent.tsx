@@ -1,5 +1,8 @@
-import { Button, Card, Heading, HStack, Image, Link, Stack, Text, Wrap } from '@chakra-ui/react';
-import { signIn, useSession } from 'next-auth/react';
+import { Button } from "@src/components/ui/button";
+import { Card } from "@src/components/ui/card";
+import Image from "next/image";
+import Link from "next/link";
+import { signIn, useSession } from "next-auth/react";
 
 export type RestrictedContentProps = {
   children?: React.ReactNode | Array<React.ReactNode>;
@@ -15,45 +18,66 @@ export const RestrictedContent = (props: RestrictedContentProps) => {
 
   if (session?.user && orgId == null) {
     return (
-      <Card variant={'outline'} py={4} px={2}>
-        <HStack>
-          <Image boxSize="12" src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/spot-lock" alt="lock" mx={8} />
-          <Stack>
-            <Heading as="h3" size="md">
-              Restricted
-            </Heading>
-            <Text>
-              The account you&apos;re using is <b>not</b> currently linked to an organization or you are using an <b>Sitecore ID</b> account.
-            </Text>
-            <Text>This content is available exclusively to customers and partners with a Sitecore Cloud Portal account linked to their organization.</Text>
-            <Wrap>
-              <Link href="/login?redirect=/roadmap">Logout or switch credentials</Link>
-            </Wrap>
-          </Stack>
-        </HStack>
+      <Card className="border py-4 px-2">
+        <div className="flex items-start gap-4">
+          <Image
+            width={48}
+            height={48}
+            src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/spot-lock"
+            alt="lock"
+            className="mx-8"
+          />
+          <div className="flex flex-col gap-2">
+            <h3 className="text-lg font-heading">Restricted</h3>
+            <p>
+              The account you&apos;re using is <strong>not</strong> currently
+              linked to an organization or you are using an{" "}
+              <strong>Sitecore ID</strong> account.
+            </p>
+            <p>
+              This content is available exclusively to customers and partners
+              with a Sitecore Cloud Portal account linked to their organization.
+            </p>
+            <div className="flex">
+              <Link
+                href="/login?redirect=/roadmap"
+                className="text-primary hover:underline"
+              >
+                Logout or switch credentials
+              </Link>
+            </div>
+          </div>
+        </div>
       </Card>
     );
   }
 
   return (
-    <Card variant={'outline'} py={4} px={2}>
-      <HStack>
-        <Image boxSize="12" src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/spot-lock" alt="lock" mx={8} />
-        <Stack>
-          <Heading as="h3" size="md">
-            Restricted
-          </Heading>
-          <Text>You don&apos;t have permission to access this content.</Text>
-          <Text>
-            This content is available exclusively to customers and partners with a <b>Sitecore Cloud Portal</b> account linked to their organization. Please log in with your <b>Sitecore Cloud Portal</b> credentials.
-          </Text>
-          <Wrap>
-            <Button variant="link" onClick={() => signIn('sitecore')}>
+    <Card className="border py-4 px-2">
+      <div className="flex items-start gap-4">
+        <Image
+          width={48}
+          height={48}
+          src="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/spot-lock"
+          alt="lock"
+          className="mx-8"
+        />
+        <div className="flex flex-col gap-2">
+          <h3 className="text-lg font-heading">Restricted</h3>
+          <p>You don&apos;t have permission to access this content.</p>
+          <p>
+            This content is available exclusively to customers and partners with
+            a <strong>Sitecore Cloud Portal</strong> account linked to their
+            organization. Please log in with your{" "}
+            <strong>Sitecore Cloud Portal</strong> credentials.
+          </p>
+          <div className="flex">
+            <Button variant="link" onClick={() => signIn("sitecore")}>
               Login
             </Button>
-          </Wrap>
-        </Stack>
-      </HStack>
+          </div>
+        </div>
+      </div>
     </Card>
   );
 };

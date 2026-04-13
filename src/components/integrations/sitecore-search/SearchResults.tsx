@@ -1,12 +1,17 @@
-import { Badge, Box, Grid, GridItem, HStack, Heading, Hide, Image, Stack, StackDivider, Text } from '@chakra-ui/react';
-import { SearchResultsInitialState, WidgetDataType, trackEntityPageViewEvent, useSearchResults, widget } from '@sitecore-search/react';
-//import Image from 'next/image';
-import { getColorScheme } from '@/src/lib/search';
-import { Loading } from '@components/ui';
-import { QuerySummary } from './QuerySummary';
-import SearchFacets from './SearchFacets';
-import { SearchPagination } from './SearchPagination';
-import { SearchSort } from './SearchSort';
+import {
+  type SearchResultsInitialState,
+  trackEntityPageViewEvent,
+  useSearchResults,
+  WidgetDataType,
+  widget,
+} from "@sitecore-search/react";
+import { Loading } from "@src/components/ui";
+import { Badge } from "@src/components/ui/badge";
+import Image from "next/image";
+import { QuerySummary } from "./QuerySummary";
+import SearchFacets from "./SearchFacets";
+import { SearchPagination } from "./SearchPagination";
+import { SearchSort } from "./SearchSort";
 
 export interface HighlightType {
   description?: string;
@@ -28,25 +33,44 @@ interface SearchResultsType {
   name: string;
   highlight: HighlightType;
 }
-type InitialState = SearchResultsInitialState<'itemsPerPage' | 'keyphrase' | 'page' | 'sortType'>;
+type InitialState = SearchResultsInitialState<
+  "itemsPerPage" | "keyphrase" | "page" | "sortType"
+>;
 
 export const SearchResults = (props: InitialSearchProps) => {
-  const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
-  const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = 'suggested' } = props;
+  const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(",") || [];
+  const {
+    initialKeyphrase = "",
+    initialArticlesPerPage = 24,
+    currentPage = 1,
+    defaultSortType = "suggested",
+  } = props;
   const {
     widgetRef,
     actions: { onSortChange, onFacetClick, onPageNumberChange, onItemClick },
-    state: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
-    queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: articles = [], facet: facets = [] } = {} },
+    state: {
+      page = currentPage,
+      itemsPerPage = initialArticlesPerPage,
+      sortType = defaultSortType,
+    },
+    queryResult: {
+      isLoading,
+      data: {
+        sort: { choices: sortChoices = [] } = {},
+        total_item: totalItems = 0,
+        content: articles = [],
+        facet: facets = [],
+      } = {},
+    },
   } = useSearchResults<SearchResultsType, InitialState>({
     query: (query) =>
       query
         .getRequest()
         .setSearchQueryHighlight({
-          fields: ['description'],
+          fields: ["description"],
           fragment_size: 100,
-          pre_tag: '<strong>',
-          post_tag: '</strong>',
+          pre_tag: "<strong>",
+          post_tag: "</strong>",
         })
         .setSources(indexSources),
     state: {
@@ -65,94 +89,180 @@ export const SearchResults = (props: InitialSearchProps) => {
         </div>
       )}
       {!isLoading && (
-        <Grid templateColumns="repeat(6, 1fr)" gap={6} ref={widgetRef}>
+        <div className="grid grid-cols-6 gap-6" ref={widgetRef}>
           {articles.length > 0 && (
             <>
-              <GridItem colSpan={{ base: 6, md: 2 }}>
+              <div className="col-span-6 md:col-span-2">
                 {/* Hide for desktop */}
-                <Hide above="md">
-                  <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
-                </Hide>
+                <div className="md:hidden">
+                  <SearchSort
+                    onSortChange={onSortChange}
+                    sortChoices={sortChoices}
+                    sortType={sortType}
+                  />
+                </div>
 
-                <Box ml={2} display={'inline'}>
+                <div className="ml-2 inline-block">
                   <SearchFacets onFacetClick={onFacetClick} facets={facets} />
-                </Box>
-              </GridItem>
+                </div>
+              </div>
 
-              <GridItem colSpan={{ base: 6, md: 4 }}>
-                <HStack justify={'space-between'} pb={8}>
-                  {articles.length > 0 && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={initialKeyphrase} />}
-                  {/* Hide for mobile, will be replaced with SearchSort component line 74 */}
-                  <Hide below="md">
-                    <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
-                  </Hide>
-                </HStack>
-                <Stack divider={<StackDivider />} gap={2}>
+              <div className="col-span-6 md:col-span-4">
+                <div className="flex justify-between items-center pb-8">
+                  {articles.length > 0 && (
+                    <QuerySummary
+                      currentPage={page}
+                      resultsPerPage={itemsPerPage}
+                      totalResults={totalItems}
+                      title={initialKeyphrase}
+                    />
+                  )}
+                  {/* Hide for mobile, will be replaced with SearchSort component above */}
+                  <div className="hidden md:block">
+                    <SearchSort
+                      onSortChange={onSortChange}
+                      sortChoices={sortChoices}
+                      sortType={sortType}
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
                   {articles.length > 0 &&
                     articles.map((result, index) => (
                       <a
                         href={result.url}
-                        key={index}
-                        className="group"
+                        key={result.id || `${result.url}-${index}`}
+                        className="group border-b border-border pb-4 last:border-0"
                         onClick={(e) => {
                           e.preventDefault();
-                          onItemClick({ id: result.id || '', index });
-                          if (result.index_name != 'sitecore-devportal-v2') {
-                            trackEntityPageViewEvent('content', { items: [{ id: result.id }] });
-                            window.open(result.url, '_blank');
+                          onItemClick({ id: result.id || "", index });
+                          if (result.index_name !== "sitecore-devportal-v2") {
+                            trackEntityPageViewEvent("content", {
+                              items: [{ id: result.id }],
+                            });
+                            window.open(result.url, "_blank");
                           } else {
-                            window.open(result.url + '?fromSearch=true', '_blank');
+                            window.open(
+                              `${result.url}?fromSearch=true`,
+                              "_blank",
+                            );
                           }
                         }}
                       >
-                        <HStack pb={2}>
+                        <div className="flex items-center gap-2 pb-2">
                           {result.type && (
-                            <Badge colorScheme={getColorScheme(result.type)} size="sm">
+                            <Badge variant="default" className="text-xs">
                               {result.type}
                             </Badge>
                           )}
-                          {result.index_name && <Heading variant={'section'}>{result.site_name}</Heading>}
-                        </HStack>
-                        <Heading as="h3" size="md">
+                          {result.index_name && (
+                            <p className="text-sm uppercase tracking-wide text-muted-foreground">
+                              {result.site_name}
+                            </p>
+                          )}
+                        </div>
+                        <h3 className="text-lg font-heading mb-2">
                           {result.name}
-                        </Heading>
+                        </h3>
 
-                        <HStack spacing={6} py={2}>
-                          {result.type == 'Video' && (
+                        <div className="flex gap-6 py-2">
+                          {result.type === "Video" && (
                             <>
-                              {result.image_url && <Image width={200} src={result.image_url} alt={result.index_name} shadow={'md'} />}
-                              {!result.image_url && <Image width={200} src="/images/social/social-card-default.jpeg" alt={result.index_name} shadow={'md'} />}
+                              {result.image_url && (
+                                <Image
+                                  width={200}
+                                  height={112}
+                                  src={result.image_url}
+                                  alt={result.index_name}
+                                  className="shadow-md rounded"
+                                />
+                              )}
+                              {!result.image_url && (
+                                <Image
+                                  width={200}
+                                  height={112}
+                                  src="/images/social/social-card-default.jpeg"
+                                  alt={result.index_name}
+                                  className="shadow-md rounded"
+                                />
+                              )}
                             </>
                           )}
 
-                          {result.type == 'Repository' && (
+                          {result.type === "Repository" && (
                             <>
-                              {result.image_url && <Image width={200} src={result.url.replace('https://github.com', 'https://opengraph.githubassets.com/1')} alt={result.index_name} shadow={'md'} />}
-                              {!result.image_url && <Image width={200} src={result.url.replace('https://github.com', 'https://opengraph.githubassets.com/1')} alt={result.index_name} shadow={'md'} />}
+                              {result.image_url && (
+                                <Image
+                                  width={200}
+                                  height={112}
+                                  src={result.url.replace(
+                                    "https://github.com",
+                                    "https://opengraph.githubassets.com/1",
+                                  )}
+                                  alt={result.index_name}
+                                  className="shadow-md rounded"
+                                />
+                              )}
+                              {!result.image_url && (
+                                <Image
+                                  width={200}
+                                  height={112}
+                                  src={result.url.replace(
+                                    "https://github.com",
+                                    "https://opengraph.githubassets.com/1",
+                                  )}
+                                  alt={result.index_name}
+                                  className="shadow-md rounded"
+                                />
+                              )}
                             </>
                           )}
 
-                          {result?.highlight?.description && <Text size="sm" noOfLines={3} dangerouslySetInnerHTML={{ __html: result.highlight.description }} my={0} />}
+                          {result?.highlight?.description && (
+                            <p
+                              className="text-sm line-clamp-3 my-0"
+                              dangerouslySetInnerHTML={{
+                                __html: result.highlight.description,
+                              }}
+                            />
+                          )}
                           {!result.highlight && result.description && (
-                            <Text size="sm" noOfLines={3} py={0}>
+                            <p className="text-sm line-clamp-3 py-0">
                               {result.description}
-                            </Text>
+                            </p>
                           )}
-                        </HStack>
-                        <Text variant={'tiny'}>{result.url}</Text>
+                        </div>
+                        <p className="text-xs text-muted-foreground">
+                          {result.url}
+                        </p>
                       </a>
                     ))}
-                </Stack>
-                <SearchPagination defaultCurrentPage={1} onPageNumberChange={(v) => onPageNumberChange({ page: v })} page={page} pageSize={itemsPerPage} totalItems={totalItems} />
-              </GridItem>
+                </div>
+                <SearchPagination
+                  defaultCurrentPage={1}
+                  onPageNumberChange={(v) => onPageNumberChange({ page: v })}
+                  page={page}
+                  pageSize={itemsPerPage}
+                  totalItems={totalItems}
+                />
+              </div>
             </>
           )}
-          {articles.length === 0 && <p className="md:col-span-3">Your search terms did not return any results, please use the input above to try again.</p>}
-        </Grid>
+          {articles.length === 0 && (
+            <p className="md:col-span-3">
+              Your search terms did not return any results, please use the input
+              above to try again.
+            </p>
+          )}
+        </div>
       )}
     </>
   );
 };
 
-const SearchResultsWidget = widget(SearchResults, WidgetDataType.SEARCH_RESULTS, 'content');
+const SearchResultsWidget = widget(
+  SearchResults,
+  WidgetDataType.SEARCH_RESULTS,
+  "content",
+);
 export default SearchResultsWidget;

@@ -169,6 +169,7 @@ This Cookbook provides a set of recipes to help implementing XM Cloud through se
 - [Content Migration](https://developers.sitecore.com/learn/accelerate/xm-cloud/final-steps/content-migration)
 - [Testing Framework](https://developers.sitecore.com/learn/accelerate/xm-cloud/final-steps/testing-framework)
 - [Go-Live Checklist](https://developers.sitecore.com/learn/accelerate/xm-cloud/final-steps/go-live-checklist)
+- [AI Agents](https://developers.sitecore.com/learn/accelerate/xm-cloud/optimization/getting-started-with-ai-agents)
 - [Data Fetching Optimizaton](https://developers.sitecore.com/learn/accelerate/xm-cloud/optimization/data-fetching-optimization)
 - [On-page SEO optimization](https://developers.sitecore.com/learn/accelerate/xm-cloud/optimization/seo-web-optimization)
 - [Optimizing content for AI](https://developers.sitecore.com/learn/accelerate/xm-cloud/optimization/seo-geo-optimization)

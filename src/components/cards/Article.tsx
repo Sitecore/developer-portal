@@ -1,72 +1,70 @@
-import { Box, Button, Card, CardBody, CardFooter, CardHeader, CardProps, Heading, Icon, Image, Link, Text } from '@chakra-ui/react';
+import { cn } from "@/src/lib/util";
+import { Button } from "@src/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@src/components/ui/card";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
-type ArticleProps = CardProps & {
+type ArticleProps = {
   title: string;
   description: string;
   link?: string;
   linktext?: string;
   imageUrl?: string;
   hideLinkText?: boolean;
+  className?: string;
 };
 
-export const Article = ({ title, description, link, linktext, imageUrl, hideLinkText, ...rest }: ArticleProps) => {
+export const Article = ({
+  title,
+  description,
+  link,
+  linktext,
+  imageUrl,
+  hideLinkText,
+  className,
+}: ArticleProps) => {
   return (
-    <Card variant={'outlineRaised'} size={'md'} {...rest}>
+    <Card
+      className={cn("not-prose", className)}
+      style="outline"
+      elevation="xs"
+      padding="md"
+    >
       <CardHeader>
-        <Heading as="h4" fontSize={'lg'} fontWeight={'500'}>
-          {title}
-        </Heading>
+        <h4 className="text-lg m-0 font-medium font-heading">{title}</h4>
       </CardHeader>
-      <CardBody py={0}>
-        {description && <Text mb={8}>{description}</Text>}
+      <CardContent className="grow">
+        {description && <p className="text-sm">{description}</p>}
         {imageUrl && link && (
-          <Box>
-            <Link color={'white'} href={link} title={title} rel="noreferrer noopener">
+          <div>
+            <Link href={link} title={title} rel="noreferrer noopener">
               <Image
                 src={imageUrl}
-                alt={title || ''}
+                alt={title || ""}
                 className="relative z-10"
+                width={400}
+                height={300}
                 sizes="(max-width: 768px) 100vw,
                     (max-width: 1200px) 50vw,
                     33vw"
               />
             </Link>
-          </Box>
+          </div>
         )}
-      </CardBody>
+      </CardContent>
       {link && !hideLinkText && (
-        <CardFooter pt={0}>
-          <Link href={link} _hover={{ textDecoration: 'none' }}>
-            <Button
-              bg="white"
-              color="primary.500"
-              size="md"
-              borderRadius="full"
-              px={6}
-              fontWeight="600"
-              whiteSpace="normal"
-              border="1px solid"
-              borderColor="chakra-border-color"
-              rightIcon={
-                <Icon viewBox="0 0 24 24" w="1.2rem" h="1.2rem">
-                  <path
-                    fill="currentColor"
-                    d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"
-                  />
-                </Icon>
-              }
-              _hover={{
-                bg: 'primary.500',
-                color: 'white',
-                borderColor: 'primary.500',
-              }}
-              _active={{
-                bg: 'primary.600',
-              }}
-            >
-              {linktext ?? 'Read more'}
+        <CardFooter>
+          <Link href={link}>
+            <Button variant="default" size="default" colorScheme="primary">
+              {linktext ?? "Read more"}
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-
           </Link>
         </CardFooter>
       )}

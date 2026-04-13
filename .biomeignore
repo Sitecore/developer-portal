@@ -1,0 +1,10 @@
+node_modules
+playwright-report
+.next
+.vercel
+.idea
+public/r
+**/__tests__/**
+**/data/gql/**
+data/gql/generated/**
+src/components/ui

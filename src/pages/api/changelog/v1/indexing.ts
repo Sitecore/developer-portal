@@ -1,11 +1,16 @@
-import { Changelog } from '@lib/changelog';
-import { ChangelogEntry, ChangelogEntryList } from '@lib/changelog/types';
-import { getChangelogEntryUrl, getQueryValue, removeHtmlTagsAndSpecialChars } from '@lib/utils';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { Changelog } from "@src/lib/changelog";
+import { getChangelogCredentials } from "@src/lib/changelog/common/credentials";
+import type {
+  ChangelogEntry,
+  ChangelogEntryList,
+} from "@src/lib/changelog/types";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { getQueryValue } from "@/src/lib/util/requests";
+import { removeHtmlTagsAndSpecialChars } from "@/src/lib/util/stringUtil";
 
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
-
-const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
+const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL
+  ? process.env.NEXT_PUBLIC_PUBLIC_URL
+  : "";
 
 type IndexingList = {
   total: number;
@@ -34,7 +39,10 @@ type IndexProduct = {
   lightIcon: string;
 };
 
-const handler = async (req: NextApiRequest, res: NextApiResponse<IndexingList>) => {
+const handler = async (
+  req: NextApiRequest,
+  res: NextApiResponse<IndexingList>,
+) => {
   // Default Edge pageSize is 10, use parameter to override
   const pageSize = getQueryValue(req.query.size);
   const endCursor = getQueryValue(req.query.cursor);
@@ -47,11 +55,16 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<IndexingList>) 
 
 export default handler;
 
-async function GetEntries(list: Array<IndexResult>, end: string, limit: string) {
+async function GetEntries(
+  list: Array<IndexResult>,
+  end: string,
+  limit: string,
+) {
   const changelog = new Changelog(getChangelogCredentials());
-  const entryList: ChangelogEntryList<Array<ChangelogEntry>> = await changelog.getEntriesPaginated(limit, '', '', end);
+  const entryList: ChangelogEntryList<Array<ChangelogEntry>> =
+    await changelog.getEntriesPaginated(limit, "", "", end);
 
-  entryList.entries.map((entry) => {
+  for (const entry of entryList.entries) {
     list.push({
       title: entry.title,
       changeTypes: entry.changeType.map((obj) => obj.changeType),
@@ -63,17 +76,19 @@ async function GetEntries(list: Array<IndexResult>, end: string, limit: string) 
             darkIcon: obj.darkIcon,
             lightIcon: obj.lightIcon,
             // sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName),
-          }
+          },
       ),
       date: entry.releaseDate,
       image: entry.image[0] != null ? entry.image[0].fileUrl : null,
       description: removeHtmlTagsAndSpecialChars(entry.description),
-      fullArticle: entry.fullArticle ? removeHtmlTagsAndSpecialChars(entry.fullArticle) : null,
+      fullArticle: entry.fullArticle
+        ? removeHtmlTagsAndSpecialChars(entry.fullArticle)
+        : null,
       readMoreLink: entry.readMoreLink,
-      breakingChange: entry.breakingChange ? true : false,
-      url: `${publicUrl}${getChangelogEntryUrl(entry)}`,
+      breakingChange: !!entry.breakingChange,
+      url: `${publicUrl}${entry}`,
     });
-  });
+  }
 
   const indexingList: IndexingList = {
     total: entryList.total,

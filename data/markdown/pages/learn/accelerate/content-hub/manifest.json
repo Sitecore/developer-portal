@@ -23,7 +23,7 @@
             {
               "title": "Project Planning",
               "path": "project-planning"
-            },            
+            },
             {
               "title": "Discovery Phase",
               "path": "discovery-phase"
@@ -49,10 +49,10 @@
             }
           ]
         },
-          {
+        {
           "title": "User Roles",
           "path": "user-roles",
-          "ignoreLink": true,          
+          "ignoreLink": true,
           "children": [
             {
               "title": "Data Librarian",
@@ -99,12 +99,12 @@
               "title": "Environment Specific Settings",
               "path": "environment-specific-settings"
             },
-            
+
             {
               "title": "Paths across Entity Definitions",
               "path": "paths-across-entity-definitions"
             },
-            
+
             {
               "title": "Reporting",
               "path": "reporting"
@@ -123,7 +123,7 @@
             {
               "title": "Migrating Assets",
               "path": "asset-migration"
-            }            
+            }
           ]
         },
         {
@@ -150,8 +150,8 @@
             {
               "title": "Updating meta-data on pre-commit",
               "path": "meta-data-on-pre-commit"
-            },            
-            
+            },
+
             {
               "title": "Scripts Guidance and Scenarios",
               "path": "scripting-guidance-and-scenarios"
@@ -180,7 +180,7 @@
               "path": "user-groups-setup"
             }
           ]
-        },      
+        },
         {
           "title": "Integrations",
           "path": "integrations",
@@ -193,7 +193,7 @@
             {
               "title": "Content distribution",
               "path": "content-distribution"
-            }            
+            }
           ]
         },
         {
@@ -213,9 +213,9 @@
         },
         {
           "title": "Digital Rights Management",
-         "path": "digital-rights-management",
-         "ignoreLink": false    
-       },
+          "path": "digital-rights-management",
+          "ignoreLink": false
+        },
         {
           "title": "Languages",
           "path": "languages",
@@ -224,13 +224,13 @@
             {
               "title": "Content Translation",
               "path": "content-translation"
-            },            
+            },
             {
               "title": "UI Translation",
               "path": "ui-translation"
             }
           ]
-        }        
+        }
       ]
     },
     {
@@ -275,11 +275,11 @@
         {
           "title": "Home page customizations",
           "path": "home-page-customizations"
-        },    
+        },
         {
           "title": "Performance Optimization",
           "path": "performance-optimization"
-        },               
+        },
         {
           "title": "Reporting",
           "path": "reporting",
@@ -292,20 +292,18 @@
             {
               "title": "External component events",
               "path": "external-component-events"
-            },            
+            },
             {
               "title": "Most searched assets",
               "path": "most-searched-assets"
-            },            
+            },
             {
               "title": "Most applied facet filters",
               "path": "most-applied-facet-filters"
             }
-            
           ]
         }
       ]
-      
     },
     {
       "title": "Appendix I",

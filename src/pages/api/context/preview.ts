@@ -1,11 +1,11 @@
-import { getQueryValue } from '@lib/utils';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from "next";
+import { getQueryValue } from "@/src/lib/util/requests";
 
 // API handler that enables preview mode, executed when the users toggles the preview mode manually
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    res.status(405).json({ message: 'Method not allowed' });
+  if (req.method !== "POST") {
+    res.status(405).json({ message: "Method not allowed" });
 
     return;
   }

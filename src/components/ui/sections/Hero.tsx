@@ -1,45 +1,85 @@
-import { Heading, Text, useColorModeValue } from '@chakra-ui/react';
-import Image from 'next/image';
+"use client";
 
-import { CenteredContent, VerticalGroup } from '@components/ui/sections';
-import { GetProductLogo } from '../../../lib/assets';
-
-import { GuidedDemo } from '../../links/GuidedDemo';
+import { cn } from "@/src/lib/util";
+import { GuidedDemo } from "@src/components/links/GuidedDemo";
+import { CenteredContent, VerticalGroup } from "@src/components/ui/sections";
+import { GetProductLogo } from "@src/lib/assets";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export type HeroProps = {
-  title: string;
-  description?: string;
-  image?: string;
-  productLogo?: string;
-  demoId?: string;
-  portalURL?: string;
-  children?: React.ReactNode | Array<React.ReactNode>;
+	title: string;
+	description?: string;
+	image?: string;
+	productLogo?: string;
+	demoId?: string;
+	portalURL?: string;
+	children?: React.ReactNode | Array<React.ReactNode>;
+	className?: string;
 };
 
-export const Hero = ({ description, title, children, productLogo, demoId, portalURL }: HeroProps) => {
-  return (
-    <VerticalGroup
-      maxWidth={'full'}
-      borderBottom={'1px'}
-      borderColor={'chakra-border-color'}
-      background={useColorModeValue('linear-gradient(51deg,#dedbff -10%,#f9f9f9 40%,#f9f9f9 70%,#ffcfcf 120%)', 'linear-gradient(51deg, #2c2c4a -10%, #1a1a1a 40%, #1a1a1a 70%, #4a2c2c 120%)')}
-    >
-      <CenteredContent gap={2} py={{ base: 6, md: 12, xl: 16 }} direction={{ base: 'column', md: 'column' }}>
-        {productLogo && <Image src={useColorModeValue(GetProductLogo(productLogo, 'Light'), GetProductLogo(productLogo, 'Dark'))} alt={`${title} logo`} width={'280'} height={'60'} />}
-        {!productLogo && (
-          <Heading as="h1" fontSize={{ base: '2xl', md: '4xl', xl: '6xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'400'}>
-            {title}
-          </Heading>
-        )}
-        <Text as="h2" color={'neutral'} fontSize={{ base: 'sm', md: 'xl' }} fontFamily={'"DM Sans", sans-serif'} fontWeight={'normal'} letterSpacing={'0.5'}>
-          {description}
-        </Text>
-        {demoId && <GuidedDemo demoId={demoId} productName={title} productLogo={productLogo} />}
-         {portalURL && <a href={portalURL} target='_blank' title='Login' />}
-        {children}
-      </CenteredContent>
-    </VerticalGroup>
-  );
+export const Hero = ({
+	description,
+	title,
+	children,
+	productLogo,
+	demoId,
+	portalURL,
+	className
+}: HeroProps) => {
+	const [mounted, setMounted] = useState(false);
+	const { theme, systemTheme } = useTheme();
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	// Determine if dark mode is active
+	const isDark =
+		mounted &&
+		(theme === "dark" || (theme === "system" && systemTheme === "dark"));
+	const logoSrc = productLogo
+		? GetProductLogo(productLogo, isDark ? "Dark" : "Light")
+		: "";
+
+	return (
+		<VerticalGroup className={cn("max-w-full border-b border-t border-border-color bg-hero-gradient", className)}>
+			<CenteredContent className="py-6 px-4 md:py-12 xl:py-16" direction="column">
+				{productLogo && logoSrc && (
+					<Image src={logoSrc} alt={`${title} logo`} width={280} height={60} />
+				)}
+				{!productLogo && (
+					<h1 className="mb-0 text-4xl font-semibold lg:text-6xl font-sans">
+						{title}
+					</h1>
+				)}
+				{description && (
+					<h2 className="text-base font-sans font-normal text-neutral-600 dark:text-neutral-400">
+						{description}
+					</h2>
+				)}
+				{demoId && (
+					<GuidedDemo
+						demoId={demoId}
+						productName={title}
+						productLogo={productLogo}
+					/>
+				)}
+				{portalURL && (
+					<a
+						href={portalURL}
+						target="_blank"
+						rel="noopener noreferrer"
+						title="Login"
+					>
+						Login
+					</a>
+				)}
+				{children}
+			</CenteredContent>
+		</VerticalGroup>
+	);
 };
 
 export default Hero;
