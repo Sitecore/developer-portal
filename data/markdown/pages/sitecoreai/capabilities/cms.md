@@ -69,7 +69,7 @@ Even before you get to platform options or tech design, you need to have alignme
 ## Downloads
 <Row columns={2}>
 <Article title="XM to XM Cloud Migration tool" description="Move content, media and user data from a source XM on-premises instance to a target XM Cloud environment." link="/downloads/xm-cloud#xm-to-xm-cloud-content-migration-tool" maxWidth="sm" linktext="Download"  />
-<Article title="SitecoreAI Pathway" description="Looking for the SitecoreAI Pathway tool? Reach out to your Sitecore360 or Account Team for furhter information." maxWidth="sm" link="https://support.sitecore.com/csm" linktext="Contact"  />
+<Article title="SitecoreAI Pathway" description="Looking for the SitecoreAI Pathway tool? Reach out to your Sitecore360 or Account Team for further information." maxWidth="sm" link="https://support.sitecore.com/csm" linktext="Contact"  />
 </Row>
 
 
