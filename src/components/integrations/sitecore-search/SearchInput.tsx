@@ -22,7 +22,9 @@ export const SearchInput = ({ showButton }: SearchInputProps) => {
     // Track search event
     tracker.TrackEvent("SEARCH", { keywords });
 
-    router.push(`/search?q=${keywords}`).then(() => router.reload());
+    router
+      .push({ pathname: "/search", query: { q: String(keywords) } })
+      .then(() => router.reload());
   };
 
   const inputBox = (
