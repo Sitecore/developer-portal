@@ -11,7 +11,7 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx
 
 ### Sitecore CLI 5.x
 
-[Sitecore CLI 5.2.127](/downloads/Sitecore_CLI/5x/Sitecore_CLI_52129)\
+[Sitecore CLI 5.2.129](/downloads/Sitecore_CLI/5x/Sitecore_CLI_52129)\
 [Sitecore CLI 5.2.113](/downloads/Sitecore_CLI/5x/Sitecore_CLI_52113)\
 [Sitecore CLI 5.2.109](/downloads/Sitecore_CLI/5x/Sitecore_CLI_52109)\
 [Sitecore CLI 5.1.25](/downloads/Sitecore_CLI/5x/Sitecore_CLI_5125)
