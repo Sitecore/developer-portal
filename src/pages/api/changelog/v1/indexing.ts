@@ -1,16 +1,12 @@
-import { Changelog } from "@src/lib/changelog";
-import { getChangelogCredentials } from "@src/lib/changelog/common/credentials";
-import type {
-  ChangelogEntry,
-  ChangelogEntryList,
-} from "@src/lib/changelog/types";
-import type { NextApiRequest, NextApiResponse } from "next";
-import { getQueryValue } from "@/src/lib/util/requests";
-import { removeHtmlTagsAndSpecialChars } from "@/src/lib/util/stringUtil";
+import { getQueryValue } from '@/src/lib/util/requests';
+import { removeHtmlTagsAndSpecialChars } from '@/src/lib/util/stringUtil';
+import { getChangelogEntryUrl } from '@/src/lib/util/urlUtil';
+import { Changelog } from '@src/lib/changelog';
+import { getChangelogCredentials } from '@src/lib/changelog/common/credentials';
+import type { ChangelogEntry, ChangelogEntryList } from '@src/lib/changelog/types';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL
-  ? process.env.NEXT_PUBLIC_PUBLIC_URL
-  : "";
+const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 
 type IndexingList = {
   total: number;
@@ -39,10 +35,7 @@ type IndexProduct = {
   lightIcon: string;
 };
 
-const handler = async (
-  req: NextApiRequest,
-  res: NextApiResponse<IndexingList>,
-) => {
+const handler = async (req: NextApiRequest, res: NextApiResponse<IndexingList>) => {
   // Default Edge pageSize is 10, use parameter to override
   const pageSize = getQueryValue(req.query.size);
   const endCursor = getQueryValue(req.query.cursor);
@@ -55,14 +48,9 @@ const handler = async (
 
 export default handler;
 
-async function GetEntries(
-  list: Array<IndexResult>,
-  end: string,
-  limit: string,
-) {
+async function GetEntries(list: Array<IndexResult>, end: string, limit: string) {
   const changelog = new Changelog(getChangelogCredentials());
-  const entryList: ChangelogEntryList<Array<ChangelogEntry>> =
-    await changelog.getEntriesPaginated(limit, "", "", end);
+  const entryList: ChangelogEntryList<Array<ChangelogEntry>> = await changelog.getEntriesPaginated(limit, '', '', end);
 
   for (const entry of entryList.entries) {
     list.push({
@@ -76,17 +64,15 @@ async function GetEntries(
             darkIcon: obj.darkIcon,
             lightIcon: obj.lightIcon,
             // sitecoreClouds: obj.sitecoreCloud.results.map((cloud) => cloud.cloudName),
-          },
+          }
       ),
       date: entry.releaseDate,
       image: entry.image[0] != null ? entry.image[0].fileUrl : null,
       description: removeHtmlTagsAndSpecialChars(entry.description),
-      fullArticle: entry.fullArticle
-        ? removeHtmlTagsAndSpecialChars(entry.fullArticle)
-        : null,
+      fullArticle: entry.fullArticle ? removeHtmlTagsAndSpecialChars(entry.fullArticle) : null,
       readMoreLink: entry.readMoreLink,
       breakingChange: !!entry.breakingChange,
-      url: `${publicUrl}${entry}`,
+      url: new URL(`${getChangelogEntryUrl(entry)}`, publicUrl).toString(),
     });
   }
 
