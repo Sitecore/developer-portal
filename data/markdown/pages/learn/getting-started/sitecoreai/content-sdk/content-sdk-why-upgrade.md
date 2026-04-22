@@ -5,9 +5,6 @@ description: 'A technical marketing perspective on the next major version of JSS
 promoAfter: ['learning-essentials']
 openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/b20cc628bdaf4c3080bd586c98d4ee30?v=947ae0af'
 ---
-# From JSS to Content SDK: Why SitecoreAI Customers Should Make the Move Now
-
-_A technical marketing perspective on the next major version of JSS for SitecoreAI, the performance and editing gains it unlocks, and how to approach the transition._
 
 ## Why this matters now
 
@@ -77,7 +74,7 @@ Content SDK 1.4 introduced CLI support for AI-assisted component generation. The
 
 ## Approaching the transition
 
-The upgrade path depends on where an application is starting from. SitecoreAI provides [detailed upgrade guides for recent JSS versions](https://doc.sitecore.com/sai/en/developers/content-sdk/10/upgrade-jss-22-8-next-js-apps-to-content-sdk-1-0.html), and Sitecore’s [product team](content-sdk/jss-to-content-sdk-upgrade) has documented a lift-and-shift approach that is particularly effective for older codebases. Both paths are valid. The right choice depends on the version gap, the size of the component library, and the appetite for adopting modern patterns in the same motion.
+The upgrade path depends on where an application is starting from. SitecoreAI provides [detailed upgrade guides for recent JSS versions](https://doc.sitecore.com/sai/en/developers/content-sdk/10/upgrade-jss-22-8-next-js-apps-to-content-sdk-1-0.html), and Sitecore’s [product team](jss-to-content-sdk-upgrade) has documented a lift-and-shift approach that is particularly effective for older codebases. Both paths are valid. The right choice depends on the version gap, the size of the component library, and the appetite for adopting modern patterns in the same motion.
 
 ### Incremental upgrade
 
@@ -87,7 +84,7 @@ For applications on JSS 22.8 or 22.9, the [official upgrade documentation](https
 
 For teams on older JSS versions, walking through every intermediate upgrade is often not practical. A lift-and-shift approach, which starts from a clean Content SDK application and migrates components and configuration into it, is typically the more efficient option. This strategy has been validated by Sitecore’s own product team, which used it to migrate reference implementations including the SUGCON sites.
 
-A detailed, step-by-step walkthrough of the lift-and-shift approach, based on the SUGCON migration, is available in the [companion article](content-sdk/jss-to-content-sdk-upgrade) on the Sitecore Developer Portal.
+A detailed, step-by-step walkthrough of the lift-and-shift approach, based on the SUGCON migration, is available in the [companion article](jss-to-content-sdk-upgrade) on the Sitecore Developer Portal.
 
 ### What to line up before you start
 
@@ -120,4 +117,4 @@ For developers and solution architects evaluating the upgrade, the return on inv
 
 ## Getting started
 
-Begin with the Content SDK documentation and upgrade guides on the Sitecore Documentation site. The [companion article](content-sdk/jss-to-content-sdk-upgrade) on the Developer Portal provides the field reference for the lift-and-shift path, based on the SUGCON migration.
+Begin with the Content SDK documentation and upgrade guides on the Sitecore Documentation site. The [companion article](jss-to-content-sdk-upgrade) on the Developer Portal provides the field reference for the lift-and-shift path, based on the SUGCON migration.

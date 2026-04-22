@@ -5,9 +5,6 @@ description: 'An overview of the Content SDK, the two migration paths available 
 promoAfter: ['learning-essentials']
 openGraphImage: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/b20cc628bdaf4c3080bd586c98d4ee30?v=947ae0af'
 ---
-# Migrating from JSS to Content SDK on SitecoreAI
-
-_An overview of the Content SDK, the two migration paths available to customers, and a first-hand account of moving the SUGCON event sites._
 
 ## What is the Content SDK
 
