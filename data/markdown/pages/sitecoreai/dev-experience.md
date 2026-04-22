@@ -26,6 +26,8 @@ The Sitecore Content SDK is a toolkit for building scalable, personalized digita
 <Row columns="3">
 <Link title="Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
 <Link title="Release Notes" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html" />
+<Link title="Why Content SDK?" link="https://developers.sitecore.com/learn/getting-started/sitecoreai/content-sdk/content-sdk-why-upgrade" />
+<Link title="Migration from JSS to Content SDK" link="https://developers.sitecore.com/learn/getting-started/sitecoreai/content-sdk/jss-to-content-sdk-upgrade" />
 </Row>
 
 ### Marketplace SDK
