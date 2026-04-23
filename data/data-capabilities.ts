@@ -48,9 +48,9 @@ const platformData = {
       icon: ContentOperationsIcon,
     },
     {
-      title: 'Unified data layer',
+      title: 'Audience and Insights',
       description: 'Unlock your customer data to inform every interaction with real-time insights.',
-      href: '/sitecoreai/capabilities/unified-data-layer',
+      href: '/sitecoreai/capabilities/audience-and-insights',
       linkText: 'Explore',
       img: {
         src: '/images/capabilities/audience-and-insights.svg',

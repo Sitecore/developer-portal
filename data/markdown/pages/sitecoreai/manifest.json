@@ -33,32 +33,32 @@
     },
         {
       "title": "Capabilities",
-      "path": "",
+      "path": "/capabilities",
       "ignoreLink": true,
       "children": [
         {
           "title": "Content management",
-          "path": "/capabilities/cms"
+          "path": "/cms"
         },
         {
           "title": "Digital asset management",
-          "path": "/capabilities/dam"
+          "path": "/dam"
         },
         {
           "title": "Content operations",
-          "path": "/capabilities/content-ops"
+          "path": "/content-ops"
         },
         {
           "title": "Conversion Optimization",
-          "path": "/capabilities/conversion-optimization"
+          "path": "/conversion-optimization"
         },
         {
           "title": "Audience & Insights",
-          "path": "/capabilities/audience-and-insights"
+          "path": "/audience-and-insights"
         },
         {
           "title": "Commerce",
-          "path": "/capabilities/commerce"
+          "path": "/commerce"
         }
       ]
     }  
