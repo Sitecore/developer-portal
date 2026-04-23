@@ -1,14 +1,30 @@
 {
   "compilerOptions": {
-    "typeRoots": ["./types", "src/common/types", "./node_modules/@types"],
+    "typeRoots": [
+      "./types",
+      "src/common/types",
+      "./node_modules/@types"
+    ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@data/*": ["./data/*"],
-      "@src/*": ["./src/*"],
-      "@/lib/*": ["./src/lib/*"]
+      "@/*": [
+        "./*"
+      ],
+      "@data/*": [
+        "./data/*"
+      ],
+      "@src/*": [
+        "./src/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ]
     },
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "incremental": true,
     "resolveJsonModule": true,
     "composite": false,
@@ -44,5 +60,7 @@
     "data/gql/generated/graphql.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

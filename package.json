@@ -38,7 +38,7 @@
     "clean": "npx shx rm -rf node_modules .next .turbo coverage dist compiled build-next-static && npx shx rm -rf node_modules && npx shx echo Done!"
   },
   "dependencies": {
-    "@azure/identity": "^4.10.2",
+    "@azure/identity": "^1.1.0",
     "@azure/storage-blob": "^12.27.0",
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
@@ -128,7 +128,7 @@
     "input-otp": "^1.4.2",
     "lucide-react": "^0.562.0",
     "next": "^16.1.1",
-    "next-auth": "^4.24.11",
+    "next-auth": "^5.0.0-beta.31",
     "next-mdx-remote": "^6.0.0",
     "next-share": "^0.27.0",
     "next-themes": "^0.4.6",
@@ -158,8 +158,8 @@
   "devDependencies": {
     "@babel/core": "^7.24.9",
     "@biomejs/biome": "2.3.11",
-    "@graphql-codegen/cli": "^5.0.2",
-    "@graphql-codegen/client-preset": "^4.3.2",
+    "@graphql-codegen/cli": "^6.3.1",
+    "@graphql-codegen/client-preset": "^5.3.0",
     "@graphql-codegen/schema-ast": "^5.0.0",
     "@next/bundle-analyzer": "15.1.0",
     "@parcel/watcher": "^2.4.1",

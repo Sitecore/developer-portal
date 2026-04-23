@@ -1,9 +1,9 @@
 ---
 title: 'Sitecore Studio'
-pageType: 'childoverview'
+pageType: 'article'
 description: 'The unified extensibility framework of SitecoreAI'
-hasSubPageNav: true
-hasInPageNav: true
+hasSubPageNav: false
+hasInPageNav: false
 ---
 
 Sitecore Studio is the engine that lets you tailor the SitecoreAI platform itself, safely, securely, and at scale. It’s the unified extensibility framework of SitecoreAI, bringing together the tools, APIs, and workspaces that empower marketers, developers and partners to extend, customize, and innovate across the platform.
