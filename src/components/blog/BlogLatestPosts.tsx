@@ -1,6 +1,6 @@
+import { BlogPostCard } from "@/src/components/blog/BlogPostCard";
 import type { BlogListItem } from "@src/lib/blog/types";
 import Link from "next/link";
-import { BlogPostCard } from "@/src/components/blog/BlogPostCard";
 
 type BlogLatestPostsProps = {
   posts: Array<BlogListItem>;
@@ -19,7 +19,7 @@ export function BlogLatestPosts({
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="text-2xl font-heading font-semibold">Latest blog</h2>
+          <h2 className="text-2xl font-heading font-semibold">Latest blog posts</h2>
           <p className="text-sm text-muted-foreground">
             Product and engineering updates from the developer portal.
           </p>

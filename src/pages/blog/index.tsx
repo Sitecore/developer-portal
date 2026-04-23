@@ -1,6 +1,4 @@
-import Layout from "@src/layouts/Layout";
-import type { BlogListItem } from "@src/lib/blog/types";
-import type { GetStaticProps, NextPage } from "next";
+import { BlogFiltersPanel } from "@/src/components/blog/BlogFiltersPanel";
 import { BlogIndexSidebar } from "@/src/components/blog/BlogIndexSidebar";
 import { BlogOverviewClient } from "@/src/components/blog/BlogOverviewClient";
 import {
@@ -8,6 +6,9 @@ import {
   Hero,
   VerticalGroup,
 } from "@/src/components/ui/sections";
+import Layout from "@src/layouts/Layout";
+import type { BlogListItem } from "@src/lib/blog/types";
+import type { GetStaticProps, NextPage } from "next";
 
 type BlogIndexProps = {
   posts: Array<BlogListItem>;
@@ -52,16 +53,20 @@ const BlogIndexPage: NextPage<BlogIndexProps> = ({
 
       <VerticalGroup className="bg-white dark:bg-body-bg">
         <CenteredContent className="gap-8 py-8">
-          <div className="grid grid-cols-5 gap-14">
-            <div className="col-span-5 md:col-span-3">
-              <div id="main-content">
-                <BlogOverviewClient
-                  posts={posts}
-                  authorNameBySlug={authorNameBySlug}
-                />
-              </div>
+          <div className="grid grid-cols-1 gap-14 md:grid-cols-[220px_1fr_220px]">
+            <div className="hidden md:block">
+              <BlogFiltersPanel
+                posts={posts}
+                authorNameBySlug={authorNameBySlug}
+              />
             </div>
-            <div className="col-span-2 hidden md:block space-y-8">
+            <div id="main-content">
+              <BlogOverviewClient
+                posts={posts}
+                authorNameBySlug={authorNameBySlug}
+              />
+            </div>
+            <div className="hidden md:block">
               <BlogIndexSidebar />
             </div>
           </div>

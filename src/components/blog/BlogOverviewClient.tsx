@@ -1,31 +1,16 @@
 "use client";
 
+import { Badge } from "@/src/components/ui/badge";
+import { Button } from "@/src/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/src/components/ui/card";
 import { BLOG_PAGE_SIZE } from "@src/lib/blog/constants";
-import {
-  extractAllAuthorSlugs,
-  extractAllTags,
-  filterPosts,
-  paginate,
-} from "@src/lib/blog/query";
+import { filterPosts, paginate } from "@src/lib/blog/query";
 import type { BlogListItem } from "@src/lib/blog/types";
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useMemo } from "react";
-import { Badge } from "@/src/components/ui/badge";
-import { Button } from "@/src/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/src/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/src/components/ui/select";
-
-const ALL = "__all__";
-
 function BlogOverviewListItem({
   post,
   authorNameBySlug,
@@ -109,6 +94,8 @@ function toStringQuery(
   return out;
 }
 
+// Note: Tag/author filter UI lives in BlogFiltersPanel; this component
+// shares state with it via the URL query string (shallow routing).
 export function BlogOverviewClient({
   posts,
   authorNameBySlug,
@@ -127,9 +114,6 @@ export function BlogOverviewClient({
       ? Number.parseInt(router.query.page, 10)
       : 1;
   const page = Number.isFinite(pageRaw) && pageRaw > 0 ? pageRaw : 1;
-
-  const tagOptions = useMemo(() => extractAllTags(posts), [posts]);
-  const authorOptions = useMemo(() => extractAllAuthorSlugs(posts), [posts]);
 
   const filtered = useMemo(
     () =>
@@ -169,53 +153,6 @@ export function BlogOverviewClient({
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-end">
-        <div className="flex flex-col gap-1.5">
-          <span className="text-sm font-medium text-muted-foreground">Tag</span>
-          <Select
-            value={tag || ALL}
-            onValueChange={(v) =>
-              setQuery({ tag: v === ALL ? null : v, page: "1" })
-            }
-          >
-            <SelectTrigger className="w-[220px]">
-              <SelectValue placeholder="All tags" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value={ALL}>All tags</SelectItem>
-              {tagOptions.map((t) => (
-                <SelectItem key={t} value={t}>
-                  {t}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="flex flex-col gap-1.5">
-          <span className="text-sm font-medium text-muted-foreground">
-            Author
-          </span>
-          <Select
-            value={authorSlug || ALL}
-            onValueChange={(v) =>
-              setQuery({ author: v === ALL ? null : v, page: "1" })
-            }
-          >
-            <SelectTrigger className="w-[240px]">
-              <SelectValue placeholder="All authors" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value={ALL}>All authors</SelectItem>
-              {authorOptions.map((slug) => (
-                <SelectItem key={slug} value={slug}>
-                  {authorNameBySlug[slug] ?? slug}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
-
       <p className="text-sm text-muted-foreground">
         {totalItems} post{totalItems === 1 ? "" : "s"}
         {totalPages > 1 ? ` · Page ${page} of ${totalPages}` : ""}

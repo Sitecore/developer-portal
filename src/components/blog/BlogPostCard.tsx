@@ -1,7 +1,3 @@
-import type { BlogListItem } from "@src/lib/blog/types";
-import { format } from "date-fns";
-import Image from "next/image";
-import Link from "next/link";
 import { Badge } from "@/src/components/ui/badge";
 import {
   Card,
@@ -10,6 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/src/components/ui/card";
+import type { BlogListItem } from "@src/lib/blog/types";
+import { format } from "date-fns";
+import Link from "next/link";
 
 type BlogPostCardProps = {
   post: BlogListItem;
@@ -25,11 +24,11 @@ export function BlogPostCard({ post, authorNameBySlug }: BlogPostCardProps) {
   return (
     <Link href={post.href} className="group block h-full">
       <Card
-        elevation="sm"
+        elevation="xs"
         style="outline"
         className="h-full overflow-hidden p-0 transition-shadow group-hover:shadow-md"
       >
-        <div className="relative aspect-[2/1] w-full border-b border-border-color bg-muted">
+        {/* <div className="relative aspect-[2/1] w-full border-b border-border-color bg-muted">
           <Image
             src={post.image}
             alt={post.title}
@@ -37,7 +36,7 @@ export function BlogPostCard({ post, authorNameBySlug }: BlogPostCardProps) {
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
-        </div>
+        </div> */}
         <CardHeader className="px-5 pt-5">
           <CardTitle className="text-xl group-hover:text-primary transition-colors">
             {post.title}
