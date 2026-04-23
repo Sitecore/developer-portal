@@ -1,5 +1,5 @@
 ---
-title: 'Unified data layer'
+title: 'Audience and Insights'
 pageType: 'article'
 description: 'Turn data into decisions and awareness into understanding, '
 hasSubPageNav: true
@@ -11,7 +11,7 @@ Combine all your data into one clear view so you know who your audiences are, wh
 ## Getting started
 
 <Row columns={2}>
-  <Article title="Overview" description="the Unfied data layer enables you to query and build custom segments at scale and speed using any attributes that your organization passes. " link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/index-en.html" linkText="Read more" />
+  <Article title="Overview" description="Audience and Insights enables you to query and build custom segments at scale and speed using any attributes that your organization passes. " link="https://doc.sitecore.com/sai/en/users/sitecoreai/audience-and-insights.html" linkText="Read more" />
   <Article title="Managing guests" description="Guest profiles have the potential to be very robust, populated with behavioral and transactional data. " link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/managing-guests-in-sitecore-cdp.html" linkText="Read more" />
   <Article title="Dashboards" description="Dashboards to review and analyze various performance metrics including events and customer journey pattern." link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/dashboards-in-sitecore-cdp.html" linkText="Read more" />
   <Article title="Developer Center" description="The Developer center is an area designed for developers to extend functionality including Conditions for segments." link="  https://doc.sitecore.com/cdp/en/users/sitecore-cdp/developer-center.html" linkText="Read more" />
