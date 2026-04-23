@@ -16,16 +16,23 @@ import {
   OpenInTrigger,
 } from "../../ui/custom/open-in-chat";
 
-export type useWithAIProps = {
-  pageInfo: PageInfo;
-};
+export type useWithAIProps =
+  | { pageInfo: PageInfo }
+  | { markdownSourceFileName: string };
 
-export const useWithAI = ({ pageInfo }: useWithAIProps) => {
+function resolveMarkdownFileName(props: useWithAIProps): string {
+  if ("markdownSourceFileName" in props) {
+    return props.markdownSourceFileName;
+  }
+  return props.pageInfo.fileName;
+}
+
+export const useWithAI = (props: useWithAIProps) => {
   const editUrl = "https://github.com/sitecore/developer-portal/edit";
   const rawUrl =
     "https://raw.githubusercontent.com/Sitecore/developer-portal/refs/heads";
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/+$/, "") ?? "";
-  const urltoParse = pageInfo.fileName.replace(editUrl, rawUrl);
+  const urltoParse = resolveMarkdownFileName(props).replace(editUrl, rawUrl);
   const markdownUrl = `${baseUrl}${encodeURIComponent(urltoParse)}`;
   const sampleQuery = `Read this article ${decodeURIComponent(markdownUrl)} so I can questions about it`;
 

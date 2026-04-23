@@ -10,6 +10,8 @@ interface MetaProps {
   description: string;
   twitterDescription?: string;
   openGraphImageUrl?: string;
+  /** Absolute canonical URL (e.g. from blog frontmatter). Overrides og:url / twitter:url. */
+  canonicalUrl?: string;
 }
 
 const MetaTags: React.FC<MetaProps> = ({
@@ -18,6 +20,7 @@ const MetaTags: React.FC<MetaProps> = ({
   section,
   baseTitle = "Sitecore Developer Portal",
   openGraphImageUrl,
+  canonicalUrl,
 }) => {
   const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL
     ? process.env.NEXT_PUBLIC_PUBLIC_URL
@@ -25,6 +28,7 @@ const MetaTags: React.FC<MetaProps> = ({
   const router = useRouter();
   const { asPath } = router;
   const path = asPath.split(/[?#]/)[0];
+  const pageUrl = canonicalUrl ?? `${publicUrl}${path}`;
 
   const ogImageUrl = openGraphImageUrl
     ? `${publicUrl}${openGraphImageUrl}`
@@ -39,6 +43,7 @@ const MetaTags: React.FC<MetaProps> = ({
   return (
     <Head>
       <title>{title}</title>
+      {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
 
       <link
         rel="icon"
@@ -83,12 +88,12 @@ const MetaTags: React.FC<MetaProps> = ({
       <meta property="og:site_name" content="Sitecore Developer Portal" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={`${publicUrl}${path}`} />
+      <meta property="og:url" content={pageUrl} />
       <meta property="og:image" content={ogImageUrl} />
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="developers.sitecore.com" />
-      <meta property="twitter:url" content={`${publicUrl}${path}`} />
+      <meta property="twitter:url" content={pageUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImageUrl} />

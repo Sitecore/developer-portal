@@ -15,6 +15,7 @@ type LayoutProps = {
   description?: string;
   twitterDescription?: string;
   openGraphImage?: string;
+  canonicalUrl?: string;
   preview?: boolean;
   children: React.ReactNode | Array<React.ReactNode>;
   className?: string;
@@ -26,6 +27,7 @@ const Layout = ({
   openGraphImage,
   baseTitle,
   section,
+  canonicalUrl,
   children,
   className,
 }: LayoutProps) => {
@@ -39,6 +41,7 @@ const Layout = ({
         baseTitle={baseTitle}
         section={section}
         openGraphImageUrl={openGraphImage}
+        canonicalUrl={canonicalUrl}
       />
 
       <div className="sr-only">

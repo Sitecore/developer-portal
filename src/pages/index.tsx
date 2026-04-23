@@ -25,18 +25,26 @@ import Layout from "@src/layouts/Layout";
 import { getLatestRecipes } from "@src/lib/accelerate/latest";
 import type { AccelerateRecipe } from "@src/lib/accelerate/types/recipe";
 import { Product } from "@src/lib/assets";
+import type { BlogListItem } from "@src/lib/blog/types";
 import type { PageInfo } from "@src/lib/interfaces/page-info";
 import { getPageInfo } from "@src/lib/page-info";
 import type { NextPage } from "next";
+import { BlogLatestPosts } from "@/src/components/blog/BlogLatestPosts";
 
 export async function getStaticProps() {
   const pageInfo = await getPageInfo("home");
   const recipes = await getLatestRecipes();
+  const { getAuthorSlugToDisplayName, getLatestBlogPostsForHome } =
+    await import("@src/lib/blog/load");
+  const latestBlogPosts = getLatestBlogPostsForHome(3);
+  const blogAuthorNames = getAuthorSlugToDisplayName();
 
   return {
     props: {
       pageInfo,
       recipes,
+      latestBlogPosts,
+      blogAuthorNames,
     },
     revalidate: 600, // 10 minutes
   };
@@ -45,10 +53,17 @@ export async function getStaticProps() {
 type HomePageProps = {
   pageInfo: PageInfo;
   recipes: Array<AccelerateRecipe>;
+  latestBlogPosts: Array<BlogListItem>;
+  blogAuthorNames: Record<string, string>;
   preview: boolean;
 };
 
-const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
+const HomePage: NextPage<HomePageProps> = ({
+  pageInfo,
+  recipes,
+  latestBlogPosts,
+  blogAuthorNames,
+}) => {
   return (
     <TrackPageView pageInfo={pageInfo}>
       <Layout
@@ -56,7 +71,11 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
         description={pageInfo.description}
         openGraphImage={pageInfo.openGraphImage}
       >
-        <Hero title={pageInfo.title} description={pageInfo.description} className='border-b-0' />
+        <Hero
+          title={pageInfo.title}
+          description={pageInfo.description}
+          className="border-b-0"
+        />
 
         <VerticalGroup>
           <CenteredContent>
@@ -74,6 +93,14 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
                 url="/learn/accelerate/"
               />
             </Row>
+            {latestBlogPosts.length > 0 ? (
+              <Row columns={1} className="mt-6">
+                <BlogLatestPosts
+                  posts={latestBlogPosts}
+                  authorNameBySlug={blogAuthorNames}
+                />
+              </Row>
+            ) : null}
             <Row columns={4}>
               <Article
                 title="Get Started"
