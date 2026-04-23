@@ -1,4 +1,4 @@
-import { visit } from 'unist-util-visit';
+import { visit } from "unist-util-visit";
 
 type HeaderNodeData = {
   value?: string;
@@ -13,7 +13,8 @@ type HeaderNodeData = {
   depth?: number;
 };
 
-const getSectionId = (title: string) => `heading-${title.toLowerCase().replace(/[^a-z0-9]/gi, '-')}`;
+const getSectionId = (title: string) =>
+  `heading-${title.toLowerCase().replace(/[^a-z0-9]/gi, "-")}`;
 
 /**
  * Transforms all h tags to add an id based on the text value of the heading
@@ -22,19 +23,19 @@ const getSectionId = (title: string) => `heading-${title.toLowerCase().replace(/
  */
 const setHeadingIds = () => {
   return (node: HeaderNodeData) => {
-    visit(node, 'heading', (node: HeaderNodeData) => {
+    visit(node, "heading", (node: HeaderNodeData) => {
       if (!node.children || node?.depth !== 2) {
         return;
       }
 
       const firstChild = node.children[0];
-      let text = '';
+      let text = "";
 
       // If our heading is a link, grab it's child text
-      if (firstChild.type === 'link' && !!firstChild.children) {
-        text = firstChild.children[0].value || '';
-      } else if (firstChild.type === 'text') {
-        text = firstChild.value || '';
+      if (firstChild.type === "link" && !!firstChild.children) {
+        text = firstChild.children[0].value || "";
+      } else if (firstChild.type === "text") {
+        text = firstChild.value || "";
       }
 
       if (text) {

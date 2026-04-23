@@ -28,24 +28,24 @@
           "path": "change-management"
         },
         {
-          "title":"Omnichannel Preparation",
-          "path":"omnichannel-preparation"
+          "title": "Omnichannel Preparation",
+          "path": "omnichannel-preparation"
         },
         {
-          "title":"Web vs Interactive Experiences",
-          "path":"web-vs-interactive"
+          "title": "Web vs Interactive Experiences",
+          "path": "web-vs-interactive"
         },
         {
-          "title":"Developing an Identity Strategy",
-          "path":"identity-strategy"
-        },        
-        {
-          "title":"Segmentation",
-          "path":"segmentation"
+          "title": "Developing an Identity Strategy",
+          "path": "identity-strategy"
         },
         {
-          "title":"Experiments Strategy",
-          "path":"experimentation"
+          "title": "Segmentation",
+          "path": "segmentation"
+        },
+        {
+          "title": "Experiments Strategy",
+          "path": "experimentation"
         }
       ]
     },
@@ -66,7 +66,7 @@
             {
               "title": "Personalize Integrations",
               "path": "personalize-integrations"
-            }         
+            }
           ]
         },
         {
@@ -78,7 +78,7 @@
           "title": "Alert Bar",
           "path": "alert-bar",
           "ignoreLink": false
-        },        
+        },
         {
           "title": "Before You Fly Reminder",
           "path": "before-you-fly",
@@ -93,7 +93,7 @@
           "title": "Identifying churn risk",
           "path": "churn-risk",
           "ignoreLink": false
-        },        
+        },
         {
           "title": "Home Page Personalization",
           "path": "home-page-personalization",
@@ -130,12 +130,12 @@
           "title": "Decision Models Automated Testing",
           "path": "decision-model-testing",
           "ignoreLink": false
-        },        
+        },
         {
           "title": "Go-Live Checklist",
           "path": "go-live-checklist",
           "ignoreLink": false
-        }                  
+        }
       ]
     },
     {
@@ -147,14 +147,14 @@
           "title": "Decision Model Optimization",
           "path": "decision-model-optimization",
           "ignoreLink": false
-        }  ,
+        },
         {
           "title": "Personalization Vision",
           "path": "personalization-vision",
           "ignoreLink": false
-        }                
+        }
       ]
-    },    
+    },
     {
       "title": "Appendix I",
       "path": "appendix-i",
@@ -163,12 +163,12 @@
         {
           "title": "CDP Glossary",
           "path": "cdp-glossary"
-        }  ,{
+        },
+        {
           "title": "Personalize Glossary",
           "path": "personalize-glossary"
-        }        
+        }
       ]
     }
   ]
 }
-

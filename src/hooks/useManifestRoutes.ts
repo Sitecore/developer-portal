@@ -1,6 +1,15 @@
-import { ManifestConfig, ManifestNavigationItem } from '@/src/lib/interfaces/manifest';
-import { getAllParents, getChildren, getParent, getRouteByFullPath, getSiblingItem } from '@/src/lib/manifestHelper';
-import { useEffect, useMemo, useState } from 'react';
+import type {
+  ManifestConfig,
+  ManifestNavigationItem,
+} from "@src/lib/interfaces/manifest";
+import {
+  getAllParents,
+  getChildren,
+  getParent,
+  getRouteByFullPath,
+  getSiblingItem,
+} from "@src/lib/manifestHelper";
+import { useEffect, useMemo, useState } from "react";
 
 /**
  * Custom hook for managing sidebar navigation.
@@ -10,19 +19,32 @@ import { useEffect, useMemo, useState } from 'react';
  * @param currentPath - The current path.
  * @returns An object containing the current, parent, previous, and next navigation items.
  */
-const useManifestRoutes = (sidebarNavConfig: ManifestConfig, currentPath: string) => {
-  const [currentItem, setCurrentItem] = useState<ManifestNavigationItem | null>(null);
-  const [previousItem, setPreviousItem] = useState<ManifestNavigationItem | null>(null);
+const useManifestRoutes = (
+  sidebarNavConfig: ManifestConfig,
+  currentPath: string,
+) => {
+  const [currentItem, setCurrentItem] = useState<ManifestNavigationItem | null>(
+    null,
+  );
+  const [previousItem, setPreviousItem] =
+    useState<ManifestNavigationItem | null>(null);
   const [nextItem, setNextItem] = useState<ManifestNavigationItem | null>(null);
-  const [children, setChildren] = useState<ManifestNavigationItem[] | null>(null);
+  const [children, setChildren] = useState<ManifestNavigationItem[] | null>(
+    null,
+  );
   const [parents, setParents] = useState<ManifestNavigationItem[] | null>(null);
-  const [parentItem, setParentItem] = useState<ManifestNavigationItem | null>(null);
+  const [parentItem, setParentItem] = useState<ManifestNavigationItem | null>(
+    null,
+  );
 
   const { path, routes } = sidebarNavConfig;
 
   useEffect(() => {
-    const urlSegments: string[] = currentPath !== path ? currentPath.replace(`${path}/`, '').split('/') : [];
-    const fullPath = urlSegments.join('/');
+    const urlSegments: string[] =
+      currentPath !== path
+        ? currentPath.replace(`${path}/`, "").split("/")
+        : [];
+    const fullPath = urlSegments.join("/");
 
     let currentItem = getRouteByFullPath(routes, fullPath);
     if (currentItem?.ignoreLink) {
@@ -56,7 +78,7 @@ const useManifestRoutes = (sidebarNavConfig: ManifestConfig, currentPath: string
       children,
       parents,
     }),
-    [currentItem, parentItem, previousItem, nextItem, children, parents]
+    [currentItem, parentItem, previousItem, nextItem, children, parents],
   );
 };
 

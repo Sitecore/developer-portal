@@ -1,13 +1,29 @@
-import { AccelerateRecipe } from '@/src/lib/accelerate/types/recipe';
-import { Product, Variant } from '@/src/lib/assets';
-import { Box, Card, CardBody, CardFooter, CardHeader, CardProps, chakra, Flex, Heading, HStack, IconButton, Link, SimpleGrid, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, useColorModeValue } from '@chakra-ui/react';
-import { mdiRss } from '@mdi/js';
-import Icon from '@mdi/react';
-import { TextLink } from '@src/components/links';
-import Image from 'next/image';
-import { GetProductIcon } from '../../../lib/assets';
+"use client";
 
-type AccelerateUpdatesProps = CardProps & {
+import { mdiRss } from "@mdi/js";
+import Icon from "@mdi/react";
+import { TextLink } from "@src/components/links";
+import { Button } from "@src/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@src/components/ui/card";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@src/components/ui/tabs";
+import type { AccelerateRecipe } from "@src/lib/accelerate/types/recipe";
+import { GetProductIcon, Product, Variant } from "@src/lib/assets";
+import Image from "next/image";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+import { cn } from "@/src/lib/util";
+
+type AccelerateUpdatesProps = {
   recipes: AccelerateRecipe[];
   className?: string;
   title?: string;
@@ -18,96 +34,161 @@ type AccelerateUpdatesProps = CardProps & {
   url: string;
 };
 
-const CustomImage = chakra(Image, {
-  shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
-});
-
-const AccelerateUpdates = ({ title = 'Sitecore Accelerate updates', linkHref = '/learn/accelerate', linkText = 'See all recipes', recipes, hideProductIcon, columns }: AccelerateUpdatesProps) => {
+const AccelerateUpdates = ({
+  title = "Sitecore Accelerate updates",
+  linkHref = "/learn/accelerate",
+  linkText = "See all recipes",
+  recipes,
+  hideProductIcon,
+  columns,
+  className,
+}: AccelerateUpdatesProps) => {
   return (
-    <Card variant={'unstyled'}>
-      <CardHeader justifyContent={{ base: 'left', sm: 'space-between' }} flexDirection={{ base: 'column', sm: 'row' }} display={'flex'} py={8} alignItems={'baseline'}>
-        <Heading as={'h3'} fontSize={'2xl'} fontWeight={'500'}>
+    <Card className={cn(className)} style="flat" elevation="xs">
+      <CardHeader className="flex flex-col sm:flex-row justify-between sm:justify-between items-baseline">
+        <h3 className="text-2xl font-heading font-medium flex items-center gap-2">
           {title}
-          <Link href="/learn/accelerate/updates" ml="1">
-            <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="neutral" variant="ghost" size={'xs'} />
+          <Link href="/learn/accelerate/updates" className="ml-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              aria-label="RSS"
+              className="h-6 w-6 p-0"
+            >
+              <Icon path={mdiRss} size={0.8} />
+            </Button>
           </Link>
-        </Heading>
-        <TextLink href={linkHref} text={linkText} hideBelow={'md'} />
+        </h3>
+        <div className="hidden md:block">
+          <TextLink href={linkHref} text={linkText} size="md" />
+        </div>
       </CardHeader>
-      <CardBody py={{ base: '2', md: '4' }}>
-        <Tabs size="sm" variant={'soft-rounded'}>
-          <TabList>
-            <Tab>
-              <Text>All</Text>
-            </Tab>
-            <Tab>
-              <Text>XM Cloud</Text>
-            </Tab>
-            <Tab>
-              <Text>Content Hub</Text>
-            </Tab>
-          </TabList>
-          <TabPanels>
-            <TabPanel>
-              <RecipeList recipes={recipes} hideProductIcon={hideProductIcon} columns={columns} />
-            </TabPanel>
-            <TabPanel>
-              <RecipeList recipes={recipes.filter((recipe: AccelerateRecipe) => recipe.product === 'XMCloud')} />
-              <Link href="/learn/accelerate/xm-cloud/updates" position={'absolute'} top={0} right={0}>
-                <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="neutral" variant="ghost" size={'sm'} />
+      <CardContent>
+        <Tabs defaultValue="all" className="w-full">
+          <TabsList variant="soft-rounded">
+            <TabsTrigger variant="soft-rounded" value="all">
+              All
+            </TabsTrigger>
+            <TabsTrigger variant="soft-rounded" value="xmcloud">
+              XM Cloud
+            </TabsTrigger>
+            <TabsTrigger variant="soft-rounded" value="contenthub">
+              Content Hub
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="all">
+            <RecipeList
+              recipes={recipes}
+              hideProductIcon={hideProductIcon}
+              columns={columns}
+            />
+          </TabsContent>
+          <TabsContent value="xmcloud">
+            <div className="relative">
+              <RecipeList
+                recipes={recipes.filter(
+                  (recipe: AccelerateRecipe) => recipe.product === "XMCloud",
+                )}
+              />
+              <Link
+                href="/learn/accelerate/xm-cloud/updates"
+                className="absolute -top-10 right-0 top"
+              >
+                <Button variant="ghost" size="sm" aria-label="RSS">
+                  <Icon path={mdiRss} size={0.8} />
+                </Button>
               </Link>
-            </TabPanel>
-            <TabPanel>
-              <RecipeList recipes={recipes.filter((recipe: AccelerateRecipe) => recipe.product === 'ContentHub')} />
-              <Link href="/learn/accelerate/content-hub/updates" position={'absolute'} top={0} right={0}>
-                <IconButton icon={<Icon path={mdiRss} size={0.8} />} aria-label={'RSS'} colorScheme="neutral" variant="ghost" size={'sm'} />
+            </div>
+          </TabsContent>
+          <TabsContent value="contenthub">
+            <div className="relative">
+              <RecipeList
+                recipes={recipes.filter(
+                  (recipe: AccelerateRecipe) => recipe.product === "ContentHub",
+                )}
+              />
+              <Link
+                href="/learn/accelerate/content-hub/updates"
+                className="absolute -top-10 right-0 top"
+              >
+                <Button variant="ghost" size="sm" aria-label="RSS">
+                  <Icon path={mdiRss} size={0.8} />
+                </Button>
               </Link>
-            </TabPanel>
-          </TabPanels>
+            </div>
+          </TabsContent>
         </Tabs>
-      </CardBody>
-      <CardFooter hideFrom={'md'} py={0} alignSelf={'self-end'}>
+      </CardContent>
+      <CardFooter className="md:hidden py-0 self-end">
         <TextLink href={linkHref} text={linkText} />
       </CardFooter>
     </Card>
   );
 };
 
-const RecipeList = ({ recipes, hideProductIcon, columns = 1, show = 5 }: { recipes: AccelerateRecipe[]; hideProductIcon?: boolean; columns?: number; show?: number }) => {
+const RecipeList = ({
+  recipes,
+  hideProductIcon,
+  columns = 1,
+  show = 5,
+}: {
+  recipes: AccelerateRecipe[];
+  hideProductIcon?: boolean;
+  columns?: number;
+  show?: number;
+}) => {
+  const { theme } = useTheme();
+
   return (
-    <SimpleGrid columns={columns ? columns : 1} spacing={0}>
-      {recipes.slice(0, show).map((entry, key) => {
+    <div
+      className={cn(
+        "grid",
+        columns ? `grid-cols-${columns}` : "grid-cols-1",
+        "gap-0",
+      )}
+    >
+      {recipes.slice(0, show).map((entry) => {
+        const iconSrc =
+          theme === "dark"
+            ? GetProductIcon(Product.XMCloud, Variant.Dark)
+            : GetProductIcon(entry.product || Product.Default, Variant.Light);
+
         return (
-          <Flex justifyContent={'items-start'} mb={4} key={key}>
+          <div className="flex items-start mb-3" key={entry.url || entry.title}>
             {!hideProductIcon && (
-              <Box display={{ base: 'none', sm: 'block' }} textAlign={'center'} mr={5} height={'43px'} width={'43px'}>
-                <CustomImage
-                  boxSize={3}
-                  src={useColorModeValue(GetProductIcon(entry.product || Product.Default, Variant.Light), GetProductIcon(Product.XMCloud, Variant.Dark))}
-                  alt={'XM CLoud'}
+              <div className="hidden sm:block text-center mr-5 h-[43px] w-[43px]">
+                <Image
+                  src={iconSrc}
+                  alt="Product icon"
                   width={25}
-                  margin={'.5rem'}
                   height={25}
-                  priority={true}
-                  maxWidth={'auto'}
+                  priority
+                  className="m-2"
                 />
-              </Box>
+              </div>
             )}
-            <Stack fontSize={'sm'}>
-              <Heading as={'h4'} size={'md'}>
-                <Link href={entry.url} title={entry.title} color={'chakra-body-text'}>
+            <div className="text-sm">
+              <h4 className="font-heading text-md font-medium">
+                <Link
+                  href={entry.url || "#"}
+                  title={entry.title}
+                  className="text-foreground hover:underline"
+                >
                   {entry.title}
                 </Link>
-              </Heading>
-
-              <HStack spacing={'24px'}>
-                <Text>{new Date(entry.lastUpdated).toLocaleString('en-US', { dateStyle: 'medium' })}</Text>
-              </HStack>
-            </Stack>
-          </Flex>
+              </h4>
+              <div className="flex items-center gap-6">
+                <p>
+                  {new Date(entry.lastUpdated).toLocaleString("en-US", {
+                    dateStyle: "medium",
+                  })}
+                </p>
+              </div>
+            </div>
+          </div>
         );
       })}
-    </SimpleGrid>
+    </div>
   );
 };
 

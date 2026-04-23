@@ -1,7 +1,21 @@
 /* eslint-disable no-unused-vars */
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, Card, CardBody, CardHeader, Checkbox, Collapse, Heading, Hide, Show, Stack, useDisclosure } from '@chakra-ui/react';
-import { SearchResponseFacet } from '@sitecore-search/react';
-import { AccordionFacets, SearchResultsAccordionFacets } from '@sitecore-search/ui';
+"use client";
+
+import type { SearchResponseFacet } from "@sitecore-search/react";
+import {
+  AccordionFacets,
+  SearchResultsAccordionFacets,
+} from "@sitecore-search/ui";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@src/components/ui/accordion";
+import { Button } from "@src/components/ui/button";
+import { Card, CardContent, CardHeader } from "@src/components/ui/card";
+import { Checkbox } from "@src/components/ui/checkbox";
+import { useState } from "react";
 
 export interface SearchFacetsType {
   onFacetClick: (facet: any) => void;
@@ -9,25 +23,25 @@ export interface SearchFacetsType {
 }
 
 export const SearchFacets = (props: SearchFacetsType) => {
-  const { isOpen, onToggle } = useDisclosure();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <Hide above="md">
-        <Button variant={'outline'} onClick={onToggle}>
+      <div className="md:hidden">
+        <Button variant="outline" onClick={() => setIsOpen(!isOpen)}>
           Filter
         </Button>
 
-        <Collapse in={isOpen}>
-          <Box background={'neutral.fg'} mt={4}>
+        {isOpen && (
+          <div className="bg-muted mt-4">
             <MobileFacets {...props} />
-          </Box>
-        </Collapse>
-      </Hide>
+          </div>
+        )}
+      </div>
 
-      <Show above="md">
+      <div className="hidden md:block">
         <Facets {...props} />
-      </Show>
+      </div>
     </>
   );
 };
@@ -36,23 +50,23 @@ export const MobileFacets = (props: SearchFacetsType) => {
   const { onFacetClick, facets } = props;
 
   return (
-    <SearchResultsAccordionFacets defaultFacetTypesExpandedList={facets.map((x) => x.name)} onFacetValueClick={onFacetClick}>
+    <SearchResultsAccordionFacets
+      defaultFacetTypesExpandedList={facets.map((x) => x.name)}
+      onFacetValueClick={onFacetClick}
+    >
       {facets.map((facet) => (
-        <Accordion key={facet.name} allowToggle>
-          <AccordionItem>
+        <Accordion key={facet.name} type="single" collapsible>
+          <AccordionItem value={facet.name}>
             <AccordionFacets.Facet facetId={facet.name}>
               <AccordionFacets.Content>
-                <h2>
-                  <AccordionButton>
-                    <Box as="span" flex="1" textAlign="left" width={'full'}>
-                      <Heading variant={'section'}>{facet.label}</Heading>
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel>
+                <AccordionTrigger>
+                  <span className="text-sm uppercase tracking-wide text-muted-foreground">
+                    {facet.label}
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent>
                   <AccordionFacets.ValueList asChild>
-                    <Stack spacing={2} direction="column">
+                    <div className="flex flex-col gap-2">
                       {facet.value.map((v, index) => (
                         <AccordionFacets.Item
                           asChild
@@ -62,14 +76,25 @@ export const MobileFacets = (props: SearchFacetsType) => {
                             facetValueId: v.id,
                           }}
                         >
-                          <Checkbox as={AccordionFacets.ItemCheckbox} key={v.id} textAlign={'left'}>
-                            {v.text} {v.count && `(${v.count})`}
-                          </Checkbox>
+                          <div className="flex items-center gap-2">
+                            <Checkbox
+                              asChild
+                              aria-labelledby={`facet-label-${facet.name}-${v.id}`}
+                            >
+                              <AccordionFacets.ItemCheckbox />
+                            </Checkbox>
+                            <span
+                              id={`facet-label-${facet.name}-${v.id}`}
+                              className="text-sm"
+                            >
+                              {v.text} {v.count && `(${v.count})`}
+                            </span>
+                          </div>
                         </AccordionFacets.Item>
                       ))}
-                    </Stack>
+                    </div>
                   </AccordionFacets.ValueList>
-                </AccordionPanel>
+                </AccordionContent>
               </AccordionFacets.Content>
             </AccordionFacets.Facet>
           </AccordionItem>
@@ -83,24 +108,27 @@ export const Facets = (props: SearchFacetsType) => {
   const { onFacetClick, facets } = props;
 
   return (
-    <SearchResultsAccordionFacets defaultFacetTypesExpandedList={facets.map((x) => x.name)} onFacetValueClick={onFacetClick}>
+    <SearchResultsAccordionFacets
+      defaultFacetTypesExpandedList={facets.map((x) => x.name)}
+      onFacetValueClick={onFacetClick}
+    >
       {facets.map((facet) => (
-        <Card variant={'filled'} size={'sm'} marginBottom={4} key={facet.name}>
+        <Card className="bg-muted mb-4" key={facet.name}>
           <AccordionFacets.Facet facetId={facet.name}>
             <AccordionFacets.Header>
               <CardHeader>
                 <AccordionFacets.Trigger>
-                  <Heading size="sm" variant={'section'}>
+                  <p className="text-sm uppercase tracking-wide text-muted-foreground">
                     {facet.label}
-                  </Heading>
+                  </p>
                 </AccordionFacets.Trigger>
               </CardHeader>
             </AccordionFacets.Header>
 
             <AccordionFacets.Content>
-              <CardBody>
+              <CardContent>
                 <AccordionFacets.ValueList asChild>
-                  <Stack spacing={2} direction="column">
+                  <div className="flex flex-col gap-2">
                     {facet.value.map((v, index) => (
                       <AccordionFacets.Item
                         asChild
@@ -110,14 +138,25 @@ export const Facets = (props: SearchFacetsType) => {
                           facetValueId: v.id,
                         }}
                       >
-                        <Checkbox as={AccordionFacets.ItemCheckbox} key={v.id} textAlign={'left'}>
-                          {v.text} {v.count && `(${v.count})`}
-                        </Checkbox>
+                        <div className="flex items-center gap-2">
+                          <Checkbox
+                            asChild
+                            aria-labelledby={`facet-desktop-label-${facet.name}-${v.id}`}
+                          >
+                            <AccordionFacets.ItemCheckbox />
+                          </Checkbox>
+                          <span
+                            id={`facet-desktop-label-${facet.name}-${v.id}`}
+                            className="text-sm"
+                          >
+                            {v.text} {v.count && `(${v.count})`}
+                          </span>
+                        </div>
                       </AccordionFacets.Item>
                     ))}
-                  </Stack>
+                  </div>
                 </AccordionFacets.ValueList>
-              </CardBody>
+              </CardContent>
             </AccordionFacets.Content>
           </AccordionFacets.Facet>
         </Card>

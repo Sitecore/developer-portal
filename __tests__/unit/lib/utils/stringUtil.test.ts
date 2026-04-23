@@ -1,4 +1,4 @@
-import { removeHtmlTagsAndSpecialChars } from '@lib/utils';
+import { removeHtmlTagsAndSpecialChars } from '@/src/lib/util';
 import { describe, expect, it } from 'vitest';
 
 describe('removeHtmlTagsAndSpecialChars', () => {

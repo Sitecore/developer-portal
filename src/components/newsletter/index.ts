@@ -1,1 +1,1 @@
-export { NewsletterStory } from './story';
+export { NewsletterStory } from "./story";

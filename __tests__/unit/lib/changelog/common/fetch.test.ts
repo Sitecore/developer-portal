@@ -1,320 +1,388 @@
+import { fetchGraphQL } from "@src/lib/changelog/common/fetch";
 import {
-  ChangelogConfigurationError,
-  ChangelogGraphQLError,
-  ChangelogNetworkError,
-} from '@lib/changelog/errors';
-import { ChangelogCredentials } from '@lib/changelog/types';
-import axios from 'axios';
-import axiosThrottle from 'axios-request-throttle';
-import { beforeEach, describe, expect, test, vi } from 'vitest';
+    ChangelogConfigurationError,
+    ChangelogGraphQLError,
+    ChangelogNetworkError,
+} from "@src/lib/changelog/errors";
+import type { ChangelogCredentials } from "@src/lib/changelog/types";
+import { beforeEach, describe, expect, test, vi } from "vitest";
 
-vi.mock('axios');
-vi.mock('axios-request-throttle');
+// Mock global fetch
+global.fetch = vi.fn();
 
-import { fetchGraphQL } from '@lib/changelog/common/fetch';
+describe("fetchGraphQL", () => {
+	const mockCredentials: ChangelogCredentials = {
+		production: {
+			endpoint: "https://api.example.com/production",
+			token: "prod-token",
+		},
+		preview: {
+			endpoint: "https://api.example.com/preview",
+			token: "preview-token",
+		},
+	};
 
-describe('fetchGraphQL', () => {
-  const mockCredentials: ChangelogCredentials = {
-    production: {
-      endpoint: 'https://api.example.com/production',
-      token: 'prod-token',
-    },
-    preview: {
-      endpoint: 'https://api.example.com/preview',
-      token: 'preview-token',
-    },
-  };
+	const mockDocument = "query { test }";
+	const mockVariables = { productId: "123" };
 
-  const mockDocument = 'query { test }';
-  const mockVariables = { productId: '123' };
+	beforeEach(() => {
+		vi.clearAllMocks();
+		// Reset throttled fetch instance
+		vi.resetModules();
+	});
 
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
+	test("should fetch GraphQL with production credentials", async () => {
+		const mockResponseData = {
+			data: { result: "success" },
+		};
 
-  test('should fetch GraphQL with production credentials', async () => {
-    const mockResponse = {
-      data: {
-        data: { result: 'success' },
-      },
-    };
+		vi.mocked(global.fetch).mockResolvedValueOnce({
+			ok: true,
+			status: 200,
+			statusText: "OK",
+			json: async () => mockResponseData,
+		} as Response);
 
-    vi.mocked(axios.post).mockResolvedValue(mockResponse);
+		const result = await fetchGraphQL(
+			mockDocument,
+			mockCredentials,
+			false,
+			mockVariables,
+		);
 
-    const result = await fetchGraphQL(mockDocument, mockCredentials, false, mockVariables);
+		expect(result.data).toEqual({ result: "success" });
+		expect(global.fetch).toHaveBeenCalledWith(
+			"https://api.example.com/production",
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: "Bearer prod-token",
+				},
+				body: JSON.stringify({ query: mockDocument, variables: mockVariables }),
+			},
+		);
+	});
 
-    expect(result.data).toEqual({ result: 'success' });
-    expect(axios.post).toHaveBeenCalledWith(
-      'https://api.example.com/production',
-      { query: mockDocument, variables: mockVariables },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer prod-token',
-        },
-      }
-    );
-  });
+	test("should fetch GraphQL with preview credentials", async () => {
+		const mockResponseData = {
+			data: { result: "success" },
+		};
 
-  test('should fetch GraphQL with preview credentials', async () => {
-    const mockResponse = {
-      data: {
-        data: { result: 'success' },
-      },
-    };
+		vi.mocked(global.fetch).mockResolvedValueOnce({
+			ok: true,
+			status: 200,
+			statusText: "OK",
+			json: async () => mockResponseData,
+		} as Response);
 
-    const mockAxiosInstance = {
-      post: vi.fn().mockResolvedValue(mockResponse),
-    };
+		const result = await fetchGraphQL(
+			mockDocument,
+			mockCredentials,
+			true,
+			mockVariables,
+		);
 
-    vi.mocked(axios.create).mockReturnValue(mockAxiosInstance as any);
-    vi.mocked(axiosThrottle.use).mockImplementation(() => {});
+		expect(result.data).toEqual({ result: "success" });
+		expect(global.fetch).toHaveBeenCalledWith(
+			"https://api.example.com/preview",
+			{
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: "Bearer preview-token",
+				},
+				body: JSON.stringify({ query: mockDocument, variables: mockVariables }),
+			},
+		);
+	});
 
-    const result = await fetchGraphQL(mockDocument, mockCredentials, true, mockVariables);
+	test("should use throttled fetch function for preview requests", async () => {
+		const mockResponseData = {
+			data: { result: "success" },
+		};
 
-    expect(result.data).toEqual({ result: 'success' });
-    expect(axios.create).toHaveBeenCalled();
-    expect(axiosThrottle.use).toHaveBeenCalledWith(mockAxiosInstance, { requestsPerSecond: 10 });
-    expect(mockAxiosInstance.post).toHaveBeenCalledWith(
-      'https://api.example.com/preview',
-      { query: mockDocument, variables: mockVariables },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: 'Bearer preview-token',
-        },
-      }
-    );
-  });
+		vi.mocked(global.fetch).mockResolvedValue({
+			ok: true,
+			status: 200,
+			statusText: "OK",
+			json: async () => mockResponseData,
+		} as Response);
 
-  test('should use throttled axios instance for preview requests', async () => {
-    const mockResponse = {
-      data: {
-        data: { result: 'success' },
-      },
-    };
+		const result = await fetchGraphQL<
+			{ result: string },
+			Record<string, never>
+		>(mockDocument, mockCredentials, true);
 
-    // The throttled instance is cached, so we test that preview requests work
-    // by verifying the request is made (the instance may have been created in a previous test)
-    vi.mocked(axios.post).mockResolvedValue(mockResponse);
+		// Verify the request succeeded (which means throttled fetch was used)
+		expect(result.data).toEqual({ result: "success" });
+	});
 
-    const result = await fetchGraphQL(mockDocument, mockCredentials, true);
+	test("should reuse throttled fetch function for multiple preview requests", async () => {
+		const mockResponseData = {
+			data: { result: "success" },
+		};
 
-    // Verify the request succeeded (which means throttled instance was used)
-    expect(result.data).toEqual({ result: 'success' });
-  });
+		vi.mocked(global.fetch).mockResolvedValue({
+			ok: true,
+			status: 200,
+			statusText: "OK",
+			json: async () => mockResponseData,
+		} as Response);
 
-  test('should reuse throttled axios instance for multiple preview requests', async () => {
-    const mockResponse = {
-      data: {
-        data: { result: 'success' },
-      },
-    };
+		const result1 = await fetchGraphQL<
+			{ result: string },
+			Record<string, never>
+		>(mockDocument, mockCredentials, true);
+		const result2 = await fetchGraphQL<
+			{ result: string },
+			Record<string, never>
+		>(mockDocument, mockCredentials, true);
 
-    // The throttled instance is cached, so we test that multiple preview requests work
-    vi.mocked(axios.post).mockResolvedValue(mockResponse);
+		// Verify both requests succeeded (which means throttled fetch was reused)
+		expect(result1.data).toEqual({ result: "success" });
+		expect(result2.data).toEqual({ result: "success" });
+	});
 
-    const result1 = await fetchGraphQL(mockDocument, mockCredentials, true);
-    const result2 = await fetchGraphQL(mockDocument, mockCredentials, true);
+	test("should throw ChangelogConfigurationError when endpoint is missing", async () => {
+		const invalidCredentials: ChangelogCredentials = {
+			production: {
+				endpoint: "",
+				token: "token",
+			},
+			preview: {
+				endpoint: "https://api.example.com/preview",
+				token: "preview-token",
+			},
+		};
 
-    // Verify both requests succeeded (which means throttled instance was reused)
-    expect(result1.data).toEqual({ result: 'success' });
-    expect(result2.data).toEqual({ result: 'success' });
-  });
+		await expect(
+			fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				invalidCredentials,
+				false,
+			),
+		).rejects.toThrow(ChangelogConfigurationError);
+	});
 
-  test('should throw ChangelogConfigurationError when endpoint is missing', async () => {
-    const invalidCredentials: ChangelogCredentials = {
-      production: {
-        endpoint: '',
-        token: 'token',
-      },
-      preview: {
-        endpoint: 'https://api.example.com/preview',
-        token: 'preview-token',
-      },
-    };
+	test("should throw ChangelogConfigurationError when token is missing", async () => {
+		const invalidCredentials: ChangelogCredentials = {
+			production: {
+				endpoint: "https://api.example.com/production",
+				token: "",
+			},
+			preview: {
+				endpoint: "https://api.example.com/preview",
+				token: "preview-token",
+			},
+		};
 
-    await expect(fetchGraphQL(mockDocument, invalidCredentials, false)).rejects.toThrow(
-      ChangelogConfigurationError
-    );
-  });
+		await expect(
+			fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				invalidCredentials,
+				false,
+			),
+		).rejects.toThrow(ChangelogConfigurationError);
+	});
 
-  test('should throw ChangelogConfigurationError when token is missing', async () => {
-    const invalidCredentials: ChangelogCredentials = {
-      production: {
-        endpoint: 'https://api.example.com/production',
-        token: '',
-      },
-      preview: {
-        endpoint: 'https://api.example.com/preview',
-        token: 'preview-token',
-      },
-    };
+	test("should throw ChangelogGraphQLError when GraphQL returns errors", async () => {
+		const mockResponseData = {
+			data: null,
+			errors: [{ message: "Field not found" }, { message: "Invalid argument" }],
+		};
 
-    await expect(fetchGraphQL(mockDocument, invalidCredentials, false)).rejects.toThrow(
-      ChangelogConfigurationError
-    );
-  });
+		vi.mocked(global.fetch).mockResolvedValueOnce({
+			ok: true,
+			status: 200,
+			statusText: "OK",
+			json: async () => mockResponseData,
+		} as Response);
 
-  test('should throw ChangelogGraphQLError when GraphQL returns errors', async () => {
-    const mockResponse = {
-      data: {
-        data: null,
-        errors: [{ message: 'Field not found' }, { message: 'Invalid argument' }],
-      },
-    };
+		await expect(
+			fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				mockCredentials,
+				false,
+			),
+		).rejects.toThrow(ChangelogGraphQLError);
 
-    vi.mocked(axios.post).mockResolvedValue(mockResponse);
+		try {
+			await fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				mockCredentials,
+				false,
+			);
+		} catch (error) {
+			expect(error).toBeInstanceOf(ChangelogGraphQLError);
+			if (error instanceof ChangelogGraphQLError) {
+				expect(error.graphQLErrors).toEqual(mockResponseData.errors);
+			}
+		}
+	});
 
-    await expect(fetchGraphQL(mockDocument, mockCredentials, false)).rejects.toThrow(
-      ChangelogGraphQLError
-    );
+	test("should throw ChangelogGraphQLError when data is missing", async () => {
+		const mockResponseData = {
+			data: null,
+		};
 
-    try {
-      await fetchGraphQL(mockDocument, mockCredentials, false);
-    } catch (error) {
-      expect(error).toBeInstanceOf(ChangelogGraphQLError);
-      if (error instanceof ChangelogGraphQLError) {
-        expect(error.graphQLErrors).toEqual(mockResponse.data.errors);
-      }
-    }
-  });
+		vi.mocked(global.fetch).mockResolvedValueOnce({
+			ok: true,
+			status: 200,
+			statusText: "OK",
+			json: async () => mockResponseData,
+		} as Response);
 
-  test('should throw ChangelogGraphQLError when data is missing', async () => {
-    const mockResponse = {
-      data: {
-        data: null,
-      },
-    };
+		await expect(
+			fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				mockCredentials,
+				false,
+			),
+		).rejects.toThrow(ChangelogGraphQLError);
+	});
 
-    vi.mocked(axios.post).mockResolvedValue(mockResponse);
+	test("should throw ChangelogNetworkError on HTTP error", async () => {
+		vi.mocked(global.fetch).mockResolvedValueOnce({
+			ok: false,
+			status: 404,
+			statusText: "Not Found",
+			json: async () => ({ error: "Not found" }),
+		} as Response);
 
-    await expect(fetchGraphQL(mockDocument, mockCredentials, false)).rejects.toThrow(
-      ChangelogGraphQLError
-    );
-  });
+		await expect(
+			fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				mockCredentials,
+				false,
+			),
+		).rejects.toThrow(ChangelogNetworkError);
 
-  test('should throw ChangelogNetworkError on axios error', async () => {
-    const axiosError = {
-      isAxiosError: true,
-      message: 'Network Error',
-      response: {
-        status: 404,
-        statusText: 'Not Found',
-        data: { error: 'Not found' },
-      },
-    };
+		try {
+			await fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				mockCredentials,
+				false,
+			);
+		} catch (error) {
+			expect(error).toBeInstanceOf(ChangelogNetworkError);
+			if (error instanceof ChangelogNetworkError) {
+				expect(error.statusCode).toBe(404);
+			}
+		}
+	});
 
-    vi.mocked(axios.isAxiosError).mockReturnValue(true);
-    vi.mocked(axios.post).mockRejectedValue(axiosError);
+	test("should throw ChangelogNetworkError on network error", async () => {
+		vi.mocked(global.fetch).mockRejectedValueOnce(new Error("Network error"));
 
-    await expect(fetchGraphQL(mockDocument, mockCredentials, false)).rejects.toThrow(
-      ChangelogNetworkError
-    );
+		await expect(
+			fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				mockCredentials,
+				false,
+			),
+		).rejects.toThrow(ChangelogNetworkError);
+	});
 
-    try {
-      await fetchGraphQL(mockDocument, mockCredentials, false);
-    } catch (error) {
-      expect(error).toBeInstanceOf(ChangelogNetworkError);
-      if (error instanceof ChangelogNetworkError) {
-        expect(error.statusCode).toBe(404);
-      }
-    }
-  });
+	test("should throw ChangelogNetworkError on 500 error", async () => {
+		vi.mocked(global.fetch).mockResolvedValueOnce({
+			ok: false,
+			status: 500,
+			statusText: "Internal Server Error",
+			json: async () => ({ error: "Server error" }),
+		} as Response);
 
-  test('should throw ChangelogNetworkError on network timeout', async () => {
-    const axiosError = {
-      isAxiosError: true,
-      message: 'timeout of 5000ms exceeded',
-      response: undefined,
-    };
+		await expect(
+			fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				mockCredentials,
+				false,
+			),
+		).rejects.toThrow(ChangelogNetworkError);
 
-    vi.mocked(axios.isAxiosError).mockReturnValue(true);
-    vi.mocked(axios.post).mockRejectedValue(axiosError);
+		try {
+			await fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				mockCredentials,
+				false,
+			);
+		} catch (error) {
+			expect(error).toBeInstanceOf(ChangelogNetworkError);
+			if (error instanceof ChangelogNetworkError) {
+				expect(error.statusCode).toBe(500);
+			}
+		}
+	});
 
-    await expect(fetchGraphQL(mockDocument, mockCredentials, false)).rejects.toThrow(
-      ChangelogNetworkError
-    );
-  });
+	test("should wrap unknown errors as ChangelogNetworkError", async () => {
+		const unknownError = new Error("Unknown error");
 
-  test('should throw ChangelogNetworkError on 500 error', async () => {
-    const axiosError = {
-      isAxiosError: true,
-      message: 'Internal Server Error',
-      response: {
-        status: 500,
-        statusText: 'Internal Server Error',
-        data: { error: 'Server error' },
-      },
-    };
+		vi.mocked(global.fetch).mockRejectedValueOnce(unknownError);
 
-    vi.mocked(axios.isAxiosError).mockReturnValue(true);
-    vi.mocked(axios.post).mockRejectedValue(axiosError);
+		await expect(
+			fetchGraphQL<{ result: string }, Record<string, never>>(
+				mockDocument,
+				mockCredentials,
+				false,
+			),
+		).rejects.toThrow(ChangelogNetworkError);
+	});
 
-    await expect(fetchGraphQL(mockDocument, mockCredentials, false)).rejects.toThrow(
-      ChangelogNetworkError
-    );
+	test("should handle TypedDocumentString", async () => {
+		const mockTypedDocument = {
+			toString: () => "query { test }",
+		};
 
-    try {
-      await fetchGraphQL(mockDocument, mockCredentials, false);
-    } catch (error) {
-      expect(error).toBeInstanceOf(ChangelogNetworkError);
-      if (error instanceof ChangelogNetworkError) {
-        expect(error.statusCode).toBe(500);
-      }
-    }
-  });
+		const mockResponseData = {
+			data: { result: "success" },
+		};
 
-  test('should wrap unknown errors as ChangelogNetworkError', async () => {
-    const unknownError = new Error('Unknown error');
+		vi.mocked(global.fetch).mockResolvedValueOnce({
+			ok: true,
+			status: 200,
+			statusText: "OK",
+			json: async () => mockResponseData,
+		} as Response);
 
-    vi.mocked(axios.isAxiosError).mockReturnValue(false);
-    vi.mocked(axios.post).mockRejectedValue(unknownError);
+		const result = await fetchGraphQL<
+			{ result: string },
+			Record<string, never>
+		>(mockTypedDocument as any, mockCredentials, false);
 
-    await expect(fetchGraphQL(mockDocument, mockCredentials, false)).rejects.toThrow(
-      ChangelogNetworkError
-    );
-  });
+		expect(result.data).toEqual({ result: "success" });
+		expect(global.fetch).toHaveBeenCalledWith(
+			"https://api.example.com/production",
+			expect.objectContaining({
+				method: "POST",
+				body: JSON.stringify({ query: "query { test }", variables: {} }),
+			}),
+		);
+	});
 
-  test('should handle TypedDocumentString', async () => {
-    const mockTypedDocument = {
-      toString: () => 'query { test }',
-    };
+	test("should handle empty variables", async () => {
+		const mockResponseData = {
+			data: { result: "success" },
+		};
 
-    const mockResponse = {
-      data: {
-        data: { result: 'success' },
-      },
-    };
+		vi.mocked(global.fetch).mockResolvedValueOnce({
+			ok: true,
+			status: 200,
+			statusText: "OK",
+			json: async () => mockResponseData,
+		} as Response);
 
-    vi.mocked(axios.post).mockResolvedValue(mockResponse);
+		await fetchGraphQL<{ result: string }, Record<string, never>>(
+			mockDocument,
+			mockCredentials,
+			false,
+		);
 
-    const result = await fetchGraphQL(mockTypedDocument as any, mockCredentials, false);
-
-    expect(result.data).toEqual({ result: 'success' });
-    expect(axios.post).toHaveBeenCalledWith(
-      'https://api.example.com/production',
-      { query: 'query { test }', variables: {} },
-      expect.any(Object)
-    );
-  });
-
-  test('should handle empty variables', async () => {
-    const mockResponse = {
-      data: {
-        data: { result: 'success' },
-      },
-    };
-
-    vi.mocked(axios.post).mockResolvedValue(mockResponse);
-
-    await fetchGraphQL(mockDocument, mockCredentials, false);
-
-    expect(axios.post).toHaveBeenCalledWith(
-      expect.any(String),
-      { query: mockDocument, variables: {} },
-      expect.any(Object)
-    );
-  });
+		expect(global.fetch).toHaveBeenCalledWith(
+			expect.any(String),
+			expect.objectContaining({
+				method: "POST",
+				body: JSON.stringify({ query: mockDocument, variables: {} }),
+			}),
+		);
+	});
 });
-

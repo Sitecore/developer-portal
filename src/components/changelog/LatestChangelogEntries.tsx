@@ -1,11 +1,17 @@
-import { Badge, Box, Card, CardBody, CardHeader, CardProps, chakra, Flex, Grid, Heading, HStack, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react';
-import { ChangelogEntry } from '@lib/changelog/types';
-import { getChangelogEntryUrl, getSlug } from '@lib/utils';
-import Image from 'next/image';
+"use client";
 
-import { TextLink } from '@components/links/TextLink';
+import { TextLink } from "@src/components/links/TextLink";
+import { Badge } from "@src/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@src/components/ui/card";
+import type { ChangelogEntry } from "@src/lib/changelog/types";
+import Image from "next/image";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+import { cn } from "@/src/lib/util";
+import { getSlug } from "@/src/lib/util/stringUtil";
+import { getChangelogEntryUrl } from "@/src/lib/util/urlUtil";
 
-type ChangelogEntriesProps = CardProps & {
+type ChangelogEntriesProps = {
   entries: Array<ChangelogEntry>;
   className?: string;
   title?: string;
@@ -16,71 +22,123 @@ type ChangelogEntriesProps = CardProps & {
   columns: number;
 };
 
-const CustomImage = chakra(Image, {
-  shouldForwardProp: (prop) => ['height', 'width', 'quality', 'src', 'alt'].includes(prop),
-});
+const ChangelogEntries = ({
+  entries,
+  title,
+  subtitle,
+  linkHref,
+  linkText,
+  hideProductIcon,
+  columns,
+  className,
+}: ChangelogEntriesProps) => {
+  const { theme } = useTheme();
 
-const ChangelogEntries = ({ entries, title, subtitle, linkHref, linkText, hideProductIcon, columns, ...rest }: ChangelogEntriesProps) => {
   if (entries.length === 0) {
-    return <></>;
+    return null;
   }
 
   return (
-    <Card shadow={'none'} {...rest} background={'transparent'}>
-      <CardHeader justifyContent={'space-between'} display={{ base: 'inline', md: 'flex' }} px={0}>
-        <Heading as={'h3'} size={'xl'}>
-          {title}
-        </Heading>
-        {subtitle && (
-          <Heading as="h3" size={'sm'} pb={6} mb={8}>
-            {subtitle}
-          </Heading>
-        )}
-        <TextLink href={linkHref != null ? linkHref : '/changelog'} text={linkText != null ? linkText : 'See all changes'} />
+    <Card className={cn("shadow-none bg-transparent", className)}>
+      <CardHeader className="flex flex-col md:flex-row justify-between px-0">
+        <div>
+          <h3 className="text-2xl font-heading">{title}</h3>
+          {subtitle && (
+            <h3 className="text-sm font-heading pb-6 mb-8">{subtitle}</h3>
+          )}
+        </div>
+        <TextLink
+          href={linkHref != null ? linkHref : "/changelog"}
+          text={linkText != null ? linkText : "See all changes"}
+        />
       </CardHeader>
-      <CardBody paddingLeft={0} paddingRight={0} paddingBottom={0}>
-        <Grid templateColumns={{ base: `repeat(2}, 1fr)`, md: `repeat(${columns / 2}, 1fr)`, lg: `repeat(${columns}, 1fr)` }} rowGap={2} alignItems={'items-stretch'}>
-          {entries.map((entry, key) => {
+      <CardContent className="pl-0 pr-0 pb-0">
+        <div
+          className={cn(
+            "grid row-gap-2 items-stretch",
+            `grid-cols-2 md:grid-cols-${columns / 2} lg:grid-cols-${columns}`,
+          )}
+        >
+          {entries.map((entry) => {
+            const iconSrc = theme === "dark" ? entry.darkIcon : entry.lightIcon;
             return (
-              <Flex justifyContent={'items-start'} mb={5} key={key}>
+              <div className="flex items-start mb-5" key={entry.id}>
                 {!hideProductIcon && (
-                  <Box display={{ base: 'none', sm: 'block' }} textAlign={'center'} mr={2} height={'43px'} width={'43px'}>
-                    <CustomImage boxSize={3} src={useColorModeValue(entry.lightIcon, entry.darkIcon)} alt={entry.productName ? entry.productName : 'Product icon'} width={25} margin={'.5rem'} height={25} priority={true} maxWidth={'auto'} />
-                  </Box>
+                  <div className="hidden sm:block text-center mr-2 h-[43px] w-[43px]">
+                    <Image
+                      src={iconSrc}
+                      alt={
+                        entry.productName ? entry.productName : "Product icon"
+                      }
+                      width={25}
+                      height={25}
+                      priority
+                      className="m-2"
+                    />
+                  </div>
                 )}
-                <Stack fontSize={'sm'}>
-                  <Heading as={'h4'} size="sm">
-                    <Link href={getChangelogEntryUrl(entry)} title={entry.title} color={useColorModeValue('black', 'white')}>
+                <div className="text-sm">
+                  <h4 className="text-base font-heading">
+                    <Link
+                      href={getChangelogEntryUrl(entry)}
+                      title={entry.title}
+                      className="text-foreground hover:underline"
+                    >
                       {entry.title}
                     </Link>
-                  </Heading>
+                  </h4>
 
-                  <HStack spacing={'24px'}>
-                    <Text>{new Date(entry.releaseDate).toLocaleString('en-US', { dateStyle: 'medium' })}</Text>
+                  <div className="flex items-center gap-6">
+                    <p>
+                      {new Date(entry.releaseDate).toLocaleString("en-US", {
+                        dateStyle: "medium",
+                      })}
+                    </p>
 
                     {entry.products != null
-                      ? entry.products.map((product, key) => (
-                          <Link href={`/changelog/${getSlug(product.productName)}`} className="" key={key}>
-                            <Text color={useColorModeValue('black', 'white')}>{product.productName}</Text>
+                      ? entry.products.map((product) => (
+                          <Link
+                            href={`/changelog/${getSlug(product.productName)}`}
+                            key={product.id || product.productName}
+                            className="text-foreground hover:underline"
+                          >
+                            {product.productName}
                           </Link>
                         ))
-                      : ''}
+                      : ""}
 
-                    {entry.changeTypeName != null ? <Badge colorScheme={entry.changeTypeName == 'Resolved' ? 'yellow' : entry.changeTypeName == 'New feature' ? 'teal' : 'info'}>{entry.changeTypeName}</Badge> : ''}
-                    {entry.breakingChange && <Badge colorScheme="danger">Breaking change</Badge>}
-                  </HStack>
-                </Stack>
-              </Flex>
+                    {entry.changeTypeName != null && (
+                      <Badge
+                        variant="default"
+                        colorScheme={
+                          entry.changeTypeName === "Resolved"
+                            ? "neutral"
+                            : entry.changeTypeName === "New feature"
+                              ? "primary"
+                              : "neutral"
+                        }
+                      >
+                        {entry.changeTypeName}
+                      </Badge>
+                    )}
+                    {entry.breakingChange && (
+                      <Badge variant="default" colorScheme="danger">
+                        Breaking change
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+              </div>
             );
           })}
-        </Grid>
-      </CardBody>
+        </div>
+      </CardContent>
     </Card>
   );
 };
 
 ChangelogEntries.defaultProps = {
-  className: '',
+  className: "",
 };
 
 export default ChangelogEntries;

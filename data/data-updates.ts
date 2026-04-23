@@ -1,14 +1,15 @@
-import { GenericListData, GenericListItem } from '@/src/components/lists';
+import type { GenericListData, GenericListItem } from "@/src/components/lists";
 
 const content: GenericListItem[] = [
   {
-    title: 'Sitecore Experience Platform 10.4',
-    description: 'Looking for the latest versions of Sitecore software, including the latest Sitecore Experience Platform 10.4? Have a look at the new download section.',
-    href: '/downloads',
-    linkText: 'Download',
+    title: "Sitecore Experience Platform 10.4",
+    description:
+      "Looking for the latest versions of Sitecore software, including the latest Sitecore Experience Platform 10.4? Have a look at the new download section.",
+    href: "/downloads",
+    linkText: "Download",
     img: {
-      src: '/images/downloads.png',
-      alt: 'Sitecore Downloads',
+      src: "/images/downloads.png",
+      alt: "Sitecore Downloads",
     },
   },
   // {
@@ -23,30 +24,32 @@ const content: GenericListItem[] = [
   //   },
   // },
   {
-    title: 'Sitecore Changelog',
-    description: 'Learn more about new versions, changes and improvements in the public preview of the Sitecore Changelog.',
-    href: '/changelog',
-    linkText: 'View',
+    title: "Sitecore Changelog",
+    description:
+      "Learn more about new versions, changes and improvements in the public preview of the Sitecore Changelog.",
+    href: "/changelog",
+    linkText: "View",
     img: {
-      src: '/images/changelog-home.png',
-      alt: 'Sitecore Changelog',
+      src: "/images/changelog-home.png",
+      alt: "Sitecore Changelog",
     },
   },
   {
-    title: 'Sitecore Accelerate',
-    description: 'Sitecore Accelerate is a dedicated program to help Sitecore customers configure and optimize Sitecore products.',
-    href: '/learn/accelerate/',
-    linkText: 'Read',
+    title: "Sitecore Accelerate",
+    description:
+      "Sitecore Accelerate is a dedicated program to help Sitecore customers configure and optimize Sitecore products.",
+    href: "/learn/accelerate/",
+    linkText: "Read",
     img: {
-      src: '/images/accelerate.png',
-      alt: 'Sitecore Accelerate',
+      src: "/images/accelerate.png",
+      alt: "Sitecore Accelerate",
     },
   },
 ];
 
 const communityListData: GenericListData = {
-  title: '',
-  subtitle: 'Other resources',
+  title: "",
+  subtitle: "Other resources",
   data: content,
 };
 

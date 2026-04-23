@@ -6,7 +6,7 @@
   background-size: contain;
 }
 .ytLite::after {
-  content: '';
+  content: "";
   display: block;
   padding-bottom: calc(100% / (16 / 9));
   background-size: contain;
@@ -35,7 +35,7 @@
 }
 /* play button triangle */
 .ltyPlaybtn:before {
-  content: '';
+  content: "";
   border-style: solid;
   border-width: 11px 0 11px 19px;
   border-color: transparent transparent transparent #fff;

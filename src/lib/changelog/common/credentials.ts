@@ -1,9 +1,8 @@
-import { ChangelogCredentials } from '@lib/changelog/types';
+import type { ChangelogCredentials } from "@src/lib/changelog/types";
 
-export const entriesApiUrl = '/api/changelog/v1';
+export const entriesApiUrl = "/api/changelog/v1";
 
 export function getChangelogCredentials(): ChangelogCredentials {
-
   const endpoint = process.env.SITECORE_CS_ENDPOINT as string;
   const tenant = process.env.SITECORE_CS_TENANT as string;
   const env = process.env.SITECORE_CS_ENV as string;

@@ -1,7 +1,8 @@
-import { Switch } from '@chakra-ui/react';
-import { useState } from 'react';
+"use client";
 
-import { usePreview } from '@/src/context/PreviewContext';
+import { Switch } from "@src/components/ui/switch";
+import { usePreview } from "@src/context/PreviewContext";
+import { useState } from "react";
 
 export const PreviewModeSwitch = () => {
   const { isPreviewModeEnabled, isPreview, togglePreview } = usePreview();
@@ -16,5 +17,13 @@ export const PreviewModeSwitch = () => {
     return null;
   }
 
-  return <Switch m={1.5} colorScheme="orange" onChange={handleChange} title="Preview mode" defaultChecked={switchValue} />;
+  return (
+    <div className="m-1.5">
+      <Switch
+        checked={switchValue}
+        onCheckedChange={handleChange}
+        title="Preview mode"
+      />
+    </div>
+  );
 };

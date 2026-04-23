@@ -1,5 +1,8 @@
-import { GetAllStatusQuery, StatusFragment } from '@data/gql/generated/graphql';
-import { getStringValue } from '@lib/utils';
+import type {
+  GetAllStatusQuery,
+  StatusFragment,
+} from "@data/gql/generated/graphql";
+import { getStringValue } from "@/src/lib/util/stringUtil";
 
 export type Status = {
   id: string;
@@ -14,10 +17,10 @@ export type StatusResults = {
 };
 
 export const DefaultStatus: Status = {
-  id: 'pNOVO2dhtESFOSwd4Va84w',
-  name: 'Available',
-  identifier: 'available',
-  description: '',
+  id: "pNOVO2dhtESFOSwd4Va84w",
+  name: "Available",
+  identifier: "available",
+  description: "",
 };
 
 /**
@@ -25,16 +28,18 @@ export const DefaultStatus: Status = {
  * @param rawItem - GraphQL StatusFragment result
  * @returns Parsed Status
  */
-export function parseStatusItem(rawItem: StatusFragment | null | undefined): Status {
+export function parseStatusItem(
+  rawItem: StatusFragment | null | undefined,
+): Status {
   if (!rawItem) {
-    throw new Error('Invalid Status: rawItem is null or undefined');
+    throw new Error("Invalid Status: rawItem is null or undefined");
   }
 
   return {
     id: getStringValue(rawItem.system?.name),
     name: getStringValue(rawItem.system?.label),
     identifier: getStringValue(rawItem.identifier),
-    description: getStringValue(rawItem.description) || '',
+    description: getStringValue(rawItem.description) || "",
   };
 }
 

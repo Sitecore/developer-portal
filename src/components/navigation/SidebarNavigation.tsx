@@ -1,223 +1,431 @@
-import { Box, Button, ButtonGroup, Collapse, Heading, Hide, HStack, Icon, IconButton, Text, useColorModeValue, useDisclosure, Wrap } from '@chakra-ui/react';
-import { mdiChevronDown, mdiChevronRight, mdiMinus, mdiPlus } from '@mdi/js';
-import { appendPathToBasePath } from '@src/lib/utils';
-import Image from 'next/image';
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+"use client";
 
-import { ManifestConfig, ManifestNavigationItem } from '@/src/lib/interfaces/manifest';
-
-import { GetProductLogo } from '@/src/lib/assets';
-import SidebarSearch from './SidebarSearch';
+import { cn } from "@/src/lib/util";
+import { appendPathToBasePath } from "@/src/lib/util/stringUtil";
+import { mdiChevronDown, mdiChevronRight } from "@mdi/js";
+import Icon from "@mdi/react";
+import { Button } from "@src/components/ui/button";
+import {
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+} from "@src/components/ui/sidebar";
+import { GetProductLogo } from "@src/lib/assets";
+import type {
+  ManifestConfig,
+  ManifestNavigationItem,
+} from "@src/lib/interfaces/manifest";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import SidebarSearch from "./SidebarSearch";
 
 export interface SidebarNavigationProps {
-  title?: string;
-  showSearch?: boolean;
   config: ManifestConfig;
+  disableMobileMenu?: boolean;
 }
 
-let basePath: string;
-let showRootAsSections: boolean | undefined;
-let manifestConfig = {} as ManifestConfig;
+type SidebarGroupItemProps = {
+  item: ManifestNavigationItem;
+  rootBasePath: string;
+  showRootAsSections?: boolean;
+};
 
-const SidebarNavigation = ({ config }: SidebarNavigationProps) => {
-  manifestConfig = config;
+type MenuTreeItemProps = {
+  item: ManifestNavigationItem;
+  basePath: string;
+  depth?: number;
+};
+
+const menuRowClass =
+  "flex h-10 items-center rounded-md px-2.5 text-sm font-medium transition-[background-color,color]";
+const menuRowInactiveClass =
+  "text-neutral-fg hover:bg-(--color-neutral-100) hover:text-neutral-fg";
+const menuRowActiveClass =
+  "bg-primary-bg text-primary-fg hover:bg-primary-bg hover:text-primary-fg";
+
+const normalizePath = (value: string) => {
+  const withoutHashOrQuery = value.split("?")[0].split("#")[0];
+  const trimmed = withoutHashOrQuery.replace(/\/+$/, "");
+  return trimmed === "" ? "/" : trimmed;
+};
+
+const isPathActive = (currentPath: string, targetPath: string) => {
+  const normalizedCurrent = normalizePath(currentPath);
+  const normalizedTarget = normalizePath(targetPath);
+
+  if (normalizedCurrent === normalizedTarget) {
+    return true;
+  }
+
+  return normalizedCurrent.endsWith(normalizedTarget);
+};
+
+const hasActiveDescendant = (
+  currentPath: string,
+  item: ManifestNavigationItem,
+  basePath: string,
+): boolean => {
+  const itemHref = appendPathToBasePath(basePath, item.path);
+
+  if (isPathActive(currentPath, itemHref)) {
+    return true;
+  }
+
+  return (
+    item.children?.some((child) =>
+      hasActiveDescendant(currentPath, child, itemHref),
+    ) ?? false
+  );
+};
+
+const getDefaultExpandedState = (
+  item: ManifestNavigationItem,
+  branchIsActive: boolean,
+) => {
+  if (item.collapsed === false) {
+    return true;
+  }
+
+  if (item.collapsed === true) {
+    return false;
+  }
+
+  return branchIsActive;
+};
+
+const SidebarNavigation = ({
+  config,
+  disableMobileMenu = false,
+}: SidebarNavigationProps) => {
   const router = useRouter();
   const [searchActive, setSearchActive] = useState<boolean>(false);
 
-  showRootAsSections = config.showRootAsSections;
-  basePath = config.path;
+  const showRootAsSections = config.showRootAsSections;
+  const basePath = config.path;
+
+  const { theme } = useTheme();
+  const logoSrc = config.productLogo
+    ? theme === "dark"
+      ? GetProductLogo(config.productLogo, "Dark")
+      : GetProductLogo(config.productLogo, "Light")
+    : undefined;
 
   return (
-    <Box mt={4}>
+    <div className="">
       {config.enableSearch && (
-        <Hide below="md">
-          <SidebarSearch config={config} onFocus={() => setSearchActive(true)} onBlur={() => setSearchActive(false)} />
-        </Hide>
+        <div className={cn(disableMobileMenu ? "block" : "hidden md:block")}>
+          <SidebarSearch
+            config={config}
+            onFocus={() => setSearchActive(true)}
+            onBlur={() => setSearchActive(false)}
+          />
+        </div>
       )}
 
       {config.heading && !searchActive && (
-        <Heading as={NextLink} variant={'section'} my={4} mx="0" hideBelow={'md'} href={config.path}>
+        <Link
+          href={config.path}
+          className={cn(
+            "text-sm uppercase font-medium text-muted-foreground my-4 mx-0 hover:underline",
+            disableMobileMenu ? "block" : "hidden md:block",
+          )}
+        >
           {config.title}
-        </Heading>
+        </Link>
       )}
 
-      {config.productLogo && (
-        <Box height={'24px'} width={'full'} position={'relative'} my={4} sx={{ '& > img': { width: 'auto !important' } }}>
-          <Image src={useColorModeValue(GetProductLogo(config.productLogo, 'Light'), GetProductLogo(config.productLogo, 'Dark'))} alt={`${config.title}`} fill style={{ objectFit: 'fill' }} sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw" />
-        </Box>
+      {config.productLogo && logoSrc && (
+        <div className="h-6 w-full relative my-4">
+          <Image
+            src={logoSrc}
+            alt={config.title}
+            fill
+            style={{ objectFit: "fill" }}
+            sizes="(min-width: 5em) 5vw, (min-width: 44em) 20vw, 33vw"
+            className="!w-auto"
+          />
+        </div>
       )}
       {/* Desktop */}
-      <Wrap direction="column" hideBelow={'md'} hidden={searchActive}>
-        {showRootAsSections && config.routes.map((link, i) => <SidebarGroupItem {...link} key={i} />)}
-
-        {!showRootAsSections && (
-          <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'}>
-            {config.routes.map((link, i) => (
-              <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} key={i}>
-                <MenuItemLink href={appendPathToBasePath(basePath, link.path)} title={link.title} />
-              </ButtonGroup>
-            ))}
-          </ButtonGroup>
+      <div
+        className={cn(
+          "flex flex-col",
+          disableMobileMenu ? "flex" : "hidden md:flex",
+          searchActive && "hidden",
         )}
-      </Wrap>
+      >
+        <SidebarMenu>
+          {config.routes.map((link) => (
+            <SidebarGroupItem
+              item={link}
+              rootBasePath={basePath}
+              showRootAsSections={showRootAsSections}
+              key={link.path || link.title}
+            />
+          ))}
+        </SidebarMenu>
+      </div>
 
       {/* Mobile */}
-      <DropDownMenu config={config} key={router.asPath} />
-    </Box>
-  );
-};
-
-export const SidebarGroupItem = (ManifestNavigationItem: ManifestNavigationItem) => {
-  const currentBasePath = appendPathToBasePath(basePath, ManifestNavigationItem.path);
-
-  return (
-    <>
-      {/* Load collapsable menu when the manifest.json contains the property collapsed  */}
-      {ManifestNavigationItem.collapsed != null ? (
-        <SidebarCollapsableGroupItem {...ManifestNavigationItem} />
-      ) : (
-        // Load the normal menu
-        <Box as={'li'}>
-          {ManifestNavigationItem.ignoreLink != null && ManifestNavigationItem.ignoreLink && (
-            <Heading variant="section" data-type="title" my={4}>
-              {ManifestNavigationItem.title}
-            </Heading>
-          )}
-
-          {!showRootAsSections && <MenuItemLink href={ManifestNavigationItem.path} title={ManifestNavigationItem.title} />}
-          <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} as={'ul'} role="list">
-            {ManifestNavigationItem.children?.map((child, i) =>
-              child.children?.length > 0 ? <MenuItemGroup manifestItem={child} basePath={currentBasePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(currentBasePath, child.path)} title={child.title} key={i} />
-            )}
-          </ButtonGroup>
-        </Box>
+      {!disableMobileMenu && (
+        <DropDownMenu config={config} key={router.asPath} />
       )}
-    </>
+    </div>
   );
 };
 
-const SidebarCollapsableGroupItem = (ManifestNavigationItem: ManifestNavigationItem) => {
-  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: ManifestNavigationItem.collapsed });
+export const SidebarGroupItem = ({
+  item,
+  rootBasePath,
+  showRootAsSections,
+}: SidebarGroupItemProps) => {
+  const router = useRouter();
+  const sectionBasePath = appendPathToBasePath(rootBasePath, item.path);
+  const hasChildren = item.children?.length > 0;
+  const sectionIsActive = isPathActive(router.asPath, sectionBasePath);
+  const sectionBranchIsActive = hasActiveDescendant(
+    router.asPath,
+    item,
+    rootBasePath,
+  );
+  const defaultExpanded = getDefaultExpandedState(item, sectionBranchIsActive);
+  const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
+
+  useEffect(() => {
+    setIsExpanded(defaultExpanded);
+  }, [defaultExpanded]);
+
+  if (!showRootAsSections) {
+    return <MenuTreeItem item={item} basePath={rootBasePath} />;
+  }
 
   return (
-    <Wrap direction="column" as={'li'} data-type="collapsable-group-item">
-      <HStack justifyContent={'space-between'} mt={4}>
-        {ManifestNavigationItem.ignoreLink == false ? (
-          <Heading as={NextLink} variant="section" cursor={'pointer'} href={appendPathToBasePath(basePath, ManifestNavigationItem.path)}>
-            {ManifestNavigationItem.title}
-          </Heading>
+    <SidebarMenuItem className="h-auto w-full max-w-none flex-col items-start">
+      <div className="flex w-full items-center">
+        {item.ignoreLink === false ? (
+          <Link
+            href={sectionBasePath}
+            className={cn(
+              "my-1 md:my-4 mx-0 flex-1 text-sm font-medium uppercase hover:underline",
+              sectionIsActive ? "text-primary-fg" : "text-muted-foreground",
+            )}
+          >
+            {item.title}
+          </Link>
+        ) : hasChildren ? (
+          <button
+            type="button"
+            onClick={() => setIsExpanded((prev) => !prev)}
+            className="my-1 md:my-4 text-left flex-1 text-sm uppercase tracking-wide font-medium text-muted-foreground"
+          >
+            {item.title}
+          </button>
         ) : (
-          <Heading variant="section" onClick={onToggle} cursor={'pointer'}>
-            {ManifestNavigationItem.title}
-          </Heading>
+          <p
+            className="my-1 md:my-4 text-sm uppercase tracking-wide text-muted-foreground"
+            data-type="title"
+          >
+            {item.title}
+          </p>
         )}
-        <IconButton
-          icon={
-            <Icon boxSize={'4'} color={'chakra-subtle-text'}>
-              <path d={isOpen ? mdiPlus : mdiMinus} />
-            </Icon>
-          }
-          variant="ghost"
-          size={'xs'}
-          aria-label={''}
-          onClick={onToggle}
-        />
-      </HStack>
+        {hasChildren && (
+          <Button
+            variant="ghost"
+            size="sm"
+            className={cn(
+              "ml-0 md:ml-1 h-8 w-8 p-0",
+              sectionBranchIsActive &&
+                "text-primary-fg hover:bg-primary-bg hover:text-primary-fg",
+            )}
+            aria-label={isExpanded ? "Collapse submenu" : "Expand submenu"}
+            onClick={() => setIsExpanded((prev) => !prev)}
+          >
+            <Icon
+              path={mdiChevronRight}
+              size={1}
+              className={cn("transition-transform", isExpanded && "rotate-90")}
+            />
+          </Button>
+        )}
+      </div>
 
-      <Collapse animateOpacity in={!isOpen}>
-        <ButtonGroup variant="navigation" orientation="vertical" spacing="1" width={'full'} data-type="buttons">
-          {ManifestNavigationItem.children?.map((child, i) =>
-            child.children?.length > 0 ? <MenuItemGroup manifestItem={child} basePath={basePath} key={i} /> : <MenuItemLink href={appendPathToBasePath(basePath, child.path)} title={child.title} key={i} />
-          )}
-        </ButtonGroup>
-      </Collapse>
-    </Wrap>
+      {hasChildren && isExpanded && (
+        <SidebarMenu className="not-prose w-full gap-0 md:gap-1">
+          {item.children?.map((child) => (
+            <MenuTreeItem
+              item={child}
+              basePath={sectionBasePath}
+              depth={0}
+              key={child.path || child.title}
+            />
+          ))}
+        </SidebarMenu>
+      )}
+    </SidebarMenuItem>
   );
 };
 
-const MenuItemLink = ({ href, title }: { href: string; title: string }) => {
+const MenuItemLink = ({
+  href,
+  title,
+  asSubItem,
+}: {
+  href: string;
+  title: string;
+  asSubItem?: boolean;
+}) => {
   const router = useRouter();
+  const isActive = isPathActive(router.asPath, href);
+
+  if (asSubItem) {
+    return (
+      <SidebarMenuSubItem className="h-10 w-full">
+        <SidebarMenuSubButton
+          asChild
+          isActive={isActive}
+          data-type="menu-item-link"
+        >
+          <Link href={href}>{title}</Link>
+        </SidebarMenuSubButton>
+      </SidebarMenuSubItem>
+    );
+  }
 
   return (
-    <Box as="li" listStyleType={'none'}>
-      <Button as={NextLink} colorScheme="neutral" href={href} px={2} width={'full'} isActive={router.asPath.endsWith(href)} data-type="menu-item-link">
-        {title}
-      </Button>
-    </Box>
-  );
-};
-
-const MenuItemGroup = ({ manifestItem, basePath, index }: { manifestItem: ManifestNavigationItem; basePath: string; index?: number }) => {
-  const router = useRouter();
-  const currentRouteIncludesChild = router.asPath.includes(`${basePath}/${manifestItem.path}`) || manifestItem.children?.some((child) => router.asPath.includes(`${basePath}/${child.path}`));
-  const currentRouteActive = router.asPath.endsWith(`${basePath}/${manifestItem.path}`) || manifestItem.children?.some((child) => router.asPath.includes(`${basePath}/${child.path}`));
-  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: currentRouteIncludesChild });
-  const currentBasePath = appendPathToBasePath(basePath, manifestItem.path);
-
-  return (
-    <Box as="li" key={index} data-type="menu-item-group" listStyleType={'none'}>
-      <Button
-        rightIcon={<Icon onClick={onToggle}>{isOpen ? <path d={mdiChevronDown} /> : <path d={mdiChevronRight} />}</Icon>}
-        justifyContent={'space-between'}
-        width={'full'}
-        isActive={currentRouteActive}
-        transition={'ease-in-out'}
-        onClick={manifestItem.ignoreLink ? onToggle : onToggle}
+    <SidebarMenuItem className="list-none h-10 w-full max-w-none">
+      <SidebarMenuSubButton
+        asChild
+        isActive={isActive}
+        data-type="menu-item-link"
       >
-        {manifestItem.ignoreLink ? (
-          <Text>{manifestItem.title}</Text>
-        ) : (
-          <Text as={NextLink} href={appendPathToBasePath(basePath, manifestItem.path)}>
-            {manifestItem.title}
-          </Text>
-        )}
-      </Button>
-
-      <Collapse animateOpacity in={isOpen}>
-        <Box pl={2} as="ul">
-          {manifestItem.children.map((link, i) => {
-            if (link.children?.length > 0) {
-              return <MenuItemGroup manifestItem={link} basePath={appendPathToBasePath(currentBasePath, link.path)} key={i} />;
-            }
-
-            return <MenuItemLink href={appendPathToBasePath(currentBasePath, link.path)} title={link.title} key={i} />;
-          })}
-        </Box>
-      </Collapse>
-    </Box>
+        <Link href={href}>{title}</Link>
+      </SidebarMenuSubButton>
+    </SidebarMenuItem>
   );
 };
 
-const DropDownMenu = ({ config, ...rest }: SidebarNavigationProps) => {
-  const { isOpen, onToggle } = useDisclosure();
+const MenuTreeItem = ({ item, basePath, depth = 0 }: MenuTreeItemProps) => {
+  const router = useRouter();
+  const itemHref = appendPathToBasePath(basePath, item.path);
+  const hasChildren = item.children?.length > 0;
+  const itemIsActive = isPathActive(router.asPath, itemHref);
+  const branchIsActive = hasActiveDescendant(router.asPath, item, basePath);
+  const defaultExpanded = getDefaultExpandedState(item, branchIsActive);
+  const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
+
+  useEffect(() => {
+    setIsExpanded(defaultExpanded);
+  }, [defaultExpanded]);
+
+  if (!hasChildren) {
+    return (
+      <MenuItemLink href={itemHref} title={item.title} asSubItem={depth > 0} />
+    );
+  }
 
   return (
-    <Box as={'nav'} hideFrom={'md'} {...rest}>
+    <SidebarMenuItem
+      data-type="menu-item-group"
+      className="h-auto w-full max-w-none list-none flex-col items-start"
+    >
+      <div className="flex w-full items-center">
+        {item.ignoreLink ? (
+          <button
+            type="button"
+            className={cn(
+              menuRowClass,
+              "flex-1",
+              branchIsActive ? menuRowActiveClass : menuRowInactiveClass,
+            )}
+            onClick={() => setIsExpanded((prev) => !prev)}
+          >
+            {item.title}
+          </button>
+        ) : (
+          <Link
+            href={itemHref}
+            className={cn(
+              menuRowClass,
+              "flex-1",
+              itemIsActive ? menuRowActiveClass : menuRowInactiveClass,
+            )}
+          >
+            {item.title}
+          </Link>
+        )}
+
+        <Button
+          variant="ghost"
+          size="sm"
+          className={cn(
+            "ml-1 h-8 w-8 p-0",
+            branchIsActive &&
+              "text-primary-fg hover:bg-primary-bg hover:text-primary-fg",
+          )}
+          aria-label={isExpanded ? "Collapse submenu" : "Expand submenu"}
+          onClick={() => setIsExpanded((prev) => !prev)}
+        >
+          <Icon
+            path={mdiChevronRight}
+            size={1}
+            className={cn("transition-transform", isExpanded && "rotate-90")}
+          />
+        </Button>
+      </div>
+
+      {isExpanded && (
+        <SidebarMenuSub className={cn(depth === 0 && "w-full")}>
+          {item.children.map((child) => (
+            <MenuTreeItem
+              item={child}
+              basePath={itemHref}
+              depth={depth + 1}
+              key={child.path || child.title}
+            />
+          ))}
+        </SidebarMenuSub>
+      )}
+    </SidebarMenuItem>
+  );
+};
+
+const DropDownMenu = ({ config }: { config: ManifestConfig }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="md:hidden">
       <Button
-        as={Button}
-        onClick={onToggle}
-        variant={'outline'}
-        width={'full'}
-        rightIcon={
-          <Icon layerStyle="menuButtonIcon">
-            <path d={mdiChevronDown} />
-          </Icon>
-        }
+        onClick={() => setIsOpen(!isOpen)}
+        variant="outline"
+        className="w-full flex items-center justify-between"
       >
         {config.title}
+        <Icon
+          path={mdiChevronDown}
+          size={1}
+          className={cn("transition-transform", isOpen && "rotate-180")}
+        />
       </Button>
-      <Collapse in={isOpen}>
-        <Box position={'relative'}>
-          <ButtonGroup variant="navigation" orientation="vertical" width={'full'} spacing="1" mt={2} as="ul">
-            {config.routes.map((link, i) => (
-              <SidebarGroupItem {...link} key={i} />
+      {isOpen && (
+        <div className="relative">
+          <SidebarMenu className="w-full mt-2">
+            {config.routes.map((link) => (
+              <SidebarGroupItem
+                item={link}
+                rootBasePath={config.path}
+                showRootAsSections={config.showRootAsSections}
+                key={link.path || link.title}
+              />
             ))}
-          </ButtonGroup>
-        </Box>
-      </Collapse>
-    </Box>
+          </SidebarMenu>
+        </div>
+      )}
+    </nav>
   );
 };
 

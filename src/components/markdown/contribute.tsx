@@ -1,60 +1,88 @@
-import { ManifestConfig } from '@/src/lib/interfaces/manifest';
-import { PageInfo } from '@/src/lib/interfaces/page-info';
-import { Alert, AlertDescription, AlertIcon, AlertTitle, Link, List, ListItem, Stack, Text, Tooltip, useDisclosure } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import Feedback from './Feedback';
+import { Alert, AlertDescription, AlertTitle } from "@src/components/ui/alert";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@src/components/ui/tooltip";
+import type { ManifestConfig } from "@src/lib/interfaces/manifest";
+import type { PageInfo } from "@src/lib/interfaces/page-info";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Feedback from "./Feedback";
 
 type GithubContributionNoticeProps = {
   pageInfo: PageInfo;
   config: ManifestConfig;
 };
 
-const GithubContributionNotice = ({ pageInfo, config }: GithubContributionNoticeProps) => {
+const GithubContributionNotice = ({
+  pageInfo,
+  config,
+}: GithubContributionNoticeProps) => {
   const { asPath } = useRouter();
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const URL = `https://developers.sitecore.com${asPath.split('#')[0]}`;
-  const fileName = pageInfo.fileName.replace('https://github.com/sitecore/developer-portal/edit/main/data/', '');
+  const URL = `https://developers.sitecore.com${asPath.split("#")[0]}`;
+  const fileName = pageInfo.fileName.replace(
+    "https://github.com/sitecore/developer-portal/edit/main/data/",
+    "",
+  );
   const issueLink = `https://github.com/sitecore/developer-portal/issues/new?title=&body=%0A%0A%5BEnter%20feedback%20here%5D%0A%0A%0A---%0A%23%23%23%23%20Document%20Details%0A%0A%E2%9A%A0%20*Do%20not%20edit%20this%20section.%20It%20is%20required%20for%20developer.sitecore.com%20%E2%9E%9F%20GitHub%20issue%20linking.*%0A%0A*%20Page%3A%20%5B${pageInfo.title}%5D(${URL})%0A*%20Source%3A%20%5B${fileName}%5D(${pageInfo.fileName})`;
 
-  if (!pageInfo?.area?.includes('accelerate')) {
+  if (!pageInfo?.area?.includes("accelerate")) {
     return (
-      <Stack direction={'row'} justifyContent={'flex-end'}>
-        <Link href={pageInfo.fileName}>
-          <Text fontWeight={'medium'} fontSize={'xs'} color={'chakra-subtle-text'}>
-            Edit this page on GitHub
-          </Text>
+      <div className="flex flex-row justify-end gap-4">
+        <Link
+          href={pageInfo.fileName}
+          className="text-xs font-medium text-muted-foreground hover:underline"
+        >
+          Edit this page on GitHub
         </Link>
-        <Tooltip label="Report an issue or provide feedback">
-          <Link href={issueLink}>
-            <Text fontWeight={'medium'} fontSize={'xs'} color={'chakra-subtle-text'}>
-              Feedback
-            </Text>
-          </Link>
-        </Tooltip>
-      </Stack>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href={issueLink}
+                className="text-xs font-medium text-muted-foreground hover:underline"
+              >
+                Feedback
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Report an issue or provide feedback</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
     );
   }
 
   return (
-    <>
-      <Alert>
-        <AlertIcon />
-        <Stack align={'flex-start'}>
-          <AlertTitle>Have feedback or a recipe suggestion?</AlertTitle>
-          <AlertDescription>
-            <List>
-            <ListItem>
-                For recipe suggestions, questions or feedback, please use the <Feedback variant={'link'} projectId="RCPS" issueTypeId="3" product={config?.productFeedbackLabel} /> form.
-              </ListItem>              
-              <ListItem>
-                For direct contribution, please <Link href="/contribute">create a pull request</Link> on the Github repository for review.
-              </ListItem>
-            </List>
-          </AlertDescription>
-        </Stack>
-      </Alert>
-    </>
+    <Alert variant="default">
+      <AlertTitle>Have feedback or a recipe suggestion?</AlertTitle>
+      <AlertDescription>
+        <ul className="list-disc list-inside">
+          <li>
+            For recipe suggestions, questions or feedback, please use the{" "}
+            <Feedback
+              variant={"link"}
+              className="p-0"
+              projectId="RCPS"
+              issueTypeId="3"
+              product={config?.productFeedbackLabel}
+            />{" "}
+            form.
+          </li>
+          <li>
+            For direct contribution, please{" "}
+            <Link href="/contribute" className="text-primary hover:underline">
+              create a pull request
+            </Link>{" "}
+            on the Github repository for review.
+          </li>
+        </ul>
+      </AlertDescription>
+    </Alert>
   );
 };
 

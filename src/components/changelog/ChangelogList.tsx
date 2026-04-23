@@ -1,19 +1,27 @@
-import { Option } from '@/src/components/ui/dropdown';
-import { Alert, AlertIcon, Box, Button, Card, CardBody, Checkbox, FormControl, FormLabel, HStack, Icon, Link, SkeletonText, VisuallyHidden, Wrap } from '@chakra-ui/react';
-import { ChangelogEntry, ChangelogEntryList, ChangeType, Product } from '@lib/changelog/types';
-import axios from 'axios';
-import NextLink from 'next/link';
-import { useState } from 'react';
-import { Fetcher } from 'swr';
-import useSWR from 'swr';
-import useSWRInfinite from 'swr/infinite';
-
-import { entriesApiUrl } from '@/src/lib/changelog/common/changelog';
-import { buildQuerystring } from '@/src/lib/changelog/common/querystring';
-import { ChevronLeftIcon } from '@chakra-ui/icons';
-import ChangelogFilter from './ChangelogFilter';
-import ChangelogResultsList from './ChangelogResultsList';
-import { Hint } from './Hint';
+import { Alert, AlertTitle } from "@src/components/ui/alert";
+import { Button } from "@src/components/ui/button";
+import { Card, CardContent } from "@src/components/ui/card";
+import type { Option } from "@src/components/ui/dropdown";
+import { Skeleton } from "@src/components/ui/skeleton";
+import { entriesApiUrl } from "@src/lib/changelog/common/changelog";
+import { buildQuerystring } from "@src/lib/changelog/common/querystring";
+import type {
+  ChangelogEntry,
+  ChangelogEntryList,
+  ChangeType,
+  Product,
+} from "@src/lib/changelog/types";
+import { ChevronLeft } from "lucide-react";
+import NextLink from "next/link";
+import { useEffect, useRef, useState } from "react";
+import type { Fetcher } from "swr";
+import useSWR from "swr";
+import useSWRInfinite from "swr/infinite";
+import { Field, FieldLabel } from "../ui/field";
+import { Switch } from "../ui/switch";
+import ChangelogFilter from "./ChangelogFilter";
+import ChangelogResultsList from "./ChangelogResultsList";
+import { Hint } from "./Hint";
 
 type ChangelogListProps = {
   initialProduct?: Product;
@@ -22,31 +30,50 @@ type ChangelogListProps = {
 };
 
 /**
- * Get change type options using SWR hook
- * This should be used in React components only
+ * Custom hook to get change type options using SWR
  */
-function getChangeTypeOptions(): Array<Option> {
-  const fetcher: Fetcher<Array<ChangeType>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
-  const { data: changeTypes, error } = useSWR(`${entriesApiUrl}/types`, fetcher);
+function useChangeTypeOptions(): Array<Option> {
+  const fetcher: Fetcher<Array<ChangeType>, string> = async (url: string) => {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  };
+  const { data: changeTypes, error } = useSWR(
+    `${entriesApiUrl}/types`,
+    fetcher,
+  );
 
   if (error) {
     console.log(error);
   }
 
   if (changeTypes) {
-    return changeTypes?.map((e: ChangeType) => ({ label: e.name, value: e.id }));
+    return changeTypes?.map((e: ChangeType) => ({
+      label: e.name,
+      value: e.id,
+    }));
   }
 
   return [];
 }
 
 /**
- * Get product options using SWR hook
- * This should be used in React components only
+ * Custom hook to get product options using SWR
  */
-function getProductOptions(): Array<Option> {
-  const fetcher: Fetcher<Array<Product>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
-  const { data: products, error } = useSWR(`${entriesApiUrl}/products?all=false`, fetcher);
+function useProductOptions(): Array<Option> {
+  const fetcher: Fetcher<Array<Product>, string> = async (url: string) => {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  };
+  const { data: products, error } = useSWR(
+    `${entriesApiUrl}/products?all=false`,
+    fetcher,
+  );
 
   if (error) {
     console.log(error);
@@ -59,94 +86,152 @@ function getProductOptions(): Array<Option> {
   return [];
 }
 
-const ChangelogList = ({ initialProduct, selectedProducts, onProductsChange = () => {} }: ChangelogListProps) => {
+const ChangelogList = ({
+  initialProduct,
+  selectedProducts,
+  onProductsChange = () => {},
+}: ChangelogListProps) => {
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
   const [breaking, setBreaking] = useState<boolean>(false);
+  const pendingLoadRef = useRef(false);
+  const changeTypeOptions = useChangeTypeOptions();
+  const productOptions = useProductOptions();
 
-  const fetcher: Fetcher<ChangelogEntryList<Array<ChangelogEntry>>, string> = async (url: string) => await axios.get(url).then((response) => response.data);
+  const fetcher: Fetcher<
+    ChangelogEntryList<Array<ChangelogEntry>>,
+    string
+  > = async (url: string) => {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  };
 
-  const getKey = (pageIndex: any, previousPageData: ChangelogEntryList<Array<ChangelogEntry>>) => {
+  const getKey = (
+    _pageIndex: any,
+    previousPageData: ChangelogEntryList<Array<ChangelogEntry>>,
+  ) => {
     if (previousPageData && !previousPageData.hasNext) {
       return null;
     }
 
     const cursor = previousPageData ? previousPageData.endCursor : undefined;
-    const query = buildQuerystring(selectedProducts != null ? selectedProducts : [], selectedChange, cursor, initialProduct, breaking);
+    const query = buildQuerystring(
+      selectedProducts != null ? selectedProducts : [],
+      selectedChange,
+      cursor,
+      initialProduct,
+      breaking,
+    );
 
-    return [`${entriesApiUrl}?${query.join('&')}`];
+    return [`${entriesApiUrl}?${query.join("&")}`];
   };
 
-  const { data, error, size, setSize, isLoading } = useSWRInfinite(getKey, fetcher);
-  const items = data ? data.flatMap((data) => data.entries.map((entry) => entry)) : [];
+  const { data, error, setSize, isLoading, isValidating } = useSWRInfinite(
+    getKey,
+    fetcher,
+  );
+  const hasNext = data ? data[data.length - 1].hasNext : false;
+
+  useEffect(() => {
+    if (!isValidating) {
+      pendingLoadRef.current = false;
+    }
+  }, [isValidating]);
+
+  const handleEndTriggered = (): void => {
+    if (!data || !hasNext || isValidating || pendingLoadRef.current) {
+      return;
+    }
+
+    pendingLoadRef.current = true;
+    void setSize((currentSize) => currentSize + 1);
+  };
+
+  const items = data
+    ? data.flatMap((data) => data.entries.map((entry) => entry))
+    : [];
 
   return (
-    <Box>
+    <div>
       {initialProduct && (
-        <Wrap mb={4}>
-          <Link as={NextLink} href="/changelog" passHref>
-            <Button leftIcon={<Icon as={ChevronLeftIcon} w={6} h={6} />} width={'100%'} variant={'ghost'}>
+        <div className="mb-4">
+          <Button variant="ghost" className="w-full" asChild>
+            <NextLink href="/changelog">
+              <ChevronLeft className="mr-2 h-6 w-6" />
               Go back to the changelog overview
-            </Button>
-            <VisuallyHidden>Go back to the changelog overview</VisuallyHidden>
-          </Link>
-        </Wrap>
+            </NextLink>
+          </Button>
+          <span className="sr-only">Go back to the changelog overview</span>
+        </div>
       )}
-      <Card variant="filled">
-        <CardBody>
+      <Card className="bg-muted">
+        <CardContent className="space-y-6">
           {!initialProduct && (
-            <FormControl>
-              <HStack alignItems={'baseline'} justifyContent={'space-between'}>
-                <FormLabel>Products</FormLabel>
-                <ChangelogFilter
-                  id="productSelector"
-                  label="Products"
-                  placeholder="Select products"
-                  options={getProductOptions()}
-                  onSelectChange={function (selectedValues: Array<Option>): void {
-                    onProductsChange(selectedValues);
-                  }}
-                />
-              </HStack>
-            </FormControl>
+            <ChangelogFilter
+              id="productSelector"
+              label="Products"
+              placeholder="Select products"
+              options={productOptions}
+              onSelectChange={(selectedValues: Array<Option>): void => {
+                onProductsChange(selectedValues);
+              }}
+            />
           )}
-          <FormControl>
-            <HStack alignItems={'baseline'} justifyContent={'space-between'}>
-              <FormLabel>Changes</FormLabel>
-              <ChangelogFilter
-                id="changeSelector"
-                label="Changes"
-                placeholder="Select changes"
-                options={getChangeTypeOptions()}
-                onSelectChange={function (selectedValues: Array<Option>): void {
-                  setSelectedChange(selectedValues);
-                }}
-              />
-            </HStack>
-          </FormControl>
 
-          <Checkbox checked={breaking} onChange={(e) => setBreaking(e.target.checked)}>
-            Only show changes that might require action
-          </Checkbox>
-        </CardBody>
+          <ChangelogFilter
+            id="changeSelector"
+            label="Changes"
+            placeholder="Select changes"
+            options={changeTypeOptions}
+            onSelectChange={(selectedValues: Array<Option>): void => {
+              setSelectedChange(selectedValues);
+            }}
+          />
+
+          <Field orientation="horizontal">
+            <Switch
+              id="breakingChange"
+              checked={breaking}
+              onCheckedChange={(checked) => setBreaking(checked === true)}
+            />
+            <FieldLabel htmlFor="breakingChange">
+              Only show changes that might require action
+            </FieldLabel>
+          </Field>
+        </CardContent>
       </Card>
-      <Hint products={selectedProducts} enabled={selectedProducts?.length == 1} />
+      <Hint
+        products={selectedProducts}
+        enabled={selectedProducts?.length === 1}
+      />
 
       {isLoading && (
-        <Box marginTop={12}>
+        <div className="mt-12">
           <Placeholder />
           <Placeholder />
-        </Box>
+        </div>
       )}
 
-      {!error && data && <ChangelogResultsList entries={items} isLoading={isLoading} hasNext={data[data.length - 1].hasNext} onEndTriggered={() => setSize(size + 1)} mt={8} />}
+      {!error && data && (
+        <ChangelogResultsList
+          entries={items}
+          isLoading={isLoading}
+          hasNext={hasNext}
+          onEndTriggered={handleEndTriggered}
+          className="mt-8"
+        />
+      )}
 
-      {data && !data[data.length - 1].hasNext && (
-        <Alert colorScheme="neutral">
-          <AlertIcon />
-          {items.length == 0 ? 'No entries found' : 'No other entries found'}
+      {data && !hasNext && (
+        <Alert variant="default" className="mt-4">
+          <AlertTitle>
+            {items.length === 0 ? "No entries found" : "No other entries found"}
+          </AlertTitle>
         </Alert>
       )}
-    </Box>
+    </div>
   );
 };
 
@@ -154,9 +239,18 @@ export default ChangelogList;
 
 const Placeholder = () => {
   return (
-    <>
-      <SkeletonText noOfLines={1} skeletonHeight={'20px'} marginBottom={'20px'} />
-      <SkeletonText noOfLines={8} skeletonHeight={'20px'} />
-    </>
+    <div className="mb-5">
+      <Skeleton className="h-5 mb-5" />
+      <div className="space-y-2">
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+        <Skeleton className="h-5" />
+      </div>
+    </div>
   );
 };

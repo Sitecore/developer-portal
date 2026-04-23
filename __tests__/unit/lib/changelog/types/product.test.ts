@@ -1,7 +1,7 @@
-import { ParseProduct } from '@lib/changelog/types/product';
+import { ParseProduct } from '@src/lib/changelog/types/product';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
-vi.mock('@lib/changelog/types/sitecoreProduct', () => ({
+vi.mock('@src/lib/changelog/types/sitecoreProduct', () => ({
   parseSitecoreProductItem: vi.fn((item) => ({
     id: item.system?.id ?? 'product-1',
     name: item.productName ?? 'Product',
@@ -21,20 +21,8 @@ describe('ParseProduct', () => {
     const mockData = {
       manySitecoreProduct: {
         results: [
-          {
-            system: { id: 'product-1' },
-            productName: 'Product A',
-            productDescription: 'Description A',
-            lightIcon: 'light-1',
-            darkIcon: 'dark-1',
-          },
-          {
-            system: { id: 'product-2' },
-            productName: 'Product B',
-            productDescription: 'Description B',
-            lightIcon: 'light-2',
-            darkIcon: 'dark-2',
-          },
+          { system: { id: 'product-1' }, productName: 'Product A', productDescription: 'Description A', lightIcon: 'light-1', darkIcon: 'dark-1' },
+          { system: { id: 'product-2' }, productName: 'Product B', productDescription: 'Description B', lightIcon: 'light-2', darkIcon: 'dark-2' },
         ],
       },
     };
@@ -51,11 +39,7 @@ describe('ParseProduct', () => {
   });
 
   test('should return empty array for null results', () => {
-    const mockData = {
-      manySitecoreProduct: {
-        results: null,
-      },
-    };
+    const mockData = { manySitecoreProduct: { results: null } };
 
     const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => {});
 
@@ -81,16 +65,7 @@ describe('ParseProduct', () => {
   });
 
   test('should set hasEntries to false by default', () => {
-    const mockData = {
-      manySitecoreProduct: {
-        results: [
-          {
-            system: { id: 'product-1' },
-            productName: 'Product A',
-          },
-        ],
-      },
-    };
+    const mockData = { manySitecoreProduct: { results: [{ system: { id: 'product-1' }, productName: 'Product A' }] } };
 
     const result = ParseProduct(mockData as any);
 
@@ -98,19 +73,7 @@ describe('ParseProduct', () => {
   });
 
   test('should map SitecoreProduct fields correctly', () => {
-    const mockData = {
-      manySitecoreProduct: {
-        results: [
-          {
-            system: { id: 'product-1' },
-            productName: 'Product A',
-            productDescription: 'Description',
-            lightIcon: 'light-icon',
-            darkIcon: 'dark-icon',
-          },
-        ],
-      },
-    };
+    const mockData = { manySitecoreProduct: { results: [{ system: { id: 'product-1' }, productName: 'Product A', productDescription: 'Description', lightIcon: 'light-icon', darkIcon: 'dark-icon' }] } };
 
     const result = ParseProduct(mockData as any);
 
@@ -120,4 +83,3 @@ describe('ParseProduct', () => {
     expect(result[0].darkIcon).toBe('dark-icon');
   });
 });
-

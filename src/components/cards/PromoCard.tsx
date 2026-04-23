@@ -1,7 +1,9 @@
-import { Card, CardBody, Center, Heading, Hide, HStack, Image, LinkBox, LinkOverlay, Stack, Text } from '@chakra-ui/react';
-import { mdiArrowRight } from '@mdi/js';
-import Icon from '@mdi/react';
-import NextLink from 'next/link';
+import { mdiArrowRight } from "@mdi/js";
+import Icon from "@mdi/react";
+import { Card, CardContent } from "@src/components/ui/card";
+import Image from "next/image";
+import NextLink from "next/link";
+import { cn } from "@/src/lib/util";
 
 export type SimplePromoCardProps = {
   title: string;
@@ -14,70 +16,87 @@ export type SimplePromoCardProps = {
   isImageLeft?: boolean;
 };
 
-export type PromoCardImage = {
-  img: {
-    src: string;
-    alt?: string;
-  };
-};
+export type PromoCardImage = { img: { src: string; alt?: string } };
 
 export type PromoCardProps = PromoCardImage & {
   title: string;
   description: string;
-  link?: {
-    text: string;
-    href: string;
-  };
+  link?: { text: string; href: string };
   className?: string;
   isImageLeft?: boolean;
 };
 
 function PromoImage({ img }: PromoCardImage) {
-  return <Image src={img.src} alt={img.alt || ''} objectFit="cover" maxW={{ base: '100%', md: '310px' }} />;
+  return (
+    <div className="relative w-full md:w-[310px] h-48 md:h-auto">
+      <Image
+        src={img.src}
+        alt={img.alt || ""}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 310px"
+      />
+    </div>
+  );
 }
 
-export const PromoCard = ({ title, description, img, link, isImageLeft = true }: PromoCardProps) => (
-  <Center>
-    <LinkBox as={Card} direction={{ base: 'column', md: 'row' }} overflow="hidden" variant="outlineRaised" maxW={'container.md'} layerStyle={'interactive.raise'}>
-      {isImageLeft && <PromoImage img={img} />}
-
-      <Stack>
-        <CardBody display={'flex'} justifyContent={'space-between'} flexDirection={'column'} alignItems={'left'}>
-          <Heading as={'h4'} size="md">
-            {title}
-          </Heading>
-          <Text>{description}</Text>
-          {!!link && (
-            <HStack as={'span'} mt={2}>
-              <LinkOverlay as={NextLink} href={link.href} fontWeight={'semibold'}>
-                {link.text}
-              </LinkOverlay>
-              <Icon path={mdiArrowRight} size={0.8} />
-            </HStack>
-          )}
-        </CardBody>
-      </Stack>
-      {!isImageLeft && (
-        <Hide below="md">
-          <PromoImage img={img} />
-        </Hide>
+export const PromoCard = ({
+  title,
+  description,
+  img,
+  link,
+  isImageLeft = true,
+  className,
+}: PromoCardProps) => (
+  <div className="flex justify-center">
+    <Card
+      className={cn(
+        "overflow-hidden border shadow-md hover:shadow-lg transition-shadow max-w-2xl",
+        className,
       )}
-    </LinkBox>
-  </Center>
+    >
+      <div className="flex flex-col md:flex-row">
+        {isImageLeft && <PromoImage img={img} />}
+        <CardContent className="flex flex-col justify-between items-start">
+          <div>
+            <h4 className="text-lg font-heading mb-2">{title}</h4>
+            <p className="mb-4">{description}</p>
+          </div>
+          {link && (
+            <NextLink
+              href={link.href}
+              className="inline-flex items-center gap-1 font-semibold hover:underline mt-2"
+            >
+              {link.text}
+              <Icon path={mdiArrowRight} size={0.8} />
+            </NextLink>
+          )}
+        </CardContent>
+        {!isImageLeft && (
+          <div className="hidden md:block">
+            <PromoImage img={img} />
+          </div>
+        )}
+      </div>
+    </Card>
+  </div>
 );
 
-export const Promo = ({ title, description, linkText, linkHref, imageSource, imageAlt, className, isImageLeft }: SimplePromoCardProps) => {
+export const Promo = ({
+  title,
+  description,
+  linkText,
+  linkHref,
+  imageSource,
+  imageAlt,
+  className,
+  isImageLeft,
+}: SimplePromoCardProps) => {
   const data: PromoCardProps = {
     title: title,
     description: description,
-    img: {
-      src: imageSource,
-      alt: imageAlt ? imageAlt : title,
-    },
-    link: {
-      href: linkHref,
-      text: linkText,
-    },
+    img: { src: imageSource, alt: imageAlt ? imageAlt : title },
+    link: { href: linkHref, text: linkText },
     className: className,
     isImageLeft: isImageLeft,
   };

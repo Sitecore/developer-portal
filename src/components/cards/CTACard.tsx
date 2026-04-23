@@ -1,5 +1,6 @@
-import { Card, CardBody, Heading, Text } from '@chakra-ui/react';
-import { LinkButton } from '@src/components/links';
+import { cn } from "@/src/lib/util";
+import { LinkButton } from "@src/components/links";
+import { Card, CardContent } from "@src/components/ui/card";
 
 export type CTACardProps = {
   description: string;
@@ -8,20 +9,28 @@ export type CTACardProps = {
   link2href?: string;
   link2Text?: string;
   title: string;
+  className?: string;
 };
 
-export const CTACard = ({ description, href, linkText, title, link2Text, link2href }: CTACardProps) => (
-  <Card variant="filled" size={'lg'}>
-    <CardBody>
-      <Heading as="h2" mb={4} fontSize={'5xl'}>
-        {title}
-      </Heading>
-      <Text variant={'large'} mb={6}>
-        {description}
-      </Text>
-      <LinkButton color='white' href={href} text={linkText} size={'lg'} />
-
-      {link2href && link2Text && <LinkButton href={link2href} text={link2Text} size={'xl'} />}
-    </CardBody>
+export const CTACard = ({
+  description,
+  href,
+  linkText,
+  title,
+  link2Text,
+  link2href,
+  className,
+}: CTACardProps) => (
+  <Card className={cn("my-4", className)} style="flat" elevation="xs">
+    <CardContent>
+      <h2 className="text-5xl font-heading mb-4">{title}</h2>
+      <p className="text-lg mb-6">{description}</p>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <LinkButton color="white" href={href} text={linkText} size="lg" />
+        {link2href && link2Text && (
+          <LinkButton href={link2href} text={link2Text} size="lg" />
+        )}
+      </div>
+    </CardContent>
   </Card>
 );

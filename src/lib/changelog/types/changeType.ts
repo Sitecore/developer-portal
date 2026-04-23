@@ -1,5 +1,8 @@
-import { ChangeTypeFragment, GetAllChangetypesQuery } from '@data/gql/generated/graphql';
-import { getStringValue, slugify } from '@lib/utils';
+import type {
+  ChangeTypeFragment,
+  GetAllChangetypesQuery,
+} from "@data/gql/generated/graphql";
+import { getStringValue, slugify } from "@/src/lib/util/stringUtil";
 
 export type ChangeType = {
   id: string;
@@ -13,9 +16,11 @@ export type ChangeType = {
  * @param rawItem - GraphQL ChangeTypeFragment result
  * @returns Parsed ChangeType
  */
-export function parseChangeTypeItem(rawItem: ChangeTypeFragment | null | undefined): ChangeType {
+export function parseChangeTypeItem(
+  rawItem: ChangeTypeFragment | null | undefined,
+): ChangeType {
   if (!rawItem) {
-    throw new Error('Invalid ChangeType: rawItem is null or undefined');
+    throw new Error("Invalid ChangeType: rawItem is null or undefined");
   }
 
   return {
@@ -29,7 +34,9 @@ export function parseChangeTypeItem(rawItem: ChangeTypeFragment | null | undefin
 /**
  * Parse multiple ChangeTypes from a GraphQL query result
  */
-export function ParseChangeType(data: GetAllChangetypesQuery): Array<ChangeType> {
+export function ParseChangeType(
+  data: GetAllChangetypesQuery,
+): Array<ChangeType> {
   if (!data.manyChangetype?.results) {
     return [];
   }

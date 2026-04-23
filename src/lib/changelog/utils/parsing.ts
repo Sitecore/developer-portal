@@ -8,7 +8,10 @@
  * @param defaultValue - Default value if null/undefined
  * @returns String value or default
  */
-export function safeStringValue(value: string | null | undefined, defaultValue: string = ''): string {
+export function safeStringValue(
+  value: string | null | undefined,
+  defaultValue: string = "",
+): string {
   return value ?? defaultValue;
 }
 
@@ -29,4 +32,3 @@ export function safeArrayValue<T>(value: T[] | null | undefined): T[] {
 export function safeFirstItem<T>(array: T[] | null | undefined): T | undefined {
   return array && array.length > 0 ? array[0] : undefined;
 }
-

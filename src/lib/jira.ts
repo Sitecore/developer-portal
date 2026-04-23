@@ -1,90 +1,105 @@
-import axios from 'axios';
-import { Option } from '../components/ui/dropdown';
-import { CustomField, Issue, IssueTypeSchema, JiraResponse, RoadmapInformation } from './interfaces/jira';
-import { parseJiraIssues } from './roadmap';
+import type { Option } from "@src/components/ui/dropdown";
+import type {
+  CustomField,
+  Issue,
+  IssueTypeSchema,
+  JiraResponse,
+  RoadmapInformation,
+} from "./interfaces/jira";
+import { parseJiraIssues } from "./roadmap";
 
-const jiraBaseUrl = 'https://sitecore.atlassian.net/rest/api/3';
-const JIRA_USERNAME = process.env.JIRA_USERNAME;
-const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN;
+const jiraBaseUrl = "https://sitecore.atlassian.net/rest/api/3";
+const JIRA_USERNAME = process.env.JIRA_USERNAME as string;
+const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN as string;
 
-export const excludedProducts = ['Content Hub DAM', 'Content Hub Ops', 'Analytics', 'Content Hub ONE', 'Portal'];
+function assertValidProjectKey(projectKey: string): void {
+  if (!/^[A-Z0-9_-]{1,20}$/.test(projectKey)) {
+    throw new Error("Invalid project key");
+  }
+}
+
+function assertValidIssueTypeId(issueTypeId: string): void {
+  if (!/^[0-9]{1,20}$/.test(issueTypeId)) {
+    throw new Error("Invalid issue type id");
+  }
+}
+
+export const excludedProducts = [
+  "Content Hub DAM",
+  "Content Hub Ops",
+  "Analytics",
+  "Content Hub ONE",
+  "Portal",
+];
 
 export enum Phase {
-  NOW = 'Now',
-  NEXT = 'Next',
-  DONE = 'Done',
-  FUTURE = 'Future',
+  NOW = "Now",
+  NEXT = "Next",
+  DONE = "Done",
+  FUTURE = "Future",
 }
 enum FilterOption {
-  Equals = '=',
-  NotEquals = '!=',
-}
-interface JiraIssueType {
-  id: string;
-  self: string;
-  description: string;
-  iconUrl: string;
-  name: string;
-}
-
-interface JiraIssuePriority {
-  id: string;
-  self: string;
-  description: string;
-  iconUrl: string;
-  name: string;
-}
-
-interface JiraProjectResult {
-  id: string;
-  self: string;
-  description: string;
-  issueTypes: Array<JiraIssueType>;
+  Equals = "=",
+  NotEquals = "!=",
 }
 
 async function fetchData<T>(url: string): Promise<T> {
   const response = await fetch(url, {
     headers: {
-      Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString('base64')}`,
+      Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString("base64")}`,
     },
   });
 
   if (!response.ok) {
-    throw new Error('Failed to fetch data: ' + response.statusText);
+    throw new Error(`Failed to fetch data: ${response.statusText}`);
   }
   const data: T = await response.json();
 
   return data;
 }
 
-function createJqlString(filters: { key: string; value: string; operator: FilterOption }[]): string {
-  return filters.map((filter) => `${filter.key}${filter.operator}${filter.value}`).join('%20AND%20');
+function createJqlString(
+  filters: { key: string; value: string; operator: FilterOption }[],
+): string {
+  return filters
+    .map((filter) => `${filter.key}${filter.operator}${filter.value}`)
+    .join("%20AND%20");
+}
+
+function assertValidJiraAttachmentId(id: string): void {
+  if (!/^\d+$/.test(id)) {
+    throw new Error("Invalid Jira attachment id");
+  }
 }
 
 export async function GetJiraResponse(): Promise<JiraResponse> {
   // Get all issues from Jira where external roadmap is set to 1 (true)
 
   const fields = [
-    'summary',
-    'description',
-    'status',
-    'customfield_15180', // Roadmap phase
-    'customfield_15258', // Product
-    'customfield_15555', // Speaker notes
-    'customfield_15423', // Marketing title
-    'attachment',
+    "summary",
+    "description",
+    "status",
+    "customfield_15180", // Roadmap phase
+    "customfield_15258", // Product
+    "customfield_15555", // Speaker notes
+    "customfield_15423", // Marketing title
+    "attachment",
   ];
 
   const filters = [
-    { key: 'project', value: 'SMAP', operator: FilterOption.Equals },
-    { key: 'cf[15395]', value: '1', operator: FilterOption.Equals }, // External roadmap
-    { key: 'cf[17325]', value: 'EMPTY', operator: FilterOption.Equals }, // Idea archived
-    { key: 'status', value: 'archived', operator: FilterOption.NotEquals }, // second archived status
-    { key: 'cf[15180]', value: '"Won\'t do"', operator: FilterOption.NotEquals }, // phase does not equal "Won't do"
+    { key: "project", value: "SMAP", operator: FilterOption.Equals },
+    { key: "cf[15395]", value: "1", operator: FilterOption.Equals }, // External roadmap
+    { key: "cf[17325]", value: "EMPTY", operator: FilterOption.Equals }, // Idea archived
+    { key: "status", value: "archived", operator: FilterOption.NotEquals }, // second archived status
+    {
+      key: "cf[15180]",
+      value: '"Won\'t do"',
+      operator: FilterOption.NotEquals,
+    }, // phase does not equal "Won't do"
   ];
 
   const jqlString = createJqlString(filters);
-  const roadmapAPI = `${jiraBaseUrl}/search/jql?jql=${jqlString}&fields=${fields.join(',')}&expand=names&maxResults=1000&expand=renderedFields`;
+  const roadmapAPI = `${jiraBaseUrl}/search/jql?jql=${jqlString}&fields=${fields.join(",")}&expand=names&maxResults=1000&expand=renderedFields`;
 
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
@@ -103,19 +118,28 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
 }
 
 export async function GetJiraAttachement(id: string) {
+  assertValidJiraAttachmentId(id);
   const imageUrl = `${jiraBaseUrl}/attachment/content/${id}`;
 
-  const response = await axios({
-    url: imageUrl,
-    method: 'get',
+  const response = await fetch(imageUrl, {
+    method: "GET",
     headers: {
-      Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString('base64')}`,
-      Accept: 'application/json',
+      Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString("base64")}`,
+      Accept: "application/json",
     },
-    responseType: 'arraybuffer', // This is to handle binary data (like an image)
   });
 
-  return response;
+  if (!response.ok) {
+    throw new Error(`Failed to fetch attachment: ${response.statusText}`);
+  }
+
+  // Return array buffer for binary data (like an image)
+  return {
+    data: await response.arrayBuffer(),
+    status: response.status,
+    statusText: response.statusText,
+    headers: response.headers,
+  };
 }
 
 export async function getRoadmap(): Promise<RoadmapInformation> {
@@ -131,19 +155,25 @@ export async function getRoadmap(): Promise<RoadmapInformation> {
 }
 
 export async function getProducts(issues: any[]): Promise<string[]> {
-  const products = issues.flatMap((issue: Issue) => issue.fields.customfield_15258 || []).map((label: CustomField) => label.value);
+  const products = issues
+    .flatMap((issue: Issue) => issue.fields.customfield_15258 || [])
+    .map((label: CustomField) => label.value);
 
   const uniqueProducts = [...new Set(products)];
   return uniqueProducts;
 }
 
-export async function getProductsAsOptions(issues: Issue[]): Promise<Array<Option>> {
+export async function getProductsAsOptions(
+  issues: Issue[],
+): Promise<Array<Option>> {
   const options: Option[] = [];
 
   issues.forEach((issue: Issue) => {
     if (issue.fields.customfield_15258) {
       issue.fields.customfield_15258.forEach((field: CustomField) => {
-        if (!options.some((existingOption) => existingOption.value === field.id)) {
+        if (
+          !options.some((existingOption) => existingOption.value === field.id)
+        ) {
           if (!excludedProducts.includes(field.value)) {
             options.push({ label: field.value, value: field.id });
           }
@@ -157,43 +187,58 @@ export async function getProductsAsOptions(issues: Issue[]): Promise<Array<Optio
 
 export function getBadgeColor(status: string): string {
   switch (status.toLowerCase()) {
-    case 'done':
-      return 'green';
-    case 'now':
-      return 'primary';
-    case 'next':
-      return 'orange';
-    case 'future':
-      return 'gray';
+    case "done":
+      return "green";
+    case "now":
+      return "primary";
+    case "next":
+      return "orange";
+    case "future":
+      return "gray";
     default:
-      return 'gray';
+      return "gray";
   }
 }
 
 export function getStatusColor(status: string): string {
   switch (status.toLowerCase()) {
-    case 'done':
-      return 'green';
-    case 'new':
-      return 'primary';
-    case 'discovery':
-      return 'yellow';
-    case 'delivery':
-      return 'teal';
+    case "done":
+      return "green";
+    case "new":
+      return "primary";
+    case "discovery":
+      return "yellow";
+    case "delivery":
+      return "teal";
     default:
-      return 'gray';
+      return "gray";
   }
 }
+export async function getIssueTypeSchema(params: {
+  projectKey: string;
+  issueTypeId: string;
+}): Promise<IssueTypeSchema> {
+  const { projectKey, issueTypeId } = params;
 
-export async function getIssueTypeSchema({ projectKey, issueTypeId }: { projectKey: string; issueTypeId: string }): Promise<IssueTypeSchema> {
-  const response = await fetch(`${jiraBaseUrl}/issue/createmeta/${projectKey}/issuetypes/${issueTypeId}`, {
-    method: 'GET',
-    cache: 'no-cache',
-    headers: {
-      Authorization: 'Basic ' + Buffer.from(JIRA_USERNAME! + ':' + JIRA_API_TOKEN!).toString('base64'),
-      'Content-Type': 'application/json',
+  assertValidProjectKey(projectKey);
+  assertValidIssueTypeId(issueTypeId);
+
+  const safeProjectKey = encodeURIComponent(projectKey);
+  const safeIssueTypeId = encodeURIComponent(issueTypeId);
+
+  const response = await fetch(
+    `${jiraBaseUrl}/issue/createmeta/${safeProjectKey}/issuetypes/${safeIssueTypeId}`,
+    {
+      method: "GET",
+      cache: "no-cache",
+      headers: {
+        Authorization:
+          "Basic " +
+          Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString("base64"),
+        "Content-Type": "application/json",
+      },
     },
-  });
+  );
 
   if (!response.ok) {
     const error = await response.text();
@@ -206,8 +251,8 @@ export async function getIssueTypeSchema({ projectKey, issueTypeId }: { projectK
 
 export async function postJiraIssue({
   summary,
-  projectKey = 'PRDSCS',
-  issueTypeId = '11808',
+  projectKey = "PRDSCS",
+  issueTypeId = "11808",
   product,
   name,
   email,
@@ -223,32 +268,38 @@ export async function postJiraIssue({
   description?: string;
   url?: string;
 }): Promise<{ id: string; key: string }> {
-  console.log('posting the new jira ticket...');
+  console.log("posting the new jira ticket...");
 
-  let productValue: any[] = [];
+  const productValue: any[] = [];
 
   if (product) {
     const schema = await getIssueTypeSchema({ projectKey, issueTypeId });
 
-    product.map((p) => {
-      const productField = schema.fields.find((field) => field.name === 'Products');
-      const foundProduct = productField?.allowedValues?.find((x) => x.value?.toLowerCase() === p.toLowerCase());
+    product.forEach((p) => {
+      const productField = schema.fields.find(
+        (field) => field.name === "Products",
+      );
+      const foundProduct = productField?.allowedValues?.find(
+        (x) => x.value?.toLowerCase() === p.toLowerCase(),
+      );
       if (foundProduct) {
         productValue.push(foundProduct);
       }
     });
 
-    if (productValue.length == 0) {
-      throw console.error('Product not found in the allowed values');
+    if (productValue.length === 0) {
+      throw console.error("Product not found in the allowed values");
     }
   }
 
   const response = await fetch(`${jiraBaseUrl}/issue`, {
-    method: 'POST',
-    cache: 'no-cache',
+    method: "POST",
+    cache: "no-cache",
     headers: {
-      Authorization: 'Basic ' + Buffer.from(JIRA_USERNAME! + ':' + JIRA_API_TOKEN!).toString('base64'),
-      'Content-Type': 'application/json',
+      Authorization:
+        "Basic " +
+        Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString("base64"),
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       fields: {
@@ -261,53 +312,53 @@ export async function postJiraIssue({
           id: issueTypeId,
         },
         description: {
-          type: 'doc',
+          type: "doc",
           version: 1,
           content: [
             {
-              type: 'paragraph',
+              type: "paragraph",
               content: [
                 {
                   text: description,
-                  type: 'text',
+                  type: "text",
                 },
               ],
             },
             {
-              type: 'paragraph',
+              type: "paragraph",
               content: [
                 {
-                  text: '\nINFO:\nurl: ',
-                  type: 'text',
+                  text: "\nINFO:\nurl: ",
+                  type: "text",
                 },
                 {
-                  type: 'inlineCard',
+                  type: "inlineCard",
                   attrs: {
-                    url: url ?? '-',
+                    url: url ?? "-",
                   },
                 },
                 {
-                  text: `\nname: ${name == null || name == '' ? '-' : name}`,
-                  type: 'text',
+                  text: `\nname: ${name == null || name === "" ? "-" : name}`,
+                  type: "text",
                 },
                 {
-                  text: `\nemail: ${email == null || email == '' ? '-' : email}`,
-                  type: 'text',
+                  text: `\nemail: ${email == null || email === "" ? "-" : email}`,
+                  type: "text",
                 },
               ],
             },
             {
-              type: 'paragraph',
+              type: "paragraph",
               content: [
                 {
-                  text: 'Ticket automatically created from the feedback form on the developer portal.',
-                  type: 'text',
+                  text: "Ticket automatically created from the feedback form on the developer portal.",
+                  type: "text",
                 },
               ],
             },
           ],
         },
-        labels: ['external-feedback'],
+        labels: ["external-feedback"],
       },
     }),
   });
@@ -315,9 +366,9 @@ export async function postJiraIssue({
   if (!response.ok) {
     const error = await response.text();
 
-    throw Error('ticket not ok! ' + error);
+    throw Error(`ticket not ok! ${error}`);
   }
 
   // return (await response.json()) as { id: string; key: string };
-  return { id: '123', key: 'PRDSCS-123' };
+  return { id: "123", key: "PRDSCS-123" };
 }

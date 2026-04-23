@@ -1,4 +1,4 @@
-import { Environment } from '@sitecore-search/react';
+import type { Environment } from "@sitecore-search/react";
 
 export const SEARCH_CONFIG = {
   env: process.env.NEXT_PUBLIC_SEARCH_APP_ENV as Environment,
@@ -7,28 +7,29 @@ export const SEARCH_CONFIG = {
   useToken: true,
 };
 
-export const IsSearchEnabled = () => (SEARCH_CONFIG.env && SEARCH_CONFIG.customerKey && SEARCH_CONFIG.apiKey ? true : false);
+export const IsSearchEnabled = () =>
+  !!(SEARCH_CONFIG.env && SEARCH_CONFIG.customerKey && SEARCH_CONFIG.apiKey);
 
 export function getColorScheme(resultType: string) {
-  if (resultType == 'Article') {
-    return 'purple';
+  if (resultType === "Article") {
+    return "purple";
   }
 
-  if (resultType == 'Forum') {
-    return 'teal';
+  if (resultType === "Forum") {
+    return "teal";
   }
 
-  if (resultType == 'Repository') {
-    return 'gray';
+  if (resultType === "Repository") {
+    return "gray";
   }
 
-  if (resultType == 'Video') {
-    return 'red';
+  if (resultType === "Video") {
+    return "red";
   }
 
-  if (resultType == 'ChangeLog') {
-    return 'blue';
+  if (resultType === "ChangeLog") {
+    return "blue";
   }
 
-  return 'cyan';
+  return "cyan";
 }

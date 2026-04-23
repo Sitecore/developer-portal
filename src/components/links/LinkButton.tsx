@@ -1,29 +1,53 @@
-import { Button, ButtonProps, Link } from '@chakra-ui/react';
-import { mdiArrowRight } from '@mdi/js';
-import Icon from '@mdi/react';
-import NextLink from 'next/link';
-import { HTMLAttributeAnchorTarget, JSX } from 'react';
+import { mdiArrowRight } from "@mdi/js";
+import Icon from "@mdi/react";
+import { Button, type buttonVariants } from "@src/components/ui/button";
+import type { VariantProps } from "class-variance-authority";
+import NextLink from "next/link";
+import type { HTMLAttributeAnchorTarget, JSX } from "react";
+import { cn } from "@/src/lib/util";
 
-type LinkButtonProps = ButtonProps & {
-  href: string;
-  text: string;
-  showIcon?: boolean;
-  icon?: JSX.Element;
-  variant?: string;
-  colorScheme?: string;
-  color?: string;
-  target?: HTMLAttributeAnchorTarget | undefined;
-};
+type LinkButtonProps = Omit<
+  React.ComponentProps<typeof Button>,
+  "asChild" | "href"
+> &
+  VariantProps<typeof buttonVariants> & {
+    href: string;
+    text: string;
+    showIcon?: boolean;
+    icon?: JSX.Element;
+    target?: HTMLAttributeAnchorTarget | undefined;
+    color?: string; // Optional style override for text color
+  };
 
-export const LinkButton = ({ href, text, showIcon, variant, colorScheme, color, icon, target, ...rest }: LinkButtonProps) => {
-  const ButtonIcon = icon != null ? icon : <Icon path={mdiArrowRight} size={0.8} />;
-  color = color != null ? color : 'chakra-body-text'
+export const LinkButton = ({
+  href,
+  text,
+  showIcon = true,
+  variant = "default",
+  icon,
+  target,
+  className,
+  size = "default",
+  colorScheme,
+  color,
+  ...rest
+}: LinkButtonProps) => {
+  const ButtonIcon =
+    icon != null ? icon : <Icon path={mdiArrowRight} size={0.8} />;
 
   return (
-    <Link as={NextLink} href={href} color={color} target={target}>
-      <Button variant={variant} color={color} md={color} colorScheme={colorScheme} rightIcon={showIcon != false ? ButtonIcon : undefined} size={rest.size ? rest.size : 'md'} {...rest} whiteSpace={'normal'}>
+    <Button
+      asChild
+      variant={variant}
+      size={size}
+      colorScheme={colorScheme}
+      className={cn("not-prose", className)}
+      {...rest}
+    >
+      <NextLink href={href} target={target}>
         {text}
-      </Button>
-    </Link>
+        {showIcon && ButtonIcon}
+      </NextLink>
+    </Button>
   );
 };

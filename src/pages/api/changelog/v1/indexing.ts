@@ -1,9 +1,10 @@
-import { Changelog } from '@lib/changelog';
-import { ChangelogEntry, ChangelogEntryList } from '@lib/changelog/types';
-import { getChangelogEntryUrl, getQueryValue, removeHtmlTagsAndSpecialChars } from '@lib/utils';
+import { getQueryValue } from '@/src/lib/util/requests';
+import { removeHtmlTagsAndSpecialChars } from '@/src/lib/util/stringUtil';
+import { getChangelogEntryUrl } from '@/src/lib/util/urlUtil';
+import { Changelog } from '@src/lib/changelog';
+import { getChangelogCredentials } from '@src/lib/changelog/common/credentials';
+import type { ChangelogEntry, ChangelogEntryList } from '@src/lib/changelog/types';
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
 
 const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL ? process.env.NEXT_PUBLIC_PUBLIC_URL : '';
 
@@ -51,7 +52,7 @@ async function GetEntries(list: Array<IndexResult>, end: string, limit: string) 
   const changelog = new Changelog(getChangelogCredentials());
   const entryList: ChangelogEntryList<Array<ChangelogEntry>> = await changelog.getEntriesPaginated(limit, '', '', end);
 
-  entryList.entries.map((entry) => {
+  for (const entry of entryList.entries) {
     list.push({
       title: entry.title,
       changeTypes: entry.changeType.map((obj) => obj.changeType),
@@ -70,10 +71,10 @@ async function GetEntries(list: Array<IndexResult>, end: string, limit: string) 
       description: removeHtmlTagsAndSpecialChars(entry.description),
       fullArticle: entry.fullArticle ? removeHtmlTagsAndSpecialChars(entry.fullArticle) : null,
       readMoreLink: entry.readMoreLink,
-      breakingChange: entry.breakingChange ? true : false,
-      url: `${publicUrl}${getChangelogEntryUrl(entry)}`,
+      breakingChange: !!entry.breakingChange,
+      url: new URL(`${getChangelogEntryUrl(entry)}`, publicUrl).toString(),
     });
-  });
+  }
 
   const indexingList: IndexingList = {
     total: entryList.total,

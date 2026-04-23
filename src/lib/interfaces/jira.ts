@@ -1,5 +1,5 @@
-import { Option } from '@/src/components/ui/dropdown';
-import { IRoadmapItem } from '../roadmap';
+import type { Option } from "@src/components/ui/dropdown";
+import type { IRoadmapItem } from "../roadmap";
 
 export interface StatusCategory {
   self: string;

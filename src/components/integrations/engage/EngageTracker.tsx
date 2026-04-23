@@ -1,9 +1,18 @@
-import { Engage, init } from '@sitecore/engage';
-import { createContext, FC, useCallback, useEffect, useRef, useState } from 'react';
+import { type Engage, init } from "@sitecore/engage";
+import {
+  createContext,
+  type FC,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
-import { EngageKeys, IEngageConfigKeys } from './EngageKeys';
+import { EngageKeys, type IEngageConfigKeys } from "./EngageKeys";
 
-export const EngageTrackerContext = createContext<EngageTrackerContextType>({} as EngageTrackerContextType);
+export const EngageTrackerContext = createContext<EngageTrackerContextType>(
+  {} as EngageTrackerContextType,
+);
 
 export interface EngageTrackerContextType {
   engageTracker: Engage | undefined;
@@ -15,15 +24,23 @@ interface EngageTrackerProviderProps {
   children: React.ReactNode;
 }
 
-export const EngageTrackerProvider: FC<EngageTrackerProviderProps> = ({ children }) => {
+export const EngageTrackerProvider: FC<EngageTrackerProviderProps> = ({
+  children,
+}) => {
   const [engageTracker, setEngageTracker] = useState<Engage | undefined>();
 
   const isTrackerEnabled = useRef<boolean>(true);
 
   const initEngageTracker = useCallback(async () => {
-    if (!EngageKeys.SitecoreCdpClientKey || !EngageKeys.SitecoreCdpTargetUrl || !EngageKeys.SitecoreCdpPointOfSale) {
+    if (
+      !EngageKeys.SitecoreCdpClientKey ||
+      !EngageKeys.SitecoreCdpTargetUrl ||
+      !EngageKeys.SitecoreCdpPointOfSale
+    ) {
       isTrackerEnabled.current = false;
-      console.log('Engage tracker is disabled because of missing configuration.');
+      console.log(
+        "Engage tracker is disabled because of missing configuration.",
+      );
     }
 
     const initConfig: any = {
@@ -50,5 +67,15 @@ export const EngageTrackerProvider: FC<EngageTrackerProviderProps> = ({ children
     initEngageTracker();
   }, [initEngageTracker]);
 
-  return <EngageTrackerContext.Provider value={{ engageTracker, isTrackerEnabled: isTrackerEnabled.current, engageKeys: EngageKeys }}>{children}</EngageTrackerContext.Provider>;
+  return (
+    <EngageTrackerContext.Provider
+      value={{
+        engageTracker,
+        isTrackerEnabled: isTrackerEnabled.current,
+        engageKeys: EngageKeys,
+      }}
+    >
+      {children}
+    </EngageTrackerContext.Provider>
+  );
 };

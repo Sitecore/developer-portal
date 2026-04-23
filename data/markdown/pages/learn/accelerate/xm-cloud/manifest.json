@@ -14,6 +14,7 @@
       "title": "Pre-development",
       "path": "pre-development",
       "ignoreLink": true,
+      "collapsed": false,
       "children": [
         {
           "title": "Discovery",
@@ -31,18 +32,15 @@
             {
               "title": "Requirements Gathering",
               "path": "requirements-gathering"
-            }
-            ,
+            },
             {
               "title": "Scope & Governance Framework",
               "path": "scope-governance-framework"
-            }
-            ,
+            },
             {
               "title": "Page builder readiness",
               "path": "page-builder"
             }
-            
           ]
         },
         {
@@ -62,7 +60,7 @@
             {
               "title": "Planning test strategy",
               "path": "test-strategy-planning"
-            }            
+            }
           ]
         },
         {
@@ -131,7 +129,7 @@
               "title": "Content Audit",
               "path": "content-audit"
             },
-                        {
+            {
               "title": "Multisite Strategy",
               "path": "multisite-strategy"
             },
@@ -188,8 +186,7 @@
             {
               "title": "Testing foundations",
               "path": "testing-foundations"
-            }            
-
+            }
           ]
         }
       ]
@@ -258,7 +255,7 @@
             {
               "title": "Scheduled Publishing",
               "path": "scheduled-publishing"
-            },         
+            },
             {
               "title": "Redirect",
               "path": "redirect"
@@ -304,20 +301,21 @@
             {
               "title": "Deployment Dashboard",
               "path": "deployments-dashboard"
-            },{
+            },
+            {
               "title": "Embedding content from DAM",
               "path": "content-assets"
-            },{
+            },
+            {
               "title": "Icon picker",
               "path": "marketplace-icon-picker"
-            },{
+            },
+            {
               "title": "In-Page Analytics",
               "path": "marketplace-ga"
             }
-
-            
           ]
-        },        
+        },
         {
           "title": "Middleware Invocations",
           "path": "middleware-invocations",
@@ -339,7 +337,7 @@
             {
               "title": "Enhancing search with documents",
               "path": "document-search"
-            }            
+            }
           ]
         }
       ]
@@ -356,7 +354,7 @@
         {
           "title": "Testing Framework",
           "path": "testing-framework"
-        },        
+        },
         {
           "title": "Go-Live Checklist",
           "path": "go-live-checklist"
@@ -371,15 +369,15 @@
         {
           "title": "AI Agents",
           "path": "getting-started-with-ai-agents"
-        },           
+        },
         {
           "title": "Data Fetching Optimizaton",
           "path": "data-fetching-optimization"
-        },        
+        },
         {
           "title": "On-page SEO optimization",
           "path": "seo-web-optimization"
-        } ,        
+        },
         {
           "title": "Optimizing content for AI",
           "path": "seo-geo-optimization"
@@ -387,11 +385,11 @@
         {
           "title": "Operational Governance",
           "path": "operational-governance"
-        },        
+        },
         {
           "title": "Performance Optimizaton",
           "path": "performance-optimization"
-        } ,
+        },
         {
           "title": "Publishing Optimizaton",
           "path": "publishing-optimization"
@@ -412,10 +410,10 @@
             {
               "title": "Moving to Sitecore Personalize",
               "path": "moving-to-Sitecore-personalize"
-            }               
-          ]          
-        }    
-      ]        
+            }
+          ]
+        }
+      ]
     },
     {
       "title": "Appendix I",
@@ -441,7 +439,8 @@
             {
               "title": "ASP.NET Core examples",
               "path": "asp-net-core-examples"
-            },{
+            },
+            {
               "title": "Exported components example",
               "path": "exported-components-example"
             },
@@ -459,4 +458,3 @@
     }
   ]
 }
-

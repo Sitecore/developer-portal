@@ -1,5 +1,8 @@
-import { appendPathToBasePath } from '@src/lib/utils/stringUtil';
-import { ManifestConfig, ManifestNavigationItem } from './interfaces/manifest';
+import { appendPathToBasePath } from "@/src/lib/util/stringUtil";
+import type {
+  ManifestConfig,
+  ManifestNavigationItem,
+} from "./interfaces/manifest";
 
 /**
  * Retrieves the sibling item of a given path from a list of routes.
@@ -9,7 +12,11 @@ import { ManifestConfig, ManifestNavigationItem } from './interfaces/manifest';
  * @param isNext - A boolean indicating whether to find the next sibling (true) or the previous sibling (false).
  * @returns The sibling `ManifestNavigationItem` if found, otherwise `null`.
  */
-export const getSiblingItem = (routes: ManifestNavigationItem[], currentPath: string, isNext: boolean): ManifestNavigationItem | null => {
+export const getSiblingItem = (
+  routes: ManifestNavigationItem[],
+  currentPath: string,
+  isNext: boolean,
+): ManifestNavigationItem | null => {
   for (let i = 0; i < routes.length; i++) {
     const route = routes[i];
 
@@ -29,7 +36,11 @@ export const getSiblingItem = (routes: ManifestNavigationItem[], currentPath: st
 
     // If the route has children, traverse them recursively
     if (route.children) {
-      const found = getSiblingItem(route.children, currentPath.replace(route.path + '/', ''), isNext);
+      const found = getSiblingItem(
+        route.children,
+        currentPath.replace(`${route.path}/`, ""),
+        isNext,
+      );
       if (found) {
         return found;
       }
@@ -48,7 +59,11 @@ export const getSiblingItem = (routes: ManifestNavigationItem[], currentPath: st
  * @param parent - The parent route of the current route, initially set to `null`.
  * @returns The parent `ManifestNavigationItem` if found, otherwise `null`.
  */
-export const getParent = (routes: ManifestNavigationItem[], currentPath: string, parent: ManifestNavigationItem | null = null): ManifestNavigationItem | null => {
+export const getParent = (
+  routes: ManifestNavigationItem[],
+  currentPath: string,
+  parent: ManifestNavigationItem | null = null,
+): ManifestNavigationItem | null => {
   for (const route of routes) {
     // Check if the current route matches the path
     if (route.path === currentPath) {
@@ -57,7 +72,11 @@ export const getParent = (routes: ManifestNavigationItem[], currentPath: string,
 
     // If the route has children, search within them
     if (route.children) {
-      const foundParent = getParent(route.children, currentPath.replace(route.path + '/', ''), route);
+      const foundParent = getParent(
+        route.children,
+        currentPath.replace(`${route.path}/`, ""),
+        route,
+      );
 
       if (foundParent) {
         return foundParent;
@@ -77,7 +96,11 @@ export const getParent = (routes: ManifestNavigationItem[], currentPath: string,
  * @param {ManifestNavigationItem[]} [parents=[]] - An array to collect parent routes during recursion.
  * @returns {ManifestNavigationItem[]} An array of parent routes leading to the current path.
  */
-export const getAllParents = (routes: ManifestNavigationItem[], currentPath: string, parents: ManifestNavigationItem[] = []): ManifestNavigationItem[] => {
+export const getAllParents = (
+  routes: ManifestNavigationItem[],
+  currentPath: string,
+  parents: ManifestNavigationItem[] = [],
+): ManifestNavigationItem[] => {
   for (const route of routes) {
     // If the current route matches the path, return the collected parents
     if (route.path === currentPath) {
@@ -89,7 +112,11 @@ export const getAllParents = (routes: ManifestNavigationItem[], currentPath: str
       const updatedParents = [...parents, route]; // Add current route to parents
 
       // Recursively search within children
-      const foundParents = getAllParents(route.children, currentPath.replace(route.path + '/', ''), updatedParents);
+      const foundParents = getAllParents(
+        route.children,
+        currentPath.replace(`${route.path}/`, ""),
+        updatedParents,
+      );
       if (foundParents.length > 0) {
         return foundParents;
       }
@@ -107,7 +134,10 @@ export const getAllParents = (routes: ManifestNavigationItem[], currentPath: str
  * @param currentPath - The path of the current route to find children for.
  * @returns An array of `ManifestNavigationItem` representing the direct children of the matched route.
  */
-export const getChildren = (routes: ManifestNavigationItem[], currentPath: string): ManifestNavigationItem[] => {
+export const getChildren = (
+  routes: ManifestNavigationItem[],
+  currentPath: string,
+): ManifestNavigationItem[] => {
   for (const route of routes) {
     // Check if the current route matches the path
     if (route.path === currentPath) {
@@ -117,7 +147,10 @@ export const getChildren = (routes: ManifestNavigationItem[], currentPath: strin
 
     // If the route has children, traverse them recursively
     if (route.children) {
-      const foundChildren = getChildren(route.children, currentPath.replace(route.path + '/', ''));
+      const foundChildren = getChildren(
+        route.children,
+        currentPath.replace(`${route.path}/`, ""),
+      );
 
       if (foundChildren.length > 0) {
         return foundChildren;
@@ -136,13 +169,18 @@ export const getChildren = (routes: ManifestNavigationItem[], currentPath: strin
  * @param fullPath - The full path string used to locate the specific route.
  * @returns The `ManifestNavigationItem` that matches the full path, or `null` if no match is found.
  */
-export const getRouteByFullPath = (routes: Array<ManifestNavigationItem>, fullPath: string): ManifestNavigationItem | null => {
-  const paths: Array<string> = fullPath.split('/').filter((path) => path !== '');
+export const getRouteByFullPath = (
+  routes: Array<ManifestNavigationItem>,
+  fullPath: string,
+): ManifestNavigationItem | null => {
+  const paths: Array<string> = fullPath
+    .split("/")
+    .filter((path) => path !== "");
 
   for (const route of routes) {
     if (route.path === paths[0]) {
       if (route.children && !route.ignoreLink) {
-        return getRouteByFullPath(route.children, paths.slice(1).join('/'));
+        return getRouteByFullPath(route.children, paths.slice(1).join("/"));
       } else {
         return route;
       }
@@ -158,37 +196,39 @@ export const getRouteByFullPath = (routes: Array<ManifestNavigationItem>, fullPa
  * @param currentRoute - The current sidebar navigation item.
  * @returns The URL for the sidebar navigation item.
  */
-export const getItemUrl = (config: ManifestConfig, currentRoute: ManifestNavigationItem): string => {
-    const findPathChain = (
-        routes: ManifestNavigationItem[],
-        targetPath: string,
-        chain: ManifestNavigationItem[] = []
-    ): ManifestNavigationItem[] | null => {
-        for (const route of routes) {
-            const newChain = [...chain, route];
+export const getItemUrl = (
+  config: ManifestConfig,
+  currentRoute: ManifestNavigationItem,
+): string => {
+  const findPathChain = (
+    routes: ManifestNavigationItem[],
+    targetPath: string,
+    chain: ManifestNavigationItem[] = [],
+  ): ManifestNavigationItem[] | null => {
+    for (const route of routes) {
+      const newChain = [...chain, route];
 
-            if (route.path === targetPath) {
-                return newChain; // found the route
-            }
+      if (route.path === targetPath) {
+        return newChain; // found the route
+      }
 
-            if (route.children) {
-                const result = findPathChain(route.children, targetPath, newChain);
-                if (result) return result;
-            }
-        }
-        return null;
-    };
-
-    const chain = findPathChain(config.routes, currentRoute.path);
-
-    if (!chain) {
-        console.warn(`getItemUrl: Could not resolve path for ${currentRoute.path}`);
-        return appendPathToBasePath(config.path, currentRoute.path);
+      if (route.children) {
+        const result = findPathChain(route.children, targetPath, newChain);
+        if (result) return result;
+      }
     }
+    return null;
+  };
 
-    const segments = chain.map((r) => r.path).filter(Boolean);
-    const fullPath = segments.join('/');
+  const chain = findPathChain(config.routes, currentRoute.path);
 
-    return appendPathToBasePath(config.path, fullPath);
+  if (!chain) {
+    console.warn(`getItemUrl: Could not resolve path for ${currentRoute.path}`);
+    return appendPathToBasePath(config.path, currentRoute.path);
+  }
+
+  const segments = chain.map((r) => r.path).filter(Boolean);
+  const fullPath = segments.join("/");
+
+  return appendPathToBasePath(config.path, fullPath);
 };
-

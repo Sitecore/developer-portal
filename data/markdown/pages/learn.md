@@ -12,7 +12,7 @@ hasInPageNav: true
 ## SitecoreAI
 Ready to explore Sitecore’s unified, cloud-native platform that connects all the marketing work into one solution?
 
-<Row columns={2}>
+<Row columns="2">
   <Article title="Introduction to SitecoreAI" description="SitecoreAI is the unified digital experience platform that brings together content, assets, data, and AI in one adaptive system." link="/sitecoreai/" maxWidth="sm" linktext="Read now"  />
   <Article title="SitecoreAI Navigation" description="Walk through the new navigation in SitecoreAI to access all capabilities available" link="/sitecoreai/navigation" maxWidth="sm" linktext="Read now"  />
   <Article title="Sitecore Studio" description="Sitecore Studio is the engine that lets you tailor the SitecoreAI platform itself, safely, securely, and at scale." link="/sitecoreai/sitecore-studio" maxWidth="sm" linktext="Read now"  />
@@ -21,21 +21,21 @@ Ready to explore Sitecore’s unified, cloud-native platform that connects all t
 
 ## Sitecore Cloud Portal
 The Sitecore Cloud Portal is the central hub for accessing your Sitecore products and manage access and permissions for all your organization.
-<Row columns={2}>
+<Row columns="2">
   <Link title="Read more" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
   <Link title="Login now" link="https://portal.sitecorecloud.io/" />
 </Row>
 
 ## Sitecore Platform DXP
 Get the hang of the traditional Sitecore XM/XP/XC platform with these beginner-friendly tutorials, walkthroughs, and samples.
-<Row columns={2}>
+<Row columns="2">
   <Link title="Read more" link="/products/experience-platform" />
   <Link title="Documentation" link="https://doc.sitecore.com/xp" />
 </Row>
 
 ## Looking for all Sitecore products
 All content regards XM Cloud, Content Hub etc is retained and has been moved to the link below.
-<Row columns={2}>
+<Row columns="2">
   <Link title="Read more" link="/products" />
 </Row>
       

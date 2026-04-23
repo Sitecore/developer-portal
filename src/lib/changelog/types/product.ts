@@ -1,6 +1,6 @@
-import { GetAllProductsQuery } from '@data/gql/generated/graphql';
+import type { GetAllProductsQuery } from "@data/gql/generated/graphql";
 
-import { parseSitecoreProductItem } from './sitecoreProduct';
+import { parseSitecoreProductItem } from "./sitecoreProduct";
 
 export type Product = {
   id: string;
@@ -16,7 +16,7 @@ export type Product = {
  */
 export function ParseProduct(data: GetAllProductsQuery): Array<Product> {
   if (!data.manySitecoreProduct?.results) {
-    console.log('No products found');
+    console.log("No products found");
     return [];
   }
 
