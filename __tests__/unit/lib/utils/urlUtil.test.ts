@@ -1,4 +1,8 @@
-import { getChangelogEntryUrl, getChangelogEntryUrlSegments } from '@/src/lib/util/urlUtil';
+import {
+  getChangelogEntryUrl,
+  getChangelogEntryUrlSegments,
+  toAbsolutePublicUrl,
+} from '@/src/lib/util/urlUtil';
 import type { ChangelogEntry } from '@src/lib/changelog/types';
 import { describe, expect, test } from 'vitest';
 
@@ -71,5 +75,39 @@ describe('getChangelogEntryUrl', () => {
     const url = getChangelogEntryUrl(dummyEntry, true);
 
     expect(url).toBe('/changelog/content-hub/22072024/fixed-issues-in-content-hub-july-22%2c-2024');
+  });
+
+  test('should return an absolute URL when NEXT_PUBLIC_PUBLIC_URL is set', () => {
+    vi.stubEnv('NEXT_PUBLIC_PUBLIC_URL', 'https://developers.example.com');
+    const url = getChangelogEntryUrl(dummyEntry, true);
+    vi.unstubAllEnvs();
+
+    expect(url).toBe(
+      'https://developers.example.com/changelog/content-hub/22072024/fixed-issues-in-content-hub-july-22%2c-2024',
+    );
+  });
+});
+
+describe('toAbsolutePublicUrl', () => {
+  test('returns absolute URLs unchanged', () => {
+    expect(toAbsolutePublicUrl('https://x.com/a?b=1')).toBe('https://x.com/a?b=1');
+  });
+
+  test('joins a path to NEXT_PUBLIC_PUBLIC_URL', () => {
+    vi.stubEnv('NEXT_PUBLIC_PUBLIC_URL', 'https://developers.example.com');
+    expect(toAbsolutePublicUrl('/blog/post')).toBe('https://developers.example.com/blog/post');
+    vi.unstubAllEnvs();
+  });
+
+  test('normalizes base without trailing slash', () => {
+    vi.stubEnv('NEXT_PUBLIC_PUBLIC_URL', 'https://developers.example.com');
+    expect(toAbsolutePublicUrl('/blog/post')).toBe('https://developers.example.com/blog/post');
+    vi.unstubAllEnvs();
+  });
+
+  test('returns a leading-slash path when public URL is unset', () => {
+    vi.stubEnv('NEXT_PUBLIC_PUBLIC_URL', '');
+    expect(toAbsolutePublicUrl('blog/post')).toBe('/blog/post');
+    vi.unstubAllEnvs();
   });
 });

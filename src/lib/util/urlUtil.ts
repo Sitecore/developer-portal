@@ -6,9 +6,30 @@ import type {
 import { formatDate } from "./dateUtil";
 import { slugify } from "./stringUtil";
 
-const publicUrl = process.env.NEXT_PUBLIC_PUBLIC_URL
-  ? process.env.NEXT_PUBLIC_PUBLIC_URL
-  : "";
+/**
+ * Canonical absolute URL for a site path (or pass-through if already absolute).
+ * Uses NEXT_PUBLIC_PUBLIC_URL as origin. If unset, returns a path starting with `/`.
+ */
+export function toAbsolutePublicUrl(pathOrUrl: string): string {
+  const s = pathOrUrl.trim();
+  if (!s) {
+    return s;
+  }
+  if (/^https?:\/\//i.test(s)) {
+    return s;
+  }
+  const rawBase = process.env.NEXT_PUBLIC_PUBLIC_URL?.trim() ?? "";
+  const path = s.startsWith("/") ? s : `/${s}`;
+  if (!rawBase) {
+    return path;
+  }
+  const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+  try {
+    return new URL(path, base).href;
+  } catch {
+    return path;
+  }
+}
 
 export function getChangelogEntryUrlSegments(
   entry: ChangelogEntry | ChangelogEntrySummary,
@@ -27,14 +48,14 @@ export function getChangelogEntryUrl(
   entry: ChangelogEntry | ChangelogEntrySummary,
   includeServerUrl?: boolean,
 ): string {
-  const url: Array<string> = [];
-
-  url.push("/changelog");
-  url.push(...getChangelogEntryUrlSegments(entry));
+  const relativePath = [
+    "/changelog",
+    ...getChangelogEntryUrlSegments(entry),
+  ].join("/");
 
   if (includeServerUrl) {
-    return `${publicUrl + url.join("/")}`;
+    return toAbsolutePublicUrl(relativePath);
   }
 
-  return url.join("/");
+  return relativePath;
 }
