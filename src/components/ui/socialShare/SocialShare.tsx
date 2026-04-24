@@ -2,12 +2,26 @@
 
 import { mdiCheck, mdiChevronLeft, mdiChevronRight, mdiContentCopy } from '@mdi/js';
 import Icon from '@mdi/react';
-import { Button } from '@src/components/ui/button';
+import { Button, buttonVariants } from '@src/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@src/components/ui/tooltip';
+import { cn } from '@src/lib/util/index';
 import { toAbsolutePublicUrl } from '@src/lib/util/urlUtil';
 import { EmailIcon, EmailShareButton, LinkedinIcon, LinkedinShareButton, RedditIcon, RedditShareButton, TelegramIcon, TelegramShareButton, TwitterIcon, TwitterShareButton, WhatsappIcon, WhatsappShareButton } from 'next-share';
-import { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState, type ComponentPropsWithoutRef } from 'react';
 import { toast } from 'sonner';
+
+/** next-share wraps children in a native `button`; use a span face so we do not nest buttons (invalid HTML / hydration errors). */
+const ShareTooltipTriggerFace = forwardRef<HTMLSpanElement, ComponentPropsWithoutRef<'span'>>(
+  ({ className, ...props }, ref) => (
+    <span
+      ref={ref}
+      data-slot="button"
+      className={cn(buttonVariants({ variant: 'ghost', size: 'icon-sm', colorScheme: 'neutral' }), className)}
+      {...props}
+    />
+  )
+);
+ShareTooltipTriggerFace.displayName = 'ShareTooltipTriggerFace';
 
 function useShareAbsoluteUrl(url: string): string {
   const [shareUrl, setShareUrl] = useState(() => toAbsolutePublicUrl(url));
@@ -62,13 +76,13 @@ export const SocialShare = ({ title, url }: SocialShareProps) => {
 
       {isOpen && (
         <div className="flex items-center gap-0">
-          <WhatsappShareButton url={shareUrl} title={title}>
+          <WhatsappShareButton url={shareUrl} title={title} aria-label="Share by Whatsapp">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" aria-label="Share by Whatsapp" size="icon-sm">
+                  <ShareTooltipTriggerFace>
                     <WhatsappIcon size={32} round />
-                  </Button>
+                  </ShareTooltipTriggerFace>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Share link by Whatsapp</p>
@@ -76,13 +90,13 @@ export const SocialShare = ({ title, url }: SocialShareProps) => {
               </Tooltip>
             </TooltipProvider>
           </WhatsappShareButton>
-          <TelegramShareButton url={shareUrl} title={title}>
+          <TelegramShareButton url={shareUrl} title={title} aria-label="Share by Telegram">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" aria-label="Share by Telegram" size="icon-sm">
+                  <ShareTooltipTriggerFace>
                     <TelegramIcon size={32} round />
-                  </Button>
+                  </ShareTooltipTriggerFace>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Share link by Telegram</p>
@@ -90,13 +104,13 @@ export const SocialShare = ({ title, url }: SocialShareProps) => {
               </Tooltip>
             </TooltipProvider>
           </TelegramShareButton>
-          <RedditShareButton url={shareUrl} title={title}>
+          <RedditShareButton url={shareUrl} title={title} aria-label="Share by Reddit">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" aria-label="Share by Reddit" size="icon-sm">
+                  <ShareTooltipTriggerFace>
                     <RedditIcon size={32} round />
-                  </Button>
+                  </ShareTooltipTriggerFace>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Share link by Reddit</p>
@@ -104,13 +118,13 @@ export const SocialShare = ({ title, url }: SocialShareProps) => {
               </Tooltip>
             </TooltipProvider>
           </RedditShareButton>
-          <TwitterShareButton url={shareUrl} title={title}>
+          <TwitterShareButton url={shareUrl} title={title} aria-label="Share on X">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" aria-label="Share on X" size="icon-sm">
+                  <ShareTooltipTriggerFace>
                     <TwitterIcon size={32} round />
-                  </Button>
+                  </ShareTooltipTriggerFace>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Share link on X</p>
@@ -121,13 +135,13 @@ export const SocialShare = ({ title, url }: SocialShareProps) => {
         </div>
       )}
 
-      <EmailShareButton url={shareUrl} title={title}>
+      <EmailShareButton url={shareUrl} title={title} aria-label="Share by email">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button variant="ghost" aria-label="Share by email" size="icon-sm">
+              <ShareTooltipTriggerFace>
                 <EmailIcon size={32} round />
-              </Button>
+              </ShareTooltipTriggerFace>
             </TooltipTrigger>
             <TooltipContent>
               <p>Share link by email</p>
@@ -136,13 +150,13 @@ export const SocialShare = ({ title, url }: SocialShareProps) => {
         </TooltipProvider>
       </EmailShareButton>
 
-      <LinkedinShareButton url={shareUrl} title={title}>
+      <LinkedinShareButton url={shareUrl} title={title} aria-label="Share on LinkedIn">
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button variant="ghost" aria-label="Share on LinkedIn" size="icon-sm">
+              <ShareTooltipTriggerFace>
                 <LinkedinIcon size={32} round />
-              </Button>
+              </ShareTooltipTriggerFace>
             </TooltipTrigger>
             <TooltipContent>
               <p>Share link on LinkedIn</p>
