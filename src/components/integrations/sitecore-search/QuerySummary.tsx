@@ -12,14 +12,10 @@ export const QuerySummary = (props: IQuerySummary) => {
   const showResultTo = showResultFrom + resultsPerPage - 1;
 
   return (
-    <p>
+    <p className="text-sm text-muted-foreground">
       Showing <strong>{showResultFrom}</strong> to
-      <strong>
-        {" "}
-        {showResultTo < totalResults ? showResultTo : totalResults}{" "}
-      </strong>
-      from <strong>{totalResults} </strong> results for{" "}
-      <strong>&quot;{title}&quot;</strong>
+      <strong> {showResultTo < totalResults ? showResultTo : totalResults} </strong>
+      from <strong>{totalResults} </strong> results for <strong>&quot;{title}&quot;</strong>
     </p>
   );
 };

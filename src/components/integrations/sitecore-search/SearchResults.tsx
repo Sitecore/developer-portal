@@ -1,17 +1,11 @@
-import {
-  type SearchResultsInitialState,
-  trackEntityPageViewEvent,
-  useSearchResults,
-  WidgetDataType,
-  widget,
-} from "@sitecore-search/react";
-import { Loading } from "@src/components/ui";
-import { Badge } from "@src/components/ui/badge";
-import Image from "next/image";
-import { QuerySummary } from "./QuerySummary";
-import SearchFacets from "./SearchFacets";
-import { SearchPagination } from "./SearchPagination";
-import { SearchSort } from "./SearchSort";
+import { type SearchResultsInitialState, trackEntityPageViewEvent, useSearchResults, widget, WidgetDataType } from '@sitecore-search/react';
+import { Badge } from '@src/components/ui/badge';
+import Image from 'next/image';
+import { Spinner } from '../../ui/spinner';
+import { QuerySummary } from './QuerySummary';
+import SearchFacets from './SearchFacets';
+import { SearchPagination } from './SearchPagination';
+import { SearchSort } from './SearchSort';
 
 export interface HighlightType {
   description?: string;
@@ -33,44 +27,25 @@ interface SearchResultsType {
   name: string;
   highlight: HighlightType;
 }
-type InitialState = SearchResultsInitialState<
-  "itemsPerPage" | "keyphrase" | "page" | "sortType"
->;
+type InitialState = SearchResultsInitialState<'itemsPerPage' | 'keyphrase' | 'page' | 'sortType'>;
 
 export const SearchResults = (props: InitialSearchProps) => {
-  const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(",") || [];
-  const {
-    initialKeyphrase = "",
-    initialArticlesPerPage = 24,
-    currentPage = 1,
-    defaultSortType = "suggested",
-  } = props;
+  const indexSources = process.env.NEXT_PUBLIC_SEARCH_SOURCES?.split(',') || [];
+  const { initialKeyphrase = '', initialArticlesPerPage = 24, currentPage = 1, defaultSortType = 'suggested' } = props;
   const {
     widgetRef,
     actions: { onSortChange, onFacetClick, onPageNumberChange, onItemClick },
-    state: {
-      page = currentPage,
-      itemsPerPage = initialArticlesPerPage,
-      sortType = defaultSortType,
-    },
-    queryResult: {
-      isLoading,
-      data: {
-        sort: { choices: sortChoices = [] } = {},
-        total_item: totalItems = 0,
-        content: articles = [],
-        facet: facets = [],
-      } = {},
-    },
+    state: { page = currentPage, itemsPerPage = initialArticlesPerPage, sortType = defaultSortType },
+    queryResult: { isLoading, data: { sort: { choices: sortChoices = [] } = {}, total_item: totalItems = 0, content: articles = [], facet: facets = [] } = {} },
   } = useSearchResults<SearchResultsType, InitialState>({
     query: (query) =>
       query
         .getRequest()
         .setSearchQueryHighlight({
-          fields: ["description"],
+          fields: ['description'],
           fragment_size: 100,
-          pre_tag: "<strong>",
-          post_tag: "</strong>",
+          pre_tag: '<strong>',
+          post_tag: '</strong>',
         })
         .setSources(indexSources),
     state: {
@@ -85,45 +60,31 @@ export const SearchResults = (props: InitialSearchProps) => {
     <>
       {isLoading && (
         <div className="pt-10">
-          <Loading />
+          <Spinner />
         </div>
       )}
+
       {!isLoading && (
-        <div className="grid grid-cols-6 gap-6" ref={widgetRef}>
+        <div className="grid grid-cols-3 gap-6" ref={widgetRef}>
           {articles.length > 0 && (
             <>
-              <div className="col-span-6 md:col-span-2">
+              <div className="col-span-3 md:col-span-1">
                 {/* Hide for desktop */}
                 <div className="md:hidden">
-                  <SearchSort
-                    onSortChange={onSortChange}
-                    sortChoices={sortChoices}
-                    sortType={sortType}
-                  />
+                  <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
                 </div>
 
-                <div className="ml-2 inline-block">
+                <div className="pr-6 w-full md:flex-col md:flex md:border-r-2 not-prose">
                   <SearchFacets onFacetClick={onFacetClick} facets={facets} />
                 </div>
               </div>
 
-              <div className="col-span-6 md:col-span-4">
+              <div className="col-span-3 md:col-span-2 md:pl-5">
                 <div className="flex justify-between items-center pb-8">
-                  {articles.length > 0 && (
-                    <QuerySummary
-                      currentPage={page}
-                      resultsPerPage={itemsPerPage}
-                      totalResults={totalItems}
-                      title={initialKeyphrase}
-                    />
-                  )}
+                  {articles.length > 0 && <QuerySummary currentPage={page} resultsPerPage={itemsPerPage} totalResults={totalItems} title={initialKeyphrase} />}
                   {/* Hide for mobile, will be replaced with SearchSort component above */}
                   <div className="hidden md:block">
-                    <SearchSort
-                      onSortChange={onSortChange}
-                      sortChoices={sortChoices}
-                      sortType={sortType}
-                    />
+                    <SearchSort onSortChange={onSortChange} sortChoices={sortChoices} sortType={sortType} />
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -135,17 +96,14 @@ export const SearchResults = (props: InitialSearchProps) => {
                         className="group border-b border-border pb-4 last:border-0"
                         onClick={(e) => {
                           e.preventDefault();
-                          onItemClick({ id: result.id || "", index });
-                          if (result.index_name !== "sitecore-devportal-v2") {
-                            trackEntityPageViewEvent("content", {
+                          onItemClick({ id: result.id || '', index });
+                          if (result.index_name !== 'sitecore-devportal-v2') {
+                            trackEntityPageViewEvent('content', {
                               items: [{ id: result.id }],
                             });
-                            window.open(result.url, "_blank");
+                            window.open(result.url, '_blank');
                           } else {
-                            window.open(
-                              `${result.url}?fromSearch=true`,
-                              "_blank",
-                            );
+                            window.open(`${result.url}?fromSearch=true`, '_blank');
                           }
                         }}
                       >
@@ -155,66 +113,22 @@ export const SearchResults = (props: InitialSearchProps) => {
                               {result.type}
                             </Badge>
                           )}
-                          {result.index_name && (
-                            <p className="text-sm uppercase tracking-wide text-muted-foreground">
-                              {result.site_name}
-                            </p>
-                          )}
+                          {result.index_name && <p className="text-sm uppercase tracking-wide text-muted-foreground">{result.site_name}</p>}
                         </div>
-                        <h3 className="text-lg font-heading mb-2">
-                          {result.name}
-                        </h3>
+                        <h3 className="text-lg font-heading mb-2">{result.name}</h3>
 
                         <div className="flex gap-6 py-2">
-                          {result.type === "Video" && (
+                          {result.type === 'Video' && (
                             <>
-                              {result.image_url && (
-                                <Image
-                                  width={200}
-                                  height={112}
-                                  src={result.image_url}
-                                  alt={result.index_name}
-                                  className="shadow-md rounded"
-                                />
-                              )}
-                              {!result.image_url && (
-                                <Image
-                                  width={200}
-                                  height={112}
-                                  src="/images/social/social-card-default.jpeg"
-                                  alt={result.index_name}
-                                  className="shadow-md rounded"
-                                />
-                              )}
+                              {result.image_url && <Image width={200} height={112} src={result.image_url} alt={result.index_name} className="shadow-md rounded" />}
+                              {!result.image_url && <Image width={200} height={112} src="/images/social/social-card-default.jpeg" alt={result.index_name} className="shadow-md rounded" />}
                             </>
                           )}
 
-                          {result.type === "Repository" && (
+                          {result.type === 'Repository' && (
                             <>
-                              {result.image_url && (
-                                <Image
-                                  width={200}
-                                  height={112}
-                                  src={result.url.replace(
-                                    "https://github.com",
-                                    "https://opengraph.githubassets.com/1",
-                                  )}
-                                  alt={result.index_name}
-                                  className="shadow-md rounded"
-                                />
-                              )}
-                              {!result.image_url && (
-                                <Image
-                                  width={200}
-                                  height={112}
-                                  src={result.url.replace(
-                                    "https://github.com",
-                                    "https://opengraph.githubassets.com/1",
-                                  )}
-                                  alt={result.index_name}
-                                  className="shadow-md rounded"
-                                />
-                              )}
+                              {result.image_url && <Image width={200} height={112} src={result.url.replace('https://github.com', 'https://opengraph.githubassets.com/1')} alt={result.index_name} className="shadow-md rounded" />}
+                              {!result.image_url && <Image width={200} height={112} src={result.url.replace('https://github.com', 'https://opengraph.githubassets.com/1')} alt={result.index_name} className="shadow-md rounded" />}
                             </>
                           )}
 
@@ -226,43 +140,22 @@ export const SearchResults = (props: InitialSearchProps) => {
                               }}
                             />
                           )}
-                          {!result.highlight && result.description && (
-                            <p className="text-sm line-clamp-3 py-0">
-                              {result.description}
-                            </p>
-                          )}
+                          {!result.highlight && result.description && <p className="text-sm line-clamp-3 py-0">{result.description}</p>}
                         </div>
-                        <p className="text-xs text-muted-foreground">
-                          {result.url}
-                        </p>
+                        <p className="text-xs text-muted-foreground">{result.url}</p>
                       </a>
                     ))}
                 </div>
-                <SearchPagination
-                  defaultCurrentPage={1}
-                  onPageNumberChange={(v) => onPageNumberChange({ page: v })}
-                  page={page}
-                  pageSize={itemsPerPage}
-                  totalItems={totalItems}
-                />
+                <SearchPagination defaultCurrentPage={1} onPageNumberChange={(v) => onPageNumberChange({ page: v })} page={page} pageSize={itemsPerPage} totalItems={totalItems} />
               </div>
             </>
           )}
-          {articles.length === 0 && (
-            <p className="md:col-span-3">
-              Your search terms did not return any results, please use the input
-              above to try again.
-            </p>
-          )}
+          {articles.length === 0 && <p className="md:col-span-3">Your search terms did not return any results, please use the input above to try again.</p>}
         </div>
       )}
     </>
   );
 };
 
-const SearchResultsWidget = widget(
-  SearchResults,
-  WidgetDataType.SEARCH_RESULTS,
-  "content",
-);
+const SearchResultsWidget = widget(SearchResults, WidgetDataType.SEARCH_RESULTS, 'content');
 export default SearchResultsWidget;
