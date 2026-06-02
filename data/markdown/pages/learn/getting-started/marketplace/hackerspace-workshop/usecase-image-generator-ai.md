@@ -31,7 +31,7 @@ Key features built with AI assistance:
 
 ### Step 1. Scaffold the Starter Kit
 
-Run the blok shadcn quickstart to generate a fully configured Next.js 15 Marketplace app:
+Run the blok shadcn quickstart to generate a fully configured Next.js Marketplace app:
 
 ```bash
 npx shadcn@latest add https://blok-shadcn.vercel.app/r/marketplace/next/quickstart-with-client-side-xmc.json
@@ -39,7 +39,7 @@ npx shadcn@latest add https://blok-shadcn.vercel.app/r/marketplace/next/quicksta
 
 Answer the prompts:
 - **Install shadcn@3.5.0?** → `y`
-- **Next.js version?** → `Next15`
+- **Next.js version?** → `Next.js`
 - **Project name** → use only lowercase letters, e.g. `my-image-generator`
 - **Base color** → any
 
@@ -94,7 +94,7 @@ Add a new `/image-generator` route to your existing marketplace app without touc
 
 **Prompt:**
 ```
-I have a Sitecore Marketplace app scaffolded with Next.js 15 App Router using the blok shadcn quickstart template. It already has MarketplaceProvider and useMarketplaceClient set up. I want to add an /image-generator route.
+I have a Sitecore Marketplace app scaffolded with Next.js App Router using the blok shadcn quickstart template. It already has MarketplaceProvider and useMarketplaceClient set up. I want to add an /image-generator route.
 
 Create only these new files — do not modify any existing files:
 - app/image-generator/layout.tsx — layout with title metadata "AI Image Generator"
@@ -122,7 +122,7 @@ Then ask AI to update your Next.js config:
 
 **Prompt:**
 ```
-I'm building a Next.js 15 App Router marketplace app embedded as an iframe in Sitecore. Images from the HuggingFace API will be converted to base64 data URLs client-side — no external image hostname needed.
+I'm building a Next.js App Router marketplace app embedded as an iframe in Sitecore. Images from the HuggingFace API will be converted to base64 data URLs client-side — no external image hostname needed.
 
 Update next.config.ts to:
 1. Allow the app to be embedded in an iframe from Sitecore Cloud Portal domains (set appropriate Content-Security-Policy or X-Frame-Options headers)
@@ -139,7 +139,7 @@ Extract the page context logic into a reusable hook so the UI component stays cl
 
 **Prompt:**
 ```
-In my Next.js 15 Sitecore Marketplace app I use @sitecore/marketplace-sdk and the scaffolded useMarketplaceClient hook.
+In my Next.js Sitecore Marketplace app I use @sitecore/marketplace-sdk and the scaffolded useMarketplaceClient hook.
 
 Create a custom React hook at app/image-generator/hooks/use-page-context.ts that:
 - Calls client.query("pages.context") once on mount to get the initial page name
@@ -162,14 +162,14 @@ Build the server-side API route that calls the HuggingFace Inference API via the
 
 **Prompt:**
 ```
-Create a Next.js 15 App Router API route at app/api/generate-image/route.ts.
+Create a Next.js App Router API route at app/api/generate-image/route.ts.
 
 Add these exports at the top:
   export const runtime = "nodejs"
   export const maxDuration = 60
 
 The route accepts POST requests with JSON body { prompt: string } and calls the HuggingFace router endpoint:
-  URL: https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0
+  URL: https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell
   Method: POST
   Headers:
     Content-Type: application/json
