@@ -107,7 +107,7 @@ function generateRouteList(manifestPath) {
   }
 
   if (manifest.title.includes("Accelerate")) {
-    output += "## Best Practice articles\n\n";
+    output += "### Best Practice articles\n\n";
   }
 
   // Add the route links with base URL
