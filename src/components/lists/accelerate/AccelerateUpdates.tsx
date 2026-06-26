@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/src/lib/util";
 import { mdiRss } from "@mdi/js";
 import Icon from "@mdi/react";
 import { TextLink } from "@src/components/links";
@@ -18,10 +19,9 @@ import {
 } from "@src/components/ui/tabs";
 import type { AccelerateRecipe } from "@src/lib/accelerate/types/recipe";
 import { GetProductIcon, Product, Variant } from "@src/lib/assets";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { cn } from "@/src/lib/util";
 
 type AccelerateUpdatesProps = {
   recipes: AccelerateRecipe[];
@@ -69,8 +69,8 @@ const AccelerateUpdates = ({
             <TabsTrigger variant="soft-rounded" value="all">
               All
             </TabsTrigger>
-            <TabsTrigger variant="soft-rounded" value="xmcloud">
-              XM Cloud
+            <TabsTrigger variant="soft-rounded" value="sitecoreai">
+              SitecoreAI
             </TabsTrigger>
             <TabsTrigger variant="soft-rounded" value="contenthub">
               Content Hub
@@ -83,11 +83,11 @@ const AccelerateUpdates = ({
               columns={columns}
             />
           </TabsContent>
-          <TabsContent value="xmcloud">
+          <TabsContent value="sitecoreai">
             <div className="relative">
               <RecipeList
                 recipes={recipes.filter(
-                  (recipe: AccelerateRecipe) => recipe.product === "XMCloud",
+                  (recipe: AccelerateRecipe) => recipe.product === "SitecoreAI",
                 )}
               />
               <Link

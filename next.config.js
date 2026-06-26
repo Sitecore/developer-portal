@@ -144,15 +144,19 @@ const nextConfig = {
       },
       {
         source: "/learn/accelerate/xm-cloud/updates",
-        destination: "/feeds/rss-accelerate-xmcloud.xml",
+        destination: "/feeds/rss-accelerate-sitecoreai.xml",
+      },
+      {
+        source: "/learn/accelerate/sitecoreai/updates",
+        destination: "/feeds/rss-accelerate-sitecoreai.xml",
       },
       {
         source: "/learn/accelerate/content-hub/updates",
         destination: "/feeds/rss-accelerate-contenthub.xml",
       },
       {
-        source: "/learn/accelerate/updates",
-        destination: "/feeds/rss-accelerate.xml",
+        source: "/Downloads/:slug*",
+        destination: "/downloads/:slug*",
       },
     ];
   },

@@ -5,7 +5,7 @@ import { getLatestRecipes } from "@src/lib/accelerate/latest";
 const FeedPage = () => null;
 
 export async function getServerSideProps(context: any) {
-  const recipes = await getLatestRecipes("xm-cloud");
+  const recipes = await getLatestRecipes("sitecoreai");
   if (recipes === null) {
     return { notFound: true };
   }
