@@ -143,6 +143,10 @@ const nextConfig = {
         destination: "/downloads/:slug*",
       },
       {
+        source: "/learn/accelerate/updates",
+        destination: "/feeds/rss-accelerate.xml",
+      },
+      {
         source: "/learn/accelerate/xm-cloud/updates",
         destination: "/feeds/rss-accelerate-sitecoreai.xml",
       },
