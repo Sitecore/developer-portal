@@ -1,11 +1,11 @@
 ---
-title: 'Sitecore Installation Framework 2.4.0'
+title: 'Sitecore Installation Framework 2.4.1'
 description: ''
-origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_240
+origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_241
 ---
 
 The Sitecore Install Framework (SIF) enables users to deploy and configure a Sitecore environment using a standard configuration design that can be extended through custom PowerShell functions.\
-Sitecore Installation Framework 2.4.0 is compatible with SXP 9.1.1, 9.2, and all 10.x releases. See also the compatibility table in the SIF Configuration Guide.
+Sitecore Installation Framework 2.4.1 is compatible with SXP 9.1.1, 9.2, and all 10.x releases. See also the compatibility table in the SIF Configuration Guide.
 
 Please see the Sitecore product installation instructions for more information on how to install Sitecore using SIF.
 
@@ -28,11 +28,11 @@ See [all available versions here](/downloads/Sitecore_Installation_Framework).
 
 | Resource                                                                                                                                                                                                                     | Description                                                                               |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [Sitecore Installation Framework](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20240/Secure/SitecoreInstallFramework%202.4.0%20rev.%20240301.zip) | Choose this link to download the Sitecore Installation Framework (SIF) PowerShell module. |
+| [Sitecore Installation Framework](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20241/Secure/SitecoreInstallFramework%202.4.1%20rev.%20260616.zip) | Choose this link to download the Sitecore Installation Framework (SIF) PowerShell module. |
 
 ## Release Information
 
 | Resource                                                                                                                                                                                                                                                  | Description                                                                             |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [Release Notes](/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_240/Release_Notes)                                                                                                                                          | A list of features, improvements, and fixes that have been implemented in this release. |
-| [Sitecore Installation Framework Configuration Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20240/Secure/Sitecore_Installation_Framework_Configuration_Guide-2.4.0.pdf) | Configuration guide for Sitecore Installation Framework                                 |
+| [Release Notes](/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_241/Release_Notes)                                                                                                                                          | A list of features, improvements, and fixes that have been implemented in this release. |
+| [Sitecore Installation Framework Configuration Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20241/Secure/Sitecore_Installation_Framework_Configuration_Guide-2.4.1.pdf) | Configuration guide for Sitecore Installation Framework                                 |
