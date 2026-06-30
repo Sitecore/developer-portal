@@ -7,8 +7,7 @@ description: 'A unified, AI-native platform that connects content, data, and per
 twitter: ['#SitecoreAI']
 stackexchange: ['#SitecoreAI']
 youtube: PL1jJVFm_lGnzqYagW1UahIBeqTIYSBQMc
-changelog: 6
-changelogProductId: ['av_GqshF5U2kL8XMGjf-Xw']
+
 cdpTags: ['sitecoreai']
 portalURL: 'https://portal.sitecorecloud.io/'
 pageType: 'article'

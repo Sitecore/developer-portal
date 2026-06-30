@@ -33,7 +33,7 @@ With AI at its core, SitecoreAI coordinates campaigns, personalises every moment
 Today’s experiences change fast. Our CMS gives your teams the freedom to build, design, and update content at the speed your customers expect with no waiting and no bottlenecks. Manage, design, and deliver experiences that scale with your ambition.
 
 <Row columns={3}>
-<Link title="Get started with Content management" link="/sitecoreai/capabilities/cms"/>
+<Link title="Get started with CMS" link="/sitecoreai/capabilities/cms"/>
 <Link title="Documentation" link="https://doc.sitecore.com/sai/en/users/sitecoreai/sitecoreai.html" />
 <Link title="Changelog" link="https://developers.sitecore.com/changelog"/>
 </Row>
