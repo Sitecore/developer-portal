@@ -39,6 +39,8 @@ type SocialShareProps = {
 export const SocialShare = ({ title, url }: SocialShareProps) => {
 	const [hasCopied, setHasCopied] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
+	const shareButtonClassName =
+		"inline-flex h-8 w-8 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring";
 
 	const onCopy = () => {
 		navigator.clipboard.writeText(url);
@@ -69,118 +71,112 @@ export const SocialShare = ({ title, url }: SocialShareProps) => {
 
 			{isOpen && (
 				<div className="flex items-center gap-0">
-					<WhatsappShareButton url={url} title={title}>
-						<TooltipProvider>
-							<Tooltip>
-								<TooltipTrigger asChild>
-									<Button
-										variant="ghost"
-										aria-label="Share by Whatsapp"
-										className="h-8 w-8 p-0"
-									>
-										<WhatsappIcon size={32} round />
-									</Button>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Share link by Whatsapp</p>
-								</TooltipContent>
-							</Tooltip>
-						</TooltipProvider>
-					</WhatsappShareButton>
-					<TelegramShareButton url={url} title={title}>
-						<TooltipProvider>
-							<Tooltip>
-								<TooltipTrigger asChild>
-									<Button
-										variant="ghost"
-										aria-label="Share by Telegram"
-										className="h-8 w-8 p-0"
-									>
-										<TelegramIcon size={32} round />
-									</Button>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Share link by Telegram</p>
-								</TooltipContent>
-							</Tooltip>
-						</TooltipProvider>
-					</TelegramShareButton>
-					<RedditShareButton url={url} title={title}>
-						<TooltipProvider>
-							<Tooltip>
-								<TooltipTrigger asChild>
-									<Button
-										variant="ghost"
-										aria-label="Share by Reddit"
-										className="h-8 w-8 p-0"
-									>
-										<RedditIcon size={32} round />
-									</Button>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Share link by Reddit</p>
-								</TooltipContent>
-							</Tooltip>
-						</TooltipProvider>
-					</RedditShareButton>
-					<TwitterShareButton url={url} title={title}>
-						<TooltipProvider>
-							<Tooltip>
-								<TooltipTrigger asChild>
-									<Button
-										variant="ghost"
-										aria-label="Share on X"
-										className="h-8 w-8 p-0"
-									>
-										<TwitterIcon size={32} round />
-									</Button>
-								</TooltipTrigger>
-								<TooltipContent>
-									<p>Share link on X</p>
-								</TooltipContent>
-							</Tooltip>
-						</TooltipProvider>
-					</TwitterShareButton>
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger asChild>
+								<WhatsappShareButton
+									url={url}
+									title={title}
+									aria-label="Share by Whatsapp"
+									className={shareButtonClassName}
+								>
+									<WhatsappIcon size={32} round />
+								</WhatsappShareButton>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>Share link by Whatsapp</p>
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger asChild>
+								<TelegramShareButton
+									url={url}
+									title={title}
+									aria-label="Share by Telegram"
+									className={shareButtonClassName}
+								>
+									<TelegramIcon size={32} round />
+								</TelegramShareButton>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>Share link by Telegram</p>
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger asChild>
+								<RedditShareButton
+									url={url}
+									title={title}
+									aria-label="Share by Reddit"
+									className={shareButtonClassName}
+								>
+									<RedditIcon size={32} round />
+								</RedditShareButton>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>Share link by Reddit</p>
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger asChild>
+								<TwitterShareButton
+									url={url}
+									title={title}
+									aria-label="Share on X"
+									className={shareButtonClassName}
+								>
+									<TwitterIcon size={32} round />
+								</TwitterShareButton>
+							</TooltipTrigger>
+							<TooltipContent>
+								<p>Share link on X</p>
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
 				</div>
 			)}
 
-			<EmailShareButton url={url} title={title}>
-				<TooltipProvider>
-					<Tooltip>
-						<TooltipTrigger asChild>
-							<Button
-								variant="ghost"
-								aria-label="Share by email"
-								className="h-8 w-8 p-0"
-							>
-								<EmailIcon size={32} round />
-							</Button>
-						</TooltipTrigger>
-						<TooltipContent>
-							<p>Share link by email</p>
-						</TooltipContent>
-					</Tooltip>
-				</TooltipProvider>
-			</EmailShareButton>
+			<TooltipProvider>
+				<Tooltip>
+					<TooltipTrigger asChild>
+						<EmailShareButton
+							url={url}
+							title={title}
+							aria-label="Share by email"
+							className={shareButtonClassName}
+						>
+							<EmailIcon size={32} round />
+						</EmailShareButton>
+					</TooltipTrigger>
+					<TooltipContent>
+						<p>Share link by email</p>
+					</TooltipContent>
+				</Tooltip>
+			</TooltipProvider>
 
-			<LinkedinShareButton url={url} title={title}>
-				<TooltipProvider>
-					<Tooltip>
-						<TooltipTrigger asChild>
-							<Button
-								variant="ghost"
-								aria-label="Share on LinkedIn"
-								className="h-8 w-8 p-0"
-							>
-								<LinkedinIcon size={32} round />
-							</Button>
-						</TooltipTrigger>
-						<TooltipContent>
-							<p>Share link on LinkedIn</p>
-						</TooltipContent>
-					</Tooltip>
-				</TooltipProvider>
-			</LinkedinShareButton>
+			<TooltipProvider>
+				<Tooltip>
+					<TooltipTrigger asChild>
+						<LinkedinShareButton
+							url={url}
+							title={title}
+							aria-label="Share on LinkedIn"
+							className={shareButtonClassName}
+						>
+							<LinkedinIcon size={32} round />
+						</LinkedinShareButton>
+					</TooltipTrigger>
+					<TooltipContent>
+						<p>Share link on LinkedIn</p>
+					</TooltipContent>
+				</Tooltip>
+			</TooltipProvider>
 
 			<TooltipProvider>
 				<Tooltip>

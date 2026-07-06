@@ -1,49 +1,30 @@
-"use client";
+'use client';
 
-import { mdiDownload } from "@mdi/js";
-import Icon from "@mdi/react";
-import ChangelogByMonth from "@src/components/changelog/ChangelogByMonth";
-import { ChangelogItemMeta } from "@src/components/changelog/ChangelogItemMeta";
-import { TrackPageView } from "@src/components/integrations/engage/TrackPageView";
-import { LinkButton } from "@src/components/links";
-import { Alert, AlertDescription } from "@src/components/ui/alert";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-} from "@src/components/ui/breadcrumb";
-import { Button } from "@src/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@src/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@src/components/ui/dialog";
-import {
-  CenteredContent,
-  Hero,
-  VerticalGroup,
-} from "@src/components/ui/sections";
-import { SocialShare } from "@src/components/ui/socialShare";
-import Layout from "@src/layouts/Layout";
-import { Changelog } from "@src/lib/changelog";
-import { getChangelogCredentials } from "@src/lib/changelog/common/credentials";
-import type { ChangelogEntry, Product } from "@src/lib/changelog/types";
-import { Info } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { getQueryArray } from "@/src/lib/util/requests";
-import { getSlug, slugify } from "@/src/lib/util/stringUtil";
-import { getChangelogEntryUrl } from "@/src/lib/util/urlUtil";
+import { getQueryArray } from '@/src/lib/util/requests';
+import { getSlug, slugify } from '@/src/lib/util/stringUtil';
+import { getChangelogEntryUrl } from '@/src/lib/util/urlUtil';
+import { mdiDownload } from '@mdi/js';
+import Icon from '@mdi/react';
+import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
+import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
+import { TrackPageView } from '@src/components/integrations/engage/TrackPageView';
+import { LinkButton } from '@src/components/links';
+import { Alert, AlertDescription } from '@src/components/ui/alert';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList } from '@src/components/ui/breadcrumb';
+import { Button } from '@src/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@src/components/ui/card';
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@src/components/ui/dialog';
+import { CenteredContent, Hero, VerticalGroup } from '@src/components/ui/sections';
+import Layout from '@src/layouts/Layout';
+import { Changelog } from '@src/lib/changelog';
+import { getChangelogCredentials } from '@src/lib/changelog/common/credentials';
+import type { ChangelogEntry, Product } from '@src/lib/changelog/types';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+
+const SocialShare = dynamic(() => import('@src/components/ui/socialShare').then((mod) => mod.SocialShare), { ssr: false });
 
 type ChangelogProps = {
   currentProduct: Product;
@@ -57,15 +38,11 @@ export async function getServerSideProps(context: any) {
   const isPreview = context.preview || false;
   const changelog = new Changelog(getChangelogCredentials(), isPreview);
 
-  const products = await changelog
-    .getProducts()
-    .then((response: Array<Product>) => {
-      return response;
-    });
+  const products = await changelog.getProducts().then((response: Array<Product>) => {
+    return response;
+  });
   let changelogEntry: ChangelogEntry | undefined;
-  const currentProduct: Product | undefined = products.find(
-    (p) => slugify(p.name) === product,
-  );
+  const currentProduct: Product | undefined = products.find((p) => slugify(p.name) === product);
   if (!currentProduct) {
     return {
       notFound: true,
@@ -73,14 +50,7 @@ export async function getServerSideProps(context: any) {
   }
 
   try {
-    changelogEntry =
-      entry.length === 2
-        ? await changelog.getEntryByTitleAndDate(
-            entry[1],
-            entry[0],
-            currentProduct.id,
-          )
-        : await changelog.getEntryByTitle(entry[0], currentProduct?.id);
+    changelogEntry = entry.length === 2 ? await changelog.getEntryByTitleAndDate(entry[1], entry[0], currentProduct.id) : await changelog.getEntryByTitle(entry[0], currentProduct?.id);
   } catch {
     return {
       notFound: true,
@@ -95,21 +65,14 @@ export async function getServerSideProps(context: any) {
   };
 }
 
-const ChangelogProduct = ({
-  currentProduct,
-  changelogEntry,
-}: ChangelogProps) => {
+const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const title = `${currentProduct.name} Changelog`;
   const description = `Learn more about new versions, changes and improvements for ${currentProduct.name}`;
 
   return (
     <TrackPageView product={currentProduct}>
-      <Layout
-        title={changelogEntry.title}
-        section={title}
-        description={changelogEntry.title}
-      >
+      <Layout title={changelogEntry.title} section={title} description={changelogEntry.title}>
         <Hero title={title} description={description}></Hero>
         <VerticalGroup>
           <CenteredContent className="py-8 gap-8">
@@ -118,16 +81,10 @@ const ChangelogProduct = ({
                 <Breadcrumb>
                   <BreadcrumbList>
                     <BreadcrumbItem>
-                      <BreadcrumbLink href="/changelog">
-                        Changelog
-                      </BreadcrumbLink>
+                      <BreadcrumbLink href="/changelog">Changelog</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbItem>
-                      <BreadcrumbLink
-                        href={`/changelog/${getSlug(currentProduct.name)}`}
-                      >
-                        {currentProduct.name}
-                      </BreadcrumbLink>
+                      <BreadcrumbLink href={`/changelog/${getSlug(currentProduct.name)}`}>{currentProduct.name}</BreadcrumbLink>
                     </BreadcrumbItem>
                   </BreadcrumbList>
                 </Breadcrumb>
@@ -135,15 +92,8 @@ const ChangelogProduct = ({
                 {/* The full changelog item */}
                 <Card className="border-0 shadow-none mt-8 mb-16">
                   <CardHeader className="pb-4">
-                    <h2
-                      className="text-xl font-heading"
-                      id={getSlug(changelogEntry.title)}
-                    >
-                      <Link
-                        href={getChangelogEntryUrl(changelogEntry)}
-                        title={changelogEntry.title}
-                        className="hover:underline"
-                      >
+                    <h2 className="text-xl font-heading" id={getSlug(changelogEntry.title)}>
+                      <Link href={getChangelogEntryUrl(changelogEntry)} title={changelogEntry.title} className="hover:underline">
                         {changelogEntry.title}
                       </Link>
                     </h2>
@@ -152,64 +102,37 @@ const ChangelogProduct = ({
 
                     {changelogEntry.scheduled && (
                       <Alert variant="default" className="mt-4">
-                        <Info className="h-4 w-4" />
-                        <AlertDescription>
-                          This functionality has not been released yet
-                        </AlertDescription>
+                        <AlertDescription>This functionality has not been released yet</AlertDescription>
                       </Alert>
                     )}
-                    {!changelogEntry.scheduled &&
-                      changelogEntry.status &&
-                      changelogEntry.status.identifier === "in-progress" && (
-                        <Alert variant="default" className="mt-4">
-                          <Info className="h-4 w-4" />
-                          <AlertDescription>
-                            This functionality is currently being deployed and
-                            might not be available to all customers yet
-                          </AlertDescription>
-                        </Alert>
-                      )}
+                    {!changelogEntry.scheduled && changelogEntry.status && changelogEntry.status.identifier === 'in-progress' && (
+                      <Alert variant="default" className="mt-4">
+                        <AlertDescription>This functionality is currently being deployed and might not be available to all customers yet</AlertDescription>
+                      </Alert>
+                    )}
                   </CardHeader>
                   <CardContent className="py-0">
-                    {changelogEntry.image.length > 0 &&
-                      changelogEntry.image[0].fileUrl && (
-                        <>
-                          <Image
-                            src={changelogEntry.image[0].fileUrl}
-                            alt={changelogEntry.title || ""}
-                            width={800}
-                            height={400}
-                            className="rounded-lg cursor-zoom-in mb-4 max-w-full"
-                            onClick={() => setIsOpen(true)}
-                          />
+                    {changelogEntry.image.length > 0 && changelogEntry.image[0].fileUrl && (
+                      <>
+                        <Image src={changelogEntry.image[0].fileUrl} alt={changelogEntry.title || ''} width={800} height={400} className="rounded-lg cursor-zoom-in mb-4 max-w-full" onClick={() => setIsOpen(true)} />
 
-                          <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                            <DialogContent className="max-w-6xl">
-                              <DialogHeader>
-                                <DialogTitle>
-                                  {changelogEntry.title}
-                                </DialogTitle>
-                              </DialogHeader>
-                              <div className="flex items-center justify-center">
-                                <Image
-                                  src={changelogEntry.image[0].fileUrl}
-                                  alt={changelogEntry.title || ""}
-                                  width={1200}
-                                  height={600}
-                                />
-                              </div>
-                              <DialogFooter>
-                                <Button
-                                  variant="outline"
-                                  onClick={() => setIsOpen(false)}
-                                >
-                                  Close
-                                </Button>
-                              </DialogFooter>
-                            </DialogContent>
-                          </Dialog>
-                        </>
-                      )}
+                        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+                          <DialogContent className="max-w-6xl">
+                            <DialogHeader>
+                              <DialogTitle>{changelogEntry.title}</DialogTitle>
+                            </DialogHeader>
+                            <div className="flex items-center justify-center">
+                              <Image src={changelogEntry.image[0].fileUrl} alt={changelogEntry.title || ''} width={1200} height={600} />
+                            </div>
+                            <DialogFooter>
+                              <Button variant="outline" onClick={() => setIsOpen(false)}>
+                                Close
+                              </Button>
+                            </DialogFooter>
+                          </DialogContent>
+                        </Dialog>
+                      </>
+                    )}
                     <article
                       className="prose max-w-none"
                       dangerouslySetInnerHTML={{
@@ -217,23 +140,11 @@ const ChangelogProduct = ({
                       }}
                     />
 
-                    {changelogEntry.image.filter((img) =>
-                      img.fileType?.includes("pdf"),
-                    ).length > 0 &&
+                    {changelogEntry.image.filter((img) => img.fileType?.includes('pdf')).length > 0 &&
                       changelogEntry.image
-                        .filter((img) => img.fileType?.includes("pdf"))
+                        .filter((img) => img.fileType?.includes('pdf'))
                         .map((pdf) => {
-                          return (
-                            <LinkButton
-                              key={pdf.fileUrl || pdf.id}
-                              text="Download PDF"
-                              variant="outline"
-                              size="sm"
-                              icon={<Icon path={mdiDownload} size={1} />}
-                              href={pdf.fileUrl}
-                              title={`Download the PDF ${pdf.name}`}
-                            />
-                          );
+                          return <LinkButton key={pdf.fileUrl || pdf.id} text="Download PDF" variant="outline" size="sm" icon={<Icon path={mdiDownload} size={1} />} href={pdf.fileUrl} title={`Download the PDF ${pdf.name}`} />;
                         })}
 
                     {changelogEntry.fullArticle != null && (
@@ -245,25 +156,9 @@ const ChangelogProduct = ({
                       />
                     )}
                   </CardContent>
-                  <CardFooter
-                    className={
-                      changelogEntry.readMoreLink
-                        ? "justify-between"
-                        : "justify-end"
-                    }
-                  >
-                    {changelogEntry.readMoreLink && (
-                      <LinkButton
-                        variant="ghost"
-                        href={changelogEntry.readMoreLink}
-                        text="Read more"
-                        title={`Read more about ${changelogEntry.title}`}
-                      />
-                    )}
-                    <SocialShare
-                      url={getChangelogEntryUrl(changelogEntry, true)}
-                      title={`${changelogEntry.title} - ${changelogEntry.productName} Changelog - Sitecore`}
-                    />
+                  <CardFooter className={changelogEntry.readMoreLink ? 'justify-between' : 'justify-end'}>
+                    {changelogEntry.readMoreLink && <LinkButton variant="ghost" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} />}
+                    <SocialShare url={getChangelogEntryUrl(changelogEntry, true)} title={`${changelogEntry.title} - ${changelogEntry.productName} Changelog - Sitecore`} />
                   </CardFooter>
                 </Card>
               </div>

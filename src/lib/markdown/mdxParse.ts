@@ -9,6 +9,28 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import rehypeExtractHeadings from "./rehype/extractHeadings";
 
+const safeOembedTransformer = {
+  ...oembedTransformer,
+  shouldTransform: async (url: string) => {
+    try {
+      return await oembedTransformer.shouldTransform(url);
+    } catch {
+      // Fail open when provider discovery/network calls fail.
+      return false;
+    }
+  },
+  getHTML: async (
+    url: string,
+    config?: Parameters<typeof oembedTransformer.getHTML>[1],
+  ) => {
+    try {
+      return await oembedTransformer.getHTML(url, config);
+    } catch {
+      return null;
+    }
+  },
+};
+
 export async function ParseContent(stream: Buffer) {
   const headings: Array<ContentHeading> = [];
   const result = await serialize(stream.toString(), {
@@ -19,7 +41,7 @@ export async function ParseContent(stream: Buffer) {
         [
           remarkEmbedder,
           {
-            transformers: [oembedTransformer],
+            transformers: [safeOembedTransformer],
             handleHTML,
           },
         ],
