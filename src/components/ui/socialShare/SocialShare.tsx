@@ -1,32 +1,32 @@
 "use client";
 
 import {
-	mdiCheck,
-	mdiChevronLeft,
-	mdiChevronRight,
-	mdiContentCopy,
+    mdiCheck,
+    mdiChevronLeft,
+    mdiChevronRight,
+    mdiContentCopy,
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import { Button } from "@src/components/ui/button";
 import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
 } from "@src/components/ui/tooltip";
 import {
-	EmailIcon,
-	EmailShareButton,
-	LinkedinIcon,
-	LinkedinShareButton,
-	RedditIcon,
-	RedditShareButton,
-	TelegramIcon,
-	TelegramShareButton,
-	TwitterIcon,
-	TwitterShareButton,
-	WhatsappIcon,
-	WhatsappShareButton,
+    EmailIcon,
+    EmailShareButton,
+    LinkedinIcon,
+    LinkedinShareButton,
+    RedditIcon,
+    RedditShareButton,
+    TelegramIcon,
+    TelegramShareButton,
+    TwitterIcon,
+    TwitterShareButton,
+    WhatsappIcon,
+    WhatsappShareButton,
 } from "next-share";
 import { useState } from "react";
 import { toast } from "sonner";
