@@ -6,6 +6,7 @@ origin: https://dev.sitecore.net/Downloads/Team_Development_for_Sitecore.aspx
 
 ### Team Development for Sitecore 6.x
 
+[Team Development for Sitecore 6.0.6](/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_606)\
 [Team Development for Sitecore 6.0.5](/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_605)\
 [Team Development for Sitecore 6.0.4](/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_604)\
 [Team Development for Sitecore 6.0.3](/downloads/Team_Development_for_Sitecore/6x/Team_Development_for_Sitecore_603)\
