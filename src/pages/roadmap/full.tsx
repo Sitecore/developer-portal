@@ -43,18 +43,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      fallback: roadmap,
       pageInfo,
       products: roadmap.products,
     },
   };
 };
 
-const Search: NextPage<SearchPageProps> = ({
-  pageInfo,
-  fallback,
-  products,
-}) => {
+const Search: NextPage<SearchPageProps> = ({ pageInfo, products }) => {
   const [selectedChange, setSelectedChange] = useState<MultiValue<Option>>([]);
   const handleChange = (newValue: MultiValue<Option>) => {
     setSelectedChange(newValue);
