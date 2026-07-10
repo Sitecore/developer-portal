@@ -12,6 +12,7 @@ import { getPageInfo } from "@/src/lib/page-info";
 import { getQueryArray, slugify } from "@/src/lib/util";
 import { mdiChevronLeft } from "@mdi/js";
 import { Alert, AlertDescription, AlertTitle } from "@src/components/ui/alert";
+import type { Option } from "@src/components/ui/dropdown";
 import type { RoadmapInformation } from "@src/lib/interfaces/jira";
 import { getRoadmap, Phase } from "@src/lib/jira";
 import type { GetServerSideProps, NextPage } from "next";
@@ -22,8 +23,8 @@ import useSWR from "swr";
 interface SearchPageProps {
   pageInfo: PageInfo;
   fallback: RoadmapInformation;
-  products: (typeof Option)[];
-  currentProduct: typeof Option;
+  products: Option[];
+  currentProduct: Option;
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -44,7 +45,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const products = roadmap.products;
   const currentProduct: Option | undefined = products.find(
-    (p) => slugify(p.label) == slugify(product[0]),
+    (p) => slugify(p.label) === slugify(product[0]),
   );
 
   if (currentProduct === undefined) {
@@ -61,11 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-const Search: NextPage<SearchPageProps> = ({
-  pageInfo,
-  currentProduct,
-  products,
-}) => {
+const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct }) => {
   const url: string = `../api/roadmap?product=${currentProduct.value}`;
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error, isLoading } = useSWR(url, fetcher);
