@@ -35,8 +35,8 @@ export interface Attachment {
 
 export interface Fields {
   summary: string;
-  customfield_15180: CustomField; // Roadmap Phase
-  customfield_15258?: CustomField[]; // Product
+  customfield_22391: CustomField; // Roadmap Phase
+  customfield_24688?: CustomField[]; // Product
   customfield_15555?: string; // Speaker notes
   customfield_15423?: string; // Marketing title
   attachment: Attachment[];
@@ -57,7 +57,7 @@ export interface Issue {
 export interface Names {
   summary: string;
   customfield_15180: string;
-  customfield_15258: string; // Product
+  customfield_24688: string; // Product
   status: string;
 }
 

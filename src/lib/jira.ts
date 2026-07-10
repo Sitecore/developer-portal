@@ -41,6 +41,7 @@ export enum Phase {
 enum FilterOption {
   Equals = "=",
   NotEquals = "!=",
+  In = "in",
 }
 
 async function fetchData<T>(url: string): Promise<T> {
@@ -75,32 +76,38 @@ function assertValidJiraAttachmentId(id: string): void {
 export async function GetJiraResponse(): Promise<JiraResponse> {
   // Get all issues from Jira where external roadmap is set to 1 (true)
 
+// issuetype = Idea 
+// AND cf[22914] = 24049 
+// AND cf[22391] in (23554, 23555, 23553)
+// ORDER BY project ASC
+
+
   const fields = [
     "summary",
     "description",
     "status",
-    "customfield_15180", // Roadmap phase
-    "customfield_15258", // Product
-    "customfield_15555", // Speaker notes
-    "customfield_15423", // Marketing title
+    "customfield_22391", // Roadmap phase
+    "customfield_24688", // Product
+    // "customfield_15555", // Speaker notes
+    // "customfield_15423", // Marketing title
     "attachment",
   ];
 
   const filters = [
-    { key: "project", value: "SMAP", operator: FilterOption.Equals },
-    { key: "cf[15395]", value: "1", operator: FilterOption.Equals }, // External roadmap
-    { key: "cf[17325]", value: "EMPTY", operator: FilterOption.Equals }, // Idea archived
-    { key: "status", value: "archived", operator: FilterOption.NotEquals }, // second archived status
-    {
-      key: "cf[15180]",
-      value: '"Won\'t do"',
-      operator: FilterOption.NotEquals,
-    }, // phase does not equal "Won't do"
+    { key: "issuetype", value: "Idea", operator: FilterOption.Equals },
+    { key: "cf[22914]", value: "24049", operator: FilterOption.Equals }, // External roadmap
+    { key: "cf[22391]", value: "(23554, 23555, 23553)", operator: FilterOption.In }, // Idea archived
+    // { key: "status", value: "archived", operator: FilterOption.NotEquals }, // second archived status
+    // {
+    //   key: "cf[15180]",
+    //   value: '"Won\'t do"',
+    //   operator: FilterOption.NotEquals,
+    // }, // phase does not equal "Won't do"
   ];
 
   const jqlString = createJqlString(filters);
   const roadmapAPI = `${jiraBaseUrl}/search/jql?jql=${jqlString}&fields=${fields.join(",")}&expand=names&maxResults=1000&expand=renderedFields`;
-
+console.log("roadmapAPI", roadmapAPI);
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
   let allIssues = response.issues;
@@ -156,7 +163,7 @@ export async function getRoadmap(): Promise<RoadmapInformation> {
 
 export async function getProducts(issues: any[]): Promise<string[]> {
   const products = issues
-    .flatMap((issue: Issue) => issue.fields.customfield_15258 || [])
+    .flatMap((issue: Issue) => issue.fields.customfield_24688 || [])
     .map((label: CustomField) => label.value);
 
   const uniqueProducts = [...new Set(products)];
@@ -169,8 +176,8 @@ export async function getProductsAsOptions(
   const options: Option[] = [];
 
   issues.forEach((issue: Issue) => {
-    if (issue.fields.customfield_15258) {
-      issue.fields.customfield_15258.forEach((field: CustomField) => {
+    if (issue.fields.customfield_24688) {
+      issue.fields.customfield_24688.forEach((field: CustomField) => {
         if (
           !options.some((existingOption) => existingOption.value === field.id)
         ) {

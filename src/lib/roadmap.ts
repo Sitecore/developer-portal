@@ -33,9 +33,9 @@ function replaceImageUrls(content: string): string {
 }
 
 export function parseJiraIssue(issue: Issue) {
-  const roadmapPhase = issue.fields.customfield_15180?.value;
+  const roadmapPhase = issue.fields.customfield_22391?.value;
   const product: RoadmapProduct[] =
-    issue.fields.customfield_15258?.map((label) => ({
+    issue.fields.customfield_24688?.map((label) => ({
       name: label.value,
       id: label.id,
     })) || [];
