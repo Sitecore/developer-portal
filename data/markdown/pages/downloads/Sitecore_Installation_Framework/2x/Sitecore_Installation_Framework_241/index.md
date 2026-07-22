@@ -16,7 +16,6 @@ See [all available versions here](/downloads/Sitecore_Installation_Framework).
     We recommend installing the Sitecore Installation framework through the official Sitecore PowerShell gallery feed. [Read the FAQ for more information](https://doc.sitecore.com/xp/en/developers/100/sitecore-experience-manager/sitecore-powershell-public-nuget-feed-faq.html).
   </Alert>
 
-
 ## Links
 
 | Resource                                                                                                                                                    | Description                                                                                                                      |
@@ -35,4 +34,4 @@ See [all available versions here](/downloads/Sitecore_Installation_Framework).
 | Resource                                                                                                                                                                                                                                                  | Description                                                                             |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | [Release Notes](/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_241/Release_Notes)                                                                                                                                          | A list of features, improvements, and fixes that have been implemented in this release. |
-| [Sitecore Installation Framework Configuration Guide](https://scdp.blob.core.windows.net/downloads/Sitecore%20Installation%20Framework/2x/Sitecore%20Installation%20Framework%20241/Secure/Sitecore_Installation_Framework_Configuration_Guide-2.4.1.pdf) | Configuration guide for Sitecore Installation Framework                                 |
+| [Sitecore Installation Framework Configuration Guide](https://docs.sitecore.com/xp/en/developers/105/guides/sitecore-installation-framework-241-configuration-guide/introduction.html) | Configuration guide for Sitecore Installation Framework                                 |

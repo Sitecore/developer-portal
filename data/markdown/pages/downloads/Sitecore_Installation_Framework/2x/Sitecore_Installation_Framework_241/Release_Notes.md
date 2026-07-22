@@ -9,14 +9,13 @@ description: ''
 
 | Description | Ref. |
 | ----------- | ---- |
-| Supporting passing custom HTTP headers via a `Headers` parameter has been added for tasks: Invoke-ManageSolrSchemaTask, Invoke-ManageSolrConfigTask, Invoke-ManageSolrCoreTask, Invoke-HttpRequestTask, Invoke-WebRequestTask. | PDXP-26644 |
-| The Invoke-UpdateBindingRedirectsTask has been updated to improve binding redirect update behavior for `.config` files. | PDXP-27870 |
-| A new task Invoke-DeleteSolrPermissionTask has been added. It is now possible to remove a named permission from a Solr instance. | PDXP-26644 |
-| JsonConfiguration function has been improved to evaluate JSON object **keys** as Config Functions in addition to values. | PDXP-26644 |
+| Custom HTTP headers are now supported in deployment tasks. A new Headers parameter has been added to the Invoke-ManageSolrSchemaTask, Invoke-ManageSolrConfigTask, Invoke-ManageSolrCoreTask, Invoke-HttpRequestTask, and Invoke-WebRequestTask tasks, allowing custom HTTP headers to be included in requests. | PDXP-26644 |
+| Binding redirect updates for configuration files have been improved. The Invoke-UpdateBindingRedirectsTask has been updated to provide more reliable binding redirect handling when updating .config files. | PDXP-27870 |
+| Named Solr permissions can now be removed. A new Invoke-DeleteSolrPermissionTask task has been added to support deletion of named Solr permissions. | PDXP-26644 |
+| JsonConfiguration now supports Config Function evaluation in JSON object keys. Previously, Config Function evaluation was limited to JSON values. JSON object keys are now also evaluated as Config Functions. | PDXP-26644 |
 
 ## Resolved Issues
 
 | Description | Ref. |
 | ----------- | ---- |
-| The Invoke-HttpRequestTask task masked real HTTP errors by referencing an unassigned $response.StatusCode in its catch block. | PDXP-26644 |
-
+| HTTP request errors are no longer masked by exception handling logic. Previously, the Invoke-HttpRequestTask referenced an unassigned $response.StatusCode value in its exception handling logic, which could mask the original HTTP error. The task now correctly reports underlying HTTP failures. | PDXP-26644 |
