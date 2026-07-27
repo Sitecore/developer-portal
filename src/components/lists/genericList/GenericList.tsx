@@ -1,65 +1,159 @@
-import { Box, Card, CardBody, CardFooter, CardHeader, Center, Grid, Heading, HStack, LinkBox, Show, Stack, Text } from '@chakra-ui/react';
-import Image from 'next/image';
+import { cn } from "@/src/lib/util";
+import { LinkButton } from "@src/components/links";
+import { CardContent, CardFooter, CardHeader } from "@src/components/ui/card";
+import { ExtendedCard } from "@src/components/ui/custom/card-extended";
+import Image from "next/image";
+import type { CardVariant, GenericListData, GenericListItem } from "./types";
 
-import { LinkButton } from '../../links';
-import { GenericListData } from './types';
+const GRID_COLUMN_CLASSES: Record<number, string> = {
+  1: "grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1",
+  2: "grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2",
+  3: "grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3",
+  4: "grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4",
+};
 
-export const GenericList = (props: GenericListData) => {
-  const cols = props.column || 4;
-  const cardVariant = props.cardVariant || 'elevated';
+const DEFAULT_COLUMNS = 4;
+const DEFAULT_CARD_VARIANT: CardVariant = "flat";
+const RESPONSIVE_IMAGE_SIZES =
+  "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw";
 
-  let buttonVariant = cardVariant == 'blurred' ? 'text' : 'outline';
+const getGridClasses = (columns: number): string => {
+  return GRID_COLUMN_CLASSES[columns] ?? GRID_COLUMN_CLASSES[DEFAULT_COLUMNS];
+};
+
+const getButtonVariant = (cardVariant: CardVariant): "ghost" | "outline" => {
+  return cardVariant === "blurred" ? "ghost" : "outline";
+};
+
+const isBorderedImageVariant = (variant: CardVariant): boolean => {
+  return variant === "borderedImage";
+};
+
+const hasValue = (value?: string): boolean => {
+  return Boolean(value?.trim());
+};
+
+const renderListItemMedia = (item: GenericListItem) => {
+  const Icon = item.icon;
+
+  if (Icon) {
+    return (
+      <div className="rounded-full bg-[rgba(235,0,26,0.08)] inline-flex items-center justify-center p-2 md:p-1">
+        <Icon className="w-8 h-8 md:w-10 md:h-10" />
+      </div>
+    );
+  }
+
+  if (!item.img?.src) {
+    return null;
+  }
+
+  const imageAlt = item.img.alt ?? "";
+
+  if (item.img.width && item.img.height) {
+    return (
+      <Image
+        alt={imageAlt}
+        src={item.img.src}
+        width={item.img.width}
+        height={item.img.height}
+        priority
+      />
+    );
+  }
 
   return (
-    <Box>
-      <Heading as="h2" mb={8} fontWeight={'500'}>
-        {props.title}
-      </Heading>
-      {props.subtitle != '' && (
-        <Heading as="h3" size={'md'} pb={6} mb={8}>
-          {props.subtitle}
-        </Heading>
+    <div className="relative w-full sm:w-[200px] md:w-full h-[170px] sm:h-full md:h-[170px]">
+      <Image
+        fill
+        alt={imageAlt}
+        src={item.img.src}
+        sizes={RESPONSIVE_IMAGE_SIZES}
+        priority
+        className="object-contain"
+      />
+    </div>
+  );
+};
+
+interface GenericListItemProps {
+  item: GenericListItem;
+  cardVariant: CardVariant;
+}
+
+const GenericListCardItem = ({ item, cardVariant }: GenericListItemProps) => {
+  const isBorderedImage = isBorderedImageVariant(cardVariant);
+  const buttonVariant = getButtonVariant(cardVariant);
+  const titleAlignmentClass = isBorderedImage ? "text-center" : "text-left";
+
+  return (
+    <ExtendedCard
+      style={cardVariant}
+      padding="md"
+      elevation="lg"
+      className={titleAlignmentClass}
+    >
+      <CardHeader>
+        <div className="flex items-center gap-2">
+          {renderListItemMedia(item)}
+          {!isBorderedImage && (
+            <h3 className="text-lg md:text-xl font-semibold font-heading">
+              {item.title}
+            </h3>
+          )}
+        </div>
+      </CardHeader>
+
+      <CardContent>
+        <p className="text-base text-muted-foreground">{item.description}</p>
+      </CardContent>
+
+      <CardFooter className={cn(isBorderedImage && "justify-center")}>
+        <LinkButton
+          href={item.href}
+          text={item.linkText}
+          variant={buttonVariant}
+        />
+      </CardFooter>
+    </ExtendedCard>
+  );
+};
+
+export const GenericList = ({
+  title,
+  subtitle,
+  data,
+  column = DEFAULT_COLUMNS,
+  cardVariant = DEFAULT_CARD_VARIANT,
+  className,
+}: GenericListData) => {
+  const gridClasses = getGridClasses(column);
+  const hasTitle = hasValue(title);
+  const hasSubtitle = hasValue(subtitle);
+
+  return (
+    <div className={cn("w-full", className)}>
+      {hasTitle && (
+        <h2 className="text-2xl font-heading font-medium mb-4 md:mb-8 text-center md:text-left">
+          {title}
+        </h2>
       )}
 
-      <Grid templateColumns={{ base: `repeat(2}, 1fr)`, md: `repeat(${cols / 2}, 1fr)`, lg: `repeat(${cols}, 1fr)` }} gap={6} alignItems={'items-stretch'}>
-        {props.data.map((item, key) => (
-          <LinkBox as="article" display={'inline-flex'} key={key}>
-            <Card variant={cardVariant} layerStyle="interactive.raise" width={props.width} mx={'auto'} direction={{ base: 'column', sm: 'row', md: 'column' }}>
-              <CardHeader p={0}>
-                {(item.img.width && item.img.height && (
-                  <Center mt={10}>
-                    <Image alt="" src={item.img.src} width={item.img.width} height={item.img.height} priority />
-                  </Center>
-                )) || (
-                  <Box width={{ base: 'full', sm: '200px', md: '100%' }} height={{ base: '170', sm: 'full', md: '170' }} position={'relative'}>
-                    <Image fill alt="" src={item.img.src} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority style={{ objectFit: 'contain' }} />
-                  </Box>
-                )}
-              </CardHeader>
-              <CardBody padding={0}>
-                <Stack direction={['column', 'row', 'column']} spacing={5} padding={0}>
-                  <Box padding={5}>
-                    <Heading as="h3" size="lg" mb={2}>
-                      {item.title}
-                    </Heading>
-                    <Text>{item.description}</Text>
-                    <Show below="lg">
-                      <HStack as={'span'} mt={2}>
-                        <LinkButton href={item.href} text={item.linkText} variant={'text'} />
-                      </HStack>
-                    </Show>
-                  </Box>
-                </Stack>
-              </CardBody>
-              <CardFooter display={{ base: 'none', lg: 'block' }}>
-                <HStack as={'span'} mt={2}>
-                  <LinkButton href={item.href} text={item.linkText} variant={buttonVariant} colorScheme="neutral" />
-                </HStack>
-              </CardFooter>
-            </Card>
-          </LinkBox>
+      {hasSubtitle && (
+        <h3 className="text-lg font-heading pb-3 md:pb-6 mb-4 md:mb-8 text-center md:text-left">
+          {subtitle}
+        </h3>
+      )}
+
+      <div className={cn("grid gap-4 md:gap-6 items-stretch", gridClasses)}>
+        {data.map((item) => (
+          <GenericListCardItem
+            key={item.href || item.title}
+            item={item}
+            cardVariant={cardVariant}
+          />
         ))}
-      </Grid>
-    </Box>
+      </div>
+    </div>
   );
 };

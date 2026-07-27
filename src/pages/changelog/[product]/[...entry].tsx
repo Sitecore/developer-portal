@@ -1,44 +1,30 @@
-import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-import { LinkButton } from '@/src/components/links';
-import { CenteredContent, Hero, VerticalGroup } from '@/src/components/ui/sections';
-import { SocialShare } from '@/src/components/ui/socialShare';
-import { getChangelogCredentials } from '@/src/lib/changelog/common/credentials';
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Center,
-  Grid,
-  GridItem,
-  Heading,
-  Icon,
-  Image,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  useDisclosure,
-} from '@chakra-ui/react';
-import { Changelog } from '@lib/changelog';
-import { ChangelogEntry, Product } from '@lib/changelog/types';
-import { getChangelogEntryUrl, getQueryArray, getSlug, slugify } from '@lib/utils';
+'use client';
+
+import { getQueryArray } from '@/src/lib/util/requests';
+import { getSlug, slugify } from '@/src/lib/util/stringUtil';
+import { getChangelogEntryUrl } from '@/src/lib/util/urlUtil';
 import { mdiDownload } from '@mdi/js';
-import { Prose } from '@nikolovlazar/chakra-ui-prose';
+import Icon from '@mdi/react';
 import ChangelogByMonth from '@src/components/changelog/ChangelogByMonth';
 import { ChangelogItemMeta } from '@src/components/changelog/ChangelogItemMeta';
+import { TrackPageView } from '@src/components/integrations/engage/TrackPageView';
+import { LinkButton } from '@src/components/links';
+import { Alert, AlertDescription } from '@src/components/ui/alert';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList } from '@src/components/ui/breadcrumb';
+import { Button } from '@src/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@src/components/ui/card';
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from '@src/components/ui/dialog';
+import { CenteredContent, Hero, VerticalGroup } from '@src/components/ui/sections';
 import Layout from '@src/layouts/Layout';
+import { Changelog } from '@src/lib/changelog';
+import { getChangelogCredentials } from '@src/lib/changelog/common/credentials';
+import type { ChangelogEntry, Product } from '@src/lib/changelog/types';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+
+const SocialShare = dynamic(() => import('@src/components/ui/socialShare').then((mod) => mod.SocialShare), { ssr: false });
 
 type ChangelogProps = {
   currentProduct: Product;
@@ -55,11 +41,16 @@ export async function getServerSideProps(context: any) {
   const products = await changelog.getProducts().then((response: Array<Product>) => {
     return response;
   });
-  let changelogEntry;
-  const currentProduct: Product | undefined = products.find((p) => slugify(p.name) == product);
+  let changelogEntry: ChangelogEntry | undefined;
+  const currentProduct: Product | undefined = products.find((p) => slugify(p.name) === product);
+  if (!currentProduct) {
+    return {
+      notFound: true,
+    };
+  }
 
   try {
-    changelogEntry = entry.length == 2 ? await changelog.getEntryByTitleAndDate(entry[1], entry[0], currentProduct?.id) : await changelog.getEntryByTitle(entry[0], currentProduct?.id);
+    changelogEntry = entry.length === 2 ? await changelog.getEntryByTitleAndDate(entry[1], entry[0], currentProduct.id) : await changelog.getEntryByTitle(entry[0], currentProduct?.id);
   } catch {
     return {
       notFound: true,
@@ -75,122 +66,106 @@ export async function getServerSideProps(context: any) {
 }
 
 const ChangelogProduct = ({ currentProduct, changelogEntry }: ChangelogProps) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isOpen, setIsOpen] = useState(false);
   const title = `${currentProduct.name} Changelog`;
   const description = `Learn more about new versions, changes and improvements for ${currentProduct.name}`;
 
   return (
     <TrackPageView product={currentProduct}>
       <Layout title={changelogEntry.title} section={title} description={changelogEntry.title}>
-        <Hero title={title} description={description}>
-          {/* <HStack>
-            <Text variant={'sm'}>Powered by</Text>
-            <Link href="/content-management/content-hub-one" title="Visit the Content Hub ONE product page to learn more">
-              <Image
-                src={useColorModeValue('https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one', 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/logo-content_hub_one-dark')}
-                alt="Powered by Content Hub ONE"
-                width={150}
-                height={18}
-              />
-            </Link>
-          </HStack> */}
-        </Hero>
+        <Hero title={title} description={description}></Hero>
         <VerticalGroup>
-          <CenteredContent py={8} gap={8}>
-            <Grid templateColumns="repeat(5, 1fr)" gap={14}>
-              <GridItem colSpan={{ base: 5, md: 3 }}>
-                <Breadcrumb separator={'>'}>
-                  <BreadcrumbItem>
-                    <BreadcrumbLink href="/changelog">Changelog</BreadcrumbLink>
-                  </BreadcrumbItem>
-                  <BreadcrumbItem>
-                    <BreadcrumbLink href={`/changelog/${getSlug(currentProduct.name)}`}>{currentProduct.name}</BreadcrumbLink>
-                  </BreadcrumbItem>
+          <CenteredContent className="py-8 gap-8">
+            <div className="grid grid-cols-5 gap-14">
+              <div className="col-span-5 md:col-span-3">
+                <Breadcrumb>
+                  <BreadcrumbList>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink href="/changelog">Changelog</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink href={`/changelog/${getSlug(currentProduct.name)}`}>{currentProduct.name}</BreadcrumbLink>
+                    </BreadcrumbItem>
+                  </BreadcrumbList>
                 </Breadcrumb>
 
                 {/* The full changelog item */}
-                <Card variant={'unstyled'} mt={8} mb={16}>
-                  <CardHeader pb={4}>
-                    <Heading as="h2" fontSize={'1.25rem'} id={getSlug(changelogEntry.title)} mb={4}>
-                      <Link href={getChangelogEntryUrl(changelogEntry)} title={changelogEntry.title}>
+                <Card className="border-0 shadow-none mt-8 mb-16">
+                  <CardHeader className="pb-4">
+                    <h2 className="text-xl font-heading" id={getSlug(changelogEntry.title)}>
+                      <Link href={getChangelogEntryUrl(changelogEntry)} title={changelogEntry.title} className="hover:underline">
                         {changelogEntry.title}
                       </Link>
-                    </Heading>
+                    </h2>
 
                     <ChangelogItemMeta item={changelogEntry} />
+
                     {changelogEntry.scheduled && (
-                      <Alert colorScheme="neutral" mt={4}>
-                        <AlertIcon />
+                      <Alert variant="default" className="mt-4">
                         <AlertDescription>This functionality has not been released yet</AlertDescription>
                       </Alert>
                     )}
-                    {!changelogEntry.scheduled && changelogEntry.status && changelogEntry.status.identifier == 'in-progress' && (
-                      <Alert colorScheme="neutral" mt={4}>
-                        <AlertIcon />
+                    {!changelogEntry.scheduled && changelogEntry.status && changelogEntry.status.identifier === 'in-progress' && (
+                      <Alert variant="default" className="mt-4">
                         <AlertDescription>This functionality is currently being deployed and might not be available to all customers yet</AlertDescription>
                       </Alert>
                     )}
                   </CardHeader>
-                  <CardBody py={0}>
-                    {changelogEntry.image.length > 0 && changelogEntry.image[0].fileType.includes('image') && (
+                  <CardContent className="py-0">
+                    {changelogEntry.image.length > 0 && changelogEntry.image[0].fileUrl && (
                       <>
-                        <Image src={`${changelogEntry.image[0].fileUrl}`} alt={changelogEntry.title || ''} borderRadius={'lg'} onClick={onOpen} cursor={'zoom-in'} mb={4} maxW={'full'} />
+                        <Image src={changelogEntry.image[0].fileUrl} alt={changelogEntry.title || ''} width={800} height={400} className="rounded-lg cursor-zoom-in mb-4 max-w-full" onClick={() => setIsOpen(true)} />
 
-                        <Modal isOpen={isOpen} onClose={onClose} isCentered closeOnOverlayClick size={'6xl'}>
-                          <ModalOverlay />
-                          <ModalContent>
-                            <ModalHeader>{changelogEntry.title}</ModalHeader>
-                            <ModalCloseButton />
-                            <ModalBody>
-                              <Center>
-                                <Image src={`${changelogEntry.image[0].fileUrl}`} alt={changelogEntry.title || ''} />
-                              </Center>
-                            </ModalBody>
-
-                            <ModalFooter>
-                              <Button colorScheme="neutral" mr={3} onClick={onClose} variant={'outline'}>
+                        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+                          <DialogContent className="max-w-6xl">
+                            <DialogHeader>
+                              <DialogTitle>{changelogEntry.title}</DialogTitle>
+                            </DialogHeader>
+                            <div className="flex items-center justify-center">
+                              <Image src={changelogEntry.image[0].fileUrl} alt={changelogEntry.title || ''} width={1200} height={600} />
+                            </div>
+                            <DialogFooter>
+                              <Button variant="outline" onClick={() => setIsOpen(false)}>
                                 Close
                               </Button>
-                            </ModalFooter>
-                          </ModalContent>
-                        </Modal>
+                            </DialogFooter>
+                          </DialogContent>
+                        </Dialog>
                       </>
                     )}
-                    <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.description }} />
+                    <article
+                      className="prose max-w-none"
+                      dangerouslySetInnerHTML={{
+                        __html: changelogEntry.description,
+                      }}
+                    />
 
-                    {changelogEntry.image.filter((img) => img.fileType.includes('pdf')).length > 0 &&
+                    {changelogEntry.image.filter((img) => img.fileType?.includes('pdf')).length > 0 &&
                       changelogEntry.image
-                        .filter((img) => img.fileType.includes('pdf'))
-                        .map((pdf, index) => {
-                          return (
-                            <LinkButton
-                              key={index}
-                              text="Download PDF"
-                              variant={'outline'}
-                              size={'sm'}
-                              icon={
-                                <Icon>
-                                  <path d={mdiDownload} />
-                                </Icon>
-                              }
-                              href={pdf.fileUrl}
-                              title={`Download the PDF ${pdf.name}`}
-                            />
-                          );
+                        .filter((img) => img.fileType?.includes('pdf'))
+                        .map((pdf) => {
+                          return <LinkButton key={pdf.fileUrl || pdf.id} text="Download PDF" variant="outline" size="sm" icon={<Icon path={mdiDownload} size={1} />} href={pdf.fileUrl} title={`Download the PDF ${pdf.name}`} />;
                         })}
 
-                    {changelogEntry.fullArticle != null && <Prose margin={0} padding={0} dangerouslySetInnerHTML={{ __html: changelogEntry.fullArticle }} />}
-                  </CardBody>
-                  <CardFooter justifyContent={changelogEntry.readMoreLink ? 'space-between' : 'flex-end'}>
-                    {changelogEntry.readMoreLink && <LinkButton variant="text" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} margin={0} padding={0} />}
+                    {changelogEntry.fullArticle != null && (
+                      <article
+                        className="prose max-w-none mt-4"
+                        dangerouslySetInnerHTML={{
+                          __html: changelogEntry.fullArticle,
+                        }}
+                      />
+                    )}
+                  </CardContent>
+                  <CardFooter className={changelogEntry.readMoreLink ? 'justify-between' : 'justify-end'}>
+                    {changelogEntry.readMoreLink && <LinkButton variant="ghost" href={changelogEntry.readMoreLink} text="Read more" title={`Read more about ${changelogEntry.title}`} />}
                     <SocialShare url={getChangelogEntryUrl(changelogEntry, true)} title={`${changelogEntry.title} - ${changelogEntry.productName} Changelog - Sitecore`} />
                   </CardFooter>
                 </Card>
-              </GridItem>
-              <GridItem colSpan={{ base: 2 }} hideBelow={'md'}>
+              </div>
+              <div className="col-span-2 hidden md:block">
                 <ChangelogByMonth product={currentProduct} />
-              </GridItem>
-            </Grid>
+              </div>
+            </div>
           </CenteredContent>
         </VerticalGroup>
       </Layout>

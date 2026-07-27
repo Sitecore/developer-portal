@@ -1,7 +1,10 @@
-import { Option } from '@/src/components/ui/dropdown';
-import { Product } from '@lib/changelog/types';
+import type { Option } from "@src/components/ui/dropdown";
+import type { Product } from "@src/lib/changelog/types";
 
-export function buildProductQuerystring(product?: Product, selectedProducts?: Array<Option>): string {
+export function buildProductQuerystring(
+  product?: Product,
+  selectedProducts?: Array<Option>,
+): string {
   const query: Array<string> = [];
 
   if (product) {
@@ -9,15 +12,21 @@ export function buildProductQuerystring(product?: Product, selectedProducts?: Ar
   }
 
   if (selectedProducts) {
-    selectedProducts.map((p) => {
+    selectedProducts.forEach((p) => {
       query.push(`product=${p.value}`);
     });
   }
 
-  return query.join('&');
+  return query.join("&");
 }
 
-export function buildQuerystring(products: Array<Option>, changes: Array<Option>, cursor?: string, initialProduct?: Product, breaking?: boolean): Array<string> {
+export function buildQuerystring(
+  products: Array<Option>,
+  changes: Array<Option>,
+  cursor?: string,
+  initialProduct?: Product,
+  breaking?: boolean,
+): Array<string> {
   const query: Array<string> = [];
   const PAGE_SIZE = 5;
 
@@ -26,10 +35,10 @@ export function buildQuerystring(products: Array<Option>, changes: Array<Option>
   }
 
   query.push(`limit=${PAGE_SIZE}`);
-  products.map((p) => {
+  products.forEach((p) => {
     query.push(`product=${p.value}`);
   });
-  changes.map((c) => {
+  changes.forEach((c) => {
     query.push(`changeType=${c.value}`);
   });
 

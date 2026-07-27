@@ -1,17 +1,28 @@
-query searchByProductsAndChangeTypesAndBreakingChange($date: DateTime!, $productIds: [ID], $changeTypeIds: [ID], $first: Int = 5, $after: String = "", $breaking: Boolean) {
-  changelog: allChangelog(
-    orderBy: RELEASEDATE_DESC
-    first: $first
+query searchByProductsAndChangeTypesAndBreakingChange(
+  $date: CustomDateTime
+  $productIds: [String!]
+  $changeTypeIds: [String!] = []
+  $first: Int = 5
+  $after: String = ""
+  $breaking: Boolean
+) {
+  changelog: manyChangelog(
+    orderBy: RELEASE_DATE_DESC
+    minimumPageSize: $first
     after: $after
-    where: { releaseDate_lt: $date, breakingChange_eq: $breaking, OR: [{ sitecoreProduct: { changelog_ids: $productIds } }], AND: { OR: [{ changeType: { changelog_ids: $changeTypeIds } }] } }
-  ) {
-    pageInfo {
-      hasNext
-      endCursor
+    filter: {
+      AND: [
+        { releaseDate: { lessThan: $date } }
+        { sitecoreProduct: { containsAny: $productIds } }
+        { changeType: { containsAny: $changeTypeIds } }
+        { breakingChange: { equals: $breaking } }
+      ]
     }
-    total
+  ) {
     results {
       ...changelogEntry
     }
+    hasMore
+    cursor
   }
 }

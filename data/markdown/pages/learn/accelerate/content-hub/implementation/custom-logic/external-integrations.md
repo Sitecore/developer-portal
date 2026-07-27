@@ -21,8 +21,6 @@ Please note that there are specific libraries approved for use in internal scrip
 
 
 ## Execution
-Sitecore Content Hub supports external scripting through its REST API, WebClient SDK, Fluent SDK, and JavaScript SDK. These tools enable automation, data synchronisation, and integration with third-party systems.
-
 Sitecore Content Hub supports external scripting through its REST API, WebClient SDK, Fluent SDK, and JavaScript SDK. These enable automation, data synchronisation, and integration with third-party systems.
 
 Other ways to interact with Content Hub externally are via the Preview / Delivery API (GraphQL) and the Content Hub CLI. GraphQL is for read-only querying; the CLI is a command-line driven method of interacting with Content Hub (mainly for deployment-related tasks, but can also run custom code via plugins).

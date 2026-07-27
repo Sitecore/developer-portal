@@ -3,8 +3,9 @@ title: 'Release Notes'
 description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1030/Release_Notes
 ---
-
-**December 2022 – released Sitecore Publishing Module 10.3.0**
+Publication history:<br/>
+**2025-07-17:** DEPRECATED Container Deployment Packages supporting SPS versions 7 and earlier. They are based on .NET 6 that has reached end-of-support.<br/>
+**2022-12-15:** Released Sitecore Publishing Service Module 10.3.0.
 
 - [New features/improvements](#new-featuresimprovements)
 - [Resolved issues](#resolved-issues)

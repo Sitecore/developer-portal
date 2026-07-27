@@ -1,7 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { CheckIcon, ChevronDownIcon } from '@chakra-ui/icons';
-import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
-import { SearchResponseSortChoice } from '@sitecore-search/react';
+
+import { Icon } from '@/lib/icon';
+import { mdiChevronDown } from '@mdi/js';
+import type { SearchResponseSortChoice } from '@sitecore-search/react';
+import { Button } from '@src/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@src/components/ui/dropdown-menu';
+import { Check } from 'lucide-react';
 
 export interface SearchSortType {
   onSortChange: (sortType: any) => void;
@@ -13,18 +17,21 @@ export const SearchSort = (props: SearchSortType) => {
   const { onSortChange, sortChoices, sortType } = props;
 
   return (
-    <Menu>
-      <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-        Sorting by:
-      </MenuButton>
-      <MenuList onChange={() => onSortChange}>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" size="sm">
+          Sort by:
+          <Icon path={mdiChevronDown} size={1.3} className="opacity-50" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
         {sortChoices.map((option) => (
-          <MenuItem icon={sortType == option.name ? <CheckIcon /> : undefined} key={option.name} value={option.name} onClick={() => onSortChange(option)}>
+          <DropdownMenuItem key={option.name} onClick={() => onSortChange(option)}>
+            {sortType === option.name && <Check className="mr-2 h-4 w-4" />}
             {option.label}
-          </MenuItem>
+          </DropdownMenuItem>
         ))}
-      </MenuList>
-    </Menu>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
-

@@ -6,7 +6,7 @@ hasSubPageNav: true
 hasInPageNav: true
 audience: ['All']
 created: '2024-12-13'
-lastUpdated:  '2025-04-30'
+lastUpdated:  '2025-10-10'
 ---
 
 
@@ -15,22 +15,26 @@ As a company I want to centrally manage users and user access for the applicatio
 
 In order to achieve this I want to enable SSO login on Content Hub to verify the user’s identity on my IDP of choice. Additionally I would like to control the user access level based on the user Claims received after a successful login into my IDP.
 
-For this recipe we are using [Microsoft Entra ID, previous called Microsoft Azure AD](https://www.microsoft.com/en-gb/security/business/identity-access/microsoft-entra-id).
+For this example we are using [Microsoft Entra ID, previous called Microsoft Azure AD](https://www.microsoft.com/en-gb/security/business/identity-access/microsoft-entra-id).
 
 >This recipe focuses on authentication through Content Hub, if you are using Sitecore Cloud Portal please review the [Cloud Portal documentation](https://doc.sitecore.com/ch/en/users/content-hub/authentication.html).
 
 ## Execution
 
-### <strong>Setting up the Single-Sign-On</strong>
-An new enterprise application should be provisioned on Microsoft Entra ID. It is important to take note on the following details when configuring the Enterprise application.
+A new enterprise application should be provisioned on Microsoft Entra ID. It is important to take note on the following details when configuring the Enterprise application. Please note the exact steps and naming conventions are subject to change by Microsoft. Please review [Microsoft's documentation](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/add-application-portal-setup-sso) for reference.
 
-| Key | Detail |
-| ----------- | ----------- |
-| Allowed redirect url’s | The allowed redirect url should be configured as following to ensure a post back to Content Hub after login is allowed. Where <code>contenthubinstance</code> is your Content Hub URL - <code>https://[contenthubinstance]/AuthServices-saml/Acs</code>  |
-| Token configuration (SAML Claims) | The following SAML Claims should be configured in order to fulfill the requirements in this recipe - <strong>Email</strong> and <strong>Security Groups</strong>. |
+### Microsoft Entra ID Setup - Azure
+1. Provision a new non‑gallery Enterprise application on Microsoft Entra ID.
+2. Select SAML as the SSO method. Entra ID needs you to provide the *Identifier (Entity ID)* and *Reply URL (Assertion Consumer Service URL / ACS)*.
+3. Create an Identifier to identify this Application. Note this down as we will need it for the Content Hub configuration (`sp_entity_id`).
+4. The Reply URL is configured to ensure a return to Content Hub after login.  Enter your Content Hub instance plus the SAML ACS path i.e.: `https://<your-content-hub-instance>/AuthServices-saml/Acs`.  The SAML “module path” used by Content Hub defaults to `/AuthServices-<provider_name_lowercase>`. With the default provider name saml, that produces the AuthServices-saml path shown above.
+
+5. The Email and Security Groups SAML Claims should be configured in order to fulfill the requirements.
 
 > On Microsoft Entra ID the number of groups emitted in a token is limited to 150 for SAML. For companies having a lot of security groups, this can be an issue as groups claims will be totally omitted for users having a membership in 150+ groups. As a workaround use user group assignment on your application if possible or apply a group filter as described [here](https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-fed-group-claims).
 
+
+### Content Hub configuration
 Navigate to the Content Hub settings page as a super user (Manage > Settings). Under Portal Configuration you can find the Authentication setting. As we are using SAML, we will need to setup the SAML provider, with the following details.
 
 | Key | Detail |

@@ -1,5 +1,5 @@
-import { getQueryValue } from '@lib/utils';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from "next";
+import { getQueryValue } from "@/src/lib/util/requests";
 
 // API handler that enables preview mode, only executed when preview mode is not controlled manually (see middleware.ts)
 // This API is called from the preview hostname when the user visits it for the first time and uses the PREVIEW_SECRET env variable to make sure it's a valid request
@@ -12,7 +12,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (secret != null) {
     // Check the secret and next parameters
-    if (secret == preview_secret) {
+    if (secret === preview_secret) {
       res.setPreviewData({});
     }
   }

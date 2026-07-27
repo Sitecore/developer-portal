@@ -58,5 +58,6 @@ Too often, personalization is seen as a tactical exercise — just another tool 
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="" link="" />
+  <Link title="Sitecore CDP" link="https://doc.sitecore.com/cdp" />
+  <Link title="Sitecore Personalize" link="https://doc.sitecore.com/personalize" />
 </Row>

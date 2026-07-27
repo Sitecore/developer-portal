@@ -1,6 +1,6 @@
 ---
-title: 'The platform for forward-thinking technologists'
-description: 'From CMS to DXP, our solutions empower you to create exceptional digital experiences.'
+title: 'Sitecore Developer Portal'
+description: 'Find information and tools you need most to enhance your developer experience.'
 stackexchange: ['/questions?tab=Newest']
 youtube: 'UUJrNXcAEmZrqbf2suxbfIkg'
 youtubeTitle: 'Latest "Discover Sitecore" videos'

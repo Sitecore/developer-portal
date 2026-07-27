@@ -1,1374 +1,2111 @@
-# The cost directives is used to express the complexity of a field.
+schema {
+  query: Query
+}
+
+"""
+The purpose of the `cost` directive is to define a `weight` for GraphQL types, fields, and arguments. Static analysis can use these weights when calculating the overall cost of a query or response.
+"""
 directive @cost(
-  # Defines the complexity of the field.
-  complexity: Int! = 1
-  # Defines field arguments that act as complexity multipliers.
-  multipliers: [MultiplierPath!]
-) on FIELD_DEFINITION
-# changelog
-type Changelog {
-  # Does this change include a breaking change? (does not apply to XM Cloud)
+  """
+  The `weight` argument defines what value to add to the overall cost for every appearance, or possible appearance, of a type, field, argument, etc.
+  """
+  weight: String!
+) on ARGUMENT_DEFINITION | ENUM | FIELD_DEFINITION | INPUT_FIELD_DEFINITION | OBJECT | SCALAR
+
+"""
+GraphQL filter for boolean fields.
+"""
+input BooleanFilterInput {
+  """
+  Matches the specified value.
+  """
+  equals: Boolean
+  """
+  Does not match the specified value.
+  """
+  notEquals: Boolean
+}
+
+"""
+Indicates whether a string comparison should be case-sensitive or case-insensitive.
+"""
+enum CaseSensitive {
+  """
+  Case-insensitive match.
+  """
+  INSENSITIVE
+  """
+  Case-sensitive match.
+  """
+  SENSITIVE
+}
+
+type Changelog implements ContentItem {
+  """
+  Does this change include a breaking change? (does not apply to XM Cloud)
+  """
   breakingChange: Boolean
-  # Please select a change type (child to parent traversal)
+  """
+  Please select a change type
+  """
   changeType(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-  ): Changelog__changeType_Parent_Types_List!
-  # The text that will be rendered in the overview
-  description: Json
-  # The content that will be visible on the detail page (not required)
-  fullArticle: Json
-  # id
-  id: ID
-  # changelog__image (child to parent traversal)
+    """
+    A filter used for searching the reference items.
+    """
+    filter: Changelog_changeType_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  """
+  The text that will be rendered in the overview
+  """
+  description: JSON
+  """
+  The content that will be visible on the detail page (not required)
+  """
+  fullArticle: JSON
   image(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-    orderBy: [MediaSorts]
-    where: MediaPredicate
-  ): MediaList!
-  # Mentions the related issue number (if applicable)
+    """
+    A filter used for searching the reference items.
+    """
+    filter: Changelog_image_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  """
+  Mentions the related issue number (if applicable)
+  """
   issueNumber: String
-  # name
-  name: String
-  # You can link to an external page where more information can be found
+  """
+  You can link to an external page where more information can be found
+  """
   readMoreLink: String
-  # releaseDate
-  releaseDate: DateTime
-  # Should this changelog item be considered as an announcement?
+  releaseDate: UTCDateTime
+  """
+  Should this changelog item be considered as an announcement?
+  """
   scheduled: Boolean
-  # Please select one product from the list (child to parent traversal)
+  """
+  Please select one product from the list
+  """
   sitecoreProduct(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-  ): Changelog__sitecoreProduct_Parent_Types_List!
-  # Indicate whether the functionality is currently being rolled out or is
-  # available for all customers (child to parent traversal)
+    """
+    A filter used for searching the reference items.
+    """
+    filter: Changelog_sitecoreProduct_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  """
+  Please select a release status
+  """
   status(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-    orderBy: [StatusSorts]
-    where: StatusPredicate
-  ): StatusList!
-  # title
+    """
+    A filter used for searching the reference items.
+    """
+    filter: Changelog_status_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  system: System!
   title: String
-  # Only use the version field if applicable
-  version: String
-  # __sysCreatedAt
-  __sysCreatedAt: DateTime
-  # __sysCreatedBy
-  __sysCreatedBy: String
-  # __sysUpdatedAt
-  __sysUpdatedAt: DateTime
-  # __sysUpdatedBy
-  __sysUpdatedBy: String
-  # __sysVersion
-  __sysVersion: String
+  """
+  Only use the version field if applicable
+  """
+  x_version: String
 }
 
-# Types allowed on the changelog__changeType relation.
-union Changelog__changeType_Parent_Types = Changelog | Status | SitecoreCloud | SitecoreProduct | Changetype
-type Changelog__changeType_Parent_Types_List {
-  # Information of the current page
-  pageInfo: PageInfo
-  # Results for current page
-  results: [Changelog__changeType_Parent_Types]
-  # Total number of results (all pages)
-  total: Int
-}
-
-# Query on the changelog__changeType ancestor relation (changelog->changelog)
-input Changelog__changeTypePredicate {
-  changelog_ids: [ID]
-  image: Changelog__imagePredicate
-  sitecoreProduct: Changelog__sitecoreProductPredicate
-  status: Changelog__statusPredicate
-}
-
-# Query on the changelog__image ancestor relation (Media->changelog)
-input Changelog__imagePredicate {
-  media_ids: [ID]
-}
-
-# Types allowed on the changelog__sitecoreProduct relation.
-union Changelog__sitecoreProduct_Parent_Types = Changelog | Status | SitecoreCloud | SitecoreProduct | Changetype
-type Changelog__sitecoreProduct_Parent_Types_List {
-  # Information of the current page
-  pageInfo: PageInfo
-  # Results for current page
-  results: [Changelog__sitecoreProduct_Parent_Types]
-  # Total number of results (all pages)
-  total: Int
-}
-
-# Query on the changelog__sitecoreProduct ancestor relation (changelog->changelog)
-input Changelog__sitecoreProductPredicate {
-  changelog_ids: [ID]
-  changeType: Changelog__changeTypePredicate
-  image: Changelog__imagePredicate
-  status: Changelog__statusPredicate
-}
-
-# Query on the changelog__status ancestor relation (status->changelog)
-input Changelog__statusPredicate {
-  status_ids: [ID]
-}
-
+"""
+Represents a list of content items.
+"""
 type ChangelogList {
-  # Information of the current page
-  pageInfo: PageInfo
-  # Results for current page
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
   results: [Changelog]
-  # Total number of results (all pages)
-  total: Int
 }
 
-input ChangelogPredicate {
-  AND: [ChangelogPredicate!]
-  breakingChange_eq: Boolean
-  breakingChange_neq: Boolean
-  changeType: Changelog__changeTypePredicate
-  id_anyOf: [ID]
-  id_eq: ID
-  id_neq: ID
-  id_noneOf: [ID]
-  image: Changelog__imagePredicate
-  issueNumber_allOf: [String]
-  issueNumber_anyOf: [String]
-  issueNumber_contains: String
-  issueNumber_doesnotcontain: String
-  issueNumber_doesnotendwith: String
-  issueNumber_doesnotstartwith: String
-  issueNumber_endswith: String
-  issueNumber_eq: String
-  issueNumber_neq: String
-  issueNumber_noneOf: [String]
-  issueNumber_startswith: String
-  name_allOf: [String]
-  name_anyOf: [String]
-  name_contains: String
-  name_doesnotcontain: String
-  name_doesnotendwith: String
-  name_doesnotstartwith: String
-  name_endswith: String
-  name_eq: String
-  name_neq: String
-  name_noneOf: [String]
-  name_startswith: String
-  OR: [ChangelogPredicate!]
-  readMoreLink_allOf: [String]
-  readMoreLink_anyOf: [String]
-  readMoreLink_contains: String
-  readMoreLink_doesnotcontain: String
-  readMoreLink_doesnotendwith: String
-  readMoreLink_doesnotstartwith: String
-  readMoreLink_endswith: String
-  readMoreLink_eq: String
-  readMoreLink_neq: String
-  readMoreLink_noneOf: [String]
-  readMoreLink_startswith: String
-  releaseDate_between: [DateTime]
-  releaseDate_eq: DateTime
-  releaseDate_gt: DateTime
-  releaseDate_lt: DateTime
-  releaseDate_neq: DateTime
-  scheduled_eq: Boolean
-  scheduled_neq: Boolean
-  sitecoreProduct: Changelog__sitecoreProductPredicate
-  status: Changelog__statusPredicate
-  title_allOf: [String]
-  title_anyOf: [String]
-  title_contains: String
-  title_doesnotcontain: String
-  title_doesnotendwith: String
-  title_doesnotstartwith: String
-  title_endswith: String
-  title_eq: String
-  title_neq: String
-  title_noneOf: [String]
-  title_startswith: String
-  version_allOf: [String]
-  version_anyOf: [String]
-  version_contains: String
-  version_doesnotcontain: String
-  version_doesnotendwith: String
-  version_doesnotstartwith: String
-  version_endswith: String
-  version_eq: String
-  version_neq: String
-  version_noneOf: [String]
-  version_startswith: String
-  __sysCreatedAt_between: [DateTime]
-  __sysCreatedAt_eq: DateTime
-  __sysCreatedAt_gt: DateTime
-  __sysCreatedAt_lt: DateTime
-  __sysCreatedAt_neq: DateTime
-  __sysCreatedBy_allOf: [String]
-  __sysCreatedBy_anyOf: [String]
-  __sysCreatedBy_contains: String
-  __sysCreatedBy_doesnotcontain: String
-  __sysCreatedBy_doesnotendwith: String
-  __sysCreatedBy_doesnotstartwith: String
-  __sysCreatedBy_endswith: String
-  __sysCreatedBy_eq: String
-  __sysCreatedBy_neq: String
-  __sysCreatedBy_noneOf: [String]
-  __sysCreatedBy_startswith: String
-  __sysUpdatedAt_between: [DateTime]
-  __sysUpdatedAt_eq: DateTime
-  __sysUpdatedAt_gt: DateTime
-  __sysUpdatedAt_lt: DateTime
-  __sysUpdatedAt_neq: DateTime
-  __sysUpdatedBy_allOf: [String]
-  __sysUpdatedBy_anyOf: [String]
-  __sysUpdatedBy_contains: String
-  __sysUpdatedBy_doesnotcontain: String
-  __sysUpdatedBy_doesnotendwith: String
-  __sysUpdatedBy_doesnotstartwith: String
-  __sysUpdatedBy_endswith: String
-  __sysUpdatedBy_eq: String
-  __sysUpdatedBy_neq: String
-  __sysUpdatedBy_noneOf: [String]
-  __sysUpdatedBy_startswith: String
-  __sysVersion_allOf: [String]
-  __sysVersion_anyOf: [String]
-  __sysVersion_contains: String
-  __sysVersion_doesnotcontain: String
-  __sysVersion_doesnotendwith: String
-  __sysVersion_doesnotstartwith: String
-  __sysVersion_endswith: String
-  __sysVersion_eq: String
-  __sysVersion_neq: String
-  __sysVersion_noneOf: [String]
-  __sysVersion_startswith: String
-}
-
-enum ChangelogSorts {
-  BREAKINGCHANGE_ASC
-  BREAKINGCHANGE_DESC
-  ID_ASC
-  ID_DESC
-  ISSUENUMBER_ASC
-  ISSUENUMBER_DESC
-  NAME_ASC
-  NAME_DESC
-  READMORELINK_ASC
-  READMORELINK_DESC
-  RELEASEDATE_ASC
-  RELEASEDATE_DESC
+"""
+Enum type used for sorting in QueryMany.
+"""
+enum ChangelogSortingOptions {
+  BREAKING_CHANGE_ASC
+  BREAKING_CHANGE_DESC
+  ISSUE_NUMBER_ASC
+  ISSUE_NUMBER_DESC
+  READ_MORE_LINK_ASC
+  READ_MORE_LINK_DESC
+  RELEASE_DATE_ASC
+  RELEASE_DATE_DESC
   SCHEDULED_ASC
   SCHEDULED_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
   TITLE_ASC
   TITLE_DESC
-  VERSION_ASC
-  VERSION_DESC
-  __SYSCREATEDAT_ASC
-  __SYSCREATEDAT_DESC
-  __SYSCREATEDBY_ASC
-  __SYSCREATEDBY_DESC
-  __SYSUPDATEDAT_ASC
-  __SYSUPDATEDAT_DESC
-  __SYSUPDATEDBY_ASC
-  __SYSUPDATEDBY_DESC
-  __SYSVERSION_ASC
-  __SYSVERSION_DESC
+  X_VERSION_ASC
+  X_VERSION_DESC
 }
 
-# changetype
-type Changetype {
-  # changeType
+"""
+GraphQL filter for content items.
+"""
+input Changelog_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_Filter]
+  breakingChange: BooleanFilterInput
+  changeType: ReferenceFilterInput
+  image: ReferenceFilterInput
+  issueNumber: StringFilterInput
+  readMoreLink: StringFilterInput
+  releaseDate: DateTimeFilterInput
+  scheduled: BooleanFilterInput
+  sitecoreProduct: ReferenceFilterInput
+  status: ReferenceFilterInput
+  system: SystemTypeFilterInput
+  title: StringFilterInput
+  x_version: StringFilterInput
+}
+
+"""
+GraphQL root filter for content items references.
+"""
+input Changelog_changeType_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_changeType_changetype_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_changeType_changetype_Relations]
+}
+
+"""
+Represents the input type for filtering references in GraphQL.
+"""
+input Changelog_changeType_changetype_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_changeType_changetype_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_changeType_changetype_Relations]
+  changetype: Changetype_Filter
+  system: SystemTypeFilterInput
+}
+
+"""
+GraphQL root filter for content items references.
+"""
+input Changelog_image_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+}
+
+"""
+Represents the input type for filtering references in GraphQL.
+"""
+input Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_image_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  changelog: Changelog_Filter
+  changetype: Changetype_Filter
+  sitecoreCloud: SitecoreCloud_Filter
+  sitecoreProduct: SitecoreProduct_Filter
+  status: Status_Filter
+  system: SystemTypeFilterInput
+  upload: Upload_Filter
+  xMCMedia: XMCMedia_Filter
+}
+
+"""
+GraphQL root filter for content items references.
+"""
+input Changelog_sitecoreProduct_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
+}
+
+"""
+Represents the input type for filtering references in GraphQL.
+"""
+input Changelog_sitecoreProduct_sitecoreProduct_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_sitecoreProduct_sitecoreProduct_Relations]
+  sitecoreProduct: SitecoreProduct_Filter
+  system: SystemTypeFilterInput
+}
+
+"""
+GraphQL root filter for content items references.
+"""
+input Changelog_status_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_status_status_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_status_status_Relations]
+}
+
+"""
+Represents the input type for filtering references in GraphQL.
+"""
+input Changelog_status_status_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_status_status_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_status_status_Relations]
+  status: Status_Filter
+  system: SystemTypeFilterInput
+}
+
+type Changetype implements ContentItem {
   changeType: String
-  # id
-  id: ID
-  # name
-  name: String
-  # __sysCreatedAt
-  __sysCreatedAt: DateTime
-  # __sysCreatedBy
-  __sysCreatedBy: String
-  # __sysUpdatedAt
-  __sysUpdatedAt: DateTime
-  # __sysUpdatedBy
-  __sysUpdatedBy: String
-  # __sysVersion
-  __sysVersion: String
+  system: System!
 }
 
+"""
+Represents a list of content items.
+"""
 type ChangetypeList {
-  # Information of the current page
-  pageInfo: PageInfo
-  # Results for current page
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
   results: [Changetype]
-  # Total number of results (all pages)
-  total: Int
 }
 
-input ChangetypePredicate {
-  AND: [ChangetypePredicate!]
-  changeType_allOf: [String]
-  changeType_anyOf: [String]
-  changeType_contains: String
-  changeType_doesnotcontain: String
-  changeType_doesnotendwith: String
-  changeType_doesnotstartwith: String
-  changeType_endswith: String
-  changeType_eq: String
-  changeType_neq: String
-  changeType_noneOf: [String]
-  changeType_startswith: String
-  id_anyOf: [ID]
-  id_eq: ID
-  id_neq: ID
-  id_noneOf: [ID]
-  name_allOf: [String]
-  name_anyOf: [String]
-  name_contains: String
-  name_doesnotcontain: String
-  name_doesnotendwith: String
-  name_doesnotstartwith: String
-  name_endswith: String
-  name_eq: String
-  name_neq: String
-  name_noneOf: [String]
-  name_startswith: String
-  OR: [ChangetypePredicate!]
-  __sysCreatedAt_between: [DateTime]
-  __sysCreatedAt_eq: DateTime
-  __sysCreatedAt_gt: DateTime
-  __sysCreatedAt_lt: DateTime
-  __sysCreatedAt_neq: DateTime
-  __sysCreatedBy_allOf: [String]
-  __sysCreatedBy_anyOf: [String]
-  __sysCreatedBy_contains: String
-  __sysCreatedBy_doesnotcontain: String
-  __sysCreatedBy_doesnotendwith: String
-  __sysCreatedBy_doesnotstartwith: String
-  __sysCreatedBy_endswith: String
-  __sysCreatedBy_eq: String
-  __sysCreatedBy_neq: String
-  __sysCreatedBy_noneOf: [String]
-  __sysCreatedBy_startswith: String
-  __sysUpdatedAt_between: [DateTime]
-  __sysUpdatedAt_eq: DateTime
-  __sysUpdatedAt_gt: DateTime
-  __sysUpdatedAt_lt: DateTime
-  __sysUpdatedAt_neq: DateTime
-  __sysUpdatedBy_allOf: [String]
-  __sysUpdatedBy_anyOf: [String]
-  __sysUpdatedBy_contains: String
-  __sysUpdatedBy_doesnotcontain: String
-  __sysUpdatedBy_doesnotendwith: String
-  __sysUpdatedBy_doesnotstartwith: String
-  __sysUpdatedBy_endswith: String
-  __sysUpdatedBy_eq: String
-  __sysUpdatedBy_neq: String
-  __sysUpdatedBy_noneOf: [String]
-  __sysUpdatedBy_startswith: String
-  __sysVersion_allOf: [String]
-  __sysVersion_anyOf: [String]
-  __sysVersion_contains: String
-  __sysVersion_doesnotcontain: String
-  __sysVersion_doesnotendwith: String
-  __sysVersion_doesnotstartwith: String
-  __sysVersion_endswith: String
-  __sysVersion_eq: String
-  __sysVersion_neq: String
-  __sysVersion_noneOf: [String]
-  __sysVersion_startswith: String
+"""
+Enum type used for sorting in QueryMany.
+"""
+enum ChangetypeSortingOptions {
+  CHANGE_TYPE_ASC
+  CHANGE_TYPE_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
 }
 
-enum ChangetypeSorts {
-  CHANGETYPE_ASC
-  CHANGETYPE_DESC
-  ID_ASC
-  ID_DESC
-  NAME_ASC
-  NAME_DESC
-  __SYSCREATEDAT_ASC
-  __SYSCREATEDAT_DESC
-  __SYSCREATEDBY_ASC
-  __SYSCREATEDBY_DESC
-  __SYSUPDATEDAT_ASC
-  __SYSUPDATEDAT_DESC
-  __SYSUPDATEDBY_ASC
-  __SYSUPDATEDBY_DESC
-  __SYSVERSION_ASC
-  __SYSVERSION_DESC
+"""
+GraphQL filter for content items.
+"""
+input Changetype_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changetype_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changetype_Filter]
+  changeType: StringFilterInput
+  system: SystemTypeFilterInput
 }
 
-# The `DateTime` scalar represents an ISO-8601 compliant date time type.
-scalar DateTime
-
-scalar Json
-
-# The `Long` scalar type represents non-fractional signed whole 64-bit numeric
-# values. Long can represent values between -(2^63) and 2^63 - 1.
-scalar Long
-
-# Media
-type Media {
-  # Description
-  description: String
-  # FileHeight
-  fileHeight: Long
-  # FileId
-  fileId: String
-  # FileName
-  fileName: String
-  # FileSize
-  fileSize: Long
-  # FileType
-  fileType: String
-  # FileUrl
-  fileUrl(
-    # Applies transforms to the media.
-    transform: MediaUrlTransformInput
-  ): String
-  # FileWidth
-  fileWidth: Long
-  # id
-  id: ID
-  # Name
-  name: String
-  # __sysCreatedAt
-  __sysCreatedAt: DateTime
-  # __sysCreatedBy
-  __sysCreatedBy: String
-  # __sysUpdatedAt
-  __sysUpdatedAt: DateTime
-  # __sysUpdatedBy
-  __sysUpdatedBy: String
-  # __sysVersion
-  __sysVersion: String
+"""
+Represents common fields for all content types.
+"""
+interface ContentItem {
+  """
+  The system fields of the content item.
+  """
+  system: System
 }
 
-type MediaList {
-  # Information of the current page
-  pageInfo: PageInfo
-  # Results for current page
-  results: [Media]
-  # Total number of results (all pages)
-  total: Int
+"""
+Represents a list of content items.
+"""
+type ContentItemList {
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [ContentItem]
 }
 
-input MediaPredicate {
-  AND: [MediaPredicate!]
-  description_allOf: [String]
-  description_anyOf: [String]
-  description_contains: String
-  description_doesnotcontain: String
-  description_doesnotendwith: String
-  description_doesnotstartwith: String
-  description_endswith: String
-  description_eq: String
-  description_neq: String
-  description_noneOf: [String]
-  description_startswith: String
-  fileHeight_between: [Long]
-  fileHeight_eq: Long
-  fileHeight_gt: Long
-  fileHeight_lt: Long
-  fileHeight_neq: Long
-  fileId_allOf: [String]
-  fileId_anyOf: [String]
-  fileId_contains: String
-  fileId_doesnotcontain: String
-  fileId_doesnotendwith: String
-  fileId_doesnotstartwith: String
-  fileId_endswith: String
-  fileId_eq: String
-  fileId_neq: String
-  fileId_noneOf: [String]
-  fileId_startswith: String
-  fileName_allOf: [String]
-  fileName_anyOf: [String]
-  fileName_contains: String
-  fileName_doesnotcontain: String
-  fileName_doesnotendwith: String
-  fileName_doesnotstartwith: String
-  fileName_endswith: String
-  fileName_eq: String
-  fileName_neq: String
-  fileName_noneOf: [String]
-  fileName_startswith: String
-  fileSize_between: [Long]
-  fileSize_eq: Long
-  fileSize_gt: Long
-  fileSize_lt: Long
-  fileSize_neq: Long
-  fileType_allOf: [String]
-  fileType_anyOf: [String]
-  fileType_contains: String
-  fileType_doesnotcontain: String
-  fileType_doesnotendwith: String
-  fileType_doesnotstartwith: String
-  fileType_endswith: String
-  fileType_eq: String
-  fileType_neq: String
-  fileType_noneOf: [String]
-  fileType_startswith: String
-  fileUrl_allOf: [String]
-  fileUrl_anyOf: [String]
-  fileUrl_contains: String
-  fileUrl_doesnotcontain: String
-  fileUrl_doesnotendwith: String
-  fileUrl_doesnotstartwith: String
-  fileUrl_endswith: String
-  fileUrl_eq: String
-  fileUrl_neq: String
-  fileUrl_noneOf: [String]
-  fileUrl_startswith: String
-  fileWidth_between: [Long]
-  fileWidth_eq: Long
-  fileWidth_gt: Long
-  fileWidth_lt: Long
-  fileWidth_neq: Long
-  id_anyOf: [ID]
-  id_eq: ID
-  id_neq: ID
-  id_noneOf: [ID]
-  name_allOf: [String]
-  name_anyOf: [String]
-  name_contains: String
-  name_doesnotcontain: String
-  name_doesnotendwith: String
-  name_doesnotstartwith: String
-  name_endswith: String
-  name_eq: String
-  name_neq: String
-  name_noneOf: [String]
-  name_startswith: String
-  OR: [MediaPredicate!]
-  __sysCreatedAt_between: [DateTime]
-  __sysCreatedAt_eq: DateTime
-  __sysCreatedAt_gt: DateTime
-  __sysCreatedAt_lt: DateTime
-  __sysCreatedAt_neq: DateTime
-  __sysCreatedBy_allOf: [String]
-  __sysCreatedBy_anyOf: [String]
-  __sysCreatedBy_contains: String
-  __sysCreatedBy_doesnotcontain: String
-  __sysCreatedBy_doesnotendwith: String
-  __sysCreatedBy_doesnotstartwith: String
-  __sysCreatedBy_endswith: String
-  __sysCreatedBy_eq: String
-  __sysCreatedBy_neq: String
-  __sysCreatedBy_noneOf: [String]
-  __sysCreatedBy_startswith: String
-  __sysUpdatedAt_between: [DateTime]
-  __sysUpdatedAt_eq: DateTime
-  __sysUpdatedAt_gt: DateTime
-  __sysUpdatedAt_lt: DateTime
-  __sysUpdatedAt_neq: DateTime
-  __sysUpdatedBy_allOf: [String]
-  __sysUpdatedBy_anyOf: [String]
-  __sysUpdatedBy_contains: String
-  __sysUpdatedBy_doesnotcontain: String
-  __sysUpdatedBy_doesnotendwith: String
-  __sysUpdatedBy_doesnotstartwith: String
-  __sysUpdatedBy_endswith: String
-  __sysUpdatedBy_eq: String
-  __sysUpdatedBy_neq: String
-  __sysUpdatedBy_noneOf: [String]
-  __sysUpdatedBy_startswith: String
-  __sysVersion_allOf: [String]
-  __sysVersion_anyOf: [String]
-  __sysVersion_contains: String
-  __sysVersion_doesnotcontain: String
-  __sysVersion_doesnotendwith: String
-  __sysVersion_doesnotstartwith: String
-  __sysVersion_endswith: String
-  __sysVersion_eq: String
-  __sysVersion_neq: String
-  __sysVersion_noneOf: [String]
-  __sysVersion_startswith: String
+"""
+Enum type used for sorting in Reference fields.
+"""
+enum ContentItemSortingOptions {
+  """
+  Indicates sorting by CreatedAt system field ascending.
+  """
+  SYSTEM_CREATEDAT_ASC
+  """
+  Indicates sorting by CreatedAt system field descending.
+  """
+  SYSTEM_CREATEDAT_DESC
+  """
+  Indicates sorting by CreatedBy system field ascending.
+  """
+  SYSTEM_CREATED_ASC
+  """
+  Indicates sorting by CreatedBy system field descending.
+  """
+  SYSTEM_CREATED_DESC
+  """
+  Indicates sorting by ID ascending.
+  """
+  SYSTEM_ID_ASC
+  """
+  Indicates sorting by ID descending.
+  """
+  SYSTEM_ID_DESC
+  """
+  Indicates sorting by Locale ascending.
+  """
+  SYSTEM_LOCALE_ASC
+  """
+  Indicates sorting by Locale descending.
+  """
+  SYSTEM_LOCALE_DESC
+  """
+  Indicates sorting by Name descending.
+  """
+  SYSTEM_NAME_ASC
+  """
+  Sort by Name descending.
+  """
+  SYSTEM_NAME_DESC
+  """
+  Indicates sorting by PublishingStatus system field ascending.
+  """
+  SYSTEM_STATUS_ASC
+  """
+  Indicates sorting by PublishingStatus system field descending.
+  """
+  SYSTEM_STATUS_DESC
+  """
+  Indicates sorting by UpdatedAt system field ascending.
+  """
+  SYSTEM_UPDATEDAT_ASC
+  """
+  Indicates sorting by UpdatedAt system field descending.
+  """
+  SYSTEM_UPDATEDAT_DESC
+  """
+  Indicates sorting by UpdatedBy system field ascending.
+  """
+  SYSTEM_UPDATED_ASC
+  """
+  Indicates sorting by UpdatedBy system field ascending.
+  """
+  SYSTEM_UPDATED_DESC
+  """
+  Indicates sorting by Version ascending.
+  """
+  SYSTEM_VERSION_ASC
+  """
+  Indicates sorting by Version descending.
+  """
+  SYSTEM_VERSION_DESC
 }
 
-enum MediaSorts {
-  DESCRIPTION_ASC
-  DESCRIPTION_DESC
-  FILEHEIGHT_ASC
-  FILEHEIGHT_DESC
-  FILEID_ASC
-  FILEID_DESC
-  FILESIZE_ASC
-  FILESIZE_DESC
-  FILETYPE_ASC
-  FILETYPE_DESC
-  FILEURL_ASC
-  FILEURL_DESC
-  FILEWIDTH_ASC
-  FILEWIDTH_DESC
-  ID_ASC
-  ID_DESC
-  NAME_ASC
-  NAME_DESC
-  __SYSCREATEDAT_ASC
-  __SYSCREATEDAT_DESC
-  __SYSCREATEDBY_ASC
-  __SYSCREATEDBY_DESC
-  __SYSUPDATEDAT_ASC
-  __SYSUPDATEDAT_DESC
-  __SYSUPDATEDBY_ASC
-  __SYSUPDATEDBY_DESC
-  __SYSVERSION_ASC
-  __SYSVERSION_DESC
+"""
+Represents common fields for all content types.
+"""
+type ContentItemType implements ContentItem {
+  system: System!
 }
 
-# Options for image compression for media transforms.
-enum MediaTransformCompression {
-  # Use a quickest-to-compress file format, at a cost of increased file size and
-  # lower image quality. It will usually override the format option and choose
-  # JPEG over WebP or AVIF.
-  FAST
+"""
+GraphQL filter for content items.
+"""
+input ContentItem_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [ContentItem_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [ContentItem_Filter]
+  system: SystemTypeFilterInput
 }
 
-# Defines a set of coordinates.
-input MediaTransformCoordinatesInput {
-  # The X coordinate.
-  x: Float!
-  # The Y coordinate.
-  y: Float!
+"""
+Represents the GraphQL object type for ContentTypeSummary.
+"""
+type ContentTypeSummary {
+  id: ID!
+  name: String!
+  version: Int!
 }
 
-# Options for handling errors during media processing.
-enum MediaTransformError {
-  # In case of a fatal error that prevents the image from being resized, redirects to the unresized source image URL.
-  REDIRECT
+"""
+Graphql filter for content type summaries.
+"""
+input ContentTypeSummary_Filter {
+  id: StringFilterInput
 }
 
-# Affects interpretation of width and height in media transforms.
-enum MediaTransformFit {
-  # Similar to contain, but the image is never enlarged. If the image is larger
-  # than given width or height, it will be resized.
-  SCALEDOWN
-  # Image will be resized (shrunk or enlarged) to be as large as possible within
-  # the given width or height while preserving the aspect ratio. If you only
-  # provide a single dimension (for example, only width), the image will be shrunk
-  # or enlarged to exactly match that dimension.
-  CONTAIN
-  # Resizes (shrinks or enlarges) to fill the entire area of width and height. If
-  # the image has an aspect ratio different from the ratio of width and height, it
-  # will be cropped to fit.
-  COVER
-  # Image will be shrunk and cropped to fit within the area specified by width and
-  # height. The image will not be enlarged. For images smaller than the given
-  # dimensions, it is the same as scale-down. For images larger than the given
-  # dimensions, it is the same as cover.
-  CROP
-  # Resizes to the maximum size that fits within the given width and height, and
-  # then fills the remaining area with a background color (white by default).
-  PAD
+scalar CustomDateTime
+
+"""
+GraphQL filter for datetime ranges.
+"""
+input DateRangeInput {
+  """
+  The start date.
+  """
+  from: CustomDateTime!
+  """
+  The end date.
+  """
+  to: CustomDateTime!
 }
 
-# Options for the image format of media transform output.
-enum MediaTransformFormat {
-  # Serve the WebP or AVIF format to browsers that support it.
-  AUTO
-  AVIF
-  GIF
-  JPEG
-  # Instead of generating an image, outputs information about the image in JSON
-  # format. The JSON object will contain data such as image size (before and after
-  # resizing), source image’s MIME type, and file size.
-  JSON
-  PNG
-  SVG
-  WEBP
+"""
+GraphQL filter for DateTime fields.
+"""
+input DateTimeFilterInput {
+  """
+  Matches the specified value.
+  """
+  equals: CustomDateTime
+  """
+  Matches values greater than the specified value.
+  """
+  greaterThan: CustomDateTime
+  """
+  Matches values within a specified range.
+  """
+  inRange: DateRangeInput
+  """
+  Matches values less than the specified value.
+  """
+  lessThan: CustomDateTime
+  """
+  Does not match the specified value.
+  """
+  notEquals: CustomDateTime
+  """
+  Excludes values within a specified range.
+  """
+  notInRange: DateRangeInput
 }
 
-# Options for cropping in media transforms.
-enum MediaTransformGravitySide {
-  # Selects focal point based on saliency detection.
-  AUTO
-  # Left side.
-  LEFT
-  # Right side.
-  RIGHT
-  # Top side.
-  TOP
-  # Bottom side.
-  BOTTOM
+"""
+GraphQL filter for integer fields.
+"""
+input DoubleFilterInput {
+  """
+  Matches the specified value.
+  """
+  equals: Float
+  """
+  Matches values greater than the specified value.
+  """
+  greaterThan: Float
+  """
+  Matches values within a specified range.
+  """
+  inRange: DoubleRangeInput
+  """
+  Matches values less than the specified value.
+  """
+  lessThan: Float
+  """
+  Does not match the specified value.
+  """
+  notEquals: Float
+  """
+  Excludes values within a specified range.
+  """
+  notInRange: DoubleRangeInput
 }
 
-# Defines gravity for cropping operations.
-input MediaTransformGravitySpecificationInput {
-  # Gravity point.
-  coordinates: MediaTransformCoordinatesInput
-  # Gravity side.
-  side: MediaTransformGravitySide
+"""
+GraphQL filter for number ranges.
+"""
+input DoubleRangeInput {
+  """
+  The lower boundary of the range.
+  """
+  from: Float!
+  """
+  The upper boundary of the range.
+  """
+  to: Float!
 }
 
-# Options for metadata preservation.
-enum MediaTransformMetadata {
-  # Discard all metadata except EXIF copyright tag.
-  COPYRIGHT
-  # Preserves most of EXIF metadata, including GPS location if present.
-  KEEP
-  # Discard all invisible EXIF metadata.
-  NONE
+scalar JSON
+
+"""
+Represents a language and regional setting.
+"""
+type Locale {
+  system: LocaleSystemTypeType
 }
 
-# Defines the bounds of a rectangle.
-input MediaTransformRectangleInput {
-  # The bottom of the rectangle.
-  bottom: Int
-  # The left side of the rectangle.
-  left: Int
-  # the right side of the rectangle.
-  right: Int
-  # The top of the rectangle.
-  top: Int
+type LocaleSystemTypeType {
+  createdAt: UTCDateTime!
+  createdBy: String!
+  id: ID!
+  label: String
+  updatedAt: UTCDateTime!
+  updatedBy: String!
 }
 
-# Media URL transforms.
-input MediaUrlTransformInput {
-  # Whether to preserve animation frames from input files. Setting it to false reduces animations to still images.
-  anim: Boolean
-  # Background color to add underneath the image. Applies only to images with
-  # transparency (for example, PNG). Accepts any CSS color, such as #RRGGBB and rgba(…).
-  background: String
-  # Blur radius between 1 (slight blur) and 250 (maximum).
-  blur: Int
-  # Increase brightness by a factor. A value of 1.0 equals no change, a value of
-  # 0.5 equals half brightness, and a value of 2.0 equals twice as bright. 0 is ignored.
-  brightness: Float
-  # The compression to use on processed media.
-  compression: MediaTransformCompression
-  # Increase contrast by a factor. A value of 1.0 equals no change, a value of 0.5
-  # equals low contrast, and a value of 2.0 equals high contrast. 0 is ignored.
-  contrast: Float
-  # Device Pixel Ratio. Multiplier for width/height that makes it easier to specify higher-DPI sizes.
-  dpr: Int
-  # Affects interpretation of width and height. All resizing modes preserve aspect ratio.
-  fit: MediaTransformFit
-  # The format of the processed image.
-  format: MediaTransformFormat
-  # Increase exposure by a factor. A value of 1.0 equals no change, a value of 0.5
-  # darkens the image, and a value of 2.0 lightens the image. 0 is ignored.
-  gamma: Float
-  # When cropping with fit: "cover" and fit: "crop", this parameter defines the side or point that should not be cropped.
-  gravity: MediaTransformGravitySpecificationInput
-  # Specifies maximum height of the image in pixels. Exact behavior depends on the fit mode.
-  height: Int
-  # Controls amount of invisible metadata (EXIF data) that should be preserved.
-  metadata: MediaTransformMetadata
-  # In case of a fatal error that prevents the image from being resized, redirects to the unresized source image URL.
-  onError: MediaTransformError
-  # Specifies quality for images in JPEG, WebP, and AVIF formats. The quality is
-  # in a 1-100 scale, but useful values are between 50 (low quality, small file
-  # size) and 90 (high quality, large file size).
-  quality: Int
-  # Number of degrees (90, 180, or 270) to rotate the image by.
-  rotate: Int
-  # Specifies strength of sharpening filter to apply to the image. The value is a
-  # floating-point number between 0 (no sharpening, default) and 10 (maximum).
-  sharpen: Float
-  # Specifies a number of pixels to cut off on each side. Allows removal of
-  # borders or cutting out a specific fragment of an image.
-  trim: MediaTransformRectangleInput
-  # Specifies maximum width of the image in pixels. Exact behavior depends on the fit mode.
-  width: Int
+"""
+Represents common interface for all content types containing MediaLibraryFragment fragment.
+"""
+interface MediaLibraryFragment implements ContentItem {
+  """
+  The size of the file.
+  """
+  media_fileSize: Float
+  """
+  The private link to use for the media asset enabling displaying it in authoring without making it publically available.
+  """
+  media_privateLink: String
+  """
+  The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset.
+  """
+  media_publicLink: String
+  """
+  The thumbnail link to use for the media asset.
+  """
+  media_thumbnailLink: String
+  """
+  The file type of the media asset.
+  """
+  media_type: [TaxonomyTerm]
+  """
+  The system fields of the content item.
+  """
+  system: System
 }
 
-# The multiplier path scalar represents a valid GraphQL multiplier path string.
-scalar MultiplierPath
+"""
+Represents an implementation for MediaLibraryFragment fragment interface.
+"""
+type MediaLibraryFragmentImpl implements ContentItem & MediaLibraryFragment {
+  """
+  The size of the file.
+  """
+  media_fileSize: Float
+  """
+  The private link to use for the media asset enabling displaying it in authoring without making it publically available.
+  """
+  media_privateLink: String
+  """
+  The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset.
+  """
+  media_publicLink: String
+  """
+  The thumbnail link to use for the media asset.
+  """
+  media_thumbnailLink: String
+  """
+  The file type of the media asset.
+  """
+  media_type: [TaxonomyTerm]
+  system: System!
+}
 
-type PageInfo {
-  # Contains the encoded value of the cursor pointing to the last result of the current page
-  endCursor: String
-  # Equals 'true' in case the next page contains results, otherwise 'false'
-  hasNext: Boolean
+"""
+Represents a list of content items.
+"""
+type MediaLibraryFragmentList {
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [MediaLibraryFragment]
+}
+
+"""
+Enum type used for sorting in FragmentMany query.
+"""
+enum MediaLibraryFragmentSortingOptions {
+  MEDIA_FILE_SIZE_ASC
+  MEDIA_FILE_SIZE_DESC
+  MEDIA_PRIVATE_LINK_ASC
+  MEDIA_PRIVATE_LINK_DESC
+  MEDIA_PUBLIC_LINK_ASC
+  MEDIA_PUBLIC_LINK_DESC
+  MEDIA_THUMBNAIL_LINK_ASC
+  MEDIA_THUMBNAIL_LINK_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
+}
+
+"""
+GraphQL filter for fragments.
+"""
+input MediaLibraryFragment_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [MediaLibraryFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [MediaLibraryFragment_Filter]
+  media_fileSize: DoubleFilterInput
+  media_privateLink: StringFilterInput
+  media_publicLink: StringFilterInput
+  media_thumbnailLink: StringFilterInput
+  media_type: SelectFilterInput
+  system: SystemTypeFilterInput
+}
+
+enum PublishStatus {
+  PREVIEW
+  PUBLISHED
 }
 
 type Query {
-  # Select multiple ChangelogList using search criteria
-  allChangelog(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
+  changelog(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): Changelog
+  changetype(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): Changetype
+  contentItem(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): ContentItem
+  cost: Int
+  locale(
+    """
+    The ID of the content locale
+    """
+    id: ID!
+  ): Locale
+  manyChangelog(
+    """
+    A cursor from a previous result.
+    """
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-    orderBy: [ChangelogSorts]
-    where: ChangelogPredicate
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_changelog
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: ChangelogSortingOptions
   ): ChangelogList
-  # Select multiple ChangetypeList using search criteria
-  allChangetype(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
+  manyChangetype(
+    """
+    A cursor from a previous result.
+    """
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-    orderBy: [ChangetypeSorts]
-    where: ChangetypePredicate
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_changetype
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: ChangetypeSortingOptions
   ): ChangetypeList
-  # Select multiple MediaList using search criteria
-  allMedia(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
+  manyContentItem(
+    """
+    A cursor from a previous result.
+    """
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-    orderBy: [MediaSorts]
-    where: MediaPredicate
-  ): MediaList
-  # Select multiple SitecoreCloudList using search criteria
-  allSitecoreCloud(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_ContentItem
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  manyLocale: [Locale]
+  manyMediaLibraryFragment(
+    """
+    A cursor from a previous result.
+    """
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-    orderBy: [SitecoreCloudSorts]
-    where: SitecoreCloudPredicate
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_MediaLibraryFragment
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: MediaLibraryFragmentSortingOptions
+  ): MediaLibraryFragmentList
+  manySitecoreCloud(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_sitecoreCloud
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: SitecoreCloudSortingOptions
   ): SitecoreCloudList
-  # Select multiple SitecoreProductList using search criteria
-  allSitecoreProduct(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
+  manySitecoreProduct(
+    """
+    A cursor from a previous result.
+    """
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-    orderBy: [SitecoreProductSorts]
-    where: SitecoreProductPredicate
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_sitecoreProduct
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: SitecoreProductSortingOptions
   ): SitecoreProductList
-  # Select multiple StatusList using search criteria
-  allStatus(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
+  manyStatus(
+    """
+    A cursor from a previous result.
+    """
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-    orderBy: [StatusSorts]
-    where: StatusPredicate
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_status
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: StatusSortingOptions
   ): StatusList
-  # Select multiple Taxonomy_releaseStatusList using search criteria
-  allTaxonomy_releaseStatus(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
+  manyTaxonomy(
+    """
+    A cursor from a previous result.
+    """
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-    where: Taxonomy_releaseStatusPredicate
-  ): Taxonomy_releaseStatusList
-  # Select a single changelog using its UID
-  changelog(id: String!): Changelog
-  # Select a single changetype using its UID
-  changetype(id: String!): Changetype
-  # Select a single Media using its UID
-  media(id: String!): Media
-  # Select a single sitecoreCloud using its UID
-  sitecoreCloud(id: String!): SitecoreCloud
-  # Select a single sitecoreProduct using its UID
-  sitecoreProduct(id: String!): SitecoreProduct
-  # Select a single status using its UID
-  status(id: String!): Status
-  # Select a single Taxonomy_releaseStatus using its UID
-  taxonomy_releaseStatus(id: String!): Taxonomy_releaseStatus
-}
-
-# sitecoreCloud
-type SitecoreCloud {
-  # cloudName
-  cloudName: String
-  # id
-  id: ID
-  # name
-  name: String
-  # __sysCreatedAt
-  __sysCreatedAt: DateTime
-  # __sysCreatedBy
-  __sysCreatedBy: String
-  # __sysUpdatedAt
-  __sysUpdatedAt: DateTime
-  # __sysUpdatedBy
-  __sysUpdatedBy: String
-  # __sysVersion
-  __sysVersion: String
-}
-
-type SitecoreCloudList {
-  # Information of the current page
-  pageInfo: PageInfo
-  # Results for current page
-  results: [SitecoreCloud]
-  # Total number of results (all pages)
-  total: Int
-}
-
-input SitecoreCloudPredicate {
-  AND: [SitecoreCloudPredicate!]
-  cloudName_allOf: [String]
-  cloudName_anyOf: [String]
-  cloudName_contains: String
-  cloudName_doesnotcontain: String
-  cloudName_doesnotendwith: String
-  cloudName_doesnotstartwith: String
-  cloudName_endswith: String
-  cloudName_eq: String
-  cloudName_neq: String
-  cloudName_noneOf: [String]
-  cloudName_startswith: String
-  id_anyOf: [ID]
-  id_eq: ID
-  id_neq: ID
-  id_noneOf: [ID]
-  name_allOf: [String]
-  name_anyOf: [String]
-  name_contains: String
-  name_doesnotcontain: String
-  name_doesnotendwith: String
-  name_doesnotstartwith: String
-  name_endswith: String
-  name_eq: String
-  name_neq: String
-  name_noneOf: [String]
-  name_startswith: String
-  OR: [SitecoreCloudPredicate!]
-  __sysCreatedAt_between: [DateTime]
-  __sysCreatedAt_eq: DateTime
-  __sysCreatedAt_gt: DateTime
-  __sysCreatedAt_lt: DateTime
-  __sysCreatedAt_neq: DateTime
-  __sysCreatedBy_allOf: [String]
-  __sysCreatedBy_anyOf: [String]
-  __sysCreatedBy_contains: String
-  __sysCreatedBy_doesnotcontain: String
-  __sysCreatedBy_doesnotendwith: String
-  __sysCreatedBy_doesnotstartwith: String
-  __sysCreatedBy_endswith: String
-  __sysCreatedBy_eq: String
-  __sysCreatedBy_neq: String
-  __sysCreatedBy_noneOf: [String]
-  __sysCreatedBy_startswith: String
-  __sysUpdatedAt_between: [DateTime]
-  __sysUpdatedAt_eq: DateTime
-  __sysUpdatedAt_gt: DateTime
-  __sysUpdatedAt_lt: DateTime
-  __sysUpdatedAt_neq: DateTime
-  __sysUpdatedBy_allOf: [String]
-  __sysUpdatedBy_anyOf: [String]
-  __sysUpdatedBy_contains: String
-  __sysUpdatedBy_doesnotcontain: String
-  __sysUpdatedBy_doesnotendwith: String
-  __sysUpdatedBy_doesnotstartwith: String
-  __sysUpdatedBy_endswith: String
-  __sysUpdatedBy_eq: String
-  __sysUpdatedBy_neq: String
-  __sysUpdatedBy_noneOf: [String]
-  __sysUpdatedBy_startswith: String
-  __sysVersion_allOf: [String]
-  __sysVersion_anyOf: [String]
-  __sysVersion_contains: String
-  __sysVersion_doesnotcontain: String
-  __sysVersion_doesnotendwith: String
-  __sysVersion_doesnotstartwith: String
-  __sysVersion_endswith: String
-  __sysVersion_eq: String
-  __sysVersion_neq: String
-  __sysVersion_noneOf: [String]
-  __sysVersion_startswith: String
-}
-
-enum SitecoreCloudSorts {
-  CLOUDNAME_ASC
-  CLOUDNAME_DESC
-  ID_ASC
-  ID_DESC
-  NAME_ASC
-  NAME_DESC
-  __SYSCREATEDAT_ASC
-  __SYSCREATEDAT_DESC
-  __SYSCREATEDBY_ASC
-  __SYSCREATEDBY_DESC
-  __SYSUPDATEDAT_ASC
-  __SYSUPDATEDAT_DESC
-  __SYSUPDATEDBY_ASC
-  __SYSUPDATEDBY_DESC
-  __SYSVERSION_ASC
-  __SYSVERSION_DESC
-}
-
-# sitecoreProduct
-type SitecoreProduct {
-  # abbreviation
-  abbreviation: String
-  # id
-  id: ID
-  # name
-  name: String
-  # productDescription
-  productDescription: String
-  # sitecoreProduct__productIcon (child to parent traversal)
-  productIcon(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+  ): TaxonomyList
+  manyUpload(
+    """
+    A cursor from a previous result.
+    """
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-    orderBy: [MediaSorts]
-    where: MediaPredicate
-  ): MediaList!
-  # Image URL to the dark product icon
-  productIconDark: String
-  # Image URL to the light product icon
-  productIconLight: String
-  # productName
-  productName: String
-  # sitecoreProduct__sitecoreCloud (child to parent traversal)
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_Upload
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: UploadSortingOptions
+  ): UploadList
+  manyXMCMediaFragment(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    A filter used for searching the content items.
+    """
+    filter: Root_XMCMediaFragment
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+    """
+    Order the results
+    """
+    orderBy: XMCMediaFragmentSortingOptions
+  ): XMCMediaFragmentList
+  mediaLibraryFragment(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): MediaLibraryFragment
   sitecoreCloud(
-    # Cursor pagination - The encoded value of the cursor pointing to the last
-    # result of the current page- Should be used with first
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): SitecoreCloud
+  sitecoreProduct(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): SitecoreProduct
+  status(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): Status
+  taxonomy(
+    """
+    The ID of the content taxonomy
+    """
+    id: ID!
+  ): Taxonomy
+  upload(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): Upload
+  xMCMediaFragment(
+    """
+    The ID of the content item
+    """
+    id: ID!
+    """
+    The locale of the content item. Use an empty string for invariant culture
+    """
+    locale: String!
+  ): XMCMediaFragment
+}
+
+"""
+GraphQL filter for reference fields.
+"""
+input ReferenceFilterInput {
+  """
+  Checks if the value contains the specified text.
+  """
+  contains: String
+  """
+  Checks if the value contains all of the specified texts.
+  """
+  containsAll: [String!]
+  """
+  Checks if the value contains any of the specified texts.
+  """
+  containsAny: [String!]
+  """
+  Checks if the value does not contain the specified text.
+  """
+  notContains: String
+  """
+  Checks if the value does not contain all of the specified texts.
+  """
+  notContainsAll: [String!]
+  """
+  Checks if the value does not contain any of the specified texts.
+  """
+  notContainsAny: [String!]
+}
+
+"""
+Root filter for content items.
+"""
+input Root_ContentItem {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [ContentItem_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [ContentItem_Filter]
+}
+
+"""
+Root filter for fragments.
+"""
+input Root_MediaLibraryFragment {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [MediaLibraryFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [MediaLibraryFragment_Filter]
+}
+
+"""
+Root filter for content types.
+"""
+input Root_Upload {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Upload_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Upload_Filter]
+}
+
+"""
+Root filter for fragments.
+"""
+input Root_XMCMediaFragment {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [XMCMediaFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [XMCMediaFragment_Filter]
+}
+
+"""
+Root filter for content types.
+"""
+input Root_changelog {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changelog_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changelog_Filter]
+}
+
+"""
+Root filter for content types.
+"""
+input Root_changetype {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Changetype_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Changetype_Filter]
+}
+
+"""
+Root filter for content types.
+"""
+input Root_sitecoreCloud {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreCloud_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreCloud_Filter]
+}
+
+"""
+Root filter for content types.
+"""
+input Root_sitecoreProduct {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_Filter]
+}
+
+"""
+Root filter for content types.
+"""
+input Root_status {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Status_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Status_Filter]
+}
+
+"""
+This type allows specifying a search over a Select field.
+"""
+input SelectFieldSearchInput {
+  """
+  Match if the ID is present in the list of selected terms.
+  """
+  id: String
+}
+
+"""
+GraphQL filter for select fields.
+"""
+input SelectFilterInput {
+  """
+  Checks if the selection includes the specified value.
+  """
+  contains: SelectFieldSearchInput
+  """
+  Checks if the selection does not include the specified value.
+  """
+  notContains: SelectFieldSearchInput
+}
+
+type SitecoreCloud implements ContentItem {
+  cloudName: String
+  system: System!
+}
+
+"""
+Represents a list of content items.
+"""
+type SitecoreCloudList {
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [SitecoreCloud]
+}
+
+"""
+Enum type used for sorting in QueryMany.
+"""
+enum SitecoreCloudSortingOptions {
+  CLOUD_NAME_ASC
+  CLOUD_NAME_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
+}
+
+"""
+GraphQL filter for content items.
+"""
+input SitecoreCloud_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreCloud_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreCloud_Filter]
+  cloudName: StringFilterInput
+  system: SystemTypeFilterInput
+}
+
+type SitecoreProduct implements ContentItem {
+  abbreviation: String
+  productDescription: String
+  productIcon(
     after: String
-    # Cursor pagination - Max records to return. Must be less than 1000 - Should be used with after
-    first: Int = 10
-  ): SitecoreProduct__sitecoreCloud_Parent_Types_List!
-  # __sysCreatedAt
-  __sysCreatedAt: DateTime
-  # __sysCreatedBy
-  __sysCreatedBy: String
-  # __sysUpdatedAt
-  __sysUpdatedAt: DateTime
-  # __sysUpdatedBy
-  __sysUpdatedBy: String
-  # __sysVersion
-  __sysVersion: String
+    """
+    A filter used for searching the reference items.
+    """
+    filter: SitecoreProduct_productIcon_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  """
+  Image URL to the dark product icon
+  """
+  productIconDark: String
+  """
+  Image URL to the light product icon
+  """
+  productIconLight: String
+  productName: String
+  sitecoreCloud(
+    after: String
+    """
+    A filter used for searching the reference items.
+    """
+    filter: SitecoreProduct_sitecoreCloud_Relations
+    minimumPageSize: Int = 20
+    """
+    Order the results
+    """
+    orderBy: ContentItemSortingOptions
+  ): ContentItemList
+  system: System!
 }
 
-# Query on the sitecoreProduct__productIcon ancestor relation (Media->sitecoreProduct)
-input SitecoreProduct__productIconPredicate {
-  media_ids: [ID]
-}
-
-# Types allowed on the sitecoreProduct__sitecoreCloud relation.
-union SitecoreProduct__sitecoreCloud_Parent_Types = SitecoreProduct | Status | SitecoreCloud | Changetype | Changelog
-type SitecoreProduct__sitecoreCloud_Parent_Types_List {
-  # Information of the current page
-  pageInfo: PageInfo
-  # Results for current page
-  results: [SitecoreProduct__sitecoreCloud_Parent_Types]
-  # Total number of results (all pages)
-  total: Int
-}
-
-# Query on the sitecoreProduct__sitecoreCloud ancestor relation (sitecoreProduct->sitecoreProduct)
-input SitecoreProduct__sitecoreCloudPredicate {
-  productIcon: SitecoreProduct__productIconPredicate
-  sitecoreProduct_ids: [ID]
-}
-
+"""
+Represents a list of content items.
+"""
 type SitecoreProductList {
-  # Information of the current page
-  pageInfo: PageInfo
-  # Results for current page
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
   results: [SitecoreProduct]
-  # Total number of results (all pages)
-  total: Int
 }
 
-input SitecoreProductPredicate {
-  abbreviation_allOf: [String]
-  abbreviation_anyOf: [String]
-  abbreviation_contains: String
-  abbreviation_doesnotcontain: String
-  abbreviation_doesnotendwith: String
-  abbreviation_doesnotstartwith: String
-  abbreviation_endswith: String
-  abbreviation_eq: String
-  abbreviation_neq: String
-  abbreviation_noneOf: [String]
-  abbreviation_startswith: String
-  AND: [SitecoreProductPredicate!]
-  id_anyOf: [ID]
-  id_eq: ID
-  id_neq: ID
-  id_noneOf: [ID]
-  name_allOf: [String]
-  name_anyOf: [String]
-  name_contains: String
-  name_doesnotcontain: String
-  name_doesnotendwith: String
-  name_doesnotstartwith: String
-  name_endswith: String
-  name_eq: String
-  name_neq: String
-  name_noneOf: [String]
-  name_startswith: String
-  OR: [SitecoreProductPredicate!]
-  productIcon: SitecoreProduct__productIconPredicate
-  productIconDark_allOf: [String]
-  productIconDark_anyOf: [String]
-  productIconDark_contains: String
-  productIconDark_doesnotcontain: String
-  productIconDark_doesnotendwith: String
-  productIconDark_doesnotstartwith: String
-  productIconDark_endswith: String
-  productIconDark_eq: String
-  productIconDark_neq: String
-  productIconDark_noneOf: [String]
-  productIconDark_startswith: String
-  productIconLight_allOf: [String]
-  productIconLight_anyOf: [String]
-  productIconLight_contains: String
-  productIconLight_doesnotcontain: String
-  productIconLight_doesnotendwith: String
-  productIconLight_doesnotstartwith: String
-  productIconLight_endswith: String
-  productIconLight_eq: String
-  productIconLight_neq: String
-  productIconLight_noneOf: [String]
-  productIconLight_startswith: String
-  productName_allOf: [String]
-  productName_anyOf: [String]
-  productName_contains: String
-  productName_doesnotcontain: String
-  productName_doesnotendwith: String
-  productName_doesnotstartwith: String
-  productName_endswith: String
-  productName_eq: String
-  productName_neq: String
-  productName_noneOf: [String]
-  productName_startswith: String
-  sitecoreCloud: SitecoreProduct__sitecoreCloudPredicate
-  __sysCreatedAt_between: [DateTime]
-  __sysCreatedAt_eq: DateTime
-  __sysCreatedAt_gt: DateTime
-  __sysCreatedAt_lt: DateTime
-  __sysCreatedAt_neq: DateTime
-  __sysCreatedBy_allOf: [String]
-  __sysCreatedBy_anyOf: [String]
-  __sysCreatedBy_contains: String
-  __sysCreatedBy_doesnotcontain: String
-  __sysCreatedBy_doesnotendwith: String
-  __sysCreatedBy_doesnotstartwith: String
-  __sysCreatedBy_endswith: String
-  __sysCreatedBy_eq: String
-  __sysCreatedBy_neq: String
-  __sysCreatedBy_noneOf: [String]
-  __sysCreatedBy_startswith: String
-  __sysUpdatedAt_between: [DateTime]
-  __sysUpdatedAt_eq: DateTime
-  __sysUpdatedAt_gt: DateTime
-  __sysUpdatedAt_lt: DateTime
-  __sysUpdatedAt_neq: DateTime
-  __sysUpdatedBy_allOf: [String]
-  __sysUpdatedBy_anyOf: [String]
-  __sysUpdatedBy_contains: String
-  __sysUpdatedBy_doesnotcontain: String
-  __sysUpdatedBy_doesnotendwith: String
-  __sysUpdatedBy_doesnotstartwith: String
-  __sysUpdatedBy_endswith: String
-  __sysUpdatedBy_eq: String
-  __sysUpdatedBy_neq: String
-  __sysUpdatedBy_noneOf: [String]
-  __sysUpdatedBy_startswith: String
-  __sysVersion_allOf: [String]
-  __sysVersion_anyOf: [String]
-  __sysVersion_contains: String
-  __sysVersion_doesnotcontain: String
-  __sysVersion_doesnotendwith: String
-  __sysVersion_doesnotstartwith: String
-  __sysVersion_endswith: String
-  __sysVersion_eq: String
-  __sysVersion_neq: String
-  __sysVersion_noneOf: [String]
-  __sysVersion_startswith: String
-}
-
-enum SitecoreProductSorts {
+"""
+Enum type used for sorting in QueryMany.
+"""
+enum SitecoreProductSortingOptions {
   ABBREVIATION_ASC
   ABBREVIATION_DESC
-  ID_ASC
-  ID_DESC
-  NAME_ASC
-  NAME_DESC
-  PRODUCTICONDARK_ASC
-  PRODUCTICONDARK_DESC
-  PRODUCTICONLIGHT_ASC
-  PRODUCTICONLIGHT_DESC
-  PRODUCTNAME_ASC
-  PRODUCTNAME_DESC
-  __SYSCREATEDAT_ASC
-  __SYSCREATEDAT_DESC
-  __SYSCREATEDBY_ASC
-  __SYSCREATEDBY_DESC
-  __SYSUPDATEDAT_ASC
-  __SYSUPDATEDAT_DESC
-  __SYSUPDATEDBY_ASC
-  __SYSUPDATEDBY_DESC
-  __SYSVERSION_ASC
-  __SYSVERSION_DESC
+  PRODUCT_DESCRIPTION_ASC
+  PRODUCT_DESCRIPTION_DESC
+  PRODUCT_ICON_DARK_ASC
+  PRODUCT_ICON_DARK_DESC
+  PRODUCT_ICON_LIGHT_ASC
+  PRODUCT_ICON_LIGHT_DESC
+  PRODUCT_NAME_ASC
+  PRODUCT_NAME_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
 }
 
-# status
-type Status {
-  # description
+"""
+GraphQL filter for content items.
+"""
+input SitecoreProduct_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_Filter]
+  abbreviation: StringFilterInput
+  productDescription: StringFilterInput
+  productIcon: ReferenceFilterInput
+  productIconDark: StringFilterInput
+  productIconLight: StringFilterInput
+  productName: StringFilterInput
+  sitecoreCloud: ReferenceFilterInput
+  system: SystemTypeFilterInput
+}
+
+"""
+GraphQL root filter for content items references.
+"""
+input SitecoreProduct_productIcon_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+}
+
+"""
+Represents the input type for filtering references in GraphQL.
+"""
+input SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_productIcon_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  changelog: Changelog_Filter
+  changetype: Changetype_Filter
+  sitecoreCloud: SitecoreCloud_Filter
+  sitecoreProduct: SitecoreProduct_Filter
+  status: Status_Filter
+  system: SystemTypeFilterInput
+  upload: Upload_Filter
+  xMCMedia: XMCMedia_Filter
+}
+
+"""
+GraphQL root filter for content items references.
+"""
+input SitecoreProduct_sitecoreCloud_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+}
+
+"""
+Represents the input type for filtering references in GraphQL.
+"""
+input SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [SitecoreProduct_sitecoreCloud_XMCMedia__Upload__changetype__status__sitecoreCloud__sitecoreProduct__changelog_Relations]
+  changelog: Changelog_Filter
+  changetype: Changetype_Filter
+  sitecoreCloud: SitecoreCloud_Filter
+  sitecoreProduct: SitecoreProduct_Filter
+  status: Status_Filter
+  system: SystemTypeFilterInput
+  upload: Upload_Filter
+  xMCMedia: XMCMedia_Filter
+}
+
+type Status implements ContentItem {
   description: String
-  # id
-  id: ID
-  # Identifier used in code
+  """
+  Identifier used in code
+  """
   identifier: String
-  # name
-  name: String
-  # __sysCreatedAt
-  __sysCreatedAt: DateTime
-  # __sysCreatedBy
-  __sysCreatedBy: String
-  # __sysUpdatedAt
-  __sysUpdatedAt: DateTime
-  # __sysUpdatedBy
-  __sysUpdatedBy: String
-  # __sysVersion
-  __sysVersion: String
+  system: System!
 }
 
+"""
+Represents a list of content items.
+"""
 type StatusList {
-  # Information of the current page
-  pageInfo: PageInfo
-  # Results for current page
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
   results: [Status]
-  # Total number of results (all pages)
-  total: Int
 }
 
-input StatusPredicate {
-  AND: [StatusPredicate!]
-  description_allOf: [String]
-  description_anyOf: [String]
-  description_contains: String
-  description_doesnotcontain: String
-  description_doesnotendwith: String
-  description_doesnotstartwith: String
-  description_endswith: String
-  description_eq: String
-  description_neq: String
-  description_noneOf: [String]
-  description_startswith: String
-  identifier_allOf: [String]
-  identifier_anyOf: [String]
-  identifier_contains: String
-  identifier_doesnotcontain: String
-  identifier_doesnotendwith: String
-  identifier_doesnotstartwith: String
-  identifier_endswith: String
-  identifier_eq: String
-  identifier_neq: String
-  identifier_noneOf: [String]
-  identifier_startswith: String
-  id_anyOf: [ID]
-  id_eq: ID
-  id_neq: ID
-  id_noneOf: [ID]
-  name_allOf: [String]
-  name_anyOf: [String]
-  name_contains: String
-  name_doesnotcontain: String
-  name_doesnotendwith: String
-  name_doesnotstartwith: String
-  name_endswith: String
-  name_eq: String
-  name_neq: String
-  name_noneOf: [String]
-  name_startswith: String
-  OR: [StatusPredicate!]
-  __sysCreatedAt_between: [DateTime]
-  __sysCreatedAt_eq: DateTime
-  __sysCreatedAt_gt: DateTime
-  __sysCreatedAt_lt: DateTime
-  __sysCreatedAt_neq: DateTime
-  __sysCreatedBy_allOf: [String]
-  __sysCreatedBy_anyOf: [String]
-  __sysCreatedBy_contains: String
-  __sysCreatedBy_doesnotcontain: String
-  __sysCreatedBy_doesnotendwith: String
-  __sysCreatedBy_doesnotstartwith: String
-  __sysCreatedBy_endswith: String
-  __sysCreatedBy_eq: String
-  __sysCreatedBy_neq: String
-  __sysCreatedBy_noneOf: [String]
-  __sysCreatedBy_startswith: String
-  __sysUpdatedAt_between: [DateTime]
-  __sysUpdatedAt_eq: DateTime
-  __sysUpdatedAt_gt: DateTime
-  __sysUpdatedAt_lt: DateTime
-  __sysUpdatedAt_neq: DateTime
-  __sysUpdatedBy_allOf: [String]
-  __sysUpdatedBy_anyOf: [String]
-  __sysUpdatedBy_contains: String
-  __sysUpdatedBy_doesnotcontain: String
-  __sysUpdatedBy_doesnotendwith: String
-  __sysUpdatedBy_doesnotstartwith: String
-  __sysUpdatedBy_endswith: String
-  __sysUpdatedBy_eq: String
-  __sysUpdatedBy_neq: String
-  __sysUpdatedBy_noneOf: [String]
-  __sysUpdatedBy_startswith: String
-  __sysVersion_allOf: [String]
-  __sysVersion_anyOf: [String]
-  __sysVersion_contains: String
-  __sysVersion_doesnotcontain: String
-  __sysVersion_doesnotendwith: String
-  __sysVersion_doesnotstartwith: String
-  __sysVersion_endswith: String
-  __sysVersion_eq: String
-  __sysVersion_neq: String
-  __sysVersion_noneOf: [String]
-  __sysVersion_startswith: String
-}
-
-enum StatusSorts {
+"""
+Enum type used for sorting in QueryMany.
+"""
+enum StatusSortingOptions {
   DESCRIPTION_ASC
   DESCRIPTION_DESC
-  ID_ASC
-  ID_DESC
   IDENTIFIER_ASC
   IDENTIFIER_DESC
-  NAME_ASC
-  NAME_DESC
-  __SYSCREATEDAT_ASC
-  __SYSCREATEDAT_DESC
-  __SYSCREATEDBY_ASC
-  __SYSCREATEDBY_DESC
-  __SYSUPDATEDAT_ASC
-  __SYSUPDATEDAT_DESC
-  __SYSUPDATEDBY_ASC
-  __SYSUPDATEDBY_DESC
-  __SYSVERSION_ASC
-  __SYSVERSION_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
 }
 
-# Taxonomy_releaseStatus
-type Taxonomy_releaseStatus {
-  # id
-  id: ID
+"""
+GraphQL filter for content items.
+"""
+input Status_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Status_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Status_Filter]
+  description: StringFilterInput
+  identifier: StringFilterInput
+  system: SystemTypeFilterInput
 }
 
-type Taxonomy_releaseStatusList {
-  # Information of the current page
-  pageInfo: PageInfo
-  # Results for current page
-  results: [Taxonomy_releaseStatus]
-  # Total number of results (all pages)
-  total: Int
+"""
+GraphQL filter for string fields.
+"""
+input StringFilterInput {
+  """
+  Specifies whether the string comparison should be case-sensitive or not.
+  """
+  case: CaseSensitive
+  """
+  Checks if the value contains the specified text.
+  """
+  contains: String
+  """
+  Checks if the value contains all of the specified texts.
+  """
+  containsAll: [String!]
+  """
+  Checks if the value contains any of the specified texts.
+  """
+  containsAny: [String!]
+  """
+  Matches values that end with the specified text.
+  """
+  endsWith: String
+  """
+  Matches the specified value.
+  """
+  equals: String
+  """
+  Matches any of the specified values.
+  """
+  equalsAny: [String!]
+  """
+  Checks if the value does not contain the specified text.
+  """
+  notContains: String
+  """
+  Checks if the value does not contain all of the specified texts.
+  """
+  notContainsAll: [String!]
+  """
+  Checks if the value does not contain any of the specified texts.
+  """
+  notContainsAny: [String!]
+  """
+  Excludes values that end with the specified text.
+  """
+  notEndsWith: String
+  """
+  Does not match the specified value.
+  """
+  notEquals: String
+  """
+  Does not match any of the specified values.
+  """
+  notEqualsAny: [String!]
+  """
+  Excludes values that start with the specified text.
+  """
+  notStartsWith: String
+  """
+  Matches values that start with the specified text.
+  """
+  startsWith: String
 }
 
-input Taxonomy_releaseStatusPredicate {
-  AND: [Taxonomy_releaseStatusPredicate!]
-  id_anyOf: [ID]
-  id_eq: ID
-  id_neq: ID
-  id_noneOf: [ID]
-  OR: [Taxonomy_releaseStatusPredicate!]
+"""
+GraphQL filter for string list fields.
+"""
+input StringListFilterInput {
+  """
+  Checks if the list contains the specified value.
+  """
+  contains: String
+  """
+  Checks if the list contains all of the specified values.
+  """
+  containsAll: [String!]
+  """
+  Checks if the list contains any of the specified values.
+  """
+  containsAny: [String!]
+  """
+  Checks if the list does not contain the specified value.
+  """
+  notContains: String
+  """
+  Checks if the list does not contain all of the specified values.
+  """
+  notContainsAll: [String!]
+  """
+  Checks if the list does not contain any of the specified values.
+  """
+  notContainsAny: [String!]
+}
+
+"""
+Represents system properties.
+"""
+type System implements SystemItem {
+  contentType: ContentTypeSummary!
+  createdAt: UTCDateTime!
+  createdBy: String!
+  id: ID!
+  label: String
+  locale: String!
+  name: String!
+  publishStatus: PublishStatus!
+  updatedAt: UTCDateTime!
+  updatedBy: String!
+  version: Int!
+}
+
+"""
+Represents common system fields for content types.
+"""
+interface SystemItem {
+  """
+  The content type information of this content item.
+  """
+  contentType: ContentTypeSummary!
+  """
+  The timestamp when the content item was created.
+  """
+  createdAt: UTCDateTime!
+  """
+  The user who created the content item.
+  """
+  createdBy: String!
+  """
+  The ID of the content item.
+  """
+  id: ID!
+  """
+  The locale of the content item.
+  """
+  locale: String!
+  """
+  The name of the content item.
+  """
+  name: String!
+  """
+  The publishing status of the content item.
+  """
+  publishStatus: PublishStatus!
+  """
+  The timestamp when the content item was last updated.
+  """
+  updatedAt: UTCDateTime!
+  """
+  The user who last updated the content item.
+  """
+  updatedBy: String!
+  """
+  The version of the content item.
+  """
+  version: Int!
+}
+
+"""
+GraphQL filter for system types.
+"""
+input SystemTypeFilterInput {
+  contentType: ContentTypeSummary_Filter
+  createdAt: DateTimeFilterInput
+  createdBy: StringFilterInput
+  id: StringFilterInput
+  locale: StringFilterInput
+  name: StringFilterInput
+  updatedAt: DateTimeFilterInput
+  updatedBy: StringFilterInput
+  version: DoubleFilterInput
+  versionTags: StringListFilterInput
+}
+
+"""
+Represents a taxonomy.
+"""
+type Taxonomy {
+  system: TaxonomySystemTypeType
+  """
+  The terms in the taxonomy.
+  """
+  terms(
+    """
+    A cursor from a previous result.
+    """
+    after: String
+    """
+    The minimum number of results to return per page
+    """
+    minimumPageSize: Int! = 20
+  ): TaxonomyTermList
+}
+
+"""
+Represents a list of taxonomies.
+"""
+type TaxonomyList {
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of taxonomies.
+  """
+  results: [Taxonomy]
+}
+
+type TaxonomySystemTypeType {
+  createdAt: UTCDateTime!
+  createdBy: String!
+  id: ID!
+  label: String
+  name: String!
+  publishStatus: PublishStatus!
+  updatedAt: UTCDateTime!
+  updatedBy: String!
+  version: Int!
+}
+
+"""
+Represents a single taxonomy term.
+"""
+type TaxonomyTerm {
+  """
+  The ID of the taxonomy term.
+  """
+  id: ID!
+  """
+  The label of the taxonomy term.
+  """
+  label: String
+  """
+  The name of the taxonomy term.
+  """
+  name: String!
+}
+
+"""
+Represents a list of taxonomy terms.
+"""
+type TaxonomyTermList {
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of taxonomy terms.
+  """
+  results: [TaxonomyTerm]
+}
+
+"""
+Datetime in UTC format
+"""
+scalar UTCDateTime
+
+"""
+Content type for uploading Media via the Worksets API
+"""
+type Upload implements ContentItem & XMCMediaFragment {
+  """
+  The relative path for creation of the public link.
+  """
+  mms_relativePath: String
+  system: System!
+  """
+  A content type that has a media fragment associated with it.
+  """
+  target_content_type_id: String
+}
+
+"""
+Represents a list of content items.
+"""
+type UploadList {
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [Upload]
+}
+
+"""
+Enum type used for sorting in QueryMany.
+"""
+enum UploadSortingOptions {
+  MMS_RELATIVE_PATH_ASC
+  MMS_RELATIVE_PATH_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
+  TARGET_CONTENT_TYPE_ID_ASC
+  TARGET_CONTENT_TYPE_ID_DESC
+}
+
+"""
+GraphQL filter for content items.
+"""
+input Upload_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [Upload_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [Upload_Filter]
+  mms_relativePath: StringFilterInput
+  system: SystemTypeFilterInput
+  target_content_type_id: StringFilterInput
+}
+
+"""
+Media content type to create media items.
+"""
+type XMCMedia implements ContentItem & MediaLibraryFragment & XMCMediaFragment {
+  """
+  The size of the file.
+  """
+  media_fileSize: Float
+  """
+  The private link to use for the media asset enabling displaying it in authoring without making it publically available.
+  """
+  media_privateLink: String
+  """
+  The public link to use for the media asset. This field may be automatically updated by publishing or archiving the media asset.
+  """
+  media_publicLink: String
+  """
+  The thumbnail link to use for the media asset.
+  """
+  media_thumbnailLink: String
+  """
+  The file type of the media asset.
+  """
+  media_type: [TaxonomyTerm]
+  """
+  The relative path for creation of the public link.
+  """
+  mms_relativePath: String
+  system: System!
+}
+
+"""
+Represents common interface for all content types containing XMCMediaFragment fragment.
+"""
+interface XMCMediaFragment implements ContentItem {
+  """
+  The relative path for creation of the public link.
+  """
+  mms_relativePath: String
+  """
+  The system fields of the content item.
+  """
+  system: System
+}
+
+"""
+Represents an implementation for XMCMediaFragment fragment interface.
+"""
+type XMCMediaFragmentImpl implements ContentItem & XMCMediaFragment {
+  """
+  The relative path for creation of the public link.
+  """
+  mms_relativePath: String
+  system: System!
+}
+
+"""
+Represents a list of content items.
+"""
+type XMCMediaFragmentList {
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [XMCMediaFragment]
+}
+
+"""
+Enum type used for sorting in FragmentMany query.
+"""
+enum XMCMediaFragmentSortingOptions {
+  MMS_RELATIVE_PATH_ASC
+  MMS_RELATIVE_PATH_DESC
+  SYSTEM_CREATED_ASC
+  SYSTEM_CREATED_BY_ASC
+  SYSTEM_CREATED_BY_DESC
+  SYSTEM_CREATED_DESC
+  SYSTEM_ID_ASC
+  SYSTEM_ID_DESC
+  SYSTEM_LOCALE_ASC
+  SYSTEM_LOCALE_DESC
+  SYSTEM_NAME_ASC
+  SYSTEM_NAME_DESC
+  SYSTEM_STATUS_ASC
+  SYSTEM_STATUS_DESC
+  SYSTEM_UPDATED_ASC
+  SYSTEM_UPDATED_BY_ASC
+  SYSTEM_UPDATED_BY_DESC
+  SYSTEM_UPDATED_DESC
+  SYSTEM_VERSION_ASC
+  SYSTEM_VERSION_DESC
+}
+
+"""
+GraphQL filter for fragments.
+"""
+input XMCMediaFragment_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [XMCMediaFragment_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [XMCMediaFragment_Filter]
+  mms_relativePath: StringFilterInput
+  system: SystemTypeFilterInput
+}
+
+"""
+Represents a list of content items.
+"""
+type XMCMediaList {
+  """
+  The pagination cursor.
+  """
+  cursor: String
+  """
+  Indicates whether more items are available.
+  """
+  hasMore: Boolean
+  """
+  The minimum page size.
+  """
+  minimumPageSize: Int!
+  """
+  The list of content items.
+  """
+  results: [XMCMedia]
+}
+
+"""
+GraphQL filter for content items.
+"""
+input XMCMedia_Filter {
+  """
+  Combines multiple filter conditions.
+  """
+  AND: [XMCMedia_Filter]
+  """
+  Combines multiple filter conditions.
+  """
+  OR: [XMCMedia_Filter]
+  system: SystemTypeFilterInput
 }

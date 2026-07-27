@@ -8,14 +8,11 @@ twitter: ['@Moosend', '#Moosend', '@SitecoreSend', '#SitecoreSend']
 youtube: 'PLAKrWBcgVt6M4Ia_bECQVOyxUe1eDFpG6'
 youtubeTitle: 'Latest Marketing Automation videos'
 stackexchange: ['#moosend']
-sitecoreCommunityQuestions: true
-sitecoreCommunityQuestionsCategory: ['marketingAutomation']
 guidedDemoId: 'cls58bdv0001a0fk13w45ajxf'
 ---
 
 ## Introduction
 
-<img src="/images/products/send/pixel-perfect-emails-faster.svg" alt="Pixel perfect emails faster" width="33%" align="right" />
 With Send you can dive into the world of email marketing and create the most responsive newsletters to amaze your subscribers. However, sending email campaigns is not the only thing you can do. By leveraging state-of-the-art marketing automation features you can save valuable time by scheduling your campaigns and tracking their performance based on your recipients’ behavior through advanced Reporting Capabilities.
 
 ## Documentation

@@ -1,5 +1,5 @@
-import { postJiraIssue } from '@/src/lib/jira';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { postJiraIssue } from "@src/lib/jira";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 interface FeedbackBody {
   summary: string;
@@ -12,10 +12,13 @@ interface FeedbackBody {
   product?: string[];
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    return res.status(405).send('Method not allowed');
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
+  if (req.method !== "POST") {
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    return res.status(405).send("Method not allowed");
   }
   //return res.status(500).send('Bad configuration');
   const body = JSON.parse(req.body) as FeedbackBody;
@@ -32,13 +35,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       product: body.product,
     });
   } catch (e) {
-    console.error('error while creating the ticket', e);
+    console.error("error while creating the ticket", e);
 
-    res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    return res.status(500).send('Bad configuration');
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    return res.status(500).send("Bad configuration");
   }
 
   res.status(200).json({
-    message: 'ticket created!',
+    message: "ticket created!",
   });
 }

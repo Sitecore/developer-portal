@@ -1,68 +1,73 @@
-import { Button, ButtonGroup, Heading, Icon, Stack, Tooltip, useClipboard, useToast } from '@chakra-ui/react';
-import { PageInfo } from '@lib/interfaces/page-info';
-import { mdiCheck, mdiContentCopy, mdiLanguageMarkdownOutline } from '@mdi/js';
-import SvgLogo from '../../ui/logos/SvgLogo';
+"use client";
+
+import { mdiCheck, mdiChevronDown, mdiLanguageMarkdownOutline } from "@mdi/js";
+import Icon from "@mdi/react";
+import { Button } from "@src/components/ui/button";
+import type { PageInfo } from "@src/lib/interfaces/page-info";
+import { useState } from "react";
+import { toast } from "sonner";
+import { ButtonGroup } from "../../ui/button-group";
+import {
+  OpenIn,
+  OpenInChatGPT,
+  OpenInClaude,
+  OpenInContent,
+  OpenInCursor,
+  OpenInTrigger,
+} from "../../ui/custom/open-in-chat";
 
 export type useWithAIProps = {
   pageInfo: PageInfo;
 };
 
 export const useWithAI = ({ pageInfo }: useWithAIProps) => {
-  const editUrl = 'https://github.com/sitecore/developer-portal/edit';
-  const rawUrl = 'https://raw.githubusercontent.com/Sitecore/developer-portal/refs/heads';
-
+  const editUrl = "https://github.com/sitecore/developer-portal/edit";
+  const rawUrl =
+    "https://raw.githubusercontent.com/Sitecore/developer-portal/refs/heads";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/+$/, "") ?? "";
   const urltoParse = pageInfo.fileName.replace(editUrl, rawUrl);
-  const chatGPTURL = `https://chatgpt.com/?hints=search&q=Read+${encodeURIComponent(urltoParse)}+so+I+can+ask+questions+about+it`;
+  const markdownUrl = `${baseUrl}${encodeURIComponent(urltoParse)}`;
+  const sampleQuery = `Read this article ${decodeURIComponent(markdownUrl)} so I can questions about it`;
 
-  const { onCopy, hasCopied } = useClipboard(pageInfo.content || '');
-  // const { isOpen, onToggle } = useDisclosure();
-  const toast = useToast();
+  const [isCopied, setIsCopied] = useState(false);
+
+  const onCopy = () => {
+    navigator.clipboard.writeText(decodeURIComponent(markdownUrl) || "");
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
+    toast("Link copied to clipboard");
+  };
 
   return (
-    <Stack gap={4}>
-      <Heading variant={'section'} size={'sm'} mb={{ base: 0, md: 2 }}>
-        Use with AI
-      </Heading>
-      <ButtonGroup variant="toggle" size="sm" layerStyle="toggleGroup" isAttached shadow={'sm'}>
-        <Tooltip label="Copy page as markdown for LLMs">
-          <Button
-            leftIcon={
-              hasCopied ? (
-                <Icon boxSize={4}>
-                  <path d={mdiCheck} />
-                </Icon>
-              ) : (
-                <Icon boxSize={4}>
-                  <path d={mdiContentCopy} />
-                </Icon>
-              )
-            }
-            onClick={() => {
-              onCopy(), toast({ title: 'Link copied to clipboard', status: 'info', duration: 2000 });
-            }}
-          >
-            Copy page
-          </Button>
-        </Tooltip>
-        <Tooltip label="View as Markdown">
-          <Button
-            leftIcon={
-              <Icon boxSize={4}>
-                <path d={mdiLanguageMarkdownOutline} />
-              </Icon>
-            }
-            onClick={() => window.open(urltoParse, '_blank')}
-          >
-            Markdown
-          </Button>
-        </Tooltip>
-        <Tooltip label="Ask questions about this page">
-          <Button leftIcon={<SvgLogo logo={'chatgpt'} height={20} />} as={Button} onClick={() => window.open(chatGPTURL, '_blank')}>
-            ChatGPT
-          </Button>
-        </Tooltip>
+    <div className="w-full z-1 xl:block not-prose">
+      <ButtonGroup>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={onCopy}
+          className="rounded-sm"
+        >
+          <span className="text-sm">Copy link</span>
+          {isCopied ? (
+            <Icon path={mdiCheck} size={0.9} />
+          ) : (
+            <Icon path={mdiLanguageMarkdownOutline} size={0.9} />
+          )}
+        </Button>
+        <OpenIn query={sampleQuery}>
+          <OpenInTrigger>
+            <Button variant="outline" size="sm" className="rounded-sm">
+              Open in <Icon path={mdiChevronDown} size={0.9} />
+            </Button>
+          </OpenInTrigger>
+          <OpenInContent>
+            <OpenInChatGPT />
+            <OpenInClaude />
+            <OpenInCursor />
+          </OpenInContent>
+        </OpenIn>
       </ButtonGroup>
-    </Stack>
+    </div>
   );
 };
 

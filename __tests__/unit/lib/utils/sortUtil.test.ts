@@ -1,4 +1,4 @@
-import { SortUtil } from '@lib/utils/sortUtil';
+import { SortUtil } from '@/src/lib/util/sortUtil';
 import { describe, expect, it } from 'vitest';
 
 describe('SortUtil', () => {

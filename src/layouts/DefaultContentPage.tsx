@@ -1,17 +1,15 @@
-import { ContentHeading } from '@lib/interfaces/contentheading';
-import { ChildPageInfo, PageInfo } from '@lib/interfaces/page-info';
-import ChangelogEntries from '@src/components/changelog/ChangelogEntries';
-import { SocialFeeds } from '@src/components/links/SocialFeeds';
-import { RenderContent } from '@src/components/markdown/MarkdownContent';
-import InPageNav from '@src/components/navigation/InPageNav';
-import Layout from '@src/layouts/Layout';
-import { useRouter } from 'next/router';
-
-import { TrackPageView } from '@/src/components/integrations/engage/TrackPageView';
-
-import { PromoCardProps, PromoList } from '../components/cards';
-import { ContentSection, Hero } from '../components/ui/sections';
-import { ThreeColumnLayout } from './ThreeColumnLayout';
+import { type PromoCardProps, PromoList } from "@src/components/cards";
+import ChangelogEntries from "@src/components/changelog/ChangelogEntries";
+import { TrackPageView } from "@src/components/integrations/engage/TrackPageView";
+import { SocialFeeds } from "@src/components/links/SocialFeeds";
+import { RenderContent } from "@src/components/markdown/MarkdownContent";
+import InPageNav from "@src/components/navigation/InPageNav";
+import { ContentSection, Hero } from "@src/components/ui/sections";
+import Layout from "@src/layouts/Layout";
+import type { ContentHeading } from "@src/lib/interfaces/contentheading";
+import type { ChildPageInfo, PageInfo } from "@src/lib/interfaces/page-info";
+import { useRouter } from "next/router";
+import { ThreeColumnLayout } from "./ThreeColumnLayout";
 
 type DefaultContentPageProps = {
   pageInfo: PageInfo;
@@ -23,7 +21,13 @@ type DefaultContentPageProps = {
   customNavPager?: React.ReactNode;
 };
 
-const DefaultContentPage = ({ pageInfo, promoAfter, promoBefore, customNav, customNavPager }: DefaultContentPageProps) => {
+const DefaultContentPage = ({
+  pageInfo,
+  promoAfter,
+  promoBefore,
+  customNav,
+  customNavPager,
+}: DefaultContentPageProps) => {
   const router = useRouter();
 
   if (!pageInfo) {
@@ -37,22 +41,50 @@ const DefaultContentPage = ({ pageInfo, promoAfter, promoBefore, customNav, cust
     sectionTitles.push(...pageInfo.headings);
   }
 
-  const Nav = customNav ? customNav : sectionTitles != null ? <InPageNav titles={sectionTitles} /> : null;
+  const Nav = customNav ? (
+    customNav
+  ) : sectionTitles != null ? (
+    <InPageNav titles={sectionTitles} />
+  ) : null;
 
   return (
     <TrackPageView pageInfo={pageInfo}>
-      <Layout title={pageInfo.title} description={pageInfo.description} openGraphImage={pageInfo.openGraphImage}>
-        <Hero title={pageInfo.title} description={pageInfo.description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} demoId={pageInfo.guidedDemoId} />
+      <Layout
+        title={pageInfo.title}
+        description={pageInfo.description}
+        openGraphImage={pageInfo.openGraphImage}
+      >
+        <Hero
+          title={pageInfo.title}
+          description={pageInfo.description}
+          image={pageInfo.heroImage}
+          productLogo={pageInfo.productLogo}
+          demoId={pageInfo.guidedDemoId}
+        />
 
-        <ContentSection bg={pageInfo.hasInPageNav ? 'gray.90' : 'neutral-bg'}>
+        <ContentSection
+          className={pageInfo.hasInPageNav ? "bg-gray-50 dark:bg-gray-900" : ""}
+        >
           {/* <CenteredContent paddingTop={10}> */}
           <PromoList data={promoBefore} />
           {/* Page structure */}
 
-          <ThreeColumnLayout sidebar={pageInfo.hasSubPageNav && Nav} inPageNav={sectionTitles.length > 0 && <InPageNav titles={sectionTitles} key={router.asPath} />} inPageLinks={sectionTitles}>
+          <ThreeColumnLayout
+            sidebar={pageInfo.hasSubPageNav && Nav}
+            inPageNav={
+              sectionTitles.length > 0 && (
+                <InPageNav titles={sectionTitles} key={router.asPath} />
+              )
+            }
+          >
             <RenderContent content={pageInfo.parsedContent} />
 
-            <ChangelogEntries entries={pageInfo.changelogEntries} title={`Latest product updates`} linkText="Full changelog" columns={2} />
+            <ChangelogEntries
+              entries={pageInfo.changelogEntries}
+              title={`Latest product updates`}
+              linkText="Full changelog"
+              columns={2}
+            />
             <PromoList data={promoAfter} />
             <SocialFeeds pageInfo={pageInfo} />
           </ThreeColumnLayout>

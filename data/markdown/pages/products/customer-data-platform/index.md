@@ -13,10 +13,10 @@ guidedDemoId: 'cls53hjn8005r0fl90zuh4zt6'
 
 ## Introduction
 
-<img src="/images/products/cdp/customer-data-collection.svg" alt="Customer Data Collection" width="33%" align="right" />
 Sitecore CDP brings together real-time behavioral insights and all your customer data so you can understand and engage every customer (and anonymous visitors) instantly.
 
-To learn more about [Customer Data Platform](https://www.sitecore.com/products/customer-data-platform) and how it can help your clients please visit [Sitecore.com](https://www.sitecore.com/products/customer-data-platform).
+> With the release of SitecoreAI, further information can be found in [Unified data layer](/sitecoreai/capabilities/unified-data-layer).
+
 
 ## Documentation
 
@@ -24,7 +24,7 @@ To learn more about [Customer Data Platform](https://www.sitecore.com/products/c
 <Link title="Overview" link="https://doc.sitecore.com/cdp/" />
 <Link title="User Docs" link="https://doc.sitecore.com/cdp/en/users/sitecore-cdp/index-en.html" />
 <Link title="Developer Docs" link="https://doc.sitecore.com/cdp/en/developers/api/index-en.html" />
-<Link title="Knowledge Hub" link="https://sitecore.cdpknowledgehub.com/docs" />
+<Link title="Sitecore Accelerate" link="/learn/accelerate/cdp-personalize" />
 </Row>
 
 ## Open Source

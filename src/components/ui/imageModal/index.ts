@@ -1,1 +1,1 @@
-export { ImageModal } from './ImageModal';
+export { ImageModal } from "./ImageModal";

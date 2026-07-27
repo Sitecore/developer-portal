@@ -1,4 +1,4 @@
-import { Session } from 'next-auth';
+import type { Session } from "next-auth";
 
 /**
  * Verifies whether the logged-in user is an Okta user
@@ -10,7 +10,7 @@ export function isVerifiedUser(session: Session | null): boolean {
     return false;
   }
 
-  return session.provider === 'okta' || session.provider === 'sitecore';
+  return session.provider === "okta" || session.provider === "sitecore";
 }
 
 /**
@@ -23,7 +23,7 @@ export function isAuthenticatedOktaUser(session: Session | null): boolean {
     return false;
   }
 
-  return session.provider === 'okta';
+  return session.provider === "okta";
 }
 
 /**
@@ -31,10 +31,12 @@ export function isAuthenticatedOktaUser(session: Session | null): boolean {
  * @param session - The NextAuth session object
  * @returns true if the user is authenticated and is an Cloud Portal user, false otherwise
  */
-export function isAuthenticatedCloudPortalUser(session: Session | null): boolean {
+export function isAuthenticatedCloudPortalUser(
+  session: Session | null,
+): boolean {
   if (!session || !session.user) {
     return false;
   }
 
-  return session.provider === 'sitecore';
+  return session.provider === "sitecore";
 }

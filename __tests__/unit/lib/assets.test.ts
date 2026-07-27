@@ -1,4 +1,4 @@
-import ProductLogos, { Product, Variant } from '@lib/assets';
+import ProductLogos, { Product, Variant } from '@src/lib/assets';
 import { describe, expect, it } from 'vitest';
 
 describe('ProductLogos', () => {

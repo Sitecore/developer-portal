@@ -12,10 +12,7 @@ cdpTags: ['discover']
 
 ## Introduction
 
-<img src="/images/products/discover/discover-datadriven-commerce.svg" alt="Datadriven Commerce" width="33%" align="right" />
 Sitecore Discover enables your commerce business by adding individualized search and merchandizing capabilities. Deliver a 1:1 shopping experience with tailored search results and recommendations driven by AI in real time.
-
-To learn more about [Sitecore Discover](https://www.sitecore.com/products/discover) and how it can help your clients please visit [Sitecore.com](https://www.sitecore.com/products/discover).
 
 <VideoPromo youTubeId="z1FR_W--7SI" title="Sitecore Discover introduction" description="Introduction to how Sitecore Discover delivers unique shopping journeys tailored to each shopper’s in-the-moment needs and wants." className="clear-both" />
 
@@ -29,6 +26,7 @@ To learn more about [Sitecore Discover](https://www.sitecore.com/products/discov
 <Link title="Introduction to Discover JS SDK for React" link="https://doc.sitecore.com/discover/en/developers/discover-js-sdk-for-react/introduction-to-discover-js-sdk-for-react.html" />
 <Link title="Discover JS SDK for React - UI Component Reference" link="https://developers.sitecorecloud.io/discover-sdk/react/1.x-alpha/storybook/index.html?path=/docs/introduction-introduction--page" />
 </Row>
+
 ## Documentation
 
 <Row columns={2}>

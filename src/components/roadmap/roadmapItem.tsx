@@ -1,107 +1,183 @@
-import { getBadgeColor } from '@/src/lib/jira';
-import { IRoadmapItem, RoadmapProduct } from '@/src/lib/roadmap';
-import { getQueryValue, slugify } from '@/src/lib/utils';
-import { Badge, Box, Card, CardBody, CardHeader, Divider, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Heading, HStack, Stack, Tooltip, useDisclosure, Wrap } from '@chakra-ui/react';
-import { Prose } from '@nikolovlazar/chakra-ui-prose';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { excludedProducts, getStatusColor } from '../../lib/jira';
-import { LinkedHeading } from '../links/LinkedHeading';
-import { ImageModal } from '../ui/imageModal';
+"use client";
+
+import { LinkedHeading } from "@src/components/links/LinkedHeading";
+import { Badge } from "@src/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@src/components/ui/card";
+import { ImageModal } from "@src/components/ui/imageModal";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+} from "@src/components/ui/sheet";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@src/components/ui/tooltip";
+import { excludedProducts, getBadgeColor, getStatusColor } from "@src/lib/jira";
+import type { IRoadmapItem, RoadmapProduct } from "@src/lib/roadmap";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { cn } from "@/src/lib/util";
+import { getQueryValue } from "@/src/lib/util/requests";
+import { slugify } from "@/src/lib/util/stringUtil";
 
 interface RoadmapItemProps {
   item: IRoadmapItem;
 }
 
-export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemProps) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+export const RoadmapItem: React.FC<RoadmapItemProps> = ({
+  item,
+}: RoadmapItemProps) => {
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const { details } = router.query;
   const selectedItem = getQueryValue(details);
-  const images: string[] = item.attachments?.map((attachment) => attachment.url) || [];
+  const images: string[] =
+    item.attachments?.map((attachment) => attachment.url) || [];
 
   useEffect(() => {
     if (selectedItem.toLowerCase() === item.id.toString()) {
-      onOpen();
+      setIsOpen(true);
     }
-  }, [selectedItem, item.id, onOpen]);
+  }, [selectedItem, item.id]);
 
   const handleClick = () => {
-    onOpen();
+    setIsOpen(true);
   };
 
   return (
     <>
-      <Card variant={'outlineRaised'} size={'md'}>
+      <Card style="outline" elevation="xs" padding="sm">
         <CardHeader>
-          <Heading as={'h3'} size="md" onClick={handleClick} cursor={'pointer'}>
+          <button
+            type="button"
+            className="text-base font-heading font-semibold cursor-pointer hover:underline text-left w-full"
+            onClick={handleClick}
+          >
             {item.title}
-          </Heading>
+          </button>
         </CardHeader>
-        <CardBody hideBelow={'sm'}>
-          <Wrap mb={4}>
+        <CardContent className="hidden sm:block">
+          <div className="flex flex-wrap gap-2 mb-4">
             {item.product?.map((label: RoadmapProduct) => (
-              <Badge key={label.id} colorScheme={'gray'}>
+              <Badge key={label.id} variant="default">
                 {excludedProducts.includes(label.name) ? (
                   label.name
                 ) : (
-                  <Tooltip label={`Go to the roadmap page for ${label.name}`}>
-                    <Link href={`/roadmap/${slugify(label.name)}`}>{label.name}</Link>
-                  </Tooltip>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Link
+                          href={`/roadmap/${slugify(label.name)}`}
+                          className="hover:underline"
+                        >
+                          {label.name}
+                        </Link>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Go to the roadmap page for {label.name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 )}
               </Badge>
             ))}
-          </Wrap>
-        </CardBody>
+          </div>
+        </CardContent>
       </Card>
-      <Drawer onClose={onClose} isOpen={isOpen} size={'xl'}>
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader as={HStack}>
-            <LinkedHeading id={slugify(item.id.toString())}>{item.title}</LinkedHeading>
-          </DrawerHeader>
-          <DrawerBody>
-            <Stack p={4} border="1px solid" borderRadius={'md'} borderColor={'chakra-border-color'}>
-              <Wrap>
-                <Heading variant={'section'}>Roadmap Phase:</Heading> <Badge colorScheme={getBadgeColor(item.roadmapPhase)}>{item.roadmapPhase}</Badge>
-              </Wrap>
-              <Wrap>
-                <Heading variant={'section'}>Status:</Heading> <Badge colorScheme={getStatusColor(item.status)}>{item.status}</Badge>
-              </Wrap>
-
-              <Wrap>
-                <Heading variant={'section'}>Product(s):</Heading>
-                {item.product?.map((label: RoadmapProduct) => (
-                  <Badge key={label.id} colorScheme={'gray'}>
-                    <Link href={`/roadmap/${slugify(label.name)}`}>{label.name}</Link>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        <SheetContent className="w-full sm:max-w-2xl">
+          <SheetHeader>
+            <SheetTitle>
+              <LinkedHeading id={slugify(item.id.toString())}>
+                {item.title}
+              </LinkedHeading>
+            </SheetTitle>
+          </SheetHeader>
+          <SheetDescription>
+            <Card style="outline" elevation="xs" padding="sm" className="mx-4">
+              <CardContent>
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <p className="text-sm uppercase tracking-wide text-muted-foreground">
+                    Roadmap Phase:
+                  </p>
+                  <Badge
+                    variant="default"
+                    className={getBadgeColor(item.roadmapPhase)}
+                  >
+                    {item.roadmapPhase}
                   </Badge>
-                ))}
-              </Wrap>
-            </Stack>
+                </div>
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <p className="text-sm uppercase tracking-wide text-muted-foreground">
+                    Status:
+                  </p>
+                  <Badge
+                    variant="default"
+                    className={getStatusColor(item.status)}
+                  >
+                    {item.status}
+                  </Badge>
+                </div>
 
-            <Prose margin={0} my={4} padding={0} dangerouslySetInnerHTML={{ __html: item.description }} />
-          </DrawerBody>
-          {item.attachments.length > 0 && (
-            <DrawerFooter>
-              <Stack>
-                <Divider />
-                <Heading mb={1} variant={'section'}>
-                  Attachments:
-                </Heading>
-                <HStack h={'100px'}>
-                  {images.map((url, index) => (
-                    <Box width={'20%'} key={index}>
-                      <ImageModal key={index} src={url} disableModal={false} border="none" />
-                    </Box>
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="text-sm uppercase tracking-wide text-muted-foreground">
+                    Product(s):
+                  </p>
+                  {item.product?.map((label: RoadmapProduct) => (
+                    <Badge key={label.id} variant="default">
+                      <Link
+                        href={`/roadmap/${slugify(label.name)}`}
+                        className="hover:underline"
+                      >
+                        {label.name}
+                      </Link>
+                    </Badge>
                   ))}
-                </HStack>
-              </Stack>
-            </DrawerFooter>
+                </div>
+              </CardContent>
+            </Card>
+            <div
+              className={cn(
+                "flex-1 overflow-y-auto mt-2",
+                item.attachments.length > 0 ? "max-h-[550px]" : "max-h-[750px]",
+              )}
+            >
+              <article
+                className="prose max-w-none p-4"
+                dangerouslySetInnerHTML={{ __html: item.description }}
+              />
+            </div>
+          </SheetDescription>
+          {item.attachments.length > 0 && (
+            <SheetFooter className="flex-col items-start">
+              <div className="w-full">
+                <hr className="my-4" />
+                <p className="text-sm uppercase tracking-wide text-muted-foreground mb-1">
+                  Attachments:
+                </p>
+                <div className="flex gap-2 h-[100px]">
+                  {images.map((url) => (
+                    <div className="w-[20%] shrink-0" key={url}>
+                      <ImageModal
+                        src={url}
+                        disableModal={false}
+                        border="none"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SheetFooter>
           )}
-        </DrawerContent>
-      </Drawer>
+        </SheetContent>
+      </Sheet>
     </>
   );
 };

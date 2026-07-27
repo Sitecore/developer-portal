@@ -1,6 +1,8 @@
 fragment product on SitecoreProduct {
-  id
-  name
+  system {
+    id
+    name
+  }
   productName
   productDescription
   darkIcon: productIconDark

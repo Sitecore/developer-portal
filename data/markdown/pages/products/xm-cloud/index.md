@@ -13,50 +13,22 @@ guidedDemoId: 'cls4wi56f006d0fl3adbt7rjx'
 cdpTags: ['xm-cloud']
 ---
 
-<Promo
-  title="Sitecore Accelerate"
-  description="Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products. "
-  imageSource="/images/accelerate.png"
-  linkText="Read more"
-  linkHref="/learn/accelerate/xm-cloud" isImageLeft={false}
-/>
-
 ## Introduction
 
 Sitecore Experience Manager Cloud (XM Cloud) is a fully managed self-service deployment platform for developers and marketers to efficiently launch engaging omnichannel experiences in the Cloud using Sitecore’s headless CMS. Experience Manager Cloud bundles the latest versions of Experience Manager, the Pages editor, Sitecore Headless Experience Accelerator (SXA), Headless Services, the Sitecore Next.js SDK (and other Heads), and Experience Edge.
 
-With an optimized cloud-based strategy, you can rapidly and cost-effectively scale to meet your customers’ needs, shorten your time-to-market, and be more adaptive as new capabilities and functionality are added to your Martech stack. Explore how the right cloud approach will help you thrive now and into the future.
+> With the release of SitecoreAI, further information can be found in [Content management](/sitecoreai/capabilities/csm).
 
-Sitecore Experience Manager Cloud re-imagines Content Management and introduces a no-compromise Content Management System (CMS) that delivers developer agility through the best attributes of the headless CMS while empowering marketers through a visually rich, WYSIWYG page composition experience. With XM Cloud, our customers can deliver relevant experiences at high speed.
 
-Speed: Visitors are greeted with an experience that loads lightning-fast and engages instantly
-Relevance: Customers are recognized and welcomed back to an experience that understands their needs
-The importance of your company's growth comes with the:
-
-- Agility: Marketers can easily orchestrate the overall experience across digital campaigns
-- Flexibility: Developers can rapidly develop and launch new experience types with modern front-end frameworks
-
-<Promo
-  title="XM Cloud Sites - What's new?"
-  description="Checkout the great new features of the XM Cloud Sites September release"
-  imageSource="https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/xmcloud-sites?v=225411b8"
-  linkText="Read more"
-  linkHref="/articles/2024/09/xmcloud-sites-release-september" isImageLeft={false}
-/>
 
 ## Getting Started
 
 <Row columns={2}>
-  <Article title="XM Cloud Introduction" description="XM Cloud is around the corner. But what is XM Cloud? What does it include? And how can you prepare for it?" link="/learn/getting-started/xm-cloud-introduction" />
-  <Article title="Recommended Practices" description="Tips for teams working on XM Cloud projects from developers in the field" link="/learn/faq/xm-cloud-recommended-practices" />
-  <Article title="Embedded Personalization " description="Learn more about XM Cloud Embedded Personalization." link="/learn/faq/xm-cloud-embedded-personalization" />
-  <Article title="XM Cloud FAQ" description="Learn more about XM Cloud and all of the features." link="/learn/faq/xm-cloud" />
   <Article title="Getting started with XM Cloud" description="Read the step by step tutorial on the Sitecore Documentation site." link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
   <Article title="Sitecore Accelerate" description="Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products." link="/learn/accelerate/xm-cloud" />
 </Row>
 
 ## Documentation
-
 <Row columns={4}>
 <Link title="User Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
 <Link title="Developer Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html" />
@@ -65,7 +37,6 @@ The importance of your company's growth comes with the:
 <Link title="Developer Tools" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html" />
 <Link title="XM Cloud development" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html" />
 <Link title="Cloud Portal developer docs" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
-<Link title="Sitecore Accelerate" link="/learn/accelerate/xm-cloud" />
 </Row>
 
 ## Downloads
@@ -103,6 +74,3 @@ The importance of your company's growth comes with the:
   <Link title="Buy an XM Cloud Certification Exam" link="https://webassessor.com/sitecore" />
 </Row>
 
-## Access the Portal
-
-- [Sitecore Portal](https://portal.sitecorecloud.io/)

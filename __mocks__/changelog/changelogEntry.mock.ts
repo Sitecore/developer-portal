@@ -1,4 +1,4 @@
-import { ChangelogEntry } from '@lib/changelog/types';
+import type { ChangelogEntry } from '@src/lib/changelog/types';
 
 export const mockedChangelogEntry: ChangelogEntry = {
   id: 'FhtEs6vt80qgrzCuP5nxdA',
@@ -12,6 +12,7 @@ export const mockedChangelogEntry: ChangelogEntry = {
   sitecoreProduct: [
     {
       id: '8OiTP5UKXE-RRpU17Vpq4A',
+      name: 'Content Hub',
       productName: 'Content Hub',
       productDescription: '',
       darkIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub-dark',
@@ -19,14 +20,7 @@ export const mockedChangelogEntry: ChangelogEntry = {
     },
   ],
   scheduled: false,
-  changeType: [
-    {
-      id: 'jNZQWrssyEaU7gwlIYpJnQ',
-      name: 'Resolved',
-      changeType: 'Resolved',
-      type: 'Resolved',
-    },
-  ],
+  changeType: [{ id: 'jNZQWrssyEaU7gwlIYpJnQ', name: 'Resolved', changeType: 'Resolved', type: 'Resolved' }],
   version: '',
   releaseDate: 'Jul 12, 2024',
   image: [],
@@ -42,12 +36,7 @@ export const mockedChangelogEntry: ChangelogEntry = {
       lightIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub',
     },
   ],
-  status: {
-    id: 'pNOVO2dhtESFOSwd4Va84w',
-    name: 'Available',
-    identifier: 'available',
-    description: '',
-  },
+  status: { id: 'pNOVO2dhtESFOSwd4Va84w', name: 'Available', identifier: 'available', description: '' },
   changeTypeName: 'Resolved',
 };
 
@@ -71,14 +60,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
       },
     ],
     scheduled: false,
-    changeType: [
-      {
-        id: 'UKvjuaa7QEC3ipciF1O_ag',
-        name: 'Improvement',
-        changeType: 'Improvement',
-        type: '',
-      },
-    ],
+    changeType: [{ id: 'UKvjuaa7QEC3ipciF1O_ag', name: 'Improvement', changeType: 'Improvement', type: '' }],
     version: '',
     releaseDate: 'Jul 24, 2024',
     image: [],
@@ -94,12 +76,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
         lightIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud',
       },
     ],
-    status: {
-      id: 'pNOVO2dhtESFOSwd4Va84w',
-      name: 'Available',
-      identifier: 'available',
-      description: '',
-    },
+    status: { id: 'pNOVO2dhtESFOSwd4Va84w', name: 'Available', identifier: 'available', description: '' },
     changeTypeName: 'Improvement',
   },
   {
@@ -121,14 +98,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
       },
     ],
     scheduled: false,
-    changeType: [
-      {
-        id: 'jNZQWrssyEaU7gwlIYpJnQ',
-        name: 'Resolved',
-        changeType: 'Resolved',
-        type: '',
-      },
-    ],
+    changeType: [{ id: 'jNZQWrssyEaU7gwlIYpJnQ', name: 'Resolved', changeType: 'Resolved', type: '' }],
     version: '',
     releaseDate: 'Jul 23, 2024',
     image: [],
@@ -144,12 +114,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
         lightIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud',
       },
     ],
-    status: {
-      id: 'pNOVO2dhtESFOSwd4Va84w',
-      name: 'Available',
-      identifier: 'available',
-      description: '',
-    },
+    status: { id: 'pNOVO2dhtESFOSwd4Va84w', name: 'Available', identifier: 'available', description: '' },
     changeTypeName: 'Resolved',
   },
   {
@@ -172,18 +137,8 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
     ],
     scheduled: false,
     changeType: [
-      {
-        id: 'UKvjuaa7QEC3ipciF1O_ag',
-        name: 'Improvement',
-        changeType: 'Improvement',
-        type: '',
-      },
-      {
-        id: 'jNZQWrssyEaU7gwlIYpJnQ',
-        name: 'Resolved',
-        changeType: 'Resolved',
-        type: '',
-      },
+      { id: 'UKvjuaa7QEC3ipciF1O_ag', name: 'Improvement', changeType: 'Improvement', type: '' },
+      { id: 'jNZQWrssyEaU7gwlIYpJnQ', name: 'Resolved', changeType: 'Resolved', type: '' },
     ],
     version: '',
     releaseDate: 'Jul 23, 2024',
@@ -200,12 +155,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
         lightIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud',
       },
     ],
-    status: {
-      id: 'pNOVO2dhtESFOSwd4Va84w',
-      name: 'Available',
-      identifier: 'available',
-      description: '',
-    },
+    status: { id: 'pNOVO2dhtESFOSwd4Va84w', name: 'Available', identifier: 'available', description: '' },
     changeTypeName: 'Improvement',
   },
   {
@@ -226,14 +176,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
       },
     ],
     scheduled: false,
-    changeType: [
-      {
-        id: 'jNZQWrssyEaU7gwlIYpJnQ',
-        name: 'Resolved',
-        changeType: 'Resolved',
-        type: '',
-      },
-    ],
+    changeType: [{ id: 'jNZQWrssyEaU7gwlIYpJnQ', name: 'Resolved', changeType: 'Resolved', type: '' }],
     version: '',
     releaseDate: 'Jul 22, 2024',
     image: [],
@@ -249,12 +192,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
         lightIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-content_hub',
       },
     ],
-    status: {
-      id: 'pNOVO2dhtESFOSwd4Va84w',
-      name: 'Available',
-      identifier: 'available',
-      description: '',
-    },
+    status: { id: 'pNOVO2dhtESFOSwd4Va84w', name: 'Available', identifier: 'available', description: '' },
     changeTypeName: 'Resolved',
   },
   {
@@ -319,12 +257,7 @@ export const mockedChangelogEntries: ChangelogEntry[] = [
         lightIcon: 'https://delivery-sitecore.sitecorecontenthub.cloud/api/public/content/mark-xm_cloud',
       },
     ],
-    status: {
-      id: 'pNOVO2dhtESFOSwd4Va84w',
-      name: 'Available',
-      identifier: 'available',
-      description: '',
-    },
+    status: { id: 'pNOVO2dhtESFOSwd4Va84w', name: 'Available', identifier: 'available', description: '' },
     changeTypeName: null,
   },
 ];

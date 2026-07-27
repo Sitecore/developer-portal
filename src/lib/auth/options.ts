@@ -1,10 +1,10 @@
-import { NextAuthOptions } from 'next-auth';
-import Auth0Provider from 'next-auth/providers/auth0';
-import OktaProvider from 'next-auth/providers/okta';
-import { SitecoreCustomClaims, SitecoreProfile } from './sitecoreProfile';
+import type { NextAuthOptions } from "next-auth";
+import Auth0Provider from "next-auth/providers/auth0";
+import OktaProvider from "next-auth/providers/okta";
+import { SitecoreCustomClaims, type SitecoreProfile } from "./sitecoreProfile";
 
 // Extend NextAuth types
-declare module 'next-auth' {
+declare module "next-auth" {
   interface Session {
     provider?: string;
     user: {
@@ -23,7 +23,7 @@ declare module 'next-auth' {
   }
 }
 
-declare module 'next-auth/jwt' {
+declare module "next-auth/jwt" {
   interface JWT {
     userId?: string;
     orgId?: string;
@@ -37,24 +37,32 @@ declare module 'next-auth/jwt' {
   }
 }
 
+const getEnvVar = (name: string): string => {
+  const value = process.env[name];
+  if (!value) {
+    throw new Error(`Missing required environment variable: ${name}`);
+  }
+  return value;
+};
+
 export const authOptions: NextAuthOptions = {
   providers: [
     OktaProvider({
-      name: 'Okta',
-      id: 'okta',
-      clientId: process.env.OKTA_CLIENT_ID!,
-      clientSecret: process.env.OKTA_CLIENT_SECRET!,
-      issuer: process.env.OKTA_ISSUER_BASE_URL!,
+      name: "Okta",
+      id: "okta",
+      clientId: getEnvVar("OKTA_CLIENT_ID"),
+      clientSecret: getEnvVar("OKTA_CLIENT_SECRET"),
+      issuer: getEnvVar("OKTA_ISSUER_BASE_URL"),
     }),
     Auth0Provider({
-      name: 'Sitecore Cloud Portal',
-      id: 'sitecore',
-      clientId: process.env.AUTH0_CLIENT_ID!,
-      clientSecret: process.env.AUTH0_CLIENT_SECRET!,
-      issuer: process.env.AUTH0_ISSUER_BASE_URL!,
+      name: "Sitecore Cloud Portal",
+      id: "sitecore",
+      clientId: getEnvVar("AUTH0_CLIENT_ID"),
+      clientSecret: getEnvVar("AUTH0_CLIENT_SECRET"),
+      issuer: getEnvVar("AUTH0_ISSUER_BASE_URL"),
       authorization: {
         params: {
-          scope: 'openid profile email',
+          scope: "openid profile email",
         },
       },
       profile(profile: SitecoreProfile) {
@@ -80,7 +88,8 @@ export const authOptions: NextAuthOptions = {
         token.userId = sitecoreProfile.sub;
         token.name = sitecoreProfile.name;
         token.orgId = sitecoreProfile[SitecoreCustomClaims.ORG_ID];
-        token.orgDisplayName = sitecoreProfile[SitecoreCustomClaims.ORG_DISPLAY_NAME];
+        token.orgDisplayName =
+          sitecoreProfile[SitecoreCustomClaims.ORG_DISPLAY_NAME];
         token.orgType = sitecoreProfile[SitecoreCustomClaims.ORG_TYPE];
         token.orgAccId = sitecoreProfile[SitecoreCustomClaims.ORG_ACC_ID];
         token.tenantName = sitecoreProfile[SitecoreCustomClaims.TENANT_NAME];

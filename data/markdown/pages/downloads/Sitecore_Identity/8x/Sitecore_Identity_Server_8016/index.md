@@ -2,12 +2,7 @@
 title: 'Sitecore Identity Server 8.0.16'
 description: 'Sitecore Identity Server is the platform single sign-on mechanism for Sitecore Experience Platform and Sitecore Experience Commerce.'
 ---
-  <Alert variant='warning' mb={4}>
-    <AlertIcon />
-    **2025-04-03:** Patched the on-premises ***Deployment Configuration Files*** package. Please see the Known Issue on the [Release Notes](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016/Release_Notes) page.
-  </Alert>
-
-Sitecore Identity Server 8.0 is compatible with Sitecore XP 9.1 through 10.4.
+Sitecore Identity Server 8.0.16 is compatible with Sitecore XP 9.1 through 10.4.
 
 See [all available Identity Server versions](/downloads/Sitecore_Identity)
 
@@ -18,7 +13,7 @@ See [all available Identity Server versions](/downloads/Sitecore_Identity)
 | [Sitecore Identity Server WDP](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8016/Sitecore.IdentityServer.8.0.16.scwdp.zip) | Sitecore Identity Server WDP installation package. |
 | [Identity Server Upgrade Script](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8016/Sitecore.IdentityServer.UpgradeScripts.8.0.zip) | Script for updating the Core/Security database. |
 | [Deployment Configuration Files](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8016/IdentityServer%20Deployment%20Configuration%208.0.zip) | **Republished 2025-04-03:** For more information see the Known Issue on the [Release Notes](/downloads/Sitecore_Identity/8x/Sitecore_Identity_Server_8016/Release_Notes) page. |
-| [Installation and Upgrade Guide - On-premises](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8016/Sitecore_Identity_Server_Installation_&_Upgrade-OnPremises-8.0.pdf) | Guide describing how to install Identity Server and upgrade it from Sitecore Identity Server 2.0 and later, for on-premises deployments. |
+| [Installation and Upgrade Guide - On-premises](https://scdp.blob.core.windows.net/downloads/Sitecore%20Identity/8x/Sitecore_Identity_Server_8016/Sitecore_Identity_Server_Installation_and_Upgrade-OnPremises-8.0.pdf) | Guide describing how to install Identity Server and upgrade it from Sitecore Identity Server 2.0 and later, for on-premises deployments. |
 
 ## Azure App Service deployments
 

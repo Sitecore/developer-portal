@@ -1,4 +1,4 @@
-import { useSession } from 'next-auth/react';
+import { useSession } from "next-auth/react";
 
 export type HideForUsersProps = {
   children?: React.ReactNode | Array<React.ReactNode>;

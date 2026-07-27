@@ -1,8 +1,8 @@
-/* eslint-disable no-unused-vars */
-import { MultiSelect, Option } from '@/src/components/ui/dropdown';
-import { Container, Skeleton, SkeletonText, VisuallyHidden } from '@chakra-ui/react';
-import { Product } from '@lib/changelog/types';
-import { useState } from 'react';
+import { MultiSelect, type Option } from "@src/components/ui/dropdown";
+import { Skeleton } from "@src/components/ui/skeleton";
+import type { Product } from "@src/lib/changelog/types";
+import { useState } from "react";
+import { Field, FieldLabel } from "../ui/field";
 
 type ChangelogFilterProps = {
   className?: string;
@@ -14,24 +14,23 @@ type ChangelogFilterProps = {
   onSelectChange: (selectedValues: Array<Option>) => void;
 };
 
-const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: ChangelogFilterProps) => {
+const ChangelogFilter = ({
+  options,
+  id,
+  label,
+  placeholder,
+  onSelectChange,
+}: ChangelogFilterProps) => {
   const [selectedChange, setSelectedChange] = useState<Array<Option>>([]);
 
   if (!options) {
-    return (
-      <Skeleton>
-        <SkeletonText>Loading...</SkeletonText>
-      </Skeleton>
-    );
+    return <Skeleton className="h-10 w-full">Loading...</Skeleton>;
   }
 
   return (
-    <Container marginBottom={4} marginX={0} width={'full'}>
-      <VisuallyHidden>
-        <label className="sr-only" htmlFor={`react-select-${id}-input`}>
-          {label}
-        </label>
-      </VisuallyHidden>
+    <Field orientation="horizontal">
+      <FieldLabel htmlFor={`react-select-${id}-input`}>{label}</FieldLabel>
+
       <MultiSelect
         id={id}
         instanceId={id}
@@ -43,10 +42,11 @@ const ChangelogFilter = ({ options, id, label, placeholder, onSelectChange }: Ch
         }}
         value={selectedChange}
         isSelectAll={true}
-        menuPlacement={'bottom'}
+        menuPlacement={"bottom"}
         placeholder={placeholder}
+        className="sm:min-w-[450px] text-md"
       />
-    </Container>
+    </Field>
   );
 };
 

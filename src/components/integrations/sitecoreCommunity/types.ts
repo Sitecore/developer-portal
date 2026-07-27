@@ -6,7 +6,7 @@ type SitecoreCommunityCore = {
   title: string;
   url: string;
   viewCount: string;
-  contentType: 'event' | 'Blog';
+  contentType: "event" | "Blog";
   userName: string;
 };
 

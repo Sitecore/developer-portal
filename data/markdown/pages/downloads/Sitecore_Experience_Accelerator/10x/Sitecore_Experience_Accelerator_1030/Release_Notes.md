@@ -3,8 +3,9 @@ title: 'Release Notes'
 description: ''
 origin: https://dev.sitecore.net/Downloads/Sitecore_Experience_Accelerator/10x/Sitecore_Experience_Accelerator_1030/Release_Notes
 ---
-
-**December 2022 – released Sitecore Experience Accelerator 10.3.0**
+Publication history:<br/>
+**2025-07-25:** Added SXA SIF templates for Sitecore 10.3.3, supporting the installation of artifacts compatible with Solr 9.8.1.<br/>
+**2022-12-15:** Released Sitecore Experience Accelerator 10.3.0.
 
 Sitecore Experience Accelerator (SXA) enables parallel work streams (content, creative design, UX, coding) to not only reduce the time required to produce a website, but also improve the quality by allowing all contributors to validate each other's contributions. SXA provides reusable user experience layouts and components that are fully integrated into the Sitecore editing experience.
 

@@ -1,26 +1,39 @@
-import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { IconButton, Link, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
-import { mdiDotsGrid } from '@mdi/js';
-import Icon from '@mdi/react';
-import NextLink from 'next/link';
-
-import { sitecoreQuickLinks } from '../../../data/data-navigation';
+import { sitecoreQuickLinks } from "@data/data-navigation";
+import { mdiDotsGrid } from "@mdi/js";
+import Icon from "@mdi/react";
+import { Button } from "@src/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@src/components/ui/dropdown-menu";
+import { ExternalLink } from "lucide-react";
+import NextLink from "next/link";
 
 export const QuickStartMenu = () => {
   return (
-    <Menu>
-      <MenuButton size="sm" as={IconButton} variant="ghost" icon={<Icon size={1} path={mdiDotsGrid} />} display={{ base: 'none', xl: 'flex' }} aria-label={'Open the menu for links to other Sitecore sites'} />
-      <MenuList>
-        {sitecoreQuickLinks.children &&
-          sitecoreQuickLinks.children.map((link, key) => (
-            <MenuItem key={key}>
-              <Link as={NextLink} href={link.url} isExternal display={'block'} width={'90%'} color="neutral-fg">
-                {link.title}
-              </Link>
-              {<ExternalLinkIcon fillOpacity={0} boxSize={'1em'} />}
-            </MenuItem>
-          ))}
-      </MenuList>
-    </Menu>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" size={'icon'} className="hidden md:inline-flex">
+          <Icon size={1} path={mdiDotsGrid} />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        {sitecoreQuickLinks.children?.map((link) => (
+          <DropdownMenuItem key={link.url || link.title} asChild>
+            <NextLink
+              href={link.url || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between w-[90%]"
+            >
+              {link.title}
+              <ExternalLink className="h-4 w-4 ml-2" />
+            </NextLink>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

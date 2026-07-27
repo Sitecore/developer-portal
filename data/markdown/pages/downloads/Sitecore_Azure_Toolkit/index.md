@@ -3,21 +3,10 @@ title: 'Sitecore Azure Toolkit'
 description: 'Sitecore Azure Toolkit allows customers to package and deploy Sitecore solutions to Microsoft Azure and provides out of the box integration with Azure services such as Application Insights, Redis Cache Service and Azure Search. Download the latest Sitecore Azure Toolkit toolset: version 3.0.0. It is also possible to use Sitecore Azure Toolkit 3.0.0 with earlier versions of Sitecore XP.'
 origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit.aspx
 ---
-
-<Card variant='outlineRaised' px={0} mb={8}>
-<CardHeader>
-## Sitecore Azure Toolkit 3.x
-</CardHeader>
-<CardBody>
+### Sitecore Azure Toolkit 3.x
 [Sitecore Azure Toolkit 3.0.0](/downloads/Sitecore_Azure_Toolkit/3x/Sitecore_Azure_Toolkit_300)
-</CardBody>          
-</Card>
 
-<Card variant='outlineRaised' px={0} mb={8}>
-<CardHeader>
-## Sitecore Azure Toolkit 2.x
-</CardHeader>
-<CardBody>
+### Sitecore Azure Toolkit 2.x
 [Sitecore Azure Toolkit 2.8.1](/downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_281)\
 [Sitecore Azure Toolkit 2.8.0](/downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_280)\
 [Sitecore Azure Toolkit 2.7.1](/downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_271)\
@@ -39,17 +28,9 @@ origin: https://dev.sitecore.net/Downloads/Sitecore_Azure_Toolkit.aspx
 [Sitecore Azure Toolkit 2.0 Update-2](/downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_202)\
 [Sitecore Azure Toolkit 2.0 Update-1](/downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_201)\
 [Sitecore Azure Toolkit 2.0 Initial Release](/downloads/Sitecore_Azure_Toolkit/2x/Sitecore_Azure_Toolkit_200)
-</CardBody>          
-</Card>
 
-<Card variant='outlineRaised' px={0} mb={8}>
-<CardHeader>
-## Sitecore Azure Toolkit 1.x
-</CardHeader>
-<CardBody>
+### Sitecore Azure Toolkit 1.x
 [Sitecore Azure Toolkit 1.1 rev. 170804](/downloads/Sitecore_Azure_Toolkit/1x/Sitecore_Azure_Toolkit_111)\
 [Sitecore Azure Toolkit 1.1 rev. 170509](/downloads/Sitecore_Azure_Toolkit/1x/Sitecore_Azure_Toolkit_110)\
 [Sitecore Azure Toolkit 1.0 rev. 170323](/downloads/Sitecore_Azure_Toolkit/1x/Sitecore_Azure_Toolkit_103)\
 [Sitecore Azure Toolkit 1.0 rev. 161125](/downloads/Sitecore_Azure_Toolkit/1x/Sitecore_Azure_Toolkit_100)
-</CardBody>          
-</Card>

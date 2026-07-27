@@ -1,11 +1,18 @@
-import { CardProps } from '@chakra-ui/react';
+import type {
+  ExtendedStyle,
+  OriginalStyle,
+} from "@src/components/ui/custom/card-extended";
+import type { ComponentType } from "react";
 
-export type GenericListData = CardProps & {
-  title: string;
-  subtitle: string;
+export type CardVariant = OriginalStyle | ExtendedStyle;
+
+export type GenericListData = {
+  title?: string;
+  subtitle?: string;
   data: Array<GenericListItem>;
   column?: number;
-  cardVariant?: string;
+  cardVariant?: CardVariant;
+  className?: string;
 };
 
 export type GenericListItem = {
@@ -19,4 +26,6 @@ export type GenericListItem = {
     width?: number;
     height?: number;
   };
+  color?: string;
+  icon?: ComponentType<{ className?: string; size?: number | string }>;
 };

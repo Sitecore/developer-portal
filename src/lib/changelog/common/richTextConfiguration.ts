@@ -1,28 +1,46 @@
-import { Extension } from '@tiptap/core';
-import { Blockquote, BlockquoteOptions } from '@tiptap/extension-blockquote';
-import { Bold, BoldOptions } from '@tiptap/extension-bold';
-import { BulletList, BulletListOptions } from '@tiptap/extension-bullet-list';
-import { Code, CodeOptions } from '@tiptap/extension-code';
-import { CodeBlock, CodeBlockOptions } from '@tiptap/extension-code-block';
-import { Document } from '@tiptap/extension-document';
-import { Dropcursor, DropcursorOptions } from '@tiptap/extension-dropcursor';
-import { Gapcursor } from '@tiptap/extension-gapcursor';
-import { HardBreak, HardBreakOptions } from '@tiptap/extension-hard-break';
-import { Heading, HeadingOptions } from '@tiptap/extension-heading';
-import { History, HistoryOptions } from '@tiptap/extension-history';
-import { HorizontalRule, HorizontalRuleOptions } from '@tiptap/extension-horizontal-rule';
-import { Italic, ItalicOptions } from '@tiptap/extension-italic';
-import { Link, LinkOptions } from '@tiptap/extension-link';
-import { ListItem, ListItemOptions } from '@tiptap/extension-list-item';
-import { OrderedList, OrderedListOptions } from '@tiptap/extension-ordered-list';
-import { Paragraph, ParagraphOptions } from '@tiptap/extension-paragraph';
-import { Strike, StrikeOptions } from '@tiptap/extension-strike';
-import { Table, TableOptions } from '@tiptap/extension-table';
-import { TableCell, TableCellOptions } from '@tiptap/extension-table-cell';
-import { TableHeader, TableHeaderOptions } from '@tiptap/extension-table-header';
-import { TableRow, TableRowOptions } from '@tiptap/extension-table-row';
-import { Text } from '@tiptap/extension-text';
-import { Underline, UnderlineOptions } from '@tiptap/extension-underline';
+import { Extension } from "@tiptap/core";
+import {
+  Blockquote,
+  type BlockquoteOptions,
+} from "@tiptap/extension-blockquote";
+import { Bold, type BoldOptions } from "@tiptap/extension-bold";
+import {
+  BulletList,
+  type BulletListOptions,
+} from "@tiptap/extension-bullet-list";
+import { Code, type CodeOptions } from "@tiptap/extension-code";
+import { CodeBlock, type CodeBlockOptions } from "@tiptap/extension-code-block";
+import { Document } from "@tiptap/extension-document";
+import {
+  Dropcursor,
+  type DropcursorOptions,
+} from "@tiptap/extension-dropcursor";
+import { Gapcursor } from "@tiptap/extension-gapcursor";
+import { HardBreak, type HardBreakOptions } from "@tiptap/extension-hard-break";
+import { Heading, type HeadingOptions } from "@tiptap/extension-heading";
+import { History, type HistoryOptions } from "@tiptap/extension-history";
+import {
+  HorizontalRule,
+  type HorizontalRuleOptions,
+} from "@tiptap/extension-horizontal-rule";
+import { Italic, type ItalicOptions } from "@tiptap/extension-italic";
+import { Link, type LinkOptions } from "@tiptap/extension-link";
+import { ListItem, type ListItemOptions } from "@tiptap/extension-list-item";
+import {
+  OrderedList,
+  type OrderedListOptions,
+} from "@tiptap/extension-ordered-list";
+import { Paragraph, type ParagraphOptions } from "@tiptap/extension-paragraph";
+import { Strike, type StrikeOptions } from "@tiptap/extension-strike";
+import { Table, type TableOptions } from "@tiptap/extension-table";
+import { TableCell, type TableCellOptions } from "@tiptap/extension-table-cell";
+import {
+  TableHeader,
+  type TableHeaderOptions,
+} from "@tiptap/extension-table-header";
+import { TableRow, type TableRowOptions } from "@tiptap/extension-table-row";
+import { Text } from "@tiptap/extension-text";
+import { Underline, type UnderlineOptions } from "@tiptap/extension-underline";
 
 interface richTextOptions {
   blockquote: Partial<BlockquoteOptions> | false;
@@ -52,7 +70,7 @@ interface richTextOptions {
 }
 
 export const richTextProfile = Extension.create<richTextOptions>({
-  name: 'starterKit',
+  name: "starterKit",
 
   addExtensions() {
     const extensions = [];
@@ -137,19 +155,19 @@ export const richTextProfile = Extension.create<richTextOptions>({
       extensions.push(Underline.configure(this.options?.underline));
     }
 
-    if (this.options.table != false) {
+    if (this.options.table !== false) {
       extensions.push(Table.configure(this.options?.table));
     }
 
-    if (this.options.tableCell != false) {
+    if (this.options.tableCell !== false) {
       extensions.push(TableCell.configure(this.options?.tableCell));
     }
 
-    if (this.options.tableHeader != false) {
+    if (this.options.tableHeader !== false) {
       extensions.push(TableHeader.configure(this.options?.tableHeader));
     }
 
-    if (this.options.tableRow != false) {
+    if (this.options.tableRow !== false) {
       extensions.push(TableRow.configure(this.options?.tableRow));
     }
 

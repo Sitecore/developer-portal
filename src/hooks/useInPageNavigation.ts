@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
-
-import { ContentHeading } from '../lib/interfaces/contentheading';
+import type { ContentHeading } from "@src/lib/interfaces/contentheading";
+import { useEffect, useState } from "react";
 
 type Link = {
   text: string;
@@ -8,34 +7,42 @@ type Link = {
   active: boolean;
 };
 
-const useInPageNavigation = (titles: Array<ContentHeading>, enableHighlight?: boolean): Array<Link> => {
+const useInPageNavigation = (
+  titles: Array<ContentHeading>,
+  enableHighlight?: boolean,
+): Array<Link> => {
   const [links, setLinks] = useState(
     titles.map((text) => ({
       text: text.title,
       href: `#${text.id}`,
       active: false,
-    }))
+    })),
   );
 
-  if (!enableHighlight) {
-    return links;
-  }
-
   useEffect(() => {
+    if (!enableHighlight) {
+      return;
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
+            const id = entry.target.getAttribute("id");
 
-            setLinks((prevLinks) => prevLinks.map((link) => (link.href === `#${id}` ? { ...link, active: true } : { ...link, active: false })));
+            setLinks((prevLinks) =>
+              prevLinks.map((link) =>
+                link.href === `#${id}`
+                  ? { ...link, active: true }
+                  : { ...link, active: false },
+              ),
+            );
           }
         });
       },
       {
         threshold: 0.5,
-        rootMargin: '0px 0px -90% 0px',
-      }
+        rootMargin: "0px 0px -90% 0px",
+      },
     );
 
     titles.forEach((title) => {
@@ -55,7 +62,7 @@ const useInPageNavigation = (titles: Array<ContentHeading>, enableHighlight?: bo
         }
       });
     };
-  }, [titles]);
+  }, [titles, enableHighlight]);
 
   return links;
 };

@@ -1,43 +1,71 @@
-import { Box, Card, CardBody, CardFooter, CardHeader, CardProps, Heading, Image, Link, Text } from '@chakra-ui/react';
-import { LinkButton } from '../links';
+import { cn } from "@/src/lib/util";
+import { Button } from "@src/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@src/components/ui/card";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
-type ArticleProps = CardProps & {
+type ArticleProps = {
   title: string;
   description: string;
   link?: string;
   linktext?: string;
   imageUrl?: string;
   hideLinkText?: boolean;
+  className?: string;
 };
 
-export const Article = ({ title, description, link, linktext, imageUrl, hideLinkText, ...rest }: ArticleProps) => {
+export const Article = ({
+  title,
+  description,
+  link,
+  linktext,
+  imageUrl,
+  hideLinkText,
+  className,
+}: ArticleProps) => {
   return (
-    <Card variant={'outlineRaised'} size={'md'} {...rest}>
+    <Card
+      className={cn("not-prose", className)}
+      style="outline"
+      elevation="xs"
+      padding="md"
+    >
       <CardHeader>
-        <Heading as="h4" fontSize={'lg'} fontWeight={'500'}>
-          {title}
-        </Heading>
+        <h4 className="text-lg m-0 font-medium font-heading">{title}</h4>
       </CardHeader>
-      <CardBody py={0}>
-        {description && <Text mb={8}>{description}</Text>}
+      <CardContent className="grow">
+        {description && <p className="text-sm">{description}</p>}
         {imageUrl && link && (
-          <Box>
+          <div>
             <Link href={link} title={title} rel="noreferrer noopener">
               <Image
                 src={imageUrl}
-                alt={title || ''}
+                alt={title || ""}
                 className="relative z-10"
+                width={400}
+                height={300}
                 sizes="(max-width: 768px) 100vw,
                     (max-width: 1200px) 50vw,
                     33vw"
               />
             </Link>
-          </Box>
+          </div>
         )}
-      </CardBody>
+      </CardContent>
       {link && !hideLinkText && (
-        <CardFooter pt={0}>
-          <LinkButton href={link} text={linktext ?? 'Read more'} />
+        <CardFooter>
+          <Link href={link}>
+            <Button variant="default" size="default" colorScheme="primary">
+              {linktext ?? "Read more"}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </CardFooter>
       )}
     </Card>

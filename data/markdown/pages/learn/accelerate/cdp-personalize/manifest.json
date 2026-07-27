@@ -28,24 +28,24 @@
           "path": "change-management"
         },
         {
-          "title":"Omnichannel Preparation",
-          "path":"omnichannel-preparation"
+          "title": "Omnichannel Preparation",
+          "path": "omnichannel-preparation"
         },
         {
-          "title":"Web vs Interactive Experiences",
-          "path":"web-vs-interactive"
+          "title": "Web vs Interactive Experiences",
+          "path": "web-vs-interactive"
         },
         {
-          "title":"Developing an Identity Strategy",
-          "path":"identity-strategy"
-        },        
-        {
-          "title":"Segmentation",
-          "path":"segmentation"
+          "title": "Developing an Identity Strategy",
+          "path": "identity-strategy"
         },
         {
-          "title":"Experiments Strategy",
-          "path":"experimentation"
+          "title": "Segmentation",
+          "path": "segmentation"
+        },
+        {
+          "title": "Experiments Strategy",
+          "path": "experimentation"
         }
       ]
     },
@@ -66,7 +66,7 @@
             {
               "title": "Personalize Integrations",
               "path": "personalize-integrations"
-            }         
+            }
           ]
         },
         {
@@ -75,13 +75,33 @@
           "ignoreLink": false
         },
         {
+          "title": "Alert Bar",
+          "path": "alert-bar",
+          "ignoreLink": false
+        },
+        {
           "title": "Before You Fly Reminder",
           "path": "before-you-fly",
           "ignoreLink": false
         },
         {
+          "title": "Browser Tab Re-engagement",
+          "path": "browser-tab",
+          "ignoreLink": false
+        },
+        {
+          "title": "Identifying churn risk",
+          "path": "churn-risk",
+          "ignoreLink": false
+        },
+        {
           "title": "Home Page Personalization",
           "path": "home-page-personalization",
+          "ignoreLink": false
+        },
+        {
+          "title": "Mortgage Journey Alert",
+          "path": "mortgage-journey-alert",
           "ignoreLink": false
         },
         {
@@ -94,9 +114,6 @@
           "path": "self-service-nudge",
           "ignoreLink": false
         }
-
-        
-          
       ]
     },
     {
@@ -110,10 +127,15 @@
           "ignoreLink": false
         },
         {
+          "title": "Decision Models Automated Testing",
+          "path": "decision-model-testing",
+          "ignoreLink": false
+        },
+        {
           "title": "Go-Live Checklist",
           "path": "go-live-checklist",
           "ignoreLink": false
-        }                  
+        }
       ]
     },
     {
@@ -122,23 +144,31 @@
       "ignoreLink": true,
       "children": [
         {
+          "title": "Decision Model Optimization",
+          "path": "decision-model-optimization",
+          "ignoreLink": false
+        },
+        {
           "title": "Personalization Vision",
           "path": "personalization-vision",
           "ignoreLink": false
-        }                
+        }
       ]
-    },    
+    },
     {
       "title": "Appendix I",
       "path": "appendix-i",
       "ignoreLink": true,
       "children": [
         {
+          "title": "CDP Glossary",
+          "path": "cdp-glossary"
+        },
+        {
           "title": "Personalize Glossary",
           "path": "personalize-glossary"
-        }        
+        }
       ]
     }
   ]
 }
-

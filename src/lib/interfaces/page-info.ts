@@ -1,7 +1,14 @@
-import { ChangelogEntry } from '@lib/changelog/types';
-import { ForumOption, SitecoreCommunityContent, SitecoreCommunityEvent, SortOption, StackExchangeQuestion, YouTubeVideo } from '@src/components/integrations';
+import type {
+  ForumOption,
+  SitecoreCommunityContent,
+  SitecoreCommunityEvent,
+  SortOption,
+  StackExchangeQuestion,
+  YouTubeVideo,
+} from "@src/components/integrations";
+import type { ChangelogEntry } from "@src/lib/changelog/types";
 
-import { ContentHeading } from './contentheading';
+import type { ContentHeading } from "./contentheading";
 
 type PageInfoCore = {
   pageType?: string;
@@ -79,7 +86,6 @@ export type PageInfo = PageInfoCore & {
   requestedBy?: Array<string>;
 };
 
-
 export type ChildPageInfo = PageInfo & {
   description?: string;
   id?: string;
@@ -88,4 +94,3 @@ export type ChildPageInfo = PageInfo & {
   children?: Array<ChildPageInfo>;
   menuOrder?: number;
 };
-

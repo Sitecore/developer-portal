@@ -1,5 +1,10 @@
-import { ClientSecretCredential } from '@azure/identity';
-import { BlobSASPermissions, BlobServiceClient, SASProtocol, generateBlobSASQueryParameters } from '@azure/storage-blob';
+import { ClientSecretCredential } from "@azure/identity";
+import {
+  BlobSASPermissions,
+  BlobServiceClient,
+  generateBlobSASQueryParameters,
+  SASProtocol,
+} from "@azure/storage-blob";
 
 export interface AzureStorageConfig {
   storageAccountName: string;
@@ -10,17 +15,21 @@ export interface AzureStorageConfig {
   clientSecret?: string; // For AD authentication
 }
 
-export function getAzureStorageConfig(): AzureStorageConfig {
-  if (!process.env.DOWNLOADS_ACCOUNTNAME || !process.env.DOWNLOADS_CONTAINERNAME || !process.env.DOWNLOADS_TENANTID || !process.env.DOWNLOADS_CLIENTID || !process.env.DOWNLOADS_CLIENTSECRET) {
-    throw new Error('Missing required environment variables for Azure Storage');
+const getEnvVar = (name: string): string => {
+  const value = process.env[name];
+  if (!value) {
+    throw new Error(`Missing required environment variable: ${name}`);
   }
+  return value;
+};
 
+export function getAzureStorageConfig(): AzureStorageConfig {
   return {
-    storageAccountName: process.env.DOWNLOADS_ACCOUNTNAME!,
-    containerName: process.env.DOWNLOADS_CONTAINERNAME!,
-    tenantId: process.env.DOWNLOADS_TENANTID!,
-    clientId: process.env.DOWNLOADS_CLIENTID!,
-    clientSecret: process.env.DOWNLOADS_CLIENTSECRET!,
+    storageAccountName: getEnvVar("DOWNLOADS_ACCOUNTNAME"),
+    containerName: getEnvVar("DOWNLOADS_CONTAINERNAME"),
+    tenantId: getEnvVar("DOWNLOADS_TENANTID"),
+    clientId: getEnvVar("DOWNLOADS_CLIENTID"),
+    clientSecret: getEnvVar("DOWNLOADS_CLIENTSECRET"),
   };
 }
 
@@ -32,26 +41,33 @@ export function validateSasUrl(sasUrl: string): boolean {
     const url = new URL(sasUrl);
 
     // Check for required SAS parameters
-    const requiredParams = ['sv', 'st', 'se', 'sp', 'sig'];
-    const hasAllParams = requiredParams.every((param) => url.searchParams.has(param));
+    const requiredParams = ["sv", "st", "se", "sp", "sig"];
+    const hasAllParams = requiredParams.every((param) =>
+      url.searchParams.has(param),
+    );
 
     if (!hasAllParams) {
       console.error(
-        'Missing required SAS parameters:',
-        requiredParams.filter((param) => !url.searchParams.has(param))
+        "Missing required SAS parameters:",
+        requiredParams.filter((param) => !url.searchParams.has(param)),
       );
       return false;
     }
 
     // Validate URL format
-    if (!url.hostname.includes('.blob.core.windows.net')) {
-      console.error('Invalid Azure Blob Storage URL format');
+    const hostname = url.hostname.toLowerCase();
+    const isAzureBlobHost =
+      hostname === "blob.core.windows.net" ||
+      hostname.endsWith(".blob.core.windows.net");
+
+    if (!isAzureBlobHost) {
+      console.error("Invalid Azure Blob Storage URL format");
       return false;
     }
 
     return true;
   } catch (error) {
-    console.error('Invalid SAS URL format:', error);
+    console.error("Invalid SAS URL format:", error);
     return false;
   }
 }
@@ -61,10 +77,10 @@ export function validateSasUrl(sasUrl: string): boolean {
  */
 export async function testSasUrlAccess(sasUrl: string): Promise<boolean> {
   try {
-    const response = await fetch(sasUrl, { method: 'HEAD' });
+    const response = await fetch(sasUrl, { method: "HEAD" });
     return response.ok;
   } catch (error) {
-    console.error('SAS URL access test failed:', error);
+    console.error("SAS URL access test failed:", error);
     return false;
   }
 }
@@ -73,11 +89,20 @@ export async function testSasUrlAccess(sasUrl: string): Promise<boolean> {
  * Creates a BlobServiceClient for testing blob operations
  * Supports both storage account key and Azure AD authentication
  */
-export function createBlobServiceClient(config: AzureStorageConfig): BlobServiceClient {
+export function createBlobServiceClient(
+  config: AzureStorageConfig,
+): BlobServiceClient {
   // Use Azure AD authentication if credentials are provided
   if (config.tenantId && config.clientId && config.clientSecret) {
-    const credential = new ClientSecretCredential(config.tenantId, config.clientId, config.clientSecret);
-    return new BlobServiceClient(`https://${config.storageAccountName}.blob.core.windows.net`, credential);
+    const credential = new ClientSecretCredential(
+      config.tenantId,
+      config.clientId,
+      config.clientSecret,
+    );
+    return new BlobServiceClient(
+      `https://${config.storageAccountName}.blob.core.windows.net`,
+      credential,
+    );
   }
 
   // Fall back to storage account key authentication
@@ -86,22 +111,29 @@ export function createBlobServiceClient(config: AzureStorageConfig): BlobService
     return BlobServiceClient.fromConnectionString(connectionString);
   }
 
-  throw new Error('Either Azure AD credentials (tenantId, clientId, clientSecret) or storage account key must be provided');
+  throw new Error(
+    "Either Azure AD credentials (tenantId, clientId, clientSecret) or storage account key must be provided",
+  );
 }
 
 /**
  * Validates that a blob exists in the container
  */
-export async function validateBlobExists(config: AzureStorageConfig, blobName: string): Promise<boolean> {
+export async function validateBlobExists(
+  config: AzureStorageConfig,
+  blobName: string,
+): Promise<boolean> {
   try {
     const blobServiceClient = createBlobServiceClient(config);
-    const containerClient = blobServiceClient.getContainerClient(config.containerName);
+    const containerClient = blobServiceClient.getContainerClient(
+      config.containerName,
+    );
     const blobClient = containerClient.getBlobClient(blobName);
 
     const exists = await blobClient.exists();
     return exists;
   } catch (error) {
-    console.error('Error validating blob existence:', error);
+    console.error("Error validating blob existence:", error);
     return false;
   }
 }
@@ -109,10 +141,15 @@ export async function validateBlobExists(config: AzureStorageConfig, blobName: s
 /**
  * Gets blob properties to validate access and metadata
  */
-export async function getBlobProperties(config: AzureStorageConfig, blobName: string) {
+export async function getBlobProperties(
+  config: AzureStorageConfig,
+  blobName: string,
+) {
   try {
     const blobServiceClient = createBlobServiceClient(config);
-    const containerClient = blobServiceClient.getContainerClient(config.containerName);
+    const containerClient = blobServiceClient.getContainerClient(
+      config.containerName,
+    );
     const blobClient = containerClient.getBlobClient(blobName);
 
     const properties = await blobClient.getProperties();
@@ -124,15 +161,22 @@ export async function getBlobProperties(config: AzureStorageConfig, blobName: st
       etag: properties.etag,
     };
   } catch (error) {
-    console.error('Error getting blob properties:', error);
-    return { exists: false, error: error instanceof Error ? error.message : 'Unknown error' };
+    console.error("Error getting blob properties:", error);
+    return {
+      exists: false,
+      error: error instanceof Error ? error.message : "Unknown error",
+    };
   }
 }
 
 /**
  * Generates a SAS token for a blob using Azure AD authentication
  */
-export async function generateSasToken(config: AzureStorageConfig, blobName: string, expiresInMinutes: number = 15): Promise<string> {
+export async function generateSasToken(
+  config: AzureStorageConfig,
+  blobName: string,
+  expiresInMinutes: number = 15,
+): Promise<string> {
   try {
     const blobServiceClient = createBlobServiceClient(config);
 
@@ -140,33 +184,40 @@ export async function generateSasToken(config: AzureStorageConfig, blobName: str
     const expiresOn = new Date();
     expiresOn.setMinutes(expiresOn.getMinutes() + expiresInMinutes);
 
-    const userDelegationKey = await blobServiceClient.getUserDelegationKey(startsOn, expiresOn);
+    const userDelegationKey = await blobServiceClient.getUserDelegationKey(
+      startsOn,
+      expiresOn,
+    );
 
     const sasToken = generateBlobSASQueryParameters(
       {
         containerName: config.containerName,
         blobName,
-        permissions: BlobSASPermissions.parse('r'), // read permission
+        permissions: BlobSASPermissions.parse("r"), // read permission
         startsOn: startsOn,
         expiresOn: expiresOn,
         protocol: SASProtocol.Https,
-        version: '2023-11-03',
+        version: "2023-11-03",
       },
       userDelegationKey,
-      config.storageAccountName
+      config.storageAccountName,
     ).toString();
 
     return sasToken;
   } catch (error) {
-    console.error('Error generating SAS token:', error);
-    throw new Error('Failed to generate SAS token');
+    console.error("Error generating SAS token:", error);
+    throw new Error("Failed to generate SAS token");
   }
 }
 
 /**
  * Generates a complete SAS URL for a blob
  */
-export async function generateSasUrl(config: AzureStorageConfig, blobName: string, expiresInMinutes: number = 15): Promise<string> {
+export async function generateSasUrl(
+  config: AzureStorageConfig,
+  blobName: string,
+  expiresInMinutes: number = 15,
+): Promise<string> {
   try {
     const sasToken = await generateSasToken(config, blobName, expiresInMinutes);
 
@@ -175,12 +226,12 @@ export async function generateSasUrl(config: AzureStorageConfig, blobName: strin
 
     // Validate the generated SAS URL
     if (!validateSasUrl(sasUrl)) {
-      throw new Error('Generated SAS URL is invalid');
+      throw new Error("Generated SAS URL is invalid");
     }
 
     return sasUrl;
   } catch (error) {
-    console.error('Error generating SAS URL:', error);
+    console.error("Error generating SAS URL:", error);
     throw error;
   }
 }
@@ -188,7 +239,11 @@ export async function generateSasUrl(config: AzureStorageConfig, blobName: strin
 /**
  * Validates blob existence and generates a SAS URL in one operation
  */
-export async function validateAndGenerateSasUrl(config: AzureStorageConfig, blobName: string, expiresInMinutes: number = 15): Promise<string> {
+export async function validateAndGenerateSasUrl(
+  config: AzureStorageConfig,
+  blobName: string,
+  expiresInMinutes: number = 15,
+): Promise<string> {
   // First validate that the blob exists
   const blobExists = await validateBlobExists(config, blobName);
   if (!blobExists) {

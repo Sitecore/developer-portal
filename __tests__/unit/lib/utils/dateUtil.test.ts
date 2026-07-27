@@ -1,4 +1,4 @@
-import { translateDateAsYearMonth } from '@lib/utils';
+import { translateDateAsYearMonth } from '@/src/lib/util';
 import { describe, expect, it } from 'vitest';
 
 describe('translateDateAsYearMonth', () => {
