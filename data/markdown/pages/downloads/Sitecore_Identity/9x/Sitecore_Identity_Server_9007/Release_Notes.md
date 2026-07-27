@@ -11,7 +11,7 @@ Return to the [Sitecore Identity Server 9.0.7](/downloads/Sitecore_Identity/9x/S
 | Description | Ref. |
 | --- | --- |
 | Azure Active Directory (Azure Entra ID) for SQL Authentication is supported | PDXP-14449 |
-| Updated the Microsoft .NET runtime dependency from .NET 8 to .NET 10. Servers running only .NET 8 will fail to start. No action is required for deployments using the official Sitecore-provided container images. | PDXP-22070 |
+| Updated the Microsoft .NET runtime dependency from .NET 8 to .NET 10. Servers running only .NET 8 will fail to start. No action is required for deployments using the official Sitecore-provided container images. | PDXP-22070, PDXP-22777 |
 | The container base image has been updated from `aspnet:8.0-nanoserver-1809` to `aspnet:10.0-nanoserver-1809`. Deployments that customise or extend the Sitecore Identity Server Docker image must update their base image references accordingly. | PDXP-22070 |
 | Remove Identity Server module from SXP platform ARM templates. For more information, please refer to https://github.com/Sitecore/Sitecore-Azure-Quickstart-Templates/blob/master/MODULES.md | PDXP-6039 |
 
