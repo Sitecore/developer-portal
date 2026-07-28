@@ -4,8 +4,6 @@ title: 'Breaking Changes'
 
 Return to the [Sitecore Experience Platform 10.5](/downloads/Sitecore_Experience_Platform/105/Sitecore_Experience_Platform_105) release page.
 
-This release includes new features and improvements made in Sitecore Experience Platform (SXP) 10.5. Sitecore recommends that you upgrade to this release if it aligns with the specific needs of your organization. This release contains significant improvements in functionality worth evaluating.
-
 - [Solr 10 Upgrade](#solr-10-upgrade)
 - [Telerik UI for ASP.NET AJAX Upgrade](#telerik-ui-for-aspnet-ajax-upgrade)
 - [BinaryFormatter Replacement](#binaryformatter-replacement)
