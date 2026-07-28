@@ -330,9 +330,9 @@ The following protected APIs have been deprecated as part of this change. Each i
 
 | Context | Description | Ref |
 | --- | --- | --- |
-| API | The `Sitecore.ContentSearch.Utilities.ParallelDisabledSecurityProxy` class has been deprecated and marked `[Obsolete]`. It has been replaced by `ParallelContextPreservingForEachExecutor`, which preserves both security state and site context across parallel threads. The class will be removed in a future version. If your solution references `ParallelDisabledSecurityProxy` directly, replace its usage with the new `ExecuteInParallel` override point on `AbstractDocumentBuilder<T>`, `AbstractSearchIndex`, or your own parallelism mechanism. Affects: solutions that reference `ParallelDisabledSecurityProxy` directly. Search your codebase for `ParallelDisabledSecurityProxy` to determine whether you are affected. | PDXP-707 |
+| API | The `Sitecore.ContentSearch.Utilities.ParallelDisabledSecurityProxy` class has been deprecated and marked `[Obsolete]`. It has been replaced by `ParallelContextPreservingForEachExecutor`, which preserves both security state and site context across parallel threads. The class will be removed in a future version. If your solution references `ParallelDisabledSecurityProxy` directly, replace its usage with the new `ExecuteInParallel` override point on `AbstractDocumentBuilder`, `AbstractSearchIndex`, or your own parallelism mechanism. Affects: solutions that reference `ParallelDisabledSecurityProxy` directly. Search your codebase for `ParallelDisabledSecurityProxy` to determine whether you are affected. | PDXP-707 |
 
-### Sitecore.ContentSearch.AbstractDocumentBuilder<T> — ParallelForeachProxy
+### Sitecore.ContentSearch.AbstractDocumentBuilder — ParallelForeachProxy
 
 | Context | Description | Ref |
 | --- | --- | --- |
