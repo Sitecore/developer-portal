@@ -451,6 +451,8 @@ The upgrades are transparent on a standard upgrade. Action is only required for 
 
 #### Aligned transitive dependencies
 
+| Context | Description | Ref |
+| --- | --- | --- |
 | Dependency | The Sitecore Framework upgrade raises a number of transitive framework dependencies so that the whole platform resolves to a single, consistent set. This includes the `Microsoft.Extensions.*` family (configuration, dependency injection, logging, options, and primitives) moving from the `8.x` line to the `10.x` line, `System.Text.Json` and `System.Text.Encodings.Web` moving from `8.0.6` to `10.0.1`, `Newtonsoft.Json` to `13.0.4`, the `Rebus` messaging packages to their `8.x` and `10.x` lines, and the Azure SDK packages (`Azure.Core`, `Azure.Identity`, `Azure.Messaging.ServiceBus`) to their current versions. These versions are governed centrally by the platform build and are expected to match across all Sitecore components. Solutions should not pin their own versions of these packages below the platform baseline, and any existing binding redirects for them should be reviewed after the upgrade. Affects: solutions that reference these framework or messaging packages directly, or that maintain binding redirects for them. | PDXP-10632, PDXP-16490 |
 
 ## Device Detection Default Performance Profile
