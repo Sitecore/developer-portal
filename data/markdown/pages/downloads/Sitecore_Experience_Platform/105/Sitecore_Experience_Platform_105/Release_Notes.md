@@ -16,41 +16,139 @@ This release includes new features and improvements made in Sitecore Experience 
 
 ## Highlights
 
-Sitecore Experience Platform (SXP) 10.5 includes updates for improved security, supportability, performance, compatibility, and user experience. Highlights include:
+- Sitecore XP 10.5 adds support for Windows Server 2025 for on-premises (SIF/SIA), containerized (Docker Compose), and orchestrated (AKS) deployments.
+- SQL Server 2025 is now supported for all Sitecore database roles.
+- Sitecore XP 10.5 introduces a refreshed visual design across selected authoring experiences, including an updated color scheme and more consistent styling, with no functional changes to existing workflows.
+- Apache Solr 10 is now supported, including Solr 10's mandatory Basic Authentication.
+- Significant security hardening has been applied, including patches for critical vulnerabilities: a pre-authentication XAML cache poisoning attack, a post-authentication remote code execution chain, SPEAK path traversal, and hard-coded credential removal.
+- JavaScript libraries (jQuery, Backbone.js, Knockout, Underscore.js, jQuery UI, jStorage) have been updated to current versions.
+- Experience Edge publishing performance for large item buckets (100K+ items) has been significantly improved.
+- Package installation can now be disabled by configuration to reduce the attack surface.
+- Windows Server 2019 container images are no longer shipped. Customers on Windows Server 2019 host OS must migrate to 2022 or 2025 before upgrading.
 
-- Improved security hardening throughout SXP, including the replacement of BinaryFormatter serialization, removal of known default credentials, enhanced package installation controls, and patches for multiple security vulnerabilities.
+## New features/improvements
 
-- Updated third-party compatibility:
-  - Windows Server 2025 support across on-premises, containerized, and orchestrated deployments.
-  - SQL Server 2025 support.
-  - Apache Solr 10 support, including Basic Authentication.
-  - Updated Telerik UI for ASP.NET AJAX to version 2025.2.528.
+| Category | Description | Reference No |
+| ---------- | ------------- | ------ |
+| Containers | Windows Server 2019 container images are no longer shipped. Sitecore 10.5 container images are built on Windows Server 2022 (ltsc2022) and Windows Server 2025 (ltsc2025) only. Customers running containerized deployments on Windows Server 2019 must migrate their host OS to Windows Server 2022 or 2025 before upgrading. See upgrade guide. | PDXP-16482, PDXP-10623 |
+| Identity | Identity Server is no longer included in the SXP platform ARM templates. Starting in 10.5, Identity Server is deployed as an independent module with its own ARM template. Customers deploying to Azure PaaS must use the separate Identity Server module template. See upgrade guide. | PDXP-11662 |
+| Performance | `RenderPlaceholder` and `RenderRendering` profiling processors are now disabled on Content Delivery servers. | PDXP-690 |
+| Performance | Cache entry removal by predicate no longer acquires a global lock. | PDXP-793 |
+| Performance | MVC rendering performance in environments with many sites has been improved. | PDXP-765 |
+| Performance | Removing archived items from the Recycle Bin now uses batched deletion. | PDXP-711, PDXP-800 |
+| Performance | The Solr optimize command is no longer executed automatically after index operations. | PDXP-20180 |
+| Performance | Standard Values token resolution for fallback versions of cloned items no longer causes performance degradation. | PDXP-769 |
+| Performance | The `CompositeDataProvider` path-resolving logic now uses caching. | PDXP-14365 |
+| Performance | Experience Edge publishing performance for bucket folders has been improved. | PDXP-20954 |
+| Platform | Application Insights now requires Connection Strings; Instrumentation Key support has been removed. Customers using `AppInsightsKey` with an Instrumentation Key value in `AppSettings.config` must replace it with a Connection String value. See upgrade guide. | PDXP-12478, PDXP-11667 |
+| Platform | You can now deploy Sitecore XP on Windows Server 2025. | PDXP-16482, PDXP-10623 |
+| Platform | You can now use SQL Server 2025 with Sitecore XP. SQL Server 2022 remains supported. | PDXP-16497 |
+| Platform | Outdated JavaScript libraries have been updated to current versions. jQuery has been updated to 3.6.3, Underscore.js to 1.13.6, Backbone.js to 1.4.1, Knockout to 3.5.1, jQuery UI to 1.13.2, and jStorage to 0.4.12. | PDXP-16510, PDXP-16504, PDXP-24274, PDXP-24474 |
+| Platform | Azure Service Bus client dependencies have been updated from `Microsoft.Azure.ServiceBus` to `Azure.Messaging.ServiceBus` to maintain compatibility with Microsoft's current Service Bus platform direction. | PDXP-5928 |
+| Platform | The `ItemUrlBuilder.Build` method no longer mutates the passed `ItemUrlBuilderOptions` object. | PDXP-868 |
+| Platform | The Links table now includes Droplist field references. | PDXP-785 |
+| Platform | Exceptions during `<initialize>` pipeline execution are now logged before the application crashes. | PDXP-13914 |
+| Publishing | Incremental publish no longer skips items when processing order creates a race condition. | PDXP-680 |
+| Publishing | Publishing no longer deletes live pages when a non-final workflow version exists in another language. | PDXP-879 |
+| Search | You can now use Apache Solr 10 with Sitecore XP. Sitecore 10.5 adds compatibility with Solr 10.0.0, including support for Solr 10's mandatory Basic Authentication. Solr connection strings now accept embedded credentials. Solr 8.x remains supported for backward compatibility. | PDXP-16492 |
+| Search | SwitchOnRebuild for SolrCloud now resolves the active collection using Solr aliases instead of local properties. | PDXP-697 |
+| Search | The Multilist with Search field type now supports SXA query tokens. | PDXP-929 |
+| Search | The daterange virtual field is now correctly resolved to a Solr field during Content Editor search. | PDXP-20246 |
+| Security | Security hardening has been applied. | PDXP-708, PDXP-801, PDXP-887, PDXP-761, PDXP-27409, PDXP-28939, PDXP-24680 |
+| Security | Package installation (Package Designer and Upload Package) can now be disabled via configuration. This mitigates the risk of uploading malicious files through the package installer. The setting should only be enabled when package installation is explicitly required. | PDXP-19553 |
+| Security | Hard-coded credentials for the `sitecore\ServicesAPI` user have been removed. The default account now ships with an invalid password hash. | PDXP-25270 |
+| Security | Hard-coded credentials for additional system accounts have been removed and the `/sitecore/admin` path now requires authentication. | PDXP-5517 |
+| xConnect | The XConnect Upgrade Tool now ships with a configuration file that resolves the `System.Data.SqlClient` assembly version. | PDXP-9613 |
+| xConnect | The `ConsumptionServiceClient` no longer crashes the application on startup when certificate initialization fails. | PDXP-7865 |
 
-- Refreshed the visual design of Content Editor, Experience Editor, and administrative interfaces to align with Sitecore's Cloud Portal design system, including updated typography, colors, icons, buttons, ribbons, and navigation elements.
+---
 
-- Improved publishing reliability and scalability by:
-  - Preventing content from being skipped during incremental publishing.
-  - Resolving issues that could cause published pages to disappear in multilingual workflow scenarios.
-  - Significantly improving Experience Edge publishing performance for large content buckets.
+## Removed
 
-- Improved search capabilities and platform compatibility by:
-  - Adding support for Solr 10.
-  - Improving SolrCloud collection management through alias-based resolution.
-  - Adding SXA query token support to Multilist with Search fields.
-  - Improving full-text indexing reliability and search-result accuracy.
+| Category | Description | Reference No |
+|----------|-------------|------|
+| Platform | The built-in GraphQL Playground has been removed from Sitecore XP. The `HotChocolate.AspNetClassic.Playground` library was deprecated and contained critical bugs. Use a third-party tool such as Postman or Insomnia for GraphQL introspection and query execution. | PDXP-23055 |
+| Platform | Legacy versions of outdated JavaScript libraries (jQuery, Underscore.js, Backbone.js, Knockout, jQuery UI, jStorage) have been removed. | PDXP-16510, PDXP-16504, PDXP-24274, PDXP-24474 |
 
-- Improved platform performance through optimizations that reduce cache contention, improve MVC rendering efficiency, optimize path resolution, improve archive cleanup operations, and eliminate unnecessary Solr optimization operations.
+---
 
-- Improved operational stability by enhancing error logging, improving startup diagnostics, preventing application crashes caused by certificate initialization failures and device detection issues, and improving upgrade tooling for xConnect deployments.
+## Resolved issues
 
-- Modernized platform dependencies by updating JavaScript libraries across SPEAK-based applications, including jQuery, Backbone.js, Underscore.js, jQuery UI, Knockout, and related components.
+The following issues have been fixed:
 
-SXP 10.5 also includes these important changes:
-
-- Windows Server 2019 container images are no longer supported. Container deployments must use Windows Server 2022 or Windows Server 2025 images.
-
-- Identity Server is no longer included in the SXP platform ARM templates and must be deployed as a separate module when using Azure PaaS deployments.
-
-- Application Insights now requires Connection Strings. Instrumentation Key-based configuration is no longer supported.
-
-- Customers upgrading from SXP 10.4 should review upgrade guidance for the BinaryFormatter removal and UserProfile serialization migration changes.
+| Category                 | Description                                                                                                                                                                                                       | Reference No           |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Content Editor           | Checkbox fields are no longer unintentionally unchecked when navigating between items in the Content Editor.                                                                                                      | PDXP-812               |
+| Content Editor           | Unchecking a value in a Checklist field now correctly persists the change.                                                                                                                                        | PDXP-13967             |
+| Content Editor           | Rendering order in Presentation Details is no longer changed when Placeholder Settings are removed from Standard Values.                                                                                          | PDXP-684               |
+| Content Editor           | The red validator bar now correctly appears for Multilist fields after using the "Select all" button.                                                                                                             | PDXP-777               |
+| Content Editor           | The Rich Text Editor dialog is now displayed correctly at browser zoom levels of 150% and above.                                                                                                                  | PDXP-678               |
+| Content Editor           | Using Remove Broken Links no longer creates an unexpected English version of an item.                                                                                                                             | PDXP-4583              |
+| Content Editor           | Media files downloaded from the Media Library in Firefox no longer have their filenames wrapped with underscores.                                                                                                 | PDXP-4675              |
+| Content Editor           | Requests from the Media Library now send the correct `Content-Type` header.                                                                                                                                       | PDXP-6244              |
+| Content Editor           | Droplist fields using query axes or `@@` notation no longer show a false broken link warning in the Content Editor.                                                                                               | PDXP-7088              |
+| Content Editor           | The "Is rendered item valid XHTML document" validator no longer reports a false error during content validation.                                                                                                  | PDXP-19498             |
+| Email Experience Manager | The `$link$` token is now correctly replaced in Subscription Confirmation emails sent on form submission.                                                                                                         | PDXP-21313             |
+| Email Experience Manager | Emails sent through EXM Custom SMTP no longer hang and leave campaigns stuck in Draft.                                                                                                                            | PDXP-5906              |
+| Email Experience Manager | Email campaigns interrupted by a Content Management restart during dispatch now move to Paused and can be resumed.                                                                                                | PDXP-5924              |
+| Email Experience Manager | Opening an active or sent email campaign from the EXM list now opens the campaign report instead of the campaign creation page.                                                                                   | PDXP-5979              |
+| Experience Editor        | HTML tags are no longer double-encoded in the Experience Editor when editing Single-Line and Multi-Line Text fields with HTML encoding removed.                                                                   | PDXP-843               |
+| Experience Editor        | The Experience Editor ribbon now renders correctly after navigating to a deleted content item.                                                                                                                    | PDXP-849               |
+| Experience Editor        | Rich text fields with internal links no longer trigger XHTML validation errors in the Experience Editor.                                                                                                          | PDXP-7556              |
+| Experience Editor        | Editing a component in the Experience Editor using the Field Editor button no longer resets Date and DateTime field values.                                                                                       | PDXP-12763             |
+| Experience Editor        | Components no longer disappear after closing the Field Editor dialog in the Experience Editor.                                                                                                                    | PDXP-19853             |
+| Experience Editor        | The Field Editor in the Experience Editor no longer throws an exception when editing items that contain Content Hub DAM image fields.                                                                             | PDXP-17026             |
+| Experience Editor        | Literal `<` characters in Rich Text fields in the Experience Editor are now saved correctly.                                                                                                                      | PDXP-21246             |
+| Experience Editor        | Pressing Enter in the search box of a Multilist with Search field in the Experience Editor no longer clears selected entries.                                                                                     | PDXP-682               |
+| Experience Editor        | Renaming a template's `__Standard Values` item no longer causes the Experience Editor to crash with a `StackOverflowException`.                                                                                   | PDXP-17257             |
+| Headless Services        | The hostname is no longer incorrectly added to internal links when two site definitions share the same home item.                                                                                                 | PDXP-11714, PDXP-14003 |
+| Headless Services        | Item resolution with wildcard items no longer returns the wrong item when multiple wildcard levels are present.                                                                                                   | PDXP-14428, PDXP-19681 |
+| Headless Services        | The `HotChocolate.Subscriptions.InMemory.InvalidMessageTypeException` no longer occurs intermittently.                                                                                                            | PDXP-863               |
+| Headless Services        | The OData API no longer returns items when no language version exists for the requested language.                                                                                                                 | PDXP-865               |
+| Logging                  | Log message writing no longer causes severe thread lock contention under high-throughput conditions.                                                                                                              | PDXP-4677              |
+| List Manager             | The Save button in the List Manager segment dialog no longer becomes unavailable after editing an existing segment rule.                                                                                          | PDXP-1424              |
+| Platform                 | Caches are no longer populated with outdated values when SQL replication is configured.                                                                                                                           | PDXP-702               |
+| Platform                 | The `StripLanguage` processor no longer creates case-inconsistent language entries. Languages are now normalized to their `CultureInfo.Name` casing.                                                              | PDXP-889               |
+| Platform                 | Item path is now resolved correctly in live mode when a parent item is unpublished.                                                                                                                               | PDXP-874               |
+| Platform                 | Editing an item in the final workflow state now correctly creates a new version when `RequireLockBeforeEditing` is false.                                                                                         | PDXP-742               |
+| Platform                 | The `MediaRequestHandler` now respects the `MediaResponse.Cacheability` setting.                                                                                                                                  | PDXP-787               |
+| Platform                 | The `RenderingParametersCache` no longer subscribes to events multiple times.                                                                                                                                     | PDXP-776               |
+| Platform                 | The `ClientDataStore.DataUpdatedRemoteEvent` no longer triggers unnecessary database queries on remote instances.                                                                                                 | PDXP-773               |
+| Platform                 | Changing the template of a media item from Unversioned to Versioned no longer executes excessive INSERT queries.                                                                                                  | PDXP-834               |
+| Platform                 | Duplicating or copying a media item with language fallback enabled no longer creates an unwanted new language version.                                                                                            | PDXP-9754              |
+| Platform                 | Authentication ticket expiration time in Experience Explorer is no longer calculated incorrectly.                                                                                                                 | PDXP-12716             |
+| Platform                 | Device Detection no longer crashes the instance under high load.                                                                                                                                                  | PDXP-778               |
+| Platform                 | Device Detection (`FiftyOne.DeviceDetection.Hash.Engine.OnPremise.Native.dll`) no longer causes `AccessViolationException` crashes. The Device Detection performance profile is now set to `Balanced` by default. | PDXP-7564, PDXP-22949  |
+| Platform                 | A redundant warning is no longer logged every time a rendering data source cannot be resolved.                                                                                                                    | PDXP-6249              |
+| Platform                 | `Sitecore.Context.User` is no longer resolved as anonymous when `Preview.AsAnonymous` is set to false and Owin Authentication is enabled.                                                                         | PDXP-16733             |
+| Platform                 | Advanced Upload in the Media Library no longer blocks all file types when the `FilterBlockedExtensions` processor is enabled.                                                                                     | PDXP-18053             |
+| Platform                 | Media URLs now use the correct site context when previewing pages with publish restrictions in multi-site environments.                                                                                           | PDXP-21969             |
+| Platform                 | Deploying the Sitecore Content Hub Connector (SCCH) package alongside Sitecore XP 10.5 no longer causes a `FileLoadException`.                                                                                    | PDXP-23081             |
+| Publishing               | Smart publish with "Publish related items" now publishes all referenced items.                                                                                                                                    | PDXP-18987             |
+| Publishing               | Publishing no longer throws `DuplicateItemNameException` when items have been renamed in the master database.                                                                                                     | PDXP-19267             |
+| Search                   | Full-text search (`_content` field) now consistently includes the contents of all text fields.                                                                                                                    | PDXP-817               |
+| Search                   | Index rebuild no longer hangs indefinitely when Solr returns an error response.                                                                                                                                   | PDXP-12554, PDXP-15256 |
+| Search                   | `Context.Site` is no longer null in computed index fields when indexing in parallel.                                                                                                                              | PDXP-707               |
+| Search                   | Search results no longer include items that the user is not allowed to read.                                                                                                                                      | PDXP-781               |
+| Search                   | The Solr Suggest feature now works when `usePost` is set to true.                                                                                                                                                 | PDXP-13952             |
+| Search                   | The health check for search indexes using the SwitchOnRebuild feature now reports the correct status.                                                                                                             | PDXP-3377              |
+| Search                   | `SolrFullBatchUpdateContext` no longer causes high memory usage during index rebuild on large databases.                                                                                                          | PDXP-6217              |
+| Search                   | Search operations now correctly treat quoted terms as phrase searches.                                                                                                                                            | PDXP-6246              |
+| Search                   | `SolrQueuingUpdateContext.Optimize()` no longer causes infinite recursion.                                                                                                                                        | PDXP-16760             |
+| Search                   | Solr search requests no longer fail with a "(414) Request-URI Too Long" error when queries exceed the HTTP line size limit. Affected queries now use the HTTP POST method.                                        | PDXP-26571             |
+| Security                 | A SPEAK path traversal vulnerability has been patched.                                                                                                                                                            | PDXP-9109              |
+| Security                 | A post-authentication remote code execution vulnerability has been patched.                                                                                                                                       | PDXP-11363             |
+| Security                 | A cross-site scripting (XSS) vulnerability in `settestdetails.xml.cs` has been patched.                                                                                                                           | PDXP-9555              |
+| Security                 | Telerik CVE-2025-3600 (unsafe reflection causing denial of service) has been resolved. The Telerik UI for ASP.NET AJAX library has been upgraded to version 2025.2.528.                                           | PDXP-11112             |
+| Security                 | A Regular Expression Denial of Service (ReDoS) vulnerability in the Rich Text Editor has been patched.                                                                                                            | PDXP-18804             |
+| Security                 | A cross-site scripting (XSS) vulnerability in `MediaHash.aspx` has been patched.                                                                                                                                  | PDXP-18805             |
+| Security                 | A DOM-based cross-site scripting (XSS) vulnerability in the error page handler has been patched.                                                                                                                  | PDXP-18806             |
+| Security                 | A path manipulation vulnerability has been patched.                                                                                                                                                               | PDXP-19098             |
+| Security                 | An unauthenticated information disclosure vulnerability has been patched.                                                                                                                                         | PDXP-19099             |
+| Security                 | A cross-site scripting (XSS) vulnerability in request query string handling has been patched.                                                                                                                     | PDXP-19219             |
+| Security                 | An information disclosure vulnerability in the ItemService API search endpoint has been patched.                                                                                                                  | PDXP-11460             |
+| Security                 | A stored cross-site scripting (XSS) vulnerability in an administrative interface has been patched.                                                                                                                | PDXP-27938, PDXP-27939 |
+| Security                 | The `HotChocolate.Language` library has been updated to remediate a critical security vulnerability.                                                                                                              | PDXP-28437             |
+| Sitecore Forms           | The Japanese translation for the "Local Time" checkbox label in the Forms Export Data dialog is now included.                                                                                                     | PDXP-833               |
+| Sitecore Forms           | The `jquery-validation` library used by Sitecore Forms has been updated to the latest version to address known security vulnerabilities.                                                                          | PDXP-24074             |
+| xConnect                 | xConnect segmentation searches no longer block other segmentation operations while a long-running query is in progress.                                                                                           | PDXP-5836              |
