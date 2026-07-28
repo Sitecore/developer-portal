@@ -60,9 +60,15 @@ See [all available versions here](/downloads/Sitecore_Experience_Platform).
 
 | Resource                                                                                                                                                                                            | Description                                                          |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+
 | [Release notes](/downloads/Sitecore_Experience_Platform/105/Sitecore_Experience_Platform_105/Release_Notes)                                                                                         | List of improvements and resolved issues implemented in the release. |
+
+| [Breaking changes](/downloads/Sitecore_Experience_Platform/105/Sitecore_Experience_Platform_105/Breaking_Changes)                                                                                         | List of breaking changes introduced in the release. |
+
 | [Known issues](https://support.sitecore.com/kb?id=kb_search&kb_knowledge_base=3492d025db70dc109e54320a6896199f&spa=1&language=en&u_affected_software=sitecore_experience_platform)                  | Link to known issue articles on the Sitecore Knowledge Base.         |
+
 | [Developer Documentation](https://doc.sitecore.com/xp/en/developers)                                                                                                                                | Link to Sitecore developer documentation.                            |
+
 | [Assembly list](<https://scdp.blob.core.windows.net/downloads/Sitecore%20Experience%20Platform/105/Sitecore_Experience_Platform_105/Sitecore.Platform.Assemblies%2010.5.0%20rev.%20014188.zip>) | Complete list of assemblies shipped with the release.                |
 
 ## Client translations
