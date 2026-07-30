@@ -18,6 +18,8 @@ Return to the [Sitecore Experience Platform 10.5](/downloads/Sitecore_Experience
 - [Security Database Schema changes related to Identity Server 8](#security-database-schema-changes-related-to-identity-server-8)
 - [Removal of SQL Server 2019 Support](#removal-of-sql-server-2019-support)
 - [Legacy JavaScript and CSS Library Files Removed from the Sitecore CM Shell](#legacy-javascript-and-css-library-files-removed-from-the-sitecore-cm-shell)
+- [Application Insights Connection String Requirement](#application-insights-connection-string-requirement)
+- [Messaging SQL Database and Connectivity Changes](#messaging-sql-database-and-connectivity-changes)
 
 ## Solr 10 Upgrade
 
@@ -67,6 +69,7 @@ As a result, **faceting** and **sorting** may observe different values than they
 | Configuration | A new processor, `Sitecore.ContentSearch.SolrProvider.Pipelines.PopulateSolrSchema.ResolveSchemaName`, has been added to the `contentSearch.PopulateSolrSchema` pipeline, between `ResolveCoreNames` and `PopulateFields`. It resolves the Solr version from the Solr admin `SystemInfo` endpoint and translates it to a schema name, which it writes to the new `PopulateManagedSchemaArgs.SchemaName` property. If the Solr version cannot be resolved, the processor throws `InvalidOperationException` and Schema Populate fails. The processor accepts an optional `schemaName` constructor parameter that bypasses version resolution. Affects: solutions that patch the `contentSearch.PopulateSolrSchema` pipeline, or that run Schema Populate against a Solr instance whose admin endpoint is not reachable. | PDXP-26340 |
 | Configuration | A new setting, `ContentSearch.Solr.UseEnumFacetMethod` (default `false`), has been added. When `true`, `facet.method=enum` is appended to the extra parameters of every Solr facet query. Use it to work around SOLR-16139 (see above). Affects: solutions affected by the pivot faceting known issue. | PDXP-26340 |
 | Configuration | The default value of the `ContentSearch.Solr.SendPostRequests` setting has changed from `false` to `true`. Solr queries are now sent as HTTP POST rather than GET by default. Affects: solutions with proxies, WAF rules, or Solr request logging that assume Sitecore issues GET requests. Set the setting to `false` to restore the previous behaviour. | PDXP-26571 |
+| Configuration | Sitecore XP 10.5 supports authenticated Solr requests as part of the Solr 10 upgrade. When Solr authentication is enabled, Solr endpoint values in ConnectionStrings.config must include username and password credentials using the format `https://user:password@hostname:port/solr`. Existing Solr connection strings that only point to the Solr endpoint without credentials may no longer be valid for authenticated Solr environments. This applies to Solr connection strings used by roles such as CM, CD, xConnect Collection Search, and the xConnect Collection Search IndexWorker job. | PDXP-29203 |
 
 ### API Changes
 
@@ -508,3 +511,54 @@ The `PersistedGrants` table in the `Sitecore.Core` security database was restruc
 | Context | Description | Ref |
 | --- | --- | --- |
 | Deployment | The following files have been removed from the Sitecore CM web application as part of a cleanup of legacy and superseded client-side assets: `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery-1.6.4.min.js`, `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery-1.10.0.min.js`, `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery-1.10.2.min.js`, `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery-1.12.4.min.js`, `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery-3.6.1.js`, `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery-3.6.1.min.js`, `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery.js`, `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery-ui.min.js`, `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery.dialogextended-2.0.3.js`, the `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jQueryUI\\1.9.2\\` and `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jQueryUI\\1.10.3\\` theme folders (including all CSS, JS, and image sprite assets), `\\sitecore\\shell\\Controls\\Lib\\Chosen\\chosen.jquery.js` and related Chosen files, `\\sitecore\\shell\\Controls\\Lib\\iso8601\\iso8601.js`, `\\sitecore\\shell\\Controls\\Lib\\jsnlog\\jsnlog.js`, `\\sitecore\\shell\\Controls\\Lib\\JSON\\JSON2.min.js`, `\\sitecore\\shell\\Controls\\Lib\\Scriptaculous\\sound.js`, `\\sitecore\\shell\\Controls\\Lib\\Scriptaculous\\unittest.js`, `\\sitecore\\shell\\Controls\\SitecoreHtmlEditor.js`, `\\sitecore\\shell\\Controls\\SitecoreModalWindow.js`, `\\sitecore\\shell\\Controls\\SitecoreTreeview.js`, `\\sitecore\\shell\\Controls\\Testing\\CombinationsGrid\\CombinationsGrid.js`, `\\sitecore\\shell\\Controls\\Testing\\CombinationsGrid\\CombinationsGrid.css`, and `\\sitecore\\shell\\Feeds\\workflow.js`. These files were removed to eliminate legacy and superseded client-side assets. On upgrade, any custom CM shell code that loads these files by their server path (for example, via `<script src="...">` or `<link href="...">` in a custom XML shell layout, `.aspx` page, or SPEAK component) will fail silently — the server starts normally and no error is logged, but the affected scripts or styles will not load. Search your custom CM shell code for references to any of the file paths listed above and remove or replace them using the following guidance. If you referenced any jQuery 1.x file or `jquery-3.6.1.js`/`jquery-3.6.1.min.js`, update to `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery-3.6.3.min.js`. If you referenced `jquery-ui.min.js` or any file under the `jQueryUI\\1.9.2\\` or `jQueryUI\\1.10.3\\` folders, update to `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jQueryUI\\1.13.2\\jquery-ui.min.js`. If you referenced `jquery.dialogextended-2.0.3.js`, update to `\\sitecore\\shell\\Controls\\Lib\\jQuery\\jquery.dialogextend-2.0.4.js`. If you referenced `jsnlog.js`, update to `\\sitecore\\shell\\Controls\\Lib\\jsnlog\\jsnlog.min.js`. For all other removed files — including `SitecoreHtmlEditor.js`, `SitecoreModalWindow.js`, `SitecoreTreeview.js`, `workflow.js`, and the Scriptaculous, Chosen, iso8601, and JSON2 files — no Sitecore-provided replacement is available; review your usage and remove or reimplement the dependency within your own solution. If your solution does not include custom CM shell extensions that reference these paths directly, no action is required. Affects: deployments with custom Sitecore CM shell extensions — including custom ribbon commands, shell dialogs, XML shell layouts, and SPEAK components — that explicitly reference any of the removed file paths. | PDXP-16510 |
+
+## Application Insights Connection String Requirement
+
+### xConnect Telemetry Configuration
+
+#### Configuration Changes
+
+Sitecore 10.5 removes support for Application Insights Instrumentation Keys in xConnect telemetry configuration and now requires Application Insights Connection Strings.
+
+This change aligns xConnect telemetry configuration with Microsoft’s Application Insights connection string model. [Microsoft announced that technical support for instrumentation key-based ingestion in Application Insights ended on 31 March 2025](https://learn.microsoft.com/en-us/answers/questions/778615/retirement-announcement-technical-support-for-inst). Existing Application Insights resources can continue to receive data, but instrumentation key-based ingestion no longer receives updates, bug fixes, or technical support.
+
+Existing xConnect role configuration that uses AppInsightsKey must be migrated to AppInsightsConnectionString.
+
+| Context | Description | Ref |
+| --- | --- | --- |
+| Configuration | Sitecore 10.5 removes support for Application Insights Instrumentation Key-based xConnect telemetry configuration and now requires Application Insights Connection Strings. Existing AppInsightsKey configuration must be replaced with AppInsightsConnectionString. Azure Web App deployments and affected xConnect-related services that enable Application Insights telemetry must be updated to use the connection string configuration. This includes xConnect Collection, xConnect Reference Data, xConnect Collection Search, xConnect Search Indexer, Marketing Automation roles, and Sitecore Cortex roles where applicable. | PBI 626327 |
+
+## Messaging SQL Database and Connectivity Changes
+
+### Messaging SQL Transport Database
+
+#### Database Schema Changes
+
+Sitecore 10.5 includes database schema updates for the Sitecore.Messaging SQL transport database after the upgrade to Sitecore Framework .NET 10.
+
+The changes affect the Sitecore_Transport receive index and the Sitecore_DataBus table structure. Existing Messaging databases created by earlier Sitecore versions may not match the schema expected by Sitecore 10.5 and must be upgraded using the official Sitecore database upgrade scripts.
+
+The Sitecore_Transport receive index change includes updates inherited from the official Rebus.SqlServer project. Rebus.SqlServer issue [#73](https://github.com/rebus-org/Rebus.SqlServer/issues/73) identified the previous receive index as non-optimal, where receive queries ordered messages by [priority] DESC, [visible] ASC, and [id] ASC, while the existing index used [priority] ASC, [visible] ASC, [expiration] ASC, and [id] ASC. The proposed index changed the priority sort order and reordered the indexed columns to improve receive performance. 
+
+| Context | Description | Ref |
+| --- | --- | --- |
+| Database Schema / Messaging | Sitecore 10.5 introduces schema updates for the Sitecore.Messaging SQL transport database after the upgrade to Sitecore Framework .NET 10. Environments that use the Messaging SQL transport database must run the required Messaging database upgrade script so the database schema matches the schema expected by Sitecore 10.5. | PDXP-28916 |
+| Database Schema / Sitecore_Transport | The IDX_RECEIVE_dbo_Sitecore_Transport receive index has been updated. The [priority] column sort order changes from ASC to DESC, and the indexed column order changes from [priority], [visible], [expiration], [id] to [priority], [visible], [id], [expiration]. This aligns the receive index with the optimized ordering used by the updated Rebus.SqlServer SQL transport implementation. | PDXP-28916 |
+| Database Schema / Sitecore_DataBus | The Sitecore_DataBus table structure has been updated. The [Id] column data type changes from varchar(200) to varchar(400), and the table now requires a clustered primary key on [Id] ASC. Additional indexes may be created as a result of the new primary key constraint, using the generated naming convention PK__Sitecore__{constraintKey}. | PDXP-28916 |
+
+### Containerized SQL Server Connectivity
+
+#### Configuration Changes
+
+Sitecore 10.5 includes SQL Server connection security changes for containerized and AKS deployments that use the Sitecore.Messaging SQL transport database.
+
+The change is introduced after the upgrade to Sitecore Framework .NET 10, which includes an updated dependency on Microsoft.Data.SqlClient v6.1.2. The updated SQL client applies stricter certificate validation when encrypted SQL Server connections are used. Containers must trust the SQL Server certificate chain when establishing trusted SQL Server connections.
+
+The required root CA certificate must be configured for the affected container roles so SQL Server connections can be established successfully when encrypted connections and certificate validation are enabled.
+
+| Context | Description | Ref |
+| --- | --- | --- |
+| Configuration / Containerized Messaging SQL connections | Containerized and AKS deployments that use the Sitecore.Messaging SQL transport database must support encrypted SQL Server connections with certificate validation after the Sitecore Framework .NET 10 upgrade. | PDXP-22929 |
+| Configuration / root CA certificate | The required root CA certificate must be configured for affected xConnect and xDB container roles so SQL Server connections can be established when Encrypt=true and TrustServerCertificate=false are used. | PDXP-22929 |
+| Configuration / affected roles | This affects containerized or AKS deployments where Sitecore roles use the Messaging SQL transport database. Affected roles may include xConnect or xDB roles that connect to the Messaging SQL transport database, depending on the topology and configuration. | PDXP-22929 |
+| Configuration / upgrade guidance | Containerized and AKS deployments must follow the applicable Sitecore 10.5 containerization upgrade process and SQL Server encrypted communication guidance so the affected roles can establish SQL Server connections successfully. | PDXP-22929 |
