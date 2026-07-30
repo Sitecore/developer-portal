@@ -544,7 +544,7 @@ The Sitecore_Transport receive index change includes updates inherited from the 
 | --- | --- | --- |
 | Database Schema / Messaging | Sitecore 10.5 introduces schema updates for the Sitecore.Messaging SQL transport database after the upgrade to Sitecore Framework .NET 10. Environments that use the Messaging SQL transport database must run the required Messaging database upgrade script so the database schema matches the schema expected by Sitecore 10.5. | PDXP-28916 |
 | Database Schema / Sitecore_Transport | The IDX_RECEIVE_dbo_Sitecore_Transport receive index has been updated. The [priority] column sort order changes from ASC to DESC, and the indexed column order changes from [priority], [visible], [expiration], [id] to [priority], [visible], [id], [expiration]. This aligns the receive index with the optimized ordering used by the updated Rebus.SqlServer SQL transport implementation. | PDXP-28916 |
-| Database Schema / Sitecore_DataBus | The Sitecore_DataBus table structure has been updated. The [Id] column data type changes from varchar(200) to varchar(400), and the table now requires a clustered primary key on [Id] ASC. Additional indexes may be created as a result of the new primary key constraint, using the generated naming convention PK__Sitecore__{constraintKey}. | PDXP-28916 |
+| Database Schema / Sitecore_DataBus | The Sitecore_DataBus table structure has been updated. The [Id] column data type changes from varchar(200) to varchar(400), and the table now requires a clustered primary key on [Id] ASC. Additional indexes may be created as a result of the new primary key constraint, using the generated naming convention PK__Sitecore__\{constraintKey\}. | PDXP-28916 |
 
 ### Containerized SQL Server Connectivity
 
