@@ -45,7 +45,28 @@ This change was introduced in **Sitecore XP 10.4.1** for Solr 9.8 and is carried
 
 `solr.SortableTextField` enables `docValues` by default, and `docValues` on this field type store the **original, unanalyzed** field value (truncated at `maxCharsForDocValues`, which defaults to 1024 characters) rather than the analyzed token stream.
 
-As a result, **faceting** and **sorting** may observe different values than they
+As a result, **faceting** and **sorting** may observe different values than they did on `solr.TextField`.
+
+### Deployment changes
+
+Solr connection string secrets are replaced with individual secrets for Solr connection string protocol, instance, port, user name and password that are used to connect to Solr instance.
+
+Solr connection string secrets were split to support new Solr 10 authentication and authorization approach.
+
+Values for new set of Solr connection string secrets should be provided.
+
+- sitecore-solr-admin-password.txt
+- sitecore-solr-admin-username.txt
+- sitecore-solr-connection-password.txt
+- sitecore-solr-connection-username.txt
+- sitecore-solr-instance.txt
+- sitecore-solr-port.txt
+- sitecore-solr-protocol.txt
+instead of:
+- sitecore-solr-connection-string.txt
+- sitecore-solr-connection-string-xdb.txt
+
+Admin credentials is used for Solr initialization during deployment only and connection credentials for Sitecore connection.
 
 #### Field type changes
 
