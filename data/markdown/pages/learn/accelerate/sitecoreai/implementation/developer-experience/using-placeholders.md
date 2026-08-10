@@ -1,20 +1,22 @@
 ---
 title: 'Using Placeholders'
-description: 'What are Placeholders and how to use them with XM Cloud'
+description: 'What are Placeholders and how to use them'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-10-11'
+lastUpdated: '2026-07-01'
 created: '2024-08-23'
 audience: ['Architect','Technical Implementer']
-features: ['XM Cloud Foundation Head Starter','Docker']
+features: ['Starter Kit','Docker']
 ---
 
 ## Context
 
-Using placeholders in Sitecore XM Cloud is beneficial because they offer flexibility, reusability, and scalability. They allow dynamic content insertion, support personalized experiences, and maintain consistent design. Placeholders also simplify development and maintenance, making it easier to manage and update content while ensuring a modular and scalable site structure.
+Using placeholders is beneficial because they offer flexibility, reusability, and scalability. They allow dynamic content insertion, support personalized experiences, and maintain consistent design. Placeholders also simplify development and maintenance, making it easier to manage and update content while ensuring a modular and scalable site structure.
 
-This recipe will detail out what Placeholders we have available, how have they been used in the XM Cloud Foundation Head Starter and how to create custom Placeholders while adhering to best practice.
+This recipe will detail out what Placeholders we have available, how have they been used in the [Starter Kit](https://github.com/Sitecore/xmcloud-starter-js/) and how to create custom Placeholders while adhering to best practice.
+
+> When migrating Sitecore XM/XP projects that include SXA‑ or JSS‑based sites into SitecoreAI, the classic JSS dynamic placeholder format `(placeholderkey-{GUID}-N)` is not supported. SitecoreAI’s headless rendering engine only supports the SXA‑style numeric placeholder format, and any cases where legacy keys appear to work are incidental and not guaranteed.
 
 ## Execution
 
@@ -26,7 +28,7 @@ There are two types of placeholders Static and Dynamic and we will cover both in
 
 ### Placeholder component
 
-Within JSS Next.js applications the most common ways to work with placeholders is using the Placeholder component. There are several ways to use placeholders within you applications you can read more [here](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/working-with-placeholders-in-a-jss-next-js-app.html).
+Within Next.js applications the most common ways to work with placeholders is using the Placeholder component. There are several ways to use placeholders within you applications you can read more [here](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/working-with-placeholders-in-a-jss-next-js-app.html).
 
 ```typescript
 import { Placeholder } from '@sitecore-jss/sitecore-jss-nextjs';
@@ -40,7 +42,7 @@ const App = ({ rendering }) => (
 
 <br/><br/>
 
-This is an example of a static placeholder and if you look at the Layout.tsx in the XM Cloud Foundation Head Starter Kit the Placeholder component is used to render the root placeholders for the application.
+This is an example of a static placeholder and if you look at the Layout.tsx in the Starter Kit the Placeholder component is used to render the root placeholders for the application.
 
 ```typescript
 <div className={mainClassPageEditing}>
@@ -78,9 +80,9 @@ Available renderings are components that you can use to display content on your 
 
 ### SXA Partial Design Placeholders
 
-The PartialDesignDynamicPlaceholder in Sitecore XM Cloud is a feature that allows you to use dynamic placeholders within partial designs. This is particularly useful for creating flexible and reusable page designs where components can be dynamically inserted.
+The PartialDesignDynamicPlaceholder is a feature that allows you to use dynamic placeholders within partial designs. This is particularly useful for creating flexible and reusable page designs where components can be dynamically inserted.
 
-You can see the PartialDesignDynamicPlaceholder.tsx in the [XM Cloud Foundation Head](https://github.com/sitecorelabs/xmcloud-foundation-head/tree/main) starter kit.
+You can see the PartialDesignDynamicPlaceholder.tsx in the [Starter Kit](https://github.com/Sitecore/xmcloud-starter-js/) starter kit.
 
 ```typescript
 import React from 'react';
@@ -136,7 +138,7 @@ If you need to use dynamic placeholders, which generate unique keys for each ins
     - In the placeholder settings item, define the placeholder key using a wildcard. For example, `myrendering-{*}.`
     - This allows the system to generate unique keys like myrendering-1, myrendering-2, etc., for each instance.
 
-Examples of dynamic placeholders can be seen in the Container.tsx file in the XM Cloud Foundation Head starter kit.
+Examples of dynamic placeholders can be seen in the Container.tsx file in the [Starter Kit](https://github.com/Sitecore/xmcloud-starter-js/).
 
 ```typescript
 import {

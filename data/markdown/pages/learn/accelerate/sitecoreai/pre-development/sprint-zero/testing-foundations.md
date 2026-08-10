@@ -1,6 +1,6 @@
 ---
 title: 'Developer testing foundations'
-description: 'Developer testing foundations for an XM Cloud implementation'
+description: 'Developer testing foundations for implementation'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
