@@ -300,6 +300,10 @@
             {
               "title": "Most applied facet filters",
               "path": "most-applied-facet-filters"
+            },
+            {
+              "title": "Assets Events to Power BI",
+              "path": "assets-events-to-power-bi"
             }
           ]
         }

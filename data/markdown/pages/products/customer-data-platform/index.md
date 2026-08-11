@@ -15,7 +15,7 @@ guidedDemoId: 'cls53hjn8005r0fl90zuh4zt6'
 
 Sitecore CDP brings together real-time behavioral insights and all your customer data so you can understand and engage every customer (and anonymous visitors) instantly.
 
-> With the release of SitecoreAI, further information can be found in [Unified data layer](/sitecoreai/capabilities/unified-data-layer).
+> With the release of SitecoreAI, further information can be found in [Audience and Insights](/sitecoreai/capabilities/audience-and-insights).
 
 
 ## Documentation
