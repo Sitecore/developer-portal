@@ -4,7 +4,7 @@ description: 'Learn how to setup Sitecore Content Serialization (SCS) '
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
-lastUpdated: '2025-04-30'
+lastUpdated: '2026-08-12'
 created: '2023-12-22'
 audience: ['Architect','Technical Implementer']
 ---
@@ -22,7 +22,7 @@ The Items that are considered for synchronization can be configured.
 
 ### Sitecore CLI
 
-Sitecore Content Serialization can be achieved using the Sitecore CLI. You can find a detailed description on how to install the Sitecore CLI and how to use it in the documentation ([Sitecore Content Serialization](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html)).
+Sitecore Content Serialization can be achieved using the Sitecore CLI. You can find a detailed description on how to install the Sitecore CLI and how to use it in the documentation [Sitecore Content Serialization](https://doc.sitecore.com/sai/en/developers/sitecoreai/sitecore-content-serialization.html).
 
 ### Configuration
 
@@ -76,7 +76,7 @@ The items object shows an array of includes:
  - `itemsAndDescendants` - all subitems underneath a certain item.
  - `DescendantsOnly` excludes the item specified in the path.
 
-Review the ([SCS Configuration Reference](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization-configuration-reference.html)) documentation for further details.
+Review the [SCS Configuration Reference](https://doc.sitecore.com/sai/en/developers/sitecoreai/sitecore-content-serialization/configuration/sitecore-content-serialization-configuration-reference.html) documentation for further details.
 
 ### What items should be serialized
 
@@ -100,7 +100,7 @@ Items created by developers must be serialized if code depends on them. Out of t
 
 ### Setup
 
-Check [`template.module.json`](/learn/accelerate/xm-cloud/appendix-ii/example-code/template-module-json) It is an example Sitecore Content Serialization (SCS) file that can be used when defining a site collection and site.
+Check [`template.module.json`](/learn/accelerate/sitecoreai/appendix-ii/example-code/template-module-json) It is an example Sitecore Content Serialization (SCS) file that can be used when defining a site collection and site.
 
 Replace the placeholder namespace values with with your own data.
 
@@ -142,7 +142,7 @@ There are two distinct methods for deploying items with Sitecore Content Seriali
 
 #### Deploying Items to the File System using Items as Resources (IAR)
 
-This pertains to items intended for developer control and should not be modified within the Content Management environment, except when potential impacts have been duly considered. For configuring which items are deployed this way, you would adjust the [`xmcloud.build.json`](/learn/accelerate/xm-cloud/appendix-ii/example-code/xmcloud-build-json) file located at the root of your solution. To configure the items that will be deployed to the file system (IAR), refer to the example below:
+This pertains to items intended for developer control and should not be modified within the Content Management environment, except when potential impacts have been duly considered. For configuring which items are deployed this way, you would adjust the [`xmcloud.build.json`](/learn/accelerate/sitecoreai/appendix-ii/example-code/xmcloud-build-json) file located at the root of your solution. To configure the items that will be deployed to the file system (IAR), refer to the example below:
 
 ```json
 {
@@ -179,7 +179,7 @@ Here are some examples of items that developers should configure and deploy on t
 
 This refers to items that are typically managed by a content author within the Content Management system. These items, such as the `Home` item, are beneficial for content authors to have when they start creating content.
 
-To set up items for the Content Management database, you will need to modify the [`xmcloud.build.json`](/learn/accelerate/xm-cloud/appendix-ii/example-code/xmcloud-build-json) file located at the root of your solution. This involves configuring the Post Deploy Actions section as follows:
+To set up items for the Content Management database, you will need to modify the [`xmcloud.build.json`](/learn/accelerate/sitecoreai/appendix-ii/example-code/xmcloud-build-json) file located at the root of your solution. This involves configuring the Post Deploy Actions section as follows:
 
 ```json
 {
@@ -203,18 +203,17 @@ If you need to deploy custom roles then you can use the scsModules post action w
 ## Related Recipes
 
 <Row columns={2}>
-  <Link title="Sample template.module.json" link="/learn/accelerate/xm-cloud/appendix-ii/example-code/template-module-json" />
-  <Link title="Sample xmcloud.build.json" link="/learn/accelerate/xm-cloud/appendix-ii/example-code/xmcloud-build-json" />
+  <Link title="Sample template.module.json" link="/learn/accelerate/sitecoreai/appendix-ii/example-code/template-module-json" />
+  <Link title="Sample xmcloud.build.json" link="/learn/accelerate/sitecoreai/appendix-ii/example-code/xmcloud-build-json" />
 </Row>
 
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Sitecore Content Serialization" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization.html" />
-  <Link title="Sitecore Content Serialization Reference" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-content-serialization-configuration-reference.html" />
-  <Link title="Install Sitecore Command Line Interface" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/install-sitecore-command-line-interface.html" />
-  <Link title="The build configuration" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html" />
-  <Link title="Github - sitecorelabd/xmcloud-foundation-head" link="https://github.com/sitecorelabs/xmcloud-foundation-head" />
-  <Link title="The CLI itemres command" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-itemres-command.html" />
+  <Link title="Sitecore Content Serialization" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/sitecore-content-serialization.html" />
+  <Link title="Sitecore Content Serialization Reference" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/sitecore-command-line-interface/sitecore-cli-command-reference.html" />
+  <Link title="Install Sitecore Command Line Interface" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/sitecore-command-line-interface/install-and-setup-sitecore-cli/install-sitecore-command-line-interface.html" />
+  <Link title="The build configuration" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/deploying-sitecoreai/the-sitecoreai-build-configuration.html" />
+  <Link title="Front End Application Starter Kits" link="https://github.com/Sitecore/xmcloud-starter-js " />
   <Link title="Tutorials - Seralization #5" link="https://www.youtube.com/watch?v=BuErZU0wwKM" />
 </Row>
