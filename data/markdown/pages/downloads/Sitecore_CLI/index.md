@@ -4,6 +4,10 @@ description: 'The Sitecore CLI provides an entry point for interactive and autom
 origin: https://dev.sitecore.net/Downloads/Sitecore_CLI.aspx
 ---
 
+### Sitecore CLI 7.x
+
+[Sitecore CLI 7.0.24](/downloads/Sitecore_CLI/7x/Sitecore_CLI_7024)\
+
 ### Sitecore CLI 6.x
 
 [Sitecore CLI 6.0.23](/downloads/Sitecore_CLI/6x/Sitecore_CLI_6023)\
