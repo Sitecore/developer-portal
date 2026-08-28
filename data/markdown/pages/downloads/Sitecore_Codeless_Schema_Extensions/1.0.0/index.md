@@ -5,7 +5,7 @@ description: ''
 
 The Codeless Schema Extensions module enables users to store custom key-value data as a contact facet in the xDB without needing to deploy new schemas. The saved contact data can be used to provide a personalized digital experience.
 
-This release is compatible with Sitecore XP 10.2, Sitecore XP 10.3 and Sitecore XP 10.4.\
+This release is compatible with Sitecore XP 10.2, Sitecore XP 10.3, Sitecore XP 10.4 and Sitecore XP 10.5.\
 See [all available versions here](/downloads/Sitecore_Codeless_Schema_Extensions).
 
 ### Download options
