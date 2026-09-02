@@ -14,10 +14,9 @@ export const SurveyPromoCard = ({
 }: PromoCardProps) => (
   <div className="flex justify-center">
     <Card
-      padding="none"
       style="outline"
       elevation="xs"
-      className={cn("overflow-hidden max-w-3xl", className)}
+      className={cn("overflow-hidden max-w-3xl p-0!", className)}
     >
       <div className="flex flex-col md:flex-row">
         <div className="relative w-full md:w-[310px] h-40 md:h-auto">
