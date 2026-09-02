@@ -1,7 +1,8 @@
 import platformData from "@data/data-capabilities";
 import communityListData from "@data/data-community-list";
 import getHelpCta from "@data/promos/get-help";
-import { Article, CTACard } from "@src/components/cards";
+import surveyPromo from "@data/promos/survey";
+import { Article, CTACard, SurveyPromoCard } from "@src/components/cards";
 import ChangelogEntries from "@src/components/changelog/ChangelogEntries";
 import {
   SitecoreCommunityBlog,
@@ -57,6 +58,12 @@ const HomePage: NextPage<HomePageProps> = ({ pageInfo, recipes }) => {
         openGraphImage={pageInfo.openGraphImage}
       >
         <Hero title={pageInfo.title} description={pageInfo.description} className='border-b-0' />
+
+        <VerticalGroup className="bg-subtle-bg">
+          <CenteredContent className="py-6! md:pt-8! md:pb-0!">
+            <SurveyPromoCard {...surveyPromo} />
+          </CenteredContent>
+        </VerticalGroup>
 
         <VerticalGroup>
           <CenteredContent>
