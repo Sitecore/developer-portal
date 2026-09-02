@@ -2,7 +2,7 @@
 title: 'Release Notes'
 ---
 Publication history:<br/>
-**2026-XX-XX:** Released Publishing Service Module 10.5.0
+**2026-09-02:** Released Publishing Service Module 10.5.0
 
 ## New features/improvements
 | Description | Ref. |
