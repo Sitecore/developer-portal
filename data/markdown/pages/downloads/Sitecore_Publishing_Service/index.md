@@ -3,6 +3,9 @@ title: "Sitecore Publishing Service"
 description: "The Publishing Service is an opt-in mechanism for high-performance publishing in large scale Sitecore setups."
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service.aspx
 ---
+### Sitecore Publishing Service 9.x
+[Sitecore Publishing Service 9.0.4](/downloads/Sitecore_Publishing_Service/9x/Sitecore_Publishing_Service_904)
+
 ### Sitecore Publishing Service 8.x
 [Sitecore Publishing Service 8.0.3](/downloads/Sitecore_Publishing_Service/8x/Sitecore_Publishing_Service_803)
 
