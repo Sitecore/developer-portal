@@ -10,7 +10,7 @@ This release includes new features and improvements made in Sitecore Experience 
 
 - [Highlights](#highlights)
 - [New features/improvements](#new-featuresimprovements)
-- [Deprecated/Removed](#removed)
+- [Deprecated/Removed](#deprecaredremoved)
 - [Resolved issues](#resolved-issues)
 
 ## Highlights
