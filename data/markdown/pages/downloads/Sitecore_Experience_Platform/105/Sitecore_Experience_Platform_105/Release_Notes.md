@@ -10,7 +10,7 @@ This release includes new features and improvements made in Sitecore Experience 
 
 - [Highlights](#highlights)
 - [New features/improvements](#new-featuresimprovements)
-- [Removed](#removed)
+- [Deprecated/Removed](#deprecatedremoved)
 - [Resolved issues](#resolved-issues)
 
 ## Highlights
@@ -58,12 +58,24 @@ This release includes new features and improvements made in Sitecore Experience 
 
 ---
 
-## Removed
+## Deprecated/Removed
+
+#### Connectors End-of-Support with SXP 10.5
+
+Sitecore is discontinuing support for the following connectors beginning with the SXP 10.5 release:
+
+- Sitecore Connect for Microsoft Dynamics 365 for Sales
+- Sitecore Connect for Salesforce CRM
+- Sitecore Connect for Salesforce Marketing Cloud
+- Sitecore Data Exchange Framework
+
+Customers who wish to continue using these connectors on Sitecore XP 10.5 can do so through the open source repository that will be published soon.
 
 | Category | Description                                                                                                                                                                                                                                                          | Reference No                                   |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | Platform | The built-in GraphQL Playground has been removed from Sitecore XP. The `HotChocolate.AspNetClassic.Playground` library was deprecated and contained critical bugs. Use a third-party tool such as Postman or Insomnia for GraphQL introspection and query execution. | PDXP-23055                                     |
 | Platform | Deprecated JavaScript libraries have been removed as per KB1008535.                                                                                                                                                                                                  | PDXP-16510, PDXP-16504, PDXP-24274, PDXP-24474 |
+|Platform| Sitecore XP 10.5 is no longer available via Azure Marketplace. To deploy to Azure please use the ARM template approach. Examples ARM templates are available from: [Sitecore-Azure-Quickstart-Templates on GitHub](https://github.com/Sitecore/Sitecore-Azure-Quickstart-Templates) | PDXP-28927
 
 ---
 
