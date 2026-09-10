@@ -1,5 +1,8 @@
 "use client";
 
+import { cn } from "@/src/lib/util";
+import { getQueryValue } from "@/src/lib/util/requests";
+import { slugify } from "@/src/lib/util/stringUtil";
 import { LinkedHeading } from "@src/components/links/LinkedHeading";
 import { Badge } from "@src/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@src/components/ui/card";
@@ -18,14 +21,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@src/components/ui/tooltip";
-import { excludedProducts, getBadgeColor, getStatusColor } from "@src/lib/jira";
+import { getBadgeColor, getStatusColor, includedProducts } from "@src/lib/jira";
 import type { IRoadmapItem, RoadmapProduct } from "@src/lib/roadmap";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { cn } from "@/src/lib/util";
-import { getQueryValue } from "@/src/lib/util/requests";
-import { slugify } from "@/src/lib/util/stringUtil";
 
 interface RoadmapItemProps {
   item: IRoadmapItem;
@@ -67,7 +67,7 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({
           <div className="flex flex-wrap gap-2 mb-4">
             {item.product?.map((label: RoadmapProduct) => (
               <Badge key={label.id} variant="default">
-                {excludedProducts.includes(label.name) ? (
+                {includedProducts.includes(label.name) ? (
                   label.name
                 ) : (
                   <TooltipProvider>

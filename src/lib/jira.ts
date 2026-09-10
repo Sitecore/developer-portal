@@ -24,12 +24,17 @@ function assertValidIssueTypeId(issueTypeId: string): void {
   }
 }
 
-export const excludedProducts = [
-  "Content Hub DAM",
-  "Content Hub Ops",
-  "Analytics",
-  "Content Hub ONE",
-  "Portal",
+export const includedProducts = [
+  "SitecoreAI Agentic Studio",
+  "SitecoreAI CMS",
+  "SitecoreAI Conversion Optimization",
+  "SitecoreAI DAM",
+  "Content Operations",
+  "Marketplace",
+  "Scrunch",
+  "XM/XP",
+  "Commerce/OC",
+  "Common Platform"
 ];
 
 export enum Phase {
@@ -91,18 +96,16 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
     // "customfield_15555", // Speaker notes
     // "customfield_15423", // Marketing title
     "attachment",
+    "customfield_22518", // PMM Marketing Roadmap checkbox
+    "customfield_22392", // PMM Tier
+    "customfield_22399" // PMM Target Persona
   ];
 
   const filters = [
     { key: "issuetype", value: "Idea", operator: FilterOption.Equals },
-    { key: "cf[22914]", value: "24049", operator: FilterOption.Equals }, // External roadmap
-    { key: "cf[22391]", value: "(23554, 23555, 23553)", operator: FilterOption.In }, // Idea archived
-    // { key: "status", value: "archived", operator: FilterOption.NotEquals }, // second archived status
-    // {
-    //   key: "cf[15180]",
-    //   value: '"Won\'t do"',
-    //   operator: FilterOption.NotEquals,
-    // }, // phase does not equal "Won't do"
+    { key: "cf[22518]", value: "1", operator: FilterOption.Equals },
+    { key: "cf[22392]", value: "('Tier 1 (Non-gated)', 'Tier 2', 'Tier 3')", operator: FilterOption.In },
+    
   ];
 
   const jqlString = createJqlString(filters);
@@ -181,7 +184,7 @@ export async function getProductsAsOptions(
         if (
           !options.some((existingOption) => existingOption.value === field.id)
         ) {
-          if (!excludedProducts.includes(field.value)) {
+          if (includedProducts.includes(field.value)) {
             options.push({ label: field.value, value: field.id });
           }
         }
