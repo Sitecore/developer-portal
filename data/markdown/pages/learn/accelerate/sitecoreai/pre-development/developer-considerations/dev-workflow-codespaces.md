@@ -1,6 +1,6 @@
 ---
 title: 'Development Workflow: Github Codespaces'
-description: 'Configuring your development workflow using Github Codespaces and XM Cloud'
+description: 'Configuring your development workflow using Github Codespaces and SitecoreAI'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -17,7 +17,7 @@ The development team needs to be able to develop both the CMS and the Website ap
 
 Github Codespaces provides a simple solution to develop both the web application (Next.js) and the CMS development (data modelling, templates, rendering items etc…) in a common workspace without using Docker.
 
-Using Codespaces also allows XM Cloud to access the development site for the web application over the internet which means Pages and Experience Editor will be able to use the application being developed. This bypasses having to deploy the application for components to be tested within the Pages/Experience Editor environment.
+Using Codespaces also allows SitecoreAI to access the development site for the web application over the internet which means Pages and Experience Editor will be able to use the application being developed. This bypasses having to deploy the application for components to be tested within the Pages/Experience Editor environment.
 
 ### Creating the Codespaces Configuration
 
@@ -52,7 +52,7 @@ Your configuration file should contain the following code:
 
 In this file, we are telling Codespaces:
 
-- The base image to use for the development container. For XM Cloud, we will use the dotnet v6 base image. This is to support the Sitecore dotnet tool CLI. When the tool is updated to use dotnet 7.x, the base image can be updated.
+- The base image to use for the development container. For SitecoreAI, we will use the dotnet v6 base image. This is to support the Sitecore dotnet tool CLI. When the tool is updated to use dotnet 7.x, the base image can be updated.
 - Next we add Node LTS in as a feature to be able to run the Next.js application.
 - Finally we set port 3000 up for port forwarding for the Codespaces URL and we make port 3000 public so that it can be accessed by Pages.
 
@@ -72,7 +72,7 @@ The UI is the same as Visual Studio Code. Once the Codespace is created, the dev
 
 Go to [Github Codespaces](https://github.com/codespaces) and use the Blank quick start template to create a new codespace. You can also do this within Visual Studio Code by installing the Visual Studio Codespaces plugin. This recipe will focus on using the browser, but the same steps apply to using VS Code.
 
-These steps assume you already have an XM Cloud repository based on the XM Cloud Foundation Head starter kit and have gone through the steps of adding the devcontainer.json file.
+These steps assume you already have a SitecoreAI repository based on the SitecoreAI Foundation Head starter kit and have gone through the steps of adding the devcontainer.json file.
 
 Next, we need to initialize the codespace with a git repository. Open a terminal in the root of the codespace and run:
 
@@ -104,7 +104,7 @@ To run the web application, first the developer needs to configure the environme
 
 In Codespaces (or VS Code), navigate to the folder containing your Next.js application. In the starter kit, this is located at `./src/sxastarter`.
 
-Add an `.env.local` file and populate the following environment variables with the values from your XM Cloud instance (do not commit these changes back to the repository):
+Add an `.env.local` file and populate the following environment variables with the values from your SitecoreAI instance (do not commit these changes back to the repository):
 
 <Alert status="warning">
   <AlertIcon /> There is currently a bug in JSS that means the `.env.local` file does not get picked up. As a work around, update the `.env` file directly, but remember not to commit the changes. Once the bug is fixed, `.env.local` should be used.
@@ -131,7 +131,7 @@ SITECORE_EDGE_CONTEXT_ID=<Get the context ID from the Developer Settings tab for
 PUBLIC_URL=https://$CODESPACE_NAME-3000.app.github.dev/
 JSS_EDITING_SECRET=<Get the editing secret from <xmcloud CM URL>/sitecore/admin/showconfig.aspx
 SITECORE_API_KEY=<Get the API key from the XM Deploy app (see below)>
-SITECORE_API_HOST=<The URL of your XM Cloud CM instance>
+SITECORE_API_HOST=<The URL of your SitecoreAI CM instance>
 SITECORE_SITE_NAME=<Your site name>
 ```
 
@@ -163,7 +163,7 @@ Now your site is visible to anyone with the link.
 
 #### Create the Rendering Host item
 
-Next open up Content Editor in your XM Cloud dev environment. Navigate to `/sitecore/system/Settings/Services/Rendering Hosts`. Here we need to create a new predefined rendering host that points at your Codespaces site.
+Next open up Content Editor in your SitecoreAI dev environment. Navigate to `/sitecore/system/Settings/Services/Rendering Hosts`. Here we need to create a new predefined rendering host that points at your Codespaces site.
 
 Right-click the `Rendering Hosts` folder and insert a new Rendering Host item:
 
@@ -206,7 +206,7 @@ The Sitecore CLI will be installed to the Codespace.
 
 ### Get the GraphQL API Key
 
-To get the GraphQL API Key, open the XM Cloud Deploy app (https://deploy.sitecorecloud.io) and navigate to your Project, then your Environment. On the Environment details page, change to the Details tab and click the `Generate Preview API token` button under the heading `Preview GraphQL IDE`:
+To get the GraphQL API Key, open the Deploy app (https://deploy.sitecorecloud.io) and navigate to your Project, then your Environment. On the Environment details page, change to the Details tab and click the `Generate Preview API token` button under the heading `Preview GraphQL IDE`:
 
 <img src="/images/learn/accelerate/xm-cloud/codespaces-6.png" alt="Get the Preview API Key"/>
 

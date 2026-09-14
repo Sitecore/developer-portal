@@ -1,6 +1,6 @@
 ---
 title: 'Hosting the Web Application'
-description: 'Every implementation needs to decide where and how to host their XM Cloud front-end head application'
+description: 'Every implementation needs to decide where and how to host their SitecoreAI front-end head application'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
@@ -11,7 +11,7 @@ audience: ['Architect','Technical Implementer']
 
 ## Context
 
-Clients must choose where and how to host their XM Cloud front-end head application. The two underlying infrastructure choices are serverless and server-based hosting solutions - the selection depends on the customer’s needs for scalability, control, and cost management.
+Clients must choose where and how to host their SitecoreAI front-end head application. The two underlying infrastructure choices are serverless and server-based hosting solutions - the selection depends on the customer’s needs for scalability, control, and cost management.
 
 ## Execution
 
@@ -27,7 +27,7 @@ Both Vercel and Netlify are Sitecore's technology partners and offer developers 
 
 Serverless computing is a modern approach in cloud computing. It allows developers to deploy code without the need to manage the underlying infrastructure. The hosting provider handles server provisioning, scaling, security, and maintenance.
 
-The term 'serverless' is often misunderstood. It doesn't mean the absence of servers, but rather the abstraction of server management. This abstraction allows developers to focus on code development and value delivery, without the burden of infrastructure management. This approach promotes agility, accelerates development cycles, and lowers total cost of ownership, making serverless the recommended choice for Sitecore XM Cloud front-end applications.
+The term 'serverless' is often misunderstood. It doesn't mean the absence of servers, but rather the abstraction of server management. This abstraction allows developers to focus on code development and value delivery, without the burden of infrastructure management. This approach promotes agility, accelerates development cycles, and lowers total cost of ownership, making serverless the recommended choice for SitecoreAI front-end applications.
 
 ### Why Serverless?
 
@@ -55,7 +55,7 @@ In a server-based environment your content can be distributed via a CDN, but com
 
 [Preview deployments](https://vercel.com/docs/deployments/preview-deployments) are a useful feature that enables you and your team to review code changes in a live environment without publishing to production. Thanks to the flexible infrastructure of serverless, these deployments are created automatically for each of your code branches.
 
-It’s imporant to understand that these preview environments are for code changes only not content. We recommend using a non-production instance of XM Cloud to host the preview content for your preview code deployments. But there is still only that single non-production XM Cloud instance providing the content for each preview deployment.
+It’s imporant to understand that these preview environments are for code changes only not content. We recommend using a non-production instance of SitecoreAI to host the preview content for your preview code deployments. But there is still only that single non-production SitecoreAI instance providing the content for each preview deployment.
 
 ### Vercel and Netlify Convenience Layer
 
@@ -105,7 +105,7 @@ Challenges with Next.js
 - Next.js architecture conflicts with container-based scaling, which is not natural for this framework.
 - Suggested workaround: Use Azure Functions as the function layer alongside Container Apps.
 
-Sitecore does not recommend hosting your XM Cloud head application on Azure App Services. This applies to both Node and Docker web apps in Azure App Services.
+Sitecore does not recommend hosting your SitecoreAI head application on Azure App Services. This applies to both Node and Docker web apps in Azure App Services.
 
 For more information on server-based hosting and specifics to why we do not recommend Azure App Services review: [Running Next.js on Azure App Services](https://developers.sitecore.com/learn/accelerate/xm-cloud/pre-development/developer-experience/nextjs-azure-app-services).
 
@@ -128,7 +128,7 @@ The providers listed and other server-based hosting options are not recommended.
 <Link title="Deploy your front-end application to Vercel" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-your-front-end-application-to-vercel.html" />
 <Link title="Deploy your front-end application to Netlify" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-your-front-end-application-to-netlify.html" />
 <Link title="Serverless Environment Preview Deployments" link="https://vercel.com/docs/deployments/preview-deployments" />
-<Link title="Vercel and Sitecore XM Cloud Integration" link="https://vercel.com/docs/integrations/cms/sitecore" />
+<Link title="Vercel and SitecoreAI Integration" link="https://vercel.com/docs/integrations/cms/sitecore" />
 <Link title="Sitecore ASP.NET Core SDK" link="https://doc.sitecore.com/xmc/en/developers/asp-net/0/asp-net-core-sdk/sitecore-asp-net-core-sdk.html" />
 </Row>
 
@@ -136,6 +136,6 @@ The providers listed and other server-based hosting options are not recommended.
 
 <Row columns={2}>
 <Link title="Vercel + Sitecore: Partnering on a composable future" link="https://vercel.com/blog/vercel-sitecore-partnership" />
-<Link title="Hosting your XM Cloud App on Netlify" link="https://www.youtube.com/watch?v=bLdPqZ3xcB8" />
-<Link title="XM Cloud - Deploy your first Headless SXA site to Vercel" link="https://www.youtube.com/watch?v=0UpihW2QxaQ" />
+<Link title="Hosting your SitecoreAI App on Netlify" link="https://www.youtube.com/watch?v=bLdPqZ3xcB8" />
+<Link title="SitecoreAI - Deploy your first Headless SXA site to Vercel" link="https://www.youtube.com/watch?v=0UpihW2QxaQ" />
 </Row>

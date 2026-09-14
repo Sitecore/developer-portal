@@ -1,6 +1,6 @@
 ---
 title: 'Project Solution Setup'
-description: 'Creating a new project for Docker local development with XM Cloud'
+description: 'Creating a new project for Docker local development with SitecoreAI'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
@@ -16,7 +16,7 @@ As the technical lead on the project, you need to set up the Project and Environ
 
 ## Execution
 
-There are two paths to setup the solution, depending on whether you are using a source code provider with a supported integration to the XM Cloud Deploy app or not. In the following use case we will focusing on GitHub, but Azure DevOps steps are available in the [source control and hosting providers](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-connections-for-source-control-and-hosting-providers.html) documentation.
+There are two paths to setup the solution, depending on whether you are using a source code provider with a supported integration to the SitecoreAI Deploy app or not. In the following use case we will focusing on GitHub, but Azure DevOps steps are available in the [source control and hosting providers](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-connections-for-source-control-and-hosting-providers.html) documentation.
 
 ### Setting up your first Project, Environment, and Site - Supported Integration
 
@@ -33,7 +33,7 @@ In the setup process the project requires a name. Make sure to use proper Naming
 Each environment needs to be setup to be a production or non-production environment. So it’s crucial to mark only the production environment accordingly and your QA and UAT environment as non-productions. Give the environments applicable names.
 
 <Alert status="info" mb={4}><AlertIcon />
-Starting from March 3, 2025, XM Cloud [released a feature](https://developers.sitecore.com/changelog/xm-cloud/03032025/improvements-to-project-creation-and-management%2c-including-separate-repositories-for-each-authoring-environment-and-editing-host) that allows to build and deploy environment and editing host separately. That means source code for authoring environment and head application can be stored in separate repositories. To enable the feature, follow the [Deploy](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html#deploy-a-project-when-youve-enabled-the-beta-feature-that-lets-you-deploy-your-authoring-environments-and-editing-hosts-separately) documentation.
+Starting from March 3, 2025, SitecoreAI [released a feature](https://developers.sitecore.com/changelog/xm-cloud/03032025/improvements-to-project-creation-and-management%2c-including-separate-repositories-for-each-authoring-environment-and-editing-host) that allows to build and deploy environment and editing host separately. That means source code for authoring environment and head application can be stored in separate repositories. To enable the feature, follow the [Deploy](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html#deploy-a-project-when-youve-enabled-the-beta-feature-that-lets-you-deploy-your-authoring-environments-and-editing-hosts-separately) documentation.
 </Alert>
 
 
@@ -42,7 +42,7 @@ Starting from March 3, 2025, XM Cloud [released a feature](https://developers.si
 
 When creating a project with no integration, you will need to use the Sitecore Cloud CLI.
 
-- Login to the XM Cloud Deploy App using the CLI
+- Login to the Deploy App using the CLI
 
   ```ps
   dotnet sitecore cloud login
@@ -62,7 +62,7 @@ When creating a project with no integration, you will need to use the Sitecore C
     --project-id <project-id-of-previously-created-project>
   ```
 
-- Deploy to your environment using the environment id. This will provision the different XM Cloud resources, build and deploy the foundation head solution and run post actions.
+- Deploy to your environment using the environment id. This will provision the different SitecoreAI resources, build and deploy the foundation head solution and run post actions.
 
   ```ps
   dotnet sitecore cloud deployment create `
@@ -80,7 +80,7 @@ When creating a project with no integration, you will need to use the Sitecore C
 
 ### Create a new Site
 
-Once the process of provisioning the CM resources, and deploying your code and first items to the XM Cloud environment is done, you need to access the dashboard. From here you will create your first site.
+Once the process of provisioning the CM resources, and deploying your code and first items to the SitecoreAI environment is done, you need to access the dashboard. From here you will create your first site.
 
 For a client project, create an empty site - follow the [Creating a Site](/learn/accelerate/xm-cloud/pre-development/sprint-zero/creating-a-site) recipe for further detail.
 
@@ -95,7 +95,7 @@ For a client project, create an empty site - follow the [Creating a Site](/learn
         xmcloud.build.json file includes configuration for rendering host. Next.js is configured by default. 
       </TabPanel>
       <TabPanel>
-        Sitecore XM Cloud currently does not support the automatic deployment of the editing host for ASP.NET Core Head applications. As a result, after deployment, Page Builder will display an error such as "unable to connect to the remote server". It is currently required to [deploy an external editing host](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-an-external-editing-host.html) to support this.
+        Sitecore SitecoreAI currently does not support the automatic deployment of the editing host for ASP.NET Core Head applications. As a result, after deployment, Page Builder will display an error such as "unable to connect to the remote server". It is currently required to [deploy an external editing host](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-an-external-editing-host.html) to support this.
       </TabPanel>
       <TabPanel>
         xmcloud.build.json file includes configuration for rendering host. Next.js is configured by default. Thus, Angular needs to be configured instead of Next.js. You can do it by changing “enabled” setting.
@@ -112,7 +112,7 @@ For a client project, create an empty site - follow the [Creating a Site](/learn
 
 As mentioned earlier, it is required to start using the foundation head solution. This can be either cloned during the project creation process or forked separately. 
 
-The solution contains everything to run XM Cloud locally using Docker Containers as well as running the head application locally connecting towards the GraphQL Preview Endpoint.
+The solution contains everything to run SitecoreAI locally using Docker Containers as well as running the head application locally connecting towards the GraphQL Preview Endpoint.
 
 <Tabs>
   <TabList>
@@ -149,13 +149,13 @@ Don't try and force [Helix](https://helix.sitecore.com/) into your front-end Jav
 
 ### Items Serialization
 
-The items folder contains serialized versions of the items coming from XM Cloud. Those items are stored in `yml` format and organized based on the item hierarchy and the configuration in the `module.json` files.
+The items folder contains serialized versions of the items coming from SitecoreAI. Those items are stored in `yml` format and organized based on the item hierarchy and the configuration in the `module.json` files.
 
 Check out the [Setup Sitecore Content Serialization](/learn/accelerate/xm-cloud/pre-development/sprint-zero/setup-content-serialization) recipe for more details.
 
 ### Platform
 
-The platform folder can contain customizations you want to add to the XM Cloud content management instance. It is not recommended to do customizations.
+The platform folder can contain customizations you want to add to the SitecoreAI content management instance. It is not recommended to do customizations.
 
 <Tabs>
   <TabList>
@@ -262,15 +262,15 @@ Based on your framework, rename the project accordingly -
 
 ## Insights
 
-### Structure in XM Cloud
+### Structure in SitecoreAI
 
-When starting in XM Cloud the overall structure needs to be understood. When getting access to the Sitecore Composable DXP through the Sitecore Cloud Portal you’ll be part of an Organization that contains the subscription. Depending on the licensing model of your subscription you’ll be able to create and manage 1 to many XM Cloud projects each one containing 1 to many XM Cloud environments.
+When starting in SitecoreAI the overall structure needs to be understood. When getting access to the Sitecore Composable DXP through the Sitecore Cloud Portal you’ll be part of an Organization that contains the subscription. Depending on the licensing model of your subscription you’ll be able to create and manage 1 to many SitecoreAI projects each one containing 1 to many SitecoreAI environments.
 
-<img src="/images/learn/accelerate/xm-cloud/project-solution-setup-2.jpeg" alt="XM Cloud Structure"/>
+<img src="/images/learn/accelerate/xm-cloud/project-solution-setup-2.jpeg" alt="SitecoreAI Structure"/>
 
 ### When to use Site Collections, Site Collection Folders and Site Folders
 
-XM Cloud is made for multisite implementations. Dependent on the amount of sites you have and the requirements for separation, XM Cloud helps you to organize and manage sites in a hierarchical way.
+SitecoreAI is made for multisite implementations. Dependent on the amount of sites you have and the requirements for separation, SitecoreAI helps you to organize and manage sites in a hierarchical way.
 
 Every site requires to be within a Site Collection. The Site collection can be seen as a brand folder. But the site collection is not only good for separating and organizing your sites, but also provides certain features. You can share content from one site to another within a site collection. You can create internal links between sites. Sites within a site collection share the same page templates.
 
@@ -290,7 +290,7 @@ Review the [Site Management](/learn/accelerate/xm-cloud/pre-development/project-
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
+  <Link title="Getting started with SitecoreAI" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
   <Link title="JavaScript Services SDK (JSS) for Next.js" link="https://doc.sitecore.com/xmc/en/developers/jss/22/jss-xmc/javascript-services-sdk--jss--for-next-js.html" />    
   <Link title="Sitecore ASP.NET Core SDK" link="https://doc.sitecore.com/xmc/en/developers/asp-net/0/asp-net-core-sdk/sitecore-asp-net-core-sdk.html" />  
 </Row>
