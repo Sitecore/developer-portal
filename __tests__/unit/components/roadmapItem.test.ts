@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import { matchesSelectedRoadmapItem } from '@/src/components/roadmap/roadmapItem';
+import { describe, expect, it } from 'vitest';
 
 describe('matchesSelectedRoadmapItem', () => {
   it('returns false when no item is selected', () => {

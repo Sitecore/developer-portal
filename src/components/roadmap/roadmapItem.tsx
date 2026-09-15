@@ -19,10 +19,7 @@ interface RoadmapItemProps {
   item: IRoadmapItem;
 }
 
-export const matchesSelectedRoadmapItem = (
-  queryValue: string | string[] | undefined,
-  itemId: number,
-): boolean => {
+export const matchesSelectedRoadmapItem = (queryValue: string | string[] | undefined, itemId: number): boolean => {
   const selectedItem = getQueryValue(queryValue).trim();
 
   if (!selectedItem) {
