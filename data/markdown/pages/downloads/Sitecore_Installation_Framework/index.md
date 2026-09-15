@@ -4,6 +4,7 @@ description: 'The Sitecore Installation Framework is a Microsoft PowerShell modu
 origin: https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework.aspx
 ---
 ### Sitecore Installation Framework 2.x
+[Sitecore Installation Framework 2.4.1](/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_241)\
 [Sitecore Installation Framework 2.4.0](/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_240)\
 [Sitecore Installation Framework 2.3.0](/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_230)\
 [Sitecore Installation Framework 2.2.0](/downloads/Sitecore_Installation_Framework/2x/Sitecore_Installation_Framework_220)\
