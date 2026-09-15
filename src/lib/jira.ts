@@ -92,7 +92,7 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
     "description",
     "status",
     "customfield_22391", // Roadmap phase
-    "customfield_24688", // Product
+    "customfield_24688", // Product (module in Jira)
     // "customfield_15555", // Speaker notes
     // "customfield_15423", // Marketing title
     "attachment",

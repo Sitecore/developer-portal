@@ -41,6 +41,7 @@ export function parseJiraIssue(issue: Issue) {
     })) || [];
   //const description = issue.fields.customfield_15555; // || issue.fields.description;
   const description = replaceImageUrls(issue.renderedFields?.description || "");
+  
   const title = issue.fields.customfield_15423 || issue.fields.summary;
   const attachments = issue.fields.attachment
     .filter((x) => x.mimeType.includes("image"))
