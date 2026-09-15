@@ -1,58 +1,41 @@
-import type { Option } from "@src/components/ui/dropdown";
-import type {
-  CustomField,
-  Issue,
-  IssueTypeSchema,
-  JiraResponse,
-  RoadmapInformation,
-} from "./interfaces/jira";
-import { parseJiraIssues } from "./roadmap";
+import type { Option } from '@src/components/ui/dropdown';
+import type { CustomField, Issue, IssueTypeSchema, JiraResponse, RoadmapInformation } from './interfaces/jira';
+import { parseJiraIssues } from './roadmap';
 
-const jiraBaseUrl = "https://sitecore.atlassian.net/rest/api/3";
+const jiraBaseUrl = 'https://sitecore.atlassian.net/rest/api/3';
 const JIRA_USERNAME = process.env.JIRA_USERNAME as string;
 const JIRA_API_TOKEN = process.env.JIRA_API_TOKEN as string;
 
 function assertValidProjectKey(projectKey: string): void {
   if (!/^[A-Z0-9_-]{1,20}$/.test(projectKey)) {
-    throw new Error("Invalid project key");
+    throw new Error('Invalid project key');
   }
 }
 
 function assertValidIssueTypeId(issueTypeId: string): void {
   if (!/^[0-9]{1,20}$/.test(issueTypeId)) {
-    throw new Error("Invalid issue type id");
+    throw new Error('Invalid issue type id');
   }
 }
 
-export const includedProducts = [
-  "SitecoreAI Agentic Studio",
-  "SitecoreAI CMS",
-  "SitecoreAI Conversion Optimization",
-  "SitecoreAI DAM",
-  "Content Operations",
-  "Marketplace",
-  "Scrunch",
-  "XM/XP",
-  "Commerce/OC",
-  "Common Platform"
-];
+export const includedProducts = ['SitecoreAI Agentic Studio', 'SitecoreAI CMS', 'SitecoreAI Conversion Optimization', 'SitecoreAI DAM', 'Content Operations', 'Marketplace', 'Scrunch', 'XM/XP', 'Commerce/OC', 'Common Platform'];
 
 export enum Phase {
-  NOW = "Now",
-  NEXT = "Next",
-  DONE = "Done",
-  FUTURE = "Future",
+  NOW = 'Now',
+  NEXT = 'Next',
+  DONE = 'Done',
+  FUTURE = 'Future',
 }
 enum FilterOption {
-  Equals = "=",
-  NotEquals = "!=",
-  In = "in",
+  Equals = '=',
+  NotEquals = '!=',
+  In = 'in',
 }
 
 async function fetchData<T>(url: string): Promise<T> {
   const response = await fetch(url, {
     headers: {
-      Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString("base64")}`,
+      Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString('base64')}`,
     },
   });
 
@@ -64,53 +47,47 @@ async function fetchData<T>(url: string): Promise<T> {
   return data;
 }
 
-function createJqlString(
-  filters: { key: string; value: string; operator: FilterOption }[],
-): string {
-  return filters
-    .map((filter) => `${filter.key}${filter.operator}${filter.value}`)
-    .join("%20AND%20");
+function createJqlString(filters: { key: string; value: string; operator: FilterOption }[]): string {
+  return filters.map((filter) => `${filter.key}${filter.operator}${filter.value}`).join('%20AND%20');
 }
 
 function assertValidJiraAttachmentId(id: string): void {
   if (!/^\d+$/.test(id)) {
-    throw new Error("Invalid Jira attachment id");
+    throw new Error('Invalid Jira attachment id');
   }
 }
 
 export async function GetJiraResponse(): Promise<JiraResponse> {
   // Get all issues from Jira where external roadmap is set to 1 (true)
 
-// issuetype = Idea 
-// AND cf[22914] = 24049 
-// AND cf[22391] in (23554, 23555, 23553)
-// ORDER BY project ASC
-
+  // issuetype = Idea
+  // AND cf[22914] = 24049
+  // AND cf[22391] in (23554, 23555, 23553)
+  // ORDER BY project ASC
 
   const fields = [
-    "summary",
-    "description",
-    "status",
-    "customfield_22391", // Roadmap phase
-    "customfield_24688", // Product (module in Jira)
+    'summary',
+    'description',
+    'status',
+    'customfield_22391', // Roadmap phase
+    'customfield_24688', // Product (module in Jira)
     // "customfield_15555", // Speaker notes
     // "customfield_15423", // Marketing title
-    "attachment",
-    "customfield_22518", // PMM Marketing Roadmap checkbox
-    "customfield_22392", // PMM Tier
-    "customfield_22399" // PMM Target Persona
+    'attachment',
+    'customfield_22518', // PMM Marketing Roadmap checkbox
+    'customfield_22392', // PMM Tier
+    'customfield_22399', // PMM Target Persona
   ];
 
   const filters = [
-    { key: "issuetype", value: "Idea", operator: FilterOption.Equals },
-    { key: "cf[22518]", value: "1", operator: FilterOption.Equals },
-    { key: "cf[22392]", value: "('Tier 1 (Non-gated)', 'Tier 2', 'Tier 3')", operator: FilterOption.In },
-    
+    { key: 'issuetype', value: 'Idea', operator: FilterOption.Equals },
+    { key: 'cf[22518]', value: '1', operator: FilterOption.Equals },
+    { key: 'cf[22392]', value: "('Tier 1 (Non-gated)', 'Tier 2', 'Tier 3')", operator: FilterOption.In },
   ];
 
   const jqlString = createJqlString(filters);
-  const roadmapAPI = `${jiraBaseUrl}/search/jql?jql=${jqlString}&fields=${fields.join(",")}&expand=names&maxResults=1000&expand=renderedFields`;
-console.log("roadmapAPI", roadmapAPI);
+  const roadmapAPI = `${jiraBaseUrl}/search/jql?jql=${jqlString}&fields=${fields.join(',')}&expand=names&maxResults=1000&expand=renderedFields`;
+
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
   let allIssues = response.issues;
@@ -132,10 +109,10 @@ export async function GetJiraAttachement(id: string) {
   const imageUrl = `${jiraBaseUrl}/attachment/content/${id}`;
 
   const response = await fetch(imageUrl, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString("base64")}`,
-      Accept: "application/json",
+      Authorization: `Basic ${Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString('base64')}`,
+      Accept: 'application/json',
     },
   });
 
@@ -165,25 +142,19 @@ export async function getRoadmap(): Promise<RoadmapInformation> {
 }
 
 export async function getProducts(issues: any[]): Promise<string[]> {
-  const products = issues
-    .flatMap((issue: Issue) => issue.fields.customfield_24688 || [])
-    .map((label: CustomField) => label.value);
+  const products = issues.flatMap((issue: Issue) => issue.fields.customfield_24688 || []).map((label: CustomField) => label.value);
 
   const uniqueProducts = [...new Set(products)];
   return uniqueProducts;
 }
 
-export async function getProductsAsOptions(
-  issues: Issue[],
-): Promise<Array<Option>> {
+export async function getProductsAsOptions(issues: Issue[]): Promise<Array<Option>> {
   const options: Option[] = [];
 
   issues.forEach((issue: Issue) => {
     if (issue.fields.customfield_24688) {
       issue.fields.customfield_24688.forEach((field: CustomField) => {
-        if (
-          !options.some((existingOption) => existingOption.value === field.id)
-        ) {
+        if (!options.some((existingOption) => existingOption.value === field.id)) {
           if (includedProducts.includes(field.value)) {
             options.push({ label: field.value, value: field.id });
           }
@@ -197,37 +168,34 @@ export async function getProductsAsOptions(
 
 export function getBadgeColor(status: string): string {
   switch (status.toLowerCase()) {
-    case "done":
-      return "green";
-    case "now":
-      return "primary";
-    case "next":
-      return "orange";
-    case "future":
-      return "gray";
+    case 'done':
+      return 'green';
+    case 'now':
+      return 'primary';
+    case 'next':
+      return 'orange';
+    case 'future':
+      return 'gray';
     default:
-      return "gray";
+      return 'gray';
   }
 }
 
 export function getStatusColor(status: string): string {
   switch (status.toLowerCase()) {
-    case "done":
-      return "green";
-    case "new":
-      return "primary";
-    case "discovery":
-      return "yellow";
-    case "delivery":
-      return "teal";
+    case 'done':
+      return 'green';
+    case 'new':
+      return 'primary';
+    case 'discovery':
+      return 'yellow';
+    case 'delivery':
+      return 'teal';
     default:
-      return "gray";
+      return 'gray';
   }
 }
-export async function getIssueTypeSchema(params: {
-  projectKey: string;
-  issueTypeId: string;
-}): Promise<IssueTypeSchema> {
+export async function getIssueTypeSchema(params: { projectKey: string; issueTypeId: string }): Promise<IssueTypeSchema> {
   const { projectKey, issueTypeId } = params;
 
   assertValidProjectKey(projectKey);
@@ -236,19 +204,14 @@ export async function getIssueTypeSchema(params: {
   const safeProjectKey = encodeURIComponent(projectKey);
   const safeIssueTypeId = encodeURIComponent(issueTypeId);
 
-  const response = await fetch(
-    `${jiraBaseUrl}/issue/createmeta/${safeProjectKey}/issuetypes/${safeIssueTypeId}`,
-    {
-      method: "GET",
-      cache: "no-cache",
-      headers: {
-        Authorization:
-          "Basic " +
-          Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString("base64"),
-        "Content-Type": "application/json",
-      },
+  const response = await fetch(`${jiraBaseUrl}/issue/createmeta/${safeProjectKey}/issuetypes/${safeIssueTypeId}`, {
+    method: 'GET',
+    cache: 'no-cache',
+    headers: {
+      Authorization: 'Basic ' + Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString('base64'),
+      'Content-Type': 'application/json',
     },
-  );
+  });
 
   if (!response.ok) {
     const error = await response.text();
@@ -261,8 +224,8 @@ export async function getIssueTypeSchema(params: {
 
 export async function postJiraIssue({
   summary,
-  projectKey = "PRDSCS",
-  issueTypeId = "11808",
+  projectKey = 'PRDSCS',
+  issueTypeId = '11808',
   product,
   name,
   email,
@@ -278,7 +241,7 @@ export async function postJiraIssue({
   description?: string;
   url?: string;
 }): Promise<{ id: string; key: string }> {
-  console.log("posting the new jira ticket...");
+  console.log('posting the new jira ticket...');
 
   const productValue: any[] = [];
 
@@ -286,30 +249,24 @@ export async function postJiraIssue({
     const schema = await getIssueTypeSchema({ projectKey, issueTypeId });
 
     product.forEach((p) => {
-      const productField = schema.fields.find(
-        (field) => field.name === "Products",
-      );
-      const foundProduct = productField?.allowedValues?.find(
-        (x) => x.value?.toLowerCase() === p.toLowerCase(),
-      );
+      const productField = schema.fields.find((field) => field.name === 'Products');
+      const foundProduct = productField?.allowedValues?.find((x) => x.value?.toLowerCase() === p.toLowerCase());
       if (foundProduct) {
         productValue.push(foundProduct);
       }
     });
 
     if (productValue.length === 0) {
-      throw console.error("Product not found in the allowed values");
+      throw console.error('Product not found in the allowed values');
     }
   }
 
   const response = await fetch(`${jiraBaseUrl}/issue`, {
-    method: "POST",
-    cache: "no-cache",
+    method: 'POST',
+    cache: 'no-cache',
     headers: {
-      Authorization:
-        "Basic " +
-        Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString("base64"),
-      "Content-Type": "application/json",
+      Authorization: 'Basic ' + Buffer.from(`${JIRA_USERNAME}:${JIRA_API_TOKEN}`).toString('base64'),
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       fields: {
@@ -322,53 +279,53 @@ export async function postJiraIssue({
           id: issueTypeId,
         },
         description: {
-          type: "doc",
+          type: 'doc',
           version: 1,
           content: [
             {
-              type: "paragraph",
+              type: 'paragraph',
               content: [
                 {
                   text: description,
-                  type: "text",
+                  type: 'text',
                 },
               ],
             },
             {
-              type: "paragraph",
+              type: 'paragraph',
               content: [
                 {
-                  text: "\nINFO:\nurl: ",
-                  type: "text",
+                  text: '\nINFO:\nurl: ',
+                  type: 'text',
                 },
                 {
-                  type: "inlineCard",
+                  type: 'inlineCard',
                   attrs: {
-                    url: url ?? "-",
+                    url: url ?? '-',
                   },
                 },
                 {
-                  text: `\nname: ${name == null || name === "" ? "-" : name}`,
-                  type: "text",
+                  text: `\nname: ${name == null || name === '' ? '-' : name}`,
+                  type: 'text',
                 },
                 {
-                  text: `\nemail: ${email == null || email === "" ? "-" : email}`,
-                  type: "text",
+                  text: `\nemail: ${email == null || email === '' ? '-' : email}`,
+                  type: 'text',
                 },
               ],
             },
             {
-              type: "paragraph",
+              type: 'paragraph',
               content: [
                 {
-                  text: "Ticket automatically created from the feedback form on the developer portal.",
-                  type: "text",
+                  text: 'Ticket automatically created from the feedback form on the developer portal.',
+                  type: 'text',
                 },
               ],
             },
           ],
         },
-        labels: ["external-feedback"],
+        labels: ['external-feedback'],
       },
     }),
   });
@@ -380,5 +337,5 @@ export async function postJiraIssue({
   }
 
   // return (await response.json()) as { id: string; key: string };
-  return { id: "123", key: "PRDSCS-123" };
+  return { id: '123', key: 'PRDSCS-123' };
 }

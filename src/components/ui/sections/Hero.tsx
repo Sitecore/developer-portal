@@ -36,7 +36,7 @@ export const Hero = ({ description, title, subTitle, children, productLogo, demo
     <VerticalGroup className={cn('max-w-full border-b border-t border-border-color bg-hero-gradient', className)}>
       <CenteredContent className="py-6 px-4 md:py-12 xl:py-16" direction="column">
         {productLogo && logoSrc && <Image src={logoSrc} alt={`${title} logo`} width={280} height={60} />}
-        {subTitle && <h3 className="text-base font-sans font-normal text-neutral-600 dark:text-neutral-400 uppercase">{subTitle}</h3>}
+        {subTitle && <h3 className="text-base font-sans font-medium text-neutral-600 dark:text-neutral-400 uppercase tracking-wide">{subTitle}</h3>}
         {!productLogo && <h1 className="mb-0 text-4xl font-semibold lg:text-6xl font-sans">{title}</h1>}
         {description && <h2 className="text-base font-sans font-normal text-neutral-600 dark:text-neutral-400">{description}</h2>}
         {demoId && <GuidedDemo demoId={demoId} productName={title} productLogo={productLogo} />}

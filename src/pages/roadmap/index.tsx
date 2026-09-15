@@ -56,7 +56,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
           <CenteredContent>
             <div className="flex flex-col gap-16 md:flex-row">
               <div className="flex-col gap-8 md:flex-col">
-                <h2 className="text-4xl font-medium mb-8">Four phases, one route</h2>
+                <h2 className="text-4xl font-semibold mb-8 font-sans">Four phases, one route</h2>
 
                 <p className="text-lg text-muted-foreground my-8">This section provides a comprehensive view of the development progress for each of our products, structured into four distinct phases</p>
                 <TimelineRoot className="max-w-full gap-0 flex-row" size="lg">
@@ -66,7 +66,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                       <TimelineConnector className="w-full max-h-0.25 min-h-0.25" />
                     </TimelineSeparator>
                     <TimelineContent className="pr-4">
-                      <TimelineTitle className="text-xl">Done</TimelineTitle>
+                      <TimelineTitle className="text-xl font-sans">Done</TimelineTitle>
                       <TimelineDescription className="text-lg">Presenting completed features and updates</TimelineDescription>
                     </TimelineContent>
                   </TimelineItem>
@@ -76,7 +76,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                       <TimelineConnector className="w-full max-h-0.25 min-h-0.25" />
                     </TimelineSeparator>
                     <TimelineContent className="pr-4">
-                      <TimelineTitle className="text-xl">Now</TimelineTitle>
+                      <TimelineTitle className="text-xl font-sans">Now</TimelineTitle>
                       <TimelineDescription className="text-lg">Outlining current initiatives which we expect to ship this quarter</TimelineDescription>
                     </TimelineContent>
                   </TimelineItem>
@@ -86,7 +86,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                       <TimelineConnector className="w-full max-h-0.25 min-h-0.25" />
                     </TimelineSeparator>
                     <TimelineContent className="pr-4">
-                      <TimelineTitle className="text-xl">Next</TimelineTitle>
+                      <TimelineTitle className="text-xl font-sans">Next</TimelineTitle>
                       <TimelineDescription className="text-lg">Detailing plans for the upcoming two quarters</TimelineDescription>
                     </TimelineContent>
                   </TimelineItem>
@@ -96,7 +96,7 @@ const Roadmap: NextPage<RoadmapPageProps> = ({ pageInfo, products }) => {
                       <TimelineConnector className="w-full max-h-0.25 min-h-0.25" />
                     </TimelineSeparator>
                     <TimelineContent className="pr-4">
-                      <TimelineTitle className="text-xl">Future</TimelineTitle>
+                      <TimelineTitle className="text-xl font-sans">Future</TimelineTitle>
                       <TimelineDescription className="text-lg">Offering a glimpse into long-term developments beyond nine months.</TimelineDescription>
                     </TimelineContent>
                   </TimelineItem>

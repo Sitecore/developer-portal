@@ -75,7 +75,7 @@ const Search: NextPage<SearchPageProps> = ({ pageInfo, currentProduct }) => {
       <Layout title={pageTitle} description={description} openGraphImage={pageInfo.openGraphImage}>
         <Hero title={pageTitle} description={description} image={pageInfo.heroImage} productLogo={pageInfo.productLogo} />
 
-        <VerticalGroup className="bg-white dark:bg-background py-6">
+        <VerticalGroup className="bg-white dark:bg-background pb-2">
           <CenteredContent>
             <Link href="/roadmap" passHref>
               <Button variant={'ghost'}>
