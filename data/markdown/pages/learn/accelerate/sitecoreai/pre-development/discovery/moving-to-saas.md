@@ -66,7 +66,7 @@ To consider the long term effect of this project it is important to plan and doc
 The following topics are all considerations when moving to SitecoreAI -  when planning, it's crucial to review each topic based on the implementation in front of you.
 
 ### Transition from Sitecore XM/XP to SitecoreAI
-If you are moving from Sitecore XM/XP, this requires careful planning because they are fundamentally different products. For example, search functionality in XP relies heavily on Solr, whereas XM Cloud lacks a web database, necessitating alternative approaches. Consider using composable solutions or custom implementations to address feature approach.
+If you are moving from Sitecore XM/XP, this requires careful planning because they are fundamentally different products. For example, search functionality in XP relies heavily on Solr, whereas SitecoreAI lacks a web database, necessitating alternative approaches. Consider using composable solutions or custom implementations to address feature approach.
 
 Read more on the [Transition from XM/XP to SitecoreAI recipe](/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc).
 

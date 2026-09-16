@@ -1,6 +1,6 @@
 ---
 title: 'Web Developer Experience'
-description: 'Standardized workflows, code quality practices, and cross-functional collaboration requirements for web developers working on XM Cloud projects'
+description: 'Standardized workflows, code quality practices, and cross-functional collaboration requirements for web developers working on SitecoreAI projects'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
@@ -10,7 +10,7 @@ audience: ['Architect','Technical Implementers','Project Manager', 'Product Owne
 ---
 
 ## Context
-Web Application developers working on XM Cloud projects face unique challenges when collaborating across team roles as introduced in the [Preparing for an XM Cloud project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project) recipe. They need specific support from their team members and well-defined practices to work efficiently in collaborative environments. Understanding these workflow requirements is essential for establishing effective quality standards.
+Web Application developers working on SitecoreAI projects face unique challenges when collaborating across team roles as introduced in the [Preparing for a SitecoreAI project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project) recipe. They need specific support from their team members and well-defined practices to work efficiently in collaborative environments. Understanding these workflow requirements is essential for establishing effective quality standards.
 
 ## Execution
 Projects can face multiple challenges but it’s often common that issues start to arise when there are:
@@ -257,7 +257,7 @@ Enforce standards before commits:
 ```
 
 ## Insights
-For Web Application developers to work effectively in an XM Cloud project, they require specific inputs and support from other team roles. Enforcing cross-functional collaboration is key for a successfull project. The following guidance converce most common requirements expected from each role, but these should be tailored based on your setup.
+For Web Application developers to work effectively in a SitecoreAI project, they require specific inputs and support from other team roles. Enforcing cross-functional collaboration is key for a successfull project. The following guidance converce most common requirements expected from each role, but these should be tailored based on your setup.
 
 
 **Project Managers, Project Owner**
@@ -298,6 +298,6 @@ For Web Application developers to work effectively in an XM Cloud project, they 
 
 ## Related Recipes
 <Row columns={2}>
-    <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+    <Link title="Preparing for an SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
     <Link title="Branching Strategy" link="/learn/accelerate/xm-cloud/pre-development/developer-considerations/branching-strategy" />
 </Row>
