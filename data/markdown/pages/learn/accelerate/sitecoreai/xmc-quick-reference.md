@@ -1,6 +1,6 @@
 ---
-title: 'XM Cloud Quick Reference'
-description: 'A guide to enable you to rapidly discover key resources, best practices, and key tools to plan, build, and scale on Sitecore XM Cloud.'
+title: 'SitecoreAI Quick Reference'
+description: 'A guide to enable you to rapidly discover key resources, best practices, and key tools to plan, build, and scale on SitecoreAI.'
 area: ['accelerate']
 product: ['xm-cloud']
 productLogo: 'XMCloud'
@@ -10,26 +10,26 @@ hasInPageNav: false
 
 ## Getting Started
 
-Even before you get to platform options or tech design, you need to have alignment on what success even looks like. It's easy for teams to agree to do all kinds of things and miss the bigger picture — especially with a cross-functional project like an XM Cloud migration.
+Even before you get to platform options or tech design, you need to have alignment on what success even looks like. It's easy for teams to agree to do all kinds of things and miss the bigger picture — especially with a cross-functional project like a SitecoreAI migration.
 
 <Group title="" description="">
   <GroupItem>
     #### Recipies
     - [Moving to SaaS](/learn/accelerate/xm-cloud/pre-development/discovery/moving-to-saas)
-    - [Transition from XM/XP to XM Cloud](/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc)
+    - [Transition from XM/XP to SitecoreAI](/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc)
   </GroupItem>
   <GroupItem>
     #### Documentation
     - [Sitecore Cloud Portal](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
-    - [Sitecore XM Cloud](https://doc.sitecore.com/xmc/en/users/xm-cloud/sitecore-xm-cloud.html)
-    - [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
+    - [SitecoreAI](https://doc.sitecore.com/xmc/en/users/xm-cloud/sitecore-xm-cloud.html)
+    - [Getting started with SitecoreAI](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
     - [Content authoring concepts](https://doc.sitecore.com/xmc/en/developers/xm-cloud/content-authoring-concepts-for-developers-new-to-sitecore.html)    
   </GroupItem>  
 </Group>
 
 
 ## Project Planning
-An XM Cloud project is an opportunity to implement with intention and purpose from the start. Unencumbered by legacy, you are able to model your content, integrations, and workflows according to what your audiences and teams actually need—both today and in the future. 
+A SitecoreAI project is an opportunity to implement with intention and purpose from the start. Unencumbered by legacy, you are able to model your content, integrations, and workflows according to what your audiences and teams actually need—both today and in the future. 
 
 Yet such freedom requires decisions. Success rides on advance planning in architecture, ownership, governance, and delivery processes if subsequent drift is to be avoided. The objective: a lean, composable platform that scales with with business needs and strategy..
 
@@ -40,32 +40,32 @@ Effective project planning is the key to any successful implementation - ensurin
   <GroupItem>
     #### Recipies
     - [Scope and Governance Framework](/learn/accelerate/xm-cloud/pre-development/discovery/scope-governance-framework)
-    - [Preparing for an XM Cloud Project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project)
+    - [Preparing for a SitecoreAI Project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project)
     - [Project Estimation](/learn/accelerate/xm-cloud/pre-development/project-planning/project-estimation)
     - [Planning test strategy](/learn/accelerate/xm-cloud/pre-development/project-planning/test-strategy-planning)    
   </GroupItem>
   <GroupItem>
     #### Documentation
-      - [XM Cloud Changelog](/changelog/xm-cloud)
-      - [XM Cloud Sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html)
-      - [XM Cloud Deploy](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
+      - [SitecoreAI Changelog](/changelog/xm-cloud)
+      - [SitecoreAI Sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html)
+      - [SitecoreAI Deploy](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
   </GroupItem>  
 </Group>
 
 ## Discovery
-Discovery is the foundation of every successful XM Cloud implementation. It's where we define the "why," uncover the "what," and plan the "how." In this crucial phase, it's imperative the business needs align on goals, and chart a path to deliver an exceptional user experiences. From identifying user personas to mapping content strategies, discovery ensures your XM Cloud solution is tailored to drive impact and scalability.
+Discovery is the foundation of every successful SitecoreAI implementation. It's where we define the "why," uncover the "what," and plan the "how." In this crucial phase, it's imperative the business needs align on goals, and chart a path to deliver an exceptional user experiences. From identifying user personas to mapping content strategies, discovery ensures your SitecoreAI solution is tailored to drive impact and scalability.
 
 <Group title="" description="">
   <GroupItem>
     #### Recipies
-    - [Transition from XM/XP to XM Cloud](/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc)
+    - [Transition from XM/XP to SitecoreAI](/learn/accelerate/xm-cloud/pre-development/discovery/xm-xp-to-xmc)
     - [Requirements Gathering](/learn/accelerate/xm-cloud/pre-development/discovery/requirements-gathering)
   </GroupItem>
   <GroupItem>
     #### Documentation
-    - [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
+    - [Getting started with SitecoreAI](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
     - [Sitecore authentication](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/sitecore-authentication.html)
-    - [Personalize in XM Cloud](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html)
+    - [Personalize in SitecoreAI](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html)
   </GroupItem>  
 </Group>
 
@@ -88,7 +88,7 @@ Information Architecture (IA) is the backbone of any site implementation - ensur
   </GroupItem>  
 </Group>
 
-When building scalable and performant digital experiences with XM Cloud, hosting the head application is a critical step in your architecture. Based on the host type, different decisions and requirements will be taken for the project setup.
+When building scalable and performant digital experiences with SitecoreAI, hosting the head application is a critical step in your architecture. Based on the host type, different decisions and requirements will be taken for the project setup.
 
 <Group title="" description="">
   <GroupItem>
@@ -111,7 +111,7 @@ With these requirements starting to come together, details of the implementation
 - Tackling specific implementation requirements such as [user login](/learn/accelerate/xm-cloud/pre-development/security/head-application-security) and [site management](/learn/accelerate/xm-cloud/pre-development/project-architecture/site-management).
 - These would all direct the [Project Architecture](/learn/accelerate/xm-cloud/pre-development/project-architecture) including the [multisite architecture](/learn/accelerate/xm-cloud/pre-development/project-architecture/multisite) if required.
 
-**Sprint Zero** is a foundational phase in any XM Cloud project that should be running in parallel to the discovery. This sprint focuses on establishing the project, ensuring your team has the tools, processes, and baseline structure needed to deliver quality outcomes with minimal friction. Investing time in this allows for the groundwork of the implementation setup to be done, ready for the project specific requirements.
+**Sprint Zero** is a foundational phase in any SitecoreAI project that should be running in parallel to the discovery. This sprint focuses on establishing the project, ensuring your team has the tools, processes, and baseline structure needed to deliver quality outcomes with minimal friction. Investing time in this allows for the groundwork of the implementation setup to be done, ready for the project specific requirements.
 
 <Group title="" description="">
   <GroupItem>
@@ -128,17 +128,17 @@ With these requirements starting to come together, details of the implementation
     - [Set up your local development environment](https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-local-development-environment.html)
     - [Using Docker for full-stack development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-docker-for-full-stack-development.html)
     - [Content modeling and presentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/content-modeling-and-presentation.html)
-    - [XM Cloud development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html)
+    - [SitecoreAI development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html)
   </GroupItem>  
 </Group>
 
 ## Implementation
-Implementation is where the strategy turns into execution. Environments to component construction, this is where teams work together, code, test, and iterate to make your XM Cloud vision a reality. With the correct technical underpinnings and project rhythm, implementation doesn't just make your solution work—but makes it poised to deliver value from day one.
+Implementation is where the strategy turns into execution. Environments to component construction, this is where teams work together, code, test, and iterate to make your SitecoreAI vision a reality. With the correct technical underpinnings and project rhythm, implementation doesn't just make your solution work—but makes it poised to deliver value from day one.
 
-In parallel to this work, don’t forget to make sure your [Enablement & Training](/learn/accelerate/xm-cloud/pre-development/discovery/moving-to-saas#enablement--training) is running in parallel, allowing for all stakeholders to be familiar with XM Cloud as early as possible. This is also a good time to go back to the [governance framework](/learn/accelerate/xm-cloud/pre-development/discovery/scope-governance-framework) setup and make sure it’s aligned with what is being implemented - and close off any gaps!
+In parallel to this work, don’t forget to make sure your [Enablement & Training](/learn/accelerate/xm-cloud/pre-development/discovery/moving-to-saas#enablement--training) is running in parallel, allowing for all stakeholders to be familiar with SitecoreAI as early as possible. This is also a good time to go back to the [governance framework](/learn/accelerate/xm-cloud/pre-development/discovery/scope-governance-framework) setup and make sure it’s aligned with what is being implemented - and close off any gaps!
 
 ### Developer Experience
-While the basics should have been setup during Sprint Zero, there are other considerations that should be tackled to support a long-term maintainability and scalability of your XM Cloud project.
+While the basics should have been setup during Sprint Zero, there are other considerations that should be tackled to support a long-term maintainability and scalability of your SitecoreAI project.
 
 <Group title="" description="">
   <GroupItem>
@@ -241,13 +241,13 @@ The [Sitecore Marketplace](https://doc.sitecore.com/mp/en/developers/marketplace
 
 
 ### Configuration of other products
-Switching to composable means that not all requirements will be fulfilled by just XM Cloud and based on your requirements, other tools or products might require configuration to align with your requirements.
+Switching to composable means that not all requirements will be fulfilled by just SitecoreAI and based on your requirements, other tools or products might require configuration to align with your requirements.
 
 <Group title="" description="">
   <GroupItem>
     #### Recipies
     - [Sitecore Search](/learn/accelerate/xm-cloud/implementation/sitecore-search)
-    - [XM Cloud Personalization](/learn/accelerate/xm-cloud/optimization/user-experience-optimization)
+    - [SitecoreAI Personalization](/learn/accelerate/xm-cloud/optimization/user-experience-optimization)
   </GroupItem>
   <GroupItem>
     #### Documentation
@@ -276,7 +276,7 @@ You've implemented it — now it's time to launch it. Go-live becomes a coordina
 </Group>
 
 ## Optimization
-Launch is just the beginning. Real value is in the way you watch, learn, and hone after your site goes live. XM Cloud gives you the means to go fast, but to make improved what matters, you need to see what matters. 
+Launch is just the beginning. Real value is in the way you watch, learn, and hone after your site goes live. SitecoreAI gives you the means to go fast, but to make improved what matters, you need to see what matters. 
 
 <Group title="" description="">
   <GroupItem>

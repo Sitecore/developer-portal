@@ -15,11 +15,11 @@ I need to be able to provide estimates that allow me to make an initial forecast
 
 ## Execution
 
-Creating an estimate for a Sitecore XM Cloud implementation is a large but important task. At its core, an estimate is a best guess based on experience.
+Creating an estimate for a SitecoreAI implementation is a large but important task. At its core, an estimate is a best guess based on experience.
 
 This recipe assumes a level of experience with creating estimates. Rather than detail every aspect of the process, we will focus on how to make sure that the estimates are realistic, achievable, and informed by the right considerations.
 
-This recipe works very closely with the [Requirements Gathering](../discovery/requirements-gathering), and [Preparing for an XM Cloud Project](preparing-for-an-xm-cloud-project) recipes.
+This recipe works very closely with the [Requirements Gathering](../discovery/requirements-gathering), and [Preparing for a SitecoreAI Project](preparing-for-an-xm-cloud-project) recipes.
 
 ### Preparing for an Estimate
 

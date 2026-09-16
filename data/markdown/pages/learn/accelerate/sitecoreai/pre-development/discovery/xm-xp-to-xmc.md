@@ -1,6 +1,6 @@
 ---
-title: 'Transition from XM/XP to XM Cloud'
-description: 'Learn more about how to transition to XM Cloud'
+title: 'Transition from XM/XP to SitecoreAI'
+description: 'Learn more about how to transition to SitecoreAI'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -11,25 +11,25 @@ audience: ['All']
 
 ## Context
 
-We have a client, currently on XM or XP, they have already selected XM Cloud as the new platform, what is the best migration path to XM Cloud from their current MVC implementation?
+We have a client, currently on XM or XP, they have already selected SitecoreAI as the new platform, what is the best migration path to SitecoreAI from their current MVC implementation?
 
 ## Execution
 
-The best path for migration to XM Cloud will depend on the client's requirements. This recipe will propose a high-level migration path that can be tailored to your specific client.
+The best path for migration to SitecoreAI will depend on the client's requirements. This recipe will propose a high-level migration path that can be tailored to your specific client.
 
-Keep in mind that migrating to XM Cloud will require a clear understanding of the [Concepts of moving to SaaS](/learn/accelerate/xm-cloud/pre-development/discovery/moving-to-saas).
+Keep in mind that migrating to SitecoreAI will require a clear understanding of the [Concepts of moving to SaaS](/learn/accelerate/xm-cloud/pre-development/discovery/moving-to-saas).
 
 There are two approaches for Migration -
 
-### 1. Big Bang move to XM Cloud
+### 1. Big Bang move to SitecoreAI
 
-XM Cloud requires the use of Headless SXA, and therefore a direct migration is the shortest, most cost-effective migration path for the majority of existing Sitecore implementations.
+SitecoreAI requires the use of Headless SXA, and therefore a direct migration is the shortest, most cost-effective migration path for the majority of existing Sitecore implementations.
 
 CSS Styles and HTML can be reused from the existing MVC site and ported over to Next.js. The content will need to be re-shaped to match the Headless SXA architecture.
 
 **Considerations**
 
-- This might slow down or block changes on the existing platform as focus in on XM Cloud.
+- This might slow down or block changes on the existing platform as focus in on SitecoreAI.
 
 - Content and Information Architecture audit might slow down process if changes expected are drastic from current state. The process of the audit itself might delay the start.
 
@@ -37,9 +37,9 @@ CSS Styles and HTML can be reused from the existing MVC site and ported over to 
 
 A hybrid migration can be an effective solution for a large client that has multiple websites and/or very large websites with a log of pages/sections to migrate.
 
-In a hybrid migration, the main scaffolding of the site is created in XM Cloud, e.g. header, footer, and navigation. Then sections of the website are migrated as smaller self-contained projects. For Example, a news or blog section may be the first section of the main site that is migrated.
+In a hybrid migration, the main scaffolding of the site is created in SitecoreAI, e.g. header, footer, and navigation. Then sections of the website are migrated as smaller self-contained projects. For Example, a news or blog section may be the first section of the main site that is migrated.
 
-For this to go live, a resource that controls the request routing is used to route traffic between the existing site and the new XM Cloud pages. There are many tools available for this, some popular options are Azure Front Door and Azure Application Gateway.
+For this to go live, a resource that controls the request routing is used to route traffic between the existing site and the new SitecoreAI pages. There are many tools available for this, some popular options are Azure Front Door and Azure Application Gateway.
 
 Next.js has been designed for gradual adoption following this pattern. For more details see this blog post: [Incrementally Adopting Next.js](https://nextjs.org/blog/incremental-adoption)
 
@@ -57,13 +57,13 @@ As you are looking through the different approaches, there’s a number of topic
 
 ### Key Feature Comparisons
 
-Switching to composable means that not all requirements will be fulfilled by just XM Cloud - most customers have been historically on a monolithic DXP. About 2/3 of them were using XP as an example, but the mindset shift is similar regardless of which DXP you are starting from.
+Switching to composable means that not all requirements will be fulfilled by just SitecoreAI - most customers have been historically on a monolithic DXP. About 2/3 of them were using XP as an example, but the mindset shift is similar regardless of which DXP you are starting from.
 
-If you want to move your existing XP into the cloud, the right move is managed cloud, not XM Cloud. XM Cloud is for when you want a future ready, composable, true SaaS CMS. Or, if your priority is to be able to take advantage of the latest and greatest Sitecore platform features as early as possible.​
+If you want to move your existing XP into the cloud, the right move is managed cloud, not SitecoreAI. SitecoreAI is for when you want a future ready, composable, true SaaS CMS. Or, if your priority is to be able to take advantage of the latest and greatest Sitecore platform features as early as possible.​
 
 With Personalization discussed later on, there’s a set of features you should consider -
 
-<img src="/images/learn/accelerate/xm-cloud/xm-xp-to-xmc1.png" alt="Screenshot showing XP XM Cloud features"/>
+<img src="/images/learn/accelerate/xm-cloud/xm-xp-to-xmc1.png" alt="Screenshot showing XP SitecoreAI features"/>
 
 <br/>
 
@@ -71,25 +71,25 @@ Review the full list of [Limitations and restrictions documentation](https://doc
 
 ### Tight Timelines with Complex Integrations
 
-If the customer has a very tight timeline to move to headless, this may be a barrier to a direct migration to XM Cloud. For example, the existing website has a complex content search scenario using the Sitecore Solr indexes. There may not be time to migrate the website and rebuild the content search in the same project.
+If the customer has a very tight timeline to move to headless, this may be a barrier to a direct migration to SitecoreAI. For example, the existing website has a complex content search scenario using the Sitecore Solr indexes. There may not be time to migrate the website and rebuild the content search in the same project.
 
-In this type of scenario, an initial project to move to Headless SXA while still using the existing Solr would enable the project to go live early on headless and then use a 2nd phase of the project to move the search over to a composable search solution, and finally phase to XM Cloud.
+In this type of scenario, an initial project to move to Headless SXA while still using the existing Solr would enable the project to go live early on headless and then use a 2nd phase of the project to move the search over to a composable search solution, and finally phase to SitecoreAI.
 
 ### Headless setup on XM/XP pre transition
 
 This option can be useful, but it is only a viable option for a very specific set of scenarios. These scenarios are not common; if you feel that your client has a scenario where this is truly the best fit, then please reach out to your Sitecore contact to discuss the approach.
 
-One reason why some want to move to headless first is to make the final move to XM Cloud easier.  
+One reason why some want to move to headless first is to make the final move to SitecoreAI easier.  
 
-While it is true that once the  customer is on XM with Headless SXA, migrating from that implementation to XM Cloud will be easier than a full migration from XM or XP MVC to XM Cloud, that doesn’t take into account the work that needs to be done for the migration to Headless.
+While it is true that once the  customer is on XM with Headless SXA, migrating from that implementation to SitecoreAI will be easier than a full migration from XM or XP MVC to SitecoreAI, that doesn’t take into account the work that needs to be done for the migration to Headless.
 
-In most cases, this amount of work would be the same as if the project directly migrated XM or XP MVC to XM Cloud Headless. The effort it just moved and then further effort is added when the project finally migrates to XM Cloud.
+In most cases, this amount of work would be the same as if the project directly migrated XM or XP MVC to SitecoreAI Headless. The effort it just moved and then further effort is added when the project finally migrates to SitecoreAI.
 
 There are more things to consider:
 
-- The latest version of Headless Services will always be behind the XM Cloud version.  Bugs that are fixed in XM Cloud may not be patched in XM Headless and new features are being rolled out continually on XM Cloud.
+- The latest version of Headless Services will always be behind the SitecoreAI version.  Bugs that are fixed in SitecoreAI may not be patched in XM Headless and new features are being rolled out continually on SitecoreAI.
 
-- There will still be work (time and money) to migrate to XM Cloud as per [Project Estimation](/learn/accelerate/xm-cloud/pre-development/project-planning/project-estimation) recipe.
+- There will still be work (time and money) to migrate to SitecoreAI as per [Project Estimation](/learn/accelerate/xm-cloud/pre-development/project-planning/project-estimation) recipe.
 
 ### Deprecated Architectural Patterns
 
@@ -97,9 +97,9 @@ While your platform remains on XM or XP Headless, you will continue to rely on C
 
 ### Upgrade to the latest version of XM/XP
 
-While upgrading to the latest version of Sitecore XP before migrating to XM Cloud might seem logical, it’s not always required. Evaluate whether an upgrade will simplify your migration or if you can move directly to XM Cloud.
+While upgrading to the latest version of Sitecore XP before migrating to SitecoreAI might seem logical, it’s not always required. Evaluate whether an upgrade will simplify your migration or if you can move directly to SitecoreAI.
 
-Due to the fundamental differences between XM Cloud and traditional XM or XP MVC architectures, there is no benefit (efficiency, cost, or stability) to upgrading your XM or XP platform before migration. An upgrade to the existing solution is likely to have a high cost and add many weeks to a migration project, especially if the implementation relies on 3rd party or open-source dependencies.
+Due to the fundamental differences between SitecoreAI and traditional XM or XP MVC architectures, there is no benefit (efficiency, cost, or stability) to upgrading your XM or XP platform before migration. An upgrade to the existing solution is likely to have a high cost and add many weeks to a migration project, especially if the implementation relies on 3rd party or open-source dependencies.
 
 There were some rare scenarios where a migration to headless first is XP right - generally this is for implementation that have heavily customized editing experiences that won't be supported by Pages or heavily customized CMS that will be migrated in phases.
 
