@@ -4,7 +4,7 @@ description: 'Best practices for designing a component gallery'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
-lastUpdated: '2024-02-21'
+lastUpdated: '2026-09-16'
 created: '2024-08-23'
 audience: ['Architect','Product Owner','Project Manager','Technical Implementer', 'User']
 ---
