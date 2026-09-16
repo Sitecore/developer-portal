@@ -4,6 +4,7 @@ description: "The Publishing Service Module provides integration with the opt-in
 origin: https://dev.sitecore.net/Downloads/Sitecore_Publishing_Service_Module.aspx
 ---
 ### Sitecore Publishing Service Module 10.x
+[Sitecore Publishing Service Module 10.5.0](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1050)\
 [Sitecore Publishing Service Module 10.4.0](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1040)\
 [Sitecore Publishing Service Module 10.3.0](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1030)\
 [Sitecore Publishing Service Module 10.2.0](/downloads/Sitecore_Publishing_Service_Module/10x/Sitecore_Publishing_Service_Module_1020)\
