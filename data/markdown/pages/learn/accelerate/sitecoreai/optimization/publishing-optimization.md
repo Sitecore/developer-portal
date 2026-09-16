@@ -15,7 +15,7 @@ When items are published to Edge, they are stored in a different data structure 
 Before progressing with the below, make sure you are familiar with Publishing to Experience Edge [recipe](/learn/accelerate/xm-cloud/pre-development/information-architecture/publishing-to-edge) and [documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html).
 
 ## Execution
-When a publish is trigged in XM Cloud, to move the items ready for publishing to Experience Edge, a dependency calculation is kicked off 
+When a publish is trigged in SitecoreAI, to move the items ready for publishing to Experience Edge, a dependency calculation is kicked off 
 
 After the initial publishing, where all dependencies of the published items are identified and stored in Edge, the system optimizes subsequent publishing by leveraging this stored data. When an item is published, the system queries Edge to determine all other items that depend on it and automatically includes them in the publishing pipeline. As these dependent items are published, their own dependencies are also republished. This recursive process continues until no additional dependent items are found.
 
@@ -53,7 +53,7 @@ By default, this dependency is not active but can be controlled the following co
 ```
 <br/><br/>
 <Alert status="info" mb={4}><AlertIcon />
-Every time this dependency is activated or deactivated by configuration change, site republish is required to ensure this dependency is updated in edge for all items. Changes to configuration on XM Cloud are not recommended unless absolutely required - even then, make sure that these are kept track of, in case of any future changes.
+Every time this dependency is activated or deactivated by configuration change, site republish is required to ensure this dependency is updated in edge for all items. Changes to configuration on SitecoreAI are not recommended unless absolutely required - even then, make sure that these are kept track of, in case of any future changes.
 </Alert>
 
 
@@ -88,21 +88,21 @@ This dependency can be deactivated using the following config -
 ```
 <br/><br/>
 <Alert status="info" mb={4}><AlertIcon />
-Every time this dependency is activated or deactivated by configuration change, site republish is required to ensure this dependency is updated in edge for all items. Changes to configuration on XM Cloud are not recommended unless absolutely required - even then, make sure that these are kept track of, in case of any future changes.
+Every time this dependency is activated or deactivated by configuration change, site republish is required to ensure this dependency is updated in edge for all items. Changes to configuration on SitecoreAI are not recommended unless absolutely required - even then, make sure that these are kept track of, in case of any future changes.
 </Alert>
 
 ## Insights
-Publishing in headless SaaS setups will require the content to be moved between XM Cloud (as the content management system) and Experience Edge. Experience Edge, also keeps track of page dependencies to ensure pages reflect up-to-date content. However, dependencies are only established when a page is published.
+Publishing in headless SaaS setups will require the content to be moved between SitecoreAI (as the content management system) and Experience Edge. Experience Edge, also keeps track of page dependencies to ensure pages reflect up-to-date content. However, dependencies are only established when a page is published.
 
 The publishing process will be illustrated in diagram to show how content is published to Edge and how dependencies are calculated and resolved. This applies specifically for [Snapshot Publishing](https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html).
 
 ### Step 1 - Create Page and Publish
-Author will create a page with a component retrieving it’s data from a datasource within XM Cloud and publish everything to Experience Edge. After publishing to Edge, Page 1 entity will store its dependency to datasource 1. This will help if datasource 1 is updated and published, Page 1 will be republished as well to refresh its layout stored in Edge.
+Author will create a page with a component retrieving it’s data from a datasource within SitecoreAI and publish everything to Experience Edge. After publishing to Edge, Page 1 entity will store its dependency to datasource 1. This will help if datasource 1 is updated and published, Page 1 will be republished as well to refresh its layout stored in Edge.
 
 <img src="/images/learn/accelerate/xm-cloud/publishing/step1-publishing.jpg" alt="Publishing - Step 1"/>
 
 ### Step 2 - Add new component
- Author will add a new component that its rendering data from new datasource to Page 1. So far, this relationship is only stored in XM Cloud.
+ Author will add a new component that its rendering data from new datasource to Page 1. So far, this relationship is only stored in SitecoreAI.
 
 <img src="/images/learn/accelerate/xm-cloud/publishing/step2-publishing.jpg" alt="Publishing - Step 2"/>
 
@@ -135,7 +135,7 @@ Once the update-to-date dependencies are recorded in Edge, anytime the dependenc
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Publishing in XM Cloud" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/publishing-in-xm-cloud.html" /> 
+  <Link title="Publishing in SitecoreAI" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/publishing-in-xm-cloud.html" /> 
   <Link title="Publishing to Edge" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/publishing-to-experience-edge.html" /> 
     <Link title="Language Fallback" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/language-fallback.html" /> 
 </Row>

@@ -34,7 +34,7 @@ With Content Delivery servers, single items were published, meaning the were cop
 
 With Experience Edge this works different - Edge is not a 1-to-1 match to a Sitecore database. Not all properties of an item are published to Edge.
 
-During Publish time on XM Cloud, the Layout Service generates a static Layout response, collecting all necessary items for the pages where the published item is referenced. The generated layout snapshot is then pushed to Experience Edge, which delivers this static data to the Head applications on request via GraphQL. 
+During Publish time on SitecoreAI, the Layout Service generates a static Layout response, collecting all necessary items for the pages where the published item is referenced. The generated layout snapshot is then pushed to Experience Edge, which delivers this static data to the Head applications on request via GraphQL. 
 
 <img src="/images/learn/accelerate/xm-cloud/publish-edge-2.png" alt="How it works with Experience Edge"/>
 
@@ -60,7 +60,7 @@ When designing your headless application, consider both the new architecture and
 * Experience Edge for XM only utilizes a single content scope for the whole tenant. Security tokens, query cache clearing, and webhooks cannot be limited by site.
 * The maximum size for Media items is 50MB.
 * Experience Edge doesn't support virtual folders and aliases.
-* Although it is a high standard for the CMS industry, the XM Cloud Experience Edge GraphQL endpoint is rate-limited. If you are building a very large website, you must [enable retries for requests to the XM Cloud Experience Edge GraphQL endpoint](https://doc.sitecore.com/xmc/en/developers/jss/216/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html) to complete builds.
+* Although it is a high standard for the CMS industry, the SitecoreAI Experience Edge GraphQL endpoint is rate-limited. If you are building a very large website, you must [enable retries for requests to the SitecoreAI Experience Edge GraphQL endpoint](https://doc.sitecore.com/xmc/en/developers/jss/216/jss-xmc/enable-retries-for-requests-to-the-xm-cloud-experience-edge-graphql-endpoint.html) to complete builds.
 * Layout data in Experience Edge only supports the Default device layer in item presentation. Delivering content based on different devices such as mobile is now a front-end responsibility.
 
 ### Dependency resolving during publish
@@ -91,7 +91,7 @@ The process can be very complex and depends on many factors. We can consider the
 
 ### Publishing in Pages
 
-In XM Cloud, Pages is the main editing tool designed for marketers and to improve productivity.
+In SitecoreAI, Pages is the main editing tool designed for marketers and to improve productivity.
 
 In Pages, [when you publish a page](https://doc.sitecore.com/xmc/en/users/xm-cloud/publish-a-page.html), it is the current language version of the page and all related items that are published using the Smart publish process.
 
@@ -127,17 +127,17 @@ Incremental Publish is only available at site level, for this reason, it might b
 
 ### Custom Contents Resolvers
 
-Contents Resolvers are used with the Sitecore Layout Service to provide more complex data beyond the serialization of a component data source. A Contents Resolver gets executed when the page (layout) is rendered (in the GraphQL response it is the “rendered” property). This occurs in different contexts: in Experience Editor, in the Experience Preview. In these instances, the context is known because XM Cloud parses the request.
+Contents Resolvers are used with the Sitecore Layout Service to provide more complex data beyond the serialization of a component data source. A Contents Resolver gets executed when the page (layout) is rendered (in the GraphQL response it is the “rendered” property). This occurs in different contexts: in Experience Editor, in the Experience Preview. In these instances, the context is known because SitecoreAI parses the request.
 
 This is not possible in Experience Edge - Edge is not able to execute “custom” code, so no Contents Resolvers can run on it. So it gets executed at publishing time when the runtime context (eg. from visitor’s browser interactions) is not known.
 
-Due to this, Custom Content Resolvers are not supported in XM Cloud - XM Cloud resolvers such as the Navigation Contents Resolver, that should be utilized but custom Content Resolvers should not be created. If you are migrating from XM/XP, review these resolves and plan where best to transfer.
+Due to this, Custom Content Resolvers are not supported in SitecoreAI - SitecoreAI resolvers such as the Navigation Contents Resolver, that should be utilized but custom Content Resolvers should not be created. If you are migrating from XM/XP, review these resolves and plan where best to transfer.
 
 ### Integrated GraphQL
 
 Integrated GraphQL is used to modify the default layout data format returned for a specific component, it is applied to renderings and it is used by the Layout Service. This gives more control over the data the front-end receives.
 
-An Integrated GraphQL query could use additional data sources that may reside in any location of the site, the publishing pipeline is not aware of what are the related items, it executes the query and builds the layout, this operation is done at publishing time and occurs on XM Cloud and the data items are picked up from the master database, not from the Experience Edge.
+An Integrated GraphQL query could use additional data sources that may reside in any location of the site, the publishing pipeline is not aware of what are the related items, it executes the query and builds the layout, this operation is done at publishing time and occurs on SitecoreAI and the data items are picked up from the master database, not from the Experience Edge.
 
 This process is different in the [new Connector architecture](https://developers.sitecore.com/changelog/xm-cloud/18042024/faster-publishing-in-xm-cloud). The new architecture resolves the query at request time on the Edge (then it is cached). For this reason, related items need to be there to have the expected result. For example, if the query uses a non-children data source like the following:
 

@@ -34,7 +34,7 @@ Assuming that we create the content ahead of time and ensure that publishing has
 
 **1. Map out the publishing content flow** - this can be useful to understand and communicate all the steps with your business users. Use the tool of your choice as per your organisation e.g Miro and ensure that the [workflow](/learn/accelerate/xm-cloud/implementation/information-architecture/workflow) is setup to handle the different states of the content. 
 
-**2. Create personalisation variant in XM Cloud Pages** -
+**2. Create personalisation variant in SitecoreAI Pages** -
 
 <img src="/images/learn/accelerate/xm-cloud/scheduled-publishing/create personalized variant.png" alt=""/>
 <br/><br/>
@@ -60,7 +60,7 @@ In other requirements, the completion of the process and availability of content
 
 > This recipe is focused around the pure content publishing aspect, leveraging on-demand republishing is available in the [Incremental Static Regeneration (ISR)]() recipe. 
 
-Although it’s possible to use the Sitecore Task Scheduler to implement scheduled publishing in XM Cloud, since task schedules are based on interval execution it’s impossible to schedule a task to execute at a specific hour, minute or second value. 
+Although it’s possible to use the Sitecore Task Scheduler to implement scheduled publishing in SitecoreAI, since task schedules are based on interval execution it’s impossible to schedule a task to execute at a specific hour, minute or second value. 
 
 Instead, we would advise to leverage a standalone third party scheduler that is decoupled from the Sitecore instance, preferably one that also supports [Cron syntax](https://en.wikipedia.org/wiki/Cron) (given that this is a well established standard for job scheduling). Within the Cron scheduler you would invoke the [Sitecore CLI publish command](https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-cli-publish-command.html) using the [non-interactive client login (client credentials flow) ](https://doc.sitecore.com/xmc/en/developers/xm-cloud/log-in-to-a-sitecore-instance-with-sitecore-command-line-interface.html#use-a-non-interactive-client-login-client-credentials-flow) to execute the publish command. This will decouple the implementation with proper separation of concerns between the scheduling and the content management.
 
@@ -133,7 +133,7 @@ If the visitor does not match any audiences, then the default page variant will 
   <Link title="Publishing items" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/publishing-items.html" />
   <Link title="Schedule publishing availability of a page" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/schedule-publishing-availability-of-a-page.html" />
 <Link title="Personalize" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html" />  
-  <Link title="Manage client credentials for an XM Cloud organization or environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-client-credentials-for-an-xm-cloud-organization-or-environment.html#create-an-automation-client-for-an-xm-cloud-organization" />
+  <Link title="Manage client credentials for a SitecoreAI organization or environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-client-credentials-for-an-xm-cloud-organization-or-environment.html#create-an-automation-client-for-an-xm-cloud-organization" />
 
 
 </Row>

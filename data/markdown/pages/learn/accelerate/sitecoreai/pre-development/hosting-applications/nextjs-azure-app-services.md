@@ -1,6 +1,6 @@
 ---
 title: 'Running Next.js on Azure App Services'
-description: 'Sitecore is not recommending customers host their XM Cloud head application on Azure App Services unless in a highly regulated industry.'
+description: 'Sitecore is not recommending customers host their SitecoreAI head application on Azure App Services unless in a highly regulated industry.'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
@@ -11,7 +11,7 @@ audience: ['Architect','Technical Implementer']
 
 ## Context
 
-While Sitecore strongly recommends serverless hosting for XM Cloud, like Vercel or Netlify, some businesses have a strict requirement that is forcing the use of Azure to host the Next.js application. Taking this approach, will require to consider come hosting considerations.
+While Sitecore strongly recommends serverless hosting for SitecoreAI, like Vercel or Netlify, some businesses have a strict requirement that is forcing the use of Azure to host the Next.js application. Taking this approach, will require to consider come hosting considerations.
 
 ## Execution
 
@@ -23,7 +23,7 @@ For those that need to use Azure as their hosting environment due to being in a 
 
 One of Azure App Services' biggest limitations is performance. Since Next.js is a JavaScript application and JavaScript is a single-threaded language, the Node.js runtime for JavaScript is also single-threaded. This means that the single-threaded Node server has to handle all requests to your websites, Experience Edge, image optimization, incremental static regeneration, and more, leading to performance issues.
 
-[PM2](https://pm2.keymetrics.io/) is often suggested as a solution to Node.js performance issues. However, using this tool adds more complexity, and it has not been established whether it improves performance in an XM Cloud front-end hosting solution.
+[PM2](https://pm2.keymetrics.io/) is often suggested as a solution to Node.js performance issues. However, using this tool adds more complexity, and it has not been established whether it improves performance in a SitecoreAI front-end hosting solution.
 
 ### Scalability Limitations
 
@@ -35,7 +35,7 @@ Azure does offer the Azure Content Delivery Network service, but the endpoint an
 
 #### Network Connection Limits
 
-A specific limitation of Azure App Services that XM Cloud customers have experienced is the limited network port capacity for outbound network calls. Customers have hit the network connection limits' upper bounds, leading to severe performance degradation.
+A specific limitation of Azure App Services that SitecoreAI customers have experienced is the limited network port capacity for outbound network calls. Customers have hit the network connection limits' upper bounds, leading to severe performance degradation.
 
 App Services in an out-of-the-box configuration have a soft limit of 128 ports for outbound connections via SNAT. Exceeding 128 ports can cause SNAT Port Exhaustion, leading to connection failures to Edge or any other public endpoint. Please review [Troubleshooting intermittent outbound connection errors in Azure App Service](https://learn.microsoft.com/en-us/azure/app-service/troubleshoot-intermittent-outbound-connection-errors), specifically the section "Avoiding the problem" which recommends the use of the vNET Integration feature and NAT Gateway, this greatly alleviates SNAT issues, Please also review [Azure subscription and service limits, quotas, and constraints](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits#app-service-limits) for other limits that you may encounter.
 

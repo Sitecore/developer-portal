@@ -1,6 +1,6 @@
 ---
 title: 'Wildcard Pages'
-description: 'Using wildcard pages for dynamic urls in XM Cloud'
+description: 'Using wildcard pages for dynamic urls in SitecoreAI'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -123,7 +123,7 @@ Things to note:
 2. When a wildcard item is published, it is given the name `,-w-,` as the path url.
 
 There are a couple of things that work to our advantage here:
--Every request to this route will get the same page item from XM Cloud, this means that we can cache the response of the sitecorePagePropsFactory.create call if we want to.
+-Every request to this route will get the same page item from SitecoreAI, this means that we can cache the response of the sitecorePagePropsFactory.create call if we want to.
 -Because each call is to the same page item, Experience Edge will cache the first request and then serve every other request from the cache until a publish happens. This will help prevent exceeding the 80 req/s rate limit.
 
 #### Multisite Middleware
@@ -259,6 +259,6 @@ if (path !== undefined) {
 ## Related Links
 
 <Row columns={2}>
-  <Link title="Using Wildcard Items In Sitecore XM Cloud With A Headless NextJs Front-end" link="https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud" />
+  <Link title="Using Wildcard Items In SitecoreAI With A Headless NextJs Front-end" link="https://www.getfishtank.com/blog/using-wildcard-items-in-sitecore-xm-cloud" />
   <Link title="Routing: Dynamic Routes" link="https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes" />
 </Row>

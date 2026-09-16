@@ -1,6 +1,6 @@
 ---
 title: 'User Experience Optimization'
-description: 'Learn more about how to develop for XM Cloud'
+description: 'Learn more about how to develop for SitecoreAI'
 hasSubPageNav: true
 hasInPageNav: false
 area: ['accelerate']

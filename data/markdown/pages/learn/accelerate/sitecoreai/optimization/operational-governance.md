@@ -10,7 +10,7 @@ audience: ['Product Owner','Project Manager','User','System Administrator']
 ---
 
 ## Context
-Launch is just the beginning. Real value is in the way you watch, learn, and hone after your site goes live. XM Cloud gives you the means to go fast, but to make improved that matter, you need to make sure you have the right governance and measures in place.
+Launch is just the beginning. Real value is in the way you watch, learn, and hone after your site goes live. SitecoreAI gives you the means to go fast, but to make improved that matter, you need to make sure you have the right governance and measures in place.
 
 
 ## Execution
@@ -41,7 +41,7 @@ Set up a regular cadence to share updates on site enhancements, new features, te
 
 Make sure each team has the knowledge to operate effectively, including updating training based on their role and project state:
 
-- Marketers: training on XM Cloud Pages, personalization tools, and campaign setup
+- Marketers: training on SitecoreAI Pages, personalization tools, and campaign setup
 - Authors: guidance on structured content, component reuse, and publishing workflows
 - Analysts/Product Owners: how to interpret and act on data
 

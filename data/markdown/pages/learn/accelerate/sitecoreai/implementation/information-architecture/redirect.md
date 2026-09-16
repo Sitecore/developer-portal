@@ -1,6 +1,6 @@
 ---
 title: 'Redirect'
-description: 'Recipe for handling redirects using XM Cloud.'
+description: 'Recipe for handling redirects using SitecoreAI.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -11,13 +11,13 @@ audience: ['Architect','Technical Implementer']
 
 ## Context
 
-You need to create redirects for the new Next.js XM Cloud site. The redirects need to support both content authored redirects for creating vanity urls/moving pages, and application/platform redirects to make sure that old pages/urls are redirected when the new site goes live.
+You need to create redirects for the new Next.js SitecoreAI site. The redirects need to support both content authored redirects for creating vanity urls/moving pages, and application/platform redirects to make sure that old pages/urls are redirected when the new site goes live.
 
 ## Execution
 ### Content Authored Redirects
 
-The XM Cloud and Next.js app already have OOTB support for [Redirect Item](https://doc.sitecore.com/xmc/en/users/xm-cloud/redirect-a-url.html) and [Redirect Map](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-redirect-map.html).
-Both solutions allow a content author to create and maintain redirects in XM Cloud without requiring a code deployment
+The SitecoreAI and Next.js app already have OOTB support for [Redirect Item](https://doc.sitecore.com/xmc/en/users/xm-cloud/redirect-a-url.html) and [Redirect Map](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-redirect-map.html).
+Both solutions allow a content author to create and maintain redirects in SitecoreAI without requiring a code deployment
 
 Redirect items provide an easy way to map a single path to another path. Redirect maps will provide much better manageability by grouping redirects together and having regex support. From the maintenace and features perspective, using redirect map could be a better choice.
 
@@ -125,7 +125,7 @@ If you are planning to use the redirect item or redirect map consider the follow
 
 - Whereever possible try to use Regex instead of creating multiple redirect entry.
 - Keep the number of SXA redirect as low as possible, as mentioned before the redirect middleware needs to process the list by hitting experience edge endpoint and it can cause performance issue.
-- Periodically check the number of redirects in the XM Cloud and if needed move them to the frontend app (see the next part).
+- Periodically check the number of redirects in the SitecoreAI and if needed move them to the frontend app (see the next part).
 
 ### Middleware based redirects for Next.js
 

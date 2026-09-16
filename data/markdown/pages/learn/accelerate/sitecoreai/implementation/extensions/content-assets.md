@@ -1,6 +1,6 @@
 ---
 title: 'Embedding content from Content Hub'
-description: 'Enable editors in XM Cloud to visually select and embed assets from Content Hub using a custom field delivered via the Sitecore Marketplace. This integration supports dynamic content rendering through GraphQL and enhances authoring UX in Sitecore Page Builder.'
+description: 'Enable editors in SitecoreAI to visually select and embed assets from Content Hub using a custom field delivered via the Sitecore Marketplace. This integration supports dynamic content rendering through GraphQL and enhances authoring UX in Sitecore Page Builder.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']  
@@ -18,13 +18,13 @@ For content authors, this means being able to select and embed assets from their
 
 
 ## Execution
-[Sitecore Marketplace](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) penables every Cloud Portal organization to build and use applications that add new capabilities to Sitecore. The [XM Cloud Page builder custom field](https://doc.sitecore.com/mp/en/developers/marketplace/page-builder-custom-fields.html) extension point lets you extend the data template of a content item or a page by adding your own custom field to it. XM Cloud users can then populate that field with the data you provide in your Marketplace app.
+[Sitecore Marketplace](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) penables every Cloud Portal organization to build and use applications that add new capabilities to Sitecore. The [SitecoreAI Page builder custom field](https://doc.sitecore.com/mp/en/developers/marketplace/page-builder-custom-fields.html) extension point lets you extend the data template of a content item or a page by adding your own custom field to it. SitecoreAI users can then populate that field with the data you provide in your Marketplace app.
 
-In this case, we have setup up a Marketplace custom field in XM Cloud that connects to your DAM - in this case Content Hub, via a Marketplace app. It enables editors to select and embed published assets directly into Sitecore Page Builder, using GraphQL-powered components for dynamic rendering.
+In this case, we have setup up a Marketplace custom field in SitecoreAI that connects to your DAM - in this case Content Hub, via a Marketplace app. It enables editors to select and embed published assets directly into Sitecore Page Builder, using GraphQL-powered components for dynamic rendering.
 
 Follow the steps in the documentation to [create your Marketplace app](https://doc.sitecore.com/mp/en/developers/marketplace/page-builder-custom-fields.html) for Page Builder custom fields. A dedicated Content Hub page needs to be configured to show only published content. Configuration for this and how to setup the marketplace the code can be seen at the [Content Hub Content Distribution](https://developers.sitecore.com/learn/accelerate/content-hub/implementation/integrations/content-distribution) recipe.
 
-In XM Cloud create a new component this will need to have a field set to the marketplace type plugin.
+In SitecoreAI create a new component this will need to have a field set to the marketplace type plugin.
 
 <img src="/images/learn/accelerate/xm-cloud/content-assets/template.png" alt="template"/>
 
@@ -33,7 +33,7 @@ The value in the source field above is the App ID and can be obtained when you c
 
 <img src="/images/learn/accelerate/xm-cloud/content-assets/configure-app.png" alt="configure-app"/>
 <br/><br/>
-When editors click the field, it opens a Content Hub window via iframe as explained in the Content Hub + XMC recipe and the selected asset’s identifier is returned to XM Cloud using postMessage.
+When editors click the field, it opens a Content Hub window via iframe as explained in the Content Hub + XMC recipe and the selected asset’s identifier is returned to SitecoreAI using postMessage.
 
 In your XM Cloud solution you will need to create a custom component to perform a GraphQL call to Content Hub. This component will have a datasource to store the value returned from Content Hub in the Marketplace plugin field type as see below.
 

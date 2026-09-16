@@ -1,6 +1,6 @@
 ---
 title: 'Moving to Sitecore Personalize'
-description: 'This recipe provides a for organizations moving from Sitecore XM Cloud’s OOTB personalization features to the more advanced Sitecore Personalize platform.'
+description: 'This recipe provides a for organizations moving from Sitecore SitecoreAI’s OOTB personalization features to the more advanced Sitecore Personalize platform.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -10,10 +10,10 @@ audience: ['Product Owner', 'User']
 ---
 
 ## Context
-With every instance, XM Cloud include personalization feature by default which enables content authors to tailor experiences based on basic conditions such as geography, behaviour, or referral source. But as personalization strategies mature and requirements change, teams often encounter use cases that go beyond these capabilities.
+With every instance, SitecoreAI include personalization feature by default which enables content authors to tailor experiences based on basic conditions such as geography, behaviour, or referral source. But as personalization strategies mature and requirements change, teams often encounter use cases that go beyond these capabilities.
 
 ## Execution
-[Personalize in XM Cloud](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html) is a great starting point for teams beginning their journey into experience optimization. It’s natively integrated into Pages, supports rules-based targeting, and is ideal for scenarios like:
+[Personalize in SitecoreAI](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html) is a great starting point for teams beginning their journey into experience optimization. It’s natively integrated into Pages, supports rules-based targeting, and is ideal for scenarios like:
 
 - Displaying region-specific banners or promotions
 - Hiding or showing content based on campaign referrals
@@ -53,7 +53,7 @@ A self-assessment checklist is available in the [Insights](#Insights) sections.
 Start introducing Sitecore Personalize gradually:
 - Developers need to initialise [Cloud SDK](https://doc.sitecore.com/sdk/en/developers/latest/cloud-sdk/sitecore-cloud-sdk-for-javascript.html).
 - Enable new features in Sitecore Personalize such as [web experiments](https://doc.sitecore.com/personalize/en/users/sitecore-personalize/introduction-to-web-experiments-in-sitecore-personalize.html), [decision models](https://doc.sitecore.com/personalize/en/users/sitecore-personalize/introduction-to-decisioning-in-sitecore-personalize.html), or [trigger-based personalization](https://doc.sitecore.com/personalize/en/users/sitecore-personalize/introduction-to-triggered-experiences-in-sitecore-personalize.html).
-- Begin implementing advanced scenarios that go beyond XM Cloud’s scope, like real-time content changes, deeper targeting, or integration with customer data.
+- Begin implementing advanced scenarios that go beyond SitecoreAI’s scope, like real-time content changes, deeper targeting, or integration with customer data.
 
 #### 3. Optimization
 Once foundational capabilities are in place, expand your strategy:

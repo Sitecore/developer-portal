@@ -13,7 +13,7 @@ audience: ['Architect','Technical Implementer']
 
 An e-commerce business wants to display dynamic product details on its website using data from an external Product Information Management (PIM) system. The product details, such as descriptions, prices, availability, and images, are stored in the external system and need to be fetched dynamically based on the product being viewed.
 
-The following content is valid for both third-party integrations and retrieving data from XM Cloud.
+The following content is valid for both third-party integrations and retrieving data from SitecoreAI.
 
 ## Execution
 

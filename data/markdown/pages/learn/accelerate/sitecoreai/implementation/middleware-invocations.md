@@ -1,6 +1,6 @@
 ---
 title: 'Middleware Invocations'
-description: 'What Middleware do we have running and how can we optimize usage on XM Cloud.'
+description: 'What Middleware do we have running and how can we optimize usage on SitecoreAI.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -10,7 +10,7 @@ audience: ['Architect','Technical Implementer']
 ---
 
 ## Context
-In XM Cloud and Next.js, middleware is used to handle various tasks before a request is completed, similar to how pipelines work in traditional Sitecore XP/XM. When using Next.js as the frontend framework for XM Cloud middleware can be particularly powerful for pre-processing incoming client requests and modifying them according to specific rules. 
+In SitecoreAI and Next.js, middleware is used to handle various tasks before a request is completed, similar to how pipelines work in traditional Sitecore XP/XM. When using Next.js as the frontend framework for SitecoreAI middleware can be particularly powerful for pre-processing incoming client requests and modifying them according to specific rules. 
 
 However, if not used carefully this can lead to an increased number of middleware invocations and consumption of monthly entitlements. Middleware can also introduce additional processing time for each request. If not optimized, this can lead to slower response times and affect the overall performance of your application.
 
@@ -18,7 +18,7 @@ However, if not used carefully this can lead to an increased number of middlewar
 In this recipe we consider the importance of disabling unused Middleware features and reducing the impact of link prefetching on middleware invocations. Any custom middleware should be developed with caution with asynchronous code being avoided if possible to reduce latency. 
 
 
-The [XM Cloud Foundation Head Starter Kit](https://github.com/sitecorelabs/xmcloud-foundation-head-dev) for Next.js applications has the following middleware plugins:
+The [SitecoreAI Foundation Head Starter Kit](https://github.com/sitecorelabs/xmcloud-foundation-head-dev) for Next.js applications has the following middleware plugins:
 
 - Redirects - Headless SXA (Sitecore Experience Accelerator) provides functionality for [content managed redirects](https://doc.sitecore.com/xmc/en/users/xm-cloud/redirect-search-traffic.html#redirect-a-url), which uses the Redirect Middleware to check if there is a redirect defined for the requested URL.
 - Multisite - The [Next.js Multisite](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/the-next-js-multisite-add-on.html) add-on uses the Multisite Middleware to serve the correct site based on the hostname.
@@ -47,11 +47,11 @@ In the future the multisite plugin may become optional and not setup by default.
 
 ### Personalize Middleware
 
-XM Cloud comes with inbuilt page personalization and component A/B/n testing. These features are very powerful but if you are not planning on using them then there is potential to remove the plugin or to restrict the paths in use. We would recommend investigating other optimizations first as disabling this plugin will remove a significant amount of features and functionality. 
+SitecoreAI comes with inbuilt page personalization and component A/B/n testing. These features are very powerful but if you are not planning on using them then there is potential to remove the plugin or to restrict the paths in use. We would recommend investigating other optimizations first as disabling this plugin will remove a significant amount of features and functionality. 
 
 ### Link prefetching options
 
-Prefetching links can cause multiple Middleware invocations, leading to increased costs. From JSS 22.5.1 we have provided more prefetching options, review the [XM Cloud Changelog](https://developers.sitecore.com/changelog/xm-cloud/28022025/more-prefetching-options-and-better-middleware-extensibility-with-jss-22.5.1) entry.
+Prefetching links can cause multiple Middleware invocations, leading to increased costs. From JSS 22.5.1 we have provided more prefetching options, review the [SitecoreAI Changelog](https://developers.sitecore.com/changelog/xm-cloud/28022025/more-prefetching-options-and-better-middleware-extensibility-with-jss-22.5.1) entry.
 
 The prefetching options can be set on JSS Next.js RichText component by setting the prefetchLinks links property or on the Link component by setting the prefetch property. Note that for the RichText component you have three options true, false and hover.
 
@@ -96,7 +96,7 @@ Example of how to implement in your component, with your relevant field name.
 
 
 ## Insights
-The code that defines the middleware function for the XM Cloud Next.js application is available at `/headapps/nextjs-starter/src/middleware.ts`. This is where the Middleware matcher is configured to determine which paths the Middleware should apply to. 
+The code that defines the middleware function for the SitecoreAI Next.js application is available at `/headapps/nextjs-starter/src/middleware.ts`. This is where the Middleware matcher is configured to determine which paths the Middleware should apply to. 
 
 <figure><img src="/images/learn/accelerate/xm-cloud/middleware-plugins.png" alt="Middleware Plugins"/><figcaption></figcaption></figure>
 

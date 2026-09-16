@@ -1,6 +1,6 @@
 ---
 title: 'Planning test strategy'
-description: 'This recipe outlines a structured approach to defining a test strategy for Sitecore XM Cloud implementations.'
+description: 'This recipe outlines a structured approach to defining a test strategy for SitecoreAI implementations.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -10,7 +10,7 @@ audience: ['Product Owner', 'Project Manager', 'Technical Implimenters']
 ---
 
 ## Context
-To ensure your first XM Cloud website performs reliably, securely, and meets the business and user requirement, a testing strategy needs to be in place before, during, and after go-live.
+To ensure your first SitecoreAI website performs reliably, securely, and meets the business and user requirement, a testing strategy needs to be in place before, during, and after go-live.
 
 ## Execution
 Start scope the test plan early, during the Discovery and Project Setup phases - preferably as requirements are being collected, the delivery plan is being outlined, and roles and environments are being mapped. 
@@ -26,7 +26,7 @@ Just as important is defining ownership - clearly assign who is responsible for 
 | **Project Manager** | <ul><li>Establish the test plan timeline and align it with the overall delivery schedule</li><li>Coordinate testing activities across teams</li><li>Ensure resource availability and escalate risks</li><li>Track progress and ensure testing milestones are met</li></ul> |
 | **Business Analyst** | <ul><li>Translate requirements into testable scenarios</li><li>Validate test cases against business processes</li><li>Collaborate with QA to ensure coverage of use cases</li><li>Identify edge cases and support UAT</li></ul> |
 | **Technical Lead** | <ul><li>Align technical implementation with test requirements</li><li>Define integration and performance testing scope</li><li>Support defect triage and resolution</li><li>Ensure middleware and API interfaces are test-ready</li></ul> |
-| **Architect** | <ul><li>Define non-functional test requirements (e.g., performance, scalability)</li><li>Review system architecture for test coverage impact</li><li>Identify architectural risks requiring validation</li><li>Validate compliance with XM Cloud best practices</li></ul> |
+| **Architect** | <ul><li>Define non-functional test requirements (e.g., performance, scalability)</li><li>Review system architecture for test coverage impact</li><li>Identify architectural risks requiring validation</li><li>Validate compliance with SitecoreAI best practices</li></ul> |
 | **CMS Developer** | <ul><li>Write testable components and ensure field-level validation</li><li>Support content structure validation (e.g., templates, variants)</li><li>Assist in fixing issues uncovered during functional and regression testing</li></ul> |
 | **Web Application Developer** | <ul><li>Implement unit tests and support component testing</li><li>Validate frontend behavior, personalization, and rendering in Pages</li><li>Fix UI and integration issues identified during testing</li><li>Support browser and device compatibility validation</li></ul> |
 | **QA / Tester** | <ul><li>Design and execute test cases (functional, regression, UAT, accessibility, performance)</li><li>Manage test tools and environments</li><li>Log, track, and retest defects</li><li>Provide testing sign-off and support release readiness</li></ul> |
@@ -47,7 +47,7 @@ The plan should support both manual and automated testing practices but needs to
 | **Manual Testing** | <ul><li><strong>Developer Testing:</strong> Run and validate unit tests locally</li><li><strong>QA Testing:</strong> Execute planned test cases and exploratory sessions to uncover edge cases, unexpected behaviours</li><li><strong>User Acceptance Testing (UAT):</strong> Business stakeholder walkthroughs with defined scripts</li><li><strong>Design Review:</strong> Alignment with designs or style guide</li><li><strong>Personalization Validation:</strong> Confirm rules work across visitor groups, SSR/SSG responses render the right content</li></ul> |
 
 ### Testing Types & Timelines
-The table below outlines the key types of testing involved in an XM Cloud implementation, along with typical timelines, purposes, and responsible roles. Each type serves a distinct purpose, from validating individual components to verifying business acceptance and accessibility compliance.
+The table below outlines the key types of testing involved in a SitecoreAI implementation, along with typical timelines, purposes, and responsible roles. Each type serves a distinct purpose, from validating individual components to verifying business acceptance and accessibility compliance.
 
 | **Testing Type**         | **Timeline**                | **Purpose**                                                             | **Responsible Roles**                                                                                                                                         |
 |--------------------------|-----------------------------|-------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|

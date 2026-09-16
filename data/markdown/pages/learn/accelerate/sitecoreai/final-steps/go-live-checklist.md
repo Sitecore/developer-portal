@@ -1,6 +1,6 @@
 ---
 title: 'Go-Live Checklist'
-description: 'Checklist and considerations before taking XM Cloud and your head application to production.'
+description: 'Checklist and considerations before taking SitecoreAI and your head application to production.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -11,7 +11,7 @@ audience: ['All']
 
 ## Context
 
-Whether you’re launching a brand-new XM Cloud site or migrating from XP, there’s one goal: make sure the experience is stable, fast, and ready for real users. That takes more than a code push - it takes a coordinated handoff across development, content, marketing, and operations.
+Whether you’re launching a brand-new SitecoreAI site or migrating from XP, there’s one goal: make sure the experience is stable, fast, and ready for real users. That takes more than a code push - it takes a coordinated handoff across development, content, marketing, and operations.
 
 ## Execution
 Don’t wait until go-live to think about quality - quality assurance should be part of the build. Starting early saves time, reduces bugs, and provides the team guidance. Here’s what that looks like from day one:
@@ -50,7 +50,7 @@ If you are using Sitecore Search, or other search platforms, make sure that this
 Make sure events on [Sitecore Search are tracked](https://doc.sitecore.com/sdk/en/developers/latest/cloud-sdk/sitecore-search-events.html). This is important to ensure that you have analytics on Search but also to support personalization on search results.
 
 ### Security
-Perform a security review to ensure the correct access controls are in place and verify your data privacy compliance with XM Cloud by using the [privacy checklist](https://doc.sitecore.com/xmc/en/developers/xm-cloud/privacy-checklist.html).
+Perform a security review to ensure the correct access controls are in place and verify your data privacy compliance with SitecoreAI by using the [privacy checklist](https://doc.sitecore.com/xmc/en/developers/xm-cloud/privacy-checklist.html).
 
 Make sure your head application is setup with the appropriate security guidelines, as a reference check:
 - [Vercel Production checklist](https://vercel.com/docs/production-checklist#security)
@@ -64,7 +64,7 @@ Ensure your application is SEO-optimized. Validate that your [sitemap](https://d
 Review the [On-page SEO Optimization](https://developers.sitecore.com/learn/accelerate/xm-cloud/optimization/seo-web-optimization) recipe for any optimization potential.
 
 ### Redirects
-Ensure all previous or new redirects are handled. Collect all legacy URLs (from the old site, SEO tools, or analytics) and map them to the correct new URLs in XM Cloud, after removing any that no longer have a destination (404s, retired pages etc). Avoid redirect chains (one redirect should get you to the final URL).
+Ensure all previous or new redirects are handled. Collect all legacy URLs (from the old site, SEO tools, or analytics) and map them to the correct new URLs in SitecoreAI, after removing any that no longer have a destination (404s, retired pages etc). Avoid redirect chains (one redirect should get you to the final URL).
 
 After launch, monitor and watch for spikes in 404s using analytics and adjust the redirects based on post-launch user behavior.
 
@@ -77,7 +77,7 @@ When an error occurs, ensure visitors are redirected to the proper page. See the
 - [Web Application Error Monitoring](/learn/accelerate/xm-cloud/implementation/developer-experience/web-application-error-handling) recipe
 
 ### Analytics
-Ensure that XM Cloud Pages Analyze is ready to collect your production analytics - review the [Create and assign site identifiers for Analytics](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html) documentation for details. Without analytics, you won’t know if users are landing on the right pages, getting stuck, or bouncing immediately. First-day data helps you validate assumptions fast. This will also provide you a baseline to compare to your legacy setup, and give you early warnings of content issues.
+Ensure that SitecoreAI Pages Analyze is ready to collect your production analytics - review the [Create and assign site identifiers for Analytics](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html) documentation for details. Without analytics, you won’t know if users are landing on the right pages, getting stuck, or bouncing immediately. First-day data helps you validate assumptions fast. This will also provide you a baseline to compare to your legacy setup, and give you early warnings of content issues.
 
 ### Head Application
 
