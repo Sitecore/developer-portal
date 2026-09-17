@@ -19,7 +19,7 @@ Creating an estimate for a SitecoreAI implementation is a large but important ta
 
 This recipe assumes a level of experience with creating estimates. Rather than detail every aspect of the process, we will focus on how to make sure that the estimates are realistic, achievable, and informed by the right considerations.
 
-This recipe works very closely with the [Requirements Gathering](../discovery/requirements-gathering), and [Preparing for a SitecoreAI Project](preparing-for-an-xm-cloud-project) recipes.
+This recipe works very closely with the [Requirements Gathering](../discovery/requirements-gathering), and [Preparing for a SitecoreAI Project](preparing-for-a-sitecoreai-project) recipes.
 
 ### Preparing for an Estimate
 

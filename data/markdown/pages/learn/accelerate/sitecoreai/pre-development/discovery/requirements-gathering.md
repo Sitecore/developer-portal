@@ -172,7 +172,7 @@ These questions should have allowed you to build a wealth of information about t
 ## Related Recipes
 
 <Row columns={2}>
-<Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+<Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-xm-cloud-project" />
 <Link title="Project Solution Setup" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup" />
 <Link title="Preparing For A Project" link="/learn/faq/xm-cloud-recommended-practices/preparing-for-project" />
 <Link title="Transition from XM/XP to SitecoreAI" link="/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc" />

@@ -10,3 +10,5 @@ When working with SitecoreAI, developers are empowered to deliver modern, scalab
 This section is designed to highlight key considerations for developers, covering the tools, frameworks, and practices required to succeed with SitecoreAI. From environment setup and front-end frameworks to deployment pipelines and API usage, these considerations ensure developers can fully leverage SitecoreAI's headless architecture while meeting performance and business goals.  
 
 Whether you're migrating from a traditional Sitecore PaaS setup or starting fresh, this guide will provide the insights needed to build robust, scalable, and future-proof solutions.
+
+> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.

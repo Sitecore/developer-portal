@@ -11,6 +11,6 @@ cdpTags: ['xm-cloud']
 </Alert>
 
 <Row columns={2}>
-  <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+  <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
   <Link title="Project Estimation" link="/learn/accelerate/xm-cloud/pre-development/project-planning/project-estimation" />
 </Row>

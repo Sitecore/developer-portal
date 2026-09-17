@@ -24,7 +24,7 @@ Sitecore Experience Manager Cloud (XM Cloud) is a fully managed self-service dep
 ## Getting Started
 
 <Row columns={2}>
-  <Article title="Getting started with XM Cloud" description="Read the step by step tutorial on the Sitecore Documentation site." link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
+  <Article title="Getting started with SitecoreAI" description="Read the step by step tutorial on the Sitecore Documentation site." link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
   <Article title="Sitecore Accelerate" description="Sitecore Accelerate is a dedicated program to help Sitecore customers upgrade their existing PaaS CMS or commerce solution to our next-gen SaaS products." link="/learn/accelerate/xm-cloud" />
 </Row>
 
@@ -33,7 +33,7 @@ Sitecore Experience Manager Cloud (XM Cloud) is a fully managed self-service dep
 <Link title="User Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
 <Link title="Developer Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html" />
 <Link title="XM Cloud Build Configuration" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html" />
-<Link title="XM Cloud Deploy App" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+<Link title="XM Cloud Deploy App" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html" />
 <Link title="Developer Tools" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html" />
 <Link title="XM Cloud development" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html" />
 <Link title="Cloud Portal developer docs" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />

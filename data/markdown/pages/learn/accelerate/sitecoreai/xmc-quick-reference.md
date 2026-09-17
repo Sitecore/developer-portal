@@ -40,7 +40,7 @@ Effective project planning is the key to any successful implementation - ensurin
   <GroupItem>
     #### Recipies
     - [Scope and Governance Framework](/learn/accelerate/xm-cloud/pre-development/discovery/scope-governance-framework)
-    - [Preparing for a SitecoreAI Project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project)
+    - [Preparing for a SitecoreAI Project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project)
     - [Project Estimation](/learn/accelerate/xm-cloud/pre-development/project-planning/project-estimation)
     - [Planning test strategy](/learn/accelerate/xm-cloud/pre-development/project-planning/test-strategy-planning)    
   </GroupItem>
@@ -48,7 +48,7 @@ Effective project planning is the key to any successful implementation - ensurin
     #### Documentation
       - [SitecoreAI Changelog](/changelog/xm-cloud)
       - [SitecoreAI Sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html)
-      - [SitecoreAI Deploy](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
+      - [SitecoreAI Deploy](https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html)
   </GroupItem>  
 </Group>
 

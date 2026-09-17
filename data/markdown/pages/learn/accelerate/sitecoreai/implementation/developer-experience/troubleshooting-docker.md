@@ -7,16 +7,16 @@ area: ['accelerate']
 lastUpdated: '2025-01-31'
 created: '2024-08-23'
 audience: ['Architect','Technical Implementer']
-features: ['XM Cloud Deploy','Docker']
+features: ['SitecoreAI Deploy','Docker']
 ---
 
 ## Context
-In Sitecore XM Cloud, Docker might be required for [full-stack development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-docker-for-full-stack-development.html). Setting up your [local environment](https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-local-development-environment.html) might not required this, but occassional. Managing and troubleshooting these containers can be challenging due to issues like container connectivity, authorization failures, and platform-specific inconsistencies. 
+In SitecoreAI, Docker might be required for [full-stack development](https://doc.sitecore.com/xmc/en/developers/xm-cloud/using-docker-for-full-stack-development.html). Setting up your [local environment](https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-local-development-environment.html) might not required this, but occassional. Managing and troubleshooting these containers can be challenging due to issues like container connectivity, authorization failures, and platform-specific inconsistencies. 
 
 Developers may encounter difficulties when containers can’t communicate with each other, struggle to access DNS services, or face errors during code deployments.
 
 ## Execution
-When you create an XM Cloud project using the XM Cloud Deploy app and choose the foundation template as the source for the initial deployment, the process adds the foundation template to the source control repository you configured for the initial environment.
+When you create a SitecoreAI project using the SitecoreAI Deploy app and choose the foundation template as the source for the initial deployment, the process adds the foundation template to the source control repository you configured for the initial environment.
 
 You can use the resulting codebase to set up your local development environment based on Docker containers. We will highlight some of the key elements that are provisioned and workflows the developer can employ.
 
@@ -36,7 +36,7 @@ When you clone the xmcloud-foundation-head repository, you can find a folder /lo
 |<code>/local-containers/docker-compose.yml</code>  | This file containers the initial definition of the Docker Containers you will run locally. These all the base services are defined that will be created when you start your containers. <br/><br/>In most cases you won’t make any changes to this file. If you need to change anything related to your Container definitions, then this should be made in the <code>docker-compose.override.yml</code> described below. |
 |<code>/local-containers/docker-compose.override.yml</code>  | This file gives you the ability to override the base services defined in your <code>docker-compose.yaml</code>. It allows you to change any of the default values defined, and ensures you have a single location for all your Docker Container customisations. <br/><br/> This is also where you would add any new Container definitions you require – this is a common requirement when working on multi-site implementations. |
 |<code>/local-containers/scripts/init.ps1</code>  |This is a PowerShell script that is used initially when you configure your local environment. It performs a series of steps to initialise your repository ready to be run. Some of the actions it performs are:<ul><li>Populating .env variables.</li><li>Installing Docker tooling packages. </li><li>Generating Certificates required to enable HTTPS locally. </li><li>Configures windows HOSTS entries.</li></ul> |
-|<code>/local-containers/scripts/up.ps1</code>  | This is a PowerShell script used to take the initialised repository, and run all of the different elements locally. When this script has completed successfully you will be left with a set of running containers, powering the different XM Cloud elements and sites. At this point you’re ready to begin your development activities. <br/><br/> This script performs a few different activities and can take several minutes to complete. Some of the actions it performs are: <ul><li>Building local Container images.</li><li>Creating instances of local Containers from those built images.</li> <li>Pushing serialised content into the Databases.</li></ul>|
+|<code>/local-containers/scripts/up.ps1</code>  | This is a PowerShell script used to take the initialised repository, and run all of the different elements locally. When this script has completed successfully you will be left with a set of running containers, powering the different SitecoreAI elements and sites. At this point you’re ready to begin your development activities. <br/><br/> This script performs a few different activities and can take several minutes to complete. Some of the actions it performs are: <ul><li>Building local Container images.</li><li>Creating instances of local Containers from those built images.</li> <li>Pushing serialised content into the Databases.</li></ul>|
 |<code>/local-containers/scripts/down.ps1</code>  | This is a PowerShell script used to tidy up your developer machine when you have completed your work. It doesn’t change anything in the repository itself but stops all the running Containers freeing up system resources. <br/><br/> This should be run before shutting down your machine, to ensure that it isn’t in an invalid state when attempting to run the solution again in future. |
 
 #### Docker folder
@@ -46,14 +46,14 @@ In the repository, you will see there is a docker folder in <code>/local-contain
 </ol>
 <li><code>build/</code> - contains all the [build definition files](https://docs.docker.com/reference/cli/docker/buildx/build/) for your docker images.</li>
 <li><code>data/</code> - contains data for your containers, like CM logs, solr data, database files. this folder is mapped in the <code>docker-compose.override.yml</code> to the respective container targets. This is accomplished using [Docker Volumes](https://docs.docker.com/engine/storage/volumes/).</li>
-<li><code>deploy/</code> - to deploy configuration, assemblies, and content into your running Docker environment, run a Publish from Visual Studio. The /local-containers/docker/deploy folder is the publish target defined in the PublishProfile and in the <code>.env</code> file, the <code>LOCAL_DEPLOY_PATH</code> is set to the relative path of the *local-containers\docker\deploy* folder. Note this is just for information, <strong>customising the XM Cloud instance is not recommended</strong>.</li>
+<li><code>deploy/</code> - to deploy configuration, assemblies, and content into your running Docker environment, run a Publish from Visual Studio. The /local-containers/docker/deploy folder is the publish target defined in the PublishProfile and in the <code>.env</code> file, the <code>LOCAL_DEPLOY_PATH</code> is set to the relative path of the *local-containers\docker\deploy* folder. Note this is just for information, <strong>customising the SitecoreAI instance is not recommended</strong>.</li>
 <li><code>traefik/</code> - this is where your local encryption keys are stored.</li>
 <li><code>clean.ps1</code> – this is a PowerShell script used to clean to data that has been persisted into the <code>/data</code> folder. This is useful when you need to reset the repositories data back to an initial state. Note your Containers must not be running for this script to complete successfully.</li>
 
 ### Typical Daily Developer Activities
 You only have to run the <code>init.ps1</code> script once, to initialize your setup. From then on you start up your containers running the <code>up.ps1</code> script. When you are done for the day, remember to run the <code>down.ps1</code> script to stop the containers. This will keep your data and you can continue the next day where you left off - just run up.ps1 again.
 
-Should you need to reset your local instance, run the <code>/local-containers/docker/clean.ps1</code> to clean up all stored data. This will delete all local data and give you a clean XM Cloud instance again.
+Should you need to reset your local instance, run the <code>/local-containers/docker/clean.ps1</code> to clean up all stored data. This will delete all local data and give you a clean SitecoreAI instance again.
 
 #### Deploying code changes
 Once you have a running set of Containers and you can successfully access the site in your browser, then you’re ready to begin your development activities. The site is now running directly from the source assets located in the <code>/headapps/SITE_NAME</code> folder.
@@ -68,7 +68,7 @@ There are two common ways to get logging information from the Docker Containers,
 <strong>Debugging with the Docker UI</strong><br/>
 When you’re running Docker Desktop you get the ability to debug via UI. This can be accessed from the Icon in your System Tray. Once loaded you will see a UI that looks like the screenshot below.
 
-Below are some further considerations for running XM Cloud sites locally through Docker. 
+Below are some further considerations for running SitecoreAI sites locally through Docker. 
 <figure><img src="/images/learn/accelerate/xm-cloud/docker-desktop.png" alt="Docker Desktop"/></figure>
 
 The numbers above call out some key areas:
@@ -85,7 +85,7 @@ Note that some containers Status may show as <code>Exited</code> as can be seen 
 <strong>Debugging with the Docker CLI</strong><br/>
 If you’re not using Docker Desktop, or if you prefer to use a CLI over a UI, then the Docker CLI is another option to help you debug any issues. You can view information on the different commands available in the Docker CLI on the [Docker Documentation](https://docs.docker.com/reference/cli/docker/container/ls/).
 
-There are a couple of commonly used commands when working with XM Cloud Containers.
+There are a couple of commonly used commands when working with SitecoreAI Containers.
 
 <strong>1. List all running Containers</strong> - You can run <code>docker ps -a</code> to show all running Containers. As you can see in the image below, this gives you information on each of the Containers and their current Status.
 
@@ -105,7 +105,7 @@ In the screenshot below you can see we have run this command for the rendering c
 
 
 ## Insights
-Below are some further considerations for running XM Cloud sites locally through Docker. 
+Below are some further considerations for running SitecoreAI sites locally through Docker. 
 
 ### <strong>What is Traefik?</strong>
 
@@ -115,7 +115,7 @@ Further informaton can be found on the [Traefik Documentation](https://doc.traef
 
 ### <strong>General Troubleshooting</strong>
 
-Below you will find some common issues that people run into when attempting to run XM Cloud sites locally with Docker, and their solutions.
+Below you will find some common issues that people run into when attempting to run SitecoreAI sites locally with Docker, and their solutions.
 
 #### Forgetting to run down.ps1
 
@@ -125,7 +125,7 @@ To fix this you need to run the down.ps1 script to tidy up these legacy resource
 
 #### Docker Compose v1 Deprecated
 
-As of June 2023 Docker Compose v1 has been deprecated and removed. The XM Cloud Foundation head was created before this date and was originally built against this earlier version. It has since been migrated to run against v2, however if your repository was created before then, you will also need to update your repository. Further information can be found on [Upgrading to Docker Compose v2](https://robearlam.com/blog/docker-compose-v2) post.
+As of June 2023 Docker Compose v1 has been deprecated and removed. The SitecoreAI Foundation head was created before this date and was originally built against this earlier version. It has since been migrated to run against v2, however if your repository was created before then, you will also need to update your repository. Further information can be found on [Upgrading to Docker Compose v2](https://robearlam.com/blog/docker-compose-v2) post.
 
 #### Containers cannot communicate with each other
 
@@ -194,23 +194,23 @@ Everything described above is assuming that you are running a Windows based mach
 
 This is due to the CM Container being based on a Windows Container Image, therefore requiring a Windows based Host Machine.
 
-If you’re running a non-Windows based machine, then your best option is to run the head in isolation and the develop against a Cloud endpoint for its data. This will most likely be the CM Preview API for a Non-Production XM Cloud instance: detail can be found on [Set up your local development environment](https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-local-development-environment.html).
+If you’re running a non-Windows based machine, then your best option is to run the head in isolation and the develop against a Cloud endpoint for its data. This will most likely be the CM Preview API for a Non-Production SitecoreAI instance: detail can be found on [Set up your local development environment](https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-local-development-environment.html).
 
 ### <strong>Base Image Versions</strong>
 
-As mentioned above the XM Cloud Container Images are Windows based Images. At the time of writing this article the repository is setup to leverage <code>ltsc2022</code> for its base images. If you're running a later Host OS than this then you will want to change to match your Host OS version. You can do this by setting the <code>$baseOs</code> parameter when you run the <code>init.ps1</code> script.
+As mentioned above the SitecoreAI Container Images are Windows based Images. At the time of writing this article the repository is setup to leverage <code>ltsc2022</code> for its base images. If you're running a later Host OS than this then you will want to change to match your Host OS version. You can do this by setting the <code>$baseOs</code> parameter when you run the <code>init.ps1</code> script.
 
 You will always want to use the latest base image version that your Host OS supports as with each release Microsoft is making the images smaller and faster, improving the speed of your development experience. You can read more about Windows Containers Host OS compatibility on the [Microsoft Learn site](https://learn.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility?tabs=windows-server-2022%2Cwindows-11).
 
 ### <strong>SaaS Considerations</strong>
 
-Sitecore XM Cloud is a SaaS application, meaning that its various application elements are hosted by Sitecore for the customers. When performing Docker based local development, you’re running a subset of the full SaaS functionality locally. This means that there are some elements that isn’t not possible to run on your development machine. Some application elements like Pages, Components & Forms amongst others are not able to be run locally.
+SitecoreAI is a SaaS application, meaning that its various application elements are hosted by Sitecore for the customers. When performing Docker based local development, you’re running a subset of the full SaaS functionality locally. This means that there are some elements that isn’t not possible to run on your development machine. Some application elements like Pages, Components & Forms amongst others are not able to be run locally.
 
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Preparing to run the XM Cloud foundation template locally" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/preparing-to-run-the-xm-cloud-foundation-template-locally.html" />
-    <Link title="Set up your full-stack XM Cloud local development environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-full-stack-xm-cloud-local-development-environment.html" />
+  <Link title="Preparing to run the SitecoreAI foundation template locally" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/preparing-to-run-the-xm-cloud-foundation-template-locally.html" />
+    <Link title="Set up your full-stack SitecoreAI local development environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/set-up-your-full-stack-xm-cloud-local-development-environment.html" />
 </Row>
 
 

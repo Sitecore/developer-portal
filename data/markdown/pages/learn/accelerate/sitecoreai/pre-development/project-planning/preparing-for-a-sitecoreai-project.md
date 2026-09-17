@@ -109,7 +109,7 @@ Bringing a site from concept to the first release quickly requires an agile appr
 <ul>
   <li>Prioritize only the essential features that deliver immediate value, deferring nice-to-have elements for later. Make sure you are building components and templates that you absolutely need; try and re-use components to cut development time.</li>
   <li>Conduct regular demos and stakeholder reviews to align expectations and prevent late-stage rework. Do you require a full-feature launch or can you break your timeline down to small, iterative releases?</li>
-  <li>Make sure you are aware of OOTB features that can facilitate the implementation - for example - what’s the quickest answer to deployment: do we need to have a custom pipeline or can we rely on [SitecoreAI Deploy](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)? </li>
+  <li>Make sure you are aware of OOTB features that can facilitate the implementation - for example - what’s the quickest answer to deployment: do we need to have a custom pipeline or can we rely on [SitecoreAI Deploy](https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html)? </li>
   <li>Content delays often stall projects. Start content modelling, migration, and creation in parallel with focus on essential pages and metadata, bringing in additional content after first release. Make sure it’s clear what the path for content migration including automation is, from the start.</li>
   <li>This first release is just the beginning. Use feature flags (example setting up [Modules](https://doc.sitecore.com/xmc/en/developers/xm-cloud/modules.html)) to roll out additional functionality over time. Leverage features such as [Personalize](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html) to refine and optimize based on user behaviour. Although you might be tempted to leave personalization features for later phases, these might be reduce implementation effort - example using Geography based conditions instead of building custom logic to provide content based on location.</li>
   <li>Consider Content Migration from the very beginning - does it make sense to move the existing content? Do you need to automate this process or will it be handled manually? What is the amount of content in place, considering multiple sites and languages. Additional information can be found on the [Content Audit](/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit) recipe.</li>
@@ -167,14 +167,14 @@ Success  relies on clarity, automation, and documentation to maintain efficiency
 <Row columns={2}>
     <Link title="Discovery" link="/learn/accelerate/xm-cloud/pre-development/discovery" />
   <Link title="Sprint Zero" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero" />
-  <Link title="Preparing For A Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+  <Link title="Preparing For A Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
   <Link title="Component Design Best Practices" link="/learn/accelerate/xm-cloud/pre-development/developer-considerations/component-design-best-practices" />
 </Row>
 
 
 ## Related Documentation
 <Row columns={2}>
-  <Link title="Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+  <Link title="Deploy app" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html" />
   <Link title="Deploy a project and environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html" />  
   <Link title="Modules" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/modules.html" />
   <Link title="Update your starter foundation code" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/update-your-starter-foundation-code.html" />

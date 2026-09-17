@@ -104,7 +104,7 @@ This Cookbook provides a set of recipes to help implementing SitecoreAI through 
 - [Scope & Governance Framework](https://developers.sitecore.com/learn/accelerate/sitecoreai/pre-development/discovery/scope-governance-framework)
 - [Page builder readiness](https://developers.sitecore.com/learn/accelerate/sitecoreai/pre-development/discovery/page-builder)
 - [Project Planning](https://developers.sitecore.com/learn/accelerate/sitecoreai/pre-development/project-planning)
-- [Preparing for an XM Cloud Project](https://developers.sitecore.com/learn/accelerate/sitecoreai/pre-development/project-planning/preparing-for-an-xm-cloud-project)
+- [Preparing for an XM Cloud Project](https://developers.sitecore.com/learn/accelerate/sitecoreai/pre-development/project-planning/preparing-for-a-sitecoreai-project)
 - [Project Estimation](https://developers.sitecore.com/learn/accelerate/sitecoreai/pre-development/project-planning/project-estimation)
 - [Planning test strategy](https://developers.sitecore.com/learn/accelerate/sitecoreai/pre-development/project-planning/test-strategy-planning)
 - [Hosting Applications](https://developers.sitecore.com/learn/accelerate/sitecoreai/pre-development/hosting-applications)

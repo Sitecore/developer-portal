@@ -169,7 +169,7 @@ Review the [Operational Governance]() recipe for further details on how to setup
 
  <Link title="Hosting Head Application" link="/learn/accelerate/xm-cloud/pre-development/hosting-applications"/>
  <Link title="Content Audit" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit"/>
- <Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project"/>
+ <Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project"/>
 </Row>
 
 ## Related Documentation

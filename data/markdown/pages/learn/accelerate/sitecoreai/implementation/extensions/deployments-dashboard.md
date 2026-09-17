@@ -10,7 +10,7 @@ audience: ['Architect','Technical Implementer']
 ---
 
 ## Context
-SitecoreAI requires to host your front-end website on a serverless hosting provider such as Vercel and Netlify. Outside of [SitecoreAI Deploy](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html), visibility into deployments often requires direct access to the these hosting providers which always brings up queries such as who needs access and troubleshooting needs.
+SitecoreAI requires to host your front-end website on a serverless hosting provider such as Vercel and Netlify. Outside of [SitecoreAI Deploy](https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html), visibility into deployments often requires direct access to the these hosting providers which always brings up queries such as who needs access and troubleshooting needs.
 
 > Other hosting providers such as Netlify can be approached, but in this example we’ll be focusing on Vercel. The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
 
@@ -44,7 +44,7 @@ There’s plenty of ways this can be extended such as integrate with SitecoreAI 
 
 ## Related Documentation
 <Row columns={2}>
-  <Link title="SitecoreAI Deploy" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+  <Link title="SitecoreAI Deploy" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html" />
   <Link title="Extension points" link="https://doc.sitecore.com/mp/en/developers/marketplace/extension-points.html#standalone"/>
   <Link title="Marketplace Getting Started" link="https://developers.sitecore.com/learn/getting-started/marketplace" />
 </Row>

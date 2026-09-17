@@ -10,7 +10,7 @@ audience: ['Architect','Technical Implementers','Project Manager', 'Product Owne
 ---
 
 ## Context
-Web Application developers working on XM Cloud projects face unique challenges when collaborating across team roles as introduced in the [Preparing for an XM Cloud project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project) recipe. They need specific support from their team members and well-defined practices to work efficiently in collaborative environments. Understanding these workflow requirements is essential for establishing effective quality standards.
+Web Application developers working on XM Cloud projects face unique challenges when collaborating across team roles as introduced in the [Preparing for a SitecoreAI project](/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project) recipe. They need specific support from their team members and well-defined practices to work efficiently in collaborative environments. Understanding these workflow requirements is essential for establishing effective quality standards.
 
 ## Execution
 Projects can face multiple challenges but it’s often common that issues start to arise when there are:
@@ -298,6 +298,6 @@ For Web Application developers to work effectively in an XM Cloud project, they 
 
 ## Related Recipes
 <Row columns={2}>
-    <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+    <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
     <Link title="Branching Strategy" link="/learn/accelerate/xm-cloud/pre-development/developer-considerations/branching-strategy" />
 </Row>

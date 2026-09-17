@@ -38,7 +38,7 @@ In XM Cloud, renderings are not deployed to the Content Management environment. 
 
 While currently, it is technically possible to write custom pipelines and events in XM Cloud, it is strongly discouraged.
 
-Events are now available via webhooks in XM Cloud. You can read more about webhooks in the [Sitecore XM Cloud documentation for webhooks with workflow](https://doc.sitecore.com/xp/en/xmc/en/developers/xm-cloud/webhooks.html)
+Events are now available via webhooks in XM Cloud. You can read more about webhooks in the [SitecoreAI documentation for webhooks with workflow](https://doc.sitecore.com/xp/en/xmc/en/developers/xm-cloud/webhooks.html)
 
 ## How is Sitecore going to manage customizations with a SaaS approach to upgrades?
 

@@ -1,6 +1,6 @@
 ---
 title: 'Web Application Error Monitoring'
-description: 'Guidance on ceating robust error handling mechanisms in XM Cloud headless applications.'
+description: 'Guidance on ceating robust error handling mechanisms in SitecoreAI headless applications.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -14,7 +14,7 @@ features: ['Next.js SDK']
 In the development of any web  application, error handling on the application level is critical. Without robust frontend error handling, a single component failure could crash an entire page or even the Pages editor, leading to poor user experience, lost work for content authors, and frustrated developers trying to debug issues without proper context.
 
 ## Execution
-Effective error handling in  XM Cloud applications ultimately enhances user experience and application reliability. A well-designed approach ensures that frontend components remain stable, preventing issues from impacting site visitors and content editors. Containing component failures minimizes disruptions, while specialized handling of API integrations keeps interactions smooth. 
+Effective error handling in  SitecoreAI applications ultimately enhances user experience and application reliability. A well-designed approach ensures that frontend components remain stable, preventing issues from impacting site visitors and content editors. Containing component failures minimizes disruptions, while specialized handling of API integrations keeps interactions smooth. 
 
 Thoughtful error UX design plays a key role in maintaining user trust by providing clear, helpful messaging, guiding users toward solutions, and ensuring a consistent journey even when issues arise. By anticipating potential failures, applications become more resilient, improving both usability and long-term adoption.
 
@@ -52,7 +52,7 @@ In web applications, client-side errors—such as issues with rendering React co
 
 | Purpose | Benefits |
 | - | - |
-| - Catch and handle React component rendering errors <br/><br/>- Prevent cascading failures in the application <br/><br/>- Isolate component failures to maintain overall app stability | - Enhanced application reliability <br/> - Improved debugging capabilities <br/>- Better user experience with graceful error handling <br/> - Protected page editor functionality in XM Cloud |
+| - Catch and handle React component rendering errors <br/><br/>- Prevent cascading failures in the application <br/><br/>- Isolate component failures to maintain overall app stability | - Enhanced application reliability <br/> - Improved debugging capabilities <br/>- Better user experience with graceful error handling <br/> - Protected page editor functionality in SitecoreAI |
 
  By using Error Boundaries, we ensure that errors in a single component won't bring down the whole page. This is critical in XMC apps where users rely on multiple interconnected components. Instead of the whole page crashing, an error boundary catches the error in a specific component and displays a fallback UI, such as a message notifying the user of the issue.
 

@@ -32,7 +32,7 @@ Each item published to Edge will get the IDs of its template and inherited templ
 Each item with a layout published to Edge will store the IDs of all datasources within its layout and any datasources in partial designs used in that layout. This ensures that any change to a datasource necessitates the regeneration and republishing of the layout utilizing that datasource. Consequently, when a modified datasource is published, the associated page item will also be republished.
 
 ### Item and its clone item dependency
-When a cloned item is published, it stores the ID of its original item. In Sitecore, any changes made to the original item's content will also be reflected in the clone item. Therefore, when the original item is modified and published, the clone item must also be republished.
+When a cloned item is published, it stores the ID of its original item. In SitecoreAI, any changes made to the original item's content will also be reflected in the clone item. Therefore, when the original item is modified and published, the clone item must also be republished.
 
 ### Item and its link fields’ selected items dependency
 When item with specific line type and list type fields is published, the IDs of items referenced by those fields will be stored as dependencies in Edge. This is important because referenced items may be displayed in the main item layout. Any changes to these referenced items necessitate republishing the main item.
@@ -62,9 +62,9 @@ For an item version in a specific language that supports language fallback, the 
 
 By default, this dependency is not active. Language fallback process can be a complex calculation and have a performance impact. Only enable this is you really require language fallback - make sure its disabled if not required.
 
-Set the value of setting `ExperienceEdge.EnableItemLanguageFallback` to true if Item Language Fallback is used in Sitecore and wants to active this dependency during publishing.
+Set the value of setting `ExperienceEdge.EnableItemLanguageFallback` to true if Item Language Fallback is used in SitecoreAI and wants to active this dependency during publishing.
 
-Set the value of setting `ExperienceEdge.EnableFieldLanguageFallback` to true if Item field Language Fallback is used in Sitecore and wants to active this dependency during publishing.
+Set the value of setting `ExperienceEdge.EnableFieldLanguageFallback` to true if Item field Language Fallback is used in SitecoreAI and wants to active this dependency during publishing.
 
 <Alert status="info" mb={4}><AlertIcon />
 Every time this dependency is activated or deactivated by configuration change, site republish is required to ensure this dependency is updated in edge for all items.

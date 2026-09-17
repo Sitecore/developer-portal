@@ -51,7 +51,7 @@ If you decide to work with a rendering application that is not JavaScript based,
 Sitecore recommends using JSS and Headless SXA, which come as part of the XM Cloud offering.
 
 More information about XM Cloud can be found [here](https://developers.sitecore.com/content-management/xm-cloud)
-Please check also the [XM Cloud Documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
+Please check also the [SitecoreAI Documentation](https://doc.sitecore.com/sai/en/developers/sitecoreai/getting-started-with-xm-cloud.html)
 
 ## What is the recommended approach for new Sitecore implementations today (Headless, MVC, SXA) to upgrade to XM Cloud?
 

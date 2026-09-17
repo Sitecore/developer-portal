@@ -80,7 +80,7 @@ Before releasing this to the authoring team, you need to ensure that the Text Te
    **Congratulations!** You have now configured the Text Teaser data source to be available in XM Cloud Components! You will now be able to map the data source to your visual elements in the next tutorial.
 </Alert>
 
-### Related XM Cloud Documentation
+### Related SitecoreAI Documentation
 
 - [Get your content from an XM data source](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-your-content-from-an-xm-data-source.html)
 - [Map data from an XM data source to a component](https://doc.sitecore.com/xmc/en/users/xm-cloud/map-data-from-an-xm-data-source-to-a-component.html)

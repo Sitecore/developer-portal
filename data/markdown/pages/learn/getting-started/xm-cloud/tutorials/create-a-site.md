@@ -154,9 +154,9 @@ Let’s change some content to verify you are in fact connected against the prev
    **Congratulations!** You have successfully set up your dev environment with XM Cloud and created your first site! To learn more about XM Cloud and continue on to next steps, check out our next tutorial in this series.
 </Alert>
 
-### Related XM Cloud Documentation
+### Related SitecoreAI Documentation
 
-- [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
+- [Getting started with SitecoreAI](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
 - [Create websites](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-websites.html)
 - [Design webpages](https://doc.sitecore.com/xmc/en/users/xm-cloud/design-webpages.html)
 - [Understanding components in XM Cloud](https://doc.sitecore.com/xmc/en/users/xm-cloud/understanding-components-in-xm-cloud.html)

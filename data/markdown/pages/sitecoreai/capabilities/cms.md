@@ -39,7 +39,7 @@ Even before you get to platform options or tech design, you need to have alignme
 
 <Row columns={3}>
 <Link title="Build Configuration" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html" />
-<Link title="Deploy App" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+<Link title="Deploy App" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html" />
 <Link title="Developer Tools" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html" />
 <Link title="Cloud Portal developer docs" link="https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html" />
 <Link title="Getting started with Experience Edge" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/experience-edge.html" />

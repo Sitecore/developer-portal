@@ -26,7 +26,7 @@
               "path": "moving-to-saas"
             },
             {
-              "title": "Transition from XM/XP to XM Cloud",
+              "title": "Transition from XM/XP to SitecoreAI",
               "path": "xm-xp-to-xmc"
             },
             {
@@ -49,8 +49,8 @@
           "ignoreLink": false,
           "children": [
             {
-              "title": "Preparing for an XM Cloud Project",
-              "path": "preparing-for-an-xm-cloud-project"
+              "title": "Preparing for a SitecoreAI Project",
+              "path": "preparing-for-a-sitecoreai-project"
             },
             {
               "title": "Project Estimation",
@@ -421,7 +421,7 @@
       "ignoreLink": true,
       "children": [
         {
-          "title": "XM Cloud Glossary",
+          "title": "Glossary",
           "path": "xm-cloud-glossary"
         }
       ]

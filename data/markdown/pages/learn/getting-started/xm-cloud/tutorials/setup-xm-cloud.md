@@ -122,15 +122,15 @@ Once the provisioning and build process are finished, the deployment starts. The
    **Congratulations!** You have successfully deployed your first XM Cloud project that has an environment that is set up and ready to be used. The solution code is ready and connected to a CI/CD pipeline as well. Setting up a CI/CD pipeline in some development scenarios can take days or weeks but XM Cloud tools help you complete it within minutes here.
 </Alert>
 
-### Related XM Cloud Documentation
+### Related SitecoreAI Documentation
 
-- [Getting started with XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
+- [Getting started with SitecoreAI](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html)
 - [Introduction to the Sitecore Cloud Portal](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/introduction-to-the-sitecore-cloud-portal.html)
 - [Sitecore Cloud Portal roles](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/roles.html)
 - [What is an XM Cloud Project?](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html#UUID-3ceb7d45-3caf-3196-3a9a-f59a9474182a_xmc_project)
 - [What is an XM Cloud Environment?](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-terminology.html#UUID-3ceb7d45-3caf-3196-3a9a-f59a9474182a_xmc_environment)
 - [Deploying XM Cloud](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploying-xm-cloud.html)
-- [XM Cloud Deploy app](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)
+- [XM Cloud Deploy app](https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html)
 - [Manage an XM Cloud environment](https://doc.sitecore.com/xmc/en/developers/xm-cloud/manage-an-environment.html)
 - [XM Cloud Deploy API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-api.html)
 - [Creating an XM Cloud Project using the Sitecore CLI](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--creating-an-xm-cloud-project-using-the-sitecore-cli.html)

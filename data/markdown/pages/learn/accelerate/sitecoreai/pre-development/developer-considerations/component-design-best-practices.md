@@ -13,7 +13,9 @@ audience: ['Architect','Project Manager','Technical Implementer']
 
 Developers face multiple ways to create components in SitecoreAI, and may struggle to find the optimal way to implement components that are modular, reusable, and easily customizable by Content Authors, all while maintaining clean and scalable code.
 
-> The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+> The code provided is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
+
+> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.
 
 ## Execution
 Starting with the basics, make sure that the appearance and functionality of components does not depend on components being nested/structured any particular way. Components need to be built in a way that keeps them independent, modular, and interchangeable, so that Content Authors remain free to move components around on a page however they want.

@@ -379,7 +379,7 @@ namespace Sitecore.AspNetCore.Starter.ViewComponents
 ## Related Recipes
 
 <Row columns={2}>
-  <Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+  <Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
 </Row>
 
 ## Related Documentation

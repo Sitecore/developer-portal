@@ -16,6 +16,7 @@ For content authors, this means being able to select and embed assets from their
 
 > The provided code is intended as a guideline and must be tailored to suit your specific implementation requirements. Please ensure thorough end-to-end testing is conducted to validate its functionality and performance in your environment.
 
+> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.
 
 ## Execution
 [Sitecore Marketplace](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) penables every Cloud Portal organization to build and use applications that add new capabilities to Sitecore. The [SitecoreAI Page builder custom field](https://doc.sitecore.com/mp/en/developers/marketplace/page-builder-custom-fields.html) extension point lets you extend the data template of a content item or a page by adding your own custom field to it. SitecoreAI users can then populate that field with the data you provide in your Marketplace app.
@@ -35,7 +36,7 @@ The value in the source field above is the App ID and can be obtained when you c
 <br/><br/>
 When editors click the field, it opens a Content Hub window via iframe as explained in the Content Hub + XMC recipe and the selected asset’s identifier is returned to SitecoreAI using postMessage.
 
-In your XM Cloud solution you will need to create a custom component to perform a GraphQL call to Content Hub. This component will have a datasource to store the value returned from Content Hub in the Marketplace plugin field type as see below.
+In your SitecoreAI solution you will need to create a custom component to perform a GraphQL call to Content Hub. This component will have a datasource to store the value returned from Content Hub in the Marketplace plugin field type as see below.
 
 <img src="/images/learn/accelerate/xm-cloud/content-assets/content-tree.png" alt="content-tree"/>
 <br/><br/>
@@ -151,7 +152,7 @@ While the example focuses on blogs, the same approach can be extended to other s
 ## Related Recipes
 <Row columns={2}>
    <Link title="Creating New Components" link="/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components" />
-   <Link title="Content distribution from Content Hub to XM Cloud" link="https://developers.sitecore.com/learn/accelerate/content-hub/implementation/integrations/content-distribution" />   
+   <Link title="Content distribution from Content Hub to SitecoreAI" link="https://developers.sitecore.com/learn/accelerate/content-hub/implementation/integrations/content-distribution" />   
 </Row>
 
 ## Related Documentation

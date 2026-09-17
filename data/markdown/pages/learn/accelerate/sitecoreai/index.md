@@ -17,7 +17,8 @@ Sitecore Accelerate Cookbook provides a set of recipes to guide the project team
 
 Trying to figure out where best to start? Review our [Quick Reference](/learn/accelerate/sitecoreai/xmc-quick-reference) that provides a guide through the content.
 
-> The Accelerate Cookbook is an evolving guide designed to support your journey with Sitecore. Consider it a work in progress: your go-to for continuous learning and development in the ever-changing landscape of digital experience platforms. Stay tuned for ongoing updates as we grow this resource with you in mind!
+> [!note]
+> The Accelerate Cookbook is an evolving guide designed to support your journey with SitecoreAI. Consider it a work in progress: your go-to for continuous learning and development in the ever-changing landscape of digital experience platforms. Stay tuned for ongoing updates as we grow this resource with you in mind!
 
 ### Links
 <Row columns={3}>

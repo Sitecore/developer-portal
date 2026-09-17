@@ -248,13 +248,13 @@ At this point we have the Text Teaser component layout defined, with some basic 
    **Congratulations!** You have successfully created a new Text Teaser component, made it available to authors, and then added it to your home page, all without writing any code.
 </Alert>
 
-### Related XM Cloud Documentation
+### Related SitecoreAI Documentation
 
-- [Get started with XM Cloud Components](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-started-with-xm-cloud-components.html)
+- [Get started with SitecoreAI Cloud Components](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-started-with-xm-cloud-components.html)
 - [Staging and publishing components](https://doc.sitecore.com/xmc/en/users/xm-cloud/staging-and-publishing-components.html)
 - [Work with components](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-components.html)
 - [Work with a component layout](https://doc.sitecore.com/xmc/en/users/xm-cloud/work-with-a-component-layout.html)
 
-### Related XM Cloud Accelerate guidance for Sitecore Partners
+### Related SitecoreAI Accelerate guidance for Sitecore Partners
 
 - [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components)

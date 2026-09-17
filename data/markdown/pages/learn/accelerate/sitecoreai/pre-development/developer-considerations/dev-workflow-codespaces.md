@@ -13,6 +13,8 @@ audience: ['Architect','Technical Implementer']
 
 The development team needs to be able to develop both the CMS and the Website application (Head Next.js application), but it is not possible to use Docker for local development.
 
+> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.
+
 ## Execution
 
 Github Codespaces provides a simple solution to develop both the web application (Next.js) and the CMS development (data modelling, templates, rendering items etc…) in a common workspace without using Docker.
