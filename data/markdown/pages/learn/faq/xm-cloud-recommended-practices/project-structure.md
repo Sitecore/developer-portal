@@ -11,7 +11,7 @@ cdpTags: ['xm-cloud']
 </Alert>
 
 <Row columns={3}>
-  <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+  <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
   <Link title="Branching Strategy" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/branching-strategy" />
   <Link title="Development Workflow: GitHub Codespaces" link="/learn/accelerate/xm-cloud/pre-development/developer-experience/dev-workflow-codespaces" />
   <Link title="Multisite Architecture" link="/learn/accelerate/xm-cloud/pre-development/project-architecture/multisite" />

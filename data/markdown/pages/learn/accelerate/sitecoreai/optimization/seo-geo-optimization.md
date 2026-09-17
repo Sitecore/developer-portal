@@ -1,6 +1,6 @@
 ---
 title: 'Optimizing content for AI'
-description: 'XM Cloud and Sitecore Search together provide the foundation for executing this strategy, enabling marketers to deliver AI-ready content that is discoverable, reusable, and aligned with user intent.'
+description: 'SitecoreAI and Sitecore Search together provide the foundation for executing this strategy, enabling marketers to deliver AI-ready content that is discoverable, reusable, and aligned with user intent.'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -47,7 +47,7 @@ This checklist is designed to start guiding you to evaluate and optimize your co
 |Topical Authority      | Deep, interlinked hubs are reused more in AI answers.                         | <ul><li>Build [pillar + cluster content](#the-pillar-and-cluster-model) structures</li><li>Keep corner stone pages fresh</li><li>Strengthen internal linking</li><li>Use taxonomies & tagging to model hubs</li></ul> |
 |Authority & Trust      | AI cites trusted, fresh, and credible sources (EEAT still applies).            | <ul><li>Model author bios/credentials in structured fields</li><li>Reuse testimonials, case studies, certifications</li><li>Apply variants & personalization rules</li><li>Ensure localization/href lang for global reach</li><li>Index bios and endorsements in Sitecore Search</li></ul> |
 |Website Search         | On-site search is a key authority and engagement touchpoint.                  | <ul><li>Use <a href="https://developers.sitecore.com/changelog/search/18082025/semantic-search---early-access-(ea)-now-available">semantic search</a> not keyword-only</li><li>Index docs, FAQs, gated asset metadata</li><li>Apply taxonomies for relevance</li><li>Use search insights to spot content gaps</li><li>Contextualize results (location, persona, behavior)</li><li>Add CTAs to make search a conversion tool</li><li>Decide whether to enable full-text search of PDFs/docs</li></ul>|
-|Optimization & Measurement| GEO success requires tracking AI referrals, testing, and governance.          |<ul><li>Track AI referrals (utm_source=chatgpt, bot logs etc)</li><li>Run <a href="https://doc.sitecore.com/xmc/en/users/xm-cloud/a-b-n-testing.html">A/B/n tests</a> with XM Cloud</li><li>Apply personalization rules for clarity by persona/region</li><li>Enforce <a href="https://doc.sitecore.com/xmc/en/users/xm-cloud/move-an-item-through-the-workflow.html">workflow</a> governance for content quality</li><li>Use analytics for refinement</li></ul>
+|Optimization & Measurement| GEO success requires tracking AI referrals, testing, and governance.          |<ul><li>Track AI referrals (utm_source=chatgpt, bot logs etc)</li><li>Run <a href="https://doc.sitecore.com/xmc/en/users/xm-cloud/a-b-n-testing.html">A/B/n tests</a> with SitecoreAI</li><li>Apply personalization rules for clarity by persona/region</li><li>Enforce <a href="https://doc.sitecore.com/xmc/en/users/xm-cloud/move-an-item-through-the-workflow.html">workflow</a> governance for content quality</li><li>Use analytics for refinement</li></ul>
  |
 
 
@@ -63,10 +63,10 @@ But AI crawlers are not Googlebot. Google can render JavaScript-heavy pages, but
 - Content blocked by noindex, robots.txt, or x-robots headers won’t appear in AI Overviews, Gemini, or ChatGPT results.
 - Studies show ChatGPT citations often mirror Google results. Strong SEO visibility increases your chances of being reused in AI answers.
 
-Optimizing your XM Cloud setup, keep in mind:
-- **Use SSR & Pre-rendering**: [Next.js in XM Cloud supports SSG, SSR, and ISR](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/prerendering-methods-and-data-fetching-strategies-in-jss-next-js-apps.html), ensuring bots that don’t run JavaScript can index fully rendered HTML. Reduces latency, ensuring AI bots don’t time out during crawl.  
+Optimizing your SitecoreAI setup, keep in mind:
+- **Use SSR & Pre-rendering**: [Next.js in SitecoreAI supports SSG, SSR, and ISR](https://doc.sitecore.com/xmc/en/developers/jss/latest/jss-xmc/prerendering-methods-and-data-fetching-strategies-in-jss-next-js-apps.html), ensuring bots that don’t run JavaScript can index fully rendered HTML. Reduces latency, ensuring AI bots don’t time out during crawl.  
 - **Metadata controls**: Make sure marketers can manage titles, meta descriptions, canonical tags, and robot instructions per page without dev intervention as long as these are populated. These can be populated directly in the pages with [dynamic metadata available in Next.js](https://nextjs.org/docs/app/getting-started/metadata-and-og-images).  
-- **Localization**: XM Cloud manages languages and prevents thin content duplication, ensuring AI engines interpret regional content correctly. Refer to the [Multilingual content and localization](https://developers.sitecore.com/learn/accelerate/xm-cloud/implementation/information-architecture/localization) recipe for more information.  
+- **Localization**: SitecoreAI manages languages and prevents thin content duplication, ensuring AI engines interpret regional content correctly. Refer to the [Multilingual content and localization](https://developers.sitecore.com/learn/accelerate/xm-cloud/implementation/information-architecture/localization) recipe for more information.  
 
 ### 2. Crawlability and indexability
 AI doesn’t look at your pages the way we do, it retrieves content in chunks. That means each section of your site needs to stand on its own. Clear headings, FAQs, and short answer-led paragraphs increase your chances of being pulled into AI answers. Schema types like FAQPage, HowTo, and Product give search engines and AI tools stronger signals about how to reuse your content. 
@@ -74,9 +74,9 @@ AI doesn’t look at your pages the way we do, it retrieves content in chunks. T
 Component-based authoring and schema-driven templates mean FAQs, summaries, and metadata are stored in structured fields, not buried in rich text. Add to that reusable content blocks and you’ve got a system where content is modular, consistent, and AI-ready by design.
 | Practice                   | Description |
 |----------------------------|-------------|
-| **Component-based authoring** | In XM Cloud, FAQs, headings, metadata, and alt text are stored in discrete fields rather than buried in a WYSIWYG editor, ensuring consistent structure. |
+| **Component-based authoring** | In SitecoreAI, FAQs, headings, metadata, and alt text are stored in discrete fields rather than buried in a WYSIWYG editor, ensuring consistent structure. |
 | **Schema-driven templates**   | FAQPage, HowTo, and Product schemas can be built into content types so that answer-ready markup is baked into your pages. |
-| **Reusable modular content**  | Atomic content items in XM Cloud can be reused across different pages, campaigns, and channels. This ensures consistency and makes your content easier for AI to interpret. |
+| **Reusable modular content**  | Atomic content items in SitecoreAI can be reused across different pages, campaigns, and channels. This ensures consistency and makes your content easier for AI to interpret. |
 | **Lead with the answer**      | Start sections with a clear, concise response before elaborating and break content into standalone blocks (FAQs, follow-up questions, visuals). Match how people and LLMs frame prompts. |
 | **Multimodal cues**           | Use alt text, captions, and tables so AI can parse non-text elements. |
 | **Authority signals**         | Author bio, structured data, outbound references reinforce credibility. |
@@ -98,17 +98,17 @@ One of the biggest indicators of authority is freshness. Cornerstone content tha
  #### Strength in Internal Linking
 Authority isn’t only about what you say but also about how you connect ideas. Internal linking strengthens relationships between your content. When you use context-rich anchor text to tie related pieces together, you guide both users and search engines through your knowledge ecosystem. This interconnectedness reinforces authority in ways that isolated articles never could.
 
-For organizations managing large-scale content, Sitecore XM Cloud provide specific advantages for structuring content hubs:
+For organizations managing large-scale content, SitecoreAI provide specific advantages for structuring content hubs:
 
 - **Taxonomy & tagging**: You can model clusters by topic, industry, or persona, ensuring that your hubs are organized and structured for discovery.  
 - **API-based requests**: Entire content clusters can be surfaced programmatically in AI-friendly formats, making it easier for engines to consume your content.  
-- **Analytics**: With XM Cloud & Sitecore Search in place, use your built-in analytics to see what users are searching for, spot content gaps, and create new clusters to meet demand. Comparing this to your analytics should show you the gap of what users are ultimately search or prompting AI for.  
+- **Analytics**: With SitecoreAI & Sitecore Search in place, use your built-in analytics to see what users are searching for, spot content gaps, and create new clusters to meet demand. Comparing this to your analytics should show you the gap of what users are ultimately search or prompting AI for.  
 
 ### 4. Authority, Citations & Personalization Resilience
 
 Authority and trust are just as critical in GEO as they are in SEO. AI doesn’t cite everything it uses, it cites what it sees as trustworthy. EEAT still applies: expertise, experience, authority, and trust. Freshness is even more amplified in AI. Studies show LLMs tend to cite content that’s significantly newer than what Google surfaces. Proof points like case studies, certifications, and data-backed claims further reinforce authority.
 
-To strengthen these strategies, and scale them effectively, make sure that while setting up XM Cloud:
+To strengthen these strategies, and scale them effectively, make sure that while setting up SitecoreAI:
 
 - **Author profiles as structured fields**: Model bios, credentials, and bylines consistently to reinforce expertise. Consider that these might not just be against your usual ‘article’ pages but also other types of content.  
 
@@ -141,13 +141,13 @@ For many visitors, the internal search bar is the first stop after landing on yo
 ### 6. Optimization & Measurement
 Optimization and measurement in GEO are about visibility and continuous improvement. AI referrals can be tracked: ChatGPT and others often send traffic with identifiable tags like `utm_source=chatgpt`, which you can segment in GA4 to distinguish it from Google. Bot activity is also visible in CDN or server logs, like Cloudflare, where you’ll see OAI Search Bot, PerplexityBot, and others. And finally, experimentation matters. Different formats and structures perform differently in AI.  
 
-- **Experimentation with A/B/n Testing**: AI doesn’t always favor content in predictable ways. With XM Cloud’s [A/B/n testing](https://doc.sitecore.com/xmc/en/users/xm-cloud/a-b-n-testing.html), teams can run experiments directly inside the platform—testing multiple variants of the same content, including AI-optimized phrasing. This helps uncover which formats, tones, and structures perform best when surfaced by AI engines.  
+- **Experimentation with A/B/n Testing**: AI doesn’t always favor content in predictable ways. With SitecoreAI’s [A/B/n testing](https://doc.sitecore.com/xmc/en/users/xm-cloud/a-b-n-testing.html), teams can run experiments directly inside the platform—testing multiple variants of the same content, including AI-optimized phrasing. This helps uncover which formats, tones, and structures perform best when surfaced by AI engines.  
 
-- **Smarter Personalization Rules**: AI is context-driven, which makes content adaptability critical. XM Cloud enables [personalization rules](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html) that deliver simplified, audience-specific content in real time. By streamlining content for different personas and contexts, brands increase the likelihood of their material being reused by AI platforms across multiple scenarios.  
+- **Smarter Personalization Rules**: AI is context-driven, which makes content adaptability critical. SitecoreAI enables [personalization rules](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html) that deliver simplified, audience-specific content in real time. By streamlining content for different personas and contexts, brands increase the likelihood of their material being reused by AI platforms across multiple scenarios.  
 
-- **Workflow Governance for Content quality**: Optimization is only as strong as the governance behind it. XM Cloud provides workflow governance tools that ensure high-value content is regularly updated, reviewed, and approved. This minimizes the risk of outdated or inconsistent material making its way into AI answers, while keeping authority signals intact.  
+- **Workflow Governance for Content quality**: Optimization is only as strong as the governance behind it. SitecoreAI provides workflow governance tools that ensure high-value content is regularly updated, reviewed, and approved. This minimizes the risk of outdated or inconsistent material making its way into AI answers, while keeping authority signals intact.  
 
-- **Search Analytics for Continuous Refinement**: XM Cloud [page analytics](https://doc.sitecore.com/xmc/en/users/xm-cloud/analyze.html) and Sitecore Search analytics, giving teams insights into the queries, intents, and conversions that matter most. By analyzing how users interact with content, and how AI platforms surface it, marketers can refine their clusters and continuously improve visibility in both search and AI-driven experiences.  
+- **Search Analytics for Continuous Refinement**: SitecoreAI [page analytics](https://doc.sitecore.com/xmc/en/users/xm-cloud/analyze.html) and Sitecore Search analytics, giving teams insights into the queries, intents, and conversions that matter most. By analyzing how users interact with content, and how AI platforms surface it, marketers can refine their clusters and continuously improve visibility in both search and AI-driven experiences.  
 
 
 ## Related Recipes

@@ -1,6 +1,6 @@
 ---
 title: 'Sitemap'
-description: 'Configuration of Sitemap in XM Cloud'
+description: 'Configuration of Sitemap in SitecoreAI'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -11,13 +11,13 @@ audience: ['Architect','Technical Implementer']
 
 ## Context
 
-A marketer, strategist or content author would like to use industry standard SEO tools to ensure that all required content is discoverable and included in search engine indexes. To do this a sitemap is required. This recipe will walk the developer through the steps to configure a Sitemap in XM Cloud
+A marketer, strategist or content author would like to use industry standard SEO tools to ensure that all required content is discoverable and included in search engine indexes. To do this a sitemap is required. This recipe will walk the developer through the steps to configure a Sitemap in SitecoreAI
 
 ## Execution
 
-This solution assumes the developer has already configured an XM Cloud site and the Next.JS web application. XM Cloud uses SXA sitemap functionality by default. However it’s possible to implement additional Sitemap’s directly in the head application to target other sets of content, such as PDF’s or Images.
+This solution assumes the developer has already configured a SitecoreAI site and the Next.JS web application. SitecoreAI uses SXA sitemap functionality by default. However it’s possible to implement additional Sitemap’s directly in the head application to target other sets of content, such as PDF’s or Images.
 
-Avoid building the XM Cloud sitemap with custom implementations on the Content Management role, it can lead to maintenance challenges, compatibility issues, and unnecessary complexity—leveraging the built-in sitemap generation ensures reliability, scalability, and alignment with best practices.
+Avoid building the SitecoreAI sitemap with custom implementations on the Content Management role, it can lead to maintenance challenges, compatibility issues, and unnecessary complexity—leveraging the built-in sitemap generation ensures reliability, scalability, and alignment with best practices.
 
 Setting this up will require:
 - An SXA Site with properly configured site definitions
@@ -25,11 +25,11 @@ Setting this up will require:
 
 To configure the Host name for your Sitemap you’ll need to update the target hostname and hostname on the `Site` level. Detail on this configuration can be found on the [Configure a sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) documentation.
 
-XM Cloud sitemaps can be managed using the configuration options available in [Sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/configure-a-sitemap-in-sites.html). Configure the sitemap to guide search engines through your site's structure. The sitemap is regenerated after the publishing process ends, depending on the refresh threshold configuration. To ensure that the sitemap link is generated properly for your hosted/live sites, you must configure the target hostname on the site host item. Find the sitemap of hosted/live sites by typing /sitemap.xml after the hostname
+SitecoreAI sitemaps can be managed using the configuration options available in [Sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/configure-a-sitemap-in-sites.html). Configure the sitemap to guide search engines through your site's structure. The sitemap is regenerated after the publishing process ends, depending on the refresh threshold configuration. To ensure that the sitemap link is generated properly for your hosted/live sites, you must configure the target hostname on the site host item. Find the sitemap of hosted/live sites by typing /sitemap.xml after the hostname
 
-XM Cloud generates the Sitemap media item when an item is published on the Site, but only after a period of time has passed since the last sitemap generation job occurred. This media item contains the Sitemap.xml file that is served in Experience Edge.
+SitecoreAI generates the Sitemap media item when an item is published on the Site, but only after a period of time has passed since the last sitemap generation job occurred. This media item contains the Sitemap.xml file that is served in Experience Edge.
 
-XM Cloud sitemaps are configured on `/sitecore/content/<site collection>/<site>/Settings/Sitemap`. Detail of this can be found on the [Configure a sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) documentation.
+SitecoreAI sitemaps are configured on `/sitecore/content/<site collection>/<site>/Settings/Sitemap`. Detail of this can be found on the [Configure a sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) documentation.
 
 
 ### Excluding Items and Publishing
@@ -39,11 +39,11 @@ To configure an item so that it’s excluded from the Sitemap you will need to u
 ## Insights
 
 ### Managing the sitemap in the Head Application
-XM Cloud sitemaps can also be managed directly within the Head application by leveraging [Next.js's built-in sitemap metadata API](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap). This approach allows developers to generate and serve sitemaps dynamically within the app directory.
+SitecoreAI sitemaps can also be managed directly within the Head application by leveraging [Next.js's built-in sitemap metadata API](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap). This approach allows developers to generate and serve sitemaps dynamically within the app directory.
 
 By defining a `sitemap.ts` file within the `app` directory, you can programmatically structure the sitemap data based on your site's content, fetching necessary routes from the Experience Edge.
 
-While XM Cloud provides built-in sitemap generation, if your sitemap requirements are more complex—such as needing dynamic URL generation, multiple sitemap files, or further conditional route inclusion—managing sitemaps within the Head application can be a viable option. This approach allows greater flexibility, enabling you to fetch and structure sitemap data dynamically based on your XM Cloud content, apply custom logic, integrate with external data sources if needed.
+While SitecoreAI provides built-in sitemap generation, if your sitemap requirements are more complex—such as needing dynamic URL generation, multiple sitemap files, or further conditional route inclusion—managing sitemaps within the Head application can be a viable option. This approach allows greater flexibility, enabling you to fetch and structure sitemap data dynamically based on your SitecoreAI content, apply custom logic, integrate with external data sources if needed.
 
 
 ### The Experience Edge sitemap GraphQL query

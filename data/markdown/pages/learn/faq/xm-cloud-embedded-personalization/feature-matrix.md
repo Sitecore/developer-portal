@@ -107,10 +107,10 @@ _Sitecore Engagement: Listen, Think, Respond, Learn Feature-Matrix_
 
 Personalization within XM Cloud is done based on anonymous users. To get access to the identity resolution and unifications feature, customers should license Sitecore Personalize.
 
-### Where can I find support for Embedded Personalize? Is this information in XM Cloud documentation or CDP & Personalize support?
+### Where can I find support for Embedded Personalize? Is this information in SitecoreAI documentation or CDP & Personalize support?
 
-Please check the following XM Cloud documentation for:
+Please check the following SitecoreAI documentation for:
 
-**Business/end-user docs**: https://doc.sitecore.com/xmc/en/users/xm-cloud/create-targeted-digital-experiences-with-xm-cloud-pages-personalize.html
+**Business/end-user docs**: https://doc.sitecore.com/sai/en/users/sitecoreai/create-targeted-digital-experiences-with-xm-cloud-pages-personalize.html
 
-**Developer docs**: https://doc.sitecore.com/xmc/en/developers/xm-cloud/troubleshooting-the-next-js-personalize-add-on.html
+**Developer docs**: https://doc.sitecore.com/sai/en/developers/sitecoreai/troubleshooting-the-next-js-personalize-add-on.html

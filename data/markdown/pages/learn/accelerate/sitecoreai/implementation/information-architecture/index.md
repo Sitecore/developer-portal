@@ -1,6 +1,6 @@
 ---
 title: 'Information Architecture'
-description: 'This Cookbook provides a set of recipes to help implementing XM Cloud through setup, configuration and implemenation.'
+description: 'This Cookbook provides a set of recipes to help implement SitecoreAI through setup, configuration and implemenation.'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true

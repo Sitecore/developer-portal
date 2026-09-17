@@ -1,6 +1,6 @@
 ---
 title: 'Scope and Governance Framework'
-description: 'Make expectations, responsibilities, and governance clear to keep your XM Cloud implementation on track.'
+description: 'Make expectations, responsibilities, and governance clear to keep your SitecoreAI implementation on track.'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
@@ -23,7 +23,7 @@ Business adoption is crucial for any project - it's a shift in how teams operate
 
 ### Define Scope
 
-Take a moment prior to diving in and building something on XM Cloud to take an honest look at what you're delivering today—and what will get left behind for now, and what will get left behind for now to get reviewed again in the future.. With no scope limits, teams are at risk of over commitment, burnout, or tackling features that deliver no timely value.
+Take a moment prior to diving in and building something on SitecoreAI to take an honest look at what you're delivering today—and what will get left behind for now, and what will get left behind for now to get reviewed again in the future.. With no scope limits, teams are at risk of over commitment, burnout, or tackling features that deliver no timely value.
 
 Start out by creating an exhaustive list of your current digital landscape:
 - What pages, templates, languages, and media assets are included?
@@ -58,7 +58,7 @@ Before your project gets too far along, get all key stakeholders in one room. Ge
 
 Spend time mapping interdependencies among content, design, infrastructure, and compliance. Make sure each team understands how their work relies on others—and how timing, resources, or blockers in one can affect the others.
 
-As importantly, outline how scope will be managed in the future. XM Cloud accommodates fast delivery, but quickly can get nasty without specified scope gates and collaborative timelines.
+As importantly, outline how scope will be managed in the future. SitecoreAI accommodates fast delivery, but quickly can get nasty without specified scope gates and collaborative timelines.
 
 As straightforward suggestions:
 - Hold an collaborative planning meeting with IT, marketing, business leaders, and lawyers. Use visual tools like journey maps or swimlanes to display dependencies and decision points.
@@ -69,7 +69,7 @@ Stakeholder alignment is not a one-point of check—morally, it's a continuous p
 
 ### Define Operational Ownership
 
-One of the key benefits about XM Cloud is that it removes the responsibility of infrastructure management from you. No need to patch servers, manage hosting, or auto-scale to think about. But that does not mean that everything is "set and forget."
+One of the key benefits about SitecoreAI is that it removes the responsibility of infrastructure management from you. No need to patch servers, manage hosting, or auto-scale to think about. But that does not mean that everything is "set and forget."
 
 Your organization still owns the experience —everything that happens on top of the platform: deployments, remedying issues, monitoring, and stability of your front-end and integrations. If ownership is not in place, responsibility will fall through cracks, especially when things break. 
 
@@ -80,7 +80,7 @@ Operational clarity is necessary to get to long-term success and frictionless la
 
 ### Gather Practical Requirements
 
-An effective migration to XM Cloud isn't about replicating what you did in your previous CMS. It's about reconsidering what you need so it maps to how your business actually works today—and where it's headed.
+An effective migration to SitecoreAI isn't about replicating what you did in your previous CMS. It's about reconsidering what you need so it maps to how your business actually works today—and where it's headed.
 
 Too many teams begin by copying features from older platforms without asking: Is this still worth it? Who's using it? Does it serve how we work today? Instead, focus on what you really need to create valuable, lasting digital experiences.
 
@@ -103,7 +103,7 @@ Review the [Requirements Gathering](/learn/accelerate/xm-cloud/pre-development/d
 
 ### Establish Governance and Roles
 
-XM Cloud enables decentralized teams to go faster—but speed without governance leads to inconsistency, confusion, and risk. Governance isn't control—it's clarity. It sets the rules of the road so your teams can go faster, safer.
+SitecoreAI enables decentralized teams to go faster—but speed without governance leads to inconsistency, confusion, and risk. Governance isn't control—it's clarity. It sets the rules of the road so your teams can go faster, safer.
 
 Great governance provides teams with what they need to build with confidence, while keeping the business secure, consistent, and compliant.
 
@@ -143,19 +143,19 @@ With all the options, tools, and moving parts, it's easy to confuse or redo. Kee
 
 As you evolve, don't let old pieces drag you down. Every system needs a process of substitution. Without decommissioning and versioning, legacy templates, dormant integrations, and out-of-date styles pile up. Retire in your build cycle. When something new comes out, determine what gets substituted—and when. That's how you stay lean and ready for what's next.
 
-And as XM Cloud takes infrastructure concerns off your plate, don't forget your boundaries—literally. Get to know service quotas, data size limits, API rate limits, and how data rules apply to your setup so you are building smarter.
+And as SitecoreAI takes infrastructure concerns off your plate, don't forget your boundaries—literally. Get to know service quotas, data size limits, API rate limits, and how data rules apply to your setup so you are building smarter.
 
 ### People & Process
 
-Technology doesn't deliver value—people do. And when you move to XM Cloud, you're not just changing platforms; you're changing how your teams work, build, and grow together. That's why enablement isn't one onboarding session. It's a continuous, changing part of the way you work.
+Technology doesn't deliver value—people do. And when you move to SitecoreAI, you're not just changing platforms; you're changing how your teams work, build, and grow together. That's why enablement isn't one onboarding session. It's a continuous, changing part of the way you work.
 
-XM Cloud redefines roles - creators are closer to the software, marketers have more control, developers iterate faster, and operations take on new roles. You'll want an enablement plan that gets your teams up to speed—then stays ahead of them if you want your teams to thrive. That means frequent check-ins, updated playbooks, and easily accessible support, not just at launch but at every phase of your digital transformation.
+SitecoreAI redefines roles - creators are closer to the software, marketers have more control, developers iterate faster, and operations take on new roles. You'll want an enablement plan that gets your teams up to speed—then stays ahead of them if you want your teams to thrive. That means frequent check-ins, updated playbooks, and easily accessible support, not just at launch but at every phase of your digital transformation.
 
 Take also the opportunity to understand what content you actually need. You might find that a large chunk of your site hasn’t been visited for a long period and are not driving value. Identify what’s outdated, unused, or irrelevant. Review the [Content Audit](/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit) documentation for further detail.
 
 ### Optimization & Insights
 
-Launch is just the beginning. Real value is in the way you watch, learn, and hone after your site goes live. XM Cloud gives you the means to go fast, but to make improved what matters, you need to see what matters. That's where smart observability comes into play.
+Launch is just the beginning. Real value is in the way you watch, learn, and hone after your site goes live. SitecoreAI gives you the means to go fast, but to make improved what matters, you need to see what matters. That's where smart observability comes into play.
 
 Review the [Operational Governance]() recipe for further details on how to setup the right governance and measures in place post go-live.
 
@@ -169,13 +169,13 @@ Review the [Operational Governance]() recipe for further details on how to setup
 
  <Link title="Hosting Head Application" link="/learn/accelerate/xm-cloud/pre-development/hosting-applications"/>
  <Link title="Content Audit" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit"/>
- <Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project"/>
+ <Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project"/>
 </Row>
 
 ## Related Documentation
 
 <Row columns={2}>
- <Link title="XM Cloud Documentation" link="https://doc.sitecore.com/xmc"/>
+ <Link title="SitecoreAI Documentation" link="https://doc.sitecore.com/xmc"/>
 </Row>
 
 

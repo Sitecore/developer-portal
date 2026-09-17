@@ -291,7 +291,7 @@ You can now test out your folder by creating a sample Text Teaser content data s
    **Congratulations!** You have now learned how to create data source templates, how to configure insert options, and how to configure modules. You then validated your template by by creating some sample Text Teaser content. You will now be able to use your new content model with your Text Teaser component in the next tutorial!
 </Alert>
 
-### Related XM Cloud Documentation
+### Related SitecoreAI Documentation
 
 - [Data Templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-templates.html)
 - [Data definition and template overview](https://doc.sitecore.com/xmc/en/developers/xm-cloud/data-definition-and-template-overview.html)

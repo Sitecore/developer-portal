@@ -181,7 +181,7 @@ In the previous tutorial, you added a Text Teaser component to the home page. Af
    **Congratulations!** You have now updated the Text Teaser component to work from a piece of re-usable authored content instead of using static content added to the component directly. You also learned how to map visual elements to template fields.
 </Alert>
 
-### Related XM Cloud Documentation
+### Related SitecoreAI Documentation
 
 - [Get your content from an XM data source](https://doc.sitecore.com/xmc/en/users/xm-cloud/get-your-content-from-an-xm-data-source.html)
 - [Map data from an XM data source to a component](https://doc.sitecore.com/xmc/en/users/xm-cloud/map-data-from-an-xm-data-source-to-a-component.html)

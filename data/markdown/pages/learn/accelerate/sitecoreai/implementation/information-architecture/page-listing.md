@@ -1,6 +1,6 @@
 ---
 title: 'Performance-optimized page listing'
-description: 'Performance-conscious implementation pattern for rendering page listings-such as navigation or child item components-in Sitecore XM Cloud'
+description: 'Performance-conscious implementation pattern for rendering page listings-such as navigation or child item components-in SitecoreAI'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']

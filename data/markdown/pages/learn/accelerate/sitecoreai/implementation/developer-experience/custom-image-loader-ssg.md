@@ -1,6 +1,6 @@
 ---
 title: 'Custom Next.js Image Loader for SSG'
-description: 'Implement a custom image loader for Next.js when using Static Site Generation (SSG), specifically for Sitecore XM Cloud projects'
+description: 'Implement a custom image loader for Next.js when using Static Site Generation (SSG), specifically for SitecoreAI projects'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
@@ -10,7 +10,7 @@ audience: ['Technical Implementers','Architects', 'Product Owner']
 ---
 
 ## Context
-Static Site Generation (SSG) generates static HTML files at build time, and the default Next.js Image component (next/image) requires server-side functionality. For Sitecore XM Cloud projects, we need a custom solution that works with both development and production environments while maintaining image optimization capabilities.
+Static Site Generation (SSG) generates static HTML files at build time, and the default Next.js Image component (next/image) requires server-side functionality. For SitecoreAI projects, we need a custom solution that works with both development and production environments while maintaining image optimization capabilities.
 
 ## Execution
 This use case is designed for teams deploying static Next.js sites using `output: "export"` who still want the full benefits of the `<Image />` component like responsive loading, lazy loading, and automatic format conversion. It’s especially useful when images are hosted on Sitecore Edge (or another CDN) and need to be optimized at build time.
@@ -128,7 +128,7 @@ Image optimization is critical to performance and custom image loader implementa
 - Lazy loading to reduce initial load time.
 - No layout shift with required width and height props.
 - Automatic image optimization for size and quality.
-- Fully compatible with `output: "export"` making it ideal for fully static XM Cloud websites.
+- Fully compatible with `output: "export"` making it ideal for fully static SitecoreAI websites.
 - Removes the need for a runtime image optimization service.
 - Simplifies deployment pipelines by generating all required assets at build time.
 

@@ -1,6 +1,6 @@
 ---
 title: 'Multisite Strategy'
-description: 'Build a repeatable, efficient model for launching and managing multiple sites using XM Cloud'
+description: 'Build a repeatable, efficient model for launching and managing multiple sites using SitecoreAI'
 hasSubPageNav: true
 hasInPageNav: true
 area: ['accelerate']
@@ -10,7 +10,7 @@ audience: ['All']
 ---
 
 ## Context
-Multi-brand and global businesses tend to battle to scale digital experiences - teams launch sites with ill-defined scope, alignment, and operations ownership resulting in variable quality, duplicate work, and disappointing ROI. XM Cloud provides flexibility and scale to extend beyond these limitations, but only when combined with a properly organized digital factory model that fits your business.
+Multi-brand and global businesses tend to battle to scale digital experiences - teams launch sites with ill-defined scope, alignment, and operations ownership resulting in variable quality, duplicate work, and disappointing ROI. SitecoreAI provides flexibility and scale to extend beyond these limitations, but only when combined with a properly organized digital factory model that fits your business.
 
 
 ## Execution

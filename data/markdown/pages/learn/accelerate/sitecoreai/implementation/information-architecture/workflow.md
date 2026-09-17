@@ -11,7 +11,7 @@ audience: ['Architect','Product Owner','Project Manager','Technical Implementer'
 
 ## Context
 
-XM Cloud comes with a sample workflow that should not be used as an actual configuration but as an example of a simple workflow. Workflow helps customers prevent unplanned content from making it to their website without the proper approvals. It also helps maintain consistent quality across all content. Each step in the editing process—such as fact-checking, style alignment, tone consistency, and further reviews ensures that the content meets specific standards.
+SitecoreAI comes with a sample workflow that should not be used as an actual configuration but as an example of a simple workflow. Workflow helps customers prevent unplanned content from making it to their website without the proper approvals. It also helps maintain consistent quality across all content. Each step in the editing process—such as fact-checking, style alignment, tone consistency, and further reviews ensures that the content meets specific standards.
 
 ## Execution
 
@@ -32,7 +32,7 @@ Addtional components changed at this time will also enter workflow. When content
 
 ### Migration Considerations
 
-If you are currently on XP/XM and migrating to XM Cloud there are some specific considerations that you should consider when making this transition. Two specific focuses that should be considered are any .NET customizations that have been made to affect items controlled by workflow as well as the introduction of webhooks which can allow for new ways to implement workflow. In addition to these considerations, there are existing implementations that should be reviewed and changed based on the information below:
+If you are currently on XP/XM and migrating to SitecoreAI there are some specific considerations that you should consider when making this transition. Two specific focuses that should be considered are any .NET customizations that have been made to affect items controlled by workflow as well as the introduction of webhooks which can allow for new ways to implement workflow. In addition to these considerations, there are existing implementations that should be reviewed and changed based on the information below:
 
 Email Actions should be implemented with a Webhook Submit Action as detailed further down.
 
@@ -69,7 +69,7 @@ It's important to configure workflow for both pages and the separate data source
 <Image src="/images/learn/accelerate/xm-cloud/workflow/datasources-test.png" title="datasources test"/>
 <br/><br/>
 
-If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB XM Cloud components then all of the necessary configuration should already be in place including base templates.
+If you have followed the [Creating New Components](/learn/accelerate/xm-cloud/implementation/developer-experience/creating-new-components) recipe and have created a new component by cloning one of the existing OOTB SitecoreAI components then all of the necessary configuration should already be in place including base templates.
 
 Note that only templates that have the **\_PerSiteStandardValues** base template assigned to them appear in the dialog box. You can find the base template here: _/sitecore/Templates/Foundation/Experience Accelerator/StandardValues/_.  If for some reason your Site Collection Template or Datasource component does not appear in the dialog box when trying to add standard values this would be the first thing to check. More information available [here](https://doc.sitecore.com/xmc/en/developers/xm-cloud/walkthrough--defining-standard-values-for-your-sites.html#add-standard-values-under-individual-sites) on the documentation site.
 

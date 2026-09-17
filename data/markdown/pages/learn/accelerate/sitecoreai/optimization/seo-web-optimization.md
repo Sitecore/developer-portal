@@ -14,10 +14,10 @@ On-page SEO covers optimizing webpage content for search engines and visitors. W
 
 Tools and SEO checkers can report issues detected on the website, but cannot analyze whether the root cause is code or content. For this reason it’s necessary to review the implementation from the inside as well as from what is finally rendered to the client.
 
->There are many guides online which cover general SEO best-practice, so in this recipe we relate the topics within the context of Sitecore XM Cloud. Please cross-reference with SEO authorities for deep-dives and the latest on SEO best practice. 
+>There are many guides online which cover general SEO best-practice, so in this recipe we relate the topics within the context of SitecoreAI. Please cross-reference with SEO authorities for deep-dives and the latest on SEO best practice. 
 
 ## Execution
-In the sections below, we cover XM Cloud SEO best practices, relating to common in-page SEO best practice and components concepts SEO best. Before deep diving in this, make sure you have reviewed the [Search engine optimization (SEO)](https://doc.sitecore.com/xmc/en/developers/xm-cloud/search-engine-optimization--seo-.html) documentation.
+In the sections below, we cover SitecoreAI SEO best practices, relating to common in-page SEO best practice and components concepts SEO best. Before deep diving in this, make sure you have reviewed the [Search engine optimization (SEO)](https://doc.sitecore.com/xmc/en/developers/xm-cloud/search-engine-optimization--seo-.html) documentation.
 
 ### SEO recommendation in website
 Many websites suffer from common HTML and structural issues that can negatively impact search rankings, user experience, and crawlability. From poorly structured headings to missing meta tags, unoptimized images, and slow-loading pages, these technical missteps can make it harder for search engines to index and rank content effectively.
@@ -39,7 +39,7 @@ Many websites suffer from common HTML and structural issues that can negatively 
 |HTTP / HTTPS issues|After Google’s initiative to encourage websites to use SSL, it is crucial that your site is running on HTTPS. While most render hosts will be on HTTPS, it is important to review external resources.|Avoid mixed http and https content, especially across: <ul><li>Internal images, videos or audio.</li><li>Web fonts.</li><li>Iframes.</li><li>Internal JS and CSS files.</li><li>Images, fonts.</li><li>Internal URLs inside the JS and CSS files.</li><li>Open Graph tags</li></ul>|
 
 ### SEO recommendations in CMS components
-Optimizing SEO in XM Cloud starts by looking at key components that are used to build content - 
+Optimizing SEO in SitecoreAI starts by looking at key components that are used to build content - 
 
 #### 1. Media Items
 Use of oversized images or images in incorrect formats can cause pages to render more slowly. This is also impacted with the overuse of images on a page when it's not necessary. Reviewing your content, consider:
@@ -56,13 +56,13 @@ The Rich-text component can lead to SEO issues if not properly managed. Human er
 
 A detailed deep dive is provided in the Insights section.
 
-#### 3. Sitecore XM Cloud Forms
+#### 3. SitecoreAI Forms
 Similar issues to Rich-text fields can arise, both human and technical. Duplicate content, accessibility and UX (validation and CAPTCHAs) issues can impact SEO as well as conversion rates. A detailed deep dive is provided in the Insights section.
 
 ## Insights
 
 ### Rich Text Component SEO Issues
-When working with Sitecore XM Cloud's Rich Text Component, there are a few common in-page SEO issues that may arise. To improve SEO, it’s best to ensure clean and semantic HTML.
+When working with SitecoreAI's Rich Text Component, there are a few common in-page SEO issues that may arise. To improve SEO, it’s best to ensure clean and semantic HTML.
 
 |Issue|Detail|Recommendations|
 |-|-|-|

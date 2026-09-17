@@ -11,7 +11,7 @@ audience: ['All']
 
 ## Context
 
-We’re starting on a new XM Cloud instance and we will need to determine the acceptance criteria for the solution to be built. There are a number of key questions that need to be answered to make sure we have a proper project plan that can be planned and estimated properly.
+We’re starting on a new SitecoreAI instance and we will need to determine the acceptance criteria for the solution to be built. There are a number of key questions that need to be answered to make sure we have a proper project plan that can be planned and estimated properly.
 
 ## Execution
 
@@ -19,7 +19,7 @@ Getting requirements gathering together is key for the success of any project - 
 
 Start by decompiling any of the customer’s information into manageable requirements that can be documented at the task / story level so that designers and developers can plan their work and know that it matches the customer expectation. Don’t forget that this is not just technical requirements - keep in mind what the business strategy might be, what the ends goals are
 
-Answering these questions should help shape a comprehensive project plan for your XM Cloud implementation. It’s recommended that out of this a detailed requirements backlog is build to allow the creation of a timelines and estimation.
+Answering these questions should help shape a comprehensive project plan for your SitecoreAI implementation. It’s recommended that out of this a detailed requirements backlog is build to allow the creation of a timelines and estimation.
 
 ## Insights
 
@@ -30,12 +30,12 @@ The following topics are the key considerations that need to be captured and ans
 This section helps ensure that the technical solution aligns with broader business goals. It focuses on understanding what the business is trying to achieve and how success will be measured.
 
 - What are the primary business goals driving this implementation?
-- What key performance indicators (KPIs) will define success for the XM Cloud project?
+- What key performance indicators (KPIs) will define success for the SitecoreAI project?
 - Who are the primary stakeholders and decision-makers for this project?
 - What are the non-functional requirements (NFRs) like performance, security, and compliance?
-- How does the XM Cloud implementation fit into the long-term digital strategy of the business?
+- How does the SitecoreAI implementation fit into the long-term digital strategy of the business?
 - What are the technological limitations of their current site and how is that impacting their business?
-- What is the timeline we are looking to implement XM Cloud? If there are other products purchased with XM Cloud, what are the timelines for those products as well?
+- What is the timeline we are looking to implement SitecoreAI? If there are other products purchased with SitecoreAI, what are the timelines for those products as well?
 - What are the future scalability needs of the solution?
 - What is the expected content lifecycle management plan?
 - What is the current state of your existing content management systems?
@@ -45,7 +45,7 @@ This section helps ensure that the technical solution aligns with broader busine
 
 ### Content Management
 
-Since content management and personalization are core features of XM Cloud, this section focuses on understanding how content will be created, managed, and personalized to meet business needs. Going in, establish what the content model and IA should look like.
+Since content management and personalization are core features of SitecoreAI, this section focuses on understanding how content will be created, managed, and personalized to meet business needs. Going in, establish what the content model and IA should look like.
 
 - Do we understand how content is structured, reused, and scaled—across taxonomy, metadata, components, multilingual setup.
 - Even if you’re already owning your information architecture, a dedicated content audit will help. This isn’t just about what content exists—it’s about what it takes to move it, improve it, or leave it behind. Take time to evaluate the volume of content, setup of templates (across rigidity, bloat and inconsistency), content interdependencies and structural gaps.
@@ -71,16 +71,16 @@ Since content management and personalization are core features of XM Cloud, this
 - What are the user experience (UX) expectations for the solution?
 - Are there any accessibility requirements?
 - What is the level of front-end complexity (e.g., JavaScript frameworks, third-party tools)?
-- What are the search experienced required for the website, both for global search and for context based searches (such as a listing page for articles)?  The XM Cloud embedded Solr service is only for internal use of XM Cloud's UI. This cannot be customized or modified and search tools such as [Sitecore Search](https://doc.sitecore.com/search) should be used.
+- What are the search experienced required for the website, both for global search and for context based searches (such as a listing page for articles)?  The SitecoreAI embedded Solr service is only for internal use of SitecoreAI's UI. This cannot be customized or modified and search tools such as [Sitecore Search](https://doc.sitecore.com/search) should be used.
 
 ### Technical Requirements
 
-Defining the technical requirements early ensures the implementation can be designed and built with the right architecture in mind. These questions address how XM Cloud will integrate into your current systems, and what technical standards and requirements must be met.
+Defining the technical requirements early ensures the implementation can be designed and built with the right architecture in mind. These questions address how SitecoreAI will integrate into your current systems, and what technical standards and requirements must be met.
 
 #### Integrations
 
-- Which third-party systems need to integrate with XM Cloud?
-- Are the integrations required on the head application or part of XM Cloud?
+- Which third-party systems need to integrate with SitecoreAI?
+- Are the integrations required on the head application or part of SitecoreAI?
 - What APIs or connectors will be required for these integrations?
 - Are there any licensing or data sharing agreements to be considered?
 
@@ -88,7 +88,7 @@ Further information can be found on our [Retrieving Data from 3rd Party Integrat
 
 #### Customizations
 
-- Are you moving from XM/XP? What are the customizations that have been put on the setup - from Content Resolvers to Event Handlers - these should be documented and an approach provided. Further information can be found on our [Transition from XM/XP to XM Cloud recipe](/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc).
+- Are you moving from XM/XP? What are the customizations that have been put on the setup - from Content Resolvers to Event Handlers - these should be documented and an approach provided. Further information can be found on our [Transition from XM/XP to SitecoreAI recipe](/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc).
 - You might be moving from other CMS, which might have been customized for previous editorial journeys - evaluate these customizations and see what is actually required from an editor view point.
 - Do you expect to build custom backend functionality such as custom pipelines, jobs, or services? Alternatives must be explored using Edge Functions, Headless architecture, or external services.
 - Do you require scheduled background processing? Consider external schedulers, serverless functions, or Edge Middleware.
@@ -100,7 +100,7 @@ Further information can be found on our [Retrieving Data from 3rd Party Integrat
 - Are we able to split their pages with proper page and partial designs?  If we are doing multiple site, what is shared across websites?
 - What are the different components for both site specific and global?
 - If you are coming from XP/XM, what are your Rendering and data source templates? Will they need to be refactored for the new site structure? Take into consideration that there is a streamlined process [we recommend in creating components](/learn/accelerate/xm-cloud/pre-development/developer-experience/component-design-best-practices).
-- Does their site have redirects and how many? Will these be editable by the content team, or can we be moved to the head application? Will there be an effort to purge current redirects before bringing them into XM Cloud?
+- Does their site have redirects and how many? Will these be editable by the content team, or can we be moved to the head application? Will there be an effort to purge current redirects before bringing them into SitecoreAI?
 What is the plan for hosting the head application? Review the [Hosting Head Application](/learn/accelerate/xm-cloud/pre-development/hosting-applications) recipes for more informaiton.
 
 #### Multi-Site
@@ -134,8 +134,8 @@ Security is critical for any cloud-based solution, especially in industries with
 
 To ensure long-term success, teams need the right skills and knowledge to manage and maintain the system. This section addresses the training needs for both technical staff and content editors.
 
-- What is the level of technical expertise within the team for XM Cloud?
-- Does the customer’s team need to be technically trained on XM Cloud, or any tools in it’s eco system?
+- What is the level of technical expertise within the team for SitecoreAI?
+- Does the customer’s team need to be technically trained on SitecoreAI, or any tools in it’s eco system?
 - What are the content editor training needs, between OOTB usage vs implementation needs?
 - What technology stack are your developers trained for? XP/XM is predominantly a .NET solution, those developers may require training on front-end technologies such as React, Next.js and Angular.
 
@@ -172,10 +172,10 @@ These questions should have allowed you to build a wealth of information about t
 ## Related Recipes
 
 <Row columns={2}>
-<Link title="Preparing for an XM Cloud Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+<Link title="Preparing for a SitecoreAI Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-xm-cloud-project" />
 <Link title="Project Solution Setup" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero/project-solution-setup" />
 <Link title="Preparing For A Project" link="/learn/faq/xm-cloud-recommended-practices/preparing-for-project" />
-<Link title="Transition from XM/XP to XM Cloud" link="/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc" />
+<Link title="Transition from XM/XP to SitecoreAI" link="/learn/accelerate/xm-cloud/pre-development/project-planning/xm-xp-to-xmc" />
 <Link title="Redirect" link="/learn/accelerate/xm-cloud/implementation/redirect" />
 <Link title="Content Audit" link="/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit" />
 
@@ -184,5 +184,5 @@ These questions should have allowed you to build a wealth of information about t
 ## Related Documentation
 
 <Row columns={2}>
-  <Link title="Getting started with XM Cloud" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
+  <Link title="Getting started with SitecoreAI" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html" />
 </Row>

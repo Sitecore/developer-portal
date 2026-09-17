@@ -1,6 +1,6 @@
 ---
-title: 'Preparing for an XM Cloud Project'
-description: 'Overall strategies when planning to kick off an XM Cloud project'
+title: 'Preparing for a SitecoreAI Project'
+description: 'Overall strategies when planning to kick off a SitecoreAI project'
 area: ['accelerate']
 hasSubPageNav: true
 hasInPageNav: true
@@ -11,7 +11,7 @@ audience: ['Architect','Product Owner','Project Manager', 'User']
 
 ## Context
 
-Every successful XM Cloud project—whether you're starting fresh or evolving from a legacy platform—begins with well-defined objectives, alignment across teams, and a strategy that considers ambition and complexity. Having this in place upfront minimizes risk, prevents misalignment, and keeps delivery on track and efficient.
+Every successful SitecoreAI project—whether you're starting fresh or evolving from a legacy platform—begins with well-defined objectives, alignment across teams, and a strategy that considers ambition and complexity. Having this in place upfront minimizes risk, prevents misalignment, and keeps delivery on track and efficient.
 
 Let's dissect the fundamental components of this planning stage—and how nailing them from the beginning positions your project for long-term success.
 
@@ -20,7 +20,7 @@ Good planning sets the tone. It allows you to manage risk, move with speed, and 
 
 ### Project Plan
  
-There’s no one-size-fits-all approach to migrating to XM Cloud - depends on your business needs, technical sophistication, and risk tolerance. You have to be aware of the different project—and how to cope with the fact of having old and new platforms up and running at the same time.
+There’s no one-size-fits-all approach to migrating to SitecoreAI - depends on your business needs, technical sophistication, and risk tolerance. You have to be aware of the different project—and how to cope with the fact of having old and new platforms up and running at the same time.
 
 - Big Bang: Everything goes live at once. - decisive, and time sensitive. 
 - Phased: Content, sites, or regions are rolled out in stages - allows for validation, and supports teams ramp up .
@@ -35,7 +35,7 @@ Most businesses also look at going through a dual-run period—when old and new 
 
 ### Project Roles
 
-In the world of SaaS and Headless websites , the project roles change slightly from more traditional CMS or MVC-led development. We no longer break up the development into back-end and front-end development. For XM Cloud development, your project roles should follow this pattern:
+In the world of SaaS and Headless websites , the project roles change slightly from more traditional CMS or MVC-led development. We no longer break up the development into back-end and front-end development. For SitecoreAI development, your project roles should follow this pattern:
 
 |Role|Description|
 |--|--|
@@ -51,14 +51,14 @@ In the world of SaaS and Headless websites , the project roles change slightly f
 
 ### Implementation Team Structure
 
-The above is a general guide to team structure for an XM Cloud project. This can be used as a base model for the team, but the implementation team should be tailored based on scope and scale of the implementation. Depending on the size of the team and the project, some roles may be played by a single person who has the right experience. 
+The above is a general guide to team structure for a SitecoreAI project. This can be used as a base model for the team, but the implementation team should be tailored based on scope and scale of the implementation. Depending on the size of the team and the project, some roles may be played by a single person who has the right experience. 
 
 As an overarching approach, the development team should be made up of more front-end developers as more of the development tasks will lay here - keep in mind that a single CMS Developer will be fine to cover the requirements of multiple Web Application Developers. A team makeup would be:
 
 |Role|Count| Responsibilities |
 |--|--|--|
 | Architect | 1 | Solution design, integrations, scalability. |
-| CMS Developer | 1 | Sitecore XM Cloud setup, backend logic, content modelling. |
+| CMS Developer | 1 | SitecoreAI setup, backend logic, content modelling. |
 | Web Application Developers | 2 | Next.js or ASP.NET Core development, API integration, front-end UI. |
 | QA Tester | 1 | Automated & manual testing, performance validation. |
 
@@ -84,7 +84,7 @@ As with any good project delivery, determining the goals and KPIs of this implem
 
 While discovery often starts and ends as a separate project before the main implementation phase, some level of discovery will happen for the lifetime of the project as change management occurs.
 
-Sometimes separated to it’s own phase, during the **Design** phase, UX/UI designers create wireframes and layouts to create the overall design. This should be supported by running quantitative and/or qualitative surveys and user tests to validate if the designs match the customer and clients' requirements. If the project is a migration from an existing site to XM Cloud without a rebrand/redesign, this phase might not be required, but still considering what the authoring journey might be and how this might impact the UX/UI.
+Sometimes separated to it’s own phase, during the **Design** phase, UX/UI designers create wireframes and layouts to create the overall design. This should be supported by running quantitative and/or qualitative surveys and user tests to validate if the designs match the customer and clients' requirements. If the project is a migration from an existing site to SitecoreAI without a rebrand/redesign, this phase might not be required, but still considering what the authoring journey might be and how this might impact the UX/UI.
 
 From the discovery & design phases, a set of user stories can be created to help estimate the project and build out the project's backlog.
 
@@ -94,7 +94,7 @@ During the implementation, we take the user stories created from discovery & des
 
 The business stakeholders should be part of regular sprint, demos to review and provide feedback to the development team.
 
-The implementation phase can start earlier with Sprint Zero, which is used to set up the common ground for developers, meaning the XM Cloud Project and Environment(s) as well as the Software Solution for the head application and middleware. This also allow time for the implementation team to familiarize themselves with the technology stack. Sprint Zero is covered by a set of recipes that can be found [here](/learn/accelerate/xm-cloud/pre-development/sprint-zero) .
+The implementation phase can start earlier with Sprint Zero, which is used to set up the common ground for developers, meaning the SitecoreAI Project and Environment(s) as well as the Software Solution for the head application and middleware. This also allow time for the implementation team to familiarize themselves with the technology stack. Sprint Zero is covered by a set of recipes that can be found [here](/learn/accelerate/xm-cloud/pre-development/sprint-zero) .
 
 After Sprint Zero, priority should be given to the more simple components that can be used to generate content, followed by more complex components that might require functionality, interactions, or external data integrations. Based on this common ground, developers can create layouts and components that reflect the initial business goals - as much as it might be tempting to create all the components of the Home page first, this might not be the most productive approach.
 
@@ -109,7 +109,7 @@ Bringing a site from concept to the first release quickly requires an agile appr
 <ul>
   <li>Prioritize only the essential features that deliver immediate value, deferring nice-to-have elements for later. Make sure you are building components and templates that you absolutely need; try and re-use components to cut development time.</li>
   <li>Conduct regular demos and stakeholder reviews to align expectations and prevent late-stage rework. Do you require a full-feature launch or can you break your timeline down to small, iterative releases?</li>
-  <li>Make sure you are aware of OOTB features that can facilitate the implementation - for example - what’s the quickest answer to deployment: do we need to have a custom pipeline or can we rely on [XM Cloud Deploy](https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html)? </li>
+  <li>Make sure you are aware of OOTB features that can facilitate the implementation - for example - what’s the quickest answer to deployment: do we need to have a custom pipeline or can we rely on [SitecoreAI Deploy](https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html)? </li>
   <li>Content delays often stall projects. Start content modelling, migration, and creation in parallel with focus on essential pages and metadata, bringing in additional content after first release. Make sure it’s clear what the path for content migration including automation is, from the start.</li>
   <li>This first release is just the beginning. Use feature flags (example setting up [Modules](https://doc.sitecore.com/xmc/en/developers/xm-cloud/modules.html)) to roll out additional functionality over time. Leverage features such as [Personalize](https://doc.sitecore.com/xmc/en/users/xm-cloud/personalize.html) to refine and optimize based on user behaviour. Although you might be tempted to leave personalization features for later phases, these might be reduce implementation effort - example using Geography based conditions instead of building custom logic to provide content based on location.</li>
   <li>Consider Content Migration from the very beginning - does it make sense to move the existing content? Do you need to automate this process or will it be handled manually? What is the amount of content in place, considering multiple sites and languages. Additional information can be found on the [Content Audit](/learn/accelerate/xm-cloud/pre-development/information-architecture/content-audit) recipe.</li>
@@ -119,7 +119,7 @@ Beyond tech stack, first release also need to take into account governance struc
 
 It's simple to only concentrate on what is required to ship. However if you don't consider long-term operational realities, you're establishing future teams up for painful rework, tech debt, and unnecessary risk. 
 
-One critical difference compared to traditional .NET MVC projects is that JavaScript ecosystem moves fast. Frameworks like Next.js are constantly evolving, and so is Sitecore - XM Cloud includes starter foundation code that is built into the solution, and is the recommended approach when you [create a project](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html). This is regularly updated to make it more robust and roll out new features, so a consistent update process is required. This avoids the dreaded "upgrade cliff" — where months of ignored updates turn into an excessive project — and keeps your stack healthy and predictable over time.
+One critical difference compared to traditional .NET MVC projects is that JavaScript ecosystem moves fast. Frameworks like Next.js are constantly evolving, and so is Sitecore - SitecoreAI includes starter foundation code that is built into the solution, and is the recommended approach when you [create a project](https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html). This is regularly updated to make it more robust and roll out new features, so a consistent update process is required. This avoids the dreaded "upgrade cliff" — where months of ignored updates turn into an excessive project — and keeps your stack healthy and predictable over time.
 
 Review the [Update your starter foundation code](https://doc.sitecore.com/xmc/en/developers/xm-cloud/update-your-starter-foundation-code.html) documentation for further information.
 
@@ -138,15 +138,15 @@ Getting the team ready for the implementation, it’s crucial to ensure that all
 Review the [Component Design Best Practices](/learn/accelerate/xm-cloud/pre-development/developer-considerations/component-design-best-practices) recipe to find the optimal way for implementing Components.
 
 ### Team setup
-Determining the right ratio for your team will make a difference for on timelines and success of any implementation. In Sitecore XM Cloud projects, balancing the number of CMS Developers and Web Application Developers is essential for efficiency, scalability, and maintainability.
+Determining the right ratio for your team will make a difference for on timelines and success of any implementation. In SitecoreAI projects, balancing the number of CMS Developers and Web Application Developers is essential for efficiency, scalability, and maintainability.
 
 Keep in mind that that different implementations might have different approaches but overall:
 
 <ul>
   <li>A 1:2 ratio of CMS Developers to Web Application Developers might work for one project, while 1:6 in another. With a front-end heavy implementation, the CMS Developer might be quickly bored if not enough Web Application Developers are available.</li> 
   <li>A front-end-heavy ratio aligns well with projects where a dedicated design system is in use, such as Figma, Storybook, and Chromatic.</li> 
-  <li>The Web Application Developers are responsible for component development while the CMS Developers handles content modelling in XM Cloud and integration. This might not be always the case when Web Application Developers can configure their own data structures, which will make implementations faster. Developing ASP.NET Core application means having more extended and strongly typed model structure that should be created compared to Next.js/TypeScript.</li>
-  <li>Web Application Developers can work independently of XM Cloud, assuming they could treat components like standard Next.js elements or ASP.NET Core components. However, they will run into challenges when ignoring things such as Placeholders and XM Cloud specific modules -  not following XM Cloud best practices will require CMS Developer intervention late in the cycle.</li>
+  <li>The Web Application Developers are responsible for component development while the CMS Developers handles content modelling in SitecoreAI and integration. This might not be always the case when Web Application Developers can configure their own data structures, which will make implementations faster. Developing ASP.NET Core application means having more extended and strongly typed model structure that should be created compared to Next.js/TypeScript.</li>
+  <li>Web Application Developers can work independently of SitecoreAI, assuming they could treat components like standard Next.js elements or ASP.NET Core components. However, they will run into challenges when ignoring things such as Placeholders and SitecoreAI specific modules -  not following SitecoreAI best practices will require CMS Developer intervention late in the cycle.</li>
 </ul>
 
 ### Collaboration Teams
@@ -157,7 +157,7 @@ Regardless of the ratio, clear collaboration processes must be in place:
 <li>Documenting and refining best practices, even outside of Sitecore Accelerate, to prevent chaotic implementation patterns. Without clear guidance, developers may rely on inconsistent approaches, leading to technical debt and integration challenges.</li>
 </ul>
 
-One of the key goals moving forward is to make Web Application Developers self-sufficient, reducing major dependencies on XM Cloud-specific items. This shift allows front-end teams to work more autonomously, improving efficiency while ensuring seamless integration with XM Cloud.
+One of the key goals moving forward is to make Web Application Developers self-sufficient, reducing major dependencies on SitecoreAI-specific items. This shift allows front-end teams to work more autonomously, improving efficiency while ensuring seamless integration with SitecoreAI.
 
 Success  relies on clarity, automation, and documentation to maintain efficiency and prevent roadblocks. Clearly defined responsibilities ensure that each team member understands their role, eliminating confusion and streamlining collaboration. Implementing automated quality gates helps catch issues early in the development cycle, reducing rework and improving overall reliability. Additionally, maintaining regular documentation updates keeps teams aligned, ensuring that processes, dependencies, and best practices remain up to date. Together, these elements create a structured and scalable development workflow, enhancing both team productivity and project success.
 
@@ -167,14 +167,14 @@ Success  relies on clarity, automation, and documentation to maintain efficiency
 <Row columns={2}>
     <Link title="Discovery" link="/learn/accelerate/xm-cloud/pre-development/discovery" />
   <Link title="Sprint Zero" link="/learn/accelerate/xm-cloud/pre-development/sprint-zero" />
-  <Link title="Preparing For A Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-an-xm-cloud-project" />
+  <Link title="Preparing For A Project" link="/learn/accelerate/xm-cloud/pre-development/project-planning/preparing-for-a-sitecoreai-project" />
   <Link title="Component Design Best Practices" link="/learn/accelerate/xm-cloud/pre-development/developer-considerations/component-design-best-practices" />
 </Row>
 
 
 ## Related Documentation
 <Row columns={2}>
-  <Link title="XM Cloud Deploy app" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+  <Link title="Deploy app" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html" />
   <Link title="Deploy a project and environment" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/deploy-a-project-and-environment.html" />  
   <Link title="Modules" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/modules.html" />
   <Link title="Update your starter foundation code" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/update-your-starter-foundation-code.html" />
@@ -183,6 +183,6 @@ Success  relies on clarity, automation, and documentation to maintain efficiency
 
 ## Related Links
 <Row columns={2}>
-  <Link title="XM Cloud Tutorial - Introduction #1" link="https://www.youtube.com/watch?v=D7UPYP7AQQ4" />
-  <Link title="XM Cloud Tutorials - Analyze Phase #2" link="https://www.youtube.com/watch?v=6WMzaK-3swI" />
+  <Link title="SitecoreAI Tutorial - Introduction #1" link="https://www.youtube.com/watch?v=D7UPYP7AQQ4" />
+  <Link title="SitecoreAI Tutorials - Analyze Phase #2" link="https://www.youtube.com/watch?v=6WMzaK-3swI" />
 </Row>

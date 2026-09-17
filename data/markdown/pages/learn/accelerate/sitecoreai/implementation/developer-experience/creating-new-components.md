@@ -11,11 +11,11 @@ features: ['Component Builder','Pages', 'Next.JS SDK']
 ---
 
 ## Context
-There are 2 types of components within XM Cloud, the Component Builder (also called XM Cloud Components, or Front End as a Service) and standard React components. At the time of writing, XM Cloud Components do not have a full feature set for end-to-end development. Because of this, only standard React/Next.js components should be used. This will be updated once the full feature set of XM Cloud Components is available.
+There are 2 types of components within SitecoreAI, the Component Builder (also called SitecoreAI Components, or Front End as a Service) and standard React components. At the time of writing, SitecoreAI Components do not have a full feature set for end-to-end development. Because of this, only standard React/Next.js components should be used. This will be updated once the full feature set of SitecoreAI Components is available.
 
 ## Execution
 
-All components in XM Cloud must be a clone of one of the OOTB XM Cloud components. Cloning an existing component not only saves development time by creating all the boiler plate item and configuration that your component requires, but it also makes sure that all the required base templates are configured to fully support the XM Cloud authoring feature set that clients expect.
+All components in SitecoreAI must be a clone of one of the OOTB SitecoreAI components. Cloning an existing component not only saves development time by creating all the boiler plate item and configuration that your component requires, but it also makes sure that all the required base templates are configured to fully support the SitecoreAI authoring feature set that clients expect.
 
 ### Modules
 
@@ -79,11 +79,11 @@ To make the component available in your site, complete the following steps:
 
 ## Insights
 
-### Supporting XM Cloud Editor Features
+### Supporting SitecoreAI Editor Features
 
-XM Cloud comes with advanced editing features for content authors, to support these features, the data for the rendering parameters is passed into the layout service response from GraphQL. JSS passes these params to your components as props. These parameters are surfaced as CSS Class Names for your grid and optional styles.
+SitecoreAI comes with advanced editing features for content authors, to support these features, the data for the rendering parameters is passed into the layout service response from GraphQL. JSS passes these params to your components as props. These parameters are surfaced as CSS Class Names for your grid and optional styles.
 
-To make sure that your components support the advanced editing features of XM Cloud, you must decorate your components with the class names passed through, and ensure that the corresponding CSS is there to support the styles & grid.
+To make sure that your components support the advanced editing features of SitecoreAI, you must decorate your components with the class names passed through, and ensure that the corresponding CSS is there to support the styles & grid.
 
 ```html
 <div className="{`component" promo ${props.params.styles}`} id="{id" ? id : undefined}>
@@ -149,7 +149,7 @@ export const Default = (props: ComponentProps): React.JSX.Element => {
   - `fields: Fields` - these are the fields from your datasource item or context item defined in the `Fields` interface above. If your component does not use a datasource item and only gets data from the current context item or from an external source, you can leave this off the props.
 - For components with a datasource item, it is recommended to have a default version of the component that is displayed when a datasource item is not assigned. This will prevent errors from happening in the event that a component is added without the datasource item being assignd.
   - In the code sample, this is called `MyComponentDefaultComponent` note that a helpful message is displayed to the content editor when this happens.
-- Then we get the main component structure. This follows the standards for decoration with the XM Cloud grid and styles CSS class names to support those features. Also, fields should be rendered using the JSS SDK to ensure that they are editable in Pages.
+- Then we get the main component structure. This follows the standards for decoration with the SitecoreAI grid and styles CSS class names to support those features. Also, fields should be rendered using the JSS SDK to ensure that they are editable in Pages.
 - It's important to note that we are not using the JavaScript `default export` statement here, we are just exporting a function called `Default`, this is important to be able to support Headless Variants, discussed below.
 
 #### Headless Variants

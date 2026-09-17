@@ -10,3 +10,5 @@ Sitecore Accelerate equips teams with the knowledge, resources, tools, and best 
 We are keen to keeping this resource up-to-date with the latest insights, best practices, and tools. [References](/learn/faq/accelerate/references) for structure, audience have also been documented.
 
 > The Accelerate Cookbook is an evolving guide designed to support your journey with Sitecore. Consider it a work in progress—your go-to for continuous learning and development in the ever-changing landscape of digital experience platforms. Stay tuned for ongoing updates as we grow this resource with you in mind!
+
+> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.

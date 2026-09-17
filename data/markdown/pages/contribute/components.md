@@ -88,7 +88,7 @@ Helper component that can be used to show cards next to each other
 <Link title="User Documentation" link="https://doc.sitecore.com/xmc/en/users/xm-cloud/index-en.html" />
 <Link title="Developer Documentation" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/index-en.html" />
 <Link title="XM Cloud Build Configuration" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/the-xm-cloud-build-configuration.html" />
-<Link title="XM Cloud Deploy App" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-deploy-app.html" />
+<Link title="Deploy App" link="https://doc.sitecore.com/sai/en/developers/sitecoreai/deploy-app.html" />
 <Link title="Developer Tools" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/developer-tools.html" />
 <Link title="XM Cloud development" link="https://doc.sitecore.com/xmc/en/developers/xm-cloud/xm-cloud-development.html" />
 </Row>

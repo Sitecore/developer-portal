@@ -17,7 +17,7 @@ In content authoring, the hardest balance is giving editors enough freedom to be
 ## Execution
 Sitecore Marketplace allows you to [extend your fields](https://doc.sitecore.com/mp/en/developers/marketplace/extension-points.html#page-builder-custom-field) and creating a model when the user locates a custom field that has been created.
 
-The [Marketplace Icon Picker](https://github.com/Sitecore/marketplace-icon-picker) is a sample app that allows edtors to select their preferred icons. Instead of forcing editors to memorize icon names or depend on developers to hardcode them, the Icon Picker opens a curated library of Material Design icons in a modal. Editors browse visually, choose the icon that fits their use case, and the field saves a clean string value into XM Cloud. On the rendering side, that value maps directly to a Material UI icon component in the head app.
+The [Marketplace Icon Picker](https://github.com/Sitecore/marketplace-icon-picker) is a sample app that allows edtors to select their preferred icons. Instead of forcing editors to memorize icon names or depend on developers to hardcode them, the Icon Picker opens a curated library of Material Design icons in a modal. Editors browse visually, choose the icon that fits their use case, and the field saves a clean string value into SitecoreAI. On the rendering side, that value maps directly to a Material UI icon component in the head app.
 
 This flow embodies governed flexibility:
 - Freedom for editors who can select from hundreds of icons to match context—call-to-action buttons, feature highlights, navigation cues—without waiting on developers.
