@@ -28,7 +28,7 @@ See [all available versions here](/downloads/Sitecore_CLI).
 
 | Resource                                                                    | Description                                                                     |
 | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [Release Notes](/downloads/Sitecore_CLI/7x/Sitecore_CLI_6023/Release_Notes) | A list of features and improvements that have been implemented in this release. |
+| [Release Notes](/downloads/Sitecore_CLI/7x/Sitecore_CLI_7024/Release_Notes) | A list of features and improvements that have been implemented in this release. |
 
 ## Documentation
 
