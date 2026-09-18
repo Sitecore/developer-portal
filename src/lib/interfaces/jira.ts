@@ -1,5 +1,5 @@
-import type { Option } from "@src/components/ui/dropdown";
-import type { IRoadmapItem } from "../roadmap";
+import type { Option } from '@src/components/ui/dropdown';
+import type { IRoadmapItem } from '../roadmap';
 
 export interface StatusCategory {
   self: string;
@@ -35,12 +35,13 @@ export interface Attachment {
 
 export interface Fields {
   summary: string;
-  customfield_15180: CustomField; // Roadmap Phase
-  customfield_15258?: CustomField[]; // Product
+  customfield_22391: CustomField; // Roadmap Phase
+  customfield_24688?: CustomField[]; // Product
   customfield_15555?: string; // Speaker notes
   customfield_15423?: string; // Marketing title
   attachment: Attachment[];
   status: Status;
+  description: ADFDocument;
 }
 
 export interface Issue {
@@ -57,7 +58,7 @@ export interface Issue {
 export interface Names {
   summary: string;
   customfield_15180: string;
-  customfield_15258: string; // Product
+  customfield_24688: string; // Product
   status: string;
 }
 
@@ -107,3 +108,22 @@ export type IssueTypeSchema = {
   total: number;
   fields: IssueTypeSchemaField[];
 };
+
+interface ADFDocument {
+  version: 1;
+  type: 'doc';
+  content: ADFNode[];
+}
+
+interface ADFNode {
+  type: string;
+  attrs?: Record<string, unknown>;
+  content?: ADFNode[];
+  marks?: ADFMark[];
+  text?: string;
+}
+
+interface ADFMark {
+  type: string;
+  attrs?: Record<string, unknown>;
+}
