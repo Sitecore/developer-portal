@@ -39,6 +39,7 @@ export interface Fields {
   customfield_24688?: CustomField[]; // Product
   customfield_15555?: string; // Speaker notes
   customfield_15423?: string; // Marketing title
+  customfield_21960: string; // Documents (changelog link)
   attachment: Attachment[];
   status: Status;
   description: ADFDocument;

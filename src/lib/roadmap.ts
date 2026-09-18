@@ -9,6 +9,7 @@ export interface IRoadmapItem {
   title: string;
   attachments: RoadmapAttachment[];
   status: string;
+  changelogLink: string;
 }
 export interface RoadmapProduct {
   name: string;
@@ -103,5 +104,6 @@ export function parseJiraIssue(issue: Issue) {
     title,
     attachments,
     status,
+    changelogLink: issue.fields.customfield_21960,
   } as IRoadmapItem;
 }
