@@ -3,6 +3,7 @@
 import { cn } from '@/src/lib/util';
 import { getQueryValue } from '@/src/lib/util/requests';
 import { slugify } from '@/src/lib/util/stringUtil';
+import { LinkButton } from '@src/components/links';
 import { LinkedHeading } from '@src/components/links/LinkedHeading';
 import { Badge } from '@src/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@src/components/ui/card';
@@ -14,6 +15,7 @@ import type { IRoadmapItem, RoadmapProduct } from '@src/lib/roadmap';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { Alert, AlertDescription, AlertTitle } from '../ui/alert';
 
 interface RoadmapItemProps {
   item: IRoadmapItem;
@@ -114,6 +116,17 @@ export const RoadmapItem: React.FC<RoadmapItemProps> = ({ item }: RoadmapItemPro
               </CardContent>
             </Card>
             <div className={cn('flex-1 overflow-y-auto mt-2', hasAttachments ? 'max-h-[550px]' : 'max-h-[750px]')}>
+              {item.changelogLink && (
+                <div className="p-4">
+                  <Alert variant="default">
+                    <AlertTitle>This roadmap item is available in production. Please read the changelog entry for more information</AlertTitle>
+                    <AlertDescription>
+                      <LinkButton size="sm" variant="link" className="p-0" href={item.changelogLink} text={'Read changelog announcement'} target="_blank" rel="noopener noreferrer" />
+                    </AlertDescription>
+                  </Alert>
+                </div>
+              )}
+
               <div className="prose block max-w-none p-4" dangerouslySetInnerHTML={{ __html: item.description }} />
             </div>
           </SheetDescription>

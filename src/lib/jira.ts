@@ -77,6 +77,7 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
     'customfield_22518', // PMM Marketing Roadmap checkbox
     'customfield_22392', // PMM Tier
     'customfield_22399', // PMM Target Persona
+    'customfield_21960', // Documents (changelog link)
   ];
 
   const filters = [
@@ -87,7 +88,6 @@ export async function GetJiraResponse(): Promise<JiraResponse> {
 
   const jqlString = createJqlString(filters);
   const roadmapAPI = `${jiraBaseUrl}/search/jql?jql=${jqlString}&fields=${fields.join(',')}&expand=names&maxResults=1000&expand=renderedFields`;
-
   const response: JiraResponse = await fetchData<JiraResponse>(roadmapAPI);
 
   let allIssues = response.issues;
