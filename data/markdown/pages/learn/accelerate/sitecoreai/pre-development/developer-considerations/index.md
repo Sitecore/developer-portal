@@ -11,4 +11,4 @@ This section is designed to highlight key considerations for developers, coverin
 
 Whether you're migrating from a traditional Sitecore PaaS setup or starting fresh, this guide will provide the insights needed to build robust, scalable, and future-proof solutions.
 
-> XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.
+<Alert type="info"><AlertIcon />XM Cloud is now SitecoreAI. Some code examples, images, and UI labels might still use XM Cloud while engineering assets are being updated.</Alert>
